@@ -313,7 +313,7 @@ void Assembly-CSharp.dll::DesktopDefaultKeyboardMapping::DesktopDefaultKeyboardM
                     TypeInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>
                    );
     func_?(&TypeInfo__UnityEngine__KeyCode);
-    func_?(&::_4599282D3F9B45AF3BD85923032DA3555BB21379E7B4794D7CDC90902084CA13_Field);
+    func_?(&_4599282D3F9B45AF3BD85923032DA3555BB21379E7B4794D7CDC90902084CA13_Field);
     func_?(&F002D88D1605774CD2608C1D941E46CAD47C23D0F8E6530B87794DC9244A45AB_Field);
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
@@ -377,7 +377,7 @@ code_?:
          ) goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
       Dictionary_2_System_Int32Enum_System_Object__Add
-                ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02,0x2d,pOVar4,
+                ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02,0x2c,pOVar4,
                  MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                 );
       pOVar4 = (Object *)func_?();
@@ -387,7 +387,7 @@ code_?:
         pOVar4[2].monitor = (MonitorData *)0x132;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
         Dictionary_2_System_Int32Enum_System_Object__Add
-                  ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02,0x2e,pOVar4,
+                  ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02,0x2d,pOVar4,
                    MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                   );
         pOVar4 = (Object *)func_?();
@@ -484,7 +484,7 @@ code_?:
                           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           Int32Enum,System::Object]::
                           Dictionary_2_System_Int32Enum_System_Object__Add
-                                    ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02,0x29,
+                                    ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02,0x28,
                                      pOVar4,
                                      MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                     );
@@ -553,7 +553,7 @@ code_?:
                                       Dictionary`2[System::Int32Enum,System::Object]::
                                       Dictionary_2_System_Int32Enum_System_Object__Add
                                                 ((Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                 this_02,0x2c,pOVar4,
+                                                 this_02,0x2b,pOVar4,
                                                  MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                 );
                                       pOVar4 = (Object *)func_?();
@@ -664,7 +664,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x1c,pOVar4,
+                                                  this_02,0x35,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -677,7 +677,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x1d,pOVar4,
+                                                  this_02,0x1c,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -690,7 +690,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x1e,pOVar4,
+                                                  this_02,0x1d,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -703,7 +703,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x1f,pOVar4,
+                                                  this_02,0x1e,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -716,7 +716,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x20,pOVar4,
+                                                  this_02,0x1f,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pAVar5 = (Array *)func_?();
@@ -730,7 +730,7 @@ code_?:
                                                   Dictionary_2_System_Int32Enum_System_Object__Add
                                                             ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x23,(Object *)pAVar5,
+                                                  this_02,0x22,(Object *)pAVar5,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -745,7 +745,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x24,pOVar4,
+                                                  this_02,0x23,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -758,7 +758,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x26,pOVar4,
+                                                  this_02,0x25,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -771,7 +771,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x25,pOVar4,
+                                                  this_02,0x24,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -784,7 +784,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x27,pOVar4,
+                                                  this_02,0x26,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -799,7 +799,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x28,pOVar4,
+                                                  this_02,0x27,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -814,7 +814,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x2a,pOVar4,
+                                                  this_02,0x29,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -827,7 +827,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x2b,pOVar4,
+                                                  this_02,0x2a,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -842,7 +842,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x33,pOVar4,
+                                                  this_02,0x32,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -857,7 +857,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x2f,pOVar4,
+                                                  this_02,0x2e,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -872,7 +872,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x30,pOVar4,
+                                                  this_02,0x2f,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -887,7 +887,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x31,pOVar4,
+                                                  this_02,0x30,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -902,7 +902,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x32,pOVar4,
+                                                  this_02,0x31,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -915,7 +915,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x34,pOVar4,
+                                                  this_02,0x33,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   pOVar4 = (Object *)func_?();
@@ -928,7 +928,7 @@ code_?:
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  this_02,0x35,pOVar4,
+                                                  this_02,0x34,pOVar4,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                                   );
                                                   (this->fields).keyMapping =

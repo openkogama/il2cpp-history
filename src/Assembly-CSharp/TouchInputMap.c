@@ -258,7 +258,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
     if (pDVar1 != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
       Dictionary_2_System_Int32Enum_System_Object__Add
-                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x22,pOVar2,
+                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x21,pOVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                 );
       pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
@@ -280,7 +280,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
           func_?(pOVar2 + 2,pSVar3);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]
           ::Dictionary_2_System_Int32Enum_System_Object__Add
-                    ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x21,pOVar2,
+                    ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x20,pOVar2,
                      MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                     );
           pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
@@ -313,7 +313,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                 func_?(pOVar2 + 2,pSVar3);
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
                 Object]::Dictionary_2_System_Int32Enum_System_Object__Add
-                          ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x2c,pOVar2,
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x2b,pOVar2,
                            MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                           );
                 pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
@@ -357,7 +357,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                         func_?(pOVar2 + 2,pSVar3);
                         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                         Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add
-                                  ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x29,
+                                  ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x28,
                                    pOVar2,
                                    MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                                   );
@@ -383,7 +383,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                             Int32Enum,System::Object]::
                             Dictionary_2_System_Int32Enum_System_Object__Add
-                                      ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x2f,
+                                      ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x2e,
                                        pOVar2,
                                        MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                                       );
@@ -396,7 +396,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                               Int32Enum,System::Object]::
                               Dictionary_2_System_Int32Enum_System_Object__Add
-                                        ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x32
+                                        ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x31
                                          ,pOVar2,
                                          MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                                         );
@@ -410,7 +410,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                 Int32Enum,System::Object]::
                                 Dictionary_2_System_Int32Enum_System_Object__Add
                                           ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,
-                                           0x30,pOVar2,
+                                           0x2f,pOVar2,
                                            MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                                           );
                                 pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
@@ -424,7 +424,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                   Int32Enum,System::Object]::
                                   Dictionary_2_System_Int32Enum_System_Object__Add
                                             ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,
-                                             0x31,pOVar2,
+                                             0x30,pOVar2,
                                              MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                                             );
                                   pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
@@ -438,7 +438,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                     ::Int32Enum,System::Object]::
                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                               ((Dictionary_2_System_Int32Enum_System_Object_ *)
-                                               pDVar1,0x2d,pOVar2,
+                                               pDVar1,0x2c,pOVar2,
                                                MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                                               );
                                     pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
@@ -452,7 +452,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                       Dictionary`2[System::Int32Enum,System::Object]::
                                       Dictionary_2_System_Int32Enum_System_Object__Add
                                                 ((Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                 pDVar1,0x2e,pOVar2,
+                                                 pDVar1,0x2d,pOVar2,
                                                  MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                                                 );
                                       pOVar2 = (Object *)func_?(TypeInfo__System__String,1)
@@ -468,7 +468,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                         Dictionary`2[System::Int32Enum,System::Object]::
                                         Dictionary_2_System_Int32Enum_System_Object__Add
                                                   ((Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                   pDVar1,0x33,pOVar2,
+                                                   pDVar1,0x32,pOVar2,
                                                                                                       
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                                                   );
@@ -485,7 +485,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                           Dictionary`2[System::Int32Enum,System::Object]::
                                           Dictionary_2_System_Int32Enum_System_Object__Add
                                                     ((Dictionary_2_System_Int32Enum_System_Object_ *
-                                                     )pDVar1,0x20,pOVar2,
+                                                     )pDVar1,0x1f,pOVar2,
                                                                                                           
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                                                   );
@@ -502,7 +502,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                             Dictionary`2[System::Int32Enum,System::Object]::
                                             Dictionary_2_System_Int32Enum_System_Object__Add
                                                       ((Dictionary_2_System_Int32Enum_System_Object_
-                                                        *)pDVar1,0x1d,pOVar2,
+                                                        *)pDVar1,0x1c,pOVar2,
                                                                                                               
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                                                   );
@@ -520,7 +520,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                               Dictionary_2_System_Int32Enum_System_Object__Add
                                                         ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  pDVar1,0x1e,pOVar2,
+                                                  pDVar1,0x1d,pOVar2,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                                                   );
                                               pOVar2 = (Object *)
@@ -595,7 +595,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  pDVar1,0x1c,pOVar2,
+                                                  pDVar1,0x35,pOVar2,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                                                   );
                                                   pOVar2 = (Object *)
@@ -709,7 +709,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  pDVar1,0x1f,pOVar2,
+                                                  pDVar1,0x1e,pOVar2,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                                                   );
                                                   pOVar2 = (Object *)
@@ -784,7 +784,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  pDVar1,0x35,pOVar2,
+                                                  pDVar1,0x34,pOVar2,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____
                                                   );
                                                   (this->fields).ButtonMapping =
@@ -814,7 +814,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                                   Dictionary_2_System_Int32Enum_System_Int32Enum__Add
                                                             ((
                                                   Dictionary_2_System_Int32Enum_System_Int32Enum_ *)
-                                                  pDVar1,0x2b,0x1b,
+                                                  pDVar1,0x2a,0x1b,
                                                   MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode>__Add_KogamaControls__UnityEngine__KeyCode_
                                                   );
                                                   method_00 = (MethodInfo *)

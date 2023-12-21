@@ -76,7 +76,7 @@ void Assembly-CSharp.dll::DesktopPlayMode::DesktopPlayMode__ctor
                     if (pDVar1 != (Dictionary_2_KogamaControls_UnityEngine_KeyCode__1 *)0x0) {
                       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                       Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add
-                                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x22,pOVar2,
+                                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x21,pOVar2,
                                  MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                 );
                       pDVar1 = (this->fields)._.keyMapping;
@@ -88,7 +88,7 @@ void Assembly-CSharp.dll::DesktopPlayMode::DesktopPlayMode__ctor
                           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           Int32Enum,System::Object]::
                           Dictionary_2_System_Int32Enum_System_Object__Add
-                                    ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x21,
+                                    ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x20,
                                      pOVar2,
                                      MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                     );

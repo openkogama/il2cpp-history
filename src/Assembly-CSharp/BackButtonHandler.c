@@ -254,7 +254,7 @@ void Assembly-CSharp.dll::BackButtonHandler::BackButtonHandler__ctor
                (BackButtonHandler *this,MethodInfo *method)
 
 {
-  (this->fields).kogamaControl = 0x2b;
+  (this->fields).kogamaControl = 0x2a;
   (this->fields).onKeyState = 1;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Object);
