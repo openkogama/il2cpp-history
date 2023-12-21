@@ -1191,7 +1191,7 @@ void Assembly-CSharp.dll::JetPackMotor::JetPackMotor__ctor(JetPackMotor *this,Me
     func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<float,_float>__KeyValuePair_float__float_);
     func_?(&TypeInfo__UnityEngine__Keyframe);
     func_?(&TypeInfo__MV__Common__RuntimeEventType);
-    func_?(&::_5F4C7E3BCFA8C6ACC6CE23964419D17A794C3AA4EFB5F94B393C30094512435C_Field);
+    func_?(&_5F4C7E3BCFA8C6ACC6CE23964419D17A794C3AA4EFB5F94B393C30094512435C_Field);
     cRam_? = '\x01';
   }
   (this->fields).thrust = 1500.0;

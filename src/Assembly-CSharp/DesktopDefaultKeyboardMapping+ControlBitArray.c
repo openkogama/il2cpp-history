@@ -110,7 +110,7 @@ code_?:
       if (pIVar6 != (Int32__Array *)0x0) {
         uVar7 = ctrl >> 5;
         if (uVar7 < pIVar6->max_length) {
-          pIVar6->vector[uVar7] = pIVar6->vector[uVar7] & ~(1 << (ctrl & KogamaControls__Enum_CreateNewModel));
+          pIVar6->vector[uVar7] = pIVar6->vector[uVar7] & ~(1 << (ctrl & KogamaControls__Enum_ToggleDrawPlane));
           piVar8 = &(pBVar1->fields)._version;
           *piVar8 = *piVar8 + 1;
           return;
@@ -121,7 +121,7 @@ code_?:
     else if (pIVar6 != (Int32__Array *)0x0) {
       uVar7 = ctrl >> 5;
       if (uVar7 < pIVar6->max_length) {
-        pIVar6->vector[uVar7] = pIVar6->vector[uVar7] | 1 << (ctrl & KogamaControls__Enum_CreateNewModel);
+        pIVar6->vector[uVar7] = pIVar6->vector[uVar7] | 1 << (ctrl & KogamaControls__Enum_ToggleDrawPlane);
         piVar8 = &(pBVar1->fields)._version;
         *piVar8 = *piVar8 + 1;
         return;

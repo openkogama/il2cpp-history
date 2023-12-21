@@ -173,7 +173,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
     pOVar2[2].klass = (Object__Class *)StringLiteral_Jump;
     func_?(pOVar2 + 2,pSVar3);
     if (pDVar1 != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x22,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x21,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
       pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
       pSVar3 = StringLiteral_Use;
       if (pOVar2 != (Object *)0x0) {
@@ -187,7 +187,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
           if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
           pOVar2[2].klass = (Object__Class *)StringLiteral_Fire;
           func_?(pOVar2 + 2,pSVar3);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x21,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x20,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
           pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
           pSVar3 = StringLiteral_Respawn;
           if (pOVar2 != (Object *)0x0) {
@@ -208,7 +208,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                 if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                 pOVar2[2].klass = (Object__Class *)StringLiteral_Holster;
                 func_?(pOVar2 + 2,pSVar3);
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x2c,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x2b,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
                 pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
                 pSVar3 = StringLiteral_PointerSelect;
                 if (pOVar2 != (Object *)0x0) {
@@ -236,7 +236,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                         if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                         pOVar2[2].klass = (Object__Class *)StringLiteral_ToggleHD;
                         func_?(pOVar2 + 2,pSVar3);
-                        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x29,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+                        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x28,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
                         pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
                         pSVar3 = StringLiteral_MoveForward;
                         if (pOVar2 != (Object *)0x0) {
@@ -250,70 +250,70 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                             if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                             pOVar2[2].klass = (Object__Class *)StringLiteral_EditMoveForward;
                             func_?(pOVar2 + 2,pSVar3);
-                            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x2f,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+                            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x2e,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
                             pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
                             pSVar3 = StringLiteral_EditMoveBackwards;
                             if (pOVar2 != (Object *)0x0) {
                               if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                               pOVar2[2].klass = (Object__Class *)StringLiteral_EditMoveBackwards;
                               func_?(pOVar2 + 2,pSVar3);
-                              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x32,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+                              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x31,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
                               pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
                               pSVar3 = StringLiteral_EditMoveLeft;
                               if (pOVar2 != (Object *)0x0) {
                                 if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                                 pOVar2[2].klass = (Object__Class *)StringLiteral_EditMoveLeft;
                                 func_?(pOVar2 + 2,pSVar3);
-                                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x30,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+                                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x2f,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
                                 pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
                                 pSVar3 = StringLiteral_EditMoveRight;
                                 if (pOVar2 != (Object *)0x0) {
                                   if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                                   pOVar2[2].klass = (Object__Class *)StringLiteral_EditMoveRight;
                                   func_?(pOVar2 + 2,pSVar3);
-                                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x31,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+                                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x30,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
                                   pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
                                   pSVar3 = StringLiteral_EditMoveUp;
                                   if (pOVar2 != (Object *)0x0) {
                                     if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                                     pOVar2[2].klass = (Object__Class *)StringLiteral_EditMoveUp;
                                     func_?(pOVar2 + 2,pSVar3);
-                                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x2d,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+                                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x2c,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
                                     pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
                                     pSVar3 = StringLiteral_EditMoveDown;
                                     if (pOVar2 != (Object *)0x0) {
                                       if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                                       pOVar2[2].klass = (Object__Class *)StringLiteral_EditMoveDown;
                                       func_?(pOVar2 + 2,pSVar3);
-                                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x2e,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+                                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x2d,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
                                       pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
                                       pSVar3 = StringLiteral_EditMoveFast;
                                       if (pOVar2 != (Object *)0x0) {
                                         if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                                         pOVar2[2].klass = (Object__Class *)StringLiteral_EditMoveFast;
                                         func_?(pOVar2 + 2,pSVar3);
-                                        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x33,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+                                        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x32,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
                                         pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
                                         pSVar3 = StringLiteral_ToggleDrawPlane;
                                         if (pOVar2 != (Object *)0x0) {
                                           if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                                           pOVar2[2].klass = (Object__Class *)StringLiteral_ToggleDrawPlane;
                                           func_?(pOVar2 + 2,pSVar3);
-                                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x20,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+                                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x1f,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
                                           pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
                                           pSVar3 = StringLiteral_ChangeMaterial;
                                           if (pOVar2 != (Object *)0x0) {
                                             if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                                             pOVar2[2].klass = (Object__Class *)StringLiteral_ChangeMaterial;
                                             func_?(pOVar2 + 2,pSVar3);
-                                            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x1d,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+                                            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x1c,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
                                             pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
                                             pSVar3 = StringLiteral_OpenInventory;
                                             if (pOVar2 != (Object *)0x0) {
                                               if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                                               pOVar2[2].klass = (Object__Class *)StringLiteral_OpenInventory;
                                               func_?(pOVar2 + 2,pSVar3);
-                                              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x1e,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+                                              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x1d,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
                                               pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
                                               pSVar3 = StringLiteral_ActivateEditCubeTool;
                                               if (pOVar2 != (Object *)0x0) {
@@ -341,7 +341,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                                       if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                                                       pOVar2[2].klass = (Object__Class *)StringLiteral_ActivatePickColorTool;
                                                       func_?(pOVar2 + 2,pSVar3);
-                                                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x1c,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+                                                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x35,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
                                                       pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
                                                       pSVar3 = StringLiteral_TogglePlayInEditor;
                                                       if (pOVar2 != (Object *)0x0) {
@@ -383,7 +383,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                                                   if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                                                                   pOVar2[2].klass = (Object__Class *)StringLiteral_CreateNewModel;
                                                                   func_?(pOVar2 + 2,pSVar3);
-                                                                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x1f,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+                                                                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x1e,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
                                                                   pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
                                                                   pSVar3 = StringLiteral_ShowChat;
                                                                   if (pOVar2 != (Object *)0x0) {
@@ -411,13 +411,13 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                                                           if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                                                                           pOVar2[2].klass = (Object__Class *)StringLiteral_ToggleCameraEffects;
                                                                           func_?(pOVar2 + 2,pSVar3);
-                                                                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x35,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
+                                                                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x34,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::String_[]>__Add_KogamaControls__System__String____);
                                                                           (this->fields).ButtonMapping = (Dictionary_2_KogamaControls_System_String_ *)pDVar1;
                                                                           func_?(&this->fields,pDVar1);
                                                                           pDVar1 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode>);
                                                                           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,GamePassesHighScoreList+HighScoreListData]::Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor(pDVar1,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode>__Dictionary__);
                                                                           if (pDVar1 != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
-                                                                            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32Enum]::Dictionary_2_System_Int32Enum_System_Int32Enum__Add((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,0x2b,0x1b,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode>__Add_KogamaControls__UnityEngine__KeyCode_);
+                                                                            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32Enum]::Dictionary_2_System_Int32Enum_System_Int32Enum__Add((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,0x2a,0x1b,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode>__Add_KogamaControls__UnityEngine__KeyCode_);
                                                                             method_00 = (MethodInfo *)&(this->fields).KeyCodeMapping;
                                                                             (this->fields).KeyCodeMapping = (Dictionary_2_KogamaControls_UnityEngine_KeyCode_ *)pDVar1;
                                                                             func_?(method_00,pDVar1);
