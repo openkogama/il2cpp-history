@@ -348,15 +348,14 @@ void Assembly-CSharp.dll::TierUnlockAccessItemsPopup::TierUnlockAccessItemsPopup
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  this_00 = (TierUnlockedItemElement *)
+  this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
             TierUnlockAccessItemsPopup_GetSortedData(this,tierShopData,(MethodInfo *)0x0);
   tierShopData = (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)0x0;
   pVVar1 = (VisualTreeAsset *)this;
-  pTStack_2 = this_00;
-  if (this_00 != (TierUnlockedItemElement *)0x0) {
+  pLStack_2 = this_00;
+  if (this_00 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
     while( true ) {
-      if ((((List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00)->fields)._size <=
-          (int)tierShopData) {
+      if ((this_00->fields)._size <= (int)tierShopData) {
         return;
       }
       original = (this->fields).tierUnlockedItemElementPrefab;
@@ -378,9 +377,7 @@ void Assembly-CSharp.dll::TierUnlockAccessItemsPopup::TierUnlockAccessItemsPopup
       pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                VisualTreeAsset+UsingEntry]::
                List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                         (&VStack_4,
-                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,
-                          (int32_t)tierShopData,
+                         (&VStack_4,this_00,(int32_t)tierShopData,
                           MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
                          );
       uStack_5._0_4_ = pVVar3->alias;
@@ -443,18 +440,16 @@ code_?:
         colorStyle = ColorStyle__Enum_OffWhite;
       }
       pCVar7 = Styles::Styles_GetColor(pCVar7,colorStyle,(MethodInfo *)0x0);
-      this_00 = (TierUnlockedItemElement *)0x0;
+      this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0;
       if (pIVar6 == (Image *)0x0) break;
       (*(code *)(pIVar6->klass->vtable).set_color.method)
                 (pIVar6,pCVar7->r,pCVar7->g,pCVar7->b,pCVar7->a,
                  (pIVar6->klass->vtable).get_raycastTarget.methodPtr);
-      this_00 = pTStack_2;
+      this_00 = pLStack_2;
       pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                VisualTreeAsset+UsingEntry]::
                List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                         (&VStack_14,
-                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pTStack_2,
-                          (int32_t)tierShopData,
+                         (&VStack_14,pLStack_2,(int32_t)tierShopData,
                           MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
                          );
       uStack_15._0_4_ = pVVar3->alias;
@@ -466,32 +461,25 @@ code_?:
                      ((int)&tierShopData->klass + 1);
     }
   }
-  bVar16 = 0;
-  uVar17 = func_?();
-  bVar18 = (byte)((ushort)extraout_CX >> 8);
-  bVar19 = CARRY1((byte)extraout_CX,bVar18) || CARRY1((byte)extraout_CX + bVar18,bVar16);
-  bVar20 = (byte)uVar17;
-  bVar18 = *(char *)&unaff_ESI->klass + bVar20;
-  bVar21 = CARRY1(*(byte *)&unaff_ESI->klass,bVar20) || CARRY1(bVar18,bVar19);
-  *(byte *)&unaff_ESI->klass = bVar18 + bVar19;
-  pbVar22 = (byte *)((int)&((List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00)->
-                           klass + 3);
-  bVar16 = (byte)((ulonglong)uVar17 >> 8);
-  bVar18 = *pbVar22 + bVar16;
-  bVar19 = CARRY1(*pbVar22,bVar16) || CARRY1(bVar18,bVar21);
-  *pbVar22 = bVar18 + bVar21;
-  uStack_15 = CONCAT44(pVVar1,(undefined4)uStack_15);
-  bVar23 = (char)this_00 + 4;
-  pbVar22 = (byte *)((int)&pVVar1[1].fields._._.m_CachedPtr +
-                    (int)((ulonglong)uVar17 >> 0x20) * 2 + 3);
-  bVar18 = *pbVar22;
-  bVar16 = *pbVar22 + bVar23;
-  *pbVar22 = bVar16 + bVar19;
-  pcVar24 = (char *)((int)uVar17 + 0x57);
-  *pcVar24 = *pcVar24 + bVar20 + (CARRY1(bVar18,bVar23) || CARRY1(bVar16,bVar19));
+  uVar16 = func_?();
+  bVar17 = *(uint *)((int)&pVVar1[1].fields._._.m_CachedPtr + 3) <
+           (uint)((ulonglong)uVar16 >> 0x20);
+  pbVar18 = (byte *)(extraout_ECX + 0x57);
+  bVar19 = *pbVar18 + (byte)this_00;
+  bVar20 = CARRY1(*pbVar18,(byte)this_00) || CARRY1(bVar19,bVar17);
+  *pbVar18 = bVar19 + bVar17;
+  pbVar18 = (byte *)((int)&unaff_ESI[1].fields.objectPreviewerPrefab + 3);
+  bVar21 = (byte)((ulonglong)uVar16 >> 0x28);
+  bVar17 = CARRY1(*pbVar18,bVar21) || CARRY1(*pbVar18 + bVar21,bVar20);
+  *pbVar18 = *pbVar18 + bVar21 + bVar20;
+  pbVar18 = (byte *)((int)&this_00[-0x229fd32].fields._items + 1);
+  bVar19 = *pbVar18;
+  bVar22 = (byte)((ulonglong)uVar16 >> 0x20);
+  bVar23 = *pbVar18 + bVar22;
+  *pbVar18 = bVar23 + bVar17;
+  pcVar24 = (char *)((int)uVar16 + -0x33efbca9);
+  *pcVar24 = *pcVar24 + bVar21 + (CARRY1(bVar19,bVar22) || CARRY1(bVar23,bVar17));
   pcVar25 = (code *)swi(3);
-  pVStack_26 = pVVar1;
-  pTStack_2 = unaff_ESI;
   (*pcVar25)();
   return;
 }

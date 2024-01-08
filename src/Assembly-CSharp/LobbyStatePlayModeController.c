@@ -367,31 +367,36 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
                   (in_stack_5->fields).shouldUpdateFade = in_stack_6;
                   ChatControllerUGUI::ChatControllerUGUI_ChatFocusChanged
                             (in_stack_5,0,(MethodInfo *)0x0);
-                  bVar7 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession
-                                    ((MethodInfo *)0x0);
-                  pRVar1 = (in_stack_5->fields).inputAreaRoot;
-                  value = 0;
-                  if (bVar7 == 0) {
-                    value = in_stack_6 ^ 1;
-                  }
-                  if (pRVar1 != (RectTransform *)0x0) {
-                    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                             Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0);
-                    if (pGVar2 != (GameObject *)0x0) {
-                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                (pGVar2,value,(MethodInfo *)0x0);
-                      pRVar1 = (in_stack_5->fields).inputAreaDeactivated;
-                      if (pRVar1 != (RectTransform *)0x0) {
-                        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                 Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0);
-                        if (pGVar2 != (GameObject *)0x0) {
-                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                    (pGVar2,value ^ 1,(MethodInfo *)0x0);
-                          this_00 = (in_stack_5->fields).scrollRect;
-                          if (this_00 != (ScrollRect *)0x0) {
-                            UnityEngine.UI.dll::UnityEngine::UI::ScrollRect::
-                            ScrollRect_SetVerticalNormalizedPosition(this_00,0.0,(MethodInfo *)0x0);
-                            return;
+                  this_02 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer
+                                      ((MethodInfo *)0x0);
+                  if (this_02 != (MVLocalPlayer *)0x0) {
+                    bVar7 = MVLocalPlayer::MVLocalPlayer_get_IsChatLocked(this_02,(MethodInfo *)0x0)
+                    ;
+                    pRVar1 = (in_stack_5->fields).inputAreaRoot;
+                    value = 0;
+                    if (bVar7 == 0) {
+                      value = in_stack_6 ^ 1;
+                    }
+                    if (pRVar1 != (RectTransform *)0x0) {
+                      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                               Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0);
+                      if (pGVar2 != (GameObject *)0x0) {
+                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                                  (pGVar2,value,(MethodInfo *)0x0);
+                        pRVar1 = (in_stack_5->fields).inputAreaDeactivated;
+                        if (pRVar1 != (RectTransform *)0x0) {
+                          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                   Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0);
+                          if (pGVar2 != (GameObject *)0x0) {
+                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                            GameObject_SetActive(pGVar2,value ^ 1,(MethodInfo *)0x0);
+                            this_00 = (in_stack_5->fields).scrollRect;
+                            if (this_00 != (ScrollRect *)0x0) {
+                              UnityEngine.UI.dll::UnityEngine::UI::ScrollRect::
+                              ScrollRect_SetVerticalNormalizedPosition
+                                        (this_00,0.0,(MethodInfo *)0x0);
+                              return;
+                            }
                           }
                         }
                       }

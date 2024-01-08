@@ -225,13 +225,13 @@ code_?:
     }
   }
 code_?:
-  func_?();
   uVar15 = func_?();
-  *(char *)(uVar15 + 0xcc103d9f) =
-       *(char *)(uVar15 + 0xcc103d9f) + (char)uVar15 + (uVar15 < 0x3d9d7010);
-  pcVar16 = (code *)swi(3);
-  bVar17 = (*pcVar16)();
-  return bVar17;
+  pcVar16 = (char *)uVar15;
+  *(char *)((int)((ulonglong)uVar15 >> 0x20) + -0x638fefc3) = (char)&stack0xfffffffc;
+  *pcVar16 = *pcVar16 + (char)((ulonglong)uVar15 >> 8) + (pcVar16 < (char *)0x3d9e1010);
+  pcVar17 = (code *)swi(3);
+  bVar18 = (*pcVar17)();
+  return bVar18;
 }
 
 

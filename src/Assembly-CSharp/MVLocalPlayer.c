@@ -929,6 +929,28 @@ bool Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_IsAdmin
 }
 
 
+/* Boolean get_IsChatLocked() */
+
+bool Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_IsChatLocked
+               (MVLocalPlayer *this,MethodInfo *method)
+
+{
+  puStack_1 = &stack0xfffffffc;
+  if ((this->fields)._._ProfileID_k__BackingField == 0) {
+    return 1;
+  }
+  pUVar2 = (this->fields)._._UserProfileData_k__BackingField;
+  if (pUVar2 != (UserProfileData *)0x0) {
+    return (pUVar2->fields).IsUnderAge;
+  }
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
+}
+
+
 /* MVLocalPlayer+PlanetOwnershipType get_PlanetOwnership() */
 
 MVLocalPlayer_PlanetOwnershipType__Enum

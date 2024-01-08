@@ -47,7 +47,7 @@ bool Assembly-CSharp.dll::HealthbarLerp+<LerpProgress>d__10::
   if (_UNK_? <= fVar4) {
 code_?:
     this = (HealthbarLerp_LerpProgress_d_10 *)0x0;
-    pOVar3 = (Object *)func_?(TypeInfo__System__Int32);
+    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
     (pHVar1->fields).__2__current = pOVar3;
     func_?(&(pHVar1->fields).__2__current,pOVar3);
     (pHVar1->fields).__1__state = 3;
@@ -72,7 +72,7 @@ code_?:
          (pPVar7 = (pHVar2->fields).targetProgressBar, pPVar7 != (ProgressBar *)0x0)) {
         if ((pPVar7->fields).progress < (pPVar5->fields).progress) {
           this = (HealthbarLerp_LerpProgress_d_10 *)0x0;
-          pOVar3 = (Object *)func_?(TypeInfo__System__Int32);
+          pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
           (pHVar1->fields).__2__current = pOVar3;
           func_?(&(pHVar1->fields).__2__current,pOVar3);
           (pHVar1->fields).__1__state = 2;
@@ -84,17 +84,19 @@ code_?:
   }
 code_?:
   bVar8 = 0;
-  func_?();
-  pbVar9 = (byte *)(CONCAT31(unaff_retaddr,0x10) + 0x42 + unaff_EBX * 2);
-  bVar10 = *pbVar9;
-  bVar11 = *pbVar9;
-  *pbVar9 = bVar11 + extraout_CL + bVar8;
-  pcVar12 = (char *)((int)&pHVar1[-0x134a7e7].monitor + 3);
-  *pcVar12 = *pcVar12 + (char)((uint)(extraout_EDX + 1) >> 8) +
-            (CARRY1(bVar10,extraout_CL) || CARRY1(bVar11 + extraout_CL,bVar8));
-  pcVar13 = (code *)swi(3);
-  bVar14 = (*pcVar13)();
-  return bVar14;
+  uVar9 = func_?();
+  bVar10 = (byte)((ushort)uVar9 >> 8);
+  bVar11 = CARRY1(bVar10,(byte)unaff_EBX) || CARRY1(bVar10 + (byte)unaff_EBX,bVar8);
+  pHVar1 = pHVar1 + 4;
+  bVar10 = *(byte *)&pHVar1->klass;
+  bVar8 = *(char *)&pHVar1->klass + (byte)uVar9;
+  *(byte *)&pHVar1->klass = bVar8 + bVar11;
+  *(char *)(unaff_EBX + 0x61) =
+       *(char *)(unaff_EBX + 0x61) + (char)((uint)(extraout_EDX + 2) >> 8) +
+       (CARRY1(bVar10,(byte)uVar9) || CARRY1(bVar8,bVar11));
+  pcVar12 = (code *)swi(3);
+  bVar13 = (*pcVar12)();
+  return bVar13;
 }
 
 

@@ -7,7 +7,7 @@ void Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_ExecuteRuntim
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Func<unsigned_char,_MV::WorldObject::PhysicalProperties>);
-    func_?(0x6858);
+    func_?(0x7860);
     cRam_? = '\x01';
   }
   if (explosion != (ExplosionEvent *)0x0) {
@@ -132,7 +132,7 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_HandleEvent_1
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Func<unsigned_char,_MV::WorldObject::PhysicalProperties>);
-    func_?(0x6858);
+    func_?(0x7860);
     cRam_? = '\x01';
   }
   if (explosion != (ExplosionEvent *)0x0) {
@@ -364,7 +364,7 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_SendRemoveOne
         }
       }
       if ((this_00->fields)._._.type == 8) {
-        voxelHit.face._0_2_ = 0x409a;
+        voxelHit.face._0_2_ = 0x40ea;
         voxelHit.face._2_2_ = 0x1055;
         worldPos.y = fVar8;
         worldPos.x = (float)&stack0xffffffe8;
@@ -449,7 +449,7 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_SendRemoveOne
                          MethodInfo__MVMaterialRepository__GetMaterialPhysicalProperties_unsigned_char_
                          ,(MethodInfo *)0x0);
               CVar17 = RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_CanRemoveCube
-                                ((CubeBase *)CONCAT22(uStack_7,uVar6),4.2057637e-29,this_01,
+                                ((CubeBase *)CONCAT22(uStack_7,uVar6),4.2057877e-29,this_01,
                                  (MethodInfo *)0x0);
               if (CVar17 == CubeDamageState__Enum_NoDamage) {
                 return 0;

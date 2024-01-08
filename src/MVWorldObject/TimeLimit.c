@@ -46,41 +46,42 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
                    );
     cRam_? = '\x01';
   }
+  pTVar1 = this;
   switch((this->fields).counterType) {
   case 1:
-    pGVar1 = (this->fields)._.gameCounterManager;
-    if ((pGVar1 != (GameStatCounterManager *)0x0) &&
-       (pHVar2 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
-                           (pGVar1,(MethodInfo *)0x0),
-       pHVar2 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
-      pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                         (pGVar1,GameStatCounterType__Enum_Kill,1 < (pHVar2->fields)._count,
+    pGVar2 = (this->fields)._.gameCounterManager;
+    if ((pGVar2 != (GameStatCounterManager *)0x0) &&
+       (pHVar3 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
+                           (pGVar2,(MethodInfo *)0x0),
+       pHVar3 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
+      pHVar4 = GameStatCounterManager::GameStatCounterManager_GetHighScores
+                         (pGVar2,GameStatCounterType__Enum_Kill,1 < (pHVar3->fields)._count,
                           WinningConditionPresentStyle__Enum_OneWinner,0,(MethodInfo *)0x0);
-      return pHVar3;
+      return pHVar4;
     }
     break;
   case 2:
-    pGVar1 = (this->fields)._.gameCounterManager;
-    if ((pGVar1 != (GameStatCounterManager *)0x0) &&
-       (pHVar2 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
-                           (pGVar1,(MethodInfo *)0x0),
-       pHVar2 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
-      pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                         (pGVar1,GameStatCounterType__Enum_Flag,1 < (pHVar2->fields)._count,
+    pGVar2 = (this->fields)._.gameCounterManager;
+    if ((pGVar2 != (GameStatCounterManager *)0x0) &&
+       (pHVar3 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
+                           (pGVar2,(MethodInfo *)0x0),
+       pHVar3 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
+      pHVar4 = GameStatCounterManager::GameStatCounterManager_GetHighScores
+                         (pGVar2,GameStatCounterType__Enum_Flag,1 < (pHVar3->fields)._count,
                           WinningConditionPresentStyle__Enum_OneWinner,0,(MethodInfo *)0x0);
-      return pHVar3;
+      return pHVar4;
     }
     break;
   case 3:
-    pGVar1 = (this->fields)._.gameCounterManager;
-    if ((pGVar1 != (GameStatCounterManager *)0x0) &&
-       (pHVar2 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
-                           (pGVar1,(MethodInfo *)0x0),
-       pHVar2 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
-      pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                         (pGVar1,GameStatCounterType__Enum_Collectible,1 < (pHVar2->fields)._count,
+    pGVar2 = (this->fields)._.gameCounterManager;
+    if ((pGVar2 != (GameStatCounterManager *)0x0) &&
+       (pHVar3 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
+                           (pGVar2,(MethodInfo *)0x0),
+       pHVar3 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
+      pHVar4 = GameStatCounterManager::GameStatCounterManager_GetHighScores
+                         (pGVar2,GameStatCounterType__Enum_Collectible,1 < (pHVar3->fields)._count,
                           WinningConditionPresentStyle__Enum_OneWinner,0,(MethodInfo *)0x0);
-      return pHVar3;
+      return pHVar4;
     }
     break;
   default:
@@ -90,9 +91,10 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
                      );
       cRam_? = '\x01';
     }
-    pGVar1 = (this->fields)._.gameCounterManager;
+    unaff_EBX = (this->fields)._.gameCounterManager;
     this = (TimeLimit *)CONCAT31(this._1_3_,(this->fields)._.gameStatCounterType);
-    if (pGVar1 != (GameStatCounterManager *)0x0) {
+    pTVar1 = (TimeLimit *)0x0;
+    if (unaff_EBX != (GameStatCounterManager *)0x0) {
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>__HashSet_System__Collections__Generic__IEnumerable<MV::WorldObject::MVTeam>_
@@ -100,52 +102,70 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
         func_?(&TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>);
         cRam_? = '\x01';
       }
-      pHVar2 = (pGVar1->fields).activeTeams;
+      pTVar1 = (TimeLimit *)(unaff_EBX->fields).activeTeams;
       this_00 = (HashSet_1_System_Int32Enum_ *)
                 func_?(
                                TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>
                                );
       System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
       HashSet_1_System_Int32Enum___ctor_1
-                (this_00,(IEnumerable_1_System_Int32Enum_ *)pHVar2,
+                (this_00,(IEnumerable_1_System_Int32Enum_ *)pTVar1,
                  MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>__HashSet_System__Collections__Generic__IEnumerable<MV::WorldObject::MVTeam>_
                 );
       if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
-        pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                           (pGVar1,(GameStatCounterType__Enum)this,1 < (this_00->fields)._count,
+        pHVar4 = GameStatCounterManager::GameStatCounterManager_GetHighScores
+                           (unaff_EBX,(GameStatCounterType__Enum)this,1 < (this_00->fields)._count,
                             WinningConditionPresentStyle__Enum_MultipleWinners,0,(MethodInfo *)0x0);
-        return pHVar3;
+        return pHVar4;
       }
     }
     break;
   case 6:
-    pGVar1 = (this->fields)._.gameCounterManager;
-    if ((pGVar1 != (GameStatCounterManager *)0x0) &&
-       (pHVar2 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
-                           (pGVar1,(MethodInfo *)0x0),
-       pHVar2 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
-      pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                         (pGVar1,GameStatCounterType__Enum_OculusKill,1 < (pHVar2->fields)._count,
+    pGVar2 = (this->fields)._.gameCounterManager;
+    if ((pGVar2 != (GameStatCounterManager *)0x0) &&
+       (pHVar3 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
+                           (pGVar2,(MethodInfo *)0x0),
+       pHVar3 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
+      pHVar4 = GameStatCounterManager::GameStatCounterManager_GetHighScores
+                         (pGVar2,GameStatCounterType__Enum_OculusKill,1 < (pHVar3->fields)._count,
                           WinningConditionPresentStyle__Enum_OneWinner,0,(MethodInfo *)0x0);
-      return pHVar3;
+      return pHVar4;
     }
     break;
   case 8:
-    pGVar1 = (this->fields)._.gameCounterManager;
-    if ((pGVar1 != (GameStatCounterManager *)0x0) &&
-       (pHVar2 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
-                           (pGVar1,(MethodInfo *)0x0),
-       pHVar2 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
-      pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                         (pGVar1,GameStatCounterType__Enum_TimeAttackFlag,
-                          1 < (pHVar2->fields)._count,WinningConditionPresentStyle__Enum_OneWinner,0
+    pGVar2 = (this->fields)._.gameCounterManager;
+    if ((pGVar2 != (GameStatCounterManager *)0x0) &&
+       (pHVar3 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
+                           (pGVar2,(MethodInfo *)0x0),
+       pHVar3 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
+      pHVar4 = GameStatCounterManager::GameStatCounterManager_GetHighScores
+                         (pGVar2,GameStatCounterType__Enum_TimeAttackFlag,
+                          1 < (pHVar3->fields)._count,WinningConditionPresentStyle__Enum_OneWinner,0
                           ,(MethodInfo *)0x0);
-      return pHVar3;
+      return pHVar4;
     }
   }
+  bVar5 = 0;
+  uVar6 = 0x10dc;
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  iVar7 = CONCAT22(uVar6,in_CS);
+  func_?();
+  bVar8 = *extraout_EDX;
+  bVar9 = (byte)unaff_EBX;
+  bVar10 = *extraout_EDX;
+  *extraout_EDX = bVar10 + bVar9 + bVar5;
+  sVar11 = (short)unaff_EBX;
+  sVar12 = (short)pTVar1;
+  segment(in_DS,sVar11 + sVar12);
+  segment(in_DS,sVar11 + sVar12);
+  segment(in_DS,sVar11 + sVar12);
+  *(char *)(iVar7 + -0x33ef2399) =
+       *(char *)(iVar7 + -0x33ef2399) + bVar9 +
+       (CARRY1((byte)extraout_EDX,bVar9) ||
+       CARRY1((byte)extraout_EDX + bVar9,CARRY1(bVar8,bVar9) || CARRY1(bVar10 + bVar9,bVar5)));
+  pcVar13 = (code *)swi(3);
+  pHVar4 = (HighScores *)(*pcVar13)();
+  return pHVar4;
 }
 
 
@@ -176,41 +196,42 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
                    );
     cRam_? = '\x01';
   }
+  pTVar1 = this;
   switch((this->fields).counterType) {
   case 1:
-    pGVar1 = (this->fields)._.gameCounterManager;
-    if ((pGVar1 != (GameStatCounterManager *)0x0) &&
-       (pHVar2 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
-                           (pGVar1,(MethodInfo *)0x0),
-       pHVar2 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
-      pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                         (pGVar1,GameStatCounterType__Enum_Kill,1 < (pHVar2->fields)._count,
+    pGVar2 = (this->fields)._.gameCounterManager;
+    if ((pGVar2 != (GameStatCounterManager *)0x0) &&
+       (pHVar3 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
+                           (pGVar2,(MethodInfo *)0x0),
+       pHVar3 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
+      pHVar4 = GameStatCounterManager::GameStatCounterManager_GetHighScores
+                         (pGVar2,GameStatCounterType__Enum_Kill,1 < (pHVar3->fields)._count,
                           WinningConditionPresentStyle__Enum_OneWinner,0,(MethodInfo *)0x0);
-      return pHVar3;
+      return pHVar4;
     }
     break;
   case 2:
-    pGVar1 = (this->fields)._.gameCounterManager;
-    if ((pGVar1 != (GameStatCounterManager *)0x0) &&
-       (pHVar2 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
-                           (pGVar1,(MethodInfo *)0x0),
-       pHVar2 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
-      pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                         (pGVar1,GameStatCounterType__Enum_Flag,1 < (pHVar2->fields)._count,
+    pGVar2 = (this->fields)._.gameCounterManager;
+    if ((pGVar2 != (GameStatCounterManager *)0x0) &&
+       (pHVar3 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
+                           (pGVar2,(MethodInfo *)0x0),
+       pHVar3 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
+      pHVar4 = GameStatCounterManager::GameStatCounterManager_GetHighScores
+                         (pGVar2,GameStatCounterType__Enum_Flag,1 < (pHVar3->fields)._count,
                           WinningConditionPresentStyle__Enum_OneWinner,0,(MethodInfo *)0x0);
-      return pHVar3;
+      return pHVar4;
     }
     break;
   case 3:
-    pGVar1 = (this->fields)._.gameCounterManager;
-    if ((pGVar1 != (GameStatCounterManager *)0x0) &&
-       (pHVar2 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
-                           (pGVar1,(MethodInfo *)0x0),
-       pHVar2 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
-      pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                         (pGVar1,GameStatCounterType__Enum_Collectible,1 < (pHVar2->fields)._count,
+    pGVar2 = (this->fields)._.gameCounterManager;
+    if ((pGVar2 != (GameStatCounterManager *)0x0) &&
+       (pHVar3 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
+                           (pGVar2,(MethodInfo *)0x0),
+       pHVar3 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
+      pHVar4 = GameStatCounterManager::GameStatCounterManager_GetHighScores
+                         (pGVar2,GameStatCounterType__Enum_Collectible,1 < (pHVar3->fields)._count,
                           WinningConditionPresentStyle__Enum_OneWinner,0,(MethodInfo *)0x0);
-      return pHVar3;
+      return pHVar4;
     }
     break;
   default:
@@ -220,9 +241,10 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
                      );
       cRam_? = '\x01';
     }
-    pGVar1 = (this->fields)._.gameCounterManager;
+    unaff_EBX = (this->fields)._.gameCounterManager;
     this = (TimeLimit *)CONCAT31(this._1_3_,(this->fields)._.gameStatCounterType);
-    if (pGVar1 != (GameStatCounterManager *)0x0) {
+    pTVar1 = (TimeLimit *)0x0;
+    if (unaff_EBX != (GameStatCounterManager *)0x0) {
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>__HashSet_System__Collections__Generic__IEnumerable<MV::WorldObject::MVTeam>_
@@ -230,51 +252,69 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
         func_?(&TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>);
         cRam_? = '\x01';
       }
-      pHVar2 = (pGVar1->fields).activeTeams;
+      pTVar1 = (TimeLimit *)(unaff_EBX->fields).activeTeams;
       this_00 = (HashSet_1_System_Int32Enum_ *)
                 func_?(
                                TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>
                                );
       System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
       HashSet_1_System_Int32Enum___ctor_1
-                (this_00,(IEnumerable_1_System_Int32Enum_ *)pHVar2,
+                (this_00,(IEnumerable_1_System_Int32Enum_ *)pTVar1,
                  MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>__HashSet_System__Collections__Generic__IEnumerable<MV::WorldObject::MVTeam>_
                 );
       if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
-        pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                           (pGVar1,(GameStatCounterType__Enum)this,1 < (this_00->fields)._count,
+        pHVar4 = GameStatCounterManager::GameStatCounterManager_GetHighScores
+                           (unaff_EBX,(GameStatCounterType__Enum)this,1 < (this_00->fields)._count,
                             WinningConditionPresentStyle__Enum_MultipleWinners,0,(MethodInfo *)0x0);
-        return pHVar3;
+        return pHVar4;
       }
     }
     break;
   case 6:
-    pGVar1 = (this->fields)._.gameCounterManager;
-    if ((pGVar1 != (GameStatCounterManager *)0x0) &&
-       (pHVar2 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
-                           (pGVar1,(MethodInfo *)0x0),
-       pHVar2 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
-      pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                         (pGVar1,GameStatCounterType__Enum_OculusKill,1 < (pHVar2->fields)._count,
+    pGVar2 = (this->fields)._.gameCounterManager;
+    if ((pGVar2 != (GameStatCounterManager *)0x0) &&
+       (pHVar3 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
+                           (pGVar2,(MethodInfo *)0x0),
+       pHVar3 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
+      pHVar4 = GameStatCounterManager::GameStatCounterManager_GetHighScores
+                         (pGVar2,GameStatCounterType__Enum_OculusKill,1 < (pHVar3->fields)._count,
                           WinningConditionPresentStyle__Enum_OneWinner,0,(MethodInfo *)0x0);
-      return pHVar3;
+      return pHVar4;
     }
     break;
   case 8:
-    pGVar1 = (this->fields)._.gameCounterManager;
-    if ((pGVar1 != (GameStatCounterManager *)0x0) &&
-       (pHVar2 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
-                           (pGVar1,(MethodInfo *)0x0),
-       pHVar2 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
-      pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                         (pGVar1,GameStatCounterType__Enum_TimeAttackFlag,
-                          1 < (pHVar2->fields)._count,WinningConditionPresentStyle__Enum_OneWinner,0
+    pGVar2 = (this->fields)._.gameCounterManager;
+    if ((pGVar2 != (GameStatCounterManager *)0x0) &&
+       (pHVar3 = GameStatCounterManager::GameStatCounterManager_get_ActiveTeams
+                           (pGVar2,(MethodInfo *)0x0),
+       pHVar3 != (HashSet_1_MV_WorldObject_MVTeam_ *)0x0)) {
+      pHVar4 = GameStatCounterManager::GameStatCounterManager_GetHighScores
+                         (pGVar2,GameStatCounterType__Enum_TimeAttackFlag,
+                          1 < (pHVar3->fields)._count,WinningConditionPresentStyle__Enum_OneWinner,0
                           ,(MethodInfo *)0x0);
-      return pHVar3;
+      return pHVar4;
     }
   }
+  bVar5 = 0;
+  uVar6 = 0x10dc;
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  iVar7 = CONCAT22(uVar6,in_CS);
+  func_?();
+  bVar8 = *extraout_EDX;
+  bVar9 = (byte)unaff_EBX;
+  bVar10 = *extraout_EDX;
+  *extraout_EDX = bVar10 + bVar9 + bVar5;
+  sVar11 = (short)unaff_EBX;
+  sVar12 = (short)pTVar1;
+  segment(in_DS,sVar11 + sVar12);
+  segment(in_DS,sVar11 + sVar12);
+  segment(in_DS,sVar11 + sVar12);
+  *(char *)(iVar7 + -0x33ef2399) =
+       *(char *)(iVar7 + -0x33ef2399) + bVar9 +
+       (CARRY1((byte)extraout_EDX,bVar9) ||
+       CARRY1((byte)extraout_EDX + bVar9,CARRY1(bVar8,bVar9) || CARRY1(bVar10 + bVar9,bVar5)));
+  pcVar13 = (code *)swi(3);
+  pHVar4 = (HighScores *)(*pcVar13)();
+  return pHVar4;
 }
 

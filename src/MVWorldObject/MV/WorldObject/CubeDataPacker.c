@@ -663,7 +663,7 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker__cctor(M
     func_?(&
                     TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>
                    );
-    func_?(&__method0x60003ee_1_Field);
+    func_?(&__method0x60003f0_1_Field);
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
@@ -2135,7 +2135,7 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker__cctor(M
       func_?();
       array = (Byte__Array *)func_?();
       mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
-      RuntimeHelpers_InitializeArray_1((Array *)array,___method0x60003ee_1_Field,(MethodInfo *)0x0);
+      RuntimeHelpers_InitializeArray_1((Array *)array,___method0x60003f0_1_Field,(MethodInfo *)0x0);
       TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->IdentityByteCorners = array;
       func_?();
       TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->rowMaxLength = 0x3f;

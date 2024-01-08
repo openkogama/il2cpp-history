@@ -310,8 +310,10 @@ code_?:
   if (pTVar3 == (TierOnDeathProgress *)0x0) {
 code_?:
     func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    bVar21 = (**(code **)(extraout_EDX + -0x5370efbd))();
+    return bVar21;
   }
 code_?:
   (pTVar3->fields)._IsShowingTierProgress_k__BackingField = 0;

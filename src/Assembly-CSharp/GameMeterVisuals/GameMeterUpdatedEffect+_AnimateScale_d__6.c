@@ -38,7 +38,6 @@ bool Assembly-CSharp.dll::GameMeterVisuals::GameMeterUpdatedEffect+<AnimateScale
   if (pGVar2 != (GameMeterUpdatedEffect *)0x0) {
     fVar3 = (pGVar2->fields).scaleTime;
     pfVar4 = &(pGVar1->fields)._i_5__2;
-    in_AF = 0;
     pRVar5 = (pGVar2->fields).scaleTarget;
     if (fVar3 < *pfVar4 || fVar3 == *pfVar4) {
       if (pRVar5 != (RectTransform *)0x0) {
@@ -65,7 +64,6 @@ bool Assembly-CSharp.dll::GameMeterVisuals::GameMeterUpdatedEffect+<AnimateScale
 code_?:
           fVar3 = (pGVar2->fields).scaleTime;
           pfVar4 = &(pGVar1->fields)._i_5__2;
-          in_AF = 0;
           pRVar5 = (pGVar2->fields).scaleTarget;
           if (fVar3 < *pfVar4 || fVar3 == *pfVar4) {
             if ((pRVar5 != (RectTransform *)0x0) &&
@@ -132,39 +130,26 @@ code_?:
     }
   }
 code_?:
-  pGVar16 = (GameMeterUpdatedEffect__Class *)func_?();
-  ppMVar17 = &pGVar2->monitor;
-  bVar18 = pGVar16 < pGVar2->klass;
-  iRam_? = CONCAT31((int3)((uint)pGVar16 >> 8),uRam_?);
-  pbVar19 = (byte *)(iRam_? + -0x64efb65e);
-  bVar20 = *pbVar19;
-  bVar21 = (byte)((uint)pGVar16 >> 8);
-  bVar22 = *pbVar19 + bVar21;
-  *pbVar19 = bVar22 + bVar18;
-  bVar23 = *pbVar19;
-  bVar24 = *pbVar19;
-  bVar25 = *pbVar19;
-  bVar26 = *(byte *)ppMVar17;
-  *(byte *)ppMVar17 = bVar26 << 1 | (CARRY1(bVar20,bVar21) || CARRY1(bVar22,bVar18));
-  bVar18 = (bVar26 & 0x80) != 0;
-  this_00 = (NotSupportedException *)
-            func_?((uint)(in_NT & 1) * 0x4000 |
-                            (uint)(bVar18 != *(char *)ppMVar17 < '\0') * 0x800 |
-                            (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 |
-                            (uint)((char)bVar23 < '\0') * 0x80 | (uint)(bVar24 == 0) * 0x40 |
-                            (uint)(in_AF & 1) * 0x10 | (uint)((POPCOUNT(bVar25) & 1U) == 0) * 4 |
-                            (uint)bVar18 | (uint)(in_ID & 1) * 0x200000 |
-                            (uint)(in_VIP & 1) * 0x100000 | (uint)(in_VIF & 1) * 0x80000 |
-                            (uint)(in_AC & 1) * 0x40000);
+  bVar16 = 0;
+  iVar17 = func_?();
+  from_bcd(*(unkbyte10 *)(iVar17 + -0x5f10efb7));
+  bVar18 = (byte)iVar17 + extraout_DL;
+  cRam_? = bVar18 + bVar16;
+  *(byte *)&pGVar1[4].fields.__1__state =
+       (char)pGVar1[4].fields.__1__state + extraout_DL +
+       (CARRY1((byte)iVar17,extraout_DL) || CARRY1(bVar18,bVar16));
+  pcVar19 = (code *)swi(0xff);
+  uVar20 = (*pcVar19)();
+  this_00 = (NotSupportedException *)func_?(uVar20);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   VStack_10.x = (float)func_?(&
                                        MethodInfo__GameMeterVisuals__GameMeterUpdatedEffect___AnimateScale_d__6__System_Collections_IEnumerator_Reset__
                                       );
   func_?(this_00);
-  pcVar27 = (code *)swi(3);
-  bVar28 = (*pcVar27)();
-  return bVar28;
+  pcVar19 = (code *)swi(3);
+  bVar21 = (*pcVar19)();
+  return bVar21;
 }
 
 

@@ -144,6 +144,7 @@ code_?:
     return (Dictionary_2_System_Object_System_Object_ *)0x0;
   }
   func_?();
+  func_?();
   pcVar9 = (code *)swi(3);
   pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar9)();
   return pDVar1;

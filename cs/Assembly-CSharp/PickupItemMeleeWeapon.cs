@@ -18,6 +18,7 @@ public class PickupItemMeleeWeapon : PickupItemEditable
 	[SerializeField]
 	private MeleeWeaponAnimationEventHandler animationEventHandler;
 	private IEnumerator checkHitCoroutine;
+	private bool isUnequipped;
 
 	// Properties
 	public override AvatarItemType Type { get; }
@@ -41,7 +42,7 @@ public class PickupItemMeleeWeapon : PickupItemEditable
 	}
 
 	[CompilerGenerated]
-	private sealed class _CheckHitCoroutine_d__24 : IEnumerator<object>
+	private sealed class _CheckHitCoroutine_d__25 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -55,7 +56,7 @@ public class PickupItemMeleeWeapon : PickupItemEditable
 
 		// Constructors
 		[DebuggerHidden]
-		public _CheckHitCoroutine_d__24(int __1__state);
+		public _CheckHitCoroutine_d__25(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -73,13 +74,14 @@ public class PickupItemMeleeWeapon : PickupItemEditable
 	protected override void SetConfiguration(Dictionary<object, object> itemData);
 	public override void OnStateChanged(Dictionary<object, object> newState);
 	protected override void OnFire(bool isLocal);
-	[IteratorStateMachine(typeof(_CheckHitCoroutine_d__24))]
+	[IteratorStateMachine(typeof(_CheckHitCoroutine_d__25))]
 	private IEnumerator CheckHitCoroutine(bool isLocal);
 	private void CheckHit(bool isLocal);
 	protected override void OnHit(List<VoxelHit> voxelHits, Ray lineOfFire);
 	public override void UpdateWithDirection(Vector3 dir);
 	private void OnValidate();
 	public override bool IsSameItemData(Dictionary<object, object> itemData);
+	public override void OnUnequip();
 	protected override void InterruptFire();
 }
 

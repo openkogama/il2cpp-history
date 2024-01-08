@@ -226,8 +226,7 @@ code_?:
   uVar2 = func_?(&
                            MethodInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingsFactory__KogamaSettingValueFactoryAttributeSettings_System__Collections__Generic__KeyValuePair<System::Object,_System::Object>__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase_
                           );
-  uVar2 = func_?(this_01,uVar2);
-  out(0x51,CONCAT31((int3)((uint)uVar2 >> 8),(char)uVar2 + -0x51));
+  func_?(this_01,uVar2);
   pcVar14 = (code *)swi(3);
   pKVar15 = (KogamaSettingValueWrapperBase *)(*pcVar14)();
   return pKVar15;

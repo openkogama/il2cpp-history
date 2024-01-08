@@ -607,12 +607,11 @@ code_?:
 code_?:
   CStack_7.g = (float)&UNK_?;
   func_?();
-  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + 'l';
-  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + -0x77;
-  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + -0x5a;
-  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + -0x24;
-  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + -0x3d;
-  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + -0x34;
+  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + -7;
+  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + '\x16';
+  *(int *)(unaff_EBX + 0x10) = *(int *)(unaff_EBX + 0x10) + 0x4c;
+  *(int *)(unaff_EBX + 0x10) = *(int *)(unaff_EBX + 0x10) + 0x33;
+  *(int *)(unaff_EBX + 0x10) = *(int *)(unaff_EBX + 0x10) + -0x34;
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
   return;
