@@ -159,7 +159,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Initializ
       this_06 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)0x161,(MethodInfo *)0x0);
       if (this_06 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_06,1,(MethodInfo *)0x0);
-        pRVar1 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)0x8b00ff90,UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__);
+        pRVar1 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)0x8b00ff94,UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__);
         if (pRVar1 != (Renderer *)0x0) {
           _UNK_? = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material(pRVar1,(MethodInfo *)0x0);
                     /* WARNING: Read-only address (ram,0xADDR) is written */

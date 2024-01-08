@@ -17,12 +17,12 @@ public class ChatControllerUGUI : MonoBehaviour
 {
 	// Fields
 	private bool waitForLocalPlayerReady;
-	private const string adminMessageFormat = "<color=#{0}>{1}</color>";
-	private const string chatMessageFromFriend = "<color=#{0}>[{1}]: </color><color=#{2}>{3}</color>";
-	private const string chatMessageFormat = "<color=#{0}>[{1}]: </color><color=#{2}>{3}</color>";
-	private const string teamMessageFormat = "<color=#{0}>[{1}] </color><color=#{2}>{3}: </color><color=#{4}>{5}</color>";
-	private const string sayMessageFormat = "<color=#{0}>[{1}] </color><color=#{2}>{3}: </color><color=#{4}>{5}</color>";
-	private const string warningMessageFormat = "<color=#{0}>{1}</color>";
+	private const string AdminMessageFormat = "<color=#{0}>{1}</color>";
+	private const string ChatMessageFromFriend = "<color=#{0}>[{1}]: </color><color=#{2}>{3}</color>";
+	private const string ChatMessageFormat = "<color=#{0}>[{1}]: </color><color=#{2}>{3}</color>";
+	private const string TeamMessageFormat = "<color=#{0}>[{1}] </color><color=#{2}>{3}: </color><color=#{4}>{5}</color>";
+	private const string SayMessageFormat = "<color=#{0}>[{1}] </color><color=#{2}>{3}: </color><color=#{4}>{5}</color>";
+	private const string WarningMessageFormat = "<color=#{0}>{1}</color>";
 	private bool shouldUpdateFade;
 	private float startTime;
 	private const float timeBeforeFade = 10f;
@@ -31,7 +31,7 @@ public class ChatControllerUGUI : MonoBehaviour
 	private bool currentlyInLobbyState;
 	private const float sayHearingDistance = 15f;
 	private const int maxLineCount = 50;
-	private Queue<UnityEngine.UI.Text> lines;
+	private readonly Queue<UnityEngine.UI.Text> lines;
 	[SerializeField]
 	private ScrollRect scrollRect;
 	[SerializeField]
@@ -99,6 +99,6 @@ public class ChatControllerUGUI : MonoBehaviour
 	private void OnEnable();
 	private void OnDestroy();
 	[CompilerGenerated]
-	private void _Start_b__35_0(IShortcutKeyRegister x, BaseEventData y);
+	private void _Start_b__35_0(IShortcutKeyRegister x, BaseEventData _);
 }
 

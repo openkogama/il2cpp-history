@@ -1719,10 +1719,10 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase(Ga
             }
             pPVar4 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
             if ((pPVar4 != (PlayerPlanetData *)0x0) && (pPVar5 = TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator, pPVar5 != (PlayerTierStateCalculator *)0x0)) {
-              this = (GamePassesShop *)CONCAT31(0x10415d,(pPVar4->fields).gamePassTier);
+              this = (GamePassesShop *)CONCAT31(0x10415e,(pPVar4->fields).gamePassTier);
               pDVar6 = MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalculator::PlayerTierStateCalculator_GetTierPricingState(pPVar5,0,(GamePassTier__Enum)this,(MethodInfo *)0x0);
               if (pDVar6 != (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)0x0) {
-                this = (GamePassesShop *)CONCAT31(0x10415d,(pGVar1->fields).gamePassTierDisplayed);
+                this = (GamePassesShop *)CONCAT31(0x10415e,(pGVar1->fields).gamePassTierDisplayed);
                 pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar6,(ByteEnum__Enum)this,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_);
                 if (pOVar7 != (Object *)0x0) {
                   str0 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
@@ -2281,7 +2281,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowPurchaseConfirmPopu
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     pOVar1 = value[1].klass;
-    this = (GamePassesShop *)CONCAT31(0x104169,(this->fields).gamePassTierDisplayed);
+    this = (GamePassesShop *)CONCAT31(0x10416a,(this->fields).gamePassTierDisplayed);
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)object,MethodInfo__GamePassesShop__OnSuccessfulPurchase__,(MethodInfo *)0x0);
     if (pOVar1 != (Object__Class *)0x0) {

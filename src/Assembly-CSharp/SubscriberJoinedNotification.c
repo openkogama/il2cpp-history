@@ -159,7 +159,7 @@ void Assembly-CSharp.dll::SubscriberJoinedNotification::SubscriberJoinedNotifica
     if (pGVar2 == (GameObject *)0x0) {
 code_?:
       func_?();
-      *extraout_ECX = *extraout_ECX + (char)extraout_ECX;
+      *(char *)(extraout_ECX + -0x3e) = *(char *)(extraout_ECX + -0x3e) + unaff_BL + 0x46 + (0xb9 < unaff_BL);
       return;
     }
     bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf(pGVar2,(MethodInfo *)0x0);
@@ -393,7 +393,7 @@ void Assembly-CSharp.dll::SubscriberJoinedNotification::SubscriberJoinedNotifica
     if (pGVar2 == (GameObject *)0x0) {
 code_?:
       func_?();
-      *extraout_ECX = *extraout_ECX + (char)extraout_ECX;
+      *(char *)(extraout_ECX + -0x3e) = *(char *)(extraout_ECX + -0x3e) + unaff_BL + 0x46 + (0xb9 < unaff_BL);
       return;
     }
     bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf(pGVar2,(MethodInfo *)0x0);

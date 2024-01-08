@@ -73,10 +73,10 @@ IEnumerator * Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__24);
+    func_?(&TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__25);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__24;
+  method_00 = TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__25;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[2].klass = (Object__Class *)this;
@@ -518,7 +518,7 @@ code_?:
     func_?();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__24;
+  method_00 = TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__25;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[1].klass = (Object__Class *)0x0;
@@ -805,6 +805,18 @@ code_?:
   func_?();
   pcVar12 = (code *)swi(3);
   (*pcVar12)();
+  return;
+}
+
+
+/* Void OnUnequip() */
+
+void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnUnequip(PickupItemMeleeWeapon *this,MethodInfo *method)
+
+{
+  pPVar1 = this->klass;
+  (this->fields).isUnequipped = 1;
+  (*(code *)(pPVar1->vtable).InterruptFire.method)(this,pPVar1[1]._0.image);
   return;
 }
 

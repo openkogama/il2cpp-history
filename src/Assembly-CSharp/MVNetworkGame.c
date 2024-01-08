@@ -2646,7 +2646,7 @@ code_?:
 code_?:
       pSVar18 = (String *)&UNK_?;
       pSVar7 = (String__Class *)TypeInfo__System__Int32;
-      if (pIRam9984361f == (TypeInfo__System__Int32->_0).element_class) {
+      if (pIRama98c361f == (TypeInfo__System__Int32->_0).element_class) {
         piVar6 = (int32_t *)func_?(&UNK_?);
         CustomTouristPromotionSettings::CustomTouristPromotionSettings__ctor(this_04,*piVar6,(String *)this_01,(String *)pIStack_26,bVar9,(MethodInfo *)0x0);
         (this->fields)._CustomTouristPromotionSettings_k__BackingField = this_04;
