@@ -55,6 +55,7 @@ public abstract class MVLocalPlayer : MVPlayer
 	public float ReviveTimeout { get; }
 	private MVAvatarLocal AvatarLocal { get; }
 	public bool IsAdmin { get; }
+	public bool IsChatLocked { get; }
 
 	// Nested types
 	public enum PlanetOwnershipType

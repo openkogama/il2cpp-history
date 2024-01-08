@@ -18,12 +18,16 @@ namespace MV.WorldObject.MetaData
 		public bool IsAdmin;
 		public string UserName;
 		public int Gold;
+		public bool IsTourist;
+		public bool IsUnderAge;
 		public SubscriptionData SubscriptionData;
 	
 		// Constructors
 		public UserProfileData();
 	
 		// Methods
+		public static UserProfileData CreateRegisteredProfileData(bool admin, string username, int gold, DateTime? age);
+		private static bool CheckUnderAge(bool admin, DateTime? age);
 		public static UserProfileData GetTouristProfileData(string userName);
 	}
 }
