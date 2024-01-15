@@ -22,7 +22,7 @@ Dictionary_2_System_Object_System_Object_ * MVWorldObject.dll::MV::WorldObject::
     }
     if (bp != (BytePacker *)0x0) {
       BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-      BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+      unaff_EBX = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
       puVar2 = (undefined *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
       this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
@@ -57,7 +57,7 @@ code_?:
     }
     if (bp != (BytePacker *)0x0) {
       puVar2 = (undefined *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-      BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+      unaff_EBX = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
       BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
       this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
@@ -81,10 +81,12 @@ code_?:
   default:
     return (Dictionary_2_System_Object_System_Object_ *)0x0;
   }
+  cVar9 = '\0';
   func_?();
-  func_?();
-  pcVar9 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar9)();
+  *(char *)(extraout_ECX + -0x47ef25be) = *(char *)(extraout_ECX + -0x47ef25be) + (char)((uint)(extraout_EDX + -0x26) >> 8) + cVar9;
+  *(int *)(unaff_EBX + -0x26) = *(int *)(unaff_EBX + -0x26) + 1;
+  pcVar10 = (code *)swi(3);
+  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar10)();
   return pDVar1;
 }
 

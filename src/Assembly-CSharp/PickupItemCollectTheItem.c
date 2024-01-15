@@ -562,7 +562,7 @@ void Assembly-CSharp.dll::PickupItemCollectTheItem::PickupItemCollectTheItem_OnU
         if (pAVar4 == (Action *)0x0) goto code_?;
       }
       func_?();
-      this_03 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform((GameObject *)0x2dc06814,(MethodInfo *)0x0);
+      this_03 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform((GameObject *)0xddc6814,(MethodInfo *)0x0);
       if (this_03 != (Transform *)0x0) {
         pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position(&VStack_2,this_03,(MethodInfo *)0x0);
         CollectTheItemCollectable::CollectTheItemCollectable_CreateCollectableInstance(this_01,*pVVar5,(Quaternion)ZEXT816(0),(MethodInfo *)0x0);

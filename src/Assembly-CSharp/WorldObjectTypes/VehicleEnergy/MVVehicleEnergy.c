@@ -76,7 +76,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::MVVe
     max._0_4_ = pMStack_7;
     EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1(this_00,cubeModelBase,min,max,0x14,(MethodInfo *)0x0);
     (this->fields).editableCubeModelWrapper = this_00;
-    uStack10 = 0x104b;
+    uStack10 = 0x104a;
     func_?();
     return;
   }

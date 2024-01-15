@@ -711,7 +711,7 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing__ct
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,5,(Object *)pSVar1,MethodInfo__System__Collections__Generic__Dictionary<WinningConditionType,_System::String>__Add_WinningConditionType__System__String_);
     (this->fields).headerMap = (Dictionary_2_WinningConditionType_System_String_ *)this_00;
     func_?();
-    LobbyStateController::LobbyStateController__ctor((LobbyStateController *)this,(MethodInfo *)0x0);
+    LobbyFlowMenu::LobbyFlowMenu__ctor((LobbyFlowMenu *)this,(MethodInfo *)0x0);
     return;
   }
   func_?();

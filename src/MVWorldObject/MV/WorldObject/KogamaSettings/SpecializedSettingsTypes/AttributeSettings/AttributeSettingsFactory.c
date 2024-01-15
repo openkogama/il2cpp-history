@@ -122,9 +122,9 @@ code_?:
   this_01 = (NotImplementedException *)func_?(uVar2);
   mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor(this_01,(MethodInfo *)0x0);
   uVar2 = func_?(&MethodInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingsFactory__KogamaSettingValueFactoryAttributeSettings_System__Collections__Generic__KeyValuePair<System::Object,_System::Object>__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase_);
-  func_?(this_01,uVar2);
-  pcVar14 = (code *)swi(3);
-  pKVar15 = (KogamaSettingValueWrapperBase *)(*pcVar14)();
-  return pKVar15;
+  pcVar14 = (char *)func_?(this_01,uVar2);
+  *pcVar14 = *pcVar14 + '\x01';
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 

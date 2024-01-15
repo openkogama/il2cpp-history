@@ -313,7 +313,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius::RemoveCubes_Remov
 {
   uVar1 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(0x46c4);
+    func_?(0x26e0);
     cRam_? = '\x01';
   }
   TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->centerDamage = centerDamage;

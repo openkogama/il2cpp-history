@@ -11,7 +11,7 @@ void Assembly-CSharp.dll::FireSettings::FireSettings_Initialize(FireSettings *th
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_);
     func_?(&TypeInfo__System__Single);
     func_?(&TypeInfo__System__Single);
-    func_?(&::_2C699A84B0526F49E282B1E6BCA03A337065953829C8A51594B9791894741925_Field);
+    func_?(&_2C699A84B0526F49E282B1E6BCA03A337065953829C8A51594B9791894741925_Field);
     func_?(&StringLiteral_R);
     func_?(&StringLiteral_G);
     func_?(&StringLiteral_I);

@@ -268,19 +268,19 @@ code_?:
       pDVar12 = pDRam33eb0150;
       iVar3 = 0x33eb0000;
       pAVar11 = (Action_3_Single_Object_ByteEnum_ *)func_?(TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>);
-      mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::Action_3_Single_Object_ByteEnum___ctor(pAVar11,(Object *)0x3d8b00b3,MethodInfo__DamageIndicator__ShowDamage_float__MVPlayer__MV__Common__PlayerKilledByType_,(MethodInfo *)0x0);
+      mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::Action_3_Single_Object_ByteEnum___ctor(pAVar11,(Object *)0x3d8b00b2,MethodInfo__DamageIndicator__ShowDamage_float__MVPlayer__MV__Common__PlayerKilledByType_,(MethodInfo *)0x0);
       pDVar12 = mscorlib.dll::System::Delegate::Delegate_Remove(pDVar12,(Delegate *)pAVar11,(MethodInfo *)0x0);
       if (pDVar12 == (Delegate *)0x0) {
         *(undefined4 *)(iVar3 + 0x150) = 0;
 code_?:
         func_?();
-        DamageIndicator::DamageIndicator_ResetIndicators((DamageIndicator *)0x3d8b00b3,(MethodInfo *)0x0);
+        DamageIndicator::DamageIndicator_ResetIndicators((DamageIndicator *)0x3d8b00b2,(MethodInfo *)0x0);
         bVar13 = 0;
         this = (FirstPersonCamera *)0x0;
         do {
-          if (MethodInfo__System__Data__DataColumnCollection__CanRemove_System__Data__DataColumn__bool_ == (MethodInfo *)0x0) goto code_?;
-          if (MethodInfo__System__Data__DataColumnCollection__CanRemove_System__Data__DataColumn__bool_->name <= (char *)(uint)bVar13) goto code_?;
-          if (((&MethodInfo__System__Data__DataColumnCollection__CanRemove_System__Data__DataColumn__bool_->klass)[(int)(uint)bVar13] == (Il2CppClass *)0x0) || (this_03 = (Behaviour *)(&MethodInfo__System__Data__DataColumnCollection__CanRemove_System__Data__DataColumn__bool_->klass)[(int)(uint)bVar13]->namespaze, this_03 == (Behaviour *)0x0)) goto code_?;
+          if (MethodInfo__System__Data__DataColumnCollection__RegisterColumnName_System__String__System__Data__DataColumn_ == (MethodInfo *)0x0) goto code_?;
+          if (MethodInfo__System__Data__DataColumnCollection__RegisterColumnName_System__String__System__Data__DataColumn_->name <= (char *)(uint)bVar13) goto code_?;
+          if (((&MethodInfo__System__Data__DataColumnCollection__RegisterColumnName_System__String__System__Data__DataColumn_->klass)[(int)(uint)bVar13] == (Il2CppClass *)0x0) || (this_03 = (Behaviour *)(&MethodInfo__System__Data__DataColumnCollection__RegisterColumnName_System__String__System__Data__DataColumn_->klass)[(int)(uint)bVar13]->namespaze, this_03 == (Behaviour *)0x0)) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled(this_03,0,(MethodInfo *)0x0);
           bVar13 = this._3_1_ + 1;
           this = (FirstPersonCamera *)((uint)bVar13 << 0x18);
