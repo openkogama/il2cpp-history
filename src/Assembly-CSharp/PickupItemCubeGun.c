@@ -466,15 +466,15 @@ code_?:
           fVar17 = 0.0;
           while (pAVar15 != (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)0x0)
           {
-            uVar1 = 0xf9;
-            uVar2 = 0x1055;
+            uVar1 = 0xe989;
+            uVar2 = 0x1054;
             cVar18 = func_?();
             if (cVar18 == '\0') {
               iVar19 = func_?();
               *piVar16 = iVar19;
               if (iVar19 != 0) {
-                uVar1 = 0x4b2;
-                uVar2 = 0x1055;
+                uVar1 = 0xed42;
+                uVar2 = 0x1054;
                 func_?();
               }
               if (fVar17 != 0.0) goto code_?;
@@ -627,7 +627,7 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_HandleCursors
 
 {
   if (cRam_? == '\0') {
-    func_?(0x9538);
+    func_?(0x7560);
     func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
     func_?(&
                     MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__

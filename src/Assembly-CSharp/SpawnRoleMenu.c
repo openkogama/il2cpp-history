@@ -3171,7 +3171,7 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu__ctor(SpawnRoleMenu *this
             );
   (this->fields).SelectionElementsList = this_00;
   func_?(&(this->fields).SelectionElementsList,this_00);
-  LobbyStateController::LobbyStateController__ctor((LobbyStateController *)this,(MethodInfo *)0x0);
+  LobbyFlowMenu::LobbyFlowMenu__ctor((LobbyFlowMenu *)this,(MethodInfo *)0x0);
   return;
 }
 

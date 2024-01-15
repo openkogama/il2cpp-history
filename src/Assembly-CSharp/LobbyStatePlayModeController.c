@@ -372,7 +372,7 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
                   if (this_02 != (MVLocalPlayer *)0x0) {
                     bVar7 = MVLocalPlayer::MVLocalPlayer_get_IsChatLocked(this_02,(MethodInfo *)0x0)
                     ;
-                    pRVar1 = (in_stack_5->fields).inputAreaRoot;
+                    pRVar1 = (in_stack_5->fields)._._InputAreaRoot_k__BackingField;
                     value = 0;
                     if (bVar7 == 0) {
                       value = in_stack_6 ^ 1;
@@ -390,7 +390,7 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
                           if (pGVar2 != (GameObject *)0x0) {
                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                             GameObject_SetActive(pGVar2,value ^ 1,(MethodInfo *)0x0);
-                            this_00 = (in_stack_5->fields).scrollRect;
+                            this_00 = (in_stack_5->fields)._._ScrollRect_k__BackingField;
                             if (this_00 != (ScrollRect *)0x0) {
                               UnityEngine.UI.dll::UnityEngine::UI::ScrollRect::
                               ScrollRect_SetVerticalNormalizedPosition

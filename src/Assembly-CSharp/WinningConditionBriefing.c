@@ -1048,8 +1048,7 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing__ct
               );
     (this->fields).headerMap = (Dictionary_2_WinningConditionType_System_String_ *)this_00;
     func_?();
-    LobbyStateController::LobbyStateController__ctor((LobbyStateController *)this,(MethodInfo *)0x0)
-    ;
+    LobbyFlowMenu::LobbyFlowMenu__ctor((LobbyFlowMenu *)this,(MethodInfo *)0x0);
     return;
   }
   func_?();

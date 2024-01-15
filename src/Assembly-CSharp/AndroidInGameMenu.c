@@ -55,14 +55,14 @@ void Assembly-CSharp.dll::AndroidInGameMenu::AndroidInGameMenu_Initialize
     uVar7 = 1;
   }
   uVar8 = pEVar6->hideGoldShop;
-  method_00 = (MethodInfo *)(this->fields).touristRegisterButton;
-  if (method_00 == (MethodInfo *)0x0) goto code_?;
-  value_00 = 0;
+  pGVar5 = (this->fields).touristRegisterButton;
+  if (pGVar5 == (GameObject *)0x0) goto code_?;
+  value = 0;
   if (uVar7 != 0) {
-    value_00 = bVar1;
+    value = bVar1;
   }
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            ((GameObject *)method_00,value_00,(MethodInfo *)0x0);
+            (pGVar5,value,(MethodInfo *)0x0);
   pGVar5 = (this->fields).accessoryShopButton;
   if (uVar8 == '\0') {
     pGVar5 = (GameObject *)0x0;
@@ -85,13 +85,9 @@ void Assembly-CSharp.dll::AndroidInGameMenu::AndroidInGameMenu_Initialize
   if (bVar3) {
     pTVar4 = (this_01->fields).playReward;
     if (pTVar4 == (TimedPlayReward *)0x0) goto code_?;
-    method_00 = (MethodInfo *)&UNK_?;
     TimedPlayReward::TimedPlayReward_Initialize(pTVar4,(MethodInfo *)0x0);
   }
-  value = (this_01->fields).rewardedAd;
-  if (value == (FreeGoldAndroid *)0x0) goto code_?;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)value,ExceptionArgument__Enum_obj,method_00);
+  if ((this_01->fields).rewardedAd == (FreeGoldAndroid *)0x0) goto code_?;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';

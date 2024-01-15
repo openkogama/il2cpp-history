@@ -8,7 +8,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
 {
   pLVar1 = this;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
+    func_?(0x7380);
     cRam_? = '\x01';
   }
   this_00 = (Object__Class *)(this->fields).__4__this;
@@ -97,8 +97,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
   default:
     return 0;
   }
-  if (_UNK_? <= (pLVar1->fields)._currentTime_5__2 / *(float *)&(this_00->_0).byval_arg.attrs
-     ) {
+  if (_UNK_? <=
+      (pLVar1->fields)._currentTime_5__2 / *(float *)&(this_00->_0).byval_arg.attrs) {
     pAVar11 = (AnimationCurve *)(this_00->_0).this_arg.data.typeHandle;
     if (pAVar11 != (AnimationCurve *)0x0) {
       fVar12 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
@@ -120,12 +120,14 @@ code_?:
             if (pCVar5 != (Component *)0x0) {
               pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                   (pCVar5,(MethodInfo *)0x0);
-              euler.y = (float)_UNK_?;
+              euler.y._0_2_ = (short)_UNK_?;
               euler.x = fVar2;
+              euler.y._2_2_ = (short)((uint)_UNK_? >> 0x10);
               euler.z = 0.0;
               pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                         Quaternion_Internal_FromEulerRad
                                   ((Quaternion *)&stack0xffffffb0,euler,(MethodInfo *)0x0);
+              pLVar1 = (LevelRewardAnimation_DisplayAndFadePrevBadge_d_28 *)0x0;
               if (pTVar6 != (Transform *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                           (pTVar6,*pQVar7,(MethodInfo *)0x0);
@@ -225,10 +227,12 @@ code_?:
     }
   }
 code_?:
-  uVar15 = func_?();
-  pcVar16 = (char *)uVar15;
-  *(char *)((int)((ulonglong)uVar15 >> 0x20) + -0x638fefc3) = (char)&stack0xfffffffc;
-  *pcVar16 = *pcVar16 + (char)((ulonglong)uVar15 >> 8) + (pcVar16 < (char *)0x3d9e1010);
+  cVar15 = '\0';
+  func_?();
+  func_?();
+  func_?(in_CS);
+  pcVar16 = (char *)((int)&pLVar1[-0x22229fe].fields.__2__current + 1);
+  *pcVar16 = (*pcVar16 + '4') - cVar15;
   pcVar17 = (code *)swi(3);
   bVar18 = (*pcVar17)();
   return bVar18;

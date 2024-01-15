@@ -131,25 +131,18 @@ code_?:
   }
 code_?:
   bVar16 = 0;
-  iVar17 = func_?();
-  from_bcd(*(unkbyte10 *)(iVar17 + -0x5f10efb7));
-  bVar18 = (byte)iVar17 + extraout_DL;
-  cRam_? = bVar18 + bVar16;
-  *(byte *)&pGVar1[4].fields.__1__state =
+  bVar17 = func_?();
+  bVar16 = 0x99 < bVar17 | bVar16;
+  pbVar18 = (byte *)((int)&pGVar2[-0x2cc85ff].fields.startSize.y + 1);
+  bVar17 = *pbVar18;
+  bVar19 = *pbVar18 + extraout_CL + 0x20U;
+  *pbVar18 = bVar19 + bVar16;
+  *(char *)&pGVar1[4].fields.__1__state =
        (char)pGVar1[4].fields.__1__state + extraout_DL +
-       (CARRY1((byte)iVar17,extraout_DL) || CARRY1(bVar18,bVar16));
-  pcVar19 = (code *)swi(0xff);
-  uVar20 = (*pcVar19)();
-  this_00 = (NotSupportedException *)func_?(uVar20);
-  mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
-            (this_00,(MethodInfo *)0x0);
-  VStack_10.x = (float)func_?(&
-                                       MethodInfo__GameMeterVisuals__GameMeterUpdatedEffect___AnimateScale_d__6__System_Collections_IEnumerator_Reset__
-                                      );
-  func_?(this_00);
-  pcVar19 = (code *)swi(3);
-  bVar21 = (*pcVar19)();
-  return bVar21;
+       (CARRY1(bVar17,extraout_CL + 0x20U) || CARRY1(bVar19,bVar16));
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
 }
 
 

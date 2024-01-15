@@ -251,10 +251,13 @@ code_?:
     }
   }
 code_?:
-  func_?();
-  pcVar16 = (code *)swi(3);
-  bVar17 = (*pcVar16)();
-  return bVar17;
+  cVar16 = '\0';
+  pcVar17 = (char *)func_?();
+  pLRam3d8a9710 = pLVar1;
+  *pcVar17 = *pcVar17 + (char)pcVar17 + cVar16;
+  pcVar18 = (code *)swi(3);
+  bVar19 = (*pcVar18)();
+  return bVar19;
 }
 
 

@@ -534,21 +534,22 @@ code_?:
 }
 
 
+/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* Void SetTeam(MVTeam) */
 
 void Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_SetTeam
                (TierUnlockedItemElement *this,MVTeam__Enum team,MethodInfo *method)
 
 {
-  pIVar1 = (this->fields).teamRequirementImage;
+  this_00 = (this->fields).teamRequirementImage;
   (this->fields).team = team;
-  if ((pIVar1 == (Image *)0x0) ||
-     (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)pIVar1,(MethodInfo *)0x0), this_00 == (GameObject *)0x0))
-  goto code_?;
+  if (this_00 == (Image *)0x0) goto code_?;
+  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this_00,(MethodInfo *)0x0);
+  if (this_01 == (GameObject *)0x0) goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            (this_00,1,(MethodInfo *)0x0);
-  pIVar1 = (this->fields).teamRequirementImage;
+            (this_01,1,(MethodInfo *)0x0);
+  this = (TierUnlockedItemElement *)(this->fields).teamRequirementImage;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -559,61 +560,64 @@ void Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_SetTe
       func_?();
     }
     colorStyle = 1.12104e-44;
-    pCVar2 = &CStack_3;
+    pCVar1 = &CStack_2;
     break;
   case MVTeam__Enum_Red:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     colorStyle = 1.26117e-44;
-    pCVar2 = &CStack_4;
+    pCVar1 = &CStack_3;
     break;
   case MVTeam__Enum_Green:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     colorStyle = 1.54143e-44;
-    pCVar2 = &CStack_5;
+    pCVar1 = &CStack_4;
     break;
   case MVTeam__Enum_Yellow:
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    colorStyle = 1.4013e-44;
-    pCVar2 = &CStack_6;
-    break;
+    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor != 0) goto code_?;
+    func_?();
+    goto code_?;
   default:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pCVar2 = (Color *)&stack0xffffff9c;
+    pCVar1 = (Color *)&stack0xffffff9c;
     goto code_?;
   case MVTeam__Enum_None:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pCVar2 = &CStack_7;
+    pCVar1 = &CStack_5;
 code_?:
     colorStyle = 3.64338e-44;
   }
-  pCVar2 = Styles::Styles_GetColor(pCVar2,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
-  CStack_7.r = pCVar2->a;
-  if (pIVar1 != (Image *)0x0) {
-    pIVar8 = pIVar1->klass;
-    CStack_7.g = (float)(pIVar8->vtable).get_raycastTarget.methodPtr;
-    (*(code *)(pIVar8->vtable).set_color.method)();
-    return;
-  }
+  while( true ) {
+    pCVar1 = Styles::Styles_GetColor(pCVar1,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
+    CStack_5.r = pCVar1->a;
+    if ((Image *)this != (Image *)0x0) {
+      CStack_5.g = (float)(((Image *)this)->klass->vtable).get_raycastTarget.methodPtr;
+      (*(code *)(((Image *)this)->klass->vtable).set_color.method)();
+      return;
+    }
 code_?:
-  CStack_7.g = (float)&UNK_?;
-  func_?();
-  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + -7;
-  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + '\x16';
-  *(int *)(unaff_EBX + 0x10) = *(int *)(unaff_EBX + 0x10) + 0x4c;
-  *(int *)(unaff_EBX + 0x10) = *(int *)(unaff_EBX + 0x10) + 0x33;
-  *(int *)(unaff_EBX + 0x10) = *(int *)(unaff_EBX + 0x10) + -0x34;
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+    CStack_5.g = (float)&UNK_?;
+    uVar6 = func_?();
+    if (-1 < (char)(*(byte *)(unaff_EBX + 0x10) & (byte)uVar6)) break;
+code_?:
+    colorStyle = 1.4013e-44;
+    pCVar1 = &CStack_7;
+  }
+  *(char *)(extraout_ECX + -0x49efbc7c) =
+       *(char *)(extraout_ECX + -0x49efbc7c) + (char)unaff_EBX + '\x01';
+  uVar8 = in((short)((uint6)uVar6 >> 0x20));
+  puVar9 = (uint *)(unaff_EBX + -0x333333ef + CONCAT31((int3)((uint6)uVar6 >> 8),uVar8) * 2);
+  bVar10 = (byte)extraout_ECX & 0x1f;
+  *puVar9 = *puVar9 << bVar10 | *puVar9 >> 0x20 - bVar10;
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

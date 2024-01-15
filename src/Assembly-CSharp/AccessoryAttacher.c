@@ -53,7 +53,7 @@ void Assembly-CSharp.dll::AccessoryAttacher::AccessoryAttacher_AttachAccessory
     pMVar5 = (this->fields).avatarBody;
     if ((pMVar5 != (MVBody *)0x0) && (this_01 != (MVNetworkGame_OperationRequests *)0x0)) {
       MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetAvatarAccessorySlot
-                (this_01,(pMVar5->fields)._._._._.id,streamingAssetsId,offset,3.7752154e-29,
+                (this_01,(pMVar5->fields)._._._._.id,streamingAssetsId,offset,3.7751143e-29,
                  (MethodInfo *)0x0);
       return;
     }

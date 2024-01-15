@@ -155,7 +155,7 @@ void Assembly-CSharp.dll::TextureAtlas::TextureAtlas__cctor(MethodInfo *method)
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Int32);
     func_?(&TypeInfo__TextureAtlas);
-    func_?(&_754BBD310DEC84C967A58DC1431E57A6CBF5D9E514CAC20410E78B8ECCCE08A0_Field);
+    func_?(&::_754BBD310DEC84C967A58DC1431E57A6CBF5D9E514CAC20410E78B8ECCCE08A0_Field);
     func_?(&TypeInfo__UnityEngine__Vector2);
     cRam_? = '\x01';
   }

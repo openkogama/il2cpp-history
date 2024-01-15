@@ -572,16 +572,16 @@ void Assembly-CSharp.dll::ModelingDynamicBoxConstraint::ModelingDynamicBoxConstr
   uVar1 = SUB42(in_stack_2,2);
   uVar3 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(0x99c4);
+    func_?(0x79ec);
     in_stack_4 = 0x119a;
-    func_?(0xbb8c);
+    func_?(0x9b3c);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(0xc544);
+    func_?(0xa568);
     in_stack_4 = 0x119b;
-    func_?(0x9538);
-    func_?(0xbe74);
+    func_?(0x7560);
+    func_?(0x9de8);
     cRam_? = '\x01';
   }
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
