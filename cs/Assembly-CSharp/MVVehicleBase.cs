@@ -102,6 +102,6 @@ public abstract class MVVehicleBase : MVBlueprintBase, IBulletImpactVisualizer
 	public void RefillEnergy(VehicleEnergyRefill vehicleEnergyRefill);
 	public bool UsesEnergy();
 	public void RollbackRefillEnergyPrediction(int spawnerId);
-	public bool IsPlayerInVehicle(int playerId);
+	public bool IsPlayerInVehicle(int playerId, bool onlyDriver = false);
 }
 

@@ -20,5 +20,6 @@ public class InteractionDataHandler : InteractionDataHandlerBase
 
 	// Methods
 	public override bool HandleInteraction(MVPickupOwner interactor, InteractionData interaction, bool interactionIsLocal);
+	private bool IsDead(InteractionData interaction);
 }
 
