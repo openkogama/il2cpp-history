@@ -17,17 +17,25 @@ bool Assembly-CSharp.dll::InteractionDataHandler::InteractionDataHandler_HandleI
     if (bVar1 != 0) {
       return 1;
     }
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MVAvatarRemote);
+      cRam_? = '\x01';
+    }
+    this_00 = (MVAvatar *)(this->fields)._._.worldObjectParent;
+    if ((((this_00 != (MVAvatar *)0x0) && ((TypeInfo__MVAvatarRemote->_1).naturalAligment <= (this_00->klass->_1).naturalAligment)) && ((MVAvatarRemote__Class *)(this_00->klass->_1).typeHierarchy[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] == TypeInfo__MVAvatarRemote)) && (bVar1 = MVAvatar::MVAvatar_IsInMode(this_00,SpawnRoleModeType__Enum_Dead,(MethodInfo *)0x0), bVar1 != 0)) {
+      return 1;
+    }
     pMVar2 = (this->fields)._._.worldObjectParent;
-    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
+    this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this_01,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
     in_stack_3 = 0;
     key = (Object *)func_?(TypeInfo__System__Byte,&stack0x00000023);
     if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MV__WorldObject__InteractionData);
     }
     value = MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_ToByteArray(&interaction,(MethodInfo *)0x0);
-    if ((this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) && (mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this_00,key,(Object *)value,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_), pMVar2 != (MVWorldObjectClient *)0x0)) {
-      MVWorldObjectClient::MVWorldObjectClient_SendPackage(pMVar2,(Dictionary_2_System_Object_System_Object_ *)this_00,(MethodInfo *)0x0);
+    if ((this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) && (mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this_01,key,(Object *)value,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_), pMVar2 != (MVWorldObjectClient *)0x0)) {
+      MVWorldObjectClient::MVWorldObjectClient_SendPackage(pMVar2,(Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
       return 1;
     }
   }
@@ -42,6 +50,26 @@ bool Assembly-CSharp.dll::InteractionDataHandler::InteractionDataHandler_HandleI
   pcVar4 = (code *)swi(3);
   bVar1 = (*pcVar4)();
   return bVar1;
+}
+
+
+/* Boolean IsDead(InteractionData) */
+
+bool Assembly-CSharp.dll::InteractionDataHandler::InteractionDataHandler_IsDead(InteractionDataHandler *this,InteractionData interaction,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVAvatarRemote);
+    cRam_? = '\x01';
+  }
+  this_00 = (MVAvatar *)(this->fields)._._.worldObjectParent;
+  if (this_00 != (MVAvatar *)0x0) {
+    if (((TypeInfo__MVAvatarRemote->_1).naturalAligment <= (this_00->klass->_1).naturalAligment) && ((MVAvatarRemote__Class *)(this_00->klass->_1).typeHierarchy[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] == TypeInfo__MVAvatarRemote)) {
+      bVar1 = MVAvatar::MVAvatar_IsInMode(this_00,SpawnRoleModeType__Enum_Dead,(MethodInfo *)0x0);
+      return bVar1;
+    }
+  }
+  return 0;
 }
 
 

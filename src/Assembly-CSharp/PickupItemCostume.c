@@ -495,7 +495,7 @@ code_?:
       if (bVar4 == 0) {
         return;
       }
-      this_00 = *(Component **)&(this_06->_1).naturalAligment;
+      this_00 = (Component *)(this_06->vtable).Equals.methodPtr;
       if (this_00 != (Component *)0x0) {
         pOVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren(this_00,UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______);
         wo = (PickupItemCostume_CostumeConfiguration__Class *)0x0;

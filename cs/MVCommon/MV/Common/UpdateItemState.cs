@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Generated code file by Il2CppInspector - http://www.djkaty.com - https://github.com/djkaty
  */
 
@@ -12,11 +12,12 @@ using System.Runtime.InteropServices;
 
 namespace MV.Common
 {
-	public enum GamePassTier : byte
+	[Flags]
+	public enum UpdateItemState
 	{
-		Tier0 = 0,
-		Tier1 = 1,
-		Tier2 = 2,
-		Tier3 = 3
+		None = 0,
+		Holster = 1,
+		Unholster = 2,
+		ResetAmmo = 4
 	}
 }

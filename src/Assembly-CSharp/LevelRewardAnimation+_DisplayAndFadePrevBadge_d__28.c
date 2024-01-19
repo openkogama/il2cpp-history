@@ -6,7 +6,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::L
 {
   pLVar1 = this;
   if (cRam_? == '\0') {
-    func_?(0x7380);
+    func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
   this_00 = (Object__Class *)(this->fields).__4__this;
@@ -87,12 +87,10 @@ code_?:
             pCVar5 = (Component *)(this_00->_0).byval_arg.data.typeHandle;
             if (pCVar5 != (Component *)0x0) {
               pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(pCVar5,(MethodInfo *)0x0);
-              euler.y._0_2_ = 0xfdb;
+              euler.y = 1.5707964;
               euler.x = fVar2;
-              euler.y._2_2_ = 0x3fc9;
               euler.z = 0.0;
               pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffb0,euler,(MethodInfo *)0x0);
-              pLVar1 = (LevelRewardAnimation_DisplayAndFadePrevBadge_d_28 *)0x0;
               if (pTVar6 != (Transform *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar6,*pQVar7,(MethodInfo *)0x0);
                 if (cRam_? == '\0') {
@@ -166,15 +164,11 @@ code_?:
     }
   }
 code_?:
-  cVar15 = '\0';
-  func_?();
-  func_?();
-  func_?(in_CS);
-  pcVar16 = (char *)((int)&pLVar1[-0x22229fe].fields.__2__current + 1);
-  *pcVar16 = (*pcVar16 + '4') - cVar15;
-  pcVar17 = (code *)swi(3);
-  bVar18 = (*pcVar17)();
-  return bVar18;
+  uVar15 = func_?();
+  *(char *)(uVar15 - 0x5c) = *(char *)(uVar15 - 0x5c) + extraout_DH + (uVar15 < 0x3da26010);
+  pcVar16 = (code *)swi(3);
+  bVar17 = (*pcVar16)();
+  return bVar17;
 }
 
 

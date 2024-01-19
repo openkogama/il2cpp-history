@@ -384,14 +384,14 @@ code_?:
           piVar16 = (int *)&stack0xffffffd8;
           fVar17 = 0.0;
           while (pAVar15 != (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)0x0) {
-            uVar1 = 0xe989;
+            uVar1 = 0xef79;
             uVar2 = 0x1054;
             cVar18 = func_?();
             if (cVar18 == '\0') {
               iVar19 = func_?();
               *piVar16 = iVar19;
               if (iVar19 != 0) {
-                uVar1 = 0xed42;
+                uVar1 = 0xf332;
                 uVar2 = 0x1054;
                 func_?();
               }
@@ -527,7 +527,7 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_HandleCursors(Pic
 
 {
   if (cRam_? == '\0') {
-    func_?(0x7560);
+    func_?(0x7590);
     func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
     func_?(&MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__);
     cRam_? = '\x01';
@@ -1175,8 +1175,8 @@ joined_?:
     if (TVar9.m_Index == 0) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar9.m_Index + 0x20) == (TypeInfo__System__Byte->_0).element_class) {
       puVar10 = (undefined1 *)func_?();
-      *(undefined1 *)((int)this + 0xf8) = *puVar10;
-      pCVar2 = *(CubeBullet **)((int)this + 0xf0);
+      *(undefined1 *)((int)this + 0xfc) = *puVar10;
+      pCVar2 = *(CubeBullet **)((int)this + 0xf4);
       goto joined_?;
     }
   }

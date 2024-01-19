@@ -278,9 +278,9 @@ code_?:
         bVar13 = 0;
         this = (FirstPersonCamera *)0x0;
         do {
-          if (MethodInfo__System__Data__DataColumnCollection__RegisterColumnName_System__String__System__Data__DataColumn_ == (MethodInfo *)0x0) goto code_?;
-          if (MethodInfo__System__Data__DataColumnCollection__RegisterColumnName_System__String__System__Data__DataColumn_->name <= (char *)(uint)bVar13) goto code_?;
-          if (((&MethodInfo__System__Data__DataColumnCollection__RegisterColumnName_System__String__System__Data__DataColumn_->klass)[(int)(uint)bVar13] == (Il2CppClass *)0x0) || (this_03 = (Behaviour *)(&MethodInfo__System__Data__DataColumnCollection__RegisterColumnName_System__String__System__Data__DataColumn_->klass)[(int)(uint)bVar13]->namespaze, this_03 == (Behaviour *)0x0)) goto code_?;
+          if (MethodInfo__System__Data__DataColumnCollection__CanRemove_System__Data__DataColumn__bool_ == (MethodInfo *)0x0) goto code_?;
+          if (MethodInfo__System__Data__DataColumnCollection__CanRemove_System__Data__DataColumn__bool_->name <= (char *)(uint)bVar13) goto code_?;
+          if (((&MethodInfo__System__Data__DataColumnCollection__CanRemove_System__Data__DataColumn__bool_->klass)[(int)(uint)bVar13] == (Il2CppClass *)0x0) || (this_03 = (Behaviour *)(&MethodInfo__System__Data__DataColumnCollection__CanRemove_System__Data__DataColumn__bool_->klass)[(int)(uint)bVar13]->namespaze, this_03 == (Behaviour *)0x0)) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled(this_03,0,(MethodInfo *)0x0);
           bVar13 = this._3_1_ + 1;
           this = (FirstPersonCamera *)((uint)bVar13 << 0x18);

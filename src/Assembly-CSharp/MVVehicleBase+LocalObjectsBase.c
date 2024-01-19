@@ -208,8 +208,8 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
     func_?(&StringLiteral_Failed_to_get_rigid_bodies);
     cRam_? = '\x01';
   }
-  if ((this->fields).onLeave != (Action *)0x0) {
-    pAVar1 = (this->fields).onLeave;
+  pAVar1 = (this->fields).onLeave;
+  if (pAVar1 != (Action *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }
   pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)MVVehicleBase_LocalObjectsBase_GetLocalComponents(this,System__Collections__Generic__List<VehicleInteractable>_MethodInfo__MVVehicleBase__LocalObjectsBase__GetLocalComponents<VehicleInteractable>__);

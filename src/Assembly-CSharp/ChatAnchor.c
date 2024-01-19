@@ -98,7 +98,7 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble(V
                                 if ((this->fields).KeepInView != 0) {
                                   adjustedPosition.x = (float)&UNK_?;
                                   puVar5 = puVar9;
-                                  if ((3.5426395e-29 < (float)puVar9) || (puVar5 = puVar15, (float)puVar15 < 3.5426395e-29)) {
+                                  if ((3.5430295e-29 < (float)puVar9) || (puVar5 = puVar15, (float)puVar15 < 3.5430295e-29)) {
                                     adjustedPosition.x = (float)puVar5;
                                   }
                                   adjustedPosition.y = fVar7;
@@ -151,10 +151,10 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble(V
     }
   }
 code_?:
-  func_?();
-  *(undefined1 *)&unaff_EDI->klass = *(undefined1 *)&this->klass;
-  pcVar19 = (code *)swi(3);
-  pVVar12 = (Vector3 *)(*pcVar19)();
+  cVar19 = func_?();
+  *(char *)&unaff_EDI->klass = cVar19 + 'V';
+  pcVar20 = (code *)swi(3);
+  pVVar12 = (Vector3 *)(*pcVar20)();
   return pVVar12;
 }
 

@@ -35,6 +35,7 @@ namespace MV.WorldObject
 		MultiThrowingStarHit = 24,
 		DoubleSixShooterHit = 25,
 		SlapGunHit = 26,
-		HealRayHit = 27
+		HealRayHit = 27,
+		VehicleHit = 28
 	}
 }

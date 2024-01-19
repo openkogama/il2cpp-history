@@ -727,11 +727,11 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_OnLocalHit_1(Pi
             voxelHit._30_2_ = 0;
             voxelHit.normal.z = (float)&UNK_?;
             UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1((Vector3 *)voxelHit.cubePos._0_4_,(MethodInfo *)0x0);
-            voxelHit._28_4_ = fRam08418919 * fVar8;
-            voxelHit.cubePos._0_4_ = fVar5 * fRam08418919;
-            voxelHit.face = (int32_t)(fVar7 * fRam08418919);
+            voxelHit._28_4_ = fRamf3e045a5 * fVar8;
+            voxelHit.cubePos._0_4_ = fVar5 * fRamf3e045a5;
+            voxelHit.face = (int32_t)(fVar7 * fRamf3e045a5);
             voxelHit.interactionFlags._0_4_ = (Collider *)0x1be84;
-            voxelHit.normal.z = fRam08418915;
+            voxelHit.normal.z = fRamf3e045a1;
             voxelHit.isCubeHit = 0;
             voxelHit._37_3_ = 0;
             voxelHit.normal.y = (float)&stack0xffffffdc;
@@ -739,7 +739,7 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_OnLocalHit_1(Pi
             impulse.y = (float)voxelHit._28_4_;
             impulse.x = (float)voxelHit.cubePos._0_4_;
             impulse.z = (float)voxelHit.face;
-            pIVar9 = MeleeWeaponHitPackage::MeleeWeaponHitPackage_Create((InteractionData *)voxelHit.normal.y,fRam08418915,impulse,(MethodInfo *)0x0);
+            pIVar9 = MeleeWeaponHitPackage::MeleeWeaponHitPackage_Create((InteractionData *)voxelHit.normal.y,fRamf3e045a1,impulse,(MethodInfo *)0x0);
             if (x == (InteractionDataHandlerBase *)0x0) goto code_?;
             voxelHit._36_4_ = pIVar9->damage;
             voxelHit.woId = (int32_t)(pIVar9->impulse).x;
@@ -768,19 +768,19 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_OnLocalHit_1(Pi
             voxelHit.woId = (int32_t)this_03;
             bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)this_03,(Object_1 *)0x0,(MethodInfo *)0x0);
             if (bVar2 != 0) {
-              pCVar10 = (Cube *)(fRam0841891d * -fVar5);
-              voxelHit.interactionFlags._0_4_ = (Collider *)(fRam0841891d * -fVar7);
+              pCVar10 = (Cube *)(fRamf3e045a9 * -fVar5);
+              voxelHit.interactionFlags._0_4_ = (Collider *)(fRamf3e045a9 * -fVar7);
               voxelHit.transform = (Transform *)pCVar10;
               if (this_03 == (MVRigidBody *)0x0) goto code_?;
               voxelHit._60_4_ = 0;
               voxelHit.transform = (Transform *)0x0;
               voxelHit._36_4_ = &UNK_?;
-              impulse_00.y = fRam0841891d * -fVar8;
+              impulse_00.y = fRamf3e045a9 * -fVar8;
               impulse_00.x = (float)pCVar10;
               impulse_00.z = (float)(Collider *)voxelHit.interactionFlags;
               voxelHit.woId = (int32_t)this_03;
               voxelHit.cube = pCVar10;
-              voxelHit.distance = fRam0841891d * -fVar8;
+              voxelHit.distance = fRamf3e045a9 * -fVar8;
               voxelHit.collider = (Collider *)voxelHit.interactionFlags;
               MVRigidBody::MVRigidBody_AddImpulse_1(this_03,impulse_00,0,(MethodInfo *)0x0);
             }
@@ -1089,5 +1089,15 @@ String * Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_get_HitSoun
     cRam_? = '\x01';
   }
   return ::StringLiteral__;
+}
+
+
+/* Void set_CubeModelPid(Int32) */
+
+void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_set_CubeModelPid(PickupItemEditable *this,int32_t value,MethodInfo *method)
+
+{
+  (this->fields)._CubeModelPid_k__BackingField = value;
+  return;
 }
 

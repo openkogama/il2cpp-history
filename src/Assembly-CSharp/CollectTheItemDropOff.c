@@ -1073,9 +1073,9 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_triggerBo
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality(pOVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
       if (((bVar3 == 0) && (pOVar2 != (Object_1 *)0x0)) && (((TypeInfo__PickupItemCollectTheItem->_1).naturalAligment <= (pOVar2->klass->_1).naturalAligment && (ppIVar4 = (pOVar2->klass->_1).typeHierarchy, ppIVar4[(TypeInfo__PickupItemCollectTheItem->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__PickupItemCollectTheItem)))) {
         if ((ppIVar4[(TypeInfo__PickupItemCollectTheItem->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__PickupItemCollectTheItem) || (pCRam000000fc == (CollectTheItem *)0x0)) goto code_?;
-        bVar3 = CollectTheItem::CollectTheItem_GetDoesWoFitDropOff(pCRam000000fc,(int32_t)pOVar2[9].monitor,(MethodInfo *)0x0);
+        bVar3 = CollectTheItem::CollectTheItem_GetDoesWoFitDropOff(pCRam000000fc,(int32_t)pOVar2[9].fields.m_CachedPtr,(MethodInfo *)0x0);
         if (bVar3 != 0) {
-          *(undefined1 *)&pOVar2[10].fields.m_CachedPtr = 0;
+          *(undefined1 *)&pOVar2[0xb].klass = 0;
           this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
           if (this_02 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
           MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_TriggerBoxEnter(this_02,iRam_?,(e->fields).instigatorWOID,(MethodInfo *)0x0);

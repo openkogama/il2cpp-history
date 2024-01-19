@@ -19,13 +19,21 @@ public class TeleportAvatar : MonoBehaviour
 	public Vector3 targetPosition;
 	public Vector3 originPosition;
 	public MVAvatarLocal avatar;
+	[CompilerGenerated]
+	private int _TeleporterOrigin_k__BackingField;
+	[CompilerGenerated]
+	private int _TeleporterDestination_k__BackingField;
 	private bool shouldCancelTeleportation;
+
+	// Properties
+	public int TeleporterOrigin { [CompilerGenerated] get; [CompilerGenerated] set; }
+	public int TeleporterDestination { [CompilerGenerated] get; [CompilerGenerated] set; }
 
 	// Nested types
 	private delegate void ActionDelegate(float time);
 
 	[CompilerGenerated]
-	private sealed class _DoForSeconds_d__6 : IEnumerator<object>
+	private sealed class _DoForSeconds_d__14 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -40,7 +48,7 @@ public class TeleportAvatar : MonoBehaviour
 
 		// Constructors
 		[DebuggerHidden]
-		public _DoForSeconds_d__6(int __1__state);
+		public _DoForSeconds_d__14(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -51,7 +59,7 @@ public class TeleportAvatar : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class _Start_d__8 : IEnumerator<object>
+	private sealed class _Start_d__16 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -65,7 +73,7 @@ public class TeleportAvatar : MonoBehaviour
 
 		// Constructors
 		[DebuggerHidden]
-		public _Start_d__8(int __1__state);
+		public _Start_d__16(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -79,17 +87,17 @@ public class TeleportAvatar : MonoBehaviour
 	public TeleportAvatar();
 
 	// Methods
-	[IteratorStateMachine(typeof(_DoForSeconds_d__6))]
+	[IteratorStateMachine(typeof(_DoForSeconds_d__14))]
 	private IEnumerator DoForSeconds(float duration, ActionDelegate body);
 	private float BlockStep(float t, float steps);
-	[IteratorStateMachine(typeof(_Start_d__8))]
+	[IteratorStateMachine(typeof(_Start_d__16))]
 	private IEnumerator Start();
 	private void CancelTeleportation();
 	private void OnAvatarStateChanged(SpawnRoleModeType mode);
 	private void EndTeleportation(MVRigidBody rigidBody);
 	[CompilerGenerated]
-	private void _Start_b__8_0(float t);
+	private void _Start_b__16_0(float t);
 	[CompilerGenerated]
-	private void _Start_b__8_1(float t);
+	private void _Start_b__16_1(float t);
 }
 

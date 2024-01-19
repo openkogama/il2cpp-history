@@ -34,6 +34,8 @@ public abstract class PickupItem : MonoBehaviour
 	protected MeshRenderer[] meshRenderers;
 	[CompilerGenerated]
 	private int _VariantID_k__BackingField;
+	[CompilerGenerated]
+	private bool _AbleToFire_k__BackingField;
 
 	// Properties
 	public bool IsHolstered { [CompilerGenerated] get; [CompilerGenerated] private set; }
@@ -51,6 +53,7 @@ public abstract class PickupItem : MonoBehaviour
 	public virtual bool CanUnequip { get; }
 	public abstract AvatarItemType Type { get; }
 	public int VariantID { [CompilerGenerated] get; [CompilerGenerated] set; }
+	public bool AbleToFire { [CompilerGenerated] get; [CompilerGenerated] set; }
 
 	// Constructors
 	protected PickupItem();

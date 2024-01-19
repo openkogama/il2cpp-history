@@ -14,9 +14,9 @@ using System.Runtime.InteropServices;
 internal class _PrivateImplementationDetails_
 {
 	// Fields
-	internal static long __method0x60003ef_1;
-	internal static long __method0x60003f0_1;
-	internal static __StaticArrayInitTypeSize_512 __method0x60003fe_1;
+	internal static long __method0x60003f4_1;
+	internal static long __method0x60003f5_1;
+	internal static __StaticArrayInitTypeSize_512 __method0x6000403_1;
 
 	// Nested types
 	private struct __StaticArrayInitTypeSize_512

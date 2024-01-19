@@ -1,7 +1,7 @@
 
 /* Void <InitializeHealth>b__0(Object) */
 
-void Assembly-CSharp.dll::MVAvatarRemote+<>c__DisplayClass18_0::MVAvatarRemote_c_DisplayClass18_0__InitializeHealth_b__0(MVAvatarRemote_c_DisplayClass18_0 *this,Object *health,MethodInfo *method)
+void Assembly-CSharp.dll::MVAvatarRemote+<>c__DisplayClass23_0::MVAvatarRemote_c_DisplayClass23_0__InitializeHealth_b__0(MVAvatarRemote_c_DisplayClass23_0 *this,Object *health,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -47,7 +47,7 @@ code_?:
 
 /* Void <InitializeHealth>b__1(Object) */
 
-void Assembly-CSharp.dll::MVAvatarRemote+<>c__DisplayClass18_0::MVAvatarRemote_c_DisplayClass18_0__InitializeHealth_b__1(MVAvatarRemote_c_DisplayClass18_0 *this,Object *maxHealth,MethodInfo *method)
+void Assembly-CSharp.dll::MVAvatarRemote+<>c__DisplayClass23_0::MVAvatarRemote_c_DisplayClass23_0__InitializeHealth_b__1(MVAvatarRemote_c_DisplayClass23_0 *this,Object *maxHealth,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

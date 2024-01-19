@@ -98,14 +98,9 @@ HighScores * MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *th
     }
   }
   uVar3 = func_?();
-  iVar4 = (int)((ulonglong)uVar3 >> 0x20);
-  bVar5 = extraout_CL | *(byte *)&unaff_EDI[-1].klass;
-  pbVar6 = (byte *)(iVar4 + 0x4f);
-  bVar7 = *pbVar6;
-  *pbVar6 = *pbVar6 + bVar5;
-  pcVar8 = (char *)(iVar4 + 0x50);
-  *pcVar8 = *pcVar8 + *(char *)&unaff_EDI[-1].klass + CARRY1(bVar7,bVar5);
-  return (HighScores *)uVar3;
+  *(undefined1 *)&unaff_EDI->klass = uVar3;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -188,13 +183,8 @@ HighScores * MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *t
     }
   }
   uVar3 = func_?();
-  iVar4 = (int)((ulonglong)uVar3 >> 0x20);
-  bVar5 = extraout_CL | *(byte *)&unaff_EDI[-1].klass;
-  pbVar6 = (byte *)(iVar4 + 0x4f);
-  bVar7 = *pbVar6;
-  *pbVar6 = *pbVar6 + bVar5;
-  pcVar8 = (char *)(iVar4 + 0x50);
-  *pcVar8 = *pcVar8 + *(char *)&unaff_EDI[-1].klass + CARRY1(bVar7,bVar5);
-  return (HighScores *)uVar3;
+  *(undefined1 *)&unaff_EDI->klass = uVar3;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 

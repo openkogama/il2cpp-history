@@ -640,8 +640,12 @@ code_?:
 code_?:
   func_?();
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  in(0x48);
+  in(0x48);
+  in(0x48);
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
+  return;
 }
 
 

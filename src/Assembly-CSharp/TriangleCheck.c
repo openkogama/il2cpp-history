@@ -129,7 +129,7 @@ bool Assembly-CSharp.dll::TriangleCheck::TriangleCheck_CheckTriangle(Vector3 *p1
   distance = (float)&stack0xffffffbc;
   fVar33 = MathFunctions::MathFunctions_DotProduct((Vector3 *)distance,(Vector3 *)voxelHit,(MethodInfo *)0x0);
   in_stack_34 = &UNK_?;
-  bVar23 = TriangleCheck_GetLowestRoot(fVar30 * -3.2955704e-29 + fVar31 * fVar31,(fVar33 + fVar33) * fVar30 - (fVar31 + fVar31) * fVar32,fVar30 * 1.0 + fVar32 * fVar32,(float)dStack_22,&distance,(MethodInfo *)0x0);
+  bVar23 = TriangleCheck_GetLowestRoot(fVar30 * -3.2958496e-29 + fVar31 * fVar31,(fVar33 + fVar33) * fVar30 - (fVar31 + fVar31) * fVar32,fVar30 * 1.0 + fVar32 * fVar32,(float)dStack_22,&distance,(MethodInfo *)0x0);
   if (((bVar23 != 0) && (fVar30 = (fVar31 * distance - fVar32) / fVar30, 0.0 <= fVar30)) && (fVar30 <= 1.0)) {
     dStack_22 = (double)distance;
     bVar28 = true;
@@ -144,7 +144,7 @@ bool Assembly-CSharp.dll::TriangleCheck::TriangleCheck_CheckTriangle(Vector3 *p1
   fVar31 = MathFunctions::MathFunctions_DotProduct((Vector3 *)&stack0xffffffdc,(Vector3 *)&stack0xffffffbc,(MethodInfo *)0x0);
   fVar32 = MathFunctions::MathFunctions_DotProduct((Vector3 *)&stack0xffffffdc,(Vector3 *)&stack0xffffff84,(MethodInfo *)0x0);
   fVar33 = MathFunctions::MathFunctions_DotProduct((Vector3 *)&stack0xffffffbc,(Vector3 *)&stack0xffffff84,(MethodInfo *)0x0);
-  bVar23 = TriangleCheck_GetLowestRoot(fVar30 * -3.2955704e-29 + fVar31 * fVar31,(fVar33 + fVar33) * fVar30 - (fVar31 + fVar31) * fVar32,(1.0 - fVar15) * fVar30 + fVar32 * fVar32,(float)dStack_22,&distance,(MethodInfo *)0x0);
+  bVar23 = TriangleCheck_GetLowestRoot(fVar30 * -3.2958496e-29 + fVar31 * fVar31,(fVar33 + fVar33) * fVar30 - (fVar31 + fVar31) * fVar32,(1.0 - fVar15) * fVar30 + fVar32 * fVar32,(float)dStack_22,&distance,(MethodInfo *)0x0);
   if (((bVar23 != 0) && (fVar30 = (fVar31 * distance - fVar32) / fVar30, 0.0 <= fVar30)) && (fVar30 <= 1.0)) {
     dStack_22 = (double)distance;
     bVar28 = true;
@@ -159,7 +159,7 @@ bool Assembly-CSharp.dll::TriangleCheck::TriangleCheck_CheckTriangle(Vector3 *p1
   fVar29 = MathFunctions::MathFunctions_DotProduct((Vector3 *)&stack0xffffffdc,(Vector3 *)&stack0xffffffbc,(MethodInfo *)0x0);
   fVar31 = MathFunctions::MathFunctions_DotProduct((Vector3 *)&stack0xffffffdc,(Vector3 *)&stack0xffffff78,(MethodInfo *)0x0);
   fVar32 = MathFunctions::MathFunctions_DotProduct((Vector3 *)&stack0xffffffbc,(Vector3 *)&stack0xffffff78,(MethodInfo *)0x0);
-  bVar23 = TriangleCheck_GetLowestRoot(fVar25 * -3.2955704e-29 + fVar29 * fVar29,(fVar32 + fVar32) * fVar25 - (fVar29 + fVar29) * fVar31,(1.0 - fVar18) * fVar25 + fVar31 * fVar31,(float)dStack_22,&distance,(MethodInfo *)0x0);
+  bVar23 = TriangleCheck_GetLowestRoot(fVar25 * -3.2958496e-29 + fVar29 * fVar29,(fVar32 + fVar32) * fVar25 - (fVar29 + fVar29) * fVar31,(1.0 - fVar18) * fVar25 + fVar31 * fVar31,(float)dStack_22,&distance,(MethodInfo *)0x0);
   if (((bVar23 == 0) || (fVar25 = (fVar29 * distance - fVar31) / fVar25, fVar25 < 0.0)) || (1.0 < fVar25)) {
     if (!bVar28) {
       return 0;

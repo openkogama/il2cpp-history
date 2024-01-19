@@ -1798,7 +1798,7 @@ code_?:
       if (bVar4 == 0) {
         return;
       }
-      (pPVar1->fields).stuckObject = (GameObject *)(unaff_EDI->fields).audioSource;
+      (pPVar1->fields).stuckObject = (GameObject *)(unaff_EDI->fields).rayMinimumChargeTime;
       method = (MethodInfo *)&UNK_?;
       func_?();
       pMVar2 = (pPVar1->fields)._.owner;
