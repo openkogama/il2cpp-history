@@ -339,7 +339,6 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
   if (bVar3 == 0) {
     return 0;
   }
-  unaff_ESI = actorNumber;
   switch(counterType & 0xff) {
   case GameStatCounterType__Enum_Kill:
   case GameStatCounterType__Enum_Collectible:
@@ -373,34 +372,35 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
        (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
        pMVar5 == (MVLocalPlayer *)0x0)) {
 code_?:
-      bVar6 = 0;
-      bVar7 = func_?();
-      uVar8 = *(undefined6 *)((int)notificationType + 0x27);
-      pbVar9 = (byte *)(unaff_EBX + 0x4f);
-      bVar10 = *pbVar9;
-      bVar11 = *pbVar9;
-      *pbVar9 = bVar11 + extraout_DH + bVar6;
-      in_AF = 9 < (bVar7 & 0xf) | in_AF;
-      bVar12 = 0x99 < bVar7 || (CARRY1(bVar10,extraout_DH) || CARRY1(bVar11 + extraout_DH,bVar6));
-      bVar11 = bVar7 + in_AF * '\x06' + bVar12 * '`';
-      bVar7 = (byte)((uint6)uVar8 >> 8);
-      bVar10 = bVar7 + bVar11;
-      bVar6 = bVar10 + bVar12;
-      in_AF = 9 < (bVar11 & 0xf) | in_AF;
-      bVar12 = 0x99 < bVar11 || (CARRY1(bVar7,bVar11) || CARRY1(bVar10,bVar12));
-      bVar7 = bVar11 + in_AF * '\x06' + bVar12 * '`';
-      pbVar9 = (byte *)(unaff_ESI + -0x41efd8b1);
-      bVar10 = *pbVar9;
+      uVar6 = func_?();
+      iVar7 = (uint)uVar6 + 0xb3102754;
+      bVar8 = (byte)iVar7;
+      in_AF = 9 < (bVar8 & 0xf) | in_AF;
+      bVar9 = 0x99 < bVar8 || 0x4cefd8ab < (uint)uVar6;
+      bVar10 = bVar8 + in_AF * '\x06' + bVar9 * '`';
+      bVar11 = CARRY1(bRam_?,bVar10);
+      bVar8 = bRam_? + bVar10;
+      bRam_? = bVar8 + bVar9;
+      in_AF = 9 < (bVar10 & 0xf) | in_AF;
+      bVar9 = 0x99 < bVar10 || (bVar11 || CARRY1(bVar8,bVar9));
+      bVar10 = bVar10 + in_AF * '\x06' + bVar9 * '`';
+      bVar12 = (byte)((ulonglong)uVar6 >> 0x28);
       bVar13 = (byte)((uint)unaff_EBX >> 8);
-      bVar11 = *pbVar9;
-      *pbVar9 = bVar11 + bVar13 + bVar12;
-      bVar12 = 0x99 < bVar7 || (CARRY1(bVar10,bVar13) || CARRY1(bVar11 + bVar13,bVar12));
-      bVar10 = bVar7 + (9 < (bVar7 & 0xf) | in_AF) * '\x06' + bVar12 * '`';
-      *(char *)(unaff_ESI + -0x1befd8b1) =
-           *(char *)(unaff_ESI + -0x1befd8b1) + bVar13 +
-           (0x99 < bVar10 || (CARRY1(bVar6,bVar10) || CARRY1(bVar6 + bVar10,bVar12)));
-      pcVar14 = (code *)swi(3);
-      bVar3 = (*pcVar14)();
+      bVar8 = bVar12 + bVar13;
+      bVar11 = 0x99 < bVar10 || (CARRY1(bVar12,bVar13) || CARRY1(bVar8,bVar9));
+      bVar12 = bVar10 + (9 < (bVar10 & 0xf) | in_AF) * '\x06' + bVar11 * '`';
+      bVar14 = CARRY1(bRam_?,bVar12);
+      bVar10 = bRam_? + bVar12;
+      bRam_? = bVar10 + bVar11;
+      (&stack0x00000000)
+      [CONCAT22((short)((ulonglong)uVar6 >> 0x30),
+                CONCAT11(bVar8 + bVar9,(char)((ulonglong)uVar6 >> 0x20))) * 2] =
+           (&stack0x00000000)
+           [CONCAT22((short)((ulonglong)uVar6 >> 0x30),
+                     CONCAT11(bVar8 + bVar9,(char)((ulonglong)uVar6 >> 0x20))) * 2] +
+           (char)((uint)iVar7 >> 8) + (0x99 < bVar12 || (bVar14 || CARRY1(bVar10,bVar11)));
+      pcVar15 = (code *)swi(3);
+      bVar3 = (*pcVar15)();
       return bVar3;
     }
     if ((pMVar5->fields)._._ActorNr_k__BackingField == actorNumber) {
@@ -439,18 +439,12 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__GameStatCounterType);
-    func_?(&TypeInfo__System__Int32);
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   uVar1 = GameStatCounterType__Enum_None;
@@ -462,18 +456,15 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
   }
   if (cRam_? == '\0') {
     func_?();
-    func_?(&
-                    KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
-                   );
-    func_?(&
-                    OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
-                   );
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   score = (undefined *)0x0;
   switch(counterType & 0xff) {
   case GameStatCounterType__Enum_Kill:
     pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    cVar4 = (int)pMVar3 < 0;
     if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
     this = (pMVar3->fields)._WinningConditionManager_k__BackingField;
     method_00 = 
@@ -486,6 +477,7 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
     goto code_?;
   case GameStatCounterType__Enum_Collectible:
     pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    cVar4 = (int)pMVar3 < 0;
     if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
     this = (pMVar3->fields)._WinningConditionManager_k__BackingField;
     method_00 = 
@@ -496,281 +488,303 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
     goto code_?;
   case GameStatCounterType__Enum_OculusKill:
     pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    cVar4 = (int)pMVar3 < 0;
     if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
     this = (pMVar3->fields)._WinningConditionManager_k__BackingField;
     method_00 = 
     OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
     ;
   }
+  cVar4 = (int)this < 0;
   if (this != (WinningConditionManager *)0x0) {
-    pOVar4 = MVWorldObject.dll::WinningConditionManager::
-             WinningConditionManager_GetSingletonWinnerConditionByType(this,method_00);
-    pOVar5 = (Object__Class *)0x0;
-    if (pOVar4 != (Object *)0x0) {
-      pOVar5 = pOVar4[2].klass;
+    pOVar5 = MVWorldObject.dll::WinningConditionManager::
+              WinningConditionManager_GetSingletonWinnerConditionByType(this,method_00);
+    pOVar6 = (Object__Class *)0x0;
+    if (pOVar5 != (Object *)0x0) {
+      pOVar6 = pOVar5[2].klass;
     }
-    score = (undefined *)((int)pOVar5 - scoreCount);
+    score = (undefined *)((int)pOVar6 - scoreCount);
 code_?:
     pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar3 != (MVNetworkGame *)0x0) &&
-       (pMVar6 = (pMVar3->fields).playerContainer, pMVar6 != (MVPlayerContainer *)0x0)) {
-      bVar7 = MVPlayerContainer::MVPlayerContainer_ContainsKey(pMVar6,actorNumber,(MethodInfo *)0x0)
-      ;
-      if (bVar7 != 0) {
-        iVar2 = actorNumber;
-        switch(counterType & 0xff) {
-        case GameStatCounterType__Enum_Kill:
-        case GameStatCounterType__Enum_Collectible:
-        case GameStatCounterType__Enum_OculusKill:
-          if (((score == (undefined *)0x1) || (score == (undefined *)0x5)) ||
-             (score == (undefined *)0xf)) {
+    cVar4 = (int)pMVar3 < 0;
+    if (pMVar3 != (MVNetworkGame *)0x0) {
+      pMVar7 = (pMVar3->fields).playerContainer;
+      cVar4 = (int)pMVar7 < 0;
+      if (pMVar7 != (MVPlayerContainer *)0x0) {
+        bVar8 = MVPlayerContainer::MVPlayerContainer_ContainsKey
+                          (pMVar7,actorNumber,(MethodInfo *)0x0);
+        if (bVar8 != 0) {
+          iVar2 = actorNumber;
+          switch(counterType & 0xff) {
+          case GameStatCounterType__Enum_Kill:
+          case GameStatCounterType__Enum_Collectible:
+          case GameStatCounterType__Enum_OculusKill:
+            if (((score == (undefined *)0x1) || (score == (undefined *)0x5)) ||
+               (score == (undefined *)0xf)) {
 code_?:
-            score_00.m_value = (int32_t)score;
-            if (cRam_? == '\0') {
-              score_00.m_value = (int32_t)&UNK_?;
-              func_?();
-              cRam_? = '\x01';
-            }
-            unaff_ESI = ::StringLiteral__;
-                    /* WARNING (jumptable): Sanity check requires truncation of jumptable */
-                    /* WARNING: Could not find normalized switch variable to match jumptable */
-            switch(counterType & 0xff) {
-            case GameStatCounterType__Enum_None:
-code_?:
-              pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if ((pMVar3 != (MVNetworkGame *)0x0) &&
-                 (pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0),
-                 pMVar8 != (MVLocalPlayer *)0x0)) {
-                if ((pMVar8->fields)._._ActorNr_k__BackingField == actorNumber) {
-                  return;
-                }
-code_?:
-                if (score == (undefined *)0x0) {
-                  return;
-                }
-                pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                if ((pMVar3 != (MVNetworkGame *)0x0) &&
-                   (pMVar6 = (pMVar3->fields).playerContainer, pMVar6 != (MVPlayerContainer *)0x0))
-                goto code_?;
-              }
-              goto code_?;
-            default:
-              unaff_ESI = mscorlib.dll::System::Int32::Int32_ToString
-                                    ((Int32 *)&stack0xffffffec,(MethodInfo *)0x0);
-              break;
-            case GameStatCounterType__Enum_Flag:
-            case GameStatCounterType__Enum_TimeAttackFlag:
-              unaff_ESI = WinningConditionControl::WinningConditionControl_MakeIntoScoreText
-                                    (score_00.m_value,GameStatCounterType__Enum_TimeAttackFlag,
-                                     (MethodInfo *)0x0);
-              break;
-            case GameStatCounterType__Enum_Time_1:
-            case GameStatCounterType__Enum_FlagCaptured:
-            case GameStatCounterType__Enum_GameCoin:
-              break;
-            }
-            this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                       *)func_?();
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::StyleComplexSelector+PseudoStateData]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                      (this_00,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                      );
-            this_01 = TypeInfo__System__Byte;
-            pOVar4 = (Object *)func_?();
-            value = TM::TM__(unaff_ESI,(MethodInfo *)0x0);
-            if (this_01 != (Byte__Class *)0x0) {
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,(Object *)value
-                         ,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
-              pOVar4 = (Object *)func_?(TypeInfo__System__Byte);
-              pOVar9 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffe0);
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,pOVar9,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
-              pOVar4 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffff9);
-              pOVar9 = (Object *)func_?(TypeInfo__GameStatCounterType,&stack0xfffffff8);
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,pOVar9,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
-              pOVar4 = (Object *)func_?();
-              notificationType = TypeInfo__System__Int32;
-              pOVar9 = (Object *)func_?();
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,pOVar9,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
+              score_00.m_value = (int32_t)score;
               if (cRam_? == '\0') {
+                score_00.m_value = (int32_t)&UNK_?;
                 func_?();
                 cRam_? = '\x01';
               }
-              if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
+              unaff_ESI = ::StringLiteral__;
+                    /* WARNING (jumptable): Sanity check requires truncation of jumptable */
+                    /* WARNING: Could not find normalized switch variable to match jumptable */
+              switch(counterType & 0xff) {
+              case GameStatCounterType__Enum_None:
+code_?:
+                pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                cVar4 = (int)pMVar3 < 0;
+                if (pMVar3 != (MVNetworkGame *)0x0) {
+                  pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0);
+                  cVar4 = (int)pMVar9 < 0;
+                  if (pMVar9 != (MVLocalPlayer *)0x0) {
+                    if ((pMVar9->fields)._._ActorNr_k__BackingField == actorNumber) {
+                      return;
+                    }
+code_?:
+                    if (score == (undefined *)0x0) {
+                      return;
+                    }
+                    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0)
+                    ;
+                    cVar4 = (int)pMVar3 < 0;
+                    if (pMVar3 != (MVNetworkGame *)0x0) {
+                      pMVar7 = (pMVar3->fields).playerContainer;
+                      cVar4 = (int)pMVar7 < 0;
+                      if (pMVar7 != (MVPlayerContainer *)0x0) goto code_?;
+                    }
+                  }
+                }
+                goto code_?;
+              default:
+                unaff_ESI = mscorlib.dll::System::Int32::Int32_ToString
+                                      ((Int32 *)&stack0xffffffec,(MethodInfo *)0x0);
+                break;
+              case GameStatCounterType__Enum_Flag:
+              case GameStatCounterType__Enum_TimeAttackFlag:
+                unaff_ESI = WinningConditionControl::WinningConditionControl_MakeIntoScoreText
+                                      (score_00.m_value,GameStatCounterType__Enum_TimeAttackFlag,
+                                       (MethodInfo *)0x0);
+                break;
+              case GameStatCounterType__Enum_Time_1:
+              case GameStatCounterType__Enum_FlagCaptured:
+              case GameStatCounterType__Enum_GameCoin:
+                break;
               }
-              NotificationController::NotificationController_PushNotification_2
-                        ((NotificationType__Enum)notificationType,
-                         (Dictionary_2_System_Object_System_Object_ *)this_01,
-                         NotificationLifetime__Enum_High,(MethodInfo *)0x0);
-              return;
+              this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                         *)func_?();
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::StyleComplexSelector+PseudoStateData]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                        (this_00,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                        );
+              this_01 = TypeInfo__System__Byte;
+              pOVar5 = (Object *)func_?();
+              value = TM::TM__(unaff_ESI,(MethodInfo *)0x0);
+              cVar4 = (int)this_01 < 0;
+              if (this_01 != (Byte__Class *)0x0) {
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__Add
+                          ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar5,
+                           (Object *)value,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                          );
+                pOVar5 = (Object *)func_?();
+                pOVar10 = (Object *)func_?();
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__Add
+                          ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar5,pOVar10,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                          );
+                pOVar5 = (Object *)func_?();
+                pOVar10 = (Object *)func_?();
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__Add
+                          ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar5,pOVar10,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                          );
+                pOVar5 = (Object *)func_?();
+                notificationType = TypeInfo__System__Int32;
+                pOVar10 = (Object *)func_?();
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__Add
+                          ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar5,pOVar10,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                          );
+                if (cRam_? == '\0') {
+                  func_?();
+                  cRam_? = '\x01';
+                }
+                if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                NotificationController::NotificationController_PushNotification_2
+                          ((NotificationType__Enum)notificationType,
+                           (Dictionary_2_System_Object_System_Object_ *)this_01,
+                           NotificationLifetime__Enum_High,(MethodInfo *)0x0);
+                return;
+              }
+              goto code_?;
             }
+            break;
+          case GameStatCounterType__Enum_Flag:
+            goto code_?;
+          case GameStatCounterType__Enum_TimeAttackFlag:
             goto code_?;
           }
-          break;
-        case GameStatCounterType__Enum_Flag:
-          goto code_?;
-        case GameStatCounterType__Enum_TimeAttackFlag:
-          goto code_?;
         }
+        return;
       }
-      return;
     }
   }
 code_?:
-  uVar10 = func_?();
-  bVar11 = (byte)uVar10;
-  in_AF = 9 < (bVar11 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar11 || bVar11 < 0x51;
-  bVar11 = bVar11 + in_AF * '\x06' + bVar12 * '`';
-  bVar13 = (byte)extraout_ECX;
-  uVar14 = (undefined3)((uint)extraout_ECX >> 8);
-  bVar15 = bVar13 * '\x02' + bVar12;
-  iVar16 = CONCAT31(uVar14,bVar15);
-  in_AF = 9 < (bVar11 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar11 || (CARRY1(bVar13,bVar13) || CARRY1(bVar13 * '\x02',bVar12));
-  bVar11 = bVar11 + in_AF * '\x06' + bVar12 * '`';
-  pbVar17 = (byte *)(iVar16 + 0x27 + (int)extraout_EDX * 2);
-  bVar13 = (byte)((ushort)uVar10 >> 8);
-  bVar18 = CARRY1(*pbVar17,bVar13) || CARRY1(*pbVar17 + bVar13,bVar12);
-  *pbVar17 = *pbVar17 + bVar13 + bVar12;
-  bVar19 = bVar13 + bVar15 + bVar18;
-  in_AF = 9 < (bVar11 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar11 || (CARRY1(bVar13,bVar15) || CARRY1(bVar13 + bVar15,bVar18));
-  bVar13 = bVar11 + in_AF * '\x06' + bVar12 * '`';
-  bVar11 = bVar19 + bVar15;
-  bVar20 = bVar11 + bVar12;
-  in_AF = 9 < (bVar13 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar13 || (CARRY1(bVar19,bVar15) || CARRY1(bVar11,bVar12));
-  bVar19 = bVar13 + in_AF * '\x06' + bVar12 * '`';
-  pbVar17 = (byte *)(iVar16 + -0x33efd8af);
-  bVar13 = *pbVar17;
-  bVar11 = *pbVar17;
-  *pbVar17 = bVar11 + bVar20 + bVar12;
-  in_AF = 9 < (bVar19 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar19 || (CARRY1(bVar13,bVar20) || CARRY1(bVar11 + bVar20,bVar12));
-  bVar11 = bVar19 + in_AF * '\x06' + bVar12 * '`';
-  bVar21 = bVar15 * '\x02' + bVar12;
-  pbVar22 = (byte *)CONCAT31(uVar14,bVar21);
-  in_AF = 9 < (bVar11 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar11 || (CARRY1(bVar15,bVar15) || CARRY1(bVar15 * '\x02',bVar12));
-  bVar19 = bVar11 + in_AF * '\x06' + bVar12 * '`';
-  bVar11 = *extraout_EDX;
-  bVar15 = (byte)iVar2;
-  bVar13 = *extraout_EDX;
-  *extraout_EDX = bVar13 + bVar15 + bVar12;
-  in_AF = 9 < (bVar19 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar15) || CARRY1(bVar13 + bVar15,bVar12));
-  bVar19 = bVar19 + in_AF * '\x06' + bVar12 * '`';
-  pbVar17 = score + 0x52;
-  bVar13 = *pbVar17;
-  bVar11 = *pbVar17;
-  *pbVar17 = bVar11 + bVar20 + bVar12;
-  in_AF = 9 < (bVar19 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar19 || (CARRY1(bVar13,bVar20) || CARRY1(bVar11 + bVar20,bVar12));
-  bVar19 = bVar19 + in_AF * '\x06' + bVar12 * '`';
-  bVar11 = *extraout_EDX;
-  bVar13 = *extraout_EDX;
-  *extraout_EDX = bVar13 + bVar15 + bVar12;
-  in_AF = 9 < (bVar19 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar15) || CARRY1(bVar13 + bVar15,bVar12));
-  bVar19 = bVar19 + in_AF * '\x06' + bVar12 * '`';
-  pbVar17 = extraout_EDX + 0x54;
-  bVar11 = *pbVar17;
-  bVar13 = *pbVar17;
-  *pbVar17 = bVar13 + bVar20 + bVar12;
-  in_AF = 9 < (bVar19 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar20) || CARRY1(bVar13 + bVar20,bVar12));
-  bVar19 = bVar19 + in_AF * '\x06' + bVar12 * '`';
-  pbVar17 = extraout_EDX + 0x54;
-  bVar11 = *pbVar17;
-  bVar13 = *pbVar17;
-  *pbVar17 = bVar13 + bVar20 + bVar12;
-  in_AF = 9 < (bVar19 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar20) || CARRY1(bVar13 + bVar20,bVar12));
-  bVar19 = bVar19 + in_AF * '\x06' + bVar12 * '`';
-  bVar11 = *extraout_EDX;
-  bVar13 = *extraout_EDX;
-  *extraout_EDX = bVar13 + bVar15 + bVar12;
-  in_AF = 9 < (bVar19 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar15) || CARRY1(bVar13 + bVar15,bVar12));
-  bVar19 = bVar19 + in_AF * '\x06' + bVar12 * '`';
-  pbVar17 = extraout_EDX + 0x54;
-  bVar11 = *pbVar17;
-  bVar13 = *pbVar17;
-  *pbVar17 = bVar13 + bVar20 + bVar12;
-  in_AF = 9 < (bVar19 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar20) || CARRY1(bVar13 + bVar20,bVar12));
-  bVar19 = bVar19 + in_AF * '\x06' + bVar12 * '`';
-  bVar11 = *pbVar22;
-  bVar23 = (byte)((uint)iVar2 >> 8);
-  bVar13 = *pbVar22;
-  *pbVar22 = bVar13 + bVar23 + bVar12;
-  in_AF = 9 < (bVar19 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar23) || CARRY1(bVar13 + bVar23,bVar12));
-  bVar13 = bVar19 + in_AF * '\x06' + bVar12 * '`';
-  bVar19 = (byte)((uint)extraout_EDX >> 8);
-  bVar11 = bVar19 + bVar23;
-  uVar1 = SUB41(extraout_EDX,0);
-  bVar20 = bVar11 + bVar12;
-  in_AF = 9 < (bVar13 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar13 || (CARRY1(bVar19,bVar23) || CARRY1(bVar11,bVar12));
-  bVar19 = bVar13 + in_AF * '\x06' + bVar12 * '`';
-  bVar11 = *(byte *)&unaff_ESI->klass;
-  bVar13 = *(char *)&unaff_ESI->klass + bVar21;
-  *(byte *)&unaff_ESI->klass = bVar13 + bVar12;
-  in_AF = 9 < (bVar19 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar21) || CARRY1(bVar13,bVar12));
-  bVar11 = bVar19 + in_AF * '\x06' + bVar12 * '`';
-  bVar19 = bVar20 + bVar23 + bVar12;
-  in_AF = 9 < (bVar11 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar11 || (CARRY1(bVar20,bVar23) || CARRY1(bVar20 + bVar23,bVar12));
-  bVar13 = bVar11 + in_AF * '\x06' + bVar12 * '`';
-  bVar18 = CARRY1(bRam_?,bVar15);
-  bVar11 = bRam_? + bVar15;
-  bRam_? = bVar11 + bVar12;
-  bVar12 = 0x99 < bVar13 || (bVar18 || CARRY1(bVar11,bVar12));
-  uVar10 = CONCAT11(bVar19 + bVar23 + bVar12,uVar1);
-  cRam_? = cRam_? + bVar15 +
-                 (0x99 < (byte)(bVar13 + (9 < (bVar13 & 0xf) | in_AF) * '\x06' + bVar12 * '`') ||
-                 (CARRY1(bVar19,bVar23) || CARRY1(bVar19 + bVar23,bVar12)));
-  in(uVar10);
+  cVar11 = '\0';
+  bVar12 = 0;
+  uVar13 = func_?();
+  iVar14 = (int)((ulonglong)uVar13 >> 0x20);
+  bVar15 = (byte)uVar13;
+  bVar16 = (byte)iVar2;
+  pbVar17 = extraout_ECX;
+  if (cVar11 == cVar4) {
+    in_AF = 9 < (bVar15 & 0xf) | in_AF;
+    bVar12 = 0x99 < bVar15 | bVar12;
+    bVar18 = bVar15 + in_AF * '\x06' + bVar12 * '`';
+    bVar19 = *extraout_ECX;
+    bVar20 = (byte)extraout_ECX;
+    bVar15 = *extraout_ECX;
+    *extraout_ECX = bVar15 + bVar20 + bVar12;
+    in_AF = 9 < (bVar18 & 0xf) | in_AF;
+    bVar21 = 0x99 < bVar18 || (CARRY1(bVar19,bVar20) || CARRY1(bVar15 + bVar20,bVar12));
+    bVar19 = bVar18 + in_AF * '\x06' + bVar21 * '`';
+    pbVar17 = &stack0x560c1023 + iVar14 * 2;
+    bVar15 = *pbVar17;
+    bVar22 = (byte)((ulonglong)uVar13 >> 8);
+    bVar12 = *pbVar17;
+    *pbVar17 = bVar12 + bVar22 + bVar21;
+    in_AF = 9 < (bVar19 & 0xf) | in_AF;
+    bVar21 = 0x99 < bVar19 || (CARRY1(bVar15,bVar22) || CARRY1(bVar12 + bVar22,bVar21));
+    bVar19 = bVar19 + in_AF * '\x06' + bVar21 * '`';
+    pbVar17 = (byte *)((int)&unaff_ESI->klass + iVar14 * 2);
+    bVar15 = *pbVar17;
+    bVar12 = *pbVar17;
+    *pbVar17 = bVar12 + bVar20 + bVar21;
+    in_AF = 9 < (bVar19 & 0xf) | in_AF;
+    bVar21 = 0x99 < bVar19 || (CARRY1(bVar15,bVar20) || CARRY1(bVar12 + bVar20,bVar21));
+    bVar12 = bVar19 + in_AF * '\x06' + bVar21 * '`';
+    bVar23 = bVar20 + bVar22 + bVar21;
+    pbVar17 = (byte *)CONCAT31((int3)((uint)extraout_ECX >> 8),bVar23);
+    in_AF = 9 < (bVar12 & 0xf) | in_AF;
+    bVar21 = 0x99 < bVar12 || (CARRY1(bVar20,bVar22) || CARRY1(bVar20 + bVar22,bVar21));
+    bVar19 = bVar12 + in_AF * '\x06' + bVar21 * '`';
+    pbVar24 = (byte *)((int)&unaff_ESI->klass + iVar14 * 2);
+    bVar12 = *pbVar24;
+    bVar15 = *pbVar24;
+    *pbVar24 = bVar15 + bVar23 + bVar21;
+    in_AF = 9 < (bVar19 & 0xf) | in_AF;
+    bVar21 = 0x99 < bVar19 || (CARRY1(bVar12,bVar23) || CARRY1(bVar15 + bVar23,bVar21));
+    bVar19 = bVar19 + in_AF * '\x06' + bVar21 * '`';
+    bVar12 = *pbVar17;
+    bVar15 = *pbVar17;
+    *pbVar17 = bVar15 + bVar23 + bVar21;
+    in_AF = 9 < (bVar19 & 0xf) | in_AF;
+    bVar21 = 0x99 < bVar19 || (CARRY1(bVar12,bVar23) || CARRY1(bVar15 + bVar23,bVar21));
+    bVar19 = bVar19 + in_AF * '\x06' + bVar21 * '`';
+    pbVar24 = (byte *)(iVar14 + 0x56);
+    bVar15 = *pbVar24;
+    bVar12 = *pbVar24;
+    *pbVar24 = bVar12 + bVar16 + bVar21;
+    in_AF = 9 < (bVar19 & 0xf) | in_AF;
+    bVar21 = 0x99 < bVar19 || (CARRY1(bVar15,bVar16) || CARRY1(bVar12 + bVar16,bVar21));
+    bVar19 = bVar19 + in_AF * '\x06' + bVar21 * '`';
+    pbVar24 = score + 0x5a102756;
+    bVar15 = *pbVar24;
+    bVar12 = *pbVar24;
+    *pbVar24 = bVar12 + bVar22 + bVar21;
+    bVar21 = 0x99 < bVar19 || (CARRY1(bVar15,bVar22) || CARRY1(bVar12 + bVar22,bVar21));
+    pbVar24 = (byte *)(iVar14 + -0x5defd8a8);
+    bVar12 = *pbVar24;
+    bVar15 = *pbVar24;
+    *pbVar24 = bVar15 + bVar22 + bVar21;
+    bVar18 = (byte)unaff_ESI;
+    bVar19 = 9 < (bVar18 & 0xf) | 9 < (bVar19 & 0xf) | in_AF;
+    bVar21 = 0x99 < bVar18 || (CARRY1(bVar12,bVar22) || CARRY1(bVar15 + bVar22,bVar21));
+    bVar18 = bVar18 + bVar19 * '\x06' + bVar21 * '`';
+    pbVar24 = (byte *)(iVar14 + 0x56);
+    bVar12 = *pbVar24;
+    bVar15 = *pbVar24;
+    *pbVar24 = bVar15 + bVar16 + bVar21;
+    bVar19 = 9 < (bVar18 & 0xf) | bVar19;
+    bVar21 = 0x99 < bVar18 || (CARRY1(bVar12,bVar16) || CARRY1(bVar15 + bVar16,bVar21));
+    bVar18 = bVar18 + bVar19 * '\x06' + bVar21 * '`';
+    pbVar24 = (byte *)(iVar14 + 0x79102758);
+    bVar12 = *pbVar24;
+    bVar22 = (byte)((uint)unaff_ESI >> 8);
+    bVar15 = *pbVar24 + bVar22;
+    *pbVar24 = bVar15 + bVar21;
+    bVar19 = 9 < (bVar18 & 0xf) | bVar19;
+    bVar21 = 0x99 < bVar18 || (CARRY1(bVar12,bVar22) || CARRY1(bVar15,bVar21));
+    bVar18 = bVar18 + bVar19 * '\x06' + bVar21 * '`';
+    bVar12 = *(byte *)&unaff_ESI->klass;
+    bVar22 = (byte)((uint)iVar2 >> 8);
+    bVar15 = *(char *)&unaff_ESI->klass + bVar22;
+    *(byte *)&unaff_ESI->klass = bVar15 + bVar21;
+    bVar19 = 9 < (bVar18 & 0xf) | bVar19;
+    bVar21 = 0x99 < bVar18 || (CARRY1(bVar12,bVar22) || CARRY1(bVar15,bVar21));
+    bVar18 = bVar18 + bVar19 * '\x06' + bVar21 * '`';
+    pbVar24 = (byte *)((int)&unaff_ESI[5].monitor + 3);
+    bVar12 = *pbVar24;
+    bVar15 = *pbVar24;
+    *pbVar24 = bVar15 + bVar23 + bVar21;
+    bVar19 = 9 < (bVar18 & 0xf) | bVar19;
+    bVar21 = 0x99 < bVar18 || (CARRY1(bVar12,bVar23) || CARRY1(bVar15 + bVar23,bVar21));
+    bVar18 = bVar18 + bVar19 * '\x06' + bVar21 * '`';
+    bVar12 = *(byte *)&unaff_ESI->klass;
+    bVar15 = *(char *)&unaff_ESI->klass + bVar22;
+    *(byte *)&unaff_ESI->klass = bVar15 + bVar21;
+    bVar19 = 9 < (bVar18 & 0xf) | bVar19;
+    bVar21 = 0x99 < bVar18 || (CARRY1(bVar12,bVar22) || CARRY1(bVar15,bVar21));
+    bVar15 = bVar18 + bVar19 * '\x06' + bVar21 * '`';
+    bVar12 = in_stack_25 + bVar16 + bVar21;
+    bVar19 = 9 < (bVar15 & 0xf) | bVar19;
+    bVar21 = 0x99 < bVar15 ||
+            (CARRY1(in_stack_25,bVar16) || CARRY1(in_stack_25 + bVar16,bVar21));
+    bVar18 = bVar15 + bVar19 * '\x06' + bVar21 * '`';
+    bVar15 = bVar12 + bVar16;
+    in_stack_25 = bVar15 + bVar21;
+    bVar19 = 9 < (bVar18 & 0xf) | bVar19;
+    bVar21 = 0x99 < bVar18 || (CARRY1(bVar12,bVar16) || CARRY1(bVar15,bVar21));
+    bVar18 = bVar18 + bVar19 * '\x06' + bVar21 * '`';
+    bVar12 = *(byte *)&unaff_ESI->klass;
+    bVar15 = *(char *)&unaff_ESI->klass + bVar22;
+    *(byte *)&unaff_ESI->klass = bVar15 + bVar21;
+    bVar12 = 0x99 < bVar18 || (CARRY1(bVar12,bVar22) || CARRY1(bVar15,bVar21));
+    bVar15 = bVar18 + (9 < (bVar18 & 0xf) | bVar19) * '\x06' + bVar12 * '`';
+  }
+  pcVar26 = (char *)((int)&unaff_ESI[5].monitor + 3);
+  *pcVar26 = *pcVar26 + (char)pbVar17 +
+            (0x99 < bVar15 ||
+            (CARRY1(in_stack_25,bVar16) || CARRY1(in_stack_25 + bVar16,bVar12)));
+  in((short)((ulonglong)uVar13 >> 0x20));
   *(undefined4 *)(actorNumber + 0x10) = 2;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object,iVar2,uVar10,iVar2,CONCAT11(bVar19,uVar1),
-                    iVar2,CONCAT11(bVar20,uVar1),extraout_EDX,extraout_EDX,extraout_EDX,
-                    extraout_EDX,pbVar22,iVar16,iVar16,iVar16);
+    func_?();
     cRam_? = '\x01';
   }
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+    func_?();
   }
   return;
 code_?:
-  pMVar24 = MVPlayerContainer::MVPlayerContainer_get_Item(pMVar6,actorNumber,(MethodInfo *)0x0);
-  if (pMVar24 == (MVPlayer *)0x0) {
+  pMVar27 = MVPlayerContainer::MVPlayerContainer_get_Item(pMVar7,actorNumber,(MethodInfo *)0x0);
+  if (pMVar27 == (MVPlayer *)0x0) {
     return;
   }
-  bVar7 = WinningConditionNotificationManager_IsFlagScoreBestInGame
+  bVar8 = WinningConditionNotificationManager_IsFlagScoreBestInGame
                     ((int32_t)score,actorNumber,(MethodInfo *)0x0);
-  if (bVar7 == 0) {
+  if (bVar8 == 0) {
     return;
   }
   goto code_?;

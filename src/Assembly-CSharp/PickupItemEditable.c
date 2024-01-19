@@ -1355,3 +1355,14 @@ String * Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_get_HitSoun
   return ::StringLiteral__;
 }
 
+
+/* Void set_CubeModelPid(Int32) */
+
+void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_set_CubeModelPid
+               (PickupItemEditable *this,int32_t value,MethodInfo *method)
+
+{
+  (this->fields)._CubeModelPid_k__BackingField = value;
+  return;
+}
+

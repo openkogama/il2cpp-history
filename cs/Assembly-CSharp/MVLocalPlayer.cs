@@ -86,5 +86,6 @@ public abstract class MVLocalPlayer : MVPlayer
 	public void DiedInRound();
 	public bool HasDiedInRound();
 	public void RoundEnded();
+	public bool IsAvatarDriving(MVVehicleBase vehicleBase);
 }
 

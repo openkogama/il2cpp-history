@@ -34,6 +34,7 @@ void Assembly-CSharp.dll::AvatarPackages::AvatarPackages__cctor(MethodInfo *meth
     func_?(&TypeInfo__SixShooterHitPackage);
     func_?(&TypeInfo__SlapGunHitPackage);
     func_?(&TypeInfo__ThrowingStarHitPackage);
+    func_?(&TypeInfo__VehicleHitPackage);
     cRam_? = '\x01';
   }
   this = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
@@ -46,10 +47,26 @@ void Assembly-CSharp.dll::AvatarPackages::AvatarPackages__cctor(MethodInfo *meth
             (this,
              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_InteractionPackage>__Dictionary__
             );
-  method_18 = TypeInfo__ImpulseHitPackage;
-  pOVar1 = (Object *)func_?();
+  pOVar1 = (Object *)func_?(TypeInfo__ImpulseHitPackage);
+  if (cRam_? == '\0') {
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Dictionary__)
+    ;
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_float>);
+    cRam_? = '\x01';
+  }
+  this_00 = (Object__Class *)
+            func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_float>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            ((Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+              *)this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Dictionary__);
+  method_19 = (MethodInfo *)(pOVar1 + 1);
+  pOVar1[1].klass = this_00;
+  func_?(method_19,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_18);
+            (pOVar1,ExceptionArgument__Enum_obj,method_19);
   if (this != (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
                *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
@@ -57,19 +74,19 @@ void Assembly-CSharp.dll::AvatarPackages::AvatarPackages__cctor(MethodInfo *meth
               ((Dictionary_2_System_ByteEnum_System_Object_ *)this,2,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_InteractionPackage>__Add_MV__WorldObject__InteractionPackageType__InteractionPackage_
               );
-    method_00 = TypeInfo__MeleeWeaponHitPackage;
+    method_01 = TypeInfo__MeleeWeaponHitPackage;
     pOVar1 = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+              (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
     Dictionary_2_System_ByteEnum_System_Object__Add
               ((Dictionary_2_System_ByteEnum_System_Object_ *)this,5,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_InteractionPackage>__Add_MV__WorldObject__InteractionPackageType__InteractionPackage_
               );
-    method_01 = TypeInfo__RailgunHitPackage;
+    method_00 = TypeInfo__RailgunHitPackage;
     pOVar1 = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+              (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
     Dictionary_2_System_ByteEnum_System_Object__Add
               ((Dictionary_2_System_ByteEnum_System_Object_ *)this,4,pOVar1,
@@ -210,13 +227,22 @@ void Assembly-CSharp.dll::AvatarPackages::AvatarPackages__cctor(MethodInfo *meth
               ((Dictionary_2_System_ByteEnum_System_Object_ *)this,0x1a,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_InteractionPackage>__Add_MV__WorldObject__InteractionPackageType__InteractionPackage_
               );
-    method_17 = TypeInfo__HealRayHitPackage;
+    method_18 = TypeInfo__HealRayHitPackage;
+    pOVar1 = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_18);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+    Dictionary_2_System_ByteEnum_System_Object__Add
+              ((Dictionary_2_System_ByteEnum_System_Object_ *)this,0x1b,pOVar1,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_InteractionPackage>__Add_MV__WorldObject__InteractionPackageType__InteractionPackage_
+              );
+    method_17 = TypeInfo__VehicleHitPackage;
     pOVar1 = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_17);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
     Dictionary_2_System_ByteEnum_System_Object__Add
-              ((Dictionary_2_System_ByteEnum_System_Object_ *)this,0x1b,pOVar1,
+              ((Dictionary_2_System_ByteEnum_System_Object_ *)this,0x1c,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_InteractionPackage>__Add_MV__WorldObject__InteractionPackageType__InteractionPackage_
               );
     TypeInfo__AvatarPackages->static_fields->packages =

@@ -1008,13 +1008,13 @@ code_?:
                             ThrustersColorSerializer_Serialize(thrustersColor,(MethodInfo *)0x0);
                   if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                     pDVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                             UInt32,System::Object]::
-                             Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                                         *)&stack0xffffffbc,
-                                        (Dictionary_2_System_UInt32_System_Object_ *)this_01,
-                                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
-                                       );
+                              UInt32,System::Object]::
+                              Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                                          *)&stack0xffffffbc,
+                                         (Dictionary_2_System_UInt32_System_Object_ *)this_01,
+                                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
+                                        );
                     uVar18 = *(undefined8 *)&(pDVar17->_current).value;
                     uStack_1 = 1;
                     while( true ) {
@@ -1094,8 +1094,12 @@ code_?:
 code_?:
   func_?();
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  in(0x48);
+  in(0x48);
+  in(0x48);
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
+  return;
 }
 
 

@@ -729,7 +729,7 @@ code_?:
                  GameCoinBooster::GameCoinBooster_GetBoostedGameCoins(this_02,1,(MethodInfo *)0x0);
         pOVar19 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat
                   ::ObscuredFloat_op_Implicit
-                            ((ObscuredFloat *)auStack_2,4.125781e-29 / (float)iVar4,
+                            ((ObscuredFloat *)auStack_2,4.1262384e-29 / (float)iVar4,
                              (MethodInfo *)0x0);
         AVar9 = (ACTkByte4)pOVar19->currentCryptoKey;
         AVar10 = pOVar19->hiddenValue;

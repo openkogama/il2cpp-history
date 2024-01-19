@@ -35,6 +35,7 @@ code_?:
   }
   (this->fields).owner = avatar;
   func_?();
+  (this->fields)._IsOccupied_k__BackingField = 1;
   return;
 }
 
@@ -92,9 +93,10 @@ code_?:
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       if (x == (Object_1 *)0x0) goto code_?;
-      (*(code *)x->klass[1]._0.castClass)(x,x->klass[1]._0.declaringType);
+      (*(code *)x->klass[1]._0.castClass)();
     }
   }
+  (this->fields)._IsOccupied_k__BackingField = 0;
   return;
 }
 

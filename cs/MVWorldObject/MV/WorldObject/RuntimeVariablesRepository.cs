@@ -16,7 +16,7 @@ namespace MV.WorldObject
 	public static class RuntimeVariablesRepository
 	{
 		// Fields
-		private static Dictionary<WorldObjectType, Dictionary<object, object>> runtimeVariables;
+		private static readonly Dictionary<WorldObjectType, Dictionary<object, object>> runtimeVariables;
 	
 		// Constructors
 		static RuntimeVariablesRepository();

@@ -722,89 +722,76 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateHea
 }
 
 
-/* WARNING (jumptable): Unable to track spacebase fully for stack */
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void UpdateNameTag() */
 
 void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNameTag
                (AvatarUIHandlerRemote *this,MethodInfo *method)
 
 {
-  pMVar1 = (MethodInfo *)&stack0xfffffffc;
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  bVar3 = in_stack_4;
-  if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-  pMVar5 = (pMVar2->fields).playerContainer;
-  if (pMVar5 == (MVPlayerContainer *)0x0) goto code_?;
-  bVar6 = MVPlayerContainer::MVPlayerContainer_ContainsKey
-                    (pMVar5,(this->fields)._.ownerActorNr,(MethodInfo *)0x0);
-  if (bVar6 != 0) {
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-    pMVar5 = (pMVar2->fields).playerContainer;
-    if (pMVar5 == (MVPlayerContainer *)0x0) goto code_?;
-    pMVar7 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                       (pMVar5,(this->fields)._.ownerActorNr,(MethodInfo *)0x0);
-    if (pMVar7 == (MVPlayer *)0x0) goto code_?;
-    pUVar8 = (pMVar7->fields)._UserProfileData_k__BackingField;
-    if (pUVar8 == (UserProfileData *)0x0) goto code_?;
-    this_00 = (this->fields).avatarName;
-    if (this_00 == (TextMesh *)0x0) goto code_?;
-    UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
-              (this_00,(pUVar8->fields).UserName,(MethodInfo *)0x0);
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-    this_01 = (pMVar2->fields).teamManager;
-    if (this_01 == (MVTeamManager *)0x0) goto code_?;
-    method = (MethodInfo *)&UNK_?;
-    iVar9 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0);
-    pMVar10 = (MethodInfo *)&stack0xfffffffc;
-    if (1 < iVar9) {
-      pMVar10 = (MethodInfo *)&stack0xfffffffc;
-      switch((pMVar7->fields)._Team_k__BackingField) {
-      case 0:
-        pMVar10 = (MethodInfo *)&stack0xfffffffc;
-        break;
-      case 1:
-        goto code_?;
-      case 2:
-        pMVar10 = (MethodInfo *)&stack0xfffffffc;
-        break;
-      case 3:
-        pMVar10 = (MethodInfo *)&stack0xfffffffc;
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) {
+    bVar3 = MVPlayerContainer::MVPlayerContainer_ContainsKey
+                      (pMVar2,(this->fields)._.ownerActorNr,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
+      return;
+    }
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((((pMVar1 != (MVNetworkGame *)0x0) &&
+         (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) &&
+        (pMVar4 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
+                            (pMVar2,(this->fields)._.ownerActorNr,(MethodInfo *)0x0),
+        pMVar4 != (MVPlayer *)0x0)) &&
+       ((pUVar5 = (pMVar4->fields)._UserProfileData_k__BackingField,
+        pUVar5 != (UserProfileData *)0x0 &&
+        (this_00 = (this->fields).avatarName, this_00 != (TextMesh *)0x0)))) {
+      UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
+                (this_00,(pUVar5->fields).UserName,(MethodInfo *)0x0);
+      uVar6 = _UNK_?;
+      uVar7 = _UNK_?;
+      uVar8 = _UNK_?;
+      fVar9 = _UNK_?;
+      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar1 != (MVNetworkGame *)0x0) &&
+         (this_01 = (pMVar1->fields).teamManager, this_01 != (MVTeamManager *)0x0)) {
+        fStack10 = fVar9;
+        iVar11 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0);
+        if (1 < iVar11) {
+          switch((pMVar4->fields)._Team_k__BackingField) {
+          case 0:
+            uVar6 = 0;
+            uVar7 = 0;
+            break;
+          case 1:
+            uVar7 = 0;
+            uVar8 = 0;
+            break;
+          case 2:
+            uVar6 = 0;
+            uVar8 = 0;
+            break;
+          case 3:
+            uVar7 = 0x3f6bebec;
+            uVar8 = 0x3c808081;
+          }
+        }
+        this_02 = (this->fields).avatarNameMaterial;
+        if (this_02 != (Material *)0x0) {
+          value.g = (float)uVar7;
+          value.r = (float)uVar6;
+          value.b = (float)uVar8;
+          value.a = fStack10;
+          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
+                    (this_02,value,(MethodInfo *)0x0);
+          return;
+        }
       }
     }
-    while (this_02 = (this->fields).avatarNameMaterial, bVar3 = in_stack_4,
-          this_02 == (Material *)0x0) {
-code_?:
-      bVar11 = func_?();
-      cVar12 = bVar11 - 0x10;
-      in_stack_4 =
-           (cVar12 < '\0') * -0x80 | (cVar12 == '\0') * '@' | (in_AF & 1) * '\x10' |
-           ((POPCOUNT(cVar12) & 1U) == 0) * '\x04' | bVar11 < 0x10;
-      pMVar1 = method;
-      this = extraout_ECX;
-      if (SBORROW1(bVar3,'\x10')) {
-        *(uint *)(&stack0xcccccc2c + (int)method) =
-             (*(int *)(&stack0xcccccc2c + (int)method) + 0x33333334) -
-             (uint)((byte)(bVar3 - 0x10) < 0x10);
-        pcVar13 = (code *)swi(3);
-        (*pcVar13)();
-        return;
-      }
-code_?:
-      pMVar1[-1].token = 0;
-      pMVar1[-0xffffffff00000001].flags = 0;
-      pMVar1[-0xffffffff00000001].iflags = 0;
-      pMVar10 = pMVar1;
-    }
-    uStack14._0_2_ = pMVar10[-0xffffffff00000001].slot;
-    uStack14._2_1_ = pMVar10[-0xffffffff00000001].parameters_count;
-    uStack14._3_1_ = pMVar10[-0xffffffff00000001].field_0x2f;
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-              (this_02,*(Color *)&pMVar10[-1].field8_0x20,(MethodInfo *)0x0);
   }
+  iVar12 = func_?();
+  *(int *)(iVar12 + -0x5f2eefd4) = *(int *)(iVar12 + -0x5f2eefd4) << 0xc;
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

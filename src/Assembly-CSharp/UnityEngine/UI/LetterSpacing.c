@@ -765,9 +765,14 @@ code_?:
 code_?:
   func_?();
 code_?:
-  func_?();
-  pcVar81 = (code *)swi(1);
-  (*pcVar81)();
+  uVar47 = func_?();
+  piVar22 = (int *)((ulonglong)uVar47 >> 0x20);
+  pcVar81 = (char *)((int)uVar47 + -0x6defb209);
+  *pcVar81 = *pcVar81 + (char)extraout_ECX;
+  *piVar22 = *piVar22 + (int)uVar47;
+  *extraout_ECX = *extraout_ECX + (char)uVar47;
+  pcVar82 = (code *)swi(3);
+  (*pcVar82)();
   return;
 }
 

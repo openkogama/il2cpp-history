@@ -304,8 +304,8 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
     func_?(&StringLiteral_Failed_to_get_rigid_bodies);
     cRam_? = '\x01';
   }
-  if ((this->fields).onLeave != (Action *)0x0) {
-    pAVar1 = (this->fields).onLeave;
+  pAVar1 = (this->fields).onLeave;
+  if (pAVar1 != (Action *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }

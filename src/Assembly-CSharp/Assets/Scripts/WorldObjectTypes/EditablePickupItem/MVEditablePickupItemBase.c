@@ -115,7 +115,8 @@ code_?:
     TVar5.m_Index = extraout_EDX;
   }
   else {
-    if (*(int *)&pickupItem[2].fields.firedThisFrame != (pMVar4->fields).cubeModelPid) {
+    if (pickupItem[2].fields._.m_CancellationTokenSource !=
+        (CancellationTokenSource *)(pMVar4->fields).cubeModelPid) {
       return 0;
     }
     pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)

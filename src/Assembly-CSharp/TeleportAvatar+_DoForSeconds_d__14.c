@@ -1,9 +1,9 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::TeleportAvatar+<DoForSeconds>d__6::
-     TeleportAvatar_DoForSeconds_d_6_MoveNext
-               (TeleportAvatar_DoForSeconds_d_6 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::TeleportAvatar+<DoForSeconds>d__14::
+     TeleportAvatar_DoForSeconds_d_14_MoveNext
+               (TeleportAvatar_DoForSeconds_d_14 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -51,9 +51,9 @@ bool Assembly-CSharp.dll::TeleportAvatar+<DoForSeconds>d__6::
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::TeleportAvatar+<DoForSeconds>d__6::
-     TeleportAvatar_DoForSeconds_d_6_System_Collections_IEnumerator_Reset
-               (TeleportAvatar_DoForSeconds_d_6 *this,MethodInfo *method)
+void Assembly-CSharp.dll::TeleportAvatar+<DoForSeconds>d__14::
+     TeleportAvatar_DoForSeconds_d_14_System_Collections_IEnumerator_Reset
+               (TeleportAvatar_DoForSeconds_d_14 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
@@ -61,7 +61,7 @@ void Assembly-CSharp.dll::TeleportAvatar+<DoForSeconds>d__6::
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&
-                  MethodInfo__TeleportAvatar___DoForSeconds_d__6__System_Collections_IEnumerator_Reset__
+                  MethodInfo__TeleportAvatar___DoForSeconds_d__14__System_Collections_IEnumerator_Reset__
                  );
   func_?(this_00);
   pcVar2 = (code *)swi(3);

@@ -355,7 +355,7 @@ bool MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_Valida
     bVar1 = MVMath::MVMath_ValidateFloat(validateVector.y,(MethodInfo *)0x0);
     if (bVar1 != 0) {
       bVar1 = MVMath::MVMath_ValidateFloat(validateVector.z,(MethodInfo *)0x0);
-      return bVar1 != 0;
+      return bVar1;
     }
   }
   return 0;
@@ -825,9 +825,9 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_
   if (bVar7 != 0) {
     impulse.x = 0.0;
     damage = impulse.y;
-    interactionType._1_1_ = 0xd;
+    interactionType._1_1_ = 0x14;
     uVar9 = interactionType._1_1_;
-    interactionType._1_1_ = 0xd;
+    interactionType._1_1_ = 0x14;
     bVar7 = MVMath::MVMath_ValidateFloat(impulse.y,(MethodInfo *)0x0);
     if (bVar7 != 0) {
       impulse.z = 0.0;

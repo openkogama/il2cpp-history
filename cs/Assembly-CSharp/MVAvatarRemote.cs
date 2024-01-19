@@ -13,17 +13,16 @@ using UnityEngine;
 public class MVAvatarRemote : MVAvatar, IBulletImpactVisualizer, ISpawnRoleRemote
 {
 	// Fields
-	private DynamicCullingHandler cullingHandler;
+	private readonly DynamicCullingHandler cullingHandler;
 	private CapsuleCollider triggerCollider;
 	private AvatarRemoteMovementCalculator avatarRemoteMovementCalculator;
 	[CompilerGenerated]
 	private bool _IsInVehicle_k__BackingField;
-	private const float initialCullingRadius = 3.5f;
-	private float impulseMagnitudeFactor;
-	private float velocityMinMagnitude;
-	private float velocityMaxMagnitude;
-	private float minVelocity;
-	private const float hitTimeOut = 2f;
+	private const float ImpulseMagnitudeFactor = 0.6f;
+	private const float VelocityMinMagnitude = 1500f;
+	private const float VelocityMaxMagnitude = 5000f;
+	private const float MinVelocity = 700f;
+	private const float HitTimeOut = 2f;
 	private float prevHitTime;
 
 	// Properties
@@ -34,14 +33,14 @@ public class MVAvatarRemote : MVAvatar, IBulletImpactVisualizer, ISpawnRoleRemot
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass18_0
+	private sealed class __c__DisplayClass23_0
 	{
 		// Fields
 		public MVAvatarRemote __4__this;
 		public HealthBar healthBar;
 
 		// Constructors
-		public __c__DisplayClass18_0();
+		public __c__DisplayClass23_0();
 
 		// Methods
 		internal void _InitializeHealth_b__0(object health);
@@ -72,6 +71,6 @@ public class MVAvatarRemote : MVAvatar, IBulletImpactVisualizer, ISpawnRoleRemot
 	public void Activate(int idFrom, Vector3 position, Quaternion rotation);
 	public void DeActivate(int idTo);
 	[CompilerGenerated]
-	private void _InitializeShield_b__19_0(object shield);
+	private void _InitializeShield_b__24_0(object shield);
 }
 

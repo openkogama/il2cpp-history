@@ -28,15 +28,104 @@ void Assembly-CSharp.dll::ImpulseHitPackage::ImpulseHitPackage_ParseAndHandlePac
 
 {
   if (cRam_? == '\0') {
+    func_?(&
+                    float_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<int,_float>_System__Collections__Generic__IReadOnlyDictionary<int,_float>__int__float_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_float>__set_Item_int__float_
+                   );
     func_?(&TypeInfo__MV__WorldObject__InteractionData);
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__InteractionData);
+  if (shooter != (MVPlayer *)0x0) {
+    key = MVPlayer::MVPlayer_get_WoId(shooter,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::CollectionExtensions::
+    CollectionExtensions_GetValueOrDefault_2
+              ((IReadOnlyDictionary_2_System_Int32_System_Single_ *)(this->fields).lastShotTime,key,
+               0.0,
+               float_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<int,_float>_System__Collections__Generic__IReadOnlyDictionary<int,_float>__int__float_
+              );
+    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedTime((MethodInfo *)0x0);
+    if (_UNK_? < fVar1 - unaff_retaddr) {
+      if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MV__WorldObject__InteractionData);
+      }
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__System__Math);
+        cRam_? = '\x01';
+      }
+      fVar1 = interactionStruct.impulse.x * interactionStruct.impulse.x +
+              interactionStruct.impulse.y * interactionStruct.impulse.y +
+              interactionStruct.impulse.z * interactionStruct.impulse.z;
+      if (_UNK_? < fVar1) {
+        if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__System__Math);
+        }
+        dVar2 = (double)fVar1;
+        if (dVar2 < 0.0) {
+          func_?();
+        }
+        else {
+          dVar2 = SQRT(dVar2);
+        }
+        fVar1 = (float)dVar2;
+        interactionStruct.impulse.z = (interactionStruct.impulse.z / fVar1) * _UNK_?;
+        uVar3 = CONCAT44((interactionStruct.impulse.y / fVar1) * _UNK_?,
+                         (interactionStruct.impulse.x / fVar1) * _UNK_?);
+      }
+      else {
+        uVar3 = interactionStruct.impulse._0_8_;
+      }
+      impulse.z = interactionStruct.impulse.z;
+      impulse.x = (float)(int)uVar3;
+      impulse.y = (float)(int)((ulonglong)uVar3 >> 0x20);
+      InteractionPackage::InteractionPackage_HandlePackage_3
+                ((InteractionPackage *)this,worldObjectClient,shooter,impulse,
+                 AvatarModifierPackageType__Enum_NoFriction,(MethodInfo *)0x0);
+      this_00 = (this->fields).lastShotTime;
+      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedTime((MethodInfo *)0x0)
+      ;
+      if (this_00 == (Dictionary_2_System_Int32_System_Single_ *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
+      Dictionary_2_System_Int32_System_Single__set_Item
+                (this_00,key,fVar1,
+                 MethodInfo__System__Collections__Generic__Dictionary<int,_float>__set_Item_int__float_
+                );
+    }
+    return;
   }
-  InteractionPackage::InteractionPackage_HandlePackage_3
-            ((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.impulse,
-             AvatarModifierPackageType__Enum_NoFriction,(MethodInfo *)0x0);
+code_?:
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
+  return;
+}
+
+
+/* ImpulseHitPackage() */
+
+void Assembly-CSharp.dll::ImpulseHitPackage::ImpulseHitPackage__ctor
+               (ImpulseHitPackage *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Dictionary__)
+    ;
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_float>);
+    cRam_? = '\x01';
+  }
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
+            )func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_float>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Dictionary__)
+  ;
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).lastShotTime = (Dictionary_2_System_Int32_System_Single_ *)this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

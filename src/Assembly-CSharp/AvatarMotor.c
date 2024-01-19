@@ -567,7 +567,7 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_GetVelocity
                 velocity_01.z = fVar6;
                 pVVar3 = JumpState::JumpState_ApplyJumping
                                    ((Vector3 *)&stack0xffffffc8,this_01,
-                                    (MVInteractableBase *)interactableLocal,pMVar1,fVar5,fVar7,0x35
+                                    (MVInteractableBase *)interactableLocal,pMVar1,fVar5,fVar7,0xc5
                                     ,velocity_01,movableVelocity,(MethodInfo *)0x0);
                 pVVar3 = MVRigidBody::MVRigidBody_GetImpulse
                                    ((Vector3 *)&stack0xffffffc8,(MVRigidBody *)this,*pVVar3,

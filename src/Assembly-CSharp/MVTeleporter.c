@@ -150,7 +150,7 @@ bool Assembly-CSharp.dll::MVTeleporter::MVTeleporter_DoTeleport
     this_00 = (this->fields)._._.transform;
     if (this_00 == (Transform *)0x0) goto code_?;
     pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffdc,this_00,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffd8,this_00,(MethodInfo *)0x0);
     original = (this->fields).teleportAvatarPrefab;
     OVar5.klass = (Object__Class *)pVVar4->x;
     OVar5.monitor = (MonitorData *)pVVar4->y;
@@ -168,6 +168,8 @@ bool Assembly-CSharp.dll::MVTeleporter::MVTeleporter_DoTeleport
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
+    pOVar13 = OVar7.klass;
+    pMVar14 = OVar7.monitor;
     position.z = fVar6;
     position.x = (float)OVar7.klass;
     position.y = (float)OVar7.monitor;
@@ -175,37 +177,38 @@ bool Assembly-CSharp.dll::MVTeleporter::MVTeleporter_DoTeleport
     rotation.x = fVar9;
     rotation.z = fVar11;
     rotation.w = fVar12;
-    pOVar13 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
+    pOVar15 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
                         ((Object *)original,position,rotation,
                          TeleportAvatar_MethodInfo__UnityEngine__Object__Instantiate<TeleportAvatar>_TeleportAvatar__UnityEngine__Vector3__UnityEngine__Quaternion_
                         );
-    pOVar14 = OVar7.klass;
-    if (pOVar13 == (Object *)0x0) goto code_?;
-    pOVar13[5].monitor = (MonitorData *)this_02;
+    if (pOVar15 == (Object *)0x0) goto code_?;
+    pOVar15[6].klass = (Object__Class *)(this->fields)._._._.id;
+    pOVar15[6].monitor = *(MonitorData **)(pMVar14 + 8);
+    pOVar15[5].monitor = (MonitorData *)this_02;
     func_?();
-    puVar15 = (undefined8 *)func_?();
-    pMVar16 = *(MonitorData **)(puVar15 + 1);
-    *(undefined8 *)&pOVar13[2].monitor = *puVar15;
-    pOVar13[3].monitor = pMVar16;
-    pOVar13[4] = OVar5;
-    pOVar13[5].klass = pOVar14;
-    pMVar17 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-    pLVar3 = *(List_1_System_Int32_ **)((int)fVar9 + 0xf8);
+    puVar16 = (undefined8 *)func_?();
+    pMVar17 = *(MonitorData **)(puVar16 + 1);
+    *(undefined8 *)&pOVar15[2].monitor = *puVar16;
+    pOVar15[3].monitor = pMVar17;
+    pOVar15[4] = OVar5;
+    pOVar15[5].klass = pOVar13;
+    pMVar18 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+    pLVar3 = *(List_1_System_Int32_ **)(pMVar14 + 0xf8);
     item = (this_02->fields)._._._._.id;
     if (pLVar3 == (List_1_System_Int32_ *)0x0) goto code_?;
-    piVar18 = &(pLVar3->fields)._version;
-    *piVar18 = *piVar18 + 1;
-    pIVar19 = (pLVar3->fields)._items;
-    if (pIVar19 == (Int32__Array *)0x0) goto code_?;
+    piVar19 = &(pLVar3->fields)._version;
+    *piVar19 = *piVar19 + 1;
+    pIVar20 = (pLVar3->fields)._items;
+    if (pIVar20 == (Int32__Array *)0x0) goto code_?;
     this_02 = (MVAvatarLocal *)(pLVar3->fields)._size;
-    if ((MVAvatarLocal *)pIVar19->max_length <= this_02) {
+    if ((MVAvatarLocal *)pIVar20->max_length <= this_02) {
       mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-      List_1_System_Int32__AddWithResize(pLVar3,item,pMVar17->klass->rgctx_data[0xe].method);
+      List_1_System_Int32__AddWithResize(pLVar3,item,pMVar18->klass->rgctx_data[0xe].method);
       return 1;
     }
     (pLVar3->fields)._size = (int32_t)((int)&this_02->klass + 1);
-    if (this_02 < (MVAvatarLocal *)pIVar19->max_length) {
-      pIVar19->vector[(int)this_02] = item;
+    if (this_02 < (MVAvatarLocal *)pIVar20->max_length) {
+      pIVar20->vector[(int)this_02] = item;
       return 1;
     }
     func_?();
@@ -214,8 +217,8 @@ bool Assembly-CSharp.dll::MVTeleporter::MVTeleporter_DoTeleport
   func_?(this_02,pMVar1);
 code_?:
   func_?();
-  pcVar20 = (code *)swi(3);
-  bVar2 = (*pcVar20)();
+  pcVar21 = (code *)swi(3);
+  bVar2 = (*pcVar21)();
   return bVar2;
 }
 

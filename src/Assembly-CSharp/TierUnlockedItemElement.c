@@ -534,22 +534,21 @@ code_?:
 }
 
 
-/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* Void SetTeam(MVTeam) */
 
 void Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_SetTeam
                (TierUnlockedItemElement *this,MVTeam__Enum team,MethodInfo *method)
 
 {
-  this_00 = (this->fields).teamRequirementImage;
+  pIVar1 = (this->fields).teamRequirementImage;
   (this->fields).team = team;
-  if (this_00 == (Image *)0x0) goto code_?;
-  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                      ((Component *)this_00,(MethodInfo *)0x0);
-  if (this_01 == (GameObject *)0x0) goto code_?;
+  if ((pIVar1 == (Image *)0x0) ||
+     (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)pIVar1,(MethodInfo *)0x0), this_00 == (GameObject *)0x0))
+  goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            (this_01,1,(MethodInfo *)0x0);
-  this = (TierUnlockedItemElement *)(this->fields).teamRequirementImage;
+            (this_00,1,(MethodInfo *)0x0);
+  pIVar1 = (this->fields).teamRequirementImage;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -560,64 +559,69 @@ void Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_SetTe
       func_?();
     }
     colorStyle = 1.12104e-44;
-    pCVar1 = &CStack_2;
+    pCVar2 = &CStack_3;
     break;
   case MVTeam__Enum_Red:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     colorStyle = 1.26117e-44;
-    pCVar1 = &CStack_3;
+    pCVar2 = &CStack_4;
     break;
   case MVTeam__Enum_Green:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     colorStyle = 1.54143e-44;
-    pCVar1 = &CStack_4;
+    pCVar2 = &CStack_5;
     break;
   case MVTeam__Enum_Yellow:
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor != 0) goto code_?;
-    func_?();
-    goto code_?;
+    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    colorStyle = 1.4013e-44;
+    pCVar2 = &CStack_6;
+    break;
   default:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pCVar1 = (Color *)&stack0xffffff9c;
+    pCVar2 = (Color *)&stack0xffffff9c;
     goto code_?;
   case MVTeam__Enum_None:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pCVar1 = &CStack_5;
+    pCVar2 = &CStack_7;
 code_?:
     colorStyle = 3.64338e-44;
   }
-  while( true ) {
-    pCVar1 = Styles::Styles_GetColor(pCVar1,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
-    CStack_5.r = pCVar1->a;
-    if ((Image *)this != (Image *)0x0) {
-      CStack_5.g = (float)(((Image *)this)->klass->vtable).get_raycastTarget.methodPtr;
-      (*(code *)(((Image *)this)->klass->vtable).set_color.method)();
-      return;
-    }
-code_?:
-    CStack_5.g = (float)&UNK_?;
-    uVar6 = func_?();
-    if (-1 < (char)(*(byte *)(unaff_EBX + 0x10) & (byte)uVar6)) break;
-code_?:
-    colorStyle = 1.4013e-44;
-    pCVar1 = &CStack_7;
+  pCVar2 = Styles::Styles_GetColor(pCVar2,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
+  CStack_7.r = pCVar2->a;
+  if (pIVar1 != (Image *)0x0) {
+    pIVar8 = pIVar1->klass;
+    CStack_7.g = (float)(pIVar8->vtable).get_raycastTarget.methodPtr;
+    (*(code *)(pIVar8->vtable).set_color.method)();
+    return;
   }
-  *(char *)(extraout_ECX + -0x49efbc7c) =
-       *(char *)(extraout_ECX + -0x49efbc7c) + (char)unaff_EBX + '\x01';
-  uVar8 = in((short)((uint6)uVar6 >> 0x20));
-  puVar9 = (uint *)(unaff_EBX + -0x333333ef + CONCAT31((int3)((uint6)uVar6 >> 8),uVar8) * 2);
-  bVar10 = (byte)extraout_ECX & 0x1f;
-  *puVar9 = *puVar9 << bVar10 | *puVar9 >> 0x20 - bVar10;
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+code_?:
+  CStack_7.g = (float)&UNK_?;
+  uVar9 = func_?();
+  bVar10 = (byte)uVar9;
+  pbVar11 = (byte *)((int)((ulonglong)uVar9 >> 0x20) + 0x43 + extraout_ECX * 4);
+  bVar12 = *pbVar11 + (byte)extraout_ECX;
+  bVar13 = CARRY1(*pbVar11,(byte)extraout_ECX) || CARRY1(bVar12,bVar10 < 0x8a);
+  *pbVar11 = bVar12 + (bVar10 < 0x8a);
+  pbVar11 = (byte *)(extraout_ECX + -0x76);
+  bVar12 = *pbVar11;
+  bVar14 = (byte)((uint)extraout_ECX >> 8);
+  bVar15 = *pbVar11 + bVar14;
+  *pbVar11 = bVar15 + bVar13;
+  *(char *)(team + 0xbc10438a) =
+       *(char *)(team + 0xbc10438a) + bVar10 + 0x76 + (CARRY1(bVar12,bVar14) || CARRY1(bVar15,bVar13));
+  uRam_? = CONCAT31((int3)((ulonglong)uVar9 >> 8),*(undefined1 *)(unaff_EBX + 0x12));
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 

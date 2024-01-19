@@ -210,9 +210,9 @@ code_?:
     }
   }
   func_?();
-  do {
-                    /* WARNING: Do nothing block with infinite loop */
-  } while( true );
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
+  return;
 }
 
 

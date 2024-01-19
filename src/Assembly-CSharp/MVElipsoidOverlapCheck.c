@@ -1516,7 +1516,7 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_HandleC
 
 {
   if (cRam_? == '\0') {
-    func_?(0x82e8);
+    func_?(0x8318);
     func_?(&TypeInfo__ICubeModelCollider);
     func_?(&TypeInfo__MVElipsoidOverlapCheck);
     cRam_? = '\x01';

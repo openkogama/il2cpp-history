@@ -246,52 +246,42 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_InitializeLeveling
 }
 
 
+/* Boolean IsAvatarDriving(MVVehicleBase) */
+
+bool Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_IsAvatarDriving
+               (MVLocalPlayer *this,MVVehicleBase *vehicleBase,MethodInfo *method)
+
+{
+  if (vehicleBase != (MVVehicleBase *)0x0) {
+    pMVar1 = MVLocalPlayer_get_AvatarLocal(this,(MethodInfo *)0x0);
+    if (pMVar1 != (MVAvatarLocal *)0x0) {
+      bVar2 = MVVehicleBase::MVVehicleBase_IsPlayerInVehicle
+                        (vehicleBase,(pMVar1->fields)._._._._.id,1,(MethodInfo *)0x0);
+      return bVar2;
+    }
+  }
+  return 0;
+}
+
+
 /* Boolean IsPlaying() */
 
 bool Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_IsPlaying
                (MVLocalPlayer *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  pSVar1 = (this->fields)._.spawnRolesManager;
-  if (((pSVar1 != (SpawnRolesManager *)0x0) &&
-      (pSVar2 = (pSVar1->fields).spawnRolesRuntimeData, pSVar2 != (SpawnRolesRuntimeData *)0x0)) &&
-     (this_00 != (MVWorldObjectClientManager *)0x0)) {
-    pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (this_00,(pSVar2->fields).activeSpawnRole,(MethodInfo *)0x0);
-    if (pMVar3 != (MVWorldObject *)0x0) {
-      if (((pMVar3->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
-         ((MVAvatarLocal__Class *)
-          (pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
-          TypeInfo__MVAvatarLocal)) {
-        bVar4 = false;
-      }
-      else {
-        bVar4 = true;
-      }
-      pMVar5 = (MVWorldObject *)0x0;
-      if (bVar4) {
-        pMVar5 = pMVar3;
-      }
-      if (pMVar5 != (MVWorldObject *)0x0) {
-        if (*(int *)(in_stack_6 + 0x17c) != 0) {
-          return *(char *)(*(int *)(in_stack_6 + 0x17c) + 0x10) == '\x01';
-        }
-        goto code_?;
-      }
-    }
+  pMVar1 = MVLocalPlayer_get_AvatarLocal(this,(MethodInfo *)0x0);
+  if (pMVar1 == (MVAvatarLocal *)0x0) {
     return 0;
   }
-code_?:
-  uVar7 = func_?(&stack0xfffffff0);
-  func_?(uVar7);
-  pcVar8 = (code *)swi(3);
-  bVar9 = (*pcVar8)();
-  return bVar9;
+  if (*(int *)(in_stack_2 + 0x17c) != 0) {
+    return *(char *)(*(int *)(in_stack_2 + 0x17c) + 0x10) == '\x01';
+  }
+  uVar3 = func_?(&stack0xfffffff8);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
 }
 
 

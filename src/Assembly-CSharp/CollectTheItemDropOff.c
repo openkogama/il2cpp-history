@@ -1413,9 +1413,9 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_triggerBo
              (Il2CppClass *)TypeInfo__PickupItemCollectTheItem) ||
            (pCRam000000fc == (CollectTheItem *)0x0)) goto code_?;
         bVar3 = CollectTheItem::CollectTheItem_GetDoesWoFitDropOff
-                          (pCRam000000fc,(int32_t)pOVar2[9].monitor,(MethodInfo *)0x0);
+                          (pCRam000000fc,(int32_t)pOVar2[9].fields.m_CachedPtr,(MethodInfo *)0x0);
         if (bVar3 != 0) {
-          *(undefined1 *)&pOVar2[10].fields.m_CachedPtr = 0;
+          *(undefined1 *)&pOVar2[0xb].klass = 0;
           this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                               ((MethodInfo *)0x0);
           if (this_02 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;

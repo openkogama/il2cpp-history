@@ -217,10 +217,10 @@ void Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_Initialize
 }
 
 
-/* Boolean IsPlayerInVehicle(Int32) */
+/* Boolean IsPlayerInVehicle(Int32, Boolean) */
 
 bool Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_IsPlayerInVehicle
-               (MVVehicleBase *this,int32_t playerId,MethodInfo *method)
+               (MVVehicleBase *this,int32_t playerId,bool onlyDriver,MethodInfo *method)
 
 {
   uStack_1 = 0xffffffff;
@@ -286,7 +286,9 @@ bool Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_IsPlayerInVehicle
       }
       if (((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) ||
          (*(int *)((int)LStack_6._current + 0x14) == 0)) break;
-      if (*(int *)(*(int *)((int)LStack_6._current + 0x14) + 8) == playerId) {
+      if (((*(int *)(*(int *)((int)LStack_6._current + 0x14) + 8) == playerId) &&
+          (*(char *)((int)LStack_6._current + 0x28) != '\0')) &&
+         ((onlyDriver == 0 || (*(char *)((int)LStack_6._current + 0x29) == '\0')))) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&LStack_6,

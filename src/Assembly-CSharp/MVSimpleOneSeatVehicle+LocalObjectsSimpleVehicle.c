@@ -415,64 +415,70 @@ MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle_Update
     if (interactionInput == (InputToInGameAction *)0x0) {
       return (InputToInGameAction *)0x0;
     }
-    pVVar2 = (this->fields).pickupOwner;
-    if (pVVar2 != (VehiclePickupOwner *)0x0) {
-      MVPickupOwner::MVPickupOwner_SetLineOfFireLocal((MVPickupOwner *)pVVar2,(MethodInfo *)0x0);
-      pMVar3 = (this->fields).owner;
-      if ((pMVar3 != (MVSimpleOneSeatVehicle *)0x0) &&
-         (pVVar2 = (this->fields).pickupOwner, pVVar2 != (VehiclePickupOwner *)0x0)) {
+    this_01 = (this->fields).pickupGUI;
+    if (this_01 != (PickupGUI *)0x0) {
+      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
+                        ((Behaviour *)this_01,(MethodInfo *)0x0);
+      if (bVar2 != 0) {
+        pVVar3 = (this->fields).pickupOwner;
+        if (pVVar3 == (VehiclePickupOwner *)0x0) goto code_?;
+        MVPickupOwner::MVPickupOwner_SetLineOfFireLocal((MVPickupOwner *)pVVar3,(MethodInfo *)0x0);
+        pMVar4 = (this->fields).owner;
+        if ((pMVar4 == (MVSimpleOneSeatVehicle *)0x0) ||
+           (pVVar3 = (this->fields).pickupOwner, pVVar3 == (VehiclePickupOwner *)0x0))
+        goto code_?;
         MVPickupOwner::MVPickupOwner_HandleFire
-                  ((MVPickupOwner *)pVVar2,(interactionInput->fields).fire,(pMVar3->fields).IsFiring
+                  ((MVPickupOwner *)pVVar3,(interactionInput->fields).fire,(pMVar4->fields).IsFiring
                    ,(MethodInfo *)0x0);
-        pVVar2 = (this->fields).pickupOwner;
-        if (pVVar2 != (VehiclePickupOwner *)0x0) {
-          pPVar4 = (pVVar2->fields)._.currentItem;
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+      }
+      pVVar3 = (this->fields).pickupOwner;
+      if (pVVar3 != (VehiclePickupOwner *)0x0) {
+        pPVar5 = (pVVar3->fields)._.currentItem;
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Object);
+        }
+        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                          ((Object_1 *)pPVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
+        if (bVar2 != 0) {
+          pVVar3 = (this->fields).pickupOwner;
+          if ((pVVar3 == (VehiclePickupOwner *)0x0) ||
+             (pPVar5 = (pVVar3->fields)._.currentItem, pPVar5 == (PickupItem *)0x0))
+          goto code_?;
+          if ((pPVar5->fields)._IsHolstered_k__BackingField == 0) {
+            (interactionInput->fields).fire = 0;
           }
-          bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                            ((Object_1 *)pPVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar5 != 0) {
-            pVVar2 = (this->fields).pickupOwner;
-            if ((pVVar2 == (VehiclePickupOwner *)0x0) ||
-               (pPVar4 = (pVVar2->fields)._.currentItem, pPVar4 == (PickupItem *)0x0))
-            goto code_?;
-            if ((pPVar4->fields)._IsHolstered_k__BackingField == 0) {
-              (interactionInput->fields).fire = 0;
+        }
+        if ((interactionInput->fields).drop != 0) {
+          pMVar4 = (this->fields).owner;
+          if ((pMVar4 == (MVSimpleOneSeatVehicle *)0x0) ||
+             (this_02 = (pMVar4->fields)._._._._.gameObject, this_02 == (GameObject *)0x0))
+          goto code_?;
+          pOVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                             (this_02,
+                              MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__
+                             );
+          if (pOVar6 == (Object *)0x0) goto code_?;
+          (**(code **)&pOVar6->klass[1]._0.byval_arg.attrs)
+                    (pOVar6,pOVar6->klass[1]._0.this_arg.data.dummy);
+        }
+        pSVar1 = (this->fields).vehicleMotor;
+        if ((pSVar1 != (SimpleVehicleMotorBase *)0x0) &&
+           (this_03 = (pSVar1->fields).stuckEvaluator, this_03 != (MVRigidBody_StuckEvaluator *)0x0)
+           ) {
+          bVar2 = MVRigidBody+StuckEvaluator::MVRigidBody_StuckEvaluator_Update
+                            (this_03,(MethodInfo *)0x0);
+          if (bVar2 != 0) {
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
             }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                      ((Object *)StringLiteral_Vehicle_is_stuck,(MethodInfo *)0x0);
           }
-          if ((interactionInput->fields).drop != 0) {
-            pMVar3 = (this->fields).owner;
-            if ((pMVar3 == (MVSimpleOneSeatVehicle *)0x0) ||
-               (this_01 = (pMVar3->fields)._._._._.gameObject, this_01 == (GameObject *)0x0))
-            goto code_?;
-            pOVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                               (this_01,
-                                MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__
-                               );
-            if (pOVar6 == (Object *)0x0) goto code_?;
-            (**(code **)&pOVar6->klass[1]._0.byval_arg.attrs)
-                      (pOVar6,pOVar6->klass[1]._0.this_arg.data.dummy);
-          }
-          pSVar1 = (this->fields).vehicleMotor;
-          if ((pSVar1 != (SimpleVehicleMotorBase *)0x0) &&
-             (this_02 = (pSVar1->fields).stuckEvaluator,
-             this_02 != (MVRigidBody_StuckEvaluator *)0x0)) {
-            bVar5 = MVRigidBody+StuckEvaluator::MVRigidBody_StuckEvaluator_Update
-                              (this_02,(MethodInfo *)0x0);
-            if (bVar5 != 0) {
-              if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                        ((Object *)StringLiteral_Vehicle_is_stuck,(MethodInfo *)0x0);
-            }
-            AvatarLimbManagerLocal+AvatarEmoteRecogniser::
-            AvatarLimbManagerLocal_AvatarEmoteRecogniser_Activate
-                      ((AvatarLimbManagerLocal_AvatarEmoteRecogniser *)interactionInput,
-                       (MethodInfo *)0x1);
-            return interactionInput;
-          }
+          AvatarLimbManagerLocal+AvatarEmoteRecogniser::
+          AvatarLimbManagerLocal_AvatarEmoteRecogniser_Activate
+                    ((AvatarLimbManagerLocal_AvatarEmoteRecogniser *)interactionInput,
+                     (MethodInfo *)0x1);
+          return interactionInput;
         }
       }
     }

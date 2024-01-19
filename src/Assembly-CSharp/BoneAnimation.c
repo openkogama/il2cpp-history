@@ -208,7 +208,7 @@ code_?:
                               (pAVar3,(pAVar2->fields).state,(MethodInfo *)0x0),
           pAVar7 == (AnimationState *)0x0)))) goto code_?;
       UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_set_time
-                (pAVar7,((float)(iVar4 - iVar6) * _UNK_?) / 3.40708e-29,(MethodInfo *)0x0);
+                (pAVar7,((float)(iVar4 - iVar6) * _UNK_?) / 3.4074218e-29,(MethodInfo *)0x0);
     }
     pAStack8 = (this->fields).currentAnim;
     (this->fields).prevAnim = pAStack8;

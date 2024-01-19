@@ -226,8 +226,9 @@ code_?:
       }
       if ((this->fields).woDropOff == (MVWorldObjectClient *)0x0) {
 code_?:
-        this_00 = (((UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)this)->_1)
-                  .unity_user_data;
+        this_00 = (Component *)
+                  (((UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)this)->_1)
+                  .initializationExceptionGCHandle;
         if (this_00 != (Component *)0x0) {
           obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           (this_00,(MethodInfo *)0x0);
@@ -237,14 +238,14 @@ code_?:
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                     ((Object_1 *)obj,(MethodInfo *)0x0);
           (((UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)this)->_1).
-          unity_user_data = (void *)0x0;
+          initializationExceptionGCHandle = 0;
           func_?();
           return;
         }
         goto code_?;
       }
       source = (((this->fields).woDropOff)->fields).PositionChanged;
-      pMVar8 = pDVar5[1].fields.method_info;
+      pMVar8 = pDVar5[1].fields.original_method_info;
       this_03 = (UnityAction_2_System_Object_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
@@ -1112,6 +1113,7 @@ void Assembly-CSharp.dll::PickupItemCollectTheItem::PickupItemCollectTheItem__ct
   pMVar2 = (MeshRenderer__Array *)func_?(TypeInfo__UnityEngine__MeshRenderer,0);
   (this->fields)._.meshRenderers = pMVar2;
   func_?(&(this->fields)._.meshRenderers,pMVar2);
+  (this->fields)._._AbleToFire_k__BackingField = 1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

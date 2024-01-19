@@ -1307,9 +1307,10 @@ code_?:
   }
   uVar8 = func_?();
 code_?:
-  func_?(uVar8);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  uVar13 = func_?(uVar8);
+  uRam_? = CONCAT13(uVar13,(undefined3)uRam_?);
+  pcVar14 = (code *)swi(1);
+  (*pcVar14)();
   return;
 }
 

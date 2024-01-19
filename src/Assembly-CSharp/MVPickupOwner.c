@@ -212,7 +212,7 @@ Vector3 * Assembly-CSharp.dll::MVPickupOwner::
       fVar4 = (float)(fVar11 * (float10)fVar4);
       *(ulonglong *)uVar7 =
            CONCAT44((float)&stack0xffffffe0 + (float)&stack0xffffffe0 * fVar4,
-                    fVar4 * 3.3121216e-29 + 3.3121216e-29);
+                    fVar4 * 3.312454e-29 + 3.312454e-29);
       *(float *)(uVar7 + 8) = fVar4 * 0.0 + 0.0;
       return (Vector3 *)uVar7;
     }
@@ -660,6 +660,9 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_UpdateCurrentItem
                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                    );
     func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                   );
+    func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                    );
     func_?(&TypeInfo__System__Int32);
@@ -669,7 +672,11 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_UpdateCurrentItem
     func_?(&StringLiteral_type);
     cRam_? = '\x01';
   }
-  if (newState != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+  if (newState == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
     bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
@@ -689,109 +696,77 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_UpdateCurrentItem
                        (Object *)StringLiteral_type,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    uVar3 = CONCAT44(TypeInfo__MV__Common__AvatarItemType,TVar2.m_Index);
-    if (TVar2.m_Index != 0) {
-      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-          (TypeInfo__MV__Common__AvatarItemType->_0).element_class) goto code_?;
-      puVar4 = (undefined4 *)func_?(TVar2.m_Index);
-      pPVar5 = (PickupItem *)*puVar4;
-      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
-                         (Object *)StringLiteral_variantId,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+    if (TVar2.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+        (TypeInfo__MV__Common__AvatarItemType->_0).element_class) goto code_?;
+    pOVar3 = (Object *)&UNK_?;
+    func_?();
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__TryGetValue
+                      (newState,(Object *)StringLiteral_variantId,(Object **)&stack0xfffffff4,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                      );
+    if (bVar1 == 0) {
+      iVar4 = 0;
+code_?:
+      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryGetValue
+                        (newState,(Object *)StringLiteral_updateItemState,
+                         (Object **)&stack0xfffffff0,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
                         );
       if (bVar1 == 0) {
-        pIVar6 = (Il2CppMethodPointer)0x0;
+        uVar5 = 0;
       }
       else {
-        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
-                           (Object *)StringLiteral_variantId,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-        uVar3 = CONCAT44(TypeInfo__System__Int32,TVar2.m_Index);
-        if (TVar2.m_Index == 0) goto code_?;
-        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-            (TypeInfo__System__Int32->_0).element_class) goto code_?;
-        puVar4 = (undefined4 *)func_?(TVar2.m_Index);
-        pIVar6 = (Il2CppMethodPointer)*puVar4;
+        if (pOVar3 == (Object *)0x0) goto code_?;
+        if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
+        goto code_?;
+        puVar6 = (uint *)func_?();
+        uVar5 = *puVar6;
       }
-      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
-                         (Object *)StringLiteral_updateItemState,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                        );
-      if (bVar1 == 0) {
-        uVar7 = 0;
-      }
-      else {
-        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
-                           (Object *)StringLiteral_updateItemState,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-        uVar3 = CONCAT44(TypeInfo__System__Int32,TVar2.m_Index);
-        if (TVar2.m_Index == 0) goto code_?;
-        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-            (TypeInfo__System__Int32->_0).element_class) goto code_?;
-        pIVar6 = (Il2CppMethodPointer)&UNK_?;
-        puVar8 = (uint *)func_?(TVar2.m_Index);
-        uVar7 = *puVar8;
-      }
-      pPVar9 = (this->fields).currentItem;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
       bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                        ((Object_1 *)pPVar9,(Object_1 *)0x0,(MethodInfo *)0x0);
+                        ((Object_1 *)0x0,(Object_1 *)0x0,(MethodInfo *)0x0);
       if (bVar1 == 0) {
-        pPVar5 = (this->fields).currentItem;
-        if (pPVar5 == (PickupItem *)0x0) goto code_?;
-        pIVar6 = (pPVar5->klass->vtable).CanFire.methodPtr;
-        pPVar9 = (PickupItem *)(*(code *)(pPVar5->klass->vtable).__unknown.method)();
-        if (pPVar5 != pPVar9) goto code_?;
-        pPVar9 = (this->fields).currentItem;
-        if (pPVar9 == (PickupItem *)0x0) goto code_?;
-        if (pIVar6 != (Il2CppMethodPointer)(pPVar9->fields)._VariantID_k__BackingField)
-        goto code_?;
-        if ((uVar7 & 4) != 0) {
-          func_?(0x13,pPVar9);
+        pPVar7 = (this->fields).currentItem;
+        if (pPVar7 == (PickupItem *)0x0) goto code_?;
+        unaff_ESI = &UNK_?;
+        puVar8 = (undefined *)(*(code *)(pPVar7->klass->vtable).__unknown.method)();
+        if (unaff_ESI != puVar8) goto code_?;
+        pPVar7 = (this->fields).currentItem;
+        if (pPVar7 == (PickupItem *)0x0) goto code_?;
+        if (iVar4 != (pPVar7->fields)._VariantID_k__BackingField) goto code_?;
+        if ((uVar5 & 4) != 0) {
+          func_?();
         }
       }
       else {
 code_?:
-        (*(code *)(this->klass->vtable).__unknown.method)
-                  (this,pPVar5,pIVar6,(this->klass->vtable).__unknown_1.methodPtr);
+        (*(code *)(this->klass->vtable).__unknown.method)(this,unaff_ESI);
       }
-      pPVar5 = (this->fields).currentItem;
-      if (pPVar5 != (PickupItem *)0x0) {
-        cVar10 = (*(code *)(pPVar5->klass->vtable).get_CanHolster.method)
-                          (pPVar5,(pPVar5->klass->vtable).get_HasUnlimitedAmmo.methodPtr);
-        if (cVar10 != '\0') {
-          if ((uVar7 & 1) != 0) {
-            pPVar5 = (this->fields).currentItem;
-            if (pPVar5 == (PickupItem *)0x0) goto code_?;
-            if ((pPVar5->fields)._IsHolstered_k__BackingField == 0) {
+      pPVar7 = (this->fields).currentItem;
+      if (pPVar7 != (PickupItem *)0x0) {
+        cVar9 = (*(code *)(pPVar7->klass->vtable).get_CanHolster.method)();
+        if (cVar9 != '\0') {
+          if ((uVar5 & 1) != 0) {
+            pPVar7 = (this->fields).currentItem;
+            if (pPVar7 == (PickupItem *)0x0) goto code_?;
+            if ((pPVar7->fields)._IsHolstered_k__BackingField == 0) {
               if (cRam_? == '\0') {
-                func_?(&TypeInfo__MVAvatar);
+                func_?();
                 cRam_? = '\x01';
               }
-              pMVar11 = (this->fields)._.worldObjectParent;
+              pMVar10 = (this->fields)._.worldObjectParent;
               targetHolsterTransform = (Transform *)0x0;
-              if (((pMVar11 != (MVWorldObjectClient *)0x0) &&
-                  ((TypeInfo__MVAvatar->_1).naturalAligment <= (pMVar11->klass->_1).naturalAligment))
+              if (((pMVar10 != (MVWorldObjectClient *)0x0) &&
+                  ((TypeInfo__MVAvatar->_1).naturalAligment <= (pMVar10->klass->_1).naturalAligment))
                  && ((MVAvatar__Class *)
-                     (pMVar11->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1]
+                     (pMVar10->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1]
                      == TypeInfo__MVAvatar)) {
-                this_00 = (MVBody *)pMVar11[1].fields.PositionChanged;
+                this_00 = (MVBody *)pMVar10[1].fields.PositionChanged;
                 if ((this_00 == (MVBody *)0x0) ||
                    (this_01 = (MethodCall *)MVBody::MVBody_get_BodyData(this_00,(MethodInfo *)0x0),
                    this_01 == (MethodCall *)0x0)) goto code_?;
@@ -807,42 +782,48 @@ code_?:
                                 ((Object_1 *)targetHolsterTransform,(Object_1 *)0x0,
                                  (MethodInfo *)0x0);
               if (bVar1 != 0) {
-                pPVar5 = (this->fields).currentItem;
-                if (pPVar5 == (PickupItem *)0x0) goto code_?;
+                pPVar7 = (this->fields).currentItem;
+                if (pPVar7 == (PickupItem *)0x0) goto code_?;
                 PickupItem::PickupItem_HolsterPickup
-                          (pPVar5,targetHolsterTransform,(MethodInfo *)0x0);
+                          (pPVar7,targetHolsterTransform,(MethodInfo *)0x0);
                 if ((this->fields).OnHolsteredChanged != (Action_1_Boolean_ *)0x0) {
-                  pAVar12 = (this->fields).OnHolsteredChanged;
-                  (*(pAVar12->fields)._._.invoke_impl)
-                            ((pAVar12->fields)._._.method_code,1,(pAVar12->fields)._._.method);
+                  pAVar11 = (this->fields).OnHolsteredChanged;
+                  (*(pAVar11->fields)._._.invoke_impl)((pAVar11->fields)._._.method_code);
                 }
               }
             }
           }
-          if ((uVar7 & 2) != 0) {
-            pPVar5 = (this->fields).currentItem;
-            if (pPVar5 == (PickupItem *)0x0) goto code_?;
-            if (((pPVar5->fields)._IsHolstered_k__BackingField != 0) &&
-               (PickupItem::PickupItem_UnholsterPickup(pPVar5,(MethodInfo *)0x0),
+          if ((uVar5 & 2) != 0) {
+            pPVar7 = (this->fields).currentItem;
+            if (pPVar7 == (PickupItem *)0x0) goto code_?;
+            if (((pPVar7->fields)._IsHolstered_k__BackingField != 0) &&
+               (PickupItem::PickupItem_UnholsterPickup(pPVar7,(MethodInfo *)0x0),
                (this->fields).OnHolsteredChanged != (Action_1_Boolean_ *)0x0)) {
-              pAVar12 = (this->fields).OnHolsteredChanged;
-              (*(pAVar12->fields)._._.invoke_impl)((pAVar12->fields)._._.method_code);
+              (*(((this->fields).OnHolsteredChanged)->fields)._._.invoke_impl)();
             }
           }
         }
-        pPVar5 = (this->fields).currentItem;
-        if (pPVar5 != (PickupItem *)0x0) {
-          (*(code *)(pPVar5->klass->vtable).OnStateChanged.method)
-                    (pPVar5,newState,(pPVar5->klass->vtable).OnEquip.methodPtr);
+        pPVar7 = (this->fields).currentItem;
+        if (pPVar7 != (PickupItem *)0x0) {
+          (*(code *)(pPVar7->klass->vtable).OnStateChanged.method)(pPVar7);
           return;
         }
       }
+      goto code_?;
+    }
+    if ((Object *)TVar2.m_Index == (Object *)0x0) goto code_?;
+    if ((((Object *)TVar2.m_Index)->klass->_0).element_class ==
+        (TypeInfo__System__Int32->_0).element_class) {
+      pOVar3 = (Object *)&UNK_?;
+      piVar12 = (int *)func_?();
+      iVar4 = *piVar12;
+      goto code_?;
     }
   }
 code_?:
-  uVar3 = func_?();
+  func_?();
 code_?:
-  func_?(uVar3);
+  func_?();
   pcVar13 = (code *)swi(3);
   (*pcVar13)();
   return;

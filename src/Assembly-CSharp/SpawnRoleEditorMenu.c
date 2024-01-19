@@ -343,23 +343,15 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
     colorStyle = ColorStyle__Enum_OffGray;
   }
   pCVar2 = Styles::Styles_GetColor(&CStack_3,colorStyle,(MethodInfo *)0x0);
-  bVar4 = 0;
   if (pIVar1 == (Image *)0x0) {
     CStack_3.g = (float)&UNK_?;
-    uVar5 = func_?();
-    bVar6 = (byte)uVar5;
-    bVar4 = 0x99 < bVar6 | bVar4;
-    cVar7 = bVar6 + (9 < (bVar6 & 0xf) | in_AF) * '\x06' + bVar4 * '`';
-    out(0x3b,cVar7);
-    *(char *)(unaff_EDI + -0x1a) = *(char *)(unaff_EDI + -0x1a) + unaff_BH + bVar4;
-    out(0x3b,cVar7);
-    *(char *)(unaff_EDI + -0x33efc41a) =
-         *(char *)(unaff_EDI + -0x33efc41a) + unaff_BH +
-         ((uint)((ulonglong)uVar5 >> 0x20) < *(uint *)CONCAT31((int3)((ulonglong)uVar5 >> 8),cVar7))
-    ;
-    pcVar8 = (code *)swi(3);
-    (*pcVar8)();
-    return;
+    iVar4 = func_?();
+    uVar5 = (undefined2)((ulonglong)((longlong)iVar4 * (longlong)unaff_EBX) >> 0x20);
+    in(uVar5);
+    out(uRam_?,uVar5);
+    in(uVar5);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
   }
   CStack_3.r = pCVar2->a;
   CStack_3.g = (float)(pIVar1->klass->vtable).get_raycastTarget.methodPtr;

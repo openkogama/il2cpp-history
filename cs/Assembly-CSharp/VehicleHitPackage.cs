@@ -3,7 +3,6 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject;
@@ -11,15 +10,10 @@ using UnityEngine;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-public class ImpulseHitPackage : InteractionPackage
+public class VehicleHitPackage : InteractionPackage
 {
-	// Fields
-	private readonly Dictionary<int, float> lastShotTime;
-	private const float MinImpulseEffect = 0.5f;
-	private const float MaxImpulseMagnitude = 3000f;
-
 	// Constructors
-	public ImpulseHitPackage();
+	public VehicleHitPackage();
 
 	// Methods
 	public static InteractionData Create(Vector3 impulse);
