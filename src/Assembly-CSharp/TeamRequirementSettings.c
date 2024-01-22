@@ -258,7 +258,7 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
       }
     }
   }
-  uRam_? = func_?();
+  func_?();
   pcVar14 = (code *)swi(3);
   (*pcVar14)();
   return;
@@ -277,63 +277,149 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
     func_?(&TypeInfo__MV__WorldObject__MVTeam);
     cRam_? = '\x01';
   }
-  pTVar1 = this;
-  pOVar2 = (this->fields).currentOutline;
-  if ((pOVar2 != (Outline *)0x0) &&
-     (UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                ((Behaviour *)pOVar2,0,(MethodInfo *)0x0), pOVar3 = value, value != (Object *)0x0))
-  {
-    if ((value->klass->_0).element_class == (TypeInfo__MV__WorldObject__MVTeam->_0).element_class) {
-      puVar4 = (undefined4 *)func_?(value);
-      switch(*puVar4) {
-      case 0:
-        pOVar2 = (pTVar1->fields).outlineTeamBlue;
-        break;
-      case 1:
-        pOVar2 = (pTVar1->fields).outlineTeamRed;
-        break;
-      case 2:
-        pOVar2 = (pTVar1->fields).outlineTeamGreen;
-        break;
-      case 3:
-        pOVar2 = (pTVar1->fields).outlineTeamYellow;
-        break;
-      default:
-        pOVar2 = (pTVar1->fields).outlineTeamNone;
-      }
-      (pTVar1->fields).currentOutline = pOVar2;
-      func_?(&(pTVar1->fields).currentOutline,pOVar2);
-      pOVar2 = (pTVar1->fields).currentOutline;
-      if (pOVar2 != (Outline *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                  ((Behaviour *)pOVar2,1,(MethodInfo *)0x0);
-        this_00 = (pTVar1->fields).settingsBase;
-        if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
-          key = (String *)TypeInfo__System__Convert;
-          this = (TeamRequirementSettings *)&UNK_?;
-          func_?();
+  this_03 = this;
+  pOVar1 = (this->fields).currentOutline;
+  uVar2 = 0;
+  uVar3 = pOVar1 == (Outline *)0x0;
+  if (!(bool)uVar3) {
+    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+              ((Behaviour *)pOVar1,0,(MethodInfo *)0x0);
+    pOVar4 = value;
+    uVar2 = 0;
+    uVar3 = value == (Object *)0x0;
+    if (!(bool)uVar3) {
+      pIVar5 = (value->klass->_0).element_class;
+      pIVar6 = (TypeInfo__MV__WorldObject__MVTeam->_0).element_class;
+      uVar2 = pIVar5 < pIVar6;
+      uVar3 = pIVar5 == pIVar6;
+      if ((bool)uVar3) {
+        puVar7 = (undefined4 *)func_?(value);
+        switch(*puVar7) {
+        case 0:
+          pOVar1 = (this_03->fields).outlineTeamBlue;
+          break;
+        case 1:
+          pOVar1 = (this_03->fields).outlineTeamRed;
+          break;
+        case 2:
+          pOVar1 = (this_03->fields).outlineTeamGreen;
+          break;
+        case 3:
+          pOVar1 = (this_03->fields).outlineTeamYellow;
+          break;
+        default:
+          pOVar1 = (this_03->fields).outlineTeamNone;
         }
-        key = (String *)0x0;
-        this = (TeamRequirementSettings *)pOVar3;
-        mscorlib.dll::System::Convert::Convert_ToInt32(pOVar3,(MethodInfo *)0x0);
-        key = (String *)&this;
-        this = (TeamRequirementSettings *)TypeInfo__System__Int32;
-        pOVar3 = (Object *)func_?();
-        if (this_00 != (SettingsBase *)0x0) {
-          SettingsBase::SettingsBase_OnSettingChanged(this_00,key,pOVar3,(MethodInfo *)0x0);
-          return;
+        (this_03->fields).currentOutline = pOVar1;
+        func_?(&(this_03->fields).currentOutline,pOVar1);
+        pOVar1 = (this_03->fields).currentOutline;
+        uVar2 = 0;
+        uVar3 = pOVar1 == (Outline *)0x0;
+        if (!(bool)uVar3) {
+          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                    ((Behaviour *)pOVar1,1,(MethodInfo *)0x0);
+          this_00 = (this_03->fields).settingsBase;
+          if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+            key = (String *)TypeInfo__System__Convert;
+            this = (TeamRequirementSettings *)&UNK_?;
+            func_?();
+          }
+          key = (String *)0x0;
+          this = (TeamRequirementSettings *)pOVar4;
+          mscorlib.dll::System::Convert::Convert_ToInt32(pOVar4,(MethodInfo *)0x0);
+          key = (String *)&this;
+          this = (TeamRequirementSettings *)TypeInfo__System__Int32;
+          pOVar4 = (Object *)func_?();
+          uVar2 = 0;
+          uVar3 = this_00 == (SettingsBase *)0x0;
+          this_03 = (TeamRequirementSettings *)0x0;
+          if (!(bool)uVar3) {
+            SettingsBase::SettingsBase_OnSettingChanged(this_00,key,pOVar4,(MethodInfo *)0x0);
+            return;
+          }
         }
       }
-    }
-    else {
-      func_?(value,TypeInfo__MV__WorldObject__MVTeam);
+      else {
+        func_?(value,TypeInfo__MV__WorldObject__MVTeam);
+      }
     }
   }
-  uVar5 = func_?();
-  out(0x39,(int)uVar5);
-  in((short)((uint6)uVar5 >> 0x20));
-  pcVar6 = (code *)swi(1);
-  (*pcVar6)();
+  uVar8 = func_?();
+  cVar9 = (char)uVar8;
+  if ((bool)uVar2 || (bool)uVar3) {
+    if ('\x0f' < cVar9) {
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
+      return;
+    }
+  }
+  else {
+    out((short)((uint6)uVar8 >> 0x20),(int)uVar8);
+    pcVar11 = (char *)(unaff_EBX + -0x3f7bf73c);
+    *pcVar11 = *pcVar11 + cVar9;
+    cVar9 = *pcVar11;
+  }
+  if (cVar9 == '\0') {
+    return;
+  }
+  pFVar12 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0);
+  if (pFVar12 != (FlagDebriefingControl *)0x0) {
+    if ((pFVar12->fields).OnFlagDebriefingEnd != (Action *)0x0) {
+      pAVar13 = (pFVar12->fields).OnFlagDebriefingEnd;
+      (*(pAVar13->fields)._._.invoke_impl)((pAVar13->fields)._._.method_code);
+    }
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    pIVar14 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+    if (pIVar14 != (IPlayModeUI *)0x0) {
+      func_?(4,TypeInfo__IPlayModeUI,pIVar14);
+      *(undefined2 *)&(this_03->fields).buttonTeamGreenName = 0;
+      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this_03,(MethodInfo *)0x0);
+      if (this_02 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_02,0,(MethodInfo *)0x0);
+        pOVar1 = (Outline *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        this_01 = (this_03->fields).buttonTeamYellow;
+        (this_03->fields).outlineTeamRed = pOVar1;
+        if (this_01 != (SettingsButton *)0x0) {
+          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                    ((CanvasGroup *)this_01,0.0,(MethodInfo *)0x0);
+          pFVar12 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
+                              ((MethodInfo *)0x0);
+          if (pFVar12 != (FlagDebriefingControl *)0x0) {
+            fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                               ((MethodInfo *)0x0);
+            (pFVar12->fields).IsInFlagDebriefing = 0;
+            (pFVar12->fields).RunStartTime = fVar15;
+            if ((pFVar12->fields).OnFlagCountDownEnd != (Action *)0x0) {
+              pAVar13 = (pFVar12->fields).OnFlagCountDownEnd;
+              (*(pAVar13->fields)._._.invoke_impl)
+                        ((pAVar13->fields)._._.method_code,(pAVar13->fields)._._.method);
+            }
+            pGVar16 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
+                                ((MethodInfo *)0x0);
+            if ((pGVar16 != (GameEventManager *)0x0) &&
+               ((pGVar16->fields).AvatarCommandsPlayMode !=
+                (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
+              key = (String *)0x0;
+              if (method->return_type != (Il2CppType *)0x0) {
+                this = *(TeamRequirementSettings **)&method->return_type[2].attrs;
+                (**(code **)&method->return_type[1].attrs)();
+              }
+              return;
+            }
+          }
+        }
+      }
+    }
+  }
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

@@ -135,10 +135,10 @@ void Assembly-CSharp.dll::MVNetworkGame+GameDataQueryManager::
              MVNetworkGame_GameDataQueryManager_GameDataQuery_GetBytePacker
                        (gameDataQuery,(MethodInfo *)0x0);
     instigatorActorNumber = (Byte__Array *)(gameDataQuery->fields).instigatorActorNumber;
-    unaff_EBX = (ReceivedItemFromQueryEventArgs *)
-                func_?(TypeInfo__ReceivedItemFromQueryEventArgs);
+    this_02 = (ReceivedItemFromQueryEventArgs *)
+              func_?(TypeInfo__ReceivedItemFromQueryEventArgs);
     ReceivedItemFromQueryEventArgs::ReceivedItemFromQueryEventArgs__ctor
-              (unaff_EBX,pBVar2,(int32_t)instigatorActorNumber,(MethodInfo *)0x0);
+              (this_02,pBVar2,(int32_t)instigatorActorNumber,(MethodInfo *)0x0);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
     pEVar3 = (pMVar1->fields).ReceivedItemFromQuery;
@@ -197,10 +197,10 @@ void Assembly-CSharp.dll::MVNetworkGame+GameDataQueryManager::
              MVNetworkGame_GameDataQueryManager_GameDataQuery_GetBytePacker
                        (gameDataQuery,(MethodInfo *)0x0);
     instigatorActorNumber = (Byte__Array *)(gameDataQuery->fields).instigatorActorNumber;
-    unaff_EBX = (ReceivedItemFromQueryEventArgs *)
-                func_?(TypeInfo__ReceivedItemFromQueryEventArgs);
+    this_02 = (ReceivedItemFromQueryEventArgs *)
+              func_?(TypeInfo__ReceivedItemFromQueryEventArgs);
     ReceivedItemFromQueryEventArgs::ReceivedItemFromQueryEventArgs__ctor
-              (unaff_EBX,pBVar2,(int32_t)instigatorActorNumber,(MethodInfo *)0x0);
+              (this_02,pBVar2,(int32_t)instigatorActorNumber,(MethodInfo *)0x0);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
     pEVar3 = (pMVar1->fields).ReceivedAvatarBodiesFromQuery;
@@ -210,17 +210,15 @@ void Assembly-CSharp.dll::MVNetworkGame+GameDataQueryManager::
   }
   if (pEVar3 != (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
     (*(pEVar3->fields)._._.invoke_impl)
-              ((pEVar3->fields)._._.method_code,this,unaff_EBX,(pEVar3->fields)._._.method);
+              ((pEVar3->fields)._._.method_code,this,this_02,(pEVar3->fields)._._.method);
 code_?:
     return;
   }
 code_?:
-  bVar6 = 0;
-  func_?();
+  bVar6 = func_?();
   out(instigatorActorNumber->klass,(short)extraout_EDX);
-  bVar7 = (byte)((uint)unaff_EBX >> 8);
-  cRam_? = cRam_? + extraout_CH +
-                 (CARRY1(bVar7,(byte)unaff_EBX) || CARRY1(bVar7 + (byte)unaff_EBX,bVar6));
+  in_AF = 9 < (bVar6 & 0xf) | in_AF;
+  cRam_? = cRam_? + extraout_CH + (9 < (bVar6 + in_AF * -6 & 0xf) | in_AF);
   in((short)extraout_EDX);
   if (cRam_? == '\0') {
     func_?(&
@@ -243,8 +241,8 @@ code_?:
     return;
   }
   func_?(&instigatorActorNumber->monitor);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

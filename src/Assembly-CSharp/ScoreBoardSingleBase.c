@@ -237,7 +237,7 @@ code_?:
     *(char *)&(pDVar12->_0).image = *(char *)&(pDVar12->_0).image + cVar19;
     pcVar11 = (char *)(unaff_EBX + 0x3d8028ec);
     *pcVar11 = *pcVar11 + cVar19;
-    out(0xbf,pDVar12);
+    out(0xcf,pDVar12);
     pDRam56530011 = pDVar12;
     if (*pcVar11 == '\0') {
       func_?();
@@ -261,7 +261,7 @@ code_?:
     LOCK();
     *(int *)(unaff_EBX + 0x5c610c4) = *(int *)(unaff_EBX + 0x5c610c4) + 1;
     UNLOCK();
-    out(0xbf,pDVar12);
+    out(0xcf,pDVar12);
     pDRam758b0111 = pDVar12;
     *(byte *)&pSVar1->klass = *(byte *)&pSVar1->klass | (byte)(extraout_ECX + -1);
     *pcVar11 = '\0';

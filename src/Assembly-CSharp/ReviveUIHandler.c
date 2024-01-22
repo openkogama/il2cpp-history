@@ -791,6 +791,10 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnAdFinishedContinue
                (ReviveUIHandler *this,MethodInfo *method)
 
 {
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
     func_?(&
                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
@@ -805,47 +809,27 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnAdFinishedContinue
     func_?(&TypeInfo__ReviveUIHandler____c);
     cRam_? = '\x01';
   }
+  uStack_1._0_1_ = 2;
+  uStack_1._1_3_ = 0;
   MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(1,0,(MethodInfo *)0x0);
-  pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-  if ((pGVar1 != (GameEventManager *)0x0) &&
-     (this_00 = (pGVar1->fields).AvatarCommandsPlayMode,
-     this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-    GameEventManager+AvatarCommandsPlayModeManager::
-    GameEventManager_AvatarCommandsPlayModeManager_SpawnAtSafeSpot
-              (this_00,(int32_t)unaff_ESI[6].klass,(MethodInfo *)0x0);
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     (unaff_ESI,(MethodInfo *)0x0);
-    if ((TypeInfo__ReviveUIHandler____c->_1).cctor_finished_or_no_cctor == 0) {
+  uStack_1 = CONCAT31(uStack_1._1_3_,1);
+  pGVar4 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+  if (pGVar4 != (GameEventManager *)0x0) {
+    this_00 = (pGVar4->fields).AvatarCommandsPlayMode;
+    if (this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0) {
+      GameEventManager+AvatarCommandsPlayModeManager::
+      GameEventManager_AvatarCommandsPlayModeManager_SpawnAtSafeSpot
+                (this_00,(this->fields).currentSafePointSelected,(MethodInfo *)0x0);
+      uStack_1 = 0xffffffff;
       func_?();
+      *unaff_FS_OFFSET = uStack_3;
+      return;
     }
-    callbackFunction = TypeInfo__ReviveUIHandler____c->static_fields->__9__12_0;
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      if ((TypeInfo__ReviveUIHandler____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      object = TypeInfo__ReviveUIHandler____c->static_fields->__9;
-      callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-                 MethodInfo__ReviveUIHandler____c___OnAdFinishedContinue_b__12_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      TypeInfo__ReviveUIHandler____c->static_fields->__9__12_0 = callbackFunction;
-      func_?();
-    }
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,
-               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
-    return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -1092,14 +1076,10 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched
   func_?();
   this = unaff_EDI;
 code_?:
-  func_?();
-  *(undefined1 *)&this->klass = 0xaa;
-  *(undefined1 *)((int)&this->klass + 1) = 0xaa;
-  LOCK();
-  *(undefined1 *)(extraout_EDX + -0x5547efc5) = extraout_CH;
-  UNLOCK();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pRVar10 = (ReviveUIHandler__Class *)func_?();
+  this->klass = pRVar10;
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

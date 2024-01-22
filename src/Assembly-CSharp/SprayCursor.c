@@ -159,7 +159,7 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor
 {
   uVar1 = (undefined2)((uint)in_stack_2 >> 0x10);
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MV__WorldObject__IntVector);
     cRam_? = '\x01';
   }
   if (addCube != 0) {
@@ -273,12 +273,13 @@ code_?:
     }
   }
 code_?:
-  iVar16 = func_?();
+  bVar16 = 0;
+  uVar1 = func_?();
   *(char *)&unaff_ESI->klass =
-       *(char *)&unaff_ESI->klass + extraout_DH +
-       ((byte)iVar16 < (byte)(&stack0x4584310c)[iVar16 * 2]);
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+       *(char *)&unaff_ESI->klass + (char)((ushort)uVar1 >> 8) +
+       ((byte)uVar1 < in_stack_17 || (byte)((byte)uVar1 - in_stack_17) < bVar16);
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

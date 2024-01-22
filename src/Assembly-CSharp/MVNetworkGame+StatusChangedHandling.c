@@ -50,6 +50,8 @@ void Assembly-CSharp.dll::MVNetworkGame+StatusChangedHandling::
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void OnStatusChanged(StatusCode) */
 
 void Assembly-CSharp.dll::MVNetworkGame+StatusChangedHandling::
@@ -80,6 +82,7 @@ void Assembly-CSharp.dll::MVNetworkGame+StatusChangedHandling::
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
   this_00 = (this->fields).reconnectWithAlternatePortHandler;
+  this_01 = (Dictionary_2_System_Byte_System_Object_ *)returnCode;
   if (this_00 == (MVNetworkGame_ReconnectWithAlternatePortHandler *)0x0) goto code_?;
   bVar2 = MVNetworkGame+ReconnectWithAlternatePortHandler::
           MVNetworkGame_ReconnectWithAlternatePortHandler_IsHandling
@@ -135,14 +138,14 @@ code_?:
   case 0:
     pSStack_3 = TypeInfo__ExitGames__Client__Photon__StatusCode;
     pSVar1 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pSStack_3,(MethodInfo *)0x0);
-    returnCode = (StatusCode__Enum)
-                 mscorlib.dll::System::String::String_Concat_3
-                           (StringLiteral_Disconnected_because__,pSVar1,(MethodInfo *)0x0);
+    this_01 = (Dictionary_2_System_Byte_System_Object_ *)
+              mscorlib.dll::System::String::String_Concat_3
+                        (StringLiteral_Disconnected_because__,pSVar1,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-              ((Object *)returnCode,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)this_01,(MethodInfo *)0x0)
+    ;
     pMVar4 = (this->fields).networkGame;
     if (pMVar4 != (MVNetworkGame *)0x0) {
       if ((pMVar4->fields).connState == 1) {
@@ -153,23 +156,23 @@ code_?:
       {
         func_?();
       }
-      this_01 = TypeInfo__MVNetworkGame_StatusChangedHandling____c->static_fields->__9__5_0;
-      if (this_01 == (UnityAction *)0x0) {
+      this_02 = TypeInfo__MVNetworkGame_StatusChangedHandling____c->static_fields->__9__5_0;
+      if (this_02 == (UnityAction *)0x0) {
         if ((TypeInfo__MVNetworkGame_StatusChangedHandling____c->_1).cctor_finished_or_no_cctor == 0
            ) {
           func_?();
         }
         object = TypeInfo__MVNetworkGame_StatusChangedHandling____c->static_fields->__9;
-        this_01 = (UnityAction *)func_?();
+        this_02 = (UnityAction *)func_?();
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
-                  ((NavMesh_OnNavMeshPreUpdate *)this_01,(Object *)object,
+                  ((NavMesh_OnNavMeshPreUpdate *)this_02,(Object *)object,
                    MethodInfo__MVNetworkGame_StatusChangedHandling____c___OnStatusChanged_b__5_0__,
                    (MethodInfo *)0x0);
-        TypeInfo__MVNetworkGame_StatusChangedHandling____c->static_fields->__9__5_0 = this_01;
+        TypeInfo__MVNetworkGame_StatusChangedHandling____c->static_fields->__9__5_0 = this_02;
         func_?();
       }
-      coroutine = WaitForFrames::WaitForFrames_Frames(5,this_01,(MethodInfo *)0x0);
+      coroutine = WaitForFrames::WaitForFrames_Frames(5,this_02,(MethodInfo *)0x0);
       Coroutines::Coroutines_Start(coroutine,(MethodInfo *)0x0);
       return;
     }
@@ -201,10 +204,10 @@ code_?:
         pMVar4 = (pMVar6->fields).networkGame;
         if (pMVar4 != (MVNetworkGame *)0x0) {
           (pMVar4->fields).connState = 3;
-          returnCode = func_?();
+          this_01 = (Dictionary_2_System_Byte_System_Object_ *)func_?();
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object___ctor
-                    ((Dictionary_2_System_Byte_System_Object_ *)returnCode,
+                    (this_01,
                      MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
                     );
           pPVar5 = (pMVar6->fields).peer;
@@ -250,38 +253,39 @@ code_?:
   }
 code_?:
   bVar7 = 0;
-  uVar8 = func_?();
-  cVar9 = (char)((ulonglong)uVar8 >> 8);
-  iVar10 = CONCAT31((int3)((ulonglong)uVar8 >> 0x28),cVar9);
-  bVar11 = *(char *)&((Dictionary_2_System_Byte_System_Object_ *)returnCode)->klass +
-          (byte)extraout_ECX;
-  bVar12 = CARRY1(*(byte *)&((Dictionary_2_System_Byte_System_Object_ *)returnCode)->klass,
-                  (byte)extraout_ECX) || CARRY1(bVar11,bVar7);
-  *(byte *)&((Dictionary_2_System_Byte_System_Object_ *)returnCode)->klass = bVar11 + bVar7;
-  pcVar13 = (char *)(extraout_ECX + -1);
-  if (pcVar13 == (char *)0x0 ||
-      *(char *)&((Dictionary_2_System_Byte_System_Object_ *)returnCode)->klass != '\0') {
-    pbVar14 = (byte *)(iVar10 + -0x1e);
-    bVar11 = *pbVar14;
-    bVar15 = (byte)uVar8;
-    bVar7 = *pbVar14;
-    *pbVar14 = bVar7 + bVar15 + bVar12;
-    pcVar16 = (char *)(iVar10 + 0x1053e3);
-    *pcVar16 = *pcVar16 + (char)pcVar13 + (CARRY1(bVar11,bVar15) || CARRY1(bVar7 + bVar15,bVar12));
-    *pcVar13 = *pcVar13 + bVar15;
-    piVar17 = (int *)(CONCAT31((int3)((ulonglong)uVar8 >> 8),bVar15 + *(char *)uVar8) + *unaff_EBX)
-    ;
-    pcVar13 = (char *)((int)piVar17 + *unaff_EBX + *unaff_EBX + *unaff_EBX + *unaff_EBX + *piVar17);
-    cVar9 = (char)pcVar13;
-    *pcVar13 = *pcVar13 + cVar9;
-    *pcVar13 = *pcVar13 + cVar9;
-    *pcVar13 = *pcVar13 + cVar9;
-    pcVar18 = (code *)swi(3);
-    (*pcVar18)();
-    return;
+  sVar8 = func_?();
+  bVar9 = (byte)extraout_EDX;
+  if (extraout_ECX != 0) {
+    bVar10 = (byte)unaff_EBX;
+    bVar11 = *(char *)&this_01->klass + bVar10;
+    bVar12 = CARRY1(*(byte *)&this_01->klass,bVar10) || CARRY1(bVar11,bVar7);
+    *(byte *)&this_01->klass = bVar11 + bVar7;
+    returnCode = (StatusCode__Enum)this_01;
+    bVar7 = bVar12;
+    if (extraout_ECX == 1) {
+      pbVar13 = (byte *)(extraout_EDX + -0x1d);
+      bVar7 = *pbVar13;
+      bVar11 = *pbVar13;
+      *pbVar13 = bVar11 + bVar9 + bVar12;
+      *(char *)(extraout_EDX + 0x1053e4) =
+           *(char *)(extraout_EDX + 0x1053e4) + bVar10 +
+           (CARRY1(bVar7,bVar9) || CARRY1(bVar11 + bVar9,bVar12));
+      cRam_? = cRam_? + (char)sVar8;
+      piVar14 = (int *)(CONCAT31((int3)(char)((ushort)sVar8 >> 8),(char)sVar8 + *(char *)(int)sVar8)
+                       + *unaff_EBX);
+      pcVar15 = (char *)((int)piVar14 + *unaff_EBX + *unaff_EBX + *unaff_EBX + *unaff_EBX + *piVar14
+                        );
+      cVar16 = (char)pcVar15;
+      *pcVar15 = *pcVar15 + cVar16;
+      *pcVar15 = *pcVar15 + cVar16;
+      *pcVar15 = *pcVar15 + cVar16;
+      pcVar17 = (code *)swi(3);
+      (*pcVar17)();
+      return;
+    }
   }
-  ppIVar19 = &(((Dictionary_2_System_Byte_System_Object_ *)(returnCode + 0x30))->fields)._comparer;
-  *(char *)ppIVar19 = *(char *)ppIVar19 + cVar9 + bVar12;
+  ppIVar18 = &(((Dictionary_2_System_Byte_System_Object_ *)(returnCode + 0x30))->fields)._comparer;
+  *(byte *)ppIVar18 = *(char *)ppIVar18 + bVar9 + bVar7;
   *(StatusCode__Enum *)((int)unaff_EBX + 0x11) = returnCode;
   func_?();
   method_00 = TypeInfo__MVNetworkGame__ReconnectWithAlternatePortHandler;

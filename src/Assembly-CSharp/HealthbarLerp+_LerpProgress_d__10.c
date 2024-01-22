@@ -47,7 +47,7 @@ bool Assembly-CSharp.dll::HealthbarLerp+<LerpProgress>d__10::
   if (_UNK_? <= fVar4) {
 code_?:
     this = (HealthbarLerp_LerpProgress_d_10 *)0x0;
-    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
+    pOVar3 = (Object *)func_?(TypeInfo__System__Int32);
     (pHVar1->fields).__2__current = pOVar3;
     func_?(&(pHVar1->fields).__2__current,pOVar3);
     (pHVar1->fields).__1__state = 3;
@@ -72,7 +72,7 @@ code_?:
          (pPVar7 = (pHVar2->fields).targetProgressBar, pPVar7 != (ProgressBar *)0x0)) {
         if ((pPVar7->fields).progress < (pPVar5->fields).progress) {
           this = (HealthbarLerp_LerpProgress_d_10 *)0x0;
-          pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
+          pOVar3 = (Object *)func_?(TypeInfo__System__Int32);
           (pHVar1->fields).__2__current = pOVar3;
           func_?(&(pHVar1->fields).__2__current,pOVar3);
           (pHVar1->fields).__1__state = 2;
@@ -83,14 +83,18 @@ code_?:
     }
   }
 code_?:
-  cVar8 = '\0';
-  func_?();
-  pcVar9 = (char *)((int)&pHVar2[1].fields.lerpDelay + 2);
-  *pcVar9 = *pcVar9 + unaff_BL + cVar8;
-  *(undefined4 *)(unaff_retaddr + -4) = 0xcccc1042;
-  pcVar10 = (code *)swi(3);
-  bVar11 = (*pcVar10)();
-  return bVar11;
+  bVar8 = 0;
+  iVar9 = func_?();
+  *(undefined2 *)(iVar9 + 0x42) = in_GS;
+  pbVar10 = (byte *)(iVar9 + 0x68f61042 + (int)&stack0xfffffffc * 2);
+  bVar11 = *pbVar10;
+  bVar12 = *pbVar10;
+  *pbVar10 = bVar12 + extraout_CL + bVar8;
+  *unaff_EBX = *unaff_EBX + (char)((uint)iVar9 >> 8) +
+               (CARRY1(bVar11,extraout_CL) || CARRY1(bVar12 + extraout_CL,bVar8));
+  pcVar13 = (code *)swi(3);
+  bVar14 = (*pcVar13)();
+  return bVar14;
 }
 
 

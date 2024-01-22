@@ -169,7 +169,7 @@ void Assembly-CSharp.dll::UnityEngine::UI::LetterSpacing::LetterSpacing_ModifyVe
                         (pTVar2,(MethodInfo *)0x0);
     if ((this_00 != (TextGenerator *)0x0) &&
        (pIVar6 = UnityEngine.TextRenderingModule.dll::UnityEngine::TextGenerator::
-                 TextGenerator_get_lines(this_00,(MethodInfo *)0x0), pIStack_7 = pIVar6,
+                  TextGenerator_get_lines(this_00,(MethodInfo *)0x0), pIStack_7 = pIVar6,
        pIVar6 != (IList_1_UnityEngine_UILineInfo_ *)0x0)) {
       iVar8 = func_?();
       pIVar9 = pIStack_7;
@@ -186,7 +186,7 @@ void Assembly-CSharp.dll::UnityEngine::UI::LetterSpacing::LetterSpacing_ModifyVe
                 (Il2CppClass *)
                 TypeInfo__System__Collections__Generic__IList<UnityEngine::UILineInfo>) {
               ppMVar15 = &(&(pIVar9->klass->vtable).get_Item)
-                         [pIVar9->klass->interfaceOffsets[uVar11].offset].method;
+                          [pIVar9->klass->interfaceOffsets[uVar11].offset].method;
               goto code_?;
             }
             uVar11 = uVar11 + 1;
@@ -216,7 +216,7 @@ code_?:
                 (Il2CppClass *)
                 TypeInfo__System__Collections__Generic__IList<UnityEngine::UILineInfo>) {
               ppMVar15 = &(&(pIStack_7->klass->vtable).get_Item)
-                         [pIStack_7->klass->interfaceOffsets[uVar13].offset].method;
+                          [pIStack_7->klass->interfaceOffsets[uVar13].offset].method;
               pIVar6 = pIStack_7;
               goto code_?;
             }
@@ -767,12 +767,23 @@ code_?:
 code_?:
   uVar47 = func_?();
   piVar22 = (int *)((ulonglong)uVar47 >> 0x20);
-  pcVar81 = (char *)((int)uVar47 + -0x6defb209);
-  *pcVar81 = *pcVar81 + (char)extraout_ECX;
-  *piVar22 = *piVar22 + (int)uVar47;
-  *extraout_ECX = *extraout_ECX + (char)uVar47;
-  pcVar82 = (code *)swi(3);
-  (*pcVar82)();
+  pcVar81 = (char *)uVar47;
+  pbVar82 = (byte *)(pcVar81 + -8);
+  bVar83 = *pbVar82;
+  bVar84 = (byte)extraout_ECX;
+  *pbVar82 = *pbVar82 + bVar84;
+  pbVar82 = (byte *)(piVar22 + -2);
+  bVar85 = *pbVar82;
+  bVar86 = (byte)((ulonglong)uVar47 >> 0x20);
+  bVar87 = *pbVar82 + bVar86;
+  *pbVar82 = bVar87 + CARRY1(bVar83,bVar84);
+  cVar1 = (char)uVar47;
+  *pcVar81 = *pcVar81 + cVar1 + (CARRY1(bVar85,bVar86) || CARRY1(bVar87,CARRY1(bVar83,bVar84)));
+  *piVar22 = (int)(pcVar81 + *piVar22);
+  *extraout_ECX = *extraout_ECX + cVar1;
+  *piVar22 = *piVar22 + CONCAT31((int3)((ulonglong)uVar47 >> 8),cVar1 + *pcVar81);
+  pcVar88 = (code *)swi(3);
+  (*pcVar88)();
   return;
 }
 

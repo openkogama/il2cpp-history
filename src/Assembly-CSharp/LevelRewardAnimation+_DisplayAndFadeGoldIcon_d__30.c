@@ -33,7 +33,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
     pIVar4 = (pLVar2->fields).goldImage;
     if ((pIVar4 == (Image *)0x0) ||
        (pRVar7 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                           ((Graphic *)pIVar4,(MethodInfo *)0x0), pRVar7 == (RectTransform *)0x0))
+                            ((Graphic *)pIVar4,(MethodInfo *)0x0), pRVar7 == (RectTransform *)0x0))
     goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_SetSizeWithCurrentAnchors
               (pRVar7,RectTransform_Axis__Enum_Horizontal,
@@ -41,7 +41,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
     pIVar4 = (pLVar2->fields).goldImage;
     if ((pIVar4 == (Image *)0x0) ||
        (pRVar7 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                           ((Graphic *)pIVar4,(MethodInfo *)0x0), pRVar7 == (RectTransform *)0x0))
+                            ((Graphic *)pIVar4,(MethodInfo *)0x0), pRVar7 == (RectTransform *)0x0))
     goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_SetSizeWithCurrentAnchors
               (pRVar7,RectTransform_Axis__Enum_Vertical,
@@ -132,8 +132,8 @@ code_?:
                         pIVar4 = (pLVar2->fields).goldImage;
                         if ((pIVar4 != (Image *)0x0) &&
                            (pRVar7 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::
-                                     Graphic_get_rectTransform((Graphic *)pIVar4,(MethodInfo *)0x0),
-                           pRVar7 != (RectTransform *)0x0)) {
+                                      Graphic_get_rectTransform((Graphic *)pIVar4,(MethodInfo *)0x0)
+                           , pRVar7 != (RectTransform *)0x0)) {
                           UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                           RectTransform_SetSizeWithCurrentAnchors
                                     (pRVar7,RectTransform_Axis__Enum_Horizontal,
@@ -141,8 +141,8 @@ code_?:
                           pIVar4 = (pLVar2->fields).goldImage;
                           if ((pIVar4 != (Image *)0x0) &&
                              (pRVar7 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::
-                                       Graphic_get_rectTransform
-                                                 ((Graphic *)pIVar4,(MethodInfo *)0x0),
+                                        Graphic_get_rectTransform
+                                                  ((Graphic *)pIVar4,(MethodInfo *)0x0),
                              pRVar7 != (RectTransform *)0x0)) {
                             UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                             RectTransform_SetSizeWithCurrentAnchors
@@ -174,7 +174,7 @@ code_?:
                       pIVar4 = (pLVar2->fields).goldImage;
                       if ((pIVar4 != (Image *)0x0) &&
                          (pRVar7 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::
-                                   Graphic_get_rectTransform((Graphic *)pIVar4,(MethodInfo *)0x0),
+                                    Graphic_get_rectTransform((Graphic *)pIVar4,(MethodInfo *)0x0),
                          pRVar7 != (RectTransform *)0x0)) {
                         UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                         RectTransform_SetSizeWithCurrentAnchors
@@ -183,8 +183,8 @@ code_?:
                         pIVar4 = (pLVar2->fields).goldImage;
                         if ((pIVar4 != (Image *)0x0) &&
                            (pRVar7 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::
-                                     Graphic_get_rectTransform((Graphic *)pIVar4,(MethodInfo *)0x0),
-                           pRVar7 != (RectTransform *)0x0)) {
+                                      Graphic_get_rectTransform((Graphic *)pIVar4,(MethodInfo *)0x0)
+                           , pRVar7 != (RectTransform *)0x0)) {
                           UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                           RectTransform_SetSizeWithCurrentAnchors
                                     (pRVar7,RectTransform_Axis__Enum_Vertical,
@@ -251,9 +251,10 @@ code_?:
     }
   }
 code_?:
-  func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  uRam_? = func_?();
+  pcVar16 = (code *)swi(3);
+  bVar17 = (*pcVar16)();
+  return bVar17;
 }
 
 

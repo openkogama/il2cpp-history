@@ -2402,7 +2402,7 @@ code_?:
   (pMVar1->_0).image =
        (Il2CppImage *)
        ((int)&((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId___Class *)
-              (pMVar1->_0).image)[-0x2a39e7]._0.gc_desc + 3);
+              (pMVar1->_0).image)[-0x22c072].vtable.System_Collections_IDictionary_Add.method + 3);
   func_?();
   if (*(int *)(extraout_ECX + 0x74) == 0) {
     func_?();

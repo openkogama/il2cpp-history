@@ -825,9 +825,9 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_
   if (bVar7 != 0) {
     impulse.x = 0.0;
     damage = impulse.y;
-    interactionType._1_1_ = 0x14;
+    interactionType._1_1_ = 0x16;
     uVar9 = interactionType._1_1_;
-    interactionType._1_1_ = 0x14;
+    interactionType._1_1_ = 0x16;
     bVar7 = MVMath::MVMath_ValidateFloat(impulse.y,(MethodInfo *)0x0);
     if (bVar7 != 0) {
       impulse.z = 0.0;
