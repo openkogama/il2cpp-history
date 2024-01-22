@@ -5,7 +5,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_AddCube(MVCubeModelBa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x8390);
+    func_?(0x9390);
     func_?(&TypeInfo__Cube);
     func_?(&MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_);
     cRam_? = '\x01';
@@ -1142,7 +1142,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_ReplaceCube(MVCubeMod
 
 {
   if (cRam_? == '\0') {
-    func_?(0x8390);
+    func_?(0x9390);
     func_?(&MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_);
     cRam_? = '\x01';
   }
@@ -1289,7 +1289,7 @@ IModelingConstraint * Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase___ct
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ModelingDynamicBoxConstraint);
-    func_?(0x1e38);
+    func_?(0x2e38);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {

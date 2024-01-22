@@ -213,7 +213,7 @@ void Assembly-CSharp.dll::CubeGunBulletObject::CubeGunBulletObject_HandleCubeHit
     uVar5 = (this->fields).materialID;
     fStack_6 = (float)CONCAT31(fStack_6._1_3_,uVar5);
     voxelHit.normal.x = fStack_6;
-    voxelHit.point.y._0_2_ = 0x2aa8;
+    voxelHit.point.y._0_2_ = 0x2bb8;
     voxelHit.point.y._2_2_ = 0x1054;
     voxelHit.point.z = (float)this_00;
     pMVar7 = MVMaterialRepository::MVMaterialRepository_GetMaterial(this_00,uVar5,(MethodInfo *)0x0);
@@ -221,12 +221,12 @@ void Assembly-CSharp.dll::CubeGunBulletObject::CubeGunBulletObject_HandleCubeHit
       voxelHit.cubePos.z = 0;
       voxelHit._30_2_ = 0;
       if ((pMVar7->fields)._PhysicalProperties_k__BackingField.toughness == 0.0) {
-        voxelHit.cubePos.x = 0x2b49;
+        voxelHit.cubePos.x = 0x2c59;
         voxelHit.cubePos.y = 0x1054;
         this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if (this_03 != (MVWorldObjectClientManager *)0x0) {
           voxelHit.face = (int32_t)MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__;
-          voxelHit.cubePos.x = 0x2b60;
+          voxelHit.cubePos.x = 0x2c70;
           voxelHit.cubePos.y = 0x1054;
           voxelHit._28_4_ = this_03;
           this_04 = (MVCubeModelBase *)MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject(this_03,MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__);
@@ -276,7 +276,7 @@ void Assembly-CSharp.dll::CubeGunBulletObject::CubeGunBulletObject_HandleCubeHit
             voxelHit._28_4_ = this_05;
             MVCubeModelBase::MVCubeModelBase_AddCube(this_04,IVar2,(CubeBase *)this_05,(MethodInfo *)0x0);
             voxelHit.face = 0;
-            voxelHit.cubePos.x = 0x2c12;
+            voxelHit.cubePos.x = 0x2d22;
             voxelHit.cubePos.y = 0x1054;
             voxelHit._28_4_ = this_04;
             MVCubeModelBase::MVCubeModelBase_HandleDelta(this_04,(MethodInfo *)0x0);
@@ -285,7 +285,7 @@ void Assembly-CSharp.dll::CubeGunBulletObject::CubeGunBulletObject_HandleCubeHit
         }
       }
       else {
-        voxelHit.cubePos.x = 0x2ada;
+        voxelHit.cubePos.x = 0x2bea;
         voxelHit.cubePos.y = 0x1054;
         pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((pMVar4 != (MVNetworkGame *)0x0) && (pWVar8 = (pMVar4->fields).worldNetwork, pWVar8 != (WorldNetwork *)0x0)) {

@@ -692,12 +692,23 @@ code_?:
 code_?:
   uVar47 = func_?();
   piVar22 = (int *)((ulonglong)uVar47 >> 0x20);
-  pcVar81 = (char *)((int)uVar47 + -0x6defb209);
-  *pcVar81 = *pcVar81 + (char)extraout_ECX;
-  *piVar22 = *piVar22 + (int)uVar47;
-  *extraout_ECX = *extraout_ECX + (char)uVar47;
-  pcVar82 = (code *)swi(3);
-  (*pcVar82)();
+  pcVar81 = (char *)uVar47;
+  pbVar82 = (byte *)(pcVar81 + -8);
+  bVar83 = *pbVar82;
+  bVar84 = (byte)extraout_ECX;
+  *pbVar82 = *pbVar82 + bVar84;
+  pbVar82 = (byte *)(piVar22 + -2);
+  bVar85 = *pbVar82;
+  bVar86 = (byte)((ulonglong)uVar47 >> 0x20);
+  bVar87 = *pbVar82 + bVar86;
+  *pbVar82 = bVar87 + CARRY1(bVar83,bVar84);
+  cVar1 = (char)uVar47;
+  *pcVar81 = *pcVar81 + cVar1 + (CARRY1(bVar85,bVar86) || CARRY1(bVar87,CARRY1(bVar83,bVar84)));
+  *piVar22 = (int)(pcVar81 + *piVar22);
+  *extraout_ECX = *extraout_ECX + cVar1;
+  *piVar22 = *piVar22 + CONCAT31((int3)((ulonglong)uVar47 >> 8),cVar1 + *pcVar81);
+  pcVar88 = (code *)swi(3);
+  (*pcVar88)();
   return;
 }
 

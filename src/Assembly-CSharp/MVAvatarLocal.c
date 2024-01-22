@@ -1399,10 +1399,10 @@ code_?:
         pUVar27 = (UnityAction_2_System_Object_System_Object_ *)func_?();
         pMVar28 = MethodInfo__MVAvatarLocal__OnUnequip_System__Object__System__EventArgs_;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar27,(Object *)this,MethodInfo__MVAvatarLocal__OnUnequip_System__Object__System__EventArgs_,(MethodInfo *)0x0);
-        AvatarModifierPackages::AvatarModifierPackages_add_OnUnequipItemEvent((AvatarModifierPackages *)0x9b1a8c35,(EventHandler_1_EventArgs_ *)pUVar27,(MethodInfo *)0x0);
+        AvatarModifierPackages::AvatarModifierPackages_add_OnUnequipItemEvent((AvatarModifierPackages *)0x9b2a8c35,(EventHandler_1_EventArgs_ *)pUVar27,(MethodInfo *)0x0);
         pUVar27 = (UnityAction_2_System_Object_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar27,(Object *)this,MethodInfo__MVAvatarLocal__OnDisableVehicles_System__Object__System__EventArgs_,(MethodInfo *)pUVar27);
-        AvatarModifierPackages::AvatarModifierPackages_add_OnDisableVehiclesEvent((AvatarModifierPackages *)0x9b1a8c35,(EventHandler_1_EventArgs_ *)pUVar27,(MethodInfo *)0x0);
+        AvatarModifierPackages::AvatarModifierPackages_add_OnDisableVehiclesEvent((AvatarModifierPackages *)0x9b2a8c35,(EventHandler_1_EventArgs_ *)pUVar27,(MethodInfo *)0x0);
         pGVar3 = (this->fields)._._._.gameObject;
         if ((pGVar3 == (GameObject *)0x0) || (object = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar3,AvatarShieldDecay_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarShieldDecay>__), object == (Object *)0x0)) goto code_?;
         object[2].monitor = (MonitorData *)(this->fields)._.shield;

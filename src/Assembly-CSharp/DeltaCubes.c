@@ -32,7 +32,7 @@ Byte__Array * Assembly-CSharp.dll::DeltaCubes::DeltaCubes_Dequeue(DeltaCubes *th
     func_?(&TypeInfo__Cube);
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>__get_Key__);
-    func_?(0xbb50);
+    func_?(0xcb50);
     func_?(&MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>__Dequeue__);
     func_?(&StringLiteral_IsCollapsed__cube_detected_in_de);
     func_?(&StringLiteral_Illegal_cube_detected_in_delta_c);
@@ -115,14 +115,14 @@ Byte__Array * Assembly-CSharp.dll::DeltaCubes::DeltaCubes_Dequeue(DeltaCubes *th
     }
   }
   bVar8 = 0;
-  func_?();
-  bVar9 = CARRY1(bRam_?,extraout_CH);
-  bVar10 = bRam_? + extraout_CH;
-  bRam_? = bVar10 + bVar8;
-  pcVar11 = (char *)((int)&unaff_ESI[-0x59efa81].klass + 2);
-  *pcVar11 = *pcVar11 + extraout_AH + (bVar9 || CARRY1(bVar10,bVar8));
-  pcVar12 = (code *)swi(3);
-  pBVar4 = (Byte__Array *)(*pcVar12)(unaff_EDI,unaff_EDI);
+  cVar9 = func_?();
+  bVar10 = CARRY1(bRam_?,extraout_CL);
+  bVar11 = bRam_? + extraout_CL;
+  bRam_? = bVar11 + bVar8;
+  pcVar12 = (char *)((int)&unaff_ESI[-0x79efa81].klass + 3);
+  *pcVar12 = *pcVar12 + cVar9 + (bVar10 || CARRY1(bVar11,bVar8));
+  pcVar13 = (code *)swi(3);
+  pBVar4 = (Byte__Array *)(*pcVar13)(unaff_EDI,unaff_EDI);
   return pBVar4;
 }
 
@@ -195,7 +195,7 @@ void Assembly-CSharp.dll::DeltaCubes::DeltaCubes__ctor_1(DeltaCubes *this,IEnume
     func_?(&TypeInfo__System__IDisposable);
     func_?(&TypeInfo__System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>);
     func_?(&TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>);
-    func_?(0x2f7c);
+    func_?(0x3f7c);
     func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>__get_Key__);
     func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>__get_Value__);
     func_?(&MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>__Queue__);

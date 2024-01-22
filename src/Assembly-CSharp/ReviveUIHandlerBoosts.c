@@ -393,13 +393,13 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
       pOVar1 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original,NotificationPopup_MethodInfo__UnityEngine__Object__Instantiate<NotificationPopup>_NotificationPopup_);
       unaff_ESI[1].klass = pOVar1;
       func_?(unaff_ESI + 1,pOVar1);
-      pOVar1 = unaff_ESI[1].klass;
+      unaff_EBX = unaff_ESI[1].klass;
       pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
       if (pIVar2 != (IAdManager *)0x0) {
         text = (String *)func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar2);
         header = TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
-        if (pOVar1 != (Object__Class *)0x0) {
-          NotificationPopup::NotificationPopup_Initialize((NotificationPopup *)pOVar1,text,header,(MethodInfo *)0x0);
+        if (unaff_EBX != (Object__Class *)0x0) {
+          NotificationPopup::NotificationPopup_Initialize((NotificationPopup *)unaff_EBX,text,header,(MethodInfo *)0x0);
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
           callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,unaff_ESI,MethodInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0___OnRewardedAdWatched_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
@@ -422,14 +422,13 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   default:
     return;
   }
-  func_?();
-  pcVar4 = (char *)((int)&unaff_ESI[-0xd3afdf9].klass + 3);
-  *pcVar4 = *pcVar4 - extraout_DL;
-  (*in_stack_5)();
-  pcVar4 = (char *)((int)&unaff_ESI[-0x6667df9].klass + 3);
-  *pcVar4 = *pcVar4 - extraout_DL_00;
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  uVar4 = func_?();
+  uVar5 = (uint)((ulonglong)uVar4 >> 0x20);
+  uVar6 = *(uint *)uVar4;
+  *(bool *)&(unaff_EBX->_0).image = uVar6 < uVar5;
+  *(char *)&unaff_ESI->klass = *(char *)&unaff_ESI->klass + (char)((ulonglong)uVar4 >> 0x28) + (uVar5 < uVar6);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
