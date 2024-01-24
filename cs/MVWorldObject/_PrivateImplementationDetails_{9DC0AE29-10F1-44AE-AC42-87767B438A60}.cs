@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 // Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 [CompilerGenerated]
-internal class _PrivateImplementationDetails__60ADDB01_E721_4B80_8A32_4BA27D38B0CC_
+internal class _PrivateImplementationDetails__9DC0AE29_10F1_44AE_AC42_87767B438A60_
 {
 	// Fields
 	internal static long __method0x60003f4_1;

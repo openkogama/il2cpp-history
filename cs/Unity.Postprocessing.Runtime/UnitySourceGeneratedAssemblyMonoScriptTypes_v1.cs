@@ -9,9 +9,6 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 // Image 11: Unity.Postprocessing.Runtime.dll - Assembly: Unity.Postprocessing.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-[assembly: CompilationRelaxations(8)]
-[assembly: Debuggable(DebuggableAttribute.DebuggingModes.None | DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]
 
 [CompilerGenerated]
 [EditorBrowsable(EditorBrowsableState.Never)]
