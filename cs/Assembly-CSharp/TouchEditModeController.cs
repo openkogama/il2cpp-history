@@ -17,19 +17,12 @@ using UnityEngine.UI;
 public class TouchEditModeController : ModeControllerBase, IEditStateCommands, IEditModeUI, IGridSnapHandler, IEditModeController
 {
 	// Fields
-	private bool enterPlayModeOnceGuard;
-	private bool enterBuildModeOnceGuard;
-	private bool isInPlayInEditMode;
-	private Action<EditModeChangeArgs> editModeChange;
-	private bool gridSnap;
-	private TouchPlayModeController mobilePlayModeController;
-	private PlayModeControlsBase playModeControlsBase;
-	[CompilerGenerated]
-	private EditorStateMachine _EditModeStateMachine_k__BackingField;
 	[SerializeField]
 	private EditorWorldObjectCreation editorWorldObjectCreation;
 	[SerializeField]
 	private UIStack uiStack;
+	[SerializeField]
+	private InEditMenu inEditMenuPrefab;
 	[SerializeField]
 	private GameObject stackBottom;
 	[SerializeField]
@@ -64,6 +57,15 @@ public class TouchEditModeController : ModeControllerBase, IEditStateCommands, I
 	private SetupCubeModelTutorialUI setupCubeModelTutorialUI;
 	[SerializeField]
 	private GoldPurchasedTracker goldPurchasedTracker;
+	private bool enterPlayModeOnceGuard;
+	private bool enterBuildModeOnceGuard;
+	private bool isInPlayInEditMode;
+	private Action<EditModeChangeArgs> editModeChange;
+	private bool gridSnap;
+	private TouchPlayModeController mobilePlayModeController;
+	private InEditMenu inEditMenu;
+	[CompilerGenerated]
+	private EditorStateMachine _EditModeStateMachine_k__BackingField;
 	[CompilerGenerated]
 	private PlayerShopInventoryRepository _PlayerShopInventoryRepository_k__BackingField;
 	private float focusTime;
@@ -139,7 +141,6 @@ public class TouchEditModeController : ModeControllerBase, IEditStateCommands, I
 	private void HandleFocusInputSupress();
 	private void Update();
 	private void OnApplicationFocus(bool focus);
-	private void ToggleHD();
 	public void RegisterPlayModeController(TouchPlayModeController mobilePlayModeController);
 	public override void Initialize();
 	private void HideUI();

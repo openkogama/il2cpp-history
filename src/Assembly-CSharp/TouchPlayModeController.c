@@ -311,14 +311,27 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_HideE
 
 {
   pPVar1 = (this->fields).playModeControlsBase;
-  if ((pPVar1 != (PlayModeControlsBase *)0x0) && (this_00 = (pPVar1->fields).joystickControllerStack, this_00 != (JoystickControllerStack *)0x0)) {
-    JoystickControllerStack::JoystickControllerStack_HideEUseIcon(this_00,(MethodInfo *)0x0);
-    (*(code *)(pPVar1->klass->vtable).SetUseButtonVisible.method)(pPVar1,0,pPVar1->klass[1]._0.image);
-    return;
+  if ((pPVar1 != (PlayModeControlsBase *)0x0) && (pJVar2 = (pPVar1->fields).joystickControllerStack, pJVar2 != (JoystickControllerStack *)0x0)) {
+    if (cRam_? == '\0') {
+      func_?(&MethodInfo__System__Collections__Generic__List<InGameControls>__get_Count__);
+      func_?(&MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_);
+      cRam_? = '\x01';
+    }
+    pLVar3 = (pJVar2->fields).controls;
+    if (pLVar3 != (List_1_InGameControls_ *)0x0) {
+      if ((pLVar3->fields)._size != 0) {
+        RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(pJVar2->fields).controls,(pLVar3->fields)._size + -1,MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_);
+        if ((RVar4 == (RegexCharClass_SingleRange)0x0) || (piVar5 = *(int **)((int)RVar4 + 0x18), piVar5 == (int *)0x0)) goto code_?;
+        (**(code **)(*piVar5 + 0xe8))(piVar5,*(undefined4 *)(*piVar5 + 0xec));
+      }
+      (*(code *)(pPVar1->klass->vtable).SetUseButtonVisible.method)(pPVar1,0,pPVar1->klass[1]._0.image);
+      return;
+    }
   }
+code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -473,57 +486,57 @@ code_?:
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar4,(MethodInfo *)0x0);
       if (pGVar3 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar3,1,(MethodInfo *)0x0);
-      object = pORam00000049;
+      MVar15 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+      if (MVar15 == MVGameMode__Enum_Play) {
+        (this->fields)._._IsInLobby_k__BackingField = 1;
+        (*(code *)(this->klass->vtable).set_IsInPauseMenu_1.method)();
+      }
       a_00 = (this->fields).OnLobbyStateChange;
       pUVar8 = (UnityAction_1_System_Int32Enum_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar8,object,MethodInfo__AndroidChatController__OnLobbyStateChange_bool_,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar8,(Object *)0x72e85357,MethodInfo__AndroidChatController__OnLobbyStateChange_bool_,(MethodInfo *)0x0);
       pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a_00,(Delegate *)pUVar8,(MethodInfo *)0x0);
       if (pDVar10 == (Delegate *)0x0) {
-                    /* WARNING: Read-only address (ram,0xADDR) is written */
-        _UNK_? = 0;
+        pDRam0000001c = (Delegate *)0x0;
 code_?:
         func_?();
+        pDVar10 = pDRam0000001c;
         pUVar8 = (UnityAction_1_System_Int32Enum_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar8,(Object *)&UNK_?,MethodInfo__TouchPlayModeController__LobbyStateChange_bool_,(MethodInfo *)0x0);
-        pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)&TypeInfo__System__Action<bool>,(Delegate *)pUVar8,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar8,(Object *)0x0,MethodInfo__TouchPlayModeController__LobbyStateChange_bool_,(MethodInfo *)0x0);
+        pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar10,(Delegate *)pUVar8,(MethodInfo *)0x0);
         if (pDVar10 != (Delegate *)0x0) {
-          iVar11 = func_?();
-          if (iVar11 != 0) {
-            _UNK_? = iVar11;
-                    /* WARNING: Read-only address (ram,0xADDR) is written */
+          pDVar10 = (Delegate *)func_?();
+          if (pDVar10 != (Delegate *)0x0) {
+            pDRam0000001c = pDVar10;
             iVar11 = func_?();
             if (iVar11 != 0) goto code_?;
           }
           goto code_?;
         }
-                    /* WARNING: Read-only address (ram,0xADDR) is written */
-        _UNK_? = 0;
+        pDRam0000001c = (Delegate *)0x0;
 code_?:
         func_?();
-        (*pcRam_?)();
         if ((TypeInfo__ChatCommandManager->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         pAVar12 = ChatCommandManager::ChatCommandManager_GetChatCommandCallback(ChatCommand__Enum_HideAllUI,(MethodInfo *)0x0);
         pNVar13 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar13,(Object *)&UNK_?,MethodInfo__TouchPlayModeController__HideUI__,(MethodInfo *)0x0);
-        pAVar15 = (Action *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar12,(Delegate *)pNVar13,(MethodInfo *)0x0);
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar13,(Object *)0x0,MethodInfo__TouchPlayModeController__HideUI__,(MethodInfo *)0x0);
+        pAVar16 = (Action *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar12,(Delegate *)pNVar13,(MethodInfo *)0x0);
         pAVar12 = (Action *)0x0;
-        if (pAVar15 == (Action *)0x0) {
+        if (pAVar16 == (Action *)0x0) {
 code_?:
           ChatCommandManager::ChatCommandManager_UpdateChatCommandCallback(ChatCommand__Enum_HideAllUI,pAVar12,(MethodInfo *)0x0);
           return;
         }
-        if (pAVar15->klass == TypeInfo__System__Action) {
-          pAVar12 = pAVar15;
+        if (pAVar16->klass == TypeInfo__System__Action) {
+          pAVar12 = pAVar16;
         }
         if (pAVar12 != (Action *)0x0) goto code_?;
         goto code_?;
       }
-      iVar11 = func_?();
-      if (iVar11 != 0) {
-        _UNK_? = iVar11;
-                    /* WARNING: Read-only address (ram,0xADDR) is written */
+      pDVar10 = (Delegate *)func_?();
+      if (pDVar10 != (Delegate *)0x0) {
+        pDRam0000001c = pDVar10;
         iVar11 = func_?();
         if (iVar11 != 0) goto code_?;
       }
@@ -547,8 +560,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
@@ -948,14 +961,27 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_ShowE
 
 {
   pPVar1 = (this->fields).playModeControlsBase;
-  if ((pPVar1 != (PlayModeControlsBase *)0x0) && (this_00 = (pPVar1->fields).joystickControllerStack, this_00 != (JoystickControllerStack *)0x0)) {
-    JoystickControllerStack::JoystickControllerStack_ShowEUseIcon(this_00,option,(MethodInfo *)0x0);
-    (*(code *)(pPVar1->klass->vtable).SetUseButtonVisible.method)(pPVar1,1,pPVar1->klass[1]._0.image);
-    return;
+  if ((pPVar1 != (PlayModeControlsBase *)0x0) && (pJVar2 = (pPVar1->fields).joystickControllerStack, pJVar2 != (JoystickControllerStack *)0x0)) {
+    if (cRam_? == '\0') {
+      func_?(&MethodInfo__System__Collections__Generic__List<InGameControls>__get_Count__);
+      func_?(&MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_);
+      cRam_? = '\x01';
+    }
+    pLVar3 = (pJVar2->fields).controls;
+    if (pLVar3 != (List_1_InGameControls_ *)0x0) {
+      if ((pLVar3->fields)._size != 0) {
+        RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(pJVar2->fields).controls,(pLVar3->fields)._size + -1,MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_);
+        if ((RVar4 == (RegexCharClass_SingleRange)0x0) || (piVar5 = *(int **)((int)RVar4 + 0x18), piVar5 == (int *)0x0)) goto code_?;
+        (**(code **)(*piVar5 + 0xe0))(piVar5,option,*(undefined4 *)(*piVar5 + 0xe4));
+      }
+      (*(code *)(pPVar1->klass->vtable).SetUseButtonVisible.method)(pPVar1,1,pPVar1->klass[1]._0.image);
+      return;
+    }
   }
+code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -977,9 +1003,9 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController__ctor
 }
 
 
-/* Void set_InLobbyState(Boolean) */
+/* Void set_IsInPauseMenu(Boolean) */
 
-void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_set_InLobbyState(TouchPlayModeController *this,bool value,MethodInfo *method)
+void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_set_IsInPauseMenu(TouchPlayModeController *this,bool value,MethodInfo *method)
 
 {
   (this->fields).inLobbyState = value;

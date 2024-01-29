@@ -186,8 +186,8 @@ ValueTuple_2_MV_WorldObject_IntVector_MV_WorldObject_IntVector_ * Assembly-CShar
       (__return_storage_ptr__->Item2).y = 0;
       (__return_storage_ptr__->Item2).z = 0;
       method = (MethodInfo *)__return_storage_ptr__;
-      doorType._0_2_ = 0x7267;
-      doorType._2_2_ = 0x104d;
+      doorType._0_2_ = 0x14c7;
+      doorType._2_2_ = 0x104e;
       item1.z = iVar2;
       item1.x = (int16_t)uVar3;
       item1.y = SUB42(uVar3,2);

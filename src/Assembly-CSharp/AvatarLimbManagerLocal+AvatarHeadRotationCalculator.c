@@ -31,7 +31,7 @@ AvatarLimbManagerLocal_HeadRotationCalculationResult * Assembly-CSharp.dll::Avat
     cRam_? = '\x01';
   }
   pQVar3 = MathFunctions::MathFunctions_QuaternionFromAngleAndAxis((Quaternion *)&stack0xffffffec,(float)this,TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
-  MathFunctions::MathFunctions_PitchFromLocalDirection(localLookDirection,(MethodInfo *)pQVar3->z);
+  MVGroundState::MVGroundState_GetGradientAngle(localLookDirection,(MethodInfo *)pQVar3->z);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -63,7 +63,7 @@ AvatarLimbManagerLocal_HeadRotationCalculationResult * Assembly-CSharp.dll::Avat
 Quaternion * Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarHeadRotationCalculator::AvatarLimbManagerLocal_AvatarHeadRotationCalculator_GetClampedPitchRotation(Quaternion *__return_storage_ptr__,AvatarLimbManagerLocal_AvatarHeadRotationCalculator *this,Vector3 localDirection,MethodInfo *method)
 
 {
-  fVar1 = MathFunctions::MathFunctions_PitchFromLocalDirection(localDirection,(MethodInfo *)0x0);
+  fVar1 = MVGroundState::MVGroundState_GetGradientAngle(localDirection,(MethodInfo *)0x0);
   localDirection.z = 0.0;
   fVar2 = fVar1;
   if ((0.0 < fVar1) && ((fVar1 <= 0.0 || (fVar2 = localDirection.z, 40.0 <= fVar1)))) {

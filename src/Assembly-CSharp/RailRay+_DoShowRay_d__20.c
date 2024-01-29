@@ -11,48 +11,48 @@ bool Assembly-CSharp.dll::RailRay+<DoShowRay>d__20::RailRay_DoShowRay_d_20_MoveN
   }
   pRVar1 = this;
   iVar2 = (this->fields).__1__state;
-  obj = (this->fields).__4__this;
+  this_00 = (this->fields).__4__this;
   if (iVar2 == 0) {
     (this->fields).__1__state = -1;
     (this->fields)._endColor_5__2.r = 0.1;
     (this->fields)._endColor_5__2.g = 0.1;
     (this->fields)._endColor_5__2.b = 0.1;
     (this->fields)._endColor_5__2.a = 0.0;
-    if ((obj == (RailRay *)0x0) || (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)obj,(MethodInfo *)0x0), pTVar3 == (Transform *)0x0)) goto code_?;
+    if ((this_00 == (RailRay *)0x0) || (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0), pTVar3 == (Transform *)0x0)) goto code_?;
     pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&puStack_5,pTVar3,(MethodInfo *)0x0);
     uVar6 = pVVar4->y;
     fVar7 = pVVar4->z;
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)obj,(MethodInfo *)0x0);
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
     if (pTVar3 == (Transform *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar3,(obj->fields).target,(MethodInfo *)0x0);
-    pLVar8 = (obj->fields).rayRenderer;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar3,(this_00->fields).target,(MethodInfo *)0x0);
+    pLVar8 = (this_00->fields).rayRenderer;
     if (pLVar8 == (LineRenderer *)0x0) goto code_?;
     uVar9 = 0;
     UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_set_positionCount(pLVar8,2,(MethodInfo *)0x0);
-    pLVar8 = (obj->fields).rayRenderer;
+    pLVar8 = (this_00->fields).rayRenderer;
     if (pLVar8 == (LineRenderer *)0x0) goto code_?;
     position.y = (float)uVar6;
     position.x = (float)uVar9;
     position.z = fVar7;
     UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition(pLVar8,1,position,(MethodInfo *)0x0);
-    this_01 = (RailRay_DoShowRay_d_20 *)(obj->fields).rayRenderer;
-    if (this_01 == (RailRay_DoShowRay_d_20 *)0x0) goto code_?;
+    this_02 = (RailRay_DoShowRay_d_20 *)(this_00->fields).rayRenderer;
+    if (this_02 == (RailRay_DoShowRay_d_20 *)0x0) goto code_?;
     method = (MethodInfo *)0x0;
-    this = this_01;
-    UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition((LineRenderer *)this_01,0,(pRVar1->fields).hit,(MethodInfo *)0x0);
+    this = this_02;
+    UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition((LineRenderer *)this_02,0,(pRVar1->fields).hit,(MethodInfo *)0x0);
     (pRVar1->fields)._time_5__3 = 1.2;
     (pRVar1->fields)._t_5__4 = 0.0;
 code_?:
     fVar7 = (pRVar1->fields)._time_5__3;
     pfVar10 = &(pRVar1->fields)._t_5__4;
     if (*pfVar10 <= fVar7 && fVar7 != *pfVar10) {
-      if ((obj != (RailRay *)0x0) && (pLVar8 = (obj->fields).rayRenderer, pLVar8 != (LineRenderer *)0x0)) {
+      if ((this_00 != (RailRay *)0x0) && (pLVar8 = (this_00->fields).rayRenderer, pLVar8 != (LineRenderer *)0x0)) {
         this_03 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material((Renderer *)pLVar8,(MethodInfo *)0x0);
         fVar11 = (pRVar1->fields)._t_5__4 / (pRVar1->fields)._time_5__3;
-        fVar7 = (obj->fields).startColor.r;
-        fVar12 = (obj->fields).startColor.g;
-        fVar13 = (obj->fields).startColor.b;
-        fVar14 = (obj->fields).startColor.a;
+        fVar7 = (this_00->fields).startColor.r;
+        fVar12 = (this_00->fields).startColor.g;
+        fVar13 = (this_00->fields).startColor.b;
+        fVar14 = (this_00->fields).startColor.a;
         puStack_5 = (undefined *)(pRVar1->fields)._endColor_5__2.g;
         if (fVar11 < 0.0) {
           fVar11 = 0.0;
@@ -89,8 +89,8 @@ code_?:
     }
     (this->fields).__1__state = -1;
   }
-  if ((obj != (RailRay *)0x0) && (this_00 = (obj->fields).particles, this_00 != (ParticleSystem *)0x0)) {
-    bVar16 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_isPlaying(this_00,(MethodInfo *)0x0);
+  if ((this_00 != (RailRay *)0x0) && (this_01 = (this_00->fields).particles, this_01 != (ParticleSystem *)0x0)) {
+    bVar16 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_isPlaying(this_01,(MethodInfo *)0x0);
     if (bVar16 != 0) {
       this = (RailRay_DoShowRay_d_20 *)0x0;
       pOVar15 = (Object *)func_?(TypeInfo__System__Int32,&this);
@@ -104,15 +104,70 @@ code_?:
       cRam_? = '\x01';
     }
     pPVar17 = TypeInfo__PrefabPool->static_fields->instance;
-    if ((pPVar17 != (PrefabPool *)0x0) && (this_02 = (pPVar17->fields).enumPoolManager, this_02 != (EnumPoolManager *)0x0)) {
-      EnumPoolManager::EnumPoolManager_Return(this_02,(MonoBehaviour *)obj,(obj->fields).railEnumType,(MethodInfo *)0x0);
-      return 0;
+    if (((pPVar17 != (PrefabPool *)0x0) && (pEVar18 = (pPVar17->fields).enumPoolManager, pEVar18 != (EnumPoolManager *)0x0)) && (pPVar19 = (pEVar18->fields).lookupTable, pPVar19 != (Pool__Array *)0x0)) {
+      uVar20 = (this_00->fields).railEnumType;
+      if (uVar20 < pPVar19->max_length) {
+        pPVar21 = pPVar19->vector[uVar20];
+        if (pPVar21 != (Pool *)0x0) {
+          if (cRam_? == '\0') {
+            func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+            func_?(&TypeInfo__UnityEngine__Object);
+            cRam_? = '\x01';
+          }
+          pMVar22 = (pPVar21->fields).pool;
+          uVar20 = 0;
+          if (pMVar22 != (MonoBehaviour__Array *)0x0) {
+            this = (RailRay_DoShowRay_d_20 *)0x10;
+            do {
+              if ((int)pMVar22->max_length <= (int)uVar20) {
+                pGVar23 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
+                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?(TypeInfo__UnityEngine__Object);
+                }
+                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)pGVar23,(MethodInfo *)0x0);
+                return 0;
+              }
+              pMVar22 = (pPVar21->fields).pool;
+              if (pMVar22 == (MonoBehaviour__Array *)0x0) break;
+              if (pMVar22->max_length <= uVar20) goto code_?;
+              x = *(Object_1 **)((int)&this->klass + (int)pMVar22);
+              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                func_?(TypeInfo__UnityEngine__Object);
+              }
+              bVar16 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality(x,(Object_1 *)this_00,(MethodInfo *)0x0);
+              if (bVar16 != 0) {
+                pGVar23 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
+                if (pGVar23 != (GameObject *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar23,0,(MethodInfo *)0x0);
+                  pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
+                  if (pTVar3 != (Transform *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent(pTVar3,(pPVar21->fields).parent,(MethodInfo *)0x0);
+                    pLVar24 = (pPVar21->fields).available;
+                    if (pLVar24 != (List_1_System_Int32_ *)0x0) {
+                      func_?(pLVar24,uVar20,MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+                      return 0;
+                    }
+                  }
+                }
+                break;
+              }
+              uVar20 = uVar20 + 1;
+              pMVar22 = (pPVar21->fields).pool;
+              this = (RailRay_DoShowRay_d_20 *)&this->monitor;
+            } while (pMVar22 != (MonoBehaviour__Array *)0x0);
+          }
+        }
+      }
+      else {
+code_?:
+        func_?();
+      }
     }
   }
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  bVar16 = (*pcVar18)();
+  pcVar25 = (code *)swi(3);
+  bVar16 = (*pcVar25)();
   return bVar16;
 }
 

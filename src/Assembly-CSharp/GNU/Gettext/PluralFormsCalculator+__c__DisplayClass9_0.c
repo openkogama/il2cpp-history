@@ -20,7 +20,19 @@ void Assembly-CSharp.dll::GNU::Gettext::PluralFormsCalculator+<>c__DisplayClass9
       mscorlib.dll::System::Text::StringBuilder::StringBuilder_AppendFormat(pSVar3,StringLiteral__0___,arg0,(MethodInfo *)0x0);
       pRVar2 = (pPVar1->fields).tracer;
       if (pRVar2 != (RecursiveTracer *)0x0) {
-        RecursiveTracer::RecursiveTracer_Indent(pRVar2,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          func_?(&StringLiteral_u0009);
+          cRam_? = '\x01';
+        }
+        iVar4 = 0;
+        if (0 < (pRVar2->fields)._Level_k__BackingField) {
+          do {
+            pSVar3 = (pRVar2->fields)._Text_k__BackingField;
+            if (pSVar3 == (StringBuilder *)0x0) goto code_?;
+            mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2(pSVar3,StringLiteral_u0009,(MethodInfo *)0x0);
+            iVar4 = iVar4 + 1;
+          } while (iVar4 < (pRVar2->fields)._Level_k__BackingField);
+        }
         pRVar2 = (pPVar1->fields).tracer;
         if (pRVar2 != (RecursiveTracer *)0x0) {
           pSVar3 = (pRVar2->fields)._Text_k__BackingField;
@@ -35,9 +47,10 @@ void Assembly-CSharp.dll::GNU::Gettext::PluralFormsCalculator+<>c__DisplayClass9
       }
     }
   }
+code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

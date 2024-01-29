@@ -21,6 +21,7 @@ public class AvatarFader : MonoBehaviour, IFadeParent
 	private Transform bodyTransform;
 	private Dictionary<string, Shader> normalShadersDictionary;
 	private Dictionary<string, Shader> fadeShadersDictionary;
+	private string trancperancyProperty;
 	private string colorProperty;
 	private string tintProperty;
 	private List<Material> avatarMaterials;

@@ -5,18 +5,22 @@ void Assembly-CSharp.dll::AvatarFader::AvatarFader_AddFadeMaterial(AvatarFader *
 
 {
   if (cRam_? == '\0') {
+    pMStack_1 = (MethodInfo *)&MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__Add_UnityEngine__Material_;
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).avatarMaterials;
-  if (this_00 != (List_1_UnityEngine_Material_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_00,(Object *)addRenderer,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__Add_UnityEngine__Material_);
+  pLStack_2 = (this->fields).avatarMaterials;
+  if (pLStack_2 != (List_1_UnityEngine_Material_ *)0x0) {
+    pMStack_1 = MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__Add_UnityEngine__Material_;
+    pMStack_3 = addRenderer;
+    func_?();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  uVar4 = func_?(&pLStack_2);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -90,8 +94,13 @@ void Assembly-CSharp.dll::AvatarFader::AvatarFader_SetTransparency(AvatarFader *
     func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Count__);
     func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_);
     func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__TextureAtlasData);
+    func_?(&StringLiteral_SM3);
+    func_?(&StringLiteral_CubeModel);
     cRam_? = '\x01';
   }
+  RStack_1.First = 0;
+  RStack_1.Last = 0;
   if ((fadeFactor == 1.0) && ((this->fields).fading == 0)) {
     return;
   }
@@ -101,80 +110,93 @@ void Assembly-CSharp.dll::AvatarFader::AvatarFader_SetTransparency(AvatarFader *
     (this->fields).prevFading = 0;
   }
   index = 0;
-  pLVar1 = (this->fields).avatarMaterials;
-  while (pLVar1 != (List_1_UnityEngine_Material_ *)0x0) {
-    if ((pLVar1->fields)._size <= index) {
+  pLVar2 = (this->fields).avatarMaterials;
+  while (pLVar2 != (List_1_UnityEngine_Material_ *)0x0) {
+    if ((pLVar2->fields)._size <= index) {
       if ((this->fields).changedShaders == 0) {
         return;
       }
       (this->fields).prevFading = 1;
       return;
     }
-    pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).avatarMaterials;
-    if (pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
-    RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_);
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).avatarMaterials;
+    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
+    x = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_);
+    RStack_1 = x;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)RVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 == 0) {
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
       if ((this->fields).prevFading == 0) {
-        pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).avatarMaterials;
-        if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-        pSVar5 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_shader((Material *)RVar3,(MethodInfo *)0x0);
-        pSVar5 = AvatarFader_GetShader(this,pSVar5,(this->fields).fading,(MethodInfo *)0x0);
-        pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).avatarMaterials;
-        if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_shader((Material *)RVar3,pSVar5,(MethodInfo *)0x0);
+        if (RStack_1 == (RegexCharClass_SingleRange)0x0) break;
+        pSVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_shader((Material *)RStack_1,(MethodInfo *)0x0);
+        pSVar4 = AvatarFader_GetShader(this,pSVar4,(this->fields).fading,(MethodInfo *)0x0);
+        if (((RStack_1 == (RegexCharClass_SingleRange)0x0) || (UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_shader((Material *)RStack_1,pSVar4,(MethodInfo *)0x0), pSVar4 == (Shader *)0x0)) || (pSVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name((Object_1 *)pSVar4,(MethodInfo *)0x0), pSVar5 == (String *)0x0)) break;
+        bVar3 = mscorlib.dll::System::String::String_Contains(pSVar5,StringLiteral_CubeModel,(MethodInfo *)0x0);
+        if (bVar3 != 0) {
+          pSVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name((Object_1 *)pSVar4,(MethodInfo *)0x0);
+          if (pSVar5 == (String *)0x0) break;
+          mscorlib.dll::System::String::String_Contains(pSVar5,StringLiteral_SM3,(MethodInfo *)0x0);
+          if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          TextureAtlasData::TextureAtlasData_StreamAtlasDataToMaterial((Material **)&RStack_1,0,(MethodInfo *)0x0);
+        }
       }
-      pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).avatarMaterials;
-      if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_HasProperty_1((Material *)RVar3,(this->fields).colorProperty,(MethodInfo *)0x0);
-      pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).avatarMaterials;
-      if (bVar4 == 0) {
-        if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_HasProperty_1((Material *)RVar3,(this->fields).tintProperty,(MethodInfo *)0x0);
-        if (bVar4 != 0) {
-          pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).avatarMaterials;
-          if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-          pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector((Vector4 *)&stack0xffffffd8,(Material *)RVar3,(this->fields).tintProperty,(MethodInfo *)0x0);
-          fVar7 = pVVar6->x;
-          fVar8 = pVVar6->y;
-          pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).avatarMaterials;
-          if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (fVar9 = pVVar6->z, fVar10 = fadeFactor, RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_), fadeFactor = fVar9, RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-          value.y = fVar8;
-          value.x = fVar7;
-          value.z = fadeFactor;
-          value.w = fVar10;
-          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector((Material *)RVar3,(this->fields).tintProperty,value,(MethodInfo *)0x0);
+      if (RStack_1 == (RegexCharClass_SingleRange)0x0) break;
+      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_HasProperty_1((Material *)RStack_1,(this->fields).trancperancyProperty,(MethodInfo *)0x0);
+      if (bVar3 == 0) {
+        if (RStack_1 == (RegexCharClass_SingleRange)0x0) break;
+        bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_HasProperty_1((Material *)RStack_1,(this->fields).colorProperty,(MethodInfo *)0x0);
+        if (bVar3 == 0) {
+          if (RStack_1 == (RegexCharClass_SingleRange)0x0) break;
+          bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_HasProperty_1((Material *)RStack_1,(this->fields).tintProperty,(MethodInfo *)0x0);
+          if (bVar3 != 0) {
+            if (RStack_1 == (RegexCharClass_SingleRange)0x0) break;
+            pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector((Vector4 *)&stack0xffffffd0,(Material *)RStack_1,(this->fields).tintProperty,(MethodInfo *)0x0);
+            uVar7 = pVVar6->x;
+            uVar8 = pVVar6->y;
+            uVar9 = pVVar6->z;
+            value_00.z = (float)uVar9;
+            value_00.y = (float)uVar8;
+            value_00.x = (float)uVar7;
+            if (RStack_1 == (RegexCharClass_SingleRange)0x0) break;
+            value_00.w = fadeFactor;
+            UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector((Material *)RStack_1,(this->fields).tintProperty,value_00,(MethodInfo *)0x0);
+          }
+        }
+        else {
+          if (RStack_1 == (RegexCharClass_SingleRange)0x0) break;
+          pCVar10 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color((Color *)&stack0xffffffc0,(Material *)RStack_1,(MethodInfo *)0x0);
+          uVar11 = pCVar10->r;
+          uVar12 = pCVar10->g;
+          uVar13 = pCVar10->b;
+          value.b = (float)uVar13;
+          value.g = (float)uVar12;
+          value.r = (float)uVar11;
+          if (RStack_1 == (RegexCharClass_SingleRange)0x0) break;
+          value.a = fadeFactor;
+          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color((Material *)RStack_1,value,(MethodInfo *)0x0);
         }
       }
       else {
-        if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-        pCVar11 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color((Color *)&stack0xffffffc8,(Material *)RVar3,(MethodInfo *)0x0);
-        fVar7 = pCVar11->g;
-        fVar8 = pCVar11->b;
-        pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).avatarMaterials;
-        if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (pMVar12 = MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_, fVar9 = fadeFactor, RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-        value_00.g = fVar7;
-        value_00.r = (float)pMVar12;
-        value_00.b = fVar8;
-        value_00.a = fVar9;
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color((Material *)RVar3,value_00,(MethodInfo *)0x0);
+        if (RStack_1 == (RegexCharClass_SingleRange)0x0) break;
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat((Material *)RStack_1,(this->fields).trancperancyProperty,1.0 - fadeFactor,(MethodInfo *)0x0);
       }
     }
     else {
-      pLVar1 = (this->fields).avatarMaterials;
-      if (pLVar1 == (List_1_UnityEngine_Material_ *)0x0) break;
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__RemoveAt((List_1_System_Object_ *)pLVar1,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__RemoveAt_int_);
+      pLVar2 = (this->fields).avatarMaterials;
+      if (pLVar2 == (List_1_UnityEngine_Material_ *)0x0) break;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__RemoveAt((List_1_System_Object_ *)pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__RemoveAt_int_);
       index = index + -1;
     }
     index = index + 1;
-    pLVar1 = (this->fields).avatarMaterials;
+    pLVar2 = (this->fields).avatarMaterials;
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -238,9 +260,9 @@ void Assembly-CSharp.dll::AvatarFader::AvatarFader_Start(AvatarFader *this,Metho
               iVar5 = iVar5 + 0xc;
             } while ((int)uVar4 < (int)iVar3);
           }
-          this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-          if (this_01 != (Transform *)0x0) {
-            pOVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren((Component *)this_01,UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______);
+          this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+          if (this_00 != (Transform *)0x0) {
+            pOVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren((Component *)this_00,UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______);
             uStack_7 = 0;
             if (pOVar6 != (Object__Array *)0x0) {
               ppOVar8 = pOVar6->vector;
@@ -256,9 +278,9 @@ void Assembly-CSharp.dll::AvatarFader::AvatarFader_Start(AvatarFader *this,Metho
                 if (pMVar9 == (Material__Array *)0x0) goto code_?;
                 for (; (int)uVar4 < (int)pMVar9->max_length; uVar4 = uVar4 + 1) {
                   if (pMVar9->max_length <= uVar4) goto code_?;
-                  this_00 = (this->fields).avatarMaterials;
-                  if (this_00 == (List_1_UnityEngine_Material_ *)0x0) goto code_?;
-                  mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_00,(Object *)*ppMVar10,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__Add_UnityEngine__Material_);
+                  pLVar11 = (this->fields).avatarMaterials;
+                  if (pLVar11 == (List_1_UnityEngine_Material_ *)0x0) goto code_?;
+                  func_?(pLVar11,*ppMVar10,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__Add_UnityEngine__Material_);
                   ppMVar10 = ppMVar10 + 1;
                 }
                 uStack_7 = uStack_7 + 1;
@@ -274,8 +296,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -290,8 +312,11 @@ void Assembly-CSharp.dll::AvatarFader::AvatarFader__ctor(AvatarFader *this,Metho
     func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Material>);
     func_?(&StringLiteral__TintColor);
     func_?(&StringLiteral__Color);
+    func_?(&StringLiteral__Transparency);
     cRam_? = '\x01';
   }
+  (this->fields).trancperancyProperty = StringLiteral__Transparency;
+  func_?(&(this->fields).trancperancyProperty,StringLiteral__Transparency);
   (this->fields).colorProperty = StringLiteral__Color;
   func_?(&(this->fields).colorProperty,StringLiteral__Color);
   (this->fields).tintProperty = StringLiteral__TintColor;

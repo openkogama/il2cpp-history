@@ -87,7 +87,7 @@ code_?:
       mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2(sb,pSVar12,(MethodInfo *)0x0);
       if (unaff_ESI == (Object *)0x0) {
 code_?:
-        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_9(sb,unaff_ESI,(MethodInfo *)0x0);
+        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_10(sb,unaff_ESI,(MethodInfo *)0x0);
       }
       else {
         pOVar14 = (Object *)0x0;
@@ -110,7 +110,7 @@ code_?:
             pSVar12 = (String *)func_?(3,unaff_ESI);
           }
           mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2(sb,pSVar12,(MethodInfo *)0x0);
-          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5(sb,0x5d,(MethodInfo *)0x0);
+          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6(sb,0x5d,(MethodInfo *)0x0);
         }
         else {
           if (unaff_ESI != (Object *)0x0) {
@@ -333,7 +333,7 @@ code_?:
       func_?();
       value = (Object *)func_?();
       if (this_01 == (Il2CppClass *)0x0) break;
-      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_9((StringBuilder *)this_01,value,(MethodInfo *)0x0);
+      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_10((StringBuilder *)this_01,value,(MethodInfo *)0x0);
       this = this_01;
     }
   }
@@ -399,7 +399,7 @@ float Assembly-CSharp.dll::Extensions::Extensions_ConvertToSingle(String *s,Meth
   if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  fVar4 = mscorlib.dll::System::Convert::Convert_ToSingle_12(s,(IFormatProvider *)provider,(MethodInfo *)0x0);
+  fVar4 = mscorlib.dll::System::Convert::Convert_ToSingle_13(s,(IFormatProvider *)provider,(MethodInfo *)0x0);
   *unaff_FS_OFFSET = uStack_3;
   return fVar4;
 }
@@ -614,7 +614,7 @@ String * Assembly-CSharp.dll::Extensions::Extensions_GenerateDictionaryString(Di
       func_?();
       pOVar19 = (Object *)func_?();
       if (pSVar18 == (StringBuilder *)0x0) goto code_?;
-      pSVar18 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_9(pSVar18,pOVar19,(MethodInfo *)0x0);
+      pSVar18 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_10(pSVar18,pOVar19,(MethodInfo *)0x0);
       if (pSVar18 == (StringBuilder *)0x0) goto code_?;
       mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2(pSVar18,StringLiteral__v__,(MethodInfo *)0x0);
       func_?();
@@ -624,7 +624,7 @@ String * Assembly-CSharp.dll::Extensions::Extensions_GenerateDictionaryString(Di
       if (iVar20 == 0) {
         func_?();
         pOVar19 = (Object *)func_?();
-        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_9(this,pOVar19,(MethodInfo *)0x0);
+        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_10(this,pOVar19,(MethodInfo *)0x0);
       }
       else {
         if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {

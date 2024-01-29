@@ -1,15 +1,15 @@
 
-/* Void <GoToMenu>b__2(IUIStack, BaseEventData) */
+/* Void <GoToMenu>b__1(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::LobbyFlowMenu+<>c__DisplayClass23_1::LobbyFlowMenu_c_DisplayClass23_1__GoToMenu_b__2(LobbyFlowMenu_c_DisplayClass23_1 *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::LobbyFlowMenu+<>c__DisplayClass24_0::LobbyFlowMenu_c_DisplayClass24_0__GoToMenu_b__1(LobbyFlowMenu_c_DisplayClass24_0 *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).winConMenu;
-  if (this_00 != (WinningConditionBriefing *)0x0) {
+  this_00 = (this->fields).newSettingsMenu;
+  if (this_00 != (ProfileSettingsMenu *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
     if (x != (IUIStack *)0x0) {
       pIStack_1 = x;

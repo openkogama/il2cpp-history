@@ -3,7 +3,6 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -20,8 +19,7 @@ namespace MV.WorldObject.MetaData
 		protected readonly bool IsInitialized;
 		public FirstTimeState FirstTimeState;
 		public ProfileHighlightState ProfileHighlightState;
-		public float MS;
-		public Dictionary<string, string> TestData;
+		public ProfileSettingsState ProfileSettingsState;
 		protected SerializeFlag serializeFlags;
 	
 		// Nested types
@@ -32,7 +30,7 @@ namespace MV.WorldObject.MetaData
 			FirstTimeState = 1,
 			TestData = 4,
 			ProfileHighlightState = 8,
-			MouseSensitivity = 16,
+			ProfileSettingsState = 16,
 			GoldRewardLevel = 32,
 			PlayNewGamesForGoldData = 64,
 			All = 127
@@ -46,6 +44,6 @@ namespace MV.WorldObject.MetaData
 		public bool ShouldSerializeFirstTimeState();
 		public bool ShouldSerializeTestData();
 		public bool ShouldSerializeProfileHighlightState();
-		public bool ShouldSerializeMS();
+		public bool ShouldSerializeProfileSettingsState();
 	}
 }

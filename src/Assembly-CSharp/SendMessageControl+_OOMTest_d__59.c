@@ -1,7 +1,7 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::SendMessageControl+<OOMTest>d__58::SendMessageControl_OOMTest_d_58_MoveNext(SendMessageControl_OOMTest_d_58 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::SendMessageControl+<OOMTest>d__59::SendMessageControl_OOMTest_d_59_MoveNext(SendMessageControl_OOMTest_d_59 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -41,13 +41,13 @@ bool Assembly-CSharp.dll::SendMessageControl+<OOMTest>d__58::SendMessageControl_
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::SendMessageControl+<OOMTest>d__58::SendMessageControl_OOMTest_d_58_System_Collections_IEnumerator_Reset(SendMessageControl_OOMTest_d_58 *this,MethodInfo *method)
+void Assembly-CSharp.dll::SendMessageControl+<OOMTest>d__59::SendMessageControl_OOMTest_d_59_System_Collections_IEnumerator_Reset(SendMessageControl_OOMTest_d_59 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor(this_00,(MethodInfo *)0x0);
-  func_?(&MethodInfo__SendMessageControl___OOMTest_d__58__System_Collections_IEnumerator_Reset__);
+  func_?(&MethodInfo__SendMessageControl___OOMTest_d__59__System_Collections_IEnumerator_Reset__);
   func_?(this_00);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();

@@ -813,32 +813,10 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_OnStateChanged(
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Extensions);
   }
-  hashtable = (Dictionary_2_System_Object_System_Object_ *)Extensions::Extensions_GetValueOrDefault_3(newState,StringLiteral_itemData,(Object *)0x0,System__Collections__Generic__Dictionary<System::Object,_System::Object>_MethodInfo__Extensions__GetValueOrDefault<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Collections__Generic__Dictionary<System::Object,_System::Object>_);
-  if (hashtable != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    if (cRam_? == '\0') {
-      func_?();
-      func_?();
-      func_?(&StringLiteral_CubeModelId);
-      cRam_? = '\x01';
-    }
-    pPVar1 = (unaff_EDI->fields)._Configuration_k__BackingField;
-    if (pPVar1 == (PickupItemEditable_EditableItemConfiguration *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    IVar3 = (pPVar1->fields).cubeModelId;
-    if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    IVar4 = Extensions::Extensions_GetValueOrDefault_2(hashtable,StringLiteral_CubeModelId,0xffffffff,int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_);
-    bVar5 = (*(code *)(unaff_EDI->klass->vtable).__unknown_1.method)();
-    if ((IVar3 == IVar4 & bVar5) == 0) {
-      pIStack6 = (unaff_EDI->klass->vtable).__unknown_3.methodPtr;
-      (*(code *)(unaff_EDI->klass->vtable).__unknown_2.method)();
-      PickupItemEditable_SetValuesBasedOnConfiguration(unaff_EDI,(MethodInfo *)0x0);
-    }
+  itemData = (Dictionary_2_System_Object_System_Object_ *)Extensions::Extensions_GetValueOrDefault_3(newState,StringLiteral_itemData,(Object *)0x0,System__Collections__Generic__Dictionary<System::Object,_System::Object>_MethodInfo__Extensions__GetValueOrDefault<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Collections__Generic__Dictionary<System::Object,_System::Object>_);
+  if ((itemData != (Dictionary_2_System_Object_System_Object_ *)0x0) && (bVar1 = PickupItemEditable_IsSamePickupItem(unaff_ESI,itemData,(MethodInfo *)0x0), bVar1 == 0)) {
+    (*(code *)(unaff_ESI->klass->vtable).__unknown_2.method)();
+    PickupItemEditable_SetValuesBasedOnConfiguration(unaff_ESI,(MethodInfo *)0x0);
   }
   return;
 }

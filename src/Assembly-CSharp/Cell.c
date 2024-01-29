@@ -13,18 +13,19 @@ Cell Assembly-CSharp.dll::Cell::Cell_Clone(Cell *this,MethodInfo *method)
     func_?(TypeInfo__Cube);
   }
   pCVar1 = Cube::Cube_Clone_1(pCVar1,(MethodInfo *)0x0);
-  CStack_2._4_4_ = 0;
-  CStack_2.cube = pCVar1;
-  func_?(&CStack_2,pCVar1);
+  uStack_2 = ZEXT48(pCVar1);
+  func_?(&uStack_2,pCVar1);
   if (pCVar1 != (Cube *)0x0) {
-    CStack_2.lightValue = -(((pCVar1->fields)._.unIndentedSides & 0x3f) != 0x3f);
-    return CStack_2;
+    CVar3._5_3_ = uStack_2._5_3_;
+    CVar3.lightValue = ((pCVar1->fields)._.unIndentedSides & 0x3f) != 0x3f;
+    CVar3.cube = (Cube *)uStack_2;
+    return CVar3;
   }
-  CStack_2.cube = (Cube *)&UNK_?;
+  uStack_2 = CONCAT44(uStack_2._4_4_,&UNK_?);
   func_?();
-  pcVar3 = (code *)swi(3);
-  CVar4 = (Cell)(*pcVar3)();
-  return CVar4;
+  pcVar4 = (code *)swi(3);
+  CVar3 = (Cell)(*pcVar4)();
+  return CVar3;
 }
 
 
@@ -36,7 +37,7 @@ void Assembly-CSharp.dll::Cell::Cell__ctor(Cell *this,Cube *cube,MethodInfo *met
   this->cube = cube;
   func_?(this,cube);
   if (cube != (Cube *)0x0) {
-    this->lightValue = -(((cube->fields)._.unIndentedSides & 0x3f) != 0x3f);
+    this->lightValue = ((cube->fields)._.unIndentedSides & 0x3f) != 0x3f;
     return;
   }
   func_?();

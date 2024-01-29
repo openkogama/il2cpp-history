@@ -13,7 +13,7 @@ String * Assembly-CSharp.dll::JSBridge::JSBridge_BuildInvocationForArguments(Str
   mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor(this,(MethodInfo *)0x0);
   if (this != (StringBuilder *)0x0) {
     mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2(this,functionName,(MethodInfo *)0x0);
-    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5(this,0x28,(MethodInfo *)0x0);
+    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6(this,0x28,(MethodInfo *)0x0);
     if (args != (Object__Array *)0x0) {
       iVar1 = args->max_length;
       uVar2 = 0;
@@ -31,8 +31,8 @@ String * Assembly-CSharp.dll::JSBridge::JSBridge_BuildInvocationForArguments(Str
           functionName = (String *)&functionName->monitor;
         } while ((int)uVar2 < (int)iVar1);
       }
-      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5(this,0x29,(MethodInfo *)0x0);
-      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5(this,0x3b,(MethodInfo *)0x0);
+      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6(this,0x29,(MethodInfo *)0x0);
+      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6(this,0x3b,(MethodInfo *)0x0);
       pSVar3 = (String *)(*(code *)(this->klass->vtable).ToString.method)();
       return pSVar3;
     }
@@ -80,7 +80,7 @@ void Assembly-CSharp.dll::JSBridge::JSBridge_ExternalCall(String *functionName,O
   mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor(this,(MethodInfo *)0x0);
   if (this != (StringBuilder *)0x0) {
     mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2(this,functionName,(MethodInfo *)0x0);
-    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5(this,0x28,(MethodInfo *)0x0);
+    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6(this,0x28,(MethodInfo *)0x0);
     if (args != (Object__Array *)0x0) {
       uVar2 = 0;
       if (0 < (int)args->max_length) {
@@ -99,8 +99,8 @@ void Assembly-CSharp.dll::JSBridge::JSBridge_ExternalCall(String *functionName,O
           functionName = (String *)&functionName->monitor;
         } while ((int)uVar2 < (int)args);
       }
-      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5(this,0x29,(MethodInfo *)0x0);
-      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5(this,0x3b,(MethodInfo *)0x0);
+      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6(this,0x29,(MethodInfo *)0x0);
+      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6(this,0x3b,(MethodInfo *)0x0);
       message = (Object *)(*(code *)(this->klass->vtable).ToString.method)();
       if (cRam_? == '\0') {
         func_?();

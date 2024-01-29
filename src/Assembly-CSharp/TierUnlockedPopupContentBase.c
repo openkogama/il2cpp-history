@@ -145,21 +145,15 @@ void Assembly-CSharp.dll::TierUnlockedPopupContentBase::TierUnlockedPopupContent
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar3,value,(MethodInfo *)0x0);
                   pNVar6 = (this->fields).titleTextFader;
                   if (pNVar6 != (NotificationFade *)0x0) {
-                    (pNVar6->fields).pauseAt = (pNVar6->fields).duration;
-                    this_00 = (pNVar6->fields).group;
-                    (pNVar6->fields).playing = 1;
-                    if (this_00 != (CanvasGroup *)0x0) {
-                      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha(this_00,0.0,(MethodInfo *)0x0);
-                      (pNVar6->fields).currentTime = 0.0;
-                      pNVar6 = (this->fields).titleTextFader;
-                      if (pNVar6 != (NotificationFade *)0x0) {
-                        (pNVar6->fields).pauseAt = 0.29;
-                        fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-                        (this->fields).slideInStartTime = fVar1;
-                        fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-                        (this->fields).slideOutStartTime = (fVar1 + (this->fields).displayTime) - 0.2;
-                        return;
-                      }
+                    NotificationFade::NotificationFade_Activate(pNVar6,(MethodInfo *)0x0);
+                    pNVar6 = (this->fields).titleTextFader;
+                    if (pNVar6 != (NotificationFade *)0x0) {
+                      (pNVar6->fields).pauseAt = 0.29;
+                      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+                      (this->fields).slideInStartTime = fVar1;
+                      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+                      (this->fields).slideOutStartTime = (fVar1 + (this->fields).displayTime) - 0.2;
+                      return;
                     }
                   }
                 }

@@ -765,7 +765,6 @@ code_?:
 void Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_Reset(MVGamePointChest *this,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if (((this->fields).state == 2) || ((this->fields).state == 1)) {
     pMVar1 = (this->fields).chestObject;
     if ((pMVar1 == (MVGamePointChestObject *)0x0) || (this_00 = (pMVar1->fields).modelSelector, this_00 == (GamePointChestModelController *)0x0)) {

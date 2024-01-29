@@ -250,9 +250,7 @@ void Assembly-CSharp.dll::ESWaitForGroup::ESWaitForGroup_Execute(ESWaitForGroup 
   LStack_6._version = 0;
   LStack_6._current.First = 0;
   LStack_6._current.Last = 0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,(ExceptionArgument__Enum)e,(MethodInfo *)0x0);
   RVar7 = (RegexCharClass_SingleRange)this;
-  pEVar8 = e;
   if ((this->fields).abort != 0) {
     if (e != (EditorStateMachine *)0x0) {
       (e->fields)._.lockState = 0;
@@ -261,8 +259,8 @@ void Assembly-CSharp.dll::ESWaitForGroup::ESWaitForGroup_Execute(ESWaitForGroup 
     }
     goto code_?;
   }
-  iVar9 = (this->fields).state;
-  if (iVar9 == 0) {
+  iVar8 = (this->fields).state;
+  if (iVar8 == 0) {
     if ((this->fields).responseReceived != 0) {
       ESWaitForGroup_CreateGroup(this,e,(MethodInfo *)0x0);
       (this->fields).state = 1;
@@ -274,8 +272,10 @@ code_?:
     *unaff_FS_OFFSET = uStack_3;
     return;
   }
-  if (iVar9 != 1) {
-    if ((iVar9 != 2) || ((this->fields).responseReceived == 0)) goto code_?;
+  if (iVar8 != 1) {
+    if ((iVar8 != 2) || ((this->fields).responseReceived == 0)) goto code_?;
+    unaff_EDI.First = 0;
+    unaff_EDI.Last = 0;
     if (e != (EditorStateMachine *)0x0) {
       EditorStateMachine::EditorStateMachine_SelectWO(e,(this->fields).createGroupId,0,1,(MethodInfo *)0x0);
       (e->fields)._.lockState = 0;
@@ -286,38 +286,36 @@ code_?:
     goto code_?;
   }
   if ((this->fields).responseReceived == 0) goto code_?;
-  RVar10 = (RegexCharClass_SingleRange)MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  e = (EditorStateMachine *)RVar10;
-  if (RVar10 == (RegexCharClass_SingleRange)0x0) {
+  RVar9 = (RegexCharClass_SingleRange)MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  e = (EditorStateMachine *)RVar9;
+  if (RVar9 == (RegexCharClass_SingleRange)0x0) {
 code_?:
-    func_?();
-    func_?();
-    RVar10 = RVar7;
+    uVar10 = func_?();
+    func_?(uVar10);
+    RVar9 = RVar7;
   }
   else {
-    a = *(Delegate **)((int)RVar10 + 0x44);
+    a = *(Delegate **)((int)RVar9 + 0x44);
     this_02 = (UnityAction_2_System_Object_System_Object_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_02,(Object *)this,MethodInfo__ESWaitForGroup__WOCM_OnTransferWosResponse_System__Object__OnTransferWosResponseEventArgs_,(MethodInfo *)0x0);
-    pEVar8 = (EditorStateMachine *)mscorlib.dll::System::Delegate::Delegate_Combine(a,(Delegate *)this_02,(MethodInfo *)0x0);
+    unaff_EDI = (RegexCharClass_SingleRange)mscorlib.dll::System::Delegate::Delegate_Combine(a,(Delegate *)this_02,(MethodInfo *)0x0);
     RVar7 = (RegexCharClass_SingleRange)TypeInfo__System__EventHandler<OnTransferWosResponseEventArgs>;
-    if (pEVar8 == (EditorStateMachine *)0x0) {
-      *(EventInfo **)((int)RVar10 + 0x44) = (EventInfo *)0x0;
-      LStack_11._version = 0;
+    if (unaff_EDI == (RegexCharClass_SingleRange)0x0) {
+      *(EventInfo **)((int)RVar9 + 0x44) = (EventInfo *)0x0;
+      LStack_11._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
 code_?:
-      LStack_11._index = (int)RVar10 + 0x44;
-      LStack_11._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&UNK_?;
+      LStack_6._current = (RegexCharClass_SingleRange)((int)RVar9 + 0x44);
+      LStack_6._version = (int32_t)&UNK_?;
       func_?();
       RVar7 = (RegexCharClass_SingleRange)MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
       e = (EditorStateMachine *)(this->fields).createGroupId;
       this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)(this->fields).lockList;
-      pEVar8 = (EditorStateMachine *)this;
+      unaff_EDI = (RegexCharClass_SingleRange)this;
       if (this_00 != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) {
         worldObjects = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray(this_00,MethodInfo__System__Collections__Generic__List<int>__ToArray__);
-        pEVar8 = (EditorStateMachine *)this;
         if (RVar7 != (RegexCharClass_SingleRange)0x0) {
           MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_TransferWorldObjectsToGroup((MVNetworkGame_OperationRequests *)RVar7,(int32_t)e,(Int32__Array *)worldObjects,(MethodInfo *)0x0);
           this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).lockList;
-          pEVar8 = (EditorStateMachine *)this;
           if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
             pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_11,this_01,MethodInfo__System__Collections__Generic__List<int>__GetEnumerator__);
             LStack_6._list = pLVar12->_list;
@@ -329,21 +327,19 @@ code_?:
             LStack_11._current = (RegexCharClass_SingleRange)&LStack_6;
             while( true ) {
               bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__MoveNext__);
-              RVar10 = LStack_6._current;
+              RVar9 = LStack_6._current;
               RVar7 = (RegexCharClass_SingleRange)&LStack_6;
               if (bVar13 == 0) break;
               e = (EditorStateMachine *)LStack_6._current;
               pMVar14 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-              pEVar8 = (EditorStateMachine *)this;
               if (pMVar14 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
-              this_02 = (UnityAction_2_System_Object_System_Object_ *)0x0;
-              MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_LockHierarchy(pMVar14,(int32_t)RVar10,0,(MethodInfo *)0x0);
+              a = (Delegate *)0x0;
+              MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_LockHierarchy(pMVar14,(int32_t)RVar9,0,(MethodInfo *)0x0);
             }
             uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__,(MethodInfo *)this_02);
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__,(MethodInfo *)a);
             uStack_1 = 0xffffffff;
             pMVar14 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-            pEVar8 = (EditorStateMachine *)this;
             if (pMVar14 != (MVNetworkGame_OperationRequests *)0x0) {
               MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_TransferOwnership(pMVar14,(this->fields).createGroupId,0,(Transform *)0x0,(MethodInfo *)0x0);
               (this->fields).state = 2;
@@ -356,28 +352,28 @@ code_?:
       }
       goto code_?;
     }
-    LStack_11._version = (int32_t)TypeInfo__System__EventHandler<OnTransferWosResponseEventArgs>;
-    LStack_11._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&UNK_?;
-    LStack_11._index = (int32_t)pEVar8;
+    LStack_11._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)TypeInfo__System__EventHandler<OnTransferWosResponseEventArgs>;
+    LStack_6._version = (int32_t)&UNK_?;
+    LStack_6._current = unaff_EDI;
     pEVar15 = (EventInfo *)func_?();
     if (pEVar15 == (EventInfo *)0x0) goto code_?;
-    *(EventInfo **)((int)RVar10 + 0x44) = pEVar15;
-    LStack_11._version = (int32_t)TypeInfo__System__EventHandler<OnTransferWosResponseEventArgs>;
+    *(EventInfo **)((int)RVar9 + 0x44) = pEVar15;
+    LStack_11._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)TypeInfo__System__EventHandler<OnTransferWosResponseEventArgs>;
     e = (EditorStateMachine *)TypeInfo__System__EventHandler<OnTransferWosResponseEventArgs>;
-    LStack_11._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&UNK_?;
-    LStack_11._index = (int32_t)pEVar8;
-    LStack_11._version = func_?();
-    if (LStack_11._version != 0) goto code_?;
+    LStack_6._version = (int32_t)&UNK_?;
+    LStack_6._current = unaff_EDI;
+    LStack_11._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)func_?();
+    if (LStack_11._list != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) goto code_?;
   }
-  LStack_11._version = (int32_t)e;
-  LStack_11._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&UNK_?;
-  LStack_11._index = (int32_t)pEVar8;
+  LStack_11._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)e;
+  LStack_6._version = (int32_t)&UNK_?;
+  LStack_6._current = unaff_EDI;
   func_?();
-  RVar7 = RVar10;
+  RVar7 = RVar9;
 code_?:
-  LStack_11._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&UNK_?;
-  LStack_11._index = (int32_t)pEVar8;
-  LStack_11._version = (int32_t)RVar7;
+  LStack_6._version = (int32_t)&UNK_?;
+  LStack_6._current = unaff_EDI;
+  LStack_11._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)RVar7;
   func_?();
   pcVar16 = (code *)swi(3);
   (*pcVar16)();

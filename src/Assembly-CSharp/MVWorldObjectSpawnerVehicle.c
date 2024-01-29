@@ -88,10 +88,10 @@ bool Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
             }
             pMVar6 = MVBlueprintBase::MVBlueprintBase_GetChild((MVBlueprintBase *)this,StringLiteral_spawnWorldObjectID,(MethodInfo *)0x0);
             if (pMVar6 != (MVWorldObjectClient *)0x0) {
-              pSStack7 = pSVar5;
-              pMStack8 = wo;
+              pIStack7 = (pMVar6->klass->vtable).Compare.methodPtr;
+              pSStack8 = pSVar5;
               pDStack9 = pDVar3;
-              bVar4 = func_?();
+              bVar4 = (*(code *)(pMVar6->klass->vtable).CompareWithKoGaMaPackage.method)();
               return bVar4;
             }
           }

@@ -60,7 +60,7 @@ public class TouchPlayModeController : ModeControllerBase, IPlayModeUI, IActivat
 	public UnityAction OnLeaveEditPlayMode;
 
 	// Properties
-	public override bool InLobbyState { get; set; }
+	public override bool IsInPauseMenu { get; set; }
 
 	// Constructors
 	public TouchPlayModeController();

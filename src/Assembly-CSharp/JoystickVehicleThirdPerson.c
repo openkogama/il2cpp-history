@@ -9,15 +9,23 @@ void Assembly-CSharp.dll::JoystickVehicleThirdPerson::JoystickVehicleThirdPerson
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).horizontalAxisName;
-  pCVar2 = (CrossPlatformInputManager_VirtualAxis *)func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis);
-  UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::CrossPlatformInputManager_VirtualAxis__ctor(pCVar2,pSVar1,(MethodInfo *)0x0);
-  (this->fields).m_HorizontalVirtualAxis = pCVar2;
-  func_?(&(this->fields).m_HorizontalVirtualAxis,pCVar2);
+  pCVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis;
+  pCVar3 = (CrossPlatformInputManager_VirtualAxis *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
+  (pCVar3->fields)._name_k__BackingField = pSVar1;
+  func_?(&pCVar3->fields,pSVar1);
+  (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
+  (this->fields).m_HorizontalVirtualAxis = pCVar3;
+  func_?(&(this->fields).m_HorizontalVirtualAxis,pCVar3);
   pSVar1 = (this->fields).verticalAxisName;
-  pCVar2 = (CrossPlatformInputManager_VirtualAxis *)func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis);
-  UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::CrossPlatformInputManager_VirtualAxis__ctor(pCVar2,pSVar1,(MethodInfo *)0x0);
-  (this->fields).m_VerticalVirtualAxis = pCVar2;
-  func_?(&(this->fields).m_VerticalVirtualAxis,pCVar2);
+  pCVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis;
+  pCVar3 = (CrossPlatformInputManager_VirtualAxis *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
+  (pCVar3->fields)._name_k__BackingField = pSVar1;
+  func_?(&pCVar3->fields,pSVar1);
+  (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
+  (this->fields).m_VerticalVirtualAxis = pCVar3;
+  func_?(&(this->fields).m_VerticalVirtualAxis,pCVar3);
   return;
 }
 

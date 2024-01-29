@@ -105,7 +105,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::FirstTimeActivatable
   FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_Start((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
   pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentInParent_1((Component *)this,DesktopEditModeController_MethodInfo__UnityEngine__Component__GetComponentInParent<DesktopEditModeController>__);
   if (pOVar1 != (Object *)0x0) {
-    (this->fields).editorStateMachine = (EditorStateMachine *)pOVar1[5].monitor;
+    (this->fields).editorStateMachine = (EditorStateMachine *)pOVar1[0xe].monitor;
     func_?();
     return;
   }

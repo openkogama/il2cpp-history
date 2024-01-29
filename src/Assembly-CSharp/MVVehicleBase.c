@@ -464,9 +464,40 @@ code_?:
                   func_?();
                   cRam_? = '\x01';
                 }
-                if ((TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField != (IPlayModeUI *)0x0) && (iVar14 = func_?(2), iVar14 != 0)) {
-                  func_?(3);
-                  return;
+                pIVar14 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+                if (pIVar14 != (IPlayModeUI *)0x0) {
+                  pIVar15 = pIVar14->klass;
+                  uVar11 = 0;
+                  uVar10._0_1_ = (pIVar15->_1).rank;
+                  uVar10._1_1_ = (pIVar15->_1).minimumAlignment;
+                  if (uVar10 != 0) {
+                    do {
+                      if (pIVar15->interfaceOffsets[uVar11].interfaceType == (Il2CppClass *)TypeInfo__IPlayModeUI) {
+                        ppMVar12 = &(&(pIVar14->klass->vtable).GetCrossHair)[pIVar14->klass->interfaceOffsets[uVar11].offset].method;
+                        goto code_?;
+                      }
+                      uVar11 = uVar11 + 1;
+                    } while (uVar11 < uVar10);
+                  }
+                  ppMVar12 = (MethodInfo **)func_?(pIVar14);
+code_?:
+                  piVar16 = (int *)(*(code *)*ppMVar12)();
+                  if (piVar16 != (int *)0x0) {
+                    uVar10 = 0;
+                    uVar11 = *(ushort *)(*piVar16 + 0xb6);
+                    if (uVar11 != 0) {
+                      do {
+                        if (*(IGUICrossHair__Class **)(*(int *)(*piVar16 + 0x58) + (uint)uVar10 * 8) == TypeInfo__IGUICrossHair) {
+                          (**(code **)(*piVar16 + (*(int *)(*(int *)(*piVar16 + 0x58) + 4 + (uint)uVar10 * 8) + 0x1b) * 8))();
+                          return;
+                        }
+                        uVar10 = uVar10 + 1;
+                      } while (uVar10 < uVar11);
+                    }
+                    puVar17 = (undefined4 *)func_?(piVar16);
+                    (*(code *)*puVar17)();
+                    return;
+                  }
                 }
               }
             }
@@ -479,8 +510,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

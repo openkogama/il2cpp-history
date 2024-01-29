@@ -482,7 +482,7 @@ public class MVNetworkGame : IPhotonPeerListener
 		public void SetHighlightToSeen(int highlightId);
 		public void OverrideFirstTimeEvent(FirstTimeEvent firstTimeEvent, bool overrideValue);
 		public void ResetFirstTimeEvents(bool overrideValue);
-		public void SetMouseSensitivity(float newMouseSensitivity);
+		public void SetProfileSettings(ProfileSettingKey key, object value);
 		public void GetResetAvatar(int avatarWoID);
 		public void RevokeEditRights(MVPlayer target);
 		public void Kick(MVPlayer target, string reason);

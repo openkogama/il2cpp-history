@@ -12,22 +12,33 @@ SmoothCharacterController * Assembly-CSharp.dll::SmoothCharacterController::Smoo
     pSVar1 = (SmoothCharacterController *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(targetGameObject,SmoothCharacterController_MethodInfo__UnityEngine__GameObject__AddComponent<SmoothCharacterController>__);
     if (pSVar1 != (SmoothCharacterController *)0x0) {
       SmoothCharacterController_Init(pSVar1,targetGameObject,cullingSubscriberBase,worldObjectOwner,(MethodInfo *)0x0);
-      this_00 = (pSVar1->fields).controller;
-      pMVar2 = (this->fields).controller;
-      if (pMVar2 != (MvCharacterController *)0x0) {
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::TypedUxmlAttributeDescription`1[System::Single]::TypedUxmlAttributeDescription_1_System_Single__get_defaultValue((TypedUxmlAttributeDescription_1_System_Single_ *)pMVar2,(MethodInfo *)0x0);
-        pMVar2 = (this->fields).controller;
-        if (pMVar2 != (MvCharacterController *)0x0) {
-          radius = &UNK_?;
-          MvCharacterController::MvCharacterController_get_Height(pMVar2,(MethodInfo *)0x0);
-          if (seat != (GameObject *)0x0) {
-            this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(seat,(MethodInfo *)0x0);
-            if (this_01 != (Transform *)0x0) {
-              pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffec,this_01,(MethodInfo *)0x0);
-              if (this_00 != (MvCharacterController *)0x0) {
-                MvCharacterController::MvCharacterController_Init(this_00,(float)radius,(float)&stack0xffffffec,*pVVar3,(MethodInfo *)0x0);
-                return pSVar1;
-              }
+      pMVar2 = (pSVar1->fields).controller;
+      pMVar3 = (this->fields).controller;
+      if (pMVar3 != (MvCharacterController *)0x0) {
+        fStack_4 = (pMVar3->fields).elipsoidRadius.y;
+        if (seat != (GameObject *)0x0) {
+          this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(seat,(MethodInfo *)0x0);
+          if (this_00 != (Transform *)0x0) {
+            pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition(&VStack_6,this_00,(MethodInfo *)0x0);
+            uVar7 = pVVar5->x;
+            uVar8 = pVVar5->y;
+            fVar9 = pVVar5->z;
+            if (pMVar2 != (MvCharacterController *)0x0) {
+              (pMVar2->fields).center.x = (float)uVar7;
+              (pMVar2->fields).center.y = (float)uVar8;
+              (pMVar2->fields).centerBase.x = (float)uVar7;
+              (pMVar2->fields).centerBase.y = (float)uVar8;
+              (pMVar2->fields).center.z = fVar9;
+              (pMVar2->fields).centerBase.z = fVar9;
+              (pMVar2->fields).elipsoidRadius.x = (float)&UNK_?;
+              (pMVar2->fields).elipsoidRadius.y = (fStack_4 + fStack_4) * 0.5;
+              (pMVar2->fields).elipsoidRadius.z = (float)&UNK_?;
+              fVar10 = (pMVar2->fields).elipsoidRadius.y;
+              fVar9 = (pMVar2->fields).elipsoidRadius.z;
+              (pMVar2->fields).radiusBase.x = (pMVar2->fields).elipsoidRadius.x;
+              (pMVar2->fields).radiusBase.y = fVar10;
+              (pMVar2->fields).radiusBase.z = fVar9;
+              return pSVar1;
             }
           }
         }
@@ -35,8 +46,8 @@ SmoothCharacterController * Assembly-CSharp.dll::SmoothCharacterController::Smoo
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  pSVar1 = (SmoothCharacterController *)(*pcVar4)();
+  pcVar11 = (code *)swi(3);
+  pSVar1 = (SmoothCharacterController *)(*pcVar11)();
   return pSVar1;
 }
 

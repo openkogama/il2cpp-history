@@ -781,7 +781,7 @@ code_?:
         if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__System__Convert);
         }
-        pFStack_22 = (Func_2_System_Collections_Generic_KeyValuePair_2_System_Int32_MVMovable_Boolean___Class *)mscorlib.dll::System::Convert::Convert_ToSingle_12((String *)pSStack_21,(IFormatProvider *)pFStack_22,(MethodInfo *)0x0);
+        pFStack_22 = (Func_2_System_Collections_Generic_KeyValuePair_2_System_Int32_MVMovable_Boolean___Class *)mscorlib.dll::System::Convert::Convert_ToSingle_13((String *)pSStack_21,(IFormatProvider *)pFStack_22,(MethodInfo *)0x0);
         (this->fields).distance = (float)pFStack_22;
       }
     }
@@ -829,7 +829,7 @@ code_?:
           pSVar41 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
           method_00.m_Index = 3;
           func_?(3,pSVar41);
-          uVar25 = 0x410317f07;
+          uVar25 = 0x41031b2a7;
           pSVar41 = StringLiteral__to_move__If_this_is_a_new_movab;
           func_?();
           pMStack_20 = (MVMovable *)mscorlib.dll::System::String::String_Concat_6(pSStack_21,(MethodInfo *)0x0);

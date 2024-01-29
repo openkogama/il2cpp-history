@@ -112,28 +112,44 @@ Vector3 * Assembly-CSharp.dll::ESInsert::ESInsert_ComputeSnapPosition(Vector3 *_
     func_?();
     cRam_? = '\x01';
   }
-  if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField != (IEditModeUI *)0x0) {
-    cVar1 = func_?();
-    if (cVar1 == '\0') {
-      uVar2 = 0x3d800000;
+  pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+  if (pIVar1 != (IEditModeUI *)0x0) {
+    pIVar2 = pIVar1->klass;
+    uVar3 = 0;
+    uVar4._0_1_ = (pIVar2->_1).rank;
+    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar4 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__IEditModeUI) {
+          ppMVar5 = &(&(pIVar1->klass->vtable).IsGridSnap)[pIVar1->klass->interfaceOffsets[uVar3].offset].method;
+          goto code_?;
+        }
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
+    }
+    ppMVar5 = (MethodInfo **)func_?();
+code_?:
+    cVar6 = (*(code *)*ppMVar5)();
+    if (cVar6 == '\0') {
+      uVar7 = 0x3d800000;
     }
     else {
-      uVar2 = 0x3f800000;
+      uVar7 = 0x3f800000;
     }
     if (wo != (MVWorldObjectClient *)0x0) {
-      puVar3 = (undefined8 *)(*(code *)(wo->klass->vtable).GetClosestGridPoint.method)(auStack_4,wo,uVar2);
-      uVar5 = *puVar3;
-      fVar6 = *(float *)(puVar3 + 1);
-      __return_storage_ptr__->x = (float)(int)uVar5;
-      __return_storage_ptr__->y = (float)(int)((ulonglong)uVar5 >> 0x20);
-      __return_storage_ptr__->z = fVar6;
+      puVar8 = (undefined8 *)(*(code *)(wo->klass->vtable).GetClosestGridPoint.method)(auStack_9,wo,uVar7);
+      uVar10 = *puVar8;
+      fVar11 = *(float *)(puVar8 + 1);
+      __return_storage_ptr__->x = (float)(int)uVar10;
+      __return_storage_ptr__->y = (float)(int)((ulonglong)uVar10 >> 0x20);
+      __return_storage_ptr__->z = fVar11;
       return __return_storage_ptr__;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  pVVar8 = (Vector3 *)(*pcVar7)();
-  return pVVar8;
+  pcVar12 = (code *)swi(3);
+  pVVar13 = (Vector3 *)(*pcVar12)();
+  return pVVar13;
 }
 
 
@@ -488,6 +504,7 @@ void Assembly-CSharp.dll::ESInsert::ESInsert_Execute(ESInsert *this,EditorStateM
   pMVar2 = (MeshFilter__Array *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren(this_00,UnityEngine__MeshFilter__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshFilter>______);
   (this->fields).previewMeshes = pMVar2;
   func_?(&(this->fields).previewMeshes,pMVar2);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,(ExceptionArgument__Enum)e,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';

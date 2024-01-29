@@ -139,12 +139,12 @@ void Assembly-CSharp.dll::CellCursorCubeLineMesh::CellCursorCubeLineMesh_Update(
           uVar7 = pCVar6->r;
           uVar8 = pCVar6->g;
           uVar9 = pCVar6->b;
-          value.z = (float)uVar9;
-          value.y = (float)uVar8;
-          value.x = (float)uVar7;
+          value.b = (float)uVar9;
+          value.g = (float)uVar8;
+          value.r = (float)uVar7;
           iVar10 = 0;
-          value.w = (fVar1 / (this->fields).fadeOutTime) * (this->fields).baseAlpha;
-          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector_1(this_01,TypeInfo__CellCursorCubeLineMesh->static_fields->ColorID,value,(MethodInfo *)0x0);
+          value.a = (fVar1 / (this->fields).fadeOutTime) * (this->fields).baseAlpha;
+          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor_1(this_01,TypeInfo__CellCursorCubeLineMesh->static_fields->ColorID,value,(MethodInfo *)0x0);
           uVar4 = uVar4 + 1;
           ppMVar5 = (Material **)(iVar10 + 4);
         }
@@ -238,7 +238,7 @@ void Assembly-CSharp.dll::CellCursorCubeLineMesh::CellCursorCubeLineMesh__ctor(C
                     if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
                       func_?();
                     }
-                    SharedCubeFunctions::SharedCubeFunctions_AddCubeMeshCubeLines(mesh,(Vector3__Array *)&UNK_?,3.864331e-29,(MethodInfo *)0x0);
+                    SharedCubeFunctions::SharedCubeFunctions_AddCubeMeshCubeLines(mesh,(Vector3__Array *)&UNK_?,3.8695453e-29,(MethodInfo *)0x0);
                     return;
                   }
                 }

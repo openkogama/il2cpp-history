@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_ChangeBox
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ConstraintBoxChangedEventArgs);
-    func_?(0x8590);
+    func_?(0xf470);
     cRam_? = '\x01';
   }
   uVar1 = 0;
@@ -150,14 +150,14 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint__ctor(Mod
   uVar1 = (undefined2)((uint)in_stack_2 >> 0x10);
   uVar3 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(0xb59c);
+    func_?(0x2524);
     in_stack_4 = 0x119b;
-    func_?(0x8590);
-    func_?(0xaecc);
+    func_?(0xf470);
+    func_?(0x39b0);
     cRam_? = '\x01';
   }
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-    in_stack_4 = 0x1034;
+    in_stack_4 = 0x1045;
     func_?((short)TypeInfo__MV__WorldObject__IntVector);
   }
   IVar5.z = size.x;
@@ -228,7 +228,7 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint__ctor_1(M
     IStack_2.z = minCorner.z;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__ConstraintBoxChangedEventArgs);
-      func_?(0x8590);
+      func_?(0xf470);
       cRam_? = '\x01';
     }
     uVar3 = 0;
@@ -477,7 +477,7 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_set_Cente
     auStack_1 = auVar7;
     ConstraintBoxChangedEventArgs::ConstraintBoxChangedEventArgs__ctor(this_00,center,minCorner,maxCorner,(MethodInfo *)0x0);
     uStack8 = (undefined2)((uint)this_00 >> 0x10);
-    uStack9 = 0x1034;
+    uStack9 = 0x1045;
     (*(code *)(this->klass->vtable).OnBoxChanged.method)();
   }
   return;
@@ -644,7 +644,7 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_set_MaxCo
     maxCorner.y = value.z.hiddenValue;
     ConstraintBoxChangedEventArgs::ConstraintBoxChangedEventArgs__ctor(this_00,center,OStack_4._0_6_,maxCorner,(MethodInfo *)0x0);
     uStack17 = (undefined2)((uint)this_00 >> 0x10);
-    uStack18 = 0x1034;
+    uStack18 = 0x1045;
     (*(code *)(this->klass->vtable).OnBoxChanged.method)();
   }
   return;
@@ -787,7 +787,7 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_set_MinCo
     maxCorner.y = value.z.hiddenValue;
     ConstraintBoxChangedEventArgs::ConstraintBoxChangedEventArgs__ctor(this_00,center,OStack_4._0_6_,maxCorner,(MethodInfo *)0x0);
     uStack17 = (undefined2)((uint)this_00 >> 0x10);
-    uStack18 = 0x1034;
+    uStack18 = 0x1045;
     (*(code *)(this->klass->vtable).OnBoxChanged.method)();
   }
   return;

@@ -73,7 +73,7 @@ code_?:
 void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarHeadRotationHandlerRemote::AvatarLimbManagerRemote_AvatarHeadRotationHandlerRemote_SetRotationRemotely(AvatarLimbManagerRemote_AvatarHeadRotationHandlerRemote *this,float yaw,float pitch,MethodInfo *method)
 
 {
-  AvatarLimbManager+AvatarHeadRotationHandler::AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer((AvatarLimbManager_AvatarHeadRotationHandler *)this,(MethodInfo *)0x0);
+  AvatarLimbManager+AvatarHeadRotationHandler::AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer_1((AvatarLimbManager_AvatarHeadRotationHandler *)this,EmoteTypes__Enum_None,unaff_ESI);
   auVar1._4_8_ = 0;
   auVar1._0_4_ = yaw * 0.017453292;
   pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffec,(Vector3)(auVar1 << 0x20),(MethodInfo *)0x0);
@@ -125,7 +125,16 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarHeadRotationHandlerRemot
 {
   AvatarLimbManager+AvatarHeadRotationHandler::AvatarLimbManager_AvatarHeadRotationHandler_RotateTorso((AvatarLimbManager_AvatarHeadRotationHandler *)this,(this->fields).remoteYawRotation,(this->fields).remotePitchRotation,(MethodInfo *)0x0);
   AvatarLimbManager+AvatarHeadRotationHandler::AvatarLimbManager_AvatarHeadRotationHandler_RotateHead((AvatarLimbManager_AvatarHeadRotationHandler *)this,(this->fields).remoteYawRotation,(this->fields).remotePitchRotation,(MethodInfo *)0x0);
-  (*(code *)(this->klass->vtable).UpdateIdleTimer.method)();
+  AvatarLimbManager+AvatarHeadRotationHandler::AvatarLimbManager_AvatarHeadRotationHandler_UpdateRotation((AvatarLimbManager_AvatarHeadRotationHandler *)this,(MethodInfo *)0x0);
+  return;
+}
+
+
+/* AvatarLimbManagerRemote+AvatarHeadRotationHandlerRemote() */
+
+void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarHeadRotationHandlerRemote::AvatarLimbManagerRemote_AvatarHeadRotationHandlerRemote__ctor(AvatarLimbManagerRemote_AvatarHeadRotationHandlerRemote *this,MethodInfo *method)
+
+{
   (this->fields)._.shouldLean = 1;
   return;
 }

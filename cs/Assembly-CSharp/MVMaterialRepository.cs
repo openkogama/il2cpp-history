@@ -34,6 +34,7 @@ public class MVMaterialRepository
 	public void SetMaterialPrice(int materialID, int materialUnlockPriceGold);
 	public void SetMaterialUnlocked(int materialId, bool unlocked);
 	private bool AllMaterialUnlocked();
+	public void RegenerateMaterialButtonTextures();
 	public void AddMaterial(string name, string description, string path, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType, int priceGold, bool isUnlocked, float[] physicalProperties, MaterialButtonTextureGenerator materialButtonTextureGenerator);
 	public MVMaterial GetMaterial(byte materialId);
 	public PhysicalProperties GetMaterialPhysicalProperties(byte materialId);

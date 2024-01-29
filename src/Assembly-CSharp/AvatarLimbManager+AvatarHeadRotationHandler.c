@@ -109,9 +109,9 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::AvatarLim
 }
 
 
-/* Void ResetIdleTimer() */
+/* Void ResetIdleTimer(EmoteTypes) */
 
-void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer(AvatarLimbManager_AvatarHeadRotationHandler *this,MethodInfo *method)
+void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer_1(AvatarLimbManager_AvatarHeadRotationHandler *this,EmoteTypes__Enum emoteType,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -120,7 +120,7 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::AvatarLim
   }
   this_00 = (this->fields).limbRotator;
   (this->fields).idleTime = 0.0;
-  animation = StringLiteral_Idle;
+  b = StringLiteral_Idle;
   if (this_00 != (AvatarLimbManager_LimbRotator *)0x0) {
     if (cRam_? == '\0') {
       func_?(&MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_);
@@ -131,24 +131,37 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::AvatarLim
       return;
     }
     this_01 = (this_00->fields).limbControllers;
-    if ((this_01 != (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) && (this_02 = (LimbController *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,0,MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_), this_02 != (LimbController *)0x0)) {
-      LimbController::LimbController_StopBlendingWithAnimation(this_02,animation,(MethodInfo *)0x0);
-      return;
+    if ((this_01 != (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) && (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,0,MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_), pOVar2 != (Object *)0x0)) {
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        func_?(&MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
+        cRam_? = '\x01';
+      }
+      this_02 = pOVar2[0x10].klass;
+      index = 0;
+      while (this_02 != (Object__Class *)0x0) {
+        if ((int)(this_02->_0).namespaze <= index) {
+          return;
+        }
+        if (pOVar2[0x10].klass == (Object__Class *)0x0) break;
+        a = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)pOVar2[0x10].klass,index,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
+        bVar1 = mscorlib.dll::System::String::String_op_Equality((String *)a,b,(MethodInfo *)0x0);
+        this_02 = pOVar2[0x10].klass;
+        if (bVar1 != 0) {
+          if (this_02 != (Object__Class *)0x0) {
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__RemoveAt((List_1_System_Object_ *)this_02,index,MethodInfo__System__Collections__Generic__List<System::String>__RemoveAt_int_);
+            return;
+          }
+          break;
+        }
+        index = index + 1;
+      }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
-  return;
-}
-
-
-/* Void ResetIdleTimer(EmoteTypes) */
-
-void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer_1(AvatarLimbManager_AvatarHeadRotationHandler *this,EmoteTypes__Enum emoteType,MethodInfo *method)
-
-{
-  AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer(this,(MethodInfo *)0x0);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -232,27 +245,53 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::AvatarLim
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   fVar2 = fVar2 + fVar1;
   (this->fields).idleTime = fVar2;
-  animation = StringLiteral_Idle;
-  if (2.0 <= fVar2) {
-    this_00 = (this->fields).limbRotator;
-    if (this_00 == (AvatarLimbManager_LimbRotator *)0x0) {
-code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
+  b = StringLiteral_Idle;
+  if (fVar2 < 2.0) {
+    return;
+  }
+  this_00 = (this->fields).limbRotator;
+  if (this_00 != (AvatarLimbManager_LimbRotator *)0x0) {
     if (cRam_? == '\0') {
       func_?(&MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_);
       cRam_? = '\x01';
     }
-    bVar4 = AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbRotator_HasLimbController(this_00,BodyData_PartIndex__Enum_Head,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      this_01 = (this_00->fields).limbControllers;
-      if ((this_01 == (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) || (this_02 = (LimbController *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,0,MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_), this_02 == (LimbController *)0x0)) goto code_?;
-      LimbController::LimbController_StartBlendingWithAnimation(this_02,animation,(MethodInfo *)0x0);
+    bVar3 = AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbRotator_HasLimbController(this_00,BodyData_PartIndex__Enum_Head,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
+      return;
+    }
+    this_01 = (this_00->fields).limbControllers;
+    if ((this_01 != (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,0,MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_), pOVar4 != (Object *)0x0)) {
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        func_?();
+        cRam_? = '\x01';
+      }
+      index = 0;
+      pOVar5 = pOVar4[0x10].klass;
+      while (pOVar5 != (Object__Class *)0x0) {
+        this_02 = pOVar4[0x10].klass;
+        if ((int)(pOVar5->_0).namespaze <= index) {
+          if (this_02 != (Object__Class *)0x0) {
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_02,(Object *)b,MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
+            return;
+          }
+          break;
+        }
+        if (this_02 == (Object__Class *)0x0) break;
+        a = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)this_02,index,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
+        bVar3 = mscorlib.dll::System::String::String_op_Equality((String *)a,b,(MethodInfo *)0x0);
+        if (bVar3 != 0) {
+          return;
+        }
+        index = index + 1;
+        pOVar5 = pOVar4[0x10].klass;
+      }
     }
   }
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

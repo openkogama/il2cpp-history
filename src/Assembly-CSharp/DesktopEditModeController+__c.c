@@ -1,7 +1,7 @@
 
-/* Void <DeleteWoid>b__61_1(IUIStack, BaseEventData) */
+/* Void <DeleteWoid>b__63_1(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::DesktopEditModeController+<>c::DesktopEditModeController_c__DeleteWoid_b__61_1(DesktopEditModeController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::DesktopEditModeController+<>c::DesktopEditModeController_c__DeleteWoid_b__63_1(DesktopEditModeController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

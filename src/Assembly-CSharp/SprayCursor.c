@@ -138,7 +138,6 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor(SprayCursor *thi
     (this->fields).addCubeTime = fVar6;
   }
   pCVar7 = (this->fields).sprayCursor;
-  unaff_ESI = selectedCube;
   if (selectedCube == (CubePickingInfo *)0x0) {
     if (pCVar7 != (CellCursor *)0x0) {
       CellCursor::CellCursor_set_Active(pCVar7,0,(MethodInfo *)0x0);
@@ -222,12 +221,9 @@ code_?:
     }
   }
 code_?:
-  bVar16 = 0;
-  uVar1 = func_?();
-  *(char *)&unaff_ESI->klass = *(char *)&unaff_ESI->klass + (char)((ushort)uVar1 >> 8) + ((byte)uVar1 < in_stack_17 || (byte)((byte)uVar1 - in_stack_17) < bVar16);
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
-  return;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

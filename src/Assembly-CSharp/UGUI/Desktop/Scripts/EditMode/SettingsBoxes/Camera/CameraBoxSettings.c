@@ -252,7 +252,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
       if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Convert);
       }
-      fVar5 = mscorlib.dll::System::Convert::Convert_ToSingle((Object *)TVar3.m_Index,(IFormatProvider *)pCVar4,(MethodInfo *)0x0);
+      fVar5 = mscorlib.dll::System::Convert::Convert_ToSingle_1((Object *)TVar3.m_Index,(IFormatProvider *)pCVar4,(MethodInfo *)0x0);
       if (this_01 != (SettingsSlider *)0x0) {
         SettingsSlider::SettingsSlider_Initialize(this_01,StringLiteral_distanceToAvatar,fVar5,3.0,30.0,(MethodInfo *)0x0);
         pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).woData;
@@ -260,7 +260,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
         if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
           TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar2,(Object *)StringLiteral_distanceToAvatar,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
           pCVar4 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-          fVar5 = mscorlib.dll::System::Convert::Convert_ToSingle((Object *)TVar3.m_Index,(IFormatProvider *)pCVar4,(MethodInfo *)0x0);
+          fVar5 = mscorlib.dll::System::Convert::Convert_ToSingle_1((Object *)TVar3.m_Index,(IFormatProvider *)pCVar4,(MethodInfo *)0x0);
           if (this_02 != (SettingsInputFieldSlider *)0x0) {
             SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(this_02,StringLiteral_distanceToAvatar,fVar5,(MethodInfo *)0x0);
             pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).woData;
@@ -536,7 +536,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                 if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
-                mscorlib.dll::System::Convert::Convert_ToSingle(value,(IFormatProvider *)provider,(MethodInfo *)0x0);
+                mscorlib.dll::System::Convert::Convert_ToSingle_1(value,(IFormatProvider *)provider,(MethodInfo *)0x0);
                 value = (Object *)func_?();
               }
             }

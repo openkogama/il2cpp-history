@@ -1,7 +1,7 @@
 
 /* Void <DeleteWoid>b__0(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::DesktopEditModeController+<>c__DisplayClass61_0::DesktopEditModeController_c_DisplayClass61_0__DeleteWoid_b__0(DesktopEditModeController_c_DisplayClass61_0 *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::DesktopEditModeController+<>c__DisplayClass63_0::DesktopEditModeController_c_DisplayClass63_0__DeleteWoid_b__0(DesktopEditModeController_c_DisplayClass63_0 *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

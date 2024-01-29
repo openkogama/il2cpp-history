@@ -112,7 +112,7 @@ void Assembly-CSharp.dll::WindTurbineSettings::WindTurbineSettings_OnSettingChan
   if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  mscorlib.dll::System::Convert::Convert_ToSingle(value,(IFormatProvider *)provider,(MethodInfo *)0x0);
+  mscorlib.dll::System::Convert::Convert_ToSingle_1(value,(IFormatProvider *)provider,(MethodInfo *)0x0);
   key_00 = TypeInfo__System__Single;
   value_00 = (Object *)func_?();
   if (this_00 != (SettingsBase *)0x0) {

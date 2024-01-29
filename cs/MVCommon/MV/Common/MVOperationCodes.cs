@@ -97,7 +97,7 @@ namespace MV.Common
 		ResetHighlights = 98,
 		UpdateAvatarAccessoryScale = 99,
 		GetThemesData = 100,
-		SetMouseSensitivity = 101,
+		SetProfileSettings = 101,
 		StartSessionTime = 102,
 		ResetPlayerPlanetData = 103,
 		GetHighScoreList = 104,

@@ -53,10 +53,10 @@ void Assembly-CSharp.dll::PulseBoxSettings::PulseBoxSettings_Initialize(PulseBox
     if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Convert);
     }
-    value_01 = mscorlib.dll::System::Convert::Convert_ToSingle((Object *)TVar2.m_Index,(IFormatProvider *)pCVar5,(MethodInfo *)0x0);
+    value_01 = mscorlib.dll::System::Convert::Convert_ToSingle_1((Object *)TVar2.m_Index,(IFormatProvider *)pCVar5,(MethodInfo *)0x0);
     TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,(Object *)StringLiteral_intervalOff,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
     pCVar5 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-    root = (GameObject *)mscorlib.dll::System::Convert::Convert_ToSingle((Object *)TVar2.m_Index,(IFormatProvider *)pCVar5,(MethodInfo *)0x0);
+    root = (GameObject *)mscorlib.dll::System::Convert::Convert_ToSingle_1((Object *)TVar2.m_Index,(IFormatProvider *)pCVar5,(MethodInfo *)0x0);
     pSVar6 = (this->fields).enabledSlider;
     if (pSVar6 != (SettingsSlider *)0x0) {
       SettingsSlider::SettingsSlider_Initialize(pSVar6,StringLiteral_intervalOn,value_01,0.1,1000.0,(MethodInfo *)0x0);

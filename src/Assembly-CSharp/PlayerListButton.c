@@ -358,7 +358,6 @@ code_?:
 void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_CreatePlayerList(PlayerListButton *this,MethodInfo *method)
 
 {
-  this_07 = this;
   *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Add_int__MVPlayer_);
@@ -387,42 +386,39 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_CreatePlayerList(Pl
     mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)&stack0xffffffd4,this_04,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__);
     method_00.rgctx_data = ((Il2CppRGCTXData *)&stack0xffffffc4).rgctx_data;
     while( true ) {
-      this_06 = (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&stack0xffffffc4;
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext(this_06,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__);
+      this_05 = (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&stack0xffffffc4;
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext(this_05,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__);
       if (bVar2 == 0) break;
       this_01 = (this->fields).prevPlayerListState;
-      if ((this_06 == (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)0x0) || (this_01 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0)) goto code_?;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)this_01,(int32_t)this_06[3]._dictionary,(Object *)this_06,MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Add_int__MVPlayer_);
+      if ((this_05 == (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)0x0) || (this_01 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0)) goto code_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)this_01,(int32_t)this_05[3]._dictionary,(Object *)this_05,MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Add_int__MVPlayer_);
     }
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffc4,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__,(MethodInfo *)method_00.methodMetadataHandle);
     this_02 = (this->fields).notification;
     if ((this_02 != (Image *)0x0) && (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_02,(MethodInfo *)0x0), pGVar3 != (GameObject *)0x0)) {
+      typeToDisplay = GameStatCounterType__Enum_None;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar3,0,(MethodInfo *)0x0);
-      x = (PlayerListButton *)(this->fields).currPlayerLists;
+      pGVar3 = (this->fields).currPlayerLists;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pGVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
       if (bVar2 == 0) {
         pPVar4 = (this->fields).playerListsPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        this_05 = (Component *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pPVar4,PlayerListsLayout_MethodInfo__UnityEngine__Object__Instantiate<PlayerListsLayout>_PlayerListsLayout_);
-        if (this_05 == (Component *)0x0) goto code_?;
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(this_05,(MethodInfo *)0x0);
+        pPVar4 = (PlayerListsLayout *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pPVar4,PlayerListsLayout_MethodInfo__UnityEngine__Object__Instantiate<PlayerListsLayout>_PlayerListsLayout_);
+        if (pPVar4 == (PlayerListsLayout *)0x0) goto code_?;
+        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pPVar4,(MethodInfo *)0x0);
         (this->fields).currPlayerLists = pGVar3;
         func_?();
-        WinningConditionControl::WinningConditionControl_TryGetPrioritizedStat((GameStatCounterType__Enum *)&stack0xffffffeb,(MethodInfo *)0x0);
-        pPVar4 = (this->fields).playerListsPrefab;
-        this_05[1].monitor = (MonitorData *)pPVar4;
-        func_?();
-        this._3_1_ = (undefined1)((uint)pPVar4 >> 0x18);
-        *(undefined1 *)&this_05[2].fields._.m_CachedPtr = this._3_1_;
-        this_05[3].klass = (Component__Class *)0x2;
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_07,(MethodInfo *)0x0);
+        WinningConditionControl::WinningConditionControl_TryGetPrioritizedStat((GameStatCounterType__Enum *)&stack0xffffffe8,(MethodInfo *)0x0);
+        PlayerListsLayout::PlayerListsLayout_Initialize(pPVar4,(this->fields).playerListsPrefab,typeToDisplay,UIPushOption__Enum_HideAll,(MethodInfo *)0x0);
+        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
         callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_07,MethodInfo__PlayerListButton___CreatePlayerList_b__13_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+        pGVar3 = (GameObject *)&UNK_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,MethodInfo__PlayerListButton___CreatePlayerList_b__13_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -430,11 +426,9 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_CreatePlayerList(Pl
       else {
         (this->fields).currPlayerLists = (GameObject *)0x0;
         func_?();
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-        this_07 = x;
+        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__PlayerListButton____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
-          this_07 = x;
         }
         callbackFunction = TypeInfo__PlayerListButton____c->static_fields->__9__13_0;
         if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
@@ -451,8 +445,8 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_CreatePlayerList(Pl
           func_?();
         }
       }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar3,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
-      *unaff_FS_OFFSET = this_07;
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
+      *unaff_FS_OFFSET = pGVar3;
       return;
     }
   }
@@ -950,7 +944,7 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_UpdateTeamColor(Pla
   else {
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-    darkTeam = 0x1d;
+    darkTeam = 0xed;
     pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
     if (pMVar4 == (MVLocalPlayer *)0x0) goto code_?;
     team = (pMVar4->fields)._._Team_k__BackingField;

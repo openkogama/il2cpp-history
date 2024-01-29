@@ -5,7 +5,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_AddCube(MVCubeModelBa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x9390);
+    func_?(0x2a8);
     func_?(&TypeInfo__Cube);
     func_?(&MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_);
     cRam_? = '\x01';
@@ -1061,7 +1061,7 @@ code_?:
             func_?();
           }
           if (this_01 == (Material *)0x0) break;
-          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat_1(this_01,TypeInfo__MVCubeModelBase->static_fields->AlphaShaderProperty,fStack_6,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat_1(this_01,TypeInfo__MVCubeModelBase->static_fields->TrancperancyShaderProperty,fStack_6,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_shadowCastingMode(pRStack_15,ShadowCastingMode__Enum_Off,(MethodInfo *)0x0);
         }
       }
@@ -1142,7 +1142,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_ReplaceCube(MVCubeMod
 
 {
   if (cRam_? == '\0') {
-    func_?(0x9390);
+    func_?(0x2a8);
     func_?(&MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_);
     cRam_? = '\x01';
   }
@@ -1289,7 +1289,7 @@ IModelingConstraint * Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase___ct
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ModelingDynamicBoxConstraint);
-    func_?(0x2e38);
+    func_?(0x9e40);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -1316,11 +1316,11 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase__cctor(MethodInfo *me
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MVCubeModelBase);
-    func_?(&StringLiteral__Alpha);
+    func_?(&StringLiteral__Transparency);
     cRam_? = '\x01';
   }
-  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID(StringLiteral__Alpha,(MethodInfo *)0x0);
-  TypeInfo__MVCubeModelBase->static_fields->AlphaShaderProperty = iVar1;
+  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID(StringLiteral__Transparency,(MethodInfo *)0x0);
+  TypeInfo__MVCubeModelBase->static_fields->TrancperancyShaderProperty = iVar1;
   return;
 }
 

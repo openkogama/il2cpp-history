@@ -309,6 +309,7 @@ Water_WaterMode__Enum Assembly-CSharp-firstpass.dll::Water::Water_FindHardwareWa
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&StringLiteral_WATERMODE);
     func_?(&StringLiteral_Reflective);
+    func_?(&StringLiteral_Refractive);
     cRam_? = '\x01';
   }
   pRVar1 = (this->fields).meshRenderer;
@@ -332,6 +333,10 @@ Water_WaterMode__Enum Assembly-CSharp-firstpass.dll::Water::Water_FindHardwareWa
     if (this_00 != (Material *)0x0) {
       a = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetTag(this_00,StringLiteral_WATERMODE,0,(MethodInfo *)0x0);
       bVar2 = mscorlib.dll::System::String::String_op_Equality(a,StringLiteral_Reflective,(MethodInfo *)0x0);
+      if (bVar2 != 0) {
+        return Water_WaterMode__Enum_Reflective;
+      }
+      bVar2 = mscorlib.dll::System::String::String_op_Equality(a,StringLiteral_Refractive,(MethodInfo *)0x0);
       return (uint)(bVar2 != 0);
     }
   }
@@ -467,52 +472,49 @@ void Assembly-CSharp-firstpass.dll::Water::Water_OnWillRenderObject(Water *this,
 
 {
   undefined4 uVar1;
-  undefined4 uVar2;
-  undefined4 uVar3;
+  float fVar2;
+  float fVar3;
   undefined4 uVar4;
-  Renderer *pRVar5;
-  code *pcVar6;
+  float fVar5;
+  float fVar6;
+  ulonglong uVar7;
+  Renderer *pRVar8;
+  code *pcVar9;
   Vector3 value;
+  Vector3 value_00;
+  Vector3 point;
   Vector3 vector;
   Vector4 clipPlane;
   Matrix4x4 rhs;
-  Vector3 value_00;
-  Water *pWVar7;
-  bool bVar8;
-  Material *pMVar9;
+  Vector3 value_01;
+  bool bVar10;
+  Material *pMVar11;
   Camera *currentCamera;
   String *a;
-  Transform *pTVar10;
-  Vector3 *pVVar11;
-  undefined *value_01;
-  Matrix4x4 *pMVar12;
-  undefined1 (*pauVar13) [12];
-  void *pvVar14;
-  Transform *pTVar15;
-  uint uVar16;
-  bool bVar17;
-  float fVar18;
+  Transform *pTVar12;
+  Vector3 *pVVar13;
+  int32_t value_02;
+  Matrix4x4 *pMVar14;
+  undefined1 (*pauVar15) [12];
+  void *pvVar16;
+  int iVar17;
+  bool bVar18;
   float fVar19;
   float fVar20;
   float fVar21;
   float fVar22;
-  Vector3 VVar23;
+  float fVar23;
   float fVar24;
   undefined *puVar25;
   float fVar26;
   float fVar27;
   float fVar28;
   float fVar29;
-  float fVar30;
-  Camera *pCVar31;
-  float fVar32;
-  float fStack_33;
-  undefined8 uVar34;
-  undefined8 uVar35;
-  Camera *pCVar36;
-  undefined8 uVar37;
+  Camera *pCVar30;
+  float fVar31;
+  undefined8 uStack_32;
+  Camera *pCVar33;
   
-  pWVar7 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&TypeInfo__Water);
@@ -522,207 +524,212 @@ void Assembly-CSharp-firstpass.dll::Water::Water_OnWillRenderObject(Water *this,
     func_?(&StringLiteral_WATER_SIMPLE);
     cRam_? = '\x01';
   }
-  pCVar36 = (Camera *)0x0;
-  pCVar31 = (Camera *)0x0;
+  pCVar33 = (Camera *)0x0;
+  pCVar30 = (Camera *)0x0;
   func_?(&stack0xffffff74,0,0x40);
-  bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled((Behaviour *)this,(MethodInfo *)0x0);
-  if (bVar8 == 0) {
+  bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled((Behaviour *)this,(MethodInfo *)0x0);
+  if (bVar10 == 0) {
     return;
   }
-  pRVar5 = (this->fields).meshRenderer;
+  pRVar8 = (this->fields).meshRenderer;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit((Object_1 *)pRVar5,(MethodInfo *)0x0);
-  if (bVar8 == 0) {
+  bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit((Object_1 *)pRVar8,(MethodInfo *)0x0);
+  if (bVar10 == 0) {
     return;
   }
-  pRVar5 = (this->fields).meshRenderer;
-  if (pRVar5 == (Renderer *)0x0) goto code_?;
-  pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterial(pRVar5,(MethodInfo *)0x0);
+  pRVar8 = (this->fields).meshRenderer;
+  if (pRVar8 == (Renderer *)0x0) goto code_?;
+  pMVar11 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterial(pRVar8,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit((Object_1 *)pMVar9,(MethodInfo *)0x0);
-  if (bVar8 == 0) {
+  bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit((Object_1 *)pMVar11,(MethodInfo *)0x0);
+  if (bVar10 == 0) {
     return;
   }
-  pRVar5 = (this->fields).meshRenderer;
-  if (pRVar5 == (Renderer *)0x0) goto code_?;
-  bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled(pRVar5,(MethodInfo *)0x0);
-  if (bVar8 == 0) {
+  pRVar8 = (this->fields).meshRenderer;
+  if (pRVar8 == (Renderer *)0x0) goto code_?;
+  bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled(pRVar8,(MethodInfo *)0x0);
+  if (bVar10 == 0) {
     return;
   }
   currentCamera = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_current((MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit((Object_1 *)currentCamera,(MethodInfo *)0x0);
-  if (bVar8 == 0) {
+  bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit((Object_1 *)currentCamera,(MethodInfo *)0x0);
+  if (bVar10 == 0) {
     return;
   }
   if (TypeInfo__Water->static_fields->s_InsideWater != 0) {
     return;
   }
-  bVar17 = cRam_? == '\0';
+  bVar18 = cRam_? == '\0';
   TypeInfo__Water->static_fields->s_InsideWater = 1;
-  if (bVar17) {
+  if (bVar18) {
+    func_?();
     func_?();
     func_?();
     func_?();
     cRam_? = '\x01';
   }
-  pRVar5 = (this->fields).meshRenderer;
+  pRVar8 = (this->fields).meshRenderer;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit((Object_1 *)pRVar5,(MethodInfo *)0x0);
-  if (bVar8 == 0) {
+  bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit((Object_1 *)pRVar8,(MethodInfo *)0x0);
+  if (bVar10 == 0) {
 code_?:
-    uVar16 = 0;
+    iVar17 = 0;
   }
   else {
-    pRVar5 = (this->fields).meshRenderer;
-    if (pRVar5 == (Renderer *)0x0) goto code_?;
-    pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterial(pRVar5,(MethodInfo *)0x0);
+    pRVar8 = (this->fields).meshRenderer;
+    if (pRVar8 == (Renderer *)0x0) goto code_?;
+    pMVar11 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterial(pRVar8,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit((Object_1 *)pMVar9,(MethodInfo *)0x0);
-    if (bVar8 == 0) goto code_?;
-    if (pMVar9 == (Material *)0x0) goto code_?;
-    a = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetTag(pMVar9,StringLiteral_WATERMODE,0,(MethodInfo *)0x0);
-    bVar8 = mscorlib.dll::System::String::String_op_Equality(a,StringLiteral_Reflective,(MethodInfo *)0x0);
-    uVar16 = (uint)(bVar8 != 0);
+    bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit((Object_1 *)pMVar11,(MethodInfo *)0x0);
+    if (bVar10 == 0) goto code_?;
+    if (pMVar11 == (Material *)0x0) goto code_?;
+    a = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetTag(pMVar11,StringLiteral_WATERMODE,0,(MethodInfo *)0x0);
+    bVar10 = mscorlib.dll::System::String::String_op_Equality(a,StringLiteral_Reflective,(MethodInfo *)0x0);
+    if ((bVar10 == 0) && (bVar10 = mscorlib.dll::System::String::String_op_Equality(a,StringLiteral_Refractive,(MethodInfo *)0x0), bVar10 == 0)) goto code_?;
+    iVar17 = 1;
   }
-  (this->fields).m_HardwareWaterSupport = uVar16;
-  if ((this->fields).m_WaterMode <= (int)uVar16) {
-    uVar16 = (this->fields).m_WaterMode;
+  (this->fields).m_HardwareWaterSupport = iVar17;
+  if ((this->fields).m_WaterMode <= iVar17) {
+    iVar17 = (this->fields).m_WaterMode;
   }
   Water_CreateWaterObjects(this,currentCamera,(Camera **)&stack0xfffffff8,(Camera **)&stack0xffffffd0,(MethodInfo *)0x0);
-  pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-  if (pTVar10 == (Transform *)0x0) {
+  pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+  if (pTVar12 == (Transform *)0x0) {
 code_?:
     func_?();
-    pcVar6 = (code *)swi(3);
-    (*pcVar6)();
+    pcVar9 = (code *)swi(3);
+    (*pcVar9)();
     return;
   }
-  pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffd8,pTVar10,(MethodInfo *)0x0);
-  uVar34._0_4_ = pVVar11->x;
-  uVar34._4_4_ = pVVar11->y;
-  fVar22 = pVVar11->z;
-  pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-  if (pTVar10 == (Transform *)0x0) goto code_?;
-  pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up((Vector3 *)&stack0xffffff50,pTVar10,(MethodInfo *)0x0);
-  uVar1 = pVVar11->x;
-  uVar3 = pVVar11->y;
-  fVar26 = pVVar11->z;
-  fVar32 = fVar26;
-  value_01 = (undefined *)UnityEngine.CoreModule.dll::UnityEngine::QualitySettings::QualitySettings_get_pixelLightCount((MethodInfo *)0x0);
+  pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffdc,pTVar12,(MethodInfo *)0x0);
+  uVar1 = pVVar13->x;
+  uVar4 = pVVar13->y;
+  fVar3 = pVVar13->z;
+  pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+  if (pTVar12 == (Transform *)0x0) goto code_?;
+  pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up((Vector3 *)&stack0xffffff50,pTVar12,(MethodInfo *)0x0);
+  fVar2 = pVVar13->x;
+  fVar5 = pVVar13->y;
+  fVar6 = pVVar13->z;
+  value_02 = UnityEngine.CoreModule.dll::UnityEngine::QualitySettings::QualitySettings_get_pixelLightCount((MethodInfo *)0x0);
   if ((this->fields).m_DisablePixelLights != 0) {
     UnityEngine.CoreModule.dll::UnityEngine::QualitySettings::QualitySettings_set_pixelLightCount(0,(MethodInfo *)0x0);
   }
-  Water_UpdateCameraModes(this,currentCamera,pCVar36,(MethodInfo *)0x0);
-  Water_UpdateCameraModes(this,currentCamera,pCVar31,(MethodInfo *)0x0);
-  if (0 < (int)uVar16) {
+  Water_UpdateCameraModes(this,currentCamera,pCVar33,(MethodInfo *)0x0);
+  Water_UpdateCameraModes(this,currentCamera,pCVar30,(MethodInfo *)0x0);
+  if (0 < iVar17) {
     UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_zero((Matrix4x4 *)&stack0xffffff04,(MethodInfo *)0x0);
-    fVar18 = 1.0 - ((float)uVar1 + (float)uVar1) * (float)uVar1;
-    fVar19 = (float)uVar1 * -2.0 * (float)uVar3;
-    fVar20 = (float)uVar3 * -2.0 * (float)uVar1;
-    fVar21 = fVar26 * -2.0 * (float)uVar1;
-    fVar30 = 0.0;
-    if ((currentCamera == (Camera *)0x0) || (pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)currentCamera,(MethodInfo *)0x0), pTVar10 == (Transform *)0x0)) goto code_?;
-    pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffff5c,pTVar10,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint((Vector3 *)&stack0xffffff44,(Matrix4x4 *)&stack0xffffff74,*pVVar11,(MethodInfo *)0x0);
-    pCVar31 = pCVar36;
-    pMVar12 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_worldToCameraMatrix((Matrix4x4 *)&stack0xffffff04,currentCamera,(MethodInfo *)0x0);
-    fVar27 = pMVar12->m31;
-    fVar28 = pMVar12->m12;
-    fVar29 = pMVar12->m22;
-    rhs.m10 = fVar20;
-    rhs.m00 = fVar18;
-    rhs.m20 = fVar21;
-    rhs.m30 = fVar30;
-    rhs.m01 = fVar19;
-    rhs.m11 = fVar18;
-    rhs.m21 = fVar20;
-    rhs.m31 = fVar21;
-    rhs.m02 = fVar30;
-    rhs.m12 = fVar19;
-    rhs.m22 = fVar18;
-    rhs.m32 = fVar20;
-    rhs.m03 = fVar21;
-    rhs.m13 = fVar30;
-    rhs.m23 = fVar19;
-    rhs.m33 = fVar18;
-    pMVar12 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply((Matrix4x4 *)&stack0xffffff04,*pMVar12,rhs,(MethodInfo *)0x0);
-    if (pCVar36 == (Camera *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_worldToCameraMatrix(pCVar36,*pMVar12,(MethodInfo *)0x0);
+    fVar19 = 1.0 - (fVar2 + fVar2) * fVar2;
+    fVar20 = fVar2 * -2.0 * fVar5;
+    fVar21 = fVar5 * -2.0 * fVar2;
+    fVar22 = 1.0 - (fVar5 + fVar5) * fVar5;
+    fVar23 = fVar6 * -2.0 * fVar2;
+    fVar24 = fVar6 * -2.0 * fVar5;
+    fVar28 = 0.0;
+    fVar29 = 0.0;
+    if ((currentCamera == (Camera *)0x0) || (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)currentCamera,(MethodInfo *)0x0), pTVar12 == (Transform *)0x0)) goto code_?;
+    pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffff5c,pTVar12,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint((Vector3 *)&stack0xffffff44,(Matrix4x4 *)&stack0xffffff74,*pVVar13,(MethodInfo *)0x0);
+    pCVar30 = pCVar33;
+    pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_worldToCameraMatrix((Matrix4x4 *)&stack0xffffff04,currentCamera,(MethodInfo *)0x0);
+    fVar31 = 0.0;
+    fVar26 = pMVar14->m21;
+    fVar27 = pMVar14->m31;
+    rhs.m10 = fVar21;
+    rhs.m00 = fVar19;
+    rhs.m20 = fVar23;
+    rhs.m30 = fVar28;
+    rhs.m01 = fVar20;
+    rhs.m11 = fVar22;
+    rhs.m21 = fVar24;
+    rhs.m31 = fVar29;
+    rhs.m02 = fVar19;
+    rhs.m12 = fVar21;
+    rhs.m22 = fVar23;
+    rhs.m32 = fVar28;
+    rhs.m03 = fVar20;
+    rhs.m13 = fVar22;
+    rhs.m23 = fVar24;
+    rhs.m33 = fVar29;
+    pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply((Matrix4x4 *)&stack0xffffff04,*pMVar14,rhs,(MethodInfo *)0x0);
+    if (pCVar33 == (Camera *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_worldToCameraMatrix(pCVar33,*pMVar14,(MethodInfo *)0x0);
     func_?();
-    fVar18 = (this->fields).m_ClipPlaneOffset;
-    fVar22 = fVar18 * fVar26 + fVar22;
-    uVar34 = CONCAT44(fVar18 * (float)uVar3 + (float)((ulonglong)uVar34 >> 0x20),fVar18 * (float)uVar1 + (float)uVar34);
-    if (pCVar31 == (Camera *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_worldToCameraMatrix((Matrix4x4 *)&stack0xfffffec4,pCVar31,(MethodInfo *)0x0);
-    VVar23.z = fVar22;
-    VVar23.x = (float)(int)uVar34;
-    VVar23.y = (float)(int)((ulonglong)uVar34 >> 0x20);
-    pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint((Vector3 *)&stack0xffffff44,(Matrix4x4 *)&stack0xffffff04,VVar23,(MethodInfo *)0x0);
-    uVar2 = pVVar11->x;
-    uVar4 = pVVar11->y;
-    fVar22 = pVVar11->z;
-    vector.y = fVar29;
-    vector.x = fVar28;
-    vector.z = fVar32;
+    fVar19 = (this->fields).m_ClipPlaneOffset;
+    if (pCVar30 == (Camera *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_worldToCameraMatrix((Matrix4x4 *)&stack0xfffffec4,pCVar30,(MethodInfo *)0x0);
+    point.z = fVar19 * fVar6 + fVar3;
+    point.x = fVar19 * fVar2 + (float)uVar1;
+    point.y = fVar19 * fVar5 + (float)uVar4;
+    pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint((Vector3 *)&stack0xffffff44,(Matrix4x4 *)&stack0xffffff04,point,(MethodInfo *)0x0);
+    fVar3 = pVVar13->x;
+    fVar6 = pVVar13->y;
+    fVar2 = pVVar13->z;
+    vector.y = fVar27;
+    vector.x = fVar26;
+    vector.z = fVar31;
     UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector((Vector3 *)&stack0xffffff68,(Matrix4x4 *)&stack0xffffff04,vector,(MethodInfo *)0x0);
-    pauVar13 = (undefined1 (*) [12])func_?();
-    clipPlane.w = -((float)*(undefined8 *)*pauVar13 * (float)uVar2 + (float)((ulonglong)*(undefined8 *)*pauVar13 >> 0x20) * (float)uVar4 + *(float *)(*pauVar13 + 8) * fVar22);
-    clipPlane._0_12_ = *pauVar13;
-    pMVar12 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_CalculateObliqueMatrix((Matrix4x4 *)&stack0xfffffec4,currentCamera,clipPlane,(MethodInfo *)0x0);
-    if (pCVar31 == (Camera *)0x0) goto code_?;
-    fVar22 = pMVar12->m13;
-    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_projectionMatrix(pCVar31,*pMVar12,(MethodInfo *)0x0);
-    fVar26 = 0.0;
+    pauVar15 = (undefined1 (*) [12])func_?();
+    uStack_32._0_4_ = (float)*(undefined8 *)*pauVar15;
+    uStack_32._4_4_ = (float)((ulonglong)*(undefined8 *)*pauVar15 >> 0x20);
+    clipPlane.w = -((float)uStack_32 * fVar3 + uStack_32._4_4_ * fVar6 + *(float *)(*pauVar15 + 8) * fVar2);
+    clipPlane._0_12_ = *pauVar15;
+    pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_CalculateObliqueMatrix((Matrix4x4 *)&stack0xfffffec4,currentCamera,clipPlane,(MethodInfo *)0x0);
+    if (pCVar30 == (Camera *)0x0) goto code_?;
+    fVar3 = pMVar14->m22;
+    fVar2 = pMVar14->m32;
+    fVar5 = pMVar14->m13;
+    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_projectionMatrix(pCVar30,*pMVar14,(MethodInfo *)0x0);
     puVar25 = &UNK_?;
-    pCVar36 = pCVar31;
-    pvVar14 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_ReadUnaligned_6((uint8_t *)&(this->fields).m_ReflectLayers,(MethodInfo *)0x0);
-    if ((pCVar31 == (Camera *)0x0) || (UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask(pCVar31,(uint)pvVar14 & 0xffffffef,(MethodInfo *)0x0), pCVar36 == (Camera *)0x0)) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture(pCVar36,(this->fields).m_ReflectionTexture,(MethodInfo *)0x0);
+    pCVar33 = pCVar30;
+    pvVar16 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_ReadUnaligned_6((uint8_t *)&(this->fields).m_ReflectLayers,(MethodInfo *)0x0);
+    if ((pCVar30 == (Camera *)0x0) || (UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask(pCVar30,(uint)pvVar16 & 0xffffffef,(MethodInfo *)0x0), pCVar33 == (Camera *)0x0)) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture(pCVar33,(this->fields).m_ReflectionTexture,(MethodInfo *)0x0);
+    fVar6 = 0.0;
+    value_02 = 1;
     UnityEngine.CoreModule.dll::UnityEngine::GL::GL_set_invertCulling(1,(MethodInfo *)0x0);
-    if ((pCVar36 == (Camera *)0x0) || (pCVar31 = pCVar36, pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pCVar36,(MethodInfo *)0x0), pTVar10 == (Transform *)0x0)) goto code_?;
-    value_01 = &UNK_?;
-    value_00.y = fVar27;
-    value_00.x = fVar26;
-    value_00.z = (float)pCVar36;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar10,value_00,(MethodInfo *)0x0);
-    pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)currentCamera,(MethodInfo *)0x0);
-    if (pTVar15 == (Transform *)0x0) goto code_?;
-    pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles((Vector3 *)&stack0xffffffb8,pTVar15,(MethodInfo *)0x0);
-    uVar35._0_4_ = pVVar11->x;
-    uVar35._4_4_ = pVVar11->y;
-    this = (Water *)pVVar11->z;
-    if (pCVar31 == (Camera *)0x0) goto code_?;
-    pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pCVar31,(MethodInfo *)0x0);
-    if ((((pTVar15 == (Transform *)0x0) || (fVar24 = (float)(int)((ulonglong)uVar35 >> 0x20), VVar23.x = -(float)uVar35, VVar23 = (Vector3)CONCAT84(uVar37,VVar23.x), UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_eulerAngles(pTVar15,VVar23,(MethodInfo *)0x0), pTVar15 == (Transform *)0x0)) || (UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_Render((Camera *)pTVar15,(MethodInfo *)0x0), pTVar15 == (Transform *)0x0)) || (pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pTVar15,(MethodInfo *)0x0), pTVar15 == (Transform *)0x0)) goto code_?;
-    value.y = (float)puVar25;
-    value.x = fVar22;
-    value.z = (float)pTVar10;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar15,value,(MethodInfo *)0x0);
+    if ((pCVar33 == (Camera *)0x0) || (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pCVar33,(MethodInfo *)0x0), pTVar12 == (Transform *)0x0)) goto code_?;
+    value_01.y = (float)puVar25;
+    value_01.x = fVar5;
+    value_01.z = fVar24;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar12,value_01,(MethodInfo *)0x0);
+    pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)currentCamera,(MethodInfo *)0x0);
+    if (pTVar12 == (Transform *)0x0) goto code_?;
+    pCVar30 = (Camera *)&stack0xffffffb8;
+    pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles((Vector3 *)pCVar30,pTVar12,(MethodInfo *)0x0);
+    uVar7._0_4_ = pVVar13->x;
+    uVar7._4_4_ = pVVar13->y;
+    fVar5 = pVVar13->z;
+    if ((((pCVar30 == (Camera *)0x0) || (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pCVar30,(MethodInfo *)0x0), pTVar12 == (Transform *)0x0)) || (value.z = fVar5, value.x = (float)(int)(uVar7 ^ 0x80000000), value.y = (float)(int)((uVar7 ^ 0x80000000) >> 0x20), UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_eulerAngles(pTVar12,value,(MethodInfo *)0x0), pCVar30 == (Camera *)0x0)) || ((UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_Render(pCVar30,(MethodInfo *)0x0), pCVar30 == (Camera *)0x0 || (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pCVar30,(MethodInfo *)0x0), pTVar12 == (Transform *)0x0)))) goto code_?;
+    value_00.y = fVar2;
+    value_00.x = fVar3;
+    value_00.z = fVar6;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar12,value_00,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::GL::GL_set_invertCulling(0,(MethodInfo *)0x0);
-    pRVar5 = (pWVar7->fields).meshRenderer;
-    if ((pRVar5 == (Renderer *)0x0) || (pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterial(pRVar5,(MethodInfo *)0x0), pMVar9 == (Material *)0x0)) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTexture(pMVar9,StringLiteral__ReflectionTex,(Texture *)(pWVar7->fields).m_ReflectionTexture,(MethodInfo *)0x0);
+    pRVar8 = (this->fields).meshRenderer;
+    if ((pRVar8 == (Renderer *)0x0) || (pMVar11 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterial(pRVar8,(MethodInfo *)0x0), pMVar11 == (Material *)0x0)) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTexture(pMVar11,StringLiteral__ReflectionTex,(Texture *)(this->fields).m_ReflectionTexture,(MethodInfo *)0x0);
   }
-  if ((pWVar7->fields).m_DisablePixelLights != 0) {
-    UnityEngine.CoreModule.dll::UnityEngine::QualitySettings::QualitySettings_set_pixelLightCount((int32_t)value_01,(MethodInfo *)0x0);
+  if ((this->fields).m_DisablePixelLights != 0) {
+    UnityEngine.CoreModule.dll::UnityEngine::QualitySettings::QualitySettings_set_pixelLightCount(value_02,(MethodInfo *)0x0);
   }
-  if (uVar16 == 0) {
+  if (iVar17 == 0) {
     UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_EnableKeyword(StringLiteral_WATER_SIMPLE,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_DisableKeyword(StringLiteral_WATER_REFLECTIVE,(MethodInfo *)0x0);
   }
   else {
-    if (uVar16 != 1) goto code_?;
+    if (iVar17 != 1) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_DisableKeyword(StringLiteral_WATER_SIMPLE,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_EnableKeyword(StringLiteral_WATER_REFLECTIVE,(MethodInfo *)0x0);
   }
@@ -814,7 +821,7 @@ void Assembly-CSharp-firstpass.dll::Water::Water_Update(Water *this,MethodInfo *
       return;
     }
     if (this_00 != (Material *)0x0) {
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector((Vector4 *)&stack0xffffffa4,this_00,StringLiteral_WaveSpeed,(MethodInfo *)0x0);
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector((Vector4 *)&stack0xffffffac,this_00,StringLiteral_WaveSpeed,(MethodInfo *)0x0);
       uVar4._0_4_ = pVVar3->x;
       uVar4._4_4_ = pVVar3->y;
       fVar5 = pVVar3->z;
@@ -833,13 +840,13 @@ void Assembly-CSharp-firstpass.dll::Water::Water_Update(Water *this,MethodInfo *
       dVar12 = mscorlib.dll::System::Math::Math_IEEERemainder((double)(SUB84(uVar4,4) * fVar7) * dVar11,1.0,(MethodInfo *)0x0);
       fVar10 = (float)(double)CONCAT44(uVar14,uVar13);
       fVar15 = (float)dVar12;
-      uVar16 = 0;
-      uVar17 = 0x3ff00000;
+      uVar14 = 0;
+      uVar16 = 0x3ff00000;
       dVar12 = (double)(fVar5 * fVar8) * dVar11;
-      dVar18 = mscorlib.dll::System::Math::Math_IEEERemainder(dVar12,1.0,(MethodInfo *)0x0);
+      dVar17 = mscorlib.dll::System::Math::Math_IEEERemainder(dVar12,1.0,(MethodInfo *)0x0);
       uVar13 = (undefined4)((ulonglong)dVar12 >> 0x20);
-      fVar5 = (float)dVar18;
-      puVar19 = &UNK_?;
+      fVar5 = (float)dVar17;
+      puVar18 = &UNK_?;
       dVar11 = mscorlib.dll::System::Math::Math_IEEERemainder((double)(fVar6 * fVar9) * dVar11,1.0,(MethodInfo *)0x0);
       fVar6 = (float)dVar11;
       value.y = fVar15;
@@ -847,60 +854,57 @@ void Assembly-CSharp-firstpass.dll::Water::Water_Update(Water *this,MethodInfo *
       value.z = fVar5;
       value.w = fVar6;
       UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector(this_00,StringLiteral__WaveOffset,value,(MethodInfo *)0x0);
-      uVar20 = 0;
-      puVar21 = &UNK_?;
-      value_00.y = (float)uVar16;
+      puVar19 = &UNK_?;
+      value_00.y = (float)uVar14;
       value_00.x = (float)uVar13;
-      value_00.z = (float)uVar17;
-      value_00.w = (float)puVar19;
+      value_00.z = (float)uVar16;
+      value_00.w = (float)puVar18;
+      pSVar20 = StringLiteral__WaveScale4;
       UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector(this_00,StringLiteral__WaveScale4,value_00,(MethodInfo *)0x0);
       pRVar1 = (this->fields).meshRenderer;
       if (pRVar1 != (Renderer *)0x0) {
-        pBVar22 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds((Bounds *)&stack0xffffff9c,pRVar1,(MethodInfo *)0x0);
-        uVar23 = (pBVar22->m_Extents).z;
-        fVar10 = (pBVar22->m_Extents).x * 2.0;
-        fVar5 = fVar10 * fVar7;
-        fVar24 = 1.0;
-        fVar7 = (float)uVar23 * 2.0 * fVar7;
-        fVar9 = (float)(double)CONCAT44(uVar14,uVar20);
-        fVar15 = 0.0;
-        fVar8 = (float)(double)CONCAT44(uVar17,uVar16);
+        pBVar21 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds((Bounds *)&stack0xffffffa4,pRVar1,(MethodInfo *)0x0);
+        uVar22 = (pBVar21->m_Extents).z;
+        fVar8 = (pBVar21->m_Extents).x * 2.0;
+        fVar5 = fVar8 * fVar7;
+        method = (MethodInfo *)0x3f800000;
+        this = (Water *)((float)uVar22 * 2.0 * fVar7);
+        fVar7 = (float)(double)CONCAT44(puVar18,uVar16);
+        fVar10 = 0.0;
+        fVar9 = (float)(double)CONCAT44(uVar13,pSVar20);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        pos_00.y = fVar8;
-        pos_00.x = fVar9;
-        pos_00.z = fVar15;
-        s_00.y = fVar7;
         s_00.x = fVar5;
-        s_00.z = fVar24;
-        pMVar25 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS((Matrix4x4 *)&stack0xffffff44,pos_00,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,s_00,(MethodInfo *)0x0);
-        fVar5 = pMVar25->m10;
-        puVar19 = &UNK_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix(this_00,StringLiteral__WaveMatrix,*pMVar25,(MethodInfo *)0x0);
-        fVar9 = 0.0;
-        fVar10 = fVar10 * (float)puVar19;
-        fVar5 = fVar5 * fVar15;
+        pos_00.y = fVar9;
+        pos_00.x = fVar7;
+        pos_00.z = fVar10;
+        pMVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS((Matrix4x4 *)&stack0xffffff4c,pos_00,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,s_00,(MethodInfo *)0x0);
+        pSVar20 = StringLiteral__WaveMatrix;
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix(this_00,StringLiteral__WaveMatrix,*pMVar23,(MethodInfo *)0x0);
+        fVar5 = 0.0;
+        fVar8 = fVar8 * fVar9;
+        fVar7 = (float)pSVar20 * fVar7;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        pos.y = (float)puVar21;
+        pos.y = (float)puVar19;
         pos.x = fVar6;
-        pos.z = fVar9;
-        s.y = fVar5;
-        s.x = fVar10;
-        s.z = fVar24;
-        pMVar25 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS((Matrix4x4 *)&stack0xffffff44,pos,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,s,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix(this_00,StringLiteral__WaveMatrix2,*pMVar25,(MethodInfo *)0x0);
+        pos.z = fVar5;
+        s.y = fVar7;
+        s.x = fVar8;
+        s.z = (float)method;
+        pMVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS((Matrix4x4 *)&stack0xffffff4c,pos,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,s,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix(this_00,StringLiteral__WaveMatrix2,*pMVar23,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar26 = (code *)swi(3);
-  (*pcVar26)();
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 

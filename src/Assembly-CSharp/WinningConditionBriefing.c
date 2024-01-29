@@ -35,60 +35,64 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_Cre
 code_?:
       func_?();
       pPVar1 = (this->fields).desktopPlayButton;
+      if (pPVar1 != (PlayButton *)0x0) {
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pPVar1,(MethodInfo *)0x0);
+        goto code_?;
+      }
       goto code_?;
     }
-    pAVar4 = (Action *)0x0;
+    pAVar5 = (Action *)0x0;
     if (pAVar2->klass == TypeInfo__System__Action) {
-      pAVar4 = pAVar2;
+      pAVar5 = pAVar2;
     }
-    if (pAVar4 == (Action *)0x0) goto code_?;
-    (pPVar1->fields).OnPlayButtonPressed = pAVar4;
-    pAVar4 = (Action *)0x0;
+    if (pAVar5 == (Action *)0x0) goto code_?;
+    (pPVar1->fields).OnPlayButtonPressed = pAVar5;
+    pAVar5 = (Action *)0x0;
     if (pAVar2->klass == TypeInfo__System__Action) {
-      pAVar4 = pAVar2;
+      pAVar5 = pAVar2;
     }
-    if (pAVar4 != (Action *)0x0) goto code_?;
+    if (pAVar5 != (Action *)0x0) goto code_?;
   }
   else {
-    pPVar5 = (this->fields).AndroidPlayButtonPrefab;
+    pPVar6 = (this->fields).AndroidPlayButtonPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pPVar5 = (PlayButtonTouch *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pPVar5,PlayButtonTouch_MethodInfo__UnityEngine__Object__Instantiate<PlayButtonTouch>_PlayButtonTouch_);
-    (this->fields).androidPlayButton = pPVar5;
-    func_?(&(this->fields).androidPlayButton,pPVar5);
-    pPVar5 = (this->fields).androidPlayButton;
-    if (pPVar5 != (PlayButtonTouch *)0x0) {
-      pAVar2 = (pPVar5->fields).OnPlayButtonPressed;
+    pPVar6 = (PlayButtonTouch *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pPVar6,PlayButtonTouch_MethodInfo__UnityEngine__Object__Instantiate<PlayButtonTouch>_PlayButtonTouch_);
+    (this->fields).androidPlayButton = pPVar6;
+    func_?(&(this->fields).androidPlayButton,pPVar6);
+    pPVar6 = (this->fields).androidPlayButton;
+    if (pPVar6 != (PlayButtonTouch *)0x0) {
+      pAVar2 = (pPVar6->fields).OnPlayButtonPressed;
       pNVar3 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar3,(Object *)this,MethodInfo__WinningConditionBriefing__OnPlayPressed__,(MethodInfo *)0x0);
       pAVar2 = (Action *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
       if (pAVar2 == (Action *)0x0) {
-        (pPVar5->fields).OnPlayButtonPressed = (Action *)0x0;
+        (pPVar6->fields).OnPlayButtonPressed = (Action *)0x0;
       }
       else {
-        pAVar4 = (Action *)0x0;
+        pAVar5 = (Action *)0x0;
         if (pAVar2->klass == TypeInfo__System__Action) {
-          pAVar4 = pAVar2;
+          pAVar5 = pAVar2;
         }
-        if (pAVar4 == (Action *)0x0) goto code_?;
-        (pPVar5->fields).OnPlayButtonPressed = pAVar4;
-        pAVar4 = (Action *)0x0;
+        if (pAVar5 == (Action *)0x0) goto code_?;
+        (pPVar6->fields).OnPlayButtonPressed = pAVar5;
+        pAVar5 = (Action *)0x0;
         if (pAVar2->klass == TypeInfo__System__Action) {
-          pAVar4 = pAVar2;
+          pAVar5 = pAVar2;
         }
-        if (pAVar4 == (Action *)0x0) goto code_?;
+        if (pAVar5 == (Action *)0x0) goto code_?;
       }
       func_?();
-      pPVar1 = (PlayButton *)(this->fields).androidPlayButton;
+      pPVar6 = (this->fields).androidPlayButton;
+      if (pPVar6 != (PlayButtonTouch *)0x0) {
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pPVar6,(MethodInfo *)0x0);
 code_?:
-      if (pPVar1 != (PlayButton *)0x0) {
-        pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pPVar1,(MethodInfo *)0x0);
-        (this->fields).playButton = pGVar6;
-        func_?(&(this->fields).playButton,pGVar6);
-        pGVar6 = (this->fields).playButton;
-        if (pGVar6 != (GameObject *)0x0) {
-          this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar6,(MethodInfo *)0x0);
+        (this->fields).playButton = pGVar4;
+        func_?(&(this->fields).playButton,pGVar4);
+        pGVar4 = (this->fields).playButton;
+        if (pGVar4 != (GameObject *)0x0) {
+          this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar4,(MethodInfo *)0x0);
           parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
           if (this_00 != (Transform *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1(this_00,parent,0,(MethodInfo *)0x0);
@@ -711,7 +715,7 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing__ct
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,5,(Object *)pSVar1,MethodInfo__System__Collections__Generic__Dictionary<WinningConditionType,_System::String>__Add_WinningConditionType__System__String_);
     (this->fields).headerMap = (Dictionary_2_WinningConditionType_System_String_ *)this_00;
     func_?();
-    LobbyFlowMenu::LobbyFlowMenu__ctor((LobbyFlowMenu *)this,(MethodInfo *)0x0);
+    LobbyStateController::LobbyStateController__ctor((LobbyStateController *)this,(MethodInfo *)0x0);
     return;
   }
   func_?();

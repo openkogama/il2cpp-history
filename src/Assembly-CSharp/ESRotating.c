@@ -194,178 +194,179 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Execute(ESRotating *this,Editor
   LStack_6._index = 0;
   LStack_6._version = 0;
   LStack_6._current = (Object *)0x0;
-  pMVar7 = (MethodInfo *)(this->fields).targets;
-  bVar8 = UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelper::RotationHelper_ValidateTargets((List_1_WorldObjectClientRef_ *)pMVar7,(MethodInfo *)0x0);
-  if (bVar8 != 0) {
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,(ExceptionArgument__Enum)e,(MethodInfo *)0x0);
+  bVar7 = UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelper::RotationHelper_ValidateTargets((this->fields).targets,(MethodInfo *)0x0);
+  if (bVar7 != 0) {
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    bVar8 = MVInputWrapper::MVInputWrapper_GetBooleanControl(KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-    if (bVar8 != 0) {
-      fVar9 = (this->fields).xAcc;
+    bVar7 = MVInputWrapper::MVInputWrapper_GetBooleanControl(KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
+    if (bVar7 != 0) {
+      fVar8 = (this->fields).xAcc;
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pVVar10 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition((Vector3 *)auStack_11,(DefaultEventSystem_Input *)0x0,pMVar7);
-      pMVar12 = (MVWorldObjectClient *)0x0;
-      fVar13 = (this->fields).yAcc;
-      (this->fields).xAcc = (pVVar10->x - (this->fields).prevMouseX) * ((this->fields).mouseSensitivity / (this->fields).rotationSpeed) + fVar9;
-      pVVar10 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition((Vector3 *)auStack_11,(DefaultEventSystem_Input *)0x0,pMVar7);
-      fVar9 = ABS((this->fields).xAcc);
-      pfVar14 = &(this->fields).rotateThreshold;
-      fVar13 = (pVVar10->y - (this->fields).prevMouseY) * ((this->fields).mouseSensitivity / (this->fields).rotationSpeed) + fVar13;
-      cStack_15 = *pfVar14 <= fVar9 && fVar9 != *pfVar14;
-      (this->fields).yAcc = fVar13;
-      fVar13 = ABS(fVar13);
-      pfVar14 = &(this->fields).rotateThreshold;
-      bVar16 = *pfVar14 <= fVar13 && fVar13 != *pfVar14;
+      pVVar9 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition((Vector3 *)auStack_10,(DefaultEventSystem_Input *)0x0,unaff_EDI);
+      pMVar11 = (MVWorldObjectClient *)0x0;
+      fVar12 = (this->fields).yAcc;
+      (this->fields).xAcc = (pVVar9->x - (this->fields).prevMouseX) * ((this->fields).mouseSensitivity / (this->fields).rotationSpeed) + fVar8;
+      pVVar9 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition((Vector3 *)auStack_10,(DefaultEventSystem_Input *)0x0,unaff_EDI);
+      fVar8 = ABS((this->fields).xAcc);
+      pfVar13 = &(this->fields).rotateThreshold;
+      fVar12 = (pVVar9->y - (this->fields).prevMouseY) * ((this->fields).mouseSensitivity / (this->fields).rotationSpeed) + fVar12;
+      cStack_14 = *pfVar13 <= fVar8 && fVar8 != *pfVar13;
+      (this->fields).yAcc = fVar12;
+      fVar12 = ABS(fVar12);
+      pfVar13 = &(this->fields).rotateThreshold;
+      bVar15 = *pfVar13 <= fVar12 && fVar12 != *pfVar13;
       while( true ) {
-        if (!bVar16 && (bool)cStack_15 == false) break;
+        if (!bVar15 && (bool)cStack_14 == false) break;
         this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).targets;
         if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) goto code_?;
         this_02 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,0,MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__get_Item_int_);
         if (this_02 == (RegexCharClass_SingleRange)0x0) goto code_?;
-        pMVar7 = (MethodInfo *)&UNK_?;
+        method_00 = (MethodInfo *)&UNK_?;
         this_03 = (MVWorldObjectClient *)WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object__get_WorldObjectClient((WorldObjectClientRef_1_System_Object_ *)this_02,MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__);
-        fVar9 = (this->fields).xAcc;
-        pLVar17 = (this->fields).targets;
+        fVar8 = (this->fields).xAcc;
+        pLVar16 = (this->fields).targets;
+        cStack_17 = '\0';
         cStack_18 = '\0';
-        cStack_19 = '\0';
-        _Stack_44 = (_union_155)(fVar9 / ABS(fVar9));
-        fStack_20 = (this->fields).yAcc;
-        fStack_20 = fStack_20 / ABS(fStack_20);
-        uStack_21 = (double)((ulonglong)uStack_21 & 0xffffffff);
-        pMStack_22 = this_03;
+        _Stack_44 = (_union_155)(fVar8 / ABS(fVar8));
+        fStack_19 = (this->fields).yAcc;
+        fStack_19 = fStack_19 / ABS(fStack_19);
+        uStack_20 = (double)((ulonglong)uStack_20 & 0xffffffff);
+        pMStack_21 = this_03;
         _Stack_1c = _Stack_44;
-        if (pLVar17 == (List_1_WorldObjectClientRef_ *)0x0) goto code_?;
-        if ((pLVar17->fields)._size == 1) {
+        if (pLVar16 == (List_1_WorldObjectClientRef_ *)0x0) goto code_?;
+        if ((pLVar16->fields)._size == 1) {
           if (this_03 == (MVWorldObjectClient *)0x0) goto code_?;
-          pVVar10 = MVWorldObjectClient::MVWorldObjectClient_get_WorldEulerAngles(&VStack_23,this_03,(MethodInfo *)0x0);
-          pVVar10 = MathFunctions::MathFunctions_RoundVector(&VStack_24,*pVVar10,0,(MethodInfo *)0x0);
-          MVWorldObjectClient::MVWorldObjectClient_set_WorldEulerAngles(this_03,*pVVar10,(MethodInfo *)0x0);
-          pVVar10 = MVWorldObjectClient::MVWorldObjectClient_get_WorldEulerAngles((Vector3 *)(auStack_25 + 4),this_03,(MethodInfo *)0x0);
-          uStack_21._4_4_ = pVVar10->y;
+          pVVar9 = MVWorldObjectClient::MVWorldObjectClient_get_WorldEulerAngles(&VStack_22,this_03,(MethodInfo *)0x0);
+          pVVar9 = MathFunctions::MathFunctions_RoundVector((Vector3 *)&uStack_23,*pVVar9,0,(MethodInfo *)0x0);
+          MVWorldObjectClient::MVWorldObjectClient_set_WorldEulerAngles(this_03,*pVVar9,(MethodInfo *)0x0);
+          pVVar9 = MVWorldObjectClient::MVWorldObjectClient_get_WorldEulerAngles((Vector3 *)auStack_24,this_03,(MethodInfo *)0x0);
+          uStack_20._4_4_ = pVVar9->y;
           if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-            uStack_26 = (double)CONCAT44(TypeInfo__System__Math,&UNK_?);
+            uStack_23._4_4_ = (float)TypeInfo__System__Math;
+            uStack_23._0_4_ = (float)&UNK_?;
             func_?();
           }
-          uStack_26 = (double)uStack_21._4_4_;
-          auStack_25._4_4_ = &UNK_?;
-          fVar27 = (float10)func_?();
-          uStack_21 = (double)(this->fields).rotationSpeed;
-          uStack_26 = 0.0;
-          auStack_11._4_8_ = (undefined8)fVar27;
-          auStack_25._4_4_ = &UNK_?;
-          fVar27 = (float10)func_?();
-          auStack_25 = (undefined1  [8])(double)fVar27;
-          auStack_11._4_8_ = auStack_25;
-          fVar27 = (float10)func_?();
-          auStack_11._4_8_ = (undefined8)fVar27;
-          uStack_21 = (double)CONCAT44((float)fVar27,(undefined4)uStack_21);
+          uStack_23 = (double)uStack_20._4_4_;
+          fVar25 = (float10)func_?();
+          uStack_20 = (double)(this->fields).rotationSpeed;
+          uStack_23._0_4_ = 0.0;
+          uStack_23._4_4_ = 0.0;
+          auStack_10._4_8_ = (undefined8)fVar25;
+          fVar25 = (float10)func_?();
+          unique0x0000aa00 = (double)fVar25;
+          auStack_24._0_4_ = &UNK_?;
+          auStack_10._4_8_ = unique0x0000aa00;
+          fVar25 = (float10)func_?();
+          auStack_10._4_8_ = (undefined8)fVar25;
+          uStack_20 = (double)CONCAT44((float)fVar25,(undefined4)uStack_20);
         }
-        pLVar17 = (this->fields).targets;
-        if (pLVar17 == (List_1_WorldObjectClientRef_ *)0x0) goto code_?;
-        if ((pLVar17->fields)._size == 1) {
-          if (cStack_15 != '\0') {
+        pLVar16 = (this->fields).targets;
+        if (pLVar16 == (List_1_WorldObjectClientRef_ *)0x0) goto code_?;
+        if ((pLVar16->fields)._size == 1) {
+          if (cStack_14 != '\0') {
             if (this_03 == (MVWorldObjectClient *)0x0) goto code_?;
-            bVar8 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag(this_03,InteractionFlags__Enum_CanRotateX,(MethodInfo *)0x0);
-            if ((bVar8 != 0) && ((this->fields).rotationMode == 0)) {
-              auStack_11._4_8_ = *(undefined8 *)&(this->fields).pivot;
-              fVar9 = (this->fields).pivot.z;
-              pVVar10 = (Vector3 *)func_?();
-              this_03 = pMStack_22;
-              pivot.z = fVar9;
-              pivot.x = (float)auStack_11._4_4_;
-              pivot.y = (float)auStack_11._8_4_;
-              MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMStack_22,pivot,*pVVar10,-(float)_Stack_1c * (this->fields).rotationSpeed - uStack_21._4_4_,(MethodInfo *)0x0);
+            bVar7 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag(this_03,InteractionFlags__Enum_CanRotateX,(MethodInfo *)0x0);
+            if ((bVar7 != 0) && ((this->fields).rotationMode == 0)) {
+              auStack_10._4_8_ = *(undefined8 *)&(this->fields).pivot;
+              fVar8 = (this->fields).pivot.z;
+              pVVar9 = (Vector3 *)func_?();
+              this_03 = pMStack_21;
+              pivot.z = fVar8;
+              pivot.x = (float)auStack_10._4_4_;
+              pivot.y = (float)auStack_10._8_4_;
+              MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMStack_21,pivot,*pVVar9,-(float)_Stack_1c * (this->fields).rotationSpeed - uStack_20._4_4_,(MethodInfo *)0x0);
+              cStack_17 = '\x01';
+            }
+            bVar7 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag(this_03,InteractionFlags__Enum_CanRotateY,(MethodInfo *)0x0);
+            if ((bVar7 != 0) && ((this->fields).rotationMode == 1)) {
+              auStack_10._4_8_ = *(undefined8 *)&(this->fields).pivot;
+              fVar8 = (this->fields).pivot.z;
+              pVVar9 = (Vector3 *)func_?();
+              this_03 = pMStack_21;
+              pivot_00.z = fVar8;
+              pivot_00.x = (float)auStack_10._4_4_;
+              pivot_00.y = (float)auStack_10._8_4_;
+              MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMStack_21,pivot_00,*pVVar9,-(float)_Stack_1c * (this->fields).rotationSpeed - uStack_20._4_4_,(MethodInfo *)0x0);
               cStack_18 = '\x01';
             }
-            bVar8 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag(this_03,InteractionFlags__Enum_CanRotateY,(MethodInfo *)0x0);
-            if ((bVar8 != 0) && ((this->fields).rotationMode == 1)) {
-              auStack_11._4_8_ = *(undefined8 *)&(this->fields).pivot;
-              fVar9 = (this->fields).pivot.z;
-              pVVar10 = (Vector3 *)func_?(&stack0xffffff54);
-              this_03 = pMStack_22;
-              pivot_00.z = fVar9;
-              pivot_00.x = (float)auStack_11._4_4_;
-              pivot_00.y = (float)auStack_11._8_4_;
-              MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMStack_22,pivot_00,*pVVar10,-(float)_Stack_1c * (this->fields).rotationSpeed - uStack_21._4_4_,(MethodInfo *)0x0);
-              cStack_19 = '\x01';
-            }
-            pMVar12 = this_03;
-            bVar8 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag(this_03,InteractionFlags__Enum_CanRotateZ,(MethodInfo *)0x0);
-            if (((bVar8 == 0) || (cStack_18 != '\0')) || ((this->fields).rotationMode != 2)) {
-              bVar16 = false;
+            pMVar11 = this_03;
+            bVar7 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag(this_03,InteractionFlags__Enum_CanRotateZ,(MethodInfo *)0x0);
+            if (((bVar7 == 0) || (cStack_17 != '\0')) || ((this->fields).rotationMode != 2)) {
+              bVar15 = false;
             }
             else {
-              auStack_11._4_8_ = *(undefined8 *)&(this->fields).pivot;
-              fVar9 = (this->fields).pivot.z;
-              pVVar10 = (Vector3 *)func_?();
-              this_03 = pMStack_22;
-              pivot_01.z = fVar9;
-              pivot_01.x = (float)auStack_11._4_4_;
-              pivot_01.y = (float)auStack_11._8_4_;
-              MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMStack_22,pivot_01,*pVVar10,-(float)_Stack_1c * (this->fields).rotationSpeed - uStack_21._4_4_,(MethodInfo *)0x0);
-              bVar16 = true;
+              auStack_10._4_8_ = *(undefined8 *)&(this->fields).pivot;
+              fVar8 = (this->fields).pivot.z;
+              pVVar9 = (Vector3 *)func_?();
+              this_03 = pMStack_21;
+              pivot_01.z = fVar8;
+              pivot_01.x = (float)auStack_10._4_4_;
+              pivot_01.y = (float)auStack_10._8_4_;
+              MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMStack_21,pivot_01,*pVVar9,-(float)_Stack_1c * (this->fields).rotationSpeed - uStack_20._4_4_,(MethodInfo *)0x0);
+              bVar15 = true;
             }
-            if ((bVar16 || cStack_19 != '\0') || cStack_18 != '\0') {
+            if ((bVar15 || cStack_18 != '\0') || cStack_17 != '\0') {
               MVWorldObjectClient::MVWorldObjectClient_get_SyncRot((Quaternion *)&stack0xffffff24,this_03,(MethodInfo *)0x0);
               func_?();
             }
           }
         }
         else {
-          puVar28 = (undefined4 *)func_?(&stack0xffffff44);
-          uStack_29 = 0;
-          LStack_6._list = (List_1_System_Object_ *)*puVar28;
-          LStack_6._index = puVar28[1];
-          LStack_6._version = puVar28[2];
-          LStack_6._current = (Object *)((_union_154 *)(puVar28 + 3))->methodMetadataHandle;
+          puVar26 = (undefined4 *)func_?();
+          uStack_27 = 0;
+          LStack_6._list = (List_1_System_Object_ *)*puVar26;
+          LStack_6._index = puVar26[1];
+          LStack_6._version = puVar26[2];
+          LStack_6._current = (Object *)((_union_154 *)(puVar26 + 3))->methodMetadataHandle;
           uStack_1 = 1;
-          pOStack_30 = (Object *)(auStack_31 + 0x10);
+          pOStack_28 = (Object *)(auStack_29 + 0x10);
           while( true ) {
-            pMVar12 = (MVWorldObjectClient *)&UNK_?;
-            bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)(auStack_31 + 0x10),MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__MoveNext__);
-            if (bVar8 == 0) break;
+            pMVar11 = (MVWorldObjectClient *)&UNK_?;
+            bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)(auStack_29 + 0x10),MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__MoveNext__);
+            if (bVar7 == 0) break;
             if ((Il2CppRGCTXData *)LStack_6._current == (Il2CppRGCTXData *)0x0) goto code_?;
-            pMVar12 = (MVWorldObjectClient *)WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object__get_WorldObjectClient((WorldObjectClientRef_1_System_Object_ *)LStack_6._current,MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__);
-            auStack_11._4_8_ = *(undefined8 *)&(this->fields).pivot;
-            pMStack_22 = (MVWorldObjectClient *)(this->fields).pivot.z;
-            pMVar7 = (MethodInfo *)auStack_31;
-            pVVar10 = (Vector3 *)func_?();
-            if (pMVar12 == (MVWorldObjectClient *)0x0) goto code_?;
-            pivot_02.z = (float)pMStack_22;
-            pivot_02.x = (float)auStack_11._4_4_;
-            pivot_02.y = (float)auStack_11._8_4_;
-            MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMVar12,pivot_02,*pVVar10,-(float)_Stack_1c * (this->fields).rotationSpeed - uStack_21._4_4_,(MethodInfo *)0x0);
-            MVWorldObjectClient::MVWorldObjectClient_get_SyncRot((Quaternion *)&stack0xffffff34,pMVar12,(MethodInfo *)0x0);
+            pMVar11 = (MVWorldObjectClient *)WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object__get_WorldObjectClient((WorldObjectClientRef_1_System_Object_ *)LStack_6._current,MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__);
+            auStack_10._4_8_ = *(undefined8 *)&(this->fields).pivot;
+            pMStack_21 = (MVWorldObjectClient *)(this->fields).pivot.z;
+            method_00 = (MethodInfo *)auStack_29;
+            pVVar9 = (Vector3 *)func_?();
+            if (pMVar11 == (MVWorldObjectClient *)0x0) goto code_?;
+            pivot_02.z = (float)pMStack_21;
+            pivot_02.x = (float)auStack_10._4_4_;
+            pivot_02.y = (float)auStack_10._8_4_;
+            MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMVar11,pivot_02,*pVVar9,-(float)_Stack_1c * (this->fields).rotationSpeed - uStack_20._4_4_,(MethodInfo *)0x0);
+            MVWorldObjectClient::MVWorldObjectClient_get_SyncRot((Quaternion *)&stack0xffffff34,pMVar11,(MethodInfo *)0x0);
             func_?();
           }
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)(auStack_31 + 0x10),(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__Dispose__,pMVar7);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)(auStack_29 + 0x10),(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__Dispose__,method_00);
           uStack_1 = 0xffffffff;
         }
-        fVar9 = (this->fields).yAcc - fStack_20 * (this->fields).rotateThreshold;
-        (this->fields).yAcc = fVar9;
-        fVar9 = ABS(fVar9);
-        pfVar14 = &(this->fields).rotateThreshold;
+        fVar8 = (this->fields).yAcc - fStack_19 * (this->fields).rotateThreshold;
+        (this->fields).yAcc = fVar8;
+        fVar8 = ABS(fVar8);
+        pfVar13 = &(this->fields).rotateThreshold;
         _Stack_1c.genericMethod = (Il2CppGenericMethod *)(_Stack_1c.genericMethod * (this->fields).rotateThreshold);
-        bVar16 = *pfVar14 <= fVar9 && fVar9 != *pfVar14;
-        fVar9 = (this->fields).xAcc - (float)_Stack_1c;
-        (this->fields).xAcc = fVar9;
-        fVar9 = ABS(fVar9);
-        pfVar14 = &(this->fields).rotateThreshold;
-        cStack_15 = *pfVar14 <= fVar9 && fVar9 != *pfVar14;
+        bVar15 = *pfVar13 <= fVar8 && fVar8 != *pfVar13;
+        fVar8 = (this->fields).xAcc - (float)_Stack_1c;
+        (this->fields).xAcc = fVar8;
+        fVar8 = ABS(fVar8);
+        pfVar13 = &(this->fields).rotateThreshold;
+        cStack_14 = *pfVar13 <= fVar8 && fVar8 != *pfVar13;
       }
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pVVar10 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition(&VStack_32,(DefaultEventSystem_Input *)0x0,(MethodInfo *)pMVar12);
-      (this->fields).prevMouseX = pVVar10->x;
-      pVVar10 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition((Vector3 *)auStack_31,(DefaultEventSystem_Input *)0x0,(MethodInfo *)pMVar12);
-      (this->fields).prevMouseY = pVVar10->y;
-      pGVar33 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if (((pGVar33 != (GameEventManager *)0x0) && (pGVar34 = (pGVar33->fields).AvatarCommandsBuildMode, pGVar34 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (this_01 = (pGVar34->fields).LaserCommands, this_01 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+      pVVar9 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition(&VStack_30,(DefaultEventSystem_Input *)0x0,(MethodInfo *)pMVar11);
+      (this->fields).prevMouseX = pVVar9->x;
+      pVVar9 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition((Vector3 *)auStack_29,(DefaultEventSystem_Input *)0x0,(MethodInfo *)pMVar11);
+      (this->fields).prevMouseY = pVVar9->y;
+      pGVar31 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if (((pGVar31 != (GameEventManager *)0x0) && (pGVar32 = (pGVar31->fields).AvatarCommandsBuildMode, pGVar32 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (this_01 = (pGVar32->fields).LaserCommands, this_01 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
         GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition(this_01,(this->fields).pivot,(MethodInfo *)0x0);
         *unaff_FS_OFFSET = uStack_3;
         return;
@@ -381,8 +382,8 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Execute(ESRotating *this,Editor
 code_?:
   func_?();
   func_?();
-  pcVar35 = (code *)swi(3);
-  (*pcVar35)();
+  pcVar33 = (code *)swi(3);
+  (*pcVar33)();
   return;
 }
 
