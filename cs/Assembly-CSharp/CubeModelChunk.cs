@@ -25,10 +25,6 @@ public class CubeModelChunk
 	private int activeInstances;
 	private readonly Dictionary<IntVector, Cell> cells;
 	private static FaceData[] faceData;
-	private static readonly Vector2[] uvs;
-	private static readonly Vector2 uvOffsetVector0;
-	private static readonly Vector2 uvOffsetVector1;
-	private static Vector2 uvOffsetVector;
 
 	// Properties
 	public int TriangleCount { get; }
@@ -36,17 +32,6 @@ public class CubeModelChunk
 	public int CubeCount { get; }
 
 	// Nested types
-	public class FaceData
-	{
-		// Fields
-		public Vector3[] faceVertices;
-		public Color[] colors;
-		public Face face;
-
-		// Constructors
-		public FaceData();
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -68,7 +53,7 @@ public class CubeModelChunk
 	static CubeModelChunk();
 
 	// Methods
-	public CubeModelChunk CloneGeometry(Vector3 scale);
+	public CubeModelChunk CloneGeometry(float scale);
 	public bool CompareGeometry(CubeModelChunk chunk);
 	public bool CompareGeometry(CubeModelChunk chunk, ref int matchingCubeCount, ref int investigatedCubeCount, bool visibleCubesOnly);
 	public Cube GetCube(IntVector iVector);
@@ -78,7 +63,7 @@ public class CubeModelChunk
 	public void RemoveFromChunk(IntVector iVector);
 	public void Destroy();
 	public string Guids();
-	public void RebuildChunk(Vector3 scale);
+	public void RebuildChunk(float scale);
 	public SharedMeshData GetMeshData();
 	private void EvaluateReferenceCount(int oldReferenceCount, int newReferenceCount);
 	private void RevokeSharedMeshOnInstances();
@@ -94,8 +79,8 @@ public class CubeModelChunk
 	private static void SimpleFaceVisibilityTest(FaceFlags faceFlagCube, FaceFlags faceFlagOpposite, ref Cube cube, ref Cube neighborCube);
 	private static bool AllFaceCornersIsTouchingCubeBorder(Face face, ref Vector3[] faceIndices);
 	private static void AdvancedFaceVisibilityTest(FaceFlags faceFlagCube, FaceFlags faceFlagOpposite, ref Cube cube, ref Cube neighborCube);
-	private static void GetMeshBounds(ref Bounds bounds, Dictionary<IntVector, Cell> cells, Vector3 scale);
-	private static int RebuildMesh(Dictionary<IntVector, Cell> cells, Vector3 scale);
-	private static Vector2[] GetFaceUvs(Vector3[] faceVertices, Face face, Vector3 scale);
+	private static void GetMeshBounds(ref Bounds bounds, Dictionary<IntVector, Cell> cells);
+	private static int RebuildMesh(Dictionary<IntVector, Cell> cells, float scale);
+	private static Vector2[] GetFaceUvs(Vector3[] faceVertices, Face face, float scale);
 }
 

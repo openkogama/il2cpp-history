@@ -14,7 +14,6 @@ using UnityEngine.EventSystems;
 public class DesktopPlayModeController : ModeControllerBase, IPlayModeUI, IActivateUIElement, ILeaveEditPlayModeHandler, ICanvasController, IAccessoryPopupHandler
 {
 	// Fields
-	private ILockCursorManager lockCursorManager;
 	[SerializeField]
 	private UIStack uiStack;
 	[SerializeField]
@@ -55,15 +54,16 @@ public class DesktopPlayModeController : ModeControllerBase, IPlayModeUI, IActiv
 	private GoldPurchasedTracker goldPurchasedTracker;
 	[SerializeField]
 	private BoostMenuController boosterMenu;
+	private ILockCursorManager lockCursorManager;
+	public UnityAction OnLeaveEditPlayMode;
 	private RectTransform lobbyStateRect;
 	private InGameMenu inGameMenu;
-	public UnityAction OnLeaveEditPlayMode;
 	private GameObject playModeState;
 
 	// Properties
-	public GameObject InGameUIRoot { get; }
 	public ILockCursorManager LockCursorManager { get; }
-	public override bool InLobbyState { get; set; }
+	public GameObject InGameUIRoot { get; }
+	public override bool IsInPauseMenu { get; set; }
 
 	// Nested types
 	[Serializable]
@@ -97,7 +97,6 @@ public class DesktopPlayModeController : ModeControllerBase, IPlayModeUI, IActiv
 	private void ActivateAdminButton(bool active);
 	private void HideUI();
 	private void ToggleLogicVisibility();
-	private void ToggleHD();
 	private void CreateGUI();
 	private void OnShowTimeAttackFlagDebriefing(int captureTime);
 	private void OnShowTimeAttackFlagCountDown();

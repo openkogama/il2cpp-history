@@ -5,6 +5,7 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using MV.WorldObject.MetaData;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -13,7 +14,12 @@ using UnityEngine.Networking;
 public class MaterialLoader : MonoBehaviour
 {
 	// Fields
-	private const string highResAtlasFileName = "AssetBundles/Atlas/atlas.unity3d";
+	private const string AtlasPath = "AssetBundles/Atlas/";
+	private const string HighResAtlasFileName = "atlashigh";
+	private const string MidResAtlasFileName = "atlasmid";
+	private const string LowResAtlasFileName = "atlaslow";
+	private const string SM3FileEnding = "array.unity3d";
+	private const string SM2FileEnding = ".unity3d";
 	[SerializeField]
 	private Material cubeModelMaterialHigh;
 	[SerializeField]
@@ -33,14 +39,23 @@ public class MaterialLoader : MonoBehaviour
 	[SerializeField]
 	private Shader defaultDiffuseShader;
 	[SerializeField]
-	private Texture2D lowResMaterials;
+	private Texture2DArray veryLowTextureArray;
+	[SerializeField]
+	private Texture2D veryLowTexture;
 	[CompilerGenerated]
 	private Material _CubeModelMaterial_k__BackingField;
 	[CompilerGenerated]
 	private Material _CubeModelMaterialTransp_k__BackingField;
 	private uint atlasHash;
-	private static readonly int MaterialSizeShaderProperty;
-	private static readonly int MaxMipLevelShaderProperty;
+	private bool isUsingSM3Shader;
+	private bool isUsingMobileShader;
+	private TextureQualityLevel selectedQuality;
+	private Texture2DArray highTexture2DArray;
+	private Texture2DArray midTexture2DArray;
+	private Texture2DArray lowTexture2DArray;
+	private Texture2D highTexture2D;
+	private Texture2D midTexture2D;
+	private Texture2D lowTexture2D;
 
 	// Properties
 	public Material CubeModelMaterial { [CompilerGenerated] get; [CompilerGenerated] private set; }
@@ -51,20 +66,19 @@ public class MaterialLoader : MonoBehaviour
 
 	// Constructors
 	public MaterialLoader();
-	static MaterialLoader();
 
 	// Methods
 	protected void Awake();
-	protected void Start();
 	protected void OnDestroy();
 	public bool CheckAtlasIntegrity();
-	private void SetMainTexture(Texture2D texture);
-	private void SetupMaterials();
-	public void Initialize();
+	private void SetMainTexture(Texture texture, bool isGameModeInitialized = true);
+	private bool CalculateIfUsingSM3Shader();
+	private bool CalculateIsUsingMobileShader();
+	private Material PickMaterial(bool opaque);
+	public void SetTextureQuality(TextureQualityLevel quality);
 	private void DownloadWhenPossible();
-	private Texture2D FixTexture(Texture2D source);
 	private void Callback(UnityWebRequest www);
-	private void InitAllMaterials(bool useSM3);
-	private uint Hash(Texture2D tex);
+	private uint Hash(Texture tex);
+	public string MaterialLoaderInfo();
 }
 

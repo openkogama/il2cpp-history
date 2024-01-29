@@ -41,11 +41,13 @@ public class MeshDataPool
 	public static void Create();
 	public static void Destroy();
 	public static void AddVertex(Vector3 vertex);
+	public static void AddVertexRange(Vector3[] vertices);
 	public static Vector3[] GetVertices();
 	public static void AddUv(Vector2 uv);
 	public static Vector2[] GetUvs();
 	public static void AddUvRange(Vector2[] uvRange);
 	public static void AddColor(Color color);
+	public static void AddColorRepeated(Color color, int nrOfRepetitions);
 	public static Color[] GetColors();
 	public static void AddIndex(int index);
 	public static int[] GetIndices();

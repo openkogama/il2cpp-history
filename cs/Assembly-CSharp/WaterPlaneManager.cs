@@ -51,6 +51,6 @@ public class WaterPlaneManager : MonoBehaviour
 	public float GetHeightAboveWaterLevel(float altitude);
 	private void UpdateUnderwaterCameraEffects();
 	private void HandleSkyboxColorChanged(Color newColor);
-	private void HandleQualityChanged(int level);
+	private void HandleQualityChanged(object value);
 }
 

@@ -10,9 +10,10 @@ using System.Runtime.CompilerServices;
 
 public enum Axis
 {
-	All = 0,
-	X = 1,
-	Y = 2,
-	Z = 3
+	X = 0,
+	Y = 1,
+	Z = 2,
+	W = 3,
+	All = 4
 }
 

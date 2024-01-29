@@ -20,8 +20,16 @@ internal static class SharedCubeFunctions
 	public const float Gridsize = 1f;
 	public const float NoneGridSize = 0.0625f;
 	private const float forceEdgeDistance = 0.15f;
+	public static int[][] FaceIndexToVertexIndexes;
+	public static Dictionary<int, int>[] VertexIndexToFaceIndexes;
 	public static IntVector[][] LightTestOffsets;
-	public static IntVector[][] LightTestOffsetsInside;
+	public static Face[][] LightTestNormalTargetFaces;
+	public static Face[] LightTestNormalSecondaryTargetFaces;
+	public static int[][] LightTestOppositeFaceCorners;
+	public static int[][] LightTestSameFaceCorners;
+	public static IntVector[] LightTestInwardsOffset;
+	public static int[] FaceHeightAxis;
+	public static int[] FaceDirectionScalar;
 
 	// Properties
 	public static IntVector CubeConstraint { get; }
