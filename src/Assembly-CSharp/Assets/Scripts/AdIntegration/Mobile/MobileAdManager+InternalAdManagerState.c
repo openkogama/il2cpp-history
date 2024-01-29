@@ -562,20 +562,47 @@ TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
     func_?(&TypeInfo__System__TimeSpan);
     cRam_? = '\x01';
   }
-  val1 = MobileAdManager_InternalAdManagerState_get_TimeSinceLastInterstitial
-                   (this,(MethodInfo *)0x0);
-  if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__TimeSpan);
+  pMVar1 = (this->fields).internalStateInterstitial;
+  if (pMVar1 != (MobileAdManager_InternalStateInterstitial *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__DateTime);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__DateTime);
+    }
+    DVar2 = mscorlib.dll::System::DateTime::DateTime_get_Now((MethodInfo *)0x0);
+    TVar3 = mscorlib.dll::System::DateTime::DateTime_op_Subtraction_1
+                      (DVar2,(DateTime)(pMVar1->fields).prevInterstitialTime._dateData,
+                       (MethodInfo *)0x0);
+    if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__TimeSpan);
+    }
+    pMVar4 = (this->fields).internalStateRewardedAds;
+    if (pMVar4 != (MobileAdManager_InternalStateRewardedAd *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__System__DateTime);
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__DateTime);
+      }
+      DVar2 = mscorlib.dll::System::DateTime::DateTime_get_Now((MethodInfo *)0x0);
+      val2 = mscorlib.dll::System::DateTime::DateTime_op_Subtraction_1
+                       (DVar2,(DateTime)(pMVar4->fields).prevInterstitialTime._dateData,
+                        (MethodInfo *)0x0);
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      iVar5 = mscorlib.dll::System::Math::Math_Min_5
+                        (TVar3._ticks & 0xffffffff,val2._ticks,(MethodInfo *)0x0);
+      return (TimeSpan)iVar5;
+    }
   }
-  TVar1 = MobileAdManager_InternalAdManagerState_get_TimeSinceLastRewarded(this,(MethodInfo *)0x0);
-  pMVar2 = (Math__Class *)((ulonglong)TVar1._ticks >> 0x20);
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    pMVar2 = TypeInfo__System__Math;
-    func_?();
-  }
-  iVar3 = mscorlib.dll::System::Math::Math_Min_5
-                    (val1._ticks,CONCAT44(pMVar2,(int)TVar1._ticks),(MethodInfo *)0x0);
-  return (TimeSpan)iVar3;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  TVar3._ticks = (*pcVar6)();
+  return (TimeSpan)TVar3._ticks;
 }
 
 

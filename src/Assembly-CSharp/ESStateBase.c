@@ -318,12 +318,10 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_TintObjectsOnMouseOver_1
                        ((WorldObjectClientRef_1_System_Object_ *)pWVar1,
                         MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                        );
-    if (((pOVar2 == (Object *)0x0) || (e == (EditorStateMachine *)0x0)) ||
-       (pSVar3 = (e->fields).selectionController, pSVar3 == (SelectionController *)0x0))
-    goto code_?;
-    bVar4 = SelectionController::SelectionController_IsSelected
-                      (pSVar3,(int32_t)pOVar2[1].klass,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
+    if ((pOVar2 == (Object *)0x0) || (e == (EditorStateMachine *)0x0)) goto code_?;
+    bVar3 = EditorStateMachine::EditorStateMachine_IsSelected
+                      (e,(int32_t)pOVar2[1].klass,(MethodInfo *)0x0);
+    if (bVar3 != 0) {
       pWVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRefNullRef
                          ((MethodInfo *)0x0);
       (this->fields).tintedWo = pWVar1;
@@ -331,12 +329,12 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_TintObjectsOnMouseOver_1
     }
   }
   if (pickSuccess == 0) {
-    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (pMVar5 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    pMVar6 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (pMVar5,hit._36_4_,(MethodInfo *)0x0);
-    if (pMVar6 != (MVWorldObject *)0x0) {
-      (*pMVar6->klass[1].vtable.DeepCopy.methodPtr)(pMVar6,pMVar6->klass[1].vtable.DeepCopy.method);
+    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (pMVar4 == (MVWorldObjectClientManager *)0x0) goto code_?;
+    pMVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (pMVar4,hit._36_4_,(MethodInfo *)0x0);
+    if (pMVar5 != (MVWorldObject *)0x0) {
+      (*pMVar5->klass[1].vtable.DeepCopy.methodPtr)(pMVar5,pMVar5->klass[1].vtable.DeepCopy.method);
       ESStateBase_DeTintCurrent(this,(MethodInfo *)0x0);
       return;
     }
@@ -349,29 +347,27 @@ code_?:
             ((MethodInfo *)0x0);
   if ((hit._60_4_ & 8) == 0) {
     if (e == (EditorStateMachine *)0x0) goto code_?;
-    iVar7 = EditorStateMachine::EditorStateMachine_get_ParentGroupID(e,(MethodInfo *)0x0);
+    iVar6 = EditorStateMachine::EditorStateMachine_get_ParentGroupID(e,(MethodInfo *)0x0);
     id = 0;
-    iVar7 = MVGroup::MVGroup_GetParentBelow(iVar7,hit._36_4_,(MethodInfo *)0x0);
-    if (iVar7 == -1) {
+    iVar6 = MVGroup::MVGroup_GetParentBelow(iVar6,hit._36_4_,(MethodInfo *)0x0);
+    if (iVar6 == -1) {
       return;
     }
-    pSVar3 = (e->fields).selectionController;
-    if (pSVar3 == (SelectionController *)0x0) goto code_?;
-    bVar4 = SelectionController::SelectionController_IsSelected(pSVar3,iVar7,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
+    bVar3 = EditorStateMachine::EditorStateMachine_IsSelected(e,iVar6,(MethodInfo *)0x0);
+    if (bVar3 != 0) {
       return;
     }
-    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (pMVar5 == (MVWorldObjectClientManager *)0x0) goto code_?;
+    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (pMVar4 == (MVWorldObjectClientManager *)0x0) goto code_?;
   }
   else {
-    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (pMVar5 == (MVWorldObjectClientManager *)0x0) goto code_?;
+    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (pMVar4 == (MVWorldObjectClientManager *)0x0) goto code_?;
     method_00 = (MethodInfo *)0x0;
     id = hit._36_4_;
   }
   pWVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
-                     (pMVar5,id,method_00);
+                     (pMVar4,id,method_00);
   if (pWVar1 != (WorldObjectClientRef *)0x0) {
     pOVar2 = WorldObjectClientRef`1[System::Object]::
              WorldObjectClientRef_1_System_Object__get_WorldObjectClient
@@ -381,35 +377,35 @@ code_?:
     if (pOVar2 == (Object *)0x0) {
       return;
     }
-    pWVar8 = (this->fields).tintedWo;
-    if (pWVar8 != (WorldObjectClientRef *)0x0) {
+    pWVar7 = (this->fields).tintedWo;
+    if (pWVar7 != (WorldObjectClientRef *)0x0) {
       pOVar2 = WorldObjectClientRef`1[System::Object]::
                WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                         ((WorldObjectClientRef_1_System_Object_ *)pWVar8,
+                         ((WorldObjectClientRef_1_System_Object_ *)pWVar7,
                           MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                          );
       if (pOVar2 != (Object *)0x0) {
-        pWVar8 = (this->fields).tintedWo;
-        if ((pWVar8 == (WorldObjectClientRef *)0x0) ||
+        pWVar7 = (this->fields).tintedWo;
+        if ((pWVar7 == (WorldObjectClientRef *)0x0) ||
            (pOVar2 = WorldObjectClientRef`1[System::Object]::
                      WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                               ((WorldObjectClientRef_1_System_Object_ *)pWVar8,
+                               ((WorldObjectClientRef_1_System_Object_ *)pWVar7,
                                 MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                                ), pOVar2 == (Object *)0x0)) goto code_?;
-        pOVar9 = pOVar2[1].klass;
+        pOVar8 = pOVar2[1].klass;
         pOVar2 = WorldObjectClientRef`1[System::Object]::
                  WorldObjectClientRef_1_System_Object__get_WorldObjectClient
                            ((WorldObjectClientRef_1_System_Object_ *)pWVar1,
                             MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                            );
         if (pOVar2 == (Object *)0x0) goto code_?;
-        if (pOVar9 != pOVar2[1].klass) goto code_?;
+        if (pOVar8 != pOVar2[1].klass) goto code_?;
       }
-      pWVar8 = (this->fields).tintedWo;
-      if (pWVar8 != (WorldObjectClientRef *)0x0) {
+      pWVar7 = (this->fields).tintedWo;
+      if (pWVar7 != (WorldObjectClientRef *)0x0) {
         pOVar2 = WorldObjectClientRef`1[System::Object]::
                  WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                           ((WorldObjectClientRef_1_System_Object_ *)pWVar8,
+                           ((WorldObjectClientRef_1_System_Object_ *)pWVar7,
                             MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                            );
         if (pOVar2 != (Object *)0x0) {
@@ -424,7 +420,9 @@ code_?:
                                ((WorldObjectClientRef_1_System_Object_ *)pWVar1,
                                 MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                                ), pOVar2 != (Object *)0x0)) {
-          func_?(0x45,pOVar2,_UNK_?,_UNK_?,_UNK_?,_UNK_?);
+          (*(code *)pOVar2->klass[3]._0.implementedInterfaces)
+                    (pOVar2,_UNK_?,_UNK_?,_UNK_?,_UNK_?,
+                     pOVar2->klass[3].interfaceOffsets);
           return;
         }
       }
@@ -432,8 +430,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

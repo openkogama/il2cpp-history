@@ -185,7 +185,7 @@ code_?:
       fVar20 = (float)fVar8;
       fStack_33 = (2.38221e-44 -
                   ((float)((uint)(fVar20 * fVar20) ^
-                          __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
                   + fVar20 + fVar20)) * (float)auStack_6._0_4_;
       if ((fStack_33 < (this->fields).sliperyValMin) ||
          (((cStack_24 != '\0' && (_UNK_? < waterProximity)) || (bStack_27 != 0)))) {
@@ -457,7 +457,7 @@ float Assembly-CSharp.dll::JumpState::JumpState_GetSliperyFactor
         groundState = (MVGroundState *)
                       ((_UNK_? -
                        ((float)((uint)(fVar4 * fVar4) ^
-                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                ) + fVar4 + fVar4)) * (float)dVar1);
         if (((float)groundState < (this->fields).sliperyValMin) ||
            (((canWaterJump != 0 && (_UNK_? < waterProximity)) || (isDoingAirJump != 0)))) {
@@ -535,38 +535,59 @@ void Assembly-CSharp.dll::JumpState::JumpState_HandleJumpBoost(JumpState *this,M
     cRam_? = '\x01';
   }
   (this->fields).jumpHeight = 1.0;
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (((this_01 != (MVNetworkGame *)0x0) &&
-      (pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0),
-      pMVar1 != (MVLocalPlayer *)0x0)) &&
-     (this_00 = (pMVar1->fields).boostController, this_00 != (BoostController *)0x0)) {
-    this_02 = (Boost__Class *)&stack0xfffffff8;
-    bVar2 = BoostController::BoostController_TryGetActiveBoost
-                      (this_00,BoostType__Enum_JumpPowerFloatMultiplier,(Boost **)this_02,
-                       (MethodInfo *)0x0);
-    if (bVar2 == 0) {
-      return;
-    }
-    if (this_02 != (Boost__Class *)0x0) {
-      pOStack3 = Boost::Boost_get_Value((Boost *)this_02,(MethodInfo *)0x0);
-      uVar4 = CONCAT44(TypeInfo__System__Int32,pOStack3);
-      if (pOStack3 != (Object *)0x0) {
-        if ((pOStack3->klass->_0).element_class ==
-            (TypeInfo__System__Int32->_0).element_class) {
-          piVar5 = (int *)func_?();
-          (this->fields).jumpHeight = (float)*piVar5 / _UNK_? + _UNK_?;
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (this_00 != (MVNetworkGame *)0x0) {
+    pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+    if ((pMVar1 != (MVLocalPlayer *)0x0) &&
+       (pBVar2 = (pMVar1->fields).boostController, pBVar2 != (BoostController *)0x0)) {
+      if (cRam_? == '\0') {
+        func_?();
+        func_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Item_BoostType_
+                       );
+        cRam_? = '\x01';
+      }
+      pDVar3 = (pBVar2->fields).activeBoosts;
+      if (pDVar3 != (Dictionary_2_BoostType_Boost_ *)0x0) {
+        bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
+                          ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar3,5,
+                           MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__ContainsKey_BoostType_
+                          );
+        if (bVar4 == 0) {
+          func_?();
           return;
         }
-        goto code_?;
+        pDVar3 = (pBVar2->fields).activeBoosts;
+        if (pDVar3 != (Dictionary_2_BoostType_Boost_ *)0x0) {
+          this_01 = (Boost *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                             Int32Enum,System::Object]::
+                             Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                       ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar3,5,
+                                        MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Item_BoostType_
+                                       );
+          func_?();
+          if (this_01 != (Boost *)0x0) {
+            pOVar5 = Boost::Boost_get_Value(this_01,(MethodInfo *)0x0);
+            if (pOVar5 != (Object *)0x0) {
+              if ((pOVar5->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class)
+              {
+                piVar6 = (int *)func_?();
+                (this->fields).jumpHeight = (float)*piVar6 / _UNK_? + _UNK_?;
+                return;
+              }
+              goto code_?;
+            }
+          }
+        }
       }
     }
   }
-  uVar4 = func_?();
+  pOVar5 = (Object *)func_?();
 code_?:
-  _puStack00000010 = uVar4;
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?(pOVar5);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -781,7 +802,7 @@ float Assembly-CSharp.dll::JumpState::JumpState_SpreadFunction
 
 {
   return x + x + (float)((uint)(x * x) ^
-                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
 }
 
 
@@ -936,7 +957,6 @@ void Assembly-CSharp.dll::JumpState::JumpState__ctor
     func_?(&TypeInfo__System__Collections__Generic__List<MVControllerColliderHit>);
     cRam_? = '\x01';
   }
-  value = this;
   (this->fields).extraHeight = 4.1;
   (this->fields).jumpHeight = 1.0;
   (this->fields).sliperyValMin = 0.3;
@@ -956,92 +976,99 @@ void Assembly-CSharp.dll::JumpState::JumpState__ctor
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
   fVar2 = (pVVar1->upVector).y;
   fVar3 = (pVVar1->upVector).z;
-  (value->fields).jumpDir.x = (pVVar1->upVector).x;
-  (value->fields).jumpDir.y = fVar2;
-  (value->fields).jumpDir.z = fVar3;
-  this_01 = (List_1_MVControllerColliderHit_ *)
+  (this->fields).jumpDir.x = (pVVar1->upVector).x;
+  (this->fields).jumpDir.y = fVar2;
+  (this->fields).jumpDir.z = fVar3;
+  this_00 = (List_1_MVControllerColliderHit_ *)
             func_?(TypeInfo__System__Collections__Generic__List<MVControllerColliderHit>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__List__);
-  method_00 = (MethodInfo *)&(value->fields).wallJumpHits;
-  (value->fields).wallJumpHits = this_01;
-  func_?(method_00,this_01);
+  method_00 = (MethodInfo *)&(this->fields).wallJumpHits;
+  (this->fields).wallJumpHits = this_00;
+  func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)value,ExceptionArgument__Enum_obj,method_00);
-  this_00 = skillDataManager;
-  (value->fields).regularButtonDownTimeLimit = regularButtonDownTimeLimit;
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  (this->fields).regularButtonDownTimeLimit = regularButtonDownTimeLimit;
   if (skillDataManager != (WorldObjectSkillDataManager *)0x0) {
     bVar4 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
                       (skillDataManager,StringLiteral_JumpHeight,(MethodInfo *)0x0);
     fVar3 = _UNK_?;
     if (bVar4 != 0) {
-      skillDataManager = (WorldObjectSkillDataManager *)0x0;
-      regularButtonDownTimeLimit = (float)StringLiteral_JumpHeight;
-      this = (JumpState *)this_00;
       iVar5 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_GetSkillIntValue
-                        (this_00,StringLiteral_JumpHeight,(MethodInfo *)0x0);
+                        (skillDataManager,StringLiteral_JumpHeight,(MethodInfo *)0x0);
       fVar3 = (float)iVar5 / _UNK_?;
     }
-    (value->fields).jumpVelocityMultiplier = fVar3;
-    in_stack_6 = &UNK_?;
-    pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar7 != (MVNetworkGame *)0x0) {
-      in_stack_6 = &UNK_?;
-      pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar7,(MethodInfo *)0x0);
-      if (pMVar8 != (MVLocalPlayer *)0x0) {
-        pBVar9 = (pMVar8->fields).boostController;
-        this = (JumpState *)func_?();
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  ((NavMesh_OnNavMeshPreUpdate *)this,(Object *)value,
-                   MethodInfo__JumpState__HandleJumpBoost__,(MethodInfo *)0x0);
-        if (pBVar9 != (BoostController *)0x0) {
-          BoostController::BoostController_SubscribeToBoostChanged
-                    (pBVar9,BoostType__Enum_JumpPowerFloatMultiplier,(Action *)this,
-                     (MethodInfo *)0x0);
+    (this->fields).jumpVelocityMultiplier = fVar3;
+    pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar6 != (MVNetworkGame *)0x0) &&
+       (pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar6,(MethodInfo *)0x0),
+       pMVar7 != (MVLocalPlayer *)0x0)) {
+      pBVar8 = (pMVar7->fields).boostController;
+      this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_01,(Object *)this,MethodInfo__JumpState__HandleJumpBoost__,(MethodInfo *)0x0);
+      if (pBVar8 != (BoostController *)0x0) {
+        BoostController::BoostController_SubscribeToBoostChanged
+                  (pBVar8,BoostType__Enum_JumpPowerFloatMultiplier,(Action *)0x0,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        (this->fields).jumpHeight = 1.0;
+        pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (((pMVar6 != (MVNetworkGame *)0x0) &&
+            (pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar6,(MethodInfo *)0x0),
+            pMVar7 != (MVLocalPlayer *)0x0)) &&
+           (pBVar8 = (pMVar7->fields).boostController, pBVar8 != (BoostController *)0x0)) {
           if (cRam_? == '\0') {
+            func_?();
             func_?();
             cRam_? = '\x01';
           }
-          this = (JumpState *)0x0;
-          (value->fields).jumpHeight = 1.0;
-          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if (pMVar7 != (MVNetworkGame *)0x0) {
-            this = (JumpState *)0x0;
-            pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar7,(MethodInfo *)0x0);
-            if ((pMVar8 != (MVLocalPlayer *)0x0) &&
-               (pBVar9 = (pMVar8->fields).boostController, pBVar9 != (BoostController *)0x0)) {
-              skillDataManager = (WorldObjectSkillDataManager *)0x0;
-              regularButtonDownTimeLimit = (float)&this;
-              this = (JumpState *)0x5;
-              bVar4 = BoostController::BoostController_TryGetActiveBoost
-                                (pBVar9,BoostType__Enum_JumpPowerFloatMultiplier,
-                                 (Boost **)regularButtonDownTimeLimit,(MethodInfo *)0x0);
-              if (bVar4 == 0) {
+          pDVar9 = (pBVar8->fields).activeBoosts;
+          if (pDVar9 != (Dictionary_2_BoostType_Boost_ *)0x0) {
+            bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Int32Enum,System::Single]::
+                    Dictionary_2_System_Int32Enum_System_Single__ContainsKey
+                              ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar9,5,
+                               MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__ContainsKey_BoostType_
+                              );
+            if (bVar4 == 0) {
+              func_?();
 code_?:
-                bVar4 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
-                                  (this_00,StringLiteral_DoubleJump,(MethodInfo *)0x0);
-                (value->fields).airJumpsAllowed = (uint)bVar4;
-                bVar4 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
-                                  (this_00,StringLiteral_CanWallJumpAnySurface,(MethodInfo *)0x0);
-                (value->fields).canWallJumpAnySurface = bVar4;
-                return;
-              }
-              if (this != (JumpState *)0x0) {
-                in_stack_6 = &UNK_?;
-                pOVar10 = Boost::Boost_get_Value((Boost *)this,(MethodInfo *)0x0);
-                if (pOVar10 != (Object *)0x0) {
-                  if ((pOVar10->klass->_0).element_class ==
-                      (TypeInfo__System__Int32->_0).element_class) {
-                    piVar11 = (int *)func_?();
-                    (value->fields).jumpHeight = (float)*piVar11 / _UNK_? + _UNK_?;
-                    goto code_?;
-                  }
+              bVar4 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
+                                (skillDataManager,StringLiteral_DoubleJump,(MethodInfo *)0x0);
+              (this->fields).airJumpsAllowed = (uint)bVar4;
+              bVar4 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
+                                (skillDataManager,StringLiteral_CanWallJumpAnySurface,
+                                 (MethodInfo *)0x0);
+              (this->fields).canWallJumpAnySurface = bVar4;
+              return;
+            }
+            pDVar9 = (pBVar8->fields).activeBoosts;
+            if (pDVar9 != (Dictionary_2_BoostType_Boost_ *)0x0) {
+              this_02 = (Boost *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                 Int32Enum,System::Object]::
+                                 Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                           ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar9,5
+                                            ,
+                                            MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Item_BoostType_
+                                           );
+              func_?();
+              if ((this_02 != (Boost *)0x0) &&
+                 (pOVar10 = Boost::Boost_get_Value(this_02,(MethodInfo *)0x0),
+                 pOVar10 != (Object *)0x0)) {
+                if ((pOVar10->klass->_0).element_class ==
+                    (TypeInfo__System__Int32->_0).element_class) {
+                  piVar11 = (int *)func_?();
+                  (this->fields).jumpHeight = (float)*piVar11 / _UNK_? + _UNK_?;
                   goto code_?;
                 }
+                goto code_?;
               }
             }
           }

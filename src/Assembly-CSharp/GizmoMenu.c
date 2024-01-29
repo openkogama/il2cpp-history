@@ -429,10 +429,11 @@ void Assembly-CSharp.dll::GizmoMenu::GizmoMenu_CloneRoot(GizmoMenu *this,MethodI
     func_?(&TypeInfo__GizmoMenu____c);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__GizmoMenu____c__DisplayClass22_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__GizmoMenu____c__DisplayClass22_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
             ((Component *)this,(MethodInfo *)0x0);
   if ((TypeInfo__GizmoMenu____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -466,22 +467,22 @@ void Assembly-CSharp.dll::GizmoMenu::GizmoMenu_CloneRoot(GizmoMenu *this,MethodI
              ,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (this_00 != (MVWorldObjectClientManager *)0x0) {
-    pOStack1 =
-         (Object__Class *)
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if (this_01 != (MVWorldObjectClientManager *)0x0) {
+    pMStack1 =
          MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRoot
-                   (this_00,(this->fields).woID,(MethodInfo *)0x0);
-    if (value != (Object *)0x0) {
-      value[1].klass = pOStack1;
-      pOStack2 = value + 1;
+                   (this_01,(this->fields).woID,(MethodInfo *)0x0);
+    if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+      (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)pMStack1;
+      pUStack2 = &this_00->fields;
       func_?();
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
       callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this_00
+                 ,
                  MethodInfo__GizmoMenu____c__DisplayClass22_0___CloneRoot_b__1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy

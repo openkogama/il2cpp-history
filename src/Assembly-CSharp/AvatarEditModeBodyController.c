@@ -1082,47 +1082,42 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
     func_?(&StringLiteral_Action_failed_);
     cRam_? = '\x01';
   }
-  this_00 = (MVNetworkGame *)
-            func_?(TypeInfo__AvatarEditModeBodyController____c__DisplayClass43_0);
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor
-            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_00,(MethodInfo *)0x0);
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  this_02 = (UnityAction_2_System_Object_System_Object_ *)
+  method_00 = TypeInfo__AvatarEditModeBodyController____c__DisplayClass43_0;
+  value = (MVNetworkGame *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  this_01 = (UnityAction_2_System_Object_System_Object_ *)
             func_?(TypeInfo__System__EventHandler<ScreenshotUploadedEventArgs>);
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
   UnityAction_2_System_Object_System_Object___ctor
-            (this_02,(Object *)this,
+            (this_01,(Object *)this,
              MethodInfo__AvatarEditModeBodyController__MVNetworGame_ScreenshotUploadedHandler_System__Object__ScreenshotUploadedEventArgs_
              ,(MethodInfo *)0x0);
-  if (this_01 != (MVNetworkGame *)0x0) {
+  if (this_00 != (MVNetworkGame *)0x0) {
     MVNetworkGame::MVNetworkGame_remove_ScreenshotUploaded
-              (this_01,(EventHandler_1_ScreenshotUploadedEventArgs_ *)this_02,(MethodInfo *)0x0);
-    pNVar1 = (this->fields).notificationPopup;
+              (this_00,(EventHandler_1_ScreenshotUploadedEventArgs_ *)this_01,(MethodInfo *)0x0);
+    original = (this->fields).notificationPopup;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pLVar2 = (List_1_System_Object_ *)
+    pEVar1 = (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)pNVar1,
+                       ((Object *)original,
                         NotificationPopup_MethodInfo__UnityEngine__Object__Instantiate<NotificationPopup>_NotificationPopup_
                        );
-    if (this_00 != (MVNetworkGame *)0x0) {
-      ((UxmlObjectAttributeDescription_1_System_Collections_Generic_List_1_System_Object___Fields *)
-      &(this_00->fields).ReceivedItemFromQuery)->_defaultValue_k__BackingField = pLVar2;
+    if (value != (MVNetworkGame *)0x0) {
+      (value->fields).ReceivedItemFromQuery = pEVar1;
       func_?();
       if (UNK_? == '\0') {
-        pNVar1 = (NotificationPopup *)
-                 ((UxmlObjectAttributeDescription_1_System_Collections_Generic_List_1_System_Object___Fields
-                   *)&(this_00->fields).ReceivedItemFromQuery)->_defaultValue_k__BackingField;
-        if (pNVar1 != (NotificationPopup *)0x0) {
+        pEVar1 = (value->fields).ReceivedItemFromQuery;
+        if (pEVar1 != (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
           method = (MethodInfo *)StringLiteral_Action_failed_;
           e = (ScreenshotUploadedEventArgs *)StringLiteral_There_was_a_server_communication;
 code_?:
           NotificationPopup::NotificationPopup_Initialize
-                    (pNVar1,(String *)e,(String *)method,(MethodInfo *)0x0);
-          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    ((NotificationPopup *)pEVar1,(String *)e,(String *)method,(MethodInfo *)0x0);
+          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
           if ((TypeInfo__AvatarEditModeBodyController____c->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
@@ -1133,12 +1128,12 @@ code_?:
             if ((TypeInfo__AvatarEditModeBodyController____c->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            pAVar4 = TypeInfo__AvatarEditModeBodyController____c->static_fields->__9;
+            pAVar3 = TypeInfo__AvatarEditModeBodyController____c->static_fields->__9;
             callbackFunction_00 = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
             Object]::UnityAction_2_System_Object_System_Object___ctor
                       ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,
-                       (Object *)pAVar4,
+                       (Object *)pAVar3,
                        MethodInfo__AvatarEditModeBodyController____c___MVNetworGame_ScreenshotUploadedHandler_b__43_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                        ,(MethodInfo *)0x0);
             TypeInfo__AvatarEditModeBodyController____c->static_fields->__9__43_1 =
@@ -1151,25 +1146,25 @@ code_?:
           }
           UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
           ExecuteEvents_ExecuteHierarchy
-                    (pGVar3,(BaseEventData *)0x0,
+                    (pGVar2,(BaseEventData *)0x0,
                      (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,
                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                     );
-          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
           callbackFunction_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
                     ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_01,
-                     (Object *)this_01,
+                     (Object *)this_00,
                      MethodInfo__AvatarEditModeBodyController____c__DisplayClass43_0___MVNetworGame_ScreenshotUploadedHandler_b__2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
           UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
           ExecuteEvents_ExecuteHierarchy
-                    (pGVar3,(BaseEventData *)0x0,callbackFunction_01,
+                    (pGVar2,(BaseEventData *)0x0,callbackFunction_01,
                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                     );
-          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
           if ((TypeInfo__AvatarEditModeBodyController____c->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
@@ -1180,13 +1175,13 @@ code_?:
             if ((TypeInfo__AvatarEditModeBodyController____c->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            pAVar4 = TypeInfo__AvatarEditModeBodyController____c->static_fields->__9;
+            pAVar3 = TypeInfo__AvatarEditModeBodyController____c->static_fields->__9;
             callbackFunction_02 =
                  (ExecuteEvents_EventFunction_1_IEditStateCommands_ *)func_?();
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
             Object]::UnityAction_2_System_Object_System_Object___ctor
                       ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_02,
-                       (Object *)pAVar4,
+                       (Object *)pAVar3,
                        MethodInfo__AvatarEditModeBodyController____c___MVNetworGame_ScreenshotUploadedHandler_b__43_3_IEditStateCommands__UnityEngine__EventSystems__BaseEventData_
                        ,(MethodInfo *)0x0);
             TypeInfo__AvatarEditModeBodyController____c->static_fields->__9__43_3 =
@@ -1199,7 +1194,7 @@ code_?:
           }
           UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
           ExecuteEvents_ExecuteHierarchy
-                    (pGVar3,(BaseEventData *)0x0,
+                    (pGVar2,(BaseEventData *)0x0,
                      (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_02,
                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IEditStateCommands>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IEditStateCommands>_
                     );
@@ -1209,31 +1204,31 @@ code_?:
       else {
         if ((this->fields).playingPurchaseSoundAfterScreenshot != 0) {
           (this->fields).playingPurchaseSoundAfterScreenshot = 0;
-          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
           if ((TypeInfo__AvatarEditModeBodyController____c->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           callbackFunction = TypeInfo__AvatarEditModeBodyController____c->static_fields->__9__43_0;
           if (callbackFunction == (ExecuteEvents_EventFunction_1_IPurchaseSoundManager_ *)0x0) {
-            this_00 = this_01;
+            value = this_00;
             if ((TypeInfo__AvatarEditModeBodyController____c->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
-              this_00 = this_01;
+              value = this_00;
             }
-            pAVar4 = TypeInfo__AvatarEditModeBodyController____c->static_fields->__9;
+            pAVar3 = TypeInfo__AvatarEditModeBodyController____c->static_fields->__9;
             callbackFunction =
                  (ExecuteEvents_EventFunction_1_IPurchaseSoundManager_ *)func_?();
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
             Object]::UnityAction_2_System_Object_System_Object___ctor
                       ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
-                       (Object *)pAVar4,
+                       (Object *)pAVar3,
                        MethodInfo__AvatarEditModeBodyController____c___MVNetworGame_ScreenshotUploadedHandler_b__43_0_UnityEngine__EventSystems__IPurchaseSoundManager__UnityEngine__EventSystems__BaseEventData_
                        ,(MethodInfo *)0x0);
             TypeInfo__AvatarEditModeBodyController____c->static_fields->__9__43_0 = callbackFunction
             ;
             func_?();
-            this_01 = this_00;
+            this_00 = value;
           }
           if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
               0) {
@@ -1241,15 +1236,13 @@ code_?:
           }
           UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
           ExecuteEvents_ExecuteHierarchy
-                    (pGVar3,(BaseEventData *)0x0,
+                    (pGVar2,(BaseEventData *)0x0,
                      (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPurchaseSoundManager>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPurchaseSoundManager>_
                     );
         }
-        pNVar1 = (NotificationPopup *)
-                 ((UxmlObjectAttributeDescription_1_System_Collections_Generic_List_1_System_Object___Fields
-                   *)&(this_00->fields).ReceivedItemFromQuery)->_defaultValue_k__BackingField;
-        if (pNVar1 != (NotificationPopup *)0x0) {
+        pEVar1 = (value->fields).ReceivedItemFromQuery;
+        if (pEVar1 != (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
           method = (MethodInfo *)StringLiteral_Success_;
           e = (ScreenshotUploadedEventArgs *)(this->fields).currentActionSuccessMessage;
           goto code_?;
@@ -1258,8 +1251,8 @@ code_?:
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1443,33 +1436,32 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
     func_?(&StringLiteral_Avatar_purchase_response__);
     cRam_? = '\x01';
   }
-  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-            func_?(TypeInfo__AvatarEditModeBodyController____c__DisplayClass37_0);
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-  if (this_00 == (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+  method_00 = TypeInfo__AvatarEditModeBodyController____c__DisplayClass37_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  if (value == (Object *)0x0) {
 code_?:
     func_?();
   }
   else {
-    this_00[1].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)this;
-    (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)returnCode;
-    func_?(this_00 + 1,this);
+    value[1].monitor = (MonitorData *)this;
+    value[1].klass = (Object__Class *)returnCode;
+    func_?(&value[1].monitor,this);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
     pAVar2 = (pMVar1->fields).PurchaseProductResponseHandler;
-    this_01 = (UnityAction_2_System_Int32_System_Int32_ *)
+    this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
               func_?(
                              TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
                              );
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
     UnityAction_2_System_Int32_System_Int32___ctor
-              (this_01,(Object *)this,
+              (this_00,(Object *)this,
                MethodInfo__AvatarEditModeBodyController__OnProductPurchaseAvatarResponse_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                ,(MethodInfo *)0x0);
     pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar2,(Delegate *)this_01,(MethodInfo *)0x0);
+                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
     if (pDVar3 == (Delegate *)0x0) {
       (pMVar1->fields).PurchaseProductResponseHandler =
            (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
@@ -1520,7 +1512,7 @@ code_?:
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)pSVar6,(MethodInfo *)0x0);
-      if ((this_00->fields)._._defaultValue_k__BackingField == (List_1_System_Object_ *)0x0) {
+      if (value[1].klass == (Object__Class *)0x0) {
         return;
       }
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
@@ -1528,15 +1520,15 @@ code_?:
          (pWVar7 = (pMVar1->fields).worldNetwork, pWVar7 == (WorldNetwork *)0x0))
       goto code_?;
       pEVar8 = (pWVar7->fields)._.InitializedGameQueryData;
-      this_02 = (UnityAction_2_System_Object_System_Object_ *)
+      this_01 = (UnityAction_2_System_Object_System_Object_ *)
                 func_?(TypeInfo__System__EventHandler<InitializedGameQueryDataEventArgs>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                (this_02,(Object *)pCVar4,
+                (this_01,(Object *)pCVar4,
                  MethodInfo__AvatarEditModeBodyController__InitializedPurchasedAvatar_System__Object__InitializedGameQueryDataEventArgs_
                  ,(MethodInfo *)0x0);
       pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pEVar8,(Delegate *)this_02,(MethodInfo *)0x0);
+                         ((Delegate *)pEVar8,(Delegate *)this_01,(MethodInfo *)0x0);
       if (pDVar3 == (Delegate *)0x0) {
         (pWVar7->fields)._.InitializedGameQueryData =
              (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0;
@@ -1548,8 +1540,7 @@ code_?:
         callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,
-                   (Object *)this_00,
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
                    MethodInfo__AvatarEditModeBodyController____c__DisplayClass37_0___OnProductPurchaseAvatarResponse_b__1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
@@ -1666,28 +1657,28 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
   if (confirmed == 0) {
     return;
   }
-  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+  method_00 = TypeInfo__AvatarEditModeBodyController____c__DisplayClass36_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   original = (this->fields).pleaseWaitPopupPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pLVar3 = (List_1_System_Object_ *)
+  pOVar3 = (Object__Class *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)original,
                       PleaseWaitPopup_MethodInfo__UnityEngine__Object__Instantiate<PleaseWaitPopup>_PleaseWaitPopup_
                      );
-  if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-    (this_00->fields)._._defaultValue_k__BackingField = pLVar3;
+  if (value != (Object *)0x0) {
+    value[1].klass = pOVar3;
     func_?();
     pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
     callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this_00,
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
                MethodInfo__AvatarEditModeBodyController____c__DisplayClass36_0___OnPurchaseAvatarConfirmation_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
@@ -1700,14 +1691,14 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
     pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar4 != (MVNetworkGame *)0x0) {
       pAVar5 = (pMVar4->fields).PurchaseProductResponseHandler;
-      this_01 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
+      this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
       UnityAction_2_System_Int32_System_Int32___ctor
-                (this_01,(Object *)&UNK_?,
+                (this_00,(Object *)&UNK_?,
                  MethodInfo__AvatarEditModeBodyController__OnProductPurchaseAvatarResponse_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                  ,(MethodInfo *)0x0);
       pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar5,(Delegate *)this_01,(MethodInfo *)0x0);
+                         ((Delegate *)pAVar5,(Delegate *)this_00,(MethodInfo *)0x0);
       if (pDVar6 == (Delegate *)0x0) {
         (pMVar4->fields).PurchaseProductResponseHandler =
              (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
@@ -1727,14 +1718,14 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
       if ((pMVar4 != (MVNetworkGame *)0x0) &&
          (pWVar8 = (pMVar4->fields).worldNetwork, pWVar8 != (WorldNetwork *)0x0)) {
         pEVar9 = (pWVar8->fields)._.InitializedGameQueryData;
-        this_02 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+        this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (this_02,(Object *)0x0,
+                  (this_01,(Object *)0x0,
                    MethodInfo__AvatarEditModeBodyController__InitializedPurchasedAvatar_System__Object__InitializedGameQueryDataEventArgs_
                    ,(MethodInfo *)0x0);
         pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pEVar9,(Delegate *)this_02,(MethodInfo *)0x0);
+                           ((Delegate *)pEVar9,(Delegate *)this_01,(MethodInfo *)0x0);
         if (pDVar6 == (Delegate *)0x0) {
           (pWVar8->fields)._.InitializedGameQueryData =
                (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0;
@@ -1748,11 +1739,11 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
           if (iVar7 == 0) goto code_?;
         }
         func_?();
-        this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+        this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                             ((MethodInfo *)0x0);
-        if ((iRam_? != 0) && (this_03 != (MVNetworkGame_OperationRequests *)0x0)) {
+        if ((iRam_? != 0) && (this_02 != (MVNetworkGame_OperationRequests *)0x0)) {
           MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PurchaseAvatar
-                    (this_03,*(int32_t *)(iRam_? + 0x18),(MethodInfo *)0x0);
+                    (this_02,*(int32_t *)(iRam_? + 0x18),(MethodInfo *)0x0);
           return;
         }
       }
@@ -2197,25 +2188,24 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
     func_?(&TypeInfo__AvatarEditModeBodyController____c__DisplayClass25_0);
     cRam_? = '\x01';
   }
-  this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-            func_?(TypeInfo__AvatarEditModeBodyController____c__DisplayClass25_0);
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-  pRVar1 = (this->fields).resetAvatarHandler;
+  method_00 = TypeInfo__AvatarEditModeBodyController____c__DisplayClass25_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  original = (this->fields).resetAvatarHandler;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pLVar2 = (List_1_System_Object_ *)
+  pOVar1 = (Object__Class *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                     ((Object *)pRVar1,
+                     ((Object *)original,
                       ResetAvatarHandler_MethodInfo__UnityEngine__Object__Instantiate<ResetAvatarHandler>_ResetAvatarHandler_
                      );
-  if (this_01 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-    (this_01->fields)._._defaultValue_k__BackingField = pLVar2;
-    func_?(&this_01->fields,pLVar2);
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
+  if (value != (Object *)0x0) {
+    value[1].klass = pOVar1;
+    func_?(value + 1,pOVar1);
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
     callbackFunction =
          (ExecuteEvents_EventFunction_1_System_Object_ *)
          func_?(
@@ -2223,17 +2213,17 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
                         );
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_01,
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
                MethodInfo__AvatarEditModeBodyController____c__DisplayClass25_0___ResetCurrentBody_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,callbackFunction,
+              (pGVar2,(BaseEventData *)0x0,callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
-    pRVar1 = (ResetAvatarHandler *)(this_01->fields)._._defaultValue_k__BackingField;
+    pOVar1 = value[1].klass;
     if (cRam_? == '\0') {
       func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
       cRam_? = '\x01';
@@ -2241,27 +2231,81 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
     this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               (this->fields).bodies;
     if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      currentBody = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (this_00,(this->fields).currentBodyIndex,
-                               MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
-                              );
+      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (this_00,(this->fields).currentBodyIndex,
+                         MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
       this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
                 (this_02,(Object *)this,MethodInfo__AvatarEditModeBodyController__ExecuteReset__,
                  (MethodInfo *)0x0);
-      if (pRVar1 != (ResetAvatarHandler *)0x0) {
-        ResetAvatarHandler::ResetAvatarHandler_ResetAvatar
-                  (pRVar1,(MVBody *)currentBody,(Action *)this_02,(MethodInfo *)0x0);
-        return;
+      if (pOVar1 != (Object__Class *)0x0) {
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__UnityEngine__GameObject);
+          func_?(&TypeInfo__UnityEngine__Object);
+          cRam_? = '\x01';
+        }
+        (pOVar1->_0).interopData = (Il2CppInteropData *)this_02;
+        func_?(&(pOVar1->_0).interopData,this_02);
+        (pOVar1->_0).klass = (Il2CppClass *)RVar3;
+        func_?(&(pOVar1->_0).klass,RVar3);
+        pFVar4 = (pOVar1->_0).fields;
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Object);
+        }
+        bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                          ((Object_1 *)pFVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
+        if (bVar5 != 0) {
+          pGVar2 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1
+                    (pGVar2,(MethodInfo *)0x0);
+          if (pGVar2 == (GameObject *)0x0) goto code_?;
+          pFVar4 = (FieldInfo *)
+                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                             (pGVar2,(MethodInfo *)0x0);
+          (pOVar1->_0).fields = pFVar4;
+          func_?(&(pOVar1->_0).fields,pFVar4);
+        }
+        if (RVar3 != (RegexCharClass_SingleRange)0x0) {
+          avatarWoID = *(int32_t *)((int)RVar3 + 8);
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+            func_?(&
+                            MethodInfo__ResetAvatarHandler__GameOnReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
+                           );
+            cRam_? = '\x01';
+          }
+          pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          this_03 = (UnityAction_2_System_Object_System_Object_ *)
+                    func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    (this_03,(Object *)pOVar1,
+                     MethodInfo__ResetAvatarHandler__GameOnReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
+                     ,(MethodInfo *)0x0);
+          if (pMVar6 != (MVNetworkGame *)0x0) {
+            MVNetworkGame::MVNetworkGame_add_ReceivedItemFromQuery
+                      (pMVar6,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_03,
+                       (MethodInfo *)0x0);
+            pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if ((pMVar6 != (MVNetworkGame *)0x0) &&
+               (this_01 = (pMVar6->fields).operationRequests,
+               this_01 != (MVNetworkGame_OperationRequests *)0x0)) {
+              MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_GetResetAvatar
+                        (this_01,avatarWoID,(MethodInfo *)0x0);
+              return;
+            }
+          }
+        }
       }
     }
   }
+code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -2308,39 +2352,81 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
     func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+  pAVar1 = this;
+  pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
            (this->fields).bodies;
-  if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      (pLVar1,(this->fields).currentBodyIndex,
-                       MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
-    if (RVar2 != (RegexCharClass_SingleRange)0x0) {
-      woID = *(int32_t *)((int)RVar2 + 8);
-      if (cRam_? == '\0') {
-        func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
-        cRam_? = '\x01';
-      }
-      pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (this->fields).bodies;
-      if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+  if ((pLVar2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
+     (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (pLVar2,(this->fields).currentBodyIndex,
+                         MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_),
+     RVar3 != (RegexCharClass_SingleRange)0x0)) {
+    woID = *(int32_t *)((int)RVar3 + 8);
+    if (cRam_? == '\0') {
+      func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
+      cRam_? = '\x01';
+    }
+    pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (pAVar1->fields).bodies;
+    if ((pLVar2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
+       (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (pLVar1,(this->fields).currentBodyIndex,
-                           MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
-        if (avatarSeller != (SellAvatarController *)0x0) {
-          SellAvatarController::SellAvatarController_Initialize
-                    (avatarSeller,woID,(MVBody *)RVar2,(MethodInfo *)0x0);
-          return;
+                          (pLVar2,(pAVar1->fields).currentBodyIndex,
+                           MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_),
+       pSVar4 = avatarSeller, avatarSeller != (SellAvatarController *)0x0)) {
+      if (cRam_? == '\0') {
+        this = (AvatarEditModeBodyController *)&StringLiteral_Update;
+        func_?();
+        func_?();
+        cRam_? = '\x01';
+      }
+      this = (AvatarEditModeBodyController *)0x0;
+      pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar5 != (MVNetworkGame *)0x0) &&
+         (this_00 = (pMVar5->fields)._AvatarMetaDataWoMap_k__BackingField,
+         this_00 != (MvAvatarMetaDataWoMap *)0x0)) {
+        MVWorldObject.dll::MV::WorldObject::MvAvatarMetaDataWoMap::MvAvatarMetaDataWoMap_TryGetValue
+                  (this_00,woID,(MvAvatarMetaData **)&this,(MethodInfo *)0x0);
+        (pSVar4->fields).body = (MVBody *)RVar3;
+        func_?(&(pSVar4->fields).body,RVar3);
+        (pSVar4->fields).metaData = (MvAvatarMetaData *)this;
+        func_?(&(pSVar4->fields).metaData,this);
+        (pSVar4->fields).woID = woID;
+        pTVar6 = (pSVar4->fields).sellButtonText;
+        if (this != (AvatarEditModeBodyController *)0x0) {
+          pSVar7 = StringLiteral_Sell;
+          if (*(char *)&(this->fields).bodySpawnPoint != '\0') {
+            pSVar7 = StringLiteral_Update;
+          }
+          pSVar7 = TM::TM__(pSVar7,(MethodInfo *)0x0);
+          if (pTVar6 != (Text *)0x0) {
+            (*(code *)(pTVar6->klass->vtable).set_text.method)
+                      (pTVar6,pSVar7,
+                       (pTVar6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+            this_01 = (pSVar4->fields).removeButton;
+            if ((((this_01 != (Button *)0x0) &&
+                 (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0),
+                 this != (AvatarEditModeBodyController *)0x0)) && (this_03 != (GameObject *)0x0)) &&
+               ((UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                           (this_03,*(bool *)&(this->fields).bodySpawnPoint,(MethodInfo *)0x0),
+                this != (AvatarEditModeBodyController *)0x0 &&
+                (this_02 = (pSVar4->fields).nameField, this_02 != (InputField *)0x0)))) {
+              UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
+                        (this_02,(String *)(this->fields)._.m_CancellationTokenSource,
+                         (MethodInfo *)0x0);
+              return;
+            }
+          }
         }
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -2936,7 +3022,7 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
     func_?(&StringLiteral_Purchase_Avatar_);
     cRam_? = '\x01';
   }
-  pSVar1 = TM::TM__(StringLiteral_Purchase_Avatar_,(MethodInfo *)0x0);
+  TM::TM__(StringLiteral_Purchase_Avatar_,(MethodInfo *)0x0);
   this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_ConfirmationPopup>);
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
@@ -2944,33 +3030,14 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
             (this_00,(Object *)this,
              MethodInfo__AvatarEditModeBodyController__OnPurchaseAvatarConfirmation_bool__ConfirmationPopup_
              ,(MethodInfo *)0x0);
-  pSVar2 = TM::TM__(StringLiteral_Confirm,(MethodInfo *)0x0);
-  if (x == (IModalPopupCreator *)0x0) {
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  TM::TM__(StringLiteral_Confirm,(MethodInfo *)0x0);
+  if (x != (IModalPopupCreator *)0x0) {
+    func_?(3);
     return;
   }
-  pIVar4 = x->klass;
-  uVar5 = 0;
-  uVar6._0_1_ = (pIVar4->_1).rank;
-  uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-  if (uVar6 != 0) {
-    do {
-      if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
-          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-        ppMVar7 = &(&(x->klass->vtable).Create_2)[x->klass->interfaceOffsets[uVar5].offset].method;
-        goto code_?;
-      }
-      uVar5 = uVar5 + 1;
-    } while (uVar5 < uVar6);
-  }
-  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)&UNK_?;
-  pSVar2 = (String *)x;
-  ppMVar7 = (MethodInfo **)
-            func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
-code_?:
-  (*(code *)*ppMVar7)(x,pSVar1,this_00,pSVar2);
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

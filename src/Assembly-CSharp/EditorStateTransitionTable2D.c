@@ -71,12 +71,12 @@ void Assembly-CSharp.dll::EditorStateTransitionTable2D::EditorStateTransitionTab
                   );
         pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._._.table;
         pOVar2 = (Object *)func_?(TypeInfo__EditorEvent);
-        pEVar3 = (ESStateBase *)func_?(TypeInfo__ESTerrainEdit);
-        ESStateBase::ESStateBase__ctor(pEVar3,(MethodInfo *)0x0);
+        pEVar5 = (ESLeaveCubeTutorial *)func_?(TypeInfo__ESTerrainEdit);
+        ESLeaveCubeTutorial::ESLeaveCubeTutorial__ctor(pEVar5,(MethodInfo *)0x0);
         if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (pDVar1,pOVar2,(Object *)pEVar3,
+                    (pDVar1,pOVar2,(Object *)pEVar5,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
                     );
           pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._._.table;

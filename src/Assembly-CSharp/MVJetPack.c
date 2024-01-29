@@ -305,11 +305,11 @@ void Assembly-CSharp.dll::MVJetPack::MVJetPack_Initialize(MVJetPack *this,Method
             RuntimeVariablesRepository_GetRuntimeVariables(worldObjectType,(MethodInfo *)0x0);
   if ((this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
      (TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-               UIElements::TextureId]::
-               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                         (this_00,(Object *)StringLiteral_health,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         ), TVar1.m_Index == 0)) {
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (this_00,(Object *)StringLiteral_health,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        ), TVar1.m_Index == 0)) {
 code_?:
     func_?();
 code_?:
@@ -365,153 +365,112 @@ code_?:
       (pMVar5->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
 code_?:
       func_?();
-      pMVar7 = MVBlueprintBase::MVBlueprintBase_GetChild
-                          ((MVBlueprintBase *)this,StringLiteral_JetPackCubeModel,(MethodInfo *)0x0)
-      ;
-      if ((pMVar7 == (MVWorldObjectClient *)0x0) ||
+      cubeModelBase =
+           (MVCubeModelInstance *)
+           MVBlueprintBase::MVBlueprintBase_GetChild
+                     ((MVBlueprintBase *)this,StringLiteral_JetPackCubeModel,(MethodInfo *)0x0);
+      if ((cubeModelBase == (MVCubeModelInstance *)0x0) ||
          (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <=
-           (pMVar7->klass->_1).naturalAligment &&
+           (cubeModelBase->klass->_1).naturalAligment &&
           ((MVCubeModelInstance__Class *)
-           (pMVar7->klass->_1).typeHierarchy
+           (cubeModelBase->klass->_1).typeHierarchy
            [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
            TypeInfo__MVCubeModelInstance)))) {
-        pJVar8 = (this->fields).jetPackParameters;
-        if ((pJVar8 == (JetPackParameters *)0x0) ||
-           (pIVar9 = (pJVar8->fields).lowerCubeConstraint, pIVar9 == (Int32__Array *)0x0))
+        pJVar7 = (this->fields).jetPackParameters;
+        if ((pJVar7 == (JetPackParameters *)0x0) ||
+           (pIVar8 = (pJVar7->fields).lowerCubeConstraint, pIVar8 == (Int32__Array *)0x0))
         goto code_?;
-        if (pIVar9->max_length != 0) {
-          pIVar10 = (((this->fields).jetPackParameters)->fields).lowerCubeConstraint;
-          if (pIVar10 != (Int32__Array *)0x0) {
-            if (pIVar10->max_length < 2) goto code_?;
-            pIVar11 = (((this->fields).jetPackParameters)->fields).lowerCubeConstraint;
-            if (pIVar11 != (Int32__Array *)0x0) {
-              if (pIVar11->max_length < 3) goto code_?;
-              pMVar12 = (MonitorData *)0x0;
-              iVar13 = 0;
+        if (pIVar8->max_length != 0) {
+          pIVar9 = (((this->fields).jetPackParameters)->fields).lowerCubeConstraint;
+          if (pIVar9 != (Int32__Array *)0x0) {
+            if (pIVar9->max_length < 2) goto code_?;
+            pIVar10 = (((this->fields).jetPackParameters)->fields).lowerCubeConstraint;
+            if (pIVar10 != (Int32__Array *)0x0) {
+              if (pIVar10->max_length < 3) goto code_?;
+              uVar11 = 0;
               MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                        ((IntVector *)&stack0xffffffd8,pIVar9->vector[0],pIVar10->vector[1],
-                         pIVar11->vector[2],(MethodInfo *)0x0);
-              pJVar8 = (this->fields).jetPackParameters;
-              if ((pJVar8 != (JetPackParameters *)0x0) &&
-                 (pIVar9 = (pJVar8->fields).upperCubeConstraint, pIVar9 != (Int32__Array *)0x0)) {
-                if (pIVar9->max_length == 0) goto code_?;
-                pIVar10 = (((this->fields).jetPackParameters)->fields).upperCubeConstraint;
-                if (pIVar10 != (Int32__Array *)0x0) {
-                  if (pIVar10->max_length < 2) goto code_?;
-                  pIVar11 = (((this->fields).jetPackParameters)->fields).upperCubeConstraint;
-                  if (pIVar11 != (Int32__Array *)0x0) {
-                    if (pIVar11->max_length < 3) goto code_?;
+                        ((IntVector *)&stack0xffffffec,pIVar8->vector[0],pIVar9->vector[1],
+                         pIVar10->vector[2],(MethodInfo *)0x0);
+              pJVar7 = (this->fields).jetPackParameters;
+              if ((pJVar7 != (JetPackParameters *)0x0) &&
+                 (pIVar8 = (pJVar7->fields).upperCubeConstraint, pIVar8 != (Int32__Array *)0x0)) {
+                if (pIVar8->max_length == 0) goto code_?;
+                pIVar9 = (((this->fields).jetPackParameters)->fields).upperCubeConstraint;
+                if (pIVar9 != (Int32__Array *)0x0) {
+                  if (pIVar9->max_length < 2) goto code_?;
+                  pIVar10 = (((this->fields).jetPackParameters)->fields).upperCubeConstraint;
+                  if (pIVar10 != (Int32__Array *)0x0) {
+                    if (pIVar10->max_length < 3) goto code_?;
                     MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                              ((IntVector *)&stack0xffffffe0,pIVar9->vector[0],pIVar10->vector[1],
-                               pIVar11->vector[2],(MethodInfo *)0x0);
-                    pJVar8 = (this->fields).jetPackParameters;
-                    if (pJVar8 != (JetPackParameters *)0x0) {
-                      pOVar14 = (Object__Class *)(pJVar8->fields).minNumberOfCubes;
-                      puVar15 = &UNK_?;
-                      method_01 = TypeInfo__EditableCubeModelWrapper;
-                      value = (Object__Class *)func_?();
-                      mscorlib.dll::System::ThrowHelper::
-                      ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                                ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01
-                                );
-                      method_00 = (EditableCubeModelWrapper_c_DisplayClass7_0__Class **)
-                                  &(value->_0).name;
-                      (value->_0).name = (char *)pMVar7;
+                              ((IntVector *)&stack0xfffffff4,pIVar8->vector[0],pIVar9->vector[1],
+                               pIVar10->vector[2],(MethodInfo *)0x0);
+                    pJVar7 = (this->fields).jetPackParameters;
+                    if (pJVar7 != (JetPackParameters *)0x0) {
+                      minCubeCount = (pJVar7->fields).minNumberOfCubes;
+                      puVar12 = &UNK_?;
+                      this_02 = (EditableCubeModelWrapper *)func_?();
+                      min.z = 0;
+                      min.x = (short)uVar11;
+                      min.y = (short)(uVar11 >> 0x10);
+                      max.z = 0;
+                      max._0_4_ = puVar12;
+                      EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1
+                                (this_02,cubeModelBase,min,max,minCubeCount,(MethodInfo *)0x0);
+                      (this->fields).editableCubeModelWrapper = this_02;
                       func_?();
-                      if (pMVar7 != (MVWorldObjectClient *)0x0) {
-                        piVar16 = &(pMVar7->fields).interactionFlags;
-                        *(uint *)piVar16 = (uint)*piVar16 | 0x10;
-                        bVar17 = cRam_? == '\0';
-                        *(undefined4 *)((int)&(pMVar7->fields).interactionFlags + 4) =
-                             *(undefined4 *)((int)&(pMVar7->fields).interactionFlags + 4);
-                        if (bVar17) {
+                      pGVar13 = (this->fields)._._._._.gameObject;
+                      if (pGVar13 != (GameObject *)0x0) {
+                        this_03 = (JetPackVisualization *)
+                                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                  GameObject_GetComponentInChildren_1
+                                            (pGVar13,
+                                             JetPackVisualization_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<JetPackVisualization>__
+                                            );
+                        isInSpawner = (*(code *)(this->klass->vtable).get_IsInSpawner.method)();
+                        if (((cubeModelBase != (MVCubeModelInstance *)0x0) &&
+                            (pGVar13 = (cubeModelBase->fields)._._.gameObject,
+                            pGVar13 != (GameObject *)0x0)) &&
+                           (jetPackCubeModel =
+                                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                 GameObject_get_transform(pGVar13,(MethodInfo *)0x0),
+                           this_03 != (JetPackVisualization *)0x0)) {
+                          JetPackVisualization::JetPackVisualization_Init
+                                    (this_03,isInSpawner,jetPackCubeModel,(this->fields).JetMode,
+                                     (MethodInfo *)0x0);
+                          (this->fields)._.visualization = (VehicleVisualizationBase *)this_03;
                           func_?();
-                          func_?();
-                          method_00 = &TypeInfo__EditableCubeModelWrapper____c__DisplayClass7_0;
-                          func_?();
-                          cRam_? = '\x01';
-                        }
-                        value_00 = (Object *)func_?();
-                        mscorlib.dll::System::ThrowHelper::
-                        ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                                  (value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-                        if (value_00 != (Object *)0x0) {
-                          value_00[1].klass = value;
-                          func_?();
-                          value_00[1].monitor = pMVar12;
-                          *(int16_t *)&value_00[2].klass = iVar13;
-                          *(undefined **)((int)&value_00[2].klass + 2) = puVar15;
-                          *(int16_t *)((int)&value_00[2].monitor + 2) = (int16_t)method_01;
-                          value_00[3].klass = pOVar14;
-                          pcVar18 = (value->_0).name;
-                          this_02 = (Func_1_Object_ *)func_?();
-                          mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
-                                    (this_02,value_00,
-                                     MethodInfo__EditableCubeModelWrapper____c__DisplayClass7_0___SetConstraints_b__0__
-                                     ,(MethodInfo *)0x0);
-                          if (pcVar18 != (char *)0x0) {
-                            *(Func_1_Object_ **)(pcVar18 + 0xe0) = this_02;
-                            func_?();
-                            (this->fields).editableCubeModelWrapper =
-                                 (EditableCubeModelWrapper *)value;
-                            func_?();
-                            pGVar19 = (this->fields)._._._._.gameObject;
-                            if (pGVar19 != (GameObject *)0x0) {
-                              this_03 = (JetPackVisualization *)
+                          cVar14 = (*(code *)(this->klass->vtable).get_IsInSpawner.method)();
+                          if (cVar14 != '\0') {
+                            return;
+                          }
+                          pGVar13 = (cubeModelBase->fields)._._.gameObject;
+                          if ((pGVar13 != (GameObject *)0x0) &&
+                             (pIVar15 = (InteractionDataHandlerBase *)
                                         UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                        GameObject_GetComponentInChildren_1
-                                                  (pGVar19,
-                                                  JetPackVisualization_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<JetPackVisualization>__
-                                                  );
-                              isInSpawner = (*(code *)(this->klass->vtable).get_IsInSpawner.method)
-                                                      ();
-                              pGVar19 = (pMVar7->fields).gameObject;
-                              if ((pGVar19 != (GameObject *)0x0) &&
-                                 (jetPackCubeModel =
-                                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                       GameObject_get_transform(pGVar19,(MethodInfo *)0x0),
-                                 this_03 != (JetPackVisualization *)0x0)) {
-                                JetPackVisualization::JetPackVisualization_Init
-                                          (this_03,isInSpawner,jetPackCubeModel,
-                                           (this->fields).JetMode,(MethodInfo *)0x0);
-                                (this->fields)._.visualization = (VehicleVisualizationBase *)this_03
-                                ;
-                                func_?();
-                                cVar20 = (*(code *)(this->klass->vtable).get_IsInSpawner.method)();
-                                if (cVar20 != '\0') {
-                                  return;
-                                }
-                                pGVar19 = (pMVar7->fields).gameObject;
-                                if ((pGVar19 != (GameObject *)0x0) &&
-                                   (pIVar21 = (InteractionDataHandlerBase *)
-                                              UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                              GameObject_AddComponent_1
-                                                        (pGVar19,
+                                        GameObject_AddComponent_1
+                                                  (pGVar13,
                                                   InteractionDataHandler_MethodInfo__UnityEngine__GameObject__AddComponent<InteractionDataHandler>__
-                                                  ), pIVar21 != (InteractionDataHandlerBase *)0x0))
-                                {
-                                  (pIVar21->fields)._.worldObjectParent =
-                                       (MVWorldObjectClient *)this;
-                                  func_?();
-                                  (this->fields)._._._._.interactionDataHandlerBase = pIVar21;
-                                  func_?();
-                                  (*(code *)(pMVar7->klass->vtable).set_Visible.method)
-                                            (pMVar7,1,
-                                             (pMVar7->klass->vtable).GetTargetPosition.methodPtr);
-                                  pGVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                            Component_get_gameObject
-                                                      ((Component *)this_03,(MethodInfo *)0x0);
-                                  this_04 = (CullingSubscriberDynamic *)
-                                            func_?(TypeInfo__CullingSubscriberDynamic);
-                                  CullingSubscriberDynamic::CullingSubscriberDynamic__ctor
-                                            (this_04,4.0,3,pGVar19,(GameObject__Array *)0x0,
-                                             (MethodInfo *)0x0);
-                                  (this->fields).cullingSubscriberDynamic = this_04;
-                                  func_?();
-                                  return;
-                                }
-                              }
-                            }
+                                                  ), pIVar15 != (InteractionDataHandlerBase *)0x0))
+                          {
+                            (pIVar15->fields)._.worldObjectParent = (MVWorldObjectClient *)this;
+                            func_?();
+                            (this->fields)._._._._.interactionDataHandlerBase = pIVar15;
+                            func_?();
+                            (*(code *)(cubeModelBase->klass->vtable).set_Visible.method)
+                                      (cubeModelBase,1,
+                                       (short)(cubeModelBase->klass->vtable).GetTargetPosition.
+                                              methodPtr);
+                            pGVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                      Component_get_gameObject
+                                                ((Component *)this_03,(MethodInfo *)0x0);
+                            this_04 = (CullingSubscriberDynamic *)
+                                      func_?(TypeInfo__CullingSubscriberDynamic);
+                            CullingSubscriberDynamic::CullingSubscriberDynamic__ctor
+                                      (this_04,4.0,3,pGVar13,(GameObject__Array *)0x0,
+                                       (MethodInfo *)0x0);
+                            (this->fields).cullingSubscriberDynamic = this_04;
+                            func_?();
+                            return;
                           }
                         }
                       }
@@ -527,23 +486,23 @@ code_?:
       }
       goto code_?;
     }
-    pMVar22 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+    pMVar16 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
     if (pMVar6->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-      pMVar22 = pMVar6;
+      pMVar16 = pMVar6;
     }
-    if (pMVar22 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-    (pMVar5->fields).OnChange = pMVar22;
-    pMVar22 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+    if (pMVar16 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+    (pMVar5->fields).OnChange = pMVar16;
+    pMVar16 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
     if (pMVar6->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-      pMVar22 = pMVar6;
+      pMVar16 = pMVar6;
     }
-    if (pMVar22 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+    if (pMVar16 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

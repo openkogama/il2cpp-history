@@ -6,33 +6,52 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
                (LobbyStatePlayModeController *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__IPlayModeUI);
+    cRam_? = '\x01';
+  }
   this_00 = (this->fields).lobbyState;
   if (this_00 != (RectTransform *)0x0) {
     pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this_00,(MethodInfo *)0x0);
-    if (pGVar1 != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar1,(this->fields).shouldOpenLobbyMenu,(MethodInfo *)0x0);
-      this_01 = (this->fields).inGameMenu;
-      if (this_01 != (InGameMenu *)0x0) {
-        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this_01,(MethodInfo *)0x0);
-        if (pGVar1 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar1,(this->fields).shouldOpenLobbyMenu == 0,(MethodInfo *)0x0);
-          this_02 = (this->fields).inGameController;
-          if (this_02 != (DesktopInGameGUIController *)0x0) {
-            pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)this_02,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MVGameControllerBase);
+      cRam_? = '\x01';
+    }
+    pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+    if (pIVar2 != (IPlayModeUI *)0x0) {
+      value = func_?(5,TypeInfo__IPlayModeUI,pIVar2);
+      if (pGVar1 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (pGVar1,value,(MethodInfo *)0x0);
+        this_01 = (this->fields).inGameMenu;
+        if (this_01 != (InGameMenu *)0x0) {
+          pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)this_01,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__MVGameControllerBase);
+            cRam_? = '\x01';
+          }
+          pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+          if (pIVar2 != (IPlayModeUI *)0x0) {
+            bVar3 = func_?(5,TypeInfo__IPlayModeUI,pIVar2);
             if (pGVar1 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar1,0,(MethodInfo *)0x0);
-              this_03 = (this->fields).chatController;
-              if (this_03 != (ChatControllerUGUI *)0x0) {
-                ChatControllerUGUI::ChatControllerUGUI_OnLobbyStateChange
-                          (this_03,0,(MethodInfo *)0x0);
-                (this->fields).shouldOpenLobbyMenu = 0;
-                return;
+                        (pGVar1,bVar3 ^ 1,(MethodInfo *)0x0);
+              this_02 = (this->fields).inGameController;
+              if (this_02 != (DesktopInGameGUIController *)0x0) {
+                pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)this_02,(MethodInfo *)0x0);
+                if (pGVar1 != (GameObject *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                            (pGVar1,0,(MethodInfo *)0x0);
+                  this_03 = (this->fields).chatController;
+                  if (this_03 != (ChatControllerUGUI *)0x0) {
+                    ChatControllerUGUI::ChatControllerUGUI_OnLobbyStateChange
+                              (this_03,0,(MethodInfo *)0x0);
+                    return;
+                  }
+                }
               }
             }
           }
@@ -41,8 +60,8 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -54,6 +73,10 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
                (LobbyStatePlayModeController *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__IPlayModeUI);
+    cRam_? = '\x01';
+  }
   this_00 = (this->fields).lobbyState;
   if (this_00 != (RectTransform *)0x0) {
     pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -79,7 +102,18 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
               if (this_03 != (ChatControllerUGUI *)0x0) {
                 ChatControllerUGUI::ChatControllerUGUI_OnLobbyStateChange
                           (this_03,1,(MethodInfo *)0x0);
-                return;
+                if (cRam_? == '\0') {
+                  ppMStack2 = &TypeInfo__MVGameControllerBase;
+                  func_?();
+                  cRam_? = '\x01';
+                }
+                if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
+                    (IPlayModeUI *)0x0) {
+                  ppMStack2 = (MVGameControllerBase__Class **)0x0;
+                  pIStack3 = TypeInfo__IPlayModeUI;
+                  func_?();
+                  return;
+                }
               }
             }
           }
@@ -88,8 +122,8 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -101,36 +135,48 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
                (LobbyStatePlayModeController *this,MethodInfo *method)
 
 {
-  pRVar1 = (this->fields).lobbyState;
-  (this->fields).shouldOpenLobbyMenu = 0;
-  if ((pRVar1 != (RectTransform *)0x0) &&
-     (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)pRVar1,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)) {
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar2,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
-      return;
-    }
-    pRVar1 = (this->fields).lobbyState;
-    if ((pRVar1 != (RectTransform *)0x0) &&
-       (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pRVar1,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar2,0,(MethodInfo *)0x0);
-      this_00 = (this->fields).inGameMenu;
-      if ((this_00 != (InGameMenu *)0x0) &&
-         (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)this_00,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0))
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__IPlayModeUI);
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+  if (pIVar1 != (IPlayModeUI *)0x0) {
+    func_?(6,TypeInfo__IPlayModeUI,pIVar1,0);
+    pRVar2 = (this->fields).lobbyState;
+    if ((pRVar2 != (RectTransform *)0x0) &&
+       (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pRVar2,(MethodInfo *)0x0), pGVar3 != (GameObject *)0x0)) {
+      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                        (pGVar3,(MethodInfo *)0x0);
+      if (bVar4 == 0) {
+        return;
+      }
+      pRVar2 = (this->fields).lobbyState;
+      if ((pRVar2 != (RectTransform *)0x0) &&
+         (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pRVar2,(MethodInfo *)0x0), pGVar3 != (GameObject *)0x0))
       {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar2,1,(MethodInfo *)0x0);
-        return;
+                  (pGVar3,0,(MethodInfo *)0x0);
+        this_00 = (this->fields).inGameMenu;
+        if ((this_00 != (InGameMenu *)0x0) &&
+           (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this_00,(MethodInfo *)0x0), pGVar3 != (GameObject *)0x0
+           )) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (pGVar3,1,(MethodInfo *)0x0);
+          return;
+        }
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -142,6 +188,10 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
                (LobbyStatePlayModeController *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
   this_00 = (this->fields).lobbyState;
   if (this_00 != (RectTransform *)0x0) {
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -150,14 +200,23 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
       bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                         (this_01,(MethodInfo *)0x0);
       if (bVar1 == 0) {
-        (this->fields).shouldOpenLobbyMenu = 1;
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField ==
+            (IPlayModeUI *)0x0) goto code_?;
+        pIStack_2 = TypeInfo__IPlayModeUI;
+        func_?(6);
       }
       return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+code_?:
+  uVar3 = func_?(&pIStack_2);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -301,7 +360,6 @@ code_?:
           LobbyStatePlayModeController_SetObjectToLobbyState
                     ((LobbyStatePlayModeController *)&(pGVar12->fields).OnDisableLobbyState,
                      *(bool *)&pGVar12[1].fields.OnEnableLobbyState,(MethodInfo *)0x0);
-          *(undefined1 *)((int)&pGVar12[1].fields.OnEnableLobbyState + 2) = 0;
           return;
         }
         if (pAVar11->klass == TypeInfo__System__Action) {
@@ -337,108 +395,124 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
                (LobbyStatePlayModeController *this,bool isInLobbyState,MethodInfo *method)
 
 {
-  pRVar1 = (this->fields).lobbyState;
   (this->fields).isInLobbyState = isInLobbyState;
   if (isInLobbyState == 0) {
-    if (pRVar1 != (RectTransform *)0x0) {
-      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)pRVar1,(MethodInfo *)0x0);
-      if (pGVar2 != (GameObject *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__IPlayModeUI);
+      cRam_? = '\x01';
+    }
+    pRVar1 = (this->fields).lobbyState;
+    if ((pRVar1 != (RectTransform *)0x0) &&
+       (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pRVar1,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar2,0,(MethodInfo *)0x0);
+      pIVar3 = (this->fields).inGameMenu;
+      if ((pIVar3 != (InGameMenu *)0x0) &&
+         (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pIVar3,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0))
+      {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar2,0,(MethodInfo *)0x0);
-        pIVar3 = (this->fields).inGameMenu;
-        if (pIVar3 != (InGameMenu *)0x0) {
-          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pIVar3,(MethodInfo *)0x0);
-          if (pGVar2 != (GameObject *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar2,0,(MethodInfo *)0x0);
-            pDVar4 = (this->fields).inGameController;
-            if (pDVar4 != (DesktopInGameGUIController *)0x0) {
-              pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)pDVar4,(MethodInfo *)0x0);
-              if (pGVar2 != (GameObject *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar2,1,(MethodInfo *)0x0);
-                if ((this->fields).chatController != (ChatControllerUGUI *)0x0) {
-                  (in_stack_5->fields).currentlyInLobbyState = in_stack_6 ^ 1;
-                  ChatControllerUGUI::ChatControllerUGUI_UpdateFadeTime
-                            (in_stack_5,(MethodInfo *)0x0);
-                  (in_stack_5->fields).shouldUpdateFade = in_stack_6;
-                  ChatControllerUGUI::ChatControllerUGUI_ChatFocusChanged
-                            (in_stack_5,0,(MethodInfo *)0x0);
-                  this_02 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer
-                                      ((MethodInfo *)0x0);
-                  if (this_02 != (MVLocalPlayer *)0x0) {
-                    bVar7 = MVLocalPlayer::MVLocalPlayer_get_IsChatLocked(this_02,(MethodInfo *)0x0)
-                    ;
-                    pRVar1 = (in_stack_5->fields)._._InputAreaRoot_k__BackingField;
-                    value = 0;
-                    if (bVar7 == 0) {
-                      value = in_stack_6 ^ 1;
-                    }
-                    if (pRVar1 != (RectTransform *)0x0) {
-                      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                               Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0);
-                      if (pGVar2 != (GameObject *)0x0) {
-                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                  (pGVar2,value,(MethodInfo *)0x0);
-                        pRVar1 = (in_stack_5->fields).inputAreaDeactivated;
-                        if (pRVar1 != (RectTransform *)0x0) {
-                          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                   Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0);
-                          if (pGVar2 != (GameObject *)0x0) {
-                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_SetActive(pGVar2,value ^ 1,(MethodInfo *)0x0);
-                            this_00 = (in_stack_5->fields)._._ScrollRect_k__BackingField;
-                            if (this_00 != (ScrollRect *)0x0) {
-                              UnityEngine.UI.dll::UnityEngine::UI::ScrollRect::
-                              ScrollRect_SetVerticalNormalizedPosition
-                                        (this_00,0.0,(MethodInfo *)0x0);
-                              return;
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                  func_?();
-                  pcVar8 = (code *)swi(3);
-                  (*pcVar8)();
-                  return;
-                }
-              }
+        pDVar4 = (this->fields).inGameController;
+        if ((pDVar4 != (DesktopInGameGUIController *)0x0) &&
+           (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pDVar4,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)
+           ) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (pGVar2,1,(MethodInfo *)0x0);
+          pCVar5 = (this->fields).chatController;
+          if (pCVar5 != (ChatControllerUGUI *)0x0) {
+            ChatControllerUGUI::ChatControllerUGUI_OnLobbyStateChange(pCVar5,1,(MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+            if (pIVar6 != (IPlayModeUI *)0x0) {
+              func_?(6,TypeInfo__IPlayModeUI,pIVar6,0);
+              return;
             }
           }
         }
       }
     }
   }
-  else if (pRVar1 != (RectTransform *)0x0) {
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)pRVar1,(MethodInfo *)0x0);
-    if (pGVar2 != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar2,(this->fields).shouldOpenLobbyMenu,(MethodInfo *)0x0);
-      pIVar3 = (this->fields).inGameMenu;
-      if (pIVar3 != (InGameMenu *)0x0) {
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pIVar3,(MethodInfo *)0x0);
-        if (pGVar2 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar2,(this->fields).shouldOpenLobbyMenu == 0,(MethodInfo *)0x0);
-          pDVar4 = (this->fields).inGameController;
-          if (pDVar4 != (DesktopInGameGUIController *)0x0) {
-            pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)pDVar4,(MethodInfo *)0x0);
-            if (pGVar2 != (GameObject *)0x0) {
+  else {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__IPlayModeUI);
+      cRam_? = '\x01';
+    }
+    pRVar1 = (this->fields).lobbyState;
+    if (pRVar1 != (RectTransform *)0x0) {
+      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)pRVar1,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MVGameControllerBase);
+        cRam_? = '\x01';
+      }
+      pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+      if ((pIVar6 != (IPlayModeUI *)0x0) &&
+         (bVar7 = func_?(5,TypeInfo__IPlayModeUI,pIVar6), pGVar2 != (GameObject *)0x0)) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (pGVar2,bVar7,(MethodInfo *)0x0);
+        pIVar3 = (this->fields).inGameMenu;
+        if (pIVar3 != (InGameMenu *)0x0) {
+          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pIVar3,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__MVGameControllerBase);
+            cRam_? = '\x01';
+          }
+          pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+          if ((pIVar6 != (IPlayModeUI *)0x0) &&
+             (bVar8 = func_?(5,TypeInfo__IPlayModeUI,pIVar6), pGVar2 != (GameObject *)0x0))
+          {
+            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                      (pGVar2,bVar8 ^ 1,(MethodInfo *)0x0);
+            pDVar4 = (this->fields).inGameController;
+            if ((pDVar4 != (DesktopInGameGUIController *)0x0) &&
+               (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)pDVar4,(MethodInfo *)0x0),
+               pGVar2 != (GameObject *)0x0)) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                         (pGVar2,0,(MethodInfo *)0x0);
-              this_01 = (this->fields).chatController;
-              if (this_01 != (ChatControllerUGUI *)0x0) {
-                ChatControllerUGUI::ChatControllerUGUI_OnLobbyStateChange
-                          (this_01,0,(MethodInfo *)0x0);
-                (this->fields).shouldOpenLobbyMenu = 0;
+              pCVar5 = (this->fields).chatController;
+              if (pCVar5 != (ChatControllerUGUI *)0x0) {
+                (pCVar5->fields).currentlyInLobbyState = 1;
+                ChatControllerUGUI::ChatControllerUGUI_UpdateFadeTime(pCVar5,(MethodInfo *)0x0);
+                (pCVar5->fields).shouldUpdateFade = 0;
+                ChatControllerUGUI::ChatControllerUGUI_ChatFocusChanged(pCVar5,0,(MethodInfo *)0x0);
+                this_01 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer
+                                    ((MethodInfo *)0x0);
+                if (this_01 != (MVLocalPlayer *)0x0) {
+                  bVar7 = MVLocalPlayer::MVLocalPlayer_get_IsChatLocked(this_01,(MethodInfo *)0x0);
+                  pRVar1 = (pCVar5->fields)._._InputAreaRoot_k__BackingField;
+                  if ((pRVar1 != (RectTransform *)0x0) &&
+                     (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                               Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0),
+                     pGVar2 != (GameObject *)0x0)) {
+                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                              (pGVar2,bVar7 == 0,(MethodInfo *)0x0);
+                    pRVar1 = (pCVar5->fields).inputAreaDeactivated;
+                    if ((pRVar1 != (RectTransform *)0x0) &&
+                       (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                 Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0),
+                       pGVar2 != (GameObject *)0x0)) {
+                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                                (pGVar2,bVar7 != 0,(MethodInfo *)0x0);
+                      this_00 = (pCVar5->fields)._._ScrollRect_k__BackingField;
+                      if (this_00 != (ScrollRect *)0x0) {
+                        UnityEngine.UI.dll::UnityEngine::UI::ScrollRect::
+                        ScrollRect_SetVerticalNormalizedPosition(this_00,0.0,(MethodInfo *)0x0);
+                        return;
+                      }
+                    }
+                  }
+                }
+                func_?();
+                pcVar9 = (code *)swi(3);
+                (*pcVar9)();
                 return;
               }
             }
@@ -448,8 +522,8 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -549,7 +623,6 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::LobbyStatePlayModeContro
 
 {
   (this->fields).isInLobbyState = 1;
-  (this->fields).shouldOpenLobbyMenu = 1;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';

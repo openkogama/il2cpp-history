@@ -414,10 +414,9 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::
                                   (pMVar2,(pMVar2->klass->vtable).Destroy.methodPtr);
         this = (MVVehicleBase_LocalObjectsBase *)
                func_?(TypeInfo__MVWorldObjectClient__CallBackDelegate);
-        UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
-        VideoCapture+OnVideoCaptureResourceCreatedCallback::
-        VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                  ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)this,pOVar1,
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+        UnityAction_1_System_Object___ctor
+                  ((UnityAction_1_System_Object_ *)this,pOVar1,
                    MethodInfo__MVVehicleBase_LocalObjectsBase____c__DisplayClass15_0___OnHealthChange_g__DetachLocalAvatar_0_MVWorldObjectClient_
                    ,(MethodInfo *)0x0);
         if (piVar5 != (int *)0x0) {

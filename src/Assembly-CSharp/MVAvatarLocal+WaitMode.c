@@ -5,16 +5,16 @@ void Assembly-CSharp.dll::MVAvatarLocal+WaitMode::MVAvatarLocal_WaitMode_Activat
                (MVAvatarLocal_WaitMode *this,AvatarRuntimeState__Enum fromMode,MethodInfo *method)
 
 {
-  this_00 = this;
+  this_01 = this;
   MVAvatarLocal+AvatarMode::MVAvatarLocal_AvatarMode_SetModeTypes
             ((MVAvatarLocal_AvatarMode *)this,(MethodInfo *)fromMode);
-  pMVar1 = (this_00->fields)._.mvAvatar;
+  pMVar1 = (this_01->fields)._.mvAvatar;
   if (pMVar1 != (MVAvatarLocal *)0x0) {
     MVAvatarLocal::MVAvatarLocal_ResetAvatar(pMVar1,(MethodInfo *)0x0);
-    pMVar1 = (this_00->fields)._.mvAvatar;
+    pMVar1 = (this_01->fields)._.mvAvatar;
     if (pMVar1 != (MVAvatarLocal *)0x0) {
       MVAvatarLocal::MVAvatarLocal_SetToSpawnTransform(pMVar1,(MethodInfo *)0x0);
-      MVAvatarLocal_WaitMode_ResetCamera(this_00,(MethodInfo *)0x0);
+      MVAvatarLocal_WaitMode_ResetCamera(this_01,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         method = (MethodInfo *)&UNK_?;
         func_?();
@@ -39,28 +39,28 @@ void Assembly-CSharp.dll::MVAvatarLocal+WaitMode::MVAvatarLocal_WaitMode_Activat
       method = (MethodInfo *)
                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
       fromMode = (AvatarRuntimeState__Enum)&UNK_?;
-      this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+      this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                  *)func_?();
       fromMode = (AvatarRuntimeState__Enum)
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
       ;
-      this = (MVAvatarLocal_WaitMode *)this_01;
+      this = (MVAvatarLocal_WaitMode *)this_02;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
       UIElements::StyleComplexSelector+PseudoStateData]::
       Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                (this_01,
+                (this_02,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
       fromMode = (int)&this + 3;
       this = (MVAvatarLocal_WaitMode *)TypeInfo__System__Byte;
       key = (Object *)func_?();
       value = (Object *)func_?();
-      if (this_01 !=
+      if (this_02 !=
           (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
           )0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  ((Dictionary_2_System_Object_System_Object_ *)this_01,key,value,
+                  ((Dictionary_2_System_Object_System_Object_ *)this_02,key,value,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
@@ -68,13 +68,15 @@ void Assembly-CSharp.dll::MVAvatarLocal+WaitMode::MVAvatarLocal_WaitMode_Activat
         }
         NotificationController::NotificationController_PushNotification_2
                   (NotificationType__Enum_WaitCountDown,
-                   (Dictionary_2_System_Object_System_Object_ *)this_01,
+                   (Dictionary_2_System_Object_System_Object_ *)this_02,
                    NotificationLifetime__Enum_High,(MethodInfo *)0x0);
         if ((undefined1)fromMode == AvatarRuntimeState__Enum_Ghost) {
-          pMVar1 = (this_00->fields)._.mvAvatar;
-          if (pMVar1 == (MVAvatarLocal *)0x0) goto code_?;
-          MVAvatarLocal::MVAvatarLocal_SetMode
-                    (pMVar1,AvatarRuntimeState__Enum_Ghost,(MethodInfo *)0x0);
+          pMVar1 = (this_01->fields)._.mvAvatar;
+          if ((pMVar1 == (MVAvatarLocal *)0x0) ||
+             (this_00 = (pMVar1->fields).avatarLocalModes,
+             this_00 == (MVAvatarLocal_AvatarLocalModes *)0x0)) goto code_?;
+          MVAvatarLocal+AvatarLocalModes::MVAvatarLocal_AvatarLocalModes_SetMode
+                    (this_00,AvatarRuntimeState__Enum_Ghost,(MethodInfo *)0x0);
         }
         return;
       }
@@ -147,45 +149,42 @@ void Assembly-CSharp.dll::MVAvatarLocal+WaitMode::MVAvatarLocal_WaitMode_FrameUp
 
 {
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  iVar2 = iRam_?;
   if ((pMVar1 != (MVNetworkGame *)0x0) &&
-     (pMVar3 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField,
-     pMVar3 != (MVNetworkGameStateListener *)0x0)) {
-    if ((pMVar3->fields).currentGameState == 2) {
+     (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField,
+     pMVar2 != (MVNetworkGameStateListener *)0x0)) {
+    if ((pMVar2->fields).currentGameState == 2) {
       return;
     }
-    if (((this->fields)._.mvAvatar != (MVAvatarLocal *)0x0) && (iRam_? != 0)) {
+    pMVar3 = (this->fields)._.mvAvatar;
+    if ((pMVar3 != (MVAvatarLocal *)0x0) &&
+       ((pMVar3->fields).avatarLocalModes != (MVAvatarLocal_AvatarLocalModes *)0x0)) {
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      piVar4 = *(int **)(iVar2 + 0xc);
-      interactionMap = (InputToInGameAction *)(uint)*(byte *)(iVar2 + 0x10);
-      if (piVar4 != (int *)0x0) {
-        (**(code **)(*piVar4 + 0xe0))(piVar4,0);
-        if (*(Dictionary_2_System_ByteEnum_System_Object_ **)(iVar2 + 8) !=
-            (Dictionary_2_System_ByteEnum_System_Object_ *)0x0) {
-          pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
-                   ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                             (*(Dictionary_2_System_ByteEnum_System_Object_ **)(iVar2 + 8),0,
-                              MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__get_Item_AvatarRuntimeState_
-                             );
-          *(Object **)(iVar2 + 0xc) = pOVar5;
-          func_?(iVar2 + 0xc);
-          piVar4 = *(int **)(iVar2 + 0xc);
-          *(undefined1 *)(iVar2 + 0x10) = 0;
-          if (piVar4 != (int *)0x0) {
-            (**(code **)(*piVar4 + 0xf8))(piVar4,interactionMap);
-            return;
-          }
+      interactionMap = (InputToInGameAction *)(uint)bRam_?;
+      if ((pORam0000000d != (Object *)0x0) &&
+         ((*pORam0000000d->klass[1]._0.gc_desc)(pORam0000000d,0),
+         pDRam00000009 != (Dictionary_2_System_ByteEnum_System_Object_ *)0x0)) {
+        pORam0000000d =
+             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+             Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                       (pDRam00000009,0,
+                        MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__get_Item_AvatarRuntimeState_
+                       );
+        func_?(0xd);
+        bRam_? = 0;
+        if (pORam0000000d != (Object *)0x0) {
+          (**(code **)&pORam0000000d->klass[1]._0.this_arg.attrs)(pORam0000000d,interactionMap);
+          return;
         }
       }
     }
   }
-  uVar6 = func_?(&stack0xfffffff4);
-  func_?(uVar6);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  uVar4 = func_?(&stack0xfffffff4);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

@@ -119,14 +119,14 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_Activat
                                           (pSVar13->fields).reviveState,
                                this_03 == (WebCompletionSource_1_System_Object_ *)0x0))
                             goto code_?;
-                            this_05 = System.dll::System::Net::WebCompletionSource`1[System::Object]
+                            this_06 = System.dll::System::Net::WebCompletionSource`1[System::Object]
                                       ::WebCompletionSource_1_System_Object__get_Task
                                                 (this_03,
                                                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__
                                                 );
-                            if (this_05 == (Task *)0x0) goto code_?;
+                            if (this_06 == (Task *)0x0) goto code_?;
                             ReviveState::ReviveState_ResetSafePostions
-                                      ((ReviveState *)this_05,(MethodInfo *)0x0);
+                                      ((ReviveState *)this_06,(MethodInfo *)0x0);
                           }
                           pMVar14 = MVGameControllerBase::MVGameControllerBase_get_Game
                                               ((MethodInfo *)0x0);
@@ -135,9 +135,12 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_Activat
                              pMVar15 != (MVNetworkGameStateListener *)0x0)) {
                             if ((pMVar15->fields).currentGameState == 2) {
                               pMVar7 = (this->fields)._.mvAvatar;
-                              if (pMVar7 != (MVAvatarLocal *)0x0) {
-                                MVAvatarLocal::MVAvatarLocal_SetMode
-                                          (pMVar7,AvatarRuntimeState__Enum_Wait,(MethodInfo *)0x0);
+                              if ((pMVar7 != (MVAvatarLocal *)0x0) &&
+                                 (this_05 = (pMVar7->fields).avatarLocalModes,
+                                 this_05 != (MVAvatarLocal_AvatarLocalModes *)0x0)) {
+                                MVAvatarLocal+AvatarLocalModes::
+                                MVAvatarLocal_AvatarLocalModes_SetMode
+                                          (this_05,AvatarRuntimeState__Enum_Wait,(MethodInfo *)0x0);
                                 return;
                               }
                             }

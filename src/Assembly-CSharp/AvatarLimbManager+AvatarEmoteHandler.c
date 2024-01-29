@@ -601,36 +601,84 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarEmoteHandler::
                    );
     cRam_? = '\x01';
   }
-  if ((char)emoteType != '\0') {
-    this_00 = (this->fields).emoteDatas;
-    if (this_00 == (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0)
-    goto code_?;
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-             Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                       ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,emoteType,
-                        MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
-                       );
-    if ((this->fields).isActive == 0) {
+  if ((char)emoteType == '\0') {
+    return;
+  }
+  pDVar1 = (this->fields).emoteDatas;
+  if (pDVar1 == (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) goto code_?;
+  pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]
+           ::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                     ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,emoteType,
+                      MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
+                     );
+  if ((this->fields).isActive == 0) {
+    return;
+  }
+  if ((this->fields).currentRunningEmoteData != (AvatarLimbManager_EmoteData *)0x0) {
+    if (pOVar2 == (Object *)0x0) goto code_?;
+    if (*(short *)&pOVar2[1].monitor <= (((this->fields).currentRunningEmoteData)->fields).priority)
+    {
       return;
     }
-    if ((this->fields).currentRunningEmoteData != (AvatarLimbManager_EmoteData *)0x0) {
-      if (pOVar1 == (Object *)0x0) {
-code_?:
-        func_?();
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
-      }
-      if (*(short *)&pOVar1[1].monitor <=
-          (((this->fields).currentRunningEmoteData)->fields).priority) {
-        return;
-      }
-      pAVar3 = (((this->fields).currentRunningEmoteData)->fields).emote;
-      if (pAVar3 == (AvatarLimbManager_AvatarEmote *)0x0) goto code_?;
-      (*(code *)(pAVar3->klass->vtable).StopEmote.method)(pAVar3,pAVar3->klass[1]._0.image);
-    }
-    AvatarLimbManager_AvatarEmoteHandler_StartEmote(this,emoteType,(MethodInfo *)0x0);
+    pAVar3 = (((this->fields).currentRunningEmoteData)->fields).emote;
+    if (pAVar3 == (AvatarLimbManager_AvatarEmote *)0x0) goto code_?;
+    (*(code *)(pAVar3->klass->vtable).StopEmote.method)(pAVar3);
   }
+  if (cRam_? == '\0') {
+    func_?();
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
+                   );
+    func_?(&TypeInfo__EmoteTypes);
+    cRam_? = '\x01';
+  }
+  pDVar1 = (this->fields).emoteDatas;
+  if (pDVar1 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) {
+    bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+            Single]::Dictionary_2_System_ByteEnum_System_Single__ContainsKey
+                      ((Dictionary_2_System_ByteEnum_System_Single_ *)pDVar1,emoteType,
+                       MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__ContainsKey_EmoteTypes_
+                      );
+    if (bVar4 == 0) {
+      return;
+    }
+    pDVar1 = (this->fields).emoteDatas;
+    if (((pDVar1 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) &&
+        (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+                  Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                            ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,emoteType,
+                             MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
+                            ), pOVar2 != (Object *)0x0)) &&
+       (pOVar2[1].klass != (Object__Class *)0x0)) {
+      (*(code *)((pOVar2[1].klass)->_0).image[5].typeCount)();
+      pDVar1 = (this->fields).emoteDatas;
+      if (pDVar1 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) {
+        pAVar5 = (AvatarLimbManager_EmoteData *)
+                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,emoteType,
+                            MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
+                           );
+        (this->fields).currentRunningEmoteData = pAVar5;
+        func_?(&(this->fields).currentRunningEmoteData);
+        if ((this->fields).OnEmoteStart != (Action_1_String_ *)0x0) {
+          pAVar6 = (this->fields).OnEmoteStart;
+          mscorlib.dll::System::Enum::Enum_ToString
+                    ((Enum *)0xffffffff,(MethodInfo *)(emoteType & 0xff));
+          (*(pAVar6->fields)._._.invoke_impl)();
+        }
+        if ((this->fields).OnEmoteUpdate == (Action_1_Int32_ *)0x0) {
+          return;
+        }
+        (*(((this->fields).OnEmoteUpdate)->fields)._._.invoke_impl)();
+        return;
+      }
+    }
+  }
+code_?:
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

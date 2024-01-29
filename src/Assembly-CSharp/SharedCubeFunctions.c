@@ -11,256 +11,294 @@ void Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_AddCubeLine
     cRam_? = '\x01';
   }
   fVar1 = diagonalWidth * _UNK_?;
-  VVar2.y = p1.y - p0.y;
-  VVar2.x = p1.x - p0.x;
-  VVar2.z = p1.z - p0.z;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                      ((Vector3 *)&stack0xffffff90,VVar2,(MethodInfo *)0x0);
-  fVar4 = pVVar3->y;
-  fVar5 = pVVar3->z;
-  uVar6 = pVVar3->x;
-  uVar7 = 0;
-  fVar8 = 0.0;
-  uVar9 = pVVar3->x;
-  uVar10 = pVVar3->y;
-  fVar11 = (float10)func_?(uVar9,uVar10,fVar5,uVar6,0,fVar5);
-  fStack_12 = (float)((uint)(float)fVar11 ^
-                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
-  if (fVar4 < fVar8) {
-    fStack_12 = (float)fVar11;
-  }
-  puStack_13 = (undefined *)0x0;
+  value.y = p1.y - p0.y;
+  value.x = p1.x - p0.x;
+  value.z = p1.z - p0.z;
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                      ((Vector3 *)&stack0xffffffd0,value,(MethodInfo *)0x0);
+  fVar3 = pVVar2->x;
+  fVar4 = pVVar2->z;
+  fVar5 = pVVar2->x;
+  fVar6 = 0.0;
+  fVar7 = pVVar2->x;
+  fVar8 = pVVar2->y;
+  uVar9 = 0;
+  fVar10 = fVar4;
+  fVar11 = fVar4;
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  fVar11 = fVar5 * fVar5 + fVar6 + fVar11 * fVar11;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  pMVar12 = TypeInfo__System__Math;
+  dVar13 = (double)(fVar11 * (fVar8 * fVar8 + fVar7 * fVar7 + fVar10 * fVar10));
+  if (dVar13 < 0.0) {
     func_?();
+  }
+  else {
+    dVar13 = SQRT(dVar13);
+  }
+  if (_UNK_? <= (float)dVar13) {
+    if ((pMVar12->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(pMVar12);
+    }
+    func_?();
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
   pVVar14 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar15._0_4_ = (pVVar14->forwardVector).x;
-  uVar15._4_4_ = (pVVar14->forwardVector).y;
-  fVar4 = (pVVar14->forwardVector).z;
+  uVar15 = (pVVar14->forwardVector).x;
+  uVar16 = (pVVar14->forwardVector).y;
+  fVar7 = (pVVar14->forwardVector).z;
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  fVar8 = 0.0;
-  v1.z = fVar4;
-  v1.x = (float)(int)uVar15;
-  v1.y = (float)(int)((ulonglong)uVar15 >> 0x20);
-  v2.y = (float)uVar7;
-  v2.x = (float)uVar6;
-  v2.z = fVar5;
-  fVar4 = MathFunctions::MathFunctions_SignedAngle_1
+  v1.y = (float)uVar16;
+  v1.x = (float)uVar15;
+  v1.z = fVar7;
+  v2.y = (float)uVar9;
+  v2.x = fVar5;
+  v2.z = fVar4;
+  fVar8 = MathFunctions::MathFunctions_SignedAngle_1
                      (v1,v2,TypeInfo__UnityEngine__Vector3->static_fields->upVector,
                       (MethodInfo *)0x0);
-  euler.y = fVar8;
-  euler.x = fStack_12 * _UNK_?;
+  euler.y = p1.z;
+  euler.x = p0.y * _UNK_?;
   euler.z = 0.0;
-  pQVar16 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                      ((Quaternion *)&fStack_12,euler,(MethodInfo *)0x0);
-  fStack_12 = pQVar16->x;
-  puStack_13 = (undefined *)pQVar16->y;
-  fVar17 = pQVar16->z;
-  fVar18 = pQVar16->w;
-  euler_00.y = fVar4 * _UNK_? * _UNK_?;
-  euler_00.x = fVar8;
+  pQVar17 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+                      ((Quaternion *)&p0.y,euler,(MethodInfo *)0x0);
+  p0.x = pQVar17->z;
+  p0.y = pQVar17->w;
+  euler_00.y = fVar3 * _UNK_? * _UNK_?;
+  euler_00.x = (float)in_stack_18;
   euler_00.z = 0.0;
-  pQVar16 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                      ((Quaternion *)&stack0xffffff70,euler_00,(MethodInfo *)0x0);
-  fVar4 = pQVar16->y;
-  fVar5 = pQVar16->z;
-  fVar8 = pQVar16->w;
-  fVar19 = fVar5 * fStack_12;
-  fVar20 = (fVar5 * fVar18 + fVar8 * fVar17 + pQVar16->x * (float)puStack_13) - fVar4 * fStack_12;
-  fVar21 = ((fVar8 * fVar18 - pQVar16->x * fStack_12) - fVar4 * (float)puStack_13) - fVar5 * fVar17
-  ;
-  fStack_12 = (pQVar16->x * fVar18 + fVar8 * fStack_12 + fVar4 * fVar17) -
-              fVar5 * (float)puStack_13;
-  puStack_13 = (undefined *)
-               ((fVar8 * (float)puStack_13 + fVar4 * fVar18 + fVar19) - pQVar16->x * fVar17);
-  fVar4 = (float)func_?();
+  pQVar17 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+                      ((Quaternion *)&stack0x00000030,euler_00,(MethodInfo *)0x0);
+  fVar3 = pQVar17->y;
+  fVar5 = pQVar17->z;
+  fVar7 = pQVar17->w;
+  fStack19 = (fVar1 * pQVar17->x + p1.x * fVar7 + p1.z * fVar3) - fVar5 * 0.0;
+  fStack20 = ((fVar1 * fVar7 - p1.x * pQVar17->x) - fVar3 * 0.0) - p1.z * fVar5;
+  fStack21 = fVar1;
+  fStack22 = fVar1;
+  _fStack00000048 =
+       CONCAT44((fVar1 * fVar5 + p1.z * fVar7 + pQVar17->x * 0.0) - p1.x * fVar3,
+                (fVar1 * fVar3 + fVar7 * 0.0 + p1.x * fVar5) - p1.z * pQVar17->x);
+  fStack23 = fVar1;
+  fStack24 = fStack20;
+  iVar25 = func_?(TypeInfo__UnityEngine__Vector3,4,fVar8);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  rotation.y = (float)puStack_13;
-  rotation.x = fStack_12;
-  rotation.z = fVar20;
-  rotation.w = fVar21;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                      ((Vector3 *)&stack0xffffff90,rotation,
+  QVar26.y = fStack27;
+  QVar26.x = fStack19;
+  QVar26.z = (float)iStack28;
+  QVar26.w = fStack24;
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                      ((Vector3 *)&stack0x00000034,QVar26,
                        TypeInfo__UnityEngine__Vector3->static_fields->downVector,(MethodInfo *)0x0);
-  fVar5 = pVVar3->x;
-  fVar8 = pVVar3->y;
-  fVar17 = pVVar3->z;
+  fStack27 = pVVar2->x;
+  iStack28 = (int)pVVar2->y;
+  fStack24 = pVVar2->z;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  rotation_02.y = (float)puStack_13;
-  rotation_02.x = fStack_12;
-  rotation_02.z = fVar20;
-  rotation_02.w = fVar21;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                      ((Vector3 *)&stack0xffffff90,rotation_02,
+  rotation_01.y = fStack29;
+  rotation_01.x = (float)in_stack_30;
+  rotation_01.z = fStack31;
+  rotation_01.w = in_stack_32;
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                      ((Vector3 *)&stack0x00000058,rotation_01,
                        TypeInfo__UnityEngine__Vector3->static_fields->leftVector,(MethodInfo *)0x0);
-  uVar22 = pVVar3->x;
-  uVar23 = pVVar3->y;
-  fVar18 = pVVar3->z;
-  if (fVar4 == 0.0) {
+  fStack33 = pVVar2->x;
+  fStack34 = pVVar2->y;
+  fStack35 = pVVar2->z;
+  in_stack_32 = (fStack35 + in_stack_32) * fVar1;
+  _fStack0000006c =
+       CONCAT44((fStack34 + fStack31) * fVar1,
+                (fStack33 + fStack29) * fVar1);
+  if (iVar25 == 0) {
 code_?:
     func_?();
   }
-  else if (*(int *)((int)fVar4 + 0xc) != 0) {
-    *(ulonglong *)((int)fVar4 + 0x10) =
-         CONCAT44(((float)uVar23 + fVar8) * fVar1,((float)uVar22 + fVar5) * fVar1);
-    *(float *)((int)fVar4 + 0x18) = (fVar18 + fVar17) * fVar1;
+  else if (*(int *)(iVar25 + 0xc) != 0) {
+    *(undefined8 *)(iVar25 + 0x10) = _fStack0000006c;
+    *(float *)(iVar25 + 0x18) = in_stack_32;
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pVVar14 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar24 = (pVVar14->downVector).x;
-    uVar25 = (pVVar14->downVector).y;
-    mesh = (Mesh *)(pVVar14->downVector).z;
-    fVar26 = (float)uVar25;
-    rotation_06.y = (float)puStack_13;
-    rotation_06.x = fStack_12;
-    rotation_06.z = fVar20;
-    rotation_06.w = fVar21;
-    VVar2.x = (float)uVar24;
-    VVar2 = (Vector3)CONCAT84(uVar27,VVar2.x);
-    fVar8 = fStack_12;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                        ((Vector3 *)&stack0xffffff90,rotation_06,VVar2,(MethodInfo *)0x0);
-    fVar17 = pVVar3->x;
-    fVar18 = pVVar3->y;
-    fVar5 = pVVar3->z;
+    pVVar2 = &TypeInfo__UnityEngine__Vector3->static_fields->downVector;
+    uVar36 = pVVar2->x;
+    uVar37 = pVVar2->y;
+    mesh = in_stack_38;
+    fVar39 = (float)in_stack_40;
+    p0.x = in_stack_41;
+    QVar26.x = in_stack_42;
+    QVar26 = (Quaternion)CONCAT124(QVar26._0_12_,QVar26.x);
+    p0.y = (float)uVar36;
+    p0.z = (float)uVar37;
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                        ((Vector3 *)&stack0x0000007c,QVar26,*pVVar2,(MethodInfo *)0x0);
+    in_stack_43._0_4_ = pVVar2->x;
+    in_stack_43._4_4_ = pVVar2->y;
+    in_stack_44 = pVVar2->z;
     if (cRam_? == '\0') {
+      fStack22 = 3.2867502e-29;
+      fStack21 = 2.4480698e-28;
       func_?();
       cRam_? = '\x01';
     }
-    rotation_03.y = (float)puStack_13;
-    rotation_03.x = fStack_12;
-    rotation_03.z = fVar20;
-    rotation_03.w = fVar21;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                        ((Vector3 *)&stack0xffffff90,rotation_03,
+    rotation_02.y = fStack29;
+    rotation_02.x = (float)in_stack_30;
+    rotation_02.z = fStack31;
+    rotation_02.w = in_stack_32;
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                        ((Vector3 *)&stack0x00000058,rotation_02,
                          TypeInfo__UnityEngine__Vector3->static_fields->rightVector,
                          (MethodInfo *)0x0);
-    uVar28 = pVVar3->x;
-    uVar29 = pVVar3->y;
-    fVar19 = pVVar3->z;
-    if (1 < *(uint *)((int)fVar4 + 0xc)) {
-      *(ulonglong *)((int)fVar4 + 0x1c) =
-           CONCAT44(((float)uVar29 + fVar18) * fVar1,((float)uVar28 + fVar17) * fVar1);
-      *(float *)((int)fVar4 + 0x24) = (fVar19 + fVar5) * fVar1;
+    uVar45 = pVVar2->x;
+    uVar46 = pVVar2->y;
+    in_stack_32 = (pVVar2->z + fStack35) * fVar1;
+    _fStack0000006c =
+         CONCAT44(((float)uVar46 + fStack34) * fVar1,((float)uVar45 + fStack33) * fVar1
+                 );
+    if (1 < *(uint *)(iVar25 + 0xc)) {
+      *(undefined8 *)(iVar25 + 0x1c) = _fStack0000006c;
+      *(float *)(iVar25 + 0x24) = in_stack_32;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      rotation_00.y = (float)puStack_13;
-      rotation_00.x = fStack_12;
-      rotation_00.z = fVar20;
-      rotation_00.w = fVar21;
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                          ((Vector3 *)&stack0xffffff90,rotation_00,
+      rotation.y = fStack27;
+      rotation.x = fStack19;
+      rotation.z = (float)iStack28;
+      rotation.w = fStack24;
+      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                          ((Vector3 *)&stack0x00000034,rotation,
                            TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0
                           );
-      fVar19 = pVVar3->x;
-      fVar30 = pVVar3->y;
-      fVar5 = pVVar3->z;
+      fStack22 = pVVar2->x;
+      fStack21 = pVVar2->y;
+      fStack23 = pVVar2->z;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      rotation_04.y = (float)puStack_13;
-      rotation_04.x = fStack_12;
-      rotation_04.z = fVar20;
-      rotation_04.w = fVar21;
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                          ((Vector3 *)&stack0xffffff90,rotation_04,
+      rotation_03.y = fStack29;
+      rotation_03.x = (float)in_stack_30;
+      rotation_03.z = fStack31;
+      rotation_03.w = in_stack_32;
+      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                          ((Vector3 *)&stack0x00000058,rotation_03,
                            TypeInfo__UnityEngine__Vector3->static_fields->rightVector,
                            (MethodInfo *)0x0);
-      uVar31 = pVVar3->x;
-      uVar32 = pVVar3->y;
-      fVar17 = pVVar3->z;
-      if (2 < *(uint *)((int)fVar4 + 0xc)) {
-        *(ulonglong *)((int)fVar4 + 0x28) =
-             CONCAT44(((float)uVar32 + fVar30) * fVar1,((float)uVar31 + fVar19) * fVar1);
-        *(float *)((int)fVar4 + 0x30) = (fVar17 + fVar5) * fVar1;
+      uVar47 = pVVar2->x;
+      uVar48 = pVVar2->y;
+      in_stack_32 = (pVVar2->z + fStack35) * fVar1;
+      _fStack0000006c =
+           CONCAT44(((float)uVar48 + fStack34) * fVar1,
+                    ((float)uVar47 + fStack33) * fVar1);
+      if (2 < *(uint *)(iVar25 + 0xc)) {
+        *(undefined8 *)(iVar25 + 0x28) = _fStack0000006c;
+        *(float *)(iVar25 + 0x30) = in_stack_32;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        rotation_01.y = (float)puStack_13;
-        rotation_01.x = fStack_12;
-        rotation_01.z = fVar20;
-        rotation_01.w = fVar21;
-        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                            ((Vector3 *)&stack0xffffff90,rotation_01,
+        rotation_00.y = fStack27;
+        rotation_00.x = fStack19;
+        rotation_00.z = (float)iStack28;
+        rotation_00.w = fStack24;
+        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                            ((Vector3 *)&stack0x00000034,rotation_00,
                              TypeInfo__UnityEngine__Vector3->static_fields->upVector,
                              (MethodInfo *)0x0);
-        fVar33 = pVVar3->x;
-        fVar34 = pVVar3->y;
-        fVar5 = pVVar3->z;
+        fStack22 = pVVar2->x;
+        fStack21 = pVVar2->y;
+        fStack23 = pVVar2->z;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        fVar30 = 0.0;
-        pVVar3 = &TypeInfo__UnityEngine__Vector3->static_fields->leftVector;
-        fVar35 = pVVar3->x;
-        fVar17 = (TypeInfo__UnityEngine__Vector3->static_fields->leftVector).z;
-        rotation_05.y = (float)puStack_13;
-        rotation_05.x = fStack_12;
-        rotation_05.z = fVar20;
-        rotation_05.w = fVar21;
-        fVar19 = fStack_12;
-        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                            ((Vector3 *)&stack0xffffff90,rotation_05,*pVVar3,(MethodInfo *)0x0);
-        uVar36 = pVVar3->x;
-        uVar37 = pVVar3->y;
-        fVar18 = pVVar3->z;
-        if (3 < *(uint *)((int)fVar4 + 0xc)) {
-          *(ulonglong *)((int)fVar4 + 0x34) =
-               CONCAT44(((float)uVar37 + fVar34) * fVar1,((float)uVar36 + fVar33) * fVar1);
-          *(float *)((int)fVar4 + 0x3c) = (fVar18 + fVar5) * fVar1;
-          corners = (Vector3__Array *)func_?();
-          uVar38 = 0;
-          pVVar3 = corners->vector;
+        rotation_04.y = fStack29;
+        rotation_04.x = (float)in_stack_30;
+        rotation_04.z = fStack31;
+        rotation_04.w = in_stack_32;
+        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                            ((Vector3 *)&stack0x00000058,rotation_04,
+                             TypeInfo__UnityEngine__Vector3->static_fields->leftVector,
+                             (MethodInfo *)0x0);
+        uVar49 = pVVar2->x;
+        uVar50 = pVVar2->y;
+        in_stack_32 = (pVVar2->z + fStack35) * fVar1;
+        _fStack0000006c =
+             CONCAT44(((float)uVar50 + fStack34) * fVar1,
+                      ((float)uVar49 + fStack33) * fVar1);
+        if (3 < *(uint *)(iVar25 + 0xc)) {
+          *(undefined8 *)(iVar25 + 0x34) = _fStack0000006c;
+          *(float *)(iVar25 + 0x3c) = in_stack_32;
+          p0.z = (float)&UNK_?;
+          in_stack_18 = (Vector3__Array *)func_?();
+          uVar51 = 0;
+          pVVar2 = in_stack_18->vector;
           do {
-            if (*(uint *)((int)fVar4 + 0xc) <= uVar38) goto code_?;
-            uVar15 = *(undefined8 *)(((int)fVar4 - (int)corners) + (int)pVVar3);
-            fVar5 = *(float *)(((int)fVar4 - (int)corners) + 8 + (int)pVVar3);
-            if (corners == (Vector3__Array *)0x0) goto code_?;
-            if (corners->max_length <= uVar38) goto code_?;
-            uVar38 = uVar38 + 1;
-            pVVar3->x = fVar8 + (float)uVar15;
-            pVVar3->y = fVar30 + (float)((ulonglong)uVar15 >> 0x20);
-            pVVar3->z = fVar17 + fVar5;
-            pVVar3 = pVVar3 + 1;
-          } while ((int)uVar38 < 4);
-          pVVar3 = corners->vector + 4;
-          puVar39 = (undefined8 *)((int)fVar4 + 0x34);
-          uVar38 = 3;
-          iVar40 = 0;
-          while (uVar38 < *(uint *)((int)fVar4 + 0xc)) {
-            uVar15 = *puVar39;
-            fVar4 = *(float *)(puVar39 + 1);
-            if (corners->max_length <= iVar40 + 4U) break;
-            uVar38 = uVar38 - 1;
-            puVar39 = (undefined8 *)((int)puVar39 + -0xc);
-            iVar40 = iVar40 + 1;
-            pVVar3->x = fVar35 + (float)uVar15;
-            pVVar3->y = fVar21 + (float)((ulonglong)uVar15 >> 0x20);
-            pVVar3->z = fVar20 + fVar4;
-            pVVar3 = pVVar3 + 1;
-            fVar4 = fVar19;
-            if (0x7fffffff < uVar38) {
+            if (*(uint *)(iVar25 + 0xc) <= uVar51) goto code_?;
+            uVar52 = *(undefined8 *)((iVar25 - (int)in_stack_18) + (int)pVVar2);
+            in_stack_32 = *(float *)((iVar25 - (int)in_stack_18) + 8 + (int)pVVar2);
+            fStack29 = (float)uVar52;
+            fStack33 = fStack20 + fStack29;
+            fStack31 = (float)((ulonglong)uVar52 >> 0x20);
+            fStack34 = fStack22 + fStack31;
+            fStack35 = fStack21 + in_stack_32;
+            _fStack0000006c = uVar52;
+            if (in_stack_18 == (Vector3__Array *)0x0) goto code_?;
+            if (in_stack_18->max_length <= uVar51) goto code_?;
+            uVar51 = uVar51 + 1;
+            pVVar2->x = fStack33;
+            pVVar2->y = fStack34;
+            pVVar2->z = fStack35;
+            pVVar2 = pVVar2 + 1;
+          } while ((int)uVar51 < 4);
+          pVVar2 = in_stack_18->vector + 4;
+          puVar53 = (undefined8 *)(iVar25 + 0x34);
+          uVar51 = 3;
+          iStack54 = 0;
+          while (uVar51 < *(uint *)(iVar25 + 0xc)) {
+            uVar52 = *puVar53;
+            in_stack_32 = *(float *)(puVar53 + 1);
+            fStack29 = (float)uVar52;
+            fStack33 = fStack23 + fStack29;
+            fStack31 = (float)((ulonglong)uVar52 >> 0x20);
+            fStack34 = fStack19 + fStack31;
+            fStack35 = fStack27 + in_stack_32;
+            _fStack0000006c = uVar52;
+            if (in_stack_18->max_length <= iStack54 + 4U) break;
+            uVar51 = uVar51 - 1;
+            puVar53 = (undefined8 *)((int)puVar53 + -0xc);
+            iStack54 = iStack54 + 1;
+            pVVar2->x = fStack33;
+            pVVar2->y = fStack34;
+            pVVar2->z = fStack35;
+            pVVar2 = pVVar2 + 1;
+            iVar25 = iStack28;
+            if (0x7fffffff < uVar51) {
               if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              SharedCubeFunctions_AddCubeMesh((Mesh *)0x0,corners,0,(MethodInfo *)0x0);
+              p0.z = (float)in_stack_18;
+              p0.y = (float)in_stack_38;
+              p0.x = (float)&UNK_?;
+              SharedCubeFunctions_AddCubeMesh
+                        (in_stack_38,in_stack_18,0,(MethodInfo *)0x0);
               return;
             }
           }
@@ -270,8 +308,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar41 = (code *)swi(3);
-  (*pcVar41)();
+  pcVar55 = (code *)swi(3);
+  (*pcVar55)();
   return;
 }
 
@@ -523,9 +561,7 @@ void Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_AddCubeMeshCu
     uStack_11 = 0;
     uStack_12 = 7;
     pVVar13 = corners->vector + 7;
-    while (uStack_11 < corners->max_length) {
-      VVar3 = *pVVar1;
-      if (corners->max_length <= uStack_12) break;
+    while ((uStack_11 < corners->max_length && (VVar3 = *pVVar1, uStack_12 < corners->max_length))) {
       VVar7 = *pVVar13;
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__SharedCubeFunctions);
@@ -563,7 +599,7 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_CreateFromBytePack
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cube>__set_Item_MV__WorldObject__IntVector__Cube_
                    );
-    func_?(0xe010);
+    func_?(0x4dcc);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     cRam_? = '\x01';
   }
@@ -601,7 +637,7 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_CreateFromBytePack
         Cube::Cube__ctor_1(this_00,bp,byteFlags,(MethodInfo *)0x0);
         if (this == (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)
                     0x0) goto code_?;
-        key.z = -0x6885;
+        key.z = -0x4be5;
         key._0_4_ = puVar4;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::
         Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__set_Item
@@ -1601,18 +1637,18 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_GetTriangleVertice
                      );
     if (this != (MeshFilter *)0x0) {
       pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_sharedMesh
-                         (this,(MethodInfo *)0x0);
+                          (this,(MethodInfo *)0x0);
       if (pMVar2 != (Mesh *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_vertices(pMVar2,(MethodInfo *)0x0);
         pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_sharedMesh
-                           (this,(MethodInfo *)0x0);
+                            (this,(MethodInfo *)0x0);
         if (pMVar2 != (Mesh *)0x0) {
           pIVar3 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_triangles
                               (pMVar2,(MethodInfo *)0x0);
           if (pIVar3 != (Int32__Array *)0x0) {
-            if (pIVar3->max_length < 0x30740d85) goto code_?;
+            if (pIVar3->max_length < 0x30746365) goto code_?;
             if (pMVar2 != (Mesh *)0x0) {
-              pMVar4 = (Mesh__Class *)pIVar3[-0x6e8dd9].vector[8];
+              pMVar4 = (Mesh__Class *)pIVar3[-0x6e8b76].klass;
               if (pMVar2[1].klass <= pMVar4) goto code_?;
               if (pVVar1 != (Vector3__Array *)0x0) {
                 MVar5._.m_CachedPtr = pMVar2[(int)((int)&(pMVar4->_0).image + 1)].fields._;
@@ -1622,45 +1658,45 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_GetTriangleVertice
                 pVVar1->vector[0].y = (float)MVar5._.m_CachedPtr;
                 pVVar1->vector[0].z = (float)pMVar6;
                 pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
-                         MeshFilter_get_sharedMesh(this,(MethodInfo *)0x0);
+                          MeshFilter_get_sharedMesh(this,(MethodInfo *)0x0);
                 if (pMVar2 != (Mesh *)0x0) {
                   pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_vertices
                                       (pMVar2,(MethodInfo *)0x0);
                   pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
-                           MeshFilter_get_sharedMesh(this,(MethodInfo *)0x0);
+                            MeshFilter_get_sharedMesh(this,(MethodInfo *)0x0);
                   if (pMVar2 != (Mesh *)0x0) {
                     pIVar3 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_triangles
                                         (pMVar2,(MethodInfo *)0x0);
                     if (pIVar3 != (Int32__Array *)0x0) {
-                      if (pIVar3->max_length < 0x30740d86) goto code_?;
+                      if (pIVar3->max_length < 0x30746366) goto code_?;
                       if (pVVar7 != (Vector3__Array *)0x0) {
-                        uVar8 = pIVar3[-0x6e8dd9].vector[9];
-                        if (pVVar7->max_length <= uVar8) goto code_?;
-                        fVar9 = pVVar7->vector[uVar8].y;
-                        fVar10 = pVVar7->vector[uVar8].z;
+                        pMVar8 = pIVar3[-0x6e8b76].monitor;
+                        if ((MonitorData *)pVVar7->max_length <= pMVar8) goto code_?;
+                        fVar9 = pVVar7->vector[(int)pMVar8].y;
+                        fVar10 = pVVar7->vector[(int)pMVar8].z;
                         if (pVVar1->max_length < 2) goto code_?;
-                        pVVar1->vector[1].x = pVVar7->vector[uVar8].x;
+                        pVVar1->vector[1].x = pVVar7->vector[(int)pMVar8].x;
                         pVVar1->vector[1].y = fVar9;
                         pVVar1->vector[1].z = fVar10;
                         pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
-                                 MeshFilter_get_sharedMesh(this,(MethodInfo *)0x0);
+                                  MeshFilter_get_sharedMesh(this,(MethodInfo *)0x0);
                         if (pMVar2 != (Mesh *)0x0) {
                           pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_vertices
                                               (pMVar2,(MethodInfo *)0x0);
                           pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
-                                   MeshFilter_get_sharedMesh(this,(MethodInfo *)0x0);
+                                    MeshFilter_get_sharedMesh(this,(MethodInfo *)0x0);
                           if (pMVar2 != (Mesh *)0x0) {
                             pIVar3 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::
                                       Mesh_get_triangles(pMVar2,(MethodInfo *)0x0);
                             if (pIVar3 != (Int32__Array *)0x0) {
-                              if (pIVar3->max_length < 0x30740d87) goto code_?;
+                              if (pIVar3->max_length < 0x30746367) goto code_?;
                               if (pVVar7 != (Vector3__Array *)0x0) {
-                                uVar8 = pIVar3[-0x6e8dd9].vector[10];
-                                if (uVar8 < pVVar7->max_length) {
-                                  fVar9 = pVVar7->vector[uVar8].y;
-                                  fVar10 = pVVar7->vector[uVar8].z;
+                                pIVar11 = pIVar3[-0x6e8b76].bounds;
+                                if (pIVar11 < (Il2CppArrayBounds *)pVVar7->max_length) {
+                                  fVar9 = pVVar7->vector[(int)pIVar11].y;
+                                  fVar10 = pVVar7->vector[(int)pIVar11].z;
                                   if (2 < pVVar1->max_length) {
-                                    pVVar1->vector[2].x = pVVar7->vector[uVar8].x;
+                                    pVVar1->vector[2].x = pVVar7->vector[(int)pIVar11].x;
                                     pVVar1->vector[2].y = fVar9;
                                     pVVar1->vector[2].z = fVar10;
                                     return pVVar1;
@@ -1685,8 +1721,8 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_GetTriangleVertice
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  pVVar1 = (Vector3__Array *)(*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  pVVar1 = (Vector3__Array *)(*pcVar12)();
   return pVVar1;
 }
 
@@ -1927,7 +1963,7 @@ void Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_GetVertices_2
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0x2e38);
+    func_?(0x9e40);
     cRam_? = '\x01';
   }
   if (info != (CubePickingInfo *)0x0) {
@@ -1990,7 +2026,7 @@ code_?:
                   uVar17 = func_?(&TypeInfo__System__IndexOutOfRangeException);
                   this_01 = (IndexOutOfRangeException *)func_?(uVar17);
                   method_00 = (MethodInfo *)0x0;
-                  message = (String *)func_?(0xe008);
+                  message = (String *)func_?(0x6a4c);
                   mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
                             (this_01,message,method_00);
                   uVar18 = func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
@@ -2189,9 +2225,9 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_MoveEdge
           EditCubeChange__Enum *editCubeChange,MethodInfo *method)
 
 {
-  byte *pbVar1;
-  MVCubeModelBase__Class **ppMVar2;
-  byte bVar3;
+  undefined4 uVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
   undefined4 uVar4;
   undefined4 uVar5;
   undefined4 uVar6;
@@ -2199,12 +2235,8 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_MoveEdge
   undefined4 uVar8;
   undefined4 uVar9;
   undefined4 uVar10;
-  undefined4 uVar11;
-  undefined4 uVar12;
-  undefined4 uVar13;
-  Face__Enum FVar14;
-  Vector3__StaticFields *pVVar15;
-  code *pcVar16;
+  Face__Enum FVar11;
+  Vector3__StaticFields *pVVar12;
   Matrix4x4 lhs;
   Vector4 vector;
   Vector3 start;
@@ -2225,107 +2257,105 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_MoveEdge
   Vector3 axis;
   Vector3 axis_00;
   Vector3 axis_01;
-  bool bVar17;
+  bool bVar13;
   byte extraout_AH;
-  Cube *pCVar18;
-  Transform *pTVar19;
-  undefined8 *puVar20;
-  Matrix4x4 *pMVar21;
-  Vector3 *pVVar22;
-  Vector4 *pVVar23;
-  Camera *pCVar24;
-  undefined1 (*pauVar25) [12];
-  float *pfVar26;
-  CubeOutOfBoundState__Enum CVar27;
-  byte extraout_DH;
-  byte bVar28;
-  bool bVar29;
-  bool bVar30;
-  float10 fVar31;
+  byte bVar14;
+  Cube *pCVar15;
+  Transform *pTVar16;
+  undefined8 *puVar17;
+  Matrix4x4 *pMVar18;
+  Vector3 *pVVar19;
+  Vector4 *pVVar20;
+  Camera *pCVar21;
+  undefined1 (*pauVar22) [12];
+  float *pfVar23;
+  byte extraout_DL;
+  byte bVar24;
+  float10 fVar25;
+  float fVar26;
+  float fVar27;
+  float fVar28;
+  float fVar29;
+  float fVar30;
+  float fVar31;
   float fVar32;
   float fVar33;
-  float fVar34;
-  float fVar35;
-  float fVar36;
-  float fVar37;
-  float fVar38;
-  float fVar39;
-  Vector4 VStack_40;
-  CubeOutOfBoundState__Enum CStack_41;
-  undefined1 auStack_42 [12];
-  undefined4 uStack_43;
-  float fStack_44;
+  Vector4 VStack_34;
+  CubeOutOfBoundState__Enum CStack_35;
+  undefined1 auStack_36 [12];
+  Cube *pCStack_37;
+  float fStack_38;
+  float fStack_39;
+  undefined8 uStack_40;
+  float fStack_41;
+  Vector3 VStack_42;
+  float fStack_43;
+  GameObject *pGStack_44;
   float fStack_45;
-  undefined8 uStack_46;
+  float fStack_46;
   float fStack_47;
-  Vector3 VStack_48;
-  float fStack_49;
-  GameObject *pGStack_50;
-  float fStack_51;
-  float fStack_52;
-  float fStack_53;
-  float fStack_54;
+  float fStack_48;
   
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
-    func_?(0x92a0);
+    func_?(0x1b8);
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&TypeInfo__SharedCubeFunctions);
     cRam_? = '\x01';
   }
   if ((info != (CubePickingInfo *)0x0) && (cmb != (MVCubeModelBase *)0x0)) {
-    pCVar18 = MVCubeModelBase::MVCubeModelBase_GetCube
+    pCVar15 = MVCubeModelBase::MVCubeModelBase_GetCube
                         (cmb,(info->fields).iLocalPos,(MethodInfo *)0x0);
-    uStack_43 = pCVar18;
+    pCStack_37 = pCVar15;
     if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MV__WorldObject__CubeBase);
     }
-    bVar17 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
-                       ((CubeBase *)uStack_43,(CubeBase *)0x0,(MethodInfo *)0x0);
-    if (bVar17 != 0) {
+    bVar13 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
+                       ((CubeBase *)pCStack_37,(CubeBase *)0x0,(MethodInfo *)0x0);
+    if (bVar13 != 0) {
       return CubeOutOfBoundState__Enum_WithinBounds;
     }
-    pGStack_50 = (cmb->fields)._.gameObject;
-    stack0xffffffa8 = (double)CONCAT44((info->fields).pickedFace,auStack_42._8_4_);
-    CStack_41 = CubeOutOfBoundState__Enum_NoChange;
+    pGStack_44 = (cmb->fields)._.gameObject;
+    stack0xffffffa8 = (double)CONCAT44((info->fields).pickedFace,auStack_36._8_4_);
+    CStack_35 = CubeOutOfBoundState__Enum_NoChange;
     if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__SharedCubeFunctions);
     }
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Debug);
-      func_?(0xf710);
+      func_?(0x8260);
       cRam_? = '\x01';
     }
-    switch(uStack_43) {
+    switch(pCStack_37) {
     case (Cube *)0x0:
     case (Cube *)0x1:
-      if ((pGStack_50 == (GameObject *)0x0) ||
-         (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (pGStack_50,(MethodInfo *)0x0), pTVar19 == (Transform *)0x0))
+      if ((pGStack_44 == (GameObject *)0x0) ||
+         (pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (pGStack_44,(MethodInfo *)0x0), pTVar16 == (Transform *)0x0))
       goto code_?;
-      pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                          (&VStack_48,pTVar19,(MethodInfo *)0x0);
-      pGStack_50 = (GameObject *)pVVar22->y;
+      pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                          (&VStack_42,pTVar16,(MethodInfo *)0x0);
+      pGStack_44 = (GameObject *)pVVar19->y;
       break;
     case (Cube *)0x2:
     case (Cube *)0x3:
-      if ((pGStack_50 == (GameObject *)0x0) ||
-         (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (pGStack_50,(MethodInfo *)0x0), pTVar19 == (Transform *)0x0))
+      if ((pGStack_44 == (GameObject *)0x0) ||
+         (pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (pGStack_44,(MethodInfo *)0x0), pTVar16 == (Transform *)0x0))
       goto code_?;
-      pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                          (&VStack_48,pTVar19,(MethodInfo *)0x0);
-      pGStack_50 = (GameObject *)pVVar22->z;
+      pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                          (&VStack_42,pTVar16,(MethodInfo *)0x0);
+      pGStack_44 = (GameObject *)pVVar19->z;
       break;
     case (Cube *)0x4:
     case (Cube *)0x5:
-      if ((pGStack_50 == (GameObject *)0x0) ||
-         (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (pGStack_50,(MethodInfo *)0x0), pTVar19 == (Transform *)0x0))
+      if ((pGStack_44 == (GameObject *)0x0) ||
+         (pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (pGStack_44,(MethodInfo *)0x0), pTVar16 == (Transform *)0x0))
       goto code_?;
-      pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                          (&VStack_48,pTVar19,(MethodInfo *)0x0);
-      pGStack_50 = (GameObject *)pVVar22->x;
+      pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                          (&VStack_42,pTVar16,(MethodInfo *)0x0);
+      pGStack_44 = (GameObject *)pVVar19->x;
       break;
     default:
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -2334,113 +2364,113 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_MoveEdge
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_No_face,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Break((MethodInfo *)0x0);
-      pGStack_50 = (GameObject *)0x0;
+      pGStack_44 = (GameObject *)0x0;
     }
-    puVar20 = (undefined8 *)
+    puVar17 = (undefined8 *)
               (*(code *)(cmb->klass->vtable).get_Scale.method)
-                        (&VStack_48,cmb,(cmb->klass->vtable).set_Scale.methodPtr);
-    fStack_54 = *(float *)(puVar20 + 1);
-    fStack_52 = (float)*puVar20;
-    fStack_53 = (float)((ulonglong)*puVar20 >> 0x20);
-    puVar20 = (undefined8 *)
+                        (&VStack_42,cmb,(cmb->klass->vtable).set_Scale.methodPtr);
+    fStack_48 = *(float *)(puVar17 + 1);
+    fStack_46 = (float)*puVar17;
+    fStack_47 = (float)((ulonglong)*puVar17 >> 0x20);
+    puVar17 = (undefined8 *)
               (*(code *)(cmb->klass->vtable).get_Scale.method)
-                        (&fStack_45,(short)cmb,(cmb->klass->vtable).set_Scale.methodPtr);
-    fStack_49 = *(float *)(puVar20 + 1);
-    VStack_48.y = (float)*puVar20;
-    VStack_48.z = (float)((ulonglong)*puVar20 >> 0x20);
-    puVar20 = (undefined8 *)
+                        (&fStack_39,(short)cmb,(cmb->klass->vtable).set_Scale.methodPtr);
+    fStack_43 = *(float *)(puVar17 + 1);
+    VStack_42.y = (float)*puVar17;
+    VStack_42.z = (float)((ulonglong)*puVar17 >> 0x20);
+    puVar17 = (undefined8 *)
               (*(code *)(cmb->klass->vtable).get_Scale.method)
-                        (auStack_42,cmb,(cmb->klass->vtable).set_Scale.methodPtr);
-    uStack_46 = *puVar20;
-    fStack_47 = *(float *)(puVar20 + 1);
-    pTVar19 = (cmb->fields)._.transform;
-    pGStack_50 = (GameObject *)
-                 (((float)pGStack_50 * _UNK_?) /
-                 ((VStack_48.z + fStack_52 + fStack_47) / _UNK_?));
-    if (pTVar19 != (Transform *)0x0) {
-      pMVar21 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix
-                          ((Matrix4x4 *)&stack0xffffff10,pTVar19,(MethodInfo *)0x0);
-      fStack_51 = pMVar21->m00;
-      fStack_52 = pMVar21->m10;
-      fStack_53 = pMVar21->m20;
-      fStack_54 = pMVar21->m30;
-      fVar35 = pMVar21->m01;
-      fVar34 = pMVar21->m11;
-      fVar38 = pMVar21->m21;
-      fVar32 = pMVar21->m31;
-      fVar33 = pMVar21->m02;
-      fVar36 = pMVar21->m12;
-      fVar37 = pMVar21->m22;
-      fVar39 = pMVar21->m32;
-      VStack_40.x = pMVar21->m03;
-      VStack_40.y = pMVar21->m13;
-      VStack_40.z = pMVar21->m23;
-      VStack_40.w = pMVar21->m33;
-      FVar14 = (info->fields).pickedFace;
-      uStack_43 = (Cube *)FVar14;
+                        (auStack_36,cmb,(cmb->klass->vtable).set_Scale.methodPtr);
+    uStack_40 = *puVar17;
+    fStack_41 = *(float *)(puVar17 + 1);
+    pTVar16 = (cmb->fields)._.transform;
+    pGStack_44 = (GameObject *)
+                 (((float)pGStack_44 * _UNK_?) /
+                 ((VStack_42.z + fStack_46 + fStack_41) / _UNK_?));
+    if (pTVar16 != (Transform *)0x0) {
+      pMVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix
+                          ((Matrix4x4 *)&stack0xffffff10,pTVar16,(MethodInfo *)0x0);
+      fStack_45 = pMVar18->m00;
+      fStack_46 = pMVar18->m10;
+      fStack_47 = pMVar18->m20;
+      fStack_48 = pMVar18->m30;
+      fVar29 = pMVar18->m01;
+      fVar28 = pMVar18->m11;
+      fVar32 = pMVar18->m21;
+      fVar26 = pMVar18->m31;
+      fVar27 = pMVar18->m02;
+      fVar30 = pMVar18->m12;
+      fVar31 = pMVar18->m22;
+      fVar33 = pMVar18->m32;
+      VStack_34.x = pMVar18->m03;
+      VStack_34.y = pMVar18->m13;
+      VStack_34.z = pMVar18->m23;
+      VStack_34.w = pMVar18->m33;
+      FVar11 = (info->fields).pickedFace;
+      pCStack_37 = (Cube *)FVar11;
       if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Cube);
       }
-      pVVar22 = Cube::Cube_GetFaceAxis(&VStack_48,(Face__Enum)uStack_43,(MethodInfo *)0x0);
-      uStack_46._0_4_ = pVVar22->x;
-      uStack_46._4_4_ = pVVar22->y;
-      fStack_47 = pVVar22->z;
-      VStack_48.x = (float)uStack_46;
-      VStack_48.y = uStack_46._4_4_;
-      fStack_49 = 0.0;
-      lhs.m10 = fStack_52;
-      lhs.m00 = fStack_51;
-      lhs.m20 = fStack_53;
-      lhs.m30 = fStack_54;
-      lhs.m01 = fVar35;
-      lhs.m11 = fVar34;
-      lhs.m21 = fVar38;
-      lhs.m31 = fVar32;
-      lhs.m02 = fVar33;
-      lhs.m12 = fVar36;
-      lhs.m22 = fVar37;
-      lhs.m32 = fVar39;
-      lhs.m03 = VStack_40.x;
-      lhs.m13 = VStack_40.y;
-      lhs.m23 = VStack_40.z;
-      lhs.m33 = VStack_40.w;
+      pVVar19 = Cube::Cube_GetFaceAxis(&VStack_42,(Face__Enum)pCStack_37,(MethodInfo *)0x0);
+      uStack_40._0_4_ = pVVar19->x;
+      uStack_40._4_4_ = pVVar19->y;
+      fStack_41 = pVVar19->z;
+      VStack_42.x = (float)uStack_40;
+      VStack_42.y = uStack_40._4_4_;
+      fStack_43 = 0.0;
+      lhs.m10 = fStack_46;
+      lhs.m00 = fStack_45;
+      lhs.m20 = fStack_47;
+      lhs.m30 = fStack_48;
+      lhs.m01 = fVar29;
+      lhs.m11 = fVar28;
+      lhs.m21 = fVar32;
+      lhs.m31 = fVar26;
+      lhs.m02 = fVar27;
+      lhs.m12 = fVar30;
+      lhs.m22 = fVar31;
+      lhs.m32 = fVar33;
+      lhs.m03 = VStack_34.x;
+      lhs.m13 = VStack_34.y;
+      lhs.m23 = VStack_34.z;
+      lhs.m33 = VStack_34.w;
       vector.w = 0.0;
-      vector.x = pVVar22->x;
-      vector.y = pVVar22->y;
-      vector.z = pVVar22->z;
-      VStack_48.z = fStack_47;
-      pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply_1
-                          (&VStack_40,lhs,vector,(MethodInfo *)0x0);
-      VStack_40.x = pVVar23->x;
-      fVar34 = pVVar23->y;
-      fVar38 = pVVar23->z;
-      VStack_40.w = pVVar23->w;
-      uVar4 = (info->fields).point.x;
-      uVar9 = (info->fields).point.y;
-      fVar35 = *deltaAccum;
-      fVar32 = (float)uVar4 + VStack_40.x * fVar35;
-      fStack_52 = (float)uVar9 + fVar34 * fVar35;
-      fStack_44 = (info->fields).point.z + fVar38 * fVar35;
-      stack0xffffffa8 = (double)CONCAT44(fStack_52,auStack_42._8_4_);
-      fStack_51 = VStack_40.x + fVar32;
-      uStack_46 = CONCAT44(fStack_52,fVar32);
-      fStack_52 = fVar34 + fStack_52;
-      fStack_53 = fVar38 + fStack_44;
-      VStack_40.y = fVar34;
-      VStack_40.z = fVar38;
-      fStack_47 = fStack_44;
-      VStack_48.y = VStack_40.x;
-      VStack_48.z = fVar34;
-      fStack_49 = fVar38;
+      vector.x = pVVar19->x;
+      vector.y = pVVar19->y;
+      vector.z = pVVar19->z;
+      VStack_42.z = fStack_41;
+      pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply_1
+                          (&VStack_34,lhs,vector,(MethodInfo *)0x0);
+      VStack_34.x = pVVar20->x;
+      fVar28 = pVVar20->y;
+      fVar32 = pVVar20->z;
+      VStack_34.w = pVVar20->w;
+      uVar1 = (info->fields).point.x;
+      uVar6 = (info->fields).point.y;
+      fVar29 = *deltaAccum;
+      fVar26 = (float)uVar1 + VStack_34.x * fVar29;
+      fStack_46 = (float)uVar6 + fVar28 * fVar29;
+      fStack_38 = (info->fields).point.z + fVar32 * fVar29;
+      stack0xffffffa8 = (double)CONCAT44(fStack_46,auStack_36._8_4_);
+      fStack_45 = VStack_34.x + fVar26;
+      uStack_40 = CONCAT44(fStack_46,fVar26);
+      fStack_46 = fVar28 + fStack_46;
+      fStack_47 = fVar32 + fStack_38;
+      VStack_34.y = fVar28;
+      VStack_34.z = fVar32;
+      fStack_41 = fStack_38;
+      VStack_42.y = VStack_34.x;
+      VStack_42.z = fVar28;
+      fStack_43 = fVar32;
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      end.y = fStack_52;
-      end.x = fStack_51;
-      start.z = fStack_47;
-      start.x = (float)uStack_46;
-      start.y = uStack_46._4_4_;
-      end.z = fStack_53;
+      end.y = fStack_46;
+      end.x = fStack_45;
+      start.z = fStack_41;
+      start.x = (float)uStack_40;
+      start.y = uStack_40._4_4_;
+      end.z = fStack_47;
       color.g = (float)_UNK_?;
       color.r = (float)_UNK_?;
       color.b = (float)_UNK_?;
@@ -2451,291 +2481,291 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_MoveEdge
         func_?(&TypeInfo__UnityEngine__Vector3);
         cRam_? = '\x01';
       }
-      pVVar15 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar5 = (pVVar15->upVector).x;
-      uVar10 = (pVVar15->upVector).y;
-      fStack_54 = (pVVar15->upVector).z;
-      fStack_53 = fStack_54 + fStack_44;
-      end_00.y = (float)uVar10 + (float)uStack_43;
-      end_00.x = (float)uVar5 + fVar32;
-      start_00.z = fStack_47;
-      start_00.x = (float)uStack_46;
-      start_00.y = uStack_46._4_4_;
-      end_00.z = fStack_53;
+      pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar2 = (pVVar12->upVector).x;
+      uVar7 = (pVVar12->upVector).y;
+      fStack_48 = (pVVar12->upVector).z;
+      fStack_47 = fStack_48 + fStack_38;
+      end_00.y = (float)uVar7 + (float)pCStack_37;
+      end_00.x = (float)uVar2 + fVar26;
+      start_00.z = fStack_41;
+      start_00.x = (float)uStack_40;
+      start_00.y = uStack_40._4_4_;
+      end_00.z = fStack_47;
       color_00.g = (float)_UNK_?;
       color_00.r = (float)_UNK_?;
       color_00.b = (float)_UNK_?;
       color_00.a = _UNK_?;
-      fStack_52 = (float)uVar5;
+      fStack_46 = (float)uVar2;
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine_1
                 (start_00,end_00,color_00,(MethodInfo *)0x0);
-      pCVar24 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-      fStack_51 = VStack_40.x + fVar32;
-      fStack_52 = fVar34 + (float)uStack_43;
-      fStack_53 = fVar38 + fStack_44;
-      if (pCVar24 != (Camera *)0x0) {
-        position.y = fStack_52;
-        position.x = fStack_51;
-        position.z = fStack_53;
-        pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                            ((Vector3 *)auStack_42,pCVar24,position,(MethodInfo *)0x0);
-        uVar6 = pVVar22->x;
-        uVar11 = pVVar22->y;
-        fStack_54 = pVVar22->z;
-        fStack_52 = (float)uVar6;
-        fStack_53 = (float)uVar11;
-        pCVar24 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
+      pCVar21 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+      fStack_45 = VStack_34.x + fVar26;
+      fStack_46 = fVar28 + (float)pCStack_37;
+      fStack_47 = fVar32 + fStack_38;
+      if (pCVar21 != (Camera *)0x0) {
+        position.y = fStack_46;
+        position.x = fStack_45;
+        position.z = fStack_47;
+        pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
+                            ((Vector3 *)auStack_36,pCVar21,position,(MethodInfo *)0x0);
+        uVar3 = pVVar19->x;
+        uVar8 = pVVar19->y;
+        fStack_48 = pVVar19->z;
+        fStack_46 = (float)uVar3;
+        fStack_47 = (float)uVar8;
+        pCVar21 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
                             ((MethodInfo *)0x0);
-        if (pCVar24 != (Camera *)0x0) {
-          position_00.z._0_2_ = SUB42(fStack_47,0);
-          position_00.x = (float)uStack_46;
-          position_00.y = uStack_46._4_4_;
-          position_00.z._2_2_ = (short)((uint)fStack_47 >> 0x10);
-          pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                              ((Vector3 *)auStack_42,pCVar24,position_00,(MethodInfo *)0x0);
-          uVar7 = pVVar22->x;
-          uVar12 = pVVar22->y;
-          VStack_40.x = fStack_52 - (float)uVar7;
-          VStack_40.y = fStack_53 - (float)uVar12;
-          fStack_47 = fStack_54 - pVVar22->z;
-          VStack_40.z = 0.0;
-          VStack_40.w = 0.0;
-          uStack_46 = CONCAT44(VStack_40.y,VStack_40.x);
-          fStack_53 = fStack_47;
-          fVar31 = (float10)func_?((short)&uStack_46,0);
-          stack0xffffffa8 = (double)CONCAT44((float)fVar31,auStack_42._8_4_);
-          if (0.0 < (float)fVar31) {
-            value.y = VStack_40.y;
-            value.x = VStack_40.x;
-            value.z = fStack_53;
-            pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                                ((Vector3 *)auStack_42,value,(MethodInfo *)0x0);
-            uVar8 = pVVar22->x;
-            uVar13 = pVVar22->y;
-            fStack_54 = pVVar22->z;
-            fStack_52 = (float)uVar8;
-            fStack_53 = (float)uVar13;
-            fVar31 = (float10)func_?();
-            *delta = ((mousePositionDelta.y * fStack_53 + mousePositionDelta.x * fStack_52 +
-                      mousePositionDelta.z * fStack_54) / (float)fVar31) * _UNK_? + *delta;
+        if (pCVar21 != (Camera *)0x0) {
+          position_00.z._0_2_ = SUB42(fStack_41,0);
+          position_00.x = (float)uStack_40;
+          position_00.y = uStack_40._4_4_;
+          position_00.z._2_2_ = (short)((uint)fStack_41 >> 0x10);
+          pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
+                              ((Vector3 *)auStack_36,pCVar21,position_00,(MethodInfo *)0x0);
+          uVar4 = pVVar19->x;
+          uVar9 = pVVar19->y;
+          VStack_34.x = fStack_46 - (float)uVar4;
+          VStack_34.y = fStack_47 - (float)uVar9;
+          fStack_41 = fStack_48 - pVVar19->z;
+          VStack_34.z = 0.0;
+          VStack_34.w = 0.0;
+          uStack_40 = CONCAT44(VStack_34.y,VStack_34.x);
+          fStack_47 = fStack_41;
+          fVar25 = (float10)func_?((short)&uStack_40,0);
+          stack0xffffffa8 = (double)CONCAT44((float)fVar25,auStack_36._8_4_);
+          if (0.0 < (float)fVar25) {
+            value.y = VStack_34.y;
+            value.x = VStack_34.x;
+            value.z = fStack_47;
+            pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                                ((Vector3 *)auStack_36,value,(MethodInfo *)0x0);
+            uVar5 = pVVar19->x;
+            uVar10 = pVVar19->y;
+            fStack_48 = pVVar19->z;
+            fStack_46 = (float)uVar5;
+            fStack_47 = (float)uVar10;
+            fVar25 = (float10)func_?();
+            *delta = ((mousePositionDelta.y * fStack_47 + mousePositionDelta.x * fStack_46 +
+                      mousePositionDelta.z * fStack_48) / (float)fVar25) * _UNK_? + *delta;
           }
-          if ((float)((uint)*delta & _UNK_?) < (float)pGStack_50) {
+          if ((float)((uint)*delta & _UNK_?) < (float)pGStack_44) {
             *edgeMoved = 0;
-            return CStack_41;
+            return CStack_35;
           }
-          register0x00001200 = (double)(float)pGStack_50;
-          fVar31 = (float10)func_?();
-          unique0x0000aa00 = (double)fVar31;
-          fVar35 = *delta;
-          *delta = fVar35 - (float)fVar31;
-          *deltaAccum = (fVar35 - (float)fVar31) + *deltaAccum;
-          fStack_44 = *delta;
+          register0x00001200 = (double)(float)pGStack_44;
+          fVar25 = (float10)func_?();
+          unique0x0000aa00 = (double)fVar25;
+          fVar29 = *delta;
+          *delta = fVar29 - (float)fVar25;
+          *deltaAccum = (fVar29 - (float)fVar25) + *deltaAccum;
+          fStack_38 = *delta;
           if ((info->fields).pickedEdge == 0) {
-            pTVar19 = (cmb->fields)._.transform;
-            if (pTVar19 != (Transform *)0x0) {
-              pMVar21 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+            pTVar16 = (cmb->fields)._.transform;
+            if (pTVar16 != (Transform *)0x0) {
+              pMVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                         Transform_get_worldToLocalMatrix
-                                  ((Matrix4x4 *)&stack0xffffff10,pTVar19,(MethodInfo *)0x0);
-              VStack_40.x = pMVar21->m00;
-              VStack_40.y = pMVar21->m10;
-              VStack_40.z = pMVar21->m20;
-              VStack_40.w = pMVar21->m30;
-              fVar35 = pMVar21->m01;
-              fVar34 = pMVar21->m11;
-              fVar38 = pMVar21->m21;
-              fVar32 = pMVar21->m31;
-              fVar33 = pMVar21->m02;
-              fVar36 = pMVar21->m12;
-              fVar37 = pMVar21->m22;
-              fVar39 = pMVar21->m32;
-              auStack_42._0_4_ = pMVar21->m03;
-              auStack_42._4_4_ = pMVar21->m13;
-              auStack_42._8_4_ = pMVar21->m23;
-              uStack_43 = (Cube *)pMVar21->m33;
-              pauVar25 = (undefined1 (*) [12])func_?(&fStack_45,(short)&VStack_48.y,0);
-              fStack_49 = 0.0;
-              VStack_48.z = *(float *)(*pauVar25 + 8);
-              fStack_52 = (float)*(undefined8 *)*pauVar25;
-              fStack_53 = (float)((ulonglong)*(undefined8 *)*pauVar25 >> 0x20);
-              VStack_48.x = fStack_52;
-              VStack_48.y = fStack_53;
-              lhs_00.m10 = VStack_40.y;
-              lhs_00.m00 = VStack_40.x;
-              lhs_00.m20 = VStack_40.z;
-              lhs_00.m30 = VStack_40.w;
-              lhs_00.m01 = fVar35;
-              lhs_00.m11 = fVar34;
-              lhs_00.m21 = fVar38;
-              lhs_00.m31 = fVar32;
-              lhs_00.m02 = fVar33;
-              lhs_00.m12 = fVar36;
-              lhs_00.m22 = fVar37;
-              lhs_00.m32 = fVar39;
-              lhs_00.m03 = (float)auStack_42._0_4_;
-              lhs_00.m13 = (float)auStack_42._4_4_;
-              lhs_00.m23 = (float)auStack_42._8_4_;
-              lhs_00.m33 = (float)uStack_43;
+                                  ((Matrix4x4 *)&stack0xffffff10,pTVar16,(MethodInfo *)0x0);
+              VStack_34.x = pMVar18->m00;
+              VStack_34.y = pMVar18->m10;
+              VStack_34.z = pMVar18->m20;
+              VStack_34.w = pMVar18->m30;
+              fVar29 = pMVar18->m01;
+              fVar28 = pMVar18->m11;
+              fVar32 = pMVar18->m21;
+              fVar26 = pMVar18->m31;
+              fVar27 = pMVar18->m02;
+              fVar30 = pMVar18->m12;
+              fVar31 = pMVar18->m22;
+              fVar33 = pMVar18->m32;
+              auStack_36._0_4_ = pMVar18->m03;
+              auStack_36._4_4_ = pMVar18->m13;
+              auStack_36._8_4_ = pMVar18->m23;
+              pCStack_37 = (Cube *)pMVar18->m33;
+              pauVar22 = (undefined1 (*) [12])func_?(&fStack_39,(short)&VStack_42.y,0);
+              fStack_43 = 0.0;
+              VStack_42.z = *(float *)(*pauVar22 + 8);
+              fStack_46 = (float)*(undefined8 *)*pauVar22;
+              fStack_47 = (float)((ulonglong)*(undefined8 *)*pauVar22 >> 0x20);
+              VStack_42.x = fStack_46;
+              VStack_42.y = fStack_47;
+              lhs_00.m10 = VStack_34.y;
+              lhs_00.m00 = VStack_34.x;
+              lhs_00.m20 = VStack_34.z;
+              lhs_00.m30 = VStack_34.w;
+              lhs_00.m01 = fVar29;
+              lhs_00.m11 = fVar28;
+              lhs_00.m21 = fVar32;
+              lhs_00.m31 = fVar26;
+              lhs_00.m02 = fVar27;
+              lhs_00.m12 = fVar30;
+              lhs_00.m22 = fVar31;
+              lhs_00.m32 = fVar33;
+              lhs_00.m03 = (float)auStack_36._0_4_;
+              lhs_00.m13 = (float)auStack_36._4_4_;
+              lhs_00.m23 = (float)auStack_36._8_4_;
+              lhs_00.m33 = (float)pCStack_37;
               vector_00.w = 0.0;
-              vector_00._0_12_ = *pauVar25;
-              fStack_54 = VStack_48.z;
-              pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply_1
-                                  (&VStack_40,lhs_00,vector_00,(MethodInfo *)0x0);
-              VStack_48.x = pVVar23->x;
-              VStack_48.y = pVVar23->y;
-              VStack_48.z = pVVar23->z;
-              fStack_49 = pVVar23->w;
-              pfVar26 = (float *)func_?(&VStack_40,&VStack_48,0);
-              fStack_51 = *pfVar26;
-              fStack_52 = pfVar26[1];
-              fStack_53 = pfVar26[2];
+              vector_00._0_12_ = *pauVar22;
+              fStack_48 = VStack_42.z;
+              pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply_1
+                                  (&VStack_34,lhs_00,vector_00,(MethodInfo *)0x0);
+              VStack_42.x = pVVar20->x;
+              VStack_42.y = pVVar20->y;
+              VStack_42.z = pVVar20->z;
+              fStack_43 = pVVar20->w;
+              pfVar23 = (float *)func_?(&VStack_34,&VStack_42,0);
+              fStack_45 = *pfVar23;
+              fStack_46 = pfVar23[1];
+              fStack_47 = pfVar23[2];
               if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              axis_00.y = fStack_52;
-              axis_00.x = fStack_51;
-              axis_00.z = fStack_53;
-              Cube::Cube_MoveFace(info,fStack_44,axis_00,&CStack_41,(MethodInfo *)0x0);
+              axis_00.y = fStack_46;
+              axis_00.x = fStack_45;
+              axis_00.z = fStack_47;
+              Cube::Cube_MoveFace(info,fStack_38,axis_00,&CStack_35,(MethodInfo *)0x0);
               *editCubeChange = EditCubeChange__Enum_FaceMoved;
               goto code_?;
             }
           }
           else {
-            pTVar19 = (cmb->fields)._.transform;
+            pTVar16 = (cmb->fields)._.transform;
             if (edgeIndex0 == 0 && edgeIndex1 == 0) {
-              if (pTVar19 != (Transform *)0x0) {
-                pMVar21 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+              if (pTVar16 != (Transform *)0x0) {
+                pMVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                           Transform_get_worldToLocalMatrix
-                                    ((Matrix4x4 *)&stack0xffffff10,pTVar19,(MethodInfo *)0x0);
-                VStack_40.x = pMVar21->m00;
-                VStack_40.y = pMVar21->m10;
-                VStack_40.z = pMVar21->m20;
-                VStack_40.w = pMVar21->m30;
-                fVar35 = pMVar21->m01;
-                fVar34 = pMVar21->m11;
-                fVar38 = pMVar21->m21;
-                fVar32 = pMVar21->m31;
-                fVar33 = pMVar21->m02;
-                fVar36 = pMVar21->m12;
-                fVar37 = pMVar21->m22;
-                fVar39 = pMVar21->m32;
-                auStack_42._0_4_ = pMVar21->m03;
-                auStack_42._4_4_ = pMVar21->m13;
-                auStack_42._8_4_ = pMVar21->m23;
-                uStack_43 = (Cube *)pMVar21->m33;
-                pauVar25 = (undefined1 (*) [12])func_?(&fStack_45,(short)&VStack_48.y,0);
-                fStack_49 = 0.0;
-                VStack_48.z = *(float *)(*pauVar25 + 8);
-                fStack_52 = (float)*(undefined8 *)*pauVar25;
-                fStack_53 = (float)((ulonglong)*(undefined8 *)*pauVar25 >> 0x20);
-                VStack_48.x = fStack_52;
-                VStack_48.y = fStack_53;
-                lhs_01.m10 = VStack_40.y;
-                lhs_01.m00 = VStack_40.x;
-                lhs_01.m20 = VStack_40.z;
-                lhs_01.m30 = VStack_40.w;
-                lhs_01.m01 = fVar35;
-                lhs_01.m11 = fVar34;
-                lhs_01.m21 = fVar38;
-                lhs_01.m31 = fVar32;
-                lhs_01.m02 = fVar33;
-                lhs_01.m12 = fVar36;
-                lhs_01.m22 = fVar37;
-                lhs_01.m32 = fVar39;
-                lhs_01.m03 = (float)auStack_42._0_4_;
-                lhs_01.m13 = (float)auStack_42._4_4_;
-                lhs_01.m23 = (float)auStack_42._8_4_;
-                lhs_01.m33 = (float)uStack_43;
+                                    ((Matrix4x4 *)&stack0xffffff10,pTVar16,(MethodInfo *)0x0);
+                VStack_34.x = pMVar18->m00;
+                VStack_34.y = pMVar18->m10;
+                VStack_34.z = pMVar18->m20;
+                VStack_34.w = pMVar18->m30;
+                fVar29 = pMVar18->m01;
+                fVar28 = pMVar18->m11;
+                fVar32 = pMVar18->m21;
+                fVar26 = pMVar18->m31;
+                fVar27 = pMVar18->m02;
+                fVar30 = pMVar18->m12;
+                fVar31 = pMVar18->m22;
+                fVar33 = pMVar18->m32;
+                auStack_36._0_4_ = pMVar18->m03;
+                auStack_36._4_4_ = pMVar18->m13;
+                auStack_36._8_4_ = pMVar18->m23;
+                pCStack_37 = (Cube *)pMVar18->m33;
+                pauVar22 = (undefined1 (*) [12])func_?(&fStack_39,(short)&VStack_42.y,0);
+                fStack_43 = 0.0;
+                VStack_42.z = *(float *)(*pauVar22 + 8);
+                fStack_46 = (float)*(undefined8 *)*pauVar22;
+                fStack_47 = (float)((ulonglong)*(undefined8 *)*pauVar22 >> 0x20);
+                VStack_42.x = fStack_46;
+                VStack_42.y = fStack_47;
+                lhs_01.m10 = VStack_34.y;
+                lhs_01.m00 = VStack_34.x;
+                lhs_01.m20 = VStack_34.z;
+                lhs_01.m30 = VStack_34.w;
+                lhs_01.m01 = fVar29;
+                lhs_01.m11 = fVar28;
+                lhs_01.m21 = fVar32;
+                lhs_01.m31 = fVar26;
+                lhs_01.m02 = fVar27;
+                lhs_01.m12 = fVar30;
+                lhs_01.m22 = fVar31;
+                lhs_01.m32 = fVar33;
+                lhs_01.m03 = (float)auStack_36._0_4_;
+                lhs_01.m13 = (float)auStack_36._4_4_;
+                lhs_01.m23 = (float)auStack_36._8_4_;
+                lhs_01.m33 = (float)pCStack_37;
                 vector_01.w = 0.0;
-                vector_01._0_12_ = *pauVar25;
-                fStack_54 = VStack_48.z;
-                pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::
-                          Matrix4x4_op_Multiply_1(&VStack_40,lhs_01,vector_01,(MethodInfo *)0x0);
-                VStack_48.x = pVVar23->x;
-                VStack_48.y = pVVar23->y;
-                VStack_48.z = pVVar23->z;
-                fStack_49 = pVVar23->w;
-                pfVar26 = (float *)func_?(&VStack_40,&VStack_48,0);
-                fStack_51 = *pfVar26;
-                fStack_52 = pfVar26[1];
-                fStack_53 = pfVar26[2];
+                vector_01._0_12_ = *pauVar22;
+                fStack_48 = VStack_42.z;
+                pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::
+                          Matrix4x4_op_Multiply_1(&VStack_34,lhs_01,vector_01,(MethodInfo *)0x0);
+                VStack_42.x = pVVar20->x;
+                VStack_42.y = pVVar20->y;
+                VStack_42.z = pVVar20->z;
+                fStack_43 = pVVar20->w;
+                pfVar23 = (float *)func_?(&VStack_34,&VStack_42,0);
+                fStack_45 = *pfVar23;
+                fStack_46 = pfVar23[1];
+                fStack_47 = pfVar23[2];
                 if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
-                axis_01.y = fStack_52;
-                axis_01.x = fStack_51;
-                axis_01.z = fStack_53;
-                Cube::Cube_MoveEdge(info,fStack_44,axis_01,&CStack_41,(MethodInfo *)0x0);
+                axis_01.y = fStack_46;
+                axis_01.x = fStack_45;
+                axis_01.z = fStack_47;
+                Cube::Cube_MoveEdge(info,fStack_38,axis_01,&CStack_35,(MethodInfo *)0x0);
                 *editCubeChange = EditCubeChange__Enum_EdgeMoved;
 code_?:
                 *delta = 0.0;
                 *edgeMoved = 1;
-                return CStack_41;
+                return CStack_35;
               }
             }
-            else if (pTVar19 != (Transform *)0x0) {
-              pMVar21 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+            else if (pTVar16 != (Transform *)0x0) {
+              pMVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                         Transform_get_worldToLocalMatrix
-                                  ((Matrix4x4 *)&stack0xffffff10,pTVar19,(MethodInfo *)0x0);
-              VStack_40.x = pMVar21->m00;
-              VStack_40.y = pMVar21->m10;
-              VStack_40.z = pMVar21->m20;
-              VStack_40.w = pMVar21->m30;
-              fVar35 = pMVar21->m01;
-              fVar34 = pMVar21->m11;
-              fVar38 = pMVar21->m21;
-              fVar32 = pMVar21->m31;
-              fVar33 = pMVar21->m02;
-              fVar36 = pMVar21->m12;
-              fVar37 = pMVar21->m22;
-              fVar39 = pMVar21->m32;
-              fStack_45 = pMVar21->m03;
-              uStack_46._0_4_ = pMVar21->m13;
-              uStack_46._4_4_ = pMVar21->m23;
-              fStack_47 = pMVar21->m33;
-              pauVar25 = (undefined1 (*) [12])func_?(&fStack_51,(short)&VStack_48.y,0);
-              fStack_49 = *(float *)(*pauVar25 + 8);
-              VStack_48.y = (float)*(undefined8 *)*pauVar25;
-              VStack_48.z = (float)((ulonglong)*(undefined8 *)*pauVar25 >> 0x20);
-              fStack_51 = VStack_48.y;
-              fStack_52 = VStack_48.z;
-              fStack_54 = 0.0;
-              lhs_02.m10 = VStack_40.y;
-              lhs_02.m00 = VStack_40.x;
-              lhs_02.m20 = VStack_40.z;
-              lhs_02.m30 = VStack_40.w;
-              lhs_02.m01 = fVar35;
-              lhs_02.m11 = fVar34;
-              lhs_02.m21 = fVar38;
-              lhs_02.m31 = fVar32;
-              lhs_02.m02 = fVar33;
-              lhs_02.m12 = fVar36;
-              lhs_02.m22 = fVar37;
-              lhs_02.m32 = fVar39;
-              lhs_02.m03 = fStack_45;
-              lhs_02.m13 = (float)uStack_46;
-              lhs_02.m23 = uStack_46._4_4_;
-              lhs_02.m33 = fStack_47;
+                                  ((Matrix4x4 *)&stack0xffffff10,pTVar16,(MethodInfo *)0x0);
+              VStack_34.x = pMVar18->m00;
+              VStack_34.y = pMVar18->m10;
+              VStack_34.z = pMVar18->m20;
+              VStack_34.w = pMVar18->m30;
+              fVar29 = pMVar18->m01;
+              fVar28 = pMVar18->m11;
+              fVar32 = pMVar18->m21;
+              fVar26 = pMVar18->m31;
+              fVar27 = pMVar18->m02;
+              fVar30 = pMVar18->m12;
+              fVar31 = pMVar18->m22;
+              fVar33 = pMVar18->m32;
+              fStack_39 = pMVar18->m03;
+              uStack_40._0_4_ = pMVar18->m13;
+              uStack_40._4_4_ = pMVar18->m23;
+              fStack_41 = pMVar18->m33;
+              pauVar22 = (undefined1 (*) [12])func_?(&fStack_45,(short)&VStack_42.y,0);
+              fStack_43 = *(float *)(*pauVar22 + 8);
+              VStack_42.y = (float)*(undefined8 *)*pauVar22;
+              VStack_42.z = (float)((ulonglong)*(undefined8 *)*pauVar22 >> 0x20);
+              fStack_45 = VStack_42.y;
+              fStack_46 = VStack_42.z;
+              fStack_48 = 0.0;
+              lhs_02.m10 = VStack_34.y;
+              lhs_02.m00 = VStack_34.x;
+              lhs_02.m20 = VStack_34.z;
+              lhs_02.m30 = VStack_34.w;
+              lhs_02.m01 = fVar29;
+              lhs_02.m11 = fVar28;
+              lhs_02.m21 = fVar32;
+              lhs_02.m31 = fVar26;
+              lhs_02.m02 = fVar27;
+              lhs_02.m12 = fVar30;
+              lhs_02.m22 = fVar31;
+              lhs_02.m32 = fVar33;
+              lhs_02.m03 = fStack_39;
+              lhs_02.m13 = (float)uStack_40;
+              lhs_02.m23 = uStack_40._4_4_;
+              lhs_02.m33 = fStack_41;
               vector_02.w = 0.0;
-              vector_02._0_12_ = *pauVar25;
-              fStack_53 = fStack_49;
-              pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply_1
-                                  (&VStack_40,lhs_02,vector_02,(MethodInfo *)0x0);
-              VStack_48.x = pVVar23->x;
-              VStack_48.y = pVVar23->y;
-              VStack_48.z = pVVar23->z;
-              fStack_49 = pVVar23->w;
-              pfVar26 = (float *)func_?(&VStack_40,&VStack_48,0);
-              VStack_48.x = *pfVar26;
-              VStack_48.y = pfVar26[1];
-              VStack_48.z = pfVar26[2];
+              vector_02._0_12_ = *pauVar22;
+              fStack_47 = fStack_43;
+              pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply_1
+                                  (&VStack_34,lhs_02,vector_02,(MethodInfo *)0x0);
+              VStack_42.x = pVVar20->x;
+              VStack_42.y = pVVar20->y;
+              VStack_42.z = pVVar20->z;
+              fStack_43 = pVVar20->w;
+              pfVar23 = (float *)func_?(&VStack_34,&VStack_42,0);
+              VStack_42.x = *pfVar23;
+              VStack_42.y = pfVar23[1];
+              VStack_42.z = pfVar23[2];
               if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              axis.y = VStack_48.y;
-              axis.x = VStack_48.x;
-              axis.z = VStack_48.z;
+              axis.y = VStack_42.y;
+              axis.x = VStack_42.x;
+              axis.z = VStack_42.z;
               Cube::Cube_MoveVertex
-                        (info,fStack_44,axis,edgeIndex0,edgeIndex1,&CStack_41,(MethodInfo *)0x0);
+                        (info,fStack_38,axis,edgeIndex0,edgeIndex1,&CStack_35,(MethodInfo *)0x0);
               *editCubeChange = EditCubeChange__Enum_VertexMoved;
               goto code_?;
             }
@@ -2745,25 +2775,16 @@ code_?:
     }
   }
 code_?:
+  bVar24 = 0;
   func_?();
-  pbVar1 = (byte *)((int)&cmb[-0x4420f8].fields._._.OnInputLinkChanged + 2);
-  bVar3 = *pbVar1;
-  bVar28 = (byte)((uint)&stack0xfffffffc >> 8);
-  *pbVar1 = *pbVar1 + bVar28;
-  ppMVar2 = &cmb->klass + (int)info;
-  bVar29 = CARRY1(*(byte *)ppMVar2,extraout_DH) ||
-           CARRY1(*(byte *)ppMVar2 + extraout_DH,CARRY1(bVar3,bVar28));
-  *(byte *)ppMVar2 = *(byte *)ppMVar2 + extraout_DH + CARRY1(bVar3,bVar28);
-  ppMVar2 = &cmb->klass + (int)info;
-  bVar30 = CARRY1(*(byte *)ppMVar2,extraout_DH) || CARRY1(*(byte *)ppMVar2 + extraout_DH,bVar29);
-  *(byte *)ppMVar2 = *(byte *)ppMVar2 + extraout_DH + bVar29;
-  bVar29 = CARRY1(uStack_43._2_1_,extraout_AH);
-  bVar3 = uStack_43._2_1_ + extraout_AH;
-  stack0xffffffa8 =
-       CONCAT16(bVar3 + bVar30 + extraout_AH + (bVar29 || CARRY1(bVar3,bVar30)),stack0xffffffa8);
-  pcVar16 = (code *)swi(3);
-  CVar27 = (*pcVar16)();
-  return CVar27;
+  bVar14 = extraout_AH + extraout_DL + bVar24;
+  cRam_? = cRam_? + cRam_? +
+                 (CARRY1(bVar14,extraout_DL) ||
+                 CARRY1(bVar14 + extraout_DL,
+                        CARRY1(extraout_AH,extraout_DL) || CARRY1(extraout_AH + extraout_DL,bVar24))
+                 );
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -2826,9 +2847,10 @@ float Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_ScaleFactor_
                 (GameObject *gameObject,Face__Enum face,MethodInfo *method)
 
 {
-  puVar1 = (undefined4 *)&stack0xfffffffc;
   if (cRam_? == '\0') {
+    _puStack_1c = CONCAT44(&UNK_?,puStack_1);
     func_?();
+    _puStack_1c = 0x119c82601026e513;
     func_?();
     cRam_? = '\x01';
   }
@@ -2836,11 +2858,13 @@ float Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_ScaleFactor_
   case Face__Enum_Top:
   case Face__Enum_Bottom:
     if (gameObject != (GameObject *)0x0) {
+      _puStack_1c = CONCAT44(gameObject,&UNK_?);
       pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                          (gameObject,(MethodInfo *)0x0);
+                         (gameObject,(MethodInfo *)0x0);
       if (pTVar2 != (Transform *)0x0) {
+        _puStack_1c = CONCAT44(&UNK_?,puStack_1);
         pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                            ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
+                           ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
         return pVVar3->y;
       }
     }
@@ -2848,11 +2872,13 @@ float Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_ScaleFactor_
   case Face__Enum_Front:
   case Face__Enum_Back:
     if (gameObject != (GameObject *)0x0) {
+      _puStack_1c = CONCAT44(gameObject,&UNK_?);
       pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                          (gameObject,(MethodInfo *)0x0);
+                         (gameObject,(MethodInfo *)0x0);
       if (pTVar2 != (Transform *)0x0) {
+        _puStack_1c = CONCAT44(&UNK_?,puStack_1);
         pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                            ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
+                           ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
         return pVVar3->z;
       }
     }
@@ -2860,156 +2886,71 @@ float Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_ScaleFactor_
   case Face__Enum_Left:
   case Face__Enum_Right:
     if (gameObject != (GameObject *)0x0) {
+      _puStack_1c = CONCAT44(gameObject,&UNK_?);
       pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                          (gameObject,(MethodInfo *)0x0);
+                         (gameObject,(MethodInfo *)0x0);
       if (pTVar2 != (Transform *)0x0) {
+        _puStack_1c = CONCAT44(&UNK_?,puStack_1);
         pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                            ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
+                           ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
         return pVVar3->x;
       }
     }
     break;
   default:
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      _puStack_1c = CONCAT44(&UNK_?,puStack_1);
       func_?();
     }
+    _puStack_1c = CONCAT44(StringLiteral_No_face,&UNK_?);
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_No_face,(MethodInfo *)0x0);
+    _puStack_1c = CONCAT44(&UNK_?,puStack_1);
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Break((MethodInfo *)0x0);
     return 0.0;
   }
-  func_?();
-  puStack_4 = &stack0xffffffec;
-  puVar5 = (undefined4 *)&stack0xffffffec;
-  apuStack_6[1] = &stack0xffffffec;
-  puVar7 = (undefined4 *)&stack0xffffffec;
-  cVar8 = '\x0f';
-  do {
-    puVar1 = puVar1 + -1;
-    puVar5 = puVar5 + -1;
-    *puVar5 = *puVar1;
-    cVar8 = cVar8 + -1;
-  } while ('\0' < cVar8);
-  puStack_9 = apuStack_6 + 1;
-  puVar1 = apuStack_6 + 1;
-  apuStack_10[1] = apuStack_6 + 1;
-  puVar5 = apuStack_6 + 1;
-  cVar8 = '\x03';
-  do {
-    puVar7 = puVar7 + -1;
-    puVar1 = puVar1 + -1;
-    *puVar1 = *puVar7;
-    cVar8 = cVar8 + -1;
-  } while ('\0' < cVar8);
-  puStack_11 = apuStack_10 + 1;
-  puVar1 = apuStack_10 + 1;
-  apuStack_12[1] = apuStack_10 + 1;
-  puVar7 = apuStack_10 + 1;
-  cVar8 = '\x03';
-  do {
-    puVar5 = puVar5 + -1;
-    puVar1 = puVar1 + -1;
-    *puVar1 = *puVar5;
-    cVar8 = cVar8 + -1;
-  } while ('\0' < cVar8);
-  puStack_13 = apuStack_12 + 1;
-  puVar1 = apuStack_12 + 1;
-  apuStack_14[1] = apuStack_12 + 1;
-  puVar5 = apuStack_12 + 1;
-  cVar8 = '\x13';
-  do {
-    puVar7 = puVar7 + -1;
-    puVar1 = puVar1 + -1;
-    *puVar1 = *puVar7;
-    cVar8 = cVar8 + -1;
-  } while ('\0' < cVar8);
-  puStack_15 = apuStack_14 + 1;
-  puVar1 = apuStack_14 + 1;
-  apuStack_16[1] = apuStack_14 + 1;
-  puVar7 = apuStack_14 + 1;
-  cVar8 = '\x13';
-  do {
-    puVar5 = puVar5 + -1;
-    puVar1 = puVar1 + -1;
-    *puVar1 = *puVar5;
-    cVar8 = cVar8 + -1;
-  } while ('\0' < cVar8);
-  puStack_17 = apuStack_16 + 1;
-  puVar1 = apuStack_16 + 1;
-  cVar8 = '\x14';
-  do {
-    puVar7 = puVar7 + -1;
-    puVar1 = puVar1 + -1;
-    *puVar1 = *puVar7;
-    cVar8 = cVar8 + -1;
-  } while ('\0' < cVar8);
-  fStack_18 = 0.0;
-  fStack_19 = 0.0;
-  iVar20 = 0;
-  fStack_21 = 0.0;
-  puVar1 = apuStack_16 + 1;
-  puVar5 = apuStack_14 + 1;
-  puVar7 = apuStack_14 + 1;
-  puVar22 = apuStack_12 + 1;
-  puVar23 = apuStack_12 + 1;
-  puVar24 = apuStack_10 + 1;
-  puVar25 = apuStack_10 + 1;
-  puVar26 = apuStack_6 + 1;
-  puVar27 = apuStack_6 + 1;
-  puVar28 = &stack0xffffffec;
-  puVar29 = &stack0xffffffec;
-  if (pGStack_30 != (GameObject *)0x0) {
-    while (fStack_19 = fStack_21, fStack_18 = fStack_21,
+  uVar4 = func_?();
+  *(char *)uVar4 = *(char *)uVar4 + (char)((uint6)uVar4 >> 0x28);
+  in(0x26);
+  in((short)((uint6)uVar4 >> 0x20));
+  iVar5 = 0;
+  fStack_6 = 0.0;
+  if (gameObject != (GameObject *)0x0) {
+    while (fVar7 = fStack_6, fVar8 = fStack_6,
           pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (pGStack_30,(MethodInfo *)0x0), puVar1 = puStack_17,
-          puVar5 = apuStack_16[1], puVar7 = puStack_15, puVar22 = apuStack_14[1],
-          puVar23 = puStack_13, puVar24 = apuStack_12[1], puVar25 = puStack_11,
-          puVar26 = apuStack_10[1], puVar27 = puStack_9, puVar28 = apuStack_6[1],
-          puVar29 = puStack_4, pTVar2 != (Transform *)0x0) {
+                             (gameObject,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                          (&VStack_31,pTVar2,(MethodInfo *)0x0);
-      uStack_32._0_4_ = pVVar3->x;
-      uStack_32._4_4_ = pVVar3->y;
-      fStack_33 = pVVar3->z;
-      if (iVar20 == 0) {
-        fStack_21 = fStack_18 + (float)(undefined4)uStack_32;
+                         (&VStack_9,pTVar2,(MethodInfo *)0x0);
+      puStack_1 = (undefined *)pVVar3->x;
+      unique0x0000a404 = pVVar3->y;
+      if (iVar5 == 0) {
+        fStack_6 = fVar8 + (float)puStack_1;
       }
       else {
-        if (iVar20 != 1) {
-          if (iVar20 == 2) {
-            return (fStack_19 + fStack_33) / _UNK_?;
+        if (iVar5 != 1) {
+          if (iVar5 == 2) {
+            return (fVar7 + pVVar3->z) / _UNK_?;
           }
           goto code_?;
         }
-        fStack_21 = fStack_21 + (float)uStack_32._4_4_;
+        fStack_6 = fStack_6 + (float)unique0x0000a404;
       }
-      iVar20 = iVar20 + 1;
+      iVar5 = iVar5 + 1;
     }
   }
-  puStack_4 = puVar29;
-  apuStack_6[1] = puVar28;
-  puStack_9 = puVar27;
-  apuStack_10[1] = puVar26;
-  puStack_11 = puVar25;
-  apuStack_12[1] = puVar24;
-  puStack_13 = puVar23;
-  apuStack_14[1] = puVar22;
-  puStack_15 = puVar7;
-  apuStack_16[1] = puVar5;
-  puStack_17 = puVar1;
   func_?();
 code_?:
-  uVar34 = func_?(&TypeInfo__System__IndexOutOfRangeException);
-  this = (IndexOutOfRangeException *)func_?(uVar34);
+  uVar10 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+  this = (IndexOutOfRangeException *)func_?(uVar10);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_Invalid_Vector3_index_);
   mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
             (this,message,method_00);
-  uVar34 = func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
-  func_?(this,uVar34);
-  pcVar35 = (code *)swi(3);
-  fVar36 = (float10)(*pcVar35)();
-  return (float)fVar36;
+  uVar10 = func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
+  func_?(this,uVar10);
+  pcVar11 = (code *)swi(3);
+  fVar12 = (float10)(*pcVar11)();
+  return (float)fVar12;
 }
 
 
@@ -3345,9 +3286,46 @@ void Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions__cctor(Method
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
+    func_?(&TypeInfo__MV__WorldObject__Face);
+    func_?(&TypeInfo__MV__WorldObject__Face);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__System__Int32);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&TypeInfo__SharedCubeFunctions);
+    func_?(&::_0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+    func_?(&::_0D9366A7866315145DF405E103A928871A65FDCA218CFE82B66F5719CDE799D2_Field);
+    func_?(&::_12C98A439AD9BDD8E757CC8DE108146D6D2552CA5A534FEEA589561F558525A3_Field);
+    func_?(&_3086B2DEF3530EA0C41DA25BE54853897C14DAD1F4F971862B51BE6A23E31DB5_Field);
+    func_?(&::_3212133D503E3733C58BC9245B27816D0AB019E8F256167D94EE2EF1AA253C17_Field);
+    func_?(&_3E684BA6BE12099B15008C988C9A2A2F39C4998ED5AAB1F628B7903354331F2F_Field);
+    func_?(&_3EA0E73E350002B637E873B7CB7348DD7E1BCE73102F97D2B1FA8693ECC0DAEE_Field);
+    func_?(&_44213D5337CB506057EAFD42FA33A4776A44B0A5B0DA2405701680673CE173A2_Field);
+    func_?(&_59E3B3AC5476357BCD66274BB6A67316738712645A4299A570105FFE4826372C_Field);
+    func_?(&_5C7EED3CACF93747DA516A9AC649BE9445AC47109AEE57E8B6A6EB6741768A25_Field);
+    func_?(&::_69D5B9635C30CE068AB88DFE7AEC46AA236E6BFBE8C95FF0E8D63741A1A12912_Field);
+    func_?(&_7671F4AC667CD05AE5E6F74DCB7160FE6B34A775A4B2BC985EA5F05EDB5F0E8C_Field);
+    func_?(&_78C1F43AB6F856DFB12C9E73F27EE7883763E8A6A3D27F49A8E89A74DE3DD84A_Field);
+    func_?(&_7BCBDCCC340EA4ECBDD35B946E4F1C88E504A39C0708D3155A5C65E1B4183290_Field);
+    func_?(&_7DE6C05FE260533E58F5F5D7195356F52AA241A405B3EC59D9A7E618A31EB70B_Field);
+    func_?(&_8FD9A02CC3EC720EFB3B246422557271F0349320C1E14523AD7E1A6D2D963700_Field);
+    func_?(&::_974B7612E2388B86C1BC0353AC9B2F65B6957BF64200ACC73E0A7BD063BA7469_Field);
+    func_?(&A53B3522877C6E2C38B170CB40FA7BCAE5DD40492EE274555BA018EEE935E33B_Field);
+    func_?(&A69DBB9813CAFBDB74661959B1EB85075542F30F2CE490C308D06C3AACEAAF42_Field);
+    func_?(&A8D5E66148A8596B4CA037E02125BDA105EEBB89FDA286BAB2B89D08F69FC8EA_Field);
+    func_?(&AB04D5434C9E64B5F7652A8D9A9172F0A1CB0E8D294133D8A2A144C25AEFBC53_Field);
+    func_?(&AC748DFBD4E9609670D8D4ACCE70E4F010449ED0E59EE6A9F38BB2425D5DB9B4_Field);
+    func_?(&B575398F444AEB797A8E12CEEAD67595A3CCB4B903BE0CB6978BE00431F4FD94_Field);
+    func_?(&BAED642339816AFFB3FE8719792D0E4CE82F12DB72B7373D244EAA65445800FE_Field);
+    func_?(&BD1586D96349669994A64F043D5272C820092DC8F3A204F4A8BBA71A213370F7_Field);
+    func_?(&D338C7CFBD24E8741DD131258566A2A6062F965C156F701C380EE71B840DE304_Field);
+    func_?(&EA0939139B805DAC80B699838CDDE55214E0993F0E60ED1EF04BA14ED2DB380F_Field);
+    func_?(&EB3EA27B21B258CCA651A8DE5834B657D518ABA9AF99B6BEB2C0CCBB27C0C8F5_Field);
+    func_?(&F565169B16BA9172A376C4BBC695B7586ADD01DC1142CDBBDF803D30DC68A148_Field);
     cRam_? = '\x01';
   }
   IStack_1.x = 0;
@@ -3359,2502 +3337,2034 @@ void Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions__cctor(Method
   (pSVar2->constraint).x = IStack_1.x;
   (pSVar2->constraint).y = IStack_1.y;
   (pSVar2->constraint).z = IStack_1.z;
-  pIVar3 = (IntVector__Array__Array *)func_?(TypeInfo__MV__WorldObject__IntVector,0x18);
-  pIVar4 = (IntVector__Array *)func_?(TypeInfo__MV__WorldObject__IntVector,4);
-  IStack_5.x = 0;
-  IStack_5.y = 0;
-  IStack_5.z = 0;
-  MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-            (&IStack_5,-1,1,-1,(MethodInfo *)0x0);
-  if (pIVar4 != (IntVector__Array *)0x0) {
-    if (pIVar4->max_length == 0) goto code_?;
-    pIVar4->vector[0].x = IStack_5.x;
-    pIVar4->vector[0].y = IStack_5.y;
-    pIVar4->vector[0].z = IStack_5.z;
-    IStack_6.x = 0;
-    IStack_6.y = 0;
-    IStack_6.z = 0;
-    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-              (&IStack_6,-1,1,0,(MethodInfo *)0x0);
-    if (pIVar4->max_length < 2) goto code_?;
-    pIVar4->vector[1].x = IStack_6.x;
-    pIVar4->vector[1].y = IStack_6.y;
-    pIVar4->vector[1].z = IStack_6.z;
-    IStack_7.x = 0;
-    IStack_7.y = 0;
-    IStack_7.z = 0;
-    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-              (&IStack_7,0,1,0,(MethodInfo *)0x0);
-    if (pIVar4->max_length < 3) goto code_?;
-    pIVar4->vector[2].x = IStack_7.x;
-    pIVar4->vector[2].y = IStack_7.y;
-    pIVar4->vector[2].z = IStack_7.z;
-    IStack_8.x = 0;
-    IStack_8.y = 0;
-    IStack_8.z = 0;
-    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-              (&IStack_8,0,1,-1,(MethodInfo *)0x0);
-    if (pIVar4->max_length < 4) goto code_?;
-    pIVar4->vector[3].x = IStack_8.x;
-    pIVar4->vector[3].y = IStack_8.y;
-    pIVar4->vector[3].z = IStack_8.z;
-    if (pIVar3 != (IntVector__Array__Array *)0x0) {
-      if (pIVar3->max_length == 0) goto code_?;
-      ppIStack_9 = pIVar3->vector;
-      pIVar3->vector[0] = pIVar4;
-      pIStack_10 = pIVar4;
-      func_?();
-      pIStack_11 = (IntVector__Array__Array *)0x4;
-      pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-      pIVar4 = (IntVector__Array *)func_?();
-      IStack_13.x = 0;
-      IStack_13.y = 0;
-      IStack_13.z = 0;
-      MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                (&IStack_13,0,1,-1,(MethodInfo *)0x0);
-      if (pIVar4 != (IntVector__Array *)0x0) {
-        if (pIVar4->max_length == 0) goto code_?;
-        pIVar4->vector[0].x = IStack_13.x;
-        pIVar4->vector[0].y = IStack_13.y;
-        pIVar4->vector[0].z = IStack_13.z;
-        IStack_14.x = 0;
-        IStack_14.y = 0;
-        IStack_14.z = 0;
-        MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                  (&IStack_14,0,1,0,(MethodInfo *)0x0);
-        if (pIVar4->max_length < 2) goto code_?;
-        pIVar4->vector[1].x = IStack_14.x;
-        pIVar4->vector[1].y = IStack_14.y;
-        pIVar4->vector[1].z = IStack_14.z;
-        IStack_15.x = 0;
-        IStack_15.y = 0;
-        IStack_15.z = 0;
-        MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                  (&IStack_15,1,1,0,(MethodInfo *)0x0);
-        if (pIVar4->max_length < 3) goto code_?;
-        pIVar4->vector[2].x = IStack_15.x;
-        pIVar4->vector[2].y = IStack_15.y;
-        pIVar4->vector[2].z = IStack_15.z;
-        IStack_16.x = 0;
-        IStack_16.y = 0;
-        IStack_16.z = 0;
-        MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                  (&IStack_16,1,1,-1,(MethodInfo *)0x0);
-        if (pIVar4->max_length < 4) goto code_?;
-        pIVar4->vector[3].x = IStack_16.x;
-        pIVar4->vector[3].y = IStack_16.y;
-        pIVar4->vector[3].z = IStack_16.z;
-        if (pIVar3->max_length < 2) goto code_?;
-        ppIStack_9 = pIVar3->vector + 1;
-        pIVar3->vector[1] = pIVar4;
-        pIStack_10 = pIVar4;
+  pIVar3 = (Int32__Array__Array *)func_?(TypeInfo__System__Int32,6);
+  pIVar4 = (Int32__Array *)func_?(TypeInfo__System__Int32,4);
+  mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::RuntimeHelpers_InitializeArray_1
+            ((Array *)pIVar4,_BAED642339816AFFB3FE8719792D0E4CE82F12DB72B7373D244EAA65445800FE_Field
+             ,(MethodInfo *)0x0);
+  if (pIVar3 == (Int32__Array__Array *)0x0) goto code_?;
+  if (pIVar3->max_length == 0) {
+code_?:
+    func_?();
+code_?:
+    func_?();
+    func_?();
+code_?:
+    func_?();
+    func_?();
+code_?:
+    func_?();
+    func_?();
+code_?:
+    func_?();
+    func_?();
+code_?:
+    func_?();
+    func_?();
+  }
+  else {
+    pIVar3->vector[0] = pIVar4;
+    func_?();
+    pIVar4 = (Int32__Array *)func_?();
+    mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
+    RuntimeHelpers_InitializeArray_1
+              ((Array *)pIVar4,
+               _D338C7CFBD24E8741DD131258566A2A6062F965C156F701C380EE71B840DE304_Field,
+               (MethodInfo *)0x0);
+    if (pIVar3->max_length < 2) goto code_?;
+    pIVar3->vector[1] = pIVar4;
+    func_?();
+    pIVar4 = (Int32__Array *)func_?();
+    mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
+    RuntimeHelpers_InitializeArray_1
+              ((Array *)pIVar4,
+               __3E684BA6BE12099B15008C988C9A2A2F39C4998ED5AAB1F628B7903354331F2F_Field,
+               (MethodInfo *)0x0);
+    if (pIVar3->max_length < 3) goto code_?;
+    pIVar3->vector[2] = pIVar4;
+    func_?();
+    pIVar4 = (Int32__Array *)func_?();
+    mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
+    RuntimeHelpers_InitializeArray_1
+              ((Array *)pIVar4,
+               _EA0939139B805DAC80B699838CDDE55214E0993F0E60ED1EF04BA14ED2DB380F_Field,
+               (MethodInfo *)0x0);
+    if (pIVar3->max_length < 4) goto code_?;
+    pIVar3->vector[3] = pIVar4;
+    func_?();
+    pIVar4 = (Int32__Array *)func_?();
+    mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
+    RuntimeHelpers_InitializeArray_1
+              ((Array *)pIVar4,
+               _AC748DFBD4E9609670D8D4ACCE70E4F010449ED0E59EE6A9F38BB2425D5DB9B4_Field,
+               (MethodInfo *)0x0);
+    if (pIVar3->max_length < 5) goto code_?;
+    pIVar3->vector[4] = pIVar4;
+    func_?();
+    pIVar4 = (Int32__Array *)func_?();
+    mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
+    RuntimeHelpers_InitializeArray_1
+              ((Array *)pIVar4,
+               _AB04D5434C9E64B5F7652A8D9A9172F0A1CB0E8D294133D8A2A144C25AEFBC53_Field,
+               (MethodInfo *)0x0);
+    if (pIVar3->max_length < 6) goto code_?;
+    pIVar3->vector[5] = pIVar4;
+    func_?();
+    TypeInfo__SharedCubeFunctions->static_fields->FaceIndexToVertexIndexes = pIVar3;
+    func_?();
+    pDVar5 = (Dictionary_2_System_Int32_System_Int32___Array *)func_?();
+    pDVar6 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+              *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::
+    Text::TextResourceManager+FontAssetRef]::
+    Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+              (pDVar6,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
+    if (pDVar6 == (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+                   *)0x0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,0,0,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,1,1,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,2,2,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,3,3,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    if (pDVar5 == (Dictionary_2_System_Int32_System_Int32___Array *)0x0) goto code_?;
+    iVar7 = func_?();
+    if (iVar7 == 0) goto code_?;
+    if (pDVar5->max_length == 0) goto code_?;
+    pDVar5->vector[0] = (Dictionary_2_System_Int32_System_Int32_ *)pDVar6;
+    func_?();
+    pDVar6 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+              *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::
+    Text::TextResourceManager+FontAssetRef]::
+    Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+              (pDVar6,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
+    if (pDVar6 == (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+                   *)0x0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,4,0,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,5,1,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,6,2,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,7,3,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    iVar7 = func_?();
+    if (iVar7 == 0) goto code_?;
+    if (pDVar5->max_length < 2) goto code_?;
+    pDVar5->vector[1] = (Dictionary_2_System_Int32_System_Int32_ *)pDVar6;
+    func_?();
+    pDVar6 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+              *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::
+    Text::TextResourceManager+FontAssetRef]::
+    Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+              (pDVar6,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
+    if (pDVar6 == (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+                   *)0x0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,7,0,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,6,1,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,1,2,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,0,3,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    iVar7 = func_?();
+    if (iVar7 == 0) goto code_?;
+    if (pDVar5->max_length < 3) goto code_?;
+    pDVar5->vector[2] = (Dictionary_2_System_Int32_System_Int32_ *)pDVar6;
+    func_?();
+    pDVar6 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+              *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::
+    Text::TextResourceManager+FontAssetRef]::
+    Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+              (pDVar6,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
+    if (pDVar6 == (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+                   *)0x0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,5,0,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,4,1,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,3,2,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,2,3,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    iVar7 = func_?();
+    if (iVar7 == 0) goto code_?;
+    if (pDVar5->max_length < 4) goto code_?;
+    pDVar5->vector[3] = (Dictionary_2_System_Int32_System_Int32_ *)pDVar6;
+    func_?();
+    pDVar6 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+              *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::
+    Text::TextResourceManager+FontAssetRef]::
+    Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+              (pDVar6,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
+    if (pDVar6 == (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+                   *)0x0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,4,0,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,7,1,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,0,2,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,3,3,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    iVar7 = func_?();
+    if (iVar7 == 0) goto code_?;
+    if (pDVar5->max_length < 5) goto code_?;
+    pDVar5->vector[4] = (Dictionary_2_System_Int32_System_Int32_ *)pDVar6;
+    func_?();
+    pDVar6 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+              *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::
+    Text::TextResourceManager+FontAssetRef]::
+    Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+              (pDVar6,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
+    if (pDVar6 == (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+                   *)0x0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,6,0,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,5,1,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,2,2,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+    Dictionary_2_System_Int32_System_Int32__Add
+              ((Dictionary_2_System_Int32_System_Int32_ *)pDVar6,1,3,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    iVar7 = func_?();
+    if (iVar7 != 0) {
+      if (5 < pDVar5->max_length) {
+        pDVar5->vector[5] = (Dictionary_2_System_Int32_System_Int32_ *)pDVar6;
         func_?();
-        pIStack_11 = (IntVector__Array__Array *)0x4;
-        pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-        pIVar4 = (IntVector__Array *)func_?();
-        IStack_17.x = 0;
-        IStack_17.y = 0;
-        IStack_17.z = 0;
+        TypeInfo__SharedCubeFunctions->static_fields->VertexIndexToFaceIndexes = pDVar5;
+        func_?();
+        pIVar8 = (IntVector__Array__Array *)func_?();
+        pIVar9 = (IntVector__Array *)func_?(TypeInfo__MV__WorldObject__IntVector,4);
+        IStack_10.x = 0;
+        IStack_10.y = 0;
+        IStack_10.z = 0;
         MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                  (&IStack_17,0,1,0,(MethodInfo *)0x0);
-        if (pIVar4 != (IntVector__Array *)0x0) {
-          if (pIVar4->max_length == 0) goto code_?;
-          pIVar4->vector[0].x = IStack_17.x;
-          pIVar4->vector[0].y = IStack_17.y;
-          pIVar4->vector[0].z = IStack_17.z;
-          IStack_18.x = 0;
-          IStack_18.y = 0;
-          IStack_18.z = 0;
+                  (&IStack_10,-1,1,-1,(MethodInfo *)0x0);
+        if (pIVar9 == (IntVector__Array *)0x0) goto code_?;
+        if (pIVar9->max_length != 0) {
+          pIVar9->vector[0].x = IStack_10.x;
+          pIVar9->vector[0].y = IStack_10.y;
+          pIVar9->vector[0].z = IStack_10.z;
+          IStack_11.x = 0;
+          IStack_11.y = 0;
+          IStack_11.z = 0;
           MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                    (&IStack_18,0,1,1,(MethodInfo *)0x0);
-          if (pIVar4->max_length < 2) goto code_?;
-          pIVar4->vector[1].x = IStack_18.x;
-          pIVar4->vector[1].y = IStack_18.y;
-          pIVar4->vector[1].z = IStack_18.z;
-          IStack_19.x = 0;
-          IStack_19.y = 0;
-          IStack_19.z = 0;
-          MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                    (&IStack_19,1,1,1,(MethodInfo *)0x0);
-          if (pIVar4->max_length < 3) goto code_?;
-          pIVar4->vector[2].x = IStack_19.x;
-          pIVar4->vector[2].y = IStack_19.y;
-          pIVar4->vector[2].z = IStack_19.z;
-          IStack_20.x = 0;
-          IStack_20.y = 0;
-          IStack_20.z = 0;
-          MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                    (&IStack_20,1,1,0,(MethodInfo *)0x0);
-          if (pIVar4->max_length < 4) goto code_?;
-          pIVar4->vector[3].x = IStack_20.x;
-          pIVar4->vector[3].y = IStack_20.y;
-          pIVar4->vector[3].z = IStack_20.z;
-          if (pIVar3->max_length < 3) goto code_?;
-          ppIStack_9 = pIVar3->vector + 2;
-          pIVar3->vector[2] = pIVar4;
-          pIStack_10 = pIVar4;
-          func_?();
-          pIStack_11 = (IntVector__Array__Array *)0x4;
-          pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-          pIVar4 = (IntVector__Array *)func_?();
-          IStack_21.x = 0;
-          IStack_21.y = 0;
-          IStack_21.z = 0;
-          MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                    (&IStack_21,-1,1,0,(MethodInfo *)0x0);
-          if (pIVar4 != (IntVector__Array *)0x0) {
-            if (pIVar4->max_length == 0) goto code_?;
-            pIVar4->vector[0].x = IStack_21.x;
-            pIVar4->vector[0].y = IStack_21.y;
-            pIVar4->vector[0].z = IStack_21.z;
-            IStack_22.x = 0;
-            IStack_22.y = 0;
-            IStack_22.z = 0;
+                    (&IStack_11,-1,1,0,(MethodInfo *)0x0);
+          if (1 < pIVar9->max_length) {
+            pIVar9->vector[1].x = IStack_11.x;
+            pIVar9->vector[1].y = IStack_11.y;
+            pIVar9->vector[1].z = IStack_11.z;
+            IStack_12.x = 0;
+            IStack_12.y = 0;
+            IStack_12.z = 0;
             MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                      (&IStack_22,-1,1,1,(MethodInfo *)0x0);
-            if (pIVar4->max_length < 2) goto code_?;
-            pIVar4->vector[1].x = IStack_22.x;
-            pIVar4->vector[1].y = IStack_22.y;
-            pIVar4->vector[1].z = IStack_22.z;
-            IStack_23.x = 0;
-            IStack_23.y = 0;
-            IStack_23.z = 0;
-            MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                      (&IStack_23,0,1,1,(MethodInfo *)0x0);
-            if (pIVar4->max_length < 3) goto code_?;
-            pIVar4->vector[2].x = IStack_23.x;
-            pIVar4->vector[2].y = IStack_23.y;
-            pIVar4->vector[2].z = IStack_23.z;
-            IStack_24.x = 0;
-            IStack_24.y = 0;
-            IStack_24.z = 0;
-            MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                      (&IStack_24,0,1,0,(MethodInfo *)0x0);
-            if (pIVar4->max_length < 4) goto code_?;
-            pIVar4->vector[3].x = IStack_24.x;
-            pIVar4->vector[3].y = IStack_24.y;
-            pIVar4->vector[3].z = IStack_24.z;
-            if (pIVar3->max_length < 4) goto code_?;
-            ppIStack_9 = pIVar3->vector + 3;
-            pIVar3->vector[3] = pIVar4;
-            pIStack_10 = pIVar4;
-            func_?();
-            pIStack_11 = (IntVector__Array__Array *)0x4;
-            pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-            pIVar4 = (IntVector__Array *)func_?();
-            IStack_25.x = 0;
-            IStack_25.y = 0;
-            IStack_25.z = 0;
-            MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                      (&IStack_25,-1,-1,0,(MethodInfo *)0x0);
-            if (pIVar4 != (IntVector__Array *)0x0) {
-              if (pIVar4->max_length == 0) goto code_?;
-              pIVar4->vector[0].x = IStack_25.x;
-              pIVar4->vector[0].y = IStack_25.y;
-              pIVar4->vector[0].z = IStack_25.z;
-              IStack_26.x = 0;
-              IStack_26.y = 0;
-              IStack_26.z = 0;
+                      (&IStack_12,0,1,0,(MethodInfo *)0x0);
+            if (2 < pIVar9->max_length) {
+              pIVar9->vector[2].x = IStack_12.x;
+              pIVar9->vector[2].y = IStack_12.y;
+              pIVar9->vector[2].z = IStack_12.z;
+              IStack_13.x = 0;
+              IStack_13.y = 0;
+              IStack_13.z = 0;
               MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                        (&IStack_26,-1,-1,1,(MethodInfo *)0x0);
-              if (pIVar4->max_length < 2) goto code_?;
-              pIVar4->vector[1].x = IStack_26.x;
-              pIVar4->vector[1].y = IStack_26.y;
-              pIVar4->vector[1].z = IStack_26.z;
-              IStack_27.x = 0;
-              IStack_27.y = 0;
-              IStack_27.z = 0;
-              MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                        (&IStack_27,0,-1,1,(MethodInfo *)0x0);
-              if (pIVar4->max_length < 3) goto code_?;
-              pIVar4->vector[2].x = IStack_27.x;
-              pIVar4->vector[2].y = IStack_27.y;
-              pIVar4->vector[2].z = IStack_27.z;
-              IStack_28.x = 0;
-              IStack_28.y = 0;
-              IStack_28.z = 0;
-              MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                        (&IStack_28,0,-1,0,(MethodInfo *)0x0);
-              if (pIVar4->max_length < 4) goto code_?;
-              pIVar4->vector[3].x = IStack_28.x;
-              pIVar4->vector[3].y = IStack_28.y;
-              pIVar4->vector[3].z = IStack_28.z;
-              if (pIVar3->max_length < 5) goto code_?;
-              ppIStack_9 = pIVar3->vector + 4;
-              pIVar3->vector[4] = pIVar4;
-              pIStack_10 = pIVar4;
-              func_?();
-              pIStack_11 = (IntVector__Array__Array *)0x4;
-              pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-              pIVar4 = (IntVector__Array *)func_?();
-              IStack_29.x = 0;
-              IStack_29.y = 0;
-              IStack_29.z = 0;
-              MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                        (&IStack_29,0,-1,0,(MethodInfo *)0x0);
-              if (pIVar4 != (IntVector__Array *)0x0) {
-                if (pIVar4->max_length == 0) goto code_?;
-                pIVar4->vector[0].x = IStack_29.x;
-                pIVar4->vector[0].y = IStack_29.y;
-                pIVar4->vector[0].z = IStack_29.z;
-                IStack_30.x = 0;
-                IStack_30.y = 0;
-                IStack_30.z = 0;
-                MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                          (&IStack_30,0,-1,1,(MethodInfo *)0x0);
-                if (pIVar4->max_length < 2) goto code_?;
-                pIVar4->vector[1].x = IStack_30.x;
-                pIVar4->vector[1].y = IStack_30.y;
-                pIVar4->vector[1].z = IStack_30.z;
-                IStack_31.x = 0;
-                IStack_31.y = 0;
-                IStack_31.z = 0;
-                MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                          (&IStack_31,1,-1,1,(MethodInfo *)0x0);
-                if (pIVar4->max_length < 3) goto code_?;
-                pIVar4->vector[2].x = IStack_31.x;
-                pIVar4->vector[2].y = IStack_31.y;
-                pIVar4->vector[2].z = IStack_31.z;
-                IStack_32.x = 0;
-                IStack_32.y = 0;
-                IStack_32.z = 0;
-                MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                          (&IStack_32,1,-1,0,(MethodInfo *)0x0);
-                if (pIVar4->max_length < 4) goto code_?;
-                pIVar4->vector[3].x = IStack_32.x;
-                pIVar4->vector[3].y = IStack_32.y;
-                pIVar4->vector[3].z = IStack_32.z;
-                if (pIVar3->max_length < 6) goto code_?;
-                ppIStack_9 = pIVar3->vector + 5;
-                pIVar3->vector[5] = pIVar4;
-                pIStack_10 = pIVar4;
-                func_?();
-                pIStack_11 = (IntVector__Array__Array *)0x4;
-                pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                pIVar4 = (IntVector__Array *)func_?();
-                IStack_33.x = 0;
-                IStack_33.y = 0;
-                IStack_33.z = 0;
-                MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                          (&IStack_33,0,-1,-1,(MethodInfo *)0x0);
-                if (pIVar4 != (IntVector__Array *)0x0) {
-                  if (pIVar4->max_length == 0) goto code_?;
-                  pIVar4->vector[0].x = IStack_33.x;
-                  pIVar4->vector[0].y = IStack_33.y;
-                  pIVar4->vector[0].z = IStack_33.z;
-                  IStack_34.x = 0;
-                  IStack_34.y = 0;
-                  IStack_34.z = 0;
-                  MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                            (&IStack_34,0,-1,0,(MethodInfo *)0x0);
-                  if (pIVar4->max_length < 2) goto code_?;
-                  pIVar4->vector[1].x = IStack_34.x;
-                  pIVar4->vector[1].y = IStack_34.y;
-                  pIVar4->vector[1].z = IStack_34.z;
-                  IStack_35.x = 0;
-                  IStack_35.y = 0;
-                  IStack_35.z = 0;
-                  MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                            (&IStack_35,1,-1,0,(MethodInfo *)0x0);
-                  if (pIVar4->max_length < 3) goto code_?;
-                  pIVar4->vector[2].x = IStack_35.x;
-                  pIVar4->vector[2].y = IStack_35.y;
-                  pIVar4->vector[2].z = IStack_35.z;
-                  IStack_36.x = 0;
-                  IStack_36.y = 0;
-                  IStack_36.z = 0;
-                  MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                            (&IStack_36,1,-1,-1,(MethodInfo *)0x0);
-                  if (pIVar4->max_length < 4) goto code_?;
-                  pIVar4->vector[3].x = IStack_36.x;
-                  pIVar4->vector[3].y = IStack_36.y;
-                  pIVar4->vector[3].z = IStack_36.z;
-                  if (pIVar3->max_length < 7) goto code_?;
-                  ppIStack_9 = pIVar3->vector + 6;
-                  pIVar3->vector[6] = pIVar4;
-                  pIStack_10 = pIVar4;
+                        (&IStack_13,0,1,-1,(MethodInfo *)0x0);
+              if (3 < pIVar9->max_length) {
+                pIVar9->vector[3].x = IStack_13.x;
+                pIVar9->vector[3].y = IStack_13.y;
+                pIVar9->vector[3].z = IStack_13.z;
+                if (pIVar8 == (IntVector__Array__Array *)0x0) goto code_?;
+                if (pIVar8->max_length != 0) {
+                  pIVar8->vector[0] = pIVar9;
                   func_?();
-                  pIStack_11 = (IntVector__Array__Array *)0x4;
-                  pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                  pIVar4 = (IntVector__Array *)func_?();
-                  IStack_37.x = 0;
-                  IStack_37.y = 0;
-                  IStack_37.z = 0;
+                  pIVar9 = (IntVector__Array *)func_?();
+                  IStack_14.x = 0;
+                  IStack_14.y = 0;
+                  IStack_14.z = 0;
                   MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                            (&IStack_37,-1,-1,-1,(MethodInfo *)0x0);
-                  if (pIVar4 != (IntVector__Array *)0x0) {
-                    if (pIVar4->max_length == 0) goto code_?;
-                    pIVar4->vector[0].x = IStack_37.x;
-                    pIVar4->vector[0].y = IStack_37.y;
-                    pIVar4->vector[0].z = IStack_37.z;
-                    IStack_38.x = 0;
-                    IStack_38.y = 0;
-                    IStack_38.z = 0;
+                            (&IStack_14,0,1,-1,(MethodInfo *)0x0);
+                  if (pIVar9 == (IntVector__Array *)0x0) goto code_?;
+                  if (pIVar9->max_length != 0) {
+                    pIVar9->vector[0].x = IStack_14.x;
+                    pIVar9->vector[0].y = IStack_14.y;
+                    pIVar9->vector[0].z = IStack_14.z;
+                    IStack_15.x = 0;
+                    IStack_15.y = 0;
+                    IStack_15.z = 0;
                     MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                              (&IStack_38,-1,-1,0,(MethodInfo *)0x0);
-                    if (pIVar4->max_length < 2) goto code_?;
-                    pIVar4->vector[1].x = IStack_38.x;
-                    pIVar4->vector[1].y = IStack_38.y;
-                    pIVar4->vector[1].z = IStack_38.z;
-                    IStack_39.x = 0;
-                    IStack_39.y = 0;
-                    IStack_39.z = 0;
-                    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                              (&IStack_39,0,-1,0,(MethodInfo *)0x0);
-                    if (pIVar4->max_length < 3) goto code_?;
-                    pIVar4->vector[2].x = IStack_39.x;
-                    pIVar4->vector[2].y = IStack_39.y;
-                    pIVar4->vector[2].z = IStack_39.z;
-                    IStack_40.x = 0;
-                    IStack_40.y = 0;
-                    IStack_40.z = 0;
-                    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                              (&IStack_40,0,-1,-1,(MethodInfo *)0x0);
-                    if (pIVar4->max_length < 4) goto code_?;
-                    pIVar4->vector[3].x = IStack_40.x;
-                    pIVar4->vector[3].y = IStack_40.y;
-                    pIVar4->vector[3].z = IStack_40.z;
-                    if (pIVar3->max_length < 8) goto code_?;
-                    ppIStack_9 = pIVar3->vector + 7;
-                    pIVar3->vector[7] = pIVar4;
-                    pIStack_10 = pIVar4;
-                    func_?();
-                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                    pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                    pIVar4 = (IntVector__Array *)func_?();
-                    IStack_41.x = 0;
-                    IStack_41.y = 0;
-                    IStack_41.z = 0;
-                    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                              (&IStack_41,-1,-1,-1,(MethodInfo *)0x0);
-                    if (pIVar4 != (IntVector__Array *)0x0) {
-                      if (pIVar4->max_length == 0) goto code_?;
-                      pIVar4->vector[0].x = IStack_41.x;
-                      pIVar4->vector[0].y = IStack_41.y;
-                      pIVar4->vector[0].z = IStack_41.z;
-                      IStack_42.x = 0;
-                      IStack_42.y = 0;
-                      IStack_42.z = 0;
+                              (&IStack_15,0,1,0,(MethodInfo *)0x0);
+                    if (1 < pIVar9->max_length) {
+                      pIVar9->vector[1].x = IStack_15.x;
+                      pIVar9->vector[1].y = IStack_15.y;
+                      pIVar9->vector[1].z = IStack_15.z;
+                      IStack_16.x = 0;
+                      IStack_16.y = 0;
+                      IStack_16.z = 0;
                       MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                (&IStack_42,-1,0,-1,(MethodInfo *)0x0);
-                      if (pIVar4->max_length < 2) goto code_?;
-                      pIVar4->vector[1].x = IStack_42.x;
-                      pIVar4->vector[1].y = IStack_42.y;
-                      pIVar4->vector[1].z = IStack_42.z;
-                      IStack_43.x = 0;
-                      IStack_43.y = 0;
-                      IStack_43.z = 0;
-                      MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                (&IStack_43,0,0,-1,(MethodInfo *)0x0);
-                      if (pIVar4->max_length < 3) goto code_?;
-                      pIVar4->vector[2].x = IStack_43.x;
-                      pIVar4->vector[2].y = IStack_43.y;
-                      pIVar4->vector[2].z = IStack_43.z;
-                      IStack_44.x = 0;
-                      IStack_44.y = 0;
-                      IStack_44.z = 0;
-                      MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                (&IStack_44,0,-1,-1,(MethodInfo *)0x0);
-                      if (pIVar4->max_length < 4) goto code_?;
-                      pIVar4->vector[3].x = IStack_44.x;
-                      pIVar4->vector[3].y = IStack_44.y;
-                      pIVar4->vector[3].z = IStack_44.z;
-                      if (pIVar3->max_length < 9) goto code_?;
-                      ppIStack_9 = pIVar3->vector + 8;
-                      pIVar3->vector[8] = pIVar4;
-                      pIStack_10 = pIVar4;
-                      func_?();
-                      pIStack_11 = (IntVector__Array__Array *)0x4;
-                      pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                      pIVar4 = (IntVector__Array *)func_?();
-                      IStack_45.x = 0;
-                      IStack_45.y = 0;
-                      IStack_45.z = 0;
-                      MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                (&IStack_45,0,-1,-1,(MethodInfo *)0x0);
-                      if (pIVar4 != (IntVector__Array *)0x0) {
-                        if (pIVar4->max_length == 0) goto code_?;
-                        pIVar4->vector[0].x = IStack_45.x;
-                        pIVar4->vector[0].y = IStack_45.y;
-                        pIVar4->vector[0].z = IStack_45.z;
-                        IStack_46.x = 0;
-                        IStack_46.y = 0;
-                        IStack_46.z = 0;
+                                (&IStack_16,1,1,0,(MethodInfo *)0x0);
+                      if (2 < pIVar9->max_length) {
+                        pIVar9->vector[2].x = IStack_16.x;
+                        pIVar9->vector[2].y = IStack_16.y;
+                        pIVar9->vector[2].z = IStack_16.z;
+                        IStack_17.x = 0;
+                        IStack_17.y = 0;
+                        IStack_17.z = 0;
                         MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                  (&IStack_46,0,0,-1,(MethodInfo *)0x0);
-                        if (pIVar4->max_length < 2) goto code_?;
-                        pIVar4->vector[1].x = IStack_46.x;
-                        pIVar4->vector[1].y = IStack_46.y;
-                        pIVar4->vector[1].z = IStack_46.z;
-                        IStack_47.x = 0;
-                        IStack_47.y = 0;
-                        IStack_47.z = 0;
-                        MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                  (&IStack_47,1,0,-1,(MethodInfo *)0x0);
-                        if (pIVar4->max_length < 3) goto code_?;
-                        pIVar4->vector[2].x = IStack_47.x;
-                        pIVar4->vector[2].y = IStack_47.y;
-                        pIVar4->vector[2].z = IStack_47.z;
-                        IStack_48.x = 0;
-                        IStack_48.y = 0;
-                        IStack_48.z = 0;
-                        MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                  (&IStack_48,1,-1,-1,(MethodInfo *)0x0);
-                        if (pIVar4->max_length < 4) goto code_?;
-                        pIVar4->vector[3].x = IStack_48.x;
-                        pIVar4->vector[3].y = IStack_48.y;
-                        pIVar4->vector[3].z = IStack_48.z;
-                        if (pIVar3->max_length < 10) goto code_?;
-                        ppIStack_9 = pIVar3->vector + 9;
-                        pIVar3->vector[9] = pIVar4;
-                        pIStack_10 = pIVar4;
-                        func_?();
-                        pIStack_11 = (IntVector__Array__Array *)0x4;
-                        pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                        pIVar4 = (IntVector__Array *)func_?();
-                        IStack_49.x = 0;
-                        IStack_49.y = 0;
-                        IStack_49.z = 0;
-                        MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                  (&IStack_49,0,0,-1,(MethodInfo *)0x0);
-                        if (pIVar4 != (IntVector__Array *)0x0) {
-                          if (pIVar4->max_length == 0) goto code_?;
-                          pIVar4->vector[0].x = IStack_49.x;
-                          pIVar4->vector[0].y = IStack_49.y;
-                          pIVar4->vector[0].z = IStack_49.z;
-                          IStack_50.x = 0;
-                          IStack_50.y = 0;
-                          IStack_50.z = 0;
-                          MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                    (&IStack_50,0,1,-1,(MethodInfo *)0x0);
-                          if (pIVar4->max_length < 2) goto code_?;
-                          pIVar4->vector[1].x = IStack_50.x;
-                          pIVar4->vector[1].y = IStack_50.y;
-                          pIVar4->vector[1].z = IStack_50.z;
-                          IStack_51.x = 0;
-                          IStack_51.y = 0;
-                          IStack_51.z = 0;
-                          MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                    (&IStack_51,1,1,-1,(MethodInfo *)0x0);
-                          if (pIVar4->max_length < 3) goto code_?;
-                          pIVar4->vector[2].x = IStack_51.x;
-                          pIVar4->vector[2].y = IStack_51.y;
-                          pIVar4->vector[2].z = IStack_51.z;
-                          IStack_52.x = 0;
-                          IStack_52.y = 0;
-                          IStack_52.z = 0;
-                          MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                    (&IStack_52,1,0,-1,(MethodInfo *)0x0);
-                          if (pIVar4->max_length < 4) goto code_?;
-                          pIVar4->vector[3].x = IStack_52.x;
-                          pIVar4->vector[3].y = IStack_52.y;
-                          pIVar4->vector[3].z = IStack_52.z;
-                          if (pIVar3->max_length < 0xb) goto code_?;
-                          ppIStack_9 = pIVar3->vector + 10;
-                          pIVar3->vector[10] = pIVar4;
-                          pIStack_10 = pIVar4;
-                          func_?();
-                          pIStack_11 = (IntVector__Array__Array *)0x4;
-                          pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                          pIVar4 = (IntVector__Array *)func_?();
-                          IStack_53.x = 0;
-                          IStack_53.y = 0;
-                          IStack_53.z = 0;
-                          MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                    (&IStack_53,-1,0,-1,(MethodInfo *)0x0);
-                          if (pIVar4 != (IntVector__Array *)0x0) {
-                            if (pIVar4->max_length == 0) goto code_?;
-                            pIVar4->vector[0].x = IStack_53.x;
-                            pIVar4->vector[0].y = IStack_53.y;
-                            pIVar4->vector[0].z = IStack_53.z;
-                            IStack_54.x = 0;
-                            IStack_54.y = 0;
-                            IStack_54.z = 0;
-                            MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                      (&IStack_54,-1,1,-1,(MethodInfo *)0x0);
-                            if (pIVar4->max_length < 2) goto code_?;
-                            pIVar4->vector[1].x = IStack_54.x;
-                            pIVar4->vector[1].y = IStack_54.y;
-                            pIVar4->vector[1].z = IStack_54.z;
-                            IStack_55.x = 0;
-                            IStack_55.y = 0;
-                            IStack_55.z = 0;
-                            MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                      (&IStack_55,0,1,-1,(MethodInfo *)0x0);
-                            if (pIVar4->max_length < 3) goto code_?;
-                            pIVar4->vector[2].x = IStack_55.x;
-                            pIVar4->vector[2].y = IStack_55.y;
-                            pIVar4->vector[2].z = IStack_55.z;
-                            IStack_56.x = 0;
-                            IStack_56.y = 0;
-                            IStack_56.z = 0;
-                            MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                      (&IStack_56,0,0,-1,(MethodInfo *)0x0);
-                            if (pIVar4->max_length < 4) goto code_?;
-                            pIVar4->vector[3].x = IStack_56.x;
-                            pIVar4->vector[3].y = IStack_56.y;
-                            pIVar4->vector[3].z = IStack_56.z;
-                            if (pIVar3->max_length < 0xc) goto code_?;
-                            ppIStack_9 = pIVar3->vector + 0xb;
-                            pIVar3->vector[0xb] = pIVar4;
-                            pIStack_10 = pIVar4;
+                                  (&IStack_17,1,1,-1,(MethodInfo *)0x0);
+                        if (3 < pIVar9->max_length) {
+                          pIVar9->vector[3].x = IStack_17.x;
+                          pIVar9->vector[3].y = IStack_17.y;
+                          pIVar9->vector[3].z = IStack_17.z;
+                          if (1 < pIVar8->max_length) {
+                            pIVar8->vector[1] = pIVar9;
                             func_?();
-                            pIStack_11 = (IntVector__Array__Array *)0x4;
-                            pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                            pIVar4 = (IntVector__Array *)func_?();
-                            IStack_57.x = 0;
-                            IStack_57.y = 0;
-                            IStack_57.z = 0;
+                            pIVar9 = (IntVector__Array *)func_?();
+                            IStack_18.x = 0;
+                            IStack_18.y = 0;
+                            IStack_18.z = 0;
                             MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                      (&IStack_57,0,-1,1,(MethodInfo *)0x0);
-                            if (pIVar4 != (IntVector__Array *)0x0) {
-                              if (pIVar4->max_length == 0) goto code_?;
-                              pIVar4->vector[0].x = IStack_57.x;
-                              pIVar4->vector[0].y = IStack_57.y;
-                              pIVar4->vector[0].z = IStack_57.z;
-                              IStack_58.x = 0;
-                              IStack_58.y = 0;
-                              IStack_58.z = 0;
+                                      (&IStack_18,0,1,0,(MethodInfo *)0x0);
+                            if (pIVar9 == (IntVector__Array *)0x0) goto code_?;
+                            if (pIVar9->max_length != 0) {
+                              pIVar9->vector[0].x = IStack_18.x;
+                              pIVar9->vector[0].y = IStack_18.y;
+                              pIVar9->vector[0].z = IStack_18.z;
+                              IStack_19.x = 0;
+                              IStack_19.y = 0;
+                              IStack_19.z = 0;
                               MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                        (&IStack_58,0,0,1,(MethodInfo *)0x0);
-                              if (pIVar4->max_length < 2) goto code_?;
-                              pIVar4->vector[1].x = IStack_58.x;
-                              pIVar4->vector[1].y = IStack_58.y;
-                              pIVar4->vector[1].z = IStack_58.z;
-                              IStack_59.x = 0;
-                              IStack_59.y = 0;
-                              IStack_59.z = 0;
-                              MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                        (&IStack_59,1,0,1,(MethodInfo *)0x0);
-                              if (pIVar4->max_length < 3) goto code_?;
-                              pIVar4->vector[2].x = IStack_59.x;
-                              pIVar4->vector[2].y = IStack_59.y;
-                              pIVar4->vector[2].z = IStack_59.z;
-                              IStack_60.x = 0;
-                              IStack_60.y = 0;
-                              IStack_60.z = 0;
-                              MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                        (&IStack_60,1,-1,1,(MethodInfo *)0x0);
-                              if (pIVar4->max_length < 4) goto code_?;
-                              pIVar4->vector[3].x = IStack_60.x;
-                              pIVar4->vector[3].y = IStack_60.y;
-                              pIVar4->vector[3].z = IStack_60.z;
-                              if (pIVar3->max_length < 0xd) goto code_?;
-                              ppIStack_9 = pIVar3->vector + 0xc;
-                              pIVar3->vector[0xc] = pIVar4;
-                              pIStack_10 = pIVar4;
-                              func_?();
-                              pIStack_11 = (IntVector__Array__Array *)0x4;
-                              pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                              pIVar4 = (IntVector__Array *)func_?();
-                              IStack_61.x = 0;
-                              IStack_61.y = 0;
-                              IStack_61.z = 0;
-                              MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                        (&IStack_61,-1,-1,1,(MethodInfo *)0x0);
-                              if (pIVar4 != (IntVector__Array *)0x0) {
-                                if (pIVar4->max_length == 0) goto code_?;
-                                pIVar4->vector[0].x = IStack_61.x;
-                                pIVar4->vector[0].y = IStack_61.y;
-                                pIVar4->vector[0].z = IStack_61.z;
-                                IStack_62.x = 0;
-                                IStack_62.y = 0;
-                                IStack_62.z = 0;
+                                        (&IStack_19,0,1,1,(MethodInfo *)0x0);
+                              if (1 < pIVar9->max_length) {
+                                pIVar9->vector[1].x = IStack_19.x;
+                                pIVar9->vector[1].y = IStack_19.y;
+                                pIVar9->vector[1].z = IStack_19.z;
+                                IStack_20.x = 0;
+                                IStack_20.y = 0;
+                                IStack_20.z = 0;
                                 MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                          (&IStack_62,-1,0,1,(MethodInfo *)0x0);
-                                if (pIVar4->max_length < 2) goto code_?;
-                                pIVar4->vector[1].x = IStack_62.x;
-                                pIVar4->vector[1].y = IStack_62.y;
-                                pIVar4->vector[1].z = IStack_62.z;
-                                IStack_63.x = 0;
-                                IStack_63.y = 0;
-                                IStack_63.z = 0;
-                                MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                          (&IStack_63,0,0,1,(MethodInfo *)0x0);
-                                if (pIVar4->max_length < 3) goto code_?;
-                                pIVar4->vector[2].x = IStack_63.x;
-                                pIVar4->vector[2].y = IStack_63.y;
-                                pIVar4->vector[2].z = IStack_63.z;
-                                IStack_64.x = 0;
-                                IStack_64.y = 0;
-                                IStack_64.z = 0;
-                                MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                          (&IStack_64,0,-1,1,(MethodInfo *)0x0);
-                                if (pIVar4->max_length < 4) goto code_?;
-                                pIVar4->vector[3].x = IStack_64.x;
-                                pIVar4->vector[3].y = IStack_64.y;
-                                pIVar4->vector[3].z = IStack_64.z;
-                                if (pIVar3->max_length < 0xe) goto code_?;
-                                ppIStack_9 = pIVar3->vector + 0xd;
-                                pIVar3->vector[0xd] = pIVar4;
-                                pIStack_10 = pIVar4;
-                                func_?();
-                                pIStack_11 = (IntVector__Array__Array *)0x4;
-                                pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                                pIVar4 = (IntVector__Array *)func_?();
-                                IStack_65.x = 0;
-                                IStack_65.y = 0;
-                                IStack_65.z = 0;
-                                MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                          (&IStack_65,-1,0,1,(MethodInfo *)0x0);
-                                if (pIVar4 != (IntVector__Array *)0x0) {
-                                  if (pIVar4->max_length == 0) goto code_?;
-                                  pIVar4->vector[0].x = IStack_65.x;
-                                  pIVar4->vector[0].y = IStack_65.y;
-                                  pIVar4->vector[0].z = IStack_65.z;
-                                  IStack_66.x = 0;
-                                  IStack_66.y = 0;
-                                  IStack_66.z = 0;
+                                          (&IStack_20,1,1,1,(MethodInfo *)0x0);
+                                if (2 < pIVar9->max_length) {
+                                  pIVar9->vector[2].x = IStack_20.x;
+                                  pIVar9->vector[2].y = IStack_20.y;
+                                  pIVar9->vector[2].z = IStack_20.z;
+                                  IStack_21.x = 0;
+                                  IStack_21.y = 0;
+                                  IStack_21.z = 0;
                                   MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                            (&IStack_66,-1,1,1,(MethodInfo *)0x0);
-                                  if (pIVar4->max_length < 2) goto code_?;
-                                  pIVar4->vector[1].x = IStack_66.x;
-                                  pIVar4->vector[1].y = IStack_66.y;
-                                  pIVar4->vector[1].z = IStack_66.z;
-                                  IStack_67.x = 0;
-                                  IStack_67.y = 0;
-                                  IStack_67.z = 0;
-                                  MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                            (&IStack_67,0,1,1,(MethodInfo *)0x0);
-                                  if (pIVar4->max_length < 3) goto code_?;
-                                  pIVar4->vector[2].x = IStack_67.x;
-                                  pIVar4->vector[2].y = IStack_67.y;
-                                  pIVar4->vector[2].z = IStack_67.z;
-                                  IStack_68.x = 0;
-                                  IStack_68.y = 0;
-                                  IStack_68.z = 0;
-                                  MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                            (&IStack_68,0,0,1,(MethodInfo *)0x0);
-                                  if (pIVar4->max_length < 4) goto code_?;
-                                  pIVar4->vector[3].x = IStack_68.x;
-                                  pIVar4->vector[3].y = IStack_68.y;
-                                  pIVar4->vector[3].z = IStack_68.z;
-                                  if (pIVar3->max_length < 0xf) goto code_?;
-                                  ppIStack_9 = pIVar3->vector + 0xe;
-                                  pIVar3->vector[0xe] = pIVar4;
-                                  pIStack_10 = pIVar4;
-                                  func_?();
-                                  pIStack_11 = (IntVector__Array__Array *)0x4;
-                                  pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                                  pIVar4 = (IntVector__Array *)func_?();
-                                  IStack_69.x = 0;
-                                  IStack_69.y = 0;
-                                  IStack_69.z = 0;
-                                  MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                            (&IStack_69,0,0,1,(MethodInfo *)0x0);
-                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                    if (pIVar4->max_length == 0) goto code_?;
-                                    pIVar4->vector[0].x = IStack_69.x;
-                                    pIVar4->vector[0].y = IStack_69.y;
-                                    pIVar4->vector[0].z = IStack_69.z;
-                                    IStack_70.x = 0;
-                                    IStack_70.y = 0;
-                                    IStack_70.z = 0;
-                                    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                              (&IStack_70,0,1,1,(MethodInfo *)0x0);
-                                    if (pIVar4->max_length < 2) goto code_?;
-                                    pIVar4->vector[1].x = IStack_70.x;
-                                    pIVar4->vector[1].y = IStack_70.y;
-                                    pIVar4->vector[1].z = IStack_70.z;
-                                    IStack_71.x = 0;
-                                    IStack_71.y = 0;
-                                    IStack_71.z = 0;
-                                    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                              (&IStack_71,1,1,1,(MethodInfo *)0x0);
-                                    if (pIVar4->max_length < 3) goto code_?;
-                                    pIVar4->vector[2].x = IStack_71.x;
-                                    pIVar4->vector[2].y = IStack_71.y;
-                                    pIVar4->vector[2].z = IStack_71.z;
-                                    IStack_72.x = 0;
-                                    IStack_72.y = 0;
-                                    IStack_72.z = 0;
-                                    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                              (&IStack_72,1,0,1,(MethodInfo *)0x0);
-                                    if (pIVar4->max_length < 4) goto code_?;
-                                    pIVar4->vector[3].x = IStack_72.x;
-                                    pIVar4->vector[3].y = IStack_72.y;
-                                    pIVar4->vector[3].z = IStack_72.z;
-                                    if (pIVar3->max_length < 0x10) goto code_?;
-                                    ppIStack_9 = pIVar3->vector + 0xf;
-                                    pIVar3->vector[0xf] = pIVar4;
-                                    pIStack_10 = pIVar4;
-                                    func_?();
-                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                    pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                                    pIVar4 = (IntVector__Array *)func_?();
-                                    IStack_73.x = 0;
-                                    IStack_73.y = 0;
-                                    IStack_73.z = 0;
-                                    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                              (&IStack_73,-1,-1,0,(MethodInfo *)0x0);
-                                    if (pIVar4 != (IntVector__Array *)0x0) {
-                                      if (pIVar4->max_length == 0) goto code_?;
-                                      pIVar4->vector[0].x = IStack_73.x;
-                                      pIVar4->vector[0].y = IStack_73.y;
-                                      pIVar4->vector[0].z = IStack_73.z;
-                                      IStack_74.x = 0;
-                                      IStack_74.y = 0;
-                                      IStack_74.z = 0;
-                                      MVWorldObject.dll::MV::WorldObject::IntVector::
-                                      IntVector__ctor_1(&IStack_74,-1,0,0,(MethodInfo *)0x0);
-                                      if (pIVar4->max_length < 2) goto code_?;
-                                      pIVar4->vector[1].x = IStack_74.x;
-                                      pIVar4->vector[1].y = IStack_74.y;
-                                      pIVar4->vector[1].z = IStack_74.z;
-                                      IStack_75.x = 0;
-                                      IStack_75.y = 0;
-                                      IStack_75.z = 0;
-                                      MVWorldObject.dll::MV::WorldObject::IntVector::
-                                      IntVector__ctor_1(&IStack_75,-1,0,1,(MethodInfo *)0x0);
-                                      if (pIVar4->max_length < 3) goto code_?;
-                                      pIVar4->vector[2].x = IStack_75.x;
-                                      pIVar4->vector[2].y = IStack_75.y;
-                                      pIVar4->vector[2].z = IStack_75.z;
-                                      IStack_76.x = 0;
-                                      IStack_76.y = 0;
-                                      IStack_76.z = 0;
-                                      MVWorldObject.dll::MV::WorldObject::IntVector::
-                                      IntVector__ctor_1(&IStack_76,-1,-1,1,(MethodInfo *)0x0);
-                                      if (pIVar4->max_length < 4) goto code_?;
-                                      pIVar4->vector[3].x = IStack_76.x;
-                                      pIVar4->vector[3].y = IStack_76.y;
-                                      pIVar4->vector[3].z = IStack_76.z;
-                                      if (pIVar3->max_length < 0x11) goto code_?;
-                                      ppIStack_9 = pIVar3->vector + 0x10;
-                                      pIVar3->vector[0x10] = pIVar4;
-                                      pIStack_10 = pIVar4;
+                                            (&IStack_21,1,1,0,(MethodInfo *)0x0);
+                                  if (3 < pIVar9->max_length) {
+                                    pIVar9->vector[3].x = IStack_21.x;
+                                    pIVar9->vector[3].y = IStack_21.y;
+                                    pIVar9->vector[3].z = IStack_21.z;
+                                    if (2 < pIVar8->max_length) {
+                                      pIVar8->vector[2] = pIVar9;
                                       func_?();
-                                      pIStack_11 = (IntVector__Array__Array *)0x4;
-                                      pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                                      pIVar4 = (IntVector__Array *)func_?();
-                                      IStack_77.x = 0;
-                                      IStack_77.y = 0;
-                                      IStack_77.z = 0;
+                                      pIVar9 = (IntVector__Array *)func_?();
+                                      IStack_22.x = 0;
+                                      IStack_22.y = 0;
+                                      IStack_22.z = 0;
                                       MVWorldObject.dll::MV::WorldObject::IntVector::
-                                      IntVector__ctor_1(&IStack_77,-1,-1,-1,(MethodInfo *)0x0);
-                                      if (pIVar4 != (IntVector__Array *)0x0) {
-                                        if (pIVar4->max_length == 0) goto code_?;
-                                        pIVar4->vector[0].x = IStack_77.x;
-                                        pIVar4->vector[0].y = IStack_77.y;
-                                        pIVar4->vector[0].z = IStack_77.z;
-                                        IStack_78.x = 0;
-                                        IStack_78.y = 0;
-                                        IStack_78.z = 0;
+                                      IntVector__ctor_1(&IStack_22,-1,1,0,(MethodInfo *)0x0);
+                                      if (pIVar9 == (IntVector__Array *)0x0) goto code_?;
+                                      if (pIVar9->max_length != 0) {
+                                        pIVar9->vector[0].x = IStack_22.x;
+                                        pIVar9->vector[0].y = IStack_22.y;
+                                        pIVar9->vector[0].z = IStack_22.z;
+                                        IStack_23.x = 0;
+                                        IStack_23.y = 0;
+                                        IStack_23.z = 0;
                                         MVWorldObject.dll::MV::WorldObject::IntVector::
-                                        IntVector__ctor_1(&IStack_78,-1,0,-1,(MethodInfo *)0x0);
-                                        if (pIVar4->max_length < 2) goto code_?;
-                                        pIVar4->vector[1].x = IStack_78.x;
-                                        pIVar4->vector[1].y = IStack_78.y;
-                                        pIVar4->vector[1].z = IStack_78.z;
-                                        IStack_79.x = 0;
-                                        IStack_79.y = 0;
-                                        IStack_79.z = 0;
-                                        MVWorldObject.dll::MV::WorldObject::IntVector::
-                                        IntVector__ctor_1(&IStack_79,-1,0,0,(MethodInfo *)0x0);
-                                        if (pIVar4->max_length < 3) goto code_?;
-                                        pIVar4->vector[2].x = IStack_79.x;
-                                        pIVar4->vector[2].y = IStack_79.y;
-                                        pIVar4->vector[2].z = IStack_79.z;
-                                        IStack_80.x = 0;
-                                        IStack_80.y = 0;
-                                        IStack_80.z = 0;
-                                        MVWorldObject.dll::MV::WorldObject::IntVector::
-                                        IntVector__ctor_1(&IStack_80,-1,-1,0,(MethodInfo *)0x0);
-                                        if (pIVar4->max_length < 4) goto code_?;
-                                        pIVar4->vector[3].x = IStack_80.x;
-                                        pIVar4->vector[3].y = IStack_80.y;
-                                        pIVar4->vector[3].z = IStack_80.z;
-                                        if (pIVar3->max_length < 0x12) goto code_?;
-                                        ppIStack_9 = pIVar3->vector + 0x11;
-                                        pIVar3->vector[0x11] = pIVar4;
-                                        pIStack_10 = pIVar4;
-                                        func_?();
-                                        pIStack_11 = (IntVector__Array__Array *)0x4;
-                                        pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                                        pIVar4 = (IntVector__Array *)func_?();
-                                        IStack_81.x = 0;
-                                        IStack_81.y = 0;
-                                        IStack_81.z = 0;
-                                        MVWorldObject.dll::MV::WorldObject::IntVector::
-                                        IntVector__ctor_1(&IStack_81,-1,0,-1,(MethodInfo *)0x0);
-                                        if (pIVar4 != (IntVector__Array *)0x0) {
-                                          if (pIVar4->max_length == 0) goto code_?;
-                                          pIVar4->vector[0].x = IStack_81.x;
-                                          pIVar4->vector[0].y = IStack_81.y;
-                                          pIVar4->vector[0].z = IStack_81.z;
-                                          IStack_82.x = 0;
-                                          IStack_82.y = 0;
-                                          IStack_82.z = 0;
+                                        IntVector__ctor_1(&IStack_23,-1,1,1,(MethodInfo *)0x0);
+                                        if (1 < pIVar9->max_length) {
+                                          pIVar9->vector[1].x = IStack_23.x;
+                                          pIVar9->vector[1].y = IStack_23.y;
+                                          pIVar9->vector[1].z = IStack_23.z;
+                                          IStack_24.x = 0;
+                                          IStack_24.y = 0;
+                                          IStack_24.z = 0;
                                           MVWorldObject.dll::MV::WorldObject::IntVector::
-                                          IntVector__ctor_1(&IStack_82,-1,1,-1,(MethodInfo *)0x0);
-                                          if (pIVar4->max_length < 2) goto code_?;
-                                          pIVar4->vector[1].x = IStack_82.x;
-                                          pIVar4->vector[1].y = IStack_82.y;
-                                          pIVar4->vector[1].z = IStack_82.z;
-                                          IStack_83.x = 0;
-                                          IStack_83.y = 0;
-                                          IStack_83.z = 0;
-                                          MVWorldObject.dll::MV::WorldObject::IntVector::
-                                          IntVector__ctor_1(&IStack_83,-1,1,0,(MethodInfo *)0x0);
-                                          if (pIVar4->max_length < 3) goto code_?;
-                                          pIVar4->vector[2].x = IStack_83.x;
-                                          pIVar4->vector[2].y = IStack_83.y;
-                                          pIVar4->vector[2].z = IStack_83.z;
-                                          IStack_84.x = 0;
-                                          IStack_84.y = 0;
-                                          IStack_84.z = 0;
-                                          MVWorldObject.dll::MV::WorldObject::IntVector::
-                                          IntVector__ctor_1(&IStack_84,-1,0,0,(MethodInfo *)0x0);
-                                          if (pIVar4->max_length < 4) goto code_?;
-                                          pIVar4->vector[3].x = IStack_84.x;
-                                          pIVar4->vector[3].y = IStack_84.y;
-                                          pIVar4->vector[3].z = IStack_84.z;
-                                          if (pIVar3->max_length < 0x13) goto code_?;
-                                          ppIStack_9 = pIVar3->vector + 0x12;
-                                          pIVar3->vector[0x12] = pIVar4;
-                                          pIStack_10 = pIVar4;
-                                          func_?();
-                                          pIStack_11 = (IntVector__Array__Array *)0x4;
-                                          pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                                          pIVar4 = (IntVector__Array *)func_?();
-                                          IStack_85.x = 0;
-                                          IStack_85.y = 0;
-                                          IStack_85.z = 0;
-                                          MVWorldObject.dll::MV::WorldObject::IntVector::
-                                          IntVector__ctor_1(&IStack_85,-1,0,0,(MethodInfo *)0x0);
-                                          if (pIVar4 != (IntVector__Array *)0x0) {
-                                            if (pIVar4->max_length == 0) goto code_?;
-                                            pIVar4->vector[0].x = IStack_85.x;
-                                            pIVar4->vector[0].y = IStack_85.y;
-                                            pIVar4->vector[0].z = IStack_85.z;
-                                            IStack_86.x = 0;
-                                            IStack_86.y = 0;
-                                            IStack_86.z = 0;
+                                          IntVector__ctor_1(&IStack_24,0,1,1,(MethodInfo *)0x0);
+                                          if (2 < pIVar9->max_length) {
+                                            pIVar9->vector[2].x = IStack_24.x;
+                                            pIVar9->vector[2].y = IStack_24.y;
+                                            pIVar9->vector[2].z = IStack_24.z;
+                                            IStack_25.x = 0;
+                                            IStack_25.y = 0;
+                                            IStack_25.z = 0;
                                             MVWorldObject.dll::MV::WorldObject::IntVector::
-                                            IntVector__ctor_1(&IStack_86,-1,1,0,(MethodInfo *)0x0);
-                                            if (pIVar4->max_length < 2) goto code_?;
-                                            pIVar4->vector[1].x = IStack_86.x;
-                                            pIVar4->vector[1].y = IStack_86.y;
-                                            pIVar4->vector[1].z = IStack_86.z;
-                                            IStack_87.x = 0;
-                                            IStack_87.y = 0;
-                                            IStack_87.z = 0;
-                                            MVWorldObject.dll::MV::WorldObject::IntVector::
-                                            IntVector__ctor_1(&IStack_87,-1,1,1,(MethodInfo *)0x0);
-                                            if (pIVar4->max_length < 3) goto code_?;
-                                            pIVar4->vector[2].x = IStack_87.x;
-                                            pIVar4->vector[2].y = IStack_87.y;
-                                            pIVar4->vector[2].z = IStack_87.z;
-                                            IStack_88.x = 0;
-                                            IStack_88.y = 0;
-                                            IStack_88.z = 0;
-                                            MVWorldObject.dll::MV::WorldObject::IntVector::
-                                            IntVector__ctor_1(&IStack_88,-1,0,1,(MethodInfo *)0x0);
-                                            if (pIVar4->max_length < 4) goto code_?;
-                                            pIVar4->vector[3].x = IStack_88.x;
-                                            pIVar4->vector[3].y = IStack_88.y;
-                                            pIVar4->vector[3].z = IStack_88.z;
-                                            if (pIVar3->max_length < 0x14) goto code_?;
-                                            ppIStack_9 = pIVar3->vector + 0x13;
-                                            pIVar3->vector[0x13] = pIVar4;
-                                            pIStack_10 = pIVar4;
-                                            func_?();
-                                            pIStack_11 = (IntVector__Array__Array *)0x4;
-                                            pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                                            pIVar4 = (IntVector__Array *)func_?();
-                                            IStack_89.x = 0;
-                                            IStack_89.y = 0;
-                                            IStack_89.z = 0;
-                                            MVWorldObject.dll::MV::WorldObject::IntVector::
-                                            IntVector__ctor_1(&IStack_89,1,-1,-1,(MethodInfo *)0x0)
-                                            ;
-                                            if (pIVar4 != (IntVector__Array *)0x0) {
-                                              if (pIVar4->max_length == 0) goto code_?;
-                                              pIVar4->vector[0].x = IStack_89.x;
-                                              pIVar4->vector[0].y = IStack_89.y;
-                                              pIVar4->vector[0].z = IStack_89.z;
-                                              IStack_90.x = 0;
-                                              IStack_90.y = 0;
-                                              IStack_90.z = 0;
-                                              MVWorldObject.dll::MV::WorldObject::IntVector::
-                                              IntVector__ctor_1(&IStack_90,1,0,-1,(MethodInfo *)0x0
-                                                               );
-                                              if (pIVar4->max_length < 2) goto code_?;
-                                              pIVar4->vector[1].x = IStack_90.x;
-                                              pIVar4->vector[1].y = IStack_90.y;
-                                              pIVar4->vector[1].z = IStack_90.z;
-                                              IStack_91.x = 0;
-                                              IStack_91.y = 0;
-                                              IStack_91.z = 0;
-                                              MVWorldObject.dll::MV::WorldObject::IntVector::
-                                              IntVector__ctor_1(&IStack_91,1,0,0,(MethodInfo *)0x0)
-                                              ;
-                                              if (pIVar4->max_length < 3) goto code_?;
-                                              pIVar4->vector[2].x = IStack_91.x;
-                                              pIVar4->vector[2].y = IStack_91.y;
-                                              pIVar4->vector[2].z = IStack_91.z;
-                                              IStack_92.x = 0;
-                                              IStack_92.y = 0;
-                                              IStack_92.z = 0;
-                                              MVWorldObject.dll::MV::WorldObject::IntVector::
-                                              IntVector__ctor_1(&IStack_92,1,-1,0,(MethodInfo *)0x0
-                                                               );
-                                              if (pIVar4->max_length < 4) goto code_?;
-                                              pIVar4->vector[3].x = IStack_92.x;
-                                              pIVar4->vector[3].y = IStack_92.y;
-                                              pIVar4->vector[3].z = IStack_92.z;
-                                              if (pIVar3->max_length < 0x15) goto code_?;
-                                              ppIStack_9 = pIVar3->vector + 0x14;
-                                              pIVar3->vector[0x14] = pIVar4;
-                                              pIStack_11 = (IntVector__Array__Array *)&UNK_?
-                                              ;
-                                              pIStack_10 = pIVar4;
-                                              func_?();
-                                              pIStack_11 = (IntVector__Array__Array *)0x4;
-                                              pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                                              pIVar4 = (IntVector__Array *)func_?();
-                                              IStack_93.x = 0;
-                                              IStack_93.y = 0;
-                                              IStack_93.z = 0;
-                                              MVWorldObject.dll::MV::WorldObject::IntVector::
-                                              IntVector__ctor_1(&IStack_93,1,-1,0,(MethodInfo *)0x0
-                                                               );
-                                              if (pIVar4 != (IntVector__Array *)0x0) {
-                                                if (pIVar4->max_length == 0) goto code_?;
-                                                pIVar4->vector[0].x = IStack_93.x;
-                                                pIVar4->vector[0].y = IStack_93.y;
-                                                pIVar4->vector[0].z = IStack_93.z;
-                                                IStack_94.x = 0;
-                                                IStack_94.y = 0;
-                                                IStack_94.z = 0;
-                                                MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                IntVector__ctor_1(&IStack_94,1,0,0,
-                                                                  (MethodInfo *)0x0);
-                                                if (pIVar4->max_length < 2) goto code_?;
-                                                pIVar4->vector[1].x = IStack_94.x;
-                                                pIVar4->vector[1].y = IStack_94.y;
-                                                pIVar4->vector[1].z = IStack_94.z;
-                                                IStack_95.x = 0;
-                                                IStack_95.y = 0;
-                                                IStack_95.z = 0;
-                                                MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                IntVector__ctor_1(&IStack_95,1,0,1,
-                                                                  (MethodInfo *)0x0);
-                                                if (pIVar4->max_length < 3) goto code_?;
-                                                pIVar4->vector[2].x = IStack_95.x;
-                                                pIVar4->vector[2].y = IStack_95.y;
-                                                pIVar4->vector[2].z = IStack_95.z;
-                                                IStack_96.x = 0;
-                                                IStack_96.y = 0;
-                                                IStack_96.z = 0;
-                                                MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                IntVector__ctor_1(&IStack_96,1,-1,1,
-                                                                  (MethodInfo *)0x0);
-                                                if (pIVar4->max_length < 4) goto code_?;
-                                                pIVar4->vector[3].x = IStack_96.x;
-                                                pIVar4->vector[3].y = IStack_96.y;
-                                                pIVar4->vector[3].z = IStack_96.z;
-                                                if (pIVar3->max_length < 0x16)
-                                                goto code_?;
-                                                ppIStack_9 = pIVar3->vector + 0x15;
-                                                pIVar3->vector[0x15] = pIVar4;
-                                                pIStack_11 = (IntVector__Array__Array *)
-                                                              &UNK_?;
-                                                pIStack_10 = pIVar4;
+                                            IntVector__ctor_1(&IStack_25,0,1,0,(MethodInfo *)0x0);
+                                            if (3 < pIVar9->max_length) {
+                                              pIVar9->vector[3].x = IStack_25.x;
+                                              pIVar9->vector[3].y = IStack_25.y;
+                                              pIVar9->vector[3].z = IStack_25.z;
+                                              if (3 < pIVar8->max_length) {
+                                                pIVar8->vector[3] = pIVar9;
                                                 func_?();
-                                                pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
-                                                pIVar4 = (IntVector__Array *)func_?();
-                                                IStack_97.x = 0;
-                                                IStack_97.y = 0;
-                                                IStack_97.z = 0;
+                                                pIVar9 = (IntVector__Array *)func_?();
+                                                IStack_26.x = 0;
+                                                IStack_26.y = 0;
+                                                IStack_26.z = 0;
                                                 MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                IntVector__ctor_1(&IStack_97,1,0,0,
+                                                IntVector__ctor_1(&IStack_26,-1,-1,0,
                                                                   (MethodInfo *)0x0);
-                                                if (pIVar4 != (IntVector__Array *)0x0) {
-                                                  if (pIVar4->max_length == 0)
-                                                  goto code_?;
-                                                  pIVar4->vector[0].x = IStack_97.x;
-                                                  pIVar4->vector[0].y = IStack_97.y;
-                                                  pIVar4->vector[0].z = IStack_97.z;
-                                                  IStack_98.x = 0;
-                                                  IStack_98.y = 0;
-                                                  IStack_98.z = 0;
+                                                if (pIVar9 == (IntVector__Array *)0x0)
+                                                goto code_?;
+                                                if (pIVar9->max_length != 0) {
+                                                  pIVar9->vector[0].x = IStack_26.x;
+                                                  pIVar9->vector[0].y = IStack_26.y;
+                                                  pIVar9->vector[0].z = IStack_26.z;
+                                                  IStack_27.x = 0;
+                                                  IStack_27.y = 0;
+                                                  IStack_27.z = 0;
                                                   MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_98,1,1,0,
+                                                  IntVector__ctor_1(&IStack_27,-1,-1,1,
                                                                     (MethodInfo *)0x0);
-                                                  if (pIVar4->max_length < 2) goto code_?;
-                                                  pIVar4->vector[1].x = IStack_98.x;
-                                                  pIVar4->vector[1].y = IStack_98.y;
-                                                  pIVar4->vector[1].z = IStack_98.z;
-                                                  IStack_99.x = 0;
-                                                  IStack_99.y = 0;
-                                                  IStack_99.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_99,1,1,1,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4->max_length < 3) goto code_?;
-                                                  pIVar4->vector[2].x = IStack_99.x;
-                                                  pIVar4->vector[2].y = IStack_99.y;
-                                                  pIVar4->vector[2].z = IStack_99.z;
-                                                  IStack_100.x = 0;
-                                                  IStack_100.y = 0;
-                                                  IStack_100.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_100,1,0,1,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4->max_length < 4) goto code_?;
-                                                  pIVar4->vector[3].x = IStack_100.x;
-                                                  pIVar4->vector[3].y = IStack_100.y;
-                                                  pIVar4->vector[3].z = IStack_100.z;
-                                                  if (pIVar3->max_length < 0x17)
-                                                  goto code_?;
-                                                  ppIStack_9 = pIVar3->vector + 0x16;
-                                                  pIVar3->vector[0x16] = pIVar4;
-                                                  pIStack_11 = (IntVector__Array__Array *)
-                                                                &UNK_?;
-                                                  pIStack_10 = pIVar4;
-                                                  func_?();
-                                                  pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                  pIStack_12 = TypeInfo__MV__WorldObject__IntVector
-                                                  ;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_101.x = 0;
-                                                  IStack_101.y = 0;
-                                                  IStack_101.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_101,1,0,-1,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_101.x;
-                                                    pIVar4->vector[0].y = IStack_101.y;
-                                                    pIVar4->vector[0].z = IStack_101.z;
-                                                    IStack_102.x = 0;
-                                                    IStack_102.y = 0;
-                                                    IStack_102.z = 0;
+                                                  if (1 < pIVar9->max_length) {
+                                                    pIVar9->vector[1].x = IStack_27.x;
+                                                    pIVar9->vector[1].y = IStack_27.y;
+                                                    pIVar9->vector[1].z = IStack_27.z;
+                                                    IStack_28.x = 0;
+                                                    IStack_28.y = 0;
+                                                    IStack_28.z = 0;
                                                     MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_102,1,1,-1,
+                                                    IntVector__ctor_1(&IStack_28,0,-1,1,
                                                                       (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_102.x;
-                                                    pIVar4->vector[1].y = IStack_102.y;
-                                                    pIVar4->vector[1].z = IStack_102.z;
-                                                    IStack_103.x = 0;
-                                                    IStack_103.y = 0;
-                                                    IStack_103.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_103,1,1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_103.x;
-                                                    pIVar4->vector[2].y = IStack_103.y;
-                                                    pIVar4->vector[2].z = IStack_103.z;
-                                                    IStack_104.x = 0;
-                                                    IStack_104.y = 0;
-                                                    IStack_104.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_104,1,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_104.x;
-                                                    pIVar4->vector[3].y = IStack_104.y;
-                                                    pIVar4->vector[3].z = IStack_104.z;
-                                                    if (pIVar3->max_length < 0x18)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 0x17;
-                                                    pIVar3->vector[0x17] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    TypeInfo__SharedCubeFunctions->static_fields->
-                                                    LightTestOffsets = pIVar3;
-                                                    pIStack_12 = (IntVector__Array__Class *)
-                                                                  &TypeInfo__SharedCubeFunctions->
-                                                                   static_fields->LightTestOffsets;
-                                                    pIStack_11 = pIVar3;
-                                                    func_?();
-                                                    puStack_105 = (undefined *)0x18;
-                                                    pIVar3 = (IntVector__Array__Array *)
-                                                             func_?();
-                                                    pIVar4 = (IntVector__Array *)func_?();
-                                                    IStack_106.x = 0;
-                                                    IStack_106.y = 0;
-                                                    IStack_106.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_106,-1,0,-1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4 != (IntVector__Array *)0x0) {
-                                                      if (pIVar4->max_length == 0)
-                                                      goto code_?;
-                                                      pIVar4->vector[0].x = IStack_106.x;
-                                                      pIVar4->vector[0].y = IStack_106.y;
-                                                      pIVar4->vector[0].z = IStack_106.z;
-                                                      IStack_107.x = 0;
-                                                      IStack_107.y = 0;
-                                                      IStack_107.z = 0;
+                                                    if (2 < pIVar9->max_length) {
+                                                      pIVar9->vector[2].x = IStack_28.x;
+                                                      pIVar9->vector[2].y = IStack_28.y;
+                                                      pIVar9->vector[2].z = IStack_28.z;
+                                                      IStack_29.x = 0;
+                                                      IStack_29.y = 0;
+                                                      IStack_29.z = 0;
                                                       MVWorldObject.dll::MV::WorldObject::IntVector
-                                                      ::IntVector__ctor_1(&IStack_107,-1,0,0,
+                                                      ::IntVector__ctor_1(&IStack_29,0,-1,0,
                                                                           (MethodInfo *)0x0);
-                                                      if (pIVar4->max_length < 2)
-                                                      goto code_?;
-                                                      pIVar4->vector[1].x = IStack_107.x;
-                                                      pIVar4->vector[1].y = IStack_107.y;
-                                                      pIVar4->vector[1].z = IStack_107.z;
-                                                      IStack_108.x = 0;
-                                                      IStack_108.y = 0;
-                                                      IStack_108.z = 0;
-                                                      MVWorldObject.dll::MV::WorldObject::IntVector
-                                                      ::IntVector__ctor_1(&IStack_108,0,0,0,
-                                                                          (MethodInfo *)0x0);
-                                                      if (pIVar4->max_length < 3)
-                                                      goto code_?;
-                                                      pIVar4->vector[2].x = IStack_108.x;
-                                                      pIVar4->vector[2].y = IStack_108.y;
-                                                      pIVar4->vector[2].z = IStack_108.z;
-                                                      IStack_109.x = 0;
-                                                      IStack_109.y = 0;
-                                                      IStack_109.z = 0;
-                                                      MVWorldObject.dll::MV::WorldObject::IntVector
-                                                      ::IntVector__ctor_1(&IStack_109,0,0,-1,
-                                                                          (MethodInfo *)0x0);
-                                                      if (pIVar4->max_length < 4)
-                                                      goto code_?;
-                                                      pIVar4->vector[3].x = IStack_109.x;
-                                                      pIVar4->vector[3].y = IStack_109.y;
-                                                      pIVar4->vector[3].z = IStack_109.z;
-                                                      if (pIVar3 != (IntVector__Array__Array *)0x0)
-                                                      {
-                                                        if (pIVar3->max_length == 0)
-                                                        goto code_?;
-                                                        ppIStack_9 = pIVar3->vector;
-                                                        pIVar3->vector[0] = pIVar4;
-                                                        pIStack_11 = (IntVector__Array__Array *)
-                                                                      &UNK_?;
-                                                        pIStack_10 = pIVar4;
-                                                        func_?();
-                                                        pIStack_11 = (IntVector__Array__Array *)0x4
-                                                        ;
-                                                        pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_110.x = 0;
-                                                  IStack_110.y = 0;
-                                                  IStack_110.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_110,0,0,-1,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_110.x;
-                                                    pIVar4->vector[0].y = IStack_110.y;
-                                                    pIVar4->vector[0].z = IStack_110.z;
-                                                    IStack_111.x = 0;
-                                                    IStack_111.y = 0;
-                                                    IStack_111.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_111,0,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_111.x;
-                                                    pIVar4->vector[1].y = IStack_111.y;
-                                                    pIVar4->vector[1].z = IStack_111.z;
-                                                    IStack_112.x = 0;
-                                                    IStack_112.y = 0;
-                                                    IStack_112.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_112,1,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_112.x;
-                                                    pIVar4->vector[2].y = IStack_112.y;
-                                                    pIVar4->vector[2].z = IStack_112.z;
-                                                    IStack_113.x = 0;
-                                                    IStack_113.y = 0;
-                                                    IStack_113.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_113,1,0,-1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_113.x;
-                                                    pIVar4->vector[3].y = IStack_113.y;
-                                                    pIVar4->vector[3].z = IStack_113.z;
-                                                    if (pIVar3->max_length < 2)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 1;
-                                                    pIVar3->vector[1] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_114.x = 0;
-                                                  IStack_114.y = 0;
-                                                  IStack_114.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_114,0,0,0,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_114.x;
-                                                    pIVar4->vector[0].y = IStack_114.y;
-                                                    pIVar4->vector[0].z = IStack_114.z;
-                                                    IStack_115.x = 0;
-                                                    IStack_115.y = 0;
-                                                    IStack_115.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_115,0,0,1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_115.x;
-                                                    pIVar4->vector[1].y = IStack_115.y;
-                                                    pIVar4->vector[1].z = IStack_115.z;
-                                                    IStack_116.x = 0;
-                                                    IStack_116.y = 0;
-                                                    IStack_116.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_116,1,0,1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_116.x;
-                                                    pIVar4->vector[2].y = IStack_116.y;
-                                                    pIVar4->vector[2].z = IStack_116.z;
-                                                    IStack_117.x = 0;
-                                                    IStack_117.y = 0;
-                                                    IStack_117.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_117,1,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_117.x;
-                                                    pIVar4->vector[3].y = IStack_117.y;
-                                                    pIVar4->vector[3].z = IStack_117.z;
-                                                    if (pIVar3->max_length < 3)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 2;
-                                                    pIVar3->vector[2] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_118.x = 0;
-                                                  IStack_118.y = 0;
-                                                  IStack_118.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_118,-1,0,0,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_118.x;
-                                                    pIVar4->vector[0].y = IStack_118.y;
-                                                    pIVar4->vector[0].z = IStack_118.z;
-                                                    IStack_119.x = 0;
-                                                    IStack_119.y = 0;
-                                                    IStack_119.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_119,-1,0,1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_119.x;
-                                                    pIVar4->vector[1].y = IStack_119.y;
-                                                    pIVar4->vector[1].z = IStack_119.z;
-                                                    IStack_120.x = 0;
-                                                    IStack_120.y = 0;
-                                                    IStack_120.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_120,0,0,1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_120.x;
-                                                    pIVar4->vector[2].y = IStack_120.y;
-                                                    pIVar4->vector[2].z = IStack_120.z;
-                                                    IStack_121.x = 0;
-                                                    IStack_121.y = 0;
-                                                    IStack_121.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_121,0,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_121.x;
-                                                    pIVar4->vector[3].y = IStack_121.y;
-                                                    pIVar4->vector[3].z = IStack_121.z;
-                                                    if (pIVar3->max_length < 4)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 3;
-                                                    pIVar3->vector[3] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_122.x = 0;
-                                                  IStack_122.y = 0;
-                                                  IStack_122.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_122,-1,0,0,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_122.x;
-                                                    pIVar4->vector[0].y = IStack_122.y;
-                                                    pIVar4->vector[0].z = IStack_122.z;
-                                                    IStack_123.x = 0;
-                                                    IStack_123.y = 0;
-                                                    IStack_123.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_123,-1,0,1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_123.x;
-                                                    pIVar4->vector[1].y = IStack_123.y;
-                                                    pIVar4->vector[1].z = IStack_123.z;
-                                                    IStack_124.x = 0;
-                                                    IStack_124.y = 0;
-                                                    IStack_124.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_124,0,0,1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_124.x;
-                                                    pIVar4->vector[2].y = IStack_124.y;
-                                                    pIVar4->vector[2].z = IStack_124.z;
-                                                    IStack_125.x = 0;
-                                                    IStack_125.y = 0;
-                                                    IStack_125.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_125,0,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_125.x;
-                                                    pIVar4->vector[3].y = IStack_125.y;
-                                                    pIVar4->vector[3].z = IStack_125.z;
-                                                    if (pIVar3->max_length < 5)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 4;
-                                                    pIVar3->vector[4] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_126.x = 0;
-                                                  IStack_126.y = 0;
-                                                  IStack_126.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_126,0,0,0,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_126.x;
-                                                    pIVar4->vector[0].y = IStack_126.y;
-                                                    pIVar4->vector[0].z = IStack_126.z;
-                                                    IStack_127.x = 0;
-                                                    IStack_127.y = 0;
-                                                    IStack_127.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_127,0,0,1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_127.x;
-                                                    pIVar4->vector[1].y = IStack_127.y;
-                                                    pIVar4->vector[1].z = IStack_127.z;
-                                                    IStack_128.x = 0;
-                                                    IStack_128.y = 0;
-                                                    IStack_128.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_128,1,0,1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_128.x;
-                                                    pIVar4->vector[2].y = IStack_128.y;
-                                                    pIVar4->vector[2].z = IStack_128.z;
-                                                    IStack_129.x = 0;
-                                                    IStack_129.y = 0;
-                                                    IStack_129.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_129,1,0,-1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_129.x;
-                                                    pIVar4->vector[3].y = IStack_129.y;
-                                                    pIVar4->vector[3].z = IStack_129.z;
-                                                    if (pIVar3->max_length < 6)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 5;
-                                                    pIVar3->vector[5] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_130.x = 0;
-                                                  IStack_130.y = 0;
-                                                  IStack_130.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_130,0,0,-1,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_130.x;
-                                                    pIVar4->vector[0].y = IStack_130.y;
-                                                    pIVar4->vector[0].z = IStack_130.z;
-                                                    IStack_131.x = 0;
-                                                    IStack_131.y = 0;
-                                                    IStack_131.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_131,0,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_131.x;
-                                                    pIVar4->vector[1].y = IStack_131.y;
-                                                    pIVar4->vector[1].z = IStack_131.z;
-                                                    IStack_132.x = 0;
-                                                    IStack_132.y = 0;
-                                                    IStack_132.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_132,1,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_132.x;
-                                                    pIVar4->vector[2].y = IStack_132.y;
-                                                    pIVar4->vector[2].z = IStack_132.z;
-                                                    IStack_133.x = 0;
-                                                    IStack_133.y = 0;
-                                                    IStack_133.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_133,1,0,-1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_133.x;
-                                                    pIVar4->vector[3].y = IStack_133.y;
-                                                    pIVar4->vector[3].z = IStack_133.z;
-                                                    if (pIVar3->max_length < 7)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 6;
-                                                    pIVar3->vector[6] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_134.x = 0;
-                                                  IStack_134.y = 0;
-                                                  IStack_134.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_134,-1,0,-1,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_134.x;
-                                                    pIVar4->vector[0].y = IStack_134.y;
-                                                    pIVar4->vector[0].z = IStack_134.z;
-                                                    IStack_135.x = 0;
-                                                    IStack_135.y = 0;
-                                                    IStack_135.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_135,-1,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_135.x;
-                                                    pIVar4->vector[1].y = IStack_135.y;
-                                                    pIVar4->vector[1].z = IStack_135.z;
-                                                    IStack_136.x = 0;
-                                                    IStack_136.y = 0;
-                                                    IStack_136.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_136,0,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_136.x;
-                                                    pIVar4->vector[2].y = IStack_136.y;
-                                                    pIVar4->vector[2].z = IStack_136.z;
-                                                    IStack_137.x = 0;
-                                                    IStack_137.y = 0;
-                                                    IStack_137.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_137,0,0,-1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_137.x;
-                                                    pIVar4->vector[3].y = IStack_137.y;
-                                                    pIVar4->vector[3].z = IStack_137.z;
-                                                    if (pIVar3->max_length < 8)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 7;
-                                                    pIVar3->vector[7] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_138.x = 0;
-                                                  IStack_138.y = 0;
-                                                  IStack_138.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_138,-1,-1,0,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_138.x;
-                                                    pIVar4->vector[0].y = IStack_138.y;
-                                                    pIVar4->vector[0].z = IStack_138.z;
-                                                    IStack_139.x = 0;
-                                                    IStack_139.y = 0;
-                                                    IStack_139.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_139,-1,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_139.x;
-                                                    pIVar4->vector[1].y = IStack_139.y;
-                                                    pIVar4->vector[1].z = IStack_139.z;
-                                                    IStack_140.x = 0;
-                                                    IStack_140.y = 0;
-                                                    IStack_140.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_140,0,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_140.x;
-                                                    pIVar4->vector[2].y = IStack_140.y;
-                                                    pIVar4->vector[2].z = IStack_140.z;
-                                                    IStack_141.x = 0;
-                                                    IStack_141.y = 0;
-                                                    IStack_141.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_141,0,-1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_141.x;
-                                                    pIVar4->vector[3].y = IStack_141.y;
-                                                    pIVar4->vector[3].z = IStack_141.z;
-                                                    if (pIVar3->max_length < 9)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 8;
-                                                    pIVar3->vector[8] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_142.x = 0;
-                                                  IStack_142.y = 0;
-                                                  IStack_142.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_142,0,-1,0,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_142.x;
-                                                    pIVar4->vector[0].y = IStack_142.y;
-                                                    pIVar4->vector[0].z = IStack_142.z;
-                                                    IStack_143.x = 0;
-                                                    IStack_143.y = 0;
-                                                    IStack_143.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_143,0,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_143.x;
-                                                    pIVar4->vector[1].y = IStack_143.y;
-                                                    pIVar4->vector[1].z = IStack_143.z;
-                                                    IStack_144.x = 0;
-                                                    IStack_144.y = 0;
-                                                    IStack_144.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_144,1,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_144.x;
-                                                    pIVar4->vector[2].y = IStack_144.y;
-                                                    pIVar4->vector[2].z = IStack_144.z;
-                                                    IStack_145.x = 0;
-                                                    IStack_145.y = 0;
-                                                    IStack_145.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_145,1,-1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_145.x;
-                                                    pIVar4->vector[3].y = IStack_145.y;
-                                                    pIVar4->vector[3].z = IStack_145.z;
-                                                    if (pIVar3->max_length < 10)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 9;
-                                                    pIVar3->vector[9] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_146.x = 0;
-                                                  IStack_146.y = 0;
-                                                  IStack_146.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_146,0,0,0,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_146.x;
-                                                    pIVar4->vector[0].y = IStack_146.y;
-                                                    pIVar4->vector[0].z = IStack_146.z;
-                                                    IStack_147.x = 0;
-                                                    IStack_147.y = 0;
-                                                    IStack_147.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_147,0,1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_147.x;
-                                                    pIVar4->vector[1].y = IStack_147.y;
-                                                    pIVar4->vector[1].z = IStack_147.z;
-                                                    IStack_148.x = 0;
-                                                    IStack_148.y = 0;
-                                                    IStack_148.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_148,1,1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_148.x;
-                                                    pIVar4->vector[2].y = IStack_148.y;
-                                                    pIVar4->vector[2].z = IStack_148.z;
-                                                    IStack_149.x = 0;
-                                                    IStack_149.y = 0;
-                                                    IStack_149.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_149,1,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_149.x;
-                                                    pIVar4->vector[3].y = IStack_149.y;
-                                                    pIVar4->vector[3].z = IStack_149.z;
-                                                    if (pIVar3->max_length < 0xb)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 10;
-                                                    pIVar3->vector[10] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_150.x = 0;
-                                                  IStack_150.y = 0;
-                                                  IStack_150.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_150,-1,0,0,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_150.x;
-                                                    pIVar4->vector[0].y = IStack_150.y;
-                                                    pIVar4->vector[0].z = IStack_150.z;
-                                                    IStack_151.x = 0;
-                                                    IStack_151.y = 0;
-                                                    IStack_151.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_151,-1,1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_151.x;
-                                                    pIVar4->vector[1].y = IStack_151.y;
-                                                    pIVar4->vector[1].z = IStack_151.z;
-                                                    IStack_152.x = 0;
-                                                    IStack_152.y = 0;
-                                                    IStack_152.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_152,0,1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_152.x;
-                                                    pIVar4->vector[2].y = IStack_152.y;
-                                                    pIVar4->vector[2].z = IStack_152.z;
-                                                    IStack_153.x = 0;
-                                                    IStack_153.y = 0;
-                                                    IStack_153.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_153,0,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_153.x;
-                                                    pIVar4->vector[3].y = IStack_153.y;
-                                                    pIVar4->vector[3].z = IStack_153.z;
-                                                    if (pIVar3->max_length < 0xc)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 0xb;
-                                                    pIVar3->vector[0xb] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_154.x = 0;
-                                                  IStack_154.y = 0;
-                                                  IStack_154.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_154,0,-1,0,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_154.x;
-                                                    pIVar4->vector[0].y = IStack_154.y;
-                                                    pIVar4->vector[0].z = IStack_154.z;
-                                                    IStack_155.x = 0;
-                                                    IStack_155.y = 0;
-                                                    IStack_155.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_155,0,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_155.x;
-                                                    pIVar4->vector[1].y = IStack_155.y;
-                                                    pIVar4->vector[1].z = IStack_155.z;
-                                                    IStack_156.x = 0;
-                                                    IStack_156.y = 0;
-                                                    IStack_156.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_156,1,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_156.x;
-                                                    pIVar4->vector[2].y = IStack_156.y;
-                                                    pIVar4->vector[2].z = IStack_156.z;
-                                                    IStack_157.x = 0;
-                                                    IStack_157.y = 0;
-                                                    IStack_157.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_157,1,-1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_157.x;
-                                                    pIVar4->vector[3].y = IStack_157.y;
-                                                    pIVar4->vector[3].z = IStack_157.z;
-                                                    if (pIVar3->max_length < 0xd)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 0xc;
-                                                    pIVar3->vector[0xc] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_158.x = 0;
-                                                  IStack_158.y = 0;
-                                                  IStack_158.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_158,-1,-1,0,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_158.x;
-                                                    pIVar4->vector[0].y = IStack_158.y;
-                                                    pIVar4->vector[0].z = IStack_158.z;
-                                                    IStack_159.x = 0;
-                                                    IStack_159.y = 0;
-                                                    IStack_159.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_159,-1,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_159.x;
-                                                    pIVar4->vector[1].y = IStack_159.y;
-                                                    pIVar4->vector[1].z = IStack_159.z;
-                                                    IStack_160.x = 0;
-                                                    IStack_160.y = 0;
-                                                    IStack_160.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_160,0,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_160.x;
-                                                    pIVar4->vector[2].y = IStack_160.y;
-                                                    pIVar4->vector[2].z = IStack_160.z;
-                                                    IStack_161.x = 0;
-                                                    IStack_161.y = 0;
-                                                    IStack_161.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_161,0,-1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_161.x;
-                                                    pIVar4->vector[3].y = IStack_161.y;
-                                                    pIVar4->vector[3].z = IStack_161.z;
-                                                    if (pIVar3->max_length < 0xe)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 0xd;
-                                                    pIVar3->vector[0xd] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_162.x = 0;
-                                                  IStack_162.y = 0;
-                                                  IStack_162.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_162,-1,0,0,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_162.x;
-                                                    pIVar4->vector[0].y = IStack_162.y;
-                                                    pIVar4->vector[0].z = IStack_162.z;
-                                                    IStack_163.x = 0;
-                                                    IStack_163.y = 0;
-                                                    IStack_163.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_163,-1,1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_163.x;
-                                                    pIVar4->vector[1].y = IStack_163.y;
-                                                    pIVar4->vector[1].z = IStack_163.z;
-                                                    IStack_164.x = 0;
-                                                    IStack_164.y = 0;
-                                                    IStack_164.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_164,0,1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_164.x;
-                                                    pIVar4->vector[2].y = IStack_164.y;
-                                                    pIVar4->vector[2].z = IStack_164.z;
-                                                    IStack_165.x = 0;
-                                                    IStack_165.y = 0;
-                                                    IStack_165.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_165,0,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_165.x;
-                                                    pIVar4->vector[3].y = IStack_165.y;
-                                                    pIVar4->vector[3].z = IStack_165.z;
-                                                    if (pIVar3->max_length < 0xf)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 0xe;
-                                                    pIVar3->vector[0xe] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_166.x = 0;
-                                                  IStack_166.y = 0;
-                                                  IStack_166.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_166,0,0,0,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_166.x;
-                                                    pIVar4->vector[0].y = IStack_166.y;
-                                                    pIVar4->vector[0].z = IStack_166.z;
-                                                    IStack_167.x = 0;
-                                                    IStack_167.y = 0;
-                                                    IStack_167.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_167,0,1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_167.x;
-                                                    pIVar4->vector[1].y = IStack_167.y;
-                                                    pIVar4->vector[1].z = IStack_167.z;
-                                                    IStack_168.x = 0;
-                                                    IStack_168.y = 0;
-                                                    IStack_168.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_168,1,1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_168.x;
-                                                    pIVar4->vector[2].y = IStack_168.y;
-                                                    pIVar4->vector[2].z = IStack_168.z;
-                                                    IStack_169.x = 0;
-                                                    IStack_169.y = 0;
-                                                    IStack_169.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_169,1,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_169.x;
-                                                    pIVar4->vector[3].y = IStack_169.y;
-                                                    pIVar4->vector[3].z = IStack_169.z;
-                                                    if (pIVar3->max_length < 0x10)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 0xf;
-                                                    pIVar3->vector[0xf] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_170.x = 0;
-                                                  IStack_170.y = 0;
-                                                  IStack_170.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_170,0,-1,0,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_170.x;
-                                                    pIVar4->vector[0].y = IStack_170.y;
-                                                    pIVar4->vector[0].z = IStack_170.z;
-                                                    IStack_171.x = 0;
-                                                    IStack_171.y = 0;
-                                                    IStack_171.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_171,0,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_171.x;
-                                                    pIVar4->vector[1].y = IStack_171.y;
-                                                    pIVar4->vector[1].z = IStack_171.z;
-                                                    IStack_172.x = 0;
-                                                    IStack_172.y = 0;
-                                                    IStack_172.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_172,0,0,1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_172.x;
-                                                    pIVar4->vector[2].y = IStack_172.y;
-                                                    pIVar4->vector[2].z = IStack_172.z;
-                                                    IStack_173.x = 0;
-                                                    IStack_173.y = 0;
-                                                    IStack_173.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_173,0,-1,1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_173.x;
-                                                    pIVar4->vector[3].y = IStack_173.y;
-                                                    pIVar4->vector[3].z = IStack_173.z;
-                                                    if (pIVar3->max_length < 0x11)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 0x10;
-                                                    pIVar3->vector[0x10] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_174.x = 0;
-                                                  IStack_174.y = 0;
-                                                  IStack_174.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_174,0,-1,-1,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_174.x;
-                                                    pIVar4->vector[0].y = IStack_174.y;
-                                                    pIVar4->vector[0].z = IStack_174.z;
-                                                    IStack_175.x = 0;
-                                                    IStack_175.y = 0;
-                                                    IStack_175.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_175,0,0,-1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_175.x;
-                                                    pIVar4->vector[1].y = IStack_175.y;
-                                                    pIVar4->vector[1].z = IStack_175.z;
-                                                    IStack_176.x = 0;
-                                                    IStack_176.y = 0;
-                                                    IStack_176.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_176,0,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_176.x;
-                                                    pIVar4->vector[2].y = IStack_176.y;
-                                                    pIVar4->vector[2].z = IStack_176.z;
-                                                    IStack_177.x = 0;
-                                                    IStack_177.y = 0;
-                                                    IStack_177.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_177,0,-1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_177.x;
-                                                    pIVar4->vector[3].y = IStack_177.y;
-                                                    pIVar4->vector[3].z = IStack_177.z;
-                                                    if (pIVar3->max_length < 0x12)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 0x11;
-                                                    pIVar3->vector[0x11] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_178.x = 0;
-                                                  IStack_178.y = 0;
-                                                  IStack_178.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_178,0,0,-1,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_178.x;
-                                                    pIVar4->vector[0].y = IStack_178.y;
-                                                    pIVar4->vector[0].z = IStack_178.z;
-                                                    IStack_179.x = 0;
-                                                    IStack_179.y = 0;
-                                                    IStack_179.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_179,0,1,-1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_179.x;
-                                                    pIVar4->vector[1].y = IStack_179.y;
-                                                    pIVar4->vector[1].z = IStack_179.z;
-                                                    IStack_180.x = 0;
-                                                    IStack_180.y = 0;
-                                                    IStack_180.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_180,0,1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_180.x;
-                                                    pIVar4->vector[2].y = IStack_180.y;
-                                                    pIVar4->vector[2].z = IStack_180.z;
-                                                    IStack_181.x = 0;
-                                                    IStack_181.y = 0;
-                                                    IStack_181.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_181,0,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_181.x;
-                                                    pIVar4->vector[3].y = IStack_181.y;
-                                                    pIVar4->vector[3].z = IStack_181.z;
-                                                    if (pIVar3->max_length < 0x13)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 0x12;
-                                                    pIVar3->vector[0x12] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_182.x = 0;
-                                                  IStack_182.y = 0;
-                                                  IStack_182.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_182,0,0,0,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_182.x;
-                                                    pIVar4->vector[0].y = IStack_182.y;
-                                                    pIVar4->vector[0].z = IStack_182.z;
-                                                    IStack_183.x = 0;
-                                                    IStack_183.y = 0;
-                                                    IStack_183.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_183,0,1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_183.x;
-                                                    pIVar4->vector[1].y = IStack_183.y;
-                                                    pIVar4->vector[1].z = IStack_183.z;
-                                                    IStack_184.x = 0;
-                                                    IStack_184.y = 0;
-                                                    IStack_184.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_184,0,1,1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_184.x;
-                                                    pIVar4->vector[2].y = IStack_184.y;
-                                                    pIVar4->vector[2].z = IStack_184.z;
-                                                    IStack_185.x = 0;
-                                                    IStack_185.y = 0;
-                                                    IStack_185.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_185,0,0,1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_185.x;
-                                                    pIVar4->vector[3].y = IStack_185.y;
-                                                    pIVar4->vector[3].z = IStack_185.z;
-                                                    if (pIVar3->max_length < 0x14)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 0x13;
-                                                    pIVar3->vector[0x13] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  IStack_186.x = 0;
-                                                  IStack_186.y = 0;
-                                                  IStack_186.z = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1(&IStack_186,0,-1,-1,
-                                                                    (MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = IStack_186.x;
-                                                    pIVar4->vector[0].y = IStack_186.y;
-                                                    pIVar4->vector[0].z = IStack_186.z;
-                                                    IStack_187.x = 0;
-                                                    IStack_187.y = 0;
-                                                    IStack_187.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_187,0,0,-1,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = IStack_187.x;
-                                                    pIVar4->vector[1].y = IStack_187.y;
-                                                    pIVar4->vector[1].z = IStack_187.z;
-                                                    IStack_188.x = 0;
-                                                    IStack_188.y = 0;
-                                                    IStack_188.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_188,0,0,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = IStack_188.x;
-                                                    pIVar4->vector[2].y = IStack_188.y;
-                                                    pIVar4->vector[2].z = IStack_188.z;
-                                                    IStack_189.x = 0;
-                                                    IStack_189.y = 0;
-                                                    IStack_189.z = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1(&IStack_189,0,-1,0,
-                                                                      (MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = IStack_189.x;
-                                                    pIVar4->vector[3].y = IStack_189.y;
-                                                    pIVar4->vector[3].z = IStack_189.z;
-                                                    if (pIVar3->max_length < 0x15)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 0x14;
-                                                    pIVar3->vector[0x14] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  pIStack_10 = (IntVector__Array *)0x0;
-                                                  iStack_190 = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1((IntVector *)&pIStack_10,0,-1,0
-                                                                    ,(MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    *(IntVector__Array **)pIVar4->vector =
-                                                         pIStack_10;
-                                                    pIVar4->vector[0].z = iStack_190;
-                                                    pIStack_11 = (IntVector__Array__Array *)0x0;
-                                                    ppIStack_9 = (IntVector__Array **)
-                                                                   ((uint)ppIStack_9 & 0xffff0000)
-                                                    ;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1((IntVector *)&pIStack_11,0,0,
-                                                                      0,(MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    *(IntVector__Array__Array **)
-                                                     (pIVar4->vector + 1) = pIStack_11;
-                                                    pIVar4->vector[1].z = (int16_t)ppIStack_9;
-                                                    puStack_105 = (undefined *)0x0;
-                                                    pIStack_12 = (IntVector__Array__Class *)
-                                                                  ((uint)pIStack_12 & 0xffff0000);
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1((IntVector *)&puStack_105,0,0,
-                                                                      1,(MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    *(undefined **)(pIVar4->vector + 2) =
-                                                         puStack_105;
-                                                    pIVar4->vector[2].z = (int16_t)pIStack_12;
-                                                    uVar191._0_2_ = 0;
-                                                    uVar191._2_2_ = 0;
-                                                    iVar192 = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1((IntVector *)&stack0xfffffa34,
-                                                                      0,-1,0,(MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = (int16_t)uVar191;
-                                                    pIVar4->vector[3].y = SUB42(uVar191,2);
-                                                    pIVar4->vector[3].z = iVar192;
-                                                    if (pIVar3->max_length < 0x16)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 0x15;
-                                                    pIVar3->vector[0x15] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  uVar193._0_2_ = 0;
-                                                  uVar193._2_2_ = 0;
-                                                  iVar192 = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1((IntVector *)&stack0xfffffa2c,0,
-                                                                    0,0,(MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length == 0)
-                                                    goto code_?;
-                                                    pIVar4->vector[0].x = (int16_t)uVar193;
-                                                    pIVar4->vector[0].y = SUB42(uVar193,2);
-                                                    pIVar4->vector[0].z = iVar192;
-                                                    uVar194._0_2_ = 0;
-                                                    uVar194._2_2_ = 0;
-                                                    iVar192 = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1((IntVector *)&stack0xfffffa24,
-                                                                      0,1,0,(MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 2)
-                                                    goto code_?;
-                                                    pIVar4->vector[1].x = (int16_t)uVar194;
-                                                    pIVar4->vector[1].y = SUB42(uVar194,2);
-                                                    pIVar4->vector[1].z = iVar192;
-                                                    uVar195._0_2_ = 0;
-                                                    uVar195._2_2_ = 0;
-                                                    iVar192 = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1((IntVector *)&stack0xfffffa1c,
-                                                                      0,0,0,(MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 3)
-                                                    goto code_?;
-                                                    pIVar4->vector[2].x = (int16_t)uVar195;
-                                                    pIVar4->vector[2].y = SUB42(uVar195,2);
-                                                    pIVar4->vector[2].z = iVar192;
-                                                    uVar196._0_2_ = 0;
-                                                    uVar196._2_2_ = 0;
-                                                    iVar192 = 0;
-                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                    IntVector__ctor_1((IntVector *)&stack0xfffffa14,
-                                                                      0,0,1,(MethodInfo *)0x0);
-                                                    if (pIVar4->max_length < 4)
-                                                    goto code_?;
-                                                    pIVar4->vector[3].x = (int16_t)uVar196;
-                                                    pIVar4->vector[3].y = SUB42(uVar196,2);
-                                                    pIVar4->vector[3].z = iVar192;
-                                                    if (pIVar3->max_length < 0x17)
-                                                    goto code_?;
-                                                    ppIStack_9 = pIVar3->vector + 0x16;
-                                                    pIVar3->vector[0x16] = pIVar4;
-                                                    pIStack_11 = (IntVector__Array__Array *)
-                                                                  &UNK_?;
-                                                    pIStack_10 = pIVar4;
-                                                    func_?();
-                                                    pIStack_11 = (IntVector__Array__Array *)0x4;
-                                                    pIStack_12 = 
-                                                  TypeInfo__MV__WorldObject__IntVector;
-                                                  pIVar4 = (IntVector__Array *)func_?();
-                                                  uVar197._0_2_ = 0;
-                                                  uVar197._2_2_ = 0;
-                                                  iVar192 = 0;
-                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
-                                                  IntVector__ctor_1((IntVector *)&stack0xfffffa0c,0,
-                                                                    0,-1,(MethodInfo *)0x0);
-                                                  if (pIVar4 != (IntVector__Array *)0x0) {
-                                                    if (pIVar4->max_length != 0) {
-                                                      pIVar4->vector[0].x = (int16_t)uVar197;
-                                                      pIVar4->vector[0].y = SUB42(uVar197,2);
-                                                      pIVar4->vector[0].z = iVar192;
-                                                      uVar198._0_2_ = 0;
-                                                      uVar198._2_2_ = 0;
-                                                      iVar192 = 0;
-                                                      MVWorldObject.dll::MV::WorldObject::IntVector
-                                                      ::IntVector__ctor_1((IntVector *)
-                                                                          &stack0xfffffa04,0,0,-1,
-                                                                          (MethodInfo *)0x0);
-                                                      if (1 < pIVar4->max_length) {
-                                                        pIVar4->vector[1].x = (int16_t)uVar198;
-                                                        pIVar4->vector[1].y = SUB42(uVar198,2);
-                                                        pIVar4->vector[1].z = iVar192;
-                                                        puStack_199 = (undefined *)0x0;
-                                                        iVar192 = 0;
-                                                        MVWorldObject.dll::MV::WorldObject::
-                                                        IntVector::IntVector__ctor_1
-                                                                  ((IntVector *)&puStack_199,0,1,0,
-                                                                   (MethodInfo *)0x0);
-                                                        if (2 < pIVar4->max_length) {
-                                                          *(undefined **)(pIVar4->vector + 2) =
-                                                               puStack_199;
-                                                          pIVar4->vector[2].z = iVar192;
-                                                          IStack_200.x = 0;
-                                                          IStack_200.y = 0;
-                                                          IStack_200.z = 0;
+                                                      if (3 < pIVar9->max_length) {
+                                                        pIVar9->vector[3].x = IStack_29.x;
+                                                        pIVar9->vector[3].y = IStack_29.y;
+                                                        pIVar9->vector[3].z = IStack_29.z;
+                                                        if (4 < pIVar8->max_length) {
+                                                          pIVar8->vector[4] = pIVar9;
+                                                          func_?();
+                                                          pIVar9 = (IntVector__Array *)
+                                                                   func_?();
+                                                          IStack_30.x = 0;
+                                                          IStack_30.y = 0;
+                                                          IStack_30.z = 0;
                                                           MVWorldObject.dll::MV::WorldObject::
                                                           IntVector::IntVector__ctor_1
-                                                                    (&IStack_200,0,0,0,
+                                                                    (&IStack_30,0,-1,0,
                                                                      (MethodInfo *)0x0);
-                                                          if (3 < pIVar4->max_length) {
-                                                            pIVar4->vector[3].x = IStack_200.x;
-                                                            pIVar4->vector[3].y = IStack_200.y;
-                                                            pIVar4->vector[3].z = IStack_200.z;
-                                                            if (0x17 < pIVar3->max_length) {
-                                                              ppIStack_9 = pIVar3->vector + 0x17;
-                                                              pIVar3->vector[0x17] = pIVar4;
-                                                              pIStack_11 = (IntVector__Array__Array
-                                                                             *)&UNK_?;
-                                                              pIStack_10 = pIVar4;
-                                                              func_?();
-                                                              TypeInfo__SharedCubeFunctions->
-                                                              static_fields->LightTestOffsetsInside
-                                                                   = pIVar3;
-                                                              pIStack_12 = (IntVector__Array__Class
-                                                                             *)&
+                                                          if (pIVar9 == (IntVector__Array *)0x0)
+                                                          goto code_?;
+                                                          if (pIVar9->max_length != 0) {
+                                                            pIVar9->vector[0].x = IStack_30.x;
+                                                            pIVar9->vector[0].y = IStack_30.y;
+                                                            pIVar9->vector[0].z = IStack_30.z;
+                                                            IStack_31.x = 0;
+                                                            IStack_31.y = 0;
+                                                            IStack_31.z = 0;
+                                                            MVWorldObject.dll::MV::WorldObject::
+                                                            IntVector::IntVector__ctor_1
+                                                                      (&IStack_31,0,-1,1,
+                                                                       (MethodInfo *)0x0);
+                                                            if (1 < pIVar9->max_length) {
+                                                              pIVar9->vector[1].x = IStack_31.x;
+                                                              pIVar9->vector[1].y = IStack_31.y;
+                                                              pIVar9->vector[1].z = IStack_31.z;
+                                                              IStack_32.x = 0;
+                                                              IStack_32.y = 0;
+                                                              IStack_32.z = 0;
+                                                              MVWorldObject.dll::MV::WorldObject::
+                                                              IntVector::IntVector__ctor_1
+                                                                        (&IStack_32,1,-1,1,
+                                                                         (MethodInfo *)0x0);
+                                                              if (2 < pIVar9->max_length) {
+                                                                pIVar9->vector[2].x = IStack_32.x;
+                                                                pIVar9->vector[2].y = IStack_32.y;
+                                                                pIVar9->vector[2].z = IStack_32.z;
+                                                                IStack_33.x = 0;
+                                                                IStack_33.y = 0;
+                                                                IStack_33.z = 0;
+                                                                MVWorldObject.dll::MV::WorldObject::
+                                                                IntVector::IntVector__ctor_1
+                                                                          (&IStack_33,1,-1,0,
+                                                                           (MethodInfo *)0x0);
+                                                                if (3 < pIVar9->max_length) {
+                                                                  pIVar9->vector[3].x = IStack_33.x;
+                                                                  pIVar9->vector[3].y = IStack_33.y;
+                                                                  pIVar9->vector[3].z = IStack_33.z;
+                                                                  if (5 < pIVar8->max_length) {
+                                                                    pIVar8->vector[5] = pIVar9;
+                                                                    func_?();
+                                                                    pIVar9 = (IntVector__Array *)
+                                                                             func_?();
+                                                                    IStack_34.x = 0;
+                                                                    IStack_34.y = 0;
+                                                                    IStack_34.z = 0;
+                                                                    MVWorldObject.dll::MV::
+                                                                    WorldObject::IntVector::
+                                                                    IntVector__ctor_1(&IStack_34,0,
+                                                                                      -1,-1,(
+                                                  MethodInfo *)0x0);
+                                                  if (pIVar9 == (IntVector__Array *)0x0)
+                                                  goto code_?;
+                                                  if (pIVar9->max_length != 0) {
+                                                    pIVar9->vector[0].x = IStack_34.x;
+                                                    pIVar9->vector[0].y = IStack_34.y;
+                                                    pIVar9->vector[0].z = IStack_34.z;
+                                                    IStack_35.x = 0;
+                                                    IStack_35.y = 0;
+                                                    IStack_35.z = 0;
+                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
+                                                    IntVector__ctor_1(&IStack_35,0,-1,0,
+                                                                      (MethodInfo *)0x0);
+                                                    if (1 < pIVar9->max_length) {
+                                                      pIVar9->vector[1].x = IStack_35.x;
+                                                      pIVar9->vector[1].y = IStack_35.y;
+                                                      pIVar9->vector[1].z = IStack_35.z;
+                                                      IStack_36.x = 0;
+                                                      IStack_36.y = 0;
+                                                      IStack_36.z = 0;
+                                                      MVWorldObject.dll::MV::WorldObject::IntVector
+                                                      ::IntVector__ctor_1(&IStack_36,1,-1,0,
+                                                                          (MethodInfo *)0x0);
+                                                      if (2 < pIVar9->max_length) {
+                                                        pIVar9->vector[2].x = IStack_36.x;
+                                                        pIVar9->vector[2].y = IStack_36.y;
+                                                        pIVar9->vector[2].z = IStack_36.z;
+                                                        IStack_37.x = 0;
+                                                        IStack_37.y = 0;
+                                                        IStack_37.z = 0;
+                                                        MVWorldObject.dll::MV::WorldObject::
+                                                        IntVector::IntVector__ctor_1
+                                                                  (&IStack_37,1,-1,-1,
+                                                                   (MethodInfo *)0x0);
+                                                        if (3 < pIVar9->max_length) {
+                                                          pIVar9->vector[3].x = IStack_37.x;
+                                                          pIVar9->vector[3].y = IStack_37.y;
+                                                          pIVar9->vector[3].z = IStack_37.z;
+                                                          if (6 < pIVar8->max_length) {
+                                                            pIVar8->vector[6] = pIVar9;
+                                                            func_?();
+                                                            pIVar9 = (IntVector__Array *)
+                                                                     func_?();
+                                                            IStack_38.x = 0;
+                                                            IStack_38.y = 0;
+                                                            IStack_38.z = 0;
+                                                            MVWorldObject.dll::MV::WorldObject::
+                                                            IntVector::IntVector__ctor_1
+                                                                      (&IStack_38,-1,-1,-1,
+                                                                       (MethodInfo *)0x0);
+                                                            if (pIVar9 == (IntVector__Array *)0x0)
+                                                            goto code_?;
+                                                            if (pIVar9->max_length != 0) {
+                                                              pIVar9->vector[0].x = IStack_38.x;
+                                                              pIVar9->vector[0].y = IStack_38.y;
+                                                              pIVar9->vector[0].z = IStack_38.z;
+                                                              IStack_39.x = 0;
+                                                              IStack_39.y = 0;
+                                                              IStack_39.z = 0;
+                                                              MVWorldObject.dll::MV::WorldObject::
+                                                              IntVector::IntVector__ctor_1
+                                                                        (&IStack_39,-1,-1,0,
+                                                                         (MethodInfo *)0x0);
+                                                              if (1 < pIVar9->max_length) {
+                                                                pIVar9->vector[1].x = IStack_39.x;
+                                                                pIVar9->vector[1].y = IStack_39.y;
+                                                                pIVar9->vector[1].z = IStack_39.z;
+                                                                IStack_40.x = 0;
+                                                                IStack_40.y = 0;
+                                                                IStack_40.z = 0;
+                                                                MVWorldObject.dll::MV::WorldObject::
+                                                                IntVector::IntVector__ctor_1
+                                                                          (&IStack_40,0,-1,0,
+                                                                           (MethodInfo *)0x0);
+                                                                if (2 < pIVar9->max_length) {
+                                                                  pIVar9->vector[2].x = IStack_40.x
+                                                                  ;
+                                                                  pIVar9->vector[2].y = IStack_40.y
+                                                                  ;
+                                                                  pIVar9->vector[2].z = IStack_40.z
+                                                                  ;
+                                                                  IStack_41.x = 0;
+                                                                  IStack_41.y = 0;
+                                                                  IStack_41.z = 0;
+                                                                  MVWorldObject.dll::MV::WorldObject
+                                                                  ::IntVector::IntVector__ctor_1
+                                                                            (&IStack_41,0,-1,-1,
+                                                                             (MethodInfo *)0x0);
+                                                                  if (3 < pIVar9->max_length) {
+                                                                    pIVar9->vector[3].x =
+                                                                         IStack_41.x;
+                                                                    pIVar9->vector[3].y =
+                                                                         IStack_41.y;
+                                                                    pIVar9->vector[3].z =
+                                                                         IStack_41.z;
+                                                                    if (7 < pIVar8->max_length) {
+                                                                      pIVar8->vector[7] = pIVar9;
+                                                                      func_?();
+                                                                      pIVar9 = (IntVector__Array *)
+                                                                               func_?();
+                                                                      IStack_42.x = 0;
+                                                                      IStack_42.y = 0;
+                                                                      IStack_42.z = 0;
+                                                                      MVWorldObject.dll::MV::
+                                                                      WorldObject::IntVector::
+                                                                      IntVector__ctor_1(&IStack_42,
+                                                                                        -1,-1,-1,(
+                                                  MethodInfo *)0x0);
+                                                  if (pIVar9 == (IntVector__Array *)0x0)
+                                                  goto code_?;
+                                                  if (pIVar9->max_length != 0) {
+                                                    pIVar9->vector[0].x = IStack_42.x;
+                                                    pIVar9->vector[0].y = IStack_42.y;
+                                                    pIVar9->vector[0].z = IStack_42.z;
+                                                    IStack_43.x = 0;
+                                                    IStack_43.y = 0;
+                                                    IStack_43.z = 0;
+                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
+                                                    IntVector__ctor_1(&IStack_43,-1,0,-1,
+                                                                      (MethodInfo *)0x0);
+                                                    if (1 < pIVar9->max_length) {
+                                                      pIVar9->vector[1].x = IStack_43.x;
+                                                      pIVar9->vector[1].y = IStack_43.y;
+                                                      pIVar9->vector[1].z = IStack_43.z;
+                                                      IStack_44.x = 0;
+                                                      IStack_44.y = 0;
+                                                      IStack_44.z = 0;
+                                                      MVWorldObject.dll::MV::WorldObject::IntVector
+                                                      ::IntVector__ctor_1(&IStack_44,0,0,-1,
+                                                                          (MethodInfo *)0x0);
+                                                      if (2 < pIVar9->max_length) {
+                                                        pIVar9->vector[2].x = IStack_44.x;
+                                                        pIVar9->vector[2].y = IStack_44.y;
+                                                        pIVar9->vector[2].z = IStack_44.z;
+                                                        IStack_45.x = 0;
+                                                        IStack_45.y = 0;
+                                                        IStack_45.z = 0;
+                                                        MVWorldObject.dll::MV::WorldObject::
+                                                        IntVector::IntVector__ctor_1
+                                                                  (&IStack_45,0,-1,-1,
+                                                                   (MethodInfo *)0x0);
+                                                        if (3 < pIVar9->max_length) {
+                                                          pIVar9->vector[3].x = IStack_45.x;
+                                                          pIVar9->vector[3].y = IStack_45.y;
+                                                          pIVar9->vector[3].z = IStack_45.z;
+                                                          if (8 < pIVar8->max_length) {
+                                                            pIVar8->vector[8] = pIVar9;
+                                                            func_?();
+                                                            pIVar9 = (IntVector__Array *)
+                                                                     func_?();
+                                                            IStack_46.x = 0;
+                                                            IStack_46.y = 0;
+                                                            IStack_46.z = 0;
+                                                            MVWorldObject.dll::MV::WorldObject::
+                                                            IntVector::IntVector__ctor_1
+                                                                      (&IStack_46,0,-1,-1,
+                                                                       (MethodInfo *)0x0);
+                                                            if (pIVar9 == (IntVector__Array *)0x0)
+                                                            goto code_?;
+                                                            if (pIVar9->max_length != 0) {
+                                                              pIVar9->vector[0].x = IStack_46.x;
+                                                              pIVar9->vector[0].y = IStack_46.y;
+                                                              pIVar9->vector[0].z = IStack_46.z;
+                                                              IStack_47.x = 0;
+                                                              IStack_47.y = 0;
+                                                              IStack_47.z = 0;
+                                                              MVWorldObject.dll::MV::WorldObject::
+                                                              IntVector::IntVector__ctor_1
+                                                                        (&IStack_47,0,0,-1,
+                                                                         (MethodInfo *)0x0);
+                                                              if (1 < pIVar9->max_length) {
+                                                                pIVar9->vector[1].x = IStack_47.x;
+                                                                pIVar9->vector[1].y = IStack_47.y;
+                                                                pIVar9->vector[1].z = IStack_47.z;
+                                                                IStack_48.x = 0;
+                                                                IStack_48.y = 0;
+                                                                IStack_48.z = 0;
+                                                                MVWorldObject.dll::MV::WorldObject::
+                                                                IntVector::IntVector__ctor_1
+                                                                          (&IStack_48,1,0,-1,
+                                                                           (MethodInfo *)0x0);
+                                                                if (2 < pIVar9->max_length) {
+                                                                  pIVar9->vector[2].x = IStack_48.x
+                                                                  ;
+                                                                  pIVar9->vector[2].y = IStack_48.y
+                                                                  ;
+                                                                  pIVar9->vector[2].z = IStack_48.z
+                                                                  ;
+                                                                  IStack_49.x = 0;
+                                                                  IStack_49.y = 0;
+                                                                  IStack_49.z = 0;
+                                                                  MVWorldObject.dll::MV::WorldObject
+                                                                  ::IntVector::IntVector__ctor_1
+                                                                            (&IStack_49,1,-1,-1,
+                                                                             (MethodInfo *)0x0);
+                                                                  if (3 < pIVar9->max_length) {
+                                                                    pIVar9->vector[3].x =
+                                                                         IStack_49.x;
+                                                                    pIVar9->vector[3].y =
+                                                                         IStack_49.y;
+                                                                    pIVar9->vector[3].z =
+                                                                         IStack_49.z;
+                                                                    if (9 < pIVar8->max_length) {
+                                                                      pIVar8->vector[9] = pIVar9;
+                                                                      func_?();
+                                                                      pIVar9 = (IntVector__Array *)
+                                                                               func_?();
+                                                                      IStack_50.x = 0;
+                                                                      IStack_50.y = 0;
+                                                                      IStack_50.z = 0;
+                                                                      MVWorldObject.dll::MV::
+                                                                      WorldObject::IntVector::
+                                                                      IntVector__ctor_1(&IStack_50,
+                                                                                        0,0,-1,(
+                                                  MethodInfo *)0x0);
+                                                  if (pIVar9 == (IntVector__Array *)0x0)
+                                                  goto code_?;
+                                                  if (pIVar9->max_length != 0) {
+                                                    pIVar9->vector[0].x = IStack_50.x;
+                                                    pIVar9->vector[0].y = IStack_50.y;
+                                                    pIVar9->vector[0].z = IStack_50.z;
+                                                    IStack_51.x = 0;
+                                                    IStack_51.y = 0;
+                                                    IStack_51.z = 0;
+                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
+                                                    IntVector__ctor_1(&IStack_51,0,1,-1,
+                                                                      (MethodInfo *)0x0);
+                                                    if (1 < pIVar9->max_length) {
+                                                      pIVar9->vector[1].x = IStack_51.x;
+                                                      pIVar9->vector[1].y = IStack_51.y;
+                                                      pIVar9->vector[1].z = IStack_51.z;
+                                                      IStack_52.x = 0;
+                                                      IStack_52.y = 0;
+                                                      IStack_52.z = 0;
+                                                      MVWorldObject.dll::MV::WorldObject::IntVector
+                                                      ::IntVector__ctor_1(&IStack_52,1,1,-1,
+                                                                          (MethodInfo *)0x0);
+                                                      if (2 < pIVar9->max_length) {
+                                                        pIVar9->vector[2].x = IStack_52.x;
+                                                        pIVar9->vector[2].y = IStack_52.y;
+                                                        pIVar9->vector[2].z = IStack_52.z;
+                                                        IStack_53.x = 0;
+                                                        IStack_53.y = 0;
+                                                        IStack_53.z = 0;
+                                                        MVWorldObject.dll::MV::WorldObject::
+                                                        IntVector::IntVector__ctor_1
+                                                                  (&IStack_53,1,0,-1,
+                                                                   (MethodInfo *)0x0);
+                                                        if (3 < pIVar9->max_length) {
+                                                          pIVar9->vector[3].x = IStack_53.x;
+                                                          pIVar9->vector[3].y = IStack_53.y;
+                                                          pIVar9->vector[3].z = IStack_53.z;
+                                                          if (10 < pIVar8->max_length) {
+                                                            pIVar8->vector[10] = pIVar9;
+                                                            func_?();
+                                                            pIVar9 = (IntVector__Array *)
+                                                                     func_?();
+                                                            IStack_54.x = 0;
+                                                            IStack_54.y = 0;
+                                                            IStack_54.z = 0;
+                                                            MVWorldObject.dll::MV::WorldObject::
+                                                            IntVector::IntVector__ctor_1
+                                                                      (&IStack_54,-1,0,-1,
+                                                                       (MethodInfo *)0x0);
+                                                            if (pIVar9 == (IntVector__Array *)0x0)
+                                                            goto code_?;
+                                                            if (pIVar9->max_length != 0) {
+                                                              pIVar9->vector[0].x = IStack_54.x;
+                                                              pIVar9->vector[0].y = IStack_54.y;
+                                                              pIVar9->vector[0].z = IStack_54.z;
+                                                              IStack_55.x = 0;
+                                                              IStack_55.y = 0;
+                                                              IStack_55.z = 0;
+                                                              MVWorldObject.dll::MV::WorldObject::
+                                                              IntVector::IntVector__ctor_1
+                                                                        (&IStack_55,-1,1,-1,
+                                                                         (MethodInfo *)0x0);
+                                                              if (1 < pIVar9->max_length) {
+                                                                pIVar9->vector[1].x = IStack_55.x;
+                                                                pIVar9->vector[1].y = IStack_55.y;
+                                                                pIVar9->vector[1].z = IStack_55.z;
+                                                                IStack_56.x = 0;
+                                                                IStack_56.y = 0;
+                                                                IStack_56.z = 0;
+                                                                MVWorldObject.dll::MV::WorldObject::
+                                                                IntVector::IntVector__ctor_1
+                                                                          (&IStack_56,0,1,-1,
+                                                                           (MethodInfo *)0x0);
+                                                                if (2 < pIVar9->max_length) {
+                                                                  pIVar9->vector[2].x = IStack_56.x
+                                                                  ;
+                                                                  pIVar9->vector[2].y = IStack_56.y
+                                                                  ;
+                                                                  pIVar9->vector[2].z = IStack_56.z
+                                                                  ;
+                                                                  IStack_57.x = 0;
+                                                                  IStack_57.y = 0;
+                                                                  IStack_57.z = 0;
+                                                                  MVWorldObject.dll::MV::WorldObject
+                                                                  ::IntVector::IntVector__ctor_1
+                                                                            (&IStack_57,0,0,-1,
+                                                                             (MethodInfo *)0x0);
+                                                                  if (3 < pIVar9->max_length) {
+                                                                    pIVar9->vector[3].x =
+                                                                         IStack_57.x;
+                                                                    pIVar9->vector[3].y =
+                                                                         IStack_57.y;
+                                                                    pIVar9->vector[3].z =
+                                                                         IStack_57.z;
+                                                                    if (0xb < pIVar8->max_length) {
+                                                                      pIVar8->vector[0xb] = pIVar9;
+                                                                      func_?();
+                                                                      pIVar9 = (IntVector__Array *)
+                                                                               func_?();
+                                                                      IStack_58.x = 0;
+                                                                      IStack_58.y = 0;
+                                                                      IStack_58.z = 0;
+                                                                      MVWorldObject.dll::MV::
+                                                                      WorldObject::IntVector::
+                                                                      IntVector__ctor_1(&IStack_58,
+                                                                                        0,-1,1,(
+                                                  MethodInfo *)0x0);
+                                                  if (pIVar9 == (IntVector__Array *)0x0)
+                                                  goto code_?;
+                                                  if (pIVar9->max_length != 0) {
+                                                    pIVar9->vector[0].x = IStack_58.x;
+                                                    pIVar9->vector[0].y = IStack_58.y;
+                                                    pIVar9->vector[0].z = IStack_58.z;
+                                                    IStack_59.x = 0;
+                                                    IStack_59.y = 0;
+                                                    IStack_59.z = 0;
+                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
+                                                    IntVector__ctor_1(&IStack_59,0,0,1,
+                                                                      (MethodInfo *)0x0);
+                                                    if (1 < pIVar9->max_length) {
+                                                      pIVar9->vector[1].x = IStack_59.x;
+                                                      pIVar9->vector[1].y = IStack_59.y;
+                                                      pIVar9->vector[1].z = IStack_59.z;
+                                                      IStack_60.x = 0;
+                                                      IStack_60.y = 0;
+                                                      IStack_60.z = 0;
+                                                      MVWorldObject.dll::MV::WorldObject::IntVector
+                                                      ::IntVector__ctor_1(&IStack_60,1,0,1,
+                                                                          (MethodInfo *)0x0);
+                                                      if (2 < pIVar9->max_length) {
+                                                        pIVar9->vector[2].x = IStack_60.x;
+                                                        pIVar9->vector[2].y = IStack_60.y;
+                                                        pIVar9->vector[2].z = IStack_60.z;
+                                                        IStack_61.x = 0;
+                                                        IStack_61.y = 0;
+                                                        IStack_61.z = 0;
+                                                        MVWorldObject.dll::MV::WorldObject::
+                                                        IntVector::IntVector__ctor_1
+                                                                  (&IStack_61,1,-1,1,
+                                                                   (MethodInfo *)0x0);
+                                                        if (3 < pIVar9->max_length) {
+                                                          pIVar9->vector[3].x = IStack_61.x;
+                                                          pIVar9->vector[3].y = IStack_61.y;
+                                                          pIVar9->vector[3].z = IStack_61.z;
+                                                          if (0xc < pIVar8->max_length) {
+                                                            pIVar8->vector[0xc] = pIVar9;
+                                                            func_?();
+                                                            pIVar9 = (IntVector__Array *)
+                                                                     func_?();
+                                                            IStack_62.x = 0;
+                                                            IStack_62.y = 0;
+                                                            IStack_62.z = 0;
+                                                            MVWorldObject.dll::MV::WorldObject::
+                                                            IntVector::IntVector__ctor_1
+                                                                      (&IStack_62,-1,-1,1,
+                                                                       (MethodInfo *)0x0);
+                                                            if (pIVar9 == (IntVector__Array *)0x0)
+                                                            goto code_?;
+                                                            if (pIVar9->max_length != 0) {
+                                                              pIVar9->vector[0].x = IStack_62.x;
+                                                              pIVar9->vector[0].y = IStack_62.y;
+                                                              pIVar9->vector[0].z = IStack_62.z;
+                                                              IStack_63.x = 0;
+                                                              IStack_63.y = 0;
+                                                              IStack_63.z = 0;
+                                                              MVWorldObject.dll::MV::WorldObject::
+                                                              IntVector::IntVector__ctor_1
+                                                                        (&IStack_63,-1,0,1,
+                                                                         (MethodInfo *)0x0);
+                                                              if (1 < pIVar9->max_length) {
+                                                                pIVar9->vector[1].x = IStack_63.x;
+                                                                pIVar9->vector[1].y = IStack_63.y;
+                                                                pIVar9->vector[1].z = IStack_63.z;
+                                                                IStack_64.x = 0;
+                                                                IStack_64.y = 0;
+                                                                IStack_64.z = 0;
+                                                                MVWorldObject.dll::MV::WorldObject::
+                                                                IntVector::IntVector__ctor_1
+                                                                          (&IStack_64,0,0,1,
+                                                                           (MethodInfo *)0x0);
+                                                                if (2 < pIVar9->max_length) {
+                                                                  pIVar9->vector[2].x = IStack_64.x
+                                                                  ;
+                                                                  pIVar9->vector[2].y = IStack_64.y
+                                                                  ;
+                                                                  pIVar9->vector[2].z = IStack_64.z
+                                                                  ;
+                                                                  IStack_65.x = 0;
+                                                                  IStack_65.y = 0;
+                                                                  IStack_65.z = 0;
+                                                                  MVWorldObject.dll::MV::WorldObject
+                                                                  ::IntVector::IntVector__ctor_1
+                                                                            (&IStack_65,0,-1,1,
+                                                                             (MethodInfo *)0x0);
+                                                                  if (3 < pIVar9->max_length) {
+                                                                    pIVar9->vector[3].x =
+                                                                         IStack_65.x;
+                                                                    pIVar9->vector[3].y =
+                                                                         IStack_65.y;
+                                                                    pIVar9->vector[3].z =
+                                                                         IStack_65.z;
+                                                                    if (0xd < pIVar8->max_length) {
+                                                                      pIVar8->vector[0xd] = pIVar9;
+                                                                      func_?();
+                                                                      pIVar9 = (IntVector__Array *)
+                                                                               func_?();
+                                                                      IStack_66.x = 0;
+                                                                      IStack_66.y = 0;
+                                                                      IStack_66.z = 0;
+                                                                      MVWorldObject.dll::MV::
+                                                                      WorldObject::IntVector::
+                                                                      IntVector__ctor_1(&IStack_66,
+                                                                                        -1,0,1,(
+                                                  MethodInfo *)0x0);
+                                                  if (pIVar9 == (IntVector__Array *)0x0)
+                                                  goto code_?;
+                                                  if (pIVar9->max_length != 0) {
+                                                    pIVar9->vector[0].x = IStack_66.x;
+                                                    pIVar9->vector[0].y = IStack_66.y;
+                                                    pIVar9->vector[0].z = IStack_66.z;
+                                                    IStack_67.x = 0;
+                                                    IStack_67.y = 0;
+                                                    IStack_67.z = 0;
+                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
+                                                    IntVector__ctor_1(&IStack_67,-1,1,1,
+                                                                      (MethodInfo *)0x0);
+                                                    if (1 < pIVar9->max_length) {
+                                                      pIVar9->vector[1].x = IStack_67.x;
+                                                      pIVar9->vector[1].y = IStack_67.y;
+                                                      pIVar9->vector[1].z = IStack_67.z;
+                                                      IStack_68.x = 0;
+                                                      IStack_68.y = 0;
+                                                      IStack_68.z = 0;
+                                                      MVWorldObject.dll::MV::WorldObject::IntVector
+                                                      ::IntVector__ctor_1(&IStack_68,0,1,1,
+                                                                          (MethodInfo *)0x0);
+                                                      if (2 < pIVar9->max_length) {
+                                                        pIVar9->vector[2].x = IStack_68.x;
+                                                        pIVar9->vector[2].y = IStack_68.y;
+                                                        pIVar9->vector[2].z = IStack_68.z;
+                                                        IStack_69.x = 0;
+                                                        IStack_69.y = 0;
+                                                        IStack_69.z = 0;
+                                                        MVWorldObject.dll::MV::WorldObject::
+                                                        IntVector::IntVector__ctor_1
+                                                                  (&IStack_69,0,0,1,
+                                                                   (MethodInfo *)0x0);
+                                                        if (3 < pIVar9->max_length) {
+                                                          pIVar9->vector[3].x = IStack_69.x;
+                                                          pIVar9->vector[3].y = IStack_69.y;
+                                                          pIVar9->vector[3].z = IStack_69.z;
+                                                          if (0xe < pIVar8->max_length) {
+                                                            pIVar8->vector[0xe] = pIVar9;
+                                                            func_?();
+                                                            pIVar9 = (IntVector__Array *)
+                                                                     func_?();
+                                                            IStack_70.x = 0;
+                                                            IStack_70.y = 0;
+                                                            IStack_70.z = 0;
+                                                            MVWorldObject.dll::MV::WorldObject::
+                                                            IntVector::IntVector__ctor_1
+                                                                      (&IStack_70,0,0,1,
+                                                                       (MethodInfo *)0x0);
+                                                            if (pIVar9 == (IntVector__Array *)0x0)
+                                                            goto code_?;
+                                                            if (pIVar9->max_length != 0) {
+                                                              pIVar9->vector[0].x = IStack_70.x;
+                                                              pIVar9->vector[0].y = IStack_70.y;
+                                                              pIVar9->vector[0].z = IStack_70.z;
+                                                              IStack_71.x = 0;
+                                                              IStack_71.y = 0;
+                                                              IStack_71.z = 0;
+                                                              MVWorldObject.dll::MV::WorldObject::
+                                                              IntVector::IntVector__ctor_1
+                                                                        (&IStack_71,0,1,1,
+                                                                         (MethodInfo *)0x0);
+                                                              if (1 < pIVar9->max_length) {
+                                                                pIVar9->vector[1].x = IStack_71.x;
+                                                                pIVar9->vector[1].y = IStack_71.y;
+                                                                pIVar9->vector[1].z = IStack_71.z;
+                                                                IStack_72.x = 0;
+                                                                IStack_72.y = 0;
+                                                                IStack_72.z = 0;
+                                                                MVWorldObject.dll::MV::WorldObject::
+                                                                IntVector::IntVector__ctor_1
+                                                                          (&IStack_72,1,1,1,
+                                                                           (MethodInfo *)0x0);
+                                                                if (2 < pIVar9->max_length) {
+                                                                  pIVar9->vector[2].x = IStack_72.x
+                                                                  ;
+                                                                  pIVar9->vector[2].y = IStack_72.y
+                                                                  ;
+                                                                  pIVar9->vector[2].z = IStack_72.z
+                                                                  ;
+                                                                  IStack_73.x = 0;
+                                                                  IStack_73.y = 0;
+                                                                  IStack_73.z = 0;
+                                                                  MVWorldObject.dll::MV::WorldObject
+                                                                  ::IntVector::IntVector__ctor_1
+                                                                            (&IStack_73,1,0,1,
+                                                                             (MethodInfo *)0x0);
+                                                                  if (3 < pIVar9->max_length) {
+                                                                    pIVar9->vector[3].x =
+                                                                         IStack_73.x;
+                                                                    pIVar9->vector[3].y =
+                                                                         IStack_73.y;
+                                                                    pIVar9->vector[3].z =
+                                                                         IStack_73.z;
+                                                                    if (0xf < pIVar8->max_length) {
+                                                                      pIVar8->vector[0xf] = pIVar9;
+                                                                      func_?();
+                                                                      pIVar9 = (IntVector__Array *)
+                                                                               func_?();
+                                                                      IStack_74.x = 0;
+                                                                      IStack_74.y = 0;
+                                                                      IStack_74.z = 0;
+                                                                      MVWorldObject.dll::MV::
+                                                                      WorldObject::IntVector::
+                                                                      IntVector__ctor_1(&IStack_74,
+                                                                                        -1,-1,0,(
+                                                  MethodInfo *)0x0);
+                                                  if (pIVar9 == (IntVector__Array *)0x0)
+                                                  goto code_?;
+                                                  if (pIVar9->max_length != 0) {
+                                                    pIVar9->vector[0].x = IStack_74.x;
+                                                    pIVar9->vector[0].y = IStack_74.y;
+                                                    pIVar9->vector[0].z = IStack_74.z;
+                                                    IStack_75.x = 0;
+                                                    IStack_75.y = 0;
+                                                    IStack_75.z = 0;
+                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
+                                                    IntVector__ctor_1(&IStack_75,-1,0,0,
+                                                                      (MethodInfo *)0x0);
+                                                    if (1 < pIVar9->max_length) {
+                                                      pIVar9->vector[1].x = IStack_75.x;
+                                                      pIVar9->vector[1].y = IStack_75.y;
+                                                      pIVar9->vector[1].z = IStack_75.z;
+                                                      IStack_76.x = 0;
+                                                      IStack_76.y = 0;
+                                                      IStack_76.z = 0;
+                                                      MVWorldObject.dll::MV::WorldObject::IntVector
+                                                      ::IntVector__ctor_1(&IStack_76,-1,0,1,
+                                                                          (MethodInfo *)0x0);
+                                                      if (2 < pIVar9->max_length) {
+                                                        pIVar9->vector[2].x = IStack_76.x;
+                                                        pIVar9->vector[2].y = IStack_76.y;
+                                                        pIVar9->vector[2].z = IStack_76.z;
+                                                        IStack_77.x = 0;
+                                                        IStack_77.y = 0;
+                                                        IStack_77.z = 0;
+                                                        MVWorldObject.dll::MV::WorldObject::
+                                                        IntVector::IntVector__ctor_1
+                                                                  (&IStack_77,-1,-1,1,
+                                                                   (MethodInfo *)0x0);
+                                                        if (3 < pIVar9->max_length) {
+                                                          pIVar9->vector[3].x = IStack_77.x;
+                                                          pIVar9->vector[3].y = IStack_77.y;
+                                                          pIVar9->vector[3].z = IStack_77.z;
+                                                          if (0x10 < pIVar8->max_length) {
+                                                            pIVar8->vector[0x10] = pIVar9;
+                                                            func_?();
+                                                            pIVar9 = (IntVector__Array *)
+                                                                     func_?();
+                                                            IStack_78.x = 0;
+                                                            IStack_78.y = 0;
+                                                            IStack_78.z = 0;
+                                                            MVWorldObject.dll::MV::WorldObject::
+                                                            IntVector::IntVector__ctor_1
+                                                                      (&IStack_78,-1,-1,-1,
+                                                                       (MethodInfo *)0x0);
+                                                            if (pIVar9 == (IntVector__Array *)0x0)
+                                                            goto code_?;
+                                                            if (pIVar9->max_length != 0) {
+                                                              pIVar9->vector[0].x = IStack_78.x;
+                                                              pIVar9->vector[0].y = IStack_78.y;
+                                                              pIVar9->vector[0].z = IStack_78.z;
+                                                              IStack_79.x = 0;
+                                                              IStack_79.y = 0;
+                                                              IStack_79.z = 0;
+                                                              MVWorldObject.dll::MV::WorldObject::
+                                                              IntVector::IntVector__ctor_1
+                                                                        (&IStack_79,-1,0,-1,
+                                                                         (MethodInfo *)0x0);
+                                                              if (1 < pIVar9->max_length) {
+                                                                pIVar9->vector[1].x = IStack_79.x;
+                                                                pIVar9->vector[1].y = IStack_79.y;
+                                                                pIVar9->vector[1].z = IStack_79.z;
+                                                                IStack_80.x = 0;
+                                                                IStack_80.y = 0;
+                                                                IStack_80.z = 0;
+                                                                MVWorldObject.dll::MV::WorldObject::
+                                                                IntVector::IntVector__ctor_1
+                                                                          (&IStack_80,-1,0,0,
+                                                                           (MethodInfo *)0x0);
+                                                                if (2 < pIVar9->max_length) {
+                                                                  pIVar9->vector[2].x = IStack_80.x
+                                                                  ;
+                                                                  pIVar9->vector[2].y = IStack_80.y
+                                                                  ;
+                                                                  pIVar9->vector[2].z = IStack_80.z
+                                                                  ;
+                                                                  IStack_81.x = 0;
+                                                                  IStack_81.y = 0;
+                                                                  IStack_81.z = 0;
+                                                                  MVWorldObject.dll::MV::WorldObject
+                                                                  ::IntVector::IntVector__ctor_1
+                                                                            (&IStack_81,-1,-1,0,
+                                                                             (MethodInfo *)0x0);
+                                                                  if (3 < pIVar9->max_length) {
+                                                                    pIVar9->vector[3].x =
+                                                                         IStack_81.x;
+                                                                    pIVar9->vector[3].y =
+                                                                         IStack_81.y;
+                                                                    pIVar9->vector[3].z =
+                                                                         IStack_81.z;
+                                                                    if (0x11 < pIVar8->max_length) {
+                                                                      pIVar8->vector[0x11] = pIVar9;
+                                                                      func_?();
+                                                                      pIVar9 = (IntVector__Array *)
+                                                                               func_?();
+                                                                      IStack_82.x = 0;
+                                                                      IStack_82.y = 0;
+                                                                      IStack_82.z = 0;
+                                                                      MVWorldObject.dll::MV::
+                                                                      WorldObject::IntVector::
+                                                                      IntVector__ctor_1(&IStack_82,
+                                                                                        -1,0,-1,(
+                                                  MethodInfo *)0x0);
+                                                  if (pIVar9 == (IntVector__Array *)0x0)
+                                                  goto code_?;
+                                                  if (pIVar9->max_length != 0) {
+                                                    pIVar9->vector[0].x = IStack_82.x;
+                                                    pIVar9->vector[0].y = IStack_82.y;
+                                                    pIVar9->vector[0].z = IStack_82.z;
+                                                    IStack_83.x = 0;
+                                                    IStack_83.y = 0;
+                                                    IStack_83.z = 0;
+                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
+                                                    IntVector__ctor_1(&IStack_83,-1,1,-1,
+                                                                      (MethodInfo *)0x0);
+                                                    if (1 < pIVar9->max_length) {
+                                                      pIVar9->vector[1].x = IStack_83.x;
+                                                      pIVar9->vector[1].y = IStack_83.y;
+                                                      pIVar9->vector[1].z = IStack_83.z;
+                                                      IStack_84.x = 0;
+                                                      IStack_84.y = 0;
+                                                      IStack_84.z = 0;
+                                                      MVWorldObject.dll::MV::WorldObject::IntVector
+                                                      ::IntVector__ctor_1(&IStack_84,-1,1,0,
+                                                                          (MethodInfo *)0x0);
+                                                      if (2 < pIVar9->max_length) {
+                                                        pIVar9->vector[2].x = IStack_84.x;
+                                                        pIVar9->vector[2].y = IStack_84.y;
+                                                        pIVar9->vector[2].z = IStack_84.z;
+                                                        IStack_85.x = 0;
+                                                        IStack_85.y = 0;
+                                                        IStack_85.z = 0;
+                                                        MVWorldObject.dll::MV::WorldObject::
+                                                        IntVector::IntVector__ctor_1
+                                                                  (&IStack_85,-1,0,0,
+                                                                   (MethodInfo *)0x0);
+                                                        if (3 < pIVar9->max_length) {
+                                                          pIVar9->vector[3].x = IStack_85.x;
+                                                          pIVar9->vector[3].y = IStack_85.y;
+                                                          pIVar9->vector[3].z = IStack_85.z;
+                                                          if (0x12 < pIVar8->max_length) {
+                                                            pIVar8->vector[0x12] = pIVar9;
+                                                            func_?();
+                                                            pIVar9 = (IntVector__Array *)
+                                                                     func_?();
+                                                            IStack_86.x = 0;
+                                                            IStack_86.y = 0;
+                                                            IStack_86.z = 0;
+                                                            MVWorldObject.dll::MV::WorldObject::
+                                                            IntVector::IntVector__ctor_1
+                                                                      (&IStack_86,-1,0,0,
+                                                                       (MethodInfo *)0x0);
+                                                            if (pIVar9 == (IntVector__Array *)0x0)
+                                                            goto code_?;
+                                                            if (pIVar9->max_length != 0) {
+                                                              pIVar9->vector[0].x = IStack_86.x;
+                                                              pIVar9->vector[0].y = IStack_86.y;
+                                                              pIVar9->vector[0].z = IStack_86.z;
+                                                              IStack_87.x = 0;
+                                                              IStack_87.y = 0;
+                                                              IStack_87.z = 0;
+                                                              MVWorldObject.dll::MV::WorldObject::
+                                                              IntVector::IntVector__ctor_1
+                                                                        (&IStack_87,-1,1,0,
+                                                                         (MethodInfo *)0x0);
+                                                              if (1 < pIVar9->max_length) {
+                                                                pIVar9->vector[1].x = IStack_87.x;
+                                                                pIVar9->vector[1].y = IStack_87.y;
+                                                                pIVar9->vector[1].z = IStack_87.z;
+                                                                IStack_88.x = 0;
+                                                                IStack_88.y = 0;
+                                                                IStack_88.z = 0;
+                                                                MVWorldObject.dll::MV::WorldObject::
+                                                                IntVector::IntVector__ctor_1
+                                                                          (&IStack_88,-1,1,1,
+                                                                           (MethodInfo *)0x0);
+                                                                if (2 < pIVar9->max_length) {
+                                                                  pIVar9->vector[2].x = IStack_88.x
+                                                                  ;
+                                                                  pIVar9->vector[2].y = IStack_88.y
+                                                                  ;
+                                                                  pIVar9->vector[2].z = IStack_88.z
+                                                                  ;
+                                                                  IStack_89.x = 0;
+                                                                  IStack_89.y = 0;
+                                                                  IStack_89.z = 0;
+                                                                  MVWorldObject.dll::MV::WorldObject
+                                                                  ::IntVector::IntVector__ctor_1
+                                                                            (&IStack_89,-1,0,1,
+                                                                             (MethodInfo *)0x0);
+                                                                  if (3 < pIVar9->max_length) {
+                                                                    pIVar9->vector[3].x =
+                                                                         IStack_89.x;
+                                                                    pIVar9->vector[3].y =
+                                                                         IStack_89.y;
+                                                                    pIVar9->vector[3].z =
+                                                                         IStack_89.z;
+                                                                    if (0x13 < pIVar8->max_length) {
+                                                                      pIVar8->vector[0x13] = pIVar9;
+                                                                      func_?();
+                                                                      pIVar9 = (IntVector__Array *)
+                                                                               func_?();
+                                                                      IStack_90.x = 0;
+                                                                      IStack_90.y = 0;
+                                                                      IStack_90.z = 0;
+                                                                      MVWorldObject.dll::MV::
+                                                                      WorldObject::IntVector::
+                                                                      IntVector__ctor_1(&IStack_90,
+                                                                                        1,-1,-1,(
+                                                  MethodInfo *)0x0);
+                                                  if (pIVar9 == (IntVector__Array *)0x0)
+                                                  goto code_?;
+                                                  if (pIVar9->max_length != 0) {
+                                                    pIVar9->vector[0].x = IStack_90.x;
+                                                    pIVar9->vector[0].y = IStack_90.y;
+                                                    pIVar9->vector[0].z = IStack_90.z;
+                                                    IStack_91.x = 0;
+                                                    IStack_91.y = 0;
+                                                    IStack_91.z = 0;
+                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
+                                                    IntVector__ctor_1(&IStack_91,1,0,-1,
+                                                                      (MethodInfo *)0x0);
+                                                    if (1 < pIVar9->max_length) {
+                                                      pIVar9->vector[1].x = IStack_91.x;
+                                                      pIVar9->vector[1].y = IStack_91.y;
+                                                      pIVar9->vector[1].z = IStack_91.z;
+                                                      IStack_92.x = 0;
+                                                      IStack_92.y = 0;
+                                                      IStack_92.z = 0;
+                                                      MVWorldObject.dll::MV::WorldObject::IntVector
+                                                      ::IntVector__ctor_1(&IStack_92,1,0,0,
+                                                                          (MethodInfo *)0x0);
+                                                      if (2 < pIVar9->max_length) {
+                                                        pIVar9->vector[2].x = IStack_92.x;
+                                                        pIVar9->vector[2].y = IStack_92.y;
+                                                        pIVar9->vector[2].z = IStack_92.z;
+                                                        IStack_93.x = 0;
+                                                        IStack_93.y = 0;
+                                                        IStack_93.z = 0;
+                                                        MVWorldObject.dll::MV::WorldObject::
+                                                        IntVector::IntVector__ctor_1
+                                                                  (&IStack_93,1,-1,0,
+                                                                   (MethodInfo *)0x0);
+                                                        if (3 < pIVar9->max_length) {
+                                                          pIVar9->vector[3].x = IStack_93.x;
+                                                          pIVar9->vector[3].y = IStack_93.y;
+                                                          pIVar9->vector[3].z = IStack_93.z;
+                                                          if (0x14 < pIVar8->max_length) {
+                                                            pIVar8->vector[0x14] = pIVar9;
+                                                            func_?();
+                                                            pIVar9 = (IntVector__Array *)
+                                                                     func_?();
+                                                            IStack_94.x = 0;
+                                                            IStack_94.y = 0;
+                                                            IStack_94.z = 0;
+                                                            MVWorldObject.dll::MV::WorldObject::
+                                                            IntVector::IntVector__ctor_1
+                                                                      (&IStack_94,1,-1,0,
+                                                                       (MethodInfo *)0x0);
+                                                            if (pIVar9 == (IntVector__Array *)0x0)
+                                                            goto code_?;
+                                                            if (pIVar9->max_length != 0) {
+                                                              pIVar9->vector[0].x = IStack_94.x;
+                                                              pIVar9->vector[0].y = IStack_94.y;
+                                                              pIVar9->vector[0].z = IStack_94.z;
+                                                              IStack_95.x = 0;
+                                                              IStack_95.y = 0;
+                                                              IStack_95.z = 0;
+                                                              MVWorldObject.dll::MV::WorldObject::
+                                                              IntVector::IntVector__ctor_1
+                                                                        (&IStack_95,1,0,0,
+                                                                         (MethodInfo *)0x0);
+                                                              if (1 < pIVar9->max_length) {
+                                                                pIVar9->vector[1].x = IStack_95.x;
+                                                                pIVar9->vector[1].y = IStack_95.y;
+                                                                pIVar9->vector[1].z = IStack_95.z;
+                                                                pIStack_96 = (IntVector__Array *)
+                                                                              0x0;
+                                                                iStack_97 = 0;
+                                                                MVWorldObject.dll::MV::WorldObject::
+                                                                IntVector::IntVector__ctor_1
+                                                                          ((IntVector *)&pIStack_96
+                                                                           ,1,0,1,(MethodInfo *)0x0)
+                                                                ;
+                                                                if (2 < pIVar9->max_length) {
+                                                                  *(IntVector__Array **)
+                                                                   (pIVar9->vector + 2) =
+                                                                       pIStack_96;
+                                                                  pIVar9->vector[2].z = iStack_97;
+                                                                  puStack_98 = (undefined *)0x0;
+                                                                  ppIStack_99 = (IntVector__Array
+                                                                                  **)((uint)
+                                                  ppIStack_99 & 0xffff0000);
+                                                  MVWorldObject.dll::MV::WorldObject::IntVector::
+                                                  IntVector__ctor_1((IntVector *)&puStack_98,1,-1,1
+                                                                    ,(MethodInfo *)0x0);
+                                                  if (3 < pIVar9->max_length) {
+                                                    *(undefined **)(pIVar9->vector + 3) =
+                                                         puStack_98;
+                                                    pIVar9->vector[3].z = (int16_t)ppIStack_99;
+                                                    if (0x15 < pIVar8->max_length) {
+                                                      pIVar8->vector[0x15] = pIVar9;
+                                                      func_?();
+                                                      pIVar9 = (IntVector__Array *)func_?()
+                                                      ;
+                                                      uVar100._0_2_ = 0;
+                                                      uVar100._2_2_ = 0;
+                                                      MVWorldObject.dll::MV::WorldObject::IntVector
+                                                      ::IntVector__ctor_1((IntVector *)
+                                                                          &stack0xfffffd2c,1,0,0,
+                                                                          (MethodInfo *)0x0);
+                                                      if (pIVar9 == (IntVector__Array *)0x0)
+                                                      goto code_?;
+                                                      if (pIVar9->max_length != 0) {
+                                                        pIVar9->vector[0].x = (int16_t)uVar100;
+                                                        pIVar9->vector[0].y = SUB42(uVar100,2);
+                                                        pIVar9->vector[0].z = 0;
+                                                        uVar101._0_2_ = 0;
+                                                        uVar101._2_2_ = 0;
+                                                        iVar102 = 0;
+                                                        MVWorldObject.dll::MV::WorldObject::
+                                                        IntVector::IntVector__ctor_1
+                                                                  ((IntVector *)&stack0xfffffd24,1,1
+                                                                   ,0,(MethodInfo *)0x0);
+                                                        if (1 < pIVar9->max_length) {
+                                                          pIVar9->vector[1].x = (int16_t)uVar101;
+                                                          pIVar9->vector[1].y = SUB42(uVar101,2);
+                                                          pIVar9->vector[1].z = iVar102;
+                                                          uVar103._0_2_ = 0;
+                                                          uVar103._2_2_ = 0;
+                                                          iVar102 = 0;
+                                                          MVWorldObject.dll::MV::WorldObject::
+                                                          IntVector::IntVector__ctor_1
+                                                                    ((IntVector *)&stack0xfffffd1c,1
+                                                                     ,1,1,(MethodInfo *)0x0);
+                                                          if (2 < pIVar9->max_length) {
+                                                            pIVar9->vector[2].x = (int16_t)uVar103;
+                                                            pIVar9->vector[2].y = SUB42(uVar103,2);
+                                                            pIVar9->vector[2].z = iVar102;
+                                                            uVar104._0_2_ = 0;
+                                                            uVar104._2_2_ = 0;
+                                                            iVar102 = 0;
+                                                            MVWorldObject.dll::MV::WorldObject::
+                                                            IntVector::IntVector__ctor_1
+                                                                      ((IntVector *)&stack0xfffffd14
+                                                                       ,1,0,1,(MethodInfo *)0x0);
+                                                            if (3 < pIVar9->max_length) {
+                                                              pIVar9->vector[3].x = (int16_t)uVar104;
+                                                              pIVar9->vector[3].y = SUB42(uVar104,2);
+                                                              pIVar9->vector[3].z = iVar102;
+                                                              if (0x16 < pIVar8->max_length) {
+                                                                pIVar8->vector[0x16] = pIVar9;
+                                                                func_?();
+                                                                pIVar9 = (IntVector__Array *)
+                                                                         func_?();
+                                                                uVar105._0_2_ = 0;
+                                                                uVar105._2_2_ = 0;
+                                                                iVar102 = 0;
+                                                                MVWorldObject.dll::MV::WorldObject::
+                                                                IntVector::IntVector__ctor_1
+                                                                          ((IntVector *)
+                                                                           &stack0xfffffd0c,1,0,-1,
+                                                                           (MethodInfo *)0x0);
+                                                                if (pIVar9 == (IntVector__Array *)
+                                                                              0x0)
+                                                                goto code_?;
+                                                                if (pIVar9->max_length != 0) {
+                                                                  pIVar9->vector[0].x =
+                                                                       (int16_t)uVar105;
+                                                                  pIVar9->vector[0].y =
+                                                                       SUB42(uVar105,2);
+                                                                  pIVar9->vector[0].z = iVar102;
+                                                                  uVar106._0_2_ = 0;
+                                                                  uVar106._2_2_ = 0;
+                                                                  iVar102 = 0;
+                                                                  MVWorldObject.dll::MV::WorldObject
+                                                                  ::IntVector::IntVector__ctor_1
+                                                                            ((IntVector *)
+                                                                             &stack0xfffffd04,1,1,-1
+                                                                             ,(MethodInfo *)0x0);
+                                                                  if (1 < pIVar9->max_length) {
+                                                                    pIVar9->vector[1].x =
+                                                                         (int16_t)uVar106;
+                                                                    pIVar9->vector[1].y =
+                                                                         SUB42(uVar106,2);
+                                                                    pIVar9->vector[1].z = iVar102;
+                                                                    uVar107._0_2_ = 0;
+                                                                    uVar107._2_2_ = 0;
+                                                                    iVar102 = 0;
+                                                                    MVWorldObject.dll::MV::
+                                                                    WorldObject::IntVector::
+                                                                    IntVector__ctor_1((IntVector *)
+                                                                                      &
+                                                  stack0xfffffcfc,1,1,0,(MethodInfo *)0x0);
+                                                  if (2 < pIVar9->max_length) {
+                                                    pIVar9->vector[2].x = (int16_t)uVar107;
+                                                    pIVar9->vector[2].y = SUB42(uVar107,2);
+                                                    pIVar9->vector[2].z = iVar102;
+                                                    iVar102 = 0;
+                                                    uVar108._0_2_ = 1;
+                                                    uVar108._2_2_ = 0;
+                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
+                                                    IntVector__ctor_1((IntVector *)&stack0xfffffcf4,
+                                                                      1,0,0,(MethodInfo *)0x0);
+                                                    if (3 < pIVar9->max_length) {
+                                                      pIVar9->vector[3].x = (int16_t)uVar108;
+                                                      pIVar9->vector[3].y = SUB42(uVar108,2);
+                                                      pIVar9->vector[3].z = iVar102;
+                                                      if (0x17 < pIVar8->max_length) {
+                                                        pIVar8->vector[0x17] = pIVar9;
+                                                        func_?();
+                                                        TypeInfo__SharedCubeFunctions->static_fields
+                                                        ->LightTestOffsets = pIVar8;
+                                                        func_?();
+                                                        pFVar109 = (Face__Enum__Array__Array *)
+                                                                  func_?();
+                                                        pFVar110 = (Face__Enum__Array *)
+                                                                  func_?();
+                                                        mscorlib.dll::System::Runtime::
+                                                        CompilerServices::RuntimeHelpers::
+                                                        RuntimeHelpers_InitializeArray_1
+                                                                  ((Array *)pFVar110,
+                                                                                                                                      
+                                                  __59E3B3AC5476357BCD66274BB6A67316738712645A4299A570105FFE4826372C_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (pFVar109 == (Face__Enum__Array__Array *)0x0)
+                                                  goto code_?;
+                                                  if (pFVar109->max_length != 0) {
+                                                    pFVar109->vector[0] = pFVar110;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pFVar110,
+                                                                                                                              
+                                                  _A53B3522877C6E2C38B170CB40FA7BCAE5DD40492EE274555BA018EEE935E33B_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (1 < pFVar109->max_length) {
+                                                    pFVar109->vector[1] = pFVar110;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pFVar110,
+                                                                                                                              
+                                                  __5C7EED3CACF93747DA516A9AC649BE9445AC47109AEE57E8B6A6EB6741768A25_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (2 < pFVar109->max_length) {
+                                                    pFVar109->vector[2] = pFVar110;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pFVar110,
+                                                                                                                              
+                                                  __44213D5337CB506057EAFD42FA33A4776A44B0A5B0DA2405701680673CE173A2_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (3 < pFVar109->max_length) {
+                                                    pFVar109->vector[3] = pFVar110;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pFVar110,
+                                                                                                                              
+                                                  __3212133D503E3733C58BC9245B27816D0AB019E8F256167D94EE2EF1AA253C17_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (4 < pFVar109->max_length) {
+                                                    pFVar109->vector[4] = pFVar110;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pFVar110,
+                                                                                                                              
+                                                  __78C1F43AB6F856DFB12C9E73F27EE7883763E8A6A3D27F49A8E89A74DE3DD84A_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (5 < pFVar109->max_length) {
+                                                    pFVar109->vector[5] = pFVar110;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pFVar110,
+                                                                                                                              
+                                                  _B575398F444AEB797A8E12CEEAD67595A3CCB4B903BE0CB6978BE00431F4FD94_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (6 < pFVar109->max_length) {
+                                                    pFVar109->vector[6] = pFVar110;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pFVar110,
+                                                                                                                              
+                                                  __69D5B9635C30CE068AB88DFE7AEC46AA236E6BFBE8C95FF0E8D63741A1A12912_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (7 < pFVar109->max_length) {
+                                                    pFVar109->vector[7] = pFVar110;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    if (pFVar110 == (Face__Enum__Array *)0x0)
+                                                    goto code_?;
+                                                    if (((1 < pFVar110->max_length) &&
+                                                        (pFVar110->vector[1] = Face__Enum_Right,
+                                                        2 < pFVar110->max_length)) &&
+                                                       (pFVar110->vector[2] = Face__Enum_Back,
+                                                       8 < pFVar109->max_length)) {
+                                                      pFVar109->vector[8] = pFVar110;
+                                                      func_?();
+                                                      pFVar110 = (Face__Enum__Array *)
+                                                                func_?();
+                                                      if (pFVar110 == (Face__Enum__Array *)0x0)
+                                                      goto code_?;
+                                                      if (((1 < pFVar110->max_length) &&
+                                                          (pFVar110->vector[1] = Face__Enum_Back,
+                                                          2 < pFVar110->max_length)) &&
+                                                         (pFVar110->vector[2] = Face__Enum_Left,
+                                                         9 < pFVar109->max_length)) {
+                                                        pFVar109->vector[9] = pFVar110;
+                                                        func_?();
+                                                        pFVar110 = (Face__Enum__Array *)
+                                                                  func_?();
+                                                        mscorlib.dll::System::Runtime::
+                                                        CompilerServices::RuntimeHelpers::
+                                                        RuntimeHelpers_InitializeArray_1
+                                                                  ((Array *)pFVar110,
+                                                                                                                                      
+                                                  __12C98A439AD9BDD8E757CC8DE108146D6D2552CA5A534FEEA589561F558525A3_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (10 < pFVar109->max_length) {
+                                                    pFVar109->vector[10] = pFVar110;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pFVar110,
+                                                                                                                              
+                                                  _A8D5E66148A8596B4CA037E02125BDA105EEBB89FDA286BAB2B89D08F69FC8EA_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (0xb < pFVar109->max_length) {
+                                                    pFVar109->vector[0xb] = pFVar110;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    if (pFVar110 == (Face__Enum__Array *)0x0)
+                                                    goto code_?;
+                                                    if (((1 < pFVar110->max_length) &&
+                                                        (pFVar110->vector[1] = Face__Enum_Front,
+                                                        2 < pFVar110->max_length)) &&
+                                                       (pFVar110->vector[2] = Face__Enum_Left,
+                                                       0xc < pFVar109->max_length)) {
+                                                      pFVar109->vector[0xc] = pFVar110;
+                                                      func_?();
+                                                      pFVar110 = (Face__Enum__Array *)
+                                                                func_?();
+                                                      if (pFVar110 == (Face__Enum__Array *)0x0)
+                                                      goto code_?;
+                                                      if (((1 < pFVar110->max_length) &&
+                                                          (pFVar110->vector[1] = Face__Enum_Right,
+                                                          2 < pFVar110->max_length)) &&
+                                                         (pFVar110->vector[2] = Face__Enum_Front,
+                                                         0xd < pFVar109->max_length)) {
+                                                        pFVar109->vector[0xd] = pFVar110;
+                                                        func_?();
+                                                        pFVar110 = (Face__Enum__Array *)
+                                                                  func_?();
+                                                        mscorlib.dll::System::Runtime::
+                                                        CompilerServices::RuntimeHelpers::
+                                                        RuntimeHelpers_InitializeArray_1
+                                                                  ((Array *)pFVar110,
+                                                                                                                                      
+                                                  _EB3EA27B21B258CCA651A8DE5834B657D518ABA9AF99B6BEB2C0CCBB27C0C8F5_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (0xe < pFVar109->max_length) {
+                                                    pFVar109->vector[0xe] = pFVar110;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pFVar110,
+                                                                                                                              
+                                                  __7671F4AC667CD05AE5E6F74DCB7160FE6B34A775A4B2BC985EA5F05EDB5F0E8C_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (0xf < pFVar109->max_length) {
+                                                    pFVar109->vector[0xf] = pFVar110;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    if (pFVar110 == (Face__Enum__Array *)0x0)
+                                                    goto code_?;
+                                                    if (((1 < pFVar110->max_length) &&
+                                                        (pFVar110->vector[1] = Face__Enum_Right,
+                                                        2 < pFVar110->max_length)) &&
+                                                       (pFVar110->vector[2] = Face__Enum_Front,
+                                                       0x10 < pFVar109->max_length)) {
+                                                      pFVar109->vector[0x10] = pFVar110;
+                                                      func_?();
+                                                      pFVar110 = (Face__Enum__Array *)
+                                                                func_?();
+                                                      if (pFVar110 == (Face__Enum__Array *)0x0)
+                                                      goto code_?;
+                                                      if (((1 < pFVar110->max_length) &&
+                                                          (pFVar110->vector[1] = Face__Enum_Back,
+                                                          2 < pFVar110->max_length)) &&
+                                                         (pFVar110->vector[2] = Face__Enum_Right,
+                                                         0x11 < pFVar109->max_length)) {
+                                                        pFVar109->vector[0x11] = pFVar110;
+                                                        func_?();
+                                                        pFVar110 = (Face__Enum__Array *)
+                                                                  func_?();
+                                                        mscorlib.dll::System::Runtime::
+                                                        CompilerServices::RuntimeHelpers::
+                                                        RuntimeHelpers_InitializeArray_1
+                                                                  ((Array *)pFVar110,
+                                                                                                                                      
+                                                  __974B7612E2388B86C1BC0353AC9B2F65B6957BF64200ACC73E0A7BD063BA7469_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (0x12 < pFVar109->max_length) {
+                                                    pFVar109->vector[0x12] = pFVar110;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pFVar110,
+                                                                                                                              
+                                                  _EB3EA27B21B258CCA651A8DE5834B657D518ABA9AF99B6BEB2C0CCBB27C0C8F5_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (0x13 < pFVar109->max_length) {
+                                                    pFVar109->vector[0x13] = pFVar110;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    if (pFVar110 == (Face__Enum__Array *)0x0)
+                                                    goto code_?;
+                                                    if (((1 < pFVar110->max_length) &&
+                                                        (pFVar110->vector[1] = Face__Enum_Back,
+                                                        2 < pFVar110->max_length)) &&
+                                                       (pFVar110->vector[2] = Face__Enum_Left,
+                                                       0x14 < pFVar109->max_length)) {
+                                                      pFVar109->vector[0x14] = pFVar110;
+                                                      func_?();
+                                                      pFVar110 = (Face__Enum__Array *)
+                                                                func_?();
+                                                      if (pFVar110 == (Face__Enum__Array *)0x0)
+                                                      goto code_?;
+                                                      if (((1 < pFVar110->max_length) &&
+                                                          (pFVar110->vector[1] = Face__Enum_Left,
+                                                          2 < pFVar110->max_length)) &&
+                                                         (pFVar110->vector[2] = Face__Enum_Front,
+                                                         0x15 < pFVar109->max_length)) {
+                                                        pFVar109->vector[0x15] = pFVar110;
+                                                        func_?();
+                                                        pFVar110 = (Face__Enum__Array *)
+                                                                  func_?();
+                                                        mscorlib.dll::System::Runtime::
+                                                        CompilerServices::RuntimeHelpers::
+                                                        RuntimeHelpers_InitializeArray_1
+                                                                  ((Array *)pFVar110,
+                                                                                                                                      
+                                                  _BD1586D96349669994A64F043D5272C820092DC8F3A204F4A8BBA71A213370F7_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (0x16 < pFVar109->max_length) {
+                                                    pFVar109->vector[0x16] = pFVar110;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pFVar110,
+                                                                                                                              
+                                                  __12C98A439AD9BDD8E757CC8DE108146D6D2552CA5A534FEEA589561F558525A3_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (0x17 < pFVar109->max_length) {
+                                                    pFVar109->vector[0x17] = pFVar110;
+                                                    func_?();
+                                                    TypeInfo__SharedCubeFunctions->static_fields->
+                                                    LightTestNormalTargetFaces = pFVar109;
+                                                    func_?();
+                                                    pFVar110 = (Face__Enum__Array *)func_?()
+                                                    ;
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pFVar110,
+                                                                                                                              
+                                                  __3EA0E73E350002B637E873B7CB7348DD7E1BCE73102F97D2B1FA8693ECC0DAEE_Field
+                                                  ,(MethodInfo *)0x0);
                                                   TypeInfo__SharedCubeFunctions->static_fields->
-                                                  LightTestOffsetsInside;
-                                                  pIStack_11 = pIVar3;
+                                                  LightTestNormalSecondaryTargetFaces = pFVar110;
+                                                  func_?(&TypeInfo__SharedCubeFunctions->
+                                                                   static_fields->
+                                                                                                                                      
+                                                  LightTestNormalSecondaryTargetFaces,pFVar110);
+                                                  pIVar3 = (Int32__Array__Array *)
+                                                           func_?(TypeInfo__System__Int32,6
+                                                                          );
+                                                  pIVar4 = (Int32__Array *)
+                                                           func_?(TypeInfo__System__Int32,4
+                                                                          );
+                                                  mscorlib.dll::System::Runtime::CompilerServices::
+                                                  RuntimeHelpers::RuntimeHelpers_InitializeArray_1
+                                                            ((Array *)pIVar4,
+                                                                                                                          
+                                                  __7DE6C05FE260533E58F5F5D7195356F52AA241A405B3EC59D9A7E618A31EB70B_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (pIVar3 == (Int32__Array__Array *)0x0)
+                                                  goto code_?;
+                                                  if (pIVar3->max_length != 0) {
+                                                    pIVar3->vector[0] = pIVar4;
+                                                    func_?();
+                                                    pIVar4 = (Int32__Array *)func_?();
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pIVar4,
+                                                                                                                              
+                                                  _F565169B16BA9172A376C4BBC695B7586ADD01DC1142CDBBDF803D30DC68A148_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (1 < pIVar3->max_length) {
+                                                    pIVar3->vector[1] = pIVar4;
+                                                    func_?();
+                                                    pIVar4 = (Int32__Array *)func_?();
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pIVar4,
+                                                                                                                              
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (2 < pIVar3->max_length) {
+                                                    pIVar3->vector[2] = pIVar4;
+                                                    func_?();
+                                                    pIVar4 = (Int32__Array *)func_?();
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pIVar4,
+                                                                                                                              
+                                                  _A69DBB9813CAFBDB74661959B1EB85075542F30F2CE490C308D06C3AACEAAF42_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (3 < pIVar3->max_length) {
+                                                    pIVar3->vector[3] = pIVar4;
+                                                    func_?();
+                                                    pIVar4 = (Int32__Array *)func_?();
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pIVar4,
+                                                                                                                              
+                                                  __8FD9A02CC3EC720EFB3B246422557271F0349320C1E14523AD7E1A6D2D963700_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (4 < pIVar3->max_length) {
+                                                    pIVar3->vector[4] = pIVar4;
+                                                    func_?();
+                                                    pIVar4 = (Int32__Array *)func_?();
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pIVar4,
+                                                                                                                              
+                                                  __7BCBDCCC340EA4ECBDD35B946E4F1C88E504A39C0708D3155A5C65E1B4183290_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (5 < pIVar3->max_length) {
+                                                    pIVar3->vector[5] = pIVar4;
+                                                    func_?();
+                                                    TypeInfo__SharedCubeFunctions->static_fields->
+                                                    LightTestOppositeFaceCorners = pIVar3;
+                                                    func_?();
+                                                    pIVar3 = (Int32__Array__Array *)
+                                                             func_?();
+                                                    pIVar4 = (Int32__Array *)
+                                                             func_?(TypeInfo__System__Int32
+                                                                             ,4);
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pIVar4,
+                                                                                                                              
+                                                  _F565169B16BA9172A376C4BBC695B7586ADD01DC1142CDBBDF803D30DC68A148_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (pIVar3 == (Int32__Array__Array *)0x0)
+                                                  goto code_?;
+                                                  if (pIVar3->max_length != 0) {
+                                                    pIVar3->vector[0] = pIVar4;
+                                                    func_?();
+                                                    pIVar4 = (Int32__Array *)func_?();
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pIVar4,
+                                                                                                                              
+                                                  __7DE6C05FE260533E58F5F5D7195356F52AA241A405B3EC59D9A7E618A31EB70B_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (1 < pIVar3->max_length) {
+                                                    pIVar3->vector[1] = pIVar4;
+                                                    func_?();
+                                                    pIVar4 = (Int32__Array *)func_?();
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pIVar4,
+                                                                                                                              
+                                                  _A69DBB9813CAFBDB74661959B1EB85075542F30F2CE490C308D06C3AACEAAF42_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (2 < pIVar3->max_length) {
+                                                    pIVar3->vector[2] = pIVar4;
+                                                    func_?();
+                                                    pIVar4 = (Int32__Array *)func_?();
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pIVar4,
+                                                                                                                              
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (3 < pIVar3->max_length) {
+                                                    pIVar3->vector[3] = pIVar4;
+                                                    func_?();
+                                                    pIVar4 = (Int32__Array *)func_?();
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pIVar4,
+                                                                                                                              
+                                                  __7BCBDCCC340EA4ECBDD35B946E4F1C88E504A39C0708D3155A5C65E1B4183290_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (4 < pIVar3->max_length) {
+                                                    pIVar3->vector[4] = pIVar4;
+                                                    func_?();
+                                                    pIVar4 = (Int32__Array *)func_?();
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)pIVar4,
+                                                                                                                              
+                                                  __8FD9A02CC3EC720EFB3B246422557271F0349320C1E14523AD7E1A6D2D963700_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (5 < pIVar3->max_length) {
+                                                    pIVar3->vector[5] = pIVar4;
+                                                    func_?();
+                                                    TypeInfo__SharedCubeFunctions->static_fields->
+                                                    LightTestSameFaceCorners = pIVar3;
+                                                    func_?();
+                                                    pIVar9 = (IntVector__Array *)func_?();
+                                                    uVar111._0_2_ = 0;
+                                                    uVar111._2_2_ = 0;
+                                                    iVar102 = 0;
+                                                    MVWorldObject.dll::MV::WorldObject::IntVector::
+                                                    IntVector__ctor_1((IntVector *)&stack0xfffffcec,
+                                                                      0,-1,0,(MethodInfo *)0x0);
+                                                    if (pIVar9 == (IntVector__Array *)0x0)
+                                                    goto code_?;
+                                                    if (pIVar9->max_length != 0) {
+                                                      pIVar9->vector[0].x = (int16_t)uVar111;
+                                                      pIVar9->vector[0].y = SUB42(uVar111,2);
+                                                      pIVar9->vector[0].z = iVar102;
+                                                      uVar112._0_2_ = 0;
+                                                      uVar112._2_2_ = 0;
+                                                      iVar102 = 0;
+                                                      MVWorldObject.dll::MV::WorldObject::IntVector
+                                                      ::IntVector__ctor_1((IntVector *)
+                                                                          &stack0xfffffce4,0,1,0,
+                                                                          (MethodInfo *)0x0);
+                                                      if (1 < pIVar9->max_length) {
+                                                        pIVar9->vector[1].x = (int16_t)uVar112;
+                                                        pIVar9->vector[1].y = SUB42(uVar112,2);
+                                                        pIVar9->vector[1].z = iVar102;
+                                                        iVar102 = 0;
+                                                        this = (IntVector *)&stack0xfffffcdc;
+                                                        MVWorldObject.dll::MV::WorldObject::
+                                                        IntVector::IntVector__ctor_1
+                                                                  (this,0,0,1,(MethodInfo *)0x0);
+                                                        if (2 < pIVar9->max_length) {
+                                                          *(IntVector **)(pIVar9->vector + 2) = this
+                                                          ;
+                                                          pIVar9->vector[2].z = iVar102;
+                                                          uVar113._0_2_ = 0;
+                                                          uVar113._2_2_ = 0;
+                                                          iVar102 = 0;
+                                                          MVWorldObject.dll::MV::WorldObject::
+                                                          IntVector::IntVector__ctor_1
+                                                                    ((IntVector *)&stack0xfffffcd4,0
+                                                                     ,0,-1,(MethodInfo *)0x0);
+                                                          if (3 < pIVar9->max_length) {
+                                                            pIVar9->vector[3].x = (int16_t)uVar113;
+                                                            pIVar9->vector[3].y = SUB42(uVar113,2);
+                                                            pIVar9->vector[3].z = iVar102;
+                                                            uVar114._0_2_ = 0;
+                                                            uVar114._2_2_ = 0;
+                                                            iVar102 = 0;
+                                                            MVWorldObject.dll::MV::WorldObject::
+                                                            IntVector::IntVector__ctor_1
+                                                                      ((IntVector *)&stack0xfffffccc
+                                                                       ,1,0,0,(MethodInfo *)0x0);
+                                                            if (4 < pIVar9->max_length) {
+                                                              pIVar9->vector[4].x = (int16_t)uVar114;
+                                                              pIVar9->vector[4].y = SUB42(uVar114,2);
+                                                              pIVar9->vector[4].z = iVar102;
+                                                              uVar115._0_2_ = 0;
+                                                              uVar115._2_2_ = 0;
+                                                              iVar102 = 0;
+                                                              MVWorldObject.dll::MV::WorldObject::
+                                                              IntVector::IntVector__ctor_1
+                                                                        ((IntVector *)
+                                                                         &stack0xfffffcc4,-1,0,0,
+                                                                         (MethodInfo *)0x0);
+                                                              if (5 < pIVar9->max_length) {
+                                                                pIVar9->vector[5].x =
+                                                                     (int16_t)uVar115;
+                                                                pIVar9->vector[5].y =
+                                                                     SUB42(uVar115,2);
+                                                                pIVar9->vector[5].z = iVar102;
+                                                                TypeInfo__SharedCubeFunctions->
+                                                                static_fields->
+                                                                LightTestInwardsOffset = pIVar9;
+                                                                ppIStack_99 = &
+                                                  TypeInfo__SharedCubeFunctions->static_fields->
+                                                  LightTestInwardsOffset;
+                                                  pIStack_96 = pIVar9;
+                                                  func_?();
+                                                  puStack_98 = (undefined *)0x6;
+                                                  pIVar4 = (Int32__Array *)func_?();
+                                                  mscorlib.dll::System::Runtime::CompilerServices::
+                                                  RuntimeHelpers::RuntimeHelpers_InitializeArray_1
+                                                            ((Array *)pIVar4,
+                                                                                                                          
+                                                  __3086B2DEF3530EA0C41DA25BE54853897C14DAD1F4F971862B51BE6A23E31DB5_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  TypeInfo__SharedCubeFunctions->static_fields->
+                                                  FaceHeightAxis = pIVar4;
+                                                  func_?();
+                                                  pIVar4 = (Int32__Array *)func_?();
+                                                  mscorlib.dll::System::Runtime::CompilerServices::
+                                                  RuntimeHelpers::RuntimeHelpers_InitializeArray_1
+                                                            ((Array *)pIVar4,
+                                                                                                                          
+                                                  __0D9366A7866315145DF405E103A928871A65FDCA218CFE82B66F5719CDE799D2_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  TypeInfo__SharedCubeFunctions->static_fields->
+                                                  FaceDirectionScalar = pIVar4;
                                                   func_?();
                                                   return;
                                                   }
@@ -5862,7 +5372,116 @@ void Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions__cctor(Method
                                                   }
                                                   }
                                                   }
-                                                  goto code_?;
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
                                                   }
                                                   }
                                                   }
@@ -5911,13 +5530,15 @@ void Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions__cctor(Method
           }
         }
       }
+      goto code_?;
     }
   }
   func_?();
+  func_?();
 code_?:
   func_?();
-  pcVar201 = (code *)swi(3);
-  (*pcVar201)();
+  pcVar116 = (code *)swi(3);
+  (*pcVar116)();
   return;
 }
 

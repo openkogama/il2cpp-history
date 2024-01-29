@@ -18,6 +18,8 @@ public abstract class LobbyFlowMenu : MonoBehaviour
 	[SerializeField]
 	protected MaskMode cameraMaskMode;
 	[SerializeField]
+	protected ProfileSettingsMenu profileSettingsMenuPrefab;
+	[SerializeField]
 	protected TeamMenu teamMenuPrefab;
 	[SerializeField]
 	protected WinningConditionBriefing winningConditionBriefingMenuPrefab;
@@ -36,9 +38,10 @@ public abstract class LobbyFlowMenu : MonoBehaviour
 	{
 		LobbyState = 0,
 		Briefing = 1,
-		TeamSelect = 2,
-		SpawnRoleSelect = 3,
-		None = 4
+		Settings = 2,
+		TeamSelect = 3,
+		SpawnRoleSelect = 4,
+		None = 5
 	}
 
 	[Serializable]
@@ -47,55 +50,68 @@ public abstract class LobbyFlowMenu : MonoBehaviour
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__23_0;
 		public static ExecuteEvents.EventFunction<IUIStack> __9__24_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__25_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _GoToMenu_b__23_0(IUIStack x, BaseEventData y);
-		internal void _StartPlaying_b__24_0(IUIStack x, BaseEventData y);
+		internal void _GoToMenu_b__24_0(IUIStack x, BaseEventData y);
+		internal void _StartPlaying_b__25_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass23_0
+	private sealed class __c__DisplayClass24_0
 	{
 		// Fields
-		public TeamMenu newTeamMenu;
+		public ProfileSettingsMenu newSettingsMenu;
 
 		// Constructors
-		public __c__DisplayClass23_0();
+		public __c__DisplayClass24_0();
 
 		// Methods
 		internal void _GoToMenu_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass23_1
+	private sealed class __c__DisplayClass24_1
 	{
 		// Fields
-		public WinningConditionBriefing winConMenu;
+		public TeamMenu newTeamMenu;
 
 		// Constructors
-		public __c__DisplayClass23_1();
+		public __c__DisplayClass24_1();
 
 		// Methods
 		internal void _GoToMenu_b__2(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass23_2
+	private sealed class __c__DisplayClass24_2
+	{
+		// Fields
+		public WinningConditionBriefing winConMenu;
+
+		// Constructors
+		public __c__DisplayClass24_2();
+
+		// Methods
+		internal void _GoToMenu_b__3(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass24_3
 	{
 		// Fields
 		public SpawnRoleMenu spawnRoleMenu;
 
 		// Constructors
-		public __c__DisplayClass23_2();
+		public __c__DisplayClass24_3();
 
 		// Methods
-		internal void _GoToMenu_b__3(IUIStack x, BaseEventData y);
+		internal void _GoToMenu_b__4(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors
@@ -109,7 +125,7 @@ public abstract class LobbyFlowMenu : MonoBehaviour
 	protected virtual bool CanShowBreifing();
 	protected virtual bool CanShowSpawnRoleSelect();
 	public void GoToNextMenu();
-	public void GoToPreviousMenu();
+	public virtual void GoToPreviousMenu();
 	protected bool CanGoToNextMenu();
 	protected LobbyFlowMenuType GetNextMenuType();
 	protected LobbyFlowMenuType GetPreviousMenuType();

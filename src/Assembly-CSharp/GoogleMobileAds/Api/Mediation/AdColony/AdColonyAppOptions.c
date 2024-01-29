@@ -217,28 +217,48 @@ bool Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    pIStack_1 = (IAdColonyAppOptionsClient__Class *)
-                &TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient;
-    func_?();
+    func_?(&TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions);
+    func_?(&
+                    TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient
+                   );
     cRam_? = '\x01';
   }
   if ((TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->_1).
       cctor_finished_or_no_cctor == 0) {
-    func_?();
+    func_?(TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions);
   }
-  if (TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->static_fields->client
-      != (IAdColonyAppOptionsClient *)0x0) {
-    pIStack_1 = TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient;
-    puStack_2 = (undefined *)0x7;
-    bVar3 = func_?();
-    return bVar3;
+  pIVar1 = TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->static_fields->
+           client;
+  if (pIVar1 != (IAdColonyAppOptionsClient *)0x0) {
+    pIVar2 = pIVar1->klass;
+    uVar3 = 0;
+    uVar4._0_1_ = (pIVar2->_1).rank;
+    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar4 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
+            (Il2CppClass *)
+            TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient) {
+          pIVar2 = pIVar1->klass;
+          iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
+          bVar6 = (*(code *)(&(pIVar2->vtable).IsTestMode)[iVar5].method)
+                            (pIVar1,(&pIVar2[1]._0.image)[iVar5 * 2]);
+          return bVar6;
+        }
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
+    }
+    puVar7 = (undefined4 *)
+             func_?(pIVar1,
+                             TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient
+                             ,7);
+    bVar6 = (*(code *)*puVar7)(pIVar1,puVar7[1]);
+    return bVar6;
   }
-  uVar4 = func_?(&puStack_2);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  bVar3 = (*pcVar5)();
-  return bVar3;
+  func_?();
+  pcVar8 = (code *)swi(3);
+  bVar6 = (*pcVar8)();
+  return bVar6;
 }
 
 

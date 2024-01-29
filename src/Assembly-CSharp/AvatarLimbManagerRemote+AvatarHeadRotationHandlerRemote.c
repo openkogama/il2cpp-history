@@ -94,8 +94,8 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarHeadRotationHandlerRemot
 
 {
   AvatarLimbManager+AvatarHeadRotationHandler::
-  AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer
-            ((AvatarLimbManager_AvatarHeadRotationHandler *)this,(MethodInfo *)0x0);
+  AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer_1
+            ((AvatarLimbManager_AvatarHeadRotationHandler *)this,EmoteTypes__Enum_None,unaff_ESI);
   auVar1._4_8_ = 0;
   auVar1._0_4_ = yaw * _UNK_?;
   pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
@@ -163,7 +163,20 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarHeadRotationHandlerRemot
   AvatarLimbManager_AvatarHeadRotationHandler_RotateHead
             ((AvatarLimbManager_AvatarHeadRotationHandler *)this,(this->fields).remoteYawRotation,
              (this->fields).remotePitchRotation,(MethodInfo *)0x0);
-  (*(code *)(this->klass->vtable).UpdateIdleTimer.method)();
+  AvatarLimbManager+AvatarHeadRotationHandler::
+  AvatarLimbManager_AvatarHeadRotationHandler_UpdateRotation
+            ((AvatarLimbManager_AvatarHeadRotationHandler *)this,(MethodInfo *)0x0);
+  return;
+}
+
+
+/* AvatarLimbManagerRemote+AvatarHeadRotationHandlerRemote() */
+
+void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarHeadRotationHandlerRemote::
+     AvatarLimbManagerRemote_AvatarHeadRotationHandlerRemote__ctor
+               (AvatarLimbManagerRemote_AvatarHeadRotationHandlerRemote *this,MethodInfo *method)
+
+{
   (this->fields)._.shouldLean = 1;
   return;
 }

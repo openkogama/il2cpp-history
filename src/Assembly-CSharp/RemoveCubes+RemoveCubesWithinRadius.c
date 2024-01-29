@@ -343,7 +343,7 @@ RemoveCubes_RemoveCubesWithinRadius_HandleCubeOnRadiusLimit
   if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pos.z = -0x5779;
+  pos.z = -0x289;
   uStack9 = 0x1035;
   bVar10 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
                     ((CubeBase *)a,(CubeBase *)0x0,(MethodInfo *)0x0);
@@ -377,7 +377,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius::
 {
   uVar1 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(0x3754);
+    func_?(0xaa24);
     cRam_? = '\x01';
   }
   TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->centerDamage = centerDamage;

@@ -64,6 +64,7 @@ void Assembly-CSharp.dll::ESWaitForClone::ESWaitForClone_Execute
                (ESWaitForClone *this,EditorStateMachine *e,MethodInfo *method)
 
 {
+  uVar1 = CONCAT44(unaff_ESI,unaff_EDI);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Boolean);
     func_?(&
@@ -74,28 +75,31 @@ void Assembly-CSharp.dll::ESWaitForClone::ESWaitForClone_Execute
     func_?(&StringLiteral_translateMode);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,(ExceptionArgument__Enum)e,(MethodInfo *)0x0);
+  this_00 = e;
   if (e != (EditorStateMachine *)0x0) {
-    pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
-    if (pMVar1 == (MVWorldObjectClient *)0x0) {
+    pMVar2 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
+    if (pMVar2 == (MVWorldObjectClient *)0x0) {
       return;
     }
-    pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
-    if (pMVar1 != (MVWorldObjectClient *)0x0) {
-      uVar2 = (this->fields).pos.x;
-      (*(code *)(pMVar1->klass->vtable).set_WorldPosition.method)(pMVar1,uVar2);
-      pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
-      if (pMVar1 != (MVWorldObjectClient *)0x0) {
+    uVar1 = ZEXT48(this_00);
+    pMVar2 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(this_00,(MethodInfo *)0x0);
+    if (pMVar2 != (MVWorldObjectClient *)0x0) {
+      uVar1._0_4_ = (this->fields).pos.x;
+      uVar1._4_4_ = (this->fields).pos.y;
+      (*(code *)(pMVar2->klass->vtable).set_WorldPosition.method)(pMVar2,uVar1,(this->fields).pos.z)
+      ;
+      pMVar2 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
+                         (this_00,(MethodInfo *)0x0);
+      if (pMVar2 != (MVWorldObjectClient *)0x0) {
         MVWorldObjectClient::MVWorldObjectClient_set_SyncRot
-                  (pMVar1,(this->fields).rot,(MethodInfo *)0x0);
+                  (pMVar2,(this->fields).rot,(MethodInfo *)0x0);
         if ((this->fields).goToInsert != 0) {
           FSMEntity::FSMEntity_PushState_1
-                    ((FSMEntity *)e,EditorEvent__Enum_ESInsert,EditorEvent__Enum_ObjectSelected,
-                     (MethodInfo *)0x0);
+                    ((FSMEntity *)this_00,EditorEvent__Enum_ESInsert,
+                     EditorEvent__Enum_ObjectSelected,(MethodInfo *)0x0);
           return;
         }
-        pDVar3 = (e->fields)._.data;
+        pDVar3 = (this_00->fields)._.data;
         pOVar4 = (Object *)func_?();
         if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
@@ -103,8 +107,9 @@ void Assembly-CSharp.dll::ESWaitForClone::ESWaitForClone_Execute
                     (pDVar3,(Object *)StringLiteral_translateMode,pOVar4,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
-          pDVar3 = (e->fields)._.data;
-          pOVar4 = (Object *)func_?();
+          pDVar3 = (this_00->fields)._.data;
+          e = (EditorStateMachine *)CONCAT13(1,e._0_3_);
+          pOVar4 = (Object *)func_?(TypeInfo__System__Boolean,(int)&e + 3);
           if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
             ::Dictionary_2_System_Object_System_Object__Add
@@ -112,15 +117,15 @@ void Assembly-CSharp.dll::ESWaitForClone::ESWaitForClone_Execute
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                       );
             FSMEntity::FSMEntity_PushState_1
-                      ((FSMEntity *)e,EditorEvent__Enum_ESTranslate,EditorEvent__Enum_ObjectSelected
-                       ,(MethodInfo *)0x0);
+                      ((FSMEntity *)this_00,EditorEvent__Enum_ESTranslate,
+                       EditorEvent__Enum_ObjectSelected,(MethodInfo *)0x0);
             return;
           }
         }
       }
     }
   }
-  func_?();
+  func_?(uVar1);
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;

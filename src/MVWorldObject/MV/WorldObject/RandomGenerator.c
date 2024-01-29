@@ -171,13 +171,13 @@ void MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator__cctor
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__RandomGenerator);
-    func_?(&__method0x6000403_1_Field);
+    func_?(&__method0x600040b_1_Field);
     func_?(&TypeInfo__System__UInt16);
     cRam_? = '\x01';
   }
   array = (UInt16__Array *)func_?(TypeInfo__System__UInt16,0x100);
   mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::RuntimeHelpers_InitializeArray_1
-            ((Array *)array,___method0x6000403_1_Field,(MethodInfo *)0x0);
+            ((Array *)array,___method0x600040b_1_Field,(MethodInfo *)0x0);
   TypeInfo__MV__WorldObject__RandomGenerator->static_fields->randomNumbers = array;
   func_?(TypeInfo__MV__WorldObject__RandomGenerator->static_fields,array);
   return;

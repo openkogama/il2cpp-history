@@ -688,31 +688,47 @@ code_?:
       return;
     }
 code_?:
+    bVar8 = 0;
     func_?();
   }
   else {
     iVar4 = func_?();
+    bVar8 = 0;
     if (iVar4 == 0) goto code_?;
     (unaff_ESI->_1).typeHierarchyDepth = (char)iVar4;
     (unaff_ESI->_1).genericRecursionDepth = (char)((uint)iVar4 >> 8);
     (unaff_ESI->_1).rank = (char)((uint)iVar4 >> 0x10);
     (unaff_ESI->_1).minimumAlignment = (char)((uint)iVar4 >> 0x18);
     iVar4 = func_?();
+    bVar8 = 0;
     if (iVar4 != 0) goto code_?;
   }
   func_?();
   pAVar3 = unaff_ESI;
 code_?:
-  bVar8 = func_?();
-  cVar9 = (char)unaff_EBX;
-  *(char *)&(unaff_EBX->_0).image =
-       *(char *)&(unaff_EBX->_0).image + cVar9 + CARRY4((uint)pAVar3,(uint)(pAVar3->_0).image);
-  *(char *)&(unaff_EBX->_0).image = *(char *)&(unaff_EBX->_0).image + cVar9 + (0xc9 < bVar8);
-  *(char *)&(unaff_EBX->_0).image =
-       *(char *)&(unaff_EBX->_0).image + cVar9 + (0xc9 < (byte)(bVar8 + 0x36));
-  *extraout_ECX = *extraout_ECX + (char)((uint)extraout_ECX >> 8) + (0xc9 < (byte)(bVar8 + 0x6c));
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  iVar4 = func_?();
+  auVar9._0_4_ = (pAVar3->_0).image;
+  auVar9._4_4_ = (pAVar3->_0).gc_desc;
+  auVar9._8_4_ = (pAVar3->_0).name;
+  auVar9._12_4_ = (pAVar3->_0).namespaze;
+  maxps(in_XMM6,auVar9);
+  pbVar10 = (byte *)(iVar4 + 0x610b1036);
+  bVar11 = CARRY1(*pbVar10,extraout_DH) || CARRY1(*pbVar10 + extraout_DH,bVar8);
+  *pbVar10 = *pbVar10 + extraout_DH + bVar8;
+  bVar8 = *(char *)&(unaff_EBX->_0).image + extraout_CL;
+  bVar12 = CARRY1(*(byte *)&(unaff_EBX->_0).image,extraout_CL) || CARRY1(bVar8,bVar11);
+  *(byte *)&(unaff_EBX->_0).image = bVar8 + bVar11;
+  bVar11 = CARRY1(*in_stack_13,in_stack_14) ||
+           CARRY1(*in_stack_13 + in_stack_14,bVar12);
+  *in_stack_13 = *in_stack_13 + in_stack_14 + bVar12;
+  bVar8 = *in_stack_15;
+  bVar16 = *in_stack_15;
+  *in_stack_15 = bVar16 + in_stack_17 + bVar11;
+  *(char *)(in_stack_18 + -0x33efc99f) =
+       *(char *)(in_stack_18 + -0x33efc99f) + (char)in_stack_18 +
+       (CARRY1(bVar8,in_stack_17) || CARRY1(bVar16 + in_stack_17,bVar11));
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

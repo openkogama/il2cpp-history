@@ -484,3 +484,21 @@ code_?:
   return;
 }
 
+
+/* AvatarPictureTakerUGUI() */
+
+void Assembly-CSharp.dll::AvatarPictureTakerUGUI::AvatarPictureTakerUGUI__ctor
+               (AvatarPictureTakerUGUI *this,MethodInfo *method)
+
+{
+  (this->fields).previewResolution = 0x80;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  return;
+}
+

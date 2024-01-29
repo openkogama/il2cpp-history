@@ -76,7 +76,16 @@ code_?:
             }
             pMVar1 = (this->fields)._.mvAvatar;
             if (pMVar1 != (MVAvatarLocal *)0x0) {
-              bVar7 = MVAvatarLocal::MVAvatarLocal_get_IsInVehicle(pMVar1,(MethodInfo *)0x0);
+              if (cRam_? == '\0') {
+                func_?();
+                cRam_? = '\x01';
+              }
+              x = (pMVar1->fields).vehicleRigidBody;
+              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                func_?(TypeInfo__UnityEngine__Object);
+              }
+              bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                                ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
               if (bVar7 != 0) {
                 pMVar1 = (this->fields)._.mvAvatar;
                 if (pMVar1 == (MVAvatarLocal *)0x0) goto code_?;
@@ -942,7 +951,16 @@ void Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
   }
   pMVar1 = (this->fields)._.mvAvatar;
   if (pMVar1 != (MVAvatarLocal *)0x0) {
-    bVar2 = MVAvatarLocal::MVAvatarLocal_get_IsInVehicle(pMVar1,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Object);
+      cRam_? = '\x01';
+    }
+    x = (pMVar1->fields).vehicleRigidBody;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       pMVar1 = (this->fields)._.mvAvatar;
       if (pMVar1 == (MVAvatarLocal *)0x0) goto code_?;
@@ -958,7 +976,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
         pAVar3 = MVAvatarLocal::MVAvatarLocal_get_AvatarLocal(pMVar1,(MethodInfo *)0x0);
         if ((pAVar3 != (AvatarLocal *)0x0) &&
            ((pAVar3->fields).avatarCameraController != (IAvatarCameraController *)0x0)) {
-          func_?();
+          func_?(4);
           pMVar1 = (this->fields)._.mvAvatar;
           (this->fields).isInDebriefing = 1;
           if ((pMVar1 != (MVAvatarLocal *)0x0) &&

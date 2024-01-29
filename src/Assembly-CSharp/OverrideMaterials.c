@@ -9,8 +9,6 @@ void Assembly-CSharp.dll::OverrideMaterials::OverrideMaterials_Register
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffbc;
-  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__Dispose__
@@ -25,50 +23,88 @@ void Assembly-CSharp.dll::OverrideMaterials::OverrideMaterials_Register
                     MethodInfo__System__Collections__Generic__List<OverrideMaterial>__GetEnumerator__
                    );
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
+  LStack_4._list = (List_1_System_Object_ *)0x0;
+  LStack_4._index = 0;
+  LStack_4._version = 0;
+  LStack_4._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).overrideMaterials;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_8,this_00,
+                       ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                         *)&stack0xffffffbc,this_00,
                         MethodInfo__System__Collections__Generic__List<OverrideMaterial>__GetEnumerator__
                        );
-    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
-    LStack_6._index = pLVar7->_index;
-    LStack_6._version = pLVar7->_version;
-    LStack_6._current = *(Object **)&pLVar7->_current;
-    LStack_8._version = 0;
+    LStack_4._list = (List_1_System_Object_ *)pLVar5->_list;
+    LStack_4._index = pLVar5->_index;
+    LStack_4._version = pLVar5->_version;
+    LStack_4._current = *(Object **)&pLVar5->_current;
     uStack_1 = 1;
-    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
     while( true ) {
-      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+      bVar6 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_6,
+                        (&LStack_4,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__MoveNext__
                         );
-      if (bVar9 == 0) {
+      pOVar7 = LStack_4._current;
+      if (bVar6 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)&LStack_6,
+                  ((Object *)&LStack_4,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__Dispose__
-                   ,unaff_EDI);
+                   ,in_stack_8);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      OverrideMaterial::OverrideMaterial_Register
-                ((OverrideMaterial *)LStack_6._current,(MethodInfo *)0x0);
+      if ((RegexCharClass_SingleRange)LStack_4._current == (RegexCharClass_SingleRange)0x0)
+      goto code_?;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (pMVar9 == (MVNetworkGame *)0x0) goto code_?;
+      this_01 = (pMVar9->fields)._MaterialRepository_k__BackingField;
+      name = *(String **)((int)pOVar7 + 0x24);
+      in_stack_8 = *(MethodInfo **)((int)pOVar7 + 0x28);
+      path = *(String **)((int)pOVar7 + 0x2c);
+      materialSound = *(MaterialSound__Enum *)((int)pOVar7 + 0x30);
+      modifierPackageType = *(AvatarModifierPackageType__Enum *)((int)pOVar7 + 0x34);
+      priceGold = *(int32_t *)((int)pOVar7 + 0x38);
+      bVar6 = *(bool *)((int)pOVar7 + 0x3c);
+      physicalProperties = (Single__Array *)func_?(TypeInfo__System__Single,5);
+      if (physicalProperties == (Single__Array *)0x0) goto code_?;
+      if (physicalProperties->max_length == 0) break;
+      physicalProperties->vector[0] = *(float *)((int)pOVar7 + 0x10);
+      if (physicalProperties->max_length < 2) goto code_?;
+      physicalProperties->vector[1] = *(float *)((int)pOVar7 + 0x14);
+      if (physicalProperties->max_length < 3) goto code_?;
+      physicalProperties->vector[2] = *(float *)((int)pOVar7 + 0x18);
+      if (physicalProperties->max_length < 4) goto code_?;
+      physicalProperties->vector[3] = *(float *)((int)pOVar7 + 0x1c);
+      if (physicalProperties->max_length < 5) goto code_?;
+      physicalProperties->vector[4] = *(float *)((int)pOVar7 + 0x20);
+      if (this_01 == (MVMaterialRepository *)0x0) goto code_?;
+      MVMaterialRepository::MVMaterialRepository_AddMaterial
+                (this_01,name,(String *)in_stack_8,path,materialSound,modifierPackageType,
+                 priceGold,bVar6,physicalProperties,(MaterialButtonTextureGenerator *)0x0,
+                 (MethodInfo *)0x0);
     }
+    func_?();
+code_?:
+    func_?();
+code_?:
+    func_?();
+code_?:
+    func_?();
+code_?:
+    func_?();
   }
+code_?:
   func_?();
   pcVar10 = (code *)swi(3);
   (*pcVar10)();

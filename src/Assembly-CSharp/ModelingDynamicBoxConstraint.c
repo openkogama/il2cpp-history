@@ -106,7 +106,7 @@ Vector3 * Assembly-CSharp.dll::ModelingDynamicBoxConstraint::
         uStack_13._6_2_ = IStack_1.y;
         iStack_25 = IStack_1.z;
         if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-          uVar17 = 0x1034;
+          uVar17 = 0x1045;
           func_?(TypeInfo__MV__WorldObject__IntVector);
         }
         IVar26.z = (int16_t)uVar23;
@@ -158,7 +158,7 @@ Vector3 * Assembly-CSharp.dll::ModelingDynamicBoxConstraint::
                             (&IStack_1,index,(MethodInfo *)0x0);
           iVar32 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
                             (&IStack_2,index,(MethodInfo *)0x0);
-          uVar33 = 0x1034;
+          uVar33 = 0x1045;
           in_stack_16 = iStack_8;
           iVar34 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
                             (&IStack_1,iStack_8,(MethodInfo *)0x0);
@@ -190,11 +190,11 @@ Vector3 * Assembly-CSharp.dll::ModelingDynamicBoxConstraint::
     fVar12 = (VStack_11.y - (float)uStack_30._4_4_) * _UNK_?;
     VStack_11.z = (VStack_11.z - (pVVar35->oneVector).z) * _UNK_?;
     fStack_36 = (float)((uint)VStack_11.z ^
-                       __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     min.y = (float)((uint)fVar12 ^
-                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     min.x = (float)((uint)fVar21 ^
-                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     min.z = fStack_36;
     max.y = fVar12;
     max.x = fVar21;
@@ -375,8 +375,8 @@ code_?:
             pVVar3 = (Vector3 *)&stack0xffffff8c;
             uVar34 = (undefined2)uVar33;
             uVar35 = (undefined2)((uint)uVar33 >> 0x10);
-            uVar12 = 0xc5eb;
-            uVar30 = 0x1034;
+            uVar12 = 0x865b;
+            uVar30 = 0x1045;
             fVar25 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
                                (pVVar3,index,(MethodInfo *)0x0);
             UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
@@ -427,7 +427,7 @@ code_?:
         pos.z = (int16_t)uVar39;
         in_stack_31 = SUB42(uVar39,2);
         if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-          uVar34 = 0x1034;
+          uVar34 = 0x1045;
           func_?();
         }
         uVar40 = (undefined2)((uint)fVar25 >> 0x10);
@@ -572,20 +572,20 @@ void Assembly-CSharp.dll::ModelingDynamicBoxConstraint::ModelingDynamicBoxConstr
   uVar1 = SUB42(in_stack_2,2);
   uVar3 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(0x8a1c);
-    in_stack_4 = 0x119a;
-    func_?(0xabe4);
+    func_?(0xf754);
+    in_stack_4 = 0x119b;
+    func_?(0x2480);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(0xb59c);
+    func_?(0x2524);
     in_stack_4 = 0x119b;
-    func_?(0x8590);
-    func_?(0xaecc);
+    func_?(0xf470);
+    func_?(0x39b0);
     cRam_? = '\x01';
   }
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-    in_stack_4 = 0x1034;
+    in_stack_4 = 0x1045;
     func_?((short)TypeInfo__MV__WorldObject__IntVector);
   }
   IVar5.z = constraintSize.x;
@@ -669,7 +669,7 @@ code_?:
       uVar17._0_2_ = 0;
       uVar17._2_1_ = 0;
       uVar17._3_1_ = 0;
-      uStack18 = 0x1034;
+      uStack18 = 0x1045;
       ObscuredIntVector::ObscuredIntVector__ctor_2
                 ((ObscuredIntVector *)&stack0xffffffd0,constraintSize,(MethodInfo *)0x0);
       (this->fields)._Size_k__BackingField.x.currentCryptoKey = (short)(uint)uVar12;
@@ -688,7 +688,7 @@ code_?:
       OVar19.inited = SUB41(uVar17,2);
       OVar19._7_1_ = SUB41(uVar17,3);
       (this->fields)._Size_k__BackingField.z = OVar19;
-      uStack18 = 0x1034;
+      uStack18 = 0x1045;
       pVVar20 = ModelingDynamicBoxConstraint_CalcConstraintBoxCenter
                           ((Vector3 *)&stack0xffffffe8,this,cubeModel,(MethodInfo *)0x0);
       ModelingBoxConstraint::ModelingBoxConstraint_set_Center

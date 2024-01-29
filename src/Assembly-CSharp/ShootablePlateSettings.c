@@ -41,7 +41,7 @@ void Assembly-CSharp.dll::ShootablePlateSettings::ShootablePlateSettings_Initial
         if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        value_00 = mscorlib.dll::System::Convert::Convert_ToSingle
+        value_00 = mscorlib.dll::System::Convert::Convert_ToSingle_1
                              ((Object *)value.m_Index,(IFormatProvider *)provider,(MethodInfo *)0x0)
         ;
         this_02 = (this->fields).slider;
@@ -87,7 +87,7 @@ void Assembly-CSharp.dll::ShootablePlateSettings::ShootablePlateSettings_OnSetti
     func_?(TypeInfo__System__Convert);
   }
   this = (ShootablePlateSettings *)
-         mscorlib.dll::System::Convert::Convert_ToSingle
+         mscorlib.dll::System::Convert::Convert_ToSingle_1
                    (value,(IFormatProvider *)provider,(MethodInfo *)0x0);
   value_00 = (Object *)func_?(TypeInfo__System__Single,&this);
   if (this_00 != (SettingsBase *)0x0) {

@@ -51,13 +51,13 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_Awake
     cRam_? = '\x01';
   }
   if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-    (this->fields).seatCamera = (this->fields).DesktopCamera;
+    pMVar1 = (this->fields).DesktopCamera;
   }
   else {
-    (this->fields).seatCamera = (this->fields).AndroidCamera;
+    pMVar1 = (this->fields).AndroidCamera;
   }
-  this = (VehicleSeatBase *)&(this->fields).seatCamera;
-  func_?(this,unaff_EBP);
+  (this->fields).seatCamera = pMVar1;
+  func_?(&(this->fields).seatCamera,unaff_EBP);
   return;
 }
 

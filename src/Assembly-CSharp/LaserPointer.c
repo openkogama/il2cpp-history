@@ -120,17 +120,12 @@ code_?:
     goto code_?;
   }
 code_?:
-  cVar10 = '\0';
-  iVar11 = func_?();
-  if (extraout_ECX == 0) {
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    (**(code **)(iVar11 + 100))();
-    return;
-  }
-  *unaff_EBX = *unaff_EBX + (char)((uint)iVar11 >> 8) + cVar10;
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?();
+  *(char *)(extraout_EDX + -0x57efaaf4) =
+       *(char *)(extraout_EDX + -0x57efaaf4) +
+       unaff_BL + (extraout_CL ^ (byte)*(undefined4 *)(extraout_EDX * 2 + 0x550c7310));
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

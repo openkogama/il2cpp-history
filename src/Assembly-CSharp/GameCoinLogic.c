@@ -783,28 +783,3 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic__ctor_1
   return;
 }
 
-
-/* GameObject get_GameObject() */
-
-GameObject *
-Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_get_GameObject
-          (GameCoinLogic *this,MethodInfo *method)
-
-{
-  pGStack_1 = (GameCoinDisplayObject *)&stack0xfffffffc;
-  pGVar2 = (this->fields).displayObject;
-  if (pGVar2 != (GameCoinDisplayObject *)0x0) {
-    if (pcRam_? == (code *)0x0) {
-      pcRam_? = (code *)func_?();
-    }
-    pGStack_1 = pGVar2;
-    pGVar3 = (GameObject *)(*pcRam_?)();
-    return pGVar3;
-  }
-  uVar4 = func_?(auStack_5);
-  func_?(uVar4);
-  pcVar6 = (code *)swi(3);
-  pGVar3 = (GameObject *)(*pcVar6)();
-  return pGVar3;
-}
-

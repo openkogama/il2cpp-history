@@ -617,30 +617,53 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_SuspendCurrentSpawnRole
     func_?(&TypeInfo__ISpawnRoleLocal);
     cRam_? = '\x01';
   }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  pSVar1 = (this->fields)._.spawnRolesManager;
-  if (((pSVar1 != (SpawnRolesManager *)0x0) &&
-      (pSVar2 = (pSVar1->fields).spawnRolesRuntimeData, pSVar2 != (SpawnRolesRuntimeData *)0x0)) &&
-     (this_00 != (MVWorldObjectClientManager *)0x0)) {
-    unaff_ESI = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (this_00,(pSVar2->fields).activeSpawnRole,(MethodInfo *)0x0);
-    if (unaff_ESI != (MVWorldObject *)0x0) {
-      iVar3 = func_?(unaff_ESI);
-      if (iVar3 != 0) {
-        iVar3 = func_?(unaff_ESI);
-        if (iVar3 != 0) {
-          func_?();
-          return;
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  pSVar2 = (this->fields)._.spawnRolesManager;
+  if (((pSVar2 != (SpawnRolesManager *)0x0) &&
+      (pSVar3 = (pSVar2->fields).spawnRolesRuntimeData, pSVar3 != (SpawnRolesRuntimeData *)0x0)) &&
+     (pMVar1 != (MVWorldObjectClientManager *)0x0)) {
+    unaff_EDI = (ISpawnRoleLocal__Class *)(pSVar3->fields).activeSpawnRole;
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                     );
+      cRam_? = '\x01';
+    }
+    this_00 = (pMVar1->fields).worldObjects;
+    this = (MVLocalPlayer *)0x0;
+    if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+      Dictionary_2_System_Int32_System_Object__TryGetValue
+                ((Dictionary_2_System_Int32_System_Object_ *)this_00,(int32_t)unaff_EDI,
+                 (Object **)&this,
+                 MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                );
+      unaff_EDI = TypeInfo__ISpawnRoleLocal;
+      if (this != (MVLocalPlayer *)0x0) {
+        this = (MVLocalPlayer *)TypeInfo__ISpawnRoleLocal;
+        iVar4 = func_?();
+        pIVar5 = TypeInfo__ISpawnRoleLocal;
+        if (iVar4 != 0) {
+          this = (MVLocalPlayer *)TypeInfo__ISpawnRoleLocal;
+          iStack6 = func_?();
+          unaff_EDI = pIVar5;
+          if (iStack6 != 0) {
+            method = (MethodInfo *)TypeInfo__ISpawnRoleLocal;
+            this = (MVLocalPlayer *)0x2;
+            func_?();
+            return;
+          }
         }
+        goto code_?;
       }
-      goto code_?;
     }
   }
   func_?();
 code_?:
-  func_?(unaff_ESI);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  this = (MVLocalPlayer *)unaff_EDI;
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -655,30 +678,53 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_UnSuspendCurrentSpawnRole
     func_?(&TypeInfo__ISpawnRoleLocal);
     cRam_? = '\x01';
   }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  pSVar1 = (this->fields)._.spawnRolesManager;
-  if (((pSVar1 != (SpawnRolesManager *)0x0) &&
-      (pSVar2 = (pSVar1->fields).spawnRolesRuntimeData, pSVar2 != (SpawnRolesRuntimeData *)0x0)) &&
-     (this_00 != (MVWorldObjectClientManager *)0x0)) {
-    unaff_ESI = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (this_00,(pSVar2->fields).activeSpawnRole,(MethodInfo *)0x0);
-    if (unaff_ESI != (MVWorldObject *)0x0) {
-      iVar3 = func_?(unaff_ESI);
-      if (iVar3 != 0) {
-        iVar3 = func_?(unaff_ESI);
-        if (iVar3 != 0) {
-          func_?();
-          return;
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  pSVar2 = (this->fields)._.spawnRolesManager;
+  if (((pSVar2 != (SpawnRolesManager *)0x0) &&
+      (pSVar3 = (pSVar2->fields).spawnRolesRuntimeData, pSVar3 != (SpawnRolesRuntimeData *)0x0)) &&
+     (pMVar1 != (MVWorldObjectClientManager *)0x0)) {
+    unaff_EDI = (ISpawnRoleLocal__Class *)(pSVar3->fields).activeSpawnRole;
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                     );
+      cRam_? = '\x01';
+    }
+    this_00 = (pMVar1->fields).worldObjects;
+    this = (MVLocalPlayer *)0x0;
+    if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+      Dictionary_2_System_Int32_System_Object__TryGetValue
+                ((Dictionary_2_System_Int32_System_Object_ *)this_00,(int32_t)unaff_EDI,
+                 (Object **)&this,
+                 MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                );
+      unaff_EDI = TypeInfo__ISpawnRoleLocal;
+      if (this != (MVLocalPlayer *)0x0) {
+        this = (MVLocalPlayer *)TypeInfo__ISpawnRoleLocal;
+        iVar4 = func_?();
+        pIVar5 = TypeInfo__ISpawnRoleLocal;
+        if (iVar4 != 0) {
+          this = (MVLocalPlayer *)TypeInfo__ISpawnRoleLocal;
+          iStack6 = func_?();
+          unaff_EDI = pIVar5;
+          if (iStack6 != 0) {
+            method = (MethodInfo *)TypeInfo__ISpawnRoleLocal;
+            this = (MVLocalPlayer *)0x3;
+            func_?();
+            return;
+          }
         }
+        goto code_?;
       }
-      goto code_?;
     }
   }
   func_?();
 code_?:
-  func_?(unaff_ESI);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  this = (MVLocalPlayer *)unaff_EDI;
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -805,28 +851,40 @@ Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_AvatarLocal
     func_?(&TypeInfo__MVAvatarLocal);
     cRam_? = '\x01';
   }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  pSVar1 = (this->fields)._.spawnRolesManager;
-  if (((pSVar1 != (SpawnRolesManager *)0x0) &&
-      (pSVar2 = (pSVar1->fields).spawnRolesRuntimeData, pSVar2 != (SpawnRolesRuntimeData *)0x0)) &&
-     (this_00 != (MVWorldObjectClientManager *)0x0)) {
-    pMVar3 = (MVAvatarLocal *)
-             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (this_00,(pSVar2->fields).activeSpawnRole,(MethodInfo *)0x0);
-    if (pMVar3 != (MVAvatarLocal *)0x0) {
-      if (((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (pMVar3->klass->_1).naturalAligment) &&
-         ((MVAvatarLocal__Class *)
-          (pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] ==
-          TypeInfo__MVAvatarLocal)) {
-        return pMVar3;
-      }
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  pSVar2 = (this->fields)._.spawnRolesManager;
+  if (((pSVar2 != (SpawnRolesManager *)0x0) &&
+      (pSVar3 = (pSVar2->fields).spawnRolesRuntimeData, pSVar3 != (SpawnRolesRuntimeData *)0x0)) &&
+     (pMVar1 != (MVWorldObjectClientManager *)0x0)) {
+    key = (pSVar3->fields).activeSpawnRole;
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                     );
+      cRam_? = '\x01';
     }
-    return (MVAvatarLocal *)0x0;
+    this_00 = (pMVar1->fields).worldObjects;
+    this = (MVLocalPlayer *)0x0;
+    if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+      Dictionary_2_System_Int32_System_Object__TryGetValue
+                ((Dictionary_2_System_Int32_System_Object_ *)this_00,key,(Object **)&this,
+                 MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                );
+      if (((this != (MVLocalPlayer *)0x0) &&
+          ((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (this->klass->_1).naturalAligment)) &&
+         ((MVAvatarLocal__Class *)
+          (this->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] ==
+          TypeInfo__MVAvatarLocal)) {
+        return (MVAvatarLocal *)this;
+      }
+      return (MVAvatarLocal *)0x0;
+    }
   }
   func_?();
   pcVar4 = (code *)swi(3);
-  pMVar3 = (MVAvatarLocal *)(*pcVar4)();
-  return pMVar3;
+  pMVar5 = (MVAvatarLocal *)(*pcVar4)();
+  return pMVar5;
 }
 
 

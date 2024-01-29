@@ -225,7 +225,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayer
         uStack_24._0_4_ = pVVar22->alias;
         uStack_24._4_4_ = pVVar22->path;
         fVar14 = (float)((undefined4)uStack_24 ^
-                       __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         fStack_25 = fStack_18 + fStack_21 * fVar14;
         value_00.y = uStack_17._4_4_ + uStack_20._4_4_ * fVar14;
         value_00.x = (float)uStack_17 + (float)uStack_20 * fVar14;
@@ -243,7 +243,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayer
         uStack_30._4_4_ = pVVar6->y;
         fStack_31 = pVVar6->z;
         fVar14 = (float)((uint)(this->fields).cameraOffset.z ^
-                       __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         fStack_32 = fStack_28 + fStack_31 * fVar14;
         value_01.y = uStack_27._4_4_ + (float)uStack_30._4_4_ * fVar14;
         value_01.x = (float)uStack_27 + (float)(undefined4)uStack_30 * fVar14;
@@ -271,7 +271,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayer
         uStack_40._4_4_ = pVVar22->path;
         pVStack_41 = pVVar22->asset;
         fVar14 = (float)((uint)pVStack_41 ^
-                       __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         fStack_42 = fStack_35 + fStack_38 * fVar14;
         value_02.y = uStack_34._4_4_ + uStack_37._4_4_ * fVar14;
         value_02.x = (float)uStack_34 + (float)uStack_37 * fVar14;
@@ -515,7 +515,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayerGroup
                                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                                           );
           fVar29 = (float)(*puVar37 ^
-                         __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           fStack_39 = fStack_33 + fStack_36 * fVar29;
           value_00.y = uStack_32._4_4_ + uStack_35._4_4_ * fVar29;
           value_00.x = (float)uStack_32 + (float)uStack_35 * fVar29;
@@ -533,7 +533,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayerGroup
           uStack_44._4_4_ = pVVar14->y;
           fStack_45 = pVVar14->z;
           fVar29 = (float)((uint)(this->fields).cameraOffset.z ^
-                         __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           fStack_46 = fStack_42 + fStack_45 * fVar29;
           value_03.y = uStack_41._4_4_ + (float)uStack_44._4_4_ * fVar29;
           value_03.x = (float)uStack_41 + (float)(undefined4)uStack_44 * fVar29;
@@ -556,7 +556,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayerGroup
                                   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                                  );
           fVar29 = (float)(*(uint *)(iVar3 + 8) ^
-                         __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           fStack_54 = fStack_49 + fStack_52 * fVar29;
           value_01.y = uStack_48._4_4_ + uStack_51._4_4_ * fVar29;
           value_01.x = (float)uStack_48 + (float)uStack_51 * fVar29;
@@ -753,9 +753,9 @@ int32_t Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CreateTriangleFormatio
            AvatarCapture_CreateTriangleFormation_1
                      (this,positions,formationSpacing,numberOfPositions + -1,2,
                       (float)((uint)formationSpacing.y ^
-                             __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                              ),(float)((uint)formationSpacing.z ^
-                                      __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                       ),(MethodInfo *)0x0);
     }
     return numberOfPositions;
@@ -793,7 +793,7 @@ int32_t Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CreateTriangleFormatio
       maxInclusive = (this->fields).formationRandomness;
       UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
                 ((float)((uint)maxInclusive ^
-                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field),
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field),
                  maxInclusive,(MethodInfo *)0x0);
       if (*positions == (List_1_UnityEngine_Vector3_ *)0x0) {
         func_?(fVar4,fVar5,fVar2 - (float)iVar1);

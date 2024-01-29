@@ -5,14 +5,12 @@ void Assembly-CSharp.dll::GizmoController::GizmoController_Handle
                (GizmoController *this,GizmoAction__Enum action,MethodInfo *method)
 
 {
-  pSStack_1 = in_ECX;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Boolean);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                    );
-    in_stack_2 = &TypeInfo__UnityEngine__Object;
-    func_?();
+    func_?(&TypeInfo__UnityEngine__Object);
     func_?(&TypeInfo__RotationMode);
     func_?(&TypeInfo__System__Single);
     func_?(&TypeInfo__TranslateMode);
@@ -22,73 +20,68 @@ void Assembly-CSharp.dll::GizmoController::GizmoController_Handle
     func_?(&StringLiteral_translateMode);
     cRam_? = '\x01';
   }
-  pSVar3 = unaff_EBX;
   switch(action) {
   case GizmoAction__Enum_None:
-    goto code_?;
+    return;
   case GizmoAction__Enum_Rotate:
-    pSVar3 = (Single__Class *)0x1;
+    unaff_EBX = (MethodInfo *)0x1;
     unaff_EDI = (this->fields).gizmoMenuInstance;
-    in_stack_2 = (Object_1__Class **)unaff_EBX;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
-      in_stack_2 = (Object_1__Class **)unaff_EBX;
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                       ((Object_1 *)unaff_EDI,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
+    if (bVar1 != 0) {
       unaff_EDI = (this->fields).gizmoMenuInstance;
+      unaff_ESI = this;
       if (unaff_EDI == (GizmoMenu *)0x0) break;
       if (cRam_? == '\0') {
         func_?(&MethodInfo__System__Nullable<RotationMode>__GetValueOrDefault_RotationMode_
                        );
         cRam_? = '\x01';
       }
-      pSVar3 = (Single__Class *)
-               mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32__GetValueOrDefault_1
-                         ((Nullable_1_UInt32_ *)&(unaff_EDI->fields).rotationMode,1,
-                          MethodInfo__System__Nullable<RotationMode>__GetValueOrDefault_RotationMode_
-                         );
+      unaff_EBX = (MethodInfo *)
+                  mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32__GetValueOrDefault_1
+                            ((Nullable_1_UInt32_ *)&(unaff_EDI->fields).rotationMode,1,
+                             MethodInfo__System__Nullable<RotationMode>__GetValueOrDefault_RotationMode_
+                            );
     }
-    pGVar5 = (this->fields).gizmoMenuNgInstance;
-    if (pGVar5 != (GizmoMenuNg *)0x0) {
-      in_stack_2 = (Object_1__Class **)&UNK_?;
+    pGVar2 = (this->fields).gizmoMenuNgInstance;
+    unaff_ESI = this;
+    if (pGVar2 != (GizmoMenuNg *)0x0) {
       UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoMenuNg::GizmoMenuNg_Pop
-                (pGVar5,(MethodInfo *)0x0);
-      pEVar6 = (this->fields).editorStateMachine;
-      if (pEVar6 != (EditorStateMachine *)0x0) {
-        unaff_EDI = (GizmoMenu *)(pEVar6->fields)._.data;
-        pSStack_1 = TypeInfo__System__Single;
+                (pGVar2,(MethodInfo *)0x0);
+      pEVar3 = (this->fields).editorStateMachine;
+      if (pEVar3 != (EditorStateMachine *)0x0) {
+        unaff_EDI = (GizmoMenu *)(pEVar3->fields)._.data;
         action = 0x41700000;
-        pOVar7 = (Object *)func_?();
+        pOVar4 = (Object *)func_?();
         if (unaff_EDI != (GizmoMenu *)0x0) {
-          pSVar8 = (Single__Class *)
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+          pMVar5 = 
+          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
           ;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
                     ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,
-                     (Object *)StringLiteral_rotationDegreesStep,pOVar7,
+                     (Object *)StringLiteral_rotationDegreesStep,pOVar4,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
-          pEVar6 = (this->fields).editorStateMachine;
-          if (pEVar6 != (EditorStateMachine *)0x0) {
-            unaff_EDI = (GizmoMenu *)(pEVar6->fields)._.data;
-            in_stack_2 = (Object_1__Class **)&UNK_?;
-            pSStack_1 = pSVar3;
-            pOVar7 = (Object *)func_?(TypeInfo__RotationMode,&pSStack_1);
-            pSVar3 = pSVar8;
+          pEVar3 = (this->fields).editorStateMachine;
+          if (pEVar3 != (EditorStateMachine *)0x0) {
+            unaff_EDI = (GizmoMenu *)(pEVar3->fields)._.data;
+            unaff_EBX = pMVar5;
+            pOVar4 = (Object *)func_?(TypeInfo__RotationMode,&stack0xfffffff8);
             if (unaff_EDI != (GizmoMenu *)0x0) {
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
               Object]::Dictionary_2_System_Object_System_Object__Add
                         ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,
-                         (Object *)StringLiteral_rotationMode,pOVar7,
+                         (Object *)StringLiteral_rotationMode,pOVar4,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                         );
-              pEVar6 = (this->fields).editorStateMachine;
-              if (pEVar6 != (EditorStateMachine *)0x0) {
+              pEVar3 = (this->fields).editorStateMachine;
+              if (pEVar3 != (EditorStateMachine *)0x0) {
                 FSMEntity::FSMEntity_PushState
-                          ((FSMEntity *)pEVar6,EditorEvent__Enum_Rotating,(MethodInfo *)0x0);
+                          ((FSMEntity *)pEVar3,EditorEvent__Enum_Rotating,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -98,183 +91,270 @@ void Assembly-CSharp.dll::GizmoController::GizmoController_Handle
     }
     break;
   case GizmoAction__Enum_RotateStepX:
-    pRVar9 = (this->fields).rotationHelper;
-    if (pRVar9 != (RotationHelper *)0x0) {
+    pRVar6 = (this->fields).rotationHelper;
+    if (pRVar6 != (RotationHelper *)0x0) {
       UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelper::RotationHelper_RotateStep
-                (pRVar9,RotationMode__Enum_X,15.0,(MethodInfo *)0x0);
+                (pRVar6,RotationMode__Enum_X,15.0,(MethodInfo *)0x0);
       return;
     }
     break;
   case GizmoAction__Enum_RotateStepY:
-    pRVar9 = (this->fields).rotationHelper;
-    if (pRVar9 != (RotationHelper *)0x0) {
+    pRVar6 = (this->fields).rotationHelper;
+    if (pRVar6 != (RotationHelper *)0x0) {
       UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelper::RotationHelper_RotateStep
-                (pRVar9,RotationMode__Enum_Y,15.0,(MethodInfo *)0x0);
+                (pRVar6,RotationMode__Enum_Y,15.0,(MethodInfo *)0x0);
       return;
     }
     break;
   case GizmoAction__Enum_RotateStepZ:
-    pRVar9 = (this->fields).rotationHelper;
-    if (pRVar9 != (RotationHelper *)0x0) {
+    pRVar6 = (this->fields).rotationHelper;
+    if (pRVar6 != (RotationHelper *)0x0) {
       UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelper::RotationHelper_RotateStep
-                (pRVar9,RotationMode__Enum_Z,15.0,(MethodInfo *)0x0);
+                (pRVar6,RotationMode__Enum_Z,15.0,(MethodInfo *)0x0);
       return;
     }
     break;
   case GizmoAction__Enum_ResetRotation:
-    pRVar9 = (this->fields).rotationHelper;
-    if (pRVar9 != (RotationHelper *)0x0) {
+    pRVar6 = (this->fields).rotationHelper;
+    if (pRVar6 != (RotationHelper *)0x0) {
       UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelper::RotationHelper_ResetRotation
-                (pRVar9,(MethodInfo *)0x0);
+                (pRVar6,(MethodInfo *)0x0);
       return;
     }
     break;
   case GizmoAction__Enum_TranslateXZ:
-    pGVar5 = (this->fields).gizmoMenuNgInstance;
-    if (pGVar5 != (GizmoMenuNg *)0x0) {
-      in_stack_2 = (Object_1__Class **)0x0;
-      UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoMenuNg::GizmoMenuNg_Pop
-                (pGVar5,(MethodInfo *)0x0);
-      pEVar6 = (this->fields).editorStateMachine;
-      if (pEVar6 != (EditorStateMachine *)0x0) {
-        unaff_EDI = (GizmoMenu *)(pEVar6->fields)._.data;
-        pSStack_1 = (Single__Class *)0x0;
-        in_stack_2 = (Object_1__Class **)&UNK_?;
-        pOVar7 = (Object *)func_?(TypeInfo__TranslateMode,&pSStack_1);
-        if (unaff_EDI != (GizmoMenu *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,
-                     (Object *)StringLiteral_translateMode,pOVar7,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                    );
-          pEVar6 = (this->fields).editorStateMachine;
-          if (pEVar6 != (EditorStateMachine *)0x0) {
-            unaff_EDI = (GizmoMenu *)(pEVar6->fields)._.data;
-            action = CONCAT13(1,(undefined3)action);
-            in_stack_2 = (Object_1__Class **)&UNK_?;
-            pOVar7 = (Object *)func_?(TypeInfo__System__Boolean,(byte *)((int)&action + 3))
-            ;
-            pSVar8 = (Single__Class *)StringLiteral_moveWithAvatar;
-joined_?:
-            if (unaff_EDI != (GizmoMenu *)0x0) {
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,(Object *)pSVar8,
-                         pOVar7,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
-              pEVar6 = (this->fields).editorStateMachine;
-              in_stack_2 = (Object_1__Class **)pSVar8;
-              if (pEVar6 != (EditorStateMachine *)0x0) {
-                FSMEntity::FSMEntity_PushState
-                          ((FSMEntity *)pEVar6,EditorEvent__Enum_ESTranslate,(MethodInfo *)0x0);
-                return;
-              }
-            }
-          }
-        }
-      }
-    }
-    break;
+    pGVar2 = (this->fields).gizmoMenuNgInstance;
+    unaff_ESI = this;
+    if (pGVar2 == (GizmoMenuNg *)0x0) break;
+    UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoMenuNg::GizmoMenuNg_Pop(pGVar2,(MethodInfo *)0x0);
+    pEVar3 = (this->fields).editorStateMachine;
+    if (pEVar3 == (EditorStateMachine *)0x0) break;
+    unaff_EDI = (GizmoMenu *)(pEVar3->fields)._.data;
+    pOVar4 = (Object *)func_?(TypeInfo__TranslateMode,&stack0xfffffff8);
+    if (unaff_EDI == (GizmoMenu *)0x0) break;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,
+               (Object *)StringLiteral_translateMode,pOVar4,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    pEVar3 = (this->fields).editorStateMachine;
+    if (pEVar3 == (EditorStateMachine *)0x0) break;
+    unaff_EDI = (GizmoMenu *)(pEVar3->fields)._.data;
+    action = CONCAT13(1,(undefined3)action);
+    pOVar4 = (Object *)func_?(TypeInfo__System__Boolean,(byte *)((int)&action + 3));
+    key = StringLiteral_moveWithAvatar;
+    goto joined_?;
   case GizmoAction__Enum_TranslateY:
-    pGVar5 = (this->fields).gizmoMenuNgInstance;
-    if (pGVar5 != (GizmoMenuNg *)0x0) {
-      in_stack_2 = (Object_1__Class **)0x0;
-      UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoMenuNg::GizmoMenuNg_Pop
-                (pGVar5,(MethodInfo *)0x0);
-      pEVar6 = (this->fields).editorStateMachine;
-      if (pEVar6 != (EditorStateMachine *)0x0) {
-        unaff_EDI = (GizmoMenu *)(pEVar6->fields)._.data;
-        action = CONCAT13(1,(undefined3)action);
-        in_stack_2 = (Object_1__Class **)&UNK_?;
-        pOVar7 = (Object *)func_?(TypeInfo__System__Boolean,(byte *)((int)&action + 3));
-        if (unaff_EDI != (GizmoMenu *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,
-                     (Object *)StringLiteral_moveWithAvatar,pOVar7,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                    );
-          pEVar6 = (this->fields).editorStateMachine;
-          if (pEVar6 != (EditorStateMachine *)0x0) {
-            unaff_EDI = (GizmoMenu *)(pEVar6->fields)._.data;
-            pSStack_1 = (Single__Class *)0x2;
-            in_stack_2 = (Object_1__Class **)&UNK_?;
-            pOVar7 = (Object *)func_?(TypeInfo__TranslateMode,&pSStack_1);
-            pSVar8 = (Single__Class *)StringLiteral_translateMode;
-            goto joined_?;
-          }
-        }
+    pGVar2 = (this->fields).gizmoMenuNgInstance;
+    unaff_ESI = this;
+    if (pGVar2 == (GizmoMenuNg *)0x0) break;
+    UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoMenuNg::GizmoMenuNg_Pop(pGVar2,(MethodInfo *)0x0);
+    pEVar3 = (this->fields).editorStateMachine;
+    if (pEVar3 == (EditorStateMachine *)0x0) break;
+    unaff_EDI = (GizmoMenu *)(pEVar3->fields)._.data;
+    action = CONCAT13(1,(undefined3)action);
+    pOVar4 = (Object *)func_?(TypeInfo__System__Boolean,(byte *)((int)&action + 3));
+    if (unaff_EDI == (GizmoMenu *)0x0) break;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,
+               (Object *)StringLiteral_moveWithAvatar,pOVar4,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    pEVar3 = (this->fields).editorStateMachine;
+    if (pEVar3 == (EditorStateMachine *)0x0) break;
+    unaff_EDI = (GizmoMenu *)(pEVar3->fields)._.data;
+    pOVar4 = (Object *)func_?(TypeInfo__TranslateMode,&stack0xfffffff8);
+    key = StringLiteral_translateMode;
+joined_?:
+    unaff_ESI = this;
+    if (unaff_EDI != (GizmoMenu *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,(Object *)key,pOVar4,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                );
+      pEVar3 = (this->fields).editorStateMachine;
+      if (pEVar3 != (EditorStateMachine *)0x0) {
+        FSMEntity::FSMEntity_PushState
+                  ((FSMEntity *)pEVar3,EditorEvent__Enum_ESTranslate,(MethodInfo *)0x0);
+        return;
       }
     }
     break;
   case GizmoAction__Enum_FlipX:
-    pRVar9 = (this->fields).rotationHelper;
-    if (pRVar9 != (RotationHelper *)0x0) {
+    pRVar6 = (this->fields).rotationHelper;
+    if (pRVar6 != (RotationHelper *)0x0) {
       UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelper::RotationHelper_RotateStep
-                (pRVar9,RotationMode__Enum_X,180.0,(MethodInfo *)0x0);
+                (pRVar6,RotationMode__Enum_X,180.0,(MethodInfo *)0x0);
       return;
     }
     break;
   case GizmoAction__Enum_FlipY:
-    pRVar9 = (this->fields).rotationHelper;
-    if (pRVar9 != (RotationHelper *)0x0) {
+    pRVar6 = (this->fields).rotationHelper;
+    if (pRVar6 != (RotationHelper *)0x0) {
       UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelper::RotationHelper_RotateStep
-                (pRVar9,RotationMode__Enum_Y,180.0,(MethodInfo *)0x0);
+                (pRVar6,RotationMode__Enum_Y,180.0,(MethodInfo *)0x0);
       return;
     }
     break;
   case GizmoAction__Enum_FlipZ:
-    pRVar9 = (this->fields).rotationHelper;
-    if (pRVar9 != (RotationHelper *)0x0) {
+    pRVar6 = (this->fields).rotationHelper;
+    if (pRVar6 != (RotationHelper *)0x0) {
       UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelper::RotationHelper_RotateStep
-                (pRVar9,RotationMode__Enum_Z,180.0,(MethodInfo *)0x0);
+                (pRVar6,RotationMode__Enum_Z,180.0,(MethodInfo *)0x0);
       return;
     }
     break;
   case GizmoAction__Enum_RotateStepXRight:
-    pRVar9 = (this->fields).rotationHelper;
-    if (pRVar9 != (RotationHelper *)0x0) {
+    pRVar6 = (this->fields).rotationHelper;
+    if (pRVar6 != (RotationHelper *)0x0) {
       UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelper::RotationHelper_RotateStep
-                (pRVar9,RotationMode__Enum_X,-15.0,(MethodInfo *)0x0);
+                (pRVar6,RotationMode__Enum_X,-15.0,(MethodInfo *)0x0);
       return;
     }
     break;
   case GizmoAction__Enum_RotateStepYRight:
-    pRVar9 = (this->fields).rotationHelper;
-    if (pRVar9 != (RotationHelper *)0x0) {
+    pRVar6 = (this->fields).rotationHelper;
+    if (pRVar6 != (RotationHelper *)0x0) {
       UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelper::RotationHelper_RotateStep
-                (pRVar9,RotationMode__Enum_Y,-15.0,(MethodInfo *)0x0);
+                (pRVar6,RotationMode__Enum_Y,-15.0,(MethodInfo *)0x0);
       return;
     }
     break;
   case GizmoAction__Enum_RotateStepZRight:
-    pRVar9 = (this->fields).rotationHelper;
-    if (pRVar9 == (RotationHelper *)0x0) break;
-    in_stack_2 = (Object_1__Class **)0x0;
-    goto code_?;
+    pRVar6 = (this->fields).rotationHelper;
+    if (pRVar6 != (RotationHelper *)0x0) {
+      UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelper::RotationHelper_RotateStep
+                (pRVar6,RotationMode__Enum_Z,-15.0,(MethodInfo *)0x0);
+      return;
+    }
+    break;
   default:
-    goto code_?;
-  }
-  bVar10 = false;
-  pRVar9 = (RotationHelper *)func_?();
-  if ((bVar10) && (!SBORROW1(*(char *)&pRVar9->klass,extraout_DL))) {
-    bVar10 = *(byte *)&pRVar9->klass < extraout_DL;
-    bVar11 = (byte)((int)pRVar9 >> 0x1f);
-    bVar12 = bVar11 + (byte)pRVar9;
-    bVar13 = CARRY1(bVar11,(byte)pRVar9) || CARRY1(bVar12,bVar10);
-    bVar11 = (byte)pSVar3 + extraout_CH;
-    *(byte *)(&unaff_EDI->klass + CONCAT31((int3)((uint)pSVar3 >> 8),bVar11 + bVar13) * 2) =
-         *(char *)(&unaff_EDI->klass + CONCAT31((int3)((uint)pSVar3 >> 8),bVar11 + bVar13) * 2) +
-         bVar12 + bVar10 + (CARRY1((byte)pSVar3,extraout_CH) || CARRY1(bVar11,bVar13));
     return;
   }
-code_?:
-  UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelper::RotationHelper_RotateStep
-            (pRVar9,RotationMode__Enum_Z,-15.0,(MethodInfo *)in_stack_2);
-code_?:
-code_?:
+  uVar7 = func_?();
+  pcVar8 = (char *)((ulonglong)uVar7 >> 0x20);
+  unaff_EBX->methodPointer = (Il2CppMethodPointer)((int)unaff_EBX->methodPointer << 1);
+  *(byte *)&unaff_EDI->klass = *(byte *)&unaff_EDI->klass >> 1;
+  *(byte *)extraout_ECX = (byte)*extraout_ECX ^ (byte)((uint)unaff_EBX >> 8);
+  bVar9 = (byte)((ulonglong)uVar7 >> 8);
+  *pcVar8 = *pcVar8 + bVar9;
+  *extraout_ECX = *extraout_ECX ^ (uint)unaff_EDI;
+  pcVar10 = (char *)((int)&unaff_EBX[1].methodPointer + 1);
+  *pcVar10 = *pcVar10 + (char)extraout_ECX;
+  if ((char *)*(undefined4 *)uVar7 != pcVar8) {
+    *extraout_ECX = *extraout_ECX ^ (uint)unaff_EDI;
+    cVar11 = (char)((uint)extraout_ECX >> 8);
+    *(char *)&unaff_EDI->klass = *(char *)&unaff_EDI->klass + cVar11;
+    uVar12 = *extraout_ECX;
+    cVar11 = cVar11 * '\x02';
+    puVar13 = (uint *)CONCAT22((short)((uint)extraout_ECX >> 0x10),
+                               CONCAT11(cVar11,(char)extraout_ECX));
+    uVar14 = *puVar13;
+    *(char *)&unaff_ESI->klass = *(char *)&unaff_ESI->klass + (char)((ulonglong)uVar7 >> 0x20);
+    pcVar10 = (char *)((uint)unaff_EDI ^ *puVar13);
+    *pcVar10 = *pcVar10 + (bVar9 ^ (byte)uVar12 ^ (byte)uVar14);
+    pcVar10 = (char *)((int)&unaff_EBX[1].methodPointer + 3);
+    *pcVar10 = *pcVar10 + cVar11;
+    pcVar15 = (code *)swi(3);
+    (*pcVar15)();
+    return;
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  pGVar2 = (this->fields).gizmoMenuNgInstance;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object,unaff_EDI,unaff_ESI);
+  }
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)pGVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    if ((this->fields).gizmoMenuNgInstance != (GizmoMenuNg *)0x0) {
+      action = GizmoAction__Enum_None;
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        func_?();
+        func_?(&TypeInfo__UnityEngine__Object);
+        func_?(&
+                        MethodInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c___Pop_b__28_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                       );
+        func_?(&TypeInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c);
+        cRam_? = '\x01';
+      }
+      pMVar5 = method;
+      pGVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)method,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        ((Object_1 *)pGVar16,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar1 != 0) {
+        action = GizmoAction__Enum_None;
+        method = unaff_EBX;
+        pGVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pMVar5,(MethodInfo *)0x0);
+        if ((TypeInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c->_1).
+            cctor_finished_or_no_cctor == 0) {
+          method = (MethodInfo *)&UNK_?;
+          func_?();
+        }
+        callbackFunction =
+             TypeInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c->static_fields->
+             __9__28_0;
+        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+          if ((TypeInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c->_1).
+              cctor_finished_or_no_cctor == 0) {
+            method = (MethodInfo *)&UNK_?;
+            func_?();
+          }
+          object = TypeInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c->
+                   static_fields->__9;
+          method = (MethodInfo *)&UNK_?;
+          callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+          method = (MethodInfo *)0x0;
+          action = (GizmoAction__Enum)
+                   MethodInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c___Pop_b__28_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+          ;
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object
+                     ,
+                     MethodInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c___Pop_b__28_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          TypeInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c->static_fields->
+          __9__28_0 = callbackFunction;
+          action = (GizmoAction__Enum)
+                   &TypeInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c->
+                    static_fields->__9__28_0;
+          method = (MethodInfo *)callbackFunction;
+          func_?();
+        }
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
+          method = (MethodInfo *)&UNK_?;
+          func_?();
+        }
+        action = GizmoAction__Enum_None;
+        method = (MethodInfo *)callbackFunction;
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (pGVar16,(BaseEventData *)0x0,
+                   (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                  );
+      }
+      return;
+    }
+    func_?();
+    pcVar15 = (code *)swi(3);
+    (*pcVar15)();
+    return;
+  }
   return;
 }
 

@@ -20,7 +20,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
        (pGVar3 = (Graphic *)(this_02->_0).byval_arg.data.typeHandle, pGVar3 == (Graphic *)0x0))
     goto code_?;
     pRVar4 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                       (pGVar3,(MethodInfo *)0x0);
+                        (pGVar3,(MethodInfo *)0x0);
     if (pRVar4 == (RectTransform *)0x0) goto code_?;
     value.y = (float)(int)this_02->interfaceOffsets;
     value.x = (float)(int)this_02->interfaceOffsets;
@@ -29,7 +29,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
     pCVar5 = (Component *)(this_02->_0).byval_arg.data.typeHandle;
     if (pCVar5 == (Component *)0x0) goto code_?;
     pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       (pCVar5,(MethodInfo *)0x0);
+                        (pCVar5,(MethodInfo *)0x0);
     euler_01.y = (float)pCVar5;
     euler_01.x = (float)pCVar5;
     euler_01.z = 0.0;
@@ -45,7 +45,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
     pCVar5 = (Component *)(this_02->_0).implementedInterfaces;
     if ((pCVar5 == (Component *)0x0) ||
        (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           (pCVar5,(MethodInfo *)0x0), pTVar6 == (Transform *)0x0))
+                            (pCVar5,(MethodInfo *)0x0), pTVar6 == (Transform *)0x0))
     goto code_?;
     value_01.z = 1.0;
     value_01.x = 1.0;
@@ -97,8 +97,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
   default:
     return 0;
   }
-  if (_UNK_? <=
-      (pLVar1->fields)._currentTime_5__2 / *(float *)&(this_02->_0).byval_arg.attrs) {
+  if (_UNK_? <= (pLVar1->fields)._currentTime_5__2 / *(float *)&(this_02->_0).byval_arg.attrs
+     ) {
     pAVar11 = (AnimationCurve *)(this_02->_0).this_arg.data.typeHandle;
     if (pAVar11 != (AnimationCurve *)0x0) {
       fVar12 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
@@ -106,7 +106,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
       pGVar3 = (Graphic *)(this_02->_0).byval_arg.data.typeHandle;
       if (pGVar3 != (Graphic *)0x0) {
         pRVar4 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                           (pGVar3,(MethodInfo *)0x0);
+                            (pGVar3,(MethodInfo *)0x0);
         if (pRVar4 != (RectTransform *)0x0) {
           fVar2 = 0.0;
           value_00.y = (float)(int)this_02->interfaceOffsets * fVar12;
@@ -119,14 +119,13 @@ code_?:
             pCVar5 = (Component *)(this_02->_0).byval_arg.data.typeHandle;
             if (pCVar5 != (Component *)0x0) {
               pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 (pCVar5,(MethodInfo *)0x0);
+                                  (pCVar5,(MethodInfo *)0x0);
               euler.y = (float)_UNK_?;
               euler.x = fVar2;
               euler.z = 0.0;
               pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                         Quaternion_Internal_FromEulerRad
                                   ((Quaternion *)&stack0xffffffb0,euler,(MethodInfo *)0x0);
-              pLVar1 = (LevelRewardAnimation_DisplayAndFadePrevBadge_d_28 *)0x0;
               if (pTVar6 != (Transform *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                           (pTVar6,*pQVar7,(MethodInfo *)0x0);
@@ -167,8 +166,8 @@ code_?:
               ;
               pCVar5 = (Component *)(this_02->_0).byval_arg.data.typeHandle;
               if (pCVar5 != (Component *)0x0) {
-                pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                   (pCVar5,(MethodInfo *)0x0);
+                pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_transform(pCVar5,(MethodInfo *)0x0);
                 euler_00.y = fVar12 * _UNK_? * _UNK_?;
                 euler_00.x = fVar2;
                 euler_00.z = 0.0;
@@ -204,7 +203,7 @@ code_?:
       pGVar3 = (Graphic *)(this_02->_0).byval_arg.data.typeHandle;
       if ((pGVar3 != (Graphic *)0x0) &&
          (pRVar4 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                             (pGVar3,(MethodInfo *)0x0), pRVar4 != (RectTransform *)0x0)) {
+                              (pGVar3,(MethodInfo *)0x0), pRVar4 != (RectTransform *)0x0)) {
         UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
         RectTransform_SetSizeWithCurrentAnchors
                   (pRVar4,RectTransform_Axis__Enum_Horizontal,
@@ -212,7 +211,7 @@ code_?:
         pGVar3 = (Graphic *)(this_02->_0).byval_arg.data.typeHandle;
         if ((pGVar3 != (Graphic *)0x0) &&
            (pRVar4 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                               (pGVar3,(MethodInfo *)0x0), pRVar4 != (RectTransform *)0x0)) {
+                                (pGVar3,(MethodInfo *)0x0), pRVar4 != (RectTransform *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
           RectTransform_SetSizeWithCurrentAnchors
                     (pRVar4,RectTransform_Axis__Enum_Vertical,
@@ -227,12 +226,14 @@ code_?:
     }
   }
 code_?:
-  iVar15 = func_?();
-  *(char *)(iVar15 + -0x5defefc3) = *(char *)(iVar15 + -0x5defefc3) - (char)((uint)iVar15 >> 8);
-  (this_02->_0).image = (Il2CppImage *)pLVar1->klass;
-  pcVar16 = (code *)swi(3);
-  bVar17 = (*pcVar16)();
-  return bVar17;
+  pcVar15 = (char *)func_?();
+  bVar16 = (byte)((uint)pcVar15 >> 8);
+  *pcVar15 = *pcVar15 + bVar16 + (*(byte *)(extraout_ECX + 0x3f) < bVar16);
+  sVar17 = ((ushort)this_02 & 3) - (*(ushort *)&(this_02->_0).image & 3);
+  *(ushort *)&(this_02->_0).image = *(short *)&(this_02->_0).image + (ushort)(0 < sVar17) * sVar17;
+  pcVar18 = (code *)swi(3);
+  bVar19 = (*pcVar18)();
+  return bVar19;
 }
 
 

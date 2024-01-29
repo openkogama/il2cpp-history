@@ -7,8 +7,8 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarHeadRotationHandlerLocal:
 
 {
   AvatarLimbManager+AvatarHeadRotationHandler::
-  AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer
-            ((AvatarLimbManager_AvatarHeadRotationHandler *)this,(MethodInfo *)0x0);
+  AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer_1
+            ((AvatarLimbManager_AvatarHeadRotationHandler *)this,EmoteTypes__Enum_None,unaff_ESI);
   (this->fields).shouldSendNetworkMessage = 1;
   return;
 }
@@ -190,8 +190,9 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarHeadRotationHandlerLocal:
   AvatarLimbManager_AvatarHeadRotationHandler_RotateHead
             ((AvatarLimbManager_AvatarHeadRotationHandler *)this,(this->fields).yawRotation,
              (this->fields).pitchRotation,(MethodInfo *)0x0);
-  (*(code *)(this->klass->vtable).UpdateIdleTimer.method)(this,this->klass[1]._0.image);
-  (this->fields)._.shouldLean = 1;
+  AvatarLimbManager+AvatarHeadRotationHandler::
+  AvatarLimbManager_AvatarHeadRotationHandler_UpdateRotation
+            ((AvatarLimbManager_AvatarHeadRotationHandler *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -220,17 +221,15 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarHeadRotationHandlerLocal:
     cRam_? = '\x01';
   }
   pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar2 = (pQVar1->identityQuaternion).x;
-  fVar3 = (pQVar1->identityQuaternion).y;
-  fVar4 = (pQVar1->identityQuaternion).z;
-  fVar5 = (pQVar1->identityQuaternion).w;
-  (this->fields)._.shouldLean = 1;
-  (this->fields).pitchRotation.x = fVar2;
-  (this->fields).pitchRotation.y = fVar3;
-  (this->fields).pitchRotation.z = fVar4;
-  (this->fields).pitchRotation.w = fVar5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  fVar2 = (pQVar1->identityQuaternion).y;
+  fVar3 = (pQVar1->identityQuaternion).z;
+  fVar4 = (pQVar1->identityQuaternion).w;
+  (this->fields).pitchRotation.x = (pQVar1->identityQuaternion).x;
+  (this->fields).pitchRotation.y = fVar2;
+  (this->fields).pitchRotation.z = fVar3;
+  (this->fields).pitchRotation.w = fVar4;
+  MVWorldObject.dll::LogicEvaluateInputSignalsAnd::LogicEvaluateInputSignalsAnd__ctor
+            ((LogicEvaluateInputSignalsAnd *)this,(MethodInfo *)0x0);
   return;
 }
 

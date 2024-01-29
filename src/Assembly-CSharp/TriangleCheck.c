@@ -100,7 +100,7 @@ bool Assembly-CSharp.dll::TriangleCheck::TriangleCheck_CheckTriangle
   fVar11 = MathFunctions::MathFunctions_DotProduct
                      ((Vector3 *)&stack0xffffffbc,(Vector3 *)&stack0xffffff6c,(MethodInfo *)0x0);
   bVar23 = TriangleCheck_GetLowestRoot
-                    (fVar6,fVar11 + fVar11,3.2956083e-29 - _UNK_?,1.0,&distance,
+                    (fVar6,fVar11 + fVar11,3.296581e-29 - _UNK_?,1.0,&distance,
                      (MethodInfo *)0x0);
   if (bVar23 != 0) {
     dStack_20 = (double)distance;
@@ -159,10 +159,10 @@ bool Assembly-CSharp.dll::TriangleCheck::TriangleCheck_CheckTriangle
   in_stack_34 = &UNK_?;
   bVar23 = TriangleCheck_GetLowestRoot
                     ((float)(
-                            __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             ^ 0xADDR) * fVar30 + fVar31 * fVar31,
                      (fVar33 + fVar33) * fVar30 - (fVar31 + fVar31) * fVar32,
-                     (_UNK_? - 3.29563e-29) * fVar30 + fVar32 * fVar32,(float)dStack_20,
+                     (_UNK_? - 3.2966025e-29) * fVar30 + fVar32 * fVar32,(float)dStack_20,
                      &distance,(MethodInfo *)0x0);
   if (((bVar23 != 0) && (fVar30 = (fVar31 * distance - fVar32) / fVar30, _UNK_? <= fVar30)) &&
      (fVar30 <= _UNK_?)) {
@@ -184,7 +184,7 @@ bool Assembly-CSharp.dll::TriangleCheck::TriangleCheck_CheckTriangle
                      ((Vector3 *)&stack0xffffffbc,(Vector3 *)&stack0xffffff84,(MethodInfo *)0x0);
   bVar23 = TriangleCheck_GetLowestRoot
                     ((float)(
-                            __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             ^ 0xADDR) * fVar30 + fVar31 * fVar31,
                      (fVar33 + fVar33) * fVar30 - (fVar31 + fVar31) * fVar32,
                      (_UNK_? - fVar15) * fVar30 + fVar32 * fVar32,(float)dStack_20,&distance,
@@ -209,7 +209,7 @@ bool Assembly-CSharp.dll::TriangleCheck::TriangleCheck_CheckTriangle
                      ((Vector3 *)&stack0xffffffbc,(Vector3 *)&stack0xffffff78,(MethodInfo *)0x0);
   bVar23 = TriangleCheck_GetLowestRoot
                     ((float)(
-                            __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             ^ 0xADDR) * fVar25 + fVar29 * fVar29,
                      (fVar32 + fVar32) * fVar25 - (fVar29 + fVar29) * fVar31,
                      (_UNK_? - fVar18) * fVar25 + fVar31 * fVar31,(float)dStack_20,&distance,
@@ -261,10 +261,10 @@ bool Assembly-CSharp.dll::TriangleCheck::TriangleCheck_GetLowestRoot
       dVar2 = SQRT(dVar2);
     }
     fVar3 = ((float)((uint)b ^
-                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) -
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) -
             (float)dVar2) / (a + a);
     fVar4 = ((float)((uint)b ^
-                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) +
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) +
             (float)dVar2) / (a + a);
     fVar1 = fVar4;
     if (fVar4 < fVar3) {

@@ -960,7 +960,7 @@ void Assembly-CSharp.dll::SpawnRoleUnlockedPopupController::
         do {
           if (pIVar7->interfaceOffsets[uVar8].interfaceType == (Il2CppClass *)TypeInfo__IPlayModeUI
              ) {
-            ppMVar10 = &(&(pIVar6->klass->vtable).set_InLobbyState)
+            ppMVar10 = &(&(pIVar6->klass->vtable).set_IsInPauseMenu)
                         [pIVar6->klass->interfaceOffsets[uVar8].offset].method;
             goto code_?;
           }

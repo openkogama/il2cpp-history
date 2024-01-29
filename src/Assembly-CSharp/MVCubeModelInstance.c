@@ -1056,8 +1056,8 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_Rebuild
     puStack_3 = &DAT_?;
     uStack_4 = *unaff_FS_OFFSET;
     *unaff_FS_OFFSET = &uStack_4;
-    puStack_5 = &stack0xffffff80;
-    puVar6 = &stack0xffffff80;
+    puStack_5 = &stack0xffffff9c;
+    puVar6 = &stack0xffffff9c;
     if (cRam_? == '\0') {
       func_?();
       func_?();
@@ -1087,11 +1087,10 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_Rebuild
       pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
                StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
                Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                           *)&stack0xffffff8c,this_00,
+                         (&DStack_9,this_00,
                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__GetEnumerator__
                          );
-      uStack_9 = 0;
+      uStack_10 = 0;
       DStack_7._dictionary =
            (Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar8->_dictionary;
       DStack_7._version = pDVar8->_version;
@@ -1100,50 +1099,35 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_Rebuild
       DStack_7._current._4_8_ = *(undefined8 *)&(pDVar8->_current).key.index;
       DStack_7._getEnumeratorRetType = pDVar8->_getEnumeratorRetType;
       uStack_2 = 1;
-      pDStack_10 = &DStack_7;
+      pDStack_11 = &DStack_7;
       while( true ) {
-        bVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[MV
+        bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[MV
                 ::WorldObject::IntVector,System::Object]::
                 Dictionary_2_TKey_TValue_Enumerator_MV_WorldObject_IntVector_System_Object__MoveNext
                           (&DStack_7,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CubeModelChunk>__MoveNext__
                           );
-        if (bVar11 == 0) {
+        if (bVar12 == 0) {
           uStack_2 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&DStack_7,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CubeModelChunk>__Dispose__
-                     ,in_stack_12);
+                     ,unaff_EDI);
           *unaff_FS_OFFSET = uStack_4;
           return;
         }
-        this_01 = DStack_7._current.value;
-        fStack_13 = (pRVar1->fields)._Scale_k__BackingField;
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pVVar14 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uStack_15._0_4_ = (pVVar14->oneVector).x;
-        uStack_15._4_4_ = (pVVar14->oneVector).y;
-        fStack_16 = (pVVar14->oneVector).z;
-        fStack_17 = fStack_16 * fStack_13;
-        fStack_18 = (float)uStack_15._4_4_ * fStack_13;
-        fStack_19 = (float)(undefined4)uStack_15 * fStack_13;
-        if ((CubeModelChunk *)this_01 == (CubeModelChunk *)0x0) break;
-        scale.y = fStack_18;
-        scale.x = fStack_19;
-        scale.z = fStack_17;
+        if ((CubeModelChunk *)DStack_7._current.value == (CubeModelChunk *)0x0) break;
         CubeModelChunk::CubeModelChunk_RebuildChunk
-                  ((CubeModelChunk *)this_01,scale,(MethodInfo *)0x0);
+                  ((CubeModelChunk *)DStack_7._current.value,
+                   (pRVar1->fields)._Scale_k__BackingField,(MethodInfo *)0x0);
       }
     }
   }
-  uVar20 = func_?(&stack0xffffff70);
-  func_?(uVar20);
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  uVar13 = func_?(&stack0xffffff8c);
+  func_?(uVar13);
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

@@ -102,7 +102,7 @@ Bounds * Assembly-CSharp.dll::MVRotator::MVRotator_GetLocalBounds
   (__return_storage_ptr__->m_Extents).y = 0.0;
   (__return_storage_ptr__->m_Extents).z = 0.0;
   pBVar1 = MVGroup::MVGroup_GetLocalBounds
-                      ((Bounds *)&stack0xffffffe4,(MVGroup *)this,boundsContext,(MethodInfo *)0x0);
+                     ((Bounds *)&stack0xffffffa0,(MVGroup *)this,boundsContext,(MethodInfo *)0x0);
   fVar2 = (pBVar1->m_Center).y;
   fVar3 = (pBVar1->m_Center).z;
   fVar4 = (pBVar1->m_Extents).x;
@@ -117,18 +117,27 @@ Bounds * Assembly-CSharp.dll::MVRotator::MVRotator_GetLocalBounds
   if (boundsContext == BoundsContext__Enum_Preview) {
     uVar7 = (__return_storage_ptr__->m_Center).x;
     uVar8 = (__return_storage_ptr__->m_Center).y;
+    fVar3 = (float)(uVar7 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                   );
+    fVar2 = (float)(uVar8 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                   );
+    fVar6 = (float)((uint)(__return_storage_ptr__->m_Center).z ^
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     uVar9 = (__return_storage_ptr__->m_Extents).x;
     uVar10 = (__return_storage_ptr__->m_Extents).y;
-    bounds.m_Center.y =
-         (float)(uVar8 ^ __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
-    bounds.m_Center.x =
-         (float)(uVar7 ^ __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
-    bounds.m_Center.z = 0.0;
-    bounds.m_Extents.x = (float)uVar9 * _UNK_? * _UNK_?;
-    bounds.m_Extents.y = (float)uVar10 * _UNK_? * _UNK_?;
-    bounds.m_Extents.z = (__return_storage_ptr__->m_Extents).z * _UNK_? * _UNK_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate_1
-              (__return_storage_ptr__,bounds,(MethodInfo *)0x0);
+    fVar11 = (float)uVar9 * _UNK_? * _UNK_?;
+    fVar5 = (float)uVar10 * _UNK_? * _UNK_?;
+    fVar4 = (__return_storage_ptr__->m_Extents).z * _UNK_? * _UNK_?;
+    point.y = fVar2 - fVar5;
+    point.x = fVar3 - fVar11;
+    point.z = fVar6 - fVar4;
+    UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate
+              (__return_storage_ptr__,point,(MethodInfo *)0x0);
+    point_00.y = fVar5 + fVar2;
+    point_00.x = fVar11 + fVar3;
+    point_00.z = fVar4 + fVar6;
+    UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate
+              (__return_storage_ptr__,point_00,(MethodInfo *)0x0);
   }
   return __return_storage_ptr__;
 }

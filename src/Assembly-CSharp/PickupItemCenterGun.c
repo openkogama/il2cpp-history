@@ -15,50 +15,62 @@ void Assembly-CSharp.dll::PickupItemCenterGun::PickupItemCenterGun_OnBulletHit
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
-    id = MVWorldObjectClientManager::
-         MVWorldObjectClientManager_GetWoIDHighestInHierarchyWithComponent
-                   (pMVar1,voxelHit._36_4_,
-                    int_MethodInfo__MVWorldObjectClientManager__GetWoIDHighestInHierarchyWithComponent<InteractionDataHandlerBase>_int_
-                   );
+    key = MVWorldObjectClientManager::
+          MVWorldObjectClientManager_GetWoIDHighestInHierarchyWithComponent
+                    (pMVar1,voxelHit._36_4_,
+                     int_MethodInfo__MVWorldObjectClientManager__GetWoIDHighestInHierarchyWithComponent<InteractionDataHandlerBase>_int_
+                    );
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
-      pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                         (pMVar1,id,(MethodInfo *)0x0);
-      iVar3 = func_?();
-      if (iVar3 == 0) {
-        pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
-                           ((Quaternion *)&stack0xffffffe8,voxelHit._8_12_,(MethodInfo *)0x0);
-        position.y = voxelHit.point.x;
-        position.x = (float)in_stack_5;
-        position.z = voxelHit.point.y;
-        OneShotPooledParticleSystem::OneShotPooledParticleSystem_Instantiate_1
-                  (PoolEnums__Enum_NormalBulletSparks,position,*pQVar4,
-                   (Nullable_1_UnityEngine_Color_)ZEXT820(0),(MethodInfo *)0x0);
-        return;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
       }
-      pMVar6 = (this->fields)._._.owner;
-      if ((pMVar6 != (MVPickupOwner *)0x0) &&
-         ((pMVar6->fields)._.worldObjectParent != (MVWorldObjectClient *)0x0)) {
-        if ((TypeInfo__PickupItemCenterGun->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+      this_00 = (pMVar1->fields).worldObjects;
+      pOVar2 = (Object *)0x0;
+      if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+        Dictionary_2_System_Int32_System_Object__TryGetValue
+                  ((Dictionary_2_System_Int32_System_Object_ *)this_00,key,
+                   (Object **)&stack0xfffffff8,
+                   MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                  );
+        iVar3 = func_?();
+        if (iVar3 == 0) {
+          pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
+                             ((Quaternion *)&stack0xffffffe4,voxelHit._8_12_,(MethodInfo *)0x0);
+          position.y = voxelHit.point.x;
+          position.x = (float)in_stack_5;
+          position.z = voxelHit.point.y;
+          OneShotPooledParticleSystem::OneShotPooledParticleSystem_Instantiate_1
+                    (PoolEnums__Enum_NormalBulletSparks,position,*pQVar4,
+                     (Nullable_1_UnityEngine_Color_)ZEXT820(0),(MethodInfo *)0x0);
+          return;
         }
-        if (pMVar2 != (MVWorldObject *)0x0) {
-          iVar3 = func_?();
-          if (iVar3 != 0) {
+        pMVar6 = (this->fields)._._.owner;
+        if ((pMVar6 != (MVPickupOwner *)0x0) &&
+           ((pMVar6->fields)._.worldObjectParent != (MVWorldObjectClient *)0x0)) {
+          if ((TypeInfo__PickupItemCenterGun->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          if (pOVar2 != (Object *)0x0) {
             iVar3 = func_?();
             if (iVar3 != 0) {
-              func_?(0,TypeInfo__IBulletImpactVisualizer,iVar3,in_stack_5,
-                              voxelHit.point.x,voxelHit.point.y,voxelHit.point.z,voxelHit.normal.x,
-                              voxelHit.normal.y,voxelHit.normal.z,voxelHit.cubePos._0_4_,
-                              voxelHit._28_4_,voxelHit.face,voxelHit._36_4_,voxelHit.woId,
-                              voxelHit.cube,voxelHit.distance,voxelHit.collider,voxelHit.transform,
-                              voxelHit._60_8_,voxelHit.interactionFlags._4_4_,lineOfFire.m_Origin.x,
-                              lineOfFire.m_Origin.y,lineOfFire.m_Origin.z,lineOfFire.m_Direction.x,
-                              lineOfFire.m_Direction.y);
-              return;
+              iVar3 = func_?();
+              if (iVar3 != 0) {
+                func_?(0,TypeInfo__IBulletImpactVisualizer,iVar3,in_stack_5,
+                                voxelHit.point.x,voxelHit.point.y,voxelHit.point.z,voxelHit.normal.x
+                                ,voxelHit.normal.y,voxelHit.normal.z,voxelHit.cubePos._0_4_,
+                                voxelHit._28_4_,voxelHit.face,voxelHit._36_4_,voxelHit.woId,
+                                voxelHit.cube,voxelHit.distance,voxelHit.collider,voxelHit.transform
+                                ,voxelHit._60_8_,voxelHit.interactionFlags._4_4_,
+                                lineOfFire.m_Origin.x,lineOfFire.m_Origin.y,lineOfFire.m_Origin.z,
+                                lineOfFire.m_Direction.x,lineOfFire.m_Direction.y);
+                return;
+              }
             }
+            goto code_?;
           }
-          goto code_?;
         }
       }
     }
@@ -332,66 +344,75 @@ void Assembly-CSharp.dll::PickupItemCenterGun::PickupItemCenterGun_OnLocalBullet
                 (this_00,voxelHit_00,0.0,unaff_ESI);
       pMVar3 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if (pMVar3 != (MVWorldObjectClientManager *)0x0) {
-        id = MVWorldObjectClientManager::
-             MVWorldObjectClientManager_GetWoIDHighestInHierarchyWithComponent
-                       (pMVar3,voxelHit._36_4_,
-                        int_MethodInfo__MVWorldObjectClientManager__GetWoIDHighestInHierarchyWithComponent<InteractionDataHandlerBase>_int_
-                       );
+        key = MVWorldObjectClientManager::
+              MVWorldObjectClientManager_GetWoIDHighestInHierarchyWithComponent
+                        (pMVar3,voxelHit._36_4_,
+                         int_MethodInfo__MVWorldObjectClientManager__GetWoIDHighestInHierarchyWithComponent<InteractionDataHandlerBase>_int_
+                        );
         pMVar3 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if (pMVar3 != (MVWorldObjectClientManager *)0x0) {
-          this_01 = (MVWorldObjectClient *)
-                    MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                              (pMVar3,id,(MethodInfo *)0x0);
-          if (this_01 != (MVWorldObjectClient *)0x0) {
-            x = MVWorldObjectClient::MVWorldObjectClient_get_InteractionDataHandlerBase
-                          (this_01,(MethodInfo *)0x0);
-            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-              lineOfFire.m_Direction.x = (float)TypeInfo__UnityEngine__Object;
-              lineOfFire.m_Origin.z = (float)&UNK_?;
-              func_?();
-            }
-            bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                              ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-            if (bVar4 != 0) {
-              pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if ((pMVar1 != (MVNetworkGame *)0x0) &&
-                 (this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
-                 this_02 != (MVLocalPlayer *)0x0)) {
-                bVar4 = MVPlayer::MVPlayer_IsOnSameTeam_1
-                                  ((MVPlayer *)this_02,this_01,(MethodInfo *)0x0);
-                if (bVar4 != 0) {
-                  return;
-                }
-                fVar5 = (this->fields).impulseStrength;
-                auStack_6._16_4_ = lineOfFire.m_Direction.y * fVar5;
-                impulse.y = lineOfFire.m_Direction.x * fVar5;
-                impulse.x = lineOfFire.m_Origin.z * fVar5;
-                impulse.z = (float)auStack_6._16_4_;
-                pIVar7 = CenterGunHitPackage::CenterGunHitPackage_Create
-                                   ((InteractionData *)auStack_6,impulse,(MethodInfo *)0x0);
-                if (x != (InteractionDataHandlerBase *)0x0) {
-                  uVar8._0_1_ = pIVar7->interactionType;
-                  uVar8._1_1_ = pIVar7->playerKilledByType;
-                  uVar8._2_2_ = *(undefined2 *)&pIVar7->field_0x12;
-                  (*(code *)(x->klass->vtable).__unknown_1.method)
-                            (x,(this->fields)._._.owner,pIVar7->damage,(pIVar7->impulse).x,
-                             (pIVar7->impulse).y,(pIVar7->impulse).z,uVar8,0,
-                             (x->klass->vtable).OnValidate.methodPtr);
-                  return;
-                }
-              }
-              goto code_?;
-            }
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
           }
-          return;
+          this_01 = (pMVar3->fields).worldObjects;
+          pMStack_4 = (MVWorldObjectClient *)0x0;
+          if (this_01 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+            Dictionary_2_System_Int32_System_Object__TryGetValue
+                      ((Dictionary_2_System_Int32_System_Object_ *)this_01,key,(Object **)&pMStack_4
+                       ,
+                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                      );
+            wo = pMStack_4;
+            if (pMStack_4 != (MVWorldObjectClient *)0x0) {
+              x = MVWorldObjectClient::MVWorldObjectClient_get_InteractionDataHandlerBase
+                            (pMStack_4,(MethodInfo *)0x0);
+              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                                ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+              if (bVar5 != 0) {
+                pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                if ((pMVar1 != (MVNetworkGame *)0x0) &&
+                   (this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0)
+                   , this_02 != (MVLocalPlayer *)0x0)) {
+                  bVar5 = MVPlayer::MVPlayer_IsOnSameTeam_1
+                                    ((MVPlayer *)this_02,wo,(MethodInfo *)0x0);
+                  if (bVar5 != 0) {
+                    return;
+                  }
+                  fVar6 = (this->fields).impulseStrength;
+                  impulse.y = lineOfFire.m_Direction.x * fVar6;
+                  impulse.x = lineOfFire.m_Origin.z * fVar6;
+                  impulse.z = lineOfFire.m_Direction.y * fVar6;
+                  pIVar7 = CenterGunHitPackage::CenterGunHitPackage_Create
+                                     ((InteractionData *)&puStack_8,impulse,(MethodInfo *)0x0);
+                  if (x != (InteractionDataHandlerBase *)0x0) {
+                    uVar9._0_1_ = pIVar7->interactionType;
+                    uVar9._1_1_ = pIVar7->playerKilledByType;
+                    uVar9._2_2_ = *(undefined2 *)&pIVar7->field_0x12;
+                    (*(code *)(x->klass->vtable).__unknown_1.method)
+                              (x,(this->fields)._._.owner,pIVar7->damage,(pIVar7->impulse).x,
+                               (pIVar7->impulse).y,(pIVar7->impulse).z,uVar9,0,
+                               (x->klass->vtable).OnValidate.methodPtr);
+                    return;
+                  }
+                }
+                goto code_?;
+              }
+            }
+            return;
+          }
         }
       }
     }
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

@@ -19,31 +19,39 @@ void Assembly-CSharp.dll::FirstTimeButtonClicked::FirstTimeButtonClicked_Clicked
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)pFVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pFVar1 = (this->fields).firstTimeActivatableElementBase;
-    if (pFVar1 == (FirstTimeActivatableElementBase *)0x0) {
+  if (bVar2 == 0) goto code_?;
+  pFVar1 = (this->fields).firstTimeActivatableElementBase;
+  if (pFVar1 != (FirstTimeActivatableElementBase *)0x0) {
+    firstTimeEvent = (pFVar1->fields)._.firstTimeEvent;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__FirstTimeEventManager);
+      cRam_? = '\x01';
+    }
+    this_00 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
+    if (this_00 != (FirstTimeState *)0x0) {
+      bVar2 = MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::
+              FirstTimeState_HasFirstTimeEventOccured(this_00,firstTimeEvent,(MethodInfo *)0x0);
+      if (bVar2 == 0) {
+        pFVar1 = (this->fields).firstTimeActivatableElementBase;
+        if (pFVar1 == (FirstTimeActivatableElementBase *)0x0) goto code_?;
+        FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
+                  ((pFVar1->fields)._.firstTimeEvent,(MethodInfo *)0x0);
+      }
 code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
+                ((this->fields)._.firstTimeEvent,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                ((Object_1 *)this,(MethodInfo *)0x0);
       return;
     }
-    bVar2 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
-                      ((pFVar1->fields)._.firstTimeEvent,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
-      pFVar1 = (this->fields).firstTimeActivatableElementBase;
-      if (pFVar1 == (FirstTimeActivatableElementBase *)0x0) goto code_?;
-      FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
-                ((pFVar1->fields)._.firstTimeEvent,(MethodInfo *)0x0);
-    }
   }
-  FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
-            ((this->fields)._.firstTimeEvent,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-            ((Object_1 *)this,(MethodInfo *)0x0);
+code_?:
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -59,22 +67,32 @@ void Assembly-CSharp.dll::FirstTimeButtonClicked::FirstTimeButtonClicked_FirstTi
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  bVar1 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
-                    ((this->fields)._.firstTimeEvent,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    (this->fields).isReady = 1;
-    if ((this->fields).buttonHasBeenClicked != 0) {
-      FirstTimeButtonClicked_HandleFirstTimeEvent(this,(MethodInfo *)0x0);
+  firstTimeEvent = (this->fields)._.firstTimeEvent;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__FirstTimeEventManager);
+    cRam_? = '\x01';
+  }
+  this_00 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
+  if (this_00 != (FirstTimeState *)0x0) {
+    bVar1 = MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::
+            FirstTimeState_HasFirstTimeEventOccured(this_00,firstTimeEvent,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      (this->fields).isReady = 1;
+      if ((this->fields).buttonHasBeenClicked != 0) {
+        FirstTimeButtonClicked_HandleFirstTimeEvent(this,(MethodInfo *)0x0);
+      }
       return;
     }
-  }
-  else {
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
               ((Object_1 *)this,(MethodInfo *)0x0);
+    return;
   }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -95,31 +113,39 @@ void Assembly-CSharp.dll::FirstTimeButtonClicked::FirstTimeButtonClicked_HandleF
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)pFVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pFVar1 = (this->fields).firstTimeActivatableElementBase;
-    if (pFVar1 == (FirstTimeActivatableElementBase *)0x0) {
+  if (bVar2 == 0) goto code_?;
+  pFVar1 = (this->fields).firstTimeActivatableElementBase;
+  if (pFVar1 != (FirstTimeActivatableElementBase *)0x0) {
+    firstTimeEvent = (pFVar1->fields)._.firstTimeEvent;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__FirstTimeEventManager);
+      cRam_? = '\x01';
+    }
+    this_00 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
+    if (this_00 != (FirstTimeState *)0x0) {
+      bVar2 = MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::
+              FirstTimeState_HasFirstTimeEventOccured(this_00,firstTimeEvent,(MethodInfo *)0x0);
+      if (bVar2 == 0) {
+        pFVar1 = (this->fields).firstTimeActivatableElementBase;
+        if (pFVar1 == (FirstTimeActivatableElementBase *)0x0) goto code_?;
+        FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
+                  ((pFVar1->fields)._.firstTimeEvent,(MethodInfo *)0x0);
+      }
 code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
+                ((this->fields)._.firstTimeEvent,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                ((Object_1 *)this,(MethodInfo *)0x0);
       return;
     }
-    bVar2 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
-                      ((pFVar1->fields)._.firstTimeEvent,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
-      pFVar1 = (this->fields).firstTimeActivatableElementBase;
-      if (pFVar1 == (FirstTimeActivatableElementBase *)0x0) goto code_?;
-      FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
-                ((pFVar1->fields)._.firstTimeEvent,(MethodInfo *)0x0);
-    }
   }
-  FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
-            ((this->fields)._.firstTimeEvent,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-            ((Object_1 *)this,(MethodInfo *)0x0);
+code_?:
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

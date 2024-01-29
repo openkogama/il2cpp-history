@@ -233,13 +233,13 @@ void Assembly-CSharp.dll::CEEnterCubeTutorial::CEEnterCubeTutorial_Execute
     func_?(&TypeInfo__EditorEvent);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,(ExceptionArgument__Enum)e,(MethodInfo *)0x0);
+  this_00 = e;
   if (e != (EditorStateMachine *)0x0) {
     pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
     if (pMVar1 != (MVWorldObjectClient *)0x0) {
-      value = (Object *)func_?();
-      FSMEntity::FSMEntity_set_Event((FSMEntity *)e,value,(MethodInfo *)0x0);
+      e = (EditorStateMachine *)0x38;
+      value = (Object *)func_?(TypeInfo__EditorEvent,&e);
+      FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,value,(MethodInfo *)0x0);
     }
     return;
   }

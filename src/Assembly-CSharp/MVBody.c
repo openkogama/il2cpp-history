@@ -78,13 +78,13 @@ void Assembly-CSharp.dll::MVBody::MVBody_AlignModel
               uStack_15._4_4_ = pVVar12->y;
               fStack_16 = pVVar12->z;
               fVar17 = (float)((undefined4)uStack_15 ^
-                              __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               );
               uStack_13 = CONCAT44(uStack_15._4_4_ ^
-                                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                    ,(undefined4)uStack_13);
               VStack_18.z = (float)((uint)fStack_16 ^
-                                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                    );
               pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
                                   (&VStack_8,bone,(MethodInfo *)0x0);
@@ -127,12 +127,12 @@ void Assembly-CSharp.dll::MVBody::MVBody_AlignModel
           uStack_15._4_4_ = pVVar12->y;
           fStack_16 = pVVar12->z;
           fVar14 = (float)((undefined4)uStack_15 ^
-                          __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           uStack_13 = CONCAT44(uStack_15._4_4_ ^
-                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                ,(undefined4)uStack_13);
           VStack_18.z = (float)((uint)fStack_16 ^
-                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                );
           pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
                               (&VStack_8,bone,(MethodInfo *)0x0);
@@ -172,24 +172,24 @@ void Assembly-CSharp.dll::MVBody::MVBody_AlignModel
               uStack_15._4_4_ = pVVar12->y;
               fStack_16 = pVVar12->z;
               fVar17 = (float)((undefined4)uStack_15 ^
-                              __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               );
               uStack_13 = CONCAT44(uStack_15._4_4_ ^
-                                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                    ,(undefined4)uStack_13);
               VStack_18.z = (float)((uint)fStack_16 ^
-                                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                    );
               pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
                                   (&VStack_8,bone,(MethodInfo *)0x0);
               uStack_15._0_4_ = pVVar12->x;
               uStack_15._4_4_ = pVVar12->y;
               uVar23 = (undefined4)uStack_15 ^
-                      __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field;
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
               uVar24 = uStack_15._4_4_ ^
-                      __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field;
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
               fVar21 = (float)((uint)pVVar12->z ^
-                              __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               );
               uVar22 = uStack_13._4_4_;
               fVar14 = VStack_18.z;
@@ -364,13 +364,15 @@ void Assembly-CSharp.dll::MVBody::MVBody_Attach
       if ((pMVar1 == (MVBodyObject *)0x0) ||
          (pBVar2 = (pMVar1->fields).boneAnimation, pBVar2 == (BoneAnimation *)0x0))
       goto code_?;
-      BoneAnimation::BoneAnimation_Attach(pBVar2,mvAvatar,isLocal,(MethodInfo *)0x0);
+      (pBVar2->fields).mvAvatar = mvAvatar;
+      func_?(&(pBVar2->fields).mvAvatar,mvAvatar);
+      (pBVar2->fields).isLocal = isLocal;
     }
     pMVar1 = (this->fields).bodyObject;
     if (pMVar1 != (MVBodyObject *)0x0) {
       pAVar4 = (pMVar1->fields).avatarBlinker;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__UnityEngine__Object);
       }
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                         ((Object_1 *)pAVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
@@ -384,8 +386,7 @@ void Assembly-CSharp.dll::MVBody::MVBody_Attach
         if ((pMVar1 == (MVBodyObject *)0x0) ||
            (pAVar4 = (pMVar1->fields).avatarBlinker, pAVar4 == (AvatarBlinker *)0x0))
         goto code_?;
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::ColumnLayout::
-        ColumnLayout_OnColumnResized((ColumnLayout *)pAVar4,(Column *)0x0,in_stack_5);
+        (pAVar4->fields)._.visible = 1;
       }
       MVBody_set_CollidersEnabled(this,0,(MethodInfo *)0x0);
       pMVar1 = (this->fields).bodyObject;
@@ -400,8 +401,8 @@ void Assembly-CSharp.dll::MVBody::MVBody_Attach
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -1200,37 +1201,74 @@ void Assembly-CSharp.dll::MVBody::MVBody_Detach(MVBody *this,MethodInfo *method)
   pMVar1 = (this->fields).bodyObject;
   if ((pMVar1 != (MVBodyObject *)0x0) &&
      (this_00 = (pMVar1->fields).boneAnimation, this_00 != (BoneAnimation *)0x0)) {
-    BoneAnimation::BoneAnimation_Detach(this_00,(MethodInfo *)0x0);
-    pMVar1 = (this->fields).bodyObject;
-    if (pMVar1 != (MVBodyObject *)0x0) {
-      pAVar2 = (pMVar1->fields).avatarBlinker;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Debug);
+      func_?(&MethodInfo__System__Collections__Generic__Queue<AnimationData>__Clear__);
+      func_?(&StringLiteral_Detach_);
+      cRam_? = '\x01';
+    }
+    this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this_00,(MethodInfo *)0x0);
+    if (this_04 != (GameObject *)0x0) {
+      pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
+                         ((Object_1 *)this_04,(MethodInfo *)0x0);
+      pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_Detach_,pSVar2,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
-      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pAVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar3 != 0) {
-        pMVar1 = (this->fields).bodyObject;
-        if ((pMVar1 == (MVBodyObject *)0x0) ||
-           (pAVar2 = (pMVar1->fields).avatarBlinker, pAVar2 == (AvatarBlinker *)0x0))
-        goto code_?;
-        System.Xml.dll::System::Xml::QueryOutputWriter::QueryOutputWriter_EndCDataSection
-                  ((QueryOutputWriter *)pAVar2,(MethodInfo *)0x0);
-      }
-      pMVar1 = (this->fields).bodyObject;
-      if ((pMVar1 != (MVBodyObject *)0x0) &&
-         (this_01 = (pMVar1->fields).avatarBlobShadowController,
-         this_01 != (AvatarBlobShadowController *)0x0)) {
-        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                  ((Behaviour *)this_01,0,(MethodInfo *)0x0);
-        return;
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)pSVar2,(MethodInfo *)0x0);
+      this_01 = (this_00->fields).avatarAnimation;
+      if (this_01 != (Animation *)0x0) {
+        UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Stop
+                  (this_01,(MethodInfo *)0x0);
+        this_02 = (Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData_ *)
+                  (this_00->fields).animationQueue;
+        if (this_02 != (Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::
+          Queue`1[NotificationAreaSingleInstanceQueue+NotificationQueueData]::
+          Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData__Clear
+                    (this_02,MethodInfo__System__Collections__Generic__Queue<AnimationData>__Clear__
+                    );
+          (this_00->fields).nextAnim = (AnimationData *)0x0;
+          func_?(&(this_00->fields).nextAnim,0);
+          (this_00->fields).currentAnim = (AnimationData *)0x0;
+          func_?(&(this_00->fields).currentAnim,0);
+          (this_00->fields).prevAnim = (AnimationData *)0x0;
+          func_?(&(this_00->fields).prevAnim,0);
+          pMVar1 = (this->fields).bodyObject;
+          if (pMVar1 != (MVBodyObject *)0x0) {
+            pAVar3 = (pMVar1->fields).avatarBlinker;
+            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__UnityEngine__Object);
+            }
+            bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                              ((Object_1 *)pAVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
+            if (bVar4 != 0) {
+              pMVar1 = (this->fields).bodyObject;
+              if ((pMVar1 == (MVBodyObject *)0x0) ||
+                 (pAVar3 = (pMVar1->fields).avatarBlinker, pAVar3 == (AvatarBlinker *)0x0))
+              goto code_?;
+              (pAVar3->fields)._.visible = 0;
+            }
+            pMVar1 = (this->fields).bodyObject;
+            if ((pMVar1 != (MVBodyObject *)0x0) &&
+               (this_03 = (pMVar1->fields).avatarBlobShadowController,
+               this_03 != (AvatarBlobShadowController *)0x0)) {
+              UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                        ((Behaviour *)this_03,0,(MethodInfo *)0x0);
+              return;
+            }
+          }
+        }
       }
     }
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -2146,113 +2184,79 @@ void Assembly-CSharp.dll::MVBody::MVBody_OnAnimationUpdate
 
 {
   pMVar1 = (this->fields).bodyObject;
-  if ((pMVar1 == (MVBodyObject *)0x0) || ((pMVar1->fields).boneAnimation == (BoneAnimation *)0x0))
-  goto code_?;
-  if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__String);
-    func_?(&StringLiteral_timeStamp);
-    func_?(&StringLiteral_state);
-    cRam_? = '\x01';
-  }
-  if (newAnimationData == (Object *)0x0) goto code_?;
-  if (((newAnimationData->klass->_1).naturalAligment <
-       (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-       naturalAligment) ||
-     ((Dictionary_2_System_Object_System_Object___Class *)
-      (newAnimationData->klass->_1).typeHierarchy
-      [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-       naturalAligment - 1] !=
-      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-  goto code_?;
-  TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-          UIElements::TextureId]::
-          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                     newAnimationData,(Object *)StringLiteral_state,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                    );
-  this_00 = StringLiteral_timeStamp;
-  TVar3.m_Index = 0;
-  if (TVar2.m_Index == 0) {
+  if ((pMVar1 == (MVBodyObject *)0x0) ||
+     (this_00 = (pMVar1->fields).boneAnimation, this_00 == (BoneAnimation *)0x0)) {
 code_?:
-    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    uVar2 = func_?();
+code_?:
+    TVar3.m_Index = func_?(uVar2);
+    pSVar4 = extraout_ECX;
+  }
+  else {
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                     );
+      func_?(&
+                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                     );
+      func_?(&TypeInfo__System__Int32);
+      func_?(&TypeInfo__System__String);
+      func_?(&StringLiteral_timeStamp);
+      func_?(&StringLiteral_state);
+      cRam_? = '\x01';
+    }
+    if (newAnimationData == (Object *)0x0) goto code_?;
+    pDVar5 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+    if (((newAnimationData->klass->_1).naturalAligment <
+         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         naturalAligment) ||
+       ((Dictionary_2_System_Object_System_Object___Class *)
+        (newAnimationData->klass->_1).typeHierarchy
+        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         naturalAligment - 1] !=
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+    goto code_?;
+    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                       newAnimationData,(Object *)StringLiteral_timeStamp,
+                       newAnimationData,(Object *)StringLiteral_state,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    if (TVar2.m_Index == 0) {
+    newAnimation.m_Index = 0;
+    if (TVar3.m_Index == 0) {
 code_?:
-      uVar4 = func_?(&stack0xfffffff0);
-      func_?(uVar4);
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
-      return;
-    }
-    if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-        (TypeInfo__System__Int32->_0).element_class) {
-      func_?();
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        cRam_? = '\x01';
-      }
-      if (this_00[1].klass != (String__Class *)0x0) {
-        (*(code *)((this_00[1].klass)->_0).namespaze)();
-      }
-      method_00 = TypeInfo__AnimationData;
-      if ((char)this_00[1].fields._firstChar != '\0') {
-        pOVar6 = (Object *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  (pOVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-        pOVar6[1].klass = (Object__Class *)TVar3.m_Index;
-        func_?();
-        pOVar6[1].monitor = (MonitorData *)&UNK_?;
-        *(Object **)&this_00[2].fields._firstChar = pOVar6;
-        func_?();
-        BoneAnimation::BoneAnimation_ComputeAnimation((BoneAnimation *)this_00,(MethodInfo *)0x0);
-        return;
-      }
-      this_01 = (Queue_1_System_Object_ *)this_00[2].monitor;
-      pOVar6 = (Object *)func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                (pOVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-      pOVar6[1].klass = (Object__Class *)TVar3.m_Index;
-      func_?();
-      pOVar6[1].monitor = (MonitorData *)&UNK_?;
-      if (this_01 != (Queue_1_System_Object_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
-        Queue_1_System_Object__Enqueue
-                  (this_01,pOVar6,
-                   MethodInfo__System__Collections__Generic__Queue<AnimationData>__Enqueue_AnimationData_
-                  );
-        BoneAnimation::BoneAnimation_ComputeRemoteAnimation
-                  ((BoneAnimation *)this_00,(MethodInfo *)0x0);
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                         newAnimationData,(Object *)StringLiteral_timeStamp,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar2 = CONCAT44(TypeInfo__System__Int32,TVar3.m_Index);
+      if (TVar3.m_Index == 0) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
+          (TypeInfo__System__Int32->_0).element_class) {
+        piVar6 = (int32_t *)func_?();
+        BoneAnimation::BoneAnimation_StartAnimation
+                  (this_00,(String *)newAnimation.m_Index,*piVar6,(MethodInfo *)0x0);
         return;
       }
       goto code_?;
     }
-    func_?();
-  }
-  else {
-    if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-      TVar3 = TVar2;
+    if (*(String__Class **)TVar3.m_Index == TypeInfo__System__String) {
+      newAnimation = TVar3;
     }
-    if ((Object__Class *)TVar3.m_Index != (Object__Class *)0x0) goto code_?;
+    pSVar4 = TypeInfo__System__String;
+    if ((String *)newAnimation.m_Index != (String *)0x0) goto code_?;
   }
-  func_?();
+  func_?(TVar3.m_Index,pSVar4);
+  pDVar5 = extraout_EDX;
 code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?(newAnimationData,pDVar5);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -2301,31 +2305,32 @@ void Assembly-CSharp.dll::MVBody::MVBody_OnHealthUpdate
   if ((pMVar1 != (MVBodyObject *)0x0) &&
      (this_00 = (pMVar1->fields).avatarBlinker, this_00 != (AvatarBlinker *)0x0)) {
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__System__Single);
       cRam_? = '\x01';
     }
     if (newHealthData != (Object *)0x0) {
-      if ((newHealthData->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+      pSVar2 = TypeInfo__System__Single;
+      if ((newHealthData->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class)
       {
-        func_?();
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
+        pfVar3 = (float *)func_?(newHealthData);
+        fVar4 = *pfVar3;
+        if (fVar4 < (this_00->fields).previousBlinkHealth) {
+          BlinkerBase::BlinkerBase_StartBlinking
+                    ((BlinkerBase *)this_00,BlinkType__Enum_Damage,0.5,(MethodInfo *)0x0);
+        }
+        (this_00->fields).previousBlinkHealth = fVar4;
         return;
       }
-      pfVar3 = (float *)func_?();
-      fVar4 = *pfVar3;
-      if (fVar4 < (this_00->fields).previousBlinkHealth) {
-        BlinkerBase::BlinkerBase_StartBlinking
-                  ((BlinkerBase *)this_00,BlinkType__Enum_Damage,0.5,(MethodInfo *)0x0);
-      }
-      (this_00->fields).previousBlinkHealth = fVar4;
-      return;
+      goto code_?;
     }
   }
-  uVar5 = func_?(&stack0xfffffff0);
-  func_?(uVar5);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  newHealthData = extraout_ECX;
+  pSVar2 = extraout_EDX;
+code_?:
+  func_?(newHealthData,pSVar2);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -2340,31 +2345,32 @@ void Assembly-CSharp.dll::MVBody::MVBody_OnShieldUpdate
   if ((pMVar1 != (MVBodyObject *)0x0) &&
      (this_00 = (pMVar1->fields).avatarBlinker, this_00 != (AvatarBlinker *)0x0)) {
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__System__Single);
       cRam_? = '\x01';
     }
     if (newShieldData != (Object *)0x0) {
-      if ((newShieldData->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+      pSVar2 = TypeInfo__System__Single;
+      if ((newShieldData->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class)
       {
-        func_?();
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
+        pfVar3 = (float *)func_?(newShieldData);
+        fVar4 = *pfVar3;
+        if (fVar4 < (this_00->fields).previousBlinkShield) {
+          BlinkerBase::BlinkerBase_StartBlinking
+                    ((BlinkerBase *)this_00,BlinkType__Enum_ShieldDamage,0.5,(MethodInfo *)0x0);
+        }
+        (this_00->fields).previousBlinkShield = fVar4;
         return;
       }
-      pfVar3 = (float *)func_?();
-      fVar4 = *pfVar3;
-      if (fVar4 < (this_00->fields).previousBlinkShield) {
-        BlinkerBase::BlinkerBase_StartBlinking
-                  ((BlinkerBase *)this_00,BlinkType__Enum_ShieldDamage,0.5,(MethodInfo *)0x0);
-      }
-      (this_00->fields).previousBlinkShield = fVar4;
-      return;
+      goto code_?;
     }
   }
-  uVar5 = func_?(&stack0xfffffff0);
-  func_?(uVar5);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  func_?();
+  newShieldData = extraout_ECX;
+  pSVar2 = extraout_EDX;
+code_?:
+  func_?(newShieldData,pSVar2);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

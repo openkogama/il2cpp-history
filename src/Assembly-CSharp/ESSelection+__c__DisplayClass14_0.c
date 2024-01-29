@@ -8,37 +8,24 @@ void Assembly-CSharp.dll::ESSelection+<>c__DisplayClass14_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
-    func_?(&StringLiteral_Error);
+    pSStack_1 = (String *)&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator;
+    func_?();
+    pSStack_2 = (String *)&StringLiteral_Error;
+    func_?();
     cRam_? = '\x01';
   }
-  pSVar1 = StringLiteral_Error;
-  pSVar2 = (this->fields).errorText;
-  if (handler == (IModalPopupCreator *)0x0) {
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  if (handler != (IModalPopupCreator *)0x0) {
+    pSStack_1 = StringLiteral_Error;
+    pSStack_2 = (this->fields).errorText;
+    pIStack_3 = handler;
+    func_?(1,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
     return;
   }
-  uVar4 = 0;
-  pIVar5 = handler->klass;
-  uVar6._0_1_ = (pIVar5->_1).rank;
-  uVar6._1_1_ = (pIVar5->_1).minimumAlignment;
-  if (uVar6 != 0) {
-    do {
-      if (pIVar5->interfaceOffsets[uVar4].interfaceType ==
-          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-        ppMVar7 = &(&(handler->klass->vtable).CreateErrorNotificationPopup)
-                   [handler->klass->interfaceOffsets[uVar4].offset].method;
-        goto code_?;
-      }
-      uVar4 = uVar4 + 1;
-    } while (uVar4 < uVar6);
-  }
-  ppMVar7 = (MethodInfo **)
-            func_?(handler,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,1);
-code_?:
-  (*(code *)*ppMVar7)(handler,pSVar2,pSVar1,ppMVar7[1]);
+  pSStack_1 = (String *)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

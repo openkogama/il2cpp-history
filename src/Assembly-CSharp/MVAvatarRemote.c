@@ -452,58 +452,59 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_Destroy
   MVWorldObjectClient::MVWorldObjectClient_Destroy((MVWorldObjectClient *)this,(MethodInfo *)0x0);
   pAVar1 = (this->fields)._.avatar;
   if ((pAVar1 == (Avatar *)0x0) ||
-     (pAVar2 = (pAVar1->fields).avatarUIHandler, pAVar2 == (AvatarUIHandler *)0x0)) {
+     (this_00 = (pAVar1->fields).avatarUIHandler, this_00 == (AvatarUIHandler *)0x0)) {
 code_?:
     func_?();
 code_?:
     func_?();
   }
   else {
-    (*(code *)(pAVar2->klass->vtable).OnDestroy.method)(pAVar2,pAVar2->klass[1]._0.image);
+    System.Xml.dll::System::Xml::XmlNodeList::XmlNodeList_System_IDisposable_Dispose
+              ((XmlNodeList *)this_00,(MethodInfo *)0x0);
     if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UpdateController);
     }
     UpdateController::UpdateController_RemoveLateUpdateObject
               ((IUpdatecontrollerSubscriberLateUpdate *)this,(MethodInfo *)0x0);
-    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
-    pMVar4 = (pMVar3->fields).playerContainer;
-    if (pMVar4 == (MVPlayerContainer *)0x0) goto code_?;
-    pAVar5 = (pMVar4->fields).OnLocalPlayerReady;
-    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
+    pMVar3 = (pMVar2->fields).playerContainer;
+    if (pMVar3 == (MVPlayerContainer *)0x0) goto code_?;
+    source_00 = (pMVar3->fields).OnLocalPlayerReady;
+    this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (this_01,(Object *)this,MethodInfo__MVAvatarRemote__InitAvatarState__,
+              (this_02,(Object *)this,MethodInfo__MVAvatarRemote__InitAvatarState__,
                (MethodInfo *)0x0);
-    pAVar5 = (Action *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar5,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pAVar5 == (Action *)0x0) {
-      (pMVar4->fields).OnLocalPlayerReady = (Action *)0x0;
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)source_00,(Delegate *)this_02,(MethodInfo *)0x0);
+    if (pDVar4 == (Delegate *)0x0) {
+      (source_00->fields)._._.extra_arg = (void *)0x0;
 code_?:
       func_?();
-      this_00 = (this->fields).cullingHandler;
-      if (this_00 == (DynamicCullingHandler *)0x0) goto code_?;
-      DynamicCullingHandler::DynamicCullingHandler_DeActivateCulling(this_00,(MethodInfo *)0x0);
-      object = _UNK_?;
+      this_01 = (this->fields).cullingHandler;
+      if (this_01 == (DynamicCullingHandler *)0x0) goto code_?;
+      DynamicCullingHandler::DynamicCullingHandler_DeActivateCulling(this_01,(MethodInfo *)0x0);
+      pUVar5 = 
+      TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_ScaleChangedEventArgs>;
+      object = pORam00000150;
       source = (this->fields)._._._.ScaleChanged;
-      this_02 = (UnityAction_2_System_Object_System_Object_ *)
-                func_?(
-                               TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_ScaleChangedEventArgs>
-                               );
+      this_03 = (UnityAction_2_System_Object_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                (this_02,object,
+                (this_03,object,
                  MethodInfo__DynamicCullingHandler__UpdateCullingRadius_MVWorldObjectClient__ScaleChangedEventArgs_
                  ,(MethodInfo *)0x0);
-      pDVar6 = mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)source,(Delegate *)this_02,(MethodInfo *)0x0);
-      if (pDVar6 == (Delegate *)0x0) {
+      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
+                         ((Delegate *)source,(Delegate *)this_03,(MethodInfo *)0x0);
+      if (pDVar4 == (Delegate *)0x0) {
+        (pUVar5->_1).cctor_finished_or_no_cctor = 0;
         func_?();
         return;
       }
-      iVar7 = func_?();
-      if (iVar7 != 0) {
+      uVar6 = func_?();
+      if (uVar6 != 0) {
+        (pUVar5->_1).cctor_finished_or_no_cctor = uVar6;
         iVar7 = func_?();
         if (iVar7 != 0) {
           func_?();
@@ -512,17 +513,17 @@ code_?:
       }
       goto code_?;
     }
-    pAVar8 = (Action *)0x0;
-    if (pAVar5->klass == TypeInfo__System__Action) {
-      pAVar8 = pAVar5;
+    pDVar8 = (Delegate *)0x0;
+    if ((Action__Class *)pDVar4->klass == TypeInfo__System__Action) {
+      pDVar8 = pDVar4;
     }
-    if (pAVar8 == (Action *)0x0) goto code_?;
-    (pMVar4->fields).OnLocalPlayerReady = pAVar8;
-    pAVar8 = (Action *)0x0;
-    if (pAVar5->klass == TypeInfo__System__Action) {
-      pAVar8 = pAVar5;
+    if (pDVar8 == (Delegate *)0x0) goto code_?;
+    (source_00->fields)._._.extra_arg = pDVar8;
+    pDVar8 = (Delegate *)0x0;
+    if ((Action__Class *)pDVar4->klass == TypeInfo__System__Action) {
+      pDVar8 = pDVar4;
     }
-    if (pAVar8 != (Action *)0x0) goto code_?;
+    if (pDVar8 != (Delegate *)0x0) goto code_?;
   }
   func_?();
 code_?:
@@ -657,6 +658,7 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_Initialize
                (MVAvatarRemote *this,MethodInfo *method)
 
 {
+  this_02 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action);
     func_?(&TypeInfo__AvatarLimbManagerRemote);
@@ -685,78 +687,61 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_Initialize
   if (((pMVar1 == (MVNetworkGame *)0x0) ||
       (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 == (MVPlayerContainer *)0x0)) ||
      (pMVar3 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                          (pMVar2,(this->fields)._._._._.ownerActorNr,(MethodInfo *)0x0),
+                         (pMVar2,(this->fields)._._._._.ownerActorNr,(MethodInfo *)0x0),
      pMVar3 == (MVPlayer *)0x0)) goto code_?;
-  pUVar4 = (pMVar3->fields).OnObserve;
-  pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+  a = (pMVar3->fields).OnObserve;
+  pNVar4 = (NavMesh_OnNavMeshPreUpdate *)func_?();
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
-            (pNVar5,(Object *)this,MethodInfo__MVAvatarRemote__OnObserve__,(MethodInfo *)0x0);
-  pUVar4 = (UnityAction *)
-            mscorlib.dll::System::Delegate::Delegate_Combine
-                      ((Delegate *)pUVar4,(Delegate *)pNVar5,(MethodInfo *)0x0);
-  if (pUVar4 == (UnityAction *)0x0) {
-    (pMVar3->fields).OnObserve = (UnityAction *)0x0;
+            (pNVar4,(Object *)this,MethodInfo__MVAvatarRemote__OnObserve__,(MethodInfo *)0x0);
+  pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
+                      ((Delegate *)a,(Delegate *)pNVar4,(MethodInfo *)0x0);
+  if (pDVar5 == (Delegate *)0x0) {
+    (pNVar4->fields)._._.interp_invoke_impl = (void *)0x0;
 code_?:
+    pNVar6 = pNVar4;
     func_?();
-    pUVar4 = (pMVar3->fields).OnResume;
-    pMVar3 = (MVPlayer *)&UNK_?;
-    pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    pDVar5 = (pNVar4->fields)._._.interp_method;
+    pNVar4 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar5,(Object *)this,MethodInfo__MVAvatarRemote__OnResume__,(MethodInfo *)0x0);
-    pUVar4 = (UnityAction *)
-              mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pUVar4,(Delegate *)pNVar5,(MethodInfo *)0x0);
-    if (pUVar4 == (UnityAction *)0x0) {
-      (pMVar3->fields).OnResume = (UnityAction *)0x0;
+              (pNVar4,(Object *)this,MethodInfo__MVAvatarRemote__OnResume__,(MethodInfo *)0x0);
+    pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
+                        (pDVar5,(Delegate *)pNVar4,(MethodInfo *)0x0);
+    if (pDVar5 == (Delegate *)0x0) {
+      (pNVar6->fields)._._.interp_method = (void *)0x0;
 code_?:
-      this_04 = pMVar3;
       func_?();
-      pAVar6 = (this->fields)._.avatar;
-      if ((pAVar6 == (Avatar *)0x0) ||
-         (this_00 = (AvatarUIHandlerRemote *)(pAVar6->fields).avatarUIHandler,
-         this_00 == (AvatarUIHandlerRemote *)0x0)) goto code_?;
+      pAVar7 = (this->fields)._.avatar;
+      if ((pAVar7 == (Avatar *)0x0) ||
+         (pAVar8 = (AvatarUIHandlerRemote *)(pAVar7->fields).avatarUIHandler,
+         pAVar8 == (AvatarUIHandlerRemote *)0x0)) goto code_?;
       if (((TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment <=
-           (this_00->klass->_1).naturalAligment) &&
-         ((this_00->klass->_1).typeHierarchy
+           (pAVar8->klass->_1).naturalAligment) &&
+         ((pAVar8->klass->_1).typeHierarchy
           [(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] ==
           (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
-        AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNameTag(this_00,(MethodInfo *)0x0);
-        uVar7 = (pMVar3->fields)._BuildTarget_k__BackingField;
-        if ((uVar7 != 3) && (uVar7 != 4)) {
+        AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNameTag(pAVar8,(MethodInfo *)0x0);
+        bVar9 = (pNVar6->fields)._._.method_is_virtual;
+        this = (MVAvatarRemote *)CONCAT31((int3)((uint)unaff_EDI >> 8),bVar9);
+        if ((bVar9 != 3) && (bVar9 != 4)) {
 code_?:
-          pAVar6 = (this->fields)._.avatar;
-          if ((pAVar6 == (Avatar *)0x0) ||
-             (pAVar8 = (pAVar6->fields).avatarUIHandler, pAVar8 == (AvatarUIHandler *)0x0))
+          pAVar7 = (this_02->fields)._.avatar;
+          if ((pAVar7 == (Avatar *)0x0) ||
+             (pAVar10 = (pAVar7->fields).avatarUIHandler, pAVar10 == (AvatarUIHandler *)0x0))
           goto code_?;
-          if (((pAVar8->klass->_1).naturalAligment <
+          if (((pAVar10->klass->_1).naturalAligment <
                (TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment) ||
-             ((pAVar8->klass->_1).typeHierarchy
+             ((pAVar10->klass->_1).typeHierarchy
               [(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] !=
-              (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
-code_?:
-            func_?();
-            goto code_?;
-          }
-          pvVar9 = pAVar8[2].fields._._._._.m_CachedPtr;
-          if ((pvVar9 == (void *)0x0) || (*(Transform **)((int)pvVar9 + 0x14) == (Transform *)0x0))
-          goto code_?;
-          pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                              ((Vector3 *)&stack0xffffffe0,*(Transform **)((int)pvVar9 + 0x14),
-                               (MethodInfo *)0x0);
-          uVar11 = pVVar10->y;
-          if (*(Transform **)((int)pvVar9 + 0x14) == (Transform *)0x0) goto code_?;
-          auVar12._4_4_ = pVVar10->z;
-          auVar12._0_4_ = uVar11;
-          auVar12._8_4_ = 0;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                    (*(Transform **)((int)pvVar9 + 0x14),(Vector3)(auVar12 << 0x20),(MethodInfo *)0x0
-                    );
-          MVAvatarRemote_InitializeHealth(this,(MethodInfo *)0x0);
-          MVAvatarRemote_InitializeShield(this,(MethodInfo *)0x0);
-          pCVar13 = MVAvatarRemote_CreateTriggerCollider(this,(MethodInfo *)0x0);
-          (this->fields).triggerCollider = pCVar13;
+              (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) goto code_?;
+          this_00 = pAVar10[2].fields._._._._.m_CachedPtr;
+          if (this_00 == (HealthBar *)0x0) goto code_?;
+          HealthBar::HealthBar_set_Oxygen(this_00,0.0,(MethodInfo *)0x0);
+          MVAvatarRemote_InitializeHealth(this_02,(MethodInfo *)0x0);
+          MVAvatarRemote_InitializeShield(this_02,(MethodInfo *)0x0);
+          pCVar11 = MVAvatarRemote_CreateTriggerCollider(this_02,(MethodInfo *)0x0);
+          (this_02->fields).triggerCollider = pCVar11;
           func_?();
           pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (((pMVar1 == (MVNetworkGame *)0x0) ||
@@ -764,193 +749,171 @@ code_?:
              (this_03 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
                                   (pMVar2,(MethodInfo *)0x0), this_03 == (MVLocalPlayer *)0x0))
           goto code_?;
-          bVar14 = MVPlayer::MVPlayer_get_IsReady((MVPlayer *)this_03,(MethodInfo *)0x0);
-          if (bVar14 == 0) {
-            pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if ((pMVar1 == (MVNetworkGame *)0x0) ||
-               (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 == (MVPlayerContainer *)0x0))
-            goto code_?;
-            pAVar15 = (pMVar2->fields).OnLocalPlayerReady;
-            pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-            NavMesh_OnNavMeshPreUpdate__ctor
-                      (pNVar5,(Object *)this,MethodInfo__MVAvatarRemote__InitAvatarState__,
-                       (MethodInfo *)0x0);
-            pAVar15 = (Action *)
-                      mscorlib.dll::System::Delegate::Delegate_Combine
-                                ((Delegate *)pAVar15,(Delegate *)pNVar5,(MethodInfo *)0x0);
-            if (pAVar15 == (Action *)0x0) {
-              (pMVar2->fields).OnLocalPlayerReady = (Action *)0x0;
-            }
-            else {
-              pAVar16 = (Action *)0x0;
-              if (pAVar15->klass == TypeInfo__System__Action) {
-                pAVar16 = pAVar15;
-              }
-              if (pAVar16 == (Action *)0x0) {
-code_?:
-                func_?();
-                goto code_?;
-              }
-              (pMVar2->fields).OnLocalPlayerReady = pAVar16;
-              pAVar16 = (Action *)0x0;
-              if (pAVar15->klass == TypeInfo__System__Action) {
-                pAVar16 = pAVar15;
-              }
-joined_?:
-              if (pAVar16 == (Action *)0x0) goto code_?;
-            }
-          }
-          else {
+          bVar9 = MVPlayer::MVPlayer_get_IsReady((MVPlayer *)this_03,(MethodInfo *)0x0);
+          if (bVar9 != 0) {
             if (cRam_? == '\0') {
               func_?();
               func_?();
               cRam_? = '\x01';
             }
-            this_01 = (this->fields)._.SpawnRoleModeTypes;
+            this_01 = (this_02->fields)._.SpawnRoleModeTypes;
             if (this_01 == (MVRuntimeDataVariable *)0x0) goto code_?;
             MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(this_01,(MethodInfo *)0x0);
-            (*(code *)(this->klass->vtable).AvatarStateChangedHandler.method)();
+            (*(code *)(this_02->klass->vtable).AvatarStateChangedHandler.method)();
             pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
             if ((pMVar1 == (MVNetworkGame *)0x0) ||
                (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 == (MVPlayerContainer *)0x0))
             goto code_?;
-            pAVar15 = (pMVar2->fields).OnLocalPlayerReady;
-            pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+            pAVar12 = (pMVar2->fields).OnLocalPlayerReady;
+            pNVar4 = (NavMesh_OnNavMeshPreUpdate *)func_?();
             UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
             NavMesh_OnNavMeshPreUpdate__ctor
-                      (pNVar5,(Object *)this,MethodInfo__MVAvatarRemote__InitAvatarState__,
+                      (pNVar4,(Object *)this_02,MethodInfo__MVAvatarRemote__InitAvatarState__,
                        (MethodInfo *)0x0);
-            pAVar15 = (Action *)
+            pAVar12 = (Action *)
                       mscorlib.dll::System::Delegate::Delegate_Remove
-                                ((Delegate *)pAVar15,(Delegate *)pNVar5,(MethodInfo *)0x0);
-            if (pAVar15 != (Action *)0x0) {
-              pAVar16 = (Action *)0x0;
-              if (pAVar15->klass == TypeInfo__System__Action) {
-                pAVar16 = pAVar15;
+                                ((Delegate *)pAVar12,(Delegate *)pNVar4,(MethodInfo *)0x0);
+            if (pAVar12 != (Action *)0x0) {
+              pAVar13 = (Action *)0x0;
+              if (pAVar12->klass == TypeInfo__System__Action) {
+                pAVar13 = pAVar12;
               }
-              if (pAVar16 != (Action *)0x0) {
-                (pMVar2->fields).OnLocalPlayerReady = pAVar16;
-                pAVar16 = (Action *)0x0;
-                if (pAVar15->klass == TypeInfo__System__Action) {
-                  pAVar16 = pAVar15;
+              if (pAVar13 != (Action *)0x0) {
+                _UNK_? = pAVar13;
+                pAVar13 = (Action *)0x0;
+                if (pAVar12->klass == TypeInfo__System__Action) {
+                  pAVar13 = pAVar12;
                 }
                 goto joined_?;
               }
               goto code_?;
             }
+            _UNK_? = (Action *)0x0;
+            goto code_?;
+          }
+          pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar1 == (MVNetworkGame *)0x0) ||
+             (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 == (MVPlayerContainer *)0x0))
+          goto code_?;
+          pAVar12 = (pMVar2->fields).OnLocalPlayerReady;
+          pNVar4 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+          NavMesh_OnNavMeshPreUpdate__ctor
+                    (pNVar4,(Object *)this_02,MethodInfo__MVAvatarRemote__InitAvatarState__,
+                     (MethodInfo *)0x0);
+          pAVar12 = (Action *)
+                    mscorlib.dll::System::Delegate::Delegate_Combine
+                              ((Delegate *)pAVar12,(Delegate *)pNVar4,(MethodInfo *)0x0);
+          if (pAVar12 == (Action *)0x0) {
             (pMVar2->fields).OnLocalPlayerReady = (Action *)0x0;
           }
+          else {
+            pAVar13 = (Action *)0x0;
+            if (pAVar12->klass == TypeInfo__System__Action) {
+              pAVar13 = pAVar12;
+            }
+            if (pAVar13 == (Action *)0x0) goto code_?;
+            (pMVar2->fields).OnLocalPlayerReady = pAVar13;
+            pAVar13 = (Action *)0x0;
+            if (pAVar12->klass == TypeInfo__System__Action) {
+              pAVar13 = pAVar12;
+            }
+joined_?:
+            if (pAVar13 == (Action *)0x0) goto code_?;
+          }
+code_?:
           func_?();
-          pGVar17 = (this->fields)._._._.gameObject;
-          if (pGVar17 != (GameObject *)0x0) {
-            pAVar18 = (AvatarRemoteMovementCalculator *)
+          pGVar14 = (this_02->fields)._._._.gameObject;
+          if (pGVar14 != (GameObject *)0x0) {
+            pAVar15 = (AvatarRemoteMovementCalculator *)
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                                (pGVar17,
+                                (pGVar14,
                                  AvatarRemoteMovementCalculator_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarRemoteMovementCalculator>__
                                 );
-            (this->fields).avatarRemoteMovementCalculator = pAVar18;
+            (this_02->fields).avatarRemoteMovementCalculator = pAVar15;
             func_?();
-            method_00 = TypeInfo__AvatarLimbManagerRemote;
-            pAVar19 = (AvatarLimbManager *)func_?();
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                      ((Object *)pAVar19,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-            (this->fields)._.limbManager = pAVar19;
-            func_?(&(this->fields)._.limbManager,pAVar19);
-            if (((this->fields)._.avatar != (Avatar *)0x0) &&
-               (pAVar19 = (this->fields)._.limbManager, pAVar19 != (AvatarLimbManager *)0x0)) {
-              (*(code *)(pAVar19->klass->vtable).Initialize.method)
-                        (pAVar19,this,(this->fields)._.body);
-              pGVar17 = (this->fields)._._._.gameObject;
-              if (pGVar17 != (GameObject *)0x0) {
+            pAVar16 = (AvatarLimbManager *)func_?();
+            UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+            UxmlObjectListAttributeDescription`1[System::Object]::
+            UxmlObjectListAttributeDescription_1_System_Object___ctor
+                      ((UxmlObjectListAttributeDescription_1_System_Object_ *)pAVar16,
+                       (MethodInfo *)0x0);
+            (this_02->fields)._.limbManager = pAVar16;
+            func_?(&(this_02->fields)._.limbManager,pAVar16);
+            if (((this_02->fields)._.avatar != (Avatar *)0x0) &&
+               (pAVar16 = (this_02->fields)._.limbManager, pAVar16 != (AvatarLimbManager *)0x0)) {
+              this_04 = this_02;
+              (*(code *)(pAVar16->klass->vtable).Initialize.method)
+                        (pAVar16,this_02,(this_02->fields)._.body);
+              pGVar14 = (this_02->fields)._._._.gameObject;
+              if (pGVar14 != (GameObject *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar17,0,(MethodInfo *)0x0);
-                if ((this_04->fields).playerState == 3) {
-                  MVAvatarRemote_HideBody(this,(MethodInfo *)0x0);
+                          (pGVar14,0,(MethodInfo *)0x0);
+                if (*(char *)&(this_04->fields)._._._._.rotation.w == '\x03') {
+                  MVAvatarRemote_HideBody(this_02,(MethodInfo *)0x0);
                 }
                 MVPlayer::MVPlayer_NotifyAvatarCreated
-                          (this_04,(this->fields)._._._._.id,(MethodInfo *)0x0);
+                          ((MVPlayer *)this_04,(this_02->fields)._._._._.id,(MethodInfo *)0x0);
                 return;
               }
             }
           }
           goto code_?;
         }
-        pAVar6 = (this->fields)._.avatar;
-        if ((pAVar6 == (Avatar *)0x0) ||
-           (pAVar8 = (pAVar6->fields).avatarUIHandler, pAVar8 == (AvatarUIHandler *)0x0))
-        goto code_?;
+        pAVar7 = (this_02->fields)._.avatar;
+        if ((pAVar7 == (Avatar *)0x0) ||
+           (pAVar8 = (AvatarUIHandlerRemote *)(pAVar7->fields).avatarUIHandler,
+           pAVar8 == (AvatarUIHandlerRemote *)0x0)) goto code_?;
         if (((TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment <=
              (pAVar8->klass->_1).naturalAligment) &&
            ((pAVar8->klass->_1).typeHierarchy
             [(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] ==
             (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
-          if (((Component *)pAVar8[3].monitor == (Component *)0x0) ||
-             (pGVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  ((Component *)pAVar8[3].monitor,(MethodInfo *)0x0),
-             pGVar17 == (GameObject *)0x0)) goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar17,1,(MethodInfo *)0x0);
-          if (uVar7 == 3) {
-            if (((Renderer *)pAVar8[3].monitor == (Renderer *)0x0) ||
-               (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                    ((Renderer *)pAVar8[3].monitor,(MethodInfo *)0x0),
-               this_02 == (Material *)0x0)) goto code_?;
-            value = pAVar8[3].fields._._._._.m_CachedPtr;
-code_?:
-            UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTexture
-                      (this_02,(Texture *)value,(MethodInfo *)0x0);
-          }
-          else if (uVar7 == 4) {
-            if (((Renderer *)pAVar8[3].monitor == (Renderer *)0x0) ||
-               (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                    ((Renderer *)pAVar8[3].monitor,(MethodInfo *)0x0),
-               this_02 == (Material *)0x0)) goto code_?;
-            value = pAVar8[3].fields._.m_CancellationTokenSource;
-            goto code_?;
-          }
-          *(undefined1 *)&pAVar8[3].fields.ownerActorNr = 1;
+          AvatarUIHandlerRemote::AvatarUIHandlerRemote_ShowMobileIcon
+                    (pAVar8,(BuildTarget__Enum)this,(MethodInfo *)0x0);
           goto code_?;
         }
+code_?:
+        func_?();
 code_?:
         func_?();
       }
       func_?();
     }
     else {
-      pUVar20 = (UnityAction *)0x0;
-      if (pUVar4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar20 = pUVar4;
+      pDVar17 = (Delegate *)0x0;
+      if ((UnityAction__Class *)pDVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pDVar17 = pDVar5;
       }
-      if (pUVar20 != (UnityAction *)0x0) {
-        (pMVar3->fields).OnResume = pUVar20;
-        pUVar20 = (UnityAction *)0x0;
-        if (pUVar4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-          pUVar20 = pUVar4;
+      if (pDVar17 != (Delegate *)0x0) {
+        (pNVar6->fields)._._.interp_method = pDVar17;
+        pDVar17 = (Delegate *)0x0;
+        if ((UnityAction__Class *)pDVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+          pDVar17 = pDVar5;
         }
-        if (pUVar20 != (UnityAction *)0x0) goto code_?;
+        if (pDVar17 != (Delegate *)0x0) goto code_?;
       }
     }
   }
   else {
-    pUVar20 = (UnityAction *)0x0;
-    if (pUVar4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar20 = pUVar4;
+    pDVar17 = (Delegate *)0x0;
+    if ((UnityAction__Class *)pDVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pDVar17 = pDVar5;
     }
-    if (pUVar20 != (UnityAction *)0x0) {
-      (pMVar3->fields).OnObserve = pUVar20;
-      pUVar20 = (UnityAction *)0x0;
-      if (pUVar4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar20 = pUVar4;
+    if (pDVar17 != (Delegate *)0x0) {
+      (pNVar4->fields)._._.interp_invoke_impl = pDVar17;
+      pDVar17 = (Delegate *)0x0;
+      if ((UnityAction__Class *)pDVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pDVar17 = pDVar5;
       }
-      if (pUVar20 != (UnityAction *)0x0) goto code_?;
+      if (pDVar17 != (Delegate *)0x0) goto code_?;
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -1219,11 +1182,12 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_OnAnimationChange
   pMVar1 = (this->fields)._.body;
   if (pMVar1 == (MVBody *)0x0) {
 code_?:
-    TVar2.m_Index = func_?();
-    pSVar3 = extraout_ECX;
+    func_?();
+    TVar2.m_Index = extraout_ECX;
+    pSVar3 = extraout_EDX;
 code_?:
     func_?(TVar2.m_Index,pSVar3);
-    pDVar4 = extraout_EDX;
+    pDVar4 = extraout_EDX_00;
   }
   else {
     MVBody::MVBody_OnAnimationUpdate(pMVar1,newAnimationData,(MethodInfo *)0x0);
@@ -1238,10 +1202,9 @@ code_?:
       return;
     }
     if ((newAnimationData == (Object *)0x0) ||
-       ((pDVar4 = 
-         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>,
-        (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-        naturalAligment <= (newAnimationData->klass->_1).naturalAligment &&
+       ((pDVar4 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+        , (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+          naturalAligment <= (newAnimationData->klass->_1).naturalAligment &&
         ((Dictionary_2_System_Object_System_Object___Class *)
          (newAnimationData->klass->_1).typeHierarchy
          [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
@@ -1249,7 +1212,7 @@ code_?:
          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) {
       pMVar1 = (this->fields)._.body;
       if ((pMVar1 == (MVBody *)0x0) ||
-         ((pBVar7 = MVBody::MVBody_get_Animation(pMVar1,(MethodInfo *)0x0),
+         ((this_01 = MVBody::MVBody_get_Animation(pMVar1,(MethodInfo *)0x0),
           newAnimationData == (Object *)0x0 ||
           (TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                    Object,UnityEngine::UIElements::TextureId]::
@@ -1257,62 +1220,27 @@ code_?:
                              ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                               newAnimationData,(Object *)StringLiteral_state,
                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             ), pBVar7 == (BoneAnimation *)0x0)))) goto code_?;
-      newAnimationData = (Object *)0x0;
+                             ), this_01 == (BoneAnimation *)0x0)))) goto code_?;
+      animationName.m_Index = 0;
       if (TVar2.m_Index == 0) {
 code_?:
-        if (cRam_? == '\0') {
-          func_?(&
-                          MethodInfo__System__Collections__Generic__HashSet<System::String>__Add_System__String_
-                         );
-          cRam_? = '\x01';
-        }
-        this_01 = (pBVar7->fields).playingAnimations;
-        if (this_01 != (HashSet_1_System_String_ *)0x0) {
-          System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-          HashSet_1_System_Object__System_Collections_Generic_ICollection_T__Add
-                    ((HashSet_1_System_Object_ *)this_01,newAnimationData,
-                     MethodInfo__System__Collections__Generic__HashSet<System::String>__Add_System__String_
-                    );
-          pAVar8 = (pBVar7->fields).avatarAnimation;
-          if ((pAVar8 != (Animation *)0x0) &&
-             (pAVar9 = UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_GetState
-                                 (pAVar8,(String *)newAnimationData,(MethodInfo *)0x0),
-             pAVar9 != (AnimationState *)0x0)) {
-            UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_set_speed
-                      (pAVar9,1.0,(MethodInfo *)0x0);
-            pAVar8 = (pBVar7->fields).avatarAnimation;
-            if ((pAVar8 != (Animation *)0x0) &&
-               (pAVar9 = UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_GetState
-                                   (pAVar8,(String *)newAnimationData,(MethodInfo *)0x0),
-               pAVar9 != (AnimationState *)0x0)) {
-              UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_set_time
-                        (pAVar9,0.0,(MethodInfo *)0x0);
-              pAVar8 = (pBVar7->fields).avatarAnimation;
-              if (pAVar8 != (Animation *)0x0) {
-                UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Play_3
-                          (pAVar8,(String *)newAnimationData,PlayMode__Enum_StopAll,
-                           (MethodInfo *)0x0);
-                return;
-              }
-            }
-          }
-        }
-        goto code_?;
+        BoneAnimation::BoneAnimation_Play(this_01,(String *)animationName.m_Index,(MethodInfo *)0x0)
+        ;
+        return;
       }
       if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-        newAnimationData = (Object *)TVar2;
+        animationName = TVar2;
       }
       pSVar3 = TypeInfo__System__String;
-      if ((String *)newAnimationData != (String *)0x0) goto code_?;
+      if ((String *)animationName.m_Index != (String *)0x0) goto code_?;
       goto code_?;
     }
   }
   func_?(newAnimationData,pDVar4);
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -1531,11 +1459,12 @@ code_?:
          (pAVar7 = (pAVar5->fields).bulletImpactVisualizer,
          pAVar7 != (AvatarBulletImpactVisualizer *)0x0)) {
         (*(code *)(pAVar7->klass->vtable).VisualizeBulletImpact_1.method)
-                  (pAVar7,shooterActorNumber,pAVar7->klass[1]._0.image,&UNK_?,pOVar3,
+                  (pAVar7,pAVar7->klass[1]._0.image,&UNK_?,pOVar3,voxelHit.point.z,
                    voxelHit.normal.x,voxelHit.normal.y,voxelHit.normal.z,voxelHit.cubePos._0_4_,
                    voxelHit._28_4_,voxelHit.face,voxelHit._36_4_,voxelHit.woId,voxelHit.cube,
                    voxelHit.distance,voxelHit.collider,voxelHit.transform,voxelHit._60_8_,
-                   voxelHit.interactionFlags._4_4_,lineOfFire.m_Origin.x,lineOfFire.m_Origin.y);
+                   voxelHit.interactionFlags._4_4_,lineOfFire.m_Origin.x,lineOfFire.m_Origin.y,
+                   lineOfFire.m_Origin.z);
         pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((pMVar1 != (MVNetworkGame *)0x0) &&
            (pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
@@ -1547,14 +1476,30 @@ code_?:
                               ((MethodInfo *)0x0);
           if (this_02 != (MainCameraManager *)0x0) {
             MainCameraManager::MainCameraManager_PlayPlingSound(this_02,(MethodInfo *)0x0);
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            if ((TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
-                 (IPlayModeUI *)0x0) && (iVar9 = func_?(), iVar9 != 0)) {
-              func_?();
-              return;
+            piVar9 = (int *)func_?();
+            if (piVar9 != (int *)0x0) {
+              uVar10 = 0;
+              uVar11 = *(ushort *)(*piVar9 + 0xb6);
+              if (uVar11 != 0) {
+                do {
+                  if (*(IPlayModeUI__Class **)(*(int *)(*piVar9 + 0x58) + (uint)uVar10 * 8) ==
+                      TypeInfo__IPlayModeUI) {
+                    puVar12 = (undefined4 *)
+                              (*piVar9 +
+                              (*(int *)(*(int *)(*piVar9 + 0x58) + 4 + (uint)uVar10 * 8) + 0x1a) *
+                              8);
+                    goto code_?;
+                  }
+                  uVar10 = uVar10 + 1;
+                } while (uVar10 < uVar11);
+              }
+              puVar12 = (undefined4 *)func_?();
+code_?:
+              iVar13 = (*(code *)*puVar12)();
+              if (iVar13 != 0) {
+                func_?();
+                return;
+              }
             }
           }
         }
@@ -1565,8 +1510,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

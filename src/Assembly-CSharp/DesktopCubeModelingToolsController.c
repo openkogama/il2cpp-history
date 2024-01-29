@@ -209,9 +209,17 @@ code_?:
       return;
     }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  bVar7 = 0;
+  bVar8 = func_?();
+  bVar9 = 0xcb < bVar8 || CARRY1(bVar8 + 0x34,bVar7);
+  bVar7 = bVar8 + 0x34 + bVar7;
+  bVar8 = (byte)unaff_EBX + bVar7;
+  pcVar10 = (char *)CONCAT31((int3)((uint)unaff_EBX >> 8),bVar8 + bVar9);
+  *pcVar10 = *pcVar10 + extraout_DH +
+            (0xcb < bVar7 ||
+            CARRY1(bVar7 + 0x34,CARRY1((byte)unaff_EBX,bVar7) || CARRY1(bVar8,bVar9)));
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

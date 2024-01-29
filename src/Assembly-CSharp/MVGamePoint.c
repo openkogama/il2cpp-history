@@ -310,12 +310,11 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_OnDataUpdate
 void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_OnUpdate(MVGamePoint *this,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if (((this->fields).canRespawn != 0) && ((this->fields).state == 1)) {
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     if ((float)(this->fields).respawnTime + (this->fields).pickUpTime < fVar1) {
-      (*(code *)(this->klass->vtable).Reset.method)(this);
+      (*(code *)(this->klass->vtable).Reset.method)
+                (this,(this->klass->vtable).OnObjectLinkChanged.methodPtr);
     }
   }
   return;

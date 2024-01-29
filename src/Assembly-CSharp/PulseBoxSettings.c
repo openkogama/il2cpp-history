@@ -99,7 +99,7 @@ void Assembly-CSharp.dll::PulseBoxSettings::PulseBoxSettings_Initialize
     if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Convert);
     }
-    value_01 = mscorlib.dll::System::Convert::Convert_ToSingle
+    value_01 = mscorlib.dll::System::Convert::Convert_ToSingle_1
                          ((Object *)TVar2.m_Index,(IFormatProvider *)pCVar5,(MethodInfo *)0x0);
     TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
@@ -111,7 +111,7 @@ void Assembly-CSharp.dll::PulseBoxSettings::PulseBoxSettings_Initialize
     pCVar5 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                        ((MethodInfo *)0x0);
     root = (GameObject *)
-           mscorlib.dll::System::Convert::Convert_ToSingle
+           mscorlib.dll::System::Convert::Convert_ToSingle_1
                      ((Object *)TVar2.m_Index,(IFormatProvider *)pCVar5,(MethodInfo *)0x0);
     pSVar6 = (this->fields).enabledSlider;
     if (pSVar6 != (SettingsSlider *)0x0) {

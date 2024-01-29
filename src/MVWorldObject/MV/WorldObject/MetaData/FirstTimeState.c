@@ -101,7 +101,7 @@ String * MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::FirstTime
          (bVar2 = mscorlib.dll::System::Collections::BitArray::BitArray_get_Item
                             (pBVar1,index,(MethodInfo *)0x0), this_00 == (StringBuilder *)0x0))
       goto code_?;
-      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5
+      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6
                 (this_00,bVar2 + 0x30,(MethodInfo *)0x0);
       pBVar1 = (this->fields).bitArray;
       index = index + 1;
@@ -141,6 +141,38 @@ void MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::FirstTimeStat
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  return;
+}
+
+
+/* FirstTimeState(FirstTimeState) */
+
+void MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::FirstTimeState__ctor_1
+               (FirstTimeState *this,FirstTimeState *other,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Collections__BitArray);
+    cRam_? = '\x01';
+  }
+  pBVar1 = (BitArray *)func_?(TypeInfo__System__Collections__BitArray);
+  mscorlib.dll::System::Collections::BitArray::BitArray__ctor(pBVar1,0,(MethodInfo *)0x0);
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).bitArray = pBVar1;
+  func_?(method_00,pBVar1);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  if (other != (FirstTimeState *)0x0) {
+    pBVar1 = (other->fields).bitArray;
+    this_00 = (BitArray *)func_?();
+    mscorlib.dll::System::Collections::BitArray::BitArray__ctor_3(this_00,pBVar1,(MethodInfo *)0x0);
+    (this->fields).bitArray = this_00;
+    func_?(&this->fields,this_00);
+    return;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

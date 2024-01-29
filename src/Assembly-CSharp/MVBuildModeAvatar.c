@@ -213,10 +213,11 @@ void Assembly-CSharp.dll::MVBuildModeAvatar::MVBuildModeAvatar__ctor
     func_?(&StringLiteral_pointRotationYaw);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__LimbRotationRuntimeData;
-  pLVar1 = (LimbRotationRuntimeData *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)pLVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  pLVar1 = (LimbRotationRuntimeData *)func_?(TypeInfo__LimbRotationRuntimeData);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)pLVar1,(MethodInfo *)0x0);
   (this->fields).limbRotationRuntimeData = pLVar1;
   func_?(&(this->fields).limbRotationRuntimeData,pLVar1);
   MVGroup::MVGroup__ctor((MVGroup *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);

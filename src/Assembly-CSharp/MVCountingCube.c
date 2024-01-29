@@ -252,8 +252,6 @@ void Assembly-CSharp.dll::MVCountingCube::MVCountingCube_Reset
                (MVCountingCube *this,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   value = MVCountingCube_get_StartingValue(this,(MethodInfo *)0x0);
   MVCountingCube_set_CurrentValue(this,value,(MethodInfo *)0x0);
   (this->fields).isHot = 0;

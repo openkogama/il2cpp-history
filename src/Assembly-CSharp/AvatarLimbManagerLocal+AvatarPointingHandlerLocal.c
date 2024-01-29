@@ -212,12 +212,8 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
                 ((pAVar13->fields)._._.method_code,0,(pAVar13->fields)._._.method);
     }
   }
-  fVar1 = (this->fields)._.elapsedPointingTime;
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  (this->fields)._.prevLookDirection.x = localLookDirection.x;
-  (this->fields)._.prevLookDirection.y = localLookDirection.y;
-  (this->fields)._.elapsedPointingTime = fVar1 - fVar2;
-  (this->fields)._.prevLookDirection.z = localLookDirection.z;
+  AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_UpdatePointing
+            ((AvatarLimbManager_AvatarPointingHandler *)this,localLookDirection,(MethodInfo *)0x0);
   return;
 }
 
@@ -246,19 +242,15 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
     cRam_? = '\x01';
   }
   pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar2 = (pQVar1->identityQuaternion).x;
-  fVar3 = (pQVar1->identityQuaternion).y;
-  fVar4 = (pQVar1->identityQuaternion).z;
-  fVar5 = (pQVar1->identityQuaternion).w;
-  (this->fields)._.pointingDuration = 0.8;
-  (this->fields)._.shouldPoint = 1;
-  (this->fields)._.isActive = 1;
-  (this->fields).pitchRotation.x = fVar2;
-  (this->fields).pitchRotation.y = fVar3;
-  (this->fields).pitchRotation.z = fVar4;
-  (this->fields).pitchRotation.w = fVar5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  fVar2 = (pQVar1->identityQuaternion).y;
+  fVar3 = (pQVar1->identityQuaternion).z;
+  fVar4 = (pQVar1->identityQuaternion).w;
+  (this->fields).pitchRotation.x = (pQVar1->identityQuaternion).x;
+  (this->fields).pitchRotation.y = fVar2;
+  (this->fields).pitchRotation.z = fVar3;
+  (this->fields).pitchRotation.w = fVar4;
+  AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler__ctor
+            ((AvatarLimbManager_AvatarPointingHandler *)this,(MethodInfo *)0x0);
   return;
 }
 

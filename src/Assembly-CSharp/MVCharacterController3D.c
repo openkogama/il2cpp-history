@@ -302,13 +302,13 @@ bool Assembly-CSharp.dll::MVCharacterController3D::MVCharacterController3D_NoOve
                      ((MvCharacterController *)this,R3Position_04,(MethodInfo *)0x0);
   if (bVar13 != 0) {
     fVar14 = (float)((uint)fVar4 ^
-                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     in_stack_15 =
          (float)((uint)in_stack_15 ^
-                __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     in_stack_16 =
          (float)((uint)in_stack_16 ^
-                __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     offset->x = in_stack_15;
     offset->y = in_stack_16;
     fVar10 = R3Position.z + fVar14;
@@ -330,11 +330,11 @@ bool Assembly-CSharp.dll::MVCharacterController3D::MVCharacterController3D_NoOve
                          ((MvCharacterController *)this_00,R3Position_06,(MethodInfo *)0x0);
       if (bVar13 != 0) {
         fVar20 = (float)((uint)R3Direction.x ^
-                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         fVar6 = (float)((uint)R3Position.y ^
-                       __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         fVar14 = (float)((uint)R3Position.z ^
-                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         offset->x = fVar6;
         offset->y = fVar14;
         fVar4 = R3Position.z + fVar20;
@@ -365,17 +365,17 @@ bool Assembly-CSharp.dll::MVCharacterController3D::MVCharacterController3D_NoOve
             uVar25 = offset->x;
             uVar26 = offset->y;
             fVar6 = (float)(uVar26 ^ 
-                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
             ;
             fVar12 = (float)((uint)offset->z ^
-                            __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             );
             R3Direction.z =
                  in_stack_27 +
                  (float)(uVar25 ^ 
-                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
             offset->x = (float)(uVar25 ^ 
-                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                );
             offset->y = fVar6;
             fStack28 = R3Position.z + fVar12;
@@ -404,14 +404,14 @@ bool Assembly-CSharp.dll::MVCharacterController3D::MVCharacterController3D_NoOve
                 uVar34 = offset->y;
                 fStack35 = offset->z;
                 fVar4 = (float)(uVar33 ^ 
-                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                );
                 fVar6 = (float)(uVar34 ^ 
-                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                );
                 fStack36 =
                      (float)((uint)fStack35 ^
-                            __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             );
                 offset->x = fVar4;
                 offset->y = fVar6;

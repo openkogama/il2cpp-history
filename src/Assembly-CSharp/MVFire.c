@@ -783,7 +783,7 @@ code_?:
     MVFire_SetFireHitBoxYOffset
               (pMVar1,(float)((uint)(((fVar9 * _UNK_? * _UNK_?) / _UNK_?) *
                                      _UNK_?) ^
-                              __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               ) * _UNK_?,(MethodInfo *)0x0);
     pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
              (pMVar1->fields)._._._.data;

@@ -1013,37 +1013,48 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Initializ
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
   if (pIVar1 != (IEditModeUI *)0x0) {
-    iVar2 = func_?(4,TypeInfo__IEditModeUI,pIVar1);
-    if (iVar2 != 0) {
-      pDVar3 = *(Delegate **)(iVar2 + 8);
+    pIVar2 = pIVar1->klass;
+    uVar3 = 0;
+    uVar4._0_1_ = (pIVar2->_1).rank;
+    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar4 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__IEditModeUI) {
+          ppMVar5 = &(&(pIVar1->klass->vtable).get_PlayerShopInventoryRepository)
+                     [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
+          goto code_?;
+        }
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
+    }
+    ppMVar5 = (MethodInfo **)func_?(pIVar1,TypeInfo__IEditModeUI,4);
+code_?:
+    iVar6 = (*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
+    if (iVar6 != 0) {
+      pDVar7 = *(Delegate **)(iVar6 + 8);
       this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
                 (this_00,(Object *)this,MethodInfo__ContextMenuController__OnFailedToAddItem__,
                  (MethodInfo *)0x0);
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         (pDVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-      uVar4 = CONCAT44(TypeInfo__System__Action,pDVar3);
-      if (pDVar3 == (Delegate *)0x0) {
-        *(undefined4 *)(iVar2 + 8) = 0;
-        iStack5 = iVar2 + 8;
-        pDStack6 = (Delegate *)0x0;
+      pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         (pDVar7,(Delegate *)this_00,(MethodInfo *)0x0);
+      if (pDVar7 == (Delegate *)0x0) {
+        *(undefined4 *)(iVar6 + 8) = 0;
         func_?();
         return;
       }
-      pDVar7 = (Delegate *)0x0;
-      if ((Action__Class *)pDVar3->klass == TypeInfo__System__Action) {
-        pDVar7 = pDVar3;
+      pDVar8 = (Delegate *)0x0;
+      if ((Action__Class *)pDVar7->klass == TypeInfo__System__Action) {
+        pDVar8 = pDVar7;
       }
-      if (pDVar7 != (Delegate *)0x0) {
-        *(Delegate **)(iVar2 + 8) = pDVar7;
-        uVar4 = CONCAT44(TypeInfo__System__Action,pDVar3);
-        pDStack6 = (Delegate *)0x0;
-        if ((Action__Class *)pDVar3->klass == TypeInfo__System__Action) {
-          pDStack6 = pDVar3;
+      if (pDVar8 != (Delegate *)0x0) {
+        *(Delegate **)(iVar6 + 8) = pDVar8;
+        pDVar8 = (Delegate *)0x0;
+        if ((Action__Class *)pDVar7->klass == TypeInfo__System__Action) {
+          pDVar8 = pDVar7;
         }
-        if (pDStack6 != (Delegate *)0x0) {
-          iStack5 = iVar2 + 8;
+        if (pDVar8 != (Delegate *)0x0) {
           func_?();
           return;
         }
@@ -1051,12 +1062,11 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Initializ
       goto code_?;
     }
   }
-  uVar4 = func_?();
-code_?:
-  _iStack00000010 = uVar4;
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+code_?:
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

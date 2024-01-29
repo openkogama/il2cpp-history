@@ -180,6 +180,10 @@ void MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__cctor(MethodInfo 
   (pIVar1->One).x = 1;
   (pIVar1->One).y = 1;
   (pIVar1->One).z = 1;
+  pIVar1 = TypeInfo__MV__WorldObject__IntVector->static_fields;
+  (pIVar1->Zero).x = 0;
+  (pIVar1->Zero).y = 0;
+  (pIVar1->Zero).z = 0;
   return;
 }
 

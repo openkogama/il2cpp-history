@@ -14,7 +14,6 @@ public class LobbyStatePlayModeController : MonoBehaviour
 	// Fields
 	private bool isInLobbyState;
 	private bool wantsToEnterPlayState;
-	private bool shouldOpenLobbyMenu;
 	private DesktopInGameGUIController inGameController;
 	private RectTransform lobbyState;
 	private InGameMenu inGameMenu;
@@ -22,6 +21,13 @@ public class LobbyStatePlayModeController : MonoBehaviour
 
 	// Properties
 	public bool IsInLobbyState { get; set; }
+
+	// Nested types
+	public enum LobbyStateMode
+	{
+		LobbyMenu = 0,
+		PauseMenu = 1
+	}
 
 	// Constructors
 	public LobbyStatePlayModeController();

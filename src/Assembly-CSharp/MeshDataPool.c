@@ -53,6 +53,65 @@ code_?:
 }
 
 
+/* Void AddColorRepeated(Color, Int32) */
+
+void Assembly-CSharp.dll::MeshDataPool::MeshDataPool_AddColorRepeated
+               (Color color,int32_t nrOfRepetitions,MethodInfo *method)
+
+{
+  iVar1 = 0;
+  if (0 < nrOfRepetitions) {
+    do {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MeshDataPool);
+        cRam_? = '\x01';
+      }
+      pMVar2 = TypeInfo__MeshDataPool->static_fields->instance;
+      if (pMVar2 == (MeshDataPool *)0x0) {
+code_?:
+        func_?();
+code_?:
+        func_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pCVar4 = (pMVar2->fields).colors;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MeshDataPool);
+        cRam_? = '\x01';
+      }
+      pMVar2 = TypeInfo__MeshDataPool->static_fields->instance;
+      if ((pMVar2 == (MeshDataPool *)0x0) || (pCVar4 == (Color__Array *)0x0)) goto code_?;
+      uVar5 = (pMVar2->fields).colorPos;
+      if (pCVar4->max_length <= uVar5) goto code_?;
+      bVar6 = cRam_? == '\0';
+      pCVar7 = pCVar4->vector + uVar5;
+      pCVar7->r = color.r;
+      pCVar7->g = color.g;
+      pCVar7->b = color.b;
+      pCVar7->a = color.a;
+      if (bVar6) {
+        func_?(&TypeInfo__MeshDataPool);
+        cRam_? = '\x01';
+      }
+      pMVar2 = TypeInfo__MeshDataPool->static_fields->instance;
+      if (pMVar2 == (MeshDataPool *)0x0) goto code_?;
+      iVar8 = (pMVar2->fields).colorPos;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MeshDataPool);
+        cRam_? = '\x01';
+      }
+      pMVar2 = TypeInfo__MeshDataPool->static_fields->instance;
+      if (pMVar2 == (MeshDataPool *)0x0) goto code_?;
+      iVar1 = iVar1 + 1;
+      (pMVar2->fields).colorPos = iVar8 + 1;
+    } while (iVar1 < nrOfRepetitions);
+  }
+  return;
+}
+
+
 /* Void AddIndex(Int32) */
 
 void Assembly-CSharp.dll::MeshDataPool::MeshDataPool_AddIndex(int32_t index,MethodInfo *method)
@@ -264,6 +323,70 @@ code_?:
   func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
+  return;
+}
+
+
+/* Void AddVertexRange(Vector3[]) */
+
+void Assembly-CSharp.dll::MeshDataPool::MeshDataPool_AddVertexRange
+               (Vector3__Array *vertices,MethodInfo *method)
+
+{
+  uVar1 = 0;
+  if (vertices != (Vector3__Array *)0x0) {
+    pVVar2 = vertices->vector;
+    while( true ) {
+      if ((int)vertices->max_length <= (int)uVar1) {
+        return;
+      }
+      if (vertices->max_length <= uVar1) break;
+      fVar3 = pVVar2->x;
+      fVar4 = pVVar2->y;
+      fVar5 = pVVar2->z;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MeshDataPool);
+        cRam_? = '\x01';
+      }
+      pMVar6 = TypeInfo__MeshDataPool->static_fields->instance;
+      if (pMVar6 == (MeshDataPool *)0x0) goto code_?;
+      pVVar7 = (pMVar6->fields).vertices;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MeshDataPool);
+        cRam_? = '\x01';
+      }
+      pMVar6 = TypeInfo__MeshDataPool->static_fields->instance;
+      if ((pMVar6 == (MeshDataPool *)0x0) || (pVVar7 == (Vector3__Array *)0x0))
+      goto code_?;
+      uVar8 = (pMVar6->fields).vertexPos;
+      if (pVVar7->max_length <= uVar8) break;
+      bVar9 = cRam_? == '\0';
+      pVVar7->vector[uVar8].x = fVar3;
+      pVVar7->vector[uVar8].y = fVar4;
+      pVVar7->vector[uVar8].z = fVar5;
+      if (bVar9) {
+        func_?(&TypeInfo__MeshDataPool);
+        cRam_? = '\x01';
+      }
+      pMVar6 = TypeInfo__MeshDataPool->static_fields->instance;
+      if (pMVar6 == (MeshDataPool *)0x0) goto code_?;
+      iVar10 = (pMVar6->fields).vertexPos;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MeshDataPool);
+        cRam_? = '\x01';
+      }
+      pMVar6 = TypeInfo__MeshDataPool->static_fields->instance;
+      if (pMVar6 == (MeshDataPool *)0x0) goto code_?;
+      uVar1 = uVar1 + 1;
+      (pMVar6->fields).vertexPos = iVar10 + 1;
+      pVVar2 = pVVar2 + 1;
+    }
+    func_?();
+  }
+code_?:
+  func_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

@@ -195,7 +195,12 @@ code_?:
   func_?(valuePair.value,kogamaSettingBasePrototype);
   pKVar5 = extraout_EDX_00;
 code_?:
-  pKVar12 = (KogamaSettingValueWrapperBase *)func_?(kogamaSettingBasePrototype,pKVar5);
-  return pKVar12;
+  piVar7 = (int *)func_?(kogamaSettingBasePrototype,pKVar5);
+  *piVar7 = (int)ROUND(extraout_ST0);
+  *piVar7 = (int)ROUND(extraout_ST0);
+  *(int *)(extraout_ECX + -0x6d27ef25) = (int)ROUND(extraout_ST0);
+  pcVar12 = (code *)swi(3);
+  pKVar13 = (KogamaSettingValueWrapperBase *)(*pcVar12)();
+  return pKVar13;
 }
 

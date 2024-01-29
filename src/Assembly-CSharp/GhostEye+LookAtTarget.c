@@ -37,7 +37,7 @@ Assembly-CSharp.dll::GhostEye+LookAtTarget::GhostEye_LookAtTarget_GetClampedPitc
   fVar3 = (float10)func_?(uVar2,(pVVar1->upVector).z);
   pGVar4 = (GhostEye_LookAtTarget *)
            ((uint)(this->fields).maxPitch ^
-           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   pGVar5 = (GhostEye_LookAtTarget *)(float)(fVar3 - (float10)_UNK_?);
   if (((float)pGVar5 < (float)pGVar4) ||
      (pGVar4 = (GhostEye_LookAtTarget *)(this->fields).maxPitch, this = pGVar5,
@@ -95,10 +95,10 @@ Assembly-CSharp.dll::GhostEye+LookAtTarget::GhostEye_LookAtTarget_GetClampedYawR
       fStack_4 * fStack_1 < 0.0) {
     localTargetDirection.z =
          (float)((uint)localTargetDirection.z ^
-                __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   }
   fVar9 = (float)((uint)(this->fields).maxYaw ^
-                 __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   if ((localTargetDirection.z < fVar9) ||
      (fVar9 = (this->fields).maxYaw, fVar9 < localTargetDirection.z)) {
     localTargetDirection.z = fVar9;
@@ -171,7 +171,7 @@ float Assembly-CSharp.dll::GhostEye+LookAtTarget::GhostEye_LookAtTarget_GetSigne
   if (fVar9 + localTargetPosition.y * (float)uVar7 + fVar3 * (pVVar4->rightVector).z < 0.0) {
     localTargetPosition.z =
          (float)((uint)(float)fVar6 ^
-                __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   }
   return localTargetPosition.z;
 }
@@ -189,27 +189,66 @@ bool Assembly-CSharp.dll::GhostEye+LookAtTarget::GhostEye_LookAtTarget_TryGetLoc
                         ((Component *)ghostEye,(MethodInfo *)0x0);
     if (this_00 != (Transform *)0x0) {
       pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_InverseTransformPoint
-                         ((Vector3 *)&stack0xfffffff0,this_00,(this->fields).target,
-                          (MethodInfo *)0x0);
-      fVar2 = pVVar1->y;
-      fVar3 = pVVar1->z;
-      localTargetDir->x = pVVar1->x;
-      localTargetDir->y = fVar2;
-      localTargetDir->z = fVar3;
-      if (_UNK_? <=
-          localTargetDir->x * localTargetDir->x + localTargetDir->y * localTargetDir->y +
-          localTargetDir->z * localTargetDir->z) {
-        UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
-                  (localTargetDir,(MethodInfo *)0x0);
+                         (&VStack_2,this_00,(this->fields).target,(MethodInfo *)0x0);
+      uVar3 = pVVar1->x;
+      uVar4 = pVVar1->y;
+      fVar5 = pVVar1->z;
+      localTargetDir->x = (float)uVar3;
+      localTargetDir->y = (float)uVar4;
+      localTargetDir->z = fVar5;
+      if (localTargetDir->x * localTargetDir->x + localTargetDir->y * localTargetDir->y +
+          localTargetDir->z * localTargetDir->z < _UNK_?) {
+        return 0;
+      }
+      if (cRam_? == '\0') {
+        VStack_2.y = (float)&TypeInfo__System__Math;
+        VStack_2.x = (float)&UNK_?;
+        func_?();
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        VStack_2.y = (float)TypeInfo__System__Math;
+        VStack_2.x = (float)&UNK_?;
+        func_?();
+      }
+      dVar6 = (double)((float)uVar4 * (float)uVar4 + (float)uVar3 * (float)uVar3 + fVar5 * fVar5)
+      ;
+      if (dVar6 < 0.0) {
+        VStack_2.y = (float)&UNK_?;
+        func_?();
+      }
+      else {
+        dVar6 = SQRT(dVar6);
+      }
+      fVar5 = (float)dVar6;
+      if (fVar5 <= _UNK_?) {
+        if (cRam_? == '\0') {
+          VStack_2.y = (float)&TypeInfo__UnityEngine__Vector3;
+          VStack_2.x = (float)&UNK_?;
+          func_?();
+          cRam_? = '\x01';
+        }
+        pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
+        fVar8 = (pVVar7->zeroVector).y;
+        fVar5 = (pVVar7->zeroVector).z;
+        localTargetDir->x = (pVVar7->zeroVector).x;
+        localTargetDir->y = fVar8;
+        localTargetDir->z = fVar5;
         return 1;
       }
-      return 0;
+      uVar9 = localTargetDir->x;
+      uVar10 = localTargetDir->y;
+      fVar8 = localTargetDir->z;
+      localTargetDir->x = (float)uVar9 / fVar5;
+      localTargetDir->y = (float)uVar10 / fVar5;
+      localTargetDir->z = fVar8 / fVar5;
+      return 1;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  pcVar11 = (code *)swi(3);
+  bVar12 = (*pcVar11)();
+  return bVar12;
 }
 
 
@@ -221,60 +260,94 @@ Assembly-CSharp.dll::GhostEye+LookAtTarget::GhostEye_LookAtTarget_Update
           MethodInfo *method)
 
 {
+  this_00 = ghostEye;
   if (ghostEye != (GhostEye *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)ghostEye,(MethodInfo *)0x0);
     if (pTVar1 != (Transform *)0x0) {
       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_InverseTransformPoint
-                          ((Vector3 *)&stack0xffffffe4,pTVar1,(this->fields).target,
-                           (MethodInfo *)0x0);
-      uVar3 = pVVar2->x;
-      uVar4 = pVVar2->y;
+                         (&VStack_3,pTVar1,(this->fields).target,(MethodInfo *)0x0);
+      uVar4._0_4_ = pVVar2->x;
+      uVar4._4_4_ = pVVar2->y;
+      VStack_3.z = pVVar2->z;
+      this = (GhostEye_LookAtTarget *)0x0;
+      ghostEye = (GhostEye *)0x0;
+      VStack_3._0_8_ = uVar4;
       if (_UNK_? <=
-          (float)uVar3 * (float)uVar3 + (float)uVar4 * (float)uVar4 + pVVar2->z * pVVar2->z) {
-        puVar5 = &UNK_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
-                  ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
+          (float)uVar4 * (float)uVar4 + uVar4._4_4_ * uVar4._4_4_ + VStack_3.z * VStack_3.z) {
+        uStack_5._0_4_ = pVVar2->x;
+        uStack_5._4_4_ = pVVar2->y;
+        fStack_6 = VStack_3.z;
         if (cRam_? == '\0') {
-          func_?();
+          func_?(&TypeInfo__System__Math);
           cRam_? = '\x01';
         }
-        pVVar2 = &TypeInfo__UnityEngine__Vector3->static_fields->upVector;
-        uVar6 = pVVar2->x;
-        uVar7 = pVVar2->y;
-        forward.y = (float)uVar6;
-        forward.x = (float)puVar5;
-        forward.z = (float)uVar7;
-        pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
-                            ((Quaternion *)&stack0xffffffe0,forward,*pVVar2,(MethodInfo *)0x0);
-        fVar9 = pQVar8->y;
-        fVar10 = pQVar8->z;
-        fVar11 = pQVar8->w;
-        __return_storage_ptr__->x = pQVar8->x;
-        __return_storage_ptr__->y = fVar9;
-        __return_storage_ptr__->z = fVar10;
-        __return_storage_ptr__->w = fVar11;
-        return __return_storage_ptr__;
+        if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__System__Math);
+        }
+        dVar7 = (double)(uStack_5._4_4_ * uStack_5._4_4_ + (float)uStack_5 * (float)uStack_5 +
+                        fStack_6 * fStack_6);
+        if (dVar7 < 0.0) {
+          func_?();
+        }
+        else {
+          dVar7 = SQRT(dVar7);
+        }
+        fVar8 = (float)dVar7;
+        if (_UNK_? < fVar8) {
+          fVar9 = VStack_3.z / fVar8;
+          fVar10 = (float)uVar4 / fVar8;
+          pQVar11 = (Quaternion *)(VStack_3.y / fVar8);
+          fStack_6 = fVar9;
+        }
+        else {
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__UnityEngine__Vector3);
+            cRam_? = '\x01';
+          }
+          pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+          fVar10 = (pVVar12->zeroVector).x;
+          pQVar11 = (Quaternion *)(pVVar12->zeroVector).y;
+          fVar9 = (pVVar12->zeroVector).z;
+        }
+        this = (GhostEye_LookAtTarget *)0x0;
+        ghostEye = (GhostEye *)0x0;
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__UnityEngine__Vector3);
+          cRam_? = '\x01';
+        }
+        forward.y = (float)pQVar11;
+        forward.x = fVar10;
+        forward.z = fVar9;
+        pQVar13 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
+                           ((Quaternion *)&stack0x00000000,forward,
+                            TypeInfo__UnityEngine__Vector3->static_fields->upVector,
+                            (MethodInfo *)0x0);
+        fVar8 = pQVar13->y;
+        fVar9 = pQVar13->z;
+        fVar10 = pQVar13->w;
+        pQVar11->x = pQVar13->x;
+        pQVar11->y = fVar8;
+        pQVar11->z = fVar9;
+        pQVar11->w = fVar10;
+        return pQVar11;
       }
       pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)ghostEye,(MethodInfo *)0x0);
+                         ((Component *)this_00,(MethodInfo *)0x0);
       if (pTVar1 != (Transform *)0x0) {
-        pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
-                            ((Quaternion *)&stack0xffffffe0,pTVar1,(MethodInfo *)0x0);
-        fVar9 = pQVar8->y;
-        fVar10 = pQVar8->z;
-        fVar11 = pQVar8->w;
-        __return_storage_ptr__->x = pQVar8->x;
-        __return_storage_ptr__->y = fVar9;
-        __return_storage_ptr__->z = fVar10;
-        __return_storage_ptr__->w = fVar11;
-        return __return_storage_ptr__;
+        pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
+                            ((Quaternion *)&this,pTVar1,(MethodInfo *)0x0);
+        fRam00000000 = pQVar11->x;
+        fRam00000004 = pQVar11->y;
+        fRam00000008 = pQVar11->z;
+        fRam0000000c = pQVar11->w;
+        return (Quaternion *)0x0;
       }
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  pQVar8 = (Quaternion *)(*pcVar12)();
-  return pQVar8;
+  pcVar14 = (code *)swi(3);
+  pQVar11 = (Quaternion *)(*pcVar14)();
+  return pQVar11;
 }
 

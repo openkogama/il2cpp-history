@@ -682,6 +682,68 @@ code_?:
 }
 
 
+/* Void HandleTeamSwitching(Int32) */
+
+void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_HandleTeamSwitching
+               (SpawnRoleMenu *this,int32_t spawnRoleId,MethodInfo *method)
+
+{
+  iVar1 = (this->fields).shownTeam;
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar2 != (MVNetworkGame *)0x0) &&
+     (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0),
+     pMVar3 != (MVLocalPlayer *)0x0)) {
+    if (iVar1 == (pMVar3->fields)._._Team_k__BackingField) {
+      return;
+    }
+    this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+    if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
+      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetTeam
+                (this_01,(this->fields).shownTeam,(MethodInfo *)0x0);
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (pMVar2 != (MVNetworkGame *)0x0) {
+        this_00 = (pMVar2->fields).gameStatCounterManager;
+        pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar2 != (MVNetworkGame *)0x0) &&
+           (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0),
+           pMVar3 != (MVLocalPlayer *)0x0)) {
+          actorNr = (pMVar3->fields)._._ActorNr_k__BackingField;
+          pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar2 != (MVNetworkGame *)0x0) &&
+             ((pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0),
+              pMVar3 != (MVLocalPlayer *)0x0 && (this_00 != (GameStatCounterManager *)0x0)))) {
+            MVWorldObject.dll::GameStatCounterManager::
+            GameStatCounterManager_RemoveTeamScoreOnActorLeave
+                      (this_00,actorNr,(pMVar3->fields)._._Team_k__BackingField,(MethodInfo *)0x0);
+            pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if ((pMVar2 != (MVNetworkGame *)0x0) &&
+               (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0),
+               pMVar3 != (MVLocalPlayer *)0x0)) {
+              mscorlib.dll::System::Collections::Generic::Stack`1[T]+Enumerator[System::Dynamic::
+              BindingRestrictions+TestBuilder+AndNode]::
+              Stack_1_T_Enumerator_System_Dynamic_BindingRestrictions_TestBuilder_AndNode__Dispose
+                        ((Stack_1_T_Enumerator_System_Dynamic_BindingRestrictions_TestBuilder_AndNode_
+                          *)pMVar3,(MethodInfo *)0x0);
+              pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if ((pMVar2 != (MVNetworkGame *)0x0) &&
+                 (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0),
+                 pMVar3 != (MVLocalPlayer *)0x0)) {
+                (pMVar3->fields)._._Team_k__BackingField = (this->fields).shownTeam;
+                return;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
+  return;
+}
+
+
 /* Void HideBackButton() */
 
 void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_HideBackButton
@@ -3171,7 +3233,7 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu__ctor(SpawnRoleMenu *this
             );
   (this->fields).SelectionElementsList = this_00;
   func_?(&(this->fields).SelectionElementsList,this_00);
-  LobbyFlowMenu::LobbyFlowMenu__ctor((LobbyFlowMenu *)this,(MethodInfo *)0x0);
+  LobbyStateController::LobbyStateController__ctor((LobbyStateController *)this,(MethodInfo *)0x0);
   return;
 }
 

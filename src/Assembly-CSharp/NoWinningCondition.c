@@ -60,15 +60,13 @@ void Assembly-CSharp.dll::NoWinningCondition::NoWinningCondition_CreateRoundTime
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pRVar3 = (RoundTimer *)
+    pRVar1 = (RoundTimer *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
                        ((Object *)pRVar1,pTVar2,0,
                         RoundTimer_MethodInfo__UnityEngine__Object__Instantiate<RoundTimer>_RoundTimer__UnityEngine__Transform__bool_
                        );
-    (this->fields).roundTimer = pRVar3;
-    ppRVar4 = &(this->fields).roundTimer;
-    puVar5 = &UNK_?;
-    func_?(ppRVar4,pRVar3);
+    (this->fields).roundTimer = pRVar1;
+    func_?(&(this->fields).roundTimer,pRVar1);
     pRVar1 = (this->fields).roundTimer;
     if (pRVar1 != (RoundTimer *)0x0) {
       pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -79,12 +77,12 @@ void Assembly-CSharp.dll::NoWinningCondition::NoWinningCondition_CreateRoundTime
         pRVar1 = (this->fields).roundTimer;
         if (pRVar1 != (RoundTimer *)0x0) {
           if (cRam_? == '\0') {
-            func_?(&MethodInfo__System__Collections__Generic__List<int>__List__,pRVar3);
+            func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
             func_?(&TypeInfo__System__Collections__Generic__List<int>);
             cRam_? = '\x01';
           }
           (pRVar1->fields).roundCube = roundCube;
-          func_?(&(pRVar1->fields).roundCube,roundCube,puVar5,ppRVar4);
+          func_?(&(pRVar1->fields).roundCube,roundCube);
           this_00 = (List_1_System_Int32_ *)
                     func_?(TypeInfo__System__Collections__Generic__List<int>);
           mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -101,8 +99,8 @@ void Assembly-CSharp.dll::NoWinningCondition::NoWinningCondition_CreateRoundTime
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -201,11 +199,11 @@ void Assembly-CSharp.dll::NoWinningCondition::NoWinningCondition_TryInitializeRo
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (this_00 != (MVWorldObjectClientManager *)0x0) {
-    roundCube = MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObjectRef
-                          (this_00,
-                           WorldObjectClientRef<MVRoundCube>_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObjectRef<MVRoundCube>__
-                          );
-    if (roundCube == (WorldObjectClientRef_1_System_Object_ *)0x0) {
+    pWVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObjectRef
+                       (this_00,
+                        WorldObjectClientRef<MVRoundCube>_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObjectRef<MVRoundCube>__
+                       );
+    if (pWVar1 == (WorldObjectClientRef_1_System_Object_ *)0x0) {
       return;
     }
     if (cRam_? == '\0') {
@@ -215,40 +213,55 @@ void Assembly-CSharp.dll::NoWinningCondition::NoWinningCondition_TryInitializeRo
       func_?(&TypeInfo__UnityEngine__Object);
       cRam_? = '\x01';
     }
-    pRVar1 = (this->fields).roundTimerPrefab;
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+    pRVar2 = (this->fields).roundTimerPrefab;
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
-    if (pTVar2 != (Transform *)0x0) {
-      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
-                         (pTVar2,(MethodInfo *)0x0);
+    if (pTVar3 != (Transform *)0x0) {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
+                         (pTVar3,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pRVar1 = (RoundTimer *)
+      pRVar2 = (RoundTimer *)
                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                         ((Object *)pRVar1,pTVar2,0,
+                         ((Object *)pRVar2,pTVar3,0,
                           RoundTimer_MethodInfo__UnityEngine__Object__Instantiate<RoundTimer>_RoundTimer__UnityEngine__Transform__bool_
                          );
-      (this->fields).roundTimer = pRVar1;
+      (this->fields).roundTimer = pRVar2;
       func_?();
-      pRVar1 = (this->fields).roundTimer;
-      if ((pRVar1 != (RoundTimer *)0x0) &&
-         (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)pRVar1,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0)) {
+      pRVar2 = (this->fields).roundTimer;
+      if ((pRVar2 != (RoundTimer *)0x0) &&
+         (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)pRVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsFirstSibling
-                  (pTVar2,(MethodInfo *)0x0);
-        pRVar1 = (this->fields).roundTimer;
-        if (pRVar1 != (RoundTimer *)0x0) {
-          RoundTimer::RoundTimer_Initialize
-                    (pRVar1,(WorldObjectClientRef_1_MVRoundCube_ *)roundCube,(MethodInfo *)0x0);
+                  (pTVar3,(MethodInfo *)0x0);
+        pRVar2 = (this->fields).roundTimer;
+        if (pRVar2 != (RoundTimer *)0x0) {
+          if (cRam_? == '\0') {
+            func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
+            func_?(&TypeInfo__System__Collections__Generic__List<int>);
+            cRam_? = '\x01';
+          }
+          (pRVar2->fields).roundCube = (WorldObjectClientRef_1_MVRoundCube_ *)pWVar1;
+          func_?(&(pRVar2->fields).roundCube,pWVar1);
+          this_01 = (List_1_System_Int32_ *)
+                    func_?(TypeInfo__System__Collections__Generic__List<int>);
+          mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+          __Il2CppFullySharedGenericType]::
+          LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                    ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
+                     MethodInfo__System__Collections__Generic__List<int>__List__);
+          (pRVar2->fields).timeNotifications = this_01;
+          func_?(&(pRVar2->fields).timeNotifications,this_01);
+          RoundTimer::RoundTimer_ResetTimeNotifications(pRVar2,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

@@ -6,49 +6,56 @@ Vector3 * Assembly-CSharp.dll::ClosestPointSphere::ClosestPointSphere_GetClosest
                     MethodInfo *method)
 
 {
-  a = (this->fields).offset;
-  pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                     ((Component *)this,(MethodInfo *)0x0);
-  if (pTVar1 != (Transform *)0x0) {
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                       (&VStack_3,pTVar1,(MethodInfo *)0x0);
-    MathFunctions::MathFunctions_Multiply(&VStack_3,a,*pVVar2,(MethodInfo *)0x0);
-    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)this,(MethodInfo *)0x0);
-    if (pTVar1 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                (&VStack_3,pTVar1,(MethodInfo *)0x0);
-      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)this,(MethodInfo *)0x0);
-      if (pTVar1 != (Transform *)0x0) {
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                           (&VStack_3,pTVar1,(MethodInfo *)0x0);
-        uVar4 = pVVar2->x;
-        fVar5 = (float)uVar4 + 4.2521584e-29;
-        pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)this,(MethodInfo *)0x0);
-        if (pTVar1 != (Transform *)0x0) {
-          pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                             (&VStack_3,pTVar1,(MethodInfo *)0x0);
-          VStack_3.z = spectator.z - pVVar2->z;
-          puVar6 = &stack0xffffffc4;
-          pVVar2 = &VStack_3;
-          puVar7 = (undefined8 *)func_?();
-          fVar8 = (float)puVar6 * (float)pVVar2;
-          uVar9 = *puVar7;
-          fVar10 = *(float *)(puVar7 + 1);
-          __return_storage_ptr__->x = fVar5 + (float)uVar9 * fVar8;
-          __return_storage_ptr__->y = (float)((ulonglong)uVar9 >> 0x20) * fVar8 + 4.2522093e-29;
-          __return_storage_ptr__->z = (float)this + fVar10 * fVar8;
+  uVar1._0_4_ = (this->fields).offset.x;
+  uVar1._4_4_ = (this->fields).offset.y;
+  fVar2 = (this->fields).offset.z;
+  pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)this,(MethodInfo *)0x0);
+  if (pTVar3 != (Transform *)0x0) {
+    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
+                        ((Vector3 *)&stack0xffffffa8,pTVar3,(MethodInfo *)0x0);
+    uVar5 = pVVar4->x;
+    uVar6 = pVVar4->y;
+    fVar7 = pVVar4->z;
+    fVar8 = (this->fields).radius;
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this,(MethodInfo *)0x0);
+    if (pTVar3 != (Transform *)0x0) {
+      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
+                          ((Vector3 *)&stack0xffffffa8,pTVar3,(MethodInfo *)0x0);
+      fVar9 = pVVar4->x;
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this,(MethodInfo *)0x0);
+      if (pTVar3 != (Transform *)0x0) {
+        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                            ((Vector3 *)&stack0xffffffa8,pTVar3,(MethodInfo *)0x0);
+        uVar10 = pVVar4->x;
+        uVar11 = pVVar4->y;
+        fVar12 = pVVar4->z;
+        fVar13 = (float)uVar10 + (float)uVar5 * (float)uVar1;
+        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)this,(MethodInfo *)0x0);
+        if (pTVar3 != (Transform *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                    ((Vector3 *)&stack0xffffffa8,pTVar3,(MethodInfo *)0x0);
+          puVar14 = (undefined8 *)func_?();
+          fVar9 = fVar9 * fVar8;
+          uVar15 = *puVar14;
+          fVar8 = *(float *)(puVar14 + 1);
+          __return_storage_ptr__->x = fVar13 + (float)uVar15 * fVar9;
+          __return_storage_ptr__->y =
+               (float)uVar11 + (float)uVar6 * (float)((ulonglong)uVar1 >> 0x20) +
+               (float)((ulonglong)uVar15 >> 0x20) * fVar9;
+          __return_storage_ptr__->z = fVar12 + fVar7 * fVar2 + fVar8 * fVar9;
           return __return_storage_ptr__;
         }
       }
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  pVVar2 = (Vector3 *)(*pcVar11)();
-  return pVVar2;
+  pcVar16 = (code *)swi(3);
+  pVVar4 = (Vector3 *)(*pcVar16)();
+  return pVVar4;
 }
 
 

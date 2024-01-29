@@ -1,7 +1,7 @@
 
-/* Void <GoToMenu>b__23_0(IUIStack, BaseEventData) */
+/* Void <GoToMenu>b__24_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::LobbyFlowMenu+<>c::LobbyFlowMenu_c__GoToMenu_b__23_0
+void Assembly-CSharp.dll::LobbyFlowMenu+<>c::LobbyFlowMenu_c__GoToMenu_b__24_0
                (LobbyFlowMenu_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
@@ -26,9 +26,9 @@ void Assembly-CSharp.dll::LobbyFlowMenu+<>c::LobbyFlowMenu_c__GoToMenu_b__23_0
 }
 
 
-/* Void <StartPlaying>b__24_0(IUIStack, BaseEventData) */
+/* Void <StartPlaying>b__25_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::LobbyFlowMenu+<>c::LobbyFlowMenu_c__StartPlaying_b__24_0
+void Assembly-CSharp.dll::LobbyFlowMenu+<>c::LobbyFlowMenu_c__StartPlaying_b__25_0
                (LobbyFlowMenu_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {

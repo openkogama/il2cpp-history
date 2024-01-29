@@ -5899,11 +5899,12 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
 }
 
 
-/* Void SetMouseSensitivity(Single) */
+/* Void SetProfileSettings(ProfileSettingKey, Object) */
 
 void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
-     MVNetworkGame_OperationRequests_SetMouseSensitivity
-               (MVNetworkGame_OperationRequests *this,float newMouseSensitivity,MethodInfo *method)
+     MVNetworkGame_OperationRequests_SetProfileSettings
+               (MVNetworkGame_OperationRequests *this,ProfileSettingKey__Enum key,Object *value,
+               MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -5916,9 +5917,18 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     func_?(&
                     TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
                    );
+    func_?(&TypeInfo__MV__WorldObject__MetaData__ProfileSettingKey);
     func_?(&TypeInfo__ExitGames__Client__Photon__SendOptions);
-    func_?(&TypeInfo__System__Single);
+    func_?(&TypeInfo__MV__WorldObject__MetaData__SettingsPlatform);
     cRam_? = '\x01';
+  }
+  bVar1 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+          VerticalVirtualizationController`1[System::Object]::
+          VerticalVirtualizationController_1_System_Object__get_alwaysRebindOnRefresh
+                    ((VerticalVirtualizationController_1_System_Object_ *)0x0,unaff_EDI);
+  iStack_2 = 0;
+  if (bVar1 != 1) {
+    iStack_2 = (bVar1 != 2) + 1;
   }
   this_00 = (Dictionary_2_System_Byte_System_Object_ *)
             func_?(
@@ -5929,27 +5939,42 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
             );
-  pDStack_1 = (Dictionary_2_System_Byte_System_Object_ *)newMouseSensitivity;
-  value = (Object *)func_?(TypeInfo__System__Single,&pDStack_1);
+  pOVar3 = (Object *)
+           func_?(TypeInfo__MV__WorldObject__MetaData__SettingsPlatform,&iStack_2);
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+    Dictionary_2_System_Byte_System_Object__Add
+              (this_00,0xbf,pOVar3,
+               MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+              );
+    pOVar3 = (Object *)func_?(TypeInfo__MV__WorldObject__MetaData__ProfileSettingKey);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+    Dictionary_2_System_Byte_System_Object__Add
+              (this_00,0x29,pOVar3,
+               MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+              );
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__Add
               (this_00,0xd8,value,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
               );
-    pPVar2 = (this->fields).peer;
+    pPVar4 = (this->fields).peer;
     if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    if (pPVar2 != (PhotonPeer *)0x0) {
-      pDStack_1 = this_00;
-      (*(code *)(pPVar2->klass->vtable).SendOperation.method)(pPVar2,0x65);
+    pSVar5 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
+    uVar6._0_1_ = (pSVar5->SendReliable).Encrypt;
+    uVar6._1_1_ = (pSVar5->SendReliable).Channel;
+    uVar6._2_2_ = *(undefined2 *)&(pSVar5->SendReliable).field_0x6;
+    if (pPVar4 != (PhotonPeer *)0x0) {
+      (*(code *)(pPVar4->klass->vtable).SendOperation.method)
+                (pPVar4,0x65,this_00,(pSVar5->SendReliable).DeliveryMode,uVar6);
       return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

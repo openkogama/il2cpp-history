@@ -144,13 +144,13 @@ void Assembly-CSharp.dll::BounceState::BounceState_UpdateBounceState
         UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
                   (&VStack_4,(MethodInfo *)0x0);
         fStack_7 = (float)((uint)VStack_4.x ^
-                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
         fStack_8 = (float)((uint)VStack_4.y ^
-                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
         fStack_9 = (float)((uint)VStack_4.z ^
-                          __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         fVar6 = (float10)func_?(&mvControllerColliderHit.slopeNormal.z,0);
         fStack_9 = (float)(fVar6 * (float10)_UNK_? *
                           (float10)(mvControllerColliderHit.elipsoidNormal.z * fStack_7 +

@@ -663,6 +663,18 @@ code_?:
 }
 
 
+/* Void OnChunkEditReset(Object, EditStateEventArgs) */
+
+void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_OnChunkEditReset
+               (CollectTheItemDropOff *this,Object *sender,EditStateEventArgs *args,
+               MethodInfo *method)
+
+{
+  CollectTheItemDropOff_ReInitializeVisuals(this,(MethodInfo *)0x0);
+  return;
+}
+
+
 /* Void OnCollected(Boolean) */
 
 void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_OnCollected
@@ -682,9 +694,11 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_OnCollect
       pCVar1 = (this->fields).triggerObject;
       if ((pCVar1 != (CollectTheItemDropOffObject *)0x0) &&
          (this_02 = (pCVar1->fields).blinker, this_02 != (CollectTheItemBlinker *)0x0)) {
-        CollectTheItemBlinker::CollectTheItemBlinker_OnBlinkingActivated
-                  (this_02,shouldbeActiveOnCollect,BlinkType__Enum_DropOffCollectedItem,
-                   (MethodInfo *)0x0);
+        if (shouldbeActiveOnCollect != 0) {
+          BlinkerBase::BlinkerBase_StartBlinking
+                    ((BlinkerBase *)this_02,BlinkType__Enum_DropOffCollectedItem,2.0,
+                     (MethodInfo *)0x0);
+        }
         MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
         if ((MVar2 == MVGameMode__Enum_Edit) && (shouldbeActiveOnCollect == 0)) {
           pCVar1 = (this->fields).triggerObject;
@@ -1410,11 +1424,9 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_triggerBo
           ppIVar4[(TypeInfo__PickupItemCollectTheItem->_1).naturalAligment - 1] ==
           (Il2CppClass *)TypeInfo__PickupItemCollectTheItem)))) {
         if ((ppIVar4[(TypeInfo__PickupItemCollectTheItem->_1).naturalAligment - 1] !=
-             (Il2CppClass *)TypeInfo__PickupItemCollectTheItem) ||
-           (pCRam000000fc == (CollectTheItem *)0x0)) goto code_?;
-        bVar3 = CollectTheItem::CollectTheItem_GetDoesWoFitDropOff
-                          (pCRam000000fc,(int32_t)pOVar2[9].fields.m_CachedPtr,(MethodInfo *)0x0);
-        if (bVar3 != 0) {
+             (Il2CppClass *)TypeInfo__PickupItemCollectTheItem) || (iRam_? == 0))
+        goto code_?;
+        if (*(void **)(iRam_? + 0x100) == pOVar2[9].fields.m_CachedPtr) {
           *(undefined1 *)&pOVar2[0xb].klass = 0;
           this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                               ((MethodInfo *)0x0);

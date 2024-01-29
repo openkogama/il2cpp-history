@@ -194,7 +194,6 @@ IntVector Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_GetCubePos
         point.z = (float)(MVWorldObjectClientManager *)voxelHit.interactionFlags;
         bVar1 = voxelHit.interactionFlags._4_1_;
         voxelHit.transform = (Transform *)pOVar5;
-        voxelHit.interactionFlags._4_4_ = (MethodInfo *)(float)voxelHit.interactionFlags._4_4_;
         IVar7 = SharedCubeFunctions::SharedCubeFunctions_WorldToLocal
                           ((GameObject *)voxelHit.collider,point,bVar1,(MethodInfo *)0x0);
         iVar3 = IVar7.z;
@@ -311,8 +310,8 @@ code_?:
                     mscorlib.dll::System::Array::Array_GetEnumerator(pAVar22,(MethodInfo *)0x0);
           pTVar21 = (Type *)0x0;
           while (pIVar23 != (IEnumerator__Class *)0x0) {
-            uVar24 = 0xc59d;
-            uVar25 = 0x1056;
+            uVar24 = 0x5bcd;
+            uVar25 = 0x1057;
             pIVar23 = TypeInfo__System__Collections__IEnumerator;
             cVar26 = func_?();
             if (cVar26 == '\0') {
@@ -441,7 +440,7 @@ code_?:
                     *(undefined2 *)((int)maxDistanceToEdge + 4) = uVar16;
                     iVar20 = func_?();
                     if (iVar20 != 0) {
-                      uVar36 = 0x56;
+                      uVar36 = 0x57;
                       uVar37 = 0x10;
                       this_01 = (MVCubeModelBase *)func_?();
                       if (this_01 != (MVCubeModelBase *)0x0) {
@@ -601,7 +600,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_HandleCursors
 
 {
   if (cRam_? == '\0') {
-    func_?(0x8590);
+    func_?(0xf470);
     func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
     func_?(&
                     MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__
@@ -1008,7 +1007,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_OnFireSecondary
         if (pMVar4 != (MVPickupOwner *)0x0) {
           fVar5 = (pMVar4->fields).lookOrigin.y;
           fVar6 = (pMVar4->fields).lookOrigin.z;
-          iVar7 = -0x2e20;
+          iVar7 = 0x6810;
           pVVar8 = MVPickupOwner::MVPickupOwner_get_LookDirection
                               ((Vector3 *)&stack0xffffffe0,(this->fields)._._.owner,
                                (MethodInfo *)0x0);

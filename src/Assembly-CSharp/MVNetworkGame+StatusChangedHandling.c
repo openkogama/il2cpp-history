@@ -50,8 +50,6 @@ void Assembly-CSharp.dll::MVNetworkGame+StatusChangedHandling::
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void OnStatusChanged(StatusCode) */
 
 void Assembly-CSharp.dll::MVNetworkGame+StatusChangedHandling::
@@ -82,7 +80,6 @@ void Assembly-CSharp.dll::MVNetworkGame+StatusChangedHandling::
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
   this_00 = (this->fields).reconnectWithAlternatePortHandler;
-  this_01 = (Dictionary_2_System_Byte_System_Object_ *)returnCode;
   if (this_00 == (MVNetworkGame_ReconnectWithAlternatePortHandler *)0x0) goto code_?;
   bVar2 = MVNetworkGame+ReconnectWithAlternatePortHandler::
           MVNetworkGame_ReconnectWithAlternatePortHandler_IsHandling
@@ -138,13 +135,12 @@ code_?:
   case 0:
     pSStack_3 = TypeInfo__ExitGames__Client__Photon__StatusCode;
     pSVar1 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pSStack_3,(MethodInfo *)0x0);
-    this_01 = (Dictionary_2_System_Byte_System_Object_ *)
-              mscorlib.dll::System::String::String_Concat_3
+    pSVar1 = mscorlib.dll::System::String::String_Concat_3
                         (StringLiteral_Disconnected_because__,pSVar1,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)this_01,(MethodInfo *)0x0)
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0)
     ;
     pMVar4 = (this->fields).networkGame;
     if (pMVar4 != (MVNetworkGame *)0x0) {
@@ -252,50 +248,30 @@ code_?:
     return;
   }
 code_?:
-  bVar7 = 0;
-  sVar8 = func_?();
-  bVar9 = (byte)extraout_EDX;
-  if (extraout_ECX != 0) {
-    bVar10 = (byte)unaff_EBX;
-    bVar11 = *(char *)&this_01->klass + bVar10;
-    bVar12 = CARRY1(*(byte *)&this_01->klass,bVar10) || CARRY1(bVar11,bVar7);
-    *(byte *)&this_01->klass = bVar11 + bVar7;
-    returnCode = (StatusCode__Enum)this_01;
-    bVar7 = bVar12;
-    if (extraout_ECX == 1) {
-      pbVar13 = (byte *)(extraout_EDX + -0x1d);
-      bVar7 = *pbVar13;
-      bVar11 = *pbVar13;
-      *pbVar13 = bVar11 + bVar9 + bVar12;
-      *(char *)(extraout_EDX + 0x1053e4) =
-           *(char *)(extraout_EDX + 0x1053e4) + bVar10 +
-           (CARRY1(bVar7,bVar9) || CARRY1(bVar11 + bVar9,bVar12));
-      cRam_? = cRam_? + (char)sVar8;
-      piVar14 = (int *)(CONCAT31((int3)(char)((ushort)sVar8 >> 8),(char)sVar8 + *(char *)(int)sVar8)
-                       + *unaff_EBX);
-      pcVar15 = (char *)((int)piVar14 + *unaff_EBX + *unaff_EBX + *unaff_EBX + *unaff_EBX + *piVar14
-                        );
-      cVar16 = (char)pcVar15;
-      *pcVar15 = *pcVar15 + cVar16;
-      *pcVar15 = *pcVar15 + cVar16;
-      *pcVar15 = *pcVar15 + cVar16;
-      pcVar17 = (code *)swi(3);
-      (*pcVar17)();
-      return;
-    }
-  }
-  ppIVar18 = &(((Dictionary_2_System_Byte_System_Object_ *)(returnCode + 0x30))->fields)._comparer;
-  *(byte *)ppIVar18 = *(char *)ppIVar18 + bVar9 + bVar7;
-  *(StatusCode__Enum *)((int)unaff_EBX + 0x11) = returnCode;
-  func_?();
-  method_00 = TypeInfo__MVNetworkGame__ReconnectWithAlternatePortHandler;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].monitor = (MonitorData *)returnCode;
-  func_?();
-  *(Object **)((int)unaff_EBX + 9) = value;
-  func_?();
+  uVar7 = 0;
+  uVar8 = func_?();
+  iVar9 = (int)((ulonglong)uVar8 >> 0x20);
+  pcVar10 = (char *)uVar8;
+  uVar11 = CONCAT11(uVar7,pcVar10[iVar9 + 0x22]);
+  uVar11 = uVar11 << 2 | uVar11 >> 7;
+  pcVar10[iVar9 + 0x22] = (char)uVar11;
+  bVar12 = (uVar11 & 0x100) != 0;
+  pbVar13 = (byte *)(iVar9 + -0x3d);
+  bVar14 = *pbVar13;
+  bVar15 = (byte)((uint)extraout_ECX >> 8);
+  bVar16 = *pbVar13 + bVar15;
+  *pbVar13 = bVar16 + bVar12;
+  cVar17 = (char)uVar8;
+  *pcVar10 = *pcVar10 + cVar17 + (CARRY1(bVar14,bVar15) || CARRY1(bVar16,bVar12));
+  *extraout_ECX = *extraout_ECX + cVar17;
+  piVar18 = (int *)(CONCAT31((int3)((ulonglong)uVar8 >> 8),cVar17 + *pcVar10) + *unaff_EBX);
+  pcVar10 = (char *)((int)piVar18 + *unaff_EBX + *unaff_EBX + *unaff_EBX + *unaff_EBX + *piVar18);
+  cVar17 = (char)pcVar10;
+  *pcVar10 = *pcVar10 + cVar17;
+  *pcVar10 = *pcVar10 + cVar17;
+  *pcVar10 = *pcVar10 + cVar17;
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

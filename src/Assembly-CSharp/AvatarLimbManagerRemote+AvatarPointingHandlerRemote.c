@@ -126,12 +126,23 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::
               ((AvatarLimbManager_AvatarPointingHandler *)this,(this->fields).remoteYawRotation,
                (this->fields).remotePitchRotation,(MethodInfo *)0x0);
   }
-  fVar1 = (this->fields)._.elapsedPointingTime;
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  (this->fields)._.prevLookDirection.x = localLookDirection.x;
-  (this->fields)._.prevLookDirection.y = localLookDirection.y;
-  (this->fields)._.elapsedPointingTime = fVar1 - fVar2;
-  (this->fields)._.prevLookDirection.z = localLookDirection.z;
+  fStack1 = localLookDirection.z;
+  AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_UpdatePointing
+            ((AvatarLimbManager_AvatarPointingHandler *)this,localLookDirection,(MethodInfo *)0x0);
+  return;
+}
+
+
+/* AvatarLimbManagerRemote+AvatarPointingHandlerRemote() */
+
+void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::
+     AvatarLimbManagerRemote_AvatarPointingHandlerRemote__ctor
+               (AvatarLimbManagerRemote_AvatarPointingHandlerRemote *this,MethodInfo *method)
+
+{
+  (this->fields)._.pointingDuration = 0.8;
+  (this->fields)._.shouldPoint = 1;
+  (this->fields)._.isActive = 1;
   return;
 }
 

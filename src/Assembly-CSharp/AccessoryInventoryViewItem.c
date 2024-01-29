@@ -1522,23 +1522,38 @@ void Assembly-CSharp.dll::AccessoryInventoryViewItem::AccessoryInventoryViewItem
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IAttachToBody;
-    func_?();
+    func_?(&TypeInfo__UnityEngine__EventSystems__IAttachToBody);
     cRam_? = '\x01';
   }
-  pAVar2 = (this->fields).accessoryDataClient;
-  if ((pAVar2 != (AccessoryDataClient *)0x0) && (x != (IAttachToBody *)0x0)) {
-    ppIStack_1 = (IAttachToBody__Class **)0x3f800000;
-    puStack_3 = (undefined *)0x0;
-    iStack_4 = (pAVar2->fields)._.sAID;
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IAttachToBody,x);
-    return;
+  pAVar1 = (this->fields).accessoryDataClient;
+  if (pAVar1 != (AccessoryDataClient *)0x0) {
+    iVar2 = (pAVar1->fields)._.sAID;
+    if (x != (IAttachToBody *)0x0) {
+      pIVar3 = x->klass;
+      uVar4 = 0;
+      uVar5._0_1_ = (pIVar3->_1).rank;
+      uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
+      if (uVar5 != 0) {
+        do {
+          if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
+              (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAttachToBody) {
+            ppMVar6 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar4].offset].AttachToBody.
+                       method;
+            goto code_?;
+          }
+          uVar4 = uVar4 + 1;
+        } while (uVar4 < uVar5);
+      }
+      ppMVar6 = (MethodInfo **)
+                func_?(x,TypeInfo__UnityEngine__EventSystems__IAttachToBody,0);
+code_?:
+      (*(code *)*ppMVar6)(x,iVar2,0,0x3f800000,ppMVar6[1]);
+      return;
+    }
   }
-  ppIStack_1 = (IAttachToBody__Class **)&stack0xfffffffc;
-  uVar5 = func_?(&iStack_4);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

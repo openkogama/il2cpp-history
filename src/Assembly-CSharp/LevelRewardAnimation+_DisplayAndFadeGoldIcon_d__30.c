@@ -75,6 +75,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
   default:
     return 0;
   }
+  in_AF = 0;
   if (_UNK_? <= (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).rotateUIYAxisTime) {
     pIVar4 = (pLVar2->fields).goldImage;
     if (pIVar4 != (Image *)0x0) {
@@ -91,8 +92,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
         pTVar11 = (pLVar2->fields).header;
         if ((pTVar11 != (Text *)0x0) &&
            (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)pTVar11,(MethodInfo *)0x0), pGVar12 != (GameObject *)0x0
-           )) {
+                                ((Component *)pTVar11,(MethodInfo *)0x0),
+           pGVar12 != (GameObject *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (pGVar12,1,(MethodInfo *)0x0);
           pTVar11 = (pLVar2->fields).header;
@@ -102,14 +103,14 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
             pTVar11 = (pLVar2->fields).goldText;
             if ((pTVar11 != (Text *)0x0) &&
                (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_get_gameObject((Component *)pTVar11,(MethodInfo *)0x0),
+                          Component_get_gameObject((Component *)pTVar11,(MethodInfo *)0x0),
                pGVar12 != (GameObject *)0x0)) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                         (pGVar12,1,(MethodInfo *)0x0);
               pCVar13 = (pLVar2->fields).claimButton;
               if ((pCVar13 != (CanvasGroup *)0x0) &&
                  (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                           Component_get_gameObject((Component *)pCVar13,(MethodInfo *)0x0),
+                            Component_get_gameObject((Component *)pCVar13,(MethodInfo *)0x0),
                  pGVar12 != (GameObject *)0x0)) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                           (pGVar12,1,(MethodInfo *)0x0);
@@ -119,6 +120,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
                             (pCVar13,0.0,(MethodInfo *)0x0);
                   (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
+                  in_AF = 0;
                   if (_UNK_? <=
                       (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).goldImageDisplayTime) {
                     pAVar5 = (pLVar2->fields).goldBounceEffect;
@@ -251,10 +253,16 @@ code_?:
     }
   }
 code_?:
-  uRam_? = func_?();
-  pcVar16 = (code *)swi(3);
-  bVar17 = (*pcVar16)();
-  return bVar17;
+  uVar16 = func_?();
+  bRam_? = (byte)uVar16;
+  in_AF = 9 < (bRam_? & 0xf) | in_AF;
+  uVar17 = CONCAT31((int3)((uint)uVar16 >> 8),bRam_? + in_AF * -6) & 0xffffff0f;
+  cVar18 = (char)((uint)uVar16 >> 8) - in_AF;
+  pcVar19 = (char *)(CONCAT22((short)(uVar17 >> 0x10),CONCAT11(cVar18,(char)uVar17)) + 0x55);
+  *pcVar19 = *pcVar19 + cVar18 + in_AF;
+  pcVar20 = (code *)swi(3);
+  bVar21 = (*pcVar20)();
+  return bVar21;
 }
 
 

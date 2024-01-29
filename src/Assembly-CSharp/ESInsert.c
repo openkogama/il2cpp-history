@@ -120,28 +120,45 @@ Vector3 * Assembly-CSharp.dll::ESInsert::ESInsert_ComputeSnapPosition
     func_?();
     cRam_? = '\x01';
   }
-  if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
-      (IEditModeUI *)0x0) {
-    cVar1 = func_?();
-    uVar2 = _UNK_?;
-    if (cVar1 != '\0') {
-      uVar2 = _UNK_?;
+  pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+  if (pIVar1 != (IEditModeUI *)0x0) {
+    pIVar2 = pIVar1->klass;
+    uVar3 = 0;
+    uVar4._0_1_ = (pIVar2->_1).rank;
+    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar4 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__IEditModeUI)
+        {
+          ppMVar5 = &(&(pIVar1->klass->vtable).IsGridSnap)
+                     [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
+          goto code_?;
+        }
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
+    }
+    ppMVar5 = (MethodInfo **)func_?();
+code_?:
+    cVar6 = (*(code *)*ppMVar5)();
+    uVar7 = _UNK_?;
+    if (cVar6 != '\0') {
+      uVar7 = _UNK_?;
     }
     if (wo != (MVWorldObjectClient *)0x0) {
-      puVar3 = (undefined8 *)
-               (*(code *)(wo->klass->vtable).GetClosestGridPoint.method)(auStack_4,wo,uVar2);
-      uVar5 = *puVar3;
-      fVar6 = *(float *)(puVar3 + 1);
-      __return_storage_ptr__->x = (float)(int)uVar5;
-      __return_storage_ptr__->y = (float)(int)((ulonglong)uVar5 >> 0x20);
-      __return_storage_ptr__->z = fVar6;
+      puVar8 = (undefined8 *)
+               (*(code *)(wo->klass->vtable).GetClosestGridPoint.method)(auStack_9,wo,uVar7);
+      uVar10 = *puVar8;
+      fVar11 = *(float *)(puVar8 + 1);
+      __return_storage_ptr__->x = (float)(int)uVar10;
+      __return_storage_ptr__->y = (float)(int)((ulonglong)uVar10 >> 0x20);
+      __return_storage_ptr__->z = fVar11;
       return __return_storage_ptr__;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  pVVar8 = (Vector3 *)(*pcVar7)();
-  return pVVar8;
+  pcVar12 = (code *)swi(3);
+  pVVar13 = (Vector3 *)(*pcVar12)();
+  return pVVar13;
 }
 
 
@@ -255,11 +272,11 @@ bool Assembly-CSharp.dll::ESInsert::ESInsert_DrawPlanePick
         else {
           puVar8 = (undefined8 *)func_?();
           fVar10 = (float)(*(uint *)(puVar8 + 1) ^
-                          __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           uVar9 = CONCAT44((uint)(float)((ulonglong)*puVar8 >> 0x20) ^
-                            __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             ,(uint)(float)*puVar8 ^
-                             __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                            );
         }
         fVar11 = 0.0;
@@ -275,9 +292,9 @@ bool Assembly-CSharp.dll::ESInsert::ESInsert_DrawPlanePick
         position->x = VStack_3.x - (float)uVar13;
         position->y = VStack_3.y - (float)uVar14;
         position->z = VStack_3.z - fVar15;
-        uVar16 = __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field;
+        uVar16 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         fVar11 = (float)((uint)fVar11 ^
-                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         rawPosition->x = VStack_3.x;
         rawPosition->y = VStack_3.y;
         rawPosition->z = VStack_3.z;
@@ -608,6 +625,8 @@ void Assembly-CSharp.dll::ESInsert::ESInsert_Execute
                       );
   (this->fields).previewMeshes = pMVar2;
   func_?(&(this->fields).previewMeshes,pMVar2);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,(ExceptionArgument__Enum)e,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
@@ -643,17 +662,17 @@ void Assembly-CSharp.dll::ESInsert::ESInsert_Execute
                         (MethodInfo *)0x0);
     if (bVar7 != 0) {
       QStack_9.z = (float)((uint)fStack_10 ^
-                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
       ;
       surfaceNormal.y =
            (float)((uint)fStack_11 ^
-                  __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       surfaceNormal.x =
            (float)((uint)fStack_12 ^
-                  __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       surfaceNormal.z =
            (float)((uint)fStack_10 ^
-                  __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       pVVar13 = ESInsert_ComputeObjectOffset
                           ((Vector3 *)&RStack_14.m_Origin.z,this,pMStack_8,surfaceNormal,
                            (MethodInfo *)0x0);
@@ -1151,13 +1170,13 @@ bool Assembly-CSharp.dll::ESInsert::ESInsert_WorldPick
     return 0;
   }
   fStack_2 = (float)((uint)fStack_3 ^
-                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   fVar4 = (float)((uint)fStack_5 ^
-                 __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   surfaceNormal.y = fVar4;
   surfaceNormal.x =
        (float)((uint)fStack_6 ^
-              __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   surfaceNormal.z = fStack_2;
   pVVar7 = ESInsert_ComputeObjectOffset(&VStack_8,this,wo,surfaceNormal,(MethodInfo *)0x0);
   uStack_9._0_4_ = (this->fields).insertOffset.x;

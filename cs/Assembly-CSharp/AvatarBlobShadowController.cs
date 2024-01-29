@@ -29,6 +29,6 @@ public class AvatarBlobShadowController : MonoBehaviour
 	private void OnDisable();
 	private void OnDestroy();
 	public void ScaleShadow(float scale);
-	private void OnQualityLevelChanged(int level);
+	private void OnQualityLevelChanged(object value);
 }
 

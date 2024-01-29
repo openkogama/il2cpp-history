@@ -299,78 +299,75 @@ void Assembly-CSharp.dll::DamageIndicator+IndicatorArrow::
     func_?(&TypeInfo__DamageIndicator__IndicatorArrow);
     cRam_? = '\x01';
   }
-  func_?(&fStack_1,0,0x40);
+  func_?(&stack0xffffff78,0,0x40);
   this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (this_00 != (MainCameraManager *)0x0) {
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)this_00,(MethodInfo *)0x0);
-    if (pTVar2 != (Transform *)0x0) {
-      pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_worldToLocalMatrix
-                         ((Matrix4x4 *)&stack0xffffff54,pTVar2,(MethodInfo *)0x0);
-      fStack_1 = pMVar3->m00;
-      puStack_4 = (undefined *)pMVar3->m10;
-      pTVar2 = (this->fields).damageOrigin;
-      if (pTVar2 != (Transform *)0x0) {
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                           ((Vector3 *)(auStack_6 + 4),pTVar2,(MethodInfo *)0x0);
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
-                           ((Vector3 *)(auStack_6 + 4),(Matrix4x4 *)&fStack_1,*pVVar5,
-                            (MethodInfo *)0x0);
-        uStack_7._0_4_ = pVVar5->x;
-        uStack_7._4_4_ = pVVar5->y;
-        fStack_8 = pVVar5->z;
-        uStack_9 = uStack_7;
-        fVar10 = (float10)func_?();
-        fVar11 = (float)fVar10;
-        uStack_9 = CONCAT44(fVar11,(undefined4)uStack_9);
-        if (_UNK_? < fVar11) {
-          fStack_12 = (float)uStack_7 / fVar11;
-          fVar11 = uStack_7._4_4_ / fVar11;
-        }
-        else {
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          fStack_12 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-          fVar11 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
-        }
-        uStack_9 = CONCAT44(fVar11,(undefined4)uStack_9);
-        pDVar13 = (this->fields).arrow;
-        if ((pDVar13 != (DamageArrow *)0x0) &&
-           (pIVar14 = (pDVar13->fields).image, pIVar14 != (Image *)0x0)) {
-          pTVar2 = (Transform *)
-                   UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                             ((Graphic *)pIVar14,(MethodInfo *)0x0);
-          fStack_8 = 0.0;
-          fStack_15 = 1.0;
-          upwards.y = uStack_9._4_4_;
-          upwards.x = fStack_12;
-          upwards.z = 0.0;
-          pQVar16 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
-                             ((Quaternion *)auStack_6,(Vector3)(ZEXT412(0x3f800000) << 0x40),
-                              upwards,(MethodInfo *)0x0);
-          if (pTVar2 != (Transform *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                      (pTVar2,*pQVar16,(MethodInfo *)0x0);
-            pDVar13 = (this->fields).arrow;
-            if ((pDVar13 != (DamageArrow *)0x0) &&
-               (pIVar14 = (pDVar13->fields).image, pIVar14 != (Image *)0x0)) {
-              this_01 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                                  ((Graphic *)pIVar14,(MethodInfo *)0x0);
-              fVar11 = fStack_12 *
-                      TypeInfo__DamageIndicator__IndicatorArrow->static_fields->indicationRadius;
-              uStack_9._4_4_ =
-                   uStack_9._4_4_ *
-                   TypeInfo__DamageIndicator__IndicatorArrow->static_fields->indicationRadius;
-              uStack_9 = CONCAT44(uStack_9._4_4_,fVar11);
-              if (this_01 != (RectTransform *)0x0) {
-                value.y = uStack_9._4_4_;
-                value.x = fVar11;
-                UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                RectTransform_set_anchoredPosition(this_01,value,(MethodInfo *)0x0);
-                return;
-              }
+  if ((this_00 != (MainCameraManager *)0x0) &&
+     (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this_00,(MethodInfo *)0x0), pTVar1 != (Transform *)0x0)) {
+    pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_worldToLocalMatrix
+                       ((Matrix4x4 *)&fStack_3,pTVar1,(MethodInfo *)0x0);
+    fVar4 = pMVar2->m20;
+    fStack_3 = pMVar2->m13;
+    fStack_5 = pMVar2->m23;
+    fStack_6 = pMVar2->m33;
+    pTVar1 = (this->fields).damageOrigin;
+    if (pTVar1 != (Transform *)0x0) {
+      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                         ((Vector3 *)&stack0xffffff70,pTVar1,(MethodInfo *)0x0);
+      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
+                         ((Vector3 *)&stack0xffffff7c,(Matrix4x4 *)&stack0xffffff9c,*pVVar7,
+                          (MethodInfo *)0x0);
+      uVar8 = pVVar7->x;
+      uVar9 = pVVar7->y;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      dVar10 = (double)((float)uVar9 * (float)uVar9 + (float)uVar8 * (float)uVar8);
+      if (dVar10 < 0.0) {
+        func_?();
+      }
+      else {
+        dVar10 = SQRT(dVar10);
+      }
+      if (((float)dVar10 <= _UNK_?) && (cRam_? == '\0')) {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pDVar11 = (this->fields).arrow;
+      if ((pDVar11 != (DamageArrow *)0x0) &&
+         (pIVar12 = (pDVar11->fields).image, pIVar12 != (Image *)0x0)) {
+        pTVar1 = (Transform *)
+                 UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
+                           ((Graphic *)pIVar12,(MethodInfo *)0x0);
+        upwards.y = (float)in_stack_13;
+        upwards.x = fVar4;
+        upwards.z = 0.0;
+        pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
+                           ((Quaternion *)&stack0xffffff9c,(Vector3)(ZEXT412(0x3f800000) << 0x40),
+                            upwards,(MethodInfo *)0x0);
+        if (pTVar1 != (Transform *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
+                    (pTVar1,*pQVar14,(MethodInfo *)0x0);
+          pDVar11 = (this->fields).arrow;
+          if ((pDVar11 != (DamageArrow *)0x0) &&
+             (pIVar12 = (pDVar11->fields).image, pIVar12 != (Image *)0x0)) {
+            this_01 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
+                                ((Graphic *)pIVar12,(MethodInfo *)0x0);
+            fStack_15 = fStack_15 *
+                        TypeInfo__DamageIndicator__IndicatorArrow->static_fields->indicationRadius;
+            fStack_16 = fStack_6 *
+                        TypeInfo__DamageIndicator__IndicatorArrow->static_fields->indicationRadius;
+            fStack_6 = fStack_15;
+            if (this_01 != (RectTransform *)0x0) {
+              value.y = fStack_16;
+              value.x = fStack_15;
+              UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+              RectTransform_set_anchoredPosition(this_01,value,(MethodInfo *)0x0);
+              return;
             }
           }
         }

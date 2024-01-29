@@ -143,15 +143,19 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_OnClick
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
       if ((TypeInfo__TierUnlockDetailsPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__TierUnlockDetailsPopup____c);
       }
       callbackFunction = TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9__27_0;
       if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
         if ((TypeInfo__TierUnlockDetailsPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+          func_?(TypeInfo__TierUnlockDetailsPopup____c);
         }
         object = TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9;
-        callbackFunction = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
+        callbackFunction =
+             (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                            );
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -163,7 +167,7 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_OnClick
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
-        func_?();
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
                 (root,(BaseEventData *)0x0,
@@ -176,15 +180,35 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_OnClick
     if (pTVar1 != (TogglePreviewState *)0x0) {
       if ((pTVar1->fields).freeTry == 0) {
         pIVar3 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-        this_00 = (UnityAction_1_System_Int32Enum_ *)func_?();
+        this_00 = (UnityAction_1_System_Int32Enum_ *)
+                  func_?(
+                                 TypeInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>
+                                 );
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
         UnityAction_1_System_Int32Enum___ctor
                   (this_00,(Object *)this,
                    MethodInfo__TierUnlockDetailsPopup__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
                    ,(MethodInfo *)0x0);
         if (pIVar3 != (IAdManager *)0x0) {
-          puStack4 = (undefined *)0x6;
-          func_?(6);
+          pIVar4 = pIVar3->klass;
+          uVar5 = 0;
+          uVar6._0_1_ = (pIVar4->_1).rank;
+          uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
+          if (uVar6 != 0) {
+            do {
+              if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
+                  (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
+                ppMVar7 = &(&(pIVar3->klass->vtable).RequestRewardedAd)
+                           [pIVar3->klass->interfaceOffsets[uVar5].offset].method;
+                goto code_?;
+              }
+              uVar5 = uVar5 + 1;
+            } while (uVar5 < uVar6);
+          }
+          this_00 = (UnityAction_1_System_Int32Enum_ *)&UNK_?;
+          ppMVar7 = (MethodInfo **)func_?(pIVar3);
+code_?:
+          (*(code *)*ppMVar7)(pIVar3,this_00);
           return;
         }
       }
@@ -199,8 +223,8 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_OnClick
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1359,15 +1383,19 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_ShowAd
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
       if ((TypeInfo__TierUnlockDetailsPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__TierUnlockDetailsPopup____c);
       }
       callbackFunction = TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9__27_0;
       if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
         if ((TypeInfo__TierUnlockDetailsPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+          func_?(TypeInfo__TierUnlockDetailsPopup____c);
         }
         object = TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9;
-        callbackFunction = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
+        callbackFunction =
+             (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                            );
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -1379,7 +1407,7 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_ShowAd
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
-        func_?();
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
                 (root,(BaseEventData *)0x0,
@@ -1392,15 +1420,35 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_ShowAd
     if (pTVar1 != (TogglePreviewState *)0x0) {
       if ((pTVar1->fields).freeTry == 0) {
         pIVar3 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-        this_00 = (UnityAction_1_System_Int32Enum_ *)func_?();
+        this_00 = (UnityAction_1_System_Int32Enum_ *)
+                  func_?(
+                                 TypeInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>
+                                 );
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
         UnityAction_1_System_Int32Enum___ctor
                   (this_00,(Object *)this,
                    MethodInfo__TierUnlockDetailsPopup__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
                    ,(MethodInfo *)0x0);
         if (pIVar3 != (IAdManager *)0x0) {
-          puStack4 = (undefined *)0x6;
-          func_?(6);
+          pIVar4 = pIVar3->klass;
+          uVar5 = 0;
+          uVar6._0_1_ = (pIVar4->_1).rank;
+          uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
+          if (uVar6 != 0) {
+            do {
+              if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
+                  (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
+                ppMVar7 = &(&(pIVar3->klass->vtable).RequestRewardedAd)
+                           [pIVar3->klass->interfaceOffsets[uVar5].offset].method;
+                goto code_?;
+              }
+              uVar5 = uVar5 + 1;
+            } while (uVar5 < uVar6);
+          }
+          this_00 = (UnityAction_1_System_Int32Enum_ *)&UNK_?;
+          ppMVar7 = (MethodInfo **)func_?(pIVar3);
+code_?:
+          (*(code *)*ppMVar7)(pIVar3,this_00);
           return;
         }
       }
@@ -1415,8 +1463,8 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_ShowAd
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

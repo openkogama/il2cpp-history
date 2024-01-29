@@ -10,15 +10,20 @@ Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Animatio
     func_?(&TypeInfo__AvatarAccessoryPreviewer___AnimationEndTrack_d__35);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__AvatarAccessoryPreviewer___AnimationEndTrack_d__35;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].monitor = (MonitorData *)this;
-  value[1].klass = (Object__Class *)0x0;
-  func_?(&value[2].monitor,this);
-  value[2].klass = (Object__Class *)resetDelay;
-  return (IEnumerator *)value;
+  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
+            func_?(TypeInfo__AvatarAccessoryPreviewer___AnimationEndTrack_d__35);
+  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
+            (this_00,0,(MethodInfo *)0x0);
+  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+    this_00[1].monitor = (MonitorData *)this;
+    func_?(&this_00[1].monitor);
+    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)resetDelay;
+    return (IEnumerator *)this_00;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  pIVar2 = (IEnumerator *)(*pcVar1)();
+  return pIVar2;
 }
 
 
@@ -141,7 +146,7 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_OnD
   pAVar2 = (this->fields).toPreviewer;
   (this->fields).currentRotationSpeed =
        (float)((uint)fVar1 ^
-              __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) *
+              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
        (this->fields).rotationSensitivity;
   if ((pAVar2 != (AvatarPreviewer *)0x0) &&
      (pCVar3 = (pAVar2->fields).previewCam, pCVar3 != (Camera *)0x0)) {
@@ -241,10 +246,10 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_OnP
            (pRVar8 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
                                 ((Graphic *)pRVar7,(MethodInfo *)0x0),
            pRVar8 != (RectTransform *)0x0)) {
-          method_00 = (MethodInfo *)0x0;
-          pRVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+          fVar10 = 0.0;
+          pRVar11 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
                               ((Rect *)&stack0xffffffb0,pRVar8,(MethodInfo *)0x0);
-          fVar6 = pRVar10->m_Height;
+          fVar6 = pRVar11->m_Height;
           pRVar7 = (this->fields).toImage;
           if ((pRVar7 != (RawImage *)0x0) &&
              (pRVar8 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
@@ -252,41 +257,42 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_OnP
              pRVar8 != (RectTransform *)0x0)) {
             VVar9 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_pivot
                                (pRVar8,(MethodInfo *)0x0);
-            pAVar11 = (this->fields).toPreviewer;
-            if ((pAVar11 != (AvatarPreviewer *)0x0) &&
-               (this_00 = (pAVar11->fields).previewCam, this_00 != (Camera *)0x0)) {
+            pAVar12 = (this->fields).toPreviewer;
+            if ((pAVar12 != (AvatarPreviewer *)0x0) &&
+               (this_00 = (pAVar12->fields).previewCam, this_00 != (Camera *)0x0)) {
               pos.y = fVar3 + fVar6 / (_UNK_? / VVar9.y);
-              pos.x = fVar2 + (float)method_00 / (_UNK_? / fVar5);
+              pos.x = fVar2 + fVar10 / (_UNK_? / fVar5);
               pos.z = 0.0;
-              pRVar12 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
+              pRVar13 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
                                   ((Ray *)&stack0xffffffa8,this_00,pos,(MethodInfo *)0x0);
               if (((this->fields).pickedAccessory == 0) ||
-                 (uVar13 = (pRVar12->m_Direction).z, uVar14 = (pRVar12->m_Origin).x,
-                 uVar15 = (pRVar12->m_Origin).y, uVar16 = (pRVar12->m_Origin).z,
-                 ray.m_Origin.z = (float)uVar16, ray.m_Origin.y = (float)uVar15,
-                 ray.m_Origin.x = (float)uVar14, uVar17 = (pRVar12->m_Direction).x,
-                 uVar18 = (pRVar12->m_Direction).y, ray.m_Direction.y = (float)uVar18,
-                 ray.m_Direction.x = (float)uVar17, ray.m_Direction.z = (float)uVar13,
-                 bVar19 = AvatarAccessoryPreviewer_PickAccessory
+                 (uVar14 = (pRVar13->m_Direction).z, uVar15 = (pRVar13->m_Origin).x,
+                 uVar16 = (pRVar13->m_Origin).y, uVar17 = (pRVar13->m_Origin).z,
+                 ray.m_Origin.z = (float)uVar17, ray.m_Origin.y = (float)uVar16,
+                 ray.m_Origin.x = (float)uVar15, uVar18 = (pRVar13->m_Direction).x,
+                 uVar19 = (pRVar13->m_Direction).y, ray.m_Direction.y = (float)uVar19,
+                 ray.m_Direction.x = (float)uVar18, ray.m_Direction.z = (float)uVar14,
+                 bVar20 = AvatarAccessoryPreviewer_PickAccessory
                                     (this,ray,&pGStack_1,(RaycastHit *)&stack0xffffff7c,
-                                     (MethodInfo *)0x0), bVar19 == 0)) {
+                                     (MethodInfo *)0x0), bVar20 == 0)) {
                 return;
               }
-              value = (Object *)func_?();
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                        (value,ExceptionArgument__Enum_obj,method_00);
+              this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
+              UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+              UxmlObjectListAttributeDescription`1[System::Object]::
+              UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
               if (((pGStack_1 != (GameObject *)0x0) &&
-                  (pOVar20 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                  (pOVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                              GameObject_GetComponentInChildren_3
                                        (pGStack_1,1,
                                         SelectionHelperAvatarAccessory_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionHelperAvatarAccessory>_bool_
-                                       ), pOVar20 != (Object *)0x0)) &&
-                 (pOVar21 = (Object__Class *)
-                            AccessoryDataManager::
+                                       ), pOVar21 != (Object *)0x0)) &&
+                 (pAVar22 = AccessoryDataManager::
                             AccessoryDataManager_GetAccessoryDataByStreamingAssetId
-                                      ((int32_t)pOVar20[3].monitor,(MethodInfo *)0x0),
-                 value != (Object *)0x0)) {
-                value[1].klass = pOVar21;
+                                      ((int32_t)pOVar21[3].monitor,(MethodInfo *)0x0),
+                 this_01 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0)) {
+                (this_01->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)pAVar22
+                ;
                 func_?();
                 root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                  ((Component *)this,(MethodInfo *)0x0);
@@ -294,7 +300,8 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_OnP
                 ;
                 UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
                 ::Object]::UnityAction_2_System_Object_System_Object___ctor
-                          ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                          ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
+                           (Object *)this_01,
                            MethodInfo__AvatarAccessoryPreviewer____c__DisplayClass30_0___OnPointerClick_b__0_UnityEngine__EventSystems__IAccessoryClicked__UnityEngine__EventSystems__BaseEventData_
                            ,(MethodInfo *)0x0);
                 if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
@@ -315,8 +322,8 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_OnP
     }
   }
   func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 
@@ -544,18 +551,20 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Pla
               func_?();
               cRam_? = '\x01';
             }
-            method_00 = TypeInfo__AvatarAccessoryPreviewer___AnimationEndTrack_d__35;
-            value = (Object *)func_?();
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                      (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-            value[1].klass = (Object__Class *)0x0;
-            value[2].monitor = (MonitorData *)this;
-            func_?();
-            value[2].klass = (Object__Class *)(((float)this_00 / fVar5) * fVar7);
-            UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
-            MonoBehaviour_StartCoroutine_Auto
-                      ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
-            return;
+            this_01 = (SubscribableVariable_1_System_Int32Enum_ *)func_?();
+            SubscribableVariable`1[System::Int32Enum]::
+            SubscribableVariable_1_System_Int32Enum___ctor(this_01,0,(MethodInfo *)0x0);
+            if (this_01 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+              this_01[1].monitor = (MonitorData *)this;
+              func_?(&this_01[1].monitor,this);
+              this_01[1].klass =
+                   (SubscribableVariable_1_System_Int32Enum___Class *)
+                   (((float)this_00 / fVar5) * fVar7);
+              UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+              MonoBehaviour_StartCoroutine_Auto
+                        ((MonoBehaviour *)this,(IEnumerator *)this_01,(MethodInfo *)0x0);
+              return;
+            }
           }
           break;
         }

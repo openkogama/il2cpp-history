@@ -137,8 +137,7 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_OnFirstDown
       arg0 = (Object *)func_?();
       pSVar1 = mscorlib.dll::System::String::String_Format
                          (StringLiteral_Download_time_1___0_,arg0,(MethodInfo *)0x0);
-      MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                (MVGameMsgType__Enum_AdminMsg,pSVar1,(MethodInfo *)0x0);
+      TextCommand::TextCommand_NotifyUser(pSVar1,(MethodInfo *)0x0);
       this = (Action_3_Object_Single_Int32_ *)
              func_?(
                             TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest,_float,_int>
@@ -160,8 +159,7 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_OnFirstDown
       pSVar1 = mscorlib.dll::System::String::String_Format
                          (StringLiteral_Error_executing_command___0_,(Object *)pSVar1,
                           (MethodInfo *)0x0);
-      MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                (MVGameMsgType__Enum_AdminMsg,pSVar1,(MethodInfo *)0x0);
+      TextCommand::TextCommand_NotifyUser(pSVar1,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -201,8 +199,7 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_OnSecondDow
       pSVar1 = mscorlib.dll::System::String::String_Format
                          (StringLiteral_Error_executing_command___0_,(Object *)pSVar1,
                           (MethodInfo *)0x0);
-      MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                (MVGameMsgType__Enum_AdminMsg,pSVar1,(MethodInfo *)0x0);
+      TextCommand::TextCommand_NotifyUser(pSVar1,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -215,8 +212,7 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_OnSecondDow
       arg0 = (Object *)func_?();
       pSVar1 = mscorlib.dll::System::String::String_Format
                          (StringLiteral_Download_time_2___0_,arg0,(MethodInfo *)0x0);
-      MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                (MVGameMsgType__Enum_AdminMsg,pSVar1,(MethodInfo *)0x0);
+      TextCommand::TextCommand_NotifyUser(pSVar1,(MethodInfo *)0x0);
     }
     pKVar3 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
     if (pKVar3 != (KoGaMaSettingsContainer *)0x0) {

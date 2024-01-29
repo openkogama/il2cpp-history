@@ -44,7 +44,8 @@ public class MVMaterial
 	public MVMaterial(PhysicalProperties physicalProperties, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType);
 
 	// Methods
-	private void GenerateCube(int materialId);
+	public void RegenerateButtonTexture(int materialId, MaterialButtonTextureGenerator materialButtonTextureGenerator);
+	private void GenerateCube(int materialID);
 	private void AddVertices(int direction);
 }
 

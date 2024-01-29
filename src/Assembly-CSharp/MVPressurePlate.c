@@ -482,9 +482,9 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_OnUpdate
                       ((MethodInfo *)0x0);
     fVar8 = fVar8 * fVar7;
     if ((float)((uint)fVar5 ^
-               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) <= fVar8) {
+               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) <= fVar8) {
       fVar8 = (float)((uint)fVar5 ^
-                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     }
     fVar8 = fVar8 + fVar5;
   }

@@ -259,7 +259,7 @@ float Assembly-CSharp.dll::ImpactState::ImpactState_UpdateImpactState
         if (pLVar30 == (List_1_MVControllerColliderHit_ *)0x0) goto code_?;
         fVar23 = (this->fields).averageSoftnessPrevFrame / (float)(pLVar30->fields)._size;
       }
-      *pfStack_15 = fVar23;
+      (this->fields).averageSoftnessPrevFrame = fVar23;
       pLVar30 = (this->fields).moveHits;
       if (pLVar30 != (List_1_MVControllerColliderHit_ *)0x0) {
         iVar28 = (pLVar30->fields)._size;

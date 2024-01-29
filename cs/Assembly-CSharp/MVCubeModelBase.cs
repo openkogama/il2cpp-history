@@ -14,12 +14,12 @@ using UnityEngine;
 public class MVCubeModelBase : MVWorldObjectClient, ICubeModel, ICubeModelCollider
 {
 	// Fields
+	private static readonly int TrancperancyShaderProperty;
 	protected RuntimePrototypeCubeModel prototypeCubeModel;
 	protected readonly ChunkInstances chunkInstances;
 	[CompilerGenerated]
 	private Func<IModelingConstraint> _ModelingConstraintBuilder_k__BackingField;
 	private bool beingEdited;
-	private static readonly int AlphaShaderProperty;
 	private Queue<CubeModelChangedEventArgs> changedEventArgsQueue;
 	public Action<CubeModelChangedEventArgs> Changed;
 	public Action<HashSet<IntVector>> ChunksChanged;

@@ -177,7 +177,6 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor
     (this->fields).addCubeTime = fVar6;
   }
   pCVar7 = (this->fields).sprayCursor;
-  unaff_ESI = selectedCube;
   if (selectedCube == (CubePickingInfo *)0x0) {
     if (pCVar7 != (CellCursor *)0x0) {
       CellCursor::CellCursor_set_Active(pCVar7,0,(MethodInfo *)0x0);
@@ -241,7 +240,7 @@ code_?:
   i2.x = in_stack_8;
   i2.z = (int16_t)(undefined4)uStack_10;
   IVar12 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                     (IVar12,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
+                    (IVar12,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
   pIVar15 = IVar12._0_4_;
   uStack_10._0_2_ = pIVar15->x;
   uStack_10._2_2_ = pIVar15->y;
@@ -273,14 +272,9 @@ code_?:
     }
   }
 code_?:
-  bVar16 = 0;
-  uVar1 = func_?();
-  *(char *)&unaff_ESI->klass =
-       *(char *)&unaff_ESI->klass + (char)((ushort)uVar1 >> 8) +
-       ((byte)uVar1 < in_stack_17 || (byte)((byte)uVar1 - in_stack_17) < bVar16);
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
-  return;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

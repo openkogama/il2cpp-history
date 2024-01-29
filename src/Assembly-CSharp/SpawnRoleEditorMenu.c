@@ -13,118 +13,94 @@ Vector3 * Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_Calculat
     cRam_? = '\x01';
   }
   if (spawnRole != (MVWorldObjectClient *)0x0) {
-    fVar1 = MVWorldObjectClient::MVWorldObjectClient_ComputeObjectRadius
-                       (spawnRole,(MethodInfo *)0x0);
+    fStack_1 = MVWorldObjectClient::MVWorldObjectClient_ComputeObjectRadius
+                          (spawnRole,(MethodInfo *)0x0);
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
     if ((pMVar2 != (MainCameraManager *)0x0) &&
        (this_00 = (pMVar2->fields).mainCamera, this_00 != (Camera *)0x0)) {
-      UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView
-                (this_00,(MethodInfo *)0x0);
+      fStack_3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView
+                            (this_00,(MethodInfo *)0x0);
+      dVar4 = (double)(fStack_3 * _UNK_? * _UNK_? * _UNK_?);
+      VStack_5.x = (float)&UNK_?;
       func_?();
+      fStack_6 = fStack_1 / (float)dVar4;
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__Vector3);
+        VStack_5.x = (float)&TypeInfo__UnityEngine__Vector3;
+        func_?();
         cRam_? = '\x01';
       }
-      pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
-      VStack_4.x = (pVVar3->upVector).x;
-      VStack_4.y = (pVVar3->upVector).y;
-      VStack_4.z = (pVVar3->upVector).z;
-      fVar5 = VStack_4.y * _UNK_?;
-      fVar6 = VStack_4.z * _UNK_?;
-      (*(code *)(spawnRole->klass->vtable).get_WorldPivot.method)
-                (afStack_7,spawnRole,(spawnRole->klass->vtable).get_InteractionFlags.methodPtr);
+      pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uStack_8._0_4_ = (pVVar7->upVector).x;
+      uStack_8._4_4_ = (pVVar7->upVector).y;
+      fStack_9 = (pVVar7->upVector).z;
+      fStack_1 = (float)uStack_8 * _UNK_?;
+      fStack_3 = uStack_8._4_4_ * _UNK_?;
+      fStack_10 = fStack_9 * _UNK_?;
+      VStack_5.x = (float)(spawnRole->klass->vtable).get_InteractionFlags.methodPtr;
+      puVar11 = (undefined8 *)
+                (*(code *)(spawnRole->klass->vtable).get_WorldPivot.method)(&fStack_12,spawnRole);
+      uStack_13 = *puVar11;
+      fStack_14 = *(float *)(puVar11 + 1);
       this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if (this_01 != (MVNetworkGame *)0x0) {
-        pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-        if ((pMVar8 != (MVLocalPlayer *)0x0) &&
-           (pSVar9 = (pMVar8->fields).spawnRoleDataMediator, pSVar9 != (SpawnRoleDataMediator *)0x0
+        pMVar15 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
+        if ((pMVar15 != (MVLocalPlayer *)0x0) &&
+           (pSVar16 = (pMVar15->fields).spawnRoleDataMediator, pSVar16 != (SpawnRoleDataMediator *)0x0
            )) {
-          pVVar10 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+          pVVar17 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
                     SpawnRoleVariableTypes::SpawnRoleVariable`1[UnityEngine::Vector3]::
                     SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
-                              (&VStack_11,
-                               (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar9->fields).position
+                              (&VStack_5,
+                               (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar16->fields).position
                                ,
                                MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
                               );
-          uVar12 = pVVar10->x;
-          uVar13 = pVVar10->y;
-          fVar14 = pVVar10->z;
-          VStack_4.x = fVar14;
-          fVar15 = VStack_11.x - ((float)uVar12 + fVar6);
-          fVar6 = VStack_11.y - ((float)uVar13 + fStack_16);
-          fVar1 = VStack_11.z - (fVar14 + fVar1);
-          VStack_11.x = pVVar10->x;
-          VStack_11.y = pVVar10->y;
-          VStack_11.z = fVar14;
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__System__Math);
-            cRam_? = '\x01';
-          }
-          if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__System__Math);
-          }
-          dVar17 = (double)(fVar15 * fVar15 + fVar6 * fVar6 + fVar1 * fVar1);
-          if (dVar17 < 0.0) {
-            func_?();
-          }
-          else {
-            dVar17 = SQRT(dVar17);
-          }
-          if (_UNK_? < (float)dVar17) {
-            fVar14 = fVar1 / (float)dVar17;
-            afStack_7[0] = fVar14;
-          }
-          else {
-            if (cRam_? == '\0') {
-              func_?(&TypeInfo__UnityEngine__Vector3);
-              cRam_? = '\x01';
-            }
-            fVar14 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
-          }
-          VStack_4.x = fVar14;
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__System__Math);
-            cRam_? = '\x01';
-          }
-          if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__System__Math);
-          }
-          dVar17 = (double)(fVar15 * fVar15 + fVar6 * fVar6 + fVar1 * fVar1);
-          if (dVar17 < 0.0) {
-            func_?();
-          }
-          else {
-            dVar17 = SQRT(dVar17);
-          }
-          fVar14 = VStack_11.z + VStack_4.x * ((float)dVar17 - fVar5);
-          iVar18 = (*(code *)(spawnRole->klass->vtable).get_Position.method)
-                             (auStack_19,spawnRole,(spawnRole->klass->vtable).set_Position.methodPtr
-                             );
-          fVar6 = *(float *)(iVar18 + 8);
-          pTVar20 = (spawnRole->fields).transform;
-          if (pTVar20 != (Transform *)0x0) {
-            pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                                (&VStack_4,pTVar20,(MethodInfo *)0x0);
-            VStack_4.x = pVVar10->x;
-            VStack_4.y = pVVar10->y;
-            VStack_4.z = pVVar10->z;
-            fVar15 = VStack_4.y * _UNK_?;
-            fStack_21 = fVar1 + VStack_4.x * _UNK_?;
-            afStack_7[0] = 0.0;
-            afStack_7[1] = 0.0;
-            afStack_7[2] = 0.0;
-            pTVar20 = (spawnRole->fields).transform;
-            if (pTVar20 != (Transform *)0x0) {
-              pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                                  (&VStack_11,pTVar20,(MethodInfo *)0x0);
-              uVar22 = pVVar10->x;
-              uVar23 = pVVar10->y;
-              fVar24 = (float)uVar23 * _UNK_?;
-              fVar25 = pVVar10->z * _UNK_?;
-              __return_storage_ptr__->x = (afStack_7[2] + (float)uVar22 * _UNK_?) - fVar6;
-              __return_storage_ptr__->y = (fVar5 + fVar24) - (fVar5 + fVar15);
-              __return_storage_ptr__->z = (fVar1 + fVar25) - fVar14;
+          uVar18 = pVVar17->x;
+          uVar19 = pVVar17->y;
+          fStack_9 = pVVar17->z;
+          fStack_20 = fStack_14 - (fStack_9 + fStack_10);
+          uStack_8._0_4_ = pVVar17->x;
+          uStack_8._4_4_ = pVVar17->y;
+          uStack_21 = CONCAT44(uStack_13._4_4_ - ((float)uVar19 + fStack_3),
+                               (float)uStack_13 - ((float)uVar18 + fStack_1));
+          fStack_14 = fStack_20;
+          puVar11 = (undefined8 *)func_?(&VStack_5,&uStack_21,0);
+          uStack_13 = *puVar11;
+          fStack_14 = *(float *)(puVar11 + 1);
+          fVar22 = (float10)func_?(&uStack_21,0);
+          fStack_6 = (float)(fVar22 - (float10)fStack_6);
+          fStack_1 = (float)uStack_8 + (float)uStack_13 * fStack_6;
+          fStack_3 = uStack_8._4_4_ + uStack_13._4_4_ * fStack_6;
+          fStack_23 = fStack_9 + fStack_14 * fStack_6;
+          puVar11 = (undefined8 *)
+                    (*(code *)(spawnRole->klass->vtable).get_Position.method)
+                              (&VStack_5,spawnRole,
+                               (spawnRole->klass->vtable).set_Position.methodPtr);
+          uStack_8 = *puVar11;
+          fStack_9 = *(float *)(puVar11 + 1);
+          pTVar24 = (spawnRole->fields).transform;
+          if (pTVar24 != (Transform *)0x0) {
+            pVVar17 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                                (&VStack_5,pTVar24,(MethodInfo *)0x0);
+            uStack_13._0_4_ = pVVar17->x;
+            uStack_13._4_4_ = pVVar17->y;
+            fStack_14 = pVVar17->z;
+            fStack_12 = (float)uStack_8 + (float)uStack_13 * _UNK_?;
+            uStack_21 = 0;
+            fStack_20 = 0.0;
+            fStack_6 = uStack_8._4_4_ + uStack_13._4_4_ * _UNK_?;
+            fStack_10 = fStack_9 + fStack_14 * _UNK_?;
+            pTVar24 = (spawnRole->fields).transform;
+            if (pTVar24 != (Transform *)0x0) {
+              pVVar17 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
+                                  (&VStack_5,pTVar24,(MethodInfo *)0x0);
+              uVar25 = pVVar17->x;
+              uVar26 = pVVar17->y;
+              fVar27 = (float)uVar26 * _UNK_?;
+              fVar28 = pVVar17->z * _UNK_?;
+              __return_storage_ptr__->x = (fStack_12 + (float)uVar25 * _UNK_?) - fStack_1;
+              __return_storage_ptr__->y = (fStack_6 + fVar27) - fStack_3;
+              __return_storage_ptr__->z = (fStack_10 + fVar28) - fStack_23;
               return __return_storage_ptr__;
             }
           }
@@ -133,9 +109,9 @@ Vector3 * Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_Calculat
     }
   }
   func_?();
-  pcVar26 = (code *)swi(3);
-  pVVar10 = (Vector3 *)(*pcVar26)();
-  return pVVar10;
+  pcVar29 = (code *)swi(3);
+  pVVar17 = (Vector3 *)(*pcVar29)();
+  return pVVar17;
 }
 
 
@@ -345,9 +321,11 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
   pCVar2 = Styles::Styles_GetColor(&CStack_3,colorStyle,(MethodInfo *)0x0);
   if (pIVar1 == (Image *)0x0) {
     CStack_3.g = (float)&UNK_?;
-    func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
+    pcVar4 = (char *)func_?();
+    *pcVar4 = *pcVar4 + extraout_CL;
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
   }
   CStack_3.r = pCVar2->a;
   CStack_3.g = (float)(pIVar1->klass->vtable).get_raycastTarget.methodPtr;

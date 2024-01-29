@@ -213,15 +213,15 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera_HandlePos
     VStack_8.x = (pVVar7->forwardVector).x;
     VStack_8.y = (pVVar7->forwardVector).y;
     VStack_8.z = (float)((uint)(pVVar7->forwardVector).z ^
-                         __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     rotation.y = (float)puVar4;
     rotation.x = fVar3;
     rotation.z = (float)ppVVar5;
     rotation.w = fVar6;
     point.y = (float)((uint)VStack_8.y ^
-                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     point.x = (float)((uint)VStack_8.x ^
-                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     point.z = VStack_8.z;
     pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
                         ((Vector3 *)&stack0xffffffd8,rotation,point,(MethodInfo *)0x0);
@@ -293,11 +293,11 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera_UpdateCamer
     rotation.z = fVar5;
     rotation.w = fVar6;
     point.y = (float)(uVar9 ^ 
-                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     point.x = (float)(uVar8 ^ 
-                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     point.z = (float)((uint)(pVVar7->forwardVector).z ^
-                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
                         ((Vector3 *)&stack0xffffffd0,rotation,point,(MethodInfo *)0x0);
     fVar4 = pVVar10->x;
@@ -351,7 +351,7 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera_UpdateCamer
               targetPosition.z = fVar17;
               bVar21 = CameraCollision::CameraCollision_Collide_1
                                  (this_00,(VoxelHit *)&stack0xffffff50,(Vector3 *)&stack0xffffffd4,
-                                  (float)this_03,3.1838643e-29,targetPosition,*pVVar10,
+                                  (float)this_03,3.1839028e-29,targetPosition,*pVVar10,
                                   (this->fields).ignoreAvatarId,(MethodInfo *)0x0);
               if (bVar21 != 0) {
                 pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::

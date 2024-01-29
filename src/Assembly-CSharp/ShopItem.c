@@ -33,25 +33,29 @@ void Assembly-CSharp.dll::ShopItem::ShopItem_ApplyLocalDescriptionOverride
     }
     pDVar1 = TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride;
     if ((pDVar1 != (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_ *)0x0
-        ) && (this_00 = (InventoryItem_ItemDescription *)
-                        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Int32Enum,System::Object]::
-                        Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                  ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,t,
-                                   MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__get_Item_MVWorldObjectDocumentationType_
-                                  ), this_00 != (InventoryItem_ItemDescription *)0x0)) {
-      (this->fields).name = (this_00->fields).name;
+        ) && (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                       Int32Enum,System::Object]::
+                       Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                 ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,t,
+                                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__get_Item_MVWorldObjectDocumentationType_
+                                 ), pOVar3 != (Object *)0x0)) {
+      (this->fields).name = (String *)pOVar3[1].klass;
       func_?(&(this->fields).name);
-      pSVar3 = InventoryItem+ItemDescription::InventoryItem_ItemDescription_get_Description
-                         (this_00,(MethodInfo *)0x0);
-      (this->fields).description = pSVar3;
-      func_?(&(this->fields).description,pSVar3);
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pSVar4 = mscorlib.dll::System::String::String_Concat_4
+                         ((String *)pOVar3[1].monitor,StringLiteral_u000Au000A,
+                          (String *)pOVar3[2].klass,(MethodInfo *)0x0);
+      (this->fields).description = pSVar4;
+      func_?(&(this->fields).description);
       return;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

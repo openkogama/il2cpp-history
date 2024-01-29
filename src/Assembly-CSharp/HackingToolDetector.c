@@ -470,9 +470,7 @@ code_?:
   }
 code_?:
   func_?();
-  do {
-                    /* WARNING: Do nothing block with infinite loop */
-  } while( true );
+  return;
 }
 
 

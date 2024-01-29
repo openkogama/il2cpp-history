@@ -135,13 +135,17 @@ void Assembly-CSharp.dll::MVAvatarLocal+DeadMode::MVAvatarLocal_DeadMode_DeActiv
   }
   if ((undefined1)toMode == AvatarRuntimeState__Enum_Playing) {
     this_00 = (this->fields)._.mvAvatar;
-    if (this_00 == (MVAvatarLocal *)0x0) goto code_?;
-    MVAvatarLocal::MVAvatarLocal_OnRespawn(this_00,(MethodInfo *)0x0);
+    if ((this_00 == (MVAvatarLocal *)0x0) ||
+       (pAVar1 = (this_00->fields).interactableLocal, pAVar1 == (AvatarInteractable *)0x0))
+    goto code_?;
+    (*(code *)(pAVar1->klass->vtable).AddModifier.method)
+              (pAVar1,0x11,0xffffffff,0,(pAVar1->klass->vtable).HasModifier.methodPtr);
+    MVAvatarLocal::MVAvatarLocal_SetToSpawnTransform(this_00,(MethodInfo *)0x0);
   }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 != (MVNetworkGame *)0x0) &&
-     (pGVar2 = (pMVar1->fields).GameEventManager, pGVar2 != (GameEventManager *)0x0)) {
-    this_01 = (pGVar2->fields).AvatarCommandsBuildMode;
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar2 != (MVNetworkGame *)0x0) &&
+     (pGVar3 = (pMVar2->fields).GameEventManager, pGVar3 != (GameEventManager *)0x0)) {
+    this_01 = (pGVar3->fields).AvatarCommandsBuildMode;
     this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
@@ -156,8 +160,8 @@ void Assembly-CSharp.dll::MVAvatarLocal+DeadMode::MVAvatarLocal_DeadMode_DeActiv
   }
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

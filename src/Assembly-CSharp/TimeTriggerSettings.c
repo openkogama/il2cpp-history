@@ -42,7 +42,7 @@ void Assembly-CSharp.dll::TimeTriggerSettings::TimeTriggerSettings_Initialize
         if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        value = mscorlib.dll::System::Convert::Convert_ToSingle
+        value = mscorlib.dll::System::Convert::Convert_ToSingle_1
                           ((Object *)TVar2.m_Index,(IFormatProvider *)pCVar3,(MethodInfo *)0x0);
         TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                 ::UIElements::TextureId]::
@@ -52,7 +52,7 @@ void Assembly-CSharp.dll::TimeTriggerSettings::TimeTriggerSettings_Initialize
                           );
         pCVar3 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                            ((MethodInfo *)0x0);
-        value_00 = mscorlib.dll::System::Convert::Convert_ToSingle
+        value_00 = mscorlib.dll::System::Convert::Convert_ToSingle_1
                              ((Object *)TVar2.m_Index,(IFormatProvider *)pCVar3,(MethodInfo *)0x0);
         pSVar4 = (this->fields).durationSlider;
         if (pSVar4 != (SettingsSlider *)0x0) {

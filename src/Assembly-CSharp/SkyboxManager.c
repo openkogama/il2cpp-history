@@ -380,14 +380,19 @@ Assembly-CSharp.dll::SkyboxManager::SkyboxManager_DoAnimate(SkyboxManager *this,
     func_?(&TypeInfo__SkyboxManager___DoAnimate_d__23);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__SkyboxManager___DoAnimate_d__23;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
-  value[1].klass = (Object__Class *)0x0;
-  func_?(value + 2,this);
-  return (IEnumerator *)value;
+  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
+            func_?(TypeInfo__SkyboxManager___DoAnimate_d__23);
+  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
+            (this_00,0,(MethodInfo *)0x0);
+  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
+    func_?(this_00 + 1);
+    return (IEnumerator *)this_00;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  pIVar2 = (IEnumerator *)(*pcVar1)();
+  return pIVar2;
 }
 
 
@@ -670,17 +675,17 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_SetColor
       fVar3 = (this->fields).skyContrast;
       if (_UNK_? < fVar4) {
         fVar3 = (float)((uint)fVar3 ^
-                       __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       }
       fVar6 = (this->fields).skyContrast;
       if (_UNK_? < fVar5) {
         fVar6 = (float)((uint)fVar6 ^
-                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       }
       fVar8 = (this->fields).skyContrast;
       if (_UNK_? < color.b) {
         fVar8 = (float)((uint)fVar8 ^
-                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       }
       this_01 = (this->fields).targetCamera;
       fVar9 = fVar4 + fVar3;

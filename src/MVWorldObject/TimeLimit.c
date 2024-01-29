@@ -143,7 +143,15 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
       return pHVar3;
     }
   }
-  pHVar3 = (HighScores *)func_?();
+  func_?();
+  iVar4 = CONCAT22((short)((uint)extraout_EDX >> 0x10),
+                   CONCAT11(in_stack_5,(char)extraout_EDX)) + -1;
+  bVar6 = (byte)iVar4;
+  pcVar7 = (char *)(CONCAT31((int3)(CONCAT22((short)((uint)iVar4 >> 0x10),CONCAT11(0xdc,bVar6)) >> 8
+                                   ),bVar6 + extraout_CL) + -0x4a);
+  *pcVar7 = *pcVar7 + extraout_CL + CARRY1(bVar6,extraout_CL);
+  pcVar8 = (code *)swi(3);
+  pHVar3 = (HighScores *)(*pcVar8)();
   return pHVar3;
 }
 
@@ -272,7 +280,15 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
       return pHVar3;
     }
   }
-  pHVar3 = (HighScores *)func_?();
+  func_?();
+  iVar4 = CONCAT22((short)((uint)extraout_EDX >> 0x10),
+                   CONCAT11(in_stack_5,(char)extraout_EDX)) + -1;
+  bVar6 = (byte)iVar4;
+  pcVar7 = (char *)(CONCAT31((int3)(CONCAT22((short)((uint)iVar4 >> 0x10),CONCAT11(0xdc,bVar6)) >> 8
+                                   ),bVar6 + extraout_CL) + -0x4a);
+  *pcVar7 = *pcVar7 + extraout_CL + CARRY1(bVar6,extraout_CL);
+  pcVar8 = (code *)swi(3);
+  pHVar3 = (HighScores *)(*pcVar8)();
   return pHVar3;
 }
 

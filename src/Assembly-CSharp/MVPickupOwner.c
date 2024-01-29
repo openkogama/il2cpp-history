@@ -4,63 +4,9 @@
 void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_Awake(MVPickupOwner *this,MethodInfo *method)
 
 {
-  if ((this->fields)._.findWorldObjectParent != 0) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Debug);
-      func_?(&StringLiteral_worldObjectParent_already_set_);
-      func_?(&StringLiteral___worldobjectParent_not_found_on);
-      cRam_? = '\x01';
-    }
-    pMVar1 = (this->fields)._.worldObjectParent;
-    (this->fields)._.findWorldObjectParent = 1;
-    pSVar2 = StringLiteral_worldObjectParent_already_set_;
-    if (pMVar1 != (MVWorldObjectClient *)0x0) {
-      pMVar1 = (this->fields)._.worldObjectParent;
-      pMVar3 = pMVar1->klass;
-      str1 = (String *)
-             (*(code *)(pMVar3->vtable).ToString.method)
-                       (pMVar1,(pMVar3->vtable).get_Position.methodPtr);
-      pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,str1,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)pSVar2,(MethodInfo *)0x0);
-    }
-    this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-    if ((pGVar4 == (GameObject *)0x0) ||
-       (goId = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
-                         ((Object_1 *)pGVar4,(MethodInfo *)0x0),
-       this_00 == (MVWorldObjectClientManager *)0x0)) {
-code_?:
-      func_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
-      return;
-    }
-    pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectByGoId
-                       (this_00,goId,(MethodInfo *)0x0);
-    (this->fields)._.worldObjectParent = pMVar1;
-    func_?(&(this->fields)._.worldObjectParent,pMVar1);
-    if ((this->fields)._.worldObjectParent == (MVWorldObjectClient *)0x0) {
-      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      if (pGVar4 == (GameObject *)0x0) goto code_?;
-      pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
-                         ((Object_1 *)pGVar4,(MethodInfo *)0x0);
-      pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                         (pSVar2,StringLiteral___worldobjectParent_not_found_on,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)pSVar2,(MethodInfo *)0x0);
-    }
-  }
-  fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  (this->fields).prevUpdateLineOfFireTime = fVar6;
+  MVComponent::MVComponent_Awake((MVComponent *)this,(MethodInfo *)0x0);
+  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  (this->fields).prevUpdateLineOfFireTime = fVar1;
   return;
 }
 
@@ -212,7 +158,7 @@ Vector3 * Assembly-CSharp.dll::MVPickupOwner::
       fVar4 = (float)(fVar11 * (float10)fVar4);
       *(ulonglong *)uVar7 =
            CONCAT44((float)&stack0xffffffe0 + (float)&stack0xffffffe0 * fVar4,
-                    fVar4 * 3.312454e-29 + 3.312454e-29);
+                    fVar4 * 3.312531e-29 + 3.312531e-29);
       *(float *)(uVar7 + 8) = fVar4 * 0.0 + 0.0;
       return (Vector3 *)uVar7;
     }
@@ -974,88 +920,41 @@ Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_get_IgnoreWOIDs
   if (pMVar1 != (MVWorldObjectClient *)0x0) {
     if (cRam_? == '\0') {
       func_?();
-      func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-      func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+      func_?();
+      func_?();
       func_?(&
                       MethodInfo__MVWorldObjectClient____c__DisplayClass51_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
                      );
       func_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass51_0);
       cRam_? = '\x01';
     }
-    method_00 = TypeInfo__MVWorldObjectClient____c__DisplayClass51_0;
-    value = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    this_00 = (Object__Class *)func_?(TypeInfo__System__Collections__Generic__HashSet<int>)
-    ;
+    this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+    pHVar2 = (HashSet_1_System_Int32_ *)
+             func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
     System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
     HashSet_1_System_Int32___ctor
-              ((HashSet_1_System_Int32_ *)this_00,
-               MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    if (value != (Object *)0x0) {
-      value[1].klass = this_00;
+              (pHVar2,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+      (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)pHVar2;
       func_?();
-      iVar2 = func_?();
-      pMVar3 = 
-      MethodInfo__MVWorldObjectClient____c__DisplayClass51_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
-      ;
-      *(Il2CppMethodPointer *)(iVar2 + 8) =
-           MethodInfo__MVWorldObjectClient____c__DisplayClass51_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
-           ->virtualMethodPointer;
-      *(MethodInfo **)(iVar2 + 0x14) = pMVar3;
-      *(Object **)(iVar2 + 0x10) = value;
-      func_?(iVar2 + 0x10);
-      uVar4 = pMVar3->parameters_count;
-      *(int *)(iVar2 + 0x20) = iVar2;
-      cVar5 = func_?(pMVar3);
-      if (cVar5 == '\0') {
-        if (uVar4 == 0) {
-          if (*(char *)(iVar2 + 0x38) == '\0') {
-            puVar6 = &UNK_?;
-          }
-          else {
-            cVar5 = func_?();
-            if (cVar5 == '\0') {
-              cVar5 = func_?();
-              if (cVar5 == '\0') {
-                puVar6 = &UNK_?;
-              }
-              else {
-                puVar6 = &UNK_?;
-              }
-            }
-            else {
-              cVar5 = func_?();
-              puVar6 = &UNK_?;
-              if (cVar5 == '\0') {
-                puVar6 = &UNK_?;
-              }
-            }
-          }
-        }
-        else {
-          puVar6 = *(undefined **)(iVar2 + 8);
-          *(undefined4 *)(iVar2 + 0x20) = *(undefined4 *)(iVar2 + 0x10);
-        }
-      }
-      else if (uVar4 == 1) {
-        puVar6 = &UNK_?;
-      }
-      else {
-        puVar6 = *(undefined **)(iVar2 + 8);
-        *(undefined4 *)(iVar2 + 0x20) = *(undefined4 *)(iVar2 + 0x10);
-      }
-      *(undefined **)(iVar2 + 0xc) = puVar6;
-      *(undefined **)(iVar2 + 0x1c) = &UNK_?;
-      (*(code *)(pMVar1->klass->vtable).TraverseRecursiveTail.method)();
-      return (HashSet_1_System_Int32_ *)(pMVar1->fields)._.id;
+      this_01 = (UnityAction_1_System_Object_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+      UnityAction_1_System_Object___ctor
+                (this_01,(Object *)this_00,
+                 MethodInfo__MVWorldObjectClient____c__DisplayClass51_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
+                 ,(MethodInfo *)0x0);
+      (*(code *)(pMVar1->klass->vtable).TraverseRecursiveTail.method)(pMVar1,this_01);
+      return (HashSet_1_System_Int32_ *)(this_00->fields)._._defaultValue_k__BackingField;
     }
   }
-  uVar7 = func_?(&stack0xfffffff0);
-  func_?(uVar7);
-  pcVar8 = (code *)swi(3);
-  pHVar9 = (HashSet_1_System_Int32_ *)(*pcVar8)();
-  return pHVar9;
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  pHVar2 = (HashSet_1_System_Int32_ *)(*pcVar4)();
+  return pHVar2;
 }
 
 

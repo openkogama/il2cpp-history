@@ -287,6 +287,31 @@ void Assembly-CSharp.dll::Theme::Theme_Purchase(Theme *this,int32_t id,MethodInf
 }
 
 
+/* Theme() */
+
+void Assembly-CSharp.dll::Theme::Theme__ctor(Theme *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&MethodInfo__System__Collections__Generic__List<ThemeComponent>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<ThemeComponent>);
+    cRam_? = '\x01';
+  }
+  this_00 = (List_1_ThemeComponent_ *)
+            func_?(TypeInfo__System__Collections__Generic__List<ThemeComponent>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<ThemeComponent>__List__);
+  (this->fields).components = this_00;
+  func_?(&(this->fields).components,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  return;
+}
+
+
 /* List`1[UnityEngine.RectTransform] get_Controllers() */
 
 List_1_UnityEngine_RectTransform_ *

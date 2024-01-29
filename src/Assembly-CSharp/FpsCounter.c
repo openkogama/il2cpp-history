@@ -82,14 +82,10 @@ void Assembly-CSharp.dll::FpsCounter::FpsCounter_Update(FpsCounter *this,MethodI
           return;
         }
         pFVar5 = (this->fields).metricsCollector;
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pFVar6 = TypeInfo__FpsCounter->static_fields->instance;
-        if ((pFVar6 != (FpsCounter *)0x0) && (pFVar5 != (FpsCounter_FPSMetricCollector *)0x0)) {
+        fVar3 = FpsCounter_get_Fps((MethodInfo *)0x0);
+        if (pFVar5 != (FpsCounter_FPSMetricCollector *)0x0) {
           FpsCounter+FPSMetricCollector::FpsCounter_FPSMetricCollector_CollectFPSMetric
-                    (pFVar5,(pFVar6->fields).fps,(MethodInfo *)0x0);
+                    (pFVar5,fVar3,(MethodInfo *)0x0);
           return;
         }
       }
@@ -98,8 +94,8 @@ void Assembly-CSharp.dll::FpsCounter::FpsCounter_Update(FpsCounter *this,MethodI
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

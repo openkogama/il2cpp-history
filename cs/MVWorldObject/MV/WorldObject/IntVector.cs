@@ -20,6 +20,7 @@ namespace MV.WorldObject
 		public short y;
 		public short z;
 		public static readonly IntVector One;
+		public static readonly IntVector Zero;
 	
 		// Properties
 		public short this[int key] { get => default; set {} }

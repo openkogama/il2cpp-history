@@ -43,7 +43,7 @@ bool Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_DoReset
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0x92a0);
+    func_?(0x1b8);
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).resettingBookkeeping;
@@ -563,9 +563,7 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Execute
     func_?(&StringLiteral_Hiding_cursor);
     cRam_? = '\x01';
   }
-  this_00 = e;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,(ExceptionArgument__Enum)e,(MethodInfo *)0x0);
+  this_00 = this;
   if ((this->fields).exiting == 0) {
     pMVar1 = CEEditCubeTutorial_get_TargetCubeModel(this,(MethodInfo *)0x0);
     bVar2 = 1 - (pMVar1 != (MVCubeModelBase *)0x0);
@@ -573,17 +571,17 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Execute
   else {
     bVar2 = 1;
   }
-  (this->fields).exiting = bVar2;
+  (this_00->fields).exiting = bVar2;
   if (bVar2 == 0) {
-    if ((this->fields).hasExited != 0) {
+    if ((this_00->fields).hasExited != 0) {
       return;
     }
-    pCVar3 = (this->fields).resettingBookkeeping;
+    pCVar3 = (this_00->fields).resettingBookkeeping;
     if (pCVar3 != (CEEditCubeTutorial_ResettingBookkeeping *)0x0) {
-      if ((((pCVar3->fields).doReset != 0) || ((this->fields).disableCubeModeling != 0)) &&
+      if ((((pCVar3->fields).doReset != 0) || ((this_00->fields).disableCubeModeling != 0)) &&
          (bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_get_visible
                             ((MethodInfo *)0x0), bVar2 != 0)) {
-        pCVar3 = (this->fields).resettingBookkeeping;
+        pCVar3 = (this_00->fields).resettingBookkeeping;
         if (pCVar3 == (CEEditCubeTutorial_ResettingBookkeeping *)0x0) goto code_?;
         if ((pCVar3->fields).doReset != 0) {
           (pCVar3->fields).doReset = 0;
@@ -591,38 +589,42 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Execute
           iVar4 = WaitForTicksLocal::WaitForTicksLocal_GetEnvironmentTick(0,(MethodInfo *)0x0);
           (pCVar3->fields).resettingBeginTime = iVar4;
         }
-        pCVar5 = (this->fields).CMSM;
+        pCVar5 = (this_00->fields).CMSM;
         if (pCVar5 == (CubeModelingStateMachine *)0x0) goto code_?;
         CubeModelingStateMachine::CubeModelingStateMachine_set_CursorVisible
                   (pCVar5,0,(MethodInfo *)0x0);
-        (this->fields).disableCubeModeling = 0;
+        (this_00->fields).disableCubeModeling = 0;
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          e = (EditorStateMachine *)TypeInfo__UnityEngine__Debug;
+          this = (CEEditCubeTutorial *)&UNK_?;
           func_?();
         }
+        e = (EditorStateMachine *)0x0;
+        this = (CEEditCubeTutorial *)StringLiteral_Hiding_cursor;
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                   ((Object *)StringLiteral_Hiding_cursor,(MethodInfo *)0x0);
       }
-      pCVar3 = (this->fields).resettingBookkeeping;
+      pCVar3 = (this_00->fields).resettingBookkeeping;
       if (pCVar3 != (CEEditCubeTutorial_ResettingBookkeeping *)0x0) {
         if ((pCVar3->fields).isResetting == 0) {
-          if ((this->fields).enableCubemodeling == 0) {
+          if ((this_00->fields).enableCubemodeling == 0) {
             UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_set_visible
                       (1,(MethodInfo *)0x0);
             return;
           }
-          if ((this_00 != (EditorStateMachine *)0x0) &&
-             (pCVar5 = (this_00->fields).cubeModelingStateMachine,
+          if ((e != (EditorStateMachine *)0x0) &&
+             (pCVar5 = (e->fields).cubeModelingStateMachine,
              pCVar5 != (CubeModelingStateMachine *)0x0)) {
             (*(code *)(pCVar5->klass->vtable).Update.method)(pCVar5,pCVar5->klass[1]._0.image);
             return;
           }
         }
         else {
-          bVar2 = CEEditCubeTutorial_DoReset(this,(MethodInfo *)0x0);
+          bVar2 = CEEditCubeTutorial_DoReset(this_00,(MethodInfo *)0x0);
           if (bVar2 == 0) {
             return;
           }
-          pCVar3 = (this->fields).resettingBookkeeping;
+          pCVar3 = (this_00->fields).resettingBookkeeping;
           if (pCVar3 != (CEEditCubeTutorial_ResettingBookkeeping *)0x0) {
             (pCVar3->fields).isResetting = 0;
             return;
@@ -632,11 +634,11 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Execute
     }
   }
   else {
-    e = (EditorStateMachine *)0x39;
-    value = (Object *)func_?(TypeInfo__EditorEvent,&e);
-    if (this_00 != (EditorStateMachine *)0x0) {
-      FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,value,(MethodInfo *)0x0);
-      (this->fields).hasExited = 1;
+    this = (CEEditCubeTutorial *)0x39;
+    value = (Object *)func_?(TypeInfo__EditorEvent,&this);
+    if (e != (EditorStateMachine *)0x0) {
+      FSMEntity::FSMEntity_set_Event((FSMEntity *)e,value,(MethodInfo *)0x0);
+      (this_00->fields).hasExited = 1;
       return;
     }
   }
@@ -680,26 +682,30 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Exit
     cRam_? = '\x01';
   }
   method_00 = TypeInfo__CEEditCubeTutorial____c__DisplayClass28_0;
-  obj = (Action_2_Int32_EditCubeChange___Class *)func_?();
+  obj = (Delegate *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)obj,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,(ExceptionArgument__Enum)esm,(MethodInfo *)0x0);
   if (((esm != (EditorStateMachine *)0x0) &&
       (pMVar1 = (esm->fields).weCamera, pMVar1 != (MainCameraManager *)0x0)) &&
      (this_00 = (pMVar1->fields).mainCamera, this_00 != (Camera *)0x0)) {
     UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
               (this_00,(this->fields).mainCameraDefaultMask,(MethodInfo *)0x0);
-    if (obj != (Action_2_Int32_EditCubeChange___Class *)0x0) {
-      (obj->_0).name = (char *)::StringLiteral__;
-      func_?();
+    if (obj != (Delegate *)0x0) {
+      ((Object_1__Fields *)&(obj->fields).method_ptr)->m_CachedPtr = ::StringLiteral__;
+      func_?(&obj->fields,::StringLiteral__);
       pMVar2 = CEEditCubeTutorial_get_TargetCubeModel(this,(MethodInfo *)0x0);
-      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if (pMVar2 != (MVCubeModelBase *)0x0) {
-        cVar4 = (*(code *)(pMVar2->klass->vtable).Delete.method)(pMVar2,pMVar3);
-        if (cVar4 == '\0') {
-          root = (esm->fields).gameObject;
-          callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+        cVar3 = (*(code *)(pMVar2->klass->vtable).Delete.method)
+                          (pMVar2,&obj->fields,&obj->fields,
+                           (pMVar2->klass->vtable).get_Visible.methodPtr);
+        if (cVar3 == '\0') {
+          root = (GameObject *)&UNK_?;
+          callbackFunction =
+               (ExecuteEvents_EventFunction_1_System_Object_ *)
+               func_?(
+                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                              );
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
                     ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)obj,
@@ -717,7 +723,7 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Exit
         }
         this_01 = (this->fields).constraintVisualizer;
         if (this_01 != (ConstraintVisualizer *)0x0) {
-          obj = (Action_2_Int32_EditCubeChange___Class *)
+          obj = (Delegate *)
                 UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this_01,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -725,25 +731,25 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Exit
           }
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                     ((Object_1 *)obj,(MethodInfo *)0x0);
-          pGVar5 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
+          pGVar4 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
                              ((MethodInfo *)0x0);
-          if ((pGVar5 != (GameEventManager *)0x0) &&
-             (this_02 = (pGVar5->fields).AvatarCommandsBuildMode,
+          if ((pGVar4 != (GameEventManager *)0x0) &&
+             (this_02 = (pGVar4->fields).AvatarCommandsBuildMode,
              this_02 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) {
             GameEventManager+AvatarCommandsBuildModeManager::
             GameEventManager_AvatarCommandsBuildModeManager_ExitBuildStateEvent
                       (this_02,(this->fields)._.stateType,(Object *)0x0,(MethodInfo *)0x0);
-            pCVar6 = (esm->fields).cubeModelingStateMachine;
-            if (pCVar6 != (CubeModelingStateMachine *)0x0) {
+            pCVar5 = (esm->fields).cubeModelingStateMachine;
+            if (pCVar5 != (CubeModelingStateMachine *)0x0) {
               CubeModelingStateMachine::CubeModelingStateMachine_RemoveCursors
-                        (pCVar6,(MethodInfo *)0x0);
-              pCVar6 = (esm->fields).cubeModelingStateMachine;
-              if (pCVar6 != (CubeModelingStateMachine *)0x0) {
-                CubeModelingStateMachine::CubeModelingStateMachine_EndEdit(pCVar6,(MethodInfo *)0x0)
+                        (pCVar5,(MethodInfo *)0x0);
+              pCVar5 = (esm->fields).cubeModelingStateMachine;
+              if (pCVar5 != (CubeModelingStateMachine *)0x0) {
+                CubeModelingStateMachine::CubeModelingStateMachine_EndEdit(pCVar5,(MethodInfo *)0x0)
                 ;
                 (this->fields).targetCubeModelId = -1;
                 (this->fields).selectedInstance = (MVCubeModelInstance *)0x0;
-                func_?();
+                func_?(&(this->fields).selectedInstance,0);
                 EditorStateMachine::EditorStateMachine_DeSelectAll(esm,(MethodInfo *)0x0);
                 this_03 = (Action_2_Object_Int32Enum_ *)
                           func_?(
@@ -756,7 +762,7 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Exit
                 FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
                           ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
                             *)this_03,(MethodInfo *)0x0);
-                pAVar7 = TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
+                pAVar6 = TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
                 this_04 = (UnityAction_2_System_Int32_System_Int32_ *)
                           func_?(TypeInfo__System__Action<int,_EditCubeChange>);
                 UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System
@@ -764,34 +770,32 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Exit
                           (this_04,(Object *)this,
                            MethodInfo__CEEditCubeTutorial__OnEditCubeChange_int__EditCubeChange_,
                            (MethodInfo *)0x0);
-                esm = (EditorStateMachine *)
-                      mscorlib.dll::System::Delegate::Delegate_Remove
-                                ((Delegate *)pAVar7,(Delegate *)this_04,(MethodInfo *)0x0);
-                obj = TypeInfo__System__Action<int,_EditCubeChange>;
-                if (esm == (EditorStateMachine *)0x0) {
+                obj = mscorlib.dll::System::Delegate::Delegate_Remove
+                                ((Delegate *)pAVar6,(Delegate *)this_04,(MethodInfo *)0x0);
+                esm = (EditorStateMachine *)TypeInfo__System__Action<int,_EditCubeChange>;
+                if (obj == (Delegate *)0x0) {
                   TypeInfo__CubeModelTool->static_fields->OnEditCubeChange =
                        (Action_2_Int32_EditCubeChange_ *)0x0;
-                  pAStack8 = (Action_2_Int32_EditCubeChange___Class *)0x0;
+                  pAStack7 = (Action_2_Int32_EditCubeChange___Class *)0x0;
 code_?:
-                  pEStack9 =
-                       (EditorStateMachine *)
-                       &TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
+                  pDStack8 =
+                       (Delegate *)&TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
                   func_?();
                   (this->fields).blinker = (FirstTimeCubeModelBlinker *)0x0;
-                  puStack10 = (undefined *)0x0;
+                  puStack9 = (undefined *)0x0;
                   func_?();
                   return;
                 }
-                pAStack8 = TypeInfo__System__Action<int,_EditCubeChange>;
-                pEStack9 = esm;
-                pAVar7 = (Action_2_Int32_EditCubeChange_ *)func_?();
-                if (pAVar7 != (Action_2_Int32_EditCubeChange_ *)0x0) {
-                  TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar7;
-                  obj = TypeInfo__System__Action<int,_EditCubeChange>;
-                  pAStack8 = TypeInfo__System__Action<int,_EditCubeChange>;
-                  pEStack9 = esm;
-                  pAStack8 = (Action_2_Int32_EditCubeChange___Class *)func_?();
-                  if (pAStack8 != (Action_2_Int32_EditCubeChange___Class *)0x0)
+                pAStack7 = TypeInfo__System__Action<int,_EditCubeChange>;
+                pDStack8 = obj;
+                pAVar6 = (Action_2_Int32_EditCubeChange_ *)func_?();
+                if (pAVar6 != (Action_2_Int32_EditCubeChange_ *)0x0) {
+                  TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar6;
+                  esm = (EditorStateMachine *)TypeInfo__System__Action<int,_EditCubeChange>;
+                  pAStack7 = TypeInfo__System__Action<int,_EditCubeChange>;
+                  pDStack8 = obj;
+                  pAStack7 = (Action_2_Int32_EditCubeChange___Class *)func_?();
+                  if (pAStack7 != (Action_2_Int32_EditCubeChange___Class *)0x0)
                   goto code_?;
                 }
                 goto code_?;
@@ -804,11 +808,11 @@ code_?:
   }
   func_?();
 code_?:
-  pEStack9 = esm;
-  pAStack8 = obj;
+  pDStack8 = obj;
+  pAStack7 = (Action_2_Int32_EditCubeChange___Class *)esm;
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

@@ -23,6 +23,7 @@ namespace MV.WorldObject.MetaData
 	
 		// Constructors
 		public FirstTimeState();
+		public FirstTimeState(FirstTimeState other);
 	
 		// Methods
 		public void SetFirstTimeEvent(FirstTimeEvent firstTimeEvent);

@@ -10,17 +10,14 @@ using System.Runtime.InteropServices;
 
 // Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
-[CompilerGenerated]
-internal class _PrivateImplementationDetails__9F0B557A_5269_4643_A5FB_0AFE49C11F25_
+namespace MV.WorldObject.MetaData
 {
-	// Fields
-	internal static long __method0x60003f4_1;
-	internal static long __method0x60003f5_1;
-	internal static __StaticArrayInitTypeSize_512 __method0x6000403_1;
-
-	// Nested types
-	private struct __StaticArrayInitTypeSize_512
+	public enum TargetFrameRateValue
 	{
+		_20 = 0,
+		_30 = 1,
+		_60 = 2,
+		_120 = 3,
+		SameAsScreenHz = 4
 	}
 }
-

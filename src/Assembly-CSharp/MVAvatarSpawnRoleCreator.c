@@ -11,83 +11,36 @@ bool Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_Del
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  pMVar2 = (MVWorldObjectClientManager *)&stack0xfffffffc;
   if ((pMVar1 != (MVNetworkGame *)0x0) &&
-     (this_00 = (pMVar1->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
-    iVar2 = MVTeamManager::MVTeamManager_get_NumSpawnPoint(this_00,(MethodInfo *)0x0);
-    if (iVar2 < 2) {
+     (this_00 = (pMVar1->fields).teamManager,
+     pMVar2 = (MVWorldObjectClientManager *)&stack0xfffffffc, this_00 != (MVTeamManager *)0x0)) {
+    iVar3 = MVTeamManager::MVTeamManager_get_NumSpawnPoint(this_00,(MethodInfo *)0x0);
+    if (iVar3 < 2) {
       *errorText = StringLiteral_You_cannot_delete_the_last_spawn;
       func_?();
       return 0;
     }
+    method = (MethodInfo *)0x0;
     if ((pGRam00000088 != (GameObject *)0x0) &&
        (UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGRam00000088,0,(MethodInfo *)0x0), iVar2 = iRam_?, in_stack_3 != 0)
-       ) {
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        func_?();
-        cRam_? = '\x01';
-      }
-      if (*(Dictionary_2_System_Int32_System_Single_ **)(in_stack_3 + 8) !=
-          (Dictionary_2_System_Int32_System_Single_ *)0x0) {
-        bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                          (*(Dictionary_2_System_Int32_System_Single_ **)(in_stack_3 + 8),
-                           iVar2,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__ContainsKey_int_
-                          );
-        if (bVar4 == 0) {
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                    ((Object *)StringLiteral_trying_to_unregister_none_existi,(MethodInfo *)0x0);
-          return 1;
-        }
-        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0)
-        ;
-        if (pMVar5 != (MVNetworkGame_OperationRequests *)0x0) {
-          if (cRam_? == '\0') {
-            func_?();
-            func_?();
-            func_?();
-            func_?();
-            func_?();
-            cRam_? = '\x01';
-          }
-          this_01 = (Dictionary_2_System_Byte_System_Object_ *)func_?();
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
-          Dictionary_2_System_Byte_System_Object___ctor
-                    (this_01,
-                     MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
-                    );
-          value = (Object *)func_?();
-          if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
-            Dictionary_2_System_Byte_System_Object__Add
-                      (this_01,0x16,value,
-                       MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
-                      );
-            pPVar6 = (pMVar5->fields).peer;
-            if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor ==
-                0) {
-              func_?();
-            }
-            if (pPVar6 != (PhotonPeer *)0x0) {
-              (*(code *)(pPVar6->klass->vtable).SendOperation.method)(pPVar6,1);
-              return 1;
-            }
-          }
-        }
-      }
+                  (pGRam00000088,0,(MethodInfo *)0x0),
+       in_stack_4 != (MVWorldObjectClientManager *)0x0)) {
+      errorText = (String **)0x0;
+      worldObjectClientManager = pMRam00000008;
+      MVWorldObjectClientManager::MVWorldObjectClientManager_UnregisterWorldObject
+                (in_stack_4,(int32_t)pMRam00000008,(MethodInfo *)0x0);
+      return 1;
     }
+    errorText = (String **)&UNK_?;
+    pMVar2 = (MVWorldObjectClientManager *)&worldObjectClientManager;
   }
-  uVar7 = func_?(&stack0xfffffffc);
-  func_?(uVar7);
-  pcVar8 = (code *)swi(3);
-  bVar4 = (*pcVar8)();
-  return bVar4;
+  worldObjectClientManager = pMVar2;
+  func_?();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 

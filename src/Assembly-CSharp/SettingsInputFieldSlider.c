@@ -49,7 +49,7 @@ float Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Co
     if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    fVar2 = mscorlib.dll::System::Convert::Convert_ToSingle_12
+    fVar2 = mscorlib.dll::System::Convert::Convert_ToSingle_13
                       (inputFieldText,(IFormatProvider *)provider,(MethodInfo *)0x0);
     return fVar2;
   }

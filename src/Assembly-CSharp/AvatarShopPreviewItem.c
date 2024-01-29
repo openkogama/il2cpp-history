@@ -175,46 +175,16 @@ void Assembly-CSharp.dll::AvatarShopPreviewItem::AvatarShopPreviewItem_Update
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)pAVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
-    return;
-  }
-  pAVar1 = (this->fields).previewer;
-  if (pAVar1 != (AvatarPreviewer *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    pGVar3 = (pAVar1->fields)._PreviewGameObject_k__BackingField;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pGVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
+  if (bVar2 != 0) {
+    pAVar1 = (this->fields).previewer;
+    if (pAVar1 == (AvatarPreviewer *)0x0) {
+      func_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    pGVar3 = (pAVar1->fields)._PreviewGameObject_k__BackingField;
-    if (pGVar3 != (GameObject *)0x0) {
-      this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                          (pGVar3,(MethodInfo *)0x0);
-      point = (pAVar1->fields).pivotPoint;
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__Vector3);
-        cRam_? = '\x01';
-      }
-      axis = TypeInfo__UnityEngine__Vector3->static_fields->upVector;
-      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
-      ;
-      if (this_00 != (Transform *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_RotateAround
-                  (this_00,point,axis,fVar4 * _UNK_?,(MethodInfo *)0x0);
-        return;
-      }
-    }
+    AvatarPreviewer::AvatarPreviewer_UpdateRotation(pAVar1,9.3,(MethodInfo *)0x0);
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
   return;
 }
 

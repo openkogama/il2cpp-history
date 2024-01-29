@@ -352,30 +352,6 @@ code_?:
 }
 
 
-/* Void Reset() */
-
-void Assembly-CSharp.dll::MVGameCoinChest::MVGameCoinChest_Reset
-               (MVGameCoinChest *this,MethodInfo *method)
-
-{
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  if (((this->fields).state == 2) || ((this->fields).state == 1)) {
-    pMVar1 = (this->fields).chestObject;
-    if ((pMVar1 == (MVGameCoinChestObject *)0x0) ||
-       (this_00 = (pMVar1->fields).modelSelector, this_00 == (GameCoinChestModelSelector *)0x0)) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    GameCoinChestModelSelector::GameCoinChestModelSelector_Close(this_00,(MethodInfo *)0x0);
-    (this->fields).state = 0;
-  }
-  return;
-}
-
-
 /* Void SetupUseInteractor() */
 
 void Assembly-CSharp.dll::MVGameCoinChest::MVGameCoinChest_SetupUseInteractor

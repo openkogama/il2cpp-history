@@ -161,115 +161,96 @@ code_?:
     func_?();
   }
   else {
-    pIVar2 = pIVar1->klass;
-    uVar3 = 0;
-    uVar4._0_1_ = (pIVar2->_1).rank;
-    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-    if (uVar4 != 0) {
-      do {
-        if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__IPlayModeUI)
-        {
-          ppMVar5 = &(&(pIVar2->vtable).GetCrossHair)[pIVar2->interfaceOffsets[uVar3].offset].
-                     method;
-          goto code_?;
-        }
-        uVar3 = uVar3 + 1;
-      } while (uVar3 < uVar4);
-    }
-    ppMVar5 = (MethodInfo **)func_?(pIVar1,TypeInfo__IPlayModeUI,2);
-code_?:
-    pIVar6 = (IGUICrossHair *)(*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
-    (this->fields).crossHair = pIVar6;
-    func_?(&(this->fields).crossHair,pIVar6);
-    pIVar6 = (this->fields).crossHair;
-    if ((pIVar6 == (IGUICrossHair *)0x0) ||
-       (func_?(1,TypeInfo__IGUICrossHair,pIVar6,0), pickupOwner == (MVPickupOwner *)0x0))
-    goto code_?;
-    pMVar7 = (pickupOwner->fields).onEquipItem;
-    pVVar8 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
+    pIVar2 = (IGUICrossHair *)func_?(2,TypeInfo__IPlayModeUI,pIVar1);
+    (this->fields).crossHair = pIVar2;
+    func_?(&(this->fields).crossHair,pIVar2);
+    pIVar2 = (this->fields).crossHair;
+    if (pIVar2 == (IGUICrossHair *)0x0) goto code_?;
+    func_?(1,TypeInfo__IGUICrossHair,pIVar2,0);
+    if (pickupOwner == (MVPickupOwner *)0x0) goto code_?;
+    pMVar3 = (pickupOwner->fields).onEquipItem;
+    pVVar4 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
              func_?(TypeInfo__MVPickupOwner__OnEquipItemDelegate);
     UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
     VideoCapture+OnVideoCaptureResourceCreatedCallback::
     VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-              (pVVar8,(Object *)this,MethodInfo__PickupGUI__OnEquipItem_PickupItem_,
+              (pVVar4,(Object *)this,MethodInfo__PickupGUI__OnEquipItem_PickupItem_,
                (MethodInfo *)0x0);
-    pMVar7 = (MVPickupOwner_OnEquipItemDelegate *)
+    pMVar3 = (MVPickupOwner_OnEquipItemDelegate *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pMVar7,(Delegate *)pVVar8,(MethodInfo *)0x0);
-    if (pMVar7 == (MVPickupOwner_OnEquipItemDelegate *)0x0) {
+                       ((Delegate *)pMVar3,(Delegate *)pVVar4,(MethodInfo *)0x0);
+    if (pMVar3 == (MVPickupOwner_OnEquipItemDelegate *)0x0) {
       (pickupOwner->fields).onEquipItem = (MVPickupOwner_OnEquipItemDelegate *)0x0;
     }
     else {
-      pMVar9 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
-      if (pMVar7->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
-        pMVar9 = pMVar7;
+      pMVar5 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
+      if (pMVar3->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
+        pMVar5 = pMVar3;
       }
-      if (pMVar9 == (MVPickupOwner_OnEquipItemDelegate *)0x0) goto code_?;
-      (pickupOwner->fields).onEquipItem = pMVar9;
-      pMVar9 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
-      if (pMVar7->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
-        pMVar9 = pMVar7;
+      if (pMVar5 == (MVPickupOwner_OnEquipItemDelegate *)0x0) goto code_?;
+      (pickupOwner->fields).onEquipItem = pMVar5;
+      pMVar5 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
+      if (pMVar3->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
+        pMVar5 = pMVar3;
       }
-      if (pMVar9 == (MVPickupOwner_OnEquipItemDelegate *)0x0) goto code_?;
+      if (pMVar5 == (MVPickupOwner_OnEquipItemDelegate *)0x0) goto code_?;
     }
-    func_?(&(pickupOwner->fields).onEquipItem);
-    a = (pickupOwner->fields).onUnequipItem;
-    pVVar8 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
-             func_?(TypeInfo__MVPickupOwner__OnUnequipItemDelegate);
+    func_?();
+    pMVar6 = (pickupOwner->fields).onUnequipItem;
+    pVVar4 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
     VideoCapture+OnVideoCaptureResourceCreatedCallback::
     VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-              (pVVar8,(Object *)this,MethodInfo__PickupGUI__OnUnequipItem_PickupItem_,
-               (MethodInfo *)0x0);
-    pMVar7 = (MVPickupOwner_OnEquipItemDelegate *)
+              (pVVar4,(Object *)&(pickupOwner->fields).onEquipItem,
+               MethodInfo__PickupGUI__OnUnequipItem_PickupItem_,(MethodInfo *)0x0);
+    pMVar6 = (MVPickupOwner_OnUnequipItemDelegate *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)a,(Delegate *)pVVar8,(MethodInfo *)0x0);
-    if (pMVar7 == (MVPickupOwner_OnEquipItemDelegate *)0x0) {
+                       ((Delegate *)pMVar6,(Delegate *)pVVar4,(MethodInfo *)0x0);
+    if (pMVar6 == (MVPickupOwner_OnUnequipItemDelegate *)0x0) {
       (pickupOwner->fields).onUnequipItem = (MVPickupOwner_OnUnequipItemDelegate *)0x0;
     }
     else {
-      pMVar9 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
-      if ((MVPickupOwner_OnUnequipItemDelegate__Class *)pMVar7->klass ==
-          TypeInfo__MVPickupOwner__OnUnequipItemDelegate) {
-        pMVar9 = pMVar7;
+      pMVar7 = (MVPickupOwner_OnUnequipItemDelegate *)0x0;
+      if (pMVar6->klass == TypeInfo__MVPickupOwner__OnUnequipItemDelegate) {
+        pMVar7 = pMVar6;
       }
-      if (pMVar9 == (MVPickupOwner_OnEquipItemDelegate *)0x0) goto code_?;
-      (pickupOwner->fields).onUnequipItem = (MVPickupOwner_OnUnequipItemDelegate *)pMVar9;
-      pMVar9 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
-      if ((MVPickupOwner_OnUnequipItemDelegate__Class *)pMVar7->klass ==
-          TypeInfo__MVPickupOwner__OnUnequipItemDelegate) {
-        pMVar9 = pMVar7;
+      if (pMVar7 == (MVPickupOwner_OnUnequipItemDelegate *)0x0) goto code_?;
+      (pickupOwner->fields).onUnequipItem = pMVar7;
+      pMVar7 = (MVPickupOwner_OnUnequipItemDelegate *)0x0;
+      if (pMVar6->klass == TypeInfo__MVPickupOwner__OnUnequipItemDelegate) {
+        pMVar7 = pMVar6;
       }
-      if (pMVar9 == (MVPickupOwner_OnEquipItemDelegate *)0x0) goto code_?;
+      if (pMVar7 == (MVPickupOwner_OnUnequipItemDelegate *)0x0) goto code_?;
     }
-    func_?(&(pickupOwner->fields).onUnequipItem);
-    pAVar10 = (pickupOwner->fields).OnHolsteredChanged;
-    this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
+    func_?();
+    pAVar8 = (pickupOwner->fields).OnHolsteredChanged;
+    this_00 = (UnityAction_1_System_Int32Enum_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
-              (this_00,(Object *)this,MethodInfo__PickupGUI__OnHolstered_bool_,(MethodInfo *)0x0);
-    pDVar11 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar10,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar11 == (Delegate *)0x0) {
+              (this_00,(Object *)&(pickupOwner->fields).onUnequipItem,
+               MethodInfo__PickupGUI__OnHolstered_bool_,(MethodInfo *)0x0);
+    pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar8,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar9 == (Delegate *)0x0) {
       (pickupOwner->fields).OnHolsteredChanged = (Action_1_Boolean_ *)0x0;
       func_?();
       return;
     }
-    pAVar10 = (Action_1_Boolean_ *)func_?();
-    if (pAVar10 != (Action_1_Boolean_ *)0x0) {
-      (pickupOwner->fields).OnHolsteredChanged = pAVar10;
-      iVar12 = func_?();
-      if (iVar12 != 0) {
+    pAVar8 = (Action_1_Boolean_ *)func_?();
+    if (pAVar8 != (Action_1_Boolean_ *)0x0) {
+      (pickupOwner->fields).OnHolsteredChanged = pAVar8;
+      iVar10 = func_?();
+      if (iVar10 != 0) {
         func_?();
         return;
       }
     }
   }
-  pMVar7 = (MVPickupOwner_OnEquipItemDelegate *)func_?();
+  func_?();
 code_?:
-  func_?(pMVar7);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  func_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

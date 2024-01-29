@@ -169,7 +169,7 @@ void Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonTextureG
                (MaterialButtonTextureGenerator *this,MethodInfo *method)
 
 {
-  (this->fields).previewResolution = 0x80;
+  (this->fields).previewResolution = 0x100;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';

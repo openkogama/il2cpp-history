@@ -251,145 +251,97 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_LoadTheme
 {
   this_00 = (this->fields).themeRepo;
   if (this_00 != (ThemeRepository *)0x0) {
+    pTVar1 = ThemeRepository::ThemeRepository_CreateTemporaryThemeVisualization
+                       (this_00,identifier,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Debug);
-      func_?(&Theme_MethodInfo__UnityEngine__Object__Instantiate<Theme>_Theme_);
       func_?(&TypeInfo__UnityEngine__Object);
-      func_?(&StringLiteral_Preview_theme_created);
       cRam_? = '\x01';
     }
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-              ((Object *)StringLiteral_Preview_theme_created,(MethodInfo *)0x0);
-    pTVar1 = ThemeRepository::ThemeRepository_get_CurrentTheme(this_00,(MethodInfo *)0x0);
-    if (pTVar1 == (ThemeWorldObject *)0x0) {
-      pTVar2 = (Theme *)0x0;
-    }
-    else {
-      pTVar2 = (pTVar1->fields)._Visualization_k__BackingField;
-    }
+    pTVar2 = (this->fields).previewTheme;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                       ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar3 != 0) {
-      pTVar1 = ThemeRepository::ThemeRepository_get_CurrentTheme(this_00,(MethodInfo *)0x0);
-      if ((pTVar1 == (ThemeWorldObject *)0x0) ||
-         (pTVar2 = (pTVar1->fields)._Visualization_k__BackingField, pTVar2 == (Theme *)0x0))
-      goto code_?;
-      Theme::Theme_Deactivate(pTVar2,(MethodInfo *)0x0);
+      pTVar2 = (this->fields).previewTheme;
+      if (pTVar2 == (Theme *)0x0) goto code_?;
+      unaff_EBP = (ExecuteEvents__Class **)&UNK_?;
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)pTVar2,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                ((Object_1 *)pGVar4,(MethodInfo *)0x0);
     }
-    pTVar2 = ThemeRepository::ThemeRepository_GetThemePrefab(this_00,identifier,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pTVar2 = (Theme *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                                ((Object *)pTVar2,
-                                 Theme_MethodInfo__UnityEngine__Object__Instantiate<Theme>_Theme_);
-    if (pTVar2 != (Theme *)0x0) {
-      Theme::Theme_InitializeForPreview(pTVar2,(MethodInfo *)0x0);
-      Theme::Theme_Activate(pTVar2,(MethodInfo *)0x0);
+    (this->fields).previewTheme = pTVar1;
+    func_?();
+    menuController = (this->fields).menuController;
+    pTVar1 = (this->fields).previewTheme;
+    if (menuController != (ThemeMenuController *)0x0) {
       if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        unaff_EBP = &TypeInfo__UnityEngine__EventSystems__ExecuteEvents;
+        func_?();
+        func_?(&
+                        ThemePreviewSettingsMenu_MethodInfo__UnityEngine__Object__Instantiate<ThemePreviewSettingsMenu>_ThemePreviewSettingsMenu_
+                       );
         func_?(&TypeInfo__UnityEngine__Object);
+        func_?(&
+                        MethodInfo__ThemeMenuController____c__DisplayClass6_0___OpenSettingsForPreview_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                       );
+        func_?(&TypeInfo__ThemeMenuController____c__DisplayClass6_0);
         cRam_? = '\x01';
       }
-      pTVar4 = (this->fields).previewTheme;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
-      }
-      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pTVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar3 != 0) {
-        pTVar4 = (this->fields).previewTheme;
-        if (pTVar4 == (Theme *)0x0) goto code_?;
-        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pTVar4,(MethodInfo *)0x0);
+      value = (Object *)func_?();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                (value,ExceptionArgument__Enum_obj,(MethodInfo *)unaff_EBP);
+      if (value != (Object *)0x0) {
+        value[1].monitor = (MonitorData *)pTVar1;
+        func_?();
+        original = (menuController->fields).previewSettingsPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                  ((Object_1 *)pGVar5,(MethodInfo *)0x0);
-      }
-      (this->fields).previewTheme = pTVar2;
-      method_00 = (ExecuteEvents__Class **)&UNK_?;
-      func_?(&(this->fields).previewTheme,pTVar2);
-      menuController = (this->fields).menuController;
-      pTVar2 = (this->fields).previewTheme;
-      if (menuController != (ThemeMenuController *)0x0) {
-        if (cRam_? == '\0') {
-          func_?(&
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                         );
-          func_?(&
-                          UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                         );
-          method_00 = &TypeInfo__UnityEngine__EventSystems__ExecuteEvents;
           func_?();
-          func_?(&
-                          ThemePreviewSettingsMenu_MethodInfo__UnityEngine__Object__Instantiate<ThemePreviewSettingsMenu>_ThemePreviewSettingsMenu_
-                         );
-          func_?(&TypeInfo__UnityEngine__Object);
-          func_?(&
-                          MethodInfo__ThemeMenuController____c__DisplayClass6_0___OpenSettingsForPreview_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                         );
-          func_?(&TypeInfo__ThemeMenuController____c__DisplayClass6_0);
-          cRam_? = '\x01';
         }
-        value = (Object *)func_?(TypeInfo__ThemeMenuController____c__DisplayClass6_0);
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-        if (value != (Object *)0x0) {
-          value[1].monitor = (MonitorData *)pTVar2;
-          func_?(&value[1].monitor,pTVar2);
-          original = (menuController->fields).previewSettingsPrefab;
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Object);
+        pOVar5 = (Object__Class *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                           ((Object *)original,
+                            ThemePreviewSettingsMenu_MethodInfo__UnityEngine__Object__Instantiate<ThemePreviewSettingsMenu>_ThemePreviewSettingsMenu_
+                           );
+        value[1].klass = pOVar5;
+        func_?();
+        if (value[1].klass != (Object__Class *)0x0) {
+          ThemePreviewSettingsMenu::ThemePreviewSettingsMenu_Initialize
+                    ((ThemePreviewSettingsMenu *)value[1].klass,(Theme *)value[1].monitor,
+                     (ThemeData *)&UNK_?,menuController,(MethodInfo *)0x0);
+          pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)menuController,(MethodInfo *)0x0);
+          callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                     MethodInfo__ThemeMenuController____c__DisplayClass6_0___OpenSettingsForPreview_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
           }
-          pOVar6 = (Object__Class *)
-                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                             ((Object *)original,
-                              ThemePreviewSettingsMenu_MethodInfo__UnityEngine__Object__Instantiate<ThemePreviewSettingsMenu>_ThemePreviewSettingsMenu_
-                             );
-          value[1].klass = pOVar6;
-          func_?(value + 1,pOVar6);
-          if (value[1].klass != (Object__Class *)0x0) {
-            ThemePreviewSettingsMenu::ThemePreviewSettingsMenu_Initialize
-                      ((ThemePreviewSettingsMenu *)value[1].klass,(Theme *)value[1].monitor,data,
-                       menuController,(MethodInfo *)0x0);
-            pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)menuController,(MethodInfo *)0x0);
-            callbackFunction =
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)
-                 func_?(
-                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                );
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                       MethodInfo__ThemeMenuController____c__DisplayClass6_0___OpenSettingsForPreview_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                       ,(MethodInfo *)0x0);
-            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
-                == 0) {
-              func_?();
-            }
-            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-            ExecuteEvents_ExecuteHierarchy
-                      (pGVar5,(BaseEventData *)0x0,callbackFunction,
-                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                      );
-            return;
-          }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    (pGVar4,(BaseEventData *)0x0,callbackFunction,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                    );
+          return;
         }
       }
     }
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

@@ -12,41 +12,78 @@ void Assembly-CSharp.dll::SpawnRoleChangeHandlerLocal::SpawnRoleChangeHandlerLoc
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
-    pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (pMVar1,prevSpawnRoleId,(MethodInfo *)0x0);
-    if (pMVar2 == (MVWorldObject *)0x0) {
-      prevSpawnRole = (ISpawnRoleLocal *)0x0;
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                     );
+      cRam_? = '\x01';
     }
-    else {
-      prevSpawnRole = (ISpawnRoleLocal *)func_?(pMVar2,TypeInfo__ISpawnRoleLocal);
-      if (prevSpawnRole == (ISpawnRoleLocal *)0x0) goto code_?;
-    }
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
-      pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                         (pMVar1,newSpawnRoleId,(MethodInfo *)0x0);
-      if (pMVar2 == (MVWorldObject *)0x0) {
-        currentSpawnRole = (ISpawnRoleLocal *)0x0;
+    pDVar2 = (pMVar1->fields).worldObjects;
+    pMStack_3 = (MVWorldObjectClientManager *)0x0;
+    if (pDVar2 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+      Dictionary_2_System_Int32_System_Object__TryGetValue
+                ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,prevSpawnRoleId,
+                 (Object **)&pMStack_3,
+                 MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                );
+      pMVar1 = pMStack_3;
+      unaff_EBX = TypeInfo__ISpawnRoleLocal;
+      if (pMStack_3 == (MVWorldObjectClientManager *)0x0) {
+        prevSpawnRole = (ISpawnRoleLocal *)0x0;
       }
       else {
-        this = (SpawnRoleChangeHandlerLocal *)&UNK_?;
-        currentSpawnRole = (ISpawnRoleLocal *)func_?();
-        if (currentSpawnRole == (ISpawnRoleLocal *)0x0) goto code_?;
+        prevSpawnRole = (ISpawnRoleLocal *)func_?();
+        if (prevSpawnRole == (ISpawnRoleLocal *)0x0) goto code_?;
       }
-      this_00 = (this->fields).SpawnRoleDataMediator;
-      if (this_00 != (SpawnRoleDataMediator *)0x0) {
-        Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::SpawnRoleDataMediator
-        ::SpawnRoleDataMediator_ActivateSpawnRole
-                  (this_00,currentSpawnRole,prevSpawnRole,position,rotation,(MethodInfo *)0x0);
-        return;
+      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
+        if (cRam_? == '\0') {
+          func_?(&
+                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                         );
+          cRam_? = '\x01';
+        }
+        pDVar2 = (pMVar1->fields).worldObjects;
+        prevSpawnRoleId = 0;
+        if (pDVar2 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+          Dictionary_2_System_Int32_System_Object__TryGetValue
+                    ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,newSpawnRoleId,
+                     (Object **)&prevSpawnRoleId,
+                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                    );
+          pMVar1 = (MVWorldObjectClientManager *)prevSpawnRoleId;
+          unaff_EBX = TypeInfo__ISpawnRoleLocal;
+          if (prevSpawnRoleId == 0) {
+            currentSpawnRole = (ISpawnRoleLocal *)0x0;
+          }
+          else {
+            pMStack_3 = (MVWorldObjectClientManager *)prevSpawnRoleId;
+            currentSpawnRole = (ISpawnRoleLocal *)func_?();
+            if (currentSpawnRole == (ISpawnRoleLocal *)0x0) goto code_?;
+          }
+          this_00 = (this->fields).SpawnRoleDataMediator;
+          pMVar1 = (MVWorldObjectClientManager *)0x0;
+          if (this_00 != (SpawnRoleDataMediator *)0x0) {
+            newPosition.z = position.z;
+            newPosition.x = position.x;
+            newPosition.y = position.y;
+            Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::
+            SpawnRoleDataMediator::SpawnRoleDataMediator_ActivateSpawnRole
+                      (this_00,currentSpawnRole,prevSpawnRole,newPosition,rotation,(MethodInfo *)0x0
+                      );
+            return;
+          }
+        }
       }
     }
   }
   func_?();
 code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?(pMVar1,unaff_EBX);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

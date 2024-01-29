@@ -32,11 +32,10 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
     func_?(&StringLiteral_Respawning_at_checkpoint___);
     cRam_? = '\x01';
   }
-  this_05 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-            func_?(TypeInfo__DeathUIBoostMenuController____c__DisplayClass22_0);
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_05,(MethodInfo *)0x0);
+  method_00 = TypeInfo__DeathUIBoostMenuController____c__DisplayClass22_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if ((this->fields).timeUntilGhostMode <= 0.0) {
     pIVar1 = (this->fields).readyToPlayTimerFill;
     if (pIVar1 == (Image *)0x0) goto code_?;
@@ -85,19 +84,18 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
         pEVar8 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
                             ((EmbeddedSiteConfigData *)&stack0xffffffd0,this_02,(MethodInfo *)0x0);
         cVar9 = pEVar8->noPlayButtonVideoIcon;
-        if (this_05 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-          *(undefined1 *)&(this_05->fields)._._defaultValue_k__BackingField = 0;
+        if (value != (Object *)0x0) {
+          *(undefined1 *)&value[1].klass = 0;
           pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
           callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-          pUVar10 = this_05;
+          pOVar10 = value;
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
-                     (Object *)this_05,
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
                      MethodInfo__DeathUIBoostMenuController____c__DisplayClass22_0___Initialize_b__0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
-          cVar11 = (char)pUVar10;
+          cVar11 = (char)pOVar10;
           if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
               0) {
             func_?();
@@ -115,7 +113,7 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
           else {
             bVar13 = 0;
           }
-          bVar13 = *(byte *)&(this_05->fields)._._defaultValue_k__BackingField & bVar13;
+          bVar13 = *(byte *)&value[1].klass & bVar13;
           pIVar1 = (this->fields).adIcon;
           if (pIVar1 != (Image *)0x0) {
             pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -162,28 +160,28 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
                                              ((MethodInfo *)0x0);
                           if (pSVar3 != (SpawnRoleDataMediator *)0x0) {
                             this_03 = (pSVar3->fields).SpawnRoleModeTypeWrapper;
-                            this_06 = (UnityAction_1_System_Int32Enum_ *)func_?();
+                            this_05 = (UnityAction_1_System_Int32Enum_ *)func_?();
                             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::
                             Int32Enum]::UnityAction_1_System_Int32Enum___ctor
-                                      (this_06,(Object *)this,
+                                      (this_05,(Object *)this,
                                        MethodInfo__DeathUIBoostMenuController__OnAvatarStateChanged_MV__Common__SpawnRoleModeType_
                                        ,(MethodInfo *)0x0);
                             if (this_03 != (SpawnRoleModeTypeWrapper *)0x0) {
                               SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_add_OnChange
-                                        (this_03,(Action_1_MV_Common_SpawnRoleModeType_ *)this_06,
+                                        (this_03,(Action_1_MV_Common_SpawnRoleModeType_ *)this_05,
                                          (MethodInfo *)0x0);
                               this_04 = (this->fields).boostMenu;
                               if (this_04 != (BoostMenuController *)0x0) {
                                 BoostMenuController::BoostMenuController_Initialize
                                           (this_04,(MethodInfo *)0x0);
-                                this_07 = MVGameControllerBase::MVGameControllerBase_get_Game
+                                this_06 = MVGameControllerBase::MVGameControllerBase_get_Game
                                                     ((MethodInfo *)0x0);
-                                if (this_07 != (MVNetworkGame *)0x0) {
-                                  this_08 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
-                                                      (this_07,(MethodInfo *)0x0);
-                                  if (this_08 != (MVLocalPlayer *)0x0) {
+                                if (this_06 != (MVNetworkGame *)0x0) {
+                                  this_07 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
+                                                      (this_06,(MethodInfo *)0x0);
+                                  if (this_07 != (MVLocalPlayer *)0x0) {
                                     pMVar16 = MVPlayer::MVPlayer_GetCheckpoint
-                                                        ((MVPlayer *)this_08,(MethodInfo *)0x0);
+                                                        ((MVPlayer *)this_07,(MethodInfo *)0x0);
                                     pNVar7 = (this->fields).buttonFader;
                                     if (pNVar7 != (NotificationFade *)0x0) {
                                       NotificationFade::NotificationFade_Activate
@@ -634,19 +632,39 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
         func_?();
         cRam_? = '\x01';
       }
-      if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField ==
-          (IPlayModeUI *)0x0) goto code_?;
-      ppMStack3 = (MVGameControllerBase__Class **)0x1;
-      pIStack4 = TypeInfo__IPlayModeUI;
-      uStack5 = 4;
-      func_?();
+      pIVar4 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+      if (pIVar4 == (IPlayModeUI *)0x0) goto code_?;
+      pIVar5 = pIVar4->klass;
+      uVar6 = 0;
+      uVar7._0_1_ = (pIVar5->_1).rank;
+      uVar7._1_1_ = (pIVar5->_1).minimumAlignment;
+      pIStack8 = pIVar4;
+      if (uVar7 != 0) {
+        do {
+          if (pIVar5->interfaceOffsets[uVar6].interfaceType == (Il2CppClass *)TypeInfo__IPlayModeUI)
+          {
+            pIVar5 = pIVar4->klass;
+            iVar9 = pIVar5->interfaceOffsets[uVar6].offset;
+            ppMStack3 =
+                 (MVGameControllerBase__Class **)(&(pIVar5->vtable).get_IsInLobby)[iVar9].methodPtr;
+            (*(code *)(&(pIVar5->vtable).set_IsInPauseMenu)[iVar9].method)();
+            return;
+          }
+          uVar6 = uVar6 + 1;
+        } while (uVar6 < uVar7);
+      }
+      ppMStack3 = (MVGameControllerBase__Class **)0x4;
+      puVar10 = (undefined4 *)func_?();
+      ppMStack3 = (MVGameControllerBase__Class **)puVar10[1];
+      pIStack8 = pIVar4;
+      (*(code *)*puVar10)();
     }
     return;
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -795,14 +813,13 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
     func_?(&TypeInfo__DeathUIBoostMenuController____c);
     cRam_? = '\x01';
   }
-  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-            func_?(TypeInfo__DeathUIBoostMenuController____c__DisplayClass25_0);
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-  if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-    this_00[1].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)this;
-    func_?(this_00 + 1,this);
+  method_00 = TypeInfo__DeathUIBoostMenuController____c__DisplayClass25_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  if (value != (Object *)0x0) {
+    value[1].monitor = (MonitorData *)this;
+    func_?(&value[1].monitor,this);
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     pIVar2 = (this->fields).timerFill;
     fVar1 = _UNK_? - (fVar1 - (this->fields).startTime) / (this->fields).timeUntilGhostMode;
@@ -813,7 +830,7 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
       if (pIVar2 != (Image *)0x0) {
         UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
                   (pIVar2,fVar1,(MethodInfo *)0x0);
-        *(undefined1 *)&(this_00->fields)._._defaultValue_k__BackingField = 0;
+        *(undefined1 *)&value[1].klass = 0;
         pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
         callbackFunction =
@@ -823,7 +840,7 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
                             );
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_00,
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
                    MethodInfo__DeathUIBoostMenuController____c__DisplayClass25_0___Update_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
@@ -834,8 +851,7 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
                   (pGVar3,(BaseEventData *)0x0,callbackFunction,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                   );
-        if (((this->fields).shouldPop != 0) &&
-           (*(char *)&(this_00->fields)._._defaultValue_k__BackingField == '\0')) {
+        if (((this->fields).shouldPop != 0) && (*(char *)&value[1].klass == '\0')) {
           pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
           if ((TypeInfo__DeathUIBoostMenuController____c->_1).cctor_finished_or_no_cctor == 0) {

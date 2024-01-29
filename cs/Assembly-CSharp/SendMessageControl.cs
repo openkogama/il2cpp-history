@@ -52,6 +52,7 @@ public class SendMessageControl : MonoBehaviour
 	private const string fyberTestSuite = "/fyber";
 	private const string showAd = "/ad";
 	private const string PrintRegion = "/region";
+	private const string MaterialLoaderInfo = "/materialInfo";
 	private const string pause = "/pause";
 	private const string resume = "/resume";
 	[SerializeField]
@@ -83,18 +84,18 @@ public class SendMessageControl : MonoBehaviour
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IToggleFps> __9__55_0;
+		public static ExecuteEvents.EventFunction<IToggleFps> __9__56_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _HandleChatCommands_b__55_0(IToggleFps x, BaseEventData y);
+		internal void _HandleChatCommands_b__56_0(IToggleFps x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _OOMTest_d__58 : IEnumerator<object>
+	private sealed class _OOMTest_d__59 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -107,7 +108,7 @@ public class SendMessageControl : MonoBehaviour
 
 		// Constructors
 		[DebuggerHidden]
-		public _OOMTest_d__58(int __1__state);
+		public _OOMTest_d__59(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -129,12 +130,11 @@ public class SendMessageControl : MonoBehaviour
 	private void EnforceCharacterLimit();
 	private void SendChatMessage(string chatMsg);
 	private bool HandleChatCommands(string chatMsg);
-	[IteratorStateMachine(typeof(_OOMTest_d__58))]
+	[IteratorStateMachine(typeof(_OOMTest_d__59))]
 	private IEnumerator OOMTest();
 	private void OnAdShownCallback(InterstitialAdResult interstitialResult);
 	private void OnAdShownCallback(RewardedAdResult result);
 	private static void ShowBuildInformation();
-	private static void ToggleHD();
 	public static string CreateHelpTxt();
 	public static string CreateChatCommandsHelpTxt();
 	private static void SanitizeMessage(ref string message, string tagToSanitize);

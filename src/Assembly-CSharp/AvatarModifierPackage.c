@@ -426,10 +426,10 @@ void Assembly-CSharp.dll::AvatarModifierPackage::AvatarModifierPackage_set_IsExp
              ObscuredFloat_op_Implicit
                        ((ObscuredFloat *)&puStack_6,
                         (float)((uint)fVar4 ^
-                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                ) +
                         (float)((uint)fVar4 ^
-                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                ),(MethodInfo *)0x0);
     AVar1 = pOVar5->hiddenValue;
     pBVar3 = pOVar5->hiddenValueOld;

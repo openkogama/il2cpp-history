@@ -25,7 +25,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::MVCostumeB
         uVar7 = pVVar6->x;
         uVar8 = pVVar6->y;
         value.y = (float)((uint)(fVar3 * (float)uVar8) ^
-                         __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) *
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
                   _UNK_?;
         value.x = fVar5 * (float)uVar7 * _UNK_?;
         value.z = fVar4 * pVVar6->z * _UNK_?;

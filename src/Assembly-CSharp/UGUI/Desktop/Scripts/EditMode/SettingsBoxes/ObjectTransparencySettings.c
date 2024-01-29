@@ -281,7 +281,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::
     if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    mscorlib.dll::System::Convert::Convert_ToSingle
+    mscorlib.dll::System::Convert::Convert_ToSingle_1
               (value,(IFormatProvider *)provider,(MethodInfo *)0x0);
     value = (Object *)func_?(TypeInfo__System__Single);
   }

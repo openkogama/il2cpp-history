@@ -284,20 +284,36 @@ void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler__Start_b__3_0
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).keyState;
-  iVar2 = (this->fields).kogamaControl;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,MethodInfo__ShortcutHandler__Callback__,(MethodInfo *)0x0);
-  if (x != (IShortcutKeyRegister *)0x0) {
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister,x,iVar2,iVar1,
-                    this_00);
+  if (x == (IShortcutKeyRegister *)0x0) {
+    func_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pIVar3 = x->klass;
+  uVar4 = 0;
+  uVar5._0_1_ = (pIVar3->_1).rank;
+  uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar5 != 0) {
+    do {
+      if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister) {
+        ppMVar6 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar4].offset].RegisterShortcutKey
+                   .method;
+        goto code_?;
+      }
+      uVar4 = uVar4 + 1;
+    } while (uVar4 < uVar5);
+  }
+  ppMVar6 = (MethodInfo **)
+            func_?(x,TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister,0);
+code_?:
+  (*(code *)*ppMVar6)(x,ppMVar6[1],iVar1,this_00);
   return;
 }
 

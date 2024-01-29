@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::MVCollectibleObject::MVCollectibleObject_Start
         cRam_? = '\x01';
       }
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__UnityEngine__Object);
       }
       this_00 = (Component *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
@@ -48,7 +48,7 @@ void Assembly-CSharp.dll::MVCollectibleObject::MVCollectibleObject_Start
       }
     }
   }
-  uVar3 = func_?(&stack0xffffffec);
+  uVar3 = func_?(&stack0xfffffff0);
   func_?(uVar3);
   pcVar4 = (code *)swi(3);
   (*pcVar4)();

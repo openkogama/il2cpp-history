@@ -323,9 +323,10 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::
           if (this != (DesktopEditModeController *)0x0) {
             if (((TypeInfo__DesktopEditModeController->_1).naturalAligment <=
                  (this->klass->_1).naturalAligment) &&
-               ((this->klass->_1).typeHierarchy
+               ((DesktopEditModeController__Class *)
+                (this->klass->_1).typeHierarchy
                 [(TypeInfo__DesktopEditModeController->_1).naturalAligment - 1] ==
-                (Il2CppClass *)TypeInfo__DesktopEditModeController)) {
+                TypeInfo__DesktopEditModeController)) {
               DesktopEditModeController::DesktopEditModeController_RegisterPlayModeController
                         (this,playModeController,(MethodInfo *)0x0);
               return;
@@ -467,29 +468,25 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_Updat
       cRam_? = '\x01';
     }
     TypeInfo__MVGameControllerBase->static_fields->_IsInitialized_k__BackingField = 1;
-    this_00 = (this->fields)._.materialLoader;
-    if (this_00 != (MaterialLoader *)0x0) {
-      MaterialLoader::MaterialLoader_Initialize(this_00,(MethodInfo *)0x0);
-      pMVar1 = (this->fields)._.modeController;
-      if (pMVar1 != (ModeControllerBase *)0x0) {
-        (*(code *)(pMVar1->klass->vtable).Initialize.method)
-                  (pMVar1,(pMVar1->klass->vtable).ShowEUseIcon_1.methodPtr);
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__MVGameControllerBase);
-          cRam_? = '\x01';
-        }
-        pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
-        if ((pMVar2 != (MVGameControllerBase *)0x0) &&
-           (this_01 = (pMVar2->fields).game, this_01 != (MVNetworkGame *)0x0)) {
-          pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-          if (pMVar3 != (MVLocalPlayer *)0x0) {
-            profileID = (pMVar3->fields)._._ProfileID_k__BackingField;
-            if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__LevelingManager);
-            }
-            LevelingManager::LevelingManager_Initialize(profileID,(MethodInfo *)0x0);
-            goto code_?;
+    pMVar1 = (this->fields)._.modeController;
+    if (pMVar1 != (ModeControllerBase *)0x0) {
+      (*(code *)(pMVar1->klass->vtable).Initialize.method)
+                (pMVar1,(pMVar1->klass->vtable).ShowEUseIcon_1.methodPtr);
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MVGameControllerBase);
+        cRam_? = '\x01';
+      }
+      pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((pMVar2 != (MVGameControllerBase *)0x0) &&
+         (this_00 = (pMVar2->fields).game, this_00 != (MVNetworkGame *)0x0)) {
+        pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+        if (pMVar3 != (MVLocalPlayer *)0x0) {
+          profileID = (pMVar3->fields)._._ProfileID_k__BackingField;
+          if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__LevelingManager);
           }
+          LevelingManager::LevelingManager_Initialize(profileID,(MethodInfo *)0x0);
+          goto code_?;
         }
       }
     }

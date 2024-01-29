@@ -1,7 +1,7 @@
 
-/* Void <HandleChatCommands>b__55_0(IToggleFps, BaseEventData) */
+/* Void <HandleChatCommands>b__56_0(IToggleFps, BaseEventData) */
 
-void Assembly-CSharp.dll::SendMessageControl+<>c::SendMessageControl_c__HandleChatCommands_b__55_0
+void Assembly-CSharp.dll::SendMessageControl+<>c::SendMessageControl_c__HandleChatCommands_b__56_0
                (SendMessageControl_c *this,IToggleFps *x,BaseEventData *y,MethodInfo *method)
 
 {

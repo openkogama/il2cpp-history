@@ -116,15 +116,13 @@ bool Assembly-CSharp.dll::AdvancedGhostBehaviour+AdvancedGhostPerception::
     fVar8 = (float10)func_?(&uStack_6,0);
     pAVar1 = (this->fields).ghostBehaviour;
     if (pAVar1 != (AdvancedGhostBehaviour *)0x0) {
-      fVar9 = AdvancedGhostBehaviour::AdvancedGhostBehaviour_get_RoamRadius
-                        (pAVar1,(MethodInfo *)0x0);
-      return (float)fVar8 <= fVar9;
+      return (float)fVar8 <= (pAVar1->fields).perceptionRadius + (pAVar1->fields).radius;
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  bVar11 = (*pcVar10)();
-  return bVar11;
+  pcVar9 = (code *)swi(3);
+  bVar10 = (*pcVar9)();
+  return bVar10;
 }
 
 
@@ -279,102 +277,112 @@ bool Assembly-CSharp.dll::AdvancedGhostBehaviour+AdvancedGhostPerception::
   RStack_4.Last = 0;
   *target = (MVWorldObjectClient *)0x0;
   func_?(target,0);
-  this_00 = (this->fields).ghostBehaviour;
-  if ((this_00 != (AdvancedGhostBehaviour *)0x0) &&
-     (fVar5 = AdvancedGhostBehaviour::AdvancedGhostBehaviour_get_RoamRadius
-                        (this_00,(MethodInfo *)0x0), targets != (List_1_WorldObjectClientRef_ *)0x0)
-     ) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                         *)&stack0xffffffbc,
-                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)targets
-                        ,
-                        MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__GetEnumerator__
-                       );
-    uStack_1 = 1;
-    RVar7 = pLVar6->_current;
-    while( true ) {
-      do {
+  pAVar5 = (this->fields).ghostBehaviour;
+  if (pAVar5 != (AdvancedGhostBehaviour *)0x0) {
+    fVar6 = (pAVar5->fields).perceptionRadius;
+    fVar7 = (pAVar5->fields).radius;
+    if (targets != (List_1_WorldObjectClientRef_ *)0x0) {
+      pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+               RegexCharClass+SingleRange]::
+               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                           *)&stack0xffffffbc,
+                          (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                          targets,
+                          MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__GetEnumerator__
+                         );
+      method_00 = (RegexCharClass_SingleRange)pLVar8->_version;
+      uStack_1 = 1;
+      RVar9 = pLVar8->_current;
+      fStack_10 = fVar6 + fVar7;
+      while( true ) {
         do {
-          this_01 = RVar7;
-          bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-                  List_1_T_Enumerator_System_Object__MoveNext
-                            ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffac,
-                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__MoveNext__
-                            );
-          if (bVar8 == 0) {
-            uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                      ((Object *)&stack0xffffffac,
-                       (ExceptionArgument__Enum)
-                       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__Dispose__
-                       ,(MethodInfo *)in_stack_9);
-            uStack_1 = 0xffffffff;
-            if ((RStack_4 != (RegexCharClass_SingleRange)0x0) &&
-               (pOVar10 = WorldObjectClientRef`1[System::Object]::
-                         WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                                   ((WorldObjectClientRef_1_System_Object_ *)RStack_4,
-                                    MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                                   ), pOVar10 != (Object *)0x0)) {
-              pMVar11 = (MVWorldObjectClient *)
-                       WorldObjectClientRef`1[System::Object]::
-                       WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                                 ((WorldObjectClientRef_1_System_Object_ *)RStack_4,
-                                  MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                                 );
-              *target = pMVar11;
-              func_?();
-              pMVar11 = *target;
-              *unaff_FS_OFFSET = uStack_3;
-              return pMVar11 != (MVWorldObjectClient *)0x0;
-            }
-            *unaff_FS_OFFSET = uStack_3;
-            return 0;
-          }
-          RVar7 = this_01;
-        } while ((this_01 == (RegexCharClass_SingleRange)0x0) ||
-                (RVar7 = (RegexCharClass_SingleRange)
-                         MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                , pOVar10 = WorldObjectClientRef`1[System::Object]::
+          do {
+            do {
+              this_00 = RVar9;
+              bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                      Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffac,
+                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__MoveNext__
+                                );
+              if (bVar11 == 0) {
+                uStack_1 = 0xffffffff;
+                mscorlib.dll::System::ThrowHelper::
+                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                          ((Object *)&stack0xffffffac,
+                           (ExceptionArgument__Enum)
+                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__Dispose__
+                           ,(MethodInfo *)method_00);
+                uStack_1 = 0xffffffff;
+                if (RStack_4 != (RegexCharClass_SingleRange)0x0) {
+                  pOVar12 = WorldObjectClientRef`1[System::Object]::
                            WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                                     ((WorldObjectClientRef_1_System_Object_ *)this_01,
+                                     ((WorldObjectClientRef_1_System_Object_ *)RStack_4,
                                       MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                                     ), pOVar10 == (Object *)0x0));
-        RVar7 = (RegexCharClass_SingleRange)&UNK_?;
-        in_stack_9 = this_01;
-        pOVar10 = WorldObjectClientRef`1[System::Object]::
+                                     );
+                  if (pOVar12 != (Object *)0x0) {
+                    pMVar13 = (MVWorldObjectClient *)
+                             WorldObjectClientRef`1[System::Object]::
+                             WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                                       ((WorldObjectClientRef_1_System_Object_ *)RStack_4,
+                                        MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                                       );
+                    *target = pMVar13;
+                    func_?();
+                    pMVar13 = *target;
+                    *unaff_FS_OFFSET = uStack_3;
+                    return pMVar13 != (MVWorldObjectClient *)0x0;
+                  }
+                }
+                *unaff_FS_OFFSET = uStack_3;
+                return 0;
+              }
+              RVar9 = this_00;
+            } while (this_00 == (RegexCharClass_SingleRange)0x0);
+            pOVar12 = WorldObjectClientRef`1[System::Object]::
+                     WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                               ((WorldObjectClientRef_1_System_Object_ *)this_00,
+                                MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                               );
+          } while (pOVar12 == (Object *)0x0);
+          method_00 = this_00;
+          RVar9 = (RegexCharClass_SingleRange)
+                   MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__;
+          pOVar12 = WorldObjectClientRef`1[System::Object]::
+                   WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                             ((WorldObjectClientRef_1_System_Object_ *)this_00,
+                              MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                             );
+          if (pOVar12 == (Object *)0x0) goto code_?;
+        } while (pOVar12[10].monitor == (MonitorData *)0x3d);
+        RVar9 = (RegexCharClass_SingleRange)&UNK_?;
+        pOVar12 = WorldObjectClientRef`1[System::Object]::
                  WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                           ((WorldObjectClientRef_1_System_Object_ *)this_01,
+                           ((WorldObjectClientRef_1_System_Object_ *)this_00,
                             MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                            );
-        if (pOVar10 == (Object *)0x0) goto code_?;
-      } while (pOVar10[10].monitor == (MonitorData *)0x3d);
-      pOVar10 = WorldObjectClientRef`1[System::Object]::
-               WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                         ((WorldObjectClientRef_1_System_Object_ *)this_01,
-                          MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                         );
-      if (pOVar10 == (Object *)0x0) break;
-      pVVar12 = (Vector3 *)func_?();
-      targetPosition = *pVVar12;
-      bVar8 = AdvancedGhostBehaviour_AdvancedGhostPerception_CanSense
-                        (this,*pVVar12,(MethodInfo *)0x0);
-      if ((bVar8 != 0) &&
-         (fVar13 = AdvancedGhostBehaviour_AdvancedGhostPerception_DistanceToTargetPosition
-                            (this,targetPosition,(MethodInfo *)0x0), fVar13 < fVar5)) {
-        RStack_4 = this_01;
-        fVar5 = fVar13;
+        if (pOVar12 == (Object *)0x0) break;
+        pVVar14 = (Vector3 *)func_?();
+        targetPosition = *pVVar14;
+        bVar11 = AdvancedGhostBehaviour_AdvancedGhostPerception_CanSense
+                          (this,*pVVar14,(MethodInfo *)0x0);
+        if (bVar11 != 0) {
+          fVar6 = AdvancedGhostBehaviour_AdvancedGhostPerception_DistanceToTargetPosition
+                            (this,targetPosition,(MethodInfo *)0x0);
+          if (fVar6 < fStack_10) {
+            RStack_4 = this_00;
+            fStack_10 = fVar6;
+          }
+        }
       }
     }
   }
 code_?:
   func_?();
   func_?();
-  pcVar14 = (code *)swi(3);
-  bVar8 = (*pcVar14)();
-  return bVar8;
+  pcVar15 = (code *)swi(3);
+  bVar11 = (*pcVar15)();
+  return bVar11;
 }
 
 

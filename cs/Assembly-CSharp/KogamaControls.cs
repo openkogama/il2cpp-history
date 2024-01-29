@@ -50,7 +50,7 @@ public enum KogamaControls
 	ChatShiftLineDown = 37,
 	ChangeFocus = 38,
 	ChangeChangeFocusDirection = 39,
-	ToggleHD = 40,
+	Deprecated_ToggleHD = 40,
 	LobbyMenu = 41,
 	Escape = 42,
 	Holster = 43,

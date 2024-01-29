@@ -237,7 +237,7 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_Update
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
         (IPlayModeUI *)0x0) {
-      cVar3 = func_?(5,TypeInfo__IPlayModeUI);
+      cVar3 = func_?(7,TypeInfo__IPlayModeUI);
       if (cVar3 != '\0') {
         return;
       }
@@ -564,7 +564,7 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_UpdateUseVi
     }
     pIVar3 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar3 != (IPlayModeUI *)0x0) {
-      cVar4 = func_?(5,TypeInfo__IPlayModeUI,pIVar3);
+      cVar4 = func_?(7,TypeInfo__IPlayModeUI,pIVar3);
       if (cVar4 != '\0') {
         return;
       }
@@ -805,9 +805,8 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler__ctor
   (this->fields).removeList = this_01;
   func_?(&(this->fields).removeList,this_01);
   (this->fields).ownerWoId = -1;
-  (this->fields)._.findWorldObjectParent = 1;
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  LobbyStatePlayModeController::LobbyStatePlayModeController__ctor
+            ((LobbyStatePlayModeController *)this,(MethodInfo *)0x0);
   return;
 }
 

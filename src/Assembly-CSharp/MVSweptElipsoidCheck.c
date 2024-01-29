@@ -188,33 +188,29 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_CubeIsWithi
                (IntVector pos,CollisionState *collisionState,MethodInfo *method)
 
 {
-  fStack_1 = collisionState->scaledMaxRadius;
+  fVar1 = collisionState->scaledMaxRadius;
   fStack_2 = 0.0;
   uVar3 = (collisionState->localOrigin).x;
   uVar4 = (collisionState->localOrigin).y;
   uVar5 = (collisionState->localDirection).x;
   uVar6 = (collisionState->localDirection).y;
-  uStack_7._0_4_ = (collisionState->localOrigin).x;
-  uStack_7._4_4_ = (collisionState->localOrigin).y;
-  uVar8 = (collisionState->localDirection).x;
-  uVar9 = (collisionState->localDirection).y;
-  fStack_10 = (collisionState->localOrigin).z + (collisionState->localDirection).z * _UNK_?;
-  VStack_11.z = 0.0;
-  VStack_11.x = 0.0;
-  VStack_11.y = 0.0;
-  lineEnd.y = (float)uStack_7._4_4_ + (float)uVar9 * _UNK_?;
-  lineEnd.x = (float)(undefined4)uStack_7 + (float)uVar8 * _UNK_?;
+  uVar7 = (collisionState->localOrigin).x;
+  uVar8 = (collisionState->localOrigin).y;
+  uVar9 = (collisionState->localDirection).x;
+  uVar10 = (collisionState->localDirection).y;
   point.y = (float)(int)pos.y;
   point.x = (float)(int)pos.x;
+  lineEnd.y = (float)uVar8 + (float)uVar10 * _UNK_?;
+  lineEnd.x = (float)uVar7 + (float)uVar9 * _UNK_?;
   lineStart.y = (float)uVar4 - (float)uVar6 * _UNK_?;
   lineStart.x = (float)uVar3 - (float)uVar5 * _UNK_?;
   point.z = (float)(int)pos.z;
   lineStart.z = (collisionState->localOrigin).z - (collisionState->localDirection).z * _UNK_?
   ;
-  lineEnd.z = fStack_10;
-  MathFunctions::MathFunctions_DistancePointLine_1
-            (point,lineStart,lineEnd,&fStack_2,&VStack_11,(MethodInfo *)0x0);
-  return fStack_2 <= fStack_1 + _UNK_?;
+  lineEnd.z = (collisionState->localOrigin).z + (collisionState->localDirection).z * _UNK_?;
+  MathFunctions::MathFunctions_DistancePointLine
+            (point,lineStart,lineEnd,&fStack_2,(MethodInfo *)0x0);
+  return fStack_2 <= fVar1 + _UNK_?;
 }
 
 
@@ -245,14 +241,12 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_DrawAxisAli
     func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
     cRam_? = '\x01';
   }
-  fVar1 = 0.0;
-  fVar2 = 0.0;
-  fVar3 = fVar1;
-  fVar4 = fVar2;
-  MathFunctions::MathFunctions_Vector3ToVector2
-            (&min,(Vector2 *)&stack0xffffffe8,ignoreAxis,(MethodInfo *)0x0);
-  MathFunctions::MathFunctions_Vector3ToVector2
-            (&max,(Vector2 *)&stack0xffffffe0,ignoreAxis,(MethodInfo *)0x0);
+  VStack_1.x = 0.0;
+  VStack_1.y = 0.0;
+  VStack_2.x = 0.0;
+  VStack_2.y = 0.0;
+  MathFunctions::MathFunctions_Vector3ToVector2(&min,&VStack_2,ignoreAxis,(MethodInfo *)0x0);
+  MathFunctions::MathFunctions_Vector3ToVector2(&max,&VStack_1,ignoreAxis,(MethodInfo *)0x0);
   this = (List_1_UnityEngine_Vector2_ *)
          func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -260,8 +254,10 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_DrawAxisAli
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
-  pMVar5 = 
+  pMVar3 = 
   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
+  fStack_4 = VStack_2.x;
+  fStack_5 = VStack_2.y;
   if (this != (List_1_UnityEngine_Vector2_ *)0x0) {
     piVar6 = &(this->fields)._version;
     *piVar6 = *piVar6 + 1;
@@ -271,213 +267,196 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_DrawAxisAli
       if (uVar8 < pVVar7->max_length) {
         (this->fields)._size = uVar8 + 1;
         if (pVVar7->max_length <= uVar8) goto code_?;
-        pVVar7->vector[uVar8].x = fVar3;
-        pVVar7->vector[uVar8].y = fVar4;
+        pVVar7->vector[uVar8].x = VStack_2.x;
+        pVVar7->vector[uVar8].y = VStack_2.y;
       }
       else {
-        item.y = fVar4;
-        item.x = fVar3;
+        item.y = VStack_2.y;
+        item.x = VStack_2.x;
         mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-        List_1_UnityEngine_Vector2__AddWithResize(this,item,pMVar5->klass->rgctx_data[0xe].method);
+        List_1_UnityEngine_Vector2__AddWithResize(this,item,pMVar3->klass->rgctx_data[0xe].method);
       }
-      pMVar5 = 
+      pMVar3 = 
       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
       ;
       piVar6 = &(this->fields)._version;
       *piVar6 = *piVar6 + 1;
       pVVar7 = (this->fields)._items;
+      fStack_4 = VStack_2.x;
+      fStack_5 = VStack_1.y;
       if (pVVar7 != (Vector2__Array *)0x0) {
         uVar8 = (this->fields)._size;
         if (uVar8 < pVVar7->max_length) {
           (this->fields)._size = uVar8 + 1;
           if (pVVar7->max_length <= uVar8) goto code_?;
-          pVVar7->vector[uVar8].x = fVar3;
-          pVVar7->vector[uVar8].y = fVar2;
+          pVVar7->vector[uVar8].x = VStack_2.x;
+          pVVar7->vector[uVar8].y = VStack_1.y;
         }
         else {
-          item_00.y = fVar2;
-          item_00.x = fVar3;
+          item_00.y = VStack_1.y;
+          item_00.x = VStack_2.x;
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
           List_1_UnityEngine_Vector2__AddWithResize
-                    (this,item_00,pMVar5->klass->rgctx_data[0xe].method);
+                    (this,item_00,pMVar3->klass->rgctx_data[0xe].method);
         }
-        pMVar5 = 
+        pMVar3 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
         piVar6 = &(this->fields)._version;
         *piVar6 = *piVar6 + 1;
         pVVar7 = (this->fields)._items;
+        fStack_4 = VStack_1.x;
+        fStack_5 = VStack_1.y;
         if (pVVar7 != (Vector2__Array *)0x0) {
           uVar8 = (this->fields)._size;
           if (uVar8 < pVVar7->max_length) {
             (this->fields)._size = uVar8 + 1;
             if (pVVar7->max_length <= uVar8) goto code_?;
-            pVVar7->vector[uVar8].x = fVar1;
-            pVVar7->vector[uVar8].y = fVar2;
+            pVVar7->vector[uVar8].x = VStack_1.x;
+            pVVar7->vector[uVar8].y = VStack_1.y;
           }
           else {
-            item_01.y = fVar2;
-            item_01.x = fVar1;
             mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
             List_1_UnityEngine_Vector2__AddWithResize
-                      (this,item_01,pMVar5->klass->rgctx_data[0xe].method);
+                      (this,VStack_1,pMVar3->klass->rgctx_data[0xe].method);
           }
-          pMVar5 = 
+          pMVar3 = 
           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
           ;
           piVar6 = &(this->fields)._version;
           *piVar6 = *piVar6 + 1;
           pVVar7 = (this->fields)._items;
+          fStack_4 = VStack_1.x;
+          fStack_5 = VStack_2.y;
           if (pVVar7 != (Vector2__Array *)0x0) {
             uVar8 = (this->fields)._size;
             if (uVar8 < pVVar7->max_length) {
               (this->fields)._size = uVar8 + 1;
               if (pVVar7->max_length <= uVar8) goto code_?;
-              pVVar7->vector[uVar8].x = fVar1;
-              pVVar7->vector[uVar8].y = fVar4;
+              pVVar7->vector[uVar8].x = VStack_1.x;
+              pVVar7->vector[uVar8].y = VStack_2.y;
             }
             else {
-              item_02.y = fVar4;
-              item_02.x = fVar1;
+              item_01.y = VStack_2.y;
+              item_01.x = VStack_1.x;
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
               List_1_UnityEngine_Vector2__AddWithResize
-                        (this,item_02,pMVar5->klass->rgctx_data[0xe].method);
+                        (this,item_01,pMVar3->klass->rgctx_data[0xe].method);
             }
-            pLVar9 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)func_?()
+            this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)func_?()
             ;
             mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
             __Il2CppFullySharedGenericType]::
             LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                      ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar9
+                      ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00
                        ,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__
                       );
-            iStack_10 = 0;
+            index_00 = 0;
             while( true ) {
-              fVar1 = 0.0;
-              uStack_11._0_4_ = 0.0;
-              uStack_11._4_4_ = 0.0;
-              mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-              List_1_UnityEngine_Vector2__get_Item
-                        (this,iStack_10,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                        );
-              index_01 = 0;
-              index_00 = 0;
-              this_00 = pLVar9;
-              do {
-                fVar3 = localIgnoreAxisValue;
-                if (index_00 != ignoreAxis) {
-                  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_get_Item
-                                    ((Vector2 *)&stack0xffffffd8,index_01,(MethodInfo *)0x0);
-                  index_01 = index_01 + 1;
-                }
-                UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
-                          ((Vector3 *)&uStack_11,index_00,fVar3,(MethodInfo *)0x0);
-                index_00 = index_00 + 1;
-              } while (index_00 < 3);
-              if (ignoreAxis == 2) {
-                UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
-                          ((Vector3 *)&uStack_11,2,localIgnoreAxisValue,(MethodInfo *)0x0);
-              }
+              fVar9 = 0.0;
+              fVar10 = 0.0;
+              VStack_11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                          List_1_UnityEngine_Vector2__get_Item
+                                    (this,index_00,
+                                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                                    );
+              MathFunctions::MathFunctions_Vector2ToVector3
+                        (&VStack_11,(Vector3 *)&stack0xffffffc8,ignoreAxis,localIgnoreAxisValue,
+                         (MethodInfo *)0x0);
               if (t == (Transform *)0x0) break;
-              position.z = fVar1;
-              position.x = (float)uStack_11;
-              position.y = uStack_11._4_4_;
+              position.y = fVar10;
+              position.x = fVar9;
+              position.z = 0.0;
               pAVar12 = (AnimatedTextureOffset_TextureOffsetAnimationData *)
                         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
-                                  ((Vector3 *)&stack0xffffffb4,t,position,(MethodInfo *)0x0);
-              pMVar5 = 
+                                  (&VStack_13,t,position,(MethodInfo *)0x0);
+              pMVar3 = 
               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
               ;
-              fVar1 = pAVar12->textureOffset;
-              fVar3 = pAVar12->frameToChangeTextureAt;
-              pVVar13 = *(VisualTreeAsset **)&pAVar12->hasAlreadyTransitioned;
-              item_03 = *pAVar12;
+              fVar9 = pAVar12->textureOffset;
+              fVar10 = pAVar12->frameToChangeTextureAt;
+              pVStack_14 = *(VisualTreeAsset **)&pAVar12->hasAlreadyTransitioned;
+              item_02 = *pAVar12;
               if (this_00 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0)
               break;
               piVar6 = &(this_00->fields)._version;
               *piVar6 = *piVar6 + 1;
-              pVVar14 = (this_00->fields)._items;
-              if (pVVar14 == (VisualTreeAsset_UsingEntry__Array *)0x0) break;
+              pVVar15 = (this_00->fields)._items;
+              if (pVVar15 == (VisualTreeAsset_UsingEntry__Array *)0x0) break;
               uVar8 = (this_00->fields)._size;
-              pLVar9 = this_00;
-              if (uVar8 < pVVar14->max_length) {
+              if (uVar8 < pVVar15->max_length) {
                 (this_00->fields)._size = uVar8 + 1;
-                if (pVVar14->max_length <= uVar8) goto code_?;
-                pVVar14->vector[uVar8].alias = (String *)fVar1;
-                pVVar14->vector[uVar8].path = (String *)fVar3;
-                pVVar14->vector[uVar8].asset = pVVar13;
+                if (pVVar15->max_length <= uVar8) goto code_?;
+                pVVar15->vector[uVar8].alias = (String *)fVar9;
+                pVVar15->vector[uVar8].path = (String *)fVar10;
+                pVVar15->vector[uVar8].asset = pVStack_14;
               }
               else {
                 mscorlib.dll::System::Collections::Generic::
                 List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
                 List_1_AnimatedTextureOffset_TextureOffsetAnimationData__AddWithResize
                           ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this_00,
-                           item_03,pMVar5->klass->rgctx_data[0xe].method);
+                           item_02,pMVar3->klass->rgctx_data[0xe].method);
               }
-              iStack_10 = iStack_10 + 1;
-              if (3 < iStack_10) {
+              index_00 = index_00 + 1;
+              if (3 < index_00) {
                 uVar8 = 0;
                 do {
-                  pVVar15 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+                  pVVar16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
                             UIElements::VisualTreeAsset+UsingEntry]::
                             List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffa8,this_00,
+                                      ((VisualTreeAsset_UsingEntry *)&stack0xffffff88,this_00,
                                        uVar8 & 3,
                                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                                       );
-                  fVar1 = (float)pVVar15->alias;
-                  fVar3 = (float)pVVar15->path;
-                  pVVar13 = pVVar15->asset;
-                  pVVar15 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+                  start = *pVVar16;
+                  pVVar16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
                             UIElements::VisualTreeAsset+UsingEntry]::
                             List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                                      ((VisualTreeAsset_UsingEntry *)&stack0xffffff9c,this_00,
+                                      ((VisualTreeAsset_UsingEntry *)&stack0xffffff7c,this_00,
                                        uVar8 & 3,
                                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                                       );
-                  uVar16 = pVVar15->alias;
-                  uVar17 = pVVar15->path;
-                  pVVar18 = pVVar15->asset;
+                  uVar17 = pVVar16->alias;
+                  fVar9 = (float)pVVar16->path;
+                  pVVar18 = pVVar16->asset;
                   index = uVar8 + 1 & 0x80000003;
                   if ((int)index < 0) {
                     index = (index - 1 | 0xfffffffc) + 1;
                   }
-                  pVVar15 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+                  puStack_19 = (undefined *)uVar17;
+                  pVVar16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
                             UIElements::VisualTreeAsset+UsingEntry]::
                             List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                                      ((VisualTreeAsset_UsingEntry *)&stack0xffffff90,this_00,index,
+                                      ((VisualTreeAsset_UsingEntry *)&stack0xffffff70,this_00,index,
                                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                                       );
-                  uStack_11._0_4_ = (float)pVVar15->alias;
-                  uStack_11._4_4_ = (float)pVVar15->path;
-                  fVar4 = (float)uStack_11 + (float)uVar16;
-                  fVar2 = uStack_11._4_4_ + (float)uVar17;
-                  fVar19 = (float)pVVar15->asset + (float)pVVar18;
-                  pVVar15 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+                  uVar20 = pVVar16->alias;
+                  uVar21 = pVVar16->path;
+                  fVar10 = (float)uVar20 + (float)puStack_19;
+                  fStack_5 = (float)uVar21 + fVar9;
+                  pVStack_14 = (VisualTreeAsset *)((float)pVVar16->asset + (float)pVVar18);
+                  pVVar16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
                             UIElements::VisualTreeAsset+UsingEntry]::
                             List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                                      ((VisualTreeAsset_UsingEntry *)&stack0xffffff84,this_00,
+                                      ((VisualTreeAsset_UsingEntry *)&stack0xffffff64,this_00,
                                        uVar8 & 3,
                                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                                       );
-                  uVar20 = pVVar15->alias;
-                  uVar21 = pVVar15->path;
-                  fVar4 = fVar4 - (float)uVar20;
-                  fVar2 = fVar2 - (float)uVar21;
-                  fVar19 = fVar19 - (float)pVVar15->asset;
+                  uStack_22._0_4_ = pVVar16->alias;
+                  uStack_22._4_4_ = pVVar16->path;
+                  pVStack_23 = pVVar16->asset;
+                  VStack_13.x = fVar10 - (float)(undefined4)uStack_22;
+                  VStack_13.y = fStack_5 - (float)uStack_22._4_4_;
+                  VStack_13.z = (float)pVStack_14 - (float)pVStack_23;
                   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                     func_?();
                   }
-                  uStack_11._4_4_ = (float)&UNK_?;
-                  start.y = fVar3;
-                  start.x = fVar1;
-                  start.z = (float)pVVar13;
-                  end.y = fVar2;
-                  end.x = fVar4;
-                  end.z = fVar19;
+                  end.y = VStack_13.y;
+                  end.x = VStack_13.x;
+                  end.z = VStack_13.z;
                   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine_2
-                            (start,end,(MethodInfo *)0x0);
+                            ((Vector3)start,end,(MethodInfo *)0x0);
                   uVar8 = uVar8 + 1;
                 } while ((int)uVar8 < 4);
                 return;
@@ -491,8 +470,8 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_DrawAxisAli
   func_?();
 code_?:
   func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 
@@ -555,7 +534,7 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_GetBoundRay
       pVVar15->vector[0].x = fVar13 + (float)uVar11;
       pVVar15->vector[0].y = fVar14 + (float)uVar12;
       pVVar15->vector[0].z = fVar9 + fVar3;
-      uVar16 = __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field;
+      uVar16 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
       pVVar15 = TypeInfo__MVSweptElipsoidCheck->static_fields->circleCornersGetBoundRays;
       if (pVVar15 == (Vector3__Array *)0x0) goto code_?;
       if (1 < pVVar15->max_length) {
@@ -605,7 +584,7 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_GetBoundRay
               fVar2 = pVVar1->z;
               if (pRVar19->max_length <= uVar17) break;
               *(ulonglong *)((int)&pRVar19->vector[0].m_Origin.x + iVar18) =
-                   CONCAT44((float)&puStack_7 + (float)uVar22,(float)uVar21 + 3.2526932e-29);
+                   CONCAT44((float)&puStack_7 + (float)uVar22,(float)uVar21 + 3.2740036e-29);
               *(float *)((int)&pRVar19->vector[0].m_Origin.z + iVar18) = fVar10 + fVar2;
               pRVar19 = TypeInfo__MVSweptElipsoidCheck->static_fields->raysGetBoundRays;
               if (pRVar19 == (Ray__Array *)0x0) goto code_?;
@@ -870,12 +849,12 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_GetRaysProj
                   uStack_21._0_4_ = (uint)uVar19;
                   uStack_21._4_4_ = (uint)((ulonglong)uVar19 >> 0x20);
                   uStack_22 = uStack_20 ^
-                              __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                   ;
                   uStack_23 = CONCAT44(uStack_21._4_4_ ^
-                                       __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                        ,(uint)uStack_21 ^
-                                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                       );
                   uStack_16 = (ulonglong)uStack_22;
                   uStack_24 = uStack_11;
@@ -978,89 +957,109 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_HandleCube
     func_?();
     cRam_? = '\x01';
   }
-  uVar1 = CONCAT22(pos.y,pos.x);
-  uStack_2 = uStack_2 & 0xffffff00;
-  uStack_3 = CONCAT44(uVar1,(undefined4)uStack_3);
-  uStack_4 = CONCAT22(pos.z,(undefined2)uStack_4);
+  ppIVar1 = (Il2CppClass **)CONCAT22(pos.y,pos.x);
+  pIStack_2 = (Il2CppRGCTXData *)((uint)pIStack_2 & 0xffffff00);
+  uStack_3 = ppIVar1;
+  uStack_4 = (void *)CONCAT22(pos.z,(undefined2)uStack_4);
   uStack_5 = CONCAT22(pos.z,(undefined2)uStack_5);
   if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
-    uVar1 = CONCAT22(pos.y,pos.x);
-    uStack_4 = CONCAT22(pos.z,(undefined2)uStack_4);
+    ppIVar1 = (Il2CppClass **)CONCAT22(pos.y,pos.x);
+    uStack_4 = (void *)CONCAT22(pos.z,(undefined2)uStack_4);
   }
-  if (uStack_3._4_2_ < (collisionState->minBounds).x) {
+  if ((short)uStack_3 < (collisionState->minBounds).x) {
     return;
   }
-  if (uStack_3._6_2_ < (collisionState->minBounds).y) {
+  if (uStack_3._2_2_ < (collisionState->minBounds).y) {
     return;
   }
   if (uStack_5._2_2_ < (collisionState->minBounds).z) {
     return;
   }
-  if ((collisionState->maxBounds).x < uStack_3._4_2_) {
+  if ((collisionState->maxBounds).x < (short)uStack_3) {
     return;
   }
-  if ((collisionState->maxBounds).y < uStack_3._6_2_) {
+  if ((collisionState->maxBounds).y < uStack_3._2_2_) {
     return;
   }
   if ((collisionState->maxBounds).z < uStack_5._2_2_) {
     return;
   }
-  uStack_3 = CONCAT44(uVar1,(undefined4)uStack_3);
+  uStack_3 = ppIVar1;
   if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  fStack_6 = collisionState->scaledMaxRadius;
-  iVar7 = (int)uStack_3._6_2_;
-  fStack_8 = (float)(int)uStack_3._4_2_;
-  pCStack_9 = (Cube *)0x0;
-  uStack_10 = 0;
-  uStack_11 = 0;
-  fStack_12 = 0.0;
+  pVStack_6 = (Vector3__Array *)collisionState->scaledMaxRadius;
+  iVar7 = (int)uStack_3._2_2_;
+  pIStack_8 = (Il2CppClass *)(float)(int)(short)uStack_3;
+  pFStack_9 = (FaceFlags__Enum__Array__Class *)0x0;
+  pIStack_10 = (Il2CppClass *)0x0;
+  pIStack_11 = (Il2CppClass *)0x0;
+  pIStack_12 = (Il2CppClass *)0x0;
   fStack_13 = (float)(int)uStack_4._2_2_;
   uVar14 = (collisionState->localOrigin).x;
   uVar15 = (collisionState->localOrigin).y;
   uVar16 = (collisionState->localDirection).x;
   uVar17 = (collisionState->localDirection).y;
-  pVStack_18 = (Vector3__Array *)(collisionState->localOrigin).z;
-  uStack_3._0_4_ = (collisionState->localOrigin).x;
-  uStack_3._4_4_ = (collisionState->localOrigin).y;
-  uVar19 = (collisionState->localDirection).x;
-  uVar20 = (collisionState->localDirection).y;
-  VStack_21.z = 0.0;
-  VStack_21.x = 0.0;
-  VStack_21.y = 0.0;
+  ppMStack_18 = (MethodInfo **)(collisionState->localOrigin).x;
+  uStack_3 = (Il2CppClass **)(collisionState->localOrigin).y;
+  ppIStack_19 = (Il2CppClass **)(collisionState->localOrigin).z;
+  pFStack_20 = (FieldInfo *)(collisionState->localDirection).x;
+  pEStack_21 = (EventInfo *)(collisionState->localDirection).y;
+  pPStack_22 = (PropertyInfo *)(collisionState->localDirection).z;
   point.y = (float)iVar7;
-  point.x = fStack_8;
+  point.x = (float)pIStack_8;
   lineStart.y = (float)uVar15 - (float)uVar17 * _UNK_?;
   lineStart.x = (float)uVar14 - (float)uVar16 * _UNK_?;
   point.z = fStack_13;
   lineStart.z = (collisionState->localOrigin).z - (collisionState->localDirection).z * _UNK_?
   ;
-  lineEnd.y = (float)uStack_3._4_4_ + (float)uVar20 * _UNK_?;
-  lineEnd.x = (float)(undefined4)uStack_3 + (float)uVar19 * _UNK_?;
-  lineEnd.z = (float)pVStack_18 + (collisionState->localDirection).z * _UNK_?;
-  MathFunctions::MathFunctions_DistancePointLine_1
-            (point,lineStart,lineEnd,(float *)&pCStack_9,&VStack_21,(MethodInfo *)0x0);
-  if (fStack_6 + _UNK_? < (float)pCStack_9) {
+  lineEnd.y = (float)uStack_3 + (float)pEStack_21 * _UNK_?;
+  lineEnd.x = (float)ppMStack_18 + (float)pFStack_20 * _UNK_?;
+  lineEnd.z = (float)ppIStack_19 + (float)pPStack_22 * _UNK_?;
+  MathFunctions::MathFunctions_DistancePointLine
+            (point,lineStart,lineEnd,(float *)&pFStack_9,(MethodInfo *)0x0);
+  if ((float)pVStack_6 + _UNK_? < (float)pFStack_9) {
     return;
   }
-  if (collisionState->cmb != (ICubeModelCollider *)0x0) {
-    pCVar22 = (Cube *)func_?();
-    pCStack_9 = pCVar22;
+  ppIStack_19 = (Il2CppClass **)CONCAT22(pos.y,pos.x);
+  pVStack_23 = (Vector3__Array *)collisionState->cmb;
+  uStack_4 = (void *)CONCAT22(pos.z,(undefined2)uStack_4);
+  if (pVStack_23 != (Vector3__Array *)0x0) {
+    pFStack_9 = (FaceFlags__Enum__Array__Class *)pVStack_23->klass;
+    uVar24 = 0;
+    pVStack_6 = (Vector3__Array *)0x0;
+    uVar25._0_1_ = (pFStack_9->_1).rank;
+    uVar25._1_1_ = (pFStack_9->_1).minimumAlignment;
+    uStack_5 = (uint)uVar25;
+    if (uVar25 != 0) {
+      do {
+        if (pFStack_9->interfaceOffsets[uVar24].interfaceType ==
+            (Il2CppClass *)TypeInfo__ICubeModelCollider) {
+          ppIVar1 = &((FaceFlags__Enum__Array__Class *)pVStack_23->klass)[1]._0.klass +
+                     ((FaceFlags__Enum__Array__Class *)pVStack_23->klass)->interfaceOffsets[uVar24].
+                     offset * 2;
+          goto code_?;
+        }
+        uVar24 = uVar24 + 1;
+      } while (uVar24 < uVar25);
+    }
+    ppIVar1 = (Il2CppClass **)func_?();
+code_?:
+    pFVar26 = (FaceFlags__Enum__Array__Class *)(*(code *)*ppIVar1)();
+    pFStack_9 = pFVar26;
     if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pCVar23 = (Cube__Class *)0x0;
     this = (Matrix4x4 *)0x0;
-    __return_storage_ptr__ = pCVar22;
-    bVar24 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Inequality
-                      ((CubeBase *)pCVar22,(CubeBase *)0x0,(MethodInfo *)0x0);
-    if (bVar24 == 0) {
+    __return_storage_ptr__ = pFVar26;
+    bVar27 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Inequality
+                      ((CubeBase *)pFVar26,(CubeBase *)0x0,(MethodInfo *)0x0);
+    if (bVar27 == 0) {
       return;
     }
-    if (pCVar22 != (Cube *)0x0) {
-      if ((pCVar22->fields).hiddenSides == 0x3f) {
+    if (pFVar26 != (FaceFlags__Enum__Array__Class *)0x0) {
+      if ((char)(pFVar26->_0).byval_arg.attrs == '?') {
         return;
       }
       if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
@@ -1070,21 +1069,21 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_HandleCube
         func_?();
       }
       MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetCorners
-                ((CubeBase *)pCVar22,
+                ((CubeBase *)pFVar26,
                  &TypeInfo__MVSweptElipsoidCheck->static_fields->cachedCornersElipsoidSpace,
                  (MethodInfo *)0x0);
-      fStack_6 = (float)(int)pos.z;
+      ppIStack_19 = (Il2CppClass **)(int)pos.z;
       iVar7 = (int)pos.x;
-      uStack_4 = Face__Enum_Top;
-      iVar25 = (int)pos.y;
+      uStack_4 = (void *)0x0;
+      iVar28 = (int)pos.y;
       uStack_5 = 0;
       while( true ) {
         if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pVVar26 = TypeInfo__MVSweptElipsoidCheck->static_fields->cachedCornersElipsoidSpace;
-        if (pVVar26 == (Vector3__Array *)0x0) goto code_?;
-        if ((int)pVVar26->max_length <= (int)uStack_4) {
+        pVVar29 = TypeInfo__MVSweptElipsoidCheck->static_fields->cachedCornersElipsoidSpace;
+        if (pVVar29 == (Vector3__Array *)0x0) goto code_?;
+        if ((int)pVVar29->max_length <= (int)uStack_4) {
           if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
@@ -1095,43 +1094,43 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_HandleCube
           if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pVVar26 = (Vector3__Array *)
+          pVVar29 = (Vector3__Array *)
                     TypeInfo__MV__WorldObject__CubeBase->static_fields->faceFlagsArray;
-          fStack_6 = 0.0;
-          pCVar22 = pCStack_9;
-          pVStack_27 = pVVar26;
-          if (pVVar26 == (Vector3__Array *)0x0) goto code_?;
+          pVStack_6 = (Vector3__Array *)0x0;
+          pFVar26 = pFStack_9;
+          pVStack_23 = pVVar29;
+          if (pVVar29 == (Vector3__Array *)0x0) goto code_?;
           goto code_?;
         }
         if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pVVar26 = TypeInfo__MVSweptElipsoidCheck->static_fields->cachedCornersElipsoidSpace;
-        if (pVVar26 == (Vector3__Array *)0x0) goto code_?;
-        if (pVVar26->max_length <= uStack_4) break;
-        VStack_21.z = *(float *)((int)&pVVar26->vector[0].z + uStack_5);
-        VStack_21._0_8_ = *(undefined8 *)((int)&pVVar26->vector[0].x + uStack_5);
-        *(ulonglong *)((int)&pVVar26->vector[0].x + uStack_5) =
-             CONCAT44(VStack_21.y + (float)iVar25,VStack_21.x + (float)iVar7);
-        *(float *)((int)&pVVar26->vector[0].z + uStack_5) = VStack_21.z + (float)(int)fStack_6;
-        pVStack_18 = TypeInfo__MVSweptElipsoidCheck->static_fields->cachedCornersElipsoidSpace;
-        pVStack_27 = TypeInfo__MVSweptElipsoidCheck->static_fields->cachedCornersElipsoidSpace;
-        if (pVStack_27 == (Vector3__Array *)0x0) goto code_?;
-        if (pVStack_27->max_length <= uStack_4) break;
-        uVar28 = *(undefined8 *)((int)&pVStack_27->vector[0].x + uStack_5);
-        pCVar23 = (Cube__Class *)uVar28;
+        pVVar29 = TypeInfo__MVSweptElipsoidCheck->static_fields->cachedCornersElipsoidSpace;
+        if (pVVar29 == (Vector3__Array *)0x0) goto code_?;
+        if ((void *)pVVar29->max_length <= uStack_4) break;
+        pPStack_22 = *(PropertyInfo **)((int)&pVVar29->vector[0].z + uStack_5);
+        _pFStack_40 = *(undefined8 *)((int)&pVVar29->vector[0].x + uStack_5);
+        *(ulonglong *)((int)&pVVar29->vector[0].x + uStack_5) =
+             CONCAT44((float)pEStack_21 + (float)iVar28,(float)pFStack_20 + (float)iVar7);
+        *(float *)((int)&pVVar29->vector[0].z + uStack_5) =
+             (float)pPStack_22 + (float)(int)ppIStack_19;
+        pVStack_6 = TypeInfo__MVSweptElipsoidCheck->static_fields->cachedCornersElipsoidSpace;
+        pVStack_23 = TypeInfo__MVSweptElipsoidCheck->static_fields->cachedCornersElipsoidSpace;
+        if (pVStack_23 == (Vector3__Array *)0x0) goto code_?;
+        if ((void *)pVStack_23->max_length <= uStack_4) break;
+        uVar30 = *(undefined4 *)((int)&pVStack_23->vector[0].z + uStack_5);
         this = &collisionState->localToElipsoidSpace;
-        __return_storage_ptr__ = (Cube *)&stack0xffffff80;
-        point_00.z = *(float *)((int)&pVStack_27->vector[0].z + uStack_5);
-        point_00.x = (float)(int)uVar28;
-        point_00.y = (float)(int)((ulonglong)uVar28 >> 0x20);
-        pVVar29 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
+        __return_storage_ptr__ = (FaceFlags__Enum__Array__Class *)&stack0xffffff80;
+        point_00.z._0_2_ = (short)uVar30;
+        point_00._0_8_ = *(undefined8 *)((int)&pVStack_23->vector[0].x + uStack_5);
+        point_00.z._2_2_ = (short)((uint)uVar30 >> 0x10);
+        pVVar31 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
                             ((Vector3 *)__return_storage_ptr__,this,point_00,(MethodInfo *)0x0);
-        pVStack_27 = (Vector3__Array *)pVVar29->z;
-        if (pVStack_18->max_length <= uStack_4) break;
-        *(undefined8 *)((int)&pVStack_18->vector[0].x + uStack_5) = *(undefined8 *)pVVar29;
-        *(Vector3__Array **)((int)&pVStack_18->vector[0].z + uStack_5) = pVStack_27;
-        uStack_4 = uStack_4 + Face__Enum_Bottom;
+        pVStack_23 = (Vector3__Array *)pVVar31->z;
+        if ((void *)pVStack_6->max_length <= uStack_4) break;
+        *(undefined8 *)((int)&pVStack_6->vector[0].x + uStack_5) = *(undefined8 *)pVVar31;
+        *(Vector3__Array **)((int)&pVStack_6->vector[0].z + uStack_5) = pVStack_23;
+        uStack_4 = (void *)((int)uStack_4 + Face__Enum_Bottom);
         uStack_5 = uStack_5 + 0xc;
       }
       goto code_?;
@@ -1141,42 +1140,42 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar30 = (code *)swi(3);
-  (*pcVar30)();
+  pcVar32 = (code *)swi(3);
+  (*pcVar32)();
   return;
 code_?:
-  if ((int)pVVar26->max_length <= (int)fStack_6) {
-    if (((byte)uStack_2 != '\0') && (collisionState->firstHitDetected == 0)) {
+  if ((int)pVVar29->max_length <= (int)pVStack_6) {
+    if (((byte)pIStack_2 != '\0') && (collisionState->firstHitDetected == 0)) {
       key = collisionState->scanAxis;
       if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      iVar31 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
-                         (&pos,key,(MethodInfo *)0x0);
-      collisionState->firstHitScanAxis = (int)iVar31;
+      iVar33 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
+                        (&pos,key,(MethodInfo *)0x0);
+      collisionState->firstHitScanAxis = (int)iVar33;
       collisionState->firstHitDetected = 1;
     }
     return;
   }
-  if (pVVar26->max_length <= (uint)fStack_6) goto code_?;
-  bVar32 = *(byte *)((int)&pVVar26->vector[0].x + (int)fStack_6);
-  pVStack_18 = (Vector3__Array *)CONCAT31(pVStack_18._1_3_,bVar32);
-  if (((pCVar22->fields).hiddenSides & bVar32) == 0) {
+  if ((Vector3__Array *)pVVar29->max_length <= pVStack_6) goto code_?;
+  bVar34 = *(byte *)((int)&pVStack_6->vector[0].z + (int)(pVVar29->vector + -2));
+  ppIStack_19 = (Il2CppClass **)CONCAT31(ppIStack_19._1_3_,bVar34);
+  if (((byte)(pFVar26->_0).byval_arg.attrs & bVar34) == 0) {
     if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pVVar26 = pVStack_18;
-    uStack_4 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_FaceFlagToFace
-                          ((FaceFlags__Enum)pVStack_18,(MethodInfo *)0x0);
+    ppIVar1 = ppIStack_19;
+    uStack_4 = (void *)MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_FaceFlagToFace
+                                  ((FaceFlags__Enum)ppIStack_19,(MethodInfo *)0x0);
     if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    FVar33 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_FaceFlagToFace
-                       ((FaceFlags__Enum)pVVar26,(MethodInfo *)0x0);
-    uVar1 = 0;
+    face = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_FaceFlagToFace
+                     ((FaceFlags__Enum)ppIVar1,(MethodInfo *)0x0);
+    uVar30 = 0;
     MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
               (&TypeInfo__MVSweptElipsoidCheck->static_fields->cachedCornersElipsoidSpace,
-               &TypeInfo__MVSweptElipsoidCheck->static_fields->cachedFaceElipsoidSpace,FVar33,
+               &TypeInfo__MVSweptElipsoidCheck->static_fields->cachedFaceElipsoidSpace,face,
                (MethodInfo *)0x0);
     if (((TypeInfo__MVSweptElipsoidCheck->static_fields->cachedFaceElipsoidSpace ==
           (Vector3__Array *)0x0) ||
@@ -1187,101 +1186,101 @@ code_?:
        TypeInfo__MVSweptElipsoidCheck->static_fields->cachedFaceElipsoidSpace ==
        (Vector3__Array *)0x0)) goto code_?;
     func_?();
-    uVar34 = CONCAT22(pos.y,pos.x);
+    uVar35 = CONCAT22(pos.y,pos.x);
     method_00 = (MethodInfo *)0x0;
-    pCVar35 = collisionState;
-    pfVar36 = (float *)&stack0xfffffdb8;
+    pCVar36 = collisionState;
+    pfVar37 = (float *)&stack0xfffffdb4;
     for (iVar7 = 0x31; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *pfVar36 = (pCVar35->localOrigin).x;
-      pCVar35 = (CollisionState *)&(pCVar35->localOrigin).y;
-      pfVar36 = pfVar36 + 1;
+      *pfVar37 = (pCVar36->localOrigin).x;
+      pCVar36 = (CollisionState *)&(pCVar36->localOrigin).y;
+      pfVar37 = pfVar37 + 1;
     }
-    p1_00.y = (float)uStack_11;
-    p1_00.x = (float)uStack_10;
-    p1_00.z = fStack_12;
-    p2_00.z = fStack_37;
-    p2_00.x = (float)(undefined4)uStack_38;
-    p2_00.y = (float)uStack_38._4_4_;
-    p3_00.z = VStack_21.z;
-    p3_00.x = VStack_21.x;
-    p3_00.y = VStack_21.y;
+    p1_00.y = (float)pIStack_11;
+    p1_00.x = (float)pIStack_10;
+    p1_00.z = (float)pIStack_12;
+    p2_00.z = (float)pIStack_38;
+    p2_00.x = (float)p_Stack_4c;
+    p2_00.y = (float)pIStack_39;
+    p3_00.z = (float)pPStack_22;
+    p3_00.x = (float)pFStack_20;
+    p3_00.y = (float)pEStack_21;
     pos_01.z = pos.z;
     pos_01.x = pos.x;
     pos_01.y = pos.y;
-    collisionState_01.scaledMaxRadius = (float)in_stack_39;
-    auVar40 = in_stack_41._0_12_;
-    auVar42 = in_stack_41._12_12_;
-    auVar43 = in_stack_41._24_12_;
-    auVar44 = in_stack_41._36_12_;
-    auVar45 = in_stack_41._48_12_;
-    auVar46 = in_stack_41._60_12_;
-    auVar47 = in_stack_41._76_64_;
-    uVar48 = in_stack_41._144_6_;
-    uVar49 = in_stack_41._150_6_;
-    collisionState_01.localOrigin.x = (float)auVar40._0_4_;
-    collisionState_01.localOrigin.y = (float)auVar40._4_4_;
-    collisionState_01.localOrigin.z = (float)auVar40._8_4_;
-    collisionState_01.localHitPoint.x = (float)auVar42._0_4_;
-    collisionState_01.localHitPoint.y = (float)auVar42._4_4_;
-    collisionState_01.localHitPoint.z = (float)auVar42._8_4_;
-    collisionState_01.localNormal.x = (float)auVar43._0_4_;
-    collisionState_01.localNormal.y = (float)auVar43._4_4_;
-    collisionState_01.localNormal.z = (float)auVar43._8_4_;
-    collisionState_01.localDirection.x = (float)auVar44._0_4_;
-    collisionState_01.localDirection.y = (float)auVar44._4_4_;
-    collisionState_01.localDirection.z = (float)auVar44._8_4_;
-    collisionState_01.origin.x = (float)auVar45._0_4_;
-    collisionState_01.origin.y = (float)auVar45._4_4_;
-    collisionState_01.origin.z = (float)auVar45._8_4_;
-    collisionState_01.direction.x = (float)auVar46._0_4_;
-    collisionState_01.direction.y = (float)auVar46._4_4_;
-    collisionState_01.direction.z = (float)auVar46._8_4_;
-    collisionState_01.cmb = (ICubeModelCollider *)in_stack_41._72_4_;
-    collisionState_01.localToElipsoidSpace.m00 = (float)auVar47._0_4_;
-    collisionState_01.localToElipsoidSpace.m10 = (float)auVar47._4_4_;
-    collisionState_01.localToElipsoidSpace.m20 = (float)auVar47._8_4_;
-    collisionState_01.localToElipsoidSpace.m30 = (float)auVar47._12_4_;
-    collisionState_01.localToElipsoidSpace.m01 = (float)auVar47._16_4_;
-    collisionState_01.localToElipsoidSpace.m11 = (float)auVar47._20_4_;
-    collisionState_01.localToElipsoidSpace.m21 = (float)auVar47._24_4_;
-    collisionState_01.localToElipsoidSpace.m31 = (float)auVar47._28_4_;
-    collisionState_01.localToElipsoidSpace.m02 = (float)auVar47._32_4_;
-    collisionState_01.localToElipsoidSpace.m12 = (float)auVar47._36_4_;
-    collisionState_01.localToElipsoidSpace.m22 = (float)auVar47._40_4_;
-    collisionState_01.localToElipsoidSpace.m32 = (float)auVar47._44_4_;
-    collisionState_01.localToElipsoidSpace.m03 = (float)auVar47._48_4_;
-    collisionState_01.localToElipsoidSpace.m13 = (float)auVar47._52_4_;
-    collisionState_01.localToElipsoidSpace.m23 = (float)auVar47._56_4_;
-    collisionState_01.localToElipsoidSpace.m33 = (float)auVar47._60_4_;
-    collisionState_01.scanAxis = in_stack_41._140_4_;
-    collisionState_01.minBounds.x = (short)uVar48;
-    collisionState_01.minBounds.y = (short)((uint6)uVar48 >> 0x10);
-    collisionState_01.minBounds.z = (short)((uint6)uVar48 >> 0x20);
-    collisionState_01.maxBounds.x = (short)uVar49;
-    collisionState_01.maxBounds.y = (short)((uint6)uVar49 >> 0x10);
-    collisionState_01.maxBounds.z = (short)((uint6)uVar49 >> 0x20);
-    collisionState_01.firstHitScanAxis = in_stack_41._156_4_;
-    collisionState_01.firstHitDetected = in_stack_41[0xa0];
-    collisionState_01._161_3_ = in_stack_41._161_3_;
-    auVar40 = in_stack_50._0_12_;
-    auVar42 = in_stack_50._12_12_;
-    collisionState_01.elipsoidSpaceOrigin.x = (float)auVar40._0_4_;
-    collisionState_01.elipsoidSpaceOrigin.y = (float)auVar40._4_4_;
-    collisionState_01.elipsoidSpaceOrigin.z = (float)auVar40._8_4_;
-    collisionState_01.elipsoidSpaceDirection.x = (float)auVar42._0_4_;
-    collisionState_01.elipsoidSpaceDirection.y = (float)auVar42._4_4_;
-    collisionState_01.elipsoidSpaceDirection.z = (float)auVar42._8_4_;
-    collisionState_01.elipsoidSpaceDistance = (float)in_stack_50._24_4_;
-    fVar51 = distance;
-    FVar33 = uStack_4;
-    pCVar22 = pCStack_9;
-    uVar28 = radius._0_8_;
-    fVar52 = radius.z;
-    iVar31 = pos.z;
-    bVar24 = MVSweptElipsoidCheck_HandleTriangleTest
-                      (p1_00,p2_00,p3_00,vh,distance,uStack_4,pCStack_9,radius,pos_01,
-                       collisionState_01,method_00);
-    uStack_5 = CONCAT13(bVar24 | (byte)uStack_2,(undefined3)uStack_5);
+    collisionState_01.scaledMaxRadius = (float)in_stack_40;
+    auVar41 = in_stack_42._0_12_;
+    auVar43 = in_stack_42._12_12_;
+    auVar44 = in_stack_42._24_12_;
+    auVar45 = in_stack_42._36_12_;
+    auVar46 = in_stack_42._48_12_;
+    auVar47 = in_stack_42._60_12_;
+    auVar48 = in_stack_42._76_64_;
+    uVar49 = in_stack_42._144_6_;
+    uVar50 = in_stack_42._150_6_;
+    collisionState_01.localOrigin.x = (float)auVar41._0_4_;
+    collisionState_01.localOrigin.y = (float)auVar41._4_4_;
+    collisionState_01.localOrigin.z = (float)auVar41._8_4_;
+    collisionState_01.localHitPoint.x = (float)auVar43._0_4_;
+    collisionState_01.localHitPoint.y = (float)auVar43._4_4_;
+    collisionState_01.localHitPoint.z = (float)auVar43._8_4_;
+    collisionState_01.localNormal.x = (float)auVar44._0_4_;
+    collisionState_01.localNormal.y = (float)auVar44._4_4_;
+    collisionState_01.localNormal.z = (float)auVar44._8_4_;
+    collisionState_01.localDirection.x = (float)auVar45._0_4_;
+    collisionState_01.localDirection.y = (float)auVar45._4_4_;
+    collisionState_01.localDirection.z = (float)auVar45._8_4_;
+    collisionState_01.origin.x = (float)auVar46._0_4_;
+    collisionState_01.origin.y = (float)auVar46._4_4_;
+    collisionState_01.origin.z = (float)auVar46._8_4_;
+    collisionState_01.direction.x = (float)auVar47._0_4_;
+    collisionState_01.direction.y = (float)auVar47._4_4_;
+    collisionState_01.direction.z = (float)auVar47._8_4_;
+    collisionState_01.cmb = (ICubeModelCollider *)in_stack_42._72_4_;
+    collisionState_01.localToElipsoidSpace.m00 = (float)auVar48._0_4_;
+    collisionState_01.localToElipsoidSpace.m10 = (float)auVar48._4_4_;
+    collisionState_01.localToElipsoidSpace.m20 = (float)auVar48._8_4_;
+    collisionState_01.localToElipsoidSpace.m30 = (float)auVar48._12_4_;
+    collisionState_01.localToElipsoidSpace.m01 = (float)auVar48._16_4_;
+    collisionState_01.localToElipsoidSpace.m11 = (float)auVar48._20_4_;
+    collisionState_01.localToElipsoidSpace.m21 = (float)auVar48._24_4_;
+    collisionState_01.localToElipsoidSpace.m31 = (float)auVar48._28_4_;
+    collisionState_01.localToElipsoidSpace.m02 = (float)auVar48._32_4_;
+    collisionState_01.localToElipsoidSpace.m12 = (float)auVar48._36_4_;
+    collisionState_01.localToElipsoidSpace.m22 = (float)auVar48._40_4_;
+    collisionState_01.localToElipsoidSpace.m32 = (float)auVar48._44_4_;
+    collisionState_01.localToElipsoidSpace.m03 = (float)auVar48._48_4_;
+    collisionState_01.localToElipsoidSpace.m13 = (float)auVar48._52_4_;
+    collisionState_01.localToElipsoidSpace.m23 = (float)auVar48._56_4_;
+    collisionState_01.localToElipsoidSpace.m33 = (float)auVar48._60_4_;
+    collisionState_01.scanAxis = in_stack_42._140_4_;
+    collisionState_01.minBounds.x = (short)uVar49;
+    collisionState_01.minBounds.y = (short)((uint6)uVar49 >> 0x10);
+    collisionState_01.minBounds.z = (short)((uint6)uVar49 >> 0x20);
+    collisionState_01.maxBounds.x = (short)uVar50;
+    collisionState_01.maxBounds.y = (short)((uint6)uVar50 >> 0x10);
+    collisionState_01.maxBounds.z = (short)((uint6)uVar50 >> 0x20);
+    collisionState_01.firstHitScanAxis = in_stack_42._156_4_;
+    collisionState_01.firstHitDetected = in_stack_42[0xa0];
+    collisionState_01._161_3_ = in_stack_42._161_3_;
+    auVar41 = in_stack_51._0_12_;
+    auVar43 = in_stack_51._12_12_;
+    collisionState_01.elipsoidSpaceOrigin.x = (float)auVar41._0_4_;
+    collisionState_01.elipsoidSpaceOrigin.y = (float)auVar41._4_4_;
+    collisionState_01.elipsoidSpaceOrigin.z = (float)auVar41._8_4_;
+    collisionState_01.elipsoidSpaceDirection.x = (float)auVar43._0_4_;
+    collisionState_01.elipsoidSpaceDirection.y = (float)auVar43._4_4_;
+    collisionState_01.elipsoidSpaceDirection.z = (float)auVar43._8_4_;
+    collisionState_01.elipsoidSpaceDistance = (float)in_stack_51._24_4_;
+    fVar52 = distance;
+    pvVar53 = uStack_4;
+    pFVar26 = pFStack_9;
+    uVar54 = radius._0_8_;
+    fVar55 = radius.z;
+    iVar33 = pos.z;
+    bVar27 = MVSweptElipsoidCheck_HandleTriangleTest
+                      (p1_00,p2_00,p3_00,vh,distance,(Face__Enum)uStack_4,(Cube *)pFStack_9,radius
+                       ,pos_01,collisionState_01,method_00);
+    uStack_5 = CONCAT13(bVar27 | (byte)pIStack_2,(undefined3)uStack_5);
     if (((TypeInfo__MVSweptElipsoidCheck->static_fields->cachedFaceElipsoidSpace ==
           (Vector3__Array *)0x0) ||
         (func_?(),
@@ -1290,102 +1289,106 @@ code_?:
        (func_?(),
        TypeInfo__MVSweptElipsoidCheck->static_fields->cachedFaceElipsoidSpace ==
        (Vector3__Array *)0x0)) goto code_?;
-    puVar53 = &uStack_54;
-    pMVar55 = (MonitorData *)&UNK_?;
+    pcVar56 = (char *)0x0;
+    puVar57 = &uStack_58;
+    pIVar59 = (Il2CppImage *)&UNK_?;
     func_?();
+    iVar7 = 0x31;
     pos_00.y = pos.y;
     pos_00.x = pos.x;
-    in_stack_39 = (MethodInfo *)0x0;
-    pCVar35 = collisionState;
-    pfVar36 = (float *)&stack0xfffffd98;
-    for (iVar7 = 0x31; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *pfVar36 = (pCVar35->localOrigin).x;
-      pCVar35 = (CollisionState *)&(pCVar35->localOrigin).y;
-      pfVar36 = pfVar36 + 1;
+    in_stack_40 = (MethodInfo *)0x0;
+    pCVar36 = collisionState;
+    pfVar37 = (float *)&stack0xfffffd94;
+    while( true ) {
+      if (iVar7 == 0) break;
+      iVar7 = iVar7 + -1;
+      *pfVar37 = (pCVar36->localOrigin).x;
+      pCVar36 = (CollisionState *)&(pCVar36->localOrigin).y;
+      pfVar37 = pfVar37 + 1;
     }
-    p2.y = (float)pMVar55;
-    p2.x = (float)pCVar23;
+    p2.y._0_2_ = (short)puVar57;
+    p2.x = (float)pIVar59;
+    p2.y._2_2_ = (short)((uint)puVar57 >> 0x10);
     p1.y = (float)__return_storage_ptr__;
-    p1.x = (float)uVar1;
+    p1.x = (float)uVar30;
     p1.z = (float)this;
-    p2.z = (float)puVar53;
+    p2.z = (float)pcVar56;
     p3.z = fStack_13;
-    p3.x = (float)(undefined4)uStack_54;
-    p3.y = (float)uStack_54._4_4_;
+    p3._0_8_ = uStack_58;
     pos_00.z = pos.z;
-    collisionState_00.localOrigin.y = (float)FVar33;
-    collisionState_00.localOrigin.x = fVar51;
-    collisionState_00.localOrigin.z = (float)pCVar22;
-    collisionState_00.localHitPoint.x = (float)uVar28;
-    collisionState_00.localHitPoint.y = SUB84(uVar28,4);
-    collisionState_00.localHitPoint.z = fVar52;
-    collisionState_00.localNormal.x = (float)uVar34;
-    collisionState_00.localNormal.y._0_2_ = iVar31;
-    collisionState_00.localNormal.y._2_2_ = in_stack_56;
-    auVar40 = in_stack_41._4_12_;
-    auVar42 = in_stack_41._16_12_;
-    auVar43 = in_stack_41._28_12_;
-    auVar47 = in_stack_41._44_64_;
-    uVar48 = in_stack_41._112_6_;
-    uVar49 = in_stack_41._118_6_;
-    auVar44 = in_stack_41._136_12_;
-    auVar45 = in_stack_41._148_12_;
-    collisionState_00.localNormal.z = (float)in_stack_41._0_4_;
-    collisionState_00.localDirection.x = (float)auVar40._0_4_;
-    collisionState_00.localDirection.y = (float)auVar40._4_4_;
-    collisionState_00.localDirection.z = (float)auVar40._8_4_;
-    collisionState_00.origin.x = (float)auVar42._0_4_;
-    collisionState_00.origin.y = (float)auVar42._4_4_;
-    collisionState_00.origin.z = (float)auVar42._8_4_;
-    collisionState_00.direction.x = (float)auVar43._0_4_;
-    collisionState_00.direction.y = (float)auVar43._4_4_;
-    collisionState_00.direction.z = (float)auVar43._8_4_;
-    collisionState_00.cmb = (ICubeModelCollider *)in_stack_41._40_4_;
-    collisionState_00.localToElipsoidSpace.m00 = (float)auVar47._0_4_;
-    collisionState_00.localToElipsoidSpace.m10 = (float)auVar47._4_4_;
-    collisionState_00.localToElipsoidSpace.m20 = (float)auVar47._8_4_;
-    collisionState_00.localToElipsoidSpace.m30 = (float)auVar47._12_4_;
-    collisionState_00.localToElipsoidSpace.m01 = (float)auVar47._16_4_;
-    collisionState_00.localToElipsoidSpace.m11 = (float)auVar47._20_4_;
-    collisionState_00.localToElipsoidSpace.m21 = (float)auVar47._24_4_;
-    collisionState_00.localToElipsoidSpace.m31 = (float)auVar47._28_4_;
-    collisionState_00.localToElipsoidSpace.m02 = (float)auVar47._32_4_;
-    collisionState_00.localToElipsoidSpace.m12 = (float)auVar47._36_4_;
-    collisionState_00.localToElipsoidSpace.m22 = (float)auVar47._40_4_;
-    collisionState_00.localToElipsoidSpace.m32 = (float)auVar47._44_4_;
-    collisionState_00.localToElipsoidSpace.m03 = (float)auVar47._48_4_;
-    collisionState_00.localToElipsoidSpace.m13 = (float)auVar47._52_4_;
-    collisionState_00.localToElipsoidSpace.m23 = (float)auVar47._56_4_;
-    collisionState_00.localToElipsoidSpace.m33 = (float)auVar47._60_4_;
-    collisionState_00.scanAxis = in_stack_41._108_4_;
-    collisionState_00.minBounds.x = (short)uVar48;
-    collisionState_00.minBounds.y = (short)((uint6)uVar48 >> 0x10);
-    collisionState_00.minBounds.z = (short)((uint6)uVar48 >> 0x20);
-    collisionState_00.maxBounds.x = (short)uVar49;
-    collisionState_00.maxBounds.y = (short)((uint6)uVar49 >> 0x10);
-    collisionState_00.maxBounds.z = (short)((uint6)uVar49 >> 0x20);
-    collisionState_00.firstHitScanAxis = in_stack_41._124_4_;
-    collisionState_00.firstHitDetected = in_stack_41[0x80];
-    collisionState_00._161_3_ = in_stack_41._129_3_;
-    collisionState_00.scaledMaxRadius = (float)in_stack_41._132_4_;
-    collisionState_00.elipsoidSpaceOrigin.x = (float)auVar44._0_4_;
-    collisionState_00.elipsoidSpaceOrigin.y = (float)auVar44._4_4_;
-    collisionState_00.elipsoidSpaceOrigin.z = (float)auVar44._8_4_;
-    collisionState_00.elipsoidSpaceDirection.x = (float)auVar45._0_4_;
-    collisionState_00.elipsoidSpaceDirection.y = (float)auVar45._4_4_;
-    collisionState_00.elipsoidSpaceDirection.z = (float)auVar45._8_4_;
-    collisionState_00.elipsoidSpaceDistance = (float)in_stack_41._160_4_;
-    bVar24 = MVSweptElipsoidCheck_HandleTriangleTest
-                      (p1,p2,p3,vh,distance,uStack_4,pCStack_9,radius,pos_00,collisionState_00,
-                       in_stack_39);
-    uStack_2 = (uint)bVar24;
-    pVVar26 = pVStack_27;
-    pCVar22 = pCStack_9;
+    collisionState_00.localOrigin.y = (float)pvVar53;
+    collisionState_00.localOrigin.x = fVar52;
+    collisionState_00.localOrigin.z = (float)pFVar26;
+    collisionState_00.localHitPoint.x = (float)uVar54;
+    collisionState_00.localHitPoint.y = SUB84(uVar54,4);
+    collisionState_00.localHitPoint.z = fVar55;
+    collisionState_00.localNormal.x = (float)uVar35;
+    collisionState_00.localNormal.y._0_2_ = iVar33;
+    collisionState_00.localNormal.y._2_2_ = in_stack_60;
+    auVar41 = in_stack_42._4_12_;
+    auVar43 = in_stack_42._16_12_;
+    auVar44 = in_stack_42._28_12_;
+    auVar48 = in_stack_42._44_64_;
+    uVar49 = in_stack_42._112_6_;
+    uVar50 = in_stack_42._118_6_;
+    auVar45 = in_stack_42._136_12_;
+    auVar46 = in_stack_42._148_12_;
+    collisionState_00.localNormal.z = (float)in_stack_42._0_4_;
+    collisionState_00.localDirection.x = (float)auVar41._0_4_;
+    collisionState_00.localDirection.y = (float)auVar41._4_4_;
+    collisionState_00.localDirection.z = (float)auVar41._8_4_;
+    collisionState_00.origin.x = (float)auVar43._0_4_;
+    collisionState_00.origin.y = (float)auVar43._4_4_;
+    collisionState_00.origin.z = (float)auVar43._8_4_;
+    collisionState_00.direction.x = (float)auVar44._0_4_;
+    collisionState_00.direction.y = (float)auVar44._4_4_;
+    collisionState_00.direction.z = (float)auVar44._8_4_;
+    collisionState_00.cmb = (ICubeModelCollider *)in_stack_42._40_4_;
+    collisionState_00.localToElipsoidSpace.m00 = (float)auVar48._0_4_;
+    collisionState_00.localToElipsoidSpace.m10 = (float)auVar48._4_4_;
+    collisionState_00.localToElipsoidSpace.m20 = (float)auVar48._8_4_;
+    collisionState_00.localToElipsoidSpace.m30 = (float)auVar48._12_4_;
+    collisionState_00.localToElipsoidSpace.m01 = (float)auVar48._16_4_;
+    collisionState_00.localToElipsoidSpace.m11 = (float)auVar48._20_4_;
+    collisionState_00.localToElipsoidSpace.m21 = (float)auVar48._24_4_;
+    collisionState_00.localToElipsoidSpace.m31 = (float)auVar48._28_4_;
+    collisionState_00.localToElipsoidSpace.m02 = (float)auVar48._32_4_;
+    collisionState_00.localToElipsoidSpace.m12 = (float)auVar48._36_4_;
+    collisionState_00.localToElipsoidSpace.m22 = (float)auVar48._40_4_;
+    collisionState_00.localToElipsoidSpace.m32 = (float)auVar48._44_4_;
+    collisionState_00.localToElipsoidSpace.m03 = (float)auVar48._48_4_;
+    collisionState_00.localToElipsoidSpace.m13 = (float)auVar48._52_4_;
+    collisionState_00.localToElipsoidSpace.m23 = (float)auVar48._56_4_;
+    collisionState_00.localToElipsoidSpace.m33 = (float)auVar48._60_4_;
+    collisionState_00.scanAxis = in_stack_42._108_4_;
+    collisionState_00.minBounds.x = (short)uVar49;
+    collisionState_00.minBounds.y = (short)((uint6)uVar49 >> 0x10);
+    collisionState_00.minBounds.z = (short)((uint6)uVar49 >> 0x20);
+    collisionState_00.maxBounds.x = (short)uVar50;
+    collisionState_00.maxBounds.y = (short)((uint6)uVar50 >> 0x10);
+    collisionState_00.maxBounds.z = (short)((uint6)uVar50 >> 0x20);
+    collisionState_00.firstHitScanAxis = in_stack_42._124_4_;
+    collisionState_00.firstHitDetected = in_stack_42[0x80];
+    collisionState_00._161_3_ = in_stack_42._129_3_;
+    collisionState_00.scaledMaxRadius = (float)in_stack_42._132_4_;
+    collisionState_00.elipsoidSpaceOrigin.x = (float)auVar45._0_4_;
+    collisionState_00.elipsoidSpaceOrigin.y = (float)auVar45._4_4_;
+    collisionState_00.elipsoidSpaceOrigin.z = (float)auVar45._8_4_;
+    collisionState_00.elipsoidSpaceDirection.x = (float)auVar46._0_4_;
+    collisionState_00.elipsoidSpaceDirection.y = (float)auVar46._4_4_;
+    collisionState_00.elipsoidSpaceDirection.z = (float)auVar46._8_4_;
+    collisionState_00.elipsoidSpaceDistance = (float)in_stack_42._160_4_;
+    bVar27 = MVSweptElipsoidCheck_HandleTriangleTest
+                      (p1,p2,p3,vh,distance,(Face__Enum)uStack_4,(Cube *)pFStack_9,radius,pos_00,
+                       collisionState_00,in_stack_40);
+    pIStack_2 = (Il2CppRGCTXData *)(uint)bVar27;
+    pVVar29 = pVStack_23;
+    pFVar26 = pFStack_9;
     if (uStack_5._3_1_ != '\0') {
-      uStack_2 = 1;
+      pIStack_2 = (Il2CppRGCTXData *)0x1;
     }
   }
-  fStack_6 = (float)((int)fStack_6 + 1);
+  pVStack_6 = (Vector3__Array *)((int)&pVStack_6->klass + 1);
   goto code_?;
 }
 
@@ -1908,22 +1911,24 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan
                   iVar22 = func_?();
                   VStack_5.z = VStack_5.z / *(float *)(iVar22 + 8);
                   func_?();
+                  pIStack_23 = (ICubeModelCollider__Class *)0x0;
                   fVar11 = ray.m_Origin.x;
                   fVar12 = ray.m_Origin.y;
-                  puVar23 = (undefined *)ray.m_Origin.z;
+                  puVar24 = (undefined *)ray.m_Origin.z;
                   fVar13 = ray.m_Direction.z;
                   if ((collisionData->fields).isInsideCollider == 0) {
                     fVar14 = (collisionData->fields).distance - _UNK_?;
                     fVar11 = ray.m_Origin.x + ray.m_Direction.x * fVar14;
                     fVar12 = ray.m_Origin.y + ray.m_Direction.y * fVar14;
-                    VStack_5.z = ray.m_Origin.z - (ray.m_Direction.z * fVar14 + ray.m_Origin.z);
+                    VStack_5.z = ray.m_Origin.z - (ray.m_Origin.z + ray.m_Direction.z * fVar14);
                     VStack_5.y = ray.m_Origin.y - fVar12;
                     VStack_5.x = ray.m_Origin.x - fVar11;
-                    puVar23 = &UNK_?;
+                    puVar24 = &UNK_?;
                     BStack_4.fields._._._.m_CachedPtr =
                          (Collider__Fields)(Collider__Fields)VStack_5.z;
-                    fVar24 = (float10)func_?();
-                    distance = distance - (float)fVar24;
+                    fVar25 = (float10)func_?();
+                    pIStack_23 = (ICubeModelCollider__Class *)(float)fVar25;
+                    distance = distance - (float)pIStack_23;
                   }
                   if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
                     func_?();
@@ -1932,27 +1937,27 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan
                   pMVar15 = &TypeInfo__MVSweptElipsoidCheck->static_fields->worldToElipsoidSpace;
                   point.y = fVar12;
                   point.x = fVar11;
-                  point.z = (float)puVar23;
+                  point.z = (float)puVar24;
                   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
                             ((Vector3 *)&BStack_4,pMVar15,point,(MethodInfo *)0x0);
-                  pBVar25 = &BStack_4;
-                  puVar26 = &UNK_?;
+                  pBVar26 = &BStack_4;
+                  puVar27 = &UNK_?;
                   vector.y = fVar14;
-                  vector.x = (float)puVar23;
+                  vector.x = (float)puVar24;
                   vector.z = fVar13;
                   pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::
                             Matrix4x4_MultiplyVector
-                                      ((Vector3 *)pBVar25,
+                                      ((Vector3 *)pBVar26,
                                        &TypeInfo__MVSweptElipsoidCheck->static_fields->
                                         worldToElipsoidSpace,vector,(MethodInfo *)0x0);
                   pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                                       ((Vector3 *)&BStack_4,*pVVar3,(MethodInfo *)0x0);
-                  uVar27 = pVVar3->y;
+                  uVar28 = pVVar3->y;
                   fVar13 = pVVar3->z;
-                  BStack_4.fields._._._.m_CachedPtr = (Collider__Fields)((float)pBVar25 * distance)
+                  BStack_4.fields._._._.m_CachedPtr = (Collider__Fields)((float)pBVar26 * distance)
                   ;
-                  vector_00.y = (float)puVar26 * distance;
-                  vector_00.x = (float)puVar23 * distance;
+                  vector_00.y = (float)puVar27 * distance;
+                  vector_00.x = (float)puVar24 * distance;
                   vector_00.z = (float)BStack_4.fields._._._.m_CachedPtr;
                   pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::
                             Matrix4x4_MultiplyVector
@@ -1965,92 +1970,92 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan
                   func_?();
                   pTVar7 = (collisionData->fields).transform;
                   if (pTVar7 != (Transform *)0x0) {
-                    pBVar25 = &BStack_4;
-                    puVar23 = &UNK_?;
+                    pBVar26 = &BStack_4;
+                    puVar24 = &UNK_?;
                     position.y = fVar11;
                     position.x = (float)pMVar15;
                     position.z = fVar12;
                     UnityEngine.CoreModule.dll::UnityEngine::Transform::
                     Transform_InverseTransformPoint
-                              ((Vector3 *)pBVar25,pTVar7,position,(MethodInfo *)0x0);
+                              ((Vector3 *)pBVar26,pTVar7,position,(MethodInfo *)0x0);
                     VStack_6.x = (float)puVar20;
-                    VStack_6.y = (float)puVar23;
-                    VStack_6.z = (float)pBVar25;
+                    VStack_6.y = (float)puVar24;
+                    VStack_6.z = (float)pBVar26;
                     if (((float)((uint)puVar20 & _UNK_?) <
-                         (float)((uint)puVar23 & _UNK_?)) ||
+                         (float)((uint)puVar24 & _UNK_?)) ||
                        ((float)((uint)puVar20 & _UNK_?) <
-                        (float)((uint)pBVar25 & _UNK_?))) {
-                      if (((float)((uint)puVar23 & _UNK_?) <
+                        (float)((uint)pBVar26 & _UNK_?))) {
+                      if (((float)((uint)puVar24 & _UNK_?) <
                            (float)((uint)puVar20 & _UNK_?)) ||
-                         ((float)((uint)puVar23 & _UNK_?) <
-                          (float)((uint)pBVar25 & _UNK_?))) {
-                        uStack_28 = (double)((ulonglong)uStack_28 & 0xffffffff);
-                        OStack_29.m_CachedPtr = (undefined *)0x0;
-                        if (0.0 <= (float)pBVar25) {
-                          fVar24 = (float10)func_?();
+                         ((float)((uint)puVar24 & _UNK_?) <
+                          (float)((uint)pBVar26 & _UNK_?))) {
+                        uStack_29 = (double)((ulonglong)uStack_29 & 0xffffffff);
+                        OStack_30.m_CachedPtr = (undefined *)0x0;
+                        if (0.0 <= (float)pBVar26) {
+                          fVar25 = (float10)func_?();
                         }
                         else {
-                          fVar24 = (float10)func_?();
+                          fVar25 = (float10)func_?();
                         }
-                        chunk = (BoxCollider *)(float)fVar24;
+                        chunk = (BoxCollider *)(float)fVar25;
                         VStack_6.z = (float)chunk;
                       }
                       else {
-                        uStack_28 = (double)((ulonglong)uStack_28 & 0xffffffff);
+                        uStack_29 = (double)((ulonglong)uStack_29 & 0xffffffff);
                         chunk = (BoxCollider *)0x0;
-                        register0x00001200 = (double)(float)puVar23;
-                        if (0.0 <= (float)puVar23) {
-                          fVar24 = (float10)func_?();
-                          OStack_29.m_CachedPtr = (void *)(float)fVar24;
-                          VStack_6.y = (float)OStack_29.m_CachedPtr;
+                        register0x00001200 = (double)(float)puVar24;
+                        if (0.0 <= (float)puVar24) {
+                          fVar25 = (float10)func_?();
+                          OStack_30.m_CachedPtr = (void *)(float)fVar25;
+                          VStack_6.y = (float)OStack_30.m_CachedPtr;
                         }
                         else {
-                          fVar24 = (float10)func_?();
-                          OStack_29.m_CachedPtr = (void *)(float)fVar24;
-                          VStack_6.y = (float)OStack_29.m_CachedPtr;
+                          fVar25 = (float10)func_?();
+                          OStack_30.m_CachedPtr = (void *)(float)fVar25;
+                          VStack_6.y = (float)OStack_30.m_CachedPtr;
                         }
                       }
                     }
                     else {
                       chunk = (BoxCollider *)0x0;
-                      OStack_29.m_CachedPtr = (undefined *)0x0;
-                      uStack_28 = (double)(float)puVar20;
+                      OStack_30.m_CachedPtr = (undefined *)0x0;
+                      uStack_29 = (double)(float)puVar20;
                       if (0.0 <= (float)puVar20) {
-                        fVar24 = (float10)func_?();
-                        VStack_6.x = (float)fVar24;
-                        uStack_28 = (double)CONCAT44(VStack_6.x,(undefined4)uStack_28);
+                        fVar25 = (float10)func_?();
+                        VStack_6.x = (float)fVar25;
+                        uStack_29 = (double)CONCAT44(VStack_6.x,(undefined4)uStack_29);
                       }
                       else {
-                        fVar24 = (float10)func_?();
-                        VStack_6.x = (float)fVar24;
-                        uStack_28 = (double)CONCAT44(VStack_6.x,(undefined4)uStack_28);
+                        fVar25 = (float10)func_?();
+                        VStack_6.x = (float)fVar25;
+                        uStack_29 = (double)CONCAT44(VStack_6.x,(undefined4)uStack_29);
                       }
                     }
-                    BStack_4.klass = (BoxCollider__Class *)((float)uStack_28._4_4_ * _UNK_?)
+                    BStack_4.klass = (BoxCollider__Class *)((float)uStack_29._4_4_ * _UNK_?)
                     ;
-                    OStack_29.m_CachedPtr = (void *)(OStack_29.m_CachedPtr * _UNK_?);
-                    CVar30._._.m_CachedPtr = (Component__Fields)((float)chunk * _UNK_?);
-                    uStack_28 = (double)CONCAT44(BStack_4.klass,(undefined4)uStack_28);
-                    BStack_4.monitor = OStack_29.m_CachedPtr;
-                    pBVar31 = BStack_4.klass;
+                    OStack_30.m_CachedPtr = (void *)(OStack_30.m_CachedPtr * _UNK_?);
+                    CVar31._._.m_CachedPtr = (Component__Fields)((float)chunk * _UNK_?);
+                    uStack_29 = (double)CONCAT44(BStack_4.klass,(undefined4)uStack_29);
+                    BStack_4.monitor = OStack_30.m_CachedPtr;
+                    pBVar32 = BStack_4.klass;
                     BStack_4.fields._._._.m_CachedPtr =
-                         (Collider__Fields)(Collider__Fields)CVar30._._.m_CachedPtr;
+                         (Collider__Fields)(Collider__Fields)CVar31._._.m_CachedPtr;
                     if (cRam_? == '\0') {
                       func_?();
                       cRam_? = '\x01';
-                      pBVar31 = uStack_28._4_4_;
+                      pBVar32 = uStack_29._4_4_;
                     }
-                    pVVar32 = TypeInfo__UnityEngine__Vector3->static_fields;
-                    uVar33 = (pVVar32->zeroVector).x;
-                    uVar34 = (pVVar32->zeroVector).y;
-                    VStack_6.z = (pVVar32->zeroVector).z;
-                    if (((float)pBVar31 - (float)uVar33) * ((float)pBVar31 - (float)uVar33) +
-                        ((float)OStack_29.m_CachedPtr - (float)uVar34) *
-                        ((float)OStack_29.m_CachedPtr - (float)uVar34) +
-                        ((float)CVar30._._.m_CachedPtr - VStack_6.z) *
-                        ((float)CVar30._._.m_CachedPtr - VStack_6.z) < _UNK_?) {
-                      VStack_6.x = (float)uVar33;
-                      VStack_6.y = (float)uVar34;
+                    pVVar33 = TypeInfo__UnityEngine__Vector3->static_fields;
+                    uVar34 = (pVVar33->zeroVector).x;
+                    uVar35 = (pVVar33->zeroVector).y;
+                    VStack_6.z = (pVVar33->zeroVector).z;
+                    if (((float)pBVar32 - (float)uVar34) * ((float)pBVar32 - (float)uVar34) +
+                        ((float)OStack_30.m_CachedPtr - (float)uVar35) *
+                        ((float)OStack_30.m_CachedPtr - (float)uVar35) +
+                        ((float)CVar31._._.m_CachedPtr - VStack_6.z) *
+                        ((float)CVar31._._.m_CachedPtr - VStack_6.z) < _UNK_?) {
+                      VStack_6.x = (float)uVar34;
+                      VStack_6.y = (float)uVar35;
                       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                         func_?();
                       }
@@ -2058,15 +2063,15 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan
                       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                                 ((Object *)StringLiteral_scanRect_cant_be_zero,(MethodInfo *)0x0);
                     }
-                    VStack_6.x = (float)uStack_28._4_4_;
-                    VStack_6.y = (float)OStack_29.m_CachedPtr;
-                    VStack_6.z = (float)CVar30._._.m_CachedPtr;
+                    VStack_6.x = (float)uStack_29._4_4_;
+                    VStack_6.y = (float)OStack_30.m_CachedPtr;
+                    VStack_6.z = (float)CVar31._._.m_CachedPtr;
                     if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
                       func_?();
                     }
-                    auStack_35._0_4_ = VStack_6.x;
-                    auStack_35._4_4_ = VStack_6.y;
-                    OStack_29.m_CachedPtr = (void *)VStack_6.z;
+                    auStack_36._0_4_ = VStack_6.x;
+                    auStack_36._4_4_ = VStack_6.y;
+                    OStack_30.m_CachedPtr = (void *)VStack_6.z;
                     if (cRam_? == '\0') {
                       func_?();
                       func_?();
@@ -2075,7 +2080,7 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan
                     iVar22 = 0;
                     do {
                       fVar11 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                                        ((Vector3 *)auStack_35,iVar22,(MethodInfo *)0x0);
+                                        ((Vector3 *)auStack_36,iVar22,(MethodInfo *)0x0);
                       if (_UNK_? < (float)((uint)fVar11 & _UNK_?))
                       goto code_?;
                       iVar22 = iVar22 + 1;
@@ -2095,51 +2100,51 @@ code_?:
                     pTVar7 = (collisionData->fields).transform;
                     if (pTVar7 != (Transform *)0x0) {
                       pVVar3 = &VStack_6;
-                      puVar23 = &UNK_?;
+                      puVar24 = &UNK_?;
                       direction.z = (float)BStack_4.fields._._._.m_CachedPtr;
                       direction.x = (float)BStack_4.klass;
                       direction.y = (float)BStack_4.monitor;
-                      pVVar36 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                      pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                 Transform_TransformDirection
                                           (pVVar3,pTVar7,direction,(MethodInfo *)0x0);
                       fVar14 = (collisionData->fields).point.z;
                       fVar11 = (collisionData->fields).point.x;
                       fVar12 = (collisionData->fields).point.y;
                       pMVar8 = TypeInfo__MVSweptElipsoidCheck->static_fields;
-                      pVVar36 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                                          ((Vector3 *)auStack_35,*pVVar36,(MethodInfo *)0x0);
-                      uVar37 = pVVar36->x;
-                      uVar38 = pVVar36->y;
-                      VStack_6.z = pVVar36->z;
-                      (pMVar8->collisionPlane).m_Normal.x = (float)uVar37;
-                      (pMVar8->collisionPlane).m_Normal.y = (float)uVar38;
+                      pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                                          ((Vector3 *)auStack_36,*pVVar37,(MethodInfo *)0x0);
+                      uVar38 = pVVar37->x;
+                      uVar39 = pVVar37->y;
+                      VStack_6.z = pVVar37->z;
+                      (pMVar8->collisionPlane).m_Normal.x = (float)uVar38;
+                      (pMVar8->collisionPlane).m_Normal.y = (float)uVar39;
                       (pMVar8->collisionPlane).m_Normal.z = VStack_6.z;
                       (pMVar8->collisionPlane).m_Distance =
-                           (float)((uint)((float)uVar37 * fVar11 + (float)uVar38 * fVar12 +
+                           (float)((uint)((float)uVar38 * fVar11 + (float)uVar39 * fVar12 +
                                          VStack_6.z * fVar14) ^
-                                  __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                   );
-                      uVar39 = (collisionData->fields).point.x;
-                      uVar40 = (collisionData->fields).point.y;
+                      uVar40 = (collisionData->fields).point.x;
+                      uVar41 = (collisionData->fields).point.y;
                       pTVar7 = (collisionData->fields).transform;
                       fVar11 = (collisionData->fields).point.z;
-                      VStack_6.x = (float)uVar37;
-                      VStack_6.y = (float)uVar38;
+                      VStack_6.x = (float)uVar38;
+                      VStack_6.y = (float)uVar39;
                       if (pTVar7 != (Transform *)0x0) {
                         direction_00.z = (float)BStack_4.fields._._._.m_CachedPtr;
                         direction_00.x = (float)BStack_4.klass;
                         direction_00.y = (float)BStack_4.monitor;
-                        pVVar36 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                        pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                   Transform_TransformDirection
                                             ((Vector3 *)&BStack_4,pTVar7,direction_00,
                                              (MethodInfo *)0x0);
-                        planeOrigin.y = (float)uVar40;
-                        planeOrigin.x = (float)uVar39;
+                        planeOrigin.y = (float)uVar41;
+                        planeOrigin.x = (float)uVar40;
                         planeOrigin.z = fVar11;
                         MVSweptElipsoidCheck_GetRaysProjectedOnPlane
                                   (boundRays,
                                    &TypeInfo__MVSweptElipsoidCheck->static_fields->collisionPlane,
-                                   planeOrigin,*pVVar36,(MethodInfo *)0x0);
+                                   planeOrigin,*pVVar37,(MethodInfo *)0x0);
                         if ((collisionData->fields).isInsideCollider != 0) {
                           if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0)
                           {
@@ -2168,7 +2173,7 @@ code_?:
                           localHit.y = (float)puVar17;
                           localHit.x = fVar16;
                           localHit.z = (float)pSVar18;
-                          localDir.y = (float)puVar23;
+                          localDir.y = (float)puVar24;
                           localDir.x = (float)puVar20;
                           localDir.z = (float)pVVar3;
                           MVSweptElipsoidCheck_MoveAxisAlignedRectOutOfBox
@@ -2179,42 +2184,78 @@ code_?:
                         if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
                           func_?();
                         }
-                        bVar41 = MVSweptElipsoidCheck_LayerScan_1
+                        bVar42 = MVSweptElipsoidCheck_LayerScan_1
                                            (radius,TypeInfo__MVSweptElipsoidCheck->static_fields->
                                                    minMaxCalculateAxisAlignedRect,vh,distance,
                                             (CollisionState *)&stack0xfffffed8,(MethodInfo *)0x0);
-                        if (bVar41 == 0) {
+                        if (bVar42 == 0) {
                           return 0;
                         }
                         if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
                           func_?();
                         }
                         fVar10 = vh->distance;
-                        BStack_4.fields._._._.m_CachedPtr = (Collider__Fields)(fVar10 * fVar13);
-                        pMVar15 = &TypeInfo__MVSweptElipsoidCheck->static_fields->
-                                   elipsoidSpaceToWorld;
-                        vector_01.y = fVar10 * (float)uVar27;
+                        BStack_4.fields._._._.m_CachedPtr = (Collider__Fields)(fVar13 * fVar10);
+                        vector_01.y = (float)uVar28 * fVar10;
                         vector_01.x = fVar10 * 0.0;
                         vector_01.z = (float)BStack_4.fields._._._.m_CachedPtr;
                         pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::
                                   Matrix4x4_MultiplyVector
-                                            ((Vector3 *)&BStack_4,pMVar15,vector_01,
-                                             (MethodInfo *)0x0);
+                                            ((Vector3 *)&BStack_4,
+                                             &TypeInfo__MVSweptElipsoidCheck->static_fields->
+                                              elipsoidSpaceToWorld,vector_01,(MethodInfo *)0x0);
                         VStack_5.x = pVVar3->x;
                         VStack_5.y = pVVar3->y;
                         VStack_5.z = pVVar3->z;
-                        fVar24 = (float10)func_?();
-                        vh->distance = (float)(fVar24 + (float10)(float)pMVar15);
+                        fVar25 = (float10)func_?();
+                        vh->distance = (float)(fVar25 + (float10)(float)pIStack_23);
                         if (wo != (ICubeModelCollider *)0x0) {
-                          iVar42 = func_?();
-                          iVar43 = func_?();
-                          vh->woId = iVar42;
+                          pIStack_23 = wo->klass;
+                          uVar43 = 0;
+                          uVar44._0_1_ = (pIStack_23->_1).rank;
+                          uVar44._1_1_ = (pIStack_23->_1).minimumAlignment;
+                          OStack_30.m_CachedPtr = (void *)(uint)uVar44;
+                          if (uVar44 != 0) {
+                            do {
+                              if (pIStack_23->interfaceOffsets[uVar43].interfaceType ==
+                                  (Il2CppClass *)TypeInfo__ICubeModelCollider) {
+                                ppMVar45 = &(&(wo->klass->vtable).get_Id)
+                                            [wo->klass->interfaceOffsets[uVar43].offset].method;
+                                goto code_?;
+                              }
+                              uVar43 = uVar43 + 1;
+                            } while (uVar43 < uVar44);
+                          }
+                          ppMVar45 = (MethodInfo **)func_?();
+code_?:
+                          iVar46 = (*(code *)*ppMVar45)();
+                          uVar44 = 0;
+                          pIStack_23 = wo->klass;
+                          uVar43._0_1_ = (pIStack_23->_1).rank;
+                          uVar43._1_1_ = (pIStack_23->_1).minimumAlignment;
+                          OStack_30.m_CachedPtr = (void *)(uint)uVar43;
+                          uStack_29._4_4_ = (BoxCollider__Class *)iVar46;
+                          if (uVar43 != 0) {
+                            do {
+                              if (pIStack_23->interfaceOffsets[uVar44].interfaceType ==
+                                  (Il2CppClass *)TypeInfo__ICubeModelCollider) {
+                                ppMVar45 = &(&(wo->klass->vtable).get_InteractionFlags)
+                                            [wo->klass->interfaceOffsets[uVar44].offset].method;
+                                goto code_?;
+                              }
+                              uVar44 = uVar44 + 1;
+                            } while (uVar44 < uVar43);
+                          }
+                          ppMVar45 = (MethodInfo **)func_?();
+code_?:
+                          iVar47 = (*(code *)*ppMVar45)();
+                          vh->woId = (int32_t)uStack_29._4_4_;
                           vh->isCubeHit = 1;
                           vh->collider = (collisionData->fields).collider;
                           func_?();
                           vh->transform = (collisionData->fields).transform;
                           func_?();
-                          vh->interactionFlags = iVar43;
+                          vh->interactionFlags = iVar47;
                           return 1;
                         }
                       }
@@ -2229,9 +2270,9 @@ code_?:
     }
   }
   func_?();
-  pcVar44 = (code *)swi(3);
-  bVar41 = (*pcVar44)();
-  return bVar41;
+  pcVar48 = (code *)swi(3);
+  bVar42 = (*pcVar48)();
+  return bVar42;
 }
 
 
@@ -2244,10 +2285,10 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
 {
   if (cRam_? == '\0') {
     func_?();
-    in_stack_1 = 0xde20;
-    in_stack_2 = 0x119b;
-    in_stack_3 = 0x18c9;
-    in_stack_4 = 0x1025;
+    in_stack_1 = 0x4d00;
+    in_stack_2 = 0x119c;
+    in_stack_3 = 0x2e79;
+    in_stack_4 = 0x1026;
     func_?();
     cRam_? = '\x01';
   }
@@ -2296,8 +2337,8 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
         if ((bool)(bVar12 & iVar13 != collisionState->scanAxis)) {
           in_stack_3 = 1;
           in_stack_4 = 0;
-          in_stack_27 = 0x19c0;
-          in_stack_28 = 0x1025;
+          in_stack_27 = 0x2f70;
+          in_stack_28 = 0x1026;
           in_stack_29 = (Vector3 *)func_?();
           in_stack_30 = &UNK_?;
           pMStack_31 = (MethodInfo *)
@@ -2316,8 +2357,8 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
       else {
         in_stack_3 = 1;
         in_stack_4 = 0;
-        in_stack_27 = 0x1978;
-        in_stack_28 = 0x1025;
+        in_stack_27 = 0x2f28;
+        in_stack_28 = 0x1026;
         in_stack_29 = (Vector3 *)func_?();
         in_stack_30 = &UNK_?;
         fVar35 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
@@ -2351,8 +2392,8 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
     uVar43 = CONCAT44((float)pIStack_18 - (float)pIStack_22,
                       (float)auStack_11._12_4_ - (float)pIStack_21);
     pVVar39 = (Vector3 *)&stack0xffffff5c;
-    uVar25 = 0x1a97;
-    uVar26 = 0x1025;
+    uVar25 = 0x3047;
+    uVar26 = 0x1026;
     value_00.z = fVar42;
     value_00.x = (float)auStack_11._12_4_ - (float)pIStack_21;
     value_00.y = (float)pIStack_18 - (float)pIStack_22;
@@ -2383,8 +2424,8 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
     uVar57 = SUB42(method_00,0);
     uVar58 = (undefined2)((uint)method_00 >> 0x10);
     puVar59 = auStack_52;
-    uVar60 = 0x1af3;
-    uVar61 = 0x1025;
+    uVar60 = 0x30a3;
+    uVar61 = 0x1026;
     localPos_02.y = (float)pIStack_22;
     localPos_02.x = (float)puVar59;
     localPos_02.z = (float)pMStack_23;
@@ -2395,8 +2436,8 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
     IStack_6._0_4_ = *IVar54._0_4_;
     IStack_6.z = *(int16_t *)(IVar54._0_4_ + 1);
     if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
-      in_stack_1 = 0x1b16;
-      in_stack_2 = 0x1025;
+      in_stack_1 = 0x30c6;
+      in_stack_2 = 0x1026;
       func_?();
     }
     pCVar63 = TypeInfo__MVSweptElipsoidCheck->static_fields->cellTraverser;
@@ -2621,7 +2662,7 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
                 iVar75 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
                                    (&IStack_9,iVar80,(MethodInfo *)0x0);
                 uVar16 = (undefined2)((uint)collisionState->scanAxis >> 0x10);
-                uVar15 = 0x1025;
+                uVar15 = 0x1026;
                 iVar74 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
                                    (&collisionState->maxBounds,collisionState->scanAxis,
                                     (MethodInfo *)0x0);
@@ -2668,8 +2709,8 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
                         IStack_9._0_4_ = uVar83;
                         pCVar64 = collisionState;
                         MVSweptElipsoidCheck_HandleCube
-                                  (vh,IVar54,radius_00,3.2561857e-29,collisionState,
-                                   (MethodInfo *)0x0);
+                                  (vh,IVar54,radius_00,3.277578e-29,collisionState,(MethodInfo *)0x0
+                                  );
                         iVar74 = IStack_9.z;
                         uVar82 = IStack_9._0_4_;
                         iVar75 = IStack_6.z;
@@ -2677,7 +2718,7 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
                         IStack_84.y = IStack_6.y;
                         if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor ==
                             0) {
-                          uVar17 = 0x1025;
+                          uVar17 = 0x1026;
                           func_?();
                         }
                         uVar15 = (undefined2)((uint)pCVar64 >> 0x10);
@@ -2703,7 +2744,7 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
                     IStack_84.y = IStack_6.y;
                     if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0)
                     {
-                      uVar15 = 0x1025;
+                      uVar15 = 0x1026;
                       func_?();
                     }
                     uVar85 = (ushort)((uint)this_00 >> 0x10);
@@ -2855,7 +2896,7 @@ code_?:
                             uVar16 = uVar25;
                             IStack_9._0_4_ = uVar83;
                             MVSweptElipsoidCheck_HandleCube
-                                      (vh,pos_00,radius_02,3.2561857e-29,collisionState,
+                                      (vh,pos_00,radius_02,3.277578e-29,collisionState,
                                        (MethodInfo *)0x0);
                             iVar74 = IStack_9.z;
                             uVar82 = IStack_9._0_4_;
@@ -2939,7 +2980,7 @@ code_?:
                       uVar16 = uVar25;
                       IStack_9._0_4_ = uVar83;
                       MVSweptElipsoidCheck_HandleCube
-                                (vh,pos,radius_01,3.2561857e-29,collisionState,(MethodInfo *)0x0);
+                                (vh,pos,radius_01,3.277578e-29,collisionState,(MethodInfo *)0x0);
                       iVar74 = IStack_9.z;
                       uVar82 = IStack_9._0_4_;
                       iVar75 = IStack_6.z;
@@ -3234,64 +3275,61 @@ Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_MVElipsoidCast_2
     func_?(&TypeInfo__MVSweptElipsoidCheck);
     cRam_? = '\x01';
   }
-  fVar1 = localBounds.m_Extents.x * _UNK_? * _UNK_?;
-  fVar2 = localBounds.m_Extents.y * _UNK_? * _UNK_?;
   if (transform != (Transform *)0x0) {
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                       ((Vector3 *)&stack0xffffffd8,transform,(MethodInfo *)0x0);
-    fVar4 = pVVar3->x;
-    fVar5 = pVVar3->y;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+              ((Vector3 *)&stack0xffffffd8,transform,(MethodInfo *)0x0);
     position.z = localBounds.m_Center.z;
     position.x = localBounds.m_Center.x;
     position.y = localBounds.m_Center.y;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
-                       ((Vector3 *)&stack0xffffffd8,transform,position,(MethodInfo *)0x0);
-    fVar4 = fVar4 * fVar1;
-    uVar6 = pVVar3->x;
-    uVar7 = pVVar3->y;
-    localBounds.m_Extents.z = pVVar3->z;
-    fVar5 = fVar5 * fVar2;
-    localBounds.m_Extents.x = (float)uVar6;
-    localBounds.m_Extents.y = (float)uVar7;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       ((Vector3 *)&stack0xffffffcc,transform,(MethodInfo *)0x0);
-    uVar8 = pVVar3->x;
-    uVar9 = pVVar3->y;
-    fVar1 = localBounds.m_Extents.x - (float)uVar8;
-    fVar10 = localBounds.m_Extents.y - (float)uVar9;
-    fVar2 = ray.m_Origin.z + (localBounds.m_Extents.z - pVVar3->z);
-    localBounds.m_Extents.z = fVar2;
+    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
+                        (&localBounds.m_Extents,transform,position,(MethodInfo *)0x0);
+    fVar2 = pVVar1->x;
+    fVar3 = pVVar1->y;
+    fVar4 = pVVar1->z;
+    pVVar1 = MathFunctions::MathFunctions_MultiplyVector
+                        ((Vector3 *)&stack0xffffffd8,(Vector3 *)&stack0xffffffcc,
+                         (Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
+    uVar5 = pVVar1->x;
+    uVar6 = pVVar1->y;
+    fVar7 = pVVar1->z;
+    localBounds.m_Extents.y = (float)uVar5;
+    localBounds.m_Extents.z = (float)uVar6;
+    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                        ((Vector3 *)&stack0xffffffc0,transform,(MethodInfo *)0x0);
+    uVar8 = pVVar1->x;
+    uVar9 = pVVar1->y;
+    fVar10 = pVVar1->z;
     pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                       ((Quaternion *)&localBounds.m_Center.z,transform,(MethodInfo *)0x0);
-    localBounds.m_Center.z = pQVar11->x;
-    localBounds.m_Extents.x = pQVar11->y;
-    localBounds.m_Extents.y = pQVar11->z;
-    localBounds.m_Extents.z = pQVar11->w;
+                        ((Quaternion *)&stack0xffffffbc,transform,(MethodInfo *)0x0);
+    fVar12 = pQVar11->x;
+    fVar13 = pQVar11->y;
+    fVar14 = pQVar11->z;
+    fVar15 = pQVar11->w;
     if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    ray_00.m_Origin.y = ray.m_Origin.y + fVar10;
-    ray_00.m_Origin.x = ray.m_Origin.x + fVar1;
-    ray_00.m_Origin.z = fVar2;
+    ray_00.m_Origin.y = ray.m_Origin.y + (fVar3 - (float)uVar9);
+    ray_00.m_Origin.x = ray.m_Origin.x + (fVar2 - (float)uVar8);
+    ray_00.m_Origin.z = ray.m_Origin.z + (fVar4 - fVar10);
     ray_00.m_Direction.x = ray.m_Direction.x;
     ray_00.m_Direction.y = ray.m_Direction.y;
     ray_00.m_Direction.z = ray.m_Direction.z;
-    radius.y = fVar5;
-    radius.x = fVar4;
-    radius.z = localBounds.m_Center.z;
-    rotation.y = localBounds.m_Extents.x;
-    rotation.x = localBounds.m_Center.z;
-    rotation.z = localBounds.m_Extents.y;
-    rotation.w = localBounds.m_Extents.z;
-    pLVar12 = MVSweptElipsoidCheck_MVElipsoidCast_3
+    radius.y = localBounds.m_Extents.z;
+    radius.x = localBounds.m_Extents.y;
+    radius.z = fVar7;
+    rotation.y = fVar13;
+    rotation.x = fVar12;
+    rotation.z = fVar14;
+    rotation.w = fVar15;
+    pLVar16 = MVSweptElipsoidCheck_MVElipsoidCast_3
                         (ray_00,radius,rotation,distance,all,ignoreWoIds,layerMask,(MethodInfo *)0x0
                         );
-    return pLVar12;
+    return pLVar16;
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  pLVar12 = (List_1_VoxelHit_ *)(*pcVar13)();
-  return pLVar12;
+  pcVar17 = (code *)swi(3);
+  pLVar16 = (List_1_VoxelHit_ *)(*pcVar17)();
+  return pLVar16;
 }
 
 
@@ -3519,7 +3557,7 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_MoveAxisAli
   fVar7 = pVVar4->z;
   fStack_8 = (float)((uint)(startOrigin.y * (float)uVar6._4_4_ +
                             startOrigin.x * (float)(undefined4)uVar6 + startOrigin.z * fVar7) ^
-                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   startOrigin.z = 0.0;
   uStack_9 = uVar6;
   if (cRam_? == '\0') {
@@ -3528,13 +3566,13 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_MoveAxisAli
     cRam_? = '\x01';
   }
   fStack_10 = (float)((uint)dir.z ^
-                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   pVVar11 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar12 = (pVVar11->zeroVector).x;
   uVar13 = (pVVar11->zeroVector).y;
   value.y = (float)uVar12;
   value.x = (float)((uint)dir.x ^
-                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   value.z = (float)uVar13;
   pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                       (&VStack_5,value,(MethodInfo *)(pVVar11->zeroVector).z);
@@ -3576,13 +3614,13 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_MoveAxisAli
       pointsOnProjectPlane =
            (Vector3__Array *)
            ((float)((uint)dir.x ^
-                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) *
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
            startOrigin.z);
       fVar7 = (float)((uint)dir.y ^
-                      __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) *
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
                startOrigin.z;
       fVar15 = (float)((uint)dir.z ^
-                      __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) *
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
                startOrigin.z;
       pVVar4 = pVVar14->vector;
       for (uVar20 = 0; (int)uVar20 < (int)pVVar14->max_length; uVar20 = uVar20 + 1) {
@@ -3625,11 +3663,11 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_MoveAxisAli
   }
   pMVar1 = TypeInfo__MVSweptElipsoidCheck->static_fields;
   value.y = (float)((uint)localNormal.y ^
-                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   value.x = (float)((uint)localNormal.x ^
-                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   value.z = (float)((uint)localNormal.z ^
-                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                       (&VStack_3,value,(MethodInfo *)0x0);
   uVar4 = pVVar2->x;
@@ -3638,15 +3676,15 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_MoveAxisAli
   (pMVar1->collisionPlane0).m_Normal.x = (float)uVar4;
   (pMVar1->collisionPlane0).m_Normal.y = (float)uVar5;
   (pMVar1->collisionPlane0).m_Normal.z = fVar6;
-  uVar7 = __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field;
+  uVar7 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
   (pMVar1->collisionPlane0).m_Distance =
        (float)((uint)((float)uVar4 * localHit.x + (float)uVar5 * localHit.y + fVar6 * localHit.z) ^
-              __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   localNormal.z = 0.0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
-    uVar7 = __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field;
+    uVar7 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
   }
   localHit.z = (float)((uint)localDir.z ^ uVar7);
   value_00.y = (float)((uint)localDir.y ^ uVar7);
@@ -3681,12 +3719,12 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_MoveAxisAli
       VStack_3.x = (pMVar1->collisionPlane0).m_Normal.x;
       VStack_3.y = (pMVar1->collisionPlane0).m_Normal.y;
       localHit.z = (float)((uint)(fVar11 * VStack_3.x + fVar12 * VStack_3.y + fVar13 * VStack_3.z)
-                          ^ __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                          ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                           ) - (pMVar1->collisionPlane0).m_Distance;
       fStack_16 = VStack_3.z;
       if (cRam_? == '\0') {
-        VStack_3.x = 3.2582856e-29;
-        VStack_3.y = 2.4598517e-28;
+        VStack_3.x = 3.2796778e-29;
+        VStack_3.y = 2.4666704e-28;
         func_?();
         cRam_? = '\x01';
         uVar10 = _UNK_?;
@@ -3708,7 +3746,7 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_MoveAxisAli
     }
     if (localNormal.z != 0.0) {
       fVar6 = (float)((uint)localNormal.z ^
-                      __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       pVVar2 = axisAlignedRect->vector;
       for (uVar7 = 0; (int)uVar7 < (int)axisAlignedRect->max_length; uVar7 = uVar7 + 1) {
         if (axisAlignedRect->max_length <= uVar7) goto code_?;

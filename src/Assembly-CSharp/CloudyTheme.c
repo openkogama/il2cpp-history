@@ -64,22 +64,7 @@ void Assembly-CSharp.dll::CloudyTheme::CloudyTheme__ctor(CloudyTheme *this,Metho
   func_?(&(this->fields).displayName,StringLiteral_No_name);
   (this->fields).description = StringLiteral_Description_missing_;
   func_?(&(this->fields).description,StringLiteral_Description_missing_);
-  if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<ThemeComponent>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<ThemeComponent>);
-    cRam_? = '\x01';
-  }
-  this_00 = (List_1_ThemeComponent_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<ThemeComponent>);
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType]::
-  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
-             MethodInfo__System__Collections__Generic__List<ThemeComponent>__List__);
-  (this->fields)._._.components = this_00;
-  func_?(&(this->fields)._._.components,this_00);
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  Theme::Theme__ctor((Theme *)this,(MethodInfo *)0x0);
   return;
 }
 

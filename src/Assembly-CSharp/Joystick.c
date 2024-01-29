@@ -15,31 +15,35 @@ void Assembly-CSharp.dll::Joystick::Joystick_Awake(Joystick *this,MethodInfo *me
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).horizontalAxisName;
-  pCVar2 = (CrossPlatformInputManager_VirtualAxis *)
-           func_?(
-                          TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
-                          );
-  UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
-  CrossPlatformInputManager_VirtualAxis__ctor(pCVar2,pSVar1,(MethodInfo *)0x0);
-  (this->fields).m_HorizontalVirtualAxis = pCVar2;
-  func_?(&(this->fields).m_HorizontalVirtualAxis,pCVar2);
+  pCVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
+  ;
+  pCVar3 = (CrossPlatformInputManager_VirtualAxis *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
+  (pCVar3->fields)._name_k__BackingField = pSVar1;
+  func_?(&pCVar3->fields,pSVar1);
+  (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
+  (this->fields).m_HorizontalVirtualAxis = pCVar3;
+  func_?(&(this->fields).m_HorizontalVirtualAxis,pCVar3);
   pSVar1 = (this->fields).verticalAxisName;
-  pCVar2 = (CrossPlatformInputManager_VirtualAxis *)
-           func_?(
-                          TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
-                          );
-  UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
-  CrossPlatformInputManager_VirtualAxis__ctor(pCVar2,pSVar1,(MethodInfo *)0x0);
-  (this->fields).m_VerticalVirtualAxis = pCVar2;
-  func_?(&(this->fields).m_VerticalVirtualAxis,pCVar2);
-  iVar3 = (this->fields).baseMovementRangeX;
-  VVar4 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-  iVar5 = (this->fields).baseMovementRangeY;
-  VVar6 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-  fVar7 = VVar6.x;
+  pCVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
+  ;
+  pCVar3 = (CrossPlatformInputManager_VirtualAxis *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
+  (pCVar3->fields)._name_k__BackingField = pSVar1;
+  func_?(&pCVar3->fields,pSVar1);
+  (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
+  (this->fields).m_VerticalVirtualAxis = pCVar3;
+  func_?(&(this->fields).m_VerticalVirtualAxis,pCVar3);
+  iVar4 = (this->fields).baseMovementRangeX;
+  VVar5 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
+  fVar6 = VVar5.x;
+  iVar7 = (this->fields).baseMovementRangeY;
+  ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
   this_00 = (UIElipsoidHelper *)func_?(TypeInfo__UIElipsoidHelper);
   UIElipsoidHelper::UIElipsoidHelper__ctor
-            (this_00,(float)iVar3 * VVar4.x,(float)iVar5 * fVar7,(MethodInfo *)0x0);
+            (this_00,(float)iVar4 * fVar6,(float)iVar7 * 0.0,(MethodInfo *)0x0);
   (this->fields).elipsoidHelper = this_00;
   func_?(&(this->fields).elipsoidHelper,this_00);
   return;
@@ -58,23 +62,27 @@ void Assembly-CSharp.dll::Joystick::Joystick_CreateVirtualAxes(Joystick *this,Me
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).horizontalAxisName;
-  pCVar2 = (CrossPlatformInputManager_VirtualAxis *)
-           func_?(
-                          TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
-                          );
-  UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
-  CrossPlatformInputManager_VirtualAxis__ctor(pCVar2,pSVar1,(MethodInfo *)0x0);
-  (this->fields).m_HorizontalVirtualAxis = pCVar2;
-  func_?(&(this->fields).m_HorizontalVirtualAxis,pCVar2);
+  pCVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
+  ;
+  pCVar3 = (CrossPlatformInputManager_VirtualAxis *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
+  (pCVar3->fields)._name_k__BackingField = pSVar1;
+  func_?(&pCVar3->fields,pSVar1);
+  (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
+  (this->fields).m_HorizontalVirtualAxis = pCVar3;
+  func_?(&(this->fields).m_HorizontalVirtualAxis,pCVar3);
   pSVar1 = (this->fields).verticalAxisName;
-  pCVar2 = (CrossPlatformInputManager_VirtualAxis *)
-           func_?(
-                          TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
-                          );
-  UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
-  CrossPlatformInputManager_VirtualAxis__ctor(pCVar2,pSVar1,(MethodInfo *)0x0);
-  (this->fields).m_VerticalVirtualAxis = pCVar2;
-  func_?(&(this->fields).m_VerticalVirtualAxis,pCVar2);
+  pCVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
+  ;
+  pCVar3 = (CrossPlatformInputManager_VirtualAxis *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
+  (pCVar3->fields)._name_k__BackingField = pSVar1;
+  func_?(&pCVar3->fields,pSVar1);
+  (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
+  (this->fields).m_VerticalVirtualAxis = pCVar3;
+  func_?(&(this->fields).m_VerticalVirtualAxis,pCVar3);
   return;
 }
 

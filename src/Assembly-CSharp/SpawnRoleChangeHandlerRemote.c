@@ -12,79 +12,101 @@ void Assembly-CSharp.dll::SpawnRoleChangeHandlerRemote::
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (pMVar1 == (MVWorldObjectClientManager *)0x0) {
-code_?:
-    pIVar2 = unaff_EBX;
-    func_?();
+  if (pMVar1 == (MVWorldObjectClientManager *)0x0) goto code_?;
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                   );
+    cRam_? = '\x01';
   }
-  else {
-    unaff_EDI = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (pMVar1,prevSpawnRoleId,(MethodInfo *)0x0);
-    unaff_EBX = TypeInfo__ISpawnRoleRemote;
-    if (unaff_EDI == (MVWorldObject *)0x0) {
-      piVar3 = (int *)0x0;
-    }
-    else {
-      piVar3 = (int *)func_?(unaff_EDI,TypeInfo__ISpawnRoleRemote);
-      if (piVar3 == (int *)0x0) goto code_?;
-    }
+  pDVar2 = (pMVar1->fields).worldObjects;
+  pOStack_3 = (Object *)0x0;
+  if (pDVar2 == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) goto code_?;
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+  Dictionary_2_System_Int32_System_Object__TryGetValue
+            ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,prevSpawnRoleId,&pOStack_3,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+            );
+  pOVar4 = pOStack_3;
+  pIVar5 = TypeInfo__ISpawnRoleRemote;
+  if (pOStack_3 == (Object *)0x0) {
+    piVar6 = (int *)0x0;
+code_?:
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (pMVar1 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    unaff_EDI = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (pMVar1,newSpawnRoleId,(MethodInfo *)0x0);
-    pIVar2 = TypeInfo__ISpawnRoleRemote;
-    if (piVar3 == (int *)0x0) goto code_?;
-    uVar4 = 0;
-    if (*(ushort *)(*piVar3 + 0xb6) != 0) {
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                     );
+      cRam_? = '\x01';
+    }
+    pDVar2 = (pMVar1->fields).worldObjects;
+    pOStack_3 = (Object *)0x0;
+    if (pDVar2 == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__TryGetValue
+              ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,newSpawnRoleId,&pOStack_3,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+              );
+    pOVar4 = pOStack_3;
+    if (piVar6 == (int *)0x0) goto code_?;
+    uVar7 = 0;
+    if (*(ushort *)(*piVar6 + 0xb6) != 0) {
       do {
-        if (*(ISpawnRoleRemote__Class **)(*(int *)(*piVar3 + 0x58) + (uint)uVar4 * 8) ==
+        if (*(ISpawnRoleRemote__Class **)(*(int *)(*piVar6 + 0x58) + (uint)uVar7 * 8) ==
             TypeInfo__ISpawnRoleRemote) {
-          puVar5 = (undefined4 *)
-                   (*piVar3 + (*(int *)(*(int *)(*piVar3 + 0x58) + 4 + (uint)uVar4 * 8) + 0x19) * 8)
-          ;
+          puVar8 = (undefined4 *)
+                   (*piVar6 +
+                   (*(int *)(*(int *)(*piVar6 + 0x58) + 4 + (uint)uVar7 * 8) + 0x19) * 8);
           goto code_?;
         }
-        uVar4 = uVar4 + 1;
-      } while (uVar4 < *(ushort *)(*piVar3 + 0xb6));
+        uVar7 = uVar7 + 1;
+      } while (uVar7 < *(ushort *)(*piVar6 + 0xb6));
     }
-    puVar5 = (undefined4 *)func_?(piVar3,TypeInfo__ISpawnRoleRemote);
+    puVar8 = (undefined4 *)func_?(piVar6,TypeInfo__ISpawnRoleRemote,1,0);
 code_?:
-    (*(code *)*puVar5)(piVar3,newSpawnRoleId);
-    unaff_EBX = pIVar2;
-    if (unaff_EDI == (MVWorldObject *)0x0) goto code_?;
-    iVar6 = func_?(unaff_EDI);
-    if (iVar6 != 0) {
-      piVar3 = (int *)func_?(unaff_EDI);
-      pIVar2 = (ISpawnRoleRemote__Class *)0x0;
-      if (piVar3 != (int *)0x0) {
-        uVar7 = 0;
-        uVar4 = *(ushort *)(*piVar3 + 0xb6);
-        if (uVar4 != 0) {
+    (*(code *)*puVar8)(piVar6,newSpawnRoleId,puVar8[1]);
+    pIVar5 = TypeInfo__ISpawnRoleRemote;
+    if (pOVar4 == (Object *)0x0) goto code_?;
+    iVar9 = func_?(pOVar4,TypeInfo__ISpawnRoleRemote);
+    pIVar10 = TypeInfo__ISpawnRoleRemote;
+    if (iVar9 != 0) {
+      piVar6 = (int *)func_?(pOVar4,TypeInfo__ISpawnRoleRemote);
+      pIVar5 = pIVar10;
+      if (piVar6 != (int *)0x0) {
+        uVar11 = 0;
+        uVar7 = *(ushort *)(*piVar6 + 0xb6);
+        if (uVar7 != 0) {
           do {
-            if (*(ISpawnRoleRemote__Class **)(*(int *)(*piVar3 + 0x58) + (uint)uVar7 * 8) ==
+            if (*(ISpawnRoleRemote__Class **)(*(int *)(*piVar6 + 0x58) + (uint)uVar11 * 8) ==
                 TypeInfo__ISpawnRoleRemote) {
-              puVar5 = (undefined4 *)
-                       (*piVar3 + *(int *)(*(int *)(*piVar3 + 0x58) + 4 + (uint)uVar7 * 8) * 8 +
+              puVar8 = (undefined4 *)
+                       (*piVar6 + *(int *)(*(int *)(*piVar6 + 0x58) + 4 + (uint)uVar11 * 8) * 8 +
                        0xc0);
               goto code_?;
             }
-            uVar7 = uVar7 + 1;
-          } while (uVar7 < uVar4);
+            uVar11 = uVar11 + 1;
+          } while (uVar11 < uVar7);
         }
-        puVar5 = (undefined4 *)func_?(piVar3,TypeInfo__ISpawnRoleRemote);
+        puVar8 = (undefined4 *)func_?(piVar6,TypeInfo__ISpawnRoleRemote,0);
 code_?:
-        (*(code *)*puVar5)(piVar3,prevSpawnRoleId,position._0_8_,position.z,rotation.x,rotation.y,
-                           rotation.z,rotation.w);
+        (*(code *)*puVar8)(piVar6,prevSpawnRoleId,position._0_8_,position.z,rotation.x,rotation.y,
+                           rotation.z,rotation.w,puVar8[1]);
         return;
       }
     }
   }
-  func_?(unaff_EDI);
-  unaff_EBX = pIVar2;
+  else {
+    piVar6 = (int *)func_?(pOStack_3,TypeInfo__ISpawnRoleRemote);
+    if (piVar6 != (int *)0x0) goto code_?;
+    func_?(pOVar4,pIVar5);
+    pIVar5 = (ISpawnRoleRemote__Class *)0x0;
+  }
+  func_?(pOVar4,pIVar5);
 code_?:
-  func_?(unaff_EDI,unaff_EBX);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

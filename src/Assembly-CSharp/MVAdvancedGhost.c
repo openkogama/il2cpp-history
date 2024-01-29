@@ -61,7 +61,6 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_GameStateChanged
                (MVAdvancedGhost *this,UpdateCondition__Enum condition,MethodInfo *method)
 
 {
-  isPlayMode = condition != UpdateCondition__Enum_EDITOR;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&TypeInfo__UnityEngine__Object);
@@ -77,8 +76,8 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_GameStateChanged
   if (bVar2 != 0) {
     pAVar1 = (this->fields).advancedGhostIcon;
     if (pAVar1 == (AdvancedGhostIcon *)0x0) goto code_?;
-    (pAVar1->fields).wantsVisible = !isPlayMode;
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    (pAVar1->fields).wantsVisible = condition == UpdateCondition__Enum_EDITOR;
+    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)pAVar1,(MethodInfo *)0x0);
     if ((pAVar1->fields).wantsVisible == 0) {
       bVar2 = 0;
@@ -86,48 +85,56 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_GameStateChanged
     else {
       bVar2 = (pAVar1->fields).visible;
     }
-    if (this_01 == (GameObject *)0x0) goto code_?;
+    if (this_02 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (this_01,bVar2 != 0,(MethodInfo *)0x0);
+              (this_02,bVar2 != 0,(MethodInfo *)0x0);
   }
   this_00 = (this->fields).advancedGhostBehaviour;
   if (this_00 != (AdvancedGhostBehaviour *)0x0) {
-    AdvancedGhostBehaviour::AdvancedGhostBehaviour_SetGameMode(this_00,isPlayMode,(MethodInfo *)0x0)
-    ;
-    if (!isPlayMode) {
+    if (condition == UpdateCondition__Enum_EDITOR) {
+      (this_00->fields).wantsVisible = 0;
+      AdvancedGhostBehaviour::AdvancedGhostBehaviour_SetVisible(this_00,(MethodInfo *)0x0);
       return;
     }
-    pAVar3 = (this->fields).editableCubeModelWrapper;
-    if (pAVar3 != (AdvancedGhostCubeModelWrapper *)0x0) {
-      if ((pAVar3->fields).cubeModelIsBeingEdited == 0) {
-        return;
-      }
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                ((Object *)StringLiteral_Todo__Fix_this_hack__This_is_sim,(MethodInfo *)0x0);
-      pAVar3 = (this->fields).editableCubeModelWrapper;
-      if (pAVar3 != (AdvancedGhostCubeModelWrapper *)0x0) {
-        AdvancedGhostCubeModelWrapper::AdvancedGhostCubeModelWrapper_ExitEdit
-                  (pAVar3,(MethodInfo *)0x0);
-        pAVar3 = (this->fields).editableCubeModelWrapper;
-        if (((pAVar3 != (AdvancedGhostCubeModelWrapper *)0x0) &&
-            (pMVar4 = (pAVar3->fields)._.cubeModelBase, pMVar4 != (MVCubeModelInstance *)0x0)) &&
-           ((pMVar4->fields)._._.gameObject != (GameObject *)0x0)) {
-          if (pcRam_? == (code *)0x0) {
-            pcRam_? = (code *)func_?();
-          }
-          (*pcRam_?)();
+    AdvancedGhostBehaviour::AdvancedGhostBehaviour_SetInitialState(this_00,(MethodInfo *)0x0);
+    pAVar3 = (this_00->fields).perception;
+    if ((pAVar3 != (AdvancedGhostBehaviour_AdvancedGhostPerception *)0x0) &&
+       (this_01 = (pAVar3->fields).syncedInterval, this_01 != (DeterministicSyncedInterval *)0x0)) {
+      DeterministicSyncedInterval::DeterministicSyncedInterval_Update(this_01,(MethodInfo *)0x0);
+      (this_00->fields).wantsVisible = 1;
+      AdvancedGhostBehaviour::AdvancedGhostBehaviour_SetVisible(this_00,(MethodInfo *)0x0);
+      pAVar4 = (this->fields).editableCubeModelWrapper;
+      if (pAVar4 != (AdvancedGhostCubeModelWrapper *)0x0) {
+        if ((pAVar4->fields).cubeModelIsBeingEdited == 0) {
           return;
+        }
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+                  ((Object *)StringLiteral_Todo__Fix_this_hack__This_is_sim,(MethodInfo *)0x0);
+        pAVar4 = (this->fields).editableCubeModelWrapper;
+        if (pAVar4 != (AdvancedGhostCubeModelWrapper *)0x0) {
+          AdvancedGhostCubeModelWrapper::AdvancedGhostCubeModelWrapper_ExitEdit
+                    (pAVar4,(MethodInfo *)0x0);
+          pAVar4 = (this->fields).editableCubeModelWrapper;
+          if (((pAVar4 != (AdvancedGhostCubeModelWrapper *)0x0) &&
+              (pMVar5 = (pAVar4->fields)._.cubeModelBase, pMVar5 != (MVCubeModelInstance *)0x0)) &&
+             ((pMVar5->fields)._._.gameObject != (GameObject *)0x0)) {
+            if (pcRam_? == (code *)0x0) {
+              pcRam_? = (code *)func_?();
+            }
+            (*pcRam_?)();
+            return;
+          }
         }
       }
     }
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -186,8 +193,8 @@ Vector3 * Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_GetTargetPositio
       uVar3._4_4_ = pVVar1->y;
       fVar4 = pVVar1->z;
       if (cRam_? == '\0') {
-        VStack_2.x = 3.348165e-29;
-        VStack_2.y = 2.441097e-28;
+        VStack_2.x = 3.3501344e-29;
+        VStack_2.y = 2.4480698e-28;
         func_?();
         cRam_? = '\x01';
       }
@@ -479,16 +486,18 @@ bool Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_IsOnSameTeam
                (MVAdvancedGhost *this,MVTeam__Enum team,MethodInfo *method)
 
 {
-  this_00 = (this->fields).advancedGhostBehaviour;
-  if (this_00 != (AdvancedGhostBehaviour *)0x0) {
-    MVar1 = AdvancedGhostBehaviour::AdvancedGhostBehaviour_get_Team(this_00,(MethodInfo *)0x0);
-    return MVar1 == team;
+  puStack_1 = &stack0xfffffffc;
+  pAVar2 = (this->fields).advancedGhostBehaviour;
+  if ((pAVar2 != (AdvancedGhostBehaviour *)0x0) &&
+     (pAVar3 = (pAVar2->fields).perception,
+     pAVar3 != (AdvancedGhostBehaviour_AdvancedGhostPerception *)0x0)) {
+    return (pAVar3->fields).alliedTeam == team;
   }
-  uVar2 = func_?(&puStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  uVar4 = func_?(auStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  bVar7 = (*pcVar6)();
+  return bVar7;
 }
 
 
@@ -529,66 +538,95 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_OnDataUpdate
   pAVar2 = (this->fields).advancedGhostBehaviour;
   if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
     TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (pDVar1,(Object *)StringLiteral_Speed,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar1,(Object *)StringLiteral_Speed,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
     uVar4 = CONCAT44(TypeInfo__System__Single,TVar3.m_Index);
     if ((pAVar2 != (AdvancedGhostBehaviour *)0x0) && (TVar3.m_Index != 0)) {
       if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
           (TypeInfo__System__Single->_0).element_class) goto code_?;
-      pfVar5 = (float *)func_?(TVar3.m_Index);
-      AdvancedGhostBehaviour::AdvancedGhostBehaviour_set_Speed(pAVar2,*pfVar5,(MethodInfo *)0x0);
+      puVar5 = (undefined4 *)func_?();
+      this = (MVAdvancedGhost *)*puVar5;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+                ObscuredFloat_op_Implicit
+                          ((ObscuredFloat *)&stack0xffffffe4,(float)this,(MethodInfo *)0x0);
+      AVar7 = pOVar6->hiddenValue;
+      pBVar8 = pOVar6->hiddenValueOld;
+      fVar9 = pOVar6->fakeValue;
+      bVar10 = pOVar6->inited;
+      uVar11 = *(undefined3 *)&pOVar6->field_0x11;
+      (pAVar2->fields).speed.currentCryptoKey = pOVar6->currentCryptoKey;
+      (pAVar2->fields).speed.hiddenValue = AVar7;
+      (pAVar2->fields).speed.hiddenValueOld = pBVar8;
+      (pAVar2->fields).speed.fakeValue = fVar9;
+      (pAVar2->fields).speed.inited = bVar10;
+      *(undefined3 *)&(pAVar2->fields).speed.field_0x11 = uVar11;
+      func_?(&(pAVar2->fields).speed.hiddenValueOld);
+      fVar9 = (pAVar2->fields).minPerceptionRadius;
+      this = (MVAdvancedGhost *)
+             Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+             ObscuredFloat_op_Implicit_1((pAVar2->fields).speed,(MethodInfo *)0x0);
+      (pAVar2->fields).perceptionRadius =
+           (float)this * (pAVar2->fields).speedPerceptionFactor + fVar9;
       pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                (this_01->fields)._._._._.data;
       pAVar2 = (this_01->fields).advancedGhostBehaviour;
       if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
         TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          (pDVar1,(Object *)StringLiteral_Radius,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
+                 ::UIElements::TextureId]::
+                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                           (pDVar1,(Object *)StringLiteral_Radius,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                           );
         uVar4 = CONCAT44(TypeInfo__System__Single,TVar3.m_Index);
         if ((pAVar2 != (AdvancedGhostBehaviour *)0x0) && (TVar3.m_Index != 0)) {
           if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
               (TypeInfo__System__Single->_0).element_class) goto code_?;
-          pfVar5 = (float *)func_?(TVar3.m_Index);
-          (pAVar2->fields).radius = *pfVar5;
-          pAVar6 = (this_01->fields).advancedGhostIcon;
+          pfVar12 = (float *)func_?(TVar3.m_Index);
+          (pAVar2->fields).radius = *pfVar12;
+          pAVar13 = (this_01->fields).advancedGhostIcon;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Object);
           }
-          bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                            ((Object_1 *)pAVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar7 == 0) goto code_?;
+          bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                             ((Object_1 *)pAVar13,(Object_1 *)0x0,(MethodInfo *)0x0);
+          if (bVar10 == 0) goto code_?;
           pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                    (this_01->fields)._._._._.data;
-          pAVar6 = (this_01->fields).advancedGhostIcon;
+          pAVar13 = (this_01->fields).advancedGhostIcon;
           if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
             TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,UnityEngine::UIElements::TextureId]::
-                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                              (pDVar1,(Object *)StringLiteral_Radius,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                              );
+                     Object,UnityEngine::UIElements::TextureId]::
+                     Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                               (pDVar1,(Object *)StringLiteral_Radius,
+                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                               );
             uVar4 = CONCAT44(TypeInfo__System__Single,TVar3.m_Index);
-            if ((pAVar6 != (AdvancedGhostIcon *)0x0) && (TVar3.m_Index != 0)) {
+            if ((pAVar13 != (AdvancedGhostIcon *)0x0) && (TVar3.m_Index != 0)) {
               if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
                   (TypeInfo__System__Single->_0).element_class) goto code_?;
-              puVar8 = (undefined4 *)func_?(TVar3.m_Index);
-              this = (MVAdvancedGhost *)*puVar8;
-              MVar9 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-              if (MVar9 == MVGameMode__Enum_Edit) {
-                this_00 = (pAVar6->fields).lineRangeIndicator;
+              puVar5 = (undefined4 *)func_?(TVar3.m_Index);
+              this = (MVAdvancedGhost *)*puVar5;
+              MVar14 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+              if (MVar14 == MVGameMode__Enum_Edit) {
+                this_00 = (pAVar13->fields).lineRangeIndicator;
                 if (this_00 == (LineRangeIndicator *)0x0) goto code_?;
                 LineRangeIndicator::LineRangeIndicator_SetRange
                           (this_00,(float)this,(MethodInfo *)0x0);
               }
 code_?:
-              MVar10 = MVAdvancedGhost_get_Team(this_01,(MethodInfo *)0x0);
-              if (MVar10 == MVTeam__Enum_None) {
+              MVar15 = MVAdvancedGhost_get_Team(this_01,(MethodInfo *)0x0);
+              if (MVar15 == MVTeam__Enum_None) {
                 this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                            *)func_?(
                                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
@@ -623,66 +661,75 @@ code_?:
                 }
               }
               else {
-                MVar10 = MVAdvancedGhost_get_Team(this_01,(MethodInfo *)0x0);
-                pAVar11 = (this_01->fields).advGhostObject;
-                if ((pAVar11 != (AdvancedGhostObject *)0x0) &&
-                   (pAVar12 = (pAVar11->fields).tintObject, pAVar12 != (AdvancedGhostTintObject *)0x0))
+                MVar15 = MVAdvancedGhost_get_Team(this_01,(MethodInfo *)0x0);
+                pAVar16 = (this_01->fields).advGhostObject;
+                if ((pAVar16 != (AdvancedGhostObject *)0x0) &&
+                   (pAVar17 = (pAVar16->fields).tintObject, pAVar17 != (AdvancedGhostTintObject *)0x0))
                 {
-                  (*(code *)(pAVar12->klass->vtable).TeamTint.method)(pAVar12,MVar10);
+                  (*(code *)(pAVar17->klass->vtable).TeamTint.method)
+                            (pAVar17,MVar15,(pAVar17->klass->vtable).Tint_1.methodPtr);
                   pAVar2 = (this_01->fields).advancedGhostBehaviour;
-                  if (pAVar2 != (AdvancedGhostBehaviour *)0x0) {
-                    AdvancedGhostBehaviour::AdvancedGhostBehaviour_set_Team
-                              (pAVar2,MVar10,(MethodInfo *)0x0);
-                    pCVar13 = (this_01->fields).interactionHandler;
-                    if (pCVar13 != (ClientSideNPCInteractionHandler *)0x0) {
-                      (pCVar13->fields).team = MVar10;
-                      MVar9 = MVGameControllerBase::MVGameControllerBase_get_GameMode
-                                         ((MethodInfo *)0x0);
-                      if (MVar9 == MVGameMode__Enum_Edit) {
-                        pAVar6 = (this_01->fields).advancedGhostIcon;
-                        if (pAVar6 == (AdvancedGhostIcon *)0x0) goto code_?;
-                        AdvancedGhostIcon::AdvancedGhostIcon_set_Team
-                                  (pAVar6,MVar10,(MethodInfo *)0x0);
-                      }
+                  if ((pAVar2 != (AdvancedGhostBehaviour *)0x0) &&
+                     (pAVar18 = (pAVar2->fields).perception,
+                     pAVar18 != (AdvancedGhostBehaviour_AdvancedGhostPerception *)0x0)) {
+                    (pAVar18->fields).alliedTeam = MVar15;
+                    pAVar19 = (pAVar2->fields).weapon;
+                    if (pAVar19 != (AdvancedGhostBodyRotateWeapon *)0x0) {
+                      (pAVar19->fields).alliedTeam = MVar15;
+                      pCVar20 = (this_01->fields).interactionHandler;
+                      if (pCVar20 != (ClientSideNPCInteractionHandler *)0x0) {
+                        (pCVar20->fields).team = MVar15;
+                        MVar14 = MVGameControllerBase::MVGameControllerBase_get_GameMode
+                                           ((MethodInfo *)0x0);
+                        if (MVar14 == MVGameMode__Enum_Edit) {
+                          pAVar13 = (this_01->fields).advancedGhostIcon;
+                          if (pAVar13 == (AdvancedGhostIcon *)0x0) goto code_?;
+                          AdvancedGhostIcon::AdvancedGhostIcon_set_Team
+                                    (pAVar13,MVar15,(MethodInfo *)0x0);
+                        }
 code_?:
-                      pAVar2 = (this_01->fields).advancedGhostBehaviour;
-                      if (pAVar2 != (AdvancedGhostBehaviour *)0x0) {
-                        AdvancedGhostBehaviour::AdvancedGhostBehaviour_set_Lives
-                                  (pAVar2,-1,(MethodInfo *)0x0);
-                        pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                 (this_01->fields)._._._._.data;
-                        if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
-                                       *)0x0) {
-                          bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                  Object,UnityEngine::UIElements::TextureId]::
-                                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                            (pDVar1,(Object *)StringLiteral_Lives,
-                                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                            );
-                          if (bVar7 == 0) {
-                            return;
-                          }
+                        pAVar2 = (this_01->fields).advancedGhostBehaviour;
+                        if (pAVar2 != (AdvancedGhostBehaviour *)0x0) {
+                          (pAVar2->fields).lives = -1;
+                          (pAVar2->fields).maxLives = -1;
                           pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                                    (this_01->fields)._._._._.data;
-                          pAVar2 = (this_01->fields).advancedGhostBehaviour;
                           if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
                                          *)0x0) {
-                            TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System
-                                    ::Object,UnityEngine::UIElements::TextureId]::
-                                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                              (pDVar1,(Object *)StringLiteral_Lives,
-                                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                              );
-                            uVar4 = CONCAT44(TypeInfo__System__Int32,TVar3.m_Index);
-                            if ((pAVar2 != (AdvancedGhostBehaviour *)0x0) && (TVar3.m_Index != 0)) {
-                              if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
-                                  (TypeInfo__System__Int32->_0).element_class) {
-                                piVar14 = (int32_t *)func_?(TVar3.m_Index);
-                                AdvancedGhostBehaviour::AdvancedGhostBehaviour_set_Lives
-                                          (pAVar2,*piVar14,(MethodInfo *)0x0);
-                                return;
+                            bVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System
+                                     ::Object,UnityEngine::UIElements::TextureId]::
+                                     Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                                               (pDVar1,(Object *)StringLiteral_Lives,
+                                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                               );
+                            if (bVar10 == 0) {
+                              return;
+                            }
+                            pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *
+                                     )(this_01->fields)._._._._.data;
+                            pAVar2 = (this_01->fields).advancedGhostBehaviour;
+                            if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                           *)0x0) {
+                              TVar3 = mscorlib.dll::System::Collections::Generic::
+                                       Dictionary`2[System::Object,UnityEngine::UIElements::
+                                       TextureId]::
+                                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                                 (pDVar1,(Object *)StringLiteral_Lives,
+                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                                 );
+                              uVar4 = CONCAT44(TypeInfo__System__Int32,TVar3.m_Index);
+                              if ((pAVar2 != (AdvancedGhostBehaviour *)0x0) && (TVar3.m_Index != 0)
+                                 ) {
+                                if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
+                                    (TypeInfo__System__Int32->_0).element_class) {
+                                  piVar21 = (int32_t *)func_?();
+                                  iVar22 = *piVar21;
+                                  (pAVar2->fields).lives = iVar22;
+                                  (pAVar2->fields).maxLives = iVar22;
+                                  return;
+                                }
+                                goto code_?;
                               }
-                              goto code_?;
                             }
                           }
                         }
@@ -701,8 +748,8 @@ code_?:
   uVar4 = func_?();
 code_?:
   func_?(uVar4);
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 
@@ -858,13 +905,22 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_OnPositionChanged
 {
   this_00 = (this->fields).advancedGhostBehaviour;
   if (this_00 != (AdvancedGhostBehaviour *)0x0) {
-    AdvancedGhostBehaviour::AdvancedGhostBehaviour_EditModeUpdateCulling(this_00,(MethodInfo *)0x0);
-    return;
+    this_01 = (this_00->fields).cullingSubscriberBase;
+    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this_00,(MethodInfo *)0x0);
+    if (this_02 != (Transform *)0x0) {
+      pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                         ((Vector3 *)&stack0xfffffff0,this_02,(MethodInfo *)0x0);
+      if (this_01 != (CullingSubscriberBase *)0x0) {
+        CullingSubscriberBase::CullingSubscriberBase_set_Position(this_01,*pVVar1,(MethodInfo *)0x0)
+        ;
+        return;
+      }
+    }
   }
-  uVar1 = func_?(&puStack_2);
-  func_?(uVar1);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -882,18 +938,43 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_ReceiveDamage
   }
   if (0.0 < amount) {
     pAVar1 = (this->fields).advancedGhostBehaviour;
-    if (pAVar1 == (AdvancedGhostBehaviour *)0x0) goto code_?;
-    AdvancedGhostBehaviour::AdvancedGhostBehaviour_ReceivedDamage(pAVar1,(MethodInfo *)0x0);
+    if (((pAVar1 == (AdvancedGhostBehaviour *)0x0) ||
+        (pAVar2 = (pAVar1->fields).GhostVisualization, pAVar2 == (AdvancedGhostVisualizaton *)0x0))
+       || (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)pAVar2,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0))
+    goto code_?;
+    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+                      (pGVar3,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
+      this_01 = (pAVar2->fields).receiveDamage;
+      if (this_01 == (AudioSource *)0x0) goto code_?;
+      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play
+                (this_01,(MethodInfo *)0x0);
+      this_00 = (pAVar2->fields).blinker;
+joined_?:
+      if (this_00 == (AdvancedGhostBlinker *)0x0) goto code_?;
+      BlinkerBase::BlinkerBase_StartBlinking
+                ((BlinkerBase *)this_00,in_stack_5,in_stack_6,in_stack_7);
+    }
   }
   else if (amount < 0.0) {
     pAVar1 = (this->fields).advancedGhostBehaviour;
-    if (pAVar1 == (AdvancedGhostBehaviour *)0x0) goto code_?;
-    AdvancedGhostBehaviour::AdvancedGhostBehaviour_ReceivedHealing(pAVar1,(MethodInfo *)0x0);
+    if (((pAVar1 == (AdvancedGhostBehaviour *)0x0) ||
+        (pAVar2 = (pAVar1->fields).GhostVisualization, pAVar2 == (AdvancedGhostVisualizaton *)0x0))
+       || (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)pAVar2,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0))
+    goto code_?;
+    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+                      (pGVar3,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
+      this_00 = (pAVar2->fields).blinker;
+      goto joined_?;
+    }
   }
-  this_00 = (this->fields).interactable;
-  if (this_00 != (ClientSideNPCInteractable *)0x0) {
-    bVar2 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead(this_00,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
+  this_02 = (this->fields).interactable;
+  if (this_02 != (ClientSideNPCInteractable *)0x0) {
+    bVar4 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead(this_02,(MethodInfo *)0x0);
+    if (bVar4 == 0) {
       return;
     }
     ignoreIDs = MVWorldObjectClient::MVWorldObjectClient_get_WorldIDsRecursive
@@ -902,19 +983,18 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_ReceiveDamage
       func_?();
       cRam_? = '\x01';
     }
-    pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar3 != (PrefabPool *)0x0) {
-      particlePrefab = (pPVar3->fields).particleExplosion;
+    pPVar8 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar8 != (PrefabPool *)0x0) {
+      particlePrefab = (pPVar8->fields).particleExplosion;
       pAVar1 = (this->fields).advancedGhostBehaviour;
       if (((pAVar1 != (AdvancedGhostBehaviour *)0x0) &&
-          (this_01 = (pAVar1->fields).GhostVisualization,
-          this_01 != (AdvancedGhostVisualizaton *)0x0)) &&
-         (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)this_01,(MethodInfo *)0x0), this_02 != (Transform *)0x0)
-         ) {
-        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                           ((Vector3 *)&stack0xffffffe8,this_02,(MethodInfo *)0x0);
-        position = *pVVar4;
+          (pAVar2 = (pAVar1->fields).GhostVisualization, pAVar2 != (AdvancedGhostVisualizaton *)0x0)
+          ) && (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_transform((Component *)pAVar2,(MethodInfo *)0x0),
+               this_03 != (Transform *)0x0)) {
+        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                           ((Vector3 *)&stack0xffffffe8,this_03,(MethodInfo *)0x0);
+        position = *pVVar9;
         if ((TypeInfo__SharedWorldObjectGameplayFunctions__Explosion->_1).cctor_finished_or_no_cctor
             == 0) {
           func_?();
@@ -929,8 +1009,8 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_ReceiveDamage
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -995,7 +1075,7 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_SetGameMode
     pAVar1 = (this->fields).advancedGhostIcon;
     if (pAVar1 == (AdvancedGhostIcon *)0x0) goto code_?;
     (pAVar1->fields).wantsVisible = isPlayMode ^ 1;
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)pAVar1,(MethodInfo *)0x0);
     if ((pAVar1->fields).wantsVisible == 0) {
       bVar2 = 0;
@@ -1003,48 +1083,56 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_SetGameMode
     else {
       bVar2 = (pAVar1->fields).visible;
     }
-    if (this_01 == (GameObject *)0x0) goto code_?;
+    if (this_02 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (this_01,bVar2 != 0,(MethodInfo *)0x0);
+              (this_02,bVar2 != 0,(MethodInfo *)0x0);
   }
   this_00 = (this->fields).advancedGhostBehaviour;
   if (this_00 != (AdvancedGhostBehaviour *)0x0) {
-    AdvancedGhostBehaviour::AdvancedGhostBehaviour_SetGameMode(this_00,isPlayMode,(MethodInfo *)0x0)
-    ;
     if (isPlayMode == 0) {
+      (this_00->fields).wantsVisible = 0;
+      AdvancedGhostBehaviour::AdvancedGhostBehaviour_SetVisible(this_00,(MethodInfo *)0x0);
       return;
     }
-    pAVar3 = (this->fields).editableCubeModelWrapper;
-    if (pAVar3 != (AdvancedGhostCubeModelWrapper *)0x0) {
-      if ((pAVar3->fields).cubeModelIsBeingEdited == 0) {
-        return;
-      }
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                ((Object *)StringLiteral_Todo__Fix_this_hack__This_is_sim,(MethodInfo *)0x0);
-      pAVar3 = (this->fields).editableCubeModelWrapper;
-      if (pAVar3 != (AdvancedGhostCubeModelWrapper *)0x0) {
-        AdvancedGhostCubeModelWrapper::AdvancedGhostCubeModelWrapper_ExitEdit
-                  (pAVar3,(MethodInfo *)0x0);
-        pAVar3 = (this->fields).editableCubeModelWrapper;
-        if (((pAVar3 != (AdvancedGhostCubeModelWrapper *)0x0) &&
-            (pMVar4 = (pAVar3->fields)._.cubeModelBase, pMVar4 != (MVCubeModelInstance *)0x0)) &&
-           ((pMVar4->fields)._._.gameObject != (GameObject *)0x0)) {
-          if (pcRam_? == (code *)0x0) {
-            pcRam_? = (code *)func_?();
-          }
-          (*pcRam_?)();
+    AdvancedGhostBehaviour::AdvancedGhostBehaviour_SetInitialState(this_00,(MethodInfo *)0x0);
+    pAVar3 = (this_00->fields).perception;
+    if ((pAVar3 != (AdvancedGhostBehaviour_AdvancedGhostPerception *)0x0) &&
+       (this_01 = (pAVar3->fields).syncedInterval, this_01 != (DeterministicSyncedInterval *)0x0)) {
+      DeterministicSyncedInterval::DeterministicSyncedInterval_Update(this_01,(MethodInfo *)0x0);
+      (this_00->fields).wantsVisible = 1;
+      AdvancedGhostBehaviour::AdvancedGhostBehaviour_SetVisible(this_00,(MethodInfo *)0x0);
+      pAVar4 = (this->fields).editableCubeModelWrapper;
+      if (pAVar4 != (AdvancedGhostCubeModelWrapper *)0x0) {
+        if ((pAVar4->fields).cubeModelIsBeingEdited == 0) {
           return;
+        }
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+                  ((Object *)StringLiteral_Todo__Fix_this_hack__This_is_sim,(MethodInfo *)0x0);
+        pAVar4 = (this->fields).editableCubeModelWrapper;
+        if (pAVar4 != (AdvancedGhostCubeModelWrapper *)0x0) {
+          AdvancedGhostCubeModelWrapper::AdvancedGhostCubeModelWrapper_ExitEdit
+                    (pAVar4,(MethodInfo *)0x0);
+          pAVar4 = (this->fields).editableCubeModelWrapper;
+          if (((pAVar4 != (AdvancedGhostCubeModelWrapper *)0x0) &&
+              (pMVar5 = (pAVar4->fields)._.cubeModelBase, pMVar5 != (MVCubeModelInstance *)0x0)) &&
+             ((pMVar5->fields)._._.gameObject != (GameObject *)0x0)) {
+            if (pcRam_? == (code *)0x0) {
+              pcRam_? = (code *)func_?();
+            }
+            (*pcRam_?)();
+            return;
+          }
         }
       }
     }
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -1060,26 +1148,32 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_SetTeam
      (pAVar2 = (pAVar1->fields).tintObject, pAVar2 != (AdvancedGhostTintObject *)0x0)) {
     (*(code *)(pAVar2->klass->vtable).TeamTint.method)
               (pAVar2,team,(pAVar2->klass->vtable).Tint_1.methodPtr);
-    this_00 = (this->fields).advancedGhostBehaviour;
-    if (this_00 != (AdvancedGhostBehaviour *)0x0) {
-      AdvancedGhostBehaviour::AdvancedGhostBehaviour_set_Team(this_00,team,(MethodInfo *)0x0);
-      pCVar3 = (this->fields).interactionHandler;
-      if (pCVar3 != (ClientSideNPCInteractionHandler *)0x0) {
-        (pCVar3->fields).team = team;
-        MVar4 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-        if (MVar4 == MVGameMode__Enum_Edit) {
-          this_01 = (this->fields).advancedGhostIcon;
-          if (this_01 == (AdvancedGhostIcon *)0x0) goto code_?;
-          AdvancedGhostIcon::AdvancedGhostIcon_set_Team(this_01,team,(MethodInfo *)0x0);
+    pAVar3 = (this->fields).advancedGhostBehaviour;
+    if ((pAVar3 != (AdvancedGhostBehaviour *)0x0) &&
+       (pAVar4 = (pAVar3->fields).perception,
+       pAVar4 != (AdvancedGhostBehaviour_AdvancedGhostPerception *)0x0)) {
+      (pAVar4->fields).alliedTeam = team;
+      pAVar5 = (pAVar3->fields).weapon;
+      if (pAVar5 != (AdvancedGhostBodyRotateWeapon *)0x0) {
+        (pAVar5->fields).alliedTeam = team;
+        pCVar6 = (this->fields).interactionHandler;
+        if (pCVar6 != (ClientSideNPCInteractionHandler *)0x0) {
+          (pCVar6->fields).team = team;
+          MVar7 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+          if (MVar7 == MVGameMode__Enum_Edit) {
+            this_00 = (this->fields).advancedGhostIcon;
+            if (this_00 == (AdvancedGhostIcon *)0x0) goto code_?;
+            AdvancedGhostIcon::AdvancedGhostIcon_set_Team(this_00,team,(MethodInfo *)0x0);
+          }
+          return;
         }
-        return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

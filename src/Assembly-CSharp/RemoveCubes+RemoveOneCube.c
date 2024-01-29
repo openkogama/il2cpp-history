@@ -66,7 +66,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_H
       pCStack_4 = (CubeBase *)&TypeInfo__MV__WorldObject__CubeBase;
       func_?();
       func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-      uVar1 = 0x1035;
+      uVar1 = 0x1036;
       func_?(&TypeInfo__MoveCubeFromCoarseToFine);
       cRam_? = '\x01';
     }
@@ -165,7 +165,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-    uVar1 = 0x1035;
+    uVar1 = 0x1036;
     func_?(&TypeInfo__MoveCubeFromCoarseToFine);
     cRam_? = '\x01';
   }
@@ -198,9 +198,9 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::
             (terrainWorldObject,fineGrainedTerrainWorldObject,IVar3,(MethodInfo *)0x0);
   uStack6 = 0;
   func_?();
-  uStack6 = 0x1035;
+  uStack6 = 0x1036;
   RemoveCubes_RemoveOneCube_TryRemoveCubeFromFineGrainedTerrain
-            ((IntVector)0x31035b9f6,fineGrainedTerrainWorldObject,(MethodInfo *)0x0);
+            ((IntVector)0x310360ee6,fineGrainedTerrainWorldObject,(MethodInfo *)0x0);
   return 1;
 }
 

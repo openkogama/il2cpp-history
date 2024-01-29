@@ -6,57 +6,44 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_ApplyInputVelocityChange
                     Vector3 inputDirection,MethodInfo *method)
 
 {
-  fVar1 = AvatarMotor_GetSpeed(this,(this->fields).speed,inputDirection,(MethodInfo *)0x0);
-  (this->fields).speed = fVar1;
-  fVar2 = (float10)func_?();
-  if ((float)fVar2 != 0.0) {
-    fVar2 = (float10)func_?();
-    fVar1 = inputDirection.z * fVar1 * _UNK_?;
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
-                      ((MethodInfo *)0x0);
-    fStack_4 = (float)fVar2 * fVar3 + velocity.z;
-    fStack_5 = fVar3 * 0.0 + velocity.x;
-    fVar3 = fVar1 * fVar3 + _UNK_?;
-    fVar2 = (float10)func_?();
-    fVar1 = (float)fVar2;
-    pfVar6 = &(this->fields).speed;
-    if (fStack_7 < fVar1 && (*pfVar6 <= fVar1 && fVar1 != *pfVar6)) {
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      dVar8 = (double)(fVar3 * fVar3 + fStack_5 * fStack_5 + fStack_4 * fStack_4);
-      if (dVar8 < 0.0) {
-        func_?();
-      }
-      else {
-        dVar8 = SQRT(dVar8);
-      }
-      fVar1 = (float)dVar8;
-      if (_UNK_? < fVar1) {
-        fStack_4 = fStack_4 / fVar1;
-        fVar1 = fStack_5 / fVar1;
-      }
-      else {
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        fVar1 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
-        fStack_4 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
-      }
-      fStack_4 = fStack_4 * fStack_7;
-      fStack_5 = fVar1 * fStack_7;
+  fStack_1 = AvatarMotor_GetSpeed(this,(this->fields).speed,inputDirection,(MethodInfo *)0x0);
+  VStack_2.z = inputDirection.z * fStack_1;
+  fStack_3 = inputDirection.y * fStack_1;
+  (this->fields).speed = fStack_1;
+  VStack_2.y = fStack_3;
+  VStack_2.x = inputDirection.x * fStack_1;
+  fStack_4 = VStack_2.z;
+  fVar5 = (float10)func_?();
+  fStack_1 = (float)fVar5;
+  if (fStack_1 != 0.0) {
+    VStack_2.z = velocity.z;
+    VStack_2._0_8_ = ZEXT48((uint)velocity.x);
+    fVar5 = (float10)func_?();
+    fVar6 = (float)&VStack_2 * _UNK_?;
+    fStack_1 = (float)fVar5;
+    fStack_3 = fStack_3 * _UNK_?;
+    fStack_4 = fStack_4 * _UNK_?;
+    fStack_7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+                          ((MethodInfo *)0x0);
+    VStack_2.z = fStack_4 * fStack_7 + velocity.z;
+    VStack_2._0_8_ = CONCAT44(fStack_3 * fStack_7 + _UNK_?,fVar6 * fStack_7 + velocity.x)
+    ;
+    fVar5 = (float10)func_?();
+    fStack_7 = (float)fVar5;
+    pfVar8 = &(this->fields).speed;
+    if (fStack_1 < fStack_7 && (*pfVar8 <= fStack_7 && fStack_7 != *pfVar8)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
+                (&VStack_2,(MethodInfo *)0x0);
+      VStack_2.z = VStack_2.z * fStack_1;
+      VStack_2._0_8_ = ZEXT48((uint)(VStack_2.x * fStack_1));
     }
-    velocity.x = fStack_5;
-    velocity.z = fStack_4;
+    velocity.x = VStack_2.x;
+    velocity.z = VStack_2.z;
   }
-  uRam_? = CONCAT44(velocity.y,velocity.x);
-  fRam00000008 = velocity.z;
-  return (Vector3 *)0x0;
+  __return_storage_ptr__->x = velocity.x;
+  __return_storage_ptr__->y = velocity.y;
+  __return_storage_ptr__->z = velocity.z;
+  return __return_storage_ptr__;
 }
 
 
@@ -67,126 +54,89 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_ApplyInputVelocityChange
                     Vector3 inputDirection,MethodInfo *method)
 
 {
-  method_00 = this;
-  AvatarMotor_GetSpeed(this,(this->fields).speed,inputDirection,(MethodInfo *)0x0);
-  VStack_1.x = (this->fields).velocityPrevFrame.x;
-  VStack_1.y = (this->fields).velocityPrevFrame.y;
-  VStack_1.z = (this->fields).velocityPrevFrame.z;
-  VStack_2._0_8_ = VStack_1._0_8_;
-  VStack_2.z = VStack_1.z;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  dVar3 = (double)(VStack_1.y * VStack_1.y + VStack_1.x * VStack_1.x +
-                   VStack_1.z * VStack_1.z);
-  if (dVar3 < 0.0) {
-    func_?();
-  }
-  else {
-    dVar3 = SQRT(dVar3);
-  }
-  fVar4 = (float)dVar3;
-  if (_UNK_? < fVar4) {
-    VStack_2.z = VStack_2.z / fVar4;
-    VStack_2.y = VStack_2.y / fVar4;
-    VStack_2.x = VStack_2.x / fVar4;
-    VStack_1.z = VStack_2.z;
-  }
-  else {
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
-    VStack_2.x = (pVVar5->zeroVector).x;
-    VStack_2.y = (pVVar5->zeroVector).y;
-    VStack_2.z = (pVVar5->zeroVector).z;
-  }
+  pMStack_1 = (MethodInfo *)
+               AvatarMotor_GetSpeed(this,(this->fields).speed,inputDirection,(MethodInfo *)0x0);
+  iVar2 = func_?();
+  dVar3 = (double)*(float *)(iVar2 + 4);
+  func_?();
   this_00 = (this->fields).slopeSpeedMultiplier;
   if (this_00 != (AnimationCurve *)0x0) {
-    dVar3 = (double)VStack_2.y;
-    func_?();
     fVar4 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                       (this_00,(float)dVar3 * _UNK_?,(MethodInfo *)method_00);
-    fVar4 = fVar4 * unaff_ESI;
-    (this->fields).speed = fVar4;
-    pMVar6 = (this->fields)._.groundState;
-    if (pMVar6 != (MVGroundState *)0x0) {
-      hVelocity.y = inputDirection.y * fVar4;
-      hVelocity.x = inputDirection.x * fVar4;
-      hVelocity.z = inputDirection.z * fVar4;
-      pVVar7 = MVRigidBody::MVRigidBody_AdjustGroundVelocityToNormal
-                         (&VStack_1,hVelocity,(pMVar6->fields).groundNormal,(MethodInfo *)0x0);
-      VStack_1.x = pVVar7->x;
-      VStack_1.y = pVVar7->y;
-      VStack_1.z = pVVar7->z;
-      fVar8 = VStack_1.x - velocity.x;
-      fStack_9 = velocity.x;
-      fStack_10 = 0.0;
-      uStack_11 = 0;
-      fStack_12 = 0.0;
-      fVar4 = VStack_1.y - velocity.y;
-      fVar13 = VStack_1.z - velocity.z;
-      pMVar6 = (this->fields)._.groundState;
-      pAVar14 = (this->fields).interactableLocal;
-      VStack_2._0_8_ = VStack_1._0_8_;
-      VStack_2.z = VStack_1.z;
-      if ((pMVar6 != (MVGroundState *)0x0) &&
-         (pMVar15 = (pMVar6->fields).groundMaterial, VStack_2.z = VStack_1.z,
-         pMVar15 != (MVMaterial *)0x0)) {
-        fStack_16 = (pMVar15->fields)._PhysicalProperties_k__BackingField.friction;
-        fStack_17 = (pMVar15->fields)._PhysicalProperties_k__BackingField.bouncyness;
-        fStack_18 = (pMVar15->fields)._PhysicalProperties_k__BackingField.softness;
-        fStack_19 = (pMVar15->fields)._PhysicalProperties_k__BackingField.staticFriction;
-        VStack_2.z = VStack_1.z;
-        if (pAVar14 != (AvatarInteractable *)0x0) {
-          pMVar20 = (pAVar14->klass->vtable).HandleModifierEffect.method;
-          VStack_2.z = VStack_1.z;
-          fVar21 = (float10)(*(code *)pMVar20)();
-          UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::Easing::
-          Easing_InQuad((float)fVar21,(MethodInfo *)0x0);
-          fVar22 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+                       (this_00,(float)dVar3 * _UNK_?,(MethodInfo *)0x0);
+    pMStack_1 = (MethodInfo *)(fVar4 * (float)pMStack_1);
+    fStack_5 = inputDirection.z * (float)pMStack_1;
+    (this->fields).speed = (float)pMStack_1;
+    uStack_6 = CONCAT44(inputDirection.y * (float)pMStack_1,inputDirection.x * (float)pMStack_1);
+    pMVar7 = (this->fields)._.groundState;
+    if (pMVar7 != (MVGroundState *)0x0) {
+      hVelocity.y = inputDirection.y * (float)pMStack_1;
+      hVelocity.x = inputDirection.x * (float)pMStack_1;
+      hVelocity.z = fStack_5;
+      pVVar8 = MVRigidBody::MVRigidBody_AdjustGroundVelocityToNormal
+                         (&VStack_9,hVelocity,(pMVar7->fields).groundNormal,(MethodInfo *)0x0);
+      uStack_10._0_4_ = pVVar8->x;
+      uStack_10._4_4_ = pVVar8->y;
+      fStack_11 = pVVar8->z;
+      fStack_12 = (float)(undefined4)uStack_10 - velocity.x;
+      VStack_9.x = velocity.x;
+      VStack_9.y = 0.0;
+      VStack_9.z = 0.0;
+      uStack_13 = 0;
+      fStack_14 = (float)uStack_10._4_4_ - velocity.y;
+      pMStack_15 = (MethodInfo *)(fStack_11 - velocity.z);
+      pMVar7 = (this->fields)._.groundState;
+      pAVar16 = (this->fields).interactableLocal;
+      uStack_6 = uStack_10;
+      fStack_5 = fStack_11;
+      if ((pMVar7 != (MVGroundState *)0x0) && ((pMVar7->fields).groundMaterial != (MVMaterial *)0x0)
+         ) {
+        if (pAVar16 != (AvatarInteractable *)0x0) {
+          pAVar17 = pAVar16->klass;
+          VStack_9.x = (float)(pAVar17->vtable).ClearModifiers.methodPtr;
+          pMStack_1 = (pAVar17->vtable).HandleModifierEffect.method;
+          fVar18 = (float10)(*(code *)pMStack_1)();
+          pMStack_1 = (MethodInfo *)(float)fVar18;
+          pMStack_1 = (MethodInfo *)
+                       UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
+                       Easing::Easing_InQuad((float)pMStack_1,(MethodInfo *)0x0);
+          fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                              ((MethodInfo *)0x0);
-          fVar22 = (fVar22 * (float)pMVar20) / _UNK_?;
-          fStack_9 = fStack_9 + fVar8 * fVar22;
-          fStack_17 = velocity.y + fVar4 * fVar22;
-          fVar4 = velocity.z + fVar13 * fVar22;
-          pMVar6 = (this->fields)._.groundState;
-          pAVar14 = (this->fields).interactableLocal;
-          fStack_18 = fStack_10;
-          fStack_19 = 0.0;
-          VStack_2.z = fVar4;
-          fStack_16 = fStack_9;
-          if ((pMVar6 != (MVGroundState *)0x0) &&
-             (pMVar15 = (pMVar6->fields).groundMaterial, pMVar15 != (MVMaterial *)0x0)) {
-            fStack_23 = (pMVar15->fields)._PhysicalProperties_k__BackingField.friction;
-            fStack_24 = (pMVar15->fields)._PhysicalProperties_k__BackingField.bouncyness;
-            if (pAVar14 != (AvatarInteractable *)0x0) {
-              fVar21 = (float10)(*(code *)(pAVar14->klass->vtable).HandleModifierEffect.method)();
-              fVar13 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
-                      Easing::Easing_InQuad((float)fVar21,(MethodInfo *)0x0);
-              if (fVar13 < _UNK_?) {
-                VStack_1.x = fVar13;
-                fVar21 = (float10)func_?();
-                VStack_1.x = (float)fVar21;
-                if ((float)fVar21 != _UNK_?) {
-                  fVar4 = VStack_1.z * _UNK_?;
-                  fVar13 = fStack_25 * _UNK_?;
-                  fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+          pMStack_1 = (MethodInfo *)((fVar4 * (float)pMStack_1) / _UNK_?);
+          fVar4 = VStack_9.x + fStack_12 * (float)pMStack_1;
+          fVar19 = velocity.y + fStack_14 * (float)pMStack_1;
+          fVar20 = velocity.z + (float)pMStack_15 * (float)pMStack_1;
+          pMVar7 = (this->fields)._.groundState;
+          pAVar16 = (this->fields).interactableLocal;
+          VStack_9.x = fVar4;
+          fStack_11 = fVar20;
+          fStack_21 = fVar19;
+          if ((pMVar7 != (MVGroundState *)0x0) &&
+             ((pMVar7->fields).groundMaterial != (MVMaterial *)0x0)) {
+            if (pAVar16 != (AvatarInteractable *)0x0) {
+              pMStack_15 = (pAVar16->klass->vtable).HandleModifierEffect.method;
+              fVar18 = (float10)(*(code *)pMStack_15)();
+              pMStack_15 = (MethodInfo *)(float)fVar18;
+              pMStack_15 = (MethodInfo *)
+                           UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
+                           Easing::Easing_InQuad((float)pMStack_15,(MethodInfo *)0x0);
+              if ((float)pMStack_15 < _UNK_?) {
+                fVar18 = (float10)func_?();
+                pMStack_15 = (MethodInfo *)(float)fVar18;
+                if ((float)pMStack_15 != _UNK_?) {
+                  fStack_14 = (float)uStack_6 * _UNK_?;
+                  fStack_12 = uStack_6._4_4_ * _UNK_?;
+                  pMStack_1 = (MethodInfo *)(fStack_5 * _UNK_?);
+                  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                                      ((MethodInfo *)0x0);
-                  __return_storage_ptr__->x = fStack_12 + VStack_1.x * fVar8;
-                  __return_storage_ptr__->y = VStack_1.z + fVar4 * fVar8;
-                  __return_storage_ptr__->z = fStack_10 + fVar13 * fVar8;
+                  __return_storage_ptr__->x = VStack_9.x + fStack_14 * fVar4;
+                  __return_storage_ptr__->y = fStack_21 + fStack_12 * fVar4;
+                  __return_storage_ptr__->z = fStack_11 + (float)pMStack_1 * fVar4;
                   return __return_storage_ptr__;
                 }
               }
-              __return_storage_ptr__->x = fStack_18;
-              __return_storage_ptr__->y = fStack_19;
-              __return_storage_ptr__->z = fVar4;
+              __return_storage_ptr__->x = fVar4;
+              __return_storage_ptr__->y = fVar19;
+              __return_storage_ptr__->z = fVar20;
               return __return_storage_ptr__;
             }
           }
@@ -195,9 +145,9 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_ApplyInputVelocityChange
     }
   }
   func_?();
-  pcVar26 = (code *)swi(3);
-  pVVar7 = (Vector3 *)(*pcVar26)();
-  return pVVar7;
+  pcVar22 = (code *)swi(3);
+  pVVar8 = (Vector3 *)(*pcVar22)();
+  return pVVar8;
 }
 
 
@@ -433,49 +383,21 @@ float Assembly-CSharp.dll::AvatarMotor::AvatarMotor_GetSpeedGrounded
                 (AvatarMotor *this,float currentSpeed,Vector3 inputDirection,MethodInfo *method)
 
 {
-  pAVar1 = this;
   AvatarMotor_GetSpeed(this,currentSpeed,inputDirection,(MethodInfo *)0x0);
-  uVar2 = (this->fields).velocityPrevFrame.x;
-  uVar3 = (this->fields).velocityPrevFrame.y;
-  fVar4 = (this->fields).velocityPrevFrame.z;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  dVar5 = (double)((float)uVar3 * (float)uVar3 + (float)uVar2 * (float)uVar2 + fVar4 * fVar4);
-  if (dVar5 < 0.0) {
-    func_?();
-  }
-  else {
-    dVar5 = SQRT(dVar5);
-  }
-  if (_UNK_? < (float)dVar5) {
-    this = (AvatarMotor *)((float)uVar3 / (float)dVar5);
-  }
-  else {
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    uVar6 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
-    this = (AvatarMotor *)uVar6;
-  }
-  this_00 = (pAVar1->fields).slopeSpeedMultiplier;
+  iVar1 = func_?();
+  dVar2 = (double)*(float *)(iVar1 + 4);
+  func_?();
+  this_00 = (this->fields).slopeSpeedMultiplier;
   if (this_00 != (AnimationCurve *)0x0) {
-    dVar5 = (double)(float)this;
-    method_00 = (MethodInfo *)0x0;
-    func_?();
-    fVar7 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (this_00,(float)dVar5 * _UNK_?,method_00);
-    return fVar7 * fVar4;
+    time = (float)dVar2 * _UNK_?;
+    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                      (this_00,time,(MethodInfo *)0x0);
+    return fVar3 * time;
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  fVar9 = (float10)(*pcVar8)();
-  return (float)fVar9;
+  pcVar4 = (code *)swi(3);
+  fVar5 = (float10)(*pcVar4)();
+  return (float)fVar5;
 }
 
 
@@ -567,7 +489,7 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_GetVelocity
                 velocity_01.z = fVar6;
                 pVVar3 = JumpState::JumpState_ApplyJumping
                                    ((Vector3 *)&stack0xffffffc8,this_01,
-                                    (MVInteractableBase *)interactableLocal,pMVar1,fVar5,fVar7,0xc5
+                                    (MVInteractableBase *)interactableLocal,pMVar1,fVar5,fVar7,0x35
                                     ,velocity_01,movableVelocity,(MethodInfo *)0x0);
                 pVVar3 = MVRigidBody::MVRigidBody_GetImpulse
                                    ((Vector3 *)&stack0xffffffc8,(MVRigidBody *)this,*pVVar3,
@@ -609,60 +531,39 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_HandleMovementBoost
     cRam_? = '\x01';
   }
   (this->fields).walkSpeed = (this->fields).walkSpeedBase;
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVNetworkGame *)0x0) {
-    pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-    if ((pMVar1 != (MVLocalPlayer *)0x0) &&
-       (pBVar2 = (pMVar1->fields).boostController, pBVar2 != (BoostController *)0x0)) {
-      if (cRam_? == '\0') {
-        func_?();
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Item_BoostType_
-                       );
-        cRam_? = '\x01';
-      }
-      pDVar3 = (pBVar2->fields).activeBoosts;
-      if (pDVar3 != (Dictionary_2_BoostType_Boost_ *)0x0) {
-        bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
-                          ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar3,1,
-                           MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__ContainsKey_BoostType_
-                          );
-        if (bVar4 == 0) {
-          func_?();
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (((this_01 != (MVNetworkGame *)0x0) &&
+      (pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0),
+      pMVar1 != (MVLocalPlayer *)0x0)) &&
+     (this_00 = (pMVar1->fields).boostController, this_00 != (BoostController *)0x0)) {
+    this_02 = (Boost__Class *)&stack0xfffffff8;
+    bVar2 = BoostController::BoostController_TryGetActiveBoost
+                      (this_00,BoostType__Enum_MovementSpeedFloatMultiplier,(Boost **)this_02,
+                       (MethodInfo *)0x0);
+    if (bVar2 == 0) {
+      return;
+    }
+    if (this_02 != (Boost__Class *)0x0) {
+      pOStack3 = Boost::Boost_get_Value((Boost *)this_02,(MethodInfo *)0x0);
+      uVar4 = CONCAT44(TypeInfo__System__Int32,pOStack3);
+      if (pOStack3 != (Object *)0x0) {
+        if ((pOStack3->klass->_0).element_class ==
+            (TypeInfo__System__Int32->_0).element_class) {
+          piVar5 = (int *)func_?();
+          (this->fields).walkSpeed =
+               ((float)*piVar5 / _UNK_? + _UNK_?) * 3.3755317e-29;
           return;
         }
-        pDVar3 = (pBVar2->fields).activeBoosts;
-        if (pDVar3 != (Dictionary_2_BoostType_Boost_ *)0x0) {
-          this_01 = (Boost *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                             Int32Enum,System::Object]::
-                             Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                       ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar3,1,
-                                        MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Item_BoostType_
-                                       );
-          func_?();
-          fVar5 = (this->fields).walkSpeedBase;
-          if (this_01 != (Boost *)0x0) {
-            pOVar6 = Boost::Boost_get_Value(this_01,(MethodInfo *)0x0);
-            if (pOVar6 != (Object *)0x0) {
-              if ((pOVar6->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class)
-              {
-                piVar7 = (int *)func_?();
-                (this->fields).walkSpeed = ((float)*piVar7 / _UNK_? + _UNK_?) * fVar5;
-                return;
-              }
-              goto code_?;
-            }
-          }
-        }
+        goto code_?;
       }
     }
   }
-  pOVar6 = (Object *)func_?();
+  uVar4 = func_?();
 code_?:
-  func_?(pOVar6);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  _puStack00000010 = uVar4;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

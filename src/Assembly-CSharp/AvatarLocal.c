@@ -18,21 +18,21 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_CreateXPParticlesWithLayer
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
   if ((pPVar1 != (PrefabPool *)0x0) &&
      (this_00 = (pPVar1->fields).enumPoolManager, this_00 != (EnumPoolManager *)0x0)) {
-    this_01 = (AvatarPooledXPParticles *)
+    this_02 = (Component *)
               EnumPoolManager::EnumPoolManager_Instantiate
                         (this_00,PoolEnums__Enum_XP,
                          AvatarPooledXPParticles_MethodInfo__EnumPoolManager__Instantiate<AvatarPooledXPParticles>_PoolEnums_
                         );
-    if (this_01 != (AvatarPooledXPParticles *)0x0) {
+    if (this_02 != (Component *)0x0) {
       pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)this_01,(MethodInfo *)0x0);
-      value = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)this,(MethodInfo *)0x0);
+                         (this_02,(MethodInfo *)0x0);
+      value_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)this,(MethodInfo *)0x0);
       if (pTVar2 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                  (pTVar2,value,(MethodInfo *)0x0);
+                  (pTVar2,value_00,(MethodInfo *)0x0);
         pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)this_01,(MethodInfo *)0x0);
+                           (this_02,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
@@ -42,7 +42,7 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_CreateXPParticlesWithLayer
                     (pTVar2,TypeInfo__UnityEngine__Vector3->static_fields->upVector,
                      (MethodInfo *)0x0);
           pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)this_01,(MethodInfo *)0x0);
+                             (this_02,(MethodInfo *)0x0);
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
@@ -52,7 +52,7 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_CreateXPParticlesWithLayer
                       (pTVar2,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
                        (MethodInfo *)0x0);
             pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                               ((Component *)this_01,(MethodInfo *)0x0);
+                               (this_02,(MethodInfo *)0x0);
             if (cRam_? == '\0') {
               func_?();
               cRam_? = '\x01';
@@ -61,14 +61,72 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_CreateXPParticlesWithLayer
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                         (pTVar2,TypeInfo__UnityEngine__Vector3->static_fields->oneVector,
                          (MethodInfo *)0x0);
-              this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  ((Component *)this_01,(MethodInfo *)0x0);
-              if (this_02 != (GameObject *)0x0) {
+              this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                  (this_02,(MethodInfo *)0x0);
+              if (this_03 != (GameObject *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-                          (this_02,0,(MethodInfo *)0x0);
-                AvatarPooledXPParticles::AvatarPooledXPParticles_Initialize
-                          (this_01,0,(MethodInfo *)0x0);
-                return;
+                          (this_03,layer,(MethodInfo *)0x0);
+                this_01 = (ParticleSystem *)this_02[1].monitor;
+                *(undefined1 *)&this_02[1].fields._.m_CachedPtr = 0;
+                if (this_01 != (ParticleSystem *)0x0) {
+                  UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+                  ParticleSystem_Stop_2(this_01,(MethodInfo *)0x0);
+                  if ((ParticleSystem *)this_02[1].monitor != (ParticleSystem *)0x0) {
+                    PStack_3.m_ParticleSystem =
+                         (ParticleSystem *)
+                         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+                         ParticleSystem_get_collision
+                                   ((ParticleSystem *)this_02[1].monitor,(MethodInfo *)0x0);
+                    pPVar4 = UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                             ParticleSystem+EmissionModule::
+                             ParticleSystem_EmissionModule_get_rateOverTime
+                                       ((ParticleSystem_MinMaxCurve *)&stack0xffffffc8,&PStack_3,
+                                        (MethodInfo *)0x0);
+                    pTVar5 = (ThemeAttribute_1_System_Single___Class *)pPVar4->m_Mode;
+                    pMVar6 = (MonitorData *)pPVar4->m_CurveMultiplier;
+                    pSVar7 = (String *)pPVar4->m_CurveMin;
+                    pAVar8 = pPVar4->m_CurveMax;
+                    uVar9 = pPVar4->m_ConstantMin;
+                    uVar10 = pPVar4->m_ConstantMax;
+                    if ((ParticleSystem *)this_02[1].monitor != (ParticleSystem *)0x0) {
+                      PStack_3.m_ParticleSystem = (ParticleSystem *)&UNK_?;
+                      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+                      ParticleSystem_get_collision
+                                ((ParticleSystem *)this_02[1].monitor,(MethodInfo *)0x0);
+                      PStack_3.m_ParticleSystem = (ParticleSystem *)&UNK_?;
+                      ThemeAttributes::ThemeAttribute`1[System::Single]::
+                      ThemeAttribute_1_System_Single__get_Value
+                                ((ThemeAttribute_1_System_Single_ *)&stack0xffffffe0,
+                                 (MethodInfo *)0x0);
+                      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxCurve
+                      ::ParticleSystem_MinMaxCurve_set_constant
+                                ((ParticleSystem_MinMaxCurve *)&stack0xffffffe0,(float)xp,
+                                 (MethodInfo *)0x0);
+                      pSStack11 = pSVar7;
+                      pAStack12 = pAVar8;
+                      ThemeAttributes::ThemeAttribute`1[System::Single]::
+                      ThemeAttribute_1_System_Single__get_Value
+                                ((ThemeAttribute_1_System_Single_ *)&stack0xffffffe0,
+                                 (MethodInfo *)0x0);
+                      value.m_CurveMultiplier = (float)pMVar6;
+                      value.m_Mode = (int32_t)pTVar5;
+                      value.m_CurveMin = (AnimationCurve *)pSStack11;
+                      value.m_CurveMax = pAStack12;
+                      value.m_ConstantMin = (float)uVar9;
+                      value.m_ConstantMax = (float)uVar10;
+                      uStack13 = uVar9;
+                      puStack14 = (undefined *)uVar10;
+                      UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                      ParticleSystem+EmissionModule::ParticleSystem_EmissionModule_set_rateOverTime
+                                (&PStack_3,value,(MethodInfo *)0x0);
+                      pCVar15 = (Component__Class *)
+                               UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                                         ((MethodInfo *)0x0);
+                      this_02[2].klass = pCVar15;
+                      return;
+                    }
+                  }
+                }
               }
             }
           }
@@ -77,8 +135,8 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_CreateXPParticlesWithLayer
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -108,31 +166,26 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_Initialize
   }
   if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
     original = (this->fields).avatarCamerasDesktop;
-    method_00 = 
-    AvatarCamerasDesktop_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasDesktop>_AvatarCamerasDesktop_
-    ;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
-      method_00 = 
-      AvatarCamerasDesktop_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasDesktop>_AvatarCamerasDesktop_
-      ;
     }
+    pIVar1 = (IAvatarCameraController *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)original,
+                        AvatarCamerasDesktop_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasDesktop>_AvatarCamerasDesktop_
+                       );
   }
   else {
-    original = (AvatarCamerasDesktop *)(this->fields).avatarCamerasMobile;
-    method_00 = 
-    AvatarCamerasTouch_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasTouch>_AvatarCamerasTouch_
-    ;
+    original_00 = (this->fields).avatarCamerasMobile;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
-      method_00 = 
-      AvatarCamerasTouch_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasTouch>_AvatarCamerasTouch_
-      ;
     }
+    pIVar1 = (IAvatarCameraController *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)original_00,
+                        AvatarCamerasTouch_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasTouch>_AvatarCamerasTouch_
+                       );
   }
-  pIVar1 = (IAvatarCameraController *)
-           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                     ((Object *)original,method_00);
   (this->fields).avatarCameraController = pIVar1;
   func_?(&(this->fields).avatarCameraController);
   pIVar1 = (this->fields).avatarCameraController;

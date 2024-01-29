@@ -420,7 +420,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
       if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Convert);
       }
-      fVar5 = mscorlib.dll::System::Convert::Convert_ToSingle
+      fVar5 = mscorlib.dll::System::Convert::Convert_ToSingle_1
                         ((Object *)TVar3.m_Index,(IFormatProvider *)pCVar4,(MethodInfo *)0x0);
       if (this_01 != (SettingsSlider *)0x0) {
         SettingsSlider::SettingsSlider_Initialize
@@ -437,7 +437,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                             );
           pCVar4 = mscorlib.dll::System::Globalization::CultureInfo::
                    CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-          fVar5 = mscorlib.dll::System::Convert::Convert_ToSingle
+          fVar5 = mscorlib.dll::System::Convert::Convert_ToSingle_1
                             ((Object *)TVar3.m_Index,(IFormatProvider *)pCVar4,(MethodInfo *)0x0);
           if (this_02 != (SettingsInputFieldSlider *)0x0) {
             SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
@@ -828,7 +828,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                 if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
-                mscorlib.dll::System::Convert::Convert_ToSingle
+                mscorlib.dll::System::Convert::Convert_ToSingle_1
                           (value,(IFormatProvider *)provider,(MethodInfo *)0x0);
                 value = (Object *)func_?();
               }

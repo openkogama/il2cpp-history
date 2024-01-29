@@ -635,7 +635,7 @@ void Assembly-CSharp.dll::TierBoostStateHandler::TierBoostStateHandler_ShowSpawn
                 ((SpawnRoleMenu *)pOVar1,(pMVar2->fields)._._Team_k__BackingField,(MethodInfo *)0x0)
       ;
       if ((value[1].klass != (Object__Class *)0x0) &&
-         (this_00 = ((value[1].klass)->_0).fields, this_00 != (FieldInfo *)0x0)) {
+         (this_00 = ((value[1].klass)->_0).events, this_00 != (EventInfo *)0x0)) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   ((GameObject *)this_00,0,(MethodInfo *)0x0);
         return;
@@ -713,7 +713,7 @@ code_?:
             (pGVar4,(BaseEventData *)0x0,callbackFunction,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
-  pGVar4 = pGRam00000034;
+  pGVar4 = pGRam00000038;
   if (value[1].klass == (Object__Class *)0x0) goto code_?;
   if (cRam_? == '\0') {
     func_?(&

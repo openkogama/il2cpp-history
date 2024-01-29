@@ -20,7 +20,7 @@ float Assembly-CSharp.dll::SplashController::SplashController_CalcSplashSoundVol
 
 {
   velocity.z = (float)((uint)velocity.y ^
-                      __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   if (velocity.z < 0.0) {
     velocity.z = 0.0;
   }
@@ -631,7 +631,7 @@ code_?:
   *(undefined1 *)&pOVar9[3].monitor = 1;
   this_00 = MVGameControllerBase::MVGameControllerBase_get_AudioManager((MethodInfo *)0x0);
   fVar15 = (float)((uint)velocity.y ^
-                  __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   if (fVar15 < 0.0) {
     fVar15 = 0.0;
   }

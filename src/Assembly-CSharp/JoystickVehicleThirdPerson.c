@@ -12,23 +12,27 @@ void Assembly-CSharp.dll::JoystickVehicleThirdPerson::JoystickVehicleThirdPerson
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).horizontalAxisName;
-  pCVar2 = (CrossPlatformInputManager_VirtualAxis *)
-           func_?(
-                          TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
-                          );
-  UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
-  CrossPlatformInputManager_VirtualAxis__ctor(pCVar2,pSVar1,(MethodInfo *)0x0);
-  (this->fields).m_HorizontalVirtualAxis = pCVar2;
-  func_?(&(this->fields).m_HorizontalVirtualAxis,pCVar2);
+  pCVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
+  ;
+  pCVar3 = (CrossPlatformInputManager_VirtualAxis *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
+  (pCVar3->fields)._name_k__BackingField = pSVar1;
+  func_?(&pCVar3->fields,pSVar1);
+  (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
+  (this->fields).m_HorizontalVirtualAxis = pCVar3;
+  func_?(&(this->fields).m_HorizontalVirtualAxis,pCVar3);
   pSVar1 = (this->fields).verticalAxisName;
-  pCVar2 = (CrossPlatformInputManager_VirtualAxis *)
-           func_?(
-                          TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
-                          );
-  UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
-  CrossPlatformInputManager_VirtualAxis__ctor(pCVar2,pSVar1,(MethodInfo *)0x0);
-  (this->fields).m_VerticalVirtualAxis = pCVar2;
-  func_?(&(this->fields).m_VerticalVirtualAxis,pCVar2);
+  pCVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
+  ;
+  pCVar3 = (CrossPlatformInputManager_VirtualAxis *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
+  (pCVar3->fields)._name_k__BackingField = pSVar1;
+  func_?(&pCVar3->fields,pSVar1);
+  (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
+  (this->fields).m_VerticalVirtualAxis = pCVar3;
+  func_?(&(this->fields).m_VerticalVirtualAxis,pCVar3);
   return;
 }
 
@@ -182,7 +186,7 @@ void Assembly-CSharp.dll::JoystickVehicleThirdPerson::JoystickVehicleThirdPerson
   fVar9 = VVar7.x;
   VVar7 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
   fStack_10 = (float)((uint)((float)iVar6 * fVar9) ^
-                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   fVar9 = (float)iVar8 * VVar7.x;
   if ((fStack_10 <= fVar4) && (fStack_10 = fVar4, fVar9 < fVar4)) {
     fStack_10 = fVar9;
@@ -192,7 +196,7 @@ void Assembly-CSharp.dll::JoystickVehicleThirdPerson::JoystickVehicleThirdPerson
   iVar8 = (this->fields).baseMovementRangeY;
   VVar11 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
   fStack_12 = (float)((uint)((float)iVar6 * VVar7.x) ^
-                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   fVar4 = (float)iVar8 * VVar11.x;
   if ((fStack_12 <= fVar5) && (fStack_12 = fVar5, fVar4 < fVar5)) {
     fStack_12 = fVar4;

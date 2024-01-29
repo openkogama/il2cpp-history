@@ -754,7 +754,7 @@ code_?:
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_4
                 (this_05,(Vector3)(auVar24 << 0x20),
                  (float)((uint)fStack_15 ^
-                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) *
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
                  (float)this * _UNK_?,Space__Enum_World,(MethodInfo *)0x0);
       return;
     }

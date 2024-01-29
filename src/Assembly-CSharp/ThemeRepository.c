@@ -45,9 +45,22 @@ Theme * Assembly-CSharp.dll::ThemeRepository::ThemeRepository_CreateTemporaryThe
                               ((Object *)pTVar2,
                                Theme_MethodInfo__UnityEngine__Object__Instantiate<Theme>_Theme_);
   if (pTVar2 != (Theme *)0x0) {
-    Theme::Theme_InitializeForPreview(pTVar2,(MethodInfo *)0x0);
-    Theme::Theme_Activate(pTVar2,(MethodInfo *)0x0);
-    return pTVar2;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    this_01 = (SettingsPreview *)func_?();
+    ThemeSettings::SettingsPreview::SettingsPreview__ctor(this_01,(MethodInfo *)0x0);
+    (pTVar2->fields)._Settings_k__BackingField = (SettingsWrapper *)this_01;
+    func_?();
+    (*(code *)(pTVar2->klass->vtable).__unknown_4.method)();
+    this_00 = (pTVar2->fields)._Settings_k__BackingField;
+    if (this_00 != (SettingsWrapper *)0x0) {
+      ThemeSettings::SettingsWrapper::SettingsWrapper_Initialize(this_00,(MethodInfo *)0x0);
+      (*(code *)(pTVar2->klass->vtable).__unknown_3.method)();
+      Theme::Theme_Activate(pTVar2,(MethodInfo *)0x0);
+      return pTVar2;
+    }
   }
 code_?:
   func_?();

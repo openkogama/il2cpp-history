@@ -758,7 +758,6 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_InitStandAl
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-    func_?(&TypeInfo__UnityEngine__Application);
     func_?(&TypeInfo__AsyncWWWManager);
     func_?(&TypeInfo__BrowserComm);
     func_?(&TypeInfo__System__Convert);
@@ -806,11 +805,6 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_InitStandAl
     pcRam_? = (code *)func_?(&stack0xffffffb4);
   }
   (*pcRam_?)(pSStack_13,0,0,0,pSVar14,iVar2,iVar15 == 0);
-  if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Application);
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Application::Application_set_targetFrameRate
-            (0x3c,(MethodInfo *)0x0);
   if (developmentMode != 0) {
     (*(code *)(this->klass->vtable).StartGame.method)
               (this,(this->klass->vtable).InitWebGL.methodPtr);
@@ -958,136 +952,10 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
   TypeInfo__MVGameControllerBase->static_fields->_IsInitialized_k__BackingField = 1;
-  object = (this->fields).materialLoader;
-  if (object == (MaterialLoader *)0x0) {
-    uVar1 = func_?(&stack0xfffffff0);
-    func_?(uVar1);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?(&MethodInfo__MaterialLoader__Callback_UnityEngine__Networking__UnityWebRequest_)
-    ;
-    func_?(&MethodInfo__MaterialLoader__DownloadWhenPossible__);
-    func_?(&TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
-    func_?(&TypeInfo__MV__Common__Urls);
-    func_?(&StringLiteral_AssetBundles_Atlas_atlas_unity3d);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  bVar3 = MVCommon.dll::MV::Common::Urls::Urls_StreamingAssetUrlReady((MethodInfo *)0x0);
-  if (bVar3 == 0) {
-    if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pUVar4 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
-    pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar5,(Object *)object,MethodInfo__MaterialLoader__DownloadWhenPossible__,
-               (MethodInfo *)0x0);
-    pUStack6 =
-         (Urls_OnStreamingAssetsUrlAvailable *)
-         mscorlib.dll::System::Delegate::Delegate_Combine
-                   ((Delegate *)pUVar4,(Delegate *)pNVar5,(MethodInfo *)0x0);
-    if (pUStack6 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
-      TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
-           (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-      pUStack7 = (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0;
-code_?:
-      pUStack6 =
-           (Urls_OnStreamingAssetsUrlAvailable *)TypeInfo__MV__Common__Urls->static_fields;
-      func_?();
-      return;
-    }
-    pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-    if (pUStack6->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-      pUVar4 = pUStack6;
-    }
-    pUStack7 = TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable;
-    if (pUVar4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-    TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar4;
-    pUStack7 =
-         (Urls_OnStreamingAssetsUrlAvailable__Class *)(Urls_OnStreamingAssetsUrlAvailable *)0x0;
-    if (pUStack6->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-      pUStack7 = (Urls_OnStreamingAssetsUrlAvailable__Class *)pUStack6;
-    }
-    if (pUStack7 != (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0) goto code_?;
-  }
-  else {
-    if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pUVar4 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
-    pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar5,(Object *)object,MethodInfo__MaterialLoader__DownloadWhenPossible__,
-               (MethodInfo *)0x0);
-    pUStack6 =
-         (Urls_OnStreamingAssetsUrlAvailable *)
-         mscorlib.dll::System::Delegate::Delegate_Remove
-                   ((Delegate *)pUVar4,(Delegate *)pNVar5,(MethodInfo *)0x0);
-    if (pUStack6 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
-      TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
-           (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-      pUStack7 = (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0;
-code_?:
-      pUStack6 =
-           (Urls_OnStreamingAssetsUrlAvailable *)TypeInfo__MV__Common__Urls->static_fields;
-      func_?();
-      pSVar8 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
-      pSVar8 = mscorlib.dll::System::String::String_Concat_3
-                         (pSVar8,StringLiteral_AssetBundles_Atlas_atlas_unity3d,(MethodInfo *)0x0);
-      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 *)func_?();
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                (this_00,(Object *)object,
-                 MethodInfo__MaterialLoader__Callback_UnityEngine__Networking__UnityWebRequest_,
-                 (MethodInfo *)0x0);
-      this_01 = (AssetBundleRequest *)func_?();
-      AssetBundleRequest::AssetBundleRequest__ctor
-                (this_01,pSVar8,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
-                 WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
-      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
-      return;
-    }
-    pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-    if (pUStack6->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-      pUVar4 = pUStack6;
-    }
-    pUStack7 = TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable;
-    if (pUVar4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-    TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar4;
-    pUStack7 =
-         (Urls_OnStreamingAssetsUrlAvailable__Class *)(Urls_OnStreamingAssetsUrlAvailable *)0x0;
-    if (pUStack6->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-      pUStack7 = (Urls_OnStreamingAssetsUrlAvailable__Class *)pUStack6;
-    }
-    if (pUStack7 != (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0) goto code_?;
-  }
-  pUStack7 = TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable;
-  pUStack7 = (Urls_OnStreamingAssetsUrlAvailable__Class *)func_?();
-  pUStack6 = extraout_ECX;
-code_?:
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
   return;
 }
 

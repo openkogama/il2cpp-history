@@ -381,7 +381,7 @@ void Assembly-CSharp.dll::JetPackCamera::JetPackCamera_HandleInput
     fVar7 = _UNK_?;
     (this->fields).yAxisTarget = fVar2 * (fVar5 / (float)iVar6) + (this->fields).yAxisTarget;
     for (fVar2 = (float)((uint)fVar3 ^
-                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) *
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
                  (fVar5 / (float)iVar6) + (this->fields).xAxisTarget; fVar2 < fVar7;
         fVar2 = fVar2 + _UNK_?) {
     }

@@ -140,36 +140,26 @@ bool Assembly-CSharp.dll::TimeAttackFlag::TimeAttackFlag_DoReachTimeAttackFlag
       pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
                          ((MethodInfo *)0x0);
       if (pFVar2 != (FlagDebriefingControl *)0x0) {
-        puVar3 = (undefined *)(pFVar2->fields).RunStartTime;
-        if (cRam_? == '\0') {
-          puVar3 = &UNK_?;
-          func_?(&TypeInfo__System__Math);
-          cRam_? = '\x01';
-        }
-        fVar1 = (fVar1 - (float)puVar3) * _UNK_?;
-        if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__System__Math);
-        }
-        fVar4 = (float10)func_?((double)fVar1);
+        captureTime = func_?((fVar1 - (pFVar2->fields).RunStartTime) * _UNK_?);
         this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                             ((MethodInfo *)0x0);
         if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
           MVNetworkGame+OperationRequests::
           MVNetworkGame_OperationRequests_ReportReachedTimeAttackFlag
-                    (this_00,(int)fVar4,(this->fields)._._._._.id,(MethodInfo *)0x0);
+                    (this_00,captureTime,(this->fields)._._._._.id,(MethodInfo *)0x0);
           pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
                              ((MethodInfo *)0x0);
           if (pFVar2 != (FlagDebriefingControl *)0x0) {
             FlagDebriefingControl::FlagDebriefingControl_StartFlagDebriefing
-                      (pFVar2,(int)fVar4,(MethodInfo *)0x0);
+                      (pFVar2,captureTime,(MethodInfo *)0x0);
             return 1;
           }
         }
       }
       func_?();
-      pcVar5 = (code *)swi(3);
-      bVar6 = (*pcVar5)();
-      return bVar6;
+      pcVar3 = (code *)swi(3);
+      bVar4 = (*pcVar3)();
+      return bVar4;
     }
   }
   return 0;
@@ -739,57 +729,43 @@ void Assembly-CSharp.dll::TimeAttackFlag::TimeAttackFlag_triggerBoxEvents_Trigge
                (TimeAttackFlag *this,Object *sender,TriggerEventArgs *e,MethodInfo *method)
 
 {
-  pTVar1 = this;
-  pWVar2 = (this->fields).worldObjectEnableController;
-  if (pWVar2 != (WorldObjectEnableController *)0x0) {
-    if ((pWVar2->fields).enableState != 2) {
+  pWVar1 = (this->fields).worldObjectEnableController;
+  if (pWVar1 != (WorldObjectEnableController *)0x0) {
+    if ((pWVar1->fields).enableState != 2) {
       return;
     }
     this_00 = (this->fields).useInteractor;
     if (this_00 != (UseInteractor *)0x0) {
-      UVar3 = UseInteractor::UseInteractor_EvaluateRequirementsUsability(this_00,(MethodInfo *)0x0);
-      if ((UVar3 & (UseGUIResult__Enum_CannotAfford|UseGUIResult__Enum_CanAfford)) != 0) {
+      UVar2 = UseInteractor::UseInteractor_EvaluateRequirementsUsability(this_00,(MethodInfo *)0x0);
+      if ((UVar2 & (UseGUIResult__Enum_CannotAfford|UseGUIResult__Enum_CanAfford)) != 0) {
         return;
       }
       if (e != (TriggerEventArgs *)0x0) {
         if ((this->fields).isTimeAttackDebriefingOn != 0) {
           return;
         }
-        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        if (fVar4 < (this->fields).lastCaptureTime + _UNK_?) {
+        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        if (fVar3 < (this->fields).lastCaptureTime + _UNK_?) {
           return;
         }
-        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        (this->fields).lastCaptureTime = fVar4;
-        this = (TimeAttackFlag *)
-               UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        pFVar5 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
+        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        (this->fields).lastCaptureTime = fVar3;
+        UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        pFVar4 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
                            ((MethodInfo *)0x0);
-        if (pFVar5 != (FlagDebriefingControl *)0x0) {
-          fVar4 = (pFVar5->fields).RunStartTime;
-          if (cRam_? == '\0') {
-            this = (TimeAttackFlag *)&TypeInfo__System__Math;
-            func_?();
-            cRam_? = '\x01';
-          }
-          pMVar6 = TypeInfo__System__Math;
-          pMVar7 = (Math__Class *)(((float)this - fVar4) * _UNK_?);
-          if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-            pMVar7 = pMVar6;
-          }
-          fVar8 = (float10)func_?(SUB84((double)(float)pMVar7,0));
+        if (pFVar4 != (FlagDebriefingControl *)0x0) {
+          captureTime = func_?();
           this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                               ((MethodInfo *)0x0);
           if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
             MVNetworkGame+OperationRequests::
             MVNetworkGame_OperationRequests_ReportReachedTimeAttackFlag
-                      (this_01,(int)fVar8,(pTVar1->fields)._._._._.id,(MethodInfo *)0x0);
-            pFVar5 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
+                      (this_01,captureTime,(this->fields)._._._._.id,(MethodInfo *)0x0);
+            pFVar4 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
                                ((MethodInfo *)0x0);
-            if (pFVar5 != (FlagDebriefingControl *)0x0) {
+            if (pFVar4 != (FlagDebriefingControl *)0x0) {
               FlagDebriefingControl::FlagDebriefingControl_StartFlagDebriefing
-                        (pFVar5,(int)fVar8,(MethodInfo *)0x0);
+                        (pFVar4,captureTime,(MethodInfo *)0x0);
               return;
             }
           }
@@ -798,8 +774,8 @@ void Assembly-CSharp.dll::TimeAttackFlag::TimeAttackFlag_triggerBoxEvents_Trigge
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

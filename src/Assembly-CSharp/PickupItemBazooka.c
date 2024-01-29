@@ -633,18 +633,18 @@ void Assembly-CSharp.dll::PickupItemBazooka::PickupItemBazooka_OnHitMaxRangeLoca
     voxelHit._0_68_ =
          ZEXT2068(CONCAT416((MethodInfo *)
                             ((uint)lineOfFire.m_Direction.z ^
-                            __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             ),CONCAT412((uint)lineOfFire.m_Direction.y ^
-                                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                         ,CONCAT48((uint)lineOfFire.m_Direction.x ^
-                                                  __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ,CONCAT44(lineOfFire.m_Origin.z +
                                                             lineOfFire.m_Direction.z * fVar1,
                                                             lineOfFire.m_Direction.x)))));
     auVar4 = lineOfFire._4_20_;
     lineOfFire_00.m_Direction.z =
          (float)((uint)lineOfFire.m_Direction.y ^
-                __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     auVar5 = auVar4._0_12_;
     lineOfFire_00.m_Origin.x = (float)auVar5._0_4_;
     lineOfFire_00.m_Origin.y = (float)auVar5._4_4_;
@@ -655,7 +655,7 @@ void Assembly-CSharp.dll::PickupItemBazooka::PickupItemBazooka_OnHitMaxRangeLoca
               (this,voxelHit,lineOfFire_00,
                (MethodInfo *)
                ((uint)lineOfFire.m_Direction.z ^
-               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field));
+               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field));
     fStack6 = lineOfFire.m_Direction.y;
     if (cRam_? == '\0') {
       func_?();

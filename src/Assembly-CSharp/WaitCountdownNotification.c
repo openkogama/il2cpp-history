@@ -18,18 +18,24 @@ code_?:
     func_?();
   }
   else {
-    NotificationFade::NotificationFade_Activate(pNVar1,(MethodInfo *)0x0);
+    (pNVar1->fields).pauseAt = (pNVar1->fields).duration;
+    this_00 = (pNVar1->fields).group;
+    (pNVar1->fields).playing = 1;
+    if (this_00 == (CanvasGroup *)0x0) goto code_?;
+    UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+              (this_00,0.0,(MethodInfo *)0x0);
+    (pNVar1->fields).currentTime = 0.0;
     pNVar1 = (this->fields).countDownFader;
     if (pNVar1 == (NotificationFade *)0x0) goto code_?;
     pAVar2 = (pNVar1->fields).OnFinished;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__WaitCountdownNotification__DestroyNotification__,
+              (this_01,(Object *)this,MethodInfo__WaitCountdownNotification__DestroyNotification__,
                (MethodInfo *)0x0);
     pAVar2 = (Action *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+                       ((Delegate *)pAVar2,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pAVar2 == (Action *)0x0) {
       (pNVar1->fields).OnFinished = (Action *)0x0;
 code_?:
@@ -76,7 +82,7 @@ void Assembly-CSharp.dll::WaitCountdownNotification::WaitCountdownNotification_U
   if ((pMVar1 != (MVNetworkGame *)0x0) &&
      (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField,
      pMVar2 != (MVNetworkGameStateListener *)0x0)) {
-    fVar3 = (float)(pMVar2->fields).timeLeft / _UNK_?;
+    fStack_3 = (float)(pMVar2->fields).timeLeft / _UNK_?;
     pTVar4 = (this->fields).countdownText;
     if (cRam_? == '\0') {
       func_?();
@@ -85,13 +91,15 @@ void Assembly-CSharp.dll::WaitCountdownNotification::WaitCountdownNotification_U
     if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    func_?((double)fVar3);
-    mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
+    uStack_5 = (double)fStack_3;
+    fVar6 = (float10)func_?(uStack_5);
+    uStack_5 = (double)CONCAT44((int)fVar6 + 1,SUB84((double)fVar6,0));
+    mscorlib.dll::System::Int32::Int32_ToString((Int32 *)((int)&uStack_5 + 4),(MethodInfo *)0x0);
     if (pTVar4 != (Text *)0x0) {
-      pTVar5 = pTVar4->klass;
-      pIVar6 = (pTVar5->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-      (*(code *)(pTVar5->vtable).set_text.method)();
-      if (0.0 < (float)pIVar6) {
+      pTVar7 = pTVar4->klass;
+      pIVar8 = (pTVar7->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+      (*(code *)(pTVar7->vtable).set_text.method)();
+      if (0.0 < (float)pIVar8) {
 code_?:
         Notification::Notification_Update((Notification *)this,(MethodInfo *)0x0);
         (this->fields)._.timeSinceStart = 0.0;
@@ -100,17 +108,20 @@ code_?:
       pTVar4 = (this->fields).countdownText;
       if (pTVar4 != (Text *)0x0) {
         (*(code *)(pTVar4->klass->vtable).set_text.method)();
-        this_00 = (this->fields).countDownFader;
-        if (this_00 != (NotificationFade *)0x0) {
-          NotificationFade::NotificationFade_Unpause(this_00,(MethodInfo *)0x0);
+        pNVar9 = (this->fields).countDownFader;
+        if (pNVar9 != (NotificationFade *)0x0) {
+          if ((pNVar9->fields).pauseAt != (pNVar9->fields).duration) {
+            (pNVar9->fields).currentTime = (pNVar9->fields).pauseAt;
+            (pNVar9->fields).pauseAt = (pNVar9->fields).duration;
+          }
           goto code_?;
         }
       }
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

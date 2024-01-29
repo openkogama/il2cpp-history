@@ -356,13 +356,13 @@ code_?:
                     fVar5 = (pPVar18->fields).recoilImpact;
                     if (this_02 != (MVRigidBody *)0x0) {
                       impulse.y = fVar5 * (float)(uVar34 ^ 
-                                                 __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                  );
                       impulse.x = fVar5 * (float)(uVar33 ^ 
-                                                 __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                  );
                       impulse.z = fVar5 * (float)((uint)pVVar9->z ^
-                                                 __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                  );
                       MVRigidBody::MVRigidBody_AddImpulse_1(this_02,impulse,0,(MethodInfo *)0x0);
                       return;

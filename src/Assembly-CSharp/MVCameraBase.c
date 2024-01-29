@@ -75,16 +75,16 @@ void Assembly-CSharp.dll::MVCameraBase::MVCameraBase_SimulateImpact_2
     }
     fVar9 = (float)((ulonglong)uVar5 >> 0x20);
     fVar10 = (float)((uint)impactDirection.y ^
-                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     fVar11 = (float)((uint)impactDirection.z ^
-                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     this = (MVCameraBase *)
            ((float)uVar5 * fVar11 -
            fVar6 * (float)((uint)impactDirection.x ^
-                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
            );
     fVar12 = fVar9 * (float)((uint)impactDirection.x ^
-                             __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                              ) - (float)uVar5 * fVar10;
     fVar13 = impactDirection.x * fVar3 * _UNK_?;
     fVar14 = impactDirection.y * fVar3 * _UNK_?;

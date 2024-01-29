@@ -18,10 +18,13 @@ public abstract class ModeControllerBase : MonoBehaviour, IToggleFps, IPlayModeU
 	private GameObject fpsCounter;
 	[CompilerGenerated]
 	private bool _IsDying_k__BackingField;
+	[CompilerGenerated]
+	private bool _IsInLobby_k__BackingField;
 
 	// Properties
-	public virtual bool InLobbyState { get; set; }
+	public virtual bool IsInPauseMenu { get; set; }
 	public bool IsDying { [CompilerGenerated] get; [CompilerGenerated] set; }
+	public bool IsInLobby { [CompilerGenerated] get; [CompilerGenerated] set; }
 
 	// Constructors
 	protected ModeControllerBase();

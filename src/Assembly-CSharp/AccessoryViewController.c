@@ -241,17 +241,15 @@ void Assembly-CSharp.dll::AccessoryViewController::
 {
   pAVar1 = (this->fields).accessoryView;
   if (pAVar1 != (AccessoryView *)0x0) {
-    if ((pAVar1->fields).accessoryDataClient != (AccessoryDataClient *)0x0) {
-      if (accessoryData == (AccessoryDataClient *)0x0) goto code_?;
-      if ((((pAVar1->fields).accessoryDataClient)->fields)._.aMDID ==
-          (accessoryData->fields)._.aMDID) {
-        return;
-      }
+    bVar2 = AccessoryView::AccessoryView_CurrentlyViewingAccessory
+                      (pAVar1,accessoryData,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      return;
     }
     AccessoryViewController_HideScreens(this,(MethodInfo *)0x0);
     pAVar1 = (this->fields).accessoryView;
     if (pAVar1 != (AccessoryView *)0x0) {
-      AccessoryView::AccessoryView_Initialize(pAVar1,accessoryData,(MethodInfo *)0x0);
+      AccessoryView::AccessoryView_Initialize(pAVar1,(AccessoryDataClient *)0x0,(MethodInfo *)0x0);
       pAVar1 = (this->fields).accessoryView;
       if ((pAVar1 != (AccessoryView *)0x0) &&
          (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -263,14 +261,14 @@ void Assembly-CSharp.dll::AccessoryViewController::
         if (this_00 != (AccessoryShopToggleInventory *)0x0) {
           AccessoryShopToggleInventory::AccessoryShopToggleInventory_SetBackpackIconIsEnabled
                     (this_00,0,(MethodInfo *)0x0);
-          pAVar2 = (this->fields).previewer;
-          if (pAVar2 != (AvatarAccessoryPreviewer *)0x0) {
+          pAVar3 = (this->fields).previewer;
+          if (pAVar3 != (AvatarAccessoryPreviewer *)0x0) {
             AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_OnRestartAnimation
-                      (pAVar2,(MethodInfo *)0x0);
-            pAVar2 = (this->fields).previewer;
-            if (pAVar2 != (AvatarAccessoryPreviewer *)0x0) {
+                      (pAVar3,(MethodInfo *)0x0);
+            pAVar3 = (this->fields).previewer;
+            if (pAVar3 != (AvatarAccessoryPreviewer *)0x0) {
               AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_ResetPreviewTransform
-                        (pAVar2,(MethodInfo *)0x0);
+                        (pAVar3,(MethodInfo *)0x0);
               return;
             }
           }
@@ -278,10 +276,9 @@ void Assembly-CSharp.dll::AccessoryViewController::
       }
     }
   }
-code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

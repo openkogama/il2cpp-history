@@ -578,16 +578,42 @@ int32_t Assembly-CSharp.dll::TextBubbleController::TextBubbleController_ShowBubb
         func_?(&TypeInfo__UnityEngine__Vector2);
         cRam_? = '\x01';
       }
-      iVar1 = TextBubbleController_ShowBubble3D_1
-                        (this,worldPosition,lifeTime,content,parentTransform,(Vector2)0x0,
-                         (MethodInfo *)0x0);
-      return iVar1;
+      fVar1 = (TypeInfo__UnityEngine__Vector2->static_fields->oneVector).x * _UNK_?;
+      fVar2 = (TypeInfo__UnityEngine__Vector2->static_fields->oneVector).y * _UNK_?;
+      pCVar3 = (this->fields).mainCamera;
+      if (pCVar3 != (Camera *)0x0) {
+        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
+                           ((Vector3 *)&stack0xffffffe4,pCVar3,worldPosition,(MethodInfo *)0x0);
+        fVar5 = pVVar4->x;
+        offset.y = fVar2;
+        offset.x = fVar1;
+        pVVar4 = TextBubbleController_CalculateOffSet
+                           ((Vector3 *)&puStack_6,this,offset,*pVVar4,(MethodInfo *)0x0);
+        uVar7 = pVVar4->x;
+        uVar8 = pVVar4->y;
+        fVar2 = (float)uVar7 + fVar2;
+        pCVar3 = (this->fields).mainCamera;
+        if (pCVar3 != (Camera *)0x0) {
+          pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
+                             ((Vector3 *)&puStack_6,pCVar3,worldPosition,(MethodInfo *)0x0);
+          uVar9 = pVVar4->x;
+          uVar10 = pVVar4->y;
+          anchoredPosition.y = (float)uVar8 + fVar5;
+          anchoredPosition.x = fVar2;
+          targetCenterPoint.y = (float)uVar10 * _UNK_?;
+          targetCenterPoint.x = (float)uVar9 * _UNK_?;
+          iVar11 = TextBubbleController_ShowBubble2D
+                            (this,anchoredPosition,targetCenterPoint,lifeTime,content,
+                             parentTransform,(MethodInfo *)0x0);
+          return iVar11;
+        }
+      }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  iVar1 = (*pcVar2)();
-  return iVar1;
+  pcVar12 = (code *)swi(3);
+  iVar11 = (*pcVar12)();
+  return iVar11;
 }
 
 

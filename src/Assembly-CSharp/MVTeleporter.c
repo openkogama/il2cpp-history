@@ -102,124 +102,109 @@ bool Assembly-CSharp.dll::MVTeleporter::MVTeleporter_DoTeleport
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((this->fields).target == (MVTeleporter *)0x0) {
-    return 0;
-  }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (this_01 == (MVWorldObjectClientManager *)0x0) goto code_?;
-  this_02 = (MVAvatarLocal *)
-            MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                      (this_01,instigatorWOID,(MethodInfo *)0x0);
-  if (this_02 == (MVAvatarLocal *)0x0) {
-    return 0;
-  }
-  if ((this_02->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) {
-    return 0;
-  }
-  if ((MVAvatarLocal__Class *)
-      (this_02->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
-      TypeInfo__MVAvatarLocal) {
-    return 0;
-  }
-  pMVar1 = TypeInfo__MVAvatarLocal;
-  if (((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (this_02->klass->_1).naturalAligment) &&
-     ((MVAvatarLocal__Class *)
-      (this_02->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] ==
-      TypeInfo__MVAvatarLocal)) {
-    bVar2 = MVAvatarLocal::MVAvatarLocal_get_IsEnteringVehicle(this_02,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      return 0;
-    }
-    bVar2 = MVAvatar::MVAvatar_get_IsSeated((MVAvatar *)this_02,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      MVAvatarLocal::MVAvatarLocal_LeaveVehicle(this_02,0,(MethodInfo *)0x0);
-    }
-    bVar2 = MVAvatarLocal::MVAvatarLocal_IsSpawnRoleActive(this_02,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
-      return 0;
-    }
-    pLVar3 = (this->fields).avatarIgnoreList;
-    if (pLVar3 == (List_1_System_Int32_ *)0x0) goto code_?;
-    bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-             List_1_System_Int32__Contains
-                       (pLVar3,(this_02->fields)._._._._.id,
-                        MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
-    if (bVar2 != 0) {
-      return 1;
-    }
-    this_00 = (this->fields)._._.transform;
-    if (this_00 == (Transform *)0x0) goto code_?;
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffd8,this_00,(MethodInfo *)0x0);
-    original = (this->fields).teleportAvatarPrefab;
-    OVar5.klass = (Object__Class *)pVVar4->x;
-    OVar5.monitor = (MonitorData *)pVVar4->y;
-    fVar6 = pVVar4->z;
-    OVar7 = OVar5;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pQVar8 = TypeInfo__UnityEngine__Quaternion->static_fields;
-    fVar9 = (pQVar8->identityQuaternion).x;
-    fVar10 = (pQVar8->identityQuaternion).y;
-    fVar11 = (pQVar8->identityQuaternion).z;
-    fVar12 = (pQVar8->identityQuaternion).w;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pOVar13 = OVar7.klass;
-    pMVar14 = OVar7.monitor;
-    position.z = fVar6;
-    position.x = (float)OVar7.klass;
-    position.y = (float)OVar7.monitor;
-    rotation.y = fVar10;
-    rotation.x = fVar9;
-    rotation.z = fVar11;
-    rotation.w = fVar12;
-    pOVar15 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
-                        ((Object *)original,position,rotation,
-                         TeleportAvatar_MethodInfo__UnityEngine__Object__Instantiate<TeleportAvatar>_TeleportAvatar__UnityEngine__Vector3__UnityEngine__Quaternion_
-                        );
-    if (pOVar15 == (Object *)0x0) goto code_?;
-    pOVar15[6].klass = (Object__Class *)(this->fields)._._._.id;
-    pOVar15[6].monitor = *(MonitorData **)(pMVar14 + 8);
-    pOVar15[5].monitor = (MonitorData *)this_02;
-    func_?();
-    puVar16 = (undefined8 *)func_?();
-    pMVar17 = *(MonitorData **)(puVar16 + 1);
-    *(undefined8 *)&pOVar15[2].monitor = *puVar16;
-    pOVar15[3].monitor = pMVar17;
-    pOVar15[4] = OVar5;
-    pOVar15[5].klass = pOVar13;
-    pMVar18 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-    pLVar3 = *(List_1_System_Int32_ **)(pMVar14 + 0xf8);
-    item = (this_02->fields)._._._._.id;
-    if (pLVar3 == (List_1_System_Int32_ *)0x0) goto code_?;
-    piVar19 = &(pLVar3->fields)._version;
-    *piVar19 = *piVar19 + 1;
-    pIVar20 = (pLVar3->fields)._items;
-    if (pIVar20 == (Int32__Array *)0x0) goto code_?;
-    this_02 = (MVAvatarLocal *)(pLVar3->fields)._size;
-    if ((MVAvatarLocal *)pIVar20->max_length <= this_02) {
-      mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-      List_1_System_Int32__AddWithResize(pLVar3,item,pMVar18->klass->rgctx_data[0xe].method);
-      return 1;
-    }
-    (pLVar3->fields)._size = (int32_t)((int)&this_02->klass + 1);
-    if (this_02 < (MVAvatarLocal *)pIVar20->max_length) {
-      pIVar20->vector[(int)this_02] = item;
-      return 1;
-    }
-    func_?();
-    pMVar1 = extraout_EDX;
-  }
-  func_?(this_02,pMVar1);
+  if ((this->fields).target != (MVTeleporter *)0x0) {
+    this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_02 == (MVWorldObjectClientManager *)0x0) {
 code_?:
-  func_?();
-  pcVar21 = (code *)swi(3);
-  bVar2 = (*pcVar21)();
-  return bVar2;
+      func_?();
+      pcVar1 = (code *)swi(3);
+      bVar2 = (*pcVar1)();
+      return bVar2;
+    }
+    this_03 = (MVAvatarLocal *)
+              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                        (this_02,instigatorWOID,(MethodInfo *)0x0);
+    if (((this_03 != (MVAvatarLocal *)0x0) &&
+        ((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (this_03->klass->_1).naturalAligment)) &&
+       ((MVAvatarLocal__Class *)
+        (this_03->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] ==
+        TypeInfo__MVAvatarLocal)) {
+      if (((this_03->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
+         ((MVAvatarLocal__Class *)
+          (this_03->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+          TypeInfo__MVAvatarLocal)) {
+        func_?(this_03,TypeInfo__MVAvatarLocal);
+        goto code_?;
+      }
+      bVar2 = MVAvatarLocal::MVAvatarLocal_get_IsEnteringVehicle(this_03,(MethodInfo *)0x0);
+      if (bVar2 == 0) {
+        bVar2 = MVAvatar::MVAvatar_get_IsSeated((MVAvatar *)this_03,(MethodInfo *)0x0);
+        if (bVar2 != 0) {
+          MVAvatarLocal::MVAvatarLocal_LeaveVehicle(this_03,0,(MethodInfo *)0x0);
+        }
+        bVar2 = MVAvatarLocal::MVAvatarLocal_IsSpawnRoleActive(this_03,(MethodInfo *)0x0);
+        if (bVar2 != 0) {
+          this_00 = (this->fields).avatarIgnoreList;
+          if (this_00 != (List_1_System_Int32_ *)0x0) {
+            bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+                    List_1_System_Int32__Contains
+                              (this_00,(this_03->fields)._._._._.id,
+                               MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+            if (bVar2 != 0) {
+              return 1;
+            }
+            this_01 = (this->fields)._._.transform;
+            if (this_01 != (Transform *)0x0) {
+              pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                 ((Vector3 *)&stack0xffffffd8,this_01,(MethodInfo *)0x0);
+              original = (this->fields).teleportAvatarPrefab;
+              OVar4.klass = (Object__Class *)pVVar3->x;
+              OVar4.monitor = (MonitorData *)pVVar3->y;
+              fVar5 = pVVar3->z;
+              OVar6 = OVar4;
+              if (cRam_? == '\0') {
+                func_?();
+                cRam_? = '\x01';
+              }
+              pQVar7 = TypeInfo__UnityEngine__Quaternion->static_fields;
+              fVar8 = (pQVar7->identityQuaternion).x;
+              fVar9 = (pQVar7->identityQuaternion).y;
+              fVar10 = (pQVar7->identityQuaternion).z;
+              fVar11 = (pQVar7->identityQuaternion).w;
+              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              pOVar12 = OVar6.klass;
+              pMVar13 = OVar6.monitor;
+              position.z = fVar5;
+              position.x = (float)OVar6.klass;
+              position.y = (float)OVar6.monitor;
+              rotation.y = fVar9;
+              rotation.x = fVar8;
+              rotation.z = fVar10;
+              rotation.w = fVar11;
+              pOVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
+                                 ((Object *)original,position,rotation,
+                                  TeleportAvatar_MethodInfo__UnityEngine__Object__Instantiate<TeleportAvatar>_TeleportAvatar__UnityEngine__Vector3__UnityEngine__Quaternion_
+                                 );
+              if (pOVar14 != (Object *)0x0) {
+                pOVar14[6].klass = (Object__Class *)(this->fields)._._._.id;
+                pOVar14[6].monitor = *(MonitorData **)(pMVar13 + 8);
+                pOVar14[5].monitor = (MonitorData *)this_03;
+                pMStack15 = this_03;
+                func_?();
+                puVar16 = (undefined8 *)func_?();
+                pMVar17 = *(MonitorData **)(puVar16 + 1);
+                *(undefined8 *)&pOVar14[2].monitor = *puVar16;
+                pOVar14[3].monitor = pMVar17;
+                pOVar14[4] = OVar4;
+                pOVar14[5].klass = pOVar12;
+                if (*(int *)(pMVar13 + 0xf8) != 0) {
+                  pMStack15 =
+                       (MVAvatarLocal *)
+                       MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                  func_?();
+                  return 1;
+                }
+              }
+            }
+          }
+          goto code_?;
+        }
+      }
+    }
+  }
+  return 0;
 }
 
 

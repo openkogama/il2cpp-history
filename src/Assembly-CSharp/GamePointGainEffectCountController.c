@@ -80,8 +80,6 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void HandleSlideState() */
 
 void Assembly-CSharp.dll::GamePointGainEffectCountController::
@@ -105,22 +103,20 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
     pTVar3 = (this->fields).transformToSlide;
     fVar4 = (fVar1 - (this->fields).slideStartTime) / (this->fields).slideDuration;
     fVar1 = (this->fields).originalXPosition;
-    bVar5 = (int)pTVar3 < 0;
     if (pTVar3 != (Transform *)0x0) {
-      pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                          ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
-      uVar7 = pVVar6->x;
-      uVar8 = pVVar6->y;
-      fVar9 = 0.0;
-      if ((0.0 <= fVar4) && (fVar9 = _UNK_?, fVar4 <= _UNK_?)) {
-        fVar9 = fVar4;
+      uVar6 = pVVar5->x;
+      uVar7 = pVVar5->y;
+      fVar8 = 0.0;
+      if ((0.0 <= fVar4) && (fVar8 = _UNK_?, fVar4 <= _UNK_?)) {
+        fVar8 = fVar4;
       }
       pTVar3 = (this->fields).transformToSlide;
-      bVar5 = (int)pTVar3 < 0;
       if (pTVar3 != (Transform *)0x0) {
-        value.y = (float)uVar8;
-        value.x = (fVar1 - (float)uVar7) * fVar9 + (float)uVar7;
-        value.z = pVVar6->z;
+        value.y = (float)uVar7;
+        value.x = (fVar1 - (float)uVar6) * fVar8 + (float)uVar6;
+        value.z = pVVar5->z;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                   (pTVar3,value,(MethodInfo *)0x0);
         if (fVar4 <= _UNK_?) {
@@ -134,28 +130,26 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
   case 3:
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     pTVar3 = (this->fields).transformToSlide;
-    fVar9 = (fVar1 - (this->fields).slideStartTime) / (this->fields).slideDuration;
+    fVar8 = (fVar1 - (this->fields).slideStartTime) / (this->fields).slideDuration;
     fVar1 = (this->fields).originalXPosition;
     fVar4 = (this->fields).slideMoveAmount;
-    bVar5 = (int)pTVar3 < 0;
     if (pTVar3 != (Transform *)0x0) {
-      pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                          ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
-      uVar10 = pVVar6->x;
-      uVar11 = pVVar6->y;
-      fVar12 = 0.0;
-      if ((0.0 <= fVar9) && (fVar12 = _UNK_?, fVar9 <= _UNK_?)) {
-        fVar12 = fVar9;
+      uVar9 = pVVar5->x;
+      uVar10 = pVVar5->y;
+      fVar11 = 0.0;
+      if ((0.0 <= fVar8) && (fVar11 = _UNK_?, fVar8 <= _UNK_?)) {
+        fVar11 = fVar8;
       }
       pTVar3 = (this->fields).transformToSlide;
-      bVar5 = (int)pTVar3 < 0;
       if (pTVar3 != (Transform *)0x0) {
-        value_00.y = (float)uVar11;
-        value_00.x = ((fVar4 + fVar1) - (float)uVar10) * fVar12 + (float)uVar10;
-        value_00.z = pVVar6->z;
+        value_00.y = (float)uVar10;
+        value_00.x = ((fVar4 + fVar1) - (float)uVar9) * fVar11 + (float)uVar9;
+        value_00.z = pVVar5->z;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                   (pTVar3,value_00,(MethodInfo *)0x0);
-        if (fVar9 <= _UNK_?) {
+        if (fVar8 <= _UNK_?) {
           return;
         }
         (this->fields).currentSlideState = 1;
@@ -163,13 +157,11 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
       }
     }
   }
-  cVar13 = func_?();
-  if (!bVar5) {
-    *unaff_EDI = this->klass;
-    *(char *)(unaff_EDI + 1) = cVar13 + *(char *)(extraout_EDX + 0x10);
-  }
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  func_?();
+  pbVar12 = (byte *)(extraout_EDX + 0x11);
+  *pbVar12 = *pbVar12 << 1 | (char)*pbVar12 < '\0';
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

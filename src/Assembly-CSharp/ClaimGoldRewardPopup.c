@@ -193,54 +193,7 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup::ClaimGoldRewardPopup_OnClickClai
   if (pIVar1 != (IAdManager *)0x0) {
     cVar2 = func_?(4,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar1);
     if (cVar2 == '\0') {
-      if (cRam_? == '\0') {
-        func_?(&
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                        ,pIVar1);
-        func_?(&
-                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                       );
-        func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-        func_?(&
-                        MethodInfo__ClaimGoldRewardPopup____c___CreateErrorMessage_b__9_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                       );
-        func_?(&TypeInfo__ClaimGoldRewardPopup____c);
-        cRam_? = '\x01';
-      }
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-      if ((TypeInfo__ClaimGoldRewardPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__ClaimGoldRewardPopup____c);
-      }
-      callbackFunction = TypeInfo__ClaimGoldRewardPopup____c->static_fields->__9__9_0;
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-        if ((TypeInfo__ClaimGoldRewardPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__ClaimGoldRewardPopup____c);
-        }
-        object = TypeInfo__ClaimGoldRewardPopup____c->static_fields->__9;
-        callbackFunction =
-             (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                            );
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-                   MethodInfo__ClaimGoldRewardPopup____c___CreateErrorMessage_b__9_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        TypeInfo__ClaimGoldRewardPopup____c->static_fields->__9__9_0 = callbackFunction;
-        func_?(&TypeInfo__ClaimGoldRewardPopup____c->static_fields->__9__9_0,
-                        callbackFunction);
-      }
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                );
+      ClaimGoldRewardPopup_CreateErrorMessage(this,(MethodInfo *)0x0);
       return;
     }
     pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
@@ -258,14 +211,32 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup::ClaimGoldRewardPopup_OnClickClai
                  MethodInfo__ClaimGoldRewardPopup__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
                  ,(MethodInfo *)0x0);
       if (pIVar1 != (IAdManager *)0x0) {
-        func_?(6,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar1,this_00,0xb);
+        pIVar4 = pIVar1->klass;
+        uVar5 = 0;
+        uVar6._0_1_ = (pIVar4->_1).rank;
+        uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
+        if (uVar6 != 0) {
+          do {
+            if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
+                (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
+              ppMVar7 = &(&(pIVar1->klass->vtable).RequestRewardedAd)
+                         [pIVar1->klass->interfaceOffsets[uVar5].offset].method;
+              goto code_?;
+            }
+            uVar5 = uVar5 + 1;
+          } while (uVar5 < uVar6);
+        }
+        ppMVar7 = (MethodInfo **)
+                  func_?(pIVar1,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,6);
+code_?:
+        (*(code *)*ppMVar7)(pIVar1,ppMVar7[1],0xb);
         return;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

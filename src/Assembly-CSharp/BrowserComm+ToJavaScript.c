@@ -58,7 +58,7 @@ void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_Ext
   if (this != (StringBuilder *)0x0) {
     mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
               (this,(String *)in_stack_4,(MethodInfo *)0x0);
-    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5(this,0x28,(MethodInfo *)0x0);
+    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6(this,0x28,(MethodInfo *)0x0);
     if (in_stack_2 != (String *)0x0) {
       uVar5 = 0;
       if (0 < (int)*(String **)((int)in_stack_2 + 0xc)) {
@@ -80,9 +80,9 @@ void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_Ext
           in_stack_4 = (StringBuilder *)&in_stack_4->monitor;
         } while ((int)uVar5 < (int)in_stack_2);
       }
-      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5(this,0x29,(MethodInfo *)0x0)
+      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6(this,0x29,(MethodInfo *)0x0)
       ;
-      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5(this,0x3b,(MethodInfo *)0x0)
+      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6(this,0x3b,(MethodInfo *)0x0)
       ;
       message = (Object *)(*(code *)(this->klass->vtable).ToString.method)();
       if (cRam_? == '\0') {

@@ -27,6 +27,7 @@ public class Cube : CubeBase
 
 	// Methods
 	public Cube Clone();
+	private bool IsSideVisible(FaceFlags face);
 	public static Cube Clone(Cube original);
 	public static byte[] CreateMaterialArray(byte material);
 	public static Vector3[] GetCorners(Cube cube, Face face);
@@ -40,8 +41,14 @@ public class Cube : CubeBase
 	public static bool IsFaceBoxSideAligened(Cube cube, Face face);
 	public static void UnIndentFace(Cube cube, Face face);
 	public static Vector3[] GetVerticesWorldAxisAligned(Cube cube, IntVector iVector);
-	private static void GetAverageLightValue(Face face, int vertex, Dictionary<IntVector, Cell> cells, IntVector cubePos, ref Color color, bool inside);
-	public static void GetVisibleFaceVertices(Cube cube, ref CubeModelChunk.FaceData[] faceData, IntVector iVector, Dictionary<IntVector, Cell> cells, ref int index);
+	private static float CalculateAOLightCheap(Face face, int faceCornerIndex, Dictionary<IntVector, Cell> cells, IntVector cubePos, bool inside);
+	private static float CalculateAOLightExpensive(Face face, int faceCornerIndex, Dictionary<IntVector, Cell> cells, IntVector cubePos, int[] cornerIndexToVertex, Vector3 normal);
+	public static FaceData[] GenerateCubeFaces(Cube cube, IntVector cubePos, Dictionary<IntVector, Cell> cells);
+	private static FaceData[] GenerateCubeFacesExpensive(Cube cube, IntVector cubePos, Dictionary<IntVector, Cell> cells);
+	private static FaceData[] GenerateCubeFacesCheap(Cube cube, IntVector cubePos, Dictionary<IntVector, Cell> cells);
+	private static FaceData GenerateFaceDataExpensive(Face face, IntVector cubePos, Dictionary<IntVector, Cell> cells);
+	private static FaceData GenerateFaceDataCheap(Face face, IntVector cubePos, Dictionary<IntVector, Cell> cells, Func<int, bool> insideCheck);
+	private static float CalculateAOBleed(FaceData faceData, int index);
 	public static Face GetFace(Vector3[] corners, Vector3[] triangleVertices);
 	public static Vector3[] GetFace(Vector3[] corners, Face face);
 	public static Vector3[] GetFaceVerticesWorld(GameObject gameObject, Cube cube, Face face, IntVector iVector);
@@ -57,6 +64,8 @@ public class Cube : CubeBase
 	private static void ClampFace(ref Vector3[] faceVertices);
 	public static void MoveFace(CubePickingInfo info, float delta, Vector3 axis, ref CubeOutOfBoundState outOfBoundState);
 	private static List<Vector3> GetCorners(Vector3[] counterClockwiseFace, Face direction);
+	public static Vector3[] GetNormals(Vector3[] corners, Face face);
+	private static Vector3 GetDefaultNormal(Face face);
 	private static Vector3[] GetVertices(Vector3[] corners);
 	private static void SetFace(ref Vector3[] corners, Face face, Vector3[] faceVertices);
 	private static List<Vector3> SquareCornersToCubeCorners(List<Vector2> corners, Face direction);
@@ -72,5 +81,17 @@ public class Cube : CubeBase
 	public static bool IsLegal(Vector3[] corners);
 	private static bool IsCornersValid(Vector3[] corners);
 	private static void GetTriangle(int triangleNr, Vector3[] triangleVertices, Vector3[] corners);
+	[CompilerGenerated]
+	internal static bool _GenerateCubeFacesCheap_g__insideCheck_26_0(int i);
+	[CompilerGenerated]
+	internal static bool _GenerateCubeFacesCheap_g__insideCheck_26_1(int i);
+	[CompilerGenerated]
+	internal static bool _GenerateCubeFacesCheap_g__insideCheck_26_2(int i);
+	[CompilerGenerated]
+	internal static bool _GenerateCubeFacesCheap_g__insideCheck_26_3(int i);
+	[CompilerGenerated]
+	internal static bool _GenerateCubeFacesCheap_g__insideCheck_26_4(int i);
+	[CompilerGenerated]
+	internal static bool _GenerateCubeFacesCheap_g__insideCheck_26_5(int i);
 }
 

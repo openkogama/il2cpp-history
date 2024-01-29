@@ -139,10 +139,10 @@ bool Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::
                                ((MVBlueprintBase *)this,StringLiteral_spawnWorldObjectID,
                                 (MethodInfo *)0x0);
             if (pMVar6 != (MVWorldObjectClient *)0x0) {
-              pSStack7 = pSVar5;
-              pMStack8 = wo;
+              pIStack7 = (pMVar6->klass->vtable).Compare.methodPtr;
+              pSStack8 = pSVar5;
               pDStack9 = pDVar3;
-              bVar4 = func_?();
+              bVar4 = (*(code *)(pMVar6->klass->vtable).CompareWithKoGaMaPackage.method)();
               return bVar4;
             }
           }
@@ -605,7 +605,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
                                    (&stack0xffffffa8,pMVar1,1);
                 uStack_14 = (uint)*(undefined8 *)(iVar13 + 0x10);
                 fVar15 = (float)(uStack_14 ^
-                                __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                 );
                 if (pTVar5 != (Transform *)0x0) {
                   VVar4.y = (float)uVar8 + (float)uVar11 * fVar15 * _UNK_?;
@@ -742,7 +742,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::
                                    (&stack0xffffffb0,pMVar1,1);
                 uStack_17 = (uint)*(undefined8 *)(iVar16 + 0x10);
                 fVar18 = (float)(uStack_17 ^
-                                __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                 );
                 if (pTVar10 != (Transform *)0x0) {
                   value.y = (float)uVar12 + fVar14 * fVar18 * _UNK_?;

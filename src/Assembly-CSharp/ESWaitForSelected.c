@@ -39,8 +39,6 @@ void Assembly-CSharp.dll::ESWaitForSelected::ESWaitForSelected_Execute
                (ESWaitForSelected *this,EditorStateMachine *e,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,(ExceptionArgument__Enum)e,(MethodInfo *)0x0);
   if (e == (EditorStateMachine *)0x0) {
     func_?();
     pcVar1 = (code *)swi(3);

@@ -602,7 +602,7 @@ code_?:
           fVar9 = VStack_15.y;
         }
         impulse.y = (float)((uint)fVar9 ^
-                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
         impulse.x = (float)aOStack_6[0].currentCryptoKey;
         impulse.z = 0.0;
@@ -709,7 +709,7 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_DoFloating
             fVar14 = uStack_8._4_4_;
           }
           impulse.y = (float)((uint)fVar14 ^
-                             __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                              );
           impulse.x = (float)uVar9;
           impulse.z = 0.0;
@@ -1672,7 +1672,7 @@ bool Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_IsDirectionValid
         if ((fVar6 < direction.x) ||
            (direction.x <
             (float)((uint)fVar6 ^
-                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field))) {
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field))) {
           (this->fields).stuckObject = (GameObject *)0x0;
           func_?();
           pMVar3 = (this->fields)._.owner;
@@ -1962,13 +1962,13 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_OnHitParticleUpda
                             ((Component *)pPVar2,(MethodInfo *)0x0);
         this = (PickUpItemHealRay *)0x0;
         forward.y = (float)((uint)firingDirection.y ^
-                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
         forward.x = (float)((uint)firingDirection.x ^
-                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
         forward.z = (float)((uint)firingDirection.z ^
-                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
         pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
                            ((Quaternion *)&stack0xffffffec,forward,(MethodInfo *)0x0);
@@ -2775,13 +2775,13 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_UpdateHitParticle
         pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)pPVar1,(MethodInfo *)0x0);
         forward.y = (float)((uint)firingDirection.y ^
-                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
         forward.x = (float)((uint)firingDirection.x ^
-                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
         forward.z = (float)((uint)firingDirection.z ^
-                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
         pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
                            ((Quaternion *)&stack0xffffffec,forward,(MethodInfo *)0x0);

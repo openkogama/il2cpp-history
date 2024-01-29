@@ -239,7 +239,7 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::
       }
       (this->fields).currentDistanceToAvatar =
            (float)((uint)fVar2 ^
-                  __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) +
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) +
            (this->fields).currentDistanceToAvatar;
       return;
     }
@@ -406,7 +406,7 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::AndroidThirdPersonCamera_Upd
         fVar2 = (float)((uint)fVar1 & _UNK_?);
       }
       fVar2 = (float)((uint)fVar2 ^
-                      __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     }
   }
   (this->fields).currentDistanceToAvatar = fVar2 + (this->fields).currentDistanceToAvatar;

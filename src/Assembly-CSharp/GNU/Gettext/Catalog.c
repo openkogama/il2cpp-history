@@ -538,7 +538,7 @@ code_?:
           uVar3 = mscorlib.dll::System::String::String_get_Chars(reference,iVar1,(MethodInfo *)0x0);
           if (uVar3 != 10) goto code_?;
           if (this == (StringBuilder *)0x0) goto code_?;
-          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5
+          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6
                     (this,10,(MethodInfo *)0x0);
           iVar1 = iVar1 + -1;
         } while (-1 < iVar1);
@@ -2546,7 +2546,7 @@ code_?:
         pSVar2 = *ppSVar5;
         if (this._3_1_ == '\0') {
           if (this_00 == (StringBuilder *)0x0) goto code_?;
-          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5
+          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6
                     (this_00,10,(MethodInfo *)0x0);
         }
         if (pSVar2 == (String *)0x0) goto code_?;

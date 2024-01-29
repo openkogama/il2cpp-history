@@ -16,18 +16,12 @@ using UnityEngine.EventSystems;
 public class DesktopEditModeController : ModeControllerBase, IEditStateCommands, IEditModeUI, IGridSnapHandler, IEditModeController
 {
 	// Fields
-	private bool enterPlayModeOnceGuard;
-	private bool enterBuildModeOnceGuard;
-	private bool isInPlayInEditMode;
-	private Action<EditModeChangeArgs> editModeChange;
-	private bool gridSnap;
-	private DesktopPlayModeController desktopPlayModeController;
-	[CompilerGenerated]
-	private EditorStateMachine _EditModeStateMachine_k__BackingField;
 	[SerializeField]
 	private EditorWorldObjectCreation editorWorldObjectCreation;
 	[SerializeField]
 	private UIStack uiStack;
+	[SerializeField]
+	private InEditMenu inEditMenuPrefab;
 	[SerializeField]
 	private GameObject stackBottom;
 	[SerializeField]
@@ -58,6 +52,15 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 	private SetupCubeModelTutorialUI setupCubeModelTutorialUI;
 	[SerializeField]
 	private GoldPurchasedTracker goldPurchasedTracker;
+	private bool enterPlayModeOnceGuard;
+	private bool enterBuildModeOnceGuard;
+	private bool isInPlayInEditMode;
+	private bool gridSnap;
+	private Action<EditModeChangeArgs> editModeChange;
+	private DesktopPlayModeController desktopPlayModeController;
+	private InEditMenu inEditMenu;
+	[CompilerGenerated]
+	private EditorStateMachine _EditModeStateMachine_k__BackingField;
 	[CompilerGenerated]
 	private PlayerShopInventoryRepository _PlayerShopInventoryRepository_k__BackingField;
 	private float focusTime;
@@ -77,31 +80,31 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__61_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__63_1;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _DeleteWoid_b__61_1(IUIStack handler, BaseEventData data);
+		internal void _DeleteWoid_b__63_1(IUIStack handler, BaseEventData data);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass61_0
+	private sealed class __c__DisplayClass63_0
 	{
 		// Fields
 		public string errorText;
 
 		// Constructors
-		public __c__DisplayClass61_0();
+		public __c__DisplayClass63_0();
 
 		// Methods
 		internal void _DeleteWoid_b__0(IModalPopupCreator x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _HandleCursorVisible_d__52 : IEnumerator<object>
+	private sealed class _HandleCursorVisible_d__54 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -113,7 +116,7 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 
 		// Constructors
 		[DebuggerHidden]
-		public _HandleCursorVisible_d__52(int __1__state);
+		public _HandleCursorVisible_d__54(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -132,8 +135,8 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 	private void Start();
 	private void HandleFocusInputSuppress();
 	private void Update();
+	private void HandleInput();
 	private void OnApplicationFocus(bool focus);
-	private void ToggleHD();
 	public void RegisterPlayModeController(DesktopPlayModeController desktopPlayModeController);
 	public override void Initialize();
 	private void HideUI();
@@ -143,7 +146,7 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 	public void EnterBuildMode();
 	public void SetState(EditorEvent editorEvent);
 	public void ClearStateStack();
-	[IteratorStateMachine(typeof(_HandleCursorVisible_d__52))]
+	[IteratorStateMachine(typeof(_HandleCursorVisible_d__54))]
 	private IEnumerator HandleCursorVisible();
 	public bool IsGridSnap();
 	public void Set(bool snap);
@@ -153,8 +156,10 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 	public void DeleteWoid(int woid);
 	public void SetUIReady();
 	[CompilerGenerated]
-	private void _RegisterShortcuts_b__58_0(IShortcutKeyRegister x, BaseEventData y);
+	private void _HandleInput_b__40_0(IUIStack x, BaseEventData y);
 	[CompilerGenerated]
-	private void _RegisterShortcuts_b__58_1(IShortcutKeyRegister x, BaseEventData y);
+	private void _RegisterShortcuts_b__60_0(IShortcutKeyRegister x, BaseEventData y);
+	[CompilerGenerated]
+	private void _RegisterShortcuts_b__60_1(IShortcutKeyRegister x, BaseEventData y);
 }
 

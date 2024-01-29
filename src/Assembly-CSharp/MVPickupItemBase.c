@@ -1593,24 +1593,39 @@ void Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_triggerBoxEvents_Tr
 
 {
   if (cRam_? == '\0') {
-    pMStack_1 = (MethodInfo *)&MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-    func_?();
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
     cRam_? = '\x01';
   }
+  pMVar1 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
   if (e != (TriggerEventArgs *)0x0) {
-    if ((e->fields).instigatorWOID != -1) {
-      pLStack_2 = (this->fields).instigatorsInTrigger;
-      if (pLStack_2 == (List_1_System_Int32_ *)0x0) goto code_?;
-      pMStack_1 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-      puStack_3 = (undefined *)(e->fields).instigatorWOID;
-      func_?();
+    if ((e->fields).instigatorWOID == -1) {
+      return;
     }
-    return;
+    item = (e->fields).instigatorWOID;
+    this_00 = (this->fields).instigatorsInTrigger;
+    if (this_00 != (List_1_System_Int32_ *)0x0) {
+      pIVar2 = (this_00->fields)._items;
+      piVar3 = &(this_00->fields)._version;
+      *piVar3 = *piVar3 + 1;
+      if (pIVar2 != (Int32__Array *)0x0) {
+        uVar4 = (this_00->fields)._size;
+        if (pIVar2->max_length <= uVar4) {
+          mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+          List_1_System_Int32__AddWithResize(this_00,item,pMVar1->klass->rgctx_data[0xe].method);
+          return;
+        }
+        (this_00->fields)._size = uVar4 + 1;
+        if (uVar4 < pIVar2->max_length) {
+          pIVar2->vector[uVar4] = item;
+          return;
+        }
+        goto code_?;
+      }
+    }
   }
+  func_?();
 code_?:
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
-  uVar4 = func_?(&pLStack_2);
-  func_?(uVar4);
+  func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;

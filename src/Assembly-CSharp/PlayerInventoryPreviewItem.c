@@ -492,88 +492,136 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
     cRam_? = '\x01';
   }
   if (woPreviewObject != (MVWorldObjectClient *)0x0) {
-    t = (*(code *)(woPreviewObject->klass->vtable).get_DocumentationType.method)
-                  (woPreviewObject,(woPreviewObject->klass->vtable).TraverseRecursiveTail.methodPtr)
-    ;
+    IVar1 = (*(code *)(woPreviewObject->klass->vtable).get_DocumentationType.method)
+                      (woPreviewObject,
+                       (woPreviewObject->klass->vtable).TraverseRecursiveTail.methodPtr);
     if (item != (InventoryItem *)0x0) {
-      InventoryItem::InventoryItem_ApplyLocalDescriptionOverride(item,t,(MethodInfo *)0x0);
-      this_00 = (this->fields).toolTip;
-      if (this_00 != (ToolTip *)0x0) {
-        ToolTip::ToolTip_SetText(this_00,(item->fields).name,(MethodInfo *)0x0);
-        iVar1 = (*(code *)(woPreviewObject->klass->vtable).get_DocumentationType.method)
-                          (woPreviewObject,
-                           (woPreviewObject->klass->vtable).TraverseRecursiveTail.methodPtr);
-        (this->fields).DocumentationType = iVar1;
-        pIVar2 = (this->fields).objectPreviewerPrefab;
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        pIVar2 = (InventoryItemPreviewer *)
-                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                           ((Object *)pIVar2,
-                            InventoryItemPreviewer_MethodInfo__UnityEngine__Object__Instantiate<InventoryItemPreviewer>_InventoryItemPreviewer_
-                           );
-        (this->fields).objectPreviewer = pIVar2;
-        func_?(&(this->fields).objectPreviewer,pIVar2);
-        fVar3 = (float)(item->fields).slotPosition * _UNK_?;
-        if ((TypeInfo__InventoryItem->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__InventoryItem);
-        }
-        pDVar4 = TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride;
-        pIVar5 = (woPreviewObject->klass->vtable).TraverseRecursiveTail.methodPtr;
-        IVar6 = (*(code *)(woPreviewObject->klass->vtable).get_DocumentationType.method)();
-        if (pDVar4 != (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_ *)
-                      0x0) {
-          bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
-                  ::Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
-                            ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar4,IVar6,
-                             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__ContainsKey_MVWorldObjectDocumentationType_
-                            );
-          if (bVar7 == 0) {
-            pMVar8 = (MonitorData *)0x0;
-            uVar9 = 0;
+      if (cRam_? == '\0') {
+        func_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__ContainsKey_MVWorldObjectDocumentationType_
+                       );
+        func_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__get_Item_MVWorldObjectDocumentationType_
+                       );
+        func_?(&TypeInfo__InventoryItem);
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__InventoryItem->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__InventoryItem);
+      }
+      pDVar2 = TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride;
+      if (pDVar2 != (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_ *)
+                    0x0) {
+        bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
+                          ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar2,IVar1,
+                           MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__ContainsKey_MVWorldObjectDocumentationType_
+                          );
+        if (bVar3 != 0) {
+          if ((TypeInfo__InventoryItem->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__InventoryItem);
           }
-          else {
-            if ((TypeInfo__InventoryItem->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__InventoryItem);
+          pDVar2 = TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride;
+          if (pDVar2 == (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_
+                         *)0x0) goto code_?;
+          pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+                   ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                             ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,IVar1,
+                              MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__get_Item_MVWorldObjectDocumentationType_
+                             );
+          if (pOVar4 == (Object *)0x0) goto code_?;
+          pOVar5 = pOVar4[1].klass;
+          (item->fields).name = (String *)pOVar5;
+          func_?(&(item->fields).name,pOVar5);
+          if (cRam_? == '\0') {
+            func_?(&StringLiteral_u000Au000A);
+            cRam_? = '\x01';
+          }
+          pSVar6 = mscorlib.dll::System::String::String_Concat_4
+                             ((String *)pOVar4[1].monitor,StringLiteral_u000Au000A,
+                              (String *)pOVar4[2].klass,(MethodInfo *)0x0);
+          (item->fields).description = pSVar6;
+          func_?(&(item->fields).description,pSVar6);
+        }
+        this_00 = (this->fields).toolTip;
+        if (this_00 != (ToolTip *)0x0) {
+          ToolTip::ToolTip_SetText(this_00,(item->fields).name,(MethodInfo *)0x0);
+          iVar7 = (*(code *)(woPreviewObject->klass->vtable).get_DocumentationType.method)
+                            (woPreviewObject,
+                             (woPreviewObject->klass->vtable).TraverseRecursiveTail.methodPtr);
+          (this->fields).DocumentationType = iVar7;
+          pIVar8 = (this->fields).objectPreviewerPrefab;
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__UnityEngine__Object);
+          }
+          pIVar8 = (InventoryItemPreviewer *)
+                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                              ((Object *)pIVar8,
+                               InventoryItemPreviewer_MethodInfo__UnityEngine__Object__Instantiate<InventoryItemPreviewer>_InventoryItemPreviewer_
+                              );
+          (this->fields).objectPreviewer = pIVar8;
+          func_?(&(this->fields).objectPreviewer,pIVar8);
+          fVar9 = (float)(item->fields).slotPosition * _UNK_?;
+          if ((TypeInfo__InventoryItem->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__InventoryItem);
+          }
+          pDVar2 = TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride;
+          pIVar10 = (woPreviewObject->klass->vtable).TraverseRecursiveTail.methodPtr;
+          IVar1 = (*(code *)(woPreviewObject->klass->vtable).get_DocumentationType.method)();
+          if (pDVar2 != (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_
+                         *)0x0) {
+            bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Int32Enum,System::Single]::
+                    Dictionary_2_System_Int32Enum_System_Single__ContainsKey
+                              ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar2,IVar1,
+                               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__ContainsKey_MVWorldObjectDocumentationType_
+                              );
+            if (bVar3 == 0) {
+              pMVar11 = (MonitorData *)0x0;
+              uVar12 = 0;
             }
-            pDVar4 = TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride;
-            IVar6 = (*(code *)(woPreviewObject->klass->vtable).get_DocumentationType.method)
-                              (woPreviewObject,
-                               (woPreviewObject->klass->vtable).TraverseRecursiveTail.methodPtr);
-            if (pDVar4 == (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_
-                           *)0x0) goto code_?;
-            pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                     Int32Enum,System::Object]::
-                     Dictionary_2_System_Int32Enum_System_Object__get_Item
-                               ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar4,IVar6,
-                                MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__get_Item_MVWorldObjectDocumentationType_
-                               );
-            if (pOVar10 == (Object *)0x0) goto code_?;
-            uVar9 = *(undefined8 *)&pOVar10[2].monitor;
-            pMVar8 = pOVar10[3].monitor;
-          }
-          pIVar2 = (this->fields).objectPreviewer;
-          if (pIVar2 != (InventoryItemPreviewer *)0x0) {
-            cameraOffset.z = (float)pMVar8;
-            cameraOffset.x = (float)(int)uVar9;
-            cameraOffset.y = (float)(int)((ulonglong)uVar9 >> 0x20);
-            previewPosition.y = (float)pIVar5;
-            previewPosition.x = (float)woPreviewObject;
-            previewPosition.z = fVar3;
-            InventoryItemPreviewer::InventoryItemPreviewer_Initialize
-                      (pIVar2,(this->fields).previewWidth,(this->fields).previewHeight,
-                       CameraClearFlags__Enum_Color,(woPreviewObject->fields).previewLayerMask,
-                       cameraOffset,rootTransform,previewPosition,(item->fields).name,
-                       woPreviewObject,(woPreviewObject->fields).gameObject,(MethodInfo *)0x0);
-            pIVar2 = (this->fields).objectPreviewer;
-            if ((pIVar2 != (InventoryItemPreviewer *)0x0) &&
-               (this_01 = (this->fields).previewImage, this_01 != (RawImage *)0x0)) {
-              UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                        (this_01,(Texture *)(pIVar2->fields).previewTexture,(MethodInfo *)0x0);
-              (this->fields).initialized = 1;
-              (this->fields).hasItemPreviewer = 1;
-              return;
+            else {
+              if ((TypeInfo__InventoryItem->_1).cctor_finished_or_no_cctor == 0) {
+                func_?(TypeInfo__InventoryItem);
+              }
+              pDVar2 = TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride;
+              IVar1 = (*(code *)(woPreviewObject->klass->vtable).get_DocumentationType.method)
+                                (woPreviewObject,
+                                 (woPreviewObject->klass->vtable).TraverseRecursiveTail.methodPtr);
+              if (pDVar2 == (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_
+                             *)0x0) goto code_?;
+              pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                       Int32Enum,System::Object]::
+                       Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                 ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,IVar1,
+                                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__get_Item_MVWorldObjectDocumentationType_
+                                 );
+              if (pOVar4 == (Object *)0x0) goto code_?;
+              uVar12 = *(undefined8 *)&pOVar4[2].monitor;
+              pMVar11 = pOVar4[3].monitor;
+            }
+            pIVar8 = (this->fields).objectPreviewer;
+            if (pIVar8 != (InventoryItemPreviewer *)0x0) {
+              cameraOffset.z = (float)pMVar11;
+              cameraOffset.x = (float)(int)uVar12;
+              cameraOffset.y = (float)(int)((ulonglong)uVar12 >> 0x20);
+              previewPosition.y = (float)pIVar10;
+              previewPosition.x = (float)woPreviewObject;
+              previewPosition.z = fVar9;
+              InventoryItemPreviewer::InventoryItemPreviewer_Initialize
+                        (pIVar8,(this->fields).previewWidth,(this->fields).previewHeight,
+                         CameraClearFlags__Enum_Color,(woPreviewObject->fields).previewLayerMask,
+                         cameraOffset,rootTransform,previewPosition,(item->fields).name,
+                         woPreviewObject,(woPreviewObject->fields).gameObject,(MethodInfo *)0x0);
+              pIVar8 = (this->fields).objectPreviewer;
+              if ((pIVar8 != (InventoryItemPreviewer *)0x0) &&
+                 (this_01 = (this->fields).previewImage, this_01 != (RawImage *)0x0)) {
+                UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
+                          (this_01,(Texture *)(pIVar8->fields).previewTexture,(MethodInfo *)0x0);
+                (this->fields).initialized = 1;
+                (this->fields).hasItemPreviewer = 1;
+                return;
+              }
             }
           }
         }
@@ -582,8 +630,8 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -1010,58 +1058,95 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
                      );
   if (value != (Object *)0x0) {
     value[1].klass = pOVar1;
+    method_01 = (MethodInfo *)&UNK_?;
     func_?(value + 1,pOVar1);
-    if (value[1].klass != (Object__Class *)0x0) {
-      ItemPurchasePopup::ItemPurchasePopup_Initialize_2
-                ((ItemPurchasePopup *)value[1].klass,(this->fields).previewImage,(this->fields).item
-                 ,(MethodInfo *)0x0);
-      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      if ((TypeInfo__PlayerInventoryPreviewItem____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    pOVar1 = value[1].klass;
+    pIVar2 = (this->fields).item;
+    if (pOVar1 != (Object__Class *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__ShopItem);
+        cRam_? = '\x01';
       }
-      callbackFunction = TypeInfo__PlayerInventoryPreviewItem____c->static_fields->__9__34_0;
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+      value_00 = (Il2CppClass *)func_?(TypeInfo__ShopItem);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                ((Object *)value_00,ExceptionArgument__Enum_obj,method_01);
+      if (pIVar2 != (InventoryItem *)0x0) {
+        ((ShopItem__Fields *)&value_00->name)->itemID = (pIVar2->fields).itemID;
+        value_00->namespaze = (char *)(pIVar2->fields).itemCategoryID;
+        (value_00->byval_arg).data = (_union_86)(pIVar2->fields).itemTypeID;
+        image = (RawImage *)(pIVar2->fields).name;
+        *(RawImage **)&(value_00->byval_arg).attrs = image;
+        func_?(&(value_00->byval_arg).attrs);
+        pSVar3 = (pIVar2->fields).description;
+        (value_00->this_arg).data.dummy = pSVar3;
+        func_?(&value_00->this_arg,pSVar3);
+        pBVar4 = (pIVar2->fields).data;
+        *(Byte__Array **)&(value_00->this_arg).attrs = pBVar4;
+        func_?(&(value_00->this_arg).attrs,pBVar4);
+        *(bool *)&value_00->element_class = (pIVar2->fields).resellable;
+        value_00->castClass = (Il2CppClass *)(pIVar2->fields).priceGold;
+        value_00->declaringType = (Il2CppClass *)(pIVar2->fields).slotPosition;
+        (pOVar1->_0).declaringType = value_00;
+        func_?(&(pOVar1->_0).declaringType,value_00);
+        pSVar3 = (pIVar2->fields).name;
+        priceGold = mscorlib.dll::System::Int32::Int32_ToString
+                              ((Int32 *)&(pIVar2->fields).priceGold,(MethodInfo *)0x0);
+        ItemPurchasePopup::ItemPurchasePopup_Initialize
+                  ((ItemPurchasePopup *)pOVar1,image,pSVar3,priceGold,(pIVar2->fields).description,
+                   (MethodInfo *)0x0);
+        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this,(MethodInfo *)0x0);
+        pGVar6 = pGVar5;
         if ((TypeInfo__PlayerInventoryPreviewItem____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        object = TypeInfo__PlayerInventoryPreviewItem____c->static_fields->__9;
-        callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+        callbackFunction = TypeInfo__PlayerInventoryPreviewItem____c->static_fields->__9__34_0;
+        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+          pGVar5 = pGVar6;
+          if ((TypeInfo__PlayerInventoryPreviewItem____c->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+            pGVar5 = pGVar6;
+          }
+          object = TypeInfo__PlayerInventoryPreviewItem____c->static_fields->__9;
+          callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+          this = (PlayerInventoryPreviewItem *)&UNK_?;
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object
+                     ,
+                     MethodInfo__PlayerInventoryPreviewItem____c___ShowPurchasePopUp_b__34_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          TypeInfo__PlayerInventoryPreviewItem____c->static_fields->__9__34_0 = callbackFunction;
+          func_?();
+        }
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
+          func_?();
+        }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (pGVar5,(BaseEventData *)0x0,
+                   (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                  );
+        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this,(MethodInfo *)0x0);
+        callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-                   MethodInfo__PlayerInventoryPreviewItem____c___ShowPurchasePopUp_b__34_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+                   MethodInfo__PlayerInventoryPreviewItem____c__DisplayClass34_0___ShowPurchasePopUp_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
-        TypeInfo__PlayerInventoryPreviewItem____c->static_fields->__9__34_0 = callbackFunction;
-        func_?();
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (pGVar5,(BaseEventData *)0x0,callbackFunction_00,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                  );
+        return;
       }
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?();
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar2,(BaseEventData *)0x0,
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
-                 MethodInfo__PlayerInventoryPreviewItem____c__DisplayClass34_0___ShowPurchasePopUp_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar2,(BaseEventData *)0x0,callbackFunction_00,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -1213,36 +1298,22 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IAddItemFromInventory);
+    pIStack_1 = (InventoryItem *)&TypeInfo__UnityEngine__EventSystems__IAddItemFromInventory;
+    func_?();
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields).item;
   if (x != (IAddItemFromInventory *)0x0) {
-    pIVar2 = x->klass;
-    uVar3 = 0;
-    uVar4._0_1_ = (pIVar2->_1).rank;
-    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-    if (uVar4 != 0) {
-      do {
-        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
-            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAddItemFromInventory) {
-          pIVar2 = x->klass;
-          iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-          (*(code *)(&pIVar2->vtable)[iVar5].OnAddItemFromInventory.method)
-                    (x,pIVar1,(&pIVar2[1]._0.image)[iVar5 * 2]);
-          return;
-        }
-        uVar3 = uVar3 + 1;
-      } while (uVar3 < uVar4);
-    }
-    puVar6 = (undefined4 *)
-             func_?(x,TypeInfo__UnityEngine__EventSystems__IAddItemFromInventory,0);
-    (*(code *)*puVar6)(x,pIVar1,puVar6[1]);
+    pIStack_1 = (this->fields).item;
+    pIStack_2 = x;
+    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IAddItemFromInventory;
+    func_?(0);
     return;
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pIStack_1 = (InventoryItem *)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

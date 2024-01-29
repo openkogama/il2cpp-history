@@ -750,35 +750,34 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
   }
   this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             MVGroup::MVGroup_get_Children((MVGroup *)this,(MethodInfo *)0x0);
-  index = 0;
+  pCVar1 = (CollectTheItemCollectableInstance *)0x0;
   if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    for (; index < (this_02->fields)._size; index = index + 1) {
-      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    while (index = pCVar1, (int)index < (this_02->fields)._size) {
+      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_02,index,
+                        (this_02,(int32_t)index,
                          MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
                         );
-      if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      pCVar2 = (this->fields).collectTheItemObject;
-      if ((pCVar2 == (CollectTheItemObject *)0x0) ||
-         (pTVar3 = (Transform *)(pCVar2->fields).cullingObject, pTVar3 == (Transform *)0x0))
+      if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      pTVar3 = *(Transform **)((int)RVar2 + 0x90);
+      pCVar4 = (this->fields).collectTheItemObject;
+      if ((pCVar4 == (CollectTheItemObject *)0x0) ||
+         (pGVar5 = (pCVar4->fields).cullingObject, pGVar5 == (GameObject *)0x0))
       goto code_?;
       p = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                    ((GameObject *)pTVar3,(MethodInfo *)0x0);
+                    (pGVar5,(MethodInfo *)0x0);
       if (pTVar3 == (Transform *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
                 (pTVar3,p,(MethodInfo *)0x0);
-      this = (CollectTheItemCollectableInstance *)
-             MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_;
-      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_02,index,
+                        (this_02,(int32_t)index,
                          MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
                         );
-      if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      pTVar3 = *(Transform **)((int)RVar1 + 0x90);
+      if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      pTVar3 = *(Transform **)((int)RVar2 + 0x90);
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
@@ -787,10 +786,12 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                 (pTVar3,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
                  (MethodInfo *)0x0);
+      this = index;
+      pCVar1 = (CollectTheItemCollectableInstance *)((int)&index->klass + 1);
     }
-    pCVar2 = (this->fields).collectTheItemObject;
-    if (pCVar2 != (CollectTheItemObject *)0x0) {
-      this_00 = (pCVar2->fields).triggerBoxEvents;
+    pCVar4 = (this->fields).collectTheItemObject;
+    if (pCVar4 != (CollectTheItemObject *)0x0) {
+      this_00 = (pCVar4->fields).triggerBoxEvents;
       this_03 = (UnityAction_2_System_Object_System_Object_ *)
                 func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
@@ -801,34 +802,35 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
       if (this_00 != (TriggerBoxEvents *)0x0) {
         TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
                   (this_00,(EventHandler_1_TriggerEventArgs_ *)this_03,(MethodInfo *)0x0);
-        pCVar2 = (this->fields).collectTheItemObject;
-        if (pCVar2 != (CollectTheItemObject *)0x0) {
-          CollectTheItemObject::CollectTheItemObject_InitializeGreyOutScript
-                    (pCVar2,(MethodInfo *)0x0);
+        pCVar4 = (this->fields).collectTheItemObject;
+        if ((pCVar4 != (CollectTheItemObject *)0x0) &&
+           (this_01 = (pCVar4->fields).greyOutObject, this_01 != (GreyOutObjectScript *)0x0)) {
+          GreyOutObjectScript::GreyOutObjectScript_InitializeOriginalMaterials
+                    (this_01,(MethodInfo *)0x0);
           if (cRam_? == '\0') {
             func_?(&
                             UnityEngine__MeshFilter__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshFilter>______
                            );
             cRam_? = '\x01';
           }
-          pCVar2 = (this->fields).collectTheItemObject;
-          if (pCVar2 != (CollectTheItemObject *)0x0) {
-            pCVar4 = (pCVar2->fields).blinker;
-            this_01 = (((this->fields).collectTheItemObject)->fields).visualObject;
-            if (this_01 != (GameObject *)0x0) {
-              pMVar5 = (MeshFilter__Array *)
+          pCVar4 = (this->fields).collectTheItemObject;
+          if (pCVar4 != (CollectTheItemObject *)0x0) {
+            pCVar6 = (pCVar4->fields).blinker;
+            pGVar5 = (((this->fields).collectTheItemObject)->fields).visualObject;
+            if (pGVar5 != (GameObject *)0x0) {
+              pMVar7 = (MeshFilter__Array *)
                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                        GameObject_GetComponentsInChildren
-                                 (this_01,
+                                 (pGVar5,
                                   UnityEngine__MeshFilter__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshFilter>______
                                  );
-              if (pCVar4 != (CollectTheItemBlinker *)0x0) {
-                (pCVar4->fields)._.meshFilters = pMVar5;
-                func_?(&(pCVar4->fields)._.meshFilters,pMVar5);
-                pCVar2 = (this->fields).collectTheItemObject;
-                if ((pCVar2 != (CollectTheItemObject *)0x0) &&
-                   (pCVar4 = (pCVar2->fields).blinker, pCVar4 != (CollectTheItemBlinker *)0x0)) {
-                  (pCVar4->fields)._.visible = 1;
+              if (pCVar6 != (CollectTheItemBlinker *)0x0) {
+                (pCVar6->fields)._.meshFilters = pMVar7;
+                func_?(&(pCVar6->fields)._.meshFilters,pMVar7);
+                pCVar4 = (this->fields).collectTheItemObject;
+                if ((pCVar4 != (CollectTheItemObject *)0x0) &&
+                   (pCVar6 = (pCVar4->fields).blinker, pCVar6 != (CollectTheItemBlinker *)0x0)) {
+                  (pCVar6->fields)._.visible = 1;
                   return;
                 }
               }
@@ -840,8 +842,8 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1532,8 +1534,8 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
         pMVar9 = pMVar6;
         bVar3 = CollectTheItemCollectableInstance_get_IsOriginalInstance(this,(MethodInfo *)0x0);
         if (this_04 != (CollectTheItemObject *)0x0) {
-          CollectTheItemObject::CollectTheItemObject_set_EnableFading
-                    (this_04,bVar3 ^ 1,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                    ((Behaviour *)this_04,bVar3 ^ 1,(MethodInfo *)0x0);
           pDVar10 = (Delegate *)pMVar6[3].monitor;
           this_03 = (UnityAction_1_System_Int32Enum_ *)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::

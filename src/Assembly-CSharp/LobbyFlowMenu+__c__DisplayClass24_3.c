@@ -1,9 +1,9 @@
 
-/* Void <GoToMenu>b__3(IUIStack, BaseEventData) */
+/* Void <GoToMenu>b__4(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::LobbyFlowMenu+<>c__DisplayClass23_2::
-     LobbyFlowMenu_c_DisplayClass23_2__GoToMenu_b__3
-               (LobbyFlowMenu_c_DisplayClass23_2 *this,IUIStack *x,BaseEventData *y,
+void Assembly-CSharp.dll::LobbyFlowMenu+<>c__DisplayClass24_3::
+     LobbyFlowMenu_c_DisplayClass24_3__GoToMenu_b__4
+               (LobbyFlowMenu_c_DisplayClass24_3 *this,IUIStack *x,BaseEventData *y,
                MethodInfo *method)
 
 {

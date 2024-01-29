@@ -15,8 +15,8 @@ void Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_AddMaterial
     func_?(&TypeInfo__MVMaterial);
     cRam_? = '\x01';
   }
-  if ((this->fields).materials != (List_1_MVMaterial_ *)0x0) {
-    this_00 = (this->fields).materials;
+  this_00 = (this->fields).materials;
+  if (this_00 != (List_1_MVMaterial_ *)0x0) {
     materialId = (this_00->fields)._size;
     if (physicalProperties != (Single__Array *)0x0) {
       if ((((physicalProperties->max_length != 0) && (1 < physicalProperties->max_length)) &&
@@ -269,6 +269,81 @@ bool Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_IsMaterialU
   pcVar3 = (code *)swi(3);
   bVar4 = (*pcVar3)();
   return bVar4;
+}
+
+
+/* Void RegenerateMaterialButtonTextures() */
+
+void Assembly-CSharp.dll::MVMaterialRepository::
+     MVMaterialRepository_RegenerateMaterialButtonTextures
+               (MVMaterialRepository *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
+    func_?(&
+                    MaterialButtonTextureGenerator_MethodInfo__UnityEngine__Object__Instantiate<MaterialButtonTextureGenerator>_MaterialButtonTextureGenerator_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__PrefabPool);
+    cRam_? = '\x01';
+  }
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
+    pMVar2 = (pPVar1->fields).materialButtonTextureGenerator;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    pMVar2 = (MaterialButtonTextureGenerator *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)pMVar2,
+                        MaterialButtonTextureGenerator_MethodInfo__UnityEngine__Object__Instantiate<MaterialButtonTextureGenerator>_MaterialButtonTextureGenerator_
+                       );
+    index = 0;
+    pLVar3 = (this->fields).materials;
+    if (pLVar3 != (List_1_MVMaterial_ *)0x0) {
+      while (index < (pLVar3->fields)._size) {
+        this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                  (this->fields).materials;
+        if (((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+            || (this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                          RegularExpressions::RegexCharClass+SingleRange]::
+                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                    (this_00,index,
+                                     MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_
+                                    ), this_01 == (RegexCharClass_SingleRange)0x0)) ||
+           (MVMaterial::MVMaterial_GenerateCube((MVMaterial *)this_01,index,(MethodInfo *)0x0),
+           pMVar2 == (MaterialButtonTextureGenerator *)0x0)) goto code_?;
+        this = (MVMaterialRepository *)
+               MaterialButtonTextureGenerator::MaterialButtonTextureGenerator_TakePicture
+                         (pMVar2,*(Mesh **)((int)this_01 + 0x10),(MethodInfo *)0x0);
+        *(MVMaterialRepository **)((int)this_01 + 0x34) = this;
+        func_?();
+        index = index + 1;
+        pLVar3 = (((Texture__Fields *)&(this->fields).materials)->_).m_CachedPtr;
+        if (pLVar3 == (List_1_MVMaterial_ *)0x0) goto code_?;
+      }
+      if (pMVar2 != (MaterialButtonTextureGenerator *)0x0) {
+        obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)pMVar2,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Object);
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                  ((Object_1 *)obj,(MethodInfo *)0x0);
+        return;
+      }
+    }
+  }
+code_?:
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
+  return;
 }
 
 

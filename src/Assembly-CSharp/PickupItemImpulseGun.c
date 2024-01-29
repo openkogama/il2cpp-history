@@ -457,14 +457,14 @@ void Assembly-CSharp.dll::PickupItemImpulseGun::PickupItemImpulseGun_Fire
                       ((RuntimeEventManager *)this_01,this_04,(MethodInfo *)0x0);
           }
           VStack_8.z = (float)((uint)fStack_1 ^
-                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                ) * fVar6;
           pMVar4 = (this->fields)._.owner;
           VStack_8.y = (float)((uint)fStack_3 ^
-                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                ) * fVar6;
           VStack_8.x = (float)((uint)fStack_2 ^
-                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                ) * fVar6;
           if (pMVar4 == (MVPickupOwner *)0x0) goto code_?;
           this_01 = (RegexCharClass_SingleRange)

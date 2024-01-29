@@ -39,9 +39,11 @@ code_?:
             func_?();
             cRam_? = '\x01';
           }
-          if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField ==
-              (IPlayModeUI *)0x0) goto code_?;
-          idFrom = (int32_t)&UNK_?;
+          spawnRoleDataReceiver =
+               (SpawnRoleDataReceiver *)
+               TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+          if (spawnRoleDataReceiver == (SpawnRoleDataReceiver *)0x0) goto code_?;
+          idFrom = (int32_t)TypeInfo__IPlayModeUI;
           func_?();
         }
       }
@@ -51,6 +53,7 @@ code_?:
       if (this_03 != (MVWorldObjectClientManager *)0x0) {
         pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                            (this_03,idFrom,(MethodInfo *)0x0);
+        pMVar4 = pMVar3;
         if (((pMVar3 != (MVWorldObject *)0x0) &&
             ((TypeInfo__MVBuildModeAvatar->_1).naturalAligment <=
              (pMVar3->klass->_1).naturalAligment)) &&
@@ -59,29 +62,51 @@ code_?:
             == TypeInfo__MVBuildModeAvatar)) {
           (*(code *)(this->klass->vtable).set_Position.method)();
           (*(code *)(this->klass->vtable).set_Rotation.method)();
-          puVar4 = (undefined8 *)(*(code *)(this->klass->vtable).get_Position.method)();
-          uVar5 = *puVar4;
-          fVar6 = *(float *)(puVar4 + 1);
-          pQVar7 = (Quaternion *)
-                   (*(code *)(this->klass->vtable).get_Rotation.method)(&stack0xffffffe4);
-          position_00.z = fVar6;
-          position_00.x = (float)(int)uVar5;
-          position_00.y = (float)(int)((ulonglong)uVar5 >> 0x20);
-          MVAvatarLocal_SetTransform(this,position_00,*pQVar7,(MethodInfo *)0x0);
+          pMVar4 = (MVWorldObject *)(this->klass->vtable).set_Position.methodPtr;
+          puVar5 = (undefined8 *)(*(code *)(this->klass->vtable).get_Position.method)();
+          uVar6 = *puVar5;
+          fVar7 = *(float *)(puVar5 + 1);
+          pQVar8 = (Quaternion *)
+                    (*(code *)(this->klass->vtable).get_Rotation.method)(&stack0xffffffdc);
+          position_00.z = fVar7;
+          position_00.x = (float)(int)uVar6;
+          position_00.y = (float)(int)((ulonglong)uVar6 >> 0x20);
+          MVAvatarLocal_SetTransform(this,position_00,*pQVar8,(MethodInfo *)0x0);
         }
-        MVAvatarLocal_SetupSpawnroleReceiver(this,(SpawnRoleDataReceiver *)0x0,(MethodInfo *)0x0);
-        pAVar8 = (this->fields)._.avatar;
-        if (pAVar8 != (Avatar *)0x0) {
-          if (((pAVar8->klass->_1).naturalAligment < (TypeInfo__AvatarLocal->_1).naturalAligment) ||
-             ((pAVar8->klass->_1).typeHierarchy[(TypeInfo__AvatarLocal->_1).naturalAligment - 1] !=
+        MVAvatarLocal_SetupSpawnroleReceiver(this,spawnRoleDataReceiver,(MethodInfo *)0x0);
+        pAVar9 = (this->fields)._.avatar;
+        if (pAVar9 != (Avatar *)0x0) {
+          if (((pAVar9->klass->_1).naturalAligment < (TypeInfo__AvatarLocal->_1).naturalAligment) ||
+             ((pAVar9->klass->_1).typeHierarchy[(TypeInfo__AvatarLocal->_1).naturalAligment - 1] !=
               (Il2CppClass *)TypeInfo__AvatarLocal)) goto code_?;
-          if (pAVar8[1].klass != (Avatar__Class *)0x0) {
-            func_?();
-            if ((this->fields)._._._._.id == 0) {
+          spawnRoleDataReceiver = (SpawnRoleDataReceiver *)pAVar9[1].klass;
+          if ((Avatar__Class *)spawnRoleDataReceiver != (Avatar__Class *)0x0) {
+            pIVar10 = (((Avatar__Class *)spawnRoleDataReceiver)->_0).image;
+            uVar11 = 0;
+            uVar12 = *(ushort *)((int)&pIVar10[4].nameNoExt + 2);
+            if (uVar12 != 0) {
+              do {
+                this = (MVAvatarLocal *)0x0;
+                if (*(IAvatarCameraController__Class **)(pIVar10[2].name + (uint)uVar11 * 8) ==
+                    TypeInfo__IAvatarCameraController) {
+                  pp_Var12 = &pIVar10[4].metadataHandle +
+                             *(int *)(pIVar10[2].name + (uint)uVar11 * 8 + 4) * 2;
+                  goto code_?;
+                }
+                uVar11 = uVar11 + 1;
+                pMVar3 = pMVar4;
+              } while (uVar11 < uVar12);
+            }
+            pMVar4 = pMVar3;
+            pp_Var12 = (Il2CppMetadataImageHandle *)func_?();
+code_?:
+            (*(code *)*pp_Var12)();
+            if ((undefined *)(this->fields)._._._._.id == &UNK_?) {
 code_?:
               this_04 = (this->fields).avatarLocalModes;
               if (this_04 != (MVAvatarLocal_AvatarLocalModes *)0x0) {
-                spawnRoleDataReceiver = (SpawnRoleDataReceiver *)&UNK_?;
+                spawnRoleDataReceiver =
+                     (SpawnRoleDataReceiver *)((uint)spawnRoleDataReceiver & 0xffffff00);
 code_?:
                 MVAvatarLocal+AvatarLocalModes::MVAvatarLocal_AvatarLocalModes_SetMode
                           (this_04,(AvatarRuntimeState__Enum)spawnRoleDataReceiver,(MethodInfo *)0x0
@@ -90,37 +115,60 @@ code_?:
                 if (this_00 != (GameObject *)0x0) {
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                             (this_00,1,(MethodInfo *)0x0);
-                  pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                  if ((pMVar9 != (MVNetworkGame *)0x0) &&
-                     (this_01 = (pMVar9->fields)._PlayerController_k__BackingField,
+                  pMVar13 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                  if ((pMVar13 != (MVNetworkGame *)0x0) &&
+                     (this_01 = (pMVar13->fields)._PlayerController_k__BackingField,
                      this_01 != (MVLocalObjectController *)0x0)) {
                     MVLocalObjectController::MVLocalObjectController_SetAvatarLocalObject
                               (this_01,(ILocalObject *)this,(MethodInfo *)0x0);
-                    distanceReferencePoint = (this->fields)._._._.transform;
-                    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
-                      func_?();
-                    }
-                    CullingApiWrapper::CullingApiWrapper_SetDistanceReferencePoint
-                              (distanceReferencePoint,(MethodInfo *)0x0);
-                    pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0)
-                    ;
-                    if ((pMVar9 != (MVNetworkGame *)0x0) &&
-                       (pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
-                                           (pMVar9,(MethodInfo *)0x0),
-                       pMVar1 != (MVLocalPlayer *)0x0)) {
-                      this_02 = (pMVar1->fields).boostController;
-                      this_05 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-                      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-                      NavMesh_OnNavMeshPreUpdate__ctor
-                                (this_05,(Object *)this,
-                                 MethodInfo__MVAvatarLocal__OnHealthBoostedChanged__,
-                                 (MethodInfo *)0x0);
-                      if (this_02 != (BoostController *)0x0) {
-                        BoostController::BoostController_SubscribeToBoostChanged
-                                  (this_02,BoostType__Enum_ExtraHealthFloatMultiplier,
-                                   (Action *)this_05,(MethodInfo *)0x0);
-                        MVAvatarLocal_OnHealthBoostedChanged(this,(MethodInfo *)0x0);
-                        return;
+                    pMVar14 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                        ((MethodInfo *)0x0);
+                    if ((pMVar14 != (MainCameraManager *)0x0) &&
+                       (pMVar15 = MainCameraManager::MainCameraManager_get_CurrentCamera
+                                            (pMVar14,(MethodInfo *)0x0),
+                       pMVar15 != (MVCameraBase *)0x0)) {
+                      (*(code *)(pMVar15->klass->vtable).Reset.method)();
+                      pMVar14 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                          ((MethodInfo *)0x0);
+                      if ((((pMVar14 != (MainCameraManager *)0x0) &&
+                           (pMVar15 = MainCameraManager::MainCameraManager_get_CurrentCamera
+                                                (pMVar14,(MethodInfo *)0x0),
+                           pMVar15 != (MVCameraBase *)0x0)) &&
+                          (pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                     Component_get_transform((Component *)pMVar15,(MethodInfo *)0x0)
+                          , pMVar4 != (MVWorldObject *)0x0)) &&
+                         (pQVar8 = (Quaternion *)
+                                    (*(code *)(pMVar4->klass->vtable).get_Rotation.method)(),
+                         pTVar16 != (Transform *)0x0)) {
+                        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
+                                  (pTVar16,*pQVar8,(MethodInfo *)0x0);
+                        pTVar16 = (this->fields)._._._.transform;
+                        if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+                          func_?();
+                        }
+                        CullingApiWrapper::CullingApiWrapper_SetDistanceReferencePoint
+                                  (pTVar16,(MethodInfo *)0x0);
+                        pMVar13 = MVGameControllerBase::MVGameControllerBase_get_Game
+                                            ((MethodInfo *)0x0);
+                        if ((pMVar13 != (MVNetworkGame *)0x0) &&
+                           (pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
+                                               (pMVar13,(MethodInfo *)0x0),
+                           pMVar1 != (MVLocalPlayer *)0x0)) {
+                          this_02 = (pMVar1->fields).boostController;
+                          this_05 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+                          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+                          NavMesh_OnNavMeshPreUpdate__ctor
+                                    (this_05,(Object *)this,
+                                     MethodInfo__MVAvatarLocal__OnHealthBoostedChanged__,
+                                     (MethodInfo *)0x0);
+                          if (this_02 != (BoostController *)0x0) {
+                            BoostController::BoostController_SubscribeToBoostChanged
+                                      (this_02,BoostType__Enum_ExtraHealthFloatMultiplier,
+                                       (Action *)this_05,(MethodInfo *)0x0);
+                            MVAvatarLocal_OnHealthBoostedChanged(this,(MethodInfo *)0x0);
+                            return;
+                          }
+                        }
                       }
                     }
                   }
@@ -128,11 +176,12 @@ code_?:
               }
             }
             else {
-              pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if ((pMVar9 != (MVNetworkGame *)0x0) &&
-                 (pMVar10 = (pMVar9->fields)._NetworkGameStateListener_k__BackingField,
-                 pMVar10 != (MVNetworkGameStateListener *)0x0)) {
-                if ((pMVar10->fields).currentGameState == 2) goto code_?;
+              spawnRoleDataReceiver = (SpawnRoleDataReceiver *)&UNK_?;
+              pMVar13 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if ((pMVar13 != (MVNetworkGame *)0x0) &&
+                 (pMVar17 = (pMVar13->fields)._NetworkGameStateListener_k__BackingField,
+                 pMVar17 != (MVNetworkGameStateListener *)0x0)) {
+                if ((pMVar17->fields).currentGameState == 2) goto code_?;
                 this_04 = (this->fields).avatarLocalModes;
                 if (this_04 == (MVAvatarLocal_AvatarLocalModes *)0x0) goto code_?;
                 spawnRoleDataReceiver = (SpawnRoleDataReceiver *)&UNK_?;
@@ -164,8 +213,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -816,6 +865,7 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_DeActivate
                MethodInfo *method)
 
 {
+  this_03 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&StringLiteral_Removing_network_object_again_as);
@@ -823,48 +873,49 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_DeActivate
   }
   this_00 = (this->fields).avatarLocalModes;
   if (this_00 != (MVAvatarLocal_AvatarLocalModes *)0x0) {
-    MVAvatarLocal+AvatarLocalModes::MVAvatarLocal_AvatarLocalModes_SetToStartMode
-              (this_00,(MethodInfo *)0x0);
-    pAVar1 = (this->fields).avatarEquipable;
-    if (pAVar1 != (AvatarEquipable *)0x0) {
-      (*(code *)(pAVar1->klass->vtable).Unequip.method)
-                (pAVar1,(pAVar1->klass->vtable).Holster.methodPtr);
-      pAVar2 = (this->fields).interactableLocal;
-      if (pAVar2 != (AvatarInteractable *)0x0) {
-        (*(code *)(pAVar2->klass->vtable).ClearModifiers.method)
-                  (pAVar2,(pAVar2->klass->vtable).Init.methodPtr);
-        MVAvatarLocal_UnsubscribeFromExternalEvents(this,(MethodInfo *)0x0);
-        this_01 = (this->fields)._._._.gameObject;
+    AVar1 = MVAvatarLocal+AvatarLocalModes::MVAvatarLocal_AvatarLocalModes_GetStartState
+                      (this_00,(MethodInfo *)0x0);
+    this = (MVAvatarLocal *)CONCAT31(this._1_3_,(char)AVar1);
+    MVAvatarLocal+AvatarLocalModes::MVAvatarLocal_AvatarLocalModes_SetMode
+              (this_00,(AvatarRuntimeState__Enum)this,(MethodInfo *)0x0);
+    pAVar2 = (this_03->fields).avatarEquipable;
+    if (pAVar2 != (AvatarEquipable *)0x0) {
+      (*(code *)(pAVar2->klass->vtable).Unequip.method)();
+      pAVar3 = (this_03->fields).interactableLocal;
+      if (pAVar3 != (AvatarInteractable *)0x0) {
+        (*(code *)(pAVar3->klass->vtable).ClearModifiers.method)();
+        MVAvatarLocal_UnsubscribeFromExternalEvents(this_03,(MethodInfo *)0x0);
+        this_01 = (this_03->fields)._._._.gameObject;
         if (this_01 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (this_01,0,(MethodInfo *)0x0);
-          (this->fields).spawnRoleDataReceiver = (SpawnRoleDataReceiver *)0x0;
-          func_?(&(this->fields).spawnRoleDataReceiver,0);
-          pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar3 != (MVNetworkGame *)0x0) &&
-             (this_02 = (pMVar3->fields)._PlayerController_k__BackingField,
+          (this_03->fields).spawnRoleDataReceiver = (SpawnRoleDataReceiver *)0x0;
+          func_?();
+          pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar4 != (MVNetworkGame *)0x0) &&
+             (this_02 = (pMVar4->fields)._PlayerController_k__BackingField,
              this_02 != (MVLocalObjectController *)0x0)) {
             MVLocalObjectController::MVLocalObjectController_RemoveAvatarLocalObject
                       (this_02,(MethodInfo *)0x0);
-            pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if ((pMVar3 != (MVNetworkGame *)0x0) &&
-               (pTVar4 = (pMVar3->fields).transformNetworkManager,
-               pTVar4 != (TransformNetworkManager *)0x0)) {
-              pMVar5 = TransformNetworkManager::TransformNetworkManager_GetNetworkObject
-                                 (pTVar4,(this->fields)._._._._.id,(MethodInfo *)0x0);
-              if (pMVar5 != (MVNetworkObject *)0x0) {
+            pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if ((pMVar4 != (MVNetworkGame *)0x0) &&
+               (pTVar5 = (pMVar4->fields).transformNetworkManager,
+               pTVar5 != (TransformNetworkManager *)0x0)) {
+              pMVar6 = TransformNetworkManager::TransformNetworkManager_GetNetworkObject
+                                 (pTVar5,(this_03->fields)._._._._.id,(MethodInfo *)0x0);
+              if (pMVar6 != (MVNetworkObject *)0x0) {
                 if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                   func_?(TypeInfo__UnityEngine__Debug);
                 }
                 UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                           ((Object *)StringLiteral_Removing_network_object_again_as,
                            (MethodInfo *)0x0);
-                pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                if ((pMVar3 == (MVNetworkGame *)0x0) ||
-                   (pTVar4 = (pMVar3->fields).transformNetworkManager,
-                   pTVar4 == (TransformNetworkManager *)0x0)) goto code_?;
+                pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                if ((pMVar4 == (MVNetworkGame *)0x0) ||
+                   (pTVar5 = (pMVar4->fields).transformNetworkManager,
+                   pTVar5 == (TransformNetworkManager *)0x0)) goto code_?;
                 TransformNetworkManager::TransformNetworkManager_RemoveNetworkObject
-                          (pTVar4,(this->fields)._._._._.id,(MethodInfo *)0x0);
+                          (pTVar5,(this_03->fields)._._._._.id,(MethodInfo *)0x0);
               }
               return;
             }
@@ -875,8 +926,8 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_DeActivate
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -910,7 +961,7 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_Die(MVAvatarLocal *this,M
   }
   if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField ==
       (IPlayModeUI *)0x0) goto code_?;
-  func_?(6);
+  func_?(8);
   pMVar5 = (this->fields)._.shield;
   if (pMVar5 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
   (*(code *)(pMVar5->klass->vtable).set_Value.method)();
@@ -982,7 +1033,7 @@ code_?:
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
         (IPlayModeUI *)0x0) {
-      func_?(6);
+      func_?(8);
       *unaff_FS_OFFSET = uStack_3;
       return;
     }
@@ -1002,17 +1053,20 @@ Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_FixedUpdate
           (MVAvatarLocal *this,IInputToPlayerMovement *movementMap,MethodInfo *method)
 
 {
-  this_00 = (this->fields).avatarLocalModes;
-  if (this_00 != (MVAvatarLocal_AvatarLocalModes *)0x0) {
-    MVAvatarLocal+AvatarLocalModes::MVAvatarLocal_AvatarLocalModes_FixedUpdate
-              (this_00,movementMap,(MethodInfo *)0x0);
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
+  pMVar2 = (this->fields).avatarLocalModes;
+  if ((pMVar2 != (MVAvatarLocal_AvatarLocalModes *)0x0) &&
+     (pMStack_3 = (pMVar2->fields).currentMode, pMStack_3 != (MVAvatarLocal_AvatarMode *)0x0)) {
+    pIStack_1 = (pMStack_3->klass->vtable).__unknown_2.methodPtr;
+    pIStack_4 = movementMap;
+    (*(code *)(pMStack_3->klass->vtable).__unknown_1.method)();
     return movementMap;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  pIVar3 = (IInputToPlayerMovement *)(*pcVar2)();
-  return pIVar3;
+  uVar5 = func_?(&pMStack_3);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  pIVar7 = (IInputToPlayerMovement *)(*pcVar6)();
+  return pIVar7;
 }
 
 
@@ -1383,42 +1437,50 @@ bool Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_HasDied
   pMVar1 = (this->fields).avatarLocalModes;
   if (pMVar1 != (MVAvatarLocal_AvatarLocalModes *)0x0) {
     if (cRam_? == '\0') {
-      func_?();
-      func_?();
+      func_?(&TypeInfo__MVAvatarLocal__DeadMode);
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__get_Item_AvatarRuntimeState_
+                     );
       cRam_? = '\x01';
     }
     this_00 = (pMVar1->fields).avatarModes;
     if (this_00 != (Dictionary_2_AvatarRuntimeState_MVAvatarLocal_AvatarMode_ *)0x0) {
-      pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+      pMVar1 = (MVAvatarLocal_AvatarLocalModes *)
+               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
                Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
                          ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,4,
                           MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__get_Item_AvatarRuntimeState_
                          );
-      if (((pOVar2 != (Object *)0x0) &&
-          ((TypeInfo__MVAvatarLocal__DeadMode->_1).naturalAligment <=
-           (pOVar2->klass->_1).naturalAligment)) &&
-         ((pOVar2->klass->_1).typeHierarchy
+      if (pMVar1 == (MVAvatarLocal_AvatarLocalModes *)0x0) {
+        return 0;
+      }
+      if ((((Object__Class *)pMVar1->klass)->_1).naturalAligment <
+          (TypeInfo__MVAvatarLocal__DeadMode->_1).naturalAligment) {
+        return 0;
+      }
+      if ((((Object__Class *)pMVar1->klass)->_1).typeHierarchy
+          [(TypeInfo__MVAvatarLocal__DeadMode->_1).naturalAligment - 1] !=
+          (Il2CppClass *)TypeInfo__MVAvatarLocal__DeadMode) {
+        return 0;
+      }
+      pMVar2 = TypeInfo__MVAvatarLocal__DeadMode;
+      if (((TypeInfo__MVAvatarLocal__DeadMode->_1).naturalAligment <=
+           (((Object__Class *)pMVar1->klass)->_1).naturalAligment) &&
+         ((((Object__Class *)pMVar1->klass)->_1).typeHierarchy
           [(TypeInfo__MVAvatarLocal__DeadMode->_1).naturalAligment - 1] ==
           (Il2CppClass *)TypeInfo__MVAvatarLocal__DeadMode)) {
-        if (((pOVar2->klass->_1).naturalAligment <
-             (TypeInfo__MVAvatarLocal__DeadMode->_1).naturalAligment) ||
-           ((pOVar2->klass->_1).typeHierarchy
-            [(TypeInfo__MVAvatarLocal__DeadMode->_1).naturalAligment - 1] !=
-            (Il2CppClass *)TypeInfo__MVAvatarLocal__DeadMode)) {
-          func_?();
-          pcVar3 = (code *)swi(3);
-          bVar4 = (*pcVar3)();
-          return bVar4;
+        if (*(float *)&(pMVar1->fields).currentState == _UNK_?) {
+          return 0;
         }
-        if ((float)pOVar2[2].klass != _UNK_?) {
-          return 1;
-        }
+        return 1;
       }
-      return 0;
+      goto code_?;
     }
   }
-  uVar5 = func_?(&stack0xffffffec);
-  func_?(uVar5);
+  func_?();
+  pMVar2 = extraout_EDX;
+code_?:
+  func_?(pMVar1,pMVar2);
   pcVar3 = (code *)swi(3);
   bVar4 = (*pcVar3)();
   return bVar4;
@@ -1502,7 +1564,7 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_Initialize
   UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
   (this->fields)._.skillDataManager = (WorldObjectSkillDataManager *)this_01;
   func_?(&(this->fields)._.skillDataManager,this_01);
-  pWVar1 = (this->fields)._.skillDataManager;
+  this_08 = (this->fields)._.skillDataManager;
   if (cRam_? == '\0') {
     func_?(&
                     TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributePrototypeSettings__AttributePrototypeSettingsManager
@@ -1523,10 +1585,10 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_Initialize
                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributePrototypeSettings__AttributePrototypeSettingsManager
                    );
   }
-  pKVar2 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
-            AttributeSettings::AttributePrototypeSettings::AttributePrototypeSettingsManager::
-            AttributePrototypeSettingsManager_GetRoot
-                      (AttributeSettingWoType__Enum_Avatar,(MethodInfo *)0x0);
+  pKVar1 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+           AttributeSettings::AttributePrototypeSettings::AttributePrototypeSettingsManager::
+           AttributePrototypeSettingsManager_GetRoot
+                     (AttributeSettingWoType__Enum_Avatar,(MethodInfo *)0x0);
   this_02 = (Func_4_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_Object_Object_Object_
              *)func_?(
                               TypeInfo__System__Func<System::Collections::Generic::KeyValuePair<System::Object,_System::Object>,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingsCollectionBase,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>
@@ -1537,12 +1599,14 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_Initialize
             (this_02,(Object *)0x0,
              MethodInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingsFactory__KogamaSettingValueFactoryAttributeSettings_System__Collections__Generic__KeyValuePair<System::Object,_System::Object>__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase_
              ,(MethodInfo *)0x0);
-  pKVar2 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-            KogamaSettingTools::KogamaSettingTools_CreateFromValues
-                      (values,pKVar2,
-                       (Func_4_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingsCollectionBase_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_
-                        *)this_02,(MethodInfo *)0x0);
-  if (pWVar1 == (WorldObjectSkillDataManager *)0x0) {
+  pKVar1 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
+           KogamaSettingTools::KogamaSettingTools_CreateFromValues
+                     (values,pKVar1,
+                      (Func_4_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingsCollectionBase_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_
+                       *)this_02,(MethodInfo *)0x0);
+  if (this_08 == (WorldObjectSkillDataManager *)0x0) {
+code_?:
+    func_?();
 code_?:
     func_?();
 code_?:
@@ -1558,55 +1622,54 @@ code_?:
   }
   else {
     WorldObjectSkillDataManager::WorldObjectSkillDataManager_Initialize
-              (pWVar1,pKVar2,(MethodInfo *)0x0);
+              (this_08,pKVar1,(MethodInfo *)0x0);
     MVAvatar::MVAvatar_Initialize((MVAvatar *)this,(MethodInfo *)0x0);
-    pGVar3 = (this->fields)._._._.gameObject;
-    if (pGVar3 == (GameObject *)0x0) goto code_?;
-    pAVar4 = (AvatarMotor *)
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                        (pGVar3,
-                         AvatarMotor_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarMotor>__
-                        );
-    (this->fields).avatarMotor = pAVar4;
+    pGVar2 = (this->fields)._._._.gameObject;
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
+    pAVar3 = (AvatarMotor *)
+             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                       (pGVar2,
+                        AvatarMotor_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarMotor>__
+                       );
+    (this->fields).avatarMotor = pAVar3;
     func_?();
-    pGVar3 = (this->fields)._._._.gameObject;
-    if (pGVar3 == (GameObject *)0x0) goto code_?;
-    pMVar5 = (MVTriggerHandler *)
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                        (pGVar3,
-                         MVTriggerHandler_MethodInfo__UnityEngine__GameObject__AddComponent<MVTriggerHandler>__
-                        );
-    (this->fields).triggerHandler = pMVar5;
+    pGVar2 = (this->fields)._._._.gameObject;
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
+    pMVar4 = (MVTriggerHandler *)
+             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                       (pGVar2,
+                        MVTriggerHandler_MethodInfo__UnityEngine__GameObject__AddComponent<MVTriggerHandler>__
+                       );
+    (this->fields).triggerHandler = pMVar4;
     func_?();
-    pGVar3 = (this->fields)._._._.gameObject;
-    if (pGVar3 == (GameObject *)0x0) goto code_?;
-    pAVar6 = (AvatarInteractable *)
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                        (pGVar3,
-                         AvatarInteractable_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarInteractable>__
-                        );
-    if (pAVar6 == (AvatarInteractable *)0x0) goto code_?;
-    (*(code *)(pAVar6->klass->vtable).Init.method)();
-    (this->fields).interactableLocal = pAVar6;
+    pGVar2 = (this->fields)._._._.gameObject;
+    if ((pGVar2 == (GameObject *)0x0) ||
+       (pAVar5 = (AvatarInteractable *)
+                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                           (pGVar2,
+                            AvatarInteractable_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarInteractable>__
+                           ), pAVar5 == (AvatarInteractable *)0x0)) goto code_?;
+    (*(code *)(pAVar5->klass->vtable).Init.method)();
+    (this->fields).interactableLocal = pAVar5;
     func_?();
-    pAVar6 = (this->fields).interactableLocal;
-    if (pAVar6 == (AvatarInteractable *)0x0) goto code_?;
-    pAVar7 = (pAVar6->fields).OnDamageTaken;
+    pAVar5 = (this->fields).interactableLocal;
+    if (pAVar5 == (AvatarInteractable *)0x0) goto code_?;
+    pAVar6 = (pAVar5->fields).OnDamageTaken;
     this_03 = (Action_3_Single_Object_ByteEnum_ *)func_?();
     mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::Action_3_Single_Object_ByteEnum___ctor
               (this_03,(Object *)this,
                MethodInfo__MVAvatarLocal__RelayDamageEvent_float__MVPlayer__MV__Common__PlayerKilledByType_
                ,(MethodInfo *)0x0);
-    pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pAVar7,(Delegate *)this_03,(MethodInfo *)0x0);
-    if (pDVar8 == (Delegate *)0x0) {
-      (pAVar6->fields).OnDamageTaken =
-           (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0;
+    pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)pAVar6,(Delegate *)this_03,(MethodInfo *)0x0);
+    if (pDVar7 == (Delegate *)0x0) {
+      (pAVar5->fields).OnDamageTaken = (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0
+      ;
 code_?:
       func_?();
-      pAVar6 = (this->fields).interactableLocal;
-      if (pAVar6 == (AvatarInteractable *)0x0) goto code_?;
-      pAVar9 = (pAVar6->fields).OnNewSafePosition;
+      pAVar5 = (this->fields).interactableLocal;
+      if (pAVar5 == (AvatarInteractable *)0x0) goto code_?;
+      pAVar8 = (pAVar5->fields).OnNewSafePosition;
       this_04 = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)func_?();
       Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
       SpawnRoleVariable`1[T]+SubDelegate[UnityEngine::Vector3]::
@@ -1614,72 +1677,57 @@ code_?:
                 (this_04,(Object *)this,
                  MethodInfo__MVAvatarLocal__RelayNewSafePosition_UnityEngine__Vector3_,
                  (MethodInfo *)0x0);
-      pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pAVar9,(Delegate *)this_04,(MethodInfo *)0x0);
-      if (pDVar8 == (Delegate *)0x0) {
-        (pAVar6->fields).OnNewSafePosition = (Action_1_UnityEngine_Vector3_ *)0x0;
+      pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)pAVar8,(Delegate *)this_04,(MethodInfo *)0x0);
+      if (pDVar7 == (Delegate *)0x0) {
+        (pAVar5->fields).OnNewSafePosition = (Action_1_UnityEngine_Vector3_ *)0x0;
       }
       else {
-        pAVar9 = (Action_1_UnityEngine_Vector3_ *)func_?();
-        if (pAVar9 == (Action_1_UnityEngine_Vector3_ *)0x0) goto code_?;
-        (pAVar6->fields).OnNewSafePosition = pAVar9;
-        iVar10 = func_?();
-        if (iVar10 == 0) goto code_?;
+        pAVar8 = (Action_1_UnityEngine_Vector3_ *)func_?();
+        if (pAVar8 == (Action_1_UnityEngine_Vector3_ *)0x0) goto code_?;
+        (pAVar5->fields).OnNewSafePosition = pAVar8;
+        iVar9 = func_?();
+        if (iVar9 == 0) goto code_?;
       }
       func_?();
-      pGVar3 = (this->fields)._._._.gameObject;
-      if (pGVar3 == (GameObject *)0x0) goto code_?;
-      pAVar11 = (AvatarEquipable *)
+      pGVar2 = (this->fields)._._._.gameObject;
+      if (pGVar2 == (GameObject *)0x0) goto code_?;
+      pAVar10 = (AvatarEquipable *)
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                          (pGVar3,
+                          (pGVar2,
                            AvatarEquipable_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarEquipable>__
                           );
-      (this->fields).avatarEquipable = pAVar11;
+      (this->fields).avatarEquipable = pAVar10;
       func_?();
-      pAVar11 = (this->fields).avatarEquipable;
-      pAVar6 = (this->fields).interactableLocal;
-      pMVar12 = (this->fields)._.CurrentItem;
-      pWVar1 = (this->fields)._.skillDataManager;
-      if (pAVar11 == (AvatarEquipable *)0x0) goto code_?;
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        cRam_? = '\x01';
-      }
-      (pAVar11->fields).interactableLocal = (MVInteractableBase *)pAVar6;
-      func_?();
-      (pAVar11->fields).currentItem = pMVar12;
-      func_?();
-      if (pWVar1 == (WorldObjectSkillDataManager *)0x0) goto code_?;
-      bVar13 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
-                         (pWVar1,StringLiteral_UnableToCollectModifierPickups,(MethodInfo *)0x0);
-      (pAVar11->fields).isAbleToCollectPickups = bVar13 ^ 1;
-      bVar13 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
-                         (pWVar1,StringLiteral_UnableToEquipWeapons,(MethodInfo *)0x0);
-      (pAVar11->fields).isAbleToEquipWeapons = bVar13 ^ 1;
-      pAVar4 = (this->fields).avatarMotor;
-      if (pAVar4 == (AvatarMotor *)0x0) goto code_?;
+      pAVar10 = (this->fields).avatarEquipable;
+      if (pAVar10 == (AvatarEquipable *)0x0) goto code_?;
+      pAVar5 = (AvatarInteractable *)(this->fields)._.CurrentItem;
+      AvatarEquipable::AvatarEquipable_Init
+                (pAVar10,(MVInteractableBase *)(this->fields).interactableLocal,
+                 (MVRuntimeDataVariable *)pAVar5,(this->fields)._.skillDataManager,(MethodInfo *)0x0
+                );
+      pAVar3 = (this->fields).avatarMotor;
+      if (pAVar3 == (AvatarMotor *)0x0) goto code_?;
       AvatarMotor::AvatarMotor_Init
-                (pAVar4,(AvatarInteractable *)&UNK_?,
-                 (this->fields)._.characterControllerCenterOffset,(MVWorldObjectClient *)this,
-                 (this->fields)._.skillDataManager,(MethodInfo *)0x0);
+                (pAVar3,pAVar5,(this->fields)._.characterControllerCenterOffset,
+                 (MVWorldObjectClient *)this,(this->fields)._.skillDataManager,(MethodInfo *)0x0);
       (this->fields).pickupOwner = (this->fields)._.avatarPickupOwner;
       func_?();
-      MVar14 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-      if (MVar14 != MVGameMode__Enum_CharacterEditor) {
-        pGVar3 = (this->fields)._._._.gameObject;
-        if (pGVar3 != (GameObject *)0x0) {
-          pPVar15 = (PickupGUI *)
+      MVar11 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+      if (MVar11 != MVGameMode__Enum_CharacterEditor) {
+        pGVar2 = (this->fields)._._._.gameObject;
+        if (pGVar2 != (GameObject *)0x0) {
+          pPVar12 = (PickupGUI *)
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                              (pGVar3,
+                              (pGVar2,
                                PickupGUI_MethodInfo__UnityEngine__GameObject__AddComponent<PickupGUI>__
                               );
-          (this->fields).pickupGUI = pPVar15;
+          (this->fields).pickupGUI = pPVar12;
           func_?();
-          pPVar15 = (this->fields).pickupGUI;
-          if (pPVar15 != (PickupGUI *)0x0) {
+          pPVar12 = (this->fields).pickupGUI;
+          if (pPVar12 != (PickupGUI *)0x0) {
             PickupGUI::PickupGUI_Initialize
-                      (pPVar15,(this->fields)._._._._.id,(MVPickupOwner *)(this->fields).pickupOwner
+                      (pPVar12,(this->fields)._._._._.id,(MVPickupOwner *)(this->fields).pickupOwner
                        ,(MethodInfo *)0x0);
             goto code_?;
           }
@@ -1687,41 +1735,41 @@ code_?:
         goto code_?;
       }
 code_?:
-      pAVar16 = (this->fields).pickupOwner;
-      if (pAVar16 == (AvatarPickupOwner *)0x0) goto code_?;
-      pMVar17 = (pAVar16->fields)._.onEquipItem;
-      pVVar18 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
+      pAVar13 = (this->fields).pickupOwner;
+      if (pAVar13 == (AvatarPickupOwner *)0x0) goto code_?;
+      pMVar14 = (pAVar13->fields)._.onEquipItem;
+      pVVar15 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
       VideoCapture+OnVideoCaptureResourceCreatedCallback::
       VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                (pVVar18,(Object *)this,MethodInfo__MVAvatarLocal__OnEquipItem_PickupItem_,
+                (pVVar15,(Object *)this,MethodInfo__MVAvatarLocal__OnEquipItem_PickupItem_,
                  (MethodInfo *)0x0);
-      pMVar17 = (MVPickupOwner_OnEquipItemDelegate *)
+      pMVar14 = (MVPickupOwner_OnEquipItemDelegate *)
                 mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pMVar17,(Delegate *)pVVar18,(MethodInfo *)0x0);
-      if (pMVar17 == (MVPickupOwner_OnEquipItemDelegate *)0x0) {
-        (pAVar16->fields)._.onEquipItem = (MVPickupOwner_OnEquipItemDelegate *)0x0;
+                          ((Delegate *)pMVar14,(Delegate *)pVVar15,(MethodInfo *)0x0);
+      if (pMVar14 == (MVPickupOwner_OnEquipItemDelegate *)0x0) {
+        (pAVar13->fields)._.onEquipItem = (MVPickupOwner_OnEquipItemDelegate *)0x0;
 code_?:
         func_?();
-        pAVar16 = (this->fields).pickupOwner;
-        if (pAVar16 == (AvatarPickupOwner *)0x0) goto code_?;
-        pAVar19 = (pAVar16->fields)._.OnHolsteredChanged;
+        pAVar13 = (this->fields).pickupOwner;
+        if (pAVar13 == (AvatarPickupOwner *)0x0) goto code_?;
+        pAVar16 = (pAVar13->fields)._.OnHolsteredChanged;
         this_05 = (UnityAction_1_System_Int32Enum_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
         UnityAction_1_System_Int32Enum___ctor
                   (this_05,(Object *)this,MethodInfo__MVAvatarLocal__OnHolsteredChanged_bool_,
                    (MethodInfo *)0x0);
-        pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
-                            ((Delegate *)pAVar19,(Delegate *)this_05,(MethodInfo *)0x0);
-        if (pDVar8 == (Delegate *)0x0) {
-          (pAVar16->fields)._.OnHolsteredChanged = (Action_1_Boolean_ *)0x0;
+        pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                            ((Delegate *)pAVar16,(Delegate *)this_05,(MethodInfo *)0x0);
+        if (pDVar7 == (Delegate *)0x0) {
+          (pAVar13->fields)._.OnHolsteredChanged = (Action_1_Boolean_ *)0x0;
         }
         else {
-          pAVar19 = (Action_1_Boolean_ *)func_?();
-          if (pAVar19 == (Action_1_Boolean_ *)0x0) goto code_?;
-          (pAVar16->fields)._.OnHolsteredChanged = pAVar19;
-          iVar10 = func_?();
-          if (iVar10 == 0) goto code_?;
+          pAVar16 = (Action_1_Boolean_ *)func_?();
+          if (pAVar16 == (Action_1_Boolean_ *)0x0) goto code_?;
+          (pAVar13->fields)._.OnHolsteredChanged = pAVar16;
+          iVar9 = func_?();
+          if (iVar9 == 0) goto code_?;
         }
         func_?();
         this_06 = (MVAvatarLocal_AvatarLocalModes *)func_?();
@@ -1734,40 +1782,40 @@ code_?:
           func_?();
           cRam_? = '\x01';
         }
-        pMVar20 = (this->fields)._.Health;
-        if (pMVar20 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
-        fVar21 = (float10)(*(code *)(pMVar20->klass->vtable).get_Value.method)();
-        pMVar20 = (this->fields)._.Health;
-        (this->fields).previousHealth = (float)fVar21;
-        if (pMVar20 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
-        pMVar22 = (pMVar20->fields)._.OnChange;
-        pVVar18 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
+        pMVar17 = (this->fields)._.Health;
+        if (pMVar17 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
+        fVar18 = (float10)(*(code *)(pMVar17->klass->vtable).get_Value.method)();
+        pMVar17 = (this->fields)._.Health;
+        (this->fields).previousHealth = (float)fVar18;
+        if (pMVar17 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
+        pMVar19 = (pMVar17->fields)._.OnChange;
+        pVVar15 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
         VideoCapture+OnVideoCaptureResourceCreatedCallback::
         VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                  (pVVar18,(Object *)this,
+                  (pVVar15,(Object *)this,
                    MethodInfo__MVAvatarLocal___InitializeHealth_b__125_0_System__Object_,
                    (MethodInfo *)0x0);
-        pMVar22 = (MVRuntimeDataVariable_OnChangeDelegate *)
+        pMVar19 = (MVRuntimeDataVariable_OnChangeDelegate *)
                   mscorlib.dll::System::Delegate::Delegate_Combine
-                            ((Delegate *)pMVar22,(Delegate *)pVVar18,(MethodInfo *)0x0);
-        if (pMVar22 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-          pMVar23 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-          if (pMVar22->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-            pMVar23 = pMVar22;
+                            ((Delegate *)pMVar19,(Delegate *)pVVar15,(MethodInfo *)0x0);
+        if (pMVar19 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+          pMVar20 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+          if (pMVar19->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+            pMVar20 = pMVar19;
           }
-          if (pMVar23 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-            (pMVar20->fields)._.OnChange = pMVar23;
-            pMVar23 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-            if (pMVar22->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-              pMVar23 = pMVar22;
+          if (pMVar20 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+            (pMVar17->fields)._.OnChange = pMVar20;
+            pMVar20 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+            if (pMVar19->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+              pMVar20 = pMVar19;
             }
-            if (pMVar23 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+            if (pMVar20 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
             goto code_?;
           }
           goto code_?;
         }
-        (pMVar20->fields)._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+        (pMVar17->fields)._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
 code_?:
         func_?();
         if (cRam_? == '\0') {
@@ -1775,56 +1823,56 @@ code_?:
           func_?();
           cRam_? = '\x01';
         }
-        pMVar24 = (this->fields)._.shield;
-        if (pMVar24 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
-        fVar21 = (float10)(*(code *)(pMVar24->klass->vtable).get_Value.method)();
-        pMVar24 = (this->fields)._.shield;
-        (this->fields).previousShield = (float)fVar21;
-        if (pMVar24 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
-        pMVar22 = (pMVar24->fields)._._.OnChange;
-        pVVar18 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
+        pMVar21 = (this->fields)._.shield;
+        if (pMVar21 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
+        fVar18 = (float10)(*(code *)(pMVar21->klass->vtable).get_Value.method)();
+        pMVar21 = (this->fields)._.shield;
+        (this->fields).previousShield = (float)fVar18;
+        if (pMVar21 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
+        pMVar19 = (pMVar21->fields)._._.OnChange;
+        pVVar15 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
         VideoCapture+OnVideoCaptureResourceCreatedCallback::
         VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                  (pVVar18,(Object *)this,
+                  (pVVar15,(Object *)this,
                    MethodInfo__MVAvatarLocal___InitializeShield_b__122_0_System__Object_,
                    (MethodInfo *)0x0);
-        pMVar22 = (MVRuntimeDataVariable_OnChangeDelegate *)
+        pMVar19 = (MVRuntimeDataVariable_OnChangeDelegate *)
                   mscorlib.dll::System::Delegate::Delegate_Combine
-                            ((Delegate *)pMVar22,(Delegate *)pVVar18,(MethodInfo *)0x0);
-        if (pMVar22 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-          (pMVar24->fields)._._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                            ((Delegate *)pMVar19,(Delegate *)pVVar15,(MethodInfo *)0x0);
+        if (pMVar19 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+          (pMVar21->fields)._._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
         }
         else {
-          pMVar23 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-          if (pMVar22->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-            pMVar23 = pMVar22;
+          pMVar20 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+          if (pMVar19->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+            pMVar20 = pMVar19;
           }
-          if (pMVar23 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-          (pMVar24->fields)._._.OnChange = pMVar23;
-          pMVar23 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-          if (pMVar22->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-            pMVar23 = pMVar22;
+          if (pMVar20 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+          (pMVar21->fields)._._.OnChange = pMVar20;
+          pMVar20 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+          if (pMVar19->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+            pMVar20 = pMVar19;
           }
-          if (pMVar23 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+          if (pMVar20 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
         }
         func_?();
         MVAvatarLocal_UpdateMaxHealth(this,(MethodInfo *)0x0);
-        MVar14 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-        if (MVar14 != MVGameMode__Enum_CharacterEditor) {
-          pGVar3 = (this->fields)._._._.gameObject;
-          if (pGVar3 != (GameObject *)0x0) {
-            pUVar25 = (UseInteractorHandler *)
+        MVar11 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+        if (MVar11 != MVGameMode__Enum_CharacterEditor) {
+          pGVar2 = (this->fields)._._._.gameObject;
+          if (pGVar2 != (GameObject *)0x0) {
+            pUVar22 = (UseInteractorHandler *)
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                                (pGVar3,
+                                (pGVar2,
                                  UseInteractorHandler_MethodInfo__UnityEngine__GameObject__AddComponent<UseInteractorHandler>__
                                 );
-            (this->fields).useInteractorHandler = pUVar25;
+            (this->fields).useInteractorHandler = pUVar22;
             func_?();
-            pUVar25 = (this->fields).useInteractorHandler;
-            if (pUVar25 != (UseInteractorHandler *)0x0) {
+            pUVar22 = (this->fields).useInteractorHandler;
+            if (pUVar22 != (UseInteractorHandler *)0x0) {
               UseInteractorHandler::UseInteractorHandler_Init
-                        (pUVar25,(this->fields)._._._._.id,(this->fields)._._._.collider,
+                        (pUVar22,(this->fields)._._._._.id,(this->fields)._._._.collider,
                          (MethodInfo *)0x0);
               goto code_?;
             }
@@ -1832,146 +1880,163 @@ code_?:
           goto code_?;
         }
 code_?:
-        pAVar4 = (this->fields).avatarMotor;
-        if (pAVar4 == (AvatarMotor *)0x0) goto code_?;
-        pSVar26 = (pAVar4->fields)._GetSizeState_k__BackingField;
-        pAVar11 = (this->fields).avatarEquipable;
-        pUVar27 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+        pAVar3 = (this->fields).avatarMotor;
+        if (pAVar3 == (AvatarMotor *)0x0) goto code_?;
+        pSVar23 = (pAVar3->fields)._GetSizeState_k__BackingField;
+        value = (EventHandler *)(this->fields).avatarEquipable;
+        pUVar24 = (UnityAction_2_System_Object_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar27,(Object *)pAVar11,
+                  (pUVar24,(Object *)value,
                    MethodInfo__AvatarEquipable__EquipSlapGun_System__Object__System__EventArgs_,
                    (MethodInfo *)0x0);
-        if (pSVar26 == (SizeState *)0x0) goto code_?;
-        SizeState::SizeState_add_EquipSlapGunEvent(pSVar26,(EventHandler *)pUVar27,(MethodInfo *)0x0)
-        ;
-        pAVar4 = (this->fields).avatarMotor;
-        if (pAVar4 == (AvatarMotor *)0x0) goto code_?;
-        pSVar26 = (pAVar4->fields)._GetSizeState_k__BackingField;
-        pUVar27 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+        if (pSVar23 == (SizeState *)0x0) goto code_?;
+        SizeState::SizeState_add_EquipSlapGunEvent(pSVar23,value,(MethodInfo *)0x0);
+        pAVar3 = (this->fields).avatarMotor;
+        if (pAVar3 == (AvatarMotor *)0x0) goto code_?;
+        pSVar23 = (pAVar3->fields)._GetSizeState_k__BackingField;
+        pUVar24 = (UnityAction_2_System_Object_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar27,(Object *)this,
+                  (pUVar24,(Object *)this,
                    MethodInfo__MVAvatarLocal__OnCameraScale_System__Object__ScaleArgs_,
                    (MethodInfo *)0x0);
-        if (pSVar26 == (SizeState *)0x0) goto code_?;
+        if (pSVar23 == (SizeState *)0x0) goto code_?;
         SizeState::SizeState_add_CameraScaleEvent
-                  (pSVar26,(EventHandler_1_ScaleArgs_ *)pUVar27,(MethodInfo *)0x0);
-        pAVar4 = (this->fields).avatarMotor;
-        if (pAVar4 == (AvatarMotor *)0x0) goto code_?;
-        pSVar26 = (pAVar4->fields)._GetSizeState_k__BackingField;
-        pUVar27 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+                  (pSVar23,(EventHandler_1_ScaleArgs_ *)pUVar24,(MethodInfo *)0x0);
+        pAVar3 = (this->fields).avatarMotor;
+        if (pAVar3 == (AvatarMotor *)0x0) goto code_?;
+        pSVar23 = (pAVar3->fields)._GetSizeState_k__BackingField;
+        pUVar24 = (UnityAction_2_System_Object_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar27,(Object *)this,
+                  (pUVar24,(Object *)this,
                    MethodInfo__MVAvatarLocal__OnUnequip_System__Object__System__EventArgs_,
                    (MethodInfo *)0x0);
-        if (pSVar26 == (SizeState *)0x0) goto code_?;
+        if (pSVar23 == (SizeState *)0x0) goto code_?;
         SizeState::SizeState_add_UnEquipSlapGunEvent
-                  (pSVar26,(EventHandler_1_EventArgs_ *)pUVar27,(MethodInfo *)0x0);
-        pAVar28 = _UNK_?;
-        pUVar27 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-        pMVar29 = MethodInfo__MVAvatarLocal__OnUnequip_System__Object__System__EventArgs_;
+                  (pSVar23,(EventHandler_1_EventArgs_ *)pUVar24,(MethodInfo *)0x0);
+        pLVar25 = (this->fields)._._._._.outputLinkRefs;
+        pUVar24 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+        b = this;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar27,(Object *)this,
+                  (pUVar24,(Object *)this,
                    MethodInfo__MVAvatarLocal__OnUnequip_System__Object__System__EventArgs_,
                    (MethodInfo *)0x0);
-        if (pAVar28 == (AvatarModifierPackages *)0x0) goto code_?;
-        AvatarModifierPackages::AvatarModifierPackages_add_OnUnequipItemEvent
-                  (pAVar28,(EventHandler_1_EventArgs_ *)pUVar27,(MethodInfo *)0x0);
-        pAVar28 = _UNK_?;
-        pUVar27 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+        if (pLVar25 == (List_1_MV_WorldObject_Link_ *)0x0) goto code_?;
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        a_00 = (pLVar25->fields)._items;
+        do {
+          pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                              ((Delegate *)a_00,(Delegate *)b,(MethodInfo *)0x0);
+          if ((pDVar7 != (Delegate *)0x0) && (iVar9 = func_?(), iVar9 == 0))
+          goto code_?;
+          pLVar26 = (Link__Array *)func_?();
+          bVar27 = pLVar26 != a_00;
+          a_00 = pLVar26;
+        } while (bVar27);
+        pLVar25 = (this->fields)._._._._.outputLinkRefs;
+        pUVar24 = (UnityAction_2_System_Object_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar27,(Object *)this,
+                  (pUVar24,(Object *)this,
                    MethodInfo__MVAvatarLocal__OnDisableVehicles_System__Object__System__EventArgs_,
-                   (MethodInfo *)pUVar27);
-        if (pAVar28 == (AvatarModifierPackages *)0x0) goto code_?;
-        AvatarModifierPackages::AvatarModifierPackages_add_OnDisableVehiclesEvent
-                  (pAVar28,(EventHandler_1_EventArgs_ *)pUVar27,(MethodInfo *)0x0);
-        pGVar3 = (this->fields)._._._.gameObject;
-        if (pGVar3 == (GameObject *)0x0) goto code_?;
-        object = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                           (pGVar3,
-                            AvatarShieldDecay_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarShieldDecay>__
-                           );
-        if (object == (Object *)0x0) goto code_?;
+                   (MethodInfo *)0x0);
+        if (pLVar25 == (List_1_MV_WorldObject_Link_ *)0x0) goto code_?;
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        pDVar7 = (Delegate *)(pLVar25->fields)._size;
+        do {
+          pDVar28 = mscorlib.dll::System::Delegate::Delegate_Combine
+                              (pDVar7,(Delegate *)pUVar24,(MethodInfo *)0x0);
+          pDVar29 = pDVar7;
+          if ((pDVar28 != (Delegate *)0x0) &&
+             (iVar9 = func_?(), pDVar29 = pDVar7, iVar9 == 0)) goto code_?;
+          pDVar7 = (Delegate *)func_?();
+        } while (pDVar7 != pDVar29);
+        pGVar2 = (this->fields)._._._.gameObject;
+        if ((pGVar2 == (GameObject *)0x0) ||
+           (object = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                               (pGVar2,
+                                AvatarShieldDecay_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarShieldDecay>__
+                               ), object == (Object *)0x0)) goto code_?;
         object[2].monitor = (MonitorData *)(this->fields)._.shield;
         func_?();
-        pDVar8 = _UNK_?;
+        pDVar7 = (Delegate *)(this->fields)._._._._.rotation.z;
         pNVar30 = (NavMesh_OnNavMeshPreUpdate *)func_?();
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
                   (pNVar30,object,MethodInfo__AvatarShieldDecay__ResetDecayTimer__,(MethodInfo *)0x0
                   );
-        pIVar31 = (Il2CppClass *)
-                  mscorlib.dll::System::Delegate::Delegate_Combine
-                            (pDVar8,(Delegate *)pNVar30,(MethodInfo *)0x0);
-        if (pIVar31 != (Il2CppClass *)0x0) {
-          pIVar32 = (Il2CppClass *)0x0;
-          if ((Action__Class *)pIVar31->image == TypeInfo__System__Action) {
-            pIVar32 = pIVar31;
+        pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                            (pDVar7,(Delegate *)pNVar30,(MethodInfo *)0x0);
+        if (pDVar7 != (Delegate *)0x0) {
+          pDVar29 = (Delegate *)0x0;
+          if ((Action__Class *)pDVar7->klass == TypeInfo__System__Action) {
+            pDVar29 = pDVar7;
           }
-          if (pIVar32 != (Il2CppClass *)0x0) {
-            pMVar29[1].klass = pIVar32;
-            pIVar32 = (Il2CppClass *)0x0;
-            if ((Action__Class *)pIVar31->image == TypeInfo__System__Action) {
-              pIVar32 = pIVar31;
+          if (pDVar29 != (Delegate *)0x0) {
+            pDVar29 = (Delegate *)0x0;
+            if ((Action__Class *)pDVar7->klass == TypeInfo__System__Action) {
+              pDVar29 = pDVar7;
             }
-            if (pIVar32 != (Il2CppClass *)0x0) goto code_?;
+            if (pDVar29 != (Delegate *)0x0) goto code_?;
           }
           goto code_?;
         }
-        pMVar29[1].klass = (Il2CppClass *)0x0;
 code_?:
         func_?();
-        pAVar33 = (AvatarLimbManager *)func_?();
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-        UxmlObjectListAttributeDescription`1[System::Object]::
-        UxmlObjectListAttributeDescription_1_System_Object___ctor
-                  ((UxmlObjectListAttributeDescription_1_System_Object_ *)pAVar33,(MethodInfo *)0x0)
-        ;
-        (this->fields)._.limbManager = pAVar33;
+        pAVar31 = (AvatarLimbManager *)func_?();
+        ThemeAttributes::ThemeAttribute`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+        ThemeAttribute_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                  ((ThemeAttribute_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pAVar31,
+                   (MethodInfo *)0x0);
+        (this->fields)._.limbManager = pAVar31;
         func_?();
         if (((this->fields)._.avatar == (Avatar *)0x0) ||
-           (pAVar33 = (this->fields)._.limbManager, pAVar33 == (AvatarLimbManager *)0x0))
+           (pAVar31 = (this->fields)._.limbManager, pAVar31 == (AvatarLimbManager *)0x0))
         goto code_?;
-        (*(code *)(pAVar33->klass->vtable).Initialize.method)();
-        pAVar34 = (this->fields).avatarRespawnHandler;
-        if (pAVar34 == (AvatarRespawnHandler *)0x0) goto code_?;
-        (pAVar34->fields).mvAvatar = this;
+        (*(code *)(pAVar31->klass->vtable).Initialize.method)();
+        pAVar32 = (this->fields).avatarRespawnHandler;
+        if (pAVar32 == (AvatarRespawnHandler *)0x0) goto code_?;
+        (pAVar32->fields).mvAvatar = this;
         func_?();
-        pUVar35 = (this->fields)._._._.PositionChanged;
-        pUVar27 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+        pUVar33 = (this->fields)._._._.PositionChanged;
+        pUVar24 = (UnityAction_2_System_Object_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar27,(Object *)this,
+                  (pUVar24,(Object *)this,
                    MethodInfo__MVAvatarLocal__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
                    ,(MethodInfo *)0x0);
-        pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
-                            ((Delegate *)pUVar35,(Delegate *)pUVar27,(MethodInfo *)0x0);
-        if (pDVar8 == (Delegate *)0x0) {
+        pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                            ((Delegate *)pUVar33,(Delegate *)pUVar24,(MethodInfo *)0x0);
+        if (pDVar7 == (Delegate *)0x0) {
           (this->fields)._._._.PositionChanged =
                (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
 code_?:
           func_?();
-          pUVar36 = (this->fields)._._._.RotationChanged;
-          pUVar27 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+          pUVar34 = (this->fields)._._._.RotationChanged;
+          pUVar24 = (UnityAction_2_System_Object_System_Object_ *)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (pUVar27,(Object *)this,
+                    (pUVar24,(Object *)this,
                      MethodInfo__MVAvatarLocal__OnRotationChanged_MVWorldObjectClient__RotationChangedEventArgs_
                      ,(MethodInfo *)0x0);
-          pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
-                              ((Delegate *)pUVar36,(Delegate *)pUVar27,(MethodInfo *)0x0);
-          if (pDVar8 != (Delegate *)0x0) {
-            pUVar36 = (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)
+          pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                              ((Delegate *)pUVar34,(Delegate *)pUVar24,(MethodInfo *)0x0);
+          if (pDVar7 != (Delegate *)0x0) {
+            pUVar34 = (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)
                       func_?();
-            if (pUVar36 != (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0) {
-              (this->fields)._._._.RotationChanged = pUVar36;
-              iVar10 = func_?();
-              if (iVar10 != 0) goto code_?;
+            if (pUVar34 != (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0) {
+              (this->fields)._._._.RotationChanged = pUVar34;
+              iVar9 = func_?();
+              if (iVar9 != 0) goto code_?;
             }
             goto code_?;
           }
@@ -1979,21 +2044,21 @@ code_?:
                (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0;
 code_?:
           func_?();
-          pUVar37 = (this->fields)._._._.ScaleChanged;
-          pUVar27 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+          pUVar35 = (this->fields)._._._.ScaleChanged;
+          pUVar24 = (UnityAction_2_System_Object_System_Object_ *)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (pUVar27,(Object *)this,
+                    (pUVar24,(Object *)this,
                      MethodInfo__MVAvatarLocal__OnScaleChanged_MVWorldObjectClient__ScaleChangedEventArgs_
                      ,(MethodInfo *)0x0);
-          pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
-                              ((Delegate *)pUVar37,(Delegate *)pUVar27,(MethodInfo *)0x0);
-          if (pDVar8 != (Delegate *)0x0) {
-            pUVar37 = (UnityAction_2_MVWorldObjectClient_ScaleChangedEventArgs_ *)func_?();
-            if (pUVar37 != (UnityAction_2_MVWorldObjectClient_ScaleChangedEventArgs_ *)0x0) {
-              (this->fields)._._._.ScaleChanged = pUVar37;
-              iVar10 = func_?();
-              if (iVar10 != 0) goto code_?;
+          pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                              ((Delegate *)pUVar35,(Delegate *)pUVar24,(MethodInfo *)0x0);
+          if (pDVar7 != (Delegate *)0x0) {
+            pUVar35 = (UnityAction_2_MVWorldObjectClient_ScaleChangedEventArgs_ *)func_?();
+            if (pUVar35 != (UnityAction_2_MVWorldObjectClient_ScaleChangedEventArgs_ *)0x0) {
+              (this->fields)._._._.ScaleChanged = pUVar35;
+              iVar9 = func_?();
+              if (iVar9 != 0) goto code_?;
             }
             goto code_?;
           }
@@ -2001,57 +2066,56 @@ code_?:
                (UnityAction_2_MVWorldObjectClient_ScaleChangedEventArgs_ *)0x0;
 code_?:
           func_?();
-          pGVar3 = (this->fields)._._._.gameObject;
-          if (pGVar3 == (GameObject *)0x0) goto code_?;
+          pGVar2 = (this->fields)._._._.gameObject;
+          if (pGVar2 == (GameObject *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar3,0,(MethodInfo *)0x0);
-          pMVar38 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar38 == (MVNetworkGame *)0x0) ||
-             (this_00 = (pMVar38->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0))
-          goto code_?;
-          this_07 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                              (this_00,(this->fields)._._._._.ownerActorNr,(MethodInfo *)0x0);
-          if (this_07 == (MVPlayer *)0x0) goto code_?;
+                    (pGVar2,0,(MethodInfo *)0x0);
+          pMVar36 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (((pMVar36 == (MVNetworkGame *)0x0) ||
+              (this_00 = (pMVar36->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0)) ||
+             (this_07 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
+                                  (this_00,(this->fields)._._._._.ownerActorNr,(MethodInfo *)0x0),
+             this_07 == (MVPlayer *)0x0)) goto code_?;
           MVPlayer::MVPlayer_NotifyAvatarCreated
                     (this_07,(this->fields)._._._._.id,(MethodInfo *)0x0);
-          pUVar39 = (this_07->fields).OnObserve;
+          a = (this_07->fields).OnObserve;
           pNVar30 = (NavMesh_OnNavMeshPreUpdate *)func_?();
           UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
           NavMesh_OnNavMeshPreUpdate__ctor
                     (pNVar30,(Object *)this,MethodInfo__MVAvatarLocal__OnObserve__,(MethodInfo *)0x0
                     );
-          pUVar39 = (UnityAction *)
-                    mscorlib.dll::System::Delegate::Delegate_Combine
-                              ((Delegate *)pUVar39,(Delegate *)pNVar30,(MethodInfo *)0x0);
-          if (pUVar39 == (UnityAction *)0x0) {
-            (this_07->fields).OnObserve = (UnityAction *)0x0;
+          pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                              ((Delegate *)a,(Delegate *)pNVar30,(MethodInfo *)0x0);
+          if (pDVar7 == (Delegate *)0x0) {
+            _UNK_? = (Delegate *)0x0;
 code_?:
             func_?();
-            pUVar39 = (this_07->fields).OnResume;
+            pDVar7 = _UNK_?;
             pNVar30 = (NavMesh_OnNavMeshPreUpdate *)func_?();
             UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
             NavMesh_OnNavMeshPreUpdate__ctor
                       (pNVar30,(Object *)this,MethodInfo__MVAvatarLocal__OnResume__,
                        (MethodInfo *)0x0);
-            pUVar39 = (UnityAction *)
-                      mscorlib.dll::System::Delegate::Delegate_Combine
-                                ((Delegate *)pUVar39,(Delegate *)pNVar30,(MethodInfo *)0x0);
-            if (pUVar39 == (UnityAction *)0x0) {
-              (this_07->fields).OnResume = (UnityAction *)0x0;
+            pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                (pDVar7,(Delegate *)pNVar30,(MethodInfo *)0x0);
+            if (pDVar7 == (Delegate *)0x0) {
+              _UNK_? = (Delegate *)0x0;
               func_?();
               return;
             }
-            pUVar40 = (UnityAction *)0x0;
-            if (pUVar39->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-              pUVar40 = pUVar39;
+            pDVar29 = (Delegate *)0x0;
+            if ((UnityAction__Class *)pDVar7->klass == TypeInfo__UnityEngine__Events__UnityAction)
+            {
+              pDVar29 = pDVar7;
             }
-            if (pUVar40 != (UnityAction *)0x0) {
-              (this_07->fields).OnResume = pUVar40;
-              pUVar40 = (UnityAction *)0x0;
-              if (pUVar39->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-                pUVar40 = pUVar39;
+            if (pDVar29 != (Delegate *)0x0) {
+              pDVar28 = (Delegate *)0x0;
+              if ((UnityAction__Class *)pDVar7->klass == TypeInfo__UnityEngine__Events__UnityAction
+                 ) {
+                pDVar28 = pDVar7;
               }
-              if (pUVar40 != (UnityAction *)0x0) {
+              _UNK_? = pDVar29;
+              if (pDVar28 != (Delegate *)0x0) {
                 func_?();
                 return;
               }
@@ -2059,54 +2123,55 @@ code_?:
             }
             goto code_?;
           }
-          pUVar40 = (UnityAction *)0x0;
-          if (pUVar39->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-            pUVar40 = pUVar39;
+          pDVar29 = (Delegate *)0x0;
+          if ((UnityAction__Class *)pDVar7->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+            pDVar29 = pDVar7;
           }
-          if (pUVar40 != (UnityAction *)0x0) {
-            (this_07->fields).OnObserve = pUVar40;
-            pUVar40 = (UnityAction *)0x0;
-            if (pUVar39->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-              pUVar40 = pUVar39;
+          if (pDVar29 != (Delegate *)0x0) {
+            pDVar28 = (Delegate *)0x0;
+            if ((UnityAction__Class *)pDVar7->klass == TypeInfo__UnityEngine__Events__UnityAction)
+            {
+              pDVar28 = pDVar7;
             }
-            if (pUVar40 != (UnityAction *)0x0) goto code_?;
+            _UNK_? = pDVar29;
+            if (pDVar28 != (Delegate *)0x0) goto code_?;
           }
           goto code_?;
         }
-        pUVar35 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-        if (pUVar35 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-          (this->fields)._._._.PositionChanged = pUVar35;
-          iVar10 = func_?();
-          if (iVar10 != 0) goto code_?;
+        pUVar33 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
+        if (pUVar33 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
+          (this->fields)._._._.PositionChanged = pUVar33;
+          iVar9 = func_?();
+          if (iVar9 != 0) goto code_?;
         }
         goto code_?;
       }
-      pMVar41 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
-      if (pMVar17->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
-        pMVar41 = pMVar17;
+      pMVar37 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
+      if (pMVar14->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
+        pMVar37 = pMVar14;
       }
-      if (pMVar41 == (MVPickupOwner_OnEquipItemDelegate *)0x0) goto code_?;
-      (pAVar16->fields)._.onEquipItem = pMVar41;
-      pMVar41 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
-      if (pMVar17->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
-        pMVar41 = pMVar17;
+      if (pMVar37 == (MVPickupOwner_OnEquipItemDelegate *)0x0) goto code_?;
+      (pAVar13->fields)._.onEquipItem = pMVar37;
+      pMVar37 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
+      if (pMVar14->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
+        pMVar37 = pMVar14;
       }
-      if (pMVar41 != (MVPickupOwner_OnEquipItemDelegate *)0x0) goto code_?;
+      if (pMVar37 != (MVPickupOwner_OnEquipItemDelegate *)0x0) goto code_?;
       goto code_?;
     }
-    pAVar7 = (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)func_?();
-    if (pAVar7 == (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0)
+    pAVar6 = (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)func_?();
+    if (pAVar6 == (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0)
     goto code_?;
-    (pAVar6->fields).OnDamageTaken = pAVar7;
-    iVar10 = func_?();
-    if (iVar10 != 0) goto code_?;
+    (pAVar5->fields).OnDamageTaken = pAVar6;
+    iVar9 = func_?();
+    if (iVar9 != 0) goto code_?;
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  pcVar42 = (code *)swi(3);
-  (*pcVar42)();
+  pcVar38 = (code *)swi(3);
+  (*pcVar38)();
   return;
 }
 
@@ -2526,7 +2591,7 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_LeaveVehicle
              (*(code *)(pAVar1->klass->vtable).get_Velocity.method)
                        (&uStack_3,pAVar1,(pAVar1->klass->vtable).get_IsMovementLocked.methodPtr);
     pUVar4 = (this->fields).useInteractorHandler;
-    fStack_5 = *(float *)(puVar2 + 1);
+    fVar5 = *(float *)(puVar2 + 1);
     fStack_6 = (float)*puVar2;
     fStack_7 = (float)((ulonglong)*puVar2 >> 0x20);
     unaff_EDI = (MVVehicleBase *)0x0;
@@ -2607,12 +2672,12 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_LeaveVehicle
                 fStack_6 = (float)((ulonglong)*puVar2 >> 0x20);
                 fVar13 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                                    ((MethodInfo *)0x0);
-                fStack_14 = (fStack_7 / fVar13) * _UNK_?;
+                fVar5 = (fStack_7 / fVar13) * _UNK_?;
                 fStack_12 = (fStack_12 / fVar13) * _UNK_?;
                 fStack_6 = (fStack_6 / fVar13) * _UNK_?;
                 uStack_3 = CONCAT44(fStack_6,fStack_12);
-                fStack_7 = fStack_14;
-                fStack_5 = fStack_14;
+                fStack_14 = fVar5;
+                fStack_7 = fVar5;
                 fVar15 = (float10)func_?(&fStack_12,0);
                 fStack_7 = (float)(fVar15 / (float10)_UNK_? + (float10)uStack_3._4_4_);
                 fStack_6 = fStack_12;
@@ -2622,37 +2687,14 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_LeaveVehicle
           MVAvatar::MVAvatar_HandleLeaveVehicle((MVAvatar *)this,(MethodInfo *)0x0);
           pAVar16 = MVAvatarLocal_get_AvatarLocal(this,(MethodInfo *)0x0);
           if (pAVar16 != (AvatarLocal *)0x0) {
-            pIVar17 = (pAVar16->fields).avatarCameraController;
-            pIStack_18 = pIVar17;
+            unaff_EDI = (MVVehicleBase *)(pAVar16->fields).avatarCameraController;
             if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__MainCameraManager);
             }
-            pIVar19 = TypeInfo__IAvatarCameraController;
-            iStack_20 = TypeInfo__MainCameraManager->static_fields->DefaultCameraType;
-            if (pIVar17 != (IAvatarCameraController *)0x0) {
-              pIStack_21 = pIVar17->klass;
-              uVar22 = 0;
-              uStack_23 = 0;
-              uVar24._0_1_ = (pIStack_21->_1).rank;
-              uVar24._1_1_ = (pIStack_21->_1).minimumAlignment;
-              if (uVar24 != 0) {
-                do {
-                  pIVar17 = pIStack_18;
-                  if (pIStack_21->interfaceOffsets[uVar22].interfaceType ==
-                      (Il2CppClass *)TypeInfo__IAvatarCameraController) {
-                    ppMVar25 = &(&(pIStack_18->klass->vtable).SetCamera)
-                                [pIStack_18->klass->interfaceOffsets[uVar22].offset].method;
-                    goto code_?;
-                  }
-                  uVar22 = uVar22 + 1;
-                } while (uVar22 < uVar24);
-              }
-              ppMVar25 = (MethodInfo **)func_?(pIVar17,TypeInfo__IAvatarCameraController,2)
-              ;
-code_?:
-              (*(code *)*ppMVar25)(pIVar17,iStack_20,ppMVar25[1]);
+            if (unaff_EDI != (MVVehicleBase *)0x0) {
+              func_?(2,TypeInfo__IAvatarCameraController,unaff_EDI,
+                              TypeInfo__MainCameraManager->static_fields->DefaultCameraType);
               pAVar1 = (this->fields).avatarMotor;
-              unaff_EDI = (MVVehicleBase *)pIVar19;
               if (pAVar1 != (AvatarMotor *)0x0) {
                 (*(code *)(pAVar1->klass->vtable).Reset.method)
                           (pAVar1,(pAVar1->klass->vtable).SuspendImpactDamage.methodPtr);
@@ -2668,14 +2710,14 @@ code_?:
                     if (pAVar1 != (AvatarMotor *)0x0) {
                       impulse.y = fStack_7;
                       impulse.x = fStack_6;
-                      impulse.z = fStack_5;
+                      impulse.z = fVar5;
                       MVRigidBody::MVRigidBody_AddImpulse_1
                                 ((MVRigidBody *)pAVar1,impulse,0,(MethodInfo *)0x0);
                       (*(code *)(this->klass->vtable).OnLeaveVehicle.method)
                                 (this,(this->klass->vtable).AvatarStateChangedHandler.methodPtr);
-                      pSVar26 = (this->fields).spawnRoleDataReceiver;
-                      if ((pSVar26 != (SpawnRoleDataReceiver *)0x0) &&
-                         (this_04 = (pSVar26->fields).isInVehicle,
+                      pSVar17 = (this->fields).spawnRoleDataReceiver;
+                      if ((pSVar17 != (SpawnRoleDataReceiver *)0x0) &&
+                         (this_04 = (pSVar17->fields).isInVehicle,
                          this_04 != (SpawnRoleReceiverVariable_1_System_Boolean_ *)0x0)) {
                         Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
                         SpawnRoleVariableTypes::SpawnRoleReceiverVariable`1[System::ByteEnum]::
@@ -2719,8 +2761,8 @@ code_?:
   pMVar11 = extraout_EDX;
 code_?:
   func_?(unaff_EDI,pMVar11);
-  pcVar27 = (code *)swi(3);
-  (*pcVar27)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -3671,134 +3713,67 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_ResetAvatar
            (pMVar3 = (pMVar1->fields).teamManager, pMVar3 != (MVTeamManager *)0x0)) {
           team = MVTeamManager::MVTeamManager_GetTeamFromActorNr
                            (pMVar3,actorNumber,(MethodInfo *)0x0);
-          if (team == MVTeam__Enum_None) {
-code_?:
-            b = StringLiteral_Idle;
-            if (cRam_? == '\0') {
-              func_?();
-              func_?();
-              func_?();
-              func_?();
-              func_?();
-              func_?();
-              cRam_? = '\x01';
-            }
-            bVar4 = mscorlib.dll::System::String::String_op_Equality
-                              ((this->fields).currAnim,b,(MethodInfo *)0x0);
+          if (team != MVTeam__Enum_None) {
+            pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if ((pMVar1 == (MVNetworkGame *)0x0) ||
+               (pMVar3 = (pMVar1->fields).teamManager, pMVar3 == (MVTeamManager *)0x0))
+            goto code_?;
+            bVar4 = MVTeamManager::MVTeamManager_IsTeamActive(pMVar3,team,(MethodInfo *)0x0);
             if (bVar4 == 0) {
-              pMVar5 = (this->fields)._.Animation;
-              if (pMVar5 != (MVRuntimeDataVariable *)0x0) {
-                pOVar6 = MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value
-                                    (pMVar5,(MethodInfo *)0x0);
-                if ((pOVar6 != (Object *)0x0) &&
-                   (((pOVar6->klass->_1).naturalAligment <
-                     (
-                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                     ->_1).naturalAligment ||
-                    ((Dictionary_2_System_Object_System_Object___Class *)
-                     (pOVar6->klass->_1).typeHierarchy
-                     [(
-                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                      ->_1).naturalAligment - 1] !=
-                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                    )))) goto code_?;
-                bVar4 = mscorlib.dll::System::String::String_op_Inequality
-                                  ((this->fields).currAnim,b,(MethodInfo *)0x0);
-                if (bVar4 == 0) goto code_?;
-                pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                if (pMVar1 != (MVNetworkGame *)0x0) {
-                  MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
-                            (pMVar1,(MethodInfo *)0x0);
-                  this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                             *)func_?();
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                            (this_03,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                            );
-                  if (this_03 !=
-                      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                       *)0x0) {
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__Add
-                              ((Dictionary_2_System_Object_System_Object_ *)this_03,
-                               (Object *)StringLiteral_state,(Object *)b,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                              );
-                    pOVar6 = (Object *)func_?();
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__Add
-                              ((Dictionary_2_System_Object_System_Object_ *)this_03,
-                               (Object *)StringLiteral_timeStamp,pOVar6,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                              );
-                    pMVar5 = (this->fields)._.Animation;
-                    if (pMVar5 != (MVRuntimeDataVariable *)0x0) {
-                      MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
-                                (pMVar5,(Object *)this_03,(MethodInfo *)0x0);
-                      (this->fields).currAnim = b;
-                      func_?();
-                      goto code_?;
-                    }
-                  }
-                }
-              }
-            }
-            else {
-code_?:
-              pMVar7 = (this->fields)._.MaxHealth;
-              pMVar8 = (this->fields)._.Health;
-              if (pMVar7 != (MVRuntimeDataVariable_1_System_Int32_ *)0x0) {
-                (*(code *)(pMVar7->klass->vtable).get_Value.method)();
-                if (pMVar8 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
-                  (*(code *)(pMVar8->klass->vtable).set_Value.method)();
-                  bVar4 = MVAvatar::MVAvatar_get_IsSeated((MVAvatar *)this,(MethodInfo *)0x0);
-                  if (bVar4 != 0) {
-                    MVAvatarLocal_LeaveVehicle(this,0,(MethodInfo *)0x0);
-                  }
-                  pAVar9 = (this->fields).avatarEquipable;
-                  if (pAVar9 != (AvatarEquipable *)0x0) {
-                    (*(code *)(pAVar9->klass->vtable).Unequip.method)();
-                    pAVar10 = (this->fields).interactableLocal;
-                    if (pAVar10 != (AvatarInteractable *)0x0) {
-                      (*(code *)(pAVar10->klass->vtable).ClearModifiers.method)();
-                      pAVar11 = (this->fields).avatarMotor;
-                      if (pAVar11 != (AvatarMotor *)0x0) {
-                        (*(code *)(pAVar11->klass->vtable).Reset.method)();
-                        return;
-                      }
-                    }
-                  }
-                }
-              }
+              pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if ((pMVar1 == (MVNetworkGame *)0x0) ||
+                 (pMVar3 = (pMVar1->fields).teamManager, pMVar3 == (MVTeamManager *)0x0))
+              goto code_?;
+              this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                        MVTeamManager::MVTeamManager_GetTeamList(pMVar3,(MethodInfo *)0x0);
+              this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                                  ((MethodInfo *)0x0);
+              if (this_01 ==
+                  (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+              goto code_?;
+              team_00 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                        RegularExpressions::RegexCharClass+SingleRange]::
+                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                  (this_01,0,
+                                   MethodInfo__System__Collections__Generic__List<MV::WorldObject::MVTeam>__get_Item_int_
+                                  );
+              if (this_02 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+              MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetTeam
+                        (this_02,(MVTeam__Enum)team_00,(MethodInfo *)0x0);
             }
           }
-          else {
-            pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if ((pMVar1 != (MVNetworkGame *)0x0) &&
-               (pMVar3 = (pMVar1->fields).teamManager, pMVar3 != (MVTeamManager *)0x0)) {
-              bVar4 = MVTeamManager::MVTeamManager_IsTeamActive(pMVar3,team,(MethodInfo *)0x0);
-              if (bVar4 != 0) goto code_?;
-              pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if ((pMVar1 != (MVNetworkGame *)0x0) &&
-                 (pMVar3 = (pMVar1->fields).teamManager, pMVar3 != (MVTeamManager *)0x0)) {
-                this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                          MVTeamManager::MVTeamManager_GetTeamList(pMVar3,(MethodInfo *)0x0);
-                this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                                    ((MethodInfo *)0x0);
-                if (this_01 !=
-                    (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-                  team_00 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                            RegularExpressions::RegexCharClass+SingleRange]::
-                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                      (this_01,0,
-                                       MethodInfo__System__Collections__Generic__List<MV::WorldObject::MVTeam>__get_Item_int_
-                                      );
-                  if (this_02 != (MVNetworkGame_OperationRequests *)0x0) {
-                    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetTeam
-                              (this_02,(MVTeam__Enum)team_00,(MethodInfo *)0x0);
-                    goto code_?;
+          MVAvatarLocal_SetAnimation(this,StringLiteral_Idle,(MethodInfo *)0x0);
+          pMVar5 = (this->fields)._.MaxHealth;
+          pMVar6 = (this->fields)._.Health;
+          if (pMVar5 != (MVRuntimeDataVariable_1_System_Int32_ *)0x0) {
+            pMVar7 = pMVar5->klass;
+            pIStack8 = (Il2CppImage *)(pMVar7->vtable).set_Value.methodPtr;
+            (*(code *)(pMVar7->vtable).get_Value.method)();
+            if (pMVar6 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
+              pMVar9 = pMVar6->klass;
+              pIStack8 = pMVar9[1]._0.image;
+              (*(code *)(pMVar9->vtable).set_Value.method)();
+              bVar4 = MVAvatar::MVAvatar_get_IsSeated((MVAvatar *)this,(MethodInfo *)0x0);
+              if (bVar4 != 0) {
+                MVAvatarLocal_LeaveVehicle(this,0,(MethodInfo *)0x0);
+              }
+              pAVar10 = (this->fields).avatarEquipable;
+              if (pAVar10 != (AvatarEquipable *)0x0) {
+                pAVar11 = pAVar10->klass;
+                pIStack8 = (Il2CppImage *)(pAVar11->vtable).Holster.methodPtr;
+                (*(code *)(pAVar11->vtable).Unequip.method)();
+                pAVar12 = (this->fields).interactableLocal;
+                if (pAVar12 != (AvatarInteractable *)0x0) {
+                  pAVar13 = pAVar12->klass;
+                  pIStack8 = (Il2CppImage *)(pAVar13->vtable).Init.methodPtr;
+                  (*(code *)(pAVar13->vtable).ClearModifiers.method)();
+                  pAVar14 = (this->fields).avatarMotor;
+                  if (pAVar14 != (AvatarMotor *)0x0) {
+                    pAVar15 = pAVar14->klass;
+                    pIStack8 = (Il2CppImage *)(pAVar15->vtable).SuspendImpactDamage.methodPtr
+                    ;
+                    (*(code *)(pAVar15->vtable).Reset.method)();
+                    return;
                   }
                 }
               }
@@ -3808,11 +3783,10 @@ code_?:
       }
     }
   }
-  func_?();
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -3981,38 +3955,35 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_SetMode
                (MVAvatarLocal *this,AvatarRuntimeState__Enum localMode,MethodInfo *method)
 
 {
-  pMVar1 = (this->fields).avatarLocalModes;
-  if (pMVar1 != (MVAvatarLocal_AvatarLocalModes *)0x0) {
+  if ((this->fields).avatarLocalModes != (MVAvatarLocal_AvatarLocalModes *)0x0) {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pMVar2 = (pMVar1->fields).currentMode;
-    if (pMVar2 != (MVAvatarLocal_AvatarMode *)0x0) {
-      (*(code *)(pMVar2->klass->vtable).__unknown.method)();
-      this_00 = (pMVar1->fields).avatarModes;
-      if (this_00 != (Dictionary_2_AvatarRuntimeState_MVAvatarLocal_AvatarMode_ *)0x0) {
-        pMVar2 = (MVAvatarLocal_AvatarMode *)
-                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+    if (*(int **)(unaff_EBX + 0xc) != (int *)0x0) {
+      (**(code **)(**(int **)(unaff_EBX + 0xc) + 0xe0))();
+      if (*(Dictionary_2_System_ByteEnum_System_Object_ **)(unaff_EBX + 8) !=
+          (Dictionary_2_System_ByteEnum_System_Object_ *)0x0) {
+        pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
                  Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,localMode,
+                           (*(Dictionary_2_System_ByteEnum_System_Object_ **)(unaff_EBX + 8),
+                            localMode,
                             MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__get_Item_AvatarRuntimeState_
                            );
-        (pMVar1->fields).currentMode = pMVar2;
+        *(Object **)(unaff_EBX + 0xc) = pOVar1;
         func_?();
-        pMVar2 = (pMVar1->fields).currentMode;
-        (pMVar1->fields).currentState = (uint8_t)localMode;
-        if (pMVar2 != (MVAvatarLocal_AvatarMode *)0x0) {
-          (*(code *)(pMVar2->klass->vtable).Activate.method)();
+        *(char *)(unaff_EBX + 0x10) = (char)localMode;
+        if (*(int **)(unaff_EBX + 0xc) != (int *)0x0) {
+          (**(code **)(**(int **)(unaff_EBX + 0xc) + 0xf8))();
           return;
         }
       }
     }
   }
-  uVar3 = func_?(&puStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar2 = func_?(&puStack_3);
+  func_?(uVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -5133,17 +5104,20 @@ Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_Update
           (MVAvatarLocal *this,InputToInGameAction *interactionMap,MethodInfo *method)
 
 {
-  this_00 = (this->fields).avatarLocalModes;
-  if (this_00 != (MVAvatarLocal_AvatarLocalModes *)0x0) {
-    System.Data.dll::System::Data::DataTextWriter::DataTextWriter_WriteStartDocument_1
-              ((DataTextWriter *)this_00,(bool)interactionMap,(MethodInfo *)0x0);
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
+  pMVar2 = (this->fields).avatarLocalModes;
+  if ((pMVar2 != (MVAvatarLocal_AvatarLocalModes *)0x0) &&
+     (pMStack_3 = (pMVar2->fields).currentMode, pMStack_3 != (MVAvatarLocal_AvatarMode *)0x0)) {
+    pIStack_1 = (pMStack_3->klass->vtable).Activate.methodPtr;
+    pIStack_4 = interactionMap;
+    (*(code *)(pMStack_3->klass->vtable).__unknown_2.method)();
     return interactionMap;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  pIVar3 = (InputToInGameAction *)(*pcVar2)();
-  return pIVar3;
+  uVar5 = func_?(&pMStack_3);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  pIVar7 = (InputToInGameAction *)(*pcVar6)();
+  return pIVar7;
 }
 
 

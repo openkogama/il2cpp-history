@@ -2423,10 +2423,10 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
     if (pGVar2 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar2,0,(MethodInfo *)0x0);
-      pGVar2 = (this->fields).freeTryUI;
-      if (pGVar2 != (GameObject *)0x0) {
+      this_00 = (this->fields).freeTryUI;
+      if (this_00 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar2,0,(MethodInfo *)0x0);
+                  (this_00,0,(MethodInfo *)0x0);
         pPVar3 = (ProgressBarAndroid *)(this->fields).progressBar;
         if (pPVar3 != (ProgressBarAndroid *)0x0) {
           ProgressBarAndroid::ProgressBarAndroid_set_Progress(pPVar3,1.0,(MethodInfo *)0x0);
@@ -2442,13 +2442,13 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
             if ((pPVar4 != (PlayerPlanetData *)0x0) &&
                (pPVar5 = TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator,
                pPVar5 != (PlayerTierStateCalculator *)0x0)) {
-              this = (GamePassesShop *)CONCAT31(0x104166,(pPVar4->fields).gamePassTier);
+              this = (GamePassesShop *)(uint)(pPVar4->fields).gamePassTier;
               pDVar6 = MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalculator
                        ::PlayerTierStateCalculator_GetTierPricingState
                                  (pPVar5,0,(GamePassTier__Enum)this,(MethodInfo *)0x0);
               if (pDVar6 != (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_
                              *)0x0) {
-                this = (GamePassesShop *)CONCAT31(0x104166,(pGVar1->fields).gamePassTierDisplayed);
+                this = (GamePassesShop *)(uint)(pGVar1->fields).gamePassTierDisplayed;
                 pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           ByteEnum,System::Object]::
                           Dictionary_2_System_ByteEnum_System_Object__get_Item
@@ -2488,12 +2488,14 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
                          (pPVar5 = TypeInfo__GamePassesManager->static_fields->
                                    playerTierStateCalculator,
                          pPVar5 != (PlayerTierStateCalculator *)0x0)) {
-                        GStack_10 = CONCAT31(0x104166,(pPVar4->fields).gamePassTier);
                         pDVar6 = MVWorldObject.dll::MV::WorldObject::GamePassSystem::
                                  PlayerTierStateCalculator::
                                  PlayerTierStateCalculator_GetTierPricingState
-                                           (pPVar5,playerGamePoints,GStack_10,(MethodInfo *)0x0);
-                        iVar11 = 0;
+                                           (pPVar5,playerGamePoints,
+                                            CONCAT31((int3)((uint)pGVar2 >> 8),
+                                                     (pPVar4->fields).gamePassTier),
+                                            (MethodInfo *)0x0);
+                        gamePointAmountShown = 0;
                         key = (ByteEnum__Enum)bVar9;
                         if (bVar9 != 0) {
                           if (pDVar6 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_
@@ -2507,21 +2509,14 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
                                                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
                                                 );
                             if (pOVar7 == (Object *)0x0) goto code_?;
-                            iVar11 = (int)&((pOVar7[3].klass)->_0).image + iVar11;
+                            gamePointAmountShown =
+                                 (int)&((pOVar7[3].klass)->_0).image + gamePointAmountShown;
                             key = key - 1;
                           } while (0 < (int)key);
                         }
-                        if (cRam_? == '\0') {
-                          func_?();
-                          cRam_? = '\x01';
-                        }
-                        TypeInfo__GamePointGainEffectManager->static_fields->
-                        progressBarGamePointAmountShown = iVar11;
-                        if (TypeInfo__GamePointGainEffectManager->static_fields->
-                            OnGamePointGainEffectShown != (Action_1_Int32_ *)0x0) {
-                          (*(TypeInfo__GamePointGainEffectManager->static_fields->
-                             OnGamePointGainEffectShown->fields)._._.invoke_impl)();
-                        }
+                        GamePointGainEffectManager::
+                        GamePointGainEffectManager_HaveShownGamePointGainEffect
+                                  (gamePointAmountShown,(MethodInfo *)0x0);
                         return;
                       }
                     }
@@ -2536,8 +2531,8 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -3214,7 +3209,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowPurchaseConfirmPopu
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
     pOVar1 = value[1].klass;
-    this = (GamePassesShop *)CONCAT31(0x104173,(this->fields).gamePassTierDisplayed);
+    this = (GamePassesShop *)CONCAT31(0x104200,(this->fields).gamePassTierDisplayed);
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor

@@ -244,7 +244,7 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0x2e38);
+    func_?(0x9e40);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -252,7 +252,6 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
   }
   pVVar1 = SharedCubeFunctions::SharedCubeFunctions_LocalToWorld
                      ((Vector3 *)&stack0xfffffff0,gameObject,localPos,(MethodInfo *)0x0);
-  puVar2 = (undefined1 *)pVVar1->z;
   worldPos = *pVVar1;
   switch(audioAction) {
   case AudioActions__Enum_CubeAdded:
@@ -262,14 +261,14 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
     this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
     if (this == (AudioBuild *)0x0) {
 code_?:
+      cVar2 = '\0';
       uVar3 = func_?();
-      pcVar4 = (char *)((ulonglong)uVar3 >> 0x20);
-      *unaff_EDI = *puVar2;
-      *pcVar4 = *pcVar4 + (char)((ulonglong)uVar3 >> 0x28);
-      *(uint *)uVar3 = *(uint *)uVar3 & (uint)pcVar4;
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
-      return;
+      uVar4 = (uint)((ulonglong)uVar3 >> 0x20);
+      puVar5 = (uint *)CONCAT31((int3)((ulonglong)uVar3 >> 8),(char)uVar3 + -0x57 + cVar2);
+      *puVar5 = *puVar5 & uVar4;
+      *puVar5 = *puVar5 & uVar4;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
     }
     randMax = 1.1;
     randMin = 0.8;

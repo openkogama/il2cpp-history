@@ -312,62 +312,48 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarEmoteHandlerLocal::
   }
   pDVar1 = (this->fields)._.emoteDatas;
   if (pDVar1 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) {
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-             Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                       ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,2,
-                        MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
-                       );
-    if ((this->fields)._.isActive == 0) {
+    emoteData = (AvatarLimbManager_EmoteData *)
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+                Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                          ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,2,
+                           MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
+                          );
+    bVar2 = AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler_CanStartEmote
+                      ((AvatarLimbManager_AvatarEmoteHandler *)this,emoteData,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
       return;
     }
-    if ((this->fields)._.currentRunningEmoteData == (AvatarLimbManager_EmoteData *)0x0) {
-code_?:
-      AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler_StartEmote
-                ((AvatarLimbManager_AvatarEmoteHandler *)this,EmoteTypes__Enum_Nod,(MethodInfo *)0x0
-                );
-      pAVar3 = (this->fields)._.limbManager;
-      if (pAVar3 != (AvatarLimbManager *)0x0) {
-        if (((pAVar3->klass->_1).naturalAligment <
-             (TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment) ||
-           ((pAVar3->klass->_1).typeHierarchy
-            [(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment - 1] !=
-            (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) goto code_?;
-        pDVar1 = (this->fields)._.emoteDatas;
-        pAVar4 = pAVar3[1].fields.emoteHandler;
-        if ((pDVar1 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) &&
-           (((pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       ByteEnum,System::Object]::
-                       Dictionary_2_System_ByteEnum_System_Object__get_Item
-                                 ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,2,
-                                  MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
-                                 ), pOVar2 != (Object *)0x0 &&
-             (pOVar5 = pOVar2[1].klass, pOVar5 != (Object__Class *)0x0)) &&
-            (pAVar4 != (AvatarLimbManager_AvatarEmoteHandler *)0x0)))) {
-          uStack6 = *(undefined4 *)&(pAVar4->fields).isActive;
-          uStack7._0_2_ = (pOVar5->_0).this_arg.attrs;
-          uStack7._2_1_ = (pOVar5->_0).this_arg.type;
-          uStack7._3_1_ = (pOVar5->_0).this_arg.field_0x7;
-          (*(code *)(pAVar4->fields).emoteDatas)();
-          return;
-        }
-      }
-    }
-    else if (pOVar2 != (Object *)0x0) {
-      if (*(short *)&pOVar2[1].monitor <=
-          (((this->fields)._.currentRunningEmoteData)->fields).priority) {
+    AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler_StartEmote
+              ((AvatarLimbManager_AvatarEmoteHandler *)this,EmoteTypes__Enum_Nod,(MethodInfo *)0x0);
+    pAVar3 = (this->fields)._.limbManager;
+    if (pAVar3 != (AvatarLimbManager *)0x0) {
+      if (((pAVar3->klass->_1).naturalAligment <
+           (TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment) ||
+         ((pAVar3->klass->_1).typeHierarchy
+          [(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment - 1] !=
+          (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) goto code_?;
+      pDVar1 = (this->fields)._.emoteDatas;
+      pAVar4 = pAVar3[1].fields.emoteHandler;
+      if ((pDVar1 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) &&
+         (((pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                               ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,2,
+                                MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
+                               ), pOVar5 != (Object *)0x0 &&
+           (pOVar6 = pOVar5[1].klass, pOVar6 != (Object__Class *)0x0)) &&
+          (pAVar4 != (AvatarLimbManager_AvatarEmoteHandler *)0x0)))) {
+        uStack7._0_2_ = (pOVar6->_0).this_arg.attrs;
+        uStack7._2_1_ = (pOVar6->_0).this_arg.type;
+        uStack7._3_1_ = (pOVar6->_0).this_arg.field_0x7;
+        pAStack8 = pAVar4[1].klass;
+        (*(code *)(pAVar4->fields).emoteDatas)();
         return;
-      }
-      pAVar8 = (((this->fields)._.currentRunningEmoteData)->fields).emote;
-      if (pAVar8 != (AvatarLimbManager_AvatarEmote *)0x0) {
-        (*(code *)(pAVar8->klass->vtable).StopEmote.method)(pAVar8);
-        goto code_?;
       }
     }
   }
   func_?();
-  pAVar3 = extraout_EDX;
 code_?:
-  func_?(pAVar3);
+  func_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
   return;
@@ -390,62 +376,49 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarEmoteHandlerLocal::
   }
   pDVar1 = (this->fields)._.emoteDatas;
   if (pDVar1 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) {
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-             Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                       ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,1,
-                        MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
-                       );
-    if ((this->fields)._.isActive == 0) {
+    emoteData = (AvatarLimbManager_EmoteData *)
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+                Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                          ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,1,
+                           MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
+                          );
+    bVar2 = AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler_CanStartEmote
+                      ((AvatarLimbManager_AvatarEmoteHandler *)this,emoteData,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
       return;
     }
-    if ((this->fields)._.currentRunningEmoteData == (AvatarLimbManager_EmoteData *)0x0) {
-code_?:
-      AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler_StartEmote
-                ((AvatarLimbManager_AvatarEmoteHandler *)this,EmoteTypes__Enum_Shake,
-                 (MethodInfo *)0x0);
-      pAVar3 = (this->fields)._.limbManager;
-      if (pAVar3 != (AvatarLimbManager *)0x0) {
-        if (((pAVar3->klass->_1).naturalAligment <
-             (TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment) ||
-           ((pAVar3->klass->_1).typeHierarchy
-            [(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment - 1] !=
-            (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) goto code_?;
-        pDVar1 = (this->fields)._.emoteDatas;
-        pAVar4 = pAVar3[1].fields.emoteHandler;
-        if ((pDVar1 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) &&
-           (((pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       ByteEnum,System::Object]::
-                       Dictionary_2_System_ByteEnum_System_Object__get_Item
-                                 ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,1,
-                                  MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
-                                 ), pOVar2 != (Object *)0x0 &&
-             (pOVar5 = pOVar2[1].klass, pOVar5 != (Object__Class *)0x0)) &&
-            (pAVar4 != (AvatarLimbManager_AvatarEmoteHandler *)0x0)))) {
-          uStack6 = *(undefined4 *)&(pAVar4->fields).isActive;
-          uStack7._0_2_ = (pOVar5->_0).this_arg.attrs;
-          uStack7._2_1_ = (pOVar5->_0).this_arg.type;
-          uStack7._3_1_ = (pOVar5->_0).this_arg.field_0x7;
-          (*(code *)(pAVar4->fields).emoteDatas)();
-          return;
-        }
-      }
-    }
-    else if (pOVar2 != (Object *)0x0) {
-      if (*(short *)&pOVar2[1].monitor <=
-          (((this->fields)._.currentRunningEmoteData)->fields).priority) {
+    AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler_StartEmote
+              ((AvatarLimbManager_AvatarEmoteHandler *)this,EmoteTypes__Enum_Shake,(MethodInfo *)0x0
+              );
+    pAVar3 = (this->fields)._.limbManager;
+    if (pAVar3 != (AvatarLimbManager *)0x0) {
+      if (((pAVar3->klass->_1).naturalAligment <
+           (TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment) ||
+         ((pAVar3->klass->_1).typeHierarchy
+          [(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment - 1] !=
+          (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) goto code_?;
+      pDVar1 = (this->fields)._.emoteDatas;
+      pAVar4 = pAVar3[1].fields.emoteHandler;
+      if ((pDVar1 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) &&
+         (((pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                               ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,1,
+                                MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
+                               ), pOVar5 != (Object *)0x0 &&
+           (pOVar6 = pOVar5[1].klass, pOVar6 != (Object__Class *)0x0)) &&
+          (pAVar4 != (AvatarLimbManager_AvatarEmoteHandler *)0x0)))) {
+        uStack7._0_2_ = (pOVar6->_0).this_arg.attrs;
+        uStack7._2_1_ = (pOVar6->_0).this_arg.type;
+        uStack7._3_1_ = (pOVar6->_0).this_arg.field_0x7;
+        pAStack8 = pAVar4[1].klass;
+        (*(code *)(pAVar4->fields).emoteDatas)();
         return;
-      }
-      pAVar8 = (((this->fields)._.currentRunningEmoteData)->fields).emote;
-      if (pAVar8 != (AvatarLimbManager_AvatarEmote *)0x0) {
-        (*(code *)(pAVar8->klass->vtable).StopEmote.method)(pAVar8);
-        goto code_?;
       }
     }
   }
   func_?();
-  pAVar3 = extraout_EDX;
 code_?:
-  func_?(pAVar3);
+  func_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
   return;
@@ -472,83 +445,65 @@ code_?:
     func_?();
   }
   else {
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-             Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                       ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,3,
-                        MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
-                       );
-    if ((this->fields)._.isActive == 0) {
+    emoteData = (AvatarLimbManager_EmoteData *)
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+                Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                          ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,3,
+                           MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
+                          );
+    bVar2 = AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler_CanStartEmote
+                      ((AvatarLimbManager_AvatarEmoteHandler *)this,emoteData,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
       return;
     }
-    if ((this->fields)._.currentRunningEmoteData != (AvatarLimbManager_EmoteData *)0x0) {
-      if (pOVar2 != (Object *)0x0) {
-        if (*(short *)&pOVar2[1].monitor <=
-            (((this->fields)._.currentRunningEmoteData)->fields).priority) {
-          return;
-        }
-        pAVar3 = (((this->fields)._.currentRunningEmoteData)->fields).emote;
-        if (pAVar3 != (AvatarLimbManager_AvatarEmote *)0x0) {
-          (*(code *)(pAVar3->klass->vtable).StopEmote.method)(pAVar3);
-          goto code_?;
-        }
-      }
-      goto code_?;
-    }
-code_?:
     AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler_StartEmote
               ((AvatarLimbManager_AvatarEmoteHandler *)this,EmoteTypes__Enum_Wave,(MethodInfo *)0x0)
     ;
-    pAVar4 = (this->fields)._.limbManager;
-    unaff_EDI = TypeInfo__AvatarLimbManagerLocal;
-    if (pAVar4 == (AvatarLimbManager *)0x0) goto code_?;
-    if (((pAVar4->klass->_1).naturalAligment <
+    pAVar3 = (this->fields)._.limbManager;
+    if (pAVar3 == (AvatarLimbManager *)0x0) goto code_?;
+    if (((pAVar3->klass->_1).naturalAligment <
          (TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment) ||
-       ((pAVar4->klass->_1).typeHierarchy
+       ((pAVar3->klass->_1).typeHierarchy
         [(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment - 1] !=
         (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) goto code_?;
     pDVar1 = (this->fields)._.emoteDatas;
-    unaff_EDI = (AvatarLimbManagerLocal__Class *)pAVar4[1].fields.emoteHandler;
+    pAVar4 = pAVar3[1].fields.emoteHandler;
     if ((pDVar1 == (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) ||
-       (((pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+       (((pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
                    ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
                              ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,3,
                               MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
-                             ), pOVar2 == (Object *)0x0 || (pOVar2[1].klass == (Object__Class *)0x0)
-         ) || (unaff_EDI == (AvatarLimbManagerLocal__Class *)0x0)))) goto code_?;
-    (*(code *)(unaff_EDI->_0).namespaze)();
-    unaff_EDI = (AvatarLimbManagerLocal__Class *)(this->fields)._.limbManager;
-    if (unaff_EDI == (AvatarLimbManagerLocal__Class *)0x0) goto code_?;
-    pIVar5 = (unaff_EDI->_0).image;
-    if (((TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment <= *(byte *)&pIVar5[4].assembly) &&
-       (*(AvatarLimbManagerLocal__Class **)
-         ((pIVar5[2].typeCount - 4) +
-         (uint)(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment * 4) ==
-        TypeInfo__AvatarLimbManagerLocal)) {
+                             ), pOVar5 == (Object *)0x0 || (pOVar5[1].klass == (Object__Class *)0x0)
+         ) || (pAVar4 == (AvatarLimbManager_AvatarEmoteHandler *)0x0)))) goto code_?;
+    (*(code *)(pAVar4->fields).emoteDatas)();
+    pAVar3 = (this->fields)._.limbManager;
+    if (pAVar3 == (AvatarLimbManager *)0x0) goto code_?;
+    if (((TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment <=
+         (pAVar3->klass->_1).naturalAligment) &&
+       ((pAVar3->klass->_1).typeHierarchy
+        [(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment - 1] ==
+        (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) {
       pDVar1 = (this->fields)._.emoteDatas;
-      unaff_EDI = (AvatarLimbManagerLocal__Class *)(unaff_EDI->_0).properties;
+      pAVar6 = pAVar3[1].fields.limbRotator;
       if (((pDVar1 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) &&
-          ((pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+          ((pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                      ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
                                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,3,
                                 MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
-                               ), pOVar2 != (Object *)0x0 &&
-           (pOVar6 = pOVar2[1].klass, pOVar6 != (Object__Class *)0x0)))) &&
-         (unaff_EDI != (AvatarLimbManagerLocal__Class *)0x0)) {
-        uVar7._0_2_ = (pOVar6->_0).this_arg.attrs;
-        uVar7._2_1_ = (pOVar6->_0).this_arg.type;
-        uVar7._3_1_ = (pOVar6->_0).this_arg.field_0x7;
-        (*(code *)(unaff_EDI->_0).namespaze)((unaff_EDI->_0).element_class,uVar7);
+                               ), pOVar5 != (Object *)0x0 &&
+           (pOVar5[1].klass != (Object__Class *)0x0)))) &&
+         (pAVar6 != (AvatarLimbManager_LimbRotator *)0x0)) {
+        (**(code **)&(pAVar6->fields).isActive)();
         return;
       }
       goto code_?;
     }
   }
-  func_?(unaff_EDI);
-  pAVar4 = extraout_EDX;
+  func_?();
 code_?:
-  func_?(pAVar4);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -579,82 +534,54 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarEmoteHandlerLocal::
     }
     pDVar2 = (this->fields)._.emoteDatas;
     if (pDVar2 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) {
-      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+      pAVar3 = (AvatarLimbManager_EmoteData *)
+               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
                Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
                          ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,1,
                           MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
                          );
-      if ((this->fields)._.isActive == 0) {
+      method_00 = (MethodInfo *)&UNK_?;
+      bVar4 = AvatarLimbManager+AvatarEmoteHandler::
+              AvatarLimbManager_AvatarEmoteHandler_CanStartEmote
+                        ((AvatarLimbManager_AvatarEmoteHandler *)this,pAVar3,(MethodInfo *)0x0);
+      if (bVar4 == 0) {
         return;
       }
-      if ((this->fields)._.currentRunningEmoteData == (AvatarLimbManager_EmoteData *)0x0) {
-code_?:
-        AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler_StartEmote
-                  ((AvatarLimbManager_AvatarEmoteHandler *)this,EmoteTypes__Enum_Shake,
-                   (MethodInfo *)0x0);
-        pAVar4 = (this->fields)._.limbManager;
-        unaff_EDI = TypeInfo__AvatarLimbManagerLocal;
-        if (pAVar4 != (AvatarLimbManager *)0x0) {
-          pAVar5 = TypeInfo__AvatarLimbManagerLocal;
-          if (((pAVar4->klass->_1).naturalAligment <
-               (TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment) ||
-             ((pAVar4->klass->_1).typeHierarchy
-              [(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment - 1] !=
-              (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) goto code_?;
-          pDVar2 = (this->fields)._.emoteDatas;
-          unaff_EDI = (AvatarLimbManagerLocal__Class *)pAVar4[1].fields.emoteHandler;
-          if (pDVar2 == (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0)
-          goto code_?;
-          key = 1;
-code_?:
-          pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
-                   ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                             ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,key,
-                              MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
-                             );
-          if (((pOVar3 != (Object *)0x0) &&
-              (pOVar6 = pOVar3[1].klass, pOVar6 != (Object__Class *)0x0)) &&
-             (unaff_EDI != (AvatarLimbManagerLocal__Class *)0x0)) {
-            uVar7._0_2_ = (unaff_EDI->_0).byval_arg.attrs;
-            uVar7._2_1_ = (unaff_EDI->_0).byval_arg.type;
-            uVar7._3_1_ = (unaff_EDI->_0).byval_arg.field_0x7;
-            uVar8._0_2_ = (pOVar6->_0).this_arg.attrs;
-            uVar8._2_1_ = (pOVar6->_0).this_arg.type;
-            uVar8._3_1_ = (pOVar6->_0).this_arg.field_0x7;
-            (*(code *)(unaff_EDI->_0).namespaze)((unaff_EDI->_0).element_class,uVar8,uVar7);
-            return;
-          }
-        }
-      }
-      else if (pOVar3 != (Object *)0x0) {
-        if (*(short *)&pOVar3[1].monitor <=
-            (((this->fields)._.currentRunningEmoteData)->fields).priority) {
-          return;
-        }
-        pAVar9 = (((this->fields)._.currentRunningEmoteData)->fields).emote;
-        if (pAVar9 != (AvatarLimbManager_AvatarEmote *)0x0) {
-          (*(code *)(pAVar9->klass->vtable).StopEmote.method)(pAVar9,pAVar9->klass[1]._0.image);
-          goto code_?;
-        }
+      AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler_StartEmote
+                ((AvatarLimbManager_AvatarEmoteHandler *)this,EmoteTypes__Enum_Shake,
+                 (MethodInfo *)0x0);
+      pAVar5 = (this->fields)._.limbManager;
+      unaff_EDI = TypeInfo__AvatarLimbManagerLocal;
+      if (pAVar5 != (AvatarLimbManager *)0x0) {
+        pAVar6 = TypeInfo__AvatarLimbManagerLocal;
+        if (((pAVar5->klass->_1).naturalAligment <
+             (TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment) ||
+           ((pAVar5->klass->_1).typeHierarchy
+            [(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment - 1] !=
+            (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) goto code_?;
+        pDVar2 = (this->fields)._.emoteDatas;
+        unaff_EDI = (AvatarLimbManagerLocal__Class *)pAVar5[1].fields.emoteHandler;
+        if (pDVar2 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0)
+        goto code_?;
       }
     }
   }
   else {
     if (EVar1 != EmoteTypes__Enum_Nod) {
-      if (EVar1 == EmoteTypes__Enum_Wave) {
-        AvatarLimbManagerLocal_AvatarEmoteHandlerLocal_OnWaveEmoteStart(this,(MethodInfo *)0x0);
+      if (EVar1 != EmoteTypes__Enum_Wave) {
+        pSVar7 = mscorlib.dll::System::Enum::Enum_ToString
+                           ((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
+        pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                           (StringLiteral_Could_not_start_and_network_,pSVar7,
+                            StringLiteral___Please_add_it_to_the_StartEmot,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                  ((Object *)pSVar7,(MethodInfo *)0x0);
         return;
       }
-      pEStack_10 = TypeInfo__EmoteTypes;
-      pSVar11 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pEStack_10,(MethodInfo *)0x0);
-      pSVar11 = mscorlib.dll::System::String::String_Concat_4
-                         (StringLiteral_Could_not_start_and_network_,pSVar11,
-                          StringLiteral___Please_add_it_to_the_StartEmot,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)pSVar11,(MethodInfo *)0x0);
+      AvatarLimbManagerLocal_AvatarEmoteHandlerLocal_OnWaveEmoteStart(this,(MethodInfo *)0x0);
       return;
     }
     if (cRam_? == '\0') {
@@ -666,57 +593,63 @@ code_?:
     }
     pDVar2 = (this->fields)._.emoteDatas;
     if (pDVar2 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) {
-      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+      pAVar3 = (AvatarLimbManager_EmoteData *)
+               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
                Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
                          ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,2,
                           MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
                          );
-      if ((this->fields)._.isActive == 0) {
+      method_00 = (MethodInfo *)&UNK_?;
+      bVar4 = AvatarLimbManager+AvatarEmoteHandler::
+              AvatarLimbManager_AvatarEmoteHandler_CanStartEmote
+                        ((AvatarLimbManager_AvatarEmoteHandler *)this,pAVar3,(MethodInfo *)0x0);
+      if (bVar4 == 0) {
         return;
       }
-      if ((this->fields)._.currentRunningEmoteData == (AvatarLimbManager_EmoteData *)0x0) {
+      AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler_StartEmote
+                ((AvatarLimbManager_AvatarEmoteHandler *)this,EmoteTypes__Enum_Nod,(MethodInfo *)0x0
+                );
+      pAVar5 = (this->fields)._.limbManager;
+      unaff_EDI = TypeInfo__AvatarLimbManagerLocal;
+      if (pAVar5 != (AvatarLimbManager *)0x0) {
+        pAVar6 = TypeInfo__AvatarLimbManagerLocal;
+        if (((pAVar5->klass->_1).naturalAligment <
+             (TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment) ||
+           ((pAVar5->klass->_1).typeHierarchy
+            [(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment - 1] !=
+            (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) goto code_?;
+        pDVar2 = (this->fields)._.emoteDatas;
+        unaff_EDI = (AvatarLimbManagerLocal__Class *)pAVar5[1].fields.emoteHandler;
+        if (pDVar2 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) {
+          in_stack_8 = 2;
 code_?:
-        AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler_StartEmote
-                  ((AvatarLimbManager_AvatarEmoteHandler *)this,EmoteTypes__Enum_Nod,
-                   (MethodInfo *)0x0);
-        pAVar4 = (this->fields)._.limbManager;
-        unaff_EDI = TypeInfo__AvatarLimbManagerLocal;
-        if (pAVar4 != (AvatarLimbManager *)0x0) {
-          pAVar5 = TypeInfo__AvatarLimbManagerLocal;
-          if (((pAVar4->klass->_1).naturalAligment <
-               (TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment) ||
-             ((pAVar4->klass->_1).typeHierarchy
-              [(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment - 1] !=
-              (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) goto code_?;
-          pDVar2 = (this->fields)._.emoteDatas;
-          unaff_EDI = (AvatarLimbManagerLocal__Class *)pAVar4[1].fields.emoteHandler;
-          if (pDVar2 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) {
-            key = 2;
-            goto code_?;
+          pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+                    ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                              ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,
+                               in_stack_8,method_00);
+          if (((pOVar9 != (Object *)0x0) &&
+              (pOVar10 = pOVar9[1].klass, pOVar10 != (Object__Class *)0x0)) &&
+             (unaff_EDI != (AvatarLimbManagerLocal__Class *)0x0)) {
+            uVar11._0_2_ = (unaff_EDI->_0).byval_arg.attrs;
+            uVar11._2_1_ = (unaff_EDI->_0).byval_arg.type;
+            uVar11._3_1_ = (unaff_EDI->_0).byval_arg.field_0x7;
+            uVar12._0_2_ = (pOVar10->_0).this_arg.attrs;
+            uVar12._2_1_ = (pOVar10->_0).this_arg.type;
+            uVar12._3_1_ = (pOVar10->_0).this_arg.field_0x7;
+            (*(code *)(unaff_EDI->_0).namespaze)((unaff_EDI->_0).element_class,uVar12,uVar11);
+            return;
           }
-        }
-      }
-      else if (pOVar3 != (Object *)0x0) {
-        if (*(short *)&pOVar3[1].monitor <=
-            (((this->fields)._.currentRunningEmoteData)->fields).priority) {
-          return;
-        }
-        pAVar9 = (((this->fields)._.currentRunningEmoteData)->fields).emote;
-        if (pAVar9 != (AvatarLimbManager_AvatarEmote *)0x0) {
-          (*(code *)(pAVar9->klass->vtable).StopEmote.method)(pAVar9,pAVar9->klass[1]._0.image);
-          goto code_?;
         }
       }
     }
   }
-code_?:
   func_?();
-  pAVar4 = extraout_EDX;
-  pAVar5 = unaff_EDI;
+  pAVar5 = extraout_EDX;
+  pAVar6 = unaff_EDI;
 code_?:
-  func_?(pAVar4,pAVar5);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?(pAVar5,pAVar6);
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

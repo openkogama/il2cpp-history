@@ -87,7 +87,7 @@ void Assembly-CSharp.dll::EditCubes::EditCubes_Execute
     func_?();
     func_?();
     func_?();
-    in_stack_12 = 0x119b;
+    in_stack_12 = 0x119c;
     func_?();
     func_?();
     func_?();
@@ -1024,7 +1024,7 @@ code_?:
                                   (1,(MethodInfo *)0x0);
                         value = (WebHeaderCollection *)(this->fields).movingEdgeCube;
                         if ((this->fields).edgeHasMoved == 0) {
-                          uVar1 = 0x1044;
+                          uVar1 = 0x1045;
                           System.dll::System::Net::WebResponseStream::WebResponseStream_set_Headers
                                     ((WebResponseStream *)e,value,(MethodInfo *)0x0);
                           pCVar24 = (e->fields)._SelectedCube_k__BackingField;
@@ -1109,7 +1109,7 @@ code_?:
                                          CubeBase_get_Corners((CubeBase *)pCVar51,(MethodInfo *)0x0)
                             ;
                             if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-                              in_stack_12 = 0x1044;
+                              in_stack_12 = 0x1045;
                               func_?();
                             }
                             bVar19 = Cube::Cube_IsCollapsed(pVStack_21,(MethodInfo *)0x0);
@@ -2227,22 +2227,12 @@ code_?:
   func_?();
   func_?();
 code_?:
-  iVar67 = func_?();
-  bVar105 = (byte)((uint)iVar67 >> 8);
-  bVar106 = (byte)((uint)extraout_ECX >> 8);
-  bVar107 = *(char *)&unaff_ESI->klass + (byte)iVar67;
-  bVar37 = CARRY1(*(byte *)&unaff_ESI->klass,(byte)iVar67) || CARRY1(bVar107,CARRY1(bVar106,bVar105));
-  *(byte *)&unaff_ESI->klass = bVar107 + CARRY1(bVar106,bVar105);
-  pbVar108 = (byte *)(iVar67 + -6);
-  bVar107 = *pbVar108;
-  bVar109 = *pbVar108;
-  *pbVar108 = bVar109 + extraout_DL + bVar37;
-  pcVar110 = (char *)(CONCAT22((short)((uint)extraout_ECX >> 0x10),
-                             CONCAT11(bVar106 + bVar105,(char)extraout_ECX)) + -0x33efbb02);
-  *pcVar110 = *pcVar110 + (char)&stack0xfffffffc +
-            (CARRY1(bVar107,extraout_DL) || CARRY1(bVar109 + extraout_DL,bVar37));
-  pcVar111 = (code *)swi(3);
-  (*pcVar111)();
+  cVar105 = func_?();
+  *(char *)&unaff_ESI->klass =
+       *(char *)&unaff_ESI->klass + cVar105 + CARRY1(extraout_DL,(byte)((uint)&stack0xfffffffc >> 8))
+  ;
+  pcVar106 = (code *)swi(3);
+  (*pcVar106)();
   return;
 }
 

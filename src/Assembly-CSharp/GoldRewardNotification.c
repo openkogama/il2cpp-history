@@ -14,36 +14,32 @@ void Assembly-CSharp.dll::GoldRewardNotification::GoldRewardNotification_Initial
     func_?(&TypeInfo__NotificationLifetime);
     cRam_? = '\x01';
   }
-  this_00 = data;
-  Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
-  data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(2,data._0_3_);
-  key = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+  pGVar1 = this;
+  this = (GoldRewardNotification *)CONCAT13(2,this._0_3_);
+  (pGVar1->fields)._.timeSinceStart = 0.0;
+  key = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
+  if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,key,
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,key,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    if (TVar1.m_Index != 0) {
-      data = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__NotificationLifetime;
-      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) ==
+    if (TVar2.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
           (TypeInfo__NotificationLifetime->_0).element_class) {
-        data = (Dictionary_2_System_Object_System_Object_ *)TVar1;
-        piVar2 = (int32_t *)func_?();
-        (this->fields).lifeTime = *piVar2;
+        piVar3 = (int32_t *)func_?();
+        (pGVar1->fields).lifeTime = *piVar3;
         return;
       }
       goto code_?;
     }
   }
-  data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-  func_?();
-  data = (Dictionary_2_System_Object_System_Object_ *)extraout_EDX;
+  TVar2.m_Index = func_?();
 code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?(TVar2.m_Index);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -68,7 +64,6 @@ void Assembly-CSharp.dll::GoldRewardNotification::GoldRewardNotification_RewardC
     iVar3 = (*(code *)(this->klass->vtable).get_Lifetime.method)
                       (this,(this->klass->vtable).Initialize.methodPtr);
     (this->fields)._.timeSinceStart = (float)(iVar3 + 1);
-    return;
   }
   return;
 }

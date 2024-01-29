@@ -815,88 +815,70 @@ void Assembly-CSharp.dll::MVWorldInventory::MVWorldInventory_ReplaceWithPendingR
     func_?(&TypeInfo__MVCubeModelInstance);
     cRam_? = '\x01';
   }
-  this_03 = (MVCubeModelBase *)
-            MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (this_03 != (MVCubeModelBase *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
-                     );
-      cRam_? = '\x01';
-    }
-    this_00 = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)(this_03->fields)._._.id;
-    if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
-      this_03 = (MVCubeModelBase *)0x0;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-      Dictionary_2_System_Int32_System_Object__TryGetValue
-                ((Dictionary_2_System_Int32_System_Object_ *)this_00,woId,
-                 (Object **)&stack0xfffffff8,
-                 MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
-                );
-      if (this_03 != (MVCubeModelBase *)0x0) {
-        pMVar1 = TypeInfo__MVCubeModelInstance;
-        if ((((this_03->klass->_1).naturalAligment <
-              (TypeInfo__MVCubeModelInstance->_1).naturalAligment) ||
-            ((MVCubeModelInstance__Class *)
-             (this_03->klass->_1).typeHierarchy
-             [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] !=
-             TypeInfo__MVCubeModelInstance)) || (this_03 == (MVCubeModelBase *)0x0))
-        goto code_?;
-        pRVar2 = (this_03->fields).prototypeCubeModel;
-        key = (MVCubeModelBase *)MVCubeModelBase::MVCubeModelBase_get_Pid(this_03,(MethodInfo *)0x0)
-        ;
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        this_01 = (this->fields).runtimePrototypes;
-        if (this_01 != (Dictionary_2_System_Int32_RuntimePrototypeCubeModel_ *)0x0) {
-          pRVar3 = (RuntimePrototypeCubeModel *)
-                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                             ((Dictionary_2_System_Int32_System_Object_ *)this_01,(int32_t)key,
-                              MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_
-                             );
-          if (pRVar3 != (RuntimePrototypeCubeModel *)0x0) {
-            pRVar3 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_CloneGeometry
-                               (pRVar3,1,(MethodInfo *)0x0);
-            if (pRVar3 != (RuntimePrototypeCubeModel *)0x0) {
-              RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_set_PrototypeState
-                        (pRVar3,PrototypeState__Enum_Pending,(MethodInfo *)0x0);
-              if (pRVar2 != (RuntimePrototypeCubeModel *)0x0) {
-                uVar4 = *(undefined3 *)&(pRVar2->fields).PendingScaleUpdate.field_0x1;
-                fVar5 = (pRVar2->fields).PendingScaleUpdate.value;
-                (pRVar3->fields).PendingScaleUpdate.hasValue =
-                     (pRVar2->fields).PendingScaleUpdate.hasValue;
-                *(undefined3 *)&(pRVar3->fields).PendingScaleUpdate.field_0x1 = uVar4;
-                (pRVar3->fields).PendingScaleUpdate.value = fVar5;
-                (pRVar2->fields).PendingScaleUpdate.hasValue = 0;
-                *(undefined3 *)&(pRVar2->fields).PendingScaleUpdate.field_0x1 = 0;
-                (pRVar2->fields).PendingScaleUpdate.value = 0.0;
-                this_02 = (pRVar2->fields).deltaCubes;
-                if (this_02 != (DeltaCubes *)0x0) {
-                  DeltaCubes::DeltaCubes_Clear(this_02,(MethodInfo *)0x0);
-                  RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_RemoveInstance
-                            (pRVar2,0,(MethodInfo *)0x0);
-                  MVCubeModelBase::MVCubeModelBase_set_PrototypeCubeModel
-                            (this_03,pRVar3,(MethodInfo *)0x0);
-                  RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_CreateInstance
-                            (pRVar3,this_03,(MethodInfo *)0x0);
-                  iVar6 = MVCubeModelBase::MVCubeModelBase_get_Pid(this_03,(MethodInfo *)0x0);
-                  this_04 = (Dictionary_2_System_Int32_PendingPrototypeData_ *)&UNK_?;
-                  this_03 = key;
-                  pRVar2 = pRVar3;
-                  func_?();
-                  if (this_04 != (Dictionary_2_System_Int32_PendingPrototypeData_ *)0x0) {
-                    value.pendingRuntimePrototype = pRVar2;
-                    value.prevPrototypeId = iVar6;
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Int32,PendingPrototypeData]::Dictionary_2_System_Int32_PendingPrototypeData__Add
-                              (this_04,(int32_t)pRVar3,value,
-                               MethodInfo__System__Collections__Generic__Dictionary<int,_PendingPrototypeData>__Add_int__PendingPrototypeData_
-                              );
-                    return;
-                  }
+  this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if (this_03 != (MVWorldObjectClientManager *)0x0) {
+    unaff_ESI = (MVCubeModelBase *)
+                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                          (this_03,woId,(MethodInfo *)0x0);
+    if (unaff_ESI != (MVCubeModelBase *)0x0) {
+      pMVar1 = TypeInfo__MVCubeModelInstance;
+      if (((unaff_ESI->klass->_1).naturalAligment <
+           (TypeInfo__MVCubeModelInstance->_1).naturalAligment) ||
+         ((MVCubeModelInstance__Class *)
+          (unaff_ESI->klass->_1).typeHierarchy
+          [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] != TypeInfo__MVCubeModelInstance
+         )) goto code_?;
+      this_00 = (unaff_ESI->fields).prototypeCubeModel;
+      iVar2 = MVCubeModelBase::MVCubeModelBase_get_Pid(unaff_ESI,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      this_01 = (this->fields).runtimePrototypes;
+      if (this_01 != (Dictionary_2_System_Int32_RuntimePrototypeCubeModel_ *)0x0) {
+        this_04 = (RuntimePrototypeCubeModel *)
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                  Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                            ((Dictionary_2_System_Int32_System_Object_ *)this_01,iVar2,
+                             MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_
+                            );
+        if (this_04 != (RuntimePrototypeCubeModel *)0x0) {
+          this_05 = (MVCubeModelBase *)
+                    RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_CloneGeometry
+                              (this_04,1,(MethodInfo *)0x0);
+          if (this_05 != (MVCubeModelBase *)0x0) {
+            RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_set_PrototypeState
+                      ((RuntimePrototypeCubeModel *)this_05,PrototypeState__Enum_Pending,
+                       (MethodInfo *)0x0);
+            if (this_00 != (RuntimePrototypeCubeModel *)0x0) {
+              fVar3 = (this_00->fields).PendingScaleUpdate.value;
+              (this_05->fields)._._.objectLinkRefs =
+                   *(List_1_MV_WorldObject_ObjectLink_ **)&(this_00->fields).PendingScaleUpdate;
+              (this_05->fields)._._.ownerActorNr = (int32_t)fVar3;
+              (this_00->fields).PendingScaleUpdate.hasValue = 0;
+              *(undefined3 *)&(this_00->fields).PendingScaleUpdate.field_0x1 = 0;
+              (this_00->fields).PendingScaleUpdate.value = 0.0;
+              this_02 = (this_00->fields).deltaCubes;
+              if (this_02 != (DeltaCubes *)0x0) {
+                DeltaCubes::DeltaCubes_Clear(this_02,(MethodInfo *)0x0);
+                RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_RemoveInstance
+                          (this_00,0xADDR,(MethodInfo *)0x0);
+                MVCubeModelBase::MVCubeModelBase_set_PrototypeCubeModel
+                          (unaff_ESI,(RuntimePrototypeCubeModel *)this_05,(MethodInfo *)0x0);
+                RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_CreateInstance
+                          ((RuntimePrototypeCubeModel *)this_05,unaff_ESI,(MethodInfo *)0x0);
+                iVar2 = MVCubeModelBase::MVCubeModelBase_get_Pid(unaff_ESI,(MethodInfo *)0x0);
+                unaff_ESI = this_05;
+                func_?();
+                if (pDRam0000000d != (Dictionary_2_System_Int32_PendingPrototypeData_ *)0x0) {
+                  value.pendingRuntimePrototype = (RuntimePrototypeCubeModel *)unaff_ESI;
+                  value.prevPrototypeId = iVar2;
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Int32,PendingPrototypeData]::Dictionary_2_System_Int32_PendingPrototypeData__Add
+                            (pDRam0000000d,0xADDR,value,
+                             MethodInfo__System__Collections__Generic__Dictionary<int,_PendingPrototypeData>__Add_int__PendingPrototypeData_
+                            );
+                  return;
                 }
               }
             }
@@ -908,9 +890,9 @@ void Assembly-CSharp.dll::MVWorldInventory::MVWorldInventory_ReplaceWithPendingR
   func_?();
   pMVar1 = extraout_EDX;
 code_?:
-  func_?(this_03,pMVar1);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  func_?(unaff_ESI,pMVar1);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -934,118 +916,102 @@ void Assembly-CSharp.dll::MVWorldInventory::MVWorldInventory_RequestWoMakeUnique
     func_?(&StringLiteral_The_CubeModel_is_already_unique);
     cRam_? = '\x01';
   }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
-                     );
-      cRam_? = '\x01';
-    }
-    key = woId;
-    this_00 = (pMVar1->fields).worldObjects;
-    this_05 = (MVCubeModelBase *)0x0;
-    if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-      Dictionary_2_System_Int32_System_Object__TryGetValue
-                ((Dictionary_2_System_Int32_System_Object_ *)this_00,woId,
-                 (Object **)&stack0xfffffff8,
-                 MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
-                );
-      if (this_05 != (MVCubeModelBase *)0x0) {
-        if ((((this_05->klass->_1).naturalAligment <
-              (TypeInfo__MVCubeModelInstance->_1).naturalAligment) ||
-            ((MVCubeModelInstance__Class *)
-             (this_05->klass->_1).typeHierarchy
-             [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] !=
-             TypeInfo__MVCubeModelInstance)) || (this_05 == (MVCubeModelBase *)0x0)) {
-          func_?();
-        }
-        else {
-          this_01 = (this->fields).runtimePrototypes;
-          iVar2 = MVCubeModelBase::MVCubeModelBase_get_Pid(this_05,(MethodInfo *)0x0);
-          if (this_01 != (Dictionary_2_System_Int32_RuntimePrototypeCubeModel_ *)0x0) {
-            this_03 = (RuntimePrototypeCubeModel *)
-                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
-                      ::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                ((Dictionary_2_System_Int32_System_Object_ *)this_01,iVar2,
-                                 MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_
+  this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if (this_02 != (MVWorldObjectClientManager *)0x0) {
+    this_03 = (MVCubeModelBase *)
+              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                        (this_02,woId,(MethodInfo *)0x0);
+    if (this_03 != (MVCubeModelBase *)0x0) {
+      if (((this_03->klass->_1).naturalAligment <
+           (TypeInfo__MVCubeModelInstance->_1).naturalAligment) ||
+         ((MVCubeModelInstance__Class *)
+          (this_03->klass->_1).typeHierarchy
+          [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] != TypeInfo__MVCubeModelInstance
+         )) {
+        func_?(this_03,TypeInfo__MVCubeModelInstance);
+      }
+      else {
+        this_00 = (this->fields).runtimePrototypes;
+        iVar1 = MVCubeModelBase::MVCubeModelBase_get_Pid(this_03,(MethodInfo *)0x0);
+        if (this_00 != (Dictionary_2_System_Int32_RuntimePrototypeCubeModel_ *)0x0) {
+          this_04 = (RuntimePrototypeCubeModel *)
+                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                    Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                              ((Dictionary_2_System_Int32_System_Object_ *)this_00,iVar1,
+                               MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_
+                              );
+          if (this_04 != (RuntimePrototypeCubeModel *)0x0) {
+            iVar1 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_get_InstancesCount
+                              (this_04,(MethodInfo *)0x0);
+            if (iVar1 == 1) {
+              if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                        ((Object *)StringLiteral_The_CubeModel_is_already_unique,(MethodInfo *)0x0);
+              return;
+            }
+            this_01 = (this->fields).pendingRuntimePrototypes;
+            if (this_01 != (Dictionary_2_System_Int32_PendingPrototypeData_ *)0x0) {
+              bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Int32,PendingPrototypeData]::
+                      Dictionary_2_System_Int32_PendingPrototypeData__ContainsKey
+                                (this_01,woId,
+                                 MethodInfo__System__Collections__Generic__Dictionary<int,_PendingPrototypeData>__ContainsKey_int_
                                 );
-            if (this_03 != (RuntimePrototypeCubeModel *)0x0) {
-              woId = (int32_t)&UNK_?;
-              method = (MethodInfo *)this_03;
-              iVar2 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_get_InstancesCount
-                                (this_03,(MethodInfo *)0x0);
-              if (iVar2 == 1) {
+              if (bVar2 != 0) {
                 if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
-                UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                          ((Object *)StringLiteral_The_CubeModel_is_already_unique,(MethodInfo *)0x0
-                          );
+                UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                          ((Object *)StringLiteral_already_pending_,(MethodInfo *)0x0);
                 return;
               }
-              this_02 = (this->fields).pendingRuntimePrototypes;
-              if (this_02 != (Dictionary_2_System_Int32_PendingPrototypeData_ *)0x0) {
-                method = (MethodInfo *)&UNK_?;
-                bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Int32,PendingPrototypeData]::
-                        Dictionary_2_System_Int32_PendingPrototypeData__ContainsKey
-                                  (this_02,key,
-                                   MethodInfo__System__Collections__Generic__Dictionary<int,_PendingPrototypeData>__ContainsKey_int_
-                                  );
-                if (bVar3 != 0) {
-                  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?();
-                  }
-                  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                            ((Object *)StringLiteral_already_pending_,(MethodInfo *)0x0);
-                  return;
+              MVWorldInventory_ReplaceWithPendingRuntimePrototype(this,woId,(MethodInfo *)0x0);
+              pMVar3 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                                 ((MethodInfo *)0x0);
+              if (pMVar3 != (MVNetworkGame_OperationRequests *)0x0) {
+                if (cRam_? == '\0') {
+                  ppMStack4 =
+                       &
+                       MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                  ;
+                  func_?();
+                  func_?();
+                  func_?();
+                  func_?();
+                  func_?();
+                  cRam_? = '\x01';
                 }
-                MVWorldInventory_ReplaceWithPendingRuntimePrototype(this,key,(MethodInfo *)0x0);
-                pMVar4 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                                   ((MethodInfo *)0x0);
-                if (pMVar4 != (MVNetworkGame_OperationRequests *)0x0) {
-                  if (cRam_? == '\0') {
-                    func_?();
-                    func_?();
-                    func_?();
-                    func_?();
-                    func_?();
-                    cRam_? = '\x01';
-                  }
-                  this_04 = (Dictionary_2_System_Byte_System_Object_ *)
-                            func_?(
-                                           TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
-                                           );
+                ppMStack4 =
+                     (MethodInfo **)
+                     TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
+                ;
+                this_05 = (Dictionary_2_System_Byte_System_Object_ *)func_?();
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
+                Object]::Dictionary_2_System_Byte_System_Object___ctor
+                          (this_05,
+                           MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                          );
+                value = (Object *)func_?();
+                if (this_05 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
-                  Object]::Dictionary_2_System_Byte_System_Object___ctor
-                            (this_04,
-                             MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                  Object]::Dictionary_2_System_Byte_System_Object__Add
+                            (this_05,0x16,value,
+                             MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                             );
-                  woId = key;
-                  value = (Object *)func_?(TypeInfo__System__Int32,&woId);
-                  if (this_04 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
-                    Object]::Dictionary_2_System_Byte_System_Object__Add
-                              (this_04,0x16,value,
-                               MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
-                              );
-                    pPVar5 = (pMVar4->fields).peer;
-                    if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).
-                        cctor_finished_or_no_cctor == 0) {
-                      func_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
-                    }
-                    pSVar6 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
-                    uVar7._0_1_ = (pSVar6->SendReliable).Encrypt;
-                    uVar7._1_1_ = (pSVar6->SendReliable).Channel;
-                    uVar7._2_2_ = *(undefined2 *)&(pSVar6->SendReliable).field_0x6;
-                    if (pPVar5 != (PhotonPeer *)0x0) {
-                      (*(code *)(pPVar5->klass->vtable).SendOperation.method)
-                                (pPVar5,0x16,this_04,(pSVar6->SendReliable).DeliveryMode,uVar7,
-                                 pPVar5->klass[1]._0.image);
-                      return;
-                    }
+                  pPVar5 = (pMVar3->fields).peer;
+                  if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).
+                      cctor_finished_or_no_cctor == 0) {
+                    ppMStack4 =
+                         (MethodInfo **)TypeInfo__ExitGames__Client__Photon__SendOptions;
+                    func_?();
+                  }
+                  if (pPVar5 != (PhotonPeer *)0x0) {
+                    pPVar6 = pPVar5->klass;
+                    ppMStack4 = (MethodInfo **)pPVar6[1]._0.image;
+                    (*(code *)(pPVar6->vtable).SendOperation.method)();
+                    return;
                   }
                 }
               }
@@ -1056,8 +1022,8 @@ void Assembly-CSharp.dll::MVWorldInventory::MVWorldInventory_RequestWoMakeUnique
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

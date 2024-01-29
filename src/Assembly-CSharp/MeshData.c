@@ -50,26 +50,26 @@ void Assembly-CSharp.dll::MeshData::MeshData_SetToMesh
             }
             pMVar2 = TypeInfo__MeshDataPool->static_fields->instance;
             if (pMVar2 != (MeshDataPool *)0x0) {
-              value_00 = (Color__Array *)
-                         func_?(TypeInfo__UnityEngine__Color,(pMVar2->fields).colorPos);
+              value_00 = (Int32__Array *)
+                         func_?(TypeInfo__System__Int32,(pMVar2->fields).indicesPos);
               if (cRam_? == '\0') {
                 func_?(&TypeInfo__MeshDataPool);
                 cRam_? = '\x01';
               }
               pMVar2 = TypeInfo__MeshDataPool->static_fields->instance;
               if (pMVar2 != (MeshDataPool *)0x0) {
-                sourceArray_00 = (pMVar2->fields).colors;
+                sourceArray_00 = (pMVar2->fields).indices;
                 if (cRam_? == '\0') {
                   func_?(&TypeInfo__MeshDataPool);
                   cRam_? = '\x01';
                 }
                 pMVar2 = TypeInfo__MeshDataPool->static_fields->instance;
                 if (pMVar2 != (MeshDataPool *)0x0) {
-                  mscorlib.dll::System::Array::Array_Copy_3
-                            ((Array *)sourceArray_00,0,(Array *)value_00,0,(pMVar2->fields).colorPos
-                             ,(MethodInfo *)0x0);
+                  mscorlib.dll::System::Array::Array_Copy_2
+                            ((Array *)sourceArray_00,(Array *)value_00,(pMVar2->fields).indicesPos,
+                             (MethodInfo *)0x0);
                   if (pMVar1 != (Mesh *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors
+                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_triangles
                               (pMVar1,value_00,(MethodInfo *)0x0);
                     pMVar1 = *mesh;
                     if (cRam_? == '\0') {
@@ -82,16 +82,16 @@ void Assembly-CSharp.dll::MeshData::MeshData_SetToMesh
                     }
                     pMVar2 = TypeInfo__MeshDataPool->static_fields->instance;
                     if (pMVar2 != (MeshDataPool *)0x0) {
-                      value_01 = (Vector2__Array *)
-                                 func_?(TypeInfo__UnityEngine__Vector2,
-                                                 (pMVar2->fields).uvPos);
+                      value_01 = (Color__Array *)
+                                 func_?(TypeInfo__UnityEngine__Color,
+                                                 (pMVar2->fields).colorPos);
                       if (cRam_? == '\0') {
                         func_?(&TypeInfo__MeshDataPool);
                         cRam_? = '\x01';
                       }
                       pMVar2 = TypeInfo__MeshDataPool->static_fields->instance;
                       if (pMVar2 != (MeshDataPool *)0x0) {
-                        sourceArray_01 = (pMVar2->fields).uvs;
+                        sourceArray_01 = (pMVar2->fields).colors;
                         if (cRam_? == '\0') {
                           func_?(&TypeInfo__MeshDataPool);
                           cRam_? = '\x01';
@@ -100,9 +100,9 @@ void Assembly-CSharp.dll::MeshData::MeshData_SetToMesh
                         if (pMVar2 != (MeshDataPool *)0x0) {
                           mscorlib.dll::System::Array::Array_Copy_3
                                     ((Array *)sourceArray_01,0,(Array *)value_01,0,
-                                     (pMVar2->fields).uvPos,(MethodInfo *)0x0);
+                                     (pMVar2->fields).colorPos,(MethodInfo *)0x0);
                           if (pMVar1 != (Mesh *)0x0) {
-                            UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_uv
+                            UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors
                                       (pMVar1,value_01,(MethodInfo *)0x0);
                             pMVar1 = *mesh;
                             if (cRam_? == '\0') {
@@ -115,28 +115,28 @@ void Assembly-CSharp.dll::MeshData::MeshData_SetToMesh
                             }
                             pMVar2 = TypeInfo__MeshDataPool->static_fields->instance;
                             if (pMVar2 != (MeshDataPool *)0x0) {
-                              value_02 = (Int32__Array *)
-                                         func_?(TypeInfo__System__Int32,
-                                                         (pMVar2->fields).indicesPos);
+                              value_02 = (Vector2__Array *)
+                                         func_?(TypeInfo__UnityEngine__Vector2,
+                                                         (pMVar2->fields).uvPos);
                               if (cRam_? == '\0') {
                                 func_?(&TypeInfo__MeshDataPool);
                                 cRam_? = '\x01';
                               }
                               pMVar2 = TypeInfo__MeshDataPool->static_fields->instance;
                               if (pMVar2 != (MeshDataPool *)0x0) {
-                                sourceArray_02 = (pMVar2->fields).indices;
+                                sourceArray_02 = (pMVar2->fields).uvs;
                                 if (cRam_? == '\0') {
                                   func_?(&TypeInfo__MeshDataPool);
                                   cRam_? = '\x01';
                                 }
                                 pMVar2 = TypeInfo__MeshDataPool->static_fields->instance;
                                 if (pMVar2 != (MeshDataPool *)0x0) {
-                                  mscorlib.dll::System::Array::Array_Copy_2
-                                            ((Array *)sourceArray_02,(Array *)value_02,
-                                             (pMVar2->fields).indicesPos,(MethodInfo *)0x0);
+                                  mscorlib.dll::System::Array::Array_Copy_3
+                                            ((Array *)sourceArray_02,0,(Array *)value_02,0,
+                                             (pMVar2->fields).uvPos,(MethodInfo *)0x0);
                                   if (pMVar1 != (Mesh *)0x0) {
-                                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::
-                                    Mesh_set_triangles(pMVar1,value_02,(MethodInfo *)0x0);
+                                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_uv
+                                              (pMVar1,value_02,(MethodInfo *)0x0);
                                     if (*mesh != (Mesh *)0x0) {
                                       UnityEngine.CoreModule.dll::UnityEngine::Mesh::
                                       Mesh_RecalculateNormals(*mesh,(MethodInfo *)0x0);

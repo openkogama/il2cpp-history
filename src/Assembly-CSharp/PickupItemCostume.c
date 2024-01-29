@@ -21,85 +21,91 @@ Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_GetDefaultConfiguratio
     func_?(&StringLiteral_MovementSpeed);
     cRam_? = '\x01';
   }
-  this_00 = (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)
-            func_?(TypeInfo__PickupItemCostume__CostumeConfiguration);
-  PickupItemMeleeWeapon+MeleeWeaponConfiguration::
-  PickupItemMeleeWeapon_MeleeWeaponConfiguration__ctor(this_00,(MethodInfo *)0x0);
+  pPVar1 = (PickupItemEditable_EditableItemConfiguration *)
+           func_?(TypeInfo__PickupItemCostume__CostumeConfiguration);
+  if (cRam_? == '\0') {
+    func_?(&::StringLiteral__);
+    cRam_? = '\x01';
+  }
+  (pPVar1->fields).name = ::StringLiteral__;
+  method_00 = (MethodInfo *)&pPVar1->fields;
+  func_?(method_00,::StringLiteral__);
+  (pPVar1->fields).cubeModelId = -1;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)pPVar1,ExceptionArgument__Enum_obj,method_00);
   if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
       cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pSVar1 = (String *)
+  pSVar2 = (String *)
            Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
                      (StringLiteral_Name,(MethodInfo *)0x0);
-  if (this_00 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
-    if (pSVar1 == (String *)0x0) {
-      (this_00->fields)._.name = (String *)0x0;
+  if (pSVar2 == (String *)0x0) {
+    (pPVar1->fields).name = (String *)0x0;
+  }
+  else {
+    pSVar3 = (String *)0x0;
+    if (pSVar2->klass == TypeInfo__System__String) {
+      pSVar3 = pSVar2;
     }
-    else {
-      pSVar2 = (String *)0x0;
-      if (pSVar1->klass == TypeInfo__System__String) {
-        pSVar2 = pSVar1;
-      }
-      if (pSVar2 == (String *)0x0) goto code_?;
-      (this_00->fields)._.name = pSVar2;
-      pSVar2 = (String *)0x0;
-      if (pSVar1->klass == TypeInfo__System__String) {
-        pSVar2 = pSVar1;
-      }
-      if (pSVar2 == (String *)0x0) goto code_?;
+    if (pSVar3 == (String *)0x0) goto code_?;
+    (pPVar1->fields).name = pSVar3;
+    pSVar3 = (String *)0x0;
+    if (pSVar2->klass == TypeInfo__System__String) {
+      pSVar3 = pSVar2;
     }
-    func_?();
-    pOVar3 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
-                       (StringLiteral_Health,(MethodInfo *)0x0);
-    if (pOVar3 != (Object *)0x0) {
-      if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+    if (pSVar3 == (String *)0x0) goto code_?;
+  }
+  func_?();
+  pOVar4 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
+                     (StringLiteral_Health,(MethodInfo *)0x0);
+  if (pOVar4 != (Object *)0x0) {
+    if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+    goto code_?;
+    puVar5 = (undefined4 *)func_?();
+    pPVar1[1].klass = (PickupItemEditable_EditableItemConfiguration__Class *)*puVar5;
+    pOVar4 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
+                       (StringLiteral_MovementSpeed,(MethodInfo *)0x0);
+    if (pOVar4 != (Object *)0x0) {
+      if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
       goto code_?;
-      pfVar4 = (float *)func_?();
-      (this_00->fields).trailColor.r = *pfVar4;
-      pOVar3 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
-                         (StringLiteral_MovementSpeed,(MethodInfo *)0x0);
-      if (pOVar3 != (Object *)0x0) {
-        if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+      puVar5 = (undefined4 *)func_?();
+      pPVar1[1].monitor = (MonitorData *)*puVar5;
+      pOVar4 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
+                         (StringLiteral_TrailLength,(MethodInfo *)0x0);
+      if (pOVar4 != (Object *)0x0) {
+        if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
         goto code_?;
-        pfVar4 = (float *)func_?();
-        (this_00->fields).trailColor.g = *pfVar4;
-        pOVar3 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
-                           (StringLiteral_TrailLength,(MethodInfo *)0x0);
-        if (pOVar3 != (Object *)0x0) {
-          if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+        puVar5 = (undefined4 *)func_?();
+        pPVar1[1].fields.name = (String *)*puVar5;
+        pOVar4 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
+                           (StringLiteral_PlayerInvisible,(MethodInfo *)0x0);
+        if (pOVar4 != (Object *)0x0) {
+          if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
           goto code_?;
-          pfVar4 = (float *)func_?();
-          (this_00->fields).trailColor.b = *pfVar4;
-          pOVar3 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
-                             (StringLiteral_PlayerInvisible,(MethodInfo *)0x0);
-          if (pOVar3 != (Object *)0x0) {
-            if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
-            goto code_?;
-            puVar5 = (undefined1 *)func_?();
-            *(undefined1 *)&(this_00->fields).trailColor.a = *puVar5;
-            pOVar3 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::
-                     CostumeData_DefaultValue(StringLiteral_TrailEnabled,(MethodInfo *)0x0);
-            if (pOVar3 != (Object *)0x0) {
-              if ((pOVar3->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class
-                 ) {
-                puVar5 = (undefined1 *)func_?();
-                *(undefined1 *)((int)&(this_00->fields).trailColor.a + 2) = *puVar5;
-                pCVar6 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::
-                         CostumeData_DefaultColor
-                                   ((Color *)&stack0xffffffec,StringLiteral_TrailColor,
-                                    (MethodInfo *)0x0);
-                fVar7 = pCVar6->g;
-                fVar8 = pCVar6->b;
-                fVar9 = pCVar6->a;
-                (this_00->fields).hitEffectColor.r = pCVar6->r;
-                (this_00->fields).hitEffectColor.g = fVar7;
-                (this_00->fields).hitEffectColor.b = fVar8;
-                (this_00->fields).hitEffectColor.a = fVar9;
-                return (PickupItemEditable_EditableItemConfiguration *)this_00;
-              }
-              goto code_?;
+          puVar6 = (undefined1 *)func_?();
+          *(undefined1 *)&pPVar1[1].fields.cubeModelId = *puVar6;
+          pOVar4 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
+                             (StringLiteral_TrailEnabled,(MethodInfo *)0x0);
+          if (pOVar4 != (Object *)0x0) {
+            if ((pOVar4->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class)
+            {
+              puVar6 = (undefined1 *)func_?();
+              *(undefined1 *)((int)&pPVar1[1].fields.cubeModelId + 2) = *puVar6;
+              pCVar7 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::
+                        CostumeData_DefaultColor
+                                  ((Color *)&stack0xffffffec,StringLiteral_TrailColor,
+                                   (MethodInfo *)0x0);
+              fVar8 = pCVar7->g;
+              fVar9 = pCVar7->b;
+              fVar10 = pCVar7->a;
+              pPVar1[1].fields.maxAmmo = (int32_t)pCVar7->r;
+              pPVar1[1].fields.damage = fVar8;
+              pPVar1[1].fields.impulseStrength = fVar9;
+              pPVar1[1].fields.recoilStrength = fVar10;
+              return pPVar1;
             }
+            goto code_?;
           }
         }
       }
@@ -108,9 +114,9 @@ Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_GetDefaultConfiguratio
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  pPVar11 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar10)();
-  return pPVar11;
+  pcVar11 = (code *)swi(3);
+  pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar11)();
+  return pPVar1;
 }
 
 
@@ -1471,60 +1477,6 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_SetConfiguration
   func_?();
   pcVar10 = (code *)swi(3);
   (*pcVar10)();
-  return;
-}
-
-
-/* PickupItemCostume() */
-
-void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume__ctor
-               (PickupItemCostume *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
-    cRam_? = '\x01';
-  }
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  (this->fields)._._.crossHairCannotFireLow.r = _UNK_?;
-  (this->fields)._._.crossHairCannotFireLow.g = fVar3;
-  (this->fields)._._.crossHairCannotFireLow.b = fVar2;
-  (this->fields)._._.crossHairCannotFireLow.a = fVar1;
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  (this->fields)._._.crossHairCannotFireHigh.r = _UNK_?;
-  (this->fields)._._.crossHairCannotFireHigh.g = fVar3;
-  (this->fields)._._.crossHairCannotFireHigh.b = fVar2;
-  (this->fields)._._.crossHairCannotFireHigh.a = fVar1;
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  (this->fields)._._.crossHairCanFire.r = _UNK_?;
-  (this->fields)._._.crossHairCanFire.g = fVar3;
-  (this->fields)._._.crossHairCanFire.b = fVar2;
-  (this->fields)._._.crossHairCanFire.a = fVar1;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
-  }
-  pOVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-           ObscuredFloat_op_Implicit(&OStack_5,1.0,(MethodInfo *)0x0);
-  AVar6 = pOVar4->hiddenValue;
-  pBVar7 = pOVar4->hiddenValueOld;
-  fVar3 = pOVar4->fakeValue;
-  bVar8 = pOVar4->inited;
-  uVar9 = *(undefined3 *)&pOVar4->field_0x11;
-  (this->fields)._._.fireInterval.currentCryptoKey = pOVar4->currentCryptoKey;
-  (this->fields)._._.fireInterval.hiddenValue = AVar6;
-  (this->fields)._._.fireInterval.hiddenValueOld = pBVar7;
-  (this->fields)._._.fireInterval.fakeValue = fVar3;
-  (this->fields)._._.fireInterval.inited = bVar8;
-  *(undefined3 *)&(this->fields)._._.fireInterval.field_0x11 = uVar9;
-  func_?(&(this->fields)._._.fireInterval.hiddenValueOld,0);
-  PickupItem::PickupItem__ctor((PickupItem *)this,(MethodInfo *)0x0);
   return;
 }
 

@@ -21,18 +21,17 @@ Assembly-CSharp.dll::CubeGunBulletObject::CubeGunBulletObject_Create
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-  if ((pPVar1 == (PrefabPool *)0x0) ||
-     (this = (pPVar1->fields).enumPoolManager, this == (EnumPoolManager *)0x0)) {
+  if (((pPVar1 == (PrefabPool *)0x0) ||
+      (this = (pPVar1->fields).enumPoolManager, this == (EnumPoolManager *)0x0)) ||
+     (pCVar2 = (CubeGunBulletObject *)
+               EnumPoolManager::EnumPoolManager_Instantiate
+                         (this,PoolEnums__Enum_CubeGunBullet,
+                          CubeGunBulletObject_MethodInfo__EnumPoolManager__Instantiate<CubeGunBulletObject>_PoolEnums_
+                         ), pCVar2 == (CubeGunBulletObject *)0x0)) {
 code_?:
     func_?();
   }
   else {
-    pCVar2 = (CubeGunBulletObject *)
-             EnumPoolManager::EnumPoolManager_Instantiate
-                       (this,PoolEnums__Enum_CubeGunBullet,
-                        CubeGunBulletObject_MethodInfo__EnumPoolManager__Instantiate<CubeGunBulletObject>_PoolEnums_
-                       );
-    if (pCVar2 == (CubeGunBulletObject *)0x0) goto code_?;
     pBVar3 = (pCVar2->fields).bullet;
     (pCVar2->fields).materialID = materialID;
     if (pBVar3 == (Bullet *)0x0) goto code_?;
@@ -55,53 +54,69 @@ code_?:
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
               (pTVar4,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
                (MethodInfo *)0x0);
-    this_00 = (pCVar2->fields).cubeBullet;
-    if (this_00 == (CubeBullet *)0x0) goto code_?;
-    CubeBullet::CubeBullet_SetCubeMaterial(this_00,materialID,(MethodInfo *)0x0);
-    if (owner == (MVPickupOwner *)0x0) goto code_?;
-    if ((owner->fields)._IsLocal_k__BackingField == 0) {
+    pCVar5 = (pCVar2->fields).cubeBullet;
+    if (pCVar5 == (CubeBullet *)0x0) goto code_?;
+    (pCVar5->fields)._MaterialID_k__BackingField = materialID;
+    this_00 = (pCVar5->fields).meshFilter;
+    pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (((pMVar6 == (MVNetworkGame *)0x0) ||
+        (this_01 = (pMVar6->fields)._MaterialRepository_k__BackingField,
+        this_01 == (MVMaterialRepository *)0x0)) ||
+       ((pMVar7 = MVMaterialRepository::MVMaterialRepository_GetMaterial
+                            (this_01,(pCVar5->fields)._MaterialID_k__BackingField,(MethodInfo *)0x0)
+        , pMVar7 == (MVMaterial *)0x0 || (this_00 == (MeshFilter *)0x0)))) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_set_sharedMesh
+              (this_00,(pMVar7->fields)._Mesh_k__BackingField,(MethodInfo *)0x0);
+    this_02 = (pCVar5->fields).meshRenderer;
+    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+    if ((pMVar8 == (MaterialLoader *)0x0) || (this_02 == (MeshRenderer *)0x0))
+    goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
+              ((Renderer *)this_02,(pMVar8->fields)._CubeModelMaterial_k__BackingField,
+               (MethodInfo *)0x0);
+    if (UNK_? == '\0') {
 code_?:
       pBVar3 = (pCVar2->fields).bullet;
       if (pBVar3 != (Bullet *)0x0) {
-        pBVar5 = (pBVar3->fields).onHit;
-        pDVar6 = (Delegate *)func_?(TypeInfo__Bullet__OnHitDelegate);
-        pMVar7 = MethodInfo__CubeGunBulletObject__HandleCubeHit_VoxelHit__UnityEngine__Ray_;
-        (pDVar6->fields).method_ptr =
+        pBVar9 = (pBVar3->fields).onHit;
+        pDVar10 = (Delegate *)func_?(TypeInfo__Bullet__OnHitDelegate);
+        pMVar11 = MethodInfo__CubeGunBulletObject__HandleCubeHit_VoxelHit__UnityEngine__Ray_;
+        (pDVar10->fields).method_ptr =
              MethodInfo__CubeGunBulletObject__HandleCubeHit_VoxelHit__UnityEngine__Ray_->
              virtualMethodPointer;
-        (pDVar6->fields).method = pMVar7;
-        (pDVar6->fields).m_target = (Object *)pCVar2;
-        func_?(&(pDVar6->fields).m_target,pCVar2);
-        uVar8 = pMVar7->parameters_count;
-        (pDVar6->fields).method_code = pDVar6;
-        cVar9 = func_?(pMVar7);
-        if ((cVar9 == '\0') || (uVar8 != 2)) {
-          (pDVar6->fields).method_code = (pDVar6->fields).m_target;
-          puVar10 = (pDVar6->fields).method_ptr;
+        (pDVar10->fields).method = pMVar11;
+        (pDVar10->fields).m_target = (Object *)pCVar2;
+        func_?(&(pDVar10->fields).m_target,pCVar2);
+        uVar12 = pMVar11->parameters_count;
+        (pDVar10->fields).method_code = pDVar10;
+        cVar13 = func_?(pMVar11);
+        if ((cVar13 == '\0') || (uVar12 != 2)) {
+          (pDVar10->fields).method_code = (pDVar10->fields).m_target;
+          puVar14 = (pDVar10->fields).method_ptr;
         }
         else {
-          puVar10 = &UNK_?;
+          puVar14 = &UNK_?;
         }
-        (pDVar6->fields).invoke_impl = puVar10;
-        (pDVar6->fields).extra_arg = &UNK_?;
-        pBVar5 = (Bullet_OnHitDelegate *)
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pBVar5,pDVar6,(MethodInfo *)0x0);
-        if (pBVar5 == (Bullet_OnHitDelegate *)0x0) {
+        (pDVar10->fields).invoke_impl = puVar14;
+        (pDVar10->fields).extra_arg = &UNK_?;
+        pBVar9 = (Bullet_OnHitDelegate *)
+                  mscorlib.dll::System::Delegate::Delegate_Combine
+                            ((Delegate *)pBVar9,pDVar10,(MethodInfo *)0x0);
+        if (pBVar9 == (Bullet_OnHitDelegate *)0x0) {
           (pBVar3->fields).onHit = (Bullet_OnHitDelegate *)0x0;
         }
         else {
-          pBVar11 = (Bullet_OnHitDelegate *)0x0;
-          if (pBVar5->klass == TypeInfo__Bullet__OnHitDelegate) {
-            pBVar11 = pBVar5;
+          pBVar15 = (Bullet_OnHitDelegate *)0x0;
+          if (pBVar9->klass == TypeInfo__Bullet__OnHitDelegate) {
+            pBVar15 = pBVar9;
           }
-          if (pBVar11 == (Bullet_OnHitDelegate *)0x0) goto code_?;
-          (pBVar3->fields).onHit = pBVar11;
-          pBVar11 = (Bullet_OnHitDelegate *)0x0;
-          if (pBVar5->klass == TypeInfo__Bullet__OnHitDelegate) {
-            pBVar11 = pBVar5;
+          if (pBVar15 == (Bullet_OnHitDelegate *)0x0) goto code_?;
+          (pBVar3->fields).onHit = pBVar15;
+          pBVar15 = (Bullet_OnHitDelegate *)0x0;
+          if (pBVar9->klass == TypeInfo__Bullet__OnHitDelegate) {
+            pBVar15 = pBVar9;
           }
-          if (pBVar11 == (Bullet_OnHitDelegate *)0x0) goto code_?;
+          if (pBVar15 == (Bullet_OnHitDelegate *)0x0) goto code_?;
         }
         func_?();
         pBVar3 = (pCVar2->fields).bullet;
@@ -115,54 +130,54 @@ code_?:
     }
     pBVar3 = (pCVar2->fields).bullet;
     if (pBVar3 == (Bullet *)0x0) goto code_?;
-    pBVar5 = (pBVar3->fields).onHitLocal;
-    pDVar6 = (Delegate *)func_?();
-    pMVar7 = MethodInfo__CubeGunBulletObject__HandleCubeHitLocal_VoxelHit__UnityEngine__Ray_;
-    (pDVar6->fields).method_ptr =
+    pBVar9 = (pBVar3->fields).onHitLocal;
+    pDVar10 = (Delegate *)func_?();
+    pMVar11 = MethodInfo__CubeGunBulletObject__HandleCubeHitLocal_VoxelHit__UnityEngine__Ray_;
+    (pDVar10->fields).method_ptr =
          MethodInfo__CubeGunBulletObject__HandleCubeHitLocal_VoxelHit__UnityEngine__Ray_->
          virtualMethodPointer;
-    (pDVar6->fields).method = pMVar7;
-    (pDVar6->fields).m_target = (Object *)pCVar2;
-    func_?(&(pDVar6->fields).m_target);
-    uVar8 = pMVar7->parameters_count;
-    (pDVar6->fields).method_code = pDVar6;
-    puVar10 = &UNK_?;
-    cVar9 = func_?();
-    if ((cVar9 == '\0') || (uVar8 != 2)) {
-      (pDVar6->fields).method_code = (pDVar6->fields).m_target;
-      puVar12 = (pDVar6->fields).method_ptr;
+    (pDVar10->fields).method = pMVar11;
+    (pDVar10->fields).m_target = (Object *)pCVar2;
+    func_?();
+    uVar12 = pMVar11->parameters_count;
+    (pDVar10->fields).method_code = pDVar10;
+    cVar13 = func_?();
+    if ((cVar13 == '\0') || (uVar12 != 2)) {
+      (pDVar10->fields).method_code = (pDVar10->fields).m_target;
+      puVar14 = (pDVar10->fields).method_ptr;
     }
     else {
-      puVar12 = &UNK_?;
+      puVar14 = &UNK_?;
     }
-    (pDVar6->fields).invoke_impl = puVar12;
-    (pDVar6->fields).extra_arg = &UNK_?;
-    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pBVar5,pDVar6,(MethodInfo *)0x0);
-    if (pDVar6 == (Delegate *)0x0) {
-      *(undefined4 *)(puVar10 + 0x14) = 0;
+    (pDVar10->fields).invoke_impl = puVar14;
+    (pDVar10->fields).extra_arg = &UNK_?;
+    pBVar9 = (Bullet_OnHitDelegate *)
+              mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)pBVar9,pDVar10,(MethodInfo *)0x0);
+    if (pBVar9 == (Bullet_OnHitDelegate *)0x0) {
+      (pBVar3->fields).onHitLocal = (Bullet_OnHitDelegate *)0x0;
 code_?:
       func_?();
       goto code_?;
     }
-    pDVar13 = (Delegate *)0x0;
-    if ((Bullet_OnHitDelegate__Class *)pDVar6->klass == TypeInfo__Bullet__OnHitDelegate) {
-      pDVar13 = pDVar6;
+    pBVar15 = (Bullet_OnHitDelegate *)0x0;
+    if (pBVar9->klass == TypeInfo__Bullet__OnHitDelegate) {
+      pBVar15 = pBVar9;
     }
-    if (pDVar13 == (Delegate *)0x0) goto code_?;
-    *(Delegate **)(puVar10 + 0x14) = pDVar13;
-    pDVar13 = (Delegate *)0x0;
-    if ((Bullet_OnHitDelegate__Class *)pDVar6->klass == TypeInfo__Bullet__OnHitDelegate) {
-      pDVar13 = pDVar6;
+    if (pBVar15 == (Bullet_OnHitDelegate *)0x0) goto code_?;
+    (pBVar3->fields).onHitLocal = pBVar15;
+    pBVar15 = (Bullet_OnHitDelegate *)0x0;
+    if (pBVar9->klass == TypeInfo__Bullet__OnHitDelegate) {
+      pBVar15 = pBVar9;
     }
-    if (pDVar13 != (Delegate *)0x0) goto code_?;
+    if (pBVar15 != (Bullet_OnHitDelegate *)0x0) goto code_?;
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  pCVar2 = (CubeGunBulletObject *)(*pcVar14)();
+  pcVar16 = (code *)swi(3);
+  pCVar2 = (CubeGunBulletObject *)(*pcVar16)();
   return pCVar2;
 }
 
@@ -247,7 +262,7 @@ void Assembly-CSharp.dll::CubeGunBulletObject::CubeGunBulletObject_HandleCubeHit
     uVar5 = (this->fields).materialID;
     fStack_6 = (float)CONCAT31(fStack_6._1_3_,uVar5);
     voxelHit.normal.x = fStack_6;
-    voxelHit.point.y._0_2_ = 0x2bb8;
+    voxelHit.point.y._0_2_ = -0x58;
     voxelHit.point.y._2_2_ = 0x1054;
     voxelHit.point.z = (float)this_00;
     pMVar7 = MVMaterialRepository::MVMaterialRepository_GetMaterial(this_00,uVar5,(MethodInfo *)0x0)
@@ -256,16 +271,16 @@ void Assembly-CSharp.dll::CubeGunBulletObject::CubeGunBulletObject_HandleCubeHit
       voxelHit.cubePos.z = 0;
       voxelHit._30_2_ = 0;
       if ((pMVar7->fields)._PhysicalProperties_k__BackingField.toughness == _UNK_?) {
-        voxelHit.cubePos.x = 0x2c59;
-        voxelHit.cubePos.y = 0x1054;
+        voxelHit.cubePos.x = 0x49;
+        voxelHit.cubePos.y = 0x1055;
         this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if (this_03 != (MVWorldObjectClientManager *)0x0) {
           voxelHit.face =
                (int32_t)
                MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__
           ;
-          voxelHit.cubePos.x = 0x2c70;
-          voxelHit.cubePos.y = 0x1054;
+          voxelHit.cubePos.x = 0x60;
+          voxelHit.cubePos.y = 0x1055;
           voxelHit._28_4_ = this_03;
           this_04 = (MVCubeModelBase *)
                     MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
@@ -321,8 +336,8 @@ void Assembly-CSharp.dll::CubeGunBulletObject::CubeGunBulletObject_HandleCubeHit
             MVCubeModelBase::MVCubeModelBase_AddCube
                       (this_04,IVar2,(CubeBase *)this_05,(MethodInfo *)0x0);
             voxelHit.face = 0;
-            voxelHit.cubePos.x = 0x2d22;
-            voxelHit.cubePos.y = 0x1054;
+            voxelHit.cubePos.x = 0x112;
+            voxelHit.cubePos.y = 0x1055;
             voxelHit._28_4_ = this_04;
             MVCubeModelBase::MVCubeModelBase_HandleDelta(this_04,(MethodInfo *)0x0);
             return;
@@ -330,7 +345,7 @@ void Assembly-CSharp.dll::CubeGunBulletObject::CubeGunBulletObject_HandleCubeHit
         }
       }
       else {
-        voxelHit.cubePos.x = 0x2bea;
+        voxelHit.cubePos.x = -0x26;
         voxelHit.cubePos.y = 0x1054;
         pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((pMVar4 != (MVNetworkGame *)0x0) &&

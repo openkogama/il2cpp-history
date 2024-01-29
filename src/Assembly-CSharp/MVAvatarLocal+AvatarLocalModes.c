@@ -161,42 +161,9 @@ void Assembly-CSharp.dll::MVAvatarLocal+AvatarLocalModes::
                (MVAvatarLocal_AvatarLocalModes *this,MethodInfo *method)
 
 {
-  pMVar1 = this;
-  AVar2 = MVAvatarLocal_AvatarLocalModes_GetStartState(this,(MethodInfo *)0x0);
-  this = (MVAvatarLocal_AvatarLocalModes *)CONCAT31(this._1_3_,(uint8_t)AVar2);
-  if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__get_Item_AvatarRuntimeState_
-                   );
-    cRam_? = '\x01';
-  }
-  pMVar3 = (pMVar1->fields).currentMode;
-  uVar4 = (uint)(pMVar1->fields).currentState;
-  if (pMVar3 != (MVAvatarLocal_AvatarMode *)0x0) {
-    (*(code *)(pMVar3->klass->vtable).__unknown.method)
-              (pMVar3,this,(pMVar3->klass->vtable).__unknown_1.methodPtr,uVar4);
-    this_00 = (pMVar1->fields).avatarModes;
-    if (this_00 != (Dictionary_2_AvatarRuntimeState_MVAvatarLocal_AvatarMode_ *)0x0) {
-      pMVar3 = (MVAvatarLocal_AvatarMode *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,
-                          (ByteEnum__Enum)this,
-                          MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__get_Item_AvatarRuntimeState_
-                         );
-      (pMVar1->fields).currentMode = pMVar3;
-      func_?(&(pMVar1->fields).currentMode,pMVar3);
-      pMVar3 = (pMVar1->fields).currentMode;
-      (pMVar1->fields).currentState = (uint8_t)AVar2;
-      if (pMVar3 != (MVAvatarLocal_AvatarMode *)0x0) {
-        (*(code *)(pMVar3->klass->vtable).Activate.method)(pMVar3,uVar4,pMVar3->klass[1]._0.image);
-        return;
-      }
-    }
-  }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  AVar1 = MVAvatarLocal_AvatarLocalModes_GetStartState(this,(MethodInfo *)0x0);
+  uStack_2 = CONCAT31((int3)((uint)in_ECX >> 8),(char)AVar1);
+  MVAvatarLocal_AvatarLocalModes_SetMode(this,uStack_2,(MethodInfo *)0x0);
   return;
 }
 

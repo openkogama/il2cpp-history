@@ -81,7 +81,7 @@ public class RuntimePrototypeCubeModel
 	public void AddCubeNetworkUpdate(IntVector iVector, Cube cube, MeshGeneratePriority priority);
 	public void RemoveCubeNetworkUpdate(IntVector iVector, MeshGeneratePriority priority);
 	public void HandleDelta();
-	private void RebuildChunk(IntVector chunkPos, Vector3 scale);
+	private void RebuildChunk(IntVector chunkPos, float scale);
 	private void RebuildPrototypeMesh();
 	private void AddChunk(IntVector chunkPos);
 	private void RemoveChunk(IntVector chunkPos);

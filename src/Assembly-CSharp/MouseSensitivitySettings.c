@@ -46,15 +46,14 @@ void Assembly-CSharp.dll::MouseSensitivitySettings::MouseSensitivitySettings_Inp
                (MouseSensitivitySettings *this,MethodInfo *method)
 
 {
-  SVar1.m_value = 0.0;
+  SStack_1.m_value = 0.0;
   pIVar2 = (this->fields).inputField;
   if (pIVar2 != (InputField *)0x0) {
     mscorlib.dll::System::Single::Single_TryParse
-              ((pIVar2->fields).m_Text,(float *)&stack0xfffffff8,(MethodInfo *)0x0);
-    SVar1.m_value = MouseSensitivitySettings_RoundValue(this,SVar1.m_value,(MethodInfo *)0x0);
+              ((pIVar2->fields).m_Text,&SStack_1.m_value,(MethodInfo *)0x0);
+    SStack_1.m_value = MouseSensitivitySettings_RoundValue(this,SStack_1.m_value,(MethodInfo *)0x0);
     pIVar2 = (this->fields).inputField;
-    value = mscorlib.dll::System::Single::Single_ToString
-                      ((Single *)&stack0xfffffff8,(MethodInfo *)SVar1.m_value);
+    value = mscorlib.dll::System::Single::Single_ToString(&SStack_1,(MethodInfo *)0x0);
     if (pIVar2 != (InputField *)0x0) {
       UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
                 (pIVar2,value,(MethodInfo *)0x0);
@@ -62,20 +61,21 @@ void Assembly-CSharp.dll::MouseSensitivitySettings::MouseSensitivitySettings_Inp
       if (pSVar3 != (Slider *)0x0) {
         (*(code *)(pSVar3->klass->vtable).set_value.method)();
         fVar4 = _UNK_?;
-        if (SVar1.m_value != _UNK_?) {
-          if (SVar1.m_value < _UNK_?) {
+        if (SStack_1.m_value != _UNK_?) {
+          if (SStack_1.m_value < _UNK_?) {
             fVar4 = _UNK_? /
-                    ((_UNK_? - SVar1.m_value / _UNK_?) *
+                    ((_UNK_? - SStack_1.m_value / _UNK_?) *
                      ((this->fields).mouseSensitivityMinModifier - _UNK_?) + _UNK_?);
           }
           else {
-            fVar4 = ((SVar1.m_value - _UNK_?) / _UNK_?) *
+            fVar4 = ((SStack_1.m_value - _UNK_?) / _UNK_?) *
                     ((this->fields).mouseSensitivityMaxModifier - _UNK_?) + _UNK_?;
           }
         }
         bVar5 = cRam_? == '\0';
         (this->fields).mouseSensitivity = fVar4;
         if (bVar5) {
+          func_?();
           func_?();
           cRam_? = '\x01';
         }
@@ -93,9 +93,10 @@ void Assembly-CSharp.dll::MouseSensitivitySettings::MouseSensitivitySettings_Inp
         TypeInfo__MVInputWrapper->static_fields->mouseSensitivtyModifier = fVar4;
         this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                             ((MethodInfo *)0x0);
+        value_00 = (Object *)func_?();
         if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
-          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetMouseSensitivity
-                    (this_00,(this->fields).mouseSensitivity,(MethodInfo *)0x0);
+          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetProfileSettings
+                    (this_00,ProfileSettingKey__Enum_MouseSensitivity,value_00,(MethodInfo *)0x0);
           return;
         }
       }
@@ -265,6 +266,7 @@ void Assembly-CSharp.dll::MouseSensitivitySettings::MouseSensitivitySettings_Syn
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MVInputWrapper);
+    func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
   }
   fVar1 = (this->fields).mouseSensitivity;
@@ -280,14 +282,16 @@ void Assembly-CSharp.dll::MouseSensitivitySettings::MouseSensitivitySettings_Syn
   }
   TypeInfo__MVInputWrapper->static_fields->mouseSensitivtyModifier = fVar1;
   this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+  fStack_2 = (this->fields).mouseSensitivity;
+  value = (Object *)func_?(TypeInfo__System__Single,&fStack_2);
   if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
-    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetMouseSensitivity
-              (this_00,(this->fields).mouseSensitivity,(MethodInfo *)0x0);
+    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetProfileSettings
+              (this_00,ProfileSettingKey__Enum_MouseSensitivity,value,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

@@ -699,30 +699,13 @@ void Assembly-CSharp.dll::PlayButton::PlayButton__Play_b__13_0
   UnityAction_2_System_Int32_System_Int32___ctor
             (this_00,(Object *)this,MethodInfo__PlayButton__OnPromotionShown_bool__bool_,
              (MethodInfo *)0x0);
-  if (x == (IDeathPromotionSelector *)0x0) {
-    func_?();
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
+  if (x != (IDeathPromotionSelector *)0x0) {
+    func_?(1,TypeInfo__IDeathPromotionSelector);
     return;
   }
-  pIVar2 = x->klass;
-  uVar3 = 0;
-  uVar4._0_1_ = (pIVar2->_1).rank;
-  uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-  if (uVar4 != 0) {
-    do {
-      if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
-          (Il2CppClass *)TypeInfo__IDeathPromotionSelector) {
-        ppMVar5 = &(&(x->klass->vtable).TryShowPromotion)[x->klass->interfaceOffsets[uVar3].offset].
-                   method;
-        goto code_?;
-      }
-      uVar3 = uVar3 + 1;
-    } while (uVar3 < uVar4);
-  }
-  ppMVar5 = (MethodInfo **)func_?(x,TypeInfo__IDeathPromotionSelector,1);
-code_?:
-  (*(code *)*ppMVar5)(x,ppMVar5[1]);
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

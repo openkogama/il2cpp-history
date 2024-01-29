@@ -7,6 +7,7 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_AddWaterPlaneLogi
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
     func_?(&StringLiteral_Added_water_plane_to_manager_twi);
     cRam_? = '\x01';
   }
@@ -65,14 +66,46 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_AddWaterPlaneLogi
                   if (pGVar7 != (GameObject *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                               (pGVar7,1,(MethodInfo *)0x0);
-                    this_00 = (this->fields).water;
-                    if (this_00 != (Water *)0x0) {
+                    pWVar8 = (this->fields).water;
+                    if (pWVar8 != (Water *)0x0) {
                       pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                               Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
+                               Component_get_gameObject((Component *)pWVar8,(MethodInfo *)0x0);
                       if (pGVar7 != (GameObject *)0x0) {
                         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                                   (pGVar7,1,(MethodInfo *)0x0);
-                        return;
+                        pWVar8 = (this->fields).water;
+                        if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1)
+                            .cctor_finished_or_no_cctor == 0) {
+                          ppPStack9 =
+                               (ProfileSettingsManager__Class **)
+                               TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager;
+                          func_?();
+                        }
+                        if (cRam_? == '\0') {
+                          ppPStack9 =
+                               &TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager;
+                          func_?();
+                          cRam_? = '\x01';
+                        }
+                        if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1)
+                            .cctor_finished_or_no_cctor == 0) {
+                          ppPStack9 =
+                               (ProfileSettingsManager__Class **)
+                               TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager;
+                          func_?();
+                        }
+                        iVar10 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                                static_fields->_LightQualityLevel_k__BackingField;
+                        if ((iVar10 == 0) || ((iVar10 != 1 && (iVar10 != 2)))) {
+                          iVar11 = 0;
+                        }
+                        else {
+                          iVar11 = 1;
+                        }
+                        if (pWVar8 != (Water *)0x0) {
+                          (pWVar8->fields).m_WaterMode = iVar11;
+                          return;
+                        }
                       }
                     }
                   }
@@ -85,8 +118,8 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_AddWaterPlaneLogi
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -184,33 +217,49 @@ float Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_GetHeightAboveWa
 }
 
 
-/* Void HandleQualityChanged(Int32) */
+/* Void HandleQualityChanged(Object) */
 
 void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_HandleQualityChanged
-               (WaterPlaneManager *this,int32_t level,MethodInfo *method)
+               (WaterPlaneManager *this,Object *value,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  if ((level != 0) && (level != 2)) {
-    if (level == 1) {
-      pWVar2 = (this->fields).water;
-      if (pWVar2 == (Water *)0x0) goto code_?;
-      (pWVar2->fields).m_WaterMode = 1;
-      (this->fields).audioHD = 1;
+  if (cRam_? == '\0') {
+    pLStack_1 = (LightingQualityLevel__Enum__Class *)
+                &TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (value != (Object *)0x0) {
+    if ((value->klass->_0).element_class !=
+        (TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel->_0).element_class) {
+      pLStack_1 = TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel;
+      pOStack_2 = value;
+      func_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
     }
-    return;
+    pLStack_1 = (LightingQualityLevel__Enum__Class *)value;
+    piVar4 = (int *)func_?();
+    pWVar5 = (this->fields).water;
+    if (*piVar4 == 0) {
+      if (pWVar5 != (Water *)0x0) {
+        (pWVar5->fields).m_WaterMode = 0;
+        (this->fields).audioHD = 0;
+        return;
+      }
+    }
+    else if (pWVar5 != (Water *)0x0) {
+      (pWVar5->fields).m_WaterMode = 1;
+      (this->fields).audioHD = 1;
+      return;
+    }
   }
-  pWVar2 = (this->fields).water;
-  if (pWVar2 != (Water *)0x0) {
-    (pWVar2->fields).m_WaterMode = 0;
-    (this->fields).audioHD = 0;
-    return;
-  }
-code_?:
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pLStack_1 = (LightingQualityLevel__Enum__Class *)&stack0xfffffffc;
+  uVar6 = func_?(&puStack_7);
+  func_?(uVar6);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -280,54 +329,61 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_OnDisable
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVQualitySettings);
-    func_?(&TypeInfo__MVQualitySettings__OnQualityLevedChanged);
-    func_?(&MethodInfo__WaterPlaneManager__HandleQualityChanged_int_);
+    func_?(&TypeInfo__System__Action<System::Object>);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
+                   );
+    func_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+    func_?(&MethodInfo__WaterPlaneManager__HandleQualityChanged_System__Object_);
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MVQualitySettings->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MVQualitySettings);
+  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
   }
-  pMVar1 = TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged;
-  this_00 = (UnityAction_1_System_Int32Enum_ *)
-            func_?(TypeInfo__MVQualitySettings__OnQualityLevedChanged);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-  UnityAction_1_System_Int32Enum___ctor
-            (this_00,(Object *)this,MethodInfo__WaterPlaneManager__HandleQualityChanged_int_,
-             (MethodInfo *)0x0);
-  pMStack2 =
-       (MVQualitySettings_OnQualityLevedChanged *)
-       mscorlib.dll::System::Delegate::Delegate_Remove
-                 ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pMStack2 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
-    TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged =
-         (MVQualitySettings_OnQualityLevedChanged *)0x0;
-code_?:
-    func_?();
+  this_00 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+            ProfileSettingsChanged;
+  if (this_00 !=
+      (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)0x0) {
+    pDVar1 = (Delegate *)
+             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                       ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,6,
+                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                       );
+    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<System::Object>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_01,(Object *)this,
+               MethodInfo__WaterPlaneManager__HandleQualityChanged_System__Object_,(MethodInfo *)0x0
+              );
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       (pDVar1,(Delegate *)this_01,(MethodInfo *)0x0);
+    method_00 = 
+    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
+    ;
+    if (pDVar1 == (Delegate *)0x0) {
+      value = (Object *)0x0;
+    }
+    else {
+      value = (Object *)func_?();
+      if (value == (Object *)0x0) goto code_?;
+    }
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__set_Item
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,6,value,method_00);
     return;
   }
-  pMVar1 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
-  if (pMStack2->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
-    pMVar1 = pMStack2;
-  }
-  if (pMVar1 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
-    pMStack3 = TypeInfo__MVQualitySettings__OnQualityLevedChanged;
-    func_?();
-    pMStack2 = extraout_ECX;
-    pMStack3 = extraout_EDX;
-  }
-  else {
-    TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged = pMVar1;
-    pMVar1 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
-    if (pMStack2->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
-      pMVar1 = pMStack2;
-    }
-    pMStack3 = TypeInfo__MVQualitySettings__OnQualityLevedChanged;
-    if (pMVar1 != (MVQualitySettings_OnQualityLevedChanged *)0x0) goto code_?;
-  }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+code_?:
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -339,54 +395,61 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_OnEnable
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVQualitySettings);
-    func_?(&TypeInfo__MVQualitySettings__OnQualityLevedChanged);
-    func_?(&MethodInfo__WaterPlaneManager__HandleQualityChanged_int_);
+    func_?(&TypeInfo__System__Action<System::Object>);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
+                   );
+    func_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+    func_?(&MethodInfo__WaterPlaneManager__HandleQualityChanged_System__Object_);
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MVQualitySettings->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MVQualitySettings);
+  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
   }
-  pMVar1 = TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged;
-  this_00 = (UnityAction_1_System_Int32Enum_ *)
-            func_?(TypeInfo__MVQualitySettings__OnQualityLevedChanged);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-  UnityAction_1_System_Int32Enum___ctor
-            (this_00,(Object *)this,MethodInfo__WaterPlaneManager__HandleQualityChanged_int_,
-             (MethodInfo *)0x0);
-  pMStack2 =
-       (MVQualitySettings_OnQualityLevedChanged *)
-       mscorlib.dll::System::Delegate::Delegate_Combine
-                 ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pMStack2 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
-    TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged =
-         (MVQualitySettings_OnQualityLevedChanged *)0x0;
-code_?:
-    func_?();
+  this_00 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+            ProfileSettingsChanged;
+  if (this_00 !=
+      (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)0x0) {
+    pDVar1 = (Delegate *)
+             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                       ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,6,
+                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                       );
+    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<System::Object>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_01,(Object *)this,
+               MethodInfo__WaterPlaneManager__HandleQualityChanged_System__Object_,(MethodInfo *)0x0
+              );
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       (pDVar1,(Delegate *)this_01,(MethodInfo *)0x0);
+    method_00 = 
+    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
+    ;
+    if (pDVar1 == (Delegate *)0x0) {
+      value = (Object *)0x0;
+    }
+    else {
+      value = (Object *)func_?();
+      if (value == (Object *)0x0) goto code_?;
+    }
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__set_Item
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,6,value,method_00);
     return;
   }
-  pMVar1 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
-  if (pMStack2->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
-    pMVar1 = pMStack2;
-  }
-  if (pMVar1 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
-    pMStack3 = TypeInfo__MVQualitySettings__OnQualityLevedChanged;
-    func_?();
-    pMStack2 = extraout_ECX;
-    pMStack3 = extraout_EDX;
-  }
-  else {
-    TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged = pMVar1;
-    pMVar1 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
-    if (pMStack2->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
-      pMVar1 = pMStack2;
-    }
-    pMStack3 = TypeInfo__MVQualitySettings__OnQualityLevedChanged;
-    if (pMVar1 != (MVQualitySettings_OnQualityLevedChanged *)0x0) goto code_?;
-  }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+code_?:
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

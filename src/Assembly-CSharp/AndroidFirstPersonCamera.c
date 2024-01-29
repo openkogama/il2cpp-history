@@ -133,7 +133,7 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera_Upd
   (this->fields)._.targetRotation.y =
        (float)uVar9 * (this->fields)._.yawSensitivity + (this->fields)._.targetRotation.y;
   fVar10 = (float)((uint)(this->fields)._.maxLookAngleDownward ^
-                  __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   fVar11 = (float10)func_?();
   fVar3 = (this->fields)._.targetRotation.x - (float)fVar11 * _UNK_?;
   fVar4 = 0.0;

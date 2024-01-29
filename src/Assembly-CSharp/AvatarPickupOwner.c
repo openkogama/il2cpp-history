@@ -30,75 +30,81 @@ void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_Equip
                             (MethodInfo *)0x0);
   }
   pMVar2 = (this->fields).mvAvatar;
-  if ((pMVar2 == (MVAvatar *)0x0) || (avatarItem == (PickupItem *)0x0)) goto code_?;
-  if ((pMVar2->fields).body == (MVBody *)0x0) {
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)avatarItem,(MethodInfo *)0x0);
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        ((Component *)this,(MethodInfo *)0x0);
-    if (this_01 == (GameObject *)0x0) goto code_?;
-    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       (this_01,(MethodInfo *)0x0);
-    if (pTVar3 == (Transform *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-              (pTVar3,pTVar4,(MethodInfo *)0x0);
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)avatarItem,(MethodInfo *)0x0);
-    uVar5 = 0x3f19999a;
-  }
-  else {
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)avatarItem,(MethodInfo *)0x0);
-    pMVar2 = (this->fields).mvAvatar;
-    if ((pMVar2 == (MVAvatar *)0x0) || (this_00 = (pMVar2->fields).body, this_00 == (MVBody *)0x0))
-    goto code_?;
-    this_02 = (MethodCall *)MVBody::MVBody_get_BodyData(this_00,(MethodInfo *)0x0);
-    if (this_02 == (MethodCall *)0x0) goto code_?;
-    pTVar4 = (Transform *)
-             mscorlib.dll::System::Runtime::Remoting::Messaging::MethodCall::MethodCall_GetArg
-                       (this_02,1,(MethodInfo *)0x0);
-    if (pTVar3 == (Transform *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-              (pTVar3,pTVar4,0,(MethodInfo *)0x0);
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)avatarItem,(MethodInfo *)0x0);
-    uVar5 = 0x3e800000;
-  }
-  if (pTVar3 != (Transform *)0x0) {
-    auVar6._4_8_ = 0;
-    auVar6._0_4_ = uVar5;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-              (pTVar3,(Vector3)(auVar6 << 0x20),(MethodInfo *)0x0);
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)avatarItem,(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    if (pTVar3 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                (pTVar3,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
-                 (MethodInfo *)0x0);
-      MVPickupOwner::MVPickupOwner_SetAvatarItemAsCurrent
-                ((MVPickupOwner *)this,avatarItem,(MethodInfo *)0x0);
-      pPStack7 = (this->fields)._.currentItem;
-      if (pPStack7 != (PickupItem *)0x0) {
-        pIStack8 = (pPStack7->klass->vtable).OnUnequip.methodPtr;
-        (*(code *)(pPStack7->klass->vtable).OnEquip.method)();
-        if ((this->fields)._.onEquipItem != (MVPickupOwner_OnEquipItemDelegate *)0x0) {
-          pMVar9 = (this->fields)._.onEquipItem;
-          pIStack8 = (pMVar9->fields)._._.method;
-          pPStack7 = (this->fields)._.currentItem;
-          (*(pMVar9->fields)._._.invoke_impl)();
+  if ((pMVar2 != (MVAvatar *)0x0) && (avatarItem != (PickupItem *)0x0)) {
+    if ((pMVar2->fields).body == (MVBody *)0x0) {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)avatarItem,(MethodInfo *)0x0);
+      this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
+      if (this_00 != (GameObject *)0x0) {
+        value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (this_00,(MethodInfo *)0x0);
+        if (pTVar3 != (Transform *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
+                    (pTVar3,value,(MethodInfo *)0x0);
+          pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)avatarItem,(MethodInfo *)0x0);
+          uVar4 = 0x3f19999a;
+code_?:
+          if (pTVar3 != (Transform *)0x0) {
+            auVar5._4_8_ = 0;
+            auVar5._0_4_ = uVar4;
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
+                      (pTVar3,(Vector3)(auVar5 << 0x20),(MethodInfo *)0x0);
+            pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                ((Component *)avatarItem,(MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            if (pTVar3 != (Transform *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
+                        (pTVar3,TypeInfo__UnityEngine__Quaternion->static_fields->
+                                 identityQuaternion,(MethodInfo *)0x0);
+              MVPickupOwner::MVPickupOwner_SetAvatarItemAsCurrent
+                        ((MVPickupOwner *)this,avatarItem,(MethodInfo *)0x0);
+              pPStack6 = (this->fields)._.currentItem;
+              if (pPStack6 != (PickupItem *)0x0) {
+                pIStack7 = (pPStack6->klass->vtable).OnUnequip.methodPtr;
+                (*(code *)(pPStack6->klass->vtable).OnEquip.method)();
+                if ((this->fields)._.onEquipItem != (MVPickupOwner_OnEquipItemDelegate *)0x0) {
+                  pMVar8 = (this->fields)._.onEquipItem;
+                  pIStack7 = (pMVar8->fields)._._.method;
+                  pPStack6 = (this->fields)._.currentItem;
+                  (*(pMVar8->fields)._._.invoke_impl)();
+                }
+                return;
+              }
+            }
+          }
         }
-        return;
+      }
+    }
+    else {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)avatarItem,(MethodInfo *)0x0);
+      pMVar2 = (this->fields).mvAvatar;
+      if ((((pMVar2 != (MVAvatar *)0x0) && (pMVar9 = (pMVar2->fields).body, pMVar9 != (MVBody *)0x0)
+           ) && (pMVar10 = (pMVar9->fields).bodyObject, pMVar10 != (MVBodyObject *)0x0)) &&
+         ((pBVar11 = (pMVar10->fields).bodyData, pBVar11 != (BodyData *)0x0 &&
+          (pTVar12 = (pBVar11->fields).PartBones, pTVar12 != (Transform__Array *)0x0)))) {
+        if (pTVar12->max_length < 2) goto code_?;
+        if (pTVar3 != (Transform *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                    (pTVar3,pTVar12->vector[1],0,(MethodInfo *)0x0);
+          pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)avatarItem,(MethodInfo *)0x0);
+          uVar4 = 0x3e800000;
+          goto code_?;
+        }
       }
     }
   }
+  func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -129,42 +135,27 @@ void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_HandlePointing
     }
     pMVar3 = (this->fields).mvAvatar;
     if ((pMVar3 != (MVAvatar *)0x0) &&
-       (pAVar4 = (pMVar3->fields).limbManager,
+       (this_00 = (AvatarLimbManagerLocal *)(pMVar3->fields).limbManager,
        this = (AvatarPickupOwner *)TypeInfo__AvatarLimbManagerLocal,
-       pAVar4 != (AvatarLimbManager *)0x0)) {
-      if (((pAVar4->klass->_1).naturalAligment <
-           (TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment) ||
-         ((pAVar4->klass->_1).typeHierarchy
-          [(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment - 1] !=
-          (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) goto code_?;
-      pAVar5 = pAVar4[1].fields.OnAvatarRotate;
-      if (pAVar5 != (Action *)0x0) {
-        if (*(char *)((int)&(pAVar5->fields)._._.original_method_info + 1) != '\0') {
-          pvVar6 = pAVar5[1].fields._._.delegate_trampoline;
-          pvVar7 = (pAVar5->fields)._._.method_ptr;
-          pvVar8 = (pAVar5->fields)._._.invoke_impl;
-          (pAVar5->fields)._._.method_code = (pAVar5->fields)._._.extra_arg;
-          pMVar9 = (MethodInfo_1 *)(pAVar5->fields)._._.m_target;
-          (pAVar5->fields)._._.interp_method = pvVar7;
-          (pAVar5->fields)._._.interp_invoke_impl = pvVar8;
-          (pAVar5->fields)._._.method_info = pMVar9;
-          if (pvVar6 != (void *)0x0) {
-            pvVar6 = pAVar5[1].fields._._.delegate_trampoline;
-            (**(code **)((int)pvVar6 + 0xc))
-                      (*(undefined4 *)((int)pvVar6 + 0x20),1,*(undefined4 *)((int)pvVar6 + 0x14));
-          }
-        }
+       this_00 != (AvatarLimbManagerLocal *)0x0)) {
+      if (((TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment <=
+           (this_00->klass->_1).naturalAligment) &&
+         ((this_00->klass->_1).typeHierarchy
+          [(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment - 1] ==
+          (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) {
+        AvatarLimbManagerLocal::AvatarLimbManagerLocal_StartPointing(this_00,(MethodInfo *)0x0);
         return;
       }
+      goto code_?;
     }
   }
 code_?:
   func_?();
-  pAVar4 = extraout_EDX;
+  this_00 = extraout_EDX;
 code_?:
-  func_?(pAVar4,this);
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  func_?(this_00,this);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
