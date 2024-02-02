@@ -323,7 +323,7 @@ void Assembly-CSharp.dll::CellCursor::CellCursor_SetCursor(CellCursor *this,Cube
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0xf470);
+    func_?(0xf490);
     cRam_? = '\x01';
   }
   IStack_1.x = 0;

@@ -230,12 +230,10 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
     func_?(&GreyOutObjectScript_MethodInfo__UnityEngine__GameObject__AddComponent<GreyOutObjectScript>__);
     func_?(&TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy);
     func_?(&MethodInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy__OnEnterTriggerBox_System__Object__TriggerEventArgs_);
-    func_?(&TypeInfo__UnityEngine__Object);
     func_?(&TypeInfo__UseInteractor);
     func_?(&MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_);
     func_?(&StringLiteral_Could_not_get_spawnPoint_child_s);
     func_?(&StringLiteral_spawnWorldObjectID);
-    func_?(&StringLiteral_hiddenShader_not_found);
     cRam_? = '\x01';
   }
   pMVar1 = MVBlueprintBase::MVBlueprintBase_GetChild((MVBlueprintBase *)this,StringLiteral_spawnWorldObjectID,(MethodInfo *)0x0);
@@ -323,39 +321,14 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
                     (this_02->vtable).RemoveImpl.method = pMVar4;
                     func_?();
                     pMVar4 = (this_02->vtable).RemoveImpl.method;
-                    pMVar12 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
-                    if ((pMVar12 != (MaterialLoader *)0x0) && (pMVar4 != (MethodInfo *)0x0)) {
-                      pMVar4->return_type = (Il2CppType *)(pMVar12->fields).pickupItemShader;
-                      func_?();
-                      pMVar4 = (this_02->vtable).RemoveImpl.method;
-                      if (pMVar4 != (MethodInfo *)0x0) {
-                        x = (Object_1 *)pMVar4->return_type;
-                        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                          func_?();
-                        }
-                        bVar13 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-                        if (bVar13 != 0) {
-                          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                            func_?(TypeInfo__UnityEngine__Debug);
-                          }
-                          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)StringLiteral_hiddenShader_not_found,(MethodInfo *)0x0);
-                        }
-                        pMVar4 = (this_02->vtable).RemoveImpl.method;
-                        this_05 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-                        if (this_05 != (MVWorldObjectClientManager *)0x0) {
-                          pMVar14 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_05,(int32_t)(this_02->vtable).GetObjectData_1.methodPtr,(MethodInfo *)0x0);
-                          if ((pMVar14 != (MVWorldObject *)0x0) && (pMVar4 != (MethodInfo *)0x0)) {
-                            pMVar4->klass = (Il2CppClass *)pMVar14[1].fields.inputLinkRefs;
-                            func_?();
-                            pMVar4 = (this_02->vtable).RemoveImpl.method;
-                            if (pMVar4 != (MethodInfo *)0x0) {
-                              GreyOutObjectScript::GreyOutObjectScript_InitializeOriginalMaterials((GreyOutObjectScript *)pMVar4,(MethodInfo *)0x0);
-                              *(undefined1 *)&(this_02->vtable).RemoveImpl.methodPtr = 1;
-                              MVWorldObjectSpawnerVehicleEnergy_SetupCulling((MVWorldObjectSpawnerVehicleEnergy *)this_02,(MethodInfo *)0x0);
-                              return;
-                            }
-                          }
-                        }
+                    this_05 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+                    if (this_05 != (MVWorldObjectClientManager *)0x0) {
+                      pMVar12 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_05,(int32_t)(this_02->vtable).GetObjectData_1.methodPtr,(MethodInfo *)0x0);
+                      if ((pMVar12 != (MVWorldObject *)0x0) && (pMVar4 != (MethodInfo *)0x0)) {
+                        GreyOutObjectScript::GreyOutObjectScript_SetPickupObject((GreyOutObjectScript *)pMVar4,(GameObject *)pMVar12[1].fields.inputLinkRefs,(MethodInfo *)0x0);
+                        *(undefined1 *)&(this_02->vtable).RemoveImpl.methodPtr = 1;
+                        MVWorldObjectSpawnerVehicleEnergy_SetupCulling((MVWorldObjectSpawnerVehicleEnergy *)this_02,(MethodInfo *)0x0);
+                        return;
                       }
                     }
                   }
@@ -370,8 +343,8 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
   func_?();
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

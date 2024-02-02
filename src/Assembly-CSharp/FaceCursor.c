@@ -285,7 +285,7 @@ void Assembly-CSharp.dll::FaceCursor::FaceCursor_UpdateCursor(FaceCursor *this,C
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0x7238);
+    func_?(0x7258);
     func_?(&UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::MeshRenderer>__);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__ToArray__);

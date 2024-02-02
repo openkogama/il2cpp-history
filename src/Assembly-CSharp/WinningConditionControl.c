@@ -39,8 +39,6 @@ int32_t Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_Ge
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* String MakeIntoScoreText(Int32, GameStatCounterType) */
 
 String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_MakeIntoScoreText(int32_t score,GameStatCounterType__Enum statType,MethodInfo *method)
@@ -100,11 +98,14 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
   method = (MethodInfo *)&UNK_?;
   statType = (GameStatCounterType__Enum)mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
   values = (String__Array *)func_?();
-  bVar8 = 0;
   if (values != (String__Array *)0x0) {
+    uStack8 = 0;
+    pSStack9 = pSVar1;
     func_?();
-    ppMStack9 = (MethodInfo **)statType;
+    puStack10 = (undefined *)statType;
+    uStack11 = 1;
     func_?();
+    pSStack12 = ::StringLiteral__;
     func_?();
     method = (MethodInfo *)&UNK_?;
     func_?();
@@ -117,74 +118,10 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
     return pSVar1;
   }
-  sVar10 = func_?();
-  piVar11 = (int *)(int)sVar10;
-  if (extraout_ECX != 1) {
-    pcVar12 = (code *)swi(3);
-    pSVar1 = (String *)(*pcVar12)();
-    return pSVar1;
-  }
-  bVar13 = *(byte *)(extraout_EDX + -0x67efd71e);
-  *(byte *)(extraout_EDX + -0x67efd71e) = bVar13 + bVar8;
-  *(undefined1 *)&pSVar1->klass = uRam_?;
-  *piVar11 = (int)piVar11 + (uint)CARRY1(bVar13,bVar8) + *piVar11;
-  if (*piVar11 == 0) {
-    func_?();
-    func_?();
-    ppMStack9 = &KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__;
-    func_?();
+  pcVar13 = (char *)func_?();
+  *pcVar13 = *pcVar13 - extraout_DL;
                     /* WARNING: Bad instruction - Truncating control flow here */
-    func_?();
-    func_?();
-    uRam_? = 1;
-  }
-  iVar14 = score;
-  *(undefined1 *)score = 0;
-  pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar15 != (MVNetworkGame *)0x0) && (pWVar16 = (pMVar15->fields)._WinningConditionManager_k__BackingField, pWVar16 != (WinningConditionManager *)0x0)) {
-    pOVar17 = MVWorldObject.dll::WinningConditionManager::WinningConditionManager_GetSingletonWinnerConditionByType(pWVar16,FlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<FlagReachedClient>__);
-    if (pOVar17 != (Object *)0x0) {
-      *(undefined1 *)iVar14 = 2;
-      return (String *)CONCAT31((int3)((uint)pOVar17 >> 8),1);
-    }
-    pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar15 != (MVNetworkGame *)0x0) && (pWVar16 = (pMVar15->fields)._WinningConditionManager_k__BackingField, pWVar16 != (WinningConditionManager *)0x0)) {
-      pOVar17 = MVWorldObject.dll::WinningConditionManager::WinningConditionManager_GetSingletonWinnerConditionByType(pWVar16,TimeAttackFlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeAttackFlagReachedClient>__);
-      if (pOVar17 != (Object *)0x0) {
-        *(undefined1 *)iVar14 = 8;
-        return (String *)CONCAT31((int3)((uint)pOVar17 >> 8),1);
-      }
-      pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar15 != (MVNetworkGame *)0x0) && (pWVar16 = (pMVar15->fields)._WinningConditionManager_k__BackingField, pWVar16 != (WinningConditionManager *)0x0)) {
-        pOVar17 = MVWorldObject.dll::WinningConditionManager::WinningConditionManager_GetSingletonWinnerConditionByType(pWVar16,AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__);
-        if (pOVar17 != (Object *)0x0) {
-          *(undefined1 *)iVar14 = 3;
-          return (String *)CONCAT31((int3)((uint)pOVar17 >> 8),1);
-        }
-        pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar15 != (MVNetworkGame *)0x0) && (pWVar16 = (pMVar15->fields)._WinningConditionManager_k__BackingField, pWVar16 != (WinningConditionManager *)0x0)) {
-          pOVar17 = MVWorldObject.dll::WinningConditionManager::WinningConditionManager_GetSingletonWinnerConditionByType(pWVar16,KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__);
-          if (pOVar17 != (Object *)0x0) {
-            *(undefined1 *)iVar14 = 1;
-            return (String *)CONCAT31((int3)((uint)pOVar17 >> 8),1);
-          }
-          pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar15 != (MVNetworkGame *)0x0) && (pWVar16 = (pMVar15->fields)._WinningConditionManager_k__BackingField, pWVar16 != (WinningConditionManager *)0x0)) {
-            pOVar17 = MVWorldObject.dll::WinningConditionManager::WinningConditionManager_GetSingletonWinnerConditionByType(pWVar16,OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__);
-            if (pOVar17 == (Object *)0x0) {
-              return (String *)0x0;
-            }
-            *(undefined1 *)iVar14 = 6;
-            return (String *)CONCAT31((int3)((uint)pOVar17 >> 8),1);
-          }
-        }
-      }
-    }
-  }
-  func_?();
-  pcVar12 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar12)();
-  return pSVar1;
+  halt_baddata();
 }
 
 

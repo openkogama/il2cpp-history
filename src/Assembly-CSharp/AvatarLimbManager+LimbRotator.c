@@ -31,7 +31,7 @@ void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbR
     pIVar4 = (Il2CppRGCTXData *)pQVar2->x;
     __return_storage_ptr__ = (_union_154)pQVar2->z;
     pIVar5 = (Il2CppRGCTXData *)&UNK_?;
-    p_Var3 = (_union_154 *)MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation((Quaternion *)__return_storage_ptr__.methodMetadataHandle,(MVWorldObject *)pQVar2->w,(MethodInfo *)in_stack_6);
+    p_Var4 = (_union_154 *)MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation((Quaternion *)__return_storage_ptr__.methodMetadataHandle,(MVWorldObject *)pQVar2->w,(MethodInfo *)in_stack_6);
     unaff_EBP.rgctx_data = (Il2CppRGCTXData *)0x0;
     in_stack_7 = (Il2CppType **)0x42340000;
     maxYaw = (Il2CppType *)0x42b20000;
@@ -51,14 +51,14 @@ void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbR
     pIVar4 = (Il2CppRGCTXData *)pQVar2->x;
     pIVar5 = (Il2CppRGCTXData *)pQVar2->y;
     __return_storage_ptr__ = (_union_154)pQVar2->z;
-    p_Var3 = (_union_154 *)MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation((Quaternion *)&stack0xffffffe0,(MVWorldObject *)0x0,in_stack_9);
+    p_Var4 = (_union_154 *)MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation((Quaternion *)&stack0xffffffe0,(MVWorldObject *)0x0,in_stack_9);
     maxYaw = (Il2CppType *)0x42b40000;
 code_?:
-    this_02 = (_union_154)p_Var3->rgctx_data;
-    pIVar10 = p_Var3[1].rgctx_data;
-    pIVar11 = p_Var3[2].rgctx_data;
-    _Var11 = (_union_154)p_Var3[3].rgctx_data;
-    _Var7 = this_02;
+    this_02 = (_union_154)p_Var4->rgctx_data;
+    pIVar10 = p_Var4[1].rgctx_data;
+    pIVar11 = p_Var4[2].rgctx_data;
+    _Var12 = (_union_154)p_Var4[3].rgctx_data;
+    _Var8 = this_02;
     break;
   case BodyData_PartIndex__Enum_RArm:
     pLVar1 = TypeInfo__LimbController;
@@ -77,16 +77,16 @@ code_?:
     pIVar5 = (Il2CppRGCTXData *)pQVar2->y;
     __return_storage_ptr__ = (_union_154)pQVar2->z;
     func_?();
-    p_Var3 = (_union_154 *)MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation((Quaternion *)&stack0xffffffe0,(MVWorldObject *)0x0,(MethodInfo *)&stack0xffffffd0);
-    this_02 = (_union_154)p_Var3->rgctx_data;
-    pIVar10 = p_Var3[1].rgctx_data;
-    pIVar11 = p_Var3[2].rgctx_data;
-    _Var11 = (_union_154)p_Var3[3].rgctx_data;
+    p_Var4 = (_union_154 *)MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation((Quaternion *)&stack0xffffffe0,(MVWorldObject *)0x0,(MethodInfo *)&stack0xffffffd0);
+    this_02 = (_union_154)p_Var4->rgctx_data;
+    pIVar10 = p_Var4[1].rgctx_data;
+    pIVar11 = p_Var4[2].rgctx_data;
+    _Var12 = (_union_154)p_Var4[3].rgctx_data;
     func_?();
     unaff_EBP.rgctx_data = (Il2CppRGCTXData *)0x0;
     in_stack_7 = (Il2CppType **)0x42340000;
     maxYaw = (Il2CppType *)0x42b40000;
-    _Var7 = this_02;
+    _Var8 = this_02;
     break;
   case BodyData_PartIndex__Enum_LArm:
     pLVar1 = TypeInfo__LimbController;
@@ -102,18 +102,18 @@ code_?:
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)cancelAnimations.genericMethod,(Object *)StringLiteral_Jump,MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
     MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation((Quaternion *)&stack0xffffffd0,(MVWorldObject *)0x0,in_stack_8);
     func_?();
-    p_Var3 = (_union_154 *)MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation((Quaternion *)&stack0xffffffd0,(MVWorldObject *)0x0,(MethodInfo *)&stack0xffffffe0);
-    _Var7 = (_union_154)p_Var3->rgctx_data;
-    pIVar4 = p_Var3[1].rgctx_data;
-    pIVar5 = p_Var3[2].rgctx_data;
-    __return_storage_ptr__ = (_union_154)p_Var3[3].rgctx_data;
+    p_Var4 = (_union_154 *)MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation((Quaternion *)&stack0xffffffd0,(MVWorldObject *)0x0,(MethodInfo *)&stack0xffffffe0);
+    _Var8 = (_union_154)p_Var4->rgctx_data;
+    pIVar4 = p_Var4[1].rgctx_data;
+    pIVar5 = p_Var4[2].rgctx_data;
+    __return_storage_ptr__ = (_union_154)p_Var4[3].rgctx_data;
     func_?();
     unaff_EBP.rgctx_data = (Il2CppRGCTXData *)0x0;
     in_stack_7 = (Il2CppType **)0x42340000;
     maxYaw = (Il2CppType *)0x42b40000;
     pIVar10 = pIVar4;
     pIVar11 = pIVar5;
-    _Var11 = __return_storage_ptr__;
+    _Var12 = __return_storage_ptr__;
     partIndex = (BodyData_PartIndex__Enum)this_02.rgctx_data;
     break;
   default:
@@ -124,18 +124,18 @@ code_?:
   modelRotationOffset.z = (float)__return_storage_ptr__.rgctx_data;
   modelRotationOffset.w = (float)this_02.rgctx_data;
   originalRotation.y = (float)pIVar10;
-  originalRotation.x = (float)_Var7.rgctx_data;
+  originalRotation.x = (float)_Var8.rgctx_data;
   originalRotation.z = (float)pIVar11;
-  originalRotation.w = (float)_Var11.rgctx_data;
+  originalRotation.w = (float)_Var12.rgctx_data;
   LimbController::LimbController_Initialize(this_01,limbManager,avatarWO,body,key,modelRotationOffset,originalRotation,(List_1_System_String_ *)partIndex,(List_1_System_String_ *)cancelAnimations.genericMethod,(float)maxYaw,(float)in_stack_7,(MethodInfo *)unaff_EBP.methodMetadataHandle);
   this_00 = (this->fields).limbControllers;
   if (this_00 == (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) {
 code_?:
     cVar12 = '\0';
-    func_?();
-    cRam_? = cRam_? + extraout_CL + cVar12;
-    pcVar13 = (code *)swi(3);
-    (*pcVar13)();
+    cVar13 = func_?();
+    cRam_? = cRam_? + cVar13 + cVar12;
+    pcVar14 = (code *)swi(3);
+    (*pcVar14)();
     return;
   }
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,(Object *)this_01,MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__Add_BodyData__PartIndex__LimbController_);

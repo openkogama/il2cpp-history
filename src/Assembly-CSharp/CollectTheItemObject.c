@@ -45,7 +45,7 @@ void Assembly-CSharp.dll::CollectTheItemObject::CollectTheItemObject_InitializeG
             pMVar7 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterials((Renderer *)this_01,(MethodInfo *)0x0);
             value[1].monitor = (MonitorData *)pMVar7;
             func_?();
-            this_02 = (Object__Array *)(this_01->_0).this_arg.data.type;
+            this_02 = *(Object__Array **)&(this_01->_0).this_arg.attrs;
             if (this_02 == (Object__Array *)0x0) goto code_?;
             mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_02,value,MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_);
             uVar5 = uVar5 + 1;

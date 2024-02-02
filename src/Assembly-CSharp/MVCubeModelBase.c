@@ -5,7 +5,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_AddCube(MVCubeModelBa
 
 {
   if (cRam_? == '\0') {
-    func_?(0x2a8);
+    func_?(0x2c8);
     func_?(&TypeInfo__Cube);
     func_?(&MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_);
     cRam_? = '\x01';
@@ -85,7 +85,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_AddToChunkInstances(M
       pEVar2 = (pCVar1->fields).Changed;
       if (pEVar2 != (EventHandler_1_ChunkInstancesChanged_ *)0x0) {
         this_01 = (ChunkInstancesChanged *)func_?();
-        uStack3 = 0x102f;
+        uStack3 = 0x1030;
         ChunkInstancesChanged::ChunkInstancesChanged__ctor(this_01,ChunkInstancesChanged_ChangeType__Enum_Added,chunkPos,(MethodInfo *)0x0);
         (*(pEVar2->fields)._._.invoke_impl)();
       }
@@ -1142,7 +1142,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_ReplaceCube(MVCubeMod
 
 {
   if (cRam_? == '\0') {
-    func_?(0x2a8);
+    func_?(0x2c8);
     func_?(&MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_);
     cRam_? = '\x01';
   }
@@ -1289,7 +1289,7 @@ IModelingConstraint * Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase___ct
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ModelingDynamicBoxConstraint);
-    func_?(0x9e40);
+    func_?(0x9e60);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {

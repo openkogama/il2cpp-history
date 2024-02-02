@@ -32,7 +32,7 @@ Byte__Array * Assembly-CSharp.dll::DeltaCubes::DeltaCubes_Dequeue(DeltaCubes *th
     func_?(&TypeInfo__Cube);
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>__get_Key__);
-    func_?(0x40f8);
+    func_?(0x4118);
     func_?(&MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>__Dequeue__);
     func_?(&StringLiteral_IsCollapsed__cube_detected_in_de);
     func_?(&StringLiteral_Illegal_cube_detected_in_delta_c);
@@ -112,8 +112,9 @@ Byte__Array * Assembly-CSharp.dll::DeltaCubes::DeltaCubes_Dequeue(DeltaCubes *th
       }
     }
   }
-  uVar7 = func_?();
-  return (Byte__Array *)(uVar7 & 0xed1058c2);
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -185,7 +186,7 @@ void Assembly-CSharp.dll::DeltaCubes::DeltaCubes__ctor_1(DeltaCubes *this,IEnume
     func_?(&TypeInfo__System__IDisposable);
     func_?(&TypeInfo__System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>);
     func_?(&TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>);
-    func_?(0xae90);
+    func_?(0xaeb0);
     func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>__get_Key__);
     func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>__get_Value__);
     func_?(&MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>__Queue__);

@@ -167,7 +167,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Initializ
       this_06 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)0x161,(MethodInfo *)0x0);
       if (this_06 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_06,1,(MethodInfo *)0x0);
-        pRVar1 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)0x8b00fe93,UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__);
+        pRVar1 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)0x8b00fe96,UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__);
         if (pRVar1 != (Renderer *)0x0) {
           _UNK_? = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material(pRVar1,(MethodInfo *)0x0);
                     /* WARNING: Read-only address (ram,0xADDR) is written */
@@ -178,7 +178,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Initializ
           _UNK_? = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material((Renderer *)0xfc0850c,(MethodInfo *)0x0);
                     /* WARNING: Read-only address (ram,0xADDR) is written */
           func_?();
-          SayChatBubbleHandler::SayChatBubbleHandler_Initialize((SayChatBubbleHandler *)0xebb773e8,ownerActorNr,chatBubbleAnchor,(MethodInfo *)0x0);
+          SayChatBubbleHandler::SayChatBubbleHandler_Initialize((SayChatBubbleHandler *)0xebb673e8,ownerActorNr,chatBubbleAnchor,(MethodInfo *)0x0);
           pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if ((pMVar5 != (MVNetworkGame *)0x0) && (this_01 = (pMVar5->fields).playerContainer, this_01 != (MVPlayerContainer *)0x0)) {
             pMVar6 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe(this_01,ownerActorNr,(MethodInfo *)0x0);
@@ -638,7 +638,6 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
       return;
     }
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    unaff_ESI = this;
     if ((((pMVar1 != (MVNetworkGame *)0x0) && (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) && (pMVar4 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe(pMVar2,(this->fields)._.ownerActorNr,(MethodInfo *)0x0), pMVar4 != (MVPlayer *)0x0)) && ((pUVar5 = (pMVar4->fields)._UserProfileData_k__BackingField, pUVar5 != (UserProfileData *)0x0 && (this_00 = (this->fields).avatarName, this_00 != (TextMesh *)0x0)))) {
       UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text(this_00,(pUVar5->fields).UserName,(MethodInfo *)0x0);
       uVar6 = 0x3f800000;
@@ -681,10 +680,9 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
     }
   }
   uVar12 = func_?();
-  pcVar13 = (char *)((extraout_ECX & (uint)unaff_ESI) - 0xf);
-  *pcVar13 = *pcVar13 + (char)uVar12 + -0x10 + (uVar12 < 0x2df13110);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  *(char *)(extraout_ECX + -0xe) = *(char *)(extraout_ECX + -0xe) + (char)uVar12 + -0x10 + (uVar12 < 0x2df23110);
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

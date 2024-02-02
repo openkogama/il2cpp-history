@@ -257,7 +257,7 @@ code_?:
           pIVar23 = (IEnumerator__Class *)mscorlib.dll::System::Array::Array_GetEnumerator(pAVar22,(MethodInfo *)0x0);
           pTVar21 = (Type *)0x0;
           while (pIVar23 != (IEnumerator__Class *)0x0) {
-            uVar24 = 0x5bcd;
+            uVar24 = 0x602d;
             uVar25 = 0x1057;
             pIVar23 = TypeInfo__System__Collections__IEnumerator;
             cVar26 = func_?();
@@ -520,7 +520,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_HandleCursors(P
 
 {
   if (cRam_? == '\0') {
-    func_?(0xf470);
+    func_?(0xf490);
     func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
     func_?(&MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__);
     cRam_? = '\x01';
@@ -854,7 +854,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_OnFireSecondary
         if (pMVar4 != (MVPickupOwner *)0x0) {
           fVar5 = (pMVar4->fields).lookOrigin.y;
           fVar6 = (pMVar4->fields).lookOrigin.z;
-          iVar7 = 0x6810;
+          iVar7 = 0x6c70;
           pVVar8 = MVPickupOwner::MVPickupOwner_get_LookDirection((Vector3 *)&stack0xffffffe0,(this->fields)._._.owner,(MethodInfo *)0x0);
           this_00 = (PickupItemModelGun *)pVVar8->x;
           pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xfffffff0,*pVVar8,(MethodInfo *)0x0);

@@ -19,7 +19,7 @@ public static class TextureAtlasData
 	private const int AnimationScrollVertical = 0;
 	private const int AnimationScrollHorizontal = 1;
 	private const int AnimationExpandAndContract = 2;
-	private const int AnimationWave = 3;
+	private const int AnimationLiquid = 3;
 	private const int EmissionSolid = 0;
 	private const int EmissionWave = 1;
 	private const int EmissionOscillate = 2;
