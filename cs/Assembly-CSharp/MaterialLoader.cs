@@ -33,7 +33,9 @@ public class MaterialLoader : MonoBehaviour
 	[SerializeField]
 	private Material cubeModelMaterialMobileTransp;
 	[SerializeField]
-	private Shader pickupItemShader;
+	private Shader pickupUnavailableShaderArray;
+	[SerializeField]
+	private Shader pickupUnavailableShader;
 	[SerializeField]
 	private Shader wireframeShader;
 	[SerializeField]
@@ -49,6 +51,8 @@ public class MaterialLoader : MonoBehaviour
 	private uint atlasHash;
 	private bool isUsingSM3Shader;
 	private bool isUsingMobileShader;
+	private bool isStreamingTexture;
+	private int storedTextureQuality;
 	private TextureQualityLevel selectedQuality;
 	private Texture2DArray highTexture2DArray;
 	private Texture2DArray midTexture2DArray;
@@ -60,9 +64,9 @@ public class MaterialLoader : MonoBehaviour
 	// Properties
 	public Material CubeModelMaterial { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public Material CubeModelMaterialTransp { [CompilerGenerated] get; [CompilerGenerated] private set; }
-	public Shader PickupItemShader { get; }
 	public Shader WireframeShader { get; }
 	public Shader DefaultDiffuseShader { get; }
+	public Shader StandardItemUnavailableShader { get; }
 
 	// Constructors
 	public MaterialLoader();
@@ -71,6 +75,7 @@ public class MaterialLoader : MonoBehaviour
 	protected void Awake();
 	protected void OnDestroy();
 	public bool CheckAtlasIntegrity();
+	public Shader GetCubeModelUnavailableShader();
 	private void SetMainTexture(Texture texture, bool isGameModeInitialized = true);
 	private bool CalculateIfUsingSM3Shader();
 	private bool CalculateIsUsingMobileShader();
@@ -78,6 +83,7 @@ public class MaterialLoader : MonoBehaviour
 	public void SetTextureQuality(TextureQualityLevel quality);
 	private void DownloadWhenPossible();
 	private void Callback(UnityWebRequest www);
+	private Texture StoreLoadedTexture(AssetBundle assetBundle, string assetName);
 	private uint Hash(Texture tex);
 	public string MaterialLoaderInfo();
 }
