@@ -103,7 +103,7 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_AddWaterPlaneLogi
                           iVar11 = 1;
                         }
                         if (pWVar8 != (Water *)0x0) {
-                          (pWVar8->fields).m_WaterMode = iVar11;
+                          (pWVar8->fields).waterMode = iVar11;
                           return;
                         }
                       }
@@ -244,13 +244,13 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_HandleQualityChan
     pWVar5 = (this->fields).water;
     if (*piVar4 == 0) {
       if (pWVar5 != (Water *)0x0) {
-        (pWVar5->fields).m_WaterMode = 0;
+        (pWVar5->fields).waterMode = 0;
         (this->fields).audioHD = 0;
         return;
       }
     }
     else if (pWVar5 != (Water *)0x0) {
-      (pWVar5->fields).m_WaterMode = 1;
+      (pWVar5->fields).waterMode = 1;
       (this->fields).audioHD = 1;
       return;
     }
@@ -734,83 +734,87 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_UpdateUnderwaterC
     if (pTVar2 != (Transform *)0x0) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                          ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
-      fVar4 = pVVar3->y;
-      pRVar5 = (this->fields).underwaterCameraPlaneRenderer;
-      if (pRVar5 != (Renderer *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                  (pRVar5,unaff_EBX < fVar4,(MethodInfo *)0x0);
-        pRVar5 = (this->fields).underwaterCameraPlaneRenderer;
-        if (pRVar5 != (Renderer *)0x0) {
-          bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled
-                            (pRVar5,(MethodInfo *)0x0);
-          if (bVar6 != 0) {
-            pRVar5 = (this->fields).underwaterCameraPlaneRenderer;
-            if (pRVar5 == (Renderer *)0x0) goto code_?;
-            this_00 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                (pRVar5,(MethodInfo *)0x0);
-            pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                               ((Component *)this,(MethodInfo *)0x0);
-            if (pTVar2 == (Transform *)0x0) goto code_?;
-            pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                               ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
-            if (this_00 == (Material *)0x0) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
-                      (this_00,StringLiteral__WaterY,pVVar3->y,(MethodInfo *)0x0);
-          }
-          pAVar7 = (this->fields).lowPassFilter;
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Object);
-          }
-          bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                            ((Object_1 *)pAVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar6 != 0) {
-            pCVar1 = (this->fields).mainCamera;
-            if (pCVar1 == (Camera *)0x0) goto code_?;
-            pAVar7 = (AudioLowPassFilter *)
-                     UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                               ((Component *)pCVar1,
-                                UnityEngine__AudioLowPassFilter_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::AudioLowPassFilter>__
-                               );
-            (this->fields).lowPassFilter = pAVar7;
-            func_?(&(this->fields).lowPassFilter,pAVar7);
-          }
-          pAVar7 = (this->fields).lowPassFilter;
-          if (fVar4 <= unaff_EBX) {
-            if (pAVar7 != (AudioLowPassFilter *)0x0) {
-              bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
-                                ((Behaviour *)pAVar7,(MethodInfo *)0x0);
-              if (bVar6 == 0) {
-                return;
-              }
-              pAVar7 = (this->fields).lowPassFilter;
-              if (pAVar7 != (AudioLowPassFilter *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                          ((Behaviour *)pAVar7,0,(MethodInfo *)0x0);
-                pAVar8 = (this->fields).reverbFilter;
-                if (pAVar8 != (AudioReverbFilter *)0x0) {
+      pWVar4 = (this->fields).water;
+      fVar5 = pVVar3->y;
+      if (pWVar4 != (Water *)0x0) {
+        (pWVar4->fields).isCameraAboveWater = fVar5 <= unaff_EBX;
+        pRVar6 = (this->fields).underwaterCameraPlaneRenderer;
+        if (pRVar6 != (Renderer *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
+                    (pRVar6,unaff_EBX < fVar5,(MethodInfo *)0x0);
+          pRVar6 = (this->fields).underwaterCameraPlaneRenderer;
+          if (pRVar6 != (Renderer *)0x0) {
+            bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled
+                              (pRVar6,(MethodInfo *)0x0);
+            if (bVar7 != 0) {
+              pRVar6 = (this->fields).underwaterCameraPlaneRenderer;
+              if (pRVar6 == (Renderer *)0x0) goto code_?;
+              this_00 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                  (pRVar6,(MethodInfo *)0x0);
+              pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                 ((Component *)this,(MethodInfo *)0x0);
+              if (pTVar2 == (Transform *)0x0) goto code_?;
+              pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                 ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
+              if (this_00 == (Material *)0x0) goto code_?;
+              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
+                        (this_00,StringLiteral__WaterY,pVVar3->y,(MethodInfo *)0x0);
+            }
+            pAVar8 = (this->fields).lowPassFilter;
+            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__UnityEngine__Object);
+            }
+            bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                              ((Object_1 *)pAVar8,(Object_1 *)0x0,(MethodInfo *)0x0);
+            if (bVar7 != 0) {
+              pCVar1 = (this->fields).mainCamera;
+              if (pCVar1 == (Camera *)0x0) goto code_?;
+              pAVar8 = (AudioLowPassFilter *)
+                        UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                                  ((Component *)pCVar1,
+                                   UnityEngine__AudioLowPassFilter_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::AudioLowPassFilter>__
+                                  );
+              (this->fields).lowPassFilter = pAVar8;
+              func_?(&(this->fields).lowPassFilter,pAVar8);
+            }
+            pAVar8 = (this->fields).lowPassFilter;
+            if (fVar5 <= unaff_EBX) {
+              if (pAVar8 != (AudioLowPassFilter *)0x0) {
+                bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
+                                  ((Behaviour *)pAVar8,(MethodInfo *)0x0);
+                if (bVar7 == 0) {
+                  return;
+                }
+                pAVar8 = (this->fields).lowPassFilter;
+                if (pAVar8 != (AudioLowPassFilter *)0x0) {
                   UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                             ((Behaviour *)pAVar8,0,(MethodInfo *)0x0);
-                  return;
+                  pAVar9 = (this->fields).reverbFilter;
+                  if (pAVar9 != (AudioReverbFilter *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                              ((Behaviour *)pAVar9,0,(MethodInfo *)0x0);
+                    return;
+                  }
                 }
               }
             }
-          }
-          else if (pAVar7 != (AudioLowPassFilter *)0x0) {
-            bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
-                              ((Behaviour *)pAVar7,(MethodInfo *)0x0);
-            if (bVar6 == 0) {
-              pAVar7 = (this->fields).lowPassFilter;
-              if (pAVar7 == (AudioLowPassFilter *)0x0) goto code_?;
-              UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                        ((Behaviour *)pAVar7,1,(MethodInfo *)0x0);
-              if ((this->fields).audioHD != 0) {
-                pAVar8 = (this->fields).reverbFilter;
-                if (pAVar8 == (AudioReverbFilter *)0x0) goto code_?;
+            else if (pAVar8 != (AudioLowPassFilter *)0x0) {
+              bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
+                                ((Behaviour *)pAVar8,(MethodInfo *)0x0);
+              if (bVar7 == 0) {
+                pAVar8 = (this->fields).lowPassFilter;
+                if (pAVar8 == (AudioLowPassFilter *)0x0) goto code_?;
                 UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                           ((Behaviour *)pAVar8,1,(MethodInfo *)0x0);
+                if ((this->fields).audioHD != 0) {
+                  pAVar9 = (this->fields).reverbFilter;
+                  if (pAVar9 == (AudioReverbFilter *)0x0) goto code_?;
+                  UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                            ((Behaviour *)pAVar9,1,(MethodInfo *)0x0);
+                }
               }
+              return;
             }
-            return;
           }
         }
       }
@@ -818,8 +822,8 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_UpdateUnderwaterC
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -859,7 +863,7 @@ bool Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_get_IsLethal
   puStack_1 = &stack0xfffffffc;
   pWVar2 = (this->fields).water;
   if (pWVar2 != (Water *)0x0) {
-    return (pWVar2->fields).m_IsLethal;
+    return (pWVar2->fields).isLethal;
   }
   uVar3 = func_?(auStack_4);
   func_?(uVar3);
@@ -934,7 +938,7 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_set_IsLethal
   pWVar1 = (this->fields).water;
   if (pWVar1 != (Water *)0x0) {
     bVar2 = cRam_? == '\0';
-    (pWVar1->fields).m_IsLethal = value;
+    (pWVar1->fields).isLethal = value;
     if (bVar2) {
       func_?(&StringLiteral__HorizonColor);
       func_?(&StringLiteral__BumpMap);

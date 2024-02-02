@@ -328,38 +328,25 @@ code_?:
     cVar28 = '\x01';
     bVar29 = 0;
     uVar30 = func_?();
-    iVar31 = (int)uVar30;
     iVar12 = extraout_ECX;
     do {
       iVar12 = iVar12 + -1;
     } while (iVar12 != 0 && cVar28 != '\0');
-    bVar32 = (byte)((uint)iVar12 >> 8);
-    bVar33 = (byte)((uint6)uVar30 >> 0x28);
-    bVar34 = CARRY1(bVar32,bVar33) || CARRY1(bVar32 + bVar33,bVar29);
-    pbVar35 = (byte *)(iVar31 + 1);
-    bVar29 = *pbVar35;
-    bVar33 = (byte)((uint)((int)&pTVar1->klass + 2) >> 8);
-    bVar32 = *pbVar35 + bVar33;
-    *pbVar35 = bVar32 + bVar34;
-    ppMVar36 = &(unaff_ESI->fields)._.m_MaskMaterial;
-    *(char *)ppMVar36 =
-         *(char *)ppMVar36 + (char)((uint6)uVar30 >> 0x20) +
-         (CARRY1(bVar29,bVar33) || CARRY1(bVar32,bVar34));
-    pbVar35 = (byte *)(iVar31 + 0x75e8119c);
-    *pbVar35 = *pbVar35 >> 1 | *pbVar35 << 7;
-    uVar37 = (**(code **)(iVar31 + -0x18))();
-    *(char *)&pTVar3->klass = (char)uVar37;
-    mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
-              ((NotSupportedException *)
-               CONCAT13((char)((uint)uVar37 >> 0x18),
-                        (int3)CONCAT22((short)((uint)uVar37 >> 0x10),
-                                       (ushort)(byte)((char)uVar37 - (char)((uint)uVar37 >> 8)))),
-               (MethodInfo *)0x0);
-    func_?();
-    func_?();
-    pcVar38 = (code *)swi(3);
-    bVar22 = (*pcVar38)();
-    return bVar22;
+    bVar31 = (byte)((uint)iVar12 >> 8);
+    bVar32 = (byte)((uint6)uVar30 >> 0x28);
+    bVar33 = CARRY1(bVar31,bVar32) || CARRY1(bVar31 + bVar32,bVar29);
+    pbVar34 = (byte *)((int)uVar30 + 1);
+    bVar29 = *pbVar34;
+    bVar32 = (byte)((uint)((int)&pTVar1->klass + 2) >> 8);
+    bVar31 = *pbVar34 + bVar32;
+    *pbVar34 = bVar31 + bVar33;
+    ppMVar35 = &(unaff_ESI->fields)._.m_MaskMaterial;
+    *(char *)ppMVar35 =
+         *(char *)ppMVar35 + (char)((uint6)uVar30 >> 0x20) +
+         (CARRY1(bVar29,bVar32) || CARRY1(bVar31,bVar33));
+    do {
+                    /* WARNING: Do nothing block with infinite loop */
+    } while( true );
   }
 code_?:
   (pTVar3->fields)._IsShowingTierProgress_k__BackingField = 0;

@@ -465,14 +465,14 @@ code_?:
           fVar17 = 0.0;
           while (pAVar15 != (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)0x0)
           {
-            uVar1 = 0xd3b9;
+            uVar1 = 0xd829;
             uVar2 = 0x1056;
             cVar18 = func_?();
             if (cVar18 == '\0') {
               iVar19 = func_?();
               *piVar16 = iVar19;
               if (iVar19 != 0) {
-                uVar1 = 0xd772;
+                uVar1 = 0xdbe2;
                 uVar2 = 0x1056;
                 func_?();
               }
@@ -626,7 +626,7 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_HandleCursors
 
 {
   if (cRam_? == '\0') {
-    func_?(0xf470);
+    func_?(0xf490);
     func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
     func_?(&
                     MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__
@@ -1444,7 +1444,7 @@ code_?:
               auVar109._18_2_ = auVar5._18_2_;
               auVar109._0_18_ = auVar108;
               auVar110._8_12_ = auVar109._8_12_;
-              auVar110._0_8_ = 0x1056e28500000000;
+              auVar110._0_8_ = 0x1056e6f500000000;
               MVCubeModelBase::MVCubeModelBase_RemoveCube(this_05,_method,(MethodInfo *)0x0);
               auVar6._0_12_ = auVar110._0_12_;
               method = (MethodInfo *)&UNK_?;

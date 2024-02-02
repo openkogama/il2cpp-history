@@ -365,7 +365,7 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
   uRam_? = SUB41(&stack0xfffffffd + iVar11,0);
   uVar14 = *(undefined6 *)((int)uVar8 + (int)(&stack0xfffffffd + iVar11) * 8);
   iVar9 = (int)uVar14;
-  this_02 = (Object__Class *)(&stack0x11a4535f + iVar11);
+  this_02 = (Object__Class *)(&stack0x11a4537f + iVar11);
   piVar10 = (int *)((int)&unaff_EDI[-0xf].klass + 3);
   iVar11 = *piVar10;
   *piVar10 = *piVar10 + iVar9;

@@ -249,16 +249,14 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal+EditMode::
                 (pMVar15,CameraType__Enum_AvatarEditModeCamera,(MethodInfo *)0x0);
       pMVar9 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
       if (pMVar9 != (MainCameraManager *)0x0) {
-        unaff_EBX = MainCameraManager::MainCameraManager_get_CurrentCamera
-                              (pMVar9,(MethodInfo *)0x0);
+        pMVar20 = MainCameraManager::MainCameraManager_get_CurrentCamera(pMVar9,(MethodInfo *)0x0);
         pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if ((data != (Object *)0x0) && (pMVar2 != (MVWorldObjectClientManager *)0x0)) {
           pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                               (pMVar2,(int32_t)data[1].klass,(MethodInfo *)0x0);
           data = (Object *)0x0;
-          if (unaff_EBX != (MVCameraBase *)0x0) {
-            (*(code *)(unaff_EBX->klass->vtable).FocusOnObject.method)(unaff_EBX,pMVar3,0x40000000)
-            ;
+          if (pMVar20 != (MVCameraBase *)0x0) {
+            (*(code *)(pMVar20->klass->vtable).FocusOnObject.method)(pMVar20,pMVar3,0x40000000);
             pMVar12 = (this->fields)._.buildModeAvatar;
             data = (Object *)0x0;
             if (pMVar12 != (MVBuildModeAvatarLocal *)0x0) {
@@ -344,24 +342,9 @@ code_?:
   func_?(data,pMVar1);
   pAVar17 = extraout_EDX_00;
 code_?:
-  bVar20 = func_?(unaff_EDI,pAVar17);
-  bVar21 = 0x99 < bVar20;
-  bVar22 = (byte)unaff_EBX;
-  bVar23 = *(char *)&unaff_EBX->klass + bVar22;
-  bVar24 = CARRY1(*(byte *)&unaff_EBX->klass,bVar22) || CARRY1(bVar23,bVar21);
-  *(byte *)&unaff_EBX->klass = bVar23 + bVar21;
-  bVar23 = *(char *)&unaff_EBX->klass + bVar22;
-  bVar25 = CARRY1(*(byte *)&unaff_EBX->klass,bVar22) || CARRY1(bVar23,bVar24);
-  *(byte *)&unaff_EBX->klass = bVar23 + bVar24;
-  bVar23 = *(byte *)&((MVBuildModeAvatarLocal_EditMode *)data)->klass;
-  bVar26 = *(char *)&((MVBuildModeAvatarLocal_EditMode *)data)->klass + extraout_CH;
-  *(byte *)&((MVBuildModeAvatarLocal_EditMode *)data)->klass = bVar26 + bVar25;
-  cRam_? = cRam_? + bVar22 +
-                 (0x99 < (byte)(bVar20 + (9 < (bVar20 & 0xf) | in_AF) * -6 + bVar21 * -0x60) ||
-                 (CARRY1(bVar23,extraout_CH) || CARRY1(bVar26,bVar25)));
-  pcVar27 = (code *)swi(3);
-  (*pcVar27)();
-  return;
+  func_?(unaff_EDI,pAVar17);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

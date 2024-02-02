@@ -16,10 +16,10 @@ Assembly-CSharp.dll::TextureHash::TextureHash_ColorToByteArray(Color color,Metho
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
+    func_?();
     cRam_? = '\x01';
   }
-  pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,4);
+  pBVar1 = (Byte__Array *)func_?();
   IStack_2.m_value = 0;
   while( true ) {
     switch(IStack_2.m_value) {
@@ -37,19 +37,22 @@ Assembly-CSharp.dll::TextureHash::TextureHash_ColorToByteArray(Color color,Metho
       break;
     default:
       str1 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
-      str2 = (String *)func_?(&::StringLiteral___);
-      str0 = (String *)func_?(&StringLiteral_Invalid_Color_index_);
+      str2 = (String *)func_?();
+      str0 = (String *)func_?();
       unaff_ESI = mscorlib.dll::System::String::String_Concat_4(str0,str1,str2,(MethodInfo *)0x0);
-      uVar4 = func_?(&TypeInfo__System__IndexOutOfRangeException);
-      unaff_EDI = (IndexOutOfRangeException *)func_?(uVar4);
+      func_?();
+      this = (IndexOutOfRangeException *)func_?();
       mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
-                (unaff_EDI,unaff_ESI,(MethodInfo *)0x0);
-      func_?(&MethodInfo__UnityEngine__Color__get_Item_int_);
+                (this,unaff_ESI,(MethodInfo *)0x0);
+      func_?();
+      cVar4 = (undefined1 *)0xffffffc7 < &stack0xffffffdc;
       func_?();
       goto code_?;
     }
+    cVar4 = '\0';
     if (pBVar1 == (Byte__Array *)0x0) break;
-    if (pBVar1->max_length <= (uint)IStack_2.m_value) {
+    cVar4 = (uint)IStack_2.m_value < pBVar1->max_length;
+    if (!(bool)cVar4) {
 code_?:
       func_?();
       break;
@@ -60,11 +63,16 @@ code_?:
       return pBVar1;
     }
   }
-  pIVar5 = (IndexOutOfRangeException__Class *)func_?();
-  pcVar6 = (char *)((int)&unaff_ESI[-0x42efdd5].monitor + 2);
-  *pcVar6 = *pcVar6 + '\"' + (pIVar5 < unaff_EDI->klass);
-  pcVar7 = (code *)swi(3);
-  pBVar1 = (Byte__Array *)(*pcVar7)();
+  uVar5 = func_?();
+  pcVar6 = (char *)((int)&unaff_ESI[-5].monitor + 3);
+  *pcVar6 = *pcVar6 + (char)((ulonglong)uVar5 >> 8) + cVar4;
+  uVar7 = in((short)CONCAT31((int3)((ulonglong)uVar5 >> 0x28),
+                             (byte)((ulonglong)uVar5 >> 0x20) & *(byte *)uVar5));
+  *unaff_EDI = uVar7;
+  pcVar6 = (char *)((int)unaff_EDI + (int)unaff_ESI * 4 + 0x26);
+  *pcVar6 = *pcVar6 + (char)((ulonglong)uVar5 >> 0x28);
+  pcVar8 = (code *)swi(3);
+  pBVar1 = (Byte__Array *)(*pcVar8)();
   return pBVar1;
 }
 
@@ -77,10 +85,10 @@ Assembly-CSharp.dll::TextureHash::TextureHash_ColorsToByteArray
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__System__Byte);
     cRam_? = '\x01';
   }
-  pBVar1 = (Byte__Array *)func_?();
+  pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,sampleSize * sampleSize * 4);
   uVar2 = 0;
   pCVar3 = colors;
   if (colors == (Color__Array *)0x0) {
@@ -88,15 +96,15 @@ code_?:
     func_?();
 code_?:
     pSVar4 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_5,(MethodInfo *)0x0);
-    str2 = (String *)func_?();
-    str0 = (String *)func_?();
+    str2 = (String *)func_?(&::StringLiteral___);
+    str0 = (String *)func_?(&StringLiteral_Invalid_Color_index_);
     pSVar4 = mscorlib.dll::System::String::String_Concat_4(str0,pSVar4,str2,(MethodInfo *)0x0);
-    func_?();
-    pIVar6 = (IndexOutOfRangeException *)func_?();
+    uVar6 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+    pIVar7 = (IndexOutOfRangeException *)func_?(uVar6);
     mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
-              (pIVar6,pSVar4,(MethodInfo *)0x0);
-    func_?();
-    IStack_5.m_value = (int32_t)pIVar6;
+              (pIVar7,pSVar4,(MethodInfo *)0x0);
+    func_?(&MethodInfo__UnityEngine__Color__get_Item_int_);
+    IStack_5.m_value = (int32_t)pIVar7;
     func_?();
   }
   else {
@@ -105,110 +113,58 @@ code_?:
         return pBVar1;
       }
       if (colors->max_length <= uVar2) break;
-      fVar7 = pCVar3->vector[0].r;
-      fVar8 = pCVar3->vector[0].g;
-      fStack_9 = pCVar3->vector[0].b;
-      fVar10 = pCVar3->vector[0].a;
+      fVar8 = pCVar3->vector[0].r;
+      fVar9 = pCVar3->vector[0].g;
+      fVar10 = pCVar3->vector[0].b;
+      fVar11 = pCVar3->vector[0].a;
       if (cRam_? == '\0') {
-        func_?();
+        func_?(&TypeInfo__System__Byte);
         cRam_? = '\x01';
       }
-      iVar11 = func_?();
-      pIVar6 = (IndexOutOfRangeException *)0x0;
+      iVar12 = func_?(TypeInfo__System__Byte,4);
+      pIVar7 = (IndexOutOfRangeException *)0x0;
       do {
-        IStack_5.m_value = (int32_t)pIVar6;
+        IStack_5.m_value = (int32_t)pIVar7;
         switch(IStack_5.m_value) {
         case 0:
-          fVar12 = fVar7;
+          fVar13 = fVar8;
           break;
         case 1:
-          fVar12 = fVar8;
+          fVar13 = fVar9;
           break;
         case 2:
-          fVar12 = fStack_9;
+          fVar13 = fVar10;
           break;
         case 3:
-          fVar12 = fVar10;
+          fVar13 = fVar11;
           break;
         default:
           goto code_?;
         }
-        if (iVar11 == 0) goto code_?;
-        if (*(IndexOutOfRangeException **)(iVar11 + 0xc) <= (uint)IStack_5.m_value)
+        if (iVar12 == 0) goto code_?;
+        if (*(IndexOutOfRangeException **)(iVar12 + 0xc) <= (uint)IStack_5.m_value)
         goto code_?;
-        *(char *)((int)&(((IndexOutOfRangeException *)IStack_5.m_value)->fields)._._._data + iVar11)
-             = (char)(int)(fVar12 * _UNK_?);
-        pIVar6 = (IndexOutOfRangeException *)
-                 ((int)&((IndexOutOfRangeException *)IStack_5.m_value)->klass + 1);
-      } while ((int)pIVar6 < 4);
-      uVar13 = 0;
+        *(char *)((int)&(((IndexOutOfRangeException *)IStack_5.m_value)->fields)._._._data + iVar12)
+             = (char)(int)(fVar13 * _UNK_?);
+        pIVar7 = (IndexOutOfRangeException *)
+                  ((int)&((IndexOutOfRangeException *)IStack_5.m_value)->klass + 1);
+      } while ((int)pIVar7 < 4);
+      uVar14 = 0;
       do {
-        if (*(uint *)(iVar11 + 0xc) <= uVar13) goto code_?;
+        if (*(uint *)(iVar12 + 0xc) <= uVar14) goto code_?;
         if (pBVar1 == (Byte__Array *)0x0) goto code_?;
-        if (pBVar1->max_length <= uVar13 + uVar2 * 4) goto code_?;
-        pBVar1->vector[uVar13 + uVar2 * 4] = *(uint8_t *)(iVar11 + 0x10 + uVar13);
-        uVar13 = uVar13 + 1;
-      } while ((int)uVar13 < 4);
+        if (pBVar1->max_length <= uVar14 + uVar2 * 4) goto code_?;
+        pBVar1->vector[uVar14 + uVar2 * 4] = *(uint8_t *)(iVar12 + 0x10 + uVar14);
+        uVar14 = uVar14 + 1;
+      } while ((int)uVar14 < 4);
       uVar2 = uVar2 + 1;
       pCVar3 = (Color__Array *)pCVar3->vector;
     }
   }
 code_?:
   func_?();
-  in((short)CONCAT31((int3)((uint)extraout_EDX >> 8),(byte)extraout_EDX & bRam_?));
-  *unaff_FS_OFFSET = (float)&stack0xffffffd0;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Convert);
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Security__Cryptography__SHA1CryptoServiceProvider);
-    func_?(&TypeInfo__UnityEngine__Texture2D);
-    cRam_? = '\x01';
-  }
-  if (colors != (Color__Array *)0x0) {
-    pCVar3 = (Color__Array *)0x0;
-    if ((Texture2D__Class *)colors->klass == TypeInfo__UnityEngine__Texture2D) {
-      pCVar3 = colors;
-    }
-    if (pCVar3 == (Color__Array *)0x0) {
-      func_?(colors,TypeInfo__UnityEngine__Texture2D);
-    }
-    else {
-      pCVar3 = (Color__Array *)0x0;
-      if ((Texture2D__Class *)colors->klass == TypeInfo__UnityEngine__Texture2D) {
-        pCVar3 = colors;
-      }
-      pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_GetPixels_1
-                         ((Texture2D *)pCVar3,0,0,10,10,(MethodInfo *)0x0);
-      pBVar1 = TextureHash_ColorsToByteArray(pCVar3,10,(MethodInfo *)0x0);
-      this = (SHA1CryptoServiceProvider *)
-             func_?(TypeInfo__System__Security__Cryptography__SHA1CryptoServiceProvider);
-      mscorlib.dll::System::Security::Cryptography::SHA1CryptoServiceProvider::
-      SHA1CryptoServiceProvider__ctor(this,(MethodInfo *)0x0);
-      IStack_5.m_value = 1;
-      if (this != (SHA1CryptoServiceProvider *)0x0) {
-        pBVar1 = mscorlib.dll::System::Security::Cryptography::HashAlgorithm::
-                 HashAlgorithm_ComputeHash((HashAlgorithm *)this,pBVar1,(MethodInfo *)0x0);
-        if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        pBVar1 = (Byte__Array *)
-                 mscorlib.dll::System::Convert::Convert_ToBase64String(pBVar1,(MethodInfo *)0x0);
-        IStack_5.m_value = -1;
-        if (this == (SHA1CryptoServiceProvider *)0x0) {
-          *unaff_FS_OFFSET = fStack_9;
-          return pBVar1;
-        }
-        func_?();
-        *unaff_FS_OFFSET = fStack_9;
-        return pBVar1;
-      }
-    }
-  }
-  uVar14 = func_?();
-  func_?(uVar14);
-  pcVar15 = (code *)swi(3);
-  pBVar1 = (Byte__Array *)(*pcVar15)();
-  return pBVar1;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

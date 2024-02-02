@@ -158,7 +158,7 @@ Assembly-CSharp.dll::MoveableController::MoveableController_GetRotationQuat
                   pVVar12 = (Vector3 *)func_?();
                   pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
                                      ((Quaternion *)&stack0xffffffcc,
-                                      (float)fVar11 * _UNK_? * 3.5118093e-29,*pVVar12,
+                                      (float)fVar11 * _UNK_? * 3.511867e-29,*pVVar12,
                                       (MethodInfo *)0x0);
                   fVar4 = pQVar7->x;
                   fVar5 = pQVar7->y;

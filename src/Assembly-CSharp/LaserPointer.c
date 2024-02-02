@@ -45,7 +45,7 @@ void Assembly-CSharp.dll::LaserPointer::LaserPointer_ApplyMaterialForState
      (this_00 = (pMVar3->fields)._MaterialRepository_k__BackingField,
      this_00 == (MVMaterialRepository *)0x0)) goto code_?;
   pMVar4 = MVMaterialRepository::MVMaterialRepository_GetMaterial
-                     (this_00,(this->fields).currentCubeMaterialId,(MethodInfo *)0x0);
+                      (this_00,(this->fields).currentCubeMaterialId,(MethodInfo *)0x0);
   switch((this->fields).state) {
   case 0:
     pRVar5 = (this->fields).cubeRenderer;
@@ -120,12 +120,26 @@ code_?:
     goto code_?;
   }
 code_?:
-  func_?();
-  *(char *)(extraout_EDX + -0x57efaaf4) =
-       *(char *)(extraout_EDX + -0x57efaaf4) +
-       unaff_BL + (extraout_CL ^ (byte)*(undefined4 *)(extraout_EDX * 2 + 0x550c7310));
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  cVar10 = '\0';
+  uVar11 = func_?();
+  pbVar12 = (byte *)((ulonglong)uVar11 >> 0x20);
+  uRam_? = (undefined4)uVar11;
+  bVar13 = (byte)((ulonglong)uVar11 >> 0x20);
+  _cStack0000000c = CONCAT31(uStack14,cStack15 + bVar13 + cVar10);
+  pbVar16 = *(byte **)extraout_ECX;
+  bVar17 = *pbVar12;
+  bVar18 = *pbVar12 + (byte)extraout_ECX;
+  *pbVar12 = bVar18 + (pbVar12 < pbVar16);
+  bVar19 = CARRY4(_cStack0000000c,(uint)pbVar12) ||
+           CARRY4((uint)(pbVar12 + _cStack0000000c),
+                  (uint)(CARRY1(bVar17,(byte)extraout_ECX) || CARRY1(bVar18,pbVar12 < pbVar16)));
+  bVar17 = *extraout_ECX;
+  bVar18 = *extraout_ECX;
+  *extraout_ECX = (bVar18 - bVar13) - bVar19;
+  *unaff_EBX = *unaff_EBX + (char)((uint)unaff_EBX >> 8) +
+               (bVar17 < bVar13 || (byte)(bVar18 - bVar13) < bVar19);
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)(&stack0xfffffffc,&stack0xfffffffc);
   return;
 }
 

@@ -558,27 +558,20 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   default:
     return;
   }
-  bVar7 = 0;
-  uVar8 = func_?();
-  uVar9 = (uint)uVar8;
+  uVar7 = func_?();
+  uVar8 = (uint)uVar7;
   if (bVar1) {
-    puVar10 = &stack0xfffffffc + uVar9;
-    puVar11 = puVar10 + bVar7;
-    uVar9 = (uint)(CARRY4(uVar9,(uint)&stack0xfffffffc) || CARRY4((uint)puVar10,(uint)bVar7));
-    pcVar12 = (char *)((int)&unaff_ESI[0x17d0233].klass + 2);
-    *pcVar12 = (*pcVar12 - (char)((uint)(puVar11 + 0x68ffdc35 + uVar9) >> 8)) -
-              ((undefined1 *)0x970023ca < puVar11 || CARRY4((uint)(puVar11 + 0x68ffdc35),uVar9));
     iRam_? = (int)&unaff_ESI->klass + iRam_?;
-    puVar10 = (undefined1 *)((int)&(unaff_EBX->_0).implementedInterfaces + 2);
-    *(int *)puVar10 = *(int *)puVar10 + (int)((ulonglong)uVar8 >> 0x20);
+    puVar9 = (undefined1 *)((int)&(unaff_EBX->_0).implementedInterfaces + 2);
+    *(int *)puVar9 = *(int *)puVar9 + (int)((ulonglong)uVar7 >> 0x20);
     method_01 = TypeInfo__ReviveUIHandlerBoosts____c__DisplayClass16_0;
     value = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
     if (value == (Object *)0x0) {
       func_?();
-      pcVar13 = (code *)swi(3);
-      (*pcVar13)();
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
       return;
     }
     value[1].monitor = (MonitorData *)this;
@@ -605,12 +598,12 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
     }
     return;
   }
-  pcVar12 = (char *)((int)&unaff_EDI[1].fields._._._._._.m_CachedPtr + 3);
-  *pcVar12 = *pcVar12 + extraout_CL + (uVar9 < 0x3d737810);
-  *(char *)(uVar9 + 0x73) =
-       *(char *)(uVar9 + 0x73) + (char)((uint)unaff_EBX >> 8) + (uVar9 < 0x3d737610);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar11 = (char *)((int)&unaff_EDI[1].fields._._._._._.m_CachedPtr + 3);
+  *pcVar11 = *pcVar11 + extraout_CL + (uVar8 < 0x3d737810);
+  *(char *)(uVar8 + 0x73) =
+       *(char *)(uVar8 + 0x73) + (char)((uint)unaff_EBX >> 8) + (uVar8 < 0x3d737610);
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

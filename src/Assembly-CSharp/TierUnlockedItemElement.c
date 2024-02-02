@@ -60,7 +60,7 @@ Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_CreatePrev
               if ((Behaviour *)pOVar5->max_length <= unaff_ESI) goto code_?;
               pIVar6 = (unaff_EDI->_0).image;
               if (pIVar6 == (Il2CppImage *)0x0) goto code_?;
-              if (*(bool *)&pIVar6->nameToClassHashTable == 0) {
+              if (*(bool *)&pIVar6->codeGenModule == 0) {
                 GreyOutObjectScript::GreyOutObjectScript_GreyIn
                           ((GreyOutObjectScript *)pIVar6,(MethodInfo *)0x0);
                 bVar4 = true;

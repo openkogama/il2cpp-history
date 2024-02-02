@@ -59,7 +59,7 @@ void Assembly-CSharp.dll::CollectTheItemObject::CollectTheItemObject_InitializeG
                                ((Renderer *)this_01,(MethodInfo *)0x0);
             value[1].monitor = (MonitorData *)pMVar7;
             func_?();
-            this_02 = (Object__Array *)(this_01->_0).this_arg.data.type;
+            this_02 = *(Object__Array **)&(this_01->_0).this_arg.attrs;
             if (this_02 == (Object__Array *)0x0) goto code_?;
             mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
             List_1_System_Object__Add

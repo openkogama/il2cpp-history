@@ -781,7 +781,6 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
       return;
     }
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    unaff_ESI = this;
     if ((((pMVar1 != (MVNetworkGame *)0x0) &&
          (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) &&
         (pMVar4 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
@@ -834,10 +833,10 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
     }
   }
   uVar12 = func_?();
-  pcVar13 = (char *)((extraout_ECX & (uint)unaff_ESI) - 0xf);
-  *pcVar13 = *pcVar13 + (char)uVar12 + -0x10 + (uVar12 < 0x2df13110);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  *(char *)(extraout_ECX + -0xe) =
+       *(char *)(extraout_ECX + -0xe) + (char)uVar12 + -0x10 + (uVar12 < 0x2df23110);
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

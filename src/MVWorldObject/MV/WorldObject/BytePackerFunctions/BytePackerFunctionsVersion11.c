@@ -144,10 +144,8 @@ code_?:
     return (Dictionary_2_System_Object_System_Object_ *)0x0;
   }
   func_?();
-  *(byte *)(extraout_EDX + -0x5cb0ef26) = *(byte *)(extraout_EDX + -0x5cb0ef26) | extraout_AH;
-  pcVar9 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar9)();
-  return pDVar1;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

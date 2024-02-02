@@ -14,17 +14,17 @@ using UnityEngine;
 public class Water : MonoBehaviour
 {
 	// Fields
-	private static bool s_InsideWater;
-	public WaterMode m_WaterMode;
-	public LayerMask m_ReflectLayers;
-	public bool m_DisablePixelLights;
-	public int m_TextureSize;
-	public float m_ClipPlaneOffset;
-	private Dictionary<object, object> m_ReflectionCameras;
-	private RenderTexture m_ReflectionTexture;
-	private WaterMode m_HardwareWaterSupport;
-	private int m_OldReflectionTextureSize;
-	private bool m_IsLethal;
+	private static bool InsideWater;
+	public WaterMode waterMode;
+	public bool disablePixelLights;
+	public bool isCameraAboveWater;
+	public int textureSize;
+	public float clipPlaneOffset;
+	private Dictionary<object, object> reflectionCameras;
+	private RenderTexture reflectionTexture;
+	private WaterMode hardwareWaterSupport;
+	private int oldReflectionTextureSize;
+	private bool isLethal;
 	[SerializeField]
 	private Texture m_WaterBumpTexture;
 	[SerializeField]

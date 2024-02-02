@@ -278,7 +278,6 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
     func_?(&TypeInfo__GameRankRequirement);
     func_?(&TypeInfo__LevelBasedUseRequirement);
     func_?(&TypeInfo__MVVehicleBase);
-    func_?(&TypeInfo__UnityEngine__Object);
     func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement);
     func_?(&TypeInfo__UseInteractor);
     func_?(&
@@ -289,11 +288,10 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
                    );
     func_?(&StringLiteral_spawnWorldObjectID);
     func_?(&StringLiteral_Could_not_get_spawnPoint_child_s);
-    func_?(&StringLiteral_hiddenShader_not_found);
     cRam_? = '\x01';
   }
   pMVar1 = MVBlueprintBase::MVBlueprintBase_GetChild
-                      ((MVBlueprintBase *)this,StringLiteral_spawnWorldObjectID,(MethodInfo *)0x0);
+                     ((MVBlueprintBase *)this,StringLiteral_spawnWorldObjectID,(MethodInfo *)0x0);
   if (pMVar1 == (MVWorldObjectClient *)0x0) {
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
@@ -358,7 +356,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
         pTVar3 = (this->fields)._.triggerBoxEvents;
         pUVar5 = (this->fields)._.useInteractor;
         pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
-                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+                 func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   (pUVar6,(Object *)pUVar5,
@@ -443,59 +441,21 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
                               (this->fields).pickupItemObjectScript = pGVar12;
                               func_?(&(this->fields).pickupItemObjectScript,pGVar12);
                               pGVar12 = (this->fields).pickupItemObjectScript;
-                              pMVar13 = MVGameControllerBase::
-                                        MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
-                              if ((pMVar13 != (MaterialLoader *)0x0) &&
-                                 (pSVar14 = (pMVar13->fields).pickupItemShader,
-                                 pGVar12 != (GreyOutObjectScript *)0x0)) {
-                                (pGVar12->fields).hiddenShader = pSVar14;
-                                func_?(&(pGVar12->fields).hiddenShader,pSVar14);
-                                pGVar12 = (this->fields).pickupItemObjectScript;
-                                if (pGVar12 != (GreyOutObjectScript *)0x0) {
-                                  pSVar14 = (pGVar12->fields).hiddenShader;
-                                  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor
-                                      == 0) {
-                                    func_?(TypeInfo__UnityEngine__Object);
-                                  }
-                                  bVar15 = UnityEngine.CoreModule.dll::UnityEngine::Object::
-                                          Object_1_op_Equality
-                                                    ((Object_1 *)pSVar14,(Object_1 *)0x0,
-                                                     (MethodInfo *)0x0);
-                                  if (bVar15 != 0) {
-                                    if ((TypeInfo__UnityEngine__Debug->_1).
-                                        cctor_finished_or_no_cctor == 0) {
-                                      func_?(TypeInfo__UnityEngine__Debug);
-                                    }
-                                    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                                              ((Object *)StringLiteral_hiddenShader_not_found,
-                                               (MethodInfo *)0x0);
-                                  }
-                                  pGVar12 = (this->fields).pickupItemObjectScript;
-                                  this_07 = MVGameControllerBase::MVGameControllerBase_get_WOCM
-                                                      ((MethodInfo *)0x0);
-                                  if (((this_07 != (MVWorldObjectClientManager *)0x0) &&
-                                      (pMVar16 = MVWorldObjectClientManager::
-                                                 MVWorldObjectClientManager_GetWorldObject
-                                                           (this_07,(this->fields)._.
-                                                                    spawnWorldObjectID,
-                                                            (MethodInfo *)0x0),
-                                      pMVar16 != (MVWorldObject *)0x0)) &&
-                                     (pLVar17 = pMVar16[1].fields.inputLinkRefs,
-                                     pGVar12 != (GreyOutObjectScript *)0x0)) {
-                                    (pGVar12->fields).pickupObject = (GameObject *)pLVar17;
-                                    func_?(&(pGVar12->fields).pickupObject,pLVar17);
-                                    pGVar12 = (this->fields).pickupItemObjectScript;
-                                    if (pGVar12 != (GreyOutObjectScript *)0x0) {
-                                      GreyOutObjectScript::
-                                      GreyOutObjectScript_InitializeOriginalMaterials
-                                                (pGVar12,(MethodInfo *)0x0);
-                                      (this->fields).initFlag = 1;
-                                      MVWorldObjectSpawnerVehicle_SetupCulling
-                                                (this,(MethodInfo *)0x0);
-                                      return;
-                                    }
-                                  }
-                                }
+                              this_07 = MVGameControllerBase::MVGameControllerBase_get_WOCM
+                                                  ((MethodInfo *)0x0);
+                              if (((this_07 != (MVWorldObjectClientManager *)0x0) &&
+                                  (pMVar13 = MVWorldObjectClientManager::
+                                             MVWorldObjectClientManager_GetWorldObject
+                                                       (this_07,(this->fields)._.spawnWorldObjectID,
+                                                        (MethodInfo *)0x0),
+                                  pMVar13 != (MVWorldObject *)0x0)) &&
+                                 (pGVar12 != (GreyOutObjectScript *)0x0)) {
+                                GreyOutObjectScript::GreyOutObjectScript_SetPickupObject
+                                          (pGVar12,(GameObject *)pMVar13[1].fields.inputLinkRefs,
+                                           (MethodInfo *)0x0);
+                                (this->fields).initFlag = 1;
+                                MVWorldObjectSpawnerVehicle_SetupCulling(this,(MethodInfo *)0x0);
+                                return;
                               }
                             }
                           }
@@ -514,8 +474,8 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
   func_?();
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

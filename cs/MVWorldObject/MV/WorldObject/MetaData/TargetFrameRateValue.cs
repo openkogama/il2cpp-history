@@ -14,10 +14,10 @@ namespace MV.WorldObject.MetaData
 {
 	public enum TargetFrameRateValue
 	{
-		_20 = 0,
-		_30 = 1,
-		_60 = 2,
-		_120 = 3,
+		Unlimited = 0,
+		Low = 1,
+		Medium = 2,
+		High = 3,
 		SameAsScreenHz = 4
 	}
 }

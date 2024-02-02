@@ -6,89 +6,64 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_Awake
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&StringLiteral_Cubemodel_hiddenShader_not_found);
+    func_?(&StringLiteral_Standard_hiddenShader_not_found);
     cRam_? = '\x01';
   }
   UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
             ((Behaviour *)this,0,(MethodInfo *)0x0);
-  pGVar1 = (this->fields).pickupObject;
+  exists = (this->fields).pickupObject;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
-                    ((Object_1 *)pGVar1,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
-    return;
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
+                    ((Object_1 *)exists,(MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    GreyOutObjectScript_InitializeOriginalMaterials(this,(MethodInfo *)0x0);
   }
-  if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Clear__
-                   );
-    func_?(&TypeInfo__GreyOutObjectScript__PickupOriginalMaterials);
-    cRam_? = '\x01';
-  }
-  pLVar3 = (this->fields).pickupOriginalMaterials;
-  if (pLVar3 != (List_1_GreyOutObjectScript_PickupOriginalMaterials_ *)0x0) {
-    length = (pLVar3->fields)._size;
-    piVar4 = &(pLVar3->fields)._version;
-    *piVar4 = *piVar4 + 1;
-    (pLVar3->fields)._size = 0;
-    if (0 < length) {
-      mscorlib.dll::System::Array::Array_Clear
-                ((Array *)(pLVar3->fields)._items,0,length,(MethodInfo *)0x0);
-    }
-    pGVar1 = (this->fields).pickupObject;
-    if (pGVar1 != (GameObject *)0x0) {
-      this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                GameObject_GetComponentsInChildren
-                          (pGVar1,
-                           UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
-                          );
-      uVar5 = 0;
-      if (this_01 != (Object__Array *)0x0) {
-        ppOVar6 = this_01->vector;
-        while( true ) {
-          method_00 = TypeInfo__GreyOutObjectScript__PickupOriginalMaterials;
-          if ((int)this_01->max_length <= (int)uVar5) {
-            return;
-          }
-          if (this_01->max_length <= uVar5) break;
-          this_00 = (Object__Class *)*ppOVar6;
-          value = (Object *)func_?();
-          *(undefined1 *)&value[2].klass = 1;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-          value[1].klass = this_00;
-          func_?();
-          if (this_00 == (Object__Class *)0x0) goto code_?;
-          pMVar7 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterials
-                             ((Renderer *)this_00,(MethodInfo *)0x0);
-          value[1].monitor = (MonitorData *)pMVar7;
-          func_?(&value[1].monitor,pMVar7);
-          this_01 = (Object__Array *)(this_00->_0).this_arg.data.type;
-          if (this_01 == (Object__Array *)0x0) goto code_?;
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Add
-                    ((List_1_System_Object_ *)this_01,value,
-                     MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_
-                    );
-          uVar5 = uVar5 + 1;
-          ppOVar6 = (Object **)&value->monitor;
-        }
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+  if (pMVar2 != (MaterialLoader *)0x0) {
+    pSVar3 = MaterialLoader::MaterialLoader_GetCubeModelUnavailableShader(pMVar2,(MethodInfo *)0x0);
+    (this->fields).cubeModelHiddenShader = pSVar3;
+    func_?();
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+    if (pMVar2 != (MaterialLoader *)0x0) {
+      (this->fields).standardHiddenShader = (pMVar2->fields).pickupUnavailableShader;
+      func_?();
+      pSVar3 = (this->fields).cubeModelHiddenShader;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
+      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                        ((Object_1 *)pSVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar1 != 0) {
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                  ((Object *)StringLiteral_Cubemodel_hiddenShader_not_found,(MethodInfo *)0x0);
+      }
+      pSVar3 = (this->fields).standardHiddenShader;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                        ((Object_1 *)pSVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar1 != 0) {
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                  ((Object *)StringLiteral_Standard_hiddenShader_not_found,(MethodInfo *)0x0);
+      }
+      return;
     }
   }
-code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -286,6 +261,10 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_GreyOutExec
                MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&StringLiteral_CubeModel);
+    cRam_? = '\x01';
+  }
   if ((pickupOriginalMaterial != (GreyOutObjectScript_PickupOriginalMaterials *)0x0) &&
      (this_00 = (pickupOriginalMaterial->fields).meshRenderer, this_00 != (MeshRenderer *)0x0)) {
     pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials
@@ -298,19 +277,35 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_GreyOutExec
           return;
         }
         if (pMVar1->max_length <= uVar2) break;
-        if (*ppMVar3 == (Material *)0x0) goto code_?;
+        this_01 = *ppMVar3;
+        if (this_01 == (Material *)0x0) goto code_?;
+        pSVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_shader
+                           (this_01,(MethodInfo *)0x0);
+        if (pSVar4 == (Shader *)0x0) goto code_?;
+        this_02 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
+                            ((Object_1 *)pSVar4,(MethodInfo *)0x0);
+        pSVar5 = StringLiteral_CubeModel;
+        if (this_02 == (String *)0x0) goto code_?;
+        bVar6 = mscorlib.dll::System::String::String_Contains
+                          (this_02,StringLiteral_CubeModel,(MethodInfo *)0x0);
+        if (bVar6 == 0) {
+          pSVar4 = (Shader *)pSVar5[1].fields._stringLength;
+        }
+        else {
+          pSVar4 = (Shader *)pSVar5[1].monitor;
+        }
         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_shader
-                  (*ppMVar3,(this->fields).hiddenShader,(MethodInfo *)0x0);
+                  (this_01,pSVar4,(MethodInfo *)0x0);
         uVar2 = uVar2 + 1;
-        ppMVar3 = ppMVar3 + 1;
+        ppMVar3 = (Material **)&UNK_?;
       }
       func_?();
     }
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -453,6 +448,19 @@ code_?:
   func_?();
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
+  return;
+}
+
+
+/* Void SetPickupObject(GameObject) */
+
+void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_SetPickupObject
+               (GreyOutObjectScript *this,GameObject *pickupObject,MethodInfo *method)
+
+{
+  (this->fields).pickupObject = pickupObject;
+  func_?(&(this->fields).pickupObject,pickupObject);
+  GreyOutObjectScript_InitializeOriginalMaterials(this,(MethodInfo *)0x0);
   return;
 }
 

@@ -336,11 +336,11 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeAnimation
                                  Int32Enum,System::Object]::
                                  Dictionary_2_System_Int32Enum_System_Object__get_Item
                                            ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,
-                                            0x1c,
+                                            0x33,
                                             MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                            );
                         if (pOVar2 != (Object *)0x0) {
-                          pOVar2[6].monitor = (MonitorData *)0x3f800000;
+                          pOVar2[6].monitor = (MonitorData *)0x3dcccccd;
                           pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary
                           ;
                           if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
@@ -348,12 +348,28 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeAnimation
                                      ::Int32Enum,System::Object]::
                                      Dictionary_2_System_Int32Enum_System_Object__get_Item
                                                ((Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                pDVar1,0x40,
+                                                pDVar1,0x1c,
                                                 MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                );
                             if (pOVar2 != (Object *)0x0) {
                               pOVar2[6].monitor = (MonitorData *)0x3f800000;
-                              return;
+                              pDVar1 = TypeInfo__TextureAtlasData->static_fields->
+                                       materialDataDictionary;
+                              if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0)
+                              {
+                                pOVar2 = mscorlib.dll::System::Collections::Generic::
+                                         Dictionary`2[System::Int32Enum,System::Object]::
+                                         Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                                   ((Dictionary_2_System_Int32Enum_System_Object_ *)
+                                                    pDVar1,0x40,
+                                                                                                        
+                                                  MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                                                  );
+                                if (pOVar2 != (Object *)0x0) {
+                                  pOVar2[6].monitor = (MonitorData *)0x3f800000;
+                                  return;
+                                }
+                              }
                             }
                           }
                         }
@@ -398,7 +414,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                         MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                        );
     if (pOVar2 != (Object *)0x0) {
-      pOVar2[3].klass = (Object__Class *)0x3ecccccd;
+      pOVar2[3].klass = (Object__Class *)0x3f400000;
       pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
       if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
         pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
@@ -407,7 +423,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                             MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                            );
         if (pOVar2 != (Object *)0x0) {
-          pOVar2[3].klass = (Object__Class *)0x3e99999a;
+          pOVar2[3].klass = (Object__Class *)0x3f333333;
           pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
           if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
             pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
@@ -417,7 +433,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                 MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                );
             if (pOVar2 != (Object *)0x0) {
-              pOVar2[3].klass = (Object__Class *)0x3e99999a;
+              pOVar2[3].klass = (Object__Class *)0x3ecccccd;
               pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
               if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
                 pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
@@ -444,11 +460,11 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                  Int32Enum,System::Object]::
                                  Dictionary_2_System_Int32Enum_System_Object__get_Item
                                            ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,
-                                            0x41,
+                                            0x37,
                                             MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                            );
                         if (pOVar2 != (Object *)0x0) {
-                          pOVar2[3].klass = (Object__Class *)0x3e800000;
+                          pOVar2[3].klass = (Object__Class *)0x3f666666;
                           pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary
                           ;
                           if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
@@ -456,7 +472,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                      ::Int32Enum,System::Object]::
                                      Dictionary_2_System_Int32Enum_System_Object__get_Item
                                                ((Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                pDVar1,0x1b,
+                                                pDVar1,0x2f,
                                                 MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                );
                             if (pOVar2 != (Object *)0x0) {
@@ -469,12 +485,12 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                          Dictionary`2[System::Int32Enum,System::Object]::
                                          Dictionary_2_System_Int32Enum_System_Object__get_Item
                                                    ((Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                    pDVar1,0x2a,
+                                                    pDVar1,0x1a,
                                                                                                         
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                 if (pOVar2 != (Object *)0x0) {
-                                  pOVar2[3].klass = (Object__Class *)0x3f000000;
+                                  pOVar2[3].monitor = (MonitorData *)0x3f800000;
                                   pDVar1 = TypeInfo__TextureAtlasData->static_fields->
                                            materialDataDictionary;
                                   if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)
@@ -484,11 +500,11 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                              Dictionary_2_System_Int32Enum_System_Object__get_Item
                                                        ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  pDVar1,0x36,
+                                                  pDVar1,0x2f,
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                     if (pOVar2 != (Object *)0x0) {
-                                      pOVar2[3].klass = (Object__Class *)0x3f000000;
+                                      pOVar2[3].monitor = (MonitorData *)0x3f400000;
                                       pDVar1 = TypeInfo__TextureAtlasData->static_fields->
                                                materialDataDictionary;
                                       if (pDVar1 != (
@@ -499,11 +515,11 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                  Dictionary_2_System_Int32Enum_System_Object__get_Item
                                                            ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  pDVar1,0x2f,
+                                                  pDVar1,0x1a,
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                         if (pOVar2 != (Object *)0x0) {
-                                          pOVar2[3].klass = (Object__Class *)0x3e99999a;
+                                          pOVar2[4].klass = (Object__Class *)0x3ecccccd;
                                           pDVar1 = TypeInfo__TextureAtlasData->static_fields->
                                                    materialDataDictionary;
                                           if (pDVar1 != (
@@ -515,11 +531,11 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                   Dictionary_2_System_Int32Enum_System_Object__get_Item
                                                             ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  pDVar1,0x1a,
+                                                  pDVar1,0x1c,
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                             if (pOVar2 != (Object *)0x0) {
-                                              pOVar2[3].monitor = (MonitorData *)0x3f800000;
+                                              pOVar2[4].klass = (Object__Class *)0x3e4ccccd;
                                               pDVar1 = TypeInfo__TextureAtlasData->static_fields->
                                                        materialDataDictionary;
                                               if (pDVar1 != (
@@ -531,65 +547,14 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                   Dictionary_2_System_Int32Enum_System_Object__get_Item
                                                             ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  pDVar1,0x2f,
-                                                  MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
-                                                  );
-                                                if (pOVar2 != (Object *)0x0) {
-                                                  pOVar2[3].monitor = (MonitorData *)0x3f400000;
-                                                  pDVar1 = TypeInfo__TextureAtlasData->static_fields
-                                                           ->materialDataDictionary;
-                                                  if (pDVar1 != (
-                                                  Dictionary_2_Tile_TextureAtlasData_MaterialData_ *
-                                                  )0x0) {
-                                                    pOVar2 = mscorlib.dll::System::Collections::
-                                                             Generic::Dictionary`2[System::
-                                                             Int32Enum,System::Object]::
-                                                                                                                          
-                                                  Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                                            ((
-                                                  Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  pDVar1,0x1a,
-                                                  MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
-                                                  );
-                                                  if (pOVar2 != (Object *)0x0) {
-                                                    pOVar2[4].klass = (Object__Class *)0x3ecccccd;
-                                                    pDVar1 = TypeInfo__TextureAtlasData->
-                                                             static_fields->materialDataDictionary;
-                                                    if (pDVar1 != (
-                                                  Dictionary_2_Tile_TextureAtlasData_MaterialData_ *
-                                                  )0x0) {
-                                                    pOVar2 = mscorlib.dll::System::Collections::
-                                                             Generic::Dictionary`2[System::
-                                                             Int32Enum,System::Object]::
-                                                                                                                          
-                                                  Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                                            ((
-                                                  Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  pDVar1,0x1c,
-                                                  MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
-                                                  );
-                                                  if (pOVar2 != (Object *)0x0) {
-                                                    pOVar2[4].klass = (Object__Class *)0x3e4ccccd;
-                                                    pDVar1 = TypeInfo__TextureAtlasData->
-                                                             static_fields->materialDataDictionary;
-                                                    if (pDVar1 != (
-                                                  Dictionary_2_Tile_TextureAtlasData_MaterialData_ *
-                                                  )0x0) {
-                                                    pOVar2 = mscorlib.dll::System::Collections::
-                                                             Generic::Dictionary`2[System::
-                                                             Int32Enum,System::Object]::
-                                                                                                                          
-                                                  Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                                            ((
-                                                  Dictionary_2_System_Int32Enum_System_Object_ *)
                                                   pDVar1,0x40,
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
-                                                  if (pOVar2 != (Object *)0x0) {
-                                                    pOVar2[4].klass = (Object__Class *)0x3e4ccccd;
-                                                    pDVar1 = TypeInfo__TextureAtlasData->
-                                                             static_fields->materialDataDictionary;
-                                                    if (pDVar1 != (
+                                                if (pOVar2 != (Object *)0x0) {
+                                                  pOVar2[4].klass = (Object__Class *)0x3e4ccccd;
+                                                  pDVar1 = TypeInfo__TextureAtlasData->static_fields
+                                                           ->materialDataDictionary;
+                                                  if (pDVar1 != (
                                                   Dictionary_2_Tile_TextureAtlasData_MaterialData_ *
                                                   )0x0) {
                                                     pOVar2 = mscorlib.dll::System::Collections::
@@ -707,12 +672,6 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                   if (pOVar2 != (Object *)0x0) {
                                                     pOVar2[4].monitor = (MonitorData *)0x3e99999a;
                                                     return;
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
                                                   }
                                                   }
                                                   }

@@ -371,23 +371,28 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
        (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
        pMVar5 == (MVLocalPlayer *)0x0)) {
 code_?:
-      func_?();
-      pbVar6 = (byte *)in(extraout_DX);
-      bVar7 = *pbVar6;
-      bVar8 = (byte)extraout_DX;
-      *pbVar6 = *pbVar6 - bVar8;
-      pbVar6 = pbVar6 + (bVar7 < bVar8) + 0xe1028ee;
-      out(extraout_DX,(char)pbVar6);
-      *pbVar6 = *pbVar6 - bVar8;
-      out(extraout_DX,(char)pbVar6);
-      bVar7 = *pbVar6;
-      *pbVar6 = *pbVar6 - bVar8;
-      pbVar6 = pbVar6 + (bVar7 < bVar8) + 0xe1028ee;
-      out(extraout_DX,(char)pbVar6);
-      *pbVar6 = *pbVar6 - bVar8;
-      *(char *)((uint)pbVar6 ^ 0xee) = *(char *)((uint)pbVar6 ^ 0xee) - bVar8;
-      pcVar9 = (code *)swi(3);
-      bVar3 = (*pcVar9)();
+      uVar6 = func_?();
+      uVar7 = (undefined2)((uint6)uVar6 >> 0x20);
+      pcVar8 = (char *)uVar6;
+      out(uVar7,pcVar8);
+      cVar9 = (char)((uint6)uVar6 >> 0x20);
+      *pcVar8 = *pcVar8 - cVar9;
+      *pcVar8 = *pcVar8 - cVar9;
+      out(uVar7,pcVar8);
+      *pcVar8 = *pcVar8 - cVar9;
+      do {
+        out(uVar7,pcVar8);
+        *pcVar8 = *pcVar8 - cVar9;
+        out(uVar7,pcVar8);
+        *pcVar8 = *pcVar8 - cVar9;
+        out(uVar7,pcVar8);
+        *pcVar8 = *pcVar8 - cVar9;
+        out(uVar7,pcVar8);
+        *pcVar8 = *pcVar8 - cVar9;
+      } while (*pcVar8 == '\0');
+      *pcVar8 = *pcVar8 - cVar9;
+      pcVar10 = (code *)swi(3);
+      bVar3 = (*pcVar10)();
       return bVar3;
     }
     if ((pMVar5->fields)._._ActorNr_k__BackingField == actorNumber) {
@@ -487,23 +492,9 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
     return;
   }
 code_?:
-  pbVar6 = (byte *)func_?();
-  bVar7 = *pbVar6;
-  *pbVar6 = *pbVar6 - extraout_DL;
-  pbVar6 = pbVar6 + (-(uint)(bVar7 < extraout_DL) - unaff_ESI);
-  *pbVar6 = *pbVar6 - extraout_DL;
-  pbVar8 = (byte *)CONCAT22((short)((uint)pbVar6 >> 0x10),CONCAT11(0xef,(char)pbVar6));
-  bVar7 = *pbVar8;
-  *pbVar8 = *pbVar8 - extraout_DL;
-  uVar9 = (undefined3)((uint)pbVar8 >> 8);
-  cVar10 = ((char)pbVar6 + '\x10') - (bVar7 < extraout_DL);
-  pbVar6 = (byte *)CONCAT31(uVar9,cVar10);
-  bVar7 = *pbVar6;
-  *pbVar6 = *pbVar6 - extraout_DL;
-  pcVar11 = (char *)CONCAT31(uVar9,(cVar10 + '\x10') - (bVar7 < extraout_DL));
-  *pcVar11 = *pcVar11 - extraout_DL;
-  pcVar12 = (code *)swi(1);
-  (*pcVar12)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

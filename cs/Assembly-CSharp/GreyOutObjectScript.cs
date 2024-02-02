@@ -14,7 +14,8 @@ public class GreyOutObjectScript : MonoBehaviour
 {
 	// Fields
 	public GameObject pickupObject;
-	public Shader hiddenShader;
+	private Shader cubeModelHiddenShader;
+	private Shader standardHiddenShader;
 	private List<PickupOriginalMaterials> pickupOriginalMaterials;
 	private bool isGreyedIn;
 
@@ -41,6 +42,7 @@ public class GreyOutObjectScript : MonoBehaviour
 
 	// Methods
 	private void Awake();
+	public void SetPickupObject(GameObject pickupObject);
 	public void Hide();
 	public void GreyIn();
 	public void GreyOut();

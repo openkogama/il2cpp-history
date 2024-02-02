@@ -178,21 +178,22 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
           TVar5 = TVar4;
         }
         if (TVar5.m_Index != 0) {
+          pBVar6 = TypeInfo__System__Boolean;
           if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
               (TypeInfo__System__Boolean->_0).element_class) goto code_?;
           method = (MethodInfo *)&UNK_?;
-          piVar6 = (int8_t *)func_?();
+          piVar7 = (int8_t *)func_?();
           this = (MVSpawnPoint *)((uint)this & 0xffff0000);
           mscorlib.dll::System::Nullable`1[SByte]::Nullable_1_SByte___ctor
-                    ((Nullable_1_SByte_ *)&this,*piVar6,
+                    ((Nullable_1_SByte_ *)&this,*piVar7,
                      MethodInfo__System__Nullable<bool>__Nullable_bool_);
           (pMVar1->fields).spawnPointOnlyFirstDeath = this._0_2_;
         }
       }
     }
-    pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar7 != (MVNetworkGame *)0x0) {
-      this_00 = (MethodInfo *)(pMVar7->fields).teamManager;
+    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar8 != (MVNetworkGame *)0x0) {
+      this_00 = (MethodInfo *)(pMVar8->fields).teamManager;
       switch((pMVar1->fields)._._._.type) {
       case 0x27:
         team = MVTeam__Enum_Red;
@@ -221,14 +222,23 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
 code_?:
   func_?();
   TVar4.m_Index = (int32_t)extraout_EDX;
+  pBVar6 = unaff_EDI;
 code_?:
   this = (MVSpawnPoint *)&UNK_?;
   method = (MethodInfo *)TVar4.m_Index;
-  func_?();
-  this = (MVSpawnPoint *)0xc5103356;
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
-  return;
+  uRam_? = func_?();
+  switch(pBVar6) {
+  case (Boolean__Class *)0x27:
+    return;
+  case (Boolean__Class *)0x28:
+    return;
+  case (Boolean__Class *)0x29:
+    return;
+  case (Boolean__Class *)0x2a:
+    return;
+  default:
+    return;
+  }
 }
 
 

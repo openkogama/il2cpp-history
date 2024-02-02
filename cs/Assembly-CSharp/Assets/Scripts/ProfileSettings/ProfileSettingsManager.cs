@@ -55,13 +55,13 @@ namespace Assets.Scripts.ProfileSettings
 			public __c();
 	
 			// Methods
-			internal void _.cctor_b__39_0(object o);
-			internal void _.cctor_b__39_1(object o);
-			internal void _.cctor_b__39_2(object o);
-			internal void _.cctor_b__39_3(object o);
-			internal void _.cctor_b__39_4(object o);
-			internal void _.cctor_b__39_5(object o);
-			internal void _.cctor_b__39_6(object o);
+			internal void _.cctor_b__43_0(object o);
+			internal void _.cctor_b__43_1(object o);
+			internal void _.cctor_b__43_2(object o);
+			internal void _.cctor_b__43_3(object o);
+			internal void _.cctor_b__43_4(object o);
+			internal void _.cctor_b__43_5(object o);
+			internal void _.cctor_b__43_6(object o);
 		}
 	
 		// Constructors
@@ -69,14 +69,18 @@ namespace Assets.Scripts.ProfileSettings
 	
 		// Methods
 		public static void Init(ProfileSettingsState profileSettingsState);
+		public static void InitTourist();
 		public static object GetSettingValue(ProfileSettingKey profileSetting);
 		public static void SetSettingValue(ProfileSettingKey profileSetting, object value);
 		public static void ResetToDefaultValues();
-		public static int MaxFrameRateToInt(TargetFrameRateValue value);
+		public static int TargetFrameRateToInt(TargetFrameRateValue value);
+		public static int TargetFrameRateToVSyncValue(TargetFrameRateValue value);
 		public static int AnisoLevelToInt(AnistropicFilteringLevel level);
 		private static int AntiAliasingLevelToInt(AntiAliasingLevel level);
 		private static float CalculateMouseSensitivityValueFromValue(float value);
 		private static void SetFrameRateSetting(TargetFrameRateValue value);
+		private static void SetFrameRateDesktop(TargetFrameRateValue value);
+		private static void SetFrameRateTouch(TargetFrameRateValue value);
 		private static void SetLightQualitySetting(LightingQualityLevel level);
 	}
 }

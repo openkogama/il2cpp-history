@@ -1,4 +1,6 @@
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Boolean MoveNext() */
 
 bool Assembly-CSharp.dll::HealthbarLerp+<LerpProgress>d__10::
@@ -97,135 +99,133 @@ code_?:
     return 0;
   }
   bVar10 = 0;
-  uVar11 = func_?();
-  piVar12 = (int *)uVar11;
-  puVar13 = (undefined1 *)0xbc104275;
+  func_?();
+  puVar11 = (undefined1 *)0xbc104275;
   if (bVar4) {
-    bVar14 = (byte)((uint6)uVar11 >> 8);
-    bVar4 = CARRY1(*(byte *)&pHVar2->klass,bVar14);
-    bVar14 = *(char *)&pHVar2->klass + bVar14;
-    bVar15 = bVar4 || CARRY1(bVar14,bVar10);
-    *(byte *)&pHVar2->klass = bVar14 + bVar10;
-    if ((!bVar4 && !CARRY1(bVar14,bVar10)) && *(char *)&pHVar2->klass != '\0') {
+    bVar4 = CARRY1(*(byte *)&pHVar2->klass,extraout_AH);
+    cVar12 = *(char *)&pHVar2->klass;
+    bVar13 = *(char *)&pHVar2->klass + extraout_AH;
+    *(byte *)&pHVar2->klass = bVar13 + bVar10;
+    if ((!bVar4 && !CARRY1(bVar13,bVar10)) && *(char *)&pHVar2->klass != '\0') {
       *(char *)(unaff_EBX + 0x77) =
-           *(char *)(unaff_EBX + 0x77) + (char)((uint6)uVar11 >> 0x20) + bVar15;
-      pcVar16 = (code *)swi(3);
-      bVar17 = (*pcVar16)();
-      return bVar17;
+           *(char *)(unaff_EBX + 0x77) + extraout_DL + (bVar4 || CARRY1(bVar13,bVar10));
+code_?:
+      pcVar14 = (code *)swi(3);
+      bVar15 = (*pcVar14)();
+      return bVar15;
     }
-    out((short)((uint6)uVar11 >> 0x20),piVar12);
-    puVar13 = (undefined1 *)0xbc104271;
-    pHRambc104271 = pHVar2;
-    *(undefined1 *)&pHVar3->klass = *(undefined1 *)&pHVar2->klass;
-    *piVar12 = (int)piVar12 + (uint)bVar15 + *piVar12;
-    bVar4 = *piVar12 == 0;
-    pHVar2 = (HealthbarLerp_LerpProgress_d_10 *)((int)&pHVar2->klass + 1);
-    pHVar3 = (HealthbarLerp *)((int)&pHVar3->klass + 1);
+    if ((SCARRY1(cVar12,extraout_AH) != SCARRY1(bVar13,bVar10)) != *(char *)&pHVar2->klass < '\0')
+    goto code_?;
+code_?:
+    *(undefined2 *)(puVar11 + -4) = in_CS;
+    puVar16 = puVar11 + -8;
+    *(undefined **)(puVar11 + -8) = &UNK_?;
+    func_?();
+    *(Object_1__Class ***)(puVar16 + -4) = &TypeInfo__UnityEngine__Object;
+    puVar17 = puVar16 + -8;
+    *(undefined **)(puVar16 + -8) = &UNK_?;
+    func_?();
+    *(WaitForEndOfFrame__Class ***)(puVar17 + -4) = &TypeInfo__UnityEngine__WaitForEndOfFrame;
+    puVar18 = puVar17 + -8;
+    *(undefined **)(puVar17 + -8) = &UNK_?;
+    func_?();
+    puVar11 = puVar18 + 0xc;
+    cRam_? = '\x01';
   }
   else {
     puVar1 = (undefined1 *)0xbc104275;
-    bVar4 = cRam_? == '\0';
+    if (cRam_? == '\0') {
+      ppMRambc104271 =
+           &
+           AccessoryViewController_MethodInfo__UnityEngine__Component__GetComponent<AccessoryViewController>__
+      ;
+      puVar11 = (undefined1 *)0xbc10426d;
+      puRam_? = &UNK_?;
+      func_?();
+      goto code_?;
+    }
   }
-  if (bVar4) {
-    *(MethodInfo ***)(puVar13 + -4) =
-         &
-         AccessoryViewController_MethodInfo__UnityEngine__Component__GetComponent<AccessoryViewController>__
-    ;
-    puVar18 = puVar13 + -8;
-    *(undefined **)(puVar13 + -8) = &UNK_?;
-    func_?();
-    *(Object_1__Class ***)(puVar18 + -4) = &TypeInfo__UnityEngine__Object;
-    puVar19 = puVar18 + -8;
-    *(undefined **)(puVar18 + -8) = &UNK_?;
-    func_?();
-    *(WaitForEndOfFrame__Class ***)(puVar19 + -4) = &TypeInfo__UnityEngine__WaitForEndOfFrame;
-    puVar20 = puVar19 + -8;
-    *(undefined **)(puVar19 + -8) = &UNK_?;
-    func_?();
-    puVar13 = puVar20 + 0xc;
-    cRam_? = '\x01';
-  }
-  *(HealthbarLerp_LerpProgress_d_10 **)(puVar13 + -4) = pHVar2;
-  *(HealthbarLerp **)(puVar13 + -8) = pHVar3;
-  iVar21 = *(int *)(puVar1 + 8);
-  iVar22 = *(int *)(iVar21 + 0x10);
-  if (*(int *)(iVar21 + 8) == 0) {
-    *(undefined4 *)(iVar21 + 8) = 0xffffffff;
-    *(WaitForEndOfFrame__Class **)(puVar13 + -0xc) = TypeInfo__UnityEngine__WaitForEndOfFrame;
-    puVar23 = puVar13 + -0x10;
-    *(undefined **)(puVar13 + -0x10) = &UNK_?;
-    uVar24 = func_?();
-    *(undefined4 *)(puVar23 + -4) = 0;
-    *(undefined4 *)(puVar23 + -8) = uVar24;
-    *(undefined **)(puVar23 + -0xc) = &UNK_?;
+  *(HealthbarLerp_LerpProgress_d_10 **)(puVar11 + -4) = pHVar2;
+  *(HealthbarLerp **)(puVar11 + -8) = pHVar3;
+  iVar19 = *(int *)(puVar1 + 8);
+  iVar20 = *(int *)(iVar19 + 0x10);
+  if (*(int *)(iVar19 + 8) == 0) {
+    *(undefined4 *)(iVar19 + 8) = 0xffffffff;
+    *(WaitForEndOfFrame__Class **)(puVar11 + -0xc) = TypeInfo__UnityEngine__WaitForEndOfFrame;
+    puVar21 = puVar11 + -0x10;
+    *(undefined **)(puVar11 + -0x10) = &UNK_?;
+    uVar22 = func_?();
+    *(undefined4 *)(puVar21 + -4) = 0;
+    *(undefined4 *)(puVar21 + -8) = uVar22;
+    *(undefined **)(puVar21 + -0xc) = &UNK_?;
     UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
     UxmlObjectListAttributeDescription`1[System::Object]::
     UxmlObjectListAttributeDescription_1_System_Object___ctor
-              (*(UxmlObjectListAttributeDescription_1_System_Object_ **)(puVar23 + -8),
-               *(MethodInfo **)(puVar23 + -4));
-    *(undefined4 *)(iVar21 + 0xc) = uVar24;
-    *(undefined4 *)(puVar23 + -4) = uVar24;
-    *(int *)(puVar23 + -8) = iVar21 + 0xc;
-    *(undefined **)(puVar23 + -0xc) = &UNK_?;
+              (*(UxmlObjectListAttributeDescription_1_System_Object_ **)(puVar21 + -8),
+               *(MethodInfo **)(puVar21 + -4));
+    *(undefined4 *)(iVar19 + 0xc) = uVar22;
+    *(undefined4 *)(puVar21 + -4) = uVar22;
+    *(int *)(puVar21 + -8) = iVar19 + 0xc;
+    *(undefined **)(puVar21 + -0xc) = &UNK_?;
     func_?();
-    *(undefined4 *)(iVar21 + 8) = 1;
+    *(undefined4 *)(iVar19 + 8) = 1;
     return 1;
   }
-  if (*(int *)(iVar21 + 8) == 1) {
-    *(undefined4 *)(iVar21 + 8) = 0xffffffff;
-    piVar12 = (int *)(puVar13 + -8);
-    if ((iVar22 == 0) ||
-       (iVar21 = *(int *)(iVar22 + 0x10), piVar12 = (int *)(puVar13 + -8), iVar21 == 0)) {
+  if (*(int *)(iVar19 + 8) == 1) {
+    *(undefined4 *)(iVar19 + 8) = 0xffffffff;
+    piVar23 = (int *)(puVar11 + -8);
+    if ((iVar20 == 0) ||
+       (iVar19 = *(int *)(iVar20 + 0x10), piVar23 = (int *)(puVar11 + -8), iVar19 == 0)) {
 code_?:
-      *(undefined **)((int)piVar12 + -4) = &UNK_?;
+      *(undefined **)((int)piVar23 + -4) = &UNK_?;
       func_?();
-      pcVar16 = (code *)swi(3);
-      bVar17 = (*pcVar16)();
-      return bVar17;
+      pcVar14 = (code *)swi(3);
+      bVar15 = (*pcVar14)();
+      return bVar15;
     }
-    *(MethodInfo **)(puVar13 + -0xc) =
+    *(MethodInfo **)(puVar11 + -0xc) =
          AccessoryViewController_MethodInfo__UnityEngine__Component__GetComponent<AccessoryViewController>__
     ;
-    *(int *)(puVar13 + -0x10) = iVar21;
-    *(undefined **)(puVar13 + -0x14) = &UNK_?;
+    *(int *)(puVar11 + -0x10) = iVar19;
+    *(undefined **)(puVar11 + -0x14) = &UNK_?;
     pOVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                       (*(Component **)(puVar13 + -0x10),*(MethodInfo **)(puVar13 + -0xc));
-    *(Object **)(puVar13 + -0xc) = pOVar5;
-    *(Object **)(iVar22 + 0x40) = pOVar5;
-    *(int *)(puVar13 + -0x10) = iVar22 + 0x40;
-    puVar25 = puVar13 + -0x14;
-    *(undefined **)(puVar13 + -0x14) = &UNK_?;
+                        (*(Component **)(puVar11 + -0x10),*(MethodInfo **)(puVar11 + -0xc));
+    *(Object **)(puVar11 + -0xc) = pOVar5;
+    *(Object **)(iVar20 + 0x40) = pOVar5;
+    *(int *)(puVar11 + -0x10) = iVar20 + 0x40;
+    puVar24 = puVar11 + -0x14;
+    *(undefined **)(puVar11 + -0x14) = &UNK_?;
     func_?();
-    piVar26 = (int *)(puVar25 + 0x10);
-    uVar24 = *(undefined4 *)(iVar22 + 0x40);
+    piVar25 = (int *)(puVar24 + 0x10);
+    uVar22 = *(undefined4 *)(iVar20 + 0x40);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      *(Object_1__Class **)(puVar25 + 0xc) = TypeInfo__UnityEngine__Object;
-      puVar27 = puVar25 + 8;
-      *(undefined **)(puVar25 + 8) = &UNK_?;
+      *(Object_1__Class **)(puVar24 + 0xc) = TypeInfo__UnityEngine__Object;
+      puVar26 = puVar24 + 8;
+      *(undefined **)(puVar24 + 8) = &UNK_?;
       func_?();
-      piVar26 = (int *)(puVar27 + 4);
+      piVar25 = (int *)(puVar26 + 4);
     }
-    piVar26[-1] = 0;
-    piVar26[-2] = 0;
-    piVar26[-3] = uVar24;
-    piVar26[-4] = (int)&UNK_?;
-    bVar17 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)piVar26[-3],(Object_1 *)piVar26[-2],(MethodInfo *)piVar26[-1]);
-    piVar12 = piVar26 + 3;
-    if (bVar17 != 0) {
-      iVar21 = *(int *)(iVar22 + 0x40);
-      if (iVar21 == 0) goto code_?;
-      piVar26[2] = 0;
-      piVar26[1] = *(undefined4 *)(iVar22 + 0x4c);
-      *piVar26 = iVar21;
-      piVar26[-1] = (int)&UNK_?;
+    piVar25[-1] = 0;
+    piVar25[-2] = 0;
+    piVar25[-3] = uVar22;
+    piVar25[-4] = (int)&UNK_?;
+    bVar15 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                       ((Object_1 *)piVar25[-3],(Object_1 *)piVar25[-2],(MethodInfo *)piVar25[-1]);
+    piVar23 = piVar25 + 3;
+    if (bVar15 != 0) {
+      iVar19 = *(int *)(iVar20 + 0x40);
+      if (iVar19 == 0) goto code_?;
+      piVar25[2] = 0;
+      piVar25[1] = *(undefined4 *)(iVar20 + 0x4c);
+      *piVar25 = iVar19;
+      piVar25[-1] = (int)&UNK_?;
       AccessoryViewController::AccessoryViewController_OpenAccessoryManagementScreen
-                ((AccessoryViewController *)*piVar26,(AccessoryDataClient *)piVar26[1],
-                 (MethodInfo *)piVar26[2]);
-      *(undefined4 *)(iVar22 + 0x4c) = 0;
-      piVar26[2] = 0;
-      piVar26[1] = iVar22 + 0x4c;
-      *piVar26 = (int)&UNK_?;
+                ((AccessoryViewController *)*piVar25,(AccessoryDataClient *)piVar25[1],
+                 (MethodInfo *)piVar25[2]);
+      *(undefined4 *)(iVar20 + 0x4c) = 0;
+      piVar25[2] = 0;
+      piVar25[1] = iVar20 + 0x4c;
+      *piVar25 = (int)&UNK_?;
       func_?();
     }
   }
