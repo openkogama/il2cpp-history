@@ -227,15 +227,14 @@ code_?:
     }
   }
 code_?:
-  bVar15 = 0;
-  uVar16 = func_?();
-  puVar17 = (undefined1 *)((int)&(this_02->_0).nestedTypes + 2);
-  *puVar17 = *puVar17 + (char)((ushort)uVar16 >> 8) + (CARRY1((byte)extraout_DX,*(byte *)(extraout_ECX + 0x3f)) || CARRY1((byte)extraout_DX + *(byte *)(extraout_ECX + 0x3f),bVar15));
-  pppIVar18 = &(this_02->_0).implementedInterfaces;
-  *(byte *)pppIVar18 = *(char *)pppIVar18 + (char)((ushort)extraout_DX >> 8) + (9 < ((byte)uVar16 & 0xf) | in_AF);
-  pcVar19 = (code *)swi(3);
-  bVar20 = (*pcVar19)();
-  return bVar20;
+  bRam_? = func_?();
+  in_AF = 9 < (bRam_? & 0xf) | in_AF;
+  *(byte *)&(this_02->_0).image = *(char *)&(this_02->_0).image + (bRam_? + in_AF * -6 & 0xf) + in_AF;
+  *(char *)(extraout_ECX + 0x5a) = *(char *)(extraout_ECX + 0x5a) + (char)((uint)&stack0xfffffffc >> 8) + in_AF;
+  *(char *)(extraout_ECX + -0x33efc0a4) = *(char *)(extraout_ECX + -0x33efc0a4) + (char)extraout_ECX + (9 < (in_AF * -6 & 0xf) | in_AF);
+  pcVar15 = (code *)swi(3);
+  bVar16 = (*pcVar15)();
+  return bVar16;
 }
 
 

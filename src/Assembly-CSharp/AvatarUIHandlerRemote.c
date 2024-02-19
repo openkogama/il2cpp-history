@@ -167,7 +167,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Initializ
       this_06 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)0x161,(MethodInfo *)0x0);
       if (this_06 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_06,1,(MethodInfo *)0x0);
-        pRVar1 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)0x8b00fea9,UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__);
+        pRVar1 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)0x8b00feb0,UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__);
         if (pRVar1 != (Renderer *)0x0) {
           _UNK_? = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material(pRVar1,(MethodInfo *)0x0);
                     /* WARNING: Read-only address (ram,0xADDR) is written */
@@ -178,7 +178,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Initializ
           _UNK_? = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material((Renderer *)0xfc0850c,(MethodInfo *)0x0);
                     /* WARNING: Read-only address (ram,0xADDR) is written */
           func_?();
-          SayChatBubbleHandler::SayChatBubbleHandler_Initialize((SayChatBubbleHandler *)0xebb673e8,ownerActorNr,chatBubbleAnchor,(MethodInfo *)0x0);
+          SayChatBubbleHandler::SayChatBubbleHandler_Initialize((SayChatBubbleHandler *)0xebb493e8,ownerActorNr,chatBubbleAnchor,(MethodInfo *)0x0);
           pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if ((pMVar5 != (MVNetworkGame *)0x0) && (this_01 = (pMVar5->fields).playerContainer, this_01 != (MVPlayerContainer *)0x0)) {
             pMVar6 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe(this_01,ownerActorNr,(MethodInfo *)0x0);
@@ -680,10 +680,10 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
     }
   }
   uVar12 = func_?();
-  *(char *)(extraout_ECX + -0xe) = *(char *)(extraout_ECX + -0xe) + (char)uVar12 + -0x10 + (uVar12 < 0x2df23110);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
-  return;
+  *extraout_ECX = *extraout_ECX + (char)(uVar12 + 0xd20beef0 >> 8) + (uVar12 < 0x2df41110);
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
 }
 
 

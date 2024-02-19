@@ -39,19 +39,17 @@ int32_t Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_Ge
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* String MakeIntoScoreText(Int32, GameStatCounterType) */
 
 String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_MakeIntoScoreText(int32_t score,GameStatCounterType__Enum statType,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
+    func_?(&TypeInfo__System__String);
+    func_?(&::StringLiteral__);
+    func_?(&StringLiteral______);
+    func_?(&::StringLiteral__);
+    func_?(&StringLiteral__0);
     cRam_? = '\x01';
   }
   pSVar1 = ::StringLiteral__;
@@ -69,9 +67,9 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
   IVar2.m_value = (int32_t)((float)(score + (int)((float)score / 1000.0) * -1000) / 10.0);
   score = (int32_t)((float)score / 1000.0);
   IVar3.m_value = score % 0x3c;
-  iVar4 = func_?();
+  iVar4 = func_?((float)score / 60.0,0);
   if (0x3b < iVar4) {
-    func_?();
+    func_?((float)iVar4 / 60.0,0);
     pSVar5 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xffffffec,(MethodInfo *)0x0);
     pSVar1 = mscorlib.dll::System::String::String_Concat_4(pSVar1,pSVar5,::StringLiteral__,(MethodInfo *)0x0);
   }
@@ -88,7 +86,7 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
   }
   pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
   IVar2.m_value = 0;
-  pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
+  mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
   pSVar5 = ::StringLiteral__;
   if (IVar2.m_value < 10) {
     method = (MethodInfo *)0x0;
@@ -96,13 +94,18 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     score = (int32_t)::StringLiteral__;
     pSVar5 = mscorlib.dll::System::String::String_Concat_3(::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
   }
-  str1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
   method = (MethodInfo *)&UNK_?;
-  statType = (GameStatCounterType__Enum)mscorlib.dll::System::String::String_Concat_3(pSVar5,str1,(MethodInfo *)0x0);
+  statType = (GameStatCounterType__Enum)mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
   values = (String__Array *)func_?();
   if (values != (String__Array *)0x0) {
+    uStack8 = 0;
+    pSStack9 = pSVar1;
     func_?();
+    puStack10 = (undefined *)statType;
+    uStack11 = 1;
     func_?();
+    pSStack12 = ::StringLiteral__;
     func_?();
     method = (MethodInfo *)&UNK_?;
     func_?();
@@ -115,123 +118,17 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
     return pSVar1;
   }
-  uVar8 = func_?();
-  pbVar9 = (byte *)((ulonglong)uVar8 >> 0x20);
-  if (extraout_ECX == 0) {
-    pcVar10 = (code *)swi(3);
-    pSVar1 = (String *)(*pcVar10)();
-    return pSVar1;
-  }
-  bVar11 = *pbVar9;
-  bVar12 = (byte)extraout_ECX;
-  *pbVar9 = *pbVar9 + bVar12;
-  uVar13 = (undefined3)((ulonglong)uVar8 >> 8);
-  bVar14 = in(0x28);
-  bVar15 = (byte)((uint)pSVar7 >> 8);
-  bVar16 = CARRY1(bVar14,bVar15) || CARRY1(bVar14 + bVar15,CARRY1(bVar11,bVar12));
-  bVar11 = bVar14 + bVar15 + CARRY1(bVar11,bVar12);
-  piVar17 = (int *)CONCAT31(uVar13,bVar11);
-  if (extraout_ECX != 0) {
-    bVar18 = CARRY1(bVar11,bVar15) || CARRY1(bVar11 + bVar15,bVar16);
-    bVar11 = bVar11 + bVar15 + bVar16;
-    if (extraout_ECX == 0) {
-      bVar16 = bVar11 < 0x53;
-    }
-    else {
-      bVar16 = CARRY1(bVar11,bVar15) || CARRY1(bVar11 + bVar15,bVar18);
-      bVar11 = bVar11 + bVar15 + bVar18;
-      if (extraout_ECX != 0) {
-        bVar18 = CARRY1(bVar11,bVar15) || CARRY1(bVar11 + bVar15,bVar16);
-        bVar11 = bVar11 + bVar15 + bVar16;
-        if (extraout_ECX == 0) {
-          return (String *)CONCAT31(uVar13,bVar11);
-        }
-        bVar19 = CARRY1(bVar11,bVar15) || CARRY1(bVar11 + bVar15,bVar18);
-        cVar20 = bVar11 + bVar15 + bVar18;
-        piVar17 = (int *)CONCAT31(uVar13,cVar20);
-        if (extraout_ECX != 0) {
-          *pbVar9 = *pbVar9 + bVar12 + bVar19;
-          in(0x28);
-          pcVar10 = (code *)swi(3);
-          pSVar1 = (String *)(*pcVar10)();
-          return pSVar1;
-        }
-        if (-1 < cVar20) goto code_?;
-        *piVar17 = *piVar17 + (int)piVar17;
-        pWVar21 = (WinningConditionManager *)((uint)piVar17 ^ 0xADDR);
-        puVar22 = (undefined1 *)0x0;
-        goto code_?;
-      }
-    }
-    bVar19 = CARRY4(CONCAT31(uVar13,bVar11),(uint)&stack0xfffffffc) || CARRY4((uint)(&stack0xfffffffc + CONCAT31(uVar13,bVar11)),(uint)bVar16);
-    piVar17 = (int *)CONCAT31((int3)((uint)(&stack0xfffffffc + CONCAT31(uVar13,bVar11) + bVar16) >> 8),(char)pSVar7);
-    LOCK();
-    piVar17[0x1e] = piVar17[0x1e] + 1;
-    UNLOCK();
-code_?:
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pSVar1 = (String *)(**(code **)((int)piVar17 + (int)register0x00000010 + (uint)bVar19 + -0x54))();
-    return pSVar1;
-  }
-  *(undefined1 *)&pSVar1->klass = uRam_?;
-  *piVar17 = (int)piVar17 + (uint)bVar16 + *piVar17;
-  if (*piVar17 == 0) {
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    uRam_? = 1;
-  }
-  puVar22 = (undefined1 *)score;
-  *(undefined1 *)score = 0;
-  pMVar23 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar23 == (MVNetworkGame *)0x0) || (pWVar21 = (pMVar23->fields)._WinningConditionManager_k__BackingField, pWVar21 == (WinningConditionManager *)0x0)) goto code_?;
-  in_stack_24 = FlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<FlagReachedClient>__;
-code_?:
-  pOVar25 = MVWorldObject.dll::WinningConditionManager::WinningConditionManager_GetSingletonWinnerConditionByType(pWVar21,in_stack_24);
-  if (pOVar25 != (Object *)0x0) {
-    *puVar22 = 2;
-    return (String *)CONCAT31((int3)((uint)pOVar25 >> 8),1);
-  }
-  pMVar23 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar23 != (MVNetworkGame *)0x0) && (pWVar21 = (pMVar23->fields)._WinningConditionManager_k__BackingField, pWVar21 != (WinningConditionManager *)0x0)) {
-    pOVar25 = MVWorldObject.dll::WinningConditionManager::WinningConditionManager_GetSingletonWinnerConditionByType(pWVar21,TimeAttackFlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeAttackFlagReachedClient>__);
-    if (pOVar25 != (Object *)0x0) {
-      *puVar22 = 8;
-      return (String *)CONCAT31((int3)((uint)pOVar25 >> 8),1);
-    }
-    pMVar23 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar23 != (MVNetworkGame *)0x0) && (pWVar21 = (pMVar23->fields)._WinningConditionManager_k__BackingField, pWVar21 != (WinningConditionManager *)0x0)) {
-      pOVar25 = MVWorldObject.dll::WinningConditionManager::WinningConditionManager_GetSingletonWinnerConditionByType(pWVar21,AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__);
-      if (pOVar25 != (Object *)0x0) {
-        *puVar22 = 3;
-        return (String *)CONCAT31((int3)((uint)pOVar25 >> 8),1);
-      }
-      pMVar23 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar23 != (MVNetworkGame *)0x0) && (pWVar21 = (pMVar23->fields)._WinningConditionManager_k__BackingField, pWVar21 != (WinningConditionManager *)0x0)) {
-        pOVar25 = MVWorldObject.dll::WinningConditionManager::WinningConditionManager_GetSingletonWinnerConditionByType(pWVar21,KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__);
-        if (pOVar25 != (Object *)0x0) {
-          *puVar22 = 1;
-          return (String *)CONCAT31((int3)((uint)pOVar25 >> 8),1);
-        }
-        pMVar23 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar23 != (MVNetworkGame *)0x0) && (pWVar21 = (pMVar23->fields)._WinningConditionManager_k__BackingField, pWVar21 != (WinningConditionManager *)0x0)) {
-          pOVar25 = MVWorldObject.dll::WinningConditionManager::WinningConditionManager_GetSingletonWinnerConditionByType(pWVar21,OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__);
-          if (pOVar25 == (Object *)0x0) {
-            return (String *)0x0;
-          }
-          *puVar22 = 6;
-          return (String *)CONCAT31((int3)((uint)pOVar25 >> 8),1);
-        }
-      }
-    }
-  }
-code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar10)();
+  func_?();
+  in(0x28);
+  in(0x28);
+  in(0x28);
+  in(0x28);
+  in(0x28);
+  in(0x28);
+  in(0x28);
+  pcVar13 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar13)();
   return pSVar1;
 }
 

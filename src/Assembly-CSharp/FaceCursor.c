@@ -35,18 +35,17 @@ Vector2__Array * Assembly-CSharp.dll::FaceCursor::FaceCursor_SetUVs(FaceCursor *
   case Edge__Enum_None:
     if (this_00 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) {
 code_?:
-      cVar1 = '\0';
+      bVar1 = 0;
       uVar2 = func_?();
-      pcVar3 = (char *)((int)uVar2 * 2 + 0x453d6210);
-      bVar4 = extraout_CL & 0x1f;
-      cVar5 = *pcVar3;
-      *pcVar3 = *pcVar3 >> bVar4;
-      bVar6 = (bVar4 == 0) * cVar1 | (bVar4 != 0) * ((cVar5 >> bVar4 - 1 & 1U) != 0);
-      bVar7 = CARRY1(bRam_?,unaff_BL);
-      bVar4 = bRam_? + unaff_BL;
-      bRam_? = bVar4 + bVar6;
-      pcVar3 = (char *)((int)((ulonglong)uVar2 >> 0x20) + 0x3f);
-      *pcVar3 = *pcVar3 + (char)((ulonglong)uVar2 >> 0x20) + (bVar7 || CARRY1(bVar4,bVar6));
+      iVar3 = extraout_EDX + 1;
+      pbVar4 = (byte *)(extraout_EDX + 0x3d104544);
+      bVar5 = *pbVar4 + (byte)uVar2;
+      bVar6 = CARRY1(*pbVar4,(byte)uVar2) || CARRY1(bVar5,bVar1);
+      *pbVar4 = bVar5 + bVar1;
+      bVar1 = (byte)((ushort)uVar2 >> 8);
+      bVar5 = (byte)iVar3 + bVar1;
+      pcVar7 = (char *)(CONCAT31((int3)((uint)iVar3 >> 8),bVar5 + bVar6) + 0x45);
+      *pcVar7 = *pcVar7 + (char)((uint)iVar3 >> 8) + (CARRY1((byte)iVar3,bVar1) || CARRY1(bVar5,bVar6));
       pcVar8 = (code *)swi(3);
       pVVar9 = (Vector2__Array *)(*pcVar8)();
       return pVVar9;
@@ -57,7 +56,6 @@ code_?:
     fStack_10 = 0.0;
     break;
   case Edge__Enum_Front:
-    unaff_BL = mirror;
     if (this_00 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) goto code_?;
     func_?(this_00,(float)mirror,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
     func_?(this_00,(float)(mirror ^ 1),0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
@@ -65,7 +63,6 @@ code_?:
     func_?(this_00,(float)mirror,0x3f800000,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
     goto code_?;
   case Edge__Enum_Back:
-    unaff_BL = mirror;
     if (this_00 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) goto code_?;
     func_?(this_00,(float)(mirror ^ 1),0x3f800000,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
     func_?(this_00,(float)mirror,0x3f800000,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
@@ -73,7 +70,6 @@ code_?:
     mirror = mirror ^ 1;
     goto code_?;
   case Edge__Enum_Left:
-    unaff_BL = mirror;
     if (this_00 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) goto code_?;
     func_?(this_00,(float)(mirror ^ 1),0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
     func_?(this_00,(float)(mirror ^ 1),0x3f800000,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
@@ -83,7 +79,6 @@ code_?:
     fStack_10 = (float)mirror;
     goto code_?;
   case Edge__Enum_Right:
-    unaff_BL = mirror;
     if (this_00 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) goto code_?;
     func_?(this_00,(float)mirror,0x3f800000,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
     func_?(this_00,(float)mirror,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
@@ -110,7 +105,7 @@ void Assembly-CSharp.dll::FaceCursor::FaceCursor_UpdateCursor(FaceCursor *this,C
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0x8450);
+    func_?(0x950c);
     func_?(&UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::MeshRenderer>__);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__ToArray__);

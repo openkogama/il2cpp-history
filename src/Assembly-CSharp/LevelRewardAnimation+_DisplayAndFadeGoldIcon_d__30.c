@@ -170,12 +170,8 @@ code_?:
     }
   }
 code_?:
-  cVar16 = func_?();
-  pcVar17 = (char *)((int)&pLVar1[-0xa9fd5d].klass + 3);
-  *pcVar17 = *pcVar17 + cVar16;
-  pcVar18 = (code *)swi(3);
-  bVar19 = (*pcVar18)();
-  return bVar19;
+  bVar16 = func_?();
+  return bVar16;
 }
 
 
