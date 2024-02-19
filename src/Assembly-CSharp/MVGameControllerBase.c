@@ -67,13 +67,13 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Application
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&TypeInfo__MVGameControllerBase);
     func_?(&
-                    MethodInfo__MVGameControllerBase____c__DisplayClass174_0___ApplicationQuit_b__0__
+                    MethodInfo__MVGameControllerBase____c__DisplayClass182_0___ApplicationQuit_b__0__
                    );
-    func_?(&TypeInfo__MVGameControllerBase____c__DisplayClass174_0);
+    func_?(&TypeInfo__MVGameControllerBase____c__DisplayClass182_0);
     func_?(&StringLiteral_Application_quit);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__MVGameControllerBase____c__DisplayClass174_0;
+  method_00 = TypeInfo__MVGameControllerBase____c__DisplayClass182_0;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -93,7 +93,7 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Application
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
                   (this,value,
-                   MethodInfo__MVGameControllerBase____c__DisplayClass174_0___ApplicationQuit_b__0__
+                   MethodInfo__MVGameControllerBase____c__DisplayClass182_0___ApplicationQuit_b__0__
                    ,(MethodInfo *)0x0);
         if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
@@ -508,6 +508,80 @@ code_?:
 }
 
 
+/* Void CleanUpPortal() */
+
+void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_CleanUpPortal
+               (MVGameControllerBase *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&TypeInfo__BackButtonManager);
+    func_?(&TypeInfo__CullingApiWrapper);
+    func_?(&TypeInfo__UnityEngine__MonoBehaviour);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__CullingApiWrapper);
+  }
+  CullingApiWrapper::CullingApiWrapper_PostDestroyCleanup((MethodInfo *)0x0);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  AsyncWWWManager::AsyncWWWManager_PostResetCleanup((MethodInfo *)0x0);
+  TimedPlayReward+RewardTracker::TimedPlayReward_RewardTracker_PostResetCleanup((MethodInfo *)0x0);
+  if ((TypeInfo__BackButtonManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  BackButtonManager::BackButtonManager_PostDestroyCleanup((MethodInfo *)0x0);
+  GamePointGainEffectManager::GamePointGainEffectManager_PostResetCleanup((MethodInfo *)0x0);
+  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDetector::
+  SpeedHackDetector_Dispose((MethodInfo *)0x0);
+  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredCheatingDetector::
+  ObscuredCheatingDetector_Dispose((MethodInfo *)0x0);
+  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDetector::
+  InjectionDetector_Dispose((MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  this_00 = (Component *)TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+  if (this_00 == (Component *)0x0) {
+code_?:
+    this_01 = MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+    if (this_01 != (MainCameraManager *)0x0) {
+      pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this_01,(MethodInfo *)0x0);
+      if (pGVar1 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (pGVar1,0,(MethodInfo *)0x0);
+        return;
+      }
+    }
+  }
+  else {
+    if (((this_00->klass->_1).naturalAligment <
+         (TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment) ||
+       ((this_00->klass->_1).typeHierarchy
+        [(TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment - 1] !=
+        (Il2CppClass *)TypeInfo__UnityEngine__MonoBehaviour)) goto code_?;
+    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       (this_00,(MethodInfo *)0x0);
+    if (pGVar1 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar1,0,(MethodInfo *)0x0);
+      goto code_?;
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
 /* Void DeleteScreenPlayerPrefs() */
 
 void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_DeleteScreenPlayerPrefs
@@ -564,10 +638,12 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_FixedUpdate
     func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UpdateController);
+  if ((this->fields)._ShuttingDown_k__BackingField == 0) {
+    if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UpdateController);
+    }
+    UpdateController::UpdateController_FixedUpdate((MethodInfo *)0x0);
   }
-  UpdateController::UpdateController_FixedUpdate((MethodInfo *)0x0);
   return;
 }
 
@@ -982,42 +1058,42 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_LateUpdate
     func_?();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  UpdateController::UpdateController_LateUpdate((MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (TypeInfo__MVGameControllerBase->static_fields->_IsInitialized_k__BackingField != 0) {
+  if ((this->fields)._ShuttingDown_k__BackingField == 0) {
+    if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UpdateController::UpdateController_LateUpdate((MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if ((((pMVar2 != (MVGameControllerBase *)0x0) &&
-         (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
-        (pWVar4 = (pMVar3->fields).worldNetwork, pWVar4 != (WorldNetwork *)0x0)) &&
-       (this_00 = (pWVar4->fields)._.worldInventory, this_00 != (MVWorldInventory *)0x0)) {
+    if (TypeInfo__MVGameControllerBase->static_fields->_IsInitialized_k__BackingField != 0) {
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((((pMVar2 == (MVGameControllerBase *)0x0) ||
+           (pMVar3 = (pMVar2->fields).game, pMVar3 == (MVNetworkGame *)0x0)) ||
+          (pWVar4 = (pMVar3->fields).worldNetwork, pWVar4 == (WorldNetwork *)0x0)) ||
+         (this_00 = (pWVar4->fields)._.worldInventory, this_00 == (MVWorldInventory *)0x0)) {
+code_?:
+        uVar5 = func_?(&ppUStack_1);
+        func_?(uVar5);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
       MVWorldInventory::MVWorldInventory_LateUpdate(this_00,(MethodInfo *)0x0);
       this_01 = MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      if (this_01 != (MainCameraManager *)0x0) {
-        MainCameraManager::MainCameraManager_UpdateCamera(this_01,(MethodInfo *)0x0);
-        goto code_?;
-      }
+      if (this_01 == (MainCameraManager *)0x0) goto code_?;
+      MainCameraManager::MainCameraManager_UpdateCamera(this_01,(MethodInfo *)0x0);
     }
-    uVar5 = func_?(&ppUStack_1);
-    func_?(uVar5);
-    pcVar6 = (code *)swi(3);
-    (*pcVar6)();
-    return;
+    if ((TypeInfo__FullScreenController->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    FullScreenController::FullScreenController_LateUpdate((MethodInfo *)0x0);
   }
-code_?:
-  if ((TypeInfo__FullScreenController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  FullScreenController::FullScreenController_LateUpdate((MethodInfo *)0x0);
   return;
 }
 
@@ -2252,75 +2328,13 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Update
     func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UpdateController);
-  }
-  UpdateController::UpdateController_Update((MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?();
-    func_?(&TypeInfo__UnityEngine__ILogger);
-    func_?(&StringLiteral_Enabling_logging_);
-    func_?(&StringLiteral_Disabling_logging_);
-    cRam_? = '\x01';
-  }
-  bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
-                    (KeyCode__Enum_Alpha7,(MethodInfo *)0x0);
-  if ((bVar1 == 0) ||
-     (bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKeyUp
-                        (KeyCode__Enum_Alpha9,(MethodInfo *)0x0), bVar1 == 0)) {
-    return;
-  }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  if (TypeInfo__UnityEngine__Debug->static_fields->s_Logger != (ILogger_1 *)0x0) {
-    iVar2 = func_?();
-    if (iVar2 == 2) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      iVar2 = func_?();
-      if (iVar2 != 0) {
-        func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                  ((Object *)StringLiteral_Enabling_logging_,(MethodInfo *)0x0);
-        return;
-      }
+  if ((this->fields)._ShuttingDown_k__BackingField == 0) {
+    if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UpdateController);
     }
-    else {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      iVar2 = func_?();
-      if (iVar2 != 0) {
-        iVar2 = func_?();
-        if (iVar2 != 3) {
-          return;
-        }
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                  ((Object *)StringLiteral_Disabling_logging_,(MethodInfo *)0x0);
-        iVar2 = func_?();
-        if (iVar2 != 0) {
-          func_?();
-          return;
-        }
-      }
-    }
+    UpdateController::UpdateController_Update((MethodInfo *)0x0);
+    MVGameControllerBase_HandleDebugShortCuts(this,(MethodInfo *)0x0);
   }
-  func_?();
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
   return;
 }
 
@@ -3139,6 +3153,20 @@ Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_get_PlayModeUI(M
 }
 
 
+/* Boolean get_PortalUI() */
+
+bool Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_get_PortalUI
+               (MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  return TypeInfo__MVGameControllerBase->static_fields->_PortalUI_k__BackingField;
+}
+
+
 /* Boolean get_Quitting() */
 
 bool Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_get_Quitting
@@ -3792,6 +3820,21 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_set_PlayMod
   TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField = value;
   func_?(&TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField,
                   unaff_EBP);
+  return;
+}
+
+
+/* Void set_PortalUI(Boolean) */
+
+void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_set_PortalUI
+               (bool value,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  TypeInfo__MVGameControllerBase->static_fields->_PortalUI_k__BackingField = value;
   return;
 }
 

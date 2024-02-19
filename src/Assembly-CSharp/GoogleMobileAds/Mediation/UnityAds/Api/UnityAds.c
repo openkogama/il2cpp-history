@@ -2,7 +2,7 @@
 /* Void SetConsentMetaData(String, Boolean) */
 
 void Assembly-CSharp.dll::GoogleMobileAds::Mediation::UnityAds::Api::UnityAds::
-     UnityAds_SetConsentMetaData(String *key,bool metaDataValue,MethodInfo *method)
+     UnityAds_1_SetConsentMetaData(String *key,bool metaDataValue,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -48,7 +48,7 @@ code_?:
 
 /* UnityAds() */
 
-void Assembly-CSharp.dll::GoogleMobileAds::Mediation::UnityAds::Api::UnityAds::UnityAds__cctor
+void Assembly-CSharp.dll::GoogleMobileAds::Mediation::UnityAds::Api::UnityAds::UnityAds_1__cctor
                (MethodInfo *method)
 
 {

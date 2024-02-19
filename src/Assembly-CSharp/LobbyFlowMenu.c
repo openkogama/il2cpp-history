@@ -478,10 +478,8 @@ void Assembly-CSharp.dll::LobbyFlowMenu::LobbyFlowMenu_GoToMenu
     }
   }
   func_?();
-  uStack6 = 0x691e1049;
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
-  return;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -697,22 +695,79 @@ code_?:
 void Assembly-CSharp.dll::LobbyFlowMenu::LobbyFlowMenu_Start(LobbyFlowMenu *this,MethodInfo *method)
 
 {
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (this_00 != (MainCameraManager *)0x0) {
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if (this_01 != (MainCameraManager *)0x0) {
     MainCameraManager::MainCameraManager_set_CamMaskMode
-              (this_00,(this->fields).cameraMaskMode,(MethodInfo *)0x0);
+              (this_01,(this->fields).cameraMaskMode,(MethodInfo *)0x0);
     if ((this->fields).haveSetSelectedTeam == 0) {
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
       if (pMVar1 == (MVLocalPlayer *)0x0) goto code_?;
       (this->fields).selectedTeam = (pMVar1->fields)._._Team_k__BackingField;
     }
-    LobbyFlowMenu_UpdateAvailableMenues(this,(MethodInfo *)0x0);
-    return;
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      cRam_? = '\x01';
+    }
+    pLVar2 = (this->fields).menuOrder;
+    if (pLVar2 != (List_1_LobbyFlowMenu_LobbyFlowMenuType_ *)0x0) {
+      piVar3 = &(pLVar2->fields)._version;
+      *piVar3 = *piVar3 + 1;
+      (pLVar2->fields)._size = 0;
+      pMVar4 = 
+      MethodInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>__Add_LobbyFlowMenu__LobbyFlowMenuType_
+      ;
+      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                (this->fields).menuOrder;
+      if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+        pRVar5 = (this_00->fields)._items;
+        piVar3 = &(this_00->fields)._version;
+        *piVar3 = *piVar3 + 1;
+        if (pRVar5 != (RegexCharClass_SingleRange__Array *)0x0) {
+          uVar6 = (this_00->fields)._size;
+          if (uVar6 < pRVar5->max_length) {
+            (this_00->fields)._size = uVar6 + 1;
+            if (pRVar5->max_length <= uVar6) goto code_?;
+            pRVar5->vector[uVar6].First = 0;
+            pRVar5->vector[uVar6].Last = 0;
+          }
+          else {
+            mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__AddWithResize
+                      (this_00,(RegexCharClass_SingleRange)0x0,pMVar4->klass->rgctx_data[0xe].method
+                      );
+          }
+          cVar7 = (*(code *)(this->klass->vtable).CanShowTeamSelect.method)();
+          if (cVar7 != '\0') {
+            if ((this->fields).menuOrder == (List_1_LobbyFlowMenu_LobbyFlowMenuType_ *)0x0)
+            goto code_?;
+            func_?();
+          }
+          cVar7 = (*(code *)(this->klass->vtable).CanShowBreifing.method)();
+          if (cVar7 != '\0') {
+            if ((this->fields).menuOrder == (List_1_LobbyFlowMenu_LobbyFlowMenuType_ *)0x0)
+            goto code_?;
+            func_?();
+          }
+          cVar7 = (*(code *)(this->klass->vtable).CanShowSpawnRoleSelect.method)();
+          if (cVar7 == '\0') {
+            return;
+          }
+          if ((this->fields).menuOrder != (List_1_LobbyFlowMenu_LobbyFlowMenuType_ *)0x0) {
+            func_?();
+            return;
+          }
+        }
+      }
+    }
   }
 code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+code_?:
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -858,81 +913,55 @@ void Assembly-CSharp.dll::LobbyFlowMenu::LobbyFlowMenu_UpdateAvailableMenues
     pMVar3 = 
     MethodInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>__Add_LobbyFlowMenu__LobbyFlowMenuType_
     ;
-    pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             (this->fields).menuOrder;
-    if (pLVar4 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      pRVar5 = (pLVar4->fields)._items;
-      piVar2 = &(pLVar4->fields)._version;
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).menuOrder;
+    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      pRVar4 = (this_00->fields)._items;
+      piVar2 = &(this_00->fields)._version;
       *piVar2 = *piVar2 + 1;
-      if (pRVar5 != (RegexCharClass_SingleRange__Array *)0x0) {
-        uVar6 = (pLVar4->fields)._size;
-        if (uVar6 < pRVar5->max_length) {
-          (pLVar4->fields)._size = uVar6 + 1;
-          if (pRVar5->max_length <= uVar6) goto code_?;
-          pRVar5->vector[uVar6].First = 0;
-          pRVar5->vector[uVar6].Last = 0;
+      if (pRVar4 != (RegexCharClass_SingleRange__Array *)0x0) {
+        uVar5 = (this_00->fields)._size;
+        if (uVar5 < pRVar4->max_length) {
+          (this_00->fields)._size = uVar5 + 1;
+          if (pRVar4->max_length <= uVar5) goto code_?;
+          pRVar4->vector[uVar5].First = 0;
+          pRVar4->vector[uVar5].Last = 0;
         }
         else {
           mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
           RegexCharClass+SingleRange]::
           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__AddWithResize
-                    (pLVar4,(RegexCharClass_SingleRange)0x0,pMVar3->klass->rgctx_data[0xe].method);
+                    (this_00,(RegexCharClass_SingleRange)0x0,pMVar3->klass->rgctx_data[0xe].method);
         }
-        pMVar3 = 
-        MethodInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>__Add_LobbyFlowMenu__LobbyFlowMenuType_
-        ;
-        pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 (this->fields).menuOrder;
-        if (pLVar4 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          piVar2 = &(pLVar4->fields)._version;
-          *piVar2 = *piVar2 + 1;
-          pRVar5 = (pLVar4->fields)._items;
-          if (pRVar5 != (RegexCharClass_SingleRange__Array *)0x0) {
-            uVar6 = (pLVar4->fields)._size;
-            if (uVar6 < pRVar5->max_length) {
-              (pLVar4->fields)._size = uVar6 + 1;
-              if (pRVar5->max_length <= uVar6) goto code_?;
-              pRVar5->vector[uVar6].First = 2;
-              pRVar5->vector[uVar6].Last = 0;
-            }
-            else {
-              mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__AddWithResize
-                        (pLVar4,(RegexCharClass_SingleRange)0x2,
-                         pMVar3->klass->rgctx_data[0xe].method);
-            }
-            cVar7 = (*(code *)(this->klass->vtable).CanShowTeamSelect.method)
-                              (this,(this->klass->vtable).CanShowBreifing.methodPtr);
-            if (cVar7 != '\0') {
-              pLVar1 = (this->fields).menuOrder;
-              if (pLVar1 == (List_1_LobbyFlowMenu_LobbyFlowMenuType_ *)0x0) goto code_?;
-              func_?(pLVar1,3,
-                              MethodInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>__Add_LobbyFlowMenu__LobbyFlowMenuType_
-                             );
-            }
-            cVar7 = (*(code *)(this->klass->vtable).CanShowBreifing.method)
-                              (this,(this->klass->vtable).CanShowSpawnRoleSelect.methodPtr);
-            if (cVar7 != '\0') {
-              pLVar1 = (this->fields).menuOrder;
-              if (pLVar1 == (List_1_LobbyFlowMenu_LobbyFlowMenuType_ *)0x0) goto code_?;
-              func_?(pLVar1,1,
-                              MethodInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>__Add_LobbyFlowMenu__LobbyFlowMenuType_
-                             );
-            }
-            cVar7 = (*(code *)(this->klass->vtable).CanShowSpawnRoleSelect.method)
-                              (this,(this->klass->vtable).GoToPreviousMenu.methodPtr);
-            if (cVar7 == '\0') {
-              return;
-            }
-            pLVar1 = (this->fields).menuOrder;
-            if (pLVar1 != (List_1_LobbyFlowMenu_LobbyFlowMenuType_ *)0x0) {
-              func_?(pLVar1,4,
-                              MethodInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>__Add_LobbyFlowMenu__LobbyFlowMenuType_
-                             );
-              return;
-            }
-          }
+        cVar6 = (*(code *)(this->klass->vtable).CanShowTeamSelect.method)
+                          (this,(this->klass->vtable).CanShowBreifing.methodPtr);
+        if (cVar6 != '\0') {
+          pLVar1 = (this->fields).menuOrder;
+          if (pLVar1 == (List_1_LobbyFlowMenu_LobbyFlowMenuType_ *)0x0) goto code_?;
+          func_?(pLVar1,3,
+                          MethodInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>__Add_LobbyFlowMenu__LobbyFlowMenuType_
+                         );
+        }
+        cVar6 = (*(code *)(this->klass->vtable).CanShowBreifing.method)
+                          (this,(this->klass->vtable).CanShowSpawnRoleSelect.methodPtr);
+        if (cVar6 != '\0') {
+          pLVar1 = (this->fields).menuOrder;
+          if (pLVar1 == (List_1_LobbyFlowMenu_LobbyFlowMenuType_ *)0x0) goto code_?;
+          func_?(pLVar1,1,
+                          MethodInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>__Add_LobbyFlowMenu__LobbyFlowMenuType_
+                         );
+        }
+        cVar6 = (*(code *)(this->klass->vtable).CanShowSpawnRoleSelect.method)
+                          (this,(this->klass->vtable).GoToPreviousMenu.methodPtr);
+        if (cVar6 == '\0') {
+          return;
+        }
+        pLVar1 = (this->fields).menuOrder;
+        if (pLVar1 != (List_1_LobbyFlowMenu_LobbyFlowMenuType_ *)0x0) {
+          func_?(pLVar1,4,
+                          MethodInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>__Add_LobbyFlowMenu__LobbyFlowMenuType_
+                         );
+          return;
         }
       }
     }
@@ -941,8 +970,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

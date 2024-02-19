@@ -181,8 +181,13 @@ code_?:
   mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor
             (this_03,(MethodInfo *)0x0);
   func_?();
-  func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  cVar13 = (undefined1 *)0xffffffeb < &stack0xffffffd8;
+  uVar2 = func_?();
+  *(char *)(extraout_ECX + 0x30436abc) =
+       *(char *)(extraout_ECX + 0x30436abc) + (char)((uint)extraout_ECX >> 8) + cVar13;
+  out(0xb1,CONCAT31((int3)((uint)uVar2 >> 8),0xda));
+  pcVar14 = (code *)swi(3);
+  pKVar15 = (KogamaSettingValueWrapperBase *)(*pcVar14)();
+  return pKVar15;
 }
 

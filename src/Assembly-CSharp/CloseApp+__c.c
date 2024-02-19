@@ -1,7 +1,7 @@
 
-/* Void <Close>b__2_0(Boolean, ConfirmationPopup) */
+/* Void <Close>b__3_0(Boolean, ConfirmationPopup) */
 
-void Assembly-CSharp.dll::CloseApp+<>c::CloseApp_c__Close_b__2_0
+void Assembly-CSharp.dll::CloseApp+<>c::CloseApp_c__Close_b__3_0
                (CloseApp_c *this,bool confirmation,ConfirmationPopup *popup,MethodInfo *method)
 
 {

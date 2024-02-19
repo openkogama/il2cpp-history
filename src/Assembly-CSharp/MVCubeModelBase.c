@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_AddCube
 
 {
   if (cRam_? == '\0') {
-    func_?(0x2c8);
+    func_?(0x1394);
     func_?(&TypeInfo__Cube);
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_
@@ -1357,7 +1357,7 @@ code_?:
           }
           if (this_01 == (Material *)0x0) break;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat_1
-                    (this_01,TypeInfo__MVCubeModelBase->static_fields->TrancperancyShaderProperty,
+                    (this_01,TypeInfo__MVCubeModelBase->static_fields->TransparencyShaderProperty,
                      fStack_6,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_shadowCastingMode
                     (pRStack_15,ShadowCastingMode__Enum_Off,(MethodInfo *)0x0);
@@ -1454,7 +1454,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_ReplaceCube
 
 {
   if (cRam_? == '\0') {
-    func_?(0x2c8);
+    func_?(0x1394);
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_
                    );
@@ -1632,7 +1632,7 @@ Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase___ctor_b__28_0
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ModelingDynamicBoxConstraint);
-    func_?(0x9e60);
+    func_?(0xaf68);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -1665,7 +1665,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase__cctor(MethodInfo *me
   }
   iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID
                     (StringLiteral__Transparency,(MethodInfo *)0x0);
-  TypeInfo__MVCubeModelBase->static_fields->TrancperancyShaderProperty = iVar1;
+  TypeInfo__MVCubeModelBase->static_fields->TransparencyShaderProperty = iVar1;
   return;
 }
 

@@ -446,19 +446,9 @@ bool Assembly-CSharp.dll::SendMessageControl::SendMessageControl_HandleChatComma
     func_?(&TypeInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>);
     func_?(&TypeInfo__Assets__Scripts__AdIntegration__Web__AdSDKManager);
     func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__System__Byte);
     func_?(&TypeInfo__ChatCommandManager);
     func_?(&TypeInfo__System__DateTime);
     func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
     func_?(&TypeInfo__EmbeddedSite);
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::String>__Dispose__
@@ -534,7 +524,6 @@ bool Assembly-CSharp.dll::SendMessageControl::SendMessageControl_HandleChatComma
     func_?(&StringLiteral__sat);
     func_?(&StringLiteral_Site__);
     func_?(&StringLiteral__exportself);
-    func_?(&StringLiteral_Toggling_HD_is_deprecated__pleas);
     func_?(&StringLiteral__gdforce);
     func_?(&StringLiteral_Testing_context__chat_msg_test_e);
     func_?(&StringLiteral__embedforce);
@@ -721,507 +710,459 @@ bool Assembly-CSharp.dll::SendMessageControl::SendMessageControl_HandleChatComma
     if (bVar4 == 0) {
       bVar4 = mscorlib.dll::System::String::String_op_Equality
                         (chatMsg,StringLiteral__hd,(MethodInfo *)0x0);
+      if (bVar4 != 0) {
+        if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        NotificationController::NotificationController_ToggleHDIsDeprecated((MethodInfo *)0x0);
+        *unaff_FS_OFFSET = puVar1;
+        return bVar3;
+      }
+      bVar4 = mscorlib.dll::System::String::String_op_Equality
+                        (chatMsg,StringLiteral__ru,(MethodInfo *)0x0);
+      if (bVar4 != 0) {
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                  ((Object *)StringLiteral_Remote_Playmode_Avatar_should_re,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                  ((Object *)StringLiteral_Build_and_play_mode_UI_not_imple,(MethodInfo *)0x0);
+        if ((TypeInfo__ChatCommandManager->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        ChatCommandManager::ChatCommandManager_ChatCommandActivated
+                  (ChatCommand__Enum_HideAllUI,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = puVar1;
+        return bVar3;
+      }
+      bVar4 = mscorlib.dll::System::String::String_op_Equality
+                        (chatMsg,StringLiteral__gp,(MethodInfo *)0x0);
+      if (bVar4 != 0) {
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        GamePassesManager::GamePassesManager_set_ShowGamePassDataInConsole
+                  (TypeInfo__GamePassesManager->static_fields->showGamePassDataInConsole == 0,
+                   (MethodInfo *)0x0);
+        *unaff_FS_OFFSET = puVar1;
+        return bVar3;
+      }
+      bVar4 = mscorlib.dll::System::String::String_op_Equality
+                        (chatMsg,StringLiteral__rgp,(MethodInfo *)0x0);
       if (bVar4 == 0) {
         bVar4 = mscorlib.dll::System::String::String_op_Equality
-                          (chatMsg,StringLiteral__ru,(MethodInfo *)0x0);
-        if (bVar4 != 0) {
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                    ((Object *)StringLiteral_Remote_Playmode_Avatar_should_re,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                    ((Object *)StringLiteral_Build_and_play_mode_UI_not_imple,(MethodInfo *)0x0);
-          if ((TypeInfo__ChatCommandManager->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          ChatCommandManager::ChatCommandManager_ChatCommandActivated
-                    (ChatCommand__Enum_HideAllUI,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = puVar1;
-          return bVar3;
-        }
-        bVar4 = mscorlib.dll::System::String::String_op_Equality
-                          (chatMsg,StringLiteral__gp,(MethodInfo *)0x0);
-        if (bVar4 != 0) {
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          GamePassesManager::GamePassesManager_set_ShowGamePassDataInConsole
-                    (TypeInfo__GamePassesManager->static_fields->showGamePassDataInConsole == 0,
-                     (MethodInfo *)0x0);
-          *unaff_FS_OFFSET = puVar1;
-          return bVar3;
-        }
-        bVar4 = mscorlib.dll::System::String::String_op_Equality
-                          (chatMsg,StringLiteral__rgp,(MethodInfo *)0x0);
+                          (chatMsg,StringLiteral__dt,(MethodInfo *)0x0);
         if (bVar4 == 0) {
           bVar4 = mscorlib.dll::System::String::String_op_Equality
-                            (chatMsg,StringLiteral__dt,(MethodInfo *)0x0);
-          if (bVar4 == 0) {
-            bVar4 = mscorlib.dll::System::String::String_op_Equality
-                              (chatMsg,StringLiteral__ter,(MethodInfo *)0x0);
-            if (bVar4 != 0) {
-              if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                        ((Object *)StringLiteral_Testing_context__chat_msg_test_e,(MethodInfo *)0x0)
-              ;
-              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                        ((Object *)StringLiteral_chat_msg_test_error,(MethodInfo *)0x0);
-              *unaff_FS_OFFSET = puVar1;
-              return bVar3;
+                            (chatMsg,StringLiteral__ter,(MethodInfo *)0x0);
+          if (bVar4 != 0) {
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
             }
-            pMVar2 = (MethodInfo *)chatMsg;
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                      ((Object *)StringLiteral_Testing_context__chat_msg_test_e,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                      ((Object *)StringLiteral_chat_msg_test_error,(MethodInfo *)0x0);
+            *unaff_FS_OFFSET = puVar1;
+            return bVar3;
+          }
+          pMVar2 = (MethodInfo *)chatMsg;
+          bVar4 = mscorlib.dll::System::String::String_op_Equality
+                            (chatMsg,StringLiteral__tex,(MethodInfo *)0x0);
+          if (bVar4 != 0) goto code_?;
+          bVar4 = mscorlib.dll::System::String::String_op_Equality
+                            (chatMsg,StringLiteral__sat,(MethodInfo *)0x0);
+          if (bVar4 != 0) goto code_?;
+          uVar21 = 0;
+          pSVar7 = chatMsg;
+          bVar4 = mscorlib.dll::System::String::String_op_Equality
+                            (chatMsg,StringLiteral__shaderInfo,(MethodInfo *)0x0);
+          bVar3 = (bool)((uint)pSVar7 >> 0x18);
+          if (bVar4 == 0) {
+            puVar1 = &UNK_?;
             bVar4 = mscorlib.dll::System::String::String_op_Equality
-                              (chatMsg,StringLiteral__tex,(MethodInfo *)0x0);
-            if (bVar4 != 0) goto code_?;
-            bVar4 = mscorlib.dll::System::String::String_op_Equality
-                              (chatMsg,StringLiteral__sat,(MethodInfo *)0x0);
-            if (bVar4 != 0) goto code_?;
-            uVar21 = 0;
-            pSVar7 = chatMsg;
-            bVar4 = mscorlib.dll::System::String::String_op_Equality
-                              (chatMsg,StringLiteral__shaderInfo,(MethodInfo *)0x0);
+                              (chatMsg,StringLiteral__materialInfo,(MethodInfo *)0x0);
+            pSVar22 = StringLiteral__build;
             bVar3 = (bool)((uint)pSVar7 >> 0x18);
             if (bVar4 == 0) {
-              puVar1 = &UNK_?;
               bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                (chatMsg,StringLiteral__materialInfo,(MethodInfo *)0x0);
-              pSVar22 = StringLiteral__build;
+                                (chatMsg,StringLiteral__build,(MethodInfo *)0x0);
               bVar3 = (bool)((uint)pSVar7 >> 0x18);
               if (bVar4 == 0) {
                 bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                  (chatMsg,StringLiteral__build,(MethodInfo *)0x0);
+                                  (chatMsg,StringLiteral__region,(MethodInfo *)0x0);
                 bVar3 = (bool)((uint)pSVar7 >> 0x18);
                 if (bVar4 == 0) {
-                  bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                    (chatMsg,StringLiteral__region,(MethodInfo *)0x0);
-                  bVar3 = (bool)((uint)pSVar7 >> 0x18);
-                  if (bVar4 == 0) {
-                    if (chatMsg != (String *)0x0) {
-                      bVar4 = mscorlib.dll::System::String::String_StartsWith
-                                        (chatMsg,StringLiteral__convertSingle,(MethodInfo *)0x0);
+                  if (chatMsg != (String *)0x0) {
+                    bVar4 = mscorlib.dll::System::String::String_StartsWith
+                                      (chatMsg,StringLiteral__convertSingle,(MethodInfo *)0x0);
+                    bVar3 = (bool)((uint)pSVar7 >> 0x18);
+                    if (bVar4 == 0) {
+                      bVar4 = mscorlib.dll::System::String::String_op_Equality
+                                        (chatMsg,StringLiteral__no,(MethodInfo *)0x0);
+                      bVar3 = (bool)((uint)pSVar7 >> 0x18);
+                      if (bVar4 != 0) {
+                        if ((TypeInfo__ChatCommandManager->_1).cctor_finished_or_no_cctor == 0) {
+                          func_?();
+                        }
+                        ChatCommandManager::ChatCommandManager_ChatCommandActivated
+                                  (ChatCommand__Enum_StartShake,(MethodInfo *)0x0);
+                        *unaff_FS_OFFSET = puVar1;
+                        return bVar3;
+                      }
+                      bVar4 = mscorlib.dll::System::String::String_op_Equality
+                                        (chatMsg,StringLiteral__yes,(MethodInfo *)0x0);
+                      bVar3 = (bool)((uint)pSVar7 >> 0x18);
+                      if (bVar4 != 0) {
+                        if ((TypeInfo__ChatCommandManager->_1).cctor_finished_or_no_cctor == 0) {
+                          func_?();
+                        }
+                        ChatCommandManager::ChatCommandManager_ChatCommandActivated
+                                  (ChatCommand__Enum_StartNod,(MethodInfo *)0x0);
+                        *unaff_FS_OFFSET = puVar1;
+                        return bVar3;
+                      }
+                      bVar4 = mscorlib.dll::System::String::String_op_Equality
+                                        (chatMsg,StringLiteral__wave,(MethodInfo *)0x0);
+                      bVar3 = (bool)((uint)pSVar7 >> 0x18);
+                      if (bVar4 != 0) {
+                        if ((TypeInfo__ChatCommandManager->_1).cctor_finished_or_no_cctor == 0) {
+                          func_?();
+                        }
+                        ChatCommandManager::ChatCommandManager_ChatCommandActivated
+                                  (ChatCommand__Enum_StartWave,(MethodInfo *)0x0);
+                        *unaff_FS_OFFSET = puVar1;
+                        return bVar3;
+                      }
+                      bVar4 = mscorlib.dll::System::String::String_op_Equality
+                                        (chatMsg,StringLiteral__ad,(MethodInfo *)0x0);
                       bVar3 = (bool)((uint)pSVar7 >> 0x18);
                       if (bVar4 == 0) {
                         bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                          (chatMsg,StringLiteral__no,(MethodInfo *)0x0);
-                        bVar3 = (bool)((uint)pSVar7 >> 0x18);
-                        if (bVar4 != 0) {
-                          if ((TypeInfo__ChatCommandManager->_1).cctor_finished_or_no_cctor == 0) {
-                            func_?();
-                          }
-                          ChatCommandManager::ChatCommandManager_ChatCommandActivated
-                                    (ChatCommand__Enum_StartShake,(MethodInfo *)0x0);
-                          *unaff_FS_OFFSET = puVar1;
-                          return bVar3;
-                        }
-                        bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                          (chatMsg,StringLiteral__yes,(MethodInfo *)0x0);
-                        bVar3 = (bool)((uint)pSVar7 >> 0x18);
-                        if (bVar4 != 0) {
-                          if ((TypeInfo__ChatCommandManager->_1).cctor_finished_or_no_cctor == 0) {
-                            func_?();
-                          }
-                          ChatCommandManager::ChatCommandManager_ChatCommandActivated
-                                    (ChatCommand__Enum_StartNod,(MethodInfo *)0x0);
-                          *unaff_FS_OFFSET = puVar1;
-                          return bVar3;
-                        }
-                        bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                          (chatMsg,StringLiteral__wave,(MethodInfo *)0x0);
-                        bVar3 = (bool)((uint)pSVar7 >> 0x18);
-                        if (bVar4 != 0) {
-                          if ((TypeInfo__ChatCommandManager->_1).cctor_finished_or_no_cctor == 0) {
-                            func_?();
-                          }
-                          ChatCommandManager::ChatCommandManager_ChatCommandActivated
-                                    (ChatCommand__Enum_StartWave,(MethodInfo *)0x0);
-                          *unaff_FS_OFFSET = puVar1;
-                          return bVar3;
-                        }
-                        bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                          (chatMsg,StringLiteral__ad,(MethodInfo *)0x0);
+                                          (chatMsg,StringLiteral__url,(MethodInfo *)0x0);
                         bVar3 = (bool)((uint)pSVar7 >> 0x18);
                         if (bVar4 == 0) {
                           bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                            (chatMsg,StringLiteral__url,(MethodInfo *)0x0);
+                                            (chatMsg,StringLiteral__iad,(MethodInfo *)0x0);
+                          bVar3 = (bool)((uint)pSVar7 >> 0x18);
+                          if (bVar4 != 0) goto code_?;
+                          bVar4 = mscorlib.dll::System::String::String_op_Equality
+                                            (chatMsg,StringLiteral__rad,(MethodInfo *)0x0);
                           bVar3 = (bool)((uint)pSVar7 >> 0x18);
                           if (bVar4 == 0) {
                             bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                              (chatMsg,StringLiteral__iad,(MethodInfo *)0x0);
+                                              (chatMsg,StringLiteral__adtest,(MethodInfo *)0x0);
                             bVar3 = (bool)((uint)pSVar7 >> 0x18);
-                            if (bVar4 != 0) goto code_?;
+                            if (bVar4 != 0) {
+                              MVGameControllerBase::MVGameControllerBase_get_AdManager
+                                        ((MethodInfo *)0x0);
+                              pWVar23 = (WebAdManager *)func_?();
+                              if (pWVar23 != (WebAdManager *)0x0) {
+                                Assets::Scripts::AdIntegration::Web::WebAdManager::
+                                WebAdManager_CreateAdManagerHack(pWVar23,(MethodInfo *)0x0);
+                                *unaff_FS_OFFSET = puVar1;
+                                return bVar3;
+                              }
+                              goto code_?;
+                            }
                             bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                              (chatMsg,StringLiteral__rad,(MethodInfo *)0x0);
+                                              (chatMsg,StringLiteral__admanager,(MethodInfo *)0x0);
                             bVar3 = (bool)((uint)pSVar7 >> 0x18);
                             if (bVar4 == 0) {
                               bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                                (chatMsg,StringLiteral__adtest,(MethodInfo *)0x0);
-                              bVar3 = (bool)((uint)pSVar7 >> 0x18);
-                              if (bVar4 != 0) {
-                                MVGameControllerBase::MVGameControllerBase_get_AdManager
-                                          ((MethodInfo *)0x0);
-                                pWVar23 = (WebAdManager *)func_?();
-                                if (pWVar23 != (WebAdManager *)0x0) {
-                                  Assets::Scripts::AdIntegration::Web::WebAdManager::
-                                  WebAdManager_CreateAdManagerHack(pWVar23,(MethodInfo *)0x0);
-                                  *unaff_FS_OFFSET = puVar1;
-                                  return bVar3;
-                                }
-                                goto code_?;
-                              }
-                              bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                                (chatMsg,StringLiteral__admanager,(MethodInfo *)0x0)
-                              ;
-                              bVar3 = (bool)((uint)pSVar7 >> 0x18);
+                                                (chatMsg,StringLiteral__gdforce,(MethodInfo *)0x0);
                               if (bVar4 == 0) {
                                 bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                                  (chatMsg,StringLiteral__gdforce,(MethodInfo *)0x0)
-                                ;
+                                                  (chatMsg,StringLiteral__embedforce,
+                                                   (MethodInfo *)0x0);
                                 if (bVar4 == 0) {
                                   bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                                    (chatMsg,StringLiteral__embedforce,
+                                                    (chatMsg,StringLiteral__pokiforce,
                                                      (MethodInfo *)0x0);
                                   if (bVar4 == 0) {
                                     bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                                      (chatMsg,StringLiteral__pokiforce,
+                                                      (chatMsg,StringLiteral__export,
                                                        (MethodInfo *)0x0);
-                                    if (bVar4 == 0) {
-                                      bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                                        (chatMsg,StringLiteral__export,
-                                                         (MethodInfo *)0x0);
-                                      if (bVar4 != 0) {
-                                        if ((TypeInfo__ObjExportHandler->_1).
-                                            cctor_finished_or_no_cctor == 0) {
-                                          func_?();
-                                        }
-                                        ObjExportHandler::ObjExportHandler_InitializePicking
-                                                  ((MethodInfo *)0x0);
-                                        *unaff_FS_OFFSET = puVar1;
-                                        return bVar3;
+                                    if (bVar4 != 0) {
+                                      if ((TypeInfo__ObjExportHandler->_1).
+                                          cctor_finished_or_no_cctor == 0) {
+                                        func_?();
                                       }
-                                      bVar4 = mscorlib.dll::System::String::String_op_Equality
-                                                        (chatMsg,StringLiteral__exportself,
-                                                         (MethodInfo *)0x0);
-                                      if (bVar4 != 0) {
-                                        if ((TypeInfo__ObjExportHandler->_1).
-                                            cctor_finished_or_no_cctor == 0) {
-                                          func_?();
-                                        }
-                                        ObjExportHandler::ObjExportHandler_ExportSelfAvatar
-                                                  ((MethodInfo *)0x0);
-                                        *unaff_FS_OFFSET = puVar1;
-                                        return bVar3;
-                                      }
-                                      uVar24 = mscorlib.dll::System::String::String_get_Chars
-                                                        (chatMsg,0,(MethodInfo *)0x0);
-                                      if (uVar24 == 0x2f) {
-                                        TextCommand::TextCommand_Resolve(chatMsg,(MethodInfo *)0x0);
-                                        *unaff_FS_OFFSET = puVar1;
-                                        return bVar3;
-                                      }
-                                      *unaff_FS_OFFSET = puVar1;
-                                      return 1;
-                                    }
-                                    uVar21 = 0;
-                                    fVar14 = 0.0;
-                                    fVar15 = 1.4013e-45;
-                                    fVar10 = 2.8026e-45;
-                                    MVGameControllerBase::MVGameControllerBase_get_AdManager
-                                              ((MethodInfo *)0x0);
-                                    pWVar23 = (WebAdManager *)func_?();
-                                    if (pWVar23 != (WebAdManager *)0x0) {
-                                      site_01.siteEnum = (int32_t)fVar10;
-                                      site_01.sites = (List_1_System_String_ *)uVar21;
-                                      site_01._8_4_ = fVar14;
-                                      site_01._12_4_ = fVar15;
-                                      site_01.allowInHouseAds = 0;
-                                      site_01.removeFullscreenButton = 0;
-                                      site_01.hideSignUp = 0;
-                                      site_01.noPlayButtonVideoIcon = 0;
-                                      Assets::Scripts::AdIntegration::Web::WebAdManager::
-                                      WebAdManager_ForceCreateEmbeddedSiteSDK
-                                                (pWVar23,site_01,(MethodInfo *)0x0);
+                                      ObjExportHandler::ObjExportHandler_InitializePicking
+                                                ((MethodInfo *)0x0);
                                       *unaff_FS_OFFSET = puVar1;
                                       return bVar3;
                                     }
-                                  }
-                                  else {
-                                    uVar21 = 0;
-                                    fVar10 = 7.00649e-45;
-                                    fVar14 = 2.3694278e-38;
-                                    fVar15 = 9.21942e-41;
-                                    MVGameControllerBase::MVGameControllerBase_get_AdManager
-                                              ((MethodInfo *)0x0);
-                                    pWVar23 = (WebAdManager *)func_?();
-                                    if (pWVar23 != (WebAdManager *)0x0) {
-                                      site_00.siteEnum = (int32_t)fVar10;
-                                      site_00.sites = (List_1_System_String_ *)uVar21;
-                                      site_00._8_4_ = fVar14;
-                                      site_00._12_4_ = fVar15;
-                                      site_00.allowInHouseAds = 0;
-                                      site_00.removeFullscreenButton = 0;
-                                      site_00.hideSignUp = 0;
-                                      site_00.noPlayButtonVideoIcon = 0;
-                                      Assets::Scripts::AdIntegration::Web::WebAdManager::
-                                      WebAdManager_ForceCreateEmbeddedSiteSDK
-                                                (pWVar23,site_00,(MethodInfo *)0x0);
+                                    bVar4 = mscorlib.dll::System::String::String_op_Equality
+                                                      (chatMsg,StringLiteral__exportself,
+                                                       (MethodInfo *)0x0);
+                                    if (bVar4 != 0) {
+                                      if ((TypeInfo__ObjExportHandler->_1).
+                                          cctor_finished_or_no_cctor == 0) {
+                                        func_?();
+                                      }
+                                      ObjExportHandler::ObjExportHandler_ExportSelfAvatar
+                                                ((MethodInfo *)0x0);
                                       *unaff_FS_OFFSET = puVar1;
                                       return bVar3;
                                     }
+                                    uVar24 = mscorlib.dll::System::String::String_get_Chars
+                                                      (chatMsg,0,(MethodInfo *)0x0);
+                                    if (uVar24 == 0x2f) {
+                                      TextCommand::TextCommand_Resolve(chatMsg,(MethodInfo *)0x0);
+                                      *unaff_FS_OFFSET = puVar1;
+                                      return bVar3;
+                                    }
+                                    *unaff_FS_OFFSET = puVar1;
+                                    return 1;
                                   }
-                                }
-                                else {
                                   uVar21 = 0;
                                   fVar14 = 0.0;
                                   fVar15 = 1.4013e-45;
-                                  fVar10 = 1.4013e-45;
+                                  fVar10 = 2.8026e-45;
                                   MVGameControllerBase::MVGameControllerBase_get_AdManager
                                             ((MethodInfo *)0x0);
                                   pWVar23 = (WebAdManager *)func_?();
                                   if (pWVar23 != (WebAdManager *)0x0) {
-                                    site.siteEnum = (int32_t)fVar10;
-                                    site.sites = (List_1_System_String_ *)uVar21;
-                                    site._8_4_ = fVar14;
-                                    site._12_4_ = fVar15;
-                                    site.allowInHouseAds = 0;
-                                    site.removeFullscreenButton = 0;
-                                    site.hideSignUp = 0;
-                                    site.noPlayButtonVideoIcon = 0;
+                                    site_01.siteEnum = (int32_t)fVar10;
+                                    site_01.sites = (List_1_System_String_ *)uVar21;
+                                    site_01._8_4_ = fVar14;
+                                    site_01._12_4_ = fVar15;
+                                    site_01.allowInHouseAds = 0;
+                                    site_01.removeFullscreenButton = 0;
+                                    site_01.hideSignUp = 0;
+                                    site_01.noPlayButtonVideoIcon = 0;
                                     Assets::Scripts::AdIntegration::Web::WebAdManager::
                                     WebAdManager_ForceCreateEmbeddedSiteSDK
-                                              (pWVar23,site,(MethodInfo *)0x0);
+                                              (pWVar23,site_01,(MethodInfo *)0x0);
                                     *unaff_FS_OFFSET = puVar1;
                                     return bVar3;
                                   }
-                                }
-                                goto code_?;
-                              }
-                              pIVar25 = MVGameControllerBase::MVGameControllerBase_get_AdManager
-                                                 ((MethodInfo *)0x0);
-                              if (pIVar25 != (IAdManager *)0x0) {
-                                pTVar26 = mscorlib.dll::System::Object::Object_GetType
-                                                   ((Object *)pIVar25,(MethodInfo *)0x0);
-                                pSVar22 = StringLiteral_AdManager___;
-                                if (pTVar26 == (Type *)0x0) {
-                                  str1 = (String *)0x0;
                                 }
                                 else {
-                                  str1 = (String *)func_?();
-                                }
-                                pSVar22 = mscorlib.dll::System::String::String_Concat_4
-                                                    (pSVar22,str1,::StringLiteral__,
-                                                     (MethodInfo *)0x0);
-                                MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                          (MVGameMsgType__Enum_AdminMsg,pSVar22,(MethodInfo *)0x0);
-                                MVGameControllerBase::MVGameControllerBase_get_AdManager
-                                          ((MethodInfo *)0x0);
-                                iVar27 = func_?();
-                                bVar3 = (bool)((uint)pSVar7 >> 0x18);
-                                if (iVar27 == 0) {
-                                  pIVar25 = MVGameControllerBase::MVGameControllerBase_get_AdManager
-                                                     ((MethodInfo *)0x0);
-                                  this_01 = (AdSDKManager *)
-                                            func_?(pIVar25,
-                                                  TypeInfo__Assets__Scripts__AdIntegration__Web__AdSDKManager
-                                                  );
-                                  if (this_01 != (AdSDKManager *)0x0) {
-                                    if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor
-                                        == 0) {
-                                      func_?(TypeInfo__System__Boolean);
-                                    }
-                                    pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
-                                                        ((Boolean *)&stack0xffffffea,
-                                                         (MethodInfo *)0x0);
-                                    pSVar7 = mscorlib.dll::System::String::String_Concat_4
-                                                        (StringLiteral_WasInitializedSuccessfully___
-                                                         ,pSVar7,::StringLiteral__,
-                                                         (MethodInfo *)0x0);
-                                    MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                              (MVGameMsgType__Enum_AdminMsg,pSVar7,
-                                               (MethodInfo *)0x0);
-                                    pTVar26 = Assets::Scripts::AdIntegration::Web::AdSDKManager::
-                                             AdSDKManager_get_AdSDKType(this_01,(MethodInfo *)0x0);
-                                    pSVar7 = StringLiteral_AdSDK___;
-                                    if (pTVar26 == (Type *)0x0) {
-                                      pSVar22 = (String *)0x0;
-                                    }
-                                    else {
-                                      pSVar22 = (String *)func_?(3,pTVar26);
-                                    }
-                                    pSVar7 = mscorlib.dll::System::String::String_Concat_4
-                                                        (pSVar7,pSVar22,::StringLiteral__,
-                                                         (MethodInfo *)0x0);
-                                    MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                              (MVGameMsgType__Enum_AdminMsg,pSVar7,
-                                               (MethodInfo *)0x0);
+                                  uVar21 = 0;
+                                  fVar10 = 7.00649e-45;
+                                  fVar14 = 2.3694278e-38;
+                                  fVar15 = 9.21942e-41;
+                                  MVGameControllerBase::MVGameControllerBase_get_AdManager
+                                            ((MethodInfo *)0x0);
+                                  pWVar23 = (WebAdManager *)func_?();
+                                  if (pWVar23 != (WebAdManager *)0x0) {
+                                    site_00.siteEnum = (int32_t)fVar10;
+                                    site_00.sites = (List_1_System_String_ *)uVar21;
+                                    site_00._8_4_ = fVar14;
+                                    site_00._12_4_ = fVar15;
+                                    site_00.allowInHouseAds = 0;
+                                    site_00.removeFullscreenButton = 0;
+                                    site_00.hideSignUp = 0;
+                                    site_00.noPlayButtonVideoIcon = 0;
+                                    Assets::Scripts::AdIntegration::Web::WebAdManager::
+                                    WebAdManager_ForceCreateEmbeddedSiteSDK
+                                              (pWVar23,site_00,(MethodInfo *)0x0);
                                     *unaff_FS_OFFSET = puVar1;
                                     return bVar3;
                                   }
-                                  goto code_?;
                                 }
-                                uVar28 = (uint)pSVar7 & 0xff000000;
-                                if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0)
-                                {
-                                  func_?(TypeInfo__System__Boolean);
-                                }
-                                pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
-                                                    ((Boolean *)&stack0xffffffea,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::String::String_Concat_4
-                                                    (StringLiteral_EmbeddedSiteSDKAvailable___,
-                                                     pSVar7,::StringLiteral__,(MethodInfo *)0x0);
-                                MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                          (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::Enum::Enum_ToString
-                                                    ((Enum *)&stack0xffffffb4,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::String::String_Concat_4
-                                                    (StringLiteral_SiteEnum___,pSVar7,
-                                                     ::StringLiteral__,(MethodInfo *)0x0);
-                                MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                          (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
-                                                    ((Boolean *)&stack0xffffffa0,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::String::String_Concat_4
-                                                    (StringLiteral_showTouristPromotion___,pSVar7,
-                                                     ::StringLiteral__,(MethodInfo *)0x0);
-                                MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                          (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
-                                                    ((Boolean *)&stack0xffffffa1,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::String::String_Concat_4
-                                                    (StringLiteral_allowsOpenInNewTab___,pSVar7,
-                                                     ::StringLiteral__,(MethodInfo *)0x0);
-                                MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                          (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
-                                                    ((Boolean *)&stack0xffffffa2,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::String::String_Concat_4
-                                                    (StringLiteral_allowsRedirectToWebpage___,
-                                                     pSVar7,::StringLiteral__,(MethodInfo *)0x0);
-                                MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                          (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
-                                                    ((Boolean *)&stack0xffffffa3,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::String::String_Concat_4
-                                                    (StringLiteral_allowsModals___,pSVar7,
-                                                     ::StringLiteral__,(MethodInfo *)0x0);
-                                MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                          (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
-                                                    ((Boolean *)&stack0xffffffa4,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::String::String_Concat_4
-                                                    (StringLiteral_integratedSdk___,pSVar7,
-                                                     ::StringLiteral__,(MethodInfo *)0x0);
-                                MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                          (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
-                                                    ((Boolean *)&stack0xffffffa5,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::String::String_Concat_4
-                                                    (StringLiteral_allowsFallbackAds___,pSVar7,
-                                                     ::StringLiteral__,(MethodInfo *)0x0);
-                                MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                          (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
-                                                    ((Boolean *)&stack0xffffffa6,(MethodInfo *)0x0);
-                                pSVar7 = mscorlib.dll::System::String::String_Concat_4
-                                                    (StringLiteral_showPlayButtonAd___,pSVar7,
-                                                     ::StringLiteral__,(MethodInfo *)0x0);
-                                iVar27 = 3;
-                                MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                          (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
-                                if (iVar27 != 0) {
-                                  iVar27 = func_?();
-                                  pSVar7 = *(String **)(iVar27 + 0xc);
-                                  while( true ) {
-                                    bVar4 = mscorlib.dll::System::Collections::Generic::
-                                            List`1[T]+Enumerator[System::Object]::
-                                            List_1_T_Enumerator_System_Object__MoveNext
-                                                      ((List_1_T_Enumerator_System_Object_ *)
-                                                       &stack0xffffff78,
-                                                                                                              
-                                                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::String>__MoveNext__
-                                                  );
-                                    bVar3 = (bool)(uVar28 >> 0x18);
-                                    if (bVar4 == 0) break;
-                                    pSVar22 = mscorlib.dll::System::String::String_Concat_4
-                                                        (StringLiteral_Site__,pSVar7,
-                                                         ::StringLiteral__,(MethodInfo *)0x0);
-                                    pMVar2 = (MethodInfo *)&UNK_?;
-                                    MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                              (MVGameMsgType__Enum_AdminMsg,pSVar22,
-                                               (MethodInfo *)0x0);
-                                  }
-                                  mscorlib.dll::System::ThrowHelper::
-                                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                                            ((Object *)&stack0xffffff78,
-                                             (ExceptionArgument__Enum)
-                                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::String>__Dispose__
-                                             ,pMVar2);
+                              }
+                              else {
+                                uVar21 = 0;
+                                fVar14 = 0.0;
+                                fVar15 = 1.4013e-45;
+                                fVar10 = 1.4013e-45;
+                                MVGameControllerBase::MVGameControllerBase_get_AdManager
+                                          ((MethodInfo *)0x0);
+                                pWVar23 = (WebAdManager *)func_?();
+                                if (pWVar23 != (WebAdManager *)0x0) {
+                                  site.siteEnum = (int32_t)fVar10;
+                                  site.sites = (List_1_System_String_ *)uVar21;
+                                  site._8_4_ = fVar14;
+                                  site._12_4_ = fVar15;
+                                  site.allowInHouseAds = 0;
+                                  site.removeFullscreenButton = 0;
+                                  site.hideSignUp = 0;
+                                  site.noPlayButtonVideoIcon = 0;
+                                  Assets::Scripts::AdIntegration::Web::WebAdManager::
+                                  WebAdManager_ForceCreateEmbeddedSiteSDK
+                                            (pWVar23,site,(MethodInfo *)0x0);
                                   *unaff_FS_OFFSET = puVar1;
                                   return bVar3;
                                 }
                               }
+                              goto code_?;
                             }
-                            else {
-                              pIVar25 = MVGameControllerBase::MVGameControllerBase_get_AdManager
-                                                 ((MethodInfo *)0x0);
-                              pUVar29 = (UnityAction_1_System_Int32Enum_ *)func_?();
-                              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System
-                              ::Int32Enum]::UnityAction_1_System_Int32Enum___ctor
-                                        (pUVar29,(Object *)pSVar22,
-                                         MethodInfo__SendMessageControl__OnAdShownCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
-                                         ,(MethodInfo *)0x0);
-                              if (pIVar25 != (IAdManager *)0x0) {
-                                func_?();
+                            pIVar25 = MVGameControllerBase::MVGameControllerBase_get_AdManager
+                                               ((MethodInfo *)0x0);
+                            if (pIVar25 != (IAdManager *)0x0) {
+                              pTVar26 = mscorlib.dll::System::Object::Object_GetType
+                                                 ((Object *)pIVar25,(MethodInfo *)0x0);
+                              pSVar22 = StringLiteral_AdManager___;
+                              if (pTVar26 == (Type *)0x0) {
+                                str1 = (String *)0x0;
+                              }
+                              else {
+                                str1 = (String *)func_?();
+                              }
+                              pSVar22 = mscorlib.dll::System::String::String_Concat_4
+                                                  (pSVar22,str1,::StringLiteral__,(MethodInfo *)0x0)
+                              ;
+                              MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                                        (MVGameMsgType__Enum_AdminMsg,pSVar22,(MethodInfo *)0x0);
+                              MVGameControllerBase::MVGameControllerBase_get_AdManager
+                                        ((MethodInfo *)0x0);
+                              iVar27 = func_?();
+                              bVar3 = (bool)((uint)pSVar7 >> 0x18);
+                              if (iVar27 == 0) {
+                                pIVar25 = MVGameControllerBase::MVGameControllerBase_get_AdManager
+                                                   ((MethodInfo *)0x0);
+                                this_01 = (AdSDKManager *)
+                                          func_?(pIVar25,
+                                                  TypeInfo__Assets__Scripts__AdIntegration__Web__AdSDKManager
+                                                  );
+                                if (this_01 != (AdSDKManager *)0x0) {
+                                  if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor ==
+                                      0) {
+                                    func_?(TypeInfo__System__Boolean);
+                                  }
+                                  pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
+                                                      ((Boolean *)&stack0xffffffea,(MethodInfo *)0x0
+                                                      );
+                                  pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                                                      (StringLiteral_WasInitializedSuccessfully___,
+                                                       pSVar7,::StringLiteral__,(MethodInfo *)0x0);
+                                  MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                                            (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0)
+                                  ;
+                                  pTVar26 = Assets::Scripts::AdIntegration::Web::AdSDKManager::
+                                           AdSDKManager_get_AdSDKType(this_01,(MethodInfo *)0x0);
+                                  pSVar7 = StringLiteral_AdSDK___;
+                                  if (pTVar26 == (Type *)0x0) {
+                                    pSVar22 = (String *)0x0;
+                                  }
+                                  else {
+                                    pSVar22 = (String *)func_?(3,pTVar26);
+                                  }
+                                  pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                                                      (pSVar7,pSVar22,::StringLiteral__,
+                                                       (MethodInfo *)0x0);
+                                  MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                                            (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0)
+                                  ;
+                                  *unaff_FS_OFFSET = puVar1;
+                                  return bVar3;
+                                }
+                                goto code_?;
+                              }
+                              uVar28 = (uint)pSVar7 & 0xff000000;
+                              if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
+                                func_?(TypeInfo__System__Boolean);
+                              }
+                              pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
+                                                  ((Boolean *)&stack0xffffffea,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                                                  (StringLiteral_EmbeddedSiteSDKAvailable___,pSVar7
+                                                   ,::StringLiteral__,(MethodInfo *)0x0);
+                              MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                                        (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::Enum::Enum_ToString
+                                                  ((Enum *)&stack0xffffffb4,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                                                  (StringLiteral_SiteEnum___,pSVar7,
+                                                   ::StringLiteral__,(MethodInfo *)0x0);
+                              MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                                        (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
+                                                  ((Boolean *)&stack0xffffffa0,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                                                  (StringLiteral_showTouristPromotion___,pSVar7,
+                                                   ::StringLiteral__,(MethodInfo *)0x0);
+                              MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                                        (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
+                                                  ((Boolean *)&stack0xffffffa1,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                                                  (StringLiteral_allowsOpenInNewTab___,pSVar7,
+                                                   ::StringLiteral__,(MethodInfo *)0x0);
+                              MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                                        (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
+                                                  ((Boolean *)&stack0xffffffa2,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                                                  (StringLiteral_allowsRedirectToWebpage___,pSVar7,
+                                                   ::StringLiteral__,(MethodInfo *)0x0);
+                              MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                                        (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
+                                                  ((Boolean *)&stack0xffffffa3,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                                                  (StringLiteral_allowsModals___,pSVar7,
+                                                   ::StringLiteral__,(MethodInfo *)0x0);
+                              MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                                        (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
+                                                  ((Boolean *)&stack0xffffffa4,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                                                  (StringLiteral_integratedSdk___,pSVar7,
+                                                   ::StringLiteral__,(MethodInfo *)0x0);
+                              MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                                        (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
+                                                  ((Boolean *)&stack0xffffffa5,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                                                  (StringLiteral_allowsFallbackAds___,pSVar7,
+                                                   ::StringLiteral__,(MethodInfo *)0x0);
+                              MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                                        (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
+                                                  ((Boolean *)&stack0xffffffa6,(MethodInfo *)0x0);
+                              pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                                                  (StringLiteral_showPlayButtonAd___,pSVar7,
+                                                   ::StringLiteral__,(MethodInfo *)0x0);
+                              iVar27 = 3;
+                              MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                                        (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
+                              if (iVar27 != 0) {
+                                iVar27 = func_?();
+                                pSVar7 = *(String **)(iVar27 + 0xc);
+                                while( true ) {
+                                  bVar4 = mscorlib.dll::System::Collections::Generic::
+                                          List`1[T]+Enumerator[System::Object]::
+                                          List_1_T_Enumerator_System_Object__MoveNext
+                                                    ((List_1_T_Enumerator_System_Object_ *)
+                                                     &stack0xffffff78,
+                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::String>__MoveNext__
+                                                  );
+                                  bVar3 = (bool)(uVar28 >> 0x18);
+                                  if (bVar4 == 0) break;
+                                  pSVar22 = mscorlib.dll::System::String::String_Concat_4
+                                                      (StringLiteral_Site__,pSVar7,
+                                                       ::StringLiteral__,(MethodInfo *)0x0);
+                                  pMVar2 = (MethodInfo *)&UNK_?;
+                                  MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                                            (MVGameMsgType__Enum_AdminMsg,pSVar22,(MethodInfo *)0x0)
+                                  ;
+                                }
+                                mscorlib.dll::System::ThrowHelper::
+                                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                                          ((Object *)&stack0xffffff78,
+                                           (ExceptionArgument__Enum)
+                                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::String>__Dispose__
+                                           ,pMVar2);
                                 *unaff_FS_OFFSET = puVar1;
                                 return bVar3;
                               }
                             }
                           }
                           else {
-                            this_02 = (VerticalVirtualizationController_1_System_Object_ *)
-                                      func_?();
-                            if (this_02 != (VerticalVirtualizationController_1_System_Object_ *)0x0)
-                            {
-                              UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-                              VerticalVirtualizationController`1[System::Object]::
-                              VerticalVirtualizationController_1_System_Object__get_alwaysRebindOnRefresh
-                                        (this_02,(MethodInfo *)0x0);
-                              if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
-                                func_?();
-                              }
-                              pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
-                                                  ((Boolean *)&stack0xffffffea,(MethodInfo *)0x0);
-                              pSVar7 = mscorlib.dll::System::String::String_Concat_3
-                                                  (StringLiteral_Testing__Redirect_allowed__,pSVar7
-                                                   ,(MethodInfo *)0x0);
-                              if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0
-                                 ) {
-                                func_?();
-                              }
-                              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                                        ((Object *)pSVar7,(MethodInfo *)0x0);
-                              *unaff_FS_OFFSET = puVar1;
-                              return bVar3;
-                            }
-                          }
-                        }
-                        else {
-                          pIVar25 = MVGameControllerBase::MVGameControllerBase_get_AdManager
-                                             ((MethodInfo *)0x0);
-                          if (pIVar25 != (IAdManager *)0x0) {
-                            cVar30 = func_?();
-                            if (cVar30 == '\0') goto code_?;
-code_?:
                             pIVar25 = MVGameControllerBase::MVGameControllerBase_get_AdManager
                                                ((MethodInfo *)0x0);
                             pUVar29 = (UnityAction_1_System_Int32Enum_ *)func_?();
                             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::
                             Int32Enum]::UnityAction_1_System_Int32Enum___ctor
                                       (pUVar29,(Object *)pSVar22,
-                                       MethodInfo__SendMessageControl__OnAdShownCallback_Assets__Scripts__AdIntegration__InterstitialAdResult_
+                                       MethodInfo__SendMessageControl__OnAdShownCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
                                        ,(MethodInfo *)0x0);
                             if (pIVar25 != (IAdManager *)0x0) {
                               func_?();
@@ -1230,101 +1171,159 @@ code_?:
                             }
                           }
                         }
+                        else {
+                          this_02 = (VerticalVirtualizationController_1_System_Object_ *)
+                                    func_?();
+                          if (this_02 != (VerticalVirtualizationController_1_System_Object_ *)0x0) {
+                            UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+                            VerticalVirtualizationController`1[System::Object]::
+                            VerticalVirtualizationController_1_System_Object__get_alwaysRebindOnRefresh
+                                      (this_02,(MethodInfo *)0x0);
+                            if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
+                              func_?();
+                            }
+                            pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
+                                                ((Boolean *)&stack0xffffffea,(MethodInfo *)0x0);
+                            pSVar7 = mscorlib.dll::System::String::String_Concat_3
+                                                (StringLiteral_Testing__Redirect_allowed__,pSVar7,
+                                                 (MethodInfo *)0x0);
+                            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0)
+                            {
+                              func_?();
+                            }
+                            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                                      ((Object *)pSVar7,(MethodInfo *)0x0);
+                            *unaff_FS_OFFSET = puVar1;
+                            return bVar3;
+                          }
+                        }
                       }
                       else {
-                        pSVar7 = mscorlib.dll::System::String::String_Substring
-                                            (chatMsg,0xe,(MethodInfo *)0x0);
-                        if (pSVar7 != (String *)0x0) {
-                          pSVar7 = mscorlib.dll::System::String::String_Trim
-                                              (pSVar7,(MethodInfo *)0x0);
-                          pSVar22 = mscorlib.dll::System::String::String_Concat_4
-                                              (StringLiteral_Vector3FromSerialize___,pSVar7,
-                                               ::StringLiteral__,(MethodInfo *)0x0);
-                          MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                    (MVGameMsgType__Enum_AdminMsg,pSVar22,(MethodInfo *)0x0);
-                          if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+                        pIVar25 = MVGameControllerBase::MVGameControllerBase_get_AdManager
+                                           ((MethodInfo *)0x0);
+                        if (pIVar25 != (IAdManager *)0x0) {
+                          cVar30 = func_?();
+                          if (cVar30 == '\0') goto code_?;
+code_?:
+                          pIVar25 = MVGameControllerBase::MVGameControllerBase_get_AdManager
+                                             ((MethodInfo *)0x0);
+                          pUVar29 = (UnityAction_1_System_Int32Enum_ *)func_?();
+                          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::
+                          Int32Enum]::UnityAction_1_System_Int32Enum___ctor
+                                    (pUVar29,(Object *)pSVar22,
+                                     MethodInfo__SendMessageControl__OnAdShownCallback_Assets__Scripts__AdIntegration__InterstitialAdResult_
+                                     ,(MethodInfo *)0x0);
+                          if (pIVar25 != (IAdManager *)0x0) {
                             func_?();
+                            *unaff_FS_OFFSET = puVar1;
+                            return bVar3;
                           }
-                          Extensions::Extensions_ToVector3FromSerializeString
-                                    ((Vector3 *)&stack0xffffffb4,pSVar7,(MethodInfo *)0x0);
-                          pSVar7 = (String *)func_?();
-                          pSVar7 = mscorlib.dll::System::String::String_Concat_4
-                                              (StringLiteral_Vector3FromSerialize_result___,pSVar7,
-                                               ::StringLiteral__,(MethodInfo *)0x0);
-                          MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                    (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
-                          *unaff_FS_OFFSET = puVar1;
-                          return bVar3;
                         }
                       }
                     }
-                  }
-                  else {
-                    pSVar7 = TM::TM__(StringLiteral_Region___0_,(MethodInfo *)0x0);
-                    pMVar31 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0)
-                    ;
-                    if (pMVar31 != (MVNetworkGame *)0x0) {
-                      pOVar5 = (Object *)func_?();
-                      pSVar7 = mscorlib.dll::System::String::String_Format
-                                          (pSVar7,pOVar5,(MethodInfo *)0x0);
-                      MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
-                      *unaff_FS_OFFSET = puVar1;
-                      return bVar3;
+                    else {
+                      pSVar7 = mscorlib.dll::System::String::String_Substring
+                                          (chatMsg,0xe,(MethodInfo *)0x0);
+                      if (pSVar7 != (String *)0x0) {
+                        pSVar7 = mscorlib.dll::System::String::String_Trim
+                                            (pSVar7,(MethodInfo *)0x0);
+                        pSVar22 = mscorlib.dll::System::String::String_Concat_4
+                                            (StringLiteral_Vector3FromSerialize___,pSVar7,
+                                             ::StringLiteral__,(MethodInfo *)0x0);
+                        MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                                  (MVGameMsgType__Enum_AdminMsg,pSVar22,(MethodInfo *)0x0);
+                        if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+                          func_?();
+                        }
+                        Extensions::Extensions_ToVector3FromSerializeString
+                                  ((Vector3 *)&stack0xffffffb4,pSVar7,(MethodInfo *)0x0);
+                        pSVar7 = (String *)func_?();
+                        pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                                            (StringLiteral_Vector3FromSerialize_result___,pSVar7,
+                                             ::StringLiteral__,(MethodInfo *)0x0);
+                        MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                                  (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
+                        *unaff_FS_OFFSET = puVar1;
+                        return bVar3;
+                      }
                     }
                   }
                 }
                 else {
-                  if (cRam_? == '\0') {
-                    func_?();
-                    cRam_? = '\x01';
-                  }
-                  pSVar7 = TM::TM__(StringLiteral_Version___0_u000ABranch___1_,(MethodInfo *)0x0);
-                  pKVar32 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings
-                                      ((MethodInfo *)0x0);
-                  if (pKVar32 != (KoGaMaSettingsContainer *)0x0) {
-                    pSVar22 = KoGaMaSettingsContainer::KoGaMaSettingsContainer_get_VersionString
-                                        (pKVar32,(MethodInfo *)0x0);
-                    pKVar32 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings
-                                        ((MethodInfo *)0x0);
-                    if (pKVar32 != (KoGaMaSettingsContainer *)0x0) {
-                      pSVar7 = mscorlib.dll::System::String::String_Format_1
-                                          (pSVar7,(Object *)pSVar22,
-                                           (Object *)(pKVar32->fields).branchName,(MethodInfo *)0x0)
-                      ;
-                      MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                                (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
-                      *unaff_FS_OFFSET = puVar1;
-                      return bVar3;
-                    }
+                  pSVar7 = TM::TM__(StringLiteral_Region___0_,(MethodInfo *)0x0);
+                  pMVar31 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                  if (pMVar31 != (MVNetworkGame *)0x0) {
+                    pOVar5 = (Object *)func_?();
+                    pSVar7 = mscorlib.dll::System::String::String_Format
+                                        (pSVar7,pOVar5,(MethodInfo *)0x0);
+                    MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                              (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
+                    *unaff_FS_OFFSET = puVar1;
+                    return bVar3;
                   }
                 }
               }
               else {
-                pMVar33 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader
+                if (cRam_? == '\0') {
+                  func_?();
+                  cRam_? = '\x01';
+                }
+                pSVar7 = TM::TM__(StringLiteral_Version___0_u000ABranch___1_,(MethodInfo *)0x0);
+                pKVar32 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings
                                     ((MethodInfo *)0x0);
-                if (pMVar33 != (MaterialLoader *)0x0) {
-                  pSVar7 = MaterialLoader::MaterialLoader_MaterialLoaderInfo
-                                      (pMVar33,(MethodInfo *)0x0);
-                  MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                            (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
-                  *unaff_FS_OFFSET = puVar1;
-                  return bVar3;
+                if (pKVar32 != (KoGaMaSettingsContainer *)0x0) {
+                  pSVar22 = KoGaMaSettingsContainer::KoGaMaSettingsContainer_get_VersionString
+                                      (pKVar32,(MethodInfo *)0x0);
+                  pKVar32 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings
+                                      ((MethodInfo *)0x0);
+                  if (pKVar32 != (KoGaMaSettingsContainer *)0x0) {
+                    pSVar7 = mscorlib.dll::System::String::String_Format_1
+                                        (pSVar7,(Object *)pSVar22,
+                                         (Object *)(pKVar32->fields).branchName,(MethodInfo *)0x0);
+                    MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                              (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
+                    *unaff_FS_OFFSET = puVar1;
+                    return bVar3;
+                  }
                 }
               }
             }
             else {
-              pSVar7 = TM::TM__(StringLiteral_Shader___0_u000AAniso_level___1_u000AFil,
-                                 (MethodInfo *)0x0);
+              pMVar33 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader
+                                  ((MethodInfo *)0x0);
+              if (pMVar33 != (MaterialLoader *)0x0) {
+                pSVar7 = MaterialLoader::MaterialLoader_MaterialLoaderInfo
+                                    (pMVar33,(MethodInfo *)0x0);
+                MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                          (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
+                *unaff_FS_OFFSET = puVar1;
+                return bVar3;
+              }
+            }
+          }
+          else {
+            pSVar7 = TM::TM__(StringLiteral_Shader___0_u000AAniso_level___1_u000AFil,
+                               (MethodInfo *)0x0);
+            pMVar33 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader
+                                ((MethodInfo *)0x0);
+            if (((pMVar33 != (MaterialLoader *)0x0) &&
+                (pMVar34 = (pMVar33->fields)._CubeModelMaterial_k__BackingField,
+                pMVar34 != (Material *)0x0)) &&
+               (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_shader
+                                    (pMVar34,(MethodInfo *)0x0), this_03 != (Shader *)0x0)) {
+              pSVar22 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
+                                  ((Object_1 *)this_03,(MethodInfo *)0x0);
               pMVar33 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader
                                   ((MethodInfo *)0x0);
               if (((pMVar33 != (MaterialLoader *)0x0) &&
                   (pMVar34 = (pMVar33->fields)._CubeModelMaterial_k__BackingField,
                   pMVar34 != (Material *)0x0)) &&
-                 (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_shader
-                                      (pMVar34,(MethodInfo *)0x0), this_03 != (Shader *)0x0)) {
-                pSVar22 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
-                                    ((Object_1 *)this_03,(MethodInfo *)0x0);
+                 (pTVar35 = UnityEngine.CoreModule.dll::UnityEngine::Material::
+                            Material_get_mainTexture(pMVar34,(MethodInfo *)0x0),
+                 pTVar35 != (Texture *)0x0)) {
+                UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_get_anisoLevel
+                          (pTVar35,(MethodInfo *)0x0);
+                pOVar5 = (Object *)func_?();
                 pMVar33 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader
                                     ((MethodInfo *)0x0);
                 if (((pMVar33 != (MaterialLoader *)0x0) &&
@@ -1333,164 +1332,121 @@ code_?:
                    (pTVar35 = UnityEngine.CoreModule.dll::UnityEngine::Material::
                               Material_get_mainTexture(pMVar34,(MethodInfo *)0x0),
                    pTVar35 != (Texture *)0x0)) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_get_anisoLevel
+                  UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_get_filterMode
                             (pTVar35,(MethodInfo *)0x0);
-                  pOVar5 = (Object *)func_?();
-                  pMVar33 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader
-                                      ((MethodInfo *)0x0);
-                  if (((pMVar33 != (MaterialLoader *)0x0) &&
-                      (pMVar34 = (pMVar33->fields)._CubeModelMaterial_k__BackingField,
-                      pMVar34 != (Material *)0x0)) &&
-                     (pTVar35 = UnityEngine.CoreModule.dll::UnityEngine::Material::
-                                Material_get_mainTexture(pMVar34,(MethodInfo *)0x0),
-                     pTVar35 != (Texture *)0x0)) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_get_filterMode
-                              (pTVar35,(MethodInfo *)0x0);
-                    pOVar6 = (Object *)func_?();
-                    pSVar7 = mscorlib.dll::System::String::String_Format_2
-                                        (pSVar7,(Object *)pSVar22,pOVar5,pOVar6,(MethodInfo *)0x0
-                                        );
-                    MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                              (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
-                    *unaff_FS_OFFSET = uVar21;
-                    return bVar3;
-                  }
-                }
-              }
-            }
-          }
-          else {
-            iVar27 = func_?();
-            if ((iVar27 != 0) &&
-               (*(PlayerPlanetMetaDataClient **)(iVar27 + 0x24) != (PlayerPlanetMetaDataClient *)0x0
-               )) {
-              MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetMetaDataClient::
-              PlayerPlanetMetaDataClient_DailyWelcomeRewardClaimedToday
-                        (*(PlayerPlanetMetaDataClient **)(iVar27 + 0x24),(MethodInfo *)0x0);
-              if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
-                                  ((Boolean *)&stack0xffffffe9,(MethodInfo *)0x0);
-              pSVar7 = mscorlib.dll::System::String::String_Concat_3
-                                  (StringLiteral_resultDailyWelcomeRewardClaimedT,pSVar7,
-                                   (MethodInfo *)0x0);
-              if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                        ((Object *)pSVar7,(MethodInfo *)0x0);
-              if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
-              bVar4 = 0;
-              iVar27 = func_?();
-              if ((iVar27 != 0) && (*(int *)(iVar27 + 0x24) != 0)) {
-                pSVar7 = mscorlib.dll::System::DateTime::DateTime_ToString
-                                    ((DateTime *)&stack0xffffffc0,(MethodInfo *)0x0);
-                pSVar7 = mscorlib.dll::System::String::String_Concat_3
-                                    (StringLiteral_utcNow_,pSVar7,(MethodInfo *)0x0);
-                UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                          ((Object *)pSVar7,(MethodInfo *)0x0);
-                iVar27 = func_?();
-                if ((iVar27 != 0) && (*(int *)(iVar27 + 0x24) != 0)) {
-                  pSVar7 = mscorlib.dll::System::DateTime::DateTime_ToString
-                                      ((DateTime *)(*(int *)(iVar27 + 0x24) + 0x10),
-                                       (MethodInfo *)0x0);
-                  pSVar7 = mscorlib.dll::System::String::String_Concat_3
-                                      (StringLiteral_GamePassesManager_PlayerPlanetDa,pSVar7,
-                                       (MethodInfo *)0x0);
-                  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                            ((Object *)pSVar7,(MethodInfo *)0x0);
-                  mscorlib.dll::System::DateTime::DateTime_get_DayOfYear
-                            ((DateTime *)&stack0xffffffac,(MethodInfo *)0x0);
-                  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString
-                                      ((Int32 *)&stack0xffffffdc,(MethodInfo *)0x0);
-                  pSVar7 = mscorlib.dll::System::String::String_Concat_3
-                                      (StringLiteral_lastDailyWelcomeRewardClaim_DayO,pSVar7,
-                                       (MethodInfo *)0x0);
-                  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                            ((Object *)pSVar7,(MethodInfo *)0x0);
-                  mscorlib.dll::System::DateTime::DateTime_get_DayOfYear
-                            ((DateTime *)&stack0xffffffc0,(MethodInfo *)0x0);
-                  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString
-                                      ((Int32 *)&stack0xffffffdc,(MethodInfo *)0x0);
-                  pSVar7 = mscorlib.dll::System::String::String_Concat_3
-                                      (StringLiteral_utcNow_DayOfYear_,pSVar7,(MethodInfo *)0x0);
-                  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                            ((Object *)pSVar7,(MethodInfo *)0x0);
-                  iVar36 = mscorlib.dll::System::DateTime::DateTime_get_DayOfYear
-                                     ((DateTime *)&stack0xffffffac,(MethodInfo *)0x0);
-                  iVar37 = mscorlib.dll::System::DateTime::DateTime_get_DayOfYear
-                                     ((DateTime *)&stack0xffffffc0,(MethodInfo *)0x0);
-                  pSVar7 = StringLiteral_resultDebug_;
-                  if (iVar36 == iVar37) {
-                    if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-                      func_?();
-                    }
-                    mscorlib.dll::System::DateTime::DateTime_get_Year
-                              ((DateTime *)&stack0xffffffac,(MethodInfo *)0x0);
-                    mscorlib.dll::System::DateTime::DateTime_get_Year
-                              ((DateTime *)&stack0xffffffc0,(MethodInfo *)0x0);
-                  }
-                  if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?();
-                  }
-                  pSVar22 = mscorlib.dll::System::Boolean::Boolean_ToString
-                                      ((Boolean *)&stack0xffffffea,(MethodInfo *)0x0);
-                  pSVar7 = mscorlib.dll::System::String::String_Concat_3
-                                      (pSVar7,pSVar22,(MethodInfo *)0x0);
-                  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?();
-                  }
-                  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                            ((Object *)pSVar7,(MethodInfo *)0x0);
-                  *unaff_FS_OFFSET = puVar1;
-                  return bVar4;
+                  pOVar6 = (Object *)func_?();
+                  pSVar7 = mscorlib.dll::System::String::String_Format_2
+                                      (pSVar7,(Object *)pSVar22,pOVar5,pOVar6,(MethodInfo *)0x0);
+                  MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                            (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
+                  *unaff_FS_OFFSET = uVar21;
+                  return bVar3;
                 }
               }
             }
           }
         }
         else {
-          pMVar31 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar31 != (MVNetworkGame *)0x0) &&
-             (this_00 = (pMVar31->fields).operationRequests,
-             this_00 != (MVNetworkGame_OperationRequests *)0x0)) {
-            MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_ResetPlayerPlanetData
-                      (this_00,(MethodInfo *)0x0);
-            *unaff_FS_OFFSET = puVar1;
-            return bVar3;
+          iVar27 = func_?();
+          if ((iVar27 != 0) &&
+             (*(PlayerPlanetMetaDataClient **)(iVar27 + 0x24) != (PlayerPlanetMetaDataClient *)0x0))
+          {
+            MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetMetaDataClient::
+            PlayerPlanetMetaDataClient_DailyWelcomeRewardClaimedToday
+                      (*(PlayerPlanetMetaDataClient **)(iVar27 + 0x24),(MethodInfo *)0x0);
+            if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            pSVar7 = mscorlib.dll::System::Boolean::Boolean_ToString
+                                ((Boolean *)&stack0xffffffe9,(MethodInfo *)0x0);
+            pSVar7 = mscorlib.dll::System::String::String_Concat_3
+                                (StringLiteral_resultDailyWelcomeRewardClaimedT,pSVar7,
+                                 (MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                      ((Object *)pSVar7,(MethodInfo *)0x0);
+            if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
+            bVar4 = 0;
+            iVar27 = func_?();
+            if ((iVar27 != 0) && (*(int *)(iVar27 + 0x24) != 0)) {
+              pSVar7 = mscorlib.dll::System::DateTime::DateTime_ToString
+                                  ((DateTime *)&stack0xffffffc0,(MethodInfo *)0x0);
+              pSVar7 = mscorlib.dll::System::String::String_Concat_3
+                                  (StringLiteral_utcNow_,pSVar7,(MethodInfo *)0x0);
+              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                        ((Object *)pSVar7,(MethodInfo *)0x0);
+              iVar27 = func_?();
+              if ((iVar27 != 0) && (*(int *)(iVar27 + 0x24) != 0)) {
+                pSVar7 = mscorlib.dll::System::DateTime::DateTime_ToString
+                                    ((DateTime *)(*(int *)(iVar27 + 0x24) + 0x10),(MethodInfo *)0x0)
+                ;
+                pSVar7 = mscorlib.dll::System::String::String_Concat_3
+                                    (StringLiteral_GamePassesManager_PlayerPlanetDa,pSVar7,
+                                     (MethodInfo *)0x0);
+                UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                          ((Object *)pSVar7,(MethodInfo *)0x0);
+                mscorlib.dll::System::DateTime::DateTime_get_DayOfYear
+                          ((DateTime *)&stack0xffffffac,(MethodInfo *)0x0);
+                pSVar7 = mscorlib.dll::System::Int32::Int32_ToString
+                                    ((Int32 *)&stack0xffffffdc,(MethodInfo *)0x0);
+                pSVar7 = mscorlib.dll::System::String::String_Concat_3
+                                    (StringLiteral_lastDailyWelcomeRewardClaim_DayO,pSVar7,
+                                     (MethodInfo *)0x0);
+                UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                          ((Object *)pSVar7,(MethodInfo *)0x0);
+                mscorlib.dll::System::DateTime::DateTime_get_DayOfYear
+                          ((DateTime *)&stack0xffffffc0,(MethodInfo *)0x0);
+                pSVar7 = mscorlib.dll::System::Int32::Int32_ToString
+                                    ((Int32 *)&stack0xffffffdc,(MethodInfo *)0x0);
+                pSVar7 = mscorlib.dll::System::String::String_Concat_3
+                                    (StringLiteral_utcNow_DayOfYear_,pSVar7,(MethodInfo *)0x0);
+                UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                          ((Object *)pSVar7,(MethodInfo *)0x0);
+                iVar36 = mscorlib.dll::System::DateTime::DateTime_get_DayOfYear
+                                   ((DateTime *)&stack0xffffffac,(MethodInfo *)0x0);
+                iVar37 = mscorlib.dll::System::DateTime::DateTime_get_DayOfYear
+                                   ((DateTime *)&stack0xffffffc0,(MethodInfo *)0x0);
+                pSVar7 = StringLiteral_resultDebug_;
+                if (iVar36 == iVar37) {
+                  if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
+                    func_?();
+                  }
+                  mscorlib.dll::System::DateTime::DateTime_get_Year
+                            ((DateTime *)&stack0xffffffac,(MethodInfo *)0x0);
+                  mscorlib.dll::System::DateTime::DateTime_get_Year
+                            ((DateTime *)&stack0xffffffc0,(MethodInfo *)0x0);
+                }
+                if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                pSVar22 = mscorlib.dll::System::Boolean::Boolean_ToString
+                                    ((Boolean *)&stack0xffffffea,(MethodInfo *)0x0);
+                pSVar7 = mscorlib.dll::System::String::String_Concat_3
+                                    (pSVar7,pSVar22,(MethodInfo *)0x0);
+                if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                          ((Object *)pSVar7,(MethodInfo *)0x0);
+                *unaff_FS_OFFSET = puVar1;
+                return bVar4;
+              }
+            }
           }
         }
       }
       else {
-        pSVar7 = TM::TM__(StringLiteral_Toggling_HD_is_deprecated__pleas,(MethodInfo *)0x0);
-        this_04 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                   *)func_?();
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-        UIElements::StyleComplexSelector+PseudoStateData]::
-        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                  (this_04,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                  );
-        pOVar5 = (Object *)func_?();
-        if (this_04 !=
-            (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    ((Dictionary_2_System_Object_System_Object_ *)this_04,pOVar5,(Object *)pSVar7,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                    );
-          if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          NotificationController::NotificationController_PushNotification_2
-                    (NotificationType__Enum_PlayerTip,
-                     (Dictionary_2_System_Object_System_Object_ *)this_04,
-                     NotificationLifetime__Enum_High,(MethodInfo *)0x0);
+        pMVar31 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar31 != (MVNetworkGame *)0x0) &&
+           (this_00 = (pMVar31->fields).operationRequests,
+           this_00 != (MVNetworkGame_OperationRequests *)0x0)) {
+          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_ResetPlayerPlanetData
+                    (this_00,(MethodInfo *)0x0);
           *unaff_FS_OFFSET = puVar1;
           return bVar3;
         }
@@ -1503,10 +1459,10 @@ code_?:
       pOVar5 = (Object *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(pOVar5,pMVar2);
       func_?();
-      this_05 = (Exception *)func_?();
+      this_04 = (Exception *)func_?();
       pMVar2 = (MethodInfo *)0x0;
       pSVar7 = (String *)func_?();
-      mscorlib.dll::System::Exception::Exception__ctor_1(this_05,pSVar7,pMVar2);
+      mscorlib.dll::System::Exception::Exception__ctor_1(this_04,pSVar7,pMVar2);
       func_?();
       func_?();
       pcVar38 = (code *)swi(3);

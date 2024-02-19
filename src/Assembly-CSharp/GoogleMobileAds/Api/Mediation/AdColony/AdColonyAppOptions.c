@@ -1,53 +1,4 @@
 
-/* IAdColonyAppOptionsClient GetAdColonyAppOptionsClient() */
-
-IAdColonyAppOptionsClient *
-Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyAppOptions::
-AdColonyAppOptions_GetAdColonyAppOptionsClient(MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__DummyClient);
-    cRam_? = '\x01';
-  }
-  pIVar1 = (IAdColonyAppOptionsClient *)
-           func_?(TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__DummyClient);
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__GoogleMobileAds__Common__Mediation__AdColony__DummyClient__DummyClient__
-                   );
-    func_?(&StringLiteral_Dummy_);
-    cRam_? = '\x01';
-  }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)pIVar1,ExceptionArgument__Enum_obj,unaff_EDI);
-  pMVar2 = MethodInfo__GoogleMobileAds__Common__Mediation__AdColony__DummyClient__DummyClient__;
-  if (MethodInfo__GoogleMobileAds__Common__Mediation__AdColony__DummyClient__DummyClient__->
-      is_inflated != 0) {
-    pMVar2 = (MethodInfo *)
-             func_?(
-                            MethodInfo__GoogleMobileAds__Common__Mediation__AdColony__DummyClient__DummyClient__
-                            );
-  }
-  piVar3 = (int *)func_?(pMVar2,pMVar2->klass);
-  if (piVar3 != (int *)0x0) {
-    pSVar4 = (String *)(**(code **)(*piVar3 + 0x100))(piVar3,*(undefined4 *)(*piVar3 + 0x104));
-    pSVar4 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_Dummy_,pSVar4,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar4,(MethodInfo *)0x0);
-    return pIVar1;
-  }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pIVar1 = (IAdColonyAppOptionsClient *)(*pcVar5)();
-  return pIVar1;
-}
-
-
 /* String GetPrivacyConsentString(AdColonyPrivacyFramework) */
 
 String * Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyAppOptions::
@@ -56,17 +7,25 @@ String * Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColon
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions);
+    func_?(&TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
     func_?(&
-                    TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient
+                    TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient
                    );
     cRam_? = '\x01';
   }
-  if ((TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->_1).
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
       cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions);
+    func_?(TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
   }
-  pIVar1 = TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->static_fields->
+  pIVar1 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->static_fields->
            client;
   if (pIVar1 != (IAdColonyAppOptionsClient *)0x0) {
     pIVar2 = pIVar1->klass;
@@ -77,7 +36,7 @@ String * Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColon
       do {
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)
-            TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient) {
+            TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient) {
           pIVar2 = pIVar1->klass;
           iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
           pSVar6 = (String *)
@@ -91,7 +50,7 @@ String * Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColon
     }
     puVar7 = (undefined4 *)
              func_?(pIVar1,
-                             TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient
+                             TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient
                              ,3);
     pSVar6 = (String *)(*(code *)*puVar7)(pIVar1,privacyFramework,puVar7[1]);
     return pSVar6;
@@ -111,17 +70,25 @@ bool Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions);
+    func_?(&TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
     func_?(&
-                    TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient
+                    TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient
                    );
     cRam_? = '\x01';
   }
-  if ((TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->_1).
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
       cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions);
+    func_?(TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
   }
-  pIVar1 = TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->static_fields->
+  pIVar1 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->static_fields->
            client;
   if (pIVar1 != (IAdColonyAppOptionsClient *)0x0) {
     pIVar2 = pIVar1->klass;
@@ -132,7 +99,7 @@ bool Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
       do {
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)
-            TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient) {
+            TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient) {
           pIVar2 = pIVar1->klass;
           iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
           bVar6 = (*(code *)(&(pIVar2->vtable).GetPrivacyFrameworkRequired)[iVar5].method)
@@ -145,7 +112,7 @@ bool Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
     }
     puVar7 = (undefined4 *)
              func_?(pIVar1,
-                             TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient
+                             TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient
                              ,1);
     bVar6 = (*(code *)*puVar7)(pIVar1,privacyFramework,puVar7[1]);
     return bVar6;
@@ -164,17 +131,25 @@ String * Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColon
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions);
+    func_?(&TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
     func_?(&
-                    TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient
+                    TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient
                    );
     cRam_? = '\x01';
   }
-  if ((TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->_1).
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
       cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions);
+    func_?(TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
   }
-  pIVar1 = TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->static_fields->
+  pIVar1 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->static_fields->
            client;
   if (pIVar1 != (IAdColonyAppOptionsClient *)0x0) {
     pIVar2 = pIVar1->klass;
@@ -185,7 +160,7 @@ String * Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColon
       do {
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)
-            TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient) {
+            TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient) {
           pIVar2 = pIVar1->klass;
           iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
           pSVar6 = (String *)
@@ -198,7 +173,7 @@ String * Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColon
     }
     puVar7 = (undefined4 *)
              func_?(pIVar1,
-                             TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient
+                             TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient
                              ,5);
     pSVar6 = (String *)(*(code *)*puVar7)(pIVar1,puVar7[1]);
     return pSVar6;
@@ -217,17 +192,25 @@ bool Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions);
+    func_?(&TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
     func_?(&
-                    TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient
+                    TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient
                    );
     cRam_? = '\x01';
   }
-  if ((TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->_1).
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
       cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions);
+    func_?(TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
   }
-  pIVar1 = TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->static_fields->
+  pIVar1 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->static_fields->
            client;
   if (pIVar1 != (IAdColonyAppOptionsClient *)0x0) {
     pIVar2 = pIVar1->klass;
@@ -238,7 +221,7 @@ bool Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
       do {
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)
-            TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient) {
+            TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient) {
           pIVar2 = pIVar1->klass;
           iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
           bVar6 = (*(code *)(&(pIVar2->vtable).IsTestMode)[iVar5].method)
@@ -250,7 +233,7 @@ bool Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
     }
     puVar7 = (undefined4 *)
              func_?(pIVar1,
-                             TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient
+                             TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient
                              ,7);
     bVar6 = (*(code *)*puVar7)(pIVar1,puVar7[1]);
     return bVar6;
@@ -271,30 +254,41 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
 
 {
   if (cRam_? == '\0') {
-    pAStack_1 = (AdColonyAppOptions__Class *)
-                &TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions;
-    func_?();
-    ppIStack_2 = &TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient;
+    pAStack_1 = (AdColonyAppOptions_1__Class *)
+                &TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions;
     func_?();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->_1).
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
       cctor_finished_or_no_cctor == 0) {
-    pAStack_1 = TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions;
+    pAStack_1 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions;
     func_?();
   }
-  pIVar3 = TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->static_fields->
+  if (cRam_? == '\0') {
+    pAStack_1 = (AdColonyAppOptions_1__Class *)
+                &TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions;
+    func_?();
+    ppIStack_2 = &TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
+      cctor_finished_or_no_cctor == 0) {
+    pAStack_1 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions;
+    func_?();
+  }
+  pIVar3 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->static_fields->
            client;
   if (pIVar3 != (IAdColonyAppOptionsClient *)0x0) {
-    pAStack_1 = (AdColonyAppOptions__Class *)consentString;
+    pAStack_1 = (AdColonyAppOptions_1__Class *)consentString;
     ppIStack_2 = (IAdColonyAppOptionsClient__Class **)privacyFramework;
     pIStack_4 = pIVar3;
     func_?(2,
-                    TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient
+                    TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient
                    );
     return;
   }
-  pAStack_1 = (AdColonyAppOptions__Class *)&stack0xfffffffc;
+  pAStack_1 = (AdColonyAppOptions_1__Class *)&stack0xfffffffc;
   uVar5 = func_?(&pIStack_4);
   func_?(uVar5);
   pcVar6 = (code *)swi(3);
@@ -311,17 +305,25 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions);
+    func_?(&TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
     func_?(&
-                    TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient
+                    TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient
                    );
     cRam_? = '\x01';
   }
-  if ((TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->_1).
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
       cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions);
+    func_?(TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
   }
-  pIVar1 = TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->static_fields->
+  pIVar1 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->static_fields->
            client;
   if (pIVar1 == (IAdColonyAppOptionsClient *)0x0) {
     func_?();
@@ -337,7 +339,7 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
     do {
       if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)
-          TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient) {
+          TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient) {
         ppMVar6 = &(&(pIVar1->klass->vtable).SetPrivacyFrameworkRequired)
                    [pIVar1->klass->interfaceOffsets[uVar4].offset].method;
         goto code_?;
@@ -347,7 +349,7 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
   }
   ppMVar6 = (MethodInfo **)
             func_?(pIVar1,
-                            TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient
+                            TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient
                             ,0);
 code_?:
   (*(code *)*ppMVar6)(pIVar1,privacyFramework,_isRequired,ppMVar6[1]);
@@ -362,29 +364,40 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
 
 {
   if (cRam_? == '\0') {
-    pAStack_1 = (AdColonyAppOptions__Class *)
-                &TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions;
-    func_?();
-    pIStack_2 = (IAdColonyAppOptionsClient *)
-                &TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient;
+    pAStack_1 = (AdColonyAppOptions_1__Class *)
+                &TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions;
     func_?();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->_1).
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
       cctor_finished_or_no_cctor == 0) {
-    pAStack_1 = TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions;
+    pAStack_1 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions;
     func_?();
   }
-  pIVar3 = TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->static_fields->
+  if (cRam_? == '\0') {
+    pAStack_1 = (AdColonyAppOptions_1__Class *)
+                &TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions;
+    func_?();
+    pIStack_2 = (IAdColonyAppOptionsClient *)
+                &TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
+      cctor_finished_or_no_cctor == 0) {
+    pAStack_1 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions;
+    func_?();
+  }
+  pIVar3 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->static_fields->
            client;
   if (pIVar3 != (IAdColonyAppOptionsClient *)0x0) {
-    pAStack_1 = (AdColonyAppOptions__Class *)_isTestMode;
-    pIStack_4 = TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient;
+    pAStack_1 = (AdColonyAppOptions_1__Class *)_isTestMode;
+    pIStack_4 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient;
     pIStack_2 = pIVar3;
     func_?(6);
     return;
   }
-  pAStack_1 = (AdColonyAppOptions__Class *)&stack0xfffffffc;
+  pAStack_1 = (AdColonyAppOptions_1__Class *)&stack0xfffffffc;
   uVar5 = func_?(&pIStack_4);
   func_?(uVar5);
   pcVar6 = (code *)swi(3);
@@ -400,102 +413,44 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions);
-    func_?(&
-                    TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient
-                   );
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions);
-  }
-  pIVar1 = TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->static_fields->
-           client;
-  if (pIVar1 != (IAdColonyAppOptionsClient *)0x0) {
-    pIVar2 = pIVar1->klass;
-    uVar3 = 0;
-    uVar4._0_1_ = (pIVar2->_1).rank;
-    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-    if (uVar4 != 0) {
-      do {
-        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
-            (Il2CppClass *)
-            TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient) {
-          pIVar2 = pIVar1->klass;
-          iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-          (*(code *)(&(pIVar2->vtable).SetUserId)[iVar5].method)
-                    (pIVar1,userId,(&(pIVar2->vtable).GetUserId)[iVar5].methodPtr);
-          return;
-        }
-        uVar3 = uVar3 + 1;
-      } while (uVar3 < uVar4);
-    }
-    puVar6 = (undefined4 *)
-             func_?(pIVar1,
-                             TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__IAdColonyAppOptionsClient
-                             ,4);
-    (*(code *)*puVar6)(pIVar1,userId,puVar6[1]);
-    return;
-  }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
-  return;
-}
-
-
-/* AdColonyAppOptions() */
-
-void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyAppOptions::
-     AdColonyAppOptions__cctor(MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions);
-    cRam_? = '\x01';
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__DummyClient);
-    cRam_? = '\x01';
-  }
-  value = (IAdColonyAppOptionsClient *)
-          func_?(TypeInfo__GoogleMobileAds__Common__Mediation__AdColony__DummyClient);
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__GoogleMobileAds__Common__Mediation__AdColony__DummyClient__DummyClient__
-                   );
-    func_?(&StringLiteral_Dummy_);
-    cRam_? = '\x01';
-  }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
-  pMVar1 = MethodInfo__GoogleMobileAds__Common__Mediation__AdColony__DummyClient__DummyClient__;
-  if (MethodInfo__GoogleMobileAds__Common__Mediation__AdColony__DummyClient__DummyClient__->
-      is_inflated != 0) {
-    pMVar1 = (MethodInfo *)
-             func_?(
-                            MethodInfo__GoogleMobileAds__Common__Mediation__AdColony__DummyClient__DummyClient__
-                            );
-  }
-  piVar2 = (int *)func_?(pMVar1,pMVar1->klass);
-  if (piVar2 != (int *)0x0) {
-    pSVar3 = (String *)(**(code **)(*piVar2 + 0x100))(piVar2,*(undefined4 *)(*piVar2 + 0x104));
-    pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_Dummy_,pSVar3,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar3,(MethodInfo *)0x0);
-    TypeInfo__GoogleMobileAds__Api__Mediation__AdColony__AdColonyAppOptions->static_fields->client =
-         value;
+    pAStack_1 = (AdColonyAppOptions_1__Class *)
+                &TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions;
     func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
+      cctor_finished_or_no_cctor == 0) {
+    pAStack_1 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions;
+    func_?();
+  }
+  if (cRam_? == '\0') {
+    pAStack_1 = (AdColonyAppOptions_1__Class *)
+                &TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions;
+    func_?();
+    pIStack_2 = (IAdColonyAppOptionsClient *)
+                &TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
+      cctor_finished_or_no_cctor == 0) {
+    pAStack_1 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions;
+    func_?();
+  }
+  pIVar3 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->static_fields->
+           client;
+  if (pIVar3 != (IAdColonyAppOptionsClient *)0x0) {
+    pAStack_1 = (AdColonyAppOptions_1__Class *)userId;
+    pIStack_4 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient;
+    pIStack_2 = pIVar3;
+    func_?(4);
     return;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pAStack_1 = (AdColonyAppOptions_1__Class *)&stack0xfffffffc;
+  uVar5 = func_?(&pIStack_4);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

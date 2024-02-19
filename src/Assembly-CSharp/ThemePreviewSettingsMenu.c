@@ -499,37 +499,28 @@ void Assembly-CSharp.dll::ThemePreviewSettingsMenu::ThemePreviewSettingsMenu_OnP
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
   source = (pMVar1->fields).PurchaseProductResponseHandler;
-  this_01 = (UnityAction_2_System_Int32_System_Int32_ *)
+  this_02 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(
                            TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
                            );
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
   UnityAction_2_System_Int32_System_Int32___ctor
-            (this_01,(Object *)this,
+            (this_02,(Object *)this,
              MethodInfo__ThemePreviewSettingsMenu__OnPurchaseResponse_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
              ,(MethodInfo *)0x0);
-  unaff_ESI = unaff_EBX;
   pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                     ((Delegate *)source,(Delegate *)this_01,(MethodInfo *)0x0);
-  pAVar3 = 
-  TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-  ;
-  unaff_EBX = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object___Class
-               *)this;
+                     ((Delegate *)source,(Delegate *)this_02,(MethodInfo *)0x0);
   if (pDVar2 == (Delegate *)0x0) {
-    (unaff_ESI->_1).typeHierarchyDepth = 0;
-    (unaff_ESI->_1).genericRecursionDepth = 0;
-    (unaff_ESI->_1).rank = 0;
-    (unaff_ESI->_1).minimumAlignment = 0;
-    iVar4 = 0;
+    *(undefined4 *)(unaff_EBX + 0xb4) = 0;
+    iVar3 = 0;
 code_?:
     func_?();
     this_00 = (this->fields).openPopup;
     if (this_00 != (ConfirmationPopup *)0x0) {
       ConfirmationPopup::ConfirmationPopup_Pop(this_00,(MethodInfo *)0x0);
-      switch(iVar4) {
+      switch(iVar3) {
       case 0:
-        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
@@ -539,12 +530,12 @@ code_?:
           if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pTVar6 = TypeInfo__ThemePreviewSettingsMenu____c->static_fields->__9;
+          pTVar5 = TypeInfo__ThemePreviewSettingsMenu____c->static_fields->__9;
           callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-          pGVar5 = (GameObject *)&UNK_?;
+          pGVar4 = (GameObject *)&UNK_?;
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pTVar6
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pTVar5
                      ,
                      MethodInfo__ThemePreviewSettingsMenu____c___OnPurchaseResponse_b__20_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
@@ -556,27 +547,23 @@ code_?:
           func_?();
         }
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar5,(BaseEventData *)0x0,
+                  (pGVar4,(BaseEventData *)0x0,
                    (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                   );
-        unaff_ESI = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object___Class
-                     *)(this->fields).menuController;
-        this_02 = (ThemeRepository *)func_?();
-        if (this_02 != (ThemeRepository *)0x0) {
-          pTVar7 = ThemeRepository::ThemeRepository_get_CurrentTheme(this_02,(MethodInfo *)0x0);
-          if (pTVar7 == (ThemeWorldObject *)0x0) {
+        this_01 = (this->fields).menuController;
+        this_03 = (ThemeRepository *)func_?();
+        if (this_03 != (ThemeRepository *)0x0) {
+          pTVar6 = ThemeRepository::ThemeRepository_get_CurrentTheme(this_03,(MethodInfo *)0x0);
+          if (pTVar6 == (ThemeWorldObject *)0x0) {
             theme = (Theme *)0x0;
           }
           else {
-            theme = (pTVar7->fields)._Visualization_k__BackingField;
+            theme = (pTVar6->fields)._Visualization_k__BackingField;
           }
-          if (unaff_ESI !=
-              (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object___Class
-               *)0x0) {
-            ThemeMenuController::ThemeMenuController_OpenSettings
-                      ((ThemeMenuController *)unaff_ESI,theme,(MethodInfo *)0x0);
-            pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+          if (this_01 != (ThemeMenuController *)0x0) {
+            ThemeMenuController::ThemeMenuController_OpenSettings(this_01,theme,(MethodInfo *)0x0);
+            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                ((Component *)this,(MethodInfo *)0x0);
             if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
@@ -587,13 +574,13 @@ code_?:
             if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            pTVar6 = TypeInfo__ThemePreviewSettingsMenu____c->static_fields->__9;
+            pTVar5 = TypeInfo__ThemePreviewSettingsMenu____c->static_fields->__9;
             callbackFunction_01 =
                  (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
             Object]::UnityAction_2_System_Object_System_Object___ctor
                       ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_01,
-                       (Object *)pTVar6,
+                       (Object *)pTVar5,
                        MethodInfo__ThemePreviewSettingsMenu____c___OnPurchaseResponse_b__20_1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                        ,(MethodInfo *)0x0);
             TypeInfo__ThemePreviewSettingsMenu____c->static_fields->__9__20_1 = callbackFunction_01;
@@ -602,7 +589,7 @@ code_?:
         }
         goto code_?;
       case 1:
-        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
         callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
@@ -615,14 +602,14 @@ code_?:
           func_?();
         }
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar5,(BaseEventData *)0x0,callbackFunction_00,
+                  (pGVar4,(BaseEventData *)0x0,callbackFunction_00,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
                   );
         return;
       case 2:
       case 3:
       case 4:
-        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
@@ -633,13 +620,13 @@ code_?:
         if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pTVar6 = TypeInfo__ThemePreviewSettingsMenu____c->static_fields->__9;
+        pTVar5 = TypeInfo__ThemePreviewSettingsMenu____c->static_fields->__9;
         callbackFunction_01 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?()
         ;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_01,
-                   (Object *)pTVar6,
+                   (Object *)pTVar5,
                    MethodInfo__ThemePreviewSettingsMenu____c___OnPurchaseResponse_b__20_4_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         TypeInfo__ThemePreviewSettingsMenu____c->static_fields->__9__20_4 = callbackFunction_01;
@@ -652,7 +639,7 @@ code_?:
                   ((Object *)StringLiteral_Unexpected_purchase_response_,(MethodInfo *)0x0);
         return;
       case 6:
-        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
@@ -663,13 +650,13 @@ code_?:
         if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pTVar6 = TypeInfo__ThemePreviewSettingsMenu____c->static_fields->__9;
+        pTVar5 = TypeInfo__ThemePreviewSettingsMenu____c->static_fields->__9;
         callbackFunction_01 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?()
         ;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_01,
-                   (Object *)pTVar6,
+                   (Object *)pTVar5,
                    MethodInfo__ThemePreviewSettingsMenu____c___OnPurchaseResponse_b__20_3_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         TypeInfo__ThemePreviewSettingsMenu____c->static_fields->__9__20_3 = callbackFunction_01;
@@ -681,54 +668,28 @@ code_?:
         func_?();
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar5,(BaseEventData *)0x0,
+                (pGVar4,(BaseEventData *)0x0,
                  (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_01,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
                 );
       return;
     }
 code_?:
-    bVar8 = 0;
     func_?();
   }
   else {
-    iVar4 = func_?();
-    bVar8 = 0;
-    if (iVar4 == 0) goto code_?;
-    (unaff_ESI->_1).typeHierarchyDepth = (char)iVar4;
-    (unaff_ESI->_1).genericRecursionDepth = (char)((uint)iVar4 >> 8);
-    (unaff_ESI->_1).rank = (char)((uint)iVar4 >> 0x10);
-    (unaff_ESI->_1).minimumAlignment = (char)((uint)iVar4 >> 0x18);
-    iVar4 = func_?();
-    bVar8 = 0;
-    if (iVar4 != 0) goto code_?;
+    iVar3 = func_?();
+    if (iVar3 == 0) goto code_?;
+    *(int *)(unaff_EBX + 0xb4) = iVar3;
+    iVar3 = func_?();
+    if (iVar3 != 0) goto code_?;
   }
   func_?();
-  pAVar3 = unaff_ESI;
 code_?:
-  iVar4 = func_?();
-  auVar9._0_4_ = (pAVar3->_0).image;
-  auVar9._4_4_ = (pAVar3->_0).gc_desc;
-  auVar9._8_4_ = (pAVar3->_0).name;
-  auVar9._12_4_ = (pAVar3->_0).namespaze;
-  maxps(in_XMM6,auVar9);
-  pbVar10 = (byte *)(iVar4 + 0x610b1036);
-  bVar11 = CARRY1(*pbVar10,extraout_DH) || CARRY1(*pbVar10 + extraout_DH,bVar8);
-  *pbVar10 = *pbVar10 + extraout_DH + bVar8;
-  bVar8 = *(char *)&(unaff_EBX->_0).image + extraout_CL;
-  bVar12 = CARRY1(*(byte *)&(unaff_EBX->_0).image,extraout_CL) || CARRY1(bVar8,bVar11);
-  *(byte *)&(unaff_EBX->_0).image = bVar8 + bVar11;
-  bVar11 = CARRY1(*in_stack_13,in_stack_14) ||
-           CARRY1(*in_stack_13 + in_stack_14,bVar12);
-  *in_stack_13 = *in_stack_13 + in_stack_14 + bVar12;
-  bVar8 = *in_stack_15;
-  bVar16 = *in_stack_15;
-  *in_stack_15 = bVar16 + in_stack_17 + bVar11;
-  *(char *)(in_stack_18 + -0x33efc99f) =
-       *(char *)(in_stack_18 + -0x33efc99f) + (char)in_stack_18 +
-       (CARRY1(bVar8,in_stack_17) || CARRY1(bVar16 + in_stack_17,bVar11));
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  iVar3 = func_?();
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (**(code **)(iVar3 + 0x36))();
   return;
 }
 

@@ -298,7 +298,7 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_RecalcPositionAndSize
                         ((Vector3 *)&stack0xffffffd8,pTVar3,(MethodInfo *)0x0);
     uVar11 = pVVar4->x;
     uVar12 = pVVar4->y;
-    fVar2 = (float)uVar11 + 3.6174706e-29;
+    fVar2 = (float)uVar11 + 3.6176102e-29;
     fVar1 = (float)uVar12 + fVar1;
   }
   else {

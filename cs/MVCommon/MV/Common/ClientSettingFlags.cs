@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 25: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 24: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.Common
 {
@@ -44,6 +44,9 @@ namespace MV.Common
 		BoostersEnabledStandalone = 33554432,
 		RewardedAdsEnabledStandalone = 67108864,
 		InterstitalAdsEnabledStandalone = 134217728,
-		PlayButtonAdsEnabledStandalone = 268435456
+		PlayButtonAdsEnabledStandalone = 268435456,
+		InterstitalAdsEnabledIOS = 536870912,
+		RewardedAdsEnabledIOS = 1073741824,
+		BoostersEnabledIOS = 2147483647
 	}
 }

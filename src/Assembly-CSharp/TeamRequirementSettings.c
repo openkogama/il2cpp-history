@@ -261,16 +261,11 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
   }
   func_?();
   out(pTVar1->klass,extraout_DX);
-  out(pTVar1->monitor,extraout_DX);
-  out((pTVar1->fields)._._._._.m_CachedPtr,extraout_DX);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
-  return;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void OnSettingChanged(String, Object) */
 
 void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSettingChanged
@@ -278,26 +273,26 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
+    func_?(&TypeInfo__System__Convert);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__MV__WorldObject__MVTeam);
     cRam_? = '\x01';
   }
   pTVar1 = this;
   pOVar2 = (this->fields).currentOutline;
-  cVar3 = '\0';
+  uVar3 = 0;
   if (pOVar2 != (Outline *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
               ((Behaviour *)pOVar2,0,(MethodInfo *)0x0);
-    unaff_EDI = value;
-    cVar3 = '\0';
+    pOVar4 = value;
+    uVar3 = 0;
     if (value != (Object *)0x0) {
-      pIVar4 = (value->klass->_0).element_class;
-      pIVar5 = (TypeInfo__MV__WorldObject__MVTeam->_0).element_class;
-      cVar3 = pIVar4 < pIVar5;
-      if (pIVar4 == pIVar5) {
-        puVar6 = (undefined4 *)func_?();
-        switch(*puVar6) {
+      pIVar5 = (value->klass->_0).element_class;
+      pIVar6 = (TypeInfo__MV__WorldObject__MVTeam->_0).element_class;
+      uVar3 = pIVar5 < pIVar6;
+      if (pIVar5 == pIVar6) {
+        puVar7 = (undefined4 *)func_?(value);
+        switch(*puVar7) {
         case 0:
           pOVar2 = (pTVar1->fields).outlineTeamBlue;
           break;
@@ -314,11 +309,10 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
           pOVar2 = (pTVar1->fields).outlineTeamNone;
         }
         (pTVar1->fields).currentOutline = pOVar2;
-        func_?();
+        func_?(&(pTVar1->fields).currentOutline,pOVar2);
         pOVar2 = (pTVar1->fields).currentOutline;
-        cVar3 = '\0';
+        uVar3 = 0;
         if (pOVar2 != (Outline *)0x0) {
-          pOVar7 = (Object *)0x0;
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                     ((Behaviour *)pOVar2,1,(MethodInfo *)0x0);
           this_00 = (pTVar1->fields).settingsBase;
@@ -328,130 +322,44 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
             func_?();
           }
           key = (String *)0x0;
-          this = (TeamRequirementSettings *)unaff_EDI;
-          mscorlib.dll::System::Convert::Convert_ToInt32(unaff_EDI,(MethodInfo *)0x0);
+          this = (TeamRequirementSettings *)pOVar4;
+          mscorlib.dll::System::Convert::Convert_ToInt32(pOVar4,(MethodInfo *)0x0);
           key = (String *)&this;
           this = (TeamRequirementSettings *)TypeInfo__System__Int32;
-          unaff_EDI = pOVar7;
-          pOVar7 = (Object *)func_?();
-          cVar3 = '\0';
+          pOVar4 = (Object *)func_?();
+          uVar3 = 0;
           pTVar1 = (TeamRequirementSettings *)0x0;
           if (this_00 != (SettingsBase *)0x0) {
-            SettingsBase::SettingsBase_OnSettingChanged(this_00,key,pOVar7,(MethodInfo *)0x0);
+            SettingsBase::SettingsBase_OnSettingChanged(this_00,key,pOVar4,(MethodInfo *)0x0);
             return;
           }
         }
       }
       else {
-        func_?();
+        func_?(value,TypeInfo__MV__WorldObject__MVTeam);
       }
     }
   }
-  uVar8 = func_?();
-  id = key;
-  iVar9 = (int)((ulonglong)uVar8 >> 0x20);
-  LOCK();
-  piVar10 = (int *)(iVar9 + 0x3c);
-  iVar11 = *piVar10;
-  *piVar10 = (int)pTVar1;
-  UNLOCK();
-  pcVar12 = (char *)(iVar9 + 0x7291103c + iVar11 * 2);
-  *pcVar12 = *pcVar12 + extraout_CL + cVar3;
-  if (0xf < (byte)uVar8) {
-    pcVar13 = (code *)swi(3);
-    (*pcVar13)();
-    return;
+  bVar8 = func_?();
+  if (!(bool)uVar3) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
   }
-  uRam_? = SUB41(&stack0xfffffffd + iVar11,0);
-  uVar14 = *(undefined6 *)((int)uVar8 + (int)(&stack0xfffffffd + iVar11) * 8);
-  iVar9 = (int)uVar14;
-  this_02 = (Object__Class *)(&stack0x11a4537f + iVar11);
-  piVar10 = (int *)((int)&unaff_EDI[-0xf].klass + 3);
-  iVar11 = *piVar10;
-  *piVar10 = *piVar10 + iVar9;
-  if (SCARRY4(iVar11,iVar9) == *piVar10 < 0) {
-    (this_02->_0).image =
-         (Il2CppImage *)
-         ((int)&(((SettingsBase__Class *)(this_02->_0).image)->_0).image + (int)&(this_02->_0).image
-         );
-    *(char *)(unaff_EBX + 0x56) = *(char *)(unaff_EBX + 0x56) + (char)uVar14;
+  pcVar9 = (char *)(unaff_EBX + (int)pTVar1 * 2);
+  *pcVar9 = *pcVar9 + extraout_CL + uVar3;
+  puVar10 = (uint *)(unaff_EBX + 0x3c);
+  uVar11 = (int)&pTVar1->klass + *puVar10;
+  bVar12 = CARRY4(*puVar10,(uint)pTVar1) || CARRY4(uVar11,(uint)(bVar8 < 0x10));
+  *puVar10 = uVar11 + (bVar8 < 0x10);
+  bVar8 = *(byte *)&pTVar1->klass;
+  bVar13 = *(char *)&pTVar1->klass + extraout_DL;
+  *(byte *)&pTVar1->klass = bVar13 + bVar12;
+  if (!CARRY1(bVar8,extraout_DL) && !CARRY1(bVar13,bVar12)) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
   }
-  else {
-    this_02 = unaff_EDI[2].klass;
-    if (this_02 == (Object__Class *)0x0) goto code_?;
-  }
-  SettingsBase::SettingsBase_Initialize
-            ((SettingsBase *)this_02,(int32_t)key,(GameObject *)value,
-             MVWorldObjectDocumentationType__Enum_TimeTrigger,(MethodInfo *)0x0);
-  this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (this_03 != (MVWorldObjectClientManager *)0x0) {
-    key = (String *)0x0;
-    this = (TeamRequirementSettings *)id;
-    pMVar15 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (this_03,(int32_t)id,(MethodInfo *)0x0);
-    if ((pMVar15 != (MVWorldObject *)0x0) &&
-       (this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                  (pMVar15->fields).data,
-       this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
-      method = (MethodInfo *)StringLiteral_duration;
-      key = (String *)&UNK_?;
-      value = (Object *)this_01;
-      this = (TeamRequirementSettings *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-             UIElements::TextureId]::
-             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                       (this_01,(Object *)StringLiteral_duration,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-      if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pCVar16 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                          ((MethodInfo *)0x0);
-      if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      this = (TeamRequirementSettings *)
-             mscorlib.dll::System::Convert::Convert_ToSingle_1
-                       ((Object *)this,(IFormatProvider *)pCVar16,(MethodInfo *)0x0);
-      value_00 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                           (this_01,(Object *)StringLiteral_time,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-      pCVar16 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                          ((MethodInfo *)0x0);
-      value = (Object *)
-              mscorlib.dll::System::Convert::Convert_ToSingle_1
-                        ((Object *)value_00.m_Index,(IFormatProvider *)pCVar16,(MethodInfo *)0x0);
-      if ((SettingsSlider *)unaff_EDI[2].monitor != (SettingsSlider *)0x0) {
-        SettingsSlider::SettingsSlider_Initialize
-                  ((SettingsSlider *)unaff_EDI[2].monitor,StringLiteral_duration,(float)this,0.1,
-                   1000.0,(MethodInfo *)0x0);
-        if (unaff_EDI[3].klass != (Object__Class *)0x0) {
-          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                    ((SettingsInputFieldSlider *)unaff_EDI[3].klass,StringLiteral_duration,
-                     (float)this,(MethodInfo *)0x0);
-          if ((SettingsSlider *)unaff_EDI[3].monitor != (SettingsSlider *)0x0) {
-            SettingsSlider::SettingsSlider_Initialize
-                      ((SettingsSlider *)unaff_EDI[3].monitor,StringLiteral_time,(float)value,0.0,
-                       1000.0,(MethodInfo *)0x0);
-            if (unaff_EDI[4].klass != (Object__Class *)0x0) {
-              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                        ((SettingsInputFieldSlider *)unaff_EDI[4].klass,StringLiteral_time,
-                         (float)value,(MethodInfo *)0x0);
-              return;
-            }
-          }
-        }
-      }
-    }
-  }
-code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

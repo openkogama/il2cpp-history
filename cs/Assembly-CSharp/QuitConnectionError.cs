@@ -11,7 +11,7 @@ using System.Runtime.CompilerServices;
 public class QuitConnectionError : QuitBaseCallback
 {
 	// Fields
-	public readonly bool gotoDisconnectPage;
+	private readonly bool gotoDisconnectPage;
 
 	// Constructors
 	public QuitConnectionError();

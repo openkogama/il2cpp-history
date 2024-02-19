@@ -996,8 +996,8 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
     cRam_? = '\x01';
   }
   if (reward != (Reward *)0x0) {
-    DStack_1.m_value = (reward->fields)._Amount_k__BackingField;
-    pSVar2 = (reward->fields)._Type_k__BackingField;
+    DStack_1.m_value = (reward->fields).Amount;
+    pSVar2 = (reward->fields).Type;
     str3 = mscorlib.dll::System::Double::Double_ToString(&DStack_1,(MethodInfo *)0x0);
     pSVar2 = mscorlib.dll::System::String::String_Concat_5
                        (StringLiteral_InternalStateRewardedAd_UserRewa,pSVar2,StringLiteral__amount_

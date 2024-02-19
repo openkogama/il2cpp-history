@@ -26,24 +26,24 @@ public class CloseApp : MonoBehaviour
 	{
 		// Fields
 		public static readonly __c __9;
-		public static UnityAction<bool, ConfirmationPopup> __9__2_0;
+		public static UnityAction<bool, ConfirmationPopup> __9__3_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _Close_b__2_0(bool confirmation, ConfirmationPopup popup);
+		internal void _Close_b__3_0(bool confirmation, ConfirmationPopup popup);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass2_0
+	private sealed class __c__DisplayClass3_0
 	{
 		// Fields
 		public UnityAction<bool, ConfirmationPopup> quit;
 
 		// Constructors
-		public __c__DisplayClass2_0();
+		public __c__DisplayClass3_0();
 
 		// Methods
 		internal void _Close_b__1(IModalPopupCreator x, BaseEventData y);
@@ -53,6 +53,7 @@ public class CloseApp : MonoBehaviour
 	public CloseApp();
 
 	// Methods
+	public void ResetGame();
 	public void Close();
 }
 

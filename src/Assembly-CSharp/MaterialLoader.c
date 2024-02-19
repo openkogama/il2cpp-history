@@ -1,213 +1,13 @@
 
-/* Void Awake() */
+/* Void AtlasCallback(UnityWebRequest) */
 
-void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_Awake
-               (MaterialLoader *this,MethodInfo *method)
-
-{
-  this_00 = this;
-  if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&TypeInfo__TextureAtlasData);
-    cRam_? = '\x01';
-  }
-  (this_00->fields).isStreamingTexture = 0;
-  (this_00->fields).storedTextureQuality = -1;
-  if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__TextureAtlasData);
-  }
-  TextureAtlasData::TextureAtlasData_Initialize((MethodInfo *)0x0);
-  bVar1 = 0;
-  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsShaderLevel
-                    ((MethodInfo *)0x0);
-  if (0x22 < iVar2) {
-    GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
-                      ((MethodInfo *)0x0);
-    if (GVar3 != GraphicsDeviceType__Enum_Direct3D12) {
-      GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
-                        ((MethodInfo *)0x0);
-      if (GVar3 != GraphicsDeviceType__Enum_Direct3D11) {
-        GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                SystemInfo_GetGraphicsDeviceType((MethodInfo *)0x0);
-        if (GVar3 != GraphicsDeviceType__Enum_OpenGLES3) goto code_?;
-      }
-    }
-    bVar1 = 1;
-  }
-code_?:
-  GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
-                    ((MethodInfo *)0x0);
-  if (GVar3 == GraphicsDeviceType__Enum_OpenGLES2) {
-code_?:
-    (this_00->fields).isUsingSM3Shader = 0;
-code_?:
-    bVar1 = 0;
-  }
-  else {
-    GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
-                      ((MethodInfo *)0x0);
-    if (GVar3 == GraphicsDeviceType__Enum_OpenGLCore) goto code_?;
-    (this_00->fields).isUsingSM3Shader = bVar1;
-    if (bVar1 == 0) goto code_?;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVGameControllerBase);
-      cRam_? = '\x01';
-    }
-    bVar1 = TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField;
-  }
-  (this_00->fields).isUsingMobileShader = bVar1;
-  if ((this_00->fields).isUsingSM3Shader == 0) {
-code_?:
-    pMVar4 = (this_00->fields).cubeModelMaterialLow;
-  }
-  else {
-    if (bVar1 != 0) {
-      if ((this_00->fields).isUsingSM3Shader != 0) {
-        if (bVar1 != 0) {
-          pMVar4 = (this_00->fields).cubeModelMaterialMobile;
-          goto code_?;
-        }
-        if ((this_00->fields).isUsingSM3Shader != 0) goto code_?;
-      }
-      goto code_?;
-    }
-    pMVar4 = (this_00->fields).cubeModelMaterialHigh;
-  }
-code_?:
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  pMVar4 = (Material *)
-           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                     ((Object *)pMVar4,
-                      UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
-                     );
-  (this_00->fields)._CubeModelMaterial_k__BackingField = pMVar4;
-  func_?(&(this_00->fields)._CubeModelMaterial_k__BackingField,pMVar4);
-  if ((this_00->fields).isUsingSM3Shader != 0) {
-    if ((this_00->fields).isUsingMobileShader == 0) {
-      pMVar4 = (this_00->fields).cubeModelMaterialHighTransp;
-      goto code_?;
-    }
-    if ((this_00->fields).isUsingSM3Shader != 0) {
-      if ((this_00->fields).isUsingMobileShader != 0) {
-        pMVar4 = (this_00->fields).cubeModelMaterialMobileTransp;
-        goto code_?;
-      }
-      if ((this_00->fields).isUsingSM3Shader != 0) {
-code_?:
-        uVar5 = func_?(&TypeInfo__System__NullReferenceException);
-        this_01 = (NullReferenceException *)func_?(uVar5);
-        method_00 = (MethodInfo *)0x0;
-        message = (String *)func_?(&StringLiteral_No_Material_chosen);
-        mscorlib.dll::System::NullReferenceException::NullReferenceException__ctor_1
-                  (this_01,message,method_00);
-        this = (MaterialLoader *)func_?(&MethodInfo__MaterialLoader__PickMaterial_bool_);
-        func_?();
-        pcVar6 = (code *)swi(3);
-        (*pcVar6)();
-        return;
-      }
-    }
-  }
-  pMVar4 = (this_00->fields).cubeModelMaterialLowTransp;
-code_?:
-  pMVar4 = (Material *)
-           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                     ((Object *)pMVar4,
-                      UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
-                     );
-  (this_00->fields)._CubeModelMaterialTransp_k__BackingField = pMVar4;
-  func_?(&(this_00->fields)._CubeModelMaterialTransp_k__BackingField,pMVar4);
-  if ((this_00->fields).isUsingSM3Shader == 0) {
-    texture = (Texture2DArray *)(this_00->fields).veryLowTexture;
-  }
-  else {
-    texture = (this_00->fields).veryLowTextureArray;
-  }
-  method = (MethodInfo *)0x0;
-  this = (MaterialLoader *)0x0;
-  MaterialLoader_SetMainTexture(this_00,(Texture *)texture,0,(MethodInfo *)0x0);
-  this = (MaterialLoader *)(this_00->fields)._CubeModelMaterial_k__BackingField;
-  bVar1 = (this_00->fields).isUsingSM3Shader;
-  if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  TextureAtlasData::TextureAtlasData_StreamAtlasDataToMaterial
-            ((Material **)&this,bVar1,(MethodInfo *)0x0);
-  this = (MaterialLoader *)(this_00->fields)._CubeModelMaterialTransp_k__BackingField;
-  TextureAtlasData::TextureAtlasData_StreamAtlasDataToMaterial
-            ((Material **)&this,(this_00->fields).isUsingSM3Shader,(MethodInfo *)0x0);
-  return;
-}
-
-
-/* Boolean CalculateIfUsingSM3Shader() */
-
-bool Assembly-CSharp.dll::MaterialLoader::MaterialLoader_CalculateIfUsingSM3Shader
-               (MaterialLoader *this,MethodInfo *method)
-
-{
-  bVar1 = 0;
-  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsShaderLevel
-                    ((MethodInfo *)0x0);
-  if (0x22 < iVar2) {
-    GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
-                      ((MethodInfo *)0x0);
-    if (GVar3 != GraphicsDeviceType__Enum_Direct3D12) {
-      GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
-                        ((MethodInfo *)0x0);
-      if (GVar3 != GraphicsDeviceType__Enum_Direct3D11) {
-        GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                SystemInfo_GetGraphicsDeviceType((MethodInfo *)0x0);
-        if (GVar3 != GraphicsDeviceType__Enum_OpenGLES3) goto code_?;
-      }
-    }
-    bVar1 = 1;
-  }
-code_?:
-  GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
-                    ((MethodInfo *)0x0);
-  if (GVar3 != GraphicsDeviceType__Enum_OpenGLES2) {
-    GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
-                      ((MethodInfo *)0x0);
-    if (GVar3 != GraphicsDeviceType__Enum_OpenGLCore) {
-      return bVar1;
-    }
-  }
-  return 0;
-}
-
-
-/* Boolean CalculateIsUsingMobileShader() */
-
-bool Assembly-CSharp.dll::MaterialLoader::MaterialLoader_CalculateIsUsingMobileShader
-               (MaterialLoader *this,MethodInfo *method)
-
-{
-  if ((this->fields).isUsingSM3Shader == 0) {
-    return 0;
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
-    cRam_? = '\x01';
-  }
-  return TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField;
-}
-
-
-/* Void Callback(UnityWebRequest) */
-
-void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_Callback
+void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_AtlasCallback
                (MaterialLoader *this,UnityWebRequest *www,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_Failed_to_load_texture_from_bund);
+    func_?(&StringLiteral_Failed_to_load_atlas_texture_fro);
     cRam_? = '\x01';
   }
   (this->fields).isStreamingTexture = 0;
@@ -230,7 +30,7 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_Callback
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                  ((Object *)StringLiteral_Failed_to_load_texture_from_bund,(MethodInfo *)0x0);
+                  ((Object *)StringLiteral_Failed_to_load_atlas_texture_fro,(MethodInfo *)0x0);
         return;
       }
       if (pSVar3->max_length != 0) {
@@ -330,7 +130,7 @@ code_?:
           bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                             ((Object_1 *)texture_00,(Object_1 *)0x0,(MethodInfo *)0x0);
           if (bVar2 == 0) {
-            MaterialLoader_DownloadWhenPossible(this,(MethodInfo *)0x0);
+            MaterialLoader_DownloadAtlasWhenPossible(this,(MethodInfo *)0x0);
             (this->fields).storedTextureQuality = -1;
             return;
           }
@@ -348,6 +148,239 @@ code_?:
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
+}
+
+
+/* Void Awake() */
+
+void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_Awake
+               (MaterialLoader *this,MethodInfo *method)
+
+{
+  this_00 = this;
+  if (cRam_? == '\0') {
+    func_?(&
+                    UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__TextureAtlasData);
+    cRam_? = '\x01';
+  }
+  (this_00->fields).isStreamingTexture = 0;
+  (this_00->fields).storedTextureQuality = -1;
+  if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__TextureAtlasData);
+  }
+  TextureAtlasData::TextureAtlasData_Initialize((MethodInfo *)0x0);
+  bVar1 = 0;
+  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsShaderLevel
+                    ((MethodInfo *)0x0);
+  if (0x22 < iVar2) {
+    GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
+                      ((MethodInfo *)0x0);
+    if (GVar3 != GraphicsDeviceType__Enum_Direct3D12) {
+      GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
+                        ((MethodInfo *)0x0);
+      if (GVar3 != GraphicsDeviceType__Enum_Direct3D11) {
+        GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+                SystemInfo_GetGraphicsDeviceType((MethodInfo *)0x0);
+        if (GVar3 != GraphicsDeviceType__Enum_OpenGLES3) goto code_?;
+      }
+    }
+    bVar1 = 1;
+  }
+code_?:
+  GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
+                    ((MethodInfo *)0x0);
+  if (GVar3 == GraphicsDeviceType__Enum_OpenGLES2) {
+code_?:
+    (this_00->fields).isUsingSM3Shader = 0;
+code_?:
+    bVar1 = 0;
+  }
+  else {
+    GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
+                      ((MethodInfo *)0x0);
+    if (GVar3 == GraphicsDeviceType__Enum_OpenGLCore) goto code_?;
+    (this_00->fields).isUsingSM3Shader = bVar1;
+    if (bVar1 == 0) goto code_?;
+    if (cRam_? == '\0') {
+      this = (MaterialLoader *)&TypeInfo__MVGameControllerBase;
+      func_?();
+      cRam_? = '\x01';
+    }
+    bVar1 = TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField;
+  }
+  (this_00->fields).isUsingMobileShader = bVar1;
+  if ((this_00->fields).isUsingSM3Shader == 0) {
+code_?:
+    original = (MaterialLoader *)(this_00->fields).cubeModelMaterialLow;
+  }
+  else {
+    if (bVar1 != 0) {
+      if ((this_00->fields).isUsingSM3Shader != 0) {
+        if (bVar1 != 0) {
+          original = (MaterialLoader *)(this_00->fields).cubeModelMaterialMobile;
+          goto code_?;
+        }
+        if ((this_00->fields).isUsingSM3Shader != 0) goto code_?;
+      }
+      goto code_?;
+    }
+    original = (MaterialLoader *)(this_00->fields).cubeModelMaterialHigh;
+  }
+code_?:
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    method = (MethodInfo *)TypeInfo__UnityEngine__Object;
+    this = (MaterialLoader *)&UNK_?;
+    func_?();
+  }
+  method = 
+  UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
+  ;
+  this = original;
+  method = (MethodInfo *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)original,
+                      UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
+                     );
+  (this_00->fields)._CubeModelMaterial_k__BackingField = (Material *)method;
+  this = (MaterialLoader *)&(this_00->fields)._CubeModelMaterial_k__BackingField;
+  func_?();
+  if ((this_00->fields).isUsingSM3Shader == 0) {
+code_?:
+    this = (MaterialLoader *)(this_00->fields).cubeModelMaterialLowTransp;
+  }
+  else {
+    if ((this_00->fields).isUsingMobileShader != 0) {
+      if ((this_00->fields).isUsingSM3Shader != 0) {
+        if ((this_00->fields).isUsingMobileShader != 0) {
+          this = (MaterialLoader *)(this_00->fields).cubeModelMaterialMobileTransp;
+          goto code_?;
+        }
+        if ((this_00->fields).isUsingSM3Shader != 0) goto code_?;
+      }
+      goto code_?;
+    }
+    this = (MaterialLoader *)(this_00->fields).cubeModelMaterialHighTransp;
+  }
+code_?:
+  method = 
+  UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
+  ;
+  method = (MethodInfo *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)this,
+                      UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
+                     );
+  (this_00->fields)._CubeModelMaterialTransp_k__BackingField = (Material *)method;
+  this = (MaterialLoader *)&(this_00->fields)._CubeModelMaterialTransp_k__BackingField;
+  func_?();
+  if ((this_00->fields).isUsingSM3Shader == 0) {
+    method = (MethodInfo *)(this_00->fields).veryLowTexture;
+  }
+  else {
+    method = (MethodInfo *)(this_00->fields).veryLowTextureArray;
+  }
+  this = this_00;
+  MaterialLoader_SetMainTexture(this_00,(Texture *)method,0,(MethodInfo *)0x0);
+  this = (MaterialLoader *)(this_00->fields)._CubeModelMaterial_k__BackingField;
+  bVar1 = (this_00->fields).isUsingSM3Shader;
+  if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  TextureAtlasData::TextureAtlasData_StreamAtlasDataToMaterial
+            ((Material **)&this,bVar1,(MethodInfo *)0x0);
+  this = (MaterialLoader *)(this_00->fields)._CubeModelMaterialTransp_k__BackingField;
+  TextureAtlasData::TextureAtlasData_StreamAtlasDataToMaterial
+            ((Material **)&this,(this_00->fields).isUsingSM3Shader,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  this_01 = (SubscribableVariable_1_System_Int32Enum_ *)func_?();
+  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
+            (this_01,0,(MethodInfo *)0x0);
+  if (this_01 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+    pSStack4 = this_01 + 1;
+    this_01[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this_00;
+    func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+              ((MonoBehaviour *)this_00,(IEnumerator *)this_01,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+code_?:
+  method = (MethodInfo *)&TypeInfo__System__NullReferenceException;
+  this = (MaterialLoader *)&UNK_?;
+  this = (MaterialLoader *)func_?();
+  this_02 = (NullReferenceException *)func_?();
+  method = (MethodInfo *)0x0;
+  this = (MaterialLoader *)&StringLiteral_No_Material_chosen;
+  this = (MaterialLoader *)func_?();
+  mscorlib.dll::System::NullReferenceException::NullReferenceException__ctor_1
+            (this_02,(String *)this,method);
+  method = (MethodInfo *)&MethodInfo__MaterialLoader__PickMaterial_bool_;
+  this = (MaterialLoader *)&UNK_?;
+  func_?();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
+/* Boolean CalculateIfUsingSM3Shader() */
+
+bool Assembly-CSharp.dll::MaterialLoader::MaterialLoader_CalculateIfUsingSM3Shader
+               (MaterialLoader *this,MethodInfo *method)
+
+{
+  bVar1 = 0;
+  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsShaderLevel
+                    ((MethodInfo *)0x0);
+  if (0x22 < iVar2) {
+    GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
+                      ((MethodInfo *)0x0);
+    if (GVar3 != GraphicsDeviceType__Enum_Direct3D12) {
+      GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
+                        ((MethodInfo *)0x0);
+      if (GVar3 != GraphicsDeviceType__Enum_Direct3D11) {
+        GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+                SystemInfo_GetGraphicsDeviceType((MethodInfo *)0x0);
+        if (GVar3 != GraphicsDeviceType__Enum_OpenGLES3) goto code_?;
+      }
+    }
+    bVar1 = 1;
+  }
+code_?:
+  GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
+                    ((MethodInfo *)0x0);
+  if (GVar3 != GraphicsDeviceType__Enum_OpenGLES2) {
+    GVar3 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
+                      ((MethodInfo *)0x0);
+    if (GVar3 != GraphicsDeviceType__Enum_OpenGLCore) {
+      return bVar1;
+    }
+  }
+  return 0;
+}
+
+
+/* Boolean CalculateIsUsingMobileShader() */
+
+bool Assembly-CSharp.dll::MaterialLoader::MaterialLoader_CalculateIsUsingMobileShader
+               (MaterialLoader *this,MethodInfo *method)
+
+{
+  if ((this->fields).isUsingSM3Shader == 0) {
+    return 0;
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  return TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField;
 }
 
 
@@ -398,9 +431,9 @@ code_?:
 }
 
 
-/* Void DownloadWhenPossible() */
+/* Void DownloadAtlasWhenPossible() */
 
-void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_DownloadWhenPossible
+void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_DownloadAtlasWhenPossible
                (MaterialLoader *this,MethodInfo *method)
 
 {
@@ -408,9 +441,10 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_DownloadWhenPossible
     func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
     func_?(&TypeInfo__AsyncWWWManager);
     func_?(&TypeInfo__CachedAssetBundleRequest);
-    func_?(&MethodInfo__MaterialLoader__Callback_UnityEngine__Networking__UnityWebRequest_)
-    ;
-    func_?(&MethodInfo__MaterialLoader__DownloadWhenPossible__);
+    func_?(&
+                    MethodInfo__MaterialLoader__AtlasCallback_UnityEngine__Networking__UnityWebRequest_
+                   );
+    func_?(&MethodInfo__MaterialLoader__DownloadAtlasWhenPossible__);
     func_?(&TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
     func_?(&TypeInfo__MV__Common__Urls);
     func_?(&StringLiteral_AssetBundles_Atlas_);
@@ -435,7 +469,7 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_DownloadWhenPossible
              func_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar3,(Object *)this,MethodInfo__MaterialLoader__DownloadWhenPossible__,
+              (pNVar3,(Object *)this,MethodInfo__MaterialLoader__DownloadAtlasWhenPossible__,
                (MethodInfo *)0x0);
     pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)
              mscorlib.dll::System::Delegate::Delegate_Combine
@@ -470,7 +504,7 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_DownloadWhenPossible
              func_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar3,(Object *)this,MethodInfo__MaterialLoader__DownloadWhenPossible__,
+              (pNVar3,(Object *)this,MethodInfo__MaterialLoader__DownloadAtlasWhenPossible__,
                (MethodInfo *)0x0);
     pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)
              mscorlib.dll::System::Delegate::Delegate_Remove
@@ -502,8 +536,8 @@ code_?:
       __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
       DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                 (this_00,(Object *)this,
-                 MethodInfo__MaterialLoader__Callback_UnityEngine__Networking__UnityWebRequest_,
-                 (MethodInfo *)0x0);
+                 MethodInfo__MaterialLoader__AtlasCallback_UnityEngine__Networking__UnityWebRequest_
+                 ,(MethodInfo *)0x0);
       this_01 = (AssetBundleRequest *)func_?();
       AssetBundleRequest::AssetBundleRequest__ctor
                 (this_01,pSVar6,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
@@ -527,6 +561,164 @@ code_?:
     if (pUVar4 != (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
   }
   func_?();
+code_?:
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
+  return;
+}
+
+
+/* IEnumerator DownloadNoiseAfterInit() */
+
+IEnumerator *
+Assembly-CSharp.dll::MaterialLoader::MaterialLoader_DownloadNoiseAfterInit
+          (MaterialLoader *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MaterialLoader___DownloadNoiseAfterInit_d__54);
+    cRam_? = '\x01';
+  }
+  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
+            func_?(TypeInfo__MaterialLoader___DownloadNoiseAfterInit_d__54);
+  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
+            (this_00,0,(MethodInfo *)0x0);
+  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
+    func_?(this_00 + 1);
+    return (IEnumerator *)this_00;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  pIVar2 = (IEnumerator *)(*pcVar1)();
+  return pIVar2;
+}
+
+
+/* Void DownloadNoiseWhenPossible() */
+
+void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_DownloadNoiseWhenPossible
+               (MaterialLoader *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&TypeInfo__CachedAssetBundleRequest);
+    func_?(&MethodInfo__MaterialLoader__DownloadNoiseWhenPossible__);
+    func_?(&
+                    MethodInfo__MaterialLoader__NoiseCallback_UnityEngine__Networking__UnityWebRequest_
+                   );
+    func_?(&TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
+    func_?(&TypeInfo__MV__Common__Urls);
+    func_?(&StringLiteral_AssetBundles_Textures_noisetextu);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MV__Common__Urls);
+  }
+  bVar1 = MVCommon.dll::MV::Common::Urls::Urls_StreamingAssetUrlReady((MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MV__Common__Urls);
+    }
+    pUVar2 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
+    pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
+             func_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar3,(Object *)this,MethodInfo__MaterialLoader__DownloadNoiseWhenPossible__,
+               (MethodInfo *)0x0);
+    pUStack4 =
+         (Urls_OnStreamingAssetsUrlAvailable *)
+         mscorlib.dll::System::Delegate::Delegate_Combine
+                   ((Delegate *)pUVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
+    if (pUStack4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+      TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
+           (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+      pUStack5 = (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0;
+code_?:
+      pUStack4 =
+           (Urls_OnStreamingAssetsUrlAvailable *)TypeInfo__MV__Common__Urls->static_fields;
+      func_?();
+      return;
+    }
+    pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUStack4->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUVar2 = pUStack4;
+    }
+    pUStack5 = TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable;
+    if (pUVar2 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+    TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar2;
+    pUStack5 =
+         (Urls_OnStreamingAssetsUrlAvailable__Class *)(Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUStack4->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUStack5 = (Urls_OnStreamingAssetsUrlAvailable__Class *)pUStack4;
+    }
+    if (pUStack5 != (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0) goto code_?;
+  }
+  else {
+    if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MV__Common__Urls);
+    }
+    pUVar2 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
+    pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
+             func_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar3,(Object *)this,MethodInfo__MaterialLoader__DownloadNoiseWhenPossible__,
+               (MethodInfo *)0x0);
+    pUStack4 =
+         (Urls_OnStreamingAssetsUrlAvailable *)
+         mscorlib.dll::System::Delegate::Delegate_Remove
+                   ((Delegate *)pUVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
+    if (pUStack4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+      TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
+           (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+      pUStack5 = (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0;
+code_?:
+      pUStack4 =
+           (Urls_OnStreamingAssetsUrlAvailable *)TypeInfo__MV__Common__Urls->static_fields;
+      func_?();
+      pSVar6 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
+      pSVar6 = mscorlib.dll::System::String::String_Concat_3
+                         (pSVar6,StringLiteral_AssetBundles_Textures_noisetextu,(MethodInfo *)0x0);
+      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__MaterialLoader__NoiseCallback_UnityEngine__Networking__UnityWebRequest_
+                 ,(MethodInfo *)0x0);
+      this_01 = (AssetBundleRequest *)func_?();
+      AssetBundleRequest::AssetBundleRequest__ctor
+                (this_01,pSVar6,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
+                 WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
+      return;
+    }
+    pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUStack4->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUVar2 = pUStack4;
+    }
+    pUStack5 = TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable;
+    if (pUVar2 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+    TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar2;
+    pUStack5 =
+         (Urls_OnStreamingAssetsUrlAvailable__Class *)(Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUStack4->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUStack5 = (Urls_OnStreamingAssetsUrlAvailable__Class *)pUStack4;
+    }
+    if (pUStack5 != (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0) goto code_?;
+  }
+  pUStack5 = TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable;
+  pUStack5 = (Urls_OnStreamingAssetsUrlAvailable__Class *)func_?();
+  pUStack4 = extraout_ECX;
 code_?:
   func_?();
   pcVar7 = (code *)swi(3);
@@ -595,6 +787,73 @@ String * Assembly-CSharp.dll::MaterialLoader::MaterialLoader_MaterialLoaderInfo
 }
 
 
+/* Void NoiseCallback(UnityWebRequest) */
+
+void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_NoiseCallback
+               (MaterialLoader *this,UnityWebRequest *www,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&
+                    UnityEngine__Texture2D_MethodInfo__UnityEngine__AssetBundle__LoadAsset<UnityEngine::Texture2D>_System__String_
+                   );
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_Failed_to_load_noise_texture_fro);
+    func_?(&StringLiteral__Noise);
+    cRam_? = '\x01';
+  }
+  if (www != (UnityWebRequest *)0x0) {
+    value = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+            UnityWebRequest_get_error(www,(MethodInfo *)0x0);
+    bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      return;
+    }
+    this_00 = UnityEngine.UnityWebRequestAssetBundleModule.dll::UnityEngine::Networking::
+              DownloadHandlerAssetBundle::DownloadHandlerAssetBundle_GetContent
+                        (www,(MethodInfo *)0x0);
+    if ((this_00 != (AssetBundle *)0x0) &&
+       (pSVar2 = UnityEngine.AssetBundleModule.dll::UnityEngine::AssetBundle::
+                 AssetBundle_GetAllAssetNames(this_00,(MethodInfo *)0x0),
+       pSVar2 != (String__Array *)0x0)) {
+      if (pSVar2->max_length != 1) {
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                  ((Object *)StringLiteral_Failed_to_load_noise_texture_fro,(MethodInfo *)0x0);
+        return;
+      }
+      if (pSVar2->max_length == 0) goto code_?;
+      this_01 = (Texture *)
+                UnityEngine.AssetBundleModule.dll::UnityEngine::AssetBundle::AssetBundle_LoadAsset_1
+                          (this_00,pSVar2->vector[0],
+                           UnityEngine__Texture2D_MethodInfo__UnityEngine__AssetBundle__LoadAsset<UnityEngine::Texture2D>_System__String_
+                          );
+      UnityEngine.AssetBundleModule.dll::UnityEngine::AssetBundle::AssetBundle_Unload
+                (this_00,0,(MethodInfo *)0x0);
+      if (((this_01 != (Texture *)0x0) &&
+          (UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
+                     (this_01,FilterMode__Enum_Trilinear,(MethodInfo *)0x0),
+          _UNK_? != (Material *)0x0)) &&
+         (UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTexture
+                    (_UNK_?,StringLiteral__Noise,this_01,(MethodInfo *)0x0),
+         _UNK_? != (Material *)0x0)) {
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTexture
+                  (_UNK_?,StringLiteral__Noise,this_01,(MethodInfo *)0x0);
+        return;
+      }
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
+  return;
+}
+
+
 /* Void OnDestroy() */
 
 void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_OnDestroy
@@ -604,8 +863,9 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_OnDestroy
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
     func_?(&TypeInfo__AsyncWWWManager);
-    func_?(&MethodInfo__MaterialLoader__Callback_UnityEngine__Networking__UnityWebRequest_)
-    ;
+    func_?(&
+                    MethodInfo__MaterialLoader__AtlasCallback_UnityEngine__Networking__UnityWebRequest_
+                   );
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
@@ -623,7 +883,7 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_OnDestroy
   __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
   DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             (this_00,(Object *)this,
-             MethodInfo__MaterialLoader__Callback_UnityEngine__Networking__UnityWebRequest_,
+             MethodInfo__MaterialLoader__AtlasCallback_UnityEngine__Networking__UnityWebRequest_,
              (MethodInfo *)0x0);
   if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -819,15 +1079,15 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_SetTextureQuality
       MaterialLoader_SetMainTexture(this,(Texture *)texture,1,(MethodInfo *)0x0);
       return;
     }
-    MaterialLoader_DownloadWhenPossible(this,(MethodInfo *)0x0);
+    MaterialLoader_DownloadAtlasWhenPossible(this,(MethodInfo *)0x0);
   }
   return;
 }
 
 
-/* Texture StoreLoadedTexture(AssetBundle, String) */
+/* Texture StoreAtlasTexture(AssetBundle, String) */
 
-Texture * Assembly-CSharp.dll::MaterialLoader::MaterialLoader_StoreLoadedTexture
+Texture * Assembly-CSharp.dll::MaterialLoader::MaterialLoader_StoreAtlasTexture
                     (MaterialLoader *this,AssetBundle *assetBundle,String *assetName,
                     MethodInfo *method)
 

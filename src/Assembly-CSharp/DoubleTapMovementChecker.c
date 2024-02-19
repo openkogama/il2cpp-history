@@ -127,7 +127,7 @@ void Assembly-CSharp.dll::DoubleTapMovementChecker::DoubleTapMovementChecker__ct
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__KogamaControls);
-    func_?(&_22F9E13B351DD0E6242C73AA96EAE83BAF7713684B5E8493CCED630DF6E47F09_Field);
+    func_?(&::_22F9E13B351DD0E6242C73AA96EAE83BAF7713684B5E8493CCED630DF6E47F09_Field);
     cRam_? = '\x01';
   }
   array = (KogamaControls__Enum__Array *)func_?(TypeInfo__KogamaControls,4);

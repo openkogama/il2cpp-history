@@ -335,7 +335,7 @@ public class PrefabPool : MonoBehaviour
 	[Header("UGUI")]
 	[SerializeField]
 	[Space(20f)]
-	private AvatarInputControllerAndroidSettings avatarInputControllerAndroidSettings;
+	private AvatarInputControllerTouchSettings avatarInputControllerTouchSettings;
 	[SerializeField]
 	private Texture2D crosshairCursor;
 	[SerializeField]
@@ -353,8 +353,8 @@ public class PrefabPool : MonoBehaviour
 	private RectTransform editEdgeHelpText;
 	[SerializeField]
 	private RectTransform editFaceHelpText;
-	[Header("Editor")]
 	[Header("Cameras")]
+	[Header("Editor")]
 	[SerializeField]
 	[Space(20f)]
 	[Space(20f)]
@@ -548,7 +548,7 @@ public class PrefabPool : MonoBehaviour
 	public Texture2D AvatarAccessoryMoveIcon { get; }
 	public GameObject DrawPlaneObject { get; }
 	public Material ModelConstraintsMaterial { get; }
-	public AvatarInputControllerAndroidSettings AvatarInputControllerAndroidSettings { get; }
+	public AvatarInputControllerTouchSettings AvatarInputControllerTouchSettings { get; }
 	public Texture2D CrosshairCursor { get; }
 	public MaterialButtonTextureGenerator MaterialButtonTextureGenerator { get; }
 	public InsertCursor InsertCursor { get; }

@@ -330,8 +330,8 @@ code_?:
     if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0)
     goto code_?;
     pOVar6 = (Object__Class *)func_?();
-    AvatarInputControllerAndroid::AvatarInputControllerAndroid__ctor
-              ((AvatarInputControllerAndroid *)pOVar6,(MethodInfo *)0x0);
+    AvatarInputControllerTouch::AvatarInputControllerTouch__ctor
+              ((AvatarInputControllerTouch *)pOVar6,(MethodInfo *)0x0);
   }
   pOVar3[2].klass = pOVar6;
   func_?();
@@ -357,7 +357,7 @@ code_?:
   MVar10 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
   if (MVar10 == MVGameMode__Enum_CharacterEditor) {
 code_?:
-    pAVar11 = (AvatarInputControllerAndroid *)func_?();
+    pAVar11 = (AvatarInputControllerTouch *)func_?();
     AvatarInputController::AvatarInputController__ctor
               ((AvatarInputController *)pAVar11,(MethodInfo *)0x0);
   }
@@ -368,8 +368,8 @@ code_?:
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0)
     goto code_?;
-    pAVar11 = (AvatarInputControllerAndroid *)func_?();
-    AvatarInputControllerAndroid::AvatarInputControllerAndroid__ctor(pAVar11,(MethodInfo *)0x0);
+    pAVar11 = (AvatarInputControllerTouch *)func_?();
+    AvatarInputControllerTouch::AvatarInputControllerTouch__ctor(pAVar11,(MethodInfo *)0x0);
   }
   (avatar->fields)._._._._.itemId = (int32_t)pAVar11;
   func_?();
@@ -404,8 +404,8 @@ code_?:
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0)
     goto code_?;
-    pAVar11 = (AvatarInputControllerAndroid *)func_?();
-    AvatarInputControllerAndroid::AvatarInputControllerAndroid__ctor(pAVar11,(MethodInfo *)0x0);
+    pAVar11 = (AvatarInputControllerTouch *)func_?();
+    AvatarInputControllerTouch::AvatarInputControllerTouch__ctor(pAVar11,(MethodInfo *)0x0);
   }
   if (avatar != (MVAvatarLocal *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::

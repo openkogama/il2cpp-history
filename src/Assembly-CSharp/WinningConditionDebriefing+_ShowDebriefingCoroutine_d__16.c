@@ -84,10 +84,11 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<ShowDebriefingCoroutine>d_
   default:
     return 0;
   }
-  bVar6 = 0;
-  bVar7 = func_?();
-  *(bool *)&this->klass = bVar7;
-  *(int *)(extraout_EDX + 0x10) = *(int *)(extraout_EDX + 0x10) + extraout_ECX + (uint)bVar6;
+  func_?();
+  *unaff_EDI = *unaff_EDI + -1;
+  unaff_EDI[10] = unaff_EDI[10] + (char)((uint)this_00 >> 8);
+  pcVar6 = (code *)swi(3);
+  bVar7 = (*pcVar6)();
   return bVar7;
 }
 

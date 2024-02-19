@@ -30,10 +30,10 @@ void Assembly-CSharp.dll::ProfileSettingsMenu::ProfileSettingsMenu_MouseSensitiv
 {
   if ((this->fields).mouseSenseSetRoutine == (IEnumerator *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__ProfileSettingsMenu___MouseSetRoutine_d__13);
+      func_?(&TypeInfo__ProfileSettingsMenu___MouseSetRoutine_d__12);
       cRam_? = '\x01';
     }
-    method_00 = TypeInfo__ProfileSettingsMenu___MouseSetRoutine_d__13;
+    method_00 = TypeInfo__ProfileSettingsMenu___MouseSetRoutine_d__12;
     value = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -56,10 +56,10 @@ Assembly-CSharp.dll::ProfileSettingsMenu::ProfileSettingsMenu_MouseSetRoutine
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ProfileSettingsMenu___MouseSetRoutine_d__13);
+    func_?(&TypeInfo__ProfileSettingsMenu___MouseSetRoutine_d__12);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ProfileSettingsMenu___MouseSetRoutine_d__13;
+  method_00 = TypeInfo__ProfileSettingsMenu___MouseSetRoutine_d__12;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -89,14 +89,20 @@ void Assembly-CSharp.dll::ProfileSettingsMenu::ProfileSettingsMenu_OnDestroy
     cRam_? = '\x01';
   }
   LobbyFlowMenu::LobbyFlowMenu_OnDestroy((LobbyFlowMenu *)this,(MethodInfo *)0x0);
+  if ((this->fields).mouseSenseSetRoutine != (IEnumerator *)0x0) {
+    Coroutines::Coroutines_Stop((this->fields).mouseSenseSetRoutine,(MethodInfo *)0x0);
+  }
   if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
       cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
   }
   this_00 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
             ProfileSettingsChanged;
-  if (this_00 !=
+  if (this_00 ==
       (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)0x0) {
+    func_?();
+  }
+  else {
     pDVar1 = (Delegate *)
              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
              Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
@@ -113,26 +119,28 @@ void Assembly-CSharp.dll::ProfileSettingsMenu::ProfileSettingsMenu_OnDestroy
                (MethodInfo *)0x0);
     pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        (pDVar1,(Delegate *)this_01,(MethodInfo *)0x0);
-    pMVar2 = 
+    method_00 = 
     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
     ;
     if (pDVar1 == (Delegate *)0x0) {
-      value = (Object *)0x0;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+      Dictionary_2_System_Int32Enum_System_Object__set_Item
+                ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0,(Object *)0x0,
+                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
+                );
+      return;
     }
-    else {
-      value = (Object *)func_?();
-      if (value == (Object *)0x0) goto code_?;
+    value = (Object *)func_?();
+    if (value != (Object *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+      Dictionary_2_System_Int32Enum_System_Object__set_Item
+                ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0,value,method_00);
+      return;
     }
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__set_Item
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0,value,pMVar2);
-    return;
   }
   func_?();
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

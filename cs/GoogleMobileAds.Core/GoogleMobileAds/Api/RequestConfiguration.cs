@@ -8,74 +8,21 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-// Image 53: GoogleMobileAds.Core.dll - Assembly: GoogleMobileAds.Core, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
+// Image 53: GoogleMobileAds.Core.dll - Assembly: GoogleMobileAds.Core, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Api
 {
+	[Serializable]
 	public class RequestConfiguration
 	{
 		// Fields
-		[CompilerGenerated]
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		private MaxAdContentRating _MaxAdContentRating_k__BackingField;
-		[CompilerGenerated]
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		private TagForChildDirectedTreatment? _TagForChildDirectedTreatment_k__BackingField;
-		[CompilerGenerated]
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		private TagForUnderAgeOfConsent? _TagForUnderAgeOfConsent_k__BackingField;
-		[CompilerGenerated]
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		private List<string> _TestDeviceIds_k__BackingField;
-		[CompilerGenerated]
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		private bool? _SameAppKeyEnabled_k__BackingField;
-	
-		// Properties
-		private MaxAdContentRating MaxAdContentRating { [CompilerGenerated] set; }
-		private TagForChildDirectedTreatment? TagForChildDirectedTreatment { [CompilerGenerated] set; }
-		private TagForUnderAgeOfConsent? TagForUnderAgeOfConsent { [CompilerGenerated] set; }
-		private List<string> TestDeviceIds { [CompilerGenerated] set; }
-		private bool? SameAppKeyEnabled { [CompilerGenerated] set; }
-	
-		// Nested types
-		public class Builder
-		{
-			// Fields
-			[CompilerGenerated]
-			[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-			private MaxAdContentRating _MaxAdContentRating_k__BackingField;
-			[CompilerGenerated]
-			[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-			private TagForChildDirectedTreatment? _TagForChildDirectedTreatment_k__BackingField;
-			[CompilerGenerated]
-			[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-			private TagForUnderAgeOfConsent? _TagForUnderAgeOfConsent_k__BackingField;
-			[CompilerGenerated]
-			[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-			private List<string> _TestDeviceIds_k__BackingField;
-			[CompilerGenerated]
-			[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-			private bool? _SameAppKeyEnabled_k__BackingField;
-	
-			// Properties
-			internal MaxAdContentRating MaxAdContentRating { [CompilerGenerated] get; [CompilerGenerated] private set; }
-			internal TagForChildDirectedTreatment? TagForChildDirectedTreatment { [CompilerGenerated] get; [CompilerGenerated] private set; }
-			internal TagForUnderAgeOfConsent? TagForUnderAgeOfConsent { [CompilerGenerated] get; [CompilerGenerated] private set; }
-			internal List<string> TestDeviceIds { [CompilerGenerated] get; [CompilerGenerated] private set; }
-			internal bool? SameAppKeyEnabled { [CompilerGenerated] get; [CompilerGenerated] private set; }
-	
-			// Constructors
-			public Builder();
-	
-			// Methods
-			public Builder SetTagForChildDirectedTreatment(TagForChildDirectedTreatment? tagForChildDirectedTreatment);
-			public Builder SetTagForUnderAgeOfConsent(TagForUnderAgeOfConsent? tagForUnderAgeOfConsent);
-			public Builder SetTestDeviceIds(List<string> testDeviceIds);
-			public RequestConfiguration build();
-		}
+		public TagForChildDirectedTreatment? TagForChildDirectedTreatment;
+		public TagForUnderAgeOfConsent? TagForUnderAgeOfConsent;
+		public List<string> TestDeviceIds;
+		[Obsolete("Use PublisherFirstPartyIdEnabled instead.")]
+		public bool? SameAppKeyEnabled;
 	
 		// Constructors
-		private RequestConfiguration(Builder builder);
+		public RequestConfiguration();
 	}
 }

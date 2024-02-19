@@ -251,7 +251,7 @@ code_?:
               ((Dictionary_2_System_Int32Enum_System_Object_ *)this,1,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__Add_MV__WorldObject__MetaData__ProfileSettingKey__System__Object_
               );
-    uStack_2 = 0;
+    uStack_2 = 1;
     pOVar1 = (Object *)
              func_?(TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel,&uStack_2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
@@ -259,7 +259,7 @@ code_?:
               ((Dictionary_2_System_Int32Enum_System_Object_ *)this,2,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__Add_MV__WorldObject__MetaData__ProfileSettingKey__System__Object_
               );
-    puStack_3 = (undefined *)0x0;
+    puStack_3 = (undefined *)0x1;
     ppuStack4 = &puStack_3;
     pFStack5 = TypeInfo__UnityEngine__FilterMode;
     method = (MethodInfo *)func_?();

@@ -91,7 +91,7 @@ code_?:
           UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
                     (color.r,color.g,color.b,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
-                    (color.a,0.0,3.2498383e-29,(MethodInfo *)0x0);
+                    (color.a,0.0,3.2498672e-29,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
           pCVar1 = this_01;
         }

@@ -1034,6 +1034,7 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Upd
                (TimeAttackFlagDebriefing *this,MethodInfo *method)
 
 {
+  pTVar1 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__IPlayModeUI);
     cRam_? = '\x01';
@@ -1042,81 +1043,82 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Upd
     TimeAttackFlagDebriefing_UpdateButton(this,(MethodInfo *)0x0);
   }
   else {
-    fVar1 = (this->fields).waitStartTime + _UNK_?;
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    if (fVar1 < fVar2) {
-      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar3 == (MVNetworkGame *)0x0) ||
-         (pMVar4 = (pMVar3->fields)._NetworkGameStateListener_k__BackingField,
-         pMVar4 == (MVNetworkGameStateListener *)0x0)) goto code_?;
-      if ((pMVar4->fields).currentGameState == 2) goto code_?;
-      (this->fields).isDebriefingOn = 0;
-      (this->fields).isWaitingForStart = 0;
-      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)this,(MethodInfo *)0x0);
-      if (this_02 == (GameObject *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_02,0,(MethodInfo *)0x0);
-      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      this_00 = (this->fields).scoreBoardCanvasGroup;
-      (this->fields).countdownEndTime = fVar1;
-      if (this_00 == (CanvasGroup *)0x0) goto code_?;
-      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                (this_00,0.0,(MethodInfo *)0x0);
-      pFVar5 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
-                         ((MethodInfo *)0x0);
-      if (pFVar5 == (FlagDebriefingControl *)0x0) goto code_?;
-      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      (pFVar5->fields).IsInFlagDebriefing = 0;
-      (pFVar5->fields).RunStartTime = fVar1;
-      if ((pFVar5->fields).OnFlagCountDownEnd != (Action *)0x0) {
-        (*(((pFVar5->fields).OnFlagCountDownEnd)->fields)._._.invoke_impl)();
+    fVar2 = (this->fields).waitStartTime + _UNK_?;
+    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    if (fVar2 < fVar3) {
+      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar4 == (MVNetworkGame *)0x0) ||
+         (pMVar5 = (pMVar4->fields)._NetworkGameStateListener_k__BackingField,
+         pMVar5 == (MVNetworkGameStateListener *)0x0)) goto code_?;
+      if ((pMVar5->fields).currentGameState != 2) {
+        (this->fields).isDebriefingOn = 0;
+        (this->fields).isWaitingForStart = 0;
+        this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)this,(MethodInfo *)0x0);
+        if (this_02 == (GameObject *)0x0) goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_02,0,(MethodInfo *)0x0);
+        fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        this_00 = (this->fields).scoreBoardCanvasGroup;
+        (this->fields).countdownEndTime = fVar2;
+        if (this_00 == (CanvasGroup *)0x0) goto code_?;
+        UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                  (this_00,0.0,(MethodInfo *)0x0);
+        pFVar6 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
+                           ((MethodInfo *)0x0);
+        if (pFVar6 == (FlagDebriefingControl *)0x0) goto code_?;
+        fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        (pFVar6->fields).IsInFlagDebriefing = 0;
+        (pFVar6->fields).RunStartTime = fVar2;
+        if ((pFVar6->fields).OnFlagCountDownEnd != (Action *)0x0) {
+          (*(((pFVar6->fields).OnFlagCountDownEnd)->fields)._._.invoke_impl)();
+        }
+        pGVar7 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+        if ((pGVar7 == (GameEventManager *)0x0) ||
+           (this_01 = (pGVar7->fields).AvatarCommandsPlayMode,
+           this_01 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) goto code_?;
+        GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd__RegisterAdEvents_m__9
+                  ((RewardedAd *)this_01,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__MVGameControllerBase);
+          cRam_? = '\x01';
+        }
+        pIVar8 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__MVGameControllerBase);
+          cRam_? = '\x01';
+        }
+        if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
+          bVar9 = MVGameControllerDesktop::MVGameControllerDesktop_get_IsCursorLock
+                            ((MethodInfo *)0x0);
+          this._1_3_ = (undefined3)((uint)this_00 >> 8);
+          this = (TimeAttackFlagDebriefing *)(CONCAT31(this._1_3_,bVar9) ^ 1);
+        }
+        else {
+          this = (TimeAttackFlagDebriefing *)((uint)this_00 & 0xffffff00);
+        }
+        if (pIVar8 == (IPlayModeUI *)0x0) goto code_?;
+        func_?(4,TypeInfo__IPlayModeUI,pIVar8,this);
       }
-      pGVar6 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if ((pGVar6 == (GameEventManager *)0x0) ||
-         (this_01 = (pGVar6->fields).AvatarCommandsPlayMode,
-         this_01 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) goto code_?;
-      GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd__RegisterAdEvents_m__9
-                ((RewardedAd *)this_01,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-        bVar7 = MVGameControllerDesktop::MVGameControllerDesktop_get_IsCursorLock((MethodInfo *)0x0)
-        ;
-        if (bVar7 != 0) goto code_?;
-        iVar8 = func_?();
-        if (iVar8 == 0) goto code_?;
-        uVar9 = 1;
-      }
-      else {
-code_?:
-        iVar8 = func_?();
-        if (iVar8 == 0) goto code_?;
-        uVar9 = 0;
-      }
-      func_?(4,TypeInfo__IPlayModeUI,iVar8,uVar9);
     }
   }
-code_?:
-  if ((this->fields).shouldStartFlagCountdown != 0) {
-    (this->fields).shouldStartFlagCountdown = 0;
-    pFVar5 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0)
+  if ((pTVar1->fields).shouldStartFlagCountdown != 0) {
+    (pTVar1->fields).shouldStartFlagCountdown = 0;
+    pFVar6 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0)
     ;
-    if (pFVar5 == (FlagDebriefingControl *)0x0) {
+    if (pFVar6 == (FlagDebriefingControl *)0x0) {
 code_?:
       func_?();
       pcVar10 = (code *)swi(3);
       (*pcVar10)();
       return;
     }
-    if ((pFVar5->fields).OnFlagCountDown != (Action *)0x0) {
-      pAVar11 = (pFVar5->fields).OnFlagCountDown;
+    if ((pFVar6->fields).OnFlagCountDown != (Action *)0x0) {
+      pAVar11 = (pFVar6->fields).OnFlagCountDown;
       (*(pAVar11->fields)._._.invoke_impl)
                 ((pAVar11->fields)._._.method_code,(pAVar11->fields)._._.method);
     }
-    (pFVar5->fields).IsInFlagDebriefing = 1;
+    (pFVar6->fields).IsInFlagDebriefing = 1;
   }
   return;
 }

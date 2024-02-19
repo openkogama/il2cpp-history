@@ -250,17 +250,30 @@ code_?:
   }
 code_?:
   bVar7 = 0;
-  func_?();
-  pbVar8 = (byte *)((int)&(((Dictionary_2_System_Byte_System_Object_ *)(returnCode + -0x60))->fields
-                          )._keys + 1);
-  bVar9 = *pbVar8;
-  bVar10 = *pbVar8;
-  *pbVar8 = bVar10 + unaff_BL + bVar7;
-  *(char *)(extraout_EDX + -0x25efab3a) =
-       *(char *)(extraout_EDX + -0x25efab3a) + (char)extraout_EDX +
-       (CARRY1(bVar9,unaff_BL) || CARRY1(bVar10 + unaff_BL,bVar7));
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  uVar8 = func_?();
+  pbVar9 = (byte *)((int)&((Dictionary_2_System_Byte_System_Object_ *)(returnCode + -0x30))->klass +
+                   3);
+  bVar10 = *pbVar9 + (byte)unaff_EBX;
+  bVar11 = CARRY1(*pbVar9,(byte)unaff_EBX) || CARRY1(bVar10,bVar7);
+  *pbVar9 = bVar10 + bVar7;
+  pbVar9 = (byte *)((int)((ulonglong)uVar8 >> 0x20) + -0x25efab2c);
+  bVar10 = *pbVar9;
+  bVar12 = (byte)((ulonglong)uVar8 >> 0x20);
+  bVar7 = *pbVar9 + bVar12;
+  *pbVar9 = bVar7 + bVar11;
+  bVar13 = (char)uVar8 + (char)((ulonglong)uVar8 >> 8) * 'T';
+  pcVar14 = (char *)CONCAT22((short)((ulonglong)uVar8 >> 0x10),(ushort)bVar13);
+  *pcVar14 = *pcVar14 + bVar13 + (CARRY1(bVar10,bVar12) || CARRY1(bVar7,bVar11));
+  *extraout_ECX = *extraout_ECX + bVar13;
+  piVar15 = (int *)(CONCAT31((int3)((uint)pcVar14 >> 8),bVar13 + *pcVar14) + *unaff_EBX);
+  pcVar14 = (char *)((int)piVar15 + *unaff_EBX + *unaff_EBX + *unaff_EBX + *unaff_EBX + *piVar15);
+  cVar16 = (char)pcVar14;
+  *pcVar14 = *pcVar14 + cVar16;
+  *pcVar14 = *pcVar14 + cVar16;
+  *pcVar14 = *pcVar14 + cVar16;
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
+  return;
 }
 
 

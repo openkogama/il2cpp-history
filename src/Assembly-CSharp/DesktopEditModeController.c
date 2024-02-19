@@ -359,18 +359,8 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_H
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
     func_?(&
                     MethodInfo__DesktopEditModeController___HandleInput_b__40_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                    );
     func_?(&
                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
@@ -385,7 +375,6 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_H
                     InEditMenu_MethodInfo__UnityEngine__Object__Instantiate<InEditMenu>_InEditMenu__UnityEngine__Transform__bool_
                    );
     func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_Toggling_HD_is_deprecated__pleas);
     cRam_? = '\x01';
   }
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
@@ -416,11 +405,7 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_H
       InEditMenu::InEditMenu_Initialize(pIVar3,(MethodInfo *)0x0);
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
-      callbackFunction =
-           (ExecuteEvents_EventFunction_1_System_Object_ *)
-           func_?(
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                          );
+      callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
@@ -437,7 +422,7 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_H
     }
   }
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MVInputWrapper);
+    func_?();
   }
   bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
                     (KogamaControls__Enum_Deprecated_ToggleHD,(MethodInfo *)0x0);
@@ -452,31 +437,10 @@ code_?:
     }
     bVar1 = UIStack::UIStack_IsStackEmpty(pUVar2,(MethodInfo *)0x0);
     if (bVar1 != 0) {
-      value = TM::TM__(StringLiteral_Toggling_HD_is_deprecated__pleas,(MethodInfo *)0x0);
-      this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                 *)func_?();
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-      UIElements::StyleComplexSelector+PseudoStateData]::
-      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                (this_00,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      key = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
-      if (this_00 ==
-          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
-          )0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this_00,key,(Object *)value,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
       if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      NotificationController::NotificationController_PushNotification_2
-                (NotificationType__Enum_PlayerTip,
-                 (Dictionary_2_System_Object_System_Object_ *)this_00,
-                 NotificationLifetime__Enum_High,(MethodInfo *)0x0);
+      NotificationController::NotificationController_ToggleHDIsDeprecated((MethodInfo *)0x0);
     }
   }
   return;

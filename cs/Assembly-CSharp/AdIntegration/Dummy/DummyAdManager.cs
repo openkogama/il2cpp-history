@@ -14,6 +14,7 @@ namespace AdIntegration.Dummy
 	public class DummyAdManager : IAdManager, IUpdatecontrollerSubscriberUpdate
 	{
 		// Fields
+		public const bool PortalUIRealAdManagerInEditor = true;
 		private IAdUIManager adUIHandler;
 		private float startTime;
 		private readonly float delay;

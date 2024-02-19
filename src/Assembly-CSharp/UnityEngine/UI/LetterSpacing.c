@@ -771,24 +771,25 @@ code_?:
   func_?();
 code_?:
   uVar46 = func_?();
-  piVar20 = (int *)((ulonglong)uVar46 >> 0x20);
-  pcVar80 = (char *)uVar46;
-  pbVar81 = (byte *)(pcVar80 + 0x54);
-  bVar82 = *pbVar81 + (byte)this_01;
-  bVar83 = CARRY1(*pbVar81,(byte)this_01) || CARRY1(bVar82,bVar30);
-  *pbVar81 = bVar82 + bVar30;
-  pbVar81 = (byte *)(piVar20 + 0x15);
-  bVar30 = *pbVar81;
-  bVar84 = (byte)((ulonglong)uVar46 >> 8);
-  bVar82 = *pbVar81 + bVar84;
-  *pbVar81 = bVar82 + bVar83;
+  pbVar80 = (byte *)((ulonglong)uVar46 >> 0x20);
+  pbVar81 = (byte *)uVar46;
+  bVar82 = CARRY4(extraout_ECX,in_stack_83) ||
+           CARRY4(extraout_ECX + in_stack_83,(uint)bVar30);
+  pcVar84 = (char *)(extraout_ECX + in_stack_83 + (uint)bVar30);
+  bVar30 = *pbVar81 + (byte)this_01;
+  bVar85 = CARRY1(*pbVar81,(byte)this_01) || CARRY1(bVar30,bVar82);
+  *pbVar81 = bVar30 + bVar82;
+  bVar30 = *pbVar80;
+  bVar86 = (byte)((ulonglong)uVar46 >> 8);
+  bVar87 = *pbVar80 + bVar86;
+  *pbVar80 = bVar87 + bVar85;
   cVar1 = (char)uVar46;
-  *pcVar80 = *pcVar80 + cVar1 + (CARRY1(bVar30,bVar84) || CARRY1(bVar82,bVar83));
-  *piVar20 = (int)(pcVar80 + *piVar20);
-  *extraout_ECX = *extraout_ECX + cVar1;
-  *piVar20 = *piVar20 + CONCAT31((int3)((ulonglong)uVar46 >> 8),cVar1 + *pcVar80);
-  pcVar85 = (code *)swi(3);
-  (*pcVar85)();
+  *pbVar81 = *pbVar81 + cVar1 + (CARRY1(bVar30,bVar86) || CARRY1(bVar87,bVar85));
+  *(byte **)pbVar80 = pbVar81 + *(int *)pbVar80;
+  *pcVar84 = *pcVar84 + cVar1;
+  *(int *)pbVar80 = *(int *)pbVar80 + CONCAT31((int3)((ulonglong)uVar46 >> 8),cVar1 + *pbVar81);
+  pcVar88 = (code *)swi(3);
+  (*pcVar88)();
   return;
 }
 

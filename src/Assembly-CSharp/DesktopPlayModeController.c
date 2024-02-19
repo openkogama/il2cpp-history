@@ -361,20 +361,9 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_H
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
     func_?(&TypeInfo__ILockCursorManager);
     func_?(&TypeInfo__MVInputWrapper);
     func_?(&TypeInfo__NotificationController);
-    func_?(&StringLiteral_Toggling_HD_is_deprecated__pleas);
     cRam_? = '\x01';
   }
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
@@ -397,33 +386,10 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_H
     if (this_00 == (UIStack *)0x0) goto code_?;
     bVar1 = UIStack::UIStack_IsStackEmpty(this_00,(MethodInfo *)0x0);
     if (bVar1 != 0) {
-      value = TM::TM__(StringLiteral_Toggling_HD_is_deprecated__pleas,(MethodInfo *)0x0);
-      this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                 *)func_?(
-                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                  );
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-      UIElements::StyleComplexSelector+PseudoStateData]::
-      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                (this_01,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      key = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
-      if (this_01 ==
-          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
-          )0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this_01,key,(Object *)value,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
       if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__NotificationController);
       }
-      NotificationController::NotificationController_PushNotification_2
-                (NotificationType__Enum_PlayerTip,
-                 (Dictionary_2_System_Object_System_Object_ *)this_01,
-                 NotificationLifetime__Enum_High,(MethodInfo *)0x0);
+      NotificationController::NotificationController_ToggleHDIsDeprecated((MethodInfo *)0x0);
     }
   }
   if (cRam_? == '\0') {
@@ -438,9 +404,9 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_H
     bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
                       (KogamaControls__Enum_ToggleLogicRendering,(MethodInfo *)0x0);
     if (bVar1 != 0) {
-      this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
       pMVar3 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      if ((pMVar3 == (MainCameraManager *)0x0) || (this_02 == (MainCameraManager *)0x0)) {
+      if ((pMVar3 == (MainCameraManager *)0x0) || (this_01 == (MainCameraManager *)0x0)) {
 code_?:
         func_?();
         pcVar4 = (code *)swi(3);
@@ -448,7 +414,7 @@ code_?:
         return;
       }
       MainCameraManager::MainCameraManager_set_IsLogicRendered
-                (this_02,(pMVar3->fields).isLogicRendered == 0,(MethodInfo *)0x0);
+                (this_01,(pMVar3->fields).isLogicRendered == 0,(MethodInfo *)0x0);
     }
   }
   return;
@@ -1426,20 +1392,9 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_U
   ModeControllerBase::ModeControllerBase_HandleFpsShortcut
             ((ModeControllerBase *)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
     func_?(&TypeInfo__ILockCursorManager);
     func_?(&TypeInfo__MVInputWrapper);
     func_?(&TypeInfo__NotificationController);
-    func_?(&StringLiteral_Toggling_HD_is_deprecated__pleas);
     cRam_? = '\x01';
   }
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
@@ -1448,8 +1403,8 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_U
   bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
                     (KogamaControls__Enum_LobbyMenu,(MethodInfo *)0x0);
   if (bVar1 != 0) {
-    if (*(int *)(in_stack_2 + 0x6c) == 0) goto code_?;
-    func_?(3,TypeInfo__ILockCursorManager,*(int *)(in_stack_2 + 0x6c));
+    if ((this->fields).lockCursorManager == (ILockCursorManager *)0x0) goto code_?;
+    func_?(3,TypeInfo__ILockCursorManager);
   }
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -1457,37 +1412,14 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_U
   bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
                     (KogamaControls__Enum_Deprecated_ToggleHD,(MethodInfo *)0x0);
   if (bVar1 != 0) {
-    if (*(UIStack **)(in_stack_2 + 0x1c) == (UIStack *)0x0) goto code_?;
-    bVar1 = UIStack::UIStack_IsStackEmpty(*(UIStack **)(in_stack_2 + 0x1c),(MethodInfo *)0x0)
-    ;
+    this_00 = (this->fields).uiStack;
+    if (this_00 == (UIStack *)0x0) goto code_?;
+    bVar1 = UIStack::UIStack_IsStackEmpty(this_00,(MethodInfo *)0x0);
     if (bVar1 != 0) {
-      value = TM::TM__(StringLiteral_Toggling_HD_is_deprecated__pleas,(MethodInfo *)0x0);
-      this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                 *)func_?(
-                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                  );
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-      UIElements::StyleComplexSelector+PseudoStateData]::
-      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                (this_00,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      key = (Object *)func_?(TypeInfo__System__Byte,&stack0x00000003);
-      if (this_00 ==
-          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
-          )0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this_00,key,(Object *)value,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
       if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__NotificationController);
       }
-      NotificationController::NotificationController_PushNotification_2
-                (NotificationType__Enum_PlayerTip,
-                 (Dictionary_2_System_Object_System_Object_ *)this_00,
-                 NotificationLifetime__Enum_High,(MethodInfo *)0x0);
+      NotificationController::NotificationController_ToggleHDIsDeprecated((MethodInfo *)0x0);
     }
   }
   if (cRam_? == '\0') {
@@ -1503,16 +1435,16 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_U
                       (KogamaControls__Enum_ToggleLogicRendering,(MethodInfo *)0x0);
     if (bVar1 != 0) {
       this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      if ((pMVar3 == (MainCameraManager *)0x0) || (this_01 == (MainCameraManager *)0x0)) {
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      if ((pMVar2 == (MainCameraManager *)0x0) || (this_01 == (MainCameraManager *)0x0)) {
 code_?:
         func_?();
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
       MainCameraManager::MainCameraManager_set_IsLogicRendered
-                (this_01,(pMVar3->fields).isLogicRendered == 0,(MethodInfo *)0x0);
+                (this_01,(pMVar2->fields).isLogicRendered == 0,(MethodInfo *)0x0);
     }
   }
   return;
@@ -1618,36 +1550,16 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_s
                (DesktopPlayModeController *this,bool value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_Is_in_lobby_mode___0_);
-    cRam_? = '\x01';
-  }
   this_00 = (this->fields).lobbyStatePlayModeController;
   if (this_00 != (LobbyStatePlayModeController *)0x0) {
-    value_00 = (bool)_value;
-    LobbyStatePlayModeController::LobbyStatePlayModeController_set_IsInLobbyState
-              (this_00,value_00,(MethodInfo *)0x0);
-    this = (DesktopPlayModeController *)CONCAT13(value_00,this._0_3_);
-    arg0 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
-    message = (DesktopPlayModeController *)
-              mscorlib.dll::System::String::String_Format
-                        (StringLiteral_Is_in_lobby_mode___0_,arg0,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      _value = TypeInfo__UnityEngine__Debug;
-      this = (DesktopPlayModeController *)&UNK_?;
-      func_?();
-    }
-    _value = (Debug_2__Class *)0x0;
-    this = message;
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)message,(MethodInfo *)0x0)
-    ;
+    (this_00->fields).wantsToEnterPlayState = value ^ 1;
+    LobbyStatePlayModeController::LobbyStatePlayModeController_Update(this_00,(MethodInfo *)0x0);
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&puStack_2);
+  func_?(uVar1);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

@@ -643,14 +643,14 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarImpulseGunPrefab
 }
 
 
-/* AvatarInputControllerAndroidSettings get_AvatarInputControllerAndroidSettings() */
+/* AvatarInputControllerTouchSettings get_AvatarInputControllerTouchSettings() */
 
-AvatarInputControllerAndroidSettings *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarInputControllerAndroidSettings
+AvatarInputControllerTouchSettings *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarInputControllerTouchSettings
           (PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).avatarInputControllerAndroidSettings;
+  return (this->fields).avatarInputControllerTouchSettings;
 }
 
 

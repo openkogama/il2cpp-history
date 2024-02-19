@@ -219,23 +219,9 @@ code_?:
     }
   }
 code_?:
-  uVar12 = func_?();
-  bVar13 = (byte)((uint)uVar12 >> 8) | (byte)((uint)unaff_EBX >> 8);
-  pbVar14 = (byte *)CONCAT22((short)((uint)uVar12 >> 0x10),CONCAT11(bVar13,(char)uVar12));
-  bVar15 = *pbVar14;
-  *pbVar14 = *pbVar14 + extraout_CL;
-  bVar16 = CARRY1(*unaff_EBX,bVar13) || CARRY1(*unaff_EBX + bVar13,CARRY1(bVar15,extraout_CL));
-  *unaff_EBX = *unaff_EBX + bVar13 + CARRY1(bVar15,extraout_CL);
-  bVar17 = CARRY1(*unaff_EBX,bVar13) || CARRY1(*unaff_EBX + bVar13,bVar16);
-  *unaff_EBX = *unaff_EBX + bVar13 + bVar16;
-  pbVar18 = pbVar14 + -4;
-  bVar15 = *pbVar18;
-  bVar13 = *pbVar18;
-  *pbVar18 = bVar13 + extraout_CL + bVar17;
-  pbVar14[-4] = pbVar14[-4] + extraout_CL +
-                (CARRY1(bVar15,extraout_CL) || CARRY1(bVar13 + extraout_CL,bVar17));
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
-  return;
+  func_?();
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
 }
 

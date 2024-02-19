@@ -1233,25 +1233,17 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_HandleDeserializedWorldData
   }
   bVar3 = 0;
   this = (WorldNetwork *)&UNK_?;
-  uVar4 = func_?();
-  bVar5 = (byte)((uint)extraout_ECX >> 8);
-  bVar6 = (byte)((uint6)uVar4 >> 0x28);
-  bVar7 = bVar5 + bVar6;
-  bVar8 = CARRY1(bVar5,bVar6) || CARRY1(bVar7,bVar3);
-  pbVar9 = (byte *)((int)&(unaff_EDI->fields)._.CloneWorldObjectTreeResponse + 1);
-  bVar5 = *pbVar9;
-  bVar10 = (byte)((uint)(CONCAT31((int3)((uint6)uVar4 >> 8),
-                                 *(undefined1 *)(unaff_EBX + ((uint)uVar4 & 0xff))) + -2) >> 8);
-  bVar6 = *pbVar9 + bVar10;
-  *pbVar9 = bVar6 + bVar8;
-  pcVar11 = (char *)(CONCAT22((short)((uint)extraout_ECX >> 0x10),
-                             CONCAT11(bVar7 + bVar3,(char)extraout_ECX)) + 0x49);
-  *pcVar11 = *pcVar11 + (char)((uint)unaff_EBX >> 8) + (CARRY1(bVar5,bVar10) || CARRY1(bVar6,bVar8))
-  ;
-  in((short)((uint6)uVar4 >> 0x20));
+  func_?();
+  bVar4 = CARRY1(bRam_?,extraout_AH);
+  bVar5 = bRam_? + extraout_AH;
+  bRam_? = bVar5 + bVar3;
+  *(char *)(extraout_ECX + 0x55105657) =
+       *(char *)(extraout_ECX + 0x55105657) + (char)((uint)extraout_ECX >> 8) +
+       (bVar4 || CARRY1(bVar5,bVar3));
   this = (WorldNetwork *)unaff_ESI;
+  data = (Dictionary_2_System_Object_System_Object_ *)unaff_EDI;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__KoGaMaDataHandler,unaff_ESI,unaff_ESI);
+    func_?(&TypeInfo__KoGaMaDataHandler,unaff_ESI);
     func_?(&
                     TypeInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::Dictionary<System::Object,_System::Object>,_MV::WorldObject::KogamaDataType>
                    );
@@ -1263,52 +1255,55 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_HandleDeserializedWorldData
   this_02 = (UnityAction_2_System_Object_System_Object_ *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::Dictionary<System::Object,_System::Object>,_MV::WorldObject::KogamaDataType>
                             ,unaff_EDI,unaff_ESI);
-  pWVar12 = this;
+  pWVar6 = this;
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
   UnityAction_2_System_Object_System_Object___ctor
             (this_02,(Object *)this,
              MethodInfo__WorldNetwork__HandleDeserializedWorldData_System__Collections__Generic__Dictionary<System::Object,_System::Object>__MV__WorldObject__KogamaDataType_
              ,(MethodInfo *)0x0);
   if ((TypeInfo__KoGaMaDataHandler->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__KoGaMaDataHandler);
+    func_?();
   }
-  key = KoGaMaDataHandler::KoGaMaDataHandler_GetKoGaMaData
+  key = (WorldNetwork *)
+        KoGaMaDataHandler::KoGaMaDataHandler_GetKoGaMaData
                   ((BytePacker *)data,
                    (UnityAction_2_System_Collections_Generic_Dictionary_2_System_Object_System_Object_MV_WorldObject_KogamaDataType_
                     *)this_02,1,(MethodInfo *)0x0);
-  pMVar13 = (pWVar12->fields)._.worldObjectClientManager;
-  if (pMVar13 != (MVWorldObjectClientManagerNetwork *)0x0) {
+  pMVar7 = (pWVar6->fields)._.worldObjectClientManager;
+  if (pMVar7 != (MVWorldObjectClientManagerNetwork *)0x0) {
     if (cRam_? == '\0') {
-      data = (Dictionary_2_System_Object_System_Object_ *)
-             &
-             MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+      dataType = (KogamaDataType__Enum)
+                 &
+                 MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
       ;
-      this = (WorldNetwork *)&UNK_?;
+      data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
       func_?();
       cRam_? = '\x01';
     }
-    this_01 = (pMVar13->fields)._.worldObjects;
+    this_01 = (pMVar7->fields)._.worldObjects;
     this = (WorldNetwork *)0x0;
     if (this_01 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
-      data = (Dictionary_2_System_Object_System_Object_ *)
-             MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+      dataType = (KogamaDataType__Enum)
+                 MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
       ;
-      this = (WorldNetwork *)&this;
+      data = (Dictionary_2_System_Object_System_Object_ *)&this;
+      this = key;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
       Dictionary_2_System_Int32_System_Object__TryGetValue
-                ((Dictionary_2_System_Int32_System_Object_ *)this_01,key,(Object **)this,
+                ((Dictionary_2_System_Int32_System_Object_ *)this_01,(int32_t)key,(Object **)data,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
                 );
       if (this != (WorldNetwork *)0x0) {
+        uStack8 = this->klass[2]._1.thread_static_fields_size;
         (*(code *)this->klass[2]._1.static_fields_size)();
       }
       return;
     }
   }
-  data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+  dataType = (KogamaDataType__Enum)&UNK_?;
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

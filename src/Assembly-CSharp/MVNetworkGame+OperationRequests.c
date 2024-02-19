@@ -5918,17 +5918,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
                    );
     func_?(&TypeInfo__MV__WorldObject__MetaData__ProfileSettingKey);
+    func_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
     func_?(&TypeInfo__ExitGames__Client__Photon__SendOptions);
     func_?(&TypeInfo__MV__WorldObject__MetaData__SettingsPlatform);
     cRam_? = '\x01';
-  }
-  bVar1 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-          VerticalVirtualizationController`1[System::Object]::
-          VerticalVirtualizationController_1_System_Object__get_alwaysRebindOnRefresh
-                    ((VerticalVirtualizationController_1_System_Object_ *)0x0,unaff_EDI);
-  iStack_2 = 0;
-  if (bVar1 != 1) {
-    iStack_2 = (bVar1 != 2) + 1;
   }
   this_00 = (Dictionary_2_System_Byte_System_Object_ *)
             func_?(
@@ -5939,15 +5932,20 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
             );
-  pOVar3 = (Object *)
-           func_?(TypeInfo__MV__WorldObject__MetaData__SettingsPlatform,&iStack_2);
+  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+  }
+  System.Core.dll::System::Runtime::CompilerServices::CallSiteBinder::CallSiteBinder_BindDelegate
+            ((CallSiteBinder *)0x0,in_stack_1,in_stack_2,unaff_EBP);
+  pOVar3 = (Object *)func_?(TypeInfo__MV__WorldObject__MetaData__SettingsPlatform);
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__Add
               (this_00,0xbf,pOVar3,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
               );
-    pOVar3 = (Object *)func_?(TypeInfo__MV__WorldObject__MetaData__ProfileSettingKey);
+    pOVar3 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__Add
               (this_00,0x29,pOVar3,
@@ -5962,19 +5960,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pSVar5 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
-    uVar6._0_1_ = (pSVar5->SendReliable).Encrypt;
-    uVar6._1_1_ = (pSVar5->SendReliable).Channel;
-    uVar6._2_2_ = *(undefined2 *)&(pSVar5->SendReliable).field_0x6;
     if (pPVar4 != (PhotonPeer *)0x0) {
       (*(code *)(pPVar4->klass->vtable).SendOperation.method)
-                (pPVar4,0x65,this_00,(pSVar5->SendReliable).DeliveryMode,uVar6);
+                (pPVar4,0x65,this_00,
+                 (TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable).
+                 DeliveryMode);
       return;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
