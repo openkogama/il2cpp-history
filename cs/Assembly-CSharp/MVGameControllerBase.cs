@@ -74,6 +74,10 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	[CompilerGenerated]
 	private static bool _WebPlayAsTouch_k__BackingField;
 	[CompilerGenerated]
+	private static bool _PortalUI_k__BackingField;
+	[CompilerGenerated]
+	private bool _ShuttingDown_k__BackingField;
+	[CompilerGenerated]
 	private static bool _WebPlayAsTouchInitialized_k__BackingField;
 	[CompilerGenerated]
 	private static GameSessionData _GameSessionData_k__BackingField;
@@ -116,6 +120,8 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	protected RegionConfig RegionConfig { get; }
 	public static StaticAssetsConfig StaticAssetsConfig { get; }
 	public static bool WebPlayAsTouch { [CompilerGenerated] get; [CompilerGenerated] set; }
+	public static bool PortalUI { [CompilerGenerated] get; [CompilerGenerated] set; }
+	public bool ShuttingDown { [CompilerGenerated] get; [CompilerGenerated] protected set; }
 	public static bool WebPlayAsTouchInitialized { [CompilerGenerated] get; [CompilerGenerated] set; }
 	public static GameSessionData GameSessionData { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public static BuildTarget BuildTarget { get; }
@@ -173,13 +179,13 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass174_0
+	private sealed class __c__DisplayClass182_0
 	{
 		// Fields
 		public QuitBaseCallback applicationQuitObject;
 
 		// Constructors
-		public __c__DisplayClass174_0();
+		public __c__DisplayClass182_0();
 
 		// Methods
 		internal void _ApplicationQuit_b__0();
@@ -217,6 +223,7 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	protected void ShutDown();
 	protected abstract void HandleApplicationQuit(QuitBaseCallback quitBaseCallback);
 	protected virtual void CleanUp();
+	protected void CleanUpPortal();
 	protected void HandleQuitDisconnect();
 	private void AlternatePortTest();
 	protected virtual void StartGame();

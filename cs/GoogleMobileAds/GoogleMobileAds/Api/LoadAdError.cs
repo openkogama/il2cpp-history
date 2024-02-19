@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using GoogleMobileAds.Common;
 
-// Image 38: GoogleMobileAds.dll - Assembly: GoogleMobileAds, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
+// Image 37: GoogleMobileAds.dll - Assembly: GoogleMobileAds, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Api
 {

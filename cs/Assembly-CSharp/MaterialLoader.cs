@@ -3,6 +3,8 @@
  */
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject.MetaData;
@@ -14,6 +16,7 @@ using UnityEngine.Networking;
 public class MaterialLoader : MonoBehaviour
 {
 	// Fields
+	private const string NoisePath = "AssetBundles/Textures/noisetexture.unity3d";
 	private const string AtlasPath = "AssetBundles/Atlas/";
 	private const string HighResAtlasFileName = "atlashigh";
 	private const string MidResAtlasFileName = "atlasmid";
@@ -68,6 +71,31 @@ public class MaterialLoader : MonoBehaviour
 	public Shader DefaultDiffuseShader { get; }
 	public Shader StandardItemUnavailableShader { get; }
 
+	// Nested types
+	[CompilerGenerated]
+	private sealed class _DownloadNoiseAfterInit_d__54 : IEnumerator<object>
+	{
+		// Fields
+		private int __1__state;
+		private object __2__current;
+		public MaterialLoader __4__this;
+
+		// Properties
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
+		object IEnumerator.Current { [DebuggerHidden] get; }
+
+		// Constructors
+		[DebuggerHidden]
+		public _DownloadNoiseAfterInit_d__54(int __1__state);
+
+		// Methods
+		[DebuggerHidden]
+		void IDisposable.Dispose();
+		private bool MoveNext();
+		[DebuggerHidden]
+		void IEnumerator.Reset();
+	}
+
 	// Constructors
 	public MaterialLoader();
 
@@ -81,9 +109,13 @@ public class MaterialLoader : MonoBehaviour
 	private bool CalculateIsUsingMobileShader();
 	private Material PickMaterial(bool opaque);
 	public void SetTextureQuality(TextureQualityLevel quality);
-	private void DownloadWhenPossible();
-	private void Callback(UnityWebRequest www);
-	private Texture StoreLoadedTexture(AssetBundle assetBundle, string assetName);
+	[IteratorStateMachine(typeof(_DownloadNoiseAfterInit_d__54))]
+	private IEnumerator DownloadNoiseAfterInit();
+	private void DownloadNoiseWhenPossible();
+	private void NoiseCallback(UnityWebRequest www);
+	private void DownloadAtlasWhenPossible();
+	private void AtlasCallback(UnityWebRequest www);
+	private Texture StoreAtlasTexture(AssetBundle assetBundle, string assetName);
 	private uint Hash(Texture tex);
 	public string MaterialLoaderInfo();
 }

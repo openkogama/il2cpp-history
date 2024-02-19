@@ -5,23 +5,19 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using GoogleMobileAds.Common.Mediation.AdColony;
+using GoogleMobileAds.Mediation.AdColony.Api;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Api.Mediation.AdColony
 {
+	[Obsolete("Use `GoogleMobileAds.Mediation.AdColony.Api.AdColonyAppOptions` instead.")]
 	public class AdColonyAppOptions
 	{
-		// Fields
-		public static readonly IAdColonyAppOptionsClient client;
-	
 		// Constructors
 		public AdColonyAppOptions();
-		static AdColonyAppOptions();
 	
 		// Methods
-		private static IAdColonyAppOptionsClient GetAdColonyAppOptionsClient();
 		public static void SetPrivacyFrameworkRequired(AdColonyPrivacyFramework privacyFramework, bool isRequired);
 		public static bool GetPrivacyFrameworkRequired(AdColonyPrivacyFramework privacyFramework);
 		public static void SetPrivacyConsentString(AdColonyPrivacyFramework privacyFramework, string consentString);
