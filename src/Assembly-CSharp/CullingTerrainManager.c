@@ -10,7 +10,7 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager_ChunkInst
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Remove_MV__WorldObject__IntVector_
                    );
-    func_?(0xf4a8);
+    func_?(0x4b0);
     cRam_? = '\x01';
   }
   if (chunkInstancesChanged == (ChunkInstancesChanged *)0x0) goto code_?;
@@ -325,7 +325,7 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager_OnChanged
     func_?(&
                     MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__
                    );
-    func_?(0xb190);
+    func_?(0xc1d8);
     func_?(&
                     MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__GetEnumerator__
                    );

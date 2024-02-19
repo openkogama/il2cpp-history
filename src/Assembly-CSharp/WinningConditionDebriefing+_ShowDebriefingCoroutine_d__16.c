@@ -84,12 +84,22 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<ShowDebriefingCoroutine>d_
   default:
     return 0;
   }
-  func_?();
-  *unaff_EDI = *unaff_EDI + -1;
-  unaff_EDI[10] = unaff_EDI[10] + (char)((uint)this_00 >> 8);
-  pcVar6 = (code *)swi(3);
-  bVar7 = (*pcVar6)();
-  return bVar7;
+  bVar6 = 0;
+  uVar7 = func_?();
+  iVar8 = (int)(uVar7 >> 0x20);
+  piVar2 = (int *)(iVar8 + 0x10);
+  *piVar2 = *piVar2 + extraout_ECX + (uint)bVar6;
+  pbVar9 = (byte *)(iVar8 + 0x10);
+  bVar10 = CARRY1((byte)extraout_ECX,*pbVar9) ||
+           CARRY1((byte)extraout_ECX + *pbVar9,(uVar7 & 0x100) != 0);
+  bVar11 = (byte)(uVar7 >> 0x20);
+  bVar6 = bVar11 - *(char *)&(this_00->_0).image;
+  pcVar12 = (char *)((int)uVar7 + -0x33efb5ed);
+  *pcVar12 = *pcVar12 + (bVar6 - bVar10) + -1 +
+            (bVar11 < *(byte *)&(this_00->_0).image || bVar6 < bVar10);
+  pcVar13 = (code *)swi(3);
+  bVar14 = (*pcVar13)();
+  return bVar14;
 }
 
 

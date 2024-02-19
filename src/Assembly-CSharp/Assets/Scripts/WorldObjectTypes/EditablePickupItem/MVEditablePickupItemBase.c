@@ -424,6 +424,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
     func_?(&TypeInfo__LevelBasedUseRequirement);
     func_?(&MethodInfo__MVPickupItemBase__CheckCanUse_int__MVInteractableBase_);
     func_?(&MethodInfo__MVPickupItemBase__DoPickup_int_);
+    func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement);
     func_?(&TypeInfo__UseInteractor);
     func_?(&
                     MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
@@ -525,19 +526,17 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
                             (pUVar3,(UseRequirement *)this_04,(MethodInfo *)0x0);
                   pMVar1 = MVEditablePickupItemBase_get_BaseObject(this_01,(MethodInfo *)0x0);
                   if (pMVar1 != (MVEditablePickupItemBaseObject *)0x0) {
-                    pTVar2 = (pMVar1->fields)._.triggerBoxEvents;
+                    pGVar5 = (pMVar1->fields)._.useInteractionRotator;
+                    this_05 = (RewardedAdRequirement *)
+                              func_?(
+                                             TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement
+                                             );
+                    WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::
+                    RewardedAdRequirement__ctor(this_05,pGVar5,(MethodInfo *)0x0);
                     pUVar3 = (this_01->fields)._.useInteractor;
-                    pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
-                             func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                    Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                              (pUVar4,(Object *)pUVar3,
-                               MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                               ,(MethodInfo *)0x0);
-                    if (pTVar2 != (TriggerBoxEvents *)0x0) {
-                      TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                                (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar4,(MethodInfo *)0x0
-                                );
+                    if (pUVar3 != (UseInteractor *)0x0) {
+                      UseInteractor::UseInteractor_AddRequirement
+                                (pUVar3,(UseRequirement *)this_05,(MethodInfo *)0x0);
                       pMVar1 = MVEditablePickupItemBase_get_BaseObject(this_01,(MethodInfo *)0x0);
                       if (pMVar1 != (MVEditablePickupItemBaseObject *)0x0) {
                         pTVar2 = (pMVar1->fields)._.triggerBoxEvents;
@@ -547,13 +546,32 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
                         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
                         Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
                                   (pUVar4,(Object *)pUVar3,
-                                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                                    ,(MethodInfo *)0x0);
                         if (pTVar2 != (TriggerBoxEvents *)0x0) {
-                          TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
+                          TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
                                     (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar4,
                                      (MethodInfo *)0x0);
-                          return;
+                          pMVar1 = MVEditablePickupItemBase_get_BaseObject
+                                             (this_01,(MethodInfo *)0x0);
+                          if (pMVar1 != (MVEditablePickupItemBaseObject *)0x0) {
+                            pTVar2 = (pMVar1->fields)._.triggerBoxEvents;
+                            pUVar3 = (this_01->fields)._.useInteractor;
+                            pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
+                                     func_?(
+                                                  TypeInfo__System__EventHandler<TriggerEventArgs>);
+                            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
+                            Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
+                                      (pUVar4,(Object *)pUVar3,
+                                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                                       ,(MethodInfo *)0x0);
+                            if (pTVar2 != (TriggerBoxEvents *)0x0) {
+                              TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
+                                        (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar4,
+                                         (MethodInfo *)0x0);
+                              return;
+                            }
+                          }
                         }
                       }
                     }

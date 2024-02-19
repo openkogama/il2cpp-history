@@ -400,6 +400,31 @@ code_?:
 }
 
 
+/* Void SetShowGameMeter(Boolean) */
+
+void Assembly-CSharp.dll::GameMeterXP::GameMeterXP_SetShowGameMeter
+               (GameMeterXP *this,bool show,MethodInfo *method)
+
+{
+  puStack_1 = &stack0xfffffffc;
+  pGVar2 = (this->fields).XPMeter;
+  if (pGVar2 != (GameObject *)0x0) {
+    if (pcRam_? == (code *)0x0) {
+      pcRam_? = (code *)func_?();
+    }
+    puStack_1 = (undefined1 *)_show;
+    pGStack_3 = pGVar2;
+    (*pcRam_?)();
+    return;
+  }
+  uVar4 = func_?(&puStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
+  return;
+}
+
+
 /* Void Update() */
 
 void Assembly-CSharp.dll::GameMeterXP::GameMeterXP_Update(GameMeterXP *this,MethodInfo *method)

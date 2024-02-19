@@ -19,7 +19,6 @@ public class DesktopInGameGUIController : MonoBehaviour
 	private GameObject winningConditionLayoutGroup;
 	[SerializeField]
 	private ShowUse3D use3DPrefab;
-	private ShowUse use;
 	[SerializeField]
 	private CrossHair crossHair;
 	[SerializeField]
@@ -32,6 +31,7 @@ public class DesktopInGameGUIController : MonoBehaviour
 	private GameObject leaveEditPlayModeButton;
 	[SerializeField]
 	private EmbeddedPlayerConfig embeddedPlayerConfig;
+	private ShowUse use;
 	private Dictionary<EmbeddedSite, string> logoToPathMap;
 
 	// Constructors

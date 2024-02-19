@@ -741,142 +741,142 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_OnDestroy
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 == (MVNetworkGame *)0x0) {
+  bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    return;
+  }
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar2 == (MVNetworkGame *)0x0) ||
+     (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 == (MVPlayerContainer *)0x0))
+  goto code_?;
+  pAVar4 = (pMVar3->fields).OnPlayerListChanged;
+  pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar5,(Object *)this,MethodInfo__PlayerListButton__UpdateButton__,(MethodInfo *)0x0);
+  pAVar4 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar4,(Delegate *)pNVar5,(MethodInfo *)0x0);
+  if (pAVar4 != (Action *)0x0) {
+    pAVar6 = (Action *)0x0;
+    if (pAVar4->klass == TypeInfo__System__Action) {
+      pAVar6 = pAVar4;
+    }
+    if (pAVar6 != (Action *)0x0) {
+      (pMVar3->fields).OnPlayerListChanged = pAVar6;
+      pAVar6 = (Action *)0x0;
+      if (pAVar4->klass == TypeInfo__System__Action) {
+        pAVar6 = pAVar4;
+      }
+      if (pAVar6 != (Action *)0x0) goto code_?;
+    }
+    goto code_?;
+  }
+  (pMVar3->fields).OnPlayerListChanged = (Action *)0x0;
+code_?:
+  func_?();
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar2 == (MVNetworkGame *)0x0) ||
+     (pMVar7 = (pMVar2->fields).teamManager, pMVar7 == (MVTeamManager *)0x0)) goto code_?;
+  pMVar8 = (pMVar7->fields).OnTeamsUpdated;
+  pNVar5 = (NavMesh_OnNavMeshPreUpdate *)
+           func_?(TypeInfo__MVTeamManager__OnTeamsUpdatedDelegate);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar5,(Object *)this,MethodInfo__PlayerListButton__UpdateButton__,(MethodInfo *)0x0);
+  pMVar8 = (MVTeamManager_OnTeamsUpdatedDelegate *)
+           mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pMVar8,(Delegate *)pNVar5,(MethodInfo *)0x0);
+  if (pMVar8 != (MVTeamManager_OnTeamsUpdatedDelegate *)0x0) {
+    pMVar9 = (MVTeamManager_OnTeamsUpdatedDelegate *)0x0;
+    if (pMVar8->klass == TypeInfo__MVTeamManager__OnTeamsUpdatedDelegate) {
+      pMVar9 = pMVar8;
+    }
+    if (pMVar9 != (MVTeamManager_OnTeamsUpdatedDelegate *)0x0) {
+      (pMVar7->fields).OnTeamsUpdated = pMVar9;
+      pMVar9 = (MVTeamManager_OnTeamsUpdatedDelegate *)0x0;
+      if (pMVar8->klass == TypeInfo__MVTeamManager__OnTeamsUpdatedDelegate) {
+        pMVar9 = pMVar8;
+      }
+      if (pMVar9 != (MVTeamManager_OnTeamsUpdatedDelegate *)0x0) goto code_?;
+    }
+    goto code_?;
+  }
+  (pMVar7->fields).OnTeamsUpdated = (MVTeamManager_OnTeamsUpdatedDelegate *)0x0;
+code_?:
+  func_?();
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar2 == (MVNetworkGame *)0x0) ||
+     (pFVar10 = (pMVar2->fields)._Friends_k__BackingField, pFVar10 == (FriendList *)0x0)) {
 code_?:
     func_?();
   }
   else {
-    pMVar2 = (pMVar1->fields).playerContainer;
-    if (pMVar2 == (MVPlayerContainer *)0x0) goto code_?;
-    pAVar3 = (pMVar2->fields).OnPlayerListChanged;
-    pNVar4 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar4,(Object *)this,MethodInfo__PlayerListButton__UpdateButton__,(MethodInfo *)0x0)
-    ;
-    pAVar3 = (Action *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar3,(Delegate *)pNVar4,(MethodInfo *)0x0);
-    if (pAVar3 != (Action *)0x0) {
-      pAVar5 = (Action *)0x0;
-      if (pAVar3->klass == TypeInfo__System__Action) {
-        pAVar5 = pAVar3;
-      }
-      if (pAVar5 != (Action *)0x0) {
-        (pMVar2->fields).OnPlayerListChanged = pAVar5;
-        pAVar5 = (Action *)0x0;
-        if (pAVar3->klass == TypeInfo__System__Action) {
-          pAVar5 = pAVar3;
-        }
-        if (pAVar5 != (Action *)0x0) goto code_?;
-      }
-      goto code_?;
-    }
-    (pMVar2->fields).OnPlayerListChanged = (Action *)0x0;
-code_?:
-    func_?();
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar1 == (MVNetworkGame *)0x0) ||
-       (pMVar6 = (pMVar1->fields).teamManager, pMVar6 == (MVTeamManager *)0x0))
-    goto code_?;
-    pMVar7 = (pMVar6->fields).OnTeamsUpdated;
-    pNVar4 = (NavMesh_OnNavMeshPreUpdate *)
-             func_?(TypeInfo__MVTeamManager__OnTeamsUpdatedDelegate);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar4,(Object *)&UNK_?,MethodInfo__PlayerListButton__UpdateButton__,
-               (MethodInfo *)0x0);
-    pMVar7 = (MVTeamManager_OnTeamsUpdatedDelegate *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pMVar7,(Delegate *)pNVar4,(MethodInfo *)0x0);
-    if (pMVar7 != (MVTeamManager_OnTeamsUpdatedDelegate *)0x0) {
-      pMVar8 = (MVTeamManager_OnTeamsUpdatedDelegate *)0x0;
-      if (pMVar7->klass == TypeInfo__MVTeamManager__OnTeamsUpdatedDelegate) {
-        pMVar8 = pMVar7;
-      }
-      if (pMVar8 != (MVTeamManager_OnTeamsUpdatedDelegate *)0x0) {
-        (pMVar6->fields).OnTeamsUpdated = pMVar8;
-        pMVar8 = (MVTeamManager_OnTeamsUpdatedDelegate *)0x0;
-        if (pMVar7->klass == TypeInfo__MVTeamManager__OnTeamsUpdatedDelegate) {
-          pMVar8 = pMVar7;
-        }
-        if (pMVar8 != (MVTeamManager_OnTeamsUpdatedDelegate *)0x0) goto code_?;
-      }
-      goto code_?;
-    }
-    (pMVar6->fields).OnTeamsUpdated = (MVTeamManager_OnTeamsUpdatedDelegate *)0x0;
-code_?:
-    func_?();
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar1 == (MVNetworkGame *)0x0) ||
-       (pFVar9 = (pMVar1->fields)._Friends_k__BackingField, pFVar9 == (FriendList *)0x0))
-    goto code_?;
-    pUVar10 = (pFVar9->fields).OnFriendRequestReceived;
-    pNVar4 = (NavMesh_OnNavMeshPreUpdate *)
+    pUVar11 = (pFVar10->fields).OnFriendRequestReceived;
+    pNVar5 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar4,(Object *)&UNK_?,MethodInfo__PlayerListButton__ViewNotification__,
+              (pNVar5,(Object *)this,MethodInfo__PlayerListButton__ViewNotification__,
                (MethodInfo *)0x0);
-    pUVar10 = (UnityAction *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pUVar10,(Delegate *)pNVar4,(MethodInfo *)0x0);
-    if (pUVar10 == (UnityAction *)0x0) {
-      (pFVar9->fields).OnFriendRequestReceived = (UnityAction *)0x0;
+    pUVar11 = (UnityAction *)
+              mscorlib.dll::System::Delegate::Delegate_Remove
+                        ((Delegate *)pUVar11,(Delegate *)pNVar5,(MethodInfo *)0x0);
+    if (pUVar11 == (UnityAction *)0x0) {
+      (pFVar10->fields).OnFriendRequestReceived = (UnityAction *)0x0;
 code_?:
       func_?();
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar1 != (MVNetworkGame *)0x0) &&
-         (pFVar9 = (pMVar1->fields)._Friends_k__BackingField, pFVar9 != (FriendList *)0x0)) {
-        pUVar11 = (pFVar9->fields).OnPendingCountChanged;
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar2 != (MVNetworkGame *)0x0) &&
+         (pFVar10 = (pMVar2->fields)._Friends_k__BackingField, pFVar10 != (FriendList *)0x0)) {
+        pUVar12 = (pFVar10->fields).OnPendingCountChanged;
         this_00 = (UnityAction_1_System_Int32Enum_ *)
                   func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
         UnityAction_1_System_Int32Enum___ctor
-                  (this_00,(Object *)&UNK_?,
-                   MethodInfo__PlayerListButton__PendingCountChanged_int_,(MethodInfo *)0x0);
-        pDVar12 = mscorlib.dll::System::Delegate::Delegate_Remove
-                            ((Delegate *)pUVar11,(Delegate *)this_00,(MethodInfo *)0x0);
-        if (pDVar12 == (Delegate *)0x0) {
-          (pFVar9->fields).OnPendingCountChanged = (UnityAction_1_System_Int32_ *)0x0;
+                  (this_00,(Object *)this,MethodInfo__PlayerListButton__PendingCountChanged_int_,
+                   (MethodInfo *)0x0);
+        pDVar13 = mscorlib.dll::System::Delegate::Delegate_Remove
+                            ((Delegate *)pUVar12,(Delegate *)this_00,(MethodInfo *)0x0);
+        if (pDVar13 == (Delegate *)0x0) {
+          (pFVar10->fields).OnPendingCountChanged = (UnityAction_1_System_Int32_ *)0x0;
         }
         else {
-          pUVar11 = (UnityAction_1_System_Int32_ *)func_?();
-          if (pUVar11 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
-          (pFVar9->fields).OnPendingCountChanged = pUVar11;
-          iVar13 = func_?();
-          if (iVar13 == 0) goto code_?;
+          pUVar12 = (UnityAction_1_System_Int32_ *)func_?();
+          if (pUVar12 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
+          (pFVar10->fields).OnPendingCountChanged = pUVar12;
+          iVar14 = func_?();
+          if (iVar14 == 0) goto code_?;
         }
         func_?();
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar1 != (MVNetworkGame *)0x0) &&
-           (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) {
-          pAVar3 = (pMVar2->fields).OnPlayerListLoaded;
-          pNVar4 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+        pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar2 != (MVNetworkGame *)0x0) &&
+           (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) {
+          pAVar4 = (pMVar3->fields).OnPlayerListLoaded;
+          pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
           UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
           NavMesh_OnNavMeshPreUpdate__ctor
-                    (pNVar4,(Object *)&UNK_?,
-                     MethodInfo__PlayerListButton__OnPlayerListReady__,(MethodInfo *)0x0);
-          pAVar3 = (Action *)
+                    (pNVar5,(Object *)this,MethodInfo__PlayerListButton__OnPlayerListReady__,
+                     (MethodInfo *)0x0);
+          pAVar4 = (Action *)
                    mscorlib.dll::System::Delegate::Delegate_Remove
-                             ((Delegate *)pAVar3,(Delegate *)pNVar4,(MethodInfo *)0x0);
-          if (pAVar3 == (Action *)0x0) {
-            (pMVar2->fields).OnPlayerListLoaded = (Action *)0x0;
+                             ((Delegate *)pAVar4,(Delegate *)pNVar5,(MethodInfo *)0x0);
+          if (pAVar4 == (Action *)0x0) {
+            (pMVar3->fields).OnPlayerListLoaded = (Action *)0x0;
             func_?();
             return;
           }
-          pAVar5 = (Action *)0x0;
-          if (pAVar3->klass == TypeInfo__System__Action) {
-            pAVar5 = pAVar3;
+          pAVar6 = (Action *)0x0;
+          if (pAVar4->klass == TypeInfo__System__Action) {
+            pAVar6 = pAVar4;
           }
-          if (pAVar5 != (Action *)0x0) {
-            (pMVar2->fields).OnPlayerListLoaded = pAVar5;
-            pAVar5 = (Action *)0x0;
-            if (pAVar3->klass == TypeInfo__System__Action) {
-              pAVar5 = pAVar3;
+          if (pAVar6 != (Action *)0x0) {
+            (pMVar3->fields).OnPlayerListLoaded = pAVar6;
+            pAVar6 = (Action *)0x0;
+            if (pAVar4->klass == TypeInfo__System__Action) {
+              pAVar6 = pAVar4;
             }
-            if (pAVar5 != (Action *)0x0) {
+            if (pAVar6 != (Action *)0x0) {
               func_?();
               return;
             }
@@ -886,25 +886,25 @@ code_?:
       }
       goto code_?;
     }
-    pUVar14 = (UnityAction *)0x0;
-    if (pUVar10->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar14 = pUVar10;
+    pUVar15 = (UnityAction *)0x0;
+    if (pUVar11->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUVar15 = pUVar11;
     }
-    if (pUVar14 != (UnityAction *)0x0) {
-      (pFVar9->fields).OnFriendRequestReceived = pUVar14;
-      pUVar14 = (UnityAction *)0x0;
-      if (pUVar10->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar14 = pUVar10;
+    if (pUVar15 != (UnityAction *)0x0) {
+      (pFVar10->fields).OnFriendRequestReceived = pUVar15;
+      pUVar15 = (UnityAction *)0x0;
+      if (pUVar11->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pUVar15 = pUVar11;
       }
-      if (pUVar14 != (UnityAction *)0x0) goto code_?;
+      if (pUVar15 != (UnityAction *)0x0) goto code_?;
     }
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -1421,7 +1421,7 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_UpdateTeamColor
   else {
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-    darkTeam = 0xd;
+    darkTeam = 0x7d;
     pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
     if (pMVar4 == (MVLocalPlayer *)0x0) goto code_?;
     team = (pMVar4->fields)._._Team_k__BackingField;

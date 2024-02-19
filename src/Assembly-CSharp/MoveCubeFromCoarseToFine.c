@@ -34,7 +34,7 @@ void Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_Add
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__GetEnumerator__
                    );
-    func_?(0x8948);
+    func_?(0x9950);
     cRam_? = '\x01';
     puVar7 = puStack_6;
   }
@@ -604,9 +604,9 @@ Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_GetValid
 
 {
   if (cRam_? == '\0') {
-    func_?(0x55c);
-    func_?(0x16b8);
-    func_?(0x167c);
+    func_?(0x1564);
+    func_?(0x26c0);
+    func_?(0x2684);
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MoveCubeFromCoarseToFine::ValidPos>__get_Item_int_
                    );
@@ -763,7 +763,7 @@ bool Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_IsF
       VStack_6.x = pVVar5->x;
       VStack_6.y = pVVar5->y;
       fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                        (&VStack_6,iStack_1,(MethodInfo *)0x0);
+                         (&VStack_6,iStack_1,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         VStack_6.x = (float)&TypeInfo__UnityEngine__Mathf;
         func_?();
@@ -786,8 +786,12 @@ bool Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_IsF
     }
   }
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  uVar11 = (undefined2)CONCAT31((int3)((uint)extraout_EDX >> 8),(char)extraout_EDX * '\x02');
+  in(uVar11);
+  in(uVar11);
+  pcVar12 = (code *)swi(3);
+  bVar13 = (*pcVar12)();
+  return bVar13;
 }
 
 
@@ -799,7 +803,7 @@ void Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_Mov
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-    func_?(0x8948);
+    func_?(0x9950);
     cRam_? = '\x01';
   }
   if (from != (ICubeModel *)0x0) {

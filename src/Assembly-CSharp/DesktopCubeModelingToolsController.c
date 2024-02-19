@@ -197,6 +197,7 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
     pIVar1 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
                        ((Selectable *)this_00,(MethodInfo *)0x0);
     pIStack_2 = (Image *)(this->fields).enabledAlpha;
+    unaff_EDI = (uint *)0x0;
     if (pIVar1 != (Image *)0x0) {
       pIStack_3 = (pIVar1->klass->vtable).set_color.methodPtr;
       pIStack_4 = pIVar1;
@@ -209,17 +210,15 @@ code_?:
       return;
     }
   }
-  bVar7 = 0;
-  bVar8 = func_?();
-  bVar9 = 0xcb < bVar8 || CARRY1(bVar8 + 0x34,bVar7);
-  bVar7 = bVar8 + 0x34 + bVar7;
-  bVar8 = (byte)unaff_EBX + bVar7;
-  pcVar10 = (char *)CONCAT31((int3)((uint)unaff_EBX >> 8),bVar8 + bVar9);
-  *pcVar10 = *pcVar10 + extraout_DH +
-            (0xcb < bVar7 ||
-            CARRY1(bVar7 + 0x34,CARRY1((byte)unaff_EBX,bVar7) || CARRY1(bVar8,bVar9)));
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  uVar7 = func_?();
+  *unaff_EDI = *unaff_EDI | (uint)((ulonglong)uVar7 >> 0x20);
+  pIStack_3 = (Il2CppMethodPointer)CONCAT22(pIStack_3._2_2_,in_CS);
+  pcVar8 = (char *)((uint)uVar7 ^ 0x10);
+  uVar9 = *unaff_EDI;
+  *unaff_EDI = *unaff_EDI + 0x34;
+  *pcVar8 = *pcVar8 + unaff_BL + (0xffffffcb < uVar9);
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

@@ -1184,7 +1184,7 @@ code_?:
   func_?();
   uVar22 = func_?();
   out((short)((uint6)uVar22 >> 0x20),(int)uVar22);
-  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + extraout_CL + cVar6;
+  *(char *)(unaff_EBX + 0x10) = (*(char *)(unaff_EBX + 0x10) - extraout_CL) - cVar6;
   do {
                     /* WARNING: Do nothing block with infinite loop */
   } while( true );

@@ -234,34 +234,15 @@ joined_?:
   default:
     return;
   }
-  func_?();
-  pbVar8 = (byte *)CONCAT31((int3)((uint)extraout_ECX >> 8),0x34);
-  *(undefined2 *)pbVar8 = in_FPUControlWord;
-  *(undefined2 *)(pbVar8 + 4) = in_FPUStatusWord;
-  *(undefined2 *)(pbVar8 + 8) = in_FPUTagWord;
-  *(undefined4 *)(pbVar8 + 0x14) = in_FPUDataPointer;
-  *(undefined4 *)(pbVar8 + 0xc) = in_FPUInstructionPointer;
-  *(undefined2 *)(pbVar8 + 0x12) = in_FPULastInstructionOpcode;
-  pbVar9 = (byte *)CONCAT22((short)((uint)unaff_EBX >> 0x10),
-                             CONCAT11((byte)((uint)unaff_EBX >> 8) ^ *pbVar8,(char)unaff_EBX));
-  pbVar10 = pbVar9 + 0x32;
-  *pbVar10 = *pbVar10 + (char)((uint)extraout_EDX >> 8) + *extraout_EDX;
-  rdpmc(pbVar8);
-  pcVar11 = (code *)swi(0x33);
-  uVar12 = (*pcVar11)();
-  uVar13 = (ushort)*pbVar9;
-  uVar14 = (undefined1)((ushort)uVar12 / uVar13);
-  pcVar15 = (char *)((CONCAT31((int3)(CONCAT22((short)((ulonglong)uVar12 >> 0x10),
-                                              CONCAT11((char)((ushort)uVar12 % uVar13),uVar14)) >> 8)
-                              ,uVar14) ^ 0x39) + 0x34);
-  *pcVar15 = *pcVar15 + extraout_CL;
-  pDVar16 = (Dictionary_2_System_Object_System_Object___Class *)
-           in((short)((ulonglong)uVar12 >> 0x20));
-  unaff_EDI->klass = (GizmoMenu__Class *)pDVar16;
-  pcVar15 = (char *)((int)((ulonglong)uVar12 >> 0x20) + -0x33efc6cc);
-  *pcVar15 = *pcVar15 + (char)((ulonglong)uVar12 >> 0x20);
+  bVar8 = func_?();
+  bRam_? = bVar8 + (9 < (bVar8 & 0xf) | in_AF) * '\x06' & 0xf;
+  uVar9 = *extraout_ECX;
+  *(char *)(extraout_ECX + 0xd) = (char)extraout_ECX[0xd] + (char)((uint)unaff_EBX >> 8);
+  *(char *)&(unaff_EBX->_0).image = *(char *)&(unaff_EBX->_0).image + (char)extraout_DX;
+  uVar10 = in(extraout_DX);
+  *(undefined4 *)((uint)unaff_EDI ^ uVar9) = uVar10;
   pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  (*pcVar11)(extraout_ECX);
   return;
 }
 

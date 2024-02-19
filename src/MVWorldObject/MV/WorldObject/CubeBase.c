@@ -246,50 +246,55 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
   switch(face) {
   case Face__Enum_Top:
     pVVar1 = *faceVertices;
-    if ((pVVar1 != (Vector3__Array *)0x0) && (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-      if (pVVar2->max_length == 0) goto code_?;
+    if ((pVVar1 == (Vector3__Array *)0x0) || (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) {
+code_?:
+      func_?();
+    }
+    else if (pVVar2->max_length != 0) {
       fVar3 = pVVar2->vector[0].y;
       fVar4 = pVVar2->vector[0].z;
-      if (pVVar1->max_length == 0) goto code_?;
-      pVVar1->vector[0].x = pVVar2->vector[0].x;
-      pVVar1->vector[0].y = fVar3;
-      pVVar1->vector[0].z = fVar4;
-      pVVar1 = *faceVertices;
-      if ((pVVar1 != (Vector3__Array *)0x0) && (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0))
-      {
-        if (pVVar2->max_length < 2) goto code_?;
-        fVar3 = pVVar2->vector[1].y;
-        fVar4 = pVVar2->vector[1].z;
-        if (pVVar1->max_length < 2) goto code_?;
-        pVVar1->vector[1].x = pVVar2->vector[1].x;
-        pVVar1->vector[1].y = fVar3;
-        pVVar1->vector[1].z = fVar4;
+      if (pVVar1->max_length != 0) {
+        pVVar1->vector[0].x = pVVar2->vector[0].x;
+        pVVar1->vector[0].y = fVar3;
+        pVVar1->vector[0].z = fVar4;
         pVVar1 = *faceVertices;
-        if ((pVVar1 != (Vector3__Array *)0x0) &&
-           (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-          if (pVVar2->max_length < 3) goto code_?;
-          fVar3 = pVVar2->vector[2].y;
-          fVar4 = pVVar2->vector[2].z;
-          if (pVVar1->max_length < 3) goto code_?;
-          pVVar1->vector[2].x = pVVar2->vector[2].x;
-          pVVar1->vector[2].y = fVar3;
-          pVVar1->vector[2].z = fVar4;
-          pVVar1 = *faceVertices;
-          if ((pVVar1 != (Vector3__Array *)0x0) &&
-             (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-            if (pVVar2->max_length < 4) goto code_?;
-            uVar5._0_4_ = pVVar2->vector[3].x;
-            uVar5._4_4_ = pVVar2->vector[3].y;
-            fVar4 = pVVar2->vector[3].z;
+        if ((pVVar1 == (Vector3__Array *)0x0) ||
+           (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+        if (1 < pVVar2->max_length) {
+          fVar3 = pVVar2->vector[1].y;
+          fVar4 = pVVar2->vector[1].z;
+          if (1 < pVVar1->max_length) {
+            pVVar1->vector[1].x = pVVar2->vector[1].x;
+            pVVar1->vector[1].y = fVar3;
+            pVVar1->vector[1].z = fVar4;
+            pVVar1 = *faceVertices;
+            if ((pVVar1 == (Vector3__Array *)0x0) ||
+               (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+            if (2 < pVVar2->max_length) {
+              fVar3 = pVVar2->vector[2].y;
+              fVar4 = pVVar2->vector[2].z;
+              if (2 < pVVar1->max_length) {
+                pVVar1->vector[2].x = pVVar2->vector[2].x;
+                pVVar1->vector[2].y = fVar3;
+                pVVar1->vector[2].z = fVar4;
+                pVVar1 = *faceVertices;
+                if ((pVVar1 == (Vector3__Array *)0x0) ||
+                   (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+                if (3 < pVVar2->max_length) {
+                  uVar5._0_4_ = pVVar2->vector[3].x;
+                  uVar5._4_4_ = pVVar2->vector[3].y;
+                  fVar4 = pVVar2->vector[3].z;
 code_?:
-            if (3 < pVVar1->max_length) {
-              pVVar1->vector[3].x = (float)(int)uVar5;
-              pVVar1->vector[3].y = (float)(int)((ulonglong)uVar5 >> 0x20);
-              pVVar1->vector[3].z = fVar4;
+                  if (3 < pVVar1->max_length) {
+                    pVVar1->vector[3].x = (float)(int)uVar5;
+                    pVVar1->vector[3].y = (float)(int)((ulonglong)uVar5 >> 0x20);
+                    pVVar1->vector[3].z = fVar4;
 code_?:
-              return;
+                    return;
+                  }
+                }
+              }
             }
-            goto code_?;
           }
         }
       }
@@ -297,42 +302,46 @@ code_?:
     break;
   case Face__Enum_Bottom:
     pVVar1 = *faceVertices;
-    if ((pVVar1 != (Vector3__Array *)0x0) && (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-      if (pVVar2->max_length < 5) goto code_?;
+    if ((pVVar1 == (Vector3__Array *)0x0) || (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0))
+    goto code_?;
+    if (4 < pVVar2->max_length) {
       fVar3 = pVVar2->vector[4].y;
       fVar4 = pVVar2->vector[4].z;
-      if (pVVar1->max_length == 0) goto code_?;
-      pVVar1->vector[0].x = pVVar2->vector[4].x;
-      pVVar1->vector[0].y = fVar3;
-      pVVar1->vector[0].z = fVar4;
-      pVVar1 = *faceVertices;
-      if ((pVVar1 != (Vector3__Array *)0x0) && (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0))
-      {
-        if (pVVar2->max_length < 6) goto code_?;
-        fVar3 = pVVar2->vector[5].y;
-        fVar4 = pVVar2->vector[5].z;
-        if (pVVar1->max_length < 2) goto code_?;
-        pVVar1->vector[1].x = pVVar2->vector[5].x;
-        pVVar1->vector[1].y = fVar3;
-        pVVar1->vector[1].z = fVar4;
+      if (pVVar1->max_length != 0) {
+        pVVar1->vector[0].x = pVVar2->vector[4].x;
+        pVVar1->vector[0].y = fVar3;
+        pVVar1->vector[0].z = fVar4;
         pVVar1 = *faceVertices;
-        if ((pVVar1 != (Vector3__Array *)0x0) &&
-           (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-          if (pVVar2->max_length < 7) goto code_?;
-          fVar3 = pVVar2->vector[6].y;
-          fVar4 = pVVar2->vector[6].z;
-          if (pVVar1->max_length < 3) goto code_?;
-          pVVar1->vector[2].x = pVVar2->vector[6].x;
-          pVVar1->vector[2].y = fVar3;
-          pVVar1->vector[2].z = fVar4;
-          pVVar1 = *faceVertices;
-          if ((pVVar1 != (Vector3__Array *)0x0) &&
-             (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-            if (pVVar2->max_length < 8) goto code_?;
-            uVar5._0_4_ = pVVar2->vector[7].x;
-            uVar5._4_4_ = pVVar2->vector[7].y;
-            fVar4 = pVVar2->vector[7].z;
-            goto code_?;
+        if ((pVVar1 == (Vector3__Array *)0x0) ||
+           (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+        if (5 < pVVar2->max_length) {
+          fVar3 = pVVar2->vector[5].y;
+          fVar4 = pVVar2->vector[5].z;
+          if (1 < pVVar1->max_length) {
+            pVVar1->vector[1].x = pVVar2->vector[5].x;
+            pVVar1->vector[1].y = fVar3;
+            pVVar1->vector[1].z = fVar4;
+            pVVar1 = *faceVertices;
+            if ((pVVar1 == (Vector3__Array *)0x0) ||
+               (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+            if (6 < pVVar2->max_length) {
+              fVar3 = pVVar2->vector[6].y;
+              fVar4 = pVVar2->vector[6].z;
+              if (2 < pVVar1->max_length) {
+                pVVar1->vector[2].x = pVVar2->vector[6].x;
+                pVVar1->vector[2].y = fVar3;
+                pVVar1->vector[2].z = fVar4;
+                pVVar1 = *faceVertices;
+                if ((pVVar1 == (Vector3__Array *)0x0) ||
+                   (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+                if (7 < pVVar2->max_length) {
+                  uVar5._0_4_ = pVVar2->vector[7].x;
+                  uVar5._4_4_ = pVVar2->vector[7].y;
+                  fVar4 = pVVar2->vector[7].z;
+                  goto code_?;
+                }
+              }
+            }
           }
         }
       }
@@ -340,42 +349,46 @@ code_?:
     break;
   case Face__Enum_Front:
     pVVar1 = *faceVertices;
-    if ((pVVar1 != (Vector3__Array *)0x0) && (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-      if (pVVar2->max_length < 8) goto code_?;
+    if ((pVVar1 == (Vector3__Array *)0x0) || (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0))
+    goto code_?;
+    if (7 < pVVar2->max_length) {
       fVar3 = pVVar2->vector[7].y;
       fVar4 = pVVar2->vector[7].z;
-      if (pVVar1->max_length == 0) goto code_?;
-      pVVar1->vector[0].x = pVVar2->vector[7].x;
-      pVVar1->vector[0].y = fVar3;
-      pVVar1->vector[0].z = fVar4;
-      pVVar1 = *faceVertices;
-      if ((pVVar1 != (Vector3__Array *)0x0) && (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0))
-      {
-        if (pVVar2->max_length < 7) goto code_?;
-        fVar3 = pVVar2->vector[6].y;
-        fVar4 = pVVar2->vector[6].z;
-        if (pVVar1->max_length < 2) goto code_?;
-        pVVar1->vector[1].x = pVVar2->vector[6].x;
-        pVVar1->vector[1].y = fVar3;
-        pVVar1->vector[1].z = fVar4;
+      if (pVVar1->max_length != 0) {
+        pVVar1->vector[0].x = pVVar2->vector[7].x;
+        pVVar1->vector[0].y = fVar3;
+        pVVar1->vector[0].z = fVar4;
         pVVar1 = *faceVertices;
-        if ((pVVar1 != (Vector3__Array *)0x0) &&
-           (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-          if (pVVar2->max_length < 2) goto code_?;
-          fVar3 = pVVar2->vector[1].y;
-          fVar4 = pVVar2->vector[1].z;
-          if (pVVar1->max_length < 3) goto code_?;
-          pVVar1->vector[2].x = pVVar2->vector[1].x;
-          pVVar1->vector[2].y = fVar3;
-          pVVar1->vector[2].z = fVar4;
-          pVVar1 = *faceVertices;
-          if ((pVVar1 != (Vector3__Array *)0x0) &&
-             (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-            if (pVVar2->max_length == 0) goto code_?;
-            uVar5._0_4_ = pVVar2->vector[0].x;
-            uVar5._4_4_ = pVVar2->vector[0].y;
-            fVar4 = pVVar2->vector[0].z;
-            goto code_?;
+        if ((pVVar1 == (Vector3__Array *)0x0) ||
+           (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+        if (6 < pVVar2->max_length) {
+          fVar3 = pVVar2->vector[6].y;
+          fVar4 = pVVar2->vector[6].z;
+          if (1 < pVVar1->max_length) {
+            pVVar1->vector[1].x = pVVar2->vector[6].x;
+            pVVar1->vector[1].y = fVar3;
+            pVVar1->vector[1].z = fVar4;
+            pVVar1 = *faceVertices;
+            if ((pVVar1 == (Vector3__Array *)0x0) ||
+               (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+            if (1 < pVVar2->max_length) {
+              fVar3 = pVVar2->vector[1].y;
+              fVar4 = pVVar2->vector[1].z;
+              if (2 < pVVar1->max_length) {
+                pVVar1->vector[2].x = pVVar2->vector[1].x;
+                pVVar1->vector[2].y = fVar3;
+                pVVar1->vector[2].z = fVar4;
+                pVVar1 = *faceVertices;
+                if ((pVVar1 == (Vector3__Array *)0x0) ||
+                   (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+                if (pVVar2->max_length != 0) {
+                  uVar5._0_4_ = pVVar2->vector[0].x;
+                  uVar5._4_4_ = pVVar2->vector[0].y;
+                  fVar4 = pVVar2->vector[0].z;
+                  goto code_?;
+                }
+              }
+            }
           }
         }
       }
@@ -383,42 +396,46 @@ code_?:
     break;
   case Face__Enum_Back:
     pVVar1 = *faceVertices;
-    if ((pVVar1 != (Vector3__Array *)0x0) && (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-      if (pVVar2->max_length < 6) goto code_?;
+    if ((pVVar1 == (Vector3__Array *)0x0) || (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0))
+    goto code_?;
+    if (5 < pVVar2->max_length) {
       fVar3 = pVVar2->vector[5].y;
       fVar4 = pVVar2->vector[5].z;
-      if (pVVar1->max_length == 0) goto code_?;
-      pVVar1->vector[0].x = pVVar2->vector[5].x;
-      pVVar1->vector[0].y = fVar3;
-      pVVar1->vector[0].z = fVar4;
-      pVVar1 = *faceVertices;
-      if ((pVVar1 != (Vector3__Array *)0x0) && (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0))
-      {
-        if (pVVar2->max_length < 5) goto code_?;
-        fVar3 = pVVar2->vector[4].y;
-        fVar4 = pVVar2->vector[4].z;
-        if (pVVar1->max_length < 2) goto code_?;
-        pVVar1->vector[1].x = pVVar2->vector[4].x;
-        pVVar1->vector[1].y = fVar3;
-        pVVar1->vector[1].z = fVar4;
+      if (pVVar1->max_length != 0) {
+        pVVar1->vector[0].x = pVVar2->vector[5].x;
+        pVVar1->vector[0].y = fVar3;
+        pVVar1->vector[0].z = fVar4;
         pVVar1 = *faceVertices;
-        if ((pVVar1 != (Vector3__Array *)0x0) &&
-           (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-          if (pVVar2->max_length < 4) goto code_?;
-          fVar3 = pVVar2->vector[3].y;
-          fVar4 = pVVar2->vector[3].z;
-          if (pVVar1->max_length < 3) goto code_?;
-          pVVar1->vector[2].x = pVVar2->vector[3].x;
-          pVVar1->vector[2].y = fVar3;
-          pVVar1->vector[2].z = fVar4;
-          pVVar1 = *faceVertices;
-          if ((pVVar1 != (Vector3__Array *)0x0) &&
-             (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-            if (pVVar2->max_length < 3) goto code_?;
-            uVar5._0_4_ = pVVar2->vector[2].x;
-            uVar5._4_4_ = pVVar2->vector[2].y;
-            fVar4 = pVVar2->vector[2].z;
-            goto code_?;
+        if ((pVVar1 == (Vector3__Array *)0x0) ||
+           (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+        if (4 < pVVar2->max_length) {
+          fVar3 = pVVar2->vector[4].y;
+          fVar4 = pVVar2->vector[4].z;
+          if (1 < pVVar1->max_length) {
+            pVVar1->vector[1].x = pVVar2->vector[4].x;
+            pVVar1->vector[1].y = fVar3;
+            pVVar1->vector[1].z = fVar4;
+            pVVar1 = *faceVertices;
+            if ((pVVar1 == (Vector3__Array *)0x0) ||
+               (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+            if (3 < pVVar2->max_length) {
+              fVar3 = pVVar2->vector[3].y;
+              fVar4 = pVVar2->vector[3].z;
+              if (2 < pVVar1->max_length) {
+                pVVar1->vector[2].x = pVVar2->vector[3].x;
+                pVVar1->vector[2].y = fVar3;
+                pVVar1->vector[2].z = fVar4;
+                pVVar1 = *faceVertices;
+                if ((pVVar1 == (Vector3__Array *)0x0) ||
+                   (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+                if (2 < pVVar2->max_length) {
+                  uVar5._0_4_ = pVVar2->vector[2].x;
+                  uVar5._4_4_ = pVVar2->vector[2].y;
+                  fVar4 = pVVar2->vector[2].z;
+                  goto code_?;
+                }
+              }
+            }
           }
         }
       }
@@ -426,42 +443,46 @@ code_?:
     break;
   case Face__Enum_Left:
     pVVar1 = *faceVertices;
-    if ((pVVar1 != (Vector3__Array *)0x0) && (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-      if (pVVar2->max_length < 5) goto code_?;
+    if ((pVVar1 == (Vector3__Array *)0x0) || (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0))
+    goto code_?;
+    if (4 < pVVar2->max_length) {
       fVar3 = pVVar2->vector[4].y;
       fVar4 = pVVar2->vector[4].z;
-      if (pVVar1->max_length == 0) goto code_?;
-      pVVar1->vector[0].x = pVVar2->vector[4].x;
-      pVVar1->vector[0].y = fVar3;
-      pVVar1->vector[0].z = fVar4;
-      pVVar1 = *faceVertices;
-      if ((pVVar1 != (Vector3__Array *)0x0) && (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0))
-      {
-        if (pVVar2->max_length < 8) goto code_?;
-        fVar3 = pVVar2->vector[7].y;
-        fVar4 = pVVar2->vector[7].z;
-        if (pVVar1->max_length < 2) goto code_?;
-        pVVar1->vector[1].x = pVVar2->vector[7].x;
-        pVVar1->vector[1].y = fVar3;
-        pVVar1->vector[1].z = fVar4;
+      if (pVVar1->max_length != 0) {
+        pVVar1->vector[0].x = pVVar2->vector[4].x;
+        pVVar1->vector[0].y = fVar3;
+        pVVar1->vector[0].z = fVar4;
         pVVar1 = *faceVertices;
-        if ((pVVar1 != (Vector3__Array *)0x0) &&
-           (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-          if (pVVar2->max_length == 0) goto code_?;
-          fVar3 = pVVar2->vector[0].y;
-          fVar4 = pVVar2->vector[0].z;
-          if (pVVar1->max_length < 3) goto code_?;
-          pVVar1->vector[2].x = pVVar2->vector[0].x;
-          pVVar1->vector[2].y = fVar3;
-          pVVar1->vector[2].z = fVar4;
-          pVVar1 = *faceVertices;
-          if ((pVVar1 != (Vector3__Array *)0x0) &&
-             (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-            if (pVVar2->max_length < 4) goto code_?;
-            uVar5._0_4_ = pVVar2->vector[3].x;
-            uVar5._4_4_ = pVVar2->vector[3].y;
-            fVar4 = pVVar2->vector[3].z;
-            goto code_?;
+        if ((pVVar1 == (Vector3__Array *)0x0) ||
+           (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+        if (7 < pVVar2->max_length) {
+          fVar3 = pVVar2->vector[7].y;
+          fVar4 = pVVar2->vector[7].z;
+          if (1 < pVVar1->max_length) {
+            pVVar1->vector[1].x = pVVar2->vector[7].x;
+            pVVar1->vector[1].y = fVar3;
+            pVVar1->vector[1].z = fVar4;
+            pVVar1 = *faceVertices;
+            if ((pVVar1 == (Vector3__Array *)0x0) ||
+               (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+            if (pVVar2->max_length != 0) {
+              fVar3 = pVVar2->vector[0].y;
+              fVar4 = pVVar2->vector[0].z;
+              if (2 < pVVar1->max_length) {
+                pVVar1->vector[2].x = pVVar2->vector[0].x;
+                pVVar1->vector[2].y = fVar3;
+                pVVar1->vector[2].z = fVar4;
+                pVVar1 = *faceVertices;
+                if ((pVVar1 == (Vector3__Array *)0x0) ||
+                   (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+                if (3 < pVVar2->max_length) {
+                  uVar5._0_4_ = pVVar2->vector[3].x;
+                  uVar5._4_4_ = pVVar2->vector[3].y;
+                  fVar4 = pVVar2->vector[3].z;
+                  goto code_?;
+                }
+              }
+            }
           }
         }
       }
@@ -469,42 +490,46 @@ code_?:
     break;
   case Face__Enum_Right:
     pVVar1 = *faceVertices;
-    if ((pVVar1 != (Vector3__Array *)0x0) && (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-      if (pVVar2->max_length < 7) goto code_?;
+    if ((pVVar1 == (Vector3__Array *)0x0) || (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0))
+    goto code_?;
+    if (6 < pVVar2->max_length) {
       fVar3 = pVVar2->vector[6].y;
       fVar4 = pVVar2->vector[6].z;
-      if (pVVar1->max_length == 0) goto code_?;
-      pVVar1->vector[0].x = pVVar2->vector[6].x;
-      pVVar1->vector[0].y = fVar3;
-      pVVar1->vector[0].z = fVar4;
-      pVVar1 = *faceVertices;
-      if ((pVVar1 != (Vector3__Array *)0x0) && (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0))
-      {
-        if (pVVar2->max_length < 6) goto code_?;
-        fVar3 = pVVar2->vector[5].y;
-        fVar4 = pVVar2->vector[5].z;
-        if (pVVar1->max_length < 2) goto code_?;
-        pVVar1->vector[1].x = pVVar2->vector[5].x;
-        pVVar1->vector[1].y = fVar3;
-        pVVar1->vector[1].z = fVar4;
+      if (pVVar1->max_length != 0) {
+        pVVar1->vector[0].x = pVVar2->vector[6].x;
+        pVVar1->vector[0].y = fVar3;
+        pVVar1->vector[0].z = fVar4;
         pVVar1 = *faceVertices;
-        if ((pVVar1 != (Vector3__Array *)0x0) &&
-           (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-          if (pVVar2->max_length < 3) goto code_?;
-          fVar3 = pVVar2->vector[2].y;
-          fVar4 = pVVar2->vector[2].z;
-          if (pVVar1->max_length < 3) goto code_?;
-          pVVar1->vector[2].x = pVVar2->vector[2].x;
-          pVVar1->vector[2].y = fVar3;
-          pVVar1->vector[2].z = fVar4;
-          pVVar1 = *faceVertices;
-          if ((pVVar1 != (Vector3__Array *)0x0) &&
-             (pVVar2 = *corners, pVVar2 != (Vector3__Array *)0x0)) {
-            if (pVVar2->max_length < 2) goto code_?;
-            uVar5._0_4_ = pVVar2->vector[1].x;
-            uVar5._4_4_ = pVVar2->vector[1].y;
-            fVar4 = pVVar2->vector[1].z;
-            goto code_?;
+        if ((pVVar1 == (Vector3__Array *)0x0) ||
+           (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+        if (5 < pVVar2->max_length) {
+          fVar3 = pVVar2->vector[5].y;
+          fVar4 = pVVar2->vector[5].z;
+          if (1 < pVVar1->max_length) {
+            pVVar1->vector[1].x = pVVar2->vector[5].x;
+            pVVar1->vector[1].y = fVar3;
+            pVVar1->vector[1].z = fVar4;
+            pVVar1 = *faceVertices;
+            if ((pVVar1 == (Vector3__Array *)0x0) ||
+               (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+            if (2 < pVVar2->max_length) {
+              fVar3 = pVVar2->vector[2].y;
+              fVar4 = pVVar2->vector[2].z;
+              if (2 < pVVar1->max_length) {
+                pVVar1->vector[2].x = pVVar2->vector[2].x;
+                pVVar1->vector[2].y = fVar3;
+                pVVar1->vector[2].z = fVar4;
+                pVVar1 = *faceVertices;
+                if ((pVVar1 == (Vector3__Array *)0x0) ||
+                   (pVVar2 = *corners, pVVar2 == (Vector3__Array *)0x0)) goto code_?;
+                if (1 < pVVar2->max_length) {
+                  uVar5._0_4_ = pVVar2->vector[1].x;
+                  uVar5._4_4_ = pVVar2->vector[1].y;
+                  fVar4 = pVVar2->vector[1].z;
+                  goto code_?;
+                }
+              }
+            }
           }
         }
       }
@@ -514,10 +539,33 @@ code_?:
     goto code_?;
   }
   func_?();
+  func_?();
+  in((short)CONCAT31((int3)((uint)extraout_EDX >> 8),0xea));
+  uVar6 = 0;
+  if (*(int *)(unaff_EBP + 0xc) != 0) {
+    uVar7 = *(uint *)(*(int *)(unaff_EBP + 0xc) + 0xc);
+    for (; (int)uVar6 < (int)uVar7; uVar6 = uVar6 + 1) {
+      if (uVar7 <= uVar6) goto code_?;
+    }
+    uVar6 = 0;
+    if (*(int *)(unaff_EBP + 0x10) != 0) {
+      uVar7 = *(uint *)(*(int *)(unaff_EBP + 0x10) + 0xc);
+      while( true ) {
+        if ((int)uVar7 <= (int)uVar6) {
+          return;
+        }
+        if (uVar7 <= uVar6) break;
+        uVar6 = uVar6 + 1;
+      }
+      goto code_?;
+    }
+  }
+  func_?();
 code_?:
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)(faceVertices);
+  return;
 }
 
 

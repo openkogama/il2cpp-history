@@ -152,8 +152,8 @@ code_?:
     in_stack_43._4_4_ = pVVar2->y;
     in_stack_44 = pVVar2->z;
     if (cRam_? == '\0') {
-      fStack22 = 3.286832e-29;
-      fStack21 = 2.4491348e-28;
+      fStack22 = 3.2869717e-29;
+      fStack21 = 2.4501238e-28;
       func_?();
       cRam_? = '\x01';
     }
@@ -599,7 +599,7 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_CreateFromBytePack
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cube>__set_Item_MV__WorldObject__IntVector__Cube_
                    );
-    func_?(0x5ed8);
+    func_?(0x6ee4);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     cRam_? = '\x01';
   }
@@ -637,7 +637,7 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_CreateFromBytePack
         Cube::Cube__ctor_1(this_00,bp,byteFlags,(MethodInfo *)0x0);
         if (this == (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)
                     0x0) goto code_?;
-        key.z = -0x4ad5;
+        key.z = -0x4905;
         key._0_4_ = puVar4;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::
         Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__set_Item
@@ -1646,9 +1646,9 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_GetTriangleVertice
           pIVar3 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_triangles
                               (pMVar2,(MethodInfo *)0x0);
           if (pIVar3 != (Int32__Array *)0x0) {
-            if (pIVar3->max_length < 0x30746695) goto code_?;
+            if (pIVar3->max_length < 0x30746c05) goto code_?;
             if (pMVar2 != (Mesh *)0x0) {
-              pMVar4 = (Mesh__Class *)pIVar3[-0x6e8b60].vector[0x14];
+              pMVar4 = (Mesh__Class *)pIVar3[-0x6e8b39].vector[8];
               if (pMVar2[1].klass <= pMVar4) goto code_?;
               if (pVVar1 != (Vector3__Array *)0x0) {
                 MVar5._.m_CachedPtr = pMVar2[(int)((int)&(pMVar4->_0).image + 1)].fields._;
@@ -1668,9 +1668,9 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_GetTriangleVertice
                     pIVar3 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_triangles
                                         (pMVar2,(MethodInfo *)0x0);
                     if (pIVar3 != (Int32__Array *)0x0) {
-                      if (pIVar3->max_length < 0x30746696) goto code_?;
+                      if (pIVar3->max_length < 0x30746c06) goto code_?;
                       if (pVVar7 != (Vector3__Array *)0x0) {
-                        uVar8 = pIVar3[-0x6e8b60].vector[0x15];
+                        uVar8 = pIVar3[-0x6e8b39].vector[9];
                         if (pVVar7->max_length <= uVar8) goto code_?;
                         fVar9 = pVVar7->vector[uVar8].y;
                         fVar10 = pVVar7->vector[uVar8].z;
@@ -1689,9 +1689,9 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_GetTriangleVertice
                             pIVar3 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::
                                       Mesh_get_triangles(pMVar2,(MethodInfo *)0x0);
                             if (pIVar3 != (Int32__Array *)0x0) {
-                              if (pIVar3->max_length < 0x30746697) goto code_?;
+                              if (pIVar3->max_length < 0x30746c07) goto code_?;
                               if (pVVar7 != (Vector3__Array *)0x0) {
-                                uVar8 = pIVar3[-0x6e8b60].vector[0x16];
+                                uVar8 = pIVar3[-0x6e8b39].vector[10];
                                 if (uVar8 < pVVar7->max_length) {
                                   fVar9 = pVVar7->vector[uVar8].y;
                                   fVar10 = pVVar7->vector[uVar8].z;
@@ -1963,7 +1963,7 @@ void Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_GetVertices_2
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0xaf68);
+    func_?(0xbf70);
     cRam_? = '\x01';
   }
   if (info != (CubePickingInfo *)0x0) {
@@ -2026,7 +2026,7 @@ code_?:
                   uVar17 = func_?(&TypeInfo__System__IndexOutOfRangeException);
                   this_01 = (IndexOutOfRangeException *)func_?(uVar17);
                   method_00 = (MethodInfo *)0x0;
-                  message = (String *)func_?(0x7f6c);
+                  message = (String *)func_?(0x91f8);
                   mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
                             (this_01,message,method_00);
                   uVar18 = func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
@@ -2225,8 +2225,8 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_MoveEdge
           EditCubeChange__Enum *editCubeChange,MethodInfo *method)
 
 {
-  char *pcVar1;
-  undefined4 uVar2;
+  byte *pbVar1;
+  char *pcVar2;
   undefined4 uVar3;
   undefined4 uVar4;
   undefined4 uVar5;
@@ -2236,8 +2236,11 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_MoveEdge
   undefined4 uVar9;
   undefined4 uVar10;
   undefined4 uVar11;
-  Face__Enum FVar12;
-  Vector3__StaticFields *pVVar13;
+  undefined4 uVar12;
+  Face__Enum FVar13;
+  Vector3__StaticFields *pVVar14;
+  byte bVar15;
+  code *pcVar16;
   Matrix4x4 lhs;
   Vector4 vector;
   Vector3 start;
@@ -2258,219 +2261,217 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_MoveEdge
   Vector3 axis;
   Vector3 axis_00;
   Vector3 axis_01;
-  bool bVar14;
-  Cube *pCVar15;
-  Transform *pTVar16;
-  undefined8 *puVar17;
-  Matrix4x4 *pMVar18;
-  Vector3 *pVVar19;
-  Vector4 *pVVar20;
-  Camera *pCVar21;
-  undefined1 (*pauVar22) [12];
-  float *pfVar23;
-  undefined4 uVar24;
+  bool bVar17;
+  Cube *pCVar18;
+  Transform *pTVar19;
+  undefined8 *puVar20;
+  Matrix4x4 *pMVar21;
+  Vector3 *pVVar22;
+  Vector4 *pVVar23;
+  Camera *pCVar24;
+  undefined1 (*pauVar25) [12];
+  undefined4 *puVar26;
+  float *pfVar27;
+  int iVar28;
+  CubeOutOfBoundState__Enum CVar29;
+  byte extraout_CH;
   char extraout_DH;
-  char cVar25;
-  float10 fVar26;
-  float fVar27;
-  float fVar28;
-  float fVar29;
-  float fVar30;
-  float fVar31;
-  float fVar32;
+  byte bVar30;
+  bool bVar31;
+  float10 fVar32;
   float fVar33;
   float fVar34;
-  Vector4 VStack_35;
-  CubeOutOfBoundState__Enum CStack_36;
-  undefined1 auStack_37 [12];
-  Cube *pCStack_38;
-  float fStack_39;
-  float fStack_40;
-  undefined8 uStack_41;
-  float fStack_42;
-  Vector3 VStack_43;
-  float fStack_44;
-  GameObject *pGStack_45;
+  float fVar35;
+  float fVar36;
+  float fVar37;
+  float fVar38;
+  float fVar39;
+  float fVar40;
+  Vector4 VStack_41;
+  CubeOutOfBoundState__Enum CStack_42;
+  undefined1 auStack_43 [12];
+  Cube *pCStack_44;
+  float fStack_45;
   float fStack_46;
-  float fStack_47;
+  undefined8 uStack_47;
   float fStack_48;
-  float fStack_49;
+  Vector3 VStack_49;
+  float fStack_50;
+  GameObject *pGStack_51;
+  float fStack_52;
+  float fStack_53;
+  float fStack_54;
+  float fStack_55;
   
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__CubeBase);
-    func_?(0x12a4);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__SharedCubeFunctions);
+    func_?();
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   if ((info != (CubePickingInfo *)0x0) && (cmb != (MVCubeModelBase *)0x0)) {
-    pCVar15 = MVCubeModelBase::MVCubeModelBase_GetCube
+    pCVar18 = MVCubeModelBase::MVCubeModelBase_GetCube
                         (cmb,(info->fields).iLocalPos,(MethodInfo *)0x0);
-    pCStack_38 = pCVar15;
+    pCStack_44 = pCVar18;
     if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MV__WorldObject__CubeBase);
+      func_?();
     }
-    bVar14 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
-                       ((CubeBase *)pCStack_38,(CubeBase *)0x0,(MethodInfo *)0x0);
-    if (bVar14 != 0) {
+    bVar17 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
+                       ((CubeBase *)pCStack_44,(CubeBase *)0x0,(MethodInfo *)0x0);
+    if (bVar17 != 0) {
       return CubeOutOfBoundState__Enum_WithinBounds;
     }
-    pGStack_45 = (cmb->fields)._.gameObject;
-    stack0xffffffa8 = (double)CONCAT44((info->fields).pickedFace,auStack_37._8_4_);
-    CStack_36 = CubeOutOfBoundState__Enum_NoChange;
+    pGStack_51 = (cmb->fields)._.gameObject;
+    stack0xffffffa8 = (double)CONCAT44((info->fields).pickedFace,auStack_43._8_4_);
+    CStack_42 = CubeOutOfBoundState__Enum_NoChange;
     if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__SharedCubeFunctions);
+      func_?();
     }
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Debug);
-      func_?(0x9780);
+      func_?();
+      func_?();
       cRam_? = '\x01';
     }
-    switch(pCStack_38) {
+    switch(pCStack_44) {
     case (Cube *)0x0:
     case (Cube *)0x1:
-      if ((pGStack_45 == (GameObject *)0x0) ||
-         (pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (pGStack_45,(MethodInfo *)0x0), pTVar16 == (Transform *)0x0))
+      if ((pGStack_51 == (GameObject *)0x0) ||
+         (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (pGStack_51,(MethodInfo *)0x0), pTVar19 == (Transform *)0x0))
       goto code_?;
-      pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                          (&VStack_43,pTVar16,(MethodInfo *)0x0);
-      pGStack_45 = (GameObject *)pVVar19->y;
+      pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                          (&VStack_49,pTVar19,(MethodInfo *)0x0);
+      pGStack_51 = (GameObject *)pVVar22->y;
       break;
     case (Cube *)0x2:
     case (Cube *)0x3:
-      if ((pGStack_45 == (GameObject *)0x0) ||
-         (pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (pGStack_45,(MethodInfo *)0x0), pTVar16 == (Transform *)0x0))
+      if ((pGStack_51 == (GameObject *)0x0) ||
+         (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (pGStack_51,(MethodInfo *)0x0), pTVar19 == (Transform *)0x0))
       goto code_?;
-      pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                          (&VStack_43,pTVar16,(MethodInfo *)0x0);
-      pGStack_45 = (GameObject *)pVVar19->z;
+      pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                          (&VStack_49,pTVar19,(MethodInfo *)0x0);
+      pGStack_51 = (GameObject *)pVVar22->z;
       break;
     case (Cube *)0x4:
     case (Cube *)0x5:
-      if ((pGStack_45 == (GameObject *)0x0) ||
-         (pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (pGStack_45,(MethodInfo *)0x0), pTVar16 == (Transform *)0x0))
+      if ((pGStack_51 == (GameObject *)0x0) ||
+         (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (pGStack_51,(MethodInfo *)0x0), pTVar19 == (Transform *)0x0))
       goto code_?;
-      pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                          (&VStack_43,pTVar16,(MethodInfo *)0x0);
-      pGStack_45 = (GameObject *)pVVar19->x;
+      pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                          (&VStack_49,pTVar19,(MethodInfo *)0x0);
+      pGStack_51 = (GameObject *)pVVar22->x;
       break;
     default:
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
+        func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_No_face,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Break((MethodInfo *)0x0);
-      pGStack_45 = (GameObject *)0x0;
+      pGStack_51 = (GameObject *)0x0;
     }
-    puVar17 = (undefined8 *)
-              (*(code *)(cmb->klass->vtable).get_Scale.method)
-                        (&VStack_43,cmb,(cmb->klass->vtable).set_Scale.methodPtr);
-    fStack_49 = *(float *)(puVar17 + 1);
-    fStack_47 = (float)*puVar17;
-    fStack_48 = (float)((ulonglong)*puVar17 >> 0x20);
-    puVar17 = (undefined8 *)
-              (*(code *)(cmb->klass->vtable).get_Scale.method)
-                        (&fStack_40,(short)cmb,(cmb->klass->vtable).set_Scale.methodPtr);
-    fStack_44 = *(float *)(puVar17 + 1);
-    VStack_43.y = (float)*puVar17;
-    VStack_43.z = (float)((ulonglong)*puVar17 >> 0x20);
-    puVar17 = (undefined8 *)
-              (*(code *)(cmb->klass->vtable).get_Scale.method)
-                        (auStack_37,cmb,(cmb->klass->vtable).set_Scale.methodPtr);
-    uStack_41 = *puVar17;
-    fStack_42 = *(float *)(puVar17 + 1);
-    pTVar16 = (cmb->fields)._.transform;
-    pGStack_45 = (GameObject *)
-                 (((float)pGStack_45 * _UNK_?) /
-                 ((VStack_43.z + fStack_47 + fStack_42) / _UNK_?));
-    if (pTVar16 != (Transform *)0x0) {
-      pMVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix
-                          ((Matrix4x4 *)&stack0xffffff10,pTVar16,(MethodInfo *)0x0);
-      fStack_46 = pMVar18->m00;
-      fStack_47 = pMVar18->m10;
-      fStack_48 = pMVar18->m20;
-      fStack_49 = pMVar18->m30;
-      fVar30 = pMVar18->m01;
-      fVar29 = pMVar18->m11;
-      fVar33 = pMVar18->m21;
-      fVar27 = pMVar18->m31;
-      fVar28 = pMVar18->m02;
-      fVar31 = pMVar18->m12;
-      fVar32 = pMVar18->m22;
-      fVar34 = pMVar18->m32;
-      VStack_35.x = pMVar18->m03;
-      VStack_35.y = pMVar18->m13;
-      VStack_35.z = pMVar18->m23;
-      VStack_35.w = pMVar18->m33;
-      FVar12 = (info->fields).pickedFace;
-      pCStack_38 = (Cube *)FVar12;
+    puVar20 = (undefined8 *)(*(code *)(cmb->klass->vtable).get_Scale.method)();
+    fStack_55 = *(float *)(puVar20 + 1);
+    fStack_53 = (float)*puVar20;
+    fStack_54 = (float)((ulonglong)*puVar20 >> 0x20);
+    puVar20 = (undefined8 *)(*(code *)(cmb->klass->vtable).get_Scale.method)();
+    fStack_50 = *(float *)(puVar20 + 1);
+    VStack_49.y = (float)*puVar20;
+    VStack_49.z = (float)((ulonglong)*puVar20 >> 0x20);
+    puVar20 = (undefined8 *)(*(code *)(cmb->klass->vtable).get_Scale.method)();
+    uStack_47 = *puVar20;
+    fStack_48 = *(float *)(puVar20 + 1);
+    pTVar19 = (cmb->fields)._.transform;
+    pGStack_51 = (GameObject *)
+                 (((float)pGStack_51 * _UNK_?) /
+                 ((VStack_49.z + fStack_53 + fStack_48) / _UNK_?));
+    if (pTVar19 != (Transform *)0x0) {
+      pMVar21 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix
+                          ((Matrix4x4 *)&stack0xffffff10,pTVar19,(MethodInfo *)0x0);
+      fStack_52 = pMVar21->m00;
+      fStack_53 = pMVar21->m10;
+      fStack_54 = pMVar21->m20;
+      fStack_55 = pMVar21->m30;
+      fVar36 = pMVar21->m01;
+      fVar35 = pMVar21->m11;
+      fVar39 = pMVar21->m21;
+      fVar33 = pMVar21->m31;
+      fVar34 = pMVar21->m02;
+      fVar37 = pMVar21->m12;
+      fVar38 = pMVar21->m22;
+      fVar40 = pMVar21->m32;
+      VStack_41.x = pMVar21->m03;
+      VStack_41.y = pMVar21->m13;
+      VStack_41.z = pMVar21->m23;
+      VStack_41.w = pMVar21->m33;
+      FVar13 = (info->fields).pickedFace;
+      pCStack_44 = (Cube *)FVar13;
       if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__Cube);
+        func_?();
       }
-      pVVar19 = Cube::Cube_GetFaceAxis(&VStack_43,(Face__Enum)pCStack_38,(MethodInfo *)0x0);
-      uStack_41._0_4_ = pVVar19->x;
-      uStack_41._4_4_ = pVVar19->y;
-      fStack_42 = pVVar19->z;
-      VStack_43.x = (float)uStack_41;
-      VStack_43.y = uStack_41._4_4_;
-      fStack_44 = 0.0;
-      lhs.m10 = fStack_47;
-      lhs.m00 = fStack_46;
-      lhs.m20 = fStack_48;
-      lhs.m30 = fStack_49;
-      lhs.m01 = fVar30;
-      lhs.m11 = fVar29;
-      lhs.m21 = fVar33;
-      lhs.m31 = fVar27;
-      lhs.m02 = fVar28;
-      lhs.m12 = fVar31;
-      lhs.m22 = fVar32;
-      lhs.m32 = fVar34;
-      lhs.m03 = VStack_35.x;
-      lhs.m13 = VStack_35.y;
-      lhs.m23 = VStack_35.z;
-      lhs.m33 = VStack_35.w;
+      pVVar22 = Cube::Cube_GetFaceAxis(&VStack_49,(Face__Enum)pCStack_44,(MethodInfo *)0x0);
+      uStack_47._0_4_ = pVVar22->x;
+      uStack_47._4_4_ = pVVar22->y;
+      fStack_48 = pVVar22->z;
+      VStack_49.x = (float)uStack_47;
+      VStack_49.y = uStack_47._4_4_;
+      fStack_50 = 0.0;
+      lhs.m10 = fStack_53;
+      lhs.m00 = fStack_52;
+      lhs.m20 = fStack_54;
+      lhs.m30 = fStack_55;
+      lhs.m01 = fVar36;
+      lhs.m11 = fVar35;
+      lhs.m21 = fVar39;
+      lhs.m31 = fVar33;
+      lhs.m02 = fVar34;
+      lhs.m12 = fVar37;
+      lhs.m22 = fVar38;
+      lhs.m32 = fVar40;
+      lhs.m03 = VStack_41.x;
+      lhs.m13 = VStack_41.y;
+      lhs.m23 = VStack_41.z;
+      lhs.m33 = VStack_41.w;
       vector.w = 0.0;
-      vector.x = pVVar19->x;
-      vector.y = pVVar19->y;
-      vector.z = pVVar19->z;
-      VStack_43.z = fStack_42;
-      pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply_1
-                          (&VStack_35,lhs,vector,(MethodInfo *)0x0);
-      VStack_35.x = pVVar20->x;
-      fVar29 = pVVar20->y;
-      fVar33 = pVVar20->z;
-      VStack_35.w = pVVar20->w;
-      uVar2 = (info->fields).point.x;
-      uVar7 = (info->fields).point.y;
-      fVar30 = *deltaAccum;
-      fVar27 = (float)uVar2 + VStack_35.x * fVar30;
-      fStack_47 = (float)uVar7 + fVar29 * fVar30;
-      fStack_39 = (info->fields).point.z + fVar33 * fVar30;
-      stack0xffffffa8 = (double)CONCAT44(fStack_47,auStack_37._8_4_);
-      fStack_46 = VStack_35.x + fVar27;
-      uStack_41 = CONCAT44(fStack_47,fVar27);
-      fStack_47 = fVar29 + fStack_47;
-      fStack_48 = fVar33 + fStack_39;
-      VStack_35.y = fVar29;
-      VStack_35.z = fVar33;
-      fStack_42 = fStack_39;
-      VStack_43.y = VStack_35.x;
-      VStack_43.z = fVar29;
-      fStack_44 = fVar33;
+      vector.x = pVVar22->x;
+      vector.y = pVVar22->y;
+      vector.z = pVVar22->z;
+      VStack_49.z = fStack_48;
+      pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply_1
+                          (&VStack_41,lhs,vector,(MethodInfo *)0x0);
+      VStack_41.x = pVVar23->x;
+      fVar35 = pVVar23->y;
+      fVar39 = pVVar23->z;
+      VStack_41.w = pVVar23->w;
+      uVar3 = (info->fields).point.x;
+      uVar8 = (info->fields).point.y;
+      fVar36 = *deltaAccum;
+      fVar33 = (float)uVar3 + VStack_41.x * fVar36;
+      fStack_53 = (float)uVar8 + fVar35 * fVar36;
+      fStack_45 = (info->fields).point.z + fVar39 * fVar36;
+      stack0xffffffa8 = (double)CONCAT44(fStack_53,auStack_43._8_4_);
+      fStack_52 = VStack_41.x + fVar33;
+      uStack_47 = CONCAT44(fStack_53,fVar33);
+      fStack_53 = fVar35 + fStack_53;
+      fStack_54 = fVar39 + fStack_45;
+      VStack_41.y = fVar35;
+      VStack_41.z = fVar39;
+      fStack_48 = fStack_45;
+      VStack_49.y = VStack_41.x;
+      VStack_49.z = fVar35;
+      fStack_50 = fVar39;
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
+        func_?();
       }
-      end.y = fStack_47;
-      end.x = fStack_46;
-      start.z = fStack_42;
-      start.x = (float)uStack_41;
-      start.y = uStack_41._4_4_;
-      end.z = fStack_48;
+      end.y = fStack_53;
+      end.x = fStack_52;
+      start.z = fStack_48;
+      start.x = (float)uStack_47;
+      start.y = uStack_47._4_4_;
+      end.z = fStack_54;
       color.g = (float)_UNK_?;
       color.r = (float)_UNK_?;
       color.b = (float)_UNK_?;
@@ -2478,294 +2479,294 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_MoveEdge
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine_1
                 (start,end,color,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__Vector3);
+        func_?();
         cRam_? = '\x01';
       }
-      pVVar13 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar3 = (pVVar13->upVector).x;
-      uVar8 = (pVVar13->upVector).y;
-      fStack_49 = (pVVar13->upVector).z;
-      fStack_48 = fStack_49 + fStack_39;
-      end_00.y = (float)uVar8 + (float)pCStack_38;
-      end_00.x = (float)uVar3 + fVar27;
-      start_00.z = fStack_42;
-      start_00.x = (float)uStack_41;
-      start_00.y = uStack_41._4_4_;
-      end_00.z = fStack_48;
+      pVVar14 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar4 = (pVVar14->upVector).x;
+      uVar9 = (pVVar14->upVector).y;
+      fStack_55 = (pVVar14->upVector).z;
+      fStack_54 = fStack_55 + fStack_45;
+      end_00.y = (float)uVar9 + (float)pCStack_44;
+      end_00.x = (float)uVar4 + fVar33;
+      start_00.z = fStack_48;
+      start_00.x = (float)uStack_47;
+      start_00.y = uStack_47._4_4_;
+      end_00.z = fStack_54;
       color_00.g = (float)_UNK_?;
       color_00.r = (float)_UNK_?;
       color_00.b = (float)_UNK_?;
       color_00.a = _UNK_?;
-      fStack_47 = (float)uVar3;
+      fStack_53 = (float)uVar4;
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine_1
                 (start_00,end_00,color_00,(MethodInfo *)0x0);
-      pCVar21 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-      fStack_46 = VStack_35.x + fVar27;
-      fStack_47 = fVar29 + (float)pCStack_38;
-      fStack_48 = fVar33 + fStack_39;
-      if (pCVar21 != (Camera *)0x0) {
-        position.y = fStack_47;
-        position.x = fStack_46;
-        position.z = fStack_48;
-        pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                            ((Vector3 *)auStack_37,pCVar21,position,(MethodInfo *)0x0);
-        uVar4 = pVVar19->x;
-        uVar9 = pVVar19->y;
-        fStack_49 = pVVar19->z;
-        fStack_47 = (float)uVar4;
-        fStack_48 = (float)uVar9;
-        pCVar21 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
+      pCVar24 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+      fStack_52 = VStack_41.x + fVar33;
+      fStack_53 = fVar35 + (float)pCStack_44;
+      fStack_54 = fVar39 + fStack_45;
+      if (pCVar24 != (Camera *)0x0) {
+        position.y = fStack_53;
+        position.x = fStack_52;
+        position.z = fStack_54;
+        pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
+                            ((Vector3 *)auStack_43,pCVar24,position,(MethodInfo *)0x0);
+        uVar5 = pVVar22->x;
+        uVar10 = pVVar22->y;
+        fStack_55 = pVVar22->z;
+        fStack_53 = (float)uVar5;
+        fStack_54 = (float)uVar10;
+        pCVar24 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
                             ((MethodInfo *)0x0);
-        if (pCVar21 != (Camera *)0x0) {
-          position_00.z._0_2_ = SUB42(fStack_42,0);
-          position_00.x = (float)uStack_41;
-          position_00.y = uStack_41._4_4_;
-          position_00.z._2_2_ = (short)((uint)fStack_42 >> 0x10);
-          pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                              ((Vector3 *)auStack_37,pCVar21,position_00,(MethodInfo *)0x0);
-          uVar5 = pVVar19->x;
-          uVar10 = pVVar19->y;
-          VStack_35.x = fStack_47 - (float)uVar5;
-          VStack_35.y = fStack_48 - (float)uVar10;
-          fStack_42 = fStack_49 - pVVar19->z;
-          VStack_35.z = 0.0;
-          VStack_35.w = 0.0;
-          uStack_41 = CONCAT44(VStack_35.y,VStack_35.x);
-          fStack_48 = fStack_42;
-          fVar26 = (float10)func_?((short)&uStack_41,0);
-          stack0xffffffa8 = (double)CONCAT44((float)fVar26,auStack_37._8_4_);
-          if (0.0 < (float)fVar26) {
-            value.y = VStack_35.y;
-            value.x = VStack_35.x;
-            value.z = fStack_48;
-            pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                                ((Vector3 *)auStack_37,value,(MethodInfo *)0x0);
-            uVar6 = pVVar19->x;
-            uVar11 = pVVar19->y;
-            fStack_49 = pVVar19->z;
-            fStack_47 = (float)uVar6;
-            fStack_48 = (float)uVar11;
-            fVar26 = (float10)func_?();
-            *delta = ((mousePositionDelta.y * fStack_48 + mousePositionDelta.x * fStack_47 +
-                      mousePositionDelta.z * fStack_49) / (float)fVar26) * _UNK_? + *delta;
+        if (pCVar24 != (Camera *)0x0) {
+          position_00.z._0_2_ = SUB42(fStack_48,0);
+          position_00.x = (float)uStack_47;
+          position_00.y = uStack_47._4_4_;
+          position_00.z._2_2_ = (short)((uint)fStack_48 >> 0x10);
+          pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
+                              ((Vector3 *)auStack_43,pCVar24,position_00,(MethodInfo *)0x0);
+          uVar6 = pVVar22->x;
+          uVar11 = pVVar22->y;
+          VStack_41.x = fStack_53 - (float)uVar6;
+          VStack_41.y = fStack_54 - (float)uVar11;
+          fStack_48 = fStack_55 - pVVar22->z;
+          VStack_41.z = 0.0;
+          VStack_41.w = 0.0;
+          uStack_47 = CONCAT44(VStack_41.y,VStack_41.x);
+          fStack_54 = fStack_48;
+          fVar32 = (float10)func_?();
+          stack0xffffffa8 = (double)CONCAT44((float)fVar32,auStack_43._8_4_);
+          if (0.0 < (float)fVar32) {
+            value.y = VStack_41.y;
+            value.x = VStack_41.x;
+            value.z = fStack_54;
+            pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                                ((Vector3 *)auStack_43,value,(MethodInfo *)0x0);
+            uVar7 = pVVar22->x;
+            uVar12 = pVVar22->y;
+            fStack_55 = pVVar22->z;
+            fStack_53 = (float)uVar7;
+            fStack_54 = (float)uVar12;
+            fVar32 = (float10)func_?();
+            *delta = ((mousePositionDelta.y * fStack_54 + mousePositionDelta.x * fStack_53 +
+                      mousePositionDelta.z * fStack_55) / (float)fVar32) * _UNK_? + *delta;
           }
-          if ((float)((uint)*delta & _UNK_?) < (float)pGStack_45) {
+          if ((float)((uint)*delta & _UNK_?) < (float)pGStack_51) {
             *edgeMoved = 0;
-            return CStack_36;
+            return CStack_42;
           }
-          register0x00001200 = (double)(float)pGStack_45;
-          fVar26 = (float10)func_?();
-          unique0x0000aa00 = (double)fVar26;
-          fVar30 = *delta;
-          *delta = fVar30 - (float)fVar26;
-          *deltaAccum = (fVar30 - (float)fVar26) + *deltaAccum;
-          fStack_39 = *delta;
+          register0x00001200 = (double)(float)pGStack_51;
+          fVar32 = (float10)func_?();
+          unique0x0000aa00 = (double)fVar32;
+          fVar36 = *delta;
+          *delta = fVar36 - (float)fVar32;
+          *deltaAccum = (fVar36 - (float)fVar32) + *deltaAccum;
+          fStack_45 = *delta;
           if ((info->fields).pickedEdge == 0) {
-            pTVar16 = (cmb->fields)._.transform;
-            if (pTVar16 != (Transform *)0x0) {
-              pMVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+            pTVar19 = (cmb->fields)._.transform;
+            if (pTVar19 != (Transform *)0x0) {
+              pMVar21 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                         Transform_get_worldToLocalMatrix
-                                  ((Matrix4x4 *)&stack0xffffff10,pTVar16,(MethodInfo *)0x0);
-              VStack_35.x = pMVar18->m00;
-              VStack_35.y = pMVar18->m10;
-              VStack_35.z = pMVar18->m20;
-              VStack_35.w = pMVar18->m30;
-              fVar30 = pMVar18->m01;
-              fVar29 = pMVar18->m11;
-              fVar33 = pMVar18->m21;
-              fVar27 = pMVar18->m31;
-              fVar28 = pMVar18->m02;
-              fVar31 = pMVar18->m12;
-              fVar32 = pMVar18->m22;
-              fVar34 = pMVar18->m32;
-              auStack_37._0_4_ = pMVar18->m03;
-              auStack_37._4_4_ = pMVar18->m13;
-              auStack_37._8_4_ = pMVar18->m23;
-              pCStack_38 = (Cube *)pMVar18->m33;
-              pauVar22 = (undefined1 (*) [12])func_?(&fStack_40,(short)&VStack_43.y,0);
-              fStack_44 = 0.0;
-              VStack_43.z = *(float *)(*pauVar22 + 8);
-              fStack_47 = (float)*(undefined8 *)*pauVar22;
-              fStack_48 = (float)((ulonglong)*(undefined8 *)*pauVar22 >> 0x20);
-              VStack_43.x = fStack_47;
-              VStack_43.y = fStack_48;
-              lhs_00.m10 = VStack_35.y;
-              lhs_00.m00 = VStack_35.x;
-              lhs_00.m20 = VStack_35.z;
-              lhs_00.m30 = VStack_35.w;
-              lhs_00.m01 = fVar30;
-              lhs_00.m11 = fVar29;
-              lhs_00.m21 = fVar33;
-              lhs_00.m31 = fVar27;
-              lhs_00.m02 = fVar28;
-              lhs_00.m12 = fVar31;
-              lhs_00.m22 = fVar32;
-              lhs_00.m32 = fVar34;
-              lhs_00.m03 = (float)auStack_37._0_4_;
-              lhs_00.m13 = (float)auStack_37._4_4_;
-              lhs_00.m23 = (float)auStack_37._8_4_;
-              lhs_00.m33 = (float)pCStack_38;
+                                  ((Matrix4x4 *)&stack0xffffff10,pTVar19,(MethodInfo *)0x0);
+              VStack_41.x = pMVar21->m00;
+              VStack_41.y = pMVar21->m10;
+              VStack_41.z = pMVar21->m20;
+              VStack_41.w = pMVar21->m30;
+              fVar36 = pMVar21->m01;
+              fVar35 = pMVar21->m11;
+              fVar39 = pMVar21->m21;
+              fVar33 = pMVar21->m31;
+              fVar34 = pMVar21->m02;
+              fVar37 = pMVar21->m12;
+              fVar38 = pMVar21->m22;
+              fVar40 = pMVar21->m32;
+              auStack_43._0_4_ = pMVar21->m03;
+              auStack_43._4_4_ = pMVar21->m13;
+              auStack_43._8_4_ = pMVar21->m23;
+              pCStack_44 = (Cube *)pMVar21->m33;
+              pauVar25 = (undefined1 (*) [12])func_?();
+              fStack_50 = 0.0;
+              VStack_49.z = *(float *)(*pauVar25 + 8);
+              fStack_53 = (float)*(undefined8 *)*pauVar25;
+              fStack_54 = (float)((ulonglong)*(undefined8 *)*pauVar25 >> 0x20);
+              VStack_49.x = fStack_53;
+              VStack_49.y = fStack_54;
+              lhs_00.m10 = VStack_41.y;
+              lhs_00.m00 = VStack_41.x;
+              lhs_00.m20 = VStack_41.z;
+              lhs_00.m30 = VStack_41.w;
+              lhs_00.m01 = fVar36;
+              lhs_00.m11 = fVar35;
+              lhs_00.m21 = fVar39;
+              lhs_00.m31 = fVar33;
+              lhs_00.m02 = fVar34;
+              lhs_00.m12 = fVar37;
+              lhs_00.m22 = fVar38;
+              lhs_00.m32 = fVar40;
+              lhs_00.m03 = (float)auStack_43._0_4_;
+              lhs_00.m13 = (float)auStack_43._4_4_;
+              lhs_00.m23 = (float)auStack_43._8_4_;
+              lhs_00.m33 = (float)pCStack_44;
               vector_00.w = 0.0;
-              vector_00._0_12_ = *pauVar22;
-              fStack_49 = VStack_43.z;
-              pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply_1
-                                  (&VStack_35,lhs_00,vector_00,(MethodInfo *)0x0);
-              VStack_43.x = pVVar20->x;
-              VStack_43.y = pVVar20->y;
-              VStack_43.z = pVVar20->z;
-              fStack_44 = pVVar20->w;
-              pfVar23 = (float *)func_?(&VStack_35,&VStack_43,0);
-              fStack_46 = *pfVar23;
-              fStack_47 = pfVar23[1];
-              fStack_48 = pfVar23[2];
+              vector_00._0_12_ = *pauVar25;
+              fStack_55 = VStack_49.z;
+              pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply_1
+                                  (&VStack_41,lhs_00,vector_00,(MethodInfo *)0x0);
+              VStack_49.x = pVVar23->x;
+              VStack_49.y = pVVar23->y;
+              VStack_49.z = pVVar23->z;
+              fStack_50 = pVVar23->w;
+              puVar26 = (undefined4 *)func_?();
+              fStack_52 = (float)*puVar26;
+              fStack_53 = (float)puVar26[1];
+              fStack_54 = (float)puVar26[2];
               if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              axis_00.y = fStack_47;
-              axis_00.x = fStack_46;
-              axis_00.z = fStack_48;
-              Cube::Cube_MoveFace(info,fStack_39,axis_00,&CStack_36,(MethodInfo *)0x0);
+              axis_00.y = fStack_53;
+              axis_00.x = fStack_52;
+              axis_00.z = fStack_54;
+              Cube::Cube_MoveFace(info,fStack_45,axis_00,&CStack_42,(MethodInfo *)0x0);
               *editCubeChange = EditCubeChange__Enum_FaceMoved;
               goto code_?;
             }
           }
           else {
-            pTVar16 = (cmb->fields)._.transform;
+            pTVar19 = (cmb->fields)._.transform;
             if (edgeIndex0 == 0 && edgeIndex1 == 0) {
-              if (pTVar16 != (Transform *)0x0) {
-                pMVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+              if (pTVar19 != (Transform *)0x0) {
+                pMVar21 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                           Transform_get_worldToLocalMatrix
-                                    ((Matrix4x4 *)&stack0xffffff10,pTVar16,(MethodInfo *)0x0);
-                VStack_35.x = pMVar18->m00;
-                VStack_35.y = pMVar18->m10;
-                VStack_35.z = pMVar18->m20;
-                VStack_35.w = pMVar18->m30;
-                fVar30 = pMVar18->m01;
-                fVar29 = pMVar18->m11;
-                fVar33 = pMVar18->m21;
-                fVar27 = pMVar18->m31;
-                fVar28 = pMVar18->m02;
-                fVar31 = pMVar18->m12;
-                fVar32 = pMVar18->m22;
-                fVar34 = pMVar18->m32;
-                auStack_37._0_4_ = pMVar18->m03;
-                auStack_37._4_4_ = pMVar18->m13;
-                auStack_37._8_4_ = pMVar18->m23;
-                pCStack_38 = (Cube *)pMVar18->m33;
-                pauVar22 = (undefined1 (*) [12])func_?(&fStack_40,(short)&VStack_43.y,0);
-                fStack_44 = 0.0;
-                VStack_43.z = *(float *)(*pauVar22 + 8);
-                fStack_47 = (float)*(undefined8 *)*pauVar22;
-                fStack_48 = (float)((ulonglong)*(undefined8 *)*pauVar22 >> 0x20);
-                VStack_43.x = fStack_47;
-                VStack_43.y = fStack_48;
-                lhs_01.m10 = VStack_35.y;
-                lhs_01.m00 = VStack_35.x;
-                lhs_01.m20 = VStack_35.z;
-                lhs_01.m30 = VStack_35.w;
-                lhs_01.m01 = fVar30;
-                lhs_01.m11 = fVar29;
-                lhs_01.m21 = fVar33;
-                lhs_01.m31 = fVar27;
-                lhs_01.m02 = fVar28;
-                lhs_01.m12 = fVar31;
-                lhs_01.m22 = fVar32;
-                lhs_01.m32 = fVar34;
-                lhs_01.m03 = (float)auStack_37._0_4_;
-                lhs_01.m13 = (float)auStack_37._4_4_;
-                lhs_01.m23 = (float)auStack_37._8_4_;
-                lhs_01.m33 = (float)pCStack_38;
+                                    ((Matrix4x4 *)&stack0xffffff10,pTVar19,(MethodInfo *)0x0);
+                VStack_41.x = pMVar21->m00;
+                VStack_41.y = pMVar21->m10;
+                VStack_41.z = pMVar21->m20;
+                VStack_41.w = pMVar21->m30;
+                fVar36 = pMVar21->m01;
+                fVar35 = pMVar21->m11;
+                fVar39 = pMVar21->m21;
+                fVar33 = pMVar21->m31;
+                fVar34 = pMVar21->m02;
+                fVar37 = pMVar21->m12;
+                fVar38 = pMVar21->m22;
+                fVar40 = pMVar21->m32;
+                auStack_43._0_4_ = pMVar21->m03;
+                auStack_43._4_4_ = pMVar21->m13;
+                auStack_43._8_4_ = pMVar21->m23;
+                pCStack_44 = (Cube *)pMVar21->m33;
+                pauVar25 = (undefined1 (*) [12])func_?();
+                fStack_50 = 0.0;
+                VStack_49.z = *(float *)(*pauVar25 + 8);
+                fStack_53 = (float)*(undefined8 *)*pauVar25;
+                fStack_54 = (float)((ulonglong)*(undefined8 *)*pauVar25 >> 0x20);
+                VStack_49.x = fStack_53;
+                VStack_49.y = fStack_54;
+                lhs_01.m10 = VStack_41.y;
+                lhs_01.m00 = VStack_41.x;
+                lhs_01.m20 = VStack_41.z;
+                lhs_01.m30 = VStack_41.w;
+                lhs_01.m01 = fVar36;
+                lhs_01.m11 = fVar35;
+                lhs_01.m21 = fVar39;
+                lhs_01.m31 = fVar33;
+                lhs_01.m02 = fVar34;
+                lhs_01.m12 = fVar37;
+                lhs_01.m22 = fVar38;
+                lhs_01.m32 = fVar40;
+                lhs_01.m03 = (float)auStack_43._0_4_;
+                lhs_01.m13 = (float)auStack_43._4_4_;
+                lhs_01.m23 = (float)auStack_43._8_4_;
+                lhs_01.m33 = (float)pCStack_44;
                 vector_01.w = 0.0;
-                vector_01._0_12_ = *pauVar22;
-                fStack_49 = VStack_43.z;
-                pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::
-                          Matrix4x4_op_Multiply_1(&VStack_35,lhs_01,vector_01,(MethodInfo *)0x0);
-                VStack_43.x = pVVar20->x;
-                VStack_43.y = pVVar20->y;
-                VStack_43.z = pVVar20->z;
-                fStack_44 = pVVar20->w;
-                pfVar23 = (float *)func_?(&VStack_35,&VStack_43,0);
-                fStack_46 = *pfVar23;
-                fStack_47 = pfVar23[1];
-                fStack_48 = pfVar23[2];
+                vector_01._0_12_ = *pauVar25;
+                fStack_55 = VStack_49.z;
+                pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::
+                          Matrix4x4_op_Multiply_1(&VStack_41,lhs_01,vector_01,(MethodInfo *)0x0);
+                VStack_49.x = pVVar23->x;
+                VStack_49.y = pVVar23->y;
+                VStack_49.z = pVVar23->z;
+                fStack_50 = pVVar23->w;
+                puVar26 = (undefined4 *)func_?();
+                fStack_52 = (float)*puVar26;
+                fStack_53 = (float)puVar26[1];
+                fStack_54 = (float)puVar26[2];
                 if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
-                axis_01.y = fStack_47;
-                axis_01.x = fStack_46;
-                axis_01.z = fStack_48;
-                Cube::Cube_MoveEdge(info,fStack_39,axis_01,&CStack_36,(MethodInfo *)0x0);
+                axis_01.y = fStack_53;
+                axis_01.x = fStack_52;
+                axis_01.z = fStack_54;
+                Cube::Cube_MoveEdge(info,fStack_45,axis_01,&CStack_42,(MethodInfo *)0x0);
                 *editCubeChange = EditCubeChange__Enum_EdgeMoved;
 code_?:
                 *delta = 0.0;
                 *edgeMoved = 1;
-                return CStack_36;
+                return CStack_42;
               }
             }
-            else if (pTVar16 != (Transform *)0x0) {
-              pMVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+            else if (pTVar19 != (Transform *)0x0) {
+              pMVar21 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                         Transform_get_worldToLocalMatrix
-                                  ((Matrix4x4 *)&stack0xffffff10,pTVar16,(MethodInfo *)0x0);
-              VStack_35.x = pMVar18->m00;
-              VStack_35.y = pMVar18->m10;
-              VStack_35.z = pMVar18->m20;
-              VStack_35.w = pMVar18->m30;
-              fVar30 = pMVar18->m01;
-              fVar29 = pMVar18->m11;
-              fVar33 = pMVar18->m21;
-              fVar27 = pMVar18->m31;
-              fVar28 = pMVar18->m02;
-              fVar31 = pMVar18->m12;
-              fVar32 = pMVar18->m22;
-              fVar34 = pMVar18->m32;
-              fStack_40 = pMVar18->m03;
-              uStack_41._0_4_ = pMVar18->m13;
-              uStack_41._4_4_ = pMVar18->m23;
-              fStack_42 = pMVar18->m33;
-              pauVar22 = (undefined1 (*) [12])func_?(&fStack_46,(short)&VStack_43.y,0);
-              fStack_44 = *(float *)(*pauVar22 + 8);
-              VStack_43.y = (float)*(undefined8 *)*pauVar22;
-              VStack_43.z = (float)((ulonglong)*(undefined8 *)*pauVar22 >> 0x20);
-              fStack_46 = VStack_43.y;
-              fStack_47 = VStack_43.z;
-              fStack_49 = 0.0;
-              lhs_02.m10 = VStack_35.y;
-              lhs_02.m00 = VStack_35.x;
-              lhs_02.m20 = VStack_35.z;
-              lhs_02.m30 = VStack_35.w;
-              lhs_02.m01 = fVar30;
-              lhs_02.m11 = fVar29;
-              lhs_02.m21 = fVar33;
-              lhs_02.m31 = fVar27;
-              lhs_02.m02 = fVar28;
-              lhs_02.m12 = fVar31;
-              lhs_02.m22 = fVar32;
-              lhs_02.m32 = fVar34;
-              lhs_02.m03 = fStack_40;
-              lhs_02.m13 = (float)uStack_41;
-              lhs_02.m23 = uStack_41._4_4_;
-              lhs_02.m33 = fStack_42;
+                                  ((Matrix4x4 *)&stack0xffffff10,pTVar19,(MethodInfo *)0x0);
+              VStack_41.x = pMVar21->m00;
+              VStack_41.y = pMVar21->m10;
+              VStack_41.z = pMVar21->m20;
+              VStack_41.w = pMVar21->m30;
+              fVar36 = pMVar21->m01;
+              fVar35 = pMVar21->m11;
+              fVar39 = pMVar21->m21;
+              fVar33 = pMVar21->m31;
+              fVar34 = pMVar21->m02;
+              fVar37 = pMVar21->m12;
+              fVar38 = pMVar21->m22;
+              fVar40 = pMVar21->m32;
+              fStack_46 = pMVar21->m03;
+              uStack_47._0_4_ = pMVar21->m13;
+              uStack_47._4_4_ = pMVar21->m23;
+              fStack_48 = pMVar21->m33;
+              pauVar25 = (undefined1 (*) [12])func_?();
+              fStack_50 = *(float *)(*pauVar25 + 8);
+              VStack_49.y = (float)*(undefined8 *)*pauVar25;
+              VStack_49.z = (float)((ulonglong)*(undefined8 *)*pauVar25 >> 0x20);
+              fStack_52 = VStack_49.y;
+              fStack_53 = VStack_49.z;
+              fStack_55 = 0.0;
+              lhs_02.m10 = VStack_41.y;
+              lhs_02.m00 = VStack_41.x;
+              lhs_02.m20 = VStack_41.z;
+              lhs_02.m30 = VStack_41.w;
+              lhs_02.m01 = fVar36;
+              lhs_02.m11 = fVar35;
+              lhs_02.m21 = fVar39;
+              lhs_02.m31 = fVar33;
+              lhs_02.m02 = fVar34;
+              lhs_02.m12 = fVar37;
+              lhs_02.m22 = fVar38;
+              lhs_02.m32 = fVar40;
+              lhs_02.m03 = fStack_46;
+              lhs_02.m13 = (float)uStack_47;
+              lhs_02.m23 = uStack_47._4_4_;
+              lhs_02.m33 = fStack_48;
               vector_02.w = 0.0;
-              vector_02._0_12_ = *pauVar22;
-              fStack_48 = fStack_44;
-              pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply_1
-                                  (&VStack_35,lhs_02,vector_02,(MethodInfo *)0x0);
-              VStack_43.x = pVVar20->x;
-              VStack_43.y = pVVar20->y;
-              VStack_43.z = pVVar20->z;
-              fStack_44 = pVVar20->w;
-              pfVar23 = (float *)func_?(&VStack_35,&VStack_43,0);
-              VStack_43.x = *pfVar23;
-              VStack_43.y = pfVar23[1];
-              VStack_43.z = pfVar23[2];
+              vector_02._0_12_ = *pauVar25;
+              fStack_54 = fStack_50;
+              pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply_1
+                                  (&VStack_41,lhs_02,vector_02,(MethodInfo *)0x0);
+              VStack_49.x = pVVar23->x;
+              VStack_49.y = pVVar23->y;
+              VStack_49.z = pVVar23->z;
+              fStack_50 = pVVar23->w;
+              pfVar27 = (float *)func_?();
+              VStack_49.x = *pfVar27;
+              VStack_49.y = pfVar27[1];
+              VStack_49.z = pfVar27[2];
               if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              axis.y = VStack_43.y;
-              axis.x = VStack_43.x;
-              axis.z = VStack_43.z;
+              axis.y = VStack_49.y;
+              axis.x = VStack_49.x;
+              axis.z = VStack_49.z;
               Cube::Cube_MoveVertex
-                        (info,fStack_39,axis,edgeIndex0,edgeIndex1,&CStack_36,(MethodInfo *)0x0);
+                        (info,fStack_45,axis,edgeIndex0,edgeIndex1,&CStack_42,(MethodInfo *)0x0);
               *editCubeChange = EditCubeChange__Enum_VertexMoved;
               goto code_?;
             }
@@ -2775,12 +2776,18 @@ code_?:
     }
   }
 code_?:
-  cVar25 = '\0';
-  uVar24 = func_?();
-  pcVar1 = (char *)(CONCAT31((int3)((uint)uVar24 >> 8),0xdb) + -0x1befd925);
-  *pcVar1 = *pcVar1 + extraout_DH + cVar25;
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  bVar30 = 0;
+  iVar28 = func_?();
+  bVar31 = extraout_CH < 0x26 || (byte)(extraout_CH - 0x26) < bVar30;
+  pbVar1 = (byte *)(iVar28 + -0x4befd923);
+  bVar30 = *pbVar1;
+  bVar15 = *pbVar1 + (byte)iVar28;
+  *pbVar1 = bVar15 + bVar31;
+  pcVar2 = (char *)((int)&stack0x00000000 * 9 + -0x221af00a);
+  *pcVar2 = *pcVar2 + extraout_DH + (CARRY1(bVar30,(byte)iVar28) || CARRY1(bVar15,bVar31));
+  pcVar16 = (code *)swi(3);
+  CVar29 = (*pcVar16)();
+  return CVar29;
 }
 
 
@@ -2846,7 +2853,7 @@ float Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_ScaleFactor_
   if (cRam_? == '\0') {
     _puStack_1c = CONCAT44(&UNK_?,puStack_1);
     func_?();
-    _puStack_1c = 0x119c97801026e623;
+    _puStack_1c = 0x119caa301026e7f3;
     func_?();
     cRam_? = '\x01';
   }
@@ -2907,59 +2914,60 @@ float Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_ScaleFactor_
   }
   bVar4 = 0;
   uVar5 = func_?();
-  iVar6 = (int)uVar5 + 1;
-  bVar7 = (byte)iVar6;
-  out(0x26,bVar7);
-  pbVar8 = (byte *)((int)uVar5 + -0x19);
-  bVar9 = CARRY1(*pbVar8,bVar7) || CARRY1(*pbVar8 + bVar7,bVar4);
-  *pbVar8 = *pbVar8 + bVar7 + bVar4;
-  pbVar8 = (byte *)(unaff_ESI + 0x26);
-  bVar10 = (byte)((uint6)uVar5 >> 0x28);
-  bVar11 = CARRY1(*pbVar8,bVar10) || CARRY1(*pbVar8 + bVar10,bVar9);
-  *pbVar8 = *pbVar8 + bVar10 + bVar9;
-  pbVar8 = (byte *)(unaff_ESI + 0x26);
-  bVar7 = *pbVar8;
+  bVar6 = (byte)uVar5 + extraout_CH;
+  bVar7 = CARRY1((byte)uVar5,extraout_CH) || CARRY1(bVar6,bVar4);
+  pbVar8 = (byte *)CONCAT31((int3)((uint)uVar5 >> 8),bVar6 + bVar4);
+  bVar4 = CARRY1(*pbVar8,extraout_DL) || CARRY1(*pbVar8 + extraout_DL,bVar7);
+  *pbVar8 = *pbVar8 + extraout_DL + bVar7;
+  uVar9 = func_?();
+  iVar10 = (int)uVar9;
+  pbVar8 = (byte *)(iVar10 + 0x26 + (int)&stack0xfffffffc * 8);
+  bVar6 = *pbVar8 + (byte)uVar9;
+  bVar7 = CARRY1(*pbVar8,(byte)uVar9) || CARRY1(bVar6,bVar4);
+  *pbVar8 = bVar6 + bVar4;
+  pbVar8 = (byte *)(iVar10 + 0x26 + (int)&stack0xfffffffc * 8);
+  bVar6 = *pbVar8;
+  bVar11 = (byte)((uint6)uVar9 >> 0x28);
   bVar4 = *pbVar8;
-  *pbVar8 = bVar4 + bVar10 + bVar11;
-  *(char *)(unaff_ESI + -0x195befda) =
-       *(char *)(unaff_ESI + -0x195befda) + (char)((uint)iVar6 >> 8) +
-       (CARRY1(bVar7,bVar10) || CARRY1(bVar4 + bVar10,bVar11));
-  in((short)((uint6)uVar5 >> 0x20));
-  iVar6 = 0;
-  fStack_12 = 0.0;
+  *pbVar8 = bVar4 + bVar11 + bVar7;
+  pcVar12 = (char *)(iVar10 + 0x26 + (int)&stack0xfffffffc * 8);
+  *pcVar12 = *pcVar12 + bVar11 + (CARRY1(bVar6,bVar11) || CARRY1(bVar4 + bVar11,bVar7));
+  in((short)((uint6)uVar9 >> 0x20));
+  iVar10 = 0;
+  fStack_13 = 0.0;
   if (gameObject != (GameObject *)0x0) {
-    while (fVar13 = fStack_12, fVar14 = fStack_12,
+    while (fVar14 = fStack_13, fVar15 = fStack_13,
           pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                              (gameObject,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                         (&VStack_15,pTVar2,(MethodInfo *)0x0);
+                         (&VStack_16,pTVar2,(MethodInfo *)0x0);
       puStack_1 = (undefined *)pVVar3->x;
       unique0x0000a404 = pVVar3->y;
-      if (iVar6 == 0) {
-        fStack_12 = fVar14 + (float)puStack_1;
+      if (iVar10 == 0) {
+        fStack_13 = fVar15 + (float)puStack_1;
       }
       else {
-        if (iVar6 != 1) {
-          if (iVar6 == 2) {
-            return (fVar13 + pVVar3->z) / _UNK_?;
+        if (iVar10 != 1) {
+          if (iVar10 == 2) {
+            return (fVar14 + pVVar3->z) / _UNK_?;
           }
           goto code_?;
         }
-        fStack_12 = fStack_12 + (float)unique0x0000a404;
+        fStack_13 = fStack_13 + (float)unique0x0000a404;
       }
-      iVar6 = iVar6 + 1;
+      iVar10 = iVar10 + 1;
     }
   }
   func_?();
 code_?:
-  uVar16 = func_?(&TypeInfo__System__IndexOutOfRangeException);
-  this = (IndexOutOfRangeException *)func_?(uVar16);
+  uVar5 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+  this = (IndexOutOfRangeException *)func_?(uVar5);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_Invalid_Vector3_index_);
   mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
             (this,message,method_00);
-  uVar16 = func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
-  func_?(this,uVar16);
+  uVar5 = func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
+  func_?(this,uVar5);
   pcVar17 = (code *)swi(3);
   fVar18 = (float10)(*pcVar17)();
   return (float)fVar18;
@@ -3325,8 +3333,8 @@ void Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions__cctor(Method
     func_?(&_7BCBDCCC340EA4ECBDD35B946E4F1C88E504A39C0708D3155A5C65E1B4183290_Field);
     func_?(&_7DE6C05FE260533E58F5F5D7195356F52AA241A405B3EC59D9A7E618A31EB70B_Field);
     func_?(&_8FD9A02CC3EC720EFB3B246422557271F0349320C1E14523AD7E1A6D2D963700_Field);
-    func_?(&_974B7612E2388B86C1BC0353AC9B2F65B6957BF64200ACC73E0A7BD063BA7469_Field);
-    func_?(&::A53B3522877C6E2C38B170CB40FA7BCAE5DD40492EE274555BA018EEE935E33B_Field);
+    func_?(&::_974B7612E2388B86C1BC0353AC9B2F65B6957BF64200ACC73E0A7BD063BA7469_Field);
+    func_?(&A53B3522877C6E2C38B170CB40FA7BCAE5DD40492EE274555BA018EEE935E33B_Field);
     func_?(&A69DBB9813CAFBDB74661959B1EB85075542F30F2CE490C308D06C3AACEAAF42_Field);
     func_?(&A8D5E66148A8596B4CA037E02125BDA105EEBB89FDA286BAB2B89D08F69FC8EA_Field);
     func_?(&AB04D5434C9E64B5F7652A8D9A9172F0A1CB0E8D294133D8A2A144C25AEFBC53_Field);

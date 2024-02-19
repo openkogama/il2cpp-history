@@ -219,9 +219,10 @@ code_?:
     }
   }
 code_?:
-  func_?();
-  do {
-                    /* WARNING: Do nothing block with infinite loop */
-  } while( true );
+  iVar12 = func_?();
+  *(char *)(iVar12 + -0x3cefb204) = *(char *)(iVar12 + -0x3cefb204) + extraout_CH;
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
+  return;
 }
 

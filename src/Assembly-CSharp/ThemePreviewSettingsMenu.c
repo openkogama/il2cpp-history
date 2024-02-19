@@ -686,11 +686,9 @@ code_?:
   }
   func_?();
 code_?:
-  iVar3 = func_?();
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-  (**(code **)(iVar3 + 0x36))();
-  return;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

@@ -419,7 +419,7 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_HideE
         (**(code **)(*piVar5 + 0xe8))(piVar5,*(undefined4 *)(*piVar5 + 0xec));
       }
       (*(code *)(pPVar1->klass->vtable).SetUseButtonVisible.method)
-                (pPVar1,0,pPVar1->klass[1]._0.image);
+                (pPVar1,0,0,0,pPVar1->klass[1]._0.image);
       return;
     }
   }
@@ -1206,38 +1206,52 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_ShowE
 
 {
   pPVar1 = (this->fields).playModeControlsBase;
-  if ((pPVar1 != (PlayModeControlsBase *)0x0) &&
-     (pJVar2 = (pPVar1->fields).joystickControllerStack, pJVar2 != (JoystickControllerStack *)0x0))
-  {
+  if (pPVar1 != (PlayModeControlsBase *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&MethodInfo__System__Collections__Generic__List<InGameControls>__get_Count__);
-      func_?(&MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
-                     );
+      func_?(&MethodInfo__System__Nullable<ShowUseOption>__Nullable_ShowUseOption_);
       cRam_? = '\x01';
     }
-    pLVar3 = (pJVar2->fields).controls;
-    if (pLVar3 != (List_1_InGameControls_ *)0x0) {
-      if ((pLVar3->fields)._size != 0) {
-        RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                           (pJVar2->fields).controls,(pLVar3->fields)._size + -1,
-                           MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
-                          );
-        if ((RVar4 == (RegexCharClass_SingleRange)0x0) ||
-           (piVar5 = *(int **)((int)RVar4 + 0x18), piVar5 == (int *)0x0)) goto code_?;
-        (**(code **)(*piVar5 + 0xe0))(piVar5,option,*(undefined4 *)(*piVar5 + 0xe4));
+    pJVar2 = (pPVar1->fields).joystickControllerStack;
+    if (pJVar2 != (JoystickControllerStack *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&MethodInfo__System__Collections__Generic__List<InGameControls>__get_Count__
+                       );
+        func_?(&
+                        MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
+                       );
+        cRam_? = '\x01';
       }
-      (*(code *)(pPVar1->klass->vtable).SetUseButtonVisible.method)
-                (pPVar1,1,pPVar1->klass[1]._0.image);
-      return;
+      pLVar3 = (pJVar2->fields).controls;
+      if (pLVar3 != (List_1_InGameControls_ *)0x0) {
+        if ((pLVar3->fields)._size != 0) {
+          RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             (pJVar2->fields).controls,(pLVar3->fields)._size + -1,
+                             MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
+                            );
+          if ((RVar4 == (RegexCharClass_SingleRange)0x0) ||
+             (piVar5 = *(int **)((int)RVar4 + 0x18), piVar5 == (int *)0x0)) goto code_?;
+          NStack_6._0_4_ = *(undefined4 *)(*piVar5 + 0xe4);
+          (**(code **)(*piVar5 + 0xe0))(piVar5,option);
+        }
+        NStack_6.hasValue = 0;
+        NStack_6._1_3_ = 0;
+        NStack_6.value = 0;
+        mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
+                  (&NStack_6,option,
+                   MethodInfo__System__Nullable<ShowUseOption>__Nullable_ShowUseOption_);
+        (*(code *)(pPVar1->klass->vtable).SetUseButtonVisible.method)
+                  (pPVar1,1,NStack_6._0_4_,NStack_6.value,pPVar1->klass[1]._0.image);
+        return;
+      }
     }
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

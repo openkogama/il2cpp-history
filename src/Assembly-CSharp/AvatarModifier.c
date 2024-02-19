@@ -167,35 +167,49 @@ code_?:
   if (pAVar2 == (AvatarModifier *)0x0) {
 code_?:
     uVar3 = func_?();
-    piVar4 = (int *)((ulonglong)uVar3 >> 0x20);
+    iVar4 = (int)((ulonglong)uVar3 >> 0x20);
     uVar5 = (uint)uVar3;
-    cVar6 = (char)((ulonglong)uVar3 >> 0x20);
-    bVar7 = (char)extraout_ECX - cVar6;
-    pbVar8 = (byte *)CONCAT31((int3)((uint)extraout_ECX >> 8),bVar7);
-    pbVar8[-0x2d] = pbVar8[-0x2d] + cVar6 + (uVar5 < 0x2dd15210);
-    uVar9 = uVar5 + 0xa45d31e0;
-    cVar6 = (char)(uVar9 >> 8);
-    *(char *)(unaff_ESI + -0x2fefd22f) =
-         *(char *)(unaff_ESI + -0x2fefd22f) + cVar6 + (uVar5 + 0xd22eadf0 < 0x2dd17c10);
-    uVar10 = uRam_? & 1;
-    uRam_? = uRam_? >> 1;
-    *(char *)((int)piVar4 * 9) = *(char *)((int)piVar4 * 9) + cVar6 + (uVar10 != 0);
-    pbVar11 = (byte *)(unaff_ESI + -0x30efd22e);
-    bVar12 = *pbVar11;
-    bVar13 = *pbVar11;
-    *pbVar11 = bVar13 + bVar7 + (uVar9 < 0x2dd24e10);
-    bVar14 = bRam_?;
-    bRam_? = bRam_? >> (bVar7 & 0x1f);
-    bVar15 = (bVar7 & 0x1f) == 0;
-    cRam_? = cRam_? + bVar7 +
-                   (bVar15 * (CARRY1(bVar12,bVar7) || CARRY1(bVar13 + bVar7,uVar9 < 0x2dd24e10)) |
-                   !bVar15 * ((bVar14 >> (bVar7 & 0x1f) - 1 & 1) != 0));
-    *piVar4 = *piVar4 + uVar5 + 0x768ae3d0;
-    *(char *)piVar4 =
-         (char)*piVar4 + (char)(uVar5 + 0x768ae3d0) + (char)*piVar4 + (char)*piVar4;
-    *pbVar8 = *pbVar8 | bVar7;
-    pcVar16 = (code *)swi(3);
-    pAVar2 = (AvatarModifier *)(*pcVar16)();
+    bVar6 = (byte)((ulonglong)uVar3 >> 0x20);
+    bVar7 = (byte)unaff_EBX | bVar6;
+    iVar1 = uVar5 + 0xd22ccdf0;
+    bVar8 = (byte)((ulonglong)uVar3 >> 0x28);
+    bVar9 = CARRY1(*extraout_ECX,bVar8) || CARRY1(*extraout_ECX + bVar8,uVar5 < 0x2dd33210);
+    *extraout_ECX = *extraout_ECX + bVar8 + (uVar5 < 0x2dd33210);
+    bVar10 = (char)iVar1 + (char)((uint)iVar1 >> 8) * '-';
+    uVar11 = CONCAT22((short)((uint)iVar1 >> 0x10),(ushort)bVar10);
+    pbVar12 = (byte *)(CONCAT31((int3)((uint)unaff_EBX >> 8),bVar7) + 0x2d + iVar4 * 8);
+    bVar13 = CARRY1(*pbVar12,bVar7) || CARRY1(*pbVar12 + bVar7,bVar9);
+    *pbVar12 = *pbVar12 + bVar7 + bVar9;
+    pbVar12 = (byte *)(unaff_ESI + -0x4fefd22d);
+    bVar7 = *pbVar12;
+    bVar14 = *pbVar12;
+    *pbVar12 = bVar14 + bVar10 + bVar13;
+    uVar5 = uRam_?;
+    bVar15 = (byte)extraout_ECX;
+    uRam_? = uRam_? >> (bVar15 & 0x1f);
+    bVar9 = ((uint)extraout_ECX & 0x1f) == 0;
+    *(byte *)(&type + iVar4 * 2) =
+         (char)(&type)[iVar4 * 2] + bVar10 +
+         (bVar9 * (CARRY1(bVar7,bVar10) || CARRY1(bVar14 + bVar10,bVar13)) |
+         !bVar9 * ((uVar5 >> (bVar15 & 0x1f) - 1 & 1) != 0));
+    bVar10 = (byte)((uint)extraout_ECX >> 8);
+    *(char *)(unaff_ESI + -0x2c) = *(char *)(unaff_ESI + -0x2c) + bVar10 + (uVar11 < 0x2dd42e10);
+    bVar9 = uVar11 + 0xd22bd1f0 < 0x2dd4af10;
+    bVar13 = CARRY1(bVar8,bVar15) || CARRY1(bVar8 + bVar15,bVar9);
+    piVar16 = (int *)CONCAT22((short)((ulonglong)uVar3 >> 0x30),
+                              CONCAT11(bVar8 + bVar15 + bVar9,bVar6));
+    bVar7 = (byte)(uVar11 + 0xa45722e0) % 0x2d;
+    pbVar12 = (byte *)CONCAT22((short)((uint)extraout_ECX >> 0x10),
+                               CONCAT11(bVar10 * '\x02' + bVar13,bVar15));
+    bVar14 = bVar7 % 0x2d;
+    pcVar17 = (char *)CONCAT31((int3)(CONCAT22((short)(uVar11 + 0xa45722e0 >> 0x10),
+                                              CONCAT11(bVar7 / 0x2d,bVar7)) >> 8),bVar14);
+    *pcVar17 = *pcVar17 + bVar14 + (CARRY1(bVar10,bVar10) || CARRY1(bVar10 * '\x02',bVar13));
+    *piVar16 = (int)(pcVar17 + *piVar16);
+    *(byte *)piVar16 = (char)*piVar16 + bVar14 + (char)*piVar16 + (char)*piVar16;
+    *pbVar12 = *pbVar12 | bVar15;
+    pcVar18 = (code *)swi(3);
+    pAVar2 = (AvatarModifier *)(*pcVar18)();
     return pAVar2;
   }
 code_?:

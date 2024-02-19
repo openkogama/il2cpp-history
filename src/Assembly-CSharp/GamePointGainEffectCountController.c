@@ -87,41 +87,39 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
                (GamePointGainEffectCountController *this,MethodInfo *method)
 
 {
-  puVar1 = (undefined4 *)&stack0xfffffffc;
   switch((this->fields).currentSlideState) {
   case 0:
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    pfVar3 = &(this->fields).startSlideOutTime;
-    if (*pfVar3 <= fVar2 && fVar2 != *pfVar3) {
+    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    pfVar2 = &(this->fields).startSlideOutTime;
+    if (*pfVar2 <= fVar1 && fVar1 != *pfVar2) {
       (this->fields).currentSlideState = 3;
-      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      (this->fields).slideStartTime = fVar2;
+      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      (this->fields).slideStartTime = fVar1;
     }
   default:
     return;
   case 2:
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    pTVar4 = (this->fields).transformToSlide;
-    fVar5 = (fVar2 - (this->fields).slideStartTime) / (this->fields).slideDuration;
-    fVar2 = (this->fields).originalXPosition;
-    if (pTVar4 != (Transform *)0x0) {
-      puStackY_34 = &UNK_?;
-      pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         ((Vector3 *)&stack0xffffffdc,pTVar4,(MethodInfo *)0x0);
-      uVar7 = pVVar6->x;
-      uVar8 = pVVar6->y;
-      fVar9 = 0.0;
-      if ((0.0 <= fVar5) && (fVar9 = _UNK_?, fVar5 <= _UNK_?)) {
-        fVar9 = fVar5;
+    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    pTVar3 = (this->fields).transformToSlide;
+    fVar4 = (fVar1 - (this->fields).slideStartTime) / (this->fields).slideDuration;
+    fVar1 = (this->fields).originalXPosition;
+    if (pTVar3 != (Transform *)0x0) {
+      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+                         ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
+      uVar6 = pVVar5->x;
+      uVar7 = pVVar5->y;
+      fVar8 = 0.0;
+      if ((0.0 <= fVar4) && (fVar8 = _UNK_?, fVar4 <= _UNK_?)) {
+        fVar8 = fVar4;
       }
-      pTVar4 = (this->fields).transformToSlide;
-      if (pTVar4 != (Transform *)0x0) {
-        value.y = (float)uVar8;
-        value.x = (fVar2 - (float)uVar7) * fVar9 + (float)uVar7;
-        value.z = pVVar6->z;
+      pTVar3 = (this->fields).transformToSlide;
+      if (pTVar3 != (Transform *)0x0) {
+        value.y = (float)uVar7;
+        value.x = (fVar1 - (float)uVar6) * fVar8 + (float)uVar6;
+        value.z = pVVar5->z;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                  (pTVar4,value,(MethodInfo *)0x0);
-        if (fVar5 <= _UNK_?) {
+                  (pTVar3,value,(MethodInfo *)0x0);
+        if (fVar4 <= _UNK_?) {
           return;
         }
         (this->fields).currentSlideState = 0;
@@ -130,29 +128,28 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
     }
     break;
   case 3:
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    pTVar4 = (this->fields).transformToSlide;
-    fVar9 = (fVar2 - (this->fields).slideStartTime) / (this->fields).slideDuration;
-    fVar2 = (this->fields).originalXPosition;
-    fVar5 = (this->fields).slideMoveAmount;
-    if (pTVar4 != (Transform *)0x0) {
-      puStackY_34 = &UNK_?;
-      pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         ((Vector3 *)&stack0xffffffdc,pTVar4,(MethodInfo *)0x0);
-      uVar10 = pVVar6->x;
-      uVar11 = pVVar6->y;
-      fVar12 = 0.0;
-      if ((0.0 <= fVar9) && (fVar12 = _UNK_?, fVar9 <= _UNK_?)) {
-        fVar12 = fVar9;
+    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    pTVar3 = (this->fields).transformToSlide;
+    fVar8 = (fVar1 - (this->fields).slideStartTime) / (this->fields).slideDuration;
+    fVar1 = (this->fields).originalXPosition;
+    fVar4 = (this->fields).slideMoveAmount;
+    if (pTVar3 != (Transform *)0x0) {
+      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+                         ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
+      uVar9 = pVVar5->x;
+      uVar10 = pVVar5->y;
+      fVar11 = 0.0;
+      if ((0.0 <= fVar8) && (fVar11 = _UNK_?, fVar8 <= _UNK_?)) {
+        fVar11 = fVar8;
       }
-      pTVar4 = (this->fields).transformToSlide;
-      if (pTVar4 != (Transform *)0x0) {
-        value_00.y = (float)uVar11;
-        value_00.x = ((fVar5 + fVar2) - (float)uVar10) * fVar12 + (float)uVar10;
-        value_00.z = pVVar6->z;
+      pTVar3 = (this->fields).transformToSlide;
+      if (pTVar3 != (Transform *)0x0) {
+        value_00.y = (float)uVar10;
+        value_00.x = ((fVar4 + fVar1) - (float)uVar9) * fVar11 + (float)uVar9;
+        value_00.z = pVVar5->z;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                  (pTVar4,value_00,(MethodInfo *)0x0);
-        if (fVar9 <= _UNK_?) {
+                  (pTVar3,value_00,(MethodInfo *)0x0);
+        if (fVar8 <= _UNK_?) {
           return;
         }
         (this->fields).currentSlideState = 1;
@@ -160,28 +157,16 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
       }
     }
   }
+  cVar12 = '\0';
   func_?();
-  puStackY_84 = &stack0xffffffe4;
-  puVar13 = (undefined4 *)&stack0xffffffe4;
-  apuStackY_10ce[1] = &stack0xffffffe4;
-  puVar14 = (undefined4 *)&stack0xffffffe4;
-  cVar15 = '\x19';
-  do {
-    puVar1 = puVar1 + -1;
-    puVar13 = puVar13 + -1;
-    *puVar13 = *puVar1;
-    cVar15 = cVar15 + -1;
-  } while ('\0' < cVar15);
-  ppuVar16 = apuStackY_10ce + 1;
-  cVar15 = '\t';
-  do {
-    puVar14 = puVar14 + -1;
-    ppuVar16 = ppuVar16 + -1;
-    *ppuVar16 = (undefined1 *)*puVar14;
-    cVar15 = cVar15 + -1;
-  } while ('\0' < cVar15);
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  cVar13 = '\x01';
+  pcVar14 = (code *)swi(4);
+  cVar15 = extraout_AH;
+  if (cVar12 == '\x01') {
+    (*pcVar14)();
+    cVar15 = extraout_AH_00;
+  }
+  cRam_? = cRam_? + cVar15 + cVar13;
   return;
 }
 

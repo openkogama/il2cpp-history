@@ -61,16 +61,41 @@ void Assembly-CSharp.dll::UGUI::Shared::Scripts::BaseDecider::BaseDecider_Log
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&StringLiteral_BaseDecider___);
     cRam_? = '\x01';
   }
-  message = mscorlib.dll::System::String::String_Concat_3
-                      (StringLiteral_BaseDecider___,msg,(MethodInfo *)0x0);
+  mscorlib.dll::System::String::String_Concat_3(StringLiteral_BaseDecider___,msg,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)message,(MethodInfo *)0x0);
+  uStack1 = 0;
+  if (cRam_? == '\0') {
+    func_?();
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  if (TypeInfo__UnityEngine__Debug->static_fields->s_Logger != (ILogger_1 *)0x0) {
+    func_?(5,TypeInfo__UnityEngine__ILogger);
+    return;
+  }
+  uVar2 = func_?(&stack0xfffffffc);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -94,8 +119,17 @@ void Assembly-CSharp.dll::UGUI::Shared::Scripts::BaseDecider::BaseDecider_StartB
     cRam_? = '\x01';
   }
   TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouchInitialized_k__BackingField = 1;
+  str1 = StringLiteral_Starting_by_button_DesktopBase;
+  pSVar1 = StringLiteral_Starting_by_button_Base;
   if (mobile == 0) {
-    BaseDecider_Log(StringLiteral_Starting_by_button_DesktopBase,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&StringLiteral_BaseDecider___);
+      cRam_? = '\x01';
+    }
+    pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                       (StringLiteral_BaseDecider___,str1,(MethodInfo *)0x0);
+    Assets::Scripts::AdIntegration::Web::WebAdManager::WebAdManager_AdLog_1
+              (pSVar1,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
@@ -109,7 +143,13 @@ void Assembly-CSharp.dll::UGUI::Shared::Scripts::BaseDecider::BaseDecider_StartB
               (StringLiteral_DesktopBase,(MethodInfo *)0x0);
     return;
   }
-  BaseDecider_Log(StringLiteral_Starting_by_button_Base,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?(&StringLiteral_BaseDecider___);
+    cRam_? = '\x01';
+  }
+  pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_BaseDecider___,pSVar1,(MethodInfo *)0x0);
+  Assets::Scripts::AdIntegration::Web::WebAdManager::WebAdManager_AdLog_1(pSVar1,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';

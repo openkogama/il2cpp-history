@@ -17,7 +17,16 @@ void Assembly-CSharp.dll::ShowUse3D::ShowUse3D_CalculateUseGraphics
       if (pGVar1 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar1,0,(MethodInfo *)0x0);
-        return;
+        pTVar2 = (this->fields).textWithIcon;
+        if (pTVar2 != (TextWithIcon *)0x0) {
+          pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pTVar2,(MethodInfo *)0x0);
+          if (pGVar1 != (GameObject *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                      (pGVar1,((uint)pTVar2 & 0x8000) != 0,(MethodInfo *)0x0);
+            return;
+          }
+        }
       }
     }
   }
@@ -28,12 +37,21 @@ void Assembly-CSharp.dll::ShowUse3D::ShowUse3D_CalculateUseGraphics
     if (pGVar1 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar1,1,(MethodInfo *)0x0);
-      return;
+      pTVar2 = (this->fields).textWithIcon;
+      if (pTVar2 != (TextWithIcon *)0x0) {
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pTVar2,(MethodInfo *)0x0);
+        if (pGVar1 != (GameObject *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (pGVar1,0,(MethodInfo *)0x0);
+          return;
+        }
+      }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -51,7 +69,16 @@ void Assembly-CSharp.dll::ShowUse3D::ShowUse3D_Hide(ShowUse3D *this,MethodInfo *
     if (pGVar1 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar1,0,(MethodInfo *)0x0);
-      return;
+      this_00 = (this->fields).textWithIcon;
+      if (this_00 != (TextWithIcon *)0x0) {
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this_00,(MethodInfo *)0x0);
+        if (pGVar1 != (GameObject *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (pGVar1,0,(MethodInfo *)0x0);
+          return;
+        }
+      }
     }
   }
   func_?();
@@ -74,7 +101,16 @@ void Assembly-CSharp.dll::ShowUse3D::ShowUse3D_Show(ShowUse3D *this,MethodInfo *
     if (pGVar1 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar1,1,(MethodInfo *)0x0);
-      return;
+      this_00 = (this->fields).textWithIcon;
+      if (this_00 != (TextWithIcon *)0x0) {
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this_00,(MethodInfo *)0x0);
+        if (pGVar1 != (GameObject *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (pGVar1,1,(MethodInfo *)0x0);
+          return;
+        }
+      }
     }
   }
   func_?();

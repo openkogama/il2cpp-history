@@ -317,7 +317,7 @@ RemoveCubes_RemoveCubesWithinRadius_HandleCubeOnRadiusLimit
     iVar3 = 1;
   }
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-    uVar2 = 0x1035;
+    uVar2 = 0x1036;
     func_?();
   }
   method_00 = (MethodInfo *)((uint)uVar2 << 0x10);
@@ -343,8 +343,8 @@ RemoveCubes_RemoveCubesWithinRadius_HandleCubeOnRadiusLimit
   if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pos.z = -0x99;
-  uStack9 = 0x1035;
+  pos.z = 0x1d7;
+  uStack9 = 0x1036;
   bVar10 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
                     ((CubeBase *)a,(CubeBase *)0x0,(MethodInfo *)0x0);
   if ((bVar10 == 0) &&
@@ -377,7 +377,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius::
 {
   uVar1 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(0xbbc4);
+    func_?(0xcc0c);
     cRam_? = '\x01';
   }
   TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->centerDamage = centerDamage;

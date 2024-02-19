@@ -702,9 +702,9 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_CreateBox
             uVar4 = (pVVar3->oneVector).x;
             uVar5 = (pVVar3->oneVector).y;
             if (pTVar2 != (Transform *)0x0) {
-              value.y = (float)uVar5 * 4.1789683e-29;
-              value.x = (float)uVar4 * 4.1789683e-29;
-              value.z = (pVVar3->oneVector).z * 4.1789683e-29;
+              value.y = (float)uVar5 * 4.1795653e-29;
+              value.x = (float)uVar4 * 4.1795653e-29;
+              value.z = (pVVar3->oneVector).z * 4.1795653e-29;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                         (pTVar2,value,(MethodInfo *)0x0);
               return pGVar1;
@@ -1486,13 +1486,19 @@ code_?:
              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                        (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
      this == (MVWorldObjectClient *)0x0)) {
-    func_?();
-    do {
-                    /* WARNING: Do nothing block with infinite loop */
-    } while( true );
+    bVar2 = 0;
+    pbVar3 = (byte *)func_?();
+    bVar4 = *pbVar3;
+    bVar5 = (byte)pbVar3;
+    bVar6 = *pbVar3;
+    *pbVar3 = bVar6 + bVar5 + bVar2;
+    cRam_? = cRam_? + bVar5 + (CARRY1(bVar4,bVar5) || CARRY1(bVar6 + bVar5,bVar2));
+    pcVar7 = (code *)swi(3);
+    pMVar8 = (MVWorldObjectClient *)(*pcVar7)();
+    return pMVar8;
   }
   method = (MethodInfo *)0x0;
-  unaff_EBP = in_stack_2;
+  unaff_EBP = in_stack_9;
   unaff_ESI = pMVar1;
   goto code_?;
 }

@@ -23,6 +23,7 @@ public class ScreenSizeOptimizer : MonoBehaviour
 	public ScreenSizeOptimizer();
 
 	// Methods
+	private static void DebugLogWeb(string s);
 	protected void Awake();
 	protected void OnDestroy();
 	private void HalfResolution();

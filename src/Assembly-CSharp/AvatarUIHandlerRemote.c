@@ -833,11 +833,10 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
     }
   }
   uVar12 = func_?();
-  *(char *)(extraout_ECX + -0xe) =
-       *(char *)(extraout_ECX + -0xe) + (char)uVar12 + -0x10 + (uVar12 < 0x2df23110);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
-  return;
+  *extraout_ECX = *extraout_ECX + (char)(uVar12 + 0xd20beef0 >> 8) + (uVar12 < 0x2df41110);
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
 }
 
 

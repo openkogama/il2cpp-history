@@ -312,29 +312,29 @@ void Assembly-CSharp.dll::LobbyFlowMenu::LobbyFlowMenu_GoToMenu
     return;
   case LobbyFlowMenu_LobbyFlowMenuType__Enum_Briefing:
     method_00 = TypeInfo__LobbyFlowMenu____c__DisplayClass24_2;
-    pOVar3 = (Object *)func_?();
+    value = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              (pOVar3,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     WinningConditionControl::WinningConditionControl_TryGetPrioritizedWinCondition
               ((WinningConditionType__Enum *)&stack0xfffffff8,(MethodInfo *)0x0);
     original = (this->fields).winningConditionBriefingMenuPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pOVar4 = (Object__Class *)
+    pOVar3 = (Object__Class *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                        ((Object *)original,
                         WinningConditionBriefing_MethodInfo__UnityEngine__Object__Instantiate<WinningConditionBriefing>_WinningConditionBriefing_
                        );
-    if (pOVar3 != (Object *)0x0) {
-      pOVar3[1].klass = pOVar4;
+    if (value != (Object *)0x0) {
+      value[1].klass = pOVar3;
       func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                 ((Component *)this,(MethodInfo *)0x0);
-      pEVar5 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+      pEVar4 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)pEVar5,pOVar3,
+                ((UnityAction_2_System_Object_System_Object_ *)pEVar4,value,
                  MethodInfo__LobbyFlowMenu____c__DisplayClass24_2___GoToMenu_b__3_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
@@ -345,44 +345,44 @@ void Assembly-CSharp.dll::LobbyFlowMenu::LobbyFlowMenu_GoToMenu
       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
       ;
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                ((GameObject *)&UNK_?,(BaseEventData *)0x0,pEVar5,
+                ((GameObject *)&UNK_?,(BaseEventData *)0x0,pEVar4,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      if (pOVar3[1].klass != (Object__Class *)0x0) {
+      if (value[1].klass != (Object__Class *)0x0) {
         WinningConditionBriefing::WinningConditionBriefing_Initialize
-                  ((WinningConditionBriefing *)pOVar3[1].klass,
-                   (WinningConditionType__Enum)winConType,(MethodInfo *)0x0);
-        pOVar4 = pOVar3[1].klass;
-        if (pOVar4 != (Object__Class *)0x0) {
-          (pOVar4->_0).declaringType = (Il2CppClass *)(this->fields).selectedTeam;
-          *(undefined1 *)&(pOVar4->_0).castClass = 1;
+                  ((WinningConditionBriefing *)value[1].klass,(WinningConditionType__Enum)winConType
+                   ,(MethodInfo *)0x0);
+        pOVar3 = value[1].klass;
+        if (pOVar3 != (Object__Class *)0x0) {
+          (pOVar3->_0).declaringType = (Il2CppClass *)(this->fields).selectedTeam;
+          *(undefined1 *)&(pOVar3->_0).castClass = 1;
           return;
         }
       }
     }
     break;
   case LobbyFlowMenu_LobbyFlowMenuType__Enum_Settings:
-    pOVar3 = (Object *)func_?();
+    value = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              (pOVar3,ExceptionArgument__Enum_obj,(MethodInfo *)this);
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)this);
     original_00 = (this->fields).profileSettingsMenuPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pOVar4 = (Object__Class *)
+    pOVar3 = (Object__Class *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                        ((Object *)original_00,
                         ProfileSettingsMenu_MethodInfo__UnityEngine__Object__Instantiate<ProfileSettingsMenu>_ProfileSettingsMenu_
                        );
-    if (pOVar3 != (Object *)0x0) {
-      pOVar3[1].klass = pOVar4;
+    if (value != (Object *)0x0) {
+      value[1].klass = pOVar3;
       func_?();
       pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
-      pEVar5 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+      pEVar4 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)pEVar5,pOVar3,
+                ((UnityAction_2_System_Object_System_Object_ *)pEVar4,value,
                  MethodInfo__LobbyFlowMenu____c__DisplayClass24_0___GoToMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
@@ -390,37 +390,37 @@ void Assembly-CSharp.dll::LobbyFlowMenu::LobbyFlowMenu_GoToMenu
         func_?();
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar1,(BaseEventData *)0x0,pEVar5,
+                (pGVar1,(BaseEventData *)0x0,pEVar4,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      if (pOVar3[1].klass != (Object__Class *)0x0) {
+      if (value[1].klass != (Object__Class *)0x0) {
         ProfileSettingsMenu::ProfileSettingsMenu_UpdateBackButtonVisibility
-                  ((ProfileSettingsMenu *)pOVar3[1].klass,(MethodInfo *)0x0);
+                  ((ProfileSettingsMenu *)value[1].klass,(MethodInfo *)0x0);
         return;
       }
     }
     break;
   case LobbyFlowMenu_LobbyFlowMenuType__Enum_TeamSelect:
-    pOVar3 = (Object *)func_?();
+    value = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              (pOVar3,ExceptionArgument__Enum_obj,(MethodInfo *)this);
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)this);
     original_01 = (this->fields).teamMenuPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pOVar4 = (Object__Class *)
+    pOVar3 = (Object__Class *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                        ((Object *)original_01,
                         TeamMenu_MethodInfo__UnityEngine__Object__Instantiate<TeamMenu>_TeamMenu_);
-    if (pOVar3 != (Object *)0x0) {
-      pOVar3[1].klass = pOVar4;
+    if (value != (Object *)0x0) {
+      value[1].klass = pOVar3;
       func_?();
       pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
-      pEVar5 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+      pEVar4 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)pEVar5,pOVar3,
+                ((UnityAction_2_System_Object_System_Object_ *)pEVar4,value,
                  MethodInfo__LobbyFlowMenu____c__DisplayClass24_1___GoToMenu_b__2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
@@ -428,41 +428,40 @@ void Assembly-CSharp.dll::LobbyFlowMenu::LobbyFlowMenu_GoToMenu
         func_?();
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar1,(BaseEventData *)0x0,pEVar5,
+                (pGVar1,(BaseEventData *)0x0,pEVar4,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      if (pOVar3[1].klass != (Object__Class *)0x0) {
-        TeamMenu::TeamMenu_UpdateBackButtonVisibility((TeamMenu *)pOVar3[1].klass,(MethodInfo *)0x0)
-        ;
+      if (value[1].klass != (Object__Class *)0x0) {
+        TeamMenu::TeamMenu_UpdateBackButtonVisibility((TeamMenu *)value[1].klass,(MethodInfo *)0x0);
         return;
       }
     }
     break;
   case LobbyFlowMenu_LobbyFlowMenuType__Enum_SpawnRoleSelect:
-    pOVar3 = (Object *)func_?();
+    value = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              (pOVar3,ExceptionArgument__Enum_obj,(MethodInfo *)this);
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)this);
     original_02 = (this->fields).spawnRoleMenuPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pOVar4 = (Object__Class *)
+    pOVar3 = (Object__Class *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                        ((Object *)original_02,
                         SpawnRoleMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleMenu>_SpawnRoleMenu_
                        );
-    if (pOVar3 != (Object *)0x0) {
-      pOVar3[1].klass = pOVar4;
+    if (value != (Object *)0x0) {
+      value[1].klass = pOVar3;
       func_?();
-      if (pOVar3[1].klass != (Object__Class *)0x0) {
+      if (value[1].klass != (Object__Class *)0x0) {
         SpawnRoleMenu::SpawnRoleMenu_Initialize
-                  ((SpawnRoleMenu *)pOVar3[1].klass,(this->fields).selectedTeam,(MethodInfo *)0x0);
+                  ((SpawnRoleMenu *)value[1].klass,(this->fields).selectedTeam,(MethodInfo *)0x0);
         pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
-        pEVar5 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+        pEVar4 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)pEVar5,pOVar3,
+                  ((UnityAction_2_System_Object_System_Object_ *)pEVar4,value,
                    MethodInfo__LobbyFlowMenu____c__DisplayClass24_3___GoToMenu_b__4_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
@@ -470,16 +469,27 @@ void Assembly-CSharp.dll::LobbyFlowMenu::LobbyFlowMenu_GoToMenu
           func_?();
         }
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar1,(BaseEventData *)0x0,pEVar5,
+                  (pGVar1,(BaseEventData *)0x0,pEVar4,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                   );
         return;
       }
     }
   }
-  func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  bVar5 = 0;
+  bVar6 = func_?();
+  bVar5 = 0x99 < bVar6 | bVar5;
+  pbVar7 = (byte *)((int)&value[0xc].monitor + 3);
+  bVar6 = *pbVar7;
+  bVar8 = (byte)((uint)(extraout_ECX + -1) >> 8);
+  bVar9 = *pbVar7 + bVar8;
+  *pbVar7 = bVar9 + bVar5;
+  *(char *)&value->klass =
+       *(char *)&value->klass + (char)((uint)(extraout_ECX + -2) >> 8) +
+       (CARRY1(bVar6,bVar8) || CARRY1(bVar9,bVar5));
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
+  return;
 }
 
 

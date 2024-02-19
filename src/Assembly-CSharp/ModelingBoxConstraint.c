@@ -8,7 +8,7 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_ChangeBox
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ConstraintBoxChangedEventArgs);
-    func_?(0x55c);
+    func_?(0x1564);
     cRam_? = '\x01';
   }
   uVar1 = 0;
@@ -159,10 +159,10 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint__ctor
   uVar1 = (undefined2)((uint)in_stack_2 >> 0x10);
   uVar3 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(0x3638);
+    func_?(0x4648);
     in_stack_4 = 0x119c;
-    func_?(0x55c);
-    func_?(0x4e94);
+    func_?(0x1564);
+    func_?(0x6244);
     cRam_? = '\x01';
   }
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
@@ -254,7 +254,7 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint__ctor_1
     IStack_2.z = minCorner.z;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__ConstraintBoxChangedEventArgs);
-      func_?(0x55c);
+      func_?(0x1564);
       cRam_? = '\x01';
     }
     uVar3 = 0;

@@ -279,55 +279,83 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Styles);
+    func_?();
     cRam_? = '\x01';
   }
   switch(team) {
   case MVTeam__Enum_Blue:
     pIVar1 = (this->fields).TeamImage;
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Styles);
+      func_?();
     }
-    colorStyle = ColorStyle__Enum_TeamBlue;
+    colorStyle = 1.12104e-44;
     break;
   case MVTeam__Enum_Red:
     pIVar1 = (this->fields).TeamImage;
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Styles);
+      func_?();
     }
-    colorStyle = ColorStyle__Enum_TeamRed;
+    colorStyle = 1.26117e-44;
     break;
   case MVTeam__Enum_Green:
     pIVar1 = (this->fields).TeamImage;
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Styles);
+      func_?();
     }
-    colorStyle = ColorStyle__Enum_TeamGreen;
+    colorStyle = 1.54143e-44;
     break;
   case MVTeam__Enum_Yellow:
     pIVar1 = (this->fields).TeamImage;
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Styles);
+      func_?();
     }
-    colorStyle = ColorStyle__Enum_TeamYellow;
+    colorStyle = 1.4013e-44;
     break;
   default:
     pIVar1 = (this->fields).TeamImage;
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Styles);
+      func_?();
     }
-    colorStyle = ColorStyle__Enum_OffGray;
+    colorStyle = 7.9874e-44;
   }
-  pCVar2 = Styles::Styles_GetColor(&CStack_3,colorStyle,(MethodInfo *)0x0);
+  Styles::Styles_GetColor((Color *)&stack0xffffffec,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
   if (pIVar1 == (Image *)0x0) {
-    CStack_3.g = (float)&UNK_?;
+    uVar2 = func_?();
+    iVar3 = (int)((ulonglong)uVar2 >> 0x20);
+    out(0x27,(int)uVar2);
+    in_AF = 9 < ((byte)uVar2 & 0xf) | in_AF;
+    uVar4 = CONCAT31((int3)((ulonglong)uVar2 >> 8),(byte)uVar2 + in_AF * -6) & 0xffffff0f;
+    iVar5 = CONCAT22((short)(uVar4 >> 0x10),
+                     CONCAT11((char)((ulonglong)uVar2 >> 8) - in_AF,(char)uVar4));
+    pcVar6 = (char *)(iVar5 + iVar3);
+    cVar7 = (char)((uint)unaff_EBX >> 8);
+    *pcVar6 = *pcVar6 - cVar7;
+    pcVar6 = (char *)(iVar5 + iVar3);
+    cVar8 = *pcVar6;
+    *pcVar6 = *pcVar6 - cVar7;
+    if (*pcVar6 == '\0' || SBORROW1(cVar8,cVar7) != *pcVar6 < '\0') {
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
+    if ((iRam_? != 0) && (*(Transform **)(iRam_? + 0x90) != (Transform *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
+                ((Vector3 *)&stack0xffffffdc,*(Transform **)(iRam_? + 0x90),(MethodInfo *)0x0)
+      ;
+      this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      if ((this_00 != (MainCameraManager *)0x0) &&
+         (pMVar10 = MainCameraManager::MainCameraManager_get_CurrentCamera(this_00,(MethodInfo *)0x0)
+         , pMVar10 != (MVCameraBase *)0x0)) {
+        (*(code *)(pMVar10->klass->vtable).FocusOnObject.method)();
+        return;
+      }
+    }
     func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
+    pcVar9 = (code *)swi(3);
+    (*pcVar9)();
+    return;
   }
-  CStack_3.r = pCVar2->a;
-  CStack_3.g = (float)(pIVar1->klass->vtable).get_raycastTarget.methodPtr;
-  (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,pCVar2->r,pCVar2->g,pCVar2->b);
+  (*(code *)(pIVar1->klass->vtable).set_color.method)();
   return;
 }
 
