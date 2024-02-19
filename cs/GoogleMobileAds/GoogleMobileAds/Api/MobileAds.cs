@@ -10,7 +10,7 @@ using System.Threading;
 using GoogleMobileAds;
 using GoogleMobileAds.Common;
 
-// Image 38: GoogleMobileAds.dll - Assembly: GoogleMobileAds, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
+// Image 37: GoogleMobileAds.dll - Assembly: GoogleMobileAds, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Api
 {
@@ -72,6 +72,7 @@ namespace GoogleMobileAds.Api
 		}
 	
 		// Constructors
+		static MobileAds();
 		public MobileAds();
 	
 		// Methods
@@ -80,6 +81,7 @@ namespace GoogleMobileAds.Api
 		public static void SetiOSAppPauseOnBackground(bool pause);
 		internal static IClientFactory GetClientFactory();
 		internal static void RaiseAction(Action action);
+		internal static void SetUnityMainThreadSynchronizationContext();
 		private static IMobileAdsClient GetMobileAdsClient();
 	}
 }

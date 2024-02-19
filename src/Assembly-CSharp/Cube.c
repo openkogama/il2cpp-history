@@ -125,7 +125,7 @@ float Assembly-CSharp.dll::Cube::Cube_CalculateAOLightCheap(Face__Enum face,int3
 {
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__ContainsKey_MV__WorldObject__IntVector_);
-    func_?(0xdd10);
+    func_?(0xee90);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&TypeInfo__SharedCubeFunctions);
     cRam_? = '\x01';
@@ -838,308 +838,289 @@ List_1_UnityEngine_Vector3_ * Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersF
   puVar4 = &UNK_?;
   pMVar5 = this;
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)this,8,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_);
-  uVar6 = (undefined1)((uint)in_stack_7 >> 0x18);
-  bVar8 = (byte)((uint)in_stack_9 >> 0x18);
-  iVar10 = 0;
+  iVar6 = 0;
   if (cubeCorners == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
-  while (iVar10 < (cubeCorners->fields)._size) {
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,iVar10,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    pMVar12 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    uVar6 = (undefined1)((uint)in_stack_7 >> 0x18);
-    bVar8 = (byte)((uint)in_stack_9 >> 0x18);
-    uVar13._0_4_ = (float)pVVar11->alias;
-    uVar13._4_4_ = (float)pVVar11->path;
-    pVVar14 = pVVar11->asset;
-    VVar15 = *pVVar11;
+  while (iVar6 < (cubeCorners->fields)._size) {
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,iVar6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    pMVar8 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
+    uVar9 = *(undefined8 *)pVVar7;
+    pVVar10 = pVVar7->asset;
+    VVar11 = *pVVar7;
     if (pLVar3 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) goto code_?;
-    piVar16 = &(pLVar3->fields)._version;
-    *piVar16 = *piVar16 + 1;
-    pMVar17 = (pLVar3->fields)._items;
-    if (pMVar17 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) goto code_?;
-    uVar18 = (pLVar3->fields)._size;
-    if (uVar18 < pMVar17->max_length) {
-      (pLVar3->fields)._size = uVar18 + 1;
-      if (pMVar17->max_length <= uVar18) goto code_?;
-      *(undefined8 *)(&pMVar17->vector[0].index + uVar18 * 3) = uVar13;
-      (&pMVar17->vector[0].actualWidth)[uVar18 * 3] = (float)pVVar14;
-      iVar10 = iVar10 + 1;
+    piVar12 = &(pLVar3->fields)._version;
+    *piVar12 = *piVar12 + 1;
+    pMVar13 = (pLVar3->fields)._items;
+    if (pMVar13 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) goto code_?;
+    uVar14 = (pLVar3->fields)._size;
+    if (uVar14 < pMVar13->max_length) {
+      (pLVar3->fields)._size = uVar14 + 1;
+      bVar15 = uVar14 < pMVar13->max_length;
+      if (!(bool)bVar15) goto code_?;
+      *(undefined8 *)(&pMVar13->vector[0].index + uVar14 * 3) = uVar9;
+      (&pMVar13->vector[0].actualWidth)[uVar14 * 3] = (float)pVVar10;
+      iVar6 = iVar6 + 1;
     }
     else {
-      mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__AddWithResize((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,(AnimatedTextureOffset_TextureOffsetAnimationData)VVar15,pMVar12->klass->rgctx_data[0xe].method);
-      iVar10 = iVar10 + 1;
-      in_stack_9 = (float)uVar13;
-      in_stack_7 = uVar13._4_4_;
-      in_stack_19 = pVVar14;
+      mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__AddWithResize((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,(AnimatedTextureOffset_TextureOffsetAnimationData)VVar11,pMVar8->klass->rgctx_data[0xe].method);
+      iVar6 = iVar6 + 1;
     }
   }
-  iVar10 = 0;
-  while( true ) {
-    uVar6 = (undefined1)((uint)in_stack_7 >> 0x18);
-    bVar8 = (byte)((uint)in_stack_9 >> 0x18);
-    if ((cubeCorners->fields)._size <= iVar10) break;
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,iVar10,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    pMVar12 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    uVar6 = (undefined1)((uint)in_stack_7 >> 0x18);
-    bVar8 = (byte)((uint)in_stack_9 >> 0x18);
-    uVar13 = *(undefined8 *)pVVar11;
-    pVVar14 = pVVar11->asset;
-    VVar15 = *pVVar11;
+  iVar6 = 0;
+  while (iVar6 < (cubeCorners->fields)._size) {
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,iVar6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    pMVar8 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
+    uVar9 = *(undefined8 *)pVVar7;
+    pVVar10 = pVVar7->asset;
+    VVar11 = *pVVar7;
     if (this == (MethodInfo *)0x0) goto code_?;
     this->klass = (Il2CppClass *)((int)&this->klass->image + 1);
-    pMVar17 = ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___Fields *)&this->invoker_method)->_items;
-    if (pMVar17 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) goto code_?;
-    pcVar20 = this->name;
-    if (pcVar20 < (char *)pMVar17->max_length) {
-      this->name = pcVar20 + 1;
-      if ((char *)pMVar17->max_length <= pcVar20) goto code_?;
-      *(undefined8 *)(&pMVar17->vector[0].index + (int)pcVar20 * 3) = uVar13;
-      (&pMVar17->vector[0].actualWidth)[(int)pcVar20 * 3] = (float)pVVar14;
-      iVar10 = iVar10 + 1;
+    pMVar13 = ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___Fields *)&this->invoker_method)->_items;
+    if (pMVar13 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) goto code_?;
+    pcVar16 = this->name;
+    if (pcVar16 < (char *)pMVar13->max_length) {
+      this->name = pcVar16 + 1;
+      bVar15 = pcVar16 < (char *)pMVar13->max_length;
+      if (!(bool)bVar15) goto code_?;
+      *(undefined8 *)(&pMVar13->vector[0].index + (int)pcVar16 * 3) = uVar9;
+      (&pMVar13->vector[0].actualWidth)[(int)pcVar16 * 3] = (float)pVVar10;
+      iVar6 = iVar6 + 1;
     }
     else {
-      mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__AddWithResize((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,(AnimatedTextureOffset_TextureOffsetAnimationData)VVar15,pMVar12->klass->rgctx_data[0xe].method);
-      iVar10 = iVar10 + 1;
+      mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__AddWithResize((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,(AnimatedTextureOffset_TextureOffsetAnimationData)VVar11,pMVar8->klass->rgctx_data[0xe].method);
+      iVar6 = iVar6 + 1;
     }
   }
   switch(direction) {
   default:
     goto code_?;
   case Face__Enum_Bottom:
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
     if (pLVar3 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,7,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,7,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
     direction = (Face__Enum)&UNK_?;
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,5,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,4,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,5,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    in_stack_21 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_;
-    puVar22 = (undefined8 *)&stack0x000000d4;
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,5,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,4,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,5,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    in_stack_17 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_;
+    puVar18 = (undefined8 *)&stack0x000000d4;
     goto code_?;
   case Face__Enum_Front:
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
     if (pLVar3 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,1,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,4,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,1,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,4,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
     direction = (Face__Enum)&UNK_?;
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,5,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,7,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    in_stack_21 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_;
-    puVar22 = (undefined8 *)&stack0x000000d4;
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,5,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,7,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    in_stack_17 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_;
+    puVar18 = (undefined8 *)&stack0x000000d4;
     goto code_?;
   case Face__Enum_Back:
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
     if (this == (MethodInfo *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,1,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,4,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,1,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,4,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
     direction = (Face__Enum)&UNK_?;
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,5,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,7,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    uVar23 = pVVar11->alias;
-    uVar24 = pVVar11->path;
-    in_stack_21 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_;
-    in_stack_25 = pVVar11->asset;
-    in_stack_26 = (VisualTreeAsset_UsingEntry *)uVar23;
-    in_stack_27 = (MethodInfo *)uVar24;
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,5,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    in_stack_21 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
-    in_stack_26 = (VisualTreeAsset_UsingEntry *)&stack0xffffffe8;
-    in_stack_25 = (VisualTreeAsset *)0x2;
-    in_stack_27 = this;
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(in_stack_26,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,5,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,7,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    uVar19 = pVVar7->alias;
+    uVar20 = pVVar7->path;
+    in_stack_17 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_;
+    in_stack_21 = pVVar7->asset;
+    in_stack_22 = (VisualTreeAsset_UsingEntry *)uVar19;
+    in_stack_23 = (MethodInfo *)uVar20;
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,5,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    in_stack_17 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
+    in_stack_22 = (VisualTreeAsset_UsingEntry *)&stack0xffffffe8;
+    in_stack_21 = (VisualTreeAsset *)0x2;
+    in_stack_23 = this;
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(in_stack_22,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
     if (pLVar3 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,1,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,5,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,4,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    index = 5;
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,1,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,5,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,4,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    index_00 = 5;
     break;
   case Face__Enum_Left:
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
     if (this == (MethodInfo *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,1,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,4,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,1,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,4,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
     direction = (Face__Enum)&UNK_?;
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,5,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,7,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    uVar28 = pVVar11->alias;
-    uVar29 = pVVar11->path;
-    in_stack_21 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_;
-    in_stack_25 = pVVar11->asset;
-    in_stack_26 = (VisualTreeAsset_UsingEntry *)uVar28;
-    in_stack_27 = (MethodInfo *)uVar29;
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,5,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    in_stack_21 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
-    in_stack_26 = (VisualTreeAsset_UsingEntry *)&stack0xffffffe8;
-    in_stack_25 = (VisualTreeAsset *)0x1;
-    in_stack_27 = this;
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(in_stack_26,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,5,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,7,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    uVar24 = pVVar7->alias;
+    uVar25 = pVVar7->path;
+    in_stack_17 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_;
+    in_stack_21 = pVVar7->asset;
+    in_stack_22 = (VisualTreeAsset_UsingEntry *)uVar24;
+    in_stack_23 = (MethodInfo *)uVar25;
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,5,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    in_stack_17 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
+    in_stack_22 = (VisualTreeAsset_UsingEntry *)&stack0xffffffe8;
+    in_stack_21 = (VisualTreeAsset *)0x1;
+    in_stack_23 = this;
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(in_stack_22,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
     if (pLVar3 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,1,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,4,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,5,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,5,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    index = 6;
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,1,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,4,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,5,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,5,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    index_00 = 6;
     break;
   case Face__Enum_Right:
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
     if (this == (MethodInfo *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,1,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,4,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,1,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,4,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
     direction = (Face__Enum)&UNK_?;
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,5,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,7,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    uVar30 = pVVar11->alias;
-    uVar31 = pVVar11->path;
-    in_stack_21 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_;
-    in_stack_25 = pVVar11->asset;
-    in_stack_26 = (VisualTreeAsset_UsingEntry *)uVar30;
-    in_stack_27 = (MethodInfo *)uVar31;
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,5,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    in_stack_21 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
-    in_stack_26 = (VisualTreeAsset_UsingEntry *)&stack0xffffffe8;
-    in_stack_25 = (VisualTreeAsset *)0x3;
-    in_stack_27 = this;
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(in_stack_26,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,5,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,7,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    uVar26 = pVVar7->alias;
+    uVar27 = pVVar7->path;
+    in_stack_17 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_;
+    in_stack_21 = pVVar7->asset;
+    in_stack_22 = (VisualTreeAsset_UsingEntry *)uVar26;
+    in_stack_23 = (MethodInfo *)uVar27;
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)this,5,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    in_stack_17 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
+    in_stack_22 = (VisualTreeAsset_UsingEntry *)&stack0xffffffe8;
+    in_stack_21 = (VisualTreeAsset *)0x3;
+    in_stack_23 = this;
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(in_stack_22,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
     if (pLVar3 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,1,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,5,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,5,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar11,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    index = 4;
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,0,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,1,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,2,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,3,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,5,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,4,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,6,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,5,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,6,(AnimatedTextureOffset_TextureOffsetAnimationData)*pVVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    index_00 = 4;
   }
-  pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-  puVar22 = (undefined8 *)&stack0x00000214;
+  pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,index_00,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+  puVar18 = (undefined8 *)&stack0x00000214;
 code_?:
-  pVVar14 = pVVar11->asset;
-  *puVar22 = *(undefined8 *)pVVar11;
-  *(VisualTreeAsset **)(puVar22 + 1) = pVVar14;
+  pVVar10 = pVVar7->asset;
+  *puVar18 = *(undefined8 *)pVVar7;
+  *(VisualTreeAsset **)(puVar18 + 1) = pVVar10;
   value.frameToChangeTextureAt = (float)in_stack_1;
   value.textureOffset = (float)in_stack_2;
   value._8_4_ = puVar4;
-  mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,in_stack_32,value,pMVar5);
+  mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLVar3,in_stack_28,value,pMVar5);
   cubeCorners = (List_1_UnityEngine_Vector3_ *)pLVar3;
 code_?:
   if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pQVar33 = Cube_GetFromTopRotation((Quaternion *)&stack0xffffffc0,direction,(MethodInfo *)0x0);
-  uVar13._0_4_ = 0.0;
-  bVar8 = (byte)((uint)pQVar33->w >> 0x18);
+  Cube_GetFromTopRotation((Quaternion *)&stack0xffffffc0,direction,(MethodInfo *)0x0);
+  index = 0.0;
   if ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)cubeCorners != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) {
-    for (; (int)(float)uVar13 < (((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)cubeCorners)->fields)._size; uVar13._0_4_ = (float)((int)(float)uVar13 + 1)) {
+    for (; (int)index < (((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)cubeCorners)->fields)._size; index = (float)((int)index + 1)) {
       pLVar3 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)cubeCorners;
-      uVar13._4_4_ = (float)uVar13;
+      fVar29 = index;
       pMVar5 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
-      pVVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,(int32_t)(float)uVar13,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-      uVar34 = pVVar11->alias;
-      rotation.y = uVar13._4_4_;
+      pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,(int32_t)index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+      uVar30 = pVVar7->alias;
+      rotation.y = fVar29;
       rotation.x = (float)pLVar3;
       rotation.z = (float)pMVar5;
-      rotation.w = (float)uVar34;
-      pVVar35 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1((Vector3 *)&stack0xffffffdc,rotation,(Vector3)*pVVar11,(MethodInfo *)0x0);
-      pAVar36 = (AnimatedTextureOffset_TextureOffsetAnimationData *)MathFunctions::MathFunctions_RoundVector((Vector3 *)&stack0xffffffd0,*pVVar35,3,(MethodInfo *)0x0);
-      mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)cubeCorners,(int32_t)(float)uVar13,*pAVar36,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+      rotation.w = (float)uVar30;
+      pVVar31 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1((Vector3 *)&stack0xffffffdc,rotation,(Vector3)*pVVar7,(MethodInfo *)0x0);
+      pAVar32 = (AnimatedTextureOffset_TextureOffsetAnimationData *)MathFunctions::MathFunctions_RoundVector((Vector3 *)&stack0xffffffd0,*pVVar31,3,(MethodInfo *)0x0);
+      mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)cubeCorners,(int32_t)index,*pAVar32,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
     }
     return (List_1_UnityEngine_Vector3_ *)(List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)cubeCorners;
   }
 code_?:
+  bVar15 = 0;
   func_?();
 code_?:
-  uVar13 = func_?();
-  uVar13._4_4_ = (byte *)((ulonglong)uVar13 >> 0x20);
-  bVar37 = 0x4fefa7a5 < (uint)uVar13;
-  pbVar38 = (byte *)(extraout_ECX + 0x4e);
-  bVar39 = *pbVar38 + (byte)this;
-  bVar40 = CARRY1(*pbVar38,(byte)this) || CARRY1(bVar39,bVar37);
-  *pbVar38 = bVar39 + bVar37;
-  bVar37 = CARRY1(*uVar13._4_4_,bVar8) || CARRY1(*uVar13._4_4_ + bVar8,bVar40);
-  *uVar13._4_4_ = *uVar13._4_4_ + bVar8 + bVar40;
-  pbVar38 = (byte *)(extraout_ECX + 0x53);
-  bVar8 = *pbVar38;
-  bVar39 = *pbVar38 + (byte)extraout_ECX;
-  *pbVar38 = bVar39 + bVar37;
-  pcVar20 = (char *)(CONCAT31((int3)in_stack_19,uVar6) + -0x33efa7aa);
-  *pcVar20 = *pcVar20 + (char)((ulonglong)uVar13 >> 0x20) + (CARRY1(bVar8,(byte)extraout_ECX) || CARRY1(bVar39,bVar37));
-  pcVar41 = (code *)swi(3);
-  pLVar42 = (List_1_UnityEngine_Vector3_ *)(*pcVar41)();
-  return pLVar42;
+  func_?();
+  pbVar33 = (byte *)(extraout_ECX + 0x5210585c);
+  bVar34 = *pbVar33;
+  bVar35 = (byte)((uint)extraout_ECX >> 8);
+  bVar36 = *pbVar33 + bVar35;
+  *pbVar33 = bVar36 + bVar15;
+  *(char *)(extraout_ECX + -0x1fefa79f) = *(char *)(extraout_ECX + -0x1fefa79f) + (char)this + (CARRY1(bVar34,bVar35) || CARRY1(bVar36,bVar15));
+  pcVar37 = (code *)swi(3);
+  pLVar38 = (List_1_UnityEngine_Vector3_ *)(*pcVar37)();
+  return pLVar38;
 }
 
 
@@ -1280,7 +1261,7 @@ FaceData__Array * Assembly-CSharp.dll::Cube::Cube_GenerateCubeFaces(Cube *cube,I
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__Add_FaceData_);
-    func_?(0xcc08);
+    func_?(0xdd4c);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__List__);
     func_?(&TypeInfo__System__Collections__Generic__List<FaceData>);
     cRam_? = '\x01';
@@ -1326,10 +1307,10 @@ FaceData__Array * Assembly-CSharp.dll::Cube::Cube_GenerateCubeFacesCheap(Cube *c
     func_?(&MethodInfo__Cube___GenerateCubeFacesCheap_g__insideCheck_26_4_int_);
     func_?(&MethodInfo__Cube___GenerateCubeFacesCheap_g__insideCheck_26_5_int_);
     func_?(&TypeInfo__Cube);
-    func_?(0xbed0);
+    func_?(0xcf9c);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__Add_FaceData_);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__ToArray__);
-    func_?(0xcb90);
+    func_?(0xdcd4);
     func_?(&TypeInfo__System__Collections__Generic__List<FaceData>);
     cRam_? = '\x01';
   }
@@ -2087,380 +2068,129 @@ Vector3 * Assembly-CSharp.dll::Cube::Cube_GetDefaultNormal(Vector3 *__return_sto
     __return_storage_ptr__->y = 0.0;
     __return_storage_ptr__->z = 0.0;
     return __return_storage_ptr__;
+  default:
+    uVar1 = func_?(&TypeInfo__System__NotImplementedException);
+    this = (NotImplementedException *)func_?(uVar1);
+    mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor(this,(MethodInfo *)0x0);
+    uVar1 = func_?(&MethodInfo__Cube__GetDefaultNormal_MV__WorldObject__Face_);
+    pVVar2 = (Vector3 *)func_?(this,uVar1);
+    return pVVar2;
   }
-  func_?();
-  this = (NotImplementedException *)func_?();
-  mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor(this,(MethodInfo *)0x0);
-  method_00 = (MethodInfo *)func_?();
-  bVar1 = (undefined1 *)0xffffffeb < &stack0xffffffe0;
-  edge = this;
-  uVar2 = func_?();
-  pbVar3 = (byte *)((ulonglong)uVar2 >> 0x20);
-  this_00 = (GameObject *)uVar2;
-  if (bVar1) {
-    bVar4 = (byte)uVar2;
-    bVar5 = (byte)extraout_ECX;
-    bVar6 = bVar5 + bVar4;
-    bVar7 = CARRY1(bVar5,bVar4) || CARRY1(bVar6,bVar1);
-    iVar8 = CONCAT31((int3)((uint)extraout_ECX >> 8),bVar6 + bVar1);
-    if (!CARRY1(bVar5,bVar4) && !CARRY1(bVar6,bVar1)) {
-      edge = (NotImplementedException *)0x0;
-      goto code_?;
-    }
-    bVar5 = (byte)((ulonglong)uVar2 >> 8);
-    bVar9 = (byte)((uint)unaff_EBX >> 8);
-    bVar6 = bVar9 + bVar5;
-    bVar1 = CARRY1(bVar6,bVar7);
-    bVar10 = CARRY1(bVar9,bVar5) || bVar1;
-    cVar11 = (char)unaff_EBX;
-    unaff_EBX = CONCAT22((short)((uint)unaff_EBX >> 0x10),CONCAT11(bVar6 + bVar7,cVar11));
-    if (!CARRY1(bVar9,bVar5) && !bVar1) goto code_?;
-    bVar6 = *pbVar3;
-    bVar5 = *pbVar3;
-    *pbVar3 = bVar5 + bVar4 + bVar10;
-    if (*pbVar3 == 0) goto code_?;
-    cRam_? = cRam_? + cVar11 + (CARRY1(bVar6,bVar4) || CARRY1(bVar5 + bVar4,bVar10));
-    if (cRam_? != '\0') {
-      pcVar12 = (code *)swi(3);
-      pVVar13 = (Vector3 *)(*pcVar12)();
-      return pVVar13;
-    }
-  }
-  else {
-    *unaff_EDI = in_FPUControlWord;
-    unaff_EDI[2] = in_FPUStatusWord;
-    unaff_EDI[4] = in_FPUTagWord;
-    *(undefined4 *)(unaff_EDI + 10) = in_FPUDataPointer;
-    *(undefined4 *)(unaff_EDI + 6) = in_FPUInstructionPointer;
-    unaff_EDI[9] = in_FPULastInstructionOpcode;
-    *(unkbyte10 *)(unaff_EDI + 0xe) = extraout_ST0;
-    *(unkbyte10 *)(unaff_EDI + 0x13) = extraout_ST1;
-    *(unkbyte10 *)(unaff_EDI + 0x18) = in_ST2;
-    *(unkbyte10 *)(unaff_EDI + 0x1d) = in_ST3;
-    *(unkbyte10 *)(unaff_EDI + 0x22) = in_ST4;
-    *(unkbyte10 *)(unaff_EDI + 0x27) = in_ST5;
-    *(unkbyte10 *)(unaff_EDI + 0x2c) = in_ST6;
-    *(unkbyte10 *)(unaff_EDI + 0x31) = in_ST7;
-    unaff_EDI = (undefined2 *)((int)unaff_EDI >> 3);
-    this_00 = (GameObject *)*(undefined6 *)(pbVar3 + (int)&stack0xfffffffc * 2);
-    iVar8 = extraout_ECX;
-code_?:
-    cVar11 = (char)((uint)unaff_EBX >> 8) * '\x02';
-    unaff_EBX = CONCAT22((short)((uint)unaff_EBX >> 0x10),CONCAT11(cVar11,(char)unaff_EBX));
-    if (cVar11 == '\0') {
-code_?:
-      in_stack_14 = Cube_GetEdge((Cube *)face,(Face__Enum)method,(Edge__Enum)edge,method_00);
-      this_00 = (GameObject *)__return_storage_ptr__;
-      iVar8 = extraout_ECX_00;
-    }
-  }
-  this_00->klass = (GameObject__Class *)((int)&this_00->klass + (int)this_00->klass);
-  pbVar3 = (byte *)(iVar8 + -0x3b7cebbb);
-  bVar6 = *pbVar3;
-  bVar4 = (byte)iVar8;
-  *pbVar3 = *pbVar3 + bVar4;
-  pcVar15 = (char *)(unaff_EBX + -0x3f7af7bb);
-  *pcVar15 = *pcVar15 + bVar4 + CARRY1(bVar6,bVar4);
-  if ((*pcVar15 != '\0') && (pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0), in_stack_14 != (Vector3__Array *)0x0)) {
-    if (in_stack_14->max_length == 0) goto code_?;
-    uVar17 = in_stack_14->vector[0].x;
-    uVar18 = in_stack_14->vector[0].y;
-    if (pTVar16 != (Transform *)0x0) {
-      position_00.y = (float)uVar18 + (float)(int)unaff_EDI;
-      position_00.x = (float)uVar17 + (float)(int)this;
-      position_00.z = in_stack_14->vector[0].z + (float)unaff_EBX;
-      pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint((Vector3 *)&stack0xfffffff0,pTVar16,position_00,(MethodInfo *)0x0);
-      fVar19 = pVVar13->y;
-      fVar20 = pVVar13->z;
-      if (in_stack_14->max_length == 0) goto code_?;
-      in_stack_14->vector[0].x = pVVar13->x;
-      in_stack_14->vector[0].y = fVar19;
-      in_stack_14->vector[0].z = fVar20;
-      pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform((GameObject *)__return_storage_ptr__,(MethodInfo *)0x0);
-      if (in_stack_14->max_length < 2) goto code_?;
-      uVar21 = in_stack_14->vector[1].x;
-      uVar22 = in_stack_14->vector[1].y;
-      if (pTVar16 != (Transform *)0x0) {
-        position.y = (float)uVar22 + (float)(int)unaff_EDI;
-        position.x = (float)uVar21 + (float)(int)this;
-        position.z = in_stack_14->vector[1].z + (float)unaff_EBX;
-        pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint((Vector3 *)&stack0xfffffff0,pTVar16,position,(MethodInfo *)0x0);
-        if (1 < uRam_?) {
-          uRam_?._0_4_ = pVVar13->x;
-          uRam_?._4_4_ = pVVar13->y;
-          fRam00000024 = pVVar13->z;
-          return (Vector3 *)0x0;
-        }
-        goto code_?;
-      }
-    }
-  }
-  func_?();
-code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  pVVar13 = (Vector3 *)(*pcVar12)();
-  return pVVar13;
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
-/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* Vector3[] GetEdge(Cube, Face, Edge) */
 
 Vector3__Array * Assembly-CSharp.dll::Cube::Cube_GetEdge(Cube *cube,Face__Enum face,Edge__Enum edge,MethodInfo *method)
 
 {
-  puVar1 = &stack0xfffffffc;
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    func_?(&TypeInfo__Cube);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  if (cube == (Cube *)0x0) goto code_?;
-  pVVar2 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners((CubeBase *)cube,(MethodInfo *)0x0);
-  if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  unaff_ESI.value = Cube_GetFace_1(pVVar2,face,(MethodInfo *)0x0);
-  pVVar2 = (Vector3__Array *)func_?();
-  switch(edge) {
-  case Edge__Enum_Front:
-    if (unaff_ESI.value == (Vector3__Array *)0x0) break;
-    bVar3 = 0;
-    if (((Vector3__Array *)unaff_ESI.value)->max_length != 0) {
-      if (pVVar2 == (Vector3__Array *)0x0) break;
-      bVar3 = 0;
-      in_XMM0_Da = ((Vector3__Array *)unaff_ESI.value)->vector[0].x;
-      fVar4 = ((Vector3__Array *)unaff_ESI.value)->vector[0].y;
-      fVar5 = ((Vector3__Array *)unaff_ESI.value)->vector[0].z;
-      if (pVVar2->max_length != 0) {
-        pVVar2->vector[0].x = in_XMM0_Da;
-        pVVar2->vector[0].y = fVar4;
-        pVVar2->vector[0].z = fVar5;
-        bVar3 = ((Vector3__Array *)unaff_ESI.value)->max_length == 0;
-        if (1 < ((Vector3__Array *)unaff_ESI.value)->max_length) {
-          in_XMM0_Da = ((Vector3__Array *)unaff_ESI.value)->vector[1].x;
-          fVar4 = ((Vector3__Array *)unaff_ESI.value)->vector[1].y;
-          fVar5 = ((Vector3__Array *)unaff_ESI.value)->vector[1].z;
+  if (cube != (Cube *)0x0) {
+    pVVar1 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners((CubeBase *)cube,(MethodInfo *)0x0);
+    if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__Cube);
+    }
+    pVVar1 = Cube_GetFace_1(pVVar1,face,(MethodInfo *)0x0);
+    pVVar2 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,2);
+    switch(edge) {
+    case Edge__Enum_Front:
+      if (pVVar1 != (Vector3__Array *)0x0) {
+        if (pVVar1->max_length == 0) goto code_?;
+        if (pVVar2 != (Vector3__Array *)0x0) {
+          fVar3 = pVVar1->vector[0].y;
+          fVar4 = pVVar1->vector[0].z;
+          if (pVVar2->max_length == 0) goto code_?;
+          pVVar2->vector[0].x = pVVar1->vector[0].x;
+          pVVar2->vector[0].y = fVar3;
+          pVVar2->vector[0].z = fVar4;
+          if (pVVar1->max_length < 2) goto code_?;
+          uVar5._0_4_ = pVVar1->vector[1].x;
+          uVar5._4_4_ = pVVar1->vector[1].y;
+          fVar4 = pVVar1->vector[1].z;
 code_?:
-          bVar3 = pVVar2->max_length == 0;
           if (1 < pVVar2->max_length) {
-            pVVar2->vector[1].x = in_XMM0_Da;
-            pVVar2->vector[1].y = fVar4;
-            pVVar2->vector[1].z = fVar5;
+            pVVar2->vector[1].x = (float)(int)uVar5;
+            pVVar2->vector[1].y = (float)(int)((ulonglong)uVar5 >> 0x20);
+            pVVar2->vector[1].z = fVar4;
 code_?:
             return pVVar2;
           }
+          goto code_?;
         }
       }
-    }
-    goto code_?;
-  case Edge__Enum_Back:
-    if (unaff_ESI.value != (Vector3__Array *)0x0) {
-      bVar3 = ((Vector3__Array *)unaff_ESI.value)->max_length < 2;
-      if (2 < ((Vector3__Array *)unaff_ESI.value)->max_length) {
-        if (pVVar2 == (Vector3__Array *)0x0) break;
-        bVar3 = 0;
-        in_XMM0_Da = ((Vector3__Array *)unaff_ESI.value)->vector[2].x;
-        fVar4 = ((Vector3__Array *)unaff_ESI.value)->vector[2].y;
-        fVar5 = ((Vector3__Array *)unaff_ESI.value)->vector[2].z;
-        if (pVVar2->max_length != 0) {
-          pVVar2->vector[0].x = in_XMM0_Da;
-          pVVar2->vector[0].y = fVar4;
-          pVVar2->vector[0].z = fVar5;
-          bVar3 = ((Vector3__Array *)unaff_ESI.value)->max_length < 3;
-          if (3 < ((Vector3__Array *)unaff_ESI.value)->max_length) {
-            in_XMM0_Da = ((Vector3__Array *)unaff_ESI.value)->vector[3].x;
-            fVar4 = ((Vector3__Array *)unaff_ESI.value)->vector[3].y;
-            fVar5 = ((Vector3__Array *)unaff_ESI.value)->vector[3].z;
-            goto code_?;
-          }
+      break;
+    case Edge__Enum_Back:
+      if (pVVar1 != (Vector3__Array *)0x0) {
+        if (pVVar1->max_length < 3) goto code_?;
+        if (pVVar2 != (Vector3__Array *)0x0) {
+          fVar3 = pVVar1->vector[2].y;
+          fVar4 = pVVar1->vector[2].z;
+          if (pVVar2->max_length == 0) goto code_?;
+          pVVar2->vector[0].x = pVVar1->vector[2].x;
+          pVVar2->vector[0].y = fVar3;
+          pVVar2->vector[0].z = fVar4;
+          if (pVVar1->max_length < 4) goto code_?;
+          uVar5._0_4_ = pVVar1->vector[3].x;
+          uVar5._4_4_ = pVVar1->vector[3].y;
+          fVar4 = pVVar1->vector[3].z;
+          goto code_?;
         }
       }
+      break;
+    case Edge__Enum_Left:
+      if (pVVar1 != (Vector3__Array *)0x0) {
+        if (pVVar1->max_length < 4) goto code_?;
+        if (pVVar2 != (Vector3__Array *)0x0) {
+          fVar3 = pVVar1->vector[3].y;
+          fVar4 = pVVar1->vector[3].z;
+          if (pVVar2->max_length == 0) goto code_?;
+          pVVar2->vector[0].x = pVVar1->vector[3].x;
+          pVVar2->vector[0].y = fVar3;
+          pVVar2->vector[0].z = fVar4;
+          if (pVVar1->max_length == 0) goto code_?;
+          uVar5._0_4_ = pVVar1->vector[0].x;
+          uVar5._4_4_ = pVVar1->vector[0].y;
+          fVar4 = pVVar1->vector[0].z;
+          goto code_?;
+        }
+      }
+      break;
+    case Edge__Enum_Right:
+      if (pVVar1 != (Vector3__Array *)0x0) {
+        if (pVVar1->max_length < 2) goto code_?;
+        if (pVVar2 != (Vector3__Array *)0x0) {
+          fVar3 = pVVar1->vector[1].y;
+          fVar4 = pVVar1->vector[1].z;
+          if (pVVar2->max_length == 0) goto code_?;
+          pVVar2->vector[0].x = pVVar1->vector[1].x;
+          pVVar2->vector[0].y = fVar3;
+          pVVar2->vector[0].z = fVar4;
+          if (pVVar1->max_length < 3) goto code_?;
+          uVar5._0_4_ = pVVar1->vector[2].x;
+          uVar5._4_4_ = pVVar1->vector[2].y;
+          fVar4 = pVVar1->vector[2].z;
+          goto code_?;
+        }
+      }
+      break;
+    default:
       goto code_?;
-    }
-    break;
-  case Edge__Enum_Left:
-    if (unaff_ESI.value != (Vector3__Array *)0x0) {
-      bVar3 = ((Vector3__Array *)unaff_ESI.value)->max_length < 3;
-      if (3 < ((Vector3__Array *)unaff_ESI.value)->max_length) {
-        if (pVVar2 == (Vector3__Array *)0x0) break;
-        bVar3 = 0;
-        in_XMM0_Da = ((Vector3__Array *)unaff_ESI.value)->vector[3].x;
-        fVar4 = ((Vector3__Array *)unaff_ESI.value)->vector[3].y;
-        fVar5 = ((Vector3__Array *)unaff_ESI.value)->vector[3].z;
-        if (pVVar2->max_length != 0) {
-          pVVar2->vector[0].x = in_XMM0_Da;
-          pVVar2->vector[0].y = fVar4;
-          pVVar2->vector[0].z = fVar5;
-          bVar3 = 0;
-          if (((Vector3__Array *)unaff_ESI.value)->max_length != 0) {
-            in_XMM0_Da = ((Vector3__Array *)unaff_ESI.value)->vector[0].x;
-            fVar4 = ((Vector3__Array *)unaff_ESI.value)->vector[0].y;
-            fVar5 = ((Vector3__Array *)unaff_ESI.value)->vector[0].z;
-            goto code_?;
-          }
-        }
-      }
-      goto code_?;
-    }
-    break;
-  case Edge__Enum_Right:
-    if (unaff_ESI.value != (Vector3__Array *)0x0) {
-      bVar3 = ((Vector3__Array *)unaff_ESI.value)->max_length == 0;
-      if (1 < ((Vector3__Array *)unaff_ESI.value)->max_length) {
-        if (pVVar2 == (Vector3__Array *)0x0) break;
-        bVar3 = 0;
-        in_XMM0_Da = ((Vector3__Array *)unaff_ESI.value)->vector[1].x;
-        fVar4 = ((Vector3__Array *)unaff_ESI.value)->vector[1].y;
-        fVar5 = ((Vector3__Array *)unaff_ESI.value)->vector[1].z;
-        if (pVVar2->max_length != 0) {
-          pVVar2->vector[0].x = in_XMM0_Da;
-          pVVar2->vector[0].y = fVar4;
-          pVVar2->vector[0].z = fVar5;
-          bVar3 = ((Vector3__Array *)unaff_ESI.value)->max_length < 2;
-          if (2 < ((Vector3__Array *)unaff_ESI.value)->max_length) {
-            in_XMM0_Da = ((Vector3__Array *)unaff_ESI.value)->vector[2].x;
-            fVar4 = ((Vector3__Array *)unaff_ESI.value)->vector[2].y;
-            fVar5 = ((Vector3__Array *)unaff_ESI.value)->vector[2].z;
-            goto code_?;
-          }
-        }
-      }
-      goto code_?;
-    }
-    break;
-  default:
-    goto code_?;
-  }
-code_?:
-  bVar3 = 0;
-  func_?();
-code_?:
-  uVar6 = func_?();
-  uVar7 = (uint)uVar6;
-  uVar8 = (uint)bVar3;
-  uVar9 = uVar7 + 0x70105877;
-  bVar10 = 0x8fefa788 < uVar7 || CARRY4(uVar9,uVar8);
-  iVar11 = uVar9 + uVar8;
-  if ((0x8fefa788 < uVar7 || CARRY4(uVar9,uVar8)) || iVar11 == 0) {
-    pcVar12 = (char *)(unaff_EDI + 0x77eb1058 + (int)unaff_ESI.value * 2);
-    *pcVar12 = *pcVar12 + (char)((ulonglong)uVar6 >> 0x28) + bVar10;
-    pcVar13 = (code *)swi(3);
-    pVVar2 = (Vector3__Array *)(*pcVar13)();
-    return pVVar2;
-  }
-  uVar8 = (uint)bVar10;
-  pTVar14 = (Type__Class *)(&stack0x70105873 + iVar11 + -0x70105877 + uVar8);
-  if (pTVar14 != (Type__Class *)0x0 && (SCARRY4(iVar11,(int)&stack0xfffffffc) != SCARRY4((int)(&stack0x70105873 + iVar11 + -0x70105877),uVar8)) == (int)pTVar14 < 0) {
-    pTVar14 = (Type__Class *)0xe8119ba9;
-    if (unaff_EDI >> 8 == 0) {
-      puVar1 = &stack0xfffffffd;
-      goto code_?;
-    }
-    puVar15 = &stack0xe8119baa + ((unaff_EDI >> 0xf & 1U) != 0);
-    iRam_? = unaff_EDI >> 0x18;
-    uRam_? = 0xe8119b04;
-    pfVar16 = &unaff_EBX[0x3b1fd].vector[0x1d].z;
-    pVRame8119ae8 = unaff_ESI.value;
-    puRam_? = &stack0xfffffffc;
-    pVRame8119af4 = unaff_EBX;
-    uRam_? = (int)((ulonglong)uVar6 >> 0x20);
-    uRam_? = extraout_ECX;
-    puRam_? = puVar15;
-    *pfVar16 = (float)((int)*pfVar16 + 1);
-    *(int *)(extraout_ECX ^ (uint)puVar15) = (int)(puVar15 + *(int *)(extraout_ECX ^ (uint)puVar15));
-    unaff_EBX = (Vector3__Array *)0x0;
-    pTVar14 = TypeInfo__System__Type;
-  }
-  in_XMM0_Da = 1000.0;
-  unaff_ESI.value = TypeRef__Edge;
-code_?:
-  *(undefined4 *)(puVar1 + -0x24) = 0;
-  *(float *)(puVar1 + -0x20) = in_XMM0_Da;
-  *(Vector3__Array **)(puVar1 + -0x1c) = unaff_EBX;
-  if ((Vector3__Array *)(pTVar14->_1).cctor_finished_or_no_cctor == unaff_EBX) {
-    func_?();
-  }
-  enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle(unaff_ESI,(MethodInfo *)0x0);
-  if ((Vector3__Array *)(TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == unaff_EBX) {
-    func_?();
-  }
-  this = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
-  if (this != (Array *)0x0) {
-    pIVar17 = mscorlib.dll::System::Array::Array_GetEnumerator(this,(MethodInfo *)0x0);
-    *(IEnumerator **)(puVar1 + -0x14) = pIVar17;
-    *(Vector3__Array **)(puVar1 + -0x34) = unaff_EBX;
-    *(undefined1 **)(puVar1 + -0x30) = puVar1 + -0x14;
-    *(undefined1 **)(puVar1 + -0x2c) = puVar1 + -0x24;
-    *(undefined4 *)(puVar1 + -4) = 0;
-    puVar1[-4] = 1;
-    while (*(int *)(puVar1 + -0x14) != 0) {
-      cVar18 = func_?();
-      if (cVar18 == '\0') {
-        *(undefined4 *)(puVar1 + -4) = 0xffffffff;
-        iVar11 = func_?();
-        *(int *)(puVar1 + -0x24) = iVar11;
-        if (iVar11 == 0) {
-          *unaff_FS_OFFSET = *(undefined4 *)(puVar1 + -0xc);
-          return unaff_EBX;
-        }
-        func_?();
-        *unaff_FS_OFFSET = *(undefined4 *)(puVar1 + -0xc);
-        return unaff_EBX;
-      }
-      piVar19 = *(int **)(puVar1 + -0x14);
-      if (piVar19 == (int *)0x0) break;
-      uVar20 = 0;
-      uVar21 = *(ushort *)(*piVar19 + 0xb6);
-      if (uVar21 != 0) {
-        do {
-          if (*(IEnumerator__Class **)(*(int *)(*piVar19 + 0x58) + (uint)uVar20 * 8) == TypeInfo__System__Collections__IEnumerator) {
-            puVar22 = (undefined4 *)(*piVar19 + (*(int *)(*(int *)(*piVar19 + 0x58) + 4 + (uint)uVar20 * 8) + 0x19) * 8);
-            goto code_?;
-          }
-          uVar20 = uVar20 + 1;
-        } while (uVar20 < uVar21);
-      }
-      puVar22 = (undefined4 *)func_?();
-code_?:
-      piVar19 = (int *)(*(code *)*puVar22)();
-      if (piVar19 == (int *)0x0) break;
-      if (*(Il2CppClass **)(*piVar19 + 0x20) != (TypeInfo__Edge->_0).element_class) goto code_?;
-      pEVar23 = (Edge__Enum *)func_?();
-      pVVar2 = (Vector3__Array *)*pEVar23;
-      if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pVVar24 = Cube_GetEdgeVerticesWorld(*(GameObject **)(puVar1 + 8),*(Cube **)(puVar1 + 0xc),*(Face__Enum *)(puVar1 + 0x10),(Edge__Enum)pVVar2,*(IntVector *)(puVar1 + 0x20),(MethodInfo *)0x0);
-      *(undefined4 *)(puVar1 + -0x18) = 0x447a0000;
-      if (pVVar24 == (Vector3__Array *)0x0) break;
-      if (pVVar24->max_length == 0) {
-        func_?();
-code_?:
-        func_?();
-        break;
-      }
-      if (pVVar24->max_length < 2) goto code_?;
-      point.z._2_2_ = (short)((uint)*(undefined4 *)(puVar1 + 0x1c) >> 0x10);
-      point._0_10_ = *(unkbyte10 *)(puVar1 + 0x14);
-      MathFunctions::MathFunctions_DistancePointLine(point,pVVar24->vector[0],pVVar24->vector[1],(float *)(puVar1 + -0x18),(MethodInfo *)0x0);
-      unaff_EBX = *(Vector3__Array **)(puVar1 + -0x1c);
-      if (*(float *)(puVar1 + -0x18) < *(float *)(puVar1 + -0x20)) {
-        *(float *)(puVar1 + -0x20) = *(float *)(puVar1 + -0x18);
-        *(Vector3__Array **)(puVar1 + -0x1c) = pVVar2;
-        unaff_EBX = pVVar2;
-      }
     }
   }
   func_?();
 code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  pVVar2 = (Vector3__Array *)(*pcVar13)();
-  return pVVar2;
+  iVar6 = func_?();
+  *unaff_EBX = *unaff_EBX + (char)((uint)unaff_EBX >> 8) + ((in_stack_7 & 1) != 0);
+  LOCK();
+  *(char *)(iVar6 + 0x10) = (char)unaff_EBX;
+  UNLOCK();
+  pcVar8 = (code *)swi(3);
+  pVVar1 = (Vector3__Array *)(*pcVar8)();
+  return pVVar1;
 }
 
 
@@ -2545,7 +2275,7 @@ Edge__Enum Assembly-CSharp.dll::Cube::Cube_GetEdge_1(GameObject *gameObject,Cube
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
     func_?(&TypeRef__Edge);
-    func_?(0x4648);
+    func_?(0x5734);
     func_?(&TypeInfo__System__Enum);
     func_?(&TypeInfo__System__IDisposable);
     func_?(&TypeInfo__System__Collections__IEnumerator);
@@ -3486,7 +3216,6 @@ code_?:
 void Assembly-CSharp.dll::Cube::Cube_GetTriangle(int32_t triangleNr,Vector3__Array *triangleVertices,Vector3__Array *corners,MethodInfo *method)
 
 {
-  pVVar1 = unaff_EDI;
   switch(triangleNr) {
   case 0:
   case 4:
@@ -3497,69 +3226,59 @@ void Assembly-CSharp.dll::Cube::Cube_GetTriangle(int32_t triangleNr,Vector3__Arr
   case 9:
   case 10:
   case 0xb:
-    if ((corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 = triangleVertices, triangleVertices == (Vector3__Array *)0x0)) {
+    if ((corners == (Vector3__Array *)0x0) || (func_?(), triangleVertices == (Vector3__Array *)0x0)) {
 code_?:
+      bVar1 = 0;
       func_?();
-      bVar2 = extraout_EDX < *(uint *)(extraout_ECX + -0x6e2aefa8);
-      pbVar3 = (byte *)((int)&corners[-1].vector[0x16].z + 2);
-      bVar4 = *pbVar3 + (byte)unaff_EDI;
-      bVar5 = CARRY1(*pbVar3,(byte)unaff_EDI) || CARRY1(bVar4,bVar2);
-      *pbVar3 = bVar4 + bVar2;
-      pbVar3 = (byte *)((int)&pVVar1[0x25cd05].vector[0xe].z + 2);
-      bVar6 = (byte)(extraout_EDX >> 8);
-      bVar4 = *pbVar3 + bVar6;
-      bVar2 = CARRY1(*pbVar3,bVar6) || CARRY1(bVar4,bVar5);
-      *pbVar3 = bVar4 + bVar5;
-      bVar7 = (byte)((uint)unaff_EBX >> 8);
-      bVar5 = CARRY1(*unaff_EBX,bVar7) || CARRY1(*unaff_EBX + bVar7,bVar2);
-      *unaff_EBX = *unaff_EBX + bVar7 + bVar2;
-      bVar2 = CARRY1(*unaff_EBX,bVar7) || CARRY1(*unaff_EBX + bVar7,bVar5);
-      *unaff_EBX = *unaff_EBX + bVar7 + bVar5;
-      bVar5 = CARRY1(*unaff_EBX,bVar7) || CARRY1(*unaff_EBX + bVar7,bVar2);
-      *unaff_EBX = *unaff_EBX + bVar7 + bVar2;
-      bVar2 = CARRY1(*unaff_EBX,bVar7) || CARRY1(*unaff_EBX + bVar7,bVar5);
-      *unaff_EBX = *unaff_EBX + bVar7 + bVar5;
-      bVar5 = CARRY1(*unaff_EBX,bVar7) || CARRY1(*unaff_EBX + bVar7,bVar2);
-      *unaff_EBX = *unaff_EBX + bVar7 + bVar2;
-      bVar4 = *unaff_EBX;
-      bVar6 = *unaff_EBX;
-      *unaff_EBX = bVar6 + bVar7 + bVar5;
-      *unaff_EBX = *unaff_EBX + bVar7 + (CARRY1(bVar4,bVar7) || CARRY1(bVar6 + bVar7,bVar5));
-      pcVar8 = (code *)swi(3);
-      (*pcVar8)();
+      bVar2 = CARRY1(bRam_?,extraout_DH) || CARRY1(bRam_? + extraout_DH,bVar1);
+      bRam_? = bRam_? + extraout_DH + bVar1;
+      pbVar3 = (byte *)(unaff_EBX + -0x64efa761);
+      bVar4 = (byte)unaff_EBX;
+      bVar5 = CARRY1(*pbVar3,bVar4) || CARRY1(*pbVar3 + bVar4,bVar2);
+      *pbVar3 = *pbVar3 + bVar4 + bVar2;
+      pbVar3 = (byte *)(unaff_EBX + -0x64efa761);
+      bVar2 = CARRY1(*pbVar3,bVar4) || CARRY1(*pbVar3 + bVar4,bVar5);
+      *pbVar3 = *pbVar3 + bVar4 + bVar5;
+      pbVar3 = (byte *)(unaff_EBX + -0x64efa761);
+      bVar1 = *pbVar3;
+      bVar6 = *pbVar3;
+      *pbVar3 = bVar6 + bVar4 + bVar2;
+      *(char *)(unaff_EBX + -0x64efa761) = *(char *)(unaff_EBX + -0x64efa761) + bVar4 + (CARRY1(bVar1,bVar4) || CARRY1(bVar6 + bVar4,bVar2));
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
       return;
     }
-    func_?(0,uStack_9,uStack_10);
-    func_?(&uStack_9,1);
-    func_?(1,uStack_9,uStack_10);
-    uVar11 = 2;
+    func_?(0,uStack_8,uStack_9);
+    func_?(&uStack_8,1);
+    func_?(1,uStack_8,uStack_9);
+    uVar10 = 2;
     break;
   case 1:
-    if ((corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 = triangleVertices, triangleVertices == (Vector3__Array *)0x0)) goto code_?;
-    func_?(0,uStack_9,uStack_10);
-    func_?(&uStack_9,2);
-    func_?(1,uStack_9,uStack_10);
-    uVar11 = 3;
+    if ((corners == (Vector3__Array *)0x0) || (func_?(), triangleVertices == (Vector3__Array *)0x0)) goto code_?;
+    func_?(0,uStack_8,uStack_9);
+    func_?(&uStack_8,2);
+    func_?(1,uStack_8,uStack_9);
+    uVar10 = 3;
     break;
   case 2:
-    if ((corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 = triangleVertices, triangleVertices == (Vector3__Array *)0x0)) goto code_?;
-    func_?(0,uStack_9,uStack_10);
-    func_?(&uStack_9,5);
-    func_?(1,uStack_9,uStack_10);
-    uVar11 = 6;
+    if ((corners == (Vector3__Array *)0x0) || (func_?(), triangleVertices == (Vector3__Array *)0x0)) goto code_?;
+    func_?(0,uStack_8,uStack_9);
+    func_?(&uStack_8,5);
+    func_?(1,uStack_8,uStack_9);
+    uVar10 = 6;
     break;
   case 3:
-    if ((corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 = triangleVertices, triangleVertices == (Vector3__Array *)0x0)) goto code_?;
-    func_?(0,uStack_9,uStack_10);
-    func_?(&uStack_9,6);
-    func_?(1,uStack_9,uStack_10);
-    uVar11 = 7;
+    if ((corners == (Vector3__Array *)0x0) || (func_?(), triangleVertices == (Vector3__Array *)0x0)) goto code_?;
+    func_?(0,uStack_8,uStack_9);
+    func_?(&uStack_8,6);
+    func_?(1,uStack_8,uStack_9);
+    uVar10 = 7;
     break;
   default:
     goto code_?;
   }
-  func_?(&uStack_9,uVar11);
-  func_?(2,uStack_9,uStack_10);
+  func_?(&uStack_8,uVar10);
+  func_?(2,uStack_8,uStack_9);
 code_?:
   return;
 }
@@ -4668,6 +4387,8 @@ void Assembly-CSharp.dll::Cube::Cube_SetEdge(Cube *cube,Face__Enum face,Edge__En
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void SetEdge(Vector3[] ByRef, Face, Edge, Vector3[]) */
 
 void Assembly-CSharp.dll::Cube::Cube_SetEdge_1(Vector3__Array **corners,Face__Enum face,Edge__Enum edge,Vector3__Array *edgeVertices,MethodInfo *method)
@@ -4684,34 +4405,32 @@ void Assembly-CSharp.dll::Cube::Cube_SetEdge_1(Vector3__Array **corners,Face__En
   pVVar1 = Cube_GetFace_1(pVVar1,face,(MethodInfo *)0x0);
   switch(edge) {
   case Edge__Enum_Front:
-    if (edgeVertices != (Vector3__Array *)0x0) {
-      if (edgeVertices->max_length == 0) goto code_?;
-      if (pVVar1 != (Vector3__Array *)0x0) {
-        fVar2 = edgeVertices->vector[0].y;
-        fVar3 = edgeVertices->vector[0].z;
-        if (pVVar1->max_length != 0) {
-          pVVar1->vector[0].x = edgeVertices->vector[0].x;
-          pVVar1->vector[0].y = fVar2;
-          pVVar1->vector[0].z = fVar3;
-          if (1 < edgeVertices->max_length) {
-            fVar2 = edgeVertices->vector[1].y;
-            fVar3 = edgeVertices->vector[1].z;
-            if (1 < pVVar1->max_length) {
-              pVVar1->vector[1].x = edgeVertices->vector[1].x;
-              pVVar1->vector[1].y = fVar2;
-              pVVar1->vector[1].z = fVar3;
-              goto code_?;
-            }
+    if (edgeVertices == (Vector3__Array *)0x0) break;
+    if (edgeVertices->max_length != 0) {
+      if (pVVar1 == (Vector3__Array *)0x0) break;
+      fVar2 = edgeVertices->vector[0].y;
+      fVar3 = edgeVertices->vector[0].z;
+      if (pVVar1->max_length != 0) {
+        pVVar1->vector[0].x = edgeVertices->vector[0].x;
+        pVVar1->vector[0].y = fVar2;
+        pVVar1->vector[0].z = fVar3;
+        if (1 < edgeVertices->max_length) {
+          fVar2 = edgeVertices->vector[1].y;
+          fVar3 = edgeVertices->vector[1].z;
+          if (1 < pVVar1->max_length) {
+            pVVar1->vector[1].x = edgeVertices->vector[1].x;
+            pVVar1->vector[1].y = fVar2;
+            pVVar1->vector[1].z = fVar3;
+            goto code_?;
           }
         }
-        goto code_?;
       }
     }
-    break;
+    goto code_?;
   case Edge__Enum_Back:
     if (edgeVertices != (Vector3__Array *)0x0) {
-      if (edgeVertices->max_length == 0) goto code_?;
-      if (pVVar1 != (Vector3__Array *)0x0) {
+      if (edgeVertices->max_length != 0) {
+        if (pVVar1 == (Vector3__Array *)0x0) break;
         fVar2 = edgeVertices->vector[0].y;
         fVar3 = edgeVertices->vector[0].z;
         if (2 < pVVar1->max_length) {
@@ -4729,14 +4448,14 @@ void Assembly-CSharp.dll::Cube::Cube_SetEdge_1(Vector3__Array **corners,Face__En
             }
           }
         }
-        goto code_?;
       }
+      goto code_?;
     }
     break;
   case Edge__Enum_Left:
     if (edgeVertices != (Vector3__Array *)0x0) {
-      if (edgeVertices->max_length == 0) goto code_?;
-      if (pVVar1 != (Vector3__Array *)0x0) {
+      if (edgeVertices->max_length != 0) {
+        if (pVVar1 == (Vector3__Array *)0x0) break;
         fVar2 = edgeVertices->vector[0].y;
         fVar3 = edgeVertices->vector[0].z;
         if (3 < pVVar1->max_length) {
@@ -4754,64 +4473,45 @@ void Assembly-CSharp.dll::Cube::Cube_SetEdge_1(Vector3__Array **corners,Face__En
             }
           }
         }
-        goto code_?;
       }
+      goto code_?;
     }
     break;
   case Edge__Enum_Right:
     if (edgeVertices != (Vector3__Array *)0x0) {
       if (edgeVertices->max_length == 0) goto code_?;
-      if (pVVar1 != (Vector3__Array *)0x0) {
-        fVar2 = edgeVertices->vector[0].y;
-        fVar3 = edgeVertices->vector[0].z;
-        if (1 < pVVar1->max_length) {
-          pVVar1->vector[1].x = edgeVertices->vector[0].x;
-          pVVar1->vector[1].y = fVar2;
-          pVVar1->vector[1].z = fVar3;
-          if (1 < edgeVertices->max_length) {
-            fVar2 = edgeVertices->vector[1].y;
-            fVar3 = edgeVertices->vector[1].z;
-            if (2 < pVVar1->max_length) {
-              pVVar1->vector[2].x = edgeVertices->vector[1].x;
-              pVVar1->vector[2].y = fVar2;
-              pVVar1->vector[2].z = fVar3;
-              goto code_?;
-            }
-          }
-        }
-        goto code_?;
-      }
+      if (pVVar1 != (Vector3__Array *)0x0) goto code_?;
     }
     break;
   default:
-code_?:
-    if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Cube);
-    }
-    Cube_SetFace_1(corners,face,pVVar1,(MethodInfo *)0x0);
-    return;
+    goto code_?;
   }
   func_?();
 code_?:
-  func_?();
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (edgeVertices == (Vector3__Array *)0x0) {
-    func_?();
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
-    return;
-  }
-  pVVar1 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners((CubeBase *)edgeVertices,(MethodInfo *)0x0);
+  do {
+    do {
+      do {
+        edgeVertices = (Vector3__Array *)func_?();
+        edgeVertices->vector[0].x = extraout_MM0_Da;
+code_?:
+        fVar2 = edgeVertices->vector[0].y;
+        fVar3 = edgeVertices->vector[0].z;
+      } while (pVVar1->max_length < 2);
+      pVVar1->vector[1].x = edgeVertices->vector[0].x;
+      pVVar1->vector[1].y = fVar2;
+      pVVar1->vector[1].z = fVar3;
+    } while (edgeVertices->max_length < 2);
+    fVar2 = edgeVertices->vector[1].y;
+    fVar3 = edgeVertices->vector[1].z;
+  } while (pVVar1->max_length < 3);
+  pVVar1->vector[2].x = edgeVertices->vector[1].x;
+  pVVar1->vector[2].y = fVar2;
+  pVVar1->vector[2].z = fVar3;
+code_?:
   if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+    func_?(TypeInfo__Cube);
   }
-  TypeInfo__Cube->static_fields->cornersBookkeeping = pVVar1;
-  func_?();
-  Cube_SetEdge_1(&TypeInfo__Cube->static_fields->cornersBookkeeping,(Face__Enum)method,in_stack_5,in_stack_6,(MethodInfo *)0x0);
-  MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_set_Corners((CubeBase *)edgeVertices,TypeInfo__Cube->static_fields->cornersBookkeeping,(MethodInfo *)0x0);
+  Cube_SetFace_1(corners,face,pVVar1,(MethodInfo *)0x0);
   return;
 }
 
@@ -4975,17 +4675,10 @@ code_?:
   default:
     goto code_?;
   }
-  bVar5 = (byte)((uint)unaff_EDI >> 8);
-  bVar6 = 0;
-  func_?();
-  pbVar7 = (byte *)((int)&faceVertices[-0x4ad6d2].vector[0x10].y + 3);
-  bVar8 = *pbVar7;
-  bVar9 = *pbVar7 + bVar5;
-  *pbVar7 = bVar9 + bVar6;
-  *extraout_ECX = *extraout_ECX + (char)extraout_ECX + (CARRY1(bVar8,bVar5) || CARRY1(bVar9,bVar6));
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
-  return;
+  bVar5 = func_?();
+  *extraout_ECX = *extraout_ECX + (char)((uint)unaff_EDI >> 8) + (bVar5 < 0xc4);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

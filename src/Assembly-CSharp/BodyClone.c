@@ -319,11 +319,11 @@ code_?:
                 goto code_?;
               }
             }
-            key_00 = (Object *)0x98158b80;
+            key_00 = (Object *)0xa4158b80;
             pAVar11 = (AvatarAccessoryData__Enum__Class *)func_?();
             pMVar4 = MethodInfo__BodyAccessoriesController____c__DisplayClass25_0___RefreshAccessories_b__0_AvatarAccessory_;
             DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pAVar11,value,MethodInfo__BodyAccessoriesController____c__DisplayClass25_0___RefreshAccessories_b__0_AvatarAccessory_,(MethodInfo *)0x0);
-            Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader_LoadAccessory((AccessoryLoader *)0x98158b80,(String *)pMVar4,(Action_1_AvatarAccessory_ *)pAVar11,(MethodInfo *)0x0);
+            Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader_LoadAccessory((AccessoryLoader *)0xa4158b80,(String *)pMVar4,(Action_1_AvatarAccessory_ *)pAVar11,(MethodInfo *)0x0);
             goto code_?;
           }
           TVar19.m_Index = (int32_t)(String *)0x0;

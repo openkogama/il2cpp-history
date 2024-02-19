@@ -18,7 +18,6 @@ namespace Assets.Scripts.ProfileSettings
 		// Fields
 		private const float mouseSenseMinModifier = 10f;
 		private const float mouseSenseMaxModifier = 10f;
-		private static SettingsPlatform settingsPlatform;
 		public static Dictionary<ProfileSettingKey, Action<object>> ProfileSettingsChanged;
 		public static float mouseSensitivity;
 		[CompilerGenerated]
@@ -35,6 +34,7 @@ namespace Assets.Scripts.ProfileSettings
 		private static AntiAliasingLevel _AntiAliasingLevel_k__BackingField;
 	
 		// Properties
+		public static SettingsPlatform SettingsPlatform { get; }
 		public static TargetFrameRateValue TargetFrameRate { [CompilerGenerated] get; [CompilerGenerated] private set; }
 		public static TextureQualityLevel TextureQualityLevel { [CompilerGenerated] get; [CompilerGenerated] private set; }
 		public static FilterMode TextureFilter { [CompilerGenerated] get; [CompilerGenerated] private set; }
@@ -55,13 +55,13 @@ namespace Assets.Scripts.ProfileSettings
 			public __c();
 	
 			// Methods
-			internal void _.cctor_b__43_0(object o);
-			internal void _.cctor_b__43_1(object o);
-			internal void _.cctor_b__43_2(object o);
-			internal void _.cctor_b__43_3(object o);
-			internal void _.cctor_b__43_4(object o);
-			internal void _.cctor_b__43_5(object o);
-			internal void _.cctor_b__43_6(object o);
+			internal void _.cctor_b__44_0(object o);
+			internal void _.cctor_b__44_1(object o);
+			internal void _.cctor_b__44_2(object o);
+			internal void _.cctor_b__44_3(object o);
+			internal void _.cctor_b__44_4(object o);
+			internal void _.cctor_b__44_5(object o);
+			internal void _.cctor_b__44_6(object o);
 		}
 	
 		// Constructors
@@ -77,7 +77,7 @@ namespace Assets.Scripts.ProfileSettings
 		public static int TargetFrameRateToVSyncValue(TargetFrameRateValue value);
 		public static int AnisoLevelToInt(AnistropicFilteringLevel level);
 		private static int AntiAliasingLevelToInt(AntiAliasingLevel level);
-		private static float CalculateMouseSensitivityValueFromValue(float value);
+		private static float CalculateMouseSensitivityFromValue(float value);
 		private static void SetFrameRateSetting(TargetFrameRateValue value);
 		private static void SetFrameRateDesktop(TargetFrameRateValue value);
 		private static void SetFrameRateTouch(TargetFrameRateValue value);

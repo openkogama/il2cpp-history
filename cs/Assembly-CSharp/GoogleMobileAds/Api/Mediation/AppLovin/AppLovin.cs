@@ -5,20 +5,17 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using GoogleMobileAds.Common.Mediation.AppLovin;
+using GoogleMobileAds.Mediation.AppLovin.Common;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Api.Mediation.AppLovin
 {
+	[Obsolete("Use `GoogleMobileAds.Mediation.AppLovin.Api.AppLovin` instead.")]
 	public class AppLovin
 	{
-		// Fields
-		private static readonly IAppLovinClient client;
-	
 		// Constructors
 		public AppLovin();
-		static AppLovin();
 	
 		// Methods
 		public static void Initialize();

@@ -845,7 +845,7 @@ code_?:
                                                   pMVar6 = (unaff_EBX->fields).worldObjectClient;
                                                   if (pMVar6 != (MVWorldObjectClient *)0x0) {
                                                     bVar17 = (byte)((uint)pMVar6 >> 8);
-                                                    bVar18 = 0xf1;
+                                                    bVar18 = 0xe9;
                                                     bVar10 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag(pMVar6,InteractionFlags__Enum_CanChangeScale,(MethodInfo *)0x20);
                                                     pTVar14 = (unaff_EBX->fields).resetRotationButton;
                                                     if (pTVar14 != (Transform *)0x0) {

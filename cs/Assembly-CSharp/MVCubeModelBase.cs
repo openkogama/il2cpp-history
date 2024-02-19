@@ -14,7 +14,7 @@ using UnityEngine;
 public class MVCubeModelBase : MVWorldObjectClient, ICubeModel, ICubeModelCollider
 {
 	// Fields
-	private static readonly int TrancperancyShaderProperty;
+	private static readonly int TransparencyShaderProperty;
 	protected RuntimePrototypeCubeModel prototypeCubeModel;
 	protected readonly ChunkInstances chunkInstances;
 	[CompilerGenerated]

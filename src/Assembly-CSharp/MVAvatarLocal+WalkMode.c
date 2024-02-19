@@ -190,7 +190,7 @@ IAvatarInputController * Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLo
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarInputControllerAndroid);
+    func_?(&TypeInfo__AvatarInputControllerTouch);
     func_?(&TypeInfo__AvatarInputController);
     cRam_? = '\x01';
   }
@@ -201,8 +201,8 @@ IAvatarInputController * Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLo
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField != 0) {
-      this_00 = (AvatarInputControllerAndroid *)func_?(TypeInfo__AvatarInputControllerAndroid);
-      AvatarInputControllerAndroid::AvatarInputControllerAndroid__ctor(this_00,(MethodInfo *)0x0);
+      this_00 = (AvatarInputControllerTouch *)func_?(TypeInfo__AvatarInputControllerTouch);
+      AvatarInputControllerTouch::AvatarInputControllerTouch__ctor(this_00,(MethodInfo *)0x0);
       return (IAvatarInputController *)this_00;
     }
   }
@@ -1028,7 +1028,7 @@ code_?:
     MVar5 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
     if (MVar5 == MVGameMode__Enum_CharacterEditor) {
 code_?:
-      this_01 = (AvatarInputControllerAndroid *)func_?();
+      this_01 = (AvatarInputControllerTouch *)func_?();
       AvatarInputController::AvatarInputController__ctor((AvatarInputController *)this_01,(MethodInfo *)0x0);
     }
     else {
@@ -1037,8 +1037,8 @@ code_?:
         cRam_? = '\x01';
       }
       if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) goto code_?;
-      this_01 = (AvatarInputControllerAndroid *)func_?();
-      AvatarInputControllerAndroid::AvatarInputControllerAndroid__ctor(this_01,(MethodInfo *)0x0);
+      this_01 = (AvatarInputControllerTouch *)func_?();
+      AvatarInputControllerTouch::AvatarInputControllerTouch__ctor(this_01,(MethodInfo *)0x0);
     }
     (this->fields).avatarInputController = (IAvatarInputController *)this_01;
     func_?();

@@ -244,26 +244,11 @@ code_?:
   }
   if (pTVar3 == (TierOnDeathProgress *)0x0) {
 code_?:
-    cVar28 = '\x01';
-    bVar29 = 0;
-    uVar30 = func_?();
-    iVar12 = extraout_ECX;
-    do {
-      iVar12 = iVar12 + -1;
-    } while (iVar12 != 0 && cVar28 != '\0');
-    bVar31 = (byte)((uint)iVar12 >> 8);
-    bVar32 = (byte)((uint6)uVar30 >> 0x28);
-    bVar33 = CARRY1(bVar31,bVar32) || CARRY1(bVar31 + bVar32,bVar29);
-    pbVar34 = (byte *)((int)uVar30 + 1);
-    bVar29 = *pbVar34;
-    bVar32 = (byte)((uint)((int)&pTVar1->klass + 2) >> 8);
-    bVar31 = *pbVar34 + bVar32;
-    *pbVar34 = bVar31 + bVar33;
-    ppMVar35 = &(unaff_ESI->fields)._.m_MaskMaterial;
-    *(char *)ppMVar35 = *(char *)ppMVar35 + (char)((uint6)uVar30 >> 0x20) + (CARRY1(bVar29,bVar32) || CARRY1(bVar31,bVar33));
-    do {
-                    /* WARNING: Do nothing block with infinite loop */
-    } while( true );
+    func_?();
+    out(unaff_ESI->klass,extraout_DX);
+    pcVar28 = (code *)swi(1);
+    bVar22 = (*pcVar28)();
+    return bVar22;
   }
 code_?:
   (pTVar3->fields)._IsShowingTierProgress_k__BackingField = 0;

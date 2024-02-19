@@ -55,7 +55,6 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::Le
   default:
     return 0;
   }
-  in_AF = 0;
   if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).rotateUIYAxisTime) {
     pIVar4 = (pLVar2->fields).goldImage;
     if (pIVar4 != (Image *)0x0) {
@@ -84,7 +83,6 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::Le
                   UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha(pCVar13,0.0,(MethodInfo *)0x0);
                   (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
-                  in_AF = 0;
                   if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).goldImageDisplayTime) {
                     pAVar5 = (pLVar2->fields).goldBounceEffect;
                     if (pAVar5 != (AnimationCurve *)0x0) {
@@ -172,16 +170,12 @@ code_?:
     }
   }
 code_?:
-  uVar16 = func_?();
-  bRam_? = (byte)uVar16;
-  in_AF = 9 < (bRam_? & 0xf) | in_AF;
-  uVar17 = CONCAT31((int3)((uint)uVar16 >> 8),bRam_? + in_AF * -6) & 0xffffff0f;
-  cVar18 = (char)((uint)uVar16 >> 8) - in_AF;
-  pcVar19 = (char *)(CONCAT22((short)(uVar17 >> 0x10),CONCAT11(cVar18,(char)uVar17)) + 0x55);
-  *pcVar19 = *pcVar19 + cVar18 + in_AF;
-  pcVar20 = (code *)swi(3);
-  bVar21 = (*pcVar20)();
-  return bVar21;
+  cVar16 = func_?();
+  pcVar17 = (char *)((int)&pLVar1[-0xa9fd5d].klass + 3);
+  *pcVar17 = *pcVar17 + cVar16;
+  pcVar18 = (code *)swi(3);
+  bVar19 = (*pcVar18)();
+  return bVar19;
 }
 
 

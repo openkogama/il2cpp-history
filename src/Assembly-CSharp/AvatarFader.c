@@ -145,7 +145,7 @@ void Assembly-CSharp.dll::AvatarFader::AvatarFader_SetTransparency(AvatarFader *
         }
       }
       if (RStack_1 == (RegexCharClass_SingleRange)0x0) break;
-      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_HasProperty_1((Material *)RStack_1,(this->fields).trancperancyProperty,(MethodInfo *)0x0);
+      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_HasProperty_1((Material *)RStack_1,(this->fields).transparencyProperty,(MethodInfo *)0x0);
       if (bVar3 == 0) {
         if (RStack_1 == (RegexCharClass_SingleRange)0x0) break;
         bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_HasProperty_1((Material *)RStack_1,(this->fields).colorProperty,(MethodInfo *)0x0);
@@ -182,7 +182,7 @@ void Assembly-CSharp.dll::AvatarFader::AvatarFader_SetTransparency(AvatarFader *
       }
       else {
         if (RStack_1 == (RegexCharClass_SingleRange)0x0) break;
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat((Material *)RStack_1,(this->fields).trancperancyProperty,1.0 - fadeFactor,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat((Material *)RStack_1,(this->fields).transparencyProperty,1.0 - fadeFactor,(MethodInfo *)0x0);
       }
     }
     else {
@@ -315,8 +315,8 @@ void Assembly-CSharp.dll::AvatarFader::AvatarFader__ctor(AvatarFader *this,Metho
     func_?(&StringLiteral__Transparency);
     cRam_? = '\x01';
   }
-  (this->fields).trancperancyProperty = StringLiteral__Transparency;
-  func_?(&(this->fields).trancperancyProperty,StringLiteral__Transparency);
+  (this->fields).transparencyProperty = StringLiteral__Transparency;
+  func_?(&(this->fields).transparencyProperty,StringLiteral__Transparency);
   (this->fields).colorProperty = StringLiteral__Color;
   func_?(&(this->fields).colorProperty,StringLiteral__Color);
   (this->fields).tintProperty = StringLiteral__TintColor;

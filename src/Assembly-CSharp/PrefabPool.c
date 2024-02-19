@@ -350,12 +350,12 @@ MVPickupItemBaseObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarI
 }
 
 
-/* AvatarInputControllerAndroidSettings get_AvatarInputControllerAndroidSettings() */
+/* AvatarInputControllerTouchSettings get_AvatarInputControllerTouchSettings() */
 
-AvatarInputControllerAndroidSettings * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarInputControllerAndroidSettings(PrefabPool *this,MethodInfo *method)
+AvatarInputControllerTouchSettings * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarInputControllerTouchSettings(PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).avatarInputControllerAndroidSettings;
+  return (this->fields).avatarInputControllerTouchSettings;
 }
 
 

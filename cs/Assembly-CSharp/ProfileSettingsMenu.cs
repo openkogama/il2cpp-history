@@ -28,7 +28,7 @@ public class ProfileSettingsMenu : LobbyFlowMenu
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _MouseSetRoutine_d__13 : IEnumerator<object>
+	private sealed class _MouseSetRoutine_d__12 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -41,7 +41,7 @@ public class ProfileSettingsMenu : LobbyFlowMenu
 
 		// Constructors
 		[DebuggerHidden]
-		public _MouseSetRoutine_d__13(int __1__state);
+		public _MouseSetRoutine_d__12(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -60,9 +60,8 @@ public class ProfileSettingsMenu : LobbyFlowMenu
 	private void SetMouseSensitivitySlider(object value);
 	public void UpdateBackButtonVisibility();
 	public override void GoToPreviousMenu();
-	private bool CanSaveSettings();
 	public void MouseSensitivityChanged();
-	[IteratorStateMachine(typeof(_MouseSetRoutine_d__13))]
+	[IteratorStateMachine(typeof(_MouseSetRoutine_d__12))]
 	private IEnumerator MouseSetRoutine();
 	public void ResetProfileSettings();
 	protected override void OnDestroy();
