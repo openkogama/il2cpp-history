@@ -12,15 +12,15 @@ using UnityEngine;
 public abstract class PlayModeControlsBase : MonoBehaviour
 {
 	// Fields
-	private PickupGUIFlags showingEquipableUI;
 	[SerializeField]
 	private CrossHairAndroid crossHair;
 	[SerializeField]
 	private GameObject crossHairGO;
 	[SerializeField]
-	protected GameObject useButtonLarge;
+	protected ShowUse useButtonLarge;
 	[SerializeField]
 	private JoystickControllerStack joystickControllerStack;
+	private PickupGUIFlags showingEquipableUI;
 	private WaitForTicks waitForMs;
 	private bool testForLowFPS;
 	private bool waitedUntilPlaying;
@@ -34,6 +34,6 @@ public abstract class PlayModeControlsBase : MonoBehaviour
 	public void ShowEUseIcon(ShowUseOption option);
 	public void HideEUseIcon();
 	public IGUICrossHair GetCrossHair();
-	protected virtual void SetUseButtonVisible(bool visible);
+	protected virtual void SetUseButtonVisible(bool visible, ShowUseOption? option = default);
 }
 
