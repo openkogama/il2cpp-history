@@ -507,7 +507,7 @@ code_?:
         uVar25 = CONCAT31(uVar19,bVar20 + in_AF * '\x06') & 0xffffff0f;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        (**(code **)(CONCAT22((short)(uVar25 >> 0x10),CONCAT11((char)((uint)uVar17 >> 8) + in_AF,(char)uVar25)) + -0xc))();
+        (**(code **)(CONCAT22((short)(uVar25 >> 0x10),CONCAT11((char)((uint)uVar17 >> 8) + in_AF,(char)uVar25)) + 0xc))();
         return;
       }
       pcVar26 = (char *)((int)&(unaff_EDI->_0).gc_desc * 2 + -0x3333efde);

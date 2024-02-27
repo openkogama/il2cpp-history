@@ -300,29 +300,14 @@ code_?:
   func_?(data,pMVar2);
   pAVar18 = extraout_EDX_00;
 code_?:
-  uVar21 = func_?(unaff_EDI,pAVar18);
-  bVar22 = extraout_CL + 1;
-  bVar1 = 0x99 < (byte)uVar21 | bVar1;
-  bVar23 = (byte)((ushort)uVar21 >> 8);
-  bVar24 = bVar22 * '\x02' + bVar1;
-  bVar25 = 9 < (bVar24 & 0xf) | 9 < ((byte)uVar21 & 0xf) | in_AF;
-  bVar26 = 0x99 < bVar24 || (CARRY1(bVar22,bVar22) || CARRY1(bVar22 * '\x02',bVar1));
-  bVar24 = bVar24 + bVar25 * -6 + bVar26 * -0x60;
-  bVar1 = *(byte *)&unaff_EBX->klass;
-  bVar22 = *(char *)&unaff_EBX->klass + bVar23;
-  *(byte *)&unaff_EBX->klass = bVar22 + bVar26;
-  bVar26 = 0x99 < bVar24 || (CARRY1(bVar1,bVar23) || CARRY1(bVar22,bVar26));
-  bVar1 = *(byte *)&unaff_EBX->klass;
-  bVar22 = *(char *)&unaff_EBX->klass + bVar23;
-  *(byte *)&unaff_EBX->klass = bVar22 + bVar26;
-  bVar26 = 0x99 < (byte)(bVar24 + (9 < (bVar24 & 0xf) | bVar25) * -6 + bVar26 * -0x60) || (CARRY1(bVar1,bVar23) || CARRY1(bVar22,bVar26));
-  bVar1 = *(byte *)&((MVBuildModeAvatarLocal_EditMode *)data)->klass;
-  bVar25 = (byte)((uint)unaff_EBX >> 8);
-  bVar22 = *(char *)&((MVBuildModeAvatarLocal_EditMode *)data)->klass + bVar25;
-  *(byte *)&((MVBuildModeAvatarLocal_EditMode *)data)->klass = bVar22 + bVar26;
-  cRam_? = cRam_? + bVar23 + (0x99 < (byte)unaff_EBX || (CARRY1(bVar1,bVar25) || CARRY1(bVar22,bVar26)));
-  pcVar27 = (code *)swi(3);
-  (*pcVar27)();
+  func_?(unaff_EDI,pAVar18);
+  bRam_? = (byte)uRam_?;
+  bVar1 = 0x99 < bRam_? | bVar1;
+  uRam_? = CONCAT31((int3)((uint)uRam_? >> 8),bRam_? + (9 < (bRam_? & 0xf) | in_AF) * -6 + bVar1 * -0x60);
+  ppCVar21 = &unaff_EBX[-0x37f6c04].fields.cameraImpact;
+  *(byte *)ppCVar21 = *(char *)ppCVar21 + extraout_CL + bVar1;
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 

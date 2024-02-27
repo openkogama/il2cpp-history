@@ -227,14 +227,20 @@ code_?:
     }
   }
 code_?:
-  bRam_? = func_?();
-  in_AF = 9 < (bRam_? & 0xf) | in_AF;
-  *(byte *)&(this_02->_0).image = *(char *)&(this_02->_0).image + (bRam_? + in_AF * -6 & 0xf) + in_AF;
-  *(char *)(extraout_ECX + 0x5a) = *(char *)(extraout_ECX + 0x5a) + (char)((uint)&stack0xfffffffc >> 8) + in_AF;
-  *(char *)(extraout_ECX + -0x33efc0a4) = *(char *)(extraout_ECX + -0x33efc0a4) + (char)extraout_ECX + (9 < (in_AF * -6 & 0xf) | in_AF);
-  pcVar15 = (code *)swi(3);
-  bVar16 = (*pcVar15)();
-  return bVar16;
+  bVar15 = func_?();
+  in_AF = 9 < (bVar15 & 0xf) | in_AF;
+  puVar16 = (undefined1 *)((int)&this_02[-0x677d63]._1.cctor_thread + 1);
+  *puVar16 = *puVar16 + (char)(extraout_EDX + 1) + in_AF;
+  in_AF = 9 < (bVar15 + in_AF * -6 & 0xf) | in_AF;
+  bVar15 = *extraout_ECX;
+  bVar17 = *extraout_ECX + (byte)&stack0xfffffffc;
+  *extraout_ECX = bVar17 + in_AF;
+  *extraout_ECX = *extraout_ECX + (char)((uint)extraout_ECX >> 8) + (CARRY1(bVar15,(byte)&stack0xfffffffc) || CARRY1(bVar17,in_AF));
+  uVar18 = in((short)(extraout_EDX + 1));
+  *(undefined1 *)&(this_02->_0).image = uVar18;
+  pcVar19 = (code *)swi(3);
+  bVar20 = (*pcVar19)();
+  return bVar20;
 }
 
 

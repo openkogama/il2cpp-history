@@ -8,13 +8,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class WinningConditionDebriefing : MonoBehaviour, IDebriefing
 {
 	// Fields
-	private const float fadeTime = 0.3f;
+	private const float FadeTime = 0.3f;
 	[SerializeField]
 	private CanvasGroup group;
 	[SerializeField]
@@ -29,6 +30,22 @@ public class WinningConditionDebriefing : MonoBehaviour, IDebriefing
 	private AvatarCapture captureCamera;
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__9_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnWinningConditionReceived_b__9_0(IUIStack x, BaseEventData y);
+	}
+
 	[CompilerGenerated]
 	private sealed class _ShowDebriefingCoroutine_d__16 : IEnumerator<object>
 	{

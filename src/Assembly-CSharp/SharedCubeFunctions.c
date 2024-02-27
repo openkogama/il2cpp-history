@@ -138,7 +138,7 @@ code_?:
     in_stack_44 = pVVar2->z;
     if (cRam_? == '\0') {
       fStack22 = 3.2869717e-29;
-      fStack21 = 2.4501238e-28;
+      fStack21 = 2.4512033e-28;
       func_?();
       cRam_? = '\x01';
     }
@@ -469,7 +469,7 @@ Dictionary_2_MV_WorldObject_IntVector_Cube_ * Assembly-CSharp.dll::SharedCubeFun
     func_?(&TypeInfo__Cube);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cube>__Dictionary__);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cube>__set_Item_MV__WorldObject__IntVector__Cube_);
-    func_?(0x6ee4);
+    func_?(0x8048);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     cRam_? = '\x01';
   }
@@ -1553,7 +1553,7 @@ void Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_GetVertices_2
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0xbf70);
+    func_?(0xd08c);
     cRam_? = '\x01';
   }
   if (info != (CubePickingInfo *)0x0) {
@@ -1610,7 +1610,7 @@ code_?:
                   uVar17 = func_?(&TypeInfo__System__IndexOutOfRangeException);
                   this_01 = (IndexOutOfRangeException *)func_?(uVar17);
                   method_00 = (MethodInfo *)0x0;
-                  message = (String *)func_?(0x91f8);
+                  message = (String *)func_?(0xac30);
                   mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1(this_01,message,method_00);
                   uVar18 = func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
                   func_?(this_01,uVar18);
@@ -2374,7 +2374,7 @@ float Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_ScaleFactor_
   if (cRam_? == '\0') {
     _puStack_1c = CONCAT44(&UNK_?,puStack_1);
     func_?();
-    _puStack_1c = 0x119caa301026e7f3;
+    _puStack_1c = 0x119cc40c1026e7f3;
     func_?();
     cRam_? = '\x01';
   }

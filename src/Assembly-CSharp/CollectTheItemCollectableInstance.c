@@ -394,7 +394,7 @@ bool Assembly-CSharp.dll::CollectTheItemCollectableInstance::CollectTheItemColle
           value = (Object *)func_?();
           if (this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) {
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this_01,(Object *)StringLiteral_CollectTheItemCollectableId,value,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
-            cVar4 = (*(code *)x->klass[1]._0.namespaze)(x);
+            cVar4 = (*(code *)x->klass[1]._0.namespaze)();
             return cVar4 != '\0';
           }
         }

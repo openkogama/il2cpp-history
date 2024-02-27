@@ -45,6 +45,7 @@ public class PickupItemCostume : PickupItemEditable
 	public PickupItemCostume();
 
 	// Methods
+	protected override void Initialize();
 	protected override EditableItemConfiguration GetDefaultConfiguration();
 	protected override void SetConfiguration(Dictionary<object, object> itemData);
 	public override void OnStateChanged(Dictionary<object, object> newState);
@@ -54,10 +55,13 @@ public class PickupItemCostume : PickupItemEditable
 	private void OnCollisionStateChanged();
 	private void OnAvatarInvisibleStateChanged();
 	private void SetAvatarInvisibility(bool isInvisible, MVAvatar avatar);
+	private void OnLocalPlayerTeamChanged();
+	private void CalculateRemoteAvatarUIVisibility(bool isInvisible, MVAvatarRemote avatar);
 	protected override void OnFire(bool isLocal);
 	public override void UpdateWithDirection(Vector3 dir);
 	public override bool IsSameItemData(Dictionary<object, object> itemData);
 	protected override void InterruptFire();
 	public override void OnEnterVehicleWithWeapon();
+	protected override void OnDestroy();
 }
 

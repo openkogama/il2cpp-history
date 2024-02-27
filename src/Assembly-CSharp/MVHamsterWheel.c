@@ -40,7 +40,7 @@ MVVehicleBase_LocalObjectsBase * Assembly-CSharp.dll::MVHamsterWheel::MVHamsterW
         func_?(&(unaff_ESI->fields).IgnoreWoIds);
         pGVar1 = (this->fields)._._._._._.gameObject;
         if (pGVar1 != (GameObject *)0x0) {
-          motor = (SimpleVehicleMotorBase *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar1,HamsterWheelMotor_MethodInfo__UnityEngine__GameObject__AddComponent<HamsterWheelMotor>__);
+          hoverCraftMotor = (SimpleVehicleMotorBase *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar1,HamsterWheelMotor_MethodInfo__UnityEngine__GameObject__AddComponent<HamsterWheelMotor>__);
           pVVar7 = (this->fields)._._.seatManager;
           if (((pVVar7 != (VehicleSeatManager *)0x0) && (this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(pVVar7->fields).seats, this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) && (RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_01,seatID,MethodInfo__System__Collections__Generic__List<VehicleSeatBase>__get_Item_int_), RVar8 != (RegexCharClass_SingleRange)0x0)) {
             unaff_ESI = *(MvCharacterController **)((int)RVar8 + 0x18);
@@ -52,14 +52,14 @@ MVVehicleBase_LocalObjectsBase * Assembly-CSharp.dll::MVHamsterWheel::MVHamsterW
               UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)StringLiteral_Expected_camera_type_is_VehicleC,(MethodInfo *)0x0);
               return (MVVehicleBase_LocalObjectsBase *)0x0;
             }
-            if (motor != (SimpleVehicleMotorBase *)0x0) {
+            if (hoverCraftMotor != (SimpleVehicleMotorBase *)0x0) {
               if (unaff_ESI == (MvCharacterController *)0x0) {
                 pIVar10 = (IVehicleCamera *)0x0;
 code_?:
-                (motor->fields)._VehicleCamera_k__BackingField = pIVar10;
-                func_?(&(motor->fields)._VehicleCamera_k__BackingField,pIVar10);
-                this_03 = (MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle *)func_?(TypeInfo__MVHamsterWheel__LocalObjectsHamsterWheel);
-                MVSimpleOneSeatVehicle+LocalObjectsSimpleVehicle::MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle__ctor(this_03,(MVSimpleOneSeatVehicle *)this,this_02,motor,(MethodInfo *)0x0);
+                (hoverCraftMotor->fields)._VehicleCamera_k__BackingField = pIVar10;
+                func_?(&(hoverCraftMotor->fields)._VehicleCamera_k__BackingField,pIVar10);
+                this_03 = (MVHoverCraft_LocalObjectsHoverCraft *)func_?(TypeInfo__MVHamsterWheel__LocalObjectsHamsterWheel);
+                MVHoverCraft+LocalObjectsHoverCraft::MVHoverCraft_LocalObjectsHoverCraft__ctor(this_03,(MVSimpleOneSeatVehicle *)this,this_02,hoverCraftMotor,(MethodInfo *)0x0);
                 return (MVVehicleBase_LocalObjectsBase *)this_03;
               }
               in_stack_2 = (Vector3__Class **)TypeInfo__IVehicleCamera;

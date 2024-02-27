@@ -473,7 +473,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_CreatePlayersFromUserList
         if ((pOVar8->klass->_0).element_class != (TypeInfo__MV__Common__BuildTarget->_0).element_class) goto code_?;
         puVar16 = (undefined1 *)func_?();
         value = TypeInfo__MVPlayer;
-        BStack_17 = CONCAT31(0x10526a,*puVar16);
+        BStack_17 = CONCAT31(0x10527c,*puVar16);
         this_02 = (MVPlayer *)func_?();
         MVPlayer::MVPlayer__ctor_1(this_02,actorNumber,profileID,(int32_t)pMVar5,pSStack_11,BStack_17,userProfileData,bVar6,observer,(PlayerPlanetDataRemote *)playerPlanetDataRemote,(MethodInfo *)0x0);
         if (this_02 == (MVPlayer *)0x0) goto code_?;
@@ -2643,7 +2643,7 @@ code_?:
     }
     pIVar2 = (IAdManager__Class *)&UNK_?;
     pIVar1 = (IAdManager__Class *)0x0;
-    if (TypeInfo__System__String == (String__Class *)0x29f035ff) {
+    if (TypeInfo__System__String == (String__Class *)0x3b0835ff) {
       pIVar1 = pIVar2;
     }
     pSVar8 = TypeInfo__System__String;
@@ -3127,10 +3127,10 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnPostWinnerReportEvent(M
       }
       mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_01,0,MethodInfo__System__Collections__Generic__List<IWinningCondition>__get_Item_int_);
     }
-    if ((this->fields).OnWinningConditionFulfilled == (Action_1_IWinningCondition_ *)0x0) {
+    pAVar1 = (this->fields).OnWinningConditionFulfilled;
+    if (pAVar1 == (Action_1_IWinningCondition_ *)0x0) {
       return;
     }
-    pAVar1 = (this->fields).OnWinningConditionFulfilled;
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code);
     return;
   }
@@ -5788,7 +5788,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame__ctor(MVNetworkGame *this
           pPVar1 = (this->fields)._Peer_k__BackingField;
           if (pPVar1 != (PhotonPeer *)0x0) {
             bVar2 = cRam_? == '\0';
-            (pPVar1->fields).DebugOut = 0xe0;
+            (pPVar1->fields).DebugOut = 0xf3;
             if (bVar2) {
               func_?();
               func_?();

@@ -20,7 +20,7 @@ public class MVEquipableProxy : MVEquipable
 
 	// Methods
 	public void Init(MVEquipable equipable);
-	public override bool Equip(AvatarItemType type, AvatarEquipableType equipType, Dictionary<object, object> itemData, int variantID = 0, bool holsterable = true);
+	public override bool Equip(AvatarItemType type, AvatarEquipableType equipType, Dictionary<object, object> itemData, int variantID = 0);
 	public override void Unequip();
 	public override void Holster();
 	public override void Unholster();

@@ -96,7 +96,7 @@ Object * Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::Costum
   if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
   }
-  pOVar1 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::CollectionExtensions_GetValueOrDefault((IReadOnlyDictionary_2_System_Object_System_Object_ *)TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->defaultItemValues,(Object *)key,System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::Object,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::Object,_System::Object>__System__Object_);
+  pOVar1 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::CollectionExtensions_GetValueOrDefault_1((IReadOnlyDictionary_2_System_Object_System_Object_ *)TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->defaultItemValues,(Object *)key,System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::Object,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::Object,_System::Object>__System__Object_);
   return pOVar1;
 }
 

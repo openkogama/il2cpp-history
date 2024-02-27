@@ -254,8 +254,11 @@ code_?:
       if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) != (TypeInfo__System__Int32->_0).element_class) goto code_?;
       puVar8 = (undefined4 *)func_?(TVar3.m_Index);
       pSVar6 = StringLiteral_RespawnCount;
-      pSVar9 = (this->fields).spawnOptionsSlider;
       unaff_EDI = (MVWorldObjectSpawnerVehicleEnergy__Class *)*puVar8;
+      if (unaff_EDI == (MVWorldObjectSpawnerVehicleEnergy__Class *)0xffffffff) {
+        unaff_EDI = (MVWorldObjectSpawnerVehicleEnergy__Class *)0xa;
+      }
+      pSVar9 = (this->fields).spawnOptionsSlider;
       if (cRam_? == '\0') {
         func_?(&StringLiteral_BlueprintData_);
         cRam_? = '\x01';

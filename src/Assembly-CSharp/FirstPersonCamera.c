@@ -278,9 +278,9 @@ code_?:
         bVar13 = 0;
         this = (FirstPersonCamera *)0x0;
         do {
-          if (MethodInfo__System__DBNull__System_IConvertible_ToDateTime_System__IFormatProvider_ == (MethodInfo *)0x0) goto code_?;
-          if (MethodInfo__System__DBNull__System_IConvertible_ToDateTime_System__IFormatProvider_->name <= (char *)(uint)bVar13) goto code_?;
-          if (((&MethodInfo__System__DBNull__System_IConvertible_ToDateTime_System__IFormatProvider_->klass)[(int)(uint)bVar13] == (Il2CppClass *)0x0) || (this_03 = (Behaviour *)(&MethodInfo__System__DBNull__System_IConvertible_ToDateTime_System__IFormatProvider_->klass)[(int)(uint)bVar13]->namespaze, this_03 == (Behaviour *)0x0)) goto code_?;
+          if (System__Resources__NeutralResourcesLanguageAttribute_MethodInfo__System__Reflection__CustomAttributeExtensions__GetCustomAttribute<System::Resources::NeutralResourcesLanguageAttribute>_System__Reflection__Assembly_ == (MethodInfo *)0x0) goto code_?;
+          if (System__Resources__NeutralResourcesLanguageAttribute_MethodInfo__System__Reflection__CustomAttributeExtensions__GetCustomAttribute<System::Resources::NeutralResourcesLanguageAttribute>_System__Reflection__Assembly_->name <= (char *)(uint)bVar13) goto code_?;
+          if (((&System__Resources__NeutralResourcesLanguageAttribute_MethodInfo__System__Reflection__CustomAttributeExtensions__GetCustomAttribute<System::Resources::NeutralResourcesLanguageAttribute>_System__Reflection__Assembly_->klass)[(int)(uint)bVar13] == (Il2CppClass *)0x0) || (this_03 = (Behaviour *)(&System__Resources__NeutralResourcesLanguageAttribute_MethodInfo__System__Reflection__CustomAttributeExtensions__GetCustomAttribute<System::Resources::NeutralResourcesLanguageAttribute>_System__Reflection__Assembly_->klass)[(int)(uint)bVar13]->namespaze, this_03 == (Behaviour *)0x0)) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled(this_03,0,(MethodInfo *)0x0);
           bVar13 = this._3_1_ + 1;
           this = (FirstPersonCamera *)((uint)bVar13 << 0x18);
