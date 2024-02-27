@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 public class TransformNetworkManager
 {
 	// Fields
-	private Dictionary<int, MVNetworkObject> networkedObjects;
+	private readonly Dictionary<int, MVNetworkObject> networkedObjects;
 	private List<int> removeList;
 	public const int broadcastInterval = 200;
 	public const int clientDelay = 200;

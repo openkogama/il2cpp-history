@@ -21,7 +21,7 @@ public class VehicleEquipable : MVEquipable
 
 	// Methods
 	public void Init(MVInteractableBase interactableLocal, MVRuntimeDataVariable currentItem);
-	public override bool Equip(AvatarItemType type, AvatarEquipableType equipType, Dictionary<object, object> itemData, int variantID = 0, bool holsterable = true);
+	public override bool Equip(AvatarItemType type, AvatarEquipableType equipType, Dictionary<object, object> itemData, int variantID = 0);
 	public override void Holster();
 	public override void Unholster();
 	public override void Unequip();

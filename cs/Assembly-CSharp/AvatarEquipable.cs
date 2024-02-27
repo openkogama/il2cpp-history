@@ -17,14 +17,16 @@ public class AvatarEquipable : MVEquipable
 	private MVRuntimeDataVariable currentItem;
 	private bool isAbleToCollectPickups;
 	private bool isAbleToEquipWeapons;
-	private List<AvatarItemType> nonWeaponPickups;
+	private readonly List<AvatarItemType> nonWeaponPickups;
 
 	// Constructors
 	public AvatarEquipable();
 
 	// Methods
 	public void Init(MVInteractableBase interactableLocal, MVRuntimeDataVariable currentItem, WorldObjectSkillDataManager skillsDataManager);
-	public override bool Equip(AvatarItemType type, AvatarEquipableType equipType, Dictionary<object, object> itemData, int variantID = 0, bool holsterable = true);
+	public override bool Equip(AvatarItemType type, AvatarEquipableType equipType, Dictionary<object, object> itemData, int variantID = 0);
+	private bool EquipModifier(AvatarItemType type);
+	private bool EquipPickup(AvatarItemType type, Dictionary<object, object> itemData, int variantID);
 	public override void Holster();
 	public override void Unholster();
 	public bool GetIsEquipped(AvatarItemType type);
