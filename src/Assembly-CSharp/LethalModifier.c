@@ -50,31 +50,38 @@ void Assembly-CSharp.dll::LethalModifier::LethalModifier_OnActivated
                (LethalModifier *this,Avatar *target,MethodInfo *method)
 
 {
-  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       ((Component *)this,(MethodInfo *)0x0);
-  if ((((target != (Avatar *)0x0) && (pMVar1 = (target->fields).mvAvatar, pMVar1 != (MVAvatar *)0x0)
-       ) && (pMVar2 = (pMVar1->fields).body, pMVar2 != (MVBody *)0x0)) &&
-     (((pMVar3 = (pMVar2->fields).bodyObject, pMVar3 != (MVBodyObject *)0x0 &&
-       (pBVar4 = (pMVar3->fields).bodyData, pBVar4 != (BodyData *)0x0)) &&
-      (pTVar5 = (pBVar4->fields).PartBones, pTVar5 != (Transform__Array *)0x0)))) {
+  if (((((target != (Avatar *)0x0) &&
+        (pMVar1 = (target->fields).mvAvatar, pMVar1 != (MVAvatar *)0x0)) &&
+       (pMVar2 = (pMVar1->fields).body, pMVar2 != (MVBody *)0x0)) &&
+      ((pMVar3 = (pMVar2->fields).bodyObject, pMVar3 != (MVBodyObject *)0x0 &&
+       (pBVar4 = (pMVar3->fields).bodyData, pBVar4 != (BodyData *)0x0)))) &&
+     (pTVar5 = (pBVar4->fields).PartBones, pTVar5 != (Transform__Array *)0x0)) {
     if (pTVar5->max_length == 0) goto code_?;
-    if (this_01 != (Transform *)0x0) {
+    if (this_02 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                (this_01,pTVar5->vector[0],0,(MethodInfo *)0x0);
-      Avatar::Avatar_StartBlinking(target,BlinkType__Enum_Lethal,INFINITY,(MethodInfo *)0x0);
-      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)this,(MethodInfo *)0x0);
-      if (this_02 != (GameObject *)0x0) {
-        bVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                GameObject_get_activeInHierarchy(this_02,(MethodInfo *)0x0);
-        if (bVar6 != 0) {
-          return;
-        }
-        this_00 = (this->fields).lethalParticles;
-        if (this_00 != (ParticleSystem *)0x0) {
-          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_2
-                    (this_00,(MethodInfo *)0x0);
-          return;
+                (this_02,pTVar5->vector[0],0,(MethodInfo *)0x0);
+      pMVar1 = (target->fields).mvAvatar;
+      if (((pMVar1 != (MVAvatar *)0x0) && (pMVar2 = (pMVar1->fields).body, pMVar2 != (MVBody *)0x0))
+         && ((pMVar3 = (pMVar2->fields).bodyObject, pMVar3 != (MVBodyObject *)0x0 &&
+             (this_00 = (pMVar3->fields).avatarBlinker, this_00 != (AvatarBlinker *)0x0)))) {
+        BlinkerBase::BlinkerBase_StartBlinking
+                  ((BlinkerBase *)this_00,BlinkType__Enum_Lethal,INFINITY,(MethodInfo *)0x0);
+        this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)this,(MethodInfo *)0x0);
+        if (this_03 != (GameObject *)0x0) {
+          bVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                  GameObject_get_activeInHierarchy(this_03,(MethodInfo *)0x0);
+          if (bVar6 != 0) {
+            return;
+          }
+          this_01 = (this->fields).lethalParticles;
+          if (this_01 != (ParticleSystem *)0x0) {
+            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_2
+                      (this_01,(MethodInfo *)0x0);
+            return;
+          }
         }
       }
     }
@@ -94,29 +101,33 @@ void Assembly-CSharp.dll::LethalModifier::LethalModifier_OnDeactivated
                (LethalModifier *this,Avatar *target,MethodInfo *method)
 
 {
-  if (target != (Avatar *)0x0) {
-    Avatar::Avatar_StopBlinking(target,BlinkType__Enum_Lethal,(MethodInfo *)0x0);
+  if ((((target != (Avatar *)0x0) && (pMVar1 = (target->fields).mvAvatar, pMVar1 != (MVAvatar *)0x0)
+       ) && (pMVar2 = (pMVar1->fields).body, pMVar2 != (MVBody *)0x0)) &&
+     ((pMVar3 = (pMVar2->fields).bodyObject, pMVar3 != (MVBodyObject *)0x0 &&
+      (this_00 = (pMVar3->fields).avatarBlinker, this_00 != (AvatarBlinker *)0x0)))) {
+    BlinkerBase::BlinkerBase_StopBlinking
+              ((BlinkerBase *)this_00,BlinkType__Enum_Lethal,(MethodInfo *)0x0);
     (this->fields).isDeactivating = 1;
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    if (this_01 != (GameObject *)0x0) {
-      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
-                        (this_01,(MethodInfo *)0x0);
-      if (bVar1 == 0) {
-        this_00 = (this->fields).lethalParticles;
-        if (this_00 != (ParticleSystem *)0x0) {
+    if (this_02 != (GameObject *)0x0) {
+      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+                        (this_02,(MethodInfo *)0x0);
+      if (bVar4 == 0) {
+        this_01 = (this->fields).lethalParticles;
+        if (this_01 != (ParticleSystem *)0x0) {
           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_2
-                    (this_00,(MethodInfo *)0x0);
+                    (this_01,(MethodInfo *)0x0);
           LethalModifier_Destroy(this,(MethodInfo *)0x0);
           return;
         }
       }
       else {
-        this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+        this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                             ((Component *)this,(MethodInfo *)0x0);
-        if (this_02 != (Transform *)0x0) {
+        if (this_03 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                    (this_02,(Transform *)0x0,(MethodInfo *)0x0);
+                    (this_03,(Transform *)0x0,(MethodInfo *)0x0);
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
@@ -136,8 +147,8 @@ void Assembly-CSharp.dll::LethalModifier::LethalModifier_OnDeactivated
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

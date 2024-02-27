@@ -544,7 +544,7 @@ bool Assembly-CSharp.dll::CollectTheItemCollectableInstance::
                        (Object *)StringLiteral_CollectTheItemCollectableId,value,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                       );
-            cVar4 = (*(code *)x->klass[1]._0.namespaze)(x);
+            cVar4 = (*(code *)x->klass[1]._0.namespaze)();
             return cVar4 != '\0';
           }
         }

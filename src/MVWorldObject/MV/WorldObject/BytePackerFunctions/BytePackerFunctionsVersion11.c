@@ -144,10 +144,8 @@ code_?:
     return (Dictionary_2_System_Object_System_Object_ *)0x0;
   }
   func_?();
-  ffree(extraout_ST1);
-  pcVar9 = (code *)swi(1);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar9)();
-  return pDVar1;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

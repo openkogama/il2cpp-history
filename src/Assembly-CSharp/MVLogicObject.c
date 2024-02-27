@@ -311,28 +311,53 @@ void Assembly-CSharp.dll::MVLogicObject::MVLogicObject_OnStateChanged
                (MVLogicObject *this,CullingGroupEvent cullingGroupEvent,MethodInfo *method)
 
 {
+  pMVar1 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__CullingApiWrapper);
+    func_?(&TypeInfo__IEditModeUI);
     cRam_? = '\x01';
   }
-  pCVar1 = (this->fields).cullingSubscriberBase;
-  if (pCVar1 != (CullingSubscriberBase *)0x0) {
-    distanceBandIndex = (pCVar1->fields)._DistanceBandIndex_k__BackingField;
+  pCVar2 = (this->fields).cullingSubscriberBase;
+  if (pCVar2 != (CullingSubscriberBase *)0x0) {
+    distanceBandIndex = (pCVar2->fields)._DistanceBandIndex_k__BackingField;
     if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CullingApiWrapper);
     }
-    value = CullingApiWrapper::CullingApiWrapper_Visible
+    bVar3 = CullingApiWrapper::CullingApiWrapper_Visible
                       (cullingGroupEvent,distanceBandIndex,(MethodInfo *)0x0);
-    this_00 = (this->fields).lodGameObject;
+    cVar4 = (*(code *)(this->klass->vtable).__unknown.method)
+                      (this,(this->klass->vtable).OnStateChanged.methodPtr);
+    this._0_1_ = bVar3;
+    if (cVar4 == '\0') {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MVGameControllerBase);
+        cRam_? = '\x01';
+      }
+      if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
+          (IEditModeUI *)0x0) {
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__MVGameControllerBase);
+          cRam_? = '\x01';
+        }
+        pIVar5 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+        if (pIVar5 == (IEditModeUI *)0x0) goto code_?;
+        cVar4 = func_?(1,TypeInfo__IEditModeUI,pIVar5);
+        if (cVar4 != '\0') {
+          this._0_1_ = 1;
+        }
+      }
+    }
+    this_00 = (pMVar1->fields).lodGameObject;
     if (this_00 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_00,value,(MethodInfo *)0x0);
+                (this_00,(bool)this,(MethodInfo *)0x0);
       return;
     }
   }
+code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

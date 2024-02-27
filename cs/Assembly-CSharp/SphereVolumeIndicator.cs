@@ -9,6 +9,7 @@ using UnityEngine;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
+[ExecuteInEditMode]
 public class SphereVolumeIndicator : MonoBehaviour
 {
 	// Fields

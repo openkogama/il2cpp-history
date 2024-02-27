@@ -466,93 +466,143 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&TypeInfo__IEditModeUI);
     func_?(&
                     MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__
                    );
-    func_?(&StringLiteral_OnWinningConditionReceived);
+    func_?(&
+                    MethodInfo__WinningConditionDebriefing____c___OnWinningConditionReceived_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__WinningConditionDebriefing____c);
     cRam_? = '\x01';
   }
+  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                   ((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__WinningConditionDebriefing____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__WinningConditionDebriefing____c);
+  }
+  callbackFunction = TypeInfo__WinningConditionDebriefing____c->static_fields->__9__9_0;
+  if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+    if ((TypeInfo__WinningConditionDebriefing____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__WinningConditionDebriefing____c);
+    }
+    object = TypeInfo__WinningConditionDebriefing____c->static_fields->__9;
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_IUIStack_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                        );
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+               MethodInfo__WinningConditionDebriefing____c___OnWinningConditionReceived_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__WinningConditionDebriefing____c->static_fields->__9__9_0 = callbackFunction;
+    func_?(&TypeInfo__WinningConditionDebriefing____c->static_fields->__9__9_0,
+                    callbackFunction);
+  }
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,
+             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+            );
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_isActiveAndEnabled
                     ((Behaviour *)this,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-              ((Object *)StringLiteral_OnWinningConditionReceived,(MethodInfo *)0x0);
-    MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-    if (MVar2 != MVGameMode__Enum_Play) {
-      MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-      if (MVar2 != MVGameMode__Enum_Edit) {
-        return;
-      }
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      winningCondition =
-           (IWinningCondition *)
-           TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-      if (winningCondition == (IWinningCondition *)0x0) goto code_?;
-      cVar3 = func_?();
-      if (cVar3 == '\0') {
-        return;
-      }
-    }
+  if (bVar1 == 0) {
+    return;
+  }
+  winningCondition = (IWinningCondition *)0x0;
+  MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+  if (MVar2 == MVGameMode__Enum_Play) {
+code_?:
     bVar1 = MVClientSettings::MVClientSettings_get_ReviveEnabled((MethodInfo *)0x0);
     if (bVar1 != 0) {
-      pSVar4 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+      pSVar3 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                          ((MethodInfo *)0x0);
-      if (((pSVar4 == (SpawnRoleDataMediator *)0x0) ||
-          (this_00 = (WebCompletionSource_1_System_Object_ *)(pSVar4->fields).reviveState,
+      if (((pSVar3 == (SpawnRoleDataMediator *)0x0) ||
+          (this_00 = (WebCompletionSource_1_System_Object_ *)(pSVar3->fields).reviveState,
           this_00 == (WebCompletionSource_1_System_Object_ *)0x0)) ||
          (this_01 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
                     WebCompletionSource_1_System_Object__get_Task
                               (this_00,
                                MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__
                               ), this_01 == (Task *)0x0)) goto code_?;
-      winningCondition = (IWinningCondition *)0x0;
+      winningCondition = (IWinningCondition *)&UNK_?;
       ReviveState::ReviveState_ResetSafePostions((ReviveState *)this_01,(MethodInfo *)0x0);
     }
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    iVar5 = func_?();
-    if (iVar5 != 0) {
-      if (winningCondition != (IWinningCondition *)0x0) {
-        iVar5 = func_?();
-        if ((iVar5 != 0) && (piVar6 = (int *)func_?(), piVar6 != (int *)0x0)) {
-          uVar7 = 0;
-          uVar8 = *(ushort *)(*piVar6 + 0xb6);
-          if (uVar8 != 0) {
-            do {
-              if (*(IWinningConditionBriefing__Class **)
-                   (*(int *)(*piVar6 + 0x58) + (uint)uVar7 * 8) ==
-                  TypeInfo__IWinningConditionBriefing) {
-                (**(code **)(*piVar6 +
-                            (*(int *)(*(int *)(*piVar6 + 0x58) + 4 + (uint)uVar7 * 8) + 0x19) * 8))
-                          ();
-                return;
-              }
-              uVar7 = uVar7 + 1;
-            } while (uVar7 < uVar8);
-          }
-          puVar9 = (undefined4 *)func_?();
-          (*(code *)*puVar9)();
-          return;
-        }
-        func_?();
-      }
-code_?:
-      func_?();
-      pcVar10 = (code *)swi(3);
-      (*pcVar10)();
+    iVar4 = func_?();
+    if (iVar4 == 0) {
       return;
     }
+    if (winningCondition != (IWinningCondition *)0x0) {
+      iVar4 = func_?();
+      if (iVar4 != 0) {
+        piVar5 = (int *)func_?();
+        if (piVar5 != (int *)0x0) {
+          uVar6 = 0;
+          uVar7 = *(ushort *)(*piVar5 + 0xb6);
+          if (uVar7 != 0) {
+            do {
+              if (*(IWinningConditionBriefing__Class **)
+                   (*(int *)(*piVar5 + 0x58) + (uint)uVar6 * 8) ==
+                  TypeInfo__IWinningConditionBriefing) {
+                puVar8 = (undefined4 *)
+                         (*piVar5 +
+                         (*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar6 * 8) + 0x19) * 8);
+                goto code_?;
+              }
+              uVar6 = uVar6 + 1;
+            } while (uVar6 < uVar7);
+          }
+          puVar8 = (undefined4 *)func_?();
+code_?:
+          (*(code *)*puVar8)();
+          return;
+        }
+        goto code_?;
+      }
+      func_?();
+    }
   }
+  else {
+    MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+    if (MVar2 != MVGameMode__Enum_Edit) {
+      return;
+    }
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
+        (IEditModeUI *)0x0) {
+      winningCondition = (IWinningCondition *)0x1;
+      cVar9 = func_?();
+      if (cVar9 == '\0') {
+        return;
+      }
+      goto code_?;
+    }
+  }
+code_?:
+  func_?();
+code_?:
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -1034,7 +1084,6 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
   puStack_4 = &stack0xffffff88;
   puVar5 = &stack0xffffff88;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
                    );
@@ -1044,9 +1093,9 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
                    );
-    in_stack_6 = &MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+    func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+    in_stack_6 = &MethodInfo__System__Collections__Generic__List<int>__List__;
     func_?();
-    func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
     func_?(&MethodInfo__System__Collections__Generic__List<ScoreActorEntry>__get_Count__);
     func_?(&MethodInfo__System__Collections__Generic__List<ScoreActorEntry>__get_Item_int_)
     ;
@@ -1058,7 +1107,6 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
                    );
-    func_?(&StringLiteral_No_winner);
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
     puVar5 = puStack_4;
@@ -1070,11 +1118,6 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
   DStack_7._currentValue = (Object *)0x0;
   if (scoreActorEntries != (List_1_ScoreActorEntry_ *)0x0) {
     if ((scoreActorEntries->fields)._size == 0) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                ((Object *)StringLiteral_No_winner,(MethodInfo *)0x0);
       WinningConditionDebriefing_SetupDebriefingNoWinner(this,(MethodInfo *)0x0);
       *unaff_FS_OFFSET = uStack_3;
       return;
@@ -1331,7 +1374,6 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
   puStack_4 = &stack0xffffffb4;
   puVar5 = &stack0xffffffb4;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
                    );
@@ -1341,12 +1383,12 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
                    );
-    in_stack_6 =
-         &
-         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
+                   );
+    in_stack_6 = &MethodInfo__System__Collections__Generic__List<ScoreTeamEntry>__get_Count__
     ;
     func_?();
-    func_?(&MethodInfo__System__Collections__Generic__List<ScoreTeamEntry>__get_Count__);
     func_?(&MethodInfo__System__Collections__Generic__List<ScoreTeamEntry>__get_Item_int_);
     func_?(&
                     AvatarCapture_MethodInfo__UnityEngine__Object__Instantiate<AvatarCapture>_AvatarCapture_
@@ -1360,7 +1402,6 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
                    );
     func_?(&::StringLiteral__);
-    func_?(&StringLiteral_No_winner);
     func_?(&StringLiteral__and_);
     func_?(&StringLiteral__between_);
     func_?(&StringLiteral_Winner__);
@@ -1374,11 +1415,6 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
   pIVar10 = (ImageAnimator *)DStack_8._version;
   if (scoreTeamEntries != (List_1_ScoreTeamEntry_ *)0x0) {
     if ((scoreTeamEntries->fields)._size == 0) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                ((Object *)StringLiteral_No_winner,(MethodInfo *)0x0);
       WinningConditionDebriefing_SetupDebriefingNoWinner(this,(MethodInfo *)0x0);
       *unaff_FS_OFFSET = uStack_3;
       return;

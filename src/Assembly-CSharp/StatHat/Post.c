@@ -56,13 +56,13 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Counter
               );
     method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar2 = StringLiteral_https___api_stathat_com;
-    pSVar1 = StringLiteral__c;
+    pSVar2 = StringLiteral__c;
+    pSVar1 = StringLiteral_https___api_stathat_com;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    (this_00->fields).BaseUrl = pSVar2;
+    (this_00->fields).BaseUrl = pSVar1;
     ppSStack3 = &(this_00->fields).BaseUrl;
-    pSStack4 = pSVar2;
+    pSStack4 = pSVar1;
     pDStack5 =
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
@@ -72,8 +72,8 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Counter
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    (this_00->fields).RelUrl = pSVar1;
-    pSStack8 = pSVar1;
+    (this_00->fields).RelUrl = pSVar2;
+    pSStack8 = pSVar2;
     func_?();
     method = (MethodInfo *)&UNK_?;
     Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
@@ -144,13 +144,13 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Counter_1
               );
     method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar2 = StringLiteral_https___api_stathat_com;
-    pSVar1 = StringLiteral__c;
+    pSVar2 = StringLiteral__c;
+    pSVar1 = StringLiteral_https___api_stathat_com;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    (this_00->fields).BaseUrl = pSVar2;
+    (this_00->fields).BaseUrl = pSVar1;
     ppSStack3 = &(this_00->fields).BaseUrl;
-    pSStack4 = pSVar2;
+    pSStack4 = pSVar1;
     pDStack5 =
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
@@ -160,8 +160,8 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Counter_1
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    (this_00->fields).RelUrl = pSVar1;
-    pSStack8 = pSVar1;
+    (this_00->fields).RelUrl = pSVar2;
+    pSStack8 = pSVar2;
     func_?();
     method = (MethodInfo *)&UNK_?;
     Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);

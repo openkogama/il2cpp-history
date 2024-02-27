@@ -1,4 +1,101 @@
 
+/* Void DebugStack() */
+
+void Assembly-CSharp.dll::UIStack::UIStack_DebugStack(UIStack *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                   );
+    func_?(&TypeInfo__System__String);
+    func_?(&TypeInfo__UIGroupFlags);
+    func_?(&::StringLiteral_____);
+    func_?(&::StringLiteral___);
+    func_?(&::StringLiteral____);
+    func_?(&StringLiteral_____Debugging_UI_Stack____);
+    func_?(&StringLiteral_____Debugging_UI_Stack____);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Debug);
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+            ((Object *)StringLiteral_____Debugging_UI_Stack____,(MethodInfo *)0x0);
+  IStack_1.m_value = 0;
+  pLVar2 = (this->fields).stackableUiElements;
+  while (pLVar2 != (List_1_UIStack_StackElement_ *)0x0) {
+    if ((pLVar2->fields)._size <= IStack_1.m_value) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)StringLiteral_____Debugging_UI_Stack____,(MethodInfo *)0x0);
+      return;
+    }
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).stackableUiElements;
+    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
+    RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                      (this_00,IStack_1.m_value,
+                       MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                      );
+    values = (String__Array *)func_?(TypeInfo__System__String,6);
+    pSVar4 = ::StringLiteral_____;
+    if (values == (String__Array *)0x0) break;
+    if (values->max_length == 0) goto code_?;
+    values->vector[0] = ::StringLiteral_____;
+    func_?(values->vector,pSVar4);
+    EStack_5.klass =
+         (Enum__Class *)mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
+    if (values->max_length < 2) goto code_?;
+    values->vector[1] = (String *)EStack_5.klass;
+    func_?(values->vector + 1);
+    if (values->max_length < 3) goto code_?;
+    EStack_5.klass = (Enum__Class *)::StringLiteral___;
+    values->vector[2] = ::StringLiteral___;
+    func_?(values->vector + 2);
+    if (RVar3 == (RegexCharClass_SingleRange)0x0) break;
+    EStack_5.klass = (Enum__Class *)TypeInfo__UIGroupFlags;
+    EStack_5.monitor = (MonitorData *)0xffffffff;
+    uStack_6 = *(undefined4 *)((int)RVar3 + 0x18);
+    EStack_5.klass =
+         (Enum__Class *)mscorlib.dll::System::Enum::Enum_ToString(&EStack_5,(MethodInfo *)0x0);
+    if (values->max_length < 4) goto code_?;
+    values->vector[3] = (String *)EStack_5.klass;
+    func_?(values->vector + 3);
+    if (values->max_length < 5) goto code_?;
+    EStack_5.klass = (Enum__Class *)::StringLiteral____;
+    values->vector[4] = ::StringLiteral____;
+    func_?(values->vector + 4);
+    EStack_5.klass = *(Enum__Class **)((int)RVar3 + 0x1c);
+    if (values->max_length < 6) goto code_?;
+    values->vector[5] = (String *)EStack_5.klass;
+    func_?(values->vector + 5);
+    pSVar4 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Debug);
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar4,(MethodInfo *)0x0);
+    IStack_1.m_value = IStack_1.m_value + 1;
+    pLVar2 = (this->fields).stackableUiElements;
+  }
+  func_?();
+code_?:
+  EStack_5.klass = (Enum__Class *)&UNK_?;
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
+  return;
+}
+
+
 /* Void FindStackParent(Transform, Int32 ByRef) */
 
 void Assembly-CSharp.dll::UIStack::UIStack_FindStackParent

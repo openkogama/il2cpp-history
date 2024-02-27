@@ -44,16 +44,20 @@ void Assembly-CSharp.dll::MutantModifier::MutantModifier_OnActivated
                (MutantModifier *this,Avatar *target,MethodInfo *method)
 
 {
-  if (target != (Avatar *)0x0) {
-    Avatar::Avatar_StartBlinking(target,BlinkType__Enum_Poison,INFINITY,(MethodInfo *)0x0);
+  if ((((target != (Avatar *)0x0) && (pMVar1 = (target->fields).mvAvatar, pMVar1 != (MVAvatar *)0x0)
+       ) && (pMVar2 = (pMVar1->fields).body, pMVar2 != (MVBody *)0x0)) &&
+     ((pMVar3 = (pMVar2->fields).bodyObject, pMVar3 != (MVBodyObject *)0x0 &&
+      (this_00 = (pMVar3->fields).avatarBlinker, this_00 != (AvatarBlinker *)0x0)))) {
+    BlinkerBase::BlinkerBase_StartBlinking
+              ((BlinkerBase *)this_00,BlinkType__Enum_Poison,INFINITY,(MethodInfo *)0x0);
     (this->fields)._.owner = target;
     func_?(&(this->fields)._.owner,target);
     (this->fields).isDeactivating = 0;
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -68,22 +72,26 @@ void Assembly-CSharp.dll::MutantModifier::MutantModifier_OnDeactivated
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if (target != (Avatar *)0x0) {
-    Avatar::Avatar_StopBlinking(target,BlinkType__Enum_Poison,(MethodInfo *)0x0);
+  if ((((target != (Avatar *)0x0) && (pMVar1 = (target->fields).mvAvatar, pMVar1 != (MVAvatar *)0x0)
+       ) && (pMVar2 = (pMVar1->fields).body, pMVar2 != (MVBody *)0x0)) &&
+     ((pMVar3 = (pMVar2->fields).bodyObject, pMVar3 != (MVBodyObject *)0x0 &&
+      (this_00 = (pMVar3->fields).avatarBlinker, this_00 != (AvatarBlinker *)0x0)))) {
+    BlinkerBase::BlinkerBase_StopBlinking
+              ((BlinkerBase *)this_00,BlinkType__Enum_Poison,(MethodInfo *)0x0);
     (this->fields).isDeactivating = 1;
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
-    if (pGVar1 != (GameObject *)0x0) {
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
-                        (pGVar1,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
-        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    if (pGVar4 != (GameObject *)0x0) {
+      bVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+                        (pGVar4,(MethodInfo *)0x0);
+      if (bVar5 == 0) {
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                  ((Object_1 *)pGVar1,(MethodInfo *)0x0);
+                  ((Object_1 *)pGVar4,(MethodInfo *)0x0);
         return;
       }
       if (cRam_? == '\0') {
@@ -103,8 +111,8 @@ void Assembly-CSharp.dll::MutantModifier::MutantModifier_OnDeactivated
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

@@ -1,11 +1,11 @@
 
 /* Boolean Equip(AvatarItemType, AvatarEquipableType, Dictionary`2[System.Object,System.Object],
-   Int32, Boolean) */
+   Int32) */
 
 bool Assembly-CSharp.dll::VehicleEquipable::VehicleEquipable_Equip
                (VehicleEquipable *this,AvatarItemType__Enum type,AvatarEquipableType__Enum equipType
                ,Dictionary_2_System_Object_System_Object_ *itemData,int32_t variantID,
-               bool holsterable,MethodInfo *method)
+               MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

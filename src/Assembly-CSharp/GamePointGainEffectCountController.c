@@ -113,9 +113,11 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
         fVar8 = fVar4;
       }
       pTVar3 = (this->fields).transformToSlide;
+      fVar1 = (fVar1 - (float)uVar6) * fVar8 + (float)uVar6;
+      fStack_9._0_1_ = SUB41(fVar1,0);
       if (pTVar3 != (Transform *)0x0) {
         value.y = (float)uVar7;
-        value.x = (fVar1 - (float)uVar6) * fVar8 + (float)uVar6;
+        value.x = fVar1;
         value.z = pVVar5->z;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                   (pTVar3,value,(MethodInfo *)0x0);
@@ -136,16 +138,18 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
     if (pTVar3 != (Transform *)0x0) {
       pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                          ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
-      uVar9 = pVVar5->x;
-      uVar10 = pVVar5->y;
-      fVar11 = 0.0;
-      if ((0.0 <= fVar8) && (fVar11 = _UNK_?, fVar8 <= _UNK_?)) {
-        fVar11 = fVar8;
+      uVar10 = pVVar5->x;
+      uVar11 = pVVar5->y;
+      fVar12 = 0.0;
+      if ((0.0 <= fVar8) && (fVar12 = _UNK_?, fVar8 <= _UNK_?)) {
+        fVar12 = fVar8;
       }
       pTVar3 = (this->fields).transformToSlide;
+      fVar1 = ((fVar4 + fVar1) - (float)uVar10) * fVar12 + (float)uVar10;
+      fStack_9._0_1_ = SUB41(fVar1,0);
       if (pTVar3 != (Transform *)0x0) {
-        value_00.y = (float)uVar10;
-        value_00.x = ((fVar4 + fVar1) - (float)uVar9) * fVar11 + (float)uVar9;
+        value_00.y = (float)uVar11;
+        value_00.x = fVar1;
         value_00.z = pVVar5->z;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                   (pTVar3,value_00,(MethodInfo *)0x0);
@@ -157,16 +161,10 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
       }
     }
   }
-  cVar12 = '\0';
   func_?();
-  cVar13 = '\x01';
-  pcVar14 = (code *)swi(4);
-  cVar15 = extraout_AH;
-  if (cVar12 == '\x01') {
-    (*pcVar14)();
-    cVar15 = extraout_AH_00;
-  }
-  cRam_? = cRam_? + cVar15 + cVar13;
+  *(char *)(extraout_EDX + 0x5a1042df) = *(char *)(extraout_EDX + 0x5a1042df) + fStack_9._0_1_;
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

@@ -129,6 +129,8 @@ int32_t MVWorldObject.dll::TeamsCounter::TeamsCounter_GetActorCount
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void GetActorWithBestScore(Int32 ByRef, MVTeam, GameStatCounterType, Int32) */
 
 void MVWorldObject.dll::TeamsCounter::TeamsCounter_GetActorWithBestScore
@@ -175,71 +177,108 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter_GetActorWithBestScore
   DStack_6._16_8_ = 0;
   *score = 0;
   this_00 = (this->fields).teamCounters;
-  if (((this_00 != (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)0x0) &&
-      (pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,team,
-                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>__get_Item_MV__WorldObject__MVTeam_
-                          ), pOVar7 != (Object *)0x0)) && (pOVar7[1].klass != (Object__Class *)0x0))
-  {
-    method_00 = (MethodInfo *)auStack_8;
-    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                        method_00,(Dictionary_2_System_UInt32_System_Object_ *)pOVar7[1].klass,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__GetEnumerator__
+  cVar7 = '\0';
+  cVar8 = (int)this_00 < 0;
+  uVar9 = this_00 == (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)0x0;
+  if (!(bool)uVar9) {
+    pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                       ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,team,
+                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>__get_Item_MV__WorldObject__MVTeam_
                        );
-    uStack_10 = 0;
-    DStack_6._dictionary = pDVar9->_dictionary;
-    DStack_6._version = pDVar9->_version;
-    DStack_6._index = pDVar9->_index;
-    DStack_6._current.key = (pDVar9->_current).key;
-    DStack_6._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
-    uStack_1 = 1;
-    pOStack_11 = (Object *)(auStack_8 + 0x18);
-    while( true ) {
-      do {
-        bVar12 = mscorlib.dll::System::Collections::Generic::
-                Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
-                Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                          ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                           (auStack_8 + 0x18),
-                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__MoveNext__
-                          );
-        if (bVar12 == 0) {
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    ((Object *)(auStack_8 + 0x18),
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__Dispose__
-                     ,method_00);
-          *unaff_FS_OFFSET = uStack_3;
-          return;
-        }
-      } while (DStack_6._current.key == excludedActorNr);
-      if (DStack_6._current.value == (Object *)0x0) break;
-      iVar13 = *(int *)((int)DStack_6._current.value + 8);
-      if (0 < iVar13) {
-        switch(statType & 0xff) {
-        case GameStatCounterType__Enum_Kill:
-        case GameStatCounterType__Enum_Collectible:
-        case GameStatCounterType__Enum_OculusKill:
-          if (*score < iVar13) {
-            *score = iVar13;
+    cVar7 = '\0';
+    cVar8 = (int)pOVar10 < 0;
+    uVar9 = pOVar10 == (Object *)0x0;
+    if (!(bool)uVar9) {
+      this_01 = pOVar10[1].klass;
+      cVar7 = '\0';
+      cVar8 = (int)this_01 < 0;
+      uVar9 = this_01 == (Object__Class *)0x0;
+      if (!(bool)uVar9) {
+        unaff_EDI = (MethodInfo *)auStack_11;
+        pDVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+                 Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                           ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                            unaff_EDI,(Dictionary_2_System_UInt32_System_Object_ *)this_01,
+                            MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__GetEnumerator__
+                           );
+        iStack_13 = 0;
+        DStack_6._dictionary = pDVar12->_dictionary;
+        DStack_6._version = pDVar12->_version;
+        DStack_6._index = pDVar12->_index;
+        DStack_6._current.key = (pDVar12->_current).key;
+        DStack_6._16_8_ = *(undefined8 *)&(pDVar12->_current).value;
+        uStack_1 = 1;
+        pOStack_14 = (Object *)(auStack_11 + 0x18);
+        while (bVar15 = mscorlib.dll::System::Collections::Generic::
+                       Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+                       Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                                 ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                                   *)(auStack_11 + 0x18),
+                                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__MoveNext__
+                                 ), bVar15 != 0) {
+          if (DStack_6._current.key != excludedActorNr) {
+            cVar7 = '\0';
+            cVar8 = (int)DStack_6._current.value < 0;
+            uVar9 = 1;
+            if (DStack_6._current.value == (Object *)0x0) goto code_?;
+            iVar16 = *(int *)((int)DStack_6._current.value + 8);
+            if (0 < iVar16) {
+              switch(statType & 0xff) {
+              case GameStatCounterType__Enum_Kill:
+              case GameStatCounterType__Enum_Collectible:
+              case GameStatCounterType__Enum_OculusKill:
+                if (*score < iVar16) {
+                  *score = iVar16;
+                }
+                break;
+              case GameStatCounterType__Enum_Flag:
+              case GameStatCounterType__Enum_TimeAttackFlag:
+                if (((*score < 0) || (iVar16 < *score)) || (*score == 0)) {
+                  *score = iVar16;
+                }
+              }
+            }
           }
-          break;
-        case GameStatCounterType__Enum_Flag:
-        case GameStatCounterType__Enum_TimeAttackFlag:
-          if (((*score < 0) || (iVar13 < *score)) || (*score == 0)) {
-            *score = iVar13;
-          }
         }
+        uStack_1 = 0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  ((Object *)(auStack_11 + 0x18),
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__Dispose__
+                   ,unaff_EDI);
+code_?:
+        *unaff_FS_OFFSET = uStack_3;
+        return;
       }
     }
   }
-  func_?();
+code_?:
+  do {
+    func_?();
+    if ((bool)uVar9 || cVar7 != cVar8) {
+      unaff_EBX = CONCAT31((int3)((uint)unaff_EBX >> 8),extraout_CL);
+      if ((bool)uVar9 || cVar7 != cVar8) {
                     /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+        halt_baddata();
+      }
+    }
+    else {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                (pOStack_14,
+                 (ExceptionArgument__Enum)
+                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__Dispose__
+                 ,unaff_EDI);
+      if (iStack_13 == 0) goto code_?;
+    }
+    bVar17 = func_?();
+    *(int *)(unaff_EBX + -0x3b7c1bbb) = *(int *)(unaff_EBX + -0x3b7c1bbb) + -1;
+    cVar7 = '\0';
+    in_stack_18 = in_stack_18 | bVar17;
+    cVar8 = (char)in_stack_18 < '\0';
+    uVar9 = in_stack_18 == 0;
+    func_?();
+  } while( true );
 }
 
 

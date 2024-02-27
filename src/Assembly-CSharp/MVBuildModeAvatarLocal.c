@@ -547,26 +547,40 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal::MVBuildModeAvatarLocal_OnPosit
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MVBuildModeAvatarLocal__SpawnRoleDataReceiverActionDelegate);
+    func_?(&
+                    MethodInfo__MVBuildModeAvatarLocal____c__DisplayClass21_0___OnPositionChanged_b__0_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__Mediator__SpawnRoleDataReceiver_
+                   );
+    func_?(&TypeInfo__MVBuildModeAvatarLocal____c__DisplayClass21_0);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields).spawnRoleDataReceiver;
-  if (((pSVar1 != (SpawnRoleDataReceiver *)0x0) &&
-      (positionChangedEventArgs != (PositionChangedEventArgs *)0x0)) &&
-     (this_00 = (pSVar1->fields).position,
-     this_00 != (SpawnRoleReceiverVariable_1_UnityEngine_Vector3_ *)0x0)) {
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleReceiverVariable`1[UnityEngine::Vector3]::
-    SpawnRoleReceiverVariable_1_UnityEngine_Vector3__set_Value
-              (this_00,(positionChangedEventArgs->fields).NewPos,
-               MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleReceiverVariable<UnityEngine::Vector3>__set_Value_UnityEngine__Vector3_
-              );
+  method_00 = TypeInfo__MVBuildModeAvatarLocal____c__DisplayClass21_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  if (value != (Object *)0x0) {
+    value[1].klass = (Object__Class *)positionChangedEventArgs;
+    func_?(value + 1,positionChangedEventArgs);
+    this_00 = (UnityAction_1_System_Object_ *)
+              func_?(TypeInfo__MVBuildModeAvatarLocal__SpawnRoleDataReceiverActionDelegate)
+    ;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+    UnityAction_1_System_Object___ctor
+              (this_00,value,
+               MethodInfo__MVBuildModeAvatarLocal____c__DisplayClass21_0___OnPositionChanged_b__0_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__Mediator__SpawnRoleDataReceiver_
+               ,(MethodInfo *)0x0);
+    if ((this->fields).spawnRoleDataReceiver != (SpawnRoleDataReceiver *)0x0) {
+      if (this_00 == (UnityAction_1_System_Object_ *)0x0) goto code_?;
+      (*(this_00->fields)._._.invoke_impl)
+                ((this_00->fields)._._.method_code,(this->fields).spawnRoleDataReceiver,
+                 (this_00->fields)._._.method);
+    }
     return;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+code_?:
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -579,26 +593,40 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal::MVBuildModeAvatarLocal_OnScale
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MVBuildModeAvatarLocal__SpawnRoleDataReceiverActionDelegate);
+    func_?(&
+                    MethodInfo__MVBuildModeAvatarLocal____c__DisplayClass22_0___OnScaleChanged_b__0_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__Mediator__SpawnRoleDataReceiver_
+                   );
+    func_?(&TypeInfo__MVBuildModeAvatarLocal____c__DisplayClass22_0);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields).spawnRoleDataReceiver;
-  if (((pSVar1 != (SpawnRoleDataReceiver *)0x0) &&
-      (scaleChangedEventArgs != (ScaleChangedEventArgs *)0x0)) &&
-     (this_00 = (pSVar1->fields).scale,
-     this_00 != (SpawnRoleReceiverVariable_1_UnityEngine_Vector3_ *)0x0)) {
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleReceiverVariable`1[UnityEngine::Vector3]::
-    SpawnRoleReceiverVariable_1_UnityEngine_Vector3__set_Value
-              (this_00,(scaleChangedEventArgs->fields).NewScale,
-               MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleReceiverVariable<UnityEngine::Vector3>__set_Value_UnityEngine__Vector3_
-              );
+  method_00 = TypeInfo__MVBuildModeAvatarLocal____c__DisplayClass22_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  if (value != (Object *)0x0) {
+    value[1].klass = (Object__Class *)scaleChangedEventArgs;
+    func_?(value + 1,scaleChangedEventArgs);
+    this_00 = (UnityAction_1_System_Object_ *)
+              func_?(TypeInfo__MVBuildModeAvatarLocal__SpawnRoleDataReceiverActionDelegate)
+    ;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+    UnityAction_1_System_Object___ctor
+              (this_00,value,
+               MethodInfo__MVBuildModeAvatarLocal____c__DisplayClass22_0___OnScaleChanged_b__0_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__Mediator__SpawnRoleDataReceiver_
+               ,(MethodInfo *)0x0);
+    if ((this->fields).spawnRoleDataReceiver != (SpawnRoleDataReceiver *)0x0) {
+      if (this_00 == (UnityAction_1_System_Object_ *)0x0) goto code_?;
+      (*(this_00->fields)._._.invoke_impl)
+                ((this_00->fields)._._.method_code,(this->fields).spawnRoleDataReceiver,
+                 (this_00->fields)._._.method);
+    }
     return;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+code_?:
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -672,6 +700,33 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal::MVBuildModeAvatarLocal_SetToSp
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
+  return;
+}
+
+
+/* Void SpawnRoleDataReceiverAction(MVBuildModeAvatarLocal+SpawnRoleDataReceiverActionDelegate) */
+
+void Assembly-CSharp.dll::MVBuildModeAvatarLocal::MVBuildModeAvatarLocal_SpawnRoleDataReceiverAction
+               (MVBuildModeAvatarLocal *this,
+               MVBuildModeAvatarLocal_SpawnRoleDataReceiverActionDelegate
+               *spawnRoleDataReceiverActionDelegate,MethodInfo *method)
+
+{
+  puStack_1 = &stack0xfffffffc;
+  if ((this->fields).spawnRoleDataReceiver != (SpawnRoleDataReceiver *)0x0) {
+    if (spawnRoleDataReceiverActionDelegate ==
+        (MVBuildModeAvatarLocal_SpawnRoleDataReceiverActionDelegate *)0x0) {
+      uVar2 = func_?(&pvStack_3);
+      func_?(uVar2);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    puStack_1 = (spawnRoleDataReceiverActionDelegate->fields)._._.method;
+    pSStack_5 = (this->fields).spawnRoleDataReceiver;
+    pvStack_3 = (spawnRoleDataReceiverActionDelegate->fields)._._.method_code;
+    (*(spawnRoleDataReceiverActionDelegate->fields)._._.invoke_impl)();
+  }
   return;
 }
 

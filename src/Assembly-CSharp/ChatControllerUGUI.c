@@ -110,7 +110,7 @@ code_?:
                                  ((Component *)pRVar7,(MethodInfo *)0x0),
              pGVar8 != (GameObject *)0x0)) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar8,0x31,(MethodInfo *)0x0);
+                      (pGVar8,0x11,(MethodInfo *)0x0);
             goto code_?;
           }
         }

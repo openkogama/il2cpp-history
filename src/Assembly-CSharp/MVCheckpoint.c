@@ -121,7 +121,7 @@ code_?:
     if (bVar3 == 0) {
       if (x == (Object_1 *)0x0) goto code_?;
       _Stack00000018 = x->klass[1]._0.byval_arg.data;
-      uStack4 = 1;
+      uStack4 = 0;
       uStack5 = 0;
       (*(code *)x->klass[1]._0.namespaze)();
     }

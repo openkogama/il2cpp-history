@@ -318,6 +318,154 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 		private IAvatarInputController CreateInputController();
 	}
 
+	private delegate void SpawnRoleDataReceiverActionDelegate(SpawnRoleDataReceiver spawnRoleDataReceiver);
+
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static SpawnRoleDataReceiverActionDelegate __9__82_0;
+		public static SpawnRoleDataReceiverActionDelegate __9__86_0;
+		public static SpawnRoleDataReceiverActionDelegate __9__128_0;
+		public static SpawnRoleDataReceiverActionDelegate __9__139_0;
+		public static SpawnRoleDataReceiverActionDelegate __9__139_1;
+		public static SpawnRoleDataReceiverActionDelegate __9__140_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _LeaveVehicle_b__82_0(SpawnRoleDataReceiver receiver);
+		internal void _OnEnterVehicle_b__86_0(SpawnRoleDataReceiver receiver);
+		internal void _Suicide_b__128_0(SpawnRoleDataReceiver receiver);
+		internal void _GetSpawnTransform_b__139_0(SpawnRoleDataReceiver receiver);
+		internal void _GetSpawnTransform_b__139_1(SpawnRoleDataReceiver receiver);
+		internal void _OnCheckpointReachedResetRevive_b__140_0(SpawnRoleDataReceiver receiver);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass124_0
+	{
+		// Fields
+		public object shield;
+
+		// Constructors
+		public __c__DisplayClass124_0();
+
+		// Methods
+		internal void _InitializeShield_b__1(SpawnRoleDataReceiver receiver);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass127_0
+	{
+		// Fields
+		public object health;
+
+		// Constructors
+		public __c__DisplayClass127_0();
+
+		// Methods
+		internal void _InitializeHealth_b__1(SpawnRoleDataReceiver receiver);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass130_0
+	{
+		// Fields
+		public PlayerKilledByType damageType;
+		public int localPlayerActorNr;
+		public int dmgDealerActorNr;
+
+		// Constructors
+		public __c__DisplayClass130_0();
+
+		// Methods
+		internal void _RelayDamageEvent_b__0(SpawnRoleDataReceiver receiver);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass131_0
+	{
+		// Fields
+		public Vector3 lastSafePosition;
+		public Transform cam;
+
+		// Constructors
+		public __c__DisplayClass131_0();
+
+		// Methods
+		internal void _RelayNewSafePosition_b__0(SpawnRoleDataReceiver receiver);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass143_0
+	{
+		// Fields
+		public PositionChangedEventArgs positionChangedEventArgs;
+
+		// Constructors
+		public __c__DisplayClass143_0();
+
+		// Methods
+		internal void _OnPositionChanged_b__0(SpawnRoleDataReceiver receiver);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass144_0
+	{
+		// Fields
+		public RotationChangedEventArgs rotationChangedEventArgs;
+
+		// Constructors
+		public __c__DisplayClass144_0();
+
+		// Methods
+		internal void _OnRotationChanged_b__0(SpawnRoleDataReceiver receiver);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass145_0
+	{
+		// Fields
+		public ScaleChangedEventArgs scaleChangedEventArgs;
+
+		// Constructors
+		public __c__DisplayClass145_0();
+
+		// Methods
+		internal void _OnScaleChanged_b__0(SpawnRoleDataReceiver receiver);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass94_0
+	{
+		// Fields
+		public bool isSeated;
+
+		// Constructors
+		public __c__DisplayClass94_0();
+
+		// Methods
+		internal void _OnSeatedChanged_b__0(SpawnRoleDataReceiver receiver);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass95_0
+	{
+		// Fields
+		public object a;
+
+		// Constructors
+		public __c__DisplayClass95_0();
+
+		// Methods
+		internal void _AvatarStateChangedHandler_b__0(SpawnRoleDataReceiver receiver);
+	}
+
 	// Constructors
 	public MVAvatarLocal(Dictionary<object, object> data, Dictionary<int, MVWorldObjectClient> worldObjects);
 
@@ -339,6 +487,7 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 	public void SetMode(AvatarRuntimeState localMode);
 	public void SetCharacterController(SmoothCharacterController characterController);
 	public void LeaveVehicle(bool leaveBecauseOfServer);
+	private void SpawnRoleDataReceiverAction(SpawnRoleDataReceiverActionDelegate spawnRoleDataReceiverActionDelegate);
 	public override void BeforeVehicleEntered();
 	public override void OnEnterVehicle();
 	public override void OnLeaveVehicle();
@@ -397,8 +546,14 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 	protected override void OnCurrentPickupChange(object newPickupDataData);
 	private void HandleBlinkerVisibility();
 	[CompilerGenerated]
-	private void _InitializeShield_b__122_0(object shield);
+	private void _OnHolsteredChanged_b__110_0(SpawnRoleDataReceiver receiver);
 	[CompilerGenerated]
-	private void _InitializeHealth_b__125_0(object health);
+	private void _UpdateMaxHealth_b__118_0(SpawnRoleDataReceiver receiver);
+	[CompilerGenerated]
+	private void _InitializeShield_b__124_0(object shield);
+	[CompilerGenerated]
+	private void _InitializeHealth_b__127_0(object health);
+	[CompilerGenerated]
+	private void _OnEquipItem_b__134_0(SpawnRoleDataReceiver receiver);
 }
 

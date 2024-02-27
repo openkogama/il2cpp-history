@@ -371,10 +371,48 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
        (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
        pMVar5 == (MVLocalPlayer *)0x0)) {
 code_?:
-      func_?();
-      pcVar6 = (code *)swi(1);
-      bVar3 = (*pcVar6)();
-      return bVar3;
+      uVar6 = func_?();
+      pcVar7 = (char *)CONCAT22((short)((uint)uVar6 >> 0x10),
+                                (ushort)(byte)((char)uVar6 + (char)((uint)uVar6 >> 8) * -0x10));
+      *pcVar7 = *pcVar7 - extraout_DL;
+      pcVar7 = (char *)((uint)pcVar7 ^ 0x28);
+      LOCK();
+      cVar8 = *pcVar7;
+      *pcVar7 = *pcVar7 - extraout_DL;
+      UNLOCK();
+      pcVar9 = (code *)swi(4);
+      cVar10 = extraout_DL;
+      if (SBORROW1(cVar8,extraout_DL)) {
+        pcVar7 = (char *)(*pcVar9)();
+        cVar10 = extraout_DL_00;
+      }
+      LOCK();
+      cVar8 = *pcVar7;
+      *pcVar7 = *pcVar7 - cVar10;
+      UNLOCK();
+      pcVar9 = (code *)swi(4);
+      if (SBORROW1(cVar8,cVar10)) {
+        pcVar7 = (char *)(*pcVar9)();
+        cVar10 = extraout_DL_01;
+      }
+      LOCK();
+      *pcVar7 = *pcVar7 - cVar10;
+      UNLOCK();
+      pcVar7 = (char *)CONCAT22((short)((uint)pcVar7 >> 0x10),
+                                (ushort)(byte)((char)pcVar7 + (char)((uint)pcVar7 >> 8) * -0x10));
+      cVar8 = *pcVar7;
+      *pcVar7 = *pcVar7 - cVar10;
+      pcVar9 = (code *)swi(4);
+      if (SBORROW1(cVar8,cVar10)) {
+        pcVar7 = (char *)(*pcVar9)();
+        cVar10 = extraout_DL_02;
+      }
+      LOCK();
+      *pcVar7 = *pcVar7 - cVar10;
+      UNLOCK();
+      do {
+                    /* WARNING: Do nothing block with infinite loop */
+      } while( true );
     }
     if ((pMVar5->fields)._._ActorNr_k__BackingField == actorNumber) {
       return 0;
@@ -402,6 +440,8 @@ code_?:
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* WARNING (jumptable): Removing unreachable block (ram,0xADDR) */
 /* Void UpdateNotification(Int32, GameStatCounterType, Int32) */
 
@@ -450,10 +490,11 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
     return;
   }
   pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  GVar4 = counterType & 0xff;
   if ((pMVar3 != (MVNetworkGame *)0x0) &&
      (this = (pMVar3->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
-    bVar4 = MVPlayerContainer::MVPlayerContainer_ContainsKey(this,actorNumber,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
+    bVar5 = MVPlayerContainer::MVPlayerContainer_ContainsKey(this,actorNumber,(MethodInfo *)0x0);
+    if (bVar5 != 0) {
       switch(counterType & 0xff) {
       case GameStatCounterType__Enum_Kill:
       case GameStatCounterType__Enum_Collectible:
@@ -461,10 +502,11 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
         break;
       case GameStatCounterType__Enum_TimeAttackFlag:
         pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        GVar4 = actorNumber;
         if ((pMVar3 == (MVNetworkGame *)0x0) ||
-           (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0),
-           pMVar5 == (MVLocalPlayer *)0x0)) goto code_?;
-        if ((pMVar5->fields)._._ActorNr_k__BackingField == actorNumber) {
+           (pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0),
+           pMVar6 == (MVLocalPlayer *)0x0)) goto code_?;
+        if ((pMVar6->fields)._._ActorNr_k__BackingField == actorNumber) {
           return;
         }
       case GameStatCounterType__Enum_Flag:
@@ -473,22 +515,70 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
     return;
   }
 code_?:
-  uVar6 = func_?();
-  uVar7 = (undefined2)((uint6)uVar6 >> 0x20);
-  pcVar8 = (char *)uVar6;
-  cVar9 = (char)((uint6)uVar6 >> 0x20);
-  *pcVar8 = *pcVar8 - cVar9;
-  *pcVar8 = *pcVar8 - cVar9;
-  in(uVar7);
-  *pcVar8 = *pcVar8 - cVar9;
-  in(uVar7);
-  *pcVar8 = *pcVar8 - cVar9;
-  *pcVar8 = *pcVar8 - cVar9;
-  in(uVar7);
-  *pcVar8 = *pcVar8 - cVar9;
-  *pcVar8 = *pcVar8 - cVar9;
+  uVar7 = func_?();
+  pcVar8 = (char *)((ulonglong)uVar7 >> 0x20);
+  pbVar9 = (byte *)uVar7;
+  cVar10 = (char)((ulonglong)uVar7 >> 0x20);
+  *pbVar9 = *pbVar9 - cVar10;
+  fptan(extraout_ST0);
+  *pbVar9 = *pbVar9 - cVar10;
+  bVar11 = *pbVar9;
+  bVar12 = extraout_CL;
+  while (cVar13 = (char)GVar4, bVar11 == 0) {
+    pbVar14 = (byte *)(pcVar8 + unaff_ESI * 8 + 0x28);
+    bVar11 = *pbVar14;
+    *pbVar14 = *pbVar14 + bVar12;
+    bVar12 = bVar12 + cVar13 + CARRY1(bVar11,bVar12);
+    *pbVar9 = *pbVar9 - cVar10;
+    bVar11 = *pbVar9;
+  }
+  *pbVar9 = *pbVar9 - cVar10;
+  *pbVar9 = *pbVar9 - cVar10;
+  *pbVar9 = *pbVar9 - cVar10;
+  *pbVar9 = *pbVar9 - cVar10;
+  *pbVar9 = *pbVar9 - cVar10;
+  while( true ) {
+    fptan((float10)1);
+    bVar12 = (byte)pcVar8;
+    *pbVar9 = *pbVar9 - bVar12;
+    pcVar8 = (char *)CONCAT22((short)((uint)pcVar8 >> 0x10),
+                              CONCAT11((char)((uint)pcVar8 >> 8) - cVar13,bVar12));
+    bVar11 = *pbVar9;
+    *pbVar9 = *pbVar9 - bVar12;
+    if (bVar11 < bVar12 || *pbVar9 == 0) break;
+    *pbVar9 = *pbVar9 - bVar12;
+  }
   do {
+    bVar12 = (byte)pcVar8;
+    *pbVar9 = *pbVar9 - bVar12;
+    pcVar8 = (char *)CONCAT22((short)((uint)pcVar8 >> 0x10),
+                              CONCAT11((char)((uint)pcVar8 >> 8) - cVar13,bVar12));
+    bVar11 = *pbVar9;
+    *pbVar9 = *pbVar9 - bVar12;
+    while (bVar12 <= bVar11) {
+      bVar11 = *pbVar9;
+      *pbVar9 = *pbVar9 - bVar12;
+      if (bVar12 <= bVar11) {
+        while( true ) {
+          bVar12 = (byte)pcVar8;
+          *pbVar9 = *pbVar9 - bVar12;
+          cVar10 = (char)((uint)pcVar8 >> 8) - cVar13;
+          pcVar8 = (char *)CONCAT22((short)((uint)pcVar8 >> 0x10),CONCAT11(cVar10,bVar12));
+          bVar11 = *pbVar9;
+          *pbVar9 = *pbVar9 - bVar12;
+          if (bVar12 <= bVar11) break;
+          pcVar8[-0xb] = pcVar8[-0xb] + cVar10 + '\x01';
+        }
+        *pbVar9 = *pbVar9 - bVar12;
+        *pbVar9 = *pbVar9 - bVar12;
+        do {
                     /* WARNING: Do nothing block with infinite loop */
+        } while( true );
+      }
+      *pcVar8 = *pcVar8 + extraout_CH + '\x01';
+      bVar11 = *pbVar9;
+      *pbVar9 = *pbVar9 - bVar12;
+    }
   } while( true );
 }
 

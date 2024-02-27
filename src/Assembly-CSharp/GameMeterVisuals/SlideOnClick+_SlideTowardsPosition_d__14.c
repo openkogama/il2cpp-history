@@ -8,44 +8,46 @@ bool Assembly-CSharp.dll::GameMeterVisuals::SlideOnClick+<SlideTowardsPosition>d
 {
   this_00 = (this->fields).__4__this;
   fVar1 = 0.0;
-  puVar2 = in_stack_3;
   switch((this->fields).__1__state) {
   case 0:
     (this->fields).__1__state = -1;
     (this->fields)._i_5__2 = 0.0;
     if (this_00 == (SlideOnClick *)0x0) {
 code_?:
-      method_00 = (MethodInfo *)&UNK_?;
-      iVar4 = func_?();
-      if ((POPCOUNT(*(byte *)(unaff_FS_OFFSET + unaff_EBX + 0x10) & extraout_CL) & 1U) != 0) {
-        *(char *)(iVar4 + -0x27efb47b) = *(char *)(iVar4 + -0x27efb47b) + (char)iVar4;
-        LOCK();
-        *(byte *)(unaff_EBX + 0xf) = extraout_CL;
-        UNLOCK();
-        pcVar5 = (code *)swi(3);
-        bVar6 = (*pcVar5)();
-        return bVar6;
-      }
-      goto code_?;
+      bVar2 = 0;
+      uVar3 = func_?();
+      pbVar4 = (byte *)((int)&this_00->klass + 1);
+      *(undefined1 *)&this_00->klass = *(undefined1 *)&this->klass;
+      pbVar5 = (byte *)((int)((ulonglong)uVar3 >> 0x20) + -0x3fefb46a);
+      bVar6 = (byte)((uint)(unaff_EBX + -1) >> 8);
+      bVar7 = *pbVar5 + bVar6;
+      bVar8 = CARRY1(*pbVar5,bVar6) || CARRY1(bVar7,bVar2);
+      *pbVar5 = bVar7 + bVar2;
+      bVar2 = (char)(unaff_EBX + -1) - 1;
+      bVar7 = *pbVar4;
+      bVar6 = *pbVar4 + bVar2;
+      *pbVar4 = bVar6 + bVar8;
+      pcVar9 = (char *)((int)uVar3 + -0x68);
+      *pcVar9 = *pcVar9 + (char)((ulonglong)uVar3 >> 0x20) +
+                (CARRY1(bVar7,bVar2) || CARRY1(bVar6,bVar8));
+      pcVar10 = (code *)swi(3);
+      bVar11 = (*pcVar10)();
+      return bVar11;
     }
     break;
   case 1:
-    fStack_7 = (this->fields)._i_5__2;
-    in_stack_8 = 0.0;
+    fVar1 = (this->fields)._i_5__2;
     (this->fields).__1__state = -1;
-    puVar2 = &UNK_?;
-    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    fVar12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     if (this_00 == (SlideOnClick *)0x0) goto code_?;
-    fVar1 = fVar1 * (this_00->fields).lerpSpeed + fStack_7;
+    fVar1 = fVar12 * (this_00->fields).lerpSpeed + fVar1;
     (this->fields)._i_5__2 = fVar1;
     break;
   case 2:
     fVar1 = (this->fields)._i_5__2;
-    in_stack_8 = 0.0;
     (this->fields).__1__state = -1;
-    puVar2 = &UNK_?;
-    fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    (this->fields)._i_5__2 = fVar9 + fVar1;
+    fVar12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    (this->fields)._i_5__2 = fVar12 + fVar1;
     if (this_00 == (SlideOnClick *)0x0) goto code_?;
     goto code_?;
   case 3:
@@ -53,13 +55,11 @@ code_?:
     if (this_00 == (SlideOnClick *)0x0) goto code_?;
     goto code_?;
   case 4:
-    fStack_7 = (this->fields)._i_5__2;
-    in_stack_8 = 0.0;
+    fVar1 = (this->fields)._i_5__2;
     (this->fields).__1__state = -1;
-    puVar2 = &UNK_?;
-    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    fVar12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     if (this_00 == (SlideOnClick *)0x0) goto code_?;
-    fVar1 = fVar1 * (this_00->fields).lerpSpeed + fStack_7;
+    fVar1 = fVar12 * (this_00->fields).lerpSpeed + fVar1;
     goto code_?;
   default:
     goto code_?;
@@ -81,8 +81,8 @@ code_?:
   (this->fields)._i_5__2 = 0.0;
 code_?:
   fVar1 = (this_00->fields).waitBeforeMoveBack;
-  pfVar10 = &(this->fields)._i_5__2;
-  if (*pfVar10 <= fVar1 && fVar1 != *pfVar10) {
+  pfVar13 = &(this->fields)._i_5__2;
+  if (*pfVar13 <= fVar1 && fVar1 != *pfVar13) {
     (this->fields).__2__current = (Object *)0x0;
     func_?(&(this->fields).__2__current,0);
     (this->fields).__1__state = 2;
@@ -98,34 +98,25 @@ code_?:
   }
 code_?:
   (this->fields)._i_5__2 = fVar1;
-  pfVar10 = &(this->fields)._i_5__2;
-  method_00 = (MethodInfo *)0x0;
-  if (_UNK_? < *pfVar10 || _UNK_? == *pfVar10) {
-    pos_00.x = (this_00->fields)._StartPos_k__BackingField.x;
-    pos_00.y = (this_00->fields)._StartPos_k__BackingField.y;
-    SlideOnClick::SlideOnClick_SetToPosition(this_00,pos_00,(MethodInfo *)0x0);
-    (this_00->fields).readyForSlide = 1;
-code_?:
-    return 0;
+  pfVar13 = &(this->fields)._i_5__2;
+  if (*pfVar13 <= _UNK_? && _UNK_? != *pfVar13) {
+    from_00.x = (this_00->fields).targetPos.x;
+    from_00.y = (this_00->fields).targetPos.y;
+    to_00.x = (this_00->fields)._StartPos_k__BackingField.x;
+    to_00.y = (this_00->fields)._StartPos_k__BackingField.y;
+    SlideOnClick::SlideOnClick_LerpToPos
+              (this_00,from_00,to_00,(this->fields)._i_5__2,(MethodInfo *)0x0);
+    (this->fields).__2__current = (Object *)0x0;
+    func_?(&(this->fields).__2__current,0);
+    (this->fields).__1__state = 4;
+    return 1;
   }
-  uVar11 = (this_00->fields).targetPos.x;
-  uVar12 = (this_00->fields).targetPos.y;
-  fStack_7 = (float)uVar12;
-  uVar13 = (this_00->fields)._StartPos_k__BackingField.x;
-  puVar2 = (undefined *)(this_00->fields)._StartPos_k__BackingField.y;
-  fStack_14 = (float)uVar13;
-  in_stack_8 = (this->fields)._i_5__2;
-  fStack_15 = (float)uVar11;
+  pos_00.x = (this_00->fields)._StartPos_k__BackingField.x;
+  pos_00.y = (this_00->fields)._StartPos_k__BackingField.y;
+  SlideOnClick::SlideOnClick_SetToPosition(this_00,pos_00,(MethodInfo *)0x0);
+  (this_00->fields).readyForSlide = 1;
 code_?:
-  from_00.y = fStack_7;
-  from_00.x = fStack_15;
-  to_00.y = (float)puVar2;
-  to_00.x = fStack_14;
-  SlideOnClick::SlideOnClick_LerpToPos(this_00,from_00,to_00,in_stack_8,method_00);
-  (this->fields).__2__current = (Object *)0x0;
-  func_?(&(this->fields).__2__current,0);
-  (this->fields).__1__state = 4;
-  return 1;
+  return 0;
 }
 
 

@@ -147,7 +147,7 @@ Object * Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::Costum
     func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
   }
   pOVar1 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::
-           CollectionExtensions_GetValueOrDefault
+           CollectionExtensions_GetValueOrDefault_1
                      ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
                       TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->
                       static_fields->defaultItemValues,(Object *)key,

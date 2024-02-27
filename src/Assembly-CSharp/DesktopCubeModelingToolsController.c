@@ -196,29 +196,23 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
   if (this_00 != (Button *)0x0) {
     pIVar1 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
                        ((Selectable *)this_00,(MethodInfo *)0x0);
-    pIStack_2 = (Image *)(this->fields).enabledAlpha;
-    unaff_EDI = (uint *)0x0;
+    pIVar2 = (Image *)(this->fields).enabledAlpha;
     if (pIVar1 != (Image *)0x0) {
-      pIStack_3 = (pIVar1->klass->vtable).set_color.methodPtr;
-      pIStack_4 = pIVar1;
-      puVar5 = (undefined4 *)(*(code *)(pIVar1->klass->vtable).get_color.method)(&pIStack_4);
-      pIStack_3 = (Il2CppMethodPointer)puVar5[1];
-      uStack_6 = puVar5[2];
-      pIStack_4 = pIStack_2;
-      (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,*puVar5,pIStack_3,uStack_6);
+      pIStack_3 = pIVar1;
+      puVar4 = (undefined4 *)(*(code *)(pIVar1->klass->vtable).get_color.method)(&pIStack_3);
+      pIStack_3 = pIVar2;
+      (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,*puVar4,puVar4[1],puVar4[2]);
 code_?:
       return;
     }
   }
-  uVar7 = func_?();
-  *unaff_EDI = *unaff_EDI | (uint)((ulonglong)uVar7 >> 0x20);
-  pIStack_3 = (Il2CppMethodPointer)CONCAT22(pIStack_3._2_2_,in_CS);
-  pcVar8 = (char *)((uint)uVar7 ^ 0x10);
-  uVar9 = *unaff_EDI;
-  *unaff_EDI = *unaff_EDI + 0x34;
-  *pcVar8 = *pcVar8 + unaff_BL + (0xffffffcb < uVar9);
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  uVar5 = func_?();
+  iVar6 = (int)((ulonglong)uVar5 >> 0x20);
+  iVar7 = (int)uVar5;
+  *(int *)(iVar7 + iVar6) = *(int *)(iVar7 + iVar6) - (int)this;
+  puVar8 = (undefined1 *)((int)&this[-1].fields._ActiveTool_k__BackingField + 3);
+  *(int *)(iVar7 + iVar6) = *(int *)(iVar7 + iVar6) - (int)puVar8;
+  *(int *)(iVar7 + iVar6) = *(int *)(iVar7 + iVar6) - (int)puVar8;
   return;
 }
 

@@ -158,20 +158,18 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor
 
 {
   uVar1 = (undefined2)((uint)in_stack_2 >> 0x10);
+  puVar3 = (undefined4 *)&stack0xfffffffc;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__IntVector);
+    func_?();
     cRam_? = '\x01';
   }
   if (addCube != 0) {
-    pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    bVar4 = (POPCOUNT((uint)pGVar3 & 0xff) & 1U) == 0;
-    if (pGVar3 == (GameEventManager *)0x0) goto code_?;
-    pGVar5 = (pGVar3->fields).AvatarCommandsBuildMode;
-    bVar4 = (POPCOUNT((uint)pGVar5 & 0xff) & 1U) == 0;
-    if (pGVar5 == (GameEventManager_AvatarCommandsBuildModeManager *)0x0) goto code_?;
-    pGVar6 = (pGVar5->fields).LaserCommands;
-    bVar4 = (POPCOUNT((uint)pGVar6 & 0xff) & 1U) == 0;
-    if (pGVar6 == (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)
+    pGVar4 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+    if (((pGVar4 == (GameEventManager *)0x0) ||
+        (pGVar5 = (pGVar4->fields).AvatarCommandsBuildMode,
+        pGVar5 == (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) ||
+       (pGVar6 = (pGVar5->fields).LaserCommands,
+       pGVar6 == (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0))
     goto code_?;
     GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
     GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ActivateLaserForDuration
@@ -180,16 +178,13 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor
     (this->fields).addCubeTime = fVar7;
   }
   pCVar8 = (this->fields).sprayCursor;
-  unaff_ESI = selectedCube;
   if (selectedCube == (CubePickingInfo *)0x0) {
-    bVar4 = (POPCOUNT((uint)pCVar8 & 0xff) & 1U) == 0;
     if (pCVar8 != (CellCursor *)0x0) {
       CellCursor::CellCursor_set_Active(pCVar8,0,(MethodInfo *)0x0);
       return;
     }
     goto code_?;
   }
-  bVar4 = (POPCOUNT((uint)pCVar8 & 0xff) & 1U) == 0;
   if (pCVar8 == (CellCursor *)0x0) goto code_?;
   CellCursor::CellCursor_set_Active(pCVar8,1,(MethodInfo *)0x0);
   in_stack_9 = (selectedCube->fields).iLocalPos.z;
@@ -205,98 +200,134 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor
     x = 0;
     y = 0;
     z = -1;
+    uStack_11._4_4_ = (undefined *)((uint)uStack_11._6_2_ << 0x10);
     goto code_?;
   case 3:
     x = 0;
     y = 0;
+    uStack_11._4_4_ = (undefined *)((uint)uStack_11._6_2_ << 0x10);
     z = 1;
     goto code_?;
   case 4:
+    uStack_11._4_4_ = (undefined *)((uint)uStack_11._6_2_ << 0x10);
     x = -1;
     y = 0;
     goto code_?;
   case 5:
     y = 0;
+    uStack_11._4_4_ = (undefined *)((uint)uStack_11._6_2_ << 0x10);
     x = 1;
     goto code_?;
   default:
     y = 0;
   }
   x = 0;
+  uStack_11._4_4_ = (undefined *)((uint)uStack_11._6_2_ << 0x10);
 code_?:
   z = 0;
 code_?:
-  iVar11 = 0;
-  iVar12 = 0;
+  uStack_11._0_2_ = 0;
+  uStack_11._2_2_ = 0;
   MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-            ((IntVector *)&stack0xfffffff0,x,y,z,(MethodInfo *)0x0);
+            ((IntVector *)&uStack_11,x,y,z,(MethodInfo *)0x0);
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-    iVar11 = -0x4609;
+    pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
+    uStack_11._4_4_ = &UNK_?;
     func_?();
   }
+  puStackY_80 = &UNK_?;
   IVar13.z = uVar10;
-  IVar13._0_4_ = &stack0xffffffe8;
-  i2.y = in_stack_14;
+  IVar13._0_4_ = auStack_14;
+  i2.y = in_stack_15;
   i2.x = in_stack_9;
-  i2.z = iVar12;
+  i2.z = (int16_t)(undefined4)uStack_11;
   IVar13 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                     (IVar13,i2,(MethodInfo *)CONCAT22(uVar1,iVar11));
-  pIVar15 = IVar13._0_4_;
-  uVar16._0_2_ = pIVar15->x;
-  uVar16._2_2_ = pIVar15->y;
-  in_stack_9 = pIVar15->z;
-  bVar4 = (POPCOUNT((uint)targetCubeModel & 0xff) & 1U) == 0;
+                     (IVar13,i2,(MethodInfo *)CONCAT22(uVar1,uStack_11._4_2_));
+  pIVar16 = IVar13._0_4_;
+  uStack_11._0_2_ = pIVar16->x;
+  uStack_11._2_2_ = pIVar16->y;
+  in_stack_9 = pIVar16->z;
   if (targetCubeModel != (MVCubeModelBase *)0x0) {
     pCVar8 = (this->fields).sprayCursor;
-    cubeGameObject = (targetCubeModel->fields)._.gameObject;
-    bVar4 = (POPCOUNT((uint)pCVar8 & 0xff) & 1U) == 0;
-    if (pCVar8 != (CellCursor *)0x0) {
-      this_00 = CellCursor::CellCursor_GetCellCursor(pCVar8,*pIVar15,(MethodInfo *)0x0);
-      bVar4 = (POPCOUNT((uint)this_00 & 0xff) & 1U) == 0;
-      if (this_00 != (CellCursorCubeLineMesh *)0x0) {
-        position.z = in_stack_9;
-        position.x = (int16_t)uVar16;
-        position.y = SUB42(uVar16,2);
-        CellCursorCubeLineMesh::CellCursorCubeLineMesh_SetCursorCube
-                  (this_00,position,cubeGameObject,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        method_00 = (MethodInfo *)0x0;
-        goto code_?;
+    pIStack_12 = (IntVector__Class *)(targetCubeModel->fields)._.gameObject;
+    if ((pCVar8 != (CellCursor *)0x0) &&
+       (this_00 = CellCursor::CellCursor_GetCellCursor(pCVar8,*pIVar16,(MethodInfo *)0x0),
+       this_00 != (CellCursorCubeLineMesh *)0x0)) {
+      position.z = in_stack_9;
+      position.x = (int16_t)uStack_11;
+      position.y = uStack_11._2_2_;
+      CellCursorCubeLineMesh::CellCursorCubeLineMesh_SetCursorCube
+                (this_00,position,(GameObject *)pIStack_12,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      pGVar4 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if ((pGVar4 != (GameEventManager *)0x0) &&
+         ((pGVar5 = (pGVar4->fields).AvatarCommandsBuildMode,
+          pGVar5 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0 &&
+          (pGVar6 = (pGVar5->fields).LaserCommands,
+          pGVar6 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0))))
+      {
+        GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
+        GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition
+                  (pGVar6,(selectedCube->fields).point,(MethodInfo *)0x0);
+        return;
       }
     }
   }
 code_?:
+  func_?();
+  puVar17 = (undefined4 *)&stack0xffffffd8;
+  apuStackY_108d[1] = &stack0xffffffd8;
+  puVar18 = (undefined4 *)&stack0xffffffd8;
+  cVar19 = '\x05';
   do {
-    do {
-      do {
-        bVar17 = 0;
-        method_00 = (MethodInfo *)&UNK_?;
-        uVar1 = func_?();
-        if (!bVar4) {
-          pbVar18 = (byte *)(extraout_ECX + -0x79efba47);
-          bVar19 = *pbVar18;
-          bVar20 = *pbVar18 + (byte)uVar1;
-          *pbVar18 = bVar20 + bVar17;
-          pcVar21 = (char *)((int)&unaff_ESI[-0x151fec2].fields.point.y + 1);
-          *pcVar21 = *pcVar21 + (char)((ushort)uVar1 >> 8) +
-                    (CARRY1(bVar19,(byte)uVar1) || CARRY1(bVar20,bVar17));
-          pcVar22 = (code *)swi(3);
-          (*pcVar22)();
-          return;
-        }
-code_?:
-        pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager(method_00);
-        bVar4 = (POPCOUNT((uint)pGVar3 & 0xff) & 1U) == 0;
-      } while (pGVar3 == (GameEventManager *)0x0);
-      pGVar5 = (pGVar3->fields).AvatarCommandsBuildMode;
-      bVar4 = (POPCOUNT((uint)pGVar5 & 0xff) & 1U) == 0;
-    } while (pGVar5 == (GameEventManager_AvatarCommandsBuildModeManager *)0x0);
-    pGVar6 = (pGVar5->fields).LaserCommands;
-    bVar4 = (POPCOUNT((uint)pGVar6 & 0xff) & 1U) == 0;
-  } while (pGVar6 == (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0);
-  GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
-  GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition
-            (pGVar6,(unaff_ESI->fields).point,(MethodInfo *)0x0);
+    puVar3 = puVar3 + -1;
+    puVar17 = puVar17 + -1;
+    *puVar17 = *puVar3;
+    cVar19 = cVar19 + -1;
+  } while ('\0' < cVar19);
+  puStackY_10e1 = apuStackY_108d + 1;
+  puVar3 = apuStackY_108d + 1;
+  apuStackY_212e[1] = apuStackY_108d + 1;
+  puVar17 = apuStackY_108d + 1;
+  cVar19 = '\x15';
+  do {
+    puVar18 = puVar18 + -1;
+    puVar3 = puVar3 + -1;
+    *puVar3 = *puVar18;
+    cVar19 = cVar19 + -1;
+  } while ('\0' < cVar19);
+  puStackY_2142 = apuStackY_212e + 1;
+  puVar3 = apuStackY_212e + 1;
+  apuStackY_318f[1] = apuStackY_212e + 1;
+  puVar18 = apuStackY_212e + 1;
+  cVar19 = '\x05';
+  do {
+    puVar17 = puVar17 + -1;
+    puVar3 = puVar3 + -1;
+    *puVar3 = *puVar17;
+    cVar19 = cVar19 + -1;
+  } while ('\0' < cVar19);
+  puStackY_31e3 = apuStackY_318f + 1;
+  puVar3 = apuStackY_318f + 1;
+  apuStackY_4230[1] = apuStackY_318f + 1;
+  puVar17 = apuStackY_318f + 1;
+  cVar19 = '\x15';
+  do {
+    puVar18 = puVar18 + -1;
+    puVar3 = puVar3 + -1;
+    *puVar3 = *puVar18;
+    cVar19 = cVar19 + -1;
+  } while ('\0' < cVar19);
+  ppuVar20 = apuStackY_4230 + 1;
+  cVar19 = '\v';
+  do {
+    puVar17 = puVar17 + -1;
+    ppuVar20 = ppuVar20 + -1;
+    *ppuVar20 = (undefined4 *)*puVar17;
+    cVar19 = cVar19 + -1;
+  } while ('\0' < cVar19);
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 

@@ -144,12 +144,8 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
     }
   }
   func_?();
-  pbVar4 = (byte *)(CONCAT31((int3)((uint)extraout_EDX >> 8),(byte)extraout_EDX | extraout_CH) +
-                   0x4a10dcd4);
-  bVar5 = *pbVar4;
-  *pbVar4 = *pbVar4 + extraout_CL;
-  return (HighScores *)
-         CONCAT31((int3)(((uint)extraout_var << 0x10) >> 8),-CARRY1(bVar5,extraout_CL));
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -278,11 +274,7 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
     }
   }
   func_?();
-  pbVar4 = (byte *)(CONCAT31((int3)((uint)extraout_EDX >> 8),(byte)extraout_EDX | extraout_CH) +
-                   0x4a10dcd4);
-  bVar5 = *pbVar4;
-  *pbVar4 = *pbVar4 + extraout_CL;
-  return (HighScores *)
-         CONCAT31((int3)(((uint)extraout_var << 0x10) >> 8),-CARRY1(bVar5,extraout_CL));
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 

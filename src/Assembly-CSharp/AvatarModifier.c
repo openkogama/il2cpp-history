@@ -167,49 +167,44 @@ code_?:
   if (pAVar2 == (AvatarModifier *)0x0) {
 code_?:
     uVar3 = func_?();
-    iVar4 = (int)((ulonglong)uVar3 >> 0x20);
-    uVar5 = (uint)uVar3;
-    bVar6 = (byte)((ulonglong)uVar3 >> 0x20);
-    bVar7 = (byte)unaff_EBX | bVar6;
-    iVar1 = uVar5 + 0xd22ccdf0;
-    bVar8 = (byte)((ulonglong)uVar3 >> 0x28);
-    bVar9 = CARRY1(*extraout_ECX,bVar8) || CARRY1(*extraout_ECX + bVar8,uVar5 < 0x2dd33210);
-    *extraout_ECX = *extraout_ECX + bVar8 + (uVar5 < 0x2dd33210);
-    bVar10 = (char)iVar1 + (char)((uint)iVar1 >> 8) * '-';
-    uVar11 = CONCAT22((short)((uint)iVar1 >> 0x10),(ushort)bVar10);
-    pbVar12 = (byte *)(CONCAT31((int3)((uint)unaff_EBX >> 8),bVar7) + 0x2d + iVar4 * 8);
-    bVar13 = CARRY1(*pbVar12,bVar7) || CARRY1(*pbVar12 + bVar7,bVar9);
-    *pbVar12 = *pbVar12 + bVar7 + bVar9;
-    pbVar12 = (byte *)(unaff_ESI + -0x4fefd22d);
-    bVar7 = *pbVar12;
-    bVar14 = *pbVar12;
-    *pbVar12 = bVar14 + bVar10 + bVar13;
-    uVar5 = uRam_?;
-    bVar15 = (byte)extraout_ECX;
-    uRam_? = uRam_? >> (bVar15 & 0x1f);
-    bVar9 = ((uint)extraout_ECX & 0x1f) == 0;
-    *(byte *)(&type + iVar4 * 2) =
-         (char)(&type)[iVar4 * 2] + bVar10 +
-         (bVar9 * (CARRY1(bVar7,bVar10) || CARRY1(bVar14 + bVar10,bVar13)) |
-         !bVar9 * ((uVar5 >> (bVar15 & 0x1f) - 1 & 1) != 0));
-    bVar10 = (byte)((uint)extraout_ECX >> 8);
-    *(char *)(unaff_ESI + -0x2c) = *(char *)(unaff_ESI + -0x2c) + bVar10 + (uVar11 < 0x2dd42e10);
-    bVar9 = uVar11 + 0xd22bd1f0 < 0x2dd4af10;
-    bVar13 = CARRY1(bVar8,bVar15) || CARRY1(bVar8 + bVar15,bVar9);
-    piVar16 = (int *)CONCAT22((short)((ulonglong)uVar3 >> 0x30),
-                              CONCAT11(bVar8 + bVar15 + bVar9,bVar6));
-    bVar7 = (byte)(uVar11 + 0xa45722e0) % 0x2d;
-    pbVar12 = (byte *)CONCAT22((short)((uint)extraout_ECX >> 0x10),
-                               CONCAT11(bVar10 * '\x02' + bVar13,bVar15));
-    bVar14 = bVar7 % 0x2d;
-    pcVar17 = (char *)CONCAT31((int3)(CONCAT22((short)(uVar11 + 0xa45722e0 >> 0x10),
-                                              CONCAT11(bVar7 / 0x2d,bVar7)) >> 8),bVar14);
-    *pcVar17 = *pcVar17 + bVar14 + (CARRY1(bVar10,bVar10) || CARRY1(bVar10 * '\x02',bVar13));
-    *piVar16 = (int)(pcVar17 + *piVar16);
-    *(byte *)piVar16 = (char)*piVar16 + bVar14 + (char)*piVar16 + (char)*piVar16;
-    *pbVar12 = *pbVar12 | bVar15;
-    pcVar18 = (code *)swi(3);
-    pAVar2 = (AvatarModifier *)(*pcVar18)();
+    uVar4 = (uint)uVar3;
+    bVar5 = (byte)((ulonglong)uVar3 >> 0x20);
+    bVar6 = (byte)extraout_ECX | bVar5;
+    pbVar7 = (byte *)CONCAT31((int3)((uint)extraout_ECX >> 8),bVar6);
+    bVar8 = *pbVar7;
+    bVar9 = (byte)((ulonglong)uVar3 >> 0x28);
+    bVar10 = *pbVar7;
+    *pbVar7 = bVar10 + bVar9 + (uVar4 < 0x2dd13210);
+    uVar11 = uRam_?;
+    uRam_? = uRam_? >> (bVar6 & 0x1f);
+    bVar12 = (bVar6 & 0x1f) == 0;
+    cVar13 = (char)(uVar4 + 0xd22ecdf0);
+    *(char *)(unaff_ESI + -0x4fefd22f) =
+         *(char *)(unaff_ESI + -0x4fefd22f) + cVar13 +
+         (bVar12 * (CARRY1(bVar8,bVar9) || CARRY1(bVar10 + bVar9,uVar4 < 0x2dd13210)) |
+         !bVar12 * ((uVar11 >> (bVar6 & 0x1f) - 1 & 1) != 0));
+    uVar11 = uRam_? & 1;
+    uRam_? = uRam_? >> 1;
+    pcVar14 = (char *)((int)((ulonglong)uVar3 >> 0x20) * 9);
+    *pcVar14 = *pcVar14 + cVar13 + (uVar11 != 0);
+    *(char *)(unaff_ESI + -0x2e) =
+         *(char *)(unaff_ESI + -0x2e) + (char)((uint)extraout_ECX >> 8) +
+         (uVar4 + 0xd22ecdf0 < 0x2dd22e10);
+    bVar10 = bRam_?;
+    bVar12 = uVar4 + 0xa45c9fe0 < 0x2dd2af10;
+    pcVar14 = (char *)(uVar4 + 0x7689f0d0);
+    piVar15 = (int *)CONCAT22((short)((ulonglong)uVar3 >> 0x30),
+                              CONCAT11(bVar9 + bVar6 + bVar12,bVar5));
+    bVar8 = bVar6 & 0x1f;
+    bRam_? = bRam_? >> bVar8;
+    *pcVar14 = *pcVar14 + (char)pcVar14 +
+              ((bVar8 == 0) * (CARRY1(bVar9,bVar6) || CARRY1(bVar9 + bVar6,bVar12)) |
+              (bVar8 != 0) * ((bVar10 >> bVar8 - 1 & 1) != 0));
+    *piVar15 = (int)(pcVar14 + *piVar15);
+    *(char *)piVar15 = (char)*piVar15 + (char)pcVar14 + (char)*piVar15 + (char)*piVar15;
+    *pbVar7 = *pbVar7 | bVar6;
+    pcVar16 = (code *)swi(3);
+    pAVar2 = (AvatarModifier *)(*pcVar16)();
     return pAVar2;
   }
 code_?:

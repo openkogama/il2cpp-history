@@ -1309,11 +1309,9 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_TrySpawningHealParticles
             if (pTVar3 != (Transform *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
                         (pTVar3,(this->fields)._._.transform,(MethodInfo *)0x0);
-              pAVar7 = (this->fields).avatar;
-              if (((pAVar7 != (Avatar *)0x0) &&
-                  (pMVar8 = (pAVar7->fields).mvAvatar, pMVar8 != (MVAvatar *)0x0)) &&
-                 (this_01 = (pMVar8->fields).body, this_01 != (MVBody *)0x0)) {
-                MVBody::MVBody_StartBlinking(this_01,BlinkType__Enum_Healing,1.5,(MethodInfo *)0x0);
+              this_01 = (this->fields).avatar;
+              if (this_01 != (Avatar *)0x0) {
+                Avatar::Avatar_StartBlinking(this_01,BlinkType__Enum_Healing,1.5,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -1322,8 +1320,8 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_TrySpawningHealParticles
       }
     }
     func_?();
-    pcVar9 = (code *)swi(3);
-    (*pcVar9)();
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
     return;
   }
   return;

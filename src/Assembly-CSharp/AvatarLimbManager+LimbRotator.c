@@ -227,7 +227,8 @@ code_?:
 code_?:
     cVar12 = '\0';
     func_?();
-    cRam_? = cRam_? + cancelAnimations._0_1_ + cVar12;
+    *extraout_EDX = *extraout_EDX + extraout_AH + cVar12;
+    *(undefined1 *)&this_01->klass = *(undefined1 *)key;
     pcVar13 = (code *)swi(3);
     (*pcVar13)();
     return;

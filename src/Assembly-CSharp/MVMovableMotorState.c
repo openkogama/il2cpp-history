@@ -70,7 +70,7 @@ void Assembly-CSharp.dll::MVMovableMotorState::MVMovableMotorState_CheckMoveable
     lStack_19._4_4_ = (controller->fields).elipsoidRadius.y;
     uStack_20 = CONCAT44((controller->fields).elipsoidRadius.z,(undefined4)uStack_20);
     if (cRam_? == '\0') {
-      func_?(0xe910);
+      func_?(0xfa9c);
       cRam_? = '\x01';
     }
     pQVar21 = TypeInfo__UnityEngine__Quaternion->static_fields;

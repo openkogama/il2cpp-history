@@ -174,11 +174,40 @@ public class MVBuildModeAvatarLocal : MVBuildModeAvatar, ILocalObject, ISpawnRol
 		private AvatarBuildModeBase BuildModeFactory(AvatarBuildModes avatarBuildModeRuntimeState);
 	}
 
+	private delegate void SpawnRoleDataReceiverActionDelegate(SpawnRoleDataReceiver spawnRoleDataReceiver);
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass21_0
+	{
+		// Fields
+		public PositionChangedEventArgs positionChangedEventArgs;
+
+		// Constructors
+		public __c__DisplayClass21_0();
+
+		// Methods
+		internal void _OnPositionChanged_b__0(SpawnRoleDataReceiver receiver);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass22_0
+	{
+		// Fields
+		public ScaleChangedEventArgs scaleChangedEventArgs;
+
+		// Constructors
+		public __c__DisplayClass22_0();
+
+		// Methods
+		internal void _OnScaleChanged_b__0(SpawnRoleDataReceiver receiver);
+	}
+
 	// Constructors
 	public MVBuildModeAvatarLocal(Dictionary<object, object> data, Dictionary<int, MVWorldObjectClient> worldObjects);
 
 	// Methods
 	public override void Initialize();
+	private void SpawnRoleDataReceiverAction(SpawnRoleDataReceiverActionDelegate spawnRoleDataReceiverActionDelegate);
 	public void Activate(int idFrom, SpawnRoleDataReceiver spawnRoleDataReceiver, Vector3 position, Quaternion rotation);
 	public void Suspend();
 	public void UnSuspend();

@@ -823,16 +823,16 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController__cctor(Method
                 *)this_00,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Dictionary__
               );
-    pSVar1 = StringLiteral__7;
-    pSVar2 = StringLiteral_Days;
+    pSVar1 = StringLiteral_Days;
+    pSVar2 = StringLiteral__7;
     func_?();
     puVar3 = &stack0xfffffff4;
     func_?();
     func_?();
     if (this_00 != (Dictionary_2_System_String_AdminToolController_DefaultBan_ *)0x0) {
-      value_00.BanDuration = pSVar1;
+      value_00.BanDuration = pSVar2;
       value_00.BanReason = (String *)puVar3;
-      value_00.BanDurationFormat = pSVar2;
+      value_00.BanDurationFormat = pSVar1;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
       Object,AdminToolController+DefaultBan]::
       Dictionary_2_System_Object_AdminToolController_DefaultBan__Add
@@ -840,15 +840,15 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController__cctor(Method
                  (Object *)StringLiteral_Cheating,value_00,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Add_System__String__AdminToolController__DefaultBan_
                 );
-      pSVar1 = StringLiteral__24;
-      pSVar2 = StringLiteral_Hours;
+      pSVar1 = StringLiteral_Hours;
+      pSVar2 = StringLiteral__24;
       pSVar4 = StringLiteral_You_are_banned_for_inappropriate;
       func_?(&stack0xffffffe4,StringLiteral_You_are_banned_for_inappropriate);
-      func_?(&stack0xffffffe8,pSVar1);
-      func_?(&stack0xffffffec,pSVar2);
-      value_01.BanDuration = pSVar1;
+      func_?(&stack0xffffffe8,pSVar2);
+      func_?(&stack0xffffffec,pSVar1);
+      value_01.BanDuration = pSVar2;
       value_01.BanReason = pSVar4;
-      value_01.BanDurationFormat = pSVar2;
+      value_01.BanDurationFormat = pSVar1;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
       Object,AdminToolController+DefaultBan]::
       Dictionary_2_System_Object_AdminToolController_DefaultBan__Add

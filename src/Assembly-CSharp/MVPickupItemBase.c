@@ -228,7 +228,6 @@ bool Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_DoPickup
         if ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
             pIVar6[3].pinvokeMarshalToNativeFunction !=
             (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-          puVar12 = &UNK_?;
           bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                   Object,UnityEngine::UIElements::TextureId]::
                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
@@ -238,7 +237,7 @@ bool Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_DoPickup
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                             );
           if (bVar2 == 0) {
-            TVar13.m_Index = 0;
+            TVar12.m_Index = 0;
           }
           else {
             instigatorWOID = (int32_t)pIVar6[3].pinvokeMarshalToNativeFunction;
@@ -246,19 +245,19 @@ bool Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_DoPickup
                 (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
             goto code_?;
             pPVar10 = pPVar11;
-            TVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            TVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                      Object,UnityEngine::UIElements::TextureId]::
                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                                 instigatorWOID,(Object *)StringLiteral_itemData,
                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                );
-            if ((TVar13.m_Index != 0) &&
-               ((*(byte *)(*(int *)TVar13.m_Index + 0xb8) <
+            if ((TVar12.m_Index != 0) &&
+               ((*(byte *)(*(int *)TVar12.m_Index + 0xb8) <
                  (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                  ->_1).naturalAligment ||
                 (*(Dictionary_2_System_Object_System_Object___Class **)
-                  (*(int *)(*(int *)TVar13.m_Index + 100) + -4 +
+                  (*(int *)(*(int *)TVar12.m_Index + 100) + -4 +
                   (uint)(
                         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                         ->_1).naturalAligment * 4) !=
@@ -266,7 +265,7 @@ bool Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_DoPickup
                 ))) goto code_?;
           }
           if (x != (Object_1 *)0x0) {
-            cVar7 = (*(code *)x->klass[1]._0.namespaze)(x,pPVar10,iVar9,TVar13.m_Index,puVar12);
+            cVar7 = (*(code *)x->klass[1]._0.namespaze)(x,pPVar10,iVar9,TVar12.m_Index);
             if (cVar7 == '\0') {
               return 0;
             }
@@ -288,8 +287,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  bVar2 = (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  bVar2 = (*pcVar13)();
   return bVar2;
 }
 

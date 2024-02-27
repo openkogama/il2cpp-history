@@ -7,61 +7,74 @@ void Assembly-CSharp.dll::TransformNetworkManager::TransformNetworkManager_AddRe
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Add_int__MVNetworkObject_
                    );
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__ContainsKey_int_
                    );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__get_Item_int_
+                   );
+    func_?(&StringLiteral_Trying_to_add_reporter_while_net);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).networkedObjects;
-  iVar1 = unaff_EDI;
-  if (this_00 != (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
-            Dictionary_2_System_Int32_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Single_ *)this_00,woID,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__ContainsKey_int_
-                      );
-    this = (TransformNetworkManager *)(this->fields).networkedObjects;
-    if (bVar2 != 0) goto code_?;
-    iVar1 = woID;
-    if ((Dictionary_2_System_Int32_MVNetworkObject_ *)this !=
-        (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-      Dictionary_2_System_Int32_System_Object__Add
-                ((Dictionary_2_System_Int32_System_Object_ *)this,woID,(Object *)networkReporter,
-                 MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Add_int__MVNetworkObject_
-                );
-      return;
+  pDVar1 = (this->fields).networkedObjects;
+  if (pDVar1 == (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) goto code_?;
+  bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
+          Dictionary_2_System_Int32_System_Single__ContainsKey
+                    ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,woID,
+                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__ContainsKey_int_
+                    );
+  if (bVar2 != 0) {
+    pDVar1 = (this->fields).networkedObjects;
+    if (pDVar1 == (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) goto code_?;
+    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+             ::Dictionary_2_System_Int32_System_Object__get_Item
+                       ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,woID,
+                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__get_Item_int_
+                       );
+    str0 = StringLiteral_Trying_to_add_reporter_while_net;
+    if (pOVar3 == (Object *)0x0) {
+      str1 = (String *)0x0;
     }
+    else {
+      str1 = (String *)(*(code *)(pOVar3->klass->vtable).ToString.method)();
+    }
+    networkReporter =
+         (MVNetworkReporter *)
+         mscorlib.dll::System::String::String_Concat_3(str0,str1,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+              ((Object *)networkReporter,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    pDVar1 = (this->fields).networkedObjects;
+    if (pDVar1 == (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Remove
+              ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,woID,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Remove_int_
+              );
   }
-  woID = iVar1;
-  func_?();
+  pDVar1 = (this->fields).networkedObjects;
+  if (pDVar1 != (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Add
+              ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,woID,(Object *)networkReporter,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Add_int__MVNetworkObject_
+              );
+    return;
+  }
 code_?:
-  func_?(this);
-  uVar3 = func_?(&
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__get_Item_int_
-                         );
-  iVar4 = func_?(this,woID,uVar3);
-  if (iVar4 == 0) {
-    str1 = (String *)0x0;
-    pSVar5 = (String *)func_?(&StringLiteral_Trying_to_add_reporter_while_net);
-  }
-  else {
-    pSVar5 = (String *)func_?(&StringLiteral_Trying_to_add_reporter_while_net);
-    func_?(iVar4);
-    str1 = (String *)func_?(3,iVar4);
-  }
-  pSVar5 = mscorlib.dll::System::String::String_Concat_3(pSVar5,str1,(MethodInfo *)0x0);
-  uVar3 = func_?(&TypeInfo__System__Exception);
-  this_01 = (Exception *)func_?(uVar3);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_01,pSVar5,(MethodInfo *)0x0);
-  uStack6 =
-       func_?(&MethodInfo__TransformNetworkManager__AddReporter_int__MVNetworkReporter_);
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -84,9 +97,7 @@ void Assembly-CSharp.dll::TransformNetworkManager::TransformNetworkManager_AddTr
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__get_Item_int_
                    );
-    func_?(&TypeRef__MVNetworkListener);
     func_?(&TypeInfo__MVNetworkListener);
-    func_?(&TypeInfo__System__Type);
     func_?(&StringLiteral__this_is_probably_due_to_ownersh);
     func_?(&StringLiteral_Attempt_to_update_world_object__);
     func_?(&StringLiteral_worldObjectClientManager_WorldOb);
@@ -101,7 +112,7 @@ void Assembly-CSharp.dll::TransformNetworkManager::TransformNetworkManager_AddTr
       cRam_? = '\x01';
     }
     this_00 = (pMVar1->fields).worldObjects;
-    owner = (MVWorldObjectClient *)0x0;
+    pOVar2 = (Object *)0x0;
     if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
       Dictionary_2_System_Int32_System_Object__TryGetValue
@@ -109,7 +120,7 @@ void Assembly-CSharp.dll::TransformNetworkManager::TransformNetworkManager_AddTr
                  (Object **)&stack0xfffffff8,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
                 );
-      if (owner == (MVWorldObjectClient *)0x0) {
+      if (pOVar2 == (Object *)0x0) {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -117,71 +128,50 @@ void Assembly-CSharp.dll::TransformNetworkManager::TransformNetworkManager_AddTr
                   ((Object *)StringLiteral_Attempt_to_update_world_object__,(MethodInfo *)0x0);
         return;
       }
-      pDVar2 = (this->fields).networkedObjects;
-      if (pDVar2 != (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) {
-        bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+      pDVar3 = (this->fields).networkedObjects;
+      if (pDVar3 != (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) {
+        owner = (MVWorldObjectClient *)woID;
+        bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                 Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                          ((Dictionary_2_System_Int32_System_Single_ *)pDVar2,woID,
+                          ((Dictionary_2_System_Int32_System_Single_ *)pDVar3,woID,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__ContainsKey_int_
                           );
-        if (bVar3 == 0) {
-          pDVar2 = (this->fields).networkedObjects;
-          pMVar4 = (MVNetworkListener *)func_?();
-          MVNetworkListener::MVNetworkListener__ctor(pMVar4,owner,(MethodInfo *)0x0);
-          if (pDVar2 == (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) goto code_?;
+        if (bVar4 == 0) {
+          pDVar3 = (this->fields).networkedObjects;
+          pMVar5 = (MVNetworkListener *)func_?();
+          MVNetworkListener::MVNetworkListener__ctor(pMVar5,owner,(MethodInfo *)0x0);
+          if (pDVar3 == (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
           Dictionary_2_System_Int32_System_Object__Add
-                    ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,woID,(Object *)pMVar4,
+                    ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,woID,(Object *)pMVar5,
                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Add_int__MVNetworkObject_
                     );
         }
-        pDVar2 = (this->fields).networkedObjects;
-        if (pDVar2 != (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) {
-          pMVar4 = (MVNetworkListener *)
+        pDVar3 = (this->fields).networkedObjects;
+        if (pDVar3 != (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) {
+          pMVar5 = (MVNetworkListener *)
                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                    Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,woID,
+                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,woID,
                               MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__get_Item_int_
                              );
-          if (pMVar4 != (MVNetworkListener *)0x0) {
-            pTVar5 = mscorlib.dll::System::Object::Object_GetType
-                               ((Object *)pMVar4,(MethodInfo *)0x0);
-            handle = TypeRef__MVNetworkListener;
-            if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
+          if (pMVar5 != (MVNetworkListener *)0x0) {
+            if (((TypeInfo__MVNetworkListener->_1).naturalAligment <=
+                 (pMVar5->klass->_1).naturalAligment) &&
+               ((pMVar5->klass->_1).typeHierarchy
+                [(TypeInfo__MVNetworkListener->_1).naturalAligment - 1] ==
+                (Il2CppClass *)TypeInfo__MVNetworkListener)) {
+              MVNetworkListener::MVNetworkListener_AddTransformPackage(pMVar5,p,(MethodInfo *)0x0);
+              return;
             }
-            rhs = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                            ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-            bVar3 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility
-                    ::UnsafeUtility_EnumEquals
-                              ((Int32Enum__Enum)pTVar5,(Int32Enum__Enum)rhs,(MethodInfo *)0x0);
-            if (bVar3 != 0) {
-              if (((TypeInfo__MVNetworkListener->_1).naturalAligment <=
-                   (pMVar4->klass->_1).naturalAligment) &&
-                 (ppIVar6 = (pMVar4->klass->_1).typeHierarchy,
-                 ppIVar6[(TypeInfo__MVNetworkListener->_1).naturalAligment - 1] ==
-                 (Il2CppClass *)TypeInfo__MVNetworkListener)) {
-                this_01 = (MVNetworkListener *)0x0;
-                if (ppIVar6[(TypeInfo__MVNetworkListener->_1).naturalAligment - 1] ==
-                    (Il2CppClass *)TypeInfo__MVNetworkListener) {
-                  this_01 = pMVar4;
-                }
-                MVNetworkListener::MVNetworkListener_AddTransformPackage
-                          (this_01,p,(MethodInfo *)0x0);
-                return;
-              }
-              goto code_?;
-            }
-            pTVar5 = mscorlib.dll::System::Object::Object_GetType
-                               ((Object *)pMVar4,(MethodInfo *)0x0);
+            pTVar6 = mscorlib.dll::System::Object::Object_GetType
+                               ((Object *)pMVar5,(MethodInfo *)0x0);
             pSVar7 = StringLiteral_worldObjectClientManager_WorldOb;
-            if (pTVar5 == (Type *)0x0) {
+            if (pTVar6 == (Type *)0x0) {
               str1 = (String *)0x0;
             }
             else {
-              str1 = (String *)
-                     (*(code *)(pTVar5->klass->vtable).ToString.method)
-                               (pTVar5,(pTVar5->klass->vtable).GetCustomAttributes.methodPtr);
+              str1 = (String *)(*(code *)(pTVar6->klass->vtable).ToString.method)();
             }
             pSVar7 = mscorlib.dll::System::String::String_Concat_4
                                (pSVar7,str1,StringLiteral__this_is_probably_due_to_ownersh,
@@ -214,38 +204,18 @@ Assembly-CSharp.dll::TransformNetworkManager::TransformNetworkManager_GetNetwork
 {
   if (cRam_? == '\0') {
     func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__ContainsKey_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__get_Item_int_
+                    MVNetworkObject_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<int,_MVNetworkObject>_System__Collections__Generic__IReadOnlyDictionary<int,_MVNetworkObject>__int_
                    );
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields).networkedObjects;
-  if (pDVar1 != (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
-            Dictionary_2_System_Int32_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,woID,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__ContainsKey_int_
-                      );
-    if (bVar2 == 0) {
-      return (MVNetworkObject *)0x0;
-    }
-    pDVar1 = (this->fields).networkedObjects;
-    if (pDVar1 != (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) {
-      pMVar3 = (MVNetworkObject *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-               Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                         ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,woID,
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__get_Item_int_
-                         );
-      return pMVar3;
-    }
-  }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  pMVar3 = (MVNetworkObject *)(*pcVar4)();
-  return pMVar3;
+  pMVar1 = (MVNetworkObject *)
+           mscorlib.dll::System::Collections::Generic::CollectionExtensions::
+           CollectionExtensions_GetValueOrDefault_1
+                     ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
+                      (this->fields).networkedObjects,(Object *)woID,
+                      MVNetworkObject_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<int,_MVNetworkObject>_System__Collections__Generic__IReadOnlyDictionary<int,_MVNetworkObject>__int_
+                     );
+  return pMVar1;
 }
 
 
@@ -256,35 +226,20 @@ void Assembly-CSharp.dll::TransformNetworkManager::TransformNetworkManager_Remov
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Remove_int_
-                   );
-    func_?(&StringLiteral_RemoveNetworkObject_);
+    func_?();
     cRam_? = '\x01';
   }
-  pSVar1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&woID,(MethodInfo *)0x0);
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_RemoveNetworkObject_,pSVar1,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    woID = (int32_t)TypeInfo__UnityEngine__Debug;
-    func_?();
-  }
-  woID = 0;
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
-  key = woID;
-  this_00 = (MethodInfo *)(pSVar1->fields)._stringLength;
-  if (this_00 != (MethodInfo *)0x0) {
-    woID = (int32_t)&UNK_?;
-    method = this_00;
+  this_00 = (this->fields).networkedObjects;
+  if (this_00 != (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__Remove
-              ((Dictionary_2_System_Int32_System_Object_ *)this_00,key,
+              ((Dictionary_2_System_Int32_System_Object_ *)this_00,woID,
                MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Remove_int_
               );
     return;
   }
-  func_?();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

@@ -66,6 +66,7 @@ public class UIStack : MonoBehaviour, IUIStack
 	public void PopToGroup(UIGroupFlags group);
 	public bool IsUIElementBlocked(GameObject uiElement);
 	public GameObject Peak();
+	public void DebugStack();
 	public bool IsStackEmpty();
 	private void HideAll();
 	private void HideAllExceptStackBottom();

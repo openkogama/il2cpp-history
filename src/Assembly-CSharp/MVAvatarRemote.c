@@ -936,19 +936,20 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_InitializeHealth
     func_?(&TypeInfo__MVAvatarRemote____c__DisplayClass23_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__MVAvatarRemote____c__DisplayClass23_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value == (Object *)0x0) {
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__MVAvatarRemote____c__DisplayClass23_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+  if (this_00 == (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
 code_?:
     func_?();
 code_?:
     func_?();
   }
   else {
-    value[1].klass = (Object__Class *)this;
-    func_?(value + 1,this);
+    (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)this;
+    func_?(&this_00->fields,this);
     pAVar1 = (this->fields)._.avatar;
     unaff_EDI = (MVBody *)0x0;
     if (pAVar1 == (Avatar *)0x0) goto code_?;
@@ -960,11 +961,12 @@ code_?:
        ((unaff_EDI->klass->_1).typeHierarchy
         [(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] !=
         (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) goto code_?;
-    pMVar3 = (MonitorData *)(unaff_EDI->fields)._._._._.scale.x;
-    value[1].monitor = pMVar3;
-    func_?(&value[1].monitor,pMVar3);
+    pUVar3 = (UxmlObjectListAttributeDescription_1_System_Object___Class *)
+             (unaff_EDI->fields)._._._._.scale.x;
+    this_00[1].klass = pUVar3;
+    func_?(this_00 + 1,pUVar3);
     pMVar4 = (this->fields)._.Health;
-    unaff_EDI = (MVBody *)value[1].monitor;
+    unaff_EDI = (MVBody *)this_00[1].klass;
     if (pMVar4 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
     fVar5 = (float10)(*(code *)(pMVar4->klass->vtable).get_Value.method)
                                 (pMVar4,(pMVar4->klass->vtable).set_Value.methodPtr);
@@ -985,7 +987,7 @@ code_?:
     UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
     VideoCapture+OnVideoCaptureResourceCreatedCallback::
     VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-              (pVVar6,value,
+              (pVVar6,(Object *)this_00,
                MethodInfo__MVAvatarRemote____c__DisplayClass23_0___InitializeHealth_b__0_System__Object_
                ,(MethodInfo *)0x0);
     pMVar7 = (MVRuntimeDataVariable_OnChangeDelegate *)
@@ -995,7 +997,7 @@ code_?:
       (pMVar4->fields)._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
 code_?:
       func_?();
-      unaff_EDI = (MVBody *)value[1].monitor;
+      unaff_EDI = (MVBody *)this_00[1].klass;
       if (_UNK_? != (int *)0x0) {
         iVar8 = (**(code **)(*_UNK_? + 0xe0))
                           (_UNK_?,*(undefined4 *)(*_UNK_? + 0xe4));
@@ -1009,7 +1011,7 @@ code_?:
             UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
             VideoCapture+OnVideoCaptureResourceCreatedCallback::
             VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                      (pVVar6,value,
+                      (pVVar6,(Object *)this_00,
                        MethodInfo__MVAvatarRemote____c__DisplayClass23_0___InitializeHealth_b__1_System__Object_
                        ,(MethodInfo *)0x0);
             pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
@@ -1251,17 +1253,15 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_OnEnterVehicle
                (MVAvatarRemote *this,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields)._.avatar;
-  if ((pAVar1 != (Avatar *)0x0) &&
-     (this_00 = (pAVar1->fields).waterSplashComponent, this_00 != (WaterSplashComponent *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-              ((Behaviour *)this_00,0,(MethodInfo *)0x0);
+  this_00 = (this->fields)._.avatar;
+  if (this_00 != (Avatar *)0x0) {
+    Avatar::Avatar_OnEnterVehicle(this_00,(MethodInfo *)0x0);
     (this->fields)._IsInVehicle_k__BackingField = 1;
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -1272,18 +1272,16 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_OnLeaveVehicle
                (MVAvatarRemote *this,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields)._.avatar;
-  if ((pAVar1 != (Avatar *)0x0) &&
-     (this_00 = (pAVar1->fields).waterSplashComponent, this_00 != (WaterSplashComponent *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-              ((Behaviour *)this_00,1,(MethodInfo *)0x0);
+  this_00 = (this->fields)._.avatar;
+  if (this_00 != (Avatar *)0x0) {
+    Avatar::Avatar_OnExitVehicle(this_00,(MethodInfo *)0x0);
     (this->fields)._IsInVehicle_k__BackingField = 0;
     MVAvatar::MVAvatar_HandleLeaveVehicle((MVAvatar *)this,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -1409,109 +1407,98 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_VisualizeBulletImpact
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__IGUICrossHair);
-    func_?();
+    func_?(&TypeInfo__IPlayModeUI);
     cRam_? = '\x01';
   }
   this_03 = (MVPlayer *)0x0;
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 == (MVNetworkGame *)0x0) ||
-     (this_00 = (pMVar1->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0)) {
-code_?:
-    func_?();
-  }
-  else {
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar1->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
     bVar2 = MVPlayerContainer::MVPlayerContainer_TryGetValue
                       (this_00,(int32_t)lineOfFire.m_Direction.z,(MVPlayer **)&stack0xfffffff8,
                        (MethodInfo *)0x0);
     if (bVar2 == 0) {
       return;
     }
-    if (this_03 == (MVPlayer *)0x0) goto code_?;
-    bVar2 = MVPlayer::MVPlayer_IsOnSameTeam_1(this_03,(MVWorldObjectClient *)this,(MethodInfo *)0x0)
-    ;
-    if (bVar2 != 0) {
-      return;
-    }
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    this_01 = (this->fields)._.SpawnRoleModeTypes;
-    if ((this_01 == (MVRuntimeDataVariable *)0x0) ||
-       (pOVar3 = MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(this_01,(MethodInfo *)0x0),
-       pOVar3 == (Object *)0x0)) goto code_?;
-    if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-    goto code_?;
-    pbVar4 = (byte *)func_?();
-    if ((*pbVar4 & 2) != 0) {
-      return;
-    }
-    pAVar5 = (this->fields)._.avatar;
-    if ((pAVar5 == (Avatar *)0x0) ||
-       (pBVar6 = (pAVar5->fields).modifierEffectCount, pBVar6 == (Byte__Array *)0x0))
-    goto code_?;
-    if (10 < pBVar6->max_length) {
-      if (pBVar6->vector[10] != 0) {
+    if (this_03 != (MVPlayer *)0x0) {
+      bVar2 = MVPlayer::MVPlayer_IsOnSameTeam_1
+                        (this_03,(MVWorldObjectClient *)this,(MethodInfo *)0x0);
+      if (bVar2 != 0) {
         return;
       }
-      pAVar5 = (this->fields)._.avatar;
-      if ((pAVar5 != (Avatar *)0x0) &&
-         (pAVar7 = (pAVar5->fields).bulletImpactVisualizer,
-         pAVar7 != (AvatarBulletImpactVisualizer *)0x0)) {
-        (*(code *)(pAVar7->klass->vtable).VisualizeBulletImpact_1.method)
-                  (pAVar7,pAVar7->klass[1]._0.image,&UNK_?,pOVar3,voxelHit.point.z,
-                   voxelHit.normal.x,voxelHit.normal.y,voxelHit.normal.z,voxelHit.cubePos._0_4_,
-                   voxelHit._28_4_,voxelHit.face,voxelHit._36_4_,voxelHit.woId,voxelHit.cube,
-                   voxelHit.distance,voxelHit.collider,voxelHit.transform,voxelHit._60_8_,
-                   voxelHit.interactionFlags._4_4_,lineOfFire.m_Origin.x,lineOfFire.m_Origin.y,
-                   lineOfFire.m_Origin.z);
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar1 != (MVNetworkGame *)0x0) &&
-           (pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
-           pMVar8 != (MVLocalPlayer *)0x0)) {
-          if (lineOfFire.m_Direction.z != (float)(pMVar8->fields)._._ActorNr_k__BackingField) {
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      this_01 = (this->fields)._.SpawnRoleModeTypes;
+      if ((this_01 != (MVRuntimeDataVariable *)0x0) &&
+         (pOVar3 = MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(this_01,(MethodInfo *)0x0)
+         , pOVar3 != (Object *)0x0)) {
+        if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
+        goto code_?;
+        pbVar4 = (byte *)func_?();
+        if ((*pbVar4 & 2) != 0) {
+          return;
+        }
+        pAVar5 = (this->fields)._.avatar;
+        if (pAVar5 != (Avatar *)0x0) {
+          bVar2 = Avatar::Avatar_HasModifierEffect
+                            (pAVar5,AvatarModifierEffect__Enum_Invulnerable,(MethodInfo *)0x0);
+          if (bVar2 != 0) {
             return;
           }
-          this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                              ((MethodInfo *)0x0);
-          if (this_02 != (MainCameraManager *)0x0) {
-            MainCameraManager::MainCameraManager_PlayPlingSound(this_02,(MethodInfo *)0x0);
-            piVar9 = (int *)func_?();
-            if (piVar9 != (int *)0x0) {
-              uVar10 = 0;
-              uVar11 = *(ushort *)(*piVar9 + 0xb6);
-              if (uVar11 != 0) {
-                do {
-                  if (*(IPlayModeUI__Class **)(*(int *)(*piVar9 + 0x58) + (uint)uVar10 * 8) ==
-                      TypeInfo__IPlayModeUI) {
-                    puVar12 = (undefined4 *)
-                              (*piVar9 +
-                              (*(int *)(*(int *)(*piVar9 + 0x58) + 4 + (uint)uVar10 * 8) + 0x1a) *
-                              8);
-                    goto code_?;
-                  }
-                  uVar10 = uVar10 + 1;
-                } while (uVar10 < uVar11);
-              }
-              puVar12 = (undefined4 *)func_?();
-code_?:
-              iVar13 = (*(code *)*puVar12)();
-              if (iVar13 != 0) {
-                func_?();
+          pAVar5 = (this->fields)._.avatar;
+          if (pAVar5 != (Avatar *)0x0) {
+            voxelHit_00.point.z = (float)pOVar3;
+            voxelHit_00.point.x = 0.0;
+            voxelHit_00.point.y = 3.4183932e-29;
+            voxelHit_00.normal.x = voxelHit.normal.x;
+            voxelHit_00.normal.y = voxelHit.normal.y;
+            voxelHit_00.normal.z = voxelHit.normal.z;
+            voxelHit_00.cubePos.x = voxelHit.cubePos.x;
+            voxelHit_00.cubePos.y = voxelHit.cubePos.y;
+            voxelHit_00.cubePos.z = voxelHit.cubePos.z;
+            voxelHit_00._30_2_ = voxelHit._30_2_;
+            voxelHit_00.face = voxelHit.face;
+            voxelHit_00.isCubeHit = voxelHit.isCubeHit;
+            voxelHit_00._37_3_ = voxelHit._37_3_;
+            voxelHit_00.woId = voxelHit.woId;
+            voxelHit_00.cube = voxelHit.cube;
+            voxelHit_00.distance = voxelHit.distance;
+            voxelHit_00.collider = voxelHit.collider;
+            voxelHit_00.transform = voxelHit.transform;
+            voxelHit_00._60_8_ = voxelHit._60_8_;
+            voxelHit_00.interactionFlags._4_4_ = voxelHit.interactionFlags._4_4_;
+            Avatar::Avatar_VisualizeBulletImpact
+                      (pAVar5,voxelHit_00,lineOfFire,shooterActorNumber,0.0,in_stack_6);
+            pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if ((pMVar1 != (MVNetworkGame *)0x0) &&
+               (pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
+               pMVar7 != (MVLocalPlayer *)0x0)) {
+              if (lineOfFire.m_Direction.z != (float)(pMVar7->fields)._._ActorNr_k__BackingField) {
                 return;
+              }
+              this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                  ((MethodInfo *)0x0);
+              if (this_02 != (MainCameraManager *)0x0) {
+                MainCameraManager::MainCameraManager_PlayPlingSound(this_02,(MethodInfo *)0x0);
+                iVar8 = func_?();
+                if ((iVar8 != 0) && (iVar8 = func_?(), iVar8 != 0)) {
+                  func_?();
+                  return;
+                }
               }
             }
           }
         }
       }
-      goto code_?;
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -1534,49 +1521,120 @@ code_?:
     func_?();
     shield = extraout_ECX;
     pSVar3 = extraout_EDX;
+code_?:
+    func_?(shield,pSVar3);
+    pAVar4 = extraout_EDX_00;
   }
   else {
     pAVar4 = (pAVar2->fields).avatarUIHandler;
-    unaff_ESI = pAVar1;
+    unaff_EDI = pAVar1;
     if (pAVar4 == (AvatarUIHandler *)0x0) goto code_?;
-    if (((pAVar4->klass->_1).naturalAligment < (TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment
-        ) || ((pAVar4->klass->_1).typeHierarchy
-              [(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] !=
-              (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) goto code_?;
+    if (((pAVar4->klass->_1).naturalAligment <
+         (TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment) ||
+       ((pAVar4->klass->_1).typeHierarchy
+        [(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] !=
+        (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) goto code_?;
     this_00 = pAVar4[2].fields._.m_CancellationTokenSource;
     if (this_00 == (CancellationTokenSource *)0x0) goto code_?;
-    previousHealth = ShieldBar::ShieldBar_get_Shield((ShieldBar *)this_00,(MethodInfo *)0x0);
-    pMVar5 = (this->fields)._.shield;
-    if (pMVar5 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
-    fVar6 = (float10)(*(code *)(pMVar5->klass->vtable).get_Value.method)
-                               (pMVar5,(pMVar5->klass->vtable).set_Value.methodPtr);
-    MVAvatar::MVAvatar_TrySpawningHealParticles
-              ((MVAvatar *)this,previousHealth,(float)fVar6,(MethodInfo *)0x0);
+    fStack_5 = ShieldBar::ShieldBar_get_Shield((ShieldBar *)this_00,(MethodInfo *)0x0);
+    pMVar6 = (this->fields)._.shield;
+    if (pMVar6 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
+    fVar7 = (float10)(*(code *)(pMVar6->klass->vtable).get_Value.method)
+                                (pMVar6,(pMVar6->klass->vtable).set_Value.methodPtr);
+    if (cRam_? == '\0') {
+      func_?(&
+                      UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem_
+                     );
+      func_?(&TypeInfo__UnityEngine__Object);
+      cRam_? = '\x01';
+    }
+    fStack_8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    if ((fStack_5 < (float)fVar7) &&
+       (_UNK_? < fStack_8 - (this->fields)._.healParticleSpawnTime)) {
+      fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      (this->fields)._.healParticleSpawnTime = fVar9;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__PrefabPool);
+        cRam_? = '\x01';
+      }
+      pPVar10 = TypeInfo__PrefabPool->static_fields->instance;
+      if (pPVar10 != (PrefabPool *)0x0) {
+        original = (pPVar10->fields).healingParticles;
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Object);
+        }
+        unaff_EDI = (AvatarUIHandlerRemote__Class *)
+                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                              ((Object *)original,
+                               UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem_
+                              );
+        this_01 = (this->fields)._._._.gameObject;
+        if (this_01 != (GameObject *)0x0) {
+          pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                             (this_01,(MethodInfo *)0x0);
+          if (pTVar11 != (Transform *)0x0) {
+            pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                               (&VStack_13,pTVar11,(MethodInfo *)0x0);
+            uVar14 = pVVar12->x;
+            uVar15 = pVVar12->y;
+            fVar9 = pVVar12->z;
+            uStack_16 = CONCAT44((float)uVar15 + _UNK_?,uVar14);
+            if (unaff_EDI != (AvatarUIHandlerRemote__Class *)0x0) {
+              pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                 ((Component *)unaff_EDI,(MethodInfo *)0x0);
+              if (pTVar11 != (Transform *)0x0) {
+                value.z = fVar9;
+                value.x = (float)(undefined4)uStack_16;
+                value.y = (float)uStack_16._4_4_;
+                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
+                          (pTVar11,value,(MethodInfo *)0x0);
+                pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                   ((Component *)unaff_EDI,(MethodInfo *)0x0);
+                if (pTVar11 != (Transform *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
+                            (pTVar11,(this->fields)._._._.transform,(MethodInfo *)0x0);
+                  pAVar2 = (this->fields)._.avatar;
+                  if (pAVar2 != (Avatar *)0x0) {
+                    Avatar::Avatar_StartBlinking
+                              (pAVar2,BlinkType__Enum_Healing,1.5,(MethodInfo *)0x0);
+                    goto code_?;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      goto code_?;
+    }
+code_?:
     pAVar2 = (this->fields)._.avatar;
     if (pAVar2 == (Avatar *)0x0) goto code_?;
     pAVar4 = (pAVar2->fields).avatarUIHandler;
-    unaff_ESI = TypeInfo__AvatarUIHandlerRemote;
+    this = (MVAvatarRemote *)TypeInfo__AvatarUIHandlerRemote;
     if (pAVar4 == (AvatarUIHandler *)0x0) goto code_?;
-    if (((pAVar4->klass->_1).naturalAligment < (TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment
-        ) || ((pAVar4->klass->_1).typeHierarchy
-              [(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] !=
-              (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) goto code_?;
-    unaff_ESI = (AvatarUIHandlerRemote__Class *)pAVar4[2].fields._.m_CancellationTokenSource;
-    if (unaff_ESI == (AvatarUIHandlerRemote__Class *)0x0) goto code_?;
-    if (shield == (Object *)0x0) goto code_?;
-    pSVar3 = TypeInfo__System__Single;
-    if ((shield->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-      pfVar7 = (float *)func_?(shield);
-      ShieldBar::ShieldBar_set_Shield((ShieldBar *)unaff_ESI,*pfVar7,(MethodInfo *)0x0);
-      return;
+    unaff_EDI = (AvatarUIHandlerRemote__Class *)pAVar4->klass;
+    if (((TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment <= (unaff_EDI->_1).naturalAligment)
+       && ((unaff_EDI->_1).typeHierarchy[(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1]
+           == (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
+      this = (MVAvatarRemote *)pAVar4[2].fields._.m_CancellationTokenSource;
+      if (this == (MVAvatarRemote *)0x0) goto code_?;
+      if (shield == (Object *)0x0) goto code_?;
+      pSVar3 = TypeInfo__System__Single;
+      if ((shield->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+        pfVar17 = (float *)func_?(shield);
+        ShieldBar::ShieldBar_set_Shield((ShieldBar *)this,*pfVar17,(MethodInfo *)0x0);
+        return;
+      }
+      goto code_?;
     }
   }
-  func_?(shield,pSVar3);
-  pAVar4 = extraout_EDX_00;
+  func_?(pAVar4,this);
+  pAVar4 = extraout_EDX_01;
 code_?:
-  func_?(pAVar4,unaff_ESI);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?(pAVar4,unaff_EDI);
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -1827,7 +1885,7 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_triggerBoxEvents_Trigge
           return;
         }
         if (x != (Object_1 *)0x0) {
-          iVar5 = func_?();
+          iVar5 = (**(code **)&x->klass[1]._0.byval_arg.attrs)();
           UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                     (*(MethodInfo **)(iVar5 + 8));
           fVar2 = 0.0;

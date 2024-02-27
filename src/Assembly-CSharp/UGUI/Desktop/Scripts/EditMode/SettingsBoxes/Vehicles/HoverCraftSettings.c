@@ -1030,148 +1030,131 @@ code_?:
     return;
   }
   pSVar5 = (this->fields).thrustersColorR;
-  cVar6 = '\0';
   if (pSVar5 != (SettingsSlider *)0x0) {
-    fVar7 = SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0);
+    fVar6 = SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0);
     pSVar5 = (this->fields).thrustersColorG;
-    cVar6 = '\0';
     if (pSVar5 != (SettingsSlider *)0x0) {
-      fVar8 = SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0);
+      fVar7 = SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0);
       pSVar5 = (this->fields).thrustersColorB;
-      cVar6 = '\0';
       if (pSVar5 != (SettingsSlider *)0x0) {
-        fVar9 = SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0);
+        fVar8 = SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0);
         pSVar5 = (this->fields).thrustersColorAlpha;
-        cVar6 = '\0';
-        if (pSVar5 != (SettingsSlider *)0x0) {
-          method_00 = (MethodInfo *)
-                      SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0);
-          cVar6 = '\0';
-          if (x != (Image *)0x0) {
-            (*(code *)(x->klass->vtable).set_color.method)();
-            thrustersColor =
-                 WorldObjectTypes::HoverCraft::Shared::ThrustersColorSerializer::
-                 ThrustersColorSerializer_Deserialize
-                           ((this->fields)._.bluePrintData,(MethodInfo *)0x0);
-            pTVar10 = thrustersColor.alphas;
-            pTVar11 = thrustersColor.colors;
-            uVar12 = (this->fields).editingThrusterColor;
-            pSVar5 = (this->fields).thrustersColorAlpha;
-            cVar6 = '\0';
-            if (pSVar5 != (SettingsSlider *)0x0) {
-              fVar13 = SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0);
-              uVar14 = (this->fields).editingThrusterColor;
-              cVar6 = '\0';
-              if (pTVar10 != (ThrustersColorAlphaKey__Array *)0x0) {
-                if ((uVar14 < pTVar10->max_length) &&
-                   (fVar15 = pTVar10->vector[uVar14].time, uVar12 < pTVar10->max_length)) {
-                  pTVar10->vector[uVar12].alpha = fVar13;
-                  pTVar10->vector[uVar12].time = fVar15;
-                  uVar12 = (this->fields).editingThrusterColor;
-                  cVar6 = '\0';
-                  if (pTVar11 == (ThrustersColorColorKey__Array *)0x0) goto code_?;
-                  if ((uVar12 < pTVar11->max_length) &&
-                     (fVar13 = pTVar11->vector[uVar12].time, uVar12 < pTVar11->max_length)) {
-                    pTVar16 = pTVar11->vector + uVar12;
-                    (pTVar16->color).r = fVar7;
-                    (pTVar16->color).g = fVar8;
-                    (pTVar16->color).b = fVar9;
-                    pTVar16->time = fVar13;
-                    this_02 = WorldObjectTypes::HoverCraft::Shared::ThrustersColorSerializer::
-                              ThrustersColorSerializer_Serialize(thrustersColor,(MethodInfo *)0x0);
-                    cVar6 = '\0';
-                    if (this_02 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                      pDVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                               UInt32,System::Object]::
-                               Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                                         ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                                           *)&stack0xffffffbc,
-                                          (Dictionary_2_System_UInt32_System_Object_ *)this_02,
-                                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
-                                         );
-                      uStack_1 = 1;
-                      value = (pDVar17->_current).value;
-                      while (pMStack_18 = 
-                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
-                            , bVar4 = mscorlib.dll::System::Collections::Generic::
-                                      Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::
-                                      Object]::
-                                      Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                                                ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_
-                                                  *)&stack0xffffffa0,
-                                                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
-                                                ), bVar4 != 0) {
-                        this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                                            ((MethodInfo *)0x0);
-                        method_00 = (MethodInfo *)(this->fields)._.vehicleWoID;
-                        if (pMStack_18 != (MethodInfo *)0x0) {
-                          pMVar19 = (MethodInfo *)0x0;
-                          if ((String__Class *)pMStack_18->methodPointer == TypeInfo__System__String
-                             ) {
-                            pMVar19 = pMStack_18;
-                          }
-                          cVar6 = '\0';
-                          pMStack_18 = pMVar19;
-                          if (pMVar19 == (MethodInfo *)0x0) goto code_?;
+        if ((pSVar5 != (SettingsSlider *)0x0) &&
+           (method_00 = (MethodInfo *)
+                        SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0),
+           x != (Image *)0x0)) {
+          (*(code *)(x->klass->vtable).set_color.method)();
+          thrustersColor =
+               WorldObjectTypes::HoverCraft::Shared::ThrustersColorSerializer::
+               ThrustersColorSerializer_Deserialize
+                         ((this->fields)._.bluePrintData,(MethodInfo *)0x0);
+          pTVar9 = thrustersColor.alphas;
+          pTVar10 = thrustersColor.colors;
+          uVar11 = (this->fields).editingThrusterColor;
+          pSVar5 = (this->fields).thrustersColorAlpha;
+          if (pSVar5 != (SettingsSlider *)0x0) {
+            fVar12 = SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0);
+            uVar13 = (this->fields).editingThrusterColor;
+            if (pTVar9 != (ThrustersColorAlphaKey__Array *)0x0) {
+              if ((uVar13 < pTVar9->max_length) &&
+                 (fVar14 = pTVar9->vector[uVar13].time, uVar11 < pTVar9->max_length)) {
+                pTVar9->vector[uVar11].alpha = fVar12;
+                pTVar9->vector[uVar11].time = fVar14;
+                uVar11 = (this->fields).editingThrusterColor;
+                if (pTVar10 == (ThrustersColorColorKey__Array *)0x0) goto code_?;
+                if ((uVar11 < pTVar10->max_length) &&
+                   (fVar12 = pTVar10->vector[uVar11].time, uVar11 < pTVar10->max_length)) {
+                  pTVar15 = pTVar10->vector + uVar11;
+                  (pTVar15->color).r = fVar6;
+                  (pTVar15->color).g = fVar7;
+                  (pTVar15->color).b = fVar8;
+                  pTVar15->time = fVar12;
+                  this_02 = WorldObjectTypes::HoverCraft::Shared::ThrustersColorSerializer::
+                            ThrustersColorSerializer_Serialize(thrustersColor,(MethodInfo *)0x0);
+                  if (this_02 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                    pDVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                              UInt32,System::Object]::
+                              Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                                          *)&stack0xffffffbc,
+                                         (Dictionary_2_System_UInt32_System_Object_ *)this_02,
+                                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
+                                        );
+                    uStack_1 = 1;
+                    value = (pDVar16->_current).value;
+                    while (pMStack_17 = 
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
+                          , bVar4 = mscorlib.dll::System::Collections::Generic::
+                                    Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::
+                                    Object]::
+                                    Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                                              ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_
+                                                *)&stack0xffffffa0,
+                                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
+                                              ), bVar4 != 0) {
+                      this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                                          ((MethodInfo *)0x0);
+                      method_00 = (MethodInfo *)(this->fields)._.vehicleWoID;
+                      if (pMStack_17 != (MethodInfo *)0x0) {
+                        pMVar18 = (MethodInfo *)0x0;
+                        if ((String__Class *)pMStack_17->methodPointer == TypeInfo__System__String)
+                        {
+                          pMVar18 = pMStack_17;
                         }
-                        if (cRam_? == '\0') {
-                          func_?();
-                          cRam_? = '\x01';
-                        }
-                        keyPath = mscorlib.dll::System::String::String_Concat_3
-                                            (StringLiteral_BlueprintData_,(String *)pMStack_18,
-                                             (MethodInfo *)0x0);
-                        cVar6 = '\0';
-                        if (this_03 == (MVNetworkGame_OperationRequests *)0x0)
-                        goto code_?;
-                        pOVar20 = (Object *)&UNK_?;
-                        MVNetworkGame+OperationRequests::
-                        MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial
-                                  (this_03,(int32_t)method_00,keyPath,value,(MethodInfo *)0x0);
-                        value = pOVar20;
+                        pMStack_17 = pMVar18;
+                        if (pMVar18 == (MethodInfo *)0x0) goto code_?;
                       }
-                      uStack_1 = 0xffffffff;
-                      mscorlib.dll::System::ThrowHelper::
-                      ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                                ((Object *)&stack0xffffffa0,
-                                 (ExceptionArgument__Enum)
-                                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
-                                 ,method_00);
-                      uStack_1 = 0xffffffff;
-                      pMVar21 = (this->fields)._.vehicleBase;
-                      cVar6 = '\0';
-                      if (pMVar21 != (MVVehicleBase *)0x0) {
-                        (*(code *)(pMVar21->klass->vtable).OnDataUpdate.method)();
-                        (this->fields).editingThrusterColor = -1;
-                        if ((
-                            TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
-                            ->_1).cctor_finished_or_no_cctor == 0) {
-                          func_?();
-                        }
-                        this_00 = (this->fields)._.canvas;
-                        cVar6 = '\0';
-                        if (this_00 != (RectTransform *)0x0) {
-                          UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                          RectTransform_set_sizeDelta
-                                    (this_00,TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
-                                             ->static_fields->NormalEditingCanvasSize,
-                                     (MethodInfo *)0x0);
-                          this_01 = (this->fields).colorPicker;
-                          cVar6 = '\0';
-                          if (this_01 != (GameObject *)0x0) {
-                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_SetActive(this_01,0,(MethodInfo *)0x0);
-                            goto code_?;
-                          }
+                      if (cRam_? == '\0') {
+                        func_?();
+                        cRam_? = '\x01';
+                      }
+                      keyPath = mscorlib.dll::System::String::String_Concat_3
+                                          (StringLiteral_BlueprintData_,(String *)pMStack_17,
+                                           (MethodInfo *)0x0);
+                      if (this_03 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+                      pOVar19 = (Object *)&UNK_?;
+                      MVNetworkGame+OperationRequests::
+                      MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial
+                                (this_03,(int32_t)method_00,keyPath,value,(MethodInfo *)0x0);
+                      value = pOVar19;
+                    }
+                    uStack_1 = 0xffffffff;
+                    mscorlib.dll::System::ThrowHelper::
+                    ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                              ((Object *)&stack0xffffffa0,
+                               (ExceptionArgument__Enum)
+                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
+                               ,method_00);
+                    uStack_1 = 0xffffffff;
+                    pMVar20 = (this->fields)._.vehicleBase;
+                    if (pMVar20 != (MVVehicleBase *)0x0) {
+                      (*(code *)(pMVar20->klass->vtable).OnDataUpdate.method)();
+                      (this->fields).editingThrusterColor = -1;
+                      if ((
+                          TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
+                          ->_1).cctor_finished_or_no_cctor == 0) {
+                        func_?();
+                      }
+                      this_00 = (this->fields)._.canvas;
+                      if (this_00 != (RectTransform *)0x0) {
+                        UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+                        RectTransform_set_sizeDelta
+                                  (this_00,TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
+                                           ->static_fields->NormalEditingCanvasSize,
+                                   (MethodInfo *)0x0);
+                        this_01 = (this->fields).colorPicker;
+                        if (this_01 != (GameObject *)0x0) {
+                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                                    (this_01,0,(MethodInfo *)0x0);
+                          goto code_?;
                         }
                       }
                     }
-                    goto code_?;
                   }
+                  goto code_?;
                 }
-                cVar6 = '\0';
-                func_?();
               }
+              func_?();
             }
           }
         }
@@ -1182,12 +1165,12 @@ code_?:
   func_?();
 code_?:
   func_?();
-  uVar22 = func_?();
-  out((short)((uint6)uVar22 >> 0x20),(int)uVar22);
-  *(char *)(unaff_EBX + 0x10) = (*(char *)(unaff_EBX + 0x10) - extraout_CL) - cVar6;
-  do {
-                    /* WARNING: Do nothing block with infinite loop */
-  } while( true );
+  func_?();
+  pcVar21 = (char *)(extraout_ECX - *(int *)(unaff_EBX + 0x10));
+  *pcVar21 = *pcVar21 + (char)((uint)(unaff_EBX + -1) >> 8);
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
+  return;
 }
 
 

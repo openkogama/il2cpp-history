@@ -2270,8 +2270,8 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_UpdateHeaderDict
                            (Object *)pSVar1,
                            MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__set_Item_System__String__System__String_
                           );
-                pSVar1 = StringLiteral__8bit;
-                pSVar2 = StringLiteral_Content_Transfer_Encoding;
+                pSVar1 = StringLiteral_Content_Transfer_Encoding;
+                pSVar2 = StringLiteral__8bit;
                 if (cRam_? == '\0') {
                   func_?(&
                                   MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__set_Item_System__String__System__String_
@@ -2282,8 +2282,8 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_UpdateHeaderDict
                 if (pDVar3 != (Dictionary_2_System_String_System_String_ *)0x0) {
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                   Object]::Dictionary_2_System_Object_System_Object__set_Item
-                            ((Dictionary_2_System_Object_System_Object_ *)pDVar3,(Object *)pSVar2,
-                             (Object *)pSVar1,
+                            ((Dictionary_2_System_Object_System_Object_ *)pDVar3,(Object *)pSVar1,
+                             (Object *)pSVar2,
                              MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__set_Item_System__String__System__String_
                             );
                   pSVar1 = StringLiteral_MonoDevelop_Gettext_addin;

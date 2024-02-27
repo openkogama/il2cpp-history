@@ -40,7 +40,7 @@ void Assembly-CSharp.dll::ImpulseHitPackage::ImpulseHitPackage_ParseAndHandlePac
   if (shooter != (MVPlayer *)0x0) {
     key = MVPlayer::MVPlayer_get_WoId(shooter,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::CollectionExtensions::
-    CollectionExtensions_GetValueOrDefault_2
+    CollectionExtensions_GetValueOrDefault_4
               ((IReadOnlyDictionary_2_System_Int32_System_Single_ *)(this->fields).lastShotTime,key,
                0.0,
                float_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<int,_float>_System__Collections__Generic__IReadOnlyDictionary<int,_float>__int__float_

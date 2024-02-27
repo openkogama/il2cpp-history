@@ -1,4 +1,51 @@
 
+/* Void CalculateRemoteAvatarUIVisibility(Boolean, MVAvatarRemote) */
+
+void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_CalculateRemoteAvatarUIVisibility
+               (PickupItemCostume *this,bool isInvisible,MVAvatarRemote *avatar,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__AvatarUIHandlerRemote);
+    cRam_? = '\x01';
+  }
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (this_00 != (MVNetworkGame *)0x0) {
+    this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+    if (this_01 != (MVLocalPlayer *)0x0) {
+      isFriendly = MVPlayer::MVPlayer_IsOnSameTeam_1
+                             ((MVPlayer *)this_01,(MVWorldObjectClient *)avatar,(MethodInfo *)0x0);
+      unaff_ESI = (AvatarUIHandlerRemote *)0x0;
+      if ((avatar != (MVAvatarRemote *)0x0) &&
+         (pAVar1 = (avatar->fields)._.avatar, unaff_ESI = (AvatarUIHandlerRemote *)0x0,
+         pAVar1 != (Avatar *)0x0)) {
+        unaff_ESI = (AvatarUIHandlerRemote *)(pAVar1->fields).avatarUIHandler;
+        if (unaff_ESI != (AvatarUIHandlerRemote *)0x0) {
+          if (((TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment <=
+               (unaff_ESI->klass->_1).naturalAligment) &&
+             ((unaff_ESI->klass->_1).typeHierarchy
+              [(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] ==
+              (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
+            AvatarUIHandlerRemote::AvatarUIHandlerRemote_set_ForceHideUI
+                      (unaff_ESI,(isFriendly ^ 1) & unaff_DI,(MethodInfo *)0x0);
+            AvatarUIHandlerRemote::AvatarUIHandlerRemote_SetHealthBarColor
+                      (unaff_ESI,isFriendly,(MethodInfo *)0x0);
+            return;
+          }
+          goto code_?;
+        }
+      }
+    }
+  }
+  func_?();
+code_?:
+  func_?(unaff_ESI);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
 /* PickupItemEditable+EditableItemConfiguration GetDefaultConfiguration() */
 
 PickupItemEditable_EditableItemConfiguration *
@@ -117,6 +164,126 @@ code_?:
   pcVar11 = (code *)swi(3);
   pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar11)();
   return pPVar1;
+}
+
+
+/* Void Initialize() */
+
+void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_Initialize
+               (PickupItemCostume *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__PickupItemCostume__OnLocalPlayerTeamChanged__);
+    cRam_? = '\x01';
+  }
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar2 = (pMVar1->fields).playerContainer;
+    if (pMVar2 != (MVPlayerContainer *)0x0) {
+      pAVar3 = (pMVar2->fields).OnLocalPlayerTeamChanged;
+      this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_00,(Object *)this,MethodInfo__PickupItemCostume__OnLocalPlayerTeamChanged__,
+                 (MethodInfo *)0x0);
+      pAVar3 = (Action *)
+               mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+      if (pAVar3 == (Action *)0x0) {
+        (pMVar2->fields).OnLocalPlayerTeamChanged = (Action *)0x0;
+      }
+      else {
+        pAVar4 = (Action *)0x0;
+        if (pAVar3->klass == TypeInfo__System__Action) {
+          pAVar4 = pAVar3;
+        }
+        if (pAVar4 == (Action *)0x0) goto code_?;
+        (pMVar2->fields).OnLocalPlayerTeamChanged = pAVar4;
+        pAVar4 = (Action *)0x0;
+        if (pAVar3->klass == TypeInfo__System__Action) {
+          pAVar4 = pAVar3;
+        }
+        if (pAVar4 == (Action *)0x0) goto code_?;
+      }
+      func_?();
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        func_?();
+        func_?();
+        func_?(&StringLiteral_Default);
+        func_?(&StringLiteral_Player);
+        cRam_? = '\x01';
+      }
+      iVar5 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                        (StringLiteral_Default,(MethodInfo *)0x0);
+      uVar6 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                        (StringLiteral_Player,(MethodInfo *)0x0);
+      (in_stack_7->fields).hitLayerMask = 1 << ((byte)iVar5 & 0x1f) | 1 << (uVar6 & 0x1f);
+      if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      if (TypeInfo__MainCameraManager->static_fields->IsCameraForcedFirstPerson != 0) {
+        pTVar8 = (in_stack_7->fields)._._.firstPersonTransform;
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                          ((Object_1 *)pTVar8,(Object_1 *)0x0,(MethodInfo *)0x0);
+        if (bVar9 != 0) {
+          this_01 = (GameObject *)func_?();
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
+                    (this_01,StringLiteral_FirstPersonTransform,(MethodInfo *)0x0);
+          if (this_01 != (GameObject *)0x0) {
+            pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                               (this_01,(MethodInfo *)0x0);
+            p = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)in_stack_7,(MethodInfo *)0x0);
+            if (pTVar8 != (Transform *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
+                        (pTVar8,p,(MethodInfo *)0x0);
+              pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                 (this_01,(MethodInfo *)0x0);
+              if (cRam_? == '\0') {
+                func_?();
+                cRam_? = '\x01';
+              }
+              if (pTVar8 != (Transform *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
+                          (pTVar8,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+                           (MethodInfo *)0x0);
+                pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                         GameObject_get_transform(this_01,(MethodInfo *)0x0);
+                (in_stack_7->fields)._._.firstPersonTransform = pTVar8;
+                func_?();
+                goto code_?;
+              }
+            }
+          }
+          func_?();
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
+          return;
+        }
+      }
+code_?:
+      pPVar11 = (PickupItemEditable_EditableItemConfiguration *)
+               (*(code *)(in_stack_7->klass->vtable).__unknown_3.method)();
+      (in_stack_7->fields)._Configuration_k__BackingField = pPVar11;
+      func_?();
+      PickupItemEditable::PickupItemEditable_SetValuesBasedOnConfiguration
+                (in_stack_7,(MethodInfo *)0x0);
+      return;
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
+  return;
 }
 
 
@@ -553,150 +720,126 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnAvatarInvisible
                (PickupItemCostume *this,MethodInfo *method)
 
 {
-  this_06 = (AvatarUIHandlerRemote__Class *)this;
+  this_03 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MVAvatar);
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields)._._._.owner;
-  wo = (PickupItemCostume_CostumeConfiguration__Class *)0x0;
-  if (pMVar1 == (MVPickupOwner *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
-    wo = (PickupItemCostume_CostumeConfiguration__Class *)(pMVar1->fields)._.worldObjectParent;
-    if (wo == (PickupItemCostume_CostumeConfiguration__Class *)0x0) {
+  pMVar2 = (MVAvatarRemote *)0x0;
+  if (pMVar1 != (MVPickupOwner *)0x0) {
+    pMVar2 = (MVAvatarRemote *)(pMVar1->fields)._.worldObjectParent;
+    if (((pMVar2 == (MVAvatarRemote *)0x0) ||
+        (pIVar3 = ((Il2CppClass_0 *)&pMVar2->klass)->image,
+        *(byte *)&pIVar3[4].assembly < (TypeInfo__MVAvatar->_1).naturalAligment)) ||
+       (*(MVAvatar__Class **)
+         ((pIVar3[2].typeCount - 4) + (uint)(TypeInfo__MVAvatar->_1).naturalAligment * 4) !=
+        TypeInfo__MVAvatar)) {
       return;
     }
-    pMVar2 = (MVWorldObjectClient__Class *)(wo->_0).image;
-    if ((pMVar2->_1).naturalAligment < (TypeInfo__MVAvatar->_1).naturalAligment) {
-      return;
-    }
-    if ((MVAvatar__Class *)(pMVar2->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1]
-        != TypeInfo__MVAvatar) {
-      return;
-    }
-    pPVar3 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-    if (pPVar3 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
-    bVar4 = (pPVar3->fields).isPlayerInvisible;
-    value_00 = bVar4;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__AvatarUIHandlerRemote);
-      func_?(&
-                      UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
-                     );
-      func_?(&TypeInfo__MVAvatarRemote);
-      func_?(&StringLiteral_Default);
-      cRam_? = '\x01';
-    }
-    pMVar5 = wo[1]._1.unity_user_data;
-    if (pMVar5 == (MVBody *)0x0) goto code_?;
-    MVBody::MVBody_set_ForceHidden(pMVar5,value_00,(MethodInfo *)0x0);
-    pMVar5 = wo[1]._1.unity_user_data;
-    if ((pMVar5 == (MVBody *)0x0) ||
-       (this_03 = MVBody::MVBody_get_BlobShadow(pMVar5,(MethodInfo *)0x0),
-       this_03 == (AvatarBlobShadowController *)0x0)) goto code_?;
-    this = (PickupItemCostume *)0x0;
-    AvatarBlobShadowController::AvatarBlobShadowController_set_ForceHidden
-              (this_03,(bool)pMVar5,(MethodInfo *)0x0);
-    if (((((MVWorldObjectClient__Class *)(wo->_0).image)->_1).naturalAligment <
-         (TypeInfo__MVAvatarRemote->_1).naturalAligment) ||
-       ((MVAvatarRemote__Class *)
-        (((MVWorldObjectClient__Class *)(wo->_0).image)->_1).typeHierarchy
-        [(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] != TypeInfo__MVAvatarRemote)) {
-code_?:
-      if (bVar4 == 0) {
-        return;
+    pPVar4 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+    if (pPVar4 != (PickupItemCostume_CostumeConfiguration *)0x0) {
+      value_00 = (pPVar4->fields).isPlayerInvisible;
+      if (cRam_? == '\0') {
+        func_?(&
+                        UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
+                       );
+        func_?(&TypeInfo__MVAvatarRemote);
+        func_?(&StringLiteral_Default);
+        cRam_? = '\x01';
       }
-      this_00 = (Component *)(this_06->vtable).Equals.methodPtr;
-      if (this_00 != (Component *)0x0) {
-        pOVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                 Component_GetComponentsInChildren
-                           (this_00,
-                            UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
-                           );
-        wo = (PickupItemCostume_CostumeConfiguration__Class *)0x0;
-        if (pOVar6 != (Object__Array *)0x0) {
-          ppOVar7 = pOVar6->vector;
-          for (; (int)wo < (int)pOVar6->max_length;
-              wo = (PickupItemCostume_CostumeConfiguration__Class *)((int)&(wo->_0).image + 1)) {
-            if ((PickupItemCostume_CostumeConfiguration__Class *)pOVar6->max_length <= wo)
-            goto code_?;
-            this_01 = (Renderer *)*ppOVar7;
-            this_06 = (AvatarUIHandlerRemote__Class *)0x0;
-            if (this_01 == (Renderer *)0x0) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                      (this_01,1,(MethodInfo *)0x0);
-            this_06 = (AvatarUIHandlerRemote__Class *)
-                      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)this_01,(MethodInfo *)0x0);
-            value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                              (StringLiteral_Default,(MethodInfo *)0x0);
-            if (this_06 == (AvatarUIHandlerRemote__Class *)0x0) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-                      ((GameObject *)this_06,value,(MethodInfo *)0x0);
-            ppOVar7 = ppOVar7 + 1;
-            this = (PickupItemCostume *)this_06;
+      pMVar5 = (pMVar2->fields)._.body;
+      if (pMVar5 != (MVBody *)0x0) {
+        MVBody::MVBody_set_ForceHidden(pMVar5,value_00,(MethodInfo *)0x0);
+        pMVar5 = (pMVar2->fields)._.body;
+        if ((pMVar5 != (MVBody *)0x0) &&
+           (this_04 = MVBody::MVBody_get_BlobShadow(pMVar5,(MethodInfo *)0x0),
+           this_04 != (AvatarBlobShadowController *)0x0)) {
+          this = (PickupItemCostume *)0x0;
+          cVar6 = -0x34;
+          AvatarBlobShadowController::AvatarBlobShadowController_set_ForceHidden
+                    (this_04,value_00,(MethodInfo *)0x0);
+          if (((TypeInfo__MVAvatarRemote->_1).naturalAligment <=
+               *(byte *)&((Il2CppClass_0 *)&pMVar2->klass)->image[4].assembly) &&
+             (*(MVAvatarRemote__Class **)
+               ((((Il2CppClass_0 *)&pMVar2->klass)->image[2].typeCount - 4) +
+               (uint)(TypeInfo__MVAvatarRemote->_1).naturalAligment * 4) == TypeInfo__MVAvatarRemote
+             )) {
+            avatar = (MVAvatarRemote *)0x0;
+            if (*(MVAvatarRemote__Class **)
+                 ((((Il2CppClass_0 *)&pMVar2->klass)->image[2].typeCount - 4) +
+                 (uint)(TypeInfo__MVAvatarRemote->_1).naturalAligment * 4) ==
+                TypeInfo__MVAvatarRemote) {
+              avatar = pMVar2;
+            }
+            PickupItemCostume_CalculateRemoteAvatarUIVisibility
+                      (this_03,value_00,avatar,(MethodInfo *)0x0);
+            this = this_03;
           }
-          this_02 = (this->fields).trailRenderer;
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__PickupItemCostume__CostumeConfiguration);
-            cRam_? = '\x01';
+          if (cVar6 == '\0') {
+            return;
           }
-          pPVar8 = (this->fields)._._Configuration_k__BackingField;
-          wo = TypeInfo__PickupItemCostume__CostumeConfiguration;
-          this_06 = (AvatarUIHandlerRemote__Class *)this;
-          if (pPVar8 != (PickupItemEditable_EditableItemConfiguration *)0x0) {
-            this_06 = (AvatarUIHandlerRemote__Class *)pPVar8->klass;
-            if (((this_06->_1).naturalAligment <
-                 (TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment) ||
-               ((this_06->_1).typeHierarchy
-                [(TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment - 1] !=
-                (Il2CppClass *)TypeInfo__PickupItemCostume__CostumeConfiguration))
-            goto code_?;
-            if (this_02 != (TrailRenderer *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                        ((Renderer *)this_02,*(bool *)((int)&pPVar8[1].fields.cubeModelId + 2),
-                         (MethodInfo *)0x0);
-              return;
+          this_00 = (this_03->fields)._.cubeModelParent;
+          if (this_00 != (Transform *)0x0) {
+            pOVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                     Component_GetComponentsInChildren
+                               ((Component *)this_00,
+                                UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
+                               );
+            pMVar2 = (MVAvatarRemote *)0x0;
+            if (pOVar7 != (Object__Array *)0x0) {
+              ppOVar8 = pOVar7->vector;
+              for (; (int)pMVar2 < (int)pOVar7->max_length;
+                  pMVar2 = (MVAvatarRemote *)((int)&((Il2CppClass_0 *)&pMVar2->klass)->image + 1)) {
+                if ((MVAvatarRemote *)pOVar7->max_length <= pMVar2) goto code_?;
+                this_01 = (Renderer *)*ppOVar8;
+                if (this_01 == (Renderer *)0x0) goto code_?;
+                UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
+                          (this_01,1,(MethodInfo *)0x0);
+                this = (PickupItemCostume *)
+                       UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                 ((Component *)this_01,(MethodInfo *)0x0);
+                value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                                  (StringLiteral_Default,(MethodInfo *)0x0);
+                if (this == (PickupItemCostume *)0x0) goto code_?;
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
+                          ((GameObject *)this,value,(MethodInfo *)0x0);
+                ppOVar8 = ppOVar8 + 1;
+              }
+              this_02 = (this->fields).trailRenderer;
+              if (cRam_? == '\0') {
+                func_?(&TypeInfo__PickupItemCostume__CostumeConfiguration);
+                cRam_? = '\x01';
+              }
+              pPVar9 = (this->fields)._._Configuration_k__BackingField;
+              pMVar2 = (MVAvatarRemote *)TypeInfo__PickupItemCostume__CostumeConfiguration;
+              if (pPVar9 != (PickupItemEditable_EditableItemConfiguration *)0x0) {
+                if (((pPVar9->klass->_1).naturalAligment <
+                     (TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment) ||
+                   ((pPVar9->klass->_1).typeHierarchy
+                    [(TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment - 1] !=
+                    (Il2CppClass *)TypeInfo__PickupItemCostume__CostumeConfiguration))
+                goto code_?;
+                if (this_02 != (TrailRenderer *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
+                            ((Renderer *)this_02,*(bool *)((int)&pPVar9[1].fields.cubeModelId + 2),
+                             (MethodInfo *)0x0);
+                  return;
+                }
+              }
             }
           }
         }
       }
-      goto code_?;
-    }
-    this_04 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((this_04 == (MVNetworkGame *)0x0) ||
-       (this_05 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_04,(MethodInfo *)0x0),
-       this_05 == (MVLocalPlayer *)0x0)) goto code_?;
-    isFriendly = MVPlayer::MVPlayer_IsOnSameTeam_1
-                           ((MVPlayer *)this_05,(MVWorldObjectClient *)wo,(MethodInfo *)0x0);
-    iVar9 = (((MVWorldObjectClient__Fields *)&wo[1]._0.gc_desc)->_).id;
-    wo = (PickupItemCostume_CostumeConfiguration__Class *)0x0;
-    if ((iVar9 == 0) ||
-       (wo = *(PickupItemCostume_CostumeConfiguration__Class **)(iVar9 + 0x44),
-       this_06 = TypeInfo__AvatarUIHandlerRemote,
-       wo == (PickupItemCostume_CostumeConfiguration__Class *)0x0)) goto code_?;
-    if (((TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment <=
-         (((MVWorldObjectClient__Class *)(wo->_0).image)->_1).naturalAligment) &&
-       ((((MVWorldObjectClient__Class *)(wo->_0).image)->_1).typeHierarchy
-        [(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] ==
-        (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
-      AvatarUIHandlerRemote::AvatarUIHandlerRemote_set_ForceHideUI
-                ((AvatarUIHandlerRemote *)wo,(isFriendly ^ 1) & bVar4,(MethodInfo *)0x0);
-      AvatarUIHandlerRemote::AvatarUIHandlerRemote_SetHealthBarColor
-                ((AvatarUIHandlerRemote *)wo,isFriendly,(MethodInfo *)0x0);
-      this_06 = (AvatarUIHandlerRemote__Class *)0x0;
-      goto code_?;
     }
   }
-  func_?(wo,this_06);
 code_?:
   func_?();
-  pPVar8 = extraout_EDX;
 code_?:
-  func_?(pPVar8,wo);
+  func_?();
+  pPVar9 = extraout_EDX;
+code_?:
+  func_?(pPVar9,pMVar2);
   pcVar10 = (code *)swi(3);
   (*pcVar10)();
   return;
@@ -1007,6 +1150,131 @@ code_?:
 }
 
 
+/* Void OnDestroy() */
+
+void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnDestroy
+               (PickupItemCostume *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Action);
+    func_?(&MethodInfo__PickupItemCostume__OnLocalPlayerTeamChanged__);
+    cRam_? = '\x01';
+  }
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar2 = (pMVar1->fields).playerContainer;
+    if (pMVar2 != (MVPlayerContainer *)0x0) {
+      pAVar3 = (pMVar2->fields).OnLocalPlayerTeamChanged;
+      this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_02,(Object *)this,MethodInfo__PickupItemCostume__OnLocalPlayerTeamChanged__,
+                 (MethodInfo *)0x0);
+      pAVar3 = (Action *)
+               mscorlib.dll::System::Delegate::Delegate_Remove
+                         ((Delegate *)pAVar3,(Delegate *)this_02,(MethodInfo *)0x0);
+      if (pAVar3 == (Action *)0x0) {
+        (pMVar2->fields).OnLocalPlayerTeamChanged = (Action *)0x0;
+code_?:
+        func_?();
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        if (cRam_? == '\0') {
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          cRam_? = '\x01';
+        }
+        method_00 = TypeInfo__UpdateController____c__DisplayClass6_0;
+        value = (Object *)func_?();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+        if (value != (Object *)0x0) {
+          value[1].klass = in_stack_4;
+          func_?();
+          iVar5 = 0x10;
+          uVar6 = 0;
+          while( true ) {
+            if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            pLVar7 = TypeInfo__UpdateController->static_fields->updateBuckets;
+            if (pLVar7 == (List_1_PriorityDataUpdate___Array *)0x0) goto code_?;
+            if ((int)pLVar7->max_length <= (int)uVar6) {
+              return;
+            }
+            if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            pLVar7 = TypeInfo__UpdateController->static_fields->updateBuckets;
+            if (pLVar7 == (List_1_PriorityDataUpdate___Array *)0x0) goto code_?;
+            if (pLVar7->max_length <= uVar6) break;
+            this_00 = *(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ **)
+                       ((int)pLVar7->vector + iVar5 + -0x10);
+            this_01 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+                      value[1].monitor;
+            if (this_01 == (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+              this_01 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+                        func_?();
+              mscorlib.dll::System::Predicate`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]
+              ::Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___ctor
+                        (this_01,value,
+                         MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_
+                         ,(MethodInfo *)0x0);
+              value[1].monitor = (MonitorData *)this_01;
+              func_?();
+            }
+            if (this_00 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0)
+            goto code_?;
+            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+            VisualTreeAsset+UsingEntry]::
+            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__RemoveAll
+                      (this_00,this_01,
+                       MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
+                      );
+            uVar6 = uVar6 + 1;
+            iVar5 = iVar5 + 4;
+          }
+          func_?();
+        }
+code_?:
+        func_?();
+        pcVar8 = (code *)swi(3);
+        (*pcVar8)();
+        return;
+      }
+      pAVar9 = (Action *)0x0;
+      if (pAVar3->klass == TypeInfo__System__Action) {
+        pAVar9 = pAVar3;
+      }
+      if (pAVar9 != (Action *)0x0) {
+        (pMVar2->fields).OnLocalPlayerTeamChanged = pAVar9;
+        pAVar9 = (Action *)0x0;
+        if (pAVar3->klass == TypeInfo__System__Action) {
+          pAVar9 = pAVar3;
+        }
+        if (pAVar9 != (Action *)0x0) goto code_?;
+      }
+      goto code_?;
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
+  return;
+}
+
+
 /* Void OnFire(Boolean) */
 
 void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnFire
@@ -1053,6 +1321,70 @@ code_?:
       }
     }
   }
+  return;
+}
+
+
+/* Void OnLocalPlayerTeamChanged() */
+
+void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnLocalPlayerTeamChanged
+               (PickupItemCostume *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVAvatarRemote);
+    cRam_? = '\x01';
+  }
+  pMVar1 = (this->fields)._._._.owner;
+  wo = (MVWorldObjectClient *)0x0;
+  if (pMVar1 != (MVPickupOwner *)0x0) {
+    wo = (pMVar1->fields)._.worldObjectParent;
+    if (((wo == (MVWorldObjectClient *)0x0) ||
+        ((wo->klass->_1).naturalAligment < (TypeInfo__MVAvatarRemote->_1).naturalAligment)) ||
+       ((MVAvatarRemote__Class *)
+        (wo->klass->_1).typeHierarchy[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] !=
+        TypeInfo__MVAvatarRemote)) {
+      return;
+    }
+    pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+    if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
+      bVar3 = (pPVar2->fields).isPlayerInvisible;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__AvatarUIHandlerRemote);
+        cRam_? = '\x01';
+      }
+      this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((this_00 != (MVNetworkGame *)0x0) &&
+         (this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+         this_01 != (MVLocalPlayer *)0x0)) {
+        isFriendly = MVPlayer::MVPlayer_IsOnSameTeam_1((MVPlayer *)this_01,wo,(MethodInfo *)0x0);
+        iVar4 = wo[1].fields._.id;
+        wo = (MVWorldObjectClient *)0x0;
+        if ((iVar4 != 0) &&
+           (wo = *(MVWorldObjectClient **)(iVar4 + 0x44),
+           this = (PickupItemCostume *)TypeInfo__AvatarUIHandlerRemote,
+           wo != (MVWorldObjectClient *)0x0)) {
+          if (((TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment <=
+               (wo->klass->_1).naturalAligment) &&
+             ((wo->klass->_1).typeHierarchy
+              [(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] ==
+              (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
+            AvatarUIHandlerRemote::AvatarUIHandlerRemote_set_ForceHideUI
+                      ((AvatarUIHandlerRemote *)wo,(isFriendly ^ 1) & bVar3,(MethodInfo *)0x0);
+            AvatarUIHandlerRemote::AvatarUIHandlerRemote_SetHealthBarColor
+                      ((AvatarUIHandlerRemote *)wo,isFriendly,(MethodInfo *)0x0);
+            return;
+          }
+          goto code_?;
+        }
+      }
+    }
+  }
+  func_?();
+code_?:
+  func_?(wo,this);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -1204,8 +1536,8 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_SetAvatarInvisibi
                (PickupItemCostume *this,bool isInvisible,MVAvatar *avatar,MethodInfo *method)
 
 {
+  this_03 = this;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarUIHandlerRemote);
     func_?(&
                     UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
                    );
@@ -1213,110 +1545,91 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_SetAvatarInvisibi
     func_?(&StringLiteral_Default);
     cRam_? = '\x01';
   }
-  if ((avatar == (MVAvatar *)0x0) || (pMVar1 = (avatar->fields).body, pMVar1 == (MVBody *)0x0)) {
-code_?:
-    func_?();
-  }
-  else {
+  if ((avatar != (MVAvatar *)0x0) && (pMVar1 = (avatar->fields).body, pMVar1 != (MVBody *)0x0)) {
     MVBody::MVBody_set_ForceHidden(pMVar1,isInvisible,(MethodInfo *)0x0);
     pMVar1 = (avatar->fields).body;
-    if ((pMVar1 == (MVBody *)0x0) ||
-       (this_03 = MVBody::MVBody_get_BlobShadow(pMVar1,(MethodInfo *)0x0),
-       this_03 == (AvatarBlobShadowController *)0x0)) goto code_?;
-    AvatarBlobShadowController::AvatarBlobShadowController_set_ForceHidden
-              (this_03,isInvisible,(MethodInfo *)0x0);
-    if (((avatar->klass->_1).naturalAligment < (TypeInfo__MVAvatarRemote->_1).naturalAligment) ||
-       ((MVAvatarRemote__Class *)
-        (avatar->klass->_1).typeHierarchy[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] !=
-        TypeInfo__MVAvatarRemote)) {
-code_?:
+    if ((pMVar1 != (MVBody *)0x0) &&
+       (this_04 = MVBody::MVBody_get_BlobShadow(pMVar1,(MethodInfo *)0x0),
+       this_04 != (AvatarBlobShadowController *)0x0)) {
+      AvatarBlobShadowController::AvatarBlobShadowController_set_ForceHidden
+                (this_04,isInvisible,(MethodInfo *)0x0);
+      if (((TypeInfo__MVAvatarRemote->_1).naturalAligment <= (avatar->klass->_1).naturalAligment) &&
+         (ppIVar2 = (avatar->klass->_1).typeHierarchy,
+         (MVAvatarRemote__Class *)ppIVar2[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] ==
+         TypeInfo__MVAvatarRemote)) {
+        avatar_00 = (MVAvatarRemote *)0x0;
+        if ((MVAvatarRemote__Class *)ppIVar2[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] ==
+            TypeInfo__MVAvatarRemote) {
+          avatar_00 = (MVAvatarRemote *)avatar;
+        }
+        this = _isInvisible;
+        PickupItemCostume_CalculateRemoteAvatarUIVisibility
+                  (this_03,isInvisible,avatar_00,(MethodInfo *)0x0);
+      }
       if (isInvisible == 0) {
         return;
       }
-      this_00 = (this->fields)._.cubeModelParent;
+      this_00 = (this_03->fields)._.cubeModelParent;
       if (this_00 != (Transform *)0x0) {
-        this_06 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                  Component_GetComponentsInChildren
-                            ((Component *)this_00,
-                             UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
-                            );
+        pOVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                 Component_GetComponentsInChildren
+                           ((Component *)this_00,
+                            UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
+                           );
         avatar = (MVAvatar *)0x0;
-        if (this_06 != (Object__Array *)0x0) {
-          ppOVar2 = this_06->vector;
-          for (; (int)avatar < (int)this_06->max_length;
+        if (pOVar3 != (Object__Array *)0x0) {
+          ppOVar4 = pOVar3->vector;
+          for (; (int)avatar < (int)pOVar3->max_length;
               avatar = (MVAvatar *)((int)&((Il2CppClass_0 *)&avatar->klass)->image + 1)) {
-            if ((MVAvatar *)this_06->max_length <= avatar) goto code_?;
-            this_01 = (Renderer *)*ppOVar2;
+            if ((MVAvatar *)pOVar3->max_length <= avatar) goto code_?;
+            this_01 = (Renderer *)*ppOVar4;
             if (this_01 == (Renderer *)0x0) goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
                       (this_01,1,(MethodInfo *)0x0);
-            this_06 = (Object__Array *)
-                      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+            this_05 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                 ((Component *)this_01,(MethodInfo *)0x0);
-            value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                              (StringLiteral_Default,(MethodInfo *)0x0);
-            if (this_06 == (Object__Array *)0x0) goto code_?;
+            this = (PickupItemCostume *)
+                   UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                             (StringLiteral_Default,(MethodInfo *)0x0);
+            if (this_05 == (GameObject *)0x0) goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-                      ((GameObject *)this_06,value,(MethodInfo *)0x0);
-            ppOVar2 = ppOVar2 + 1;
+                      (this_05,(int32_t)this,(MethodInfo *)0x0);
+            ppOVar4 = ppOVar4 + 1;
           }
           this_02 = (this->fields).trailRenderer;
           if (cRam_? == '\0') {
             func_?(&TypeInfo__PickupItemCostume__CostumeConfiguration);
             cRam_? = '\x01';
           }
-          pPVar3 = (this->fields)._._Configuration_k__BackingField;
+          pPVar5 = (this->fields)._._Configuration_k__BackingField;
           avatar = (MVAvatar *)TypeInfo__PickupItemCostume__CostumeConfiguration;
-          if (pPVar3 != (PickupItemEditable_EditableItemConfiguration *)0x0) {
-            if (((pPVar3->klass->_1).naturalAligment <
+          if (pPVar5 != (PickupItemEditable_EditableItemConfiguration *)0x0) {
+            if (((pPVar5->klass->_1).naturalAligment <
                  (TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment) ||
-               ((pPVar3->klass->_1).typeHierarchy
+               ((pPVar5->klass->_1).typeHierarchy
                 [(TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment - 1] !=
                 (Il2CppClass *)TypeInfo__PickupItemCostume__CostumeConfiguration))
             goto code_?;
             if (this_02 != (TrailRenderer *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                        ((Renderer *)this_02,*(bool *)((int)&pPVar3[1].fields.cubeModelId + 2),
+                        ((Renderer *)this_02,*(bool *)((int)&pPVar5[1].fields.cubeModelId + 2),
                          (MethodInfo *)0x0);
               return;
             }
           }
         }
       }
-      goto code_?;
-    }
-    this_04 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((this_04 == (MVNetworkGame *)0x0) ||
-       (this_05 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_04,(MethodInfo *)0x0),
-       this_05 == (MVLocalPlayer *)0x0)) goto code_?;
-    isFriendly = MVPlayer::MVPlayer_IsOnSameTeam_1
-                           ((MVPlayer *)this_05,(MVWorldObjectClient *)avatar,(MethodInfo *)0x0);
-    pAVar4 = (avatar->fields).avatar;
-    avatar = (MVAvatar *)0x0;
-    if ((pAVar4 == (Avatar *)0x0) ||
-       (avatar = (MVAvatar *)(pAVar4->fields).avatarUIHandler, avatar == (MVAvatar *)0x0))
-    goto code_?;
-    if (((TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment <=
-         (((AvatarUIHandlerRemote__Class *)((Il2CppClass_0 *)&avatar->klass)->image)->_1).
-         naturalAligment) &&
-       ((((AvatarUIHandlerRemote__Class *)((Il2CppClass_0 *)&avatar->klass)->image)->_1).
-        typeHierarchy[(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] ==
-        (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
-      AvatarUIHandlerRemote::AvatarUIHandlerRemote_set_ForceHideUI
-                ((AvatarUIHandlerRemote *)avatar,(isFriendly ^ 1) & isInvisible,(MethodInfo *)0x0);
-      AvatarUIHandlerRemote::AvatarUIHandlerRemote_SetHealthBarColor
-                ((AvatarUIHandlerRemote *)avatar,isFriendly,(MethodInfo *)0x0);
-      goto code_?;
     }
   }
+code_?:
   func_?();
 code_?:
   func_?();
-  pPVar3 = extraout_EDX;
+  pPVar5 = extraout_EDX;
 code_?:
-  func_?(pPVar3,avatar);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?(pPVar5,avatar);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
