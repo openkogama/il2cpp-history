@@ -216,43 +216,11 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_JoinFlowAdsEnab
     func_?(&TypeInfo__MVClientSettings);
     cRam_? = '\x01';
   }
-  if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0xd & 1) != 0) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVClientSettings);
-      cRam_? = '\x01';
-    }
-    if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x1b & 1) != 0) {
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((((pMVar1 == (MVNetworkGame *)0x0) ||
-           (this = (pMVar1->fields).playerContainer, this == (MVPlayerContainer *)0x0)) ||
-          (pMVar2 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this,(MethodInfo *)0x0),
-          pMVar2 == (MVLocalPlayer *)0x0)) ||
-         (pSVar3 = (pMVar2->fields)._._SubscriptionRules_k__BackingField,
-         pSVar3 == (SubscriptionRulesWrapper *)0x0)) {
-        uVar4 = func_?(&stack0x00000000);
-        func_?(uVar4);
-        pcVar5 = (code *)swi(3);
-        bVar6 = (*pcVar5)();
-        return bVar6;
-      }
-      if ((pSVar3->fields).SubscriptionType != 0) {
-        return 0;
-      }
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      if (TypeInfo__PlayerPrefsManager->static_fields->isFirstTimeSession != 0) {
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x17) & 1;
-      }
-      return 1;
-    }
+  if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0xd & 1) == 0) {
+    return 0;
   }
-  return 0;
+  bVar1 = MVClientSettings_get_InterstitialsAdsEnabled((MethodInfo *)0x0);
+  return bVar1;
 }
 
 
@@ -262,8 +230,34 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_PlayButtonAdsEn
                (MethodInfo *method)
 
 {
-  MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-  return 0;
+  bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x11 & 1) == 0) {
+      return 0;
+    }
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x1c & 1) == 0) {
+      return 0;
+    }
+  }
+  else {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x1c & 1) == 0) {
+      return 0;
+    }
+  }
+  bVar1 = MVClientSettings_get_InterstitialsAdsEnabled((MethodInfo *)0x0);
+  return bVar1;
 }
 
 

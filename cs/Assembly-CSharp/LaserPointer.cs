@@ -14,25 +14,15 @@ using UnityEngine;
 public class LaserPointer : MonoBehaviour, ILaserPointer
 {
 	// Fields
-	private const float syncInverval = 0.4f;
-	[SerializeField]
-	private Vector3 offset;
-	[SerializeField]
-	private Transform cube;
-	[SerializeField]
-	private LineRenderer lineRenderer;
-	[SerializeField]
-	private Material insertingMaterial;
-	[SerializeField]
-	private Material deleteMaterial;
-	[SerializeField]
-	private Material transformingMaterial;
-	[SerializeField]
-	private Color beamObjectColor;
-	[SerializeField]
-	private Color beamDeleteColor;
-	[SerializeField]
-	private Color beamEditColor;
+	public Vector3 offset;
+	public Transform cube;
+	public LineRenderer lineRenderer;
+	public Material insertingMaterial;
+	public Material deleteMaterial;
+	public Material transformingMaterial;
+	public Color beamObjectColor;
+	public Color beamDeleteColor;
+	public Color beamEditColor;
 	[SerializeField]
 	private Renderer cubeRenderer;
 	[SerializeField]
@@ -48,6 +38,7 @@ public class LaserPointer : MonoBehaviour, ILaserPointer
 	private float currentLaserAlpha;
 	private float lastSyncTime;
 	private Dictionary<object, object> syncBuffer;
+	private const float syncInverval = 0.4f;
 	public Action<bool, bool> OnLaserActive;
 	private bool isActive;
 	private bool isLocal;
@@ -58,8 +49,18 @@ public class LaserPointer : MonoBehaviour, ILaserPointer
 	public MeshFilter CubeMeshFilter { get; }
 
 	// Nested types
+	private enum NetworkStateKey : byte
+	{
+		State = 10,
+		TargetX = 11,
+		TargetY = 12,
+		TargetZ = 13,
+		IsFiring = 14,
+		CubeMaterial = 15
+	}
+
 	[CompilerGenerated]
-	private sealed class _DoDeactivateLaserAfterDuration_d__46 : IEnumerator<object>
+	private sealed class _DoDeactivateLaserAfterDuration_d__47 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -73,7 +74,7 @@ public class LaserPointer : MonoBehaviour, ILaserPointer
 
 		// Constructors
 		[DebuggerHidden]
-		public _DoDeactivateLaserAfterDuration_d__46(int __1__state);
+		public _DoDeactivateLaserAfterDuration_d__47(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -102,7 +103,7 @@ public class LaserPointer : MonoBehaviour, ILaserPointer
 	private void OnDisable();
 	private void Start();
 	private void LateUpdate();
-	[IteratorStateMachine(typeof(_DoDeactivateLaserAfterDuration_d__46))]
+	[IteratorStateMachine(typeof(_DoDeactivateLaserAfterDuration_d__47))]
 	private IEnumerator DoDeactivateLaserAfterDuration();
 	private void ApplyMaterialForState();
 	protected void SyncState(Dictionary<object, object> newState);

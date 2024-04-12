@@ -45,7 +45,7 @@ void Assembly-CSharp.dll::LaserPointer::LaserPointer_ApplyMaterialForState
      (this_00 = (pMVar3->fields)._MaterialRepository_k__BackingField,
      this_00 == (MVMaterialRepository *)0x0)) goto code_?;
   pMVar4 = MVMaterialRepository::MVMaterialRepository_GetMaterial
-                     (this_00,(this->fields).currentCubeMaterialId,(MethodInfo *)0x0);
+                      (this_00,(this->fields).currentCubeMaterialId,(MethodInfo *)0x0);
   switch((this->fields).state) {
   case 0:
     pRVar5 = (this->fields).cubeRenderer;
@@ -120,32 +120,25 @@ code_?:
     goto code_?;
   }
 code_?:
-  bVar10 = 0;
-  uVar11 = func_?();
-  bVar12 = (byte)uVar11 + extraout_DL;
-  bVar13 = CARRY1((byte)uVar11,extraout_DL) || CARRY1(bVar12,bVar10);
-  pbVar14 = (byte *)CONCAT31((int3)((uint)uVar11 >> 8),bVar12 + bVar10);
-  bVar12 = *pbVar14;
-  bVar15 = (byte)((uint)extraout_ECX >> 8);
-  bVar10 = *pbVar14 + bVar15;
-  *pbVar14 = bVar10 + bVar13;
-  bVar16 = (char)extraout_ECX - 1;
-  bVar17 = (byte)((uint)uVar11 >> 8);
-  bVar13 = CARRY1(extraout_DL,bVar17) ||
-           CARRY1(extraout_DL + bVar17,CARRY1(bVar12,bVar15) || CARRY1(bVar10,bVar13));
-  pbVar18 = (byte *)(unaff_EBX + -3);
-  bVar12 = *pbVar18 + bVar16;
-  bVar19 = CARRY1(*pbVar18,bVar16) || CARRY1(bVar12,bVar13);
-  *pbVar18 = bVar12 + bVar13;
-  bVar12 = *pbVar14;
-  bVar16 = (byte)((uint)(extraout_ECX + -2) >> 8);
-  bVar10 = *pbVar14 + bVar16;
-  *pbVar14 = bVar10 + bVar19;
-  *pbVar14 = *pbVar14 + (char)((uint)(extraout_ECX + -3) >> 8) +
-             (CARRY1(bVar12,bVar16) || CARRY1(bVar10,bVar19));
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)(&stack0xfffffffc,&stack0xfffffffc,&stack0xfffffffc,&stack0xfffffffc,&stack0xfffffffc,
-            &stack0xfffffffc);
+  iVar10 = func_?();
+  bVar11 = CARRY4(extraout_ECX,*(uint *)(extraout_ECX + 0x55));
+  pbVar12 = (byte *)(unaff_EBX + 0x49);
+  bVar13 = *pbVar12 + (byte)iVar10;
+  bVar14 = CARRY1(*pbVar12,(byte)iVar10) || CARRY1(bVar13,bVar11);
+  *pbVar12 = bVar13 + bVar11;
+  pbVar12 = (byte *)(unaff_EBX + 0x6a105549);
+  bVar15 = (byte)unaff_EBX;
+  bVar11 = CARRY1(*pbVar12,bVar15) || CARRY1(*pbVar12 + bVar15,bVar14);
+  *pbVar12 = *pbVar12 + bVar15 + bVar14;
+  pbVar12 = (byte *)(iVar10 + 0x49);
+  bVar13 = *pbVar12;
+  bVar16 = (byte)((uint)unaff_EBX >> 8);
+  bVar17 = *pbVar12 + bVar16;
+  *pbVar12 = bVar17 + bVar11;
+  *(char *)(unaff_EBX + -0x64efaab7) =
+       *(char *)(unaff_EBX + -0x64efaab7) + bVar15 + (CARRY1(bVar13,bVar16) || CARRY1(bVar17,bVar11));
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)(&stack0xfffffffc,&stack0xfffffffc,&stack0xfffffffc);
   return;
 }
 
@@ -213,10 +206,10 @@ Assembly-CSharp.dll::LaserPointer::LaserPointer_DoDeactivateLaserAfterDuration
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__LaserPointer___DoDeactivateLaserAfterDuration_d__46);
+    func_?(&TypeInfo__LaserPointer___DoDeactivateLaserAfterDuration_d__47);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__LaserPointer___DoDeactivateLaserAfterDuration_d__46;
+  method_00 = TypeInfo__LaserPointer___DoDeactivateLaserAfterDuration_d__47;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);

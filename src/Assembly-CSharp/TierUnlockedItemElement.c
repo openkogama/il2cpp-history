@@ -609,25 +609,33 @@ code_?:
   bVar9 = 0;
   CStack_7.g = (float)&UNK_?;
   uVar10 = func_?();
-  pbVar11 = (byte *)(in_GS + 0xeec91043 + (int)&stack0xfffffffc * 8);
-  bVar12 = CARRY1(*pbVar11,extraout_CH) || CARRY1(*pbVar11 + extraout_CH,bVar9);
-  *pbVar11 = *pbVar11 + extraout_CH + bVar9;
-  bVar13 = (byte)((uint6)uVar10 >> 8);
-  bVar14 = (byte)((uint6)uVar10 >> 0x28);
-  bVar9 = bVar14 + bVar13;
-  bVar15 = CARRY1(bVar14,bVar13) || CARRY1(bVar9,bVar12);
-  uVar16 = CONCAT11(bVar9 + bVar12,(char)((uint6)uVar10 >> 0x20));
-  out(uVar16,(char)uVar10);
-  bVar14 = (char)unaff_EBX + 3;
-  ppTVar17 = &this->klass + (int)&stack0xfffffffc * 2;
-  bVar9 = *(byte *)ppTVar17;
-  bVar13 = *(byte *)ppTVar17 + bVar14;
-  *(byte *)ppTVar17 = bVar13 + bVar15;
-  *(char *)(unaff_EBX + 4) =
-       *(char *)(unaff_EBX + 4) + (char)uVar10 + (CARRY1(bVar9,bVar14) || CARRY1(bVar13,bVar15));
-  out(uVar16,(int)uVar10);
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  uVar11 = (undefined2)((uint6)uVar10 >> 0x20);
+  pbVar12 = (byte *)(team + MVTeam__Enum_Red);
+  bVar13 = *(byte *)team;
+  out(uVar11,bVar13);
+  bVar14 = (byte)((uint6)uVar10 >> 8);
+  bVar15 = (byte)extraout_CX;
+  bVar16 = bVar14 + bVar15;
+  cVar17 = bVar16 + bVar9;
+  uVar18 = CONCAT22((short)((uint6)uVar10 >> 0x10),CONCAT11(cVar17,bVar13));
+  out(uVar11,bVar13);
+  bVar19 = (byte)((ushort)extraout_CX >> 8);
+  bVar20 = CARRY1(bVar15,bVar19) ||
+           CARRY1(bVar15 + bVar19,CARRY1(bVar14,bVar15) || CARRY1(bVar16,bVar9));
+  out(uVar11,bVar13);
+  bVar21 = CARRY1(*pbVar12,bVar13) || CARRY1(*pbVar12 + bVar13,bVar20);
+  *pbVar12 = *pbVar12 + bVar13 + bVar20;
+  out(uVar11,uVar18);
+  ppTVar22 = &this->klass + (int)&stack0xfffffffc * 2;
+  bVar13 = *(byte *)ppTVar22;
+  bVar14 = (byte)((uint)(unaff_EBX + 4) >> 8);
+  bVar16 = *(byte *)ppTVar22 + bVar14;
+  *(byte *)ppTVar22 = bVar16 + bVar21;
+  *(char *)(unaff_EBX + 5) =
+       *(char *)(unaff_EBX + 5) + cVar17 + (CARRY1(bVar13,bVar14) || CARRY1(bVar16,bVar21));
+  out(uVar11,uVar18);
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 

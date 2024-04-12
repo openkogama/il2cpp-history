@@ -1207,22 +1207,23 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_HandleDeserializedWorldData
     }
     break;
   case KogamaDataType__Enum_WorldObjects:
-    unaff_EDI = (this->fields)._.worldObjectClientManager;
-    if ((unaff_EDI != (MVWorldObjectClientManagerNetwork *)0x0) &&
+    this_00 = (this->fields)._.worldObjectClientManager;
+    if ((this_00 != (MVWorldObjectClientManagerNetwork *)0x0) &&
        (pMVar1 = (this->fields)._.worldInventory, pMVar1 != (MVWorldInventory *)0x0)) {
       unaff_ESI = KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
-                            (data,(unaff_EDI->fields)._.worldObjects,
+                            (data,(this_00->fields)._.worldObjects,
                              (pMVar1->fields).runtimePrototypes,(MethodInfo *)0x0);
       if (unaff_ESI == (MVWorldObjectClient *)0x0) {
 code_?:
         MVWorldObjectClientManagerNetwork::MVWorldObjectClientManagerNetwork_AddToWorldObjects
-                  (unaff_EDI,unaff_ESI,(MethodInfo *)0x0);
+                  (this_00,unaff_ESI,(MethodInfo *)0x0);
         return;
       }
       pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if (pMVar2 != (MVNetworkGame *)0x0) {
         pOVar3 = (Object *)(unaff_ESI->fields)._.id;
         pTVar4 = (pMVar2->fields).transformNetworkManager;
+        unaff_EBX = 0;
         if (pTVar4 != (TransformNetworkManager *)0x0) {
           if (cRam_? == '\0') {
             func_?();
@@ -1251,20 +1252,14 @@ code_?:
   default:
     return;
   }
-  bVar5 = 0;
-  lVar6 = func_?();
-  bVar7 = (byte)(lVar6 % (longlong)*(int *)((int)&unaff_EDI[1].monitor + 2));
-  bVar8 = bRam_? + bVar7;
-  bVar9 = CARRY1(bRam_?,bVar7) || CARRY1(bVar8,bVar5);
-  bRam_? = bVar8 + bVar5;
-  piVar10 = &(unaff_ESI->fields)._.itemId;
-  iVar11 = *piVar10;
-  bVar8 = (char)*piVar10 - 0x33;
-  *(byte *)piVar10 = bVar8 + bVar9;
-  piVar10 = &(unaff_ESI->fields)._.itemId;
-  *(char *)piVar10 = (char)*piVar10 + -0x34 + (0x32 < (byte)iVar11 || CARRY1(bVar8,bVar9));
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  cVar5 = '\0';
+  iVar6 = func_?();
+  LOCK();
+  *(int *)(iVar6 + -0x7f5aefaa) = iVar6;
+  UNLOCK();
+  *(char *)(unaff_EBX + -0x7f) = *(char *)(unaff_EBX + -0x7f) + extraout_CL + cVar5;
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)(unaff_ESI);
   return;
 }
 

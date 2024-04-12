@@ -42,30 +42,17 @@ Assembly-CSharp.dll::FaceCursor::FaceCursor_SetUVs
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
-  bVar1 = mirror;
   switch(edge) {
   case Edge__Enum_None:
     if (this_00 ==
         (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
         )0x0) {
 code_?:
-      uVar2 = func_?();
-      iVar3 = (int)((ulonglong)uVar2 >> 0x20);
-      pbVar4 = (byte *)(iVar3 + 0x45);
-      bVar5 = (byte)((ulonglong)uVar2 >> 8);
-      bVar6 = (byte)uVar2;
-      pcVar7 = (char *)(iVar3 + 0x4d104562);
-      *pcVar7 = *pcVar7 + (char)((ulonglong)uVar2 >> 0x20) + CARRY1(bVar5,*pbVar4);
-      sVar8 = (bVar6 & 3) - (_mirror & 3);
-      _mirror = _mirror + (ushort)(0 < sVar8) * sVar8;
-      sVar8 = (bVar6 & 3) - (_mirror & 3);
-      _mirror = _mirror + (ushort)(0 < sVar8) * sVar8;
-      (&mirror)[CONCAT22((short)((ulonglong)uVar2 >> 0x10),CONCAT11(bVar5 + *pbVar4,bVar6)) * 2] =
-           (&mirror)[CONCAT22((short)((ulonglong)uVar2 >> 0x10),CONCAT11(bVar5 + *pbVar4,bVar6)) *
-                     2] & 0xcc;
-      pcVar9 = (code *)swi(3);
-      pVVar10 = (Vector2__Array *)(*pcVar9)();
-      return pVVar10;
+      func_?();
+      *(char *)(extraout_EDX + 0x46) = *(char *)(extraout_EDX + 0x46) << (extraout_CL & 0x1f);
+      pcVar1 = (code *)swi(3);
+      pVVar2 = (Vector2__Array *)(*pcVar1)();
+      return pVVar2;
     }
     func_?(this_00,0,0,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
@@ -76,7 +63,7 @@ code_?:
     func_?(this_00,0x3f800000,0x3f800000,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
-    fStack_11 = 0.0;
+    fStack_3 = 0.0;
     break;
   case Edge__Enum_Front:
     if (this_00 ==
@@ -85,13 +72,13 @@ code_?:
     func_?(this_00,(float)mirror,0,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
-    func_?(this_00,(float)(bVar1 ^ 1),0,
+    func_?(this_00,(float)(mirror ^ 1),0,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
-    func_?(this_00,(float)(bVar1 ^ 1),0x3f800000,
+    func_?(this_00,(float)(mirror ^ 1),0x3f800000,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
-    func_?(this_00,(float)bVar1,0x3f800000,
+    func_?(this_00,(float)mirror,0x3f800000,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
     goto code_?;
@@ -102,13 +89,13 @@ code_?:
     func_?(this_00,(float)(mirror ^ 1),0x3f800000,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
-    func_?(this_00,(float)bVar1,0x3f800000,
+    func_?(this_00,(float)mirror,0x3f800000,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
-    func_?(this_00,(float)bVar1,0,
+    func_?(this_00,(float)mirror,0,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
-    bVar1 = bVar1 ^ 1;
+    mirror = mirror ^ 1;
     goto code_?;
   case Edge__Enum_Left:
     if (this_00 ==
@@ -117,15 +104,15 @@ code_?:
     func_?(this_00,(float)(mirror ^ 1),0,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
-    func_?(this_00,(float)(bVar1 ^ 1),0x3f800000,
+    func_?(this_00,(float)(mirror ^ 1),0x3f800000,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
-    func_?(this_00,(float)bVar1,0x3f800000,
+    func_?(this_00,(float)mirror,0x3f800000,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
 code_?:
-    uStack_12 = 0;
-    fStack_11 = (float)bVar1;
+    uStack_4 = 0;
+    fStack_3 = (float)mirror;
     goto code_?;
   case Edge__Enum_Right:
     if (this_00 ==
@@ -134,13 +121,13 @@ code_?:
     func_?(this_00,(float)mirror,0x3f800000,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
-    func_?(this_00,(float)bVar1,0,
+    func_?(this_00,(float)mirror,0,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
-    func_?(this_00,(float)(bVar1 ^ 1),0,
+    func_?(this_00,(float)(mirror ^ 1),0,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
-    fStack_11 = (float)(bVar1 ^ 1);
+    fStack_3 = (float)(mirror ^ 1);
     break;
   default:
     if (this_00 ==
@@ -148,19 +135,19 @@ code_?:
         )0x0) goto code_?;
     goto code_?;
   }
-  uStack_12 = 0x3f800000;
+  uStack_4 = 0x3f800000;
 code_?:
-  func_?(this_00,fStack_11,uStack_12,
+  func_?(this_00,fStack_3,uStack_4,
                   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                  );
 code_?:
-  pMVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+  pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
            MultiColumnCollectionHeader+ViewState+ColumnState]::
            List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
                      (this_00,
                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__ToArray__
                      );
-  return (Vector2__Array *)pMVar13;
+  return (Vector2__Array *)pMVar5;
 }
 
 
@@ -173,7 +160,7 @@ void Assembly-CSharp.dll::FaceCursor::FaceCursor_UpdateCursor
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0xc728);
+    func_?(51000);
     func_?(&
                     UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::MeshRenderer>__
                    );

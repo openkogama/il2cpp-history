@@ -7,7 +7,7 @@ void Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_ExecuteRuntim
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Func<unsigned_char,_MV::WorldObject::PhysicalProperties>);
-    func_?(0x3784);
+    func_?(0x3794);
     cRam_? = '\x01';
   }
   if (explosion != (ExplosionEvent *)0x0) {
@@ -132,7 +132,7 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_HandleEvent_1
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Func<unsigned_char,_MV::WorldObject::PhysicalProperties>);
-    func_?(0x3784);
+    func_?(0x3794);
     cRam_? = '\x01';
   }
   if (explosion != (ExplosionEvent *)0x0) {
@@ -280,7 +280,7 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_SendRemoveOne
 {
   VVar1 = voxelHit;
   if (cRam_? == '\0') {
-    func_?(0x5144);
+    func_?(0x5154);
     func_?(&TypeInfo__System__Func<unsigned_char,_MV::WorldObject::PhysicalProperties>);
     func_?(&TypeInfo__MVCubeModelBase);
     func_?(&MethodInfo__MVMaterialRepository__GetMaterialPhysicalProperties_unsigned_char_)
@@ -363,7 +363,7 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_SendRemoveOne
           }
         }
         if ((this_02->_0).implementedInterfaces == (Il2CppClass **)0x8) {
-          in_stack_9 = 0x3c5e;
+          in_stack_9 = 0x3cde;
           in_stack_10 = 0x1056;
           worldPos_00.y = (float)in_stack_6;
           worldPos_00.x = (float)&stack0xffffffe8;
@@ -380,7 +380,7 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_SendRemoveOne
             func_?(&
                             TypeInfo__RuntimeEventManager_AccumulatedCubeDamages__AccumulatedCubeDamage
                            );
-            func_?(0x399c);
+            func_?(0x39ac);
             func_?(&
                             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__ContainsKey_MV__WorldObject__IntVector_
                            );

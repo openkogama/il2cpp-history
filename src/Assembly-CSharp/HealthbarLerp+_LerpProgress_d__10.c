@@ -84,15 +84,17 @@ code_?:
   }
 code_?:
   bVar8 = 0;
-  uVar9 = func_?();
-  *(undefined2 *)(unaff_EBX + -0x6c73efbe) = in_SS;
-  bVar10 = (byte)((uint)((int)((ulonglong)uVar9 >> 0x20) + 1) >> 8);
-  *(char *)uVar9 =
-       *(char *)uVar9 + (char)((uint)unaff_EBX >> 8) +
-       (CARRY1(bVar10,bVar10) || CARRY1(bVar10 * '\x02',bVar8));
-  pcVar11 = (code *)swi(3);
-  bVar12 = (*pcVar11)();
-  return bVar12;
+  iVar9 = func_?();
+  bVar10 = *(byte *)&pHVar1->klass;
+  bVar11 = (byte)((uint)unaff_EBX >> 8);
+  bVar12 = *(char *)&pHVar1->klass + bVar11;
+  *(byte *)&pHVar1->klass = bVar12 + bVar8;
+  *(char *)(iVar9 + -0x6b) =
+       *(char *)(iVar9 + -0x6b) + extraout_DL + '\x02' +
+       (CARRY1(bVar10,bVar11) || CARRY1(bVar12,bVar8));
+  pcVar13 = (code *)swi(3);
+  bVar14 = (*pcVar13)();
+  return bVar14;
 }
 
 

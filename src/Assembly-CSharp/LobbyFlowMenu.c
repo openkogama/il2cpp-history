@@ -476,12 +476,13 @@ void Assembly-CSharp.dll::LobbyFlowMenu::LobbyFlowMenu_GoToMenu
       }
     }
   }
-  func_?();
+  iVar5 = func_?();
   *(int *)(extraout_ECX + 0x10) = extraout_ECX;
-  *(char *)&value[0x9c20931].klass = *(char *)&value[0x9c20931].klass + (char)(extraout_ECX + -1);
-  *(int *)(extraout_ECX + 0xf) = extraout_ECX + -1;
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  *(byte *)(iVar5 + -0x7711efb7) = *(byte *)(iVar5 + -0x7711efb7) | (byte)extraout_ECX;
+  pcVar6 = (char *)((int)&value[0xdc20931].monitor + 1);
+  *pcVar6 = *pcVar6 + (char)((uint)(extraout_ECX + -1) >> 8);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

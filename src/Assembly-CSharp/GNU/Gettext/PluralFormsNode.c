@@ -20,23 +20,25 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsNode::PluralFormsNode_Eval
       pPVar5 = (this->fields).nodes;
       iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
       if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+        bVar6 = 0;
         if (pPVar5->max_length == 0) goto code_?;
         iVar3 = iVar1;
         if (pPVar5->vector[0] != (PluralFormsNode *)0x0) {
           iVar1 = CONCAT44(in_stack_4,(undefined4)n);
-          iVar6 = PluralFormsNode_Evaluate(pPVar5->vector[0],n & 0xffffffff,unaff_EDI);
+          iVar7 = PluralFormsNode_Evaluate(pPVar5->vector[0],n & 0xffffffff,unaff_EDI);
           pPVar5 = (this->fields).nodes;
           iVar3 = CONCAT44(in_stack_4,(undefined4)n);
           if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+            bVar6 = pPVar5->max_length == 0;
             if (pPVar5->max_length < 2) goto code_?;
             iVar3 = iVar1;
             if (pPVar5->vector[1] != (PluralFormsNode *)0x0) {
-              uVar7 = n & 0xffffffff;
-              iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[1],uVar7,unaff_EBP);
-              if ((int)iVar6 != (int)iVar3) {
+              uVar8 = n & 0xffffffff;
+              iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[1],uVar8,unaff_EBP);
+              if ((int)iVar7 != (int)iVar3) {
                 return 0;
               }
-              if ((int)(uVar7 >> 0x20) != (int)((ulonglong)iVar3 >> 0x20)) {
+              if ((int)(uVar8 >> 0x20) != (int)((ulonglong)iVar3 >> 0x20)) {
                 return 0;
               }
               return 1;
@@ -49,26 +51,28 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsNode::PluralFormsNode_Eval
       pPVar5 = (this->fields).nodes;
       iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
       if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+        bVar6 = 0;
         if (pPVar5->max_length == 0) goto code_?;
         iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
         if (pPVar5->vector[0] != (PluralFormsNode *)0x0) {
           iVar1 = CONCAT44(in_stack_4,(undefined4)n);
           iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[0],n & 0xffffffff,unaff_EDI);
           pPVar5 = (this->fields).nodes;
-          iVar8 = (int)((ulonglong)iVar3 >> 0x20);
+          iVar9 = (int)((ulonglong)iVar3 >> 0x20);
           iVar3 = CONCAT44(in_stack_4,(undefined4)n);
           if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+            bVar6 = pPVar5->max_length == 0;
             if (pPVar5->max_length < 2) goto code_?;
             iVar3 = iVar1;
             if (pPVar5->vector[1] != (PluralFormsNode *)0x0) {
-              uVar7 = n & 0xffffffff;
-              iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[1],uVar7,unaff_EBP);
-              iVar9 = (int)((ulonglong)iVar3 >> 0x20);
-              if (iVar8 < iVar9) {
+              uVar8 = n & 0xffffffff;
+              iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[1],uVar8,unaff_EBP);
+              iVar10 = (int)((ulonglong)iVar3 >> 0x20);
+              if (iVar9 < iVar10) {
                 return 0;
               }
-              if (iVar8 <= iVar9) {
-                if ((uint)(uVar7 >> 0x20) <= (uint)iVar3) {
+              if (iVar9 <= iVar10) {
+                if ((uint)(uVar8 >> 0x20) <= (uint)iVar3) {
                   return 0;
                 }
                 return 1;
@@ -83,26 +87,28 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsNode::PluralFormsNode_Eval
       pPVar5 = (this->fields).nodes;
       iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
       if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+        bVar6 = 0;
         if (pPVar5->max_length == 0) goto code_?;
         iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
         if (pPVar5->vector[0] != (PluralFormsNode *)0x0) {
           iVar1 = CONCAT44(in_stack_4,(undefined4)n);
           iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[0],n & 0xffffffff,unaff_EDI);
           pPVar5 = (this->fields).nodes;
-          iVar8 = (int)((ulonglong)iVar3 >> 0x20);
+          iVar9 = (int)((ulonglong)iVar3 >> 0x20);
           iVar3 = CONCAT44(in_stack_4,(undefined4)n);
           if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+            bVar6 = pPVar5->max_length == 0;
             if (pPVar5->max_length < 2) goto code_?;
             iVar3 = iVar1;
             if (pPVar5->vector[1] != (PluralFormsNode *)0x0) {
-              uVar7 = n & 0xffffffff;
-              iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[1],uVar7,unaff_EBP);
-              iVar9 = (int)((ulonglong)iVar3 >> 0x20);
-              if (iVar8 < iVar9) {
+              uVar8 = n & 0xffffffff;
+              iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[1],uVar8,unaff_EBP);
+              iVar10 = (int)((ulonglong)iVar3 >> 0x20);
+              if (iVar9 < iVar10) {
                 return 0;
               }
-              if (iVar8 <= iVar9) {
-                if ((uint)(uVar7 >> 0x20) < (uint)iVar3) {
+              if (iVar9 <= iVar10) {
+                if ((uint)(uVar8 >> 0x20) < (uint)iVar3) {
                   return 0;
                 }
                 return 1;
@@ -117,26 +123,28 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsNode::PluralFormsNode_Eval
       pPVar5 = (this->fields).nodes;
       iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
       if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+        bVar6 = 0;
         if (pPVar5->max_length == 0) goto code_?;
         iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
         if (pPVar5->vector[0] != (PluralFormsNode *)0x0) {
           iVar1 = CONCAT44(in_stack_4,(undefined4)n);
           iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[0],n & 0xffffffff,unaff_EDI);
           pPVar5 = (this->fields).nodes;
-          iVar8 = (int)((ulonglong)iVar3 >> 0x20);
+          iVar9 = (int)((ulonglong)iVar3 >> 0x20);
           iVar3 = CONCAT44(in_stack_4,(undefined4)n);
           if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+            bVar6 = pPVar5->max_length == 0;
             if (pPVar5->max_length < 2) goto code_?;
             iVar3 = iVar1;
             if (pPVar5->vector[1] != (PluralFormsNode *)0x0) {
-              uVar7 = n & 0xffffffff;
-              iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[1],uVar7,unaff_EBP);
-              iVar9 = (int)((ulonglong)iVar3 >> 0x20);
-              if (iVar9 < iVar8) {
+              uVar8 = n & 0xffffffff;
+              iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[1],uVar8,unaff_EBP);
+              iVar10 = (int)((ulonglong)iVar3 >> 0x20);
+              if (iVar10 < iVar9) {
                 return 0;
               }
-              if (iVar9 <= iVar8) {
-                if ((uint)iVar3 <= (uint)(uVar7 >> 0x20)) {
+              if (iVar10 <= iVar9) {
+                if ((uint)iVar3 <= (uint)(uVar8 >> 0x20)) {
                   return 0;
                 }
                 return 1;
@@ -151,26 +159,28 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsNode::PluralFormsNode_Eval
       pPVar5 = (this->fields).nodes;
       iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
       if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+        bVar6 = 0;
         if (pPVar5->max_length == 0) goto code_?;
         iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
         if (pPVar5->vector[0] != (PluralFormsNode *)0x0) {
           iVar1 = CONCAT44(in_stack_4,(undefined4)n);
           iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[0],n & 0xffffffff,unaff_EDI);
           pPVar5 = (this->fields).nodes;
-          iVar8 = (int)((ulonglong)iVar3 >> 0x20);
+          iVar9 = (int)((ulonglong)iVar3 >> 0x20);
           iVar3 = CONCAT44(in_stack_4,(undefined4)n);
           if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+            bVar6 = pPVar5->max_length == 0;
             if (pPVar5->max_length < 2) goto code_?;
             iVar3 = iVar1;
             if (pPVar5->vector[1] != (PluralFormsNode *)0x0) {
-              uVar7 = n & 0xffffffff;
-              iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[1],uVar7,unaff_EBP);
-              iVar9 = (int)((ulonglong)iVar3 >> 0x20);
-              if (iVar9 < iVar8) {
+              uVar8 = n & 0xffffffff;
+              iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[1],uVar8,unaff_EBP);
+              iVar10 = (int)((ulonglong)iVar3 >> 0x20);
+              if (iVar10 < iVar9) {
                 return 0;
               }
-              if (iVar9 <= iVar8) {
-                if ((uint)iVar3 < (uint)(uVar7 >> 0x20)) {
+              if (iVar10 <= iVar9) {
+                if ((uint)iVar3 < (uint)(uVar8 >> 0x20)) {
                   return 0;
                 }
                 return 1;
@@ -185,6 +195,7 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsNode::PluralFormsNode_Eval
       pPVar5 = (this->fields).nodes;
       iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
       if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+        bVar6 = pPVar5->max_length == 0;
         if (pPVar5->max_length < 2) goto code_?;
         iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
         if (pPVar5->vector[1] != (PluralFormsNode *)0x0) {
@@ -196,6 +207,7 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsNode::PluralFormsNode_Eval
           pPVar5 = (this->fields).nodes;
           iVar3 = CONCAT44(in_stack_4,(undefined4)n);
           if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+            bVar6 = 0;
             if (pPVar5->max_length == 0) goto code_?;
             iVar3 = iVar1;
             if (pPVar5->vector[0] != (PluralFormsNode *)0x0) {
@@ -211,21 +223,23 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsNode::PluralFormsNode_Eval
       pPVar5 = (this->fields).nodes;
       iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
       if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+        bVar6 = 0;
         if (pPVar5->max_length == 0) goto code_?;
         iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
         if (pPVar5->vector[0] != (PluralFormsNode *)0x0) {
           iVar1 = CONCAT44(in_stack_4,(undefined4)n);
-          iVar6 = PluralFormsNode_Evaluate(pPVar5->vector[0],n & 0xffffffff,unaff_EDI);
+          iVar7 = PluralFormsNode_Evaluate(pPVar5->vector[0],n & 0xffffffff,unaff_EDI);
           pPVar5 = (this->fields).nodes;
           iVar3 = CONCAT44(in_stack_4,(undefined4)n);
           if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+            bVar6 = pPVar5->max_length == 0;
             if (pPVar5->max_length < 2) goto code_?;
             iVar3 = iVar1;
             if (pPVar5->vector[1] != (PluralFormsNode *)0x0) {
-              uVar7 = n & 0xffffffff;
-              iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[1],uVar7,unaff_EBP);
-              if (((int)iVar6 == (int)iVar3) &&
-                 ((int)(uVar7 >> 0x20) == (int)((ulonglong)iVar3 >> 0x20))) {
+              uVar8 = n & 0xffffffff;
+              iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[1],uVar8,unaff_EBP);
+              if (((int)iVar7 == (int)iVar3) &&
+                 ((int)(uVar8 >> 0x20) == (int)((ulonglong)iVar3 >> 0x20))) {
                 return 0;
               }
               return 1;
@@ -238,20 +252,22 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsNode::PluralFormsNode_Eval
       pPVar5 = (this->fields).nodes;
       iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
       if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+        bVar6 = 0;
         if (pPVar5->max_length == 0) goto code_?;
         iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
         if (pPVar5->vector[0] != (PluralFormsNode *)0x0) {
-          iVar6 = PluralFormsNode_Evaluate(pPVar5->vector[0],n & 0xffffffff,unaff_EDI);
-          iVar8 = (int)iVar6;
+          iVar7 = PluralFormsNode_Evaluate(pPVar5->vector[0],n & 0xffffffff,unaff_EDI);
+          iVar9 = (int)iVar7;
           pPVar5 = (this->fields).nodes;
-          iVar1 = CONCAT44((undefined4)n,iVar8);
-          iVar3 = CONCAT44((undefined4)n,iVar8);
+          iVar1 = CONCAT44((undefined4)n,iVar9);
+          iVar3 = CONCAT44((undefined4)n,iVar9);
           if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+            bVar6 = pPVar5->max_length == 0;
             if (pPVar5->max_length < 2) goto code_?;
             iVar3 = iVar1;
             if (pPVar5->vector[1] != (PluralFormsNode *)0x0) {
               iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[1],n & 0xffffffff,unaff_EBP);
-              if (iVar8 == 0 && (int)((ulonglong)iVar6 >> 0x20) == 0) {
+              if (iVar9 == 0 && (int)((ulonglong)iVar7 >> 0x20) == 0) {
                 return 0;
               }
               if (iVar3 == 0) {
@@ -267,20 +283,22 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsNode::PluralFormsNode_Eval
       pPVar5 = (this->fields).nodes;
       iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
       if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+        bVar6 = 0;
         if (pPVar5->max_length == 0) goto code_?;
         iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
         if (pPVar5->vector[0] != (PluralFormsNode *)0x0) {
-          iVar6 = PluralFormsNode_Evaluate(pPVar5->vector[0],n & 0xffffffff,unaff_EDI);
-          iVar8 = (int)iVar6;
+          iVar7 = PluralFormsNode_Evaluate(pPVar5->vector[0],n & 0xffffffff,unaff_EDI);
+          iVar9 = (int)iVar7;
           pPVar5 = (this->fields).nodes;
-          iVar1 = CONCAT44((undefined4)n,iVar8);
-          iVar3 = CONCAT44((undefined4)n,iVar8);
+          iVar1 = CONCAT44((undefined4)n,iVar9);
+          iVar3 = CONCAT44((undefined4)n,iVar9);
           if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+            bVar6 = pPVar5->max_length == 0;
             if (pPVar5->max_length < 2) goto code_?;
             iVar3 = iVar1;
             if (pPVar5->vector[1] != (PluralFormsNode *)0x0) {
               iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[1],n & 0xffffffff,unaff_EBP);
-              if (iVar8 != 0 || (int)((ulonglong)iVar6 >> 0x20) != 0) {
+              if (iVar9 != 0 || (int)((ulonglong)iVar7 >> 0x20) != 0) {
                 return 1;
               }
               if (iVar3 == 0) {
@@ -296,6 +314,7 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsNode::PluralFormsNode_Eval
       pPVar5 = (this->fields).nodes;
       iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
       if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+        bVar6 = 0;
         if (pPVar5->max_length == 0) goto code_?;
         iVar3 = CONCAT44(unaff_EDI,unaff_ESI);
         if (pPVar5->vector[0] != (PluralFormsNode *)0x0) {
@@ -304,19 +323,21 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsNode::PluralFormsNode_Eval
           pPVar5 = (this->fields).nodes;
           iVar3 = CONCAT44(in_stack_4,(undefined4)n);
           if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+            bVar6 = pPVar5->max_length == 0;
             if (pPVar5->max_length < 2) goto code_?;
             iVar3 = iVar1;
             if (pPVar5->vector[1] != (PluralFormsNode *)0x0) {
-              uVar7 = n & 0xffffffff;
-              iVar1 = PluralFormsNode_Evaluate(pPVar5->vector[1],uVar7,unaff_EBP);
-              iVar8 = (int)(uVar7 >> 0x20);
+              uVar8 = n & 0xffffffff;
+              iVar1 = PluralFormsNode_Evaluate(pPVar5->vector[1],uVar8,unaff_EBP);
+              iVar9 = (int)(uVar8 >> 0x20);
               pPVar5 = (this->fields).nodes;
               iVar3 = iVar1;
               if (pPVar5 != (PluralFormsNode__Array *)0x0) {
+                bVar6 = pPVar5->max_length < 2;
                 if (pPVar5->max_length < 3) goto code_?;
                 if (pPVar5->vector[2] != (PluralFormsNode *)0x0) {
                   iVar3 = PluralFormsNode_Evaluate(pPVar5->vector[2],0,n._4_4_);
-                  if (iVar8 == 0) {
+                  if (iVar9 == 0) {
                     return iVar3;
                   }
                   return iVar1;
@@ -328,83 +349,81 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsNode::PluralFormsNode_Eval
       }
     }
   }
+  bVar6 = 0;
   func_?();
   iVar1 = iVar3;
 code_?:
-  iVar8 = (int)iVar1;
-  uVar7 = func_?();
-  uVar10 = (uint)uVar7;
-  pbVar11 = (byte *)(iVar8 + 0x10);
-  bVar12 = (byte)extraout_CX;
-  *pbVar11 = *pbVar11 >> (bVar12 & 7) | *pbVar11 << 8 - (bVar12 & 7);
-  uVar13 = *(uint *)((ulonglong)iVar1 >> 0x20);
-  pbVar11 = (byte *)(iVar8 + 0x10);
-  *pbVar11 = *pbVar11 >> (bVar12 & 7) | *pbVar11 << 8 - (bVar12 & 7);
-  bVar14 = (extraout_CX & 0x1f) == 0;
-  cVar15 = (char)(uVar7 >> 0x20);
-  bVar16 = cVar15 << 5 |
-           (byte)(CONCAT11(bVar14 * (uVar10 < uVar13) | !bVar14 * ((char)*pbVar11 < '\0'),cVar15) >> 4
-                 );
-  uVar17 = (undefined3)(uVar7 >> 0x28);
-  bVar14 = (uVar7 & 0x800000000) != 0;
-  pbVar11 = (byte *)(uVar10 - 0x26);
-  bVar18 = (byte)(uVar10 + 2);
-  bVar19 = CARRY1(*pbVar11,bVar18) || CARRY1(*pbVar11 + bVar18,bVar14);
-  *pbVar11 = *pbVar11 + bVar18 + bVar14;
-  pbVar11 = (byte *)(CONCAT31(uVar17,bVar16) + -0x2d);
-  bVar20 = CARRY1(*pbVar11,bVar12) || CARRY1(*pbVar11 + bVar12,bVar19);
-  *pbVar11 = *pbVar11 + bVar12 + bVar19;
-  bVar21 = (byte)this;
-  bVar22 = bVar16 + bVar21 + bVar20;
-  puVar23 = (uint *)(iVar8 + 0xe);
-  *puVar23 = *puVar23 >> (bVar12 & 0x1f) | *puVar23 << 0x20 - (bVar12 & 0x1f);
-  bVar14 = (extraout_CX & 0x1f) == 0;
-  bVar24 = bVar14 * (CARRY1(bVar16,bVar21) || CARRY1(bVar16 + bVar21,bVar20)) |
-           !bVar14 * ((int)*puVar23 < 0);
-  bVar25 = (byte)((uint)this >> 8);
-  bVar16 = bVar22 + bVar25;
-  bVar14 = CARRY1(bVar22,bVar25) || CARRY1(bVar16,bVar24);
-  iVar8 = CONCAT31(uVar17,bVar16 + bVar24);
-  pbVar11 = (byte *)(iVar8 + 0x12104ed5);
-  bVar19 = CARRY1(*pbVar11,bVar12) || CARRY1(*pbVar11 + bVar12,bVar14);
-  *pbVar11 = *pbVar11 + bVar12 + bVar14;
-  pbVar11 = (byte *)(CONCAT31(CONCAT21((short)(uVar10 + 2 >> 0x10),bVar18 / 0x4e),-bVar19) + 0x21104ed6
-                   );
-  bVar16 = *pbVar11;
-  bVar18 = *pbVar11;
-  *pbVar11 = bVar18 + bVar21 + bVar19;
-  pcVar26 = (char *)(iVar8 + 0x55104ed7);
-  *pcVar26 = *pcVar26 + (char)(extraout_CX >> 8) +
-            (CARRY1(bVar16,bVar21) || CARRY1(bVar18 + bVar21,bVar19));
-  if (in_stack_27 != (PluralFormsNode_IterateNodesDelegate *)0x0) {
-    (*(in_stack_27->fields)._._.invoke_impl)((in_stack_27->fields)._._.method_code);
-    uVar13 = 0;
-    if (in_stack_28 != 0) {
-      iVar8 = 0x10;
-      while (iVar9 = *(int *)(in_stack_28 + 0xc), iVar9 != 0) {
-        if (*(int *)(iVar9 + 0xc) <= (int)uVar13) {
-          if (in_stack_29 != (PluralFormsNode_IterateNodesDelegate *)0x0) {
-            iVar3 = (*(in_stack_29->fields)._._.invoke_impl)();
+  iVar9 = (int)iVar1;
+  uVar11 = func_?();
+  bVar12 = (char)(uVar11 + 0xd0efb12d) - bVar6;
+  puVar13 = (uint *)(iVar9 + 0x10);
+  bVar14 = (byte)extraout_ECX;
+  *puVar13 = *puVar13 >> (bVar14 & 0x1f) | *puVar13 << 0x20 - (bVar14 & 0x1f);
+  bVar15 = (extraout_ECX & 0x1f) == 0;
+  bVar16 = (byte)(CONCAT11(bVar15 * (uVar11 < 0x2f104ed3 || uVar11 + 0xd0efb12d < (uint)bVar6) |
+                          !bVar15 * ((int)*puVar13 < 0),bVar12) >> 5) | bVar12 * '\x10';
+  bVar17 = (bVar12 & 0x10) != 0;
+  bVar18 = bVar16 * '\x02' + bVar17 + 1;
+  puVar13 = (uint *)(iVar9 + 0x10);
+  *puVar13 = *puVar13 >> (bVar14 & 0x1f) | *puVar13 << 0x20 - (bVar14 & 0x1f);
+  bVar15 = (extraout_ECX & 0x1f) == 0;
+  uVar11 = *puVar13;
+  puVar13 = (uint *)(iVar9 + 0x10);
+  *puVar13 = *puVar13 >> (bVar14 & 0x1f) | *puVar13 << 0x20 - (bVar14 & 0x1f);
+  bVar19 = (extraout_ECX & 0x1f) == 0;
+  bVar20 = bVar19 * (CARRY1(extraout_DL,bVar14) || CARRY1(extraout_DL + bVar14,(bVar18 & 0x10) != 0)
+                    ) | !bVar19 * ((int)*puVar13 < 0);
+  bVar6 = (byte)(extraout_ECX >> 8);
+  bVar12 = (byte)((ulonglong)n >> 0x20);
+  bVar21 = bVar12 + bVar6;
+  bVar19 = CARRY1(bVar12,bVar6) || CARRY1(bVar21,bVar20);
+  bVar21 = bVar21 + bVar20;
+  pbVar22 = (byte *)CONCAT31((int3)((ulonglong)n >> 0x28),bVar21);
+  pbVar23 = pbVar22 + -0x2b;
+  bVar12 = (byte)((uint)this >> 8);
+  bVar6 = *pbVar23 + bVar12;
+  bVar24 = CARRY1(*pbVar23,bVar12) || CARRY1(bVar6,bVar19);
+  *pbVar23 = bVar6 + bVar19;
+  bVar19 = CARRY1(*pbVar22,bVar14) || CARRY1(*pbVar22 + bVar14,bVar24);
+  *pbVar22 = *pbVar22 + bVar14 + bVar24;
+  pbVar22 = pbVar22 + 0x18104ed6;
+  bVar6 = *pbVar22;
+  bVar12 = *pbVar22;
+  *pbVar22 = bVar12 + bVar21 + bVar19;
+  *(char *)(extraout_ECX + 0x2a104ed7) =
+       *(char *)(extraout_ECX + 0x2a104ed7) +
+       ((byte)((byte)(CONCAT11(bVar15 * (CARRY1(bVar16,bVar16) || CARRY1(bVar16 * '\x02',bVar17)) |
+                               !bVar15 * ((int)uVar11 < 0),bVar18) >> 5) | bVar18 * '\x10') % 0x4e) /
+       0x4e + (CARRY1(bVar6,bVar21) || CARRY1(bVar12 + bVar21,bVar19));
+  if (in_stack_25 != (PluralFormsNode_IterateNodesDelegate *)0x0) {
+    (*(in_stack_25->fields)._._.invoke_impl)();
+    uVar11 = 0;
+    if (in_stack_26 != 0) {
+      iVar9 = 0x10;
+      while (iVar10 = *(int *)(in_stack_26 + 0xc), iVar10 != 0) {
+        if (*(int *)(iVar10 + 0xc) <= (int)uVar11) {
+          if (in_stack_27 != (PluralFormsNode_IterateNodesDelegate *)0x0) {
+            iVar3 = (*(in_stack_27->fields)._._.invoke_impl)();
             return iVar3;
           }
           break;
         }
-        if (*(uint *)(iVar9 + 0xc) <= uVar13) goto code_?;
-        if (*(int *)(iVar8 + iVar9) != 0) {
+        if (*(uint *)(iVar10 + 0xc) <= uVar11) goto code_?;
+        if (*(int *)(iVar9 + iVar10) != 0) {
           PluralFormsNode_IterateNodes
-                    (*(PluralFormsNode **)(iVar8 + iVar9),in_stack_27,in_stack_29,
+                    (*(PluralFormsNode **)(iVar9 + iVar10),in_stack_25,in_stack_27,
                      (MethodInfo *)0x0);
         }
-        uVar13 = uVar13 + 1;
-        iVar8 = iVar8 + 4;
+        uVar11 = uVar11 + 1;
+        iVar9 = iVar9 + 4;
       }
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar30 = (code *)swi(3);
-  iVar3 = (*pcVar30)();
+  pcVar28 = (code *)swi(3);
+  iVar3 = (*pcVar28)();
   return iVar3;
 }
 

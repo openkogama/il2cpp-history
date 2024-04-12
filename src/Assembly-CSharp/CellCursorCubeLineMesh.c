@@ -300,7 +300,7 @@ void Assembly-CSharp.dll::CellCursorCubeLineMesh::CellCursorCubeLineMesh__ctor
                       func_?();
                     }
                     SharedCubeFunctions::SharedCubeFunctions_AddCubeMeshCubeLines
-                              (mesh,(Vector3__Array *)&UNK_?,3.8718276e-29,(MethodInfo *)0x0)
+                              (mesh,(Vector3__Array *)&UNK_?,3.8718468e-29,(MethodInfo *)0x0)
                     ;
                     return;
                   }

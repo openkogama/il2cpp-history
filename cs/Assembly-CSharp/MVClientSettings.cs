@@ -12,7 +12,6 @@ using MV.Common;
 public static class MVClientSettings
 {
 	// Fields
-	public const bool ForceDisablePlayButtonAds = true;
 	private static ClientSettingFlags flags;
 	private static bool flagsSet;
 	[CompilerGenerated]
