@@ -1,8 +1,8 @@
 
-/* Void <RequestAdWithCallback>b__0(InterstitialAdResult) */
+/* Void <PressPlayWithCallback>b__0(InterstitialAdResult) */
 
 void Assembly-CSharp.dll::LobbyStateButton+<>c__DisplayClass27_0::
-     LobbyStateButton_c_DisplayClass27_0__RequestAdWithCallback_b__0
+     LobbyStateButton_c_DisplayClass27_0__PressPlayWithCallback_b__0
                (LobbyStateButton_c_DisplayClass27_0 *this,InterstitialAdResult__Enum result,
                MethodInfo *method)
 

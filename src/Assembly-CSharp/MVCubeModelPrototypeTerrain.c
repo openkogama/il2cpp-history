@@ -126,7 +126,7 @@ void Assembly-CSharp.dll::MVCubeModelPrototypeTerrain::
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(0x1514);
+    func_?(0x321c);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_MV::WorldObject::CubeBase>__ContainsKey_MV__WorldObject__IntVector_
                    );
@@ -335,10 +335,6 @@ void Assembly-CSharp.dll::MVCubeModelPrototypeTerrain::MVCubeModelPrototypeTerra
     func_?(&TypeInfo__SharedCubeFunctions);
     cRam_? = '\x01';
   }
-  uStack_1._0_1_ = 0;
-  uStack_1._1_3_ = 0;
-  fStack_2 = 0.0;
-  puStack_3 = (undefined *)0x0;
   this_01 = (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_MV::WorldObject::CubeBase>
@@ -366,48 +362,43 @@ void Assembly-CSharp.dll::MVCubeModelPrototypeTerrain::MVCubeModelPrototypeTerra
     if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pNVar4 = SharedCubeFunctions::SharedCubeFunctions_GetAxisAlignedBoundsRecursively
-                       ((Nullable_1_UnityEngine_Bounds_ *)&stack0xffffffc8,transform,
+    pNVar1 = SharedCubeFunctions::SharedCubeFunctions_GetAxisAlignedBoundsRecursively
+                       ((Nullable_1_UnityEngine_Bounds_ *)&stack0xffffffc0,transform,
                         (MethodInfo *)0x0);
-    uStack_1._0_1_ = pNVar4->hasValue;
-    uStack_1._1_3_ = *(undefined3 *)&pNVar4->field_0x1;
-    fStack_2 = (pNVar4->value).m_Center.x;
-    puStack_3 = (undefined *)(pNVar4->value).m_Center.y;
-    if (pNVar4->hasValue == 0) {
-      uVar5 = 0;
-      fStack_6 = 0.0;
-      fStack_7 = 0.0;
-      fStack_8 = 0.0;
-      fStack_9 = 0.0;
+    if (pNVar1->hasValue == 0) {
+      fStack_2 = 0.0;
+      fStack_3 = 0.0;
+      fStack_4 = 0.0;
+      fStack_5 = 0.0;
     }
     else {
-      pBVar10 = mscorlib.dll::System::Nullable`1[UnityEngine::Bounds]::
+      pBVar6 = mscorlib.dll::System::Nullable`1[UnityEngine::Bounds]::
                Nullable_1_UnityEngine_Bounds__get_Value
-                         ((Bounds *)&stack0xffffffcc,(Nullable_1_UnityEngine_Bounds_ *)&uStack_1,
+                         ((Bounds *)&stack0xffffffc0,
+                          (Nullable_1_UnityEngine_Bounds_ *)&stack0xffffffa4,
                           MethodInfo__System__Nullable<UnityEngine::Bounds>__get_Value__);
-      fStack_6 = (pBVar10->m_Center).x;
-      fStack_7 = (pBVar10->m_Center).y;
-      fStack_8 = (pBVar10->m_Center).z;
-      fStack_9 = (pBVar10->m_Extents).x;
-      uVar5._0_4_ = (pBVar10->m_Extents).y;
-      uVar5._4_4_ = (pBVar10->m_Extents).z;
+      fStack_2 = (pBVar6->m_Center).x;
+      fStack_3 = (pBVar6->m_Center).y;
+      fStack_4 = (pBVar6->m_Center).z;
+      fStack_5 = (pBVar6->m_Extents).x;
     }
+    puVar7 = &UNK_?;
     this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (this_02 != (MVWorldObjectClientManager *)0x0) {
-      bounds.m_Center.y = fStack_7;
-      bounds.m_Center.x = fStack_6;
-      bounds.m_Center.z = fStack_8;
-      bounds.m_Extents.x = fStack_9;
-      bounds.m_Extents.y = (float)uVar5;
-      bounds.m_Extents.z = (float)((ulonglong)uVar5 >> 0x20);
+      bounds.m_Center.y = fStack_3;
+      bounds.m_Center.x = fStack_2;
+      bounds.m_Center.z = fStack_4;
+      bounds.m_Extents.x = fStack_5;
+      bounds.m_Extents.y = fStack_5;
+      bounds.m_Extents.z = (float)puVar7;
       MVWorldObjectClientManager::MVWorldObjectClientManager_UpdateWorldBounds
                 (this_02,bounds,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

@@ -96,7 +96,7 @@ Object * Assembly-CSharp.dll::ObscuredTypesConverter::ObscuredTypesConverter_Cre
   }
 code_?:
   iVar16 = func_?(this_00,TypeInfo__System__Int32);
-  message = (Boolean__Array__Class *)TypeInfo__System__Int32;
+  message = (Single__Array__Class *)TypeInfo__System__Int32;
   pIVar17 = (Il2CppArrayType *)this_00;
   if (iVar16 != 0) {
     if (this_00 != (Exception *)0x0) {
@@ -173,12 +173,12 @@ code_?:
     }
   }
   iVar16 = func_?(this_00,TypeInfo__System__Single);
-  message = (Boolean__Array__Class *)TypeInfo__System__Single;
+  message = TypeInfo__System__Single;
   if (iVar16 == 0) {
     if (this_00 == (Exception *)0x0) {
 code_?:
       iVar16 = func_?(this_00,TypeInfo__System__Boolean);
-      message = TypeInfo__System__Boolean;
+      message = (Single__Array__Class *)TypeInfo__System__Boolean;
       if (iVar16 != 0) {
         if (this_00 == (Exception *)0x0) goto code_?;
         pIVar17 = (Il2CppArrayType *)func_?(this_00,TypeInfo__System__Boolean);
@@ -311,7 +311,7 @@ code_?:
       }
 code_?:
       iVar16 = func_?(this_00,TypeInfo__System__Int64);
-      message = (Boolean__Array__Class *)TypeInfo__System__Int64;
+      message = (Single__Array__Class *)TypeInfo__System__Int64;
       if (iVar16 != 0) {
         if (this_00 != (Exception *)0x0) {
           _Stack_1c.dummy = (void *)func_?(this_00,TypeInfo__System__Int64);
@@ -506,7 +506,7 @@ code_?:
     }
     method_00 = (MethodInfo *)0x0;
     pSVar35 = (String *)func_?(&StringLiteral_Trying_to_write___0___of_unsuppo);
-    message = (Boolean__Array__Class *)
+    message = (Single__Array__Class *)
               mscorlib.dll::System::String::String_Format_1
                         (pSVar35,(Object *)this_00,pOVar7,method_00);
     func_?();

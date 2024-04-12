@@ -766,6 +766,8 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateHea
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void UpdateNameTag() */
 
 void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNameTag
@@ -781,10 +783,11 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
       return;
     }
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    unaff_ESI = this;
     if ((((pMVar1 != (MVNetworkGame *)0x0) &&
          (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) &&
         (pMVar4 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                            (pMVar2,(this->fields)._.ownerActorNr,(MethodInfo *)0x0),
+                             (pMVar2,(this->fields)._.ownerActorNr,(MethodInfo *)0x0),
         pMVar4 != (MVPlayer *)0x0)) &&
        ((pUVar5 = (pMVar4->fields)._UserProfileData_k__BackingField,
         pUVar5 != (UserProfileData *)0x0 &&
@@ -832,10 +835,24 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
       }
     }
   }
-  uVar12 = func_?();
-  *extraout_ECX = *extraout_ECX + (char)(uVar12 + 0xd20deef0 >> 8) + (uVar12 < 0x2df21110);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  bVar12 = false;
+  bVar13 = 0;
+  uVar14 = func_?();
+  bVar15 = (byte)uVar14;
+  bVar16 = bVar13;
+  if (!bVar12) {
+    pbVar17 = (byte *)(extraout_ECX + -0x6eefd1ff);
+    bVar16 = CARRY1(*pbVar17,bVar15) || CARRY1(*pbVar17 + bVar15,bVar13);
+    *pbVar17 = *pbVar17 + bVar15 + bVar13;
+  }
+  *(char *)(extraout_ECX + -0x6eefd1ff) = *(char *)(extraout_ECX + -0x6eefd1ff) + bVar15 + bVar16;
+  pAVar18 = unaff_ESI->klass;
+  unaff_ESI->klass = (AvatarUIHandlerRemote__Class *)(&stack0xfffffffc + (int)unaff_ESI->klass);
+  *(char *)(extraout_ECX + -0x33efd1ff) =
+       *(char *)(extraout_ECX + -0x33efd1ff) + (char)((ushort)uVar14 >> 8) +
+       CARRY4((uint)pAVar18,(uint)&stack0xfffffffc);
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

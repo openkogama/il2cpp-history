@@ -336,9 +336,9 @@ void Assembly-CSharp.dll::HackingToolDetector::HackingToolDetector_TemporaryRepo
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__HackingToolDetector);
-    func_?(&TypeInfo__HackingToolDetector__ReportCategory);
+    func_?();
+    func_?();
+    func_?();
     func_?(&TypeInfo__StatHatWrapper);
     func_?(&TypeInfo__System__String);
     func_?(&StringLiteral_Application_quit_);
@@ -432,7 +432,7 @@ code_?:
                         (pBVar5,index,(MethodInfo *)0x0);
       if (bVar6 == 0) {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Debug);
+          func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                   ((Object *)pSVar1,(MethodInfo *)0x0);
@@ -469,7 +469,25 @@ code_?:
     }
   }
 code_?:
-  func_?();
+  uVar9 = func_?();
+  puVar10 = (uint *)((ulonglong)uVar9 >> 0x20);
+  *puVar10 = *puVar10 - (int)&stack0xffffffe4;
+  puVar11 = (undefined1 *)*puVar10;
+  *puVar10 = *puVar10 - (int)&stack0xffffffe4;
+  bVar12 = (byte)((ulonglong)uVar9 >> 0x20);
+  *(char *)((int)puVar10 + (int)&stack0xfffffffc) =
+       *(char *)((int)puVar10 + (int)&stack0xfffffffc) + bVar12 + (puVar11 < &stack0xffffffe4);
+  if (-1 < (char)(bVar12 & *(byte *)uVar9)) {
+    *extraout_ECX = (int)((byte *)uVar9 + *extraout_ECX);
+    pSVar1 = TM::TM__(StringLiteral_Cheating_Hacking_is_not_allowed_,(MethodInfo *)0x0);
+    TypeInfo__HackingToolDetector->static_fields->CheatWarning = pSVar1;
+    func_?(TypeInfo__HackingToolDetector->static_fields,pSVar1);
+    TypeInfo__HackingToolDetector->static_fields->instance = (HackingToolDetector *)0x0;
+    func_?(&TypeInfo__HackingToolDetector->static_fields->instance,0);
+    return;
+  }
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

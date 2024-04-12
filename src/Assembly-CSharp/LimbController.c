@@ -7,6 +7,10 @@ Assembly-CSharp.dll::LimbController::LimbController_AddAndClampRotations
           Quaternion rotation2,MethodInfo *method)
 
 {
+  __return_storage_ptr__->x = 0.0;
+  __return_storage_ptr__->y = 0.0;
+  __return_storage_ptr__->z = 0.0;
+  __return_storage_ptr__->w = 0.0;
   fVar1 = (rotation2.w * rotation1.x + rotation2.x * rotation1.w + rotation1.y * rotation2.z) -
           rotation1.z * rotation2.y;
   fVar2 = rotation1.z * rotation2.z;

@@ -598,6 +598,7 @@ code_?:
   }
   pCVar2 = Styles::Styles_GetColor(pCVar2,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
   CStack_7.r = pCVar2->a;
+  this = (TierUnlockedItemElement *)0x0;
   if (pIVar1 != (Image *)0x0) {
     pIVar8 = pIVar1->klass;
     CStack_7.g = (float)(pIVar8->vtable).get_raycastTarget.methodPtr;
@@ -605,10 +606,28 @@ code_?:
     return;
   }
 code_?:
+  bVar9 = 0;
   CStack_7.g = (float)&UNK_?;
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  uVar10 = func_?();
+  pbVar11 = (byte *)(in_GS + 0xeec91043 + (int)&stack0xfffffffc * 8);
+  bVar12 = CARRY1(*pbVar11,extraout_CH) || CARRY1(*pbVar11 + extraout_CH,bVar9);
+  *pbVar11 = *pbVar11 + extraout_CH + bVar9;
+  bVar13 = (byte)((uint6)uVar10 >> 8);
+  bVar14 = (byte)((uint6)uVar10 >> 0x28);
+  bVar9 = bVar14 + bVar13;
+  bVar15 = CARRY1(bVar14,bVar13) || CARRY1(bVar9,bVar12);
+  uVar16 = CONCAT11(bVar9 + bVar12,(char)((uint6)uVar10 >> 0x20));
+  out(uVar16,(char)uVar10);
+  bVar14 = (char)unaff_EBX + 3;
+  ppTVar17 = &this->klass + (int)&stack0xfffffffc * 2;
+  bVar9 = *(byte *)ppTVar17;
+  bVar13 = *(byte *)ppTVar17 + bVar14;
+  *(byte *)ppTVar17 = bVar13 + bVar15;
+  *(char *)(unaff_EBX + 4) =
+       *(char *)(unaff_EBX + 4) + (char)uVar10 + (CARRY1(bVar9,bVar14) || CARRY1(bVar13,bVar15));
+  out(uVar16,(int)uVar10);
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

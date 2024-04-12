@@ -85,22 +85,43 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
     VStack_2.z = fStack_7;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                         (&VStack_6,*pVVar1,(MethodInfo *)0x0);
-    auStack_10._4_4_ = 0.0;
-    auStack_10._8_4_ = 0.0;
+    MStack_10.position.y._0_1_ = 0;
+    MStack_10.position.y._1_1_ = 0;
+    MStack_10.position.y._2_1_ = 0;
+    MStack_10.position.y._3_1_ = 0;
+    MStack_10.position.z._0_1_ = 0;
+    MStack_10.position.z._1_1_ = 0;
+    MStack_10.position.z._2_1_ = 0;
+    MStack_10.position.z._3_1_ = 0;
     uStack_11 = CONCAT44(uVar4,uVar3);
-    auStack_10._0_4_ = fStack_5;
-    uStack_12._0_1_ = 0;
-    uStack_12._1_3_ = 0;
+    MStack_10.position.x._0_1_ = SUB41(fStack_5,0);
+    MStack_10.position.x._1_1_ = (undefined1)((uint)fStack_5 >> 8);
+    MStack_10.position.x._2_1_ = (undefined1)((uint)fStack_5 >> 0x10);
+    MStack_10.position.x._3_1_ = (undefined1)((uint)fStack_5 >> 0x18);
+    MStack_10.valid = 0;
+    MStack_10._13_1_ = 0;
+    MStack_10._14_1_ = 0;
+    MStack_10._15_1_ = 0;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                         (&VStack_6,*pVVar1,(MethodInfo *)0x0);
-    uVar13 = pVVar1->x;
-    uVar14 = pVVar1->y;
-    uStack_12 = pVVar1->z;
+    uVar12 = pVVar1->x;
+    uVar13 = pVVar1->y;
+    fVar14 = pVVar1->z;
+    MStack_10.valid = SUB41(fVar14,0);
+    MStack_10._13_1_ = SUB41((uint)fVar14 >> 8,0);
+    MStack_10._14_1_ = SUB41((uint)fVar14 >> 0x10,0);
+    MStack_10._15_1_ = SUB41((uint)fVar14 >> 0x18,0);
     fStack_15 = (this->fields).elipsoidRadius.z;
+    MStack_10.position.y._0_1_ = (undefined1)uVar12;
+    MStack_10.position.y._1_1_ = (undefined1)((uint)uVar12 >> 8);
+    MStack_10.position.y._2_1_ = (undefined1)((uint)uVar12 >> 0x10);
+    MStack_10.position.y._3_1_ = (undefined1)((uint)uVar12 >> 0x18);
+    MStack_10.position.z._0_1_ = (undefined1)uVar13;
+    MStack_10.position.z._1_1_ = (undefined1)((uint)uVar13 >> 8);
+    MStack_10.position.z._2_1_ = (undefined1)((uint)uVar13 >> 0x10);
+    MStack_10.position.z._3_1_ = (undefined1)((uint)uVar13 >> 0x18);
     VStack_16.x = (this->fields).elipsoidRadius.x;
     VStack_16.y = (this->fields).elipsoidRadius.y;
-    auStack_10._4_4_ = uVar13;
-    auStack_10._8_4_ = uVar14;
     fVar17 = (float10)func_?();
     ignoreWoIds = (this->fields).IgnoreWoIds;
     pTStack_18 = (Transform *)(float)fVar17;
@@ -108,30 +129,42 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
       func_?();
     }
     fVar19 = 0.0;
-    layerMask = (float)TypeInfo__MvCharacterController->static_fields->layerMask;
+    fVar14 = (float)TypeInfo__MvCharacterController->static_fields->layerMask;
     voxelHit = (VoxelHit *)&stack0xfffffef4;
     fVar20 = VStack_16.x;
     fVar21 = VStack_16.y;
     fVar22 = (float)uStack_11;
     fVar23 = uStack_11._4_4_;
-    puVar24 = &UNK_?;
-    ray.m_Origin.z = (float)auStack_10._0_4_;
+    fVar24 = (float)CONCAT13(MStack_10.position.x._3_1_,
+                             CONCAT12(MStack_10.position.x._2_1_,
+                                      CONCAT11(MStack_10.position.x._1_1_,MStack_10.position.x._0_1_
+                                              )));
+    fVar25 = (float)CONCAT13(MStack_10.position.y._3_1_,
+                             CONCAT12(MStack_10.position.y._2_1_,
+                                      CONCAT11(MStack_10.position.y._1_1_,MStack_10.position.y._0_1_
+                                              )));
+    fVar26 = (float)CONCAT13(MStack_10.position.z._3_1_,
+                             CONCAT12(MStack_10.position.z._2_1_,
+                                      CONCAT11(MStack_10.position.z._1_1_,MStack_10.position.z._0_1_
+                                              )));
+    fVar27 = (float)(CONCAT17(MStack_10._15_1_,
+                              CONCAT16(MStack_10._14_1_,
+                                       CONCAT15(MStack_10._13_1_,CONCAT14(MStack_10.valid,fVar26))))
+                    >> 0x20);
+    puVar28 = &UNK_?;
+    ray.m_Origin.z = fVar24;
     ray.m_Origin.x = (float)uStack_11;
     ray.m_Origin.y = uStack_11._4_4_;
-    ray.m_Direction.x = (float)auStack_10._4_4_;
-    ray.m_Direction.y = (float)auStack_10._8_4_;
-    ray.m_Direction.z = uStack_12;
+    ray.m_Direction.x = fVar25;
+    ray.m_Direction.y = fVar26;
+    ray.m_Direction.z = fVar27;
     radius.z = fStack_15;
     radius.x = VStack_16.x;
     radius.y = VStack_16.y;
-    fVar25 = (float)auStack_10._0_4_;
-    fVar26 = (float)auStack_10._4_4_;
-    fVar27 = (float)auStack_10._8_4_;
-    fVar28 = uStack_12;
     fVar29 = fStack_15;
     pTVar30 = pTStack_18;
     bVar31 = CollisionDetection::CollisionDetection_MVElipsoidCast
-                       (ray,radius,(float)pTStack_18,voxelHit,ignoreWoIds,(int32_t)layerMask,
+                       (ray,radius,(float)pTStack_18,voxelHit,ignoreWoIds,(int32_t)fVar14,
                         (MethodInfo *)0x0);
     if (bVar31 != 0) {
       uVar32._0_4_ = (this->fields).elipsoidRadius.z;
@@ -234,7 +267,7 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
         value.x = fStack_55;
         value.z = fStack_43;
         pVVar36 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                            ((Vector3 *)(auStack_10 + 4),value,(MethodInfo *)0x0);
+                            ((Vector3 *)&MStack_10.position.y,value,(MethodInfo *)0x0);
         uVar69 = pVVar36->x;
         uVar70 = pVVar36->y;
         fStack_51 = pVVar36->z;
@@ -249,8 +282,8 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
           piVar73 = &(this->fields).collisionRecursionDepth;
           *piVar73 = *piVar73 + 1;
           pVVar1 = MvCharacterController_CollideWithWorld
-                              ((Vector3 *)(auStack_10 + 4),this,ePos,(Vector3 *)&stack0xffffff58,
-                               foundValidPosition,(MethodInfo *)0x0);
+                              ((Vector3 *)&MStack_10.position.y,this,ePos,
+                               (Vector3 *)&stack0xffffff58,foundValidPosition,(MethodInfo *)0x0);
           uVar8._4_4_ = pVVar1->y;
           uVar8._0_4_ = pVVar1->z;
           __return_storage_ptr__->x = pVVar1->x;
@@ -326,20 +359,20 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
           controllerColliderHit.moveDirection.y = (float)uVar82;
           controllerColliderHit.moveDirection.z = (float)unaff_ESI;
           controllerColliderHit.elipsoidNormal.x = (float)puVar9;
-          controllerColliderHit.elipsoidNormal.y = (float)puVar24;
+          controllerColliderHit.elipsoidNormal.y = (float)puVar28;
           controllerColliderHit.elipsoidNormal.z = fVar22;
           controllerColliderHit.slopeNormal.x = fVar23;
-          controllerColliderHit.slopeNormal.y = fVar25;
-          controllerColliderHit.slopeNormal.z = fVar26;
-          controllerColliderHit.impactVelocity.x = fVar27;
-          controllerColliderHit.impactVelocity.y = fVar28;
+          controllerColliderHit.slopeNormal.y = fVar24;
+          controllerColliderHit.slopeNormal.z = fVar25;
+          controllerColliderHit.impactVelocity.x = fVar26;
+          controllerColliderHit.impactVelocity.y = fVar27;
           controllerColliderHit.impactVelocity.z = fVar20;
           controllerColliderHit._60_4_ = fVar21;
           controllerColliderHit.hit.point.x = fVar29;
           controllerColliderHit.hit.point.y = (float)pTVar30;
           controllerColliderHit.hit.point.z = (float)voxelHit;
           controllerColliderHit.hit.normal.x = (float)ignoreWoIds;
-          controllerColliderHit.hit.normal.y = layerMask;
+          controllerColliderHit.hit.normal.y = fVar14;
           controllerColliderHit.hit.normal.z = fVar19;
           uVar91 = in_stack_92._0_6_;
           controllerColliderHit.hit.cubePos.x = (short)uVar91;
@@ -363,7 +396,7 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
         piVar73 = &(this->fields).collisionRecursionDepth;
         *piVar73 = *piVar73 + 1;
         pVVar1 = MvCharacterController_CollideWithWorld
-                            ((Vector3 *)(auStack_10 + 4),this,(Vector3 *)&stack0xffffff64,
+                            ((Vector3 *)&MStack_10.position.y,this,(Vector3 *)&stack0xffffff64,
                              (Vector3 *)&stack0xffffff70,foundValidPosition,(MethodInfo *)0x0);
       }
       else {
@@ -393,20 +426,19 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
       return __return_storage_ptr__;
     }
     pMVar96 = MvCharacterController_HandleNoCollision
-                        ((MvCharacterController_NoCollisionData *)auStack_10,this,*ePos,*eVel,1,
-                         (MethodInfo *)0x0);
-    uVar97 = *(undefined1 *)&(pMVar96->position).x;
-    uVar98 = *(undefined1 *)((int)&(pMVar96->position).x + 1);
-    uVar99 = *(undefined1 *)((int)&(pMVar96->position).x + 2);
-    uVar100 = *(undefined1 *)((int)&(pMVar96->position).x + 3);
-    uVar101 = *(undefined1 *)&(pMVar96->position).y;
-    uVar102 = *(undefined1 *)((int)&(pMVar96->position).y + 1);
-    uVar103 = *(undefined1 *)((int)&(pMVar96->position).y + 2);
-    uVar104 = *(undefined1 *)((int)&(pMVar96->position).y + 3);
-    uVar105 = *(undefined1 *)&(pMVar96->position).z;
-    uVar106 = *(undefined1 *)((int)&(pMVar96->position).z + 1);
-    uVar107 = *(undefined1 *)((int)&(pMVar96->position).z + 2);
-    uVar108 = *(undefined1 *)((int)&(pMVar96->position).z + 3);
+                        (&MStack_10,this,*ePos,*eVel,1,(MethodInfo *)0x0);
+    MStack_10.position.x._0_1_ = *(undefined1 *)&(pMVar96->position).x;
+    MStack_10.position.x._1_1_ = *(undefined1 *)((int)&(pMVar96->position).x + 1);
+    MStack_10.position.x._2_1_ = *(undefined1 *)((int)&(pMVar96->position).x + 2);
+    MStack_10.position.x._3_1_ = *(undefined1 *)((int)&(pMVar96->position).x + 3);
+    MStack_10.position.y._0_1_ = *(undefined1 *)&(pMVar96->position).y;
+    MStack_10.position.y._1_1_ = *(undefined1 *)((int)&(pMVar96->position).y + 1);
+    MStack_10.position.y._2_1_ = *(undefined1 *)((int)&(pMVar96->position).y + 2);
+    MStack_10.position.y._3_1_ = *(undefined1 *)((int)&(pMVar96->position).y + 3);
+    MStack_10.position.z._0_1_ = *(undefined1 *)&(pMVar96->position).z;
+    MStack_10.position.z._1_1_ = *(undefined1 *)((int)&(pMVar96->position).z + 1);
+    MStack_10.position.z._2_1_ = *(undefined1 *)((int)&(pMVar96->position).z + 2);
+    MStack_10.position.z._3_1_ = *(undefined1 *)((int)&(pMVar96->position).z + 3);
     if (pMVar96->valid == 0) {
       uVar8._4_4_ = ePos->y;
       uVar8._0_4_ = ePos->z;
@@ -418,20 +450,19 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
   }
   else {
     pMVar96 = MvCharacterController_HandleNoCollision
-                        ((MvCharacterController_NoCollisionData *)auStack_10,this,*ePos,*eVel,1,
-                         (MethodInfo *)0x0);
-    uVar97 = *(undefined1 *)&(pMVar96->position).x;
-    uVar98 = *(undefined1 *)((int)&(pMVar96->position).x + 1);
-    uVar99 = *(undefined1 *)((int)&(pMVar96->position).x + 2);
-    uVar100 = *(undefined1 *)((int)&(pMVar96->position).x + 3);
-    uVar101 = *(undefined1 *)&(pMVar96->position).y;
-    uVar102 = *(undefined1 *)((int)&(pMVar96->position).y + 1);
-    uVar103 = *(undefined1 *)((int)&(pMVar96->position).y + 2);
-    uVar104 = *(undefined1 *)((int)&(pMVar96->position).y + 3);
-    uVar105 = *(undefined1 *)&(pMVar96->position).z;
-    uVar106 = *(undefined1 *)((int)&(pMVar96->position).z + 1);
-    uVar107 = *(undefined1 *)((int)&(pMVar96->position).z + 2);
-    uVar108 = *(undefined1 *)((int)&(pMVar96->position).z + 3);
+                        (&MStack_10,this,*ePos,*eVel,1,(MethodInfo *)0x0);
+    MStack_10.position.x._0_1_ = *(undefined1 *)&(pMVar96->position).x;
+    MStack_10.position.x._1_1_ = *(undefined1 *)((int)&(pMVar96->position).x + 1);
+    MStack_10.position.x._2_1_ = *(undefined1 *)((int)&(pMVar96->position).x + 2);
+    MStack_10.position.x._3_1_ = *(undefined1 *)((int)&(pMVar96->position).x + 3);
+    MStack_10.position.y._0_1_ = *(undefined1 *)&(pMVar96->position).y;
+    MStack_10.position.y._1_1_ = *(undefined1 *)((int)&(pMVar96->position).y + 1);
+    MStack_10.position.y._2_1_ = *(undefined1 *)((int)&(pMVar96->position).y + 2);
+    MStack_10.position.y._3_1_ = *(undefined1 *)((int)&(pMVar96->position).y + 3);
+    MStack_10.position.z._0_1_ = *(undefined1 *)&(pMVar96->position).z;
+    MStack_10.position.z._1_1_ = *(undefined1 *)((int)&(pMVar96->position).z + 1);
+    MStack_10.position.z._2_1_ = *(undefined1 *)((int)&(pMVar96->position).z + 2);
+    MStack_10.position.z._3_1_ = *(undefined1 *)((int)&(pMVar96->position).z + 3);
     if (pMVar96->valid == 0) {
       *foundValidPosition = 0;
       uVar8._4_4_ = ePos->y;
@@ -442,18 +473,20 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
       return __return_storage_ptr__;
     }
   }
-  *(undefined1 *)&__return_storage_ptr__->x = uVar97;
-  *(undefined1 *)((int)&__return_storage_ptr__->x + 1) = uVar98;
-  *(undefined1 *)((int)&__return_storage_ptr__->x + 2) = uVar99;
-  *(undefined1 *)((int)&__return_storage_ptr__->x + 3) = uVar100;
-  *(undefined1 *)&__return_storage_ptr__->y = uVar101;
-  *(undefined1 *)((int)&__return_storage_ptr__->y + 1) = uVar102;
-  *(undefined1 *)((int)&__return_storage_ptr__->y + 2) = uVar103;
-  *(undefined1 *)((int)&__return_storage_ptr__->y + 3) = uVar104;
-  *(undefined1 *)&__return_storage_ptr__->z = uVar105;
-  *(undefined1 *)((int)&__return_storage_ptr__->z + 1) = uVar106;
-  *(undefined1 *)((int)&__return_storage_ptr__->z + 2) = uVar107;
-  *(undefined1 *)((int)&__return_storage_ptr__->z + 3) = uVar108;
+  uVar4 = CONCAT13(MStack_10.position.x._3_1_,
+                    CONCAT12(MStack_10.position.x._2_1_,
+                             CONCAT11(MStack_10.position.x._1_1_,MStack_10.position.x._0_1_)));
+  __return_storage_ptr__->x = (float)uVar4;
+  __return_storage_ptr__->y =
+       (float)(int)(CONCAT17(MStack_10.position.y._3_1_,
+                             CONCAT16(MStack_10.position.y._2_1_,
+                                      CONCAT15(MStack_10.position.y._1_1_,
+                                               CONCAT14(MStack_10.position.y._0_1_,uVar4)))) >>
+                   0x20);
+  __return_storage_ptr__->z =
+       (float)CONCAT13(MStack_10.position.z._3_1_,
+                       CONCAT12(MStack_10.position.z._2_1_,
+                                CONCAT11(MStack_10.position.z._1_1_,MStack_10.position.z._0_1_)));
   return __return_storage_ptr__;
 }
 

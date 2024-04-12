@@ -1061,7 +1061,7 @@ void Assembly-CSharp-firstpass.dll::Water::Water_Update(Water *this,MethodInfo *
     }
     if (this_00 != (Material *)0x0) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector
-                         ((Vector4 *)&stack0xffffffac,this_00,StringLiteral_WaveSpeed,
+                         ((Vector4 *)&stack0xffffffa4,this_00,StringLiteral_WaveSpeed,
                           (MethodInfo *)0x0);
       uVar4._0_4_ = pVVar3->x;
       uVar4._4_4_ = pVVar3->y;
@@ -1087,14 +1087,14 @@ void Assembly-CSharp-firstpass.dll::Water::Water_Update(Water *this,MethodInfo *
                           (MethodInfo *)0x0);
       fVar10 = (float)(double)CONCAT44(uVar14,uVar13);
       fVar15 = (float)dVar12;
-      uVar14 = SUB84(_UNK_?,0);
-      uVar16 = (undefined4)((ulonglong)_UNK_? >> 0x20);
+      uVar16 = SUB84(_UNK_?,0);
+      uVar17 = (undefined4)((ulonglong)_UNK_? >> 0x20);
       dVar12 = (double)(fVar5 * fVar8) * dVar11;
-      dVar17 = mscorlib.dll::System::Math::Math_IEEERemainder
+      dVar18 = mscorlib.dll::System::Math::Math_IEEERemainder
                          (dVar12,_UNK_?,(MethodInfo *)0x0);
       uVar13 = (undefined4)((ulonglong)dVar12 >> 0x20);
-      fVar5 = (float)dVar17;
-      puVar18 = &UNK_?;
+      fVar5 = (float)dVar18;
+      puVar19 = &UNK_?;
       dVar11 = mscorlib.dll::System::Math::Math_IEEERemainder
                          ((double)(fVar6 * fVar9) * dVar11,_UNK_?,(MethodInfo *)0x0);
       fVar6 = (float)dVar11;
@@ -1104,67 +1104,70 @@ void Assembly-CSharp-firstpass.dll::Water::Water_Update(Water *this,MethodInfo *
       value.w = fVar6;
       UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                 (this_00,StringLiteral__WaveOffset,value,(MethodInfo *)0x0);
-      puVar19 = &UNK_?;
-      value_00.y = (float)uVar14;
+      uVar20 = 0;
+      puVar21 = &UNK_?;
+      value_00.y = (float)uVar16;
       value_00.x = (float)uVar13;
-      value_00.z = (float)uVar16;
-      value_00.w = (float)puVar18;
-      pSVar20 = StringLiteral__WaveScale4;
+      value_00.z = (float)uVar17;
+      value_00.w = (float)puVar19;
       UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                 (this_00,StringLiteral__WaveScale4,value_00,(MethodInfo *)0x0);
       pRVar1 = (this->fields).meshRenderer;
       if (pRVar1 != (Renderer *)0x0) {
-        pBVar21 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds
-                           ((Bounds *)&stack0xffffffa4,pRVar1,(MethodInfo *)0x0);
-        uVar22 = (pBVar21->m_Extents).z;
-        fVar8 = (pBVar21->m_Extents).x * _UNK_?;
-        fVar5 = fVar8 * fVar7;
-        method = (MethodInfo *)0x3f800000;
-        this = (Water *)((float)uVar22 * _UNK_? * fVar7);
-        fVar7 = (float)(double)CONCAT44(puVar18,uVar16);
-        fVar10 = 0.0;
-        fVar9 = (float)(double)CONCAT44(uVar13,pSVar20);
+        pBVar22 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds
+                           ((Bounds *)&stack0xffffff9c,pRVar1,(MethodInfo *)0x0);
+        uVar23 = (pBVar22->m_Extents).z;
+        fVar10 = (pBVar22->m_Extents).x * _UNK_?;
+        fVar5 = fVar10 * fVar7;
+        fVar24 = 1.0;
+        fVar7 = (float)uVar23 * _UNK_? * fVar7;
+        fVar9 = (float)(double)CONCAT44(uVar14,uVar20);
+        fVar15 = 0.0;
+        fVar8 = (float)(double)CONCAT44(uVar17,uVar16);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
+        pos_00.y = fVar8;
+        pos_00.x = fVar9;
+        pos_00.z = fVar15;
+        s_00.y = fVar7;
         s_00.x = fVar5;
-        pos_00.y = fVar9;
-        pos_00.x = fVar7;
-        pos_00.z = fVar10;
-        pMVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                           ((Matrix4x4 *)&stack0xffffff4c,pos_00,
+        s_00.z = fVar24;
+        pMVar25 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+                           ((Matrix4x4 *)&stack0xffffff44,pos_00,
                             TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
                             s_00,(MethodInfo *)0x0);
-        pSVar20 = StringLiteral__WaveMatrix;
+        fVar5 = pMVar25->m10;
+        puVar19 = &UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix
-                  (this_00,StringLiteral__WaveMatrix,*pMVar23,(MethodInfo *)0x0);
-        fVar5 = 0.0;
-        fVar8 = fVar8 * fVar9;
-        fVar7 = (float)pSVar20 * fVar7;
+                  (this_00,StringLiteral__WaveMatrix,*pMVar25,(MethodInfo *)0x0);
+        fVar9 = 0.0;
+        fVar10 = fVar10 * (float)puVar19;
+        fVar5 = fVar5 * fVar15;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        pos.y = (float)puVar19;
+        pos.y = (float)puVar21;
         pos.x = fVar6;
-        pos.z = fVar5;
-        s.y = fVar7;
-        s.x = fVar8;
-        s.z = (float)method;
-        pMVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                           ((Matrix4x4 *)&stack0xffffff4c,pos,
+        pos.z = fVar9;
+        s.y = fVar5;
+        s.x = fVar10;
+        s.z = fVar24;
+        pMVar25 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+                           ((Matrix4x4 *)&stack0xffffff44,pos,
                             TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,s,
                             (MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix
-                  (this_00,StringLiteral__WaveMatrix2,*pMVar23,(MethodInfo *)0x0);
+                  (this_00,StringLiteral__WaveMatrix2,*pMVar25,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  pcVar26 = (code *)swi(3);
+  (*pcVar26)();
   return;
 }
 

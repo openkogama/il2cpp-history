@@ -498,40 +498,32 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   case RewardedAdResult__Enum_ErrorClient:
   case RewardedAdResult__Enum_ErrorInternal:
   case RewardedAdResult__Enum_RewardNotUnlocked:
-    method_00 = unaff_EDI;
     unaff_ESI = (Object *)func_?(TypeInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              (unaff_ESI,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    cVar1 = (int)unaff_ESI < 0;
-    bVar2 = unaff_ESI == (Object *)0x0;
-    if (!bVar2) {
+              (unaff_ESI,ExceptionArgument__Enum_obj,unaff_EDI);
+    if (unaff_ESI != (Object *)0x0) {
       unaff_ESI[1].monitor = (MonitorData *)this;
       func_?(&unaff_ESI[1].monitor,this);
       original = (this->fields)._.errorNotification;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pOVar3 = (Object__Class *)
+      pOVar1 = (Object__Class *)
                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                          ((Object *)original,
                           NotificationPopup_MethodInfo__UnityEngine__Object__Instantiate<NotificationPopup>_NotificationPopup_
                          );
-      unaff_ESI[1].klass = pOVar3;
-      func_?(unaff_ESI + 1,pOVar3);
-      unaff_EBX = unaff_ESI[1].klass;
-      pIVar4 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-      cVar1 = (int)pIVar4 < 0;
-      bVar2 = pIVar4 == (IAdManager *)0x0;
-      unaff_EDI = this;
-      if (!bVar2) {
+      unaff_ESI[1].klass = pOVar1;
+      func_?(unaff_ESI + 1,pOVar1);
+      pOVar1 = unaff_ESI[1].klass;
+      pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+      if (pIVar2 != (IAdManager *)0x0) {
         text = (String *)
-               func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar4);
+               func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar2);
         header = TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
-        cVar1 = (int)unaff_EBX < 0;
-        bVar2 = unaff_EBX == (Object__Class *)0x0;
-        if (!bVar2) {
+        if (pOVar1 != (Object__Class *)0x0) {
           NotificationPopup::NotificationPopup_Initialize
-                    ((NotificationPopup *)unaff_EBX,text,header,(MethodInfo *)0x0);
+                    ((NotificationPopup *)pOVar1,text,header,(MethodInfo *)0x0);
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
           callbackFunction =
@@ -559,47 +551,24 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
     }
     break;
   case RewardedAdResult__Enum_ErrorTimeout:
-    pBVar5 = (this->fields)._.continueButton;
-    cVar1 = (int)pBVar5 < 0;
-    bVar2 = pBVar5 == (Button *)0x0;
-    if (!bVar2) {
-      this_00 = (UnityEvent *)(pBVar5->fields).m_OnClick;
-      cVar1 = (int)this_00 < 0;
-      bVar2 = this_00 == (UnityEvent *)0x0;
-      if (!bVar2) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_Invoke
-                  (this_00,(MethodInfo *)0x0);
-        return;
-      }
+    pBVar3 = (this->fields)._.continueButton;
+    if ((pBVar3 != (Button *)0x0) &&
+       (this_00 = (UnityEvent *)(pBVar3->fields).m_OnClick, this_00 != (UnityEvent *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_Invoke
+                (this_00,(MethodInfo *)0x0);
+      return;
     }
     break;
   default:
     return;
   }
-  cVar6 = '\0';
-  bVar7 = 0;
-  func_?();
-  if (!bVar2 && cVar6 == cVar1) {
-    bVar8 = *(byte *)&unaff_EDI->klass;
-    bVar9 = (byte)((uint)unaff_EBX >> 8);
-    cVar1 = *(char *)&unaff_EDI->klass;
-    bVar10 = *(char *)&unaff_EDI->klass + bVar9;
-    *(byte *)&unaff_EDI->klass = bVar10 + bVar7;
-    if (*(char *)&unaff_EDI->klass == '\0' ||
-        (SCARRY1(cVar1,bVar9) != SCARRY1(bVar10,bVar7)) != *(char *)&unaff_EDI->klass < '\0') {
-      pcVar11 = (code *)swi(3);
-      (*pcVar11)();
-      return;
-    }
-    pcVar12 = (char *)((int)&unaff_ESI[0xf].monitor + 2);
-    *pcVar12 = *pcVar12 + extraout_AH + (CARRY1(bVar8,bVar9) || CARRY1(bVar10,bVar7));
-    pcVar11 = (code *)swi(3);
-    (*pcVar11)();
-    return;
-  }
-  pcVar11 = (code *)swi(1);
-  (*pcVar11)();
-  return;
+  cVar4 = '\0';
+  uVar5 = func_?();
+  pcVar6 = (char *)((int)&unaff_ESI[-0xe3cfdf9].monitor + 1);
+  *pcVar6 = (*pcVar6 - extraout_CL) - cVar4;
+  *(char *)&unaff_ESI->klass = *(char *)&unaff_ESI->klass + extraout_DL + (uVar5 < 0x3d8def10);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

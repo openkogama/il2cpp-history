@@ -756,7 +756,7 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnAvatarInvisible
            (this_04 = MVBody::MVBody_get_BlobShadow(pMVar5,(MethodInfo *)0x0),
            this_04 != (AvatarBlobShadowController *)0x0)) {
           this = (PickupItemCostume *)0x0;
-          cVar6 = -0x34;
+          cVar6 = ',';
           AvatarBlobShadowController::AvatarBlobShadowController_set_ForceHidden
                     (this_04,value_00,(MethodInfo *)0x0);
           if (((TypeInfo__MVAvatarRemote->_1).naturalAligment <=

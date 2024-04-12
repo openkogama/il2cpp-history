@@ -25,8 +25,8 @@ void Assembly-CSharp.dll::NotificationTeamRequirementPanel::
     ;
     if ((((pMVar3 != (MVNetworkGame *)0x0) &&
          (pMVar4 = (pMVar3->fields).teamManager, pMVar4 != (MVTeamManager *)0x0)) &&
-        (this_00 = (pMVar4->fields).teamNames,
-        this_00 != (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)) &&
+        (unaff_EBX = (pMVar4->fields).teamNames,
+        unaff_EBX != (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)) &&
        (unaff_EDI = team, team != (Object *)0x0)) {
       pIVar5 = (team->klass->_0).element_class;
       pIVar6 = (TypeInfo__MV__WorldObject__MVTeam->_0).element_class;
@@ -36,7 +36,7 @@ void Assembly-CSharp.dll::NotificationTeamRequirementPanel::
       pIVar9 = (Int32Enum__Enum *)func_?(team);
       pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,*pIVar9,
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)unaff_EBX,*pIVar9,
                            method_00);
       if (pTVar2 != (Text *)0x0) {
         (*(code *)(pTVar2->klass->vtable).set_text.method)
@@ -48,7 +48,8 @@ void Assembly-CSharp.dll::NotificationTeamRequirementPanel::
         pMVar8 = TypeInfo__MV__WorldObject__MVTeam;
         if (pIVar5 != pIVar6) goto code_?;
         unaff_EDI = (Object *)&UNK_?;
-        puVar11 = (undefined4 *)func_?(team);
+        unaff_EBX = (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)team;
+        puVar11 = (undefined4 *)func_?();
         switch(*puVar11) {
         case 0:
           pIVar1 = (this->fields).requirementImage;
@@ -94,16 +95,21 @@ void Assembly-CSharp.dll::NotificationTeamRequirementPanel::
   team = unaff_EDI;
 code_?:
   func_?(team,pMVar8);
-  pbVar12 = (byte *)(extraout_EDX + -0x45efc113);
-  bVar13 = *pbVar12;
-  bVar14 = *pbVar12;
-  *pbVar12 = bVar14 + extraout_AH + bVar7;
-  in((short)extraout_EDX);
-  in((short)CONCAT31((int3)((uint)extraout_EDX >> 8),
-                     (char)extraout_EDX * '\x02' +
-                     (CARRY1(bVar13,extraout_AH) || CARRY1(bVar14 + extraout_AH,bVar7))));
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  bVar12 = (byte)((ushort)extraout_CX >> 8);
+  bVar13 = (byte)((uint)unaff_EBX >> 8);
+  bVar14 = bVar13 < bVar12 || (byte)(bVar13 - bVar12) < bVar7;
+  bVar12 = (byte)((uint)extraout_EDX >> 8);
+  bVar7 = *extraout_EDX + bVar12;
+  bVar15 = CARRY1(*extraout_EDX,bVar12) || CARRY1(bVar7,bVar14);
+  *extraout_EDX = bVar7 + bVar14;
+  pbVar16 = extraout_EDX + -3;
+  bVar7 = *pbVar16;
+  bVar12 = *pbVar16 + (byte)extraout_CX;
+  *pbVar16 = bVar12 + bVar15;
+  extraout_EDX[-3] =
+       extraout_EDX[-3] + extraout_AH + (CARRY1(bVar7,(byte)extraout_CX) || CARRY1(bVar12,bVar15));
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

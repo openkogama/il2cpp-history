@@ -1319,7 +1319,7 @@ code_?:
                                                   pMVar6 = (unaff_EBX->fields).worldObjectClient;
                                                   if (pMVar6 != (MVWorldObjectClient *)0x0) {
                                                     bVar17 = (byte)((uint)pMVar6 >> 8);
-                                                    bVar18 = 4;
+                                                    bVar18 = 0x13;
                                                     bVar10 = MVWorldObjectClient::
                                                             MVWorldObjectClient_HasInteractionFlag
                                                                       (pMVar6,

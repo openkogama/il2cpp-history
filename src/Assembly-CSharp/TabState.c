@@ -26,13 +26,9 @@ bool Assembly-CSharp.dll::TabState::TabState_SlotIndexIsInRange
 {
   pIVar1 = TabState_get_SlotRange(this,(MethodInfo *)0x0);
   if (pIVar1 == (Int32__Array *)0x0) {
-    uVar2 = func_?(&stack0xfffffff8);
-    func_?(uVar2);
-    pcVar3 = (code *)swi(3);
-    bVar4 = (*pcVar3)();
-    return bVar4;
+    func_?();
   }
-  if (pIVar1->max_length != 0) {
+  else if (pIVar1->max_length != 0) {
     if (slotIndex < pIVar1->vector[0]) {
       return 0;
     }
@@ -41,10 +37,9 @@ bool Assembly-CSharp.dll::TabState::TabState_SlotIndexIsInRange
     }
   }
   func_?();
-  func_?();
-  pcVar3 = (code *)swi(3);
-  bVar4 = (*pcVar3)();
-  return bVar4;
+  pcVar2 = (code *)swi(3);
+  bVar3 = (*pcVar2)();
+  return bVar3;
 }
 
 

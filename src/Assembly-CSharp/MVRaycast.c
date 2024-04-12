@@ -69,7 +69,6 @@ bool Assembly-CSharp.dll::MVRaycast::MVRaycast_GetCellOnRay
       }
       uStack_5 = CONCAT44(ray.m_Origin.y - hitPoint.y,ray.m_Origin.x - hitPoint.x);
       fStack_6 = ray.m_Origin.z - hitPoint.z;
-      fVar10 = ray.m_Origin.z;
       fVar17 = (float10)func_?();
       pMStack_18 = (MethodInfo *)(float)fVar17;
       if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
@@ -133,15 +132,15 @@ bool Assembly-CSharp.dll::MVRaycast::MVRaycast_GetCellOnRay
         uStack_15._4_4_ = pVVar3->y;
         pMStack_16 = (MethodInfo *)pVVar3->z;
         fVar35 = (float)(undefined4)uStack_15 * _UNK_?;
-        fVar36 = (float)uStack_15._4_4_ * _UNK_?;
-        fVar12 = (float)pMStack_16 * _UNK_?;
+        fVar12 = (float)uStack_15._4_4_ * _UNK_?;
+        fVar10 = (float)pMStack_16 * _UNK_?;
         if ((TypeInfo__SharedCollisionFunctions->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__SharedCollisionFunctions);
         }
         localSpaceBounds.m_Extents.x = fVar35;
         localSpaceBounds.m_Center = VVar27;
-        localSpaceBounds.m_Extents.y = fVar36;
-        localSpaceBounds.m_Extents.z = fVar12;
+        localSpaceBounds.m_Extents.y = fVar12;
+        localSpaceBounds.m_Extents.z = fVar10;
         SharedCollisionFunctions::SharedCollisionFunctions_GetVoxelBounds
                   (&IStack_32,&IStack_33,localSpaceBounds,(MethodInfo *)0x0);
         IVar31.z = IStack_32.z;
@@ -158,23 +157,23 @@ bool Assembly-CSharp.dll::MVRaycast::MVRaycast_GetCellOnRay
         if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__System__Math);
         }
-        iVar37 = mscorlib.dll::System::Math::Math_Sign_2((float)uStack_5,(MethodInfo *)0x0);
+        iVar36 = mscorlib.dll::System::Math::Math_Sign_2((float)uStack_5,(MethodInfo *)0x0);
         pMVar7 = TypeInfo__MVRaycast->static_fields;
         uStack_5._0_4_ = (pMVar7->intersectRay).m_Direction.x;
         uStack_5._4_4_ = (pMVar7->intersectRay).m_Direction.y;
         fStack_6 = (pMVar7->intersectRay).m_Direction.z;
-        pMVar38 = (MethodInfo *)
+        pMVar37 = (MethodInfo *)
                   mscorlib.dll::System::Math::Math_Sign_2((float)uStack_5._4_4_,(MethodInfo *)0x0);
         pMVar7 = TypeInfo__MVRaycast->static_fields;
         uStack_5._0_4_ = (pMVar7->intersectRay).m_Direction.x;
         uStack_5._4_4_ = (pMVar7->intersectRay).m_Direction.y;
         fStack_6 = (pMVar7->intersectRay).m_Direction.z;
-        pMStack_16 = pMVar38;
-        iStack_39 = mscorlib.dll::System::Math::Math_Sign_2(fStack_6,(MethodInfo *)0x0);
-        pMStack_18 = (MethodInfo *)(uint)(0 < iVar37);
-        pMStack_40 = (MethodInfo *)(float)(int)((uint)(0 < (int)pMVar38) + (int)IStack_1.y);
-        pMStack_41 = (MethodInfo *)(float)((int)pMStack_18 + (int)IStack_1.x);
-        pMStack_42 = (MethodInfo *)(float)(int)((uint)(0 < iStack_39) + (int)IStack_1.z);
+        pMStack_16 = pMVar37;
+        iStack_38 = mscorlib.dll::System::Math::Math_Sign_2(fStack_6,(MethodInfo *)0x0);
+        pMStack_18 = (MethodInfo *)(uint)(0 < iVar36);
+        pMStack_39 = (MethodInfo *)(float)(int)((uint)(0 < (int)pMVar37) + (int)IStack_1.y);
+        pMStack_40 = (MethodInfo *)(float)((int)pMStack_18 + (int)IStack_1.x);
+        pMStack_41 = (MethodInfo *)(float)(int)((uint)(0 < iStack_38) + (int)IStack_1.z);
         if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -183,25 +182,25 @@ bool Assembly-CSharp.dll::MVRaycast::MVRaycast_GetCellOnRay
         uStack_5._4_4_ = (pMVar7->intersectRay).m_Direction.y;
         fStack_6 = (pMVar7->intersectRay).m_Direction.z;
         pMVar7 = TypeInfo__MVRaycast->static_fields;
-        uVar43 = (pMVar7->intersectRay).m_Direction.y;
+        uVar42 = (pMVar7->intersectRay).m_Direction.y;
         VStack_34.x = (pMVar7->intersectRay).m_Direction.x;
         VStack_34.y = (pMVar7->intersectRay).m_Direction.y;
         VStack_34.z = (pMVar7->intersectRay).m_Direction.z;
-        pMStack_41 = (MethodInfo *)
-                     ((((float)pMStack_41 - (float)pMStack_28) - _UNK_?) / (float)uStack_5);
         pMStack_40 = (MethodInfo *)
-                     ((((float)pMStack_40 - (float)pMStack_29) - _UNK_?) / (float)uVar43);
+                     ((((float)pMStack_40 - (float)pMStack_28) - _UNK_?) / (float)uStack_5);
+        pMStack_39 = (MethodInfo *)
+                     ((((float)pMStack_39 - (float)pMStack_29) - _UNK_?) / (float)uVar42);
         pMStack_18 = (MethodInfo *)
-                     ((((float)pMStack_42 - (float)uStack_30) - _UNK_?) / VStack_34.z);
-        if ((0x7f800000 < (uint)ABS((float)pMStack_41)) || ((float)pMStack_41 == _UNK_?)) {
-          pMStack_41 = _UNK_?;
-        }
+                     ((((float)pMStack_41 - (float)uStack_30) - _UNK_?) / VStack_34.z);
         if ((0x7f800000 < (uint)ABS((float)pMStack_40)) || ((float)pMStack_40 == _UNK_?)) {
           pMStack_40 = _UNK_?;
         }
+        if ((0x7f800000 < (uint)ABS((float)pMStack_39)) || ((float)pMStack_39 == _UNK_?)) {
+          pMStack_39 = _UNK_?;
+        }
         if ((0x7f800000 < (uint)ABS((float)pMStack_18)) ||
-           (pMStack_42 = pMStack_18, (float)pMStack_18 == _UNK_?)) {
-          pMStack_42 = _UNK_?;
+           (pMStack_41 = pMStack_18, (float)pMStack_18 == _UNK_?)) {
+          pMStack_41 = _UNK_?;
         }
         if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
@@ -209,13 +208,13 @@ bool Assembly-CSharp.dll::MVRaycast::MVRaycast_GetCellOnRay
         pMVar7 = TypeInfo__MVRaycast->static_fields;
         VStack_34.x = (pMVar7->intersectRay).m_Direction.x;
         VStack_34.y = (pMVar7->intersectRay).m_Direction.y;
-        uVar44 = (pMVar7->intersectRay).m_Direction.y;
+        uVar43 = (pMVar7->intersectRay).m_Direction.y;
         uStack_5._0_4_ = (pMVar7->intersectRay).m_Direction.x;
         uStack_5._4_4_ = (pMVar7->intersectRay).m_Direction.y;
         fStack_6 = (pMVar7->intersectRay).m_Direction.z;
-        pMStack_29 = (MethodInfo *)((float)iVar37 / VStack_34.x);
-        pMStack_18 = (MethodInfo *)((float)(int)pMVar38 / (float)uVar44);
-        uStack_30 = (MethodInfo *)((float)iStack_39 / fStack_6);
+        pMStack_29 = (MethodInfo *)((float)iVar36 / VStack_34.x);
+        pMStack_18 = (MethodInfo *)((float)(int)pMVar37 / (float)uVar43);
+        uStack_30 = (MethodInfo *)((float)iStack_38 / fStack_6);
         if (0x7f800000 < (uint)ABS((float)pMStack_29)) {
           pMStack_29 = _UNK_?;
         }
@@ -233,63 +232,63 @@ bool Assembly-CSharp.dll::MVRaycast::MVRaycast_GetCellOnRay
           voxelPos_00.z = IStack_1.z;
           voxelPos_00.x = IStack_1.x;
           voxelPos_00.y = IStack_1.y;
-          bVar45 = MVRaycast_IsWithinDistance
+          bVar44 = MVRaycast_IsWithinDistance
                              (distance,(TypeInfo__MVRaycast->static_fields->intersectRay).m_Origin,
                               voxelPos_00,(MethodInfo *)0x0);
-          if (bVar45 == 0) {
+          if (bVar44 == 0) {
             return 0;
           }
           uStack_30 = (MethodInfo *)CONCAT22(IStack_1.z,(undefined2)uStack_30);
           if (cmb == (ICubeModelCollider *)0x0) break;
-          pIVar46 = cmb->klass;
-          uVar47 = 0;
-          uVar48._0_1_ = (pIVar46->_1).rank;
-          uVar48._1_1_ = (pIVar46->_1).minimumAlignment;
-          if (uVar48 != 0) {
+          pIVar45 = cmb->klass;
+          uVar46 = 0;
+          uVar47._0_1_ = (pIVar45->_1).rank;
+          uVar47._1_1_ = (pIVar45->_1).minimumAlignment;
+          if (uVar47 != 0) {
             do {
-              if (pIVar46->interfaceOffsets[uVar47].interfaceType ==
+              if (pIVar45->interfaceOffsets[uVar46].interfaceType ==
                   (Il2CppClass *)TypeInfo__ICubeModelCollider) {
-                ppMVar49 = &(&(cmb->klass->vtable).GetCube)
-                            [cmb->klass->interfaceOffsets[uVar47].offset].method;
+                ppMVar48 = &(&(cmb->klass->vtable).GetCube)
+                            [cmb->klass->interfaceOffsets[uVar46].offset].method;
                 goto code_?;
               }
-              uVar47 = uVar47 + 1;
-            } while (uVar47 < uVar48);
+              uVar46 = uVar46 + 1;
+            } while (uVar46 < uVar47);
           }
-          ppMVar49 = (MethodInfo **)func_?();
+          ppMVar48 = (MethodInfo **)func_?();
 code_?:
-          cube = (Cube *)(*(code *)*ppMVar49)();
+          cube = (Cube *)(*(code *)*ppMVar48)();
           if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          bVar45 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Inequality
+          bVar44 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Inequality
                              ((CubeBase *)cube,(CubeBase *)0x0,(MethodInfo *)0x0);
-          uVar50 = IStack_1._0_4_;
-          if (bVar45 != 0) {
+          uVar49 = IStack_1._0_4_;
+          if (bVar44 != 0) {
             uStack_30 = (MethodInfo *)CONCAT22(IStack_1.z,(undefined2)uStack_30);
             if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            uVar51 = IStack_1._0_4_;
+            uVar50 = IStack_1._0_4_;
             voxelPos.z = uStack_30._2_2_;
-            IStack_1.x = (int16_t)uVar50;
-            IStack_1.y = SUB42(uVar50,2);
+            IStack_1.x = (int16_t)uVar49;
+            IStack_1.y = SUB42(uVar49,2);
             voxelPos.x = IStack_1.x;
             voxelPos.y = IStack_1.y;
             localBoundsHitPoint.y = (float)pMVar26;
             localBoundsHitPoint.x = (float)pMVar23;
             localBoundsHitPoint.z = VStack_4.z;
-            IStack_1._0_4_ = uVar51;
-            bVar45 = MVRaycast_GetHitPoint
+            IStack_1._0_4_ = uVar50;
+            bVar44 = MVRaycast_GetHitPoint
                                (ray,cube,vHit,voxelPos,localBoundsHitPoint,scale,distance,
                                 (MethodInfo *)0x0);
-            if (bVar45 != 0) {
+            if (bVar44 != 0) {
               uStack_5._0_4_ = (vHit->point).x;
               uStack_5._4_4_ = (vHit->point).y;
               fStack_6 = (vHit->point).z;
               if (0.0 < ray.m_Direction.y * ((float)uStack_5._4_4_ - ray.m_Origin.y) +
                         ray.m_Direction.x * ((float)uStack_5 - ray.m_Origin.x) +
-                        ray.m_Direction.z * (fStack_6 - fVar10)) {
+                        ray.m_Direction.z * (fStack_6 - ray.m_Origin.z)) {
                 direction.z._2_2_ = (short)((uint)(vHit->normal).z >> 0x10);
                 direction._0_10_ = *(unkbyte10 *)&vHit->normal;
                 pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
@@ -309,9 +308,9 @@ code_?:
               }
             }
           }
-          if (((float)pMStack_40 <= (float)pMStack_41) || ((float)pMStack_42 <= (float)pMStack_41))
+          if (((float)pMStack_39 <= (float)pMStack_40) || ((float)pMStack_41 <= (float)pMStack_40))
           {
-            if ((float)pMStack_40 < (float)pMStack_42) {
+            if ((float)pMStack_39 < (float)pMStack_41) {
               IStack_1.y = IStack_1.y + (short)pMStack_16;
               if (IStack_1.y < IStack_32.y) {
                 return 0;
@@ -319,38 +318,38 @@ code_?:
               if (IStack_33.y < IStack_1.y) {
                 return 0;
               }
-              pMStack_40 = (MethodInfo *)((float)pMStack_18 + (float)pMStack_40);
+              pMStack_39 = (MethodInfo *)((float)pMStack_18 + (float)pMStack_39);
             }
             else {
-              IStack_1.z = IStack_1.z + (short)iStack_39;
+              IStack_1.z = IStack_1.z + (short)iStack_38;
               if (IStack_1.z < IStack_32.z) {
                 return 0;
               }
               if (IStack_33.z < IStack_1.z) {
                 return 0;
               }
-              pMStack_42 = (MethodInfo *)((float)pMStack_42 + (float)pMStack_28);
+              pMStack_41 = (MethodInfo *)((float)pMStack_41 + (float)pMStack_28);
             }
           }
           else {
-            sStack_52 = (short)iVar37;
-            IStack_1.x = IStack_1.x + sStack_52;
+            sStack_51 = (short)iVar36;
+            IStack_1.x = IStack_1.x + sStack_51;
             if (IStack_1.x < IStack_32.x) {
               return 0;
             }
             if (IStack_33.x < IStack_1.x) {
               return 0;
             }
-            pMStack_41 = (MethodInfo *)((float)pMStack_29 + (float)pMStack_41);
+            pMStack_40 = (MethodInfo *)((float)pMStack_29 + (float)pMStack_40);
           }
         }
       }
     }
   }
   func_?();
-  pcVar53 = (code *)swi(3);
-  bVar45 = (*pcVar53)();
-  return bVar45;
+  pcVar52 = (code *)swi(3);
+  bVar44 = (*pcVar52)();
+  return bVar44;
 }
 
 
@@ -1310,12 +1309,10 @@ code_?:
                     if ((TypeInfo__SharedCollisionFunctions->_1).cctor_finished_or_no_cctor == 0) {
                       func_?();
                     }
-                    origin.y = fStack_30;
-                    origin.x = fStack_29;
-                    origin.z = ray.m_Origin.z;
                     collisionData =
                          SharedCollisionFunctions::SharedCollisionFunctions_GetPhysicsCollisionData
-                                   ((Collider__Array *)overlapResult,hits,origin,(MethodInfo *)0x0);
+                                   ((Collider__Array *)overlapResult,hits,ray.m_Origin,
+                                    (MethodInfo *)0x0);
                     this_02 = (ICubeModelCollider__Class *)0x0;
                     if (collisionData != (PhysicsCollisionDatasWrapper *)0x0) goto code_?;
                   }

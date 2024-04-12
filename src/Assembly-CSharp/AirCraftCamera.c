@@ -45,41 +45,41 @@ void Assembly-CSharp.dll::AirCraftCamera::AirCraftCamera_CameraCollision
       if ((pTVar1 != (Transform *)0x0) &&
          (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                              ((Component *)pTVar1,(MethodInfo *)0x0), pTVar1 != (Transform *)0x0)) {
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+        pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                            (&VStack_10,pTVar1,(MethodInfo *)0x0);
         VStack_3.z = (this->fields).lookAtToCamDir.z;
+        pVVar2 = &VStack_3;
         VStack_3.x = (this->fields).lookAtToCamDir.x;
         VStack_3.y = (this->fields).lookAtToCamDir.y;
-        VVar12 = *pVVar2;
-        pVVar2 = &VStack_3;
         pVVar13 = &VStack_10;
-        puVar14 = (undefined8 *)func_?();
-        uVar15 = *(undefined4 *)(puVar14 + 1);
-        uStack_16 = (undefined4)*puVar14;
-        uStack_17 = (undefined4)((ulonglong)*puVar14 >> 0x20);
-        iVar18 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+        VVar14 = *pVVar12;
+        puVar15 = (undefined8 *)func_?();
+        uVar16 = *(undefined4 *)(puVar15 + 1);
+        uStack_17 = (undefined4)*puVar15;
+        uStack_18 = (undefined4)((ulonglong)*puVar15 >> 0x20);
+        iVar19 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                            (StringLiteral_Default,(MethodInfo *)0x0);
         pVStack_9 = (Vector3 *)(this->fields)._._.cameraRadius;
-        pHVar19 = TypeInfo__System__Collections__Generic__HashSet<int>;
+        pHVar20 = TypeInfo__System__Collections__Generic__HashSet<int>;
         this_00 = (HashSet_1_System_Int32_ *)func_?();
         System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
         HashSet_1_System_Int32___ctor
                   (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-        ray.m_Direction.z = (float)uVar15;
-        ray.m_Direction.y = (float)uStack_17;
-        ray.m_Direction.x = (float)uStack_16;
-        ray.m_Origin = VVar12;
-        bVar20 = CollisionDetection::CollisionDetection_MVSphereCast
+        ray.m_Direction.z = (float)uVar16;
+        ray.m_Direction.y = (float)uStack_18;
+        ray.m_Direction.x = (float)uStack_17;
+        ray.m_Origin = VVar14;
+        bVar21 = CollisionDetection::CollisionDetection_MVSphereCast
                           (ray,(float)pVStack_9,(VoxelHit *)&stack0xffffff5c,(float)fVar11,this_00,
-                           1 << ((byte)iVar18 & 0x1f),(MethodInfo *)0x0);
-        if (bVar20 == 0) {
+                           1 << ((byte)iVar19 & 0x1f),(MethodInfo *)0x0);
+        if (bVar21 == 0) {
           return;
         }
-        VStack_21.x = 0.0;
-        VStack_21.y = 0.0;
-        VStack_21.z = 0.0;
-        fStack_22 = 0.0;
-        pHStack_8 = pHVar19;
+        VStack_22.x = 0.0;
+        VStack_22.y = 0.0;
+        VStack_22.z = 0.0;
+        fStack_23 = 0.0;
+        pHStack_8 = pHVar20;
         pVStack_9 = pVVar13;
         pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)this,(MethodInfo *)0x0);
@@ -92,16 +92,16 @@ void Assembly-CSharp.dll::AirCraftCamera::AirCraftCamera_CameraCollision
           VStack_10.y = (this->fields).lookAtToCamDir.y;
           VStack_10.z = (this->fields).lookAtToCamDir.z;
           VStack_3.z = VStack_10.z + pVVar13->z;
-          VVar12.y = (float)pVStack_9;
-          VVar12.x = (float)pHStack_8;
-          VVar12.z = (float)pVVar2;
+          VVar14.y = (float)pVStack_9;
+          VVar14.x = (float)pHStack_8;
+          VVar14.z = (float)pVVar2;
           lineStart.z = (float)pVStack_6;
           lineEnd.y = VStack_10.y + VStack_3.y;
           lineEnd.x = VStack_10.x + VStack_3.x;
           lineEnd.z = VStack_3.z;
-          bVar20 = MathFunctions::MathFunctions_DistancePointLine_1
-                            (VVar12,lineStart,lineEnd,&fStack_22,&VStack_21,(MethodInfo *)0x0);
-          if (bVar20 == 0) {
+          bVar21 = MathFunctions::MathFunctions_DistancePointLine_1
+                            (VVar14,lineStart,lineEnd,&fStack_23,&VStack_22,(MethodInfo *)0x0);
+          if (bVar21 == 0) {
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
@@ -113,9 +113,9 @@ void Assembly-CSharp.dll::AirCraftCamera::AirCraftCamera_CameraCollision
           pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                              ((Component *)this,(MethodInfo *)0x0);
           if (pTVar1 != (Transform *)0x0) {
-            value.z = VStack_21.z;
-            value.x = VStack_21.x;
-            value.y = VStack_21.y;
+            value.z = VStack_22.z;
+            value.x = VStack_22.x;
+            value.y = VStack_22.y;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                       (pTVar1,value,(MethodInfo *)0x0);
             return;
@@ -125,8 +125,8 @@ void Assembly-CSharp.dll::AirCraftCamera::AirCraftCamera_CameraCollision
     }
   }
   func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 

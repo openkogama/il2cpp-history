@@ -321,8 +321,8 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
   pCVar2 = Styles::Styles_GetColor(&CStack_3,colorStyle,(MethodInfo *)0x0);
   if (pIVar1 == (Image *)0x0) {
     CStack_3.g = (float)&UNK_?;
-    lVar4 = func_?();
-    out(uRam_?,(short)(lVar4 % (longlong)*(int *)lVar4));
+    func_?();
+    out(uRam_?,extraout_DX);
                     /* WARNING: Bad instruction - Truncating control flow here */
     halt_baddata();
   }

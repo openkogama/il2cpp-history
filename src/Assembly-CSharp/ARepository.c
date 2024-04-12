@@ -101,9 +101,9 @@ Assembly-CSharp.dll::ARepository::ARepository_GetKoGaMaPackageFromItem
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)pKVar1,ExceptionArgument__Enum_obj,
                (MethodInfo *)&(pKVar1->fields).objectLinks);
-    this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
+    this_01 = (UnityAction_2_System_Object_System_ByteEnum_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::ByteEnum]
+    ::UnityAction_2_System_Object_System_ByteEnum___ctor
               (this_01,(Object *)pKVar1,
                MethodInfo__KoGaMaPackageClient__HandleDeserializedData_System__Collections__Generic__Dictionary<System::Object,_System::Object>__MV__WorldObject__KogamaDataType_
                ,(MethodInfo *)0x0);
@@ -168,12 +168,12 @@ void Assembly-CSharp.dll::ARepository::ARepository_GetWorldObjectTypeFromMVItemD
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)onWorldObjectExtracted;
     func_?(value + 1,onWorldObjectExtracted);
-    this = (UnityAction_2_System_Object_System_Object_ *)
+    this = (UnityAction_2_System_Object_System_ByteEnum_ *)
            func_?(
                           TypeInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::Dictionary<System::Object,_System::Object>,_MV::WorldObject::KogamaDataType>
                           );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::ByteEnum]
+    ::UnityAction_2_System_Object_System_ByteEnum___ctor
               (this,value,
                MethodInfo__ARepository____c__DisplayClass11_0___GetWorldObjectTypeFromMVItemData_b__0_System__Collections__Generic__Dictionary<System::Object,_System::Object>__MV__WorldObject__KogamaDataType_
                ,(MethodInfo *)0x0);

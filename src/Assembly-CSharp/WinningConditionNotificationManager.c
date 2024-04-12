@@ -339,6 +339,7 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
   if (bVar3 == 0) {
     return 0;
   }
+  unaff_ESI = (NotificationType__Enum *)actorNumber;
   switch(counterType & 0xff) {
   case GameStatCounterType__Enum_Kill:
   case GameStatCounterType__Enum_Collectible:
@@ -353,6 +354,7 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
       return 0;
     }
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    unaff_EBX = (char *)scoreLeftToWin;
     if ((pMVar1 == (MVNetworkGame *)0x0) ||
        (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 == (MVPlayerContainer *)0x0))
     goto code_?;
@@ -372,47 +374,23 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
        pMVar5 == (MVLocalPlayer *)0x0)) {
 code_?:
       uVar6 = func_?();
-      pcVar7 = (char *)CONCAT22((short)((uint)uVar6 >> 0x10),
-                                (ushort)(byte)((char)uVar6 + (char)((uint)uVar6 >> 8) * -0x10));
-      *pcVar7 = *pcVar7 - extraout_DL;
-      pcVar7 = (char *)((uint)pcVar7 ^ 0x28);
-      LOCK();
-      cVar8 = *pcVar7;
-      *pcVar7 = *pcVar7 - extraout_DL;
-      UNLOCK();
-      pcVar9 = (code *)swi(4);
-      cVar10 = extraout_DL;
-      if (SBORROW1(cVar8,extraout_DL)) {
-        pcVar7 = (char *)(*pcVar9)();
-        cVar10 = extraout_DL_00;
-      }
-      LOCK();
-      cVar8 = *pcVar7;
-      *pcVar7 = *pcVar7 - cVar10;
-      UNLOCK();
-      pcVar9 = (code *)swi(4);
-      if (SBORROW1(cVar8,cVar10)) {
-        pcVar7 = (char *)(*pcVar9)();
-        cVar10 = extraout_DL_01;
-      }
-      LOCK();
-      *pcVar7 = *pcVar7 - cVar10;
-      UNLOCK();
-      pcVar7 = (char *)CONCAT22((short)((uint)pcVar7 >> 0x10),
-                                (ushort)(byte)((char)pcVar7 + (char)((uint)pcVar7 >> 8) * -0x10));
-      cVar8 = *pcVar7;
-      *pcVar7 = *pcVar7 - cVar10;
-      pcVar9 = (code *)swi(4);
-      if (SBORROW1(cVar8,cVar10)) {
-        pcVar7 = (char *)(*pcVar9)();
-        cVar10 = extraout_DL_02;
-      }
-      LOCK();
-      *pcVar7 = *pcVar7 - cVar10;
-      UNLOCK();
-      do {
-                    /* WARNING: Do nothing block with infinite loop */
-      } while( true );
+      *notificationType = *unaff_ESI;
+      bVar7 = *extraout_ECX;
+      bVar8 = (byte)((uint)extraout_ECX >> 8);
+      *extraout_ECX = *extraout_ECX + bVar8;
+      *unaff_EBX = *unaff_EBX + (char)((ulonglong)uVar6 >> 0x20) + CARRY1(bVar7,bVar8);
+      *(int *)uVar6 = *(int *)uVar6 - (int)((ulonglong)uVar6 >> 0x20);
+      notificationType[1] = unaff_ESI[1];
+      bVar7 = *extraout_ECX;
+      *extraout_ECX = *extraout_ECX + bVar8;
+      *(char *)(unaff_ESI + -0x187bf5be) =
+           (char)unaff_ESI[-0x187bf5be] + (char)unaff_EBX + CARRY1(bVar7,bVar8);
+      *extraout_ECX = *extraout_ECX + bVar8;
+      *extraout_ECX = *extraout_ECX + bVar8;
+      *extraout_ECX = *extraout_ECX + bVar8;
+      pcVar9 = (code *)swi(3);
+      bVar3 = (*pcVar9)();
+      return bVar3;
     }
     if ((pMVar5->fields)._._ActorNr_k__BackingField == actorNumber) {
       return 0;
@@ -421,6 +399,7 @@ code_?:
       return 0;
     }
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    unaff_EBX = (char *)scoreLeftToWin;
     if ((pMVar1 == (MVNetworkGame *)0x0) ||
        (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 == (MVPlayerContainer *)0x0))
     goto code_?;
@@ -440,9 +419,6 @@ code_?:
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
-/* WARNING (jumptable): Removing unreachable block (ram,0xADDR) */
 /* Void UpdateNotification(Int32, GameStatCounterType, Int32) */
 
 void Assembly-CSharp.dll::WinningConditionNotificationManager::
@@ -452,61 +428,61 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__GameStatCounterType);
-    func_?(&TypeInfo__System__Int32);
+    func_?();
+    func_?();
+    ppDStackY_34 = (Dictionary_2_System_Object_System_Object___Class **)&UNK_?;
+    func_?();
+    ppDStackY_34 = &
+                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+    ;
+    ppGStackY_38 = (GameStatCounterType__Enum__Class **)&UNK_?;
+    func_?();
+    ppGStackY_38 = &TypeInfo__GameStatCounterType;
+    ppIStackY_3c = (Int32__Class **)&UNK_?;
+    func_?();
+    ppIStackY_3c = &TypeInfo__System__Int32;
+    puStackY_40 = &UNK_?;
+    func_?();
     cRam_? = '\x01';
   }
   uStack_1 = GameStatCounterType__Enum_None;
+  ppDStackY_34 = (Dictionary_2_System_Object_System_Object___Class **)&UNK_?;
   WinningConditionControl::WinningConditionControl_TryGetPrioritizedStat
             ((GameStatCounterType__Enum *)&uStack_1,(MethodInfo *)0x0);
+  GVar2 = counterType;
+  iVar3 = CONCAT31((int3)((uint)unaff_EBX >> 8),(undefined1)counterType);
   if ((undefined1)counterType != uStack_1) {
     return;
   }
   if (cRam_? == '\0') {
-    func_?(&
-                    AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
-                   );
-    func_?(&
-                    KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
-                   );
-    func_?(&
-                    OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
-                   );
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
-  uVar2 = (counterType & 0xff) - GameStatCounterType__Enum_Kill;
-  if (uVar2 < 8) {
-    (**(code **)(&UNK_? + uVar2 * 4))();
+  uVar4 = (GVar2 & 0xff) - GameStatCounterType__Enum_Kill;
+  if (uVar4 < 8) {
+    (**(code **)(&UNK_? + uVar4 * 4))();
     return;
   }
-  pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  GVar4 = counterType & 0xff;
-  if ((pMVar3 != (MVNetworkGame *)0x0) &&
-     (this = (pMVar3->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
-    bVar5 = MVPlayerContainer::MVPlayerContainer_ContainsKey(this,actorNumber,(MethodInfo *)0x0);
-    if (bVar5 != 0) {
+  pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  iVar6 = actorNumber;
+  if ((pMVar5 != (MVNetworkGame *)0x0) &&
+     (this = (pMVar5->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
+    bVar7 = MVPlayerContainer::MVPlayerContainer_ContainsKey(this,actorNumber,(MethodInfo *)0x0);
+    if (bVar7 != 0) {
       switch(counterType & 0xff) {
       case GameStatCounterType__Enum_Kill:
       case GameStatCounterType__Enum_Collectible:
       case GameStatCounterType__Enum_OculusKill:
         break;
       case GameStatCounterType__Enum_TimeAttackFlag:
-        pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        GVar4 = actorNumber;
-        if ((pMVar3 == (MVNetworkGame *)0x0) ||
-           (pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0),
-           pMVar6 == (MVLocalPlayer *)0x0)) goto code_?;
-        if ((pMVar6->fields)._._ActorNr_k__BackingField == actorNumber) {
+        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        iVar3 = iVar6;
+        if ((pMVar5 == (MVNetworkGame *)0x0) ||
+           (pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar5,(MethodInfo *)0x0),
+           pMVar8 == (MVLocalPlayer *)0x0)) goto code_?;
+        if ((pMVar8->fields)._._ActorNr_k__BackingField == iVar6) {
           return;
         }
       case GameStatCounterType__Enum_Flag:
@@ -515,70 +491,68 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
     return;
   }
 code_?:
-  uVar7 = func_?();
-  pcVar8 = (char *)((ulonglong)uVar7 >> 0x20);
-  pbVar9 = (byte *)uVar7;
-  cVar10 = (char)((ulonglong)uVar7 >> 0x20);
-  *pbVar9 = *pbVar9 - cVar10;
-  fptan(extraout_ST0);
-  *pbVar9 = *pbVar9 - cVar10;
-  bVar11 = *pbVar9;
-  bVar12 = extraout_CL;
-  while (cVar13 = (char)GVar4, bVar11 == 0) {
-    pbVar14 = (byte *)(pcVar8 + unaff_ESI * 8 + 0x28);
-    bVar11 = *pbVar14;
-    *pbVar14 = *pbVar14 + bVar12;
-    bVar12 = bVar12 + cVar13 + CARRY1(bVar11,bVar12);
-    *pbVar9 = *pbVar9 - cVar10;
-    bVar11 = *pbVar9;
+  cVar9 = '\0';
+  uVar10 = func_?();
+  piVar11 = (int *)((ulonglong)uVar10 >> 0x20);
+  cVar9 = ((char)uVar10 + -2) - cVar9;
+  piVar12 = (int *)CONCAT31((int3)((ulonglong)uVar10 >> 8),cVar9);
+  *piVar12 = *piVar12 - (int)piVar11;
+  bVar13 = (byte)((uint)extraout_ECX >> 8);
+  uVar14 = (undefined2)((uint)extraout_ECX >> 0x10);
+  uVar15 = SUB41(extraout_ECX,0);
+  bVar16 = bVar13 + *extraout_ECX;
+  pbVar17 = (byte *)CONCAT22(uVar14,CONCAT11(bVar16,uVar15));
+  pcVar18 = (char *)((int)piVar11 + 0x2ac1029 + (int)piVar12);
+  *pcVar18 = *pcVar18 + bVar16 + CARRY1(bVar13,*extraout_ECX);
+  *piVar12 = *piVar12 - (int)piVar11;
+  *piVar11 = *piVar11 + 0x2ac1029;
+  *piVar12 = *piVar12 - (int)piVar11;
+  bVar13 = bVar16 + *pbVar17;
+  pbVar19 = (byte *)CONCAT22(uVar14,CONCAT11(bVar13,uVar15));
+  cRam_? = cRam_? + cVar9 + CARRY1(bVar16,*pbVar17);
+  *piVar12 = *piVar12 - (int)piVar11;
+  cVar20 = bVar13 + *pbVar19;
+  puVar21 = (uint *)CONCAT22(uVar14,CONCAT11(cVar20,uVar15));
+  *(char *)((int)piVar11 + 5) = *(char *)((int)piVar11 + 5) + cVar9 + CARRY1(bVar13,*pbVar19);
+  *piVar12 = *piVar12 - (int)piVar11;
+  *(int *)((int)piVar12 + 0x2fa1029) = *(int *)((int)piVar12 + 0x2fa1029) - ((int)piVar11 + 1);
+  iVar22 = (int)piVar11 + 2;
+  piVar12 = (int *)((int)piVar12 + 0x6132052);
+  *piVar12 = *piVar12 - iVar22;
+  *piVar12 = *piVar12 - iVar22;
+  out((short)iVar22,(char)piVar12);
+  uVar4 = *puVar21;
+  puVar23 = &stack0xfffffffc + *puVar21;
+  puVar24 = puVar23 + *puVar21;
+  cVar25 = (char)((uint)iVar3 >> 8);
+  cVar9 = cVar20 + cVar25 + CARRY4((uint)puVar23,*puVar21);
+  puVar21 = (uint *)CONCAT22(uVar14,CONCAT11(cVar9,uVar15));
+  puVar23 = puVar24 + *puVar21;
+  cVar9 = cVar9 + cVar25 + CARRY4((uint)puVar24,*puVar21);
+  puVar21 = (uint *)CONCAT22(uVar14,CONCAT11(cVar9,uVar15));
+  uVar26 = *puVar21;
+  puVar24 = puVar23 + *puVar21;
+  uVar27 = *puVar21;
+  cVar9 = cVar9 + cVar25 + CARRY4((uint)puVar24,*puVar21);
+  puVar21 = (uint *)CONCAT22(uVar14,CONCAT11(cVar9,uVar15));
+  uVar28 = *puVar21;
+  puVar29 = puVar24 + uVar27 + *puVar21;
+  uVar30 = *puVar21;
+  puVar29[uVar30 - 0x75] = puVar29[uVar30 - 0x75] + (char)iVar22 + CARRY4((uint)puVar29,*puVar21);
+  in(CONCAT11((char)((uint)iVar22 >> 8) + (char)iVar3 * '\x02' +
+              CARRY4((uint)&stack0xfffffffc,uVar4) + CARRY4((uint)puVar23,uVar26) + cVar9 +
+              CARRY4((uint)(puVar24 + uVar27),uVar28),(char)iVar22));
+  iVar22 = *(int *)(puVar29 + uVar30 + 8);
+  *(undefined4 *)(iVar22 + 0x10) = 2;
+  *(undefined4 *)(puVar29 + uVar30 + 0xc) = 0;
+  *(int *)(puVar29 + uVar30 + 8) = iVar22;
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
   }
-  *pbVar9 = *pbVar9 - cVar10;
-  *pbVar9 = *pbVar9 - cVar10;
-  *pbVar9 = *pbVar9 - cVar10;
-  *pbVar9 = *pbVar9 - cVar10;
-  *pbVar9 = *pbVar9 - cVar10;
-  while( true ) {
-    fptan((float10)1);
-    bVar12 = (byte)pcVar8;
-    *pbVar9 = *pbVar9 - bVar12;
-    pcVar8 = (char *)CONCAT22((short)((uint)pcVar8 >> 0x10),
-                              CONCAT11((char)((uint)pcVar8 >> 8) - cVar13,bVar12));
-    bVar11 = *pbVar9;
-    *pbVar9 = *pbVar9 - bVar12;
-    if (bVar11 < bVar12 || *pbVar9 == 0) break;
-    *pbVar9 = *pbVar9 - bVar12;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  do {
-    bVar12 = (byte)pcVar8;
-    *pbVar9 = *pbVar9 - bVar12;
-    pcVar8 = (char *)CONCAT22((short)((uint)pcVar8 >> 0x10),
-                              CONCAT11((char)((uint)pcVar8 >> 8) - cVar13,bVar12));
-    bVar11 = *pbVar9;
-    *pbVar9 = *pbVar9 - bVar12;
-    while (bVar12 <= bVar11) {
-      bVar11 = *pbVar9;
-      *pbVar9 = *pbVar9 - bVar12;
-      if (bVar12 <= bVar11) {
-        while( true ) {
-          bVar12 = (byte)pcVar8;
-          *pbVar9 = *pbVar9 - bVar12;
-          cVar10 = (char)((uint)pcVar8 >> 8) - cVar13;
-          pcVar8 = (char *)CONCAT22((short)((uint)pcVar8 >> 0x10),CONCAT11(cVar10,bVar12));
-          bVar11 = *pbVar9;
-          *pbVar9 = *pbVar9 - bVar12;
-          if (bVar12 <= bVar11) break;
-          pcVar8[-0xb] = pcVar8[-0xb] + cVar10 + '\x01';
-        }
-        *pbVar9 = *pbVar9 - bVar12;
-        *pbVar9 = *pbVar9 - bVar12;
-        do {
-                    /* WARNING: Do nothing block with infinite loop */
-        } while( true );
-      }
-      *pcVar8 = *pcVar8 + extraout_CH + '\x01';
-      bVar11 = *pbVar9;
-      *pbVar9 = *pbVar9 - bVar12;
-    }
-  } while( true );
+  return;
 }
 

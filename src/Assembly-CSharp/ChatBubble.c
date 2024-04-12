@@ -150,8 +150,8 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_BindExtenderToClosestBorder
                                 ((Vector3 *)&stack0xffffffc8,pTVar1,(MethodInfo *)0x0);
             uVar7 = pVVar3->x;
             uVar8 = pVVar3->y;
-            fVar9 = (float)uVar4 - (3.5491732e-29 - (float)uVar7);
-            fVar10 = SUB84(uVar4,4) - (3.54918e-29 - (float)uVar8);
+            fVar9 = (float)uVar4 - (3.5504058e-29 - (float)uVar7);
+            fVar10 = SUB84(uVar4,4) - (3.5504127e-29 - (float)uVar8);
             fVar5 = fVar5 - ((float)puVar6 - pVVar3->z);
             pCVar11 = (Camera *)(fVar9 * fVar9 + fVar10 * fVar10 + fVar5 * fVar5);
             camera = (Camera *)&stack0xffffffc8;
@@ -179,8 +179,8 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_BindExtenderToClosestBorder
                                     ((Vector3 *)&stack0xffffffc8,pTVar1,(MethodInfo *)0x0);
                 uVar14 = pVVar3->x;
                 uVar15 = pVVar3->y;
-                fVar9 = (float)uVar13 - ((float)uVar14 + 3.5491732e-29);
-                fVar10 = SUB84(uVar13,4) - ((float)uVar15 + 3.54918e-29);
+                fVar9 = (float)uVar13 - ((float)uVar14 + 3.5504058e-29);
+                fVar10 = SUB84(uVar13,4) - ((float)uVar15 + 3.5504127e-29);
                 fVar5 = fVar5 - ((float)puVar6 + pVVar3->z);
                 pCVar2 = (this->fields).anchor;
                 fVar5 = fVar9 * fVar9 + fVar10 * fVar10 + fVar5 * fVar5;
@@ -202,8 +202,8 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_BindExtenderToClosestBorder
                                                   (MethodInfo *)0x0);
                     uVar17 = pVVar3->x;
                     uVar18 = pVVar3->y;
-                    fVar9 = (float)uVar16 - (3.5491732e-29 - (float)uVar17);
-                    fVar19 = SUB84(uVar16,4) - (3.54918e-29 - (float)uVar18);
+                    fVar9 = (float)uVar16 - (3.5504058e-29 - (float)uVar17);
+                    fVar19 = SUB84(uVar16,4) - (3.5504127e-29 - (float)uVar18);
                     fVar10 = fVar10 - ((float)puVar6 - pVVar3->z);
                     fVar9 = fVar19 * fVar19 + fVar9 * fVar9 + fVar10 * fVar10;
                     fVar10 = fVar5;
@@ -354,72 +354,75 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_CalculateExtenderBorderVertices
 
 {
   this_00 = (Transform *)ChatBubble_get_rectTransform(this,(MethodInfo *)0x0);
+  pVVar1 = unaff_ESI;
   if (this_00 != (Transform *)0x0) {
-    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                        ((Vector3 *)&stack0xfffffff0,this_00,(MethodInfo *)0x0);
-    fVar2 = pVVar1->z;
-    v2->z = fVar2;
-    v1->z = fVar2;
+    pVVar1 = v2;
+    pVVar3 = v1;
+    fVar4 = pVVar2->z;
+    v2->z = fVar4;
+    v1->z = fVar4;
     this_01 = ChatBubble_get_rectTransform(this,(MethodInfo *)0x0);
     if (this_01 != (RectTransform *)0x0) {
-      VVar3 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta
+      VVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta
                         (this_01,(MethodInfo *)0x0);
-      fVar2 = unaff_ESI * _UNK_?;
-      fStack_4 = VVar3.y;
-      fStack_4 = fStack_4 * _UNK_?;
+      fVar4 = (float)unaff_ESI * _UNK_?;
+      fStack_6 = VVar5.y;
+      fStack_6 = fStack_6 * _UNK_?;
       if (info != (ExtenderBorderInfo *)0x0) {
         switch((info->fields).Border) {
         case 0:
-          fStack_4 = (float)((uint)fStack_4 ^
+          fStack_6 = (float)((uint)fStack_6 ^
                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             );
-          v1->x = (float)((uint)fVar2 ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) +
-                  (info->fields).CutoffNear;
-          v2->x = fVar2 - (info->fields).CutoffFar;
-          fStack_4 = fStack_4 + (info->fields).Margin;
-          v2->y = fStack_4;
-          v1->y = fStack_4;
+          pVVar3->x = (float)((uint)fVar4 ^
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                             ) + (info->fields).CutoffNear;
+          pVVar1->x = fVar4 - (info->fields).CutoffFar;
+          fStack_6 = fStack_6 + (info->fields).Margin;
+          pVVar1->y = fStack_6;
+          pVVar3->y = fStack_6;
           break;
         case 1:
-          fVar2 = (float)((uint)fVar2 ^
+          fVar4 = (float)((uint)fVar4 ^
                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-          v1->y = (float)((uint)fStack_4 ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) +
-                  (info->fields).CutoffNear;
-          v2->y = fStack_4 - (info->fields).CutoffFar;
-          fVar2 = fVar2 + (info->fields).Margin;
-          v2->x = fVar2;
-          v1->x = fVar2;
+          pVVar3->y = (float)((uint)fStack_6 ^
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                             ) + (info->fields).CutoffNear;
+          pVVar1->y = fStack_6 - (info->fields).CutoffFar;
+          fVar4 = fVar4 + (info->fields).Margin;
+          pVVar1->x = fVar4;
+          pVVar3->x = fVar4;
           return;
         case 2:
-          v1->y = (float)((uint)fStack_4 ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) +
-                  (info->fields).CutoffNear;
-          v2->y = fStack_4 - (info->fields).CutoffFar;
-          fVar2 = fVar2 - (info->fields).Margin;
-          v2->x = fVar2;
-          v1->x = fVar2;
+          pVVar3->y = (float)((uint)fStack_6 ^
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                             ) + (info->fields).CutoffNear;
+          pVVar1->y = fStack_6 - (info->fields).CutoffFar;
+          fVar4 = fVar4 - (info->fields).Margin;
+          pVVar1->x = fVar4;
+          pVVar3->x = fVar4;
           return;
         case 3:
-          v1->x = (float)((uint)fVar2 ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) +
-                  (info->fields).CutoffNear;
-          v2->x = fVar2 - (info->fields).CutoffFar;
-          fStack_4 = fStack_4 - (info->fields).Margin;
-          v2->y = fStack_4;
-          v1->y = fStack_4;
+          pVVar3->x = (float)((uint)fVar4 ^
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                             ) + (info->fields).CutoffNear;
+          pVVar1->x = fVar4 - (info->fields).CutoffFar;
+          fStack_6 = fStack_6 - (info->fields).Margin;
+          pVVar1->y = fStack_6;
+          pVVar3->y = fStack_6;
           return;
         }
         return;
       }
     }
   }
-  func_?();
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
+  iVar7 = func_?();
+  *(char *)(iVar7 + 0xc) =
+       *(char *)(iVar7 + 0xc) + extraout_DH + (*(byte *)((int)&v1 + (int)pVVar1) < extraout_CL);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -512,7 +515,7 @@ bool Assembly-CSharp.dll::ChatBubble::ChatBubble_PerformAutoHeight
             UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
             RectTransform_SetSizeWithCurrentAnchors
                       (pRVar2,RectTransform_Axis__Enum_Vertical,
-                       (fVar5 - 3.549743e-29) + pRVar3->m_Height,(MethodInfo *)0x0);
+                       (fVar5 - 3.5509755e-29) + pRVar3->m_Height,(MethodInfo *)0x0);
             return 1;
           }
         }
@@ -564,7 +567,7 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_PerformAutoSize
         if (fVar4 <= fVar5) {
           fVar4 = fVar5;
         }
-        if (fVar4 == 3.549832e-29) {
+        if (fVar4 == 3.5510645e-29) {
           return;
         }
         pRVar3 = ChatBubble_get_rectTransform(this,(MethodInfo *)0x0);
@@ -576,8 +579,8 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_PerformAutoSize
             UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
             RectTransform_SetSizeWithCurrentAnchors
                       (pRVar3,RectTransform_Axis__Enum_Horizontal,
-                       ((float)&stack0xffffffd4 - 3.549832e-29) + pRVar7->m_Width,(MethodInfo *)0x0)
-            ;
+                       ((float)&stack0xffffffd4 - 3.5510645e-29) + pRVar7->m_Width,(MethodInfo *)0x0
+                      );
             ChatBubble_PerformAutoHeight(this,(MethodInfo *)0x0);
             return;
           }
@@ -633,7 +636,7 @@ bool Assembly-CSharp.dll::ChatBubble::ChatBubble_PerformAutoWidth
             UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
             RectTransform_SetSizeWithCurrentAnchors
                       (pRVar2,RectTransform_Axis__Enum_Horizontal,
-                       (fVar5 - 3.5499316e-29) + pRVar3->m_Width,(MethodInfo *)0x0);
+                       (fVar5 - 3.551164e-29) + pRVar3->m_Width,(MethodInfo *)0x0);
             return 1;
           }
         }
@@ -792,8 +795,8 @@ code_?:
             euler_00.x = fStack_1;
             euler_00.z = fVar3;
             pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                      Quaternion_Internal_FromEulerRad
-                                ((Quaternion *)&fStack_1,euler_00,(MethodInfo *)0x0);
+                     Quaternion_Internal_FromEulerRad
+                               ((Quaternion *)&fStack_1,euler_00,(MethodInfo *)0x0);
             if (pTVar9 != (Transform *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                         (pTVar9,*pQVar10,(MethodInfo *)0x0);
@@ -829,8 +832,8 @@ code_?:
             euler.x = fStack_1;
             euler.z = fVar3;
             pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                      Quaternion_Internal_FromEulerRad
-                                ((Quaternion *)&fStack_1,euler,(MethodInfo *)0x0);
+                     Quaternion_Internal_FromEulerRad
+                               ((Quaternion *)&fStack_1,euler,(MethodInfo *)0x0);
             if (pTVar9 != (Transform *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
                         (pTVar9,*pQVar10,(MethodInfo *)0x0);
@@ -946,12 +949,11 @@ code_?:
   }
   func_?();
 code_?:
-  uVar13 = func_?();
-  pcVar14 = (char *)(CONCAT31((int3)((uint)uVar13 >> 8),(byte)uVar13 | (&stack0x00000044)[(int)this])
-                   + 0x5a103404);
-  *pcVar14 = *pcVar14 + extraout_DL;
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  iVar13 = func_?();
+  *(char *)(iVar13 + 0x5a103414) =
+       *(char *)(iVar13 + 0x5a103414) + (extraout_DL | (&stack0x00000044)[(int)this]);
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -1129,11 +1131,12 @@ code_?:
     return;
   }
 code_?:
-  uVar3 = func_?();
-  puVar4 = (uint *)((int)uVar3 + (int)((ulonglong)uVar3 >> 0x20));
-  *puVar4 = *puVar4 | unaff_EBP;
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  bVar3 = 0;
+  uVar4 = func_?();
+  piVar5 = (int *)((int)uVar4 + (int)((ulonglong)uVar4 >> 0x20));
+  *piVar5 = (*piVar5 - unaff_EBP) - (uint)bVar3;
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

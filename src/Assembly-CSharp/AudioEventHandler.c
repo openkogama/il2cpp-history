@@ -244,7 +244,7 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0xd08c);
+    func_?(0xed94);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -252,7 +252,9 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
   }
   pVVar1 = SharedCubeFunctions::SharedCubeFunctions_LocalToWorld
                      ((Vector3 *)&stack0xfffffff0,gameObject,localPos,(MethodInfo *)0x0);
-  worldPos = *pVVar1;
+  uVar2._0_4_ = pVVar1->x;
+  uVar2._4_4_ = pVVar1->y;
+  fVar3 = pVVar1->z;
   switch(audioAction) {
   case AudioActions__Enum_CubeAdded:
     if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
@@ -261,18 +263,27 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
     this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
     if (this == (AudioBuild *)0x0) {
 code_?:
-      cVar2 = '\0';
-      uVar3 = func_?();
-      uVar4 = (uint)((ulonglong)uVar3 >> 0x20);
-      puVar5 = (uint *)CONCAT31((int3)((ulonglong)uVar3 >> 8),(char)uVar3 + -0x57 + cVar2);
-      *puVar5 = *puVar5 & uVar4;
-      *puVar5 = *puVar5 & uVar4;
-                    /* WARNING: Bad instruction - Truncating control flow here */
-      halt_baddata();
+      do {
+        uVar4 = func_?();
+        uVar5 = (uint)((ulonglong)uVar4 >> 0x20);
+        pAVar6 = (AudioEventHandler__Class *)((uint)uVar4 ^ 0xb9);
+        (pAVar6->_0).image = (Il2CppImage *)((uint)(pAVar6->_0).image & uVar5);
+        if ((POPCOUNT((uint)(pAVar6->_0).image & 0xff) & 1U) == 0) {
+          (pAVar6->_0).image = (Il2CppImage *)((uint)(pAVar6->_0).image & uVar5);
+          return;
+        }
+code_?:
+        this = pAVar6->static_fields->audioBuild;
+      } while (this == (AudioBuild *)0x0);
+      randMax = 1.0;
+      randMin = 1.0;
+      audioClip = (this->fields).cubePainted;
     }
-    randMax = 1.1;
-    randMin = 0.8;
-    audioClip = (this->fields).cubeAdded;
+    else {
+      randMax = 1.1;
+      randMin = 0.8;
+      audioClip = (this->fields).cubeAdded;
+    }
     break;
   case AudioActions__Enum_CubeRemoved:
     if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
@@ -315,18 +326,17 @@ code_?:
     audioClip = (this->fields).vertexMoved;
     break;
   case AudioActions__Enum_CubePainted:
-    if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
-    if (this == (AudioBuild *)0x0) goto code_?;
-    randMax = 1.0;
-    randMin = 1.0;
-    audioClip = (this->fields).cubePainted;
-    break;
+    pAVar6 = TypeInfo__AudioEventHandler;
+    if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor != 0) goto code_?;
+    func_?();
+    pAVar6 = TypeInfo__AudioEventHandler;
+    goto code_?;
   default:
     goto code_?;
   }
+  worldPos.z = fVar3;
+  worldPos.x = (float)(int)uVar2;
+  worldPos.y = (float)(int)((ulonglong)uVar2 >> 0x20);
   AudioBuild::AudioBuild_PlayClip(this,worldPos,audioClip,randMin,randMax,(MethodInfo *)0x0);
 code_?:
   return;

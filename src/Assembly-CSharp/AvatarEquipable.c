@@ -375,31 +375,28 @@ code_?:
                       (unaff_ESI,(Object *)StringLiteral_type,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    pMVar3 = 
-    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-    ;
     if (bVar2 == 0) {
       return 0;
     }
-    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                       (unaff_ESI,(Object *)StringLiteral_type,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    if (TVar4.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+    if (TVar3.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
         (TypeInfo__MV__Common__AvatarItemType->_0).element_class) {
-      piVar5 = (int *)func_?();
-      return (MethodInfo *)*piVar5 == pMVar3;
+      pAVar4 = (AvatarItemType__Enum *)func_?();
+      return *pAVar4 == type;
     }
   }
   func_?();
   pDVar1 = extraout_EDX;
 code_?:
   func_?(unaff_ESI,pDVar1);
-  pcVar6 = (code *)swi(3);
-  bVar2 = (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  bVar2 = (*pcVar5)();
   return bVar2;
 }
 

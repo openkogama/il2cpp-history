@@ -79,7 +79,6 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::
   default:
     return 0;
   }
-  in_AF = 0;
   if (_UNK_? <= (pLVar1->fields)._currentTime_5__2 / (float)(this_02->_0).fields) {
     pBVar6 = (Behaviour *)(this_02->_0).implementedInterfaces;
     if (pBVar6 != (Behaviour *)0x0) {
@@ -112,7 +111,6 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::
                         (pTVar4,*pQVar5,(MethodInfo *)0x0);
               (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
-              in_AF = 0;
               if (_UNK_? <=
                   (pLVar1->fields)._currentTime_5__2 / (float)(this_02->_0).element_class) {
                 pIVar7 = (this_02->_0).castClass;
@@ -147,7 +145,6 @@ code_?:
                                   (pGVar12,0,(MethodInfo *)0x0);
                         (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
-                        in_AF = 0;
                         if (_UNK_? <=
                             (pLVar1->fields)._currentTime_5__2 / (float)(this_02->_0).fields) {
                           pCVar3 = *(Component **)&(this_02->_0).this_arg.attrs;
@@ -328,22 +325,35 @@ code_?:
     }
   }
 code_?:
-  bVar15 = func_?();
-  in_AF = 9 < (bVar15 & 0xf) | in_AF;
-  puVar16 = (undefined1 *)((int)&this_02[-0x677d63]._1.cctor_thread + 1);
-  *puVar16 = *puVar16 + (char)(extraout_EDX + 1) + in_AF;
-  in_AF = 9 < (bVar15 + in_AF * -6 & 0xf) | in_AF;
-  bVar15 = *extraout_ECX;
-  bVar17 = *extraout_ECX + (byte)&stack0xfffffffc;
-  *extraout_ECX = bVar17 + in_AF;
-  *extraout_ECX =
-       *extraout_ECX + (char)((uint)extraout_ECX >> 8) +
-       (CARRY1(bVar15,(byte)&stack0xfffffffc) || CARRY1(bVar17,in_AF));
-  uVar18 = in((short)(extraout_EDX + 1));
-  *(undefined1 *)&(this_02->_0).image = uVar18;
-  pcVar19 = (code *)swi(3);
-  bVar20 = (*pcVar19)();
-  return bVar20;
+  cVar15 = '\0';
+  func_?();
+  bVar16 = (extraout_ECX & 0x1f) == 0;
+  bVar17 = bVar16 * cVar15 |
+           !bVar16 * ((char)(in_stack_18 << ((byte)extraout_ECX & 0x1f) - 1) < '\0');
+  bVar19 = *(char *)&(this_02->_0).image + extraout_AH;
+  bVar16 = CARRY1(*(byte *)&(this_02->_0).image,extraout_AH) || CARRY1(bVar19,bVar17);
+  *(byte *)&(this_02->_0).image = bVar19 + bVar17;
+  if (*(char *)&(this_02->_0).image == '\0') {
+    bVar20 = CARRY1(*(byte *)&(this_02->_0).image,extraout_DH);
+    bVar19 = *(char *)&(this_02->_0).image + extraout_DH;
+    bVar21 = CARRY1(bVar19,bVar16);
+    *(byte *)&(this_02->_0).image = bVar19 + bVar16;
+    if ((bVar20 || bVar21) || *(char *)&(this_02->_0).image == '\0') {
+      pcVar22 = (char *)(extraout_ECX + 0xb9103f79);
+      *pcVar22 = *pcVar22 + (char)(extraout_ECX >> 8) + (bVar20 || bVar21);
+      if ((POPCOUNT(*pcVar22) & 1U) != 0) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+      pcVar23 = (code *)swi(3);
+      bVar24 = (*pcVar23)();
+      return bVar24;
+    }
+  }
+  func_?();
+  pcVar23 = (code *)swi(3);
+  bVar24 = (*pcVar23)();
+  return bVar24;
 }
 
 

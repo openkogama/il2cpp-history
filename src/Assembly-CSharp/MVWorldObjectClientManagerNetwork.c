@@ -692,11 +692,10 @@ code_?:
        pMVar3 == (MVLocalPlayer *)0x0)) goto code_?;
     actorNr = (pMVar3->fields)._._ActorNr_k__BackingField;
   }
-  pMVar4 = this;
   MVWorldObjectClientManagerNetwork_SetOwnerInHierarchy(this,id,actorNr,(MethodInfo *)0x0);
-  uVar5 = (undefined1)((uint)pMVar4 >> 0x18);
   if ((this->fields)._.OnHierarchyLockedResponse !=
       (EventHandler_1_OnHierarchyLockedEventArgs_ *)0x0) {
+    pEVar4 = (this->fields)._.OnHierarchyLockedResponse;
     this_02 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
     if (cRam_? == '\0') {
       func_?();
@@ -708,9 +707,10 @@ code_?:
     UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
     UxmlObjectListAttributeDescription`1[System::Object]::
     UxmlObjectListAttributeDescription_1_System_Object___ctor(this_02,(MethodInfo *)0x0);
+    success = (bool)this_02;
     (this_02->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)id;
-    *(undefined1 *)&this_02[1].klass = uVar5;
-    (*_UNK_?)();
+    *(bool *)&this_02[1].klass = success;
+    (*(pEVar4->fields)._._.invoke_impl)();
   }
   return 1;
 }

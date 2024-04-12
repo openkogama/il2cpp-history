@@ -242,15 +242,14 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnEnable(PlayButton *this,Metho
                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IDeathPromotionSelector>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IDeathPromotionSelector>_
                    );
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdManager);
     func_?(&
                     MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
                    );
     func_?(&
                     MethodInfo__PlayButton____c__DisplayClass19_0___OnEnable_b__0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
                    );
-    in_stack_1 = &TypeInfo__PlayButton____c__DisplayClass19_0;
-    func_?();
+    in_stack_1 = (MethodInfo *)&UNK_?;
+    func_?(&TypeInfo__PlayButton____c__DisplayClass19_0);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).button;
@@ -261,94 +260,72 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnEnable(PlayButton *this,Metho
     if (bVar2 == 0) {
       return;
     }
+    pPStack_3 = TypeInfo__PlayButton____c__DisplayClass19_0;
     value = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              (value,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_1);
+              (value,ExceptionArgument__Enum_obj,in_stack_1);
     this_01 = (this->fields).embeddedPlayerConfig;
-    if (this_01 != (EmbeddedPlayerConfig *)0x0) {
-      pEVar3 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                         ((EmbeddedSiteConfigData *)&stack0xffffffd0,this_01,(MethodInfo *)0x0);
-      uVar4 = pEVar3->showTouristPromotion;
-      uVar5 = pEVar3->noPlayButtonVideoIcon;
-      if (value != (Object *)0x0) {
-        *(undefined1 *)&value[1].klass = 0;
-        pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this,(MethodInfo *)0x0);
-        callbackFunction =
-             (ExecuteEvents_EventFunction_1_System_Object_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IDeathPromotionSelector>
-                            );
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                   MethodInfo__PlayButton____c__DisplayClass19_0___OnEnable_b__0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-        }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar6,(BaseEventData *)0x0,callbackFunction,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IDeathPromotionSelector>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IDeathPromotionSelector>_
+    if ((this_01 != (EmbeddedPlayerConfig *)0x0) &&
+       (EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
+                  ((EmbeddedSiteConfigData *)&pPStack_3,this_01,(MethodInfo *)0x0),
+       value != (Object *)0x0)) {
+      *(undefined1 *)&value[1].klass = 0;
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IDeathPromotionSelector>
+                          );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                 MethodInfo__PlayButton____c__DisplayClass19_0___OnEnable_b__0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar4,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IDeathPromotionSelector>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IDeathPromotionSelector>_
+                );
+      pSVar5 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                         ((MethodInfo *)0x0);
+      if ((pSVar5 != (SpawnRoleDataMediator *)0x0) &&
+         (this_02 = (WebCompletionSource_1_System_Object_ *)(pSVar5->fields).spawnRoleMode,
+         this_02 != (WebCompletionSource_1_System_Object_ *)0x0)) {
+        System.dll::System::Net::WebCompletionSource`1[System::Object]::
+        WebCompletionSource_1_System_Object__get_Task
+                  (this_02,
+                   MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
                   );
-        pSVar7 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                            ((MethodInfo *)0x0);
-        if ((pSVar7 != (SpawnRoleDataMediator *)0x0) &&
-           (this_02 = (WebCompletionSource_1_System_Object_ *)(pSVar7->fields).spawnRoleMode,
-           this_02 != (WebCompletionSource_1_System_Object_ *)0x0)) {
-          pTVar8 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
-                    WebCompletionSource_1_System_Object__get_Task
-                              (this_02,
-                               MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
-                              );
-          pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar9 != (MVNetworkGame *)0x0) &&
-             (pMVar10 = (pMVar9->fields)._NetworkGameStateListener_k__BackingField,
-             pMVar10 != (MVNetworkGameStateListener *)0x0)) {
-            iVar11 = (pMVar10->fields).currentGameState;
-            if ((uVar5 == '\0') && (uVar4 == '\0')) {
-              pIVar12 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-              if (pIVar12 == (IAdManager *)0x0) goto code_?;
-              bVar13 = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar12
-                                     );
-            }
-            else {
-              bVar13 = 0;
-            }
-            if (((*(byte *)&value[1].klass & bVar13) == 0) ||
-               ((pTVar8 != (Task *)0x2 && (pTVar8 != (Task *)0x4)))) {
-              value_00 = false;
-            }
-            else {
-              value_00 = iVar11 != 2;
-            }
-            pIVar14 = (this->fields).playIcon;
-            if ((pIVar14 != (Image *)0x0) &&
-               (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_gameObject((Component *)pIVar14,(MethodInfo *)0x0),
-               pGVar6 != (GameObject *)0x0)) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar6,value_00 ^ 1,(MethodInfo *)0x0);
-              pIVar14 = (this->fields).adIcon;
-              if ((pIVar14 != (Image *)0x0) &&
-                 (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_get_gameObject((Component *)pIVar14,(MethodInfo *)0x0),
-                 pGVar6 != (GameObject *)0x0)) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar6,value_00,(MethodInfo *)0x0);
-                return;
-              }
-            }
+        pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar6 != (MVNetworkGame *)0x0) &&
+           ((((pMVar6->fields)._NetworkGameStateListener_k__BackingField !=
+              (MVNetworkGameStateListener *)0x0 &&
+             (pIVar7 = (this->fields).playIcon, pIVar7 != (Image *)0x0)) &&
+            (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                ((Component *)pIVar7,(MethodInfo *)0x0), pGVar4 != (GameObject *)0x0
+            )))) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (pGVar4,1,(MethodInfo *)0x0);
+          pIVar7 = (this->fields).adIcon;
+          if ((pIVar7 != (Image *)0x0) &&
+             (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                 ((Component *)pIVar7,(MethodInfo *)0x0),
+             pGVar4 != (GameObject *)0x0)) {
+            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                      (pGVar4,0,(MethodInfo *)0x0);
+            return;
           }
         }
       }
     }
   }
-code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

@@ -88,45 +88,44 @@ bool Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_AllMaterial
   }
   puStack_4 = puVar5;
   iVar6 = 0;
-  iStack_7 = 0;
-  LStack_8._list = (List_1_System_Object_ *)0x0;
-  LStack_8._index = 0;
-  LStack_8._version = 0;
-  LStack_8._current = (Object *)0x0;
+  LStack_7._list = (List_1_System_Object_ *)0x0;
+  LStack_7._index = 0;
+  LStack_7._version = 0;
+  LStack_7._current = (Object *)0x0;
   method_00 = (MethodInfo *)(this->fields).materials;
   if (method_00 != (MethodInfo *)0x0) {
-    pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_10,
+                       (&LStack_9,
                         (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                         method_00,
                         MethodInfo__System__Collections__Generic__List<MVMaterial>__GetEnumerator__)
     ;
-    LStack_8._list = (List_1_System_Object_ *)pLVar9->_list;
-    LStack_8._index = pLVar9->_index;
-    LStack_8._version = pLVar9->_version;
-    LStack_8._current = *(Object **)&pLVar9->_current;
-    LStack_10._version = 0;
+    LStack_7._list = (List_1_System_Object_ *)pLVar8->_list;
+    LStack_7._index = pLVar8->_index;
+    LStack_7._version = pLVar8->_version;
+    LStack_7._current = *(Object **)&pLVar8->_current;
+    LStack_9._version = 0;
     uStack_1 = 1;
-    LStack_10._current = (RegexCharClass_SingleRange)&LStack_8;
+    LStack_9._current = (RegexCharClass_SingleRange)&LStack_7;
     while( true ) {
+      iStack_10 = iVar6;
       bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_8,
+                        (&LStack_7,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVMaterial>__MoveNext__
                         );
       if (bVar11 == 0) break;
-      if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0)
+      if ((RegexCharClass_SingleRange)LStack_7._current == (RegexCharClass_SingleRange)0x0)
       goto code_?;
-      if (*(char *)((int)LStack_8._current + 0xc) != '\0') {
+      if (*(char *)((int)LStack_7._current + 0xc) != '\0') {
         iVar6 = iVar6 + 1;
-        iStack_7 = iVar6;
       }
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)&LStack_8,
+              ((Object *)&LStack_7,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVMaterial>__Dispose__
                ,method_00);

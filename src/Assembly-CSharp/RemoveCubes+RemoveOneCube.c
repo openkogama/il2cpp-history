@@ -200,7 +200,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::
   func_?();
   uStack6 = 0x1036;
   RemoveCubes_RemoveOneCube_TryRemoveCubeFromFineGrainedTerrain
-            ((IntVector)0x310362486,fineGrainedTerrainWorldObject,(MethodInfo *)0x0);
+            ((IntVector)0x3103634b6,fineGrainedTerrainWorldObject,(MethodInfo *)0x0);
   return 1;
 }
 

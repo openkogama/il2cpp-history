@@ -700,7 +700,7 @@ void Assembly-CSharp.dll::PickupItemMultiThrowingStar::
         cRam_? = '\x01';
       }
       if ((this->fields).throwingStarsFired < (this->fields).numStars) {
-        bVar12 = 0xb3;
+        bVar12 = 0xf3;
         fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
         if ((this->fields).fireTime + (this->fields).fireSpacingDelay <= fVar3) {
           fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0)

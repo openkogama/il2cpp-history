@@ -206,13 +206,7 @@ code_?:
       return;
     }
   }
-  uVar5 = func_?();
-  iVar6 = (int)((ulonglong)uVar5 >> 0x20);
-  iVar7 = (int)uVar5;
-  *(int *)(iVar7 + iVar6) = *(int *)(iVar7 + iVar6) - (int)this;
-  puVar8 = (undefined1 *)((int)&this[-1].fields._ActiveTool_k__BackingField + 3);
-  *(int *)(iVar7 + iVar6) = *(int *)(iVar7 + iVar6) - (int)puVar8;
-  *(int *)(iVar7 + iVar6) = *(int *)(iVar7 + iVar6) - (int)puVar8;
+  func_?();
   return;
 }
 
