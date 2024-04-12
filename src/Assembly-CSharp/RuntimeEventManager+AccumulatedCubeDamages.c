@@ -6,7 +6,7 @@ float Assembly-CSharp.dll::RuntimeEventManager+AccumulatedCubeDamages::RuntimeEv
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__RuntimeEventManager_AccumulatedCubeDamages__AccumulatedCubeDamage);
-    func_?(0x399c);
+    func_?(0x39ac);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__ContainsKey_MV__WorldObject__IntVector_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__get_Item_MV__WorldObject__IntVector_);
     cRam_? = '\x01';

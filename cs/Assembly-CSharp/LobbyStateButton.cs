@@ -99,7 +99,7 @@ public class LobbyStateButton : MonoBehaviour, IPointerDownHandler, IPointerEnte
 		public __c__DisplayClass27_0();
 
 		// Methods
-		internal void _PressPlayWithCallback_b__0(InterstitialAdResult result);
+		internal void _RequestAdWithCallback_b__0(InterstitialAdResult result);
 	}
 
 	[CompilerGenerated]
@@ -151,7 +151,7 @@ public class LobbyStateButton : MonoBehaviour, IPointerDownHandler, IPointerEnte
 	public void OnPointerEnter(PointerEventData eventData);
 	public void OnPointerExit(PointerEventData eventData);
 	public void OnPressPlay();
-	private void PressPlayWithCallback(Action<InterstitialAdResult> callback);
+	private void RequestAdWithCallback(Action<InterstitialAdResult> callback);
 	private void OnShowAdFinishedSpawnRolesPresent(InterstitialAdResult result);
 	private void OnShowAdFinishedEnterPlaymode(InterstitialAdResult result);
 	private void PopThenLockCursor();
