@@ -513,41 +513,47 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
     if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__DateTime);
     }
-    mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
-    iVar1 = mscorlib.dll::System::DateTime::DateTime_get_Ticks((DateTime *)&stack0xffffffec,(MethodInfo *)0x0);
-    iVar2 = (int)((ulonglong)iVar1 >> 0x20);
-    uVar3 = (uint)iVar1;
-    piVar4 = &(this->fields).prevTicks;
-    if ((iVar2 - *(int *)((int)&(this->fields).prevTicks + 4) == (uint)(uVar3 < (uint)*piVar4)) && (uVar3 - (int)*piVar4 < 0x989681)) {
-      piVar4 = &(this->fields).prevIntervalTicks;
-      iVar5 = *piVar4;
-      iVar6 = *piVar4;
-      (this->fields).prevTicks = iVar1;
-      iVar7 = *(int *)((int)&(this->fields).prevIntervalTicks + 4);
-      dVar8 = (double)((this->fields).interval * 1e+07);
-      lVar9 = func_?();
-      if (lVar9 <= CONCAT44((iVar2 - iVar7) - (uint)(uVar3 < (uint)iVar5),uVar3 - (int)iVar6)) {
+    DStack_1 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
+    uStack_2 = mscorlib.dll::System::DateTime::DateTime_get_Ticks(&DStack_1,(MethodInfo *)0x0);
+    uVar3 = (uint)((ulonglong)uStack_2 >> 0x20);
+    uVar4 = (uint)uStack_2;
+    piVar5 = &(this->fields).prevTicks;
+    puVar6 = (uint *)((int)&(this->fields).prevTicks + 4);
+    uVar7 = (uint)(uVar4 < (uint)*piVar5);
+    uVar8 = uVar3 - *puVar6;
+    if ((uVar8 == uVar7) && ((uVar3 < *puVar6 || uVar8 < uVar7 || (uVar4 - (int)*piVar5 < 0x989681)))) {
+      piVar5 = &(this->fields).prevIntervalTicks;
+      iVar9 = *piVar5;
+      iVar10 = *piVar5;
+      (this->fields).prevTicks = uStack_2;
+      iVar11 = *(int *)((int)&(this->fields).prevIntervalTicks + 4);
+      dVar12 = (double)((this->fields).interval * 1e+07);
+      lVar13 = func_?();
+      if (lVar13 <= CONCAT44((uVar3 - iVar11) - (uint)(uVar4 < (uint)iVar9),uVar4 - (int)iVar10)) {
         mscorlib.dll::System::Environment::Environment_get_TickCount((MethodInfo *)0x0);
-        uVar10 = (this->fields).currentFalsePositives;
+        uVar14 = (this->fields).currentFalsePositives;
+        uVar15 = (undefined4)uStack_2;
         func_?();
-        if (5e+06 < ABS((float)dVar8)) {
-          bVar11 = uVar10 + 1;
-          (this->fields).currentFalsePositives = bVar11;
-          if (bVar11 <= (this->fields).maxFalsePositives) {
+        if (5e+06 < ABS((float)dVar12)) {
+          bVar16 = uVar14 + 1;
+          (this->fields).currentFalsePositives = bVar16;
+          if (bVar16 <= (this->fields).maxFalsePositives) {
             (this->fields).currentCooldownShots = 0;
             SpeedHackDetector_ResetStartTicks(this,(MethodInfo *)0x0);
-            (this->fields).prevIntervalTicks = iVar1;
+            *(undefined4 *)&(this->fields).prevIntervalTicks = uVar15;
+            *(undefined4 *)((int)&(this->fields).prevIntervalTicks + 4) = uStack_2._4_4_;
             return;
           }
-          func_?();
+          func_?(8,this);
         }
-        else if (((uVar10 != 0) && (0 < (this->fields).coolDown)) && (iVar7 = (this->fields).currentCooldownShots + 1, (this->fields).currentCooldownShots = iVar7, (this->fields).coolDown <= iVar7)) {
-          *(uint *)&(this->fields).prevIntervalTicks = uVar3;
+        else if (((uVar14 != 0) && (0 < (this->fields).coolDown)) && (iVar11 = (this->fields).currentCooldownShots + 1, (this->fields).currentCooldownShots = iVar11, (this->fields).coolDown <= iVar11)) {
+          *(undefined4 *)&(this->fields).prevIntervalTicks = uVar15;
           (this->fields).currentFalsePositives = 0;
-          *(int *)((int)&(this->fields).prevIntervalTicks + 4) = iVar2;
+          *(undefined4 *)((int)&(this->fields).prevIntervalTicks + 4) = uStack_2._4_4_;
           return;
         }
-        (this->fields).prevIntervalTicks = iVar1;
+        *(undefined4 *)&(this->fields).prevIntervalTicks = uVar15;
+        *(undefined4 *)((int)&(this->fields).prevIntervalTicks + 4) = uStack_2._4_4_;
         return;
       }
     }

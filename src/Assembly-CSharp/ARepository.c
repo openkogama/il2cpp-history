@@ -45,8 +45,8 @@ KoGaMaPackageClient * Assembly-CSharp.dll::ARepository::ARepository_GetKoGaMaPac
     (pKVar1->fields).objectLinks = (Dictionary_2_System_Int32_MV_WorldObject_ObjectLink_ *)pDVar2;
     func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)pKVar1,ExceptionArgument__Enum_obj,(MethodInfo *)&(pKVar1->fields).objectLinks);
-    this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)pKVar1,MethodInfo__KoGaMaPackageClient__HandleDeserializedData_System__Collections__Generic__Dictionary<System::Object,_System::Object>__MV__WorldObject__KogamaDataType_,(MethodInfo *)0x0);
+    this_01 = (UnityAction_2_System_Object_System_ByteEnum_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::ByteEnum]::UnityAction_2_System_Object_System_ByteEnum___ctor(this_01,(Object *)pKVar1,MethodInfo__KoGaMaPackageClient__HandleDeserializedData_System__Collections__Generic__Dictionary<System::Object,_System::Object>__MV__WorldObject__KogamaDataType_,(MethodInfo *)0x0);
     if ((TypeInfo__KoGaMaDataHandler->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__KoGaMaDataHandler);
     }
@@ -91,8 +91,8 @@ void Assembly-CSharp.dll::ARepository::ARepository_GetWorldObjectTypeFromMVItemD
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)onWorldObjectExtracted;
     func_?(value + 1,onWorldObjectExtracted);
-    this = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::Dictionary<System::Object,_System::Object>,_MV::WorldObject::KogamaDataType>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this,value,MethodInfo__ARepository____c__DisplayClass11_0___GetWorldObjectTypeFromMVItemData_b__0_System__Collections__Generic__Dictionary<System::Object,_System::Object>__MV__WorldObject__KogamaDataType_,(MethodInfo *)0x0);
+    this = (UnityAction_2_System_Object_System_ByteEnum_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::Dictionary<System::Object,_System::Object>,_MV::WorldObject::KogamaDataType>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::ByteEnum]::UnityAction_2_System_Object_System_ByteEnum___ctor(this,value,MethodInfo__ARepository____c__DisplayClass11_0___GetWorldObjectTypeFromMVItemData_b__0_System__Collections__Generic__Dictionary<System::Object,_System::Object>__MV__WorldObject__KogamaDataType_,(MethodInfo *)0x0);
     this_00 = (BytePacker *)func_?(TypeInfo__MV__WorldObject__BytePacker);
     MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1(this_00,data,(MethodInfo *)0x0);
     if ((TypeInfo__KoGaMaDataHandler->_1).cctor_finished_or_no_cctor == 0) {

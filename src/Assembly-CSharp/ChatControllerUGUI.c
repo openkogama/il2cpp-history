@@ -92,7 +92,7 @@ code_?:
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar8,bVar1 ^ 1,(MethodInfo *)0x0);
           pRVar7 = (this->fields)._._InputAreaRoot_k__BackingField;
           if ((pRVar7 != (RectTransform *)0x0) && (pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar7,(MethodInfo *)0x0), pGVar8 != (GameObject *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar8,0x11,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar8,0xa1,(MethodInfo *)0x0);
             goto code_?;
           }
         }

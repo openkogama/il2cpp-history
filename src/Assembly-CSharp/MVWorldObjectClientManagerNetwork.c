@@ -472,10 +472,9 @@ code_?:
     if ((this_01 == (MVNetworkGame *)0x0) || (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0), pMVar3 == (MVLocalPlayer *)0x0)) goto code_?;
     actorNr = (pMVar3->fields)._._ActorNr_k__BackingField;
   }
-  pMVar4 = this;
   MVWorldObjectClientManagerNetwork_SetOwnerInHierarchy(this,id,actorNr,(MethodInfo *)0x0);
-  uVar5 = (undefined1)((uint)pMVar4 >> 0x18);
   if ((this->fields)._.OnHierarchyLockedResponse != (EventHandler_1_OnHierarchyLockedEventArgs_ *)0x0) {
+    pEVar4 = (this->fields)._.OnHierarchyLockedResponse;
     this_02 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
     if (cRam_? == '\0') {
       func_?();
@@ -485,9 +484,10 @@ code_?:
       func_?();
     }
     UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor(this_02,(MethodInfo *)0x0);
+    success = (bool)this_02;
     (this_02->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)id;
-    *(undefined1 *)&this_02[1].klass = uVar5;
-    (*(code *)0x531470ff)();
+    *(bool *)&this_02[1].klass = success;
+    (*(pEVar4->fields)._._.invoke_impl)();
   }
   return 1;
 }
@@ -1239,9 +1239,9 @@ code_?:
             func_?(&StringLiteral_Trying_to_add_reporter_while_net);
             cRam_? = '\x01';
           }
-          bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::Dictionary_2_System_Int32_System_Single__ContainsKey((Dictionary_2_System_Int32_System_Single_ *)0xfffe0c89,id,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__ContainsKey_int_);
+          bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::Dictionary_2_System_Int32_System_Single__ContainsKey((Dictionary_2_System_Int32_System_Single_ *)0xfffe0c69,id,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__ContainsKey_int_);
           if (bVar1 != 0) {
-            pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)0xfffe0c89,id,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__get_Item_int_);
+            pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)0xfffe0c69,id,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__get_Item_int_);
             pSVar7 = StringLiteral_Trying_to_add_reporter_while_net;
             if (pOVar4 == (Object *)0x0) {
               str1 = (String *)0x0;
@@ -1262,11 +1262,11 @@ code_?:
               func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Remove_int_);
               cRam_? = '\x01';
             }
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)0xfffe0c89,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Remove_int_);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)0xfffe0c69,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Remove_int_);
             this_01 = (MVNetworkReporter *)id;
           }
           id = (int32_t)this_01;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)0xfffe0c89,key,(Object *)id,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Add_int__MVNetworkObject_);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)0xfffe0c69,key,(Object *)id,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Add_int__MVNetworkObject_);
           goto code_?;
         }
       }

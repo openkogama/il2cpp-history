@@ -127,7 +127,7 @@ Vector3 * Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_GetLookDirectionWith
       (**(code **)&x->klass[1]._0.byval_arg.attrs)();
       fVar11 = (float10)func_?();
       fVar4 = (float)(fVar11 * (float10)fVar4);
-      *(ulonglong *)uVar7 = CONCAT44((float)&stack0xffffffe0 + (float)&stack0xffffffe0 * fVar4,fVar4 * 3.3127716e-29 + 3.3127716e-29);
+      *(ulonglong *)uVar7 = CONCAT44((float)&stack0xffffffe0 + (float)&stack0xffffffe0 * fVar4,fVar4 * 3.3139898e-29 + 3.3139898e-29);
       *(float *)(uVar7 + 8) = fVar4 * 0.0 + 0.0;
       return (Vector3 *)uVar7;
     }

@@ -1743,34 +1743,33 @@ bool Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_IsEquipped(MVAvatarLocal 
     return bVar3;
   }
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MV__Common__AvatarItemType);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
     func_?(&TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
     func_?(&StringLiteral_type);
     cRam_? = '\x01';
   }
-  if ((pMRam0000001c == (MVRuntimeDataVariable *)0x0) || (this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMRam0000001c,(MethodInfo *)0x0), this_01 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
+  if ((pMRam0000001c == (MVRuntimeDataVariable *)0x0) || (unaff_retaddr = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMRam0000001c,(MethodInfo *)0x0), unaff_retaddr == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
 code_?:
     func_?();
   }
   else {
-    if (((this_01->klass->_1).naturalAligment < (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment) || ((Dictionary_2_System_Object_System_Object___Class *)(this_01->klass->_1).typeHierarchy[(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment - 1] != TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) goto code_?;
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(this_01,(Object *)StringLiteral_type,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
-    pMVar4 = MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_;
+    if (((unaff_retaddr->klass->_1).naturalAligment < (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment) || ((Dictionary_2_System_Object_System_Object___Class *)(unaff_retaddr->klass->_1).typeHierarchy[(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment - 1] != TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) goto code_?;
+    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(unaff_retaddr,(Object *)StringLiteral_type,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
     if (bVar3 == 0) {
       return 0;
     }
-    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_01,(Object *)StringLiteral_type,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    if (TVar5.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) == (TypeInfo__MV__Common__AvatarItemType->_0).element_class) {
-      piVar6 = (int *)func_?();
-      return (MethodInfo *)*piVar6 == pMVar4;
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(unaff_retaddr,(Object *)StringLiteral_type,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+    if (TVar4.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) == (TypeInfo__MV__Common__AvatarItemType->_0).element_class) {
+      piVar5 = (int *)func_?();
+      return *piVar5 == in_stack_6;
     }
   }
   func_?();
 code_?:
-  func_?();
+  func_?(unaff_retaddr);
   pcVar2 = (code *)swi(3);
   bVar3 = (*pcVar2)();
   return bVar3;

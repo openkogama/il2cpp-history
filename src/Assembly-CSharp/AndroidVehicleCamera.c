@@ -290,7 +290,7 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera_UpdateCamer
               targetPosition.y = (float)puVar18;
               targetPosition.x = fVar17;
               targetPosition.z = fVar16;
-              bVar20 = CameraCollision::CameraCollision_Collide_1(this_00,(VoxelHit *)&stack0xffffff50,(Vector3 *)&stack0xffffffd4,(float)this_03,3.1839028e-29,targetPosition,*pVVar9,(this->fields).ignoreAvatarId,(MethodInfo *)0x0);
+              bVar20 = CameraCollision::CameraCollision_Collide_1(this_00,(VoxelHit *)&stack0xffffff50,(Vector3 *)&stack0xffffffd4,(float)this_03,3.185145e-29,targetPosition,*pVVar9,(this->fields).ignoreAvatarId,(MethodInfo *)0x0);
               if (bVar20 != 0) {
                 pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
                 if (pTVar1 == (Transform *)0x0) goto code_?;

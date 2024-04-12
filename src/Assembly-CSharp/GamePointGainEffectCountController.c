@@ -103,7 +103,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
       }
       pTVar3 = (this->fields).transformToSlide;
       fVar1 = (fVar1 - (float)uVar6) * fVar8 + (float)uVar6;
-      fStack_9._0_1_ = SUB41(fVar1,0);
+      uStack_9._2_1_ = (byte)((uint)fVar1 >> 0x10);
       if (pTVar3 != (Transform *)0x0) {
         value.y = (float)uVar7;
         value.x = fVar1;
@@ -133,7 +133,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
       }
       pTVar3 = (this->fields).transformToSlide;
       fVar1 = ((fVar4 + fVar1) - (float)uVar10) * fVar12 + (float)uVar10;
-      fStack_9._0_1_ = SUB41(fVar1,0);
+      uStack_9._2_1_ = (byte)((uint)fVar1 >> 0x10);
       if (pTVar3 != (Transform *)0x0) {
         value_00.y = (float)uVar11;
         value_00.x = fVar1;
@@ -147,10 +147,19 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
       }
     }
   }
-  func_?();
-  *(char *)(extraout_EDX + 0x5a1042df) = *(char *)(extraout_EDX + 0x5a1042df) + fStack_9._0_1_;
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  uVar13 = func_?();
+  iVar14 = (int)((ulonglong)uVar13 >> 0x20);
+  bVar15 = (char)((ulonglong)uVar13 >> 0x20) + 1;
+  bVar16 = CARRY1(uStack_9._2_1_,bVar15) || CARRY1(uStack_9._2_1_ + bVar15,this < (GamePointGainEffectCountController *)&stack0xfffffffc);
+  pbVar17 = (byte *)(iVar14 + -0x10);
+  bVar15 = *pbVar17;
+  bVar18 = *pbVar17;
+  *pbVar17 = bVar18 + unaff_BL + bVar16;
+  pcVar19 = (char *)(iVar14 + 3);
+  *pcVar19 = *pcVar19 + extraout_CH + (CARRY1(bVar15,unaff_BL) || CARRY1(bVar18 + unaff_BL,bVar16));
+  out((short)pcVar19,(int)uVar13);
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 

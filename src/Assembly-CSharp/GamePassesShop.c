@@ -2273,7 +2273,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowPurchaseConfirmPopu
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     pOVar1 = value[1].klass;
-    this = (GamePassesShop *)CONCAT31(0x10420e,(this->fields).gamePassTierDisplayed);
+    this = (GamePassesShop *)CONCAT31(0x10421e,(this->fields).gamePassTierDisplayed);
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)object,MethodInfo__GamePassesShop__OnSuccessfulPurchase__,(MethodInfo *)0x0);
     if (pOVar1 != (Object__Class *)0x0) {

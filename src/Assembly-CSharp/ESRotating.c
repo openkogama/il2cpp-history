@@ -229,9 +229,9 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Execute(ESRotating *this,Editor
         this_03 = (MVWorldObjectClient *)WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object__get_WorldObjectClient((WorldObjectClientRef_1_System_Object_ *)this_02,MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__);
         fVar8 = (this->fields).xAcc;
         pLVar16 = (this->fields).targets;
+        _Stack_44 = (_union_155)(fVar8 / ABS(fVar8));
         cStack_17 = '\0';
         cStack_18 = '\0';
-        _Stack_44 = (_union_155)(fVar8 / ABS(fVar8));
         fStack_19 = (this->fields).yAcc;
         fStack_19 = fStack_19 / ABS(fStack_19);
         uStack_20 = (double)((ulonglong)uStack_20 & 0xffffffff);
