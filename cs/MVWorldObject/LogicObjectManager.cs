@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using MV.WorldObject;
 
 // Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -15,14 +16,14 @@ using MV.WorldObject;
 public class LogicObjectManager
 {
 	// Fields
+	protected Dictionary<int, IInputSignalReceiver> logicWorldObjects;
+	public readonly bool trackLoops;
+	[CompilerGenerated]
+	private int _TimeStamp_k__BackingField;
 	public const int updateInterval = 100;
 	public const int stepInterval = 1000;
 	public const int updatesBeforeStepSend = 10;
-	protected Dictionary<int, IInputSignalReceiver> logicWorldObjects;
-	public readonly bool trackLoops;
 	private HashSet<int> updatedIds;
-	[CompilerGenerated]
-	private int _TimeStamp_k__BackingField;
 
 	// Properties
 	public int TimeStamp { [CompilerGenerated] get; [CompilerGenerated] private set; }

@@ -120,25 +120,31 @@ code_?:
     goto code_?;
   }
 code_?:
-  iVar10 = func_?();
-  bVar11 = CARRY4(extraout_ECX,*(uint *)(extraout_ECX + 0x55));
-  pbVar12 = (byte *)(unaff_EBX + 0x49);
-  bVar13 = *pbVar12 + (byte)iVar10;
-  bVar14 = CARRY1(*pbVar12,(byte)iVar10) || CARRY1(bVar13,bVar11);
-  *pbVar12 = bVar13 + bVar11;
-  pbVar12 = (byte *)(unaff_EBX + 0x6a105549);
-  bVar15 = (byte)unaff_EBX;
-  bVar11 = CARRY1(*pbVar12,bVar15) || CARRY1(*pbVar12 + bVar15,bVar14);
-  *pbVar12 = *pbVar12 + bVar15 + bVar14;
-  pbVar12 = (byte *)(iVar10 + 0x49);
-  bVar13 = *pbVar12;
-  bVar16 = (byte)((uint)unaff_EBX >> 8);
-  bVar17 = *pbVar12 + bVar16;
-  *pbVar12 = bVar17 + bVar11;
-  *(char *)(unaff_EBX + -0x64efaab7) =
-       *(char *)(unaff_EBX + -0x64efaab7) + bVar15 + (CARRY1(bVar13,bVar16) || CARRY1(bVar17,bVar11));
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)(&stack0xfffffffc,&stack0xfffffffc,&stack0xfffffffc);
+  bVar10 = 0;
+  uVar11 = func_?();
+  puVar12 = (uint *)((int)((ulonglong)uVar11 >> 0x20) + 0x55);
+  uVar13 = extraout_ECX + *puVar12;
+  bVar14 = CARRY4(extraout_ECX,*puVar12) || CARRY4(uVar13,(uint)bVar10);
+  iVar15 = uVar13 + bVar10;
+  pbVar16 = (byte *)(unaff_EBX + 0x4a);
+  bVar17 = (byte)((ulonglong)uVar11 >> 0x20);
+  bVar10 = *pbVar16 + bVar17;
+  bVar18 = CARRY1(*pbVar16,bVar17) || CARRY1(bVar10,bVar14);
+  *pbVar16 = bVar10 + bVar14;
+  pbVar16 = (byte *)(unaff_EBX + 0x7a10554a);
+  bVar19 = (byte)((uint)iVar15 >> 8);
+  bVar14 = CARRY1(*pbVar16,bVar19) || CARRY1(*pbVar16 + bVar19,bVar18);
+  *pbVar16 = *pbVar16 + bVar19 + bVar18;
+  pbVar16 = (byte *)((int)uVar11 + -0x54efaab6);
+  bVar10 = *pbVar16;
+  bVar20 = (byte)iVar15;
+  bVar17 = *pbVar16 + bVar20;
+  *pbVar16 = bVar17 + bVar14;
+  *(char *)(unaff_EBX + -0x33efaab6) =
+       *(char *)(unaff_EBX + -0x33efaab6) + bVar19 +
+       (CARRY1(bVar10,bVar20) || CARRY1(bVar17,bVar14));
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)(&stack0xfffffffc,&stack0xfffffffc);
   return;
 }
 
@@ -206,10 +212,10 @@ Assembly-CSharp.dll::LaserPointer::LaserPointer_DoDeactivateLaserAfterDuration
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__LaserPointer___DoDeactivateLaserAfterDuration_d__47);
+    func_?(&TypeInfo__LaserPointer___DoDeactivateLaserAfterDuration_d__46);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__LaserPointer___DoDeactivateLaserAfterDuration_d__47;
+  method_00 = TypeInfo__LaserPointer___DoDeactivateLaserAfterDuration_d__46;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);

@@ -419,78 +419,77 @@ Assembly-CSharp.dll::PickupItem::PickupItem_InstantiateAvatarItemType
       iVar1 = func_?(0);
       if (iVar1 == 0) {
 code_?:
-        uVar2 = func_?();
-        pbVar3 = (byte *)((int)uVar2 >> 0x1f);
-        bVar4 = (byte)((int)uVar2 >> 0x1f);
-        bVar5 = (char)unaff_EBX + bVar4;
-        uVar6 = (undefined3)((uint)unaff_EBX >> 8);
-        iVar1 = CONCAT31(uVar6,bVar5);
-        pbVar7 = (byte *)(iVar1 + 0x28);
-        bVar8 = *pbVar7;
+        bVar2 = 0;
+        iVar1 = func_?();
+        pbVar3 = (byte *)(iVar1 >> 0x1f);
+        pbVar4 = (byte *)(unaff_ESI + -0x2cefa9da);
+        bVar5 = (byte)(iVar1 >> 0x1f);
+        bVar6 = CARRY1(*pbVar4,bVar5) || CARRY1(*pbVar4 + bVar5,bVar2);
+        *pbVar4 = *pbVar4 + bVar5 + bVar2;
+        bVar7 = (byte)iVar1 + bVar5;
+        bVar8 = CARRY1((byte)iVar1,bVar5) || CARRY1(bVar7,bVar6);
+        bVar7 = bVar7 + bVar6;
+        pbVar4 = (byte *)(unaff_EBX + 0x29);
         bVar9 = (byte)((uint)unaff_EBX >> 8);
-        *pbVar7 = *pbVar7 + bVar9;
-        pbVar7 = (byte *)(iVar1 + 0x28);
-        bVar10 = CARRY1(*pbVar7,bVar9) || CARRY1(*pbVar7 + bVar9,CARRY1(bVar8,bVar9));
-        *pbVar7 = *pbVar7 + bVar9 + CARRY1(bVar8,bVar9);
-        bVar11 = (byte)extraout_ECX;
-        bVar12 = CARRY1(*pbVar3,bVar11) || CARRY1(*pbVar3 + bVar11,bVar10);
-        *pbVar3 = *pbVar3 + bVar11 + bVar10;
-        pbVar7 = (byte *)(unaff_EDI + 0x26);
-        bVar10 = CARRY1(*pbVar7,bVar4) || CARRY1(*pbVar7 + bVar4,bVar12);
-        *pbVar7 = *pbVar7 + bVar4 + bVar12;
-        pbVar7 = (byte *)(extraout_ECX + 0x26);
-        bVar8 = *pbVar7;
-        bVar13 = *pbVar7;
-        *pbVar7 = bVar13 + bVar4 + bVar10;
-        bVar14 = (byte)((uint)extraout_ECX >> 8);
-        *(char *)(unaff_EDI + 0x7b105626) =
-             *(char *)(unaff_EDI + 0x7b105626) + bVar14 +
-             (CARRY1(bVar8,bVar4) || CARRY1(bVar13 + bVar4,bVar10));
-        pbVar7 = (byte *)(unaff_ESI + 0x10);
-        bVar8 = *pbVar7;
-        *pbVar7 = *pbVar7 - bVar4;
-        bVar13 = (byte)((uVar2 & 0x25b01056) >> 8);
-        bVar15 = bVar5 + bVar13;
-        bVar10 = CARRY1(bVar5,bVar13) || CARRY1(bVar15,bVar8 < bVar4);
-        bVar15 = bVar15 + (bVar8 < bVar4);
-        iVar1 = CONCAT31(uVar6,bVar15);
-        bVar12 = CARRY1(bVar14,bVar9) || CARRY1(bVar14 + bVar9,bVar10);
-        bVar14 = bVar14 + bVar9 + bVar10;
-        pbVar7 = (byte *)(iVar1 + 0x28);
-        bVar10 = CARRY1(*pbVar7,bVar9) || CARRY1(*pbVar7 + bVar9,bVar12);
-        *pbVar7 = *pbVar7 + bVar9 + bVar12;
-        bVar8 = *pbVar3;
-        bVar13 = *pbVar3;
-        *pbVar3 = bVar13 + bVar15 + bVar10;
-        bVar5 = (byte)(uVar2 & 0x25b01056);
-        in_AF = 9 < (bVar5 & 0xf) | in_AF;
-        bVar10 = 0x99 < bVar5 || (CARRY1(bVar8,bVar15) || CARRY1(bVar13 + bVar15,bVar10));
-        bVar5 = bVar5 + in_AF * '\x06' + bVar10 * '`';
-        pbVar7 = (byte *)(iVar1 + -0x27efa9d9);
-        bVar8 = *pbVar7;
-        bVar13 = *pbVar7;
-        *pbVar7 = bVar13 + bVar9 + bVar10;
-        bVar10 = 0x99 < bVar5 || (CARRY1(bVar8,bVar9) || CARRY1(bVar13 + bVar9,bVar10));
-        *unaff_ESI = *unaff_ESI + bVar11 +
-                     (0x99 < (byte)(bVar5 + (9 < (bVar5 & 0xf) | in_AF) * '\x06' + bVar10 * '`') ||
-                     (CARRY1(bVar14,bVar4) || CARRY1(bVar14 + bVar4,bVar10)));
-        unaff_ESI[0x10] = unaff_ESI[0x10] - bVar4;
-        unaff_ESI[0x10] = unaff_ESI[0x10] - bVar4;
-        pcVar16 = (code *)swi(3);
-        pGVar17 = (GameObject *)(*pcVar16)();
-        return pGVar17;
+        bVar6 = CARRY1(*pbVar4,bVar9) || CARRY1(*pbVar4 + bVar9,bVar8);
+        *pbVar4 = *pbVar4 + bVar9 + bVar8;
+        pbVar4 = (byte *)(unaff_EBX + 0x29);
+        bVar8 = CARRY1(*pbVar4,bVar9) || CARRY1(*pbVar4 + bVar9,bVar6);
+        *pbVar4 = *pbVar4 + bVar9 + bVar6;
+        bVar2 = *pbVar3;
+        bVar10 = *pbVar3 + (byte)extraout_ECX;
+        *pbVar3 = bVar10 + bVar8;
+        in_AF = 9 < (bVar7 & 0xf) | in_AF;
+        bVar6 = 0x99 < bVar7 || (CARRY1(bVar2,(byte)extraout_ECX) || CARRY1(bVar10,bVar8));
+        bVar10 = bVar7 + in_AF * '\x06' + bVar6 * '`';
+        pbVar4 = (byte *)(unaff_EDI + 0x27);
+        bVar8 = CARRY1(*pbVar4,bVar5) || CARRY1(*pbVar4 + bVar5,bVar6);
+        *pbVar4 = *pbVar4 + bVar5 + bVar6;
+        pbVar4 = (byte *)(extraout_ECX + 0x27);
+        bVar2 = *pbVar4;
+        bVar7 = *pbVar4;
+        *pbVar4 = bVar7 + bVar5 + bVar8;
+        bVar11 = (byte)((uint)extraout_ECX >> 8);
+        *(char *)(unaff_EDI + 0x7b105627) =
+             *(char *)(unaff_EDI + 0x7b105627) + bVar11 +
+             (CARRY1(bVar2,bVar5) || CARRY1(bVar7 + bVar5,bVar8));
+        piVar12 = (int *)(unaff_ESI + 0x10);
+        pbVar4 = (byte *)*piVar12;
+        *piVar12 = *piVar12 - (int)pbVar3;
+        in_AF = 9 < (bVar10 & 0xf) | in_AF;
+        bVar6 = 0x99 < bVar10 || pbVar4 < pbVar3;
+        bVar7 = bVar10 + in_AF * '\x06' + bVar6 * '`';
+        bVar10 = (byte)((uint)iVar1 >> 8);
+        bVar2 = (byte)unaff_EBX + bVar10;
+        cVar13 = bVar2 + bVar6;
+        bVar6 = 0x99 < bVar7 || (CARRY1((byte)unaff_EBX,bVar10) || CARRY1(bVar2,bVar6));
+        bVar6 = 0x99 < (byte)(bVar7 + (9 < (bVar7 & 0xf) | in_AF) * '\x06' + bVar6 * '`') ||
+                 (CARRY1(bVar11,bVar9) || CARRY1(bVar11 + bVar9,bVar6));
+        pbVar4 = (byte *)(CONCAT31((int3)((uint)unaff_EBX >> 8),cVar13) + 0x29);
+        bVar2 = *pbVar4;
+        bVar7 = *pbVar4;
+        *pbVar4 = bVar7 + bVar9 + bVar6;
+        *pbVar3 = *pbVar3 + cVar13 + (CARRY1(bVar2,bVar9) || CARRY1(bVar7 + bVar9,bVar6));
+        *(char *)(unaff_ESI + 0x10) = *(char *)(unaff_ESI + 0x10) - bVar5;
+        *(char *)(unaff_ESI + 0x10) = *(char *)(unaff_ESI + 0x10) - bVar5;
+        *(char *)(unaff_ESI + 0x10) = *(char *)(unaff_ESI + 0x10) - bVar5;
+        *(int *)(unaff_ESI + 0x10) = *(int *)(unaff_ESI + 0x10) - (int)pbVar3;
+        *(int *)(unaff_ESI + 0x10) = *(int *)(unaff_ESI + 0x10) - (int)pbVar3;
+        pcVar14 = (code *)swi(3);
+        pGVar15 = (GameObject *)(*pcVar14)();
+        return pGVar15;
       }
-      pGVar17 = *(GameObject **)(iVar1 + 0x1c0);
+      pGVar15 = *(GameObject **)(iVar1 + 0x1c0);
       break;
     case AvatarItemType__Enum_CenterGun:
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 0x1b8);
+      pGVar15 = *(GameObject **)(iVar1 + 0x1b8);
       break;
     case AvatarItemType__Enum_ImpulseGun:
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 0x1bc);
+      pGVar15 = *(GameObject **)(iVar1 + 0x1bc);
       break;
     case AvatarItemType__Enum_Health:
     case AvatarItemType__Enum_Mutant:
@@ -499,17 +498,17 @@ code_?:
     case AvatarItemType__Enum_Bazooka:
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 0x1c4);
+      pGVar15 = *(GameObject **)(iVar1 + 0x1c4);
       break;
     case AvatarItemType__Enum_Hand:
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 0x1c8);
+      pGVar15 = *(GameObject **)(iVar1 + 0x1c8);
       break;
     case AvatarItemType__Enum_RailGun:
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 0x1cc);
+      pGVar15 = *(GameObject **)(iVar1 + 0x1cc);
       break;
     case AvatarItemType__Enum_MeleeWeapon:
       if (cRam_? == '\0') {
@@ -524,44 +523,44 @@ code_?:
           func_?(&TypeInfo__PrefabPool);
           cRam_? = '\x01';
         }
-        pPVar18 = TypeInfo__PrefabPool->static_fields->instance;
-        if (pPVar18 == (PrefabPool *)0x0) goto code_?;
-        pGVar17 = (pPVar18->fields).avatarItemSword;
+        pPVar16 = TypeInfo__PrefabPool->static_fields->instance;
+        if (pPVar16 == (PrefabPool *)0x0) goto code_?;
+        pGVar15 = (pPVar16->fields).avatarItemSword;
       }
       else {
         if (cRam_? == '\0') {
           func_?(&TypeInfo__PrefabPool);
           cRam_? = '\x01';
         }
-        pPVar18 = TypeInfo__PrefabPool->static_fields->instance;
-        if (pPVar18 == (PrefabPool *)0x0) goto code_?;
-        pGVar17 = (pPVar18->fields).avatarItemMeleeWeapon;
+        pPVar16 = TypeInfo__PrefabPool->static_fields->instance;
+        if (pPVar16 == (PrefabPool *)0x0) goto code_?;
+        pGVar15 = (pPVar16->fields).avatarItemMeleeWeapon;
       }
       break;
     case AvatarItemType__Enum_Shotgun:
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 0x1d8);
+      pGVar15 = *(GameObject **)(iVar1 + 0x1d8);
       break;
     case AvatarItemType__Enum_Flamethrower:
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 0x1dc);
+      pGVar15 = *(GameObject **)(iVar1 + 0x1dc);
       break;
     case AvatarItemType__Enum_CubeGun:
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 0x1e0);
+      pGVar15 = *(GameObject **)(iVar1 + 0x1e0);
       break;
     case AvatarItemType__Enum_SixShooter:
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 0x1e4);
+      pGVar15 = *(GameObject **)(iVar1 + 0x1e4);
       break;
     case AvatarItemType__Enum_DoubleSixShooter:
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 0x1e8);
+      pGVar15 = *(GameObject **)(iVar1 + 0x1e8);
       break;
     default:
       if (type != AvatarItemType__Enum_ThrowingStar) {
@@ -571,9 +570,9 @@ code_?:
         func_?(&TypeInfo__PrefabPool);
         cRam_? = '\x01';
       }
-      pPVar18 = TypeInfo__PrefabPool->static_fields->instance;
-      if (pPVar18 == (PrefabPool *)0x0) goto code_?;
-      pGVar17 = (pPVar18->fields).avatarItemThrowingStar;
+      pPVar16 = TypeInfo__PrefabPool->static_fields->instance;
+      if (pPVar16 == (PrefabPool *)0x0) goto code_?;
+      pGVar15 = (pPVar16->fields).avatarItemThrowingStar;
     }
   }
   else if (type == AvatarItemType__Enum_MultiThrowingStar) {
@@ -581,31 +580,31 @@ code_?:
       func_?(&TypeInfo__PrefabPool);
       cRam_? = '\x01';
     }
-    pPVar18 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar18 == (PrefabPool *)0x0) goto code_?;
-    pGVar17 = (pPVar18->fields).avatarItemMultiThrowingStar;
+    pPVar16 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar16 == (PrefabPool *)0x0) goto code_?;
+    pGVar15 = (pPVar16->fields).avatarItemMultiThrowingStar;
   }
   else {
     switch(type) {
     case AvatarItemType__Enum_Costume:
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 0x208);
+      pGVar15 = *(GameObject **)(iVar1 + 0x208);
       break;
     case AvatarItemType__Enum_MouseGun:
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 0x1f8);
+      pGVar15 = *(GameObject **)(iVar1 + 0x1f8);
       break;
     case AvatarItemType__Enum_CollectTheItemCollectable:
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 0x200);
+      pGVar15 = *(GameObject **)(iVar1 + 0x200);
       break;
     case AvatarItemType__Enum_GrowthGun:
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 500);
+      pGVar15 = *(GameObject **)(iVar1 + 500);
       break;
     case AvatarItemType__Enum_MousePack:
     case AvatarItemType__Enum_GrowthPack:
@@ -613,7 +612,7 @@ code_?:
     case AvatarItemType__Enum_SlapGun:
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 0x1fc);
+      pGVar15 = *(GameObject **)(iVar1 + 0x1fc);
       break;
     default:
       if (type != AvatarItemType__Enum_HealRay) {
@@ -621,18 +620,18 @@ code_?:
       }
       iVar1 = func_?(0);
       if (iVar1 == 0) goto code_?;
-      pGVar17 = *(GameObject **)(iVar1 + 0x204);
+      pGVar15 = *(GameObject **)(iVar1 + 0x204);
     }
   }
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pGVar17 = (GameObject *)
+  pGVar15 = (GameObject *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                     ((Object *)pGVar17,
+                     ((Object *)pGVar15,
                       UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                      );
-  return pGVar17;
+  return pGVar15;
 }
 
 

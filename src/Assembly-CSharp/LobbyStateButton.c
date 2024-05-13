@@ -669,7 +669,7 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_OnPressPlay
           }
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
           UnityAction_1_System_Int32Enum___ctor(this_03,(Object *)value,method_1,(MethodInfo *)0x0);
-          LobbyStateButton_RequestAdWithCallback
+          LobbyStateButton_PressPlayWithCallback
                     (this,(Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)this_03,
                      (MethodInfo *)0x0);
           return;
@@ -894,9 +894,9 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_PopThenLockCursor
 }
 
 
-/* Void RequestAdWithCallback(Action`1[Assets.Scripts.AdIntegration.InterstitialAdResult]) */
+/* Void PressPlayWithCallback(Action`1[Assets.Scripts.AdIntegration.InterstitialAdResult]) */
 
-void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_RequestAdWithCallback
+void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_PressPlayWithCallback
                (LobbyStateButton *this,
                Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *callback,
                MethodInfo *method)
@@ -907,7 +907,7 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_RequestAdWithCallba
     ;
     func_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdManager);
     func_?(&
-                    MethodInfo__LobbyStateButton____c__DisplayClass27_0___RequestAdWithCallback_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_
+                    MethodInfo__LobbyStateButton____c__DisplayClass27_0___PressPlayWithCallback_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_
                    );
     func_?(&TypeInfo__LobbyStateButton____c__DisplayClass27_0);
     cRam_? = '\x01';
@@ -916,83 +916,68 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_RequestAdWithCallba
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)this;
-    func_?(value + 1,this);
-    value[1].monitor = (MonitorData *)callback;
-    func_?(&value[1].monitor,callback);
-    this_00 = (this->fields).embeddedPlayerConfig;
-    (this->fields).isInAd = 1;
-    if (this_00 != (EmbeddedPlayerConfig *)0x0) {
-      pEVar1 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                         (&EStack_2,this_00,(MethodInfo *)0x0);
-      pLStack_3 = pEVar1->sites;
-      iStack_4 = pEVar1->siteEnum;
-      uStack_5._0_1_ = pEVar1->showTouristPromotion;
-      uStack_5._1_1_ = pEVar1->allowsOpenInNewTab;
-      uStack_5._2_1_ = pEVar1->allowsRedirectToWebpage;
-      uStack_5._3_1_ = pEVar1->allowsModals;
-      uStack_6._0_1_ = pEVar1->integratedSdk;
-      uStack_6._1_1_ = pEVar1->allowsFallbackAds;
-      uStack_6._2_1_ = pEVar1->showPlayButtonAd;
-      uStack_6._3_1_ = pEVar1->hideGoldShop;
-      bVar7 = MVClientSettings::MVClientSettings_get_PlayButtonAdsEnabled((MethodInfo *)0x0);
-      if (bVar7 != 0) {
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__MVGameControllerBase);
-          cRam_? = '\x01';
-        }
-        if ((TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
-             (IEditModeUI *)0x0) && ((char)((uint)uStack_6 >> 0x10) != '\0')) {
-          pIVar8 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-          pUStack_9 = (UnityAction_1_System_Int32Enum_ *)
-                      func_?(
-                                     TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>
-                                     );
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-          UnityAction_1_System_Int32Enum___ctor
-                    (pUStack_9,value,
-                     MethodInfo__LobbyStateButton____c__DisplayClass27_0___RequestAdWithCallback_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_
-                     ,(MethodInfo *)0x0);
-          if (pIVar8 != (IAdManager *)0x0) {
-            pIVar10 = pIVar8->klass;
-            uVar11 = 0;
-            uVar12._0_1_ = (pIVar10->_1).rank;
-            uVar12._1_1_ = (pIVar10->_1).minimumAlignment;
-            if (uVar12 != 0) {
-              do {
-                if (pIVar10->interfaceOffsets[uVar11].interfaceType ==
-                    (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-                  ppMVar13 = &(&(pIVar8->klass->vtable).RequestInterstitial)
-                             [pIVar8->klass->interfaceOffsets[uVar11].offset].method;
-                  goto code_?;
-                }
-                uVar11 = uVar11 + 1;
-              } while (uVar11 < uVar12);
-            }
-            ppMVar13 = (MethodInfo **)
-                      func_?(pIVar8,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,7)
-            ;
-code_?:
-            (*(code *)*ppMVar13)(pIVar8,pUStack_9,7,ppMVar13[1]);
-            return;
+  if (value == (Object *)0x0) goto code_?;
+  value[1].klass = (Object__Class *)this;
+  func_?(value + 1,this);
+  value[1].monitor = (MonitorData *)callback;
+  func_?(&value[1].monitor,callback);
+  bVar1 = MVClientSettings::MVClientSettings_get_PlayButtonAdsEnabled((MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MVGameControllerBase);
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
+        (IEditModeUI *)0x0) {
+      this_00 = (this->fields).embeddedPlayerConfig;
+      if (this_00 == (EmbeddedPlayerConfig *)0x0) goto code_?;
+      pEVar2 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
+                         ((EmbeddedSiteConfigData *)&stack0xffffffe4,this_00,(MethodInfo *)0x0);
+      if (pEVar2->showPlayButtonAd != 0) {
+        (this->fields).isInAd = 1;
+        pIVar3 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+        this_01 = (UnityAction_1_System_Int32Enum_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+        UnityAction_1_System_Int32Enum___ctor
+                  (this_01,value,
+                   MethodInfo__LobbyStateButton____c__DisplayClass27_0___PressPlayWithCallback_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_
+                   ,(MethodInfo *)0x0);
+        if (pIVar3 != (IAdManager *)0x0) {
+          pIVar4 = pIVar3->klass;
+          uVar5 = 0;
+          uVar6._0_1_ = (pIVar4->_1).rank;
+          uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
+          if (uVar6 != 0) {
+            do {
+              if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
+                  (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
+                ppMVar7 = &(&(pIVar3->klass->vtable).RequestInterstitial)
+                           [pIVar3->klass->interfaceOffsets[uVar5].offset].method;
+                goto code_?;
+              }
+              uVar5 = uVar5 + 1;
+            } while (uVar5 < uVar6);
           }
-          goto code_?;
+          ppMVar7 = (MethodInfo **)
+                    func_?(pIVar3,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,7);
+code_?:
+          (*(code *)*ppMVar7)(pIVar3,this_01,7,ppMVar7[1]);
+          return;
         }
-      }
-      (this->fields).isInAd = 0;
-      pMVar14 = value[1].monitor;
-      if (pMVar14 != (MonitorData *)0x0) {
-        (**(code **)(pMVar14 + 0xc))(*(undefined4 *)(pMVar14 + 0x20),3,*(undefined4 *)(pMVar14 + 0x14))
-        ;
-        return;
+        goto code_?;
       }
     }
   }
+  (this->fields).isInAd = 0;
+  pMVar8 = value[1].monitor;
+  if (pMVar8 != (MonitorData *)0x0) {
+    (**(code **)(pMVar8 + 0xc))(*(undefined4 *)(pMVar8 + 0x20),3,*(undefined4 *)(pMVar8 + 0x14));
+    return;
+  }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -1190,91 +1175,93 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_Update
      (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField,
      pMVar2 != (MVNetworkGameStateListener *)0x0)) {
     iVar3 = (pMVar2->fields).currentGameState;
-    pIVar4 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-    if (pIVar4 != (IAdManager *)0x0) {
-      cVar5 = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar4);
-      if ((cVar5 == '\0') && ((this->fields).showingAdSprite != 0)) {
-        pIVar6 = (this->fields).playButtonImage;
-        if (pIVar6 == (Image *)0x0) goto code_?;
-        UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite
-                  (pIVar6,(this->fields).playButtonImageSprite,(MethodInfo *)0x0);
-        (this->fields).showingAdSprite = 0;
+    bVar4 = MVClientSettings::MVClientSettings_get_PlayButtonAdsEnabled((MethodInfo *)0x0);
+    if (bVar4 == 0) {
+      bVar4 = false;
+    }
+    else {
+      pIVar5 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+      if (pIVar5 == (IAdManager *)0x0) goto code_?;
+      cVar6 = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar5);
+      if (cVar6 == '\0') {
+        bVar4 = false;
       }
       else {
-        pIVar4 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-        if (pIVar4 == (IAdManager *)0x0) goto code_?;
-        cVar5 = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar4);
-        if ((cVar5 != '\0') && ((this->fields).showingAdSprite == 0)) {
-          this_00 = (this->fields).embeddedPlayerConfig;
-          if (this_00 == (EmbeddedPlayerConfig *)0x0) goto code_?;
-          pEVar7 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                              ((EmbeddedSiteConfigData *)&stack0xffffffe4,this_00,(MethodInfo *)0x0)
-          ;
-          uVar8 = pEVar7->noPlayButtonVideoIcon;
-          if (uVar8 == '\0') {
-            pIVar6 = (this->fields).playButtonImage;
-            if (pIVar6 == (Image *)0x0) goto code_?;
-            UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite
-                      (pIVar6,(this->fields).watchAdPlayButtonImageSprite,(MethodInfo *)0x0);
-            (this->fields).showingAdSprite = 1;
-          }
-        }
+        this_00 = (this->fields).embeddedPlayerConfig;
+        if (this_00 == (EmbeddedPlayerConfig *)0x0) goto code_?;
+        pEVar7 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
+                            ((EmbeddedSiteConfigData *)&stack0xffffffe4,this_00,(MethodInfo *)0x0);
+        uVar8 = pEVar7->noPlayButtonVideoIcon;
+        bVar4 = uVar8 == '\0';
       }
-      bVar9 = iVar3 != 2;
-      if ((bVar9) || ((this->fields).shouldUpdateFillImage == 0)) {
-        pIVar6 = (this->fields).countdownFill;
-        if ((pIVar6 != (Image *)0x0) &&
-           (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)pIVar6,(MethodInfo *)0x0),
-           pGVar10 != (GameObject *)0x0)) {
-          bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                            (pGVar10,(MethodInfo *)0x0);
-          if (bVar11 != 0) {
-            LobbyStateButton_OnCountDownEnd(this,(MethodInfo *)0x0);
-            pIVar6 = (this->fields).countdownFill;
-            if ((pIVar6 == (Image *)0x0) ||
-               (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_gameObject((Component *)pIVar6,(MethodInfo *)0x0),
-               pGVar10 == (GameObject *)0x0)) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar10,0,(MethodInfo *)0x0);
-          }
-          if (!bVar9) {
-            return;
-          }
+    }
+    bVar9 = iVar3 != 2;
+    if (bVar4 != (this->fields).showingAdSprite) {
+      pIVar10 = (this->fields).playButtonImage;
+      if ((bool)bVar4 == false) {
+        value = (this->fields).playButtonImageSprite;
+      }
+      else {
+        value = (this->fields).watchAdPlayButtonImageSprite;
+      }
+      if (pIVar10 == (Image *)0x0) goto code_?;
+      UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite(pIVar10,value,(MethodInfo *)0x0);
+      (this->fields).showingAdSprite = bVar4;
+    }
+    if ((bVar9) || ((this->fields).shouldUpdateFillImage == 0)) {
+      pIVar10 = (this->fields).countdownFill;
+      if ((pIVar10 != (Image *)0x0) &&
+         (pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)pIVar10,(MethodInfo *)0x0), pGVar11 != (GameObject *)0x0)
+         ) {
+        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                          (pGVar11,(MethodInfo *)0x0);
+        if (bVar4 != 0) {
           LobbyStateButton_OnCountDownEnd(this,(MethodInfo *)0x0);
+          pIVar10 = (this->fields).countdownFill;
+          if ((pIVar10 == (Image *)0x0) ||
+             (pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                  ((Component *)pIVar10,(MethodInfo *)0x0),
+             pGVar11 == (GameObject *)0x0)) goto code_?;
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (pGVar11,0,(MethodInfo *)0x0);
+        }
+        if (!bVar9) {
           return;
         }
+        LobbyStateButton_OnCountDownEnd(this,(MethodInfo *)0x0);
+        return;
       }
-      else {
-        pIVar6 = (this->fields).countdownFill;
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (((pMVar1 != (MVNetworkGame *)0x0) &&
-            (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField,
-            pMVar2 != (MVNetworkGameStateListener *)0x0)) &&
-           (value = MVNetworkGameStateListener::MVNetworkGameStateListener_get_CountdownInPercentage
-                              (pMVar2,(MethodInfo *)0x0), pIVar6 != (Image *)0x0)) {
-          UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
-                    (pIVar6,value,(MethodInfo *)0x0);
-          pIVar6 = (this->fields).countdownFill;
-          if ((pIVar6 != (Image *)0x0) &&
-             (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  ((Component *)pIVar6,(MethodInfo *)0x0),
-             pGVar10 != (GameObject *)0x0)) {
-            bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                              (pGVar10,(MethodInfo *)0x0);
-            if (bVar11 != 0) {
-              return;
-            }
-            pIVar6 = (this->fields).countdownFill;
-            if ((pIVar6 != (Image *)0x0) &&
-               (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_gameObject((Component *)pIVar6,(MethodInfo *)0x0),
-               pGVar10 != (GameObject *)0x0)) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar10,1,(MethodInfo *)0x0);
-              return;
-            }
+    }
+    else {
+      pIVar10 = (this->fields).countdownFill;
+      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (((pMVar1 != (MVNetworkGame *)0x0) &&
+          (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField,
+          pMVar2 != (MVNetworkGameStateListener *)0x0)) &&
+         (value_00 = MVNetworkGameStateListener::
+                     MVNetworkGameStateListener_get_CountdownInPercentage(pMVar2,(MethodInfo *)0x0),
+         pIVar10 != (Image *)0x0)) {
+        UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
+                  (pIVar10,value_00,(MethodInfo *)0x0);
+        pIVar10 = (this->fields).countdownFill;
+        if ((pIVar10 != (Image *)0x0) &&
+           (pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                ((Component *)pIVar10,(MethodInfo *)0x0),
+           pGVar11 != (GameObject *)0x0)) {
+          bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                            (pGVar11,(MethodInfo *)0x0);
+          if (bVar4 != 0) {
+            return;
+          }
+          pIVar10 = (this->fields).countdownFill;
+          if ((pIVar10 != (Image *)0x0) &&
+             (pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                  ((Component *)pIVar10,(MethodInfo *)0x0),
+             pGVar11 != (GameObject *)0x0)) {
+            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                      (pGVar11,1,(MethodInfo *)0x0);
+            return;
           }
         }
       }

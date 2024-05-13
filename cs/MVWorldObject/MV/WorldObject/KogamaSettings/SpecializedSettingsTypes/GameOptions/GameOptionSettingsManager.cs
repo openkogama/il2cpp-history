@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using MV.WorldObject.KogamaSettings.KogamaSettingsCore.KogamaSettingTypes;
 
 // Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -24,16 +25,16 @@ namespace MV.WorldObject.KogamaSettings.SpecializedSettingsTypes.GameOptions
 	
 		// Nested types
 		[CompilerGenerated]
-		private sealed class __c__DisplayClass1
+		private sealed class __c__DisplayClass4_0
 		{
 			// Fields
 			public List<KogamaSettingValueWrapperBase> inv;
 	
 			// Constructors
-			public __c__DisplayClass1();
+			public __c__DisplayClass4_0();
 	
 			// Methods
-			public void _GetSettingsSettingsList_b__0(KogamaSettingWrapperBase settingNode);
+			internal void _GetSettingsSettingsList_b__0(KogamaSettingWrapperBase settingNode);
 		}
 	
 		// Constructors

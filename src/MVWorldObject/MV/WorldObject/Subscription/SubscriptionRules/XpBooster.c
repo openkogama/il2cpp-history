@@ -30,22 +30,17 @@ int32_t MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpB
         XpBooster_GetTotalXPBoost(XpBooster *this,int32_t membersCount,MethodInfo *method)
 
 {
-  auVar1 = ZEXT812(0);
-  if (0 < membersCount) {
-    auVar1._4_8_ = 0;
-    auVar1._0_4_ = (float)(this->fields).firstOtherMemberBoost / _UNK_? + 0.0;
+  fVar1 = 0.0;
+  if ((0 < membersCount) &&
+     (fVar1 = (float)(this->fields).firstOtherMemberBoost / _UNK_? + 0.0, 1 < membersCount))
+  {
+    fVar1 = fVar1 + ((float)(this->fields).otherMembersBoost / _UNK_?) *
+                    (float)(membersCount + -1);
   }
-  if (1 < membersCount) {
-    auVar1._4_8_ = auVar1._4_8_;
-    auVar1._0_4_ = auVar1._0_4_ +
-                   ((float)(this->fields).otherMembersBoost / _UNK_?) *
-                   (float)(membersCount + -1);
+  if ((float)(this->fields).maxMemberBoost / _UNK_? < fVar1) {
+    fVar1 = (float)(this->fields).maxMemberBoost / _UNK_?;
   }
-  fVar2 = auVar1._0_4_;
-  if ((float)(this->fields).maxMemberBoost / _UNK_? < fVar2) {
-    fVar2 = (float)(this->fields).maxMemberBoost / _UNK_?;
-  }
-  return (int)((fVar2 + (float)(this->fields).baseBoost / _UNK_?) * _UNK_?);
+  return (int)(((float)(this->fields).baseBoost / _UNK_? + fVar1) * _UNK_?);
 }
 
 

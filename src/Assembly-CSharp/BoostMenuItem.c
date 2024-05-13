@@ -152,8 +152,8 @@ int32_t Assembly-CSharp.dll::BoostMenuItem::BoostMenuItem_GetBoostPrice
         if ((RVar1 == (RegexCharClass_SingleRange)0x0) ||
            (pBVar2 = (this->fields).boost, pBVar2 == (Boost *)0x0)) goto code_?;
         bVar3 = mscorlib.dll::System::String::String_op_Equality
-                          (*(String **)((int)RVar1 + 8),(pBVar2->fields)._BoostKey_k__BackingField,
-                           (MethodInfo *)0x0);
+                          (*(String **)((int)RVar1 + 0xc),(pBVar2->fields)._BoostKey_k__BackingField
+                           ,(MethodInfo *)0x0);
         if (bVar3 != 0) break;
         index = index + 1;
       }

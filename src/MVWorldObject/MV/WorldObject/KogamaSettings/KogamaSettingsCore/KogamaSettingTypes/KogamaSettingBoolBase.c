@@ -22,9 +22,9 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields)._._._Parent_k__BackingField = parent;
-  func_?(&(this->fields)._._._Parent_k__BackingField,parent);
+  func_?(&this->fields,parent);
   (this->fields)._._.key = key;
-  func_?(&this->fields,key);
+  func_?(&(this->fields)._._.key,key);
   method_00 = 
   TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBool
   ;

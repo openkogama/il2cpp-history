@@ -22,7 +22,7 @@ void Assembly-CSharp.dll::ModelCursor::ModelCursor_HandleLaser
       GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
       GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ActivateLaserForDuration
                 (pGVar5,0.2,(MethodInfo *)0x0);
-      uVar6._0_4_ = 3.895544e-29;
+      uVar6._0_4_ = 3.8956306e-29;
       uVar6._4_4_ = 0.0;
       pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
       if (((pGVar3 != (GameEventManager *)0x0) &&
@@ -93,7 +93,7 @@ void Assembly-CSharp.dll::ModelCursor::ModelCursor_HandleLaserMovingEdge
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0x7478);
+    func_?(0x7488);
     cRam_? = '\x01';
   }
   if (movingEdgeCube != (CubePickingInfo *)0x0) {

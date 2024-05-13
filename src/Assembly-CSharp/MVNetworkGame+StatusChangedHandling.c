@@ -253,20 +253,21 @@ code_?:
   }
 code_?:
   uVar7 = func_?();
+  method_00[-0x4a5391].parameters_count =
+       method_00[-0x4a5391].parameters_count + (char)((uint)unaff_EBX >> 8) +
+       (*(byte *)uVar7 < (byte)uVar7);
+  uVar7 = (**(code **)((byte *)uVar7 + (int)((ulonglong)uVar7 >> 0x20) + 0x3a))();
   piVar8 = (int *)((ulonglong)uVar7 >> 0x20);
   pcVar9 = (char *)uVar7;
-  pcVar10 = (char *)((int)&method_00[-0x4a5391].slot + 1);
-  *pcVar10 = *pcVar10 + (char)((uint)unaff_EBX >> 8);
-  (pcVar9 + 0x3a)[(int)piVar8] = (pcVar9 + 0x3a)[(int)piVar8] + '\x01';
   *pcVar9 = *pcVar9 + (char)uVar7;
   *piVar8 = (int)(pcVar9 + *piVar8);
   *(char *)unaff_EBX = (char)*unaff_EBX + (char)uVar7;
   pcVar9 = pcVar9 + *unaff_EBX;
   *(char *)unaff_EBX = (char)*unaff_EBX + (char)pcVar9;
-  pcVar10 = (char *)((int)(pcVar9 + *unaff_EBX + *unaff_EBX + *unaff_EBX) +
+  pcVar9 = (char *)((int)(pcVar9 + *unaff_EBX + *unaff_EBX + *unaff_EBX) +
                    *(int *)(pcVar9 + *unaff_EBX + *unaff_EBX + *unaff_EBX));
-  *pcVar10 = *pcVar10 + (char)pcVar10;
-  *pcVar10 = *pcVar10 + (char)pcVar10;
+  *pcVar9 = *pcVar9 + (char)pcVar9;
+  *pcVar9 = *pcVar9 + (char)pcVar9;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';

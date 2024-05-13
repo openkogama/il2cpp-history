@@ -108,18 +108,34 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettings
   }
   args = (Object__Array *)func_?(TypeInfo__System__Object,4);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Object);
+    func_?(&System__Object__MethodInfo__System__Array__Empty<System::Object>______);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields)._._.key;
-  args_00 = (Object__Array *)func_?(TypeInfo__System__Object,0);
-  pSVar1 = mscorlib.dll::System::String::String_Format_3(pSVar1,args_00,(MethodInfo *)0x0);
+  pMVar1 = System__Object__MethodInfo__System__Array__Empty<System::Object>______;
+  pSVar2 = (this->fields)._._.key;
+  if ((System__Object__MethodInfo__System__Array__Empty<System::Object>______->field7_0x1c).
+      rgctx_data == (Il2CppRGCTXData *)0x0) {
+    func_?(System__Object__MethodInfo__System__Array__Empty<System::Object>______);
+  }
+  pIVar3 = (pMVar1->field7_0x1c).rgctx_data[2].klass;
+  if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar3 = (Il2CppClass *)func_?(pIVar3);
+  }
+  if (pIVar3->cctor_finished_or_no_cctor == 0) {
+    func_?(pIVar3);
+  }
+  pIVar3 = (pMVar1->field7_0x1c).rgctx_data[2].klass;
+  if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar3 = (Il2CppClass *)func_?(pIVar3);
+  }
+  pSVar2 = mscorlib.dll::System::String::String_Format_3
+                     (pSVar2,*(Object__Array **)pIVar3->static_fields,(MethodInfo *)0x0);
   if (args == (Object__Array *)0x0) {
 code_?:
     func_?();
 code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
+    uVar4 = func_?(0);
+    func_?(uVar4);
 code_?:
     func_?();
     func_?();
@@ -128,84 +144,84 @@ code_?:
     func_?();
   }
   else {
-    if (pSVar1 != (String *)0x0) {
-      iVar3 = func_?(pSVar1,(args->klass->_0).element_class);
-      if (iVar3 != 0) goto code_?;
+    if (pSVar2 != (String *)0x0) {
+      iVar5 = func_?(pSVar2,(args->klass->_0).element_class);
+      if (iVar5 != 0) goto code_?;
       goto code_?;
     }
 code_?:
     if (args->max_length == 0) goto code_?;
-    args->vector[0] = (Object *)pSVar1;
-    func_?(args->vector,pSVar1);
-    pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+    args->vector[0] = (Object *)pSVar2;
+    func_?(args->vector,pSVar2);
+    pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
              (this->fields)._.children;
-    if (pDVar4 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    if (pDVar6 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
-    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (pDVar4,(Object *)StringLiteral_sk,
+                      (pDVar6,(Object *)StringLiteral_sk,
                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
                       );
-    if (TVar5.m_Index != 0) {
-      iVar3 = func_?();
-      if (iVar3 != 0) goto code_?;
+    if (TVar7.m_Index != 0) {
+      iVar5 = func_?();
+      if (iVar5 != 0) goto code_?;
       goto code_?;
     }
 code_?:
     if (args->max_length < 2) goto code_?;
-    args->vector[1] = (Object *)TVar5.m_Index;
+    args->vector[1] = (Object *)TVar7.m_Index;
     func_?();
-    pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+    pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
              (this->fields)._.children;
-    if (pDVar4 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    if (pDVar6 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
-    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (pDVar4,(Object *)StringLiteral_gsk,
+                      (pDVar6,(Object *)StringLiteral_gsk,
                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
                       );
-    if (TVar5.m_Index != 0) {
-      iVar3 = func_?();
-      if (iVar3 != 0) goto code_?;
+    if (TVar7.m_Index != 0) {
+      iVar5 = func_?();
+      if (iVar5 != 0) goto code_?;
       goto code_?;
     }
 code_?:
     if (args->max_length < 3) goto code_?;
-    args->vector[2] = (Object *)TVar5.m_Index;
+    args->vector[2] = (Object *)TVar7.m_Index;
     func_?();
-    pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+    pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
              (this->fields)._.children;
-    if (pDVar4 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    if (pDVar6 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
-    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (pDVar4,(Object *)StringLiteral_tsk,
+                      (pDVar6,(Object *)StringLiteral_tsk,
                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
                       );
-    if (TVar5.m_Index == 0) {
+    if (TVar7.m_Index == 0) {
 code_?:
       if (3 < args->max_length) {
-        args->vector[3] = (Object *)TVar5.m_Index;
+        args->vector[3] = (Object *)TVar7.m_Index;
         func_?();
-        pSVar1 = mscorlib.dll::System::String::String_Format_3
+        pSVar2 = mscorlib.dll::System::String::String_Format_3
                            (StringLiteral__0___Setting___1__GoldSetting___,args,(MethodInfo *)0x0);
-        return pSVar1;
+        return pSVar2;
       }
       goto code_?;
     }
-    iVar3 = func_?();
-    if (iVar3 != 0) goto code_?;
+    iVar5 = func_?();
+    if (iVar5 != 0) goto code_?;
   }
   func_?();
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar6)();
-  return pSVar1;
+  pcVar8 = (code *)swi(3);
+  pSVar2 = (String *)(*pcVar8)();
+  return pSVar2;
 }
 
 
@@ -245,9 +261,9 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields)._._._Parent_k__BackingField = kogamaSettingsCollection;
-  func_?(&(this->fields)._._._Parent_k__BackingField,kogamaSettingsCollection);
+  func_?(&this->fields,kogamaSettingsCollection);
   (this->fields)._._.key = key;
-  func_?(&this->fields,key);
+  func_?(&(this->fields)._._.key,key);
   return;
 }
 

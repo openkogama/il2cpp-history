@@ -1,6 +1,4 @@
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Dictionary`2[System.Object,System.Object] GetDataParameters(BytePacker, KogamaDataType, Boolean)
     */
 
@@ -35,18 +33,17 @@ BytePackerFunctionsVersion11_GetDataParameters
       cRam_? = '\x01';
     }
     if (bp != (BytePacker *)0x0) {
-      unaff_ESI = (Object *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-      unaff_EBX = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-      pOVar2 = (Object *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-      bp = (BytePacker *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                          );
+      unaff_ESI = (undefined *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+      BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+      puVar2 = (undefined *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+      this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+              *)func_?(
+                               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                               );
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
       UIElements::StyleComplexSelector+PseudoStateData]::
       Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                  *)bp,
+                (this,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
       kogamaDataType = kogamaDataType & 0xffffff;
@@ -54,12 +51,11 @@ BytePackerFunctionsVersion11_GetDataParameters
                func_?(TypeInfo__MV__WorldObject__LinkDataParameter,
                                (byte *)((int)&kogamaDataType + 3));
       pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff4);
-      if ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
-          )bp != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                  *)0x0) {
+      if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  ((Dictionary_2_System_Object_System_Object_ *)bp,pOVar3,pOVar4,
+                  ((Dictionary_2_System_Object_System_Object_ *)this,pOVar3,pOVar4,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         uStack_5 = 1;
@@ -67,20 +63,23 @@ BytePackerFunctionsVersion11_GetDataParameters
         pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffec);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  ((Dictionary_2_System_Object_System_Object_ *)bp,pOVar3,pOVar4,
+                  ((Dictionary_2_System_Object_System_Object_ *)this,pOVar3,pOVar4,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         uStack_6 = 2;
-        pOStack_7 = pOVar2;
-        unaff_ESI = (Object *)
-                    func_?(TypeInfo__MV__WorldObject__LinkDataParameter,&uStack_6);
-        ppOVar8 = &pOStack_7;
-        goto code_?;
+        puStack_7 = puVar2;
+        pOVar3 = (Object *)func_?(TypeInfo__MV__WorldObject__LinkDataParameter,&uStack_6);
+        ppuVar8 = &puStack_7;
+code_?:
+        pOVar4 = (Object *)func_?(TypeInfo__System__Int32,ppuVar8);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Add
+                  ((Dictionary_2_System_Object_System_Object_ *)this,pOVar3,pOVar4,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  );
+        return (Dictionary_2_System_Object_System_Object_ *)this;
       }
     }
-code_?:
-    func_?();
-    *(int *)(unaff_EBX + -0xbba7410) = *(int *)(unaff_EBX + -0xbba7410) + -1;
     break;
   case KogamaDataType__Enum_ObjectLinks:
     if (cRam_? == '\0') {
@@ -97,62 +96,57 @@ code_?:
       func_?(&TypeInfo__MV__WorldObject__ObjectLinkDataParameter);
       cRam_? = '\x01';
     }
-    if (bp == (BytePacker *)0x0) goto code_?;
-    unaff_ESI = (Object *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-    unaff_EBX = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-    BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-    bp = (BytePacker *)
-         func_?(
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
-    ::StyleComplexSelector+PseudoStateData]::
-    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-              ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                *)bp,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    kogamaDataType = kogamaDataType & 0xffffff;
-    pOVar2 = (Object *)
-             func_?(TypeInfo__MV__WorldObject__ObjectLinkDataParameter,
-                             (byte *)((int)&kogamaDataType + 3));
-    pOStack_7 = unaff_ESI;
-    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&pOStack_7);
-    if ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
-        bp == (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-               *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)bp,pOVar2,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    uStack_6 = 1;
-    pOVar2 = (Object *)func_?(TypeInfo__MV__WorldObject__ObjectLinkDataParameter,&uStack_6)
-    ;
-    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffec);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)bp,pOVar2,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    uStack_5 = 2;
-    unaff_ESI = (Object *)
-                func_?(TypeInfo__MV__WorldObject__ObjectLinkDataParameter,&uStack_5);
+    if (bp != (BytePacker *)0x0) {
+      unaff_ESI = (undefined *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+      BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+      BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+      this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+              *)func_?(
+                               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                               );
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      UIElements::StyleComplexSelector+PseudoStateData]::
+      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                (this,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                );
+      kogamaDataType = kogamaDataType & 0xffffff;
+      pOVar3 = (Object *)
+               func_?(TypeInfo__MV__WorldObject__ObjectLinkDataParameter,
+                               (byte *)((int)&kogamaDataType + 3));
+      puStack_7 = unaff_ESI;
+      pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&puStack_7);
+      if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Add
+                  ((Dictionary_2_System_Object_System_Object_ *)this,pOVar3,pOVar4,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  );
+        uStack_6 = 1;
+        pOVar3 = (Object *)
+                 func_?(TypeInfo__MV__WorldObject__ObjectLinkDataParameter,&uStack_6);
+        pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffec);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Add
+                  ((Dictionary_2_System_Object_System_Object_ *)this,pOVar3,pOVar4,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  );
+        uStack_5 = 2;
+        pOVar3 = (Object *)
+                 func_?(TypeInfo__MV__WorldObject__ObjectLinkDataParameter,&uStack_5);
+        ppuVar8 = (undefined **)&stack0xfffffff4;
+        goto code_?;
+      }
+    }
     break;
   default:
     return (Dictionary_2_System_Object_System_Object_ *)0x0;
   }
-  ppOVar8 = (Object **)&stack0xfffffff4;
-code_?:
-  pOVar2 = (Object *)func_?(TypeInfo__System__Int32,ppOVar8);
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-  Dictionary_2_System_Object_System_Object__Add
-            ((Dictionary_2_System_Object_System_Object_ *)bp,unaff_ESI,pOVar2,
-             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-            );
-  return (Dictionary_2_System_Object_System_Object_ *)
-         (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
-         bp;
+  func_?();
+  pcVar9 = (code *)swi(3);
+  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar9)(unaff_ESI);
+  return pDVar1;
 }
 
 
@@ -207,7 +201,7 @@ void MVWorldObject.dll::MV::WorldObject::BytePackerFunctions::BytePackerFunction
           pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                     *)func_?(TypeInfo__System__Single);
           pDVar7 = (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
-                     *)0x0;
+                    *)0x0;
           if (0 < iVar5) {
             piStack_8 = &(pDVar6->fields)._count;
             do {
@@ -216,7 +210,7 @@ void MVWorldObject.dll::MV::WorldObject::BytePackerFunctions::BytePackerFunction
                              *)0x0) goto code_?;
               if ((pDVar6->fields)._entries <= pDVar7) goto code_?;
               pDVar7 = (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
-                         *)((int)&pDVar7->klass + 1);
+                        *)((int)&pDVar7->klass + 1);
               *piStack_8 = (int32_t)fVar9;
               piStack_8 = piStack_8 + 1;
             } while ((int)pDVar7 < iVar5);
@@ -237,46 +231,46 @@ void MVWorldObject.dll::MV::WorldObject::BytePackerFunctions::BytePackerFunction
           if (0 < iVar5) {
             do {
               BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-              pOVar11 = (Object *)func_?();
-              pOVar12 = (Object *)func_?(TypeInfo__System__Byte);
+              key = (Object *)func_?();
+              value = (Object *)func_?(TypeInfo__System__Byte);
               if (pDVar6 == (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                              *)0x0) goto code_?;
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
               Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)pDVar6,pOVar11,pOVar12,
+                        ((Dictionary_2_System_Object_System_Object_ *)pDVar6,key,value,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                         );
               iVar10 = iVar10 + 1;
             } while (iVar10 < iVar5);
           }
+          goto joined_?;
+        }
+        if (uVar3 == 5) {
+          BytePacker::BytePacker_ReadBoolean(bp,(MethodInfo *)0x0);
+          pBVar4 = (Byte__Class *)TypeInfo__System__Boolean;
+          goto code_?;
+        }
+        if (uVar3 == 6) {
+          iVar5 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+          pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                    *)func_?(TypeInfo__System__Boolean);
+          pDVar7 = (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
+                    *)0x0;
+          if (0 < iVar5) {
+            do {
+              bVar11 = BytePacker::BytePacker_ReadBoolean(bp,(MethodInfo *)0x0);
+              if (pDVar6 == (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                             *)0x0) goto code_?;
+              if ((pDVar6->fields)._entries <= pDVar7) goto code_?;
+              *(bool *)((int)&pDVar6->klass + (int)&pDVar7->vector[0].hashCode) = bVar11;
+              pDVar7 = (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
+                        *)((int)&pDVar7->klass + 1);
+            } while ((int)pDVar7 < iVar5);
+          }
 joined_?:
           if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
         }
         else {
-          if (uVar3 == 5) {
-            BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
-            pBVar4 = (Byte__Class *)TypeInfo__System__Boolean;
-            goto code_?;
-          }
-          if (uVar3 == 6) {
-            iVar5 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-            pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                      *)func_?(TypeInfo__System__Boolean);
-            pDVar7 = (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
-                       *)0x0;
-            if (0 < iVar5) {
-              do {
-                uVar3 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
-                if (pDVar6 == (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                               *)0x0) goto code_?;
-                if ((pDVar6->fields)._entries <= pDVar7) goto code_?;
-                *(bool *)((int)&pDVar6->klass + (int)&pDVar7->vector[0].hashCode) = uVar3 != 0;
-                pDVar7 = (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
-                           *)((int)&pDVar7->klass + 1);
-              } while ((int)pDVar7 < iVar5);
-            }
-            goto code_?;
-          }
           if (uVar3 == 7) {
             pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                       *)BytePacker::BytePacker_ReadString(bp,(MethodInfo *)0x0);
@@ -292,7 +286,7 @@ code_?:
               goto joined_?;
             }
             if (uVar3 == 10) {
-              BytePacker::BytePacker_ReadUInt64(bp,(MethodInfo *)0x0);
+              BytePacker::BytePacker_ReadInt64(bp,(MethodInfo *)0x0);
               pBVar4 = (Byte__Class *)TypeInfo__System__Int64;
               goto code_?;
             }
@@ -301,18 +295,18 @@ code_?:
               pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                         *)func_?(TypeInfo__System__Int64);
               pDVar7 = (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
-                         *)0x0;
+                        *)0x0;
               if (0 < iVar5) {
-                pSStack_13 = (String__Fields *)&pDVar6->fields;
+                pSStack_12 = (String__Fields *)&pDVar6->fields;
                 do {
-                  pSStack_13 = pSStack_13 + 1;
-                  SVar14 = (String__Fields)BytePacker::BytePacker_ReadUInt64(bp,(MethodInfo *)0x0);
+                  pSStack_12 = pSStack_12 + 1;
+                  SVar13 = (String__Fields)BytePacker::BytePacker_ReadInt64(bp,(MethodInfo *)0x0);
                   if (pDVar6 == (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                                  *)0x0) goto code_?;
                   if ((pDVar6->fields)._entries <= pDVar7) goto code_?;
                   pDVar7 = (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
-                             *)((int)&pDVar7->klass + 1);
-                  *pSStack_13 = SVar14;
+                            *)((int)&pDVar7->klass + 1);
+                  *pSStack_12 = SVar13;
                 } while ((int)pDVar7 < iVar5);
               }
               goto code_?;
@@ -346,17 +340,17 @@ code_?:
       pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                 *)func_?(TypeInfo__System__Int32);
       pDVar7 = (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
-                 *)0x0;
+                *)0x0;
       if (0 < iVar5) {
         piStack_8 = &(pDVar6->fields)._count;
         do {
-          iVar15 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+          iVar14 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
           if (pDVar6 == (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                          *)0x0) goto code_?;
           if ((pDVar6->fields)._entries <= pDVar7) goto code_?;
           pDVar7 = (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
-                     *)((int)&pDVar7->klass + 1);
-          *piStack_8 = iVar15;
+                    *)((int)&pDVar7->klass + 1);
+          *piStack_8 = iVar14;
           piStack_8 = piStack_8 + 1;
         } while ((int)pDVar7 < iVar5);
       }
@@ -376,13 +370,14 @@ code_?:
 code_?:
   func_?();
 code_?:
-  uVar16 = func_?(&TypeInfo__MV__Common__HashtableDataType);
-  pOVar11 = (Object *)func_?(uVar16);
-  pOVar12 = (Object *)func_?(&StringLiteral__from_WriteDataToBytePacker_);
-  arg0 = (Object *)func_?(&StringLiteral_Trying_to_read_unsupported_type_);
-  pSVar2 = mscorlib.dll::System::String::String_Concat_1(arg0,pOVar11,pOVar12,(MethodInfo *)0x0);
-  uVar16 = func_?(&TypeInfo__System__Exception);
-  this = (Exception *)func_?(uVar16);
+  uVar15 = func_?(&TypeInfo__MV__Common__HashtableDataType);
+  func_?(uVar15);
+  pSVar2 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffc4,(MethodInfo *)0x0);
+  str2 = (String *)func_?(&StringLiteral__from_WriteDataToBytePacker_);
+  str0 = (String *)func_?(&StringLiteral_Trying_to_read_unsupported_type_);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_4(str0,pSVar2,str2,(MethodInfo *)0x0);
+  uVar15 = func_?(&TypeInfo__System__Exception);
+  this = (Exception *)func_?(uVar15);
   mscorlib.dll::System::Exception::Exception__ctor_1(this,pSVar2,(MethodInfo *)0x0);
   func_?(&
                   MethodInfo__MV__WorldObject__BytePackerFunctions__BytePackerFunctionsVersion11__GetHashTableFromBytePacker_MV__WorldObject__BytePacker__System__Collections__Generic__Dictionary<System::Object,_System::Object>__int_
@@ -390,8 +385,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -569,66 +564,73 @@ BytePackerFunctionsVersion11_GetPrototypeDataParameters(BytePacker *bp,MethodInf
     func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
   }
+  this = bp;
   if (bp != (BytePacker *)0x0) {
-    BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-    pBVar1 = BytePacker::BytePacker_ReadBytes(bp,4,(MethodInfo *)0x0);
-    mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar1,(MethodInfo *)0x0);
-    mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar1,0,(MethodInfo *)0x0);
-    BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-    count = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-    pBVar1 = BytePacker::BytePacker_ReadBytes(bp,count,(MethodInfo *)0x0);
-    this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-            *)func_?();
+    pBVar1 = (BytePacker__Class *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+    BytePacker::BytePacker_ReadSingle(this,(MethodInfo *)0x0);
+    iVar2 = BytePacker::BytePacker_ReadInt32(this,(MethodInfo *)0x0);
+    count = BytePacker::BytePacker_ReadInt32(this,(MethodInfo *)0x0);
+    value = BytePacker::BytePacker_ReadBytes(this,count,(MethodInfo *)0x0);
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)func_?(
+                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                );
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
     ::StyleComplexSelector+PseudoStateData]::
     Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-              (this,
+              (this_00,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    pOVar2 = (Object *)func_?();
-    pOVar3 = (Object *)func_?();
-    if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                 *)0x0) {
+    bp = (BytePacker *)((uint)bp & 0xffffff);
+    pOVar3 = (Object *)
+             func_?(TypeInfo__MV__WorldObject__PrototypeDataParameters,(int)&bp + 3);
+    bp = (BytePacker *)&pIStack_4;
+    pIStack_4 = (Int32__Class *)pBVar1;
+    pOVar5 = (Object *)func_?();
+    if (this_00 !=
+        (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+        0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this,pOVar2,pOVar3,
+                ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar3,pOVar5,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      uStack_4 = (Int32__Class *)CONCAT13(1,(undefined3)uStack_4);
-      pOVar2 = (Object *)
-               func_?(TypeInfo__MV__WorldObject__PrototypeDataParameters,(int)&uStack_4 + 3
+      uStack_6 = (MonitorData *)CONCAT13(1,(undefined3)uStack_6);
+      pOVar3 = (Object *)
+               func_?(TypeInfo__MV__WorldObject__PrototypeDataParameters,(int)&uStack_6 + 3
                               );
-      pOVar3 = (Object *)func_?(TypeInfo__System__Single,&stack0xffffffec);
+      pOVar5 = (Object *)func_?(TypeInfo__System__Single,&stack0xffffffe8);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this,pOVar2,pOVar3,
+                ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar3,pOVar5,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      uStack_4._0_3_ = CONCAT12(2,(undefined2)uStack_4);
-      pOVar2 = (Object *)
-               func_?(TypeInfo__MV__WorldObject__PrototypeDataParameters,(int)&uStack_4 + 2
+      uStack_6._0_3_ = CONCAT12(2,(undefined2)uStack_6);
+      pOVar3 = (Object *)
+               func_?(TypeInfo__MV__WorldObject__PrototypeDataParameters,(int)&uStack_6 + 2
                               );
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this,pOVar2,(Object *)pBVar1,
+                ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar3,(Object *)value,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      uStack_4._0_2_ = CONCAT11(3,(undefined1)uStack_4);
-      pOVar2 = (Object *)func_?();
-      uStack_4 = TypeInfo__System__Int32;
       pOVar3 = (Object *)func_?();
+      uStack_6 = (MonitorData *)&puStack_7;
+      pIStack_4 = TypeInfo__System__Int32;
+      puStack_7 = (undefined *)iVar2;
+      pOVar5 = (Object *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this,pOVar2,pOVar3,
+                ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar3,pOVar5,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      return (Dictionary_2_System_Object_System_Object_ *)this;
+      return (Dictionary_2_System_Object_System_Object_ *)this_00;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  pDVar6 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar5)();
-  return pDVar6;
+  pcVar8 = (code *)swi(3);
+  pDVar9 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar8)();
+  return pDVar9;
 }
 
 
@@ -659,128 +661,101 @@ BytePackerFunctionsVersion11_GetWorldObjectDataParameters
   }
   if (bp != (BytePacker *)0x0) {
     BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-    puVar1 = (undefined *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-    iStack_2 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
     BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-    pBVar3 = BytePacker::BytePacker_ReadBytes(bp,4,(MethodInfo *)0x0);
-    mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar3,(MethodInfo *)0x0);
-    pDStack_4 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                 *)mscorlib.dll::System::BitConverter::BitConverter_ToSingle
-                             (pBVar3,0,(MethodInfo *)0x0);
-    pBVar3 = BytePacker::BytePacker_ReadBytes(bp,4,(MethodInfo *)0x0);
-    mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar3,(MethodInfo *)0x0);
-    mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar3,0,(MethodInfo *)0x0);
-    pBVar3 = BytePacker::BytePacker_ReadBytes(bp,4,(MethodInfo *)0x0);
-    mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar3,(MethodInfo *)0x0);
-    mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar3,0,(MethodInfo *)0x0);
-    pBVar3 = BytePacker::BytePacker_ReadBytes(bp,4,(MethodInfo *)0x0);
-    mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar3,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)
-                mscorlib.dll::System::BitConverter::BitConverter_ToSingle
-                          (pBVar3,0,(MethodInfo *)0x0);
-    pBVar3 = BytePacker::BytePacker_ReadBytes(bp,4,method_00);
-    mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar3,(MethodInfo *)0x0);
-    pDStack_4 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                 *)mscorlib.dll::System::BitConverter::BitConverter_ToSingle
-                             (pBVar3,0,(MethodInfo *)0x0);
-    pBVar3 = BytePacker::BytePacker_ReadBytes(bp,4,(MethodInfo *)0x0);
-    mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar3,(MethodInfo *)0x0);
-    mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar3,0,(MethodInfo *)0x0);
-    pBVar3 = BytePacker::BytePacker_ReadBytes(bp,4,(MethodInfo *)0x0);
-    mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar3,(MethodInfo *)0x0);
-    mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar3,0,(MethodInfo *)0x0);
-    pBVar3 = BytePacker::BytePacker_ReadBytes(bp,4,(MethodInfo *)0x0);
-    mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar3,(MethodInfo *)0x0);
-    mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar3,0,(MethodInfo *)0x0);
-    pBVar3 = BytePacker::BytePacker_ReadBytes(bp,4,(MethodInfo *)0x0);
-    mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar3,(MethodInfo *)0x0);
-    mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar3,0,(MethodInfo *)0x0);
-    pBVar3 = BytePacker::BytePacker_ReadBytes(bp,4,(MethodInfo *)0x0);
-    mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar3,(MethodInfo *)0x0);
-    mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar3,0,(MethodInfo *)0x0);
-    pDVar5 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+    iStack_1 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+    BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+    BytePacker::BytePacker_ReadSingle(bp,(MethodInfo *)0x0);
+    BytePacker::BytePacker_ReadSingle(bp,(MethodInfo *)0x0);
+    BytePacker::BytePacker_ReadSingle(bp,(MethodInfo *)0x0);
+    BytePacker::BytePacker_ReadSingle(bp,(MethodInfo *)0x0);
+    BytePacker::BytePacker_ReadSingle(bp,(MethodInfo *)0x0);
+    method_00 = (MethodInfo *)BytePacker::BytePacker_ReadSingle(bp,(MethodInfo *)0x0);
+    BytePacker::BytePacker_ReadSingle(bp,method_00);
+    BytePacker::BytePacker_ReadSingle(bp,(MethodInfo *)0x0);
+    BytePacker::BytePacker_ReadSingle(bp,(MethodInfo *)0x0);
+    BytePacker::BytePacker_ReadSingle(bp,(MethodInfo *)0x0);
+    pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
               *)func_?();
-    pDVar6 = pDVar5;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
     ::StyleComplexSelector+PseudoStateData]::
     Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-              (pDVar5,
+              (pDVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    iVar7 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+    iVar3 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
     BytePackerFunctionsVersion11_GetHashTableFromBytePacker
-              (bp,(Dictionary_2_System_Object_System_Object_ *)pDVar5,iVar7,(MethodInfo *)0x0);
-    pDStack_4 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                 *)func_?();
+              (bp,(Dictionary_2_System_Object_System_Object_ *)pDVar2,iVar3,(MethodInfo *)0x0);
+    value = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+    pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+              *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
     ::StyleComplexSelector+PseudoStateData]::
     Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-              (pDStack_4,
+              (pDVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    pOVar8 = (Object *)func_?();
-    pOVar9 = (Object *)func_?();
-    pDVar5 = pDStack_4;
-    if (pDStack_4 !=
-        (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
-        0x0) {
+    pOVar4 = (Object *)func_?();
+    pIVar5 = TypeInfo__System__Int32;
+    pOVar6 = (Object *)func_?();
+    if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)pDStack_4,pOVar8,pOVar9,
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar2,pOVar4,pOVar6,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      uStack_10 = 1;
-      puStack_11 = puVar1;
-      pOVar8 = (Object *)
-               func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStack_10);
-      pOVar9 = (Object *)func_?(TypeInfo__System__Int32,&puStack_11);
+      uStack_7 = 1;
+      pOVar4 = (Object *)
+               func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStack_7);
+      pIStack_8 = pIVar5;
+      pOVar6 = (Object *)func_?(TypeInfo__System__Int32,&pIStack_8);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)pDVar5,pOVar8,pOVar9,
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar2,pOVar4,pOVar6,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      uStack_12 = 2;
-      pOVar8 = (Object *)
-               func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStack_12);
-      iStack_13 = iStack_2;
-      pOVar9 = (Object *)func_?(TypeInfo__System__Int32,&iStack_13);
+      uStack_9 = 2;
+      pOVar4 = (Object *)
+               func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStack_9);
+      iStack_10 = iStack_1;
+      pOVar6 = (Object *)func_?(TypeInfo__System__Int32,&iStack_10);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)pDVar5,pOVar8,pOVar9,
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar2,pOVar4,pOVar6,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      pOVar8 = (Object *)func_?();
-      pOVar9 = (Object *)func_?();
+      pOVar4 = (Object *)func_?();
+      pOVar6 = (Object *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)pDVar5,pOVar8,pOVar9,
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar2,pOVar4,pOVar6,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      pOVar8 = (Object *)func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters);
-      pOVar9 = (Object *)func_?(TypeInfo__UnityEngine__Vector3,&stack0xffffff90);
+      pOVar4 = (Object *)func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters);
+      pOVar6 = (Object *)func_?(TypeInfo__UnityEngine__Vector3,&stack0xffffff94);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)pDVar5,pOVar8,pOVar9,
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar2,pOVar4,pOVar6,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      pOVar8 = (Object *)func_?();
-      pOVar9 = (Object *)func_?();
+      pOVar4 = (Object *)func_?();
+      pOVar6 = (Object *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)pDVar5,pOVar8,pOVar9,
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar2,pOVar4,pOVar6,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      pOVar8 = (Object *)func_?();
-      pOVar9 = (Object *)func_?();
+      pOVar4 = (Object *)func_?();
+      pOVar6 = (Object *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)pDVar5,pOVar8,pOVar9,
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar2,pOVar4,pOVar6,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      pOVar8 = (Object *)func_?();
+      pOVar4 = (Object *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)pDVar5,pOVar8,(Object *)pDVar6,
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar2,pOVar4,(Object *)value,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
       if (readRuntimeData != 0) {
@@ -790,54 +765,57 @@ BytePackerFunctionsVersion11_GetWorldObjectDataParameters
           func_?();
           cRam_? = '\x01';
         }
-        bStack_14 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
-        if ((bStack_14 & 1) != 0) {
+        bStack_11 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
+        if ((bStack_11 & 1) != 0) {
           BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-          pOVar8 = (Object *)func_?();
-          pOVar9 = (Object *)func_?();
+          pWVar12 = TypeInfo__MV__WorldObject__WorldObjectDataParameters;
+          pOVar4 = (Object *)func_?();
+          pOVar6 = (Object *)func_?();
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    ((Dictionary_2_System_Object_System_Object_ *)pDStack_4,pOVar8,pOVar9,
+                    ((Dictionary_2_System_Object_System_Object_ *)pWVar12,pOVar4,pOVar6,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
         }
-        if ((bStack_14 & 2) != 0) {
+        if ((bStack_11 & 2) != 0) {
           BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-          bStack_14 = 10;
-          pOVar8 = (Object *)func_?();
-          pOVar9 = (Object *)func_?();
+          bStack_11 = 10;
+          pWVar12 = TypeInfo__MV__WorldObject__WorldObjectDataParameters;
+          pOVar4 = (Object *)func_?();
+          pOVar6 = (Object *)func_?();
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    ((Dictionary_2_System_Object_System_Object_ *)pDStack_4,pOVar8,pOVar9,
+                    ((Dictionary_2_System_Object_System_Object_ *)pWVar12,pOVar4,pOVar6,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
         }
-        iVar7 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-        pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                  *)func_?();
+        iVar3 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+        this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                *)func_?();
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
         UIElements::StyleComplexSelector+PseudoStateData]::
         Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                  (pDVar6,
+                  (this,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
         BytePackerFunctionsVersion11_GetHashTableFromBytePacker
-                  (bp,(Dictionary_2_System_Object_System_Object_ *)pDVar6,iVar7,(MethodInfo *)0x0);
-        pOVar8 = (Object *)func_?();
-        pDVar5 = pDStack_4;
+                  (bp,(Dictionary_2_System_Object_System_Object_ *)this,iVar3,(MethodInfo *)0x0);
+        pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                  *)&stack0xfffffff2;
+        pOVar4 = (Object *)func_?();
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  ((Dictionary_2_System_Object_System_Object_ *)pDStack_4,pOVar8,(Object *)pDVar6,
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar2,pOVar4,(Object *)this,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
       }
-      return (Dictionary_2_System_Object_System_Object_ *)pDVar5;
+      return (Dictionary_2_System_Object_System_Object_ *)pDVar2;
     }
   }
   func_?();
-  pcVar15 = (code *)swi(3);
-  pDVar16 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar15)();
-  return pDVar16;
+  pcVar13 = (code *)swi(3);
+  pDVar14 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar13)();
+  return pDVar14;
 }
 
 

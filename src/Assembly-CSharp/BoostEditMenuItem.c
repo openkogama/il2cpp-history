@@ -177,7 +177,7 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                                   );
                 if (RVar8 == (RegexCharClass_SingleRange)0x0) goto code_?;
                 bVar9 = mscorlib.dll::System::String::String_op_Equality
-                                  (*(String **)((int)RVar8 + 8),
+                                  (*(String **)((int)RVar8 + 0xc),
                                    (pBVar1->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
                 if (bVar9 != 0) {
                   pTVar5 = (pBVar2->fields).activeToggleButton;
@@ -211,7 +211,7 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                                     );
                   if (RVar8 == (RegexCharClass_SingleRange)0x0) goto code_?;
                   bVar9 = mscorlib.dll::System::String::String_op_Equality
-                                    (*(String **)((int)RVar8 + 8),
+                                    (*(String **)((int)RVar8 + 0xc),
                                      (pBVar1->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
                   if (bVar9 != 0) {
                     pTVar5 = (pBVar2->fields).activeToggleButton;

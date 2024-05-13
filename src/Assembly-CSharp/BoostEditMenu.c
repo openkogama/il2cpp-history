@@ -379,7 +379,7 @@ void Assembly-CSharp.dll::BoostEditMenu::BoostEditMenu_Start(BoostEditMenu *this
               if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
               method_00 = (MethodInfo *)0x0;
               bVar3 = mscorlib.dll::System::String::String_op_Equality
-                                (a,*(String **)((int)RVar4 + 8),(MethodInfo *)0x0);
+                                (a,*(String **)((int)RVar4 + 0xc),(MethodInfo *)0x0);
               if (bVar3 != 0) {
                 original = (this->fields).boostPrefab;
                 if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {

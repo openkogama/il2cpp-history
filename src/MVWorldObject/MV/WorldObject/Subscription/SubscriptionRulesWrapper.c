@@ -12,21 +12,19 @@ Object * MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrap
     func_?(method);
   }
   SVar2 = subscriptionBenefit;
-  pSVar3 = this;
   method = (MethodInfo *)0x0;
-  pSVar4 = (this->fields).subscriptionBase;
-  if (pSVar4 != (SubscriptionBase *)0x0) {
-    cVar5 = func_?(pSVar4,subscriptionBenefit,&method,
+  pSVar3 = (this->fields).subscriptionBase;
+  if (pSVar3 != (SubscriptionBase *)0x0) {
+    cVar4 = func_?(pSVar3,subscriptionBenefit,&method,
                             ((pMVar1->field7_0x1c).rgctx_data)->rgctxDataDummy);
-    if (cVar5 != '\0') {
+    if (cVar4 != '\0') {
       return (Object *)method;
     }
-    pSVar6 = (pSVar3->fields).subscriptionDefault;
-    unaff_EDI = (SubscriptionRulesWrapper *)SVar2;
-    if (pSVar6 != (SubscriptionDefault *)0x0) {
-      cVar5 = func_?(pSVar6,SVar2,&method,
+    pSVar5 = (this->fields).subscriptionDefault;
+    if (pSVar5 != (SubscriptionDefault *)0x0) {
+      cVar4 = func_?(pSVar5,SVar2,&method,
                               ((pMVar1->field7_0x1c).rgctx_data)->rgctxDataDummy);
-      if (cVar5 != '\0') {
+      if (cVar4 != '\0') {
         return (Object *)method;
       }
       goto code_?;
@@ -34,20 +32,23 @@ Object * MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrap
   }
   func_?();
 code_?:
-  this = unaff_EDI;
-  uVar7 = func_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionBenefit,&this);
-  pOVar8 = (Object *)func_?(uVar7);
+  uVar6 = func_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionBenefit,
+                          &subscriptionBenefit);
+  func_?(uVar6);
+  pSVar7 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_8,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)0x0;
-  arg0 = (Object *)func_?(&StringLiteral_SubscriptionDefault_must_impleme);
-  message = mscorlib.dll::System::String::String_Concat(arg0,pOVar8,method_00);
-  uVar7 = func_?(&TypeInfo__System__Exception);
-  this_00 = (Exception *)func_?(uVar7);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
-  this = (SubscriptionRulesWrapper *)pMVar1;
+  str0 = (String *)func_?(&StringLiteral_SubscriptionDefault_must_impleme);
+  pSVar7 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar7,method_00);
+  uVar6 = func_?(&TypeInfo__System__Exception);
+  this_00 = (Exception *)func_?(uVar6);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,pSVar7,(MethodInfo *)0x0);
+  pMStack_9 = pMVar1;
+  EStack_8.klass = (Enum__Class *)&UNK_?;
+  EStack_8.monitor = (MonitorData *)this_00;
   func_?();
-  pcVar9 = (code *)swi(3);
-  pOVar8 = (Object *)(*pcVar9)();
-  return pOVar8;
+  pcVar10 = (code *)swi(3);
+  pOVar11 = (Object *)(*pcVar10)();
+  return pOVar11;
 }
 
 
@@ -102,10 +103,7 @@ SubscriptionRulesWrapper_GetSubscription(SubscriptionType__Enum subscriptionType
                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
                   );
         pDVar2 = (Dictionary_2_System_Int32Enum_System_Object_ *)(pSVar1->fields).benefits;
-        pOVar6 = (Object *)
-                 func_?(
-                                TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
-                                );
+        pOVar6 = (Object *)func_?();
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   (pOVar6,ExceptionArgument__Enum_obj,pMVar5);
         *(undefined1 *)&pOVar6[1].klass = 1;
@@ -116,10 +114,7 @@ SubscriptionRulesWrapper_GetSubscription(SubscriptionType__Enum subscriptionType
                      MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
                     );
           pDVar2 = (Dictionary_2_System_Int32Enum_System_Object_ *)(pSVar1->fields).benefits;
-          pOVar6 = (Object *)
-                   func_?(
-                                  TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
-                                  );
+          pOVar6 = (Object *)func_?();
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     (pOVar6,ExceptionArgument__Enum_obj,pMVar5);
           *(undefined1 *)&pOVar6[1].klass = 1;
@@ -130,10 +125,7 @@ SubscriptionRulesWrapper_GetSubscription(SubscriptionType__Enum subscriptionType
                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
                       );
             pDVar2 = (Dictionary_2_System_Int32Enum_System_Object_ *)(pSVar1->fields).benefits;
-            pOVar6 = (Object *)
-                     func_?(
-                                    TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
-                                    );
+            pOVar6 = (Object *)func_?();
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                       (pOVar6,ExceptionArgument__Enum_obj,pMVar5);
             *(undefined1 *)&pOVar6[1].klass = 1;
@@ -182,10 +174,7 @@ SubscriptionRulesWrapper_GetSubscription(SubscriptionType__Enum subscriptionType
                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
                   );
         pDVar2 = (Dictionary_2_System_Int32Enum_System_Object_ *)(pSVar1->fields).benefits;
-        pOVar6 = (Object *)
-                 func_?(
-                                TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
-                                );
+        pOVar6 = (Object *)func_?();
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   (pOVar6,ExceptionArgument__Enum_obj,pMVar5);
         *(undefined1 *)&pOVar6[1].klass = 1;
@@ -202,22 +191,23 @@ SubscriptionRulesWrapper_GetSubscription(SubscriptionType__Enum subscriptionType
     else {
       uVar7 = func_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionType,
                               &subscriptionType);
-      pOVar6 = (Object *)func_?(uVar7);
+      func_?(uVar7);
+      pSVar8 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0)
+      ;
       pMVar5 = (MethodInfo *)0x0;
-      arg0 = (Object *)func_?(&StringLiteral_Unknown_subscription_type__);
-      message = mscorlib.dll::System::String::String_Concat(arg0,pOVar6,pMVar5);
+      str0 = (String *)func_?(&StringLiteral_Unknown_subscription_type__);
+      pSVar8 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar8,pMVar5);
       uVar7 = func_?(&TypeInfo__System__Exception);
       this = (Exception *)func_?(uVar7);
-      mscorlib.dll::System::Exception::Exception__ctor_1(this,message,(MethodInfo *)0x0);
-      subscriptionType =
-           func_?(&
-                           MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetSubscription_MV__WorldObject__Subscription__SubscriptionType_
-                          );
+      mscorlib.dll::System::Exception::Exception__ctor_1(this,pSVar8,(MethodInfo *)0x0);
+      func_?(&
+                      MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetSubscription_MV__WorldObject__Subscription__SubscriptionType_
+                     );
       func_?();
     }
     func_?();
-    pcVar8 = (code *)swi(3);
-    pSVar1 = (SubscriptionBase *)(*pcVar8)();
+    pcVar9 = (code *)swi(3);
+    pSVar1 = (SubscriptionBase *)(*pcVar9)();
     return pSVar1;
   }
   pSVar1 = (SubscriptionBase *)
@@ -276,11 +266,13 @@ String * MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrap
     func_?(&StringLiteral_SubscriptionType__);
     cRam_? = '\x01';
   }
-  this = (SubscriptionRulesWrapper *)(this->fields).SubscriptionType;
-  arg1 = (Object *)func_?(TypeInfo__MV__WorldObject__Subscription__SubscriptionType,&this);
-  pSVar1 = mscorlib.dll::System::String::String_Concat
-                     ((Object *)StringLiteral_SubscriptionType__,arg1,(MethodInfo *)0x0);
-  return pSVar1;
+  EStack_1.klass = (Enum__Class *)TypeInfo__MV__WorldObject__Subscription__SubscriptionType;
+  EStack_1.monitor = (MonitorData *)0xffffffff;
+  iStack_2 = (this->fields).SubscriptionType;
+  pSVar3 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_1,(MethodInfo *)0x0);
+  pSVar3 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_SubscriptionType__,pSVar3,(MethodInfo *)0x0);
+  return pSVar3;
 }
 
 

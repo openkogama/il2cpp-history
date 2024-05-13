@@ -101,28 +101,49 @@ void MVWorldObject.dll::MV::WorldObject::MvAvatarMetaData::MvAvatarMetaData__cto
   }
   (this->fields).avatarID = -1;
   (this->fields).name = ::StringLiteral__;
-  method_00 = (MethodInfo *)&(this->fields).name;
-  func_?(method_00,::StringLiteral__);
+  pMVar1 = (MethodInfo *)&(this->fields).name;
+  func_?(pMVar1,::StringLiteral__);
   (this->fields).priceGold = -1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+            ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);
   if (bp != (BytePacker *)0x0) {
-    iVar1 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-    (this->fields).avatarID = iVar1;
-    pSVar2 = BytePacker::BytePacker_ReadString(bp,(MethodInfo *)0x0);
-    (this->fields).name = pSVar2;
-    func_?(&(this->fields).name,pSVar2);
-    iVar1 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-    (this->fields).priceGold = iVar1;
-    bVar3 = BytePacker::BytePacker_ReadBoolean(bp,(MethodInfo *)0x0);
-    (this->fields).isOnMarketPlace = bVar3;
-    bVar3 = BytePacker::BytePacker_ReadBoolean(bp,(MethodInfo *)0x0);
-    (this->fields).canBeSoldOnMarketPlace = bVar3;
-    return;
+    iVar2 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+    (this->fields).avatarID = iVar2;
+    count = 0;
+    iVar3 = 0;
+    do {
+      if (iVar3 == 0x23) goto code_?;
+      uVar4 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
+      count = count | (uVar4 & 0x7f) << ((byte)iVar3 & 0x1f);
+      iVar3 = iVar3 + 7;
+    } while ((char)uVar4 < '\0');
+    pBVar5 = BytePacker::BytePacker_ReadBytes(bp,count,(MethodInfo *)0x0);
+    pEVar6 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
+    if (pEVar6 != (Encoding *)0x0) {
+      pBStack7 = pBVar5;
+      pSVar8 = (String *)(*(code *)(pEVar6->klass->vtable).GetString.method)();
+      (this->fields).name = pSVar8;
+      func_?();
+      iVar2 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+      (this->fields).priceGold = iVar2;
+      uVar4 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
+      (this->fields).isOnMarketPlace = uVar4 != 0;
+      uVar4 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
+      (this->fields).canBeSoldOnMarketPlace = uVar4 != 0;
+      return;
+    }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+code_?:
+  uVar9 = func_?(&TypeInfo__System__FormatException);
+  this_00 = (FormatException *)func_?(uVar9);
+  pMVar1 = (MethodInfo *)0x0;
+  pSVar8 = (String *)func_?(&StringLiteral_Error_in_the_byte_stream__too_ma);
+  mscorlib.dll::System::FormatException::FormatException__ctor_1(this_00,pSVar8,pMVar1);
+  func_?(&MethodInfo__MV__WorldObject__BytePacker__Read7BitEncodedInt__);
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

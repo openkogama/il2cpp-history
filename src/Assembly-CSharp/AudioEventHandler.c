@@ -244,7 +244,7 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0xeda4);
+    func_?(0xedb4);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {

@@ -12,28 +12,33 @@ void MVWorldObject.dll::HighScore::HighScore_SortDescending(HighScore *this,Meth
                     System__Collections__Generic__List<ScoreActorEntry>_MethodInfo__System__Linq__Enumerable__ToList<ScoreActorEntry>_System__Collections__Generic__IEnumerable<ScoreActorEntry>_
                    );
     func_?(&TypeInfo__System__Func<ScoreActorEntry,_int>);
-    func_?(&MethodInfo__HighScore___SortDescending_b__2_ScoreActorEntry_);
-    func_?(&TypeInfo__HighScore);
+    func_?(&MethodInfo__HighScore____c___SortDescending_b__4_0_ScoreActorEntry_);
+    func_?(&TypeInfo__HighScore____c);
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields).highScoreEntries;
-  if (TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate3 ==
-      (Func_2_ScoreActorEntry_Int32_ *)0x0) {
-    this_00 = (ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+  if ((TypeInfo__HighScore____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__HighScore____c);
+  }
+  this_00 = TypeInfo__HighScore____c->static_fields->__9__4_0;
+  if (this_00 == (Func_2_ScoreActorEntry_Int32_ *)0x0) {
+    if ((TypeInfo__HighScore____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__HighScore____c);
+    }
+    object = TypeInfo__HighScore____c->static_fields->__9;
+    this_00 = (Func_2_ScoreActorEntry_Int32_ *)
               func_?(TypeInfo__System__Func<ScoreActorEntry,_int>);
     Newtonsoft.Json.dll::Newtonsoft::Json::Serialization::ObjectConstructor`1[Unity::IL2CPP::
     Metadata::__Il2CppFullySharedGenericType]::
     ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (this_00,(Object *)0x0,MethodInfo__HighScore___SortDescending_b__2_ScoreActorEntry_,
+              ((ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+               (Object *)object,MethodInfo__HighScore____c___SortDescending_b__4_0_ScoreActorEntry_,
                (MethodInfo *)0x0);
-    TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate3 =
-         (Func_2_ScoreActorEntry_Int32_ *)this_00;
-    func_?(TypeInfo__HighScore->static_fields,this_00);
+    TypeInfo__HighScore____c->static_fields->__9__4_0 = this_00;
+    func_?(&TypeInfo__HighScore____c->static_fields->__9__4_0,this_00);
   }
   source = System.Core.dll::System::Linq::Enumerable::Enumerable_OrderByDescending_1
-                     ((IEnumerable_1_System_Object_ *)pLVar1,
-                      (Func_2_Object_Int32_ *)
-                      TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate3,
+                     ((IEnumerable_1_System_Object_ *)pLVar1,(Func_2_Object_Int32_ *)this_00,
                       System__Linq__IOrderedEnumerable<ScoreActorEntry>_MethodInfo__System__Linq__Enumerable__OrderByDescending<ScoreActorEntry,_int>_System__Collections__Generic__IEnumerable<ScoreActorEntry>__System__Func<ScoreActorEntry,_int>_
                      );
   pLVar1 = (List_1_ScoreActorEntry_ *)
@@ -213,25 +218,28 @@ void MVWorldObject.dll::HighScore::HighScore__ctor
           cRam_? = '\x01';
         }
         pLVar4 = (this->fields).highScoreEntries;
-        if (TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate3 ==
-            (Func_2_ScoreActorEntry_Int32_ *)0x0) {
-          this_00 = (ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                    func_?();
+        if ((TypeInfo__HighScore____c->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        this_00 = TypeInfo__HighScore____c->static_fields->__9__4_0;
+        if (this_00 == (Func_2_ScoreActorEntry_Int32_ *)0x0) {
+          if ((TypeInfo__HighScore____c->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          object = TypeInfo__HighScore____c->static_fields->__9;
+          this_00 = (Func_2_ScoreActorEntry_Int32_ *)func_?();
           Newtonsoft.Json.dll::Newtonsoft::Json::Serialization::ObjectConstructor`1[Unity::IL2CPP::
           Metadata::__Il2CppFullySharedGenericType]::
           ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                    (this_00,(Object *)0x0,
-                     MethodInfo__HighScore___SortDescending_b__2_ScoreActorEntry_,(MethodInfo *)0x0)
-          ;
-          TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate3 =
-               (Func_2_ScoreActorEntry_Int32_ *)this_00;
+                    ((ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                     this_00,(Object *)object,
+                     MethodInfo__HighScore____c___SortDescending_b__4_0_ScoreActorEntry_,
+                     (MethodInfo *)0x0);
+          TypeInfo__HighScore____c->static_fields->__9__4_0 = this_00;
           func_?();
         }
         source = System.Core.dll::System::Linq::Enumerable::Enumerable_OrderByDescending_1
-                           ((IEnumerable_1_System_Object_ *)pLVar4,
-                            (Func_2_Object_Int32_ *)
-                            TypeInfo__HighScore->static_fields->
-                            CS___9__CachedAnonymousMethodDelegate3,
+                           ((IEnumerable_1_System_Object_ *)pLVar4,(Func_2_Object_Int32_ *)this_00,
                             System__Linq__IOrderedEnumerable<ScoreActorEntry>_MethodInfo__System__Linq__Enumerable__OrderByDescending<ScoreActorEntry,_int>_System__Collections__Generic__IEnumerable<ScoreActorEntry>__System__Func<ScoreActorEntry,_int>_
                            );
         pLVar4 = (List_1_ScoreActorEntry_ *)

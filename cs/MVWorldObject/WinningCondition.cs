@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 // Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -20,9 +21,10 @@ public abstract class WinningCondition : IWinningCondition
 	private readonly GameStatCounterType gameStatCounterType;
 	protected WinningConditionPresentStyle winningConditionPresentStyle;
 	protected readonly GameStatCounterManager gameCounterManager;
-	private EventHandler<EventArgs> OnWinningConditionChanged;
 	[CompilerGenerated]
 	private IWinningCondition _Parent_k__BackingField;
+	[CompilerGenerated]
+	private EventHandler<EventArgs> OnWinningConditionChanged;
 	[CompilerGenerated]
 	private bool _IsBriefingNode_k__BackingField;
 

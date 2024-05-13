@@ -77,67 +77,16 @@ String * MVWorldObject.dll::MV::WorldObject::AntiCheat::FileData::FileData_ToStr
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Object);
-    func_?(&TypeInfo__System__UInt32);
     func_?(&StringLiteral_Dll__);
     func_?(&StringLiteral__CRC__);
     cRam_? = '\x01';
   }
-  args = (Object__Array *)func_?(TypeInfo__System__Object,4);
-  if (args == (Object__Array *)0x0) {
-    func_?();
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
-  }
-  else {
-    if ((StringLiteral_Dll__ != (String *)0x0) &&
-       (iVar2 = func_?(StringLiteral_Dll__,(args->klass->_0).element_class), iVar2 == 0))
-    goto code_?;
-    pSVar3 = StringLiteral_Dll__;
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = (Object *)StringLiteral_Dll__;
-    func_?(args->vector,pSVar3);
-    pSVar3 = FileData_NameAsString(this,(MethodInfo *)0x0);
-    if ((pSVar3 != (String *)0x0) &&
-       (iVar2 = func_?(pSVar3,(args->klass->_0).element_class), iVar2 == 0))
-    goto code_?;
-    if (args->max_length < 2) goto code_?;
-    args->vector[1] = (Object *)pSVar3;
-    func_?(args->vector + 1,pSVar3);
-    if ((StringLiteral__CRC__ != (String *)0x0) &&
-       (iVar2 = func_?(StringLiteral__CRC__,(args->klass->_0).element_class), iVar2 == 0))
-    goto code_?;
-    pSVar3 = StringLiteral__CRC__;
-    if (args->max_length < 3) goto code_?;
-    args->vector[2] = (Object *)StringLiteral__CRC__;
-    func_?(args->vector + 2,pSVar3);
-    uStack_4 = (this->fields).crc;
-    pOVar5 = (Object *)func_?(TypeInfo__System__UInt32,&uStack_4);
-    if ((pOVar5 == (Object *)0x0) ||
-       (iVar2 = func_?(pOVar5,(args->klass->_0).element_class), iVar2 != 0)) {
-      if (3 < args->max_length) {
-        args->vector[3] = pOVar5;
-        func_?(args->vector + 3,pOVar5);
-        pSVar3 = mscorlib.dll::System::String::String_Concat_2(args,(MethodInfo *)0x0);
-        return pSVar3;
-      }
-      goto code_?;
-    }
-  }
-  uVar1 = func_?(0);
-  func_?(uVar1);
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  pSVar3 = (String *)(*pcVar6)();
-  return pSVar3;
+  pSVar1 = FileData_NameAsString(this,(MethodInfo *)0x0);
+  str3 = mscorlib.dll::System::UInt32::UInt32_ToString
+                   ((UInt32 *)&(this->fields).crc,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::String::String_Concat_5
+                     (StringLiteral_Dll__,pSVar1,StringLiteral__CRC__,str3,(MethodInfo *)0x0);
+  return pSVar1;
 }
 
 

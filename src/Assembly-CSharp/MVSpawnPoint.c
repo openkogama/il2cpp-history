@@ -269,7 +269,7 @@ code_?:
         (*pcVar26)();
         return;
       }
-      out(0xff,bVar14);
+      out(0xff,bVar14 + (9 < (bVar14 & 0xf) | in_AF) * -6 + (0x99 < bVar14) * -0x60);
       this = (MVSpawnPoint *)&MethodInfo__System__Nullable<bool>__get_HasValue__;
       func_?();
       func_?();

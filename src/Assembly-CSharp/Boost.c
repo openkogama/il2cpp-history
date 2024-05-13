@@ -99,7 +99,7 @@ Object * Assembly-CSharp.dll::Boost::Boost_get_Value(Boost *this,MethodInfo *met
                                 );
               if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
               bVar5 = mscorlib.dll::System::String::String_op_Equality
-                                (a,*(String **)((int)RVar4 + 8),(MethodInfo *)0x0);
+                                (a,*(String **)((int)RVar4 + 0xc),(MethodInfo *)0x0);
               if (bVar5 != 0) break;
               iVar2 = iVar2 + 1;
             }

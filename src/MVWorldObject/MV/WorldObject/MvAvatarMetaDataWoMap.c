@@ -249,68 +249,90 @@ void MVWorldObject.dll::MV::WorldObject::MvAvatarMetaDataWoMap::MvAvatarMetaData
     func_?(&TypeInfo__MV__WorldObject__MvAvatarMetaData);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
+  this_01 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
             )func_?(
                             TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MvAvatarMetaData>
                             );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
   ::TextResourceManager+FontAssetRef]::
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-            (this_00,
+            (this_01,
              MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MvAvatarMetaData>__Dictionary__
             );
-  method_00 = (MethodInfo *)&this->fields;
+  pMVar1 = (MethodInfo *)&this->fields;
   (this->fields).avatarWOIDAvatarMetaData =
-       (Dictionary_2_System_Int32_MV_WorldObject_MvAvatarMetaData_ *)this_00;
-  func_?(method_00,this_00);
+       (Dictionary_2_System_Int32_MV_WorldObject_MvAvatarMetaData_ *)this_01;
+  func_?(pMVar1,this_01);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  if (bp != (BytePacker *)0x0) {
-    iVar1 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-    iVar2 = 0;
-    if (0 < iVar1) {
-      do {
-        BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-        value = (Object *)func_?();
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        value[1].klass = (Object__Class *)0xffffffff;
-        value[1].monitor = (MonitorData *)::StringLiteral__;
-        key = ::StringLiteral__;
-        func_?();
-        value[2].klass = (Object__Class *)0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  (value,ExceptionArgument__Enum_obj,(MethodInfo *)&value[1].monitor);
-        pOVar3 = (Object__Class *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-        value[1].klass = pOVar3;
-        pSVar4 = BytePacker::BytePacker_ReadString(bp,(MethodInfo *)0x0);
-        value[1].monitor = (MonitorData *)pSVar4;
-        puVar5 = &UNK_?;
-        func_?(&value[1].monitor);
-        pOVar3 = (Object__Class *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-        value[2].klass = pOVar3;
-        bVar6 = BytePacker::BytePacker_ReadBoolean(bp,(MethodInfo *)0x0);
-        *(bool *)&value[2].monitor = bVar6;
-        bVar6 = BytePacker::BytePacker_ReadBoolean(bp,(MethodInfo *)0x0);
-        *(bool *)((int)&value[2].monitor + 1) = bVar6;
-        if ((Dictionary_2_System_Int32_System_Object_ *)value[2].monitor ==
-            (Dictionary_2_System_Int32_System_Object_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-        Dictionary_2_System_Int32_System_Object__Add
-                  ((Dictionary_2_System_Int32_System_Object_ *)value[2].monitor,(int32_t)key,value,
-                   MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MvAvatarMetaData>__Add_int__MV__WorldObject__MvAvatarMetaData_
-                  );
-        iVar2 = iVar2 + 1;
-      } while (iVar2 < (int)puVar5);
-    }
+            ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);
+  if (bp == (BytePacker *)0x0) {
+code_?:
+    func_?();
+code_?:
+    uVar2 = func_?(&TypeInfo__System__FormatException);
+    this_02 = (FormatException *)func_?(uVar2);
+    pMVar1 = (MethodInfo *)0x0;
+    message = (String *)func_?(&StringLiteral_Error_in_the_byte_stream__too_ma);
+    mscorlib.dll::System::FormatException::FormatException__ctor_1(this_02,message,pMVar1);
+    uVar2 = func_?(&MethodInfo__MV__WorldObject__BytePacker__Read7BitEncodedInt__);
+    func_?(this_02,uVar2);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  iVar4 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+  if (0 < iVar4) {
+    do {
+      puVar5 = &UNK_?;
+      BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+      key = &UNK_?;
+      value = (Object *)func_?(TypeInfo__MV__WorldObject__MvAvatarMetaData);
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      value[1].klass = (Object__Class *)0xffffffff;
+      value[1].monitor = (MonitorData *)::StringLiteral__;
+      puVar6 = &UNK_?;
+      func_?(&value[1].monitor);
+      value[2].klass = (Object__Class *)0xffffffff;
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                (value,ExceptionArgument__Enum_obj,in_stack_7);
+      pOVar8 = (Object__Class *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+      value[1].klass = pOVar8;
+      count = 0;
+      iVar9 = 0;
+      do {
+        if (iVar9 == 0x23) goto code_?;
+        uVar10 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
+        count = count | (uVar10 & 0x7f) << ((byte)iVar9 & 0x1f);
+        iVar9 = iVar9 + 7;
+      } while ((char)uVar10 < '\0');
+      pBVar11 = BytePacker::BytePacker_ReadBytes(bp,count,(MethodInfo *)0x0);
+      pEVar12 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
+      if (pEVar12 == (Encoding *)0x0) goto code_?;
+      pMVar13 = (MonitorData *)
+               (*(code *)(pEVar12->klass->vtable).GetString.method)
+                         (pEVar12,pBVar11,(pEVar12->klass->vtable).GetString_1.methodPtr);
+      value[1].monitor = pMVar13;
+      func_?(&value[1].monitor,pMVar13);
+      pOVar8 = (Object__Class *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+      value[2].klass = pOVar8;
+      uVar10 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
+      in_stack_7 = (MethodInfo *)0x0;
+      *(bool *)&value[2].monitor = uVar10 != 0;
+      uVar10 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
+      *(bool *)((int)&value[2].monitor + 1) = uVar10 != 0;
+      this_00 = (this->fields).avatarWOIDAvatarMetaData;
+      if (this_00 == (Dictionary_2_System_Int32_MV_WorldObject_MvAvatarMetaData_ *)0x0)
+      goto code_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+      Dictionary_2_System_Int32_System_Object__Add
+                ((Dictionary_2_System_Int32_System_Object_ *)this_00,(int32_t)key,value,
+                 MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MvAvatarMetaData>__Add_int__MV__WorldObject__MvAvatarMetaData_
+                );
+    } while ((int)(puVar6 + 1) < (int)puVar5);
+  }
   return;
 }
 

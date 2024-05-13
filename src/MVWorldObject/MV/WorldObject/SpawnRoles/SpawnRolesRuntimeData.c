@@ -140,12 +140,12 @@ String * MVWorldObject.dll::MV::WorldObject::SpawnRoles::SpawnRolesRuntimeData::
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  iStack_6 = (this->fields).activeSpawnRole;
-  pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&iStack_6);
-  pSVar8 = mscorlib.dll::System::String::String_Format
-                     (StringLiteral_ActiveSpawnRole___0__u000A,pOVar7,(MethodInfo *)0x0);
-  pSVar8 = mscorlib.dll::System::String::String_Concat_3
-                     (pSVar8,StringLiteral_All_spawn_roles_,(MethodInfo *)0x0);
+  IStack_6.m_value = 0;
+  arg0 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffe4);
+  pSVar7 = mscorlib.dll::System::String::String_Format
+                     (StringLiteral_ActiveSpawnRole___0__u000A,arg0,(MethodInfo *)0x0);
+  pSVar7 = mscorlib.dll::System::String::String_Concat_3
+                     (pSVar7,StringLiteral_All_spawn_roles_,(MethodInfo *)0x0);
   this_00 = (HashSet_1_System_UInt32_ *)(this->fields).spawnRoleAvatarIds;
   if (this_00 != (HashSet_1_System_UInt32_ *)0x0) {
     System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
@@ -154,30 +154,32 @@ String * MVWorldObject.dll::MV::WorldObject::SpawnRoles::SpawnRolesRuntimeData::
                MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
     uStack_1 = 1;
     while( true ) {
-      bVar9 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::UInt32]
+      bVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::UInt32]
               ::HashSet_1_T_Enumerator_System_UInt32__MoveNext
                         ((HashSet_1_T_Enumerator_System_UInt32_ *)&stack0xffffffc0,
                          MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
                         );
-      if (bVar9 == 0) break;
-      pOVar7 = (Object *)func_?();
-      pSVar8 = mscorlib.dll::System::String::String_Concat_1
-                         ((Object *)pSVar8,(Object *)StringLiteral_u000A,pOVar7,(MethodInfo *)0x0);
+      if (bVar8 == 0) break;
+      IStack_6.m_value = (int32_t)&UNK_?;
+      in_stack_9 =
+           (MethodInfo *)mscorlib.dll::System::Int32::Int32_ToString(&IStack_6,(MethodInfo *)0x0);
+      pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                         (pSVar7,StringLiteral_u000A,(String *)in_stack_9,(MethodInfo *)0x0);
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&stack0xffffffc0,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__,
-               in_stack_10);
+               in_stack_9);
     *unaff_FS_OFFSET = uStack_3;
-    return pSVar8;
+    return pSVar7;
   }
   func_?();
   func_?();
-  pcVar11 = (code *)swi(3);
-  pSVar8 = (String *)(*pcVar11)();
-  return pSVar8;
+  pcVar10 = (code *)swi(3);
+  pSVar7 = (String *)(*pcVar10)();
+  return pSVar7;
 }
 
 

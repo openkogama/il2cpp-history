@@ -25,31 +25,28 @@ void Assembly-CSharp.dll::NotificationTeamRequirementPanel::
     ;
     if ((((pMVar3 != (MVNetworkGame *)0x0) &&
          (pMVar4 = (pMVar3->fields).teamManager, pMVar4 != (MVTeamManager *)0x0)) &&
-        (this_00 = (pMVar4->fields).teamNames,
-        this_00 != (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)) &&
+        (unaff_EBX = (pMVar4->fields).teamNames,
+        unaff_EBX != (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)) &&
        (unaff_EDI = team, team != (Object *)0x0)) {
-      pIVar5 = (team->klass->_0).element_class;
-      pIVar6 = (TypeInfo__MV__WorldObject__MVTeam->_0).element_class;
-      cVar7 = pIVar5 < pIVar6;
-      pMVar8 = TypeInfo__MV__WorldObject__MVTeam;
-      if (pIVar5 != pIVar6) goto code_?;
-      pIVar9 = (Int32Enum__Enum *)func_?(team);
-      pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,*pIVar9,method_00)
-      ;
+      pMVar5 = TypeInfo__MV__WorldObject__MVTeam;
+      if ((team->klass->_0).element_class != (TypeInfo__MV__WorldObject__MVTeam->_0).element_class)
+      goto code_?;
+      pIVar6 = (Int32Enum__Enum *)func_?(team);
+      pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)unaff_EBX,*pIVar6,
+                           method_00);
       if (pTVar2 != (Text *)0x0) {
         (*(code *)(pTVar2->klass->vtable).set_text.method)
-                  (pTVar2,pOVar10,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
-        ;
-        pIVar5 = (team->klass->_0).element_class;
-        pIVar6 = (TypeInfo__MV__WorldObject__MVTeam->_0).element_class;
-        cVar7 = pIVar5 < pIVar6;
-        pMVar8 = TypeInfo__MV__WorldObject__MVTeam;
-        if (pIVar5 != pIVar6) goto code_?;
+                  (pTVar2,pOVar7,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr
+                  );
+        pMVar5 = TypeInfo__MV__WorldObject__MVTeam;
+        if ((team->klass->_0).element_class != (TypeInfo__MV__WorldObject__MVTeam->_0).element_class
+           ) goto code_?;
         unaff_EDI = (Object *)&UNK_?;
-        puVar11 = (undefined4 *)func_?(team);
-        switch(*puVar11) {
+        unaff_EBX = (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)team;
+        puVar8 = (undefined4 *)func_?();
+        switch(*puVar8) {
         case 0:
           pIVar1 = (this->fields).requirementImage;
           if (pIVar1 != (Image *)0x0) {
@@ -88,16 +85,25 @@ void Assembly-CSharp.dll::NotificationTeamRequirementPanel::
       }
     }
   }
-  cVar7 = '\0';
   func_?();
-  pMVar8 = extraout_ECX;
+  pMVar5 = extraout_ECX;
   team = unaff_EDI;
 code_?:
-  func_?(team,pMVar8);
-  *(char *)(extraout_EDX + -0x45efc103) =
-       *(char *)(extraout_EDX + -0x45efc103) + extraout_AH + cVar7;
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  bVar9 = func_?(team,pMVar5);
+  bVar10 = (byte)((uint)extraout_EDX >> 8);
+  bVar11 = (byte)((uint)unaff_EBX >> 8) < bVar10;
+  pbVar12 = (byte *)(extraout_EDX + -2);
+  bVar13 = CARRY1(*pbVar12,bVar9) || CARRY1(*pbVar12 + bVar9,bVar11);
+  *pbVar12 = *pbVar12 + bVar9 + bVar11;
+  pbVar12 = (byte *)(extraout_EDX + -2);
+  bVar9 = *pbVar12;
+  bVar14 = *pbVar12 + (byte)unaff_EBX;
+  *pbVar12 = bVar14 + bVar13;
+  *(char *)(extraout_EDX + -2) =
+       *(char *)(extraout_EDX + -2) + bVar10 +
+       (CARRY1(bVar9,(byte)unaff_EBX) || CARRY1(bVar14,bVar13));
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

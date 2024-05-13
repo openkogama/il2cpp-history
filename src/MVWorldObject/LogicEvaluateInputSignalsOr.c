@@ -17,11 +17,7 @@ void MVWorldObject.dll::LogicEvaluateInputSignalsOr::LogicEvaluateInputSignalsOr
                (LogicEvaluateInputSignalsOr *this,bool isHot,MethodInfo *method)
 
 {
-  if ((this->fields).orIsTrue != 0) {
-    (this->fields).orIsTrue = 1;
-    return;
-  }
-  (this->fields).orIsTrue = isHot;
+  (this->fields).orIsTrue = (this->fields).orIsTrue != 0 || isHot != 0;
   return;
 }
 

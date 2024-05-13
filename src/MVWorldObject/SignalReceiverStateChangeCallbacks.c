@@ -7,16 +7,23 @@ void MVWorldObject.dll::SignalReceiverStateChangeCallbacks::
                LogicObjectManager *logicObjectManager,MethodInfo *method)
 
 {
-  if (isHot == 0) {
-    cVar1 = (wasHot == 0) + '\x02';
+  uVar1 = 3;
+  if ((isHot != 0) && (wasHot == 0)) {
+    uVar1 = 0;
   }
-  else {
-    cVar1 = wasHot != 0;
+  if ((wasHot & isHot) != 0) {
+    uVar1 = 1;
+  }
+  if ((wasHot & (isHot ^ 1)) != 0) {
+    uVar1 = 2;
+  }
+  if ((isHot == 0) && (wasHot == 0)) {
+    uVar1 = 3;
   }
   if ((this->fields).OnInputStateUpdate != (Action_2_LogicInputState_LogicObjectManager_ *)0x0) {
     pAVar2 = (this->fields).OnInputStateUpdate;
     (*(pAVar2->fields)._._.invoke_impl)
-              ((pAVar2->fields)._._.method_code,cVar1,logicObjectManager,(pAVar2->fields)._._.method
+              ((pAVar2->fields)._._.method_code,uVar1,logicObjectManager,(pAVar2->fields)._._.method
               );
   }
   if ((this->fields).OnSignal != (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0) {

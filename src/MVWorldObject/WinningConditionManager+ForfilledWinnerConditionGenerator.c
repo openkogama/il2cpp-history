@@ -74,38 +74,29 @@ bool MVWorldObject.dll::WinningConditionManager+ForfilledWinnerConditionGenerato
       return 0;
     }
     piVar1 = (int *)func_?(0,TypeInfo__IWinningCondition,winnerCondition);
-    if (piVar1 == (int *)0x0) {
-      piVar2 = (int *)0x0;
-    }
-    else {
-      if ((*(byte *)(*piVar1 + 0xb8) < (TypeInfo__WinningConditionOr->_1).naturalAligment) ||
-         (*(WinningConditionOr__Class **)
-           (*(int *)(*piVar1 + 100) + -4 +
-           (uint)(TypeInfo__WinningConditionOr->_1).naturalAligment * 4) !=
-          TypeInfo__WinningConditionOr)) {
-        bVar3 = false;
-      }
-      else {
-        bVar3 = true;
-      }
-      piVar2 = (int *)0x0;
-      if (bVar3) {
-        piVar2 = piVar1;
-      }
-    }
     this_00 = (List_1_System_Object_ *)(this->fields).gameWonWinnerConditions;
     if (this_00 != (List_1_System_Object_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
                 (this_00,(Object *)winnerCondition,
                  MethodInfo__System__Collections__Generic__List<IWinningCondition>__Add_IWinningCondition_
                 );
-      return piVar2 != (int *)0x0;
+      if (piVar1 == (int *)0x0) {
+        return 0;
+      }
+      if (((TypeInfo__WinningConditionOr->_1).naturalAligment <= *(byte *)(*piVar1 + 0xb8)) &&
+         (*(WinningConditionOr__Class **)
+           (*(int *)(*piVar1 + 100) + -4 +
+           (uint)(TypeInfo__WinningConditionOr->_1).naturalAligment * 4) ==
+          TypeInfo__WinningConditionOr)) {
+        return piVar1 != (int *)0x0;
+      }
+      return 0;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  pcVar2 = (code *)swi(3);
+  bVar3 = (*pcVar2)();
+  return bVar3;
 }
 
 

@@ -310,36 +310,38 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_Valida
          (sharedInteractionData.playerKilledByType == 0)) {
         return;
       }
-      damage = (float)CONCAT13((undefined1)interactionType,damage._0_3_);
-      uVar1 = func_?(&TypeInfo__MV__WorldObject__InteractionPackageType,(int)&damage + 3);
-      arg1 = (Object *)func_?(uVar1);
-      ppSVar2 = &StringLiteral_Both_sharedValues_playerKilledBy;
+      uVar1 = func_?(&TypeInfo__MV__WorldObject__InteractionPackageType,&interactionType);
+      func_?(uVar1);
+      pSVar2 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_3,(MethodInfo *)0x0);
+      ppSVar4 = &StringLiteral_Both_sharedValues_playerKilledBy;
     }
     else {
-      damage = (float)CONCAT13((undefined1)interactionType,damage._0_3_);
-      uVar1 = func_?(&TypeInfo__MV__WorldObject__InteractionPackageType,(int)&damage + 3);
-      arg1 = (Object *)func_?(uVar1);
-      ppSVar2 = &StringLiteral_Both_sharedValues_impulse_and_co;
+      uVar1 = func_?(&TypeInfo__MV__WorldObject__InteractionPackageType,&interactionType);
+      func_?(uVar1);
+      pSVar2 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_3,(MethodInfo *)0x0);
+      ppSVar4 = &StringLiteral_Both_sharedValues_impulse_and_co;
     }
   }
   else {
-    damage = (float)CONCAT13((undefined1)interactionType,damage._0_3_);
-    uVar1 = func_?(&TypeInfo__MV__WorldObject__InteractionPackageType,(int)&damage + 3);
-    arg1 = (Object *)func_?(uVar1);
-    ppSVar2 = &StringLiteral_Both_sharedValues_damage_and_con;
+    uVar1 = func_?(&TypeInfo__MV__WorldObject__InteractionPackageType,&interactionType);
+    func_?(uVar1);
+    pSVar2 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_3,(MethodInfo *)0x0);
+    ppSVar4 = &StringLiteral_Both_sharedValues_damage_and_con;
   }
   method_00 = (MethodInfo *)0x0;
-  arg0 = (Object *)func_?(ppSVar2);
-  message = mscorlib.dll::System::String::String_Concat(arg0,arg1,method_00);
+  str0 = (String *)func_?(ppSVar4);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar2,method_00);
   uVar1 = func_?(&TypeInfo__System__Exception);
   this = (Exception *)func_?(uVar1);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this,message,(MethodInfo *)0x0);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this,pSVar2,(MethodInfo *)0x0);
   func_?(&
                   MethodInfo__MV__WorldObject__InteractionData__Validate_MethodInfo__MV__WorldObject__InteractionData__MV__WorldObject__InteractionPackageType__float__UnityEngine__Vector3__MV__Common__PlayerKilledByType_
                  );
+  EStack_3.monitor = (MonitorData *)&UNK_?;
+  pEStack_5 = this;
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -350,12 +352,11 @@ bool MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_Valida
                (Vector3 validateVector,MethodInfo *method)
 
 {
-  bVar1 = MVMath::MVMath_ValidateFloat(validateVector.x,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    bVar1 = MVMath::MVMath_ValidateFloat(validateVector.y,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      bVar1 = MVMath::MVMath_ValidateFloat(validateVector.z,(MethodInfo *)0x0);
-      return bVar1;
+  if ((ABS(validateVector.x) != INFINITY) && ((uint)ABS(validateVector.x) < 0x7f800001)) {
+    if ((ABS(validateVector.y) != INFINITY) && ((uint)ABS(validateVector.y) < 0x7f800001)) {
+      if ((ABS(validateVector.z) != INFINITY) && ((uint)ABS(validateVector.z) < 0x7f800001)) {
+        return 1;
+      }
     }
   }
   return 0;
@@ -787,7 +788,6 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_
                Vector3 impulse,PlayerKilledByType__Enum playerKilledByType,MethodInfo *method)
 
 {
-  validateFloat = impulse.z;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -799,65 +799,49 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_
   pIVar1 = InteractionData_GetSharedData(&IStack_2,interactionType,(MethodInfo *)0x0);
   fStack_3 = pIVar1->damage;
   fStack_4 = (pIVar1->impulse).x;
-  fStack_5 = (pIVar1->impulse).y;
-  fStack_6 = (pIVar1->impulse).z;
+  puStack_5 = (undefined *)(pIVar1->impulse).y;
+  uVar6 = pIVar1->playerKilledByType;
   InteractionData_Validate
             (*pIVar1,interactionType,damage,impulse,playerKilledByType,(MethodInfo *)0x0);
-  bVar7 = MVMath::MVMath_ValidateFloat(damage,(MethodInfo *)0x0);
-  fVar8 = damage;
-  if (bVar7 == 0) {
-    fVar8 = 0.0;
+  if ((ABS(damage) == INFINITY) || (fVar7 = damage, 0x7f800000 < (uint)ABS(damage))) {
+    fVar7 = 0.0;
   }
-  this->damage = fVar8;
+  this->damage = fVar7;
   if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  interactionType._1_1_ = InteractionPackageType__Enum_None >> 8;
-  bVar7 = MVMath::MVMath_ValidateFloat(impulse.x,(MethodInfo *)0x0);
-  uVar9 = interactionType._1_1_;
-  if (bVar7 != 0) {
-    impulse.x = 0.0;
-    damage = impulse.y;
-    interactionType._1_1_ = 0xb5;
-    uVar9 = interactionType._1_1_;
-    interactionType._1_1_ = 0xb5;
-    bVar7 = MVMath::MVMath_ValidateFloat(impulse.y,(MethodInfo *)0x0);
-    if (bVar7 != 0) {
-      impulse.z = 0.0;
-      impulse.y = validateFloat;
-      impulse.x = (float)&UNK_?;
-      bVar7 = MVMath::MVMath_ValidateFloat(validateFloat,(MethodInfo *)0x0);
-      if (bVar7 != 0) {
-        uVar10 = CONCAT44(validateFloat,&UNK_?);
-        goto code_?;
-      }
+  fVar7 = impulse.x;
+  bVar8 = InteractionData_ValidateVector3(impulse,(MethodInfo *)0x0);
+  if (bVar8 == 0) {
+    if (cRam_? == '\0') {
+      impulse.x = (float)&TypeInfo__UnityEngine__Vector3;
+      damage = (float)&UNK_?;
+      func_?();
+      cRam_? = '\x01';
     }
+    pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar10._0_4_ = (pVVar9->zeroVector).x;
+    uVar10._4_4_ = (pVVar9->zeroVector).y;
+    fVar11 = (pVVar9->zeroVector).z;
   }
-  interactionType._1_1_ = uVar9;
-  if (cRam_? == '\0') {
-    playerKilledByType = (PlayerKilledByType__Enum)&UNK_?;
-    func_?();
-    cRam_? = '\x01';
+  else {
+    uVar10 = impulse._0_8_;
+    fVar11 = impulse.z;
   }
-  pVVar11 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar10._0_4_ = (pVVar11->zeroVector).x;
-  uVar10._4_4_ = (pVVar11->zeroVector).y;
-  validateFloat = (pVVar11->zeroVector).z;
-code_?:
   (this->impulse).x = (float)(int)uVar10;
   (this->impulse).y = (float)(int)((ulonglong)uVar10 >> 0x20);
-  (this->impulse).z = validateFloat;
+  (this->impulse).z = fVar11;
   this->playerKilledByType = (uint8_t)playerKilledByType;
   if (damage == 0.0) {
     this->damage = fStack_3;
   }
   if (impulse.y * impulse.y + impulse.x * impulse.x + impulse.z * impulse.z <= _UNK_?) {
     (this->impulse).x = fStack_4;
-    (this->impulse).y = fStack_5;
-    (this->impulse).z = fStack_6;
+    (this->impulse).y = (float)puStack_5;
+    (this->impulse).z = fVar7;
   }
   if ((uint8_t)playerKilledByType == 0) {
-    this->playerKilledByType = interactionType._1_1_;
+    this->playerKilledByType = uVar6;
   }
   return;
 }
@@ -876,20 +860,17 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_
     cRam_? = '\x01';
   }
   this->interactionType = (undefined1)interactionType;
-  bVar1 = MVMath::MVMath_ValidateFloat(damage,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
+  if ((ABS(damage) == INFINITY) || (0x7f800000 < (uint)ABS(damage))) {
     damage = 0.0;
   }
   this->damage = damage;
   if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MV__WorldObject__InteractionData);
   }
-  bVar1 = MVMath::MVMath_ValidateFloat(impulse.x,(MethodInfo *)0x0);
-  if (((bVar1 != 0) &&
-      (bVar1 = MVMath::MVMath_ValidateFloat(impulse.y,(MethodInfo *)0x0), bVar1 != 0)) &&
-     (bVar1 = MVMath::MVMath_ValidateFloat(impulse.z,(MethodInfo *)0x0), bVar1 != 0)) {
-    (this->impulse).x = (float)(int)impulse._0_8_;
-    (this->impulse).y = (float)(int)((ulonglong)impulse._0_8_ >> 0x20);
+  bVar1 = InteractionData_ValidateVector3(impulse,(MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    (this->impulse).x = impulse.x;
+    (this->impulse).y = impulse.y;
     (this->impulse).z = impulse.z;
     this->playerKilledByType = (undefined1)playerKilledByType;
     return;
@@ -963,45 +944,47 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_
     }
     pIVar7 = InteractionData_GetSharedData
                        ((InteractionData *)auStack_8,IStack_6,(MethodInfo *)0x0);
-    fVar3 = (pIVar7->impulse).x;
-    fVar2 = (pIVar7->impulse).y;
-    fVar9 = (pIVar7->impulse).z;
-    uVar5 = pIVar7->playerKilledByType;
+    fVar2 = (pIVar7->impulse).x;
+    fVar9 = (pIVar7->impulse).y;
+    fVar10 = (pIVar7->impulse).z;
+    fVar3 = *(float *)&pIVar7->interactionType;
     if ((uVar4 & 2) == 0) {
       this->damage = pIVar7->damage;
+      auStack_8._16_4_ = fVar3;
     }
     else {
-      pBVar10 = BytePacker::BytePacker_ReadBytes(this_00,4,(MethodInfo *)0x0);
-      mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar10,(MethodInfo *)0x0);
-      fVar11 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar10,0,(MethodInfo *)0x0);
-      this->damage = fVar11;
+      pBVar11 = BytePacker::BytePacker_ReadBytes(this_00,4,(MethodInfo *)0x0);
+      mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar11,(MethodInfo *)0x0);
+      fVar12 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar11,0,(MethodInfo *)0x0);
+      this->damage = fVar12;
     }
+    uVar5 = (uint8_t)((uint)fVar3 >> 8);
     if ((uVar4 & 4) == 0) {
-      (this->impulse).x = fVar3;
-      (this->impulse).y = fVar2;
+      (this->impulse).x = fVar2;
+      (this->impulse).y = fVar9;
     }
     else {
       auStack_8._16_4_ = &UNK_?;
-      pBVar10 = BytePacker::BytePacker_ReadBytes(this_00,4,(MethodInfo *)0x0);
-      mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar10,(MethodInfo *)0x0);
+      pBVar11 = BytePacker::BytePacker_ReadBytes(this_00,4,(MethodInfo *)0x0);
+      mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar11,(MethodInfo *)0x0);
       auStack_8._16_4_ = &UNK_?;
-      fVar3 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar10,0,(MethodInfo *)0x0);
+      fVar3 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar11,0,(MethodInfo *)0x0);
       auStack_8._16_4_ = &UNK_?;
-      pBVar10 = BytePacker::BytePacker_ReadBytes(this_00,4,(MethodInfo *)0x0);
-      mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar10,(MethodInfo *)0x0);
+      pBVar11 = BytePacker::BytePacker_ReadBytes(this_00,4,(MethodInfo *)0x0);
+      mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar11,(MethodInfo *)0x0);
       uVar5 = 0;
       auStack_8._16_4_ = &UNK_?;
-      fVar2 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar10,0,(MethodInfo *)0x0)
+      fVar2 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar11,0,(MethodInfo *)0x0)
       ;
-      pBVar10 = BytePacker::BytePacker_ReadBytes(this_00,4,(MethodInfo *)0x0);
-      mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar10,(MethodInfo *)0x0);
-      fVar9 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar10,0,(MethodInfo *)0x0)
+      pBVar11 = BytePacker::BytePacker_ReadBytes(this_00,4,(MethodInfo *)0x0);
+      mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar11,(MethodInfo *)0x0);
+      fVar10 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar11,0,(MethodInfo *)0x0)
       ;
       (this->impulse).x = fVar3;
       (this->impulse).y = fVar2;
-      auStack_8._16_4_ = fVar9;
+      auStack_8._16_4_ = fVar10;
     }
-    (this->impulse).z = fVar9;
+    (this->impulse).z = fVar10;
     if ((uVar4 & 8) == 0) {
       this->playerKilledByType = uVar5;
       return;
@@ -1010,16 +993,16 @@ void MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_
     this->playerKilledByType = uVar4;
     return;
   }
-  uVar12 = func_?(&TypeInfo__System__ArgumentNullException);
-  this_02 = (ArgumentNullException *)func_?(uVar12);
+  uVar13 = func_?(&TypeInfo__System__ArgumentNullException);
+  this_02 = (ArgumentNullException *)func_?(uVar13);
   message = (String *)func_?(&StringLiteral_The_buffer_cannot_be_null_);
   paramName = (String *)func_?(&StringLiteral_buffer);
   mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_2
             (this_02,paramName,message,(MethodInfo *)0x0);
-  uVar12 = func_?(&MethodInfo__MV__WorldObject__BytePacker__BytePacker_System__Byte____);
-  func_?(this_02,uVar12);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  uVar13 = func_?(&MethodInfo__MV__WorldObject__BytePacker__BytePacker_System__Byte____);
+  func_?(this_02,uVar13);
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

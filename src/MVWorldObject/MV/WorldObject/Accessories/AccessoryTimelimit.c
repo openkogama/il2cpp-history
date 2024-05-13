@@ -40,13 +40,15 @@ TimeSpan MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryTimelimit::
     d1 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
     TVar1 = mscorlib.dll::System::DateTime::DateTime_op_Subtraction_1
                       (d1,(DateTime)(this->fields).timeLimitStartTime._dateData,(MethodInfo *)0x0);
-    seconds = (this->fields).timeLimit;
+    TStack_2._ticks = 0;
+    mscorlib.dll::System::TimeSpan::TimeSpan__ctor_3
+              (&TStack_2,0,0,0,(this->fields).timeLimit,0,(MethodInfo *)0x0);
     if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    mscorlib.dll::System::TimeSpan::TimeSpan__ctor_3
-              ((TimeSpan *)&stack0xfffffff4,0,0,0,seconds,0,(MethodInfo *)0x0);
-    TVar1 = mscorlib.dll::System::TimeSpan::TimeSpan_op_Subtraction(TVar1,TVar1,(MethodInfo *)0x0);
+    uStack3 = TStack_2._ticks._4_4_;
+    TVar1 = mscorlib.dll::System::TimeSpan::TimeSpan_op_Subtraction
+                      (TStack_2,TVar1,(MethodInfo *)0x0);
     return (TimeSpan)TVar1._ticks;
   }
   if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {

@@ -30,7 +30,7 @@ bool MVWorldObject.dll::MV::WorldObject::MetaData::ProfileMetaData::
 
 {
   if ((this->fields).IsInitialized != 0) {
-    return (this->fields).serializeFlags >> 3 & 1;
+    return ((this->fields).serializeFlags & 8) != 0;
   }
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
@@ -54,7 +54,7 @@ bool MVWorldObject.dll::MV::WorldObject::MetaData::ProfileMetaData::
 
 {
   if ((this->fields).IsInitialized != 0) {
-    return (this->fields).serializeFlags >> 4 & 1;
+    return ((this->fields).serializeFlags & 0x10) != 0;
   }
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
@@ -78,7 +78,7 @@ bool MVWorldObject.dll::MV::WorldObject::MetaData::ProfileMetaData::
 
 {
   if ((this->fields).IsInitialized != 0) {
-    return (this->fields).serializeFlags >> 2 & 1;
+    return ((this->fields).serializeFlags & 4) != 0;
   }
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);

@@ -122,8 +122,6 @@ MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_DeepCopy
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff8c;
-  puVar5 = &stack0xffffff8c;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
@@ -144,152 +142,175 @@ MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_DeepCopy
     func_?(&MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__List__);
     func_?(&TypeInfo__System__Collections__Generic__List<MV::WorldObject::Link>);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  pMVar6 = (MVWorldObject *)
+  pMVar4 = (MVWorldObject *)
            (*(code *)(this->klass->vtable).ShallowCopy.method)
                      (this,(this->klass->vtable).DeepCopy.methodPtr);
-  pMStack_7 = pMVar6;
-  pRStack_8 = (RegexCharClass_SingleRange__Array *)
-               func_?(TypeInfo__System__Collections__Generic__List<MV::WorldObject::Link>);
+  pLVar5 = (List_1_MV_WorldObject_Link_ *)
+           func_?(TypeInfo__System__Collections__Generic__List<MV::WorldObject::Link>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pRStack_8,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar5,
              MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__List__);
-  if (pMVar6 != (MVWorldObject *)0x0) {
-    (pMVar6->fields).outputLinkRefs = (List_1_MV_WorldObject_Link_ *)pRStack_8;
+  if (pMVar4 != (MVWorldObject *)0x0) {
+    (pMVar4->fields).outputLinkRefs = pLVar5;
     func_?();
-    pMVar9 = (MethodInfo *)(this->fields).outputLinkRefs;
-    if (pMVar9 != (MethodInfo *)0x0) {
-      pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pMVar6 = (MethodInfo *)(this->fields).outputLinkRefs;
+    if (pMVar6 != (MethodInfo *)0x0) {
+      pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         (&LStack_11,
+                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                           *)&stack0xffffffbc,
                           (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                          pMVar9,
+                          pMVar6,
                           MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__
                          );
-      pMVar12 = (MethodInfo *)pLVar10->_list;
-      RVar13 = pLVar10->_current;
-      LStack_11._version = 0;
+      RVar8 = pLVar7->_current;
       uStack_1 = 1;
-      LStack_11._current = (RegexCharClass_SingleRange)&stack0xffffffa8;
       while( true ) {
-        bVar14 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+        bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffa8,
+                          ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffac,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
                           );
-        if (bVar14 == 0) break;
-        pRStack_15 = (RegexCharClass_SingleRange__Array *)(pMVar6->fields).outputLinkRefs;
-        if (RVar13 == (RegexCharClass_SingleRange)0x0) goto code_?;
-        pRStack_8 = *(RegexCharClass_SingleRange__Array **)((int)RVar13 + 8);
-        pIStack_16 = *(Il2CppClass **)((int)RVar13 + 0x10);
-        uStack_17 = *(undefined1 *)((int)RVar13 + 0x14);
-        pMVar18 = (MethodInfo *)func_?();
+        if (bVar9 == 0) break;
+        pLVar5 = (pMVar4->fields).outputLinkRefs;
+        if (RVar8 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        pRVar10 = *(RegexCharClass_SingleRange__Array **)((int)RVar8 + 8);
+        _Var3 = ((Il2CppType *)((int)RVar8 + 0x10))->data;
+        uVar11 = *(undefined1 *)((int)RVar8 + 0x14);
+        RVar8 = (RegexCharClass_SingleRange)TypeInfo__MV__WorldObject__Link;
+        pMVar12 = (MethodInfo *)func_?();
         ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange___Fields *)
-        &pMVar18->invoker_method)->_items = (RegexCharClass_SingleRange__Array *)0xffffffff;
-        pMVar18->name = (char *)0xffffffff;
-        pMVar18->klass = (Il2CppClass *)0xffffffff;
+        &pMVar12->invoker_method)->_items = (RegexCharClass_SingleRange__Array *)0xffffffff;
+        pMVar12->name = (char *)0xffffffff;
+        pMVar12->klass = (Il2CppClass *)0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)pMVar18,ExceptionArgument__Enum_obj,pMVar9);
+                  ((Object *)pMVar12,ExceptionArgument__Enum_obj,pMVar6);
         ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange___Fields *)
-        &pMVar18->invoker_method)->_items = pRStack_8;
-        pMVar18->name = (char *)pIStack_16;
-        pMVar18->klass = pIStack_16;
-        *(undefined1 *)&pMVar18->return_type = uStack_17;
-        if (pRStack_15 == (RegexCharClass_SingleRange__Array *)0x0) goto code_?;
+        &pMVar12->invoker_method)->_items = pRVar10;
+        pMVar12->name = (char *)_Var3;
+        pMVar12->klass = (Il2CppClass *)_Var3;
+        *(undefined1 *)&pMVar12->return_type = uVar11;
+        if (pLVar5 == (List_1_MV_WorldObject_Link_ *)0x0) goto code_?;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__Add
-                  ((List_1_System_Object_ *)pRStack_15,(Object *)pMVar18,
+                  ((List_1_System_Object_ *)pLVar5,(Object *)pMVar12,
                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__Add_MV__WorldObject__Link_
                   );
-        pMVar6 = pMStack_7;
-        pMVar9 = pMVar18;
+        pMVar6 = pMVar12;
       }
       uStack_1 = 0xffffffff;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                ((Object *)&stack0xffffffa8,
+                ((Object *)&stack0xffffffac,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
-                 ,pMVar12);
+                 ,in_stack_13);
       uStack_1 = 0xffffffff;
-      this_00 = (List_1_MV_WorldObject_Link_ *)func_?();
+      pLVar5 = (List_1_MV_WorldObject_Link_ *)func_?();
       pMVar12 = MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__List__;
       mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
       __Il2CppFullySharedGenericType]::
       LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar5,
                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__List__);
-      (pMVar6->fields).inputLinkRefs = this_00;
+      (pMVar4->fields).inputLinkRefs = pLVar5;
       func_?();
-      pMVar9 = (MethodInfo *)(this->fields).inputLinkRefs;
-      if (pMVar9 != (MethodInfo *)0x0) {
-        pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+      pMVar6 = (MethodInfo *)(this->fields).inputLinkRefs;
+      if (pMVar6 != (MethodInfo *)0x0) {
+        pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                  ::RegexCharClass+SingleRange]::
                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                           (&LStack_11,
+                           ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                             *)&stack0xffffffbc,
                             (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                            pMVar9,
+                            pMVar6,
                             MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__
                            );
-        RVar13 = pLVar10->_current;
-        LStack_11._version = 0;
+        RVar8 = pLVar7->_current;
         uStack_1 = 4;
-        LStack_11._current = (RegexCharClass_SingleRange)&stack0xffffff98;
         while( true ) {
-          bVar14 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+          bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                   List_1_T_Enumerator_System_Object__MoveNext
-                            ((List_1_T_Enumerator_System_Object_ *)&stack0xffffff98,
+                            ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffac,
                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
                             );
-          if (bVar14 == 0) {
+          if (bVar9 == 0) {
             uStack_1 = 0xffffffff;
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                      ((Object *)&stack0xffffff98,
+                      ((Object *)&stack0xffffffac,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
                        ,pMVar12);
             uStack_1 = 0xffffffff;
-            pDVar19 = HashtableFunctions::HashtableFunctions_DeepCopyHashTable_1
-                               ((this->fields).data,(MethodInfo *)0x0);
-            (pMVar6->fields).data = pDVar19;
+            pDVar14 = (this->fields).data;
+            if (cRam_? == '\0') {
+              func_?();
+              func_?();
+              cRam_? = '\x01';
+            }
+            pDVar15 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                       *)func_?();
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::StyleComplexSelector+PseudoStateData]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                      (pDVar15,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                      );
+            pDVar14 = HashtableFunctions::HashtableFunctions_DeepCopyHashTable
+                                (pDVar14,(Dictionary_2_System_Object_System_Object_ *)pDVar15,
+                                 (MethodInfo *)0x0);
+            (pMVar4->fields).data = pDVar14;
             func_?();
-            pDVar19 = HashtableFunctions::HashtableFunctions_DeepCopyHashTable_1
-                               ((this->fields).runTimeData,(MethodInfo *)0x0);
-            (pMVar6->fields).runTimeData = pDVar19;
+            pDVar14 = (this->fields).runTimeData;
+            if (cRam_? == '\0') {
+              func_?();
+              func_?();
+              cRam_? = '\x01';
+            }
+            pDVar15 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                       *)func_?();
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::StyleComplexSelector+PseudoStateData]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                      (pDVar15,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                      );
+            pDVar14 = HashtableFunctions::HashtableFunctions_DeepCopyHashTable
+                                (pDVar14,(Dictionary_2_System_Object_System_Object_ *)pDVar15,
+                                 (MethodInfo *)0x0);
+            (pMVar4->fields).runTimeData = pDVar14;
             func_?();
             *unaff_FS_OFFSET = uStack_3;
-            return pMVar6;
+            return pMVar4;
           }
-          pRStack_8 = (RegexCharClass_SingleRange__Array *)(pMVar6->fields).inputLinkRefs;
-          if (RVar13 == (RegexCharClass_SingleRange)0x0) break;
-          pRStack_15 = *(RegexCharClass_SingleRange__Array **)((int)RVar13 + 8);
-          _Stack_28 = ((Il2CppType *)((int)RVar13 + 0x10))->data;
-          uStack_17 = *(undefined1 *)((int)RVar13 + 0x14);
-          RVar13 = (RegexCharClass_SingleRange)TypeInfo__MV__WorldObject__Link;
-          pMVar18 = (MethodInfo *)func_?();
+          pLVar5 = (pMVar4->fields).inputLinkRefs;
+          if (RVar8 == (RegexCharClass_SingleRange)0x0) break;
+          pRVar10 = *(RegexCharClass_SingleRange__Array **)((int)RVar8 + 8);
+          _Var3 = ((Il2CppType *)((int)RVar8 + 0x10))->data;
+          uVar11 = *(undefined1 *)((int)RVar8 + 0x14);
+          RVar8 = (RegexCharClass_SingleRange)TypeInfo__MV__WorldObject__Link;
+          value = (MethodInfo *)func_?();
           ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange___Fields *)
-          &pMVar18->invoker_method)->_items = (RegexCharClass_SingleRange__Array *)0xffffffff;
-          pMVar18->name = (char *)0xffffffff;
-          pMVar18->klass = (Il2CppClass *)0xffffffff;
+          &value->invoker_method)->_items = (RegexCharClass_SingleRange__Array *)0xffffffff;
+          value->name = (char *)0xffffffff;
+          value->klass = (Il2CppClass *)0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    ((Object *)pMVar18,ExceptionArgument__Enum_obj,pMVar9);
+                    ((Object *)value,ExceptionArgument__Enum_obj,pMVar6);
           ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange___Fields *)
-          &pMVar18->invoker_method)->_items = pRStack_15;
-          pMVar18->name = (char *)_Stack_28;
-          pMVar18->klass = (Il2CppClass *)_Stack_28;
-          *(undefined1 *)&pMVar18->return_type = uStack_17;
-          if (pRStack_8 == (RegexCharClass_SingleRange__Array *)0x0) break;
+          &value->invoker_method)->_items = pRVar10;
+          value->name = (char *)_Var3;
+          value->klass = (Il2CppClass *)_Var3;
+          *(undefined1 *)&value->return_type = uVar11;
+          if (pLVar5 == (List_1_MV_WorldObject_Link_ *)0x0) break;
           mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
           List_1_System_Object__Add
-                    ((List_1_System_Object_ *)pRStack_8,(Object *)pMVar18,
+                    ((List_1_System_Object_ *)pLVar5,(Object *)value,
                      MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__Add_MV__WorldObject__Link_
                     );
-          pMVar6 = pMStack_7;
-          pMVar9 = pMVar18;
+          pMVar6 = value;
         }
       }
     }
@@ -298,9 +319,9 @@ code_?:
   func_?();
   func_?();
   func_?();
-  pcVar20 = (code *)swi(3);
-  pMVar6 = (MVWorldObject *)(*pcVar20)();
-  return pMVar6;
+  pcVar16 = (code *)swi(3);
+  pMVar4 = (MVWorldObject *)(*pcVar16)();
+  return pMVar4;
 }
 
 
@@ -402,11 +423,9 @@ MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_DeepCopyWorldOb
               ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar1,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    puStack3 = &stack0xfffffff3;
-    pWStack4 = TypeInfo__MV__WorldObject__WorldObjectDataParameters;
+    pWStack3 = TypeInfo__MV__WorldObject__WorldObjectDataParameters;
     pOVar1 = (Object *)func_?();
-    pIStack5 = (this->klass->vtable).set_Scale.methodPtr;
-    pMStack6 = this;
+    pIStack4 = (this->klass->vtable).set_Scale.methodPtr;
     (*(code *)(this->klass->vtable).get_Scale.method)();
     pOVar2 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
@@ -415,32 +434,72 @@ MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_DeepCopyWorldOb
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     pOVar1 = (Object *)func_?();
-    pDVar7 = HashtableFunctions::HashtableFunctions_DeepCopyHashTable_1
-                       ((this->fields).data,(MethodInfo *)0x0);
+    pDVar5 = (this->fields).data;
+    if (cRam_? == '\0') {
+      ppMStack6 =
+           &
+           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+      ;
+      func_?();
+      func_?();
+      cRam_? = '\x01';
+    }
+    ppMStack6 =
+         (MethodInfo **)
+         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+    pDVar7 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+              *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (pDVar7,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    pDVar5 = HashtableFunctions::HashtableFunctions_DeepCopyHashTable
+                       (pDVar5,(Dictionary_2_System_Object_System_Object_ *)pDVar7,(MethodInfo *)0x0
+                       );
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar1,(Object *)pDVar7,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar1,(Object *)pDVar5,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    puStack8 = &stack0xfffffff1;
-    pWStack9 = TypeInfo__MV__WorldObject__WorldObjectDataParameters;
     pOVar1 = (Object *)func_?();
-    pIStack10 = (this->klass->vtable).set_RunTimeData.methodPtr;
-    pMStack11 = this;
-    pDVar7 = (Dictionary_2_System_Object_System_Object_ *)
+    pDVar5 = (Dictionary_2_System_Object_System_Object_ *)
              (*(code *)(this->klass->vtable).get_RunTimeData.method)();
-    pDVar7 = HashtableFunctions::HashtableFunctions_DeepCopyHashTable_1(pDVar7,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      ppMStack8 =
+           &
+           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+      ;
+      func_?();
+      func_?();
+      cRam_? = '\x01';
+    }
+    ppMStack8 =
+         (MethodInfo **)
+         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+    pDVar7 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+              *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (pDVar7,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    pDVar5 = HashtableFunctions::HashtableFunctions_DeepCopyHashTable
+                       (pDVar5,(Dictionary_2_System_Object_System_Object_ *)pDVar7,(MethodInfo *)0x0
+                       );
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar1,(Object *)pDVar7,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar1,(Object *)pDVar5,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     return (Dictionary_2_System_Object_System_Object_ *)this_00;
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  pDVar7 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar12)();
-  return pDVar7;
+  pcVar9 = (code *)swi(3);
+  pDVar5 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar9)();
+  return pDVar5;
 }
 
 
@@ -510,8 +569,8 @@ void MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_GetLinksFo
   puStack_2 = &DAT_?;
   _Stack_10.genericMethod = *(Il2CppGenericMethod **)unaff_FS_OFFSET;
   unaff_FS_OFFSET->genericMethod = (Il2CppGenericMethod *)&_Stack_10;
-  _Stack_14.rgctx_data = (Il2CppRGCTXData *)&stack0xffffffa4;
-  _Var4.rgctx_data = (Il2CppRGCTXData *)&stack0xffffffa4;
+  _Stack_14.rgctx_data = (Il2CppRGCTXData *)&stack0xffffffb4;
+  _Var4.rgctx_data = (Il2CppRGCTXData *)&stack0xffffffb4;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
@@ -535,47 +594,43 @@ void MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_GetLinksFo
   LStack_3._index = 0;
   LStack_3._version = 0;
   LStack_3._current = (Object *)0x0;
-  LStack_4._list = (List_1_System_Object_ *)0x0;
-  LStack_4._index = 0;
-  LStack_4._version = 0;
-  LStack_4._current = (Object *)0x0;
-  pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+  pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
            (this->fields).inputLinkRefs;
-  if (pLVar5 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    method_00 = (MethodInfo *)&LStack_6;
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  if (pLVar4 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    method_00 = (MethodInfo *)&LStack_5;
+    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                         *)method_00,pLVar5,
+                         *)method_00,pLVar4,
                         MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__
                        );
-    LStack_3._list = (List_1_System_Object_ *)pLVar7->_list;
-    LStack_3._index = pLVar7->_index;
-    LStack_3._version = pLVar7->_version;
-    LStack_3._current = *(Object **)&pLVar7->_current;
-    LStack_6._version = 0;
+    LStack_3._list = (List_1_System_Object_ *)pLVar6->_list;
+    LStack_3._index = pLVar6->_index;
+    LStack_3._version = pLVar6->_version;
+    LStack_3._current = *(Object **)&pLVar6->_current;
+    LStack_5._version = 0;
     uStack_1._0_2_ = 1;
     uStack_1._2_2_ = 0;
-    LStack_6._current = (RegexCharClass_SingleRange)&LStack_3;
+    LStack_5._current = (RegexCharClass_SingleRange)&LStack_3;
     while( true ) {
-      bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+      bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
                         (&LStack_3,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
                         );
-      if (bVar8 == 0) break;
-      RStack_9 = (RegexCharClass_SingleRange)LStack_3._current;
+      if (bVar7 == 0) break;
+      RStack_8 = (RegexCharClass_SingleRange)LStack_3._current;
       if (((RegexCharClass_SingleRange)LStack_3._current == (RegexCharClass_SingleRange)0x0) ||
          (links == (List_1_System_Int32_ *)0x0)) goto code_?;
-      bVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+      bVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
               List_1_System_Int32__Contains
                         (links,*(int32_t *)((int)LStack_3._current + 8),
                          MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
-      if (bVar8 == 0) {
-        if (RStack_9 == (RegexCharClass_SingleRange)0x0) goto code_?;
-        in_stack_10 = (MethodInfo *)links;
-        func_?(links,*(undefined4 *)((int)RStack_9 + 8),
+      if (bVar7 == 0) {
+        if (RStack_8 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        in_stack_9 = (MethodInfo *)links;
+        func_?(links,*(undefined4 *)((int)RStack_8 + 8),
                         MethodInfo__System__Collections__Generic__List<int>__Add_int_);
       }
     }
@@ -585,64 +640,64 @@ void MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_GetLinksFo
               ((Object *)&LStack_3,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
-               ,in_stack_10);
+               ,in_stack_9);
     uStack_1._0_2_ = 0xffff;
     uStack_1._2_2_ = 0xffff;
-    pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+    pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (this->fields).outputLinkRefs;
-    if (pLVar5 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    if (pLVar4 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         (&LStack_6,pLVar5,
+                         (&LStack_5,pLVar4,
                           MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__
                          );
-      LStack_4._list = (List_1_System_Object_ *)pLVar7->_list;
-      LStack_4._index = pLVar7->_index;
-      LStack_4._version = pLVar7->_version;
-      LStack_4._current = *(Object **)&pLVar7->_current;
-      LStack_6._version = 0;
+      LStack_3._list = (List_1_System_Object_ *)pLVar6->_list;
+      LStack_3._index = pLVar6->_index;
+      LStack_3._version = pLVar6->_version;
+      LStack_3._current = *(Object **)&pLVar6->_current;
+      LStack_5._version = 0;
       uStack_1._0_2_ = 4;
       uStack_1._2_2_ = 0;
-      LStack_6._current = (RegexCharClass_SingleRange)&LStack_4;
+      LStack_5._current = (RegexCharClass_SingleRange)&LStack_3;
       while( true ) {
         do {
-          bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+          bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                   List_1_T_Enumerator_System_Object__MoveNext
-                            (&LStack_4,
+                            (&LStack_3,
                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
                             );
-          pOVar11 = LStack_4._current;
-          if (bVar8 == 0) {
+          pOVar10 = LStack_3._current;
+          if (bVar7 == 0) {
             uStack_1._0_2_ = 0xffff;
             uStack_1._2_2_ = 0xffff;
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                      ((Object *)&LStack_4,
+                      ((Object *)&LStack_3,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
                        ,method_00);
             *unaff_FS_OFFSET = _Stack_10;
             return;
           }
-          if (((RegexCharClass_SingleRange)LStack_4._current == (RegexCharClass_SingleRange)0x0) ||
+          if (((RegexCharClass_SingleRange)LStack_3._current == (RegexCharClass_SingleRange)0x0) ||
              (links == (List_1_System_Int32_ *)0x0)) goto code_?;
-          bVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+          bVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
                   List_1_System_Int32__Contains
-                            (links,*(int32_t *)((int)LStack_4._current + 8),
+                            (links,*(int32_t *)((int)LStack_3._current + 8),
                              MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
-        } while (bVar8 != 0);
-        if ((RegexCharClass_SingleRange)pOVar11 == (RegexCharClass_SingleRange)0x0) break;
+        } while (bVar7 != 0);
+        if ((RegexCharClass_SingleRange)pOVar10 == (RegexCharClass_SingleRange)0x0) break;
         method_00 = (MethodInfo *)links;
-        func_?(links,*(undefined4 *)((int)pOVar11 + 8),
+        func_?(links,*(undefined4 *)((int)pOVar10 + 8),
                         MethodInfo__System__Collections__Generic__List<int>__Add_int_);
       }
     }
   }
 code_?:
-  uVar12 = func_?();
-  func_?(uVar12);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  uVar11 = func_?();
+  func_?(uVar11);
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -904,8 +959,7 @@ String * MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_ToStri
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__Object);
+    func_?(&TypeInfo__System__String);
     func_?(&TypeInfo__MV__WorldObject__WorldObjectType);
     func_?(&StringLiteral__owner_);
     func_?(&StringLiteral__id__);
@@ -913,115 +967,69 @@ String * MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_ToStri
     func_?(&StringLiteral__itemId__);
     cRam_? = '\x01';
   }
-  args = (Object__Array *)func_?(TypeInfo__System__Object,9);
-  iStack_1 = (this->fields).type;
-  pOVar2 = (Object *)func_?(TypeInfo__MV__WorldObject__WorldObjectType,&iStack_1);
-  if (args == (Object__Array *)0x0) {
+  values = (String__Array *)func_?(TypeInfo__System__String,9);
+  EStack_1.klass = (Enum__Class *)TypeInfo__MV__WorldObject__WorldObjectType;
+  iStack_2 = (this->fields).type;
+  EStack_1.monitor = (MonitorData *)0xffffffff;
+  pSVar3 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_1,(MethodInfo *)0x0);
+  if (values == (String__Array *)0x0) {
     func_?();
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
   }
-  else {
-    if ((pOVar2 != (Object *)0x0) &&
-       (iVar4 = func_?(pOVar2,(args->klass->_0).element_class), iVar4 == 0))
-    goto code_?;
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = pOVar2;
-    func_?(args->vector,pOVar2);
-    if ((StringLiteral__id__ != (String *)0x0) &&
-       (iVar4 = func_?(StringLiteral__id__,(args->klass->_0).element_class), iVar4 == 0))
-    goto code_?;
-    pSVar5 = StringLiteral__id__;
-    if (args->max_length < 2) goto code_?;
-    args->vector[1] = (Object *)StringLiteral__id__;
-    func_?(args->vector + 1,pSVar5);
-    iStack_6 = (this->fields).id;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_6);
-    if ((pOVar2 != (Object *)0x0) &&
-       (iVar4 = func_?(pOVar2,(args->klass->_0).element_class), iVar4 == 0))
-    goto code_?;
-    if (args->max_length < 3) goto code_?;
-    args->vector[2] = pOVar2;
-    func_?(args->vector + 2,pOVar2);
-    if ((StringLiteral__groupId__ != (String *)0x0) &&
-       (iVar4 = func_?(StringLiteral__groupId__,(args->klass->_0).element_class),
-       iVar4 == 0)) goto code_?;
-    pSVar5 = StringLiteral__groupId__;
-    if (args->max_length < 4) goto code_?;
-    args->vector[3] = (Object *)StringLiteral__groupId__;
-    func_?(args->vector + 3,pSVar5);
-    iStack_7 = (this->fields).groupId;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_7);
-    if ((pOVar2 != (Object *)0x0) &&
-       (iVar4 = func_?(pOVar2,(args->klass->_0).element_class), iVar4 == 0))
-    goto code_?;
-    if (args->max_length < 5) goto code_?;
-    args->vector[4] = pOVar2;
-    func_?(args->vector + 4,pOVar2);
-    if ((StringLiteral__itemId__ != (String *)0x0) &&
-       (iVar4 = func_?(StringLiteral__itemId__,(args->klass->_0).element_class), iVar4 == 0
-       )) goto code_?;
-    pSVar5 = StringLiteral__itemId__;
-    if (args->max_length < 6) goto code_?;
-    args->vector[5] = (Object *)StringLiteral__itemId__;
-    func_?(args->vector + 5,pSVar5);
-    iStack_8 = (this->fields).itemId;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_8);
-    if ((pOVar2 != (Object *)0x0) &&
-       (iVar4 = func_?(pOVar2,(args->klass->_0).element_class), iVar4 == 0))
-    goto code_?;
-    if (args->max_length < 7) goto code_?;
-    args->vector[6] = pOVar2;
-    func_?(args->vector + 6,pOVar2);
-    if ((StringLiteral__owner_ != (String *)0x0) &&
-       (iVar4 = func_?(StringLiteral__owner_,(args->klass->_0).element_class), iVar4 == 0))
-    goto code_?;
-    pSVar5 = StringLiteral__owner_;
-    if (args->max_length < 8) goto code_?;
-    args->vector[7] = (Object *)StringLiteral__owner_;
-    func_?(args->vector + 7,pSVar5);
-    iStack_9 = (this->fields).ownerActorNr;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_9);
-    if ((pOVar2 == (Object *)0x0) ||
-       (iVar4 = func_?(pOVar2,(args->klass->_0).element_class), iVar4 != 0)) {
-      if (8 < args->max_length) {
-        args->vector[8] = pOVar2;
-        func_?(args->vector + 8,pOVar2);
-        pSVar5 = mscorlib.dll::System::String::String_Concat_2(args,(MethodInfo *)0x0);
-        return pSVar5;
+  else if (values->max_length != 0) {
+    values->vector[0] = pSVar3;
+    func_?(values->vector,pSVar3);
+    pSVar3 = StringLiteral__id__;
+    if (1 < values->max_length) {
+      values->vector[1] = StringLiteral__id__;
+      func_?(values->vector + 1,pSVar3);
+      pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this->fields,(MethodInfo *)0x0)
+      ;
+      if (2 < values->max_length) {
+        values->vector[2] = pSVar3;
+        func_?(values->vector + 2,pSVar3);
+        pSVar3 = StringLiteral__groupId__;
+        if (3 < values->max_length) {
+          values->vector[3] = StringLiteral__groupId__;
+          func_?(values->vector + 3,pSVar3);
+          pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
+                             ((Int32 *)&(this->fields).groupId,(MethodInfo *)0x0);
+          if (4 < values->max_length) {
+            values->vector[4] = pSVar3;
+            func_?(values->vector + 4,pSVar3);
+            pSVar3 = StringLiteral__itemId__;
+            if (5 < values->max_length) {
+              values->vector[5] = StringLiteral__itemId__;
+              func_?(values->vector + 5,pSVar3);
+              pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
+                                 ((Int32 *)&(this->fields).itemId,(MethodInfo *)0x0);
+              if (6 < values->max_length) {
+                values->vector[6] = pSVar3;
+                func_?(values->vector + 6,pSVar3);
+                pSVar3 = StringLiteral__owner_;
+                if (7 < values->max_length) {
+                  values->vector[7] = StringLiteral__owner_;
+                  func_?(values->vector + 7,pSVar3);
+                  pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
+                                     ((Int32 *)&(this->fields).ownerActorNr,(MethodInfo *)0x0);
+                  if (8 < values->max_length) {
+                    values->vector[8] = pSVar3;
+                    func_?(values->vector + 8,pSVar3);
+                    pSVar3 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0)
+                    ;
+                    return pSVar3;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
-      goto code_?;
     }
   }
-  uVar3 = func_?(0);
-  func_?(uVar3);
-code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  pSVar5 = (String *)(*pcVar10)();
-  return pSVar5;
+  pcVar4 = (code *)swi(3);
+  pSVar3 = (String *)(*pcVar4)();
+  return pSVar3;
 }
 
 

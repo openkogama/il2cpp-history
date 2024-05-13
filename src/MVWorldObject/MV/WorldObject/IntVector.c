@@ -65,90 +65,53 @@ String * MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToString
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int16);
-    func_?(&TypeInfo__System__Object);
+    func_?(&TypeInfo__System__String);
     func_?(&StringLiteral_x__);
     func_?(&StringLiteral__y__);
     func_?(&StringLiteral__z__);
     cRam_? = '\x01';
   }
-  args = (Object__Array *)func_?(TypeInfo__System__Object,6);
-  if (args == (Object__Array *)0x0) {
+  values = (String__Array *)func_?(TypeInfo__System__String,6);
+  pSVar1 = StringLiteral_x__;
+  if (values == (String__Array *)0x0) {
     func_?();
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
   }
-  else {
-    if ((StringLiteral_x__ != (String *)0x0) &&
-       (iVar2 = func_?(StringLiteral_x__,(args->klass->_0).element_class), iVar2 == 0))
-    goto code_?;
-    pSVar3 = StringLiteral_x__;
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = (Object *)StringLiteral_x__;
-    func_?(args->vector,pSVar3);
-    uStack_4 = (uint)(ushort)this->x;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int16,&uStack_4);
-    if ((pOVar5 != (Object *)0x0) &&
-       (iVar2 = func_?(pOVar5,(args->klass->_0).element_class), iVar2 == 0))
-    goto code_?;
-    if (args->max_length < 2) goto code_?;
-    args->vector[1] = pOVar5;
-    func_?(args->vector + 1,pOVar5);
-    if ((StringLiteral__y__ != (String *)0x0) &&
-       (iVar2 = func_?(StringLiteral__y__,(args->klass->_0).element_class), iVar2 == 0))
-    goto code_?;
-    pSVar3 = StringLiteral__y__;
-    if (args->max_length < 3) goto code_?;
-    args->vector[2] = (Object *)StringLiteral__y__;
-    func_?(args->vector + 2,pSVar3);
-    uStack_6 = (uint)(ushort)this->y;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int16,&uStack_6);
-    if ((pOVar5 != (Object *)0x0) &&
-       (iVar2 = func_?(pOVar5,(args->klass->_0).element_class), iVar2 == 0))
-    goto code_?;
-    if (args->max_length < 4) goto code_?;
-    args->vector[3] = pOVar5;
-    func_?(args->vector + 3,pOVar5);
-    if ((StringLiteral__z__ != (String *)0x0) &&
-       (iVar2 = func_?(StringLiteral__z__,(args->klass->_0).element_class), iVar2 == 0))
-    goto code_?;
-    pSVar3 = StringLiteral__z__;
-    if (args->max_length < 5) goto code_?;
-    args->vector[4] = (Object *)StringLiteral__z__;
-    func_?(args->vector + 4,pSVar3);
-    uStack_7 = (uint)(ushort)this->z;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int16,&uStack_7);
-    if ((pOVar5 == (Object *)0x0) ||
-       (iVar2 = func_?(pOVar5,(args->klass->_0).element_class), iVar2 != 0)) {
-      if (5 < args->max_length) {
-        args->vector[5] = pOVar5;
-        func_?(args->vector + 5,pOVar5);
-        pSVar3 = mscorlib.dll::System::String::String_Concat_2(args,(MethodInfo *)0x0);
-        return pSVar3;
+  else if (values->max_length != 0) {
+    values->vector[0] = StringLiteral_x__;
+    func_?(values->vector,pSVar1);
+    pSVar1 = mscorlib.dll::System::Int16::Int16_ToString((Int16 *)this,(MethodInfo *)0x0);
+    if (1 < values->max_length) {
+      values->vector[1] = pSVar1;
+      func_?(values->vector + 1,pSVar1);
+      pSVar1 = StringLiteral__y__;
+      if (2 < values->max_length) {
+        values->vector[2] = StringLiteral__y__;
+        func_?(values->vector + 2,pSVar1);
+        pSVar1 = mscorlib.dll::System::Int16::Int16_ToString((Int16 *)&this->y,(MethodInfo *)0x0);
+        if (3 < values->max_length) {
+          values->vector[3] = pSVar1;
+          func_?(values->vector + 3,pSVar1);
+          pSVar1 = StringLiteral__z__;
+          if (4 < values->max_length) {
+            values->vector[4] = StringLiteral__z__;
+            func_?(values->vector + 4,pSVar1);
+            pSVar1 = mscorlib.dll::System::Int16::Int16_ToString
+                               ((Int16 *)&this->z,(MethodInfo *)0x0);
+            if (5 < values->max_length) {
+              values->vector[5] = pSVar1;
+              func_?(values->vector + 5,pSVar1);
+              pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
+              return pSVar1;
+            }
+          }
+        }
       }
-      goto code_?;
     }
   }
-  uVar1 = func_?(0);
-  func_?(uVar1);
-code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  pSVar3 = (String *)(*pcVar8)();
-  return pSVar3;
+  pcVar2 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar2)();
+  return pSVar1;
 }
 
 

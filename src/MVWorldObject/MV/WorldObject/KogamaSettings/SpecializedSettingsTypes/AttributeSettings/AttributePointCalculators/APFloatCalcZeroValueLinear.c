@@ -17,11 +17,10 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
     func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
   }
-  fVar2 = fVar2 * fVar1;
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  dVar3 = (double)fVar2;
+  dVar3 = (double)(fVar1 * fVar2);
   if (dVar3 < _UNK_?) {
     fVar4 = (float10)func_?(dVar3,&dStack_5);
     if ((double)fVar4 == _UNK_?) {
@@ -31,14 +30,14 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
       }
     }
     else {
-      fVar4 = (float10)func_?((double)fVar2 - _UNK_?);
+      fVar4 = (float10)func_?(dVar3 - _UNK_?);
       dStack_5 = (double)fVar4;
     }
   }
   else {
     fVar4 = (float10)func_?(dVar3,&dStack_5);
     if ((double)fVar4 != _UNK_?) {
-      fVar4 = (float10)func_?((double)fVar2 + _UNK_?);
+      fVar4 = (float10)func_?(dVar3 + _UNK_?);
       return (int)fVar4;
     }
     uVar6 = func_?();

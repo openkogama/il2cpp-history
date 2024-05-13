@@ -135,36 +135,26 @@ code_?:
 code_?:
   bVar16 = 0;
   uVar15 = func_?();
-  bVar17 = (byte)uVar15;
-  bVar18 = 9 < (bVar17 & 0xf);
-  uVar19 = (undefined3)((ulonglong)uVar15 >> 8);
-  bVar16 = 0x99 < bVar17 | bVar16;
-  bVar20 = bVar17 + (bVar18 | in_AF) * -6 + bVar16 * -0x60;
-  pcVar21 = (char *)CONCAT31(uVar19,bVar20);
-  bVar17 = *(byte *)&pGVar2->klass;
-  bVar22 = (byte)((uint)unaff_EBX >> 8);
-  bVar23 = *(char *)&pGVar2->klass + bVar22;
-  *(byte *)&pGVar2->klass = bVar23 + bVar16;
-  *pcVar21 = *pcVar21 + (char)((ulonglong)uVar15 >> 8) +
-             (CARRY1(bVar17,bVar22) || CARRY1(bVar23,bVar16));
-  pbVar24 = (byte *)((int)((ulonglong)uVar15 >> 0x20) + 0xe);
-  *pbVar24 = *pbVar24 ^ (byte)extraout_ECX;
-  pcVar21 = (char *)((int)pGVar1 + (0x68 - *extraout_ECX));
-  *pcVar21 = *pcVar21 + (char)((ulonglong)uVar15 >> 0x20) + -3 +
-             (pGVar1 < (GameMeterUpdatedEffect_AnimateScale_d_6 *)*extraout_ECX);
-  bVar17 = bVar20 & 0xd9;
-  uVar25 = CONCAT31(uVar19,bVar20) & 0xffffffd9;
-  if ((POPCOUNT((uint)(&stack0xfffffffc + uVar25) & 0xff) & 1U) == 0) {
-    return (bool)(&stack0xfffffffc + uVar25);
-  }
-  (**(code **)((int)&uStack_10 + uVar25))
-            ((uint)(in_NT & 1) * 0x4000 | (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 |
-             (uint)((char)bVar17 < '\0') * 0x80 | (uint)(bVar17 == 0) * 0x40 |
-             (uint)(bVar18 | in_AF & 1) * 0x10 | (uint)((POPCOUNT(bVar17) & 1U) == 0) * 4 |
-             (uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000 |
-             (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000);
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  iVar17 = (int)((ulonglong)uVar15 >> 0x20);
+  bVar18 = (byte)uVar15;
+  in_AF = 9 < (bVar18 & 0xf) | in_AF;
+  bVar16 = 0x99 < bVar18 | bVar16;
+  bVar19 = bVar18 + in_AF * -6 + bVar16 * -0x60;
+  bVar18 = *(byte *)&pGVar2->klass;
+  bVar20 = (byte)(extraout_ECX >> 8);
+  bVar21 = *(char *)&pGVar2->klass + bVar20;
+  *(byte *)&pGVar2->klass = bVar21 + bVar16;
+  bVar22 = 0x99 < bVar19 || (CARRY1(bVar18,bVar20) || CARRY1(bVar21,bVar16));
+  cVar23 = bVar19 + (9 < (bVar19 & 0xf) | in_AF) * -6 + bVar22 * -0x60;
+  pcVar24 = (char *)CONCAT31((int3)((ulonglong)uVar15 >> 8),cVar23);
+  puVar25 = (uint *)(iVar17 + -2);
+  cVar26 = (char)puVar25;
+  *pcVar24 = *pcVar24 + cVar26 + bVar22;
+  puVar27 = (uint *)(iVar17 + 0xe);
+  *puVar27 = *puVar27 ^ extraout_ECX;
+  pcVar24 = (char *)(((uint)pGVar1 | *puVar25) + 0x68);
+  *pcVar24 = *pcVar24 + cVar26 + -1;
+  return cVar23 + (char)&stack0xfffffffc + ((byte)extraout_ECX < (byte)unaff_EBX);
 }
 
 

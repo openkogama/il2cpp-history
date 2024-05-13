@@ -361,8 +361,7 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
           }
           UnityEngine.CoreModule.dll::UnityEngine::QualitySettings::QualitySettings_set_antiAliasing
                     (iVar3,(MethodInfo *)0x0);
-          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0)
-          ;
+          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
           if ((pMVar7 != (MaterialLoader *)0x0) &&
              (pMVar8 = (pMVar7->fields)._CubeModelMaterial_k__BackingField,
              pMVar8 != (Material *)0x0)) {
@@ -440,37 +439,38 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       }
     }
   }
-  cVar9 = '\0';
-  uVar10 = func_?();
-  pbVar11 = (byte *)((ulonglong)uVar10 >> 0x20);
-  uVar12 = (uint)uVar10;
-  pbVar13 = (byte *)CONCAT22((short)((uint)unaff_EBX >> 0x10),CONCAT11(5,(char)unaff_EBX));
-  pbVar11[-0x56efb0fb] = pbVar11[-0x56efb0fb] + (char)((ulonglong)uVar10 >> 8) + cVar9;
-  bVar14 = (char)uVar10 + 0x4f;
-  pbVar15 = (byte *)((int)&this->monitor + 2);
-  bVar16 = (byte)((ulonglong)uVar10 >> 0x20);
-  bVar17 = *pbVar15 + bVar16;
-  bVar18 = CARRY1(*pbVar15,bVar16) || CARRY1(bVar17,0xfa4fefb0 < uVar12);
-  *pbVar15 = bVar17 + (0xfa4fefb0 < uVar12);
-  bVar16 = (byte)((ulonglong)uVar10 >> 0x28);
-  bVar17 = *pbVar13 + bVar16;
-  bVar19 = CARRY1(*pbVar13,bVar16) || CARRY1(bVar17,bVar18);
-  *pbVar13 = bVar17 + bVar18;
-  bVar18 = 0xfa < *pbVar11 || CARRY1(*pbVar11 + 5,bVar19);
-  *pbVar11 = *pbVar11 + 5 + bVar19;
-  pbVar15 = (byte *)(extraout_ECX + 6);
-  bVar17 = *pbVar15 + bVar14;
-  bVar19 = CARRY1(*pbVar15,bVar14) || CARRY1(bVar17,bVar18);
-  *pbVar15 = bVar17 + bVar18;
-  pbVar15 = (byte *)(uVar12 + 0x5b01055);
-  bVar17 = *pbVar15;
-  bVar16 = (byte)extraout_ECX;
-  bVar14 = *pbVar15;
-  *pbVar15 = bVar14 + bVar16 + bVar19;
-  *(char *)(unaff_EDI + -1) =
-       *(char *)(unaff_EDI + -1) + bVar16 + (CARRY1(bVar17,bVar16) || CARRY1(bVar14 + bVar16,bVar19));
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  uVar9 = func_?();
+  pbVar10 = (byte *)((ulonglong)uVar9 >> 0x20);
+  pbVar11 = (byte *)uVar9;
+  bVar12 = this->klass < (MaterialLoader__Class *)*unaff_EDI;
+  pbVar13 = pbVar10 + -0x66efb0fa;
+  bVar14 = (byte)((ulonglong)uVar9 >> 0x20);
+  bVar15 = *pbVar13 + bVar14;
+  bVar16 = CARRY1(*pbVar13,bVar14) || CARRY1(bVar15,bVar12);
+  *pbVar13 = bVar15 + bVar12;
+  pbVar13 = pbVar11 + 0x46104f06;
+  bVar15 = (byte)((ulonglong)uVar9 >> 8);
+  bVar12 = CARRY1(*pbVar13,bVar15) || CARRY1(*pbVar13 + bVar15,bVar16);
+  *pbVar13 = *pbVar13 + bVar15 + bVar16;
+  bVar16 = CARRY1(*unaff_EBX,bVar15) || CARRY1(*unaff_EBX + bVar15,bVar12);
+  *unaff_EBX = *unaff_EBX + bVar15 + bVar12;
+  bVar14 = (byte)((uint)extraout_ECX >> 8);
+  bVar15 = *pbVar10 + bVar14;
+  bVar12 = CARRY1(*pbVar10,bVar14) || CARRY1(bVar15,bVar16);
+  *pbVar10 = bVar15 + bVar16;
+  bVar14 = (byte)((ulonglong)uVar9 >> 0x28);
+  bVar15 = *extraout_ECX + bVar14;
+  bVar16 = CARRY1(*extraout_ECX,bVar14) || CARRY1(bVar15,bVar12);
+  *extraout_ECX = bVar15 + bVar12;
+  bVar15 = *pbVar11;
+  bVar17 = (byte)((uint)unaff_EBX >> 8);
+  bVar14 = *pbVar11;
+  *pbVar11 = bVar14 + bVar17 + bVar16;
+  *(char *)((int)unaff_EDI + -3) =
+       *(char *)((int)unaff_EDI + -3) + bVar17 +
+       (CARRY1(bVar15,bVar17) || CARRY1(bVar14 + bVar17,bVar16));
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -521,7 +521,6 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
   this = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
   puStack_1 = (undefined *)0x0;
   pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&puStack_1);
-  this_00 = (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Object_ *)0x0;
   if (this != (MVNetworkGame_OperationRequests *)0x0) {
     MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetProfileSettings
               (this,ProfileSettingKey__Enum_ResetToDefaultValues,pOVar2,(MethodInfo *)0x0);
@@ -966,25 +965,13 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
     }
   }
   uVar10 = func_?();
-  pcVar11 = (char *)((int)&this_00->klass + 1);
-  out(*(undefined1 *)&this_00->klass,(short)((uint6)uVar10 >> 0x20));
-  uVar12 = (uint)uVar10 | 0x4f;
-  pbVar13 = (byte *)(extraout_ECX + 0xc);
-  bVar14 = *pbVar13;
-  *pbVar13 = *pbVar13 + unaff_BL;
-  pbVar13 = (byte *)(uVar12 + 0xc);
-  bVar15 = (byte)((uint6)uVar10 >> 8);
-  bVar16 = CARRY1(*pbVar13,bVar15) || CARRY1(*pbVar13 + bVar15,CARRY1(bVar14,unaff_BL));
-  *pbVar13 = *pbVar13 + bVar15 + CARRY1(bVar14,unaff_BL);
-  pbVar13 = (byte *)((int)&(unaff_EDI->fields)._._._._.m_CachedPtr + 2);
-  bVar14 = *pbVar13;
-  bVar17 = *pbVar13;
-  *pbVar13 = bVar17 + bVar15 + bVar16;
-  cRam_? = cRam_? + (char)extraout_ECX +
-                 (CARRY1(bVar14,bVar15) || CARRY1(bVar17 + bVar15,bVar16));
-  *pcVar11 = *pcVar11 + (((byte)uVar12 | 0x4f) + unaff_BH | 0x4f);
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pbVar11 = (byte *)((uVar10 | 0xd49104f) + 0xd);
+  bVar12 = *pbVar11;
+  *pbVar11 = *pbVar11 + extraout_DL;
+  pcVar13 = (char *)((int)&(unaff_EDI->fields)._._._._.m_CachedPtr + 3);
+  *pcVar13 = *pcVar13 + extraout_DL + CARRY1(bVar12,extraout_DL);
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -1296,7 +1283,8 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
           if (pIVar2 != pIVar3) goto code_?;
           puVar6 = (undefined4 *)func_?();
           func_?(*puVar6);
-          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0)
+          ;
           quality = func_?(0);
           if (pMVar7 != (MaterialLoader *)0x0) {
             MaterialLoader::MaterialLoader_SetTextureQuality(pMVar7,quality,(MethodInfo *)0x0);
@@ -1316,7 +1304,8 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
           if (pIVar2 != pIVar3) goto code_?;
           puVar6 = (undefined4 *)func_?();
           func_?(*puVar6);
-          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0)
+          ;
           if ((pMVar7 != (MaterialLoader *)0x0) &&
              (pMVar8 = (pMVar7->fields)._CubeModelMaterial_k__BackingField,
              pMVar8 != (Material *)0x0)) {
@@ -1344,7 +1333,8 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
           if (pIVar2 != pIVar3) goto code_?;
           puVar6 = (undefined4 *)func_?();
           func_?(*puVar6);
-          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0)
+          ;
           if ((pMVar7 != (MaterialLoader *)0x0) &&
              (pMVar8 = (pMVar7->fields)._CubeModelMaterial_k__BackingField,
              pMVar8 != (Material *)0x0)) {
@@ -1410,22 +1400,27 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
   func_?();
 code_?:
   uVar11 = 0x104f;
-  uVar12 = func_?();
-  bVar13 = 0xea4defb0 < uVar12 || CARRY4(uVar12 + 0x15b2104f,(uint)bVar4);
-  bVar4 = (char)(uVar12 + 0x15b2104f) + bVar4;
-  pbVar14 = (byte *)(unaff_EDI - ProfileSettingKey__Enum_TargetFrameRate);
-  bVar15 = *pbVar14 + bVar4;
-  bVar16 = CARRY1(*pbVar14,bVar4) || CARRY1(bVar15,bVar13);
-  *pbVar14 = bVar15 + bVar13;
-  pbVar14 = (byte *)(extraout_ECX + 0x16);
-  bVar13 = CARRY1(*pbVar14,extraout_DH) || CARRY1(*pbVar14 + extraout_DH,bVar16);
-  *pbVar14 = *pbVar14 + extraout_DH + bVar16;
-  bVar4 = (byte)extraout_ECX + unaff_BH;
-  *(char *)(unaff_EDI + 0xf2104f13) =
-       *(char *)(unaff_EDI + 0xf2104f13) + bVar4 + bVar13 +
-       (CARRY1((byte)extraout_ECX,unaff_BH) || CARRY1(bVar4,bVar13));
+  func_?();
+  pbVar12 = (byte *)(extraout_EDX + -0x8efb0ea);
+  bVar13 = CARRY1(*pbVar12,extraout_AH) || CARRY1(*pbVar12 + extraout_AH,bVar4);
+  *pbVar12 = *pbVar12 + extraout_AH + bVar4;
+  pbVar12 = (byte *)(extraout_ECX + 0x17);
+  bVar14 = CARRY1(*pbVar12,extraout_AH) || CARRY1(*pbVar12 + extraout_AH,bVar13);
+  *pbVar12 = *pbVar12 + extraout_AH + bVar13;
+  bVar4 = (byte)((uint)extraout_ECX >> 8);
+  bVar15 = (byte)extraout_ECX + bVar4;
+  bVar13 = CARRY1((byte)extraout_ECX,bVar4) || CARRY1(bVar15,bVar14);
+  pbVar12 = (byte *)(unaff_EDI + 0x14);
+  bVar4 = *pbVar12;
+  bVar16 = *pbVar12;
+  *pbVar12 = bVar16 + unaff_BH + bVar13;
+  *(char *)(unaff_EDI + 0xb) =
+       (*(char *)(unaff_EDI + 0xb) - (bVar15 + bVar14)) -
+       (CARRY1((byte)extraout_EDX,extraout_AH) ||
+       CARRY1((byte)extraout_EDX + extraout_AH,
+              CARRY1(bVar4,unaff_BH) || CARRY1(bVar16 + unaff_BH,bVar13)));
   pcVar17 = (code *)swi(3);
-  (*pcVar17)(CONCAT22(uVar11,in_DS));
+  (*pcVar17)(CONCAT22(uVar11,in_CS));
   return;
 }
 

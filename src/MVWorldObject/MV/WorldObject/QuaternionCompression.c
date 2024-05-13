@@ -160,41 +160,42 @@ Vector3 * MVWorldObject.dll::MV::WorldObject::QuaternionCompression::QuaternionC
   dVar1 = (double)(q1.y * q1.y) + (double)(q1.x * q1.x) + (double)(q1.z * q1.z) +
           (double)(q1.w * q1.w);
   dVar2 = (double)(q1.y * q1.x + q1.z * q1.w);
-  if (dVar2 <= dVar1 * _UNK_?) {
+  if (dVar1 * _UNK_? < dVar2) {
+    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Math);
+    }
+    fVar3 = (float10)func_?();
+    dVar2 = (double)fVar3 + (double)fVar3;
+    __return_storage_ptr__->y = 1.5707964;
+  }
+  else {
     if (dVar1 * _UNK_? <= dVar2) {
       if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Math);
       }
       fVar3 = (float10)func_?();
+      fVar4 = (float)fVar3;
       dVar1 = (dVar2 + dVar2) / dVar1;
-      func_?();
-      fVar4 = (float10)func_?();
+      func_?(fVar4,0,0,0);
+      fVar3 = (float10)func_?();
       if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
       }
       fVar5 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->degToRad;
-      __return_storage_ptr__->x = (float)fVar3 * fVar5;
+      __return_storage_ptr__->x = fVar4 * fVar5;
       __return_storage_ptr__->y = (float)dVar1 * fVar5;
-      __return_storage_ptr__->z = (float)fVar4 * fVar5;
+      __return_storage_ptr__->z = (float)fVar3 * fVar5;
       return __return_storage_ptr__;
     }
     if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Math);
     }
     fVar3 = (float10)func_?();
-    dVar1 = (double)fVar3 * _UNK_?;
+    dVar2 = (double)fVar3 * _UNK_?;
     __return_storage_ptr__->y = -1.5707964;
-    __return_storage_ptr__->z = 0.0;
-    __return_storage_ptr__->x = (float)dVar1;
-    return __return_storage_ptr__;
   }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Math);
-  }
-  fVar3 = (float10)func_?();
-  __return_storage_ptr__->y = 1.5707964;
   __return_storage_ptr__->z = 0.0;
-  __return_storage_ptr__->x = (float)((double)fVar3 + (double)fVar3);
+  __return_storage_ptr__->x = (float)dVar2;
   return __return_storage_ptr__;
 }
 

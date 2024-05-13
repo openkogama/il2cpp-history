@@ -374,7 +374,7 @@ bool Assembly-CSharp.dll::BoostController::BoostController_HasAvailableBoosts
           if (RVar6 == (RegexCharClass_SingleRange)0x0) goto code_?;
           method_00.rgctx_data = (Il2CppRGCTXData *)0x0;
           bVar5 = mscorlib.dll::System::String::String_op_Equality
-                            ((String *)method_01,*(String **)((int)RVar6 + 8),(MethodInfo *)0x0);
+                            ((String *)method_01,*(String **)((int)RVar6 + 0xc),(MethodInfo *)0x0);
           if (bVar5 != 0) {
             uStack_1 = 0xffffffff;
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55

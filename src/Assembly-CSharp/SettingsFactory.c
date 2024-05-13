@@ -1068,34 +1068,39 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
     cRam_? = '\x01';
   }
   method_00 = TypeInfo__SettingsFactory____c__DisplayClass57_0;
-  pOVar1 = (Object *)func_?();
+  pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+            ((Object *)pMVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (0x77 < (int)worldObjectType) {
     if ((int)worldObjectType < 0x89) {
       if (worldObjectType == WorldObjectType__Enum_AvatarSpawnRoleCreator) {
-        original_02 = (this->fields).spawnRoleEditorPrefab;
+        unaff_EBX.m_Index = (int32_t)(this->fields).spawnRoleEditorPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pOVar2 = (Object__Class *)
+        pIVar2 = (Int32__Array *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)original_02,
+                            ((Object *)unaff_EBX.m_Index,
                              SpawnRoleEditorMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleEditorMenu>_SpawnRoleEditorMenu_
                             );
-        unaff_EDI = (MVWorldObject__Class *)this;
-        if (pOVar1 != (Object *)0x0) {
-          pOVar1[1].klass = pOVar2;
+        bVar3 = 0;
+        if (pMVar1 != (MVEditablePickupItemBaseBlueprint__Class *)0x0) {
+          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId___Fields *)
+          &(pMVar1->_0).name)->_buckets = pIVar2;
           func_?();
-          if (pOVar1[1].klass != (Object__Class *)0x0) {
+          pIVar2 = ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId___Fields *)
+                    &(pMVar1->_0).name)->_buckets;
+          bVar3 = 0;
+          if (pIVar2 != (Int32__Array *)0x0) {
             SpawnRoleEditorMenu::SpawnRoleEditorMenu_Initialize
-                      ((SpawnRoleEditorMenu *)pOVar1[1].klass,0,(MethodInfo *)0x0);
-            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((SpawnRoleEditorMenu *)pIVar2,0,(MethodInfo *)0x0);
+            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                 ((Component *)this,(MethodInfo *)0x0);
             callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
             Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,pOVar1,
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
+                       (Object *)pMVar1,
                        MethodInfo__SettingsFactory____c__DisplayClass57_0___CreateSettingsDialog_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                        ,(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
@@ -1104,7 +1109,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
             }
             UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
             ExecuteEvents_ExecuteHierarchy
-                      (pGVar3,(BaseEventData *)0x0,callbackFunction,
+                      (pGVar4,(BaseEventData *)0x0,callbackFunction,
                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                       );
             return;
@@ -1113,62 +1118,65 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
       }
       else {
         if (worldObjectType != WorldObjectType__Enum_ModelTransparency) goto code_?;
-        pOVar4 = (this->fields).objectTransparencySettingsPrefab;
+        pOVar5 = (this->fields).objectTransparencySettingsPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pOVar4 = (ObjectTransparencySettings *)
+        pOVar5 = (ObjectTransparencySettings *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)pOVar4,
+                            ((Object *)pOVar5,
                              UGUI__Desktop__Scripts__EditMode__SettingsBoxes__ObjectTransparencySettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::ObjectTransparencySettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__ObjectTransparencySettings_
                             );
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)this,(MethodInfo *)0x0);
-        unaff_EDI = (MVWorldObject__Class *)0x0;
-        if (pOVar4 != (ObjectTransparencySettings *)0x0) {
+        bVar3 = 0;
+        pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+        if (pOVar5 != (ObjectTransparencySettings *)0x0) {
           UGUI::Desktop::Scripts::EditMode::SettingsBoxes::ObjectTransparencySettings::
-          ObjectTransparencySettings_Initialize(pOVar4,0,pGVar3,(MethodInfo *)0x0);
+          ObjectTransparencySettings_Initialize(pOVar5,0,pGVar4,(MethodInfo *)0x0);
           return;
         }
       }
     }
     else if (worldObjectType == WorldObjectType__Enum_CameraSettings) {
-      pCVar5 = (this->fields).cameraBoxSettingsPrefab;
+      pCVar6 = (this->fields).cameraBoxSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pCVar5 = (CameraBoxSettings *)
+      pCVar6 = (CameraBoxSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pCVar5,
+                          ((Object *)pCVar6,
                            UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Camera__CameraBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camera::CameraBoxSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Camera__CameraBoxSettings_
                           );
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pCVar5 != (CameraBoxSettings *)0x0) {
+      bVar3 = 0;
+      pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+      if (pCVar6 != (CameraBoxSettings *)0x0) {
         UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camera::CameraBoxSettings::
-        CameraBoxSettings_Initialize(pCVar5,0,pGVar3,(MethodInfo *)0x0);
+        CameraBoxSettings_Initialize(pCVar6,0,pGVar4,(MethodInfo *)0x0);
         return;
       }
     }
     else {
       switch(worldObjectType) {
       case WorldObjectType__Enum_GameCoinChest:
-        pGVar6 = (this->fields).gameCoinChestSettingsPrefab;
+        pGVar7 = (this->fields).gameCoinChestSettingsPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pGVar6 = (GameCoinChestSettings *)
+        pGVar7 = (GameCoinChestSettings *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)pGVar6,
+                            ((Object *)pGVar7,
                              GameCoinChestSettings_MethodInfo__UnityEngine__Object__Instantiate<GameCoinChestSettings>_GameCoinChestSettings_
                             );
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)this,(MethodInfo *)0x0);
-        unaff_EDI = (MVWorldObject__Class *)0x0;
-        if (pGVar6 != (GameCoinChestSettings *)0x0) {
+        bVar3 = 0;
+        pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+        if (pGVar7 != (GameCoinChestSettings *)0x0) {
           GameCoinChestSettings::GameCoinChestSettings_Initialize
-                    (pGVar6,0,pGVar3,(MethodInfo *)0x0);
+                    (pGVar7,0,pGVar4,(MethodInfo *)0x0);
           return;
         }
         break;
@@ -1185,40 +1193,54 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
       case WorldObjectType__Enum_CollectTheItem:
         goto code_?;
       case WorldObjectType__Enum_DoorBlueprint:
-        pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-        if ((pMVar7 != (MVWorldObjectClientManager *)0x0) &&
-           (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                (pMVar7,woID,(MethodInfo *)0x0), pMVar8 != (MVWorldObject *)0x0))
-        {
-          if (((pMVar8->klass->_1).naturalAligment <
-               (TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint->_1).naturalAligment) ||
-             ((MVDoorBlueprint__Class *)
-              (pMVar8->klass->_1).typeHierarchy
-              [(TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint->_1).naturalAligment - 1] !=
-              TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint)) {
+        pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        bVar3 = 0;
+        if (pMVar8 != (MVWorldObjectClientManager *)0x0) {
+          pMVar9 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                              (pMVar8,woID,(MethodInfo *)0x0);
+          bVar3 = 0;
+          pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)
+                    TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint;
+          if (pMVar9 != (MVWorldObject *)0x0) {
+            bVar3 = true;
+            pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)
+                      TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint;
+            if (((pMVar9->klass->_1).naturalAligment <
+                 (TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint->_1).naturalAligment) ||
+               (pMVar10 = (MVDoorBlueprint__Class *)
+                         (pMVar9->klass->_1).typeHierarchy
+                         [(TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint->_1).naturalAligment
+                          - 1],
+               bVar3 = pMVar10 < TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint,
+               pMVar10 != TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint)) {
 code_?:
-            func_?();
-          }
-          else {
-            pLVar9 = pMVar8[2].fields.outputLinkRefs;
-            if (pLVar9 != (List_1_MV_WorldObject_Link_ *)0x0) {
-              pLVar10 = (pLVar9->fields)._items;
-              pDVar11 = (this->fields).doorSettingsPrefab;
-              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              pDVar11 = (DoorSettings *)
-                        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                                  ((Object *)pDVar11,
-                                   UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Doors__DoorSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors::DoorSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Doors__DoorSettings_
-                                  );
-              pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  ((Component *)this,(MethodInfo *)0x0);
-              unaff_EDI = (MVWorldObject__Class *)0x0;
-              if (pDVar11 != (DoorSettings *)0x0) {
-                UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors::DoorSettings::
-                DoorSettings_Initialize(pDVar11,(int32_t)pLVar10,pGVar3,(MethodInfo *)0x0);
-                return;
+              func_?();
+            }
+            else {
+              pLVar11 = pMVar9[2].fields.outputLinkRefs;
+              bVar3 = 0;
+              pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)
+                        TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint;
+              if (pLVar11 != (List_1_MV_WorldObject_Link_ *)0x0) {
+                unaff_EBX.m_Index = (int32_t)(pLVar11->fields)._items;
+                pDVar12 = (this->fields).doorSettingsPrefab;
+                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                pDVar12 = (DoorSettings *)
+                          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                    ((Object *)pDVar12,
+                                     UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Doors__DoorSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors::DoorSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Doors__DoorSettings_
+                                    );
+                pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+                bVar3 = 0;
+                pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+                if (pDVar12 != (DoorSettings *)0x0) {
+                  UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors::DoorSettings::
+                  DoorSettings_Initialize(pDVar12,unaff_EBX.m_Index,pGVar4,(MethodInfo *)0x0);
+                  return;
+                }
               }
             }
           }
@@ -1239,154 +1261,183 @@ code_?:
           func_?(&TypeInfo__UnityEngine__Object);
           cRam_? = '\x01';
         }
-        pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-        unaff_EDI = unaff_EDI;
-        if ((pMVar7 != (MVWorldObjectClientManager *)0x0) &&
-           (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                (pMVar7,woID,(MethodInfo *)0x0), unaff_EDI = unaff_EDI,
-           pMVar8 != (MVWorldObject *)0x0)) {
-          if (((pMVar8->klass->_1).naturalAligment <
-               (
-               TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBaseBlueprint
-               ->_1).naturalAligment) ||
-             ((MVEditablePickupItemBaseBlueprint__Class *)
-              (pMVar8->klass->_1).typeHierarchy
-              [(
-               TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBaseBlueprint
-               ->_1).naturalAligment - 1] !=
-              TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBaseBlueprint
-             )) goto code_?;
-          pLVar9 = pMVar8[2].fields.outputLinkRefs;
-          unaff_EDI = unaff_EDI;
-          if (pLVar9 != (List_1_MV_WorldObject_Link_ *)0x0) {
-            pOVar1 = pLVar9[10].fields._syncRoot;
-            if (pOVar1 == (Object *)0x8) {
-              pMVar12 = (this->fields).meleeSettingsPrefab;
-              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
+        pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        bVar3 = 0;
+        if (pMVar8 != (MVWorldObjectClientManager *)0x0) {
+          pMVar9 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                              (pMVar8,woID,(MethodInfo *)0x0);
+          bVar3 = 0;
+          pMVar1 = 
+          TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBaseBlueprint
+          ;
+          if (pMVar9 != (MVWorldObject *)0x0) {
+            bVar3 = true;
+            pMVar1 = 
+            TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBaseBlueprint
+            ;
+            if (((pMVar9->klass->_1).naturalAligment <
+                 (
+                 TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBaseBlueprint
+                 ->_1).naturalAligment) ||
+               (pMVar13 = (MVEditablePickupItemBaseBlueprint__Class *)
+                          (pMVar9->klass->_1).typeHierarchy
+                          [(
+                           TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBaseBlueprint
+                           ->_1).naturalAligment - 1],
+               bVar3 = pMVar13 < 
+                        TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBaseBlueprint
+               , pMVar13 !=
+                 TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBaseBlueprint
+               )) goto code_?;
+            pLVar11 = pMVar9[2].fields.outputLinkRefs;
+            bVar3 = 0;
+            pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)0x0;
+            if (pLVar11 != (List_1_MV_WorldObject_Link_ *)0x0) {
+              pOVar14 = pLVar11[10].fields._syncRoot;
+              if (pOVar14 == (Object *)0x8) {
+                pMVar15 = (this->fields).meleeSettingsPrefab;
+                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                pMVar15 = (MeleeWeaponSettings *)
+                          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                    ((Object *)pMVar15,
+                                     UGUI__Desktop__Scripts__EditMode__SettingsBoxes__MeleeWeapons__MeleeWeaponSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::MeleeWeapons::MeleeWeaponSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__MeleeWeapons__MeleeWeaponSettings_
+                                    );
+                pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)(pLVar11->fields)._items;
+                pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+                bVar3 = 0;
+                unaff_EBX.m_Index = 0;
+                if (pMVar15 != (MeleeWeaponSettings *)0x0) {
+                  UGUI::Desktop::Scripts::EditMode::SettingsBoxes::MeleeWeapons::MeleeWeaponSettings
+                  ::MeleeWeaponSettings_Initialize
+                            (pMVar15,(int32_t)pMVar1,pGVar4,(MethodInfo *)0x0);
+                  return;
+                }
               }
-              pMVar12 = (MeleeWeaponSettings *)
-                        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                                  ((Object *)pMVar12,
-                                   UGUI__Desktop__Scripts__EditMode__SettingsBoxes__MeleeWeapons__MeleeWeaponSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::MeleeWeapons::MeleeWeaponSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__MeleeWeapons__MeleeWeaponSettings_
-                                  );
-              pLVar10 = (pLVar9->fields)._items;
-              pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  ((Component *)this,(MethodInfo *)0x0);
-              unaff_EDI = (MVWorldObject__Class *)this;
-              if (pMVar12 != (MeleeWeaponSettings *)0x0) {
-                UGUI::Desktop::Scripts::EditMode::SettingsBoxes::MeleeWeapons::MeleeWeaponSettings::
-                MeleeWeaponSettings_Initialize(pMVar12,(int32_t)pLVar10,pGVar3,(MethodInfo *)0x0);
-                return;
-              }
-            }
-            else {
-              if (pOVar1 != (Object *)0x3b) {
-                return;
-              }
-              pCVar13 = (this->fields).costumeSettingsPrefab;
-              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              pCVar13 = (CostumeSettings *)
-                        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                                  ((Object *)pCVar13,
-                                   UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Costume__CostumeSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Costume::CostumeSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Costume__CostumeSettings_
-                                  );
-              pLVar10 = (pLVar9->fields)._items;
-              pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  ((Component *)this,(MethodInfo *)0x0);
-              unaff_EDI = (MVWorldObject__Class *)this;
-              if (pCVar13 != (CostumeSettings *)0x0) {
-                UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Costume::CostumeSettings::
-                CostumeSettings_Initialize(pCVar13,(int32_t)pLVar10,pGVar3,(MethodInfo *)0x0);
-                return;
+              else {
+                if (pOVar14 != (Object *)0x3b) {
+                  return;
+                }
+                pCVar16 = (this->fields).costumeSettingsPrefab;
+                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                pCVar16 = (CostumeSettings *)
+                          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                    ((Object *)pCVar16,
+                                     UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Costume__CostumeSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Costume::CostumeSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Costume__CostumeSettings_
+                                    );
+                pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)(pLVar11->fields)._items;
+                pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+                bVar3 = 0;
+                unaff_EBX.m_Index = 0;
+                if (pCVar16 != (CostumeSettings *)0x0) {
+                  UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Costume::CostumeSettings::
+                  CostumeSettings_Initialize(pCVar16,(int32_t)pMVar1,pGVar4,(MethodInfo *)0x0);
+                  return;
+                }
               }
             }
           }
         }
         break;
       case WorldObjectType__Enum_TeamEditor:
-        pTVar14 = (this->fields).teamEditorSettingsPrefab;
+        original = (this->fields).teamEditorSettingsPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pTVar14 = (TeamEditorSettings *)
+        pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)pTVar14,
+                            ((Object *)original,
                              TeamEditorSettings_MethodInfo__UnityEngine__Object__Instantiate<TeamEditorSettings>_TeamEditorSettings_
                             );
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)this,(MethodInfo *)0x0);
-        unaff_EDI = (MVWorldObject__Class *)this;
-        if (pTVar14 != (TeamEditorSettings *)0x0) {
-          this_00 = (pTVar14->fields).settingsBase;
-          (pTVar14->fields).woID = woID;
-          unaff_EDI = (MVWorldObject__Class *)woID;
-          if (this_00 != (SettingsBase *)0x0) {
+        bVar3 = 0;
+        if (pMVar1 != (MVEditablePickupItemBaseBlueprint__Class *)0x0) {
+          pSVar17 = (SettingsBase *)(pMVar1->_0).byval_arg.data.typeHandle;
+          (pMVar1->_0).typeMetadataHandle = (Il2CppMetadataTypeHandle)woID;
+          bVar3 = 0;
+          if (pSVar17 != (SettingsBase *)0x0) {
             SettingsBase::SettingsBase_Initialize
-                      (this_00,woID,pGVar3,MVWorldObjectDocumentationType__Enum_TeamEditor,
+                      (pSVar17,woID,pGVar4,MVWorldObjectDocumentationType__Enum_TeamEditor,
                        (MethodInfo *)0x0);
-            pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-            unaff_EDI = (MVWorldObject__Class *)woID;
-            if ((pMVar7 != (MVWorldObjectClientManager *)0x0) &&
-               (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                    (pMVar7,woID,(MethodInfo *)0x0),
-               unaff_EDI = (MVWorldObject__Class *)woID, pMVar8 != (MVWorldObject *)0x0)) {
-              (pTVar14->fields).teamData = (pMVar8->fields).data;
-              func_?();
-              TeamEditorSettings::TeamEditorSettings_InitInputfield
-                        (pTVar14,(pTVar14->fields).blueTeam,(pTVar14->fields).blueTeamButton,
-                         MVTeam__Enum_Blue,(MethodInfo *)0x0);
-              TeamEditorSettings::TeamEditorSettings_InitInputfield
-                        (pTVar14,(pTVar14->fields).redTeam,(pTVar14->fields).redTeamButton,
-                         MVTeam__Enum_Red,(MethodInfo *)0x0);
-              TeamEditorSettings::TeamEditorSettings_InitInputfield
-                        (pTVar14,(pTVar14->fields).greenTeam,(pTVar14->fields).greenTeamButton,
-                         MVTeam__Enum_Green,(MethodInfo *)0x0);
-              TeamEditorSettings::TeamEditorSettings_InitInputfield
-                        (pTVar14,(pTVar14->fields).yellowTeam,(pTVar14->fields).yellowTeamButton,
-                         MVTeam__Enum_Yellow,(MethodInfo *)0x0);
-              TeamEditorSettings::TeamEditorSettings_SetActiveButtons
-                        (pTVar14,(pTVar14->fields).teamData,(MethodInfo *)0x0);
-              (pTVar14->fields).teamData = (Dictionary_2_System_Object_System_Object_ *)0x0;
-              func_?();
-              return;
+            pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+            bVar3 = 0;
+            if (pMVar8 != (MVWorldObjectClientManager *)0x0) {
+              pMVar9 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                                  (pMVar8,woID,(MethodInfo *)0x0);
+              bVar3 = 0;
+              if (pMVar9 != (MVWorldObject *)0x0) {
+                (pMVar1->_0).interopData = (Il2CppInteropData *)(pMVar9->fields).data;
+                func_?();
+                TeamEditorSettings::TeamEditorSettings_InitInputfield
+                          ((TeamEditorSettings *)pMVar1,
+                           *(SettingsInputField **)&(pMVar1->_0).byval_arg.attrs,
+                           (GameObject *)(pMVar1->_0).castClass,MVTeam__Enum_Blue,(MethodInfo *)0x0
+                          );
+                TeamEditorSettings::TeamEditorSettings_InitInputfield
+                          ((TeamEditorSettings *)pMVar1,
+                           (SettingsInputField *)(pMVar1->_0).this_arg.data.typeHandle,
+                           (GameObject *)(pMVar1->_0).declaringType,MVTeam__Enum_Red,
+                           (MethodInfo *)0x0);
+                TeamEditorSettings::TeamEditorSettings_InitInputfield
+                          ((TeamEditorSettings *)pMVar1,
+                           *(SettingsInputField **)&(pMVar1->_0).this_arg.attrs,
+                           (GameObject *)(pMVar1->_0).parent,MVTeam__Enum_Green,(MethodInfo *)0x0);
+                TeamEditorSettings::TeamEditorSettings_InitInputfield
+                          ((TeamEditorSettings *)pMVar1,
+                           (SettingsInputField *)(pMVar1->_0).element_class,
+                           (GameObject *)(pMVar1->_0).generic_class,MVTeam__Enum_Yellow,
+                           (MethodInfo *)0x0);
+                TeamEditorSettings::TeamEditorSettings_SetActiveButtons
+                          ((TeamEditorSettings *)pMVar1,
+                           (Dictionary_2_System_Object_System_Object_ *)(pMVar1->_0).interopData,
+                           (MethodInfo *)0x0);
+                (pMVar1->_0).interopData = (Il2CppInteropData *)0x0;
+                func_?();
+                return;
+              }
             }
           }
         }
         break;
       case WorldObjectType__Enum_TriggerCube:
-        pTVar15 = (this->fields).triggerCubeSettingsPrefab;
+        pTVar18 = (this->fields).triggerCubeSettingsPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pTVar15 = (TriggerCubeSettings *)
+        pTVar18 = (TriggerCubeSettings *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)pTVar15,
+                            ((Object *)pTVar18,
                              TriggerCubeSettings_MethodInfo__UnityEngine__Object__Instantiate<TriggerCubeSettings>_TriggerCubeSettings_
                             );
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)this,(MethodInfo *)0x0);
-        unaff_EDI = (MVWorldObject__Class *)0x0;
-        if (pTVar15 != (TriggerCubeSettings *)0x0) {
-          TriggerCubeSettings::TriggerCubeSettings_Initialize(pTVar15,0,pGVar3,(MethodInfo *)0x0);
+        bVar3 = 0;
+        pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+        if (pTVar18 != (TriggerCubeSettings *)0x0) {
+          TriggerCubeSettings::TriggerCubeSettings_Initialize(pTVar18,0,pGVar4,(MethodInfo *)0x0);
           return;
         }
         break;
       case WorldObjectType__Enum_ShootableButton:
-        original = (this->fields).shootablePlateSettingsPrefab;
+        original_00 = (this->fields).shootablePlateSettingsPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)original,
+        pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                            ((Object *)original_00,
                              ShootablePlateSettings_MethodInfo__UnityEngine__Object__Instantiate<ShootablePlateSettings>_ShootablePlateSettings_
                             );
-        unaff_EDI = (MVWorldObject__Class *)
-                    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)this,(MethodInfo *)0x0);
-        if (pOVar1 != (Object *)0x0) {
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)this,(MethodInfo *)0x0);
+        bVar3 = 0;
+        if (pMVar1 != (MVEditablePickupItemBaseBlueprint__Class *)0x0) {
           if (cRam_? == '\0') {
             func_?();
             func_?();
@@ -1394,48 +1445,55 @@ code_?:
             func_?();
             cRam_? = '\x01';
           }
-          if (pOVar1[2].klass != (Object__Class *)0x0) {
-            pMVar16 = (MVWorldObject__Class *)0x0;
+          pSVar17 = (SettingsBase *)(pMVar1->_0).byval_arg.data.typeHandle;
+          bVar3 = 0;
+          if (pSVar17 != (SettingsBase *)0x0) {
             SettingsBase::SettingsBase_Initialize
-                      ((SettingsBase *)pOVar1[2].klass,0,(GameObject *)unaff_EDI,
-                       MVWorldObjectDocumentationType__Enum_ShootableButton,(MethodInfo *)0x0);
-            pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-            unaff_EDI = pMVar16;
-            if (((pMVar7 != (MVWorldObjectClientManager *)0x0) &&
-                (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                     (pMVar7,0,(MethodInfo *)0x0), pMVar8 != (MVWorldObject *)0x0)
-                ) && (pDVar17 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                               (pMVar8->fields).data,
-                     pDVar17 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0))
-            {
-              TVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,UnityEngine::UIElements::TextureId]::
-                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                 (pDVar17,(Object *)StringLiteral_duration,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                 );
-              if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0
-                 ) {
-                func_?();
-              }
-              unaff_EDI = (MVWorldObject__Class *)
-                          mscorlib.dll::System::Globalization::CultureInfo::
-                          CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-              if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__System__Convert);
-              }
-              value_00 = mscorlib.dll::System::Convert::Convert_ToSingle_1
-                                   ((Object *)TVar18.m_Index,(IFormatProvider *)unaff_EDI,
-                                    (MethodInfo *)0x0);
-              if ((SettingsSlider *)pOVar1[2].monitor != (SettingsSlider *)0x0) {
-                SettingsSlider::SettingsSlider_Initialize
-                          ((SettingsSlider *)pOVar1[2].monitor,StringLiteral_duration,value_00,0.5,
-                           30.0,(MethodInfo *)0x0);
-                if (pOVar1[3].klass != (Object__Class *)0x0) {
-                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                            ((SettingsInputFieldSlider *)pOVar1[3].klass,StringLiteral_duration,
-                             value_00,(MethodInfo *)0x0);
-                  return;
+                      (pSVar17,0,pGVar4,MVWorldObjectDocumentationType__Enum_ShootableButton,
+                       (MethodInfo *)0x0);
+            pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+            bVar3 = 0;
+            if (pMVar8 != (MVWorldObjectClientManager *)0x0) {
+              pMVar9 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                                  (pMVar8,0,(MethodInfo *)0x0);
+              bVar3 = 0;
+              if (pMVar9 != (MVWorldObject *)0x0) {
+                this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                          (pMVar9->fields).data;
+                bVar3 = 0;
+                if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+                {
+                  unaff_EBX = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                              Object,UnityEngine::UIElements::TextureId]::
+                              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                        (this_00,(Object *)StringLiteral_duration,
+                                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                        );
+                  if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor
+                      == 0) {
+                    func_?();
+                  }
+                  provider = mscorlib.dll::System::Globalization::CultureInfo::
+                             CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
+                  if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+                    func_?(TypeInfo__System__Convert);
+                  }
+                  value_00 = mscorlib.dll::System::Convert::Convert_ToSingle_1
+                                       ((Object *)unaff_EBX.m_Index,(IFormatProvider *)provider,
+                                        (MethodInfo *)0x0);
+                  this_01 = *(SettingsSlider **)&(pMVar1->_0).byval_arg.attrs;
+                  bVar3 = 0;
+                  if (this_01 != (SettingsSlider *)0x0) {
+                    SettingsSlider::SettingsSlider_Initialize
+                              (this_01,StringLiteral_duration,value_00,0.5,30.0,(MethodInfo *)0x0);
+                    this_02 = (SettingsInputFieldSlider *)(pMVar1->_0).this_arg.data.typeHandle;
+                    bVar3 = 0;
+                    if (this_02 != (SettingsInputFieldSlider *)0x0) {
+                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                                (this_02,StringLiteral_duration,value_00,(MethodInfo *)0x0);
+                      return;
+                    }
+                  }
                 }
               }
             }
@@ -1443,18 +1501,19 @@ code_?:
         }
         break;
       case WorldObjectType__Enum_UseLever:
-        original_00 = (this->fields).leverSettingsPrefab;
+        original_01 = (this->fields).leverSettingsPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        unaff_EDI = (MVWorldObject__Class *)
-                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                              ((Object *)original_00,
-                               LeverSettings_MethodInfo__UnityEngine__Object__Instantiate<LeverSettings>_LeverSettings_
-                              );
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pOVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                            ((Object *)original_01,
+                             LeverSettings_MethodInfo__UnityEngine__Object__Instantiate<LeverSettings>_LeverSettings_
+                            );
+        pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)this,(MethodInfo *)0x0);
-        if (unaff_EDI != (MVWorldObject__Class *)0x0) {
+        bVar3 = 0;
+        if (pOVar14 != (Object *)0x0) {
           if (cRam_? == '\0') {
             func_?();
             func_?();
@@ -1464,130 +1523,143 @@ code_?:
             func_?();
             cRam_? = '\x01';
           }
-          pTVar19 = (Toggle *)(unaff_EDI->_0).byval_arg.data.typeHandle;
-          if (pTVar19 != (Toggle *)0x0) {
+          bVar3 = 0;
+          if (pOVar14[2].klass != (Object__Class *)0x0) {
             SettingsBase::SettingsBase_Initialize
-                      ((SettingsBase *)pTVar19,0,pGVar3,MVWorldObjectDocumentationType__Enum_Lever,
-                       (MethodInfo *)0x0);
-            pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-            if ((pMVar7 != (MVWorldObjectClientManager *)0x0) &&
-               (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                    (pMVar7,0,(MethodInfo *)0x0), pMVar8 != (MVWorldObject *)0x0))
-            {
-              pDVar17 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                       (pMVar8->fields).data;
-              unaff_EDI = *(MVWorldObject__Class **)&(unaff_EDI->_0).byval_arg.attrs;
-              if ((pDVar17 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) &&
-                 ((TVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                            Object,UnityEngine::UIElements::TextureId]::
-                            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                      (pDVar17,(Object *)StringLiteral_beginActivated,
-                                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                      ), unaff_EDI != (MVWorldObject__Class *)0x0 &&
-                  (TVar18.m_Index != 0)))) {
-                if (*(Il2CppClass **)(*(int *)TVar18.m_Index + 0x20) ==
-                    (TypeInfo__System__Boolean->_0).element_class) {
-                  pbVar20 = (bool *)func_?();
-                  SettingsToggle::SettingsToggle_Initialize
-                            ((SettingsToggle *)unaff_EDI,StringLiteral_beginActivated,*pbVar20,
-                             (MethodInfo *)0x0);
-                  return;
+                      ((SettingsBase *)pOVar14[2].klass,0,(GameObject *)pMVar1,
+                       MVWorldObjectDocumentationType__Enum_Lever,(MethodInfo *)0x0);
+            pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+            bVar3 = 0;
+            pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)0x0;
+            if (pMVar8 != (MVWorldObjectClientManager *)0x0) {
+              pMVar9 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                                  (pMVar8,0,(MethodInfo *)0x0);
+              bVar3 = 0;
+              if (pMVar9 != (MVWorldObject *)0x0) {
+                pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)(pMVar9->fields).data;
+                pSVar19 = (SettingsToggle *)pOVar14[2].monitor;
+                bVar3 = 0;
+                if (pMVar1 != (MVEditablePickupItemBaseBlueprint__Class *)0x0) {
+                  TVar20 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                           Object,UnityEngine::UIElements::TextureId]::
+                           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                     ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                       *)pMVar1,(Object *)StringLiteral_beginActivated,
+                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                     );
+                  bVar3 = 0;
+                  if ((pSVar19 != (SettingsToggle *)0x0) && (bVar3 = 0, TVar20.m_Index != 0)) {
+                    pIVar21 = (TypeInfo__System__Boolean->_0).element_class;
+                    bVar3 = *(Il2CppClass **)(*(int *)TVar20.m_Index + 0x20) < pIVar21;
+                    woID = unaff_EBX.m_Index;
+                    if (*(Il2CppClass **)(*(int *)TVar20.m_Index + 0x20) == pIVar21) {
+                      pbVar22 = (bool *)func_?();
+                      SettingsToggle::SettingsToggle_Initialize
+                                (pSVar19,StringLiteral_beginActivated,*pbVar22,(MethodInfo *)0x0);
+                      return;
+                    }
+                    goto code_?;
+                  }
                 }
-                goto code_?;
               }
             }
           }
         }
         break;
       case WorldObjectType__Enum_CollectTheItemDropOff:
-        pCVar21 = (this->fields).collectTheItemDropoffSettingsPrefab;
+        pCVar23 = (this->fields).collectTheItemDropoffSettingsPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pCVar21 = (CollectTheItemDropoffSettings *)
+        pCVar23 = (CollectTheItemDropoffSettings *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)pCVar21,
+                            ((Object *)pCVar23,
                              CollectTheItemDropoffSettings_MethodInfo__UnityEngine__Object__Instantiate<CollectTheItemDropoffSettings>_CollectTheItemDropoffSettings_
                             );
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)this,(MethodInfo *)0x0);
-        unaff_EDI = (MVWorldObject__Class *)0x0;
-        if (pCVar21 != (CollectTheItemDropoffSettings *)0x0) {
+        bVar3 = 0;
+        pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+        if (pCVar23 != (CollectTheItemDropoffSettings *)0x0) {
           CollectTheItemDropoffSettings::CollectTheItemDropoffSettings_Initialize
-                    (pCVar21,0,pGVar3,(MethodInfo *)0x0);
+                    (pCVar23,0,pGVar4,(MethodInfo *)0x0);
           return;
         }
         break;
       case WorldObjectType__Enum_CollectTheItemCollectable:
-        pCVar22 = (this->fields).collectTheItemSettingsPrefab;
+        pCVar24 = (this->fields).collectTheItemSettingsPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pCVar22 = (CollectTheItemSettings *)
+        pCVar24 = (CollectTheItemSettings *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)pCVar22,
+                            ((Object *)pCVar24,
                              CollectTheItemSettings_MethodInfo__UnityEngine__Object__Instantiate<CollectTheItemSettings>_CollectTheItemSettings_
                             );
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)this,(MethodInfo *)0x0);
-        unaff_EDI = (MVWorldObject__Class *)0x0;
-        if (pCVar22 != (CollectTheItemSettings *)0x0) {
+        bVar3 = 0;
+        pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+        if (pCVar24 != (CollectTheItemSettings *)0x0) {
           CollectTheItemSettings::CollectTheItemSettings_Initialize
-                    (pCVar22,0,pGVar3,(MethodInfo *)0x0);
+                    (pCVar24,0,pGVar4,(MethodInfo *)0x0);
           return;
         }
         break;
       case WorldObjectType__Enum_WindTurbine:
-        pWVar23 = (this->fields).windTurbineSettingsPrefab;
+        pWVar25 = (this->fields).windTurbineSettingsPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pWVar23 = (WindTurbineSettings *)
+        pWVar25 = (WindTurbineSettings *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)pWVar23,
+                            ((Object *)pWVar25,
                              WindTurbineSettings_MethodInfo__UnityEngine__Object__Instantiate<WindTurbineSettings>_WindTurbineSettings_
                             );
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)this,(MethodInfo *)0x0);
-        unaff_EDI = (MVWorldObject__Class *)0x0;
-        if (pWVar23 != (WindTurbineSettings *)0x0) {
-          WindTurbineSettings::WindTurbineSettings_Initialize(pWVar23,0,pGVar3,(MethodInfo *)0x0);
+        bVar3 = 0;
+        pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+        if (pWVar25 != (WindTurbineSettings *)0x0) {
+          WindTurbineSettings::WindTurbineSettings_Initialize(pWVar25,0,pGVar4,(MethodInfo *)0x0);
           return;
         }
         break;
       case WorldObjectType__Enum_GlobalSoundEmitter:
-        pGVar24 = (this->fields).globalSoundEmitterSettingsPrefab;
+        pGVar26 = (this->fields).globalSoundEmitterSettingsPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pGVar24 = (GlobalSoundEmitterSettings *)
+        pGVar26 = (GlobalSoundEmitterSettings *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)pGVar24,
+                            ((Object *)pGVar26,
                              GlobalSoundEmitterSettings_MethodInfo__UnityEngine__Object__Instantiate<GlobalSoundEmitterSettings>_GlobalSoundEmitterSettings_
                             );
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)this,(MethodInfo *)0x0);
-        unaff_EDI = (MVWorldObject__Class *)0x0;
-        if (pGVar24 != (GlobalSoundEmitterSettings *)0x0) {
+        bVar3 = 0;
+        pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+        if (pGVar26 != (GlobalSoundEmitterSettings *)0x0) {
           GlobalSoundEmitterSettings::GlobalSoundEmitterSettings_Initialize
-                    (pGVar24,0,pGVar3,(MethodInfo *)0x0);
+                    (pGVar26,0,pGVar4,(MethodInfo *)0x0);
           return;
         }
         break;
       default:
         if (worldObjectType != WorldObjectType__Enum_GamePointChest) goto code_?;
-        original_01 = (this->fields).gamePointChestSettingsPrefab;
+        original_02 = (this->fields).gamePointChestSettingsPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        unaff_EDI = (MVWorldObject__Class *)
-                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                              ((Object *)original_01,
-                               GamePointChestSettings_MethodInfo__UnityEngine__Object__Instantiate<GamePointChestSettings>_GamePointChestSettings_
-                              );
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pOVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                            ((Object *)original_02,
+                             GamePointChestSettings_MethodInfo__UnityEngine__Object__Instantiate<GamePointChestSettings>_GamePointChestSettings_
+                            );
+        pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)this,(MethodInfo *)0x0);
-        if (unaff_EDI != (MVWorldObject__Class *)0x0) {
+        bVar3 = 0;
+        if (pOVar14 != (Object *)0x0) {
           if (cRam_? == '\0') {
             func_?();
             func_?();
@@ -1597,54 +1669,68 @@ code_?:
             func_?();
             cRam_? = '\x01';
           }
-          pTVar19 = (Toggle *)(unaff_EDI->_0).byval_arg.data.typeHandle;
-          if (pTVar19 != (Toggle *)0x0) {
+          bVar3 = 0;
+          if (pOVar14[2].klass != (Object__Class *)0x0) {
             SettingsBase::SettingsBase_Initialize_1
-                      ((SettingsBase *)pTVar19,0,pGVar3,StringLiteral_Crystal_Reward,
-                       (MethodInfo *)0x0);
-            pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-            if (((pMVar7 != (MVWorldObjectClientManager *)0x0) &&
-                (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                     (pMVar7,0,(MethodInfo *)0x0), pMVar8 != (MVWorldObject *)0x0)
-                ) && (pDVar17 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                               (pMVar8->fields).data,
-                     pDVar17 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0))
-            {
-              bVar25 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                (pDVar17,(Object *)StringLiteral_gamePointAmount,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                );
-              if (bVar25 == 0) {
-                pOVar1 = (Object *)func_?();
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__Add
-                          ((Dictionary_2_System_Object_System_Object_ *)pDVar17,
-                           (Object *)StringLiteral_gamePointAmount,pOVar1,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                          );
-              }
-              TVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,UnityEngine::UIElements::TextureId]::
-                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                 (pDVar17,(Object *)StringLiteral_gamePointAmount,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                 );
-              if (TVar18.m_Index != 0) {
-                if (*(Il2CppClass **)(*(int *)TVar18.m_Index + 0x20) !=
-                    (TypeInfo__System__Int32->_0).element_class) goto code_?;
-                piVar26 = (int32_t *)func_?();
-                this_01 = *(SettingsSlider **)&(unaff_EDI->_0).byval_arg.attrs;
-                if (this_01 != (SettingsSlider *)0x0) {
-                  value = *piVar26;
-                  SettingsSlider::SettingsSlider_Initialize_1
-                            (this_01,StringLiteral_gamePointAmount,value,2,100,(MethodInfo *)0x0);
-                  this_02 = (SettingsInputFieldSlider *)(unaff_EDI->_0).this_arg.data.typeHandle;
-                  if (this_02 != (SettingsInputFieldSlider *)0x0) {
-                    SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                              (this_02,StringLiteral_gamePointAmount,value,(MethodInfo *)0x0);
-                    return;
+                      ((SettingsBase *)pOVar14[2].klass,0,(GameObject *)pMVar1,
+                       StringLiteral_Crystal_Reward,(MethodInfo *)0x0);
+            pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+            bVar3 = 0;
+            pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)0x0;
+            if (pMVar8 != (MVWorldObjectClientManager *)0x0) {
+              pMVar9 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                                  (pMVar8,0,(MethodInfo *)0x0);
+              bVar3 = 0;
+              if (pMVar9 != (MVWorldObject *)0x0) {
+                pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)(pMVar9->fields).data;
+                bVar3 = 0;
+                if (pMVar1 != (MVEditablePickupItemBaseBlueprint__Class *)0x0) {
+                  bVar27 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                           Object,UnityEngine::UIElements::TextureId]::
+                           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                                     ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                       *)pMVar1,(Object *)StringLiteral_gamePointAmount,
+                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                     );
+                  if (bVar27 == 0) {
+                    value = (Object *)func_?();
+                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                    Object]::Dictionary_2_System_Object_System_Object__Add
+                              ((Dictionary_2_System_Object_System_Object_ *)pMVar1,
+                               (Object *)StringLiteral_gamePointAmount,value,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                              );
+                  }
+                  TVar20 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                           Object,UnityEngine::UIElements::TextureId]::
+                           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                     ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                       *)pMVar1,(Object *)StringLiteral_gamePointAmount,
+                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                     );
+                  bVar3 = 0;
+                  if (TVar20.m_Index != 0) {
+                    pIVar21 = (TypeInfo__System__Int32->_0).element_class;
+                    bVar3 = *(Il2CppClass **)(*(int *)TVar20.m_Index + 0x20) < pIVar21;
+                    woID = unaff_EBX.m_Index;
+                    if (*(Il2CppClass **)(*(int *)TVar20.m_Index + 0x20) != pIVar21)
+                    goto code_?;
+                    puVar28 = (undefined4 *)func_?();
+                    bVar3 = 0;
+                    if ((SettingsSlider *)pOVar14[2].monitor != (SettingsSlider *)0x0) {
+                      pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)*puVar28;
+                      SettingsSlider::SettingsSlider_Initialize_1
+                                ((SettingsSlider *)pOVar14[2].monitor,StringLiteral_gamePointAmount,
+                                 (int32_t)pMVar1,2,100,(MethodInfo *)0x0);
+                      bVar3 = 0;
+                      if (pOVar14[3].klass != (Object__Class *)0x0) {
+                        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                                  ((SettingsInputFieldSlider *)pOVar14[3].klass,
+                                   StringLiteral_gamePointAmount,(int32_t)pMVar1,(MethodInfo *)0x0)
+                        ;
+                        return;
+                      }
+                    }
                   }
                 }
               }
@@ -1657,39 +1743,41 @@ code_?:
   }
   if ((int)worldObjectType < 0xe) {
     if (worldObjectType == WorldObjectType__Enum_PointLight) {
-      pPVar27 = (this->fields).pointLightSettingsPrefab;
+      pPVar29 = (this->fields).pointLightSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pPVar27 = (PointLightSettings *)
+      pPVar29 = (PointLightSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pPVar27,
+                          ((Object *)pPVar29,
                            PointLightSettings_MethodInfo__UnityEngine__Object__Instantiate<PointLightSettings>_PointLightSettings_
                           );
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pPVar27 != (PointLightSettings *)0x0) {
-        PointLightSettings::PointLightSettings_Initialize(pPVar27,0,pGVar3,(MethodInfo *)0x0);
+      bVar3 = 0;
+      pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+      if (pPVar29 != (PointLightSettings *)0x0) {
+        PointLightSettings::PointLightSettings_Initialize(pPVar29,0,pGVar4,(MethodInfo *)0x0);
         return;
       }
     }
     else {
       if (worldObjectType != WorldObjectType__Enum_SoundEmitter) goto code_?;
-      pSVar28 = (this->fields).soundEmitterSettingsPrefab;
+      pSVar30 = (this->fields).soundEmitterSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pSVar28 = (SoundEmitterSettings *)
+      pSVar30 = (SoundEmitterSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pSVar28,
+                          ((Object *)pSVar30,
                            SoundEmitterSettings_MethodInfo__UnityEngine__Object__Instantiate<SoundEmitterSettings>_SoundEmitterSettings_
                           );
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pSVar28 != (SoundEmitterSettings *)0x0) {
-        SoundEmitterSettings::SoundEmitterSettings_Initialize(pSVar28,0,pGVar3,(MethodInfo *)0x0);
+      bVar3 = 0;
+      pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+      if (pSVar30 != (SoundEmitterSettings *)0x0) {
+        SoundEmitterSettings::SoundEmitterSettings_Initialize(pSVar30,0,pGVar4,(MethodInfo *)0x0);
         return;
       }
     }
@@ -1701,14 +1789,15 @@ code_?:
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    unaff_EDI = (MVWorldObject__Class *)
-                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)original_03,
-                           ToggleBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<ToggleBoxSettings>_ToggleBoxSettings_
-                          );
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pOVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                        ((Object *)original_03,
+                         ToggleBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<ToggleBoxSettings>_ToggleBoxSettings_
+                        );
+    pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)
+              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    if (unaff_EDI == (MVWorldObject__Class *)0x0) break;
+    bVar3 = 0;
+    if (pOVar14 == (Object *)0x0) break;
     if (cRam_? == '\0') {
       func_?();
       func_?();
@@ -1718,30 +1807,39 @@ code_?:
       func_?();
       cRam_? = '\x01';
     }
-    pTVar19 = (Toggle *)(unaff_EDI->_0).byval_arg.data.typeHandle;
-    if (pTVar19 == (Toggle *)0x0) break;
+    bVar3 = 0;
+    if (pOVar14[2].klass == (Object__Class *)0x0) break;
     SettingsBase::SettingsBase_Initialize
-              ((SettingsBase *)pTVar19,0,pGVar3,MVWorldObjectDocumentationType__Enum_ToggleBox,
-               (MethodInfo *)0x0);
-    pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if ((pMVar7 == (MVWorldObjectClientManager *)0x0) ||
-       (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                            (pMVar7,0,(MethodInfo *)0x0), pMVar8 == (MVWorldObject *)0x0)) break;
-    pDVar17 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar8->fields).data;
-    unaff_EDI = *(MVWorldObject__Class **)&(unaff_EDI->_0).byval_arg.attrs;
-    if ((pDVar17 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-       ((TVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (pDVar17,(Object *)StringLiteral_once,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            ), unaff_EDI == (MVWorldObject__Class *)0x0 || (TVar18.m_Index == 0))))
-    break;
-    if (*(Il2CppClass **)(*(int *)TVar18.m_Index + 0x20) ==
-        (TypeInfo__System__Boolean->_0).element_class) {
-      pbVar20 = (bool *)func_?();
+              ((SettingsBase *)pOVar14[2].klass,0,(GameObject *)pMVar1,
+               MVWorldObjectDocumentationType__Enum_ToggleBox,(MethodInfo *)0x0);
+    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    bVar3 = 0;
+    pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)0x0;
+    if (pMVar8 == (MVWorldObjectClientManager *)0x0) break;
+    pMVar9 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                        (pMVar8,0,(MethodInfo *)0x0);
+    bVar3 = 0;
+    if (pMVar9 == (MVWorldObject *)0x0) break;
+    pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)(pMVar9->fields).data;
+    pSVar19 = (SettingsToggle *)pOVar14[2].monitor;
+    bVar3 = 0;
+    if (pMVar1 == (MVEditablePickupItemBaseBlueprint__Class *)0x0) break;
+    TVar20 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)pMVar1,
+                        (Object *)StringLiteral_once,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    bVar3 = 0;
+    if ((pSVar19 == (SettingsToggle *)0x0) || (bVar3 = 0, TVar20.m_Index == 0)) break;
+    pIVar21 = (TypeInfo__System__Boolean->_0).element_class;
+    bVar3 = *(Il2CppClass **)(*(int *)TVar20.m_Index + 0x20) < pIVar21;
+    woID = unaff_EBX.m_Index;
+    if (*(Il2CppClass **)(*(int *)TVar20.m_Index + 0x20) == pIVar21) {
+      pbVar22 = (bool *)func_?();
       SettingsToggle::SettingsToggle_Initialize
-                ((SettingsToggle *)unaff_EDI,StringLiteral_once,*pbVar20,(MethodInfo *)0x0);
+                (pSVar19,StringLiteral_once,*pbVar22,(MethodInfo *)0x0);
       return;
     }
     goto code_?;
@@ -1758,85 +1856,89 @@ code_?:
   case WorldObjectType__Enum_PickupItemRailGun:
   case WorldObjectType__Enum_PickupItemSpawner:
 code_?:
-    pSVar29 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
-    pSVar29 = mscorlib.dll::System::String::String_Concat_4
-                        (StringLiteral_WorldObjectType__,pSVar29,
+    pSVar31 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
+    pSVar31 = mscorlib.dll::System::String::String_Concat_4
+                        (StringLiteral_WorldObjectType__,pSVar31,
                          StringLiteral__has_no_settings_dialogue_,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-              ((Object *)pSVar29,(MethodInfo *)0x0);
+              ((Object *)pSVar31,(MethodInfo *)0x0);
     return;
   case WorldObjectType__Enum_TextMsg:
-    pMVar30 = (this->fields).messageBoxSettingsPrefab;
+    pMVar32 = (this->fields).messageBoxSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pMVar30 = (MessageBoxSettings *)
+    pMVar32 = (MessageBoxSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pMVar30,
+                        ((Object *)pMVar32,
                          MessageBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<MessageBoxSettings>_MessageBoxSettings_
                         );
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pMVar30 != (MessageBoxSettings *)0x0) {
-      MessageBoxSettings::MessageBoxSettings_Initialize(pMVar30,0,pGVar3,(MethodInfo *)0x0);
+    bVar3 = 0;
+    pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+    if (pMVar32 != (MessageBoxSettings *)0x0) {
+      MessageBoxSettings::MessageBoxSettings_Initialize(pMVar32,0,pGVar4,(MethodInfo *)0x0);
       return;
     }
     break;
   case WorldObjectType__Enum_Fire:
-    pFVar31 = (this->fields).fireSettingsPrefab;
+    pFVar33 = (this->fields).fireSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pFVar31 = (FireSettings *)
+    pFVar33 = (FireSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pFVar31,
+                        ((Object *)pFVar33,
                          FireSettings_MethodInfo__UnityEngine__Object__Instantiate<FireSettings>_FireSettings_
                         );
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pFVar31 != (FireSettings *)0x0) {
-      FireSettings::FireSettings_Initialize(pFVar31,0,pGVar3,(MethodInfo *)0x0);
+    bVar3 = 0;
+    pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+    if (pFVar33 != (FireSettings *)0x0) {
+      FireSettings::FireSettings_Initialize(pFVar33,0,pGVar4,(MethodInfo *)0x0);
       return;
     }
     break;
   case WorldObjectType__Enum_Smoke:
-    pSVar32 = (this->fields).smokeSettingsPrefab;
+    pSVar34 = (this->fields).smokeSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pSVar32 = (SmokeSettings *)
+    pSVar34 = (SmokeSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pSVar32,
+                        ((Object *)pSVar34,
                          SmokeSettings_MethodInfo__UnityEngine__Object__Instantiate<SmokeSettings>_SmokeSettings_
                         );
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pSVar32 != (SmokeSettings *)0x0) {
-      SmokeSettings::SmokeSettings_Initialize(pSVar32,0,pGVar3,(MethodInfo *)0x0);
+    bVar3 = 0;
+    pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+    if (pSVar34 != (SmokeSettings *)0x0) {
+      SmokeSettings::SmokeSettings_Initialize(pSVar34,0,pGVar4,(MethodInfo *)0x0);
       return;
     }
     break;
   case WorldObjectType__Enum_TimeTrigger:
-    pTVar33 = (this->fields).timeTriggerSettingsPrefab;
+    pTVar35 = (this->fields).timeTriggerSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pTVar33 = (TimeTriggerSettings *)
+    pTVar35 = (TimeTriggerSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pTVar33,
+                        ((Object *)pTVar35,
                          TimeTriggerSettings_MethodInfo__UnityEngine__Object__Instantiate<TimeTriggerSettings>_TimeTriggerSettings_
                         );
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pTVar33 != (TimeTriggerSettings *)0x0) {
-      TimeTriggerSettings::TimeTriggerSettings_Initialize(pTVar33,0,pGVar3,(MethodInfo *)0x0);
+    bVar3 = 0;
+    pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+    if (pTVar35 != (TimeTriggerSettings *)0x0) {
+      TimeTriggerSettings::TimeTriggerSettings_Initialize(pTVar35,0,pGVar4,(MethodInfo *)0x0);
       return;
     }
     break;
@@ -1845,14 +1947,15 @@ code_?:
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    unaff_EDI = (MVWorldObject__Class *)
-                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)original_04,
-                           PressurePlateSettings_MethodInfo__UnityEngine__Object__Instantiate<PressurePlateSettings>_PressurePlateSettings_
-                          );
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pOVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                        ((Object *)original_04,
+                         PressurePlateSettings_MethodInfo__UnityEngine__Object__Instantiate<PressurePlateSettings>_PressurePlateSettings_
+                        );
+    pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)
+              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    if (unaff_EDI != (MVWorldObject__Class *)0x0) {
+    bVar3 = 0;
+    if (pOVar14 != (Object *)0x0) {
       if (cRam_? == '\0') {
         func_?();
         func_?();
@@ -1862,54 +1965,65 @@ code_?:
         func_?();
         cRam_? = '\x01';
       }
-      pTVar19 = (Toggle *)(unaff_EDI->_0).byval_arg.data.typeHandle;
-      if (pTVar19 != (Toggle *)0x0) {
+      bVar3 = 0;
+      if (pOVar14[2].klass != (Object__Class *)0x0) {
         SettingsBase::SettingsBase_Initialize
-                  ((SettingsBase *)pTVar19,0,pGVar3,
+                  ((SettingsBase *)pOVar14[2].klass,0,(GameObject *)pMVar1,
                    MVWorldObjectDocumentationType__Enum_PressurePlate,(MethodInfo *)0x0);
-        pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-        if ((pMVar7 != (MVWorldObjectClientManager *)0x0) &&
-           (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                (pMVar7,0,(MethodInfo *)0x0), pMVar8 != (MVWorldObject *)0x0)) {
-          pDVar17 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                   (pMVar8->fields).data;
-          unaff_EDI = *(MVWorldObject__Class **)&(unaff_EDI->_0).byval_arg.attrs;
-          if ((pDVar17 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) &&
-             ((TVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Object,UnityEngine::UIElements::TextureId]::
-                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                  (pDVar17,(Object *)StringLiteral_hide,
-                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                  ), unaff_EDI != (MVWorldObject__Class *)0x0 &&
-              (TVar18.m_Index != 0)))) {
-            if (*(Il2CppClass **)(*(int *)TVar18.m_Index + 0x20) ==
-                (TypeInfo__System__Boolean->_0).element_class) {
-              pbVar20 = (bool *)func_?();
-              SettingsToggle::SettingsToggle_Initialize
-                        ((SettingsToggle *)unaff_EDI,StringLiteral_hide,*pbVar20,(MethodInfo *)0x0);
-              return;
+        pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        bVar3 = 0;
+        pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)0x0;
+        if (pMVar8 != (MVWorldObjectClientManager *)0x0) {
+          pMVar9 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                              (pMVar8,0,(MethodInfo *)0x0);
+          bVar3 = 0;
+          if (pMVar9 != (MVWorldObject *)0x0) {
+            pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)(pMVar9->fields).data;
+            pSVar19 = (SettingsToggle *)pOVar14[2].monitor;
+            bVar3 = 0;
+            if (pMVar1 != (MVEditablePickupItemBaseBlueprint__Class *)0x0) {
+              TVar20 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                       Object,UnityEngine::UIElements::TextureId]::
+                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                 ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                  pMVar1,(Object *)StringLiteral_hide,
+                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                 );
+              bVar3 = 0;
+              if ((pSVar19 != (SettingsToggle *)0x0) && (bVar3 = 0, TVar20.m_Index != 0)) {
+                pIVar21 = (TypeInfo__System__Boolean->_0).element_class;
+                bVar3 = *(Il2CppClass **)(*(int *)TVar20.m_Index + 0x20) < pIVar21;
+                woID = unaff_EBX.m_Index;
+                if (*(Il2CppClass **)(*(int *)TVar20.m_Index + 0x20) == pIVar21) {
+                  pbVar22 = (bool *)func_?();
+                  SettingsToggle::SettingsToggle_Initialize
+                            (pSVar19,StringLiteral_hide,*pbVar22,(MethodInfo *)0x0);
+                  return;
+                }
+                goto code_?;
+              }
             }
-            goto code_?;
           }
         }
       }
     }
     break;
   case WorldObjectType__Enum_Skybox:
-    pSVar34 = (this->fields).skyboxSettingsPrefab;
+    pSVar36 = (this->fields).skyboxSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pSVar34 = (SkyboxSettings *)
+    pSVar36 = (SkyboxSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pSVar34,
+                        ((Object *)pSVar36,
                          SkyboxSettings_MethodInfo__UnityEngine__Object__Instantiate<SkyboxSettings>_SkyboxSettings_
                         );
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pSVar34 != (SkyboxSettings *)0x0) {
-      SkyboxSettings::SkyboxSettings_Initialize(pSVar34,0,pGVar3,(MethodInfo *)0x0);
+    bVar3 = 0;
+    pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+    if (pSVar36 != (SkyboxSettings *)0x0) {
+      SkyboxSettings::SkyboxSettings_Initialize(pSVar36,0,pGVar4,(MethodInfo *)0x0);
       return;
     }
     break;
@@ -1917,56 +2031,59 @@ code_?:
   case WorldObjectType__Enum_SpawnPointGreen:
   case WorldObjectType__Enum_SpawnPointYellow:
   case WorldObjectType__Enum_SpawnPointBlue:
-    pSVar35 = (this->fields).spawnPointSettingsPrefab;
+    pSVar37 = (this->fields).spawnPointSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pSVar35 = (SpawnPointSettings *)
+    pSVar37 = (SpawnPointSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pSVar35,
+                        ((Object *)pSVar37,
                          SpawnPointSettings_MethodInfo__UnityEngine__Object__Instantiate<SpawnPointSettings>_SpawnPointSettings_
                         );
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pSVar35 != (SpawnPointSettings *)0x0) {
-      SpawnPointSettings::SpawnPointSettings_Initialize(pSVar35,0,pGVar3,(MethodInfo *)0x0);
+    bVar3 = 0;
+    pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+    if (pSVar37 != (SpawnPointSettings *)0x0) {
+      SpawnPointSettings::SpawnPointSettings_Initialize(pSVar37,0,pGVar4,(MethodInfo *)0x0);
       return;
     }
     break;
   case WorldObjectType__Enum_ModelToggle:
-    pOVar36 = (this->fields).objectEnablerPrefab;
+    pOVar38 = (this->fields).objectEnablerPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pOVar36 = (ObjectEnablerSettings *)
+    pOVar38 = (ObjectEnablerSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pOVar36,
+                        ((Object *)pOVar38,
                          ObjectEnablerSettings_MethodInfo__UnityEngine__Object__Instantiate<ObjectEnablerSettings>_ObjectEnablerSettings_
                         );
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pOVar36 != (ObjectEnablerSettings *)0x0) {
-      ObjectEnablerSettings::ObjectEnablerSettings_Initialize(pOVar36,0,pGVar3,(MethodInfo *)0x0);
+    bVar3 = 0;
+    pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+    if (pOVar38 != (ObjectEnablerSettings *)0x0) {
+      ObjectEnablerSettings::ObjectEnablerSettings_Initialize(pOVar38,0,pGVar4,(MethodInfo *)0x0);
       return;
     }
     break;
   case WorldObjectType__Enum_WaterPlane:
-    pWVar37 = (this->fields).waterBoxSettingsPrefab;
+    pWVar39 = (this->fields).waterBoxSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pWVar37 = (WaterBoxSettings *)
+    pWVar39 = (WaterBoxSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pWVar37,
+                        ((Object *)pWVar39,
                          WaterBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<WaterBoxSettings>_WaterBoxSettings_
                         );
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pWVar37 != (WaterBoxSettings *)0x0) {
-      WaterBoxSettings::WaterBoxSettings_Initialize(pWVar37,0,pGVar3,(MethodInfo *)0x0);
+    bVar3 = 0;
+    pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+    if (pWVar39 != (WaterBoxSettings *)0x0) {
+      WaterBoxSettings::WaterBoxSettings_Initialize(pWVar39,0,pGVar4,(MethodInfo *)0x0);
       return;
     }
     break;
@@ -1974,38 +2091,41 @@ code_?:
     SettingsFactory_CreateBlueprintSettings(this,woID,(MethodInfo *)0x0);
     return;
   case WorldObjectType__Enum_PulseBox:
-    pPVar38 = (this->fields).pulseBoxPrefab;
+    pPVar40 = (this->fields).pulseBoxPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pPVar38 = (PulseBoxSettings *)
+    pPVar40 = (PulseBoxSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pPVar38,
+                        ((Object *)pPVar40,
                          PulseBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<PulseBoxSettings>_PulseBoxSettings_
                         );
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pPVar38 != (PulseBoxSettings *)0x0) {
-      PulseBoxSettings::PulseBoxSettings_Initialize(pPVar38,0,pGVar3,(MethodInfo *)0x0);
+    bVar3 = 0;
+    pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+    if (pPVar40 != (PulseBoxSettings *)0x0) {
+      PulseBoxSettings::PulseBoxSettings_Initialize(pPVar40,0,pGVar4,(MethodInfo *)0x0);
       return;
     }
     break;
   default:
     switch(worldObjectType) {
     case WorldObjectType__Enum_PickupCubeGun:
-      unaff_EDI = (MVWorldObject__Class *)(this->fields).cubeGunSettingsPrefab;
+      pCVar41 = (this->fields).cubeGunSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      this_03 = (CubeGunSettings *)
+      pCVar41 = (CubeGunSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)unaff_EDI,
+                          ((Object *)pCVar41,
                            CubeGunSettings_MethodInfo__UnityEngine__Object__Instantiate<CubeGunSettings>_CubeGunSettings_
                           );
-      if (this_03 != (CubeGunSettings *)0x0) {
+      bVar3 = 0;
+      pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+      if (pCVar41 != (CubeGunSettings *)0x0) {
         CubeGunSettings::CubeGunSettings_Initialize
-                  (this_03,0,(this->fields).materialsController,(MethodInfo *)0x0);
+                  (pCVar41,0,(this->fields).materialsController,(MethodInfo *)0x0);
         return;
       }
       break;
@@ -2016,39 +2136,49 @@ code_?:
     case WorldObjectType__Enum_HamsterWheel:
       goto code_?;
     case WorldObjectType__Enum_WorldObjectSpawnerVehicle:
-      pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (pMVar7 == (MVWorldObjectClientManager *)0x0) break;
-      pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (pMVar7,woID,(MethodInfo *)0x0);
-      if (pMVar8 == (MVWorldObject *)0x0) {
+      pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      bVar3 = 0;
+      if (pMVar8 == (MVWorldObjectClientManager *)0x0) break;
+      pMVar13 = (MVEditablePickupItemBaseBlueprint__Class *)
+                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                          (pMVar8,woID,(MethodInfo *)0x0);
+      unaff_EBX.m_Index = woID;
+      pMVar1 = pMVar13;
+      if (pMVar13 == (MVEditablePickupItemBaseBlueprint__Class *)0x0) {
         MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        bVar3 = (undefined1 *)0xfffffffb < &stack0xfffffffc;
         break;
       }
-      unaff_EDI = pMVar8->klass;
-      if (((unaff_EDI->_1).naturalAligment <
+      pIVar42 = (pMVar13->_0).image;
+      bVar3 = 1;
+      if ((*(byte *)&pIVar42[4].assembly <
            (TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment) ||
-         ((MVWorldObjectSpawnerVehicle__Class *)
-          (unaff_EDI->_1).typeHierarchy
-          [(TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment - 1] !=
-          TypeInfo__MVWorldObjectSpawnerVehicle)) goto code_?;
-      pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (pMVar7 == (MVWorldObjectClientManager *)0x0) break;
-      unaff_EDI = (MVWorldObject__Class *)
-                  MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                            (pMVar7,pMVar8[2].fields.ownerActorNr,(MethodInfo *)0x0);
-      this_04 = (VehicleBaseSettings *)0x0;
-      if (unaff_EDI == (MVWorldObject__Class *)0x0) break;
-      pCVar39 = (CultureInfo__Class *)(unaff_EDI->_0).image;
-      if (((TypeInfo__MVVehicleBase->_1).naturalAligment <= (pCVar39->_1).naturalAligment) &&
-         ((MVVehicleBase__Class *)
-          (pCVar39->_1).typeHierarchy[(TypeInfo__MVVehicleBase->_1).naturalAligment - 1] ==
-          TypeInfo__MVVehicleBase)) {
-        iVar40 = func_?();
-        pOVar1 = pORam0000009b;
-        unaff_EDI = (MVWorldObject__Class *)0x2b;
-        if (iVar40 < 0x1b) {
-          if (iVar40 == 0x19) {
-            pOVar1 = pORam00000097;
+         (pMVar43 = *(MVWorldObjectSpawnerVehicle__Class **)
+                    ((pIVar42[2].typeCount - 4) +
+                    (uint)(TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment * 4),
+         bVar3 = pMVar43 < TypeInfo__MVWorldObjectSpawnerVehicle,
+         pMVar43 != TypeInfo__MVWorldObjectSpawnerVehicle)) goto code_?;
+      pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      bVar3 = 0;
+      if (pMVar8 == (MVWorldObjectClientManager *)0x0) break;
+      pMVar9 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                          (pMVar8,(int32_t)(pMVar13->vtable).get_Scale.methodPtr,(MethodInfo *)0x0)
+      ;
+      pMVar13 = (MVEditablePickupItemBaseBlueprint__Class *)0x0;
+      bVar3 = 0;
+      pMVar1 = pMVar13;
+      if (pMVar9 == (MVWorldObject *)0x0) break;
+      bVar3 = (pMVar9->klass->_1).naturalAligment < (TypeInfo__MVVehicleBase->_1).naturalAligment;
+      if ((!(bool)bVar3) &&
+         (pMVar44 = (MVVehicleBase__Class *)
+                    (pMVar9->klass->_1).typeHierarchy
+                    [(TypeInfo__MVVehicleBase->_1).naturalAligment - 1],
+         bVar3 = pMVar44 < TypeInfo__MVVehicleBase, pMVar44 == TypeInfo__MVVehicleBase)) {
+        iVar45 = func_?();
+        pOVar14 = pORam0000009b;
+        if (iVar45 < 0x1b) {
+          if (iVar45 == 0x19) {
+            pOVar14 = pORam00000097;
             method_01 = 
             UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::HoverCraftSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings_
             ;
@@ -2060,8 +2190,8 @@ code_?:
             }
           }
           else {
-            if (iVar40 != 0x1a) goto code_?;
-            pOVar1 = pORam0000009f;
+            if (iVar45 != 0x1a) goto code_?;
+            pOVar14 = pORam0000009f;
             method_01 = 
             UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::HamsterWheelSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings_
             ;
@@ -2073,11 +2203,11 @@ code_?:
             }
           }
 code_?:
-          this_04 = (VehicleBaseSettings *)
+          pMVar13 = (MVEditablePickupItemBaseBlueprint__Class *)
                     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                              (pOVar1,method_01);
+                              (pOVar14,method_01);
         }
-        else if ((iVar40 == 0x1f) || (iVar40 == 0x22)) {
+        else if ((iVar45 == 0x1f) || (iVar45 == 0x22)) {
           method_01 = 
           UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__JetpackSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::JetpackSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__JetpackSettings_
           ;
@@ -2093,163 +2223,174 @@ code_?:
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        bVar25 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)this_04,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar25 == 0) {
+        bVar27 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                           ((Object_1 *)pMVar13,(Object_1 *)0x0,(MethodInfo *)0x0);
+        if (bVar27 == 0) {
           return;
         }
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)0x2b,(MethodInfo *)0x0);
-        if (this_04 != (VehicleBaseSettings *)0x0) {
+        bVar3 = 0;
+        pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)0x0;
+        if (pMVar13 != (MVEditablePickupItemBaseBlueprint__Class *)0x0) {
           UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::VehicleBaseSettings::
-          VehicleBaseSettings_Initialize(this_04,woID,pGVar3,(MethodInfo *)0x0);
+          VehicleBaseSettings_Initialize
+                    ((VehicleBaseSettings *)pMVar13,woID,pGVar4,(MethodInfo *)0x0);
           return;
         }
         break;
       }
       goto code_?;
     case WorldObjectType__Enum_RoundCube:
-      pRVar41 = (this->fields).roundCubeSettingsPrefab;
+      pRVar46 = (this->fields).roundCubeSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pRVar41 = (RoundCubeSettings *)
+      pRVar46 = (RoundCubeSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pRVar41,
+                          ((Object *)pRVar46,
                            UGUI__Desktop__Scripts__EditMode__SettingsBoxes__RoundCubeSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::RoundCubeSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__RoundCubeSettings_
                           );
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pRVar41 != (RoundCubeSettings *)0x0) {
+      bVar3 = 0;
+      pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+      if (pRVar46 != (RoundCubeSettings *)0x0) {
         UGUI::Desktop::Scripts::EditMode::SettingsBoxes::RoundCubeSettings::
-        RoundCubeSettings_Initialize(pRVar41,0,pGVar3,(MethodInfo *)0x0);
+        RoundCubeSettings_Initialize(pRVar46,0,pGVar4,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_AdvancedGhost:
-      pOVar42 = (this->fields).oculusSettingsPrefab;
+      pOVar47 = (this->fields).oculusSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pOVar42 = (OculusSettings *)
+      pOVar47 = (OculusSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pOVar42,
+                          ((Object *)pOVar47,
                            OculusSettings_MethodInfo__UnityEngine__Object__Instantiate<OculusSettings>_OculusSettings_
                           );
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pOVar42 != (OculusSettings *)0x0) {
-        OculusSettings::OculusSettings_Initialize(pOVar42,0,pGVar3,(MethodInfo *)0x0);
+      bVar3 = 0;
+      pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+      if (pOVar47 != (OculusSettings *)0x0) {
+        OculusSettings::OculusSettings_Initialize(pOVar47,0,pGVar4,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_KillLimit:
-      pKVar43 = (this->fields).killLimitSettingsPrefab;
+      pKVar48 = (this->fields).killLimitSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pKVar43 = (KillLimitSettings *)
+      pKVar48 = (KillLimitSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pKVar43,
+                          ((Object *)pKVar48,
                            KillLimitSettings_MethodInfo__UnityEngine__Object__Instantiate<KillLimitSettings>_KillLimitSettings_
                           );
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)
+                UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      pSVar29 = TM::TM__(StringLiteral_Kill_Limit,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pKVar43 != (KillLimitSettings *)0x0) {
-        KillLimitSettings::KillLimitSettings_Initialize(pKVar43,0,pGVar3,pSVar29,(MethodInfo *)0x0)
-        ;
+      pSVar31 = TM::TM__(StringLiteral_Kill_Limit,(MethodInfo *)0x0);
+      bVar3 = 0;
+      if (pKVar48 != (KillLimitSettings *)0x0) {
+        KillLimitSettings::KillLimitSettings_Initialize
+                  (pKVar48,0,(GameObject *)pMVar1,pSVar31,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_OculusKillLimit:
-      pKVar43 = (this->fields).killLimitSettingsPrefab;
+      pKVar48 = (this->fields).killLimitSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pKVar43 = (KillLimitSettings *)
+      pKVar48 = (KillLimitSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pKVar43,
+                          ((Object *)pKVar48,
                            KillLimitSettings_MethodInfo__UnityEngine__Object__Instantiate<KillLimitSettings>_KillLimitSettings_
                           );
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)
+                UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      pSVar29 = TM::TM__(StringLiteral_Oculus_Kill_Limit,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pKVar43 != (KillLimitSettings *)0x0) {
-        KillLimitSettings::KillLimitSettings_Initialize(pKVar43,0,pGVar3,pSVar29,(MethodInfo *)0x0)
-        ;
+      pSVar31 = TM::TM__(StringLiteral_Oculus_Kill_Limit,(MethodInfo *)0x0);
+      bVar3 = 0;
+      if (pKVar48 != (KillLimitSettings *)0x0) {
+        KillLimitSettings::KillLimitSettings_Initialize
+                  (pKVar48,0,(GameObject *)pMVar1,pSVar31,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_CountingCube:
-      pCVar44 = (this->fields).countingCubeSettingsPrefab;
+      pCVar49 = (this->fields).countingCubeSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pCVar44 = (CountingCubeSettings *)
+      pCVar49 = (CountingCubeSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pCVar44,
+                          ((Object *)pCVar49,
                            CountingCubeSettings_MethodInfo__UnityEngine__Object__Instantiate<CountingCubeSettings>_CountingCubeSettings_
                           );
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pCVar44 != (CountingCubeSettings *)0x0) {
-        CountingCubeSettings::CountingCubeSettings_Initialize(pCVar44,0,pGVar3,(MethodInfo *)0x0);
+      bVar3 = 0;
+      pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+      if (pCVar49 != (CountingCubeSettings *)0x0) {
+        CountingCubeSettings::CountingCubeSettings_Initialize(pCVar49,0,pGVar4,(MethodInfo *)0x0);
         return;
       }
       break;
     default:
       if (worldObjectType != WorldObjectType__Enum_WorldObjectSpawnerVehicleEnergy)
       goto code_?;
-      pVVar45 = (this->fields).vehicleEnergySettingsPrefab;
+      pVVar50 = (this->fields).vehicleEnergySettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pVVar45 = (VehicleEnergySettings *)
+      pVVar50 = (VehicleEnergySettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pVVar45,
+                          ((Object *)pVVar50,
                            UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergySettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::VehicleEnergySettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergySettings_
                           );
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pVVar45 != (VehicleEnergySettings *)0x0) {
+      bVar3 = 0;
+      pMVar1 = (MVEditablePickupItemBaseBlueprint__Class *)this;
+      if (pVVar50 != (VehicleEnergySettings *)0x0) {
         UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::VehicleEnergySettings::
-        VehicleEnergySettings_Initialize(pVVar45,0,pGVar3,(MethodInfo *)0x0);
+        VehicleEnergySettings_Initialize(pVVar50,0,pGVar4,(MethodInfo *)0x0);
         return;
       }
     }
   }
 code_?:
   func_?();
+  woID = unaff_EBX.m_Index;
+code_?:
+  func_?();
+  pMVar13 = pMVar1;
 code_?:
   func_?();
 code_?:
   func_?();
-code_?:
+  pDVar51 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId___Class *)
+           (pMVar13->_0).image;
+  bVar52 = in(0x3b);
+  puVar53 = (undefined1 *)((int)((Link__Array *)(woID + -0x1efc450))->vector + 0x3a);
+  bVar54 = CARRY1(*puVar53,bVar52) || CARRY1(*puVar53 + bVar52,bVar3);
+  *puVar53 = *puVar53 + bVar52 + bVar3;
+  uVar55 = in(0x3b);
+  pcVar56 = (char *)CONCAT31((int3)((uint)pDVar51 >> 8),uVar55);
+  pbVar57 = (byte *)((int)&pMVar13[0x6198d].vtable.set_Scale.methodPtr + 1);
+  bVar3 = *pbVar57;
+  bVar58 = (byte)((ushort)extraout_DX >> 8);
+  bVar52 = *pbVar57 + bVar58;
+  *pbVar57 = bVar52 + bVar54;
+  out(0x3b,pcVar56);
+  *pcVar56 = *pcVar56 + (char)extraout_DX + (CARRY1(bVar3,bVar58) || CARRY1(bVar52,bVar54));
   func_?();
-  pcVar46 = (code *)swi(0xe3);
-  uVar47 = (*pcVar46)();
-  puRam_? = (uint *)uVar47;
-  bVar48 = (uint)((ulonglong)uVar47 >> 0x20) < *puRam_?;
-  in(0x3b);
-  bVar49 = (byte)((ulonglong)uVar47 >> 0x20);
-  bVar50 = (byte)((ulonglong)uVar47 >> 0x28);
-  bVar51 = bVar50 + bVar49;
-  bVar52 = CARRY1(bVar50,bVar49) || CARRY1(bVar51,bVar48);
-  bVar51 = bVar51 + bVar48;
-  cVar53 = in(0x3b);
-  bVar48 = CARRY1(bRam_?,bVar51);
-  bVar51 = bRam_? + bVar51;
-  bRam_? = bVar51 + bVar52;
-  out(0x3b,CONCAT31((int3)((ulonglong)uVar47 >> 8),cVar53));
-  puVar54 = (undefined1 *)((int)&unaff_EDI[-0xf2440].vtable.get_HasInputConnector.method + 3);
-  *puVar54 = *puVar54 + cVar53 + (bVar48 || CARRY1(bVar51,bVar52));
+  in(extraout_DX_00);
                     /* WARNING: Bad instruction - Truncating control flow here */
   halt_baddata();
 }

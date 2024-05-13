@@ -65,13 +65,29 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore:
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Object);
+    func_?(&System__Object__MethodInfo__System__Array__Empty<System::Object>______);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields)._.key;
-  args = (Object__Array *)func_?(TypeInfo__System__Object,0);
-  pSVar1 = mscorlib.dll::System::String::String_Format_3(pSVar1,args,(MethodInfo *)0x0);
-  return pSVar1;
+  pMVar1 = System__Object__MethodInfo__System__Array__Empty<System::Object>______;
+  pSVar2 = (this->fields)._.key;
+  if ((System__Object__MethodInfo__System__Array__Empty<System::Object>______->field7_0x1c).
+      rgctx_data == (Il2CppRGCTXData *)0x0) {
+    func_?(System__Object__MethodInfo__System__Array__Empty<System::Object>______);
+  }
+  pIVar3 = (pMVar1->field7_0x1c).rgctx_data[2].klass;
+  if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar3 = (Il2CppClass *)func_?(pIVar3);
+  }
+  if (pIVar3->cctor_finished_or_no_cctor == 0) {
+    func_?(pIVar3);
+  }
+  pIVar3 = (pMVar1->field7_0x1c).rgctx_data[2].klass;
+  if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar3 = (Il2CppClass *)func_?(pIVar3);
+  }
+  pSVar2 = mscorlib.dll::System::String::String_Format_3
+                     (pSVar2,*(Object__Array **)pIVar3->static_fields,(MethodInfo *)0x0);
+  return pSVar2;
 }
 
 
@@ -110,9 +126,9 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields)._._Parent_k__BackingField = kogamaSettingsCollection;
-  func_?(&(this->fields)._._Parent_k__BackingField,kogamaSettingsCollection);
+  func_?(&this->fields,kogamaSettingsCollection);
   (this->fields)._.key = key;
-  func_?(&this->fields,key);
+  func_?(&(this->fields)._.key,key);
   return;
 }
 

@@ -218,23 +218,37 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetData::Playe
   *(undefined4 *)&(this->fields).playtime._ticks = in_stack_3;
   *(undefined4 *)((int)&(this->fields).playtime._ticks + 4) = (undefined4)playtime._ticks;
   if (rank != 0) {
-    gamePassTier = CONCAT31(gamePassTier._1_3_,*(undefined1 *)(rank + 8));
-    welcomeRewardClaimed = *(bool *)(rank + 9);
-    uVar4 = *(uint *)(rank + 0x14);
-    method_01 = TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient;
-    pPVar2 = (PlayerPlanetMetaDataClient *)func_?();
-    lastDailyWelcomeRewardClaim._dateData._4_4_ = 0;
-    lastDailyWelcomeRewardClaim._dateData._0_4_ = uVar4;
-    PlayerPlanetMetaDataClient::PlayerPlanetMetaDataClient__ctor_1
-              (pPVar2,gamePassTier,welcomeRewardClaimed,lastDailyWelcomeRewardClaim,
-               (MethodInfo *)method_01);
+    uVar1 = *(undefined4 *)(rank + 0x10);
+    uVar4 = *(uint8_t *)(rank + 8);
+    bVar5 = *(bool *)(rank + 9);
+    uVar6 = *(undefined4 *)(rank + 0x14);
+    pPVar2 = (PlayerPlanetMetaDataClient *)
+             func_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__DateTime);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__DateTime);
+    }
+    uVar7 = *(undefined4 *)
+             ((int)&(TypeInfo__System__DateTime->static_fields->MinValue)._dateData + 4);
+    *(int *)&(pPVar2->fields).lastDailyWelcomeRewardClaim._dateData =
+         (int)(TypeInfo__System__DateTime->static_fields->MinValue)._dateData;
+    *(undefined4 *)((int)&(pPVar2->fields).lastDailyWelcomeRewardClaim._dateData + 4) = uVar7;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)pPVar2,ExceptionArgument__Enum_obj,unaff_retaddr);
+    *(undefined4 *)&(pPVar2->fields).lastDailyWelcomeRewardClaim._dateData = uVar1;
+    *(undefined4 *)((int)&(pPVar2->fields).lastDailyWelcomeRewardClaim._dateData + 4) = uVar6;
+    (pPVar2->fields).gamePassTierSeen = uVar4;
+    (pPVar2->fields).welcomeRewardClaimed = bVar5;
     (this->fields).playerPlanetMetaData = pPVar2;
     func_?(&(this->fields).playerPlanetMetaData,pPVar2);
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

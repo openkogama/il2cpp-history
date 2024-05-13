@@ -2,9 +2,9 @@
 /* Void <GetSettingsSettingsList>b__0(KogamaSettingWrapperBase) */
 
 void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameOptions::
-     GameOptionSettingsManager+<>c__DisplayClass1::
-     GameOptionSettingsManager_c_DisplayClass1__GetSettingsSettingsList_b__0
-               (GameOptionSettingsManager_c_DisplayClass1 *this,
+     GameOptionSettingsManager+<>c__DisplayClass4_0::
+     GameOptionSettingsManager_c_DisplayClass4_0__GetSettingsSettingsList_b__0
+               (GameOptionSettingsManager_c_DisplayClass4_0 *this,
                KogamaSettingWrapperBase *settingNode,MethodInfo *method)
 
 {

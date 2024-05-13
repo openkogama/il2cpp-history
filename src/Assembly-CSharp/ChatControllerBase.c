@@ -1326,69 +1326,64 @@ code_?:
   }
   uVar9 = func_?();
 code_?:
-  cVar15 = func_?(uVar9);
-  bVar16 = (byte)((uint)extraout_EDX >> 8);
-  bVar17 = CARRY1(*extraout_EDX,bVar16) || CARRY1(*extraout_EDX + bVar16,bVar2);
-  *extraout_EDX = *extraout_EDX + bVar16 + bVar2;
-  bVar18 = CARRY1(*extraout_EDX,bVar16) || CARRY1(*extraout_EDX + bVar16,bVar17);
-  *extraout_EDX = *extraout_EDX + bVar16 + bVar17;
-  bVar17 = CARRY1(*extraout_EDX,bVar16) || CARRY1(*extraout_EDX + bVar16,bVar18);
-  *extraout_EDX = *extraout_EDX + bVar16 + bVar18;
-  bVar19 = (byte)extraout_ECX + bVar16;
-  bVar18 = CARRY1((byte)extraout_ECX,bVar16) || CARRY1(bVar19,bVar17);
-  bVar2 = *(char *)&unaff_ESI->klass + (cVar15 - 2U);
-  bVar20 = CARRY1(*(byte *)&unaff_ESI->klass,cVar15 - 2U) || CARRY1(bVar2,bVar18);
-  *(byte *)&unaff_ESI->klass = bVar2 + bVar18;
-  bVar2 = *(char *)&unaff_ESI->klass + (byte)extraout_EDX;
-  bVar18 = CARRY1(*(byte *)&unaff_ESI->klass,(byte)extraout_EDX) || CARRY1(bVar2,bVar20);
-  *(byte *)&unaff_ESI->klass = bVar2 + bVar20;
-  pbVar21 = extraout_EDX + -1;
-  bVar2 = *pbVar21;
-  bVar22 = (byte)((uint)pbVar21 >> 8);
-  bVar16 = *pbVar21 + bVar22;
-  *pbVar21 = bVar16 + bVar18;
-  *(char *)(unaff_EBX + -4) =
-       *(char *)(unaff_EBX + -4) +
-       (char)((uint)(CONCAT31((int3)((uint)extraout_ECX >> 8),bVar19 + bVar17) + -1) >> 8) +
-       (CARRY1(bVar2,bVar22) || CARRY1(bVar16,bVar18));
-  in((short)extraout_EDX + -2);
+  func_?(uVar9);
+  in((short)extraout_EDX);
+  bVar15 = (byte)extraout_EDX;
+  bVar16 = CARRY1(bVar15,bVar15) || CARRY1(bVar15 * '\x02',bVar2);
+  bVar2 = bVar15 * '\x02' + bVar2;
+  bVar17 = CARRY1(bVar2,bVar2) || CARRY1(bVar2 * '\x02',bVar16);
+  bVar2 = bVar2 * '\x02' + bVar16;
+  bVar16 = CARRY1(bVar2,bVar2) || CARRY1(bVar2 * '\x02',bVar17);
+  bVar18 = bVar2 * '\x02' + bVar17;
+  pbVar19 = (byte *)(extraout_ECX + -0x59efc1b7);
+  bVar2 = *pbVar19;
+  bVar15 = *pbVar19;
+  *pbVar19 = bVar15 + bVar18 + bVar16;
+  pcVar20 = (char *)((int)&unaff_ESI[-0xf4feb4].fields._buckets + 2);
+  *pcVar20 = *pcVar20 + (char)((uint)extraout_EDX >> 8) +
+            (CARRY1(bVar2,bVar18) || CARRY1(bVar15 + bVar18,bVar16));
+  in((short)CONCAT31((int3)((uint)extraout_EDX >> 8),bVar18) + -1);
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Dequeue__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Enqueue_UnityEngine__UI__Text_
+                   );
     cRam_? = '\x01';
   }
-  pQVar23 = (this->fields).lines;
-  if (pQVar23 != (Queue_1_UnityEngine_UI_Text_ *)0x0) {
+  pQVar21 = (this->fields).lines;
+  if (pQVar21 != (Queue_1_UnityEngine_UI_Text_ *)0x0) {
     this_03 = (Component *)
               mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
               Queue_1_System_Object__Dequeue
-                        ((Queue_1_System_Object_ *)pQVar23,
+                        ((Queue_1_System_Object_ *)pQVar21,
                          MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Dequeue__
                         );
-    pQVar23 = (this->fields).lines;
-    if (((pQVar23 != (Queue_1_UnityEngine_UI_Text_ *)0x0) &&
+    pQVar21 = (this->fields).lines;
+    if (((pQVar21 != (Queue_1_UnityEngine_UI_Text_ *)0x0) &&
         (mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
          Queue_1_System_Object__Enqueue
-                   ((Queue_1_System_Object_ *)pQVar23,(Object *)this_03,
+                   ((Queue_1_System_Object_ *)pQVar21,(Object *)this_03,
                     MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Enqueue_UnityEngine__UI__Text_
                    ), this_03 != (Component *)0x0)) &&
-       (pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            (this_03,(MethodInfo *)0x0), pTVar24 != (Transform *)0x0)) {
+       (pTVar22 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            (this_03,(MethodInfo *)0x0), pTVar22 != (Transform *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                (pTVar24,(Transform *)(this->fields)._ContentPanel_k__BackingField,0,
+                (pTVar22,(Transform *)(this->fields)._ContentPanel_k__BackingField,0,
                  (MethodInfo *)0x0);
-      pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+      pTVar22 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                           (this_03,(MethodInfo *)0x0);
-      if (pTVar24 != (Transform *)0x0) {
+      if (pTVar22 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                  (pTVar24,(MethodInfo *)0x0);
+                  (pTVar22,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar25 = (code *)swi(3);
-  (*pcVar25)();
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 

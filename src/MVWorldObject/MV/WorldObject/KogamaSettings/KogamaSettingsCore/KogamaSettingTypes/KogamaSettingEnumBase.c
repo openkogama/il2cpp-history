@@ -17,9 +17,9 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (pKVar1->fields)._._._Parent_k__BackingField = parent;
-  func_?(&(pKVar1->fields)._._._Parent_k__BackingField,parent);
+  func_?(&pKVar1->fields,parent);
   (pKVar1->fields)._._.key = key;
-  func_?(&pKVar1->fields,key);
+  func_?(&(pKVar1->fields)._._.key,key);
   value_01 = (KogamaSettingEnum *)
              func_?(
                             TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingEnum

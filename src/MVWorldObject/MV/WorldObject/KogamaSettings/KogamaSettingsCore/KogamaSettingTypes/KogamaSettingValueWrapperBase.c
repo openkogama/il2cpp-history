@@ -53,9 +53,9 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._._Parent_k__BackingField = parent;
-  func_?(&(this->fields)._._Parent_k__BackingField,parent);
+  func_?(&this->fields,parent);
   (this->fields)._.key = key;
-  func_?(&this->fields,key);
+  func_?(&(this->fields)._.key,key);
   return;
 }
 

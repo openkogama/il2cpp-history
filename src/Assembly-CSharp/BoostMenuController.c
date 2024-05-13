@@ -326,7 +326,7 @@ void Assembly-CSharp.dll::BoostMenuController::BoostMenuController_Initialize
                                 );
               if (RVar3 == (RegexCharClass_SingleRange)0x0) goto code_?;
               bVar5 = mscorlib.dll::System::String::String_op_Equality
-                                (a,*(String **)((int)RVar3 + 8),(MethodInfo *)0x0);
+                                (a,*(String **)((int)RVar3 + 0xc),(MethodInfo *)0x0);
               if (bVar5 != 0) {
                 original = ((MethodInfo *)this)->klass;
                 parent = (Transform *)((MethodInfo *)this)->parameters;

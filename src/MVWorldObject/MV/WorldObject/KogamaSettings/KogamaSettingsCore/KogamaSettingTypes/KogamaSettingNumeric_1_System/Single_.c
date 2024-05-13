@@ -101,34 +101,47 @@ KogamaSettingNumeric_1_System_Single__get_KogamaSettingValueType
                      ((RuntimeTypeHandle)IVar1,(MethodInfo *)0x0);
   pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                      ((RuntimeTypeHandle)TypeRef__System__Int32,(MethodInfo *)0x0);
-  if (pTVar2 != pTVar3) {
+  bVar4 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+          UnsafeUtility_EnumEquals
+                    ((Int32Enum__Enum)pTVar2,(Int32Enum__Enum)pTVar3,(MethodInfo *)0x0);
+  if (bVar4 == 0) {
     IVar1 = *method->klass->rgctx_data;
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
+      func_?();
     }
     pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                        ((RuntimeTypeHandle)IVar1,(MethodInfo *)0x0);
     pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                        ((RuntimeTypeHandle)TypeRef__System__Single,(MethodInfo *)0x0);
-    if (pTVar2 == pTVar3) {
+    bVar4 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+            UnsafeUtility_EnumEquals
+                      ((Int32Enum__Enum)pTVar2,(Int32Enum__Enum)pTVar3,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
       return KogamaSettingValueType__Enum_Float;
     }
     handle.value = (void *)func_?();
-    func_?();
+    puStack5 = (undefined *)func_?();
     func_?();
     pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)0x0;
-    arg0 = (Object *)func_?();
-    message = mscorlib.dll::System::String::String_Concat(arg0,(Object *)pTVar2,method_00);
+    if (pTVar2 == (Type *)0x0) {
+      str1 = (String *)0x0;
+      pSVar6 = (String *)func_?();
+    }
+    else {
+      pSVar6 = (String *)func_?();
+      func_?();
+      str1 = (String *)func_?();
+    }
+    pSVar6 = mscorlib.dll::System::String::String_Concat_3(pSVar6,str1,(MethodInfo *)0x0);
     func_?();
     this_00 = (Exception *)func_?();
-    mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
-    pMStack4 = method;
-    pEStack5 = this_00;
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_00,pSVar6,(MethodInfo *)0x0);
+    pMStack7 = method;
+    pEStack8 = this_00;
     func_?();
-    pcVar6 = (code *)swi(3);
-    KVar7 = (*pcVar6)();
-    return KVar7;
+    pcVar9 = (code *)swi(3);
+    KVar10 = (*pcVar9)();
+    return KVar10;
   }
   return KogamaSettingValueType__Enum_Int;
 }

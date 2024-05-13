@@ -17,11 +17,7 @@ void MVWorldObject.dll::LogicEvaluateInputSignalsAnd::LogicEvaluateInputSignalsA
                (LogicEvaluateInputSignalsAnd *this,bool isHot,MethodInfo *method)
 
 {
-  bVar1 = 0;
-  if ((this->fields).andIsTrue != 0) {
-    bVar1 = isHot;
-  }
-  (this->fields).andIsTrue = bVar1;
+  (this->fields).andIsTrue = (this->fields).andIsTrue & isHot;
   return;
 }
 
