@@ -114,7 +114,7 @@ int32_t Assembly-CSharp.dll::BoostMenuItem::BoostMenuItem_GetBoostPrice(BoostMen
         }
         RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_03,index,MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_);
         if ((RVar1 == (RegexCharClass_SingleRange)0x0) || (pBVar2 = (this->fields).boost, pBVar2 == (Boost *)0x0)) goto code_?;
-        bVar3 = mscorlib.dll::System::String::String_op_Equality(*(String **)((int)RVar1 + 8),(pBVar2->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
+        bVar3 = mscorlib.dll::System::String::String_op_Equality(*(String **)((int)RVar1 + 0xc),(pBVar2->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
         if (bVar3 != 0) break;
         index = index + 1;
       }

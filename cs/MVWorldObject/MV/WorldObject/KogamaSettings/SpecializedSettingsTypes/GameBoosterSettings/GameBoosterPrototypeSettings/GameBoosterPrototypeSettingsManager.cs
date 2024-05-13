@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using MV.WorldObject.KogamaSettings.KogamaSettingsCore.KogamaSettingTypes;
 using MV.WorldObject.KogamaSettings.SpecializedSettingsTypes.GameBoosterSettings.GameBoosterSettingTypes;
 
@@ -19,16 +20,16 @@ namespace MV.WorldObject.KogamaSettings.SpecializedSettingsTypes.GameBoosterSett
 	{
 		// Nested types
 		[CompilerGenerated]
-		private sealed class __c__DisplayClass1
+		private sealed class __c__DisplayClass9_0
 		{
 			// Fields
 			public List<GameBoosterSettingWithGoldSetting> inv;
 	
 			// Constructors
-			public __c__DisplayClass1();
+			public __c__DisplayClass9_0();
 	
 			// Methods
-			public void _GetSettingsSettingsList_b__0(KogamaSettingWrapperBase settingNode);
+			internal void _GetSettingsSettingsList_b__0(KogamaSettingWrapperBase settingNode);
 		}
 	
 		// Methods

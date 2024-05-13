@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 // Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -17,14 +18,16 @@ public class WinningConditionManager
 	private WinningConditionOr winnerConditionsRoot;
 	private int winnerConditionIDCounter;
 	private GameStatCounterManager gameCounterManager;
-	private EventHandler<EventArgs> OnWinningConditionChanged;
-	private EventHandler<EventArgs> OnWinningConditionReset;
-	private EventHandler<EventArgs> OnWinningConditionAddedOrRemoved;
-	private EventHandler<EventArgs> OnWinningConditionStateChangedEditMode;
 	[CompilerGenerated]
 	private bool _WinningConditionFound_k__BackingField;
 	[CompilerGenerated]
-	private static Func<IWinningCondition, bool> CS___9__CachedAnonymousMethodDelegate1;
+	private EventHandler<EventArgs> OnWinningConditionChanged;
+	[CompilerGenerated]
+	private EventHandler<EventArgs> OnWinningConditionReset;
+	[CompilerGenerated]
+	private EventHandler<EventArgs> OnWinningConditionAddedOrRemoved;
+	[CompilerGenerated]
+	private EventHandler<EventArgs> OnWinningConditionStateChangedEditMode;
 
 	// Properties
 	public bool WinningConditionFound { [CompilerGenerated] get; [CompilerGenerated] private set; }
@@ -53,18 +56,34 @@ public class WinningConditionManager
 		private bool Report(IWinningCondition winnerCondition);
 	}
 
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass3<T>
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<IWinningCondition, bool> __9__21_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal bool _Reset_b__21_0(IWinningCondition winnerCondition);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass29_0<T>
 		where T : WinningCondition
 	{
 		// Fields
 		public List<T> winnerConditionsResult;
 
 		// Constructors
-		public __c__DisplayClass3();
+		public __c__DisplayClass29_0();
 
 		// Methods
-		public bool _GetWinnerConditionsByType_b__2(IWinningCondition winnerCondtion);
+		internal bool _GetWinnerConditionsByType_b__0(IWinningCondition winnerCondtion);
 	}
 
 	// Constructors
@@ -94,7 +113,5 @@ public class WinningConditionManager
 	public bool CanPlaceWinningCondition<T>()
 		where T : WinningCondition;
 	private bool IsTimeLimit(IWinningCondition winningCondition);
-	[CompilerGenerated]
-	private static bool _Reset_b__0(IWinningCondition winnerCondition);
 }
 

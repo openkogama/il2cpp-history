@@ -400,48 +400,49 @@ code_?:
               ppMVar15 = (MethodInfo **)func_?(DStack_6._currentValue,TypeInfo__IInputSignalReceiver,2);
 code_?:
               uVar16 = (*(code *)*ppMVar15)(pOVar9,ppMVar15[1]);
-              pMStack_17 = (MethodInfo *)CONCAT31(pMStack_17._1_3_,uVar16);
-              if (pOVar9 == (Object *)0x0) goto code_?;
-              pOStack_10 = pOVar9->klass;
               uVar12 = 0;
+              pMStack_17 = (MethodInfo *)CONCAT31(pMStack_17._1_3_,uVar16);
+              pOStack_10 = pOVar9->klass;
               uStack_13 = 0;
-              uVar11._0_1_ = (pOStack_10->_1).rank;
-              uVar11._1_1_ = (pOStack_10->_1).minimumAlignment;
-              if (uVar11 != 0) {
+              sVar18._0_1_ = (pOStack_10->_1).rank;
+              sVar18._1_1_ = (pOStack_10->_1).minimumAlignment;
+              if (sVar18 != 0) {
                 do {
                   if (pOStack_10->interfaceOffsets[uVar12].interfaceType == (Il2CppClass *)TypeInfo__IInputSignalReceiver) {
-                    pOVar18 = pOVar14->klass;
-                    iVar19 = pOVar18->interfaceOffsets[uVar12].offset;
+                    pOVar19 = pOVar14->klass;
+                    iVar20 = pOVar19->interfaceOffsets[uVar12].offset;
                     method_00 = pMStack_17;
-                    (*(code *)(&(pOVar18->vtable).Equals)[iVar19].method)(pOVar14,pMStack_17,(&(pOVar18->vtable).Finalize)[iVar19].methodPtr);
+                    (*(code *)(&(pOVar19->vtable).Equals)[iVar20].method)(pOVar14,pMStack_17,(&(pOVar19->vtable).Finalize)[iVar20].methodPtr);
                     goto code_?;
                   }
                   uVar12 = uVar12 + 1;
+                  uVar11._0_1_ = (pOVar14->klass->_1).rank;
+                  uVar11._1_1_ = (pOVar14->klass->_1).minimumAlignment;
                   pOVar9 = pOVar14;
                 } while (uVar12 < uVar11);
               }
-              puVar20 = (undefined4 *)func_?(pOVar9,TypeInfo__IInputSignalReceiver,0);
+              puVar21 = (undefined4 *)func_?(pOVar9,TypeInfo__IInputSignalReceiver,0);
               method_00 = pMStack_17;
-              (*(code *)*puVar20)(pOVar9,pMStack_17,puVar20[1]);
+              (*(code *)*puVar21)(pOVar9,pMStack_17,puVar21[1]);
               goto code_?;
             }
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&DStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__Dispose__,method_00);
-            *(int *)(unaff_EBX + 0x14) = *(int *)(unaff_EBX + 0x14) + 100;
+            *(int *)(unaff_EBX + 0x10) = *(int *)(unaff_EBX + 0x10) + 100;
             if (unaff_EBX[0xc] != '\0') {
               if (cRam_? == '\0') {
                 func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
                 cRam_? = '\x01';
               }
-              if (*(HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ **)(unaff_EBX + 0x10) == (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) goto code_?;
-              System.Core.dll::System::Collections::Generic::HashSet`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Clear(*(HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ **)(unaff_EBX + 0x10),MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
+              if (*(HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ **)(unaff_EBX + 0x14) == (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) goto code_?;
+              System.Core.dll::System::Collections::Generic::HashSet`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Clear(*(HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ **)(unaff_EBX + 0x14),MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
             }
             *unaff_FS_OFFSET = uVar5;
             return;
           }
 code_?:
           func_?();
-          pcVar21 = (code *)swi(3);
-          (*pcVar21)();
+          pcVar22 = (code *)swi(3);
+          (*pcVar22)();
           return;
         }
       }
@@ -449,8 +450,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 

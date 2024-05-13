@@ -192,7 +192,7 @@ void Assembly-CSharp.dll::BoostMenuController::BoostMenuController_Initialize(Bo
               this_04 = (MethodInfo *)this;
               RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)this,index,MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_);
               if (RVar3 == (RegexCharClass_SingleRange)0x0) goto code_?;
-              bVar5 = mscorlib.dll::System::String::String_op_Equality(a,*(String **)((int)RVar3 + 8),(MethodInfo *)0x0);
+              bVar5 = mscorlib.dll::System::String::String_op_Equality(a,*(String **)((int)RVar3 + 0xc),(MethodInfo *)0x0);
               if (bVar5 != 0) {
                 original = ((MethodInfo *)this)->klass;
                 parent = (Transform *)((MethodInfo *)this)->parameters;

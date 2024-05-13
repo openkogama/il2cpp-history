@@ -190,7 +190,7 @@ void Assembly-CSharp.dll::BoostEditMenu::BoostEditMenu_Start(BoostEditMenu *this
               RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_06,(int32_t)index,MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_);
               if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
               method_00 = (MethodInfo *)0x0;
-              bVar3 = mscorlib.dll::System::String::String_op_Equality(a,*(String **)((int)RVar4 + 8),(MethodInfo *)0x0);
+              bVar3 = mscorlib.dll::System::String::String_op_Equality(a,*(String **)((int)RVar4 + 0xc),(MethodInfo *)0x0);
               if (bVar3 != 0) {
                 original = (this->fields).boostPrefab;
                 if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {

@@ -86,7 +86,7 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize(BoostE
               for (; iVar7 < (int)(boost->fields)._BoostKey_k__BackingField; iVar7 = iVar7 + 1) {
                 RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)boost,iVar7,MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_);
                 if (RVar8 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                bVar9 = mscorlib.dll::System::String::String_op_Equality(*(String **)((int)RVar8 + 8),(pBVar1->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
+                bVar9 = mscorlib.dll::System::String::String_op_Equality(*(String **)((int)RVar8 + 0xc),(pBVar1->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
                 if (bVar9 != 0) {
                   pTVar5 = (pBVar2->fields).activeToggleButton;
                   (pBVar2->fields).isActive = 1;
@@ -104,7 +104,7 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize(BoostE
                 for (; iVar7 < (int)(this->fields)._.m_CancellationTokenSource; iVar7 = iVar7 + 1) {
                   RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)this,iVar7,MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_);
                   if (RVar8 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                  bVar9 = mscorlib.dll::System::String::String_op_Equality(*(String **)((int)RVar8 + 8),(pBVar1->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
+                  bVar9 = mscorlib.dll::System::String::String_op_Equality(*(String **)((int)RVar8 + 0xc),(pBVar1->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
                   if (bVar9 != 0) {
                     pTVar5 = (pBVar2->fields).activeToggleButton;
                     (pBVar2->fields).isActive = 0;

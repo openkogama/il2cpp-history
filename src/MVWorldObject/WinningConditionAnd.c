@@ -98,7 +98,13 @@ String * MVWorldObject.dll::WinningConditionAnd::WinningConditionAnd_ToString(Wi
         in_stack_9 = (MethodInfo *)StringLiteral__AND_;
         pSVar4 = mscorlib.dll::System::String::String_Concat_3(pSVar4,StringLiteral__AND_,(MethodInfo *)0x0);
       }
-      pSVar4 = mscorlib.dll::System::String::String_Concat((Object *)pSVar4,pOStack_8,(MethodInfo *)0x0);
+      if (pOStack_8 == (Object *)0x0) {
+        str1 = (String *)0x0;
+      }
+      else {
+        str1 = (String *)func_?();
+      }
+      pSVar4 = mscorlib.dll::System::String::String_Concat_3(pSVar4,str1,(MethodInfo *)0x0);
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffbc,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_IWinningCondition>__Dispose__,in_stack_9);

@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using MV.WorldObject;
 
 // Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -20,9 +21,13 @@ namespace MV.WorldObject.KogamaSettings.KogamaSettingsCore.Client
 		public readonly MVWorldObject worldObject;
 		protected Dictionary<object, object> DeltaData;
 		protected Dictionary<object, object> DeltaRemovalData;
+		[CompilerGenerated]
 		private Action<int, Dictionary<object, object>> partialDataUpdate;
+		[CompilerGenerated]
 		private Action<int, Dictionary<object, object>> partialDataRemove;
+		[CompilerGenerated]
 		private Action<Dictionary<object, object>> OnValueRemovedLocal;
+		[CompilerGenerated]
 		private Action<Dictionary<object, object>> OnValueChangedLocal;
 	
 		// Events

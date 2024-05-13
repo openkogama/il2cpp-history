@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 // Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -16,10 +17,10 @@ namespace MV.WorldObject.AntiCheat
 	{
 		// Fields
 		private string programName;
-		private bool strictComparison;
-		public RegistryKey[] associatedRegistryKeys;
 		[CompilerGenerated]
 		private string _ExeCertSubjectName_k__BackingField;
+		private bool strictComparison;
+		public RegistryKey[] associatedRegistryKeys;
 	
 		// Properties
 		public string ProgramName { get; set; }

@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_AddToChunk(CubeModelChu
 {
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__ContainsKey_MV__WorldObject__IntVector_);
-    func_?(0x30c4);
+    func_?(0x3150);
     cRam_? = '\x01';
   }
   pDVar1 = (this->fields).cells;
@@ -61,10 +61,9 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_AdvancedFaceVisibilityT
   if ((TypeInfo__CubeModelChunk->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  in_stack_3 = (Vector3__Array *)&UNK_?;
   pVVar2 = pVVar1;
-  bVar4 = CubeModelChunk_AllFaceCornersIsTouchingCubeBorder((Face__Enum)pVVar1,(Vector3__Array **)&stack0xfffffff8,(MethodInfo *)0x0);
-  if (bVar4 == 0) {
+  bVar3 = CubeModelChunk_AllFaceCornersIsTouchingCubeBorder((Face__Enum)pVVar1,(Vector3__Array **)&stack0xfffffff8,(MethodInfo *)0x0);
+  if (bVar3 == 0) {
     return;
   }
   if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
@@ -72,152 +71,146 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_AdvancedFaceVisibilityT
     func_?();
   }
   faceFlagCube._0_1_ = 0xd4;
-  face = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_FaceFlagToFace(faceFlagOpposite,(MethodInfo *)0x0);
-  in_stack_5 = pVVar2;
+  unaff_EDI = (Vector3__Array *)MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_FaceFlagToFace(faceFlagOpposite,(MethodInfo *)0x0);
   if (*neighborCube == (Cube *)0x0) goto code_?;
   cube = (Cube **)&UNK_?;
-  unaff_EBX = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners((CubeBase *)*neighborCube,(MethodInfo *)0x0);
+  pVVar4 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners((CubeBase *)*neighborCube,(MethodInfo *)0x0);
   if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   neighborCube = (Cube **)&UNK_?;
-  pVVar6 = Cube::Cube_GetFace_1(unaff_EBX,face,(MethodInfo *)0x0);
+  pVVar4 = Cube::Cube_GetFace_1(pVVar4,(Face__Enum)unaff_EDI,(MethodInfo *)0x0);
   if ((TypeInfo__CubeModelChunk->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  bVar4 = CubeModelChunk_AllFaceCornersIsTouchingCubeBorder(face,(Vector3__Array **)&stack0xfffffff4,(MethodInfo *)0x0);
-  if (bVar4 == 0) {
+  bVar3 = CubeModelChunk_AllFaceCornersIsTouchingCubeBorder((Face__Enum)unaff_EDI,(Vector3__Array **)&stack0xfffffff4,(MethodInfo *)0x0);
+  if (bVar3 == 0) {
     return;
   }
-  in_stack_3 = pVVar6;
-  in_stack_5 = pVVar2;
   switch(pVVar1) {
   case (Vector3__Array *)0x0:
   case (Vector3__Array *)0x1:
     pVVar1 = (Vector3__Array *)0x0;
-    in_stack_5 = (Vector3__Array *)pVVar2->vector;
+    pVVar5 = (Vector3__Array *)pVVar2->vector;
     do {
-      unaff_EBX = pVVar2;
+      unaff_EDI = pVVar4;
       if (pVVar2 == (Vector3__Array *)0x0) goto code_?;
       if ((Vector3__Array *)pVVar2->max_length <= pVVar1) goto code_?;
-      if (pVVar6 == (Vector3__Array *)0x0) goto code_?;
-      if (pVVar6->max_length <= 3U - (int)pVVar1) goto code_?;
-      if ((float)in_stack_5->klass != *(float *)((int)pVVar6 + (3U - (int)pVVar1) * 0xc + 0x10)) {
+      if (pVVar4 == (Vector3__Array *)0x0) goto code_?;
+      if (pVVar4->max_length <= 3U - (int)pVVar1) goto code_?;
+      if ((float)pVVar5->klass != *(float *)((int)pVVar4 + (3U - (int)pVVar1) * 0xc + 0x10)) {
         return;
       }
-      pVStack7 = pVVar1;
-      iVar8 = func_?();
-      in_XMM0_Da = *(Vector3__Array **)(iVar8 + 8);
-      iVar8 = func_?();
-      if ((float)in_XMM0_Da != *(float *)(iVar8 + 8)) {
+      pVStack6 = pVVar1;
+      iVar7 = func_?();
+      in_XMM0_Da = *(Vector3__Array **)(iVar7 + 8);
+      iVar7 = func_?();
+      if ((float)in_XMM0_Da != *(float *)(iVar7 + 8)) {
         return;
       }
-      pVVar1 = (Vector3__Array *)((int)&pVVar1->klass + 1);
-      in_stack_5 = (Vector3__Array *)&in_stack_5->max_length;
-      in_stack_3 = in_XMM0_Da;
+      pVVar1 = (Vector3__Array *)((int)&pVVar1->klass + Face__Enum_Bottom);
+      pVVar5 = (Vector3__Array *)&pVVar5->max_length;
     } while ((int)pVVar1 < 4);
     goto code_?;
   case (Vector3__Array *)0x2:
   case (Vector3__Array *)0x3:
     pVVar1 = pVVar2;
     if (pVVar2 == (Vector3__Array *)0x0) goto code_?;
-    pVStack7 = (Vector3__Array *)0x0;
-    puVar9 = (undefined4 *)func_?();
-    in_XMM0_Da = (Vector3__Array *)*puVar9;
-    in_stack_3 = (Vector3__Array *)0x0;
-    in_stack_5 = in_XMM0_Da;
-    if (pVVar6 == (Vector3__Array *)0x0) goto code_?;
-    pVStack7 = (Vector3__Array *)0x1;
-    pfVar10 = (float *)func_?();
-    if ((float)in_XMM0_Da != *pfVar10) {
+    pVStack6 = (Vector3__Array *)0x0;
+    pfVar8 = (float *)func_?();
+    in_XMM0_Da = (Vector3__Array *)*pfVar8;
+    unaff_EDI = pVVar4;
+    if (pVVar4 == (Vector3__Array *)0x0) goto code_?;
+    pVStack6 = (Vector3__Array *)0x1;
+    pfVar8 = (float *)func_?();
+    if ((float)in_XMM0_Da != *pfVar8) {
       return;
     }
-    iVar8 = func_?();
-    pVVar1 = *(Vector3__Array **)(iVar8 + 4);
-    iVar8 = func_?();
-    if ((float)pVVar1 != *(float *)(iVar8 + 4)) {
+    iVar7 = func_?();
+    pVVar1 = *(Vector3__Array **)(iVar7 + 4);
+    iVar7 = func_?();
+    if ((float)pVVar1 != *(float *)(iVar7 + 4)) {
       return;
     }
-    pfVar10 = (float *)func_?();
-    pVVar1 = (Vector3__Array *)*pfVar10;
-    pfVar10 = (float *)func_?();
-    if ((float)pVVar1 != *pfVar10) {
+    pfVar8 = (float *)func_?();
+    pVVar1 = (Vector3__Array *)*pfVar8;
+    pfVar8 = (float *)func_?();
+    if ((float)pVVar1 != *pfVar8) {
       return;
     }
-    iVar8 = func_?();
-    pVVar1 = *(Vector3__Array **)(iVar8 + 4);
-    iVar8 = func_?();
-    if ((float)pVVar1 != *(float *)(iVar8 + 4)) {
+    iVar7 = func_?();
+    pVVar1 = *(Vector3__Array **)(iVar7 + 4);
+    iVar7 = func_?();
+    if ((float)pVVar1 != *(float *)(iVar7 + 4)) {
       return;
     }
-    pfVar10 = (float *)func_?();
-    pVVar1 = (Vector3__Array *)*pfVar10;
-    pfVar10 = (float *)func_?();
-    if ((float)pVVar1 != *pfVar10) {
+    pfVar8 = (float *)func_?();
+    pVVar1 = (Vector3__Array *)*pfVar8;
+    pfVar8 = (float *)func_?();
+    if ((float)pVVar1 != *pfVar8) {
       return;
     }
-    iVar8 = func_?();
-    pVVar1 = *(Vector3__Array **)(iVar8 + 4);
-    iVar8 = func_?();
-    if ((float)pVVar1 != *(float *)(iVar8 + 4)) {
+    iVar7 = func_?();
+    pVVar1 = *(Vector3__Array **)(iVar7 + 4);
+    iVar7 = func_?();
+    if ((float)pVVar1 != *(float *)(iVar7 + 4)) {
       return;
     }
-    pfVar10 = (float *)func_?();
-    pVVar1 = (Vector3__Array *)*pfVar10;
-    pfVar10 = (float *)func_?();
-    bVar11 = NAN((float)pVVar1) || NAN(*pfVar10);
-    bVar12 = (float)pVVar1 == *pfVar10;
+    pfVar8 = (float *)func_?();
+    pVVar1 = (Vector3__Array *)*pfVar8;
+    pfVar8 = (float *)func_?();
+    bVar9 = NAN((float)pVVar1) || NAN(*pfVar8);
+    bVar10 = (float)pVVar1 == *pfVar8;
     break;
   case (Vector3__Array *)0x4:
   case (Vector3__Array *)0x5:
     pVVar1 = pVVar2;
     if (pVVar2 == (Vector3__Array *)0x0) goto code_?;
-    pVStack7 = (Vector3__Array *)0x0;
-    iVar8 = func_?();
-    in_XMM0_Da = *(Vector3__Array **)(iVar8 + 8);
-    in_stack_3 = (Vector3__Array *)0x0;
-    in_stack_5 = in_XMM0_Da;
-    if (pVVar6 == (Vector3__Array *)0x0) goto code_?;
-    pVStack7 = (Vector3__Array *)0x1;
-    iVar8 = func_?();
-    if ((float)in_XMM0_Da != *(float *)(iVar8 + 8)) {
+    pVStack6 = (Vector3__Array *)0x0;
+    iVar7 = func_?();
+    in_XMM0_Da = *(Vector3__Array **)(iVar7 + 8);
+    unaff_EDI = pVVar4;
+    if (pVVar4 == (Vector3__Array *)0x0) goto code_?;
+    pVStack6 = (Vector3__Array *)0x1;
+    iVar7 = func_?();
+    if ((float)in_XMM0_Da != *(float *)(iVar7 + 8)) {
       return;
     }
-    iVar8 = func_?();
-    pVVar1 = *(Vector3__Array **)(iVar8 + 4);
-    iVar8 = func_?();
-    if ((float)pVVar1 != *(float *)(iVar8 + 4)) {
+    iVar7 = func_?();
+    pVVar1 = *(Vector3__Array **)(iVar7 + 4);
+    iVar7 = func_?();
+    if ((float)pVVar1 != *(float *)(iVar7 + 4)) {
       return;
     }
-    iVar8 = func_?();
-    pVVar1 = *(Vector3__Array **)(iVar8 + 8);
-    iVar8 = func_?();
-    if ((float)pVVar1 != *(float *)(iVar8 + 8)) {
+    iVar7 = func_?();
+    pVVar1 = *(Vector3__Array **)(iVar7 + 8);
+    iVar7 = func_?();
+    if ((float)pVVar1 != *(float *)(iVar7 + 8)) {
       return;
     }
-    iVar8 = func_?();
-    pVVar1 = *(Vector3__Array **)(iVar8 + 4);
-    iVar8 = func_?();
-    if ((float)pVVar1 != *(float *)(iVar8 + 4)) {
+    iVar7 = func_?();
+    pVVar1 = *(Vector3__Array **)(iVar7 + 4);
+    iVar7 = func_?();
+    if ((float)pVVar1 != *(float *)(iVar7 + 4)) {
       return;
     }
-    iVar8 = func_?();
-    pVVar1 = *(Vector3__Array **)(iVar8 + 8);
-    iVar8 = func_?();
-    if ((float)pVVar1 != *(float *)(iVar8 + 8)) {
+    iVar7 = func_?();
+    pVVar1 = *(Vector3__Array **)(iVar7 + 8);
+    iVar7 = func_?();
+    if ((float)pVVar1 != *(float *)(iVar7 + 8)) {
       return;
     }
-    iVar8 = func_?();
-    pVVar1 = *(Vector3__Array **)(iVar8 + 4);
-    iVar8 = func_?();
-    if ((float)pVVar1 != *(float *)(iVar8 + 4)) {
+    iVar7 = func_?();
+    pVVar1 = *(Vector3__Array **)(iVar7 + 4);
+    iVar7 = func_?();
+    if ((float)pVVar1 != *(float *)(iVar7 + 4)) {
       return;
     }
-    iVar8 = func_?();
-    pVVar1 = *(Vector3__Array **)(iVar8 + 8);
-    iVar8 = func_?();
-    bVar11 = NAN((float)pVVar1) || NAN(*(float *)(iVar8 + 8));
-    bVar12 = (float)pVVar1 == *(float *)(iVar8 + 8);
+    iVar7 = func_?();
+    pVVar1 = *(Vector3__Array **)(iVar7 + 8);
+    iVar7 = func_?();
+    bVar9 = NAN((float)pVVar1) || NAN(*(float *)(iVar7 + 8));
+    bVar10 = (float)pVVar1 == *(float *)(iVar7 + 8);
     break;
   default:
     goto code_?;
@@ -226,103 +219,90 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_AdvancedFaceVisibilityT
   cube = (Cube **)0x3;
   faceFlagOpposite = FaceFlags__Enum_Bottom|FaceFlags__Enum_Top;
   faceFlagCube._0_1_ = FaceFlags__Enum_Bottom;
-  if (bVar11 != bVar12) {
-    iVar8 = func_?();
-    in_XMM0_Da = *(Vector3__Array **)(iVar8 + 4);
-    in_stack_5 = (Vector3__Array *)&UNK_?;
-    iVar8 = func_?();
+  if (bVar9 != bVar10) {
+    iVar7 = func_?();
+    in_XMM0_Da = *(Vector3__Array **)(iVar7 + 4);
+    iVar7 = func_?();
     pVVar1 = pVVar2;
-    if ((float)in_XMM0_Da == *(float *)(iVar8 + 4)) {
+    if ((float)in_XMM0_Da == *(float *)(iVar7 + 4)) {
 code_?:
-      in_stack_3 = in_XMM0_Da;
+      unaff_EDI = pVVar4;
       if (*cube != (Cube *)0x0) {
-        puVar13 = &((*cube)->fields).hiddenSides;
-        *puVar13 = *puVar13 | (undefined1)faceFlagCube;
+        puVar11 = &((*cube)->fields).hiddenSides;
+        *puVar11 = *puVar11 | (undefined1)faceFlagCube;
         if (*neighborCube != (Cube *)0x0) {
-          puVar13 = &((*neighborCube)->fields).hiddenSides;
-          *puVar13 = *puVar13 | (byte)faceFlagOpposite;
+          puVar11 = &((*neighborCube)->fields).hiddenSides;
+          *puVar11 = *puVar11 | (byte)faceFlagOpposite;
           return;
         }
       }
 code_?:
       func_?();
-      pVVar2 = unaff_EBX;
+      pVVar4 = unaff_EDI;
 code_?:
-      uVar14 = func_?();
-      pVStack7 = (Vector3__Array *)((ulonglong)uVar14 >> 0x20);
-      iVar8 = (int)uVar14;
-      *(int *)(iVar8 + 0x10) = *(int *)(iVar8 + 0x10) - (int)pVVar2;
-      *(int *)(iVar8 + 0x10) = *(int *)(iVar8 + 0x10) - (int)pVVar2;
-      pbVar15 = (byte *)((int)&extraout_ECX[0xa35bd].vector[0x13].z + 1);
-      *pbVar15 = *pbVar15 | (byte)extraout_ECX;
-      pVVar6 = extraout_ECX;
-      pVVar16 = (Vector3__Array *)((int)in_stack_5->vector + iVar8 + -0x10);
-      switch(iVar8) {
+      uVar12 = func_?();
+      pVStack6 = (Vector3__Array *)((ulonglong)uVar12 >> 0x20);
+      pVVar2 = extraout_ECX;
+      switch((int)uVar12) {
       case 0:
-        pVVar6 = (Vector3__Array *)0x1;
-        in_stack_3 = pVVar6;
-        pVVar16 = in_XMM0_Da;
+        pVVar2 = (Vector3__Array *)0x1;
         break;
       case 1:
-        pVVar6 = (Vector3__Array *)0x1;
-        in_stack_3 = pVVar6;
-        pVVar16 = (Vector3__Array *)0xbf000000;
+        in_XMM0_Da = (Vector3__Array *)0xbf000000;
+        pVVar2 = (Vector3__Array *)0x1;
         break;
       case 2:
-        pVVar6 = (Vector3__Array *)0x2;
-        in_stack_3 = pVVar6;
-        pVVar16 = (Vector3__Array *)0xbf000000;
+        in_XMM0_Da = (Vector3__Array *)0xbf000000;
+        pVVar2 = (Vector3__Array *)0x2;
         break;
       case 3:
-        pVVar6 = (Vector3__Array *)0x2;
-        in_stack_3 = pVVar6;
-        pVVar16 = in_XMM0_Da;
+        pVVar2 = (Vector3__Array *)0x2;
         break;
       case 4:
         in_XMM0_Da = (Vector3__Array *)0xbf000000;
       case 5:
-        pVVar6 = (Vector3__Array *)0x0;
-        in_stack_3 = pVVar6;
-        pVVar16 = in_XMM0_Da;
+        pVVar2 = (Vector3__Array *)0x0;
       }
-      uVar17 = 0;
-      iVar8 = *(int *)faceFlagOpposite;
-      if (iVar8 == 0) {
+      pbVar13 = (byte *)0x0;
+      iVar7 = *(int *)faceFlagOpposite;
+      if (iVar7 == 0) {
         func_?();
       }
       else {
+        pVVar4 = (Vector3__Array *)(iVar7 + 0x10);
         while( true ) {
-          if (*(int *)(iVar8 + 0xc) <= (int)uVar17) {
+          if (*(int *)(iVar7 + 0xc) <= (int)pbVar13) {
             return;
           }
-          if (*(uint *)(iVar8 + 0xc) <= uVar17) break;
-          fVar18 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item((Vector3 *)&stack0xffffffe8,(int32_t)pVVar6,(MethodInfo *)0x0);
-          pVVar6 = in_stack_3;
-          if (fVar18 != (float)pVVar16) {
+          if (*(byte **)(iVar7 + 0xc) <= pbVar13) break;
+          fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item((Vector3 *)&stack0xffffffe8,(int32_t)pVVar2,(MethodInfo *)0x0);
+          if (fVar14 != (float)in_XMM0_Da) {
             return;
           }
-          uVar17 = uVar17 + 1;
-          in_stack_3 = pVVar6;
+          pbVar13 = pbVar13 + 1;
+          pVVar4 = (Vector3__Array *)&pVVar4->max_length;
         }
       }
       func_?();
-      bVar19 = (byte)((ushort)extraout_CX >> 8);
-      bVar12 = bRam_? < bVar19;
-      pbVar15 = (byte *)(uVar17 + 0x2d);
-      bVar20 = *pbVar15;
-      bVar21 = *pbVar15 + (byte)extraout_CX;
-      *pbVar15 = bVar21 + bVar12;
-      bVar22 = (byte)((uint)pVVar1 >> 8);
-      bVar12 = CARRY1(bVar22,(byte)iVar8) || CARRY1(bVar22 + (byte)iVar8,CARRY1(bVar20,(byte)extraout_CX) || CARRY1(bVar21,bVar12));
-      pbVar15 = (byte *)((int)&stack0x00000000 * 2 + 0x50);
-      bVar20 = *pbVar15;
-      bVar22 = (byte)((uint)pVVar2 >> 8);
-      bVar21 = *pbVar15 + bVar22;
-      *pbVar15 = bVar21 + bVar12;
-      pcVar23 = (char *)((int)&stack0x00000000 * 2 + 0x50);
-      *pcVar23 = *pcVar23 + bVar19 + (CARRY1(bVar20,bVar22) || CARRY1(bVar21,bVar12));
-      pcVar24 = (code *)swi(3);
-      (*pcVar24)();
+      bVar15 = (byte)((ushort)extraout_CX >> 8);
+      bVar16 = (byte)((uint)iVar7 >> 8);
+      bVar17 = *(char *)&pVVar4->klass + bVar16;
+      bVar10 = CARRY1(*(byte *)&pVVar4->klass,bVar16) || CARRY1(bVar17,*pbVar13 < bVar15);
+      *(byte *)&pVVar4->klass = bVar17 + (*pbVar13 < bVar15);
+      pbVar18 = pbVar13 + 0x2e;
+      bVar17 = *pbVar18;
+      bVar16 = *pbVar18 + (byte)extraout_CX;
+      *pbVar18 = bVar16 + bVar10;
+      bVar19 = (byte)((uint)pVVar1 >> 0x10);
+      bVar10 = CARRY1(bVar19,(byte)iVar7) || CARRY1(bVar19 + (byte)iVar7,CARRY1(bVar17,(byte)extraout_CX) || CARRY1(bVar16,bVar10));
+      pbVar18 = pbVar13 + (int)&stack0x00000054;
+      bVar17 = *pbVar18;
+      bVar19 = (byte)((ulonglong)uVar12 >> 0x28);
+      bVar16 = *pbVar18 + bVar19;
+      *pbVar18 = bVar16 + bVar10;
+      pbVar13[(int)&stack0x00000054] = pbVar13[(int)&stack0x00000054] + bVar15 + (CARRY1(bVar17,bVar19) || CARRY1(bVar16,bVar10));
+      pcVar20 = (code *)swi(3);
+      (*pcVar20)();
       return;
     }
   }
@@ -362,47 +342,48 @@ bool Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_AllFaceCornersIsTouchin
     iStack_2 = 0;
     fStack_3 = fVar1;
   }
-  uVar4 = 0;
+  pbVar4 = (byte *)0x0;
   pVVar5 = *faceIndices;
   if (pVVar5 == (Vector3__Array *)0x0) {
     func_?();
   }
   else {
-    pVVar6 = pVVar5->vector;
+    unaff_EDI = pVVar5->vector;
     while( true ) {
-      if ((int)pVVar5->max_length <= (int)uVar4) {
+      if ((int)pVVar5->max_length <= (int)pbVar4) {
         return 1;
       }
-      if (pVVar5->max_length <= uVar4) break;
-      VStack_7.z = pVVar6->z;
-      VStack_7.x = pVVar6->x;
-      VStack_7.y = pVVar6->y;
-      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item(&VStack_7,iStack_2,(MethodInfo *)0x0);
+      if ((byte *)pVVar5->max_length <= pbVar4) break;
+      VStack_6.z = unaff_EDI->z;
+      VStack_6.x = unaff_EDI->x;
+      VStack_6.y = unaff_EDI->y;
+      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item(&VStack_6,iStack_2,(MethodInfo *)0x0);
       if (fVar1 != fStack_3) {
         return 0;
       }
-      uVar4 = uVar4 + 1;
-      pVVar6 = pVVar6 + 1;
+      pbVar4 = pbVar4 + 1;
+      unaff_EDI = unaff_EDI + 1;
     }
   }
   func_?();
-  bVar8 = (byte)((ushort)extraout_CX >> 8);
-  bVar9 = bRam_? < bVar8;
-  pbVar10 = (byte *)(uVar4 + 0x2d);
-  bVar11 = *pbVar10;
-  bVar12 = *pbVar10 + (byte)extraout_CX;
-  *pbVar10 = bVar12 + bVar9;
-  bVar9 = CARRY1(in_stack_13,(byte)pVVar5) || CARRY1(in_stack_13 + (byte)pVVar5,CARRY1(bVar11,(byte)extraout_CX) || CARRY1(bVar12,bVar9));
-  pbVar10 = (byte *)((int)&stack0x00000000 * 2 + 0x50);
-  bVar11 = *pbVar10;
-  bVar14 = (byte)((uint)unaff_EBX >> 8);
-  bVar12 = *pbVar10 + bVar14;
-  *pbVar10 = bVar12 + bVar9;
-  pcVar15 = (char *)((int)&stack0x00000000 * 2 + 0x50);
-  *pcVar15 = *pcVar15 + bVar8 + (CARRY1(bVar11,bVar14) || CARRY1(bVar12,bVar9));
-  pcVar16 = (code *)swi(3);
-  bVar17 = (*pcVar16)();
-  return bVar17;
+  bVar7 = (byte)((ushort)extraout_CX >> 8);
+  bVar8 = (byte)((uint)pVVar5 >> 8);
+  bVar9 = *(char *)&unaff_EDI->x + bVar8;
+  bVar10 = CARRY1(*(byte *)&unaff_EDI->x,bVar8) || CARRY1(bVar9,*pbVar4 < bVar7);
+  *(byte *)&unaff_EDI->x = bVar9 + (*pbVar4 < bVar7);
+  pbVar11 = pbVar4 + 0x2e;
+  bVar9 = *pbVar11;
+  bVar8 = *pbVar11 + (byte)extraout_CX;
+  *pbVar11 = bVar8 + bVar10;
+  bVar10 = CARRY1(in_stack_12,(byte)pVVar5) || CARRY1(in_stack_12 + (byte)pVVar5,CARRY1(bVar9,(byte)extraout_CX) || CARRY1(bVar8,bVar10));
+  pbVar11 = pbVar4 + (int)&stack0x00000054;
+  bVar9 = *pbVar11;
+  bVar8 = *pbVar11 + VStack_6.x._1_1_;
+  *pbVar11 = bVar8 + bVar10;
+  pbVar4[(int)&stack0x00000054] = pbVar4[(int)&stack0x00000054] + bVar7 + (CARRY1(bVar9,VStack_6.x._1_1_) || CARRY1(bVar8,bVar10));
+  pcVar13 = (code *)swi(3);
+  bVar14 = (*pcVar13)();
+  return bVar14;
 }
 
 
@@ -413,9 +394,9 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_ChunkInstancesChanged(C
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ChunkInstances);
-    func_?(0x5490);
+    func_?(0x5518);
     func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(0xc214);
+    func_?(0xc29c);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__Remove_System__Guid_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__TryAdd_System__Guid__ChunkInstances__ChunkInstanceVariables_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__TryGetValue_System__Guid__ChunkInstances__ChunkInstanceVariables__);
@@ -685,7 +666,7 @@ CubeModelChunk * Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_CloneGeomet
   puVar5 = &stack0xffffff70;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__CubeModelChunk);
-    func_?(0x2f20);
+    func_?(0x2fac);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__GetEnumerator__);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__Dispose__);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__MoveNext__);
@@ -786,7 +767,7 @@ bool Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_CompareGeometry(CubeMod
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__GetEnumerator__);
-    func_?(0x3010);
+    func_?(0x309c);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__get_Count__);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__Dispose__);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__MoveNext__);
@@ -1395,37 +1376,35 @@ code_?:
   uVar3 = 0;
   func_?();
 code_?:
-  uVar5 = func_?();
+  func_?();
   if ((bool)uVar3) {
-    puVar6 = (ushort *)((int)&faceVertices[-1].vector[0x1a].z + 1);
-    *puVar6 = *puVar6 + (ushort)(0 < (short)-(*puVar6 & 3)) * -(*puVar6 & 3);
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pVVar1 = (Vector2__Array *)(**(code **)((int)uVar5 + -8))();
-    return pVVar1;
+    *extraout_ECX = *extraout_ECX | 0x9b;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
   }
-  bVar7 = *unaff_EDI;
-  bVar8 = (byte)((uint)unaff_ESI >> 8);
-  *unaff_EDI = *unaff_EDI + bVar8;
-  bVar9 = (byte)((uint)unaff_EBX >> 8);
-  bVar10 = (byte)((ushort)extraout_CX >> 8);
-  pcVar11 = (char *)(unaff_EBX + (int)faceVertices * 2);
-  *pcVar11 = *pcVar11 + (char)extraout_CX + (CARRY1(in_stack_12,bVar10) || CARRY1(in_stack_12 + bVar10,CARRY1(unaff_BP,bVar9) || CARRY1(unaff_BP + bVar9,CARRY1(bVar7,bVar8))));
-  in((short)((uint6)uVar5 >> 0x20) + 1);
+  bVar5 = *unaff_EDI;
+  bVar6 = (byte)((uint)unaff_ESI >> 8);
+  *unaff_EDI = *unaff_EDI + bVar6;
+  bVar7 = (byte)((uint)unaff_EBX >> 8);
+  bVar8 = (byte)((uint)(extraout_ECX + 2) >> 8);
+  pcVar9 = (char *)((int)&face + (int)faceVertices * 2);
+  *pcVar9 = *pcVar9 + (char)(extraout_ECX + 2) + (CARRY1(in_stack_10,bVar8) || CARRY1(in_stack_10 + bVar8,CARRY1(unaff_BP,bVar7) || CARRY1(unaff_BP + bVar7,CARRY1(bVar5,bVar6))));
+  in(extraout_DX);
   if (cRam_? == '\0') {
     func_?();
     func_?();
     func_?();
-    pDStack_13 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__get_Current__;
+    pDStack_11 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__get_Current__;
     func_?();
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_Cell>__get_Key__);
     func_?(&StringLiteral_No_cube_found_in_chunk__This_is_);
     cRam_? = '\x01';
   }
+  FVar12 = face;
   if (*(Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ **)(face + 0x44) != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)0x0) {
-    iVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count(*(Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ **)(face + 0x44),MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__get_Count__);
-    if (iVar14 < 1) {
+    iVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count(*(Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ **)(face + 0x44),MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__get_Count__);
+    if (iVar13 < 1) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -1433,22 +1412,22 @@ code_?:
       if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pIVar15 = TypeInfo__MV__WorldObject__IntVector->static_fields;
-      faceVertices->klass = *(Vector3__Array__Class **)&pIVar15->One;
-      *(int16_t *)&faceVertices->monitor = (pIVar15->One).z;
+      pIVar14 = TypeInfo__MV__WorldObject__IntVector->static_fields;
+      faceVertices->klass = *(Vector3__Array__Class **)&pIVar14->One;
+      *(int16_t *)&faceVertices->monitor = (pIVar14->One).z;
       return (Vector2__Array *)faceVertices;
     }
-    if (*(Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ **)(face + 0x44) != (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
-      pDVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)&pDStack_13,*(Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ **)(face + 0x44),MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__GetEnumerator__);
-      uVar17 = *(undefined2 *)&(pDVar16->_current).key._cultureKey;
-      faceVertices->klass = (Vector3__Array__Class *)(pDVar16->_current).key._options;
-      *(undefined2 *)&faceVertices->monitor = uVar17;
+    if (*(Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ **)(FVar12 + 0x44) != (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
+      pDVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)&pDStack_11,*(Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ **)(FVar12 + 0x44),MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__GetEnumerator__);
+      uVar16 = *(undefined2 *)&(pDVar15->_current).key._cultureKey;
+      faceVertices->klass = (Vector3__Array__Class *)(pDVar15->_current).key._options;
+      *(undefined2 *)&faceVertices->monitor = uVar16;
       return (Vector2__Array *)faceVertices;
     }
   }
   func_?();
-  pcVar18 = (code *)swi(3);
-  pVVar1 = (Vector2__Array *)(*pcVar18)();
+  pcVar17 = (code *)swi(3);
+  pVVar1 = (Vector2__Array *)(*pcVar17)();
   return pVVar1;
 }
 
@@ -1776,7 +1755,7 @@ int32_t Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_RebuildMesh(Dictiona
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__Dispose__);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__MoveNext__);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__get_Current__);
-    func_?(0x9344);
+    func_?(0x93cc);
     func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_Cell>__get_Value__);
     func_?(&TypeInfo__TextureAtlasData);
     cRam_? = '\x01';
@@ -1935,7 +1914,7 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_RemoveFromChunk(CubeMod
 {
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__ContainsKey_MV__WorldObject__IntVector_);
-    func_?(0x2fd4);
+    func_?(0x3060);
     cRam_? = '\x01';
   }
   pDVar1 = (this->fields).cells;

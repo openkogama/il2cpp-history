@@ -131,7 +131,7 @@ void Assembly-CSharp.dll::GameSetupOptions::GameSetupOptions_ToggleRevive(GameSe
             if (in_stack_7 == (MethodInfo *)0x0) goto code_?;
             RVar5.First = 0;
             RVar5.Last = 0;
-            bVar6 = mscorlib.dll::System::String::String_op_Equality((String *)in_stack_7->invoker_method,StringLiteral_AllowRevive,(MethodInfo *)0x0);
+            bVar6 = mscorlib.dll::System::String::String_op_Equality((String *)in_stack_7->name,StringLiteral_AllowRevive,(MethodInfo *)0x0);
           } while (bVar6 == 0);
           if ((TypeInfo__GameSetupOptions->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
@@ -245,7 +245,7 @@ bool Assembly-CSharp.dll::GameSetupOptions::GameSetupOptions_get_IsReviveEnabled
               if (in_stack_8 == (MethodInfo *)0x0) break;
               RVar6.First = 0;
               RVar6.Last = 0;
-              bVar7 = mscorlib.dll::System::String::String_op_Equality((String *)in_stack_8->invoker_method,StringLiteral_AllowRevive,(MethodInfo *)0x0);
+              bVar7 = mscorlib.dll::System::String::String_op_Equality((String *)in_stack_8->name,StringLiteral_AllowRevive,(MethodInfo *)0x0);
               if (bVar7 != 0) {
                 bVar7 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingBoolBase::KogamaSettingBoolBase_get_ValueBool((KogamaSettingBoolBase *)in_stack_8,(MethodInfo *)0x0);
                 if ((TypeInfo__GameSetupOptions->_1).cctor_finished_or_no_cctor == 0) {

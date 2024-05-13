@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 // Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -16,8 +17,23 @@ public class HighScore
 	// Fields
 	public List<ScoreActorEntry> highScoreEntries;
 	public readonly int teamScore;
+
+	// Nested types
+	[Serializable]
 	[CompilerGenerated]
-	private static Func<ScoreActorEntry, int> CS___9__CachedAnonymousMethodDelegate3;
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<ScoreActorEntry, int> __9__4_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal int _SortDescending_b__4_0(ScoreActorEntry x);
+	}
 
 	// Constructors
 	public HighScore(int teamScore, Dictionary<int, ActorCounter> actorCounters);
@@ -25,7 +41,5 @@ public class HighScore
 	// Methods
 	public void SortDescending();
 	public override string ToString();
-	[CompilerGenerated]
-	private static int _SortDescending_b__2(ScoreActorEntry x);
 }
 

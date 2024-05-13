@@ -51,33 +51,34 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunctio
     cRam_? = '\x01';
   }
   if (method != (MethodInfo *)0x0) {
-    puVar1 = (undefined8 *)func_?(&uStack_2,0,TypeInfo__MV__WorldObject__ICubeModel,method);
+    puVar1 = (undefined8 *)func_?(auStack_2,0,TypeInfo__MV__WorldObject__ICubeModel,method);
     uStack_3._4_4_ = *(undefined4 *)(puVar1 + 1);
     fStack_4 = (float)*puVar1;
+    fVar5 = fStack_4;
     uStack_3._0_4_ = (undefined4)((ulonglong)*puVar1 >> 0x20);
     if (fineGrainedTerrainWorldObject != (ICubeModel *)0x0) {
-      puVar1 = (undefined8 *)func_?(auStack_5,0,TypeInfo__MV__WorldObject__ICubeModel,fineGrainedTerrainWorldObject);
-      uStack_2 = *puVar1;
-      fVar6 = fStack_4 / (float)uStack_2;
-      uStack_3 = (double)((float)(int)fineGrainedPosition.z * fVar6);
-      fVar7 = (float10)func_?(uStack_3);
-      *(short *)fineGrainedPosition._0_4_ = (short)(int)fVar7;
-      uStack_3 = (double)((float)(int)in_stack_8 * fVar6);
-      fVar7 = (float10)func_?(uStack_3);
-      *(short *)(fineGrainedPosition._0_4_ + 2) = (short)(int)fVar7;
-      uStack_3 = (double)((float)(int)(short)terrainWorldObject * fVar6);
-      fVar7 = (float10)func_?(uStack_3);
-      *(short *)(fineGrainedPosition._0_4_ + 4) = (short)(int)fVar7;
-      IVar9.z = extraout_DX;
-      IVar9.x = fineGrainedPosition.x;
-      IVar9.y = fineGrainedPosition.y;
-      return IVar9;
+      puVar1 = (undefined8 *)func_?(auStack_2,0,TypeInfo__MV__WorldObject__ICubeModel,fineGrainedTerrainWorldObject);
+      fStack_4 = (float)*puVar1;
+      fVar5 = fVar5 / fStack_4;
+      uStack_3 = (double)((float)(int)fineGrainedPosition.z * fVar5);
+      fVar6 = (float10)func_?(uStack_3);
+      *(short *)fineGrainedPosition._0_4_ = (short)(int)fVar6;
+      uStack_3 = (double)((float)(int)in_stack_7 * fVar5);
+      fVar6 = (float10)func_?(uStack_3);
+      *(short *)(fineGrainedPosition._0_4_ + 2) = (short)(int)fVar6;
+      uStack_3 = (double)((float)(int)(short)terrainWorldObject * fVar5);
+      fVar6 = (float10)func_?(uStack_3);
+      *(short *)(fineGrainedPosition._0_4_ + 4) = (short)(int)fVar6;
+      IVar8.z = extraout_DX;
+      IVar8.x = fineGrainedPosition.x;
+      IVar8.y = fineGrainedPosition.y;
+      return IVar8;
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  IVar9 = (IntVector)(*pcVar10)();
-  return IVar9;
+  pcVar9 = (code *)swi(3);
+  IVar8 = (IntVector)(*pcVar9)();
+  return IVar8;
 }
 
 
@@ -173,7 +174,7 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunctio
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  dVar7 = mscorlib.dll::System::Math::Math_Round_5((double)(fVar4 * 1.5 + (float)method),0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  dVar7 = mscorlib.dll::System::Math::Math_Round_5((double)((float)method + fVar4 * 1.5),0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   uRam_? = 0;
   uRam_? = (short)(int)dVar6;
   uRam_? = (short)(int)dVar7;

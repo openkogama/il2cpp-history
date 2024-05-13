@@ -74,7 +74,7 @@ void Assembly-CSharp.dll::MaterialPurchasePopup::MaterialPurchasePopup_Initializ
                           if (pMVar4 != (MaterialDescription__Array *)0x0) {
                             if (pMVar4->max_length <= ((uint)this_03 & 0xff)) goto code_?;
                             if (pMVar4->vector[(uint)this_03 & 0xff] != (MaterialDescription *)0x0) {
-                              (**(code **)(iRam_? + 0x318))(0xed9395);
+                              (**(code **)(iRam_? + 0x318))(0xed9485);
                               return;
                             }
                           }

@@ -244,7 +244,25 @@ code_?:
   }
   if (pTVar3 == (TierOnDeathProgress *)0x0) {
 code_?:
-    bVar23 = func_?();
+    bVar29 = 0;
+    uVar30 = func_?();
+    iVar13 = (int)((ulonglong)uVar30 >> 0x20);
+    uVar31 = (uint)uVar30;
+    puVar32 = (uint *)((uVar31 - 0xb) + iVar13);
+    uVar33 = *puVar32;
+    uVar34 = *puVar32;
+    *puVar32 = (uVar34 - uVar31) - (uint)bVar29;
+    piVar35 = (int *)(uVar31 + 0x78 + iVar13);
+    *piVar35 = (*piVar35 - uVar31) - (uint)(uVar33 < uVar31 || uVar34 - uVar31 < (uint)bVar29);
+    pbVar36 = (byte *)(uVar31 + 0x56 + iVar13);
+    *pbVar36 = *pbVar36 & (byte)uVar30;
+    uVar37 = func_?(&TypeInfo__System__NotSupportedException);
+    this_03 = (NotSupportedException *)func_?(uVar37);
+    mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor(this_03,(MethodInfo *)0x0);
+    uVar37 = func_?(&MethodInfo__TierOnDeathProgress___DoTierProgress_d__32__System_Collections_IEnumerator_Reset__);
+    func_?(this_03,uVar37);
+    pcVar38 = (code *)swi(3);
+    bVar23 = (*pcVar38)();
     return bVar23;
   }
 code_?:

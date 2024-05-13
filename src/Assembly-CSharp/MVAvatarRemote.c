@@ -773,16 +773,16 @@ code_?:
 code_?:
     func_?();
     pUVar3 = this_00[1].klass;
-    iVar9 = (**(code **)(iRam_? + 0xe0))(0x6fe85752,*(undefined4 *)(iRam_? + 0xe4));
+    iVar9 = (**(code **)(iRam_? + 0xe0))(0xafe85752,*(undefined4 *)(iRam_? + 0xe4));
     unaff_EDI = (MVBody *)0x0;
     if (pUVar3 == (UxmlObjectListAttributeDescription_1_System_Object___Class *)0x0) goto code_?;
     (pUVar3->_0).this_arg.data = (_union_86)(float)iVar9;
-    unaff_EDI = pMRam6fe85772;
+    unaff_EDI = pMRamafe85772;
     pVVar6 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
     UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::VideoCapture+OnVideoCaptureResourceCreatedCallback::VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor(pVVar6,(Object *)this_00,MethodInfo__MVAvatarRemote____c__DisplayClass23_0___InitializeHealth_b__1_System__Object_,(MethodInfo *)0x0);
     pMVar10 = (MVBody *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)unaff_EDI,(Delegate *)pVVar6,(MethodInfo *)0x0);
     if (pMVar10 == (MVBody *)0x0) {
-      pMRam6fe85772 = (MVBody *)0x0;
+      pMRamafe85772 = (MVBody *)0x0;
       func_?();
       return;
     }
@@ -795,7 +795,7 @@ code_?:
       if (pMVar10->klass == (MVBody__Class *)TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
         pMVar12 = pMVar10;
       }
-      pMRam6fe85772 = pMVar11;
+      pMRamafe85772 = pMVar11;
       if (pMVar12 != (MVBody *)0x0) {
         func_?();
         return;

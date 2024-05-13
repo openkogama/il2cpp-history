@@ -337,36 +337,36 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       }
     }
   }
-  cVar7 = '\0';
-  uVar8 = func_?();
-  pbVar9 = (byte *)((ulonglong)uVar8 >> 0x20);
-  uVar10 = (uint)uVar8;
-  pbVar11 = (byte *)CONCAT22((short)((uint)unaff_EBX >> 0x10),CONCAT11(5,(char)unaff_EBX));
-  pbVar9[-0x56efb0fb] = pbVar9[-0x56efb0fb] + (char)((ulonglong)uVar8 >> 8) + cVar7;
-  bVar12 = (char)uVar8 + 0x4f;
-  pbVar13 = (byte *)((int)&this->monitor + 2);
-  bVar14 = (byte)((ulonglong)uVar8 >> 0x20);
-  bVar15 = *pbVar13 + bVar14;
-  bVar16 = CARRY1(*pbVar13,bVar14) || CARRY1(bVar15,0xfa4fefb0 < uVar10);
-  *pbVar13 = bVar15 + (0xfa4fefb0 < uVar10);
-  bVar14 = (byte)((ulonglong)uVar8 >> 0x28);
-  bVar15 = *pbVar11 + bVar14;
-  bVar17 = CARRY1(*pbVar11,bVar14) || CARRY1(bVar15,bVar16);
-  *pbVar11 = bVar15 + bVar16;
-  bVar16 = 0xfa < *pbVar9 || CARRY1(*pbVar9 + 5,bVar17);
-  *pbVar9 = *pbVar9 + 5 + bVar17;
-  pbVar13 = (byte *)(extraout_ECX + 6);
-  bVar15 = *pbVar13 + bVar12;
-  bVar17 = CARRY1(*pbVar13,bVar12) || CARRY1(bVar15,bVar16);
-  *pbVar13 = bVar15 + bVar16;
-  pbVar13 = (byte *)(uVar10 + 0x5b01055);
-  bVar15 = *pbVar13;
-  bVar14 = (byte)extraout_ECX;
-  bVar12 = *pbVar13;
-  *pbVar13 = bVar12 + bVar14 + bVar17;
-  *(char *)(unaff_EDI + -1) = *(char *)(unaff_EDI + -1) + bVar14 + (CARRY1(bVar15,bVar14) || CARRY1(bVar12 + bVar14,bVar17));
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  uVar7 = func_?();
+  pbVar8 = (byte *)((ulonglong)uVar7 >> 0x20);
+  pbVar9 = (byte *)uVar7;
+  bVar10 = this->klass < (MaterialLoader__Class *)*unaff_EDI;
+  pbVar11 = pbVar8 + -0x66efb0fa;
+  bVar12 = (byte)((ulonglong)uVar7 >> 0x20);
+  bVar13 = *pbVar11 + bVar12;
+  bVar14 = CARRY1(*pbVar11,bVar12) || CARRY1(bVar13,bVar10);
+  *pbVar11 = bVar13 + bVar10;
+  pbVar11 = pbVar9 + 0x46104f06;
+  bVar13 = (byte)((ulonglong)uVar7 >> 8);
+  bVar10 = CARRY1(*pbVar11,bVar13) || CARRY1(*pbVar11 + bVar13,bVar14);
+  *pbVar11 = *pbVar11 + bVar13 + bVar14;
+  bVar14 = CARRY1(*unaff_EBX,bVar13) || CARRY1(*unaff_EBX + bVar13,bVar10);
+  *unaff_EBX = *unaff_EBX + bVar13 + bVar10;
+  bVar12 = (byte)((uint)extraout_ECX >> 8);
+  bVar13 = *pbVar8 + bVar12;
+  bVar10 = CARRY1(*pbVar8,bVar12) || CARRY1(bVar13,bVar14);
+  *pbVar8 = bVar13 + bVar14;
+  bVar12 = (byte)((ulonglong)uVar7 >> 0x28);
+  bVar13 = *extraout_ECX + bVar12;
+  bVar14 = CARRY1(*extraout_ECX,bVar12) || CARRY1(bVar13,bVar10);
+  *extraout_ECX = bVar13 + bVar10;
+  bVar13 = *pbVar9;
+  bVar15 = (byte)((uint)unaff_EBX >> 8);
+  bVar12 = *pbVar9;
+  *pbVar9 = bVar12 + bVar15 + bVar14;
+  *(char *)((int)unaff_EDI + -3) = *(char *)((int)unaff_EDI + -3) + bVar15 + (CARRY1(bVar13,bVar15) || CARRY1(bVar12 + bVar15,bVar14));
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -408,7 +408,6 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
   this = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
   puStack_1 = (undefined *)0x0;
   pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&puStack_1);
-  this_00 = (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Object_ *)0x0;
   if (this != (MVNetworkGame_OperationRequests *)0x0) {
     MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetProfileSettings(this,ProfileSettingKey__Enum_ResetToDefaultValues,pOVar2,(MethodInfo *)0x0);
     if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).cctor_finished_or_no_cctor == 0) {
@@ -666,24 +665,13 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
     }
   }
   uVar9 = func_?();
-  pcVar10 = (char *)((int)&this_00->klass + 1);
-  out(*(undefined1 *)&this_00->klass,(short)((uint6)uVar9 >> 0x20));
-  uVar11 = (uint)uVar9 | 0x4f;
-  pbVar12 = (byte *)(extraout_ECX + 0xc);
-  bVar13 = *pbVar12;
-  *pbVar12 = *pbVar12 + unaff_BL;
-  pbVar12 = (byte *)(uVar11 + 0xc);
-  bVar14 = (byte)((uint6)uVar9 >> 8);
-  bVar15 = CARRY1(*pbVar12,bVar14) || CARRY1(*pbVar12 + bVar14,CARRY1(bVar13,unaff_BL));
-  *pbVar12 = *pbVar12 + bVar14 + CARRY1(bVar13,unaff_BL);
-  pbVar12 = (byte *)((int)&(unaff_EDI->fields)._._._._.m_CachedPtr + 2);
-  bVar13 = *pbVar12;
-  bVar16 = *pbVar12;
-  *pbVar12 = bVar16 + bVar14 + bVar15;
-  cRam_? = cRam_? + (char)extraout_ECX + (CARRY1(bVar13,bVar14) || CARRY1(bVar16 + bVar14,bVar15));
-  *pcVar10 = *pcVar10 + (((byte)uVar11 | 0x4f) + unaff_BH | 0x4f);
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pbVar10 = (byte *)((uVar9 | 0xd49104f) + 0xd);
+  bVar11 = *pbVar10;
+  *pbVar10 = *pbVar10 + extraout_DL;
+  pcVar12 = (char *)((int)&(unaff_EDI->fields)._._._._.m_CachedPtr + 3);
+  *pcVar12 = *pcVar12 + extraout_DL + CARRY1(bVar11,extraout_DL);
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -1033,20 +1021,23 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
   func_?();
 code_?:
   uVar11 = 0x104f;
-  uVar12 = func_?();
-  bVar13 = 0xea4defb0 < uVar12 || CARRY4(uVar12 + 0x15b2104f,(uint)bVar4);
-  bVar4 = (char)(uVar12 + 0x15b2104f) + bVar4;
-  pbVar14 = (byte *)(unaff_EDI - ProfileSettingKey__Enum_TargetFrameRate);
-  bVar15 = *pbVar14 + bVar4;
-  bVar16 = CARRY1(*pbVar14,bVar4) || CARRY1(bVar15,bVar13);
-  *pbVar14 = bVar15 + bVar13;
-  pbVar14 = (byte *)(extraout_ECX + 0x16);
-  bVar13 = CARRY1(*pbVar14,extraout_DH) || CARRY1(*pbVar14 + extraout_DH,bVar16);
-  *pbVar14 = *pbVar14 + extraout_DH + bVar16;
-  bVar4 = (byte)extraout_ECX + unaff_BH;
-  *(char *)(unaff_EDI + 0xf2104f13) = *(char *)(unaff_EDI + 0xf2104f13) + bVar4 + bVar13 + (CARRY1((byte)extraout_ECX,unaff_BH) || CARRY1(bVar4,bVar13));
+  func_?();
+  pbVar12 = (byte *)(extraout_EDX + -0x8efb0ea);
+  bVar13 = CARRY1(*pbVar12,extraout_AH) || CARRY1(*pbVar12 + extraout_AH,bVar4);
+  *pbVar12 = *pbVar12 + extraout_AH + bVar4;
+  pbVar12 = (byte *)(extraout_ECX + 0x17);
+  bVar14 = CARRY1(*pbVar12,extraout_AH) || CARRY1(*pbVar12 + extraout_AH,bVar13);
+  *pbVar12 = *pbVar12 + extraout_AH + bVar13;
+  bVar4 = (byte)((uint)extraout_ECX >> 8);
+  bVar15 = (byte)extraout_ECX + bVar4;
+  bVar13 = CARRY1((byte)extraout_ECX,bVar4) || CARRY1(bVar15,bVar14);
+  pbVar12 = (byte *)(unaff_EDI + 0x14);
+  bVar4 = *pbVar12;
+  bVar16 = *pbVar12;
+  *pbVar12 = bVar16 + unaff_BH + bVar13;
+  *(char *)(unaff_EDI + 0xb) = (*(char *)(unaff_EDI + 0xb) - (bVar15 + bVar14)) - (CARRY1((byte)extraout_EDX,extraout_AH) || CARRY1((byte)extraout_EDX + extraout_AH,CARRY1(bVar4,unaff_BH) || CARRY1(bVar16 + unaff_BH,bVar13)));
   pcVar17 = (code *)swi(3);
-  (*pcVar17)(CONCAT22(uVar11,in_DS));
+  (*pcVar17)(CONCAT22(uVar11,in_CS));
   return;
 }
 
