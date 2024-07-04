@@ -45,7 +45,7 @@ void Assembly-CSharp.dll::LaserPointer::LaserPointer_ApplyMaterialForState
      (this_00 = (pMVar3->fields)._MaterialRepository_k__BackingField,
      this_00 == (MVMaterialRepository *)0x0)) goto code_?;
   pMVar4 = MVMaterialRepository::MVMaterialRepository_GetMaterial
-                      (this_00,(this->fields).currentCubeMaterialId,(MethodInfo *)0x0);
+                     (this_00,(this->fields).currentCubeMaterialId,(MethodInfo *)0x0);
   switch((this->fields).state) {
   case 0:
     pRVar5 = (this->fields).cubeRenderer;
@@ -122,29 +122,25 @@ code_?:
 code_?:
   bVar10 = 0;
   uVar11 = func_?();
-  puVar12 = (uint *)((int)((ulonglong)uVar11 >> 0x20) + 0x55);
-  uVar13 = extraout_ECX + *puVar12;
-  bVar14 = CARRY4(extraout_ECX,*puVar12) || CARRY4(uVar13,(uint)bVar10);
-  iVar15 = uVar13 + bVar10;
-  pbVar16 = (byte *)(unaff_EBX + 0x4a);
-  bVar17 = (byte)((ulonglong)uVar11 >> 0x20);
-  bVar10 = *pbVar16 + bVar17;
-  bVar18 = CARRY1(*pbVar16,bVar17) || CARRY1(bVar10,bVar14);
-  *pbVar16 = bVar10 + bVar14;
-  pbVar16 = (byte *)(unaff_EBX + 0x7a10554a);
-  bVar19 = (byte)((uint)iVar15 >> 8);
-  bVar14 = CARRY1(*pbVar16,bVar19) || CARRY1(*pbVar16 + bVar19,bVar18);
-  *pbVar16 = *pbVar16 + bVar19 + bVar18;
-  pbVar16 = (byte *)((int)uVar11 + -0x54efaab6);
-  bVar10 = *pbVar16;
-  bVar20 = (byte)iVar15;
-  bVar17 = *pbVar16 + bVar20;
-  *pbVar16 = bVar17 + bVar14;
-  *(char *)(unaff_EBX + -0x33efaab6) =
-       *(char *)(unaff_EBX + -0x33efaab6) + bVar19 +
-       (CARRY1(bVar10,bVar20) || CARRY1(bVar17,bVar14));
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)(&stack0xfffffffc,&stack0xfffffffc);
+  pbVar12 = (byte *)((ulonglong)uVar11 >> 0x20);
+  pbVar13 = (byte *)uVar11;
+  bVar14 = (byte)((uint)unaff_EBX >> 8);
+  bVar15 = CARRY1(*unaff_EBX,bVar14) || CARRY1(*unaff_EBX + bVar14,bVar10);
+  pbRame3105550 = pbVar13;
+  *unaff_EBX = *unaff_EBX + bVar14 + bVar10;
+  bVar10 = *pbVar12 + (byte)extraout_ECX;
+  bVar16 = CARRY1(*pbVar12,(byte)extraout_ECX) || CARRY1(bVar10,bVar15);
+  *pbVar12 = bVar10 + bVar15;
+  bVar10 = *pbVar13 + (byte)unaff_EBX;
+  bVar15 = CARRY1(*pbVar13,(byte)unaff_EBX) || CARRY1(bVar10,bVar16);
+  *pbVar13 = bVar10 + bVar16;
+  bVar10 = *unaff_EBX;
+  bVar17 = *unaff_EBX;
+  *unaff_EBX = bVar17 + bVar14 + bVar15;
+  *unaff_EBX = *unaff_EBX + bVar14 + (CARRY1(bVar10,bVar14) || CARRY1(bVar17 + bVar14,bVar15));
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)(extraout_ECX,&stack0xfffffffc,extraout_ECX,&stack0xfffffffc,extraout_ECX,
+            &stack0xfffffffc,extraout_ECX,&stack0xfffffffc,extraout_ECX,&stack0xfffffffc,pbVar13);
   return;
 }
 

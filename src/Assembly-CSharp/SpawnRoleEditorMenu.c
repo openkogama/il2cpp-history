@@ -322,9 +322,9 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
   if (pIVar1 == (Image *)0x0) {
     CStack_3.g = (float)&UNK_?;
     func_?();
-    out(uRam_?,extraout_DX + -1);
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
   }
   CStack_3.r = pCVar2->a;
   CStack_3.g = (float)(pIVar1->klass->vtable).get_raycastTarget.methodPtr;

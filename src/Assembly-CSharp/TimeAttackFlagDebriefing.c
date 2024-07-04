@@ -715,6 +715,39 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_OnD
 }
 
 
+/* Void OnEnterPlayModeFromEditMode() */
+
+void Assembly-CSharp.dll::TimeAttackFlagDebriefing::
+     TimeAttackFlagDebriefing_OnEnterPlayModeFromEditMode
+               (TimeAttackFlagDebriefing *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__IPlayModeUI);
+    cRam_? = '\x01';
+  }
+  uVar1 = GameStatCounterType__Enum_None;
+  WinningConditionControl::WinningConditionControl_TryGetPrioritizedStat
+            ((GameStatCounterType__Enum *)&stack0xfffffffb,(MethodInfo *)0x0);
+  if (((this->fields).isDebriefingOn == 0) && (uVar1 == GameStatCounterType__Enum_TimeAttackFlag)) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MVGameControllerBase);
+      cRam_? = '\x01';
+    }
+    pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+    if (pIVar2 == (IPlayModeUI *)0x0) {
+      func_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    func_?(4,TypeInfo__IPlayModeUI,pIVar2,1);
+    (this->fields).shouldStartFlagCountdown = 1;
+  }
+  return;
+}
+
+
 /* Void OnPressPlay() */
 
 void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_OnPressPlay
@@ -966,6 +999,7 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Sta
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
     func_?(&TypeInfo__System__Action);
+    func_?(&TypeInfo__IEditModeUI);
     func_?(&
                     MethodInfo__TimeAttackFlagDebriefing__OnAvatarStateChanged_MV__Common__SpawnRoleModeType_
                    );
@@ -1009,11 +1043,46 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Sta
             if (bVar5 == 0) {
               (this->fields).previousAvatarModeType = 1;
             }
+            if (cRam_? == '\0') {
+              func_?(&TypeInfo__MVGameControllerBase);
+              cRam_? = '\x01';
+            }
+            if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
+                (IEditModeUI *)0x0) {
+              if (cRam_? == '\0') {
+                func_?(&TypeInfo__MVGameControllerBase);
+                cRam_? = '\x01';
+              }
+              if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
+                  (IEditModeUI *)0x0) goto code_?;
+              cVar6 = func_?(1,TypeInfo__IEditModeUI);
+              if (cVar6 != '\0') {
+                if (cRam_? == '\0') {
+                  func_?(&TypeInfo__IPlayModeUI);
+                  cRam_? = '\x01';
+                }
+                uVar7 = GameStatCounterType__Enum_None;
+                WinningConditionControl::WinningConditionControl_TryGetPrioritizedStat
+                          ((GameStatCounterType__Enum *)&stack0xfffffffb,(MethodInfo *)0x0);
+                if (((this->fields).isDebriefingOn == 0) &&
+                   (uVar7 == GameStatCounterType__Enum_TimeAttackFlag)) {
+                  if (cRam_? == '\0') {
+                    func_?(&TypeInfo__MVGameControllerBase);
+                    cRam_? = '\x01';
+                  }
+                  pIVar8 = TypeInfo__MVGameControllerBase->static_fields->
+                           _PlayModeUI_k__BackingField;
+                  if (pIVar8 == (IPlayModeUI *)0x0) goto code_?;
+                  func_?(4,TypeInfo__IPlayModeUI,pIVar8,1);
+                  (this->fields).shouldStartFlagCountdown = 1;
+                }
+              }
+            }
             this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                 ((Component *)this,(MethodInfo *)0x0);
             if (this_03 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (this_03,0,(MethodInfo *)0x0);
+                        (this_03,(this->fields).shouldStartFlagCountdown,(MethodInfo *)0x0);
               return;
             }
           }
@@ -1021,9 +1090,10 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Sta
       }
     }
   }
+code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

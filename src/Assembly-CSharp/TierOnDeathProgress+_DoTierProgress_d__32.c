@@ -42,7 +42,7 @@ bool Assembly-CSharp.dll::TierOnDeathProgress+<DoTierProgress>d__32::
       cRam_? = '\x01';
     }
     pTVar6 = (TierOnDeathProgress_DoTierProgress_d_32 *)
-              TypeInfo__GamePointGainEffectManager->static_fields->progressBarGamePointAmountShown;
+             TypeInfo__GamePointGainEffectManager->static_fields->progressBarGamePointAmountShown;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__GamePassesManager);
       cRam_? = '\x01';
@@ -143,6 +143,7 @@ bool Assembly-CSharp.dll::TierOnDeathProgress+<DoTierProgress>d__32::
     else if (_UNK_? < fVar17) {
       fVar17 = _UNK_?;
     }
+    in_AF = 0;
     pDVar5 = (pTVar1->fields)._gameTierShopStatus_5__2;
     method_00 = (MethodInfo *)&UNK_?;
     fVar19 = (float10)func_?(SUB84((double)(((pTVar3->fields).toProgress - fVar18) * fVar17
@@ -182,6 +183,7 @@ bool Assembly-CSharp.dll::TierOnDeathProgress+<DoTierProgress>d__32::
                        );
     ProgressBarAndroid::ProgressBarAndroid_set_Progress
               ((ProgressBarAndroid *)(pTVar3->fields).tierProgressBar,fVar18,method_00);
+    in_AF = 0;
     fVar19 = (float10)func_?();
     pTVar14 = (pTVar3->fields).crystalsGainedSinceDeath;
     (pTVar3->fields).currentCrystalValue = (float)fVar19;
@@ -221,6 +223,7 @@ bool Assembly-CSharp.dll::TierOnDeathProgress+<DoTierProgress>d__32::
     if (bVar23 != 0) {
       pPVar27 = (pTVar3->fields).tierProgressBar;
       if (pPVar27 == (ProgressBar *)0x0) goto code_?;
+      in_AF = 0;
       if ((pPVar27->fields).progress <= 0.0) {
         pGVar22 = (pTVar3->fields).progressBarDivider;
         if (pGVar22 == (GameObject *)0x0) goto code_?;
@@ -229,6 +232,7 @@ bool Assembly-CSharp.dll::TierOnDeathProgress+<DoTierProgress>d__32::
       }
     }
     (pTVar3->fields).unlockingTier = (float)(pTVar3->fields).gamePointsRequired <= (float)iVar20;
+    in_AF = 0;
     pTVar14 = (pTVar3->fields).progressText;
     pSVar11 = mscorlib.dll::System::Int32::Int32_ToString
                         ((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
@@ -243,8 +247,8 @@ bool Assembly-CSharp.dll::TierOnDeathProgress+<DoTierProgress>d__32::
       (pTVar3->fields).fromProgress = (float)iVar13;
       if ((pRVar21 == (RectTransform *)0x0) ||
          (pGVar22 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pRVar21,(MethodInfo *)0x0), pGVar22 == (GameObject *)0x0
-         )) goto code_?;
+                              ((Component *)pRVar21,(MethodInfo *)0x0), pGVar22 == (GameObject *)0x0)
+         ) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar22,0,(MethodInfo *)0x0);
       pCVar28 = (pTVar3->fields).unlockImage;
@@ -272,6 +276,7 @@ code_?:
         else if (_UNK_? < fVar18) {
           fVar18 = _UNK_?;
         }
+        in_AF = 0;
         if (pCVar28 == (CanvasGroup *)0x0) goto code_?;
         UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                   (pCVar28,fVar18 * _UNK_? + _UNK_?,(MethodInfo *)0x0);
@@ -280,6 +285,7 @@ code_?:
                            ((MethodInfo *)0x0);
         fVar17 = fVar17 + fVar18;
         (pTVar1->fields)._lockLerpTimer_5__7 = fVar17;
+        in_AF = 0;
         if (fVar17 < (pTVar3->fields).lockFadeLerpDuration) {
           (pTVar1->fields).__2__current = (Object *)0x0;
           func_?();
@@ -314,6 +320,7 @@ code_?:
                   (pGVar22,0,(MethodInfo *)0x0);
       }
     }
+    in_AF = 0;
     if ((pTVar1->fields)._totalProgress_5__6 < _UNK_?) {
       (pTVar1->fields).__2__current = (Object *)0x0;
       func_?(&(pTVar1->fields).__2__current,0);
@@ -323,28 +330,27 @@ code_?:
   }
   if (pTVar3 == (TierOnDeathProgress *)0x0) {
 code_?:
-    bVar29 = 0;
-    uVar30 = func_?();
-    iVar13 = (int)((ulonglong)uVar30 >> 0x20);
-    uVar31 = (uint)uVar30;
-    puVar32 = (uint *)((uVar31 - 0xb) + iVar13);
-    uVar33 = *puVar32;
-    uVar34 = *puVar32;
-    *puVar32 = (uVar34 - uVar31) - (uint)bVar29;
-    piVar35 = (int *)(uVar31 + 0x78 + iVar13);
-    *piVar35 = (*piVar35 - uVar31) - (uint)(uVar33 < uVar31 || uVar34 - uVar31 < (uint)bVar29);
-    pbVar36 = (byte *)(uVar31 + 0x56 + iVar13);
-    *pbVar36 = *pbVar36 & (byte)uVar30;
-    uVar37 = func_?(&TypeInfo__System__NotSupportedException);
-    this_03 = (NotSupportedException *)func_?(uVar37);
+    uVar29 = func_?();
+    in_AF = 9 < ((byte)uVar29 & 0xf) | in_AF;
+    uVar30 = CONCAT31((int3)((ulonglong)uVar29 >> 8),(byte)uVar29 + in_AF * -6) & 0xffffff0f;
+    bVar31 = (byte)uVar30;
+    cVar32 = (char)((ulonglong)uVar29 >> 8) - in_AF;
+    pbVar33 = (byte *)(CONCAT22((short)(uVar30 >> 0x10),CONCAT11(cVar32,bVar31)) + 0x11 +
+                     (int)((ulonglong)uVar29 >> 0x20));
+    bVar34 = bVar31 - *pbVar33;
+    bVar35 = bVar34 - in_AF;
+    cRam_? = cRam_? + cVar32 +
+                   (bVar35 < 0x44 || (byte)(bVar35 + 0xbc) < (bVar31 < *pbVar33 || bVar34 < in_AF));
+    uVar36 = func_?(&TypeInfo__System__NotSupportedException);
+    this_03 = (NotSupportedException *)func_?(uVar36);
     mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
               (this_03,(MethodInfo *)0x0);
-    uVar37 = func_?(&
+    uVar36 = func_?(&
                              MethodInfo__TierOnDeathProgress___DoTierProgress_d__32__System_Collections_IEnumerator_Reset__
                             );
-    func_?(this_03,uVar37);
-    pcVar38 = (code *)swi(3);
-    bVar23 = (*pcVar38)();
+    func_?(this_03,uVar36);
+    pcVar37 = (code *)swi(3);
+    bVar23 = (*pcVar37)();
     return bVar23;
   }
 code_?:

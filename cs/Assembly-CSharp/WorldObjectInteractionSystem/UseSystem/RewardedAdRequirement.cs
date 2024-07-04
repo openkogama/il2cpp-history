@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using MV.Common;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -39,14 +40,14 @@ namespace WorldObjectInteractionSystem.UseSystem
 		{
 			// Fields
 			public static readonly __c __9;
-			public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__27_0;
+			public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__29_0;
 	
 			// Constructors
 			static __c();
 			public __c();
 	
 			// Methods
-			internal void _OnAdFinished_b__27_0(IModalPopupCreator x, BaseEventData y);
+			internal void _OnAdFinished_b__29_0(IModalPopupCreator x, BaseEventData y);
 		}
 	
 		// Constructors
@@ -56,6 +57,7 @@ namespace WorldObjectInteractionSystem.UseSystem
 		public RewardedAdRequirement(GameObject root, RewardedCheckNoCost action, Vector3 displayOffset);
 	
 		// Methods
+		~RewardedAdRequirement();
 		public override UseGUIResult GetCanUseGUIResult();
 		public override UseRequirementType GetRequirementType();
 		public override int GetRequirementValue();
@@ -65,6 +67,7 @@ namespace WorldObjectInteractionSystem.UseSystem
 		private void CreateDisplayObject();
 		public override void DestroyRequirement(Dictionary<object, object> data);
 		public override void PayUseCost();
+		private void OnLocalPlayerKilled(int localPlayerActorNr, int dmgDealerActorNr, PlayerKilledByType damageType);
 		private void OnAdFinished(bool adWasSuccessful);
 		public override bool IsActive();
 		public override void CalculatePosAroundPivot(Vector3 pivot, float spacingAngle, float distanceFromPivot);

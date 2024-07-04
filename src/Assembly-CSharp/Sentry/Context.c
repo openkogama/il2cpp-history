@@ -234,23 +234,18 @@ code_?:
   }
 code_?:
   bVar11 = 0;
-  pbVar12 = (byte *)func_?();
-  bVar13 = *pbVar12;
-  bVar14 = (byte)((uint)pbVar12 >> 8);
-  bVar15 = *pbVar12 - bVar14;
-  *pbVar12 = bVar15 - bVar11;
-  *pbVar12 = *pbVar12 + (char)unaff_EBX + (bVar13 < bVar14 || bVar15 < bVar11);
-  pbVar12 = (byte *)((int)&(a->fields).family + 3);
-  *pbVar12 = *pbVar12 & extraout_CL;
-  *unaff_EBX = *unaff_EBX + extraout_DH;
-  pbVar12 = (byte *)((int)&(a->fields).family + 2);
-  *pbVar12 = *pbVar12 & extraout_CL;
-  pbVar12 = (byte *)((int)&(a->fields).family + 2);
-  *pbVar12 = *pbVar12 & extraout_CL;
-  pbVar12 = (byte *)((int)&(a->fields).family + 2);
-  *pbVar12 = *pbVar12 & extraout_CL;
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  iVar12 = func_?();
+  cVar13 = (char)((uint)iVar12 >> 8);
+  *(char *)&a->klass = cVar13;
+  pbVar14 = (byte *)(iVar12 + -0x5cefb1da);
+  bVar15 = *pbVar14;
+  bVar16 = *pbVar14;
+  *pbVar14 = bVar16 + extraout_CL + bVar11;
+  *(char *)(unaff_EBX + -0x37efb1da) =
+       *(char *)(unaff_EBX + -0x37efb1da) + cVar13 +
+       (CARRY1(bVar15,extraout_CL) || CARRY1(bVar16 + extraout_CL,bVar11));
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

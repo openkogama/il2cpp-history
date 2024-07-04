@@ -38,7 +38,6 @@ bool Assembly-CSharp.dll::GameMeterVisuals::GameMeterUpdatedEffect+<AnimateScale
   if (pGVar2 != (GameMeterUpdatedEffect *)0x0) {
     fVar3 = (pGVar2->fields).scaleTime;
     pfVar4 = &(pGVar1->fields)._i_5__2;
-    in_AF = 0;
     pRVar5 = (pGVar2->fields).scaleTarget;
     if (fVar3 < *pfVar4 || fVar3 == *pfVar4) {
       if (pRVar5 != (RectTransform *)0x0) {
@@ -65,12 +64,11 @@ bool Assembly-CSharp.dll::GameMeterVisuals::GameMeterUpdatedEffect+<AnimateScale
 code_?:
           fVar3 = (pGVar2->fields).scaleTime;
           pfVar4 = &(pGVar1->fields)._i_5__2;
-          in_AF = 0;
           pRVar5 = (pGVar2->fields).scaleTarget;
           if (fVar3 < *pfVar4 || fVar3 == *pfVar4) {
             if ((pRVar5 != (RectTransform *)0x0) &&
-               (pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_transform((Component *)pRVar5,(MethodInfo *)0x0),
+               (pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                   ((Component *)pRVar5,(MethodInfo *)0x0),
                pTVar13 != (Transform *)0x0)) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                         (pTVar13,(pGVar2->fields).startSize,(MethodInfo *)0x0);
@@ -84,7 +82,7 @@ code_?:
           }
           else if ((pRVar5 != (RectTransform *)0x0) &&
                   (pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                             Component_get_transform((Component *)pRVar5,(MethodInfo *)0x0),
+                            Component_get_transform((Component *)pRVar5,(MethodInfo *)0x0),
                   pTVar13 != (Transform *)0x0)) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
                       (&VStack_9,pTVar13,(MethodInfo *)0x0);
@@ -100,7 +98,7 @@ code_?:
     }
     else if (pRVar5 != (RectTransform *)0x0) {
       pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)pRVar5,(MethodInfo *)0x0);
+                         ((Component *)pRVar5,(MethodInfo *)0x0);
       uStack_10._0_4_ = (pGVar2->fields).startSize.x;
       uStack_10._4_4_ = (pGVar2->fields).startSize.y;
       fStack_12 = (pGVar2->fields).startSize.z;
@@ -133,28 +131,15 @@ code_?:
     }
   }
 code_?:
-  bVar16 = 0;
-  uVar15 = func_?();
-  iVar17 = (int)((ulonglong)uVar15 >> 0x20);
-  bVar18 = (byte)uVar15;
-  in_AF = 9 < (bVar18 & 0xf) | in_AF;
-  bVar16 = 0x99 < bVar18 | bVar16;
-  bVar19 = bVar18 + in_AF * -6 + bVar16 * -0x60;
-  bVar18 = *(byte *)&pGVar2->klass;
-  bVar20 = (byte)(extraout_ECX >> 8);
-  bVar21 = *(char *)&pGVar2->klass + bVar20;
-  *(byte *)&pGVar2->klass = bVar21 + bVar16;
-  bVar22 = 0x99 < bVar19 || (CARRY1(bVar18,bVar20) || CARRY1(bVar21,bVar16));
-  cVar23 = bVar19 + (9 < (bVar19 & 0xf) | in_AF) * -6 + bVar22 * -0x60;
-  pcVar24 = (char *)CONCAT31((int3)((ulonglong)uVar15 >> 8),cVar23);
-  puVar25 = (uint *)(iVar17 + -2);
-  cVar26 = (char)puVar25;
-  *pcVar24 = *pcVar24 + cVar26 + bVar22;
-  puVar27 = (uint *)(iVar17 + 0xe);
-  *puVar27 = *puVar27 ^ extraout_ECX;
-  pcVar24 = (char *)(((uint)pGVar1 | *puVar25) + 0x68);
-  *pcVar24 = *pcVar24 + cVar26 + -1;
-  return cVar23 + (char)&stack0xfffffffc + ((byte)extraout_ECX < (byte)unaff_EBX);
+  func_?();
+  pbVar16 = (byte *)(extraout_EDX +
+                   CONCAT31((int3)((uint)extraout_ECX >> 8),
+                            (byte)extraout_ECX ^ *(byte *)(extraout_EDX + 0x10) ^
+                            *(byte *)(extraout_EDX + 0x10)) * 2);
+  *pbVar16 = *pbVar16 & (byte)((uint)extraout_EDX >> 8);
+  *(char *)&unaff_EBX->klass = *(char *)&unaff_EBX->klass + (char)unaff_EBX;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

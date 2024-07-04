@@ -153,7 +153,7 @@ code_?:
     in_stack_44 = pVVar2->z;
     if (cRam_? == '\0') {
       fStack22 = 3.2881754e-29;
-      fStack21 = 2.4529992e-28;
+      fStack21 = 2.4539872e-28;
       func_?();
       cRam_? = '\x01';
     }
@@ -601,7 +601,7 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_CreateFromBytePack
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cube>__set_Item_MV__WorldObject__IntVector__Cube_
                    );
-    func_?(0x9d74);
+    func_?(0xad80);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     cRam_? = '\x01';
   }
@@ -1965,7 +1965,7 @@ void Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_GetVertices_2
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0xedb4);
+    func_?(0xfdbc);
     cRam_? = '\x01';
   }
   if (info != (CubePickingInfo *)0x0) {
@@ -2028,7 +2028,7 @@ code_?:
                   uVar17 = func_?(&TypeInfo__System__IndexOutOfRangeException);
                   this_01 = (IndexOutOfRangeException *)func_?(uVar17);
                   method_00 = (MethodInfo *)0x0;
-                  message = (String *)func_?(0xc95c);
+                  message = (String *)func_?(0xd9a0);
                   mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
                             (this_01,message,method_00);
                   uVar18 = func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
@@ -2307,7 +2307,7 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_MoveEdge
   
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
-    func_?(0x50ec);
+    func_?(0x60f4);
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&TypeInfo__SharedCubeFunctions);
     cRam_? = '\x01';
@@ -2332,7 +2332,7 @@ Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_MoveEdge
     }
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Debug);
-      func_?(0xe138);
+      func_?(0xf17c);
       cRam_? = '\x01';
     }
     switch(pCStack_45) {
@@ -2868,7 +2868,7 @@ float Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_ScaleFactor_
   if (cRam_? == '\0') {
     _puStack_1c = CONCAT44(&UNK_?,puStack_1);
     func_?();
-    _puStack_1c = 0x119ce1381026f793;
+    _puStack_1c = 0x119cf17c1026f793;
     func_?();
     cRam_? = '\x01';
   }

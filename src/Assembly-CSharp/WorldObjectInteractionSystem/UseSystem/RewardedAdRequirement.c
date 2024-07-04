@@ -190,6 +190,46 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
 }
 
 
+/* Void Finalize() */
+
+void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::
+     RewardedAdRequirement_Finalize(RewardedAdRequirement *this,MethodInfo *method)
+
+{
+  method_00 = (MethodInfo *)&DAT_?;
+  *unaff_FS_OFFSET = &stack0xfffffff0;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
+    func_?(&
+                    MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnLocalPlayerKilled_int__int__MV__Common__PlayerKilledByType_
+                   );
+    cRam_? = '\x01';
+  }
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                      ((MethodInfo *)0x0);
+  this_01 = (Action_3_Int32_Int32_ByteEnum_ *)func_?();
+  mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
+            (this_01,(Object *)this,
+             MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnLocalPlayerKilled_int__int__MV__Common__PlayerKilledByType_
+             ,(MethodInfo *)0x0);
+  if (this_00 != (SpawnRoleDataMediator *)0x0) {
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::SpawnRoleDataMediator::
+    SpawnRoleDataMediator_remove_OnKilled
+              (this_00,(Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)this_01,
+               (MethodInfo *)0x0);
+    uVar1 = 0;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+    *unaff_FS_OFFSET = uVar1;
+    return;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
 /* UseGUIResult GetCanUseGUIResult() */
 
 UseGUIResult__Enum
@@ -293,7 +333,7 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&TypeInfo__StatHatWrapper);
     func_?(&
-                    MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c___OnAdFinished_b__27_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c___OnAdFinished_b__29_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c);
     func_?(&StringLiteral_Ad_RewardRequest_UseRequirement);
@@ -309,7 +349,7 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
     }
     callbackFunction =
          TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c->
-         static_fields->__9__27_0;
+         static_fields->__9__29_0;
     if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
       if ((TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c->_1).
           cctor_finished_or_no_cctor == 0) {
@@ -327,12 +367,12 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-                 MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c___OnAdFinished_b__27_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                 MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c___OnAdFinished_b__29_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c->static_fields->
-      __9__27_0 = callbackFunction;
+      __9__29_0 = callbackFunction;
       func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c
-                       ->static_fields->__9__27_0,callbackFunction);
+                       ->static_fields->__9__29_0,callbackFunction);
     }
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -558,6 +598,19 @@ code_?:
 }
 
 
+/* Void OnLocalPlayerKilled(Int32, Int32, PlayerKilledByType) */
+
+void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::
+     RewardedAdRequirement_OnLocalPlayerKilled
+               (RewardedAdRequirement *this,int32_t localPlayerActorNr,int32_t dmgDealerActorNr,
+               PlayerKilledByType__Enum damageType,MethodInfo *method)
+
+{
+  RewardedAdRequirement_OnAdFinished(this,0,(MethodInfo *)0x0);
+  return;
+}
+
+
 /* Void PayUseCost() */
 
 void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::
@@ -657,6 +710,13 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
      RewardedAdRequirement__ctor(RewardedAdRequirement *this,GameObject *root,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
+    func_?(&
+                    MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnLocalPlayerKilled_int__int__MV__Common__PlayerKilledByType_
+                   );
+    cRam_? = '\x01';
+  }
   (this->fields).displayObjectOffset.x = 0.0;
   (this->fields).displayObjectOffset.y = 0.0;
   (this->fields).displayObjectOffset.z = 0.0;
@@ -667,6 +727,24 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
             ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
   (this->fields).displayObjectRoot = root;
   func_?(&(this->fields).displayObjectRoot,root);
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                      ((MethodInfo *)0x0);
+  this_01 = (Action_3_Int32_Int32_ByteEnum_ *)
+            func_?(TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
+  mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
+            (this_01,(Object *)this,
+             MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnLocalPlayerKilled_int__int__MV__Common__PlayerKilledByType_
+             ,(MethodInfo *)0x0);
+  if (this_00 != (SpawnRoleDataMediator *)0x0) {
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::SpawnRoleDataMediator::
+    SpawnRoleDataMediator_add_OnKilled
+              (this_00,(Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)this_01,
+               (MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -679,6 +757,13 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
                MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
+    func_?(&
+                    MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnLocalPlayerKilled_int__int__MV__Common__PlayerKilledByType_
+                   );
+    cRam_? = '\x01';
+  }
   (this->fields).displayObjectOffset.x = 0.0;
   (this->fields).displayObjectOffset.y = 0.0;
   (this->fields).displayObjectOffset.z = 0.0;
@@ -692,6 +777,24 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
   (this->fields).checkNoCost = action;
   func_?(&(this->fields).checkNoCost,action);
   (this->fields).hasCheckNoCost = (this->fields).checkNoCost != (RewardedCheckNoCost *)0x0;
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                      ((MethodInfo *)0x0);
+  this_01 = (Action_3_Int32_Int32_ByteEnum_ *)
+            func_?(TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
+  mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
+            (this_01,(Object *)this,
+             MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnLocalPlayerKilled_int__int__MV__Common__PlayerKilledByType_
+             ,(MethodInfo *)0x0);
+  if (this_00 != (SpawnRoleDataMediator *)0x0) {
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::SpawnRoleDataMediator::
+    SpawnRoleDataMediator_add_OnKilled
+              (this_00,(Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)this_01,
+               (MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -704,6 +807,13 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
                MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
+    func_?(&
+                    MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnLocalPlayerKilled_int__int__MV__Common__PlayerKilledByType_
+                   );
+    cRam_? = '\x01';
+  }
   (this->fields).displayObjectOffset.x = 0.0;
   (this->fields).displayObjectOffset.y = 0.0;
   (this->fields).displayObjectOffset.z = 0.0;
@@ -714,12 +824,30 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
             ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
   (this->fields).displayObjectRoot = root;
   func_?(&(this->fields).displayObjectRoot,root);
-  uVar1 = (this->fields).displayObjectOffset.x;
-  uVar2 = (this->fields).displayObjectOffset.y;
-  fVar3 = (this->fields).displayObjectOffset.z;
-  (this->fields).displayObjectOffset.x = displayOffset.x + (float)uVar1;
-  (this->fields).displayObjectOffset.y = displayOffset.y + (float)uVar2;
-  (this->fields).displayObjectOffset.z = displayOffset.z + fVar3;
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                      ((MethodInfo *)0x0);
+  this_01 = (Action_3_Int32_Int32_ByteEnum_ *)
+            func_?(TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
+  mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
+            (this_01,(Object *)this,
+             MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnLocalPlayerKilled_int__int__MV__Common__PlayerKilledByType_
+             ,(MethodInfo *)0x0);
+  if (this_00 != (SpawnRoleDataMediator *)0x0) {
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::SpawnRoleDataMediator::
+    SpawnRoleDataMediator_add_OnKilled
+              (this_00,(Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)this_01,
+               (MethodInfo *)0x0);
+    uVar1 = (this->fields).displayObjectOffset.x;
+    uVar2 = (this->fields).displayObjectOffset.y;
+    fVar3 = (this->fields).displayObjectOffset.z;
+    (this->fields).displayObjectOffset.x = displayOffset.x + (float)uVar1;
+    (this->fields).displayObjectOffset.y = displayOffset.y + (float)uVar2;
+    (this->fields).displayObjectOffset.z = displayOffset.z + fVar3;
+    return;
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -732,6 +860,13 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
                Vector3 displayOffset,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
+    func_?(&
+                    MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnLocalPlayerKilled_int__int__MV__Common__PlayerKilledByType_
+                   );
+    cRam_? = '\x01';
+  }
   (this->fields).displayObjectOffset.x = 0.0;
   (this->fields).displayObjectOffset.y = 0.0;
   (this->fields).displayObjectOffset.z = 0.0;
@@ -744,13 +879,31 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
   func_?(&(this->fields).displayObjectRoot,root);
   (this->fields).checkNoCost = action;
   func_?(&(this->fields).checkNoCost,action);
-  uVar1 = (this->fields).displayObjectOffset.x;
-  uVar2 = (this->fields).displayObjectOffset.y;
   (this->fields).hasCheckNoCost = (this->fields).checkNoCost != (RewardedCheckNoCost *)0x0;
-  fVar3 = (this->fields).displayObjectOffset.z;
-  (this->fields).displayObjectOffset.x = displayOffset.x + (float)uVar1;
-  (this->fields).displayObjectOffset.y = displayOffset.y + (float)uVar2;
-  (this->fields).displayObjectOffset.z = displayOffset.z + fVar3;
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                      ((MethodInfo *)0x0);
+  this_01 = (Action_3_Int32_Int32_ByteEnum_ *)
+            func_?(TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
+  mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
+            (this_01,(Object *)this,
+             MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnLocalPlayerKilled_int__int__MV__Common__PlayerKilledByType_
+             ,(MethodInfo *)0x0);
+  if (this_00 != (SpawnRoleDataMediator *)0x0) {
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::SpawnRoleDataMediator::
+    SpawnRoleDataMediator_add_OnKilled
+              (this_00,(Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)this_01,
+               (MethodInfo *)0x0);
+    uVar1 = (this->fields).displayObjectOffset.x;
+    uVar2 = (this->fields).displayObjectOffset.y;
+    fVar3 = (this->fields).displayObjectOffset.z;
+    (this->fields).displayObjectOffset.x = displayOffset.x + (float)uVar1;
+    (this->fields).displayObjectOffset.y = displayOffset.y + (float)uVar2;
+    (this->fields).displayObjectOffset.z = displayOffset.z + fVar3;
+    return;
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

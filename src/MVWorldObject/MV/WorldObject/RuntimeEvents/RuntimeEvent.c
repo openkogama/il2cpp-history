@@ -124,30 +124,21 @@ MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::RuntimeEvent_Cr
   }
   if (bytePacker == (BytePacker *)0x0) {
 code_?:
-    func_?();
-    func_?();
     uVar4 = func_?();
-    pcVar5 = (char *)((ulonglong)uVar4 >> 0x20);
-    iVar6 = (int)uVar4;
-    *extraout_ECX = *extraout_ECX + iVar6;
-    *(char *)extraout_ECX = (char)*extraout_ECX + (char)uVar4;
-    *extraout_ECX = *extraout_ECX + iVar6;
-    *extraout_ECX = *extraout_ECX + iVar6;
-    *extraout_ECX =
-         *extraout_ECX + CONCAT31((int3)((ulonglong)uVar4 >> 8),(char)uVar4 + *pcVar5 + *pcVar5);
-    pcVar7 = (code *)swi(3);
-    pRVar8 = (RuntimeEvent *)(*pcVar7)();
-    return pRVar8;
+    out((short)((uint6)uVar4 >> 0x20),(int)uVar4);
+    func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
   }
 code_?:
-  uVar9 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-  uVar10 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-  uVar11 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-  uVar12._0_2_ = 0;
-  uVar12._2_2_ = 0;
+  uVar5 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+  uVar6 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+  uVar7 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+  uVar8._0_2_ = 0;
+  uVar8._2_2_ = 0;
   IntVector::IntVector__ctor_1
-            ((IntVector *)&stack0xfffffff4,(uint)uVar9,(uint)uVar10,(uint)uVar11,(MethodInfo *)0x0);
-  *(undefined4 *)(runtimeEventType + RuntimeEventType__Enum_AvatarImpact75) = uVar12;
+            ((IntVector *)&stack0xfffffff4,(uint)uVar5,(uint)uVar6,(uint)uVar7,(MethodInfo *)0x0);
+  *(undefined4 *)(runtimeEventType + RuntimeEventType__Enum_AvatarImpact75) = uVar8;
   *(undefined2 *)
    (runtimeEventType + (RuntimeEventType__Enum_AvatarImpact75|RuntimeEventType__Enum_AvatarImpact25)
    ) = 0;

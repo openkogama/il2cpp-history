@@ -47,6 +47,7 @@ public class TimeAttackFlagDebriefing : MonoBehaviour
 	private void OnDestroy();
 	private void Update();
 	public void Initialize(int captureTime);
+	private void OnEnterPlayModeFromEditMode();
 	public void InitializeCountDown();
 	public void OnPressPlay();
 	public void OnLeavePlayMode();

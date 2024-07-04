@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_AddCube
 
 {
   if (cRam_? == '\0') {
-    func_?(0x51dc);
+    func_?(0x61e4);
     func_?(&TypeInfo__Cube);
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_
@@ -1454,7 +1454,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_ReplaceCube
 
 {
   if (cRam_? == '\0') {
-    func_?(0x51dc);
+    func_?(0x61e4);
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_
                    );
@@ -1514,6 +1514,7 @@ String * Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_ToString
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Boolean);
+    func_?(&TypeInfo__MVCubeModelInstance);
     func_?(&StringLiteral__authorProfileID_);
     func_?(&StringLiteral__prototypeCubeModel_PrototypeId_);
     func_?(&StringLiteral__can_add_to_inventory_);
@@ -1529,27 +1530,30 @@ String * Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_ToString
     pSVar2 = mscorlib.dll::System::String::String_Concat_4
                        (pSVar2,StringLiteral__authorProfileID_,pSVar3,(MethodInfo *)0x0);
     pRVar4 = (this->fields).prototypeCubeModel;
-    if (pRVar4 == (RuntimePrototypeCubeModel *)0x0) {
-      func_?();
-      pcVar5 = (code *)swi(3);
-      pSVar2 = (String *)(*pcVar5)();
-      return pSVar2;
-    }
+    if (pRVar4 == (RuntimePrototypeCubeModel *)0x0) goto code_?;
     IStack_1.m_value = (pRVar4->fields).prototypeId;
     pSVar3 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
+    IStack_1.m_value = (int32_t)&UNK_?;
     pSVar2 = mscorlib.dll::System::String::String_Concat_4
                        (pSVar2,StringLiteral__prototypeCubeModel_PrototypeId_,pSVar3,
                         (MethodInfo *)0x0);
   }
-  uStack_6 = (undefined *)
-             CONCAT13(((this->fields)._.interactionFlags & 0x4000) != 0,(undefined3)uStack_6);
-  if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Boolean);
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (this_00 != (MVNetworkGame *)0x0) {
+    MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+    if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    pSVar3 = mscorlib.dll::System::Boolean::Boolean_ToString
+                       ((Boolean *)&stack0xfffffffb,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                       (pSVar2,StringLiteral__can_add_to_inventory_,pSVar3,(MethodInfo *)0x0);
+    return pSVar2;
   }
-  pSVar3 = mscorlib.dll::System::Boolean::Boolean_ToString
-                     ((Boolean *)((int)&uStack_6 + 3),(MethodInfo *)0x0);
-  pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                     (pSVar2,StringLiteral__can_add_to_inventory_,pSVar3,(MethodInfo *)0x0);
+code_?:
+  func_?();
+  pcVar5 = (code *)swi(3);
+  pSVar2 = (String *)(*pcVar5)();
   return pSVar2;
 }
 
@@ -1632,7 +1636,7 @@ Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase___ctor_b__28_0
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ModelingDynamicBoxConstraint);
-    func_?(0xedb4);
+    func_?(0xfdbc);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {

@@ -30,7 +30,7 @@ void Assembly-CSharp.dll::GizmoController::GizmoController_Handle
       func_?(TypeInfo__UnityEngine__Object);
     }
     bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)unaff_EDI,(Object_1 *)0x0,(MethodInfo *)0x0);
+                       ((Object_1 *)unaff_EDI,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar1 != 0) {
       unaff_EDI = (this->fields).gizmoMenuInstance;
       unaff_ESI = this;
@@ -234,33 +234,43 @@ joined_?:
   default:
     return;
   }
-  func_?();
-  pDVar7 = (Dictionary_2_System_Object_System_Object___Class *)
-            (extraout_EDX | *(uint *)&(unaff_EDI->fields).rotationMode.field_0x1);
-  pcVar8 = (char *)((int)&unaff_EDI->klass + (int)pDVar7 * 2);
-  *pcVar8 = *pcVar8 + (char)((uint)pDVar7 >> 8);
-  out((short)pDVar7,extraout_ECX);
-  cVar9 = (Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->klass < pDVar7;
-  uVar10 = (*(code *)&(unaff_EDI->fields).rotationMode.field_0x1)(in_CS,unaff_EBX,unaff_ESI);
-  uVar11 = (uint)((ulonglong)uVar10 >> 0x20);
-  puVar12 = (uint *)uVar10;
-  *(char *)puVar12 = (char)*puVar12 + extraout_CH + cVar9;
-  if (uVar11 <= *puVar12) {
-    pcVar13 = (code *)swi(3);
-    (*pcVar13)();
+  bVar7 = 0;
+  uVar8 = func_?();
+  uVar9 = (uint)((ulonglong)uVar8 >> 0x20);
+  puVar10 = (uint *)uVar8;
+  puVar11 = (uint *)(uVar9 + 0x39);
+  uVar12 = *puVar11;
+  uVar13 = (int)&unaff_EBX->methodPointer + *puVar11;
+  *puVar11 = uVar13 + bVar7;
+  *(char *)puVar10 =
+       (char)*puVar10 + (char)((ulonglong)uVar8 >> 0x20) +
+       (CARRY4(uVar12,(uint)unaff_EBX) || CARRY4(uVar13,(uint)bVar7));
+  *(char *)(uVar9 + 0x57) =
+       *(char *)(uVar9 + 0x57) + (char)((ulonglong)uVar8 >> 8) +
+       (*(uint *)&(unaff_EDI->fields).rotationMode.field_0x1 < uVar9);
+  iVar14 = *(int *)&(unaff_EDI->fields).rotationMode.field_0x1;
+  pcVar15 = (char *)((int)&unaff_EDI[0x13843c7].fields.woID + iVar14 * 2 + 1);
+  *pcVar15 = *pcVar15 + (char)((uint)iVar14 >> 8) + (*puVar10 < uVar9);
+  out(unaff_ESI->klass,(short)iVar14);
+  piVar16 = (int *)((int)&unaff_ESI[-0x1f4bb7d].fields.gizmoMenuNgInstance + 3);
+  if (*piVar16 <= iVar14) {
+    pcVar17 = (code *)swi(0x59);
+    (*pcVar17)();
+    pcVar17 = (code *)swi(3);
+    (*pcVar17)();
     return;
   }
-  if (*puVar12 != uVar11) {
-    pRVar6 = (unaff_ESI->fields).rotationHelper;
-    if (pRVar6 != (RotationHelper *)0x0) {
-      action = action & 0xff000000;
-      this_00 = (Component *)((uint)pRVar6 >> 8);
+  ppGVar18 = &unaff_EDI[-1].fields.yRotation;
+  *(char *)ppGVar18 = *(char *)ppGVar18 + (char)iVar14;
+  puVar19 = &unaff_EBX[-0x1529512].token;
+  *(char *)puVar19 = (char)*puVar19 + (char)piVar16;
+  if ((char)*puVar19 != '\0') {
+    if ((unaff_ESI->fields).rotationHelper != (RotationHelper *)0x0) {
+      action = GizmoAction__Enum_None;
       if (cRam_? == '\0') {
         func_?();
-        func_?(&
-                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                       );
-        func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        func_?();
+        func_?();
         func_?(&TypeInfo__UnityEngine__Object);
         func_?(&
                         MethodInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c___Pop_b__28_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
@@ -268,20 +278,22 @@ joined_?:
         func_?(&TypeInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c);
         cRam_? = '\x01';
       }
-      pGVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         (this_00,(MethodInfo *)0x0);
+      pMVar5 = method;
+      pGVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)method,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pGVar14,(Object_1 *)0x0,(MethodInfo *)0x0);
+                         ((Object_1 *)pGVar20,(Object_1 *)0x0,(MethodInfo *)0x0);
       if (bVar1 != 0) {
-        pGVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           (this_00,(MethodInfo *)0x0);
+        action = GizmoAction__Enum_None;
+        method = unaff_EBX;
+        pGVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)pMVar5,(MethodInfo *)0x0);
         if ((TypeInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c->_1).
             cctor_finished_or_no_cctor == 0) {
-          action = (GizmoAction__Enum)
-                   TypeInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c;
+          method = (MethodInfo *)&UNK_?;
           func_?();
         }
         callbackFunction =
@@ -290,16 +302,17 @@ joined_?:
         if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
           if ((TypeInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c->_1).
               cctor_finished_or_no_cctor == 0) {
-            action = (GizmoAction__Enum)
-                     TypeInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c;
+            method = (MethodInfo *)&UNK_?;
             func_?();
           }
-          action = (GizmoAction__Enum)
-                   TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-          ;
           object = TypeInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c->
                    static_fields->__9;
+          method = (MethodInfo *)&UNK_?;
           callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+          method = (MethodInfo *)0x0;
+          action = (GizmoAction__Enum)
+                   MethodInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c___Pop_b__28_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+          ;
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
                     ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object
@@ -308,18 +321,21 @@ joined_?:
                      ,(MethodInfo *)0x0);
           TypeInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c->static_fields->
           __9__28_0 = callbackFunction;
+          action = (GizmoAction__Enum)
+                   &TypeInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg____c->
+                    static_fields->__9__28_0;
+          method = (MethodInfo *)callbackFunction;
           func_?();
         }
         if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
            ) {
-          action = (GizmoAction__Enum)TypeInfo__UnityEngine__EventSystems__ExecuteEvents;
+          method = (MethodInfo *)&UNK_?;
           func_?();
         }
-        action = (GizmoAction__Enum)
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-        ;
+        action = GizmoAction__Enum_None;
+        method = (MethodInfo *)callbackFunction;
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar14,(BaseEventData *)0x0,
+                  (pGVar20,(BaseEventData *)0x0,
                    (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                   );
@@ -327,8 +343,8 @@ joined_?:
       return;
     }
     func_?();
-    pcVar13 = (code *)swi(3);
-    (*pcVar13)();
+    pcVar17 = (code *)swi(3);
+    (*pcVar17)();
     return;
   }
   return;

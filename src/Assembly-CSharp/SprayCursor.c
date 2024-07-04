@@ -177,6 +177,7 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor
     (this->fields).addCubeTime = fVar6;
   }
   pCVar7 = (this->fields).sprayCursor;
+  unaff_ESI = selectedCube;
   if (selectedCube == (CubePickingInfo *)0x0) {
     if (pCVar7 != (CellCursor *)0x0) {
       CellCursor::CellCursor_set_Active(pCVar7,0,(MethodInfo *)0x0);
@@ -241,15 +242,15 @@ code_?:
   i2.z = (int16_t)(undefined4)uStack_10;
   IVar12 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
                      (IVar12,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
-  pIVar15 = IVar12._0_4_;
-  uStack_10._0_2_ = pIVar15->x;
-  uStack_10._2_2_ = pIVar15->y;
-  in_stack_8 = pIVar15->z;
+  unaff_EBX = IVar12._0_4_;
+  uStack_10._0_2_ = unaff_EBX->x;
+  uStack_10._2_2_ = unaff_EBX->y;
+  in_stack_8 = unaff_EBX->z;
   if (targetCubeModel != (MVCubeModelBase *)0x0) {
     pCVar7 = (this->fields).sprayCursor;
     pIStack_11 = (IntVector__Class *)(targetCubeModel->fields)._.gameObject;
     if ((pCVar7 != (CellCursor *)0x0) &&
-       (this_00 = CellCursor::CellCursor_GetCellCursor(pCVar7,*pIVar15,(MethodInfo *)0x0),
+       (this_00 = CellCursor::CellCursor_GetCellCursor(pCVar7,*unaff_EBX,(MethodInfo *)0x0),
        this_00 != (CellCursorCubeLineMesh *)0x0)) {
       position.z = in_stack_8;
       position.x = (int16_t)uStack_10;
@@ -264,23 +265,37 @@ code_?:
           (pGVar5 = (pGVar4->fields).LaserCommands,
           pGVar5 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0))))
       {
-        fVar6 = (selectedCube->fields).point.z;
-        to.z._1_1_ = (char)((uint)fVar6 >> 8);
-        to._0_9_ = *(unkbyte9 *)&(selectedCube->fields).point;
-        to.z._2_2_ = (short)((uint)fVar6 >> 0x10);
         GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
         GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition
-                  (pGVar5,to,(MethodInfo *)0x0);
+                  (pGVar5,(selectedCube->fields).point,(MethodInfo *)0x0);
         return;
       }
     }
   }
 code_?:
-  uVar1 = 0x1045;
-  uVar16 = func_?();
-  out(0xd9,uVar16);
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)(CONCAT22(uVar1,in_ES));
+  uVar1 = func_?();
+  bVar15 = (byte)((ushort)uVar1 >> 8);
+  bVar16 = (byte)unaff_EBX < bVar15;
+  pbVar17 = (byte *)(extraout_ECX + -0x24);
+  bVar18 = (byte)uVar1;
+  bVar19 = CARRY1(*pbVar17,bVar18) || CARRY1(*pbVar17 + bVar18,bVar16);
+  *pbVar17 = *pbVar17 + bVar18 + bVar16;
+  pbVar20 = &unaff_ESI[-1].fields.pickedEdgeIndex0;
+  bVar16 = CARRY1(*pbVar20,bVar18) || CARRY1(*pbVar20 + bVar18,bVar19);
+  *pbVar20 = *pbVar20 + bVar18 + bVar19;
+  pbVar20 = &unaff_ESI[-1].fields.pickedEdgeIndex0;
+  bVar18 = *pbVar20 + (byte)extraout_DX;
+  bVar19 = CARRY1(*pbVar20,(byte)extraout_DX) || CARRY1(bVar18,bVar16);
+  *pbVar20 = bVar18 + bVar16;
+  pbVar20 = &unaff_ESI[-1].fields.pickedEdgeIndex0;
+  bVar18 = *pbVar20;
+  bVar21 = *pbVar20;
+  *pbVar20 = bVar21 + bVar15 + bVar19;
+  pbVar20 = &unaff_ESI[-1].fields.pickedEdgeIndex0;
+  *pbVar20 = *pbVar20 + (char)((ushort)extraout_DX >> 8) +
+            (CARRY1(bVar18,bVar15) || CARRY1(bVar21 + bVar15,bVar19));
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 

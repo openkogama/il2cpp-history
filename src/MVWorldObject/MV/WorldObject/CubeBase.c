@@ -270,7 +270,7 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
     goto code_?;
     func_?(2,uStack_2,uStack_3);
     pVVar4 = *corners;
-    pVVar1 = *faceVertices;
+    faceVertices = (Vector3__Array **)*faceVertices;
     break;
   case Face__Enum_Front:
     pVVar1 = *faceVertices;
@@ -286,7 +286,7 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
     goto code_?;
     func_?(2,uStack_2,uStack_3);
     pVVar4 = *corners;
-    pVVar1 = *faceVertices;
+    faceVertices = (Vector3__Array **)*faceVertices;
     break;
   case Face__Enum_Back:
     pVVar1 = *faceVertices;
@@ -302,7 +302,7 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
     goto code_?;
     func_?(2,uStack_2,uStack_3);
     pVVar4 = *corners;
-    pVVar1 = *faceVertices;
+    faceVertices = (Vector3__Array **)*faceVertices;
     break;
   case Face__Enum_Left:
     pVVar1 = *faceVertices;
@@ -319,7 +319,7 @@ joined_?:
     if ((pVVar4 == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar1 = *faceVertices;
+    faceVertices = (Vector3__Array **)*faceVertices;
     if (*corners == (Vector3__Array *)0x0) goto code_?;
     goto code_?;
   case Face__Enum_Right:
@@ -336,7 +336,7 @@ joined_?:
     goto code_?;
     func_?(2,uStack_2,uStack_3);
     pVVar4 = *corners;
-    pVVar1 = *faceVertices;
+    faceVertices = (Vector3__Array **)*faceVertices;
     break;
   default:
     goto code_?;
@@ -344,14 +344,35 @@ joined_?:
   if (pVVar4 != (Vector3__Array *)0x0) {
 code_?:
     func_?();
-    if (pVVar1 != (Vector3__Array *)0x0) {
+    bVar5 = (Vector3__Array *)faceVertices != (Vector3__Array *)0x0;
+    faceVertices = (Vector3__Array **)0x0;
+    if (bVar5) {
       func_?(3,uStack_2,uStack_3);
 code_?:
       return;
     }
   }
 code_?:
+  uVar6 = 0;
   func_?();
+  cVar7 = *(char *)&((Vector3__Array *)faceVertices)->klass;
+  uVar8 = (ulonglong)(CONCAT14(uVar6,extraout_EDX) >> 1);
+  bVar5 = ((uVar8 | (ulonglong)CONCAT14(uVar6,extraout_EDX) << 0x20) & 0x100000000) != 0;
+  pbVar9 = (byte *)(extraout_ECX + 0x7610dad2);
+  bVar10 = (byte)(extraout_ECX >> 8);
+  bVar11 = *pbVar9 + bVar10;
+  bVar12 = CARRY1(*pbVar9,bVar10) || CARRY1(bVar11,bVar5);
+  *pbVar9 = bVar11 + bVar5;
+  bVar11 = (byte)extraout_ECX & 0x1f;
+  uVar8 = (ulonglong)bVar12 << 0x20 | uVar8 & 0xffffffff;
+  bVar5 = (extraout_ECX & 0x1f) == 0;
+  pfVar13 = &pVVar1[-1].vector[0x1c].y;
+  *(char *)pfVar13 =
+       *(char *)pfVar13 + cVar7 +
+       (bVar5 * bVar12 | !bVar5 * (((uVar8 >> bVar11 | uVar8 << 0x21 - bVar11) & 0x100000000) != 0))
+  ;
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

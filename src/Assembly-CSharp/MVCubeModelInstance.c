@@ -1523,25 +1523,22 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance__ctor
       }
       pRVar9 = (this->fields)._.prototypeCubeModel;
       if (pRVar9 != (RuntimePrototypeCubeModel *)0x0) {
-        if ((iVar8 == (pRVar9->fields)._AuthorProfileID_k__BackingField) &&
-           (((this->fields)._._.interactionFlags & 0x4000) != 0)) {
-          uVar10 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-          piVar4 = &(this->fields)._._.interactionFlags;
-          *(uint *)piVar4 = (uint)*piVar4 | 0x4000;
-          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar10;
+        iVar10 = (pRVar9->fields)._AuthorProfileID_k__BackingField;
+        uVar11 = (uint)(this->fields)._._.interactionFlags;
+        *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
+             *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+        if (iVar8 != iVar10) {
+          *(uint *)&(this->fields)._._.interactionFlags = uVar11 & 0xffffbfff;
           return;
         }
-        uVar10 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-        piVar4 = &(this->fields)._._.interactionFlags;
-        *(uint *)piVar4 = (uint)*piVar4 & 0xffffbfff;
-        *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar10;
+        *(uint *)&(this->fields)._._.interactionFlags = uVar11 | 0x4000;
         return;
       }
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

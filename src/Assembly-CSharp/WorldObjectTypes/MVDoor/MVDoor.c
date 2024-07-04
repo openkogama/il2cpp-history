@@ -1532,6 +1532,15 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor::MVDoor_UpdateUseInte
                                      func_?(
                                                   TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement
                                                   );
+                                if (cRam_? == '\0') {
+                                  func_?(&
+                                                  TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>
+                                                 );
+                                  func_?(&
+                                                  MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnLocalPlayerKilled_int__int__MV__Common__PlayerKilledByType_
+                                                 );
+                                  cRam_? = '\x01';
+                                }
                                 useRequirement[1].klass = (UseRequirement__Class *)0x0;
                                 useRequirement[1].monitor = (MonitorData *)0x0;
                                 *(undefined4 *)&useRequirement[1].fields = 0;
@@ -1545,26 +1554,46 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor::MVDoor_UpdateUseInte
                                 func_?(useRequirement + 3,pUVar6);
                                 *(int *)&useRequirement[3].fields = iVar7;
                                 func_?(&useRequirement[3].fields,iVar7);
-                                uVar12 = useRequirement[1].klass;
-                                uVar13 = useRequirement[1].monitor;
-                                fVar14 = (float)uVar13 + _UNK_?;
                                 *(bool *)&useRequirement[4].klass =
                                      *(int *)&useRequirement[3].fields != 0;
-                                useRequirement[1].klass =
-                                     (UseRequirement__Class *)((float)uVar12 + 0.0);
-                                useRequirement[1].monitor = (MonitorData *)fVar14;
-                                *(float *)&useRequirement[1].fields =
-                                     *(float *)&useRequirement[1].fields + 0.0;
-                                pUVar1 = (this->fields).useInteractor;
-                                if (pUVar1 != (UseInteractor *)0x0) {
-                                  UseInteractor::UseInteractor_AddRequirement
-                                            (pUVar1,useRequirement,(MethodInfo *)0x0);
+                                this_05 = MVGameControllerBase::
+                                          MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                                                    ((MethodInfo *)0x0);
+                                this_06 = (Action_3_Int32_Int32_ByteEnum_ *)
+                                          func_?(
+                                                  TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>
+                                                  );
+                                mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::
+                                Action_3_Int32_Int32_ByteEnum___ctor
+                                          (this_06,(Object *)useRequirement,
+                                           MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnLocalPlayerKilled_int__int__MV__Common__PlayerKilledByType_
+                                           ,(MethodInfo *)0x0);
+                                if (this_05 != (SpawnRoleDataMediator *)0x0) {
+                                  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+                                  Mediator::SpawnRoleDataMediator::
+                                  SpawnRoleDataMediator_add_OnKilled
+                                            (this_05,(
+                                                  Action_3_Int32_Int32_MV_Common_PlayerKilledByType_
+                                                  *)this_06,(MethodInfo *)0x0);
+                                  uVar12 = useRequirement[1].klass;
+                                  uVar13 = useRequirement[1].monitor;
+                                  fVar14 = (float)uVar13 + _UNK_?;
+                                  useRequirement[1].klass =
+                                       (UseRequirement__Class *)((float)uVar12 + 0.0);
+                                  useRequirement[1].monitor = (MonitorData *)fVar14;
+                                  *(float *)&useRequirement[1].fields =
+                                       *(float *)&useRequirement[1].fields + 0.0;
                                   pUVar1 = (this->fields).useInteractor;
                                   if (pUVar1 != (UseInteractor *)0x0) {
-                                    UseInteractor::UseInteractor_UpdateData
-                                              (pUVar1,(this->fields).useInteractorData,
-                                               (MethodInfo *)0x0);
-                                    return;
+                                    UseInteractor::UseInteractor_AddRequirement
+                                              (pUVar1,useRequirement,(MethodInfo *)0x0);
+                                    pUVar1 = (this->fields).useInteractor;
+                                    if (pUVar1 != (UseInteractor *)0x0) {
+                                      UseInteractor::UseInteractor_UpdateData
+                                                (pUVar1,(this->fields).useInteractorData,
+                                                 (MethodInfo *)0x0);
+                                      return;
+                                    }
                                   }
                                 }
                               }

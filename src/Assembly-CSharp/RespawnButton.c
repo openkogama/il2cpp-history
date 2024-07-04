@@ -13,6 +13,7 @@ void Assembly-CSharp.dll::RespawnButton::RespawnButton_Respawn
                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                    );
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&TypeInfo__IEditModeUI);
     func_?(&TypeInfo__IPlayModeUI);
     func_?(&
                     MethodInfo__RespawnButton____c___Respawn_b__0_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
@@ -26,12 +27,32 @@ void Assembly-CSharp.dll::RespawnButton::RespawnButton_Respawn
      this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
     GameEventManager+AvatarCommandsPlayModeManager::
     GameEventManager_AvatarCommandsPlayModeManager_KillSelf(this_00,(MethodInfo *)0x0);
-    MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-    if (MVar2 != MVGameMode__Enum_Play) {
-      MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-      if (MVar2 == MVGameMode__Enum_Edit) {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
+        (IEditModeUI *)0x0) {
+      cVar2 = '\0';
+    }
+    else {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MVGameControllerBase);
+        cRam_? = '\x01';
+      }
+      pIVar3 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+      if (pIVar3 == (IEditModeUI *)0x0) goto code_?;
+      cVar2 = func_?(1,TypeInfo__IEditModeUI,pIVar3);
+    }
+    MVar4 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+    if (MVar4 == MVGameMode__Enum_Play) {
+      cVar2 = '\x01';
+    }
+    if (cVar2 == '\0') {
+      MVar4 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+      if (MVar4 == MVGameMode__Enum_Edit) {
         root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)0x0,(MethodInfo *)0x0);
+                         ((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__RespawnButton____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -49,7 +70,7 @@ void Assembly-CSharp.dll::RespawnButton::RespawnButton_Respawn
                      MethodInfo__RespawnButton____c___Respawn_b__0_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
           TypeInfo__RespawnButton____c->static_fields->__9__0_0 = callbackFunction;
-          func_?();
+          func_?(&TypeInfo__RespawnButton____c->static_fields->__9__0_0,callbackFunction);
         }
         if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
            ) {
@@ -64,18 +85,19 @@ void Assembly-CSharp.dll::RespawnButton::RespawnButton_Respawn
       return;
     }
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__MVGameControllerBase);
       cRam_? = '\x01';
     }
-    if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
-        (IPlayModeUI *)0x0) {
-      func_?(4);
+    pIVar5 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+    if (pIVar5 != (IPlayModeUI *)0x0) {
+      func_?(4,TypeInfo__IPlayModeUI,pIVar5,0);
       return;
     }
   }
+code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

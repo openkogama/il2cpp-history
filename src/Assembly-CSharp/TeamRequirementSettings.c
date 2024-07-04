@@ -259,81 +259,119 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
     }
   }
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
+  return;
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void OnSettingChanged(String, Object) */
 
 void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSettingChanged
                (TeamRequirementSettings *this,String *key,Object *value,MethodInfo *method)
 
 {
+  bVar1 = 0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Convert);
     func_?(&TypeInfo__System__Int32);
     func_?(&TypeInfo__MV__WorldObject__MVTeam);
     cRam_? = '\x01';
   }
-  pTVar1 = this;
+  this_00 = this;
   pOVar2 = (this->fields).currentOutline;
   if ((pOVar2 != (Outline *)0x0) &&
      (UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                ((Behaviour *)pOVar2,0,(MethodInfo *)0x0), pOVar3 = value, value != (Object *)0x0))
-  {
+                ((Behaviour *)pOVar2,0,(MethodInfo *)0x0),
+     value_01 = (TeamRequirementSettings *)value, unaff_EDI = (Object *)value_01,
+     value != (Object *)0x0)) {
     if ((value->klass->_0).element_class == (TypeInfo__MV__WorldObject__MVTeam->_0).element_class) {
-      puVar4 = (undefined4 *)func_?(value);
-      switch(*puVar4) {
+      puVar3 = (undefined4 *)func_?(value);
+      switch(*puVar3) {
       case 0:
-        pOVar2 = (pTVar1->fields).outlineTeamBlue;
+        pOVar2 = (this_00->fields).outlineTeamBlue;
         break;
       case 1:
-        pOVar2 = (pTVar1->fields).outlineTeamRed;
+        pOVar2 = (this_00->fields).outlineTeamRed;
         break;
       case 2:
-        pOVar2 = (pTVar1->fields).outlineTeamGreen;
+        pOVar2 = (this_00->fields).outlineTeamGreen;
         break;
       case 3:
-        pOVar2 = (pTVar1->fields).outlineTeamYellow;
+        pOVar2 = (this_00->fields).outlineTeamYellow;
         break;
       default:
-        pOVar2 = (pTVar1->fields).outlineTeamNone;
+        pOVar2 = (this_00->fields).outlineTeamNone;
       }
-      (pTVar1->fields).currentOutline = pOVar2;
-      func_?(&(pTVar1->fields).currentOutline,pOVar2);
-      pOVar2 = (pTVar1->fields).currentOutline;
+      (this_00->fields).currentOutline = pOVar2;
+      func_?(&(this_00->fields).currentOutline,pOVar2);
+      pOVar2 = (this_00->fields).currentOutline;
       if (pOVar2 != (Outline *)0x0) {
+        pOVar4 = (Object *)0x0;
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                   ((Behaviour *)pOVar2,1,(MethodInfo *)0x0);
-        this_00 = (pTVar1->fields).settingsBase;
-        if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
-          key = (String *)TypeInfo__System__Convert;
-          this = (TeamRequirementSettings *)&UNK_?;
-          func_?();
-        }
-        key = (String *)0x0;
-        this = (TeamRequirementSettings *)pOVar3;
-        mscorlib.dll::System::Convert::Convert_ToInt32(pOVar3,(MethodInfo *)0x0);
-        key = (String *)&this;
-        this = (TeamRequirementSettings *)TypeInfo__System__Int32;
-        pOVar3 = (Object *)func_?();
-        if (this_00 != (SettingsBase *)0x0) {
-          SettingsBase::SettingsBase_OnSettingChanged(this_00,key,pOVar3,(MethodInfo *)0x0);
-          return;
-        }
+        pCVar5 = TypeInfo__System__Convert;
+        goto code_?;
       }
     }
     else {
       func_?(value,TypeInfo__MV__WorldObject__MVTeam);
     }
   }
-  uVar5 = func_?();
-  uVar6 = CONCAT31((int3)(char)((ushort)uVar5 >> 8),(char)uVar5) | 0x98;
-  piVar7 = (int *)(uVar6 + 0x9816103c);
-  *piVar7 = *piVar7 + unaff_EBX + (uint)((byte)uVar6 < 0x10);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  do {
+    pOVar4 = (Object *)&UNK_?;
+    sVar6 = func_?();
+    value_01 = (TeamRequirementSettings *)((int)unaff_EDI + (uint)bVar1 * -2 + 1);
+    uVar7 = in((short)extraout_EDX);
+    *(undefined1 *)&unaff_EDI->klass = uVar7;
+    pCVar5 = (Convert__Class *)(int)sVar6;
+    bVar8 = (byte)sVar6;
+    if (SBORROW1(bVar8,'\x10')) {
+      if (0x10 < bVar8) {
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
+      }
+      puVar10 = (uint *)(unaff_EBX + 0x768b0cc4);
+      uVar11 = *puVar10;
+      uVar12 = (int)&(pCVar5->_0).image + *puVar10;
+      *puVar10 = uVar12 + (bVar8 < 0x10);
+      *(char *)(unaff_EBX + 0x75007478) =
+           *(char *)(unaff_EBX + 0x75007478) + bVar8 +
+           (CARRY4(uVar11,(uint)pCVar5) || CARRY4(uVar12,(uint)(bVar8 < 0x10)));
+      pVVar13 = &pCVar5[-1].vtable.Finalize;
+      pVVar13->methodPtr = (Il2CppMethodPointer)((uint)pVVar13->methodPtr | extraout_EDX);
+      func_?();
+      ppOVar14 = &value_01[-1].fields.outlineTeamNone;
+      *(char *)ppOVar14 = *(char *)ppOVar14 + extraout_DL;
+      bVar1 = 1;
+    }
+    else {
+      LOCK();
+      *(char *)((int)&TypeInfo__System__Convert + extraout_ECX) =
+           *(char *)((int)&TypeInfo__System__Convert + extraout_ECX) + (char)((ushort)sVar6 >> 8);
+      UNLOCK();
+code_?:
+      this_00 = *(TeamRequirementSettings **)
+                 &((MonoBehaviour__Fields *)&(this_00->fields).settingsBase)->_;
+      if ((pCVar5->_1).cctor_finished_or_no_cctor == 0) {
+        this = (TeamRequirementSettings *)&UNK_?;
+        key = (String *)pCVar5;
+        func_?();
+      }
+    }
+    key = (String *)0x0;
+    this = value_01;
+    mscorlib.dll::System::Convert::Convert_ToInt32((Object *)value_01,(MethodInfo *)0x0);
+    key = (String *)&this;
+    this = (TeamRequirementSettings *)TypeInfo__System__Int32;
+    value_00 = (Object *)func_?();
+    unaff_EDI = pOVar4;
+  } while (this_00 == (TeamRequirementSettings *)0x0);
+  SettingsBase::SettingsBase_OnSettingChanged
+            ((SettingsBase *)this_00,key,value_00,(MethodInfo *)0x0);
   return;
 }
 

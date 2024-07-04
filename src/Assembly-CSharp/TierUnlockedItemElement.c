@@ -605,22 +605,26 @@ code_?:
     return;
   }
 code_?:
-  bVar9 = 0;
   CStack_7.g = (float)&UNK_?;
-  uVar10 = func_?();
-  uVar11 = (undefined2)((uint6)uVar10 >> 0x20);
-  uVar12 = in(uVar11);
-  iVar13 = CONCAT31((int3)((uint6)uVar10 >> 8),uVar12);
-  out(uVar11,iVar13);
-  pbVar14 = (byte *)(iVar13 + team * 8);
-  bVar15 = *pbVar14;
-  bVar16 = *pbVar14 + (byte)extraout_ECX;
-  *pbVar14 = bVar16 + bVar9;
-  *extraout_ECX =
-       *extraout_ECX + (char)((uint)extraout_ECX >> 8) +
-       (CARRY1(bVar15,(byte)extraout_ECX) || CARRY1(bVar16,bVar9));
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  func_?();
+  pbVar9 = (byte *)(extraout_EDX + team * 8);
+  bVar10 = *pbVar9;
+  bVar11 = (byte)((uint)extraout_ECX >> 8);
+  *pbVar9 = *pbVar9 + bVar11;
+  pbVar9 = (byte *)(extraout_ECX + -0xe);
+  bVar12 = *pbVar9 + (byte)extraout_ECX;
+  bVar13 = CARRY1(*pbVar9,(byte)extraout_ECX) || CARRY1(bVar12,CARRY1(bVar10,bVar11));
+  *pbVar9 = bVar12 + CARRY1(bVar10,bVar11);
+  pbVar9 = (byte *)(team - 0xe);
+  bVar10 = *pbVar9;
+  bVar12 = *pbVar9;
+  *pbVar9 = bVar12 + extraout_AH + bVar13;
+  pcVar14 = (char *)(extraout_EDX + -0xd7cefbd + team * 8);
+  *pcVar14 = *pcVar14 + unaff_BL + '\x04' +
+            (CARRY1(bVar10,extraout_AH) || CARRY1(bVar12 + extraout_AH,bVar13));
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
+  return;
 }
 
 

@@ -44,7 +44,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__GetSpawnTransform_
     Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
     SpawnRoleReceiverVariable`1[System::Int32Enum]::
     SpawnRoleReceiverVariable_1_System_Int32Enum__set_Value
-              ((SpawnRoleReceiverVariable_1_System_Int32Enum_ *)this_00,3,
+              ((SpawnRoleReceiverVariable_1_System_Int32Enum_ *)this_00,2,
                MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleReceiverVariable<LastRespawnType>__set_Value_LastRespawnType_
               );
     return;

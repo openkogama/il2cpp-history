@@ -498,79 +498,87 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   case RewardedAdResult__Enum_ErrorClient:
   case RewardedAdResult__Enum_ErrorInternal:
   case RewardedAdResult__Enum_RewardNotUnlocked:
-    method_00 = unaff_EDI;
+    pRVar1 = unaff_EDI;
     unaff_ESI = (Object *)func_?(TypeInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              (unaff_ESI,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    if (unaff_ESI != (Object *)0x0) {
-      unaff_ESI[1].monitor = (MonitorData *)this;
-      func_?(&unaff_ESI[1].monitor,this);
-      original = (this->fields)._.errorNotification;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
-      }
-      pOVar1 = (Object__Class *)
-               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                         ((Object *)original,
-                          NotificationPopup_MethodInfo__UnityEngine__Object__Instantiate<NotificationPopup>_NotificationPopup_
-                         );
-      unaff_ESI[1].klass = pOVar1;
-      func_?(unaff_ESI + 1,pOVar1);
-      pOVar1 = unaff_ESI[1].klass;
-      pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-      unaff_EDI = this;
-      if (pIVar2 != (IAdManager *)0x0) {
-        text = (String *)
-               func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar2);
-        header = TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
-        if (pOVar1 != (Object__Class *)0x0) {
-          NotificationPopup::NotificationPopup_Initialize
-                    ((NotificationPopup *)pOVar1,text,header,(MethodInfo *)0x0);
-          root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
-          callbackFunction =
-               (ExecuteEvents_EventFunction_1_System_Object_ *)
-               func_?(
-                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                              );
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,unaff_ESI,
-                     MethodInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0___OnRewardedAdWatched_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?();
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (root,(BaseEventData *)0x0,callbackFunction,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                    );
-          return;
-        }
-      }
+              (unaff_ESI,ExceptionArgument__Enum_obj,(MethodInfo *)pRVar1);
+    bVar2 = (int)unaff_ESI < 0;
+    pRVar1 = unaff_EDI;
+    if (unaff_ESI == (Object *)0x0) goto code_?;
+    unaff_ESI[1].monitor = (MonitorData *)this;
+    func_?(&unaff_ESI[1].monitor,this);
+    original = (this->fields)._.errorNotification;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
     }
+    pOVar3 = (Object__Class *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)original,
+                        NotificationPopup_MethodInfo__UnityEngine__Object__Instantiate<NotificationPopup>_NotificationPopup_
+                       );
+    unaff_ESI[1].klass = pOVar3;
+    func_?(unaff_ESI + 1,pOVar3);
+    unaff_EBX = unaff_ESI[1].klass;
+    pIVar4 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+    bVar2 = (int)pIVar4 < 0;
+    pRVar1 = this;
+    if (pIVar4 == (IAdManager *)0x0) goto code_?;
+    result = func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar4);
+    header = TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
     break;
   case RewardedAdResult__Enum_ErrorTimeout:
-    pBVar3 = (this->fields)._.continueButton;
-    if ((pBVar3 != (Button *)0x0) &&
-       (this_00 = (UnityEvent *)(pBVar3->fields).m_OnClick, this_00 != (UnityEvent *)0x0)) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_Invoke
-                (this_00,(MethodInfo *)0x0);
-      return;
-    }
-    break;
+    pBVar5 = (this->fields)._.continueButton;
+    bVar2 = (int)pBVar5 < 0;
+    pRVar1 = unaff_EDI;
+    if (pBVar5 == (Button *)0x0) goto code_?;
+    this_00 = (UnityEvent *)(pBVar5->fields).m_OnClick;
+    bVar2 = (int)this_00 < 0;
+    pRVar1 = unaff_EDI;
+    if (this_00 == (UnityEvent *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_Invoke
+              (this_00,(MethodInfo *)0x0);
   default:
     return;
   }
-  uVar4 = func_?();
-  pcVar5 = (char *)((int)&unaff_EDI[-0x115c4c5].fields.defaultUI + 1);
-  *pcVar5 = *pcVar5 - extraout_CL;
-  *(char *)&unaff_ESI->klass =
-       *(char *)&unaff_ESI->klass + (char)(uVar4 >> 8) + (uVar4 < 0x3d8eff10);
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  do {
+    bVar2 = (int)unaff_EBX < 0;
+    pRVar1 = this;
+    if (unaff_EBX != (Object__Class *)0x0) {
+      NotificationPopup::NotificationPopup_Initialize
+                ((NotificationPopup *)unaff_EBX,(String *)result,header,(MethodInfo *)0x0);
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                          );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,unaff_ESI,
+                 MethodInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0___OnRewardedAdWatched_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      return;
+    }
+code_?:
+    this = pRVar1;
+    header = (String *)func_?();
+  } while (bVar2);
+  pcVar6 = (char *)((int)&this[-2].fields.boostImageSelector + 3);
+  *pcVar6 = *pcVar6 + extraout_CL + (header < (String *)0x3d8f7810);
+  puVar7 = &header[-8].fields.field_0x7;
+  *puVar7 = *puVar7 + (char)((uint)unaff_EBX >> 8) + (header < (String *)0x3d8f7610);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
+  return;
 }
 
 
