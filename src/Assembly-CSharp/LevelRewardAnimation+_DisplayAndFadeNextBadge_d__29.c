@@ -78,7 +78,6 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::L
     (this->fields).__1__state = -1;
     if (pOVar3 != (Object__Class *)0x0) {
 code_?:
-      in_AF = 0;
       if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (float)(pOVar3->_0).fields) {
         pBVar14 = (Behaviour *)(pOVar3->_0).implementedInterfaces;
         if (pBVar14 != (Behaviour *)0x0) {
@@ -88,7 +87,7 @@ code_?:
             uVar2 = CONCAT31((int3)pEVar19,0x10);
             pGVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pEVar19,(MethodInfo *)0x0);
             if (pGVar20 != (GameObject *)0x0) {
-              uVar2 = CONCAT31(0x3f77bc,(char)uVar2);
+              uVar2 = CONCAT31(0x3f79fc,(char)uVar2);
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar20,1,(MethodInfo *)0x0);
               pEVar19 = (pOVar3->_0).events;
               uVar6 = 0;
@@ -180,7 +179,6 @@ code_?:
     (this->fields).__1__state = -1;
     if (pOVar3 != (Object__Class *)0x0) {
 code_?:
-      in_AF = 0;
       if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (float)(pOVar3->_0).element_class) {
         pIVar15 = (pOVar3->_0).castClass;
         if (pIVar15 != (Il2CppClass *)0x0) {
@@ -228,10 +226,10 @@ code_?:
           uVar9 = (undefined2)((uint)fVar16 >> 8);
           uVar5 = (undefined1)((uint)fVar16 >> 0x18);
           if (pGVar17 != (Graphic *)0x0) {
-            uVar2 = CONCAT31(0x3f78ec,(char)uVar2);
+            uVar2 = CONCAT31(0x3f7b2c,(char)uVar2);
             pRVar18 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform(pGVar17,(MethodInfo *)0x0);
             if (pRVar18 != (RectTransform *)0x0) {
-              uVar2 = CONCAT31(0x3f7914,(char)uVar2);
+              uVar2 = CONCAT31(0x3f7b54,(char)uVar2);
               UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_SetSizeWithCurrentAnchors(pRVar18,RectTransform_Axis__Enum_Horizontal,(float)(int)pOVar3->interfaceOffsets * (float)CONCAT13(uVar5,CONCAT21(uVar9,uVar6)),(MethodInfo *)0x0);
               pGVar17 = *(Graphic **)&(pOVar3->_0).this_arg.attrs;
               if ((pGVar17 != (Graphic *)0x0) && (pRVar18 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform(pGVar17,(MethodInfo *)0x0), pRVar18 != (RectTransform *)0x0)) {
@@ -272,7 +270,6 @@ code_?:
     (this->fields).__1__state = -1;
     if (pOVar3 != (Object__Class *)0x0) {
 code_?:
-      in_AF = 0;
       if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (float)(pOVar3->_0).fields) {
         pCVar7 = *(Component **)&(pOVar3->_0).this_arg.attrs;
         if (pCVar7 != (Component *)0x0) {
@@ -367,26 +364,38 @@ code_?:
   default:
     return 0;
   }
-  uVar9 = func_?();
-  puVar25 = (undefined1 *)((int)&(pOVar3->_1).cctor_finished_or_no_cctor + 2);
-  *puVar25 = *puVar25 + (char)extraout_DX + CARRY1((byte)((ushort)extraout_DX >> 8),in_stack_26);
-  in_AF = 9 < ((byte)uVar9 & 0xf) | in_AF;
-  puVar27 = &(pOVar3->_1).cctor_thread;
-  *(char *)puVar27 = (char)*puVar27 + (char)((ushort)uVar9 >> 8);
-  in_AF = 9 < ((byte)uVar9 + in_AF * -6 & 0xf) | in_AF;
-  bVar28 = (byte)extraout_CX + (byte)&stack0xfffffffc;
-  bVar29 = CARRY1((byte)extraout_CX,(byte)&stack0xfffffffc) || CARRY1(bVar28,in_AF);
-  cVar30 = bVar28 + in_AF;
-  if ((POPCOUNT(cVar30) & 1U) != 0) {
-    cVar31 = (char)((ushort)extraout_CX >> 8);
-    cVar32 = cVar30 + cVar31;
-    if ((SCARRY1(cVar30,cVar31) != SCARRY1(cVar32,bVar29)) != (char)(cVar32 + bVar29) < '\0') {
+  bVar25 = false;
+  func_?();
+  if (!bVar25 && extraout_EDX + 1 != 0) {
+code_?:
+    func_?();
+    pcVar26 = (code *)swi(3);
+    bVar27 = (*pcVar26)();
+    return bVar27;
+  }
+  piVar28 = &pOVar3[-0x677d63]._1.native_size;
+  bVar29 = (byte)(extraout_EDX + 1);
+  bVar30 = (char)*piVar28 + bVar29;
+  bVar31 = CARRY1((byte)*piVar28,bVar29) || CARRY1(bVar30,bVar25);
+  *(byte *)piVar28 = bVar30 + bVar25;
+  if ((POPCOUNT((char)*piVar28) & 1U) == 0) goto code_?;
+  bVar32 = (byte)&stack0xfffffffc;
+  bVar30 = *extraout_ECX;
+  bVar29 = *extraout_ECX + bVar32;
+  bVar25 = CARRY1(*extraout_ECX,bVar32) || CARRY1(bVar29,bVar31);
+  *extraout_ECX = bVar29 + bVar31;
+  if ((SCARRY1(bVar30,bVar32) != SCARRY1(bVar29,bVar31)) != (char)*extraout_ECX < '\0') {
+    bVar30 = *extraout_ECX;
+    cVar33 = (char)((uint)extraout_ECX >> 8);
+    cVar34 = *extraout_ECX + cVar33;
+    *extraout_ECX = cVar34 + bVar25;
+    if (*extraout_ECX != 0 && (SCARRY1(bVar30,cVar33) != SCARRY1(cVar34,bVar25)) == (char)*extraout_ECX < '\0') {
                     /* WARNING: Bad instruction - Truncating control flow here */
       halt_baddata();
     }
-    pcVar33 = (code *)swi(3);
-    bVar34 = (*pcVar33)();
-    return bVar34;
+    pcVar26 = (code *)swi(3);
+    bVar27 = (*pcVar26)();
+    return bVar27;
   }
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Int32,pOVar3,pLVar1);
@@ -454,7 +463,6 @@ code_?:
   default:
     return 0;
   }
-  in_AF = 0;
   if (1.0 <= *(float *)(uVar2 + 0x14) / *(float *)&(pOVar3->_0).byval_arg.attrs) {
     pAVar23 = (AnimationCurve *)(pOVar3->_0).this_arg.data.typeHandle;
     if (pAVar23 != (AnimationCurve *)0x0) {
@@ -471,7 +479,6 @@ code_?:
           UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta(pRVar18,value_07,(MethodInfo *)0x0);
           *(undefined4 *)(uVar2 + 0x14) = 0;
 code_?:
-          in_AF = 0;
           if (1.0 <= *(float *)(uVar2 + 0x14) / (float)(pOVar3->_0).fields) {
             pCVar7 = (Component *)(pOVar3->_0).byval_arg.data.typeHandle;
             if (pCVar7 != (Component *)0x0) {
@@ -519,6 +526,7 @@ code_?:
                 euler_00.x = fVar16;
                 euler_00.z = 0.0;
                 pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffff63,euler_00,(MethodInfo *)0x0);
+                pOVar3 = (Object__Class *)0x0;
                 if (pTVar8 != (Transform *)0x0) {
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar8,*pQVar12,(MethodInfo *)0x0);
                   uVar4 = func_?();
@@ -561,14 +569,12 @@ code_?:
     }
   }
 code_?:
-  uVar4 = func_?();
-  in_AF = 9 < ((byte)uVar4 & 0xf) | in_AF;
-  uVar2 = CONCAT31((int3)((uint)uVar4 >> 8),(byte)uVar4 + in_AF * -6) & 0xffffff0f;
-  pcVar37 = (char *)(CONCAT22((short)(uVar2 >> 0x10),CONCAT11((char)((uint)uVar4 >> 8) - in_AF,(char)uVar2)) + 0x30103f7f);
-  *pcVar37 = *pcVar37 + extraout_DL + in_AF;
-  pcVar33 = (code *)swi(3);
-  bVar34 = (*pcVar33)();
-  return bVar34;
+  func_?();
+  iVar37 = func_?();
+  *(char *)(iVar37 + -0x33efc07b) = *(char *)(iVar37 + -0x33efc07b) + (char)iVar37 + ((MonoBehaviour__Class *)(pOVar3->_0).image < (MonoBehaviour__Class *)0x3f837010);
+  pcVar26 = (code *)swi(3);
+  bVar27 = (*pcVar26)();
+  return bVar27;
 }
 
 

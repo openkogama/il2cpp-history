@@ -105,7 +105,7 @@ Quaternion * Assembly-CSharp.dll::MoveableController::MoveableController_GetRota
                   fVar11 = (float10)func_?();
                   UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime((MethodInfo *)0x0);
                   pVVar12 = (Vector3 *)func_?();
-                  pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffcc,(float)fVar11 * 57.29578 * 3.5146308e-29,*pVVar12,(MethodInfo *)0x0);
+                  pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffcc,(float)fVar11 * 57.29578 * 3.5146645e-29,*pVVar12,(MethodInfo *)0x0);
                   fVar4 = pQVar7->x;
                   fVar5 = pQVar7->y;
                   fVar6 = pQVar7->z;

@@ -30,7 +30,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__GetSpawnTransform_
     cRam_? = '\x01';
   }
   if ((receiver != (SpawnRoleDataReceiver *)0x0) && (this_00 = (receiver->fields).lastRespawnType, this_00 != (SpawnRoleReceiverVariable_1_LastRespawnType_ *)0x0)) {
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleReceiverVariable`1[System::Int32Enum]::SpawnRoleReceiverVariable_1_System_Int32Enum__set_Value((SpawnRoleReceiverVariable_1_System_Int32Enum_ *)this_00,3,MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleReceiverVariable<LastRespawnType>__set_Value_LastRespawnType_);
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleReceiverVariable`1[System::Int32Enum]::SpawnRoleReceiverVariable_1_System_Int32Enum__set_Value((SpawnRoleReceiverVariable_1_System_Int32Enum_ *)this_00,2,MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleReceiverVariable<LastRespawnType>__set_Value_LastRespawnType_);
     return;
   }
   uVar1 = func_?(&stack0xfffffff0);

@@ -454,9 +454,9 @@ GameObject * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_Creat
             uVar4 = (pVVar3->oneVector).x;
             uVar5 = (pVVar3->oneVector).y;
             if (pTVar2 != (Transform *)0x0) {
-              value.y = (float)uVar5 * 4.1823097e-29;
-              value.x = (float)uVar4 * 4.1823097e-29;
-              value.z = (pVVar3->oneVector).z * 4.1823097e-29;
+              value.y = (float)uVar5 * 4.1828153e-29;
+              value.x = (float)uVar4 * 4.1828153e-29;
+              value.z = (pVVar3->oneVector).z * 4.1828153e-29;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale(pTVar2,value,(MethodInfo *)0x0);
               return pGVar1;
             }
@@ -1050,10 +1050,9 @@ MVWorldObjectClient * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectCli
 
 {
 code_?:
-  pMVar1 = method;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug,unaff_EBP);
-    func_?(&StringLiteral_WorldObject_has_ParentHandlesHit);
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   switch((this->fields)._PlayInteractionType_k__BackingField) {
@@ -1067,20 +1066,24 @@ code_?:
   if ((this->fields)._.groupId == -1) {
     context = (this->fields).gameObject;
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug,unaff_ESI);
+      func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning_1((Object *)StringLiteral_WorldObject_has_ParentHandlesHit,(Object_1 *)context,(MethodInfo *)0x0);
     return (MVWorldObjectClient *)0x0;
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if ((this_00 == (MVWorldObjectClientManager *)0x0) || (this = (MVWorldObjectClient *)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_00,(this->fields)._.groupId,(MethodInfo *)0x0), this == (MVWorldObjectClient *)0x0)) {
-    func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
+    bVar1 = 0;
+    pbVar2 = (byte *)func_?();
+    bVar3 = *pbVar2;
+    bVar4 = (byte)((uint)pbVar2 >> 8);
+    bVar5 = *pbVar2;
+    *pbVar2 = bVar5 + bVar4 + bVar1;
+    cRam_? = cRam_? + bVar4 + (CARRY1(bVar3,bVar4) || CARRY1(bVar5 + bVar4,bVar1));
+    pcVar6 = (code *)swi(3);
+    pMVar7 = (MVWorldObjectClient *)(*pcVar6)();
+    return pMVar7;
   }
-  method = (MethodInfo *)0x0;
-  unaff_EBP = in_stack_2;
-  unaff_ESI = pMVar1;
   goto code_?;
 }
 

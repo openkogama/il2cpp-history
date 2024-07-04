@@ -66,19 +66,16 @@ void Assembly-CSharp.dll::NotificationTeamRequirementPanel::NotificationTeamRequ
   pMVar5 = extraout_ECX;
   team = unaff_EDI;
 code_?:
+  pOVar7 = team;
   bVar9 = func_?(team,pMVar5);
-  bVar10 = (byte)((uint)extraout_EDX >> 8);
-  bVar11 = (byte)((uint)unaff_EBX >> 8) < bVar10;
-  pbVar12 = (byte *)(extraout_EDX + -2);
-  bVar13 = CARRY1(*pbVar12,bVar9) || CARRY1(*pbVar12 + bVar9,bVar11);
-  *pbVar12 = *pbVar12 + bVar9 + bVar11;
-  pbVar12 = (byte *)(extraout_EDX + -2);
-  bVar9 = *pbVar12;
-  bVar14 = *pbVar12 + (byte)unaff_EBX;
-  *pbVar12 = bVar14 + bVar13;
-  *(char *)(extraout_EDX + -2) = *(char *)(extraout_EDX + -2) + bVar10 + (CARRY1(bVar9,(byte)unaff_EBX) || CARRY1(bVar14,bVar13));
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  bVar10 = *(byte *)&team->klass;
+  bVar11 = (byte)((uint)unaff_EBX >> 8);
+  *(byte *)&team->klass = *(char *)&team->klass + bVar11;
+  *(char *)&pOVar7->klass = *(char *)&pOVar7->klass + (char)((uint)pOVar7 >> 8) + CARRY1(bVar10,bVar11);
+  *(byte *)&pOVar7[-0xbbdf820].klass = *(char *)&pOVar7[-0xbbdf820].klass + extraout_CL + (9 < (bVar9 & 0xf) | in_AF);
+  *(byte *)&team->klass = *(char *)&team->klass + bVar11;
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

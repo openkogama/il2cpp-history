@@ -493,7 +493,7 @@ code_?:
       }
       a_00 = (this->fields).OnLobbyStateChange;
       pUVar8 = (UnityAction_1_System_Int32Enum_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar8,(Object *)0x82e85357,MethodInfo__AndroidChatController__OnLobbyStateChange_bool_,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar8,(Object *)0xa2e85357,MethodInfo__AndroidChatController__OnLobbyStateChange_bool_,(MethodInfo *)0x0);
       pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a_00,(Delegate *)pUVar8,(MethodInfo *)0x0);
       if (pDVar10 == (Delegate *)0x0) {
         pDRam0000001c = (Delegate *)0x0;

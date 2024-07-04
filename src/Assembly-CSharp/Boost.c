@@ -65,7 +65,7 @@ Object * Assembly-CSharp.dll::Boost::Boost_get_Value(Boost *this,MethodInfo *met
               }
               RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_02,iVar2,MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_);
               if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
-              bVar5 = mscorlib.dll::System::String::String_op_Equality((String *)0x9c266035,*(String **)((int)RVar4 + 0xc),(MethodInfo *)0x0);
+              bVar5 = mscorlib.dll::System::String::String_op_Equality((String *)0x9c366835,*(String **)((int)RVar4 + 0xc),(MethodInfo *)0x0);
               if (bVar5 != 0) break;
               iVar2 = iVar2 + 1;
             }
