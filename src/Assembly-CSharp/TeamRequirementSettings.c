@@ -312,7 +312,7 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
         pOVar4 = (Object *)0x0;
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                   ((Behaviour *)pOVar2,1,(MethodInfo *)0x0);
-        pCVar5 = TypeInfo__System__Convert;
+        key = (String *)TypeInfo__System__Convert;
         goto code_?;
       }
     }
@@ -322,12 +322,12 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
   }
   do {
     pOVar4 = (Object *)&UNK_?;
-    sVar6 = func_?();
+    sVar5 = func_?();
     value_01 = (TeamRequirementSettings *)((int)unaff_EDI + (uint)bVar1 * -2 + 1);
-    uVar7 = in((short)extraout_EDX);
-    *(undefined1 *)&unaff_EDI->klass = uVar7;
-    pCVar5 = (Convert__Class *)(int)sVar6;
-    bVar8 = (byte)sVar6;
+    uVar6 = in((short)extraout_EDX);
+    *(undefined1 *)&unaff_EDI->klass = uVar6;
+    uVar7 = (uint)sVar5;
+    bVar8 = (byte)sVar5;
     if (SBORROW1(bVar8,'\x10')) {
       if (0x10 < bVar8) {
         pcVar9 = (code *)swi(3);
@@ -336,29 +336,28 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
       }
       puVar10 = (uint *)(unaff_EBX + 0x768b0cc4);
       uVar11 = *puVar10;
-      uVar12 = (int)&(pCVar5->_0).image + *puVar10;
-      *puVar10 = uVar12 + (bVar8 < 0x10);
+      uVar12 = *puVar10;
+      *puVar10 = uVar12 + uVar7 + (uint)(bVar8 < 0x10);
       *(char *)(unaff_EBX + 0x75007478) =
            *(char *)(unaff_EBX + 0x75007478) + bVar8 +
-           (CARRY4(uVar11,(uint)pCVar5) || CARRY4(uVar12,(uint)(bVar8 < 0x10)));
-      pVVar13 = &pCVar5[-1].vtable.Finalize;
-      pVVar13->methodPtr = (Il2CppMethodPointer)((uint)pVVar13->methodPtr | extraout_EDX);
+           (CARRY4(uVar11,uVar7) || CARRY4(uVar12 + uVar7,(uint)(bVar8 < 0x10)));
+      *(uint *)(uVar7 - 0x18) = *(uint *)(uVar7 - 0x18) | extraout_EDX;
+      pOVar4 = (Object *)&UNK_?;
       func_?();
-      ppOVar14 = &value_01[-1].fields.outlineTeamNone;
-      *(char *)ppOVar14 = *(char *)ppOVar14 + extraout_DL;
+      ppOVar13 = &value_01[-1].fields.outlineTeamNone;
+      *(char *)ppOVar13 = *(char *)ppOVar13 + extraout_DL;
       bVar1 = 1;
     }
     else {
-      LOCK();
+      cVar14 = (char)((ushort)sVar5 >> 8);
+      key = (String *)CONCAT31((int3)cVar14,bVar8 | (byte)(extraout_EDX >> 8));
       *(char *)((int)&TypeInfo__System__Convert + extraout_ECX) =
-           *(char *)((int)&TypeInfo__System__Convert + extraout_ECX) + (char)((ushort)sVar6 >> 8);
-      UNLOCK();
+           *(char *)((int)&TypeInfo__System__Convert + extraout_ECX) + cVar14;
 code_?:
       this_00 = *(TeamRequirementSettings **)
                  &((MonoBehaviour__Fields *)&(this_00->fields).settingsBase)->_;
-      if ((pCVar5->_1).cctor_finished_or_no_cctor == 0) {
+      if ((((Convert__Class *)key)->_1).cctor_finished_or_no_cctor == 0) {
         this = (TeamRequirementSettings *)&UNK_?;
-        key = (String *)pCVar5;
         func_?();
       }
     }

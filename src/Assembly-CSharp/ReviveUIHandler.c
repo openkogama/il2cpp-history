@@ -959,7 +959,7 @@ code_?:
       (*pcVar5)();
       return;
     }
-    ppIVar6 = &pAVar2[0xf7128]._0.generic_class;
+    ppIVar6 = &pAVar2[0xf7128]._0.interopData;
     *(byte *)ppIVar6 = *(byte *)ppIVar6 | (byte)((uint)pRVar3 >> 8);
   }
   else {

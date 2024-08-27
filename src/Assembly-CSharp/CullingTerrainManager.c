@@ -325,7 +325,7 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager_OnChanged
     func_?(&
                     MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__
                    );
-    func_?(0x48c);
+    func_?(0x494);
     func_?(&
                     MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__GetEnumerator__
                    );

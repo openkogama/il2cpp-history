@@ -1151,7 +1151,7 @@ void Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_ReceiveMessage
       func_?(0x6a5c);
       func_?(0x22f8);
       func_?(0x2ee4);
-      func_?(0xeba8);
+      func_?(0xebe4);
       cRam_? = '\x01';
     }
     msgType = CONCAT13(5,(undefined3)msgType);
@@ -1288,7 +1288,7 @@ code_?:
       func_?(0x6a5c);
       func_?(0x22f8);
       func_?(0x2ee4);
-      func_?(0xeba8);
+      func_?(0xebe4);
       cRam_? = '\x01';
     }
     msgType = CONCAT13(5,(undefined3)msgType);
@@ -1350,8 +1350,8 @@ code_?:
   in(CONCAT11(bVar2 + bVar25,
               bVar21 + bVar23 + bVar19 + (CARRY1(bVar20,(byte)uVar9) || CARRY1(bVar2,bVar25))));
   if (cRam_? == '\0') {
-    func_?(0xaa7c);
     func_?(0xaab8);
+    func_?(0xaaf4);
     cRam_? = '\x01';
   }
   if (*(Queue_1_System_Object_ **)(unaff_retaddr + 0x88) != (Queue_1_System_Object_ *)0x0) {

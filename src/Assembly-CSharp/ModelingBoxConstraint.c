@@ -162,7 +162,7 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint__ctor
     func_?(0x8490);
     in_stack_4 = 0x119c;
     func_?(0x53b0);
-    func_?(0xa8cc);
+    func_?(0xa908);
     cRam_? = '\x01';
   }
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {

@@ -13,8 +13,8 @@ internal sealed class _PrivateImplementationDetails_
 {
 	// Fields
 	internal static readonly __StaticArrayInitTypeSize_5941 _250F72F5422D05154E53F836C8F4BD80892D01BC28F3D870BD57D854D08E80B4;
-	internal static readonly __StaticArrayInitTypeSize_6082 _792BDB1D1BFF82F6C9968C2D70522A301E994A2E0B3DD4D2C90A0157E0D6FB72;
 	internal static readonly __StaticArrayInitTypeSize_20 BEE794DBCD4CBBBF1C7DAF41EF192F0C8543F2C04DCD5D88F445D71BB75FC08A;
+	internal static readonly __StaticArrayInitTypeSize_6082 E8E20156808282C9A98EDCADFB5DF558E04C185FC4287D1F9D3963B775FAC031;
 
 	// Nested types
 	private struct __StaticArrayInitTypeSize_20

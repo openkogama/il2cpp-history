@@ -996,39 +996,35 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnValidat
   pSVar1 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->static_fields
            ->fireSoundEffects;
   if (pSVar1 != (String__Array *)0x0) {
-    pAVar2 = (this->fields)._.fireAudioClips;
-    if (pAVar2 != (AudioClip__Array *)0x0) {
-      iVar3 = pSVar1->max_length;
-      if (pAVar2->max_length != iVar3) {
+    if (((this->fields)._.fireAudioClips != (AudioClip__Array *)0x0) &&
+       (iVar2 = pSVar1->max_length, ((this->fields)._.fireAudioClips)->max_length != iVar2)) {
+      mscorlib.dll::System::Array::Array_Resize_86
+                ((BindingRestrictions_TestBuilder_AndNode__Array **)&(this->fields)._.fireAudioClips
+                 ,iVar2,
+                 void_MethodInfo__System__Array__Resize<UnityEngine::AudioClip>_UnityEngine__AudioClip___int_
+                );
+    }
+    if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->_1).
+        cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData);
+    }
+    pSVar1 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
+             static_fields->hitSoundEffects;
+    if (pSVar1 != (String__Array *)0x0) {
+      if (((this->fields)._.hitAudioClips != (AudioClip__Array *)0x0) &&
+         (iVar2 = pSVar1->max_length, ((this->fields)._.hitAudioClips)->max_length != iVar2)) {
         mscorlib.dll::System::Array::Array_Resize_86
                   ((BindingRestrictions_TestBuilder_AndNode__Array **)
-                   &(this->fields)._.fireAudioClips,iVar3,
+                   &(this->fields)._.hitAudioClips,iVar2,
                    void_MethodInfo__System__Array__Resize<UnityEngine::AudioClip>_UnityEngine__AudioClip___int_
                   );
       }
-      if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData);
-      }
-      pSVar1 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
-               static_fields->hitSoundEffects;
-      if ((pSVar1 != (String__Array *)0x0) &&
-         (pAVar2 = (this->fields)._.hitAudioClips, pAVar2 != (AudioClip__Array *)0x0)) {
-        iVar3 = pSVar1->max_length;
-        if (pAVar2->max_length != iVar3) {
-          mscorlib.dll::System::Array::Array_Resize_86
-                    ((BindingRestrictions_TestBuilder_AndNode__Array **)
-                     &(this->fields)._.hitAudioClips,iVar3,
-                     void_MethodInfo__System__Array__Resize<UnityEngine::AudioClip>_UnityEngine__AudioClip___int_
-                    );
-        }
-        return;
-      }
+      return;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

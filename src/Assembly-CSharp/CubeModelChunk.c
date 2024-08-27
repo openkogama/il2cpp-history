@@ -360,7 +360,7 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_ChunkInstancesChanged
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ChunkInstances);
-    func_?(0x6520);
+    func_?(0x655c);
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(0xd2a8);
     func_?(&
