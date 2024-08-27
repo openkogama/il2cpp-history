@@ -278,9 +278,9 @@ code_?:
         bVar13 = 0;
         this = (FirstPersonCamera *)0x0;
         do {
-          if (Unity__Properties__DontCreatePropertyAttribute_MethodInfo__System__Reflection__CustomAttributeExtensions__GetCustomAttribute<Unity::Properties::DontCreatePropertyAttribute>_System__Reflection__MemberInfo_ == (MethodInfo *)0x0) goto code_?;
-          if (Unity__Properties__DontCreatePropertyAttribute_MethodInfo__System__Reflection__CustomAttributeExtensions__GetCustomAttribute<Unity::Properties::DontCreatePropertyAttribute>_System__Reflection__MemberInfo_->name <= (char *)(uint)bVar13) goto code_?;
-          if (((&Unity__Properties__DontCreatePropertyAttribute_MethodInfo__System__Reflection__CustomAttributeExtensions__GetCustomAttribute<Unity::Properties::DontCreatePropertyAttribute>_System__Reflection__MemberInfo_->klass)[(int)(uint)bVar13] == (Il2CppClass *)0x0) || (this_03 = (Behaviour *)(&Unity__Properties__DontCreatePropertyAttribute_MethodInfo__System__Reflection__CustomAttributeExtensions__GetCustomAttribute<Unity::Properties::DontCreatePropertyAttribute>_System__Reflection__MemberInfo_->klass)[(int)(uint)bVar13]->namespaze, this_03 == (Behaviour *)0x0)) goto code_?;
+          if (Unity__Properties__CreatePropertyAttribute_MethodInfo__System__Reflection__CustomAttributeExtensions__GetCustomAttribute<Unity::Properties::CreatePropertyAttribute>_System__Reflection__MemberInfo_ == (MethodInfo *)0x0) goto code_?;
+          if (Unity__Properties__CreatePropertyAttribute_MethodInfo__System__Reflection__CustomAttributeExtensions__GetCustomAttribute<Unity::Properties::CreatePropertyAttribute>_System__Reflection__MemberInfo_->name <= (char *)(uint)bVar13) goto code_?;
+          if (((&Unity__Properties__CreatePropertyAttribute_MethodInfo__System__Reflection__CustomAttributeExtensions__GetCustomAttribute<Unity::Properties::CreatePropertyAttribute>_System__Reflection__MemberInfo_->klass)[(int)(uint)bVar13] == (Il2CppClass *)0x0) || (this_03 = (Behaviour *)(&Unity__Properties__CreatePropertyAttribute_MethodInfo__System__Reflection__CustomAttributeExtensions__GetCustomAttribute<Unity::Properties::CreatePropertyAttribute>_System__Reflection__MemberInfo_->klass)[(int)(uint)bVar13]->namespaze, this_03 == (Behaviour *)0x0)) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled(this_03,0,(MethodInfo *)0x0);
           bVar13 = this._3_1_ + 1;
           this = (FirstPersonCamera *)((uint)bVar13 << 0x18);

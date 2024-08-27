@@ -290,7 +290,7 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement_OnD
         if (bVar1 != 0) {
           LevelBasedUseRequirement_CreateDisplayObject((LevelBasedUseRequirement *)&UNK_?,(MethodInfo *)0x0);
         }
-        LevelDisplayCube::LevelDisplayCube_SetAmount((LevelDisplayCube *)0x75007478,0x2ca10c46,(MethodInfo *)0x0);
+        LevelDisplayCube::LevelDisplayCube_SetAmount((LevelDisplayCube *)0x75007478,0x34a10c46,(MethodInfo *)0x0);
         return;
                     /* WARNING: Read-only address (ram,0xADDR) is written */
       }

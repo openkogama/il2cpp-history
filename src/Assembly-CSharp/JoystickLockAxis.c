@@ -96,7 +96,7 @@ Joystick_SupressAxisFlag__Enum Assembly-CSharp.dll::JoystickLockAxis::JoystickLo
     }
     else {
       if (cRam_? == '\0') {
-        uStack_3 = 0x119b88d81049705a;
+        uStack_3 = 0x119b88dc1049705a;
         func_?();
         cRam_? = '\x01';
       }
@@ -104,13 +104,13 @@ Joystick_SupressAxisFlag__Enum Assembly-CSharp.dll::JoystickLockAxis::JoystickLo
       position.z = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
     }
     if (cRam_? == '\0') {
-      uStack_3 = 0x119b88d8104970ad;
+      uStack_3 = 0x119b88dc104970ad;
       func_?();
       cRam_? = '\x01';
     }
     JVar6 = (Joystick_SupressAxisFlag__Enum)(0.8 < ABS((TypeInfo__UnityEngine__Vector2->static_fields->rightVector).y * position.z + (TypeInfo__UnityEngine__Vector2->static_fields->rightVector).x * (float)this));
     if (cRam_? == '\0') {
-      uStack_3 = 0x119b88d810497104;
+      uStack_3 = 0x119b88dc10497104;
       func_?();
       cRam_? = '\x01';
     }

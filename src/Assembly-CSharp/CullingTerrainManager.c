@@ -241,7 +241,7 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager_OnChanged
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__get_Item_MV__WorldObject__IntVector_);
     func_?(&MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__Dispose__);
     func_?(&MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__);
-    func_?(0x48c);
+    func_?(0x494);
     func_?(&MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__GetEnumerator__);
     func_?(&StringLiteral_Changed_chunk_does_not_yet_exist);
     cRam_? = '\x01';

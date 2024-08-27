@@ -1612,7 +1612,7 @@ code_?:
                   uVar17 = func_?(&TypeInfo__System__IndexOutOfRangeException);
                   this_01 = (IndexOutOfRangeException *)func_?(uVar17);
                   method_00 = (MethodInfo *)0x0;
-                  message = (String *)func_?(0xd9a0);
+                  message = (String *)func_?(0xd9dc);
                   mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1(this_01,message,method_00);
                   uVar18 = func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
                   func_?(this_01,uVar18);
@@ -1892,7 +1892,7 @@ CubeOutOfBoundState__Enum Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFu
     }
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Debug);
-      func_?(0xf17c);
+      func_?(0xf1bc);
       cRam_? = '\x01';
     }
     switch(pCStack_45) {
@@ -2382,7 +2382,7 @@ float Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_ScaleFactor_
   if (cRam_? == '\0') {
     _puStack_1c = CONCAT44(&UNK_?,puStack_1);
     func_?();
-    _puStack_1c = 0x119cf17c1026f793;
+    _puStack_1c = 0x119cf1bc1026f793;
     func_?();
     cRam_? = '\x01';
   }
