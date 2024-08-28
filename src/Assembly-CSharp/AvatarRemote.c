@@ -12,41 +12,43 @@ void Assembly-CSharp.dll::AvatarRemote::AvatarRemote_Initialize(AvatarRemote *th
   Avatar::Avatar_Initialize((Avatar *)this,mvAvatar,isLocal,(MethodInfo *)0x0);
   if (mvAvatar == (MVAvatar *)0x0) {
     func_?();
+    pDVar1 = (Delegate *)0x0;
   }
   else {
-    pUVar1 = (mvAvatar->fields)._._.PositionChanged;
+    pUVar2 = (mvAvatar->fields)._._.PositionChanged;
+    ppUVar3 = &(mvAvatar->fields)._._.PositionChanged;
     this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)this,MethodInfo__AvatarRemote__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
-    unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pUVar2,(Delegate *)this_00,(MethodInfo *)0x0);
     unaff_EDI = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
-    if (unaff_ESI == (Delegate *)0x0) {
-      (mvAvatar->fields)._._.PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-      pDStack2 = (Delegate *)&(mvAvatar->fields)._._.PositionChanged;
-      pUStack3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)unaff_ESI;
+    if (pDVar1 == (Delegate *)0x0) {
+      *ppUVar3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+      pDStack4 = (Delegate *)ppUVar3;
+      pUStack5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)pDVar1;
       func_?();
       return;
     }
-    pUStack3 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
-    pDStack2 = unaff_ESI;
-    pUVar1 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-    if (pUVar1 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-      (mvAvatar->fields)._._.PositionChanged = pUVar1;
+    pUStack5 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+    pDStack4 = pDVar1;
+    pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
+    if (pUVar2 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
+      *ppUVar3 = pUVar2;
       unaff_EDI = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
-      pUStack3 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
-      pDStack2 = unaff_ESI;
-      pUStack3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)func_?();
-      if (pUStack3 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0) {
-        pDStack2 = (Delegate *)&(mvAvatar->fields)._._.PositionChanged;
+      pUStack5 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+      pDStack4 = pDVar1;
+      pUStack5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)func_?();
+      if (pUStack5 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0) {
+        pDStack4 = (Delegate *)ppUVar3;
         func_?();
         return;
       }
     }
   }
-  pDStack2 = unaff_ESI;
-  pUStack3 = unaff_EDI;
+  pDStack4 = pDVar1;
+  pUStack5 = unaff_EDI;
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -88,15 +90,18 @@ void Assembly-CSharp.dll::AvatarRemote::AvatarRemote__ctor(AvatarRemote *this,Me
   }
   pDVar1 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,GamePassesHighScoreList+HighScoreListData]::Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor(pDVar1,MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>__Dictionary__);
-  (this->fields)._.modifiers = (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)pDVar1;
-  func_?(&(this->fields)._.modifiers,pDVar1);
+  ppDVar2 = &(this->fields)._.modifiers;
+  *ppDVar2 = (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)pDVar1;
+  func_?(ppDVar2,pDVar1);
   pDVar1 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,GamePassesHighScoreList+HighScoreListData]::Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor(pDVar1,MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__Dictionary__);
-  (this->fields)._.currentModifierByteState = (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)pDVar1;
-  func_?(&(this->fields)._.currentModifierByteState,pDVar1);
-  pBVar2 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x1b);
-  (this->fields)._.modifierEffectCount = pBVar2;
-  func_?(&(this->fields)._.modifierEffectCount,pBVar2);
+  ppDVar3 = &(this->fields)._.currentModifierByteState;
+  *ppDVar3 = (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)pDVar1;
+  func_?(ppDVar3,pDVar1);
+  pBVar4 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x1b);
+  ppBVar5 = &(this->fields)._.modifierEffectCount;
+  *ppBVar5 = pBVar4;
+  func_?(ppBVar5,pBVar4);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }

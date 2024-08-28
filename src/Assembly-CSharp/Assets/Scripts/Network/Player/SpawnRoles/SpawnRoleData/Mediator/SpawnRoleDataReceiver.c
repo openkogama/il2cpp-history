@@ -4,8 +4,8 @@
 void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::SpawnRoleDataReceiver::SpawnRoleDataReceiver_NotifyKilled(SpawnRoleDataReceiver *this,int32_t localPlayerActorNr,int32_t dmgDealerActorNr,PlayerKilledByType__Enum damageType,MethodInfo *method)
 
 {
-  if ((this->fields).OnKilled != (Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)0x0) {
-    pAVar1 = (this->fields).OnKilled;
+  pAVar1 = (this->fields).OnKilled;
+  if (pAVar1 != (Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,localPlayerActorNr,dmgDealerActorNr,damageType,(pAVar1->fields)._._.method);
   }
   return;
@@ -17,8 +17,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
 void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::SpawnRoleDataReceiver::SpawnRoleDataReceiver_NotifySuicide(SpawnRoleDataReceiver *this,MethodInfo *method)
 
 {
-  if ((this->fields).OnSuicide != (Action *)0x0) {
-    pAVar1 = (this->fields).OnSuicide;
+  pAVar1 = (this->fields).OnSuicide;
+  if (pAVar1 != (Action *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }
   return;
@@ -44,24 +44,25 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
     func_?(&TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
     cRam_? = '\x01';
   }
-  a = (this->fields).OnKilled;
+  ppAVar1 = &(this->fields).OnKilled;
+  a = *ppAVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
+    pAVar3 = TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>;
+    iVar4 = 0;
+    if (pDVar2 != (Delegate *)0x0) {
+      iVar4 = func_?(pDVar2,TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
+      if (iVar4 == 0) {
+        func_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)func_?(&(this->fields).OnKilled,iVar3,a);
-    bVar6 = pAVar5 != a;
-    a = pAVar5;
-  } while (bVar6);
+    pAVar6 = (Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)func_?(ppAVar1,iVar4,a);
+    bVar7 = pAVar6 != a;
+    a = pAVar6;
+  } while (bVar7);
   return;
 }
 
@@ -75,25 +76,26 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  a = (this->fields).OnSuicide;
+  ppAVar1 = &(this->fields).OnSuicide;
+  a = *ppAVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
-        pDVar2 = pDVar1;
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__System__Action);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__System__Action);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar4 = (Action *)func_?(&(this->fields).OnSuicide,pDVar2,a);
-    bVar5 = pAVar4 == a;
-    a = pAVar4;
-    if (bVar5) {
+    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,a);
+    bVar6 = pAVar5 == a;
+    a = pAVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -109,24 +111,25 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
     func_?(&TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
     cRam_? = '\x01';
   }
-  source = (this->fields).OnKilled;
+  ppAVar1 = &(this->fields).OnKilled;
+  source = *ppAVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
+    pAVar3 = TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>;
+    iVar4 = 0;
+    if (pDVar2 != (Delegate *)0x0) {
+      iVar4 = func_?(pDVar2,TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
+      if (iVar4 == 0) {
+        func_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)func_?(&(this->fields).OnKilled,iVar3,source);
-    bVar6 = pAVar5 != source;
-    source = pAVar5;
-  } while (bVar6);
+    pAVar6 = (Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)func_?(ppAVar1,iVar4,source);
+    bVar7 = pAVar6 != source;
+    source = pAVar6;
+  } while (bVar7);
   return;
 }
 
@@ -140,25 +143,26 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  source = (this->fields).OnSuicide;
+  ppAVar1 = &(this->fields).OnSuicide;
+  source = *ppAVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
-        pDVar2 = pDVar1;
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__System__Action);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__System__Action);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar4 = (Action *)func_?(&(this->fields).OnSuicide,pDVar2,source);
-    bVar5 = pAVar4 == source;
-    source = pAVar4;
-    if (bVar5) {
+    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,source);
+    bVar6 = pAVar5 == source;
+    source = pAVar5;
+    if (bVar6) {
       return;
     }
   } while( true );

@@ -230,14 +230,13 @@ void Assembly-CSharp.dll::FirstTimeActivatableEditToolPopup::FirstTimeActivatabl
       func_?();
     }
     pFVar6 = (FirstTimeEventPopup *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pFVar6,FirstTimeEventPopup_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventPopup>_FirstTimeEventPopup_);
-    (this->fields).popup = pFVar6;
+    ppFVar7 = &(this->fields).popup;
+    *ppFVar7 = pFVar6;
     func_?();
-    pFVar6 = (this->fields).popup;
-    if (pFVar6 != (FirstTimeEventPopup *)0x0) {
-      FirstTimeEventPopup::FirstTimeEventPopup_SetSkippable(pFVar6,(this->fields).skipAllowed,(MethodInfo *)0x0);
-      pFVar6 = (this->fields).popup;
-      if (pFVar6 != (FirstTimeEventPopup *)0x0) {
-        FirstTimeEventPopup::FirstTimeEventPopup_FadeIn(pFVar6,(MethodInfo *)0x0);
+    if (*ppFVar7 != (FirstTimeEventPopup *)0x0) {
+      FirstTimeEventPopup::FirstTimeEventPopup_SetSkippable(*ppFVar7,(this->fields).skipAllowed,(MethodInfo *)0x0);
+      if (*ppFVar7 != (FirstTimeEventPopup *)0x0) {
+        FirstTimeEventPopup::FirstTimeEventPopup_FadeIn(*ppFVar7,(MethodInfo *)0x0);
         (this->fields).showing = 1;
         pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
         callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
@@ -253,8 +252,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableEditToolPopup::FirstTimeActivatabl
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

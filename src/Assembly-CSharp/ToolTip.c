@@ -9,9 +9,10 @@ void Assembly-CSharp.dll::ToolTip::ToolTip_Awake(ToolTip *this,MethodInfo *metho
     func_?(&MethodInfo__ToolTip__LanguageLoadedCallback__);
     cRam_? = '\x01';
   }
-  pSVar1 = TM::TM__((this->fields).toolTipText,(MethodInfo *)0x0);
-  (this->fields).toolTipText = pSVar1;
-  func_?(&(this->fields).toolTipText,pSVar1);
+  ppSVar1 = &(this->fields).toolTipText;
+  pSVar2 = TM::TM__(*ppSVar1,(MethodInfo *)0x0);
+  *ppSVar1 = pSVar2;
+  func_?(ppSVar1,pSVar2);
   this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__ToolTip__LanguageLoadedCallback__,(MethodInfo *)0x0);
   TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
@@ -24,9 +25,10 @@ void Assembly-CSharp.dll::ToolTip::ToolTip_Awake(ToolTip *this,MethodInfo *metho
 void Assembly-CSharp.dll::ToolTip::ToolTip_LanguageLoadedCallback(ToolTip *this,MethodInfo *method)
 
 {
-  pSVar1 = TM::TM__((this->fields).toolTipText,(MethodInfo *)0x0);
-  (this->fields).toolTipText = pSVar1;
-  func_?(&(this->fields).toolTipText,pSVar1);
+  ppSVar1 = &(this->fields).toolTipText;
+  pSVar2 = TM::TM__(*ppSVar1,(MethodInfo *)0x0);
+  *ppSVar1 = pSVar2;
+  func_?(ppSVar1,pSVar2);
   return;
 }
 
@@ -66,7 +68,7 @@ void Assembly-CSharp.dll::ToolTip::ToolTip_Reset(ToolTip *this,MethodInfo *metho
   }
   pRVar1 = (RectTransform *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)this,UnityEngine__RectTransform_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::RectTransform>__);
   (this->fields).rectTransform = pRVar1;
-  func_?(&(this->fields).rectTransform,pRVar1);
+  func_?();
   return;
 }
 
@@ -82,8 +84,9 @@ void Assembly-CSharp.dll::ToolTip::ToolTip_SetText(ToolTip *this,String *textToB
     cRam_? = '\x01';
   }
   pSVar1 = TM::TM__(textToBeChanged,(MethodInfo *)0x0);
-  (this->fields).toolTipText = pSVar1;
-  func_?(&(this->fields).toolTipText,pSVar1);
+  ppSVar2 = &(this->fields).toolTipText;
+  *ppSVar2 = pSVar1;
+  func_?(ppSVar2,pSVar1);
   this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__ToolTip__LanguageLoadedCallback__,(MethodInfo *)0x0);
   TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
@@ -176,7 +179,7 @@ void Assembly-CSharp.dll::ToolTip::ToolTip__Update_b__11_0(ToolTip *this,IHandle
   if (uVar7 != 0) {
     do {
       if (pIVar5->interfaceOffsets[uVar6].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IHandleToolTip) {
-        ppMVar8 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar6].offset].SendToolTip.method;
+        ppMVar8 = &(&x->klass->vtable)[pIVar5->interfaceOffsets[uVar6].offset].SendToolTip.method;
         goto code_?;
       }
       uVar6 = uVar6 + 1;
@@ -198,8 +201,9 @@ void Assembly-CSharp.dll::ToolTip::ToolTip__ctor(ToolTip *this,MethodInfo *metho
     func_?(&StringLiteral____Tooltip__);
     cRam_? = '\x01';
   }
-  (this->fields).toolTipText = StringLiteral____Tooltip__;
-  func_?(&(this->fields).toolTipText,StringLiteral____Tooltip__);
+  ppSVar1 = &(this->fields).toolTipText;
+  *ppSVar1 = StringLiteral____Tooltip__;
+  func_?(ppSVar1,StringLiteral____Tooltip__);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }

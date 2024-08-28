@@ -8,8 +8,8 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Enter(ESRotating *this,EditorSt
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa8;
-  puVar5 = &stack0xffffffa8;
+  puStack_4 = &stack0xffffffa4;
+  puVar5 = &stack0xffffffa4;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
@@ -43,10 +43,11 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Enter(ESRotating *this,EditorSt
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(pOVar7,(MethodInfo *)0x0);
-    pLVar8 = (List_1_WorldObjectClientRef_ *)func_?();
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar8,MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__List__);
-    (this->fields).targets = pLVar8;
-    func_?(&(this->fields).targets);
+    this_03 = (List_1_WorldObjectClientRef_ *)func_?();
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_03,MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__List__);
+    ppLStack_8 = &(this->fields).targets;
+    *ppLStack_8 = this_03;
+    func_?(ppLStack_8);
     if (e != (EditorStateMachine *)0x0) {
       pSVar9 = (e->fields).selectionController;
       this_00 = (e->fields).networkSelector;
@@ -79,47 +80,44 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Enter(ESRotating *this,EditorSt
                 (this->fields).prevMouseX = pVVar15->x;
                 pVVar15 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition((Vector3 *)(auStack_16 + 4),(DefaultEventSystem_Input *)0x0,unaff_EBX);
                 (this->fields).prevMouseY = pVVar15->y;
-                pLVar17 = (List_1_UnityEngine_Transform_ *)func_?();
-                pLStack_18 = pLVar17;
-                mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar17,MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__List__);
+                transforms = (List_1_UnityEngine_Transform_ *)func_?();
+                pLStack_17 = transforms;
+                mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)transforms,MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__List__);
                 pSVar9 = (e->fields).selectionController;
-                pLStack_19 = pLVar17;
+                pLStack_18 = transforms;
                 if ((pSVar9 != (SelectionController *)0x0) && (this_01 = (HashSet_1_System_UInt32_ *)(pSVar9->fields).selectedIDs, this_01 != (HashSet_1_System_UInt32_ *)0x0)) {
-                  pHVar20 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::HashSet_1_System_UInt32__GetEnumerator((HashSet_1_T_Enumerator_System_UInt32_ *)auStack_16,this_01,MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
-                  id = pHVar20->_current;
-                  iStack_21 = 0;
+                  pHVar19 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::HashSet_1_System_UInt32__GetEnumerator((HashSet_1_T_Enumerator_System_UInt32_ *)auStack_16,this_01,MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
+                  id = pHVar19->_current;
+                  iStack_20 = 0;
                   uStack_1 = 1;
-                  pOStack_22 = (Object *)&stack0xffffffb4;
+                  pOStack_21 = (Object *)&stack0xffffffb0;
                   while( true ) {
-                    bVar10 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::UInt32]::HashSet_1_T_Enumerator_System_UInt32__MoveNext((HashSet_1_T_Enumerator_System_UInt32_ *)&stack0xffffffb4,MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__);
+                    bVar10 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::UInt32]::HashSet_1_T_Enumerator_System_UInt32__MoveNext((HashSet_1_T_Enumerator_System_UInt32_ *)&stack0xffffffb0,MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__);
                     if (bVar10 == 0) break;
-                    this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-                    if (this_03 == (MVWorldObjectClientManager *)0x0) goto code_?;
-                    this_04 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef(this_03,id,(MethodInfo *)0x0);
-                    pLVar8 = (this->fields).targets;
-                    if (pLVar8 == (List_1_WorldObjectClientRef_ *)0x0) goto code_?;
+                    this_04 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+                    if (this_04 == (MVWorldObjectClientManager *)0x0) goto code_?;
+                    this_05 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef(this_04,id,(MethodInfo *)0x0);
+                    if (*ppLStack_8 == (List_1_WorldObjectClientRef_ *)0x0) goto code_?;
                     method_00 = (MethodInfo *)&UNK_?;
-                    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)pLVar8,(Object *)this_04,MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__Add_WorldObjectClientRef_);
-                    if (this_04 == (WorldObjectClientRef *)0x0) goto code_?;
-                    pOVar7 = WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object__get_WorldObjectClient((WorldObjectClientRef_1_System_Object_ *)this_04,MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__);
-                    if ((pOVar7 == (Object *)0x0) || (pLStack_18 == (List_1_UnityEngine_Transform_ *)0x0)) goto code_?;
-                    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)pLStack_18,(Object *)pOVar7[0x12].klass,MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__Add_UnityEngine__Transform_);
+                    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)*ppLStack_8,(Object *)this_05,MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__Add_WorldObjectClientRef_);
+                    if (this_05 == (WorldObjectClientRef *)0x0) goto code_?;
+                    pOVar7 = WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object__get_WorldObjectClient((WorldObjectClientRef_1_System_Object_ *)this_05,MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__);
+                    transforms = pLStack_17;
+                    if ((pOVar7 == (Object *)0x0) || (pLStack_17 == (List_1_UnityEngine_Transform_ *)0x0)) goto code_?;
+                    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)pLStack_17,(Object *)pOVar7[0x12].klass,MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__Add_UnityEngine__Transform_);
                   }
                   uStack_1 = 0xffffffff;
-                  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffb4,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__,method_00);
-                  pLVar17 = pLStack_18;
+                  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffb0,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__,method_00);
                   uStack_1 = 0xffffffff;
                   this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).targets;
                   if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
                     if ((this_02->fields)._size == 1) {
-                      if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-                        this_05 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_02,0,MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__get_Item_int_);
-                        if (this_05 != (RegexCharClass_SingleRange)0x0) {
-                          pOVar7 = WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object__get_WorldObjectClient((WorldObjectClientRef_1_System_Object_ *)this_05,MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__);
-                          if (pOVar7 != (Object *)0x0) {
-                            pVVar15 = (Vector3 *)(*(code *)pOVar7->klass[2]._0.byval_arg.data)(auStack_16 + 4);
-                            goto code_?;
-                          }
+                      this_06 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_02,0,MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__get_Item_int_);
+                      if (this_06 != (RegexCharClass_SingleRange)0x0) {
+                        pOVar7 = WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object__get_WorldObjectClient((WorldObjectClientRef_1_System_Object_ *)this_06,MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__);
+                        if (pOVar7 != (Object *)0x0) {
+                          pVVar15 = (Vector3 *)(*(code *)pOVar7->klass[2]._0.byval_arg.data)(auStack_16 + 4);
+                          goto code_?;
                         }
                       }
                     }
@@ -127,19 +125,19 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Enter(ESRotating *this,EditorSt
                       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
                         func_?(TypeInfo__SharedCubeFunctions);
                       }
-                      pVVar15 = SharedCubeFunctions::SharedCubeFunctions_GetWorldCenter(&VStack_23,pLVar17,(MethodInfo *)0x0);
+                      pVVar15 = SharedCubeFunctions::SharedCubeFunctions_GetWorldCenter(&VStack_22,transforms,(MethodInfo *)0x0);
 code_?:
-                      fVar24 = pVVar15->y;
-                      fVar25 = pVVar15->z;
+                      fVar23 = pVVar15->y;
+                      fVar24 = pVVar15->z;
                       (this->fields).pivot.x = pVVar15->x;
-                      (this->fields).pivot.y = fVar24;
-                      (this->fields).pivot.z = fVar25;
-                      pGVar26 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-                      if (((pGVar26 != (GameEventManager *)0x0) && (pGVar27 = (pGVar26->fields).AvatarCommandsBuildMode, pGVar27 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (pGVar28 = (pGVar27->fields).LaserCommands, pGVar28 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
-                        GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState(pGVar28,LaserPointerState__Enum_Transforming,(MethodInfo *)0x0);
-                        pGVar26 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-                        if (((pGVar26 != (GameEventManager *)0x0) && (pGVar27 = (pGVar26->fields).AvatarCommandsBuildMode, pGVar27 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (pGVar28 = (pGVar27->fields).LaserCommands, pGVar28 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
-                          GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_SetLaserActiveState(pGVar28,1,(MethodInfo *)0x0);
+                      (this->fields).pivot.y = fVar23;
+                      (this->fields).pivot.z = fVar24;
+                      pGVar25 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+                      if (((pGVar25 != (GameEventManager *)0x0) && (pGVar26 = (pGVar25->fields).AvatarCommandsBuildMode, pGVar26 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (pGVar27 = (pGVar26->fields).LaserCommands, pGVar27 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+                        UnityEngine.AudioModule.dll::UnityEngine::AudioClip::AudioClip_InvokePCMSetPositionCallback_Internal((AudioClip *)pGVar27,3,(MethodInfo *)0x0);
+                        pGVar25 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+                        if (((pGVar25 != (GameEventManager *)0x0) && (pGVar26 = (pGVar25->fields).AvatarCommandsBuildMode, pGVar26 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (pGVar27 = (pGVar26->fields).LaserCommands, pGVar27 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+                          GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_SetLaserActiveState(pGVar27,1,(MethodInfo *)0x0);
                           *unaff_FS_OFFSET = uStack_3;
                           return;
                         }
@@ -159,8 +157,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar29 = (code *)swi(3);
-  (*pcVar29)();
+  pcVar28 = (code *)swi(3);
+  (*pcVar28)();
   return;
 }
 
@@ -174,8 +172,8 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Execute(ESRotating *this,Editor
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff18;
-  puVar5 = &stack0xffffff18;
+  puStack_4 = &stack0xffffff1c;
+  puVar5 = &stack0xffffff1c;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__Dispose__);
     func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__MoveNext__);
@@ -227,46 +225,45 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Execute(ESRotating *this,Editor
         if (this_02 == (RegexCharClass_SingleRange)0x0) goto code_?;
         method_00 = (MethodInfo *)&UNK_?;
         this_03 = (MVWorldObjectClient *)WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object__get_WorldObjectClient((WorldObjectClientRef_1_System_Object_ *)this_02,MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__);
-        fVar8 = (this->fields).xAcc;
-        pLVar16 = (this->fields).targets;
-        _Stack_44 = (_union_155)(fVar8 / ABS(fVar8));
-        cStack_17 = '\0';
+        fStack_16 = (this->fields).xAcc;
+        pLVar17 = (this->fields).targets;
         cStack_18 = '\0';
-        fStack_19 = (this->fields).yAcc;
-        fStack_19 = fStack_19 / ABS(fStack_19);
-        uStack_20 = (double)((ulonglong)uStack_20 & 0xffffffff);
-        pMStack_21 = this_03;
-        _Stack_1c = _Stack_44;
-        if (pLVar16 == (List_1_WorldObjectClientRef_ *)0x0) goto code_?;
-        if ((pLVar16->fields)._size == 1) {
+        cStack_19 = '\0';
+        fStack_16 = fStack_16 / ABS(fStack_16);
+        fStack_20 = (this->fields).yAcc;
+        fStack_20 = fStack_20 / ABS(fStack_20);
+        uStack_21 = (double)((ulonglong)uStack_21 & 0xffffffff);
+        pMStack_22 = this_03;
+        if (pLVar17 == (List_1_WorldObjectClientRef_ *)0x0) goto code_?;
+        if ((pLVar17->fields)._size == 1) {
           if (this_03 == (MVWorldObjectClient *)0x0) goto code_?;
-          pVVar9 = MVWorldObjectClient::MVWorldObjectClient_get_WorldEulerAngles(&VStack_22,this_03,(MethodInfo *)0x0);
-          pVVar9 = MathFunctions::MathFunctions_RoundVector((Vector3 *)&uStack_23,*pVVar9,0,(MethodInfo *)0x0);
+          pVVar9 = MVWorldObjectClient::MVWorldObjectClient_get_WorldEulerAngles(&VStack_23,this_03,(MethodInfo *)0x0);
+          pVVar9 = MathFunctions::MathFunctions_RoundVector((Vector3 *)&uStack_24,*pVVar9,0,(MethodInfo *)0x0);
           MVWorldObjectClient::MVWorldObjectClient_set_WorldEulerAngles(this_03,*pVVar9,(MethodInfo *)0x0);
-          pVVar9 = MVWorldObjectClient::MVWorldObjectClient_get_WorldEulerAngles((Vector3 *)auStack_24,this_03,(MethodInfo *)0x0);
-          uStack_20._4_4_ = pVVar9->y;
+          pVVar9 = MVWorldObjectClient::MVWorldObjectClient_get_WorldEulerAngles((Vector3 *)auStack_25,this_03,(MethodInfo *)0x0);
+          uStack_21._4_4_ = pVVar9->y;
           if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-            uStack_23._4_4_ = (float)TypeInfo__System__Math;
-            uStack_23._0_4_ = (float)&UNK_?;
+            uStack_24._4_4_ = (float)TypeInfo__System__Math;
+            uStack_24._0_4_ = (float)&UNK_?;
             func_?();
           }
-          uStack_23 = (double)uStack_20._4_4_;
-          fVar25 = (float10)func_?();
-          uStack_20 = (double)(this->fields).rotationSpeed;
-          uStack_23._0_4_ = 0.0;
-          uStack_23._4_4_ = 0.0;
-          auStack_10._4_8_ = (undefined8)fVar25;
-          fVar25 = (float10)func_?();
-          unique0x0000aa00 = (double)fVar25;
-          auStack_24._0_4_ = &UNK_?;
+          uStack_24 = (double)uStack_21._4_4_;
+          fVar26 = (float10)func_?();
+          uStack_21 = (double)(this->fields).rotationSpeed;
+          uStack_24._0_4_ = 0.0;
+          uStack_24._4_4_ = 0.0;
+          auStack_10._4_8_ = (undefined8)fVar26;
+          fVar26 = (float10)func_?();
+          unique0x0000aa00 = (double)fVar26;
+          auStack_25._0_4_ = &UNK_?;
           auStack_10._4_8_ = unique0x0000aa00;
-          fVar25 = (float10)func_?();
-          auStack_10._4_8_ = (undefined8)fVar25;
-          uStack_20 = (double)CONCAT44((float)fVar25,(undefined4)uStack_20);
+          fVar26 = (float10)func_?();
+          auStack_10._4_8_ = (undefined8)fVar26;
+          uStack_21 = (double)CONCAT44((float)fVar26,(undefined4)uStack_21);
         }
-        pLVar16 = (this->fields).targets;
-        if (pLVar16 == (List_1_WorldObjectClientRef_ *)0x0) goto code_?;
-        if ((pLVar16->fields)._size == 1) {
+        pLVar17 = (this->fields).targets;
+        if (pLVar17 == (List_1_WorldObjectClientRef_ *)0x0) goto code_?;
+        if ((pLVar17->fields)._size == 1) {
           if (cStack_14 != '\0') {
             if (this_03 == (MVWorldObjectClient *)0x0) goto code_?;
             bVar7 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag(this_03,InteractionFlags__Enum_CanRotateX,(MethodInfo *)0x0);
@@ -274,54 +271,54 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Execute(ESRotating *this,Editor
               auStack_10._4_8_ = *(undefined8 *)&(this->fields).pivot;
               fVar8 = (this->fields).pivot.z;
               pVVar9 = (Vector3 *)func_?();
-              this_03 = pMStack_21;
+              this_03 = pMStack_22;
               pivot.z = fVar8;
               pivot.x = (float)auStack_10._4_4_;
               pivot.y = (float)auStack_10._8_4_;
-              MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMStack_21,pivot,*pVVar9,-(float)_Stack_1c * (this->fields).rotationSpeed - uStack_20._4_4_,(MethodInfo *)0x0);
-              cStack_17 = '\x01';
+              MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMStack_22,pivot,*pVVar9,-fStack_16 * (this->fields).rotationSpeed - uStack_21._4_4_,(MethodInfo *)0x0);
+              cStack_18 = '\x01';
             }
             bVar7 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag(this_03,InteractionFlags__Enum_CanRotateY,(MethodInfo *)0x0);
             if ((bVar7 != 0) && ((this->fields).rotationMode == 1)) {
               auStack_10._4_8_ = *(undefined8 *)&(this->fields).pivot;
               fVar8 = (this->fields).pivot.z;
               pVVar9 = (Vector3 *)func_?();
-              this_03 = pMStack_21;
+              this_03 = pMStack_22;
               pivot_00.z = fVar8;
               pivot_00.x = (float)auStack_10._4_4_;
               pivot_00.y = (float)auStack_10._8_4_;
-              MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMStack_21,pivot_00,*pVVar9,-(float)_Stack_1c * (this->fields).rotationSpeed - uStack_20._4_4_,(MethodInfo *)0x0);
-              cStack_18 = '\x01';
+              MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMStack_22,pivot_00,*pVVar9,-fStack_16 * (this->fields).rotationSpeed - uStack_21._4_4_,(MethodInfo *)0x0);
+              cStack_19 = '\x01';
             }
             pMVar11 = this_03;
             bVar7 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag(this_03,InteractionFlags__Enum_CanRotateZ,(MethodInfo *)0x0);
-            if (((bVar7 == 0) || (cStack_17 != '\0')) || ((this->fields).rotationMode != 2)) {
+            if (((bVar7 == 0) || (cStack_18 != '\0')) || ((this->fields).rotationMode != 2)) {
               bVar15 = false;
             }
             else {
               auStack_10._4_8_ = *(undefined8 *)&(this->fields).pivot;
               fVar8 = (this->fields).pivot.z;
               pVVar9 = (Vector3 *)func_?();
-              this_03 = pMStack_21;
+              this_03 = pMStack_22;
               pivot_01.z = fVar8;
               pivot_01.x = (float)auStack_10._4_4_;
               pivot_01.y = (float)auStack_10._8_4_;
-              MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMStack_21,pivot_01,*pVVar9,-(float)_Stack_1c * (this->fields).rotationSpeed - uStack_20._4_4_,(MethodInfo *)0x0);
+              MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMStack_22,pivot_01,*pVVar9,-fStack_16 * (this->fields).rotationSpeed - uStack_21._4_4_,(MethodInfo *)0x0);
               bVar15 = true;
             }
-            if ((bVar15 || cStack_18 != '\0') || cStack_17 != '\0') {
-              MVWorldObjectClient::MVWorldObjectClient_get_SyncRot((Quaternion *)&stack0xffffff24,this_03,(MethodInfo *)0x0);
+            if ((bVar15 || cStack_19 != '\0') || cStack_18 != '\0') {
+              MVWorldObjectClient::MVWorldObjectClient_get_SyncRot((Quaternion *)&stack0xffffff28,this_03,(MethodInfo *)0x0);
               func_?();
             }
           }
         }
         else {
-          puVar26 = (undefined4 *)func_?();
-          uStack_27 = 0;
-          LStack_6._list = (List_1_System_Object_ *)*puVar26;
-          LStack_6._index = puVar26[1];
-          LStack_6._version = puVar26[2];
-          LStack_6._current = (Object *)((_union_154 *)(puVar26 + 3))->methodMetadataHandle;
+          puVar27 = (undefined4 *)func_?();
+          _Stack_40.genericMethod = (Il2CppGenericMethod *)0x0;
+          LStack_6._list = (List_1_System_Object_ *)*puVar27;
+          LStack_6._index = puVar27[1];
+          LStack_6._version = puVar27[2];
+          LStack_6._current = (Object *)((_union_154 *)(puVar27 + 3))->methodMetadataHandle;
           uStack_1 = 1;
           pOStack_28 = (Object *)(auStack_29 + 0x10);
           while( true ) {
@@ -331,42 +328,38 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Execute(ESRotating *this,Editor
             if ((Il2CppRGCTXData *)LStack_6._current == (Il2CppRGCTXData *)0x0) goto code_?;
             pMVar11 = (MVWorldObjectClient *)WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object__get_WorldObjectClient((WorldObjectClientRef_1_System_Object_ *)LStack_6._current,MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__);
             auStack_10._4_8_ = *(undefined8 *)&(this->fields).pivot;
-            pMStack_21 = (MVWorldObjectClient *)(this->fields).pivot.z;
+            pMStack_22 = (MVWorldObjectClient *)(this->fields).pivot.z;
             method_00 = (MethodInfo *)auStack_29;
             pVVar9 = (Vector3 *)func_?();
             if (pMVar11 == (MVWorldObjectClient *)0x0) goto code_?;
-            pivot_02.z = (float)pMStack_21;
+            pivot_02.z = (float)pMStack_22;
             pivot_02.x = (float)auStack_10._4_4_;
             pivot_02.y = (float)auStack_10._8_4_;
-            MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMVar11,pivot_02,*pVVar9,-(float)_Stack_1c * (this->fields).rotationSpeed - uStack_20._4_4_,(MethodInfo *)0x0);
-            MVWorldObjectClient::MVWorldObjectClient_get_SyncRot((Quaternion *)&stack0xffffff34,pMVar11,(MethodInfo *)0x0);
+            MVWorldObjectClient::MVWorldObjectClient_RotateAround(pMVar11,pivot_02,*pVVar9,-fStack_16 * (this->fields).rotationSpeed - uStack_21._4_4_,(MethodInfo *)0x0);
+            MVWorldObjectClient::MVWorldObjectClient_get_SyncRot((Quaternion *)&stack0xffffff38,pMVar11,(MethodInfo *)0x0);
             func_?();
           }
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)(auStack_29 + 0x10),(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__Dispose__,method_00);
           uStack_1 = 0xffffffff;
         }
-        fVar8 = (this->fields).yAcc - fStack_19 * (this->fields).rotateThreshold;
-        (this->fields).yAcc = fVar8;
-        fVar8 = ABS(fVar8);
-        pfVar13 = &(this->fields).rotateThreshold;
-        _Stack_1c.genericMethod = (Il2CppGenericMethod *)(_Stack_1c.genericMethod * (this->fields).rotateThreshold);
-        bVar15 = *pfVar13 <= fVar8 && fVar8 != *pfVar13;
-        fVar8 = (this->fields).xAcc - (float)_Stack_1c;
-        (this->fields).xAcc = fVar8;
-        fVar8 = ABS(fVar8);
-        pfVar13 = &(this->fields).rotateThreshold;
-        cStack_14 = *pfVar13 <= fVar8 && fVar8 != *pfVar13;
+        fVar8 = (this->fields).rotateThreshold;
+        fVar12 = (this->fields).yAcc - fVar8 * fStack_20;
+        (this->fields).yAcc = fVar12;
+        fVar30 = (this->fields).xAcc - fVar8 * fStack_16;
+        bVar15 = fVar8 < ABS(fVar12);
+        (this->fields).xAcc = fVar30;
+        cStack_14 = fVar8 < ABS(fVar30);
       }
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pVVar9 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition(&VStack_30,(DefaultEventSystem_Input *)0x0,(MethodInfo *)pMVar11);
+      pVVar9 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition(&VStack_31,(DefaultEventSystem_Input *)0x0,(MethodInfo *)pMVar11);
       (this->fields).prevMouseX = pVVar9->x;
       pVVar9 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition((Vector3 *)auStack_29,(DefaultEventSystem_Input *)0x0,(MethodInfo *)pMVar11);
       (this->fields).prevMouseY = pVVar9->y;
-      pGVar31 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if (((pGVar31 != (GameEventManager *)0x0) && (pGVar32 = (pGVar31->fields).AvatarCommandsBuildMode, pGVar32 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (this_01 = (pGVar32->fields).LaserCommands, this_01 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+      pGVar32 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if (((pGVar32 != (GameEventManager *)0x0) && (pGVar33 = (pGVar32->fields).AvatarCommandsBuildMode, pGVar33 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (this_01 = (pGVar33->fields).LaserCommands, this_01 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
         GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition(this_01,(this->fields).pivot,(MethodInfo *)0x0);
         *unaff_FS_OFFSET = uStack_3;
         return;
@@ -382,8 +375,8 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Execute(ESRotating *this,Editor
 code_?:
   func_?();
   func_?();
-  pcVar33 = (code *)swi(3);
-  (*pcVar33)();
+  pcVar34 = (code *)swi(3);
+  (*pcVar34)();
   return;
 }
 
@@ -395,7 +388,7 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Exit(ESRotating *this,EditorSta
 {
   pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
   if (((pGVar1 != (GameEventManager *)0x0) && (pGVar2 = (pGVar1->fields).AvatarCommandsBuildMode, pGVar2 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (pGVar3 = (pGVar2->fields).LaserCommands, pGVar3 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
-    GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState(pGVar3,LaserPointerState__Enum_Idle,(MethodInfo *)0x0);
+    UnityEngine.AudioModule.dll::UnityEngine::AudioClip::AudioClip_InvokePCMSetPositionCallback_Internal((AudioClip *)pGVar3,0,(MethodInfo *)0x0);
     pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
     if (((pGVar1 != (GameEventManager *)0x0) && (pGVar2 = (pGVar1->fields).AvatarCommandsBuildMode, pGVar2 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (pGVar3 = (pGVar2->fields).LaserCommands, pGVar3 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
       GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_SetLaserActiveState(pGVar3,0,(MethodInfo *)0x0);
@@ -431,8 +424,9 @@ void Assembly-CSharp.dll::ESRotating::ESRotating__ctor(ESRotating *this,MethodIn
   (this->fields).mouseSensitivity = 10.0;
   this_00 = (List_1_WorldObjectClientRef_ *)func_?(TypeInfo__System__Collections__Generic__List<WorldObjectClientRef>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__List__);
-  (this->fields).targets = this_00;
-  func_?(&(this->fields).targets,this_00);
+  ppLVar1 = &(this->fields).targets;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   ESStateBase::ESStateBase__ctor((ESStateBase *)this,(MethodInfo *)0x0);
   return;
 }

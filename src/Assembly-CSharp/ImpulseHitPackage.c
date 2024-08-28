@@ -31,7 +31,7 @@ void Assembly-CSharp.dll::ImpulseHitPackage::ImpulseHitPackage_ParseAndHandlePac
     key = MVPlayer::MVPlayer_get_WoId(shooter,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::CollectionExtensions::CollectionExtensions_GetValueOrDefault_4((IReadOnlyDictionary_2_System_Int32_System_Single_ *)(this->fields).lastShotTime,key,0.0,float_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<int,_float>_System__Collections__Generic__IReadOnlyDictionary<int,_float>__int__float_);
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedTime((MethodInfo *)0x0);
-    if (0.5 < fVar1 - unaff_retaddr) {
+    if (0.5 < fVar1 - fStack_2) {
       if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MV__WorldObject__InteractionData);
       }
@@ -44,35 +44,35 @@ void Assembly-CSharp.dll::ImpulseHitPackage::ImpulseHitPackage_ParseAndHandlePac
         if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__System__Math);
         }
-        dVar2 = (double)fVar1;
-        if (dVar2 < 0.0) {
+        dVar3 = (double)fVar1;
+        if (dVar3 < 0.0) {
           func_?();
         }
         else {
-          dVar2 = SQRT(dVar2);
+          dVar3 = SQRT(dVar3);
         }
-        fVar1 = (float)dVar2;
+        fVar1 = (float)dVar3;
         interactionStruct.impulse.z = (interactionStruct.impulse.z / fVar1) * 3000.0;
-        uVar3 = CONCAT44((interactionStruct.impulse.y / fVar1) * 3000.0,(interactionStruct.impulse.x / fVar1) * 3000.0);
+        uVar4 = CONCAT44((interactionStruct.impulse.y / fVar1) * 3000.0,(interactionStruct.impulse.x / fVar1) * 3000.0);
       }
       else {
-        uVar3 = interactionStruct.impulse._0_8_;
+        uVar4 = interactionStruct.impulse._0_8_;
       }
       impulse.z = interactionStruct.impulse.z;
-      impulse.x = (float)(int)uVar3;
-      impulse.y = (float)(int)((ulonglong)uVar3 >> 0x20);
+      impulse.x = (float)(int)uVar4;
+      impulse.y = (float)(int)((ulonglong)uVar4 >> 0x20);
       InteractionPackage::InteractionPackage_HandlePackage_3((InteractionPackage *)this,worldObjectClient,shooter,impulse,AvatarModifierPackageType__Enum_NoFriction,(MethodInfo *)0x0);
       this_00 = (this->fields).lastShotTime;
       fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedTime((MethodInfo *)0x0);
       if (this_00 == (Dictionary_2_System_Int32_System_Single_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::Dictionary_2_System_Int32_System_Single__set_Item(this_00,key,fVar1,MethodInfo__System__Collections__Generic__Dictionary<int,_float>__set_Item_int__float_);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::Dictionary_2_System_Int32_System_Single__set_Item(this_00,iStack_5,fVar1,MethodInfo__System__Collections__Generic__Dictionary<int,_float>__set_Item_int__float_);
     }
     return;
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -90,7 +90,7 @@ void Assembly-CSharp.dll::ImpulseHitPackage::ImpulseHitPackage__ctor(ImpulseHitP
   this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_float>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Dictionary__);
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).lastShotTime = (Dictionary_2_System_Int32_System_Single_ *)this_00;
+  ((ImpulseHitPackage__Fields *)method_00)->lastShotTime = (Dictionary_2_System_Int32_System_Single_ *)this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;

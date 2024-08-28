@@ -5,7 +5,7 @@ Quaternion * Assembly-CSharp.dll::GhostEye+SneakySideToSide::GhostEye_SneakySide
 
 {
   fStack_1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar2 = fStack_1 * (this->fields)._.direction * (this->fields)._.rotatationPrSecond * 6.2831855 + (this->fields)._.wrappedTime;
+  fVar2 = (this->fields)._.direction * fStack_1 * (this->fields)._.rotatationPrSecond * 6.2831855 + (this->fields)._.wrappedTime;
   (this->fields)._.wrappedTime = fVar2;
   while (6.2831855 <= fVar2) {
     fVar2 = (this->fields)._.wrappedTime - 6.2831855;

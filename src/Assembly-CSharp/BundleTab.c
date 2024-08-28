@@ -215,8 +215,8 @@ IEnumerator * Assembly-CSharp.dll::BundleTab::BundleTab_LerpToSize(BundleTab *th
   method_00 = TypeInfo__BundleTab___LerpToSize_d__20;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
   value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
   func_?(value + 2,this);
   value[2].monitor = (MonitorData *)size;
   return (IEnumerator *)value;
@@ -239,9 +239,10 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_OnBadgeLoaded(BundleTab *this,Uni
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)pRVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 == 0) {
     pTVar3 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::DownloadHandlerTexture::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
-    (this->fields).badgeTextureAsset = pTVar3;
-    func_?(&(this->fields).badgeTextureAsset,pTVar3);
-    pTVar3 = (this->fields).badgeTextureAsset;
+    ppTVar4 = &(this->fields).badgeTextureAsset;
+    *ppTVar4 = pTVar3;
+    func_?(ppTVar4,pTVar3);
+    pTVar3 = *ppTVar4;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -249,11 +250,11 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_OnBadgeLoaded(BundleTab *this,Uni
     if (bVar2 != 0) {
       pRVar1 = (this->fields).levelBadge;
       if (pRVar1 != (RawImage *)0x0) {
-        UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture(pRVar1,(Texture *)(this->fields).badgeTextureAsset,(MethodInfo *)0x0);
+        UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture(pRVar1,(Texture *)*ppTVar4,(MethodInfo *)0x0);
         pRVar1 = (this->fields).levelBadge;
         if (pRVar1 != (RawImage *)0x0) {
-          pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0);
-          if (pGVar4 != (GameObject *)0x0) {
+          pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0);
+          if (pGVar5 != (GameObject *)0x0) {
             if (pcRam_? == (code *)0x0) {
               pcRam_? = (code *)func_?();
             }
@@ -263,8 +264,8 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_OnBadgeLoaded(BundleTab *this,Uni
         }
       }
       func_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
   }
@@ -290,7 +291,7 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_OnDestroy(BundleTab *this,MethodI
   }
   BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
   (this->fields).badgeTextureAsset = (Texture2D *)0x0;
-  func_?(&(this->fields).badgeTextureAsset);
+  func_?();
   return;
 }
 

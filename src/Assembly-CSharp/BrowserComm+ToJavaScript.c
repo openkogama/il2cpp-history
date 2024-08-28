@@ -154,7 +154,8 @@ void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_Ext
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)this,key,pOVar3,MethodInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>__Add_int__BrowserComm__Callback_);
   this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
-  pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff8);
+  puStack_4 = (undefined *)TypeInfo__BrowserComm__ToJavaScript->static_fields->callbackIdCounter;
+  pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&puStack_4);
   if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) goto code_?;
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_callbackId,pOVar3,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
   if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
@@ -184,16 +185,16 @@ code_?:
     }
   }
   else {
-    iVar4 = func_?(pSVar2,(args->klass->_0).element_class);
-    if (iVar4 != 0) goto code_?;
-    uVar5 = func_?(0);
-    func_?(uVar5);
+    iVar5 = func_?(pSVar2,(args->klass->_0).element_class);
+    if (iVar5 != 0) goto code_?;
+    uVar6 = func_?(0);
+    func_?(uVar6);
   }
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

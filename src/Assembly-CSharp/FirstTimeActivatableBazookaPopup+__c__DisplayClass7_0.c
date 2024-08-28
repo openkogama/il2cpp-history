@@ -11,7 +11,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup+<>c__DisplayClass7_0:
   pIVar1 = (this->fields).prioritizedItem;
   if (pIVar1 != (InventoryItem *)0x0) {
     iVar2 = (pIVar1->fields).itemCategoryID;
-    iVar3 = (((this->fields).prioritizedItem)->fields).slotPosition;
+    iVar3 = (pIVar1->fields).slotPosition;
     if (x != (IPlayerInventory *)0x0) {
       pIVar4 = x->klass;
       uVar5 = 0;
@@ -20,7 +20,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup+<>c__DisplayClass7_0:
       if (uVar6 != 0) {
         do {
           if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IPlayerInventory) {
-            ppMVar7 = &(&(x->klass->vtable).ActivateAtCategoryWithSlot)[x->klass->interfaceOffsets[uVar5].offset].method;
+            ppMVar7 = &(&(x->klass->vtable).ActivateAtCategoryWithSlot)[pIVar4->interfaceOffsets[uVar5].offset].method;
             goto code_?;
           }
           uVar5 = uVar5 + 1;

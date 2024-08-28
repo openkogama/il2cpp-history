@@ -12,7 +12,7 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+Idle::AdvancedGhostBehaviour_Id
       UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch(this_00,fVar3 * 3.0,(MethodInfo *)0x0);
       pGVar4 = (pAVar2->fields).ghostBody;
       if (pGVar4 != (GhostBody *)0x0) {
-        (pGVar4->fields).angularMaxRotation = fVar3 * (pGVar4->fields).angularMaxRotationBase;
+        (pGVar4->fields).angularMaxRotation = (pGVar4->fields).angularMaxRotationBase * fVar3;
         return;
       }
     }

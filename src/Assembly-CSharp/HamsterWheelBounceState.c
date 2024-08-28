@@ -49,41 +49,47 @@ Vector3 * Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState_
   fVar1 = -inVector.x;
   fVar2 = -inVector.y;
   fVar3 = -inVector.z;
-  uVar4 = inVector._0_8_ ^ 0x8000000080000000;
-  inVector.x = (float)uVar4;
-  inVector.y = (float)(uVar4 >> 0x20);
-  inVector.z = fVar3;
-  fVar5 = (float10)func_?(&inVector,0);
-  fVar6 = (float)fVar5;
-  fVar7 = normal.x * fVar6;
-  fVar8 = normal.y * fVar6;
-  fVar6 = normal.z * fVar6;
-  uVar9 = 0;
-  uVar10 = 0;
-  uVar11 = 0;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Mathf,fVar7,0,0,0);
+    func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
   }
-  fVar12 = fVar7 * fVar7 + fVar8 * fVar8 + fVar6 * fVar6;
-  if (fVar12 < TypeInfo__UnityEngine__Mathf->static_fields->Epsilon) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3,fVar7,uVar9,uVar10,uVar11);
-      cRam_? = '\x01';
-    }
-    pVVar13 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uStack_14._0_4_ = (pVVar13->zeroVector).x;
-    uStack_14._4_4_ = (pVVar13->zeroVector).y;
-    fVar6 = (pVVar13->zeroVector).z;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  dVar4 = (double)(fVar2 * fVar2 + fVar1 * fVar1 + fVar3 * fVar3);
+  if (dVar4 < 0.0) {
+    func_?();
   }
   else {
-    fVar15 = fVar1 * fVar7 + fVar2 * fVar8 + fVar3 * fVar6;
-    fVar6 = (fVar6 * fVar15) / fVar12;
-    uStack_14 = CONCAT44((fVar8 * fVar15) / fVar12,(fVar7 * fVar15) / fVar12);
+    dVar4 = SQRT(dVar4);
   }
-  __return_storage_ptr__->x = (float)uStack_14 + ((float)uStack_14 - fVar1);
-  __return_storage_ptr__->y = uStack_14._4_4_ + (uStack_14._4_4_ - fVar2);
-  __return_storage_ptr__->z = fVar6 + (fVar6 - fVar3);
+  fVar5 = (float)dVar4;
+  fVar6 = normal.x * fVar5;
+  fVar7 = normal.y * fVar5;
+  fVar5 = normal.z * fVar5;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Mathf);
+    cRam_? = '\x01';
+  }
+  fVar8 = fVar6 * fVar6 + fVar7 * fVar7 + fVar5 * fVar5;
+  if (fVar8 < TypeInfo__UnityEngine__Mathf->static_fields->Epsilon) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Vector3);
+      cRam_? = '\x01';
+    }
+    pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uStack_10._0_4_ = (pVVar9->zeroVector).x;
+    uStack_10._4_4_ = (pVVar9->zeroVector).y;
+    fVar5 = (pVVar9->zeroVector).z;
+  }
+  else {
+    fVar11 = fVar7 * fVar2 + fVar6 * fVar1 + fVar5 * fVar3;
+    fVar5 = (fVar5 * fVar11) / fVar8;
+    uStack_10 = CONCAT44((fVar7 * fVar11) / fVar8,(fVar6 * fVar11) / fVar8);
+  }
+  __return_storage_ptr__->x = (float)uStack_10 + ((float)uStack_10 - fVar1);
+  __return_storage_ptr__->y = uStack_10._4_4_ + (uStack_10._4_4_ - fVar2);
+  __return_storage_ptr__->z = fVar5 + (fVar5 - fVar3);
   return __return_storage_ptr__;
 }
 
@@ -214,20 +220,21 @@ void Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState_Updat
             inVector.x = mvControllerColliderHit.slopeNormal.z;
             inVector.y = mvControllerColliderHit.impactVelocity.x;
             pVVar14 = HamsterWheelBounceState_GetOutVectorFromInVector((Vector3 *)&mvControllerColliderHit.hit.interactionFlags,normal,inVector,(MethodInfo *)0x0);
+            this_00 = &(this->fields).bounceVelocity;
             fVar15 = pVVar14->y;
             fVar12 = pVVar14->z;
-            (this->fields).bounceVelocity.x = pVVar14->x;
-            (this->fields).bounceVelocity.y = fVar15;
+            this_00->x = pVVar14->x;
+            this_00->y = fVar15;
             (this->fields).bounceVelocity.z = fVar12;
-            UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(&(this->fields).bounceVelocity,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(this_00,(MethodInfo *)0x0);
             if (fVar13 < 10.0) {
               fVar13 = fVar13 * (fVar13 / 10.0);
             }
-            uVar16 = (this->fields).bounceVelocity.x;
-            uVar17 = (this->fields).bounceVelocity.y;
+            uVar16 = this_00->x;
+            uVar17 = this_00->y;
             fVar12 = (this->fields).bounceVelocity.z;
-            (this->fields).bounceVelocity.x = (float)uVar16 * fVar13;
-            (this->fields).bounceVelocity.y = (float)uVar17 * fVar13;
+            this_00->x = (float)uVar16 * fVar13;
+            this_00->y = (float)uVar17 * fVar13;
             (this->fields).bounceVelocity.z = fVar12 * fVar13;
           }
         }

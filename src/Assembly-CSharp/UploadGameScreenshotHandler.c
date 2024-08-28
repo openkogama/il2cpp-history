@@ -31,8 +31,8 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
   if (pMVar1 != (MVGameControllerBase *)0x0) {
     this_00 = (pMVar1->fields).game;
-    this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ScreenshotUploadedEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__UploadGameScreenshotHandler__OnScreenShotUploaded_System__Object__ScreenshotUploadedEventArgs_,(MethodInfo *)0x0);
+    this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ScreenshotUploadedEventArgs>);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)this,MethodInfo__UploadGameScreenshotHandler__OnScreenShotUploaded_System__Object__ScreenshotUploadedEventArgs_,(MethodInfo *)0x0);
     if (this_00 != (MVNetworkGame *)0x0) {
       MVNetworkGame::MVNetworkGame_remove_ScreenshotUploaded(this_00,(EventHandler_1_ScreenshotUploadedEventArgs_ *)this_01,(MethodInfo *)0x0);
       pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
@@ -75,13 +75,14 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar2,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)pEVar3,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
       pOVar5 = (Object__Class *)TM::TM__(StringLiteral_Screenshot_Successfully_uploaded,(MethodInfo *)0x0);
       if (value != (Object *)0x0) {
-        value[1].klass = pOVar5;
-        func_?(value + 1,pOVar5);
+        pOVar6 = value + 1;
+        pOVar6->klass = pOVar5;
+        func_?(pOVar6,pOVar5);
         if (args != (ScreenshotUploadedEventArgs *)0x0) {
           if ((args->fields).Uploaded == 0) {
             pOVar5 = (Object__Class *)TM::TM__(StringLiteral_Failed_to_upload_screenshot,(MethodInfo *)0x0);
-            value[1].klass = pOVar5;
-            func_?(value + 1,pOVar5);
+            pOVar6->klass = pOVar5;
+            func_?(pOVar6,pOVar5);
           }
           pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
           callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>);
@@ -96,8 +97,8 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -203,8 +204,8 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
   if (pMVar1 != (MVGameControllerBase *)0x0) {
     pMVar2 = (pMVar1->fields).game;
-    this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)object_00,MethodInfo__UploadGameScreenshotHandler__OnScreenShotUploaded_System__Object__ScreenshotUploadedEventArgs_,(MethodInfo *)0x0);
+    this_01 = (EventHandler_1_Object_ *)func_?();
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)object_00,MethodInfo__UploadGameScreenshotHandler__OnScreenShotUploaded_System__Object__ScreenshotUploadedEventArgs_,(MethodInfo *)0x0);
     if (pMVar2 != (MVNetworkGame *)0x0) {
       MVNetworkGame::MVNetworkGame_add_ScreenshotUploaded(pMVar2,(EventHandler_1_ScreenshotUploadedEventArgs_ *)this_01,(MethodInfo *)0x0);
       if (cRam_? == '\0') {

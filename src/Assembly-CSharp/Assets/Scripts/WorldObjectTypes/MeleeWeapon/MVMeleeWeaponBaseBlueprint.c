@@ -15,7 +15,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::MVMele
       if ((pMVar1 != (MVCubeModelInstance *)0x0) && (this_01 = (pMVar1->fields)._._.transform, this_01 != (Transform *)0x0)) {
         fVar4 = -0.16;
         pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,this_01,(MethodInfo *)0x0);
-        uVar6 = CONCAT44(fVar3 * pVVar5->y * 0.75,fVar4) ^ 0x8000000000000000;
+        uVar6 = CONCAT44(pVVar5->y * fVar3 * 0.75,fVar4) ^ 0x8000000000000000;
         value.z = -0.16;
         value.x = (float)(int)uVar6;
         value.y = (float)(int)(uVar6 >> 0x20);

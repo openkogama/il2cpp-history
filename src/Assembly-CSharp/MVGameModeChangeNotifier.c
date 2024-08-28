@@ -170,7 +170,7 @@ void Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier__ct
   this_00 = (List_1_IGameStateControllerSubscriber_ *)func_?(TypeInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__List__);
   method_00 = (MethodInfo *)&(this->fields).UpdateList;
-  (this->fields).UpdateList = this_00;
+  *(List_1_IGameStateControllerSubscriber_ **)method_00 = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
   UVar1 = MVGameModeChangeNotifier_GetPresentState(this,(MethodInfo *)0x0);

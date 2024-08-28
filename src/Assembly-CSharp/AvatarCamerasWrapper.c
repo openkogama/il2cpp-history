@@ -87,7 +87,7 @@ void Assembly-CSharp.dll::AvatarCamerasWrapper::AvatarCamerasWrapper__ctor(Avata
   this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,GamePassesHighScoreList+HighScoreListData]::Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Dictionary__);
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).avatarCameras = (Dictionary_2_CameraType_MVCameraBase_ *)this_00;
+  ((AvatarCamerasWrapper__Fields *)method_00)->avatarCameras = (Dictionary_2_CameraType_MVCameraBase_ *)this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;

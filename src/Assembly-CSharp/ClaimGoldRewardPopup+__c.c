@@ -45,7 +45,7 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup+<>c::ClaimGoldRewardPopup_c__Crea
     if (uVar4 != 0) {
       do {
         if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-          ppMVar5 = &(&(pIVar1->klass->vtable).get_RewardedAdNotAvailableText)[pIVar1->klass->interfaceOffsets[uVar3].offset].method;
+          ppMVar5 = &(&(pIVar1->klass->vtable).get_RewardedAdNotAvailableText)[pIVar2->interfaceOffsets[uVar3].offset].method;
           goto code_?;
         }
         uVar3 = uVar3 + 1;

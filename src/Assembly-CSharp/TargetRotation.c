@@ -13,7 +13,7 @@ Quaternion * Assembly-CSharp.dll::TargetRotation::TargetRotation_GetLerpRotation
   fVar5 = (this->fields).eulerAngles.y;
   fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_LerpAngle(a,fVar2,fVar4 * fVar3,(MethodInfo *)0x0);
-  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_LerpAngle(a_00,fVar5,fVar6 * (this->fields).lerpSpeedY,(MethodInfo *)0x0);
+  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_LerpAngle(a_00,fVar5,(this->fields).lerpSpeedY * fVar6,(MethodInfo *)0x0);
   euler.y = fVar4 * 0.017453292;
   euler.x = fVar2 * 0.017453292;
   euler.z = 0.0;

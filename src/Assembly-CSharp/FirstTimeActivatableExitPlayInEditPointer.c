@@ -32,14 +32,15 @@ void Assembly-CSharp.dll::FirstTimeActivatableExitPlayInEditPointer::FirstTimeAc
     func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
+  pDVar1 = TypeInfo__DesktopPlayModeController;
   this_00 = (Component *)TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (this_00 == (Component *)0x0) {
     func_?();
-    pDVar1 = extraout_EDX;
+    this_00 = extraout_EDX;
   }
   else {
-    pDVar1 = TypeInfo__DesktopPlayModeController;
-    if (((TypeInfo__DesktopPlayModeController->_1).naturalAligment <= (this_00->klass->_1).naturalAligment) && ((this_00->klass->_1).typeHierarchy[(TypeInfo__DesktopPlayModeController->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__DesktopPlayModeController)) {
+    bVar2 = (TypeInfo__DesktopPlayModeController->_1).naturalAligment;
+    if ((bVar2 <= (this_00->klass->_1).naturalAligment) && ((this_00->klass->_1).typeHierarchy[bVar2 - 1] == (Il2CppClass *)TypeInfo__DesktopPlayModeController)) {
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(this_00,(MethodInfo *)0x0);
       callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,MethodInfo__FirstTimeActivatableExitPlayInEditPointer___OnShown_b__9_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
@@ -51,8 +52,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableExitPlayInEditPointer::FirstTimeAc
     }
   }
   func_?(this_00,pDVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -108,14 +109,15 @@ void Assembly-CSharp.dll::FirstTimeActivatableExitPlayInEditPointer::FirstTimeAc
     func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
+  pDVar4 = TypeInfo__DesktopPlayModeController;
   this_00 = (Component *)TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (this_00 == (Component *)0x0) {
     func_?();
-    pDVar4 = extraout_EDX;
+    this_00 = extraout_EDX;
   }
   else {
-    pDVar4 = TypeInfo__DesktopPlayModeController;
-    if (((TypeInfo__DesktopPlayModeController->_1).naturalAligment <= (this_00->klass->_1).naturalAligment) && ((this_00->klass->_1).typeHierarchy[(TypeInfo__DesktopPlayModeController->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__DesktopPlayModeController)) {
+    bVar5 = (TypeInfo__DesktopPlayModeController->_1).naturalAligment;
+    if ((bVar5 <= (this_00->klass->_1).naturalAligment) && ((this_00->klass->_1).typeHierarchy[bVar5 - 1] == (Il2CppClass *)TypeInfo__DesktopPlayModeController)) {
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(this_00,(MethodInfo *)0x0);
       callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this,MethodInfo__FirstTimeActivatableExitPlayInEditPointer___Update_b__8_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
@@ -134,8 +136,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableExitPlayInEditPointer::FirstTimeAc
     }
   }
   func_?(this_00,pDVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -177,7 +179,11 @@ bool Assembly-CSharp.dll::FirstTimeActivatableExitPlayInEditPointer::FirstTimeAc
     return bVar1;
   }
   bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy(this_00,(MethodInfo *)0x0);
-  if (((bVar1 ^ 1) & bVar3) == 0) {
+  bVar4 = 0;
+  if (bVar1 == 0) {
+    bVar4 = bVar3;
+  }
+  if (bVar4 == 0) {
     return 0;
   }
   return (this->fields).canShow;

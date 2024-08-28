@@ -30,8 +30,9 @@ bool Assembly-CSharp.dll::AddDotsToTruncatedText+<Start>d__1::AddDotsToTruncated
         (*(code *)(pTVar2->klass->vtable).set_color.method)(pTVar2,(this->fields)._c_5__2.r,(this->fields)._c_5__2.g,(this->fields)._c_5__2.b,(this->fields)._c_5__2.a,(pTVar2->klass->vtable).get_raycastTarget.methodPtr);
         this_03 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(TypeInfo__UnityEngine__WaitForEndOfFrame);
         UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor(this_03,(MethodInfo *)0x0);
-        (this->fields).__2__current = (Object *)this_03;
-        func_?(&(this->fields).__2__current,this_03);
+        ppOVar7 = &(this->fields).__2__current;
+        *ppOVar7 = (Object *)this_03;
+        func_?(ppOVar7,this_03);
         (this->fields).__1__state = 1;
         return 1;
       }
@@ -41,9 +42,10 @@ bool Assembly-CSharp.dll::AddDotsToTruncatedText+<Start>d__1::AddDotsToTruncated
     if (iVar1 == 1) {
       (this->fields).__1__state = -1;
       if ((this_00 == (AddDotsToTruncatedText *)0x0) || (pTVar2 = (this_00->fields).text, pTVar2 == (Text *)0x0)) goto code_?;
-      pSVar7 = (String *)(*(code *)(pTVar2->klass->vtable).get_text.method)(pTVar2,(pTVar2->klass->vtable).set_text.methodPtr);
-      (this->fields)._textValue_5__4 = pSVar7;
-      func_?(&(this->fields)._textValue_5__4,pSVar7);
+      pSVar8 = (String *)(*(code *)(pTVar2->klass->vtable).get_text.method)(pTVar2,(pTVar2->klass->vtable).set_text.methodPtr);
+      ppSVar9 = &(this->fields)._textValue_5__4;
+      *ppSVar9 = pSVar8;
+      func_?(ppSVar9,pSVar8);
       (this->fields)._addDots_5__5 = 0;
     }
     else {
@@ -54,73 +56,75 @@ bool Assembly-CSharp.dll::AddDotsToTruncatedText+<Start>d__1::AddDotsToTruncated
       if (this_00 == (AddDotsToTruncatedText *)0x0) goto code_?;
     }
     pTVar2 = (this_00->fields).text;
-    if ((pTVar2 != (Text *)0x0) && (pTVar8 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_cachedTextGenerator(pTVar2,(MethodInfo *)0x0), pTVar8 != (TextGenerator *)0x0)) {
-      iVar9 = UnityEngine.TextRenderingModule.dll::UnityEngine::TextGenerator::TextGenerator_get_fontSizeUsedForBestFit(pTVar8,(MethodInfo *)0x0);
-      if (iVar9 == 0) {
+    if ((pTVar2 != (Text *)0x0) && (pTVar10 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_cachedTextGenerator(pTVar2,(MethodInfo *)0x0), pTVar10 != (TextGenerator *)0x0)) {
+      iVar11 = UnityEngine.TextRenderingModule.dll::UnityEngine::TextGenerator::TextGenerator_get_fontSizeUsedForBestFit(pTVar10,(MethodInfo *)0x0);
+      if (iVar11 == 0) {
         this_01 = (SubscribableVariable_1_System_Single_ *)func_?();
         SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor(this_01,0.1,(MethodInfo *)0x0);
-        (this->fields).__2__current = (Object *)this_01;
-        func_?(&(this->fields).__2__current);
+        ppOVar7 = &(this->fields).__2__current;
+        *ppOVar7 = (Object *)this_01;
+        func_?(ppOVar7);
         (this->fields).__1__state = 2;
         return 1;
       }
       pTVar2 = (this_00->fields).text;
       if (pTVar2 != (Text *)0x0) {
-        bVar10 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_resizeTextForBestFit(pTVar2,(MethodInfo *)0x0);
-        if (bVar10 != 0) {
+        bVar12 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_resizeTextForBestFit(pTVar2,(MethodInfo *)0x0);
+        if (bVar12 != 0) {
           pTVar2 = (this_00->fields).text;
-          if ((pTVar2 == (Text *)0x0) || (pTVar8 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_cachedTextGenerator(pTVar2,(MethodInfo *)0x0), pTVar8 == (TextGenerator *)0x0)) goto code_?;
-          iVar9 = UnityEngine.TextRenderingModule.dll::UnityEngine::TextGenerator::TextGenerator_get_fontSizeUsedForBestFit(pTVar8,(MethodInfo *)0x0);
-          UnityEngine.UI.dll::UnityEngine::UI::Text::Text_set_fontSize(pTVar2,iVar9,(MethodInfo *)0x0);
+          if ((pTVar2 == (Text *)0x0) || (pTVar10 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_cachedTextGenerator(pTVar2,(MethodInfo *)0x0), pTVar10 == (TextGenerator *)0x0)) goto code_?;
+          iVar11 = UnityEngine.TextRenderingModule.dll::UnityEngine::TextGenerator::TextGenerator_get_fontSizeUsedForBestFit(pTVar10,(MethodInfo *)0x0);
+          UnityEngine.UI.dll::UnityEngine::UI::Text::Text_set_fontSize(pTVar2,iVar11,(MethodInfo *)0x0);
         }
-        iVar9 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
-        iVar11 = AddDotsToTruncatedText::AddDotsToTruncatedText_CalculateLengthOfMessage(this_00,::StringLiteral____,(MethodInfo *)0x0);
-        pSVar7 = (this->fields)._textValue_5__4;
-        pSVar12 = (String *)((float)iVar11 / ((float)iVar9 / 1920.0));
-        if (pSVar7 != (String *)0x0) {
-          ppSVar13 = &(this->fields)._textValue_5__4;
-          while (0 < (pSVar7->fields)._stringLength) {
-            iVar11 = AddDotsToTruncatedText::AddDotsToTruncatedText_CalculateLengthOfMessage(this_00,*ppSVar13,(MethodInfo *)0x0);
+        iVar11 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
+        iVar13 = AddDotsToTruncatedText::AddDotsToTruncatedText_CalculateLengthOfMessage(this_00,::StringLiteral____,(MethodInfo *)0x0);
+        ppSVar9 = &(this->fields)._textValue_5__4;
+        pSVar8 = *ppSVar9;
+        pSVar14 = (String *)((float)iVar13 / ((float)iVar11 / 1920.0));
+        if (pSVar8 != (String *)0x0) {
+          while (0 < (pSVar8->fields)._stringLength) {
+            iVar13 = AddDotsToTruncatedText::AddDotsToTruncatedText_CalculateLengthOfMessage(this_00,*ppSVar9,(MethodInfo *)0x0);
             pTVar2 = (this_00->fields).text;
             if ((pTVar2 == (Text *)0x0) || (this_02 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform((Graphic *)pTVar2,(MethodInfo *)0x0), this_02 == (RectTransform *)0x0)) goto code_?;
-            pRVar14 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe4,this_02,(MethodInfo *)0x0);
-            if ((float)iVar11 / ((float)iVar9 / 1920.0) <= pRVar14->m_Width - (float)pSVar12) break;
+            pRVar15 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe4,this_02,(MethodInfo *)0x0);
+            if ((float)iVar13 / ((float)iVar11 / 1920.0) <= pRVar15->m_Width - (float)pSVar14) break;
+            pSVar8 = *ppSVar9;
             (this->fields)._addDots_5__5 = 1;
-            if (*ppSVar13 == (String *)0x0) goto code_?;
-            iVar1 = ((*ppSVar13)->fields)._stringLength + -1;
-            iVar11 = 0;
+            if (pSVar8 == (String *)0x0) goto code_?;
+            iVar1 = (pSVar8->fields)._stringLength + -1;
+            iVar13 = 0;
             if (-1 < iVar1) {
-              iVar11 = iVar1;
+              iVar13 = iVar1;
             }
-            pSVar12 = mscorlib.dll::System::String::String_Remove(*ppSVar13,iVar11,1,(MethodInfo *)0x0);
-            *ppSVar13 = pSVar12;
+            pSVar14 = mscorlib.dll::System::String::String_Remove(pSVar8,iVar13,1,(MethodInfo *)0x0);
+            *ppSVar9 = pSVar14;
             func_?();
             pTVar2 = (this_00->fields).text;
             if (pTVar2 == (Text *)0x0) goto code_?;
-            (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,*ppSVar13,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-            pSVar7 = *ppSVar13;
-            if (pSVar7 == (String *)0x0) goto code_?;
+            (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,*ppSVar9,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+            pSVar8 = *ppSVar9;
+            if (pSVar8 == (String *)0x0) goto code_?;
           }
           if ((this->fields)._addDots_5__5 != 0) {
             pTVar2 = (this_00->fields).text;
             if (pTVar2 == (Text *)0x0) goto code_?;
-            pSVar7 = (String *)(*(code *)(pTVar2->klass->vtable).get_text.method)(pTVar2,(pTVar2->klass->vtable).set_text.methodPtr);
-            pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar7,::StringLiteral____,(MethodInfo *)0x0);
-            (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,pSVar7,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+            pSVar8 = (String *)(*(code *)(pTVar2->klass->vtable).get_text.method)(pTVar2,(pTVar2->klass->vtable).set_text.methodPtr);
+            pSVar8 = mscorlib.dll::System::String::String_Concat_3(pSVar8,::StringLiteral____,(MethodInfo *)0x0);
+            (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,pSVar8,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
           }
           pTVar2 = (this_00->fields).text;
           if (pTVar2 != (Text *)0x0) {
-            iVar9 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize(pTVar2,(MethodInfo *)0x0);
-            pTVar15 = (this_00->fields).text;
-            if (pTVar15 != (Text *)0x0) {
-              iVar11 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_resizeTextMinSize(pTVar15,(MethodInfo *)0x0);
-              pTVar15 = (this_00->fields).text;
-              if (pTVar15 != (Text *)0x0) {
-                iVar16 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_resizeTextMaxSize(pTVar15,(MethodInfo *)0x0);
-                if ((iVar11 <= iVar9) && (iVar11 = iVar9, iVar16 < iVar9)) {
-                  iVar11 = iVar16;
+            iVar11 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize(pTVar2,(MethodInfo *)0x0);
+            pTVar16 = (this_00->fields).text;
+            if (pTVar16 != (Text *)0x0) {
+              iVar13 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_resizeTextMinSize(pTVar16,(MethodInfo *)0x0);
+              pTVar16 = (this_00->fields).text;
+              if (pTVar16 != (Text *)0x0) {
+                iVar17 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_resizeTextMaxSize(pTVar16,(MethodInfo *)0x0);
+                if ((iVar13 <= iVar11) && (iVar13 = iVar11, iVar17 < iVar11)) {
+                  iVar13 = iVar17;
                 }
-                UnityEngine.UI.dll::UnityEngine::UI::Text::Text_set_fontSize(pTVar2,iVar11,(MethodInfo *)0x0);
+                UnityEngine.UI.dll::UnityEngine::UI::Text::Text_set_fontSize(pTVar2,iVar13,(MethodInfo *)0x0);
                 pTVar2 = (this_00->fields).text;
                 (this->fields)._c_5__2.a = (this->fields)._alpha_5__3;
                 if (pTVar2 != (Text *)0x0) {
@@ -136,9 +140,9 @@ bool Assembly-CSharp.dll::AddDotsToTruncatedText+<Start>d__1::AddDotsToTruncated
   }
 code_?:
   func_?();
-  pcVar17 = (code *)swi(3);
-  bVar10 = (*pcVar17)();
-  return bVar10;
+  pcVar18 = (code *)swi(3);
+  bVar12 = (*pcVar18)();
+  return bVar12;
 }
 
 

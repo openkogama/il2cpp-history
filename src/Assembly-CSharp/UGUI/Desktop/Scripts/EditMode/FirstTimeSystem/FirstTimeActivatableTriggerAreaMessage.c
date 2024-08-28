@@ -61,8 +61,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::Fir
   method_00 = TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__WorldObjectTypeInShopChecker;
   value = (WorldObjectTypeInShopChecker *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (this->fields).inShopChecker = value;
-  func_?(&(this->fields).inShopChecker,value);
+  ppWVar1 = &(this->fields).inShopChecker;
+  *ppWVar1 = value;
+  func_?(ppWVar1,value);
   FirstTimeActivatableGotItPointer::FirstTimeActivatableGotItPointer__ctor((FirstTimeActivatableGotItPointer *)this,(MethodInfo *)0x0);
   return;
 }
@@ -94,17 +95,21 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::Fir
       (this->fields)._._.isRegistered = 1;
     }
     FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-    bVar3 = 0;
+    cVar3 = '\0';
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
       bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy(pGVar2,(MethodInfo *)0x0);
       bVar5 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory((this->fields).inventoryButton,(MethodInfo *)0x0);
-      return bVar5 & (bVar3 ^ 1) & bVar4 & bVar1;
+      bVar6 = 0;
+      if (cVar3 == '\0') {
+        bVar6 = bVar5 & bVar4 & bVar1;
+      }
+      return bVar6;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  bVar1 = (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  bVar1 = (*pcVar7)();
   return bVar1;
 }
 

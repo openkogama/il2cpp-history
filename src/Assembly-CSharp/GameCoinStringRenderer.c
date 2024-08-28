@@ -124,8 +124,9 @@ void Assembly-CSharp.dll::GameCoinStringRenderer::GameCoinStringRenderer__ctor(G
   }
   this_00 = (Queue_1_GameCoinStringRenderer_PriceTagString_ *)func_?(TypeInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>);
   mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32]::Stack_1_System_Int32___ctor((Stack_1_System_Int32_ *)this_00,MethodInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>__Queue__);
-  (this->fields).strings = this_00;
-  func_?(&(this->fields).strings,this_00);
+  ppQVar1 = &(this->fields).strings;
+  *ppQVar1 = this_00;
+  func_?(ppQVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }

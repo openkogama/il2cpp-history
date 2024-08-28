@@ -11,15 +11,15 @@ void Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox_Destroy(MVTriggerBox *this,
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).triggerBoxEvents;
-  pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar2,(Object *)this,MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+  pEVar2 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar2,(Object *)this,MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
   if (pTVar1 != (TriggerBoxEvents *)0x0) {
-    TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter(pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
+    TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter(pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar2,(MethodInfo *)0x0);
     pTVar1 = (this->fields).triggerBoxEvents;
-    pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar2,(Object *)this,MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+    pEVar2 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar2,(Object *)this,MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
     if (pTVar1 != (TriggerBoxEvents *)0x0) {
-      TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit(pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
+      TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit(pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar2,(MethodInfo *)0x0);
       MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
       return;
     }
@@ -51,30 +51,26 @@ void Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox_Enter(MVTriggerBox *this,in
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields)._._._.outputLinkRefs;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_8,this_00,MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__);
-    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
-    LStack_6._index = pLVar7->_index;
-    LStack_6._version = pLVar7->_version;
-    LStack_6._current = *(Object **)&pLVar7->_current;
-    LStack_8._version = 0;
+    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_7,this_00,MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__);
+    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
+    LStack_8._index = pLVar6->_index;
+    LStack_8._version = pLVar6->_version;
+    LStack_8._current = *(Object **)&pLVar6->_current;
+    LStack_7._version = 0;
     uStack_1 = 1;
-    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
+    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
     while( true ) {
-      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__);
+      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__);
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__,unaff_EDI);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&LStack_8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      *(undefined1 *)((int)LStack_6._current + 0x14) = 1;
+      if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0) break;
+      *(undefined1 *)((int)LStack_8._current + 0x14) = 1;
     }
   }
   func_?();
@@ -104,30 +100,26 @@ void Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox_Exit(MVTriggerBox *this,Met
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields)._._._.outputLinkRefs;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_8,this_00,MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__);
-    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
-    LStack_6._index = pLVar7->_index;
-    LStack_6._version = pLVar7->_version;
-    LStack_6._current = *(Object **)&pLVar7->_current;
-    LStack_8._version = 0;
+    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_7,this_00,MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__);
+    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
+    LStack_8._index = pLVar6->_index;
+    LStack_8._version = pLVar6->_version;
+    LStack_8._current = *(Object **)&pLVar6->_current;
+    LStack_7._version = 0;
     uStack_1 = 1;
-    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
+    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
     while( true ) {
-      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__);
+      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__);
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__,unaff_EDI);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&LStack_8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      *(undefined1 *)((int)LStack_6._current + 0x14) = 0;
+      if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0) break;
+      *(undefined1 *)((int)LStack_8._current + 0x14) = 0;
     }
   }
   func_?();
@@ -150,44 +142,43 @@ Vector3 * Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox_GetClosestGridPoint(Ve
   if (this_00 != (GameObject *)0x0) {
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffe0,this_01,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffd4,this_01,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      pSVar1 = TypeInfo__SharedCubeFunctions;
-      pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar3 = (pVVar2->oneVector).x;
-      uVar4 = (pVVar2->oneVector).y;
-      fVar5 = (pVVar2->oneVector).z * 2.0;
-      pSVar6 = (SharedCubeFunctions__Class *)((float)uVar3 * 2.0);
+      pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar2 = (pVVar1->oneVector).x;
+      uVar3 = (pVVar1->oneVector).y;
+      pSVar4 = (SharedCubeFunctions__Class *)((float)uVar2 * 2.0);
+      fVar5 = (pVVar1->oneVector).z * 2.0;
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
+        pSVar4 = TypeInfo__SharedCubeFunctions;
         func_?();
-        pSVar6 = pSVar1;
       }
       worldPosition.z = position.z;
       worldPosition.x = position.x;
       worldPosition.y = position.y;
-      rotation.y = (float)pSVar6;
+      rotation.y = (float)pSVar4;
       rotation.x = gridSize;
-      rotation.z = (float)uVar4 * 2.0;
+      rotation.z = (float)uVar3 * 2.0;
       rotation.w = fVar5;
-      scale.y = (float)uVar4 * 2.0;
-      scale.x = (float)pSVar6;
+      scale.y = (float)uVar3 * 2.0;
+      scale.x = (float)pSVar4;
       scale.z = fVar5;
-      pVVar7 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint(&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
-      fVar8 = pVVar7->y;
-      fVar5 = pVVar7->z;
-      __return_storage_ptr__->x = pVVar7->x;
-      __return_storage_ptr__->y = fVar8;
+      pVVar6 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint(&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
+      fVar7 = pVVar6->y;
+      fVar5 = pVVar6->z;
+      __return_storage_ptr__->x = pVVar6->x;
+      __return_storage_ptr__->y = fVar7;
       __return_storage_ptr__->z = fVar5;
       return __return_storage_ptr__;
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  pVVar7 = (Vector3 *)(*pcVar9)();
-  return pVVar7;
+  pcVar8 = (code *)swi(3);
+  pVVar6 = (Vector3 *)(*pcVar8)();
+  return pVVar6;
 }
 
 
@@ -230,34 +221,35 @@ void Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox__ctor(MVTriggerBox *this,Di
     MVLogicObject::MVLogicObject__ctor((MVLogicObject *)this,data,(ObjectPrefab *)(pPVar1->fields).mvTriggerBoxPrefab,worldObjects,(MethodInfo *)0x0);
     piVar2 = &(this->fields)._._.interactionFlags;
     *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
-    unaff_EDI = (this->fields)._._.component;
+    pOVar3 = (this->fields)._._.component;
     *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-    if (unaff_EDI != (ObjectPrefab *)0x0) {
-      if (((unaff_EDI->klass->_1).naturalAligment < (TypeInfo__MVTriggerBoxObject->_1).naturalAligment) || ((unaff_EDI->klass->_1).typeHierarchy[(TypeInfo__MVTriggerBoxObject->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__MVTriggerBoxObject)) goto code_?;
-      (this->fields).triggerBoxEvents = (TriggerBoxEvents *)unaff_EDI[1].monitor;
-      func_?(&(this->fields).triggerBoxEvents);
-      pTVar3 = (this->fields).triggerBoxEvents;
-      pUVar4 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar4,(Object *)this,MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
-      unaff_EDI = (ObjectPrefab *)0x0;
-      if (pTVar3 != (TriggerBoxEvents *)0x0) {
-        TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar4,(MethodInfo *)0x0);
-        pTVar3 = (this->fields).triggerBoxEvents;
-        pUVar4 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar4,(Object *)this,MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
-        unaff_EDI = (ObjectPrefab *)0x0;
-        if (pTVar3 != (TriggerBoxEvents *)0x0) {
-          TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit(pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar4,(MethodInfo *)0x0);
+    if (pOVar3 != (ObjectPrefab *)0x0) {
+      bVar4 = (TypeInfo__MVTriggerBoxObject->_1).naturalAligment;
+      if (((pOVar3->klass->_1).naturalAligment < bVar4) || ((pOVar3->klass->_1).typeHierarchy[bVar4 - 1] != (Il2CppClass *)TypeInfo__MVTriggerBoxObject)) goto code_?;
+      ppTVar5 = &(this->fields).triggerBoxEvents;
+      *ppTVar5 = (TriggerBoxEvents *)pOVar3[1].monitor;
+      func_?(ppTVar5);
+      pTVar6 = *ppTVar5;
+      pEVar7 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar7,(Object *)this,MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+      if (pTVar6 != (TriggerBoxEvents *)0x0) {
+        TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(pTVar6,(EventHandler_1_TriggerEventArgs_ *)pEVar7,(MethodInfo *)0x0);
+        pTVar6 = *ppTVar5;
+        pEVar7 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar7,(Object *)this,MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+        if (pTVar6 != (TriggerBoxEvents *)0x0) {
+          TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit(pTVar6,(EventHandler_1_TriggerEventArgs_ *)pEVar7,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
   func_?();
+  pOVar3 = extraout_EDX;
 code_?:
-  func_?(unaff_EDI);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?(pOVar3);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

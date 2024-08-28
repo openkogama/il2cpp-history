@@ -419,7 +419,7 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                                                           if (pDVar1 != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
                                                                             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32Enum]::Dictionary_2_System_Int32Enum_System_Int32Enum__Add((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,0x2a,0x1b,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode>__Add_KogamaControls__UnityEngine__KeyCode_);
                                                                             method_00 = (MethodInfo *)&(this->fields).KeyCodeMapping;
-                                                                            (this->fields).KeyCodeMapping = (Dictionary_2_KogamaControls_UnityEngine_KeyCode_ *)pDVar1;
+                                                                            *(Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ **)method_00 = pDVar1;
                                                                             func_?(method_00,pDVar1);
                                                                             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
                                                                             return;

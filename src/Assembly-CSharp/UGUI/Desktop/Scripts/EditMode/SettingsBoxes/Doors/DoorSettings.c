@@ -32,7 +32,7 @@ code_?:
     SettingsBase::SettingsBase_Initialize(this_00,woID,root,*pMVar2,(MethodInfo *)0x0);
     this_01 = (this->fields).nameInputField;
     pSVar3 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->Name;
-    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_03,(Object *)TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->Name,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_03,(Object *)pSVar3,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
     if (this_01 == (SettingsInputField *)0x0) goto code_?;
     value.m_Index = 0;
     if (TVar1.m_Index != 0) {

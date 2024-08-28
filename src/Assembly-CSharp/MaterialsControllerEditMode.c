@@ -29,8 +29,9 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
     func_?(&TypeInfo__MaterialsControllerEditMode);
     cRam_? = '\x01';
   }
-  if ((this->fields).prevMaterial != TypeInfo__MaterialsControllerEditMode->static_fields->targetMaterial) {
-    (*(code *)(this->klass->vtable).OnMaterialChanged_1.method)(this,TypeInfo__MaterialsControllerEditMode->static_fields->targetMaterial,(this->klass->vtable).Open.methodPtr);
+  uVar1 = TypeInfo__MaterialsControllerEditMode->static_fields->targetMaterial;
+  if ((this->fields).prevMaterial != uVar1) {
+    (*(code *)(this->klass->vtable).OnMaterialChanged_1.method)(this,uVar1,(this->klass->vtable).Open.methodPtr);
   }
   return;
 }
@@ -83,34 +84,37 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
   if ((TypeInfo__MaterialsControllerEditMode____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MaterialsControllerEditMode____c);
   }
-  callbackFunction = TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__12_0;
-  if (callbackFunction == (ExecuteEvents_EventFunction_1_IShortcutKeyUnRegister_ *)0x0) {
+  callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__12_0;
+  if (callbackFunction == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
     if ((TypeInfo__MaterialsControllerEditMode____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MaterialsControllerEditMode____c);
     }
     object = TypeInfo__MaterialsControllerEditMode____c->static_fields->__9;
-    callbackFunction = (ExecuteEvents_EventFunction_1_IShortcutKeyUnRegister_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__MaterialsControllerEditMode____c___OnPop_b__12_0_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__12_0 = callbackFunction;
-    func_?(&TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__12_0,callbackFunction);
+    this_01 = (ExecuteEvents_EventFunction_1_IShortcutKeyUnRegister_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)this_01,(Object *)object,MethodInfo__MaterialsControllerEditMode____c___OnPop_b__12_0_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__12_0 = this_01;
+    in_stack_2 = &TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__12_0;
+code_?:
+    ppEStack3 = in_stack_2;
+    func_?();
+    return;
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar1,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyUnRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>_);
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar1,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyUnRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>_);
   this_00 = (this->fields)._.desktopCubeModelingController;
   if (this_00 != (DesktopCubeModelingController *)0x0) {
     pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
     if (pGVar1 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar1,1,(MethodInfo *)0x0);
       (this->fields).desktopCubeModelingControllerEditMode = (DesktopCubeModelingController *)0x0;
-      func_?();
-      return;
+      goto code_?;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -153,9 +157,10 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
         func_?();
       }
       pDVar3 = (DesktopCubeModelingController *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pDVar3,DesktopCubeModelingController_MethodInfo__UnityEngine__Object__Instantiate<DesktopCubeModelingController>_DesktopCubeModelingController_);
-      (this->fields).desktopCubeModelingControllerEditMode = pDVar3;
+      ppDVar4 = &(this->fields).desktopCubeModelingControllerEditMode;
+      *ppDVar4 = pDVar3;
       func_?();
-      pDVar3 = (this->fields).desktopCubeModelingControllerEditMode;
+      pDVar3 = *ppDVar4;
       if (pDVar3 != (DesktopCubeModelingController *)0x0) {
         DesktopCubeModelingController::DesktopCubeModelingController_Initialize(pDVar3,(this->fields)._.cubeModelingStateMachine,(MethodInfo *)0x0);
         pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
@@ -191,8 +196,8 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -263,7 +268,7 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
   if (uVar4 != 0) {
     do {
       if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister) {
-        ppMVar5 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar3].offset].RegisterShortcutKey.method;
+        ppMVar5 = &(&x->klass->vtable)[pIVar2->interfaceOffsets[uVar3].offset].RegisterShortcutKey.method;
         goto code_?;
       }
       uVar3 = uVar3 + 1;

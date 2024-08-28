@@ -66,7 +66,6 @@ void Assembly-CSharp.dll::MVNetworkGame+LogicObjectManagerClientWrapper::MVNetwo
       if ((pMVar3->fields).stepTimestamp <= (pLVar2->fields)._._TimeStamp_k__BackingField) {
         return;
       }
-      pMVar1 = (this->fields).networkGame;
       if ((pMVar1 == (MVNetworkGame *)0x0) || (pLVar2 = (pMVar1->fields)._LogicObjectManager_k__BackingField, pLVar2 == (LogicObjectManagerClient *)0x0)) break;
       this_00 = (this->fields).logicEventQueue;
       key = (pLVar2->fields)._._TimeStamp_k__BackingField;
@@ -87,8 +86,11 @@ void Assembly-CSharp.dll::MVNetworkGame+LogicObjectManagerClientWrapper::MVNetwo
         if (pDVar4 == (Dictionary_2_System_Int32_Queue_1_ExitGames_Client_Photon_EventData_ *)0x0) break;
         this_02 = (Queue_1_System_Object_ *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar4,key,MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__get_Item_int_);
         pDVar4 = (this_00->fields).logicEvents;
-        if ((pDVar4 == (Dictionary_2_System_Int32_Queue_1_ExitGames_Client_Photon_EventData_ *)0x0) || (mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)pDVar4,(int32_t)MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__Remove_int_,MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__Remove_int_), this_02 == (Queue_1_System_Object_ *)0x0)) break;
-        while (0 < (this_02->fields)._size) {
+        if (pDVar4 == (Dictionary_2_System_Int32_Queue_1_ExitGames_Client_Photon_EventData_ *)0x0) break;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)pDVar4,(int32_t)MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__Remove_int_,MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__Remove_int_);
+        while( true ) {
+          if (this_02 == (Queue_1_System_Object_ *)0x0) goto code_?;
+          if ((this_02->fields)._size < 1) break;
           photonEvent = (EventData *)mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::Queue_1_System_Object__Dequeue(this_02,MethodInfo__System__Collections__Generic__Queue<ExitGames::Client::Photon::EventData>__Dequeue__);
           MVNetworkGame+LogicEventQueue::MVNetworkGame_LogicEventQueue_HandleEvent(this_00,photonEvent,(MethodInfo *)0x0);
         }
@@ -100,6 +102,7 @@ void Assembly-CSharp.dll::MVNetworkGame+LogicObjectManagerClientWrapper::MVNetwo
       if (pMVar1 == (MVNetworkGame *)0x0) break;
     }
   }
+code_?:
   func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
@@ -138,9 +141,8 @@ void Assembly-CSharp.dll::MVNetworkGame+LogicObjectManagerClientWrapper::MVNetwo
       if (timestamp <= (pLVar2->fields)._._TimeStamp_k__BackingField) {
         return;
       }
-      pMVar1 = (this->fields).networkGame;
       if ((pMVar1 == (MVNetworkGame *)0x0) || (pLVar2 = (pMVar1->fields)._LogicObjectManager_k__BackingField, pLVar2 == (LogicObjectManagerClient *)0x0)) break;
-      this_00 = (this->fields).logicEventQueue;
+      this_00 = (MVNetworkGame_LogicEventQueue *)((MethodInfo *)this)->invoker_method;
       key = (pLVar2->fields)._._TimeStamp_k__BackingField;
       if (this_00 == (MVNetworkGame_LogicEventQueue *)0x0) break;
       if (cRam_? == '\0') {
@@ -158,20 +160,24 @@ void Assembly-CSharp.dll::MVNetworkGame+LogicObjectManagerClientWrapper::MVNetwo
         pDVar3 = (this_00->fields).logicEvents;
         if (pDVar3 == (Dictionary_2_System_Int32_Queue_1_ExitGames_Client_Photon_EventData_ *)0x0) break;
         this_02 = (Queue_1_System_Object_ *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar3,key,MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__get_Item_int_);
+        this = (MVNetworkGame_LogicObjectManagerClientWrapper *)MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__Remove_int_;
         pDVar3 = (this_00->fields).logicEvents;
-        if ((pDVar3 == (Dictionary_2_System_Int32_Queue_1_ExitGames_Client_Photon_EventData_ *)0x0) || (mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)pDVar3,(int32_t)MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__Remove_int_,MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__Remove_int_), this_02 == (Queue_1_System_Object_ *)0x0)) break;
-        while (0 < (this_02->fields)._size) {
+        if (pDVar3 == (Dictionary_2_System_Int32_Queue_1_ExitGames_Client_Photon_EventData_ *)0x0) break;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)pDVar3,key,MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__Remove_int_);
+        while( true ) {
+          if (this_02 == (Queue_1_System_Object_ *)0x0) goto code_?;
+          if ((this_02->fields)._size < 1) break;
           photonEvent = (EventData *)mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::Queue_1_System_Object__Dequeue(this_02,MethodInfo__System__Collections__Generic__Queue<ExitGames::Client::Photon::EventData>__Dequeue__);
           MVNetworkGame+LogicEventQueue::MVNetworkGame_LogicEventQueue_HandleEvent(this_00,photonEvent,(MethodInfo *)0x0);
         }
       }
-      pMVar1 = (this->fields).networkGame;
-      if ((pMVar1 == (MVNetworkGame *)0x0) || (this_01 = (LogicObjectManager *)(pMVar1->fields)._LogicObjectManager_k__BackingField, this_01 == (LogicObjectManager *)0x0)) break;
+      if ((((MethodInfo *)this)->name == (char *)0x0) || (this_01 = *(LogicObjectManager **)(((MethodInfo *)this)->name + 0x2c), this_01 == (LogicObjectManager *)0x0)) break;
       MVWorldObject.dll::LogicObjectManager::LogicObjectManager_Update(this_01,(MethodInfo *)0x0);
-      pMVar1 = (this->fields).networkGame;
+      pMVar1 = (MVNetworkGame *)((MethodInfo *)this)->name;
       if (pMVar1 == (MVNetworkGame *)0x0) break;
     }
   }
+code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
@@ -273,10 +279,12 @@ void Assembly-CSharp.dll::MVNetworkGame+LogicObjectManagerClientWrapper::MVNetwo
   while ((pMVar1 != (MVNetworkGame *)0x0 && (pLVar3 = (pMVar1->fields)._LogicObjectManager_k__BackingField, pMVar2 != (MVNetworkGame_UpdateEvaluator *)0x0))) {
     iVar4 = WaitForTicksLocal::WaitForTicksLocal_Diff((pMVar2->fields).lastUpdateTick,(MethodInfo *)0x0);
     iVar5 = WaitForTicksLocal::WaitForTicksLocal_GetEnvironmentTick(0,(MethodInfo *)0x0);
-    iVar6 = (pMVar2->fields).accumulatedTime + iVar4;
+    piVar6 = &(pMVar2->fields).accumulatedTime;
+    *piVar6 = *piVar6 + iVar4;
+    iVar7 = (pMVar2->fields).accumulatedTime;
+    iVar8 = (pMVar2->fields).updateInterval;
     (pMVar2->fields).lastUpdateTick = iVar5;
-    (pMVar2->fields).accumulatedTime = iVar6;
-    if (iVar6 < (pMVar2->fields).updateInterval) {
+    if (iVar7 < iVar8) {
 code_?:
       pMVar1 = (this->fields).networkGame;
       pMVar2 = (this->fields).updateEvaluatorStep;
@@ -284,31 +292,33 @@ code_?:
     }
     if (pLVar3 == (LogicObjectManagerClient *)0x0) break;
     if ((pMVar2->fields).stepTimestamp <= (pLVar3->fields)._._TimeStamp_k__BackingField) goto code_?;
-    (pMVar2->fields).accumulatedTime = iVar6 - (pMVar2->fields).updateInterval;
+    (pMVar2->fields).accumulatedTime = iVar7 - iVar8;
     MVNetworkGame_LogicObjectManagerClientWrapper_UpdateLogicObjectManager(this,(MethodInfo *)0x0);
     pMVar1 = (this->fields).networkGame;
     pMVar2 = (this->fields).fastFordwardUpdateEvaluator;
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 joined_?:
   if ((pMVar1 == (MVNetworkGame *)0x0) || (pLVar3 = (pMVar1->fields)._LogicObjectManager_k__BackingField, pMVar2 == (MVNetworkGame_UpdateEvaluator *)0x0)) goto code_?;
   iVar4 = WaitForTicksLocal::WaitForTicksLocal_Diff((pMVar2->fields).lastUpdateTick,(MethodInfo *)0x0);
   iVar5 = WaitForTicksLocal::WaitForTicksLocal_GetEnvironmentTick(0,(MethodInfo *)0x0);
-  iVar6 = (pMVar2->fields).accumulatedTime + iVar4;
+  piVar6 = &(pMVar2->fields).accumulatedTime;
+  *piVar6 = *piVar6 + iVar4;
+  iVar7 = (pMVar2->fields).accumulatedTime;
+  iVar8 = (pMVar2->fields).updateInterval;
   (pMVar2->fields).lastUpdateTick = iVar5;
-  (pMVar2->fields).accumulatedTime = iVar6;
-  if (iVar6 < (pMVar2->fields).updateInterval) {
+  if (iVar7 < iVar8) {
     return;
   }
   if (pLVar3 == (LogicObjectManagerClient *)0x0) goto code_?;
   if ((pMVar2->fields).stepTimestamp <= (pLVar3->fields)._._TimeStamp_k__BackingField) {
     return;
   }
-  (pMVar2->fields).accumulatedTime = iVar6 - (pMVar2->fields).updateInterval;
+  (pMVar2->fields).accumulatedTime = iVar7 - iVar8;
   MVNetworkGame_LogicObjectManagerClientWrapper_UpdateLogicObjectManager(this,(MethodInfo *)0x0);
   pMVar1 = (this->fields).networkGame;
   pMVar2 = (this->fields).updateEvaluatorStep;
@@ -364,40 +374,36 @@ void Assembly-CSharp.dll::MVNetworkGame+LogicObjectManagerClientWrapper::MVNetwo
             func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_IInputSignalReceiver>__GetEnumerator__);
             cRam_? = '\x01';
           }
-          DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-          DStack_6._index = 0;
-          DStack_6._version = 0;
-          DStack_6._currentValue = (Object *)0x0;
           if ((*(Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ **)(unaff_EBX + 8) != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)0x0) && (this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values(*(Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ **)(unaff_EBX + 8),MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__get_Values__), this_02 != (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)0x0)) {
             method_00 = (MethodInfo *)&UNK_?;
-            pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator(&DStack_8,this_02,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_IInputSignalReceiver>__GetEnumerator__);
-            DStack_8._currentValue = (Object *)&DStack_6;
-            DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar7->_dictionary;
-            DStack_6._index = pDVar7->_index;
-            DStack_6._version = pDVar7->_version;
-            DStack_6._currentValue = pDVar7->_currentValue;
-            DStack_8._version = 0;
+            pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator(&DStack_7,this_02,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_IInputSignalReceiver>__GetEnumerator__);
+            DStack_7._currentValue = (Object *)&DStack_8;
+            DStack_8._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar6->_dictionary;
+            DStack_8._index = pDVar6->_index;
+            DStack_8._version = pDVar6->_version;
+            DStack_8._currentValue = pDVar6->_currentValue;
+            DStack_7._version = 0;
 code_?:
-            bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext(&DStack_6,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__MoveNext__);
-            pOVar9 = DStack_6._currentValue;
+            bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext(&DStack_8,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__MoveNext__);
+            pOVar9 = DStack_8._currentValue;
             if (bVar4 != 0) {
-              if (DStack_6._currentValue == (Object *)0x0) goto code_?;
-              pOStack_10 = (DStack_6._currentValue)->klass;
+              if (DStack_8._currentValue == (Object *)0x0) goto code_?;
+              pOStack_10 = (DStack_8._currentValue)->klass;
               uVar11 = 0;
               uVar12._0_1_ = (pOStack_10->_1).rank;
               uVar12._1_1_ = (pOStack_10->_1).minimumAlignment;
               uStack_13 = (uint)uVar12;
-              pOVar14 = DStack_6._currentValue;
+              pOVar14 = DStack_8._currentValue;
               if (uVar12 != 0) {
                 do {
                   if (pOStack_10->interfaceOffsets[uVar11].interfaceType == (Il2CppClass *)TypeInfo__IInputSignalReceiver) {
-                    ppMVar15 = &(&((DStack_6._currentValue)->klass->vtable).GetHashCode)[(DStack_6._currentValue)->klass->interfaceOffsets[uVar11].offset].method;
+                    ppMVar15 = &(&((DStack_8._currentValue)->klass->vtable).GetHashCode)[(DStack_8._currentValue)->klass->interfaceOffsets[uVar11].offset].method;
                     goto code_?;
                   }
                   uVar11 = uVar11 + 1;
                 } while (uVar11 < uVar12);
               }
-              ppMVar15 = (MethodInfo **)func_?(DStack_6._currentValue,TypeInfo__IInputSignalReceiver,2);
+              ppMVar15 = (MethodInfo **)func_?(DStack_8._currentValue,TypeInfo__IInputSignalReceiver,2);
 code_?:
               uVar16 = (*(code *)*ppMVar15)(pOVar9,ppMVar15[1]);
               uVar12 = 0;
@@ -426,7 +432,7 @@ code_?:
               (*(code *)*puVar21)(pOVar9,pMStack_17,puVar21[1]);
               goto code_?;
             }
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&DStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__Dispose__,method_00);
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&DStack_8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__Dispose__,method_00);
             *(int *)(unaff_EBX + 0x10) = *(int *)(unaff_EBX + 0x10) + 100;
             if (unaff_EBX[0xc] != '\0') {
               if (cRam_? == '\0') {
@@ -469,24 +475,26 @@ void Assembly-CSharp.dll::MVNetworkGame+LogicObjectManagerClientWrapper::MVNetwo
   pMVar1 = TypeInfo__MVNetworkGame__UpdateEvaluator;
   pMVar2 = (MVNetworkGame_UpdateEvaluator *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)pMVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pMVar1);
+  ppMVar3 = &(this->fields).updateEvaluatorStep;
   (pMVar2->fields).updateInterval = 100;
-  (this->fields).updateEvaluatorStep = pMVar2;
-  func_?(&(this->fields).updateEvaluatorStep,pMVar2);
+  *ppMVar3 = pMVar2;
+  func_?(ppMVar3,pMVar2);
   pMVar1 = TypeInfo__MVNetworkGame__UpdateEvaluator;
   pMVar2 = (MVNetworkGame_UpdateEvaluator *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)pMVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pMVar1);
   method_00 = (MethodInfo *)&(this->fields).fastFordwardUpdateEvaluator;
   (pMVar2->fields).updateInterval = 10;
-  (this->fields).fastFordwardUpdateEvaluator = pMVar2;
+  *(MVNetworkGame_UpdateEvaluator **)method_00 = pMVar2;
   func_?(method_00,pMVar2);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  (this->fields).networkGame = networkGame;
-  func_?(&(this->fields).networkGame,networkGame);
-  pMVar2 = (this->fields).updateEvaluatorStep;
+  ppMVar4 = &(this->fields).networkGame;
+  *ppMVar4 = networkGame;
+  func_?(ppMVar4,networkGame);
+  pMVar2 = *ppMVar3;
   if (pMVar2 != (MVNetworkGame_UpdateEvaluator *)0x0) {
     (pMVar2->fields).stepTimestamp = stepTimestamp;
-    iVar3 = WaitForTicksLocal::WaitForTicksLocal_GetEnvironmentTick(0,(MethodInfo *)0x0);
-    (pMVar2->fields).lastUpdateTick = iVar3;
+    iVar5 = WaitForTicksLocal::WaitForTicksLocal_GetEnvironmentTick(0,(MethodInfo *)0x0);
+    (pMVar2->fields).lastUpdateTick = iVar5;
     (pMVar2->fields).accumulatedTime = 0;
     value = (MVNetworkGame_LogicEventQueue *)func_?();
     if (cRam_? == '\0') {
@@ -504,8 +512,8 @@ void Assembly-CSharp.dll::MVNetworkGame+LogicObjectManagerClientWrapper::MVNetwo
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

@@ -40,19 +40,19 @@ void Assembly-CSharp.dll::TextBubbleController+BubbleTracker::TextBubbleControll
     func_?(&StringLiteral_Bubble_was_not_null);
     cRam_? = '\x01';
   }
-  pTVar1 = (this->fields).bubble;
+  ppTVar1 = &(this->fields).bubble;
+  x = *ppTVar1;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 != 0) {
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_Bubble_was_not_null,(MethodInfo *)0x0);
-    pTVar1 = (this->fields).bubble;
-    if (pTVar1 != (TextBubble *)0x0) {
-      value = (TextBubble *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar1,(MethodInfo *)0x0);
+    if (*ppTVar1 != (TextBubble *)0x0) {
+      value = (TextBubble *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)*ppTVar1,(MethodInfo *)0x0);
       if (value != (TextBubble *)0x0) {
         pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform((GameObject *)value,(MethodInfo *)0x0);
         if (pTVar3 != (Transform *)0x0) {
@@ -61,9 +61,8 @@ void Assembly-CSharp.dll::TextBubbleController+BubbleTracker::TextBubbleControll
             pSVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name((Object_1 *)pTVar3,(MethodInfo *)0x0);
             pSVar4 = mscorlib.dll::System::String::String_Concat_3(StringLiteral_bubble_gameObject_transform_pare,pSVar4,(MethodInfo *)0x0);
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar4,(MethodInfo *)0x0);
-            pTVar1 = (this->fields).bubble;
-            if (pTVar1 != (TextBubble *)0x0) {
-              obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar1,(MethodInfo *)0x0);
+            if (*ppTVar1 != (TextBubble *)0x0) {
+              obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)*ppTVar1,(MethodInfo *)0x0);
               if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
@@ -80,8 +79,8 @@ void Assembly-CSharp.dll::TextBubbleController+BubbleTracker::TextBubbleControll
     return;
   }
 code_?:
-  (this->fields).bubble = value;
-  func_?(&(this->fields).bubble,value);
+  *ppTVar1 = value;
+  func_?(ppTVar1,value);
   return;
 }
 

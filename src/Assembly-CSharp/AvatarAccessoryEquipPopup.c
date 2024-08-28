@@ -124,13 +124,15 @@ void Assembly-CSharp.dll::AvatarAccessoryEquipPopup::AvatarAccessoryEquipPopup_I
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_01,(Object *)this,MethodInfo__AvatarAccessoryEquipPopup__OnPreviewImageDownLoaded__,(MethodInfo *)0x0);
         if (pSVar2 != (StreamedSpriteToImageManual *)0x0) {
           StreamedSpriteToImageManual::StreamedSpriteToImageManual_Download(pSVar2,previewImageUrl,(UnityAction *)this_01,(MethodInfo *)0x0);
-          (this->fields).resultCallback = resultCallback;
-          func_?(&(this->fields).resultCallback,resultCallback);
+          ppUVar3 = &(this->fields).resultCallback;
+          *ppUVar3 = resultCallback;
+          func_?(ppUVar3,resultCallback);
           this_00 = (this->fields).itemBackground;
           if (this_00 != (AccessoryItemBackground *)0x0) {
             AccessoryItemBackground::AccessoryItemBackground_Initialize(this_00,accessoryData,(MethodInfo *)0x0);
-            (this->fields).accessoryDataClient = accessoryData;
-            func_?(&(this->fields).accessoryDataClient,accessoryData);
+            ppAVar4 = &(this->fields).accessoryDataClient;
+            *ppAVar4 = accessoryData;
+            func_?(ppAVar4,accessoryData);
             (this->fields).accessoryOffset = accessoryOffset;
             (this->fields).accessoryScale = accessoryScale;
             return;
@@ -140,8 +142,8 @@ void Assembly-CSharp.dll::AvatarAccessoryEquipPopup::AvatarAccessoryEquipPopup_I
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -196,7 +198,7 @@ void Assembly-CSharp.dll::AvatarAccessoryEquipPopup::AvatarAccessoryEquipPopup__
       if (uVar7 != 0) {
         do {
           if (pIVar5->interfaceOffsets[uVar6].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAttachToBody) {
-            ppMVar8 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar6].offset].AttachToBody.method;
+            ppMVar8 = &(&x->klass->vtable)[pIVar5->interfaceOffsets[uVar6].offset].AttachToBody.method;
             goto code_?;
           }
           uVar6 = uVar6 + 1;

@@ -12,9 +12,9 @@ SkyParam * Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams
     func_?(&TypeInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SkyParam);
     func_?(&MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__Add_float__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SkyParam_);
     func_?(&MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Keys__);
-    in_stack_1 = &MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Values__;
+    in_stack_1 = &MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Keys__;
     func_?();
+    func_?(&MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Values__);
     func_?(&StringLiteral_Sky_params_list_is_empty);
     cRam_? = '\x01';
   }
@@ -42,12 +42,16 @@ SkyParam * Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams
     pDVar2 = (this->fields)._.SortedParams;
     if (pDVar2 != (DotParamsList_1_SkyParam_ *)0x0) {
       iVar4 = DotParamsList`1[System::Object]::DotParamsList_1_System_Object__FindIndexPerTime((DotParamsList_1_System_Object_ *)pDVar2,currentTime,MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__FindIndexPerTime_float_);
-      pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
       if (iVar4 < 1) {
-        if (pSVar3 == (SortedList_2_System_Single_System_Object_ *)0x0) goto code_?;
-        iVar4 = (pSVar3->fields)._size;
+        pDVar2 = (this->fields)._.SortedParams;
+        if (pDVar2 == (DotParamsList_1_SkyParam_ *)0x0) goto code_?;
+        iVar4 = (pDVar2->fields)._._size;
+        pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
       }
-      else if (pSVar3 == (SortedList_2_System_Single_System_Object_ *)0x0) goto code_?;
+      else {
+        pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
+        if (pSVar3 == (SortedList_2_System_Single_System_Object_ *)0x0) goto code_?;
+      }
       pIVar5 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::SortedList_2_System_Single_System_Object__get_Keys(pSVar3,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Keys__);
       if (pIVar5 != (IList_1_System_Single_ *)0x0) {
         fVar6 = (float10)func_?(0,TypeInfo__System__Collections__Generic__IList<float>,pIVar5,iVar4 + -1);
@@ -62,26 +66,26 @@ SkyParam * Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams
           fVar15 = *(float *)(iVar9 + 0x20);
           fVar16 = *(float *)(iVar9 + 0x24);
           fVar17 = *(float *)(iVar9 + 0x28);
-          pDVar2 = (this->fields)._.SortedParams;
-          if (pDVar2 != (DotParamsList_1_SkyParam_ *)0x0) {
+          pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
+          if (pSVar3 != (SortedList_2_System_Single_System_Object_ *)0x0) {
             iVar9 = 0;
-            if (iVar4 < (pDVar2->fields)._._size) {
+            if (iVar4 < (pSVar3->fields)._size) {
               iVar9 = iVar4;
             }
-            pIVar5 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::SortedList_2_System_Single_System_Object__get_Keys((SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Keys__);
+            pIVar5 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::SortedList_2_System_Single_System_Object__get_Keys(pSVar3,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Keys__);
             if (pIVar5 != (IList_1_System_Single_ *)0x0) {
               fVar6 = (float10)func_?(0,TypeInfo__System__Collections__Generic__IList<float>,pIVar5,iVar9);
               pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
               fVar18 = (float)fVar6;
-              if (((pSVar3 != (SortedList_2_System_Single_System_Object_ *)0x0) && (pIVar8 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::SortedList_2_System_Single_System_Object__get_Values(pSVar3,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Values__), pIVar8 != (IList_1_System_Object_ *)0x0)) && (iVar9 = func_?(0,TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>,pIVar8,iVar9), iVar9 != 0)) {
-                fVar19 = *(float *)(iVar9 + 0xc);
-                fVar20 = *(float *)(iVar9 + 0x10);
-                fVar21 = *(float *)(iVar9 + 0x14);
-                fVar22 = *(float *)(iVar9 + 0x18);
-                fVar23 = *(float *)(iVar9 + 0x1c);
-                fVar24 = *(float *)(iVar9 + 0x20);
-                fVar25 = *(float *)(iVar9 + 0x24);
-                fVar26 = *(float *)(iVar9 + 0x28);
+              if (((pSVar3 != (SortedList_2_System_Single_System_Object_ *)0x0) && (pIVar8 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::SortedList_2_System_Single_System_Object__get_Values(pSVar3,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Values__), pIVar8 != (IList_1_System_Object_ *)0x0)) && (iVar4 = func_?(0,TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>,pIVar8,iVar9), iVar4 != 0)) {
+                fVar19 = *(float *)(iVar4 + 0xc);
+                fVar20 = *(float *)(iVar4 + 0x10);
+                fVar21 = *(float *)(iVar4 + 0x14);
+                fVar22 = *(float *)(iVar4 + 0x18);
+                fVar23 = *(float *)(iVar4 + 0x1c);
+                fVar24 = *(float *)(iVar4 + 0x20);
+                fVar25 = *(float *)(iVar4 + 0x24);
+                fVar26 = *(float *)(iVar4 + 0x28);
                 if (currentTime <= fVar7) {
                   fVar27 = currentTime + (100.0 - fVar7);
                 }
@@ -103,9 +107,14 @@ SkyParam * Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams
                 (pSVar28->fields).BottomColor.b = 0.5;
                 (pSVar28->fields).BottomColor.a = 1.0;
                 mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)pSVar28,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-                fVar7 = 0.0;
-                if ((0.0 <= fVar27) && (fVar7 = fVar27, 1.0 < fVar27)) {
-                  fVar7 = 1.0;
+                if (fVar27 < 0.0) {
+                  fVar7 = 0.0;
+                }
+                else {
+                  fVar7 = fVar27;
+                  if (1.0 < fVar27) {
+                    fVar7 = 1.0;
+                  }
                 }
                 (pSVar28->fields).TopColor.r = (fVar19 - fVar10) * fVar7 + fVar10;
                 (pSVar28->fields).TopColor.g = (fVar20 - fVar11) * fVar7 + fVar11;

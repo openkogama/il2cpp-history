@@ -322,8 +322,8 @@ void Assembly-CSharp.dll::AvatarModifierPackage::AvatarModifierPackage__ctor(Ava
   *(undefined3 *)&(this->timeStamp).field_0x11 = uVar6;
   func_?();
   fVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::ObscuredFloat_op_Implicit_1(this->timeStamp,(MethodInfo *)0x0);
-  this->actionsToTakeVsTypes = actionsToTakeVsTypes;
   this->lastTimeStamp = fVar4;
+  this->actionsToTakeVsTypes = actionsToTakeVsTypes;
   func_?();
   return;
 }

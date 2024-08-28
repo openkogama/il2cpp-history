@@ -16,8 +16,8 @@ void Assembly-CSharp.dll::DesktopFirstPersonCamera::DesktopFirstPersonCamera_Upd
   fVar1 = MVInputWrapper::MVInputWrapper_GetAxisRaw(StringLiteral_Mouse_Y,(MethodInfo *)0x0);
   fVar1 = -fVar1;
   fVar2 = MVInputWrapper::MVInputWrapper_GetAxisRaw(StringLiteral_Mouse_X,(MethodInfo *)0x0);
-  (this->fields)._.targetRotation.x = fVar1 * (this->fields)._.pitchSensitivity + (this->fields)._.targetRotation.x;
-  (this->fields)._.targetRotation.y = fVar2 * (this->fields)._.yawSensitivity + (this->fields)._.targetRotation.y;
+  (this->fields)._.targetRotation.x = (this->fields)._.pitchSensitivity * fVar1 + (this->fields)._.targetRotation.x;
+  (this->fields)._.targetRotation.y = (this->fields)._.yawSensitivity * fVar2 + (this->fields)._.targetRotation.y;
   fVar1 = MathFunctions::MathFunctions_NormalizeAngle((this->fields)._.targetRotation.x,(MethodInfo *)0x0);
   (this->fields)._.targetRotation.x = fVar1;
   fVar1 = MathFunctions::MathFunctions_NormalizeAngle((this->fields)._.targetRotation.y,(MethodInfo *)0x0);

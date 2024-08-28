@@ -22,7 +22,7 @@ void Assembly-CSharp.dll::MVPlaymodeCameraBase::MVPlaymodeCameraBase_Shake(MVPla
   (this->fields).shakeOffset.x = (pVVar3->zeroVector).x;
   (this->fields).shakeOffset.y = fVar4;
   (this->fields).shakeOffset.z = fVar5;
-  if (0.0 < fVar1 * fVar2) {
+  if (0.0 < fVar2 * fVar1) {
     UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     fVar2 = (this->fields).shakeTimeFactor;
     pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
@@ -46,7 +46,7 @@ void Assembly-CSharp.dll::MVPlaymodeCameraBase::MVPlaymodeCameraBase_Shake(MVPla
     pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right((Vector3 *)&stack0xffffffcc,pTVar6,(MethodInfo *)0x0);
     uVar9 = pVVar7->x;
     uVar10 = pVVar7->y;
-    fVar2 = (fVar2 + fVar2) - 1.0;
+    fVar2 = fVar2 * 2.0 - 1.0;
     fVar4 = (float)uVar9 * fVar2;
     fVar11 = pVVar7->z * fVar2;
     pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
@@ -55,10 +55,10 @@ void Assembly-CSharp.dll::MVPlaymodeCameraBase::MVPlaymodeCameraBase_Shake(MVPla
     uVar12 = pVVar7->x;
     uVar13 = pVVar7->y;
     fVar14 = pVVar7->z;
-    fVar5 = (fVar5 + fVar5) - 1.0;
-    (this->fields).shakeOffset.x = (float)uVar8 + (fVar4 + (float)uVar12 * fVar5) * (float)&stack0xffffffd8;
-    (this->fields).shakeOffset.y = SUB84(uVar8,4) + ((float)uVar10 * fVar2 + (float)uVar13 * fVar5) * (float)&stack0xffffffd8;
-    (this->fields).shakeOffset.z = fVar1 + (fVar11 + fVar14 * fVar5) * (float)&stack0xffffffd8;
+    fVar5 = fVar5 * 2.0 - 1.0;
+    (this->fields).shakeOffset.x = (float)uVar8 + ((float)uVar12 * fVar5 + fVar4) * (float)&stack0xffffffd8;
+    (this->fields).shakeOffset.y = SUB84(uVar8,4) + ((float)uVar13 * fVar5 + (float)uVar10 * fVar2) * (float)&stack0xffffffd8;
+    (this->fields).shakeOffset.z = fVar1 + (fVar14 * fVar5 + fVar11) * (float)&stack0xffffffd8;
   }
   fVar2 = (this->fields).shakeStrength;
   fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
@@ -100,7 +100,7 @@ void Assembly-CSharp.dll::MVPlaymodeCameraBase::MVPlaymodeCameraBase_Shake(MVPla
         pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right((Vector3 *)&stack0xffffffcc,pTVar6,(MethodInfo *)0x0);
         uVar17 = pVVar7->x;
         uVar18 = pVVar7->y;
-        fVar5 = ((float)pMVar15 + (float)pMVar15) - 1.0;
+        fVar5 = (float)pMVar15 * 2.0 - 1.0;
         fVar4 = (float)uVar18 * fVar5;
         fVar11 = pVVar7->z * fVar5;
         pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
@@ -109,12 +109,12 @@ void Assembly-CSharp.dll::MVPlaymodeCameraBase::MVPlaymodeCameraBase_Shake(MVPla
           uVar19 = pVVar7->x;
           uVar20 = pVVar7->y;
           fVar21 = pVVar7->z;
-          fVar22 = (fVar1 + fVar1) - 1.0;
+          fVar22 = fVar1 * 2.0 - 1.0;
           fVar1 = (this->fields).shakeStrength;
           fVar14 = (this->fields).shakeDuration;
-          (this->fields).shakeOffset.x = (float)uVar16 + fVar1 * ((float)uVar17 * fVar5 + (float)uVar19 * fVar22);
-          (this->fields).shakeOffset.y = (float)((ulonglong)uVar16 >> 0x20) + fVar1 * (fVar4 + (float)uVar20 * fVar22);
-          (this->fields).shakeOffset.z = fVar2 + fVar1 * (fVar11 + fVar21 * fVar22);
+          (this->fields).shakeOffset.x = (float)uVar16 + ((float)uVar19 * fVar22 + (float)uVar17 * fVar5) * fVar1;
+          (this->fields).shakeOffset.y = (float)((ulonglong)uVar16 >> 0x20) + ((float)uVar20 * fVar22 + fVar4) * fVar1;
+          (this->fields).shakeOffset.z = fVar2 + (fVar21 * fVar22 + fVar11) * fVar1;
           fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
           (this->fields).shakeDuration = fVar14 - fVar2;
           return;

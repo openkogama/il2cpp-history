@@ -13,9 +13,10 @@ bool Assembly-CSharp.dll::pTween+<RealtimeTo>d__1::pTween_RealtimeTo_d_1_MoveNex
   if (iVar2 == 0) {
     (this->fields).__1__state = -1;
     this = (pTween_RealtimeTo_d_1 *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup((MethodInfo *)0x0);
-    (ppVar1->fields)._end_5__2 = (float)this + (ppVar1->fields).duration;
-    (ppVar1->fields)._startMulDurationInv_5__4 = (float)this / (ppVar1->fields).duration;
-    (ppVar1->fields)._durationInv_5__3 = 1.0 / (ppVar1->fields).duration;
+    fVar3 = (ppVar1->fields).duration;
+    (ppVar1->fields)._end_5__2 = fVar3 + (float)this;
+    (ppVar1->fields)._startMulDurationInv_5__4 = (float)this / fVar3;
+    (ppVar1->fields)._durationInv_5__3 = 1.0 / fVar3;
   }
   else {
     if (iVar2 != 1) {
@@ -24,36 +25,37 @@ bool Assembly-CSharp.dll::pTween+<RealtimeTo>d__1::pTween_RealtimeTo_d_1_MoveNex
     (this->fields).__1__state = -1;
   }
   this = (pTween_RealtimeTo_d_1 *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup((MethodInfo *)0x0);
-  pAVar3 = (ppVar1->fields).callback;
+  pAVar4 = (ppVar1->fields).callback;
   if ((ppVar1->fields)._end_5__2 <= (float)this) {
-    if (pAVar3 != (Action_1_Single_ *)0x0) {
-      (*(pAVar3->fields)._._.invoke_impl)((pAVar3->fields)._._.method_code,(ppVar1->fields).endValue,(pAVar3->fields)._._.method);
+    if (pAVar4 != (Action_1_Single_ *)0x0) {
+      (*(pAVar4->fields)._._.invoke_impl)((pAVar4->fields)._._.method_code,(ppVar1->fields).endValue,(pAVar4->fields)._._.method);
       return 0;
     }
   }
   else {
-    fVar4 = (ppVar1->fields).startValue;
-    fVar5 = (float)this * (ppVar1->fields)._durationInv_5__3 - (ppVar1->fields)._startMulDurationInv_5__4;
+    fVar3 = (ppVar1->fields).startValue;
+    fVar5 = (ppVar1->fields)._durationInv_5__3 * (float)this - (ppVar1->fields)._startMulDurationInv_5__4;
     if (fVar5 < 0.0) {
       fVar5 = 0.0;
     }
     else if (1.0 < fVar5) {
       fVar5 = 1.0;
     }
-    if (pAVar3 != (Action_1_Single_ *)0x0) {
-      (*(pAVar3->fields)._._.invoke_impl)((pAVar3->fields)._._.method_code,((ppVar1->fields).endValue - fVar4) * fVar5 + fVar4,(pAVar3->fields)._._.method);
+    if (pAVar4 != (Action_1_Single_ *)0x0) {
+      (*(pAVar4->fields)._._.invoke_impl)((pAVar4->fields)._._.method_code,((ppVar1->fields).endValue - fVar3) * fVar5 + fVar3,(pAVar4->fields)._._.method);
       this = (pTween_RealtimeTo_d_1 *)0x0;
       pOVar6 = (Object *)func_?(TypeInfo__System__Int32,&this);
-      (ppVar1->fields).__2__current = pOVar6;
-      func_?(&(ppVar1->fields).__2__current,pOVar6);
+      ppOVar7 = &(ppVar1->fields).__2__current;
+      *ppOVar7 = pOVar6;
+      func_?(ppOVar7,pOVar6);
       (ppVar1->fields).__1__state = 1;
       return 1;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  bVar8 = (*pcVar7)();
-  return bVar8;
+  pcVar8 = (code *)swi(3);
+  bVar9 = (*pcVar8)();
+  return bVar9;
 }
 
 

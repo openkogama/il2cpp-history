@@ -118,8 +118,8 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera_Upd
         pVVar5 = AxisBias::AxisBias_GetBiasedVector((Vector3 *)&stack0xffffffe4,this_01,inputVector,(MethodInfo *)0x0);
         uVar8 = pVVar5->x;
         uVar9 = pVVar5->y;
-        (this->fields)._.targetRotation.x = (float)uVar8 * (this->fields)._.pitchSensitivity + (this->fields)._.targetRotation.x;
-        (this->fields)._.targetRotation.y = (float)uVar9 * (this->fields)._.yawSensitivity + (this->fields)._.targetRotation.y;
+        (this->fields)._.targetRotation.x = (this->fields)._.pitchSensitivity * (float)uVar8 + (this->fields)._.targetRotation.x;
+        (this->fields)._.targetRotation.y = (this->fields)._.yawSensitivity * (float)uVar9 + (this->fields)._.targetRotation.y;
         fVar4 = -(this->fields)._.maxLookAngleDownward;
         fVar10 = (float10)func_?();
         fVar11 = (this->fields)._.targetRotation.x - (float)fVar10 * 360.0;
@@ -195,8 +195,9 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera__ct
   (this->fields)._.yawSensitivity = 0.5;
   this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>);
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2(this_00,0x20,MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__List_int_);
-  (this->fields)._.vehiclesHiddenMeshRenderers = (List_1_UnityEngine_MeshRenderer_ *)this_00;
-  func_?(&(this->fields)._.vehiclesHiddenMeshRenderers,this_00);
+  ppLVar1 = &(this->fields)._.vehiclesHiddenMeshRenderers;
+  *ppLVar1 = (List_1_UnityEngine_MeshRenderer_ *)this_00;
+  func_?(ppLVar1,this_00);
   (this->fields)._._.cameraRadius = 0.3;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

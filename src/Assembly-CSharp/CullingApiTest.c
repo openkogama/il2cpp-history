@@ -53,9 +53,10 @@ void Assembly-CSharp.dll::CullingApiTest::CullingApiTest_Start(CullingApiTest *t
     cRam_? = '\x01';
   }
   pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-  (this->fields).mainCamera = pCVar1;
-  func_?(&(this->fields).mainCamera,pCVar1);
-  pCVar1 = (this->fields).mainCamera;
+  ppCVar2 = &(this->fields).mainCamera;
+  *ppCVar2 = pCVar1;
+  func_?(ppCVar2,pCVar1);
+  pCVar1 = *ppCVar2;
   if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
@@ -78,15 +79,15 @@ void Assembly-CSharp.dll::CullingApiTest::CullingApiTest_Subscribe(CullingApiTes
     func_?(&TypeInfo__CullingApiTest__TestClass);
     cRam_? = '\x01';
   }
-  pLVar1 = (this->fields).testClasses;
+  this_00 = (this->fields).testClasses;
   method_00 = TypeInfo__CullingApiTest__TestClass;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (pLVar1 != (List_1_CullingApiTest_TestClass_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)pLVar1,value,MethodInfo__System__Collections__Generic__List<CullingApiTest::TestClass>__Add_CullingApiTest__TestClass_);
-    pLVar1 = (this->fields).testClasses;
-    if (pLVar1 != (List_1_CullingApiTest_TestClass_ *)0x0) {
-      iCullingGroupSubscriber = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).testClasses,(pLVar1->fields)._size + -1,MethodInfo__System__Collections__Generic__List<CullingApiTest::TestClass>__get_Item_int_);
+  if (this_00 != (List_1_CullingApiTest_TestClass_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_00,value,MethodInfo__System__Collections__Generic__List<CullingApiTest::TestClass>__Add_CullingApiTest__TestClass_);
+    this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).testClasses;
+    if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      iCullingGroupSubscriber = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_01,(this_01->fields)._size + -1,MethodInfo__System__Collections__Generic__List<CullingApiTest::TestClass>__get_Item_int_);
       if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -95,8 +96,8 @@ void Assembly-CSharp.dll::CullingApiTest::CullingApiTest_Subscribe(CullingApiTes
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -240,8 +241,9 @@ void Assembly-CSharp.dll::CullingApiTest::CullingApiTest__ctor(CullingApiTest *t
   }
   this_00 = (List_1_CullingApiTest_TestClass_ *)func_?(TypeInfo__System__Collections__Generic__List<CullingApiTest::TestClass>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<CullingApiTest::TestClass>__List__);
-  (this->fields).testClasses = this_00;
-  func_?(&(this->fields).testClasses,this_00);
+  ppLVar1 = &(this->fields).testClasses;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }

@@ -8,24 +8,25 @@ bool Assembly-CSharp.dll::ChatAnchor::ChatAnchor_BindAttachedBubble(ChatAnchor *
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pCVar1 = (this->fields).AttachedBubble;
+  x = (this->fields).AttachedBubble;
+  ppCVar1 = &(this->fields).AttachedBubble;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)pCVar1,(Object_1 *)value,(MethodInfo *)0x0);
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)x,(Object_1 *)value,(MethodInfo *)0x0);
   if (bVar2 == 0) {
-    (this->fields).AttachedBubble = value;
-    func_?(&(this->fields).AttachedBubble,value);
-    pCVar1 = (this->fields).AttachedBubble;
-    if (pCVar1 != (ChatBubble *)0x0) {
-      (pCVar1->fields).anchor = this;
-      func_?(&(pCVar1->fields).anchor,this);
+    *ppCVar1 = value;
+    func_?(ppCVar1,value);
+    if (*ppCVar1 != (ChatBubble *)0x0) {
+      ppCVar3 = &((*ppCVar1)->fields).anchor;
+      *ppCVar3 = this;
+      func_?(ppCVar3,this);
       (this->fields).snapTracking = 1;
       return 1;
     }
     func_?();
-    pcVar3 = (code *)swi(3);
-    bVar2 = (*pcVar3)();
+    pcVar4 = (code *)swi(3);
+    bVar2 = (*pcVar4)();
     return bVar2;
   }
   return 0;
@@ -50,7 +51,6 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble(V
           puVar5 = &UNK_?;
           VVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_pivot(pRVar2,(MethodInfo *)0x0);
           fVar7 = VVar6.x;
-          unaff_EDI = camera;
           if (camera != (Camera *)0x0) {
             iVar8 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_pixelWidth(camera,(MethodInfo *)0x0);
             pCVar1 = (this->fields).AttachedBubble;
@@ -98,7 +98,7 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble(V
                                 if ((this->fields).KeepInView != 0) {
                                   adjustedPosition.x = (float)&UNK_?;
                                   puVar5 = puVar9;
-                                  if ((3.5491636e-29 < (float)puVar9) || (puVar5 = puVar15, (float)puVar15 < 3.5491636e-29)) {
+                                  if ((3.5417873e-29 < (float)puVar9) || (puVar5 = puVar15, (float)puVar15 < 3.5417873e-29)) {
                                     adjustedPosition.x = (float)puVar5;
                                   }
                                   adjustedPosition.y = fVar7;
@@ -151,11 +151,9 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble(V
     }
   }
 code_?:
-  uVar19 = func_?();
-  *(undefined1 *)&unaff_EDI->klass = uVar19;
-  pcVar20 = (code *)swi(3);
-  pVVar12 = (Vector3 *)(*pcVar20)();
-  return pVVar12;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -199,8 +197,9 @@ void Assembly-CSharp.dll::ChatAnchor::ChatAnchor_Initialize(ChatAnchor *this,boo
 
 {
   (this->fields).isLocal = isLocal;
-  (this->fields).avatar = avatar;
-  func_?(&(this->fields).avatar,avatar);
+  ppAVar1 = &(this->fields).avatar;
+  *ppAVar1 = avatar;
+  func_?(ppAVar1,avatar);
   return;
 }
 
@@ -220,7 +219,7 @@ void Assembly-CSharp.dll::ChatAnchor::ChatAnchor_InterpolateToNewBubblePosition(
   fVar3 = (this->fields).currentInterpolationProgress;
   fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   pCVar5 = (this->fields).AttachedBubble;
-  (this->fields).currentInterpolationProgress = fVar4 * (this->fields).TrackingSpeed + fVar3;
+  (this->fields).currentInterpolationProgress = (this->fields).TrackingSpeed * fVar4 + fVar3;
   if (pCVar5 != (ChatBubble *)0x0) {
     pTVar6 = (Transform *)ChatBubble::ChatBubble_get_rectTransform(pCVar5,(MethodInfo *)0x0);
     pCVar5 = (this->fields).AttachedBubble;

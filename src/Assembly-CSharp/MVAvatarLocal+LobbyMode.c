@@ -75,7 +75,8 @@ code_?:
                       if ((pMVar3 != (MVAvatarLocal *)0x0) && (pTVar6 = (pMVar3->fields)._._._.transform, pTVar6 != (Transform *)0x0)) {
                         pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffec,pTVar6,(MethodInfo *)0x0);
                         if (this_00 != (LobbyStateCamera *)0x0) {
-                          if (((this_00->klass->_1).naturalAligment < (TypeInfo__LobbyStateCamera->_1).naturalAligment) || ((this_00->klass->_1).typeHierarchy[(TypeInfo__LobbyStateCamera->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__LobbyStateCamera)) goto code_?;
+                          bVar9 = (TypeInfo__LobbyStateCamera->_1).naturalAligment;
+                          if (((this_00->klass->_1).naturalAligment < bVar9) || ((this_00->klass->_1).typeHierarchy[bVar9 - 1] != (Il2CppClass *)TypeInfo__LobbyStateCamera)) goto code_?;
                           LobbyStateCamera::LobbyStateCamera_SetRotation(this_00,*pQVar7,(MethodInfo *)0x0);
                           pMVar3 = (this->fields)._.mvAvatar;
                           if ((pMVar3 != (MVAvatarLocal *)0x0) && (pMVar4 = (pMVar3->fields)._.body, pMVar4 != (MVBody *)0x0)) {
@@ -98,8 +99,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

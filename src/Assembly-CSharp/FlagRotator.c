@@ -27,7 +27,7 @@ void Assembly-CSharp.dll::FlagRotator::FlagRotator_Update(FlagRotator *this,Meth
     fVar3 = (TypeInfo__UnityEngine__Vector3->static_fields->upVector).z;
     fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)method_00);
     if (this_00 != (Transform *)0x0) {
-      fVar4 = fVar4 * (this->fields).rotationSpeed * 57.29578;
+      fVar4 = (this->fields).rotationSpeed * fVar4 * 57.29578;
       axis.y = 1.4013e-45;
       axis.x = fVar4;
       axis.z = fVar3;

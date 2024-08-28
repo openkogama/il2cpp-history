@@ -60,7 +60,7 @@ Quaternion * Assembly-CSharp.dll::GhostEye+IdleBase::GhostEye_IdleBase_GetYawRot
 void Assembly-CSharp.dll::GhostEye+IdleBase::GhostEye_IdleBase_UpdateWrappedTime(GhostEye_IdleBase *this,float deltaTime,MethodInfo *method)
 
 {
-  fVar1 = deltaTime * (this->fields).direction * (this->fields).rotatationPrSecond * 6.2831855 + (this->fields).wrappedTime;
+  fVar1 = (this->fields).direction * deltaTime * (this->fields).rotatationPrSecond * 6.2831855 + (this->fields).wrappedTime;
   (this->fields).wrappedTime = fVar1;
   while (6.2831855 <= fVar1) {
     fVar1 = (this->fields).wrappedTime - 6.2831855;

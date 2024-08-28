@@ -12,8 +12,8 @@ void Assembly-CSharp.dll::EnterPlayModeButton::EnterPlayModeButton_Execute(Enter
     func_?(&TypeInfo__EnterPlayModeButton____c);
     cRam_? = '\x01';
   }
-  if ((this->fields).enteringPlayMode != (Action *)0x0) {
-    pAVar1 = (this->fields).enteringPlayMode;
+  pAVar1 = (this->fields).enteringPlayMode;
+  if (pAVar1 != (Action *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }
   root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);

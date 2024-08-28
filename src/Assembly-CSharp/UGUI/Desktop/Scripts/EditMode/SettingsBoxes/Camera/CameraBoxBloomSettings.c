@@ -91,16 +91,16 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
 {
   pSVar1 = (this->fields).colorR;
   if (pSVar1 != (SettingsSlider *)0x0) {
-    SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+    fVar2 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
     pSVar1 = (this->fields).colorG;
     if (pSVar1 != (SettingsSlider *)0x0) {
-      pSVar1 = (SettingsSlider *)SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
-      if ((this->fields).colorB != (SettingsSlider *)0x0) {
-        puVar2 = &UNK_?;
-        fVar3 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
-        pIVar4 = (this->fields).colorImage;
-        if (pIVar4 != (Image *)0x0) {
-          (*(code *)(pIVar4->klass->vtable).set_color.method)(pIVar4,puVar2,pSVar1,fVar3,0x3f800000,(pIVar4->klass->vtable).get_raycastTarget.methodPtr);
+      fVar3 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+      pSVar1 = (this->fields).colorB;
+      if (pSVar1 != (SettingsSlider *)0x0) {
+        fVar4 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+        pIVar5 = (this->fields).colorImage;
+        if (pIVar5 != (Image *)0x0) {
+          (*(code *)(pIVar5->klass->vtable).set_color.method)(pIVar5,fVar2,fVar3,fVar4,0x3f800000,(pIVar5->klass->vtable).get_raycastTarget.methodPtr);
           this_00 = (this->fields).colorPicker;
           if (this_00 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_00,0,(MethodInfo *)0x0);
@@ -111,8 +111,8 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -145,11 +145,11 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
         if (pSVar8 != (SettingsSlider *)0x0) {
           SettingsSlider::SettingsSlider_Initialize(pSVar8,StringLiteral_ppBloomColB,fStack_6,0.0,1.0,(MethodInfo *)0x0);
           pIVar1 = (this->fields).colorPickerPreview;
-          fStack_3 = fStack_4;
-          fStack_9 = fStack_5;
-          fStack_10 = fStack_6;
-          uStack_11 = 0x3f800000;
           if (pIVar1 != (Image *)0x0) {
+            fStack_3 = fStack_4;
+            fStack_9 = fStack_5;
+            fStack_10 = fStack_6;
+            uStack_11 = 0x3f800000;
             (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,fStack_4,fStack_5,fStack_6,0x3f800000,(pIVar1->klass->vtable).get_raycastTarget.methodPtr);
             this_00 = (this->fields).colorPicker;
             if (this_00 != (GameObject *)0x0) {
@@ -386,7 +386,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
     }
   }
   func_?();
-  pIVar8 = (Int32__Class *)extraout_ECX;
+  pIVar8 = extraout_ECX;
 code_?:
   func_?(value,pIVar8);
   pcVar22 = (code *)swi(3);
@@ -413,10 +413,9 @@ Object * Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::C
   }
   bVar1 = mscorlib.dll::System::String::String_op_Equality(key,StringLiteral_ppBloomInty,(MethodInfo *)0x0);
   if (((bVar1 == 0) && (bVar1 = mscorlib.dll::System::String::String_op_Equality(key,StringLiteral_ppBloomSKnee,(MethodInfo *)0x0), bVar1 == 0)) && (bVar1 = mscorlib.dll::System::String::String_op_Equality(key,StringLiteral_ppBloomDiff,(MethodInfo *)0x0), bVar1 == 0)) {
-    this = (CameraBoxBloomSettings *)0x0;
     bVar1 = mscorlib.dll::System::String::String_op_Equality(key,StringLiteral_ppBloomColR,(MethodInfo *)0x0);
     if (bVar1 == 0) {
-      this = (CameraBoxBloomSettings *)&UNK_?;
+      this = (CameraBoxBloomSettings *)key;
       bVar1 = mscorlib.dll::System::String::String_op_Equality(key,StringLiteral_ppBloomColG,(MethodInfo *)0x0);
       if ((bVar1 == 0) && (bVar1 = mscorlib.dll::System::String::String_op_Equality(key,StringLiteral_ppBloomColB,(MethodInfo *)0x0), bVar1 == 0)) {
         return value;
@@ -451,7 +450,7 @@ Object * Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::C
     func_?();
   }
   mscorlib.dll::System::Convert::Convert_ToInt32(value,(MethodInfo *)0x0);
-  pOVar8 = (Object *)func_?();
+  pOVar8 = (Object *)func_?(TypeInfo__System__Int32);
   return pOVar8;
 }
 

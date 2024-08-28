@@ -29,11 +29,12 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarEmoteRecogniser::AvatarLi
     (this->fields).resetCooldown = (this->fields).resetInterval;
   }
   fVar1 = (this->fields).previousAngle;
-  uVar2 = (int)(this->fields).eventRecognitioner & 0x80000001;
-  if ((int)uVar2 < 0) {
-    uVar2 = (uVar2 - 1 | 0xfffffffe) + 1;
+  sVar2 = (this->fields).eventRecognitioner;
+  uVar3 = (int)sVar2 & 0x80000001;
+  if ((int)uVar3 < 0) {
+    uVar3 = (uVar3 - 1 | 0xfffffffe) + 1;
   }
-  if (uVar2 == (int)(this->fields).startModulusOffset) {
+  if (uVar3 == (int)(this->fields).startModulusOffset) {
     if (((fVar1 <= 315.0) || (45.0 <= angle)) && (((fVar1 < 45.0 && (315.0 < angle)) || (angle <= fVar1)))) goto code_?;
   }
   else if (((315.0 < fVar1) && (angle < 45.0)) || (((45.0 <= fVar1 || (angle <= 315.0)) && (fVar1 < angle)))) {
@@ -41,17 +42,16 @@ code_?:
     (this->fields).previousAngle = angle;
     goto code_?;
   }
-  pfVar3 = &(this->fields).angleSensitivity;
-  if (*pfVar3 <= ABS(angle - fVar1) && ABS(angle - fVar1) != *pfVar3) {
-    piVar4 = &(this->fields).eventRecognitioner;
-    *piVar4 = *piVar4 + 1;
+  pfVar4 = &(this->fields).angleSensitivity;
+  if (*pfVar4 <= ABS(angle - fVar1) && ABS(angle - fVar1) != *pfVar4) {
+    (this->fields).eventRecognitioner = sVar2 + 1;
   }
 code_?:
   if ((this->fields).recognitionsBeforeEvent <= (this->fields).eventRecognitioner) {
     (this->fields).eventRecognitioner = 0;
     (this->fields).resetCooldown = (this->fields).resetInterval;
-    if ((this->fields).OnStartEvent != (Action *)0x0) {
-      pAVar5 = (this->fields).OnStartEvent;
+    pAVar5 = (this->fields).OnStartEvent;
+    if (pAVar5 != (Action *)0x0) {
       (*(pAVar5->fields)._._.invoke_impl)((pAVar5->fields)._._.method_code,(pAVar5->fields)._._.method);
     }
   }
@@ -102,38 +102,40 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarEmoteRecogniser::AvatarLi
     func_?();
   }
   else {
-    pAVar1 = (limbManager->fields).OnAvatarRotate;
+    pAVar1 = &limbManager->fields;
+    pAVar2 = pAVar1->OnAvatarRotate;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__AvatarLimbManagerLocal__AvatarEmoteRecogniser__ResetRecognition__,(MethodInfo *)0x0);
-    pAVar2 = (Action *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    pAVar1 = (Action *)0x0;
+    pAVar2 = (Action *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
     if (pAVar2 == (Action *)0x0) {
-      (limbManager->fields).OnAvatarRotate = (Action *)0x0;
+      pAVar1->OnAvatarRotate = (Action *)0x0;
 code_?:
       func_?();
-      (this->fields).angleSensitivity = (float)&limbManager->fields;
-      (this->fields).resetInterval = (float)pAVar1;
-      (this->fields).resetCooldown = (float)pAVar1;
+      (this->fields).angleSensitivity = angleSensitivity;
+      (this->fields).resetInterval = resetInterval;
+      (this->fields).resetCooldown = resetInterval;
       (this->fields).recognitionsBeforeEvent = recognitionsBeforeEvent;
       (this->fields).startModulusOffset = (ushort)(shouldRecognisePositiveAngleFirst ^ 1);
       (this->fields).isActive = isActive;
       return;
     }
+    pAVar3 = (Action *)0x0;
     if (pAVar2->klass == TypeInfo__System__Action) {
-      pAVar1 = pAVar2;
+      pAVar3 = pAVar2;
     }
-    if (pAVar1 != (Action *)0x0) {
-      (limbManager->fields).OnAvatarRotate = pAVar1;
-      pAVar1 = (Action *)0x0;
-      if (pAVar2->klass == TypeInfo__System__Action) {
-        pAVar1 = pAVar2;
-      }
-      if (pAVar1 != (Action *)0x0) goto code_?;
+    if (pAVar3 == (Action *)0x0) goto code_?;
+    pAVar1->OnAvatarRotate = pAVar3;
+    pAVar3 = (Action *)0x0;
+    if (pAVar2->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar2;
     }
+    if (pAVar3 != (Action *)0x0) goto code_?;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+code_?:
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

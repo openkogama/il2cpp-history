@@ -80,12 +80,13 @@ void Assembly-CSharp.dll::SpawnRoleChangeHandlerLocal::SpawnRoleChangeHandlerLoc
   }
   this_00 = (SpawnRoleDataMediator *)func_?(TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__Mediator__SpawnRoleDataMediator);
   Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::SpawnRoleDataMediator::SpawnRoleDataMediator__ctor(this_00,(MethodInfo *)0x0);
-  method_00 = (MethodInfo *)&this->fields;
-  (this->fields).SpawnRoleDataMediator = this_00;
-  func_?(method_00,this_00);
+  pSVar1 = &this->fields;
+  pSVar1->SpawnRoleDataMediator = this_00;
+  method_00 = (MethodInfo *)pSVar1;
+  func_?(pSVar1,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  (this->fields).SpawnRoleDataMediator = spawnRoleDataMediator;
-  func_?(&this->fields,spawnRoleDataMediator);
+  pSVar1->SpawnRoleDataMediator = spawnRoleDataMediator;
+  func_?(pSVar1,spawnRoleDataMediator);
   return;
 }
 

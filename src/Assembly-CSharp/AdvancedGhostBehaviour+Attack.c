@@ -51,7 +51,7 @@ code_?:
       UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch(this_01,fVar8 * 3.0,(MethodInfo *)0x0);
       pGVar9 = (pAVar7->fields).ghostBody;
       if (pGVar9 != (GhostBody *)0x0) {
-        (pGVar9->fields).angularMaxRotation = fVar8 * (pGVar9->fields).angularMaxRotationBase;
+        (pGVar9->fields).angularMaxRotation = (pGVar9->fields).angularMaxRotationBase * fVar8;
         pAVar7 = (ghostBehaviour->fields).GhostVisualization;
         if (pAVar7 != (AdvancedGhostVisualizaton *)0x0) {
           this_02 = (pAVar7->fields).ghostEye;
@@ -102,7 +102,7 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+Attack::AdvancedGhostBehaviour_
         if (uVar7 != 0) {
           do {
             if (pOVar5->interfaceOffsets[uVar6].interfaceType == (Il2CppClass *)TypeInfo__GhostEye__IGhostEyeState) {
-              ppMVar8 = &(&(pOVar4->klass->vtable).Equals)[pOVar4->klass->interfaceOffsets[uVar6].offset].method;
+              ppMVar8 = &(&(pOVar5->vtable).Equals)[pOVar5->interfaceOffsets[uVar6].offset].method;
               goto code_?;
             }
             uVar6 = uVar6 + 1;
@@ -116,7 +116,7 @@ code_?:
       }
     }
   }
-  uVar9 = func_?(&stack0xffffffe0);
+  uVar9 = func_?(&stack0xffffffe4);
   func_?(uVar9);
   pcVar10 = (code *)swi(3);
   (*pcVar10)();
