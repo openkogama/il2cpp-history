@@ -49,9 +49,11 @@ void Assembly-CSharp.dll::TeamRequirementPanel::TeamRequirementPanel_OnToggleEna
   }
 code_?:
   iVar6 = func_?();
-  *(undefined2 *)(iVar6 + -0x4726efc3) = in_FPUControlWord;
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  lVar7 = (longlong)*(int *)(iVar6 + 0x3d) * 0x3d506910;
+  *(char *)(extraout_ECX + 0x50) =
+       *(char *)(extraout_ECX + 0x50) + (char)((uint)extraout_ECX >> 8) + ((int)lVar7 != lVar7);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

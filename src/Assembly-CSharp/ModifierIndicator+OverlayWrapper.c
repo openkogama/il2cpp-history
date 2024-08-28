@@ -92,29 +92,29 @@ void Assembly-CSharp.dll::ModifierIndicator+OverlayWrapper::ModifierIndicator_Ov
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  (this->fields).image.image = overlayImage.image;
+  pMVar1 = &(this->fields).image;
+  pMVar1->image = overlayImage.image;
   (this->fields).image.animator = overlayImage.animator;
   (this->fields).image.streamComponent = overlayImage.streamComponent;
   (this->fields).image.alphaHandler = overlayImage.alphaHandler;
-  func_?(&(this->fields).image,0);
-  this_00 = (this->fields).image.image;
-  if (this_00 != (Image *)0x0) {
+  func_?(pMVar1,0);
+  if (pMVar1->image != (Image *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-              ((Behaviour *)this_00,0,(MethodInfo *)0x0);
+              ((Behaviour *)pMVar1->image,0,(MethodInfo *)0x0);
     (this->fields).fadeOutCurve = fadeOutCurve;
     func_?(&this->fields,fadeOutCurve);
     if (fadeOutCurve != (AnimationCurve *)0x0) {
-      pKVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_GetKeys
+      pKVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_GetKeys
                          (fadeOutCurve,(MethodInfo *)0x0);
-      iVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_get_length
+      iVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_get_length
                         (fadeOutCurve,(MethodInfo *)0x0);
-      if (pKVar1 != (Keyframe__Array *)0x0) {
-        if (iVar2 - 1U < pKVar1->max_length) {
-          fVar3 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Single,System::
+      if (pKVar2 != (Keyframe__Array *)0x0) {
+        if (iVar3 - 1U < pKVar2->max_length) {
+          fVar4 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Single,System::
                   Single]::KeyValuePair_2_System_Single_System_Single__get_Key
                             ((KeyValuePair_2_System_Single_System_Single_ *)
-                             (pKVar1->vector + iVar2 + -1),(MethodInfo *)0x0);
-          (this->fields).fadeOutTimer = fVar3;
+                             (pKVar2->vector + iVar3 + -1),(MethodInfo *)0x0);
+          (this->fields).fadeOutTimer = fVar4;
           return;
         }
         goto code_?;
@@ -124,8 +124,8 @@ void Assembly-CSharp.dll::ModifierIndicator+OverlayWrapper::ModifierIndicator_Ov
   func_?();
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -152,19 +152,5 @@ float Assembly-CSharp.dll::ModifierIndicator+OverlayWrapper::
   pcVar6 = (code *)swi(3);
   fVar3 = (float10)(*pcVar6)();
   return (float)fVar3;
-}
-
-
-/* Void set_Image(Image) */
-
-void Assembly-CSharp.dll::ModifierIndicator+OverlayWrapper::
-     ModifierIndicator_OverlayWrapper_set_Image
-               (ModifierIndicator_OverlayWrapper *this,Image *value,MethodInfo *method)
-
-{
-  pMVar1 = &(this->fields).image;
-  pMVar1->image = value;
-  func_?(pMVar1,value);
-  return;
 }
 

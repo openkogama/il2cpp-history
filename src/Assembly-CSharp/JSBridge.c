@@ -149,17 +149,17 @@ void Assembly-CSharp.dll::JSBridge::JSBridge_ExternalEval(String *script,MethodI
     cRam_? = '\x01';
   }
   if (script != (String *)0x0) {
-    if (0 < (script->fields)._stringLength) {
-      uVar1 = mscorlib.dll::System::String::String_get_Chars
-                        (script,(script->fields)._stringLength + -1,(MethodInfo *)0x0);
-      if (uVar1 != 0x3b) {
-        pSVar2 = (String *)func_?(TypeInfo__System__Char);
+    iVar1 = (script->fields)._stringLength;
+    if (0 < iVar1) {
+      uVar2 = mscorlib.dll::System::String::String_get_Chars(script,iVar1 + -1,(MethodInfo *)0x0);
+      if (uVar2 != 0x3b) {
+        pSVar3 = (String *)func_?(TypeInfo__System__Char);
         str1 = (String *)0x0;
-        if (pSVar2 != (String *)0x0) {
-          if (pSVar2->klass == TypeInfo__System__String) {
-            str1 = pSVar2;
+        if (pSVar3 != (String *)0x0) {
+          if (pSVar3->klass == TypeInfo__System__String) {
+            str1 = pSVar3;
           }
-          pSVar3 = TypeInfo__System__String;
+          pSVar4 = TypeInfo__System__String;
           if (str1 == (String *)0x0) goto code_?;
         }
         script = mscorlib.dll::System::String::String_Concat_3(script,str1,(MethodInfo *)0x0);
@@ -179,12 +179,12 @@ void Assembly-CSharp.dll::JSBridge::JSBridge_ExternalEval(String *script,MethodI
     return;
   }
   func_?();
-  pSVar2 = extraout_ECX;
-  pSVar3 = extraout_EDX;
+  pSVar3 = extraout_ECX;
+  pSVar4 = extraout_EDX;
 code_?:
-  func_?(pSVar2,pSVar3);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?(pSVar3,pSVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -318,7 +318,7 @@ code_?:
     }
     if (pOVar2 == (Object *)0x0) {
       pOVar2 = (Object *)0x0;
-      if ((Char__Class *)o->klass == TypeInfo__System__Char) {
+      if (pSVar1 == (String__Class *)TypeInfo__System__Char) {
         pOVar2 = o;
       }
       if (pOVar2 == (Object *)0x0) {
@@ -359,11 +359,11 @@ code_?:
           goto code_?;
         }
         func_?(o,pIVar7);
-        pCVar9 = extraout_ECX;
+        pDVar9 = extraout_EDX;
       }
       else {
-        pCVar9 = TypeInfo__System__Char;
-        if ((o->klass->_0).element_class == (TypeInfo__System__Char->_0).element_class) {
+        pDVar9 = (Double__Class *)TypeInfo__System__Char;
+        if ((pSVar1->_0).element_class == (TypeInfo__System__Char->_0).element_class) {
           psVar10 = (short *)func_?(o);
           if (*psVar10 == 0x22) {
             return ::StringLiteral_____;
@@ -377,22 +377,20 @@ code_?:
           goto code_?;
         }
       }
-      func_?(o,pCVar9);
-      pSVar11 = extraout_EDX;
     }
     else {
       if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Globalization__CultureInfo);
       }
-      pCVar12 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+      pCVar11 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                          ((MethodInfo *)0x0);
-      if (pCVar12 == (CultureInfo *)0x0) goto code_?;
-      pIVar13 = (IFormatProvider *)func_?(0xe,pCVar12);
-      pSVar11 = (Single__Class *)TypeInfo__System__Double;
+      if (pCVar11 == (CultureInfo *)0x0) goto code_?;
+      pIVar12 = (IFormatProvider *)func_?(0xe,pCVar11);
+      pDVar9 = TypeInfo__System__Double;
       if ((o->klass->_0).element_class == (TypeInfo__System__Double->_0).element_class) {
         func_?(o);
         pSVar4 = mscorlib.dll::System::Double::Double_ToString_2
-                           ((Double *)&stack0xffffffec,pIVar13,(MethodInfo *)0x0);
+                           ((Double *)&stack0xffffffec,pIVar12,(MethodInfo *)0x0);
         return pSVar4;
       }
     }
@@ -401,23 +399,23 @@ code_?:
     if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Globalization__CultureInfo);
     }
-    pCVar12 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+    pCVar11 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
                        ((MethodInfo *)0x0);
-    if (pCVar12 == (CultureInfo *)0x0) goto code_?;
-    pIVar13 = (IFormatProvider *)func_?(0xe,pCVar12);
-    pSVar11 = TypeInfo__System__Single;
+    if (pCVar11 == (CultureInfo *)0x0) goto code_?;
+    pIVar12 = (IFormatProvider *)func_?(0xe,pCVar11);
+    pDVar9 = (Double__Class *)TypeInfo__System__Single;
     if ((o->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-      pfVar14 = (float *)func_?(o);
-      SStack_15.m_value = *pfVar14;
-      pSVar4 = mscorlib.dll::System::Single::Single_ToString_1(&SStack_15,pIVar13,(MethodInfo *)0x0);
+      pfVar13 = (float *)func_?(o);
+      SStack_14.m_value = *pfVar13;
+      pSVar4 = mscorlib.dll::System::Single::Single_ToString_1(&SStack_14,pIVar12,(MethodInfo *)0x0);
       return pSVar4;
     }
   }
-  func_?(o,pSVar11);
+  func_?(o,pDVar9);
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  pSVar4 = (String *)(*pcVar16)();
+  pcVar15 = (code *)swi(3);
+  pSVar4 = (String *)(*pcVar15)();
   return pSVar4;
 }
 

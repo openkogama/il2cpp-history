@@ -6,8 +6,8 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_Destroy
 
 {
   MVWorldObjectClient::MVWorldObjectClient_Destroy((MVWorldObjectClient *)this,(MethodInfo *)0x0);
-  if ((this->fields).spawnStateWrapper != (SpawnStateWrapper *)0x0) {
-    obj = (this->fields).spawnStateWrapper;
+  obj = (this->fields).spawnStateWrapper;
+  if (obj != (SpawnStateWrapper *)0x0) {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UpdateController);
       cRam_? = '\x01';
@@ -279,9 +279,10 @@ code_?:
                            (this_00,
                             TriggerBoxEvents_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<TriggerBoxEvents>__
                            );
-        (this->fields).triggerBoxEvents = pTVar11;
-        func_?(&(this->fields).triggerBoxEvents);
-        pTVar11 = (this->fields).triggerBoxEvents;
+        ppTVar12 = &(this->fields).triggerBoxEvents;
+        *ppTVar12 = pTVar11;
+        func_?(ppTVar12);
+        pTVar11 = *ppTVar12;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -302,8 +303,8 @@ code_?:
   func_?(TVar8.m_Index);
 code_?:
   func_?(value);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -589,8 +590,9 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner__ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  (this->fields)._.idChildMap = (Dictionary_2_System_Object_System_Object_ *)this_00;
-  func_?(&(this->fields)._.idChildMap,this_00);
+  ppDVar1 = &(this->fields)._.idChildMap;
+  *ppDVar1 = (Dictionary_2_System_Object_System_Object_ *)this_00;
+  func_?(ppDVar1,this_00);
   MVGroup::MVGroup__ctor_2((MVGroup *)this,data,worldObjects,(MethodInfo *)0x0);
   MVBlueprintBase::MVBlueprintBase_MapDataToFields((MVBlueprintBase *)this,(MethodInfo *)0x0);
   return;
@@ -627,8 +629,9 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner__ctor_1
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  (this->fields)._.idChildMap = (Dictionary_2_System_Object_System_Object_ *)this_00;
-  func_?(&(this->fields)._.idChildMap,this_00);
+  ppDVar1 = &(this->fields)._.idChildMap;
+  *ppDVar1 = (Dictionary_2_System_Object_System_Object_ *)this_00;
+  func_?(ppDVar1,this_00);
   MVGroup::MVGroup__ctor_1((MVGroup *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
   MVBlueprintBase::MVBlueprintBase_MapDataToFields((MVBlueprintBase *)this,(MethodInfo *)0x0);
   return;

@@ -68,33 +68,31 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVObjectTransparency::MVObjectTransp
         if (RStack_7 == (RegexCharClass_SingleRange)0x0) break;
         *(bool *)((int)RStack_7 + 0x14) = currentlyIsHot;
         this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-        if ((RStack_7 == (RegexCharClass_SingleRange)0x0) ||
-           (this_02 == (MVWorldObjectClientManager *)0x0)) break;
+        if (this_02 == (MVWorldObjectClientManager *)0x0) break;
         method_00 = (MethodInfo *)0x0;
         this_03 = (MVCubeModelBase *)
                   MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                             (this_02,*(int32_t *)((int)RStack_7 + 0x10),(MethodInfo *)0x0);
         if (this_03 == (MVCubeModelBase *)0x0) break;
-        if (((this_03->klass->_1).naturalAligment < (TypeInfo__MVCubeModelBase->_1).naturalAligment)
-           || ((MVCubeModelBase__Class *)
-               (this_03->klass->_1).typeHierarchy
-               [(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] != TypeInfo__MVCubeModelBase))
-        {
-          pTVar8 = mscorlib.dll::System::Object::Object_GetType((Object *)this_03,(MethodInfo *)0x0)
+        bVar8 = (TypeInfo__MVCubeModelBase->_1).naturalAligment;
+        if (((this_03->klass->_1).naturalAligment < bVar8) ||
+           ((MVCubeModelBase__Class *)(this_03->klass->_1).typeHierarchy[bVar8 - 1] !=
+            TypeInfo__MVCubeModelBase)) {
+          pTVar9 = mscorlib.dll::System::Object::Object_GetType((Object *)this_03,(MethodInfo *)0x0)
           ;
-          pSVar9 = StringLiteral_AdjustTransparency_invalid_world;
-          if (pTVar8 == (Type *)0x0) {
+          pSVar10 = StringLiteral_AdjustTransparency_invalid_world;
+          if (pTVar9 == (Type *)0x0) {
             str1 = (String *)0x0;
           }
           else {
             str1 = (String *)func_?();
           }
-          pSVar9 = mscorlib.dll::System::String::String_Concat_3(pSVar9,str1,(MethodInfo *)0x0);
+          pSVar10 = mscorlib.dll::System::String::String_Concat_3(pSVar10,str1,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                    ((Object *)pSVar9,(MethodInfo *)0x0);
+                    ((Object *)pSVar10,(MethodInfo *)0x0);
         }
         else {
           MVCubeModelBase::MVCubeModelBase_ObjectLinkTransparency(this_03,(MethodInfo *)0x0);
@@ -103,8 +101,8 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVObjectTransparency::MVObjectTransp
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -199,8 +197,9 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVObjectTransparency::MVObjectTransp
   pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
                      ((MVWorldObject *)this,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
                       (Action_2_LogicInputState_LogicObjectManager_ *)this_01,(MethodInfo *)0x0);
-  (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
-  func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar1);
+  ppIVar2 = &(this->fields)._InputSignalReceiver_k__BackingField;
+  *ppIVar2 = pIVar1;
+  func_?(ppIVar2,pIVar1);
   (*(code *)(this->klass->vtable).OnDataUpdate.method)
             (this,(this->klass->vtable).OnRunTimeDataUpdate.methodPtr);
   MVObjectTransparency_UpdateTransparency(this,(MethodInfo *)0x0);
@@ -225,8 +224,8 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVObjectTransparency::MVObjectTransp
         func_?();
         cRam_? = '\x01';
       }
-      pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-      if (pIVar2 != (IEditModeUI *)0x0) {
+      pIVar3 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+      if (pIVar3 != (IEditModeUI *)0x0) {
         a = (Delegate *)func_?();
         this_02 = (UnityAction_1_System_Int32Enum_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
@@ -238,30 +237,30 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVObjectTransparency::MVObjectTransp
                   mscorlib.dll::System::Delegate::Delegate_Combine
                             (a,(Delegate *)this_02,(MethodInfo *)0x0);
         unaff_EDI = TypeInfo__System__Action<EditModeChangeArgs>;
-        pAStack3 = (Action_1_EditModeChangeArgs___Class *)0x0;
+        pAStack4 = (Action_1_EditModeChangeArgs___Class *)0x0;
         if (this_01 == (UnityAction_2_System_Int32_System_Int32_ *)0x0) {
 code_?:
-          pIStack4 = TypeInfo__IEditModeUI;
-          uStack5 = 3;
-          pUStack6 = (UnityAction_2_System_Int32_System_Int32_ *)pIVar2;
+          pIStack5 = TypeInfo__IEditModeUI;
+          uStack6 = 3;
+          pUStack7 = (UnityAction_2_System_Int32_System_Int32_ *)pIVar3;
           func_?();
           return;
         }
-        pAStack3 = TypeInfo__System__Action<EditModeChangeArgs>;
-        pUStack6 = this_01;
-        pAStack3 = (Action_1_EditModeChangeArgs___Class *)func_?();
-        if (pAStack3 != (Action_1_EditModeChangeArgs___Class *)0x0) goto code_?;
+        pAStack4 = TypeInfo__System__Action<EditModeChangeArgs>;
+        pUStack7 = this_01;
+        pAStack4 = (Action_1_EditModeChangeArgs___Class *)func_?();
+        if (pAStack4 != (Action_1_EditModeChangeArgs___Class *)0x0) goto code_?;
         goto code_?;
       }
     }
   }
   func_?();
 code_?:
-  pUStack6 = this_01;
-  pAStack3 = unaff_EDI;
+  pUStack7 = this_01;
+  pAStack4 = unaff_EDI;
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -428,24 +427,25 @@ bool Assembly-CSharp.dll::WorldObjectTypes::MVObjectTransparency::MVObjectTransp
     func_?(&TypeInfo__MVCubeModelInstance);
     cRam_? = '\x01';
   }
-  if (((wo == (MVWorldObjectClient *)0x0) ||
-      ((wo->klass->_1).naturalAligment < (TypeInfo__MVCubeModelInstance->_1).naturalAligment)) ||
-     ((MVCubeModelInstance__Class *)
-      (wo->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] !=
-      TypeInfo__MVCubeModelInstance)) {
-    return 0;
+  if (wo != (MVWorldObjectClient *)0x0) {
+    bVar1 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
+    if ((bVar1 <= (wo->klass->_1).naturalAligment) &&
+       ((MVCubeModelInstance__Class *)(wo->klass->_1).typeHierarchy[bVar1 - 1] ==
+        TypeInfo__MVCubeModelInstance)) {
+      pMVar2 = (wo->fields).group;
+      if (pMVar2 == (MVGroup *)0x0) {
+        return 1;
+      }
+      bVar1 = (TypeInfo__MVBlueprintBase->_1).naturalAligment;
+      if ((bVar1 <= (pMVar2->klass->_1).naturalAligment) &&
+         ((MVBlueprintBase__Class *)(pMVar2->klass->_1).typeHierarchy[bVar1 - 1] ==
+          TypeInfo__MVBlueprintBase)) {
+        return pMVar2 == (MVGroup *)0x0;
+      }
+      return 1;
+    }
   }
-  pMVar1 = (wo->fields).group;
-  if (pMVar1 == (MVGroup *)0x0) {
-    return 1;
-  }
-  if (((TypeInfo__MVBlueprintBase->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment) &&
-     ((MVBlueprintBase__Class *)
-      (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVBlueprintBase->_1).naturalAligment - 1] ==
-      TypeInfo__MVBlueprintBase)) {
-    return pMVar1 == (MVGroup *)0x0;
-  }
-  return 1;
+  return 0;
 }
 
 
@@ -476,36 +476,36 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVObjectTransparency::MVObjectTransp
     *(uint *)piVar2 = (uint)*piVar2 | 0x10000;
     piVar2 = &(this->fields)._._.interactionFlags;
     *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
-    unaff_EDI = (this->fields)._._.component;
+    pOVar3 = (this->fields)._._.component;
     *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
     (this->fields)._Transparency_k__BackingField = 0.9;
     (this->fields)._ShowingOutline_k__BackingField = 1;
-    if (unaff_EDI != (ObjectPrefab *)0x0) {
-      if (((unaff_EDI->klass->_1).naturalAligment <
-           (TypeInfo__WorldObjectTypes__MVObjectTransparency__MVObjectTransparencyObject->_1).
-           naturalAligment) ||
-         ((unaff_EDI->klass->_1).typeHierarchy
-          [(TypeInfo__WorldObjectTypes__MVObjectTransparency__MVObjectTransparencyObject->_1).
-           naturalAligment - 1] !=
+    if (pOVar3 != (ObjectPrefab *)0x0) {
+      bVar4 = (TypeInfo__WorldObjectTypes__MVObjectTransparency__MVObjectTransparencyObject->_1).
+              naturalAligment;
+      if (((pOVar3->klass->_1).naturalAligment < bVar4) ||
+         ((pOVar3->klass->_1).typeHierarchy[bVar4 - 1] !=
           (Il2CppClass *)
           TypeInfo__WorldObjectTypes__MVObjectTransparency__MVObjectTransparencyObject))
       goto code_?;
-      (this->fields).goObjectTransparency = (ObjectTransparency *)unaff_EDI[1].klass;
+      ppOVar5 = &(this->fields).goObjectTransparency;
+      *ppOVar5 = (ObjectTransparency *)pOVar3[1].klass;
       func_?();
-      pOVar3 = (this->fields).goObjectTransparency;
-      if (pOVar3 != (ObjectTransparency *)0x0) {
-        (pOVar3->fields).woObjectTransparency = this;
-        func_?(&(pOVar3->fields).woObjectTransparency,this);
+      pOVar6 = *ppOVar5;
+      if (pOVar6 != (ObjectTransparency *)0x0) {
+        ppMVar7 = &(pOVar6->fields).woObjectTransparency;
+        *ppMVar7 = this;
+        func_?(ppMVar7,this);
         return;
       }
     }
   }
   func_?();
 code_?:
-  func_?(unaff_EDI);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

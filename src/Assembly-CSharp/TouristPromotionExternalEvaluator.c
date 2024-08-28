@@ -126,8 +126,9 @@ void Assembly-CSharp.dll::TouristPromotionExternalEvaluator::TouristPromotionExt
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<TouristPromotionExternalEvaluator::TouristPromotionExternalDef>__List__
             );
-  (this->fields).availablePromotions = this_00;
-  func_?(&(this->fields).availablePromotions,this_00);
+  ppLVar1 = &(this->fields).availablePromotions;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

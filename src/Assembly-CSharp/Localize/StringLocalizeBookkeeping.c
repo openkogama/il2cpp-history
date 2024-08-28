@@ -81,19 +81,20 @@ void Assembly-CSharp.dll::Localize::StringLocalizeBookkeeping::StringLocalizeBoo
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
             );
-  (this->fields).stringToStringKeyMap = (Dictionary_2_System_String_System_String_ *)this_00;
-  func_?(&this->fields,this_00);
-  pAVar1 = (this->fields).initCallback;
-  if (pAVar1 != (Action_1_System_Collections_Generic_Dictionary_2_System_String_System_String_ *)0x0
+  pSVar1 = &this->fields;
+  pSVar1->stringToStringKeyMap = (Dictionary_2_System_String_System_String_ *)this_00;
+  func_?(pSVar1,this_00);
+  pAVar2 = (this->fields).initCallback;
+  if (pAVar2 != (Action_1_System_Collections_Generic_Dictionary_2_System_String_System_String_ *)0x0
      ) {
-    (*(pAVar1->fields)._._.invoke_impl)
-              ((pAVar1->fields)._._.method_code,(this->fields).stringToStringKeyMap,
-               (pAVar1->fields)._._.method);
+    (*(pAVar2->fields)._._.invoke_impl)
+              ((pAVar2->fields)._._.method_code,pSVar1->stringToStringKeyMap,
+               (pAVar2->fields)._._.method);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -114,8 +115,9 @@ void Assembly-CSharp.dll::Localize::StringLocalizeBookkeeping::StringLocalizeBoo
   }
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  (this->fields).initCallback = initCallback;
-  func_?(&(this->fields).initCallback,initCallback);
+  ppAVar1 = &(this->fields).initCallback;
+  *ppAVar1 = initCallback;
+  func_?(ppAVar1,initCallback);
   this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
@@ -123,17 +125,10 @@ void Assembly-CSharp.dll::Localize::StringLocalizeBookkeeping::StringLocalizeBoo
              (MethodInfo *)0x0);
   TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    ppMStack1 =
-         &
-         MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
-    ;
     func_?();
     func_?();
     cRam_? = '\x01';
   }
-  ppMStack1 =
-       (MethodInfo **)
-       TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>;
   this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
              *)func_?();
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
@@ -144,12 +139,11 @@ void Assembly-CSharp.dll::Localize::StringLocalizeBookkeeping::StringLocalizeBoo
             );
   (this->fields).stringToStringKeyMap = (Dictionary_2_System_String_System_String_ *)this_01;
   func_?();
-  pAVar2 = (this->fields).initCallback;
+  pAVar2 = *ppAVar1;
   if (pAVar2 != (Action_1_System_Collections_Generic_Dictionary_2_System_String_System_String_ *)0x0
      ) {
     puStack3 = (pAVar2->fields)._._.method;
     pDStack4 = (this->fields).stringToStringKeyMap;
-    ppMStack1 = (pAVar2->fields)._._.method_code;
     (*(pAVar2->fields)._._.invoke_impl)();
     return;
   }

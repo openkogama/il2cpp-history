@@ -67,9 +67,10 @@ void Assembly-CSharp.dll::AssetBundleRequest::AssetBundleRequest__ctor
   (this->fields)._._.retryTime._dateData = DVar1._dateData;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  ppSVar2 = &(this->fields)._._.path;
   (this->fields)._._.requestPriority = requestPriority;
-  (this->fields)._._.path = path;
-  func_?(&(this->fields)._._.path,path);
+  *ppSVar2 = path;
+  func_?(ppSVar2,path);
   (this->fields)._._.callback = callback;
   func_?(&this->fields,callback);
   return;

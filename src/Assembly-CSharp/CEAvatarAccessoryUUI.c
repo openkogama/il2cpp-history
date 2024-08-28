@@ -33,8 +33,7 @@ void Assembly-CSharp.dll::CEAvatarAccessoryUUI::CEAvatarAccessoryUUI_Enter
   if (uVar8 != 0) {
     do {
       if (pIVar6->interfaceOffsets[uVar7].interfaceType == (Il2CppClass *)TypeInfo__ILogger) {
-        ppMVar9 = &(&pIVar1->klass->vtable)[pIVar1->klass->interfaceOffsets[uVar7].offset].Log.
-                   method;
+        ppMVar9 = &(&pIVar1->klass->vtable)[pIVar6->interfaceOffsets[uVar7].offset].Log.method;
         goto code_?;
       }
       uVar7 = uVar7 + 1;

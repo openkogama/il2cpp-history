@@ -272,7 +272,7 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup+<>c::
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
           ppMVar5 = &(&(pIVar1->klass->vtable).get_RewardedAdNotAvailableText)
-                     [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
+                     [pIVar2->interfaceOffsets[uVar3].offset].method;
           goto code_?;
         }
         uVar3 = uVar3 + 1;

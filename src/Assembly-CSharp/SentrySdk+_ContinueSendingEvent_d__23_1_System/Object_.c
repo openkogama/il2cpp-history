@@ -51,31 +51,30 @@ bool Assembly-CSharp.dll::SentrySdk+<ContinueSendingEvent>d__23`1[System::Object
         pDVar3 = (this_00->fields)._dsn;
         if ((pDVar3 != (Dsn *)0x0) && (pUVar6 = (pDVar3->fields).callUri, pUVar6 != (Uri *)0x0)) {
           pSVar5 = (String *)
-                   (*(code *)(pUVar6->klass->vtable).ToString.method)
-                             (pUVar6,(pUVar6->klass->vtable).
-                                     System_Runtime_Serialization_ISerializable_GetObjectData.
-                                     methodPtr);
+                    (*(code *)(pUVar6->klass->vtable).ToString.method)
+                              (pUVar6,(pUVar6->klass->vtable).
+                                      System_Runtime_Serialization_ISerializable_GetObjectData.
+                                      methodPtr);
           pUVar7 = (UnityWebRequest *)
-                   func_?(TypeInfo__UnityEngine__Networking__UnityWebRequest);
+                    func_?(TypeInfo__UnityEngine__Networking__UnityWebRequest);
           UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
           UnityWebRequest__ctor(pUVar7,pSVar5,(MethodInfo *)0x0);
-          (this->fields)._www_5__2 = pUVar7;
-          func_?(&(this->fields)._www_5__2,pUVar7);
-          pUVar7 = (this->fields)._www_5__2;
-          if (pUVar7 != (UnityWebRequest *)0x0) {
+          ppUVar8 = &(this->fields)._www_5__2;
+          *ppUVar8 = pUVar7;
+          func_?(ppUVar8,pUVar7);
+          if (*ppUVar8 != (UnityWebRequest *)0x0) {
             UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
-            UnityWebRequest_set_method(pUVar7,StringLiteral_POST,(MethodInfo *)0x0);
-            pUVar7 = (this->fields)._www_5__2;
-            if (pUVar7 != (UnityWebRequest *)0x0) {
+            UnityWebRequest_set_method(*ppUVar8,StringLiteral_POST,(MethodInfo *)0x0);
+            if (*ppUVar8 != (UnityWebRequest *)0x0) {
               UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
               UnityWebRequest_SetRequestHeader
-                        (pUVar7,StringLiteral_X_Sentry_Auth,pSVar4,(MethodInfo *)0x0);
-              pUVar7 = (this->fields)._www_5__2;
-              pEVar8 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
-              if (pEVar8 != (Encoding *)0x0) {
+                        (*ppUVar8,StringLiteral_X_Sentry_Auth,pSVar4,(MethodInfo *)0x0);
+              pUVar7 = *ppUVar8;
+              pEVar9 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
+              if (pEVar9 != (Encoding *)0x0) {
                 data = (Byte__Array *)
-                       (*(code *)(pEVar8->klass->vtable).GetBytes_1.method)
-                                 (pEVar8,pSVar2,(pEVar8->klass->vtable).GetBytes_2.methodPtr);
+                       (*(code *)(pEVar9->klass->vtable).GetBytes_1.method)
+                                 (pEVar9,pSVar2,(pEVar9->klass->vtable).GetBytes_2.methodPtr);
                 this_02 = (UploadHandlerRaw *)
                           func_?(TypeInfo__UnityEngine__Networking__UploadHandlerRaw);
                 UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UploadHandlerRaw::
@@ -96,11 +95,12 @@ bool Assembly-CSharp.dll::SentrySdk+<ContinueSendingEvent>d__23`1[System::Object
                               (pUVar7,(DownloadHandler *)this_03,(MethodInfo *)0x0);
                     pUVar7 = (this->fields)._www_5__2;
                     if (pUVar7 != (UnityWebRequest *)0x0) {
-                      pUVar9 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::
+                      pUVar10 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::
                                 UnityWebRequest::UnityWebRequest_SendWebRequest
                                           (pUVar7,(MethodInfo *)0x0);
-                      (this->fields).__2__current = pUVar9;
-                      func_?(&(this->fields).__2__current,pUVar9);
+                      ppUVar11 = &(this->fields).__2__current;
+                      *ppUVar11 = pUVar10;
+                      func_?(ppUVar11,pUVar10);
                       (this->fields).__1__state = 1;
                       return 1;
                     }
@@ -120,29 +120,30 @@ bool Assembly-CSharp.dll::SentrySdk+<ContinueSendingEvent>d__23`1[System::Object
     pUVar7 = (this->fields)._www_5__2;
     (this->fields).__1__state = -1;
     if (pUVar7 != (UnityWebRequest *)0x0) {
-      bVar10 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+      bVar12 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
               UnityWebRequest_get_isDone(pUVar7,(MethodInfo *)0x0);
-      if (bVar10 == 0) {
-        (this->fields).__2__current = (UnityWebRequestAsyncOperation *)0x0;
-        func_?(&(this->fields).__2__current,0);
+      if (bVar12 == 0) {
+        ppUVar11 = &(this->fields).__2__current;
+        *ppUVar11 = (UnityWebRequestAsyncOperation *)0x0;
+        func_?(ppUVar11,0);
         (this->fields).__1__state = 2;
         return 1;
       }
       pUVar7 = (this->fields)._www_5__2;
       if (pUVar7 != (UnityWebRequest *)0x0) {
-        bVar10 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+        bVar12 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
                 UnityWebRequest_get_isNetworkError(pUVar7,(MethodInfo *)0x0);
-        if (bVar10 == 0) {
+        if (bVar12 == 0) {
           pUVar7 = (this->fields)._www_5__2;
           if (pUVar7 == (UnityWebRequest *)0x0) goto code_?;
-          bVar10 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+          bVar12 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
                   UnityWebRequest_get_isHttpError(pUVar7,(MethodInfo *)0x0);
-          if (bVar10 == 0) {
+          if (bVar12 == 0) {
             pUVar7 = (this->fields)._www_5__2;
             if (pUVar7 == (UnityWebRequest *)0x0) goto code_?;
-            iVar11 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest
+            iVar13 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest
                      ::UnityWebRequest_get_responseCode(pUVar7,(MethodInfo *)0x0);
-            if (iVar11 == 200) {
+            if (iVar13 == 200) {
               if (this_00 != (SentrySdk *)0x0) {
                 if ((this_00->fields).Debug == 0) {
                   return 0;
@@ -193,8 +194,8 @@ bool Assembly-CSharp.dll::SentrySdk+<ContinueSendingEvent>d__23`1[System::Object
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  bVar10 = (*pcVar12)();
-  return bVar10;
+  pcVar14 = (code *)swi(3);
+  bVar12 = (*pcVar14)();
+  return bVar12;
 }
 

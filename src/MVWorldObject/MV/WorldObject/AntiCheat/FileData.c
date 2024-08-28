@@ -10,16 +10,15 @@ bool MVWorldObject.dll::MV::WorldObject::AntiCheat::FileData::FileData_Equals
     cRam_? = '\x01';
   }
   if (obj != (Object *)0x0) {
-    if ((((TypeInfo__MV__WorldObject__AntiCheat__FileData->_1).naturalAligment <=
-          (obj->klass->_1).naturalAligment) &&
-        ((obj->klass->_1).typeHierarchy
-         [(TypeInfo__MV__WorldObject__AntiCheat__FileData->_1).naturalAligment - 1] ==
+    bVar1 = (TypeInfo__MV__WorldObject__AntiCheat__FileData->_1).naturalAligment;
+    if (((bVar1 <= (obj->klass->_1).naturalAligment) &&
+        ((obj->klass->_1).typeHierarchy[bVar1 - 1] ==
          (Il2CppClass *)TypeInfo__MV__WorldObject__AntiCheat__FileData)) &&
        ((MonitorData *)(this->fields).crc == obj[1].monitor)) {
       a = FileData_NameAsString(this,(MethodInfo *)0x0);
       b = FileData_NameAsString((FileData *)obj,(MethodInfo *)0x0);
-      bVar1 = mscorlib.dll::System::String::String_op_Equality(a,b,(MethodInfo *)0x0);
-      return bVar1;
+      bVar2 = mscorlib.dll::System::String::String_op_Equality(a,b,(MethodInfo *)0x0);
+      return bVar2;
     }
   }
   return 0;

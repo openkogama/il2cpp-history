@@ -23,8 +23,9 @@ bool Assembly-CSharp.dll::AccessoryShopController+<OpenAccessoryViewDelayed>d__2
     UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
     UxmlObjectListAttributeDescription`1[System::Object]::
     UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-    (this->fields).__2__current = (Object *)this_01;
-    func_?(&(this->fields).__2__current,this_01);
+    ppOVar3 = &(this->fields).__2__current;
+    *ppOVar3 = (Object *)this_01;
+    func_?(ppOVar3,this_01);
     (this->fields).__1__state = 1;
     return 1;
   }
@@ -34,30 +35,31 @@ bool Assembly-CSharp.dll::AccessoryShopController+<OpenAccessoryViewDelayed>d__2
        (this_00 = (pAVar2->fields).inventoryController, this_00 == (InventoryController *)0x0)) {
 code_?:
       func_?();
-      pcVar3 = (code *)swi(3);
-      bVar4 = (*pcVar3)();
-      return bVar4;
+      pcVar4 = (code *)swi(3);
+      bVar5 = (*pcVar4)();
+      return bVar5;
     }
-    pAVar5 = (AccessoryViewController *)
+    pAVar6 = (AccessoryViewController *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this_00,
                         AccessoryViewController_MethodInfo__UnityEngine__Component__GetComponent<AccessoryViewController>__
                        );
-    (pAVar2->fields).accessoryViewController = pAVar5;
-    func_?(&(pAVar2->fields).accessoryViewController,pAVar5);
-    pAVar5 = (pAVar2->fields).accessoryViewController;
+    ppAVar7 = &(pAVar2->fields).accessoryViewController;
+    *ppAVar7 = pAVar6;
+    func_?(ppAVar7,pAVar6);
+    pAVar6 = *ppAVar7;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pAVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      pAVar5 = (pAVar2->fields).accessoryViewController;
-      if (pAVar5 == (AccessoryViewController *)0x0) goto code_?;
+    bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)pAVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar5 != 0) {
+      if (*ppAVar7 == (AccessoryViewController *)0x0) goto code_?;
+      ppAVar8 = &(pAVar2->fields).accessoryDataToShow;
       AccessoryViewController::AccessoryViewController_OpenAccessoryManagementScreen
-                (pAVar5,(pAVar2->fields).accessoryDataToShow,(MethodInfo *)0x0);
-      (pAVar2->fields).accessoryDataToShow = (AccessoryDataClient *)0x0;
-      func_?(&(pAVar2->fields).accessoryDataToShow,0);
+                (*ppAVar7,*ppAVar8,(MethodInfo *)0x0);
+      *ppAVar8 = (AccessoryDataClient *)0x0;
+      func_?(ppAVar8,0);
     }
   }
   return 0;

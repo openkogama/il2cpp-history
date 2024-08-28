@@ -173,9 +173,9 @@ void Assembly-CSharp.dll::BoostController::BoostController_BoostUpdated
                        );
     if (pOVar2 == (Object *)0x0) {
 code_?:
-      if ((this->fields).BoostCountChanged != (Action *)0x0) {
-        pAVar3 = (this->fields).BoostCountChanged;
-        (*(pAVar3->fields)._._.invoke_impl)((pAVar3->fields)._._.method_code);
+      pAVar3 = (this->fields).BoostCountChanged;
+      if (pAVar3 != (Action *)0x0) {
+        (*(pAVar3->fields)._._.invoke_impl)();
       }
       return;
     }
@@ -358,9 +358,11 @@ bool Assembly-CSharp.dll::BoostController::BoostController_HasAvailableBoosts
                              (MethodInfo *)0x0);
         index = 0;
         this_01 = pMVar4;
-        if (this_03 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-        break;
-        for (; pMVar4 = this_01, index < (this_03->fields)._size; index = index + 1) {
+        while( true ) {
+          if (this_03 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+          goto code_?;
+          pMVar4 = this_01;
+          if ((this_03->fields)._size <= index) break;
           if (this_04 ==
               (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
                *)0x0) goto code_?;
@@ -385,6 +387,7 @@ bool Assembly-CSharp.dll::BoostController::BoostController_HasAvailableBoosts
             *unaff_FS_OFFSET = uStack_3;
             return 1;
           }
+          index = index + 1;
         }
       }
     }
@@ -817,21 +820,21 @@ void Assembly-CSharp.dll::BoostController::BoostController__cctor(MethodInfo *me
   pSVar6 = StringLiteral_XRayVision;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             (pOVar4,ExceptionArgument__Enum_obj,(MethodInfo *)pBVar3);
-  pOVar4[1].monitor = (MonitorData *)pSVar6;
   pOVar4[1].klass = (Object__Class *)0x4;
+  pOVar4[1].monitor = (MonitorData *)pSVar6;
   func_?(&pOVar4[1].monitor,pSVar6);
   pOVar4[3].monitor = (MonitorData *)pSVar1;
   func_?(&pOVar4[3].monitor,pSVar1);
   pOVar4[2].klass = (Object__Class *)pSVar5;
   func_?(pOVar4 + 2,pSVar5);
   pOVar4[2].monitor = (MonitorData *)pSVar2;
-  this_00 = (Dictionary_2_System_Int32Enum_System_Object_ *)&UNK_?;
+  this_01 = (Dictionary_2_System_Int32Enum_System_Object_ *)&UNK_?;
   func_?(&pOVar4[2].monitor);
   *(undefined1 *)&pOVar4[3].klass = 1;
-  if (this_00 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
+  if (this_01 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
-              (this_00,4,pOVar4,
+              (this_01,4,pOVar4,
                MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__Add_BoostType__Boost_
               );
     pSVar5 = TM::TM__(StringLiteral_x2_Ammo,(MethodInfo *)0x0);
@@ -840,28 +843,29 @@ void Assembly-CSharp.dll::BoostController::BoostController__cctor(MethodInfo *me
     pBVar3 = TypeInfo__Boost;
     pOVar4 = (Object *)func_?();
     pSVar6 = StringLiteral_Ammo;
-    value = (Object *)&UNK_?;
+    puVar8 = &UNK_?;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               (pOVar4,ExceptionArgument__Enum_obj,(MethodInfo *)pBVar3);
-    value[1].monitor = (MonitorData *)pSVar6;
-    value[1].klass = (Object__Class *)0x0;
-    this_01 = (Dictionary_2_BoostType_Boost_ *)&value[1].monitor;
-    func_?(this_01,pSVar6);
-    pMVar8 = (MonitorData *)&value[3].monitor;
-    value[3].monitor = (MonitorData *)pSVar5;
-    func_?(pMVar8,pSVar5);
-    value[2].klass = pOVar7;
-    pOStack9 = value + 2;
-    pOStack10 = pOVar7;
+    *(undefined4 *)(puVar8 + 8) = 0;
+    this_00 = (Dictionary_2_BoostType_Boost_ *)(puVar8 + 0xc);
+    this_00->klass = (Dictionary_2_BoostType_Boost___Class *)pSVar6;
+    pOVar4 = (Object *)&UNK_?;
+    func_?(this_00,pSVar6);
+    pMVar9 = (MonitorData *)&pOVar4[3].monitor;
+    *(String **)pMVar9 = pSVar5;
+    func_?(pMVar9,pSVar5);
+    pOVar4[2].klass = pOVar7;
+    pOStack10 = pOVar4 + 2;
+    pOStack11 = pOVar7;
     func_?();
-    pMStack11 = pMVar8;
-    value[2].monitor = pMStack11;
-    ppMStack12 = &value[2].monitor;
+    pMStack12 = pMVar9;
+    ppMStack13 = &pOVar4[2].monitor;
+    *ppMStack13 = pMStack12;
     func_?();
-    *(undefined1 *)&value[3].klass = 0;
+    *(undefined1 *)&pOVar4[3].klass = 0;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,0,value,
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0,pOVar4,
                MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__Add_BoostType__Boost_
               );
     pSVar1 = TM::TM__(StringLiteral___0___Speed,(MethodInfo *)0x0);
@@ -872,23 +876,23 @@ void Assembly-CSharp.dll::BoostController::BoostController__cctor(MethodInfo *me
     pSVar6 = StringLiteral_Speed;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               (pOVar4,ExceptionArgument__Enum_obj,(MethodInfo *)pBVar3);
-    pOVar4[1].monitor = (MonitorData *)pSVar6;
-    pSStack13 = pSVar6;
     pOVar4[1].klass = (Object__Class *)0x1;
+    pSStack14 = pSVar6;
+    pOVar4[1].monitor = (MonitorData *)pSVar6;
     func_?();
     pOVar4[3].monitor = (MonitorData *)pSVar1;
     func_?();
-    pOStack14 = pOVar4 + 2;
-    pOVar4[2].klass = pOVar7;
+    pOStack15 = pOVar4 + 2;
+    pOStack15->klass = pOVar7;
     func_?();
-    pSStack15 = pSVar5;
-    pOVar4[2].monitor = (MonitorData *)pSStack15;
-    ppMStack16 = &pOVar4[2].monitor;
+    pSStack16 = pSVar5;
+    ppMStack17 = &pOVar4[2].monitor;
+    *ppMStack17 = (MonitorData *)pSStack16;
     func_?();
     *(undefined1 *)&pOVar4[3].klass = 1;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,1,pOVar4,
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,1,pOVar4,
                MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__Add_BoostType__Boost_
               );
     pSVar1 = TM::TM__(StringLiteral_x2_Gamecoins,(MethodInfo *)0x0);
@@ -899,25 +903,25 @@ void Assembly-CSharp.dll::BoostController::BoostController__cctor(MethodInfo *me
     pSVar6 = StringLiteral_GameCoinBoost;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               (pOVar4,ExceptionArgument__Enum_obj,(MethodInfo *)pBVar3);
-    pOVar4[1].monitor = (MonitorData *)pSVar6;
     pOVar4[1].klass = (Object__Class *)0x2;
+    pOVar4[1].monitor = (MonitorData *)pSVar6;
     func_?();
-    ppMStack17 = &pOVar4[3].monitor;
-    pOVar4[3].monitor = (MonitorData *)pSVar1;
-    pSStack18 = pSVar1;
+    ppMStack18 = &pOVar4[3].monitor;
+    *ppMStack18 = (MonitorData *)pSVar1;
+    pSStack19 = pSVar1;
     func_?();
-    pOStack19 = pOVar4 + 2;
-    pOVar4[2].klass = pOVar7;
-    pOStack20 = pOVar7;
+    pOStack20 = pOVar4 + 2;
+    pOStack20->klass = pOVar7;
+    pOStack21 = pOVar7;
     func_?();
-    pSStack21 = pSVar5;
-    pOVar4[2].monitor = (MonitorData *)pSStack21;
-    pSStack13 = (String *)&pOVar4[2].monitor;
+    pSStack22 = pSVar5;
+    pSStack14 = (String *)&pOVar4[2].monitor;
+    *(String **)pSStack14 = pSStack22;
     func_?();
     *(undefined1 *)&pOVar4[3].klass = 0;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,2,pOVar4,
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,2,pOVar4,
                MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__Add_BoostType__Boost_
               );
     pSVar1 = TM::TM__(StringLiteral___0___HP,(MethodInfo *)0x0);
@@ -928,24 +932,24 @@ void Assembly-CSharp.dll::BoostController::BoostController__cctor(MethodInfo *me
     pSVar6 = StringLiteral_Health;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               (pOVar4,ExceptionArgument__Enum_obj,(MethodInfo *)pBVar3);
-    pOVar4[1].monitor = (MonitorData *)pSVar6;
     pOVar4[1].klass = (Object__Class *)0x3;
+    pOVar4[1].monitor = (MonitorData *)pSVar6;
     func_?();
-    ppMStack22 = &pOVar4[3].monitor;
-    pOVar4[3].monitor = (MonitorData *)pSVar1;
-    pSStack23 = pSVar1;
+    ppMStack23 = &pOVar4[3].monitor;
+    *ppMStack23 = (MonitorData *)pSVar1;
+    pSStack24 = pSVar1;
     func_?();
-    pOStack24 = pOVar4 + 2;
-    pOVar4[2].klass = pOVar7;
-    pOStack25 = pOVar7;
+    pOStack25 = pOVar4 + 2;
+    pOStack25->klass = pOVar7;
+    pOStack26 = pOVar7;
     func_?();
-    pSStack26 = pSVar5;
-    pOVar4[2].monitor = (MonitorData *)pSStack26;
+    pSStack27 = pSVar5;
+    pOVar4[2].monitor = (MonitorData *)pSStack27;
     func_?();
     *(undefined1 *)&pOVar4[3].klass = 1;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,3,pOVar4,
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,3,pOVar4,
                MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__Add_BoostType__Boost_
               );
     pSVar1 = TM::TM__(StringLiteral___0___Jump,(MethodInfo *)0x0);
@@ -956,24 +960,24 @@ void Assembly-CSharp.dll::BoostController::BoostController__cctor(MethodInfo *me
     pSVar6 = StringLiteral_JumpPower;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               (pOVar4,ExceptionArgument__Enum_obj,(MethodInfo *)pBVar3);
-    pOVar4[1].monitor = (MonitorData *)pSVar6;
     pOVar4[1].klass = (Object__Class *)0x5;
+    pOVar4[1].monitor = (MonitorData *)pSVar6;
     func_?();
-    ppMStack27 = &pOVar4[3].monitor;
-    pOVar4[3].monitor = (MonitorData *)pSVar1;
+    ppMStack28 = &pOVar4[3].monitor;
+    *ppMStack28 = (MonitorData *)pSVar1;
     func_?();
     pOVar4[2].klass = pOVar7;
-    pOStack28 = pOVar4 + 2;
-    pOStack29 = pOVar7;
+    pOStack29 = pOVar4 + 2;
+    pOStack30 = pOVar7;
     func_?();
-    pSStack30 = pSVar5;
-    pOVar4[2].monitor = (MonitorData *)pSStack30;
-    ppMStack31 = &pOVar4[2].monitor;
+    pSStack31 = pSVar5;
+    ppMStack32 = &pOVar4[2].monitor;
+    *ppMStack32 = (MonitorData *)pSStack31;
     func_?();
     *(undefined1 *)&pOVar4[3].klass = 1;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,5,pOVar4,
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,5,pOVar4,
                MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__Add_BoostType__Boost_
               );
     pSVar1 = TM::TM__(StringLiteral___0___Poison_Resist,(MethodInfo *)0x0);
@@ -984,36 +988,36 @@ void Assembly-CSharp.dll::BoostController::BoostController__cctor(MethodInfo *me
     pSVar6 = StringLiteral_PoisonResist;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               (pOVar4,ExceptionArgument__Enum_obj,(MethodInfo *)pBVar3);
-    pOVar4[1].monitor = (MonitorData *)pSVar6;
-    pSStack32 = pSVar6;
     pOVar4[1].klass = (Object__Class *)0x6;
     ppMStack33 = &pOVar4[1].monitor;
+    pSStack34 = pSVar6;
+    *ppMStack33 = (MonitorData *)pSVar6;
     func_?();
-    ppMStack34 = &pOVar4[3].monitor;
-    pOVar4[3].monitor = (MonitorData *)pSVar1;
-    pSStack35 = pSVar1;
+    ppMStack35 = &pOVar4[3].monitor;
+    *ppMStack35 = (MonitorData *)pSVar1;
+    pSStack36 = pSVar1;
     func_?();
-    pOStack36 = pOVar4 + 2;
-    pOVar4[2].klass = pOVar7;
-    pOStack37 = pOVar7;
+    pOStack37 = pOVar4 + 2;
+    pOStack37->klass = pOVar7;
+    pOStack38 = pOVar7;
     func_?();
-    pSStack38 = pSVar5;
-    pOVar4[2].monitor = (MonitorData *)pSStack38;
-    ppMStack39 = &pOVar4[2].monitor;
+    pSStack39 = pSVar5;
+    ppMStack40 = &pOVar4[2].monitor;
+    *ppMStack40 = (MonitorData *)pSStack39;
     func_?();
     *(undefined1 *)&pOVar4[3].klass = 1;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,6,pOVar4,
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,6,pOVar4,
                MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__Add_BoostType__Boost_
               );
-    TypeInfo__BoostController->static_fields->boosts = this_01;
+    TypeInfo__BoostController->static_fields->boosts = this_00;
     func_?();
     return;
   }
   func_?();
-  pcVar40 = (code *)swi(3);
-  (*pcVar40)();
+  pcVar41 = (code *)swi(3);
+  (*pcVar41)();
   return;
 }
 
@@ -1226,8 +1230,9 @@ void Assembly-CSharp.dll::BoostController::BoostController__ctor
                                 (this_00,(RegexCharClass_SingleRange)0x4,
                                  pMVar2->klass->rgctx_data[0xe].method);
 code_?:
-                      (this->fields).boostPriorityList = (List_1_BoostType_ *)this_00;
-                      func_?(&(this->fields).boostPriorityList,this_00);
+                      ppLVar6 = &(this->fields).boostPriorityList;
+                      *ppLVar6 = (List_1_BoostType_ *)this_00;
+                      func_?(ppLVar6,this_00);
                       pDVar1 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_
                                 *)func_?(
                                                  TypeInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>
@@ -1238,8 +1243,9 @@ code_?:
                                 (pDVar1,
                                  MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__Dictionary__
                                 );
-                      (this->fields).activeBoosts = (Dictionary_2_BoostType_Boost_ *)pDVar1;
-                      func_?(&(this->fields).activeBoosts,pDVar1);
+                      ppDVar7 = &(this->fields).activeBoosts;
+                      *ppDVar7 = (Dictionary_2_BoostType_Boost_ *)pDVar1;
+                      func_?(ppDVar7,pDVar1);
                       this_01 = (List_1_Boost_ *)
                                 func_?(TypeInfo__System__Collections__Generic__List<Boost>)
                       ;
@@ -1250,7 +1256,7 @@ code_?:
                                   *)this_01,
                                  MethodInfo__System__Collections__Generic__List<Boost>__List__);
                       pMVar2 = (MethodInfo *)&(this->fields).removeList;
-                      (this->fields).removeList = this_01;
+                      *(List_1_Boost_ **)pMVar2 = this_01;
                       func_?(pMVar2,this_01);
                       mscorlib.dll::System::ThrowHelper::
                       ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
@@ -1276,8 +1282,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

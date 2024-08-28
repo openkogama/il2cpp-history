@@ -33,7 +33,7 @@ void Assembly-CSharp.dll::DesktopDefaultKeyboardMapping+ControlBitArray::
   this_00 = (BitArray *)func_?(TypeInfo__System__Collections__BitArray);
   mscorlib.dll::System::Collections::BitArray::BitArray__ctor(this_00,0x36,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).controlDown = this_00;
+  ((DesktopDefaultKeyboardMapping_ControlBitArray__Fields *)method_00)->controlDown = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

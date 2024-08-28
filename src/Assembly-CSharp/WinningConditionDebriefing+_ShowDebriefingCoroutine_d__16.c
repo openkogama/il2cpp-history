@@ -32,8 +32,9 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<ShowDebriefingCoroutine>d_
       pIVar3 = pTween::pTween_To(0.3,0.0,1.0,(Action_1_Single_ *)this_01,(MethodInfo *)0x0);
       pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
                MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this_00,pIVar3,(MethodInfo *)0x0);
-      (this->fields).__2__current = (Object *)pCVar4;
-      func_?(&(this->fields).__2__current,pCVar4);
+      ppOVar5 = &(this->fields).__2__current;
+      *ppOVar5 = (Object *)pCVar4;
+      func_?(ppOVar5,pCVar4);
       (this->fields).__1__state = 1;
       return 1;
     }
@@ -55,8 +56,9 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<ShowDebriefingCoroutine>d_
       pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
                MonoBehaviour_StartCoroutine_Auto
                          ((MonoBehaviour *)this_00,(IEnumerator *)value,(MethodInfo *)0x0);
-      (this->fields).__2__current = (Object *)pCVar4;
-      func_?(&(this->fields).__2__current,pCVar4);
+      ppOVar5 = &(this->fields).__2__current;
+      *ppOVar5 = (Object *)pCVar4;
+      func_?(ppOVar5,pCVar4);
       (this->fields).__1__state = 2;
       return 1;
     }
@@ -73,8 +75,9 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<ShowDebriefingCoroutine>d_
     if (this_00 != (Object__Class *)0x0) {
       pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
                MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this_00,pIVar3,(MethodInfo *)0x0);
-      (this->fields).__2__current = (Object *)pCVar4;
-      func_?(&(this->fields).__2__current,pCVar4);
+      ppOVar5 = &(this->fields).__2__current;
+      *ppOVar5 = (Object *)pCVar4;
+      func_?(ppOVar5,pCVar4);
       (this->fields).__1__state = 3;
       return 1;
     }
@@ -84,13 +87,21 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<ShowDebriefingCoroutine>d_
   default:
     return 0;
   }
-  bVar5 = func_?();
-  *(byte *)&this->klass = bVar5;
-  pbVar6 = &(unaff_ESI->fields)._._.method_is_virtual;
-  *pbVar6 = *pbVar6 + extraout_CL + (9 < (bVar5 & 0xf) | in_AF);
-  pcVar7 = (code *)swi(3);
-  bVar8 = (*pcVar7)();
-  return bVar8;
+  bVar6 = 0;
+  func_?();
+  bVar7 = CARRY1(extraout_CH,extraout_CH) || CARRY1(extraout_CH * '\x02',bVar6);
+  pbVar8 = (byte *)((int)&this[-4].monitor + 3);
+  bVar6 = *pbVar8;
+  bVar9 = *pbVar8;
+  *pbVar8 = bVar9 + extraout_AH + bVar7;
+  ppvVar10 = &unaff_ESI[1].fields._._.interp_invoke_impl;
+  *(char *)ppvVar10 =
+       *(char *)ppvVar10 + extraout_DL + -1 +
+       (CARRY1(extraout_AH,(byte)this_00) ||
+       CARRY1(extraout_AH + (byte)this_00,
+              CARRY1(bVar6,extraout_AH) || CARRY1(bVar9 + extraout_AH,bVar7)));
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

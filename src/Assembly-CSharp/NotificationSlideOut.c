@@ -11,19 +11,20 @@ void Assembly-CSharp.dll::NotificationSlideOut::NotificationSlideOut_OnValidate
     cRam_? = '\x01';
   }
   pNVar1 = (this->fields).notification;
+  ppNVar2 = &(this->fields).notification;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pNVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     pNVar1 = (Notification *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         Notification_MethodInfo__UnityEngine__Component__GetComponent<Notification>__
                        );
-    (this->fields).notification = pNVar1;
-    func_?(&(this->fields).notification,pNVar1);
+    *ppNVar2 = pNVar1;
+    func_?(ppNVar2,pNVar1);
   }
   return;
 }

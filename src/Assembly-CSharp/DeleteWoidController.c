@@ -192,8 +192,9 @@ void Assembly-CSharp.dll::DeleteWoidController::DeleteWoidController_Initialize
                       PickHelper_MethodInfo__UnityEngine__Object__Instantiate<PickHelper>_PickHelper_
                      );
   if (value != (Object *)0x0) {
-    value[1].klass = pOVar1;
-    func_?(value + 1,pOVar1);
+    pOVar2 = value + 1;
+    pOVar2->klass = pOVar1;
+    func_?(pOVar2,pOVar1);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
     callbackFunction =
@@ -213,7 +214,7 @@ void Assembly-CSharp.dll::DeleteWoidController::DeleteWoidController_Initialize
               (root,(BaseEventData *)0x0,callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
-    pOVar1 = value[1].klass;
+    pOVar1 = pOVar2->klass;
     this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
@@ -221,17 +222,18 @@ void Assembly-CSharp.dll::DeleteWoidController::DeleteWoidController_Initialize
                MethodInfo__DeleteWoidController__OnPick_MVWorldObjectClient__MVWorldObjectClient_,
                (MethodInfo *)0x0);
     if ((pOVar1 != (Object__Class *)0x0) &&
-       (piVar2 = *(int **)&(pOVar1->_0).byval_arg.attrs, piVar2 != (int *)0x0)) {
-      (**(code **)(*piVar2 + 0x318))
-                (piVar2,StringLiteral_Select_object_to_delete,*(undefined4 *)(*piVar2 + 0x31c));
-      (pOVar1->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)this_00;
-      func_?(&(pOVar1->_0).byval_arg,this_00);
+       (piVar3 = *(int **)&(pOVar1->_0).byval_arg.attrs, piVar3 != (int *)0x0)) {
+      (**(code **)(*piVar3 + 0x318))
+                (piVar3,StringLiteral_Select_object_to_delete,*(undefined4 *)(*piVar3 + 0x31c));
+      pIVar4 = &(pOVar1->_0).byval_arg;
+      (pIVar4->data).typeHandle = (Il2CppMetadataTypeHandle)this_00;
+      func_?(pIVar4,this_00);
       return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

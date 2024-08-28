@@ -11,7 +11,7 @@ bool Assembly-CSharp.dll::GUICellCursor+Fader::GUICellCursor_Fader_Update
     return 0;
   }
   fVar2 = (this->fields).startValue;
-  fVar1 = fVar1 * (this->fields).durationInv - (this->fields).startMulDurationInv;
+  fVar1 = (this->fields).durationInv * fVar1 - (this->fields).startMulDurationInv;
   if (fVar1 < 0.0) {
     fVar1 = 0.0;
   }

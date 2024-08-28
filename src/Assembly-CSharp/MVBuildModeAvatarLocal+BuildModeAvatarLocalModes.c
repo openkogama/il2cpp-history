@@ -30,7 +30,7 @@ MVBuildModeAvatarLocal_BuildModeAvatarLocalModes_BuildModeFactory
     this_00 = (DoubleTapMovementChecker *)func_?(TypeInfo__DoubleTapMovementChecker);
     DoubleTapMovementChecker::DoubleTapMovementChecker__ctor(this_00,(MethodInfo *)0x0);
     pMVar3 = (MethodInfo *)&pMVar2[6].monitor;
-    pMVar2[6].monitor = (MonitorData *)this_00;
+    *(DoubleTapMovementChecker **)pMVar3 = this_00;
     func_?(pMVar3,this_00);
     pMVar2[7].monitor = (MonitorData *)0x41a00000;
     pMVar2[7].fields.buildModeAvatar = (MVBuildModeAvatarLocal *)0x41200000;
@@ -125,12 +125,12 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal+BuildModeAvatarLocalModes::
     func_?(&StringLiteral______________nextAvatarBuildMode);
     cRam_? = '\x01';
   }
-  if ((this->fields).currentMode != (MVBuildModeAvatarLocal_AvatarBuildModeBase *)0x0) {
-    pMVar1 = (this->fields).currentMode;
-    pMVar2 = pMVar1->klass;
-    (*(code *)(pMVar2->vtable).__unknown_1.method)
-              (pMVar1,mode,(pMVar2->vtable).__unknown_2.methodPtr);
-    pMVar1 = (this->fields).currentMode;
+  pMVar1 = (this->fields).currentMode;
+  pMVar2 = &this->fields;
+  if (pMVar1 != (MVBuildModeAvatarLocal_AvatarBuildModeBase *)0x0) {
+    (*(code *)(pMVar1->klass->vtable).__unknown_1.method)
+              (pMVar1,mode,(pMVar1->klass->vtable).__unknown_2.methodPtr);
+    pMVar1 = pMVar2->currentMode;
     if (pMVar1 == (MVBuildModeAvatarLocal_AvatarBuildModeBase *)0x0) goto code_?;
     (*(code *)(pMVar1->klass->vtable).__unknown_4.method)(pMVar1,pMVar1->klass[1]._0.image);
   }
@@ -169,7 +169,7 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal+BuildModeAvatarLocalModes::
     this_00 = (DoubleTapMovementChecker *)func_?();
     DoubleTapMovementChecker::DoubleTapMovementChecker__ctor(this_00,(MethodInfo *)0x0);
     method_00 = (MethodInfo *)&(value->_0).methods;
-    (value->_0).methods = (MethodInfo **)this_00;
+    *(DoubleTapMovementChecker **)method_00 = this_00;
     func_?();
     value->interfaceOffsets = (Il2CppRuntimeInterfaceOffsetPair *)0x41a00000;
     value->static_fields = (MVBuildModeAvatarLocal_AvatarBuildModes__Enum__StaticFields *)0x41200000
@@ -177,21 +177,21 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal+BuildModeAvatarLocalModes::
     value->rgctx_data = (Il2CppRGCTXData *)0x40a00000;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)value,ExceptionArgument__Enum_obj,method_00);
-    (value->_0).name = (char *)this_00;
     ppcVar5 = &(value->_0).name;
+    *ppcVar5 = (char *)this_00;
     func_?();
     EStack_3.monitor = (MonitorData *)&UNK_?;
     pCVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-    (value->_0).nestedTypes = (Il2CppClass **)pCVar6;
     EStack_3.monitor = (MonitorData *)&(value->_0).nestedTypes;
+    *(Camera **)EStack_3.monitor = pCVar6;
     EStack_3.klass = (Enum__Class *)&UNK_?;
     func_?();
     (value->_0).events = (EventInfo *)0x3f800000;
     (value->_0).properties = (PropertyInfo *)0x3f800000;
-    (this->fields).currentMode = (MVBuildModeAvatarLocal_AvatarBuildModeBase *)value;
+    pMVar2->currentMode = (MVBuildModeAvatarLocal_AvatarBuildModeBase *)value;
     EStack_3.klass = (Enum__Class *)value;
     func_?();
-    pMVar1 = (this->fields).currentMode;
+    pMVar1 = pMVar2->currentMode;
     if (pMVar1 != (MVBuildModeAvatarLocal_AvatarBuildModeBase *)0x0) {
       (*(code *)(pMVar1->klass->vtable).__unknown.method)
                 (pMVar1,ppcVar5,(pMVar1->klass->vtable).__unknown_1.methodPtr);

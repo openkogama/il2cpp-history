@@ -67,8 +67,8 @@ code_?:
               if (pPStack6 != (PickupItem *)0x0) {
                 pIStack7 = (pPStack6->klass->vtable).OnUnequip.methodPtr;
                 (*(code *)(pPStack6->klass->vtable).OnEquip.method)();
-                if ((this->fields)._.onEquipItem != (MVPickupOwner_OnEquipItemDelegate *)0x0) {
-                  pMVar8 = (this->fields)._.onEquipItem;
+                pMVar8 = (this->fields)._.onEquipItem;
+                if (pMVar8 != (MVPickupOwner_OnEquipItemDelegate *)0x0) {
                   pIStack7 = (pMVar8->fields)._._.method;
                   pPStack6 = (this->fields)._.currentItem;
                   (*(pMVar8->fields)._._.invoke_impl)();
@@ -138,10 +138,9 @@ void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_HandlePointing
        (this_00 = (AvatarLimbManagerLocal *)(pMVar3->fields).limbManager,
        this = (AvatarPickupOwner *)TypeInfo__AvatarLimbManagerLocal,
        this_00 != (AvatarLimbManagerLocal *)0x0)) {
-      if (((TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment <=
-           (this_00->klass->_1).naturalAligment) &&
-         ((this_00->klass->_1).typeHierarchy
-          [(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment - 1] ==
+      bVar4 = (TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment;
+      if ((bVar4 <= (this_00->klass->_1).naturalAligment) &&
+         ((this_00->klass->_1).typeHierarchy[bVar4 - 1] ==
           (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) {
         AvatarLimbManagerLocal::AvatarLimbManagerLocal_StartPointing(this_00,(MethodInfo *)0x0);
         return;
@@ -154,8 +153,8 @@ code_?:
   this_00 = extraout_EDX;
 code_?:
   func_?(this_00,this);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -168,8 +167,9 @@ void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_Init
                WorldObjectSkillDataManager *skillsDataManager,MethodInfo *method)
 
 {
-  (this->fields).mvAvatar = mvAvatar;
-  func_?(&(this->fields).mvAvatar,mvAvatar);
+  ppMVar1 = &(this->fields).mvAvatar;
+  *ppMVar1 = mvAvatar;
+  func_?(ppMVar1,mvAvatar);
   MVPickupOwner::MVPickupOwner_Init
             ((MVPickupOwner *)this,currentItemRuntimeDataVariable,isFiringRuntimeDataVariable,
              (MethodInfo *)0x0);
@@ -178,9 +178,9 @@ void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_Init
     cRam_? = '\x01';
   }
   if (skillsDataManager != (WorldObjectSkillDataManager *)0x0) {
-    bVar1 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
+    bVar2 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
                       (skillsDataManager,StringLiteral_EndlessAmmo,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
+    if (bVar2 != 0) {
       (this->fields).hasUnlimitedAmmo = 1;
     }
   }
@@ -222,48 +222,48 @@ void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_Unequip
     cRam_? = '\x01';
   }
   pPVar1 = (this->fields)._.currentItem;
+  ppPVar2 = &(this->fields)._.currentItem;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pPVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     return;
   }
-  pPVar1 = (this->fields)._.currentItem;
+  pPVar1 = *ppPVar2;
   if (pPVar1 != (PickupItem *)0x0) {
     (*(code *)(pPVar1->klass->vtable).OnUnequip.method)
               (pPVar1,(pPVar1->klass->vtable).ResetAmmo.methodPtr);
-    pPVar1 = (this->fields)._.currentItem;
+    pPVar1 = *ppPVar2;
     if (pPVar1 != (PickupItem *)0x0) {
-      iVar3 = (*(code *)(pPVar1->klass->vtable).__unknown.method)
+      iVar4 = (*(code *)(pPVar1->klass->vtable).__unknown.method)
                         (pPVar1,(pPVar1->klass->vtable).CanFire.methodPtr);
-      if (iVar3 != 0) {
-        pPVar1 = (this->fields)._.currentItem;
-        if (pPVar1 == (PickupItem *)0x0) goto code_?;
+      if (iVar4 != 0) {
+        if (*ppPVar2 == (PickupItem *)0x0) goto code_?;
         obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        ((Component *)pPVar1,(MethodInfo *)0x0);
+                        ((Component *)*ppPVar2,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                   ((Object_1 *)obj,(MethodInfo *)0x0);
       }
-      (this->fields)._.currentItem = (PickupItem *)0x0;
-      func_?(&(this->fields)._.currentItem,0);
-      if ((this->fields)._.onUnequipItem == (MVPickupOwner_OnUnequipItemDelegate *)0x0) {
+      *ppPVar2 = (PickupItem *)0x0;
+      func_?(ppPVar2,0);
+      pMVar5 = (this->fields)._.onUnequipItem;
+      if (pMVar5 == (MVPickupOwner_OnUnequipItemDelegate *)0x0) {
         return;
       }
-      pMVar4 = (this->fields)._.onUnequipItem;
-      (*(pMVar4->fields)._._.invoke_impl)
-                ((pMVar4->fields)._._.method_code,0,(pMVar4->fields)._._.method);
+      (*(pMVar5->fields)._._.invoke_impl)
+                ((pMVar5->fields)._._.method_code,0,(pMVar5->fields)._._.method);
       return;
     }
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -281,9 +281,10 @@ Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_get_IgnoreWOIDs
                    );
     cRam_? = '\x01';
   }
-  pHVar1 = MVPickupOwner::MVPickupOwner_get_IgnoreWOIDs((MVPickupOwner *)this,(MethodInfo *)0x0);
-  if ((this->fields)._AdditionalIgnoreWOIDS_k__BackingField != (HashSet_1_System_Int32_ *)0x0) {
-    if (pHVar1 == (HashSet_1_System_Int32_ *)0x0) {
+  this_00 = MVPickupOwner::MVPickupOwner_get_IgnoreWOIDs((MVPickupOwner *)this,(MethodInfo *)0x0);
+  pHVar1 = (this->fields)._AdditionalIgnoreWOIDS_k__BackingField;
+  if (pHVar1 != (HashSet_1_System_Int32_ *)0x0) {
+    if (this_00 == (HashSet_1_System_Int32_ *)0x0) {
       func_?();
       pcVar2 = (code *)swi(3);
       pHVar1 = (HashSet_1_System_Int32_ *)(*pcVar2)();
@@ -291,11 +292,10 @@ Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_get_IgnoreWOIDs
     }
     System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
     HashSet_1_System_Int32__UnionWith
-              (pHVar1,(IEnumerable_1_System_Int32_ *)
-                      (this->fields)._AdditionalIgnoreWOIDS_k__BackingField,
+              (this_00,(IEnumerable_1_System_Int32_ *)pHVar1,
                MethodInfo__System__Collections__Generic__HashSet<int>__UnionWith_System__Collections__Generic__IEnumerable<int>_
               );
   }
-  return pHVar1;
+  return this_00;
 }
 

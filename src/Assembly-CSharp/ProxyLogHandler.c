@@ -67,8 +67,8 @@ void Assembly-CSharp.dll::ProxyLogHandler::ProxyLogHandler_LogException
     do {
       if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__ILogHandler) {
-        ppMVar6 = &(&(pIVar1->klass->vtable).LogException)
-                   [pIVar1->klass->interfaceOffsets[uVar4].offset].method;
+        ppMVar6 = &(&(pIVar1->klass->vtable).LogException)[pIVar3->interfaceOffsets[uVar4].offset].
+                   method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;
@@ -108,8 +108,8 @@ void Assembly-CSharp.dll::ProxyLogHandler::ProxyLogHandler_LogFormat
       UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
       UxmlObjectListAttributeDescription`1[System::Object]::
       UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-      this_00[1].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)context;
       (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)logType;
+      this_00[1].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)context;
       func_?(this_00 + 1,context);
       this_00[1].monitor = (MonitorData *)format;
       func_?(&this_00[1].monitor,format);
@@ -132,8 +132,8 @@ void Assembly-CSharp.dll::ProxyLogHandler::ProxyLogHandler_LogFormat
       do {
         if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__ILogHandler) {
-          ppMVar6 = &(&(pIVar2->klass->vtable).LogFormat)
-                     [pIVar2->klass->interfaceOffsets[uVar4].offset].method;
+          ppMVar6 = &(&(pIVar2->klass->vtable).LogFormat)[pIVar3->interfaceOffsets[uVar4].offset].
+                     method;
           goto code_?;
         }
         uVar4 = uVar4 + 1;
@@ -213,27 +213,27 @@ void Assembly-CSharp.dll::ProxyLogHandler::ProxyLogHandler_add_OnLogReceived
     func_?(&TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
     cRam_? = '\x01';
   }
-  a = (this->fields).OnLogReceived;
+  ppEVar1 = &(this->fields).OnLogReceived;
+  a = *ppEVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar2 = TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>)
+    pEVar3 = TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>;
+    iVar4 = 0;
+    if (pDVar2 != (Delegate *)0x0) {
+      iVar4 = func_?(pDVar2,TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>)
       ;
-      if (iVar3 == 0) {
-        func_?(pDVar1,pEVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (iVar4 == 0) {
+        func_?(pDVar2,pEVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_ProxyLogHandler_LogFormatData_ *)
-             func_?(&(this->fields).OnLogReceived,iVar3,a);
-    bVar6 = pEVar5 != a;
-    a = pEVar5;
-  } while (bVar6);
+    pEVar6 = (EventHandler_1_ProxyLogHandler_LogFormatData_ *)func_?(ppEVar1,iVar4,a);
+    bVar7 = pEVar6 != a;
+    a = pEVar6;
+  } while (bVar7);
   return;
 }
 
@@ -263,27 +263,27 @@ void Assembly-CSharp.dll::ProxyLogHandler::ProxyLogHandler_remove_OnLogReceived
     func_?(&TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
     cRam_? = '\x01';
   }
-  source = (this->fields).OnLogReceived;
+  ppEVar1 = &(this->fields).OnLogReceived;
+  source = *ppEVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar2 = TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>)
+    pEVar3 = TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>;
+    iVar4 = 0;
+    if (pDVar2 != (Delegate *)0x0) {
+      iVar4 = func_?(pDVar2,TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>)
       ;
-      if (iVar3 == 0) {
-        func_?(pDVar1,pEVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (iVar4 == 0) {
+        func_?(pDVar2,pEVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_ProxyLogHandler_LogFormatData_ *)
-             func_?(&(this->fields).OnLogReceived,iVar3,source);
-    bVar6 = pEVar5 != source;
-    source = pEVar5;
-  } while (bVar6);
+    pEVar6 = (EventHandler_1_ProxyLogHandler_LogFormatData_ *)func_?(ppEVar1,iVar4,source);
+    bVar7 = pEVar6 != source;
+    source = pEVar6;
+  } while (bVar7);
   return;
 }
 

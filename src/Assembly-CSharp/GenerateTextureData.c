@@ -80,8 +80,8 @@ void Assembly-CSharp.dll::GenerateTextureData::GenerateTextureData_AddPostProces
                          (
                          UnityEngine__Rendering__PostProcessing__PostProcessProfile_MethodInfo__UnityEngine__ScriptableObject__CreateInstance<UnityEngine::Rendering::PostProcessing::PostProcessProfile>__
                          );
-      (pPVar10->fields).m_InternalProfile = pPVar12;
       ppPVar13 = &(pPVar10->fields).m_InternalProfile;
+      *ppPVar13 = pPVar12;
       puVar14 = &UNK_?;
       func_?();
       method_00 = (MethodInfo *)0x0;
@@ -173,8 +173,8 @@ Assembly-CSharp.dll::GenerateTextureData::GenerateTextureData_GenerateTexture
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].monitor = (MonitorData *)this;
   value[1].klass = (Object__Class *)0x0;
+  value[2].monitor = (MonitorData *)this;
   func_?(&value[2].monitor,this);
   value[2].klass = (Object__Class *)textureDataCallback;
   func_?(value + 2,textureDataCallback);

@@ -57,39 +57,39 @@ float Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_
   }
   index = 0;
   fStack_1 = 1.0;
-  pLVar2 = (this->fields).animationData;
-  while (pLVar2 != (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) {
-    if ((pLVar2->fields)._size <= index) {
+  this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+            (this->fields).animationData;
+  while (this_00 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+    if ((this_00->fields)._size <= index) {
       return fStack_1;
     }
-    this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-              (this->fields).animationData;
     if (this_00 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
-    pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+    pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
              VisualTreeAsset+UsingEntry]::
              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                       (&VStack_4,this_00,index,
+                       (&VStack_3,this_00,index,
                         MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Item_int_
                        );
-    uStack_5._0_4_ = pVVar3->alias;
-    uStack_5._4_4_ = pVVar3->path;
-    bVar6 = mscorlib.dll::System::String::String_op_Equality
-                      ((String *)(undefined4)uStack_5,animationName,(MethodInfo *)0x0);
-    if (bVar6 != 0) {
-      pLVar2 = (this->fields).animationData;
-      if (pLVar2 == (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) break;
-      VStack_4.alias =
+    uStack_4._0_4_ = pVVar2->alias;
+    uStack_4._4_4_ = pVVar2->path;
+    bVar5 = mscorlib.dll::System::String::String_op_Equality
+                      ((String *)(undefined4)uStack_4,animationName,(MethodInfo *)0x0);
+    if (bVar5 != 0) {
+      pLVar6 = (this->fields).animationData;
+      if (pLVar6 == (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) break;
+      VStack_3.alias =
            (String *)
            MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Item_int_
       ;
       ppppuStack_2c = &ppppuStack_2c;
-      pLStack_7 = pLVar2;
+      pLStack_7 = pLVar6;
       iStack_8 = index;
       iVar9 = func_?();
       fStack_1 = *(float *)(iVar9 + 4);
     }
     index = index + 1;
-    pLVar2 = (this->fields).animationData;
+    this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+              (this->fields).animationData;
   }
   func_?();
   pcVar10 = (code *)swi(3);
@@ -204,34 +204,34 @@ bool Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_H
     cRam_? = '\x01';
   }
   index = 0;
-  pLVar1 = (this->fields).animationData;
-  while (pLVar1 != (List_1_AccessoryAnimationHandler_AnimationData_ *)0x0) {
-    if ((pLVar1->fields)._size <= index) {
+  this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+            (this->fields).animationData;
+  while (this_00 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+    if ((this_00->fields)._size <= index) {
       return 0;
     }
-    this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-              (this->fields).animationData;
     if (this_00 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
-    pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
              VisualTreeAsset+UsingEntry]::
              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                       (&VStack_3,this_00,index,
+                       (&VStack_2,this_00,index,
                         MethodInfo__System__Collections__Generic__List<AccessoryAnimationHandler::AnimationData>__get_Item_int_
                        );
-    uStack_4._0_4_ = pVVar2->alias;
-    uStack_4._4_4_ = pVVar2->path;
-    bVar5 = mscorlib.dll::System::String::String_op_Equality
-                      ((String *)(undefined4)uStack_4,animationName,(MethodInfo *)0x0);
-    if (bVar5 != 0) {
+    uStack_3._0_4_ = pVVar1->alias;
+    uStack_3._4_4_ = pVVar1->path;
+    bVar4 = mscorlib.dll::System::String::String_op_Equality
+                      ((String *)(undefined4)uStack_3,animationName,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
       return 1;
     }
     index = index + 1;
-    pLVar1 = (this->fields).animationData;
+    this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+              (this->fields).animationData;
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  bVar5 = (*pcVar6)();
-  return bVar5;
+  pcVar5 = (code *)swi(3);
+  bVar4 = (*pcVar5)();
+  return bVar4;
 }
 
 
@@ -487,7 +487,7 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::
           if (pIVar7->interfaceOffsets[uVar8].interfaceType ==
               (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
             ppMVar10 = &(&(pIVar4->klass->vtable).get_Current)
-                       [pIVar4->klass->interfaceOffsets[uVar8].offset].method;
+                       [pIVar7->interfaceOffsets[uVar8].offset].method;
             goto code_?;
           }
           uVar8 = uVar8 + 1;
@@ -567,8 +567,9 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_S
                (AccessoryAnimationHandler *this,String *animationName,MethodInfo *method)
 
 {
-  (this->fields).currentCrossFadedAnimation = animationName;
-  func_?(&(this->fields).currentCrossFadedAnimation,animationName);
+  ppSVar1 = &(this->fields).currentCrossFadedAnimation;
+  *ppSVar1 = animationName;
+  func_?(ppSVar1,animationName);
   this_00 = (this->fields).animations;
   if (this_00 != (Animation *)0x0) {
     UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_CrossFadeQueued
@@ -576,8 +577,8 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_S
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -638,8 +639,8 @@ Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_StopAn
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
   value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -661,11 +662,11 @@ Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler_Transi
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
   value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
   func_?(value + 2,this);
-  value[3].klass = (Object__Class *)transitionToAnimationName;
   value[2].monitor = (MonitorData *)resetDelay;
+  value[3].klass = (Object__Class *)transitionToAnimationName;
   func_?(value + 3,transitionToAnimationName);
   return (IEnumerator *)value;
 }
@@ -681,8 +682,9 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler::AccessoryAnimationHandler__
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  (this->fields).currentCrossFadedAnimation = ::StringLiteral__;
-  func_?(&(this->fields).currentCrossFadedAnimation,::StringLiteral__);
+  ppSVar1 = &(this->fields).currentCrossFadedAnimation;
+  *ppSVar1 = ::StringLiteral__;
+  func_?(ppSVar1,::StringLiteral__);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

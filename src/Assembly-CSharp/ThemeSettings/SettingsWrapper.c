@@ -35,7 +35,7 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Disabl
   uStack_2 = 0xffffffff;
   puStack_3 = &DAT_?;
   pIStack_4 = (IMenu *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &pIStack_4;
+  *unaff_FS_OFFSET = (int)&pIStack_4;
   pMVar5 = (MethodInfo *)&stack0xffffffb0;
   method_00 = (MethodInfo *)&stack0xffffffb0;
   if (cRam_? == '\0') {
@@ -62,12 +62,11 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Disabl
     cRam_? = '\x01';
     method_00 = pMVar5;
   }
-  pOStack_6 = (Object__Class *)0x0;
   this_01 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
              *)func_?(
                               TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>
                               );
-  pLVar7 = this_01;
+  pLVar6 = this_01;
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
   MultiColumnCollectionHeader+ViewState+ColumnState]::
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
@@ -77,39 +76,38 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Disabl
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).attributes;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                          *)&stack0xffffffcc,this_00,
                         MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                        );
-    RVar9 = pLVar8->_current;
+    RVar8 = pLVar7->_current;
     uStack_2 = 1;
     while( true ) {
-      bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&pOStack_6,
+                        ((List_1_T_Enumerator_System_Object_ *)&pOStack_10,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
                         );
-      if (bVar10 == 0) break;
-      if (RVar9 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      uVar11 = *(uint *)((int)RVar9 + 0xc);
-      this_01 = pLVar7;
-      if ((uVar11 & uVar1) == *(uint *)((int)RVar9 + 0xc) &&
-          ((this->fields).activeAttributeGroup & uVar11) != uVar11) {
-        if (pLVar7 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+      if (bVar9 == 0) break;
+      if (RVar8 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      uVar11 = *(uint *)((int)RVar8 + 0xc);
+      this_01 = pLVar6;
+      if ((uVar11 & uVar1) == uVar11 && ((this->fields).activeAttributeGroup & uVar11) != uVar11) {
+        if (pLVar6 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                        *)0x0) goto code_?;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__Add
-                  ((List_1_System_Object_ *)pLVar7,(Object *)RVar9,
+                  ((List_1_System_Object_ *)pLVar6,(Object *)RVar8,
                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
                   );
       }
     }
     uStack_2 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)&pOStack_6,
+              ((Object *)&pOStack_10,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
                ,(MethodInfo *)in_stack_12.genericMethod);
@@ -118,7 +116,7 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Disabl
     if (this_01 !=
         (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
         )0x0) {
-      pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                          ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
@@ -127,40 +125,41 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Disabl
                           this_01,
                           MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                          );
-      pOStack_6 = (Object__Class *)pLVar8->_list;
-      RVar9 = pLVar8->_current;
+      pOStack_10 = (Object__Class *)pLVar7->_list;
+      RVar8 = pLVar7->_current;
       uStack_2 = 4;
       while( true ) {
-        bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+        bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          ((List_1_T_Enumerator_System_Object_ *)&pOStack_6,
+                          ((List_1_T_Enumerator_System_Object_ *)&pOStack_10,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
                           );
-        if (bVar10 == 0) {
+        if (bVar9 == 0) {
           uStack_2 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    ((Object *)&pOStack_6,
+                    ((Object *)&pOStack_10,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
                      ,method_00);
           uStack_2 = 0xffffffff;
-          if ((this->fields).menu != (IMenu *)0x0) {
-            pIStack_4 = (this->fields).menu;
+          pIVar13 = (this->fields).menu;
+          if (pIVar13 != (IMenu *)0x0) {
+            pIStack_4 = pIVar13;
             func_?();
           }
-          *unaff_FS_OFFSET = pIStack_4;
+          *unaff_FS_OFFSET = (int)pIStack_4;
           return;
         }
-        if (RVar9 == (RegexCharClass_SingleRange)0x0) break;
-        (**(code **)(*(int *)RVar9 + 0xf0))();
+        if (RVar8 == (RegexCharClass_SingleRange)0x0) break;
+        (**(code **)(*(int *)RVar8 + 0xf0))();
       }
     }
   }
 code_?:
   func_?();
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -175,7 +174,7 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Enable
   uStack_2 = 0xffffffff;
   puStack_3 = &DAT_?;
   pIStack_4 = (IMenu *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &pIStack_4;
+  *unaff_FS_OFFSET = (int)&pIStack_4;
   pMVar5 = (MethodInfo *)&stack0xffffffb0;
   method_00 = (MethodInfo *)&stack0xffffffb0;
   if (cRam_? == '\0') {
@@ -202,12 +201,11 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Enable
     cRam_? = '\x01';
     method_00 = pMVar5;
   }
-  pOStack_6 = (Object__Class *)0x0;
   this_01 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
              *)func_?(
                               TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>
                               );
-  pLVar7 = this_01;
+  pLVar6 = this_01;
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
   MultiColumnCollectionHeader+ViewState+ColumnState]::
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
@@ -217,39 +215,38 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Enable
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).attributes;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                          *)&stack0xffffffcc,this_00,
                         MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                        );
-    RVar9 = pLVar8->_current;
+    RVar8 = pLVar7->_current;
     uStack_2 = 1;
     while( true ) {
-      bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&pOStack_6,
+                        ((List_1_T_Enumerator_System_Object_ *)&pOStack_10,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
                         );
-      if (bVar10 == 0) break;
-      if (RVar9 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      uVar11 = *(uint *)((int)RVar9 + 0xc);
-      this_01 = pLVar7;
-      if ((uVar11 & uVar1) == *(uint *)((int)RVar9 + 0xc) &&
-          ((this->fields).activeAttributeGroup & uVar11) != uVar11) {
-        if (pLVar7 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+      if (bVar9 == 0) break;
+      if (RVar8 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      uVar11 = *(uint *)((int)RVar8 + 0xc);
+      this_01 = pLVar6;
+      if ((uVar11 & uVar1) == uVar11 && ((this->fields).activeAttributeGroup & uVar11) != uVar11) {
+        if (pLVar6 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                        *)0x0) goto code_?;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__Add
-                  ((List_1_System_Object_ *)pLVar7,(Object *)RVar9,
+                  ((List_1_System_Object_ *)pLVar6,(Object *)RVar8,
                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
                   );
       }
     }
     uStack_2 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)&pOStack_6,
+              ((Object *)&pOStack_10,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
                ,(MethodInfo *)in_stack_12.genericMethod);
@@ -258,7 +255,7 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Enable
     if (this_01 !=
         (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
         )0x0) {
-      pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                          ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
@@ -267,40 +264,41 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Enable
                           this_01,
                           MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                          );
-      pOStack_6 = (Object__Class *)pLVar8->_list;
-      RVar9 = pLVar8->_current;
+      pOStack_10 = (Object__Class *)pLVar7->_list;
+      RVar8 = pLVar7->_current;
       uStack_2 = 4;
       while( true ) {
-        bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+        bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          ((List_1_T_Enumerator_System_Object_ *)&pOStack_6,
+                          ((List_1_T_Enumerator_System_Object_ *)&pOStack_10,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
                           );
-        if (bVar10 == 0) {
+        if (bVar9 == 0) {
           uStack_2 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    ((Object *)&pOStack_6,
+                    ((Object *)&pOStack_10,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
                      ,method_00);
           uStack_2 = 0xffffffff;
-          if ((this->fields).menu != (IMenu *)0x0) {
-            pIStack_4 = (this->fields).menu;
+          pIVar13 = (this->fields).menu;
+          if (pIVar13 != (IMenu *)0x0) {
+            pIStack_4 = pIVar13;
             func_?();
           }
-          *unaff_FS_OFFSET = pIStack_4;
+          *unaff_FS_OFFSET = (int)pIStack_4;
           return;
         }
-        if (RVar9 == (RegexCharClass_SingleRange)0x0) break;
-        (**(code **)(*(int *)RVar9 + 0xf0))();
+        if (RVar8 == (RegexCharClass_SingleRange)0x0) break;
+        (**(code **)(*(int *)RVar8 + 0xf0))();
       }
     }
   }
 code_?:
   func_?();
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -686,45 +684,41 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Initia
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).attributes;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_8,this_00,
+                       (&LStack_7,this_00,
                         MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                        );
-    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
-    LStack_6._index = pLVar7->_index;
-    LStack_6._version = pLVar7->_version;
-    LStack_6._current = *(Object **)&pLVar7->_current;
-    LStack_8._version = 0;
+    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
+    LStack_8._index = pLVar6->_index;
+    LStack_8._version = pLVar6->_version;
+    LStack_8._current = *(Object **)&pLVar6->_current;
+    LStack_7._version = 0;
     uStack_1 = 1;
-    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
+    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
     while( true ) {
       bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_6,
+                        (&LStack_8,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
                         );
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)&LStack_6,
+                  ((Object *)&LStack_8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
                    ,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      if (*(int *)((int)LStack_6._current + 0xc) == 0) {
-        func_?(6,LStack_6._current);
+      if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0) break;
+      if (*(int *)((int)LStack_8._current + 0xc) == 0) {
+        func_?(6,LStack_8._current);
       }
     }
   }
@@ -744,7 +738,7 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_SetAtt
   uStack_1 = 0xffffffff;
   puStack_2 = &DAT_?;
   pIStack_3 = (IMenu *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &pIStack_3;
+  *unaff_FS_OFFSET = (int)&pIStack_3;
   pMVar4 = (MethodInfo *)&stack0xffffffb0;
   method_00 = (MethodInfo *)&stack0xffffffb0;
   if (cRam_? == '\0') {
@@ -771,12 +765,11 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_SetAtt
     cRam_? = '\x01';
     method_00 = pMVar4;
   }
-  pOStack_5 = (Object__Class *)0x0;
   this_01 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
              *)func_?(
                               TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>
                               );
-  pLVar6 = this_01;
+  pLVar5 = this_01;
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
   MultiColumnCollectionHeader+ViewState+ColumnState]::
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
@@ -786,39 +779,38 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_SetAtt
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).attributes;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                          *)&stack0xffffffcc,this_00,
                         MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                        );
-    RVar8 = pLVar7->_current;
+    RVar7 = pLVar6->_current;
     uStack_1 = 1;
     while( true ) {
-      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+      bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&pOStack_5,
+                        ((List_1_T_Enumerator_System_Object_ *)&pOStack_9,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
                         );
-      if (bVar9 == 0) break;
-      if (RVar8 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      uVar10 = *(uint *)((int)RVar8 + 0xc);
-      this_01 = pLVar6;
-      if ((uVar10 & groupsFlag) == *(uint *)((int)RVar8 + 0xc) &&
-          ((this->fields).activeAttributeGroup & uVar10) != uVar10) {
-        if (pLVar6 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+      if (bVar8 == 0) break;
+      if (RVar7 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      uVar10 = *(uint *)((int)RVar7 + 0xc);
+      this_01 = pLVar5;
+      if ((uVar10 & groupsFlag) == uVar10 && ((this->fields).activeAttributeGroup & uVar10) != uVar10) {
+        if (pLVar5 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                        *)0x0) goto code_?;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__Add
-                  ((List_1_System_Object_ *)pLVar6,(Object *)RVar8,
+                  ((List_1_System_Object_ *)pLVar5,(Object *)RVar7,
                    MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
                   );
       }
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)&pOStack_5,
+              ((Object *)&pOStack_9,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
                ,(MethodInfo *)in_stack_11.genericMethod);
@@ -827,7 +819,7 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_SetAtt
     if (this_01 !=
         (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
         )0x0) {
-      pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                          ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
@@ -836,40 +828,41 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_SetAtt
                           this_01,
                           MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                          );
-      pOStack_5 = (Object__Class *)pLVar7->_list;
-      RVar8 = pLVar7->_current;
+      pOStack_9 = (Object__Class *)pLVar6->_list;
+      RVar7 = pLVar6->_current;
       uStack_1 = 4;
       while( true ) {
-        bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+        bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          ((List_1_T_Enumerator_System_Object_ *)&pOStack_5,
+                          ((List_1_T_Enumerator_System_Object_ *)&pOStack_9,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
                           );
-        if (bVar9 == 0) {
+        if (bVar8 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    ((Object *)&pOStack_5,
+                    ((Object *)&pOStack_9,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
                      ,method_00);
           uStack_1 = 0xffffffff;
-          if ((this->fields).menu != (IMenu *)0x0) {
-            pIStack_3 = (this->fields).menu;
+          pIVar12 = (this->fields).menu;
+          if (pIVar12 != (IMenu *)0x0) {
+            pIStack_3 = pIVar12;
             func_?();
           }
-          *unaff_FS_OFFSET = pIStack_3;
+          *unaff_FS_OFFSET = (int)pIStack_3;
           return;
         }
-        if (RVar8 == (RegexCharClass_SingleRange)0x0) break;
-        (**(code **)(*(int *)RVar8 + 0xf0))();
+        if (RVar7 == (RegexCharClass_SingleRange)0x0) break;
+        (**(code **)(*(int *)RVar7 + 0xf0))();
       }
     }
   }
 code_?:
   func_?();
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -884,15 +877,16 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Subscr
     func_?(&TypeInfo__ThemeSettings__IMenu);
     cRam_? = '\x01';
   }
-  (this->fields).menu = menu;
-  func_?(&(this->fields).menu,menu);
+  ppIVar1 = &(this->fields).menu;
+  *ppIVar1 = menu;
+  func_?(ppIVar1,menu);
   if (menu != (IMenu *)0x0) {
     func_?(0,TypeInfo__ThemeSettings__IMenu,menu);
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -903,8 +897,9 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_Unsubs
                (SettingsWrapper *this,MethodInfo *method)
 
 {
-  (this->fields).menu = (IMenu *)0x0;
-  func_?(&(this->fields).menu);
+  ppIVar1 = &(this->fields).menu;
+  *ppIVar1 = (IMenu *)0x0;
+  func_?(ppIVar1);
   return;
 }
 
@@ -960,7 +955,8 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper__ctor
              MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
             );
   method_00 = (MethodInfo *)&(this->fields).attributes;
-  (this->fields).attributes = (List_1_ThemeAttributes_ThemeAttribute_ *)this_00;
+  *(List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ **)
+   method_00 = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -976,14 +972,14 @@ bool Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper__get_S
 {
   puStack_1 = &stack0xfffffffc;
   if (attrib != (ThemeAttribute *)0x0) {
-    return ((this->fields).activeAttributeGroup & (attrib->fields)._Groups_k__BackingField) ==
-           (attrib->fields)._Groups_k__BackingField;
+    uVar2 = (attrib->fields)._Groups_k__BackingField;
+    return ((this->fields).activeAttributeGroup & uVar2) == uVar2;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 
@@ -1019,44 +1015,44 @@ Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_get_Setting
              MethodInfo__ThemeSettings__SettingsWrapper___get_SettingsUI_b__9_0_ThemeAttributes__ThemeAttribute_
              ,(MethodInfo *)0x0);
   if (this_00 != (List_1_ThemeAttributes_ThemeAttribute_ *)0x0) {
-    pLVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-             List_1_System_Object__FindAll
-                       ((List_1_System_Object_ *)this_00,this_01,
-                        MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__FindAll_System__Predicate<ThemeAttributes::ThemeAttribute>_
-                       );
-    if (pLVar1 != (List_1_System_Object_ *)0x0) {
-      this = (SettingsWrapper *)TypeInfo__UnityEngine__RectTransform;
-      pRVar2 = (RectTransform__Array *)func_?();
+    this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+              List_1_System_Object__FindAll
+                        ((List_1_System_Object_ *)this_00,this_01,
+                         MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__FindAll_System__Predicate<ThemeAttributes::ThemeAttribute>_
+                        );
+    if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      this = (SettingsWrapper *)func_?();
       index = 0;
-      iVar3 = 0x10;
+      pSVar1 = (SettingsWrapper *)&(this->fields).activeAttributeGroup;
       while( true ) {
-        if ((int)(this->fields).attributes <= (int)index) {
-          return pRVar2;
+        pSVar2 = pSVar1;
+        if ((this_02->fields)._size <= (int)index) {
+          return (RectTransform__Array *)this;
         }
-        RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+        RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)this
-                           ,index,
+                          (this_02,index,
                            MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__get_Item_int_
                           );
-        if (RVar4 == (RegexCharClass_SingleRange)0x0) break;
-        uVar5 = (**(code **)(*(int *)RVar4 + 0xe8))();
-        if (pRVar2 == (RectTransform__Array *)0x0) break;
-        if (pRVar2->max_length <= index) goto code_?;
-        *(undefined4 *)((int)pRVar2->vector + iVar3 + -0x10) = uVar5;
-        this = (SettingsWrapper *)((int)pRVar2->vector + iVar3 + -0x10);
+        if (RVar3 == (RegexCharClass_SingleRange)0x0) break;
+        pSVar4 = (SettingsWrapper__Class *)(**(code **)(*(int *)RVar3 + 0xe8))();
+        if (RVar3 == (RegexCharClass_SingleRange)0x0) break;
+        if (*(uint *)((int)RVar3 + 0xc) <= index) goto code_?;
+        pSVar2->klass = pSVar4;
         func_?();
         index = index + 1;
-        iVar3 = iVar3 + 4;
+        pSVar1 = (SettingsWrapper *)&pSVar2->monitor;
+        this = pSVar2;
       }
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  pRVar2 = (RectTransform__Array *)(*pcVar6)();
-  return pRVar2;
+  pcVar5 = (code *)swi(3);
+  pRVar6 = (RectTransform__Array *)(*pcVar5)();
+  return pRVar6;
 }
 

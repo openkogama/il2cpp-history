@@ -56,24 +56,24 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Counter
               );
     method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar2 = StringLiteral__c;
-    pSVar1 = StringLiteral_https___api_stathat_com;
+    pSVar2 = StringLiteral_https___api_stathat_com;
+    pSVar1 = StringLiteral__c;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    (this_00->fields).BaseUrl = pSVar1;
+    (this_00->fields).BaseUrl = pSVar2;
     ppSStack3 = &(this_00->fields).BaseUrl;
-    pSStack4 = pSVar1;
+    pSStack4 = pSVar2;
     pDStack5 =
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
-    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
+    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    (this_00->fields).RelUrl = pSVar2;
-    pSStack8 = pSVar2;
+    *ppSStack7 = pSVar1;
+    pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;
     Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
@@ -144,24 +144,24 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Counter_1
               );
     method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar2 = StringLiteral__c;
-    pSVar1 = StringLiteral_https___api_stathat_com;
+    pSVar2 = StringLiteral_https___api_stathat_com;
+    pSVar1 = StringLiteral__c;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    (this_00->fields).BaseUrl = pSVar1;
+    (this_00->fields).BaseUrl = pSVar2;
     ppSStack3 = &(this_00->fields).BaseUrl;
-    pSStack4 = pSVar1;
+    pSStack4 = pSVar2;
     pDStack5 =
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
-    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
+    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    (this_00->fields).RelUrl = pSVar2;
-    pSStack8 = pSVar2;
+    *ppSStack7 = pSVar1;
+    pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;
     Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
@@ -232,24 +232,24 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzCounter
               );
     method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar2 = StringLiteral__ez;
-    pSVar1 = StringLiteral_https___api_stathat_com;
+    pSVar2 = StringLiteral_https___api_stathat_com;
+    pSVar1 = StringLiteral__ez;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    (this_00->fields).BaseUrl = pSVar1;
+    (this_00->fields).BaseUrl = pSVar2;
     ppSStack3 = &(this_00->fields).BaseUrl;
-    pSStack4 = pSVar1;
+    pSStack4 = pSVar2;
     pDStack5 =
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
-    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
+    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    (this_00->fields).RelUrl = pSVar2;
-    pSStack8 = pSVar2;
+    *ppSStack7 = pSVar1;
+    pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;
     Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
@@ -319,24 +319,24 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzCounter_1
               );
     method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar2 = StringLiteral__ez;
-    pSVar1 = StringLiteral_https___api_stathat_com;
+    pSVar2 = StringLiteral_https___api_stathat_com;
+    pSVar1 = StringLiteral__ez;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    (this_00->fields).BaseUrl = pSVar1;
+    (this_00->fields).BaseUrl = pSVar2;
     ppSStack3 = &(this_00->fields).BaseUrl;
-    pSStack4 = pSVar1;
+    pSStack4 = pSVar2;
     pDStack5 =
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
-    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
+    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    (this_00->fields).RelUrl = pSVar2;
-    pSStack8 = pSVar2;
+    *ppSStack7 = pSVar1;
+    pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;
     Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
@@ -406,24 +406,24 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzValue
               );
     method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar2 = StringLiteral__ez;
-    pSVar1 = StringLiteral_https___api_stathat_com;
+    pSVar2 = StringLiteral_https___api_stathat_com;
+    pSVar1 = StringLiteral__ez;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    (this_00->fields).BaseUrl = pSVar1;
+    (this_00->fields).BaseUrl = pSVar2;
     ppSStack3 = &(this_00->fields).BaseUrl;
-    pSStack4 = pSVar1;
+    pSStack4 = pSVar2;
     pDStack5 =
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
-    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
+    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    (this_00->fields).RelUrl = pSVar2;
-    pSStack8 = pSVar2;
+    *ppSStack7 = pSVar1;
+    pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;
     Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
@@ -494,24 +494,24 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzValue_1
               );
     method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar2 = StringLiteral__ez;
-    pSVar1 = StringLiteral_https___api_stathat_com;
+    pSVar2 = StringLiteral_https___api_stathat_com;
+    pSVar1 = StringLiteral__ez;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    (this_00->fields).BaseUrl = pSVar1;
+    (this_00->fields).BaseUrl = pSVar2;
     ppSStack3 = &(this_00->fields).BaseUrl;
-    pSStack4 = pSVar1;
+    pSStack4 = pSVar2;
     pDStack5 =
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
-    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
+    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    (this_00->fields).RelUrl = pSVar2;
-    pSStack8 = pSVar2;
+    *ppSStack7 = pSVar1;
+    pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;
     Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
@@ -582,24 +582,24 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Value
               );
     method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar2 = StringLiteral__v;
-    pSVar1 = StringLiteral_https___api_stathat_com;
+    pSVar2 = StringLiteral_https___api_stathat_com;
+    pSVar1 = StringLiteral__v;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    (this_00->fields).BaseUrl = pSVar1;
+    (this_00->fields).BaseUrl = pSVar2;
     ppSStack3 = &(this_00->fields).BaseUrl;
-    pSStack4 = pSVar1;
+    pSStack4 = pSVar2;
     pDStack5 =
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
-    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
+    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    (this_00->fields).RelUrl = pSVar2;
-    pSStack8 = pSVar2;
+    *ppSStack7 = pSVar1;
+    pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;
     Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
@@ -669,24 +669,24 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Value_1
               );
     method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar2 = StringLiteral__v;
-    pSVar1 = StringLiteral_https___api_stathat_com;
+    pSVar2 = StringLiteral_https___api_stathat_com;
+    pSVar1 = StringLiteral__v;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    (this_00->fields).BaseUrl = pSVar1;
+    (this_00->fields).BaseUrl = pSVar2;
     ppSStack3 = &(this_00->fields).BaseUrl;
-    pSStack4 = pSVar1;
+    pSStack4 = pSVar2;
     pDStack5 =
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
-    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
+    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    (this_00->fields).RelUrl = pSVar2;
-    pSStack8 = pSVar2;
+    *ppSStack7 = pSVar1;
+    pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;
     Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);

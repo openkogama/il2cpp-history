@@ -130,9 +130,10 @@ void Assembly-CSharp.dll::TextCommand::TextCommand_Resolve(String *commandLine,M
     pOVar2 = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    pOVar2[1].klass = pOVar1;
-    func_?(pOVar2 + 1,pOVar1);
-    pOVar1 = pOVar2[1].klass;
+    pOVar2 = pOVar2 + 1;
+    pOVar2->klass = pOVar1;
+    func_?(pOVar2,pOVar1);
+    pOVar1 = pOVar2->klass;
     if (pOVar1 != (Object__Class *)0x0) {
       if ((pOVar1->_0).namespaze == (char *)0x0) goto code_?;
       pSVar3 = (String *)(pOVar1->_0).byval_arg.data.typeHandle;
@@ -148,7 +149,7 @@ void Assembly-CSharp.dll::TextCommand::TextCommand_Resolve(String *commandLine,M
             func_?(&StringLiteral__0__is_not_a_valid_command_);
             cRam_? = '\x01';
           }
-          pOVar1 = pOVar2[1].klass;
+          pOVar1 = pOVar2->klass;
           if (pOVar1 != (Object__Class *)0x0) {
             if ((pOVar1->_0).namespaze != (char *)0x0) {
               pOVar2 = (Object *)(pOVar1->_0).byval_arg.data.typeHandle;
@@ -168,7 +169,7 @@ code_?:
             func_?(&StringLiteral__0__is_not_a_valid_version_numbe);
             cRam_? = '\x01';
           }
-          pOVar1 = pOVar2[1].klass;
+          pOVar1 = pOVar2->klass;
           commandLine = (String *)0x0;
           if (pOVar1 != (Object__Class *)0x0) {
             if ((pOVar1->_0).namespaze != (char *)0x2) {
@@ -183,11 +184,12 @@ code_?:
               func_?(&::StringLiteral__);
               cRam_? = '\x01';
             }
-            pOVar1 = pOVar2[1].klass;
+            pOVar1 = pOVar2->klass;
             if (pOVar1 != (Object__Class *)0x0) {
+              pcVar5 = (pOVar1->_0).namespaze;
               pSVar3 = ::StringLiteral__;
-              if (1 < (int)(pOVar1->_0).namespaze) {
-                if ((pOVar1->_0).namespaze < (char *)0x2) goto code_?;
+              if (1 < (int)pcVar5) {
+                if (pcVar5 < (char *)0x2) goto code_?;
                 pSVar3 = *(String **)&(pOVar1->_0).byval_arg.attrs;
               }
               bVar4 = mscorlib.dll::System::Int32::Int32_TryParse
@@ -197,7 +199,7 @@ code_?:
                           ((int32_t)commandLine,(MethodInfo *)0x0);
                 return;
               }
-              pOVar1 = pOVar2[1].klass;
+              pOVar1 = pOVar2->klass;
               if (pOVar1 != (Object__Class *)0x0) {
                 if ((pOVar1->_0).namespaze != (char *)0x0) {
                   pSVar3 = mscorlib.dll::System::String::String_Format_1
@@ -220,8 +222,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

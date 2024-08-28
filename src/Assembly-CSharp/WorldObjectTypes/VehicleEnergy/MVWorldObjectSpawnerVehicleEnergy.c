@@ -65,113 +65,109 @@ bool Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
     func_?(&StringLiteral_Did_not_find_other_spawnWorldObj);
     cRam_? = '\x01';
   }
-  if (((wo == (MVWorldObjectClient *)0x0) ||
-      (pMVar1 = wo->klass,
-      (pMVar1->_1).naturalAligment <
-      (TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy->_1).
-      naturalAligment)) ||
-     ((MVWorldObjectSpawnerVehicleEnergy__Class *)
-      (pMVar1->_1).typeHierarchy
-      [(TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy->_1).
-       naturalAligment - 1] !=
-      TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy)) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-              ((Object *)StringLiteral_Not_a_vehicle_spawner,(MethodInfo *)0x0);
-    return 0;
-  }
-  pMVar2 = TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy;
-  if (((TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy->_1).
-       naturalAligment <= (pMVar1->_1).naturalAligment) &&
-     ((MVWorldObjectSpawnerVehicleEnergy__Class *)
-      (pMVar1->_1).typeHierarchy
-      [(TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy->_1).
-       naturalAligment - 1] ==
-      TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy)) {
-    pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-             (this->fields)._._._._._.data;
-    if (pDVar3 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                        (pDVar3,(Object *)StringLiteral_gameCoinAmount,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                        );
-      if (bVar4 != 0) {
-        return 0;
-      }
-      pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-               (this->fields)._._._._._.data;
-      if (pDVar3 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-        bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                          (pDVar3,(Object *)StringLiteral_starAmount,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                          );
-        if (bVar4 != 0) {
-          return 0;
-        }
-        pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+  if (wo != (MVWorldObjectClient *)0x0) {
+    pMVar1 = wo->klass;
+    bVar2 = (TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy->_1).
+            naturalAligment;
+    if ((bVar2 <= (pMVar1->_1).naturalAligment) &&
+       ((MVWorldObjectSpawnerVehicleEnergy__Class *)(pMVar1->_1).typeHierarchy[bVar2 - 1] ==
+        TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy)) {
+      bVar2 = (TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy->_1).
+              naturalAligment;
+      pMVar3 = TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy;
+      if ((bVar2 <= (pMVar1->_1).naturalAligment) &&
+         ((MVWorldObjectSpawnerVehicleEnergy__Class *)(pMVar1->_1).typeHierarchy[bVar2 - 1] ==
+          TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy)) {
+        pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                  (this->fields)._._._._._.data;
-        if (pDVar3 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-          bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+        if (pDVar4 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+          bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                   Object,UnityEngine::UIElements::TextureId]::
                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                            (pDVar3,(Object *)StringLiteral_levelAmount,
+                            (pDVar4,(Object *)StringLiteral_gameCoinAmount,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                             );
-          pSVar5 = StringLiteral_RequiredRank;
-          if (bVar4 != 0) {
+          if (bVar5 != 0) {
             return 0;
           }
-          pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+          pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                    (this->fields)._._._._._.data;
-          if (pDVar3 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-            bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+          if (pDVar4 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+            bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                     Object,UnityEngine::UIElements::TextureId]::
                     Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                              (pDVar3,(Object *)StringLiteral_RequiredRank,
+                              (pDVar4,(Object *)StringLiteral_starAmount,
                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                               );
-            if (bVar4 != 0) {
+            if (bVar5 != 0) {
               return 0;
             }
-            wo = MVBlueprintBase::MVBlueprintBase_GetChild
-                           ((MVBlueprintBase *)wo,StringLiteral_spawnWorldObjectID,(MethodInfo *)0x0
-                           );
-            if (wo == (MVWorldObjectClient *)0x0) {
-              if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
+            pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                     (this->fields)._._._._._.data;
+            if (pDVar4 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+              bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                                (pDVar4,(Object *)StringLiteral_levelAmount,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                );
+              pSVar6 = StringLiteral_RequiredRank;
+              if (bVar5 != 0) {
+                return 0;
               }
-              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                        ((Object *)StringLiteral_Did_not_find_other_spawnWorldObj,(MethodInfo *)0x0)
-              ;
-              return 0;
-            }
-            pMVar6 = MVBlueprintBase::MVBlueprintBase_GetChild
-                               ((MVBlueprintBase *)this,StringLiteral_spawnWorldObjectID,
+              pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                       (this->fields)._._._._._.data;
+              if (pDVar4 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+                bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Object,UnityEngine::UIElements::TextureId]::
+                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                                  (pDVar4,(Object *)StringLiteral_RequiredRank,
+                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                  );
+                if (bVar5 != 0) {
+                  return 0;
+                }
+                wo = MVBlueprintBase::MVBlueprintBase_GetChild
+                               ((MVBlueprintBase *)wo,StringLiteral_spawnWorldObjectID,
                                 (MethodInfo *)0x0);
-            if (pMVar6 != (MVWorldObjectClient *)0x0) {
-              pIStack7 = (pMVar6->klass->vtable).Compare.methodPtr;
-              pSStack8 = pSVar5;
-              pDStack9 = pDVar3;
-              bVar4 = (*(code *)(pMVar6->klass->vtable).CompareWithKoGaMaPackage.method)();
-              return bVar4;
+                if (wo == (MVWorldObjectClient *)0x0) {
+                  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                    func_?();
+                  }
+                  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                            ((Object *)StringLiteral_Did_not_find_other_spawnWorldObj,
+                             (MethodInfo *)0x0);
+                  return 0;
+                }
+                pMVar7 = MVBlueprintBase::MVBlueprintBase_GetChild
+                                   ((MVBlueprintBase *)this,StringLiteral_spawnWorldObjectID,
+                                    (MethodInfo *)0x0);
+                if (pMVar7 != (MVWorldObjectClient *)0x0) {
+                  pIStack8 = (pMVar7->klass->vtable).Compare.methodPtr;
+                  pSStack9 = pSVar6;
+                  pDStack10 = pDVar4;
+                  bVar5 = (*(code *)(pMVar7->klass->vtable).CompareWithKoGaMaPackage.method)();
+                  return bVar5;
+                }
+              }
             }
           }
         }
+        func_?();
+        pMVar3 = extraout_EDX;
       }
+      func_?(wo,pMVar3);
+      pcVar11 = (code *)swi(3);
+      bVar5 = (*pcVar11)();
+      return bVar5;
     }
-    func_?();
-    pMVar2 = extraout_EDX;
   }
-  func_?(wo,pMVar2);
-  pcVar10 = (code *)swi(3);
-  bVar4 = (*pcVar10)();
-  return bVar4;
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Debug);
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+            ((Object *)StringLiteral_Not_a_vehicle_spawner,(MethodInfo *)0x0);
+  return 0;
 }
 
 
@@ -225,9 +221,9 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
   }
   MVWorldObjectSpawner::MVWorldObjectSpawner_Destroy((MVWorldObjectSpawner *)this,(MethodInfo *)0x0)
   ;
-  if ((this->fields).cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
-    CullingSubscriberBase::CullingSubscriberBase_Destroy
-              ((this->fields).cullingSubscriberBase,(MethodInfo *)0x0);
+  this_01 = (this->fields).cullingSubscriberBase;
+  if (this_01 != (CullingSubscriberBase *)0x0) {
+    CullingSubscriberBase::CullingSubscriberBase_Destroy(this_01,(MethodInfo *)0x0);
     (this->fields).cullingSubscriberBase = (CullingSubscriberBase *)0x0;
     func_?();
   }
@@ -305,10 +301,10 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
-    func_?(&TypeInfo__System__Func<int,_bool>);
-    func_?(&TypeInfo__System__Func<int,_MVInteractableBase,_bool>);
+    func_?();
+    func_?();
+    func_?();
+    func_?();
     func_?(&
                     GreyOutObjectScript_MethodInfo__UnityEngine__GameObject__AddComponent<GreyOutObjectScript>__
                    );
@@ -325,10 +321,10 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
     cRam_? = '\x01';
   }
   pMVar1 = MVBlueprintBase::MVBlueprintBase_GetChild
-                     ((MVBlueprintBase *)this,StringLiteral_spawnWorldObjectID,(MethodInfo *)0x0);
+                      ((MVBlueprintBase *)this,StringLiteral_spawnWorldObjectID,(MethodInfo *)0x0);
   if (pMVar1 == (MVWorldObjectClient *)0x0) {
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+      func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Could_not_get_spawnPoint_child_s,(MethodInfo *)0x0);
@@ -337,137 +333,167 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
   MVWorldObjectSpawner::MVWorldObjectSpawner_Initialize
             ((MVWorldObjectSpawner *)this,(MethodInfo *)0x0);
   pMVar2 = (MVVehicleEnergy *)
-           MVGroup::MVGroup_GetChild
-                     ((MVGroup *)this,(this->fields)._.spawnWorldObjectID,(MethodInfo *)0x0);
+            MVGroup::MVGroup_GetChild
+                      ((MVGroup *)this,(this->fields)._.spawnWorldObjectID,(MethodInfo *)0x0);
   if (pMVar2 == (MVVehicleEnergy *)0x0) {
     (this->fields).vehicleEnergyChild = (MVVehicleEnergy *)0x0;
   }
   else {
-    if (((pMVar2->klass->_1).naturalAligment <
-         (TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment) ||
-       ((MVVehicleEnergy__Class *)
-        (pMVar2->klass->_1).typeHierarchy
-        [(TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment - 1] !=
+    bVar3 = (TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment;
+    if (((pMVar2->klass->_1).naturalAligment < bVar3) ||
+       ((MVVehicleEnergy__Class *)(pMVar2->klass->_1).typeHierarchy[bVar3 - 1] !=
         TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy)) goto code_?;
     (this->fields).vehicleEnergyChild = pMVar2;
-    if (((pMVar2->klass->_1).naturalAligment <
-         (TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment) ||
-       ((MVVehicleEnergy__Class *)
-        (pMVar2->klass->_1).typeHierarchy
-        [(TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment - 1] !=
+    bVar3 = (TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment;
+    if (((pMVar2->klass->_1).naturalAligment < bVar3) ||
+       ((MVVehicleEnergy__Class *)(pMVar2->klass->_1).typeHierarchy[bVar3 - 1] !=
         TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy)) goto code_?;
   }
   func_?();
-  if ((this->fields).spawnerObject != (SpawnerObject *)0x0) {
-    this_00 = (this->fields)._.triggerBoxEvents;
-    if (this_00 != (TriggerBoxEvents *)0x0) {
-      TriggerBoxEvents::TriggerBoxEvents_get_Collider(this_00,(MethodInfo *)0x0);
-      this_02 = TypeInfo__System__Func<int,_bool>;
-      this_03 = (Predicate_1_UInt32_ *)func_?();
-      mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
-                (this_03,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
-      this_04 = (Func_3_Int32_Object_Boolean_ *)func_?();
-      mscorlib.dll::System::Func`3[Int32,Object,Boolean]::Func_3_Int32_Object_Boolean___ctor
-                (this_04,(Object *)this,(this->klass->vtable).Use.methodPtr,(MethodInfo *)0x0);
-      triggerCollider = (Collider *)&UNK_?;
-      pUVar3 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
-      UseInteractor::UseInteractor__ctor
-                (pUVar3,(MVWorldObjectClient *)this_02,(GameObject *)this,1,triggerCollider,
-                 (Func_2_Int32_Boolean_ *)this_03,
-                 (Func_3_Int32_MVInteractableBase_Boolean_ *)this_04,3.5,1,(MethodInfo *)0x0);
-      (this_02->vtable).GetMethodImpl.methodPtr = (Il2CppMethodPointer)pUVar3;
-      func_?();
-      pMVar4 = (this_02->vtable).GetObjectData_1.method;
-      pUVar5 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar5,(Object *)this_02,
-                 MethodInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy__OnEnterTriggerBox_System__Object__TriggerEventArgs_
+  if (((this->fields).spawnerObject != (SpawnerObject *)0x0) &&
+     (pTVar4 = (this->fields)._.triggerBoxEvents, pTVar4 != (TriggerBoxEvents *)0x0)) {
+    triggerCollider = TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar4,(MethodInfo *)0x0);
+    this_01 = (Predicate_1_UInt32_ *)func_?();
+    mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
+              (this_01,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+    owner = TypeInfo__System__Func<int,_MVInteractableBase,_bool>;
+    this_02 = (Func_3_Int32_Object_Boolean_ *)func_?();
+    mscorlib.dll::System::Func`3[Int32,Object,Boolean]::Func_3_Int32_Object_Boolean___ctor
+              (this_02,(Object *)this,(this->klass->vtable).Use.methodPtr,(MethodInfo *)0x0);
+    pUVar5 = (UseInteractor *)func_?();
+    UseInteractor::UseInteractor__ctor
+              (pUVar5,(MVWorldObjectClient *)this,(GameObject *)owner,1,triggerCollider,
+               (Func_2_Int32_Boolean_ *)this_01,(Func_3_Int32_MVInteractableBase_Boolean_ *)this_02,
+               3.5,1,(MethodInfo *)0x0);
+    (this->fields)._.useInteractor = pUVar5;
+    func_?();
+    pTVar4 = (this->fields)._.triggerBoxEvents;
+    pEVar6 = (EventHandler_1_Object_ *)func_?();
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              (pEVar6,(Object *)this,
+               MethodInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy__OnEnterTriggerBox_System__Object__TriggerEventArgs_
+               ,(MethodInfo *)0x0);
+    if (pTVar4 != (TriggerBoxEvents *)0x0) {
+      TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnterOverride
+                (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pEVar6,(MethodInfo *)0x0);
+      pTVar4 = (this->fields)._.triggerBoxEvents;
+      pUVar5 = (this->fields)._.useInteractor;
+      pEVar6 = (EventHandler_1_Object_ *)func_?();
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                (pEVar6,(Object *)pUVar5,
+                 MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                  ,(MethodInfo *)0x0);
-      if (pMVar4 != (MethodInfo *)0x0) {
-        TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnterOverride
-                  ((TriggerBoxEvents *)pMVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
-                   (MethodInfo *)0x0);
-        pMVar4 = (this_02->vtable).GetObjectData_1.method;
-        object = (Object *)(this_02->vtable).GetMethodImpl.methodPtr;
-        pUVar5 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar5,object,
-                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                   ,(MethodInfo *)0x0);
-        if (pMVar4 != (MethodInfo *)0x0) {
-          TriggerBoxEvents::TriggerBoxEvents_add_TriggerExitOverride
-                    ((TriggerBoxEvents *)pMVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
-                     (MethodInfo *)0x0);
-          MVWorldObjectSpawnerVehicleEnergy_InitializeCommon
-                    ((MVWorldObjectSpawnerVehicleEnergy *)this_02,(MethodInfo *)0x0);
-          pUVar3 = (UseInteractor *)(this_02->vtable).GetMethodImpl.methodPtr;
-          if (pUVar3 != (UseInteractor *)0x0) {
-            UseInteractor::UseInteractor_UpdateData
-                      (pUVar3,(Dictionary_2_System_Object_System_Object_ *)this_02->interfaceOffsets
-                       ,(MethodInfo *)0x0);
-            pMVar4 = (this_02->vtable).Invoke.method;
-            if (((pMVar4 != (MethodInfo *)0x0) &&
-                (pIVar6 = pMVar4[5].methodPointer, pIVar6 != (Il2CppMethodPointer)0x0)) &&
-               (iVar7 = *(int *)(pIVar6 + 8), iVar7 != 0)) {
-              (this_02->vtable).CombineImpl.methodPtr = *(Il2CppMethodPointer *)(iVar7 + 0x88);
+      if (pTVar4 != (TriggerBoxEvents *)0x0) {
+        TriggerBoxEvents::TriggerBoxEvents_add_TriggerExitOverride
+                  (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pEVar6,(MethodInfo *)0x0);
+        MVWorldObjectSpawnerVehicleEnergy_InitializeCommon(this,(MethodInfo *)0x0);
+        pUVar5 = (this->fields)._.useInteractor;
+        if (pUVar5 != (UseInteractor *)0x0) {
+          UseInteractor::UseInteractor_UpdateData
+                    (pUVar5,(this->fields)._._._._._.data,(MethodInfo *)0x0);
+          pMVar2 = (this->fields).vehicleEnergyChild;
+          if (((pMVar2 != (MVVehicleEnergy *)0x0) &&
+              (pEVar7 = (pMVar2->fields).editableCubeModelWrapper,
+              pEVar7 != (EditableCubeModelWrapper *)0x0)) &&
+             (pMVar8 = (pEVar7->fields).cubeModelBase, pMVar8 != (MVCubeModelInstance *)0x0)) {
+            (this->fields).lodGameObject = (pMVar8->fields)._._.gameObject;
+            func_?();
+            pMVar2 = (this->fields).vehicleEnergyChild;
+            if (pMVar2 != (MVVehicleEnergy *)0x0) {
+              (this->fields).visualsGameObject =
+                   (pMVar2->fields)._VehicleEnergyVisualsGameObject_k__BackingField;
               func_?();
-              pMVar4 = (this_02->vtable).Invoke.method;
-              if (pMVar4 != (MethodInfo *)0x0) {
-                (this_02->vtable).CombineImpl.method = (MethodInfo *)pMVar4[5].virtualMethodPointer
-                ;
-                func_?();
-                pMVar4 = (this_02->vtable).Invoke.method;
-                if (pMVar4 != (MethodInfo *)0x0) {
-                  uVar8._0_2_ = pMVar4[3].flags;
-                  uVar8._2_2_ = pMVar4[3].iflags;
-                  uVar9._0_2_ = pMVar4[3].slot;
-                  uVar9._2_1_ = pMVar4[3].parameters_count;
-                  uVar9._3_1_ = pMVar4[3].field_0x2f;
-                  uVar10._0_1_ = (this_02->_1).naturalAligment;
-                  uVar10._1_1_ = (this_02->_1).packingSize;
-                  uVar10._2_2_ = *(undefined2 *)&(this_02->_1).field_0x56;
-                  uVar8 = uVar8 | uVar10;
-                  pIVar6 = (this_02->vtable).Equals.methodPtr;
-                  (this_02->_1).naturalAligment = (char)uVar8;
-                  (this_02->_1).packingSize = (char)(uVar8 >> 8);
-                  *(short *)&(this_02->_1).field_0x56 = (short)(uVar8 >> 0x10);
-                  uVar11._0_1_ = (this_02->_1).naturalAligment;
-                  uVar11._1_1_ = (this_02->_1).packingSize;
-                  uVar11._2_2_ = *(undefined2 *)&(this_02->_1).field_0x56;
-                  uVar11 = uVar11 | 8;
-                  (this_02->_1).naturalAligment = (char)uVar11;
-                  (this_02->_1).packingSize = (char)(uVar11 >> 8);
-                  *(short *)&(this_02->_1).field_0x56 = (short)(uVar11 >> 0x10);
-                  (this_02->vtable).Equals.methodPtr = (Il2CppMethodPointer)(uVar9 | (uint)pIVar6);
-                  this_01 = (GameObject *)(this_02->_1).element_size;
-                  if (this_01 != (GameObject *)0x0) {
-                    pMVar4 = (MethodInfo *)
-                              UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                              GameObject_AddComponent_1
-                                        (this_01,
-                                         GreyOutObjectScript_MethodInfo__UnityEngine__GameObject__AddComponent<GreyOutObjectScript>__
-                                        );
-                    (this_02->vtable).RemoveImpl.method = pMVar4;
-                    func_?();
-                    pMVar4 = (this_02->vtable).RemoveImpl.method;
-                    this_05 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0)
-                    ;
-                    if (this_05 != (MVWorldObjectClientManager *)0x0) {
-                      pMVar12 = MVWorldObjectClientManager::
-                                MVWorldObjectClientManager_GetWorldObject
-                                          (this_05,(int32_t)(this_02->vtable).GetObjectData_1.
-                                                            methodPtr,(MethodInfo *)0x0);
-                      if ((pMVar12 != (MVWorldObject *)0x0) && (pMVar4 != (MethodInfo *)0x0)) {
-                        GreyOutObjectScript::GreyOutObjectScript_SetPickupObject
-                                  ((GreyOutObjectScript *)pMVar4,
-                                   (GameObject *)pMVar12[1].fields.inputLinkRefs,(MethodInfo *)0x0);
-                        *(undefined1 *)&(this_02->vtable).RemoveImpl.methodPtr = 1;
-                        MVWorldObjectSpawnerVehicleEnergy_SetupCulling
-                                  ((MVWorldObjectSpawnerVehicleEnergy *)this_02,(MethodInfo *)0x0);
+              pMVar2 = (this->fields).vehicleEnergyChild;
+              if (pMVar2 != (MVVehicleEnergy *)0x0) {
+                piVar9 = &(this->fields)._._._._.interactionFlags;
+                *(uint *)piVar9 = (uint)*piVar9 | (uint)(pMVar2->fields)._._._.interactionFlags;
+                puVar10 = (uint *)((int)&(this->fields)._._._._.interactionFlags + 4);
+                *puVar10 = *puVar10 | *(uint *)((int)&(pMVar2->fields)._._._.interactionFlags + 4);
+                uVar11 = *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4);
+                piVar9 = &(this->fields)._._._._.interactionFlags;
+                *(uint *)piVar9 = (uint)*piVar9 | 8;
+                *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4) = uVar11;
+                this_00 = (this->fields)._._._._.gameObject;
+                if (this_00 != (GameObject *)0x0) {
+                  pGVar12 = (GreyOutObjectScript *)
+                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                            GameObject_AddComponent_1
+                                      (this_00,
+                                       GreyOutObjectScript_MethodInfo__UnityEngine__GameObject__AddComponent<GreyOutObjectScript>__
+                                      );
+                  ppGVar13 = &(this->fields).pickupItemObjectScript;
+                  *ppGVar13 = pGVar12;
+                  func_?();
+                  pGVar12 = *ppGVar13;
+                  this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+                  if (((this_03 != (MVWorldObjectClientManager *)0x0) &&
+                      (pMVar14 = MVWorldObjectClientManager::
+                                 MVWorldObjectClientManager_GetWorldObject
+                                           (this_03,(this->fields)._.spawnWorldObjectID,
+                                            (MethodInfo *)0x0), pMVar14 != (MVWorldObject *)0x0)) &&
+                     (pGVar12 != (GreyOutObjectScript *)0x0)) {
+                    GreyOutObjectScript::GreyOutObjectScript_SetPickupObject
+                              (pGVar12,(GameObject *)pMVar14[1].fields.inputLinkRefs,
+                               (MethodInfo *)0x0);
+                    (this->fields).initFlag = 1;
+                    if (cRam_? == '\0') {
+                      func_?();
+                      func_?();
+                      func_?();
+                      func_?();
+                      func_?();
+                      cRam_? = '\x01';
+                    }
+                    pUVar15 = (this->fields)._._._._.PositionChanged;
+                    this_04 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+                    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
+                    Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
+                              (this_04,(Object *)this,
+                               MethodInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
+                               ,(MethodInfo *)0x0);
+                    pDVar16 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                        ((Delegate *)pUVar15,(Delegate *)this_04,(MethodInfo *)0x0);
+                    if (pDVar16 == (Delegate *)0x0) {
+                      (this->fields)._._._._.PositionChanged =
+                           (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+code_?:
+                      func_?();
+                      iVar17 = (*(code *)(this->klass->vtable).get_WorldPosition_1.method)();
+                      fVar18 = *(float *)(iVar17 + 8);
+                      this_05 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
+                      puVar19 = &UNK_?;
+                      pUVar20 = this_05;
+                      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::
+                      Vector2]::UnityAction_1_UnityEngine_Vector2___ctor
+                                (this_05,(Object *)this,
+                                 MethodInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy__OnStateChanged_UnityEngine__CullingGroupEvent_
+                                 ,(MethodInfo *)0x0);
+                      this_06 = (CullingSubscriberBase *)func_?();
+                      position.y = (float)pUVar20;
+                      position.x = (float)puVar19;
+                      position.z = fVar18;
+                      CullingSubscriberBase::CullingSubscriberBase__ctor_2
+                                (this_06,2.5,position,
+                                 (UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_05,
+                                 (MethodInfo *)0x0);
+                      if (this_06 != (CullingSubscriberBase *)0x0) {
+                        (this_06->fields)._DistanceBandIndex_k__BackingField = 2;
+                        (this->fields).cullingSubscriberBase = this_06;
+                        func_?();
                         return;
                       }
+                    }
+                    else {
+                      pUVar15 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)
+                                func_?();
+                      if (pUVar15 !=
+                          (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
+                        (this->fields)._._._._.PositionChanged = pUVar15;
+                        iVar17 = func_?();
+                        if (iVar17 != 0) goto code_?;
+                        func_?();
+                      }
+                      func_?();
                     }
                   }
                 }
@@ -481,8 +507,8 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 
@@ -501,25 +527,25 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
   }
   pMVar1 = MVBlueprintBase::MVBlueprintBase_GetChild
                      ((MVBlueprintBase *)this,StringLiteral_spawnWorldObjectID,(MethodInfo *)0x0);
-  pMVar2 = TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy;
   if (pMVar1 == (MVWorldObjectClient *)0x0) {
     func_?();
-    pMVar1 = extraout_EDX;
+    pMVar2 = extraout_EDX;
   }
-  else if (((TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment <=
-            (pMVar1->klass->_1).naturalAligment) &&
-          ((MVVehicleEnergy__Class *)
-           (pMVar1->klass->_1).typeHierarchy
-           [(TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment - 1] ==
-           TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy)) {
-    iVar3 = (*(code *)(pMVar1->klass->vtable).get_DocumentationType.method)
-                      (pMVar1,(pMVar1->klass->vtable).TraverseRecursiveTail.methodPtr);
-    (this->fields)._.documentationType = iVar3;
-    return;
+  else {
+    bVar3 = (TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment;
+    pMVar2 = TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy;
+    if ((bVar3 <= (pMVar1->klass->_1).naturalAligment) &&
+       ((MVVehicleEnergy__Class *)(pMVar1->klass->_1).typeHierarchy[bVar3 - 1] ==
+        TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy)) {
+      iVar4 = (*(code *)(pMVar1->klass->vtable).get_DocumentationType.method)
+                        (pMVar1,(pMVar1->klass->vtable).TraverseRecursiveTail.methodPtr);
+      (this->fields)._.documentationType = iVar4;
+      return;
+    }
   }
   func_?(pMVar1,pMVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -542,20 +568,20 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
   if (pMVar1 == (MVWorldObjectClient *)0x0) {
     func_?();
   }
-  else if (((TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment <=
-            (pMVar1->klass->_1).naturalAligment) &&
-          ((MVVehicleEnergy__Class *)
-           (pMVar1->klass->_1).typeHierarchy
-           [(TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment - 1] ==
-           TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy)) {
-    pMVar3 = (MVBlueprintBase__Class *)
-             (*(code *)(pMVar1->klass->vtable).get_DocumentationType.method)();
-    in_stack_2[1].klass = pMVar3;
-    return;
+  else {
+    bVar3 = (TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment;
+    if ((bVar3 <= (pMVar1->klass->_1).naturalAligment) &&
+       ((MVVehicleEnergy__Class *)(pMVar1->klass->_1).typeHierarchy[bVar3 - 1] ==
+        TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy)) {
+      pMVar4 = (MVBlueprintBase__Class *)
+               (*(code *)(pMVar1->klass->vtable).get_DocumentationType.method)();
+      in_stack_2[1].klass = pMVar4;
+      return;
+    }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -938,8 +964,7 @@ code_?:
     if (this_02 != (CullingSubscriberBase *)0x0) {
       ppCStack8 = &(this->fields).cullingSubscriberBase;
       (this_02->fields)._DistanceBandIndex_k__BackingField = 2;
-      (this->fields).cullingSubscriberBase = this_02;
-      pCStack9 = this_02;
+      *ppCStack8 = this_02;
       func_?();
       return;
     }
@@ -948,14 +973,17 @@ code_?:
     pUVar1 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
     if (pUVar1 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
       (this->fields)._._._._.PositionChanged = pUVar1;
-      iVar10 = func_?();
-      if (iVar10 != 0) goto code_?;
+      iVar9 = func_?();
+      if (iVar9 == 0) goto code_?;
+      goto code_?;
     }
     func_?();
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+code_?:
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -1054,39 +1082,36 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
   if (pPVar1 == (PrefabPool *)0x0) {
     func_?();
-    pSVar2 = extraout_EDX;
   }
   else {
     MVWorldObjectSpawner::MVWorldObjectSpawner__ctor_1
               ((MVWorldObjectSpawner *)this,data,(ObjectPrefab *)(pPVar1->fields).spawnerObject,
                worldObjects,(MethodInfo *)0x0);
-    piVar3 = &(this->fields)._._._._.previewLayerMask;
-    *piVar3 = *piVar3 | 0x1000;
-    pSVar2 = (SpawnerObject *)(this->fields)._._._._.component;
-    if (pSVar2 == (SpawnerObject *)0x0) {
+    piVar2 = &(this->fields)._._._._.previewLayerMask;
+    *piVar2 = *piVar2 | 0x1000;
+    pSVar3 = (SpawnerObject *)(this->fields)._._._._.component;
+    if (pSVar3 == (SpawnerObject *)0x0) {
       (this->fields).spawnerObject = (SpawnerObject *)0x0;
       func_?();
       return;
     }
-    if (((TypeInfo__SpawnerObject->_1).naturalAligment <=
-         (((ObjectPrefab__Class *)pSVar2->klass)->_1).naturalAligment) &&
-       ((((ObjectPrefab__Class *)pSVar2->klass)->_1).typeHierarchy
-        [(TypeInfo__SpawnerObject->_1).naturalAligment - 1] ==
+    bVar4 = (TypeInfo__SpawnerObject->_1).naturalAligment;
+    if ((bVar4 <= (((ObjectPrefab__Class *)pSVar3->klass)->_1).naturalAligment) &&
+       ((((ObjectPrefab__Class *)pSVar3->klass)->_1).typeHierarchy[bVar4 - 1] ==
         (Il2CppClass *)TypeInfo__SpawnerObject)) {
-      (this->fields).spawnerObject = pSVar2;
-      if (((TypeInfo__SpawnerObject->_1).naturalAligment <=
-           (((ObjectPrefab__Class *)pSVar2->klass)->_1).naturalAligment) &&
-         ((((ObjectPrefab__Class *)pSVar2->klass)->_1).typeHierarchy
-          [(TypeInfo__SpawnerObject->_1).naturalAligment - 1] ==
+      (this->fields).spawnerObject = pSVar3;
+      bVar4 = (TypeInfo__SpawnerObject->_1).naturalAligment;
+      if ((bVar4 <= (((ObjectPrefab__Class *)pSVar3->klass)->_1).naturalAligment) &&
+         ((((ObjectPrefab__Class *)pSVar3->klass)->_1).typeHierarchy[bVar4 - 1] ==
           (Il2CppClass *)TypeInfo__SpawnerObject)) {
         func_?();
         return;
       }
     }
   }
-  func_?(pSVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

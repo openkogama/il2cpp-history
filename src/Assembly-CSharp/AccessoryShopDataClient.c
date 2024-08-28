@@ -29,7 +29,7 @@ void Assembly-CSharp.dll::AccessoryShopDataClient::AccessoryShopDataClient__ctor
   MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryBundle::AccessoryBundle__ctor
             (this_01,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&(this->fields).accessoryBundle;
-  (this->fields).accessoryBundle = (AccessoryBundleClient *)this_01;
+  *(AccessoryBundle **)method_00 = this_01;
   func_?(method_00,this_01);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

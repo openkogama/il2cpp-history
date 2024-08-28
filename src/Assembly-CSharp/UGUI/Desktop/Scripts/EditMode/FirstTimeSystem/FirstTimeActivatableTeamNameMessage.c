@@ -91,8 +91,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
   value = (WorldObjectTypeInShopChecker *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (this->fields).inShopChecker = value;
-  func_?(&(this->fields).inShopChecker,value);
+  ppWVar1 = &(this->fields).inShopChecker;
+  *ppWVar1 = value;
+  func_?(ppWVar1,value);
   FirstTimeActivatableGotItPointer::FirstTimeActivatableGotItPointer__ctor
             ((FirstTimeActivatableGotItPointer *)this,(MethodInfo *)0x0);
   return;
@@ -169,9 +170,13 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                             ((this->fields).inventoryButton,(MethodInfo *)0x0);
           bVar8 = 0;
           if (1 < iVar6) {
-            bVar8 = bVar7 & 0x10 & bVar1;
+            bVar8 = bVar7;
           }
-          return bVar8 & (bVar3 ^ 1);
+          bVar7 = 0;
+          if (bVar3 == 0) {
+            bVar7 = bVar8 & 0x10 & bVar1;
+          }
+          return bVar7;
         }
       }
     }

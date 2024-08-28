@@ -97,8 +97,9 @@ void Assembly-CSharp.dll::RoundTimer::RoundTimer_Initialize
     func_?(&TypeInfo__System__Collections__Generic__List<int>);
     cRam_? = '\x01';
   }
-  (this->fields).roundCube = roundCube;
-  func_?(&(this->fields).roundCube,roundCube);
+  ppWVar1 = &(this->fields).roundCube;
+  *ppWVar1 = roundCube;
+  func_?(ppWVar1,roundCube);
   this_00 = (List_1_System_Int32_ *)
             func_?(TypeInfo__System__Collections__Generic__List<int>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -106,8 +107,9 @@ void Assembly-CSharp.dll::RoundTimer::RoundTimer_Initialize
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<int>__List__);
-  (this->fields).timeNotifications = this_00;
-  func_?(&(this->fields).timeNotifications,this_00);
+  ppLVar2 = &(this->fields).timeNotifications;
+  *ppLVar2 = this_00;
+  func_?(ppLVar2,this_00);
   RoundTimer_ResetTimeNotifications(this,(MethodInfo *)0x0);
   return;
 }
@@ -118,8 +120,9 @@ void Assembly-CSharp.dll::RoundTimer::RoundTimer_Initialize
 void Assembly-CSharp.dll::RoundTimer::RoundTimer_OnDestroy(RoundTimer *this,MethodInfo *method)
 
 {
-  (this->fields).roundCube = (WorldObjectClientRef_1_MVRoundCube_ *)0x0;
-  func_?(&(this->fields).roundCube);
+  ppWVar1 = &(this->fields).roundCube;
+  *ppWVar1 = (WorldObjectClientRef_1_MVRoundCube_ *)0x0;
+  func_?(ppWVar1);
   return;
 }
 
@@ -135,45 +138,45 @@ void Assembly-CSharp.dll::RoundTimer::RoundTimer_ResetOnRoundEnd
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
     cRam_? = '\x01';
   }
-  if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) {
+  pLVar1 = (this->fields).timeNotifications;
+  if (pLVar1 == (List_1_System_Int32_ *)0x0) {
     return;
   }
-  bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+  bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
           List_1_System_Int32__Contains
-                    ((this->fields).timeNotifications,10,
-                     MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
-  if (bVar1 == 0) {
-    pLVar2 = (this->fields).timeNotifications;
-    if (pLVar2 == (List_1_System_Int32_ *)0x0) goto code_?;
-    func_?(pLVar2,10);
+                    (pLVar1,10,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+  if (bVar2 == 0) {
+    pLVar1 = (this->fields).timeNotifications;
+    if (pLVar1 == (List_1_System_Int32_ *)0x0) goto code_?;
+    func_?(pLVar1,10);
   }
-  pLVar2 = (this->fields).timeNotifications;
-  if (pLVar2 != (List_1_System_Int32_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+  pLVar1 = (this->fields).timeNotifications;
+  if (pLVar1 != (List_1_System_Int32_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
             List_1_System_Int32__Contains
-                      (pLVar2,0x1e,
+                      (pLVar1,0x1e,
                        MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
-    if (bVar1 == 0) {
+    if (bVar2 == 0) {
       if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) goto code_?;
       func_?();
     }
-    pLVar2 = (this->fields).timeNotifications;
-    if (pLVar2 != (List_1_System_Int32_ *)0x0) {
-      bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+    pLVar1 = (this->fields).timeNotifications;
+    if (pLVar1 != (List_1_System_Int32_ *)0x0) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
               List_1_System_Int32__Contains
-                        (pLVar2,0x3c,
+                        (pLVar1,0x3c,
                          MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
-      if (bVar1 == 0) {
+      if (bVar2 == 0) {
         if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) goto code_?;
         func_?();
       }
-      pLVar2 = (this->fields).timeNotifications;
-      if (pLVar2 != (List_1_System_Int32_ *)0x0) {
-        bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+      pLVar1 = (this->fields).timeNotifications;
+      if (pLVar1 != (List_1_System_Int32_ *)0x0) {
+        bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
                 List_1_System_Int32__Contains
-                          (pLVar2,300,
+                          (pLVar1,300,
                            MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
-        if (bVar1 == 0) {
+        if (bVar2 == 0) {
           if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0)
           goto code_?;
           func_?();
@@ -201,45 +204,45 @@ void Assembly-CSharp.dll::RoundTimer::RoundTimer_ResetTimeNotifications
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
     cRam_? = '\x01';
   }
-  if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) {
+  pLVar1 = (this->fields).timeNotifications;
+  if (pLVar1 == (List_1_System_Int32_ *)0x0) {
     return;
   }
-  bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+  bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
           List_1_System_Int32__Contains
-                    ((this->fields).timeNotifications,10,
-                     MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
-  if (bVar1 == 0) {
-    pLVar2 = (this->fields).timeNotifications;
-    if (pLVar2 == (List_1_System_Int32_ *)0x0) goto code_?;
-    func_?(pLVar2,10);
+                    (pLVar1,10,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+  if (bVar2 == 0) {
+    pLVar1 = (this->fields).timeNotifications;
+    if (pLVar1 == (List_1_System_Int32_ *)0x0) goto code_?;
+    func_?(pLVar1,10);
   }
-  pLVar2 = (this->fields).timeNotifications;
-  if (pLVar2 != (List_1_System_Int32_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+  pLVar1 = (this->fields).timeNotifications;
+  if (pLVar1 != (List_1_System_Int32_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
             List_1_System_Int32__Contains
-                      (pLVar2,0x1e,
+                      (pLVar1,0x1e,
                        MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
-    if (bVar1 == 0) {
+    if (bVar2 == 0) {
       if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) goto code_?;
       func_?();
     }
-    pLVar2 = (this->fields).timeNotifications;
-    if (pLVar2 != (List_1_System_Int32_ *)0x0) {
-      bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+    pLVar1 = (this->fields).timeNotifications;
+    if (pLVar1 != (List_1_System_Int32_ *)0x0) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
               List_1_System_Int32__Contains
-                        (pLVar2,0x3c,
+                        (pLVar1,0x3c,
                          MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
-      if (bVar1 == 0) {
+      if (bVar2 == 0) {
         if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) goto code_?;
         func_?();
       }
-      pLVar2 = (this->fields).timeNotifications;
-      if (pLVar2 != (List_1_System_Int32_ *)0x0) {
-        bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+      pLVar1 = (this->fields).timeNotifications;
+      if (pLVar1 != (List_1_System_Int32_ *)0x0) {
+        bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
                 List_1_System_Int32__Contains
-                          (pLVar2,300,
+                          (pLVar1,300,
                            MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
-        if (bVar1 == 0) {
+        if (bVar2 == 0) {
           if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0)
           goto code_?;
           func_?();

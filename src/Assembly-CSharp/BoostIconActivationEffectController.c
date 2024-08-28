@@ -92,9 +92,10 @@ void Assembly-CSharp.dll::BoostIconActivationEffectController::
     cRam_? = '\x01';
   }
   index = 0;
-  pLVar1 = (this->fields).boosterIcons;
+  pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+           (this->fields).boosterIcons;
   do {
-    if (pLVar1 == (List_1_BoostIconActivationEffectController_BoosterIcons_ *)0x0) {
+    if (pLVar1 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
 code_?:
       func_?();
       pcVar2 = (code *)swi(3);
@@ -107,38 +108,38 @@ code_?:
       if (this_00 != (Transform *)0x0) {
         pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                            ((Vector3 *)&stack0xfffffff0,this_00,(MethodInfo *)0x0);
+        ppUVar4 = &(this->fields).startNewEffect;
         (this->fields).originalYPosition = pVVar3->y;
         (this->fields).boostType = type;
-        (this->fields).startNewEffect = startNewEffect;
-        func_?(&(this->fields).startNewEffect,startNewEffect);
+        *ppUVar4 = startNewEffect;
+        func_?(ppUVar4,startNewEffect);
         return;
       }
       goto code_?;
     }
-    pLVar4 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-             (this->fields).boosterIcons;
-    if (pLVar4 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+    if (pLVar1 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
     goto code_?;
     XVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
             XmlSchemaObjectTable+XmlSchemaObjectEntry]::
             List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                      (pLVar4,index,
+                      (pLVar1,index,
                        MethodInfo__System__Collections__Generic__List<BoostIconActivationEffectController::BoosterIcons>__get_Item_int_
                       );
-    pLVar4 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+    pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
              (this->fields).boosterIcons;
-    if (pLVar4 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+    if (pLVar1 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
     goto code_?;
     XVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
             XmlSchemaObjectTable+XmlSchemaObjectEntry]::
             List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                      (pLVar4,index,
+                      (pLVar1,index,
                        MethodInfo__System__Collections__Generic__List<BoostIconActivationEffectController::BoosterIcons>__get_Item_int_
                       );
     if (XVar6.xso == (XmlSchemaObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               ((GameObject *)XVar6.xso,XVar5.qname == (XmlQualifiedName *)type,(MethodInfo *)0x0);
-    pLVar1 = (this->fields).boosterIcons;
+    pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+             (this->fields).boosterIcons;
     index = index + 1;
   } while( true );
 }
@@ -166,14 +167,15 @@ void Assembly-CSharp.dll::BoostIconActivationEffectController::
                (BoostIconActivationEffectController *this,MethodInfo *method)
 
 {
-  if ((this->fields).currentState == 1) {
-    fVar1 = (this->fields).showingDuration + (this->fields).stateStartTime;
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    if (fVar1 <= fVar2) {
+  iVar1 = (this->fields).currentState;
+  if (iVar1 == 1) {
+    fVar2 = (this->fields).showingDuration + (this->fields).stateStartTime;
+    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    if (fVar2 <= fVar3) {
       (this->fields).currentState = 2;
-      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       this_01 = (this->fields).fader;
-      (this->fields).stateStartTime = fVar1;
+      (this->fields).stateStartTime = fVar2;
       if (this_01 != (NotificationFade *)0x0) {
         NotificationFade::NotificationFade_Activate(this_01,(MethodInfo *)0x0);
         return;
@@ -182,56 +184,56 @@ void Assembly-CSharp.dll::BoostIconActivationEffectController::
     }
   }
   else {
-    if ((this->fields).currentState == 2) {
+    if (iVar1 == 2) {
       UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                           ((Component *)this,(MethodInfo *)0x0);
-      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                          ((Component *)this,(MethodInfo *)0x0);
-      if (pTVar3 != (Transform *)0x0) {
-        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                           ((Vector3 *)&fStack_5,pTVar3,(MethodInfo *)0x0);
-        fVar1 = pVVar4->x;
-        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+      if (pTVar4 != (Transform *)0x0) {
+        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+                           ((Vector3 *)&fStack_6,pTVar4,(MethodInfo *)0x0);
+        fVar2 = pVVar5->x;
+        pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)this,(MethodInfo *)0x0);
-        if (pTVar3 != (Transform *)0x0) {
-          fStack_5 = fVar1;
-          pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                             ((Vector3 *)&stack0xffffffd4,pTVar3,(MethodInfo *)0x0);
+        if (pTVar4 != (Transform *)0x0) {
+          fStack_6 = fVar2;
+          pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+                             ((Vector3 *)&stack0xffffffd4,pTVar4,(MethodInfo *)0x0);
           if (this_02 != (Transform *)0x0) {
-            value.y = (float)puStack_6;
-            value.x = fStack_5;
-            value.z = pVVar4->z;
+            value.y = (float)puStack_7;
+            value.x = fStack_6;
+            value.z = pVVar5->z;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                       (this_02,value,(MethodInfo *)0x0);
-            fVar1 = (this->fields).startNewEffectDelay + (this->fields).stateStartTime;
-            fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+            fVar2 = (this->fields).startNewEffectDelay + (this->fields).stateStartTime;
+            fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
                               ((MethodInfo *)0x0);
-            if ((fVar1 <= fVar2) && ((this->fields).haveStartedNewEffect == 0)) {
-              pUVar7 = (this->fields).startNewEffect;
-              if (pUVar7 == (UnityAction *)0x0) goto code_?;
-              puStack8 = (pUVar7->fields)._._.method_code;
-              (*(pUVar7->fields)._._.invoke_impl)();
+            if ((fVar2 <= fVar3) && ((this->fields).haveStartedNewEffect == 0)) {
+              pUVar8 = (this->fields).startNewEffect;
+              if (pUVar8 == (UnityAction *)0x0) goto code_?;
+              puStack9 = (pUVar8->fields)._._.method_code;
+              (*(pUVar8->fields)._._.invoke_impl)();
               (this->fields).haveStartedNewEffect = 1;
             }
             if ((float)this_02 < _UNK_?) {
               return;
             }
             (this->fields).currentState = 0;
-            fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+            fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
                               ((MethodInfo *)0x0);
-            (this->fields).stateStartTime = fVar1;
+            (this->fields).stateStartTime = fVar2;
             return;
           }
         }
       }
 code_?:
       func_?();
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
       return;
     }
-    if ((this->fields).currentState == 0) {
+    if (iVar1 == 0) {
       this_00 = (this->fields).canvasGroup;
       if (this_00 == (CanvasGroup *)0x0) goto code_?;
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha

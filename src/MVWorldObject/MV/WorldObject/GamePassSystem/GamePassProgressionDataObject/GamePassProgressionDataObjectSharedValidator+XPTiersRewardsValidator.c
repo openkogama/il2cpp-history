@@ -41,48 +41,41 @@ String * MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgression
   }
   puStack_4 = puVar5;
   pSVar6 = ::StringLiteral__;
-  DStack_7._dictionary = (Dictionary_2_System_ByteEnum_System_Object_ *)0x0;
-  DStack_7._version = 0;
-  DStack_7._index = 0;
-  DStack_7._current.key = 0;
-  DStack_7._current._1_3_ = 0;
-  pSStack_8 = ::StringLiteral__;
+  pSStack_7 = ::StringLiteral__;
   this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).xpTierRewardsValidators;
-  DStack_7._current.value = (Object *)0x0;
-  DStack_7._getEnumeratorRetType = 0;
   if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffffa0,this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>__GetEnumerator__
                        );
-    uStack_10 = 0;
-    DStack_7._dictionary = (Dictionary_2_System_ByteEnum_System_Object_ *)pDVar9->_dictionary;
-    DStack_7._version = pDVar9->_version;
-    DStack_7._index = pDVar9->_index;
-    DStack_7._current._0_4_ = (pDVar9->_current).key;
-    DStack_7._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
+    uStack_9 = 0;
+    DStack_10._dictionary = (Dictionary_2_System_ByteEnum_System_Object_ *)pDVar8->_dictionary;
+    DStack_10._version = pDVar8->_version;
+    DStack_10._index = pDVar8->_index;
+    DStack_10._current._0_4_ = (pDVar8->_current).key;
+    DStack_10._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
     uStack_1 = 1;
-    pDStack_11 = &DStack_7;
+    pDStack_11 = &DStack_10;
     while( true ) {
       bVar12 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::ByteEnum,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Object__MoveNext
-                        (&DStack_7,
+                        (&DStack_10,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>__MoveNext__
                         );
       if (bVar12 == 0) break;
-      pOStack_13 = DStack_7._current.value;
+      pOStack_13 = DStack_10._current.value;
       arg0 = (Object *)func_?();
       str1 = mscorlib.dll::System::String::String_Format_1
                        (StringLiteral__0____1_u000A,arg0,pOStack_13,(MethodInfo *)0x0);
       pSVar6 = mscorlib.dll::System::String::String_Concat_3(pSVar6,str1,(MethodInfo *)0x0);
-      pSStack_8 = pSVar6;
+      pSStack_7 = pSVar6;
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)&DStack_7,
+              ((Object *)&DStack_10,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>__Dispose__
                ,in_stack_14);
@@ -148,14 +141,8 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgressionData
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  DStack_6._current.value = (Object *)0x0;
-  DStack_6._getEnumeratorRetType = 0;
-  DStack_6._dictionary = (Dictionary_2_System_ByteEnum_System_Object_ *)0x0;
-  DStack_6._version = 0;
-  DStack_6._index = 0;
-  DStack_6._current._0_4_ = 0;
   if (xpTierRewards != (Dictionary_2_MV_Common_GamePassTier_System_Int32_ *)0x0) {
-    iVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+    iVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
             StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
             Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
                       ((Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
@@ -167,55 +154,55 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgressionData
     if (this_00 !=
         (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
-      iVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+      iVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
               StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
               Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
                         (this_00,
                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>__get_Count__
                         );
-      if (iVar7 == iVar8) {
+      if (iVar6 == iVar7) {
         this_01 = (Dictionary_2_System_UInt32_System_Object_ *)
                   (this->fields).xpTierRewardsValidators;
         if (this_01 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-          pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+          pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                    Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                              ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                               &stack0xffffffa8,this_01,
                               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>__GetEnumerator__
                              );
-          uStack_10 = 0;
-          DStack_6._dictionary = (Dictionary_2_System_ByteEnum_System_Object_ *)pDVar9->_dictionary
+          uStack_9 = 0;
+          DStack_10._dictionary = (Dictionary_2_System_ByteEnum_System_Object_ *)pDVar8->_dictionary
           ;
-          DStack_6._version = pDVar9->_version;
-          DStack_6._index = pDVar9->_index;
-          DStack_6._current._0_4_ = (pDVar9->_current).key;
-          DStack_6._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
+          DStack_10._version = pDVar8->_version;
+          DStack_10._index = pDVar8->_index;
+          DStack_10._current._0_4_ = (pDVar8->_current).key;
+          DStack_10._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
           uStack_1 = 1;
-          pDStack_11 = &DStack_6;
+          pDStack_11 = &DStack_10;
           while( true ) {
             bVar12 = mscorlib.dll::System::Collections::Generic::
                     Dictionary`2[TKey,TValue]+Enumerator[System::ByteEnum,System::Object]::
                     Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Object__MoveNext
-                              (&DStack_6,
+                              (&DStack_10,
                                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>__MoveNext__
                               );
             if (bVar12 == 0) {
               uStack_1 = 0xffffffff;
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                        ((Object *)&DStack_6,
+                        ((Object *)&DStack_10,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>__Dispose__
                          ,in_stack_13);
               *unaff_FS_OFFSET = uStack_3;
               return;
             }
-            pOVar14 = DStack_6._current.value;
-            BStack_15 = DStack_6._current._0_4_;
+            pOVar14 = DStack_10._current.value;
+            BStack_15 = DStack_10._current._0_4_;
             pOStack_16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                          ByteEnum,System::Object]::
                          Dictionary_2_System_ByteEnum_System_Object__get_Item
                                    ((Dictionary_2_System_ByteEnum_System_Object_ *)xpTierRewards,
-                                    DStack_6._current._0_4_,
+                                    DStack_10._current._0_4_,
                                     MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__get_Item_MV__Common__GamePassTier_
                                    );
             if (pOVar14 == (Object *)0x0) break;
@@ -235,14 +222,14 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgressionData
                 }
                 goto code_?;
               }
-              iVar7 = 0;
+              iVar6 = 0;
             }
             else {
               this_02 = (RangeValidator_1_System_Int32_ *)pOVar14[1].monitor;
               pOVar14 = pOStack_16;
               if (this_02 == (RangeValidator_1_System_Int32_ *)0x0) break;
 code_?:
-              iVar7 = AntiCheat::RangeValidator`1[System::Int32]::
+              iVar6 = AntiCheat::RangeValidator`1[System::Int32]::
                       RangeValidator_1_System_Int32__Validate
                                 (this_02,(int32_t)pOVar14,fixIfInValid,
                                  MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__Validate_int__bool_
@@ -250,7 +237,7 @@ code_?:
             }
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Int32]
             ::Dictionary_2_System_ByteEnum_System_Int32__set_Item
-                      ((Dictionary_2_System_ByteEnum_System_Int32_ *)xpTierRewards,BStack_15,iVar7,
+                      ((Dictionary_2_System_ByteEnum_System_Int32_ *)xpTierRewards,BStack_15,iVar6,
                        MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__set_Item_MV__Common__GamePassTier__int_
                       );
           }
@@ -311,7 +298,8 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgressionData
              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>__Dictionary__
             );
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).xpTierRewardsValidators =
+  ((GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator__Fields *)method_00)->
+  xpTierRewardsValidators =
        (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_GamePassProgressionDataObject_GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator_XPTierRewardValidator_
         *)this_00;
   func_?(method_00,this_00);
@@ -374,46 +362,47 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgressionData
                    );
     cRam_? = '\x01';
   }
-  this_01 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+  this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
              *)func_?(
                               TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>
                               );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
   RuntimeEvents::ExplosionEvent+ExplosionValues]::
   Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor
-            (this_01,
+            (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>__Dictionary__
             );
-  pMVar4 = (MethodInfo *)&this->fields;
-  (this->fields).xpTierRewardsValidators =
+  pGVar4 = &this->fields;
+  pGVar4->xpTierRewardsValidators =
        (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_GamePassProgressionDataObject_GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator_XPTierRewardValidator_
-        *)this_01;
-  func_?(pMVar4,this_01);
+        *)this_00;
+  pMVar5 = (MethodInfo *)pGVar4;
+  func_?(pGVar4,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,ExceptionArgument__Enum_obj,pMVar4);
+            ((Object *)this,ExceptionArgument__Enum_obj,pMVar5);
   if (xpRangeValidators !=
       (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_AntiCheat_RangeValidator_1_System_Int32_ *
       )0x0) {
-    pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffffa0,
                         (Dictionary_2_System_UInt32_System_Object_ *)xpRangeValidators,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::AntiCheat::RangeValidator<int>_>__GetEnumerator__
                        );
-    method_00 = (Object__Class *)pDVar5->_dictionary;
-    pMVar4 = (MethodInfo *)(pDVar5->_current).key;
-    uVar6 = *(undefined8 *)&(pDVar5->_current).value;
+    method_00 = (Object__Class *)pDVar6->_dictionary;
+    pMVar5 = (MethodInfo *)(pDVar6->_current).key;
+    uVar7 = *(undefined8 *)&(pDVar6->_current).value;
     uStack_1 = 1;
     while( true ) {
-      bVar7 = mscorlib.dll::System::Collections::Generic::
+      bVar8 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::ByteEnum,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Object__MoveNext
                         ((Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Object_ *)
                          &stack0xffffffb8,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::AntiCheat::RangeValidator<int>_>__MoveNext__
                         );
-      if (bVar7 == 0) {
+      if (bVar8 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&stack0xffffffb8,
@@ -423,38 +412,38 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgressionData
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      pOStack_8 = (Object *)uVar6;
-      BStack_9 = CONCAT31(BStack_9._1_3_,(char)pMVar4);
+      pOStack_9 = (Object *)uVar7;
+      BStack_10 = CONCAT31(BStack_10._1_3_,(char)pMVar5);
       if (xpRewardRemovalAllowed == (Dictionary_2_MV_Common_GamePassTier_System_Boolean_ *)0x0)
       break;
-      bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+      bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
               Boolean]::Dictionary_2_System_ByteEnum_System_Boolean__get_Item
                         ((Dictionary_2_System_ByteEnum_System_Boolean_ *)xpRewardRemovalAllowed,
-                         (ByteEnum__Enum)pMVar4,
+                         (ByteEnum__Enum)pMVar5,
                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_bool>__get_Item_MV__Common__GamePassTier_
                         );
       value = (Object *)func_?();
       method_00 = (Object__Class *)&UNK_?;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                (value,ExceptionArgument__Enum_obj,pMVar4);
-      *(bool *)&value[1].klass = bVar7;
-      value[1].monitor = (MonitorData *)pOStack_8;
-      pMVar4 = (MethodInfo *)&value[1].monitor;
+                (value,ExceptionArgument__Enum_obj,pMVar5);
+      *(bool *)&value[1].klass = bVar8;
+      pMVar5 = (MethodInfo *)&value[1].monitor;
+      *(Object **)pMVar5 = pOStack_9;
       func_?();
-      this_00 = (this->fields).xpTierRewardsValidators;
-      if (this_00 ==
+      if (pGVar4->xpTierRewardsValidators ==
           (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_GamePassProgressionDataObject_GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator_XPTierRewardValidator_
            *)0x0) break;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
       Dictionary_2_System_ByteEnum_System_Object__Add
-                ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,BStack_9,value,
+                ((Dictionary_2_System_ByteEnum_System_Object_ *)pGVar4->xpTierRewardsValidators,
+                 BStack_10,value,
                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator::XPTierRewardValidator>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator__XPTierRewardValidator_
                 );
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

@@ -19,9 +19,10 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::TouchPadAbsol
             ((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
   (pCVar3->fields)._name_k__BackingField = pSVar1;
   func_?(&pCVar3->fields,pSVar1);
+  ppCVar4 = &(this->fields).horizontalVirtualAxis;
   (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
-  (this->fields).horizontalVirtualAxis = pCVar3;
-  func_?(&(this->fields).horizontalVirtualAxis,pCVar3);
+  *ppCVar4 = pCVar3;
+  func_?(ppCVar4,pCVar3);
   pSVar1 = (this->fields).verticalAxisName;
   pCVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
   ;
@@ -30,9 +31,10 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::TouchPadAbsol
             ((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
   (pCVar3->fields)._name_k__BackingField = pSVar1;
   func_?(&pCVar3->fields,pSVar1);
+  ppCVar4 = &(this->fields).verticalVirtualAxis;
   (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
-  (this->fields).verticalVirtualAxis = pCVar3;
-  func_?(&(this->fields).verticalVirtualAxis,pCVar3);
+  *ppCVar4 = pCVar3;
+  func_?(ppCVar4,pCVar3);
   return;
 }
 
@@ -358,7 +360,8 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::TouchPadAbsol
   uVar5 = 0;
   if (pTStack_4 != (Touch__Array *)0x0) {
     pTVar6 = pTStack_4->vector;
-    for (; (int)uVar5 < (int)pTStack_4->max_length; uVar5 = uVar5 + 1) {
+    while( true ) {
+      if ((int)pTStack_4->max_length <= (int)uVar5) break;
       if (pTStack_4->max_length <= uVar5) goto code_?;
       ppSStack_2 = (ScaleToPhysicalSize__Class **)pTVar6->m_FingerId;
       fStack_7 = (pTVar6->m_Position).x;
@@ -457,6 +460,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::TouchPadAbsol
         }
         goto code_?;
       }
+      uVar5 = uVar5 + 1;
       pTVar6 = pTVar6 + 1;
     }
     bVar35 = cRam_? == '\0';
@@ -526,7 +530,8 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::TouchPadAbsol
   uVar5 = 0;
   if (pTStack_4 != (Touch__Array *)0x0) {
     pTVar6 = pTStack_4->vector;
-    for (; (int)uVar5 < (int)pTStack_4->max_length; uVar5 = uVar5 + 1) {
+    while( true ) {
+      if ((int)pTStack_4->max_length <= (int)uVar5) break;
       if (pTStack_4->max_length <= uVar5) goto code_?;
       ppSStack_2 = (ScaleToPhysicalSize__Class **)pTVar6->m_FingerId;
       fStack_7 = (pTVar6->m_Position).x;
@@ -625,6 +630,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::TouchPadAbsol
         }
         goto code_?;
       }
+      uVar5 = uVar5 + 1;
       pTVar6 = pTVar6 + 1;
     }
     bVar35 = cRam_? == '\0';
@@ -720,13 +726,16 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::TouchPadAbsol
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
+  ppSVar1 = &(this->fields).horizontalAxisName;
   (this->fields).state = 3;
-  (this->fields).horizontalAxisName = StringLiteral_Horizontal;
-  func_?(&(this->fields).horizontalAxisName,StringLiteral_Horizontal);
-  (this->fields).verticalAxisName = StringLiteral_Vertical;
-  func_?(&(this->fields).verticalAxisName,StringLiteral_Vertical);
-  (this->fields).onTouchButtonName = ::StringLiteral__;
-  func_?(&(this->fields).onTouchButtonName,::StringLiteral__);
+  *ppSVar1 = StringLiteral_Horizontal;
+  func_?(ppSVar1,StringLiteral_Horizontal);
+  ppSVar1 = &(this->fields).verticalAxisName;
+  *ppSVar1 = StringLiteral_Vertical;
+  func_?(ppSVar1,StringLiteral_Vertical);
+  ppSVar1 = &(this->fields).onTouchButtonName;
+  *ppSVar1 = ::StringLiteral__;
+  func_?(ppSVar1,::StringLiteral__);
   (this->fields).fingerId = -1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

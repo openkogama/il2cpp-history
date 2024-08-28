@@ -43,7 +43,7 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+Alert::AdvancedGhostBehaviour_A
                   (this_02,fVar5 * _UNK_?,(MethodInfo *)0x0);
         pGVar6 = (pAVar4->fields).ghostBody;
         if (pGVar6 != (GhostBody *)0x0) {
-          (pGVar6->fields).angularMaxRotation = fVar5 * (pGVar6->fields).angularMaxRotationBase;
+          (pGVar6->fields).angularMaxRotation = (pGVar6->fields).angularMaxRotationBase * fVar5;
           pAVar4 = (ghostBehaviour->fields).GhostVisualization;
           if (pAVar4 != (AdvancedGhostVisualizaton *)0x0) {
             this_03 = (pAVar4->fields).ghostEye;

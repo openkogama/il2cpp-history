@@ -676,9 +676,9 @@ void Assembly-CSharp.dll::MVWorldObjectClientManager+WorldObjectMapping::
   ::TextResourceManager+FontAssetRef]::
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
             (this_01,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
-  (this->fields).gameObjectIdToWorldObjectIdMap = (Dictionary_2_System_Int32_System_Int32_ *)this_01
-  ;
-  func_?(&(this->fields).gameObjectIdToWorldObjectIdMap,this_01);
+  ppDVar1 = &(this->fields).gameObjectIdToWorldObjectIdMap;
+  *ppDVar1 = (Dictionary_2_System_Int32_System_Int32_ *)this_01;
+  func_?(ppDVar1,this_01);
   this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
              *)func_?(
                               TypeInfo__System__Collections__Generic__Dictionary<System::Type,_MV::WorldObject::WorldObjectType>
@@ -690,8 +690,8 @@ void Assembly-CSharp.dll::MVWorldObjectClientManager+WorldObjectMapping::
              MethodInfo__System__Collections__Generic__Dictionary<System::Type,_MV::WorldObject::WorldObjectType>__Dictionary__
             );
   method_00 = (MethodInfo *)&(this->fields).typeWorldObjectTypeMap;
-  (this->fields).typeWorldObjectTypeMap =
-       (Dictionary_2_System_Type_MV_WorldObject_WorldObjectType_ *)this_02;
+  *(Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ **)
+   method_00 = this_02;
   func_?(method_00,this_02);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

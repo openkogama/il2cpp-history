@@ -46,21 +46,21 @@ void Assembly-CSharp.dll::BoostNotificationDisplay::BoostNotificationDisplay_OnB
           mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
           if (pTVar3 != (Text *)0x0) {
             (*(code *)(pTVar3->klass->vtable).set_text.method)();
+            pIVar5 = (this->fields).backgroundColor;
             if (IVar4.m_value < 1) {
-              fVar5 = (this->fields).boostInactiveColor.r;
-              fVar6 = (this->fields).boostInactiveColor.g;
-              fVar7 = (this->fields).boostInactiveColor.b;
-              fVar8 = (this->fields).boostInactiveColor.a;
+              fVar6 = (this->fields).boostInactiveColor.r;
+              fVar7 = (this->fields).boostInactiveColor.g;
+              fVar8 = (this->fields).boostInactiveColor.b;
+              fVar9 = (this->fields).boostInactiveColor.a;
             }
             else {
-              fVar5 = (this->fields).boostActiveColor.r;
-              fVar6 = (this->fields).boostActiveColor.g;
-              fVar7 = (this->fields).boostActiveColor.b;
-              fVar8 = (this->fields).boostActiveColor.a;
+              fVar6 = (this->fields).boostActiveColor.r;
+              fVar7 = (this->fields).boostActiveColor.g;
+              fVar8 = (this->fields).boostActiveColor.b;
+              fVar9 = (this->fields).boostActiveColor.a;
             }
-            pIVar9 = (this->fields).backgroundColor;
-            if (pIVar9 != (Image *)0x0) {
-              (*(code *)(pIVar9->klass->vtable).set_color.method)(pIVar9,fVar5,fVar6,fVar7,fVar8);
+            if (pIVar5 != (Image *)0x0) {
+              (*(code *)(pIVar5->klass->vtable).set_color.method)(pIVar5,fVar6,fVar7,fVar8,fVar9);
               return;
             }
           }
@@ -99,6 +99,7 @@ void Assembly-CSharp.dll::BoostNotificationDisplay::BoostNotificationDisplay_OnD
   }
   else {
     pAVar5 = (pBVar3->fields).BoostCountChanged;
+    pBVar6 = &pBVar3->fields;
     this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
@@ -108,26 +109,25 @@ void Assembly-CSharp.dll::BoostNotificationDisplay::BoostNotificationDisplay_OnD
              mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)pAVar5,(Delegate *)this_01,(MethodInfo *)0x0);
     uVar4 = CONCAT44(TypeInfo__System__Action,pAVar5);
+    pBStack7 = pBVar6;
     if (pAVar5 == (Action *)0x0) {
-      (pBVar3->fields).BoostCountChanged = (Action *)0x0;
-      pBStack6 = &pBVar3->fields;
-      pAStack7 = (Action *)0x0;
+      pAStack8 = (Action *)0x0;
+      pBVar6->BoostCountChanged = (Action *)0x0;
       func_?();
       return;
     }
-    pAVar8 = (Action *)0x0;
+    pAVar9 = (Action *)0x0;
     if (pAVar5->klass == TypeInfo__System__Action) {
-      pAVar8 = pAVar5;
+      pAVar9 = pAVar5;
     }
-    if (pAVar8 != (Action *)0x0) {
-      (pBVar3->fields).BoostCountChanged = pAVar8;
+    if (pAVar9 != (Action *)0x0) {
+      pBVar6->BoostCountChanged = pAVar9;
       uVar4 = CONCAT44(TypeInfo__System__Action,pAVar5);
-      pAStack7 = (Action *)0x0;
+      pAStack8 = (Action *)0x0;
       if (pAVar5->klass == TypeInfo__System__Action) {
-        pAStack7 = pAVar5;
+        pAStack8 = pAVar5;
       }
-      if (pAStack7 != (Action *)0x0) {
-        pBStack6 = &pBVar3->fields;
+      if (pAStack8 != (Action *)0x0) {
         func_?();
         return;
       }
@@ -135,8 +135,8 @@ void Assembly-CSharp.dll::BoostNotificationDisplay::BoostNotificationDisplay_OnD
   }
   _pBStack0000001c = uVar4;
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -214,23 +214,23 @@ code_?:
             mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_03.m_value,(MethodInfo *)0x0);
             if (pTVar5 != (Text *)0x0) {
               (*(code *)(pTVar5->klass->vtable).set_text.method)();
+              pIVar6 = (this->fields).backgroundColor;
               if (this_03.m_value < 1) {
-                fVar6 = (this->fields).boostInactiveColor.r;
-                fVar7 = (this->fields).boostInactiveColor.g;
-                fVar8 = (this->fields).boostInactiveColor.b;
-                fVar9 = (this->fields).boostInactiveColor.a;
+                fVar7 = (this->fields).boostInactiveColor.r;
+                fVar8 = (this->fields).boostInactiveColor.g;
+                fVar9 = (this->fields).boostInactiveColor.b;
+                fVar10 = (this->fields).boostInactiveColor.a;
               }
               else {
-                fVar6 = (this->fields).boostActiveColor.r;
-                fVar7 = (this->fields).boostActiveColor.g;
-                fVar8 = (this->fields).boostActiveColor.b;
-                fVar9 = (this->fields).boostActiveColor.a;
+                fVar7 = (this->fields).boostActiveColor.r;
+                fVar8 = (this->fields).boostActiveColor.g;
+                fVar9 = (this->fields).boostActiveColor.b;
+                fVar10 = (this->fields).boostActiveColor.a;
               }
-              pIVar10 = (this->fields).backgroundColor;
-              if (pIVar10 != (Image *)0x0) {
-                (*(code *)(pIVar10->klass->vtable).set_color.method)
-                          (pIVar10,fVar6,fVar7,fVar8,fVar9,
-                           (pIVar10->klass->vtable).get_raycastTarget.methodPtr);
+              if (pIVar6 != (Image *)0x0) {
+                (*(code *)(pIVar6->klass->vtable).set_color.method)
+                          (pIVar6,fVar7,fVar8,fVar9,fVar10,
+                           (pIVar6->klass->vtable).get_raycastTarget.methodPtr);
                 return;
               }
             }

@@ -20,7 +20,8 @@ void Assembly-CSharp.dll::AdIntegration::Dummy::DummyAdManager::
     bVar11 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.removeFullscreenButton;
     bVar12 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.hideSignUp;
     bVar13 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.noPlayButtonVideoIcon;
-    (this->fields).siteData.sites = (config->fields)._EmbeddedSiteConfigData_k__BackingField.sites;
+    pEVar14 = &(this->fields).siteData;
+    pEVar14->sites = (config->fields)._EmbeddedSiteConfigData_k__BackingField.sites;
     (this->fields).siteData.siteEnum = iVar1;
     (this->fields).siteData.showTouristPromotion = bVar2;
     (this->fields).siteData.allowsOpenInNewTab = bVar3;
@@ -34,14 +35,14 @@ void Assembly-CSharp.dll::AdIntegration::Dummy::DummyAdManager::
     (this->fields).siteData.removeFullscreenButton = bVar11;
     (this->fields).siteData.hideSignUp = bVar12;
     (this->fields).siteData.noPlayButtonVideoIcon = bVar13;
-    func_?(&(this->fields).siteData,0);
+    func_?(pEVar14,0);
     (this->fields).timeoutAsEnabled = (config->fields)._AdTimeoutAsSuccess_k__BackingField;
     (this->fields).timeoutSuccessDelay = (config->fields)._AdTimeoutAsSuccessDelay_k__BackingField;
     return;
   }
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -284,7 +285,8 @@ code_?:
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)pSVar10,(MethodInfo *)0x0);
-      if ((((pDVar1->fields).rewarded != 0) && ((pDVar1->fields).timeoutAsEnabled != 0)) &&
+      this_00 = &(pDVar1->fields).rewarded;
+      if (((*this_00 != 0) && ((pDVar1->fields).timeoutAsEnabled != 0)) &&
          (this = (DummyAdManager *)
                  UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0),
          (float)(pDVar1->fields).timeoutSuccessDelay <= (float)this - (pDVar1->fields).startTime)) {
@@ -294,8 +296,8 @@ code_?:
       if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Boolean);
       }
-      pSVar10 = mscorlib.dll::System::Boolean::Boolean_ToString
-                         ((Boolean *)&(pDVar1->fields).rewarded,(MethodInfo *)0x0);
+      pSVar10 = mscorlib.dll::System::Boolean::Boolean_ToString((Boolean *)this_00,(MethodInfo *)0x0)
+      ;
       pSVar10 = mscorlib.dll::System::String::String_Concat_3
                          (StringLiteral_DummyAdManager___UpdateControlle,pSVar10,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
@@ -307,7 +309,7 @@ code_?:
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)pSVar10,(MethodInfo *)0x0);
-      if ((pDVar1->fields).rewarded == 0) {
+      if (*this_00 == 0) {
         pMVar11 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0)
         ;
         if (pMVar11 != (MVNetworkGame_OperationRequests *)0x0) {

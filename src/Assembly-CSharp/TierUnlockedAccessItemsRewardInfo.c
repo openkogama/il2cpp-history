@@ -9,38 +9,39 @@ void Assembly-CSharp.dll::TierUnlockedAccessItemsRewardInfo::
                ,MethodInfo *method)
 
 {
-  (this->fields).tierShopData = tierShopData;
+  ppDVar1 = &(this->fields).tierShopData;
+  *ppDVar1 = tierShopData;
   (this->fields).tier = (undefined1)tier;
-  func_?(&(this->fields).tierShopData,tierShopData);
-  pGVar1 = (this->fields).backgroundTier1;
-  if (pGVar1 != (GameObject *)0x0) {
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar1,(MethodInfo *)0x0);
-    if ((bool)bVar2 != ((undefined1)tier == GamePassTier__Enum_Tier1)) {
-      pGVar1 = (this->fields).backgroundTier1;
-      if (pGVar1 == (GameObject *)0x0) goto code_?;
+  func_?(ppDVar1,tierShopData);
+  pGVar2 = (this->fields).backgroundTier1;
+  if (pGVar2 != (GameObject *)0x0) {
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                      (pGVar2,(MethodInfo *)0x0);
+    if ((bool)bVar3 != ((undefined1)tier == GamePassTier__Enum_Tier1)) {
+      pGVar2 = (this->fields).backgroundTier1;
+      if (pGVar2 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar1,(undefined1)tier == GamePassTier__Enum_Tier1,(MethodInfo *)0x0);
+                (pGVar2,(undefined1)tier == GamePassTier__Enum_Tier1,(MethodInfo *)0x0);
     }
-    pGVar1 = (this->fields).backgroundTier2;
-    if (pGVar1 != (GameObject *)0x0) {
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                        (pGVar1,(MethodInfo *)0x0);
-      if ((bool)bVar2 != ((undefined1)tier == GamePassTier__Enum_Tier2)) {
-        pGVar1 = (this->fields).backgroundTier2;
-        if (pGVar1 == (GameObject *)0x0) goto code_?;
+    pGVar2 = (this->fields).backgroundTier2;
+    if (pGVar2 != (GameObject *)0x0) {
+      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                        (pGVar2,(MethodInfo *)0x0);
+      if ((bool)bVar3 != ((undefined1)tier == GamePassTier__Enum_Tier2)) {
+        pGVar2 = (this->fields).backgroundTier2;
+        if (pGVar2 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,(undefined1)tier == GamePassTier__Enum_Tier2,(MethodInfo *)0x0);
+                  (pGVar2,(undefined1)tier == GamePassTier__Enum_Tier2,(MethodInfo *)0x0);
       }
-      pGVar1 = (this->fields).backgroundTier3;
-      if (pGVar1 != (GameObject *)0x0) {
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                          (pGVar1,(MethodInfo *)0x0);
-        if ((bool)bVar2 != ((undefined1)tier == GamePassTier__Enum_Tier3)) {
-          pGVar1 = (this->fields).backgroundTier3;
-          if (pGVar1 == (GameObject *)0x0) goto code_?;
+      pGVar2 = (this->fields).backgroundTier3;
+      if (pGVar2 != (GameObject *)0x0) {
+        bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                          (pGVar2,(MethodInfo *)0x0);
+        if ((bool)bVar3 != ((undefined1)tier == GamePassTier__Enum_Tier3)) {
+          pGVar2 = (this->fields).backgroundTier3;
+          if (pGVar2 == (GameObject *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar1,0,(MethodInfo *)0x0);
+                    (pGVar2,0,(MethodInfo *)0x0);
         }
         TierUnlockedAccessItemsRewardInfo_UpdateItemAmountText(this,(MethodInfo *)0x0);
         return;
@@ -49,8 +50,8 @@ void Assembly-CSharp.dll::TierUnlockedAccessItemsRewardInfo::
   }
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -94,10 +95,11 @@ void Assembly-CSharp.dll::TierUnlockedAccessItemsRewardInfo::
                       TierUnlockAccessItemsPopup_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockAccessItemsPopup>_TierUnlockAccessItemsPopup_
                      );
   if (value != (Object *)0x0) {
-    value[1].klass = pOVar1;
-    func_?(value + 1,pOVar1);
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
+    pOVar2 = value + 1;
+    pOVar2->klass = pOVar1;
+    func_?(pOVar2);
+    pGStack_3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
     callbackFunction =
          (ExecuteEvents_EventFunction_1_System_Object_ *)
          func_?(
@@ -112,19 +114,75 @@ void Assembly-CSharp.dll::TierUnlockedAccessItemsRewardInfo::
       func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,callbackFunction,
+              (pGStack_3,(BaseEventData *)0x0,callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
-    if (value[1].klass != (Object__Class *)0x0) {
-      TierUnlockAccessItemsPopup::TierUnlockAccessItemsPopup_Initialize
-                ((TierUnlockAccessItemsPopup *)value[1].klass,(uint)(this->fields).tier,
-                 (this->fields).tierShopData,(MethodInfo *)0x0);
-      return;
+    pOVar1 = pOVar2->klass;
+    tierShopData = (this->fields).tierShopData;
+    if (pOVar1 != (Object__Class *)0x0) {
+      if (cRam_? == '\0') {
+        func_?();
+        func_?(&
+                        MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
+                       );
+        func_?(&
+                        TierUnlockedItemElement_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedItemElement>_TierUnlockedItemElement_
+                       );
+        func_?(&TypeInfo__UnityEngine__Object);
+        cRam_? = '\x01';
+      }
+      this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+                TierUnlockAccessItemsPopup::TierUnlockAccessItemsPopup_GetSortedData
+                          ((TierUnlockAccessItemsPopup *)pOVar1,tierShopData,(MethodInfo *)0x0);
+      this = (TierUnlockedAccessItemsRewardInfo *)0x0;
+      if (this_00 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+        while( true ) {
+          if ((this_00->fields)._size <= (int)this) {
+            return;
+          }
+          pTVar4 = *(TierUnlockedItemElement **)&(pOVar1->_0).byval_arg.attrs;
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__UnityEngine__Object);
+          }
+          pTVar4 = (TierUnlockedItemElement *)
+                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                             ((Object *)pTVar4,
+                              TierUnlockedItemElement_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedItemElement>_TierUnlockedItemElement_
+                             );
+          if (pTVar4 == (TierUnlockedItemElement *)0x0) break;
+          this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)pTVar4,(MethodInfo *)0x0);
+          if (this_01 == (Transform *)0x0) break;
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                    (this_01,(Transform *)(pOVar1->_0).byval_arg.data.typeHandle,0,(MethodInfo *)0x0
+                    );
+          pVVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+                   VisualTreeAsset+UsingEntry]::
+                   List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
+                             (&VStack_6,this_00,(int32_t)this,
+                              MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
+                             );
+          TierUnlockedItemElement::TierUnlockedItemElement_SetTeam
+                    (pTVar4,(MVTeam__Enum)pVVar5->asset,(MethodInfo *)0x0);
+          pVVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+                   VisualTreeAsset+UsingEntry]::
+                   List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
+                             ((VisualTreeAsset_UsingEntry *)&stack0xffffffc8,this_00,(int32_t)this,
+                              MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
+                             );
+          uStack_7._0_4_ = pVVar5->alias;
+          uStack_7._4_4_ = pVVar5->path;
+          TierUnlockedItemElement::TierUnlockedItemElement_Initialize
+                    (pTVar4,(List_1_MVWorldObjectClient_ *)uStack_7._4_4_,(int32_t)this,
+                     (MethodInfo *)0x0);
+          this = (TierUnlockedAccessItemsRewardInfo *)((int)&this->klass + 1);
+        }
+      }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -167,11 +225,7 @@ void Assembly-CSharp.dll::TierUnlockedAccessItemsRewardInfo::
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  DStack_7._index = 0;
-  DStack_7._version = 0;
-  DStack_7._currentValue = (Object *)0x0;
-  IStack_8.m_value = 0;
+  IStack_7.m_value = 0;
   this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
              *)(this->fields).tierShopData;
   if (this_00 !=
@@ -186,41 +240,41 @@ void Assembly-CSharp.dll::TierUnlockedAccessItemsRewardInfo::
     if (this_01 !=
         (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
-      pDVar9 = mscorlib.dll::System::Collections::Generic::
+      pDVar8 = mscorlib.dll::System::Collections::Generic::
                Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                StyleSheetCache+SheetHandleKey,System::Object]::
                Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                         (&DStack_10,this_01,
+                         (&DStack_9,this_01,
                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__GetEnumerator__
                          );
-      DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar9->_dictionary;
-      DStack_7._index = pDVar9->_index;
-      DStack_7._version = pDVar9->_version;
-      DStack_7._currentValue = pDVar9->_currentValue;
-      DStack_10._version = 0;
+      DStack_10._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar8->_dictionary;
+      DStack_10._index = pDVar8->_index;
+      DStack_10._version = pDVar8->_version;
+      DStack_10._currentValue = pDVar8->_currentValue;
+      DStack_9._version = 0;
       uStack_1 = 1;
-      DStack_10._currentValue = (Object *)&DStack_7;
+      DStack_9._currentValue = (Object *)&DStack_10;
       while( true ) {
         bVar11 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                 UInt32,System::Object]::
                 Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                          (&DStack_7,
+                          (&DStack_10,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__MoveNext__
                           );
         if (bVar11 == 0) break;
-        if (DStack_7._currentValue == (Object *)0x0) goto code_?;
-        IStack_8.m_value = (int32_t)(DStack_7._currentValue[1].monitor + IStack_8.m_value);
+        if (DStack_10._currentValue == (Object *)0x0) goto code_?;
+        IStack_7.m_value = (int32_t)(DStack_10._currentValue[1].monitor + IStack_7.m_value);
       }
       uStack_1 = 0xffffffff;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                ((Object *)&DStack_7,
+                ((Object *)&DStack_10,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Dispose__
                  ,(MethodInfo *)in_stack_6);
       uStack_1 = 0xffffffff;
       pTVar12 = (this->fields).itemAmountText;
-      pSVar13 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_8,(MethodInfo *)0x0);
+      pSVar13 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_7,(MethodInfo *)0x0);
       pSVar13 = mscorlib.dll::System::String::String_Concat_3
                          (StringLiteral_x,pSVar13,(MethodInfo *)0x0);
       if (pTVar12 != (Text *)0x0) {

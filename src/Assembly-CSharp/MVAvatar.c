@@ -10,15 +10,17 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_AddChild
     cRam_? = '\x01';
   }
   MVGroup::MVGroup_AddChild((MVGroup *)this,child,(MethodInfo *)0x0);
-  if ((this->fields).body != (MVBody *)0x0) {
-    MVBody::MVBody_Detach((this->fields).body,(MethodInfo *)0x0);
+  this_00 = (this->fields).body;
+  if (this_00 != (MVBody *)0x0) {
+    MVBody::MVBody_Detach(this_00,(MethodInfo *)0x0);
   }
-  if (((child != (MVWorldObjectClient *)0x0) &&
-      ((TypeInfo__MVBody->_1).naturalAligment <= (child->klass->_1).naturalAligment)) &&
-     ((MVBody__Class *)(child->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).naturalAligment - 1]
-      == TypeInfo__MVBody)) {
-    (this->fields).body = (MVBody *)child;
-    func_?(&(this->fields).body);
+  if (child != (MVWorldObjectClient *)0x0) {
+    bVar1 = (TypeInfo__MVBody->_1).naturalAligment;
+    if ((bVar1 <= (child->klass->_1).naturalAligment) &&
+       ((MVBody__Class *)(child->klass->_1).typeHierarchy[bVar1 - 1] == TypeInfo__MVBody)) {
+      (this->fields).body = (MVBody *)child;
+      func_?();
+    }
   }
   return;
 }
@@ -36,8 +38,10 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_AttachBody
     func_?(&StringLiteral_Created_avatar_fader);
     cRam_? = '\x01';
   }
-  if ((this->fields).body != (MVBody *)0x0) {
-    MVBody::MVBody_Detach((this->fields).body,(MethodInfo *)0x0);
+  this_00 = (this->fields).body;
+  ppMVar1 = &(this->fields).body;
+  if (this_00 != (MVBody *)0x0) {
+    MVBody::MVBody_Detach(this_00,(MethodInfo *)0x0);
   }
   if (newBody != (MVBody *)0x0) {
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -52,14 +56,14 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_AttachBody
       func_?(&TypeInfo__UnityEngine__Quaternion);
       cRam_? = '\x01';
     }
-    pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
+    pQVar2 = TypeInfo__UnityEngine__Quaternion->static_fields;
     (*(code *)(newBody->klass->vtable).set_Rotation.method)
-              (newBody,(pQVar1->identityQuaternion).x,(pQVar1->identityQuaternion).y,
-               (pQVar1->identityQuaternion).z,(pQVar1->identityQuaternion).w,
+              (newBody,(pQVar2->identityQuaternion).x,(pQVar2->identityQuaternion).y,
+               (pQVar2->identityQuaternion).z,(pQVar2->identityQuaternion).w,
                (newBody->klass->vtable).get_Scale.methodPtr);
     MVBody::MVBody_Attach(newBody,this,(this->fields).isLocal,(MethodInfo *)0x0);
-    (this->fields).body = newBody;
-    func_?(&(this->fields).body,newBody);
+    *ppMVar1 = newBody;
+    func_?(ppMVar1,newBody);
     return;
   }
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -231,12 +235,11 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_HandleLeaveVehicle(MVAvatar *this,M
   }
   pMVar1 = (this->fields)._._.group;
   if (pMVar1 != (MVGroup *)0x0) {
-    pMVar2 = pMVar1->klass;
-    if (((TypeInfo__MVVehicleBase->_1).naturalAligment <= (pMVar2->_1).naturalAligment) &&
-       ((MVVehicleBase__Class *)
-        (pMVar2->_1).typeHierarchy[(TypeInfo__MVVehicleBase->_1).naturalAligment - 1] ==
+    bVar2 = (TypeInfo__MVVehicleBase->_1).naturalAligment;
+    if ((bVar2 <= (pMVar1->klass->_1).naturalAligment) &&
+       ((MVVehicleBase__Class *)(pMVar1->klass->_1).typeHierarchy[bVar2 - 1] ==
         TypeInfo__MVVehicleBase)) {
-      pGVar3 = (((this->fields)._._.group)->fields)._.gameObject;
+      pGVar3 = (pMVar1->fields)._.gameObject;
       if (pGVar3 != (GameObject *)0x0) {
         this_00 = (VehicleSeatManager *)
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
@@ -250,7 +253,7 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_HandleLeaveVehicle(MVAvatar *this,M
                           ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
         if (bVar4 != 0) {
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Debug);
+            func_?();
           }
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                     ((Object *)StringLiteral_Did_not_find_seatmanager__Cannot,(MethodInfo *)0x0);
@@ -266,13 +269,13 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_HandleLeaveVehicle(MVAvatar *this,M
                            AvatarPickupOwner_MethodInfo__UnityEngine__GameObject__GetComponent<AvatarPickupOwner>__
                           );
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__UnityEngine__Object);
+              func_?();
             }
             bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                               (x,(Object_1 *)0x0,(MethodInfo *)0x0);
             if (bVar4 != 0) {
               if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__UnityEngine__Debug);
+                func_?();
               }
               UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                         ((Object *)StringLiteral_Could_not_find_AvatarPickupOwner,(MethodInfo *)0x0)
@@ -281,7 +284,7 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_HandleLeaveVehicle(MVAvatar *this,M
             }
             if (x != (Object_1 *)0x0) {
               x[7].monitor = (MonitorData *)0x0;
-              func_?(&x[7].monitor,0);
+              func_?();
               return;
             }
           }
@@ -337,8 +340,7 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_Initialize(MVAvatar *this,MethodInf
 code_?:
     pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)func_?();
 code_?:
-    pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)func_?(pMVar2,this_04);
-    pMVar3 = extraout_ECX;
+    uVar3 = func_?(pMVar2,this_04);
   }
   else {
     MVBody::MVBody_Attach(pMVar1,this,(this->fields).isLocal,(MethodInfo *)0x0);
@@ -349,16 +351,17 @@ code_?:
                        (pGVar4,
                         AvatarPickupOwner_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarPickupOwner>__
                        );
-    (this->fields).avatarPickupOwner = pAVar5;
-    func_?(&(this->fields).avatarPickupOwner,pAVar5);
-    pAVar5 = (this->fields).avatarPickupOwner;
-    if (pAVar5 == (AvatarPickupOwner *)0x0) goto code_?;
-    (pAVar5->fields)._._IsLocal_k__BackingField = (this->fields).isLocal;
-    pAVar5 = (this->fields).avatarPickupOwner;
-    if (pAVar5 == (AvatarPickupOwner *)0x0) goto code_?;
+    unaff_EDI = (Dictionary_2_System_Object_System_Object___Class *)
+                &(this->fields).avatarPickupOwner;
+    *(AvatarPickupOwner **)unaff_EDI = pAVar5;
+    func_?(unaff_EDI,pAVar5);
+    if (*(AvatarPickupOwner **)unaff_EDI == (AvatarPickupOwner *)0x0) goto code_?;
+    ((*(AvatarPickupOwner **)unaff_EDI)->fields)._._IsLocal_k__BackingField = (this->fields).isLocal
+    ;
+    if (*(AvatarPickupOwner **)unaff_EDI == (AvatarPickupOwner *)0x0) goto code_?;
     AvatarPickupOwner::AvatarPickupOwner_Init
-              (pAVar5,(this->fields).CurrentItem,(this->fields).IsFiring,this,
-               (this->fields).skillDataManager,(MethodInfo *)0x0);
+              (*(AvatarPickupOwner **)unaff_EDI,(this->fields).CurrentItem,(this->fields).IsFiring,
+               this,(this->fields).skillDataManager,(MethodInfo *)0x0);
     pAVar6 = (this->fields).avatar;
     if (pAVar6 == (Avatar *)0x0) goto code_?;
     (*(code *)(pAVar6->klass->vtable).Initialize.method)
@@ -380,7 +383,7 @@ code_?:
     if (pMVar7 == (MVRuntimeDataVariable *)0x0) goto code_?;
     unaff_EDI = (Dictionary_2_System_Object_System_Object___Class *)(pMVar7->fields).OnChange;
     pVVar8 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
-             func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
+              func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
     UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
     VideoCapture+OnVideoCaptureResourceCreatedCallback::
     VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
@@ -388,10 +391,11 @@ code_?:
                MethodInfo__MVAvatar___InitializeModifiers_b__60_0_System__Object_,(MethodInfo *)0x0)
     ;
     pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)unaff_EDI,(Delegate *)pVVar8,(MethodInfo *)0x0);
-    pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+              mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)unaff_EDI,(Delegate *)pVVar8,(MethodInfo *)0x0);
+    uVar3 = CONCAT44(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate,pMVar2);
     if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+      pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
       (pMVar7->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
 code_?:
       func_?(&(pMVar7->fields).OnChange,pMVar9);
@@ -405,22 +409,22 @@ code_?:
                                    (pMVar7,(MethodInfo *)0x0),
          pDVar10 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
          , this_01 != (Dictionary_2_System_Object_System_Object___Class *)0x0)) {
-        if ((newModifiers != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-           ((unaff_EDI = 
-             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>,
-            (newModifiers->klass->_1).naturalAligment <
-            (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
-            .naturalAligment ||
-            ((Dictionary_2_System_Object_System_Object___Class *)
-             (newModifiers->klass->_1).typeHierarchy
-             [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-              _1).naturalAligment - 1] !=
-             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))))
-        goto code_?;
+        if (newModifiers != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          bVar11 = (
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                  ->_1).naturalAligment;
+          unaff_EDI = 
+          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+          if (((newModifiers->klass->_1).naturalAligment < bVar11) ||
+             ((Dictionary_2_System_Object_System_Object___Class *)
+              (newModifiers->klass->_1).typeHierarchy[bVar11 - 1] !=
+              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+          goto code_?;
+        }
         Avatar::Avatar_UpdateModifiers((Avatar *)this_01,newModifiers,(MethodInfo *)0x0);
-        fVar11 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        fVar12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
         pMVar1 = (this->fields).body;
-        (this->fields).healParticleSpawnTime = fVar11;
+        (this->fields).healParticleSpawnTime = fVar12;
         unaff_EDI = pDVar10;
         if ((pMVar1 != (MVBody *)0x0) &&
            ((this_02 = (MethodCall *)MVBody::MVBody_get_BodyData(pMVar1,(MethodInfo *)0x0),
@@ -431,8 +435,9 @@ code_?:
            )) {
           pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                               (this_03,(MethodInfo *)0x0);
-          (this->fields).healRayAttachmentObject = pGVar4;
-          func_?(&(this->fields).healRayAttachmentObject,pGVar4);
+          ppGVar13 = &(this->fields).healRayAttachmentObject;
+          *ppGVar13 = pGVar4;
+          func_?(ppGVar13,pGVar4);
           pMVar7 = (this->fields).SpawnRoleModeTypes;
           if (pMVar7 != (MVRuntimeDataVariable *)0x0) {
             unaff_EDI = (Dictionary_2_System_Object_System_Object___Class *)
@@ -445,17 +450,18 @@ code_?:
                       ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)this_04,(Object *)this,
                        (this->klass->vtable).AttachBody.methodPtr,(MethodInfo *)0x0);
             pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
-                     mscorlib.dll::System::Delegate::Delegate_Combine
-                               ((Delegate *)unaff_EDI,(Delegate *)this_04,(MethodInfo *)0x0);
-            pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                      mscorlib.dll::System::Delegate::Delegate_Combine
+                                ((Delegate *)unaff_EDI,(Delegate *)this_04,(MethodInfo *)0x0);
+            uVar3 = CONCAT44(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate,pMVar2);
             if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+              pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
               (pMVar7->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
             }
             else {
+              pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
               if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
                 pMVar9 = pMVar2;
               }
-              pMVar3 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
               if (pMVar9 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
               (pMVar7->fields).OnChange = pMVar9;
               pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
@@ -479,17 +485,18 @@ code_?:
                          (Object *)this,(this->klass->vtable).OnHealthChange.methodPtr,
                          (MethodInfo *)0x0);
               pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
-                       mscorlib.dll::System::Delegate::Delegate_Combine
-                                 ((Delegate *)unaff_EDI,(Delegate *)this_04,(MethodInfo *)0x0);
-              pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                        mscorlib.dll::System::Delegate::Delegate_Combine
+                                  ((Delegate *)unaff_EDI,(Delegate *)this_04,(MethodInfo *)0x0);
+              uVar3 = CONCAT44(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate,pMVar2);
               if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+                pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
                 (pMVar7->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
               }
               else {
+                pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
                 if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
                   pMVar9 = pMVar2;
                 }
-                pMVar3 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
                 if (pMVar9 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
                 (pMVar7->fields).OnChange = pMVar9;
                 pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
@@ -500,10 +507,10 @@ code_?:
                 if (pMVar9 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
               }
               func_?(&(pMVar7->fields).OnChange,pMVar9);
-              pMVar12 = (this->fields).Health;
-              if (pMVar12 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
+              pMVar14 = (this->fields).Health;
+              if (pMVar14 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
                 unaff_EDI = (Dictionary_2_System_Object_System_Object___Class *)
-                            (pMVar12->fields)._.OnChange;
+                            (pMVar14->fields)._.OnChange;
                 this_04 = (MVAvatar *)
                           func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
                 UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
@@ -513,20 +520,21 @@ code_?:
                            (Object *)this,(this->klass->vtable).OnShieldChange.methodPtr,
                            (MethodInfo *)0x0);
                 pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
-                         mscorlib.dll::System::Delegate::Delegate_Combine
-                                   ((Delegate *)unaff_EDI,(Delegate *)this_04,(MethodInfo *)0x0);
-                pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                          mscorlib.dll::System::Delegate::Delegate_Combine
+                                    ((Delegate *)unaff_EDI,(Delegate *)this_04,(MethodInfo *)0x0);
+                uVar3 = CONCAT44(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate,pMVar2);
                 if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-                  (pMVar12->fields)._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                  pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                  (pMVar14->fields)._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
                 }
                 else {
+                  pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
                   if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
                     pMVar9 = pMVar2;
                   }
-                  pMVar3 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
                   if (pMVar9 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0)
                   goto code_?;
-                  (pMVar12->fields)._.OnChange = pMVar9;
+                  (pMVar14->fields)._.OnChange = pMVar9;
                   pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
                   if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
                     pMVar9 = pMVar2;
@@ -535,11 +543,11 @@ code_?:
                   if (pMVar9 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0)
                   goto code_?;
                 }
-                func_?(&(pMVar12->fields)._.OnChange,pMVar9);
-                pMVar13 = (this->fields).shield;
-                if (pMVar13 != (MVRuntimeDataVariableClampedFloat *)0x0) {
+                func_?(&(pMVar14->fields)._.OnChange,pMVar9);
+                pMVar15 = (this->fields).shield;
+                if (pMVar15 != (MVRuntimeDataVariableClampedFloat *)0x0) {
                   unaff_EDI = (Dictionary_2_System_Object_System_Object___Class *)
-                              (pMVar13->fields)._._.OnChange;
+                              (pMVar15->fields)._._.OnChange;
                   this_04 = (MVAvatar *)
                             func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
                   UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
@@ -549,20 +557,21 @@ code_?:
                              (Object *)this,(this->klass->vtable).OnCurrentPickupChange.methodPtr,
                              (MethodInfo *)0x0);
                   pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
-                           mscorlib.dll::System::Delegate::Delegate_Combine
-                                     ((Delegate *)unaff_EDI,(Delegate *)this_04,(MethodInfo *)0x0);
-                  pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                            mscorlib.dll::System::Delegate::Delegate_Combine
+                                      ((Delegate *)unaff_EDI,(Delegate *)this_04,(MethodInfo *)0x0);
+                  uVar3 = CONCAT44(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate,pMVar2);
                   if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-                    (pMVar13->fields)._._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                    pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                    (pMVar15->fields)._._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
                   }
                   else {
+                    pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
                     if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
                       pMVar9 = pMVar2;
                     }
-                    pMVar3 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
                     if (pMVar9 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0)
                     goto code_?;
-                    (pMVar13->fields)._._.OnChange = pMVar9;
+                    (pMVar15->fields)._._.OnChange = pMVar9;
                     pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
                     if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
                       pMVar9 = pMVar2;
@@ -571,7 +580,7 @@ code_?:
                     if (pMVar9 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0)
                     goto code_?;
                   }
-                  func_?(&(pMVar13->fields)._._.OnChange,pMVar9);
+                  func_?(&(pMVar15->fields)._._.OnChange,pMVar9);
                   pMVar7 = (this->fields).CurrentItem;
                   if (pMVar7 != (MVRuntimeDataVariable *)0x0) {
                     unaff_EDI = (Dictionary_2_System_Object_System_Object___Class *)
@@ -584,18 +593,19 @@ code_?:
                               ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)this_04,
                                (Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
                     pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
-                             mscorlib.dll::System::Delegate::Delegate_Combine
-                                       ((Delegate *)unaff_EDI,(Delegate *)this_04,(MethodInfo *)0x0)
-                    ;
-                    pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                              mscorlib.dll::System::Delegate::Delegate_Combine
+                                        ((Delegate *)unaff_EDI,(Delegate *)this_04,(MethodInfo *)0x0
+                                        );
+                    uVar3 = CONCAT44(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate,pMVar2);
                     if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+                      pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
                       (pMVar7->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
                     }
                     else {
+                      pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
                       if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
                         pMVar9 = pMVar2;
                       }
-                      pMVar3 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
                       if (pMVar9 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0)
                       goto code_?;
                       (pMVar7->fields).OnChange = pMVar9;
@@ -608,12 +618,12 @@ code_?:
                       goto code_?;
                     }
                     func_?(&(pMVar7->fields).OnChange,pMVar9);
-                    pMVar13 = (this->fields).Size;
-                    if (pMVar13 != (MVRuntimeDataVariableClampedFloat *)0x0) {
+                    pMVar15 = (this->fields).Size;
+                    if (pMVar15 != (MVRuntimeDataVariableClampedFloat *)0x0) {
                       unaff_EDI = (Dictionary_2_System_Object_System_Object___Class *)
-                                  (pMVar13->fields)._._.OnChange;
+                                  (pMVar15->fields)._._.OnChange;
                       pVVar8 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
-                               func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
+                                func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
                       UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
                       VideoCapture+OnVideoCaptureResourceCreatedCallback::
                       VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
@@ -621,22 +631,23 @@ code_?:
                                  MethodInfo__MVAvatar___Initialize_b__54_0_System__Object_,
                                  (MethodInfo *)0x0);
                       pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
-                               mscorlib.dll::System::Delegate::Delegate_Combine
-                                         ((Delegate *)unaff_EDI,(Delegate *)pVVar8,(MethodInfo *)0x0
-                                         );
-                      pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                                mscorlib.dll::System::Delegate::Delegate_Combine
+                                          ((Delegate *)unaff_EDI,(Delegate *)pVVar8,
+                                           (MethodInfo *)0x0);
+                      uVar3 = CONCAT44(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate,pMVar2);
                       if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-                        (pMVar13->fields)._._.OnChange =
+                        pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                        (pMVar15->fields)._._.OnChange =
                              (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
                       }
                       else {
+                        pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
                         if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
                           pMVar9 = pMVar2;
                         }
-                        pMVar3 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
                         if (pMVar9 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0)
                         goto code_?;
-                        (pMVar13->fields)._._.OnChange = pMVar9;
+                        (pMVar15->fields)._._.OnChange = pMVar9;
                         pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
                         if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
                           pMVar9 = pMVar2;
@@ -645,24 +656,24 @@ code_?:
                         if (pMVar9 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0)
                         goto code_?;
                       }
-                      func_?(&(pMVar13->fields)._._.OnChange,pMVar9);
-                      pMVar13 = (this->fields).Size;
+                      func_?(&(pMVar15->fields)._._.OnChange,pMVar9);
+                      pMVar15 = (this->fields).Size;
                       this_04 = this;
-                      if (pMVar13 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-                        (*(code *)(pMVar13->klass->vtable).get_Value.method)
-                                  (pMVar13,(pMVar13->klass->vtable).set_Value.methodPtr);
-                        pMVar13 = (this->fields).Size;
-                        if (pMVar13 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-                          fVar14 = (float10)(*(code *)(pMVar13->klass->vtable).get_Value.method)
-                                                      (pMVar13,(pMVar13->klass->vtable).set_Value.
+                      if (pMVar15 != (MVRuntimeDataVariableClampedFloat *)0x0) {
+                        (*(code *)(pMVar15->klass->vtable).get_Value.method)
+                                  (pMVar15,(pMVar15->klass->vtable).set_Value.methodPtr);
+                        pMVar15 = (this->fields).Size;
+                        if (pMVar15 != (MVRuntimeDataVariableClampedFloat *)0x0) {
+                          fVar16 = (float10)(*(code *)(pMVar15->klass->vtable).get_Value.method)
+                                                      (pMVar15,(pMVar15->klass->vtable).set_Value.
                                                                methodPtr);
-                          pMVar13 = (this->fields).Size;
-                          if (pMVar13 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-                            fVar15 = (float10)(*(code *)(pMVar13->klass->vtable).get_Value.method)
-                                                        (pMVar13,(pMVar13->klass->vtable).set_Value.
+                          pMVar15 = (this->fields).Size;
+                          if (pMVar15 != (MVRuntimeDataVariableClampedFloat *)0x0) {
+                            fVar17 = (float10)(*(code *)(pMVar15->klass->vtable).get_Value.method)
+                                                        (pMVar15,(pMVar15->klass->vtable).set_Value.
                                                                  methodPtr,0,0);
                             (*(code *)(this->klass->vtable).set_Scale.method)
-                                      (this,CONCAT44((float)fVar14,pMVar13),(float)fVar15,
+                                      (this,CONCAT44((float)fVar16,pMVar15),(float)fVar17,
                                        (this->klass->vtable).get_WorldPosition.methodPtr);
                             if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
                               func_?(TypeInfo__UpdateController);
@@ -685,10 +696,10 @@ code_?:
       }
       goto code_?;
     }
+    pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
     if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
       pMVar9 = pMVar2;
     }
-    pMVar3 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
     if (pMVar9 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
       (pMVar7->fields).OnChange = pMVar9;
       pMVar9 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
@@ -701,12 +712,12 @@ code_?:
     }
   }
 code_?:
-  func_?(pMVar2,pMVar3);
+  func_?(uVar3);
   newModifiers = extraout_EDX;
 code_?:
   func_?(newModifiers,unaff_EDI);
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -725,70 +736,73 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_InitializeModifiers(MVAvatar *this,
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).Modifiers;
-  if (pMVar1 == (MVRuntimeDataVariable *)0x0) {
+  if (pMVar1 == (MVRuntimeDataVariable *)0x0) goto code_?;
+  pMVar2 = (pMVar1->fields).OnChange;
+  unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)
+              func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
+  UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+  VideoCapture+OnVideoCaptureResourceCreatedCallback::
+  VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+            ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)unaff_ESI,(Object *)this,
+             MethodInfo__MVAvatar___InitializeModifiers_b__60_0_System__Object_,(MethodInfo *)0x0);
+  pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
+           mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pMVar2,(Delegate *)unaff_ESI,(MethodInfo *)0x0);
+  if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+    (pMVar1->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
 code_?:
     func_?();
-    newModifiers = extraout_EDX;
-  }
-  else {
-    pMVar2 = (pMVar1->fields).OnChange;
-    unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)
-                func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
-    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
-    VideoCapture+OnVideoCaptureResourceCreatedCallback::
-    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-              ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)unaff_ESI,(Object *)this,
-               MethodInfo__MVAvatar___InitializeModifiers_b__60_0_System__Object_,(MethodInfo *)0x0)
-    ;
-    pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pMVar2,(Delegate *)unaff_ESI,(MethodInfo *)0x0);
-    if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-      (pMVar1->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+    pMVar1 = (this->fields).Modifiers;
+    this_00 = (this->fields).avatar;
+    if (pMVar1 == (MVRuntimeDataVariable *)0x0) {
+code_?:
+      func_?();
+      newModifiers = extraout_EDX;
     }
     else {
-      pMVar3 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-      if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-        pMVar3 = pMVar2;
+      newModifiers = (Dictionary_2_System_Object_System_Object_ *)
+                     MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value
+                               (pMVar1,(MethodInfo *)0x0);
+      if (this_00 == (Avatar *)0x0) goto code_?;
+      if (newModifiers == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        Avatar::Avatar_UpdateModifiers
+                  (this_00,(Dictionary_2_System_Object_System_Object_ *)0x0,(MethodInfo *)0x0);
+        return;
       }
-      if (pMVar3 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-      (pMVar1->fields).OnChange = pMVar3;
-      pMVar3 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-      if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-        pMVar3 = pMVar2;
+      bVar3 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+              _1).naturalAligment;
+      unaff_ESI = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+      ;
+      if ((bVar3 <= (newModifiers->klass->_1).naturalAligment) &&
+         ((Dictionary_2_System_Object_System_Object___Class *)
+          (newModifiers->klass->_1).typeHierarchy[bVar3 - 1] ==
+          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+        Avatar::Avatar_UpdateModifiers(this_00,newModifiers,(MethodInfo *)0x0);
+        return;
       }
-      if (pMVar3 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
     }
-    func_?();
-    this_00 = (Avatar *)pMVar1[6].fields.sendValue;
-    pMVar2 = pMVar1[6].fields.OnChange;
-    if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-    newModifiers = (Dictionary_2_System_Object_System_Object_ *)
-                   MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value
-                             ((MVRuntimeDataVariable *)pMVar2,(MethodInfo *)0x0);
-    if (this_00 == (Avatar *)0x0) goto code_?;
-    if (newModifiers == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      Avatar::Avatar_UpdateModifiers
-                (this_00,(Dictionary_2_System_Object_System_Object_ *)0x0,(MethodInfo *)0x0);
-      return;
-    }
-    unaff_ESI = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-    if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment <= (newModifiers->klass->_1).naturalAligment) &&
-       ((Dictionary_2_System_Object_System_Object___Class *)
-        (newModifiers->klass->_1).typeHierarchy
-        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment - 1] ==
-        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-      Avatar::Avatar_UpdateModifiers(this_00,newModifiers,(MethodInfo *)0x0);
-      return;
-    }
+    func_?(newModifiers,unaff_ESI);
   }
-  func_?(newModifiers,unaff_ESI);
+  else {
+    pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+    if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+      pMVar4 = pMVar2;
+    }
+    if (pMVar4 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+    (pMVar1->fields).OnChange = pMVar4;
+    pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+    if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+      pMVar4 = pMVar2;
+    }
+    unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)
+                TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
+    if (pMVar4 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+  }
+  func_?();
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -847,16 +861,14 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_OnAnimationChange
     cRam_? = '\x01';
   }
   if (newAnimationData == (Object *)0x0) goto code_?;
-  if (((newAnimationData->klass->_1).naturalAligment <
-       (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-       naturalAligment) ||
+  bVar4 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+          naturalAligment;
+  if (((newAnimationData->klass->_1).naturalAligment < bVar4) ||
      ((Dictionary_2_System_Object_System_Object___Class *)
-      (newAnimationData->klass->_1).typeHierarchy
-      [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-       naturalAligment - 1] !=
+      (newAnimationData->klass->_1).typeHierarchy[bVar4 - 1] !=
       TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
   goto code_?;
-  TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+  TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
           UIElements::TextureId]::
           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                     ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
@@ -864,43 +876,43 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_OnAnimationChange
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                     );
   newAnimation.m_Index = 0;
-  if (TVar4.m_Index == 0) {
+  if (TVar5.m_Index == 0) {
 code_?:
-    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                        newAnimationData,(Object *)StringLiteral_timeStamp,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    if (TVar4.m_Index == 0) {
+    if (TVar5.m_Index == 0) {
 code_?:
-      uVar5 = func_?(&ppSStack_3);
-      func_?(uVar5);
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
+      uVar6 = func_?(&ppSStack_3);
+      func_?(uVar6);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
       return;
     }
-    if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) ==
         (TypeInfo__System__Int32->_0).element_class) {
-      piVar7 = (int32_t *)func_?();
+      piVar8 = (int32_t *)func_?();
       BoneAnimation::BoneAnimation_StartAnimation
-                (this_00,(String *)newAnimation.m_Index,*piVar7,(MethodInfo *)0x0);
+                (this_00,(String *)newAnimation.m_Index,*piVar8,(MethodInfo *)0x0);
       return;
     }
     func_?();
   }
   else {
-    if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
-      newAnimation = TVar4;
+    if (*(String__Class **)TVar5.m_Index == TypeInfo__System__String) {
+      newAnimation = TVar5;
     }
     if ((String *)newAnimation.m_Index != (String *)0x0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -1099,42 +1111,37 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_SetTeam(MVAvatar *this,MethodInfo *
   pAVar5 = (this->fields).avatar;
   if (pAVar5 != (Avatar *)0x0) {
     if ((pAVar5->fields).isLocal == 0) {
-      pAVar5 = (this->fields).avatar;
-      if (pAVar5 != (Avatar *)0x0) {
-        pAVar6 = (AvatarUIHandlerRemote *)(pAVar5->fields).avatarUIHandler;
-        if (pAVar6 != (AvatarUIHandlerRemote *)0x0) {
-          if (((pAVar6->klass->_1).naturalAligment <
-               (TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment) ||
-             ((pAVar6->klass->_1).typeHierarchy
-              [(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] !=
-              (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
-            func_?(pAVar6,TypeInfo__AvatarUIHandlerRemote);
-          }
-          else {
-            AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNameTag(pAVar6,(MethodInfo *)0x0);
-            pAVar5 = (this->fields).avatar;
-            if (pAVar5 != (Avatar *)0x0) {
-              pAVar6 = (AvatarUIHandlerRemote *)(pAVar5->fields).avatarUIHandler;
-              pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (pMVar7 != (MVNetworkGame *)0x0) {
-                pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar7,(MethodInfo *)0x0);
-                if (pMVar8 != (MVLocalPlayer *)0x0) {
-                  bVar9 = MVPlayer::MVPlayer_IsOnSameTeam_1
-                                    ((MVPlayer *)pMVar8,(MVWorldObjectClient *)this,
-                                     (MethodInfo *)0x0);
-                  if (pAVar6 != (AvatarUIHandlerRemote *)0x0) {
-                    if (((TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment <=
-                         (pAVar6->klass->_1).naturalAligment) &&
-                       ((pAVar6->klass->_1).typeHierarchy
-                        [(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] ==
-                        (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
-                      AvatarUIHandlerRemote::AvatarUIHandlerRemote_SetHealthBarColor
-                                (pAVar6,bVar9,(MethodInfo *)0x0);
-                      *unaff_FS_OFFSET = uStack_3;
-                      return;
-                    }
-                    goto code_?;
+      pAVar6 = (AvatarUIHandlerRemote *)(pAVar5->fields).avatarUIHandler;
+      if (pAVar6 != (AvatarUIHandlerRemote *)0x0) {
+        bVar7 = (TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment;
+        if (((pAVar6->klass->_1).naturalAligment < bVar7) ||
+           ((pAVar6->klass->_1).typeHierarchy[bVar7 - 1] !=
+            (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
+          func_?(pAVar6,TypeInfo__AvatarUIHandlerRemote);
+        }
+        else {
+          AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNameTag(pAVar6,(MethodInfo *)0x0);
+          pAVar5 = (this->fields).avatar;
+          if (pAVar5 != (Avatar *)0x0) {
+            pAVar6 = (AvatarUIHandlerRemote *)(pAVar5->fields).avatarUIHandler;
+            pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if (pMVar8 != (MVNetworkGame *)0x0) {
+              pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar8,(MethodInfo *)0x0);
+              if (pMVar9 != (MVLocalPlayer *)0x0) {
+                bVar10 = MVPlayer::MVPlayer_IsOnSameTeam_1
+                                  ((MVPlayer *)pMVar9,(MVWorldObjectClient *)this,(MethodInfo *)0x0)
+                ;
+                if (pAVar6 != (AvatarUIHandlerRemote *)0x0) {
+                  bVar7 = (TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment;
+                  if ((bVar7 <= (pAVar6->klass->_1).naturalAligment) &&
+                     ((pAVar6->klass->_1).typeHierarchy[bVar7 - 1] ==
+                      (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
+                    AvatarUIHandlerRemote::AvatarUIHandlerRemote_SetHealthBarColor
+                              (pAVar6,bVar10,(MethodInfo *)0x0);
+                    *unaff_FS_OFFSET = uStack_3;
+                    return;
                   }
+                  goto code_?;
                 }
               }
             }
@@ -1143,16 +1150,16 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_SetTeam(MVAvatar *this,MethodInfo *
       }
     }
     else {
-      pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar7 != (MVNetworkGame *)0x0) &&
-         (this_00 = (pMVar7->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
+      pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar8 != (MVNetworkGame *)0x0) &&
+         (this_00 = (pMVar8->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
         this_01 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                    *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers
                                (this_00,(MethodInfo *)0x0);
         if (this_01 !=
             (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
              *)0x0) {
-          pDVar10 = mscorlib.dll::System::Collections::Generic::
+          pDVar11 = mscorlib.dll::System::Collections::Generic::
                    Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                    StyleSheetCache+SheetHandleKey,System::Object]::
                    Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
@@ -1160,10 +1167,10 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_SetTeam(MVAvatar *this,MethodInfo *
                                *)&stack0xffffffd8,this_01,
                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
                              );
-          pOVar11 = pDVar10->_currentValue;
+          pOVar12 = pDVar11->_currentValue;
           uStack_1 = 1;
           while( true ) {
-            bVar9 = mscorlib.dll::System::Collections::Generic::
+            bVar10 = mscorlib.dll::System::Collections::Generic::
                     Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                     UInt32,System::Object]::
                     Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
@@ -1171,7 +1178,7 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_SetTeam(MVAvatar *this,MethodInfo *
                                 *)&stack0xffffffc8,
                                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
                               );
-            if (bVar9 == 0) {
+            if (bVar10 == 0) {
               uStack_1 = 0xffffffff;
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                         ((Object *)&stack0xffffffc8,
@@ -1181,14 +1188,14 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_SetTeam(MVAvatar *this,MethodInfo *
               *unaff_FS_OFFSET = uStack_3;
               return;
             }
-            if (pOVar11 == (Object *)0x0) break;
-            pOVar12 = pOVar11[6].klass;
-            pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if (pMVar7 == (MVNetworkGame *)0x0) break;
+            if (pOVar12 == (Object *)0x0) break;
+            pOVar13 = pOVar12[6].klass;
+            pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if (pMVar8 == (MVNetworkGame *)0x0) break;
             in_stack_4 = (MethodInfo **)0x0;
-            pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar7,(MethodInfo *)0x0);
-            if (pMVar8 == (MVLocalPlayer *)0x0) break;
-            if (pOVar12 != (Object__Class *)(pMVar8->fields)._._ActorNr_k__BackingField) {
+            pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar8,(MethodInfo *)0x0);
+            if (pMVar9 == (MVLocalPlayer *)0x0) break;
+            if (pOVar13 != (Object__Class *)(pMVar9->fields)._._ActorNr_k__BackingField) {
               if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__UnityEngine__Debug);
               }
@@ -1202,12 +1209,12 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_SetTeam(MVAvatar *this,MethodInfo *
       }
     }
   }
-  uVar13 = func_?();
-  func_?(uVar13);
+  uVar14 = func_?();
+  func_?(uVar14);
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -1232,23 +1239,21 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_TransferChild
             ((Object *)StringLiteral_Transfer_child,(MethodInfo *)0x0);
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (this_00 != (MVWorldObjectClientManager *)0x0) {
-    pMStack1 =
-         MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                   (this_00,id,(MethodInfo *)0x0);
-    if (pMStack1 != (MVWorldObject *)0x0) {
-      if (((TypeInfo__MVBody->_1).naturalAligment <= (pMStack1->klass->_1).naturalAligment)
-         && ((MVBody__Class *)
-             (pMStack1->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).naturalAligment - 1]
-             == TypeInfo__MVBody)) {
-        pIStack2 = (this->klass->vtable).__unknown.methodPtr;
+    pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (this_00,id,(MethodInfo *)0x0);
+    if (pMVar1 != (MVWorldObject *)0x0) {
+      bVar2 = (TypeInfo__MVBody->_1).naturalAligment;
+      if ((bVar2 <= (pMVar1->klass->_1).naturalAligment) &&
+         ((MVBody__Class *)(pMVar1->klass->_1).typeHierarchy[bVar2 - 1] == TypeInfo__MVBody)) {
+        pIStack3 = (this->klass->vtable).__unknown.methodPtr;
         (*(code *)(this->klass->vtable).AttachBody.method)();
       }
     }
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1380,13 +1385,12 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar__InitializeModifiers_b__60_0
                 (this_00,(Dictionary_2_System_Object_System_Object_ *)0x0,(MethodInfo *)0x0);
       return;
     }
+    bVar2 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
+            .naturalAligment;
     pDVar1 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-    if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment <= (modifiers->klass->_1).naturalAligment) &&
+    if ((bVar2 <= (modifiers->klass->_1).naturalAligment) &&
        ((Dictionary_2_System_Object_System_Object___Class *)
-        (modifiers->klass->_1).typeHierarchy
-        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment - 1] ==
+        (modifiers->klass->_1).typeHierarchy[bVar2 - 1] ==
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
       Avatar::Avatar_UpdateModifiers
                 (this_00,(Dictionary_2_System_Object_System_Object_ *)modifiers,(MethodInfo *)0x0);
@@ -1394,8 +1398,8 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar__InitializeModifiers_b__60_0
     }
   }
   func_?(modifiers,pDVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1475,146 +1479,147 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar__ctor
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
             ((UxmlObjectListAttributeDescription_1_System_Object_ *)pLVar1,(MethodInfo *)0x0);
-  (this->fields).LimbRotationRuntimeData = pLVar1;
-  func_?(&(this->fields).LimbRotationRuntimeData,pLVar1);
-  uVar2 = (ulonglong)_UNK_?;
-  (this->fields).characterControllerCenterOffset.x = (float)(int)(uVar2 << 0x20);
-  (this->fields).characterControllerCenterOffset.y = (float)(int)((uVar2 << 0x20) >> 0x20);
+  ppLVar2 = &(this->fields).LimbRotationRuntimeData;
+  *ppLVar2 = pLVar1;
+  func_?(ppLVar2,pLVar1);
+  uVar3 = (ulonglong)_UNK_?;
+  (this->fields).characterControllerCenterOffset.x = (float)(int)(uVar3 << 0x20);
+  (this->fields).characterControllerCenterOffset.y = (float)(int)((uVar3 << 0x20) >> 0x20);
   (this->fields).characterControllerCenterOffset.z = 0.0;
   MVGroup::MVGroup__ctor((MVGroup *)this,data,avatarPrefab,worldObjects,(MethodInfo *)0x0);
-  iVar3 = (this->fields)._._._.ownerActorNr;
+  iVar4 = (this->fields)._._._.ownerActorNr;
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (this_00 != (MVNetworkGame *)0x0) {
-    pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-    if (pMVar4 != (MVLocalPlayer *)0x0) {
-      iVar5 = (pMVar4->fields)._._ActorNr_k__BackingField;
+    pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+    if (pMVar5 != (MVLocalPlayer *)0x0) {
+      iVar6 = (pMVar5->fields)._._ActorNr_k__BackingField;
       *(undefined4 *)&(this->fields)._._.interactionFlags = 0;
       *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = 0;
-      (this->fields).isLocal = iVar3 == iVar5;
-      pMVar6 = (this->fields)._._.runtimeDataVariables;
+      (this->fields).isLocal = iVar4 == iVar6;
+      pMVar7 = (this->fields)._._.runtimeDataVariables;
       (this->fields)._._._PlayInteractionType_k__BackingField = 1;
-      if (pMVar6 != (MVRuntimeDataVariables *)0x0) {
-        pMVar7 = MVRuntimeDataVariables::MVRuntimeDataVariables_New_2
-                           (pMVar6,StringLiteral_health,0.2,0,
-                            MVRuntimeDataVariable<float>_MethodInfo__MVRuntimeDataVariables__New<float>_System__String__float__bool_
-                           );
-        (this->fields).Health = pMVar7;
+      if (pMVar7 != (MVRuntimeDataVariables *)0x0) {
+        pMVar8 = MVRuntimeDataVariables::MVRuntimeDataVariables_New_2
+                            (pMVar7,StringLiteral_health,0.2,0,
+                             MVRuntimeDataVariable<float>_MethodInfo__MVRuntimeDataVariables__New<float>_System__String__float__bool_
+                            );
+        (this->fields).Health = pMVar8;
         func_?();
-        pMVar6 = (this->fields)._._.runtimeDataVariables;
-        if (pMVar6 != (MVRuntimeDataVariables *)0x0) {
-          pMVar7 = MVRuntimeDataVariables::MVRuntimeDataVariables_New_2
-                             (pMVar6,StringLiteral_maxHealth,0.0,1,
-                              MVRuntimeDataVariable<int>_MethodInfo__MVRuntimeDataVariables__New<int>_System__String__float__bool_
-                             );
-          (this->fields).MaxHealth = (MVRuntimeDataVariable_1_System_Int32_ *)pMVar7;
+        pMVar7 = (this->fields)._._.runtimeDataVariables;
+        if (pMVar7 != (MVRuntimeDataVariables *)0x0) {
+          pMVar8 = MVRuntimeDataVariables::MVRuntimeDataVariables_New_2
+                              (pMVar7,StringLiteral_maxHealth,0.0,1,
+                               MVRuntimeDataVariable<int>_MethodInfo__MVRuntimeDataVariables__New<int>_System__String__float__bool_
+                              );
+          (this->fields).MaxHealth = (MVRuntimeDataVariable_1_System_Int32_ *)pMVar8;
           func_?();
-          pMVar6 = (this->fields)._._.runtimeDataVariables;
-          if (pMVar6 != (MVRuntimeDataVariables *)0x0) {
-            pMVar8 = MVRuntimeDataVariables::MVRuntimeDataVariables_NewClampedFloat
-                                (pMVar6,StringLiteral_shield,0.2,0,0.0,100.0,(MethodInfo *)0x0);
-            (this->fields).shield = pMVar8;
+          pMVar7 = (this->fields)._._.runtimeDataVariables;
+          if (pMVar7 != (MVRuntimeDataVariables *)0x0) {
+            pMVar9 = MVRuntimeDataVariables::MVRuntimeDataVariables_NewClampedFloat
+                                (pMVar7,StringLiteral_shield,0.2,0,0.0,100.0,(MethodInfo *)0x0);
+            (this->fields).shield = pMVar9;
             func_?();
-            pMVar6 = (this->fields)._._.runtimeDataVariables;
-            if (pMVar6 != (MVRuntimeDataVariables *)0x0) {
-              pMVar9 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                  (pMVar6,StringLiteral_isFiring,0.0,0,(MethodInfo *)0x0);
-              (this->fields).IsFiring = pMVar9;
+            pMVar7 = (this->fields)._._.runtimeDataVariables;
+            if (pMVar7 != (MVRuntimeDataVariables *)0x0) {
+              pMVar10 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                  (pMVar7,StringLiteral_isFiring,0.0,0,(MethodInfo *)0x0);
+              (this->fields).IsFiring = pMVar10;
               func_?();
-              pMVar6 = (this->fields)._._.runtimeDataVariables;
-              if (pMVar6 != (MVRuntimeDataVariables *)0x0) {
-                pMVar9 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                    (pMVar6,StringLiteral_modifiers,1.0,0,(MethodInfo *)0x0);
-                (this->fields).Modifiers = pMVar9;
+              pMVar7 = (this->fields)._._.runtimeDataVariables;
+              if (pMVar7 != (MVRuntimeDataVariables *)0x0) {
+                pMVar10 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                    (pMVar7,StringLiteral_modifiers,1.0,0,(MethodInfo *)0x0);
+                (this->fields).Modifiers = pMVar10;
                 func_?();
-                pMVar6 = (this->fields)._._.runtimeDataVariables;
-                if (pMVar6 != (MVRuntimeDataVariables *)0x0) {
-                  pMVar9 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                      (pMVar6,StringLiteral_currentItem,0.0,1,(MethodInfo *)0x0);
-                  (this->fields).CurrentItem = pMVar9;
+                pMVar7 = (this->fields)._._.runtimeDataVariables;
+                if (pMVar7 != (MVRuntimeDataVariables *)0x0) {
+                  pMVar10 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                      (pMVar7,StringLiteral_currentItem,0.0,1,(MethodInfo *)0x0);
+                  (this->fields).CurrentItem = pMVar10;
                   func_?();
-                  pMVar6 = (this->fields)._._.runtimeDataVariables;
-                  if (pMVar6 != (MVRuntimeDataVariables *)0x0) {
-                    pMVar9 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                        (pMVar6,StringLiteral_spawnRoleModeType,0.0,1,
+                  pMVar7 = (this->fields)._._.runtimeDataVariables;
+                  if (pMVar7 != (MVRuntimeDataVariables *)0x0) {
+                    pMVar10 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                        (pMVar7,StringLiteral_spawnRoleModeType,0.0,1,
                                          (MethodInfo *)0x0);
-                    (this->fields).SpawnRoleModeTypes = pMVar9;
+                    (this->fields).SpawnRoleModeTypes = pMVar10;
                     func_?();
-                    pMVar6 = (this->fields)._._.runtimeDataVariables;
-                    if (pMVar6 != (MVRuntimeDataVariables *)0x0) {
-                      pMVar9 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                          (pMVar6,StringLiteral_animation,0.0,0,(MethodInfo *)0x0);
-                      (this->fields).Animation = pMVar9;
+                    pMVar7 = (this->fields)._._.runtimeDataVariables;
+                    if (pMVar7 != (MVRuntimeDataVariables *)0x0) {
+                      pMVar10 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                          (pMVar7,StringLiteral_animation,0.0,0,(MethodInfo *)0x0);
+                      (this->fields).Animation = pMVar10;
                       func_?();
-                      pMVar6 = (this->fields)._._.runtimeDataVariables;
-                      pLVar1 = (this->fields).LimbRotationRuntimeData;
-                      if (pMVar6 != (MVRuntimeDataVariables *)0x0) {
-                        pMVar9 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                            (pMVar6,StringLiteral_headRotationYaw,0.8,0,
+                      pMVar7 = (this->fields)._._.runtimeDataVariables;
+                      pLVar1 = *ppLVar2;
+                      if (pMVar7 != (MVRuntimeDataVariables *)0x0) {
+                        pMVar10 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                            (pMVar7,StringLiteral_headRotationYaw,0.8,0,
                                              (MethodInfo *)0x0);
                         if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-                          (pLVar1->fields).HeadRotationYaw = pMVar9;
+                          (pLVar1->fields).HeadRotationYaw = pMVar10;
                           func_?();
-                          pMVar6 = (this->fields)._._.runtimeDataVariables;
-                          pLVar1 = (this->fields).LimbRotationRuntimeData;
-                          if (pMVar6 != (MVRuntimeDataVariables *)0x0) {
-                            pMVar9 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                                (pMVar6,StringLiteral_headRotationPitch,0.8,0,
+                          pMVar7 = (this->fields)._._.runtimeDataVariables;
+                          pLVar1 = *ppLVar2;
+                          if (pMVar7 != (MVRuntimeDataVariables *)0x0) {
+                            pMVar10 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                                (pMVar7,StringLiteral_headRotationPitch,0.8,0,
                                                  (MethodInfo *)0x0);
                             if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-                              (pLVar1->fields).HeadRotationPitch = pMVar9;
+                              (pLVar1->fields).HeadRotationPitch = pMVar10;
                               func_?();
-                              pMVar6 = (this->fields)._._.runtimeDataVariables;
-                              pLVar1 = (this->fields).LimbRotationRuntimeData;
-                              if (pMVar6 != (MVRuntimeDataVariables *)0x0) {
-                                pMVar9 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                                    (pMVar6,StringLiteral_pointRotationYaw,0.8,0,
+                              pMVar7 = (this->fields)._._.runtimeDataVariables;
+                              pLVar1 = *ppLVar2;
+                              if (pMVar7 != (MVRuntimeDataVariables *)0x0) {
+                                pMVar10 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                                    (pMVar7,StringLiteral_pointRotationYaw,0.8,0,
                                                      (MethodInfo *)0x0);
                                 if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-                                  (pLVar1->fields).PointRotationYaw = pMVar9;
+                                  (pLVar1->fields).PointRotationYaw = pMVar10;
                                   func_?();
-                                  pMVar6 = (this->fields)._._.runtimeDataVariables;
-                                  pLVar1 = (this->fields).LimbRotationRuntimeData;
-                                  if (pMVar6 != (MVRuntimeDataVariables *)0x0) {
-                                    pMVar9 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                                        (pMVar6,StringLiteral_pointRotationPitch,0.8
+                                  pMVar7 = (this->fields)._._.runtimeDataVariables;
+                                  pLVar1 = *ppLVar2;
+                                  if (pMVar7 != (MVRuntimeDataVariables *)0x0) {
+                                    pMVar10 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                                        (pMVar7,StringLiteral_pointRotationPitch,0.8
                                                          ,0,(MethodInfo *)0x0);
                                     if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-                                      (pLVar1->fields).PointRotationPitch = pMVar9;
+                                      (pLVar1->fields).PointRotationPitch = pMVar10;
                                       func_?();
-                                      pMVar6 = (this->fields)._._.runtimeDataVariables;
-                                      pLVar1 = (this->fields).LimbRotationRuntimeData;
-                                      if (pMVar6 != (MVRuntimeDataVariables *)0x0) {
-                                        pMVar9 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                                            (pMVar6,StringLiteral_emote,0.5,0,
+                                      pMVar7 = (this->fields)._._.runtimeDataVariables;
+                                      pLVar1 = *ppLVar2;
+                                      if (pMVar7 != (MVRuntimeDataVariables *)0x0) {
+                                        pMVar10 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                                            (pMVar7,StringLiteral_emote,0.5,0,
                                                              (MethodInfo *)0x0);
                                         if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-                                          (pLVar1->fields).Emote = pMVar9;
+                                          (pLVar1->fields).Emote = pMVar10;
                                           func_?();
-                                          pGVar10 = (this->fields)._._.gameObject;
+                                          pGVar11 = (this->fields)._._.gameObject;
                                           value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask
                                                   ::LayerMask_NameToLayer
                                                             (StringLiteral_Player,(MethodInfo *)0x0)
                                           ;
-                                          if (pGVar10 != (GameObject *)0x0) {
+                                          if (pGVar11 != (GameObject *)0x0) {
                                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                            GameObject_set_layer(pGVar10,value,(MethodInfo *)0x0);
-                                            pGVar10 = (this->fields)._._.gameObject;
-                                            if (pGVar10 != (GameObject *)0x0) {
-                                              pAVar11 = (Avatar *)
+                                            GameObject_set_layer(pGVar11,value,(MethodInfo *)0x0);
+                                            pGVar11 = (this->fields)._._.gameObject;
+                                            if (pGVar11 != (GameObject *)0x0) {
+                                              pAVar12 = (Avatar *)
                                                         UnityEngine.CoreModule.dll::UnityEngine::
                                                         GameObject::GameObject_GetComponent_1
-                                                                  (pGVar10,
+                                                                  (pGVar11,
                                                   Avatar_MethodInfo__UnityEngine__GameObject__GetComponent<Avatar>__
                                                   );
-                                              (this->fields).avatar = pAVar11;
+                                              (this->fields).avatar = pAVar12;
                                               func_?();
-                                              pMVar6 = (this->fields)._._.runtimeDataVariables;
-                                              if (pMVar6 != (MVRuntimeDataVariables *)0x0) {
-                                                pMVar8 = MVRuntimeDataVariables::
+                                              pMVar7 = (this->fields)._._.runtimeDataVariables;
+                                              if (pMVar7 != (MVRuntimeDataVariables *)0x0) {
+                                                pMVar9 = MVRuntimeDataVariables::
                                                           MVRuntimeDataVariables_NewClampedFloat
-                                                                    (pMVar6,StringLiteral_size,0.0,1
+                                                                    (pMVar7,StringLiteral_size,0.0,1
                                                                      ,0.01,10.0,(MethodInfo *)0x0);
-                                                (this->fields).Size = pMVar8;
+                                                (this->fields).Size = pMVar9;
                                                 func_?();
                                                 return;
                                               }
@@ -1641,8 +1646,8 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar__ctor
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -1917,8 +1922,9 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_set_Shield
                (MVAvatar *this,MVRuntimeDataVariableClampedFloat *value,MethodInfo *method)
 
 {
-  (this->fields).shield = value;
-  func_?(&(this->fields).shield,value);
+  ppMVar1 = &(this->fields).shield;
+  *ppMVar1 = value;
+  func_?(ppMVar1,value);
   return;
 }
 

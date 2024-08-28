@@ -60,8 +60,9 @@ void Assembly-CSharp.dll::GNU::Gettext::CharsetInfoFinder::CharsetInfoFinder__ct
     func_?(TypeInfo__GNU__Gettext__CatalogParser);
   }
   CatalogParser::CatalogParser__ctor((CatalogParser *)this,text,encoding,(MethodInfo *)0x0);
-  (this->fields).charset = StringLiteral_iso_8859_1;
-  func_?(&(this->fields).charset,StringLiteral_iso_8859_1);
+  ppSVar1 = &(this->fields).charset;
+  *ppSVar1 = StringLiteral_iso_8859_1;
+  func_?(ppSVar1,StringLiteral_iso_8859_1);
   return;
 }
 

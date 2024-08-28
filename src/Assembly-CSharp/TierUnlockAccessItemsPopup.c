@@ -103,170 +103,167 @@ Assembly-CSharp.dll::TierUnlockAccessItemsPopup::TierUnlockAccessItemsPopup_GetS
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  accessItemsData =
-       (MethodInfo *)
-       func_?(
-                      TypeInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>
-                      );
-  pMStack_6 = accessItemsData;
+  pLVar6 = (List_1_TierUnlockAccessItemsPopup_AccessItemData_ *)
+           func_?(
+                          TypeInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>
+                          );
+  pLStack_7 = pLVar6;
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)accessItemsData,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar6,
              MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__List__
             );
-  pMStack_7 = accessItemsData;
-  if (tierShopData != (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)0x0
+  pLStack_8 = pLVar6;
+  if (tierShopData == (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)0x0
      ) {
-    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                        &stack0xffffff88,(Dictionary_2_System_UInt32_System_Object_ *)tierShopData,
-                        MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__GetEnumerator__
-                       );
-    uStack_9 = 0;
-    pMVar10 = (MethodInfo *)(pDVar8->_current).key;
-    method_00 = (MethodInfo *)*(undefined8 *)&(pDVar8->_current).value;
-    uStack_1 = 1;
-    pOStack_11 = (Object *)&stack0xffffff70;
+code_?:
+    func_?();
+    func_?();
+    pcVar9 = (code *)swi(3);
+    pLVar6 = (List_1_TierUnlockAccessItemsPopup_AccessItemData_ *)(*pcVar9)();
+    return pLVar6;
+  }
+  pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::
+           Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                     ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                      &stack0xffffff88,(Dictionary_2_System_UInt32_System_Object_ *)tierShopData,
+                      MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__GetEnumerator__
+                     );
+  uStack_11 = 0;
+  pSVar12 = (String *)(pDVar10->_current).key;
+  uVar13 = *(ulonglong *)&(pDVar10->_current).value;
+  uStack_1 = 1;
+  pOStack_14 = (Object *)&stack0xffffff70;
+  do {
+    bVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System
+            ::UInt32,System::Object]::
+            Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                      ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                       &stack0xffffff70,
+                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__MoveNext__
+                      );
+    method_00 = (MethodInfo *)uVar13;
+    if (bVar15 == 0) {
+      uStack_1 = 0xffffffff;
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                ((Object *)&stack0xffffff70,
+                 (ExceptionArgument__Enum)
+                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Dispose__
+                 ,method_00);
+      *unaff_FS_OFFSET = uStack_3;
+      return pLVar6;
+    }
+    iStack_16 = 0;
+    pMStack_17 = method_00;
+    pMStack_18 = method_00;
+    pSStack_19 = pSVar12;
     while( true ) {
-      bVar12 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
-              Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                         &stack0xffffff70,
-                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__MoveNext__
+      if (pMStack_18 == (MethodInfo *)0x0) goto code_?;
+      if ((int)pMStack_18->name <= iStack_16) break;
+      tierShopData = (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)0x5;
+      RVar20 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                         pMStack_18,iStack_16,
+                         MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
                         );
-      if (bVar12 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)&stack0xffffff70,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Dispose__
-                   ,method_00);
-        *unaff_FS_OFFSET = uStack_3;
-        return (List_1_TierUnlockAccessItemsPopup_AccessItemData_ *)accessItemsData;
-      }
-      iStack_13 = 0;
-      pMStack_14 = method_00;
-      pMStack_15 = method_00;
-      pMStack_16 = pMVar10;
-      if (method_00 == (MethodInfo *)0x0) break;
-      for (; iStack_13 < (int)pMStack_15->name; iStack_13 = iStack_13 + 1) {
-        tierShopData = (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)
-                       0x5;
-        RVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+      if ((RVar20 == (RegexCharClass_SingleRange)0x0) ||
+         (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)((int)RVar20 + 0x58) ==
+          (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0))
+      goto code_?;
+      uVar13 = ZEXT48(
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                     );
+      pSVar12 = StringLiteral_team;
+      bVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                        (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)
+                          ((int)RVar20 + 0x58),(Object *)StringLiteral_team,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                        );
+      if (bVar15 != 0) {
+        uVar13 = CONCAT44(pMStack_18,&UNK_?);
+        RVar20 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                           ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                           pMStack_15,iStack_13,
+                           pMStack_18,iStack_16,
                            MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
                           );
-        if ((RVar17 == (RegexCharClass_SingleRange)0x0) ||
-           (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)((int)RVar17 + 0x58) ==
-            (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0))
-        goto code_?;
-        pMVar10 = (MethodInfo *)StringLiteral_team;
-        method_00 = 
-        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-        ;
-        bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                          (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)
-                            ((int)RVar17 + 0x58),(Object *)StringLiteral_team,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                          );
-        if (bVar12 != 0) {
-          method_00 = (MethodInfo *)&UNK_?;
-          RVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                             pMStack_15,iStack_13,
-                             MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                            );
-          if (((RVar17 == (RegexCharClass_SingleRange)0x0) ||
-              (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)((int)RVar17 + 0x58)
-               == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) ||
-             (TVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)
-                                  ((int)RVar17 + 0x58),(Object *)StringLiteral_team,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                ), TVar18.m_Index == 0)) goto code_?;
-          if (*(Il2CppClass **)(*(int *)TVar18.m_Index + 0x20) !=
-              (TypeInfo__MV__WorldObject__MVTeam->_0).element_class) {
-            auStack_19._4_4_ = TypeInfo__MV__WorldObject__MVTeam;
-            auStack_19._0_4_ = TVar18;
-            func_?();
-            goto code_?;
-          }
-          auStack_19._0_4_ = &UNK_?;
-          auStack_19._4_4_ = TVar18;
-          puVar20 = (undefined4 *)func_?();
-          tierShopData = (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)
-                         *puVar20;
-        }
-        bVar12 = TierUnlockAccessItemsPopup_HasAccessItemDataTeamAndObjectType
-                          (this,(MVTeam__Enum)tierShopData,
-                           (MVWorldObjectDocumentationType__Enum)pMStack_16,
-                           (List_1_TierUnlockAccessItemsPopup_AccessItemData_ *)accessItemsData,
-                           (MethodInfo *)0x0);
-        if (bVar12 == 0) {
-          TierUnlockAccessItemsPopup_CreateAccessItemData
-                    (&TStack_21,this,(MVTeam__Enum)tierShopData,
-                     (MVWorldObjectDocumentationType__Enum)pMStack_16,(MethodInfo *)0x0);
-          if (accessItemsData == (MethodInfo *)0x0) goto code_?;
-          pMVar10 = (MethodInfo *)&UNK_?;
+        if (((RVar20 == (RegexCharClass_SingleRange)0x0) ||
+            (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)((int)RVar20 + 0x58)
+             == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) ||
+           (TVar21 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::TextureId]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                              (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)
+                                ((int)RVar20 + 0x58),(Object *)StringLiteral_team,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                              ), TVar21.m_Index == 0)) goto code_?;
+        if (*(Il2CppClass **)(*(int *)TVar21.m_Index + 0x20) !=
+            (TypeInfo__MV__WorldObject__MVTeam->_0).element_class) {
           func_?();
-          method_00 = accessItemsData;
+          goto code_?;
         }
-        iVar22 = 0;
-        if (pMStack_6 == (MethodInfo *)0x0) goto code_?;
-        for (; iVar22 < (int)pMStack_6->name; iVar22 = iVar22 + 1) {
-          pMVar10 = (MethodInfo *)(auStack_19 + 0xc);
-          method_00 = pMStack_6;
-          iVar23 = func_?();
-          if (*(Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ **)
-               (iVar23 + 8) == tierShopData) {
-            pMVar10 = (MethodInfo *)auStack_19;
-            method_00 = pMStack_6;
-            puVar20 = (undefined4 *)func_?();
-            if ((MethodInfo *)*puVar20 == pMStack_16) {
-              method_00 = pMStack_6;
-              iVar23 = func_?();
-              pMStack_14 = *(MethodInfo **)(iVar23 + 4);
-              if ((pMStack_15 == (MethodInfo *)0x0) ||
-                 (RVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                          RegularExpressions::RegexCharClass+SingleRange]::
-                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                    ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                      *)pMStack_15,iStack_13,
-                                     MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                                    ), pMStack_14 == (MethodInfo *)0x0)) goto code_?;
-              pMVar10 = 
-              MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
-              ;
-              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__Add
-                        ((List_1_System_Object_ *)pMStack_14,(Object *)RVar17,
-                         MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
-                        );
-            }
+        puVar22 = (undefined4 *)func_?();
+        tierShopData = (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)
+                       *puVar22;
+      }
+      bVar15 = TierUnlockAccessItemsPopup_HasAccessItemDataTeamAndObjectType
+                        (this,(MVTeam__Enum)tierShopData,
+                         (MVWorldObjectDocumentationType__Enum)pSStack_19,pLVar6,(MethodInfo *)0x0);
+      if (bVar15 == 0) {
+        TierUnlockAccessItemsPopup_CreateAccessItemData
+                  (&TStack_23,this,(MVTeam__Enum)tierShopData,
+                   (MVWorldObjectDocumentationType__Enum)pSStack_19,(MethodInfo *)0x0);
+        if (pLVar6 == (List_1_TierUnlockAccessItemsPopup_AccessItemData_ *)0x0)
+        goto code_?;
+        func_?();
+      }
+      pSVar24 = (String *)0x0;
+      while( true ) {
+        if (pLStack_7 == (List_1_TierUnlockAccessItemsPopup_AccessItemData_ *)0x0)
+        goto code_?;
+        if ((pLStack_7->fields)._size <= (int)pSVar24) break;
+        iVar25 = func_?();
+        if (*(Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ **)(iVar25 + 8)
+            == tierShopData) {
+          uVar13 = ZEXT48(
+                         MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
+                         );
+          pSVar12 = pSVar24;
+          piVar26 = (int *)func_?();
+          if ((String *)*piVar26 == pSStack_19) {
+            uVar13 = ZEXT48(
+                           MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
+                           );
+            pSVar12 = pSVar24;
+            iVar25 = func_?();
+            pMStack_17 = *(MethodInfo **)(iVar25 + 4);
+            RVar20 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                               pMStack_18,iStack_16,
+                               MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                              );
+            if (pMStack_17 == (MethodInfo *)0x0) goto code_?;
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__Add
+                      ((List_1_System_Object_ *)pMStack_17,(Object *)RVar20,
+                       MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
+                      );
           }
         }
-        accessItemsData = pMStack_6;
+        pSVar24 = (String *)((int)&pSVar24->klass + 1);
       }
+      iStack_16 = iStack_16 + 1;
+      pLVar6 = pLStack_7;
     }
-  }
-code_?:
-  func_?();
-  func_?();
-  pcVar24 = (code *)swi(3);
-  pLVar25 = (List_1_TierUnlockAccessItemsPopup_AccessItemData_ *)(*pcVar24)();
-  return pLVar25;
+  } while( true );
 }
 
 
@@ -351,131 +348,54 @@ void Assembly-CSharp.dll::TierUnlockAccessItemsPopup::TierUnlockAccessItemsPopup
   this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
             TierUnlockAccessItemsPopup_GetSortedData(this,tierShopData,(MethodInfo *)0x0);
   tierShopData = (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)0x0;
-  pLStack_1 = this_00;
   if (this_00 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
     while( true ) {
       if ((this_00->fields)._size <= (int)tierShopData) {
         return;
       }
-      pTVar2 = (this->fields).tierUnlockedItemElementPrefab;
+      pTVar1 = (this->fields).tierUnlockedItemElementPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      unaff_ESI = (TierUnlockedItemElement *)
-                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)pTVar2,
-                             TierUnlockedItemElement_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedItemElement>_TierUnlockedItemElement_
-                            );
-      if ((unaff_ESI == (TierUnlockedItemElement *)0x0) ||
+      pTVar1 = (TierUnlockedItemElement *)
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                         ((Object *)pTVar1,
+                          TierUnlockedItemElement_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedItemElement>_TierUnlockedItemElement_
+                         );
+      if ((pTVar1 == (TierUnlockedItemElement *)0x0) ||
          (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)unaff_ESI,(MethodInfo *)0x0),
-         this_01 == (Transform *)0x0)) break;
+                              ((Component *)pTVar1,(MethodInfo *)0x0), this_01 == (Transform *)0x0))
+      break;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
                 (this_01,(this->fields).itemElementContainer,0,(MethodInfo *)0x0);
-      pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+      pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                VisualTreeAsset+UsingEntry]::
                List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                         (&VStack_4,this_00,(int32_t)tierShopData,
+                         (&VStack_3,this_00,(int32_t)tierShopData,
                           MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
                          );
-      uStack_5._0_4_ = pVVar3->alias;
-      uStack_5._4_4_ = pVVar3->path;
-      pVVar6 = pVVar3->asset;
-      pIVar7 = (unaff_ESI->fields).teamRequirementImage;
-      (unaff_ESI->fields).team = (int32_t)pVVar6;
-      if ((pIVar7 == (Image *)0x0) ||
-         (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pIVar7,(MethodInfo *)0x0), this_02 == (GameObject *)0x0)
-         ) break;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_02,1,(MethodInfo *)0x0);
-      pIVar7 = (unaff_ESI->fields).teamRequirementImage;
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__Styles);
-        cRam_? = '\x01';
-      }
-      switch(pVVar6) {
-      case (VisualTreeAsset *)0x0:
-        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Styles);
-        }
-        colorStyle = ColorStyle__Enum_TeamBlue;
-        pCVar8 = &CStack_9;
-        break;
-      case (VisualTreeAsset *)0x1:
-        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Styles);
-        }
-        colorStyle = ColorStyle__Enum_TeamRed;
-        pCVar8 = &CStack_10;
-        break;
-      case (VisualTreeAsset *)0x2:
-        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Styles);
-        }
-        colorStyle = ColorStyle__Enum_TeamGreen;
-        pCVar8 = &CStack_11;
-        break;
-      case (VisualTreeAsset *)0x3:
-        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Styles);
-        }
-        colorStyle = ColorStyle__Enum_TeamYellow;
-        pCVar8 = &CStack_12;
-        break;
-      default:
-        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Styles);
-        }
-        pCVar8 = &CStack_13;
-        goto code_?;
-      case (VisualTreeAsset *)0x5:
-        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Styles);
-        }
-        pCVar8 = &CStack_14;
-code_?:
-        colorStyle = ColorStyle__Enum_OffWhite;
-      }
-      pCVar8 = Styles::Styles_GetColor(pCVar8,colorStyle,(MethodInfo *)0x0);
-      this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0;
-      if (pIVar7 == (Image *)0x0) break;
-      (*(code *)(pIVar7->klass->vtable).set_color.method)
-                (pIVar7,pCVar8->r,pCVar8->g,pCVar8->b,pCVar8->a,
-                 (pIVar7->klass->vtable).get_raycastTarget.methodPtr);
-      this_00 = pLStack_1;
-      pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+      uStack_4._0_4_ = pVVar2->alias;
+      uStack_4._4_4_ = pVVar2->path;
+      TierUnlockedItemElement::TierUnlockedItemElement_SetTeam
+                (pTVar1,(MVTeam__Enum)pVVar2->asset,(MethodInfo *)0x0);
+      pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                VisualTreeAsset+UsingEntry]::
                List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                         (&VStack_15,pLStack_1,(int32_t)tierShopData,
+                         (&VStack_5,this_00,(int32_t)tierShopData,
                           MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
                          );
-      uStack_16._0_4_ = pVVar3->alias;
-      uStack_16._4_4_ = pVVar3->path;
+      uStack_6._0_4_ = pVVar2->alias;
+      uStack_6._4_4_ = pVVar2->path;
       TierUnlockedItemElement::TierUnlockedItemElement_Initialize
-                (unaff_ESI,(List_1_MVWorldObjectClient_ *)uStack_16._4_4_,(int32_t)tierShopData,
+                (pTVar1,(List_1_MVWorldObjectClient_ *)uStack_6._4_4_,(int32_t)tierShopData,
                  (MethodInfo *)0x0);
       tierShopData = (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)
                      ((int)&tierShopData->klass + 1);
     }
   }
-  pTVar2 = (TierUnlockedItemElement *)func_?();
-  bVar17 = (char)this_00 + 1;
-  pbVar18 = (byte *)(extraout_ECX + -0x3a);
-  bVar19 = *pbVar18 + bVar17;
-  bVar20 = CARRY1(*pbVar18,bVar17) || CARRY1(bVar19,unaff_ESI < pTVar2);
-  *pbVar18 = bVar19 + (unaff_ESI < pTVar2);
-  pbVar18 = (byte *)((int)&unaff_ESI[-1].fields._._._._.m_CachedPtr + 2);
-  bVar19 = *pbVar18;
-  bVar17 = *pbVar18;
-  *pbVar18 = bVar17 + extraout_DH + bVar20;
-  pcVar21 = (char *)((int)&this_00[-0x229fd2d].klass + 1);
-  *pcVar21 = *pcVar21 + extraout_DL +
-            (CARRY1(bVar19,extraout_DH) || CARRY1(bVar17 + extraout_DH,bVar20));
-  *(undefined1 *)((int)&(this_00->fields)._version + 3) = 0xb0;
-  *(undefined1 *)((int)&(this_00->fields)._version + 3) = 0xcc;
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

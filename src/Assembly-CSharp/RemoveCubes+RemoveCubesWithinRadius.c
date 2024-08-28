@@ -16,8 +16,8 @@ RemoveCubes_RemoveCubesWithinRadius_CalculateCubeDestruction
   if ((cubeBase != (CubeBase *)0x0) &&
      (pBVar1 = (cubeBase->fields).faceMaterials, pBVar1 != (Byte__Array *)0x0)) {
     if (pBVar1->max_length == 0) goto code_?;
-    cubeBase = (CubeBase *)(uint)pBVar1->vector[0];
     if (getPhysicalProperites != (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0) {
+      cubeBase = (CubeBase *)(uint)pBVar1->vector[0];
       iVar2 = (*(getPhysicalProperites->fields)._._.invoke_impl)
                         (auStack_3,(getPhysicalProperites->fields)._._.method_code,cubeBase,
                          (getPhysicalProperites->fields)._._.method);
@@ -27,32 +27,31 @@ RemoveCubes_RemoveCubesWithinRadius_CalculateCubeDestruction
                  CubeMathFunctions_LocalIntVectorToLocalPos(&VStack_6,cubePos,(MethodInfo *)0x0);
         uStack_7._0_4_ = pVVar5->x;
         uStack_7._4_4_ = pVVar5->y;
-        fStack_8 = pVVar5->z;
-        pRVar9 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields;
-        VStack_6.x = (pRVar9->localPosition).x;
-        VStack_6.y = (pRVar9->localPosition).y;
-        VStack_6.z = (pRVar9->localPosition).z;
-        iVar2 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->damageFallOffType;
+        pRVar8 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields;
+        fStack_9 = pVVar5->z;
+        VStack_6.x = (pRVar8->localPosition).x;
+        VStack_6.y = (pRVar8->localPosition).y;
+        VStack_6.z = (pRVar8->localPosition).z;
         fVar10 = ((float)(undefined4)uStack_7 - VStack_6.x) *
                  ((float)(undefined4)uStack_7 - VStack_6.x) +
                  ((float)uStack_7._4_4_ - VStack_6.y) * ((float)uStack_7._4_4_ - VStack_6.y) +
-                 (fStack_8 - VStack_6.z) * (fStack_8 - VStack_6.z);
-        if (iVar2 == 0) {
+                 (fStack_9 - VStack_6.z) * (fStack_9 - VStack_6.z);
+        if (pRVar8->damageFallOffType == 0) {
           if (cRam_? == '\0') {
             func_?(&TypeInfo__RemoveCubes__RemoveCubesWithinRadius);
             cRam_? = '\x01';
           }
-          pRVar9 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields;
-          if (fVar4 < pRVar9->centerDamage) {
-            if (fVar10 < pRVar9->localRadiusReducedSquared) {
+          pRVar8 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields;
+          if (fVar4 < pRVar8->centerDamage) {
+            if (fVar10 < pRVar8->localRadiusReducedSquared) {
               return RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum_CompletelyDestroyed;
             }
-            if (fVar10 < pRVar9->localRadiusExtendedSquared) {
+            if (fVar10 < pRVar8->localRadiusExtendedSquared) {
               return RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum_OnEdgeOfDestruction;
             }
           }
         }
-        else if (iVar2 == 1) {
+        else if (pRVar8->damageFallOffType == 1) {
           if (cRam_? == '\0') {
             func_?(&TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues);
             cRam_? = '\x01';
@@ -155,100 +154,101 @@ void Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius::
   }
   if (cm != (MVCubeModelBase *)0x0) {
     puVar2 = (undefined8 *)
-              (*(code *)(cm->klass->vtable).get_Scale.method)
-                        (&stack0xffffffe4,cm,(cm->klass->vtable).set_Scale.methodPtr);
+             (*(code *)(cm->klass->vtable).get_Scale.method)
+                       (&stack0xffffffe0,cm,(cm->klass->vtable).set_Scale.methodPtr);
     uStack_3 = *puVar2;
-    fVar4 = radius / (float)pMVar5;
+    localRadius = radius / (float)pMVar4;
+    radius._2_2_ = (undefined2)((uint)localRadius >> 0x10);
     if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Math);
     }
-    fVar6 = mscorlib.dll::System::Math::Math_Max_7(0.0,fVar4 - _UNK_?,(MethodInfo *)0x0);
-    cm._0_2_ = SUB42(fVar6,0);
-    cm._2_2_ = (undefined2)((uint)fVar6 >> 0x10);
-    if (fVar6 < _UNK_?) {
+    fVar5 = mscorlib.dll::System::Math::Math_Max_7
+                       (0.0,localRadius - _UNK_?,(MethodInfo *)0x0);
+    cm._0_2_ = SUB42(fVar5,0);
+    cm._2_2_ = (undefined2)((uint)fVar5 >> 0x10);
+    if (fVar5 < _UNK_?) {
       cm._0_2_ = 0;
       cm._2_2_ = 0;
     }
+    fVar5 = localRadius + _UNK_?;
     if (TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->damageFallOffType == 1) {
-      fVar6 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->centerDamage;
+      centerDamage = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->centerDamage;
       if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).
           cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      uVar1 = (undefined2)((uint)fVar6 >> 0x10);
+      uVar1 = (undefined2)((uint)centerDamage >> 0x10);
       RemoveCubes+RemoveCubesWithinRadius+FallOffValues::
       RemoveCubes_RemoveCubesWithinRadius_FallOffValues_SetFallOffValues
-                (fVar4,fVar6,(MethodInfo *)0x0);
+                (localRadius,centerDamage,(MethodInfo *)0x0);
     }
-    fVar4 = fVar4 + _UNK_?;
     TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->localRadiusExtendedSquared =
-         fVar4 * fVar4;
+         fVar5 * fVar5;
     TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->localRadiusReducedSquared =
-         (float)CONCAT22(cm._2_2_,cm._0_2_) * (float)CONCAT22(cm._2_2_,cm._0_2_);
+         (float)CONCAT22(cm._2_2_,(int16_t)cm) * (float)CONCAT22(cm._2_2_,(int16_t)cm);
     if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-      uVar1 = 0x1036;
+      uVar1 = 0x1035;
       func_?();
     }
-    uVar7 = (TypeInfo__MV__WorldObject__IntVector->static_fields->One).x;
-    IVar8.z = uVar7;
-    IVar8.x = (short)(int)fVar4;
-    IVar8.y = (short)((uint)(int)fVar4 >> 0x10);
-    IVar9 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Multiply
-                       ((int32_t)&puStack_10,IVar8,
+    uVar6 = (TypeInfo__MV__WorldObject__IntVector->static_fields->One).x;
+    IVar7.z = uVar6;
+    IVar7.x = (short)(int)fVar5;
+    IVar7.y = (short)((uint)(int)fVar5 >> 0x10);
+    IVar8 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Multiply
+                       ((int32_t)&puStack_9,IVar7,
                         (MethodInfo *)
                         CONCAT22(uVar1,(TypeInfo__MV__WorldObject__IntVector->static_fields->One).z
                                 ));
-    uVar1 = *(undefined2 *)(IVar9._0_4_ + 1);
-    iVar11 = (int16_t)*IVar9._0_4_;
-    uVar12 = CONCAT62((int6)(uStack_3 >> 0x10),uVar1);
-    uStack_3 = uVar12 & 0xffffffff;
-    uVar13 = uStack_3;
+    uVar1 = *(undefined2 *)(IVar8._0_4_ + 1);
+    iVar10 = (int16_t)*IVar8._0_4_;
+    uVar11 = CONCAT62((int6)(uStack_3 >> 0x10),uVar1);
+    uStack_3 = uVar11 & 0xffffffff;
+    uVar12 = uStack_3;
     i1.z = localCenterPosition.x;
-    i1._0_4_ = &puStack_10;
-    i2_00.y = in_stack_14;
+    i1._0_4_ = &puStack_9;
+    i2_00.y = in_stack_13;
     i2_00.x = localCenterPosition.z;
-    i2_00.z = iVar11;
-    pMVar5 = (MethodInfo *)uVar12;
-    method_00 = pMVar5;
-    uStack_3 = uVar13;
-    IVar9 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Subtraction
+    i2_00.z = iVar10;
+    pMVar4 = (MethodInfo *)uVar11;
+    method_00 = pMVar4;
+    uStack_3 = uVar12;
+    IVar8 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Subtraction
                        (i1,i2_00,method_00);
-    uVar15 = *IVar9._0_4_;
-    iVar16 = *(int16_t *)(IVar9._0_4_ + 1);
-    pRVar17 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields;
-    (pRVar17->localMin).x = (short)uVar15;
-    (pRVar17->localMin).y = (short)((uint)uVar15 >> 0x10);
-    (pRVar17->localMin).z = iVar16;
-    uStack_3 = CONCAT44(&UNK_?,pMVar5);
-    iV.z = iVar11;
+    uVar14 = *IVar8._0_4_;
+    iVar15 = *(int16_t *)(IVar8._0_4_ + 1);
+    pRVar16 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields;
+    (pRVar16->localMin).x = (short)uVar14;
+    (pRVar16->localMin).y = (short)((uint)uVar14 >> 0x10);
+    (pRVar16->localMin).z = iVar15;
+    uStack_3 = CONCAT44(&UNK_?,pMVar4);
+    iV.z = iVar10;
     iV.x = 2;
     iV.y = 0;
-    IVar8 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Multiply
-                       ((int32_t)&puStack_10,iV,(MethodInfo *)CONCAT22(cm._2_2_,uVar1));
-    pIVar18 = TypeInfo__MV__WorldObject__IntVector->static_fields;
-    uStack19 = 0;
-    uVar20 = (pIVar18->One).x;
-    uVar21 = (pIVar18->One).y;
-    method = (MethodInfo *)CONCAT22(method._2_2_,(pIVar18->One).z);
-    radius._0_2_ = (int16_t)*IVar8._0_4_;
-    IVar9.z = radius._0_2_;
-    IVar9._0_4_ = &puStack_10;
-    i2.y = localCenterPosition.y;
-    i2.x = *(undefined2 *)(IVar8._0_4_ + 1);
-    i2.z = uVar20;
-    uStack22 = uVar21;
-    IVar9 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition(IVar9,i2,method);
-    uVar15 = *IVar9._0_4_;
-    iVar16 = *(int16_t *)(IVar9._0_4_ + 1);
-    pRVar17 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields;
-    (pRVar17->iterationBounds).x = (short)uVar15;
-    (pRVar17->iterationBounds).y = (short)((uint)uVar15 >> 0x10);
-    (pRVar17->iterationBounds).z = iVar16;
+    IVar7 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Multiply
+                       ((int32_t)&puStack_9,iV,(MethodInfo *)CONCAT22(unaff_retaddr,uVar1));
+    uVar17 = (TypeInfo__MV__WorldObject__IntVector->static_fields->One).x;
+    cm._0_2_ = (int16_t)*IVar7._0_4_;
+    IVar8.z = (int16_t)cm;
+    IVar8._0_4_ = &puStack_9;
+    i2.y = radius._2_2_;
+    i2.x = *(undefined2 *)(IVar7._0_4_ + 1);
+    i2.z = uVar17;
+    IVar8 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
+                       (IVar8,i2,
+                        (MethodInfo *)
+                        CONCAT22(in_stack_18,
+                                 (TypeInfo__MV__WorldObject__IntVector->static_fields->One).z));
+    uVar14 = *IVar8._0_4_;
+    iVar15 = *(int16_t *)(IVar8._0_4_ + 1);
+    pRVar16 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields;
+    (pRVar16->iterationBounds).x = (short)uVar14;
+    (pRVar16->iterationBounds).y = (short)((uint)uVar14 >> 0x10);
+    (pRVar16->iterationBounds).z = iVar15;
     return;
   }
   func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 
@@ -261,23 +261,20 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius::
 
 {
   uVar1 = 0;
-  if (corners0 == (Byte__Array *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
-    while (uVar1 < corners0->max_length) {
-      if (corners1 == (Byte__Array *)0x0) goto code_?;
-      if (corners1->max_length <= uVar1) break;
-      if (corners0->vector[uVar1] != corners1->vector[uVar1]) {
-        return 0;
-      }
-      uVar1 = uVar1 + 1;
-      if (7 < (int)uVar1) {
-        return 1;
-      }
+  while (corners0 != (Byte__Array *)0x0) {
+    if (corners0->max_length <= uVar1) goto code_?;
+    if (corners1 == (Byte__Array *)0x0) break;
+    if (corners1->max_length <= uVar1) goto code_?;
+    if (corners0->vector[uVar1] != corners1->vector[uVar1]) {
+      return 0;
+    }
+    uVar1 = uVar1 + 1;
+    if (7 < (int)uVar1) {
+      return 1;
     }
   }
+  func_?();
+code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   bVar3 = (*pcVar2)();
@@ -317,7 +314,7 @@ RemoveCubes_RemoveCubesWithinRadius_HandleCubeOnRadiusLimit
     iVar3 = 1;
   }
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-    uVar2 = 0x1036;
+    uVar2 = 0x1035;
     func_?();
   }
   method_00 = (MethodInfo *)((uint)uVar2 << 0x10);
@@ -343,8 +340,8 @@ RemoveCubes_RemoveCubesWithinRadius_HandleCubeOnRadiusLimit
   if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pos.z = 0x2387;
-  uStack9 = 0x1036;
+  pos.z = -0x3f69;
+  uStack9 = 0x1035;
   bVar10 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
                     ((CubeBase *)a,(CubeBase *)0x0,(MethodInfo *)0x0);
   if ((bVar10 == 0) &&
@@ -377,7 +374,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius::
 {
   uVar1 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(0xe58);
+    func_?(0x626c);
     cRam_? = '\x01';
   }
   TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->centerDamage = centerDamage;
@@ -418,7 +415,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius::
               (fineGrainedTerrainWorldObject,radius,fineGrainedTerrainLocalPos,(MethodInfo *)0x0);
     bVar7 = RemoveCubes_RemoveCubesWithinRadius_RemoveCubesSmooth
                       (fineGrainedTerrainWorldObject,getPhysicalProperites,(MethodInfo *)0x0);
-    return bVar7;
+    return bVar7 != 0;
   }
   func_?();
   pcVar8 = (code *)swi(3);
@@ -529,11 +526,12 @@ RemoveCubes_RemoveCubesWithinRadius_NoFallOffDestruction
   }
   pRVar1 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields;
   if (toughness < pRVar1->centerDamage) {
-    if (pRVar1->localRadiusReducedSquared <= testDistSqr) {
-      return (pRVar1->localRadiusExtendedSquared <= testDistSqr) +
-             RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum_OnEdgeOfDestruction;
+    if (testDistSqr < pRVar1->localRadiusReducedSquared) {
+      return RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum_CompletelyDestroyed;
     }
-    return RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum_CompletelyDestroyed;
+    if (testDistSqr < pRVar1->localRadiusExtendedSquared) {
+      return RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum_OnEdgeOfDestruction;
+    }
   }
   return RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum_NotDestroyed;
 }
@@ -594,286 +592,297 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius::
     func_?(&TypeInfo__RemoveCubes__RemoveCubesWithinRadius);
     cRam_? = '\x01';
   }
-  z = (undefined *)0x0;
-  pCVar1 = (Cube *)0x0;
-  bStack_2 = 0;
+  x_00 = (undefined *)0x0;
+  x = 0;
+  y = (Cube *)0x0;
+  pRVar1 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields;
+  bVar2 = 0;
   pFVar3 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0;
   pRVar4 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius;
-  bVar5 = 0;
-  if (0 < (TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->iterationBounds).x) {
+  if (0 < (pRVar1->iterationBounds).x) {
     do {
-      iVar6 = 0;
-      if (0 < (pRVar4->static_fields->iterationBounds).y) {
+      pFVar5 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0;
+      if (0 < (pRVar1->iterationBounds).y) {
         do {
-          iVar7 = 0;
-          uStack_8 = 0;
-          puVar9 = (undefined *)0x2;
-          iStack_10 = 0;
-          pFVar11 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0;
-          if (0 < (pRVar4->static_fields->iterationBounds).z) {
-            bVar12 = false;
+          bVar6 = 0;
+          puVar7 = (undefined *)0x2;
+          sVar8 = 0;
+          uVar9 = 0;
+          pFVar3 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)((uint)pFVar3 & 0xffff0000);
+          iVar10 = 0;
+          if (0 < (pRVar1->iterationBounds).z) {
             do {
-              iVar13 = (int16_t)pCVar1;
-              sVar14 = (pRVar4->static_fields->localMin).x;
-              iVar15 = (pRVar4->static_fields->localMin).y;
-              iVar16 = (pRVar4->static_fields->localMin).z;
+              iVar11 = (int16_t)y;
+              iVar12 = (pRVar1->localMin).y;
+              sVar13 = (pRVar1->localMin).x;
+              iVar14 = (pRVar1->localMin).z;
               if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__MV__WorldObject__IntVector);
               }
               MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                        ((IntVector *)&stack0xffffffc8,(int32_t)((int)&pFVar3->klass + (int)sVar14)
-                         ,iVar15 + iVar6,(int32_t)((int)&pFVar11->klass + (int)iVar16),
+                        ((IntVector *)&stack0xffffffc8,sVar13 + x,
+                         (int32_t)((int)&pFVar5->klass + (int)iVar12),iVar14 + iVar10,
                          (MethodInfo *)0x0);
               if (wo == (MVCubeModelBase *)0x0) goto code_?;
-              pos.z = iVar13;
-              pos._0_4_ = z;
+              pos.z = iVar11;
+              pos._0_4_ = x_00;
               a_00 = MVCubeModelBase::MVCubeModelBase_GetCube(wo,pos,(MethodInfo *)0x0);
               if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              z = &UNK_?;
-              pCVar1 = a_00;
-              bVar5 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
+              x_00 = &UNK_?;
+              y = a_00;
+              bVar2 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
                                 ((CubeBase *)a_00,(CubeBase *)0x0,(MethodInfo *)0x0);
-              if (bVar5 == 0) {
-                pFVar11 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0;
-                iVar15 = (int16_t)getPhysicalProperites;
-                uVar17 = (undefined2)((uint)getPhysicalProperites >> 0x10);
-                iVar16 = (int16_t)pCVar1;
-                pCVar1 = (Cube *)&UNK_?;
-                cubePos.z = iVar16;
-                cubePos._0_4_ = z;
-                puVar18 = (undefined *)
+              if (bVar2 == 0) {
+                pFVar5 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0;
+                uVar15 = SUB42(getPhysicalProperites,0);
+                uVar16 = (undefined2)((uint)getPhysicalProperites >> 0x10);
+                iVar12 = (int16_t)y;
+                y = (Cube *)&UNK_?;
+                cubePos.z = iVar12;
+                cubePos._0_4_ = x_00;
+                puVar17 = (undefined *)
                          RemoveCubes_RemoveCubesWithinRadius_CalculateCubeDestruction
                                    (cubePos,(CubeBase *)a_00,getPhysicalProperites,(MethodInfo *)0x0
                                    );
-                if (puVar9 == (undefined *)0x1) {
-                  bVar19 = puVar18 == (undefined *)0x2;
+                uVar18 = (undefined2)((uint)iVar10 >> 0x10);
+                if (puVar7 == (undefined *)0x1) {
+                  bVar19 = puVar17 == (undefined *)0x2;
 code_?:
                   bVar20 = false;
                 }
                 else {
                   bVar19 = false;
-                  if (puVar9 != (undefined *)0x2) goto code_?;
-                  bVar20 = puVar18 == (undefined *)0x1;
+                  if (puVar7 != (undefined *)0x2) goto code_?;
+                  bVar20 = puVar17 == (undefined *)0x1;
                 }
-                sVar14 = (short)pCVar1;
-                iVar16 = (int16_t)wo;
-                uVar21 = (undefined2)((uint)wo >> 0x10);
-                if ((bool)(bVar20 & bVar12)) {
-                  pCVar22 = (Cube *)0x0;
-                  pos_01.z = sVar14;
-                  pos_01._0_4_ = z;
-                  puVar9 = z;
-                  pFVar3 = getPhysicalProperites;
-                  index_00 = RemoveCubes_RemoveCubesWithinRadius_HandleCubeOnRadiusLimit
-                                       (wo,(int32_t)getPhysicalProperites,pos_01,0,
-                                        getPhysicalProperites,(MethodInfo *)0x0);
-                  iVar15 = iVar16;
-                  uVar17 = uVar21;
-                  pFVar11 = getPhysicalProperites;
-                  puVar18 = puVar9;
-                  if (index_00 != RemoveCubes_RemoveCubesWithinRadius_RemoveStyle__Enum_Completely)
-                  {
-                    iVar7 = sVar14;
+                sVar13 = (short)y;
+                sVar21 = (short)x_00;
+                sVar22 = (short)((uint)x_00 >> 0x10);
+                uVar23 = SUB42(wo,0);
+                uVar24 = (undefined2)((uint)wo >> 0x10);
+                if ((bool)(bVar20 & bVar6)) {
+                  puVar7 = &UNK_?;
+                  pos_00.z = sVar13;
+                  pos_00._0_4_ = x_00;
+                  RVar25 = RemoveCubes_RemoveCubesWithinRadius_HandleCubeOnRadiusLimit
+                                    (wo,(int32_t)getPhysicalProperites,pos_00,0,
+                                     getPhysicalProperites,(MethodInfo *)0x0);
+                  x = CONCAT22(uVar16,uVar15);
+                  iVar10 = CONCAT22(sVar22,sVar21);
+                  pFVar5 = getPhysicalProperites;
+                  if (RVar25 != RemoveCubes_RemoveCubesWithinRadius_RemoveStyle__Enum_Completely) {
                     if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__CornerCubes->_1).
                         cctor_finished_or_no_cctor == 0) {
                       func_?();
-                      iVar15 = iVar16;
-                      uVar17 = uVar21;
-                      pFVar11 = getPhysicalProperites;
-                      iVar7 = sVar14;
+                      pFVar5 = getPhysicalProperites;
                     }
                     getPhysicalProperites =
                          (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)&UNK_?;
-                    pBVar23 = RemoveCubes+RemoveCubesWithinRadius+CornerCubes::
+                    pBVar26 = RemoveCubes+RemoveCubesWithinRadius+CornerCubes::
                              RemoveCubes_RemoveCubesWithinRadius_CornerCubes_GetCornerCube
-                                       (index_00,(MethodInfo *)0x0);
+                                       (RVar25,(MethodInfo *)0x0);
+                    x = CONCAT22(uVar16,uVar15);
+                    iVar10 = CONCAT22(sVar22,sVar21);
                     if (a_00 != (Cube *)0x0) {
                       if ((a_00->fields)._.unIndentedSides != 0x3f) {
-                        pBVar24 = (a_00->fields)._.byteCorners;
-                        uVar25 = 0;
-                        if (pBVar23 == (Byte__Array *)0x0) goto code_?;
+                        pBVar27 = (a_00->fields)._.byteCorners;
+                        uVar28 = 0;
+                        pBVar29 = pBVar27;
                         do {
-                          if (pBVar23->max_length <= uVar25) goto code_?;
-                          if (pBVar24 == (Byte__Array *)0x0) goto code_?;
-                          if (pBVar24->max_length <= uVar25) goto code_?;
-                          puVar18 = puVar9;
-                          if (pBVar23->vector[uVar25] != pBVar24->vector[uVar25]) goto code_?;
-                          uVar25 = uVar25 + 1;
-                          a_00 = pCVar22;
-                        } while ((int)uVar25 < 8);
+                          if (pBVar26 == (Byte__Array *)0x0) goto code_?;
+                          if (pBVar26->max_length <= uVar28) goto code_?;
+                          if (pBVar29 == (Byte__Array *)0x0) goto code_?;
+                          if (pBVar29->max_length <= uVar28) goto code_?;
+                          pBVar29 = (a_00->fields)._.byteCorners;
+                          if (pBVar26->vector[uVar28] != pBVar27->vector[uVar28])
+                          goto code_?;
+                          uVar28 = uVar28 + 1;
+                        } while ((int)uVar28 < 8);
                       }
-                      pBVar24 = (a_00->fields)._.faceMaterials;
-                      if (pBVar24 != (Byte__Array *)0x0) {
-                        pOVar26 = UnityEngine.CoreModule.dll::UnityEngine::Playables::
+                      pBVar27 = (a_00->fields)._.faceMaterials;
+                      if (pBVar27 != (Byte__Array *)0x0) {
+                        pOVar30 = UnityEngine.CoreModule.dll::UnityEngine::Playables::
                                  PlayableBehaviour::PlayableBehaviour_Clone
-                                           ((PlayableBehaviour *)pBVar24,(MethodInfo *)0x0);
-                        pCVar27 = (CubeBase *)func_?();
-                        if (pOVar26 == (Object *)0x0) {
-                          pBVar24 = (Byte__Array *)0x0;
+                                           ((PlayableBehaviour *)pBVar27,(MethodInfo *)0x0);
+                        pCVar31 = (CubeBase *)func_?();
+                        if (pOVar30 == (Object *)0x0) {
+                          pBVar27 = (Byte__Array *)0x0;
                         }
                         else {
-                          pBVar24 = (Byte__Array *)func_?();
-                          if (pBVar24 == (Byte__Array *)0x0) goto code_?;
+                          pBVar27 = (Byte__Array *)func_?();
+                          if (pBVar27 == (Byte__Array *)0x0) goto code_?;
                         }
                         MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase__ctor
-                                  (pCVar27,pBVar23,pBVar24,(MethodInfo *)0x0);
+                                  (pCVar31,pBVar26,pBVar27,(MethodInfo *)0x0);
                         func_?();
-                        iVar6 = CONCAT22(uVar17,iVar15);
-                        bVar12 = puVar9 == (undefined *)0x2;
+                        x = CONCAT22(uVar16,uVar15);
+                        iVar10 = CONCAT22(sVar22,sVar21);
                         goto code_?;
                       }
                     }
                     goto code_?;
                   }
 code_?:
-                  iStack_10 = (int16_t)pCVar1;
-                  iVar7 = (int16_t)z;
-                  uStack_8 = (undefined2)((uint)z >> 0x10);
+                  sVar13 = (short)x_00;
+                  uVar9 = (undefined2)((uint)x_00 >> 0x10);
                   getPhysicalProperites = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)wo;
                   wo = (MVCubeModelBase *)0x64;
+                  uVar28 = (uint)y & 0xffff;
                   func_?();
-                  bStack_2 = 1;
-                  puVar9 = puVar18;
+                  pFVar3 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)
+                            CONCAT13(1,(int3)uVar28);
+                  goto code_?;
                 }
-                else if (bVar19) {
-                  sVar28 = (short)z;
-                  uVar25 = (uint)z >> 0x10;
+                if (bVar19) {
                   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-                    pFVar3 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)&UNK_?;
+                    uVar15 = 0xc73a;
+                    uVar16 = 0x1035;
                     func_?();
+                    x = CONCAT22(uVar16,uVar15);
                   }
-                  z = (undefined *)(sVar14 + -1);
-                  iVar6 = (int)(short)uVar25;
-                  sVar14 = sVar28 >> 0xf;
+                  y = (Cube *)(int)sVar22;
+                  x_00 = (undefined *)(int)sVar21;
+                  this = (IntVector *)&stack0xffffffc0;
+                  iVar12 = -0x38ab;
                   MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                            ((IntVector *)&stack0xffffffc0,(int)sVar28,iVar6,(int32_t)z,
-                             (MethodInfo *)0x0);
-                  b.y = sVar14;
-                  b.x = sVar28;
-                  puVar29 = (undefined *)CONCAT22(uStack_8,iVar7);
-                  pFVar11 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0;
-                  iVar15 = (int16_t)iVar6;
-                  pCVar1 = (Cube *)&UNK_?;
-                  a.z = iStack_10;
-                  a._0_4_ = puVar29;
-                  b.z = iVar15;
-                  bVar5 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Equality
+                            (this,(int32_t)x_00,(int32_t)y,sVar13 + -1,(MethodInfo *)0x0);
+                  pFVar5 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)
+                            CONCAT22(0x1035,iVar12);
+                  puVar17 = (undefined *)CONCAT22(uVar9,sVar8);
+                  iVar14 = (int16_t)pFVar3;
+                  sVar13 = 0;
+                  uVar9 = 0;
+                  iVar12 = (int16_t)this;
+                  a.z = iVar14;
+                  a._0_4_ = puVar17;
+                  b.z = iVar12;
+                  b._0_4_ = pFVar5;
+                  puVar7 = puVar17;
+                  bVar2 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Equality
                                     (a,b,(MethodInfo *)0x0);
-                  puVar9 = puVar18;
-                  if (bVar5 != 0) {
-                    iVar6 = 1;
-                    pos_00.z = iStack_10;
-                    pos_00._0_4_ = puVar29;
-                    pFVar11 = getPhysicalProperites;
-                    iVar7 = iStack_10;
+                  uVar15 = (undefined2)((uint)x >> 0x10);
+                  iVar10 = CONCAT22(uVar18,iVar12);
+                  if (bVar2 != 0) {
+                    pFVar5 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)&UNK_?;
+                    pos_01.z = iVar14;
+                    pos_01._0_4_ = puVar17;
                     pFVar3 = getPhysicalProperites;
-                    index = (MVCubeModelBase *)
-                            RemoveCubes_RemoveCubesWithinRadius_HandleCubeOnRadiusLimit
-                                      (wo,(int32_t)getPhysicalProperites,pos_00,1,
-                                       getPhysicalProperites,(MethodInfo *)0x0);
-                    iVar15 = iVar16;
-                    uVar17 = uVar21;
-                    puVar9 = puVar29;
-                    if (index != (MVCubeModelBase *)0x4) {
+                    iVar32 = x;
+                    RVar25 = RemoveCubes_RemoveCubesWithinRadius_HandleCubeOnRadiusLimit
+                                      (wo,x,pos_01,1,getPhysicalProperites,(MethodInfo *)0x0);
+                    sVar13 = (short)iVar32;
+                    x = CONCAT22((short)((uint)iVar32 >> 0x10),iVar14);
+                    iVar10 = CONCAT22(uVar24,uVar23);
+                    uVar16 = (undefined2)RVar25;
+                    uVar18 = (undefined2)(RVar25 >> 0x10);
+                    uVar9 = uVar15;
+                    if (RVar25 != RemoveCubes_RemoveCubesWithinRadius_RemoveStyle__Enum_Completely) {
                       if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__CornerCubes->_1).
                           cctor_finished_or_no_cctor == 0) {
                         func_?();
-                        iVar15 = iVar16;
-                        uVar17 = uVar21;
-                        puVar9 = puVar29;
+                        uVar9 = uVar15;
                       }
-                      getPhysicalProperites = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0;
-                      pBVar23 = RemoveCubes+RemoveCubesWithinRadius+CornerCubes::
+                      getPhysicalProperites =
+                           (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)&UNK_?;
+                      pBVar26 = RemoveCubes+RemoveCubesWithinRadius+CornerCubes::
                                RemoveCubes_RemoveCubesWithinRadius_CornerCubes_GetCornerCube
-                                         ((int32_t)index,(MethodInfo *)0x0);
-                      if (iVar6 == 0) {
+                                         (RVar25,(MethodInfo *)0x0);
+                      sVar13 = (short)iVar32;
+                      x = CONCAT22((short)((uint)iVar32 >> 0x10),iVar14);
+                      iVar10 = CONCAT22(uVar24,uVar23);
+                      if (puVar17 == (undefined *)0x0) {
 code_?:
                         func_?();
                       }
                       else {
-                        wo = index;
-                        if (*(char *)(iVar6 + 8) != '?') {
-                          iVar30 = *(int *)(iVar6 + 0xc);
-                          uVar25 = 0;
-                          if (pBVar23 == (Byte__Array *)0x0) goto code_?;
+                        if (puVar17[8] != '?') {
+                          iVar33 = *(int *)(puVar17 + 0xc);
+                          uVar28 = 0;
                           do {
-                            if (pBVar23->max_length <= uVar25) goto code_?;
-                            if (iVar30 == 0) goto code_?;
-                            if (*(uint *)(iVar30 + 0xc) <= uVar25) goto code_?;
-                            if (pBVar23->vector[uVar25] != *(uint8_t *)(uVar25 + 0x10 + iVar30))
-                            goto code_?;
-                            uVar25 = uVar25 + 1;
-                          } while ((int)uVar25 < 8);
+                            if (pBVar26 == (Byte__Array *)0x0) goto code_?;
+                            if (pBVar26->max_length <= uVar28) goto code_?;
+                            if (iVar33 == 0) goto code_?;
+                            if (*(uint *)(iVar33 + 0xc) <= uVar28) goto code_?;
+                            if (*(char *)((int)pBVar26 + ((uVar28 + iVar33 + 0x10) - iVar33)) !=
+                                *(char *)(uVar28 + iVar33 + 0x10)) goto code_?;
+                            uVar28 = uVar28 + 1;
+                          } while ((int)uVar28 < 8);
+                          RVar25 = CONCAT22(uVar18,uVar16);
                         }
                         if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__CornerCubes->_1).
                             cctor_finished_or_no_cctor == 0) {
                           func_?();
                         }
-                        getPhysicalProperites =
-                             (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)&UNK_?;
-                        pBVar23 = RemoveCubes+RemoveCubesWithinRadius+CornerCubes::
+                        pBVar26 = RemoveCubes+RemoveCubesWithinRadius+CornerCubes::
                                  RemoveCubes_RemoveCubesWithinRadius_CornerCubes_GetCornerCube
-                                           ((int32_t)index,(MethodInfo *)0x0);
-                        if (*(PlayableBehaviour **)(iVar6 + 0x10) == (PlayableBehaviour *)0x0)
+                                           (RVar25,(MethodInfo *)0x0);
+                        if (*(PlayableBehaviour **)(puVar17 + 0x10) == (PlayableBehaviour *)0x0)
                         goto code_?;
-                        pOVar26 = UnityEngine.CoreModule.dll::UnityEngine::Playables::
+                        pOVar30 = UnityEngine.CoreModule.dll::UnityEngine::Playables::
                                  PlayableBehaviour::PlayableBehaviour_Clone
-                                           (*(PlayableBehaviour **)(iVar6 + 0x10),(MethodInfo *)0x0
+                                           (*(PlayableBehaviour **)(puVar17 + 0x10),(MethodInfo *)0x0
                                            );
-                        pCVar27 = (CubeBase *)func_?();
-                        if (pOVar26 == (Object *)0x0) {
-                          pBVar24 = (Byte__Array *)0x0;
+                        pCVar31 = (CubeBase *)func_?();
+                        if (pOVar30 == (Object *)0x0) {
+                          pBVar27 = (Byte__Array *)0x0;
 code_?:
                           MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase__ctor
-                                    (pCVar27,pBVar23,pBVar24,(MethodInfo *)0x0);
+                                    (pCVar31,pBVar26,pBVar27,(MethodInfo *)0x0);
                           func_?();
-                          iVar6 = CONCAT22(uVar17,iVar15);
-                          bVar12 = puVar9 == (undefined *)0x2;
+                          sVar13 = (short)iVar32;
+                          x = CONCAT22((short)((uint)iVar32 >> 0x10),iVar14);
+                          iVar10 = CONCAT22(uVar24,uVar23);
                           goto code_?;
                         }
-                        pBVar24 = (Byte__Array *)func_?();
-                        if (pBVar24 != (Byte__Array *)0x0) goto code_?;
+                        pBVar27 = (Byte__Array *)func_?();
+                        if (pBVar27 != (Byte__Array *)0x0) goto code_?;
                       }
                       func_?();
 code_?:
                       func_?();
 code_?:
                       func_?();
-                      pcVar31 = (code *)swi(3);
-                      bVar5 = (*pcVar31)();
-                      return bVar5;
+                      pcVar34 = (code *)swi(3);
+                      bVar2 = (*pcVar34)();
+                      return bVar2;
                     }
+                  }
+code_?:
+                  if (puVar7 != (undefined *)0x2) {
+                    bVar6 = 0;
+                    sVar8 = sVar13;
+                    goto code_?;
                   }
                 }
                 else {
-                  puVar9 = puVar18;
-                  if (puVar18 != (undefined *)0x2) goto code_?;
+                  puVar7 = puVar17;
+                  sVar13 = sVar8;
+                  if (puVar17 != (undefined *)0x2) goto code_?;
                 }
-code_?:
-                iVar6 = CONCAT22(uVar17,iVar15);
-                bVar12 = puVar9 == (undefined *)0x2;
+                bVar6 = 1;
+                sVar8 = sVar13;
               }
               else {
-                bVar12 = false;
+                bVar6 = 0;
               }
 code_?:
-              pFVar11 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)((int)&pFVar11->klass + 1)
-              ;
+              iVar10 = iVar10 + 1;
+              pRVar1 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields;
               pRVar4 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius;
-            } while ((int)pFVar11 <
-                     (int)(TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->
-                          iterationBounds).z);
+            } while (iVar10 < (pRVar1->iterationBounds).z);
           }
-          iVar6 = iVar6 + 1;
-        } while (iVar6 < (pRVar4->static_fields->iterationBounds).y);
+          pRVar1 = pRVar4->static_fields;
+          pFVar5 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)((int)&pFVar5->klass + 1);
+        } while ((int)pFVar5 < (int)(pRVar1->iterationBounds).y);
       }
-      pFVar3 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)((int)&pFVar3->klass + 1);
-      bVar5 = bStack_2;
-    } while ((int)pFVar3 < (int)(pRVar4->static_fields->iterationBounds).x);
+      pRVar1 = pRVar4->static_fields;
+      x = x + 1;
+    } while (x < (pRVar1->iterationBounds).x);
+    bVar2 = (bool)((uint)pFVar3 >> 0x18);
   }
-  return bVar5;
+  return bVar2;
 }
 
 
@@ -894,58 +903,59 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius::
     cRam_? = '\x01';
   }
   uVar1 = 0;
-  uVar2 = 0;
+  pCVar2 = (Cube *)0x0;
   bVar3 = 0;
-  pCVar4 = (Cube *)0x0;
-  pRVar5 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius;
-  if (0 < (TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->iterationBounds).x) {
+  pRVar4 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields;
+  uVar5 = 0;
+  pRVar6 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius;
+  if (0 < (pRVar4->iterationBounds).x) {
     do {
-      uVar6 = 0;
-      if (0 < (pRVar5->static_fields->iterationBounds).y) {
+      iVar7 = 0;
+      if (0 < (pRVar4->iterationBounds).y) {
         do {
-          iVar7 = 0;
-          if (0 < (pRVar5->static_fields->iterationBounds).z) {
+          iVar8 = 0;
+          if (0 < (pRVar4->iterationBounds).z) {
             do {
               fineGrainedTerrain_00 = fineGrainedTerrain;
-              pRVar8 = pRVar5->static_fields;
-              sVar9 = (pRVar8->localMin).x;
-              sVar10 = (pRVar8->localMin).y;
-              sVar11 = (pRVar8->localMin).z;
-              uVar2 = uVar1;
+              sVar9 = (pRVar4->localMin).x;
+              sVar10 = (pRVar4->localMin).y;
+              sVar11 = (pRVar4->localMin).z;
+              uVar12 = uVar1;
               if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__MV__WorldObject__IntVector);
-                uVar2 = uVar1;
+                uVar12 = uVar1;
               }
               MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                        ((IntVector *)&stack0xffffffe4,(int32_t)((int)&pCVar4->klass + (int)sVar9),
-                         (int)sVar10 + uVar6,sVar11 + iVar7,(MethodInfo *)0x0);
+                        ((IntVector *)&stack0xffffffe4,(int)sVar9 + uVar5,sVar10 + iVar7,
+                         sVar11 + iVar8,(MethodInfo *)0x0);
               if (wo == (MVCubeModelBase *)0x0) {
                 func_?();
-                pcVar12 = (code *)swi(3);
-                bVar3 = (*pcVar12)();
+                pcVar13 = (code *)swi(3);
+                bVar3 = (*pcVar13)();
                 return bVar3;
               }
-              uVar13 = 0;
+              iVar14 = 0;
               uVar1 = 0;
               pos.y = 0;
               pos.z = 0;
-              pos.x = uVar2;
+              pos.x = uVar12;
               a = MVCubeModelBase::MVCubeModelBase_GetCube(wo,pos,(MethodInfo *)0x0);
               if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              uVar2 = 0;
-              uVar6 = 0;
-              pCVar4 = a;
+              iVar15 = 0;
+              uVar16 = 0;
+              uVar5 = 0;
+              pCVar2 = a;
               bVar3 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Inequality
                                 ((CubeBase *)a,(CubeBase *)0x0,(MethodInfo *)0x0);
               if (bVar3 != 0) {
-                uVar6 = CONCAT22(0,uVar1);
-                pCVar4 = (Cube *)&UNK_?;
-                cubePos.z = uVar13;
+                uVar5 = CONCAT22(0,uVar1);
+                puVar17 = &UNK_?;
+                cubePos.z = iVar14;
                 cubePos.x = uVar1;
                 cubePos.y = 0;
-                uVar2 = uVar13;
+                iVar15 = iVar14;
                 destructionState =
                      (MVCubeModelBase *)
                      RemoveCubes_RemoveCubesWithinRadius_CalculateCubeDestruction
@@ -955,28 +965,33 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius::
                 getPhysicalProperites =
                      (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)fineGrainedTerrain;
                 fineGrainedTerrain = wo;
-                testPosition.z = uVar2;
+                testPosition.z = iVar15;
                 bVar3 = RemoveCubes_RemoveCubesWithinRadius_RemoveCube
                                   ((RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum)
                                    destructionState,wo,fineGrainedTerrain_00,testPosition,
                                    (MethodInfo *)0x0);
-                uVar2 = uVar13 & 0xff;
+                pCVar2 = (Cube *)((uint)puVar17 & 0xff);
                 wo = destructionState;
+                iVar15 = iVar14;
                 if (bVar3 != 0) {
-                  uVar2 = 1;
+                  pCVar2 = (Cube *)0x1;
                 }
               }
-              iVar7 = iVar7 + 1;
-              pRVar5 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius;
-            } while (iVar7 < (TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->
-                             iterationBounds).z);
+              iVar7 = CONCAT22(uVar16,iVar15);
+              iVar8 = iVar8 + 1;
+              pRVar4 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields;
+            } while (iVar8 < (pRVar4->iterationBounds).z);
+            iVar7 = CONCAT22(uVar16,iVar15);
+            pRVar6 = TypeInfo__RemoveCubes__RemoveCubesWithinRadius;
           }
-          uVar6 = uVar6 + 1;
-        } while ((int)uVar6 < (int)(pRVar5->static_fields->iterationBounds).y);
+          pRVar4 = pRVar6->static_fields;
+          iVar7 = iVar7 + 1;
+        } while (iVar7 < (pRVar4->iterationBounds).y);
       }
-      bVar3 = (bool)uVar2;
-      pCVar4 = (Cube *)((int)&pCVar4->klass + 1);
-    } while ((int)pCVar4 < (int)(pRVar5->static_fields->iterationBounds).x);
+      bVar3 = (bool)pCVar2;
+      pRVar4 = pRVar6->static_fields;
+      uVar5 = uVar5 + 1;
+    } while ((int)uVar5 < (int)(pRVar4->iterationBounds).x);
   }
   return bVar3;
 }

@@ -18,7 +18,7 @@ Assembly-CSharp.dll::TargetRotation::TargetRotation_GetLerpRotation
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_LerpAngle
                     (a,fVar2,fVar4 * fVar3,(MethodInfo *)0x0);
   fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_LerpAngle
-                    (a_00,fVar5,fVar6 * (this->fields).lerpSpeedY,(MethodInfo *)0x0);
+                    (a_00,fVar5,(this->fields).lerpSpeedY * fVar6,(MethodInfo *)0x0);
   euler.y = fVar4 * _UNK_?;
   euler.x = fVar2 * _UNK_?;
   euler.z = 0.0;

@@ -19,18 +19,18 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   SubscribableVariable`1[UnityEngine::Quaternion]::
   SubscribableVariable_1_UnityEngine_Quaternion___ctor
             (this_01,value,pMVar1->klass->rgctx_data[10].method);
-  (this->fields)._.subscribableVariable = this_01;
-  func_?(&this->fields,this_01);
-  this_00 = (SubscribableVariableBase_1_UnityEngine_Quaternion_ *)
-            (this->fields)._.subscribableVariable;
+  pSVar3 = &this->fields;
+  (pSVar3->_).subscribableVariable = this_01;
+  func_?(pSVar3,this_01);
+  this_00 = (SubscribableVariableBase_1_UnityEngine_Quaternion_ *)(pSVar3->_).subscribableVariable;
   if (((uint)(pMVar1->klass->rgctx_data[0xc].klass)->vtable[0].methodPtr & 0x100) == 0) {
     func_?();
   }
   this_02 = (UnityAction_1_UnityEngine_Color_ *)func_?();
+  pIVar4 = pMVar1->klass->rgctx_data;
+  object = pIVar4[0xb].method;
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
-  UnityAction_1_UnityEngine_Color___ctor
-            (this_02,(Object *)this,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy,
-             pMVar1->klass->rgctx_data[0xd].method);
+  UnityAction_1_UnityEngine_Color___ctor(this_02,(Object *)object,object,pIVar4[0xd].method);
   if (this_00 != (SubscribableVariableBase_1_UnityEngine_Quaternion_ *)0x0) {
     SubscribableVariableBase`1[UnityEngine::Quaternion]::
     SubscribableVariableBase_1_UnityEngine_Quaternion__add_OnChange
@@ -39,8 +39,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

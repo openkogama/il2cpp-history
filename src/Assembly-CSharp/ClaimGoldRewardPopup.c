@@ -79,8 +79,8 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup::ClaimGoldRewardPopup_ClaimGold
                     UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                    );
     if (value != (Object *)0x0) {
-      value[1].klass = pOStack2;
       pOStack3 = value + 1;
+      pOStack3->klass = pOStack2;
       func_?();
       pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
@@ -220,7 +220,7 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup::ClaimGoldRewardPopup_OnClickClai
             if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
                 (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
               ppMVar7 = &(&(pIVar1->klass->vtable).RequestRewardedAd)
-                         [pIVar1->klass->interfaceOffsets[uVar5].offset].method;
+                         [pIVar4->interfaceOffsets[uVar5].offset].method;
               goto code_?;
             }
             uVar5 = uVar5 + 1;
@@ -321,8 +321,8 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup::ClaimGoldRewardPopup_OnClickClai
                     UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                    );
     if (value != (Object *)0x0) {
-      value[1].klass = pOStack2;
       pOStack3 = value + 1;
+      pOStack3->klass = pOStack2;
       func_?();
       pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);

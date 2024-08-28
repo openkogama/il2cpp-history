@@ -25,10 +25,6 @@ code_?:
     func_?();
 code_?:
     func_?();
-code_?:
-    func_?();
-code_?:
-    func_?();
   }
   else {
     pPVar2 = MVAvatar::MVAvatar_get_CurrentPickup((MVAvatar *)pMVar1,(MethodInfo *)0x0);
@@ -119,20 +115,27 @@ code_?:
         func_?();
         pAVar16 = TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>;
         pIVar17 = pAVar13->interfaceOffsets;
-        if (pIVar17 == (Il2CppRuntimeInterfaceOffsetPair *)0x0) goto code_?;
-        a_01 = pIVar17[0x2a].interfaceType;
-        object_00 = (pAVar13->_0).fields;
-        pAVar14 = (Action_3_Single_Object_ByteEnum_ *)func_?();
-        mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::
-        Action_3_Single_Object_ByteEnum___ctor
-                  (pAVar14,(Object *)object_00,
-                   MethodInfo__DamageIndicator__ShowDamage_float__MVPlayer__MV__Common__PlayerKilledByType_
-                   ,(MethodInfo *)0x0);
-        pDVar15 = mscorlib.dll::System::Delegate::Delegate_Combine
-                            ((Delegate *)a_01,(Delegate *)pAVar14,(MethodInfo *)0x0);
-        if (pDVar15 == (Delegate *)0x0) {
-          a_01->vtable[0x12].method = (MethodInfo *)0x0;
-code_?:
+        if (pIVar17 != (Il2CppRuntimeInterfaceOffsetPair *)0x0) {
+          a_01 = pIVar17[0x2a].interfaceType;
+          object_00 = (pAVar13->_0).fields;
+          pAVar14 = (Action_3_Single_Object_ByteEnum_ *)func_?();
+          mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::
+          Action_3_Single_Object_ByteEnum___ctor
+                    (pAVar14,(Object *)object_00,
+                     MethodInfo__DamageIndicator__ShowDamage_float__MVPlayer__MV__Common__PlayerKilledByType_
+                     ,(MethodInfo *)0x0);
+          pDVar15 = mscorlib.dll::System::Delegate::Delegate_Combine
+                              ((Delegate *)a_01,(Delegate *)pAVar14,(MethodInfo *)0x0);
+          if (pDVar15 == (Delegate *)0x0) {
+            a_01->vtable[0x12].method = (MethodInfo *)0x0;
+          }
+          else {
+            pMVar18 = (MethodInfo *)func_?();
+            if (pMVar18 == (MethodInfo *)0x0) goto code_?;
+            a_01->vtable[0x12].method = pMVar18;
+            iVar19 = func_?();
+            if (iVar19 == 0) goto code_?;
+          }
           func_?();
           this_01 = (pAVar16->_0).events;
           if (this_01 != (EventInfo *)0x0) {
@@ -146,14 +149,6 @@ code_?:
               return;
             }
           }
-          goto code_?;
-        }
-        pMVar18 = (MethodInfo *)func_?();
-        if (pMVar18 != (MethodInfo *)0x0) {
-          a_01->vtable[0x12].method = pMVar18;
-          iVar19 = func_?();
-          if (iVar19 != 0) goto code_?;
-          goto code_?;
         }
         goto code_?;
       }
@@ -217,10 +212,6 @@ code_?:
     func_?();
 code_?:
     func_?();
-code_?:
-    func_?();
-code_?:
-    func_?();
   }
   else {
     PickupItem::PickupItem_LeaveFirstPersonView(this_05,(MethodInfo *)0x0);
@@ -267,11 +258,11 @@ code_?:
                        void_MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>_bool__System__Collections__Generic__List<UnityEngine::MeshRenderer>_
                       );
             iVar3 = 0;
-            pLVar2 = (this->fields).vehiclesHiddenMeshRenderers;
-            while (pLVar2 != (List_1_UnityEngine_MeshRenderer_ *)0x0) {
-              if ((pLVar2->fields)._size <= iVar3) goto code_?;
-              this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                        (this->fields).vehiclesHiddenMeshRenderers;
+            this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                      (this->fields).vehiclesHiddenMeshRenderers;
+            while (this_02 !=
+                   (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+              if ((this_02->fields)._size <= iVar3) goto code_?;
               if ((this_02 ==
                    (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
                  (this_06 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
@@ -283,7 +274,8 @@ code_?:
               UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_shadowCastingMode
                         ((Renderer *)this_06,ShadowCastingMode__Enum_On,(MethodInfo *)0x0);
               iVar3 = iVar3 + 1;
-              pLVar2 = (this->fields).vehiclesHiddenMeshRenderers;
+              this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                        (this->fields).vehiclesHiddenMeshRenderers;
             }
           }
         }
@@ -347,41 +339,49 @@ code_?:
 code_?:
       func_?();
       object = _UNK_?;
-      if (_UNK_? == 0) goto code_?;
-      pDVar12 = *(Delegate **)(_UNK_? + 0x150);
-      iVar3 = _UNK_?;
-      pAVar11 = (Action_3_Single_Object_ByteEnum_ *)
-                func_?(
-                               TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>
-                               );
-      mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::Action_3_Single_Object_ByteEnum___ctor
-                (pAVar11,(Object *)object,
-                 MethodInfo__DamageIndicator__ShowDamage_float__MVPlayer__MV__Common__PlayerKilledByType_
-                 ,(MethodInfo *)0x0);
-      pDVar12 = mscorlib.dll::System::Delegate::Delegate_Remove
-                          (pDVar12,(Delegate *)pAVar11,(MethodInfo *)0x0);
-      if (pDVar12 == (Delegate *)0x0) {
-        *(undefined4 *)(iVar3 + 0x150) = 0;
-code_?:
+      if (_UNK_? != 0) {
+        pDVar12 = *(Delegate **)(_UNK_? + 0x150);
+        iVar3 = _UNK_?;
+        pAVar11 = (Action_3_Single_Object_ByteEnum_ *)
+                  func_?(
+                                 TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>
+                                 );
+        mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::
+        Action_3_Single_Object_ByteEnum___ctor
+                  (pAVar11,(Object *)object,
+                   MethodInfo__DamageIndicator__ShowDamage_float__MVPlayer__MV__Common__PlayerKilledByType_
+                   ,(MethodInfo *)0x0);
+        pDVar12 = mscorlib.dll::System::Delegate::Delegate_Remove
+                            (pDVar12,(Delegate *)pAVar11,(MethodInfo *)0x0);
+        if (pDVar12 == (Delegate *)0x0) {
+          *(undefined4 *)(iVar3 + 0x150) = 0;
+        }
+        else {
+          iVar13 = func_?();
+          if (iVar13 == 0) goto code_?;
+          *(int *)(iVar3 + 0x150) = iVar13;
+          iVar3 = func_?();
+          if (iVar3 == 0) goto code_?;
+        }
         func_?();
         if ((_UNK_? != (DamageIndicator *)0x0) &&
            (DamageIndicator::DamageIndicator_ResetIndicators(_UNK_?,(MethodInfo *)0x0),
-           pBVar13 = _UNK_?, _UNK_? != (Behaviour *)0x0)) {
-          bVar14 = 0;
+           pBVar14 = _UNK_?, _UNK_? != (Behaviour *)0x0)) {
+          bVar15 = 0;
           this = (FirstPersonCamera *)0x0;
           do {
-            pvVar15 = pBVar13[5].fields._._.m_CachedPtr;
-            if (pvVar15 == (void *)0x0) goto code_?;
-            if (*(uint *)((int)pvVar15 + 0xc) <= (uint)bVar14) goto code_?;
-            iVar3 = *(int *)((int)pvVar15 + (uint)bVar14 * 4 + 0x10);
+            pvVar16 = pBVar14[5].fields._._.m_CachedPtr;
+            if (pvVar16 == (void *)0x0) goto code_?;
+            if (*(uint *)((int)pvVar16 + 0xc) <= (uint)bVar15) goto code_?;
+            iVar3 = *(int *)((int)pvVar16 + (uint)bVar15 * 4 + 0x10);
             if ((iVar3 == 0) ||
                (this_03 = *(Behaviour **)(iVar3 + 0xc), this_03 == (Behaviour *)0x0))
             goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                       (this_03,0,(MethodInfo *)0x0);
-            bVar14 = this._3_1_ + 1;
-            this = (FirstPersonCamera *)((uint)bVar14 << 0x18);
-          } while (bVar14 < 3);
+            bVar15 = this._3_1_ + 1;
+            this = (FirstPersonCamera *)((uint)bVar15 << 0x18);
+          } while (bVar15 < 3);
           if ((((_UNK_? != (Behaviour *)0x0) &&
                (UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                           (_UNK_?,0,(MethodInfo *)0x0), _UNK_? != 0)) &&
@@ -391,10 +391,10 @@ code_?:
                (AvatarFader::AvatarFader_SetTransparency(this_04,0.0,(MethodInfo *)0x0),
                _UNK_? != 0)) &&
               ((*(int *)(_UNK_? + 0xe0) != 0 &&
-               (pBVar13 = *(Behaviour **)(*(int *)(_UNK_? + 0xe0) + 0x30),
-               pBVar13 != (Behaviour *)0x0)))))) {
+               (pBVar14 = *(Behaviour **)(*(int *)(_UNK_? + 0xe0) + 0x30),
+               pBVar14 != (Behaviour *)0x0)))))) {
             UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                      (pBVar13,1,(MethodInfo *)0x0);
+                      (pBVar14,1,(MethodInfo *)0x0);
             this_08 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
                                 ((MethodInfo *)0x0);
             if (this_08 != (MainCameraManager *)0x0) {
@@ -404,14 +404,6 @@ code_?:
             }
           }
         }
-        goto code_?;
-      }
-      iVar16 = func_?();
-      if (iVar16 != 0) {
-        *(int *)(iVar3 + 0x150) = iVar16;
-        iVar3 = func_?();
-        if (iVar3 != 0) goto code_?;
-        goto code_?;
       }
       goto code_?;
     }
@@ -423,6 +415,7 @@ code_?:
       goto code_?;
     }
   }
+code_?:
   func_?();
 code_?:
   func_?();
@@ -513,10 +506,9 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_HideBody
       if (pOVar2->max_length <= (uint)(int)sVar3) break;
       this_03 = (Renderer *)pOVar2->vector[sVar3];
       if (this_03 == (Renderer *)0x0) goto code_?;
-      if (((this_03->klass->_1).naturalAligment <
-           (TypeInfo__UnityEngine__Renderer->_1).naturalAligment) ||
-         ((this_03->klass->_1).typeHierarchy
-          [(TypeInfo__UnityEngine__Renderer->_1).naturalAligment - 1] !=
+      bVar4 = (TypeInfo__UnityEngine__Renderer->_1).naturalAligment;
+      if (((this_03->klass->_1).naturalAligment < bVar4) ||
+         ((this_03->klass->_1).typeHierarchy[bVar4 - 1] !=
           (Il2CppClass *)TypeInfo__UnityEngine__Renderer)) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_shadowCastingMode
                 (this_03,ShadowCastingMode__Enum_On,(MethodInfo *)0x0);
@@ -532,10 +524,9 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_HideBody
       if (pOVar2->max_length <= (uint)(int)sVar3) break;
       this_03 = (Renderer *)pOVar2->vector[sVar3];
       if (this_03 == (Renderer *)0x0) goto code_?;
-      if (((this_03->klass->_1).naturalAligment <
-           (TypeInfo__UnityEngine__Renderer->_1).naturalAligment) ||
-         ((this_03->klass->_1).typeHierarchy
-          [(TypeInfo__UnityEngine__Renderer->_1).naturalAligment - 1] !=
+      bVar4 = (TypeInfo__UnityEngine__Renderer->_1).naturalAligment;
+      if (((this_03->klass->_1).naturalAligment < bVar4) ||
+         ((this_03->klass->_1).typeHierarchy[bVar4 - 1] !=
           (Il2CppClass *)TypeInfo__UnityEngine__Renderer)) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_shadowCastingMode
                 (this_03,ShadowCastingMode__Enum_ShadowsOnly,(MethodInfo *)0x0);
@@ -546,8 +537,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 code_?:
   func_?(this_03,TypeInfo__UnityEngine__Renderer);
@@ -605,13 +596,13 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_HideVehicle
                    void_MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>_bool__System__Collections__Generic__List<UnityEngine::MeshRenderer>_
                   );
         iVar2 = 0;
-        pLVar1 = (this->fields).vehiclesHiddenMeshRenderers;
-        while (pLVar1 != (List_1_UnityEngine_MeshRenderer_ *)0x0) {
-          if ((pLVar1->fields)._size <= iVar2) {
+        this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                  (this->fields).vehiclesHiddenMeshRenderers;
+        while (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        {
+          if ((this_01->fields)._size <= iVar2) {
             return;
           }
-          this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                    (this->fields).vehiclesHiddenMeshRenderers;
           if ((this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
              || (this_02 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                            RegularExpressions::RegexCharClass+SingleRange]::
@@ -622,7 +613,8 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_HideVehicle
           UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_shadowCastingMode
                     ((Renderer *)this_02,ShadowCastingMode__Enum_ShadowsOnly,(MethodInfo *)0x0);
           iVar2 = iVar2 + 1;
-          pLVar1 = (this->fields).vehiclesHiddenMeshRenderers;
+          this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                    (this->fields).vehiclesHiddenMeshRenderers;
         }
       }
     }
@@ -675,9 +667,9 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_Initialize_1
                 this_00 = (this->fields).modifierIndicator;
                 if ((this_00 != (ModifierIndicator *)0x0) &&
                    (pMVar7 = (this->fields).localAvatar, pMVar7 != (MVAvatarLocal *)0x0)) {
-                  (this_00->fields).localInteractable =
-                       (MVInteractableBase *)(pMVar7->fields).interactableLocal;
-                  func_?(&(this_00->fields).localInteractable);
+                  ppMVar8 = &(this_00->fields).localInteractable;
+                  *ppMVar8 = (MVInteractableBase *)(pMVar7->fields).interactableLocal;
+                  func_?(ppMVar8);
                   UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                             ((Behaviour *)this_00,1,(MethodInfo *)0x0);
                   pMVar7 = (this->fields).localAvatar;
@@ -696,8 +688,8 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_Initialize_1
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -868,44 +860,43 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_Resume
     this_00 = MVAvatar::MVAvatar_get_CurrentPickup((MVAvatar *)pMVar1,(MethodInfo *)0x0);
     if (this_00 != (PickupItem *)0x0) {
       bVar2 = PickupItem::PickupItem_get_FirstPersonCapable(this_00,(MethodInfo *)0x0);
+      pAVar3 = TypeInfo__AvatarLocal;
       if (bVar2 == 0) {
         pMVar1 = (this->fields).localAvatar;
-        unaff_EDI = (Avatar *)0x0;
         if (pMVar1 != (MVAvatarLocal *)0x0) {
-          unaff_EDI = (pMVar1->fields)._.avatar;
-          if (unaff_EDI != (Avatar *)0x0) {
-            pAVar3 = TypeInfo__AvatarLocal;
-            if (((unaff_EDI->klass->_1).naturalAligment <
-                 (TypeInfo__AvatarLocal->_1).naturalAligment) ||
-               ((unaff_EDI->klass->_1).typeHierarchy
-                [(TypeInfo__AvatarLocal->_1).naturalAligment - 1] !=
+          pAVar4 = (pMVar1->fields)._.avatar;
+          unaff_EDI = pAVar3;
+          if (pAVar4 != (Avatar *)0x0) {
+            bVar5 = (TypeInfo__AvatarLocal->_1).naturalAligment;
+            if (((pAVar4->klass->_1).naturalAligment < bVar5) ||
+               ((pAVar4->klass->_1).typeHierarchy[bVar5 - 1] !=
                 (Il2CppClass *)TypeInfo__AvatarLocal)) goto code_?;
-            pAVar4 = unaff_EDI[1].klass;
-            uVar5 = (*(code *)(this->klass->vtable).get_CameraType.method)
-                              (this,(this->klass->vtable).Awake.methodPtr);
-            if (pAVar4 != (Avatar__Class *)0x0) {
-              pIVar6 = (pAVar4->_0).image;
-              uVar7 = 0;
-              uVar8 = *(ushort *)((int)&pIVar6[4].nameNoExt + 2);
-              pAStack9 = pAVar4;
-              if (uVar8 != 0) {
+            pAVar6 = pAVar4[1].klass;
+            uVar7 = (*(code *)(this->klass->vtable).get_CameraType.method)
+                               (this,(this->klass->vtable).Awake.methodPtr);
+            if (pAVar6 != (Avatar__Class *)0x0) {
+              pIVar8 = (pAVar6->_0).image;
+              uVar9 = 0;
+              uVar10 = *(ushort *)((int)&pIVar8[4].nameNoExt + 2);
+              pAStack11 = pAVar6;
+              if (uVar10 != 0) {
+                pcVar12 = pIVar8[2].name;
                 do {
-                  if (*(IAvatarCameraController__Class **)(pIVar6[2].name + (uint)uVar7 * 8) ==
+                  if (*(IAvatarCameraController__Class **)(pcVar12 + (uint)uVar9 * 8) ==
                       TypeInfo__IAvatarCameraController) {
-                    pIVar6 = (pAVar4->_0).image;
-                    pIStack10 = (IAvatarCameraController__Class *)uVar5;
-                    (*(code *)(&pIVar6[5].customAttributeCount)
-                              [*(int *)(pIVar6[2].name + (uint)uVar7 * 8 + 4) * 2])();
+                    pIStack13 = (IAvatarCameraController__Class *)uVar7;
+                    (*(code *)(&(pAVar6->_0).image[5].customAttributeCount)
+                              [*(int *)(pcVar12 + (uint)uVar9 * 8 + 4) * 2])();
                     return;
                   }
-                  uVar7 = uVar7 + 1;
-                } while (uVar7 < uVar8);
+                  uVar9 = uVar9 + 1;
+                } while (uVar9 < uVar10);
               }
-              pIStack10 = TypeInfo__IAvatarCameraController;
-              puVar11 = (undefined4 *)func_?();
-              pAStack9 = pAVar4;
-              pIStack10 = (IAvatarCameraController__Class *)uVar5;
-              (*(code *)*puVar11)();
+              pIStack13 = TypeInfo__IAvatarCameraController;
+              puVar14 = (undefined4 *)func_?();
+              pAStack11 = pAVar6;
+              pIStack13 = (IAvatarCameraController__Class *)uVar7;
+              (*(code *)*puVar14)();
               return;
             }
           }
@@ -914,11 +905,11 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_Resume
       else {
         FirstPersonCamera_Initialize_1(this,(MethodInfo *)0x0);
         FirstPersonCamera_ActivateFirstPerson(this,(MethodInfo *)0x0);
-        pMVar12 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0)
-        ;
-        if (pMVar12 != (MainCameraManager *)0x0) {
-          pIStack10 = (IAvatarCameraController__Class *)(pMVar12->fields).protectedTransform;
-          pAStack9 = (Avatar__Class *)cameraController;
+        pMVar15 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                            ((MethodInfo *)0x0);
+        if (pMVar15 != (MainCameraManager *)0x0) {
+          pIStack13 = (IAvatarCameraController__Class *)(pMVar15->fields).protectedTransform;
+          pAStack11 = (Avatar__Class *)cameraController;
           (*(code *)(this->klass->vtable).UpdateCamera.method)();
           return;
         }
@@ -926,11 +917,11 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_Resume
     }
   }
   func_?();
-  pAVar3 = extraout_EDX;
+  pAVar4 = extraout_EDX;
 code_?:
-  func_?(unaff_EDI,pAVar3);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  func_?(pAVar4,unaff_EDI);
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -985,13 +976,13 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_ShowVehicle
                    void_MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>_bool__System__Collections__Generic__List<UnityEngine::MeshRenderer>_
                   );
         iVar2 = 0;
-        pLVar1 = (this->fields).vehiclesHiddenMeshRenderers;
-        while (pLVar1 != (List_1_UnityEngine_MeshRenderer_ *)0x0) {
-          if ((pLVar1->fields)._size <= iVar2) {
+        this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                  (this->fields).vehiclesHiddenMeshRenderers;
+        while (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        {
+          if ((this_01->fields)._size <= iVar2) {
             return;
           }
-          this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                    (this->fields).vehiclesHiddenMeshRenderers;
           if ((this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
              || (this_02 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                            RegularExpressions::RegexCharClass+SingleRange]::
@@ -1002,7 +993,8 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_ShowVehicle
           UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_shadowCastingMode
                     ((Renderer *)this_02,ShadowCastingMode__Enum_On,(MethodInfo *)0x0);
           iVar2 = iVar2 + 1;
-          pLVar1 = (this->fields).vehiclesHiddenMeshRenderers;
+          this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                    (this->fields).vehiclesHiddenMeshRenderers;
         }
       }
     }
@@ -1100,13 +1092,13 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_UpdateCamera
                             ((Component *)this,(MethodInfo *)0x0);
         if (pTVar4 == (Transform *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
-                  ((Quaternion *)&stack0xffffffdc,pTVar4,(MethodInfo *)0x0);
+                  ((Quaternion *)&stack0xffffffd0,pTVar4,(MethodInfo *)0x0);
         iVar5 = func_?();
         auVar6._4_8_ = 0;
         auVar6._0_4_ = *(float *)(iVar5 + 4) * _UNK_?;
         pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                   Quaternion_Internal_FromEulerRad
-                            ((Quaternion *)&stack0xffffffdc,(Vector3)(auVar6 << 0x20),
+                            ((Quaternion *)&stack0xffffffd0,(Vector3)(auVar6 << 0x20),
                              (MethodInfo *)0x0);
         if (pTVar3 == (Transform *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
@@ -1123,7 +1115,7 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_UpdateCamera
           (pMVar8 = (pMVar1->fields)._.body, pMVar8 != (MVBody *)0x0)) &&
          (pTVar4 = (pMVar8->fields)._._._.transform, pTVar4 != (Transform *)0x0)) {
         pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0xfffffff0,pTVar4,(MethodInfo *)0x0);
+                            ((Vector3 *)&stack0xffffffd4,pTVar4,(MethodInfo *)0x0);
         uVar10 = pVVar9->x;
         uVar11 = pVVar9->y;
         uVar12 = (this->fields).cameraOffset.x;
@@ -1140,7 +1132,7 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_UpdateCamera
             FirstPersonWeaponBob::FirstPersonWeaponBob_Update(this_00,(MethodInfo *)0x0);
             MVCameraBase::MVCameraBase_UpdateCamera
                       ((MVCameraBase *)this,(MVCameraController *)&UNK_?,
-                       (ProtectedTransform *)pTVar3,(MethodInfo *)0x0);
+                       (ProtectedTransform *)this,(MethodInfo *)0x0);
             return;
           }
         }
@@ -1168,24 +1160,23 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_UpdateCameraPosit
       (pMVar2 = (pMVar1->fields)._.body, pMVar2 != (MVBody *)0x0)) &&
      (this_00 = (pMVar2->fields)._._._.transform, this_00 != (Transform *)0x0)) {
     pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       (&VStack_4,this_00,(MethodInfo *)0x0);
-    uVar5 = pVVar3->x;
-    uVar6 = pVVar3->y;
-    VStack_4.x = (this->fields).cameraOffset.x;
-    VStack_4.y = (this->fields).cameraOffset.y;
-    VStack_4.z = (this->fields).cameraOffset.z;
+                       ((Vector3 *)&stack0xffffffd8,this_00,(MethodInfo *)0x0);
+    uVar4 = pVVar3->x;
+    uVar5 = pVVar3->y;
+    uVar6 = (this->fields).cameraOffset.x;
+    uVar7 = (this->fields).cameraOffset.y;
     if (this_01 != (Transform *)0x0) {
-      value.y = (float)uVar6 + VStack_4.y;
-      value.x = VStack_4.x + (float)uVar5;
-      value.z = VStack_4.z + pVVar3->z;
+      value.y = (float)uVar5 + (float)uVar7;
+      value.x = (float)uVar6 + (float)uVar4;
+      value.z = (this->fields).cameraOffset.z + pVVar3->z;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                 (this_01,value,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1221,8 +1212,9 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera__ctor
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
             (this_00,0x20,
              MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__List_int_);
-  (this->fields).vehiclesHiddenMeshRenderers = (List_1_UnityEngine_MeshRenderer_ *)this_00;
-  func_?(&(this->fields).vehiclesHiddenMeshRenderers,this_00);
+  ppLVar2 = &(this->fields).vehiclesHiddenMeshRenderers;
+  *ppLVar2 = (List_1_UnityEngine_MeshRenderer_ *)this_00;
+  func_?(ppLVar2,this_00);
   (this->fields)._.cameraRadius = 0.3;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

@@ -5,8 +5,8 @@ void Assembly-CSharp.dll::GameEventManager::GameEventManager_NotifyFirstTimeEven
                (GameEventManager *this,FirstTimeEvent__Enum firstTimeEvent,MethodInfo *method)
 
 {
-  if ((this->fields).OnFirstTimeEvent != (Action_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
-    pAVar1 = (this->fields).OnFirstTimeEvent;
+  pAVar1 = (this->fields).OnFirstTimeEvent;
+  if (pAVar1 != (Action_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,firstTimeEvent,(pAVar1->fields)._._.method);
   }
@@ -30,8 +30,9 @@ void Assembly-CSharp.dll::GameEventManager::GameEventManager__ctor
   value = (GameEventManager_AvatarCommandsPlayModeManager *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (this->fields).AvatarCommandsPlayMode = value;
-  func_?(&(this->fields).AvatarCommandsPlayMode,value);
+  ppGVar1 = &(this->fields).AvatarCommandsPlayMode;
+  *ppGVar1 = value;
+  func_?(ppGVar1,value);
   value_00 = (GameEventManager_AvatarCommandsBuildModeManager *)
              func_?(TypeInfo__GameEventManager__AvatarCommandsBuildModeManager);
   if (cRam_? == '\0') {
@@ -44,13 +45,14 @@ void Assembly-CSharp.dll::GameEventManager::GameEventManager__ctor
              func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)value_01,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  pMVar1 = (MethodInfo *)&(value_00->fields).LaserCommands;
-  (value_00->fields).LaserCommands = value_01;
-  func_?(pMVar1,value_01);
+  pMVar2 = (MethodInfo *)&(value_00->fields).LaserCommands;
+  *(GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager **)pMVar2 = value_01;
+  func_?(pMVar2,value_01);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)value_00,ExceptionArgument__Enum_obj,pMVar1);
-  (this->fields).AvatarCommandsBuildMode = value_00;
-  func_?(&(this->fields).AvatarCommandsBuildMode,value_00);
+            ((Object *)value_00,ExceptionArgument__Enum_obj,pMVar2);
+  ppGVar3 = &(this->fields).AvatarCommandsBuildMode;
+  *ppGVar3 = value_00;
+  func_?(ppGVar3,value_00);
   value_02 = (GameEventManager_GameStateManager *)
              func_?(TypeInfo__GameEventManager__GameStateManager);
   if (cRam_? == '\0') {
@@ -64,17 +66,16 @@ void Assembly-CSharp.dll::GameEventManager::GameEventManager__ctor
             (this_00,0,
              MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
             );
-  pMVar1 = (MethodInfo *)&(value_02->fields).gameStateType;
-  (value_02->fields).gameStateType =
-       (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)this_00;
+  pMVar2 = (MethodInfo *)&(value_02->fields).gameStateType;
+  *(GameEventManager_GameEventSubscribableVariable_1_System_Int32Enum_ **)pMVar2 = this_00;
   func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)value_02,ExceptionArgument__Enum_obj,pMVar1);
-  pMVar1 = (MethodInfo *)&(this->fields).GameState;
-  (this->fields).GameState = value_02;
-  func_?(pMVar1,value_02);
+            ((Object *)value_02,ExceptionArgument__Enum_obj,pMVar2);
+  pMVar2 = (MethodInfo *)&(this->fields).GameState;
+  *(GameEventManager_GameStateManager **)pMVar2 = value_02;
+  func_?(pMVar2,value_02);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);
+            ((Object *)this,ExceptionArgument__Enum_obj,pMVar2);
   return;
 }
 
@@ -90,27 +91,27 @@ void Assembly-CSharp.dll::GameEventManager::GameEventManager_add_OnFirstTimeEven
     func_?(&TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>);
     cRam_? = '\x01';
   }
-  a = (this->fields).OnFirstTimeEvent;
+  ppAVar1 = &(this->fields).OnFirstTimeEvent;
+  a = *ppAVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,
+    pAVar3 = TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>;
+    iVar4 = 0;
+    if (pDVar2 != (Delegate *)0x0) {
+      iVar4 = func_?(pDVar2,
                               TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (iVar4 == 0) {
+        func_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-             func_?(&(this->fields).OnFirstTimeEvent,iVar3,a);
-    bVar6 = pAVar5 != a;
-    a = pAVar5;
-  } while (bVar6);
+    pAVar6 = (Action_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)func_?(ppAVar1,iVar4,a);
+    bVar7 = pAVar6 != a;
+    a = pAVar6;
+  } while (bVar7);
   return;
 }
 
@@ -125,25 +126,26 @@ void Assembly-CSharp.dll::GameEventManager::GameEventManager_add_OnXPRewarded
     func_?(&TypeInfo__System__Action<int>);
     cRam_? = '\x01';
   }
-  a = (this->fields).OnXPRewarded;
+  ppAVar1 = &(this->fields).OnXPRewarded;
+  a = *ppAVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<int>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<int>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<int>;
+    iVar4 = 0;
+    if (pDVar2 != (Delegate *)0x0) {
+      iVar4 = func_?(pDVar2,TypeInfo__System__Action<int>);
+      if (iVar4 == 0) {
+        func_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_Int32_ *)func_?(&(this->fields).OnXPRewarded,iVar3,a);
-    bVar6 = pAVar5 != a;
-    a = pAVar5;
-  } while (bVar6);
+    pAVar6 = (Action_1_Int32_ *)func_?(ppAVar1,iVar4,a);
+    bVar7 = pAVar6 != a;
+    a = pAVar6;
+  } while (bVar7);
   return;
 }
 
@@ -159,27 +161,28 @@ void Assembly-CSharp.dll::GameEventManager::GameEventManager_remove_OnFirstTimeE
     func_?(&TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>);
     cRam_? = '\x01';
   }
-  source = (this->fields).OnFirstTimeEvent;
+  ppAVar1 = &(this->fields).OnFirstTimeEvent;
+  source = *ppAVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,
+    pAVar3 = TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>;
+    iVar4 = 0;
+    if (pDVar2 != (Delegate *)0x0) {
+      iVar4 = func_?(pDVar2,
                               TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeEvent>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (iVar4 == 0) {
+        func_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-             func_?(&(this->fields).OnFirstTimeEvent,iVar3,source);
-    bVar6 = pAVar5 != source;
-    source = pAVar5;
-  } while (bVar6);
+    pAVar6 = (Action_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)
+             func_?(ppAVar1,iVar4,source);
+    bVar7 = pAVar6 != source;
+    source = pAVar6;
+  } while (bVar7);
   return;
 }
 
@@ -194,25 +197,26 @@ void Assembly-CSharp.dll::GameEventManager::GameEventManager_remove_OnXPRewarded
     func_?(&TypeInfo__System__Action<int>);
     cRam_? = '\x01';
   }
-  source = (this->fields).OnXPRewarded;
+  ppAVar1 = &(this->fields).OnXPRewarded;
+  source = *ppAVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<int>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<int>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<int>;
+    iVar4 = 0;
+    if (pDVar2 != (Delegate *)0x0) {
+      iVar4 = func_?(pDVar2,TypeInfo__System__Action<int>);
+      if (iVar4 == 0) {
+        func_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_Int32_ *)func_?(&(this->fields).OnXPRewarded,iVar3,source);
-    bVar6 = pAVar5 != source;
-    source = pAVar5;
-  } while (bVar6);
+    pAVar6 = (Action_1_Int32_ *)func_?(ppAVar1,iVar4,source);
+    bVar7 = pAVar6 != source;
+    source = pAVar6;
+  } while (bVar7);
   return;
 }
 

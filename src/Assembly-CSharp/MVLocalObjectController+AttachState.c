@@ -89,10 +89,10 @@ void Assembly-CSharp.dll::MVLocalObjectController+AttachState::
     pMVar3 = TransformNetworkManager::TransformNetworkManager_GetNetworkObject
                        (pTVar2,worldObjectID,(MethodInfo *)0x0);
     if (pMVar3 != (MVNetworkObject *)0x0) {
-      if (((TypeInfo__MVNetworkReporter->_1).naturalAligment <= (pMVar3->klass->_1).naturalAligment)
-         && ((pMVar3->klass->_1).typeHierarchy
-             [(TypeInfo__MVNetworkReporter->_1).naturalAligment - 1] ==
-             (Il2CppClass *)TypeInfo__MVNetworkReporter)) {
+      bVar4 = (TypeInfo__MVNetworkReporter->_1).naturalAligment;
+      if ((bVar4 <= (pMVar3->klass->_1).naturalAligment) &&
+         ((pMVar3->klass->_1).typeHierarchy[bVar4 - 1] == (Il2CppClass *)TypeInfo__MVNetworkReporter
+         )) {
         pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((pMVar1 == (MVNetworkGame *)0x0) ||
            (pTVar2 = (pMVar1->fields).transformNetworkManager,
@@ -107,8 +107,8 @@ void Assembly-CSharp.dll::MVLocalObjectController+AttachState::
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

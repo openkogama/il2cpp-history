@@ -11,17 +11,16 @@ int32_t Assembly-CSharp.dll::ImpactState+ImpactDamageRuntimeEventType::
     cRam_? = '\x01';
   }
   if (obj != (Object *)0x0) {
-    if (((TypeInfo__ImpactState__ImpactDamageRuntimeEventType->_1).naturalAligment <=
-         (obj->klass->_1).naturalAligment) &&
-       ((obj->klass->_1).typeHierarchy
-        [(TypeInfo__ImpactState__ImpactDamageRuntimeEventType->_1).naturalAligment - 1] ==
+    bVar1 = (TypeInfo__ImpactState__ImpactDamageRuntimeEventType->_1).naturalAligment;
+    if ((bVar1 <= (obj->klass->_1).naturalAligment) &&
+       ((obj->klass->_1).typeHierarchy[bVar1 - 1] ==
         (Il2CppClass *)TypeInfo__ImpactState__ImpactDamageRuntimeEventType)) {
-      iVar1 = mscorlib.dll::System::Single::Single_CompareTo_1
+      iVar2 = mscorlib.dll::System::Single::Single_CompareTo_1
                         ((Single *)&this->fields,(float)obj[1].klass,(MethodInfo *)0x0);
-      return iVar1;
+      return iVar2;
     }
-    uVar2 = func_?(&TypeInfo__System__ArgumentException);
-    this_00 = (ArgumentException *)func_?(uVar2);
+    uVar3 = func_?(&TypeInfo__System__ArgumentException);
+    this_00 = (ArgumentException *)func_?(uVar3);
     method_00 = (MethodInfo *)0x0;
     message = (String *)func_?(&StringLiteral_Object_is_not_a_ImpactDamageRunt);
     mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1(this_00,message,method_00);
@@ -29,9 +28,9 @@ int32_t Assembly-CSharp.dll::ImpactState+ImpactDamageRuntimeEventType::
                     MethodInfo__ImpactState__ImpactDamageRuntimeEventType__CompareTo_System__Object_
                    );
     func_?(this_00);
-    pcVar3 = (code *)swi(3);
-    iVar1 = (*pcVar3)();
-    return iVar1;
+    pcVar4 = (code *)swi(3);
+    iVar2 = (*pcVar4)();
+    return iVar2;
   }
   return 1;
 }

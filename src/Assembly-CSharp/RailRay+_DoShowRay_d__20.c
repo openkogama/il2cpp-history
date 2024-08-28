@@ -88,8 +88,9 @@ code_?:
                              ((MethodInfo *)0x0);
           (pRVar1->fields)._t_5__4 = fVar5 + (float)this;
           pOVar15 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff8);
-          (pRVar1->fields).__2__current = pOVar15;
-          func_?(&(pRVar1->fields).__2__current,pOVar15);
+          ppOVar16 = &(pRVar1->fields).__2__current;
+          *ppOVar16 = pOVar15;
+          func_?(ppOVar16,pOVar15);
           (pRVar1->fields).__1__state = 1;
           return 1;
         }
@@ -109,13 +110,14 @@ code_?:
   }
   if ((this_00 != (RailRay *)0x0) &&
      (this_01 = (this_00->fields).particles, this_01 != (ParticleSystem *)0x0)) {
-    bVar16 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+    bVar17 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
              ParticleSystem_get_isPlaying(this_01,(MethodInfo *)0x0);
-    if (bVar16 != 0) {
+    if (bVar17 != 0) {
       this = (RailRay_DoShowRay_d_20 *)0x0;
       pOVar15 = (Object *)func_?(TypeInfo__System__Int32,&this);
-      (pRVar1->fields).__2__current = pOVar15;
-      func_?(&(pRVar1->fields).__2__current,pOVar15);
+      ppOVar16 = &(pRVar1->fields).__2__current;
+      *ppOVar16 = pOVar15;
+      func_?(ppOVar16,pOVar15);
       (pRVar1->fields).__1__state = 2;
       return 1;
     }
@@ -123,25 +125,26 @@ code_?:
       func_?(&TypeInfo__PrefabPool);
       cRam_? = '\x01';
     }
-    pPVar17 = TypeInfo__PrefabPool->static_fields->instance;
-    if (((pPVar17 != (PrefabPool *)0x0) &&
-        (pEVar18 = (pPVar17->fields).enumPoolManager, pEVar18 != (EnumPoolManager *)0x0)) &&
-       (pPVar19 = (pEVar18->fields).lookupTable, pPVar19 != (Pool__Array *)0x0)) {
-      uVar20 = (this_00->fields).railEnumType;
-      if (uVar20 < pPVar19->max_length) {
-        pPVar21 = pPVar19->vector[uVar20];
-        if (pPVar21 != (Pool *)0x0) {
+    pPVar18 = TypeInfo__PrefabPool->static_fields->instance;
+    if (((pPVar18 != (PrefabPool *)0x0) &&
+        (pEVar19 = (pPVar18->fields).enumPoolManager, pEVar19 != (EnumPoolManager *)0x0)) &&
+       (pPVar20 = (pEVar19->fields).lookupTable, pPVar20 != (Pool__Array *)0x0)) {
+      uVar21 = (this_00->fields).railEnumType;
+      if (uVar21 < pPVar20->max_length) {
+        pRVar1 = (RailRay_DoShowRay_d_20 *)pPVar20->vector[uVar21];
+        this = pRVar1;
+        if (pRVar1 != (RailRay_DoShowRay_d_20 *)0x0) {
           if (cRam_? == '\0') {
             func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
             func_?(&TypeInfo__UnityEngine__Object);
             cRam_? = '\x01';
           }
-          pMVar22 = (pPVar21->fields).pool;
-          uVar20 = 0;
+          pMVar22 = (MonoBehaviour__Array *)(pRVar1->fields).hit.z;
+          uVar21 = 0;
           if (pMVar22 != (MonoBehaviour__Array *)0x0) {
-            this = (RailRay_DoShowRay_d_20 *)0x10;
+            iVar6 = 0x10;
             do {
-              if ((int)pMVar22->max_length <= (int)uVar20) {
+              if ((int)pMVar22->max_length <= (int)uVar21) {
                 pGVar23 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                           Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
                 if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -151,16 +154,15 @@ code_?:
                           ((Object_1 *)pGVar23,(MethodInfo *)0x0);
                 return 0;
               }
-              pMVar22 = (pPVar21->fields).pool;
               if (pMVar22 == (MonoBehaviour__Array *)0x0) break;
-              if (pMVar22->max_length <= uVar20) goto code_?;
-              x = *(Object_1 **)((int)&this->klass + (int)pMVar22);
+              if (pMVar22->max_length <= uVar21) goto code_?;
+              x = *(Object_1 **)((int)pMVar22->vector + iVar6 + -0x10);
               if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__UnityEngine__Object);
               }
-              bVar16 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+              bVar17 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                                  (x,(Object_1 *)this_00,(MethodInfo *)0x0);
-              if (bVar16 != 0) {
+              if (bVar17 != 0) {
                 pGVar23 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                           Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
                 if (pGVar23 != (GameObject *)0x0) {
@@ -168,12 +170,13 @@ code_?:
                             (pGVar23,0,(MethodInfo *)0x0);
                   pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                             Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
+                  pRVar1 = this;
                   if (pTVar7 != (Transform *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                              (pTVar7,(pPVar21->fields).parent,(MethodInfo *)0x0);
-                    pLVar24 = (pPVar21->fields).available;
-                    if (pLVar24 != (List_1_System_Int32_ *)0x0) {
-                      func_?(pLVar24,uVar20,
+                              (pTVar7,(Transform *)(this->fields).hit.x,(MethodInfo *)0x0);
+                    fVar5 = (pRVar1->fields).hit.y;
+                    if (fVar5 != 0.0) {
+                      func_?(fVar5,uVar21,
                                       MethodInfo__System__Collections__Generic__List<int>__Add_int_)
                       ;
                       return 0;
@@ -182,9 +185,9 @@ code_?:
                 }
                 break;
               }
-              uVar20 = uVar20 + 1;
-              pMVar22 = (pPVar21->fields).pool;
-              this = (RailRay_DoShowRay_d_20 *)&this->monitor;
+              uVar21 = uVar21 + 1;
+              iVar6 = iVar6 + 4;
+              pMVar22 = (MonoBehaviour__Array *)(this->fields).hit.z;
             } while (pMVar22 != (MonoBehaviour__Array *)0x0);
           }
         }
@@ -197,9 +200,9 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar25 = (code *)swi(3);
-  bVar16 = (*pcVar25)();
-  return bVar16;
+  pcVar24 = (code *)swi(3);
+  bVar17 = (*pcVar24)();
+  return bVar17;
 }
 
 

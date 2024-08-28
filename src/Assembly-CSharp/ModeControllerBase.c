@@ -60,38 +60,35 @@ void Assembly-CSharp.dll::ModeControllerBase::ModeControllerBase_HandleFpsShortc
     if (bVar1 != 0) {
       if (cRam_? == '\0') {
         func_?();
-        this = (ModeControllerBase *)&TypeInfo__UnityEngine__Object;
         func_?();
         cRam_? = '\x01';
       }
-      pGVar2 = (this->fields).fpsCounter;
+      pOVar2 = unaff_ESI[1].fields._.m_CachedPtr;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__UnityEngine__Object);
       }
       bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pGVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+                        (pOVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
       if (bVar1 == 0) {
-        pGVar2 = (this->fields).fpsCounterPrefab;
+        pOVar3 = (Object *)unaff_ESI[1].monitor;
         parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)this,(MethodInfo *)0x0);
+                           (unaff_ESI,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pGVar2 = (GameObject *)
-                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                           ((Object *)pGVar2,parent,0,
+        pOVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                           (pOVar3,parent,0,
                             UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Transform__bool_
                            );
-        (this->fields).fpsCounter = pGVar2;
+        unaff_ESI[1].fields._.m_CachedPtr = pOVar3;
         func_?();
         return;
       }
-      pGVar2 = (this->fields).fpsCounter;
+      pOVar2 = unaff_ESI[1].fields._.m_CachedPtr;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                ((Object_1 *)pGVar2,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1(pOVar2,(MethodInfo *)0x0);
     }
   }
   return;
@@ -131,12 +128,13 @@ void Assembly-CSharp.dll::ModeControllerBase::ModeControllerBase_ToggleFps
     cRam_? = '\x01';
   }
   pGVar1 = (this->fields).fpsCounter;
+  ppGVar2 = &(this->fields).fpsCounter;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
+  if (bVar3 == 0) {
     pGVar1 = (this->fields).fpsCounterPrefab;
     parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
@@ -148,11 +146,11 @@ void Assembly-CSharp.dll::ModeControllerBase::ModeControllerBase_ToggleFps
                        ((Object *)pGVar1,parent,0,
                         UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Transform__bool_
                        );
-    (this->fields).fpsCounter = pGVar1;
-    func_?(&(this->fields).fpsCounter);
+    *ppGVar2 = pGVar1;
+    func_?(ppGVar2);
     return;
   }
-  pGVar1 = (this->fields).fpsCounter;
+  pGVar1 = *ppGVar2;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }

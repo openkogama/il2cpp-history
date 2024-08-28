@@ -32,88 +32,89 @@ void Assembly-CSharp.dll::GUICellCursor::GUICellCursor_Awake(GUICellCursor *this
           UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
                     ((Renderer *)pMVar1,(this->fields).material,(MethodInfo *)0x0);
           pMVar1 = (this->fields).meshRenderer;
-          if ((pMVar1 != (MeshRenderer *)0x0) &&
-             (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                  ((Renderer *)pMVar1,(MethodInfo *)0x0), this_01 != (Material *)0x0
-             )) {
-            pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector
-                               ((Vector4 *)&stack0xffffffd8,this_01,StringLiteral__Color,
-                                (MethodInfo *)0x0);
-            fVar3 = pVVar2->w;
-            (this->fields).baseAlpha = fVar3;
-            (this->fields).currentAlpha = fVar3;
-            if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            pVVar4 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
-                               ((MethodInfo *)0x0);
-            if (pVVar4 != (Vector3__Array *)0x0) {
-              pVVar4 = (Vector3__Array *)func_?();
-              uVar5 = 0;
-              iVar6 = 0;
-              while( true ) {
-                if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?();
-                }
-                pVVar7 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
-                                   ((MethodInfo *)0x0);
-                if (pVVar7 == (Vector3__Array *)0x0) goto code_?;
-                if ((int)pVVar7->max_length <= (int)uVar5) {
-                  if ((this->fields).lineMesh != 0) {
-                    pMVar8 = (this->fields).meshFilter;
-                    if (pMVar8 == (MeshFilter *)0x0) goto code_?;
-                    pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
-                             MeshFilter_get_mesh(pMVar8,(MethodInfo *)0x0);
-                    fVar3 = (this->fields).lineWidth;
-                    if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-                      func_?();
-                    }
-                    SharedCubeFunctions::SharedCubeFunctions_AddCubeMeshCubeLines
-                              (pMVar9,pVVar4,fVar3,(MethodInfo *)0x0);
-                  }
-                  if ((this->fields).cubeMesh != 0) {
-                    pMVar8 = (this->fields).meshFilter;
-                    if (pMVar8 == (MeshFilter *)0x0) goto code_?;
-                    pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
-                             MeshFilter_get_mesh(pMVar8,(MethodInfo *)0x0);
-                    if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-                      func_?();
-                    }
-                    SharedCubeFunctions::SharedCubeFunctions_AddCubeMesh
-                              (pMVar9,pVVar4,0,(MethodInfo *)0x0);
-                  }
-                  if ((this->fields).invertedCubeMesh != 0) {
-                    pMVar8 = (this->fields).meshFilter;
-                    if (pMVar8 == (MeshFilter *)0x0) goto code_?;
-                    pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
-                             MeshFilter_get_mesh(pMVar8,(MethodInfo *)0x0);
-                    if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-                      func_?();
-                    }
-                    SharedCubeFunctions::SharedCubeFunctions_AddCubeMesh
-                              (pMVar9,pVVar4,1,(MethodInfo *)0x0);
-                  }
-                  return;
-                }
-                if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?();
-                }
-                pVVar7 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
-                                   ((MethodInfo *)0x0);
-                if (pVVar7 == (Vector3__Array *)0x0) goto code_?;
-                if (pVVar7->max_length <= uVar5) break;
-                uVar10 = *(undefined8 *)((int)&pVVar7->vector[0].x + iVar6);
-                fVar3 = (this->fields).scale;
-                fVar11 = *(float *)((int)&pVVar7->vector[0].z + iVar6);
-                if (pVVar4 == (Vector3__Array *)0x0) goto code_?;
-                if (pVVar4->max_length <= uVar5) break;
-                uVar5 = uVar5 + 1;
-                *(ulonglong *)((int)&pVVar4->vector[0].x + iVar6) =
-                     CONCAT44((float)((ulonglong)uVar10 >> 0x20) * fVar3,(float)uVar10 * fVar3);
-                *(float *)((int)&pVVar4->vector[0].z + iVar6) = fVar11 * fVar3;
-                iVar6 = iVar6 + 0xc;
+          if (pMVar1 != (MeshRenderer *)0x0) {
+            this_01 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                ((Renderer *)pMVar1,(MethodInfo *)0x0);
+            if (this_01 != (Material *)0x0) {
+              pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector
+                                 ((Vector4 *)&stack0xffffffdc,this_01,StringLiteral__Color,
+                                  (MethodInfo *)0x0);
+              fVar3 = pVVar2->w;
+              (this->fields).baseAlpha = fVar3;
+              (this->fields).currentAlpha = fVar3;
+              if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
               }
-              goto code_?;
+              pVVar4 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
+                                 ((MethodInfo *)0x0);
+              if (pVVar4 != (Vector3__Array *)0x0) {
+                pVVar4 = (Vector3__Array *)func_?();
+                uVar5 = 0;
+                iVar6 = 0;
+                while( true ) {
+                  if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
+                    func_?();
+                  }
+                  pVVar7 = MVWorldObject.dll::MV::WorldObject::CubeBase::
+                           CubeBase_get_IdentityCorners((MethodInfo *)0x0);
+                  if (pVVar7 == (Vector3__Array *)0x0) goto code_?;
+                  if ((int)pVVar7->max_length <= (int)uVar5) {
+                    if ((this->fields).lineMesh != 0) {
+                      pMVar8 = (this->fields).meshFilter;
+                      if (pMVar8 == (MeshFilter *)0x0) goto code_?;
+                      pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
+                               MeshFilter_get_mesh(pMVar8,(MethodInfo *)0x0);
+                      fVar3 = (this->fields).lineWidth;
+                      if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
+                        func_?();
+                      }
+                      SharedCubeFunctions::SharedCubeFunctions_AddCubeMeshCubeLines
+                                (pMVar9,pVVar4,fVar3,(MethodInfo *)0x0);
+                    }
+                    if ((this->fields).cubeMesh != 0) {
+                      pMVar8 = (this->fields).meshFilter;
+                      if (pMVar8 == (MeshFilter *)0x0) goto code_?;
+                      pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
+                               MeshFilter_get_mesh(pMVar8,(MethodInfo *)0x0);
+                      if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
+                        func_?();
+                      }
+                      SharedCubeFunctions::SharedCubeFunctions_AddCubeMesh
+                                (pMVar9,pVVar4,0,(MethodInfo *)0x0);
+                    }
+                    if ((this->fields).invertedCubeMesh != 0) {
+                      pMVar8 = (this->fields).meshFilter;
+                      if (pMVar8 == (MeshFilter *)0x0) goto code_?;
+                      pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
+                               MeshFilter_get_mesh(pMVar8,(MethodInfo *)0x0);
+                      if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
+                        func_?();
+                      }
+                      SharedCubeFunctions::SharedCubeFunctions_AddCubeMesh
+                                (pMVar9,pVVar4,1,(MethodInfo *)0x0);
+                    }
+                    return;
+                  }
+                  if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
+                    func_?();
+                  }
+                  pVVar7 = MVWorldObject.dll::MV::WorldObject::CubeBase::
+                           CubeBase_get_IdentityCorners((MethodInfo *)0x0);
+                  if (pVVar7 == (Vector3__Array *)0x0) goto code_?;
+                  if (pVVar7->max_length <= uVar5) break;
+                  fVar3 = (this->fields).scale;
+                  uVar10 = *(undefined8 *)((int)&pVVar7->vector[0].x + iVar6);
+                  fVar11 = *(float *)((int)&pVVar7->vector[0].z + iVar6);
+                  if (pVVar4 == (Vector3__Array *)0x0) goto code_?;
+                  if (pVVar4->max_length <= uVar5) break;
+                  uVar5 = uVar5 + 1;
+                  *(ulonglong *)((int)&pVVar4->vector[0].x + iVar6) =
+                       CONCAT44((float)((ulonglong)uVar10 >> 0x20) * fVar3,(float)uVar10 * fVar3);
+                  *(float *)((int)&pVVar4->vector[0].z + iVar6) = fVar11 * fVar3;
+                  iVar6 = iVar6 + 0xc;
+                }
+                goto code_?;
+              }
             }
           }
         }
@@ -319,24 +320,25 @@ void Assembly-CSharp.dll::GUICellCursor::GUICellCursor_Update
                (GUICellCursor *this,MethodInfo *method)
 
 {
-  if ((this->fields).fader != (GUICellCursor_Fader *)0x0) {
-    pGVar1 = (this->fields).fader;
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  pGVar1 = (this->fields).fader;
+  ppGVar2 = &(this->fields).fader;
+  if (pGVar1 != (GUICellCursor_Fader *)0x0) {
+    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     alphaValue = (pGVar1->fields).endValue;
-    if (fVar2 < (pGVar1->fields).end) {
-      fVar3 = (pGVar1->fields).startValue;
-      fVar2 = fVar2 * (pGVar1->fields).durationInv - (pGVar1->fields).startMulDurationInv;
-      if (fVar2 < 0.0) {
-        fVar2 = 0.0;
+    if (fVar3 < (pGVar1->fields).end) {
+      fVar4 = (pGVar1->fields).startValue;
+      fVar3 = (pGVar1->fields).durationInv * fVar3 - (pGVar1->fields).startMulDurationInv;
+      if (fVar3 < 0.0) {
+        fVar3 = 0.0;
       }
-      else if (_UNK_? < fVar2) {
-        fVar2 = _UNK_?;
+      else if (_UNK_? < fVar3) {
+        fVar3 = _UNK_?;
       }
-      alphaValue = (alphaValue - fVar3) * fVar2 + fVar3;
+      alphaValue = (alphaValue - fVar4) * fVar3 + fVar4;
     }
     else {
-      (this->fields).fader = (GUICellCursor_Fader *)0x0;
-      func_?(&(this->fields).fader,0);
+      *ppGVar2 = (GUICellCursor_Fader *)0x0;
+      func_?(ppGVar2,0);
     }
     GUICellCursor_SetMaterialOpacity(this,alphaValue,(MethodInfo *)0x0);
   }
@@ -385,15 +387,17 @@ void Assembly-CSharp.dll::GUICellCursor::GUICellCursor_set_FadeOverride
 
 {
   if (value == FadeOverride__Enum_FadeAllOut) {
-    (this->fields).fader = (GUICellCursor_Fader *)0x0;
-    func_?(&(this->fields).fader,0);
+    ppGVar1 = &(this->fields).fader;
+    *ppGVar1 = (GUICellCursor_Fader *)0x0;
+    func_?(ppGVar1,0);
     GUICellCursor_SetMaterialOpacity(this,0.0,(MethodInfo *)0x0);
     (this->fields).fadeState = 0;
     return;
   }
   if (value == FadeOverride__Enum_FadeAllIn) {
-    (this->fields).fader = (GUICellCursor_Fader *)0x0;
-    func_?(&(this->fields).fader,0);
+    ppGVar1 = &(this->fields).fader;
+    *ppGVar1 = (GUICellCursor_Fader *)0x0;
+    func_?(ppGVar1,0);
     GUICellCursor_SetMaterialOpacity(this,(this->fields).baseAlpha,(MethodInfo *)0x0);
     (this->fields).fadeState = 0;
     return;
@@ -415,48 +419,56 @@ void Assembly-CSharp.dll::GUICellCursor::GUICellCursor_set_FadeState
   }
   if ((this->fields).fadeState != value) {
     if (value == FadeState__Enum_Done) {
-      (this->fields).fader = (GUICellCursor_Fader *)0x0;
-      func_?(&(this->fields).fader,0);
+      ppGVar1 = &(this->fields).fader;
+      *ppGVar1 = (GUICellCursor_Fader *)0x0;
+      func_?(ppGVar1,0);
     }
     else {
       if (value == FadeState__Enum_FadeIn) {
-        fVar1 = (this->fields).fadeInTime;
-        fVar2 = (this->fields).baseAlpha;
-        fVar3 = (this->fields).currentAlpha;
+        fVar2 = (this->fields).fadeInTime;
+        fVar3 = (this->fields).baseAlpha;
         fVar4 = (this->fields).currentAlpha;
         pGVar5 = TypeInfo__GUICellCursor__Fader;
-        value_00 = (GUICellCursor_Fader *)func_?();
-        fVar1 = ((fVar2 - fVar3) / fVar2) * fVar1;
+        pGVar6 = (GUICellCursor_Fader *)func_?();
+        fVar2 = ((fVar3 - fVar4) / fVar3) * fVar2;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)value_00,ExceptionArgument__Enum_obj,(MethodInfo *)pGVar5);
-        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        (value_00->fields).end = fVar3 + fVar1;
-        (value_00->fields).durationInv = _UNK_? / fVar1;
-        (value_00->fields).startValue = fVar4;
-        (value_00->fields).endValue = fVar2;
-code_?:
-        (value_00->fields).start = fVar3;
-        (value_00->fields).startMulDurationInv = fVar3 / fVar1;
-        (this->fields).fader = value_00;
-        func_?(&(this->fields).fader,value_00);
-        (this->fields).fadeState = value;
+                  ((Object *)pGVar6,ExceptionArgument__Enum_obj,(MethodInfo *)pGVar5);
+        fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        ppGVar1 = &(this->fields).fader;
+        (pGVar6->fields).start = fVar7;
+        (pGVar6->fields).end = fVar7 + fVar2;
+        fVar8 = _UNK_? / fVar2;
+        (pGVar6->fields).startMulDurationInv = fVar7 / fVar2;
+        (pGVar6->fields).durationInv = fVar8;
+        (pGVar6->fields).startValue = fVar4;
+        (pGVar6->fields).endValue = fVar3;
+        *ppGVar1 = pGVar6;
+        func_?(ppGVar1,pGVar6);
+        (this->fields).fadeState = 1;
         return;
       }
       if (value == FadeState__Enum_FadeOut) {
-        fVar1 = (this->fields).fadeOutTime;
-        fVar2 = (this->fields).currentAlpha;
-        fVar3 = (this->fields).baseAlpha;
+        fVar2 = (this->fields).fadeOutTime;
+        fVar3 = (this->fields).currentAlpha;
+        fVar4 = (this->fields).baseAlpha;
         pGVar5 = TypeInfo__GUICellCursor__Fader;
-        value_00 = (GUICellCursor_Fader *)func_?();
-        fVar1 = (fVar2 / fVar3) * fVar1;
+        pGVar6 = (GUICellCursor_Fader *)func_?();
+        fVar2 = (fVar3 / fVar4) * fVar2;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)value_00,ExceptionArgument__Enum_obj,(MethodInfo *)pGVar5);
-        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        (value_00->fields).endValue = 0.0;
-        (value_00->fields).end = fVar3 + fVar1;
-        (value_00->fields).durationInv = _UNK_? / fVar1;
-        (value_00->fields).startValue = fVar2;
-        goto code_?;
+                  ((Object *)pGVar6,ExceptionArgument__Enum_obj,(MethodInfo *)pGVar5);
+        fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        ppGVar1 = &(this->fields).fader;
+        (pGVar6->fields).start = fVar8;
+        (pGVar6->fields).endValue = 0.0;
+        (pGVar6->fields).end = fVar8 + fVar2;
+        fVar4 = _UNK_? / fVar2;
+        (pGVar6->fields).startMulDurationInv = fVar8 / fVar2;
+        (pGVar6->fields).durationInv = fVar4;
+        (pGVar6->fields).startValue = fVar3;
+        *ppGVar1 = pGVar6;
+        func_?(ppGVar1,pGVar6);
+        (this->fields).fadeState = 2;
+        return;
       }
     }
     (this->fields).fadeState = value;

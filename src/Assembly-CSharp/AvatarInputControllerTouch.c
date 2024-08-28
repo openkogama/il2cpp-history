@@ -216,151 +216,209 @@ void Assembly-CSharp.dll::AvatarInputControllerTouch::AvatarInputControllerTouch
                Vector3 velocity,bool inGunMode,bool forceRotateToCamDirection,MethodInfo *method)
 
 {
-  func_?(&stack0xffffffb8,&moveDirection,0);
+  func_?(&stack0xffffffa0,&moveDirection,0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  absoluteDirection.z = moveDirection.z;
-  absoluteDirection.x = moveDirection.x;
   absoluteDirection.y = moveDirection.y;
+  absoluteDirection.x = moveDirection.x;
+  absoluteDirection.z = moveDirection.z;
   pVVar1 = AvatarInputControllerTouch_GetBiasedDirection
-                      ((Vector3 *)&stack0xffffffb8,this,absoluteDirection,
+                      ((Vector3 *)&stack0xffffffa0,this,absoluteDirection,
                        TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
                        (MethodInfo *)0x0);
   fVar2 = pVVar1->x;
   fVar3 = pVVar1->y;
   fVar4 = pVVar1->z;
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
   absoluteDirection_00.y = fVar3;
   absoluteDirection_00.x = fVar2;
   absoluteDirection_00.z = fVar4;
   pVVar1 = AvatarInputControllerTouch_GetBiasedDirection
-                      ((Vector3 *)&stack0xffffffa8,this,absoluteDirection_00,
+                      ((Vector3 *)&stack0xffffffd4,this,absoluteDirection_00,
                        TypeInfo__UnityEngine__Vector3->static_fields->leftVector,(MethodInfo *)0x0);
-  fVar4 = pVVar1->x;
-  fVar5 = pVVar1->y;
+  uVar5 = pVVar1->x;
+  uVar6 = pVVar1->y;
   fVar2 = pVVar1->z;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  absoluteDirection_01.y = fVar5;
-  absoluteDirection_01.x = fVar4;
+  absoluteDirection_01.y = (float)uVar6;
+  absoluteDirection_01.x = (float)uVar5;
   absoluteDirection_01.z = fVar2;
   pVVar1 = AvatarInputControllerTouch_GetBiasedDirection
-                      ((Vector3 *)&stack0xffffff90,this,absoluteDirection_01,
+                      (&moveDirection,this,absoluteDirection_01,
                        TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0)
   ;
-  fVar6 = pVVar1->x;
-  fVar7 = pVVar1->y;
+  uVar7 = pVVar1->x;
+  uVar8 = pVVar1->y;
   fVar2 = pVVar1->z;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  absoluteDirection_02.y = fVar7;
-  absoluteDirection_02.x = fVar6;
+  absoluteDirection_02.y = (float)uVar8;
+  absoluteDirection_02.x = (float)uVar7;
   absoluteDirection_02.z = fVar2;
   pVVar1 = AvatarInputControllerTouch_GetBiasedDirection
-                      ((Vector3 *)&stack0xffffff80,this,absoluteDirection_02,
+                      ((Vector3 *)&stack0x0000003c,this,absoluteDirection_02,
                        TypeInfo__UnityEngine__Vector3->static_fields->backVector,(MethodInfo *)0x0);
-  uStack_8._0_4_ = pVVar1->x;
-  uStack_8._4_4_ = pVVar1->y;
-  fStack_9 = pVVar1->z;
-  fVar2 = (float)uStack_8;
+  uVar9 = pVVar1->x;
+  uVar10 = pVVar1->y;
+  fVar2 = pVVar1->z;
+  moveDirection.z = (float)uVar9;
+  velocity.z = (float)uVar9;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  puVar10 = &UNK_?;
-  fVar11 = (float10)func_?();
-  fVar3 = 0.0;
-  if (0.0 < (float)fVar11) {
-    pCVar12 = TypeInfo__AvatarInputControllerTouch->static_fields->mainCamera;
-    if (pCVar12 == (Camera *)0x0) goto code_?;
-    puVar10 = &UNK_?;
-    pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)pCVar12,(MethodInfo *)0x0);
-    if (pTVar13 == (Transform *)0x0) goto code_?;
-    pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                        ((Quaternion *)&stack0xffffffa8,pTVar13,(MethodInfo *)0x0);
-    point.y = (float)puVar10;
-    point.x = fVar2;
-    point.z = fStack_9;
-    UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-              ((Vector3 *)&stack0xffffff80,*pQVar14,point,(MethodInfo *)0x0);
-    puVar15 = (undefined8 *)func_?();
-    uStack_8 = *puVar15;
-    fStack_9 = *(float *)(puVar15 + 1);
-    fVar2 = (float)uStack_8;
-    puVar10 = (undefined *)((ulonglong)uStack_8 >> 0x20);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
   }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  fStack11 = velocity.z;
+  fStack12 = 0.0;
+  fStack13 = 0.0;
+  fStack14 = 0.0;
+  dVar15 = (double)((float)uVar10 * (float)uVar10 + velocity.z * velocity.z + fVar2 * fVar2);
+  if (dVar15 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar15 = SQRT(dVar15);
+  }
+  fStack16 = 0.0;
+  fStack17 = 0.0;
+  fStack18 = 0.0;
+  fStack19 = 0.0;
+  _inGunMode = (float)uVar10;
+  if (0.0 < (float)dVar15) {
+    pCVar20 = TypeInfo__AvatarInputControllerTouch->static_fields->mainCamera;
+    if (pCVar20 == (Camera *)0x0) goto code_?;
+    pTVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)pCVar20,(MethodInfo *)0x0);
+    if (pTVar21 == (Transform *)0x0) goto code_?;
+    pQVar22 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                        ((Quaternion *)&stack0x00000048,pTVar21,(MethodInfo *)0x0);
+    moveDirection.z = 0.0;
+    moveDirection.x = (float)uVar10;
+    point.y = (float)uVar10;
+    point.x = velocity.z;
+    point.z = fVar2;
+    moveDirection.y = fVar2;
+    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                        ((Vector3 *)&stack0x00000074,*pQVar22,point,(MethodInfo *)0x0);
+    moveDirection.z = 0.0;
+    uStack23._0_4_ = pVVar1->x;
+    uStack23._4_4_ = pVVar1->y;
+    fStack16 = pVVar1->z;
+    moveDirection.y = (float)&uStack23;
+    moveDirection.x = (float)&stack0x00000088;
+    uStack23 = uStack23 & 0xffffffff;
+    puVar24 = (undefined8 *)func_?();
+    fVar2 = *(float *)(puVar24 + 1);
+    moveDirection.z = (float)*puVar24;
+    _jump = (float)((ulonglong)*puVar24 >> 0x20);
+    fStack11 = moveDirection.z;
+    fStack12 = 0.0;
+    fStack13 = 0.0;
+    fStack14 = 0.0;
+    velocity.z = moveDirection.z;
+    _inGunMode = _jump;
+  }
+  forceRotateToCamDirection = SUB41(fVar2,0);
   if (inGunMode == 0 && forceRotateToCamDirection == 0) {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pVVar16 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar17 = (pVVar16->zeroVector).x;
-    uVar18 = (pVVar16->zeroVector).y;
-    fVar3 = fStack_9 - (pVVar16->zeroVector).z;
-    if ((uStack_8._4_4_ - (float)uVar18) * (uStack_8._4_4_ - (float)uVar18) +
-        ((float)uStack_8 - (float)uVar17) * ((float)uStack_8 - (float)uVar17) + fVar3 * fVar3 <
-        _UNK_?) goto code_?;
-    forward.y = (float)puVar10;
-    forward.x = fVar2;
-    forward.z = fStack_9;
-    pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
-                        ((Quaternion *)&stack0xffffff70,forward,(MethodInfo *)0x0);
+    pVVar25 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar26 = (pVVar25->zeroVector).x;
+    uVar27 = (pVVar25->zeroVector).y;
+    fStack28 = (pVVar25->zeroVector).z;
+    if ((_inGunMode - (float)uVar27) * (_inGunMode - (float)uVar27) +
+        (fStack11 - (float)uVar26) * (fStack11 - (float)uVar26) +
+        (fVar2 - fStack28) * (fVar2 - fStack28) < _UNK_?) goto code_?;
+    forward.y = _inGunMode;
+    forward.x = moveDirection.z;
+    forward.z = fVar2;
+    pQVar22 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
+                        ((Quaternion *)&stack0x00000070,forward,(MethodInfo *)0x0);
   }
   else {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pCVar12 = TypeInfo__AvatarInputControllerTouch->static_fields->mainCamera;
-    if (pCVar12 == (Camera *)0x0) {
+    pCVar20 = TypeInfo__AvatarInputControllerTouch->static_fields->mainCamera;
+    if (pCVar20 == (Camera *)0x0) {
 code_?:
       func_?();
-      pcVar19 = (code *)swi(3);
-      (*pcVar19)();
+      pcVar29 = (code *)swi(3);
+      (*pcVar29)();
       return;
     }
-    pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)pCVar12,(MethodInfo *)0x0);
-    if (pTVar13 == (Transform *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-              ((Quaternion *)&stack0xffffffd8,pTVar13,(MethodInfo *)0x0);
-    iVar20 = func_?();
-    euler.y = *(float *)(iVar20 + 4) * _UNK_?;
-    euler.x = fVar3;
+    pTVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)pCVar20,(MethodInfo *)0x0);
+    if (pTVar21 == (Transform *)0x0) goto code_?;
+    pQVar22 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                        ((Quaternion *)&didShoot,pTVar21,(MethodInfo *)0x0);
+    fStack12 = pQVar22->x;
+    fStack13 = pQVar22->y;
+    fStack14 = pQVar22->z;
+    in_stack_30 = pQVar22->w;
+    iVar31 = func_?();
+    fStack28 = 0.0;
+    euler.y = *(float *)(iVar31 + 4) * _UNK_?;
+    euler.x = fStack16;
     euler.z = 0.0;
-    pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                        ((Quaternion *)&stack0xffffff70,euler,(MethodInfo *)0x0);
+    pQVar22 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+                        ((Quaternion *)&stack0x00000070,euler,(MethodInfo *)0x0);
   }
-  fVar2 = pQVar14->y;
-  fVar3 = pQVar14->z;
-  fVar4 = pQVar14->w;
-  (this->fields).rotation.x = pQVar14->x;
-  (this->fields).rotation.y = fVar2;
-  (this->fields).rotation.z = fVar3;
-  (this->fields).rotation.w = fVar4;
+  fVar3 = pQVar22->y;
+  fVar4 = pQVar22->z;
+  fVar32 = pQVar22->w;
+  (this->fields).rotation.x = pQVar22->x;
+  (this->fields).rotation.y = fVar3;
+  (this->fields).rotation.z = fVar4;
+  (this->fields).rotation.w = fVar32;
 code_?:
-  fVar11 = (float10)func_?();
-  fVar2 = (float)fVar11;
-  (this->fields).direction.x = (float)uStack_8 * fVar2;
-  (this->fields).direction.y = uStack_8._4_4_ * fVar2;
-  (this->fields).direction.z = fStack_9 * fVar2;
-  fVar11 = (float10)func_?();
-  if (_UNK_? < (float)fVar11) {
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
-              (&(this->fields).direction,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
   }
-  (this->fields).jump = jump;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  dVar15 = (double)(moveDirection.y * moveDirection.y + moveDirection.x * moveDirection.x +
+                   moveDirection.z * moveDirection.z);
+  if (dVar15 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar15 = SQRT(dVar15);
+  }
+  fVar3 = (float)dVar15;
+  fStack28 = fVar2 * fVar3;
+  this_00 = &this->fields;
+  (this_00->direction).x = fStack11 * fVar3;
+  (this_00->direction).y = _inGunMode * fVar3;
+  (this->fields).direction.z = fStack28;
+  fVar33 = (float10)func_?();
+  moveDirection.z = (float)fVar33;
+  if (_UNK_? < moveDirection.z) {
+    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
+              (&this_00->direction,(MethodInfo *)0x0);
+  }
+  (this->fields).jump = inGunMode;
   return;
 }
 
@@ -376,36 +434,51 @@ Vector3 * Assembly-CSharp.dll::AvatarInputControllerTouch::
     func_?(&TypeInfo__AvatarInputControllerTouch);
     cRam_? = '\x01';
   }
-  fVar1 = (float10)func_?(&moveDirection,0);
-  if (0.0 < (float)fVar1) {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  dVar1 = (double)(moveDirection.y * moveDirection.y + moveDirection.x * moveDirection.x +
+                  moveDirection.z * moveDirection.z);
+  if (dVar1 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar1 = SQRT(dVar1);
+  }
+  if (0.0 < (float)dVar1) {
     this = TypeInfo__AvatarInputControllerTouch->static_fields->mainCamera;
     if (this != (Camera *)0x0) {
       this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                           ((Component *)this,(MethodInfo *)0x0);
       if (this_00 != (Transform *)0x0) {
         pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                           ((Quaternion *)&stack0xffffffdc,this_00,(MethodInfo *)0x0);
-        point.z = moveDirection.z;
-        point.x = moveDirection.x;
-        point.y = moveDirection.y;
-        UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                  ((Vector3 *)&stack0xffffffe0,*pQVar2,point,(MethodInfo *)0x0);
-        puVar3 = (undefined8 *)func_?();
-        uVar4 = *puVar3;
-        fVar5 = *(float *)(puVar3 + 1);
-        __return_storage_ptr__->x = (float)(int)uVar4;
-        __return_storage_ptr__->y = (float)(int)((ulonglong)uVar4 >> 0x20);
-        __return_storage_ptr__->z = fVar5;
+                           ((Quaternion *)&stack0xfffffff0,this_00,(MethodInfo *)0x0);
+        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                           ((Vector3 *)&stack0xfffffffc,*pQVar2,moveDirection,(MethodInfo *)0x0);
+        uVar4._0_4_ = pVVar3->x;
+        uVar4._4_4_ = pVVar3->y;
+        fStack5 = pVVar3->z;
+        _method = uVar4 & 0xffffffff;
+        puVar6 = (undefined8 *)func_?(&stack0x00000020,&method,0);
+        uVar7 = *puVar6;
+        fVar8 = *(float *)(puVar6 + 1);
+        __return_storage_ptr__->x = (float)(int)uVar7;
+        __return_storage_ptr__->y = (float)(int)((ulonglong)uVar7 >> 0x20);
+        __return_storage_ptr__->z = fVar8;
         return __return_storage_ptr__;
       }
     }
     func_?();
-    pcVar6 = (code *)swi(3);
-    pVVar7 = (Vector3 *)(*pcVar6)();
-    return pVVar7;
+    pcVar9 = (code *)swi(3);
+    pVVar3 = (Vector3 *)(*pcVar9)();
+    return pVVar3;
   }
-  __return_storage_ptr__->x = moveDirection.x;
-  __return_storage_ptr__->y = moveDirection.y;
+  __return_storage_ptr__->x = (float)(int)moveDirection._0_8_;
+  __return_storage_ptr__->y = (float)(int)((ulonglong)moveDirection._0_8_ >> 0x20);
   __return_storage_ptr__->z = moveDirection.z;
   return __return_storage_ptr__;
 }
@@ -464,16 +537,17 @@ void Assembly-CSharp.dll::AvatarInputControllerTouch::AvatarInputControllerTouch
                        ((Object *)pAVar7,
                         AvatarInputControllerTouchSettings_MethodInfo__UnityEngine__Object__Instantiate<AvatarInputControllerTouchSettings>_AvatarInputControllerTouchSettings_
                        );
-    (this->fields).settings = pAVar7;
-    func_?(&(this->fields).settings,pAVar7);
-    pCVar8 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-    TypeInfo__AvatarInputControllerTouch->static_fields->mainCamera = pCVar8;
-    func_?(TypeInfo__AvatarInputControllerTouch->static_fields,pCVar8);
+    ppAVar8 = &(this->fields).settings;
+    *ppAVar8 = pAVar7;
+    func_?(ppAVar8,pAVar7);
+    pCVar9 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+    TypeInfo__AvatarInputControllerTouch->static_fields->mainCamera = pCVar9;
+    func_?(TypeInfo__AvatarInputControllerTouch->static_fields,pCVar9);
     return;
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

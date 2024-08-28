@@ -91,7 +91,7 @@ code_?:
           UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
                     (color.r,color.g,color.b,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
-                    (color.a,0.0,3.251225e-29,(MethodInfo *)0x0);
+                    (color.a,0.0,3.2442483e-29,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
           pCVar1 = this_01;
         }
@@ -278,69 +278,69 @@ void Assembly-CSharp.dll::LineDrawManager::LineDrawManager_SetTempLink
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  (this->fields).tempLink = link;
-  func_?(&(this->fields).tempLink,link);
-  pLVar1 = (this->fields).tempLinkObject;
+  ppLVar1 = &(this->fields).tempLink;
+  *ppLVar1 = link;
+  func_?(ppLVar1,link);
+  pLVar2 = (this->fields).tempLinkObject;
+  ppLVar3 = &(this->fields).tempLinkObject;
   if (link == (Link *)0x0) {
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pLVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      pLVar1 = (this->fields).tempLinkObject;
-      if (pLVar1 == (LinkObjectScript *)0x0) goto code_?;
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)pLVar1,(MethodInfo *)0x0);
+    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)pLVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
+      if (*ppLVar3 == (LinkObjectScript *)0x0) goto code_?;
+      pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)*ppLVar3,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                ((Object_1 *)pGVar3,(MethodInfo *)0x0);
-      (this->fields).tempLinkObject = (LinkObjectScript *)0x0;
-      func_?(&(this->fields).tempLinkObject);
+                ((Object_1 *)pGVar5,(MethodInfo *)0x0);
+      *ppLVar3 = (LinkObjectScript *)0x0;
+      func_?(ppLVar3);
     }
     return;
   }
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pLVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pLVar1 = (this->fields).tempLinkObject;
-    if (pLVar1 == (LinkObjectScript *)0x0) goto code_?;
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)pLVar1,(MethodInfo *)0x0);
+  bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)pLVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar4 != 0) {
+    if (*ppLVar3 == (LinkObjectScript *)0x0) goto code_?;
+    pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)*ppLVar3,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)pGVar3,(MethodInfo *)0x0);
+              ((Object_1 *)pGVar5,(MethodInfo *)0x0);
   }
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
-  if (pPVar4 != (PrefabPool *)0x0) {
-    pLVar1 = (pPVar4->fields).linkObject;
+  pPVar6 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar6 != (PrefabPool *)0x0) {
+    pLVar2 = (pPVar6->fields).linkObject;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pLVar1 = (LinkObjectScript *)
+    pLVar2 = (LinkObjectScript *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)pLVar1,
+                       ((Object *)pLVar2,
                         LinkObjectScript_MethodInfo__UnityEngine__Object__Instantiate<LinkObjectScript>_LinkObjectScript_
                        );
-    (this->fields).tempLinkObject = pLVar1;
+    *ppLVar3 = pLVar2;
     func_?();
     return;
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -364,8 +364,9 @@ void Assembly-CSharp.dll::LineDrawManager::LineDrawManager__ctor
   mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32]::Stack_1_System_Int32___ctor
             ((Stack_1_System_Int32_ *)this_00,
              MethodInfo__System__Collections__Generic__Queue<LineDrawManager::LinkLine>__Queue__);
-  (this->fields).linkLines = this_00;
-  func_?(&(this->fields).linkLines,this_00);
+  ppQVar1 = &(this->fields).linkLines;
+  *ppQVar1 = this_00;
+  func_?(ppQVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

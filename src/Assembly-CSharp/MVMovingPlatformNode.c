@@ -21,22 +21,21 @@ bool Assembly-CSharp.dll::MVMovingPlatformNode::MVMovingPlatformNode_Delete
     pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                        (WOCM,(this->fields)._._.groupId,(MethodInfo *)0x0);
     if (pMVar1 != (MVWorldObject *)0x0) {
-      if (((TypeInfo__MVMovingPlatformGroup->_1).naturalAligment <=
-           (pMVar1->klass->_1).naturalAligment) &&
-         ((MVMovingPlatformGroup__Class *)
-          (pMVar1->klass->_1).typeHierarchy
-          [(TypeInfo__MVMovingPlatformGroup->_1).naturalAligment - 1] ==
+      pMVar2 = pMVar1->klass;
+      bVar3 = (TypeInfo__MVMovingPlatformGroup->_1).naturalAligment;
+      if ((bVar3 <= (pMVar2->_1).naturalAligment) &&
+         ((MVMovingPlatformGroup__Class *)(pMVar2->_1).typeHierarchy[bVar3 - 1] ==
           TypeInfo__MVMovingPlatformGroup)) {
-        bVar2 = (*(code *)pMVar1->klass[2]._0.element_class)(pMVar1,WOCM);
-        return bVar2;
+        bVar4 = (*(code *)pMVar2[2]._0.element_class)(pMVar1,WOCM,errorText);
+        return bVar4;
       }
     }
     return 1;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  bVar2 = (*pcVar3)();
-  return bVar2;
+  pcVar5 = (code *)swi(3);
+  bVar4 = (*pcVar5)();
+  return bVar4;
 }
 
 

@@ -353,8 +353,8 @@ code_?:
                                   else {
                                     pSVar15 = (this_02->fields).OnSprite;
                                   }
-                                  pOVar6[1].monitor = (MonitorData *)pSVar15;
                                   pGVar22 = (GameObject *)&pOVar6[1].monitor;
+                                  *(Sprite **)pGVar22 = pSVar15;
                                   func_?(pGVar22,pSVar15);
                                   pEVar1 = (ExecuteEvents_EventFunction_1_System_Object_ *)
                                             func_?(
@@ -552,8 +552,8 @@ code_?:
                           else {
                             pSVar15 = (this_02->fields).OnSprite;
                           }
-                          pOVar6[1].monitor = (MonitorData *)pSVar15;
                           pGVar22 = (GameObject *)&pOVar6[1].monitor;
+                          *(Sprite **)pGVar22 = pSVar15;
                           func_?(pGVar22,pSVar15);
                           pEVar1 = (ExecuteEvents_EventFunction_1_System_Object_ *)
                                     func_?(
@@ -989,8 +989,8 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowS
         else {
           pGStack3 = (GameObject__Class *)(this->fields).OnSprite;
         }
-        target[1].klass = pGStack3;
         pGStack4 = target + 1;
+        pGStack4->klass = pGStack3;
         pEStack5 =
              (ExecuteEvents_EventFunction_1_INotificationRequirementPanel___Class *)&UNK_?;
         func_?();
@@ -1072,8 +1072,8 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowT
         else {
           pSStack5 = (this->fields).OnSprite;
         }
-        value[1].monitor = (MonitorData *)pSStack5;
         ppMStack6 = &value[1].monitor;
+        *ppMStack6 = (MonitorData *)pSStack5;
         func_?();
         functor = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
@@ -1120,8 +1120,9 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
-  (this->fields).PanelsToDestroy = this_00;
-  func_?(&(this->fields).PanelsToDestroy,this_00);
+  ppLVar1 = &(this->fields).PanelsToDestroy;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
   Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
   return;

@@ -9,19 +9,20 @@ void Assembly-CSharp.dll::CFX_LightIntensityFade::CFX_LightIntensityFade_OnEnabl
     func_?();
     cRam_? = '\x01';
   }
+  fVar1 = (this->fields).delay;
   (this->fields).p_lifetime = 0.0;
-  (this->fields).p_delay = (this->fields).delay;
-  if (0.0 < (this->fields).delay) {
+  (this->fields).p_delay = fVar1;
+  if (0.0 < fVar1) {
     this_00 = (Behaviour *)
               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                         ((Component *)this,
                          UnityEngine__Light_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Light>__
                         );
     if (this_00 == (Behaviour *)0x0) {
-      uVar1 = func_?(&stack0xfffffff8);
-      func_?(uVar1);
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      uVar2 = func_?(&stack0xfffffff8);
+      func_?(uVar2);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled

@@ -395,7 +395,8 @@ void Assembly-CSharp.dll::ObjectLinks::ObjectLinks__ctor(ObjectLinks *this,Metho
              MethodInfo__System__Collections__Generic__Dictionary<int,_ObjectLinkObjectScript>__Dictionary__
             );
   method_00 = (MethodInfo *)&(this->fields).objectLinkObjects;
-  (this->fields).objectLinkObjects = (Dictionary_2_System_Int32_ObjectLinkObjectScript_ *)pDVar1;
+  *(Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ **)
+   method_00 = pDVar1;
   func_?(method_00,pDVar1);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

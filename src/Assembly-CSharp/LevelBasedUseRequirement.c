@@ -11,63 +11,60 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement_Cal
   auVar3._4_8_ = 0;
   auVar3._0_4_ = spacingAngle * _UNK_?;
   pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                      ((Quaternion *)&puStack_5,(Vector3)(auVar3 << 0x20),(MethodInfo *)0x0);
+                     ((Quaternion *)&puStack_5,(Vector3)(auVar3 << 0x20),(MethodInfo *)0x0);
   point.y = fVar2;
   point.x = fVar1;
   point.z = pivot.z - (pivot.z + distanceFromPivot);
-  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                      ((Vector3 *)&puStack_5,*pQVar4,point,(MethodInfo *)0x0);
-  uVar7 = pVVar6->x;
-  uVar8 = pVVar6->y;
-  fVar2 = pVVar6->z;
-  fVar9 = pivot.x + (float)uVar7;
-  fVar1 = pivot.y + (float)uVar8;
-  pGVar10 = (this->fields).go;
-  if (pGVar10 != (GameObject *)0x0) {
-    pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                        (pGVar10,(MethodInfo *)0x0);
-    if (pTVar11 != (Transform *)0x0) {
-      value_00.y = fVar1;
-      value_00.x = fVar9;
-      value_00.z = pivot.z + fVar2;
+  UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+            ((Vector3 *)&puStack_5,*pQVar4,point,(MethodInfo *)0x0);
+  pGVar6 = (this->fields).go;
+  if (pGVar6 != (GameObject *)0x0) {
+    fVar2 = 0.0;
+    puVar7 = &UNK_?;
+    pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                        (pGVar6,(MethodInfo *)0x0);
+    if (pTVar8 != (Transform *)0x0) {
+      value_00.y = (float)pGVar6;
+      value_00.x = (float)puVar7;
+      value_00.z = fVar2;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                (pTVar11,value_00,(MethodInfo *)0x0);
-      pGVar10 = (this->fields).go;
-      if (pGVar10 != (GameObject *)0x0) {
-        pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (pGVar10,(MethodInfo *)0x0);
-        pGVar10 = (this->fields).displayObjectRoot;
-        if (pGVar10 != (GameObject *)0x0) {
+                (pTVar8,value_00,(MethodInfo *)0x0);
+      pGVar6 = (this->fields).go;
+      if (pGVar6 != (GameObject *)0x0) {
+        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar6,(MethodInfo *)0x0);
+        pGVar6 = (this->fields).displayObjectRoot;
+        if (pGVar6 != (GameObject *)0x0) {
           this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (pGVar10,(MethodInfo *)0x0);
+                              (pGVar6,(MethodInfo *)0x0);
           if (this_01 != (Transform *)0x0) {
-            pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                ((Vector3 *)&puStack_5,this_01,(MethodInfo *)0x0);
-            uVar12 = pVVar6->x;
-            uVar13 = pVVar6->y;
-            if (pTVar11 != (Transform *)0x0) {
-              worldPosition.y = pivot.y + (float)uVar13;
-              worldPosition.x = pivot.x + (float)uVar12;
-              worldPosition.z = pivot.z + pVVar6->z;
+            pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                ((Vector3 *)&stack0xffffffd8,this_01,(MethodInfo *)0x0);
+            uVar10 = pVVar9->x;
+            uVar11 = pVVar9->y;
+            if (pTVar8 != (Transform *)0x0) {
+              worldPosition.y = pivot.y + (float)uVar11;
+              worldPosition.x = pivot.x + (float)uVar10;
+              worldPosition.z = pivot.z + pVVar9->z;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_LookAt_2
-                        (pTVar11,worldPosition,(MethodInfo *)0x0);
+                        (pTVar8,worldPosition,(MethodInfo *)0x0);
               this_00 = (this->fields).displayObject;
               if (this_00 != (LevelDisplayCube *)0x0) {
-                pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                           Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
-                if (pTVar11 != (Transform *)0x0) {
-                  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                            Transform_get_position
-                                      ((Vector3 *)&stack0xffffffd8,pTVar11,(MethodInfo *)0x0);
-                  uVar14 = pVVar6->x;
-                  uVar15 = pVVar6->y;
-                  uVar16 = (this->fields).displayObjectOffset.x;
-                  uVar17 = (this->fields).displayObjectOffset.y;
-                  value.y = (float)uVar17 + (float)uVar15;
-                  value.x = (float)uVar16 + (float)uVar14;
-                  value.z = (this->fields).displayObjectOffset.z + pVVar6->z;
+                if (pTVar8 != (Transform *)0x0) {
+                  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                            Transform_get_position((Vector3 *)&puStack_5,pTVar8,(MethodInfo *)0x0)
+                  ;
+                  uVar12 = pVVar9->x;
+                  uVar13 = pVVar9->y;
+                  uVar14 = (this->fields).displayObjectOffset.x;
+                  uVar15 = (this->fields).displayObjectOffset.y;
+                  value.y = (float)uVar15 + (float)uVar13;
+                  value.x = (float)uVar14 + (float)uVar12;
+                  value.z = (this->fields).displayObjectOffset.z + pVVar9->z;
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                            (pTVar11,value,(MethodInfo *)0x0);
+                            (pTVar8,value,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -78,8 +75,8 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement_Cal
     }
   }
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -117,56 +114,54 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement_Cre
                        ((Object *)pGVar3,
                         UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                        );
-    (this->fields).go = pGVar3;
-    func_?(&(this->fields).go,pGVar3);
-    pGVar3 = (this->fields).go;
-    if (pGVar3 != (GameObject *)0x0) {
-      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                         (pGVar3,(MethodInfo *)0x0);
+    ppGVar4 = &(this->fields).go;
+    *ppGVar4 = pGVar3;
+    func_?(ppGVar4,pGVar3);
+    if (*ppGVar4 != (GameObject *)0x0) {
+      pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                         (*ppGVar4,(MethodInfo *)0x0);
       pGVar3 = (this->fields).displayObjectRoot;
       if (pGVar3 != (GameObject *)0x0) {
         value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                           (pGVar3,(MethodInfo *)0x0);
-        if (pTVar4 != (Transform *)0x0) {
+        if (pTVar5 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                    (pTVar4,value,(MethodInfo *)0x0);
-          pGVar3 = (this->fields).go;
-          if (pGVar3 != (GameObject *)0x0) {
-            pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (pGVar3,(MethodInfo *)0x0);
-            if (pTVar4 != (Transform *)0x0) {
+                    (pTVar5,value,(MethodInfo *)0x0);
+          if (*ppGVar4 != (GameObject *)0x0) {
+            pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                               (*ppGVar4,(MethodInfo *)0x0);
+            if (pTVar5 != (Transform *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                        (pTVar4,(this->fields).displayObjectOffset,(MethodInfo *)0x0);
-              pGVar3 = (this->fields).go;
-              if (pGVar3 != (GameObject *)0x0) {
+                        (pTVar5,(this->fields).displayObjectOffset,(MethodInfo *)0x0);
+              if (*ppGVar4 != (GameObject *)0x0) {
                 pLVar2 = (LevelDisplayCube *)
                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                          GameObject_GetComponent_1
-                                   (pGVar3,
+                                   (*ppGVar4,
                                     LevelDisplayCube_MethodInfo__UnityEngine__GameObject__GetComponent<LevelDisplayCube>__
                                    );
-                (this->fields).displayObject = pLVar2;
-                func_?(&(this->fields).displayObject,pLVar2);
-                pLVar2 = (this->fields).displayObject;
-                if (pLVar2 != (LevelDisplayCube *)0x0) {
-                  pRVar5 = LevelDisplayCube::LevelDisplayCube_get_Renderers
-                                     (pLVar2,(MethodInfo *)0x0);
-                  uVar6 = 0;
-                  if (pRVar5 != (Renderer__Array *)0x0) {
-                    ppRVar7 = pRVar5->vector;
+                ppLVar6 = &(this->fields).displayObject;
+                *ppLVar6 = pLVar2;
+                func_?(ppLVar6,pLVar2);
+                if (*ppLVar6 != (LevelDisplayCube *)0x0) {
+                  pRVar7 = LevelDisplayCube::LevelDisplayCube_get_Renderers
+                                     (*ppLVar6,(MethodInfo *)0x0);
+                  uVar8 = 0;
+                  if (pRVar7 != (Renderer__Array *)0x0) {
+                    ppRVar9 = pRVar7->vector;
                     while( true ) {
-                      if ((int)pRVar5->max_length <= (int)uVar6) {
+                      if ((int)pRVar7->max_length <= (int)uVar8) {
                         return;
                       }
-                      if (pRVar5->max_length <= uVar6) break;
-                      if (*ppRVar7 == (Renderer *)0x0) goto code_?;
+                      if (pRVar7->max_length <= uVar8) break;
+                      if (*ppRVar9 == (Renderer *)0x0) goto code_?;
                       this_00 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::
-                                Renderer_get_material(*ppRVar7,(MethodInfo *)0x0);
+                                Renderer_get_material(*ppRVar9,(MethodInfo *)0x0);
                       if (this_00 == (Material *)0x0) goto code_?;
                       UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTexture
                                 (this_00,(Texture *)0x0,(MethodInfo *)0x0);
-                      uVar6 = uVar6 + 1;
-                      ppRVar7 = ppRVar7 + 1;
+                      uVar8 = uVar8 + 1;
+                      ppRVar9 = ppRVar9 + 1;
                     }
                     func_?();
                   }
@@ -180,8 +175,8 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement_Cre
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -424,8 +419,8 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement_Set
                (LevelBasedUseRequirement *this,Vector3 scale,MethodInfo *method)
 
 {
-  this_00 = (this->fields).displayObject;
   fVar1 = scale.x * _UNK_?;
+  this_00 = (this->fields).displayObject;
   fVar2 = scale.y * _UNK_?;
   fVar3 = scale.z * _UNK_?;
   if (this_00 != (LevelDisplayCube *)0x0) {
@@ -440,10 +435,9 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement_Set
       return;
     }
   }
-  uVar4 = func_?(&stack0xfffffff8);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -461,9 +455,10 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement__ct
   (this->fields).displayObjectOffset.z = 0.0;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  ppGVar1 = &(this->fields).displayObjectRoot;
   (this->fields).hasUseWhenFree = hasUseButtonWhenFree;
-  (this->fields).displayObjectRoot = root;
-  func_?(&(this->fields).displayObjectRoot,root);
+  *ppGVar1 = root;
+  func_?(ppGVar1,root);
   return;
 }
 
@@ -485,11 +480,12 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement__ct
   uVar2 = (this->fields).displayObjectOffset.y;
   (this->fields).hasUseWhenFree = hasUseButtonWhenFree;
   fVar3 = (this->fields).displayObjectOffset.z;
+  ppGVar4 = &(this->fields).displayObjectRoot;
   (this->fields).displayObjectOffset.x = displayOffset.x + (float)uVar1;
   (this->fields).displayObjectOffset.y = displayOffset.y + (float)uVar2;
   (this->fields).displayObjectOffset.z = displayOffset.z + fVar3;
-  (this->fields).displayObjectRoot = root;
-  func_?(&(this->fields).displayObjectRoot,root);
+  *ppGVar4 = root;
+  func_?(ppGVar4,root);
   return;
 }
 

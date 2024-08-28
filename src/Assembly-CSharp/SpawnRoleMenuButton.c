@@ -137,15 +137,16 @@ void Assembly-CSharp.dll::SpawnRoleMenuButton::SpawnRoleMenuButton_ShowSpawnRole
                       SpawnRoleMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleMenu>_SpawnRoleMenu_
                      );
   if (value != (Object *)0x0) {
-    value[1].klass = pOVar1;
-    func_?(value + 1,pOVar1);
-    pOVar1 = value[1].klass;
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-    if ((pMVar2 != (MVLocalPlayer *)0x0) && (pOVar1 != (Object__Class *)0x0)) {
+    pOVar2 = value + 1;
+    pOVar2->klass = pOVar1;
+    func_?(pOVar2,pOVar1);
+    pOVar1 = pOVar2->klass;
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+    if ((pMVar3 != (MVLocalPlayer *)0x0) && (pOVar1 != (Object__Class *)0x0)) {
       SpawnRoleMenu::SpawnRoleMenu_Initialize
-                ((SpawnRoleMenu *)pOVar1,(pMVar2->fields)._._Team_k__BackingField,(MethodInfo *)0x0)
+                ((SpawnRoleMenu *)pOVar1,(pMVar3->fields)._._Team_k__BackingField,(MethodInfo *)0x0)
       ;
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       if ((TypeInfo__SpawnRoleMenuButton____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
@@ -157,7 +158,7 @@ void Assembly-CSharp.dll::SpawnRoleMenuButton::SpawnRoleMenuButton_ShowSpawnRole
         }
         object = TypeInfo__SpawnRoleMenuButton____c->static_fields->__9;
         callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-        pGVar3 = (GameObject *)&UNK_?;
+        pGVar4 = (GameObject *)&UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -172,11 +173,11 @@ void Assembly-CSharp.dll::SpawnRoleMenuButton::SpawnRoleMenuButton_ShowSpawnRole
         func_?();
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar3,(BaseEventData *)0x0,
+                (pGVar4,(BaseEventData *)0x0,
                  (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
@@ -185,12 +186,12 @@ void Assembly-CSharp.dll::SpawnRoleMenuButton::SpawnRoleMenuButton_ShowSpawnRole
                  MethodInfo__SpawnRoleMenuButton____c__DisplayClass6_0___ShowSpawnRoleMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar3,(BaseEventData *)0x0,callbackFunction_00,
+                (pGVar4,(BaseEventData *)0x0,callbackFunction_00,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      pGVar4 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if ((pGVar4 != (GameEventManager *)0x0) &&
-         (this_00 = (pGVar4->fields).AvatarCommandsPlayMode,
+      pGVar5 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if ((pGVar5 != (GameEventManager *)0x0) &&
+         (this_00 = (pGVar5->fields).AvatarCommandsPlayMode,
          this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
         PlayButtonTouch::PlayButtonTouch_OnConfirmPlay((PlayButtonTouch *)this_00,(MethodInfo *)0x0)
         ;
@@ -204,8 +205,8 @@ void Assembly-CSharp.dll::SpawnRoleMenuButton::SpawnRoleMenuButton_ShowSpawnRole
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

@@ -74,10 +74,9 @@ void Assembly-CSharp.dll::GoogleMobileAds::Mediation::AppLovin::Api::AppLovin::A
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__GoogleMobileAds__Mediation__AppLovin__Common__IAppLovinClient)
         {
-          pIVar2 = pIVar1->klass;
           iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-          (*(code *)(&(pIVar2->vtable).Initialize)[iVar5].method)
-                    (pIVar1,(&(pIVar2->vtable).SetHasUserConsent)[iVar5].methodPtr);
+          (*(code *)(&(pIVar1->klass->vtable).Initialize)[iVar5].method)
+                    (pIVar1,(&(pIVar1->klass->vtable).SetHasUserConsent)[iVar5].methodPtr);
           return;
         }
         uVar3 = uVar3 + 1;

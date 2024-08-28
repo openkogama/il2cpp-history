@@ -129,9 +129,9 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera_Upd
   uVar8 = pVVar5->x;
   uVar9 = pVVar5->y;
   (this->fields)._.targetRotation.x =
-       (float)uVar8 * (this->fields)._.pitchSensitivity + (this->fields)._.targetRotation.x;
+       (this->fields)._.pitchSensitivity * (float)uVar8 + (this->fields)._.targetRotation.x;
   (this->fields)._.targetRotation.y =
-       (float)uVar9 * (this->fields)._.yawSensitivity + (this->fields)._.targetRotation.y;
+       (this->fields)._.yawSensitivity * (float)uVar9 + (this->fields)._.targetRotation.y;
   fVar10 = (float)((uint)(this->fields)._.maxLookAngleDownward ^
                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   fVar11 = (float10)func_?();
@@ -229,8 +229,9 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera__ct
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
             (this_00,0x20,
              MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__List_int_);
-  (this->fields)._.vehiclesHiddenMeshRenderers = (List_1_UnityEngine_MeshRenderer_ *)this_00;
-  func_?(&(this->fields)._.vehiclesHiddenMeshRenderers,this_00);
+  ppLVar2 = &(this->fields)._.vehiclesHiddenMeshRenderers;
+  *ppLVar2 = (List_1_UnityEngine_MeshRenderer_ *)this_00;
+  func_?(ppLVar2,this_00);
   (this->fields)._._.cameraRadius = 0.3;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

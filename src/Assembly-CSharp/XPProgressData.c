@@ -36,9 +36,10 @@ code_?:
   }
   else {
     iVar7 = (pXVar1->fields)._PrevXP_k__BackingField;
-    if ((pXVar1->fields)._NextXP_k__BackingField <= iVar7) goto code_?;
+    iVar8 = (pXVar1->fields)._NextXP_k__BackingField;
+    if (iVar8 <= iVar7) goto code_?;
     if (iVar7 <= iVar2) {
-      if ((pXVar1->fields)._NextXP_k__BackingField <= iVar2) {
+      if (iVar8 <= iVar2) {
         return 1;
       }
       if (-1 < iVar2) {
@@ -62,9 +63,9 @@ code_?:
   mscorlib.dll::System::Exception::Exception__ctor_1(pEVar4,pSVar6,pMVar5);
   func_?(&MethodInfo__XPLevelLimits__Validate_int_);
   func_?(pEVar4);
-  pcVar8 = (code *)swi(3);
-  bVar9 = (*pcVar8)();
-  return bVar9;
+  pcVar9 = (code *)swi(3);
+  bVar10 = (*pcVar9)();
+  return bVar10;
 }
 
 

@@ -423,10 +423,10 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::VirtualInput:
             (pDVar1,
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualAxis>__Dictionary__
             );
-  (this->fields).m_VirtualAxes =
-       (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualAxis_
-        *)pDVar1;
-  func_?(&(this->fields).m_VirtualAxes,pDVar1);
+  ppDVar2 = &(this->fields).m_VirtualAxes;
+  *ppDVar2 = (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualAxis_
+              *)pDVar1;
+  func_?(ppDVar2,pDVar1);
   pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
             *)func_?(
                              TypeInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>
@@ -437,10 +437,10 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::VirtualInput:
             (pDVar1,
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__Dictionary__
             );
-  (this->fields).m_VirtualButtons =
-       (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
-        *)pDVar1;
-  func_?(&(this->fields).m_VirtualButtons,pDVar1);
+  ppDVar3 = &(this->fields).m_VirtualButtons;
+  *ppDVar3 = (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
+              *)pDVar1;
+  func_?(ppDVar3,pDVar1);
   this_00 = (List_1_System_String_ *)
             func_?(TypeInfo__System__Collections__Generic__List<System::String>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -449,7 +449,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::VirtualInput:
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<System::String>__List__);
   method_00 = (MethodInfo *)&(this->fields).m_AlwaysUseVirtual;
-  (this->fields).m_AlwaysUseVirtual = this_00;
+  *(List_1_System_String_ **)method_00 = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

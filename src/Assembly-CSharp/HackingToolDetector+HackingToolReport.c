@@ -8,9 +8,10 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).app = app;
+  ppAVar1 = &(this->fields).app;
   (this->fields).kind = 0;
-  func_?(&(this->fields).app,app);
+  *ppAVar1 = app;
+  func_?(ppAVar1,app);
   return;
 }
 
@@ -25,11 +26,13 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).app = app;
+  ppAVar1 = &(this->fields).app;
   (this->fields).kind = 1;
-  func_?(&(this->fields).app,app);
-  (this->fields).exactFind = exactFind;
-  func_?(&(this->fields).exactFind,exactFind);
+  *ppAVar1 = app;
+  func_?(ppAVar1,app);
+  ppSVar2 = &(this->fields).exactFind;
+  *ppSVar2 = exactFind;
+  func_?(ppSVar2,exactFind);
   return;
 }
 
@@ -44,11 +47,13 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).app = app;
+  ppAVar1 = &(this->fields).app;
   (this->fields).kind = 2;
-  func_?(&(this->fields).app,app);
-  (this->fields).foundKey = foundKey;
-  func_?(&(this->fields).foundKey,foundKey);
+  *ppAVar1 = app;
+  func_?(ppAVar1,app);
+  ppAVar2 = &(this->fields).foundKey;
+  *ppAVar2 = foundKey;
+  func_?(ppAVar2,foundKey);
   return;
 }
 
@@ -63,13 +68,16 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).app = app;
+  ppAVar1 = &(this->fields).app;
   (this->fields).kind = 3;
-  func_?(&(this->fields).app,app);
-  (this->fields).foundKey = foundKey;
-  func_?(&(this->fields).foundKey,foundKey);
-  (this->fields).exactFind = exactFind;
-  func_?(&(this->fields).exactFind,exactFind);
+  *ppAVar1 = app;
+  func_?(ppAVar1,app);
+  ppAVar2 = &(this->fields).foundKey;
+  *ppAVar2 = foundKey;
+  func_?(ppAVar2,foundKey);
+  ppSVar3 = &(this->fields).exactFind;
+  *ppSVar3 = exactFind;
+  func_?(ppSVar3,exactFind);
   return;
 }
 

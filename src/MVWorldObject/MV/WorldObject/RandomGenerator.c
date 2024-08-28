@@ -34,31 +34,25 @@ code_?:
   else {
     uVar8 = pUVar5->max_length;
     iVar9 = (int)uVar8 >> 0x1f;
+    uVar10 = uVar3 * uVar1 * uVar2;
     if ((iVar9 < 1) && ((iVar9 < 0 || (uVar8 <= uVar4)))) {
-      puVar10 = &(this->fields).round;
-      *puVar10 = *puVar10 + 1;
+      puVar11 = &(this->fields).round;
+      *puVar11 = *puVar11 + 1;
       (this->fields).step = 0;
     }
-    uVar4 = uVar3 * uVar1 * uVar2;
     if ((TypeInfo__MV__WorldObject__RandomGenerator->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MV__WorldObject__RandomGenerator);
     }
-    pRVar11 = TypeInfo__MV__WorldObject__RandomGenerator;
     pUVar5 = TypeInfo__MV__WorldObject__RandomGenerator->static_fields->randomNumbers;
-    pUVar12 = TypeInfo__MV__WorldObject__RandomGenerator->static_fields->randomNumbers;
-    if (pUVar12 == (UInt16__Array *)0x0) goto code_?;
-    lVar13 = func_?(uVar4,0,pUVar12->max_length,(int)pUVar12->max_length >> 0x1f);
-    if (0x7fffffff < lVar13) goto code_?;
-    uVar8 = func_?(uVar4,0,pUVar12->max_length,(int)pUVar12->max_length >> 0x1f);
-    if (pUVar5->max_length <= uVar8) goto code_?;
-    uVar14 = pUVar5->vector[uVar8];
-    pUVar5 = pRVar11->static_fields->randomNumbers;
     if (pUVar5 == (UInt16__Array *)0x0) goto code_?;
-    lVar13 = func_?(~uVar4,0,pUVar5->max_length,(int)pUVar5->max_length >> 0x1f);
-    if (lVar13 < 0x80000000) {
-      uVar4 = func_?(~uVar4,0,pUVar5->max_length,(int)pUVar5->max_length >> 0x1f);
-      if (uVar4 < pUVar5->max_length) {
-        return (uint)pUVar5->vector[uVar4] + (uint)uVar14 * 0x10000;
+    lVar12 = func_?(uVar10,0,pUVar5->max_length,(int)pUVar5->max_length >> 0x1f);
+    if (0x7fffffff < lVar12) goto code_?;
+    if (pUVar5->max_length <= (uint)lVar12) goto code_?;
+    uVar13 = pUVar5->vector[(uint)lVar12];
+    lVar12 = func_?(~uVar10,0,pUVar5->max_length,(int)pUVar5->max_length >> 0x1f);
+    if (lVar12 < 0x80000000) {
+      if ((uint)lVar12 < pUVar5->max_length) {
+        return CONCAT22(uVar13,pUVar5->vector[(uint)lVar12]);
       }
       goto code_?;
     }
@@ -68,9 +62,9 @@ code_?:
   func_?(uVar7,pMVar6);
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  iVar16 = (*pcVar15)();
-  return iVar16;
+  pcVar14 = (code *)swi(3);
+  iVar15 = (*pcVar14)();
+  return iVar15;
 }
 
 
@@ -120,24 +114,78 @@ int32_t MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator_Ran
     func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
   }
-  if (min <= max + -1) {
-    iVar1 = RandomGenerator_GetNewRandom(this,(MethodInfo *)0x0);
-    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Math);
-    }
-    uVar2 = iVar1 / 2 >> 0x1f;
-    return min + (int)((iVar1 / 2 ^ uVar2) - uVar2) % (((max + -1) - min) + 1);
+  if (max + -1 < min) {
+    uVar1 = func_?(&TypeInfo__System__Exception);
+    this_00 = (Exception *)func_?(uVar1);
+    pMVar2 = (MethodInfo *)0x0;
+    message = (String *)func_?(&StringLiteral_max_must_be_greater_than_min);
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,pMVar2);
+    uVar1 = func_?(&MethodInfo__MV__WorldObject__RandomGenerator__Range_int__int_);
+    func_?(this_00,uVar1);
+code_?:
+    pMVar2 = MethodInfo__MV__WorldObject__RandomGenerator__GetNewRandom__;
+    uVar1 = func_?();
+    func_?(uVar1,pMVar2);
+code_?:
+    pMVar2 = MethodInfo__MV__WorldObject__RandomGenerator__GetNewRandom__;
+    uVar1 = func_?();
+    func_?(uVar1,pMVar2);
   }
-  uVar3 = func_?(&TypeInfo__System__Exception);
-  this_00 = (Exception *)func_?(uVar3);
-  method_00 = (MethodInfo *)0x0;
-  message = (String *)func_?(&StringLiteral_max_must_be_greater_than_min);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
-  uVar3 = func_?(&MethodInfo__MV__WorldObject__RandomGenerator__Range_int__int_);
-  func_?(this_00,uVar3);
-  pcVar4 = (code *)swi(3);
-  iVar1 = (*pcVar4)();
-  return iVar1;
+  else {
+    if (cRam_? == '\0') {
+      func_?(&MethodInfo__MV__WorldObject__RandomGenerator__GetNewRandom__);
+      func_?(&TypeInfo__MV__WorldObject__RandomGenerator);
+      cRam_? = '\x01';
+    }
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MV__WorldObject__RandomGenerator);
+      cRam_? = '\x01';
+    }
+    uVar3 = (this->fields).step;
+    uVar4 = (this->fields).seed;
+    uVar5 = (this->fields).round;
+    (this->fields).step = uVar3 + 1;
+    if ((TypeInfo__MV__WorldObject__RandomGenerator->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MV__WorldObject__RandomGenerator);
+    }
+    pUVar6 = TypeInfo__MV__WorldObject__RandomGenerator->static_fields->randomNumbers;
+    if (pUVar6 == (UInt16__Array *)0x0) goto code_?;
+    uVar7 = pUVar6->max_length;
+    iVar8 = (int)uVar7 >> 0x1f;
+    uVar9 = uVar5 * uVar3 * uVar4;
+    if ((iVar8 < 1) && ((iVar8 < 0 || (uVar7 <= uVar3 + 1)))) {
+      puVar10 = &(this->fields).round;
+      *puVar10 = *puVar10 + 1;
+      (this->fields).step = 0;
+    }
+    if ((TypeInfo__MV__WorldObject__RandomGenerator->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MV__WorldObject__RandomGenerator);
+    }
+    pUVar6 = TypeInfo__MV__WorldObject__RandomGenerator->static_fields->randomNumbers;
+    if (pUVar6 == (UInt16__Array *)0x0) goto code_?;
+    lVar11 = func_?(uVar9,0,pUVar6->max_length,(int)pUVar6->max_length >> 0x1f);
+    if (0x7fffffff < lVar11) goto code_?;
+    if ((uint)lVar11 < pUVar6->max_length) {
+      uVar12 = pUVar6->vector[(uint)lVar11];
+      lVar11 = func_?(~uVar9,0,pUVar6->max_length,(int)pUVar6->max_length >> 0x1f);
+      if (0x7fffffff < lVar11) goto code_?;
+      if ((uint)lVar11 < pUVar6->max_length) {
+        uVar13 = pUVar6->vector[(uint)lVar11];
+        if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__System__Math);
+        }
+        uVar7 = (int)((uint)uVar13 + (uint)uVar12 * 0x10000) / 2;
+        uVar9 = (int)uVar7 >> 0x1f;
+        return min + (int)((uVar7 ^ uVar9) - uVar9) % (((max + -1) - min) + 1);
+      }
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar14 = (code *)swi(3);
+  iVar15 = (*pcVar14)();
+  return iVar15;
 }
 
 

@@ -128,14 +128,14 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
     cRam_? = '\x01';
   }
+  key = this->currentCryptoKey;
   value = this->hiddenValue;
-  if (this->currentCryptoKey != obj.currentCryptoKey) {
-    iVar1 = this->currentCryptoKey;
+  if (key != obj.currentCryptoKey) {
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
         cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
     }
-    iVar1 = ObscuredShort_EncryptDecrypt_1(value,iVar1,(MethodInfo *)0x0);
+    iVar1 = ObscuredShort_EncryptDecrypt_1(value,key,(MethodInfo *)0x0);
     iVar2 = ObscuredShort_EncryptDecrypt_1(obj.hiddenValue,obj.currentCryptoKey,(MethodInfo *)0x0);
     return iVar1 == iVar2;
   }

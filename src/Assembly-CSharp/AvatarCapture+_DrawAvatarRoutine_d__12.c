@@ -9,9 +9,10 @@ bool Assembly-CSharp.dll::AvatarCapture+<DrawAvatarRoutine>d__12::
   iVar1 = (this->fields).__1__state;
   this_00 = (this->fields).__4__this;
   if (iVar1 == 0) {
-    (this->fields).__2__current = (Object *)0x0;
+    ppOVar2 = &(this->fields).__2__current;
     (this->fields).__1__state = -1;
-    func_?(&(this->fields).__2__current,0);
+    *ppOVar2 = (Object *)0x0;
+    func_?(ppOVar2,0);
     (this->fields).__1__state = 1;
     return 1;
   }
@@ -30,9 +31,9 @@ bool Assembly-CSharp.dll::AvatarCapture+<DrawAvatarRoutine>d__12::
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 

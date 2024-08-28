@@ -19,15 +19,9 @@ void Assembly-CSharp.dll::ObjectPrefab::ObjectPrefab_OnValidate
                      ((Component *)this,
                       UnityEngine__MeshRenderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::MeshRenderer>______
                      );
-  (this->fields).meshRenderers = pRVar1;
-  func_?(&(this->fields).meshRenderers,pRVar1);
-  pCVar2 = (Collider *)
-           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                     ((Component *)this,
-                      UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
-                     );
-  (this->fields).mainCollider = pCVar2;
-  func_?(&(this->fields).mainCollider,pCVar2);
+  ppRVar2 = &(this->fields).meshRenderers;
+  *ppRVar2 = pRVar1;
+  func_?(ppRVar2,&stack0xfffffffc,&UNK_?,ppRVar2,pRVar1);
   return;
 }
 

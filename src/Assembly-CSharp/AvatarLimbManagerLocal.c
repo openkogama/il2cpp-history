@@ -43,44 +43,48 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal::AvatarLimbManagerLocal_Initial
   AvatarLimbManager::AvatarLimbManager_Initialize
             ((AvatarLimbManager *)this,avatarWO,body,enabledChangeHandler,limbRotationRuntimeData,
              (MethodInfo *)0x0);
-  method_02 = TypeInfo__AvatarLimbManagerLocal__AvatarHeadRotationCalculator;
+  method_01 = TypeInfo__AvatarLimbManagerLocal__AvatarHeadRotationCalculator;
   value = (AvatarLimbManagerLocal_AvatarHeadRotationCalculator *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_02);
-  (this->fields).headRotationCalculator = value;
-  func_?(&(this->fields).headRotationCalculator,value);
-  pAVar1 = (AvatarLimbManagerLocal_AvatarHeadRotationHandlerLocal *)
-           func_?(TypeInfo__AvatarLimbManagerLocal__AvatarHeadRotationHandlerLocal);
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  ppAVar1 = &(this->fields).headRotationCalculator;
+  *ppAVar1 = value;
+  func_?(ppAVar1,value);
+  pAVar2 = (AvatarLimbManagerLocal_AvatarHeadRotationHandlerLocal *)
+            func_?(TypeInfo__AvatarLimbManagerLocal__AvatarHeadRotationHandlerLocal);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  pQVar2 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar3 = (pQVar2->identityQuaternion).y;
-  fVar4 = (pQVar2->identityQuaternion).z;
-  fVar5 = (pQVar2->identityQuaternion).w;
-  (pAVar1->fields).yawRotation.x = (pQVar2->identityQuaternion).x;
-  (pAVar1->fields).yawRotation.y = fVar3;
-  (pAVar1->fields).yawRotation.z = fVar4;
-  (pAVar1->fields).yawRotation.w = fVar5;
+  pQVar3 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar4 = (pQVar3->identityQuaternion).y;
+  fVar5 = (pQVar3->identityQuaternion).z;
+  fVar6 = (pQVar3->identityQuaternion).w;
+  (pAVar2->fields).yawRotation.x = (pQVar3->identityQuaternion).x;
+  (pAVar2->fields).yawRotation.y = fVar4;
+  (pAVar2->fields).yawRotation.z = fVar5;
+  (pAVar2->fields).yawRotation.w = fVar6;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  pQVar2 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar3 = (pQVar2->identityQuaternion).y;
-  fVar4 = (pQVar2->identityQuaternion).z;
-  fVar5 = (pQVar2->identityQuaternion).w;
-  (pAVar1->fields).pitchRotation.x = (pQVar2->identityQuaternion).x;
-  (pAVar1->fields).pitchRotation.y = fVar3;
-  (pAVar1->fields).pitchRotation.z = fVar4;
-  (pAVar1->fields).pitchRotation.w = fVar5;
+  pQVar3 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar4 = (pQVar3->identityQuaternion).y;
+  fVar5 = (pQVar3->identityQuaternion).z;
+  fVar6 = (pQVar3->identityQuaternion).w;
+  (pAVar2->fields).pitchRotation.x = (pQVar3->identityQuaternion).x;
+  (pAVar2->fields).pitchRotation.y = fVar4;
+  (pAVar2->fields).pitchRotation.z = fVar5;
+  (pAVar2->fields).pitchRotation.w = fVar6;
   MVWorldObject.dll::LogicEvaluateInputSignalsAnd::LogicEvaluateInputSignalsAnd__ctor
-            ((LogicEvaluateInputSignalsAnd *)pAVar1,(MethodInfo *)0x0);
-  (this->fields).headRotationHandler = pAVar1;
+            ((LogicEvaluateInputSignalsAnd *)pAVar2,(MethodInfo *)0x0);
+  ppAVar7 = &(this->fields).headRotationHandler;
+  *ppAVar7 = pAVar2;
   func_?();
-  pAVar1 = (this->fields).headRotationHandler;
-  if (pAVar1 == (AvatarLimbManagerLocal_AvatarHeadRotationHandlerLocal *)0x0) {
+  pAVar2 = *ppAVar7;
+  if (pAVar2 == (AvatarLimbManagerLocal_AvatarHeadRotationHandlerLocal *)0x0) {
+code_?:
+    func_?();
 code_?:
     func_?();
 code_?:
@@ -93,289 +97,297 @@ code_?:
     func_?();
   }
   else {
-    (*(code *)(pAVar1->klass->vtable).Initialize.method)();
-    method_01 = TypeInfo__AvatarLimbManagerLocal__AvatarPointingRotationCalculator;
+    (*(code *)(pAVar2->klass->vtable).Initialize.method)();
+    method_02 = TypeInfo__AvatarLimbManagerLocal__AvatarPointingRotationCalculator;
     value_00 = (AvatarLimbManagerLocal_AvatarPointingRotationCalculator *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-    (this->fields).pointingRotationCalculator = value_00;
-    func_?(&(this->fields).pointingRotationCalculator,value_00);
-    pAVar6 = (AvatarLimbManagerLocal_AvatarPointingHandlerLocal *)
-             func_?(TypeInfo__AvatarLimbManagerLocal__AvatarPointingHandlerLocal);
+              ((Object *)value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_02);
+    ppAVar8 = &(this->fields).pointingRotationCalculator;
+    *ppAVar8 = value_00;
+    func_?(ppAVar8,value_00);
+    this_00 = (AvatarLimbManagerLocal_AvatarPointingHandlerLocal *)
+              func_?(TypeInfo__AvatarLimbManagerLocal__AvatarPointingHandlerLocal);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pQVar2 = TypeInfo__UnityEngine__Quaternion->static_fields;
-    fVar3 = (pQVar2->identityQuaternion).y;
-    fVar4 = (pQVar2->identityQuaternion).z;
-    fVar5 = (pQVar2->identityQuaternion).w;
-    (pAVar6->fields).yawRotation.x = (pQVar2->identityQuaternion).x;
-    (pAVar6->fields).yawRotation.y = fVar3;
-    (pAVar6->fields).yawRotation.z = fVar4;
-    (pAVar6->fields).yawRotation.w = fVar5;
+    pQVar3 = TypeInfo__UnityEngine__Quaternion->static_fields;
+    fVar4 = (pQVar3->identityQuaternion).y;
+    fVar5 = (pQVar3->identityQuaternion).z;
+    fVar6 = (pQVar3->identityQuaternion).w;
+    (this_00->fields).yawRotation.x = (pQVar3->identityQuaternion).x;
+    (this_00->fields).yawRotation.y = fVar4;
+    (this_00->fields).yawRotation.z = fVar5;
+    (this_00->fields).yawRotation.w = fVar6;
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pQVar2 = TypeInfo__UnityEngine__Quaternion->static_fields;
-    fVar3 = (pQVar2->identityQuaternion).y;
-    fVar4 = (pQVar2->identityQuaternion).z;
-    fVar5 = (pQVar2->identityQuaternion).w;
-    (pAVar6->fields).pitchRotation.x = (pQVar2->identityQuaternion).x;
-    (pAVar6->fields).pitchRotation.y = fVar3;
-    (pAVar6->fields).pitchRotation.z = fVar4;
-    (pAVar6->fields).pitchRotation.w = fVar5;
+    pQVar3 = TypeInfo__UnityEngine__Quaternion->static_fields;
+    fVar4 = (pQVar3->identityQuaternion).y;
+    fVar5 = (pQVar3->identityQuaternion).z;
+    fVar6 = (pQVar3->identityQuaternion).w;
+    (this_00->fields).pitchRotation.x = (pQVar3->identityQuaternion).x;
+    (this_00->fields).pitchRotation.y = fVar4;
+    (this_00->fields).pitchRotation.z = fVar5;
+    (this_00->fields).pitchRotation.w = fVar6;
     AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler__ctor
-              ((AvatarLimbManager_AvatarPointingHandler *)pAVar6,(MethodInfo *)0x0);
-    (this->fields).pointingHandler = pAVar6;
+              ((AvatarLimbManager_AvatarPointingHandler *)this_00,(MethodInfo *)0x0);
+    ppAVar9 = &(this->fields).pointingHandler;
+    *ppAVar9 = this_00;
     func_?();
-    pAVar6 = (this->fields).pointingHandler;
-    if (pAVar6 == (AvatarLimbManagerLocal_AvatarPointingHandlerLocal *)0x0) goto code_?;
-    (*(code *)(pAVar6->klass->vtable).Initialize.method)();
-    pAVar7 = (AvatarLimbManager_AvatarEmoteHandler *)func_?();
+    if (*ppAVar9 == (AvatarLimbManagerLocal_AvatarPointingHandlerLocal *)0x0) goto code_?;
+    (*(code *)((*ppAVar9)->klass->vtable).Initialize.method)();
+    pAVar10 = (AvatarLimbManager_AvatarEmoteHandler *)
+              func_?(TypeInfo__AvatarLimbManagerLocal__AvatarEmoteHandlerLocal);
     if (cRam_? == '\0') {
       func_?();
       func_?();
       cRam_? = '\x01';
     }
-    this_00 = (AvatarLimbManager_AvatarEmoteHandler__Class *)func_?();
+    this_01 = (AvatarLimbManager_AvatarEmoteHandler__Class *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
     RuntimeEvents::ExplosionEvent+ExplosionValues]::
     Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor
               ((Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
-                *)this_00,
+                *)this_01,
                MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManagerLocal::AvatarEmoteRecogniser>__Dictionary__
               );
-    pAVar7[1].klass = this_00;
+    pAVar10[1].klass = this_01;
     func_?();
     AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler__ctor
-              (pAVar7,(MethodInfo *)0x0);
-    (this->fields)._.emoteHandler = pAVar7;
+              (pAVar10,(MethodInfo *)0x0);
+    ppAVar11 = &(this->fields)._.emoteHandler;
+    *ppAVar11 = pAVar10;
     func_?();
-    pAVar7 = (this->fields)._.emoteHandler;
-    if (pAVar7 == (AvatarLimbManager_AvatarEmoteHandler *)0x0) goto code_?;
+    pAVar10 = *ppAVar11;
+    if (pAVar10 == (AvatarLimbManager_AvatarEmoteHandler *)0x0) goto code_?;
     AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler_Initialize
-              (pAVar7,(AvatarLimbManager *)this,(this->fields)._.lookDirectionHandler,
+              (pAVar10,(AvatarLimbManager *)this,(this->fields)._.lookDirectionHandler,
                (AvatarLimbManager_AvatarPointingHandler *)(this->fields).pointingHandler,
                (AvatarLimbManager_AvatarHeadRotationHandler *)(this->fields).headRotationHandler,
-               (this->fields)._.limbRotator,(AvatarEnabledChangeHandler *)this_00,(MethodInfo *)0x0)
-    ;
+               (this->fields)._.limbRotator,(AvatarEnabledChangeHandler *)0x0,(MethodInfo *)0x0);
     method_00 = TypeInfo__AvatarLimbManagerLocal__AvatarLimbDataManagerLocal;
-    pAVar8 = (AvatarLimbManagerLocal_AvatarLimbDataManagerLocal *)func_?();
+    pAVar12 = (AvatarLimbManagerLocal_AvatarLimbDataManagerLocal *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)pAVar8,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    (this->fields).dataManager = pAVar8;
+              ((Object *)pAVar12,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    ppAVar13 = &(this->fields).dataManager;
+    *ppAVar13 = pAVar12;
     func_?();
-    pAVar8 = (this->fields).dataManager;
-    if (pAVar8 == (AvatarLimbManagerLocal_AvatarLimbDataManagerLocal *)0x0) goto code_?;
-    (pAVar8->fields).limbRotationRuntimeData = (LimbRotationRuntimeData *)method_00;
+    pAVar12 = *ppAVar13;
+    if (pAVar12 == (AvatarLimbManagerLocal_AvatarLimbDataManagerLocal *)0x0) goto code_?;
+    pAVar14 = &pAVar12->fields;
+    pAVar14->limbRotationRuntimeData = (LimbRotationRuntimeData *)ppAVar9;
     func_?();
-    a = (this->fields).DelayHeadRotationNetworkMessage;
-    pAVar1 = (this->fields).headRotationHandler;
-    this_01 = (UnityAction_1_System_Single_ *)func_?();
+    pAVar15 = TypeInfo__System__Action<float>;
+    ppAVar16 = &(this->fields).DelayHeadRotationNetworkMessage;
+    pAVar17 = *ppAVar16;
+    object = pAVar14->limbRotationRuntimeData;
+    pUVar18 = (UnityAction_1_System_Single_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
     UnityAction_1_System_Single___ctor
-              (this_01,(Object *)pAVar1,
+              (pUVar18,(Object *)object,
                MethodInfo__AvatarLimbManagerLocal__AvatarHeadRotationHandlerLocal__ResetNetworkMessageCooldown_float_
                ,(MethodInfo *)0x0);
-    pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pDVar9 == (Delegate *)0x0) {
-      this_01[1].monitor = (MonitorData *)0x0;
-code_?:
-      func_?();
-      pDVar9 = this_01[1].fields._._.method_ptr;
-      object = *(Object **)&(this_01->fields)._._.method_is_virtual;
-      this_02 = (UnityAction_1_System_Single_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
-      UnityAction_1_System_Single___ctor
-                (this_02,object,
-                 MethodInfo__AvatarLimbManagerLocal__AvatarPointingHandlerLocal__ResetNetworkMessageDelay_float_
-                 ,(MethodInfo *)0x0);
-      pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
-                          (pDVar9,(Delegate *)this_02,(MethodInfo *)0x0);
-      if (pDVar9 != (Delegate *)0x0) {
-        pvVar10 = (void *)func_?();
-        if (pvVar10 != (void *)0x0) {
-          this_01[1].fields._._.method_ptr = pvVar10;
-          iVar11 = func_?();
-          if (iVar11 != 0) goto code_?;
-        }
-        goto code_?;
+    piVar19 = (int *)&UNK_?;
+    pDVar20 = mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)pAVar17,(Delegate *)pUVar18,(MethodInfo *)0x0);
+    if (pDVar20 != (Delegate *)0x0) {
+      pAVar17 = (Action_1_Single_ *)func_?();
+      if (pAVar17 != (Action_1_Single_ *)0x0) {
+        *ppAVar16 = pAVar17;
+        iVar21 = func_?();
+        if (iVar21 != 0) goto code_?;
       }
-      this_01[1].fields._._.method_ptr = (void *)0x0;
+      goto code_?;
+    }
+    *ppAVar16 = (Action_1_Single_ *)0x0;
+code_?:
+    func_?();
+    pDVar20 = pDRam00000048;
+    object_00 = (pAVar15->_0).image;
+    pUVar18 = (UnityAction_1_System_Single_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
+    UnityAction_1_System_Single___ctor
+              (pUVar18,(Object *)object_00,
+               MethodInfo__AvatarLimbManagerLocal__AvatarPointingHandlerLocal__ResetNetworkMessageDelay_float_
+               ,(MethodInfo *)0x0);
+    pDVar20 = mscorlib.dll::System::Delegate::Delegate_Combine
+                        (pDVar20,(Delegate *)pUVar18,(MethodInfo *)0x0);
+    if (pDVar20 == (Delegate *)0x0) {
+      _UNK_? = 0;
+    }
+    else {
+      iVar21 = func_?();
+      if (iVar21 == 0) goto code_?;
+      _UNK_? = iVar21;
+      iVar21 = func_?();
+      if (iVar21 == 0) goto code_?;
+    }
+    func_?();
+    pAVar22 = TypeInfo__System__Action<System::String>;
+    if (*piVar19 == 0) goto code_?;
+    pDVar20 = *(Delegate **)(*piVar19 + 0x18);
+    this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_02,(Object *)0x0,MethodInfo__AvatarLimbManager__OnStartEmote_System__String_,
+               (MethodInfo *)0x0);
+    pDVar20 = mscorlib.dll::System::Delegate::Delegate_Combine
+                        (pDVar20,(Delegate *)this_02,(MethodInfo *)0x0);
+    if (pDVar20 == (Delegate *)0x0) {
+      (pAVar22->_0).this_arg.data.dummy = (void *)0x0;
 code_?:
       func_?();
-      pvVar10 = (this_01->fields)._._.method;
-      if (pvVar10 == (void *)0x0) goto code_?;
-      pDVar9 = *(Delegate **)((int)pvVar10 + 0x18);
-      this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 *)func_?();
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                (this_03,(Object *)this_01,
-                 MethodInfo__AvatarLimbManager__OnStartEmote_System__String_,(MethodInfo *)0x0);
-      pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
-                          (pDVar9,(Delegate *)this_03,(MethodInfo *)0x0);
-      if (pDVar9 == (Delegate *)0x0) {
-        _UNK_? = 0;
+      pAVar23 = TypeInfo__System__Action<UnityEngine::Quaternion>;
+      if (iRam_? == 0) goto code_?;
+      pDVar20 = *(Delegate **)(iRam_? + 0x3c);
+      pUVar24 = (UnityAction_1_UnityEngine_Color_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
+      UnityAction_1_UnityEngine_Color___ctor
+                (pUVar24,(Object *)0x0,
+                 MethodInfo__AvatarLimbManagerLocal__SynchronizeHeadRotation_UnityEngine__Quaternion_
+                 ,(MethodInfo *)0x0);
+      pDVar20 = mscorlib.dll::System::Delegate::Delegate_Combine
+                          (pDVar20,(Delegate *)pUVar24,(MethodInfo *)0x0);
+      if (pDVar20 == (Delegate *)0x0) {
+        (pAVar23->_0).klass = (Il2CppClass *)0x0;
 code_?:
         func_?();
-        pMVar12 = (this_01->fields)._._.original_method_info;
-        if (pMVar12 == (MethodInfo_1 *)0x0) goto code_?;
-        pDVar9 = (Delegate *)pMVar12[7].monitor;
-        pUVar13 = (UnityAction_1_UnityEngine_Color_ *)func_?();
+        pAVar23 = TypeInfo__System__Action<UnityEngine::Quaternion>;
+        if (iRam_? == 0) goto code_?;
+        pDVar20 = *(Delegate **)(iRam_? + 0x5c);
+        pUVar24 = (UnityAction_1_UnityEngine_Color_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
         UnityAction_1_UnityEngine_Color___ctor
-                  (pUVar13,(Object *)this_01,
-                   MethodInfo__AvatarLimbManagerLocal__SynchronizeHeadRotation_UnityEngine__Quaternion_
-                   ,(MethodInfo *)0x0);
-        pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
-                            (pDVar9,(Delegate *)pUVar13,(MethodInfo *)0x0);
-        if (pDVar9 == (Delegate *)0x0) {
-          _UNK_? = 0;
+                  (pUVar24,(Object *)0x0,
+                   MethodInfo__AvatarLimbManagerLocal__SynchronizePointing_UnityEngine__Quaternion_,
+                   (MethodInfo *)0x0);
+        pDVar20 = mscorlib.dll::System::Delegate::Delegate_Combine
+                            (pDVar20,(Delegate *)pUVar24,(MethodInfo *)0x0);
+        if (pDVar20 == (Delegate *)0x0) {
+          pAVar23->static_fields = (Action_1_UnityEngine_Quaternion___StaticFields *)0x0;
 code_?:
           func_?();
-          iVar11 = *(int *)&(this_01->fields)._._.method_is_virtual;
-          if (iVar11 == 0) goto code_?;
-          pDVar9 = *(Delegate **)(iVar11 + 0x5c);
-          pUVar13 = (UnityAction_1_UnityEngine_Color_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
-          UnityAction_1_UnityEngine_Color___ctor
-                    (pUVar13,(Object *)this_01,
-                     MethodInfo__AvatarLimbManagerLocal__SynchronizePointing_UnityEngine__Quaternion_
-                     ,(MethodInfo *)0x0);
-          pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
-                              (pDVar9,(Delegate *)pUVar13,(MethodInfo *)0x0);
-          if (pDVar9 == (Delegate *)0x0) {
-            _UNK_? = 0;
-          }
-          else {
-            iVar11 = func_?();
-            if (iVar11 == 0) goto code_?;
-            _UNK_? = iVar11;
-            iVar11 = func_?();
-            if (iVar11 == 0) goto code_?;
-          }
-          func_?();
-          pvVar10 = (this_01->fields)._._.method;
-          if (pvVar10 == (void *)0x0) goto code_?;
-          pDVar9 = *(Delegate **)((int)pvVar10 + 0x1c);
-          this_04 = (UnityAction_1_System_Int32Enum_ *)func_?();
+          pAVar25 = TypeInfo__System__Action<int>;
+          if (iRam_? == 0) goto code_?;
+          pDVar20 = *(Delegate **)(iRam_? + 0x1c);
+          this_03 = (UnityAction_1_System_Int32Enum_ *)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
           UnityAction_1_System_Int32Enum___ctor
-                    (this_04,(Object *)this_01,
-                     MethodInfo__AvatarLimbManagerLocal__SynchronizeEmote_int_,(MethodInfo *)0x0);
-          pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
-                              (pDVar9,(Delegate *)this_04,(MethodInfo *)0x0);
-          if (pDVar9 == (Delegate *)0x0) {
-            _UNK_? = 0;
-          }
-          else {
-            iVar11 = func_?();
-            if (iVar11 == 0) goto code_?;
-            _UNK_? = iVar11;
-            iVar11 = func_?();
-            if (iVar11 == 0) goto code_?;
-          }
-          func_?();
-          if ((TypeInfo__ChatCommandManager->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          pAVar14 = ChatCommandManager::ChatCommandManager_GetChatCommandCallback
-                              (ChatCommand__Enum_StartShake,(MethodInfo *)0x0);
-          pNVar15 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-          NavMesh_OnNavMeshPreUpdate__ctor
-                    (pNVar15,(Object *)this_01,
-                     MethodInfo__AvatarLimbManagerLocal__OnShakeChatCommand__,(MethodInfo *)0x0);
-          pAVar16 = (Action *)
-                    mscorlib.dll::System::Delegate::Delegate_Combine
-                              ((Delegate *)pAVar14,(Delegate *)pNVar15,(MethodInfo *)0x0);
-          pAVar14 = (Action *)0x0;
-          if (pAVar16 == (Action *)0x0) {
+                    (this_03,(Object *)0x0,MethodInfo__AvatarLimbManagerLocal__SynchronizeEmote_int_
+                     ,(MethodInfo *)0x0);
+          pDVar20 = mscorlib.dll::System::Delegate::Delegate_Combine
+                              (pDVar20,(Delegate *)this_03,(MethodInfo *)0x0);
+          if (pDVar20 == (Delegate *)0x0) {
+            (pAVar25->_0).this_arg.attrs = 0;
+            (pAVar25->_0).this_arg.type = 0;
+            (pAVar25->_0).this_arg.field_0x7 = 0;
 code_?:
-            ChatCommandManager::ChatCommandManager_UpdateChatCommandCallback
-                      (ChatCommand__Enum_StartShake,pAVar14,(MethodInfo *)0x0);
-            pAVar14 = ChatCommandManager::ChatCommandManager_GetChatCommandCallback
-                                (ChatCommand__Enum_StartNod,(MethodInfo *)0x0);
-            pNVar15 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-            NavMesh_OnNavMeshPreUpdate__ctor
-                      (pNVar15,(Object *)this_01,
-                       MethodInfo__AvatarLimbManagerLocal__OnNodChatCommand__,(MethodInfo *)0x0);
-            pAVar16 = (Action *)
-                      mscorlib.dll::System::Delegate::Delegate_Combine
-                                ((Delegate *)pAVar14,(Delegate *)pNVar15,(MethodInfo *)0x0);
-            pAVar14 = (Action *)0x0;
-            if (pAVar16 != (Action *)0x0) {
-              if (pAVar16->klass == TypeInfo__System__Action) {
-                pAVar14 = pAVar16;
-              }
-              if (pAVar14 == (Action *)0x0) goto code_?;
+            func_?();
+            if ((TypeInfo__ChatCommandManager->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
             }
-            ChatCommandManager::ChatCommandManager_UpdateChatCommandCallback
-                      (ChatCommand__Enum_StartNod,pAVar14,(MethodInfo *)0x0);
-            pAVar14 = ChatCommandManager::ChatCommandManager_GetChatCommandCallback
-                                (ChatCommand__Enum_StartWave,(MethodInfo *)0x0);
-            pNVar15 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+            pAVar26 = ChatCommandManager::ChatCommandManager_GetChatCommandCallback
+                                (ChatCommand__Enum_StartShake,(MethodInfo *)0x0);
+            pNVar27 = (NavMesh_OnNavMeshPreUpdate *)func_?();
             UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
             NavMesh_OnNavMeshPreUpdate__ctor
-                      (pNVar15,(Object *)this_01,
-                       MethodInfo__AvatarLimbManagerLocal__OnWaveChatCommand__,(MethodInfo *)0x0);
-            pAVar16 = (Action *)
+                      (pNVar27,(Object *)0x0,
+                       MethodInfo__AvatarLimbManagerLocal__OnShakeChatCommand__,(MethodInfo *)0x0);
+            pAVar28 = (Action *)
                       mscorlib.dll::System::Delegate::Delegate_Combine
-                                ((Delegate *)pAVar14,(Delegate *)pNVar15,(MethodInfo *)0x0);
-            pAVar14 = (Action *)0x0;
-            if (pAVar16 == (Action *)0x0) {
+                                ((Delegate *)pAVar26,(Delegate *)pNVar27,(MethodInfo *)0x0);
+            pAVar26 = (Action *)0x0;
+            if (pAVar28 == (Action *)0x0) {
 code_?:
               ChatCommandManager::ChatCommandManager_UpdateChatCommandCallback
-                        (ChatCommand__Enum_StartWave,pAVar14,(MethodInfo *)0x0);
-              return;
+                        (ChatCommand__Enum_StartShake,pAVar26,(MethodInfo *)0x0);
+              pAVar26 = ChatCommandManager::ChatCommandManager_GetChatCommandCallback
+                                  (ChatCommand__Enum_StartNod,(MethodInfo *)0x0);
+              pNVar27 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+              UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+              NavMesh_OnNavMeshPreUpdate__ctor
+                        (pNVar27,(Object *)0x0,
+                         MethodInfo__AvatarLimbManagerLocal__OnNodChatCommand__,(MethodInfo *)0x0);
+              pAVar28 = (Action *)
+                        mscorlib.dll::System::Delegate::Delegate_Combine
+                                  ((Delegate *)pAVar26,(Delegate *)pNVar27,(MethodInfo *)0x0);
+              pAVar26 = (Action *)0x0;
+              if (pAVar28 != (Action *)0x0) {
+                if (pAVar28->klass == TypeInfo__System__Action) {
+                  pAVar26 = pAVar28;
+                }
+                if (pAVar26 == (Action *)0x0) goto code_?;
+              }
+              ChatCommandManager::ChatCommandManager_UpdateChatCommandCallback
+                        (ChatCommand__Enum_StartNod,pAVar26,(MethodInfo *)0x0);
+              pAVar26 = ChatCommandManager::ChatCommandManager_GetChatCommandCallback
+                                  (ChatCommand__Enum_StartWave,(MethodInfo *)0x0);
+              pNVar27 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+              UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+              NavMesh_OnNavMeshPreUpdate__ctor
+                        (pNVar27,(Object *)0x0,
+                         MethodInfo__AvatarLimbManagerLocal__OnWaveChatCommand__,(MethodInfo *)0x0);
+              pAVar28 = (Action *)
+                        mscorlib.dll::System::Delegate::Delegate_Combine
+                                  ((Delegate *)pAVar26,(Delegate *)pNVar27,(MethodInfo *)0x0);
+              pAVar26 = (Action *)0x0;
+              if (pAVar28 == (Action *)0x0) {
+code_?:
+                ChatCommandManager::ChatCommandManager_UpdateChatCommandCallback
+                          (ChatCommand__Enum_StartWave,pAVar26,(MethodInfo *)0x0);
+                return;
+              }
+              if (pAVar28->klass == TypeInfo__System__Action) {
+                pAVar26 = pAVar28;
+              }
+              if (pAVar26 != (Action *)0x0) goto code_?;
             }
-            if (pAVar16->klass == TypeInfo__System__Action) {
-              pAVar14 = pAVar16;
+            else {
+              if (pAVar28->klass == TypeInfo__System__Action) {
+                pAVar26 = pAVar28;
+              }
+              if (pAVar26 != (Action *)0x0) goto code_?;
             }
-            if (pAVar14 != (Action *)0x0) goto code_?;
+            goto code_?;
           }
-          else {
-            if (pAVar16->klass == TypeInfo__System__Action) {
-              pAVar14 = pAVar16;
-            }
-            if (pAVar14 != (Action *)0x0) goto code_?;
-          }
+          iVar21 = func_?();
+          if (iVar21 == 0) goto code_?;
+          (pAVar25->_0).this_arg.attrs = (short)iVar21;
+          (pAVar25->_0).this_arg.type = (char)((uint)iVar21 >> 0x10);
+          (pAVar25->_0).this_arg.field_0x7 = (char)((uint)iVar21 >> 0x18);
+          iVar21 = func_?();
+          if (iVar21 != 0) goto code_?;
           goto code_?;
         }
-        iVar11 = func_?();
-        if (iVar11 == 0) goto code_?;
-        _UNK_? = iVar11;
-        iVar11 = func_?();
-        if (iVar11 != 0) goto code_?;
+        pAVar29 = (Action_1_UnityEngine_Quaternion___StaticFields *)func_?();
+        if (pAVar29 == (Action_1_UnityEngine_Quaternion___StaticFields *)0x0) goto code_?;
+        pAVar23->static_fields = pAVar29;
+        iVar21 = func_?();
+        if (iVar21 != 0) goto code_?;
         goto code_?;
       }
-      iVar11 = func_?();
-      if (iVar11 == 0) goto code_?;
-      _UNK_? = iVar11;
-      iVar11 = func_?();
-      if (iVar11 != 0) goto code_?;
+      pIVar30 = (Il2CppClass *)func_?();
+      if (pIVar30 == (Il2CppClass *)0x0) goto code_?;
+      (pAVar23->_0).klass = pIVar30;
+      iVar21 = func_?();
+      if (iVar21 != 0) goto code_?;
       goto code_?;
     }
-    pMVar17 = (MonitorData *)func_?();
-    if (pMVar17 != (MonitorData *)0x0) {
-      this_01[1].monitor = pMVar17;
-      iVar11 = func_?();
-      if (iVar11 == 0) goto code_?;
-      goto code_?;
-    }
+    pvVar31 = (void *)func_?();
+    if (pvVar31 == (void *)0x0) goto code_?;
+    (pAVar22->_0).this_arg.data.dummy = pvVar31;
+    iVar21 = func_?();
+    if (iVar21 != 0) goto code_?;
   }
-code_?:
   func_?();
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar32 = (code *)swi(3);
+  (*pcVar32)();
   return;
 }
 
@@ -412,20 +424,21 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal::AvatarLimbManagerLocal_StartEm
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (AvatarLimbManagerLocal_AvatarEmoteHandlerLocal *)(this->fields)._.emoteHandler;
-  if (this_00 == (AvatarLimbManagerLocal_AvatarEmoteHandlerLocal *)0x0) {
+  this_00 = (Enum__Class *)(this->fields)._.emoteHandler;
+  if (this_00 == (Enum__Class *)0x0) {
     func_?();
     this_00 = extraout_EDX_00;
 code_?:
-    func_?(this_00);
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
+    pEStack_1 = (EmoteTypes__Enum__Class *)this_00;
+    func_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  if (((this_00->klass->_1).naturalAligment <
-       (TypeInfo__AvatarLimbManagerLocal__AvatarEmoteHandlerLocal->_1).naturalAligment) ||
-     ((this_00->klass->_1).typeHierarchy
-      [(TypeInfo__AvatarLimbManagerLocal__AvatarEmoteHandlerLocal->_1).naturalAligment - 1] !=
+  pAVar3 = (AvatarLimbManagerLocal_AvatarEmoteHandlerLocal__Class *)(this_00->_0).image;
+  bVar4 = (TypeInfo__AvatarLimbManagerLocal__AvatarEmoteHandlerLocal->_1).naturalAligment;
+  if (((pAVar3->_1).naturalAligment < bVar4) ||
+     ((pAVar3->_1).typeHierarchy[bVar4 - 1] !=
       (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal__AvatarEmoteHandlerLocal))
   goto code_?;
   if (cRam_? == '\0') {
@@ -435,8 +448,8 @@ code_?:
     func_?(&StringLiteral___Please_add_it_to_the_StartEmot);
     cRam_? = '\x01';
   }
-  EVar2 = emoteType & 0xff;
-  if (EVar2 == EmoteTypes__Enum_Shake) {
+  EVar5 = emoteType & 0xff;
+  if (EVar5 == EmoteTypes__Enum_Shake) {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__AvatarLimbManagerLocal);
       func_?(&
@@ -444,57 +457,58 @@ code_?:
                      );
       cRam_? = '\x01';
     }
-    pDVar3 = (this_00->fields)._.emoteDatas;
-    if (pDVar3 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) {
-      pAVar4 = (AvatarLimbManager_EmoteData *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar3,1,
-                          MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
-                         );
+    pDVar6 = (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)(this_00->_0).namespaze;
+    if (pDVar6 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) {
+      pAVar7 = (AvatarLimbManager_EmoteData *)
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+                Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                          ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar6,1,
+                           MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
+                          );
       method_00 = (MethodInfo *)&UNK_?;
-      bVar5 = AvatarLimbManager+AvatarEmoteHandler::
+      bVar8 = AvatarLimbManager+AvatarEmoteHandler::
               AvatarLimbManager_AvatarEmoteHandler_CanStartEmote
-                        ((AvatarLimbManager_AvatarEmoteHandler *)this_00,pAVar4,(MethodInfo *)0x0);
-      if (bVar5 == 0) {
+                        ((AvatarLimbManager_AvatarEmoteHandler *)this_00,pAVar7,(MethodInfo *)0x0);
+      if (bVar8 == 0) {
         return;
       }
       AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler_StartEmote
                 ((AvatarLimbManager_AvatarEmoteHandler *)this_00,EmoteTypes__Enum_Shake,
                  (MethodInfo *)0x0);
-      pAVar6 = (this_00->fields)._.limbManager;
+      pAVar9 = (((AvatarLimbManagerLocal_AvatarEmoteHandlerLocal__Fields *)&(this_00->_0).name)->_)
+                .limbManager;
       unaff_EDI = TypeInfo__AvatarLimbManagerLocal;
-      if (pAVar6 != (AvatarLimbManager *)0x0) {
-        pAVar7 = TypeInfo__AvatarLimbManagerLocal;
-        if (((pAVar6->klass->_1).naturalAligment <
-             (TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment) ||
-           ((pAVar6->klass->_1).typeHierarchy
-            [(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment - 1] !=
+      if (pAVar9 != (AvatarLimbManager *)0x0) {
+        bVar4 = (TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment;
+        pAVar10 = TypeInfo__AvatarLimbManagerLocal;
+        if (((pAVar9->klass->_1).naturalAligment < bVar4) ||
+           ((pAVar9->klass->_1).typeHierarchy[bVar4 - 1] !=
             (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) goto code_?;
-        pDVar3 = (this_00->fields)._.emoteDatas;
-        unaff_EDI = (AvatarLimbManagerLocal__Class *)pAVar6[1].fields.emoteHandler;
-        if (pDVar3 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0)
+        pDVar6 = (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)(this_00->_0).namespaze;
+        unaff_EDI = (AvatarLimbManagerLocal__Class *)pAVar9[1].fields.emoteHandler;
+        if (pDVar6 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0)
         goto code_?;
       }
     }
   }
   else {
-    if (EVar2 != EmoteTypes__Enum_Nod) {
-      if (EVar2 != EmoteTypes__Enum_Wave) {
-        pSVar8 = mscorlib.dll::System::Enum::Enum_ToString
-                           ((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
-        pSVar8 = mscorlib.dll::System::String::String_Concat_4
-                           (StringLiteral_Could_not_start_and_network_,pSVar8,
+    if (EVar5 != EmoteTypes__Enum_Nod) {
+      if (EVar5 != EmoteTypes__Enum_Wave) {
+        pEStack_1 = TypeInfo__EmoteTypes;
+        pSVar11 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pEStack_1,(MethodInfo *)0x0);
+        pSVar11 = mscorlib.dll::System::String::String_Concat_4
+                           (StringLiteral_Could_not_start_and_network_,pSVar11,
                             StringLiteral___Please_add_it_to_the_StartEmot,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                  ((Object *)pSVar8,(MethodInfo *)0x0);
+                  ((Object *)pSVar11,(MethodInfo *)0x0);
         return;
       }
       AvatarLimbManagerLocal+AvatarEmoteHandlerLocal::
-      AvatarLimbManagerLocal_AvatarEmoteHandlerLocal_OnWaveEmoteStart(this_00,(MethodInfo *)0x0);
+      AvatarLimbManagerLocal_AvatarEmoteHandlerLocal_OnWaveEmoteStart
+                ((AvatarLimbManagerLocal_AvatarEmoteHandlerLocal *)this_00,(MethodInfo *)0x0);
       return;
     }
     if (cRam_? == '\0') {
@@ -504,52 +518,52 @@ code_?:
                      );
       cRam_? = '\x01';
     }
-    pDVar3 = (this_00->fields)._.emoteDatas;
-    if (pDVar3 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) {
-      pAVar4 = (AvatarLimbManager_EmoteData *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar3,2,
-                          MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
-                         );
+    pDVar6 = (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)(this_00->_0).namespaze;
+    if (pDVar6 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) {
+      pAVar7 = (AvatarLimbManager_EmoteData *)
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+                Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                          ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar6,2,
+                           MethodInfo__System__Collections__Generic__Dictionary<EmoteTypes,_AvatarLimbManager::EmoteData>__get_Item_EmoteTypes_
+                          );
       method_00 = (MethodInfo *)&UNK_?;
-      bVar5 = AvatarLimbManager+AvatarEmoteHandler::
+      bVar8 = AvatarLimbManager+AvatarEmoteHandler::
               AvatarLimbManager_AvatarEmoteHandler_CanStartEmote
-                        ((AvatarLimbManager_AvatarEmoteHandler *)this_00,pAVar4,(MethodInfo *)0x0);
-      if (bVar5 == 0) {
+                        ((AvatarLimbManager_AvatarEmoteHandler *)this_00,pAVar7,(MethodInfo *)0x0);
+      if (bVar8 == 0) {
         return;
       }
       AvatarLimbManager+AvatarEmoteHandler::AvatarLimbManager_AvatarEmoteHandler_StartEmote
                 ((AvatarLimbManager_AvatarEmoteHandler *)this_00,EmoteTypes__Enum_Nod,
                  (MethodInfo *)0x0);
-      pAVar6 = (this_00->fields)._.limbManager;
+      pAVar9 = (((AvatarLimbManagerLocal_AvatarEmoteHandlerLocal__Fields *)&(this_00->_0).name)->_)
+                .limbManager;
       unaff_EDI = TypeInfo__AvatarLimbManagerLocal;
-      if (pAVar6 != (AvatarLimbManager *)0x0) {
-        pAVar7 = TypeInfo__AvatarLimbManagerLocal;
-        if (((pAVar6->klass->_1).naturalAligment <
-             (TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment) ||
-           ((pAVar6->klass->_1).typeHierarchy
-            [(TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment - 1] !=
+      if (pAVar9 != (AvatarLimbManager *)0x0) {
+        bVar4 = (TypeInfo__AvatarLimbManagerLocal->_1).naturalAligment;
+        pAVar10 = TypeInfo__AvatarLimbManagerLocal;
+        if (((pAVar9->klass->_1).naturalAligment < bVar4) ||
+           ((pAVar9->klass->_1).typeHierarchy[bVar4 - 1] !=
             (Il2CppClass *)TypeInfo__AvatarLimbManagerLocal)) goto code_?;
-        pDVar3 = (this_00->fields)._.emoteDatas;
-        unaff_EDI = (AvatarLimbManagerLocal__Class *)pAVar6[1].fields.emoteHandler;
-        if (pDVar3 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) {
-          in_stack_9 = 2;
+        pDVar6 = (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)(this_00->_0).namespaze;
+        unaff_EDI = (AvatarLimbManagerLocal__Class *)pAVar9[1].fields.emoteHandler;
+        if (pDVar6 != (Dictionary_2_EmoteTypes_AvatarLimbManager_EmoteData_ *)0x0) {
+          in_stack_12 = 2;
 code_?:
-          pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+          pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
                     ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                              ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar3,
-                               in_stack_9,method_00);
-          if (((pOVar10 != (Object *)0x0) &&
-              (pOVar11 = pOVar10[1].klass, pOVar11 != (Object__Class *)0x0)) &&
+                              ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar6,
+                               in_stack_12,method_00);
+          if (((pOVar13 != (Object *)0x0) &&
+              (pOVar14 = pOVar13[1].klass, pOVar14 != (Object__Class *)0x0)) &&
              (unaff_EDI != (AvatarLimbManagerLocal__Class *)0x0)) {
-            uVar12._0_2_ = (unaff_EDI->_0).byval_arg.attrs;
-            uVar12._2_1_ = (unaff_EDI->_0).byval_arg.type;
-            uVar12._3_1_ = (unaff_EDI->_0).byval_arg.field_0x7;
-            uVar13._0_2_ = (pOVar11->_0).this_arg.attrs;
-            uVar13._2_1_ = (pOVar11->_0).this_arg.type;
-            uVar13._3_1_ = (pOVar11->_0).this_arg.field_0x7;
-            (*(code *)(unaff_EDI->_0).namespaze)((unaff_EDI->_0).element_class,uVar13,uVar12);
+            uVar15._0_2_ = (unaff_EDI->_0).byval_arg.attrs;
+            uVar15._2_1_ = (unaff_EDI->_0).byval_arg.type;
+            uVar15._3_1_ = (unaff_EDI->_0).byval_arg.field_0x7;
+            uVar16._0_2_ = (pOVar14->_0).this_arg.attrs;
+            uVar16._2_1_ = (pOVar14->_0).this_arg.type;
+            uVar16._3_1_ = (pOVar14->_0).this_arg.field_0x7;
+            (*(code *)(unaff_EDI->_0).namespaze)((unaff_EDI->_0).element_class,uVar16,uVar15);
             return;
           }
         }
@@ -557,12 +571,12 @@ code_?:
     }
   }
   func_?();
-  pAVar6 = extraout_EDX;
-  pAVar7 = unaff_EDI;
+  pAVar9 = extraout_EDX;
+  pAVar10 = unaff_EDI;
 code_?:
-  func_?(pAVar6,pAVar7);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  func_?(pAVar9,pAVar10);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -577,20 +591,19 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal::AvatarLimbManagerLocal_StartPo
   pAVar2 = (this->fields).pointingHandler;
   if (pAVar2 != (AvatarLimbManagerLocal_AvatarPointingHandlerLocal *)0x0) {
     if ((pAVar2->fields)._.isActive != 0) {
-      pAVar3 = (pAVar2->fields).OnIsPointingChange;
-      fVar4 = (pAVar2->fields)._.prevLookDirection.x;
-      fVar5 = (pAVar2->fields)._.prevLookDirection.y;
+      fVar3 = (pAVar2->fields)._.prevLookDirection.x;
+      fVar4 = (pAVar2->fields)._.prevLookDirection.y;
       (pAVar2->fields)._.elapsedPointingTime = (pAVar2->fields)._.pointingDuration;
-      fVar6 = (pAVar2->fields)._.prevLookDirection.z;
-      (pAVar2->fields)._.pointingDirection.x = fVar4;
-      (pAVar2->fields)._.pointingDirection.y = fVar5;
-      (pAVar2->fields)._.pointingDirection.z = fVar6;
-      if (pAVar3 != (Action_1_Boolean_ *)0x0) {
-        pAVar3 = (pAVar2->fields).OnIsPointingChange;
-        puStack_1 = (pAVar3->fields)._._.method;
+      fVar5 = (pAVar2->fields)._.prevLookDirection.z;
+      (pAVar2->fields)._.pointingDirection.x = fVar3;
+      (pAVar2->fields)._.pointingDirection.y = fVar4;
+      (pAVar2->fields)._.pointingDirection.z = fVar5;
+      pAVar6 = (pAVar2->fields).OnIsPointingChange;
+      if (pAVar6 != (Action_1_Boolean_ *)0x0) {
+        puStack_1 = (pAVar6->fields)._._.method;
         uStack_7 = 1;
-        pvStack_8 = (pAVar3->fields)._._.method_code;
-        (*(pAVar3->fields)._._.invoke_impl)();
+        pvStack_8 = (pAVar6->fields)._._.method_code;
+        (*(pAVar6->fields)._._.invoke_impl)();
       }
     }
     return;

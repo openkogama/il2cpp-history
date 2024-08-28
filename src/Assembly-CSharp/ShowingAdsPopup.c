@@ -5,10 +5,11 @@ void Assembly-CSharp.dll::ShowingAdsPopup::ShowingAdsPopup_Initialize
                (ShowingAdsPopup *this,float timeoutTime,Action *OnSkipPressed,MethodInfo *method)
 
 {
-  (this->fields).skipAction = OnSkipPressed;
-  func_?(&(this->fields).skipAction,OnSkipPressed);
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  (this->fields).startTime = fVar1;
+  ppAVar1 = &(this->fields).skipAction;
+  *ppAVar1 = OnSkipPressed;
+  func_?(ppAVar1,OnSkipPressed);
+  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  (this->fields).startTime = fVar2;
   (this->fields).timeoutTime = timeoutTime;
   return;
 }
@@ -107,8 +108,8 @@ void Assembly-CSharp.dll::ShowingAdsPopup::ShowingAdsPopup_OnSkip
                (ShowingAdsPopup *this,MethodInfo *method)
 
 {
-  if ((this->fields).skipAction != (Action *)0x0) {
-    pAVar1 = (this->fields).skipAction;
+  pAVar1 = (this->fields).skipAction;
+  if (pAVar1 != (Action *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }

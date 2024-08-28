@@ -199,47 +199,48 @@ bool Assembly-CSharp.dll::CollisionDetection::CollisionDetection_MVHit_1
   this = (List_1_GameTierProgressBar_TierProgressData_ *)
          MVRaycast::MVRaycast_MVHit_2(ray,0,distance,layerMask,ignoreWoIds,(MethodInfo *)0x0);
   if (this != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-    if ((this->fields)._size != 0) {
-      if ((this->fields)._size < 2) {
-        pGVar1 = mscorlib.dll::System::Collections::Generic::
+    iVar1 = (this->fields)._size;
+    if (iVar1 != 0) {
+      if (iVar1 < 2) {
+        pGVar2 = mscorlib.dll::System::Collections::Generic::
                   List`1[GameTierProgressBar+TierProgressData]::
                   List_1_GameTierProgressBar_TierProgressData__get_Item
                             ((GameTierProgressBar_TierProgressData *)&stack0xffffffb4,this,0,
                              MethodInfo__System__Collections__Generic__List<VoxelHit>__get_Item_int_
                             );
-        pTVar2 = pGVar1->progressText;
-        pGVar3 = pGVar1->progressDivider;
-        pGVar4 = pGVar1->progressBarTextBubble;
-        pGVar5 = pGVar1->avatarHead;
-        pRVar6 = pGVar1->avatarHeadImage;
-        pGVar7 = pGVar1->avatarHeadUI;
-        pPVar8 = pGVar1->disabledProgressBar;
-        pGVar9 = pGVar1->disabledProgressDivider;
-        pGVar10 = pGVar1->disabledBarTextBubble;
-        pGVar11 = pGVar1->tierIconTempUnlock;
-        pCVar12 = (Cube *)pGVar1->tierIconNumber;
-        pPVar13 = pGVar1->endResultProgressBar;
-        pCVar14 = (Collider *)pGVar1->tempProgress;
-        pTVar15 = (Transform *)pGVar1->disabledTempProgress;
-        pGVar16 = pGVar1->freeTryTextBubble;
-        iVar17 = *(int64_t *)&pGVar1->hoverInputHandler;
-        (voxelHit->point).x = (float)pGVar1->progressBar;
-        (voxelHit->point).y = (float)pTVar2;
-        (voxelHit->point).z = (float)pGVar3;
-        (voxelHit->normal).x = (float)pGVar4;
-        (voxelHit->normal).y = (float)pGVar5;
-        (voxelHit->normal).z = (float)pRVar6;
-        *(GameObject **)&voxelHit->cubePos = pGVar7;
-        *(ProgressBar **)&(voxelHit->cubePos).z = pPVar8;
-        voxelHit->face = (int32_t)pGVar9;
-        *(GamePassesTextBubble **)&voxelHit->isCubeHit = pGVar10;
-        voxelHit->woId = (int32_t)pGVar11;
-        voxelHit->cube = pCVar12;
-        voxelHit->distance = (float)pPVar13;
-        voxelHit->collider = pCVar14;
-        voxelHit->transform = pTVar15;
-        *(GamePassesTextBubble **)&voxelHit->field_0x3c = pGVar16;
-        voxelHit->interactionFlags = iVar17;
+        pTVar3 = pGVar2->progressText;
+        pGVar4 = pGVar2->progressDivider;
+        pGVar5 = pGVar2->progressBarTextBubble;
+        pGVar6 = pGVar2->avatarHead;
+        pRVar7 = pGVar2->avatarHeadImage;
+        pGVar8 = pGVar2->avatarHeadUI;
+        pPVar9 = pGVar2->disabledProgressBar;
+        pGVar10 = pGVar2->disabledProgressDivider;
+        pGVar11 = pGVar2->disabledBarTextBubble;
+        pGVar12 = pGVar2->tierIconTempUnlock;
+        pCVar13 = (Cube *)pGVar2->tierIconNumber;
+        pPVar14 = pGVar2->endResultProgressBar;
+        pCVar15 = (Collider *)pGVar2->tempProgress;
+        pTVar16 = (Transform *)pGVar2->disabledTempProgress;
+        pGVar17 = pGVar2->freeTryTextBubble;
+        iVar18 = *(int64_t *)&pGVar2->hoverInputHandler;
+        (voxelHit->point).x = (float)pGVar2->progressBar;
+        (voxelHit->point).y = (float)pTVar3;
+        (voxelHit->point).z = (float)pGVar4;
+        (voxelHit->normal).x = (float)pGVar5;
+        (voxelHit->normal).y = (float)pGVar6;
+        (voxelHit->normal).z = (float)pRVar7;
+        *(GameObject **)&voxelHit->cubePos = pGVar8;
+        *(ProgressBar **)&(voxelHit->cubePos).z = pPVar9;
+        voxelHit->face = (int32_t)pGVar10;
+        *(GamePassesTextBubble **)&voxelHit->isCubeHit = pGVar11;
+        voxelHit->woId = (int32_t)pGVar12;
+        voxelHit->cube = pCVar13;
+        voxelHit->distance = (float)pPVar14;
+        voxelHit->collider = pCVar15;
+        voxelHit->transform = pTVar16;
+        *(GamePassesTextBubble **)&voxelHit->field_0x3c = pGVar17;
+        voxelHit->interactionFlags = iVar18;
         func_?();
         return 1;
       }
@@ -252,9 +253,9 @@ bool Assembly-CSharp.dll::CollisionDetection::CollisionDetection_MVHit_1
     return 0;
   }
   func_?();
-  pcVar18 = (code *)swi(3);
-  bVar19 = (*pcVar18)();
-  return bVar19;
+  pcVar19 = (code *)swi(3);
+  bVar20 = (*pcVar19)();
+  return bVar20;
 }
 
 
@@ -285,9 +286,9 @@ bool Assembly-CSharp.dll::CollisionDetection::CollisionDetection_MVSphereCast
   if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVSweptElipsoidCheck);
   }
-  radius_00.z = fVar4 * radius;
-  radius_00.x = (float)uVar2 * radius;
   radius_00.y = (float)uVar3 * radius;
+  radius_00.x = (float)uVar2 * radius;
+  radius_00.z = fVar4 * radius;
   bVar5 = MVSweptElipsoidCheck::MVSweptElipsoidCheck_MVElipsoidCast_1
                     (ray,radius_00,rotation,distance,voxelHit,ignoreWoIds,layerMask,
                      (MethodInfo *)0x0);
@@ -323,9 +324,9 @@ Assembly-CSharp.dll::CollisionDetection::CollisionDetection_MVSphereCastAll
   if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVSweptElipsoidCheck);
   }
-  radius_00.z = fVar4 * radius;
-  radius_00.x = (float)uVar2 * radius;
   radius_00.y = (float)uVar3 * radius;
+  radius_00.x = (float)uVar2 * radius;
+  radius_00.z = fVar4 * radius;
   pLVar5 = MVSweptElipsoidCheck::MVSweptElipsoidCheck_MVElipsoidCastAll_1
                      (ray,radius_00,rotation,distance,ignoreWoIds,layerMask,(MethodInfo *)0x0);
   return pLVar5;

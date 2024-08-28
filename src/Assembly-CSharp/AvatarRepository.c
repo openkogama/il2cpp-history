@@ -20,15 +20,14 @@ void Assembly-CSharp.dll::AvatarRepository::AvatarRepository_AddItem
   if (item != (AvatarRepositoryItem *)0x0) {
     pDVar1 = (this->fields).avatars;
     if (pDVar1 != (Dictionary_2_System_Int32_AvatarRepositoryItem_ *)0x0) {
+      this_00 = &(item->fields).slotPosition;
       bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]
               ::Dictionary_2_System_Int32_System_Single__ContainsKey
-                        ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,
-                         (item->fields).slotPosition,
+                        ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,*this_00,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__ContainsKey_int_
                         );
       if (bVar2 != 0) {
-        pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
-                           ((Int32 *)&(item->fields).slotPosition,(MethodInfo *)0x0);
+        pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_00,(MethodInfo *)0x0);
         pSVar3 = mscorlib.dll::System::String::String_Concat_4
                            (StringLiteral_Avatar_with_slotPosition__,pSVar3,
                             StringLiteral__already_exists_in_AvatarReposit,(MethodInfo *)0x0);
@@ -43,8 +42,7 @@ void Assembly-CSharp.dll::AvatarRepository::AvatarRepository_AddItem
       if (pDVar1 != (Dictionary_2_System_Int32_AvatarRepositoryItem_ *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
         Dictionary_2_System_Int32_System_Object__Add
-                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,(item->fields).slotPosition,
-                   (Object *)item,
+                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,*this_00,(Object *)item,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__Add_int__AvatarRepositoryItem_
                   );
         return;
@@ -183,7 +181,8 @@ void Assembly-CSharp.dll::AvatarRepository::AvatarRepository__ctor
              MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__Dictionary__
             );
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).avatars = (Dictionary_2_System_Int32_AvatarRepositoryItem_ *)this_00;
+  ((AvatarRepository__Fields *)method_00)->avatars =
+       (Dictionary_2_System_Int32_AvatarRepositoryItem_ *)this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

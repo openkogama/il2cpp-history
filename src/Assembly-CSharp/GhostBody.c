@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::GhostBody::GhostBody_SetRotationSpeed
                (GhostBody *this,float rotationSpeed,MethodInfo *method)
 
 {
-  (this->fields).angularMaxRotation = rotationSpeed * (this->fields).angularMaxRotationBase;
+  (this->fields).angularMaxRotation = (this->fields).angularMaxRotationBase * rotationSpeed;
   return;
 }
 

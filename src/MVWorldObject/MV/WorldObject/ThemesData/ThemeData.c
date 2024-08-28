@@ -85,9 +85,10 @@ void MVWorldObject.dll::MV::WorldObject::ThemesData::ThemeData::ThemeData__ctor_
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  ppSVar1 = &(this->fields).themeIdentifier;
   (this->fields).id = id;
-  (this->fields).themeIdentifier = themeIdentifier;
-  func_?(&(this->fields).themeIdentifier,themeIdentifier);
+  *ppSVar1 = themeIdentifier;
+  func_?(ppSVar1,themeIdentifier);
   (this->fields).priceGold = priceGold;
   (this->fields).levelRequirement = levelRequirement;
   return;

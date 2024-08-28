@@ -25,51 +25,52 @@ void Assembly-CSharp.dll::TimeAttackFlag::TimeAttackFlag_Destroy
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).triggerBoxEvents;
-  pUVar2 = (UnityAction_2_System_Object_System_Object_ *)
+  pEVar2 = (EventHandler_1_Object_ *)
            func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
-            (pUVar2,(Object *)this,
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+            (pEVar2,(Object *)this,
              MethodInfo__TimeAttackFlag__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
              ,(MethodInfo *)0x0);
   if (pTVar1 != (TriggerBoxEvents *)0x0) {
     TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
-              (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
-    if ((this->fields).useInteractor == (UseInteractor *)0x0) {
+              (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar2,(MethodInfo *)0x0);
+    object = (this->fields).useInteractor;
+    ppUVar3 = &(this->fields).useInteractor;
+    if (object == (UseInteractor *)0x0) {
 code_?:
       MVGamePointRewardLogicObject::MVGamePointRewardLogicObject_Destroy
                 ((MVGamePointRewardLogicObject *)this,(MethodInfo *)0x0);
       if ((this->fields).initializedInWorld == 0) {
         return;
       }
-      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((((pMVar3 != (MVNetworkGame *)0x0) &&
-           (pWVar4 = (pMVar3->fields).worldNetwork, pWVar4 != (WorldNetwork *)0x0)) &&
-          (this_00 = (MVWorldObjectClientManager *)(pWVar4->fields)._.worldObjectClientManager,
+      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((((pMVar4 != (MVNetworkGame *)0x0) &&
+           (pWVar5 = (pMVar4->fields).worldNetwork, pWVar5 != (WorldNetwork *)0x0)) &&
+          (this_00 = (MVWorldObjectClientManager *)(pWVar5->fields)._.worldObjectClientManager,
           this_00 != (MVWorldObjectClientManager *)0x0)) &&
-         (pLVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
+         (pLVar6 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
                              (this_00,(this->fields)._._._._.type,(MethodInfo *)0x0),
-         pLVar5 != (List_1_MVWorldObjectClient_ *)0x0)) {
-        if ((pLVar5->fields)._size != 0) {
+         pLVar6 != (List_1_MVWorldObjectClient_ *)0x0)) {
+        if ((pLVar6->fields)._size != 0) {
           return;
         }
-        pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar3 != (MVNetworkGame *)0x0) &&
-           (pWVar6 = (pMVar3->fields)._WinningConditionManager_k__BackingField,
-           pWVar6 != (WinningConditionManager *)0x0)) {
-          pOVar7 = MVWorldObject.dll::WinningConditionManager::
+        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar4 != (MVNetworkGame *)0x0) &&
+           (pWVar7 = (pMVar4->fields)._WinningConditionManager_k__BackingField,
+           pWVar7 != (WinningConditionManager *)0x0)) {
+          pOVar8 = MVWorldObject.dll::WinningConditionManager::
                    WinningConditionManager_GetSingletonWinnerConditionByType
-                             (pWVar6,
+                             (pWVar7,
                               TimeAttackFlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeAttackFlagReachedClient>__
                              );
-          if (pOVar7 == (Object *)0x0) goto code_?;
-          pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar3 != (MVNetworkGame *)0x0) &&
-             (pWVar6 = (pMVar3->fields)._WinningConditionManager_k__BackingField,
-             pWVar6 != (WinningConditionManager *)0x0)) {
+          if (pOVar8 == (Object *)0x0) goto code_?;
+          pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar4 != (MVNetworkGame *)0x0) &&
+             (pWVar7 = (pMVar4->fields)._WinningConditionManager_k__BackingField,
+             pWVar7 != (WinningConditionManager *)0x0)) {
             MVWorldObject.dll::WinningConditionManager::
             WinningConditionManager_RemoveWinnerCondition
-                      (pWVar6,(int32_t)pOVar7[1].monitor,(MethodInfo *)0x0);
+                      (pWVar7,(int32_t)pOVar8[1].monitor,(MethodInfo *)0x0);
             return;
           }
         }
@@ -77,32 +78,27 @@ code_?:
     }
     else {
       pTVar1 = (this->fields).triggerBoxEvents;
-      pUVar8 = (this->fields).useInteractor;
-      pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar2,(Object *)pUVar8,
+      pEVar2 = (EventHandler_1_Object_ *)func_?();
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                (pEVar2,(Object *)object,
                  MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                  ,(MethodInfo *)0x0);
       if (pTVar1 != (TriggerBoxEvents *)0x0) {
         TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
-                  (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
+                  (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar2,(MethodInfo *)0x0);
         pTVar1 = (this->fields).triggerBoxEvents;
-        pUVar8 = (this->fields).useInteractor;
-        pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar2,(Object *)pUVar8,
+        value = (EventHandler_1_TriggerEventArgs_ *)*ppUVar3;
+        pEVar2 = (EventHandler_1_Object_ *)func_?();
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                  (pEVar2,(Object *)value,
                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                   ,(MethodInfo *)pUVar2);
+                   ,(MethodInfo *)0x0);
         if (pTVar1 != (TriggerBoxEvents *)0x0) {
-          TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
-                    (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
-          pUVar8 = (this->fields).useInteractor;
-          if (pUVar8 != (UseInteractor *)0x0) {
+          TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit(pTVar1,value,(MethodInfo *)0x0);
+          if (*ppUVar3 != (UseInteractor *)0x0) {
             UseInteractor::UseInteractor_OnDestroy
-                      (pUVar8,(this->fields)._._._._.data,(MethodInfo *)0x0);
-            (this->fields).useInteractor = (UseInteractor *)0x0;
+                      (*ppUVar3,(this->fields)._._._._.data,(MethodInfo *)0x0);
+            *ppUVar3 = (UseInteractor *)0x0;
             func_?();
             goto code_?;
           }
@@ -330,10 +326,11 @@ code_?:
     pDStack3 =
          mscorlib.dll::System::Delegate::Delegate_Combine
                    ((Delegate *)a,(Delegate *)this_03,(MethodInfo *)0x0);
+    _pDStack00000020 = CONCAT44(TypeInfo__System__Action,pDStack3);
     if (pDStack3 == (Delegate *)0x0) {
-      pAStack12 = (Action__Class *)0x0;
-      *(undefined4 *)(puVar11 + 0x1c) = 0;
       pDStack3 = (Delegate *)(puVar11 + 0x1c);
+      pAStack12 = (Action__Class *)0x0;
+      *(undefined4 *)pDStack3 = 0;
       func_?();
       return;
     }
@@ -341,7 +338,6 @@ code_?:
     if ((Action__Class *)pDStack3->klass == TypeInfo__System__Action) {
       pDVar13 = pDStack3;
     }
-    pAStack12 = TypeInfo__System__Action;
     if (pDVar13 == (Delegate *)0x0) goto code_?;
     *(Delegate **)(puVar11 + 0x1c) = pDVar13;
     pAStack12 = (Action__Class *)(Delegate *)0x0;
@@ -356,8 +352,7 @@ code_?:
     }
   }
   pAStack12 = unaff_ESI;
-  pDStack3 = (Delegate *)func_?();
-  pAStack12 = extraout_ECX;
+  _pDStack00000020 = func_?();
 code_?:
   func_?();
   pcVar14 = (code *)swi(3);
@@ -386,52 +381,54 @@ code_?:
   }
   else {
     pAVar2 = (pFVar1->fields).OnFlagDebriefing;
+    ppAVar3 = &(pFVar1->fields).OnFlagDebriefing;
     this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<int>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
               (this_00,(Object *)this,MethodInfo__TimeAttackFlag__OnStartFlagDebriefing_int_,
                (MethodInfo *)0x0);
-    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar3 == (Delegate *)0x0) {
-      (pFVar1->fields).OnFlagDebriefing = (Action_1_Int32_ *)0x0;
+    if (pDVar4 == (Delegate *)0x0) {
+      *ppAVar3 = (Action_1_Int32_ *)0x0;
     }
     else {
       pAVar2 = (Action_1_Int32_ *)func_?();
       if (pAVar2 == (Action_1_Int32_ *)0x0) goto code_?;
-      (pFVar1->fields).OnFlagDebriefing = pAVar2;
-      iVar4 = func_?();
-      if (iVar4 == 0) goto code_?;
+      *ppAVar3 = pAVar2;
+      iVar5 = func_?();
+      if (iVar5 == 0) goto code_?;
     }
     func_?();
     pFVar1 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0)
     ;
     if (pFVar1 == (FlagDebriefingControl *)0x0) goto code_?;
-    pAVar5 = (pFVar1->fields).OnFlagDebriefingEnd;
+    pAVar6 = (pFVar1->fields).OnFlagDebriefingEnd;
+    ppAVar7 = &(pFVar1->fields).OnFlagDebriefingEnd;
     this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_01,(Object *)&UNK_?,MethodInfo__TimeAttackFlag__OnEndFlagDebriefing__,
                (MethodInfo *)0x0);
-    pAVar5 = (Action *)
+    pAVar6 = (Action *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar5,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pAVar5 == (Action *)0x0) {
-      (pFVar1->fields).OnFlagDebriefingEnd = (Action *)0x0;
+                       ((Delegate *)pAVar6,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pAVar6 == (Action *)0x0) {
+      *ppAVar7 = (Action *)0x0;
       func_?();
       return;
     }
-    pAVar6 = (Action *)0x0;
-    if (pAVar5->klass == TypeInfo__System__Action) {
-      pAVar6 = pAVar5;
+    pAVar8 = (Action *)0x0;
+    if (pAVar6->klass == TypeInfo__System__Action) {
+      pAVar8 = pAVar6;
     }
-    if (pAVar6 != (Action *)0x0) {
-      (pFVar1->fields).OnFlagDebriefingEnd = pAVar6;
-      pAVar6 = (Action *)0x0;
-      if (pAVar5->klass == TypeInfo__System__Action) {
-        pAVar6 = pAVar5;
+    if (pAVar8 != (Action *)0x0) {
+      *ppAVar7 = pAVar8;
+      pAVar8 = (Action *)0x0;
+      if (pAVar6->klass == TypeInfo__System__Action) {
+        pAVar8 = pAVar6;
       }
-      if (pAVar6 != (Action *)0x0) {
+      if (pAVar8 != (Action *)0x0) {
         func_?();
         return;
       }
@@ -440,8 +437,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -460,6 +457,7 @@ void Assembly-CSharp.dll::TimeAttackFlag::TimeAttackFlag_LateInitialize
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar1 != (MVNetworkGame *)0x0) &&
      (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) {
+    ppAVar3 = &(pMVar2->fields).OnLocalPlayerReady;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)
               func_?(TypeInfo__System__Action,(pMVar2->fields).OnLocalPlayerReady);
     if (this != (TimeAttackFlag *)0x0) {
@@ -467,30 +465,29 @@ void Assembly-CSharp.dll::TimeAttackFlag::TimeAttackFlag_LateInitialize
       NavMesh_OnNavMeshPreUpdate__ctor
                 (this_00,(Object *)this,(this->klass->vtable).InitializeInventory.methodPtr,
                  (MethodInfo *)0x0);
-      pAVar3 = (Action *)
+      pAVar4 = (Action *)
                mscorlib.dll::System::Delegate::Delegate_Remove
                          ((Delegate *)0x0,(Delegate *)this_00,(MethodInfo *)0x0);
-      uVar4 = CONCAT44(TypeInfo__System__Action,pAVar3);
-      if (pAVar3 == (Action *)0x0) {
-        (pMVar2->fields).OnLocalPlayerReady = (Action *)0x0;
-        ppAStack5 = &(pMVar2->fields).OnLocalPlayerReady;
-        pAStack6 = (Action *)0x0;
+      uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+      ppAStack6 = ppAVar3;
+      if (pAVar4 == (Action *)0x0) {
+        pAStack7 = (Action *)0x0;
+        *ppAVar3 = (Action *)0x0;
         func_?();
         return;
       }
-      pAVar7 = (Action *)0x0;
-      if (pAVar3->klass == TypeInfo__System__Action) {
-        pAVar7 = pAVar3;
+      pAVar8 = (Action *)0x0;
+      if (pAVar4->klass == TypeInfo__System__Action) {
+        pAVar8 = pAVar4;
       }
-      if (pAVar7 != (Action *)0x0) {
-        (pMVar2->fields).OnLocalPlayerReady = pAVar7;
-        uVar4 = CONCAT44(TypeInfo__System__Action,pAVar3);
-        pAStack6 = (Action *)0x0;
-        if (pAVar3->klass == TypeInfo__System__Action) {
-          pAStack6 = pAVar3;
+      if (pAVar8 != (Action *)0x0) {
+        *ppAVar3 = pAVar8;
+        uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+        pAStack7 = (Action *)0x0;
+        if (pAVar4->klass == TypeInfo__System__Action) {
+          pAStack7 = pAVar4;
         }
-        if (pAStack6 != (Action *)0x0) {
-          ppAStack5 = &(pMVar2->fields).OnLocalPlayerReady;
+        if (pAStack7 != (Action *)0x0) {
           func_?();
           return;
         }
@@ -498,12 +495,12 @@ void Assembly-CSharp.dll::TimeAttackFlag::TimeAttackFlag_LateInitialize
       goto code_?;
     }
   }
-  uVar4 = func_?();
+  uVar5 = func_?();
 code_?:
-  _ppAStack00000014 = uVar4;
+  _ppAStack00000014 = uVar5;
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -584,50 +581,47 @@ void Assembly-CSharp.dll::TimeAttackFlag::TimeAttackFlag_SetupUseInteractor
                 (pUVar2,(MVWorldObjectClient *)this,(GameObject *)0x40200000,0,triggerCollider,
                  (Func_2_Int32_Boolean_ *)this_00,(Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,
                  2.5,0,(MethodInfo *)0x0);
-      (this->fields).useInteractor = pUVar2;
-      func_?(&(this->fields).useInteractor);
+      ppUVar3 = &(this->fields).useInteractor;
+      *ppUVar3 = pUVar2;
+      func_?(ppUVar3);
       pTVar1 = (this->fields).triggerBoxEvents;
-      pUVar2 = (this->fields).useInteractor;
-      pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+      pUVar2 = *ppUVar3;
+      pEVar4 = (EventHandler_1_Object_ *)
                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar3,(Object *)pUVar2,
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                (pEVar4,(Object *)pUVar2,
                  MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                  ,(MethodInfo *)0x0);
       if (pTVar1 != (TriggerBoxEvents *)0x0) {
         TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                  (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+                  (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar4,(MethodInfo *)0x0);
         pTVar1 = (this->fields).triggerBoxEvents;
-        pUVar2 = (this->fields).useInteractor;
-        pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+        pUVar2 = *ppUVar3;
+        pEVar4 = (EventHandler_1_Object_ *)
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar3,(Object *)pUVar2,
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                  (pEVar4,(Object *)pUVar2,
                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar1 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                    (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
-          pTVar4 = (this->fields).timeAttackFlagObject;
-          if (pTVar4 != (TimeAttackFlagObject *)0x0) {
-            root = (pTVar4->fields).useInteractionRotator;
+                    (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar4,(MethodInfo *)0x0);
+          pTVar5 = (this->fields).timeAttackFlagObject;
+          if (pTVar5 != (TimeAttackFlagObject *)0x0) {
+            root = (pTVar5->fields).useInteractionRotator;
             this_01 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);
             GameCoinLogic::GameCoinLogic__ctor(this_01,root,0,(MethodInfo *)0x0);
-            pUVar2 = (this->fields).useInteractor;
-            if (pUVar2 != (UseInteractor *)0x0) {
+            if (*ppUVar3 != (UseInteractor *)0x0) {
               UseInteractor::UseInteractor_AddRequirement
-                        (pUVar2,(UseRequirement *)this_01,(MethodInfo *)0x0);
-              pTVar4 = (this->fields).timeAttackFlagObject;
-              if (pTVar4 != (TimeAttackFlagObject *)0x0) {
-                tintObject = (pTVar4->fields).tintObject;
+                        (*ppUVar3,(UseRequirement *)this_01,(MethodInfo *)0x0);
+              pTVar5 = (this->fields).timeAttackFlagObject;
+              if (pTVar5 != (TimeAttackFlagObject *)0x0) {
+                tintObject = (pTVar5->fields).tintObject;
                 this_02 = (TeamRequirement *)func_?(TypeInfo__TeamRequirement);
                 TeamRequirement::TeamRequirement__ctor(this_02,tintObject,0,(MethodInfo *)0x0);
-                pUVar2 = (this->fields).useInteractor;
-                if (pUVar2 != (UseInteractor *)0x0) {
+                if (*ppUVar3 != (UseInteractor *)0x0) {
                   UseInteractor::UseInteractor_AddRequirement
-                            (pUVar2,(UseRequirement *)this_02,(MethodInfo *)0x0);
+                            (*ppUVar3,(UseRequirement *)this_02,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -638,8 +632,8 @@ void Assembly-CSharp.dll::TimeAttackFlag::TimeAttackFlag_SetupUseInteractor
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -665,60 +659,64 @@ void Assembly-CSharp.dll::TimeAttackFlag::TimeAttackFlag__ctor
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-  if (pPVar1 != (PrefabPool *)0x0) {
+  if (pPVar1 == (PrefabPool *)0x0) {
+code_?:
+    func_?();
+    pTVar2 = extraout_EDX;
+  }
+  else {
     MVGamePointRewardLogicObject::MVGamePointRewardLogicObject__ctor
               ((MVGamePointRewardLogicObject *)this,data,(pPVar1->fields).timeAttackFlagPrefab,
                worldObjects,(MethodInfo *)0x0);
     pTVar2 = (TimeAttackFlagObject *)(this->fields)._._._.component;
     if (pTVar2 == (TimeAttackFlagObject *)0x0) {
       (this->fields).timeAttackFlagObject = (TimeAttackFlagObject *)0x0;
-    }
-    else {
-      if (((((ObjectPrefab__Class *)pTVar2->klass)->_1).naturalAligment <
-           (TypeInfo__TimeAttackFlagObject->_1).naturalAligment) ||
-         ((((ObjectPrefab__Class *)pTVar2->klass)->_1).typeHierarchy
-          [(TypeInfo__TimeAttackFlagObject->_1).naturalAligment - 1] !=
-          (Il2CppClass *)TypeInfo__TimeAttackFlagObject)) goto code_?;
-      (this->fields).timeAttackFlagObject = pTVar2;
-      if (((((ObjectPrefab__Class *)pTVar2->klass)->_1).naturalAligment <
-           (TypeInfo__TimeAttackFlagObject->_1).naturalAligment) ||
-         ((((ObjectPrefab__Class *)pTVar2->klass)->_1).typeHierarchy
-          [(TypeInfo__TimeAttackFlagObject->_1).naturalAligment - 1] !=
-          (Il2CppClass *)TypeInfo__TimeAttackFlagObject)) goto code_?;
-    }
-    func_?(&(this->fields).timeAttackFlagObject);
-    pTVar2 = (this->fields).timeAttackFlagObject;
-    if (pTVar2 != (TimeAttackFlagObject *)0x0) {
-      pTVar3 = (pTVar2->fields).triggerBoxEvents;
-      (this->fields).triggerBoxEvents = pTVar3;
-      func_?(&(this->fields).triggerBoxEvents,pTVar3);
-      pTVar3 = (this->fields).triggerBoxEvents;
-      this_00 = (UnityAction_2_System_Object_System_Object_ *)
-                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (this_00,(Object *)this,
-                 MethodInfo__TimeAttackFlag__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                 ,(MethodInfo *)0x0);
-      if (pTVar3 != (TriggerBoxEvents *)0x0) {
-        TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                  (pTVar3,(EventHandler_1_TriggerEventArgs_ *)this_00,(MethodInfo *)0x0);
-        piVar4 = &(this->fields)._._._.interactionFlags;
-        *(uint *)piVar4 = (uint)*piVar4 | 0x2000000;
-        uVar5 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-        piVar4 = &(this->fields)._._._.interactionFlags;
-        *(uint *)piVar4 = (uint)*piVar4 | 0x20000000;
-        *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar5;
-        return;
+code_?:
+      ppTVar3 = &(this->fields).timeAttackFlagObject;
+      func_?(ppTVar3);
+      pTVar2 = *ppTVar3;
+      if (pTVar2 != (TimeAttackFlagObject *)0x0) {
+        pTVar4 = (pTVar2->fields).triggerBoxEvents;
+        ppTVar5 = &(this->fields).triggerBoxEvents;
+        *ppTVar5 = pTVar4;
+        func_?(ppTVar5,pTVar4);
+        pTVar4 = *ppTVar5;
+        this_00 = (EventHandler_1_Object_ *)
+                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                  (this_00,(Object *)this,
+                   MethodInfo__TimeAttackFlag__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   ,(MethodInfo *)0x0);
+        if (pTVar4 != (TriggerBoxEvents *)0x0) {
+          TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                    (pTVar4,(EventHandler_1_TriggerEventArgs_ *)this_00,(MethodInfo *)0x0);
+          piVar6 = &(this->fields)._._._.interactionFlags;
+          *(uint *)piVar6 = (uint)*piVar6 | 0x2000000;
+          uVar7 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
+          piVar6 = &(this->fields)._._._.interactionFlags;
+          *(uint *)piVar6 = (uint)*piVar6 | 0x20000000;
+          *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar7;
+          return;
+        }
       }
+      goto code_?;
     }
+    bVar8 = (TypeInfo__TimeAttackFlagObject->_1).naturalAligment;
+    if (((((ObjectPrefab__Class *)pTVar2->klass)->_1).naturalAligment < bVar8) ||
+       ((((ObjectPrefab__Class *)pTVar2->klass)->_1).typeHierarchy[bVar8 - 1] !=
+        (Il2CppClass *)TypeInfo__TimeAttackFlagObject)) goto code_?;
+    (this->fields).timeAttackFlagObject = pTVar2;
+    bVar8 = (TypeInfo__TimeAttackFlagObject->_1).naturalAligment;
+    if ((bVar8 <= (((ObjectPrefab__Class *)pTVar2->klass)->_1).naturalAligment) &&
+       ((((ObjectPrefab__Class *)pTVar2->klass)->_1).typeHierarchy[bVar8 - 1] ==
+        (Il2CppClass *)TypeInfo__TimeAttackFlagObject)) goto code_?;
   }
-  func_?();
-  pTVar2 = extraout_EDX;
+  func_?(pTVar2);
+  pTVar2 = extraout_EDX_00;
 code_?:
   func_?(pTVar2);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

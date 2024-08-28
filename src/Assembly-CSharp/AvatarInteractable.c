@@ -334,9 +334,8 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_DieFromRespawn
     pMVar1 = (this->fields)._.health;
     if (pMVar1 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
       (*(code *)(pMVar1->klass->vtable).set_Value.method)(pMVar1,0,pMVar1->klass[1]._0.image);
-      if ((this->fields).OnDamageTaken !=
-          (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
-        pAVar3 = (this->fields).OnDamageTaken;
+      pAVar3 = (this->fields).OnDamageTaken;
+      if (pAVar3 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
         (*(pAVar3->fields)._._.invoke_impl)
                   ((pAVar3->fields)._._.method_code,(float)fVar2,damageDealer,damageType,
                    (pAVar3->fields)._._.method);
@@ -500,7 +499,8 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_DoKilledNotific
     if (pAVar1 == (AvatarInteractable_DamageSource *)0x0) goto code_?;
     fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     if ((_UNK_? < fVar2 - (pAVar1->fields).time) ||
-       ((this->fields).lastDamageSource == (AvatarInteractable_DamageSource *)0x0)) {
+       (pAVar1 = (this->fields).lastDamageSource, pAVar1 == (AvatarInteractable_DamageSource *)0x0))
+    {
       pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if ((pMVar3 == (MVNetworkGame *)0x0) ||
          (pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0),
@@ -508,12 +508,10 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_DoKilledNotific
       killerId = (pMVar4->fields)._._ActorNr_k__BackingField;
     }
     else {
-      pAVar1 = (this->fields).lastDamageSource;
-      if ((((pAVar1 == (AvatarInteractable_DamageSource *)0x0) ||
-           (fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                               ((MethodInfo *)0x0), _UNK_? < fVar2 - (pAVar1->fields).time))
-          || (pAVar1 = (this->fields).lastDamageSource,
-             pAVar1 == (AvatarInteractable_DamageSource *)0x0)) ||
+      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      if (((_UNK_? < fVar2 - (pAVar1->fields).time) ||
+          (pAVar1 = (this->fields).lastDamageSource,
+          pAVar1 == (AvatarInteractable_DamageSource *)0x0)) ||
          (pMVar5 = (pAVar1->fields).shooter, pMVar5 == (MVPlayer *)0x0)) goto code_?;
       killerId = (pMVar5->fields)._ActorNr_k__BackingField;
       fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
@@ -736,8 +734,8 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_HandleMoveHit
                            MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
                           );
       if ((pTVar32 == (Task *)0x1) &&
-         ((this->fields).OnNewSafePosition != (Action_1_UnityEngine_Vector3_ *)0x0)) {
-        pAVar33 = (this->fields).OnNewSafePosition;
+         (pAVar33 = (this->fields).OnNewSafePosition, pAVar33 != (Action_1_UnityEngine_Vector3_ *)0x0)
+         ) {
         puVar22 = (pAVar33->fields)._._.method_code;
         puVar23 = &UNK_?;
         unaff_EDI = (MethodInfo *)moveHit.positionTouchingHit.x;
@@ -1172,9 +1170,9 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_RestoreShield
 {
   MVInteractable::MVInteractable_RestoreShield
             ((MVInteractable *)this,restoredShieldAmount,(MethodInfo *)0x0);
-  if ((this->fields).OnShieldReplenished != (Action *)0x0) {
-    pAVar1 = (this->fields).OnShieldReplenished;
-    (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code);
+  pAVar1 = (this->fields).OnShieldReplenished;
+  if (pAVar1 != (Action *)0x0) {
+    (*(pAVar1->fields)._._.invoke_impl)();
   }
   return;
 }
@@ -1285,7 +1283,7 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_TakeDamage
     pMVar11 = (this->klass->vtable).HandleModifierEffect.method;
     fVar6 = (float10)(*(code *)pMVar11)(this,6,pMVar11,(this->klass->vtable).ClearModifiers.methodPtr
                                        );
-    fVar7 = (float)(fVar6 * (float10)amount) * (this->fields).damageMultiplier;
+    fVar7 = (this->fields).damageMultiplier * (float)(fVar6 * (float10)amount);
     if (0.0 <= fVar7) {
       pMVar12 = (this->fields)._.shield;
       if (pMVar12 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
@@ -1339,22 +1337,22 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_TakeDamage
                 func_?(TypeInfo__AvatarInteractable__DamageSource);
       AvatarInteractable+DamageSource::AvatarInteractable_DamageSource__ctor
                 (this_01,damageDealer,damageType,(MethodInfo *)0x0);
-      (this->fields).lastDamageSource = this_01;
-      func_?(&(this->fields).lastDamageSource,this_01);
+      ppAVar14 = &(this->fields).lastDamageSource;
+      *ppAVar14 = this_01;
+      func_?(ppAVar14,this_01);
     }
-    if ((this->fields).OnDamageTaken !=
-        (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
-      pAVar14 = (this->fields).OnDamageTaken;
-      (*(pAVar14->fields)._._.invoke_impl)
-                ((pAVar14->fields)._._.method_code,fVar7,damageDealer,damageType,
-                 (pAVar14->fields)._._.method);
+    pAVar15 = (this->fields).OnDamageTaken;
+    if (pAVar15 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
+      (*(pAVar15->fields)._._.invoke_impl)
+                ((pAVar15->fields)._._.method_code,fVar7,damageDealer,damageType,
+                 (pAVar15->fields)._._.method);
     }
     pMVar2 = (this->fields)._.health;
     if (pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
 code_?:
       func_?();
-      pcVar15 = (code *)swi(3);
-      (*pcVar15)();
+      pcVar16 = (code *)swi(3);
+      (*pcVar16)();
       return;
     }
     fVar6 = (float10)(*(code *)(pMVar2->klass->vtable).get_Value.method)
@@ -1394,8 +1392,9 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_TakeDamageOverT
                   (this_02,damageDealer,damageType,(MethodInfo *)0x0);
         unaff_EDI[0x11] = (int)this_02;
         func_?(unaff_EDI + 0x11,this_02);
-        if (unaff_EDI[0xe] != 0) {
-          (**(code **)(unaff_EDI[0xe] + 0xc))(*(undefined4 *)(unaff_EDI[0xe] + 0x20));
+        iVar3 = unaff_EDI[0xe];
+        if (iVar3 != 0) {
+          (**(code **)(iVar3 + 0xc))(*(undefined4 *)(iVar3 + 0x20));
         }
       }
     }
@@ -1403,8 +1402,8 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_TakeDamageOverT
   }
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1466,8 +1465,9 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable__ctor
     func_?(TypeInfo__AvatarInteractable__DamageSource);
   }
   pAVar1 = TypeInfo__AvatarInteractable__DamageSource->static_fields->none;
-  (this->fields).lastDamageSource = pAVar1;
-  func_?(&(this->fields).lastDamageSource,pAVar1);
+  ppAVar2 = &(this->fields).lastDamageSource;
+  *ppAVar2 = pAVar1;
+  func_?(ppAVar2,pAVar1);
   (this->fields).boostedHealthMultiplier = 1.0;
   (this->fields).damageMultiplier = 1.0;
   this_00 = (HashSet_1_System_ByteEnum_ *)
@@ -1500,57 +1500,59 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable__ctor
               (this_00,5,
                MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Add_MV__Common__PlayerKilledByType_
               );
-    (this->fields).KillNotificationBlacklist = (HashSet_1_MV_Common_PlayerKilledByType_ *)this_00;
-    func_?(&(this->fields).KillNotificationBlacklist,this_00);
-    pMVar2 = (MaterialHitPackage__Array *)func_?(TypeInfo__MaterialHitPackage,2);
+    ppHVar3 = &(this->fields).KillNotificationBlacklist;
+    *ppHVar3 = (HashSet_1_MV_Common_PlayerKilledByType_ *)this_00;
+    func_?(ppHVar3,this_00);
+    pMVar4 = (MaterialHitPackage__Array *)func_?(TypeInfo__MaterialHitPackage,2);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__PrefabPool);
       cRam_? = '\x01';
     }
-    pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar3 != (PrefabPool *)0x0) {
-      VStack_4.Item1 = (void *)0x0;
-      VStack_4.Item2 = (Object *)0x0;
+    pPVar5 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar5 != (PrefabPool *)0x0) {
+      VStack_6.Item1 = (void *)0x0;
+      VStack_6.Item2 = (Object *)0x0;
       mscorlib.dll::System::ValueTuple`2[IntPtr,Object]::ValueTuple_2_IntPtr_Object___ctor
-                (&VStack_4,(void *)0x4,(Object *)(pPVar3->fields).poisonParticles,(MethodInfo *)0x0)
+                (&VStack_6,(void *)0x4,(Object *)(pPVar5->fields).poisonParticles,(MethodInfo *)0x0)
       ;
-      if (pMVar2 != (MaterialHitPackage__Array *)0x0) {
-        if (pMVar2->max_length == 0) goto code_?;
-        pOVar5 = VStack_4.Item2;
-        pMVar2->vector[0].PackageType = (int32_t)VStack_4.Item1;
-        VStack_4.Item2 = (Object *)0x0;
-        VStack_4.Item1 = &pMVar2->vector[0].ParticlePrefab;
-        pMVar2->vector[0].ParticlePrefab = (ParticleSystem *)pOVar5;
-        VStack_6.Item2 = (Object *)&UNK_?;
+      if (pMVar4 != (MaterialHitPackage__Array *)0x0) {
+        if (pMVar4->max_length == 0) goto code_?;
+        pOVar7 = VStack_6.Item2;
+        pMVar4->vector[0].PackageType = (int32_t)VStack_6.Item1;
+        VStack_6.Item2 = (Object *)0x0;
+        VStack_6.Item1 = &pMVar4->vector[0].ParticlePrefab;
+        pMVar4->vector[0].ParticlePrefab = (ParticleSystem *)pOVar7;
+        VStack_8.Item2 = (Object *)&UNK_?;
         func_?();
         if (cRam_? == '\0') {
           func_?(&TypeInfo__PrefabPool);
           cRam_? = '\x01';
         }
-        pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
-        if (pPVar3 != (PrefabPool *)0x0) {
-          VStack_6.Item1 = (void *)0x0;
-          VStack_6.Item2 = (Object *)0x0;
+        pPVar5 = TypeInfo__PrefabPool->static_fields->instance;
+        if (pPVar5 != (PrefabPool *)0x0) {
+          VStack_8.Item1 = (void *)0x0;
+          VStack_8.Item2 = (Object *)0x0;
           mscorlib.dll::System::ValueTuple`2[IntPtr,Object]::ValueTuple_2_IntPtr_Object___ctor
-                    (&VStack_6,(void *)0x14,(Object *)(pPVar3->fields).poisonParticles,
+                    (&VStack_8,(void *)0x14,(Object *)(pPVar5->fields).poisonParticles,
                      (MethodInfo *)0x0);
-          if (1 < pMVar2->max_length) {
-            pMVar2->vector[1].PackageType = (int32_t)VStack_6.Item1;
-            VStack_4.Item2 = (Object *)0x0;
-            VStack_4.Item1 = &pMVar2->vector[1].ParticlePrefab;
-            pMVar2->vector[1].ParticlePrefab = (ParticleSystem *)VStack_6.Item2;
-            VStack_6.Item2 = (Object *)&UNK_?;
+          if (1 < pMVar4->max_length) {
+            pMVar4->vector[1].PackageType = (int32_t)VStack_8.Item1;
+            VStack_6.Item2 = (Object *)0x0;
+            VStack_6.Item1 = &pMVar4->vector[1].ParticlePrefab;
+            pMVar4->vector[1].ParticlePrefab = (ParticleSystem *)VStack_8.Item2;
+            VStack_8.Item2 = (Object *)&UNK_?;
             func_?();
-            (this->fields).hitPackages = pMVar2;
-            VStack_6.Item2 = (Object *)pMVar2;
-            VStack_6.Item1 = &(this->fields).hitPackages;
+            VStack_8.Item1 = &(this->fields).hitPackages;
+            *(MaterialHitPackage__Array **)VStack_8.Item1 = pMVar4;
+            VStack_8.Item2 = (Object *)pMVar4;
             func_?();
             this_01 = (InteractableMaterialHitHandler *)
                       func_?(TypeInfo__InteractableMaterialHitHandler);
             InteractableMaterialHitHandler::InteractableMaterialHitHandler__ctor
                       (this_01,(MethodInfo *)0x0);
-            (this->fields).materialHitHandler = this_01;
-            func_?(&(this->fields).materialHitHandler,this_01);
+            ppIVar9 = &(this->fields).materialHitHandler;
+            *ppIVar9 = this_01;
+            func_?(ppIVar9,this_01);
             MVInteractable::MVInteractable__ctor((MVInteractable *)this,(MethodInfo *)0x0);
             return;
           }
@@ -1561,10 +1563,10 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable__ctor
   }
   func_?();
 code_?:
-  VStack_4.Item2 = (Object *)&UNK_?;
+  VStack_6.Item2 = (Object *)&UNK_?;
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

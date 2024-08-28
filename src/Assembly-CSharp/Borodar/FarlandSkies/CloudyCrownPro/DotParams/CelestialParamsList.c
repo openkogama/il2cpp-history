@@ -22,14 +22,14 @@ CelestialParamsList_GetParamPerTime(CelestialParamsList *this,float currentTime,
     func_?(&
                     MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParam>__get_Count__
                    );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParam>__get_Keys__
-                   );
     in_stack_1 =
          &
-         MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParam>__get_Values__
+         MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParam>__get_Keys__
     ;
     func_?();
+    func_?(&
+                    MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParam>__get_Values__
+                   );
     func_?(&StringLiteral_Celestial_params_list_is_empty);
     cRam_? = '\x01';
   }
@@ -76,12 +76,16 @@ CelestialParamsList_GetParamPerTime(CelestialParamsList *this,float currentTime,
                          ((DotParamsList_1_System_Object_ *)pDVar2,currentTime,
                           MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParam>__FindIndexPerTime_float_
                          );
-      pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
       if (iVar7 < 1) {
-        if (pSVar3 == (SortedList_2_System_Single_System_Object_ *)0x0) goto code_?;
-        iVar7 = (pSVar3->fields)._size;
+        pDVar2 = (this->fields)._.SortedParams;
+        if (pDVar2 == (DotParamsList_1_CelestialParam_ *)0x0) goto code_?;
+        iVar7 = (pDVar2->fields)._._size;
+        pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
       }
-      else if (pSVar3 == (SortedList_2_System_Single_System_Object_ *)0x0) goto code_?;
+      else {
+        pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
+        if (pSVar3 == (SortedList_2_System_Single_System_Object_ *)0x0) goto code_?;
+      }
       pIVar8 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::
                 Object]::SortedList_2_System_Single_System_Object__get_Keys
                           (pSVar3,
@@ -110,16 +114,15 @@ CelestialParamsList_GetParamPerTime(CelestialParamsList *this,float currentTime,
           fVar19 = *(float *)(iVar12 + 0x24);
           fVar20 = *(float *)(iVar12 + 0x28);
           fVar21 = *(float *)(iVar12 + 0x2c);
-          pDVar2 = (this->fields)._.SortedParams;
-          if (pDVar2 != (DotParamsList_1_CelestialParam_ *)0x0) {
+          pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
+          if (pSVar3 != (SortedList_2_System_Single_System_Object_ *)0x0) {
             iVar12 = 0;
-            if (iVar7 < (pDVar2->fields)._._size) {
+            if (iVar7 < (pSVar3->fields)._size) {
               iVar12 = iVar7;
             }
             pIVar8 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::
                       Object]::SortedList_2_System_Single_System_Object__get_Keys
-                                ((SortedList_2_System_Single_System_Object_ *)
-                                 (this->fields)._.SortedParams,
+                                (pSVar3,
                                  MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParam>__get_Keys__
                                 );
             if (pIVar8 != (IList_1_System_Single_ *)0x0) {
@@ -135,18 +138,18 @@ CelestialParamsList_GetParamPerTime(CelestialParamsList *this,float currentTime,
                                        (pSVar3,
                                         MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParam>__get_Values__
                                        ), pIVar11 != (IList_1_System_Object_ *)0x0)) &&
-                 (iVar12 = func_?(0,
+                 (iVar7 = func_?(0,
                                            TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParam>
-                                           ,pIVar11,iVar12), iVar12 != 0)) {
-                fVar23 = *(float *)(iVar12 + 0xc);
-                fVar24 = *(float *)(iVar12 + 0x10);
-                fVar25 = *(float *)(iVar12 + 0x14);
-                fVar26 = *(float *)(iVar12 + 0x18);
-                fVar27 = *(float *)(iVar12 + 0x1c);
-                fVar28 = *(float *)(iVar12 + 0x20);
-                fVar29 = *(float *)(iVar12 + 0x24);
-                fVar30 = *(float *)(iVar12 + 0x28);
-                fVar31 = *(float *)(iVar12 + 0x2c);
+                                           ,pIVar11,iVar12), iVar7 != 0)) {
+                fVar23 = *(float *)(iVar7 + 0xc);
+                fVar24 = *(float *)(iVar7 + 0x10);
+                fVar25 = *(float *)(iVar7 + 0x14);
+                fVar26 = *(float *)(iVar7 + 0x18);
+                fVar27 = *(float *)(iVar7 + 0x1c);
+                fVar28 = *(float *)(iVar7 + 0x20);
+                fVar29 = *(float *)(iVar7 + 0x24);
+                fVar30 = *(float *)(iVar7 + 0x28);
+                fVar31 = *(float *)(iVar7 + 0x2c);
                 if (currentTime <= fVar10) {
                   fVar32 = currentTime + (_UNK_? - fVar10);
                 }
@@ -179,15 +182,21 @@ CelestialParamsList_GetParamPerTime(CelestialParamsList *this,float currentTime,
                 ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                           ((Object *)pCVar33,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
                 fVar10 = _UNK_?;
-                fVar22 = 0.0;
-                if ((0.0 <= fVar32) && (fVar22 = _UNK_?, fVar32 <= _UNK_?)) {
-                  fVar22 = fVar32;
+                bVar34 = fVar32 < 0.0;
+                if (bVar34) {
+                  fVar22 = 0.0;
+                }
+                else {
+                  fVar22 = _UNK_?;
+                  if (fVar32 <= _UNK_?) {
+                    fVar22 = fVar32;
+                  }
                 }
                 (pCVar33->fields).TintColor.r = (fVar23 - fVar13) * fVar22 + fVar13;
                 (pCVar33->fields).TintColor.g = (fVar24 - fVar14) * fVar22 + fVar14;
                 (pCVar33->fields).TintColor.b = (fVar25 - fVar15) * fVar22 + fVar15;
                 (pCVar33->fields).TintColor.a = (fVar26 - fVar16) * fVar22 + fVar16;
-                if (fVar32 < 0.0) {
+                if (bVar34) {
                   fVar13 = 0.0;
                 }
                 else {
@@ -200,7 +209,7 @@ CelestialParamsList_GetParamPerTime(CelestialParamsList *this,float currentTime,
                 (pCVar33->fields).LightColor.g = (fVar28 - fVar18) * fVar13 + fVar18;
                 (pCVar33->fields).LightColor.b = (fVar29 - fVar19) * fVar13 + fVar19;
                 (pCVar33->fields).LightColor.a = (fVar30 - fVar20) * fVar13 + fVar20;
-                if (fVar32 < 0.0) {
+                if (bVar34) {
                   fVar32 = 0.0;
                 }
                 else if (fVar10 < fVar32) {
@@ -217,8 +226,8 @@ CelestialParamsList_GetParamPerTime(CelestialParamsList *this,float currentTime,
   }
 code_?:
   func_?();
-  pcVar34 = (code *)swi(3);
-  pCVar33 = (CelestialParam *)(*pcVar34)();
+  pcVar35 = (code *)swi(3);
+  pCVar33 = (CelestialParam *)(*pcVar35)();
   return pCVar33;
 }
 

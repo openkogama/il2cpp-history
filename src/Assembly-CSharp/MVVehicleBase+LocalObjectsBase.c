@@ -29,8 +29,8 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  if ((this->fields).onDestroy != (Action *)0x0) {
-    pAVar6 = (this->fields).onDestroy;
+  pAVar6 = (this->fields).onDestroy;
+  if (pAVar6 != (Action *)0x0) {
     (*(pAVar6->fields)._._.invoke_impl)
               ((pAVar6->fields)._._.method_code,(pAVar6->fields)._._.method);
   }
@@ -105,8 +105,8 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
     func_?(&StringLiteral_Failed_to_get_rigid_bodies);
     cRam_? = '\x01';
   }
-  if ((this->fields).onEnter != (Action *)0x0) {
-    pAVar1 = (this->fields).onEnter;
+  pAVar1 = (this->fields).onEnter;
+  if (pAVar1 != (Action *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }
@@ -489,7 +489,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Component>__List__);
   method_00 = (MethodInfo *)&(this->fields).localComponents;
-  (this->fields).localComponents = this_00;
+  *(List_1_UnityEngine_Component_ **)method_00 = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

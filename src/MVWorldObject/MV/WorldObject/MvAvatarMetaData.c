@@ -99,9 +99,9 @@ void MVWorldObject.dll::MV::WorldObject::MvAvatarMetaData::MvAvatarMetaData__cto
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  (this->fields).avatarID = -1;
-  (this->fields).name = ::StringLiteral__;
   pMVar1 = (MethodInfo *)&(this->fields).name;
+  (this->fields).avatarID = -1;
+  *(String **)pMVar1 = ::StringLiteral__;
   func_?(pMVar1,::StringLiteral__);
   (this->fields).priceGold = -1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
@@ -117,33 +117,33 @@ void MVWorldObject.dll::MV::WorldObject::MvAvatarMetaData::MvAvatarMetaData__cto
       count = count | (uVar4 & 0x7f) << ((byte)iVar3 & 0x1f);
       iVar3 = iVar3 + 7;
     } while ((char)uVar4 < '\0');
-    pBVar5 = BytePacker::BytePacker_ReadBytes(bp,count,(MethodInfo *)0x0);
+    pBVar5 = bp;
+    BytePacker::BytePacker_ReadBytes(bp,count,(MethodInfo *)0x0);
     pEVar6 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
     if (pEVar6 != (Encoding *)0x0) {
-      pBStack7 = pBVar5;
-      pSVar8 = (String *)(*(code *)(pEVar6->klass->vtable).GetString.method)();
-      (this->fields).name = pSVar8;
+      pBVar7 = (BytePacker__Class *)(*(code *)(pEVar6->klass->vtable).GetString.method)();
+      pBVar5->klass = pBVar7;
       func_?();
       iVar2 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-      (this->fields).priceGold = iVar2;
+      (pBVar7->_0).byval_arg.data.__klassIndex = iVar2;
       uVar4 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
-      (this->fields).isOnMarketPlace = uVar4 != 0;
+      *(bool *)&(pBVar7->_0).byval_arg.attrs = uVar4 != 0;
       uVar4 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
-      (this->fields).canBeSoldOnMarketPlace = uVar4 != 0;
+      *(bool *)((int)&(pBVar7->_0).byval_arg.attrs + 1) = uVar4 != 0;
       return;
     }
   }
   func_?();
 code_?:
-  uVar9 = func_?(&TypeInfo__System__FormatException);
-  this_00 = (FormatException *)func_?(uVar9);
+  uVar8 = func_?(&TypeInfo__System__FormatException);
+  this_00 = (FormatException *)func_?(uVar8);
   pMVar1 = (MethodInfo *)0x0;
-  pSVar8 = (String *)func_?(&StringLiteral_Error_in_the_byte_stream__too_ma);
-  mscorlib.dll::System::FormatException::FormatException__ctor_1(this_00,pSVar8,pMVar1);
+  message = (String *)func_?(&StringLiteral_Error_in_the_byte_stream__too_ma);
+  mscorlib.dll::System::FormatException::FormatException__ctor_1(this_00,message,pMVar1);
   func_?(&MethodInfo__MV__WorldObject__BytePacker__Read7BitEncodedInt__);
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

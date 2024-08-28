@@ -54,8 +54,7 @@ void Assembly-CSharp.dll::GameEventManager+GameStateManager::GameEventManager_Ga
              MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
             );
   method_00 = (MethodInfo *)&(this->fields).gameStateType;
-  (this->fields).gameStateType =
-       (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)this_00;
+  *(GameEventManager_GameEventSubscribableVariable_1_System_Int32Enum_ **)method_00 = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

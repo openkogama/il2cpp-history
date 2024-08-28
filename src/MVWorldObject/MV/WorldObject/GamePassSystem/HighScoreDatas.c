@@ -75,7 +75,7 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::HighScoreDatas::HighSco
              MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__List__
             );
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).highScores = this_00;
+  ((HighScoreDatas__Fields *)method_00)->highScores = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -109,14 +109,15 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::HighScoreDatas::HighSco
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__List__
             );
-  method_00 = (MethodInfo *)&this->fields;
-  (this->fields).highScores = this_00;
-  func_?(method_00,this_00);
+  pHVar1 = &this->fields;
+  pHVar1->highScores = this_00;
+  method_00 = (MethodInfo *)pHVar1;
+  func_?(pHVar1,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).topRank = topRank;
-  (this->fields).highScores = highScores;
-  func_?(&this->fields,highScores);
+  pHVar1->highScores = highScores;
+  func_?(pHVar1,highScores);
   return;
 }
 

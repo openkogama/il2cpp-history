@@ -27,29 +27,25 @@ void Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_DeSelectAll
       puVar5 = puStack_4;
     }
     puStack_4 = puVar5;
-    HStack_6._set = (HashSet_1_System_UInt32_ *)0x0;
-    HStack_6._index = 0;
-    HStack_6._version = 0;
-    HStack_6._current = 0;
     method_00 = (MethodInfo *)(object->fields).selectedIDs;
     if (method_00 != (MethodInfo *)0x0) {
-      pHVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+      pHVar6 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
                HashSet_1_System_UInt32__GetEnumerator
-                         (&HStack_8,(HashSet_1_System_UInt32_ *)method_00,
+                         (&HStack_7,(HashSet_1_System_UInt32_ *)method_00,
                           MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
-      HStack_6._set = pHVar7->_set;
-      HStack_6._index = pHVar7->_index;
-      HStack_6._version = pHVar7->_version;
-      HStack_6._current = pHVar7->_current;
-      HStack_8._version = 0;
+      HStack_8._set = pHVar6->_set;
+      HStack_8._index = pHVar6->_index;
+      HStack_8._version = pHVar6->_version;
+      HStack_8._current = pHVar6->_current;
+      HStack_7._version = 0;
       uStack_1 = 1;
-      HStack_8._current = (uint32_t)&HStack_6;
+      HStack_7._current = (uint32_t)&HStack_8;
       while (bVar9 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
                      UInt32]::HashSet_1_T_Enumerator_System_UInt32__MoveNext
-                               (&HStack_6,
+                               (&HStack_8,
                                 MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
-                               ), id = HStack_6._current, bVar9 != 0) {
-        uStack_10 = HStack_6._current;
+                               ), id = HStack_8._current, bVar9 != 0) {
+        uStack_10 = HStack_8._current;
         pMVar11 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if (pMVar11 == (MVWorldObjectClientManager *)0x0) goto code_?;
         method_00 = (MethodInfo *)0x0;
@@ -70,7 +66,7 @@ void Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_DeSelectAll
       }
       uStack_1 = 0xffffffff;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                ((Object *)&HStack_6,
+                ((Object *)&HStack_8,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__,
                  method_00);
@@ -134,47 +130,43 @@ void Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_DeSelectAllExce
       cRam_? = '\x01';
       pMVar2 = pMVar1;
     }
-    HStack_3._set = (HashSet_1_System_UInt32_ *)0x0;
-    HStack_3._index = 0;
-    HStack_3._version = 0;
-    HStack_3._current = 0;
     value = (Object *)func_?(TypeInfo__SelectionController____c__DisplayClass27_0);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               (value,(ExceptionArgument__Enum)value,pMVar2);
     if (value != (Object *)0x0) {
       value[1].klass = (Object__Class *)id;
-      pHVar4 = (HashSet_1_System_Int32Enum_ *)(this_00->fields).selectedIDs;
-      if (pHVar4 != (HashSet_1_System_Int32Enum_ *)0x0) {
+      pHVar3 = (HashSet_1_System_Int32Enum_ *)(this_00->fields).selectedIDs;
+      if (pHVar3 != (HashSet_1_System_Int32Enum_ *)0x0) {
         pMVar2 = (MethodInfo *)&UNK_?;
-        bVar5 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+        bVar4 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
                 HashSet_1_System_Int32Enum__Contains
-                          (pHVar4,id,
+                          (pHVar3,id,
                            MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
-        if (bVar5 == 0) {
+        if (bVar4 == 0) {
           SelectionController::SelectionController_DeSelectAll(this_00,(MethodInfo *)0x0);
           *unaff_FS_OFFSET = id;
           return;
         }
         this_01 = (HashSet_1_System_UInt32_ *)(this_00->fields).selectedIDs;
         if (this_01 != (HashSet_1_System_UInt32_ *)0x0) {
-          pHVar6 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+          pHVar5 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
                    HashSet_1_System_UInt32__GetEnumerator
-                             (&HStack_7,this_01,
+                             (&HStack_6,this_01,
                               MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__
                              );
-          HStack_3._set = pHVar6->_set;
-          HStack_3._index = pHVar6->_index;
-          HStack_3._version = pHVar6->_version;
-          HStack_3._current = pHVar6->_current;
-          HStack_7._version = 0;
-          HStack_7._current = (uint32_t)&HStack_3;
-          while (bVar5 = System.Core.dll::System::Collections::Generic::
+          HStack_7._set = pHVar5->_set;
+          HStack_7._index = pHVar5->_index;
+          HStack_7._version = pHVar5->_version;
+          HStack_7._current = pHVar5->_current;
+          HStack_6._version = 0;
+          HStack_6._current = (uint32_t)&HStack_7;
+          while (bVar4 = System.Core.dll::System::Collections::Generic::
                          HashSet`1[T]+Enumerator[System::UInt32]::
                          HashSet_1_T_Enumerator_System_UInt32__MoveNext
-                                   (&HStack_3,
+                                   (&HStack_7,
                                     MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
-                                   ), id_00 = HStack_3._current, bVar5 != 0) {
-            if ((InvokerMethod)HStack_3._current != pMVar2->invoker_method) {
+                                   ), id_00 = HStack_7._current, bVar4 != 0) {
+            if ((InvokerMethod)HStack_7._current != pMVar2->invoker_method) {
               pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
               if (pMVar8 == (MVWorldObjectClientManager *)0x0) goto code_?;
               in_stack_9 = (MethodInfo *)0x0;
@@ -200,22 +192,22 @@ void Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_DeSelectAllExce
             }
           }
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    ((Object *)&HStack_3,
+                    ((Object *)&HStack_7,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
                      ,in_stack_9);
-          pHVar4 = _UNK_?;
+          pHVar3 = _UNK_?;
           this_03 = (Predicate_1_UInt32_ *)func_?();
-          HStack_7._current = (uint32_t)&UNK_?;
+          HStack_6._current = (uint32_t)&UNK_?;
           mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
                     (this_03,(Object *)pMVar2,
                      MethodInfo__SelectionController____c__DisplayClass27_0___DeSelectAllExcept_b__0_int_
                      ,(MethodInfo *)0x0);
-          if (pHVar4 != (HashSet_1_System_Int32Enum_ *)0x0) {
+          if (pHVar3 != (HashSet_1_System_Int32Enum_ *)0x0) {
             puVar11 = &UNK_?;
             System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
             HashSet_1_System_Int32Enum__RemoveWhere
-                      (pHVar4,(Predicate_1_Int32Enum_ *)this_03,
+                      (pHVar3,(Predicate_1_Int32Enum_ *)this_03,
                        MethodInfo__System__Collections__Generic__HashSet<int>__RemoveWhere_System__Predicate<int>_
                       );
             *unaff_FS_OFFSET = (int32_t)puVar11;
@@ -343,7 +335,7 @@ int32_t Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_ExitGroup
           return TVar2.m_Index;
         }
       }
-      else if (pSVar1 != (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) {
+      else {
         TVar2 = mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::
                 TextureId]::Stack_1_UnityEngine_UIElements_TextureId__Pop
                           (pSVar1,MethodInfo__System__Collections__Generic__Stack<int>__Pop__);
@@ -392,37 +384,37 @@ int32_t Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_ExitGroupToR
       cRam_? = '\x01';
     }
     SelectionController::SelectionController_DeSelectAll(this_00,(MethodInfo *)0x0);
-    pSVar1 = (this_00->fields).parentGroups;
-    while (pSVar1 != (Stack_1_System_Int32_ *)0x0) {
-      this_01 = (Stack_1_UnityEngine_UIElements_TextureId_ *)(this_00->fields).parentGroups;
+    pSVar1 = (Stack_1_UnityEngine_UIElements_TextureId_ *)(this_00->fields).parentGroups;
+    while (pSVar1 != (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) {
       if ((pSVar1->fields)._size < 2) {
-        if (this_01 != (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) {
+        pSVar1 = (Stack_1_UnityEngine_UIElements_TextureId_ *)(this_00->fields).parentGroups;
+        if (pSVar1 != (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) {
           TVar2 = mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::
                   TextureId]::Stack_1_UnityEngine_UIElements_TextureId__Peek
-                            (this_01,MethodInfo__System__Collections__Generic__Stack<int>__Peek__);
+                            (pSVar1,MethodInfo__System__Collections__Generic__Stack<int>__Peek__);
           return TVar2.m_Index;
         }
         break;
       }
-      if (this_01 == (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) break;
+      if (pSVar1 == (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) break;
       TVar2 = mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::
               TextureId]::Stack_1_UnityEngine_UIElements_TextureId__Pop
-                        (this_01,MethodInfo__System__Collections__Generic__Stack<int>__Pop__);
-      this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      this_03 = (UnityAction_2_System_Object_System_Object_ *)
+                        (pSVar1,MethodInfo__System__Collections__Generic__Stack<int>__Pop__);
+      this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      this_02 = (UnityAction_2_System_Object_System_Object_ *)
                 func_?(
                                TypeInfo__System__Action<System::Object,_WorldObjectDestroyedEventArgs>
                                );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                (this_03,(Object *)this_00,
+                (this_02,(Object *)this_00,
                  MethodInfo__SelectionController__WOCM_WorldObjectDestroyedHandler_System__Object__WorldObjectDestroyedEventArgs_
                  ,(MethodInfo *)0x0);
-      if (this_02 == (MVWorldObjectClientManager *)0x0) break;
+      if (this_01 == (MVWorldObjectClientManager *)0x0) break;
       MVWorldObjectClientManager::MVWorldObjectClientManager_UnsubscribeWODestroyedEvent
-                (this_02,TVar2.m_Index,(Action_2_Object_WorldObjectDestroyedEventArgs_ *)this_03,
+                (this_01,TVar2.m_Index,(Action_2_Object_WorldObjectDestroyedEventArgs_ *)this_02,
                  (MethodInfo *)0x0);
-      pSVar1 = (this_00->fields).parentGroups;
+      pSVar1 = (Stack_1_UnityEngine_UIElements_TextureId_ *)(this_00->fields).parentGroups;
     }
   }
   func_?();
@@ -580,8 +572,8 @@ Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_SelectWO
       SelectionController::SelectionController_DeSelectAllExcept(this_00,id,(MethodInfo *)0x0);
     }
     if (this_02 == (MVWorldObjectClient *)0x0) goto code_?;
-    if ((this_02->fields)._.ownerActorNr != 0) {
-      iVar2 = (this_02->fields)._.ownerActorNr;
+    iVar2 = (this_02->fields)._.ownerActorNr;
+    if (iVar2 != 0) {
       this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if ((this_03 == (MVNetworkGame *)0x0) ||
          (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_03,(MethodInfo *)0x0),
@@ -731,8 +723,9 @@ void Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_Update
     func_?(&TypeInfo__IState);
     cRam_? = '\x01';
   }
-  if ((this->fields)._.currentState != (IState *)0x0) {
-    func_?(1,TypeInfo__IState,(this->fields)._.currentState,this);
+  pIVar1 = (this->fields)._.currentState;
+  if (pIVar1 != (IState *)0x0) {
+    func_?(1,TypeInfo__IState,pIVar1,this);
   }
   return;
 }
@@ -753,8 +746,9 @@ void Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine__ctor
   esm = this;
   FSMEntity::FSMEntity__ctor((FSMEntity *)this,(MethodInfo *)0x0);
   pGVar1 = gameObject;
-  (esm->fields).gameObject = gameObject;
-  func_?(&(esm->fields).gameObject,gameObject);
+  ppGVar2 = &(esm->fields).gameObject;
+  *ppGVar2 = gameObject;
+  func_?(ppGVar2,gameObject);
   this_00 = (CubeModelingStateMachine *)func_?(TypeInfo__CubeModelingStateMachine);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__CubeModelingEvent);
@@ -766,13 +760,14 @@ void Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine__ctor
       == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredByte);
   }
-  OVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredByte::
+  OVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredByte::
           ObscuredByte_op_Implicit(0x15,(MethodInfo *)0x0);
-  *(ObscuredByte *)&(this_00->fields).currentMaterialId.currentCryptoKey = OVar2;
+  *(ObscuredByte *)&(this_00->fields).currentMaterialId.currentCryptoKey = OVar3;
   (this_00->fields).useLasers = 1;
   FSMEntity::FSMEntity__ctor((FSMEntity *)this_00,(MethodInfo *)0x0);
-  (this_00->fields).gameObject = pGVar1;
-  func_?(&(this_00->fields).gameObject,pGVar1);
+  ppGVar2 = &(this_00->fields).gameObject;
+  *ppGVar2 = pGVar1;
+  func_?(ppGVar2,pGVar1);
   this_01 = (CubeModelingTransitionTable *)func_?(TypeInfo__CubeModelingTransitionTable);
   CubeModelingTransitionTable::CubeModelingTransitionTable__ctor(this_01,(MethodInfo *)0x0);
   (this_00->fields)._.transitionTable = (StateTransitionTable *)this_01;
@@ -780,14 +775,14 @@ void Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine__ctor
   this = (EditorStateMachine *)0x0;
   value = (Object *)func_?(TypeInfo__CubeModelingEvent,&this);
   FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,value,(MethodInfo *)0x0);
-  pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-  (this_00->fields).mainCamera = pCVar3;
-  ppCStack4 = &(this_00->fields).mainCamera;
+  pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+  ppCStack5 = &(this_00->fields).mainCamera;
+  *ppCStack5 = pCVar4;
   func_?();
   method = (MethodInfo *)&(esm->fields).cubeModelingStateMachine;
-  (esm->fields).cubeModelingStateMachine = this_00;
+  *(CubeModelingStateMachine **)method = this_00;
   gameObject = (GameObject *)&UNK_?;
-  pCStack5 = this_00;
+  pCStack6 = this_00;
   func_?();
   gameObject = (GameObject *)TypeInfo__MVNetworkSelector;
   this = (EditorStateMachine *)&UNK_?;
@@ -799,11 +794,12 @@ void Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine__ctor
   func_?();
   this_03 = (SelectionController *)func_?(TypeInfo__SelectionController);
   SelectionController::SelectionController__ctor(this_03,(MethodInfo *)0x0);
-  (esm->fields).selectionController = this_03;
-  func_?(&(esm->fields).selectionController,this_03);
-  pMVar6 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  (esm->fields).weCamera = pMVar6;
-  ppMStack7 = &(esm->fields).weCamera;
+  ppSVar7 = &(esm->fields).selectionController;
+  *ppSVar7 = this_03;
+  func_?(ppSVar7,this_03);
+  pMVar8 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  ppMStack9 = &(esm->fields).weCamera;
+  *ppMStack9 = pMVar8;
   func_?();
   (esm->fields)._GridMode_k__BackingField = 1;
   return;
@@ -930,8 +926,8 @@ MVGroup * Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_get_Parent
                     (EditorStateMachine *this,MethodInfo *method)
 
 {
-  pSVar1 = (this->fields).selectionController;
-  if (pSVar1 != (SelectionController *)0x0) {
+  pMVar1 = (MVGroup__Class *)(this->fields).selectionController;
+  if (pMVar1 != (MVGroup__Class *)0x0) {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__MVGroup);
       cRam_? = '\x01';
@@ -941,7 +937,7 @@ MVGroup * Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_get_Parent
       func_?(&MethodInfo__System__Collections__Generic__Stack<int>__Peek__);
       cRam_? = '\x01';
     }
-    this_00 = (Stack_1_UnityEngine_UIElements_TextureId_ *)(pSVar1->fields).parentGroups;
+    this_00 = (Stack_1_UnityEngine_UIElements_TextureId_ *)(pMVar1->_0).namespaze;
     if (this_00 != (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) {
       id = mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::TextureId]::
            Stack_1_UnityEngine_UIElements_TextureId__Peek
@@ -953,10 +949,10 @@ MVGroup * Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_get_Parent
         if (pMVar2 == (MVGroup *)0x0) {
           return (MVGroup *)0x0;
         }
-        if (((TypeInfo__MVGroup->_1).naturalAligment <= (pMVar2->klass->_1).naturalAligment) &&
-           ((MVGroup__Class *)
-            (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] ==
-            TypeInfo__MVGroup)) {
+        bVar3 = (TypeInfo__MVGroup->_1).naturalAligment;
+        pMVar1 = TypeInfo__MVGroup;
+        if ((bVar3 <= (pMVar2->klass->_1).naturalAligment) &&
+           ((MVGroup__Class *)(pMVar2->klass->_1).typeHierarchy[bVar3 - 1] == TypeInfo__MVGroup)) {
           return pMVar2;
         }
         goto code_?;
@@ -965,9 +961,10 @@ MVGroup * Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_get_Parent
   }
   func_?();
 code_?:
+  pMStack4 = pMVar1;
   func_?();
-  pcVar3 = (code *)swi(3);
-  pMVar2 = (MVGroup *)(*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  pMVar2 = (MVGroup *)(*pcVar5)();
   return pMVar2;
 }
 
@@ -1099,46 +1096,45 @@ Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_get_SelectedWOs
       func_?(&TypeInfo__System__Collections__Generic__HashSet<MVWorldObjectClient>);
       cRam_? = '\x01';
     }
-    pOStack_2 = (Object__Class *)0x0;
-    pHVar3 = (HashSet_1_MVWorldObjectClient_ *)
+    pHVar2 = (HashSet_1_MVWorldObjectClient_ *)
              func_?(TypeInfo__System__Collections__Generic__HashSet<MVWorldObjectClient>);
     System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
     HashSet_1_System_Object___ctor
-              ((HashSet_1_System_Object_ *)pHVar3,
+              ((HashSet_1_System_Object_ *)pHVar2,
                MethodInfo__System__Collections__Generic__HashSet<MVWorldObjectClient>__HashSet__);
     this_00 = (HashSet_1_System_UInt32_ *)(pSVar1->fields).selectedIDs;
     if (this_00 != (HashSet_1_System_UInt32_ *)0x0) {
-      pHVar4 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+      pHVar3 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
                HashSet_1_System_UInt32__GetEnumerator
                          ((HashSet_1_T_Enumerator_System_UInt32_ *)&stack0xffffffd4,this_00,
                           MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
-      pOStack_2 = (Object__Class *)pHVar4->_set;
-      id = pHVar4->_current;
+      pOStack_4 = (Object__Class *)pHVar3->_set;
+      id = pHVar3->_current;
       while( true ) {
         bVar5 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
                 UInt32]::HashSet_1_T_Enumerator_System_UInt32__MoveNext
-                          ((HashSet_1_T_Enumerator_System_UInt32_ *)&pOStack_2,
+                          ((HashSet_1_T_Enumerator_System_UInt32_ *)&pOStack_4,
                            MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
                           );
         if (bVar5 == 0) {
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    ((Object *)&pOStack_2,
+                    ((Object *)&pOStack_4,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
                      ,method_00);
           *unaff_FS_OFFSET = method_00;
-          return pHVar3;
+          return pHVar2;
         }
         uVar6 = id;
         this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if ((this_01 == (MVWorldObjectClientManager *)0x0) ||
            (item = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                              (this_01,id,(MethodInfo *)0x0),
-           pHVar3 == (HashSet_1_MVWorldObjectClient_ *)0x0)) break;
+           pHVar2 == (HashSet_1_MVWorldObjectClient_ *)0x0)) break;
         method_00 = (MethodInfo *)&UNK_?;
         System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
         HashSet_1_System_Object__System_Collections_Generic_ICollection_T__Add
-                  ((HashSet_1_System_Object_ *)pHVar3,(Object *)item,
+                  ((HashSet_1_System_Object_ *)pHVar2,(Object *)item,
                    MethodInfo__System__Collections__Generic__HashSet<MVWorldObjectClient>__Add_MVWorldObjectClient_
                   );
         id = uVar6;
@@ -1148,8 +1144,8 @@ Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_get_SelectedWOs
   func_?();
   func_?();
   pcVar7 = (code *)swi(3);
-  pHVar3 = (HashSet_1_MVWorldObjectClient_ *)(*pcVar7)();
-  return pHVar3;
+  pHVar2 = (HashSet_1_MVWorldObjectClient_ *)(*pcVar7)();
+  return pHVar2;
 }
 
 

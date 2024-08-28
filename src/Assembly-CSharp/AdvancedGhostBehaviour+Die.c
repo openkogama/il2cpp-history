@@ -6,22 +6,22 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+Die::AdvancedGhostBehaviour_Die
                MethodInfo *method)
 
 {
-  (this->fields).currentDieTime = (this->fields).dieTime;
+  fVar1 = (this->fields).dieTime;
+  (this->fields).currentDieTime = fVar1;
   if ((ghostBehaviour != (AdvancedGhostBehaviour *)0x0) &&
-     (pAVar1 = (ghostBehaviour->fields).GhostVisualization,
-     pAVar1 != (AdvancedGhostVisualizaton *)0x0)) {
+     (pAVar2 = (ghostBehaviour->fields).GhostVisualization,
+     pAVar2 != (AdvancedGhostVisualizaton *)0x0)) {
     AdvancedGhostVisualizaton::AdvancedGhostVisualizaton_PlayEffect
-              (pAVar1,AdvancedGhostVisualizaton_Effect__Enum_Die,(this->fields).dieTime,
-               (MethodInfo *)0x0);
-    pAVar1 = (ghostBehaviour->fields).GhostVisualization;
-    if ((pAVar1 != (AdvancedGhostVisualizaton *)0x0) &&
-       (this_00 = (pAVar1->fields).moving, this_00 != (AudioSource *)0x0)) {
-      fVar2 = (this->fields).deathRotationSpeed;
+              (pAVar2,AdvancedGhostVisualizaton_Effect__Enum_Die,fVar1,(MethodInfo *)0x0);
+    pAVar2 = (ghostBehaviour->fields).GhostVisualization;
+    if ((pAVar2 != (AdvancedGhostVisualizaton *)0x0) &&
+       (this_00 = (pAVar2->fields).moving, this_00 != (AudioSource *)0x0)) {
+      fVar1 = (this->fields).deathRotationSpeed;
       UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch
-                (this_00,fVar2 * _UNK_?,(MethodInfo *)0x0);
-      pGVar3 = (pAVar1->fields).ghostBody;
+                (this_00,fVar1 * _UNK_?,(MethodInfo *)0x0);
+      pGVar3 = (pAVar2->fields).ghostBody;
       if (pGVar3 != (GhostBody *)0x0) {
-        (pGVar3->fields).angularMaxRotation = fVar2 * (pGVar3->fields).angularMaxRotationBase;
+        (pGVar3->fields).angularMaxRotation = (pGVar3->fields).angularMaxRotationBase * fVar1;
         return;
       }
     }

@@ -6,26 +6,27 @@ void Assembly-CSharp.dll::SettingsSlider::SettingsSlider_Initialize
                MethodInfo *method)
 
 {
-  (this->fields).key = key;
-  func_?(&(this->fields).key,key);
-  pSVar1 = (this->fields).slider;
-  if (pSVar1 != (Slider *)0x0) {
+  ppSVar1 = &(this->fields).key;
+  *ppSVar1 = key;
+  func_?(ppSVar1,key);
+  pSVar2 = (this->fields).slider;
+  if (pSVar2 != (Slider *)0x0) {
     UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_maxValue
-              (pSVar1,maxValue,(MethodInfo *)0x0);
-    pSVar1 = (this->fields).slider;
-    if (pSVar1 != (Slider *)0x0) {
+              (pSVar2,maxValue,(MethodInfo *)0x0);
+    pSVar2 = (this->fields).slider;
+    if (pSVar2 != (Slider *)0x0) {
       UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_minValue
-                (pSVar1,minValue,(MethodInfo *)0x0);
-      pSVar1 = (this->fields).slider;
-      if (pSVar1 != (Slider *)0x0) {
-        (*(code *)(pSVar1->klass->vtable).set_value.method)();
+                (pSVar2,minValue,(MethodInfo *)0x0);
+      pSVar2 = (this->fields).slider;
+      if (pSVar2 != (Slider *)0x0) {
+        (*(code *)(pSVar2->klass->vtable).set_value.method)();
         return;
       }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -37,26 +38,27 @@ void Assembly-CSharp.dll::SettingsSlider::SettingsSlider_Initialize_1
                MethodInfo *method)
 
 {
-  (this->fields).key = key;
-  func_?(&(this->fields).key,key);
-  pSVar1 = (this->fields).slider;
-  if (pSVar1 != (Slider *)0x0) {
+  ppSVar1 = &(this->fields).key;
+  *ppSVar1 = key;
+  func_?(ppSVar1,key);
+  pSVar2 = (this->fields).slider;
+  if (pSVar2 != (Slider *)0x0) {
     UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_maxValue
-              (pSVar1,(float)maxValue,(MethodInfo *)0x0);
-    pSVar1 = (this->fields).slider;
-    if (pSVar1 != (Slider *)0x0) {
+              (pSVar2,(float)maxValue,(MethodInfo *)0x0);
+    pSVar2 = (this->fields).slider;
+    if (pSVar2 != (Slider *)0x0) {
       UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_minValue
-                (pSVar1,(float)minValue,(MethodInfo *)0x0);
-      pSVar1 = (this->fields).slider;
-      if (pSVar1 != (Slider *)0x0) {
-        (*(code *)(pSVar1->klass->vtable).set_value.method)();
+                (pSVar2,(float)minValue,(MethodInfo *)0x0);
+      pSVar2 = (this->fields).slider;
+      if (pSVar2 != (Slider *)0x0) {
+        (*(code *)(pSVar2->klass->vtable).set_value.method)();
         return;
       }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -79,7 +81,7 @@ void Assembly-CSharp.dll::SettingsSlider::SettingsSlider_Reset
                       UnityEngine__UI__Slider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Slider>__
                      );
   (this->fields).slider = pSVar1;
-  func_?(&(this->fields).slider,pSVar1);
+  func_?();
   return;
 }
 

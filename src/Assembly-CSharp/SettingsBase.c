@@ -501,8 +501,9 @@ void Assembly-CSharp.dll::SettingsBase::SettingsBase__ctor(SettingsBase *this,Me
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  (this->fields).result = (Dictionary_2_System_Object_System_Object_ *)this_00;
-  func_?(&(this->fields).result,this_00);
+  ppDVar1 = &(this->fields).result;
+  *ppDVar1 = (Dictionary_2_System_Object_System_Object_ *)this_00;
+  func_?(ppDVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

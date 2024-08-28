@@ -21,7 +21,7 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_AddBreadcrumb(String *message,Met
   pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
   if (pSVar1 != (SentrySdk *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__Sentry__Breadcrumb);
+      func_?();
       func_?(&TypeInfo__System__DateTime);
       func_?(&TypeInfo__UnityEngine__Debug);
       func_?(&StringLiteral_yyyy_MM_ddTHH__mm__ss);
@@ -30,14 +30,14 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_AddBreadcrumb(String *message,Met
     }
     if ((pSVar1->fields)._initialized == 0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
+        func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Cannot_AddBreadcrumb_if_we_are_n,(MethodInfo *)0x0);
       return;
     }
     if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__DateTime);
+      func_?();
     }
     mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
     item1 = mscorlib.dll::System::DateTime::DateTime_ToString_1
@@ -49,30 +49,29 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_AddBreadcrumb(String *message,Met
     mscorlib.dll::System::Tuple`2[Object,Object]::Tuple_2_Object_Object___ctor
               (this,(Object *)item1,(Object *)message,(MethodInfo *)0x0);
     if (pBVar3 != (Breadcrumb__Array *)0x0) {
-      if ((this == (Tuple_2_Object_Object_ *)0x0) ||
-         (iVar5 = func_?(this,(pBVar3->klass->_0).element_class), iVar5 != 0)) {
+      if ((this == (Tuple_2_Object_Object_ *)0x0) || (iVar5 = func_?(this), iVar5 != 0)) {
         if (uVar4 < pBVar3->max_length) {
           pBVar3->vector[uVar4] = (Breadcrumb *)this;
-          func_?(pBVar3->vector + uVar4,this);
+          func_?(pBVar3->vector + uVar4);
+          iVar5 = (pSVar1->fields)._noBreadcrumbs;
           (pSVar1->fields)._lastBreadcrumbPos = ((pSVar1->fields)._lastBreadcrumbPos + 1) % 100;
-          if (99 < (pSVar1->fields)._noBreadcrumbs) {
+          if (99 < iVar5) {
             return;
           }
-          piVar6 = &(pSVar1->fields)._noBreadcrumbs;
-          *piVar6 = *piVar6 + 1;
+          (pSVar1->fields)._noBreadcrumbs = iVar5 + 1;
           return;
         }
       }
       else {
-        uVar7 = func_?(0);
-        func_?(uVar7);
+        uVar6 = func_?();
+        func_?(uVar6);
       }
       func_?();
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -155,16 +154,17 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_CaptureMessage
       Sentry::SentryEvent::SentryEvent__ctor
                 (this,message,tags,extraSentryData,breadcrumbs,(MethodInfo *)0x0);
       if (this != (SentryEvent *)0x0) {
-        (this->fields).level = StringLiteral_info;
-        func_?(&(this->fields).level,StringLiteral_info);
+        ppSVar4 = &(this->fields).level;
+        *ppSVar4 = StringLiteral_info;
+        func_?(ppSVar4,StringLiteral_info);
         SentrySdk_DoCaptureEvent(pSVar1,this,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -240,26 +240,26 @@ code_?:
     if (puStack_3 < (undefined *)pBVar2->max_length) {
       pBVar2->vector[(int)puStack_3] = (Breadcrumb *)this_00;
       func_?();
+      iVar4 = (this->fields)._noBreadcrumbs;
       (this->fields)._lastBreadcrumbPos = ((this->fields)._lastBreadcrumbPos + 1) % 100;
-      if (99 < (this->fields)._noBreadcrumbs) {
+      if (99 < iVar4) {
         return;
       }
-      piVar4 = &(this->fields)._noBreadcrumbs;
-      *piVar4 = *piVar4 + 1;
+      (this->fields)._noBreadcrumbs = iVar4 + 1;
       return;
     }
   }
   else {
-    iVar5 = func_?();
-    if (iVar5 != 0) goto code_?;
+    iVar4 = func_?();
+    if (iVar4 != 0) goto code_?;
     func_?();
     func_?();
   }
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -365,15 +365,16 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_DoCaptureMessage
     Sentry::SentryEvent::SentryEvent__ctor
               (this_00,message,tags,extraSentryData,breadcrumbs,(MethodInfo *)0x0);
     if (this_00 != (SentryEvent *)0x0) {
-      (this_00->fields).level = StringLiteral_info;
-      func_?(&(this_00->fields).level,StringLiteral_info);
+      ppSVar2 = &(this_00->fields).level;
+      *ppSVar2 = StringLiteral_info;
+      func_?(ppSVar2,StringLiteral_info);
       SentrySdk_DoCaptureEvent(this,this_00,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -517,7 +518,6 @@ code_?:
       pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
       if (pSVar1 == (SentrySdk *)0x0) goto code_?;
       if (_UNK_? < fVar4 - (pSVar1->fields)._timeLastError) {
-        pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
         fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
         (pSVar1->fields)._timeLastError = fVar4;
         if ((type == LogType__Enum_Exception) || (type == LogType__Enum_Assert)) {
@@ -563,15 +563,16 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_PrepareEvent
       pSVar4 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetDeviceName
                          ((MethodInfo *)0x0);
       if (pDVar3 != (Device *)0x0) {
-        (pDVar3->fields).name = pSVar4;
-        func_?(&pDVar3->fields,pSVar4);
+        pDVar5 = &pDVar3->fields;
+        pDVar5->name = pSVar4;
+        func_?(pDVar5,pSVar4);
         return;
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -744,8 +745,8 @@ code_?:
           pOVar6[3].klass = (Object__Class *)stackTrace;
           func_?();
           piVar8 = (int *)func_?(0,
-                                           TypeInfo__System__Collections__Generic__IEnumerable<Sentry::StackTraceSpec>
-                                           ,pOVar6);
+                                          TypeInfo__System__Collections__Generic__IEnumerable<Sentry::StackTraceSpec>
+                                          ,pOVar6);
           uStack_1 = 1;
           while (piVar8 != (int *)0x0) {
             cVar9 = func_?(0,TypeInfo__System__Collections__IEnumerator,piVar8);
@@ -779,22 +780,21 @@ code_?:
               break;
             }
             if (piVar8 == (int *)0x0) break;
-            uVar10 = 0;
-            uVar11 = *(ushort *)(*piVar8 + 0xb6);
+            iVar10 = *piVar8;
+            uVar11 = 0;
             piVar12 = piVar8;
-            if (uVar11 != 0) {
+            if (*(ushort *)(iVar10 + 0xb6) != 0) {
               do {
                 if (*(IEnumerator_1_Sentry_StackTraceSpec___Class **)
-                     (*(int *)(*piVar8 + 0x58) + (uint)uVar10 * 8) ==
+                     (*(int *)(iVar10 + 0x58) + (uint)uVar11 * 8) ==
                     TypeInfo__System__Collections__Generic__IEnumerator<Sentry::StackTraceSpec>) {
                   puVar13 = (undefined4 *)
-                            (*piVar8 +
-                            (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8)
-                  ;
+                            (iVar10 + 0xc0 +
+                            *(int *)(*(int *)(iVar10 + 0x58) + 4 + (uint)uVar11 * 8) * 8);
                   goto code_?;
                 }
-                uVar10 = uVar10 + 1;
-              } while (uVar10 < uVar11);
+                uVar11 = uVar11 + 1;
+              } while (uVar11 < *(ushort *)(iVar10 + 0xb6));
             }
             puVar13 = (undefined4 *)
                       func_?(piVar8,
@@ -824,7 +824,7 @@ code_?:
   pOVar14 = (Object__Array *)func_?(TypeInfo__System__Object,1);
   if (pOVar14 == (Object__Array *)0x0) goto code_?;
   if ((condition == (String *)0x0) ||
-     (iVar15 = func_?(condition,(pOVar14->klass->_0).element_class), iVar15 != 0)) {
+     (iVar10 = func_?(condition,(pOVar14->klass->_0).element_class), iVar10 != 0)) {
     if (pOVar14->max_length == 0) {
 code_?:
       func_?();
@@ -837,7 +837,7 @@ code_?:
     pOVar14 = (Object__Array *)func_?(TypeInfo__System__Object,1);
     if (pOVar14 == (Object__Array *)0x0) goto code_?;
     if ((stackTrace == (String *)0x0) ||
-       (iVar15 = func_?(stackTrace,(pOVar14->klass->_0).element_class), iVar15 != 0)) {
+       (iVar10 = func_?(stackTrace,(pOVar14->klass->_0).element_class), iVar10 != 0)) {
       if (pOVar14->max_length != 0) {
         pOVar14->vector[0] = (Object *)stackTrace;
         func_?(pOVar14->vector,stackTrace);
@@ -850,16 +850,16 @@ code_?:
   }
   else {
 code_?:
-    uVar16 = func_?(0);
-    func_?(uVar16);
+    uVar15 = func_?(0);
+    func_?(uVar15);
   }
-  uVar16 = func_?(0);
-  func_?(uVar16);
+  uVar15 = func_?(0);
+  func_?(uVar15);
 code_?:
-  uVar16 = func_?();
-  func_?(uVar16);
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  uVar15 = func_?();
+  func_?(uVar15);
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 

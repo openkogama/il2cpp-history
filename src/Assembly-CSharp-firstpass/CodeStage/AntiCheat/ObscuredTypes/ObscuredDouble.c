@@ -89,9 +89,8 @@ int64_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obsc
   }
   return CONCAT44(*(uint *)((int)&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDouble->
                                   static_fields->cryptoKey + 4) ^ value._4_4_,
-                  value._0_4_ ^
                   (uint)TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDouble->static_fields
-                        ->cryptoKey);
+                        ->cryptoKey ^ value._0_4_);
 }
 
 

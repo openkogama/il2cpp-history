@@ -16,8 +16,8 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_End
   }
   pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0);
   if (pFVar2 != (FlagDebriefingControl *)0x0) {
-    if ((pFVar2->fields).OnFlagDebriefingEnd != (Action *)0x0) {
-      pAVar3 = (pFVar2->fields).OnFlagDebriefingEnd;
+    pAVar3 = (pFVar2->fields).OnFlagDebriefingEnd;
+    if (pAVar3 != (Action *)0x0) {
       (*(pAVar3->fields)._._.invoke_impl)((pAVar3->fields)._._.method_code);
     }
     if (cRam_? == '\0') {
@@ -45,10 +45,10 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_End
           if (pFVar2 != (FlagDebriefingControl *)0x0) {
             fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
                               ((MethodInfo *)0x0);
+            pAVar3 = (pFVar2->fields).OnFlagCountDownEnd;
             (pFVar2->fields).IsInFlagDebriefing = 0;
             (pFVar2->fields).RunStartTime = fVar5;
-            if ((pFVar2->fields).OnFlagCountDownEnd != (Action *)0x0) {
-              pAVar3 = (pFVar2->fields).OnFlagCountDownEnd;
+            if (pAVar3 != (Action *)0x0) {
               (*(pAVar3->fields)._._.invoke_impl)
                         ((pAVar3->fields)._._.method_code,(pAVar3->fields)._._.method);
             }
@@ -100,8 +100,8 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Exi
         pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
                            ((MethodInfo *)0x0);
         if (pFVar2 != (FlagDebriefingControl *)0x0) {
-          if ((pFVar2->fields).OnFlagDebriefingEnd != (Action *)0x0) {
-            pAVar3 = (pFVar2->fields).OnFlagDebriefingEnd;
+          pAVar3 = (pFVar2->fields).OnFlagDebriefingEnd;
+          if (pAVar3 != (Action *)0x0) {
             puStack4 = (pAVar3->fields)._._.method;
             (*(pAVar3->fields)._._.invoke_impl)();
           }
@@ -114,9 +114,10 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Exi
              ((pGVar5->fields).AvatarCommandsPlayMode !=
               (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
             uStack6 = 0;
-            if (*(int *)(in_stack_7 + 0x14) != 0) {
-              uStack8 = *(undefined4 *)(*(int *)(in_stack_7 + 0x14) + 0x14);
-              (**(code **)(*(int *)(in_stack_7 + 0x14) + 0xc))();
+            iVar7 = *(int *)(in_stack_8 + 0x14);
+            if (iVar7 != 0) {
+              uStack9 = *(undefined4 *)(iVar7 + 0x14);
+              (**(code **)(iVar7 + 0xc))();
             }
             return;
           }
@@ -125,8 +126,8 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Exi
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -201,16 +202,15 @@ int32_t Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_
                    );
     cRam_? = '\x01';
   }
-  pOStack_4 = (Object__Class *)0x0;
-  pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar5 != (MVNetworkGame *)0x0) &&
-     (this_00 = (pMVar5->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
+  pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar4 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar4->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
     this_02 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(this_00,(MethodInfo *)0x0);
     if (this_02 !=
         (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
-      pDVar6 = mscorlib.dll::System::Collections::Generic::
+      pDVar5 = mscorlib.dll::System::Collections::Generic::
                Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                StyleSheetCache+SheetHandleKey,System::Object]::
                Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
@@ -219,46 +219,46 @@ int32_t Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_
                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
                          );
       uStack_1 = 1;
-      iVar7 = 0;
-      team = pDVar6->_currentValue;
+      iVar6 = 0;
+      team = pDVar5->_currentValue;
       while( true ) {
         do {
-          pOVar8 = team;
-          bVar9 = mscorlib.dll::System::Collections::Generic::
+          pOVar7 = team;
+          bVar8 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                   UInt32,System::Object]::
                   Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                             ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                              *)&pOStack_4,
+                              *)&pOStack_9,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
                             );
-          if (bVar9 == 0) {
+          if (bVar8 == 0) {
             uStack_1 = 0xffffffff;
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                      ((Object *)&pOStack_4,
+                      ((Object *)&pOStack_9,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
                        ,in_stack_10);
             *unaff_FS_OFFSET = uStack_3;
-            return iVar7;
+            return iVar6;
           }
           team = (Object *)0x0;
-        } while (pOVar8 == (Object *)0x0);
-        iVar11 = (int32_t)pOVar8[6].klass;
-        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar5 == (MVNetworkGame *)0x0) break;
-        this_01 = (pMVar5->fields).gameStatCounterManager;
+        } while (pOVar7 == (Object *)0x0);
+        iVar11 = (int32_t)pOVar7[6].klass;
+        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (pMVar4 == (MVNetworkGame *)0x0) break;
+        this_01 = (pMVar4->fields).gameStatCounterManager;
         if (this_01 == (GameStatCounterManager *)0x0) break;
         in_stack_10 = (MethodInfo *)0x0;
-        team = (Object *)pOVar8[9].klass;
+        team = (Object *)pOVar7[9].klass;
         iVar11 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetActorCount
                           (this_01,GameStatCounterType__Enum_TimeAttackFlag,(MVTeam__Enum)team,iVar11
                            ,(MethodInfo *)0x0);
         iVar12 = 8;
-        bVar9 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_IsNewScoreBetter
-                          (iVar11,iVar7,GameStatCounterType__Enum_TimeAttackFlag,(MethodInfo *)0x0);
-        if (bVar9 != 0) {
-          iVar7 = iVar12;
+        bVar8 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_IsNewScoreBetter
+                          (iVar11,iVar6,GameStatCounterType__Enum_TimeAttackFlag,(MethodInfo *)0x0);
+        if (bVar8 != 0) {
+          iVar6 = iVar12;
         }
       }
     }
@@ -266,8 +266,8 @@ int32_t Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_
   func_?();
   func_?();
   pcVar13 = (code *)swi(3);
-  iVar7 = (*pcVar13)();
-  return iVar7;
+  iVar6 = (*pcVar13)();
+  return iVar6;
 }
 
 
@@ -451,10 +451,10 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Ini
                         if ((pGVar7 != (GameEventManager *)0x0) &&
                            (this_03 = (pGVar7->fields).AvatarCommandsPlayMode,
                            this_03 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-                          GameEventManager+AvatarCommandsPlayModeManager::
-                          GameEventManager_AvatarCommandsPlayModeManager_SetIntermediateDebriefing
-                                    (this_03,WinningConditionType__Enum_TimeAttackFlag,
-                                     (MethodInfo *)0x0);
+                          UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+                          ContextualMenuManipulator::ContextualMenuManipulator_OnContextualMenuEvent
+                                    ((ContextualMenuManipulator *)this_03,
+                                     (ContextualMenuPopulateEvent *)0x5,(MethodInfo *)0x0);
                           TimeAttackFlagDebriefing_SendNotification
                                     (this,(int32_t)newScore,5,(MethodInfo *)0x0);
                           return;
@@ -623,25 +623,24 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_OnA
       if (((((this->fields).isDebriefingOn == 0) &&
            (uVar1 == GameStatCounterType__Enum_TimeAttackFlag)) &&
           (mode == SpawnRoleModeType__Enum_Playing)) &&
-         (((this->fields).previousAvatarModeType == 4 ||
-          ((this->fields).previousAvatarModeType == 2)))) {
-        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-        if ((pMVar4 == (MVLocalPlayer *)0x0) ||
-           ((pSVar5 = (pMVar4->fields).spawnRoleDataMediator, pSVar5 == (SpawnRoleDataMediator *)0x0
-            || (this_00 = (WebCompletionSource_1_System_Object_ *)(pSVar5->fields).lastRespawnType,
+         ((iVar4 = (this->fields).previousAvatarModeType, iVar4 == 4 || (iVar4 == 2)))) {
+        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+        if ((pMVar5 == (MVLocalPlayer *)0x0) ||
+           ((pSVar6 = (pMVar5->fields).spawnRoleDataMediator, pSVar6 == (SpawnRoleDataMediator *)0x0
+            || (this_00 = (WebCompletionSource_1_System_Object_ *)(pSVar6->fields).lastRespawnType,
                this_00 == (WebCompletionSource_1_System_Object_ *)0x0)))) {
 code_?:
           func_?();
-          pcVar6 = (code *)swi(3);
-          (*pcVar6)();
+          pcVar7 = (code *)swi(3);
+          (*pcVar7)();
           return;
         }
-        pTVar7 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
+        pTVar8 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
                  WebCompletionSource_1_System_Object__get_Task
                            (this_00,
                             MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<LastRespawnType>__get_Value__
                            );
-        if (pTVar7 == (Task *)0x2) {
+        if (pTVar8 == (Task *)0x2) {
           this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                               ((Component *)this,(MethodInfo *)0x0);
           if (this_01 == (GameObject *)0x0) goto code_?;
@@ -788,8 +787,8 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_OnR
   }
   pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0);
   if (pFVar2 != (FlagDebriefingControl *)0x0) {
-    if ((pFVar2->fields).OnFlagDebriefingEnd != (Action *)0x0) {
-      pAVar3 = (pFVar2->fields).OnFlagDebriefingEnd;
+    pAVar3 = (pFVar2->fields).OnFlagDebriefingEnd;
+    if (pAVar3 != (Action *)0x0) {
       (*(pAVar3->fields)._._.invoke_impl)((pAVar3->fields)._._.method_code);
     }
     (this->fields).isDebriefingOn = 0;
@@ -809,11 +808,12 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_OnR
                            ((MethodInfo *)0x0);
         if (pFVar2 != (FlagDebriefingControl *)0x0) {
           fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+          pAVar3 = (pFVar2->fields).OnFlagCountDownEnd;
           (pFVar2->fields).IsInFlagDebriefing = 0;
           (pFVar2->fields).RunStartTime = fVar4;
-          if ((pFVar2->fields).OnFlagCountDownEnd != (Action *)0x0) {
-            pAVar3 = (pFVar2->fields).OnFlagCountDownEnd;
+          if (pAVar3 != (Action *)0x0) {
             pvStack5 = (pAVar3->fields)._._.method;
+            pvStack6 = (pAVar3->fields)._._.method_code;
             (*(pAVar3->fields)._._.invoke_impl)();
           }
           (this->fields).previousAvatarModeType = 4;
@@ -823,8 +823,8 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_OnR
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -1104,7 +1104,6 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Upd
                (TimeAttackFlagDebriefing *this,MethodInfo *method)
 
 {
-  pTVar1 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__IPlayModeUI);
     cRam_? = '\x01';
@@ -1113,14 +1112,14 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Upd
     TimeAttackFlagDebriefing_UpdateButton(this,(MethodInfo *)0x0);
   }
   else {
-    fVar2 = (this->fields).waitStartTime + _UNK_?;
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    if (fVar2 < fVar3) {
-      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar4 == (MVNetworkGame *)0x0) ||
-         (pMVar5 = (pMVar4->fields)._NetworkGameStateListener_k__BackingField,
-         pMVar5 == (MVNetworkGameStateListener *)0x0)) goto code_?;
-      if ((pMVar5->fields).currentGameState != 2) {
+    fVar1 = (this->fields).waitStartTime + _UNK_?;
+    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    if (fVar1 < fVar2) {
+      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar3 == (MVNetworkGame *)0x0) ||
+         (pMVar4 = (pMVar3->fields)._NetworkGameStateListener_k__BackingField,
+         pMVar4 == (MVNetworkGameStateListener *)0x0)) goto code_?;
+      if ((pMVar4->fields).currentGameState != 2) {
         (this->fields).isDebriefingOn = 0;
         (this->fields).isWaitingForStart = 0;
         this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -1128,20 +1127,21 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Upd
         if (this_02 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (this_02,0,(MethodInfo *)0x0);
-        fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
         this_00 = (this->fields).scoreBoardCanvasGroup;
-        (this->fields).countdownEndTime = fVar2;
+        (this->fields).countdownEndTime = fVar1;
         if (this_00 == (CanvasGroup *)0x0) goto code_?;
         UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                   (this_00,0.0,(MethodInfo *)0x0);
-        pFVar6 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
+        pFVar5 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
                            ((MethodInfo *)0x0);
-        if (pFVar6 == (FlagDebriefingControl *)0x0) goto code_?;
-        fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        (pFVar6->fields).IsInFlagDebriefing = 0;
-        (pFVar6->fields).RunStartTime = fVar2;
-        if ((pFVar6->fields).OnFlagCountDownEnd != (Action *)0x0) {
-          (*(((pFVar6->fields).OnFlagCountDownEnd)->fields)._._.invoke_impl)();
+        if (pFVar5 == (FlagDebriefingControl *)0x0) goto code_?;
+        fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        pAVar6 = (pFVar5->fields).OnFlagCountDownEnd;
+        (pFVar5->fields).IsInFlagDebriefing = 0;
+        (pFVar5->fields).RunStartTime = fVar1;
+        if (pAVar6 != (Action *)0x0) {
+          (*(pAVar6->fields)._._.invoke_impl)();
         }
         pGVar7 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
         if ((pGVar7 == (GameEventManager *)0x0) ||
@@ -1161,34 +1161,33 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Upd
         if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
           bVar9 = MVGameControllerDesktop::MVGameControllerDesktop_get_IsCursorLock
                             ((MethodInfo *)0x0);
-          this._1_3_ = (undefined3)((uint)this_00 >> 8);
-          this = (TimeAttackFlagDebriefing *)(CONCAT31(this._1_3_,bVar9) ^ 1);
+          bVar10 = bVar9 == 0;
         }
         else {
-          this = (TimeAttackFlagDebriefing *)((uint)this_00 & 0xffffff00);
+          bVar10 = false;
         }
         if (pIVar8 == (IPlayModeUI *)0x0) goto code_?;
-        func_?(4,TypeInfo__IPlayModeUI,pIVar8,this);
+        func_?(4,TypeInfo__IPlayModeUI,pIVar8,bVar10);
       }
     }
   }
-  if ((pTVar1->fields).shouldStartFlagCountdown != 0) {
-    (pTVar1->fields).shouldStartFlagCountdown = 0;
-    pFVar6 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0)
+  if ((this->fields).shouldStartFlagCountdown != 0) {
+    (this->fields).shouldStartFlagCountdown = 0;
+    pFVar5 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0)
     ;
-    if (pFVar6 == (FlagDebriefingControl *)0x0) {
+    if (pFVar5 == (FlagDebriefingControl *)0x0) {
 code_?:
       func_?();
-      pcVar10 = (code *)swi(3);
-      (*pcVar10)();
+      pcVar11 = (code *)swi(3);
+      (*pcVar11)();
       return;
     }
-    if ((pFVar6->fields).OnFlagCountDown != (Action *)0x0) {
-      pAVar11 = (pFVar6->fields).OnFlagCountDown;
-      (*(pAVar11->fields)._._.invoke_impl)
-                ((pAVar11->fields)._._.method_code,(pAVar11->fields)._._.method);
+    pAVar6 = (pFVar5->fields).OnFlagCountDown;
+    if (pAVar6 != (Action *)0x0) {
+      (*(pAVar6->fields)._._.invoke_impl)
+                ((pAVar6->fields)._._.method_code,(pAVar6->fields)._._.method);
     }
-    (pFVar6->fields).IsInFlagDebriefing = 1;
+    (pFVar5->fields).IsInFlagDebriefing = 1;
   }
   return;
 }
@@ -1211,7 +1210,7 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Upd
           (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField,
           pMVar2 != (MVNetworkGameStateListener *)0x0)) &&
          (fVar4 = MVNetworkGameStateListener::MVNetworkGameStateListener_get_CountdownInPercentage
-                            (pMVar2,(MethodInfo *)0x0), pIVar3 != (Image *)0x0)) {
+                             (pMVar2,(MethodInfo *)0x0), pIVar3 != (Image *)0x0)) {
         UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
                   (pIVar3,fVar4,(MethodInfo *)0x0);
         pIVar3 = (this->fields).countdownFill;
@@ -1274,14 +1273,15 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Upd
           pFVar7 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
                              ((MethodInfo *)0x0);
           if (pFVar7 != (FlagDebriefingControl *)0x0) {
-            if ((pFVar7->fields).OnFlagDebriefingEnd != (Action *)0x0) {
-              (*(((pFVar7->fields).OnFlagDebriefingEnd)->fields)._._.invoke_impl)();
+            pAVar8 = (pFVar7->fields).OnFlagDebriefingEnd;
+            if (pAVar8 != (Action *)0x0) {
+              (*(pAVar8->fields)._._.invoke_impl)();
             }
             if ((this->fields).previousAvatarModeType != 1) {
-              pGVar8 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
+              pGVar9 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
                                  ((MethodInfo *)0x0);
-              if ((pGVar8 == (GameEventManager *)0x0) ||
-                 (this_01 = (pGVar8->fields).AvatarCommandsPlayMode,
+              if ((pGVar9 == (GameEventManager *)0x0) ||
+                 (this_01 = (pGVar9->fields).AvatarCommandsPlayMode,
                  this_01 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0))
               goto code_?;
               GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::
@@ -1295,8 +1295,8 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Upd
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

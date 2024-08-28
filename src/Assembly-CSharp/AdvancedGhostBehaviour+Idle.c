@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+Idle::AdvancedGhostBehaviour_Id
                 (this_00,fVar3 * _UNK_?,(MethodInfo *)0x0);
       pGVar4 = (pAVar2->fields).ghostBody;
       if (pGVar4 != (GhostBody *)0x0) {
-        (pGVar4->fields).angularMaxRotation = fVar3 * (pGVar4->fields).angularMaxRotationBase;
+        (pGVar4->fields).angularMaxRotation = (pGVar4->fields).angularMaxRotationBase * fVar3;
         return;
       }
     }

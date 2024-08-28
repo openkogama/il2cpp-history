@@ -45,57 +45,53 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_Destroy
   pMVar1 = (this->fields).plateObject;
   if (pMVar1 != (MVPressurePlateObject *)0x0) {
     pTVar2 = (pMVar1->fields).triggerBoxEvents;
-    pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+    pEVar3 = (EventHandler_1_Object_ *)
              func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar3,(Object *)this,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              (pEVar3,(Object *)this,
                MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                ,(MethodInfo *)0x0);
     if (pTVar2 != (TriggerBoxEvents *)0x0) {
       TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
-                (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+                (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
       pMVar1 = (this->fields).plateObject;
       if (pMVar1 != (MVPressurePlateObject *)0x0) {
         pTVar2 = (pMVar1->fields).triggerBoxEvents;
-        pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+        pEVar3 = (EventHandler_1_Object_ *)
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar3,(Object *)this,
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                  (pEVar3,(Object *)this,
                    MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar2 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
-                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
           pMVar1 = (this->fields).plateObject;
           if (pMVar1 != (MVPressurePlateObject *)0x0) {
             pTVar2 = (pMVar1->fields).triggerBoxEvents;
             pUVar4 = (this->fields).useInteractor;
-            pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+            pEVar3 = (EventHandler_1_Object_ *)
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      (pUVar3,(Object *)pUVar4,
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                      (pEVar3,(Object *)pUVar4,
                        MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar2 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
-                        (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+                        (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
               pMVar1 = (this->fields).plateObject;
               if (pMVar1 != (MVPressurePlateObject *)0x0) {
                 pTVar2 = (pMVar1->fields).triggerBoxEvents;
                 pUVar4 = (this->fields).useInteractor;
-                pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+                pEVar3 = (EventHandler_1_Object_ *)
                          func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
-                ::Object]::UnityAction_2_System_Object_System_Object___ctor
-                          (pUVar3,(Object *)pUVar4,
+                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                          (pEVar3,(Object *)pUVar4,
                            MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                            ,(MethodInfo *)0x0);
                 if (pTVar2 != (TriggerBoxEvents *)0x0) {
                   TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
-                            (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+                            (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
                   pUVar4 = (this->fields).useInteractor;
                   if (pUVar4 != (UseInteractor *)0x0) {
                     UseInteractor::UseInteractor_OnDestroy
@@ -176,7 +172,7 @@ Vector3 * Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_GetClosestGridPo
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar2 = (pVVar1->oneVector).x;
   uVar3 = (pVVar1->oneVector).y;
-  pSVar4 = (SharedCubeFunctions__Class *)((float)uVar2 * _UNK_?);
+  fVar4 = (float)uVar2 * _UNK_?;
   fVar5 = (float)uVar3 * _UNK_?;
   fVar6 = (pVVar1->oneVector).z * _UNK_?;
   this_00 = (this->fields)._._.gameObject;
@@ -184,37 +180,38 @@ Vector3 * Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_GetClosestGridPo
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                ((Quaternion *)&stack0xffffffe0,this_01,(MethodInfo *)0x0);
-      pSVar7 = TypeInfo__SharedCubeFunctions;
+      uVar7 = 0;
+      pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                         ((Quaternion *)&stack0xffffffec,this_01,(MethodInfo *)0x0);
+      fVar4 = pQVar8->z;
+      fVar5 = pQVar8->w;
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
-        pSVar4 = pSVar7;
       }
       worldPosition.z = position.z;
       worldPosition.x = position.x;
       worldPosition.y = position.y;
-      rotation.y = (float)pSVar4;
-      rotation.x = gridSize;
-      rotation.z = fVar5;
-      rotation.w = fVar6;
-      scale.y = fVar5;
-      scale.x = (float)pSVar4;
+      rotation.y = 0.0;
+      rotation.x = fVar6;
+      rotation.z = fVar4;
+      rotation.w = fVar5;
+      scale.y = (float)uVar7;
+      scale.x = (float)this_01;
       scale.z = fVar6;
-      pVVar8 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
+      pVVar9 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
                          (&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
-      fVar5 = pVVar8->y;
-      fVar6 = pVVar8->z;
-      __return_storage_ptr__->x = pVVar8->x;
+      fVar5 = pVVar9->y;
+      fVar4 = pVVar9->z;
+      __return_storage_ptr__->x = pVVar9->x;
       __return_storage_ptr__->y = fVar5;
-      __return_storage_ptr__->z = fVar6;
+      __return_storage_ptr__->z = fVar4;
       return __return_storage_ptr__;
     }
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  pVVar8 = (Vector3 *)(*pcVar9)();
-  return pVVar8;
+  func_?(fVar4,fVar5);
+  pcVar10 = (code *)swi(3);
+  pVVar9 = (Vector3 *)(*pcVar10)();
+  return pVVar9;
 }
 
 
@@ -260,17 +257,18 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_Initialize
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  this_01 = (Action_3_Int32_Int32_ByteEnum_ *)
+  this_01 = (Action_3_Boolean_Boolean_Object_ *)
             func_?(TypeInfo__System__Action<bool,_bool,_LogicObjectManager>);
-  mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
+  mscorlib.dll::System::Action`3[Boolean,Boolean,Object]::Action_3_Boolean_Boolean_Object___ctor
             (this_01,(Object *)this,
              MethodInfo__MVPressurePlate__Callback_bool__bool__LogicObjectManager_,(MethodInfo *)0x0
             );
   pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver
                      ((MVWorldObject *)this,1,
                       (Action_3_Boolean_Boolean_LogicObjectManager_ *)this_01,(MethodInfo *)0x0);
-  (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
-  func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar1);
+  ppIVar2 = &(this->fields)._InputSignalReceiver_k__BackingField;
+  *ppIVar2 = pIVar1;
+  func_?(ppIVar2,pIVar1);
   woId = (this->fields)._._._.id;
   this_02 = (WorldObjectClientRef_1_System_Object_ *)
             func_?(TypeInfo__OutputSignalTransmitter);
@@ -288,13 +286,13 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_Initialize
     }
     if (((TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
           (IEditModeUI *)0x0) &&
-        (cVar2 = (*(code *)(this->klass->vtable).get_HasVisualsInPlaymode.method)(), cVar2 != '\0'))
-       && (bVar3 = MVPressurePlate_IsVisible(this,(MethodInfo *)0x0), bVar3 != 0)) {
+        (cVar3 = (*(code *)(this->klass->vtable).get_HasVisualsInPlaymode.method)(), cVar3 != '\0'))
+       && (bVar4 = MVPressurePlate_IsVisible(this,(MethodInfo *)0x0), bVar4 != 0)) {
 code_?:
-      pMVar4 = (this->fields).plateObject;
-      if (pMVar4 == (MVPressurePlateObject *)0x0) goto code_?;
+      pMVar5 = (this->fields).plateObject;
+      if (pMVar5 == (MVPressurePlateObject *)0x0) goto code_?;
       MVLogicObject::MVLogicObject_SetupCulling
-                ((MVLogicObject *)this,(pMVar4->fields).plateLogicModel,2.0,(MethodInfo *)0x0);
+                ((MVLogicObject *)this,(pMVar5->fields).plateLogicModel,2.0,(MethodInfo *)0x0);
     }
     else {
       if (cRam_? == '\0') {
@@ -309,19 +307,19 @@ code_?:
     if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pOVar5 = Extensions::Extensions_GetObscuredType
+    pOVar6 = Extensions::Extensions_GetObscuredType
                        (hashtable,StringLiteral_triggerBoxState,(MethodInfo *)0x0);
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
         == 0) {
       func_?();
     }
-    if (pOVar5 != (Object *)0x0) {
-      if ((pOVar5->klass->_0).element_class ==
+    if (pOVar6 != (Object *)0x0) {
+      if ((pOVar6->klass->_0).element_class ==
           (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_0).element_class) {
-        pOVar6 = (ObscuredBool *)func_?();
-        bVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
-                ObscuredBool_op_Implicit_1(*pOVar6,(MethodInfo *)0x0);
-        (this->fields).isDown = bVar3;
+        pOVar7 = (ObscuredBool *)func_?();
+        bVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
+                ObscuredBool_op_Implicit_1(*pOVar7,(MethodInfo *)0x0);
+        (this->fields).isDown = bVar4;
         return;
       }
       goto code_?;
@@ -331,8 +329,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -673,128 +671,134 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate__ctor
       (this->fields).plateObject = (MVPressurePlateObject *)0x0;
     }
     else {
-      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment <
-           (TypeInfo__MVPressurePlateObject->_1).naturalAligment) ||
-         ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy
-          [(TypeInfo__MVPressurePlateObject->_1).naturalAligment - 1] !=
+      bVar3 = (TypeInfo__MVPressurePlateObject->_1).naturalAligment;
+      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment < bVar3) ||
+         ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[bVar3 - 1] !=
           (Il2CppClass *)TypeInfo__MVPressurePlateObject)) goto code_?;
       (this->fields).plateObject = pMVar2;
-      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment <
-           (TypeInfo__MVPressurePlateObject->_1).naturalAligment) ||
-         ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy
-          [(TypeInfo__MVPressurePlateObject->_1).naturalAligment - 1] !=
+      bVar3 = (TypeInfo__MVPressurePlateObject->_1).naturalAligment;
+      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment < bVar3) ||
+         ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[bVar3 - 1] !=
           (Il2CppClass *)TypeInfo__MVPressurePlateObject)) goto code_?;
     }
-    func_?(&(this->fields).plateObject);
-    iVar3 = (this->fields)._._.interactionFlags;
-    pMVar2 = (this->fields).plateObject;
+    ppMVar4 = &(this->fields).plateObject;
+    func_?(ppMVar4);
+    piVar5 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar5 = (uint)*piVar5 | 0x10000;
+    piVar5 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar5 = (uint)*piVar5 | 0x8000;
+    piVar5 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar5 = (uint)*piVar5 | 0x100000;
+    piVar5 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar5 = (uint)*piVar5 | 0x200000;
+    piVar5 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar5 = (uint)*piVar5 | 0x400000;
+    piVar5 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar5 = (uint)*piVar5 | 0x2000000;
+    piVar5 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar5 = (uint)*piVar5 | 0xADDR;
+    pMVar2 = *ppMVar4;
     *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-    *(uint *)&(this->fields)._._.interactionFlags = (uint)iVar3 | 0x12718000;
     if (pMVar2 != (MVPressurePlateObject *)0x0) {
-      pTVar4 = (pMVar2->fields).triggerBoxEvents;
-      pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+      pTVar6 = (pMVar2->fields).triggerBoxEvents;
+      pEVar7 = (EventHandler_1_Object_ *)
                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar5,(Object *)this,
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                (pEVar7,(Object *)this,
                  MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                  ,(MethodInfo *)0x0);
-      if (pTVar4 != (TriggerBoxEvents *)0x0) {
+      if (pTVar6 != (TriggerBoxEvents *)0x0) {
         TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                  (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
-        pMVar2 = (this->fields).plateObject;
-        if (pMVar2 != (MVPressurePlateObject *)0x0) {
-          pTVar4 = (pMVar2->fields).triggerBoxEvents;
-          pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+                  (pTVar6,(EventHandler_1_TriggerEventArgs_ *)pEVar7,(MethodInfo *)0x0);
+        if (*ppMVar4 != (MVPressurePlateObject *)0x0) {
+          pTVar6 = ((*ppMVar4)->fields).triggerBoxEvents;
+          pEVar7 = (EventHandler_1_Object_ *)
                    func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (pUVar5,(Object *)this,
+          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                    (pEVar7,(Object *)this,
                      MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                      ,(MethodInfo *)0x0);
-          if (pTVar4 != (TriggerBoxEvents *)0x0) {
+          if (pTVar6 != (TriggerBoxEvents *)0x0) {
             TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                      (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+                      (pTVar6,(EventHandler_1_TriggerEventArgs_ *)pEVar7,(MethodInfo *)0x0);
             MVPressurePlate_SetVisibility(this,(MethodInfo *)0x0);
-            pMVar2 = (this->fields).plateObject;
+            pMVar2 = *ppMVar4;
             if (pMVar2 != (MVPressurePlateObject *)0x0) {
-              pGVar6 = (pMVar2->fields).useInteractionRotator;
-              pTVar4 = (((this->fields).plateObject)->fields).triggerBoxEvents;
-              if (pTVar4 != (TriggerBoxEvents *)0x0) {
+              pGVar8 = (pMVar2->fields).useInteractionRotator;
+              pTVar6 = (pMVar2->fields).triggerBoxEvents;
+              if (pTVar6 != (TriggerBoxEvents *)0x0) {
                 triggerCollider =
-                     TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar4,(MethodInfo *)0x0);
+                     TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar6,(MethodInfo *)0x0);
                 this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
                 mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
                           (this_00,(Object *)this,MethodInfo__MVPressurePlate__DoEnter_int_,
                            (MethodInfo *)0x0);
-                pUVar7 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
+                pUVar9 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
                 UseInteractor::UseInteractor__ctor
-                          (pUVar7,(MVWorldObjectClient *)0x0,pGVar6,0,triggerCollider,
+                          (pUVar9,(MVWorldObjectClient *)0x0,pGVar8,0,triggerCollider,
                            (Func_2_Int32_Boolean_ *)this_00,
                            (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,0,(MethodInfo *)0x0);
-                pURam00000108 = pUVar7;
+                pURam00000108 = pUVar9;
                 func_?();
-                pUVar7 = pURam00000108;
+                pUVar9 = pURam00000108;
                 if (iRam_? != 0) {
-                  pTVar4 = *(TriggerBoxEvents **)(iRam_? + 0x18);
-                  pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+                  pTVar6 = *(TriggerBoxEvents **)(iRam_? + 0x18);
+                  pEVar7 = (EventHandler_1_Object_ *)
                            func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                  Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                            (pUVar5,(Object *)pUVar7,
+                  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                            (pEVar7,(Object *)pUVar9,
                              MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                              ,(MethodInfo *)0x0);
-                  if (pTVar4 != (TriggerBoxEvents *)0x0) {
+                  if (pTVar6 != (TriggerBoxEvents *)0x0) {
                     TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                              (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
-                    pUVar7 = pURam00000108;
+                              (pTVar6,(EventHandler_1_TriggerEventArgs_ *)pEVar7,(MethodInfo *)0x0);
+                    pUVar9 = pURam00000108;
                     if (iRam_? != 0) {
-                      pTVar4 = *(TriggerBoxEvents **)(iRam_? + 0x18);
-                      pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+                      pTVar6 = *(TriggerBoxEvents **)(iRam_? + 0x18);
+                      pEVar7 = (EventHandler_1_Object_ *)
                                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                      Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                                (pUVar5,(Object *)pUVar7,
+                      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                                (pEVar7,(Object *)pUVar9,
                                  MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                                  ,(MethodInfo *)0x0);
-                      if (pTVar4 != (TriggerBoxEvents *)0x0) {
+                      if (pTVar6 != (TriggerBoxEvents *)0x0) {
                         TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                                  (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
+                                  (pTVar6,(EventHandler_1_TriggerEventArgs_ *)pEVar7,
                                    (MethodInfo *)0x0);
                         if (iRam_? != 0) {
-                          pGVar6 = *(GameObject **)(iRam_? + 0x28);
+                          pGVar8 = *(GameObject **)(iRam_? + 0x28);
                           this_01 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);
-                          GameCoinLogic::GameCoinLogic__ctor(this_01,pGVar6,0,(MethodInfo *)0x0);
+                          GameCoinLogic::GameCoinLogic__ctor(this_01,pGVar8,0,(MethodInfo *)0x0);
                           if (pURam00000108 != (UseInteractor *)0x0) {
                             UseInteractor::UseInteractor_AddRequirement
                                       (pURam00000108,(UseRequirement *)this_01,(MethodInfo *)0x0);
                             if (iRam_? != 0) {
-                              pGVar6 = *(GameObject **)(iRam_? + 0x28);
+                              pGVar8 = *(GameObject **)(iRam_? + 0x28);
                               this_02 = (LevelBasedUseRequirement *)
                                         func_?(TypeInfo__LevelBasedUseRequirement);
                               LevelBasedUseRequirement::LevelBasedUseRequirement__ctor
-                                        (this_02,pGVar6,0,(MethodInfo *)0x0);
+                                        (this_02,pGVar8,0,(MethodInfo *)0x0);
                               if (pURam00000108 != (UseInteractor *)0x0) {
                                 UseInteractor::UseInteractor_AddRequirement
                                           (pURam00000108,(UseRequirement *)this_02,(MethodInfo *)0x0
                                           );
                                 if (iRam_? != 0) {
-                                  pGVar6 = *(GameObject **)(iRam_? + 0x28);
+                                  pGVar8 = *(GameObject **)(iRam_? + 0x28);
                                   this_03 = (StarRequirement *)
                                             func_?(TypeInfo__StarRequirement);
                                   StarRequirement::StarRequirement__ctor
-                                            (this_03,pGVar6,0,(MethodInfo *)0x0);
+                                            (this_03,pGVar8,0,(MethodInfo *)0x0);
                                   if (pURam00000108 != (UseInteractor *)0x0) {
                                     UseInteractor::UseInteractor_AddRequirement
                                               (pURam00000108,(UseRequirement *)this_03,
                                                (MethodInfo *)0x0);
                                     if (iRam_? != 0) {
-                                      pGVar6 = *(GameObject **)(iRam_? + 0x28);
+                                      pGVar8 = *(GameObject **)(iRam_? + 0x28);
                                       this_04 = (GameRankRequirement *)
                                                 func_?(TypeInfo__GameRankRequirement);
                                       GameRankRequirement::GameRankRequirement__ctor
-                                                (this_04,pGVar6,(MVWorldObjectClient *)0x0,0,
+                                                (this_04,pGVar8,(MVWorldObjectClient *)0x0,0,
                                                  (MethodInfo *)0x0);
                                       if (pURam00000108 != (UseInteractor *)0x0) {
                                         UseInteractor::UseInteractor_AddRequirement
@@ -836,8 +840,8 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate__ctor
   pMVar2 = extraout_EDX;
 code_?:
   func_?(pMVar2);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

@@ -154,19 +154,26 @@ void MVWorldObject.dll::InputSignalReceiverBase::InputSignalReceiverBase_SendSig
                (InputSignalReceiverBase *this,bool isHot,MethodInfo *method)
 
 {
-  pLVar1 = (this->fields).logicObjectManager;
-  if (pLVar1 != (LogicObjectManager *)0x0) {
-    if ((pLVar1->fields).trackLoops == 0) {
+  pIVar1 = this;
+  pLVar2 = (this->fields).logicObjectManager;
+  if (pLVar2 != (LogicObjectManager *)0x0) {
+    if ((pLVar2->fields).trackLoops == 0) {
 code_?:
-      pIVar2 = (this->klass->vtable).__unknown_1.methodPtr;
-      (*(code *)(this->klass->vtable).__unknown.method)();
-      (*(code *)(this->klass->vtable).__unknown_1.method)(this,pIVar2);
-      if ((this->fields).OnSignal != (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0) {
-        pAVar3 = (this->fields).OnSignal;
-        (*(pAVar3->fields)._._.invoke_impl)((pAVar3->fields)._._.method_code);
-      }
+      bVar3 = (*(code *)(this->klass->vtable).__unknown.method)
+                        (this,(this->klass->vtable).__unknown_1.methodPtr);
+      (*(code *)(this->klass->vtable).__unknown_1.method)(this,_isHot,this->klass[1]._0.image);
       if ((this->fields).firstFrame != 0) {
-        (this->fields).firstFrame = 0;
+        bVar3 = isHot ^ 1;
+      }
+      this = (InputSignalReceiverBase *)(uint)bVar3;
+      pAVar4 = (pIVar1->fields).OnSignal;
+      if (pAVar4 != (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0) {
+        (*(pAVar4->fields)._._.invoke_impl)
+                  ((pAVar4->fields)._._.method_code,_isHot,this,(pIVar1->fields).logicObjectManager,
+                   (pAVar4->fields)._._.method);
+      }
+      if ((pIVar1->fields).firstFrame != 0) {
+        (pIVar1->fields).firstFrame = 0;
       }
       return;
     }
@@ -176,14 +183,14 @@ code_?:
       func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
       cRam_? = '\x01';
     }
-    this_00 = (HashSet_1_System_Int32Enum_ *)(pLVar1->fields).updatedIds;
+    this_00 = (HashSet_1_System_Int32Enum_ *)(pLVar2->fields).updatedIds;
     if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
-      bVar4 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+      bVar5 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
               HashSet_1_System_Int32Enum__Contains
                         (this_00,item,
                          MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
-      if (bVar4 != 0) goto code_?;
-      this_01 = (pLVar1->fields).updatedIds;
+      if (bVar5 != 0) goto code_?;
+      this_01 = (pLVar2->fields).updatedIds;
       if (this_01 != (HashSet_1_System_Int32_ *)0x0) {
         System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
         HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
@@ -194,15 +201,15 @@ code_?:
   }
   func_?();
 code_?:
-  uVar5 = func_?(&TypeInfo__System__Exception);
-  this_02 = (Exception *)func_?(uVar5);
+  uVar6 = func_?(&TypeInfo__System__Exception);
+  this_02 = (Exception *)func_?(uVar6);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_Id_already_evaluated__This_is_a_);
   mscorlib.dll::System::Exception::Exception__ctor_1(this_02,message,method_00);
   func_?(&MethodInfo__LogicObjectManager__DebugAddId_int_);
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -277,7 +284,8 @@ code_?:
     func_?();
   }
   else {
-    a = (worldObject->fields).OnInputLinkChanged;
+    pAVar1 = (worldObject->fields).OnInputLinkChanged;
+    ppAVar2 = &(worldObject->fields).OnInputLinkChanged;
     this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *)func_?(
                                 TypeInfo__System__Action<System::Collections::Generic::List<MV::WorldObject::Link>_>
@@ -289,28 +297,25 @@ code_?:
               (this_01,(Object *)this,
                MethodInfo__InputSignalReceiverBase__HandleInputLinkChanged_System__Collections__Generic__List<MV::WorldObject::Link>_
                ,(MethodInfo *)0x0);
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pDVar1 == (Delegate *)0x0) {
-      (worldObject->fields).OnInputLinkChanged =
-           (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)0x0;
-      iVar2 = 0;
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar1,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar3 == (Delegate *)0x0) {
+      *ppAVar2 = (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)0x0;
+      iVar4 = 0;
 code_?:
-      ppAVar3 = &(worldObject->fields).OnInputLinkChanged;
       func_?();
-      (this->fields).woID = (worldObject->fields).id;
+      (this->fields).woID = _UNK_?;
       (this->fields).logicObjectManager = logicObjectManager;
       func_?();
-      (this->fields).logicEvaluateSignalComponentBase = (LogicEvaluateSignalComponentBase *)ppAVar3;
+      (this->fields).logicEvaluateSignalComponentBase = (LogicEvaluateSignalComponentBase *)ppAVar2;
       func_?(&this->fields);
-      pLVar4 = (worldObject->fields).inputLinkRefs;
-      if ((pLVar4 != (List_1_MV_WorldObject_Link_ *)0x0) &&
-         (ppAVar3 != (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ **)0x0)) {
-        pMVar5 = (MonitorData *)(pLVar4->fields)._size;
+      if ((logicObjectManager[1].monitor != (MonitorData *)0x0) &&
+         (ppAVar2 != (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ **)0x0)) {
+        pMVar5 = *(MonitorData **)(logicObjectManager[1].monitor + 0xc);
         worldObject[1].monitor = pMVar5;
         if (pMVar5 != (MonitorData *)0x0) {
 code_?:
-          defaultInput = (bool)iVar2;
+          defaultInput = (bool)iVar4;
           (this->fields)._DefaultInput_k__BackingField = defaultInput;
           return;
         }
@@ -336,12 +341,12 @@ code_?:
       }
       goto code_?;
     }
-    iVar2 = func_?();
-    if (iVar2 == 0) goto code_?;
-    worldObject = (MVWorldObject *)&UNK_?;
-    _UNK_? = iVar2;
-    iVar2 = func_?();
-    if (iVar2 != 0) goto code_?;
+    pAVar1 = (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)func_?();
+    if (pAVar1 == (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)0x0)
+    goto code_?;
+    *ppAVar2 = pAVar1;
+    iVar4 = func_?();
+    if (iVar4 != 0) goto code_?;
   }
   func_?();
 code_?:

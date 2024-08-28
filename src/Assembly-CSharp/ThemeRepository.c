@@ -25,16 +25,16 @@ Theme * Assembly-CSharp.dll::ThemeRepository::ThemeRepository_CreateTemporaryThe
     pTVar2 = (pTVar1->fields)._Visualization_k__BackingField;
   }
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+    func_?(TypeInfo__UnityEngine__Object);
   }
   bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar3 != 0) {
-    identifier = (String *)this;
     pTVar1 = ThemeRepository_get_CurrentTheme(this,(MethodInfo *)0x0);
     if ((pTVar1 == (ThemeWorldObject *)0x0) ||
        (pTVar2 = (pTVar1->fields)._Visualization_k__BackingField, pTVar2 == (Theme *)0x0))
     goto code_?;
+    identifier = (String *)&UNK_?;
     Theme::Theme_Deactivate(pTVar2,(MethodInfo *)0x0);
   }
   pTVar2 = ThemeRepository_GetThemePrefab(this,identifier,(MethodInfo *)0x0);
@@ -51,10 +51,11 @@ Theme * Assembly-CSharp.dll::ThemeRepository::ThemeRepository_CreateTemporaryThe
     }
     this_01 = (SettingsPreview *)func_?();
     ThemeSettings::SettingsPreview::SettingsPreview__ctor(this_01,(MethodInfo *)0x0);
-    (pTVar2->fields)._Settings_k__BackingField = (SettingsWrapper *)this_01;
+    ppSVar4 = &(pTVar2->fields)._Settings_k__BackingField;
+    *ppSVar4 = (SettingsWrapper *)this_01;
     func_?();
     (*(code *)(pTVar2->klass->vtable).__unknown_4.method)();
-    this_00 = (pTVar2->fields)._Settings_k__BackingField;
+    this_00 = *ppSVar4;
     if (this_00 != (SettingsWrapper *)0x0) {
       ThemeSettings::SettingsWrapper::SettingsWrapper_Initialize(this_00,(MethodInfo *)0x0);
       (*(code *)(pTVar2->klass->vtable).__unknown_3.method)();
@@ -64,8 +65,8 @@ Theme * Assembly-CSharp.dll::ThemeRepository::ThemeRepository_CreateTemporaryThe
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  pTVar2 = (Theme *)(*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  pTVar2 = (Theme *)(*pcVar5)();
   return pTVar2;
 }
 
@@ -299,8 +300,9 @@ void Assembly-CSharp.dll::ThemeRepository::ThemeRepository__ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__Dictionary__
             );
-  (this->fields).IdentifierToTheme = (Dictionary_2_System_String_Theme_ *)this_00;
-  func_?(&(this->fields).IdentifierToTheme,this_00);
+  ppDVar1 = &(this->fields).IdentifierToTheme;
+  *ppDVar1 = (Dictionary_2_System_String_Theme_ *)this_00;
+  func_?(ppDVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::ScriptableObject::ScriptableObject__ctor
             ((ScriptableObject *)this,(MethodInfo *)0x0);
   return;
@@ -338,22 +340,23 @@ Assembly-CSharp.dll::ThemeRepository::ThemeRepository_get_CurrentTheme
                   MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
                             (pMVar1,WorldObjectType__Enum_Theme,(MethodInfo *)0x0);
         if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_00,0,
-                             MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                            );
-          if (RVar3 == (RegexCharClass_SingleRange)0x0) {
+          RStack3 =
+               mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+               RegexCharClass+SingleRange]::
+               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                         (this_00,0,
+                          MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                         );
+          if (RStack3 == (RegexCharClass_SingleRange)0x0) {
             return (ThemeWorldObject *)0x0;
           }
-          pTStack4 = TypeInfo__ThemeWorldObject;
-          if (((TypeInfo__ThemeWorldObject->_1).naturalAligment <= *(byte *)(*(int *)RVar3 + 0xb8))
-             && (*(ThemeWorldObject__Class **)
-                  (*(int *)(*(int *)RVar3 + 100) + -4 +
-                  (uint)(TypeInfo__ThemeWorldObject->_1).naturalAligment * 4) ==
-                 TypeInfo__ThemeWorldObject)) {
-            return (ThemeWorldObject *)RVar3;
+          bVar4 = (TypeInfo__ThemeWorldObject->_1).naturalAligment;
+          pTStack5 = TypeInfo__ThemeWorldObject;
+          if ((bVar4 <= *(byte *)(*(int *)RStack3 + 0xb8)) &&
+             (*(ThemeWorldObject__Class **)
+               (*(int *)(*(int *)RStack3 + 100) + -4 + (uint)bVar4 * 4) ==
+              TypeInfo__ThemeWorldObject)) {
+            return (ThemeWorldObject *)RStack3;
           }
           goto code_?;
         }
@@ -361,12 +364,13 @@ Assembly-CSharp.dll::ThemeRepository::ThemeRepository_get_CurrentTheme
     }
   }
   func_?();
-  pTStack4 = unaff_EDI;
+  RStack3 = extraout_EDX;
+  pTStack5 = unaff_ESI;
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  pTVar6 = (ThemeWorldObject *)(*pcVar5)();
-  return pTVar6;
+  pcVar6 = (code *)swi(3);
+  pTVar7 = (ThemeWorldObject *)(*pcVar6)();
+  return pTVar7;
 }
 
 

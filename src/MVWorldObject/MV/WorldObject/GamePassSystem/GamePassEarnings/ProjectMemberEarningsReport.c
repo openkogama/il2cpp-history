@@ -163,7 +163,7 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::
                            );
   EarningsReport::EarningsReport__ctor(this_00,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).earningsReport = this_00;
+  ((ProjectMemberEarningsReport__Fields *)method_00)->earningsReport = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -187,13 +187,14 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::
                            TypeInfo__MV__WorldObject__GamePassSystem__GamePassEarnings__EarningsReport
                            );
   EarningsReport::EarningsReport__ctor(this_00,(MethodInfo *)0x0);
-  method_00 = (MethodInfo *)&this->fields;
-  (this->fields).earningsReport = this_00;
-  func_?(method_00,this_00);
+  pPVar1 = &this->fields;
+  pPVar1->earningsReport = this_00;
+  method_00 = (MethodInfo *)pPVar1;
+  func_?(pPVar1,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  (this->fields).earningsReport = earningsReport;
-  func_?(&this->fields,earningsReport);
+  pPVar1->earningsReport = earningsReport;
+  func_?(pPVar1,earningsReport);
   return;
 }
 

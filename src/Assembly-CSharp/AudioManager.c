@@ -21,18 +21,18 @@ void Assembly-CSharp.dll::AudioManager::AudioManager_Awake(AudioManager *this,Me
     func_?(&StringLiteral_PooledSoundObject);
     cRam_? = '\x01';
   }
-  pGVar1 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(pGVar1,(MethodInfo *)0x0);
-  (this->fields).poolTransform = pGVar1;
-  func_?(&(this->fields).poolTransform,pGVar1);
-  pGVar1 = (this->fields).poolTransform;
-  if (pGVar1 != (GameObject *)0x0) {
+  this_00 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(this_00,(MethodInfo *)0x0)
+  ;
+  ppGVar1 = &(this->fields).poolTransform;
+  *ppGVar1 = this_00;
+  func_?(ppGVar1,this_00);
+  if (*ppGVar1 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
-              ((Object_1 *)pGVar1,StringLiteral_SoundPool,(MethodInfo *)0x0);
-    pGVar1 = (this->fields).poolTransform;
-    if (pGVar1 != (GameObject *)0x0) {
+              ((Object_1 *)*ppGVar1,StringLiteral_SoundPool,(MethodInfo *)0x0);
+    if (*ppGVar1 != (GameObject *)0x0) {
       pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                         (pGVar1,(MethodInfo *)0x0);
+                         (*ppGVar1,(MethodInfo *)0x0);
       pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                          ((Component *)this,(MethodInfo *)0x0);
       if (pTVar2 != (Transform *)0x0) {
@@ -73,46 +73,46 @@ void Assembly-CSharp.dll::AudioManager::AudioManager_Awake(AudioManager *this,Me
                 mscorlib.dll::System::ThrowHelper::
                 ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                           (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-                pOVar5 = (Object__Class *)func_?();
+                this_01 = (Object__Class *)func_?();
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1
-                          ((GameObject *)pOVar5,(MethodInfo *)0x0);
+                          ((GameObject *)this_01,(MethodInfo *)0x0);
                 if (value == (Object *)0x0) break;
-                value[1].klass = pOVar5;
+                pOVar5 = value + 1;
+                pOVar5->klass = this_01;
                 func_?();
-                if (value[1].klass == (Object__Class *)0x0) break;
+                if (pOVar5->klass == (Object__Class *)0x0) break;
+                pSVar6 = StringLiteral_PooledSoundObject;
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
-                          ((Object_1 *)value[1].klass,StringLiteral_PooledSoundObject,
+                          ((Object_1 *)pOVar5->klass,StringLiteral_PooledSoundObject,
                            (MethodInfo *)0x0);
-                pOVar5 = value[1].klass;
-                if (pOVar5 == (Object__Class *)0x0) break;
+                if (pOVar5->klass == (Object__Class *)0x0) break;
+                puVar7 = &UNK_?;
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          ((GameObject *)pOVar5,0,(MethodInfo *)0x0);
-                if (value[1].klass == (Object__Class *)0x0) break;
+                          ((GameObject *)pOVar5->klass,0,(MethodInfo *)0x0);
+                if (pOVar5->klass == (Object__Class *)0x0) break;
                 pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                         GameObject_get_transform((GameObject *)value[1].klass,(MethodInfo *)0x0);
-                pGVar1 = (this->fields).poolTransform;
-                if (pGVar1 == (GameObject *)0x0) break;
+                         GameObject_get_transform((GameObject *)pOVar5->klass,(MethodInfo *)0x0);
+                if (pSVar6->klass == (String__Class *)0x0) break;
                 pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                         GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
+                         GameObject_get_transform((GameObject *)pSVar6->klass,(MethodInfo *)0x0);
                 if (pTVar2 == (Transform *)0x0) break;
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
                           (pTVar2,pTVar3,(MethodInfo *)0x0);
-                if (value[1].klass == (Object__Class *)0x0) break;
-                pOVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                if (pOVar5->klass == (Object__Class *)0x0) break;
+                pOVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                          GameObject_AddComponent_1
-                                   ((GameObject *)value[1].klass,
+                                   ((GameObject *)pOVar5->klass,
                                     UnityEngine__AudioSource_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::AudioSource>__
                                    );
-                value[1].monitor = (MonitorData *)pOVar6;
+                value[1].monitor = (MonitorData *)pOVar5;
                 func_?();
-                this_00 = (this->fields).pooledSounds;
-                if (this_00 == (List_1_AudioManager_Sound_ *)0x0) break;
+                if (pLRam00000018 == (List_1_System_Object_ *)0x0) break;
                 mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                 List_1_System_Object__Add
-                          ((List_1_System_Object_ *)this_00,value,
+                          (pLRam00000018,value,
                            MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__Add_AudioManager__Sound_
                           );
-                if (0x7f < (int)((int)&(pOVar5->_0).image + 1)) {
+                if (0x7f < (int)(puVar7 + 1)) {
                   return;
                 }
               }
@@ -123,8 +123,8 @@ void Assembly-CSharp.dll::AudioManager::AudioManager_Awake(AudioManager *this,Me
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -186,23 +186,23 @@ Assembly-CSharp.dll::AudioManager::AudioManager_Play
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  pLVar1 = (this->fields).pooledSounds;
-  if (pLVar1 != (List_1_AudioManager_Sound_ *)0x0) {
-    if ((pLVar1->fields)._size == 0) {
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).pooledSounds;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    if ((this_00->fields)._size == 0) {
       return (AudioManager_Sound *)0x0;
     }
     item = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
            RegexCharClass+SingleRange]::
            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                     ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                      (this->fields).pooledSounds,(pLVar1->fields)._size + -1,
+                     (this_00,(this_00->fields)._size + -1,
                       MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__get_Item_int_
                      );
     pLVar1 = (this->fields).pooledSounds;
     if (pLVar1 != (List_1_AudioManager_Sound_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
       List_1_System_Object__RemoveAt
-                ((List_1_System_Object_ *)(this->fields).pooledSounds,(pLVar1->fields)._size + -1,
+                ((List_1_System_Object_ *)pLVar1,(pLVar1->fields)._size + -1,
                  MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__RemoveAt_int_)
       ;
       pLVar1 = (this->fields).activeSounds;
@@ -216,22 +216,22 @@ Assembly-CSharp.dll::AudioManager::AudioManager_Play
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (*(GameObject **)((int)item + 8),1,(MethodInfo *)0x0);
         pSVar2 = ::StringLiteral__;
-        this_00 = *(Object_1 **)((int)item + 8);
+        this_01 = *(Object_1 **)((int)item + 8);
         value_00 = mscorlib.dll::System::String::String_Concat_4
                              (StringLiteral_Sound__,(String *)&UNK_?,::StringLiteral__,
                               (MethodInfo *)0x0);
-        if (this_00 != (Object_1 *)0x0) {
+        if (this_01 != (Object_1 *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
-                    (this_00,value_00,(MethodInfo *)0x0);
+                    (this_01,value_00,(MethodInfo *)0x0);
           if ((*(GameObject **)((int)item + 8) != (GameObject *)0x0) &&
-             (this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+             (this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                         GameObject_get_transform(*(GameObject **)((int)item + 8),(MethodInfo *)0x0),
-             this_01 != (Transform *)0x0)) {
+             this_02 != (Transform *)0x0)) {
             value.y = 0.0;
             value.x = (float)pSVar2;
             value.z = position.z;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (this_01,value,(MethodInfo *)0x0);
+                      (this_02,value,(MethodInfo *)0x0);
             if (*(AudioSource **)((int)item + 0xc) != (AudioSource *)0x0) {
               UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_clip
                         (*(AudioSource **)((int)item + 0xc),(AudioClip *)&UNK_?,
@@ -244,7 +244,7 @@ Assembly-CSharp.dll::AudioManager::AudioManager_Play
                             (*(AudioSource **)((int)item + 0xc),0x80,(MethodInfo *)0x0);
                   if (*(AudioSource **)((int)item + 0xc) != (AudioSource *)0x0) {
                     UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch
-                              (*(AudioSource **)((int)item + 0xc),3.190398e-29,(MethodInfo *)0x0);
+                              (*(AudioSource **)((int)item + 0xc),3.183059e-29,(MethodInfo *)0x0);
                     if (*(AudioSource **)((int)item + 0xc) != (AudioSource *)0x0) {
                       UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                       AudioSource_set_panStereo
@@ -372,23 +372,23 @@ Assembly-CSharp.dll::AudioManager::AudioManager_Play_2
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  pLVar1 = (this->fields).pooledSounds;
-  if (pLVar1 != (List_1_AudioManager_Sound_ *)0x0) {
-    if ((pLVar1->fields)._size == 0) {
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).pooledSounds;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    if ((this_00->fields)._size == 0) {
       return (AudioManager_Sound *)0x0;
     }
     item = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
            RegexCharClass+SingleRange]::
            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                     ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                      (this->fields).pooledSounds,(pLVar1->fields)._size + -1,
+                     (this_00,(this_00->fields)._size + -1,
                       MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__get_Item_int_
                      );
     pLVar1 = (this->fields).pooledSounds;
     if (pLVar1 != (List_1_AudioManager_Sound_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
       List_1_System_Object__RemoveAt
-                ((List_1_System_Object_ *)(this->fields).pooledSounds,(pLVar1->fields)._size + -1,
+                ((List_1_System_Object_ *)pLVar1,(pLVar1->fields)._size + -1,
                  MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__RemoveAt_int_)
       ;
       pLVar1 = (this->fields).activeSounds;
@@ -402,101 +402,101 @@ Assembly-CSharp.dll::AudioManager::AudioManager_Play_2
            (pSVar2 = *(String **)((int)item + 8), pSVar2 != (String *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     ((GameObject *)pSVar2,1,(MethodInfo *)0x0);
-          this_01 = ::StringLiteral__;
-          this_00 = *(Object_1 **)((int)item + 8);
+          this_02 = ::StringLiteral__;
+          this_01 = *(Object_1 **)((int)item + 8);
           pSVar2 = mscorlib.dll::System::String::String_Concat_4
                              (StringLiteral_Sound__,pSVar2,::StringLiteral__,(MethodInfo *)0x0);
-          if (this_00 != (Object_1 *)0x0) {
+          if (this_01 != (Object_1 *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
-                      (this_00,pSVar2,(MethodInfo *)0x0);
+                      (this_01,pSVar2,(MethodInfo *)0x0);
             if (*(GameObject **)((int)item + 8) != (GameObject *)0x0) {
-              this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+              this_03 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                         GameObject_get_transform(*(GameObject **)((int)item + 8),(MethodInfo *)0x0);
-              if (this_02 != (Transform *)0x0) {
+              if (this_03 != (Transform *)0x0) {
                 auVar3._8_4_ = 0;
                 auVar3._0_8_ = position._4_8_;
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                          (this_02,(Vector3)(auVar3 << 0x20),(MethodInfo *)0x0);
+                          (this_03,(Vector3)(auVar3 << 0x20),(MethodInfo *)0x0);
                 pAVar4 = *(AudioSource **)((int)item + 0xc);
-                if (this_01 != (String *)0x0) {
+                if (this_02 != (String *)0x0) {
                   value = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
-                          AudioSource_get_clip((AudioSource *)this_01,(MethodInfo *)0x0);
+                          AudioSource_get_clip((AudioSource *)this_02,(MethodInfo *)0x0);
                   if (pAVar4 != (AudioSource *)0x0) {
                     UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_clip
                               (pAVar4,value,(MethodInfo *)0x0);
                     pAVar4 = *(AudioSource **)((int)item + 0xc);
                     value_00 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                                AudioSource_get_outputAudioMixerGroup
-                                         ((AudioSource *)this_01,(MethodInfo *)0x0);
+                                         ((AudioSource *)this_02,(MethodInfo *)0x0);
                     if (pAVar4 != (AudioSource *)0x0) {
                       UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                       AudioSource_set_outputAudioMixerGroup(pAVar4,value_00,(MethodInfo *)0x0);
                       pAVar4 = *(AudioSource **)((int)item + 0xc);
                       bVar5 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
-                              AudioSource_get_mute((AudioSource *)this_01,(MethodInfo *)0x0);
+                              AudioSource_get_mute((AudioSource *)this_02,(MethodInfo *)0x0);
                       if (pAVar4 != (AudioSource *)0x0) {
                         UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_mute
                                   (pAVar4,bVar5,(MethodInfo *)0x0);
                         pAVar4 = *(AudioSource **)((int)item + 0xc);
                         bVar5 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                                 AudioSource_get_bypassEffects
-                                          ((AudioSource *)this_01,(MethodInfo *)0x0);
+                                          ((AudioSource *)this_02,(MethodInfo *)0x0);
                         if (pAVar4 != (AudioSource *)0x0) {
                           UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                           AudioSource_set_bypassEffects(pAVar4,bVar5,(MethodInfo *)0x0);
                           pAVar4 = *(AudioSource **)((int)item + 0xc);
                           bVar5 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                                   AudioSource_get_bypassListenerEffects
-                                            ((AudioSource *)this_01,(MethodInfo *)0x0);
+                                            ((AudioSource *)this_02,(MethodInfo *)0x0);
                           if (pAVar4 != (AudioSource *)0x0) {
                             UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                             AudioSource_set_bypassListenerEffects(pAVar4,bVar5,(MethodInfo *)0x0);
                             pAVar4 = *(AudioSource **)((int)item + 0xc);
                             bVar5 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                                     AudioSource_get_bypassReverbZones
-                                              ((AudioSource *)this_01,(MethodInfo *)0x0);
+                                              ((AudioSource *)this_02,(MethodInfo *)0x0);
                             if (pAVar4 != (AudioSource *)0x0) {
                               UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                               AudioSource_set_bypassReverbZones(pAVar4,bVar5,(MethodInfo *)0x0);
                               pAVar4 = *(AudioSource **)((int)item + 0xc);
                               bVar5 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                                       AudioSource_get_playOnAwake
-                                                ((AudioSource *)this_01,(MethodInfo *)0x0);
+                                                ((AudioSource *)this_02,(MethodInfo *)0x0);
                               if (pAVar4 != (AudioSource *)0x0) {
                                 UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                                 AudioSource_set_playOnAwake(pAVar4,bVar5,(MethodInfo *)0x0);
                                 pAVar4 = *(AudioSource **)((int)item + 0xc);
                                 bVar5 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                                         AudioSource_get_loop
-                                                  ((AudioSource *)this_01,(MethodInfo *)0x0);
+                                                  ((AudioSource *)this_02,(MethodInfo *)0x0);
                                 if (pAVar4 != (AudioSource *)0x0) {
                                   UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                                   AudioSource_set_loop(pAVar4,bVar5,(MethodInfo *)0x0);
                                   pAVar4 = *(AudioSource **)((int)item + 0xc);
                                   value_01 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                                              AudioSource_get_priority
-                                                       ((AudioSource *)this_01,(MethodInfo *)0x0);
+                                                       ((AudioSource *)this_02,(MethodInfo *)0x0);
                                   if (pAVar4 != (AudioSource *)0x0) {
                                     UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                                     AudioSource_set_priority(pAVar4,value_01,(MethodInfo *)0x0);
                                     pAVar4 = *(AudioSource **)((int)item + 0xc);
                                     fVar6 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                                             AudioSource_get_volume
-                                                      ((AudioSource *)this_01,(MethodInfo *)0x0);
+                                                      ((AudioSource *)this_02,(MethodInfo *)0x0);
                                     if (pAVar4 != (AudioSource *)0x0) {
                                       UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                                       AudioSource_set_volume(pAVar4,fVar6,(MethodInfo *)0x0);
                                       pAVar4 = *(AudioSource **)((int)item + 0xc);
                                       fVar6 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource
                                               ::AudioSource_get_pitch
-                                                        ((AudioSource *)this_01,(MethodInfo *)0x0);
+                                                        ((AudioSource *)this_02,(MethodInfo *)0x0);
                                       if (pAVar4 != (AudioSource *)0x0) {
                                         UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                                         AudioSource_set_pitch(pAVar4,fVar6,(MethodInfo *)0x0);
                                         pAVar4 = *(AudioSource **)((int)item + 0xc);
                                         fVar6 = UnityEngine.AudioModule.dll::UnityEngine::
                                                 AudioSource::AudioSource_get_panStereo
-                                                          ((AudioSource *)this_01,(MethodInfo *)0x0)
+                                                          ((AudioSource *)this_02,(MethodInfo *)0x0)
                                         ;
                                         if (pAVar4 != (AudioSource *)0x0) {
                                           UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
@@ -504,7 +504,7 @@ Assembly-CSharp.dll::AudioManager::AudioManager_Play_2
                                           pAVar4 = *(AudioSource **)((int)item + 0xc);
                                           fVar6 = UnityEngine.AudioModule.dll::UnityEngine::
                                                   AudioSource::AudioSource_get_spatialBlend
-                                                            ((AudioSource *)this_01,
+                                                            ((AudioSource *)this_02,
                                                              (MethodInfo *)0x0);
                                           if (pAVar4 != (AudioSource *)0x0) {
                                             UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
@@ -513,7 +513,7 @@ Assembly-CSharp.dll::AudioManager::AudioManager_Play_2
                                             pAVar4 = *(AudioSource **)((int)item + 0xc);
                                             fVar6 = UnityEngine.AudioModule.dll::UnityEngine::
                                                     AudioSource::AudioSource_get_reverbZoneMix
-                                                              ((AudioSource *)this_01,
+                                                              ((AudioSource *)this_02,
                                                                (MethodInfo *)0x0);
                                             if (pAVar4 != (AudioSource *)0x0) {
                                               UnityEngine.AudioModule.dll::UnityEngine::AudioSource
@@ -522,7 +522,7 @@ Assembly-CSharp.dll::AudioManager::AudioManager_Play_2
                                               pAVar4 = *(AudioSource **)((int)item + 0xc);
                                               fVar6 = UnityEngine.AudioModule.dll::UnityEngine::
                                                       AudioSource::AudioSource_get_dopplerLevel
-                                                                ((AudioSource *)this_01,
+                                                                ((AudioSource *)this_02,
                                                                  (MethodInfo *)0x0);
                                               if (pAVar4 != (AudioSource *)0x0) {
                                                 UnityEngine.AudioModule.dll::UnityEngine::
@@ -531,7 +531,7 @@ Assembly-CSharp.dll::AudioManager::AudioManager_Play_2
                                                 pAVar4 = *(AudioSource **)((int)item + 0xc);
                                                 fVar6 = UnityEngine.AudioModule.dll::UnityEngine::
                                                         AudioSource::AudioSource_get_spread
-                                                                  ((AudioSource *)this_01,
+                                                                  ((AudioSource *)this_02,
                                                                    (MethodInfo *)0x0);
                                                 if (pAVar4 != (AudioSource *)0x0) {
                                                   UnityEngine.AudioModule.dll::UnityEngine::
@@ -541,7 +541,7 @@ Assembly-CSharp.dll::AudioManager::AudioManager_Play_2
                                                   value_02 = UnityEngine.AudioModule.dll::
                                                              UnityEngine::AudioSource::
                                                              AudioSource_get_rolloffMode
-                                                                       ((AudioSource *)this_01,
+                                                                       ((AudioSource *)this_02,
                                                                         (MethodInfo *)0x0);
                                                   if (pAVar4 != (AudioSource *)0x0) {
                                                     UnityEngine.AudioModule.dll::UnityEngine::
@@ -551,7 +551,7 @@ Assembly-CSharp.dll::AudioManager::AudioManager_Play_2
                                                     fVar6 = UnityEngine.AudioModule.dll::UnityEngine
                                                             ::AudioSource::
                                                             AudioSource_get_minDistance
-                                                                      ((AudioSource *)this_01,
+                                                                      ((AudioSource *)this_02,
                                                                        (MethodInfo *)0x0);
                                                     if (pAVar4 != (AudioSource *)0x0) {
                                                       UnityEngine.AudioModule.dll::UnityEngine::
@@ -561,7 +561,7 @@ Assembly-CSharp.dll::AudioManager::AudioManager_Play_2
                                                       fVar6 = UnityEngine.AudioModule.dll::
                                                               UnityEngine::AudioSource::
                                                               AudioSource_get_maxDistance
-                                                                        ((AudioSource *)this_01,
+                                                                        ((AudioSource *)this_02,
                                                                          (MethodInfo *)0x0);
                                                       if (pAVar4 != (AudioSource *)0x0) {
                                                         UnityEngine.AudioModule.dll::UnityEngine::
@@ -635,91 +635,92 @@ void Assembly-CSharp.dll::AudioManager::AudioManager_Update(AudioManager *this,M
     cRam_? = '\x01';
   }
   iVar1 = 0;
-  pLVar2 = (this->fields).activeSounds;
-  if (pLVar2 != (List_1_AudioManager_Sound_ *)0x0) {
+  pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+           (this->fields).activeSounds;
+  if (pLVar2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
     while (iVar1 < (pLVar2->fields)._size) {
-      pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (this->fields).activeSounds;
-      if (((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-          (RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+      if (((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+          (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                             (pLVar3,iVar1,
+                             (pLVar2,iVar1,
                               MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__get_Item_int_
-                             ), RVar4 == (RegexCharClass_SingleRange)0x0)) ||
-         (*(AudioSource **)((int)RVar4 + 0xc) == (AudioSource *)0x0)) goto code_?;
-      bVar5 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_isPlaying
-                        (*(AudioSource **)((int)RVar4 + 0xc),(MethodInfo *)0x0);
-      if (bVar5 == 0) {
-        pLVar6 = (this->fields).soundsToRemove;
-        if (pLVar6 == (List_1_System_Int32_ *)0x0) goto code_?;
-        func_?(pLVar6);
+                             ), RVar3 == (RegexCharClass_SingleRange)0x0)) ||
+         (*(AudioSource **)((int)RVar3 + 0xc) == (AudioSource *)0x0)) goto code_?;
+      bVar4 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_isPlaying
+                        (*(AudioSource **)((int)RVar3 + 0xc),(MethodInfo *)0x0);
+      if (bVar4 == 0) {
+        pLVar5 = (this->fields).soundsToRemove;
+        if (pLVar5 == (List_1_System_Int32_ *)0x0) goto code_?;
+        func_?(pLVar5);
       }
-      pLVar2 = (this->fields).activeSounds;
+      pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               (this->fields).activeSounds;
       iVar1 = iVar1 + 1;
-      if (pLVar2 == (List_1_AudioManager_Sound_ *)0x0) goto code_?;
+      if (pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+      goto code_?;
     }
-    pLVar6 = (this->fields).soundsToRemove;
-    if (pLVar6 != (List_1_System_Int32_ *)0x0) {
-      iVar1 = (pLVar6->fields)._size;
+    pLVar5 = (this->fields).soundsToRemove;
+    if (pLVar5 != (List_1_System_Int32_ *)0x0) {
+      iVar1 = (pLVar5->fields)._size;
       goto joined_?;
     }
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 joined_?:
   if (iVar1 < 1) goto code_?;
-  pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+  pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
            (this->fields).soundsToRemove;
-  if (pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+  if (pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
   goto code_?;
-  RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  iVar1 = iVar1 + -1;
+  RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
           RegexCharClass+SingleRange]::
           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                    (pLVar3,iVar1 + -1,
-                     MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
-  pLVar2 = (this->fields).pooledSounds;
-  pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                    (pLVar2,iVar1,MethodInfo__System__Collections__Generic__List<int>__get_Item_int_
+                    );
+  pLVar7 = (this->fields).pooledSounds;
+  pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
            (this->fields).activeSounds;
-  if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+  if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
      (RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (pLVar3,(int32_t)RVar4,
+                        (pLVar2,(int32_t)RVar3,
                          MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__get_Item_int_
-                        ), pLVar2 == (List_1_AudioManager_Sound_ *)0x0)) goto code_?;
+                        ), pLVar7 == (List_1_AudioManager_Sound_ *)0x0)) goto code_?;
   mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-            ((List_1_System_Object_ *)pLVar2,(Object *)RVar8,
+            ((List_1_System_Object_ *)pLVar7,(Object *)RVar8,
              MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__Add_AudioManager__Sound_
             );
-  pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+  pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
            (this->fields).activeSounds;
-  if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+  if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
      ((RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                         (pLVar3,(int32_t)RVar4,
+                         (pLVar2,(int32_t)RVar3,
                           MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__get_Item_int_
                          ), RVar8 == (RegexCharClass_SingleRange)0x0 ||
       (*(GameObject **)((int)RVar8 + 8) == (GameObject *)0x0)))) goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
             (*(GameObject **)((int)RVar8 + 8),0,(MethodInfo *)0x0);
-  pLVar2 = (this->fields).activeSounds;
-  if (pLVar2 == (List_1_AudioManager_Sound_ *)0x0) goto code_?;
+  pLVar7 = (this->fields).activeSounds;
+  if (pLVar7 == (List_1_AudioManager_Sound_ *)0x0) goto code_?;
   mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__RemoveAt
-            ((List_1_System_Object_ *)pLVar2,(int32_t)RVar4,
+            ((List_1_System_Object_ *)pLVar7,(int32_t)RVar3,
              MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__RemoveAt_int_);
-  iVar1 = iVar1 + -1;
   goto joined_?;
 code_?:
-  pLVar6 = (this->fields).soundsToRemove;
-  if (pLVar6 != (List_1_System_Int32_ *)0x0) {
-    piVar9 = &(pLVar6->fields)._version;
+  pLVar5 = (this->fields).soundsToRemove;
+  if (pLVar5 != (List_1_System_Int32_ *)0x0) {
+    piVar9 = &(pLVar5->fields)._version;
     *piVar9 = *piVar9 + 1;
-    (pLVar6->fields)._size = 0;
+    (pLVar5->fields)._size = 0;
     return;
   }
   goto code_?;
@@ -745,8 +746,9 @@ void Assembly-CSharp.dll::AudioManager::AudioManager__ctor(AudioManager *this,Me
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__List__);
-  (this->fields).activeSounds = pLVar1;
-  func_?(&(this->fields).activeSounds,pLVar1);
+  ppLVar2 = &(this->fields).activeSounds;
+  *ppLVar2 = pLVar1;
+  func_?(ppLVar2,pLVar1);
   pLVar1 = (List_1_AudioManager_Sound_ *)
            func_?(TypeInfo__System__Collections__Generic__List<AudioManager::Sound>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -754,8 +756,9 @@ void Assembly-CSharp.dll::AudioManager::AudioManager__ctor(AudioManager *this,Me
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__List__);
-  (this->fields).pooledSounds = pLVar1;
-  func_?(&(this->fields).pooledSounds,pLVar1);
+  ppLVar2 = &(this->fields).pooledSounds;
+  *ppLVar2 = pLVar1;
+  func_?(ppLVar2,pLVar1);
   this_00 = (List_1_System_Int32_ *)
             func_?(TypeInfo__System__Collections__Generic__List<int>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -763,8 +766,9 @@ void Assembly-CSharp.dll::AudioManager::AudioManager__ctor(AudioManager *this,Me
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<int>__List__);
-  (this->fields).soundsToRemove = this_00;
-  func_?(&(this->fields).soundsToRemove,this_00);
+  ppLVar3 = &(this->fields).soundsToRemove;
+  *ppLVar3 = this_00;
+  func_?(ppLVar3,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

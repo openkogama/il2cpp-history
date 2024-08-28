@@ -138,15 +138,35 @@ code_?:
               puVar19 = (undefined4 *)func_?();
               pSStack_20 = (String__Class *)*puVar19;
               pSVar6 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_8,(MethodInfo *)0x0);
-              pSStack_21 = mscorlib.dll::System::String::String_Concat_4
-                                     (StringLiteral__color_,pSVar6,StringLiteral__G,
-                                      (MethodInfo *)0x0);
+              pSVar6 = mscorlib.dll::System::String::String_Concat_4
+                                 (StringLiteral__color_,pSVar6,StringLiteral__G,(MethodInfo *)0x0);
               if (cRam_? == '\0') {
                 func_?(&StringLiteral_thrustersColor);
                 cRam_? = '\x01';
               }
               pSVar6 = mscorlib.dll::System::String::String_Concat_3
-                                 (StringLiteral_thrustersColor,pSStack_21,(MethodInfo *)0x0);
+                                 (StringLiteral_thrustersColor,pSVar6,(MethodInfo *)0x0);
+              TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                 dict,(Object *)pSVar6,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                );
+              if (TVar10.m_Index == 0) goto code_?;
+              if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
+                  (TypeInfo__System__Single->_0).element_class) goto code_?;
+              puVar19 = (undefined4 *)func_?();
+              pMStack_21 = (MonitorData *)*puVar19;
+              pSVar6 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_8,(MethodInfo *)0x0);
+              pSVar6 = mscorlib.dll::System::String::String_Concat_4
+                                 (StringLiteral__color_,pSVar6,StringLiteral__B,(MethodInfo *)0x0);
+              if (cRam_? == '\0') {
+                func_?(&StringLiteral_thrustersColor);
+                cRam_? = '\x01';
+              }
+              pSVar6 = mscorlib.dll::System::String::String_Concat_3
+                                 (StringLiteral_thrustersColor,pSVar6,(MethodInfo *)0x0);
               TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                       Object,UnityEngine::UIElements::TextureId]::
                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
@@ -159,28 +179,6 @@ code_?:
                   (TypeInfo__System__Single->_0).element_class) goto code_?;
               pfVar22 = (float *)func_?();
               fStack_23 = *pfVar22;
-              pSVar6 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_8,(MethodInfo *)0x0);
-              pSStack_21 = mscorlib.dll::System::String::String_Concat_4
-                                     (StringLiteral__color_,pSVar6,StringLiteral__B,
-                                      (MethodInfo *)0x0);
-              if (cRam_? == '\0') {
-                func_?(&StringLiteral_thrustersColor);
-                cRam_? = '\x01';
-              }
-              pSVar6 = mscorlib.dll::System::String::String_Concat_3
-                                 (StringLiteral_thrustersColor,pSStack_21,(MethodInfo *)0x0);
-              TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                 dict,(Object *)pSVar6,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                );
-              if (TVar10.m_Index == 0) goto code_?;
-              if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
-                  (TypeInfo__System__Single->_0).element_class) goto code_?;
-              func_?();
-              pSVar24 = pSStack_20;
               pSVar6 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_8,(MethodInfo *)0x0);
               pSVar6 = mscorlib.dll::System::String::String_Concat_4
                                  (StringLiteral__color_,pSVar6,StringLiteral__time,(MethodInfo *)0x0
@@ -202,28 +200,28 @@ code_?:
               if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
                   (TypeInfo__System__Single->_0).element_class) goto code_?;
               puVar19 = (undefined4 *)func_?();
-              uVar25 = *puVar19;
+              uVar24 = *puVar19;
               if (pSStack_17 == (String *)0x0) goto code_?;
               if (*(uint *)&(pSStack_17->fields)._firstChar <= (uint)IVar18.m_value) {
                 func_?();
                 goto code_?;
               }
               pSVar6 = pSStack_17 + IVar18.m_value + 1;
-              pSVar6->klass = pSVar24;
-              pSVar6->monitor = (MonitorData *)&UNK_?;
-              (pSVar6->fields)._stringLength = TVar10.m_Index;
-              *(undefined4 *)&(pSVar6->fields)._firstChar = uVar25;
+              pSVar6->klass = pSStack_20;
+              pSVar6->monitor = pMStack_21;
+              (pSVar6->fields)._stringLength = (int32_t)fStack_23;
+              *(undefined4 *)&(pSVar6->fields)._firstChar = uVar24;
               iVar15 = iStack_14;
             }
             uStack_7 = CONCAT44(uStack_7._4_4_,pSStack_17);
             func_?(&uStack_7,pSStack_17);
-            pTVar26 = (ThrustersColorAlphaKey__Array *)
+            pTVar25 = (ThrustersColorAlphaKey__Array *)
                       func_?(TypeInfo__WorldObjectTypes__HoverCraft__Shared__ThrustersColorAlphaKey
                                       ,iStack_16);
-            uVar27 = 0;
+            uVar26 = 0;
             while( true ) {
-              IStack_9.m_value = uVar27;
-              if (iStack_16 <= (int)uVar27) break;
+              IStack_9.m_value = uVar26;
+              if (iStack_16 <= (int)uVar26) break;
               pSVar6 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
               pSStack_17 = mscorlib.dll::System::String::String_Concat_4
                                      (StringLiteral__alpha_,pSVar6,StringLiteral__a,
@@ -267,15 +265,15 @@ code_?:
               if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
                   (TypeInfo__System__Single->_0).element_class) goto code_?;
               pfVar22 = (float *)func_?();
-              fVar28 = *pfVar22;
-              if (pTVar26 == (ThrustersColorAlphaKey__Array *)0x0) goto code_?;
-              if (pTVar26->max_length <= uVar27) goto code_?;
-              pTVar26->vector[uVar27].alpha = fStack_23;
-              pTVar26->vector[uVar27].time = fVar28;
-              uVar27 = IStack_9.m_value + 1;
+              fVar27 = *pfVar22;
+              if (pTVar25 == (ThrustersColorAlphaKey__Array *)0x0) goto code_?;
+              if (pTVar25->max_length <= uVar26) goto code_?;
+              pTVar25->vector[uVar26].alpha = fStack_23;
+              pTVar25->vector[uVar26].time = fVar27;
+              uVar26 = IStack_9.m_value + 1;
             }
-            uStack_7._4_4_ = pTVar26;
-            func_?((int)&uStack_7 + 4,pTVar26);
+            uStack_7._4_4_ = pTVar25;
+            func_?((int)&uStack_7 + 4,pTVar25);
             goto code_?;
           }
           goto code_?;
@@ -289,8 +287,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar29 = (code *)swi(3);
-  TVar12 = (ThrustersColor)(*pcVar29)();
+  pcVar28 = (code *)swi(3);
+  TVar12 = (ThrustersColor)(*pcVar28)();
   return TVar12;
 }
 
@@ -336,37 +334,31 @@ void Assembly-CSharp.dll::WorldObjectTypes::HoverCraft::Shared::ThrustersColorSe
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  DStack_6._current.value = (Object *)0x0;
-  DStack_6._getEnumeratorRetType = 0;
-  DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
-  DStack_6._version = 0;
-  DStack_6._index = 0;
-  DStack_6._current.key = (Object *)0x0;
   if (toAdd != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_8,(Dictionary_2_System_UInt32_System_Object_ *)toAdd,
+                       (&DStack_7,(Dictionary_2_System_UInt32_System_Object_ *)toAdd,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
                        );
-    uStack_9 = 0;
-    DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar7->_dictionary;
-    DStack_6._version = pDVar7->_version;
-    DStack_6._index = pDVar7->_index;
-    DStack_6._current.key = (Object *)(pDVar7->_current).key;
-    DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
+    uStack_8 = 0;
+    DStack_9._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar6->_dictionary;
+    DStack_9._version = pDVar6->_version;
+    DStack_9._index = pDVar6->_index;
+    DStack_9._current.key = (Object *)(pDVar6->_current).key;
+    DStack_9._16_8_ = *(undefined8 *)&(pDVar6->_current).value;
     uStack_1 = 1;
-    pDStack_10 = &DStack_6;
+    pDStack_10 = &DStack_9;
     while( true ) {
       bVar11 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                        (&DStack_6,
+                        (&DStack_9,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
                         );
       if (bVar11 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)&DStack_6,
+                  ((Object *)&DStack_9,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
                    ,unaff_EDI);
@@ -376,7 +368,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::HoverCraft::Shared::ThrustersColorSe
       if (dict == (Dictionary_2_System_Object_System_Object_ *)0x0) break;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (dict,DStack_6._current.key,DStack_6._current.value,
+                (dict,DStack_9._current.key,DStack_9._current.value,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
     }

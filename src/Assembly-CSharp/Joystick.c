@@ -22,9 +22,10 @@ void Assembly-CSharp.dll::Joystick::Joystick_Awake(Joystick *this,MethodInfo *me
             ((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
   (pCVar3->fields)._name_k__BackingField = pSVar1;
   func_?(&pCVar3->fields,pSVar1);
+  ppCVar4 = &(this->fields).m_HorizontalVirtualAxis;
   (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
-  (this->fields).m_HorizontalVirtualAxis = pCVar3;
-  func_?(&(this->fields).m_HorizontalVirtualAxis,pCVar3);
+  *ppCVar4 = pCVar3;
+  func_?(ppCVar4,pCVar3);
   pSVar1 = (this->fields).verticalAxisName;
   pCVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
   ;
@@ -33,19 +34,21 @@ void Assembly-CSharp.dll::Joystick::Joystick_Awake(Joystick *this,MethodInfo *me
             ((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
   (pCVar3->fields)._name_k__BackingField = pSVar1;
   func_?(&pCVar3->fields,pSVar1);
+  ppCVar4 = &(this->fields).m_VerticalVirtualAxis;
   (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
-  (this->fields).m_VerticalVirtualAxis = pCVar3;
-  func_?(&(this->fields).m_VerticalVirtualAxis,pCVar3);
-  iVar4 = (this->fields).baseMovementRangeX;
-  VVar5 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-  fVar6 = VVar5.x;
-  iVar7 = (this->fields).baseMovementRangeY;
+  *ppCVar4 = pCVar3;
+  func_?(ppCVar4,pCVar3);
+  iVar5 = (this->fields).baseMovementRangeX;
+  VVar6 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
+  fVar7 = VVar6.x;
+  iVar8 = (this->fields).baseMovementRangeY;
   ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
   this_00 = (UIElipsoidHelper *)func_?(TypeInfo__UIElipsoidHelper);
   UIElipsoidHelper::UIElipsoidHelper__ctor
-            (this_00,(float)iVar4 * fVar6,(float)iVar7 * 0.0,(MethodInfo *)0x0);
-  (this->fields).elipsoidHelper = this_00;
-  func_?(&(this->fields).elipsoidHelper,this_00);
+            (this_00,(float)iVar5 * fVar7,(float)iVar8 * 0.0,(MethodInfo *)0x0);
+  ppUVar9 = &(this->fields).elipsoidHelper;
+  *ppUVar9 = this_00;
+  func_?(ppUVar9,this_00);
   return;
 }
 
@@ -69,9 +72,10 @@ void Assembly-CSharp.dll::Joystick::Joystick_CreateVirtualAxes(Joystick *this,Me
             ((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
   (pCVar3->fields)._name_k__BackingField = pSVar1;
   func_?(&pCVar3->fields,pSVar1);
+  ppCVar4 = &(this->fields).m_HorizontalVirtualAxis;
   (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
-  (this->fields).m_HorizontalVirtualAxis = pCVar3;
-  func_?(&(this->fields).m_HorizontalVirtualAxis,pCVar3);
+  *ppCVar4 = pCVar3;
+  func_?(ppCVar4,pCVar3);
   pSVar1 = (this->fields).verticalAxisName;
   pCVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
   ;
@@ -80,9 +84,10 @@ void Assembly-CSharp.dll::Joystick::Joystick_CreateVirtualAxes(Joystick *this,Me
             ((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
   (pCVar3->fields)._name_k__BackingField = pSVar1;
   func_?(&pCVar3->fields,pSVar1);
+  ppCVar4 = &(this->fields).m_VerticalVirtualAxis;
   (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
-  (this->fields).m_VerticalVirtualAxis = pCVar3;
-  func_?(&(this->fields).m_VerticalVirtualAxis,pCVar3);
+  *ppCVar4 = pCVar3;
+  func_?(ppCVar4,pCVar3);
   return;
 }
 
@@ -229,54 +234,47 @@ void Assembly-CSharp.dll::Joystick::Joystick_Reset(Joystick *this,MethodInfo *me
 void Assembly-CSharp.dll::Joystick::Joystick_Update(Joystick *this,MethodInfo *method)
 
 {
-  if (((this->fields).dragStart != 0) && ((this->fields).useSupressAxis != 0)) {
-    this_00 = (this->fields).joystickLockAxis;
+  if (((this->fields).dragStart == 0) || ((this->fields).useSupressAxis == 0)) {
+    return;
+  }
+  this_00 = (this->fields).joystickLockAxis;
+  pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                     ((Component *)this,(MethodInfo *)0x0);
+  if (pTVar1 != (Transform *)0x0) {
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                       ((Vector3 *)&puStack_3,pTVar1,(MethodInfo *)0x0);
+    this_01 = (this->fields).elipsoidHelper;
+    uVar4 = pVVar2->x;
+    fVar5 = pVVar2->z;
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
     if (pTVar1 != (Transform *)0x0) {
       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                          ((Vector3 *)&puStack_3,pTVar1,(MethodInfo *)0x0);
-      this_01 = (this->fields).elipsoidHelper;
-      uVar4 = pVVar2->y;
-      fVar5 = pVVar2->z;
-      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)this,(MethodInfo *)0x0);
-      if (pTVar1 != (Transform *)0x0) {
-        stack0xffffffdc = (float)&puStack_3;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                           ((Vector3 *)&puStack_3,pTVar1,(MethodInfo *)0x0);
-        uVar6 = pVVar2->x;
-        uVar7 = pVVar2->y;
-        uVar8 = (this->fields).startPos.x;
-        uVar9 = (this->fields).startPos.y;
-        puStack_3 = (undefined *)((float)uVar6 - (float)uVar8);
-        stack0xffffffdc = (float)uVar7 - (float)uVar9;
-        if (this_01 != (UIElipsoidHelper *)0x0) {
-          uVar10 = 0;
-          stack0xffffffdc = (float)&UNK_?;
-          deltaDir.y = (float)uVar7 - (float)uVar9;
-          deltaDir.x = (float)puStack_3;
-          deltaDir.z = pVVar2->z - (this->fields).startPos.z;
-          normalizedDistance =
-               UIElipsoidHelper::UIElipsoidHelper_NormalizedDistance
-                         (this_01,deltaDir,(MethodInfo *)0x0);
-          if (this_00 != (JoystickLockAxis *)0x0) {
-            position.y = (float)uVar4;
-            position.x = (float)uVar10;
-            position.z = fVar5;
-            JVar11 = JoystickLockAxis::JoystickLockAxis_UpdateLockToAxis
-                              (this_00,position,normalizedDistance,(MethodInfo *)0x0);
-            (this->fields).supressAxis = JVar11;
-            return;
-          }
-        }
+      uVar6 = pVVar2->x;
+      uVar7 = pVVar2->y;
+      uVar8 = (this->fields).startPos.x;
+      uVar9 = (this->fields).startPos.y;
+      puStack_3 = (undefined *)((float)uVar6 - (float)uVar8);
+      if ((this_01 != (UIElipsoidHelper *)0x0) &&
+         (deltaDir.y = (float)uVar7 - (float)uVar9, deltaDir.x = (float)puStack_3,
+         deltaDir.z = pVVar2->z - (this->fields).startPos.z,
+         normalizedDistance =
+              UIElipsoidHelper::UIElipsoidHelper_NormalizedDistance
+                        (this_01,deltaDir,(MethodInfo *)0x0), this_00 != (JoystickLockAxis *)0x0)) {
+        position.y = normalizedDistance;
+        position.x = (float)uVar4;
+        position.z = fVar5;
+        JVar10 = JoystickLockAxis::JoystickLockAxis_UpdateLockToAxis
+                          (this_00,position,normalizedDistance,(MethodInfo *)0x0);
+        (this->fields).supressAxis = JVar10;
+        return;
       }
     }
-    func_?();
-    pcVar12 = (code *)swi(3);
-    (*pcVar12)();
-    return;
   }
+  func_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -291,141 +289,190 @@ void Assembly-CSharp.dll::Joystick::Joystick_UpdateVirtualAxes
     func_?();
     cRam_? = '\x01';
   }
-  fVar1 = (this->fields).startPos.z;
-  VVar2 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-  iVar3 = (this->fields).baseMovementRangeY;
-  fStack_4 = VVar2.y;
-  VVar2 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-  fVar5 = (float)iVar3 * VVar2.x;
-  if (fStack_6 == 0.0) goto code_?;
-  fVar7 = *(float *)((int)fStack_6 + 0x88);
+  uVar1 = (this->fields).startPos.x;
+  uVar2 = (this->fields).startPos.y;
+  auStack_3._12_4_ = (this->fields).startPos.z;
+  VStack_4.y = value.y - (float)uVar2;
+  VStack_4.x = value.x - (float)uVar1;
+  fStack_5 = value.z - (float)auStack_3._12_4_;
+  ppUVar6 = &(this->fields).elipsoidHelper;
+  pUStack_7 = *ppUVar6;
+  fStack_8 = (float)(this->fields).baseMovementRangeX;
+  auStack_3._4_4_ = uVar1;
+  auStack_3._8_4_ = uVar2;
+  VVar9 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
+  iVar10 = (this->fields).baseMovementRangeY;
+  auStack_3._8_4_ = VVar9.x;
+  auStack_3._12_4_ = VVar9.y;
+  VVar9 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
+  auStack_3._0_4_ = VVar9.x;
+  auStack_3._4_4_ = VVar9.y;
+  auStack_3._0_4_ = (float)iVar10 * (float)auStack_3._0_4_;
+  if (iStack_11 == 0) goto code_?;
+  auStack_12._0_4_ = *(float *)(iStack_11 + 0x88);
+  fStack_13 = (float)(int)fStack_13 * (float)auStack_3._12_4_;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  fVar8 = (float)((uint)fVar7 & _UNK_?);
-  fVar9 = (float)((uint)((float)(int)fStack_10 * fStack_4) & _UNK_?);
-  if (fVar8 <= fVar9) {
-    fVar8 = fVar9;
+  fVar14 = (float)(auStack_12._0_4_ & _UNK_?);
+  if ((float)(auStack_12._0_4_ & _UNK_?) <= (float)((uint)fStack_13 & _UNK_?)) {
+    fVar14 = (float)((uint)fStack_13 & _UNK_?);
   }
-  fVar11 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
-  fVar9 = fVar8 * _UNK_?;
-  if (fVar8 * _UNK_? <= fVar11) {
-    fVar9 = fVar11;
+  fVar15 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
+  fVar16 = fVar14 * _UNK_?;
+  if (fVar14 * _UNK_? <= fVar15) {
+    fVar16 = fVar15;
   }
-  if (fVar9 <= (float)((uint)((float)(int)fStack_10 * fStack_4 - fVar7) & _UNK_?)) {
+  if (fVar16 <= (float)((uint)(fStack_13 - (float)auStack_12._0_4_) & _UNK_?)) {
 code_?:
-    VVar2 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-    iVar3 = (this->fields).baseMovementRangeY;
-    fStack_12 = VVar2.y;
-    VVar2 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-    fStack_13 = VVar2.x;
-    pUVar14 = (UIElipsoidHelper *)func_?();
+    auStack_3._0_4_ = (this->fields).baseMovementRangeX;
+    join_0x00000008_0x00000000_ =
+         ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
+    iVar10 = (this->fields).baseMovementRangeY;
+    VStack_4 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0)
+    ;
+    pUVar17 = (UIElipsoidHelper *)func_?();
     UIElipsoidHelper::UIElipsoidHelper__ctor
-              (pUVar14,(float)(int)fStack_4 * fStack_12,(float)iVar3 * fStack_13,(MethodInfo *)0x0);
-    (this->fields).elipsoidHelper = pUVar14;
+              (pUVar17,(float)(int)auStack_3._8_4_ * fStack_8,(float)iVar10 * VStack_4.x,
+               (MethodInfo *)0x0);
+    *(UIElipsoidHelper **)VStack_4.x = pUVar17;
+    ppUVar6 = (UIElipsoidHelper **)VStack_4.x;
     func_?();
   }
   else {
-    fVar7 = *(float *)((int)fStack_6 + 0x8c);
+    auStack_12._0_4_ = *(float *)(iStack_11 + 0x8c);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    fVar9 = (float)((uint)fVar5 & _UNK_?);
-    fVar8 = (float)((uint)fVar7 & _UNK_?);
-    if (fVar8 <= fVar9) {
-      fVar8 = fVar9;
+    fVar14 = (float)(auStack_12._0_4_ & _UNK_?);
+    if ((float)(auStack_12._0_4_ & _UNK_?) <= (float)(auStack_3._0_4_ & _UNK_?)) {
+      fVar14 = (float)(auStack_3._0_4_ & _UNK_?);
     }
-    fVar11 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
-    fVar9 = fVar8 * _UNK_?;
-    if (fVar8 * _UNK_? <= fVar11) {
-      fVar9 = fVar11;
+    fVar15 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
+    fVar16 = fVar14 * _UNK_?;
+    if (fVar14 * _UNK_? <= fVar15) {
+      fVar16 = fVar15;
     }
-    if (fVar9 <= (float)((uint)(fVar5 - fVar7) & _UNK_?)) goto code_?;
+    if (fVar16 <= (float)((uint)((float)auStack_3._0_4_ - (float)auStack_12._0_4_) & _UNK_?)
+       ) goto code_?;
   }
-  pUVar14 = (this->fields).elipsoidHelper;
-  if (pUVar14 != (UIElipsoidHelper *)0x0) {
-    MStack_15.m00 = (pUVar14->fields).worldToElipsoidSpace.m00;
-    MStack_15.m10 = (pUVar14->fields).worldToElipsoidSpace.m10;
-    MStack_15.m20 = (pUVar14->fields).worldToElipsoidSpace.m20;
-    MStack_15.m30 = (pUVar14->fields).worldToElipsoidSpace.m30;
-    MStack_15.m01 = (pUVar14->fields).worldToElipsoidSpace.m01;
-    MStack_15.m11 = (pUVar14->fields).worldToElipsoidSpace.m11;
-    MStack_15.m21 = (pUVar14->fields).worldToElipsoidSpace.m21;
-    MStack_15.m31 = (pUVar14->fields).worldToElipsoidSpace.m31;
-    MStack_15.m02 = (pUVar14->fields).worldToElipsoidSpace.m02;
-    MStack_15.m12 = (pUVar14->fields).worldToElipsoidSpace.m12;
-    MStack_15.m22 = (pUVar14->fields).worldToElipsoidSpace.m22;
-    MStack_15.m32 = (pUVar14->fields).worldToElipsoidSpace.m32;
-    MStack_15.m03 = (pUVar14->fields).worldToElipsoidSpace.m03;
-    MStack_15.m13 = (pUVar14->fields).worldToElipsoidSpace.m13;
-    MStack_15.m23 = (pUVar14->fields).worldToElipsoidSpace.m23;
-    MStack_15.m33 = (pUVar14->fields).worldToElipsoidSpace.m33;
-    vector_00.y = fStack_16;
-    vector_00.x = value.z - fVar1;
-    vector_00.z = fStack_17;
-    pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
-                       (&VStack_19,&MStack_15,vector_00,(MethodInfo *)0x0);
-    uVar20._0_4_ = pVVar18->x;
-    uVar20._4_4_ = pVVar18->y;
-    fVar1 = pVVar18->z;
+  pUVar17 = (this->fields).elipsoidHelper;
+  if (pUVar17 != (UIElipsoidHelper *)0x0) {
+    MStack_18.m00 = (pUVar17->fields).worldToElipsoidSpace.m00;
+    MStack_18.m10 = (pUVar17->fields).worldToElipsoidSpace.m10;
+    MStack_18.m20 = (pUVar17->fields).worldToElipsoidSpace.m20;
+    MStack_18.m30 = (pUVar17->fields).worldToElipsoidSpace.m30;
+    fVar15 = 0.0;
+    MStack_18.m01 = (pUVar17->fields).worldToElipsoidSpace.m01;
+    MStack_18.m11 = (pUVar17->fields).worldToElipsoidSpace.m11;
+    MStack_18.m21 = (pUVar17->fields).worldToElipsoidSpace.m21;
+    MStack_18.m31 = (pUVar17->fields).worldToElipsoidSpace.m31;
+    MStack_18.m02 = (pUVar17->fields).worldToElipsoidSpace.m02;
+    MStack_18.m12 = (pUVar17->fields).worldToElipsoidSpace.m12;
+    MStack_18.m22 = (pUVar17->fields).worldToElipsoidSpace.m22;
+    MStack_18.m32 = (pUVar17->fields).worldToElipsoidSpace.m32;
+    MStack_18.m03 = (pUVar17->fields).worldToElipsoidSpace.m03;
+    MStack_18.m13 = (pUVar17->fields).worldToElipsoidSpace.m13;
+    MStack_18.m23 = (pUVar17->fields).worldToElipsoidSpace.m23;
+    MStack_18.m33 = (pUVar17->fields).worldToElipsoidSpace.m33;
+    vector_00.y = fStack_19;
+    vector_00.x = fStack_5;
+    vector_00.z = fStack_20;
+    pVVar21 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
+                        ((Vector3 *)auStack_12,&MStack_18,vector_00,(MethodInfo *)0x0);
+    fVar14 = pVVar21->x;
+    ppUVar22 = (UIElipsoidHelper **)pVVar21->y;
+    auStack_12._0_4_ = pVVar21->z;
+    MStack_18.m01 = 0.0;
+    MStack_18.m11 = 0.0;
+    VStack_4.x = (float)auStack_12._0_4_;
+    fVar16 = (float)auStack_12._0_4_;
+    fStack_20 = fVar14;
+    ppUStack_23 = ppUVar22;
+    MStack_18.m20 = fVar14;
+    MStack_18.m30 = (float)ppUVar22;
     if (cRam_? == '\0') {
-      fVar1 = in_stack_21;
+      auStack_3._8_4_ = &TypeInfo__System__Math;
+      auStack_3._4_4_ = &UNK_?;
       func_?();
-      uVar20 = CONCAT44(in_stack_22,in_stack_23);
+      ppUVar22 = ppUVar6;
+      fVar14 = fVar15;
       cRam_? = '\x01';
+      fVar16 = fStack_24;
     }
-    fVar5 = in_stack_24 * in_stack_24 + in_stack_25 * in_stack_25 +
-            in_stack_26 * in_stack_26;
-    if (_UNK_? < fVar5) {
+    fVar15 = in_stack_25 * in_stack_25 + in_stack_26 * in_stack_26 +
+             in_stack_27 * in_stack_27;
+    if (_UNK_? < fVar15) {
       if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Math);
       }
-      dVar27 = (double)fVar5;
-      if (dVar27 < 0.0) {
+      dVar28 = (double)fVar15;
+      if (dVar28 < 0.0) {
         func_?();
       }
       else {
-        dVar27 = SQRT(dVar27);
+        dVar28 = SQRT(dVar28);
       }
-      fVar5 = (float)dVar27;
-      fVar1 = in_stack_26 / fVar5;
-      in_stack_28 = in_stack_25 / fVar5;
-      fStack_29 = in_stack_24 / fVar5;
-      uVar20 = CONCAT44(fStack_29,in_stack_28);
+      fVar15 = (float)dVar28;
+      fVar16 = in_stack_27 / fVar15;
+      fVar14 = in_stack_26 / fVar15;
+      ppUVar22 = (UIElipsoidHelper **)(in_stack_25 / fVar15);
     }
-    vector.z = fVar1;
-    vector.x = (float)(int)uVar20;
-    vector.y = (float)(int)((ulonglong)uVar20 >> 0x20);
-    pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
-                       ((Vector3 *)&stack0xffffff44,(Matrix4x4 *)&stack0xffffff64,vector,
-                        (MethodInfo *)0x0);
-    fVar1 = pVVar18->z;
-    fVar5 = fVar1;
+    auStack_3._0_4_ = (pUVar17->fields).elipsoidSpaceToWorld.m00;
+    auStack_3._4_4_ = (pUVar17->fields).elipsoidSpaceToWorld.m10;
+    auStack_3._8_4_ = (pUVar17->fields).elipsoidSpaceToWorld.m20;
+    auStack_3._12_4_ = (pUVar17->fields).elipsoidSpaceToWorld.m30;
+    auStack_3._16_4_ = (pUVar17->fields).elipsoidSpaceToWorld.m01;
+    VStack_4.x = (pUVar17->fields).elipsoidSpaceToWorld.m11;
+    VStack_4.y = (pUVar17->fields).elipsoidSpaceToWorld.m21;
+    fStack_5 = (pUVar17->fields).elipsoidSpaceToWorld.m31;
+    fStack_19 = (pUVar17->fields).elipsoidSpaceToWorld.m02;
+    fStack_20 = (pUVar17->fields).elipsoidSpaceToWorld.m12;
+    ppUStack_23 = (UIElipsoidHelper **)(pUVar17->fields).elipsoidSpaceToWorld.m22;
+    auStack_12._0_4_ = (pUVar17->fields).elipsoidSpaceToWorld.m32;
+    auStack_12._4_4_ = (pUVar17->fields).elipsoidSpaceToWorld.m03;
+    fStack_8 = (pUVar17->fields).elipsoidSpaceToWorld.m13;
+    pUStack_7 = (UIElipsoidHelper *)(pUVar17->fields).elipsoidSpaceToWorld.m23;
+    fStack_13 = (pUVar17->fields).elipsoidSpaceToWorld.m33;
+    vector.y = (float)ppUVar22;
+    vector.x = fVar14;
+    vector.z = fVar16;
+    pVVar21 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
+                        ((Vector3 *)&stack0xffffff2c,(Matrix4x4 *)auStack_3,vector,
+                         (MethodInfo *)0x0);
+    uVar29 = pVVar21->x;
+    uVar30 = pVVar21->y;
+    fVar16 = pVVar21->z;
+    fVar31 = fVar16;
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)this,(MethodInfo *)0x0);
-    uVar30 = (this->fields).startPos.x;
-    uVar31 = (this->fields).startPos.y;
-    in_stack_28 = (float)uVar31 + in_stack_28;
-    fVar7 = fStack_29 + (this->fields).startPos.z;
+    uVar32 = (this->fields).startPos.x;
+    fVar14 = (this->fields).startPos.y;
+    fVar15 = (this->fields).startPos.z;
+    VStack_4.x = 0.0;
+    VStack_4.y = 0.0;
+    fStack_5 = 0.0;
+    auStack_3._0_4_ = (float)uVar30 + fVar15;
+    auStack_3._16_4_ = fVar31;
     if (this_01 != (Transform *)0x0) {
-      value_00.y = in_stack_28;
-      value_00.x = (float)uVar30 + fVar5;
-      value_00.z = fVar7;
+      value_00.y = fVar14 + (float)uVar29;
+      value_00.x = (float)uVar32 + fVar31;
+      value_00.z = (float)auStack_3._0_4_;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                 (this_01,value_00,(MethodInfo *)0x0);
-      pUVar14 = (this->fields).elipsoidHelper;
-      if (pUVar14 != (UIElipsoidHelper *)0x0) {
-        deltaDir.y = fVar7;
-        deltaDir.x = in_stack_28;
-        deltaDir.z = fVar1;
-        fVar1 = UIElipsoidHelper::UIElipsoidHelper_NormalizedDistance
-                           (pUVar14,deltaDir,(MethodInfo *)0x0);
+      pUVar17 = (this->fields).elipsoidHelper;
+      if (pUVar17 != (UIElipsoidHelper *)0x0) {
+        deltaDir.y = fVar15;
+        deltaDir.x = fVar14;
+        deltaDir.z = fVar16;
+        fVar14 = UIElipsoidHelper::UIElipsoidHelper_NormalizedDistance
+                          (pUVar17,deltaDir,(MethodInfo *)0x0);
         this_00 = (this->fields).deltaMovementModifier;
         if (this_00 != (AnimationCurve *)0x0) {
-          fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                             (this_00,fVar1,(MethodInfo *)0x0);
+          fVar14 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                            (this_00,fVar14,(MethodInfo *)0x0);
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
@@ -433,42 +480,47 @@ code_?:
           if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          dVar27 = (double)(VStack_19.x * VStack_19.x + 0.0 + 0.0);
-          if (dVar27 < 0.0) {
+          dVar28 = (double)(fStack_33 * fStack_33 +
+                            (float)auStack_3._4_4_ * (float)auStack_3._4_4_ +
+                           (float)auStack_3._8_4_ * (float)auStack_3._8_4_);
+          if (dVar28 < 0.0) {
             func_?();
           }
           else {
-            dVar27 = SQRT(dVar27);
+            dVar28 = SQRT(dVar28);
           }
-          fVar5 = (float)dVar27;
-          if (_UNK_? < fVar5) {
-            uVar32 = CONCAT44(0.0 / fVar5,VStack_19.x / fVar5);
+          fVar16 = (float)dVar28;
+          if (_UNK_? < fVar16) {
+            uVar34 = CONCAT44((float)auStack_3._4_4_ / fVar16,fStack_33 / fVar16);
           }
           else {
             if (cRam_? == '\0') {
               func_?();
               cRam_? = '\x01';
             }
-            uVar32._0_4_ = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
-            uVar32._4_4_ = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
+            uVar34._0_4_ = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
+            uVar34._4_4_ = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
           }
-          fStack_10 = (float)uVar32;
-          fStack_33 = (float)((ulonglong)uVar32 >> 0x20);
-          fStack_33 = fStack_33 * fVar1;
-          if (((this->fields).supressAxis & 1) != 0) {
-            fStack_33 = 0.0;
+          auStack_3._0_4_ = (undefined4)uVar34;
+          auStack_3._4_4_ = (undefined4)((ulonglong)uVar34 >> 0x20);
+          auStack_3._0_4_ = (float)auStack_3._0_4_ * fVar14;
+          auStack_3._4_4_ = (float)auStack_3._4_4_ * fVar14;
+          uVar35 = (this->fields).supressAxis;
+          puVar36 = (undefined *)auStack_3._4_4_;
+          if ((uVar35 & 1) != 0) {
+            puVar36 = (undefined *)0x0;
           }
-          fVar5 = 0.0;
-          if (((this->fields).supressAxis & 2) == 0) {
-            fVar5 = fStack_10 * fVar1;
+          fVar14 = 0.0;
+          if ((uVar35 & 2) == 0) {
+            fVar14 = (float)auStack_3._0_4_;
           }
-          pCVar34 = (this->fields).m_HorizontalVirtualAxis;
+          pCVar37 = (this->fields).m_HorizontalVirtualAxis;
           (this->fields).supressAxis = 0;
-          if (pCVar34 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
-            (pCVar34->fields).m_Value = fVar5;
-            pCVar34 = (this->fields).m_VerticalVirtualAxis;
-            if (pCVar34 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
-              (pCVar34->fields).m_Value = fStack_33;
+          if (pCVar37 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
+            (pCVar37->fields).m_Value = fVar14;
+            pCVar37 = (this->fields).m_VerticalVirtualAxis;
+            if (pCVar37 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
+              (pCVar37->fields).m_Value = (float)puVar36;
               return;
             }
           }
@@ -478,8 +530,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar35 = (code *)swi(3);
-  (*pcVar35)();
+  pcVar38 = (code *)swi(3);
+  (*pcVar38)();
   return;
 }
 
@@ -505,16 +557,19 @@ void Assembly-CSharp.dll::Joystick::Joystick__ctor(Joystick *this,MethodInfo *me
   this_00 = (SmoothTouchAxis *)func_?(TypeInfo__SmoothTouchAxis);
   SmoothTouchAxis::SmoothTouchAxis__ctor(this_00,3,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&(value->fields).smoothTouchAxis;
-  (value->fields).smoothTouchAxis = this_00;
+  *(SmoothTouchAxis **)method_00 = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)value,ExceptionArgument__Enum_obj,method_00);
-  (this->fields).joystickLockAxis = value;
-  func_?(&(this->fields).joystickLockAxis,value);
-  (this->fields).horizontalAxisName = StringLiteral_Horizontal;
-  func_?(&(this->fields).horizontalAxisName,StringLiteral_Horizontal);
-  (this->fields).verticalAxisName = StringLiteral_Vertical;
-  func_?(&(this->fields).verticalAxisName,StringLiteral_Vertical);
+  ppJVar1 = &(this->fields).joystickLockAxis;
+  *ppJVar1 = value;
+  func_?(ppJVar1,value);
+  ppSVar2 = &(this->fields).horizontalAxisName;
+  *ppSVar2 = StringLiteral_Horizontal;
+  func_?(ppSVar2,StringLiteral_Horizontal);
+  ppSVar2 = &(this->fields).verticalAxisName;
+  *ppSVar2 = StringLiteral_Vertical;
+  func_?(ppSVar2,StringLiteral_Vertical);
   (this->fields).useSupressAxis = 1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

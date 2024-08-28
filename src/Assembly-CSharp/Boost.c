@@ -8,15 +8,19 @@ void Assembly-CSharp.dll::Boost::Boost__ctor
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  ppSVar1 = &(this->fields)._BoostKey_k__BackingField;
   (this->fields)._Type_k__BackingField = type;
-  (this->fields)._BoostKey_k__BackingField = boostKey;
-  func_?(&(this->fields)._BoostKey_k__BackingField,boostKey);
-  (this->fields).description = desc;
-  func_?(&(this->fields).description,desc);
-  (this->fields)._ValueDescription_k__BackingField = valueDesc;
-  func_?(&(this->fields)._ValueDescription_k__BackingField,valueDesc);
-  (this->fields)._EditTitle_k__BackingField = title;
-  func_?(&(this->fields)._EditTitle_k__BackingField,title);
+  *ppSVar1 = boostKey;
+  func_?(ppSVar1,boostKey);
+  ppSVar1 = &(this->fields).description;
+  *ppSVar1 = desc;
+  func_?(ppSVar1,desc);
+  ppSVar1 = &(this->fields)._ValueDescription_k__BackingField;
+  *ppSVar1 = valueDesc;
+  func_?(ppSVar1,valueDesc);
+  ppSVar1 = &(this->fields)._EditTitle_k__BackingField;
+  *ppSVar1 = title;
+  func_?(ppSVar1,title);
   (this->fields)._AllowedForGame_k__BackingField = allowedForGame;
   return;
 }

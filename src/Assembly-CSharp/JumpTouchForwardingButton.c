@@ -47,17 +47,15 @@ void Assembly-CSharp.dll::JumpTouchForwardingButton::JumpTouchForwardingButton_O
                (JumpTouchForwardingButton *this,PointerEventData *eventData,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
   if (eventData != (PointerEventData *)0x0) {
-    fVar2 = (eventData->fields)._position_k__BackingField.y;
+    fVar1 = (eventData->fields)._position_k__BackingField.y;
     (this->fields).startPos.x = (eventData->fields)._position_k__BackingField.x;
-    (this->fields).startPos.y = fVar2;
+    (this->fields).startPos.y = fVar1;
     return;
   }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

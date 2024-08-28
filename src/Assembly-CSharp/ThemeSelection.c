@@ -95,25 +95,25 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_CreateThemeButtons
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
               (pTVar3,(Transform *)(this->fields).themeButtonContainer,0,(MethodInfo *)0x0);
     method_00 = this_00[0xf].klass;
-    pNVar4 = (NavMesh_OnNavMeshPreUpdate *)
-             func_?(TypeInfo__UnityEngine__Events__UnityAction);
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)
+              func_?(TypeInfo__UnityEngine__Events__UnityAction);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar4,(Object *)this,MethodInfo__ThemeSelection___CreateThemeButtons_b__21_0__,
+              (this_01,(Object *)this,MethodInfo__ThemeSelection___CreateThemeButtons_b__21_0__,
                (MethodInfo *)0x0);
     if (method_00 == (Component__Class *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-              ((UnityEvent *)method_00,(UnityAction *)pNVar4,(MethodInfo *)0x0);
+              ((UnityEvent *)method_00,(UnityAction *)this_01,(MethodInfo *)0x0);
   }
-  puVar5 = (undefined1 *)0x0;
+  uVar4 = 0;
   if (data != (ThemeData__Array *)0x0) {
-    ppTVar6 = data->vector;
+    ppTVar5 = data->vector;
     while( true ) {
-      if ((int)data->max_length <= (int)puVar5) {
+      if ((int)data->max_length <= (int)uVar4) {
         return;
       }
-      if ((undefined1 *)data->max_length <= puVar5) break;
-      pOVar7 = (Object__Class *)*ppTVar6;
+      if (data->max_length <= uVar4) break;
+      pOVar6 = (Object__Class *)*ppTVar5;
       value = (Object *)func_?(TypeInfo__ThemeSelection____c__DisplayClass21_0);
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                 (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -124,13 +124,13 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_CreateThemeButtons
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pOVar8 = (Object__Class *)
+      pOVar7 = (Object__Class *)
                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                          ((Object *)original_00,
                           ThemeSelectionButton_MethodInfo__UnityEngine__Object__Instantiate<ThemeSelectionButton>_ThemeSelectionButton_
                          );
-      value[1].klass = pOVar8;
-      func_?(value + 1,pOVar8);
+      value[1].klass = pOVar7;
+      func_?(value + 1,pOVar7);
       if (value[1].klass == (Object__Class *)0x0) goto code_?;
       pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                          ((Component *)value[1].klass,(MethodInfo *)0x0);
@@ -149,54 +149,52 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_CreateThemeButtons
         if (pTVar2 == (ThemeWorldObject *)0x0) goto code_?;
         a = ThemeWorldObject::ThemeWorldObject_get_Identifier(pTVar2,(MethodInfo *)0x0);
       }
-      if (pOVar7 == (Object__Class *)0x0) goto code_?;
-      bVar9 = mscorlib.dll::System::String::String_op_Equality
-                        (a,(String *)(pOVar7->_0).namespaze,(MethodInfo *)0x0);
-      if (bVar9 == 0) {
-        pUVar10 = (UnityAction__Class *)(pOVar7->_0).namespaze;
-        value[1].monitor = (MonitorData *)pUVar10;
-        ppMVar11 = &value[1].monitor;
-        func_?();
-        value[2].klass = pOVar7;
-        func_?(value + 2,pOVar7);
-        pNVar4 = (NavMesh_OnNavMeshPreUpdate *)
-                 func_?(TypeInfo__UnityEngine__Events__UnityAction);
+      if (pOVar6 == (Object__Class *)0x0) goto code_?;
+      bVar8 = mscorlib.dll::System::String::String_op_Equality
+                        (a,(String *)(pOVar6->_0).namespaze,(MethodInfo *)0x0);
+      if (bVar8 == 0) {
+        pUVar9 = (UnityAction__Class *)(pOVar6->_0).namespaze;
+        value[1].monitor = (MonitorData *)pUVar9;
+        func_?(&value[1].monitor);
+        value[2].klass = pOVar6;
+        func_?(value + 2,pOVar6);
+        pUStack_10 = (UnityAction *)func_?(TypeInfo__UnityEngine__Events__UnityAction);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar4,value,
+                  ((NavMesh_OnNavMeshPreUpdate *)pUStack_10,value,
                    MethodInfo__ThemeSelection____c__DisplayClass21_0___CreateThemeButtons_b__2__,
                    (MethodInfo *)0x0);
         pTVar1 = (selectionMenu->fields).themeRepo;
-        pOVar8 = value[1].klass;
+        pOVar7 = value[1].klass;
         if (pTVar1 == (ThemeRepository *)0x0) goto code_?;
         themePrefab = ThemeRepository::ThemeRepository_GetThemePrefab
-                                (pTVar1,(String *)(pOVar7->_0).namespaze,(MethodInfo *)0x0);
-        if (pOVar8 == (Object__Class *)0x0) goto code_?;
+                                (pTVar1,(String *)(pOVar6->_0).namespaze,(MethodInfo *)0x0);
+        if (pOVar7 == (Object__Class *)0x0) goto code_?;
         this._0_1_ = 0;
       }
       else {
-        ppMVar11 = (MonitorData **)&UNK_?;
-        pUVar10 = TypeInfo__UnityEngine__Events__UnityAction;
-        pNVar4 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+        piVar11 = (int *)&UNK_?;
+        pUVar9 = TypeInfo__UnityEngine__Events__UnityAction;
+        pUStack_10 = (UnityAction *)func_?();
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar4,(Object *)selectionMenu,
+                  ((NavMesh_OnNavMeshPreUpdate *)pUStack_10,(Object *)selectionMenu,
                    MethodInfo__ThemeSelection___CreateThemeButtons_b__21_1__,(MethodInfo *)0x0);
+        pOVar7 = (Object__Class *)*piVar11;
         pTVar1 = (selectionMenu->fields).themeRepo;
-        pOVar8 = value[1].klass;
         if (pTVar1 == (ThemeRepository *)0x0) goto code_?;
         themePrefab = ThemeRepository::ThemeRepository_GetThemePrefab
-                                (pTVar1,(String *)(pOVar7->_0).namespaze,(MethodInfo *)0x0);
-        if (pOVar8 == (Object__Class *)0x0) goto code_?;
+                                (pTVar1,(String *)(pOVar6->_0).namespaze,(MethodInfo *)0x0);
+        if (pOVar7 == (Object__Class *)0x0) goto code_?;
         this._0_1_ = 1;
       }
-      method_00 = *(Component__Class **)&(pOVar7->_0).byval_arg.attrs;
+      method_00 = *(Component__Class **)&(pOVar6->_0).byval_arg.attrs;
       ThemeSelectionButton::ThemeSelectionButton_Initialize
-                ((ThemeSelectionButton *)pOVar8,selectionMenu,themePrefab,(UnityAction *)pNVar4,
-                 (pOVar7->_0).byval_arg.data.__klassIndex,(int32_t)method_00,(bool)this,
+                ((ThemeSelectionButton *)pOVar7,selectionMenu,themePrefab,pUStack_10,
+                 (pOVar6->_0).byval_arg.data.__klassIndex,(int32_t)method_00,(bool)this,
                  (MethodInfo *)0x0);
-      puVar5 = (undefined1 *)((int)&(pUVar10->_0).image + 1);
-      ppTVar6 = (ThemeData **)(ppMVar11 + 1);
+      uVar4 = uVar4 + 1;
+      ppTVar5 = &(pUVar9->_0).gc_desc;
     }
     func_?();
   }
@@ -257,28 +255,28 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_LoadTheme
       func_?(&TypeInfo__UnityEngine__Object);
       cRam_? = '\x01';
     }
-    pTVar2 = (this->fields).previewTheme;
+    x = (this->fields).previewTheme;
+    ppTVar2 = &(this->fields).previewTheme;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar3 != 0) {
-      pTVar2 = (this->fields).previewTheme;
-      if (pTVar2 == (Theme *)0x0) goto code_?;
+      if (*ppTVar2 == (Theme *)0x0) goto code_?;
       unaff_EBP = (ExecuteEvents__Class **)&UNK_?;
       pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)pTVar2,(MethodInfo *)0x0);
+                         ((Component *)*ppTVar2,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                 ((Object_1 *)pGVar4,(MethodInfo *)0x0);
     }
-    (this->fields).previewTheme = pTVar1;
+    *ppTVar2 = pTVar1;
     func_?();
     menuController = (this->fields).menuController;
-    pTVar1 = (this->fields).previewTheme;
+    pTVar1 = *ppTVar2;
     if (menuController != (ThemeMenuController *)0x0) {
       if (cRam_? == '\0') {
         func_?();
@@ -312,9 +310,10 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_LoadTheme
                            );
         value[1].klass = pOVar5;
         func_?();
-        if (value[1].klass != (Object__Class *)0x0) {
+        pOVar5 = value[1].klass;
+        if (pOVar5 != (Object__Class *)0x0) {
           ThemePreviewSettingsMenu::ThemePreviewSettingsMenu_Initialize
-                    ((ThemePreviewSettingsMenu *)value[1].klass,(Theme *)value[1].monitor,
+                    ((ThemePreviewSettingsMenu *)pOVar5,(Theme *)value[1].monitor,
                      (ThemeData *)&UNK_?,menuController,(MethodInfo *)0x0);
           pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)menuController,(MethodInfo *)0x0);
@@ -603,9 +602,9 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection__ctor
     func_?(&StringLiteral____Hover_over_a_theme_to_know_mo);
     cRam_? = '\x01';
   }
-  (this->fields).currentDescription = StringLiteral____Hover_over_a_theme_to_know_mo;
-  func_?(&(this->fields).currentDescription,StringLiteral____Hover_over_a_theme_to_know_mo)
-  ;
+  ppSVar1 = &(this->fields).currentDescription;
+  *ppSVar1 = StringLiteral____Hover_over_a_theme_to_know_mo;
+  func_?(ppSVar1,StringLiteral____Hover_over_a_theme_to_know_mo);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
@@ -622,29 +621,29 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_set_PreviewTheme
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pTVar1 = (this->fields).previewTheme;
+  ppTVar1 = &(this->fields).previewTheme;
+  x = *ppTVar1;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 != 0) {
-    pTVar1 = (this->fields).previewTheme;
-    if (pTVar1 == (Theme *)0x0) {
+    if (*ppTVar1 == (Theme *)0x0) {
       func_?();
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
     obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                    ((Component *)pTVar1,(MethodInfo *)0x0);
+                    ((Component *)*ppTVar1,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
               ((Object_1 *)obj,(MethodInfo *)0x0);
   }
-  (this->fields).previewTheme = value;
+  *ppTVar1 = value;
   func_?();
   return;
 }
@@ -656,18 +655,19 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_set_ThemeDescription
                (ThemeSelection *this,String *value,MethodInfo *method)
 
 {
-  (this->fields).currentDescription = value;
-  func_?(&(this->fields).currentDescription,value);
-  pTVar1 = (this->fields).themeDescription;
-  pSVar2 = TM::TM__((this->fields).currentDescription,(MethodInfo *)0x0);
-  if (pTVar1 != (Text *)0x0) {
-    (*(code *)(pTVar1->klass->vtable).set_text.method)
-              (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+  ppSVar1 = &(this->fields).currentDescription;
+  *ppSVar1 = value;
+  func_?(ppSVar1,value);
+  pTVar2 = (this->fields).themeDescription;
+  pSVar3 = TM::TM__(*ppSVar1,(MethodInfo *)0x0);
+  if (pTVar2 != (Text *)0x0) {
+    (*(code *)(pTVar2->klass->vtable).set_text.method)
+              (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

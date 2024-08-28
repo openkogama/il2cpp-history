@@ -26,8 +26,7 @@ void Assembly-CSharp.dll::GizmoMenu+<>c__DisplayClass22_0::
     do {
       if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__ICloneHandler) {
-        ppMVar6 = &(&handler->klass->vtable)[handler->klass->interfaceOffsets[uVar4].offset].Clone.
-                   method;
+        ppMVar6 = &(&handler->klass->vtable)[pIVar3->interfaceOffsets[uVar4].offset].Clone.method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;

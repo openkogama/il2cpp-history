@@ -13,34 +13,35 @@ AvatarLimbManagerLocal_AvatarPointingHandlerLocal_ApplyYawOffset
     func_?(&TypeInfo__UnityEngine__Quaternion);
     cRam_? = '\x01';
   }
-  iVar1 = func_?(&QStack_2.y,&(this->fields).yawRotation,0);
-  uVar3 = _UNK_?;
-  if ((_UNK_? < *(float *)(iVar1 + 4) || _UNK_? == *(float *)(iVar1 + 4)) &&
-     (iVar1 = func_?(&QStack_2.y,&(this->fields).yawRotation,0), uVar3 = _UNK_?,
-     *(float *)(iVar1 + 4) <= _UNK_?)) {
-    uVar3 = _UNK_?;
+  pQVar1 = &(this->fields).yawRotation;
+  iVar2 = func_?(&QStack_3.y,pQVar1,0);
+  uVar4 = _UNK_?;
+  if ((_UNK_? < *(float *)(iVar2 + 4) || _UNK_? == *(float *)(iVar2 + 4)) &&
+     (iVar2 = func_?(&QStack_3.y,pQVar1,0), uVar4 = _UNK_?,
+     *(float *)(iVar2 + 4) <= _UNK_?)) {
+    uVar4 = _UNK_?;
   }
-  QStack_2.w = 0.0;
-  auVar4._4_8_ = 0;
-  auVar4._0_4_ = uVar3;
-  pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                     (&QStack_2,(Vector3)(auVar4 << 0x20),(MethodInfo *)0x0);
-  fVar6 = pQVar5->x;
-  fVar7 = pQVar5->y;
-  fVar8 = pQVar5->z;
-  fVar9 = pQVar5->w;
+  QStack_3.w = 0.0;
+  auVar5._4_8_ = 0;
+  auVar5._0_4_ = uVar4;
+  pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+                     (&QStack_3,(Vector3)(auVar5 << 0x20),(MethodInfo *)0x0);
+  fVar6 = pQVar1->x;
+  fVar7 = pQVar1->y;
+  fVar8 = pQVar1->z;
+  fVar9 = pQVar1->w;
   __return_storage_ptr__->x =
-       (newYawRotation.w * fVar6 + newYawRotation.x * fVar9 + newYawRotation.y * fVar8) -
-       newYawRotation.z * fVar7;
+       (fVar6 * newYawRotation.w + fVar9 * newYawRotation.x + fVar8 * newYawRotation.y) -
+       fVar7 * newYawRotation.z;
   __return_storage_ptr__->y =
-       (fVar7 * newYawRotation.w + newYawRotation.y * fVar9 + newYawRotation.z * fVar6) -
+       (fVar7 * newYawRotation.w + fVar9 * newYawRotation.y + fVar6 * newYawRotation.z) -
        fVar8 * newYawRotation.x;
   __return_storage_ptr__->z =
-       (fVar8 * newYawRotation.w + newYawRotation.z * fVar9 + fVar7 * newYawRotation.x) -
-       newYawRotation.y * fVar6;
+       (fVar8 * newYawRotation.w + fVar9 * newYawRotation.z + fVar7 * newYawRotation.x) -
+       fVar6 * newYawRotation.y;
   __return_storage_ptr__->w =
-       ((newYawRotation.w * fVar9 - fVar6 * newYawRotation.x) - fVar7 * newYawRotation.y) -
-       newYawRotation.z * fVar8;
+       ((fVar9 * newYawRotation.w - fVar6 * newYawRotation.x) - fVar7 * newYawRotation.y) -
+       fVar8 * newYawRotation.z;
   return __return_storage_ptr__;
 }
 
@@ -80,18 +81,17 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
 
 {
   if ((this->fields)._.isActive != 0) {
-    pAVar1 = (this->fields).OnIsPointingChange;
-    fVar2 = (this->fields)._.prevLookDirection.x;
-    fVar3 = (this->fields)._.prevLookDirection.y;
+    fVar1 = (this->fields)._.prevLookDirection.x;
+    fVar2 = (this->fields)._.prevLookDirection.y;
     (this->fields)._.elapsedPointingTime = (this->fields)._.pointingDuration;
-    fVar4 = (this->fields)._.prevLookDirection.z;
-    (this->fields)._.pointingDirection.x = fVar2;
-    (this->fields)._.pointingDirection.y = fVar3;
-    (this->fields)._.pointingDirection.z = fVar4;
-    if (pAVar1 != (Action_1_Boolean_ *)0x0) {
-      pAVar1 = (this->fields).OnIsPointingChange;
-      (*(pAVar1->fields)._._.invoke_impl)
-                ((pAVar1->fields)._._.method_code,1,(pAVar1->fields)._._.method);
+    fVar3 = (this->fields)._.prevLookDirection.z;
+    (this->fields)._.pointingDirection.x = fVar1;
+    (this->fields)._.pointingDirection.y = fVar2;
+    (this->fields)._.pointingDirection.z = fVar3;
+    pAVar4 = (this->fields).OnIsPointingChange;
+    if (pAVar4 != (Action_1_Boolean_ *)0x0) {
+      (*(pAVar4->fields)._._.invoke_impl)
+                ((pAVar4->fields)._._.method_code,1,(pAVar4->fields)._._.method);
     }
   }
   return;
@@ -111,8 +111,8 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
   fVar1 = fVar1 - fVar2;
   (this->fields).networkMessageCooldown = fVar1;
   if (fVar1 <= 0.0) {
-    if ((this->fields).OnUpdatePointingValue != (Action_1_UnityEngine_Quaternion_ *)0x0) {
-      pAVar3 = (this->fields).OnUpdatePointingValue;
+    pAVar3 = (this->fields).OnUpdatePointingValue;
+    if (pAVar3 != (Action_1_UnityEngine_Quaternion_ *)0x0) {
       if ((this->fields)._.shouldPoint == 0) {
         if (cRam_? == '\0') {
           func_?(&TypeInfo__UnityEngine__Quaternion);
@@ -163,8 +163,8 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
     fVar1 = fVar1 - fVar3;
     (this->fields).networkMessageCooldown = fVar1;
     if (fVar1 <= 0.0) {
-      if ((this->fields).OnUpdatePointingValue != (Action_1_UnityEngine_Quaternion_ *)0x0) {
-        pAVar11 = (this->fields).OnUpdatePointingValue;
+      pAVar11 = (this->fields).OnUpdatePointingValue;
+      if (pAVar11 != (Action_1_UnityEngine_Quaternion_ *)0x0) {
         if ((this->fields)._.shouldPoint == 0) {
           if (cRam_? == '\0') {
             func_?(&TypeInfo__UnityEngine__Quaternion);
@@ -194,8 +194,8 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
     }
   }
   else {
-    if ((this->fields).OnUpdatePointingValue != (Action_1_UnityEngine_Quaternion_ *)0x0) {
-      pAVar11 = (this->fields).OnUpdatePointingValue;
+    pAVar11 = (this->fields).OnUpdatePointingValue;
+    if (pAVar11 != (Action_1_UnityEngine_Quaternion_ *)0x0) {
       if (cRam_? == '\0') {
         func_?(&TypeInfo__UnityEngine__Quaternion);
         cRam_? = '\x01';
@@ -206,8 +206,8 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
                  (pQVar12->identityQuaternion).y,(pQVar12->identityQuaternion).z,
                  (pQVar12->identityQuaternion).w,(pAVar11->fields)._._.method);
     }
-    if ((this->fields).OnIsPointingChange != (Action_1_Boolean_ *)0x0) {
-      pAVar13 = (this->fields).OnIsPointingChange;
+    pAVar13 = (this->fields).OnIsPointingChange;
+    if (pAVar13 != (Action_1_Boolean_ *)0x0) {
       (*(pAVar13->fields)._._.invoke_impl)
                 ((pAVar13->fields)._._.method_code,0,(pAVar13->fields)._._.method);
     }

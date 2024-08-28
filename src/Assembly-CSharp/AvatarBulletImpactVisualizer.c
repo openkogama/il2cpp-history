@@ -34,21 +34,21 @@ void Assembly-CSharp.dll::AvatarBulletImpactVisualizer::
     bursts = (ParticleSystem_Burst__Array *)func_?();
     if (bursts != (ParticleSystem_Burst__Array *)0x0) {
       if (bursts->max_length != 0) {
+        this_00 = bursts->vector;
         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::
-        ParticleSystem_Burst_set_time(bursts->vector,0.0,(MethodInfo *)0x0);
+        ParticleSystem_Burst_set_time(this_00,0.0,(MethodInfo *)0x0);
         if (bursts->max_length != 0) {
           voxelHit.collider._0_2_ =
-               (int16_t)(int)((float)shooterActorNumber * (this->fields).particlesPerPointOfDamage);
+               (int16_t)(int)((this->fields).particlesPerPointOfDamage * (float)shooterActorNumber);
           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::
-          ParticleSystem_Burst_set_minCount
-                    (bursts->vector,(int16_t)voxelHit.collider,(MethodInfo *)0x0);
+          ParticleSystem_Burst_set_minCount(this_00,(int16_t)voxelHit.collider,(MethodInfo *)0x0);
           if (bursts->max_length != 0) {
             voxelHit.interactionFlags._0_2_ =
                  (int16_t)(int)((this->fields).particlesPerPointOfDamage * (float)shooterActorNumber
                                );
             UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::
             ParticleSystem_Burst_set_maxCount
-                      (bursts->vector,(int16_t)voxelHit.interactionFlags,(MethodInfo *)0x0);
+                      (this_00,(int16_t)voxelHit.interactionFlags,(MethodInfo *)0x0);
             UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
             ParticleSystem_EmissionModule_SetBursts
                       ((ParticleSystem_EmissionModule *)&stack0xfffffff8,bursts,(MethodInfo *)0x0);

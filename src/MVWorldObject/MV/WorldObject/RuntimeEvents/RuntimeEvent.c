@@ -122,23 +122,36 @@ MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::RuntimeEvent_Cr
   default:
     return (RuntimeEvent *)0x0;
   }
+  pOVar1 = (Object *)runtimeEventType;
   if (bytePacker == (BytePacker *)0x0) {
 code_?:
     uVar4 = func_?();
-    out((short)((uint6)uVar4 >> 0x20),(int)uVar4);
-    func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
+    pbVar5 = (byte *)uVar4;
+    out(*(undefined1 *)&pOVar1->klass,(short)((ulonglong)uVar4 >> 0x20));
+    paddusb(in_MM2,*(undefined8 *)pbVar5);
+    *pbVar5 = *pbVar5 | (byte)((ulonglong)uVar4 >> 0x20);
+    pcVar6 = (char *)((int)((ulonglong)uVar4 >> 0x20) - *(int *)pbVar5);
+    cVar7 = (char)uVar4;
+    *pbVar5 = *pbVar5 + cVar7;
+    *extraout_ECX = (int)(pbVar5 + *extraout_ECX);
+    *(char *)extraout_ECX = (char)*extraout_ECX + cVar7;
+    *extraout_ECX = (int)(pbVar5 + *extraout_ECX);
+    *extraout_ECX = (int)(pbVar5 + *extraout_ECX);
+    *extraout_ECX =
+         *extraout_ECX + CONCAT31((int3)((ulonglong)uVar4 >> 8),cVar7 + *pcVar6 + *pcVar6);
+    pcVar8 = (code *)swi(3);
+    pRVar9 = (RuntimeEvent *)(*pcVar8)();
+    return pRVar9;
   }
 code_?:
-  uVar5 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-  uVar6 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-  uVar7 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-  uVar8._0_2_ = 0;
-  uVar8._2_2_ = 0;
+  uVar10 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+  uVar11 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+  uVar12 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+  uVar13._0_2_ = 0;
+  uVar13._2_2_ = 0;
   IntVector::IntVector__ctor_1
-            ((IntVector *)&stack0xfffffff4,(uint)uVar5,(uint)uVar6,(uint)uVar7,(MethodInfo *)0x0);
-  *(undefined4 *)(runtimeEventType + RuntimeEventType__Enum_AvatarImpact75) = uVar8;
+            ((IntVector *)&stack0xfffffff4,(uint)uVar10,(uint)uVar11,(uint)uVar12,(MethodInfo *)0x0);
+  *(undefined4 *)(runtimeEventType + RuntimeEventType__Enum_AvatarImpact75) = uVar13;
   *(undefined2 *)
    (runtimeEventType + (RuntimeEventType__Enum_AvatarImpact75|RuntimeEventType__Enum_AvatarImpact25)
    ) = 0;

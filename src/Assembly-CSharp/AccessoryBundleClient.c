@@ -26,14 +26,15 @@ void Assembly-CSharp.dll::AccessoryBundleClient::AccessoryBundleClient__ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<MV::WorldObject::Accessories::AccessoryBundleItem>__List__
             );
-  (this->fields)._.accessoryBundleItems = this_00;
-  func_?(&(this->fields)._.accessoryBundleItems,this_00);
+  ppLVar1 = &(this->fields)._.accessoryBundleItems;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   method_01 = TypeInfo__MV__WorldObject__Accessories__AccessoryTimelimit;
   value = (AccessoryTimelimit *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
   method_00 = (MethodInfo *)&(this->fields)._.timelimit;
-  (this->fields)._.timelimit = value;
+  *(AccessoryTimelimit **)method_00 = value;
   func_?(method_00,value);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

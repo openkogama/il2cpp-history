@@ -15,23 +15,15 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationResponseHandling::
     func_?();
     func_?();
     func_?();
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__IEditModeUI);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&
-                    System__Collections__Generic__List<MV::WorldObject::ThemesData::ThemeData>_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<System::Collections::Generic::List<MV::WorldObject::ThemesData::ThemeData>_>_System__String_
-                   );
-    func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::ThemesData::ThemeData>__ToArray__
-                   );
-    func_?(&TypeInfo__MV__Common__MVOperationCodes);
-    func_?(&TypeInfo__PostRequest);
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
     func_?(&TypeInfo__QuitConnectionError);
     func_?(&TypeInfo__ScreenshotUploadedEventArgs);
     func_?();
@@ -39,15 +31,15 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationResponseHandling::
     func_?();
     func_?();
     func_?();
-    func_?(&StringLiteral_Failed_to_claim_gold);
-    func_?(&StringLiteral_Unhandled_operation_code_);
-    func_?(&StringLiteral_Successfully_published_planet);
-    func_?(&StringLiteral_You_are_not_authorized_to_publis);
-    func_?(&StringLiteral_Failed_to_unregister_worldObject);
-    func_?(&StringLiteral_Gold_claimed__Marcus__Handle_thi);
-    func_?(&StringLiteral_SetAvatarAccessorySlot_operation);
-    func_?(&StringLiteral_UpdateWorldObjectData_FAILED_on_);
-    func_?(&StringLiteral_profile_id);
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
     func_?(&StringLiteral_s_gamePublishedURL_is_null_or_em);
     func_?(&StringLiteral_planet_id);
     func_?();
@@ -55,7 +47,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationResponseHandling::
     func_?();
     cRam_? = '\x01';
   }
-  pMVar1 = (MVNetworkGame *)returnValues;
+  pDVar1 = (Dictionary_2_System_Object_System_Object___Class *)returnValues;
   if (MVOperationCodes__Enum_UploadBytes < (byte)(undefined1)opCode) {
     if (MVOperationCodes__Enum_GetThemesData < (byte)(undefined1)opCode) {
       if ((byte)(undefined1)opCode < MVOperationCodes__Enum_GetAvatarBodies) {
@@ -65,81 +57,98 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationResponseHandling::
             return;
           }
           pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+          bVar3 = 0;
           if (pMVar2 != (MVLocalPlayer *)0x0) {
             MVLocalPlayer::MVLocalPlayer_UnSuspendCurrentSpawnRole(pMVar2,(MethodInfo *)0x0);
             return;
           }
           goto code_?;
         }
-        unaff_ESI = (MVNetworkGame *)returnValues;
+        bVar3 = 0;
+        unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)returnValues;
         if (returnValues == (Dictionary_2_System_Byte_System_Object_ *)0x0) goto code_?;
-        bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
+        bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                  Object]::Dictionary_2_System_Byte_System_Object__ContainsKey
                            (returnValues,0x82,
                             MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__ContainsKey_unsigned_char_
                            );
-        if (bVar3 == 0) {
+        if (bVar4 == 0) {
           return;
         }
-        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        unaff_ESI = (MVNetworkGame *)returnValues;
-        if ((pMVar4 == (MVNetworkGame *)0x0) ||
-           (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
-           unaff_ESI = (MVNetworkGame *)returnValues, pMVar2 == (MVLocalPlayer *)0x0))
-        goto code_?;
-        unaff_EDI = (MVNetworkGame *)(pMVar2->fields)._._UserProfileData_k__BackingField;
-        pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
+        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        bVar3 = 0;
+        unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)returnValues;
+        if (pMVar5 == (MVNetworkGame *)0x0) goto code_?;
+        in_stack_6 = (Enum__Class *)0x0;
+        pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar5,(MethodInfo *)0x0);
+        bVar3 = 0;
+        unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)returnValues;
+        if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
+        pUVar7 = (pMVar2->fields)._._UserProfileData_k__BackingField;
+        in_stack_6 = (Enum__Class *)returnValues;
+        pOVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                   Object]::Dictionary_2_System_Byte_System_Object__get_Item
                             (returnValues,0x82,
                              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                             );
-        unaff_ESI = (MVNetworkGame *)returnValues;
-        if ((unaff_EDI == (MVNetworkGame *)0x0) ||
-           (unaff_ESI = (MVNetworkGame *)returnValues, pOVar5 == (Object *)0x0))
-        goto code_?;
-        if ((pOVar5->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-        goto code_?;
-        p_Var17 = (_union_86 *)func_?();
-        ((Il2CppType *)&(unaff_EDI->fields).ReceivedAccessoryData)->data = *p_Var17;
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        unaff_ESI = (MVNetworkGame *)returnValues;
-        if ((pMVar1 == (MVNetworkGame *)0x0) ||
-           (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
-           unaff_ESI = (MVNetworkGame *)returnValues, pMVar2 == (MVLocalPlayer *)0x0))
-        goto code_?;
+        bVar3 = 0;
+        unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)returnValues;
+        if ((pUVar7 == (UserProfileData *)0x0) ||
+           (bVar3 = 0, unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)returnValues
+           , pOVar8 == (Object *)0x0)) goto code_?;
+        pIVar9 = (pOVar8->klass->_0).element_class;
+        pIVar10 = (TypeInfo__System__Int32->_0).element_class;
+        bVar3 = pIVar9 < pIVar10;
+        if (pIVar9 != pIVar10) goto code_?;
+        piVar11 = (int32_t *)func_?();
+        (pUVar7->fields).Gold = *piVar11;
+        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        bVar3 = 0;
+        unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)returnValues;
+        if (pMVar5 == (MVNetworkGame *)0x0) goto code_?;
+        pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar5,(MethodInfo *)0x0);
+        bVar3 = 0;
+        unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)returnValues;
+        if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
         if ((pMVar2->fields)._.OnGoldAmountChange == (Action *)0x0) {
           return;
         }
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        unaff_ESI = (MVNetworkGame *)returnValues;
-        if ((pMVar1 == (MVNetworkGame *)0x0) ||
-           (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
-           unaff_ESI = (MVNetworkGame *)returnValues, pMVar2 == (MVLocalPlayer *)0x0))
-        goto code_?;
-        pAVar6 = (pMVar2->fields)._.OnGoldAmountChange;
-        unaff_ESI = (MVNetworkGame *)returnValues;
+        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        bVar3 = 0;
+        unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)returnValues;
+        if (pMVar5 == (MVNetworkGame *)0x0) goto code_?;
+        pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar5,(MethodInfo *)0x0);
+        bVar3 = 0;
+        unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)returnValues;
+        if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
+        pAVar12 = (pMVar2->fields)._.OnGoldAmountChange;
+        unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)returnValues;
       }
       else {
         if ((undefined1)opCode == MVOperationCodes__Enum_VehicleEnergyUse) {
-          pMVar1 = (this->fields).networkGame;
-          if ((pMVar1 != (MVNetworkGame *)0x0) &&
-             (pMVar7 = (pMVar1->fields)._PlayerController_k__BackingField,
-             pMVar7 != (MVLocalObjectController *)0x0)) {
-            MVLocalObjectController::MVLocalObjectController_VehicleEnergyUseResponse
-                      (pMVar7,returnCode == 0,returnValues,(MethodInfo *)0x0);
-            return;
+          pMVar5 = (this->fields).networkGame;
+          bVar3 = 0;
+          if (pMVar5 != (MVNetworkGame *)0x0) {
+            pMVar13 = (pMVar5->fields)._PlayerController_k__BackingField;
+            bVar3 = 0;
+            if (pMVar13 != (MVLocalObjectController *)0x0) {
+              MVLocalObjectController::MVLocalObjectController_VehicleEnergyUseResponse
+                        (pMVar13,returnCode == 0,returnValues,(MethodInfo *)0x0);
+              return;
+            }
           }
           goto code_?;
         }
         if ((undefined1)opCode != MVOperationCodes__Enum_GetInventoryItemData) {
           if ((undefined1)opCode != MVOperationCodes__Enum_Join) goto code_?;
-          pMVar1 = (this->fields).networkGame;
-          if (pMVar1 != (MVNetworkGame *)0x0) {
-            (pMVar1->fields).connState = 4;
+          pMVar5 = (this->fields).networkGame;
+          bVar3 = 0;
+          if (pMVar5 != (MVNetworkGame *)0x0) {
+            (pMVar5->fields).connState = 4;
             if (returnCode != 0) {
               if ((returnCode == -0xc) &&
-                 (bVar3 = MVGameControllerBase::MVGameControllerBase_TryReauth((MethodInfo *)0x0),
-                 bVar3 != 0)) {
+                 (bVar4 = MVGameControllerBase::MVGameControllerBase_TryReauth((MethodInfo *)0x0),
+                 bVar4 != 0)) {
                 return;
               }
               if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -154,9 +163,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationResponseHandling::
                         ((QuitBaseCallback *)this_00,(MethodInfo *)0x0);
               return;
             }
-            pMVar1 = (this->fields).networkGame;
-            if (pMVar1 != (MVNetworkGame *)0x0) {
-              MVNetworkGame::MVNetworkGame_OnJoinResponse(pMVar1,returnValues,(MethodInfo *)0x0);
+            pMVar5 = (this->fields).networkGame;
+            bVar3 = 0;
+            if (pMVar5 != (MVNetworkGame *)0x0) {
+              MVNetworkGame::MVNetworkGame_OnJoinResponse(pMVar5,returnValues,(MethodInfo *)0x0);
               return;
             }
           }
@@ -165,14 +175,29 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationResponseHandling::
         if (returnCode != -1) {
           return;
         }
-        iVar8 = func_?();
-        if ((iVar8 == 0) || (iVar8 = func_?(), iVar8 == 0)) goto code_?;
-        if (*(int *)(iVar8 + 0x10) == 0) {
+        iVar14 = func_?();
+        bVar3 = 0;
+        if (iVar14 == 0) goto code_?;
+        iVar14 = func_?();
+        bVar3 = 0;
+        if (iVar14 == 0) goto code_?;
+        if (*(int *)(iVar14 + 0x10) == 0) {
           return;
         }
-        iVar8 = func_?();
-        if ((iVar8 == 0) || (iVar8 = func_?(), iVar8 == 0)) goto code_?;
-        pAVar6 = *(Action **)(iVar8 + 0x10);
+        iVar14 = func_?();
+        bVar3 = 0;
+        if (iVar14 == 0) goto code_?;
+        iVar14 = func_?();
+        bVar3 = 0;
+        if (iVar14 == 0) goto code_?;
+        pAVar12 = *(Action **)(iVar14 + 0x10);
+      }
+code_?:
+      bVar3 = 0;
+      if (pAVar12 != (Action *)0x0) {
+code_?:
+        (*(pAVar12->fields)._._.invoke_impl)();
+        return;
       }
       goto code_?;
     }
@@ -194,17 +219,19 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationResponseHandling::
         return;
       }
       if ((undefined1)opCode == MVOperationCodes__Enum_UnEquipAccessory) {
-        pMVar1 = (this->fields).networkGame;
-        if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-        if ((pMVar1->fields).OnAccessoryUnequipped == (Action *)0x0) {
+        pMVar5 = (this->fields).networkGame;
+        bVar3 = 0;
+        if (pMVar5 == (MVNetworkGame *)0x0) goto code_?;
+        if ((pMVar5->fields).OnAccessoryUnequipped == (Action *)0x0) {
           return;
         }
-        pAVar6 = (pMVar1->fields).OnAccessoryUnequipped;
+        pAVar12 = (pMVar5->fields).OnAccessoryUnequipped;
         goto code_?;
       }
       if ((undefined1)opCode != MVOperationCodes__Enum_GetThemesData) goto code_?;
+      bVar3 = 0;
       if (returnValues == (Dictionary_2_System_Byte_System_Object_ *)0x0) goto code_?;
-      pMVar1 = (MVNetworkGame *)
+      pDVar1 = (Dictionary_2_System_Object_System_Object___Class *)
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                 Object]::Dictionary_2_System_Byte_System_Object__get_Item
                           (returnValues,0xcf,
@@ -213,25 +240,27 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationResponseHandling::
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pMVar4 = (MVNetworkGame *)0x0;
-      if (pMVar1 != (MVNetworkGame *)0x0) {
-        if ((String__Class *)pMVar1->klass == TypeInfo__System__String) {
-          pMVar4 = pMVar1;
+      pDVar15 = (Dictionary_2_System_Object_System_Object___Class *)0x0;
+      if (pDVar1 != (Dictionary_2_System_Object_System_Object___Class *)0x0) {
+        if ((String__Class *)(pDVar1->_0).image == TypeInfo__System__String) {
+          pDVar15 = pDVar1;
         }
-        if (pMVar4 == (MVNetworkGame *)0x0) goto code_?;
+        bVar3 = 0;
+        if (pDVar15 == (Dictionary_2_System_Object_System_Object___Class *)0x0)
+        goto code_?;
       }
       this_01 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                  *)Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::
                    JsonConvert_DeserializeObject_2
-                             ((String *)pMVar4,
+                             ((String *)pDVar15,
                               System__Collections__Generic__List<MV::WorldObject::ThemesData::ThemeData>_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<System::Collections::Generic::List<MV::WorldObject::ThemesData::ThemeData>_>_System__String_
                              );
-      if (TypeInfo__ThemeSelection__CallbackHandler->static_fields->OnThemeDataReceived ==
-          (Action_1_MV_WorldObject_ThemesData_ThemeData_ *)0x0) {
+      unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)
+                  TypeInfo__ThemeSelection__CallbackHandler->static_fields->OnThemeDataReceived;
+      if (unaff_ESI == (Dictionary_2_System_Object_System_Object___Class *)0x0) {
         return;
       }
-      unaff_ESI = (MVNetworkGame *)
-                  TypeInfo__ThemeSelection__CallbackHandler->static_fields->OnThemeDataReceived;
+      bVar3 = 0;
       if (this_01 !=
           (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
            *)0x0) {
@@ -241,108 +270,132 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationResponseHandling::
                   (this_01,
                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::ThemesData::ThemeData>__ToArray__
                   );
-        (*(code *)(unaff_ESI->fields).ReceivedAvatarBodiesFromQuery)();
+        (*(code *)(unaff_ESI->_0).namespaze)();
         return;
       }
       goto code_?;
     }
     if ((undefined1)opCode == MVOperationCodes__Enum_CloneWorldObjectTreeWithPosition) {
 code_?:
-      if ((returnValues == (Dictionary_2_System_Byte_System_Object_ *)0x0) ||
-         (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
-                    Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                              (returnValues,0x16,
-                               MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                              ), pOVar5 == (Object *)0x0)) goto code_?;
-      pMVar1 = unaff_ESI;
-      if ((pOVar5->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-        piVar9 = (int32_t *)func_?();
-        pMVar1 = (this->fields).networkGame;
-        if (((pMVar1 != (MVNetworkGame *)0x0) &&
-            (pWVar10 = (pMVar1->fields).worldNetwork, pWVar10 != (WorldNetwork *)0x0)) &&
-           (pMVar11 = (pWVar10->fields)._.worldObjectClientManager,
-           pMVar11 != (MVWorldObjectClientManagerNetwork *)0x0)) {
-          MVWorldObjectClientManagerNetwork::
-          MVWorldObjectClientManagerNetwork_OnCloneWorldObjectTreeResponse
-                    (pMVar11,returnCode == 0,*piVar9,(MethodInfo *)0x0);
-          return;
+      bVar3 = 0;
+      if (returnValues == (Dictionary_2_System_Byte_System_Object_ *)0x0) goto code_?;
+      pOVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
+                Object]::Dictionary_2_System_Byte_System_Object__get_Item
+                          (returnValues,0x16,
+                           MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
+                          );
+      bVar3 = 0;
+      if (pOVar8 == (Object *)0x0) goto code_?;
+      pIVar9 = (pOVar8->klass->_0).element_class;
+      pIVar10 = (TypeInfo__System__Int32->_0).element_class;
+      bVar3 = pIVar9 < pIVar10;
+      pDVar1 = unaff_ESI;
+      if (pIVar9 == pIVar10) {
+        piVar11 = (int32_t *)func_?();
+        pMVar5 = (this->fields).networkGame;
+        bVar3 = 0;
+        if (pMVar5 != (MVNetworkGame *)0x0) {
+          pWVar16 = (pMVar5->fields).worldNetwork;
+          bVar3 = 0;
+          if (pWVar16 != (WorldNetwork *)0x0) {
+            pMVar17 = (pWVar16->fields)._.worldObjectClientManager;
+            bVar3 = 0;
+            if (pMVar17 != (MVWorldObjectClientManagerNetwork *)0x0) {
+              MVWorldObjectClientManagerNetwork::
+              MVWorldObjectClientManagerNetwork_OnCloneWorldObjectTreeResponse
+                        (pMVar17,returnCode == 0,*piVar11,(MethodInfo *)0x0);
+              return;
+            }
+          }
         }
         goto code_?;
       }
       goto code_?;
     }
     if ((undefined1)opCode != MVOperationCodes__Enum_SetFirstTimeEvent) goto code_?;
-    unaff_EDI = (MVNetworkGame *)returnValues;
+    bVar3 = 0;
     if (returnValues == (Dictionary_2_System_Byte_System_Object_ *)0x0) goto code_?;
-    pMVar1 = (MVNetworkGame *)
+    pDVar1 = (Dictionary_2_System_Object_System_Object___Class *)
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
               ::Dictionary_2_System_Byte_System_Object__get_Item
                         (returnValues,0xbf,
                          MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                         );
-    pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
+    pOVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
               ::Dictionary_2_System_Byte_System_Object__get_Item
                         (returnValues,0xdb,
                          MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                         );
-    unaff_ESI = pMVar1;
-    if (pOVar5 == (Object *)0x0) goto code_?;
-    if ((pOVar5->klass->_0).element_class != (TypeInfo__System__Byte->_0).element_class)
-    goto code_?;
-    puVar12 = (undefined1 *)func_?();
-    unaff_EBX = (MVNetworkGame *)CONCAT31((int3)((uint)unaff_EBX >> 8),*puVar12);
-    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-    if ((pMVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-      pFVar13 = (FirstTimeEvent__Enum *)func_?();
+    bVar3 = 0;
+    unaff_ESI = pDVar1;
+    if (pOVar8 == (Object *)0x0) goto code_?;
+    pIVar9 = (pOVar8->klass->_0).element_class;
+    pIVar10 = (TypeInfo__System__Byte->_0).element_class;
+    bVar3 = pIVar9 < pIVar10;
+    if (pIVar9 != pIVar10) goto code_?;
+    puVar18 = (undefined1 *)func_?();
+    uVar19 = *puVar18;
+    bVar3 = 0;
+    if (pDVar1 == (Dictionary_2_System_Object_System_Object___Class *)0x0) goto code_?;
+    pIVar9 = (((MVNetworkGame__Class *)(pDVar1->_0).image)->_0).element_class;
+    pIVar10 = (TypeInfo__System__Int32->_0).element_class;
+    bVar3 = pIVar9 < pIVar10;
+    if (pIVar9 == pIVar10) {
+      pFVar20 = (FirstTimeEvent__Enum *)func_?();
       FirstTimeEventManager::FirstTimeEventManager_OnFirstTimeEventResponse
-                (*pFVar13,(XPRewardType__Enum)unaff_EBX,(MethodInfo *)0x0);
+                (*pFVar20,CONCAT31((int3)((uint)unaff_EBX >> 8),uVar19),(MethodInfo *)0x0);
       return;
     }
 code_?:
     func_?();
 code_?:
+    in_stack_6 = (Enum__Class *)&UNK_?;
     func_?();
 code_?:
     func_?();
-    unaff_ESI = pMVar1;
+    unaff_ESI = pDVar1;
     goto code_?;
   }
   if ((byte)(undefined1)opCode < MVOperationCodes__Enum_AddPrototypeToInventory) {
     if (MVOperationCodes__Enum_UpdateWorldObjectData < (byte)(undefined1)opCode) {
       if ((undefined1)opCode == MVOperationCodes__Enum_TransferOwnership) {
-        pMVar1 = (this->fields).networkGame;
-        if (pMVar1 != (MVNetworkGame *)0x0) {
+        pMVar5 = (this->fields).networkGame;
+        bVar3 = 0;
+        if (pMVar5 != (MVNetworkGame *)0x0) {
           MVNetworkGame::MVNetworkGame_OnTransferOwnershipResponse
-                    (pMVar1,returnValues,(int)returnCode,(MethodInfo *)0x0);
+                    (pMVar5,returnValues,(int)returnCode,(MethodInfo *)0x0);
           return;
         }
       }
       else {
         if ((undefined1)opCode != MVOperationCodes__Enum_PublishPlanet) goto code_?;
-        pSVar14 = StringLiteral_You_are_not_authorized_to_publis;
-        if (((returnCode == -2) || (pSVar14 = StringLiteral_Undefined_fail_, returnCode == -1)) ||
-           (pSVar14 = StringLiteral_Unhandled_returnCode, returnCode != 0)) {
-          TM::TM__(pSVar14,(MethodInfo *)0x0);
+        pSVar21 = StringLiteral_You_are_not_authorized_to_publis;
+        if (((returnCode == -2) || (pSVar21 = StringLiteral_Undefined_fail_, returnCode == -1)) ||
+           (pSVar21 = StringLiteral_Unhandled_returnCode, returnCode != 0)) {
+          TM::TM__(pSVar21,(MethodInfo *)0x0);
         }
         else {
           TM::TM__(StringLiteral_Successfully_published_planet,(MethodInfo *)0x0);
-          pMVar1 = (this->fields).networkGame;
-          unaff_ESI = (MVNetworkGame *)this;
-          if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-          (pMVar1->fields).isPublished = 1;
+          pMVar5 = (this->fields).networkGame;
+          bVar3 = 0;
+          unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)this;
+          if (pMVar5 == (MVNetworkGame *)0x0) goto code_?;
+          (pMVar5->fields).isPublished = 1;
         }
-        pMVar1 = (this->fields).networkGame;
-        unaff_ESI = (MVNetworkGame *)this;
-        if (pMVar1 != (MVNetworkGame *)0x0) {
-          if ((pMVar1->fields).OnPublishedPlanet != (UnityAction_1_System_String_ *)0x0) {
-            (*(((pMVar1->fields).OnPublishedPlanet)->fields)._._.invoke_impl)();
+        pMVar5 = (this->fields).networkGame;
+        bVar3 = 0;
+        unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)this;
+        if (pMVar5 != (MVNetworkGame *)0x0) {
+          if ((pMVar5->fields).OnPublishedPlanet != (UnityAction_1_System_String_ *)0x0) {
+            (*(((pMVar5->fields).OnPublishedPlanet)->fields)._._.invoke_impl)();
           }
-          iVar8 = func_?();
-          unaff_ESI = (MVNetworkGame *)this;
-          if (iVar8 != 0) {
-            bVar3 = mscorlib.dll::System::String::String_IsNullOrEmpty
-                               (*(String **)(iVar8 + 0x3c),(MethodInfo *)0x0);
-            if (bVar3 != 0) {
+          iVar14 = func_?();
+          bVar3 = 0;
+          unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)this;
+          if (iVar14 != 0) {
+            bVar4 = mscorlib.dll::System::String::String_IsNullOrEmpty
+                               (*(String **)(iVar14 + 0x3c),(MethodInfo *)0x0);
+            if (bVar4 != 0) {
               if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
@@ -351,42 +404,47 @@ code_?:
               ;
               return;
             }
-            unaff_EDI = (MVNetworkGame *)func_?();
+            this_04 = (WWWForm *)func_?();
             UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm__ctor
-                      ((WWWForm *)unaff_EDI,(MethodInfo *)0x0);
-            iVar8 = func_?();
-            unaff_ESI = (MVNetworkGame *)this;
-            if ((iVar8 != 0) &&
-               (unaff_ESI = (MVNetworkGame *)this, unaff_EDI != (MVNetworkGame *)0x0)) {
+                      (this_04,(MethodInfo *)0x0);
+            in_stack_6 = (Enum__Class *)0x0;
+            iVar14 = func_?();
+            bVar3 = 0;
+            unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)this;
+            if ((iVar14 != 0) &&
+               (bVar3 = 0, unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)this,
+               this_04 != (WWWForm *)0x0)) {
               UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField
-                        ((WWWForm *)unaff_EDI,StringLiteral_token,*(String **)(iVar8 + 0x24),
-                         (MethodInfo *)0x0);
-              iVar8 = func_?();
-              unaff_ESI = (MVNetworkGame *)this;
-              if (iVar8 != 0) {
+                        (this_04,StringLiteral_token,*(String **)(iVar14 + 0x24),(MethodInfo *)0x0);
+              iVar14 = func_?();
+              bVar3 = 0;
+              unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)this;
+              if (iVar14 != 0) {
                 UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2
-                          ((WWWForm *)unaff_EDI,StringLiteral_profile_id,*(int32_t *)(iVar8 + 0xc),
+                          (this_04,StringLiteral_profile_id,*(int32_t *)(iVar14 + 0xc),
                            (MethodInfo *)0x0);
-                iVar8 = func_?();
-                unaff_ESI = (MVNetworkGame *)this;
-                if (iVar8 != 0) {
+                iVar14 = func_?();
+                bVar3 = 0;
+                unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)this;
+                if (iVar14 != 0) {
                   UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2
-                            ((WWWForm *)unaff_EDI,StringLiteral_planet_id,
-                             *(int32_t *)(iVar8 + 0x10),(MethodInfo *)0x0);
-                  iVar8 = func_?();
-                  unaff_ESI = (MVNetworkGame *)this;
-                  if (iVar8 != 0) {
-                    pSVar14 = *(String **)(iVar8 + 0x3c);
-                    this_04 = (PostRequest *)func_?();
+                            (this_04,StringLiteral_planet_id,*(int32_t *)(iVar14 + 0x10),
+                             (MethodInfo *)0x0);
+                  iVar14 = func_?();
+                  bVar3 = 0;
+                  unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)this;
+                  if (iVar14 != 0) {
+                    pSVar21 = *(String **)(iVar14 + 0x3c);
+                    this_05 = (PostRequest *)func_?();
                     PostRequest::PostRequest__ctor
-                              (this_04,pSVar14,(WWWForm *)unaff_EDI,
+                              (this_05,pSVar21,this_04,
                                (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0,
                                WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
                     if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
                       func_?();
                     }
                     AsyncWWWManager::AsyncWWWManager_WWWRequest
-                              ((AsyncWebRequest *)this_04,(MethodInfo *)0x0);
+                              ((AsyncWebRequest *)this_05,(MethodInfo *)0x0);
                     return;
                   }
                 }
@@ -419,19 +477,25 @@ code_?:
                 ((Object *)StringLiteral_Failed_to_unregister_worldObject,(MethodInfo *)0x0);
       return;
     }
-    unaff_ESI = (this->fields).networkGame;
-    if (((returnValues == (Dictionary_2_System_Byte_System_Object_ *)0x0) ||
-        (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
-                   Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                             (returnValues,0x16,
-                              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                             ), unaff_ESI == (MVNetworkGame *)0x0)) || (pOVar5 == (Object *)0x0))
-    goto code_?;
-    pMVar1 = unaff_ESI;
-    if ((pOVar5->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-      piVar9 = (int32_t *)func_?();
+    unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)(this->fields).networkGame;
+    bVar3 = 0;
+    if (returnValues == (Dictionary_2_System_Byte_System_Object_ *)0x0) goto code_?;
+    pOVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
+              ::Dictionary_2_System_Byte_System_Object__get_Item
+                        (returnValues,0x16,
+                         MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
+                        );
+    bVar3 = 0;
+    if ((unaff_ESI == (Dictionary_2_System_Object_System_Object___Class *)0x0) ||
+       (bVar3 = 0, pOVar8 == (Object *)0x0)) goto code_?;
+    pIVar9 = (pOVar8->klass->_0).element_class;
+    pIVar10 = (TypeInfo__System__Int32->_0).element_class;
+    bVar3 = pIVar9 < pIVar10;
+    pDVar1 = unaff_ESI;
+    if (pIVar9 == pIVar10) {
+      piVar11 = (int32_t *)func_?();
       MVNetworkGame::MVNetworkGame_OnUnregisterWorldObjectResponse
-                (unaff_ESI,*piVar9,(MethodInfo *)0x0);
+                ((MVNetworkGame *)unaff_ESI,*piVar11,(MethodInfo *)0x0);
       return;
     }
 code_?:
@@ -446,56 +510,59 @@ code_?:
         return;
       }
 code_?:
-      pSVar14 = mscorlib.dll::System::Enum::Enum_ToString
+      pSVar21 = mscorlib.dll::System::Enum::Enum_ToString
                           ((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
-      pSVar14 = mscorlib.dll::System::String::String_Concat_3
-                          (StringLiteral_Unhandled_operation_code_,pSVar14,(MethodInfo *)0x0);
+      pSVar21 = mscorlib.dll::System::String::String_Concat_3
+                          (StringLiteral_Unhandled_operation_code_,pSVar21,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                ((Object *)pSVar14,(MethodInfo *)0x0);
+                ((Object *)pSVar21,(MethodInfo *)0x0);
       return;
     }
-    pMVar1 = (this->fields).networkGame;
-    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-    if ((pMVar1->fields).OnMarketPlaceActionComplete ==
+    pMVar5 = (this->fields).networkGame;
+    bVar3 = 0;
+    if (pMVar5 == (MVNetworkGame *)0x0) goto code_?;
+    if ((pMVar5->fields).OnMarketPlaceActionComplete ==
         (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
       return;
     }
-    pMVar15 = (pMVar1->fields).OnMarketPlaceActionComplete;
+    pMVar22 = (pMVar5->fields).OnMarketPlaceActionComplete;
     goto code_?;
   }
   if ((undefined1)opCode == MVOperationCodes__Enum_RequestFriendshipByProfileID) {
-    pMVar1 = (this->fields).networkGame;
-    if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar5 = (this->fields).networkGame;
+    bVar3 = 0;
+    if (pMVar5 != (MVNetworkGame *)0x0) {
       MVNetworkGame::MVNetworkGame_OnRequestFriendshipResponse
-                (pMVar1,(int)returnCode,(MethodInfo *)0x0);
+                (pMVar5,(int)returnCode,(MethodInfo *)0x0);
       return;
     }
     goto code_?;
   }
   switch(opCode & MVOperationCodes__Enum_Join) {
   case MVOperationCodes__Enum_LockHierarchy:
-    pMVar1 = (this->fields).networkGame;
-    if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar5 = (this->fields).networkGame;
+    bVar3 = 0;
+    if (pMVar5 != (MVNetworkGame *)0x0) {
       MVNetworkGame::MVNetworkGame_OnLockHierarchyResponse
-                (pMVar1,returnValues,(int)returnCode,(MethodInfo *)0x0);
+                (pMVar5,returnValues,(int)returnCode,(MethodInfo *)0x0);
       return;
     }
     break;
   case MVOperationCodes__Enum_UploadScreenshot:
-    pMVar1 = (this->fields).networkGame;
-    unaff_EBX = (MVNetworkGame *)this;
-    if (pMVar1 != (MVNetworkGame *)0x0) {
-      pEVar16 = (pMVar1->fields).ScreenshotUploaded;
-      if (pEVar16 == (EventHandler_1_ScreenshotUploadedEventArgs_ *)0x0) {
+    pMVar5 = (this->fields).networkGame;
+    bVar3 = 0;
+    if (pMVar5 != (MVNetworkGame *)0x0) {
+      pEVar23 = (pMVar5->fields).ScreenshotUploaded;
+      if (pEVar23 == (EventHandler_1_ScreenshotUploadedEventArgs_ *)0x0) {
         return;
       }
       this_02 = (ScreenshotUploadedEventArgs *)func_?();
       ScreenshotUploadedEventArgs::ScreenshotUploadedEventArgs__ctor
                 (this_02,returnCode == 0,(MethodInfo *)0x0);
-      (*(pEVar16->fields)._._.invoke_impl)((pEVar16->fields)._._.method_code,this,this_02);
+      (*(pEVar23->fields)._._.invoke_impl)();
       return;
     }
     break;
@@ -503,195 +570,244 @@ code_?:
     if (returnCode == 0) {
       return;
     }
-    pMVar1 = (this->fields).networkGame;
-    if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar5 = (this->fields).networkGame;
+    bVar3 = 0;
+    if (pMVar5 != (MVNetworkGame *)0x0) {
       MVNetworkGame::MVNetworkGame_OnRequestWoUniquePrototypeFailed
-                (pMVar1,returnValues,(MethodInfo *)0x0);
+                (pMVar5,returnValues,(MethodInfo *)0x0);
       return;
     }
     break;
   default:
     goto code_?;
   case MVOperationCodes__Enum_TransferWorldObjectsToGroup:
-    pMVar1 = (this->fields).networkGame;
-    if (((pMVar1 != (MVNetworkGame *)0x0) &&
-        (pWVar10 = (pMVar1->fields).worldNetwork, pWVar10 != (WorldNetwork *)0x0)) &&
-       (pMVar11 = (pWVar10->fields)._.worldObjectClientManager,
-       pMVar11 != (MVWorldObjectClientManagerNetwork *)0x0)) {
-      MVWorldObjectClientManagerNetwork::
-      MVWorldObjectClientManagerNetwork_HandleTransferWorldObjectsToGroup
-                (pMVar11,returnCode == 0,(MethodInfo *)0x0);
-      return;
+    pMVar5 = (this->fields).networkGame;
+    bVar3 = 0;
+    if (pMVar5 != (MVNetworkGame *)0x0) {
+      pWVar16 = (pMVar5->fields).worldNetwork;
+      bVar3 = 0;
+      if (pWVar16 != (WorldNetwork *)0x0) {
+        pMVar17 = (pWVar16->fields)._.worldObjectClientManager;
+        bVar3 = 0;
+        if (pMVar17 != (MVWorldObjectClientManagerNetwork *)0x0) {
+          MVWorldObjectClientManagerNetwork::
+          MVWorldObjectClientManagerNetwork_HandleTransferWorldObjectsToGroup
+                    (pMVar17,returnCode == 0,(MethodInfo *)0x0);
+          return;
+        }
+      }
     }
     break;
   case MVOperationCodes__Enum_CloneWorldObjectTree:
     goto code_?;
   case MVOperationCodes__Enum_PurchaseProduct:
-    unaff_ESI = (MVNetworkGame *)0x0;
-    unaff_EDI = (MVNetworkGame *)returnValues;
+    unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)0x0;
+    bVar3 = 0;
     if (returnValues == (Dictionary_2_System_Byte_System_Object_ *)0x0) break;
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+    bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
              Dictionary_2_System_Byte_System_Object__ContainsKey
                        (returnValues,0x5f,
                         MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__ContainsKey_unsigned_char_
                        );
-    if (((bVar3 == 0) ||
-        (unaff_ESI = (MVNetworkGame *)
-                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
-                     Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                               (returnValues,0x5f,
-                                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                               ), unaff_ESI == (MVNetworkGame *)0x0)) ||
-       ((unaff_EBX = (MVNetworkGame *)unaff_ESI->klass, pMVar1 = unaff_ESI,
-        (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-        naturalAligment <= *(byte *)&(unaff_EBX->fields).OnWinningConditionFulfilled &&
-        (*(Dictionary_2_System_Object_System_Object___Class **)
-          ((int)(unaff_EBX->fields)._CustomTouristPromotionSettings_k__BackingField +
-          (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                ->_1).naturalAligment * 4 + -4) ==
-         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) {
-      pMVar1 = (this->fields).networkGame;
-      if (pMVar1 == (MVNetworkGame *)0x0) break;
+    if (bVar4 == 0) {
+code_?:
+      pMVar5 = (this->fields).networkGame;
+      bVar3 = 0;
+      if (pMVar5 == (MVNetworkGame *)0x0) break;
       MVNetworkGame::MVNetworkGame_OnPurchaseProductResponse
-                (pMVar1,(int)returnCode,(Dictionary_2_System_Object_System_Object_ *)unaff_ESI,
+                (pMVar5,(int)returnCode,(Dictionary_2_System_Object_System_Object_ *)unaff_ESI,
                  (MethodInfo *)0x0);
       if (returnCode != 0) {
         return;
       }
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      bVar3 = 0;
       unaff_ESI = _returnCode;
-      if ((pMVar1 == (MVNetworkGame *)0x0) ||
-         (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
-         pMVar2 == (MVLocalPlayer *)0x0)) break;
-      unaff_ESI = (MVNetworkGame *)(pMVar2->fields)._._UserProfileData_k__BackingField;
-      pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
+      if (pMVar5 == (MVNetworkGame *)0x0) break;
+      pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar5,(MethodInfo *)0x0);
+      bVar3 = 0;
+      if (pMVar2 == (MVLocalPlayer *)0x0) break;
+      unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)
+                  (pMVar2->fields)._._UserProfileData_k__BackingField;
+      pOVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                 Object]::Dictionary_2_System_Byte_System_Object__get_Item
                           (returnValues,0x82,
                            MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                           );
-      if ((unaff_ESI == (MVNetworkGame *)0x0) || (pOVar5 == (Object *)0x0)) break;
-      pMVar1 = unaff_ESI;
-      if ((pOVar5->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-      goto code_?;
-      puVar17 = (undefined4 *)func_?();
-      (unaff_ESI->fields).ReceivedAccessoryData = (Action_1_String_ *)*puVar17;
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar1 == (MVNetworkGame *)0x0) ||
-         (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
-         pMVar2 == (MVLocalPlayer *)0x0)) break;
-      if ((pMVar2->fields)._.OnGoldAmountChange == (Action *)0x0) {
-        return;
+      bVar3 = 0;
+      if ((unaff_ESI == (Dictionary_2_System_Object_System_Object___Class *)0x0) ||
+         (bVar3 = 0, pOVar8 == (Object *)0x0)) break;
+      pIVar9 = (pOVar8->klass->_0).element_class;
+      pIVar10 = (TypeInfo__System__Int32->_0).element_class;
+      bVar3 = pIVar9 < pIVar10;
+      pDVar1 = unaff_ESI;
+      if (pIVar9 == pIVar10) {
+        p_Var29 = (_union_86 *)func_?();
+        (unaff_ESI->_0).byval_arg.data = *p_Var29;
+        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        bVar3 = 0;
+        if (pMVar5 == (MVNetworkGame *)0x0) break;
+        pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar5,(MethodInfo *)0x0);
+        bVar3 = 0;
+        if (pMVar2 == (MVLocalPlayer *)0x0) break;
+        if ((pMVar2->fields)._.OnGoldAmountChange == (Action *)0x0) {
+          return;
+        }
+        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        bVar3 = 0;
+        if (pMVar5 == (MVNetworkGame *)0x0) break;
+        pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar5,(MethodInfo *)0x0);
+        bVar3 = 0;
+        if (pMVar2 == (MVLocalPlayer *)0x0) break;
+        pAVar12 = (pMVar2->fields)._.OnGoldAmountChange;
+        goto code_?;
       }
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar1 == (MVNetworkGame *)0x0) ||
-         (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
-         pMVar2 == (MVLocalPlayer *)0x0)) break;
-      pAVar6 = (pMVar2->fields)._.OnGoldAmountChange;
       goto code_?;
     }
+    unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
+                Object]::Dictionary_2_System_Byte_System_Object__get_Item
+                          (returnValues,0x5f,
+                           MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
+                          );
+    if (unaff_ESI == (Dictionary_2_System_Object_System_Object___Class *)0x0) {
+      unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)0x0;
+      goto code_?;
+    }
+    pMVar24 = (MVNetworkGame__Class *)(unaff_ESI->_0).image;
+    bVar25 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
+             ).naturalAligment;
+    bVar3 = (pMVar24->_1).naturalAligment < bVar25;
+    pDVar1 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+    if ((!(bool)bVar3) &&
+       (pDVar15 = (Dictionary_2_System_Object_System_Object___Class *)
+                  (pMVar24->_1).typeHierarchy[bVar25 - 1],
+       bVar3 = pDVar15 < 
+                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>,
+       pDVar15 == TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+       )) goto code_?;
     goto code_?;
   case MVOperationCodes__Enum_AddItemToWorld:
-    pMVar1 = (this->fields).networkGame;
-    if (pMVar1 != (MVNetworkGame *)0x0) {
-      if ((pMVar1->fields).OnItemAddedToWorld == (Action_1_Boolean_ *)0x0) {
+    pMVar5 = (this->fields).networkGame;
+    bVar3 = 0;
+    if (pMVar5 != (MVNetworkGame *)0x0) {
+      if ((pMVar5->fields).OnItemAddedToWorld == (Action_1_Boolean_ *)0x0) {
         return;
       }
-      pMVar15 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)
-                (pMVar1->fields).OnItemAddedToWorld;
+      pMVar22 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)
+                (pMVar5->fields).OnItemAddedToWorld;
       goto code_?;
     }
     break;
   case MVOperationCodes__Enum_AddWorldObjectToInventory:
-    pMVar1 = (this->fields).networkGame;
-    if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar5 = (this->fields).networkGame;
+    bVar3 = 0;
+    if (pMVar5 != (MVNetworkGame *)0x0) {
       MVNetworkGame::MVNetworkGame_OnAddItemToInventory
-                (pMVar1,returnValues,returnCode,(MethodInfo *)0x0);
+                (pMVar5,returnValues,returnCode,(MethodInfo *)0x0);
       return;
     }
     break;
   case MVOperationCodes__Enum_AddWorldObjectToInventoryDev:
-    pMVar1 = (this->fields).networkGame;
-    unaff_EDI = (MVNetworkGame *)this;
-    if (pMVar1 == (MVNetworkGame *)0x0) break;
+    pMVar5 = (this->fields).networkGame;
+    bVar3 = 0;
+    if (pMVar5 == (MVNetworkGame *)0x0) break;
     MVNetworkGame::MVNetworkGame_OnAddItemToInventory
-              (pMVar1,returnValues,returnCode,(MethodInfo *)0x0);
-    pMVar1 = (this->fields).networkGame;
-    unaff_EBX = _returnCode;
-    unaff_ESI = (MVNetworkGame *)returnValues;
+              (pMVar5,returnValues,returnCode,(MethodInfo *)0x0);
+    pDVar1 = (Dictionary_2_System_Object_System_Object___Class *)(this->fields).networkGame;
+    bVar3 = 0;
+    unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)returnValues;
     if (returnValues == (Dictionary_2_System_Byte_System_Object_ *)0x0) break;
-    unaff_EDI = (MVNetworkGame *)
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
-                Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                          (returnValues,0x16,
-                           MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                          );
-    pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
+    pOVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
+              ::Dictionary_2_System_Byte_System_Object__get_Item
+                        (returnValues,0x16,
+                         MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
+                        );
+    in_stack_6 =
+         (Enum__Class *)
+         MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
+    ;
+    pOVar26 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
               ::Dictionary_2_System_Byte_System_Object__get_Item
                         (returnValues,0x28,
                          MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                         );
-    unaff_ESI = pMVar1;
-    if ((pMVar1 == (MVNetworkGame *)0x0) || (pOVar5 == (Object *)0x0)) break;
-    if ((pOVar5->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-    goto code_?;
-    piVar9 = (int32_t *)func_?();
-    itemID = *piVar9;
-    if (unaff_EDI == (MVNetworkGame *)0x0) break;
-    if ((Il2CppClass *)((Il2CppClass_0 *)&unaff_EDI->klass)->image->codeGenModule ==
-        (TypeInfo__System__Int32->_0).element_class) {
-      piVar9 = (int32_t *)func_?();
+    bVar3 = 0;
+    unaff_ESI = pDVar1;
+    if ((pDVar1 == (Dictionary_2_System_Object_System_Object___Class *)0x0) ||
+       (bVar3 = 0, pOVar26 == (Object *)0x0)) break;
+    pIVar9 = (pOVar26->klass->_0).element_class;
+    pIVar10 = (TypeInfo__System__Int32->_0).element_class;
+    bVar3 = pIVar9 < pIVar10;
+    if (pIVar9 != pIVar10) goto code_?;
+    piVar11 = (int32_t *)func_?();
+    iVar27 = *piVar11;
+    bVar3 = 0;
+    if (pOVar8 == (Object *)0x0) break;
+    pIVar9 = (pOVar8->klass->_0).element_class;
+    pIVar10 = (TypeInfo__System__Int32->_0).element_class;
+    bVar3 = pIVar9 < pIVar10;
+    if (pIVar9 == pIVar10) {
+      piVar11 = (int32_t *)func_?();
       MVNetworkGame::MVNetworkGame_OnAddWorldObjectToInventoryResponseDev
-                (pMVar1,(int)returnCode,*piVar9,itemID,(MethodInfo *)0x0);
+                ((MVNetworkGame *)pDVar1,(int)returnCode,*piVar11,iVar27,(MethodInfo *)0x0);
       return;
     }
     goto code_?;
   case MVOperationCodes__Enum_SetActiveAvatar:
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 == (MVNetworkGame *)0x0) break;
-    if ((pMVar1->fields).OnActiveAvatarSet == (Action *)0x0) {
+    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    bVar3 = 0;
+    if (pMVar5 == (MVNetworkGame *)0x0) break;
+    if ((pMVar5->fields).OnActiveAvatarSet == (Action *)0x0) {
       return;
     }
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 == (MVNetworkGame *)0x0) break;
-    pAVar6 = (pMVar1->fields).OnActiveAvatarSet;
-code_?:
-    if (pAVar6 != (Action *)0x0) {
-code_?:
-      (*(pAVar6->fields)._._.invoke_impl)();
-      return;
-    }
-    break;
+    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    bVar3 = 0;
+    if (pMVar5 == (MVNetworkGame *)0x0) break;
+    pAVar12 = (pMVar5->fields).OnActiveAvatarSet;
+    goto code_?;
   case MVOperationCodes__Enum_AddItemToMarketPlace:
-    unaff_EDI = _returnCode;
     if (returnCode == 0) {
-      unaff_ESI = (MVNetworkGame *)returnValues;
-      if ((returnValues == (Dictionary_2_System_Byte_System_Object_ *)0x0) ||
-         (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
-                    Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                              (returnValues,0x28,
-                               MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                              ), unaff_ESI = (MVNetworkGame *)returnValues, pOVar5 == (Object *)0x0
-         )) break;
-      if ((pOVar5->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-        puVar17 = (undefined4 *)func_?();
-        unaff_EBX = (MVNetworkGame *)*puVar17;
-        pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
+      bVar3 = 0;
+      unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)returnValues;
+      if (returnValues == (Dictionary_2_System_Byte_System_Object_ *)0x0) break;
+      pOVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
+                Object]::Dictionary_2_System_Byte_System_Object__get_Item
+                          (returnValues,0x28,
+                           MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
+                          );
+      bVar3 = 0;
+      unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)returnValues;
+      if (pOVar8 == (Object *)0x0) break;
+      pIVar9 = (pOVar8->klass->_0).element_class;
+      pIVar10 = (TypeInfo__System__Int32->_0).element_class;
+      bVar3 = pIVar9 < pIVar10;
+      if (pIVar9 == pIVar10) {
+        piVar11 = (int32_t *)func_?();
+        iVar27 = *piVar11;
+        pOVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                   Object]::Dictionary_2_System_Byte_System_Object__get_Item
                             (returnValues,0x87,
                              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                             );
-        unaff_ESI = (MVNetworkGame *)returnValues;
-        if (pOVar5 == (Object *)0x0) break;
-        if ((pOVar5->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-          puVar17 = (undefined4 *)func_?();
-          unaff_ESI = (MVNetworkGame *)*puVar17;
-          iVar8 = func_?();
-          if ((iVar8 == 0) ||
-             (this_03 = (PlayerShopInventoryRepository *)func_?(),
-             this_03 == (PlayerShopInventoryRepository *)0x0)) break;
+        bVar3 = 0;
+        unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)returnValues;
+        if (pOVar8 == (Object *)0x0) break;
+        pIVar9 = (pOVar8->klass->_0).element_class;
+        pIVar10 = (TypeInfo__System__Int32->_0).element_class;
+        bVar3 = pIVar9 < pIVar10;
+        if (pIVar9 == pIVar10) {
+          puVar28 = (undefined4 *)func_?();
+          unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)*puVar28;
+          iVar14 = func_?();
+          bVar3 = 0;
+          if (iVar14 == 0) break;
+          this_03 = (PlayerShopInventoryRepository *)func_?();
+          bVar3 = 0;
+          if (this_03 == (PlayerShopInventoryRepository *)0x0) break;
           UGUI::Desktop::Scripts::EditMode::Inventories::PlayerShopInventoryRepository::
           PlayerShopInventoryRepository_UpdatePlayerShopInventoryID
-                    (this_03,(int32_t)unaff_EBX,(int32_t)unaff_ESI,(MethodInfo *)0x0);
+                    (this_03,iVar27,(int32_t)unaff_ESI,(MethodInfo *)0x0);
           goto code_?;
         }
       }
@@ -703,27 +819,30 @@ code_?:
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
               ((Object *)StringLiteral_Failed_to_add_item_to_shop,(MethodInfo *)0x0);
 code_?:
-    pMVar1 = (this->fields).networkGame;
-    if (pMVar1 == (MVNetworkGame *)0x0) break;
-    pMVar15 = (pMVar1->fields).OnMarketPlaceActionComplete;
+    pMVar5 = (this->fields).networkGame;
+    bVar3 = 0;
+    if (pMVar5 == (MVNetworkGame *)0x0) break;
+    pMVar22 = (pMVar5->fields).OnMarketPlaceActionComplete;
     goto joined_?;
   case MVOperationCodes__Enum_RemoveItemFromMarketPlace:
-    pMVar1 = (this->fields).networkGame;
-    if (pMVar1 == (MVNetworkGame *)0x0) break;
-    pMVar15 = (pMVar1->fields).OnMarketPlaceActionComplete;
+    pMVar5 = (this->fields).networkGame;
+    bVar3 = 0;
+    if (pMVar5 == (MVNetworkGame *)0x0) break;
+    pMVar22 = (pMVar5->fields).OnMarketPlaceActionComplete;
 joined_?:
-    if (pMVar15 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
+    if (pMVar22 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
       return;
     }
 code_?:
-    (*(pMVar15->fields)._._.invoke_impl)();
+    (*(pMVar22->fields)._._.invoke_impl)();
     return;
   case MVOperationCodes__Enum_SetAvatarAccessorySlot:
-    pMVar1 = (this->fields).networkGame;
-    if (pMVar1 != (MVNetworkGame *)0x0) {
-      pAVar18 = (pMVar1->fields).OnSetAvatarAccessoryResponse;
-      if (pAVar18 != (Action_1_Boolean_ *)0x0) {
-        (*(pAVar18->fields)._._.invoke_impl)((pAVar18->fields)._._.method_code);
+    pMVar5 = (this->fields).networkGame;
+    bVar3 = 0;
+    if (pMVar5 != (MVNetworkGame *)0x0) {
+      pAVar29 = (pMVar5->fields).OnSetAvatarAccessoryResponse;
+      if (pAVar29 != (Action_1_Boolean_ *)0x0) {
+        (*(pAVar29->fields)._._.invoke_impl)();
       }
       if (returnCode == 0) {
         return;
@@ -738,55 +857,71 @@ code_?:
     break;
   case MVOperationCodes__Enum_AttachWorldObjectToSeat:
   case MVOperationCodes__Enum_SpawnVehicleWithDriver:
-    pMVar1 = (this->fields).networkGame;
-    if ((pMVar1 != (MVNetworkGame *)0x0) &&
-       (pMVar7 = (pMVar1->fields)._PlayerController_k__BackingField,
-       pMVar7 != (MVLocalObjectController *)0x0)) {
-      MVLocalObjectController::MVLocalObjectController_HandleAttachWorldObjectToSeat
-                (pMVar7,returnCode == 0,(MethodInfo *)0x0);
-      return;
+    pMVar5 = (this->fields).networkGame;
+    bVar3 = 0;
+    if (pMVar5 != (MVNetworkGame *)0x0) {
+      pMVar13 = (pMVar5->fields)._PlayerController_k__BackingField;
+      bVar3 = 0;
+      if (pMVar13 != (MVLocalObjectController *)0x0) {
+        MVLocalObjectController::MVLocalObjectController_HandleAttachWorldObjectToSeat
+                  (pMVar13,returnCode == 0,(MethodInfo *)0x0);
+        return;
+      }
     }
     break;
   case MVOperationCodes__Enum_DetachWorldObjectFromVehicle:
-    pMVar1 = (this->fields).networkGame;
-    if ((pMVar1 != (MVNetworkGame *)0x0) &&
-       (pMVar7 = (pMVar1->fields)._PlayerController_k__BackingField,
-       pMVar7 != (MVLocalObjectController *)0x0)) {
-      MVLocalObjectController::MVLocalObjectController_HandleDetachWorldObjectFromVehicle
-                (pMVar7,returnCode == 0,(MethodInfo *)0x0);
-      return;
+    pMVar5 = (this->fields).networkGame;
+    bVar3 = 0;
+    if (pMVar5 != (MVNetworkGame *)0x0) {
+      pMVar13 = (pMVar5->fields)._PlayerController_k__BackingField;
+      bVar3 = 0;
+      if (pMVar13 != (MVLocalObjectController *)0x0) {
+        MVLocalObjectController::MVLocalObjectController_HandleDetachWorldObjectFromVehicle
+                  (pMVar13,returnCode == 0,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
 code_?:
-  iVar8 = func_?();
-  lVar19 = (longlong)iVar8 * (longlong)(int)unaff_ESI;
-  iVar8 = (int)lVar19;
-  bVar20 = (byte)unaff_EBX;
-  bVar21 = *(char *)&((Il2CppClass_0 *)&unaff_EDI->klass)->image + bVar20;
-  bVar22 = CARRY1(*(byte *)&((Il2CppClass_0 *)&unaff_EDI->klass)->image,bVar20) ||
-           CARRY1(bVar21,iVar8 != lVar19);
-  *(byte *)&((Il2CppClass_0 *)&unaff_EDI->klass)->image = bVar21 + (iVar8 != lVar19);
-  uVar23 = (undefined2)((ulonglong)lVar19 >> 0x20);
-  out(uVar23,iVar8);
-  pbVar24 = (byte *)((int)&unaff_EBX[-1].fields.gameDataQuery + 3);
-  bVar21 = *pbVar24;
-  bVar25 = (byte)((ulonglong)lVar19 >> 0x28);
-  bVar26 = *pbVar24;
-  *pbVar24 = bVar26 + bVar25 + bVar22;
-  bVar27 = (byte)((uint)unaff_EBX >> 8);
-  bVar22 = CARRY1(bVar20,bVar27) ||
-           CARRY1(bVar20 + bVar27,CARRY1(bVar21,bVar25) || CARRY1(bVar26 + bVar25,bVar22));
-  puVar28 = (uint *)(iVar8 + -0x5f + (int)((ulonglong)lVar19 >> 0x20));
-  *puVar28 = ~*puVar28;
-  out(uVar23,iVar8);
-  bVar26 = (byte)((ulonglong)lVar19 >> 8);
-  bVar21 = bVar25 + bVar26;
-  out(CONCAT11(bVar21 + bVar22,(char)((ulonglong)lVar19 >> 0x20)),iVar8);
-  ppMVar29 = &unaff_ESI[-1].fields.eventHandling;
-  *(char *)ppMVar29 =
-       *(char *)ppMVar29 + extraout_CH + (CARRY1(bVar25,bVar26) || CARRY1(bVar21,bVar22));
-  pcVar30 = (code *)swi(1);
-  (*pcVar30)();
+  uVar30 = func_?();
+  piVar31 = (int *)((ulonglong)uVar30 >> 0x20);
+  pbVar32 = (byte *)uVar30;
+  pbVar33 = (byte *)((int)&unaff_ESI->static_fields + 3);
+  bVar34 = (byte)extraout_ECX;
+  bVar35 = CARRY1(*pbVar33,bVar34) || CARRY1(*pbVar33 + bVar34,bVar3);
+  *pbVar33 = *pbVar33 + bVar34 + bVar3;
+  pbVar33 = (byte *)((int)piVar31 + 0x2c10545f);
+  bVar25 = (byte)((ulonglong)uVar30 >> 8);
+  bVar3 = *pbVar33 + bVar25;
+  bVar36 = CARRY1(*pbVar33,bVar25) || CARRY1(bVar3,bVar35);
+  *pbVar33 = bVar3 + bVar35;
+  bVar25 = (byte)((ulonglong)uVar30 >> 0x20);
+  bVar3 = bRam_? + bVar25;
+  bVar35 = CARRY1(bRam_?,bVar25) || CARRY1(bVar3,bVar36);
+  bRam_? = bVar3 + bVar36;
+  bVar37 = (byte)uVar30;
+  bVar36 = CARRY1(*pbVar32,bVar37) || CARRY1(*pbVar32 + bVar37,bVar35);
+  *pbVar32 = *pbVar32 + bVar37 + bVar35;
+  puVar38 = (ushort *)(pbVar32 + 0x4f + (int)piVar31);
+  uVar39 = (ushort)((ulonglong)uVar30 >> 0x20);
+  sVar40 = (uVar39 & 3) - (*puVar38 & 3);
+  *puVar38 = *puVar38 + (ushort)(0 < sVar40) * sVar40;
+  puVar38 = (ushort *)(pbVar32 + 0x6b + (int)piVar31);
+  sVar40 = (uVar39 & 3) - (*puVar38 & 3);
+  *puVar38 = *puVar38 + (ushort)(0 < sVar40) * sVar40;
+  ppMVar41 = &unaff_ESI[-0x51be1].vtable.GetObjectData.method;
+  bVar35 = CARRY1(*(byte *)ppMVar41,bVar34) || CARRY1(*(char *)ppMVar41 + bVar34,bVar36);
+  *(byte *)ppMVar41 = *(char *)ppMVar41 + bVar34 + bVar36;
+  bVar3 = *(byte *)&(in_stack_6->_0).image;
+  bVar42 = (byte)((uint)extraout_ECX >> 8);
+  bVar25 = *(char *)&(in_stack_6->_0).image + bVar42;
+  *(byte *)&(in_stack_6->_0).image = bVar25 + bVar35;
+  *pbVar32 = *pbVar32 + bVar37 + (CARRY1(bVar3,bVar42) || CARRY1(bVar25,bVar35));
+  *piVar31 = (int)(pbVar32 + *piVar31);
+  *extraout_ECX = *extraout_ECX | bVar34;
+  FastExitMediaState();
+  pcVar43 = (code *)swi(3);
+  (*pcVar43)();
   return;
 }
 

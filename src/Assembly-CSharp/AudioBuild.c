@@ -27,28 +27,24 @@ void Assembly-CSharp.dll::AudioBuild::AudioBuild_Awake(AudioBuild *this,MethodIn
                          (this_00,
                           UnityEngine__AudioSource_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::AudioSource>__
                          );
-      (this->fields).buildSource = pAVar1;
+      ppAVar2 = &(this->fields).buildSource;
+      *ppAVar2 = pAVar1;
       func_?();
-      pAVar1 = (this->fields).buildSource;
-      if (pAVar1 != (AudioSource *)0x0) {
+      if (*ppAVar2 != (AudioSource *)0x0) {
         UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_playOnAwake
-                  (pAVar1,0,(MethodInfo *)0x0);
-        pAVar1 = (this->fields).buildSource;
-        if (pAVar1 != (AudioSource *)0x0) {
+                  (*ppAVar2,0,(MethodInfo *)0x0);
+        if (*ppAVar2 != (AudioSource *)0x0) {
           UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_spatialBlend
-                    (pAVar1,0.86,(MethodInfo *)0x0);
-          pAVar1 = (this->fields).buildSource;
-          if (pAVar1 != (AudioSource *)0x0) {
+                    (*ppAVar2,0.86,(MethodInfo *)0x0);
+          if (*ppAVar2 != (AudioSource *)0x0) {
             UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_minDistance
-                      (pAVar1,20.0,(MethodInfo *)0x0);
-            pAVar1 = (this->fields).buildSource;
-            if (pAVar1 != (AudioSource *)0x0) {
+                      (*ppAVar2,20.0,(MethodInfo *)0x0);
+            if (*ppAVar2 != (AudioSource *)0x0) {
               UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_maxDistance
-                        (pAVar1,40.0,(MethodInfo *)0x0);
-              pAVar1 = (this->fields).buildSource;
-              if (pAVar1 != (AudioSource *)0x0) {
+                        (*ppAVar2,40.0,(MethodInfo *)0x0);
+              if (*ppAVar2 != (AudioSource *)0x0) {
                 UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_rolloffMode
-                          (pAVar1,AudioRolloffMode__Enum_Linear,(MethodInfo *)0x0);
+                          (*ppAVar2,AudioRolloffMode__Enum_Linear,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -58,8 +54,8 @@ void Assembly-CSharp.dll::AudioBuild::AudioBuild_Awake(AudioBuild *this,MethodIn
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -298,8 +294,9 @@ void Assembly-CSharp.dll::AudioBuild::AudioBuild__ctor(AudioBuild *this,MethodIn
   this_00 = (Singleton_1_System_Object_ *)func_?(TypeInfo__UnityEngine__AudioSource);
   Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
   Singleton_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-  (this->fields).buildSource = (AudioSource *)this_00;
-  func_?(&(this->fields).buildSource,this_00);
+  ppAVar1 = &(this->fields).buildSource;
+  *ppAVar1 = (AudioSource *)this_00;
+  func_?(ppAVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

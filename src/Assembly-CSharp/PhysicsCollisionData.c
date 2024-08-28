@@ -5,10 +5,9 @@ void Assembly-CSharp.dll::PhysicsCollisionData::PhysicsCollisionData_Clear
                (PhysicsCollisionData *this,MethodInfo *method)
 
 {
-  (this->fields).transform = (Transform *)0x0;
-  func_?(&(this->fields).transform,0);
-  (this->fields).collider = (Collider *)0x0;
-  func_?(&(this->fields).collider,0);
+  ppTVar1 = &(this->fields).transform;
+  *ppTVar1 = (Transform *)0x0;
+  func_?(ppTVar1,&stack0xfffffffc,&UNK_?,ppTVar1,0);
   return;
 }
 
@@ -75,27 +74,29 @@ void Assembly-CSharp.dll::PhysicsCollisionData::PhysicsCollisionData_Set_1
   if (collider != (Collider *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)collider,(MethodInfo *)0x0);
-    (this->fields).transform = pTVar1;
-    func_?(&(this->fields).transform,pTVar1);
+    ppTVar2 = &(this->fields).transform;
+    *ppTVar2 = pTVar1;
+    func_?(ppTVar2,pTVar1);
     (this->fields).isInsideCollider = 1;
     (this->fields).distance = 0.0;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
     }
-    pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-    fVar3 = (pVVar2->zeroVector).y;
-    fVar4 = (pVVar2->zeroVector).z;
-    (this->fields).normal.x = (pVVar2->zeroVector).x;
-    (this->fields).normal.y = fVar3;
-    (this->fields).normal.z = fVar4;
-    (this->fields).collider = collider;
-    func_?(&(this->fields).collider,collider);
+    pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+    fVar4 = (pVVar3->zeroVector).y;
+    fVar5 = (pVVar3->zeroVector).z;
+    (this->fields).normal.x = (pVVar3->zeroVector).x;
+    (this->fields).normal.y = fVar4;
+    (this->fields).normal.z = fVar5;
+    ppCVar6 = &(this->fields).collider;
+    *ppCVar6 = collider;
+    func_?(ppCVar6,collider);
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

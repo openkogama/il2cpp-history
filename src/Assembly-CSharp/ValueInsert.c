@@ -136,7 +136,7 @@ void Assembly-CSharp.dll::ValueInsert::ValueInsert__ctor(ValueInsert *this,Metho
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<System::Object>__List__);
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).values = this_00;
+  ((ValueInsert__Fields *)method_00)->values = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

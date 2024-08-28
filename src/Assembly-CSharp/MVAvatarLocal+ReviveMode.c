@@ -47,7 +47,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+ReviveMode::MVAvatarLocal_ReviveMode_Act
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
-  (pMVar2->fields).respawnTime = fVar1 + (this->fields).reviveInterval;
+  (pMVar2->fields).respawnTime = (this->fields).reviveInterval + fVar1;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -311,7 +311,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+ReviveMode::MVAvatarLocal_ReviveMode__ct
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
   method_00 = (MethodInfo *)&(this->fields).inputController;
-  (this->fields).inputController = value;
+  *(MVAvatarLocal_ReviveMode_AvatarInputControllerDead **)method_00 = value;
   func_?(method_00,value);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

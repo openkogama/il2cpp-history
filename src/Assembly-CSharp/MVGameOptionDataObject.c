@@ -155,6 +155,7 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_RemoveS
         func_?();
         cRam_? = '\x01';
       }
+      ppDVar3 = &(pSVar2->fields).DeltaRemovalData;
       if ((pSVar2->fields).DeltaRemovalData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
         this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                    *)func_?();
@@ -164,27 +165,28 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_RemoveS
                   (this_00,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
-        (pSVar2->fields).DeltaRemovalData = (Dictionary_2_System_Object_System_Object_ *)this_00;
+        *ppDVar3 = (Dictionary_2_System_Object_System_Object_ *)this_00;
         func_?();
       }
       MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialUpdateHashtable
-                ((pSVar2->fields).DeltaRemovalData,source,(MethodInfo *)0x0);
-      pMVar3 = (pSVar2->fields).worldObject;
-      if (pMVar3 != (MVWorldObject *)0x0) {
+                (*ppDVar3,source,(MethodInfo *)0x0);
+      pMVar4 = (pSVar2->fields).worldObject;
+      if (pMVar4 != (MVWorldObject *)0x0) {
         MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialRemoveFromHashtable
-                  ((pMVar3->fields).data,(pSVar2->fields).DeltaRemovalData,(MethodInfo *)0x0);
-        if ((pSVar2->fields).OnValueRemovedLocal !=
-            (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0) {
-          (*(((pSVar2->fields).OnValueRemovedLocal)->fields)._._.invoke_impl)();
+                  ((pMVar4->fields).data,*ppDVar3,(MethodInfo *)0x0);
+        pAVar5 = (pSVar2->fields).OnValueRemovedLocal;
+        if (pAVar5 != (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                       *)0x0) {
+          (*(pAVar5->fields)._._.invoke_impl)();
         }
         return;
       }
     }
   }
-  uVar4 = func_?(&stack0xffffffec);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar6 = func_?(&stack0xffffffec);
+  func_?(uVar6);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -227,6 +229,7 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_UpdateS
         func_?();
         cRam_? = '\x01';
       }
+      ppDVar3 = &(pSVar2->fields).DeltaData;
       if ((pSVar2->fields).DeltaData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
         this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                    *)func_?();
@@ -236,27 +239,28 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_UpdateS
                   (this_00,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
-        (pSVar2->fields).DeltaData = (Dictionary_2_System_Object_System_Object_ *)this_00;
+        *ppDVar3 = (Dictionary_2_System_Object_System_Object_ *)this_00;
         func_?();
       }
       MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialUpdateHashtable
-                ((pSVar2->fields).DeltaData,source,(MethodInfo *)0x0);
-      pMVar3 = (pSVar2->fields).worldObject;
-      if (pMVar3 != (MVWorldObject *)0x0) {
+                (*ppDVar3,source,(MethodInfo *)0x0);
+      pMVar4 = (pSVar2->fields).worldObject;
+      if (pMVar4 != (MVWorldObject *)0x0) {
         MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialUpdateHashtable
-                  ((pMVar3->fields).data,source,(MethodInfo *)0x0);
-        if ((pSVar2->fields).OnValueChangedLocal !=
-            (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0) {
-          (*(((pSVar2->fields).OnValueChangedLocal)->fields)._._.invoke_impl)();
+                  ((pMVar4->fields).data,source,(MethodInfo *)0x0);
+        pAVar5 = (pSVar2->fields).OnValueChangedLocal;
+        if (pAVar5 != (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                       *)0x0) {
+          (*(pAVar5->fields)._._.invoke_impl)();
         }
         return;
       }
     }
   }
-  uVar4 = func_?(&stack0xffffffec);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar6 = func_?(&stack0xffffffec);
+  func_?(uVar6);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -326,12 +330,13 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject__ctor
              this_00,(Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                       *)this_01,(MethodInfo *)0x0);
   (worldObject->vtable).ToString.method = pMVar1;
-  ppMStack2 = &(worldObject->vtable).ToString.method;
-  pMStack3 = pMVar1;
+  ppMVar2 = &(worldObject->vtable).ToString.method;
+  ppMStack3 = ppMVar2;
+  pMStack4 = pMVar1;
   func_?();
-  pSStack4 =
+  pSStack5 =
        TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__Client__SettingsManager;
-  pMVar1 = (worldObject->vtable).ToString.method;
+  pMVar1 = *ppMVar2;
   this_02 = (SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
              *)func_?();
   System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::IL2CPP::

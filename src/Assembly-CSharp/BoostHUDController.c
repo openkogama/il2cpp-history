@@ -187,6 +187,7 @@ void Assembly-CSharp.dll::BoostHUDController::BoostHUDController_OnDestroy
   }
   else {
     pAVar5 = (pBVar3->fields).BoostCountChanged;
+    pBVar6 = &pBVar3->fields;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
@@ -196,26 +197,25 @@ void Assembly-CSharp.dll::BoostHUDController::BoostHUDController_OnDestroy
              mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)pAVar5,(Delegate *)this_00,(MethodInfo *)0x0);
     uVar4 = CONCAT44(TypeInfo__System__Action,pAVar5);
+    pBStack7 = pBVar6;
     if (pAVar5 == (Action *)0x0) {
-      (pBVar3->fields).BoostCountChanged = (Action *)0x0;
-      pBStack6 = &pBVar3->fields;
-      pAStack7 = (Action *)0x0;
+      pAStack8 = (Action *)0x0;
+      pBVar6->BoostCountChanged = (Action *)0x0;
       func_?();
       return;
     }
-    pAVar8 = (Action *)0x0;
+    pAVar9 = (Action *)0x0;
     if (pAVar5->klass == TypeInfo__System__Action) {
-      pAVar8 = pAVar5;
+      pAVar9 = pAVar5;
     }
-    if (pAVar8 != (Action *)0x0) {
-      (pBVar3->fields).BoostCountChanged = pAVar8;
+    if (pAVar9 != (Action *)0x0) {
+      pBVar6->BoostCountChanged = pAVar9;
       uVar4 = CONCAT44(TypeInfo__System__Action,pAVar5);
-      pAStack7 = (Action *)0x0;
+      pAStack8 = (Action *)0x0;
       if (pAVar5->klass == TypeInfo__System__Action) {
-        pAStack7 = pAVar5;
+        pAStack8 = pAVar5;
       }
-      if (pAStack7 != (Action *)0x0) {
-        pBStack6 = &pBVar3->fields;
+      if (pAStack8 != (Action *)0x0) {
         func_?();
         return;
       }
@@ -223,8 +223,8 @@ void Assembly-CSharp.dll::BoostHUDController::BoostHUDController_OnDestroy
   }
   _pBStack00000014 = uVar4;
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -274,9 +274,8 @@ void Assembly-CSharp.dll::BoostHUDController::BoostHUDController_SetupHUD
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
                             );
           pSVar4 = (this->fields).slideOnClick;
-          if ((pSVar4 != (SlideOnClick *)0x0) &&
-             (uVar5 = (pSVar4->fields)._StartPos_k__BackingField.x, pSVar4 != (SlideOnClick *)0x0))
-          {
+          if (pSVar4 != (SlideOnClick *)0x0) {
+            uVar5 = (pSVar4->fields)._StartPos_k__BackingField.x;
             uVar6 = (pSVar4->fields)._StartPos_k__BackingField.y;
             (pSVar4->fields).targetPos.x =
                  (float)((this->fields).boosterWidth * iVar3) + (float)uVar5;
@@ -350,8 +349,8 @@ void Assembly-CSharp.dll::BoostHUDController::BoostHUDController_SetupTransform
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
                           );
         pSVar4 = (this->fields).slideOnClick;
-        if ((pSVar4 != (SlideOnClick *)0x0) &&
-           (uVar5 = (pSVar4->fields)._StartPos_k__BackingField.x, pSVar4 != (SlideOnClick *)0x0)) {
+        if (pSVar4 != (SlideOnClick *)0x0) {
+          uVar5 = (pSVar4->fields)._StartPos_k__BackingField.x;
           uVar6 = (pSVar4->fields)._StartPos_k__BackingField.y;
           (pSVar4->fields).targetPos.x = (float)((this->fields).boosterWidth * iVar3) + (float)uVar5
           ;
@@ -399,7 +398,7 @@ code_?:
     pAVar3 = (Action *)func_?();
   }
   else {
-    pAVar4 = (pBVar2->fields).BoostCountChanged;
+    pAVar3 = (pBVar2->fields).BoostCountChanged;
     unaff_ESI = (Action__Class *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
@@ -407,12 +406,13 @@ code_?:
                MethodInfo__BoostHUDController__SetupHUD__,(MethodInfo *)0x0);
     pAVar3 = (Action *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar4,(Delegate *)unaff_ESI,(MethodInfo *)0x0);
-    pAVar4 = (Action *)0x0;
+                       ((Delegate *)pAVar3,(Delegate *)unaff_ESI,(MethodInfo *)0x0);
+    uVar4 = CONCAT44(TypeInfo__System__Action,pAVar3);
     if (pAVar3 == (Action *)0x0) {
+      pAVar5 = (Action *)0x0;
       (pBVar2->fields).BoostCountChanged = (Action *)0x0;
 code_?:
-      func_?(&pBVar2->fields,pAVar4);
+      func_?(&pBVar2->fields,pAVar5);
       BoostHUDController_CreateActiveBoosts(this,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?(&
@@ -444,7 +444,7 @@ code_?:
            this_01 !=
            (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
             *)0x0)) {
-          pAVar5 = (Action__Class *)
+          pAVar6 = (Action__Class *)
                    mscorlib.dll::System::Collections::Generic::
                    Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                    StyleSheetCache+SheetHandleKey,System::Object]::
@@ -452,28 +452,27 @@ code_?:
                              (this_01,
                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
                              );
-          pSVar6 = (this->fields).slideOnClick;
-          unaff_ESI = pAVar5;
-          if ((pSVar6 != (SlideOnClick *)0x0) &&
-             (uVar7 = (pSVar6->fields)._StartPos_k__BackingField.x, pSVar6 != (SlideOnClick *)0x0))
-          {
-            uVar8 = (pSVar6->fields)._StartPos_k__BackingField.y;
-            (pSVar6->fields).targetPos.x =
-                 (float)((this->fields).boosterWidth * (int)pAVar5) + (float)uVar7;
-            (pSVar6->fields).targetPos.y = (float)uVar8;
-            (pSVar6->fields).targetPos.z = 0.0;
-            pCVar9 = (this->fields).canvasGroup;
-            if (pCVar9 != (CanvasGroup *)0x0) {
+          pSVar7 = (this->fields).slideOnClick;
+          unaff_ESI = pAVar6;
+          if (pSVar7 != (SlideOnClick *)0x0) {
+            uVar8 = (pSVar7->fields)._StartPos_k__BackingField.x;
+            uVar9 = (pSVar7->fields)._StartPos_k__BackingField.y;
+            (pSVar7->fields).targetPos.x =
+                 (float)((this->fields).boosterWidth * (int)pAVar6) + (float)uVar8;
+            (pSVar7->fields).targetPos.y = (float)uVar9;
+            (pSVar7->fields).targetPos.z = 0.0;
+            pCVar10 = (this->fields).canvasGroup;
+            if (pCVar10 != (CanvasGroup *)0x0) {
               unaff_ESI = unaff_retaddr;
               UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                        (pCVar9,0.0,(MethodInfo *)0x0);
-              if ((int)pAVar5 < 1) {
+                        (pCVar10,0.0,(MethodInfo *)0x0);
+              if ((int)pAVar6 < 1) {
                 return;
               }
-              pCVar9 = (this->fields).canvasGroup;
-              if (pCVar9 != (CanvasGroup *)0x0) {
+              pCVar10 = (this->fields).canvasGroup;
+              if (pCVar10 != (CanvasGroup *)0x0) {
                 UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                          (pCVar9,1.0,(MethodInfo *)0x0);
+                          (pCVar10,1.0,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -482,25 +481,24 @@ code_?:
       }
       goto code_?;
     }
+    pAVar5 = (Action *)0x0;
     if (pAVar3->klass == TypeInfo__System__Action) {
-      pAVar4 = pAVar3;
+      pAVar5 = pAVar3;
     }
-    pAVar5 = TypeInfo__System__Action;
-    if (pAVar4 == (Action *)0x0) goto code_?;
-    (pBVar2->fields).BoostCountChanged = pAVar4;
-    pAVar4 = (Action *)0x0;
+    if (pAVar5 == (Action *)0x0) goto code_?;
+    (pBVar2->fields).BoostCountChanged = pAVar5;
+    pAVar5 = (Action *)0x0;
     if (pAVar3->klass == TypeInfo__System__Action) {
-      pAVar4 = pAVar3;
+      pAVar5 = pAVar3;
     }
     unaff_ESI = TypeInfo__System__Action;
-    if (pAVar4 != (Action *)0x0) goto code_?;
+    if (pAVar5 != (Action *)0x0) goto code_?;
   }
-  pAVar3 = (Action *)func_?(pAVar3,unaff_ESI);
-  pAVar5 = extraout_ECX;
+  uVar4 = func_?(pAVar3,unaff_ESI);
 code_?:
-  func_?(pAVar3,pAVar5);
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  func_?(uVar4);
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -525,8 +523,9 @@ void Assembly-CSharp.dll::BoostHUDController::BoostHUDController__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
-  (this->fields).currentBoosts = this_00;
-  func_?(&(this->fields).currentBoosts,this_00);
+  ppLVar1 = &(this->fields).currentBoosts;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

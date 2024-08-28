@@ -311,29 +311,40 @@ void Assembly-CSharp.dll::CullingSubscriberTerrainChunk::CullingSubscriberTerrai
     func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  VStack_1.z = bounds.m_Extents.z;
-  VStack_1.x = bounds.m_Extents.x;
-  VStack_1.y = bounds.m_Extents.y;
-  fVar2 = (float10)func_?(&VStack_1,0);
-  fStack_3 = (float)fVar2;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  dVar1 = (double)(bounds.m_Extents.y * bounds.m_Extents.y + bounds.m_Extents.x * bounds.m_Extents.x
+                  + bounds.m_Extents.z * bounds.m_Extents.z);
+  if (dVar1 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar1 = SQRT(dVar1);
+  }
   if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
-  pBVar4 = TypeInfo__CullingApiWrapper->static_fields->spheres;
-  if (pBVar4 != (BoundingSphere__Array *)0x0) {
-    uVar5 = (this->fields)._CullingIndex_k__BackingField;
-    if (pBVar4->max_length <= uVar5) goto code_?;
-    pBVar6 = pBVar4->vector + uVar5;
-    (pBVar6->position).x = bounds.m_Center.x;
-    (pBVar6->position).y = bounds.m_Center.y;
-    (pBVar6->position).z = bounds.m_Center.z;
-    pBVar4 = TypeInfo__CullingApiWrapper->static_fields->spheres;
-    if (pBVar4 != (BoundingSphere__Array *)0x0) {
-      uVar5 = (this->fields)._CullingIndex_k__BackingField;
-      if (uVar5 < pBVar4->max_length) {
-        pBVar4->vector[uVar5].radius = fStack_3;
-        iVar7 = CullingApiWrapper::CullingApiWrapper_GetDistanceBand(fStack_3,(MethodInfo *)0x0);
-        (this->fields).distanceBand = iVar7;
+  pBVar2 = TypeInfo__CullingApiWrapper->static_fields->spheres;
+  if (pBVar2 != (BoundingSphere__Array *)0x0) {
+    uVar3 = (this->fields)._CullingIndex_k__BackingField;
+    if (pBVar2->max_length <= uVar3) goto code_?;
+    pBVar4 = pBVar2->vector + uVar3;
+    (pBVar4->position).x = bounds.m_Center.x;
+    (pBVar4->position).y = bounds.m_Center.y;
+    (pBVar4->position).z = bounds.m_Center.z;
+    pBVar2 = TypeInfo__CullingApiWrapper->static_fields->spheres;
+    if (pBVar2 != (BoundingSphere__Array *)0x0) {
+      uVar3 = (this->fields)._CullingIndex_k__BackingField;
+      if (uVar3 < pBVar2->max_length) {
+        pBVar2->vector[uVar3].radius = (float)dVar1;
+        iVar5 = CullingApiWrapper::CullingApiWrapper_GetDistanceBand((float)dVar1,(MethodInfo *)0x0)
+        ;
+        (this->fields).distanceBand = iVar5;
         return;
       }
       goto code_?;
@@ -342,8 +353,8 @@ void Assembly-CSharp.dll::CullingSubscriberTerrainChunk::CullingSubscriberTerrai
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -364,7 +375,7 @@ void Assembly-CSharp.dll::CullingSubscriberTerrainChunk::CullingSubscriberTerrai
     auVar4._0_8_ = in_stack_2._0_8_;
     auVar4._8_4_ = &TypeInfo__CullingApiWrapper;
     auVar5._8_12_ = auVar4._8_12_;
-    auVar5._0_8_ = 0x103549d700000000;
+    auVar5._0_8_ = 0x1034e90700000000;
     func_?();
     auVar1 = auVar5._0_16_;
     cRam_? = '\x01';

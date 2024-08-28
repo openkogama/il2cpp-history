@@ -67,47 +67,41 @@ void Assembly-CSharp.dll::ProcessScanner::ProcessScanner_Initialize
                (ApplicationDesc__Array *banList,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffc8;
-  uStack_5 = 0;
-  puVar6 = &stack0xffffffc8;
-  if (banList != (ApplicationDesc__Array *)0x0) {
-    while( true ) {
-      uVar7 = uStack_5;
-      if ((int)banList->max_length <= (int)uStack_5) {
-        *unaff_FS_OFFSET = uStack_3;
-        return;
-      }
-      uStack_1 = 0;
-      if (banList->max_length <= uStack_5) break;
-      pAVar8 = banList->vector[uStack_5];
-      puVar6 = puStack_4;
-      if (pAVar8 == (ApplicationDesc *)0x0) goto code_?;
-      if (banList->max_length <= uStack_5) goto code_?;
-      if (pAVar8 == (ApplicationDesc *)0x0) goto code_?;
-      strictComparison = (pAVar8->fields).strictComparison;
-      _bStack_1c = CONCAT31(uStack_9,strictComparison);
-      ProcessScanner_AddToBanList
-                ((pAVar8->fields)._ExeCertSubjectName_k__BackingField,strictComparison,
-                 (MethodInfo *)0x0);
-      uStack_5 = uVar7 + 1;
+  puStack_1 = &DAT_?;
+  uStack_2 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_2;
+  puStack_3 = &stack0xffffffc8;
+  uVar4 = 0;
+  do {
+    uStack_5 = 0xffffffff;
+    uStack_6 = uVar4;
+    if (banList == (ApplicationDesc__Array *)0x0) {
+code_?:
+      func_?();
+      pAStack_7 = banList->klass;
+      func_?(&pAStack_7,&UNK_?);
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
     }
-    func_?();
-code_?:
-    func_?();
-    puVar6 = puStack_4;
-  }
-code_?:
-  puStack_4 = puVar6;
-  func_?();
-  pAStack_10 = banList->klass;
-  func_?(&pAStack_10,&UNK_?);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
-  return;
+    if ((int)banList->max_length <= (int)uVar4) {
+      *unaff_FS_OFFSET = uStack_2;
+      return;
+    }
+    uStack_5 = 0;
+    if (banList->max_length <= uVar4) {
+      func_?();
+      goto code_?;
+    }
+    pAVar9 = banList->vector[uVar4];
+    if (pAVar9 == (ApplicationDesc *)0x0) goto code_?;
+    strictComparison = (pAVar9->fields).strictComparison;
+    _bStack_1c = CONCAT31(uStack_10,strictComparison);
+    ProcessScanner_AddToBanList
+              ((pAVar9->fields)._ExeCertSubjectName_k__BackingField,strictComparison,
+               (MethodInfo *)0x0);
+    uVar4 = uVar4 + 1;
+  } while( true );
 }
 
 
@@ -165,93 +159,85 @@ void Assembly-CSharp.dll::ProcessScanner::ProcessScanner_StartScan
     pcRam_? = (code *)func_?(&puStack_12);
   }
   uVar13 = (*pcRam_?)();
-  if ((int)uVar13 < 0) {
-    if (uVar13 == 0xfffffffd) {
-      pSVar14 = StringLiteral_NativeFunc_error__eError_Process;
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
-        pSVar14 = StringLiteral_NativeFunc_error__eError_Process;
+  if (-1 < (int)uVar13) {
+    if (banList != (ApplicationDesc__Array *)0x0) {
+      if (uVar13 < banList->max_length) {
+        pAVar14 = banList->vector[uVar13];
+        if (pAVar14 != (ApplicationDesc *)0x0) {
+          if ((pAVar14->fields).strictComparison == 0) {
+            if (pcRam_? == (code *)0x0) {
+              pcStack_15 = pcRam_?;
+              pcStack_16 = pcRam_?;
+              uStack_17 = 0;
+              uStack_18 = 0xb;
+              uStack_19 = 0x10;
+              uStack_20 = 1;
+              pcRam_? = (code *)func_?(&puStack_21);
+            }
+            uVar22 = (*pcRam_?)();
+            pSVar23 = (String *)func_?(uVar22);
+            func_?(uVar22);
+            report = (HackingToolDetector_HackingToolReport *)
+                     func_?(TypeInfo__HackingToolDetector__HackingToolReport);
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                      ((Object *)report,ExceptionArgument__Enum_obj,unaff_EDI);
+            (report->fields).kind = 1;
+            (report->fields).app = pAVar14;
+            func_?();
+            (report->fields).exactFind = pSVar23;
+          }
+          else {
+            report = (HackingToolDetector_HackingToolReport *)
+                     func_?(TypeInfo__HackingToolDetector__HackingToolReport);
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                      ((Object *)report,ExceptionArgument__Enum_obj,unaff_EDI);
+            (report->fields).kind = 0;
+            (report->fields).app = pAVar14;
+          }
+          func_?();
+          if ((TypeInfo__HackingToolDetector->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          HackingToolDetector::HackingToolDetector_Report(report,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
+          return;
+        }
+      }
+      else {
+        func_?();
       }
     }
-    else if (uVar13 == 0xfffffffe) {
-      pSVar14 = StringLiteral_NativeFunc_error__eError_CreateT;
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
-        pSVar14 = StringLiteral_NativeFunc_error__eError_CreateT;
-      }
-    }
-    else {
-      if (uVar13 == 0xffffffff) goto code_?;
-      pSVar14 = StringLiteral_NativeFunc_error_code__UNKNOWN;
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
-        pSVar14 = StringLiteral_NativeFunc_error_code__UNKNOWN;
-      }
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-              ((Object *)pSVar14,(MethodInfo *)0x0);
-code_?:
-    *unaff_FS_OFFSET = uStack_3;
+    func_?();
+    pcVar24 = (code *)swi(3);
+    (*pcVar24)();
     return;
   }
-  if (banList == (ApplicationDesc__Array *)0x0) goto code_?;
-  if (uVar13 < banList->max_length) {
-    if (banList->vector[uVar13] == (ApplicationDesc *)0x0) goto code_?;
-    if ((banList->vector[uVar13]->fields).strictComparison == 0) {
-      if (uVar13 < banList->max_length) {
-        pAVar15 = banList->vector[uVar13];
-        if (pcRam_? == (code *)0x0) {
-          pcStack_16 = pcRam_?;
-          pcStack_17 = pcRam_?;
-          uStack_18 = 0;
-          uStack_19 = 0xb;
-          uStack_20 = 0x10;
-          uStack_21 = 1;
-          pcRam_? = (code *)func_?(&puStack_22);
-        }
-        uVar23 = (*pcRam_?)();
-        pSVar14 = (String *)func_?(uVar23);
-        func_?(uVar23);
-        report = (HackingToolDetector_HackingToolReport *)
-                 func_?(TypeInfo__HackingToolDetector__HackingToolReport);
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)report,ExceptionArgument__Enum_obj,unaff_EDI);
-        (report->fields).kind = 1;
-        (report->fields).app = pAVar15;
-        func_?();
-        (report->fields).exactFind = pSVar14;
-        goto code_?;
-      }
-      goto code_?;
+  if (uVar13 == 0xfffffffd) {
+    pSVar23 = StringLiteral_NativeFunc_error__eError_Process;
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Debug);
+      pSVar23 = StringLiteral_NativeFunc_error__eError_Process;
     }
-    if (uVar13 < banList->max_length) {
-      pAVar15 = banList->vector[uVar13];
-      report = (HackingToolDetector_HackingToolReport *)
-               func_?(TypeInfo__HackingToolDetector__HackingToolReport);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                ((Object *)report,ExceptionArgument__Enum_obj,unaff_EDI);
-      (report->fields).kind = 0;
-      (report->fields).app = pAVar15;
-code_?:
-      func_?();
-      if ((TypeInfo__HackingToolDetector->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      HackingToolDetector::HackingToolDetector_Report(report,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = uStack_3;
-      return;
+  }
+  else if (uVar13 == 0xfffffffe) {
+    pSVar23 = StringLiteral_NativeFunc_error__eError_CreateT;
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Debug);
+      pSVar23 = StringLiteral_NativeFunc_error__eError_CreateT;
     }
   }
   else {
-    func_?();
-code_?:
-    func_?();
+    if (uVar13 == 0xffffffff) goto code_?;
+    pSVar23 = StringLiteral_NativeFunc_error_code__UNKNOWN;
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Debug);
+      pSVar23 = StringLiteral_NativeFunc_error_code__UNKNOWN;
+    }
   }
-  func_?();
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+            ((Object *)pSVar23,(MethodInfo *)0x0);
 code_?:
-  func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  *unaff_FS_OFFSET = uStack_3;
   return;
 }
 

@@ -57,30 +57,30 @@ Vector3 * Assembly-CSharp.dll::ClosestPointCapsule::ClosestPointCapsule_GetClose
                                    ((Vector3 *)&stack0xffffffa0,pTVar3,(MethodInfo *)0x0);
                 fVar5 = pVVar4->x;
                 fVar6 = pVVar4->z;
-                iVar7 = func_?();
-                fVar8 = *(float *)(iVar7 + 8);
+                func_?();
                 pCVar1 = (this->fields).capsule;
                 if (pCVar1 != (CapsuleCollider *)0x0) {
-                  fVar9 = UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::
+                  puVar7 = &UNK_?;
+                  fVar8 = UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::
                           CapsuleCollider_get_radius(pCVar1,(MethodInfo *)0x0);
-                  fVar8 = fVar8 * fVar9;
+                  fVar8 = (float)puVar7 * fVar8;
                   pCVar1 = (this->fields).capsule;
                   if (pCVar1 != (CapsuleCollider *)0x0) {
-                    puVar10 = &UNK_?;
+                    puVar7 = &UNK_?;
                     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                              Component_get_gameObject((Component *)pCVar1,(MethodInfo *)0x0);
                     if (pGVar2 != (GameObject *)0x0) {
-                      puVar11 = &UNK_?;
+                      puVar9 = &UNK_?;
                       pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                                GameObject_get_transform(pGVar2,(MethodInfo *)0x0);
                       if (pTVar3 != (Transform *)0x0) {
                         pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                  Transform_get_lossyScale
                                            ((Vector3 *)&stack0xffffffa0,pTVar3,(MethodInfo *)0x0);
-                        uVar12 = pVVar4->y;
-                        __return_storage_ptr__->x = fVar5 + (float)uVar12 * (float)puVar10;
-                        __return_storage_ptr__->y = (float)uVar12 * (float)pCVar1 + (float)puVar11;
-                        __return_storage_ptr__->z = fVar6 + (float)uVar12 * fVar8;
+                        uVar10 = pVVar4->y;
+                        __return_storage_ptr__->x = fVar5 + (float)uVar10 * (float)puVar7;
+                        __return_storage_ptr__->y = (float)uVar10 * (float)pCVar1 + (float)puVar9;
+                        __return_storage_ptr__->z = fVar6 + (float)uVar10 * fVar8;
                         return __return_storage_ptr__;
                       }
                     }
@@ -94,8 +94,8 @@ Vector3 * Assembly-CSharp.dll::ClosestPointCapsule::ClosestPointCapsule_GetClose
     }
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  pVVar4 = (Vector3 *)(*pcVar13)();
+  pcVar11 = (code *)swi(3);
+  pVVar4 = (Vector3 *)(*pcVar11)();
   return pVVar4;
 }
 
@@ -114,19 +114,20 @@ void Assembly-CSharp.dll::ClosestPointCapsule::ClosestPointCapsule_OnValidate
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).capsule;
+  ppCVar2 = &(this->fields).capsule;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pCVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     pCVar1 = (CapsuleCollider *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         UnityEngine__CapsuleCollider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::CapsuleCollider>__
                        );
-    (this->fields).capsule = pCVar1;
-    func_?(&(this->fields).capsule,pCVar1);
+    *ppCVar2 = pCVar1;
+    func_?(ppCVar2,pCVar1);
   }
   return;
 }
@@ -140,8 +141,9 @@ void Assembly-CSharp.dll::ClosestPointCapsule::ClosestPointCapsule__ctor
 {
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
-  (this->fields).capsule = c;
-  func_?(&(this->fields).capsule,c);
+  ppCVar1 = &(this->fields).capsule;
+  *ppCVar1 = c;
+  func_?(ppCVar1,c);
   return;
 }
 

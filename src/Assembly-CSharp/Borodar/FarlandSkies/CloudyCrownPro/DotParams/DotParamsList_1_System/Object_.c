@@ -22,70 +22,66 @@ int32_t Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams::
     pCVar2 = mscorlib.dll::System::Collections::Generic::Comparer`1[System::Single]::
              Comparer_1_System_Single__get_Default((method->field7_0x1c).rgctx_data[1].method);
     iVar3 = 0;
-    iStack_4 = 0;
-    pIVar5 = (method->field7_0x1c).rgctx_data[4].klass;
-    if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar5 = (Il2CppClass *)func_?(pIVar5);
+    pIVar4 = (method->field7_0x1c).rgctx_data[4].klass;
+    if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar4 = (Il2CppClass *)func_?(pIVar4);
     }
-    iVar6 = func_?(0,pIVar5,list);
-    iVar6 = iVar6 + -1;
-    if (0 < iVar6) {
+    iStack_5 = func_?(0,pIVar4,list);
+    iStack_5 = iStack_5 + -1;
+    if (0 < iStack_5) {
       do {
-        iVar7 = (iVar6 + iStack_4) / 2;
-        pIVar5 = ((method->field7_0x1c).rgctx_data)->klass;
-        if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
-          pIVar5 = (Il2CppClass *)func_?(pIVar5);
+        iVar6 = (iStack_5 + iVar3) / 2;
+        pIVar4 = ((method->field7_0x1c).rgctx_data)->klass;
+        if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
+          pIVar4 = (Il2CppClass *)func_?(pIVar4);
         }
-        pIVar8 = list->klass;
-        uVar9 = 0;
-        uVar10._0_1_ = (pIVar8->_1).rank;
-        uVar10._1_1_ = (pIVar8->_1).minimumAlignment;
-        if (uVar10 != 0) {
+        pIVar7 = list->klass;
+        uVar8 = 0;
+        uVar9._0_1_ = (pIVar7->_1).rank;
+        uVar9._1_1_ = (pIVar7->_1).minimumAlignment;
+        if (uVar9 != 0) {
           do {
-            if (pIVar8->interfaceOffsets[uVar9].interfaceType == pIVar5) {
-              ppMVar11 = &(&(pIVar8->vtable).get_Item)[pIVar8->interfaceOffsets[uVar9].offset].
+            if (pIVar7->interfaceOffsets[uVar8].interfaceType == pIVar4) {
+              ppMVar10 = &(&(list->klass->vtable).get_Item)[pIVar7->interfaceOffsets[uVar8].offset].
                          method;
               goto code_?;
             }
-            uVar9 = uVar9 + 1;
-          } while (uVar9 < uVar10);
+            uVar8 = uVar8 + 1;
+          } while (uVar8 < uVar9);
         }
-        ppMVar11 = (MethodInfo **)func_?(list,pIVar5,0);
+        ppMVar10 = (MethodInfo **)func_?(list,pIVar4,0);
 code_?:
-        fVar12 = (float10)(*(code *)*ppMVar11)(list,iVar7,ppMVar11[1]);
+        fVar11 = (float10)(*(code *)*ppMVar10)(list,iVar6,ppMVar10[1]);
         if (pCVar2 == (Comparer_1_System_Single_ *)0x0) goto code_?;
-        iVar13 = (*(code *)(pCVar2->klass->vtable).__unknown.method)
-                           (pCVar2,(float)fVar12,value,pCVar2->klass[1]._0.image);
-        iVar3 = iStack_4;
-        iVar14 = iVar7 + -1;
-        if (iVar13 < 0) {
-          iVar3 = iVar7 + 1;
-          iVar14 = iVar6;
+        iVar12 = (*(code *)(pCVar2->klass->vtable).__unknown.method)
+                          (pCVar2,(float)fVar11,value,pCVar2->klass[1]._0.image);
+        if (iVar12 < 0) {
+          iVar3 = iVar6 + 1;
         }
-        iVar6 = iVar14;
-        iStack_4 = iVar3;
-      } while (iVar3 < iVar6);
+        else {
+          iStack_5 = iVar6 + -1;
+        }
+      } while (iVar3 < iStack_5);
     }
-    pIVar5 = ((method->field7_0x1c).rgctx_data)->klass;
-    if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar5 = (Il2CppClass *)func_?(pIVar5);
+    pIVar4 = ((method->field7_0x1c).rgctx_data)->klass;
+    if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar4 = (Il2CppClass *)func_?(pIVar4);
     }
-    fVar12 = (float10)func_?(0,pIVar5,list,iVar3);
+    fVar11 = (float10)func_?(0,pIVar4,list,iVar3);
     if (pCVar2 != (Comparer_1_System_Single_ *)0x0) {
-      iVar7 = (*(code *)(pCVar2->klass->vtable).__unknown.method)
-                        (pCVar2,(float)fVar12,value,pCVar2->klass[1]._0.image);
-      iVar6 = iVar3 + 1;
-      if (-1 < iVar7) {
-        iVar6 = iVar3;
+      iVar6 = (*(code *)(pCVar2->klass->vtable).__unknown.method)
+                        (pCVar2,(float)fVar11,value,pCVar2->klass[1]._0.image);
+      if (iVar6 < 0) {
+        iVar3 = iVar3 + 1;
       }
-      return iVar6;
+      return iVar3;
     }
   }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  iVar16 = (*pcVar15)();
-  return iVar16;
+  pcVar13 = (code *)swi(3);
+  iVar14 = (*pcVar13)();
+  return iVar14;
 }
 
 

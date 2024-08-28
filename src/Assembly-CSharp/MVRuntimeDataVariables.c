@@ -17,7 +17,11 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_New
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).owner;
-  if (pMVar1 != (MVWorldObjectClient *)0x0) {
+  if (pMVar1 == (MVWorldObjectClient *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
     this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
               (*(code *)(pMVar1->klass->vtable).get_RunTimeData.method)
                         (pMVar1,(pMVar1->klass->vtable).set_RunTimeData.methodPtr);
@@ -34,81 +38,71 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_New
     }
     (pMVar2->fields).lastSendTime = -INFINITY;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)pMVar2,ExceptionArgument__Enum_obj,unaff_ESI);
+              ((Object *)pMVar2,ExceptionArgument__Enum_obj,unaff_EDI);
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString->_1).
         cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString);
     }
     pOVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredString::
              ObscuredString_op_Implicit(variableId,(MethodInfo *)0x0);
-    (pMVar2->fields).variableId = pOVar3;
-    func_?(&pMVar2->fields,pOVar3);
+    pMVar4 = &pMVar2->fields;
+    pMVar4->variableId = pOVar3;
+    func_?(pMVar4,pOVar3);
     (pMVar2->fields).sendInterval = sendInterval;
     (pMVar2->fields).writeThrough = writeThrough;
-    pSVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredString::
-             ObscuredString_op_Implicit_1((pMVar2->fields).variableId,(MethodInfo *)0x0);
+    pSVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredString::
+             ObscuredString_op_Implicit_1(pMVar4->variableId,(MethodInfo *)0x0);
     if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Extensions);
     }
-    bVar5 = Extensions::Extensions_ContainsObscuredKey
-                      ((Dictionary_2_System_Object_System_Object_ *)this_01,pSVar4,(MethodInfo *)0x0
+    bVar6 = Extensions::Extensions_ContainsObscuredKey
+                      ((Dictionary_2_System_Object_System_Object_ *)this_01,pSVar5,(MethodInfo *)0x0
                       );
-    if (bVar5 == 0) {
-      pOVar3 = (pMVar2->fields).variableId;
+    if (bVar6 == 0) {
+      pOVar3 = pMVar4->variableId;
       if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString->_1).
           cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString);
       }
-      pSVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredString::
+      pSVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredString::
                ObscuredString_op_Implicit_1(pOVar3,(MethodInfo *)0x0);
-      pSVar4 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_Initial_runtime_data_does_not_co,pSVar4,(MethodInfo *)0x0);
+      pSVar5 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_Initial_runtime_data_does_not_co,pSVar5,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)pSVar4,(MethodInfo *)0x0);
+                ((Object *)pSVar5,(MethodInfo *)0x0);
     }
-    if (this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      TVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (this_01,(Object *)(pMVar2->fields).variableId,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-      (pMVar2->fields).value = (Object *)TVar6.m_Index;
-      func_?(&(pMVar2->fields).value,TVar6.m_Index);
-      pOVar7 = (pMVar2->fields).value;
-      (pMVar2->fields).sendValue = pOVar7;
-      func_?(&(pMVar2->fields).sendValue,pOVar7);
-      pMVar8 = (pMVar2->fields).OnWriteThrough;
-      this_02 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
-                func_?(TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate);
-      UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
-      VideoCapture+OnVideoCaptureResourceCreatedCallback::
-      VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                (this_02,(Object *)this,
-                 MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_,
-                 (MethodInfo *)0x0);
-      pMVar8 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pMVar8,(Delegate *)this_02,(MethodInfo *)0x0);
-      if (pMVar8 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) {
-        (pMVar2->fields).OnWriteThrough = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-      }
-      else {
-        pMVar9 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-        if (pMVar8->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-          pMVar9 = pMVar8;
-        }
-        if (pMVar9 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
-        (pMVar2->fields).OnWriteThrough = pMVar9;
-        pMVar9 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-        if (pMVar8->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-          pMVar9 = pMVar8;
-        }
-        if (pMVar9 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
-      }
+    if (this_01 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
+    TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (this_01,(Object *)pMVar4->variableId,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    ppOVar8 = &(pMVar2->fields).value;
+    *ppOVar8 = (Object *)TVar7.m_Index;
+    func_?(ppOVar8,TVar7.m_Index);
+    ppOVar9 = &(pMVar2->fields).sendValue;
+    *ppOVar9 = *ppOVar8;
+    func_?(ppOVar9,*ppOVar8);
+    pMVar10 = (pMVar2->fields).OnWriteThrough;
+    this_02 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
+              func_?(TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate);
+    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+    VideoCapture+OnVideoCaptureResourceCreatedCallback::
+    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+              (this_02,(Object *)this,
+               MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_,(MethodInfo *)0x0)
+    ;
+    pMVar10 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)
+              mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)pMVar10,(Delegate *)this_02,(MethodInfo *)0x0);
+    if (pMVar10 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) {
+      (pMVar2->fields).OnWriteThrough = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+code_?:
       func_?();
       this_00 = (this->fields).variables;
       if (this_00 != (List_1_MVRuntimeDataVariable_ *)0x0) {
@@ -119,13 +113,25 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_New
                   );
         return pMVar2;
       }
+      goto code_?;
     }
+    pMVar11 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+    if (pMVar10->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
+      pMVar11 = pMVar10;
+    }
+    if (pMVar11 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+    (pMVar2->fields).OnWriteThrough = pMVar11;
+    pMVar11 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+    if (pMVar10->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
+      pMVar11 = pMVar10;
+    }
+    if (pMVar11 != (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  pMVar2 = (MVRuntimeDataVariable *)(*pcVar10)();
+  pcVar12 = (code *)swi(3);
+  pMVar2 = (MVRuntimeDataVariable *)(*pcVar12)();
   return pMVar2;
 }
 
@@ -148,7 +154,11 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_NewClampedFl
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).owner;
-  if (pMVar1 != (MVWorldObjectClient *)0x0) {
+  if (pMVar1 == (MVWorldObjectClient *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
     initialRuntimeData =
          (Dictionary_2_System_Object_System_Object_ *)
          (*(code *)(pMVar1->klass->vtable).get_RunTimeData.method)
@@ -183,29 +193,30 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_NewClampedFl
                        ((Delegate *)pMVar3,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pMVar3 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) {
       (pMVar2->fields)._._.OnWriteThrough = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-    }
-    else {
-      pMVar4 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-      if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-        pMVar4 = pMVar3;
+code_?:
+      func_?();
+      this_00 = (this->fields).variables;
+      if (this_00 != (List_1_MVRuntimeDataVariable_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  ((List_1_System_Object_ *)this_00,(Object *)pMVar2,
+                   MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__Add_MVRuntimeDataVariable_
+                  );
+        return pMVar2;
       }
-      if (pMVar4 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
-      (pMVar2->fields)._._.OnWriteThrough = pMVar4;
-      pMVar4 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-      if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-        pMVar4 = pMVar3;
-      }
-      if (pMVar4 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+      goto code_?;
     }
-    func_?();
-    this_00 = (this->fields).variables;
-    if (this_00 != (List_1_MVRuntimeDataVariable_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)this_00,(Object *)pMVar2,
-                 MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__Add_MVRuntimeDataVariable_
-                );
-      return pMVar2;
+    pMVar4 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+    if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
+      pMVar4 = pMVar3;
     }
+    if (pMVar4 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+    (pMVar2->fields)._._.OnWriteThrough = pMVar4;
+    pMVar4 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+    if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
+      pMVar4 = pMVar3;
+    }
+    if (pMVar4 != (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
   }
   func_?();
 code_?:
@@ -235,7 +246,11 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_New_2
     }
   }
   pMVar1 = (this->fields).owner;
-  if (pMVar1 != (MVWorldObjectClient *)0x0) {
+  if (pMVar1 == (MVWorldObjectClient *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
     initialRuntimeData =
          (Dictionary_2_System_Object_System_Object_ *)
          (*(code *)(pMVar1->klass->vtable).get_RunTimeData.method)
@@ -250,36 +265,24 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_New_2
     MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this_01,variableId,sendInterval,initialRuntimeData,writeThrough,
                (method->field7_0x1c).rgctx_data[1].method);
-    if (this_01 !=
-        (MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-      pMVar3 = (this_01->fields)._.OnWriteThrough;
-      this_02 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
-                func_?(TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate);
-      UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
-      VideoCapture+OnVideoCaptureResourceCreatedCallback::
-      VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                (this_02,(Object *)this,
-                 MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_,
-                 (MethodInfo *)0x0);
-      pMVar3 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pMVar3,(Delegate *)this_02,(MethodInfo *)0x0);
-      if (pMVar3 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) {
-        (this_01->fields)._.OnWriteThrough = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-      }
-      else {
-        pMVar4 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-        if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-          pMVar4 = pMVar3;
-        }
-        if (pMVar4 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
-        (this_01->fields)._.OnWriteThrough = pMVar4;
-        pMVar4 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-        if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-          pMVar4 = pMVar3;
-        }
-        if (pMVar4 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
-      }
+    if (this_01 ==
+        (MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0)
+    goto code_?;
+    pMVar3 = (this_01->fields)._.OnWriteThrough;
+    this_02 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
+              func_?(TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate);
+    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+    VideoCapture+OnVideoCaptureResourceCreatedCallback::
+    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+              (this_02,(Object *)this,
+               MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_,(MethodInfo *)0x0)
+    ;
+    pMVar3 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pMVar3,(Delegate *)this_02,(MethodInfo *)0x0);
+    if (pMVar3 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) {
+      (this_01->fields)._.OnWriteThrough = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+code_?:
       func_?();
       this_00 = (List_1_System_Object_ *)this_01[1].fields._.variableId;
       if (this_00 != (List_1_System_Object_ *)0x0) {
@@ -290,7 +293,19 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_New_2
                   );
         return (MVRuntimeDataVariable_1_System_Single_ *)this_01;
       }
+      goto code_?;
     }
+    pMVar4 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+    if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
+      pMVar4 = pMVar3;
+    }
+    if (pMVar4 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+    (this_01->fields)._.OnWriteThrough = pMVar4;
+    pMVar4 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+    if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
+      pMVar4 = pMVar3;
+    }
+    if (pMVar4 != (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
   }
   func_?();
 code_?:
@@ -336,6 +351,7 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_New_3
     if (pMVar4 != (MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0
        ) {
       pMVar5 = (pMVar4->fields)._.OnWriteThrough;
+      ppMVar6 = &(pMVar4->fields)._.OnWriteThrough;
       this_01 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
                 func_?(TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate);
       UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
@@ -348,27 +364,27 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_New_3
                mscorlib.dll::System::Delegate::Delegate_Combine
                          ((Delegate *)pMVar5,(Delegate *)this_01,(MethodInfo *)0x0);
       if (pMVar5 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) {
-        (pMVar4->fields)._.OnWriteThrough = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+        *ppMVar6 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
       }
       else {
-        pMVar6 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+        pMVar7 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
         if (pMVar5->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-          pMVar6 = pMVar5;
+          pMVar7 = pMVar5;
         }
-        if (pMVar6 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
-        (pMVar4->fields)._.OnWriteThrough = pMVar6;
-        pMVar6 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+        if (pMVar7 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+        *ppMVar6 = pMVar7;
+        pMVar7 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
         if (pMVar5->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-          pMVar6 = pMVar5;
+          pMVar7 = pMVar5;
         }
-        if (pMVar6 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+        if (pMVar7 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
       }
       func_?();
-      this_00 = (List_1_System_Object_ *)pMVar4[1].fields._.variableId;
-      if (this_00 != (List_1_System_Object_ *)0x0) {
+      this_00 = (this->fields).variables;
+      if (this_00 != (List_1_MVRuntimeDataVariable_ *)0x0) {
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__Add
-                  (this_00,(Object *)pMVar4,
+                  ((List_1_System_Object_ *)this_00,(Object *)pMVar4,
                    MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__Add_MVRuntimeDataVariable_
                   );
         return pMVar4;
@@ -378,9 +394,9 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_New_3
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
+  pcVar8 = (code *)swi(3);
   pMVar4 = (MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-           (*pcVar7)();
+           (*pcVar8)();
   return pMVar4;
 }
 
@@ -429,8 +445,8 @@ void Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_Receive
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffb8;
-  puVar5 = &stack0xffffffb8;
+  puStack_4 = &stack0xffffffb4;
+  puVar5 = &stack0xffffffb4;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVRuntimeDataVariable>__Dispose__
@@ -461,18 +477,18 @@ void Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_Receive
     LStack_8._version = 0;
     uStack_1 = 1;
     RVar9 = pLVar7->_current;
-    LStack_8._current = (RegexCharClass_SingleRange)&stack0xffffffc4;
+    LStack_8._current = (RegexCharClass_SingleRange)&stack0xffffffc0;
     while( true ) {
       RStack_10 = RVar9;
       bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc4,
+                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc0,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVRuntimeDataVariable>__MoveNext__
                         );
       if (bVar11 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)&stack0xffffffc4,
+                  ((Object *)&stack0xffffffc0,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVRuntimeDataVariable>__Dispose__
                    ,method_00);
@@ -512,32 +528,32 @@ void Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_Receive
         pLVar6 = *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
                   ((int)RStack_10 + 0xc);
         RVar9 = (RegexCharClass_SingleRange)((int)RStack_10 + 0xc);
-        *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
-         ((int)RStack_10 + 0xc) = LStack_8._list;
+        *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)RVar9 =
+             LStack_8._list;
         method_00 = (MethodInfo *)&UNK_?;
-        pLStack_13 = LStack_8._list;
+        RStack_13 = RVar9;
+        pLStack_14 = LStack_8._list;
         func_?();
-        if (pLVar6 != pLStack_13) {
-          if (*(int *)((int)RStack_10 + 0x20) != 0) {
-            iVar14 = *(int *)((int)RStack_10 + 0x20);
+        if (pLVar6 != pLStack_14) {
+          iVar15 = *(int *)((int)RStack_10 + 0x20);
+          if (iVar15 != 0) {
             ObscuredTypesConverter::ObscuredTypesConverter_CreateUnObscuredValue
                       (*(Object **)((int)RStack_10 + 0xc),(MethodInfo *)0x0);
-            (**(code **)(iVar14 + 0xc))();
+            (**(code **)(iVar15 + 0xc))();
           }
-          if ((*(char *)((int)RStack_10 + 0x1c) != '\0') && (*(int *)((int)RStack_10 + 0x24) != 0))
-          {
-            iVar14 = *(int *)((int)RStack_10 + 0x24);
+          if ((*(char *)((int)RStack_10 + 0x1c) != '\0') &&
+             (iVar15 = *(int *)((int)RStack_10 + 0x24), iVar15 != 0)) {
             ObscuredTypesConverter::ObscuredTypesConverter_CreateUnObscuredValue
-                      (*(Object **)((int)RStack_10 + 0xc),(MethodInfo *)0x0);
-            (**(code **)(iVar14 + 0xc))();
+                      (*(Object **)RStack_13,(MethodInfo *)0x0);
+            (**(code **)(iVar15 + 0xc))();
           }
         }
       }
     }
   }
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -629,8 +645,8 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_Send
                      *(Object **)((int)RVar6 + 8),*(Object **)((int)RVar6 + 0xc),
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                     );
-          *(undefined4 *)((int)RVar6 + 0x10) = *(undefined4 *)((int)RVar6 + 0xc);
           in_stack_11 = (MethodInfo *)((int)RVar6 + 0x10);
+          in_stack_11->methodPointer = *(Il2CppMethodPointer *)((int)RVar6 + 0xc);
           RVar5 = (RegexCharClass_SingleRange)&UNK_?;
           func_?();
           *(float *)((int)RVar6 + 0x18) = fVar10;
@@ -651,12 +667,11 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_Send
       *unaff_FS_OFFSET = uStack_3;
       return (Dictionary_2_System_Object_System_Object_ *)0x0;
     }
-    if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment <= (pDVar12->klass->_1).naturalAligment) &&
+    bVar13 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
+            .naturalAligment;
+    if ((bVar13 <= (pDVar12->klass->_1).naturalAligment) &&
        ((Dictionary_2_System_Object_System_Object___Class *)
-        (pDVar12->klass->_1).typeHierarchy
-        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment - 1] ==
+        (pDVar12->klass->_1).typeHierarchy[bVar13 - 1] ==
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
       *unaff_FS_OFFSET = uStack_3;
       return pDVar12;
@@ -666,8 +681,8 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_Send
 code_?:
   func_?();
   func_?();
-  pcVar13 = (code *)swi(3);
-  pDVar12 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  pDVar12 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar14)();
   return pDVar12;
 }
 
@@ -694,8 +709,9 @@ void Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__List__);
-  (this->fields).variables = this_00;
-  func_?(&(this->fields).variables,this_00);
+  ppLVar1 = &(this->fields).variables;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   return;
 }
 

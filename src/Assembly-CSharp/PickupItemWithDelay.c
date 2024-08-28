@@ -104,6 +104,7 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_OnDestroy
   }
   method_00 = TypeInfo__UpdateController____c__DisplayClass6_0;
   value = (Object *)func_?();
+  object = value;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
@@ -113,6 +114,7 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_OnDestroy
     uVar2 = 0;
     while( true ) {
       if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+        object = (Object *)&UNK_?;
         func_?(TypeInfo__UpdateController);
       }
       pLVar3 = TypeInfo__UpdateController->static_fields->updateBuckets;
@@ -126,30 +128,33 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_OnDestroy
       pLVar3 = TypeInfo__UpdateController->static_fields->updateBuckets;
       if (pLVar3 == (List_1_PriorityDataUpdate___Array *)0x0) goto code_?;
       if (pLVar3->max_length <= uVar2) break;
-      this_01 = *(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ **)
+      this_01 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)value[1].monitor;
+      this_00 = *(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ **)
                  ((int)pLVar3->vector + iVar1 + -0x10);
-      this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)value[1].monitor;
-      if (this_00 == (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-        this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+      value = object;
+      if (this_01 == (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+        this_01 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
                   func_?(TypeInfo__System__Predicate<PriorityDataUpdate>);
         mscorlib.dll::System::Predicate`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::
         Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___ctor
-                  (this_00,value,
+                  (this_01,object,
                    MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_
                    ,(MethodInfo *)0x0);
-        value[1].monitor = (MonitorData *)this_00;
-        func_?(&value[1].monitor,this_00);
+        object[1].monitor = (MonitorData *)this_01;
+        func_?(&object[1].monitor,this_01);
+        value = object;
       }
-      if (this_01 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0)
+      if (this_00 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0)
       goto code_?;
       mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
       VisualTreeAsset+UsingEntry]::
       List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__RemoveAll
-                (this_01,this_00,
+                (this_00,this_01,
                  MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
                 );
       uVar2 = uVar2 + 1;
       iVar1 = iVar1 + 4;
+      object = value;
     }
     func_?();
   }
@@ -396,10 +401,7 @@ Color * Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_get_CrossH
   if (fVar3 < 0.0) {
     fVar3 = 0.0;
   }
-  else if (_UNK_? < fVar3) {
-    fVar3 = _UNK_?;
-  }
-  if (_UNK_? <= fVar3) {
+  else if ((_UNK_? < fVar3) || (_UNK_? <= fVar3)) {
     fVar2 = (this->fields).crossHairCanFire.g;
     fVar1 = (this->fields).crossHairCanFire.b;
     fVar3 = (this->fields).crossHairCanFire.a;
@@ -418,9 +420,6 @@ Color * Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_get_CrossH
   fVar8 = (this->fields).crossHairCannotFireHigh.a;
   if (fVar3 < 0.0) {
     fVar3 = 0.0;
-  }
-  else if (_UNK_? < fVar3) {
-    fVar3 = _UNK_?;
   }
   __return_storage_ptr__->r = ((this->fields).crossHairCannotFireHigh.r - fVar2) * fVar3 + fVar2;
   __return_storage_ptr__->g = (fVar6 - fVar1) * fVar3 + fVar1;

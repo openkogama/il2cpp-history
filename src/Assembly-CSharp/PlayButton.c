@@ -405,9 +405,10 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnPromotionShown
                       ContinueButtonLockCursor_MethodInfo__UnityEngine__Object__Instantiate<ContinueButtonLockCursor>_ContinueButtonLockCursor_
                      );
   if (value != (Object *)0x0) {
-    value[1].klass = pOVar2;
-    func_?(value + 1,pOVar2);
-    pOVar2 = value[1].klass;
+    pOVar3 = value + 1;
+    pOVar3->klass = pOVar2;
+    func_?(pOVar3,pOVar2);
+    pOVar2 = pOVar3->klass;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
@@ -440,8 +441,8 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnPromotionShown
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -551,9 +552,10 @@ code_?:
         func_?();
         cRam_? = '\x01';
       }
-      pTVar11 = TypeInfo__TimedPlayReward__RewardTracker->static_fields;
-      if ((pTVar11->IsCollected == 0) && (pTVar11->CollectedChanged != (Action *)0x0)) {
-        (*(pTVar11->CollectedChanged->fields)._._.invoke_impl)();
+      if ((TypeInfo__TimedPlayReward__RewardTracker->static_fields->IsCollected == 0) &&
+         (pAVar11 = TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged,
+         pAVar11 != (Action *)0x0)) {
+        (*(pAVar11->fields)._._.invoke_impl)();
       }
     }
   }

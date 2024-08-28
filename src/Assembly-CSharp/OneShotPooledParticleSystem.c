@@ -135,19 +135,20 @@ void Assembly-CSharp.dll::OneShotPooledParticleSystem::OneShotPooledParticleSyst
     cRam_? = '\x01';
   }
   pPVar1 = (this->fields).particles;
+  ppPVar2 = &(this->fields).particles;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pPVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     pPVar1 = (ParticleSystem *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::ParticleSystem>__
                        );
-    (this->fields).particles = pPVar1;
-    func_?(&(this->fields).particles,pPVar1);
+    *ppPVar2 = pPVar1;
+    func_?(ppPVar2,pPVar1);
   }
   return;
 }

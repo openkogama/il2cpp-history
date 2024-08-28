@@ -60,8 +60,9 @@ void Assembly-CSharp.dll::StreamedTextureToMeshRenderer::StreamedTextureToMeshRe
     func_?(&StringLiteral__MainTex);
     cRam_? = '\x01';
   }
-  (this->fields).shaderTextureVariableName = StringLiteral__MainTex;
-  func_?(&(this->fields).shaderTextureVariableName,StringLiteral__MainTex);
+  ppSVar1 = &(this->fields).shaderTextureVariableName;
+  *ppSVar1 = StringLiteral__MainTex;
+  func_?(ppSVar1,StringLiteral__MainTex);
   StreamingAsset`2[System::Object,System::Object]::
   StreamingAsset_2_System_Object_System_Object___ctor
             ((StreamingAsset_2_System_Object_System_Object_ *)this,

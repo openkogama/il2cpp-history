@@ -88,11 +88,11 @@ code_?:
       pQStack_11 = (this->fields).prevVelocities;
       fStack_12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                             ((MethodInfo *)0x0);
-      fStack_13 = fStack_12 * 0.0;
-      uStack_14 = CONCAT44(velocity.y * fStack_12,fStack_12 * 0.0);
+      fStack_13 = fStack_12 * _UNK_?;
+      uStack_14 = CONCAT44(velocity.y * fStack_12,fStack_13);
       if (pQStack_11 != (Queue_1_UnityEngine_Vector3_ *)0x0) {
         item.y = velocity.y * fStack_12;
-        item.x = fStack_12 * 0.0;
+        item.x = fStack_13;
         item.z = fStack_13;
         mscorlib.dll::System::Collections::Generic::Queue`1[UnityEngine::Vector3]::
         Queue_1_UnityEngine_Vector3__Enqueue
@@ -225,7 +225,7 @@ void Assembly-CSharp.dll::PlaymodeCamera+SmoothLookAt::PlaymodeCamera_SmoothLook
             ((Stack_1_System_Int32_ *)this_00,
              MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Queue__);
   method_00 = (MethodInfo *)&(this->fields).prevVelocities;
-  (this->fields).prevVelocities = this_00;
+  *(Queue_1_UnityEngine_Vector3_ **)method_00 = this_00;
   func_?(method_00,this_00);
   (this->fields).maxMag = 30.0;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55

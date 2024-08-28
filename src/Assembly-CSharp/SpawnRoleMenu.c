@@ -37,9 +37,9 @@ float Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_CalculateElementPosition
                 (SpawnRoleMenu *this,int32_t index,MethodInfo *method)
 
 {
-  return (float)(index + 1) * (this->fields).elementSpacing +
-         (float)index * (this->fields).selectionElementWidth +
-         (this->fields).selectionElementWidth * _UNK_?;
+  fVar1 = (this->fields).selectionElementWidth;
+  return (float)(index + 1) * (this->fields).elementSpacing + (float)index * fVar1 +
+         fVar1 * _UNK_?;
 }
 
 
@@ -307,8 +307,7 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_CreateSpawnRoleSelectionE
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pDVar1 = (DefaultSpawnRoleSelectionElement *)
-           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+  pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
                      ((Object *)original,parent,0,
                       SpawnRoleSelectionElement_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleSelectionElement>_SpawnRoleSelectionElement__UnityEngine__Transform__bool_
                      );
@@ -330,26 +329,25 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_CreateSpawnRoleSelectionE
                            MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
                           );
         if (RVar2 != (RegexCharClass_SingleRange)0x0) {
-          func_?(2);
+          func_?();
           iVar3 = (this->fields).shownTeam;
-          this_01 = (UnityAction_1_System_Int32Enum_ *)func_?(iVar3);
+          pUVar4 = (UnityAction_1_System_Int32Enum_ *)
+                   func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
           UnityAction_1_System_Int32Enum___ctor
-                    (this_01,(Object *)this,MethodInfo__SpawnRoleMenu__OnSpawnRoleSelected_int_,
+                    (pUVar4,(Object *)this,MethodInfo__SpawnRoleMenu__OnSpawnRoleSelected_int_,
                      (MethodInfo *)0x0);
-          puVar4 = &UNK_?;
-          pUVar5 = TypeInfo__UnityEngine__Events__UnityAction<int>;
-          this_02 = (UnityAction_1_System_Int32Enum_ *)
-                    func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
+          puVar5 = &UNK_?;
+          pUVar6 = TypeInfo__UnityEngine__Events__UnityAction<int>;
+          pUVar4 = (UnityAction_1_System_Int32Enum_ *)
+                   func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
           UnityAction_1_System_Int32Enum___ctor
-                    (this_02,(Object *)this,MethodInfo__SpawnRoleMenu__OnSpawnRoleActivated_int_,
+                    (pUVar4,(Object *)this,MethodInfo__SpawnRoleMenu__OnSpawnRoleActivated_int_,
                      (MethodInfo *)0x0);
-          if (pDVar1 != (DefaultSpawnRoleSelectionElement *)0x0) {
-            this_03 = (DefaultSpawnRoleSelectionElement *)(startIndex + index);
-            pSVar6 = (SpawnRoleMenu *)(pDVar1->klass->vtable).Select.methodPtr;
-            (*(code *)(pDVar1->klass->vtable).Initialize.method)
-                      (pDVar1,this_03,puVar4,pUVar5,iVar3,this_01);
+          if (pOVar1 != (Object *)0x0) {
+            this_01 = (DefaultSpawnRoleSelectionElement *)((int)RVar2 + index);
+            (**(code **)&pOVar1->klass[1]._0.this_arg.attrs)(pOVar1,this_01,puVar5,pUVar6,iVar3);
             RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
@@ -359,36 +357,30 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_CreateSpawnRoleSelectionE
                               );
             if (RVar2 != (RegexCharClass_SingleRange)0x0) {
               uVar7 = 0;
-              if (*(ushort *)(*(int *)RVar2 + 0xb6) != 0) {
+              uVar8 = *(ushort *)(*(int *)RVar2 + 0xb6);
+              if (uVar8 != 0) {
+                iVar9 = *(int *)(*(int *)RVar2 + 0x58);
                 do {
-                  if (*(ISpawnRolePreviewObject__Class **)
-                       (*(int *)(*(int *)RVar2 + 0x58) + (uint)uVar7 * 8) ==
+                  if (*(ISpawnRolePreviewObject__Class **)(iVar9 + (uint)uVar7 * 8) ==
                       TypeInfo__ISpawnRolePreviewObject) {
-                    puVar8 = (undefined4 *)
-                             (*(int *)RVar2 +
-                             (*(int *)(*(int *)(*(int *)RVar2 + 0x58) + 4 + (uint)uVar7 * 8) + 0x18)
-                             * 8);
+                    puVar10 = (undefined4 *)
+                             (*(int *)RVar2 + 0xc0 + *(int *)(iVar9 + 4 + (uint)uVar7 * 8) * 8);
                     goto code_?;
                   }
                   uVar7 = uVar7 + 1;
-                  pDVar1 = this_03;
-                  this = pSVar6;
-                } while (uVar7 < *(ushort *)(*(int *)RVar2 + 0xb6));
+                } while (uVar7 < uVar8);
               }
-              pSVar6 = this;
-              this_03 = pDVar1;
-              puVar8 = (undefined4 *)func_?(RVar2);
+              puVar10 = (undefined4 *)func_?();
 code_?:
-              spawnRoleObject = (GameObject *)(*(code *)*puVar8)();
+              spawnRoleObject = (GameObject *)(*(code *)*puVar10)();
               DefaultSpawnRoleSelectionElement::DefaultSpawnRoleSelectionElement_SetupPreviewImage
-                        (this_03,spawnRoleObject,(MethodInfo *)0x0);
-              (*(code *)(this_03->klass->vtable).OnUnSelected.method)
-                        (this_03,(this_03->klass->vtable).UpdateButtonUI.methodPtr);
-              this_00 = (pSVar6->fields).SelectionElementsList;
+                        (this_01,spawnRoleObject,(MethodInfo *)0x0);
+              (*(code *)(this_01->klass->vtable).OnUnSelected.method)(this_01);
+              this_00 = (this->fields).SelectionElementsList;
               if (this_00 != (List_1_DefaultSpawnRoleSelectionElement_ *)0x0) {
                 mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                 List_1_System_Object__Add
-                          ((List_1_System_Object_ *)this_00,(Object *)this_03,
+                          ((List_1_System_Object_ *)this_00,(Object *)this_01,
                            MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__Add_DefaultSpawnRoleSelectionElement_
                           );
                 return;
@@ -400,8 +392,8 @@ code_?:
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -485,40 +477,43 @@ code_?:
         return (List_1_ISpawnRolePreviewObject_ *)this_00;
       }
       index = 0;
-      if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-      break;
-      for (; index < (this_00->fields)._size; index = index + 1) {
+      while( true ) {
+        if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        goto code_?;
+        if ((this_00->fields)._size <= index) {
+          RVar7 = (RegexCharClass_SingleRange)
+                  MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Add_ISpawnRolePreviewObject_
+          ;
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__Add
+                    ((List_1_System_Object_ *)this_00,(Object *)item,
+                     MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Add_ISpawnRolePreviewObject_
+                    );
+          item = RVar7;
+          goto code_?;
+        }
         if (item == (RegexCharClass_SingleRange)0x0) goto code_?;
-        bVar7 = func_?();
-        RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+        bVar8 = func_?();
+        RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                           (this_00,index,
                            MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
                           );
-        if (RVar8 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        if (RVar7 == (RegexCharClass_SingleRange)0x0) goto code_?;
         bVar9 = func_?();
-        if (bVar7 < bVar9) {
-          RVar8 = (RegexCharClass_SingleRange)
-                  MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Insert_int__ISpawnRolePreviewObject_
-          ;
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Insert
-                    ((List_1_System_Object_ *)this_00,index,(Object *)item,
-                     MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Insert_int__ISpawnRolePreviewObject_
-                    );
-          item = RVar8;
-          goto code_?;
-        }
+        if (bVar8 < bVar9) break;
+        index = index + 1;
       }
-      RVar8 = (RegexCharClass_SingleRange)
-              MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Add_ISpawnRolePreviewObject_
+      RVar7 = (RegexCharClass_SingleRange)
+              MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Insert_int__ISpawnRolePreviewObject_
       ;
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)this_00,(Object *)item,
-                 MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Add_ISpawnRolePreviewObject_
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+      List_1_System_Object__Insert
+                ((List_1_System_Object_ *)this_00,index,(Object *)item,
+                 MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Insert_int__ISpawnRolePreviewObject_
                 );
-      item = RVar8;
+      item = RVar7;
     } while( true );
   }
 code_?:
@@ -576,109 +571,119 @@ Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_GetSortedWorldObjectList
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__List__);
-  RVar1 = (RegexCharClass_SingleRange)
-          func_?(TypeInfo__System__Collections__Generic__List<MVWorldObjectClient>);
-  RVar2 = RVar1;
+  this_01 = (MethodInfo *)
+            func_?(TypeInfo__System__Collections__Generic__List<MVWorldObjectClient>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)RVar1,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__List__);
-  index_00 = 0;
-  if (unsortedList == (List_1_ISpawnRolePreviewObject_ *)0x0) {
+  pLVar1 = (List_1_MVWorldObjectClient_ *)0x0;
+  if (unsortedList != (List_1_ISpawnRolePreviewObject_ *)0x0) {
 code_?:
-    func_?();
-    pcVar3 = (code *)swi(3);
-    pLVar4 = (List_1_MVWorldObjectClient_ *)(*pcVar3)();
-    return pLVar4;
-  }
-code_?:
-  do {
-    if ((unsortedList->fields)._size <= index_00) {
-      return (List_1_MVWorldObjectClient_ *)RVar1;
-    }
-    index = 0;
-    RVar1 = RVar2;
-    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-    goto code_?;
-    for (; index < (this_00->fields)._size; index = index + 1) {
-      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                         unsortedList,index_00,
-                         MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
-                        );
-      if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      bVar5 = func_?(2,TypeInfo__ISpawnRolePreviewObject,RVar2);
-      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_00,index,
-                         MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
-                        );
-      if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      bVar6 = func_?(2,TypeInfo__ISpawnRolePreviewObject);
-      if (bVar5 < bVar6) {
-        RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+    do {
+      index = pLVar1;
+      if ((unsortedList->fields)._size <= (int)index) {
+        return (List_1_MVWorldObjectClient_ *)this_01;
+      }
+      index_00 = 0;
+      while( true ) {
+        if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        goto code_?;
+        if ((this_00->fields)._size <= index_00) {
+          RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             unsortedList,(int32_t)index,
+                             MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
+                            );
+          this_01 = 
+          MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Add_ISpawnRolePreviewObject_
+          ;
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__Add
+                    ((List_1_System_Object_ *)this_00,(Object *)RVar2,
+                     MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Add_ISpawnRolePreviewObject_
+                    );
+          if (wos == (List_1_MVWorldObjectClient_ *)0x0) goto code_?;
+          RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             wos,(int32_t)index,
+                             MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                            );
+          if (this_01 == (MethodInfo *)0x0) goto code_?;
+          unsortedList = (List_1_ISpawnRolePreviewObject_ *)&UNK_?;
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__Add
+                    ((List_1_System_Object_ *)this_01,(Object *)RVar2,
+                     MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
+                    );
+          pLVar1 = (List_1_MVWorldObjectClient_ *)((int)&index->klass + 1);
+          wos = index;
+          goto code_?;
+        }
+        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                           ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                           unsortedList,index_00,
+                           unsortedList,(int32_t)index,
                            MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
                           );
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Insert
-                  ((List_1_System_Object_ *)this_00,index,(Object *)RVar1,
-                   MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Insert_int__ISpawnRolePreviewObject_
-                  );
-        if ((wos == (List_1_MVWorldObjectClient_ *)0x0) ||
-           (RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                               wos,index_00,
-                               MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                              ), RVar2 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-        RVar2 = RVar1;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Insert
-                  ((List_1_System_Object_ *)RVar1,index,(Object *)RVar1,
-                   MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Insert_int__MVWorldObjectClient_
-                  );
+        if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        bVar3 = func_?(2,TypeInfo__ISpawnRolePreviewObject);
+        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (this_00,index_00,
+                           MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
+                          );
+        if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        bVar4 = func_?(2,TypeInfo__ISpawnRolePreviewObject);
+        if (bVar3 < bVar4) break;
         index_00 = index_00 + 1;
-        goto code_?;
       }
-      RVar1 = RVar2;
-    }
-    RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                       unsortedList,index_00,
-                       MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
-                      );
-    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              ((List_1_System_Object_ *)this_00,(Object *)RVar2,
-               MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Add_ISpawnRolePreviewObject_
-              );
-    if ((wos == (List_1_MVWorldObjectClient_ *)0x0) ||
-       (item = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-               RegexCharClass+SingleRange]::
-               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                         ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)wos,
-                          index_00,
-                          MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                         ), RVar1 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-    RVar2 = (RegexCharClass_SingleRange)
-            MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
-    ;
-    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              ((List_1_System_Object_ *)RVar1,(Object *)item,
-               MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
-              );
-    index_00 = index_00 + 1;
-  } while( true );
+      RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                         unsortedList,(int32_t)index,
+                         MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
+                        );
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+      List_1_System_Object__Insert
+                ((List_1_System_Object_ *)this_00,index_00,(Object *)RVar5,
+                 MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Insert_int__ISpawnRolePreviewObject_
+                );
+      if (wos == (List_1_MVWorldObjectClient_ *)0x0) break;
+      RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)wos,
+                         (int32_t)index,
+                         MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                        );
+      this_01 = 
+      MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Insert_int__MVWorldObjectClient_
+      ;
+      if (RVar2 == (RegexCharClass_SingleRange)0x0) break;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+      List_1_System_Object__Insert
+                ((List_1_System_Object_ *)
+                 MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Insert_int__MVWorldObjectClient_
+                 ,index_00,(Object *)RVar5,
+                 MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Insert_int__MVWorldObjectClient_
+                );
+      pLVar1 = (List_1_MVWorldObjectClient_ *)((int)&index->klass + 1);
+    } while( true );
+  }
+code_?:
+  func_?();
+  pcVar6 = (code *)swi(3);
+  pLVar1 = (List_1_MVWorldObjectClient_ *)(*pcVar6)();
+  return pLVar1;
 }
 
 
@@ -789,28 +794,28 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_HideElements
       cRam_? = '\x01';
     }
     if (-1 < previousStartElement) {
-      pLVar2 = (this->fields).SelectionElementsList;
-      if (pLVar2 == (List_1_DefaultSpawnRoleSelectionElement_ *)0x0) {
+      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                (this->fields).SelectionElementsList;
+      if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
 code_?:
         func_?();
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
         return;
       }
-      if ((previousStartElement < (pLVar2->fields)._size) &&
+      if ((previousStartElement < (this_00->fields)._size) &&
          ((previousStartElement < newStartElement ||
           ((this->fields).maxSelectionElementsOnScreen + newStartElement < previousStartElement))))
       {
-        this_00 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+        this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                             (this->fields).SelectionElementsList,previousStartElement,
+                            (this_00,previousStartElement,
                              MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__get_Item_int_
                             );
-        if (this_00 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        if (this_01 == (RegexCharClass_SingleRange)0x0) goto code_?;
         DefaultSpawnRoleSelectionElement::DefaultSpawnRoleSelectionElement_Deactivate
-                  ((DefaultSpawnRoleSelectionElement *)this_00,(MethodInfo *)0x0);
+                  ((DefaultSpawnRoleSelectionElement *)this_01,(MethodInfo *)0x0);
       }
     }
     previousStartElement = previousStartElement + 1;
@@ -829,9 +834,9 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_Initialize
   puStack_3 = &DAT_?;
   uStack_4 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_4;
-  puStack_5 = &stack0xffffff60;
+  puStack_5 = &stack0xffffff50;
   puVar6 = &stack0xfffffffc;
-  puVar7 = &stack0xffffff60;
+  puVar7 = &stack0xffffff50;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
@@ -928,50 +933,56 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_Initialize
                                     *)RStack_12,
                                    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__
                                   );
-              puStack_20 = &stack0xffffff80;
-              uStack_21 = 0;
-              RVar22 = pLVar18->_current;
+              pLStack_20 = &LStack_21;
+              uStack_22 = 0;
+              LStack_21._list = (List_1_System_Object_ *)pLVar18->_list;
+              LStack_21._index = pLVar18->_index;
+              LStack_21._version = pLVar18->_version;
+              LStack_21._current = *(Object **)&pLVar18->_current;
               uStack_2 = 1;
               while( true ) {
                 bVar23 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
                         Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                  ((List_1_T_Enumerator_System_Object_ *)&stack0xffffff80,
+                                  (&LStack_21,
                                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
                                   );
                 if (bVar23 == 0) break;
+                RStack_12 = (RegexCharClass_SingleRange)LStack_21._current;
                 pIStack_24 = TypeInfo__ISpawnRolePreviewObject;
-                RStack_12 = RVar22;
-                if (RVar22 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                item = (ISpawnRolePreviewObject__Class *)
-                       func_?(RVar22,TypeInfo__ISpawnRolePreviewObject);
-                if (item == (ISpawnRolePreviewObject__Class *)0x0) goto code_?;
-                pIStack_25 = (item->_0).image;
-                uVar26 = 0;
-                pIStack_24 = (ISpawnRolePreviewObject__Class *)0x0;
-                if (*(short *)((int)&pIStack_25[4].nameNoExt + 2) != 0) {
+                if ((RegexCharClass_SingleRange)LStack_21._current ==
+                    (RegexCharClass_SingleRange)0x0) goto code_?;
+                item = (Object *)
+                       func_?(LStack_21._current,TypeInfo__ISpawnRolePreviewObject);
+                pOStack_25 = item;
+                if (item == (Object *)0x0) goto code_?;
+                pOStack_26 = item->klass;
+                uVar27 = 0;
+                uStack_28 = 0;
+                uVar29._0_1_ = (pOStack_26->_1).rank;
+                uVar29._1_1_ = (pOStack_26->_1).minimumAlignment;
+                pIStack_24 = (ISpawnRolePreviewObject__Class *)(uint)uVar29;
+                if (uVar29 != 0) {
                   do {
-                    pIStack_24 = item;
-                    if (*(ISpawnRolePreviewObject__Class **)(pIStack_25[2].name + (uint)uVar26 * 8)
-                        == TypeInfo__ISpawnRolePreviewObject) {
-                      pp_Var13 = &pIStack_25[4].metadataHandle +
-                                 *(int *)(pIStack_25[2].name + (uint)uVar26 * 8 + 4) * 2;
+                    if (pOStack_26->interfaceOffsets[uVar27].interfaceType ==
+                        (Il2CppClass *)TypeInfo__ISpawnRolePreviewObject) {
+                      ppMVar30 = &(&(item->klass->vtable).Finalize)
+                                  [item->klass->interfaceOffsets[uVar27].offset].method;
                       goto code_?;
                     }
-                    uVar26 = uVar26 + 1;
-                  } while (uVar26 < *(ushort *)((int)&pIStack_25[4].nameNoExt + 2));
+                    uVar27 = uVar27 + 1;
+                  } while (uVar27 < uVar29);
                 }
-                pp_Var13 = (Il2CppMetadataImageHandle *)
-                           func_?(item,TypeInfo__ISpawnRolePreviewObject,1);
+                ppMVar30 = (MethodInfo **)func_?(item,TypeInfo__ISpawnRolePreviewObject,1);
 code_?:
-                iVar27 = (*(code *)*pp_Var13)(item,(Il2CppNameToTypeHandleHashTable *)pp_Var13[1]);
-                if ((iVar27 == 5) ||
-                   (iVar27 = func_?(1,TypeInfo__ISpawnRolePreviewObject,item),
-                   pLVar10 = pLStack_13, iVar27 == (this->fields).shownTeam)) {
+                iVar31 = (*(code *)*ppMVar30)(item,ppMVar30[1]);
+                if ((iVar31 == 5) ||
+                   (iVar31 = func_?(1,TypeInfo__ISpawnRolePreviewObject,item),
+                   pLVar10 = pLStack_13, iVar31 == (this->fields).shownTeam)) {
                   pLVar10 = pLStack_13;
                   if ((pLStack_13 == (List_1_System_Object_ *)0x0) ||
                      (mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                       List_1_System_Object__Add
-                                (pLStack_13,(Object *)item,
+                                (pLStack_13,item,
                                  MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Add_ISpawnRolePreviewObject_
                                 ), pLStack_16 == (List_1_MVWorldObjectClient_ *)0x0))
                   goto code_?;
@@ -984,7 +995,7 @@ code_?:
               }
               uStack_2 = 0xffffffff;
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                        ((Object *)&stack0xffffff80,
+                        ((Object *)&LStack_21,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
                          ,(MethodInfo *)in_stack_8);
@@ -1000,50 +1011,50 @@ code_?:
               pMVar11 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
               if ((pMVar11 != (MVNetworkGame *)0x0) &&
                  (this_00 = (pMVar11->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
-                bStack_28 = MVTeamManager::MVTeamManager_TeamHasSpawnPoints
+                bStack_32 = MVTeamManager::MVTeamManager_TeamHasSpawnPoints
                                       (this_00,(this->fields).shownTeam,(MethodInfo *)0x0);
-                pLStack_14 = (List_1_System_Object_ *)(uint)bStack_28;
-                iVar27 = 0;
+                pLStack_14 = (List_1_System_Object_ *)(uint)(bStack_32 != 0);
+                iVar31 = 0;
                 if (pLStack_16 != (List_1_MVWorldObjectClient_ *)0x0) {
-                  for (; iVar27 < (pLStack_16->fields)._size; iVar27 = iVar27 + 1) {
+                  for (; iVar31 < (pLStack_16->fields)._size; iVar31 = iVar31 + 1) {
                     SpawnRoleMenu_CreateSpawnRoleSelectionElement
-                              (this,(int32_t)pLStack_14,iVar27,
+                              (this,(int32_t)pLStack_14,iVar31,
                                (List_1_ISpawnRolePreviewObject_ *)pLStack_16,pLStack_17,
                                (MethodInfo *)0x0);
                   }
-                  if (bStack_28 != 0) {
+                  if (bStack_32 != 0) {
                     SpawnRoleMenu_CreateDefaultAvatarElement(this,(MethodInfo *)0x0);
                   }
-                  pRVar29 = (this->fields).elementContainer;
+                  pRVar33 = (this->fields).elementContainer;
                   if ((TypeInfo__UnityEngine__UI__LayoutRebuilder->_1).cctor_finished_or_no_cctor ==
                       0) {
                     func_?(TypeInfo__UnityEngine__UI__LayoutRebuilder);
                   }
                   UnityEngine.UI.dll::UnityEngine::UI::LayoutRebuilder::
-                  LayoutRebuilder_ForceRebuildLayoutImmediate(pRVar29,(MethodInfo *)0x0);
-                  pRVar29 = (this->fields).elementContainer;
-                  if (pRVar29 != (RectTransform *)0x0) {
-                    pRVar30 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                              RectTransform_get_rect((Rect *)&pLStack_19,pRVar29,(MethodInfo *)0x0);
-                    (this->fields).menuHalfWidth = pRVar30->m_Width * _UNK_?;
+                  LayoutRebuilder_ForceRebuildLayoutImmediate(pRVar33,(MethodInfo *)0x0);
+                  pRVar33 = (this->fields).elementContainer;
+                  if (pRVar33 != (RectTransform *)0x0) {
+                    pRVar34 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+                              RectTransform_get_rect((Rect *)&pLStack_19,pRVar33,(MethodInfo *)0x0);
+                    (this->fields).menuHalfWidth = pRVar34->m_Width * _UNK_?;
                     SpawnRoleMenu_OnSpawnRoleSelected(this,0,(MethodInfo *)0x0);
                     this_01 = (Transform *)(this->fields).elementContainer;
                     if (this_01 != (Transform *)0x0) {
                       pLStack_19 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                                     *)(this->fields).interpolateToPositionX;
-                      puStack_31 = (undefined *)0x0;
-                      pVVar32 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                Transform_get_localPosition(&VStack_33,this_01,(MethodInfo *)0x0);
-                      puStack_20 = (undefined1 *)0x0;
-                      value.y = pVVar32->y;
+                      puStack_35 = (undefined *)0x0;
+                      pVVar36 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                Transform_get_localPosition(&VStack_37,this_01,(MethodInfo *)0x0);
+                      pLStack_20 = (List_1_T_Enumerator_System_Object_ *)0x0;
+                      value.y = pVVar36->y;
                       value.x = (float)pLStack_19;
                       value.z = 0.0;
                       UnityEngine.CoreModule.dll::UnityEngine::Transform::
                       Transform_set_localPosition(this_01,value,(MethodInfo *)0x0);
-                      pLVar34 = (this->fields).SelectionElementsList;
-                      if (pLVar34 != (List_1_DefaultSpawnRoleSelectionElement_ *)0x0) {
+                      pLVar38 = (this->fields).SelectionElementsList;
+                      if (pLVar38 != (List_1_DefaultSpawnRoleSelectionElement_ *)0x0) {
                         SpawnRoleMenu_HideElements
-                                  (this,0,(pLVar34->fields)._size,0,(MethodInfo *)0x0);
+                                  (this,0,(pLVar38->fields)._size,0,(MethodInfo *)0x0);
                         SpawnRoleMenu_ShowElements(this,0,(MethodInfo *)0x0);
                         *unaff_FS_OFFSET = uStack_4;
                         return;
@@ -1061,10 +1072,10 @@ code_?:
 code_?:
   func_?();
 code_?:
-  uVar35 = func_?(RStack_12,pIStack_24);
-  func_?(uVar35);
-  pcVar36 = (code *)swi(3);
-  (*pcVar36)();
+  uVar39 = func_?(RStack_12,pIStack_24);
+  func_?(uVar39);
+  pcVar40 = (code *)swi(3);
+  (*pcVar40)();
   return;
 }
 
@@ -1151,10 +1162,10 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_LockedButtonPressed
         func_?(&TypeInfo__SpawnRoleMenu____c__DisplayClass58_0);
         cRam_? = '\x01';
       }
-      method_01 = TypeInfo__SpawnRoleMenu____c__DisplayClass58_0;
+      method_00 = TypeInfo__SpawnRoleMenu____c__DisplayClass58_0;
       pOVar2 = (Object *)func_?();
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+                (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
       pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                (this->fields).SelectionElementsList;
       if ((pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
@@ -1205,8 +1216,8 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_LockedButtonPressed
                                   TierTestDetailsPopup_MethodInfo__UnityEngine__Object__Instantiate<TierTestDetailsPopup>_TierTestDetailsPopup_
                                  );
               if (pOVar2 != (Object *)0x0) {
-                pOVar2[1].klass = pOVar7;
                 pOVar6 = pOVar2 + 1;
+                pOVar6->klass = pOVar7;
                 func_?();
                 pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                          Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0);
@@ -1240,7 +1251,9 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_LockedButtonPressed
     else {
       if (cRam_? == '\0') {
         func_?();
-        func_?();
+        func_?(&
+                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                       );
         func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
         func_?(&
                         MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__get_Item_int_
@@ -1257,10 +1270,9 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_LockedButtonPressed
         func_?(&TypeInfo__UnityEngine__Events__UnityAction);
         cRam_? = '\x01';
       }
-      method_00 = TypeInfo__SpawnRoleMenu____c__DisplayClass57_0;
-      pOVar2 = (Object *)func_?();
+      pOVar2 = (Object *)func_?(TypeInfo__SpawnRoleMenu____c__DisplayClass57_0);
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+                (pOVar2,ExceptionArgument__Enum_obj,unaff_EDI);
       pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                (this->fields).SelectionElementsList;
       if ((pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
@@ -1285,6 +1297,9 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_LockedButtonPressed
           func_?();
           pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
+          tierToPurchase =
+               TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+          ;
           pEVar9 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
@@ -1308,7 +1323,7 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_LockedButtonPressed
                      (MethodInfo *)0x0);
           if (pOVar7 != (Object__Class *)0x0) {
             TierLockedDetailsPopup::TierLockedDetailsPopup_Initialize
-                      ((TierLockedDetailsPopup *)pOVar7,(GamePassTier__Enum)this_02,
+                      ((TierLockedDetailsPopup *)pOVar7,(GamePassTier__Enum)tierToPurchase,
                        (UnityAction *)this_02,(MethodInfo *)0x0);
             return;
           }
@@ -1353,53 +1368,49 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_OnBeginDrag
     pIVar3 = pIStack_2;
   }
   pIStack_2 = pIVar3;
-  LStack_4._list = (List_1_System_Object_ *)0x0;
-  LStack_4._index = 0;
-  LStack_4._version = 0;
-  LStack_4._current = (Object *)0x0;
   this_00 = (Transform *)(this->fields).elementContainer;
   (this->fields).shouldInterpolate = 0;
   if (this_00 != (Transform *)0x0) {
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       (&VStack_6,this_00,(MethodInfo *)0x0);
+    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+                       (&VStack_5,this_00,(MethodInfo *)0x0);
     this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               (this->fields).SelectionElementsList;
-    (this->fields).dragStartPositionX = pVVar5->x;
+    (this->fields).dragStartPositionX = pVVar4->x;
     if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
       method_00 = (MethodInfo *)&stack0xffffffd8;
-      pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                          ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                            *)method_00,this_01,
                           MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__GetEnumerator__
                          );
-      LStack_4._list = (List_1_System_Object_ *)pLVar7->_list;
-      LStack_4._index = pLVar7->_index;
-      LStack_4._version = pLVar7->_version;
-      LStack_4._current = *(Object **)&pLVar7->_current;
-      VStack_6.y = 0.0;
+      LStack_7._list = (List_1_System_Object_ *)pLVar6->_list;
+      LStack_7._index = pLVar6->_index;
+      LStack_7._version = pLVar6->_version;
+      LStack_7._current = *(Object **)&pLVar6->_current;
+      VStack_5.y = 0.0;
       _Stack_8 = (_union_155)0x1;
-      VStack_6.z = (float)&LStack_4;
+      VStack_5.z = (float)&LStack_7;
       while( true ) {
         bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_4,
+                          (&LStack_7,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<DefaultSpawnRoleSelectionElement>__MoveNext__
                           );
         if (bVar8 == 0) {
           _Stack_8 = (_union_155)0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    ((Object *)&LStack_4,
+                    ((Object *)&LStack_7,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<DefaultSpawnRoleSelectionElement>__Dispose__
                      ,method_00);
           *unaff_FS_OFFSET = ppIStack_1;
           return;
         }
-        if ((RegexCharClass_SingleRange)LStack_4._current == (RegexCharClass_SingleRange)0x0)
+        if ((RegexCharClass_SingleRange)LStack_7._current == (RegexCharClass_SingleRange)0x0)
         break;
-        *(undefined1 *)((int)LStack_4._current + 0x3c) = 1;
+        *(undefined1 *)((int)LStack_7._current + 0x3c) = 1;
       }
     }
   }
@@ -1492,8 +1503,9 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_OnDrag
                    );
     cRam_? = '\x01';
   }
-  index = SpawnRoleMenu_CalculateNewSelectedItem(this,(MethodInfo *)0x0);
-  if (index == (this->fields).selectedSpawnRole) {
+  index_00 = SpawnRoleMenu_CalculateNewSelectedItem(this,(MethodInfo *)0x0);
+  index = (this->fields).selectedSpawnRole;
+  if (index_00 == index) {
     return;
   }
   pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
@@ -1502,18 +1514,18 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_OnDrag
      (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (pLVar1,(this->fields).selectedSpawnRole,
+                        (pLVar1,index,
                          MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__get_Item_int_
                         ), RVar2 != (RegexCharClass_SingleRange)0x0)) {
     (**(code **)(*(int *)RVar2 + 0x118))();
     pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (this->fields).SelectionElementsList;
-    (this->fields).selectedSpawnRole = index;
+    (this->fields).selectedSpawnRole = index_00;
     if ((pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
        (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (pLVar1,index,
+                          (pLVar1,index_00,
                            MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__get_Item_int_
                           ), RVar2 != (RegexCharClass_SingleRange)0x0)) {
       (**(code **)(*(int *)RVar2 + 0x108))(RVar2,*(undefined4 *)(*(int *)RVar2 + 0x10c));
@@ -1627,64 +1639,60 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_OnPlayerPlanetDataUpdated
     puVar6 = puStack_5;
   }
   puStack_5 = puVar6;
-  LStack_7._list = (List_1_System_Object_ *)0x0;
-  LStack_7._index = 0;
-  LStack_7._version = 0;
-  LStack_7._current = (Object *)0x0;
-  pLVar8 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+  pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
            (this->fields).SelectionElementsList;
   this_00 = (this->fields).buttonController;
-  if (pLVar8 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  if (pLVar7 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
             RegexCharClass+SingleRange]::
             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      (pLVar8,(this->fields).selectedSpawnRole,
+                      (pLVar7,(this->fields).selectedSpawnRole,
                        MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__get_Item_int_
                       );
-    if (RVar9 != (RegexCharClass_SingleRange)0x0) {
+    if (RVar8 != (RegexCharClass_SingleRange)0x0) {
       method_00 = (MethodInfo *)&UNK_?;
-      uVar10 = (**(code **)(*(int *)RVar9 + 0xf0))();
-      this = (SpawnRoleMenu *)CONCAT31(this._1_3_,uVar10);
+      uVar9 = (**(code **)(*(int *)RVar8 + 0xf0))();
+      this = (SpawnRoleMenu *)CONCAT31(this._1_3_,uVar9);
       if (this_00 != (SpawnRoleSelectionButtonController *)0x0) {
         SpawnRoleSelectionButtonController::
         SpawnRoleSelectionButtonController_OnNewSelectedSpawnRole
                   (this_00,(GamePassTier__Enum)this,(MethodInfo *)0x0);
-        pLVar8 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+        pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                  (pSVar1->fields).SelectionElementsList;
-        if (pLVar8 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+        if (pLVar7 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+          pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                             (&LStack_12,pLVar8,
+                             (&LStack_11,pLVar7,
                               MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__GetEnumerator__
                              );
-          LStack_7._list = (List_1_System_Object_ *)pLVar11->_list;
-          LStack_7._index = pLVar11->_index;
-          LStack_7._version = pLVar11->_version;
-          LStack_7._current = *(Object **)&pLVar11->_current;
-          LStack_12._version = 0;
+          LStack_12._list = (List_1_System_Object_ *)pLVar10->_list;
+          LStack_12._index = pLVar10->_index;
+          LStack_12._version = pLVar10->_version;
+          LStack_12._current = *(Object **)&pLVar10->_current;
+          LStack_11._version = 0;
           uStack_2 = 1;
-          LStack_12._current = (RegexCharClass_SingleRange)&LStack_7;
+          LStack_11._current = (RegexCharClass_SingleRange)&LStack_12;
           while( true ) {
             bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
                     ::List_1_T_Enumerator_System_Object__MoveNext
-                              (&LStack_7,
+                              (&LStack_12,
                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<DefaultSpawnRoleSelectionElement>__MoveNext__
                               );
             if (bVar13 == 0) {
               uStack_2 = 0xffffffff;
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                        ((Object *)&LStack_7,
+                        ((Object *)&LStack_12,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<DefaultSpawnRoleSelectionElement>__Dispose__
                          ,method_00);
               *unaff_FS_OFFSET = uStack_4;
               return;
             }
-            if ((RegexCharClass_SingleRange)LStack_7._current == (RegexCharClass_SingleRange)0x0)
+            if ((RegexCharClass_SingleRange)LStack_12._current == (RegexCharClass_SingleRange)0x0)
             break;
-            (**(code **)(*(int *)LStack_7._current + 0x120))
-                      (LStack_7._current,*(undefined4 *)(*(int *)LStack_7._current + 0x124));
+            (**(code **)(*(int *)LStack_12._current + 0x120))
+                      (LStack_12._current,*(undefined4 *)(*(int *)LStack_12._current + 0x124));
           }
         }
       }
@@ -1730,64 +1738,60 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_OnPurchaseGamePassTier
     puVar6 = puStack_5;
   }
   puStack_5 = puVar6;
-  LStack_7._list = (List_1_System_Object_ *)0x0;
-  LStack_7._index = 0;
-  LStack_7._version = 0;
-  LStack_7._current = (Object *)0x0;
-  pLVar8 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+  pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
            (this->fields).SelectionElementsList;
   this_00 = (this->fields).buttonController;
-  if (pLVar8 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  if (pLVar7 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
             RegexCharClass+SingleRange]::
             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      (pLVar8,(this->fields).selectedSpawnRole,
+                      (pLVar7,(this->fields).selectedSpawnRole,
                        MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__get_Item_int_
                       );
-    if (RVar9 != (RegexCharClass_SingleRange)0x0) {
+    if (RVar8 != (RegexCharClass_SingleRange)0x0) {
       method_00 = (MethodInfo *)&UNK_?;
-      uVar10 = (**(code **)(*(int *)RVar9 + 0xf0))();
-      this = (SpawnRoleMenu *)CONCAT31(this._1_3_,uVar10);
+      uVar9 = (**(code **)(*(int *)RVar8 + 0xf0))();
+      this = (SpawnRoleMenu *)CONCAT31(this._1_3_,uVar9);
       if (this_00 != (SpawnRoleSelectionButtonController *)0x0) {
         SpawnRoleSelectionButtonController::
         SpawnRoleSelectionButtonController_OnNewSelectedSpawnRole
                   (this_00,(GamePassTier__Enum)this,(MethodInfo *)0x0);
-        pLVar8 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+        pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                  (pSVar1->fields).SelectionElementsList;
-        if (pLVar8 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+        if (pLVar7 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+          pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                             (&LStack_12,pLVar8,
+                             (&LStack_11,pLVar7,
                               MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__GetEnumerator__
                              );
-          LStack_7._list = (List_1_System_Object_ *)pLVar11->_list;
-          LStack_7._index = pLVar11->_index;
-          LStack_7._version = pLVar11->_version;
-          LStack_7._current = *(Object **)&pLVar11->_current;
-          LStack_12._version = 0;
+          LStack_12._list = (List_1_System_Object_ *)pLVar10->_list;
+          LStack_12._index = pLVar10->_index;
+          LStack_12._version = pLVar10->_version;
+          LStack_12._current = *(Object **)&pLVar10->_current;
+          LStack_11._version = 0;
           uStack_2 = 1;
-          LStack_12._current = (RegexCharClass_SingleRange)&LStack_7;
+          LStack_11._current = (RegexCharClass_SingleRange)&LStack_12;
           while( true ) {
             bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
                     ::List_1_T_Enumerator_System_Object__MoveNext
-                              (&LStack_7,
+                              (&LStack_12,
                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<DefaultSpawnRoleSelectionElement>__MoveNext__
                               );
             if (bVar13 == 0) {
               uStack_2 = 0xffffffff;
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                        ((Object *)&LStack_7,
+                        ((Object *)&LStack_12,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<DefaultSpawnRoleSelectionElement>__Dispose__
                          ,method_00);
               *unaff_FS_OFFSET = uStack_4;
               return;
             }
-            if ((RegexCharClass_SingleRange)LStack_7._current == (RegexCharClass_SingleRange)0x0)
+            if ((RegexCharClass_SingleRange)LStack_12._current == (RegexCharClass_SingleRange)0x0)
             break;
-            (**(code **)(*(int *)LStack_7._current + 0x120))
-                      (LStack_7._current,*(undefined4 *)(*(int *)LStack_7._current + 0x124));
+            (**(code **)(*(int *)LStack_12._current + 0x120))
+                      (LStack_12._current,*(undefined4 *)(*(int *)LStack_12._current + 0x124));
           }
         }
       }
@@ -1987,9 +1991,8 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_OnSelectButtonPressed
                                          (pMVar4,(MethodInfo *)0x0);
                       if (pMVar2 != (MVLocalPlayer *)0x0) {
                         MVLocalPlayer::MVLocalPlayer_SetActiveSpawnRole(pMVar2,b,(MethodInfo *)0x0);
-                        if (TypeInfo__SpawnRoleMenu->static_fields->OnNewSpawnRoleSelected !=
-                            (Action_1_Int32_ *)0x0) {
-                          pAVar7 = TypeInfo__SpawnRoleMenu->static_fields->OnNewSpawnRoleSelected;
+                        pAVar7 = TypeInfo__SpawnRoleMenu->static_fields->OnNewSpawnRoleSelected;
+                        if (pAVar7 != (Action_1_Int32_ *)0x0) {
                           pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer
                                              ((MethodInfo *)0x0);
                           if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
@@ -2022,9 +2025,8 @@ code_?:
                                          (pMVar4,(MethodInfo *)0x0);
                       if (pMVar2 != (MVLocalPlayer *)0x0) {
                         MVLocalPlayer::MVLocalPlayer_CreateSpawnRole(pMVar2,b,(MethodInfo *)0x0);
-                        if (TypeInfo__SpawnRoleMenu->static_fields->OnNewSpawnRoleSelected !=
-                            (Action_1_Int32_ *)0x0) {
-                          pAVar7 = TypeInfo__SpawnRoleMenu->static_fields->OnNewSpawnRoleSelected;
+                        pAVar7 = TypeInfo__SpawnRoleMenu->static_fields->OnNewSpawnRoleSelected;
+                        if (pAVar7 != (Action_1_Int32_ *)0x0) {
                           (*(pAVar7->fields)._._.invoke_impl)
                                     ((pAVar7->fields)._._.method_code,b,(pAVar7->fields)._._.method)
                           ;
@@ -2217,11 +2219,11 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_OnSpawnRoleSelected
         if (RVar2 != (RegexCharClass_SingleRange)0x0) {
           (**(code **)(*(int *)RVar2 + 0x110))(RVar2,*(undefined4 *)(*(int *)RVar2 + 0x114));
           iVar3 = (this->fields).selectedSpawnRole;
+          fVar4 = (this->fields).selectionElementWidth;
           (this->fields).interpolateToPositionX =
                (this->fields).menuHalfWidth -
-               ((float)(iVar3 + 1) * (this->fields).elementSpacing +
-                (float)iVar3 * (this->fields).selectionElementWidth +
-               (this->fields).selectionElementWidth * _UNK_?);
+               ((float)(iVar3 + 1) * (this->fields).elementSpacing + (float)iVar3 * fVar4 +
+               fVar4 * _UNK_?);
           fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
           pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                    (this->fields).SelectionElementsList;
@@ -2346,8 +2348,8 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_OpenTierShopButtonPressed
                                    TierTestDetailsPopup_MethodInfo__UnityEngine__Object__Instantiate<TierTestDetailsPopup>_TierTestDetailsPopup_
                                   );
               if (pOVar2 != (Object *)0x0) {
-                pOVar2[1].klass = pOVar10;
                 pOVar9 = pOVar2 + 1;
+                pOVar9->klass = pOVar10;
                 func_?();
                 pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                           Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
@@ -2530,11 +2532,11 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_RecalculateInterpolation
                (SpawnRoleMenu *this,int32_t index,MethodInfo *method)
 
 {
+  fVar1 = (this->fields).selectionElementWidth;
   (this->fields).interpolateToPositionX =
        (this->fields).menuHalfWidth -
-       ((float)(index + 1) * (this->fields).elementSpacing +
-        (float)index * (this->fields).selectionElementWidth +
-       (this->fields).selectionElementWidth * _UNK_?);
+       ((float)(index + 1) * (this->fields).elementSpacing + (float)index * fVar1 +
+       fVar1 * _UNK_?);
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   (this->fields).shouldInterpolate = 1;
   (this->fields).interpolationStartTime = fVar1;
@@ -2647,8 +2649,9 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_ShowLockedTierPurchase
                           TierLockedDetailsPopup_MethodInfo__UnityEngine__Object__Instantiate<TierLockedDetailsPopup>_TierLockedDetailsPopup_
                          );
       if (value != (Object *)0x0) {
-        value[1].klass = pOVar3;
-        func_?(value + 1,pOVar3);
+        pOVar4 = value + 1;
+        pOVar4->klass = pOVar3;
+        func_?(pOVar4,pOVar3);
         root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
         callbackFunction =
@@ -2669,7 +2672,7 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_ShowLockedTierPurchase
                   (root,(BaseEventData *)0x0,callbackFunction,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                   );
-        pOVar3 = value[1].klass;
+        pOVar3 = pOVar4->klass;
         this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
@@ -2685,8 +2688,8 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_ShowLockedTierPurchase
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -2777,8 +2780,8 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_ShowTestTier
                                   TierTestDetailsPopup_MethodInfo__UnityEngine__Object__Instantiate<TierTestDetailsPopup>_TierTestDetailsPopup_
                                  );
               if (value != (Object *)0x0) {
-                value[1].klass = pOVar4;
                 pOVar3 = value + 1;
+                pOVar3->klass = pOVar4;
                 func_?(pOVar3,pOVar4);
                 root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                  ((Component *)this_02,(MethodInfo *)0x0);
@@ -3231,8 +3234,9 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu__ctor(SpawnRoleMenu *this
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__List__
             );
-  (this->fields).SelectionElementsList = this_00;
-  func_?(&(this->fields).SelectionElementsList,this_00);
+  ppLVar1 = &(this->fields).SelectionElementsList;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   LobbyStateController::LobbyStateController__ctor((LobbyStateController *)this,(MethodInfo *)0x0);
   return;
 }

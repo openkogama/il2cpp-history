@@ -42,8 +42,10 @@ code_?:
         MVDoor::MVDoor_ToggleDoorColliders(this_00,1,(MethodInfo *)0x0);
       }
       else {
-        if ((this_00->fields).collisionCheckRoutine != (IEnumerator *)0x0) {
-          Coroutines::Coroutines_Stop((this_00->fields).collisionCheckRoutine,(MethodInfo *)0x0);
+        coroutine = (this_00->fields).collisionCheckRoutine;
+        ppIVar7 = &(this_00->fields).collisionCheckRoutine;
+        if (coroutine != (IEnumerator *)0x0) {
+          Coroutines::Coroutines_Stop(coroutine,(MethodInfo *)0x0);
         }
         if (cRam_? == '\0') {
           func_?();
@@ -55,13 +57,14 @@ code_?:
                   (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
         value[1].klass = (Object__Class *)0x0;
         value[2].klass = (Object__Class *)this_00;
-        func_?();
-        (this_00->fields).collisionCheckRoutine = (IEnumerator *)value;
-        func_?();
-        Coroutines::Coroutines_Start((this_00->fields).collisionCheckRoutine,(MethodInfo *)0x0);
+        func_?(value + 2);
+        *ppIVar7 = (IEnumerator *)value;
+        func_?(ppIVar7,value);
+        Coroutines::Coroutines_Start(*ppIVar7,(MethodInfo *)0x0);
       }
-      (this_00->fields).doorAnimationRoutine = (IEnumerator *)0x0;
-      uStack7 = 0;
+      ppIStack8 = &(this_00->fields).doorAnimationRoutine;
+      *ppIStack8 = (IEnumerator *)0x0;
+      uStack9 = 0;
       func_?();
       return 0;
     }
@@ -94,8 +97,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  bVar6 = (*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  bVar6 = (*pcVar10)();
   return bVar6;
 }
 

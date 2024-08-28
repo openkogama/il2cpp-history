@@ -151,10 +151,11 @@ void Assembly-CSharp.dll::RuntimeVariableNetworkManager::
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  HStack_7._set = (HashSet_1_System_UInt32_ *)0x0;
-  HStack_7._index = 0;
-  HStack_7._version = 0;
-  HStack_7._current = 0;
+  LStack_7._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
+  LStack_7._index = 0;
+  LStack_7._version = 0;
+  LStack_7._current.First = 0;
+  LStack_7._current.Last = 0;
   method_00 = (MethodInfo *)(this->fields).runtimeDataVariables;
   if (method_00 != (MethodInfo *)0x0) {
     pHVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
@@ -162,23 +163,20 @@ void Assembly-CSharp.dll::RuntimeVariableNetworkManager::
                        ((HashSet_1_T_Enumerator_System_UInt32_ *)&LStack_9,
                         (HashSet_1_System_UInt32_ *)method_00,
                         MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
-    HStack_7._set = pHVar8->_set;
-    HStack_7._index = pHVar8->_index;
-    HStack_7._version = pHVar8->_version;
-    HStack_7._current = pHVar8->_current;
+    pMVar10 = (MethodInfo *)pHVar8->_current;
     LStack_9._version = 0;
     uStack_1 = 1;
-    LStack_9._current = (RegexCharClass_SingleRange)&HStack_7;
+    LStack_9._current = (RegexCharClass_SingleRange)&stack0xffffffac;
     while( true ) {
-      bVar10 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::UInt32]
+      bVar11 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::UInt32]
               ::HashSet_1_T_Enumerator_System_UInt32__MoveNext
-                        (&HStack_7,
+                        ((HashSet_1_T_Enumerator_System_UInt32_ *)&stack0xffffffac,
                          MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
                         );
-      if (bVar10 == 0) break;
-      pMStack_11 = (MethodInfo *)HStack_7._current;
-      pMVar12 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (pMVar12 == (MVWorldObjectClientManager *)0x0) goto code_?;
+      if (bVar11 == 0) break;
+      pMStack_12 = pMVar10;
+      pMVar13 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (pMVar13 == (MVWorldObjectClientManager *)0x0) goto code_?;
       if (cRam_? == '\0') {
         in_stack_6 =
              &
@@ -187,12 +185,12 @@ void Assembly-CSharp.dll::RuntimeVariableNetworkManager::
         func_?();
         cRam_? = '\x01';
       }
-      this_00 = (pMVar12->fields).worldObjects;
-      pOStack_13 = (Object *)0x0;
+      this_00 = (pMVar13->fields).worldObjects;
+      pOStack_14 = (Object *)0x0;
       if (this_00 == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
       Dictionary_2_System_Int32_System_Object__TryGetValue
-                ((Dictionary_2_System_Int32_System_Object_ *)this_00,(int32_t)pMStack_11,&pOStack_13
+                ((Dictionary_2_System_Int32_System_Object_ *)this_00,(int32_t)pMStack_12,&pOStack_14
                  ,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
                 );
@@ -202,48 +200,48 @@ void Assembly-CSharp.dll::RuntimeVariableNetworkManager::
         func_?();
         cRam_? = '\x01';
       }
-      pOVar14 = pOStack_13;
-      if (pOStack_13 == (Object *)0x0) {
+      pOVar15 = pOStack_14;
+      if (pOStack_14 == (Object *)0x0) {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Debug);
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)StringLiteral_Attempt_to_update_world_object__,(MethodInfo *)0x0);
-        pLVar15 = (this->fields).removeList;
-        if (pLVar15 == (List_1_System_Int32_ *)0x0) goto code_?;
-        method_00 = pMStack_11;
-        func_?(pLVar15,pMStack_11,
+        pLVar16 = (this->fields).removeList;
+        if (pLVar16 == (List_1_System_Int32_ *)0x0) goto code_?;
+        method_00 = pMStack_12;
+        func_?(pLVar16,pMStack_12,
                         MethodInfo__System__Collections__Generic__List<int>__Add_int_);
       }
       else {
-        if (pOStack_13[0x1a].klass == (Object__Class *)0x0) goto code_?;
+        if (pOStack_14[0x1a].klass == (Object__Class *)0x0) goto code_?;
         method_00 = (MethodInfo *)0x0;
-        pMStack_11 = (MethodInfo *)
+        pMStack_12 = (MethodInfo *)
                      MVRuntimeDataVariables::MVRuntimeDataVariables_Send
-                               ((MVRuntimeDataVariables *)pOStack_13[0x1a].klass,0,(MethodInfo *)0x0
+                               ((MVRuntimeDataVariables *)pOStack_14[0x1a].klass,0,(MethodInfo *)0x0
                                );
-        if (pMStack_11 == (MethodInfo *)0x0) goto code_?;
-        iVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-                StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-                Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
-                          ((Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                            *)pMStack_11,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Count__
-                          );
-        if (0 < iVar16) {
+        if (pMStack_12 == (MethodInfo *)0x0) goto code_?;
+        iVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+                 StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                 Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
+                           ((Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                             *)pMStack_12,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Count__
+                           );
+        if (0 < iVar17) {
           this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                               ((MethodInfo *)0x0);
           if (this_03 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
           MVNetworkGame+OperationRequests::
           MVNetworkGame_OperationRequests_UpdateWorldObjectRunTimeData
-                    (this_03,(int32_t)pOVar14[1].klass,
-                     (Dictionary_2_System_Object_System_Object_ *)pMStack_11,(MethodInfo *)0x0);
+                    (this_03,(int32_t)pOVar15[1].klass,
+                     (Dictionary_2_System_Object_System_Object_ *)pMStack_12,(MethodInfo *)0x0);
         }
       }
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)&HStack_7,
+              ((Object *)&stack0xffffffac,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__,
                (MethodInfo *)in_stack_6);
@@ -251,54 +249,56 @@ void Assembly-CSharp.dll::RuntimeVariableNetworkManager::
     this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               (this->fields).removeList;
     if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      pLVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+      pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                           (&LStack_9,this_01,
                            MethodInfo__System__Collections__Generic__List<int>__GetEnumerator__);
-      item = pLVar17->_current;
+      LStack_7._list = pLVar18->_list;
+      LStack_7._index = pLVar18->_index;
+      LStack_7._version = pLVar18->_version;
+      LStack_7._current = pLVar18->_current;
       LStack_9._version = 0;
       uStack_1 = 4;
-      LStack_9._current = (RegexCharClass_SingleRange)&stack0xffffffac;
+      LStack_9._current = (RegexCharClass_SingleRange)&LStack_7;
       while( true ) {
-        bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::
+        bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::
                 RegularExpressions::RegexCharClass+SingleRange]::
                 List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext
-                          ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                            *)&stack0xffffffac,
+                          (&LStack_7,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__MoveNext__
                           );
-        if (bVar10 == 0) break;
+        if (bVar11 == 0) break;
         this_02 = (HashSet_1_System_Int32Enum_ *)(this->fields).runtimeDataVariables;
         if (this_02 == (HashSet_1_System_Int32Enum_ *)0x0) goto code_?;
         System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
         HashSet_1_System_Int32Enum__Remove
-                  (this_02,(Int32Enum__Enum)item,
+                  (this_02,(Int32Enum__Enum)LStack_7._current,
                    MethodInfo__System__Collections__Generic__HashSet<int>__Remove_int_);
       }
       uStack_1 = 0xffffffff;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                ((Object *)&stack0xffffffac,
+                ((Object *)&LStack_7,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__,
                  method_00);
       uStack_1 = 0xffffffff;
-      pLVar15 = (this->fields).removeList;
-      if (pLVar15 != (List_1_System_Int32_ *)0x0) {
-        piVar18 = &(pLVar15->fields)._version;
-        *piVar18 = *piVar18 + 1;
-        (pLVar15->fields)._size = 0;
+      pLVar16 = (this->fields).removeList;
+      if (pLVar16 != (List_1_System_Int32_ *)0x0) {
+        piVar19 = &(pLVar16->fields)._version;
+        *piVar19 = *piVar19 + 1;
+        (pLVar16->fields)._size = 0;
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
   }
 code_?:
-  uVar19 = func_?();
-  uVar19 = func_?(uVar19);
-  func_?(uVar19);
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  uVar20 = func_?();
+  uVar20 = func_?(uVar20);
+  func_?(uVar20);
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 
@@ -389,7 +389,7 @@ void Assembly-CSharp.dll::RuntimeVariableNetworkManager::RuntimeVariableNetworkM
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<int>__List__);
   method_00 = (MethodInfo *)&(this->fields).removeList;
-  (this->fields).removeList = this_01;
+  *(List_1_System_Int32_ **)method_00 = this_01;
   func_?(method_00,this_01);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

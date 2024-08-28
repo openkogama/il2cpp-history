@@ -7,8 +7,8 @@ void Assembly-CSharp.dll::AvatarCameraDistTransparency::
 
 {
   fVar1 = (this->fields).camMoveTowardsOffset.z;
-  (this->fields).fadeEndDistance = scale * (this->fields).fadeEndBase;
-  (this->fields).fadeStartDistance = scale * (this->fields).fadeStartBase;
+  (this->fields).fadeEndDistance = (this->fields).fadeEndBase * scale;
+  (this->fields).fadeStartDistance = (this->fields).fadeStartBase * scale;
   uVar2 = (this->fields).camMoveTowardsOffset.x;
   uVar3 = (this->fields).camMoveTowardsOffset.y;
   (this->fields).camMoveTowardsOffset.x = (float)uVar2 * scale;

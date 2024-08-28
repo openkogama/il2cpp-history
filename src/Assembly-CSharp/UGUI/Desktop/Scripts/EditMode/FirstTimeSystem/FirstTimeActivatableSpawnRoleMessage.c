@@ -64,10 +64,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
       do {
         if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IFirstTimeElementActivator) {
-          pIVar1 = x->klass;
           iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(pIVar1->vtable).RegisterActivatableElement)[iVar4].method)
-                    (x,this,(&(pIVar1->vtable).UnRegisterActivatableElement)[iVar4].methodPtr);
+          (*(code *)(&(x->klass->vtable).RegisterActivatableElement)[iVar4].method)
+                    (x,this,(&(x->klass->vtable).UnRegisterActivatableElement)[iVar4].methodPtr);
           return;
         }
         uVar2 = uVar2 + 1;
@@ -105,8 +104,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-  (this->fields).inShopChecker = (WorldObjectTypeInShopChecker *)this_00;
-  func_?(&(this->fields).inShopChecker,this_00);
+  ppWVar1 = &(this->fields).inShopChecker;
+  *ppWVar1 = (WorldObjectTypeInShopChecker *)this_00;
+  func_?(ppWVar1,this_00);
   FirstTimeActivatableGotItPointer::FirstTimeActivatableGotItPointer__ctor
             ((FirstTimeActivatableGotItPointer *)this,(MethodInfo *)0x0);
   return;
@@ -162,7 +162,7 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
     }
     FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked
               ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-    bVar3 = 0;
+    cVar3 = '\0';
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
@@ -170,12 +170,16 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                         (pGVar2,(MethodInfo *)0x0);
       bVar5 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory
                         ((this->fields).inventoryButton,(MethodInfo *)0x0);
-      return bVar5 & (bVar3 ^ 1) & bVar4 & bVar1;
+      bVar6 = 0;
+      if (cVar3 == '\0') {
+        bVar6 = bVar5 & bVar4 & bVar1;
+      }
+      return bVar6;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  bVar1 = (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  bVar1 = (*pcVar7)();
   return bVar1;
 }
 

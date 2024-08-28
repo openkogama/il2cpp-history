@@ -116,13 +116,15 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
                    );
     cRam_? = '\x01';
   }
-  (this->fields).weaponHitSound = hitSound;
-  func_?(&(this->fields).weaponHitSound,hitSound);
+  ppAVar1 = &(this->fields).weaponHitSound;
+  *ppAVar1 = hitSound;
+  func_?(ppAVar1,hitSound);
   if (body == (MVCubeModelBase *)0x0) {
     func_?();
   }
   else {
-    pAVar1 = (body->fields).Changed;
+    pAVar2 = (body->fields).Changed;
+    this_01 = &(body->fields).Changed;
     this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *)func_?(TypeInfo__System__Action<CubeModelChangedEventArgs>);
     DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
@@ -131,26 +133,26 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
               (this_00,(Object *)this,
                MethodInfo__AdvancedGhostBodyRotateWeapon__body_Changed_CubeModelChangedEventArgs_,
                (MethodInfo *)0x0);
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar2 == (Delegate *)0x0) {
-      (body->fields).Changed = (Action_1_CubeModelChangedEventArgs_ *)0x0;
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar3 == (Delegate *)0x0) {
+      *this_01 = (Action_1_CubeModelChangedEventArgs_ *)0x0;
 code_?:
       func_?();
       AdvancedGhostBodyRotateWeapon_SetupWeaponCollision
-                ((AdvancedGhostBodyRotateWeapon *)&(body->fields).Changed,(MethodInfo *)0x0);
+                ((AdvancedGhostBodyRotateWeapon *)this_01,(MethodInfo *)0x0);
       return;
     }
-    pAVar1 = (Action_1_CubeModelChangedEventArgs_ *)func_?();
-    if (pAVar1 != (Action_1_CubeModelChangedEventArgs_ *)0x0) {
-      (body->fields).Changed = pAVar1;
-      iVar3 = func_?();
-      if (iVar3 != 0) goto code_?;
+    pAVar2 = (Action_1_CubeModelChangedEventArgs_ *)func_?();
+    if (pAVar2 != (Action_1_CubeModelChangedEventArgs_ *)0x0) {
+      *this_01 = pAVar2;
+      iVar4 = func_?();
+      if (iVar4 != 0) goto code_?;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -189,101 +191,104 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::
     cRam_? = '\x01';
   }
   pLVar4 = (this->fields).ghostTriggers;
+  pTVar5 = unaff_ESI;
   if (pLVar4 != (List_1_AdvancedGhostTriggerBase_ *)0x0) {
-    iVar5 = (pLVar4->fields)._size;
-    piVar6 = &(pLVar4->fields)._version;
-    *piVar6 = *piVar6 + 1;
+    iVar6 = (pLVar4->fields)._size;
+    piVar7 = &(pLVar4->fields)._version;
+    *piVar7 = *piVar7 + 1;
     (pLVar4->fields)._size = 0;
-    if (0 < iVar5) {
+    if (0 < iVar6) {
       mscorlib.dll::System::Array::Array_Clear
-                ((Array *)(pLVar4->fields)._items,0,iVar5,(MethodInfo *)0x0);
+                ((Array *)(pLVar4->fields)._items,0,iVar6,(MethodInfo *)0x0);
     }
     this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)this,(MethodInfo *)0x0);
     if (this_00 != (Transform *)0x0) {
-      pIVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
-                         (this_00,(MethodInfo *)0x0);
+      pIVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
+                          (this_00,(MethodInfo *)0x0);
       uStack_1 = 1;
-      while (pIVar7 != (IEnumerator *)0x0) {
-        cVar8 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar7);
-        if (cVar8 == '\0') {
+      while (pTVar5 = unaff_ESI, pIVar8 != (IEnumerator *)0x0) {
+        cVar9 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar8);
+        if (cVar9 == '\0') {
           uStack_1 = 0xffffffff;
-          iVar5 = func_?(pIVar7,TypeInfo__System__IDisposable);
-          if (iVar5 != 0) {
-            func_?(0,TypeInfo__System__IDisposable,iVar5);
+          iVar6 = func_?(pIVar8,TypeInfo__System__IDisposable);
+          if (iVar6 != 0) {
+            func_?(0,TypeInfo__System__IDisposable,iVar6);
             *unaff_FS_OFFSET = uStack_3;
             return;
           }
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        unaff_ESI = (Component *)0x0;
-        if (pIVar7 == (IEnumerator *)0x0) break;
-        pIVar9 = pIVar7->klass;
-        uVar10 = 0;
-        uVar11._0_1_ = (pIVar9->_1).rank;
-        uVar11._1_1_ = (pIVar9->_1).minimumAlignment;
-        if (uVar11 != 0) {
+        pTVar5 = (Transform__Class *)0x0;
+        if (pIVar8 == (IEnumerator *)0x0) break;
+        pIVar10 = pIVar8->klass;
+        uVar11 = 0;
+        uVar12._0_1_ = (pIVar10->_1).rank;
+        uVar12._1_1_ = (pIVar10->_1).minimumAlignment;
+        if (uVar12 != 0) {
           do {
-            if (pIVar9->interfaceOffsets[uVar10].interfaceType ==
+            if (pIVar10->interfaceOffsets[uVar11].interfaceType ==
                 (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
-              ppMVar12 = &(&(pIVar7->klass->vtable).get_Current)
-                         [pIVar7->klass->interfaceOffsets[uVar10].offset].method;
+              ppMVar13 = &(&(pIVar8->klass->vtable).get_Current)
+                          [pIVar10->interfaceOffsets[uVar11].offset].method;
               goto code_?;
             }
-            uVar10 = uVar10 + 1;
-          } while (uVar10 < uVar11);
+            uVar11 = uVar11 + 1;
+          } while (uVar11 < uVar12);
         }
-        ppMVar12 = (MethodInfo **)
-                  func_?(pIVar7,TypeInfo__System__Collections__IEnumerator,1);
+        ppMVar13 = (MethodInfo **)
+                   func_?(pIVar8,TypeInfo__System__Collections__IEnumerator,1);
 code_?:
-        unaff_ESI = (Component *)(*(code *)*ppMVar12)(pIVar7,ppMVar12[1]);
-        if (unaff_ESI == (Component *)0x0) break;
-        pTVar13 = TypeInfo__UnityEngine__Transform;
-        if (((unaff_ESI->klass->_1).naturalAligment <
-             (TypeInfo__UnityEngine__Transform->_1).naturalAligment) ||
-           ((unaff_ESI->klass->_1).typeHierarchy
-            [(TypeInfo__UnityEngine__Transform->_1).naturalAligment - 1] !=
-            (Il2CppClass *)TypeInfo__UnityEngine__Transform)) goto code_?;
-        pOVar14 = (Object_1 *)
+        unaff_ESI = (Transform__Class *)(*(code *)*ppMVar13)(pIVar8,ppMVar13[1]);
+        pTVar5 = TypeInfo__UnityEngine__Transform;
+        if (unaff_ESI == (Transform__Class *)0x0) break;
+        pIVar14 = (unaff_ESI->_0).image;
+        bVar15 = (TypeInfo__UnityEngine__Transform->_1).naturalAligment;
+        pTVar5 = TypeInfo__UnityEngine__Transform;
+        if ((*(byte *)&pIVar14[4].assembly < bVar15) ||
+           (*(Transform__Class **)((pIVar14[2].typeCount - 4) + (uint)bVar15 * 4) !=
+            TypeInfo__UnityEngine__Transform)) goto code_?;
+        pOVar16 = (Object_1 *)
                   UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                            (unaff_ESI,
+                            ((Component *)unaff_ESI,
                              UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
                             );
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        bVar15 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          (pOVar14,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar15 != 0) {
+        bVar17 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                          (pOVar16,(Object_1 *)0x0,(MethodInfo *)0x0);
+        if (bVar17 != 0) {
           this_01 = (Collider *)
                     UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                              (unaff_ESI,
+                              ((Component *)unaff_ESI,
                                UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
                               );
+          pTVar5 = unaff_ESI;
           if (this_01 == (Collider *)0x0) break;
           UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_isTrigger
                     (this_01,1,(MethodInfo *)0x0);
-          pGVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              (unaff_ESI,(MethodInfo *)0x0);
-          if (pGVar16 == (GameObject *)0x0) break;
-          pOVar14 = (Object_1 *)
+          pGVar18 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)unaff_ESI,(MethodInfo *)0x0);
+          if (pGVar18 == (GameObject *)0x0) break;
+          pOVar16 = (Object_1 *)
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                              (pGVar16,
+                              (pGVar18,
                                AdvancedGhostTriggerBase_MethodInfo__UnityEngine__GameObject__GetComponent<AdvancedGhostTriggerBase>__
                               );
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Object);
           }
-          bVar15 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                            (pOVar14,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar15 != 0) {
-            pGVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                (unaff_ESI,(MethodInfo *)0x0);
-            if (pGVar16 == (GameObject *)0x0) break;
-            pOVar14 = (Object_1 *)
+          bVar17 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                            (pOVar16,(Object_1 *)0x0,(MethodInfo *)0x0);
+          if (bVar17 != 0) {
+            pGVar18 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                ((Component *)unaff_ESI,(MethodInfo *)0x0);
+            if (pGVar18 == (GameObject *)0x0) break;
+            pOVar16 = (Object_1 *)
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                                (pGVar16,
+                                (pGVar18,
                                  AdvancedGhostTriggerBase_MethodInfo__UnityEngine__GameObject__AddComponent<AdvancedGhostTriggerBase>__
                                 );
           }
@@ -291,7 +296,7 @@ code_?:
           if (pLVar4 == (List_1_AdvancedGhostTriggerBase_ *)0x0) break;
           mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
           List_1_System_Object__Add
-                    ((List_1_System_Object_ *)pLVar4,(Object *)pOVar14,
+                    ((List_1_System_Object_ *)pLVar4,(Object *)pOVar16,
                      MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__Add_AdvancedGhostTriggerBase_
                     );
         }
@@ -299,11 +304,11 @@ code_?:
     }
   }
   func_?();
-  pTVar13 = extraout_EDX;
+  unaff_ESI = extraout_EDX;
 code_?:
-  func_?(unaff_ESI,pTVar13);
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  func_?(unaff_ESI,pTVar5);
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 
@@ -337,10 +342,6 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
   if (0.0 < (this->fields).factor) {
     this_00 = (this->fields).timeoutMap;
     if (this_00 != (TimeoutMap *)0x0) {
@@ -348,28 +349,28 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
       this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                 (this->fields).ghostTriggers;
       if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+        pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                  ::RegexCharClass+SingleRange]::
                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                           (&LStack_8,this_01,
+                           (&LStack_7,this_01,
                             MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__GetEnumerator__
                            );
-        LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
-        LStack_6._index = pLVar7->_index;
-        LStack_6._version = pLVar7->_version;
-        LStack_6._current = *(Object **)&pLVar7->_current;
-        LStack_8._version = 0;
+        LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
+        LStack_8._index = pLVar6->_index;
+        LStack_8._version = pLVar6->_version;
+        LStack_8._current = *(Object **)&pLVar6->_current;
+        LStack_7._version = 0;
         uStack_1 = 1;
-        LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
+        LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
         while( true ) {
           bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                   List_1_T_Enumerator_System_Object__MoveNext
-                            (&LStack_6,
+                            (&LStack_8,
                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<AdvancedGhostTriggerBase>__MoveNext__
                             );
-          pOVar10 = LStack_6._current;
+          pOVar10 = LStack_8._current;
           if (bVar9 == 0) break;
-          if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
+          if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0)
           goto code_?;
           if (cRam_? == '\0') {
             func_?();
@@ -380,18 +381,20 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
                                   System__Int32__MethodInfo__System__Linq__Enumerable__ToArray<int>_System__Collections__Generic__IEnumerable<int>_____
                                  );
           uVar12 = 0;
-          if (pIStack_11 == (Int32__Array *)0x0) goto code_?;
-          for (; (int)uVar12 < (int)pIStack_11->max_length; uVar12 = uVar12 + 1) {
+          while( true ) {
+            if (pIStack_11 == (Int32__Array *)0x0) goto code_?;
+            if ((int)pIStack_11->max_length <= (int)uVar12) break;
             if (pIStack_11->max_length <= uVar12) {
               func_?();
               goto code_?;
             }
             AdvancedGhostBodyRotateWeapon_Attack(this,pIStack_11->vector[uVar12],(MethodInfo *)0x0);
+            uVar12 = uVar12 + 1;
           }
         }
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)&LStack_6,
+                  ((Object *)&LStack_8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<AdvancedGhostTriggerBase>__Dispose__
                    ,unaff_EBX);
@@ -427,8 +430,9 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
   (this->fields).factor = 1.0;
   this_00 = (TimeoutMap *)func_?(TypeInfo__TimeoutMap);
   TimeoutMap::TimeoutMap__ctor(this_00,0.5,(MethodInfo *)0x0);
-  (this->fields).timeoutMap = this_00;
-  func_?(&(this->fields).timeoutMap,this_00);
+  ppTVar1 = &(this->fields).timeoutMap;
+  *ppTVar1 = this_00;
+  func_?(ppTVar1,this_00);
   (this->fields).alliedTeam = 4;
   this_01 = (List_1_AdvancedGhostTriggerBase_ *)
             func_?(TypeInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>);
@@ -437,8 +441,9 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__List__);
-  (this->fields).ghostTriggers = this_01;
-  func_?(&(this->fields).ghostTriggers,this_01);
+  ppLVar2 = &(this->fields).ghostTriggers;
+  *ppLVar2 = this_01;
+  func_?(ppLVar2,this_01);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

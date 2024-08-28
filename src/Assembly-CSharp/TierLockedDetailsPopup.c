@@ -67,28 +67,25 @@ String * Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_Get
   }
   pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
   if (pPVar1 != (PlayerPlanetData *)0x0) {
-    bVar2 = (pPVar1->fields).gamePassTier + 1;
-    uVar3 = (uint)bVar2;
-    uStack_4 = uVar3;
-    if ((int)((uint)(this->fields).tierToPurchase - (uint)bVar2) < 2) {
-      pSVar5 = TM::TM__(StringLiteral_You_need_to_unlock_Tier__0__befo,(MethodInfo *)0x0);
-      uStack_6 = uStack_4;
-      pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&uStack_6);
-      pSVar5 = mscorlib.dll::System::String::String_Format(pSVar5,pOVar7,(MethodInfo *)0x0);
-      return pSVar5;
+    uVar2 = (uint)(byte)((pPVar1->fields).gamePassTier + 1);
+    uStack_3 = uVar2;
+    if ((int)((this->fields).tierToPurchase - uVar2) < 2) {
+      pSVar4 = TM::TM__(StringLiteral_You_need_to_unlock_Tier__0__befo,(MethodInfo *)0x0);
+      pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&uStack_3);
+      pSVar4 = mscorlib.dll::System::String::String_Format(pSVar4,pOVar5,(MethodInfo *)0x0);
+      return pSVar4;
     }
-    pSVar5 = TM::TM__(StringLiteral_You_need_to_unlock_Tier__0__and_,(MethodInfo *)0x0);
-    uStack_6 = uVar3;
-    pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&uStack_6);
-    uStack_4 = bVar2 + 1;
-    arg1 = (Object *)func_?(TypeInfo__System__Int32,&uStack_4);
-    pSVar5 = mscorlib.dll::System::String::String_Format_1(pSVar5,pOVar7,arg1,(MethodInfo *)0x0);
-    return pSVar5;
+    pSVar4 = TM::TM__(StringLiteral_You_need_to_unlock_Tier__0__and_,(MethodInfo *)0x0);
+    pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&uStack_3);
+    iStack_6 = uVar2 + 1;
+    arg1 = (Object *)func_?(TypeInfo__System__Int32,&iStack_6);
+    pSVar4 = mscorlib.dll::System::String::String_Format_1(pSVar4,pOVar5,arg1,(MethodInfo *)0x0);
+    return pSVar4;
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  pSVar5 = (String *)(*pcVar8)();
-  return pSVar5;
+  pcVar7 = (code *)swi(3);
+  pSVar4 = (String *)(*pcVar7)();
+  return pSVar4;
 }
 
 
@@ -123,15 +120,16 @@ void Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_Initial
 
 {
   GVar1 = tierToPurchase;
-  (this->fields).onPurchaseSuccessful = OnPurchaseSuccessful;
+  ppUVar2 = &(this->fields).onPurchaseSuccessful;
+  *ppUVar2 = OnPurchaseSuccessful;
   (this->fields).tierToPurchase = (undefined1)tierToPurchase;
-  func_?(&(this->fields).onPurchaseSuccessful,OnPurchaseSuccessful);
-  pTVar2 = (this->fields).tierText;
+  func_?(ppUVar2,OnPurchaseSuccessful);
+  pTVar3 = (this->fields).tierText;
   tierToPurchase = GVar1 & 0xff;
-  pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&tierToPurchase,(MethodInfo *)0x0);
-  if (pTVar2 != (Text *)0x0) {
-    (*(code *)(pTVar2->klass->vtable).set_text.method)
-              (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+  pSVar4 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&tierToPurchase,(MethodInfo *)0x0);
+  if (pTVar3 != (Text *)0x0) {
+    (*(code *)(pTVar3->klass->vtable).set_text.method)
+              (pTVar3,pSVar4,(pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     TierLockedDetailsPopup_UpdateLockedText(this,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__GamePassesManager);
@@ -143,8 +141,8 @@ void Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_Initial
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -241,28 +239,26 @@ int32_t Assembly-CSharp.dll::TierLockedDetailsPopup::
                    );
     cRam_? = '\x01';
   }
-  key = (gamePassTierToDisplay & 0xff) - 1;
-  if (0 < (int)key) {
-    if (gameTierShopStatus ==
-        (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)0x0) {
-code_?:
-      func_?();
-      pcVar1 = (code *)swi(3);
-      iVar2 = (*pcVar1)();
-      return iVar2;
+  key = gamePassTierToDisplay & 0xff;
+  while( true ) {
+    key = key - 1;
+    if ((int)key < 1) {
+      return gamePoints;
     }
-    do {
-      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         ((Dictionary_2_System_ByteEnum_System_Object_ *)gameTierShopStatus,key,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
-                         );
-      if (pOVar3 == (Object *)0x0) goto code_?;
-      gamePoints = gamePoints - (int)pOVar3[3].klass;
-      key = key - 1;
-    } while (0 < (int)key);
+    if ((gameTierShopStatus ==
+         (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)0x0)
+       || (pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+                    ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                              ((Dictionary_2_System_ByteEnum_System_Object_ *)gameTierShopStatus,key
+                               ,
+                               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
+                              ), pOVar1 == (Object *)0x0)) break;
+    gamePoints = gamePoints - (int)pOVar1[3].klass;
   }
-  return gamePoints;
+  func_?();
+  pcVar2 = (code *)swi(3);
+  iVar3 = (*pcVar2)();
+  return iVar3;
 }
 
 
@@ -304,17 +300,18 @@ void Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_ShowLoc
                       GamePassesShop_MethodInfo__UnityEngine__Object__Instantiate<GamePassesShop>_GamePassesShop_
                      );
   if (value != (Object *)0x0) {
-    value[1].klass = pOVar1;
-    func_?(value + 1,pOVar1);
-    pOVar1 = value[1].klass;
+    pOVar2 = value + 1;
+    pOVar2->klass = pOVar1;
+    func_?(pOVar2,pOVar1);
+    pOVar1 = pOVar2->klass;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__GamePassesManager);
       cRam_? = '\x01';
     }
-    pPVar2 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-    if ((pPVar2 != (PlayerPlanetData *)0x0) && (pOVar1 != (Object__Class *)0x0)) {
+    pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+    if ((pPVar3 != (PlayerPlanetData *)0x0) && (pOVar1 != (Object__Class *)0x0)) {
       GamePassesShop::GamePassesShop_Initialize
-                ((GamePassesShop *)pOVar1,(uint)(byte)((pPVar2->fields).gamePassTier + 1),
+                ((GamePassesShop *)pOVar1,(uint)(byte)((pPVar3->fields).gamePassTier + 1),
                  (MethodInfo *)0x0);
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
@@ -340,8 +337,8 @@ void Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_ShowLoc
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -409,21 +406,22 @@ void Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_ShowPur
                             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
                            );
         if (pOVar4 != (Object *)0x0) {
-          IVar5.m_value = (int32_t)pOVar4[2].klass;
+          IStack_3.m_value = (int32_t)pOVar4[2].klass;
           original = (this->fields).tierUnlockDetailsPrefab;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pOVar6 = (Object__Class *)
+          pOVar5 = (Object__Class *)
                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                              ((Object *)original,
                               TierUnlockDetailsPopup_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockDetailsPopup>_TierUnlockDetailsPopup_
                              );
           if (value != (Object *)0x0) {
-            value[1].klass = pOVar6;
-            func_?(value + 1,pOVar6);
-            root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)this,(MethodInfo *)0x0);
+            pOVar4 = value + 1;
+            pOVar4->klass = pOVar5;
+            func_?(pOVar4,pOVar5);
+            root.m_value = (int32_t)UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                    Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
             callbackFunction =
                  (ExecuteEvents_EventFunction_1_System_Object_ *)
                  func_?(
@@ -440,34 +438,35 @@ void Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_ShowPur
             }
             UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
             ExecuteEvents_ExecuteHierarchy
-                      (root,(BaseEventData *)0x0,callbackFunction,
+                      ((GameObject *)root.m_value,(BaseEventData *)0x0,callbackFunction,
                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                       );
-            pOVar6 = value[1].klass;
-            uVar7 = (this->fields).tierToPurchase;
-            pUVar8 = (this->fields).onPurchaseSuccessful;
-            if (pOVar6 != (Object__Class *)0x0) {
-              (pOVar6->_0).fields = (FieldInfo *)pUVar8;
-              *(uint8_t *)&(pOVar6->_0).interopData = uVar7;
-              (pOVar6->_0).klass = (Il2CppClass *)IVar5.m_value;
-              IStack_3.m_value = IVar5.m_value;
-              func_?(&(pOVar6->_0).fields,pUVar8);
-              pTVar9 = (Text *)(pOVar6->_0).byval_arg.data.array;
-              pSVar10 = mscorlib.dll::System::Int32::Int32_ToString
-                                 ((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
+            pOVar5 = pOVar4->klass;
+            bVar6 = (this->fields).tierToPurchase;
+            pUVar7 = (this->fields).onPurchaseSuccessful;
+            if (pOVar5 != (Object__Class *)0x0) {
+              (pOVar5->_0).klass = (Il2CppClass *)IStack_3.m_value;
+              ppUVar8 = (UnityAction **)&(pOVar5->_0).fields;
+              *(byte *)&(pOVar5->_0).interopData = bVar6;
+              *ppUVar8 = pUVar7;
+              func_?(ppUVar8,pUVar7);
+              pTVar9 = (Text *)(pOVar5->_0).byval_arg.data.array;
+              IStack_3.m_value = (int32_t)bVar6;
+              pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
               if (pTVar9 != (Text *)0x0) {
                 (*(code *)(pTVar9->klass->vtable).set_text.method)
                           (pTVar9,pSVar10,
                            (pTVar9->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-                pTVar9 = *(Text **)&(pOVar6->_0).byval_arg.attrs;
-                pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
+                pTVar9 = *(Text **)&(pOVar5->_0).byval_arg.attrs;
+                pSVar10 = mscorlib.dll::System::Int32::Int32_ToString
+                                    ((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
                 if (pTVar9 != (Text *)0x0) {
                   (*(code *)(pTVar9->klass->vtable).set_text.method)
                             (pTVar9,pSVar10,
                              (pTVar9->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
                   bVar11 = MVClientSettings::MVClientSettings_get_IsSubscriber((MethodInfo *)0x0);
-                  this_01 = (pOVar6->_0).castClass;
-                  *(bool *)((int)&(pOVar6->_0).events + 1) = bVar11;
+                  this_01 = (pOVar5->_0).castClass;
+                  *(bool *)((int)&(pOVar5->_0).events + 1) = bVar11;
                   if (bVar11 == 0) {
                     bVar11 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled
                                       ((MethodInfo *)0x0);
@@ -485,10 +484,10 @@ void Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_ShowPur
                     if (TypeInfo__GamePassesManager->static_fields->
                         _GamePassesActive_k__BackingField != 0) {
                       TierUnlockDetailsPopup::TierUnlockDetailsPopup_UpdateTierProgressBar
-                                ((TierUnlockDetailsPopup *)pOVar6,(MethodInfo *)0x0);
+                                ((TierUnlockDetailsPopup *)pOVar5,(MethodInfo *)0x0);
                     }
-                    this_02 = (Image *)(pOVar6->_0).typeMetadataHandle;
-                    if (*(bool *)((int)&(pOVar6->_0).events + 1) == 0) {
+                    this_02 = (Image *)(pOVar5->_0).typeMetadataHandle;
+                    if (*(bool *)((int)&(pOVar5->_0).events + 1) == 0) {
                       pTVar12 = GamePassesManager::GamePassesManager_get_TogglePreviewState
                                           ((MethodInfo *)0x0);
                       if (pTVar12 == (TogglePreviewState *)0x0) goto code_?;
@@ -557,11 +556,12 @@ void Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_ShowTie
                       GamePassesShop_MethodInfo__UnityEngine__Object__Instantiate<GamePassesShop>_GamePassesShop_
                      );
   if (value != (Object *)0x0) {
-    value[1].klass = pOVar1;
-    func_?(value + 1,pOVar1);
-    if (value[1].klass != (Object__Class *)0x0) {
+    pOVar2 = value + 1;
+    pOVar2->klass = pOVar1;
+    func_?(pOVar2,pOVar1);
+    if (pOVar2->klass != (Object__Class *)0x0) {
       GamePassesShop::GamePassesShop_Initialize
-                ((GamePassesShop *)value[1].klass,(uint)(this->fields).tierToPurchase,
+                ((GamePassesShop *)pOVar2->klass,(uint)(this->fields).tierToPurchase,
                  (MethodInfo *)0x0);
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
@@ -587,8 +587,8 @@ void Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_ShowTie
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -609,13 +609,13 @@ void Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_UpdateL
   pSVar3 = TM::TM__(StringLiteral_Game_Tier__0___Locked,(MethodInfo *)0x0);
   this = (TierLockedDetailsPopup *)(uint)(pTVar1->fields).tierToPurchase;
   pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&this);
-  pSVar3 = mscorlib.dll::System::String::String_Format(pSVar3,pOVar4,(MethodInfo *)0x0);
+  mscorlib.dll::System::String::String_Format(pSVar3,pOVar4,(MethodInfo *)0x0);
   if (pTVar2 != (Text *)0x0) {
-    (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,pSVar3);
+    (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2);
     pTVar2 = (pTVar1->fields).lockedButtonText;
     if (cRam_? == '\0') {
       func_?();
-      func_?(&StringLiteral_GO_TO_TIER__0_);
+      func_?();
       cRam_? = '\x01';
     }
     if (cRam_? == '\0') {
@@ -627,13 +627,14 @@ void Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_UpdateL
       uVar6 = (pPVar5->fields).gamePassTier;
       pSVar3 = TM::TM__(StringLiteral_GO_TO_TIER__0_,(MethodInfo *)0x0);
       this = (TierLockedDetailsPopup *)(uint)(byte)(uVar6 + 1);
-      pOVar4 = (Object *)func_?(TypeInfo__System__Int32);
-      pSVar3 = mscorlib.dll::System::String::String_Format(pSVar3,pOVar4,(MethodInfo *)0x0);
+      pOVar4 = (Object *)func_?();
+      mscorlib.dll::System::String::String_Format(pSVar3,pOVar4,(MethodInfo *)0x0);
       if (pTVar2 != (Text *)0x0) {
-        (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,pSVar3);
+        (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2);
+        pTVar2 = (pTVar1->fields).lockedDescriptionText;
         if (cRam_? == '\0') {
           func_?();
-          func_?(&StringLiteral_You_need_to_unlock_Tier__0__and_);
+          func_?();
           func_?(&StringLiteral_You_need_to_unlock_Tier__0__befo);
           cRam_? = '\x01';
         }
@@ -643,26 +644,20 @@ void Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_UpdateL
         }
         pPVar5 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
         if (pPVar5 != (PlayerPlanetData *)0x0) {
-          bVar7 = (pPVar5->fields).gamePassTier + 1;
-          pTVar8 = (TierLockedDetailsPopup *)(uint)bVar7;
-          this = pTVar8;
-          if ((int)((uint)(pTVar1->fields).tierToPurchase - (uint)bVar7) < 2) {
+          this = (TierLockedDetailsPopup *)(uint)(byte)((pPVar5->fields).gamePassTier + 1);
+          if ((int)((uint)(pTVar1->fields).tierToPurchase - (int)this) < 2) {
             pSVar3 = TM::TM__(StringLiteral_You_need_to_unlock_Tier__0__befo,(MethodInfo *)0x0);
-            pIVar9 = TypeInfo__System__Int32;
             pOVar4 = (Object *)func_?();
-            pSVar3 = mscorlib.dll::System::String::String_Format(pSVar3,pOVar4,(MethodInfo *)0x0);
+            mscorlib.dll::System::String::String_Format(pSVar3,pOVar4,(MethodInfo *)0x0);
           }
           else {
             pSVar3 = TM::TM__(StringLiteral_You_need_to_unlock_Tier__0__and_,(MethodInfo *)0x0);
-            this = pTVar8;
-            pIVar9 = TypeInfo__System__Int32;
             pOVar4 = (Object *)func_?();
-            arg1 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff4);
-            pSVar3 = mscorlib.dll::System::String::String_Format_1
-                               (pSVar3,pOVar4,arg1,(MethodInfo *)0x0);
+            arg1 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff0);
+            mscorlib.dll::System::String::String_Format_1(pSVar3,pOVar4,arg1,(MethodInfo *)0x0);
           }
-          if (pIVar9 != (Int32__Class *)0x0) {
-            (*(code *)(pIVar9->_0).image[0x12].name)(pIVar9,pSVar3);
+          if (pTVar2 != (Text *)0x0) {
+            (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2);
             return;
           }
         }
@@ -670,8 +665,8 @@ void Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_UpdateL
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -725,58 +720,52 @@ void Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_UpdateT
                        );
         cRam_? = '\x01';
       }
-      key = uStack_5 - 1;
-      if (0 < (int)key) {
-        if (this_02 ==
-            (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)
-            0x0) goto code_?;
-        do {
-          pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
-                   ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                             ((Dictionary_2_System_ByteEnum_System_Object_ *)this_02,key,
-                              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
-                             );
-          if (pOVar6 == (Object *)0x0) goto code_?;
-          playerGamePoints = (Object__Class *)((int)playerGamePoints - (int)pOVar6[3].klass);
-          key = key - 1;
-        } while (0 < (int)key);
+      key = (ByteEnum__Enum)uStack_5;
+      while (key = key - 1, 0 < (int)key) {
+        if ((this_02 ==
+             (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)
+             0x0) || (pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                               ByteEnum,System::Object]::
+                               Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                         ((Dictionary_2_System_ByteEnum_System_Object_ *)this_02,key
+                                          ,
+                                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
+                                         ), pOVar6 == (Object *)0x0)) goto code_?;
+        playerGamePoints = (Object__Class *)((int)playerGamePoints - (int)pOVar6[3].klass);
+      }
+      if ((float)(int)playerGamePoints < 0.0) {
+        playerGamePoints = (Object__Class *)0x0;
       }
       IStack_1.m_value = (int32_t)playerGamePoints;
-      if ((float)(int)playerGamePoints < 0.0) {
-        IStack_1.m_value = 0;
-      }
-      if (this_02 !=
-          (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)0x0)
-      {
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)this_02,
-                            CONCAT31((int3)((uint)playerGamePassTier >> 8),
-                                     (this->fields).tierToPurchase),
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar6 != (Object *)0x0) {
-          IStack_2.m_value = (int32_t)pOVar6[3].klass;
-          if (IStack_2.m_value < IStack_1.m_value) {
-            IStack_1.m_value = IStack_2.m_value;
-          }
-          this_01 = (ProgressBarAndroid *)(this->fields).tierProgressBar;
-          if (this_01 != (ProgressBarAndroid *)0x0) {
-            ProgressBarAndroid::ProgressBarAndroid_set_Progress
-                      (this_01,(float)IStack_1.m_value / (float)IStack_2.m_value,(MethodInfo *)0x0)
-            ;
-            str0 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
-            str2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
-            pSStack7 =
-                 mscorlib.dll::System::String::String_Concat_4
-                           (str0,::StringLiteral____,str2,(MethodInfo *)0x0);
-            pTStack8 = (this->fields).progressText;
-            if (pTStack8 != (Text *)0x0) {
-              pIStack9 =
-                   (pTStack8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-              (*(code *)(pTStack8->klass->vtable).set_text.method)();
-              return;
-            }
+      if ((this_02 !=
+           (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)0x0
+          ) && (pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                         ByteEnum,System::Object]::
+                         Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                   ((Dictionary_2_System_ByteEnum_System_Object_ *)this_02,
+                                    CONCAT31((int3)((uint)playerGamePassTier >> 8),
+                                             (this->fields).tierToPurchase),
+                                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
+                                   ), pOVar6 != (Object *)0x0)) {
+        IStack_2.m_value = (int32_t)pOVar6[3].klass;
+        if (IStack_2.m_value < IStack_1.m_value) {
+          IStack_1.m_value = IStack_2.m_value;
+        }
+        this_01 = (ProgressBarAndroid *)(this->fields).tierProgressBar;
+        if (this_01 != (ProgressBarAndroid *)0x0) {
+          ProgressBarAndroid::ProgressBarAndroid_set_Progress
+                    (this_01,(float)IStack_1.m_value / (float)IStack_2.m_value,(MethodInfo *)0x0);
+          str0 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
+          str2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
+          pSStack7 =
+               mscorlib.dll::System::String::String_Concat_4
+                         (str0,::StringLiteral____,str2,(MethodInfo *)0x0);
+          pTStack8 = (this->fields).progressText;
+          if (pTStack8 != (Text *)0x0) {
+            pIStack9 =
+                 (pTStack8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+            (*(code *)(pTStack8->klass->vtable).set_text.method)();
+            return;
           }
         }
       }

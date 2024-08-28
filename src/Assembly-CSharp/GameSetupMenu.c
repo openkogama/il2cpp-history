@@ -552,64 +552,60 @@ void Assembly-CSharp.dll::GameSetupMenu::GameSetupMenu_Start(GameSetupMenu *this
                    );
     cRam_? = '\x01';
   }
+  method_00 = (MethodInfo *)0x100;
+  value = 6;
   bVar1 = MVClientSettings::MVClientSettings_IsFlagSet
                     (ClientSettingFlags__Enum_GamePassSilentReleaseEnabled,(MethodInfo *)0x0);
   if (bVar1 == 0) {
     GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
               ((MethodInfo *)0x0);
-    this_01 = (MethodInfo *)(this->fields).activeGameTierButton;
-    if (this_01 != (MethodInfo *)0x0) {
-      unaff_BP = 0;
+    pGVar2 = (this->fields).activeGameTierButton;
+    if (pGVar2 != (GameObject *)0x0) {
+      value_00 = 0;
       bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                        ((GameObject *)this_01,(MethodInfo *)0x0);
-      pMVar2 = this_01;
-      if (bVar1 != (bool)this_01) {
-        pGVar3 = (this->fields).activeGameTierButton;
-        if (pGVar3 == (GameObject *)0x0) goto code_?;
-        pMVar2 = (MethodInfo *)&UNK_?;
+                        (pGVar2,(MethodInfo *)0x0);
+      if (bVar1 != value_00) {
+        pGVar2 = (this->fields).activeGameTierButton;
+        if (pGVar2 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar3,(bool)this_01,(MethodInfo *)0x0);
-        unaff_BP = (bool)pGVar3;
-        unaff_retaddr = this_01;
+                  (pGVar2,value_00,(MethodInfo *)0x0);
+        value_00 = (bool)pGVar2;
       }
-      bVar1 = (bool)pMVar2;
-      pGVar3 = (this->fields).inActiveGameTierButton;
-      if (pGVar3 != (GameObject *)0x0) {
-        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                          (pGVar3,(MethodInfo *)0x0);
-        if (bVar4 != bVar1) goto code_?;
-        this_02 = (this->fields).inActiveGameTierButton;
-        if (this_02 != (GameObject *)0x0) goto code_?;
+      pGVar2 = (this->fields).inActiveGameTierButton;
+      if (pGVar2 != (GameObject *)0x0) {
+        bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                          (pGVar2,(MethodInfo *)0x0);
+        if (bVar1 != value_00) goto code_?;
+        pGVar2 = (this->fields).inActiveGameTierButton;
+        if (pGVar2 != (GameObject *)0x0) goto code_?;
       }
     }
   }
   else {
-    pGVar3 = (this->fields).activeGameTierButton;
-    if (pGVar3 != (GameObject *)0x0) {
-      this_02 = (GameObject *)0x0;
+    pGVar2 = (this->fields).activeGameTierButton;
+    if (pGVar2 != (GameObject *)0x0) {
       bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                        (pGVar3,(MethodInfo *)0x0);
+                        (pGVar2,(MethodInfo *)0x0);
       if (bVar1 != 0) {
-        this_02 = (this->fields).activeGameTierButton;
-        if (this_02 == (GameObject *)0x0) goto code_?;
-        unaff_retaddr = (MethodInfo *)0x0;
-        unaff_BP = 0;
+        pGVar2 = (this->fields).activeGameTierButton;
+        if (pGVar2 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (this_02,0,(MethodInfo *)0x0);
+                  (pGVar2,0,(MethodInfo *)0x0);
       }
-      pGVar3 = (this->fields).inActiveGameTierButton;
-      if (pGVar3 != (GameObject *)0x0) {
+      pGVar2 = (this->fields).inActiveGameTierButton;
+      if (pGVar2 != (GameObject *)0x0) {
         bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                          (pGVar3,(MethodInfo *)0x0);
+                          (pGVar2,(MethodInfo *)0x0);
         if (bVar1 != 0) {
-          if ((this->fields).inActiveGameTierButton == (GameObject *)0x0) goto code_?;
+          pGVar2 = (this->fields).inActiveGameTierButton;
+          if (pGVar2 == (GameObject *)0x0) goto code_?;
 code_?:
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (this_02,unaff_BP,unaff_retaddr);
+                    (pGVar2,value,method_00);
         }
 code_?:
         if (cRam_? == '\0') {
-          func_?();
+          func_?(&TypeInfo__GamePassesProjectEarningsManager);
           cRam_? = '\x01';
         }
         projectEarningsReport =
@@ -618,52 +614,51 @@ code_?:
           GameSetupMenu_UpdateEarningText(this,projectEarningsReport,(MethodInfo *)0x0);
           return;
         }
-        pAVar5 = TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated;
+        pAVar3 = TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated;
         this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                   *)func_?();
+                   *)func_?(
+                                    TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
+                                    );
         DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata
         ::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
         DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                   (this_00,(Object *)this,
                    MethodInfo__GameSetupMenu__OnRecieveEarningsReport_MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectEarningsReport_
                    ,(MethodInfo *)0x0);
-        unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
-                              ((Delegate *)pAVar5,(Delegate *)this_00,(MethodInfo *)0x0);
+        pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                           ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
         unaff_EDI = 
         TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
         ;
-        if (unaff_ESI == (Delegate *)0x0) {
+        if (pDVar4 == (Delegate *)0x0) {
           TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated =
                (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)0x0
           ;
-          pAStack6 =
+          pAStack5 =
                (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class
                 *)0x0;
 code_?:
-          pDStack7 = (Delegate *)TypeInfo__GamePassesProjectEarningsManager->static_fields;
           func_?();
           return;
         }
-        pAStack6 =
+        pAStack5 =
              TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
         ;
-        pDStack7 = unaff_ESI;
-        pAVar5 = (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)
+        pAVar3 = (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)
                  func_?();
-        if (pAVar5 != (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_
+        if (pAVar3 != (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_
                        *)0x0) {
-          TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated = pAVar5;
+          TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated = pAVar3;
           unaff_EDI = 
           TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
           ;
-          pAStack6 =
+          pAStack5 =
                TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
           ;
-          pDStack7 = unaff_ESI;
-          pAStack6 =
+          pAStack5 =
                (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class
                 *)func_?();
-          if (pAStack6 !=
+          if (pAStack5 !=
               (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class
                *)0x0) goto code_?;
         }
@@ -674,11 +669,10 @@ code_?:
 code_?:
   func_?();
 code_?:
-  pDStack7 = unaff_ESI;
-  pAStack6 = unaff_EDI;
+  pAStack5 = unaff_EDI;
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -791,7 +785,7 @@ void Assembly-CSharp.dll::GameSetupMenu::GameSetupMenu_UpdateTierButtonVisibilit
           pGVar2 = (this->fields).inActiveGameTierButton;
           if (pGVar2 == (GameObject *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar2,bVar1 ^ 1,(MethodInfo *)0x0);
+                    (pGVar2,bVar1 == 0,(MethodInfo *)0x0);
         }
         return;
       }

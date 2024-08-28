@@ -25,17 +25,18 @@ void Assembly-CSharp.dll::RotatorSettings::RotatorSettings_Initialize
   SettingsBase::SettingsBase_Initialize_1(this_00,woID,root,header,(MethodInfo *)0x0);
   if (woID == -1) goto code_?;
   this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (this_03 == (MVWorldObjectClientManager *)0x0) {
+  if ((this_03 == (MVWorldObjectClientManager *)0x0) ||
+     (pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                         (this_03,woID,(MethodInfo *)0x0), pMVar1 == (MVWorldObject *)0x0)) {
 code_?:
-    uVar1 = func_?();
+    uVar2 = func_?();
 code_?:
-    func_?(uVar1);
+    func_?(uVar2);
+code_?:
+    func_?();
   }
   else {
-    pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (this_03,woID,(MethodInfo *)0x0);
-    if (pMVar2 == (MVWorldObject *)0x0) goto code_?;
-    pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar2->fields).data;
+    pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar1->fields).data;
     (this->fields).woID = woID;
     if (pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
@@ -59,7 +60,7 @@ code_?:
                         (pDVar3,(Object *)StringLiteral_AngularSpeed,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      uVar1 = CONCAT44(TypeInfo__System__Single,TVar4.m_Index);
+      uVar2 = CONCAT44(TypeInfo__System__Single,TVar4.m_Index);
       if (TVar4.m_Index == 0) goto code_?;
       if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
           (TypeInfo__System__Single->_0).element_class) {
@@ -81,21 +82,20 @@ code_?:
       }
       goto code_?;
     }
-    if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment <= *(byte *)(*(int *)TVar4.m_Index + 0xb8)) &&
+    bVar6 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
+            .naturalAligment;
+    if ((bVar6 <= *(byte *)(*(int *)TVar4.m_Index + 0xb8)) &&
        (*(Dictionary_2_System_Object_System_Object___Class **)
-         (*(int *)(*(int *)TVar4.m_Index + 100) + -4 +
-         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).naturalAligment * 4) ==
+         (*(int *)(*(int *)TVar4.m_Index + 100) + -4 + (uint)bVar6 * 4) ==
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
       (this->fields).blueprintData = (Dictionary_2_System_Object_System_Object_ *)TVar4.m_Index;
-      if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           naturalAligment <= *(byte *)(*(int *)TVar4.m_Index + 0xb8)) &&
+      bVar6 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+              _1).naturalAligment;
+      if ((bVar6 <= *(byte *)(*(int *)TVar4.m_Index + 0xb8)) &&
          (*(Dictionary_2_System_Object_System_Object___Class **)
-           (*(int *)(*(int *)TVar4.m_Index + 100) + -4 +
-           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 ->_1).naturalAligment * 4) ==
+           (*(int *)(*(int *)TVar4.m_Index + 100) + -4 + (uint)bVar6 * 4) ==
           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+      goto code_?;
       goto code_?;
     }
   }
@@ -107,8 +107,8 @@ code_?:
             (this_04,(MethodInfo *)0x0);
   func_?();
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

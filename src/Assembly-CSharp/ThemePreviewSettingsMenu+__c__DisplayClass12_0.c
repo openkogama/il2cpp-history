@@ -7,22 +7,22 @@ void Assembly-CSharp.dll::ThemePreviewSettingsMenu+<>c__DisplayClass12_0::
 
 {
   this_00 = (this->fields).__4__this;
-  if (((this->fields).data != (ThemeData *)0x0) &&
-     (levelReq = (((this->fields).data)->fields).levelRequirement,
-     this_00 != (ThemePreviewSettingsMenu *)0x0)) {
+  pTVar1 = (this->fields).data;
+  if ((pTVar1 != (ThemeData *)0x0) &&
+     (levelReq = (pTVar1->fields).levelRequirement, this_00 != (ThemePreviewSettingsMenu *)0x0)) {
     this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (this_01 != (MVNetworkGame *)0x0) {
       method_00 = (ExecuteEvents__Class **)0x0;
-      pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-      if (pMVar1 != (MVLocalPlayer *)0x0) {
-        if ((pMVar1->fields)._.level < levelReq) {
+      pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
+      if (pMVar2 != (MVLocalPlayer *)0x0) {
+        if ((pMVar2->fields)._.level < levelReq) {
           ThemePreviewSettingsMenu::ThemePreviewSettingsMenu_DisplayInsufficientLevelNotification
                     (this_00,levelReq,(MethodInfo *)0x0);
           return;
         }
-        pTVar2 = (this_00->fields).previewTheme;
-        if (pTVar2 != (Theme *)0x0) {
-          if ((pTVar2->fields).overrideSkyboxManager == 0) {
+        pTVar3 = (this_00->fields).previewTheme;
+        if (pTVar3 != (Theme *)0x0) {
+          if ((pTVar3->fields).overrideSkyboxManager == 0) {
             ThemePreviewSettingsMenu::ThemePreviewSettingsMenu_DisplayThemeSwitchWarning
                       (this_00,(MethodInfo *)0x0);
             return;
@@ -50,10 +50,10 @@ void Assembly-CSharp.dll::ThemePreviewSettingsMenu+<>c__DisplayClass12_0::
           if (value != (Object *)0x0) {
             value[1].monitor = (MonitorData *)this_00;
             func_?(&value[1].monitor,this_00);
-            pOVar3 = (Object__Class *)
+            pOVar4 = (Object__Class *)
                      TM::TM__(StringLiteral_You_will_not_be_able_to_use_skyb,(MethodInfo *)0x0);
-            value[1].klass = pOVar3;
-            func_?(value + 1,pOVar3);
+            value[1].klass = pOVar4;
+            func_?(value + 1,pOVar4);
             root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this_00,(MethodInfo *)0x0);
             callbackFunction =
@@ -82,8 +82,8 @@ void Assembly-CSharp.dll::ThemePreviewSettingsMenu+<>c__DisplayClass12_0::
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

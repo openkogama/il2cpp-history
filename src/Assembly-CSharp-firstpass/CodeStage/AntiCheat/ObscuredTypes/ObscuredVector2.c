@@ -469,15 +469,15 @@ float Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscur
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector2);
   }
   uVar1 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector2->static_fields->cryptoKey;
-  if (this->currentCryptoKey !=
-      TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector2->static_fields->cryptoKey) {
-    uVar1 = this->currentCryptoKey;
+  uVar2 = this->currentCryptoKey;
+  if (this->currentCryptoKey == uVar1) {
+    uVar2 = uVar1;
   }
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
       == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
   }
-  return (float)(uVar1 ^ encrypted);
+  return (float)(uVar2 ^ encrypted);
 }
 
 
@@ -568,9 +568,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector2);
     }
     VVar2 = ObscuredVector2_InternalDecrypt(this,(MethodInfo *)0x0);
-    (this->fakeValue).x = (float)encrypted.x;
-    encrypted.y = (int32_t)VVar2.y;
-    (this->fakeValue).y = (float)encrypted.y;
+    this->fakeValue = VVar2;
   }
   return;
 }
@@ -661,14 +659,13 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
           CryptoKeyGenerator_GenerateKey(-0x80000000,0x7fffffff,(MethodInfo *)0x0);
   TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector2->static_fields->cryptoKey = iVar1;
   if (cRam_? == '\0') {
-    ppVStack2 = &TypeInfo__UnityEngine__Vector2;
-    func_?();
+    func_?(&TypeInfo__UnityEngine__Vector2);
     cRam_? = '\x01';
   }
-  fVar3 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
-  pOVar4 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector2->static_fields;
-  (pOVar4->initialFakeValue).x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-  (pOVar4->initialFakeValue).y = fVar3;
+  fVar2 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
+  pOVar3 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector2->static_fields;
+  (pOVar3->initialFakeValue).x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
+  (pOVar3->initialFakeValue).y = fVar2;
   return;
 }
 

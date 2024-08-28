@@ -5,10 +5,12 @@ void Assembly-CSharp.dll::ThemeSettingsMenuBase::ThemeSettingsMenuBase_Initializ
                (ThemeSettingsMenuBase *this,Theme *theme,RectTransform *content,MethodInfo *method)
 
 {
-  (this->fields).theme = theme;
-  func_?(&(this->fields).theme,theme);
-  (this->fields).content = content;
-  func_?(&(this->fields).content,content);
+  ppTVar1 = &(this->fields).theme;
+  *ppTVar1 = theme;
+  func_?(ppTVar1,theme);
+  ppRVar2 = &(this->fields).content;
+  *ppRVar2 = content;
+  func_?(ppRVar2,content);
   if ((theme != (Theme *)0x0) &&
      (this_00 = (theme->fields)._Settings_k__BackingField, this_00 != (SettingsWrapper *)0x0)) {
     ThemeSettings::SettingsWrapper::SettingsWrapper_SubscribeToSettingsUI
@@ -16,8 +18,8 @@ void Assembly-CSharp.dll::ThemeSettingsMenuBase::ThemeSettingsMenuBase_Initializ
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -32,8 +34,8 @@ void Assembly-CSharp.dll::ThemeSettingsMenuBase::ThemeSettingsMenuBase_OnDestroy
   pTVar2 = (this->fields).theme;
   if ((pTVar2 != (Theme *)0x0) &&
      (pSVar3 = (pTVar2->fields)._Settings_k__BackingField, pSVar3 != (SettingsWrapper *)0x0)) {
-    (pSVar3->fields).menu = (IMenu *)0x0;
     ppIStack_1 = &(pSVar3->fields).menu;
+    *ppIStack_1 = (IMenu *)0x0;
     func_?();
     return;
   }

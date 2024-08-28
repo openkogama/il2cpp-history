@@ -53,7 +53,7 @@ void Assembly-CSharp.dll::FirstTimeSystemPopupCamera::FirstTimeSystemPopupCamera
       if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Math);
       }
-      dVar10 = (double)(fVar7 * fVar7 + fVar8 * fVar8 + fVar9 * fVar9);
+      dVar10 = (double)(fVar8 * fVar8 + fVar7 * fVar7 + fVar9 * fVar9);
       if (dVar10 < 0.0) {
         func_?();
       }

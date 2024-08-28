@@ -137,21 +137,22 @@ AvatarAccessoryParticles_get_AccessoryParticlesSettings
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields).accessoryParticlesSettings;
+  ppAVar2 = &(this->fields).accessoryParticlesSettings;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pAVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     pAVar1 = (AccessoryParticlesSettings *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         AccessoryParticlesSettings_MethodInfo__UnityEngine__Component__GetComponent<AccessoryParticlesSettings>__
                        );
-    (this->fields).accessoryParticlesSettings = pAVar1;
-    func_?(&(this->fields).accessoryParticlesSettings,pAVar1);
+    *ppAVar2 = pAVar1;
+    func_?(ppAVar2,pAVar1);
   }
-  return (this->fields).accessoryParticlesSettings;
+  return *ppAVar2;
 }
 
 
@@ -170,21 +171,22 @@ Assembly-CSharp.dll::AvatarAccessoryParticles::AvatarAccessoryParticles_get_Acce
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields).accessoryParticlesSettings;
+  ppAVar2 = &(this->fields).accessoryParticlesSettings;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pAVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     pAVar1 = (AccessoryParticlesSettings *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         AccessoryParticlesSettings_MethodInfo__UnityEngine__Component__GetComponent<AccessoryParticlesSettings>__
                        );
-    (this->fields).accessoryParticlesSettings = pAVar1;
-    func_?(&(this->fields).accessoryParticlesSettings,pAVar1);
+    *ppAVar2 = pAVar1;
+    func_?(ppAVar2,pAVar1);
   }
-  return (AccessorySettings *)(this->fields).accessoryParticlesSettings;
+  return (AccessorySettings *)*ppAVar2;
 }
 
 
@@ -203,20 +205,21 @@ Assembly-CSharp.dll::AvatarAccessoryParticles::AvatarAccessoryParticles_get_Root
     cRam_? = '\x01';
   }
   pPVar1 = (this->fields).rootParticleSystem;
+  ppPVar2 = &(this->fields).rootParticleSystem;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pPVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     pPVar1 = (ParticleSystem *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentInChildren_1
                        ((Component *)this,
                         UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Component__GetComponentInChildren<UnityEngine::ParticleSystem>__
                        );
-    (this->fields).rootParticleSystem = pPVar1;
-    func_?(&(this->fields).rootParticleSystem,pPVar1);
+    *ppPVar2 = pPVar1;
+    func_?(ppPVar2,pPVar1);
   }
-  return (this->fields).rootParticleSystem;
+  return *ppPVar2;
 }
 

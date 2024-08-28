@@ -8,11 +8,13 @@ void Assembly-CSharp.dll::CustomTouristPromotionSettings::CustomTouristPromotion
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  ppSVar1 = &(this->fields)._URL_k__BackingField;
   (this->fields)._FrequencyPercent_k__BackingField = frequency;
-  (this->fields)._URL_k__BackingField = url;
-  func_?(&(this->fields)._URL_k__BackingField,url);
-  (this->fields)._AssetURL_k__BackingField = asset;
-  func_?(&(this->fields)._AssetURL_k__BackingField,asset);
+  *ppSVar1 = url;
+  func_?(ppSVar1,url);
+  ppSVar1 = &(this->fields)._AssetURL_k__BackingField;
+  *ppSVar1 = asset;
+  func_?(ppSVar1,asset);
   (this->fields)._Redirect_k__BackingField = shouldRedirect;
   return;
 }

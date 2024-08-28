@@ -9,9 +9,8 @@ void Assembly-CSharp.dll::ChatBubbleManager::ChatBubbleManager_ShowChatBubble
     func_?(&TypeInfo__ChatBubbleManager);
     cRam_? = '\x01';
   }
-  if (TypeInfo__ChatBubbleManager->static_fields->OnShowChatBubble !=
-      (Action_3_String_Int32_ChatAnchor_ *)0x0) {
-    pAVar1 = TypeInfo__ChatBubbleManager->static_fields->OnShowChatBubble;
+  pAVar1 = TypeInfo__ChatBubbleManager->static_fields->OnShowChatBubble;
+  if (pAVar1 != (Action_3_String_Int32_ChatAnchor_ *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,text,anchorId,chatBubbleAnchor,
                (pAVar1->fields)._._.method);

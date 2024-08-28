@@ -20,26 +20,24 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_ActivateScore
     if ((pLVar1->fields)._size <= index) {
       return;
     }
-    pLVar1 = (this->fields).winConImages;
     if (pLVar1 == (List_1_DebriefingWinnerGUI_WinningConditionData_ *)0x0) break;
-    pMVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-             MultiColumnCollectionHeader+ViewState+ColumnState]::
-             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
-                       (&MStack_3,
-                        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+    pIVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Linq::Expressions::
+             Interpreter::InstructionList+DebugView+InstructionView]::
+             List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView__get_Item
+                       (&IStack_3,
+                        (List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView_
                          *)pLVar1,index,
                         MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_
                        );
     pLVar1 = (this->fields).winConImages;
-    MStack_3.visible = pMVar2->visible;
-    MStack_3._17_3_ = *(undefined3 *)&pMVar2->field_0x11;
-    if (statType == pMVar2->index) {
+    IStack_3._instruction = pIVar2->_instruction;
+    if (statType == pIVar2->_index) {
       if (pLVar1 == (List_1_DebriefingWinnerGUI_WinningConditionData_ *)0x0) break;
       apMStack_4[0] =
            MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_
       ;
       iVar5 = func_?(apMStack_4,pLVar1,index);
-      MStack_3._16_4_ = *(undefined4 *)(iVar5 + 0x10);
+      IStack_3._instruction = *(Instruction **)(iVar5 + 0x10);
       if ((*(Component **)(iVar5 + 4) == (Component *)0x0) ||
          (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              (*(Component **)(iVar5 + 4),(MethodInfo *)0x0),
@@ -52,7 +50,7 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_ActivateScore
                               MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_
                              );
       pGVar6 = *(GameObject **)(iVar5 + 8);
-      MStack_3._16_4_ = *(undefined4 *)(iVar5 + 0x10);
+      IStack_3._instruction = *(Instruction **)(iVar5 + 0x10);
       if (pGVar6 == (GameObject *)0x0) break;
       value = 1;
     }
@@ -61,7 +59,7 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_ActivateScore
       apMStack_4[0] =
            MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_
       ;
-      iVar5 = func_?(&MStack_3,pLVar1,index);
+      iVar5 = func_?(&IStack_3,pLVar1,index);
       uStack_7 = *(undefined4 *)(iVar5 + 0x10);
       if ((*(Component **)(iVar5 + 4) == (Component *)0x0) ||
          (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -75,7 +73,7 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_ActivateScore
                               MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_
                              );
       pGVar6 = *(GameObject **)(iVar5 + 8);
-      MStack_3._16_4_ = *(undefined4 *)(iVar5 + 0x10);
+      IStack_3._instruction = *(Instruction **)(iVar5 + 0x10);
       if (pGVar6 == (GameObject *)0x0) break;
       value = 0;
     }
@@ -119,19 +117,17 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_SetAdditional
     if ((pLVar2->fields)._size <= index) {
       return;
     }
-    pLVar2 = (this->fields).winConImages;
     if (pLVar2 == (List_1_DebriefingWinnerGUI_WinningConditionData_ *)0x0) break;
-    pMVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-             MultiColumnCollectionHeader+ViewState+ColumnState]::
-             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
-                       (&MStack_4,
-                        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+    pIVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Linq::Expressions::
+             Interpreter::InstructionList+DebugView+InstructionView]::
+             List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView__get_Item
+                       (&IStack_4,
+                        (List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView_
                          *)pLVar2,index,
                         MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_
                        );
-    MStack_4.visible = pMVar3->visible;
-    MStack_4._17_3_ = *(undefined3 *)&pMVar3->field_0x11;
-    if (pMVar3->index == winConType) {
+    IStack_4._instruction = pIVar3->_instruction;
+    if (pIVar3->_index == winConType) {
       if ((this->fields).winConImages == (List_1_DebriefingWinnerGUI_WinningConditionData_ *)0x0)
       break;
       iVar5 = func_?();
@@ -143,7 +139,7 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_SetAdditional
       iVar5 = func_?(&stack0xffffffd4,pLVar2,index,
                               MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_
                              );
-      MStack_4._16_4_ = *(undefined4 *)(iVar5 + 0x10);
+      IStack_4._instruction = *(Instruction **)(iVar5 + 0x10);
       if (*(int *)(iVar5 + 0xc) == 0) break;
       func_?(0x4b,*(int *)(iVar5 + 0xc),text);
     }

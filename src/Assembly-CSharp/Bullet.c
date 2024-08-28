@@ -22,12 +22,15 @@ Bullet * Assembly-CSharp.dll::Bullet::Bullet_CreateBullet
                        (this,bulletType,
                         Bullet_MethodInfo__EnumPoolManager__Instantiate<Bullet>_PoolEnums_);
     if (pBVar2 != (Bullet *)0x0) {
-      (pBVar2->fields).onHit = (Bullet_OnHitDelegate *)0x0;
-      func_?(&(pBVar2->fields).onHit,0);
-      (pBVar2->fields).onHitLocal = (Bullet_OnHitDelegate *)0x0;
-      func_?(&(pBVar2->fields).onHitLocal,0);
-      (pBVar2->fields).onOutOfRange = (Action_1_UnityEngine_Ray_ *)0x0;
-      func_?(&(pBVar2->fields).onOutOfRange,0);
+      ppBVar3 = &(pBVar2->fields).onHit;
+      *ppBVar3 = (Bullet_OnHitDelegate *)0x0;
+      func_?(ppBVar3,0);
+      ppBVar3 = &(pBVar2->fields).onHitLocal;
+      *ppBVar3 = (Bullet_OnHitDelegate *)0x0;
+      func_?(ppBVar3,0);
+      ppAVar4 = &(pBVar2->fields).onOutOfRange;
+      *ppAVar4 = (Action_1_UnityEngine_Ray_ *)0x0;
+      func_?(ppAVar4,0);
       this_00 = (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
                 (pBVar2->fields).ignoreWoIDs;
       if (this_00 != (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
@@ -52,8 +55,8 @@ Bullet * Assembly-CSharp.dll::Bullet::Bullet_CreateBullet
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  pBVar2 = (Bullet *)(*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  pBVar2 = (Bullet *)(*pcVar5)();
   return pBVar2;
 }
 
@@ -92,79 +95,81 @@ void Assembly-CSharp.dll::Bullet::Bullet_DoFire
   (pBStack_7->fields).ray.m_Direction.x = (float)(int)uVar11;
   (pBStack_7->fields).ray.m_Direction.y = (float)(int)((ulonglong)uVar11 >> 0x20);
   (pBStack_7->fields).ray.m_Direction.z = fVar3;
+  ppHVar12 = &(pBStack_7->fields).ignoreWoIDs;
   (pBStack_7->fields).range = maxRange;
   (pBStack_7->fields).speed = speed;
-  (pBStack_7->fields).ignoreWoIDs = pHVar4;
-  func_?(&(pBStack_7->fields).ignoreWoIDs,pHVar4);
-  (this->fields).collisionBullet = pBVar10;
-  func_?(&(this->fields).collisionBullet,pBVar10);
-  pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  *ppHVar12 = pHVar4;
+  func_?(ppHVar12,pHVar4);
+  ppBVar13 = &(this->fields).collisionBullet;
+  *ppBVar13 = pBVar10;
+  func_?(ppBVar13,pBVar10);
+  pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       ((Component *)this,(MethodInfo *)0x0);
-  (this->fields).localTransform = pTVar12;
-  func_?(&(this->fields).localTransform,pTVar12);
-  pTVar12 = (this->fields).localTransform;
-  if (pTVar12 != (Transform *)0x0) {
-    pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffe0,pTVar12,(MethodInfo *)0x0);
-    fVar14 = pVVar13->y;
-    fVar3 = pVVar13->z;
-    (this->fields).startPosition.x = pVVar13->x;
-    (this->fields).startPosition.y = fVar14;
+  ppTVar15 = &(this->fields).localTransform;
+  *ppTVar15 = pTVar14;
+  func_?(ppTVar15,pTVar14);
+  if (*ppTVar15 != (Transform *)0x0) {
+    pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                        ((Vector3 *)&stack0xffffffe0,*ppTVar15,(MethodInfo *)0x0);
+    fVar17 = pVVar16->y;
+    fVar3 = pVVar16->z;
+    (this->fields).startPosition.x = pVVar16->x;
+    (this->fields).startPosition.y = fVar17;
     (this->fields).startPosition.z = fVar3;
-    pVVar13 = Bullet_FindTargetPos((Vector3 *)&stack0xffffffe0,this,maxRange,(MethodInfo *)0x0);
-    pTVar12 = (this->fields).localTransform;
-    uVar15 = pVVar13->x;
-    uVar16 = pVVar13->y;
-    fStack_6 = pVVar13->z;
-    (this->fields).targetPosition.x = (float)uVar15;
-    (this->fields).targetPosition.y = (float)uVar16;
+    pVVar16 = Bullet_FindTargetPos((Vector3 *)&stack0xffffffe0,this,maxRange,(MethodInfo *)0x0);
+    pTVar14 = *ppTVar15;
+    uVar18 = pVVar16->x;
+    uVar19 = pVVar16->y;
+    fStack_6 = pVVar16->z;
+    (this->fields).targetPosition.x = (float)uVar18;
+    (this->fields).targetPosition.y = (float)uVar19;
     (this->fields).targetPosition.z = fStack_6;
     fStack_6 = (this->fields).startPosition.z - fStack_6;
-    uStack_9 = uVar15;
-    fStack_5 = (float)uVar16;
-    pVVar13 = (Vector3 *)func_?();
-    pQVar17 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
-                        ((Quaternion *)&stack0xffffffdc,*pVVar13,(MethodInfo *)0x0);
-    if (pTVar12 != (Transform *)0x0) {
+    uStack_9 = uVar18;
+    fStack_5 = (float)uVar19;
+    pVVar16 = (Vector3 *)func_?();
+    pQVar20 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
+                        ((Quaternion *)&stack0xffffffdc,*pVVar16,(MethodInfo *)0x0);
+    if (pTVar14 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                (pTVar12,*pQVar17,(MethodInfo *)0x0);
-      uVar18 = (this->fields).lineOfFire.m_Origin.y;
+                (pTVar14,*pQVar20,(MethodInfo *)0x0);
+      uVar21 = (this->fields).lineOfFire.m_Origin.y;
       fStack_5 = (this->fields).lineOfFire.m_Origin.z;
       fStack_6 = 0.0;
-      uStack_9 = uVar18;
-      fVar19 = (float10)func_?();
-      pTVar20 = (this->fields).trailRenderer;
-      (this->fields).maxAirTime = (float)(fVar19 / (float10)speed);
+      uStack_9 = uVar21;
+      fVar22 = (float10)func_?();
+      pTVar23 = (this->fields).trailRenderer;
+      (this->fields).maxAirTime = (float)(fVar22 / (float10)speed);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      bVar21 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                         ((Object_1 *)pTVar20,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar21 != 0) {
-        pTVar20 = (this->fields).trailRenderer;
-        if (pTVar20 == (TrailRenderer *)0x0) goto code_?;
+      bVar24 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                         ((Object_1 *)pTVar23,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar24 != 0) {
+        pTVar23 = (this->fields).trailRenderer;
+        if (pTVar23 == (TrailRenderer *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::TrailRenderer_Clear
-                  (pTVar20,(MethodInfo *)0x0);
+                  (pTVar23,(MethodInfo *)0x0);
       }
-      pPVar22 = (this->fields).pSystem;
+      pPVar25 = (this->fields).pSystem;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      bVar21 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                         ((Object_1 *)pPVar22,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar21 != 0) {
-        pPVar22 = (this->fields).pSystem;
-        if (pPVar22 == (ParticleSystem *)0x0) goto code_?;
+      bVar24 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                         ((Object_1 *)pPVar25,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar24 != 0) {
+        pPVar25 = (this->fields).pSystem;
+        if (pPVar25 == (ParticleSystem *)0x0) goto code_?;
         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
-                  (pPVar22,(MethodInfo *)0x0);
+                  (pPVar25,(MethodInfo *)0x0);
       }
       return;
     }
   }
 code_?:
   func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  pcVar26 = (code *)swi(3);
+  (*pcVar26)();
   return;
 }
 
@@ -181,76 +186,95 @@ Vector3 * Assembly-CSharp.dll::Bullet::Bullet_FindTargetPos
     cRam_? = '\x01';
   }
   func_?(&stack0xffffff8c,0,0x48);
-  p_Var9 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-           UnsafeUtility_AsRef_1((Void *)0xfffffffb,(MethodInfo *)0x0);
-  p_Var9 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-           UnsafeUtility_AsRef_1((Void *)p_Var9,(MethodInfo *)0x0);
+  p_Var12 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+            UnsafeUtility_AsRef_1((Void *)0xfffffffb,(MethodInfo *)0x0);
+  p_Var12 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+            UnsafeUtility_AsRef_1((Void *)p_Var12,(MethodInfo *)0x0);
   uVar1 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                      (StringLiteral_Logic,(MethodInfo *)0x0);
-  p_Var9 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-           UnsafeUtility_AsRef_1((Void *)((uint)p_Var9 & ~(1 << (uVar1 & 0x1f))),(MethodInfo *)0x0)
-  ;
+  p_Var12 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+            UnsafeUtility_AsRef_1
+                      ((Void *)((uint)p_Var12 & ~(1 << (uVar1 & 0x1f))),(MethodInfo *)0x0);
   fVar2 = (this->fields).lineOfFire.m_Origin.x;
   fVar3 = (this->fields).lineOfFire.m_Origin.y;
   fVar4 = (this->fields).lineOfFire.m_Origin.z;
   fVar5 = (this->fields).lineOfFire.m_Direction.x;
+  this_00 = &(this->fields).lineOfFire;
   ignoreWoIds = (this->fields).ignoreWoIDs;
-  fVar6 = (this->fields).lineOfFire.m_Direction.y;
-  fVar7 = (this->fields).lineOfFire.m_Direction.z;
-  p_Var9 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-           UnsafeUtility_AsRef_1((Void *)p_Var9,(MethodInfo *)0x0);
+  uVar6 = (this->fields).lineOfFire.m_Direction.y;
+  uVar7 = (this->fields).lineOfFire.m_Direction.z;
+  fStack_8 = (float)uVar6;
+  fStack_9 = (float)uVar7;
+  p_Var12 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+            UnsafeUtility_AsRef_1((Void *)p_Var12,(MethodInfo *)0x0);
+  voxelHit = (VoxelHit *)&stack0xffffff8c;
+  uVar10._4_4_ = fStack_9;
+  uVar10._0_4_ = fStack_8;
   ray.m_Origin.y = fVar3;
   ray.m_Origin.x = fVar2;
   ray.m_Origin.z = fVar4;
   ray.m_Direction.x = fVar5;
-  ray.m_Direction.y = fVar6;
-  ray.m_Direction.z = fVar7;
-  bVar8 = CollisionDetection::CollisionDetection_MVHit_1
-                    (ray,(VoxelHit *)&stack0xffffff8c,maxRange,ignoreWoIds,(int32_t)p_Var9,
-                     (MethodInfo *)0x0);
-  if (bVar8 == 0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+  ray.m_Direction.y = fStack_8;
+  ray.m_Direction.z = fStack_9;
+  bVar11 = CollisionDetection::CollisionDetection_MVHit_1
+                     (ray,voxelHit,maxRange,ignoreWoIds,(int32_t)p_Var12,(MethodInfo *)0x0);
+  if (bVar11 == 0) {
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    if (this_00 != (GameObject *)0x0) {
-      this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                          (this_00,(MethodInfo *)0x0);
-      if (this_01 != (Transform *)0x0) {
-        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0xffffffe4,this_01,(MethodInfo *)0x0);
-        uVar10 = pVVar9->x;
-        uVar11 = pVVar9->y;
-        fVar6 = pVVar9->z;
-        uVar12 = (this->fields).lineOfFire.m_Direction.x;
-        uVar13 = (this->fields).lineOfFire.m_Direction.y;
-        fVar7 = (this->fields).lineOfFire.m_Direction.z;
-        __return_storage_ptr__->x = (float)uVar10 + (float)uVar12 * maxRange;
-        __return_storage_ptr__->y = (float)uVar11 + (float)uVar13 * maxRange;
-        __return_storage_ptr__->z = fVar6 + fVar7 * maxRange;
+    if (this_01 != (GameObject *)0x0) {
+      this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (this_01,(MethodInfo *)0x0);
+      if (this_02 != (Transform *)0x0) {
+        pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                            (&VStack_13,this_02,(MethodInfo *)0x0);
+        uVar14 = pVVar12->x;
+        uVar15 = pVVar12->y;
+        fVar2 = pVVar12->z;
+        uVar16 = (this->fields).lineOfFire.m_Direction.x;
+        uVar17 = (this->fields).lineOfFire.m_Direction.y;
+        fVar3 = (this->fields).lineOfFire.m_Direction.z;
+        __return_storage_ptr__->x = (float)uVar14 + (float)uVar16 * maxRange;
+        __return_storage_ptr__->y = (float)uVar15 + (float)uVar17 * maxRange;
+        __return_storage_ptr__->z = fVar2 + fVar3 * maxRange;
         return __return_storage_ptr__;
       }
     }
     func_?();
-    pcVar14 = (code *)swi(3);
-    pVVar9 = (Vector3 *)(*pcVar14)();
-    return pVVar9;
+    pcVar18 = (code *)swi(3);
+    pVVar12 = (Vector3 *)(*pcVar18)();
+    return pVVar12;
   }
-  start = (this->fields).lineOfFire.m_Origin;
-  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                      ((Vector3 *)&stack0xffffffd8,&(this->fields).lineOfFire,in_stack_15,
-                       (MethodInfo *)0x0);
-  end = *pVVar9;
+  uVar19 = (this_00->m_Origin).x;
+  uVar20 = (this_00->m_Origin).y;
+  fVar2 = (this->fields).lineOfFire.m_Origin.z;
+  VStack_13.y = (float)uVar19;
+  VStack_13.z = (float)uVar20;
+  pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
+                      ((Vector3 *)&stack0xffffffd8,this_00,in_stack_21,(MethodInfo *)0x0);
+  uVar22._0_4_ = pVVar12->x;
+  uVar22._4_4_ = pVVar12->y;
+  fVar3 = pVVar12->z;
+  fStack_8 = (float)(undefined4)uVar22;
+  fStack_9 = (float)uVar22._4_4_;
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
+    uVar22 = CONCAT44(fStack_9,fStack_8);
   }
+  start.y = VStack_13.z;
+  start.x = VStack_13.y;
+  start.z = fVar2;
+  end.z = fVar3;
+  end.x = (float)(int)uVar22;
+  end.y = (float)(int)((ulonglong)uVar22 >> 0x20);
   color.g = (float)_UNK_?;
   color.r = (float)_UNK_?;
   color.b = (float)_UNK_?;
   color.a = _UNK_?;
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine
             (start,end,color,10.0,(MethodInfo *)0x0);
-  __return_storage_ptr__->x = fVar5;
-  __return_storage_ptr__->y = fVar6;
-  __return_storage_ptr__->z = fVar7;
+  __return_storage_ptr__->x = (float)uVar10;
+  __return_storage_ptr__->y = SUB84(uVar10,4);
+  __return_storage_ptr__->z = (float)voxelHit;
   return __return_storage_ptr__;
 }
 
@@ -272,62 +296,65 @@ void Assembly-CSharp.dll::Bullet::Bullet_Fire
   if ((this->fields).isFired != 0) {
     return;
   }
+  ppHVar1 = &(this->fields).ignoreWoIDs;
   (this->fields).lineOfFire.m_Origin.x = lineOfFire.m_Origin.x;
   (this->fields).lineOfFire.m_Origin.y = lineOfFire.m_Origin.y;
   (this->fields).lineOfFire.m_Origin.z = lineOfFire.m_Origin.z;
   (this->fields).lineOfFire.m_Direction.x = lineOfFire.m_Direction.x;
-  (this->fields).ignoreWoIDs = ignoreWoIDs;
   (this->fields).lineOfFire.m_Direction.y = (float)(int)lineOfFire.m_Direction._4_8_;
   (this->fields).lineOfFire.m_Direction.z =
        (float)(int)((ulonglong)lineOfFire.m_Direction._4_8_ >> 0x20);
-  func_?(&(this->fields).ignoreWoIDs,ignoreWoIDs);
+  *ppHVar1 = ignoreWoIDs;
+  func_?(ppHVar1,ignoreWoIDs);
   (this->fields).isFired = 1;
   UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
             ((Behaviour *)this,1,(MethodInfo *)0x0);
   Bullet_DoFire(this,speed,range,(MethodInfo *)0x0);
-  x = (this->fields).pooledObjectReference;
+  ppMVar2 = &(this->fields).pooledObjectReference;
+  x = *ppMVar2;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    (this->fields).pooledObjectReference = (MonoBehaviour *)this;
+  if (bVar3 != 0) {
+    *ppMVar2 = (MonoBehaviour *)this;
     func_?();
   }
   this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       ((Component *)this,(MethodInfo *)0x0);
   if (this_00 != (Transform *)0x0) {
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       ((Vector3 *)&puStack_3,this_00,(MethodInfo *)0x0);
-    fVar4 = pVVar2->z;
+    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                       ((Vector3 *)&puStack_5,this_00,(MethodInfo *)0x0);
+    fVar6 = pVVar4->z;
     this_01 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
-    puVar5 = &UNK_?;
-    pUVar6 = this_01;
+    puVar7 = &UNK_?;
+    pUVar8 = this_01;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
     UnityAction_1_UnityEngine_Vector2___ctor
               (this_01,(Object *)this,
                MethodInfo__Bullet__OnStateChanged_UnityEngine__CullingGroupEvent_,(MethodInfo *)0x0)
     ;
-    pCVar7 = TypeInfo__CullingSubscriberBase;
+    pCVar9 = TypeInfo__CullingSubscriberBase;
     this_02 = (CullingSubscriberBase *)func_?();
-    position.y = (float)pUVar6;
-    position.x = (float)puVar5;
-    position.z = fVar4;
+    position.y = (float)pUVar8;
+    position.x = (float)puVar7;
+    position.z = fVar6;
     CullingSubscriberBase::CullingSubscriberBase__ctor_2
               (this_02,1.0,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_01,
                (MethodInfo *)0x0);
-    (pCVar7->_1).genericContainerHandle = (Il2CppMetadataGenericContainerHandle)this_02;
+    pp_Var9 = &(pCVar9->_1).genericContainerHandle;
+    *pp_Var9 = (Il2CppMetadataGenericContainerHandle)this_02;
     func_?();
-    p_Var2 = (pCVar7->_1).genericContainerHandle;
-    if (p_Var2 != (Il2CppMetadataGenericContainerHandle)0x0) {
-      *(undefined4 *)(p_Var2 + 0xc) = 5;
+    p_Var4 = *pp_Var9;
+    if (p_Var4 != (Il2CppMetadataGenericContainerHandle)0x0) {
+      *(undefined4 *)(p_Var4 + 0xc) = 5;
       return;
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -413,12 +440,15 @@ void Assembly-CSharp.dll::Bullet::Bullet_ResetBullet(Bullet *this,MethodInfo *me
     func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
     cRam_? = '\x01';
   }
-  (this->fields).onHit = (Bullet_OnHitDelegate *)0x0;
-  func_?(&(this->fields).onHit,0);
-  (this->fields).onHitLocal = (Bullet_OnHitDelegate *)0x0;
-  func_?(&(this->fields).onHitLocal,0);
-  (this->fields).onOutOfRange = (Action_1_UnityEngine_Ray_ *)0x0;
-  func_?(&(this->fields).onOutOfRange,0);
+  ppBVar1 = &(this->fields).onHit;
+  *ppBVar1 = (Bullet_OnHitDelegate *)0x0;
+  func_?(ppBVar1,0);
+  ppBVar1 = &(this->fields).onHitLocal;
+  *ppBVar1 = (Bullet_OnHitDelegate *)0x0;
+  func_?(ppBVar1,0);
+  ppAVar2 = &(this->fields).onOutOfRange;
+  *ppAVar2 = (Action_1_UnityEngine_Ray_ *)0x0;
+  func_?(ppAVar2,0);
   this_00 = (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
             (this->fields).ignoreWoIDs;
   if (this_00 != (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
@@ -434,8 +464,8 @@ void Assembly-CSharp.dll::Bullet::Bullet_ResetBullet(Bullet *this,MethodInfo *me
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -448,25 +478,26 @@ void Assembly-CSharp.dll::Bullet::Bullet_ReturnToPool
 {
   Bullet_ResetBullet(this,(MethodInfo *)0x0);
   this_00 = (this->fields).cullingSubscriberBase;
+  ppCVar1 = &(this->fields).cullingSubscriberBase;
   if (this_00 != (CullingSubscriberBase *)0x0) {
     CullingSubscriberBase::CullingSubscriberBase_Destroy(this_00,(MethodInfo *)0x0);
-    (this->fields).cullingSubscriberBase = (CullingSubscriberBase *)0x0;
-    func_?(&(this->fields).cullingSubscriberBase,0);
+    *ppCVar1 = (CullingSubscriberBase *)0x0;
+    func_?(ppCVar1,0);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__PrefabPool);
       cRam_? = '\x01';
     }
-    pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-    if ((pPVar1 != (PrefabPool *)0x0) &&
-       (this_01 = (pPVar1->fields).enumPoolManager, this_01 != (EnumPoolManager *)0x0)) {
+    pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
+    if ((pPVar2 != (PrefabPool *)0x0) &&
+       (this_01 = (pPVar2->fields).enumPoolManager, this_01 != (EnumPoolManager *)0x0)) {
       EnumPoolManager::EnumPoolManager_Return
                 (this_01,(this->fields).pooledObjectReference,bulletType,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -483,115 +514,115 @@ void Assembly-CSharp.dll::Bullet::Bullet_Update(Bullet *this,MethodInfo *method)
   iStack_1 = 3;
   if ((this->fields).hit == 0) {
     pBVar2 = (this->fields).collisionBullet;
+    voxelHit = &(this->fields).voxelHit;
     if (pBVar2 == (Bullet_CollisionBullet *)0x0) goto code_?;
     fVar3 = (pBVar2->fields).currentPos.y;
-    iStack_1 = 0;
     fVar4 = (pBVar2->fields).currentPos.z;
     (pBVar2->fields).prevPos.x = (pBVar2->fields).currentPos.x;
     (pBVar2->fields).prevPos.y = fVar3;
     fVar3 = (pBVar2->fields).speed;
+    iStack_1 = 0;
     (pBVar2->fields).prevPos.z = fVar4;
     fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     fVar4 = fVar4 * fVar3;
-    fVar3 = fVar4 + (pBVar2->fields).distanceTraveled;
-    pfVar5 = &(pBVar2->fields).range;
-    (pBVar2->fields).distanceTraveled = fVar3;
-    if (*pfVar5 <= fVar3 && fVar3 != *pfVar5) {
+    fVar3 = (pBVar2->fields).range;
+    fVar5 = (pBVar2->fields).distanceTraveled + fVar4;
+    (pBVar2->fields).distanceTraveled = fVar5;
+    if (fVar3 < fVar5) {
       iStack_1 = 2;
-      fVar4 = fVar4 - (fVar3 - (pBVar2->fields).range);
+      fVar4 = fVar4 - (fVar5 - fVar3);
     }
     uVar6 = (pBVar2->fields).ray.m_Direction.x;
     uVar7 = (pBVar2->fields).ray.m_Direction.y;
     fVar3 = (pBVar2->fields).ray.m_Direction.z;
     uVar8 = (pBVar2->fields).prevPos.x;
     uVar9 = (pBVar2->fields).prevPos.y;
-    fVar10 = (pBVar2->fields).prevPos.z;
-    fVar11 = (pBVar2->fields).prevPos.x;
-    fVar12 = (pBVar2->fields).prevPos.y;
+    fVar5 = (pBVar2->fields).prevPos.z;
+    fVar10 = (pBVar2->fields).prevPos.x;
+    fVar11 = (pBVar2->fields).prevPos.y;
     (pBVar2->fields).currentPos.x = (float)uVar8 + (float)uVar6 * fVar4;
     (pBVar2->fields).currentPos.y = (float)uVar9 + (float)uVar7 * fVar4;
-    (pBVar2->fields).currentPos.z = fVar10 + fVar3 * fVar4;
+    (pBVar2->fields).currentPos.z = fVar5 + fVar3 * fVar4;
     fVar3 = (pBVar2->fields).prevPos.z;
-    (pBVar2->fields).ray.m_Origin.x = fVar11;
-    (pBVar2->fields).ray.m_Origin.y = fVar12;
+    (pBVar2->fields).ray.m_Origin.x = fVar10;
+    (pBVar2->fields).ray.m_Origin.y = fVar11;
     (pBVar2->fields).ray.m_Origin.z = fVar3;
     fVar4 = (pBVar2->fields).ray.m_Origin.x;
-    fVar10 = (pBVar2->fields).ray.m_Origin.y;
-    fVar11 = (pBVar2->fields).ray.m_Origin.z;
-    fVar12 = (pBVar2->fields).ray.m_Direction.x;
-    uVar13 = (pBVar2->fields).ray.m_Direction.y;
-    uVar14 = (pBVar2->fields).ray.m_Direction.z;
+    fVar5 = (pBVar2->fields).ray.m_Origin.y;
+    fVar10 = (pBVar2->fields).ray.m_Origin.z;
+    fVar11 = (pBVar2->fields).ray.m_Direction.x;
+    uVar12 = (pBVar2->fields).ray.m_Direction.y;
+    uVar13 = (pBVar2->fields).ray.m_Direction.z;
     fVar3 = (pBVar2->fields).speed;
-    fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    ray.m_Origin.y = fVar10;
+    fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    ray.m_Origin.y = fVar5;
     ray.m_Origin.x = fVar4;
-    ray.m_Origin.z = fVar11;
-    ray.m_Direction.x = fVar12;
-    ray.m_Direction.y = (float)uVar13;
-    ray.m_Direction.z = (float)uVar14;
-    bVar16 = Bullet+CollisionBullet::Bullet_CollisionBullet_DoBulletCollision
-                       (ray,&(this->fields).voxelHit,fVar15 * fVar3,(pBVar2->fields).ignoreWoIDs,
-                        (MethodInfo *)0x0);
-    if (bVar16 != 0) {
-      iStack_1 = 1;
+    ray.m_Origin.z = fVar10;
+    ray.m_Direction.x = fVar11;
+    ray.m_Direction.y = (float)uVar12;
+    ray.m_Direction.z = (float)uVar13;
+    bVar15 = Bullet+CollisionBullet::Bullet_CollisionBullet_DoBulletCollision
+                       (ray,voxelHit,fVar14 * fVar3,(pBVar2->fields).ignoreWoIDs,(MethodInfo *)0x0)
+    ;
+    if (bVar15 == 0) {
+      if (iStack_1 == 2) {
+        pAVar16 = (this->fields).onOutOfRange;
+        ppAVar17 = &(this->fields).onOutOfRange;
+        (this->fields).hit = 1;
+        iStack_1 = 3;
+        if (pAVar16 != (Action_1_UnityEngine_Ray_ *)0x0) {
+          (*(pAVar16->fields)._._.invoke_impl)();
+          *ppAVar17 = (Action_1_UnityEngine_Ray_ *)0x0;
+          func_?(ppAVar17,0);
+        }
+      }
     }
-    if (iStack_1 == 1) {
+    else {
+      pBVar18 = (this->fields).onHit;
+      ppBVar19 = &(this->fields).onHit;
       (this->fields).hit = 1;
       iStack_1 = 3;
-      if ((this->fields).onHit != (Bullet_OnHitDelegate *)0x0) {
-        pBVar17 = (this->fields).onHit;
-        uVar18 = (this->fields).lineOfFire.m_Direction.z;
-        uVar19._0_2_ = (this->fields).voxelHit.cubePos.x;
-        uVar19._2_2_ = (this->fields).voxelHit.cubePos.y;
-        (*(pBVar17->fields)._._.invoke_impl)
-                  ((pBVar17->fields)._._.method_code,(this->fields).voxelHit.point.x,
+      if (pBVar18 != (Bullet_OnHitDelegate *)0x0) {
+        uVar20._0_2_ = (this->fields).voxelHit.cubePos.x;
+        uVar20._2_2_ = (this->fields).voxelHit.cubePos.y;
+        (*(pBVar18->fields)._._.invoke_impl)
+                  ((pBVar18->fields)._._.method_code,(voxelHit->point).x,
                    (this->fields).voxelHit.point.y,(this->fields).voxelHit.point.z,
                    (this->fields).voxelHit.normal.x,(this->fields).voxelHit.normal.y,
-                   (this->fields).voxelHit.normal.z,uVar19,
+                   (this->fields).voxelHit.normal.z,uVar20,
                    *(undefined4 *)&(this->fields).voxelHit.cubePos.z,(this->fields).voxelHit.face,
                    *(undefined4 *)&(this->fields).voxelHit.isCubeHit,(this->fields).voxelHit.woId,
                    (this->fields).voxelHit.cube,(this->fields).voxelHit.distance,
                    (this->fields).voxelHit.collider,(this->fields).voxelHit.transform,
                    *(undefined4 *)&(this->fields).voxelHit.field_0x3c,
                    (int)(this->fields).voxelHit.interactionFlags);
-        (this->fields).onHit = (Bullet_OnHitDelegate *)0x0;
-        func_?(&(this->fields).onHit,0);
-        iStack_1 = uVar18;
+        *ppBVar19 = (Bullet_OnHitDelegate *)0x0;
+        func_?(ppBVar19,0);
       }
-      if ((this->fields).onHitLocal != (Bullet_OnHitDelegate *)0x0) {
-        pBVar17 = (this->fields).onHitLocal;
-        uVar20 = (this->fields).lineOfFire.m_Direction.y;
-        uVar21 = (this->fields).lineOfFire.m_Direction.z;
-        uVar22._0_2_ = (this->fields).voxelHit.cubePos.x;
-        uVar22._2_2_ = (this->fields).voxelHit.cubePos.y;
-        iVar23 = (this->fields).voxelHit.interactionFlags;
-        (*(pBVar17->fields)._._.invoke_impl)
-                  ((pBVar17->fields)._._.method_code,(this->fields).voxelHit.point.x,
+      pBVar18 = (this->fields).onHitLocal;
+      ppBVar19 = &(this->fields).onHitLocal;
+      if (pBVar18 != (Bullet_OnHitDelegate *)0x0) {
+        uVar21 = (this->fields).lineOfFire.m_Direction.y;
+        uVar22 = (this->fields).lineOfFire.m_Direction.z;
+        uVar23._0_2_ = (this->fields).voxelHit.cubePos.x;
+        uVar23._2_2_ = (this->fields).voxelHit.cubePos.y;
+        iVar24 = (this->fields).voxelHit.interactionFlags;
+        (*(pBVar18->fields)._._.invoke_impl)
+                  ((pBVar18->fields)._._.method_code,(voxelHit->point).x,
                    (this->fields).voxelHit.point.y,(this->fields).voxelHit.point.z,
                    (this->fields).voxelHit.normal.x,(this->fields).voxelHit.normal.y,
-                   (this->fields).voxelHit.normal.z,uVar22,
+                   (this->fields).voxelHit.normal.z,uVar23,
                    *(undefined4 *)&(this->fields).voxelHit.cubePos.z,(this->fields).voxelHit.face,
                    *(undefined4 *)&(this->fields).voxelHit.isCubeHit,(this->fields).voxelHit.woId,
                    (this->fields).voxelHit.cube,(this->fields).voxelHit.distance,
                    (this->fields).voxelHit.collider,(this->fields).voxelHit.transform,
-                   *(undefined4 *)&(this->fields).voxelHit.field_0x3c,(int)iVar23,
-                   (int)((ulonglong)iVar23 >> 0x20),(this->fields).lineOfFire.m_Origin.x,
+                   *(undefined4 *)&(this->fields).voxelHit.field_0x3c,(int)iVar24,
+                   (int)((ulonglong)iVar24 >> 0x20),(this->fields).lineOfFire.m_Origin.x,
                    (this->fields).lineOfFire.m_Origin.y,(this->fields).lineOfFire.m_Origin.z,
-                   (this->fields).lineOfFire.m_Direction.x,uVar20,uVar21,(pBVar17->fields)._._.method
+                   (this->fields).lineOfFire.m_Direction.x,uVar21,uVar22,(pBVar18->fields)._._.method
                   );
-        (this->fields).onHitLocal = (Bullet_OnHitDelegate *)0x0;
-        func_?(&(this->fields).onHitLocal,0);
-      }
-    }
-    else if (iStack_1 == 2) {
-      (this->fields).hit = 1;
-      iStack_1 = 3;
-      if ((this->fields).onOutOfRange != (Action_1_UnityEngine_Ray_ *)0x0) {
-        uVar24 = (this->fields).lineOfFire.m_Direction.z;
-        (*(((this->fields).onOutOfRange)->fields)._._.invoke_impl)();
-        (this->fields).onOutOfRange = (Action_1_UnityEngine_Ray_ *)0x0;
-        func_?(&(this->fields).onOutOfRange,0);
-        iStack_1 = uVar24;
+        *ppBVar19 = (Bullet_OnHitDelegate *)0x0;
+        func_?(ppBVar19,0);
       }
     }
   }
@@ -599,7 +630,7 @@ void Assembly-CSharp.dll::Bullet::Bullet_Update(Bullet *this,MethodInfo *method)
   fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   fVar4 = fVar4 + fVar3;
   (this->fields).currentAirTime = fVar4;
-  if (((this->fields).hit != 0) || ((this->fields).maxAirTime < fVar4)) {
+  if (((this->fields).hit != 0) || (fVar3 = (this->fields).maxAirTime, fVar3 < fVar4)) {
     pMVar25 = (this->fields).meshRenderers;
     uVar26 = 0;
     if (pMVar25 == (MeshRenderer__Array *)0x0) goto code_?;
@@ -613,11 +644,11 @@ void Assembly-CSharp.dll::Bullet::Bullet_Update(Bullet *this,MethodInfo *method)
     }
   }
   else {
-    fVar4 = fVar4 / (this->fields).maxAirTime;
-    fVar3 = (this->fields).startPosition.z;
-    pTVar28 = (this->fields).localTransform;
-    uVar29 = (this->fields).startPosition.x;
-    uVar30 = (this->fields).startPosition.y;
+    uVar28 = (this->fields).startPosition.x;
+    uVar29 = (this->fields).startPosition.y;
+    fVar5 = (this->fields).startPosition.z;
+    fVar4 = fVar4 / fVar3;
+    pTVar30 = (this->fields).localTransform;
     uVar31 = (this->fields).targetPosition.x;
     uVar32 = (this->fields).targetPosition.y;
     if (fVar4 < 0.0) {
@@ -626,21 +657,21 @@ void Assembly-CSharp.dll::Bullet::Bullet_Update(Bullet *this,MethodInfo *method)
     else if (_UNK_? < fVar4) {
       fVar4 = _UNK_?;
     }
-    if (pTVar28 == (Transform *)0x0) goto code_?;
-    value.y = ((float)uVar32 - (float)uVar30) * fVar4 + (float)uVar30;
-    value.x = ((float)uVar31 - (float)uVar29) * fVar4 + (float)uVar29;
-    value.z = ((this->fields).targetPosition.z - fVar3) * fVar4 + fVar3;
+    if (pTVar30 == (Transform *)0x0) goto code_?;
+    value.y = ((float)uVar32 - (float)uVar29) * fVar4 + (float)uVar29;
+    value.x = ((float)uVar31 - (float)uVar28) * fVar4 + (float)uVar28;
+    value.z = ((this->fields).targetPosition.z - fVar5) * fVar4 + fVar5;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-              (pTVar28,value,(MethodInfo *)0x0);
+              (pTVar30,value,(MethodInfo *)0x0);
   }
-  pCVar33 = (this->fields).cullingSubscriberBase;
-  pTVar28 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  this_00 = (this->fields).cullingSubscriberBase;
+  pTVar30 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       ((Component *)this,(MethodInfo *)0x0);
-  if ((pTVar28 != (Transform *)0x0) &&
-     (pVVar34 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffffe0,pTVar28,(MethodInfo *)0x0),
-     pCVar33 != (CullingSubscriberBase *)0x0)) {
-    CullingSubscriberBase::CullingSubscriberBase_set_Position(pCVar33,*pVVar34,(MethodInfo *)0x0);
+  if ((pTVar30 != (Transform *)0x0) &&
+     (pVVar33 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                          ((Vector3 *)&stack0xffffffd0,pTVar30,(MethodInfo *)0x0),
+     this_00 != (CullingSubscriberBase *)0x0)) {
+    CullingSubscriberBase::CullingSubscriberBase_set_Position(this_00,*pVVar33,(MethodInfo *)0x0);
     if (iStack_1 != 3) {
       return;
     }
@@ -656,51 +687,51 @@ void Assembly-CSharp.dll::Bullet::Bullet_Update(Bullet *this,MethodInfo *method)
                   ((Renderer *)*ppMVar27,0,(MethodInfo *)0x0);
         ppMVar27 = ppMVar27 + 1;
       }
-      pPVar35 = (this->fields).pSystem;
+      pPVar34 = (this->fields).pSystem;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      bVar16 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                         ((Object_1 *)pPVar35,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar16 != 0) {
-        pPVar35 = (this->fields).pSystem;
-        if (pPVar35 == (ParticleSystem *)0x0) goto code_?;
+      bVar15 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                         ((Object_1 *)pPVar34,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar15 != 0) {
+        pPVar34 = (this->fields).pSystem;
+        if (pPVar34 == (ParticleSystem *)0x0) goto code_?;
         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_2
-                  (pPVar35,(MethodInfo *)0x0);
+                  (pPVar34,(MethodInfo *)0x0);
       }
       (this->fields).hasCleaned = 1;
     }
-    pPVar35 = (this->fields).pSystem;
+    ppCVar35 = &(this->fields).cullingSubscriberBase;
+    pPVar34 = (this->fields).pSystem;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar16 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                       ((Object_1 *)pPVar35,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar16 == 0) {
-      pPVar35 = (this->fields).pSystem;
-      if (pPVar35 == (ParticleSystem *)0x0) goto code_?;
-      bVar16 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-               ParticleSystem_IsAlive_1(pPVar35,(MethodInfo *)0x0);
-      if (bVar16 != 0) {
+    bVar15 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                       ((Object_1 *)pPVar34,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar15 == 0) {
+      pPVar34 = (this->fields).pSystem;
+      if (pPVar34 == (ParticleSystem *)0x0) goto code_?;
+      bVar15 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+               ParticleSystem_IsAlive_1(pPVar34,(MethodInfo *)0x0);
+      if (bVar15 != 0) {
         return;
       }
     }
     pEnum = (this->fields).initiatedPoolType;
     Bullet_ResetBullet(this,(MethodInfo *)0x0);
-    pCVar33 = (this->fields).cullingSubscriberBase;
-    if (pCVar33 != (CullingSubscriberBase *)0x0) {
-      CullingSubscriberBase::CullingSubscriberBase_Destroy(pCVar33,(MethodInfo *)0x0);
-      (this->fields).cullingSubscriberBase = (CullingSubscriberBase *)0x0;
-      func_?(&(this->fields).cullingSubscriberBase,0);
+    if (*ppCVar35 != (CullingSubscriberBase *)0x0) {
+      CullingSubscriberBase::CullingSubscriberBase_Destroy(*ppCVar35,(MethodInfo *)0x0);
+      *ppCVar35 = (CullingSubscriberBase *)0x0;
+      func_?(ppCVar35,0);
       if (cRam_? == '\0') {
         func_?(&TypeInfo__PrefabPool);
         cRam_? = '\x01';
       }
       pPVar36 = TypeInfo__PrefabPool->static_fields->instance;
       if ((pPVar36 != (PrefabPool *)0x0) &&
-         (this_00 = (pPVar36->fields).enumPoolManager, this_00 != (EnumPoolManager *)0x0)) {
+         (this_01 = (pPVar36->fields).enumPoolManager, this_01 != (EnumPoolManager *)0x0)) {
         EnumPoolManager::EnumPoolManager_Return
-                  (this_00,(this->fields).pooledObjectReference,pEnum,(MethodInfo *)0x0);
+                  (this_01,(this->fields).pooledObjectReference,pEnum,(MethodInfo *)0x0);
         return;
       }
     }
@@ -730,8 +761,9 @@ void Assembly-CSharp.dll::Bullet::Bullet__ctor(Bullet *this,MethodInfo *method)
   System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
   HashSet_1_System_Int32___ctor
             (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  (this->fields).ignoreWoIDs = this_00;
-  func_?(&(this->fields).ignoreWoIDs,this_00);
+  ppHVar1 = &(this->fields).ignoreWoIDs;
+  *ppHVar1 = this_00;
+  func_?(ppHVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

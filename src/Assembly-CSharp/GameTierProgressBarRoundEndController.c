@@ -14,13 +14,16 @@ void Assembly-CSharp.dll::GameTierProgressBarRoundEndController::
     cRam_? = '\x01';
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar2 == (MVNetworkGame *)0x0) {
-      func_?();
-      goto code_?;
-    }
+  if (bVar1 == 0) {
+    return;
+  }
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar2 == (MVNetworkGame *)0x0) {
+    func_?();
+  }
+  else {
     pAVar3 = (pMVar2->fields).OnWinningConditionFulfilled;
+    ppAVar4 = &(pMVar2->fields).OnWinningConditionFulfilled;
     this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *)func_?(TypeInfo__System__Action<IWinningCondition>);
     DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
@@ -33,32 +36,33 @@ void Assembly-CSharp.dll::GameTierProgressBarRoundEndController::
                           ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
     unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
     if (unaff_ESI == (Delegate *)0x0) {
-      (pMVar2->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-      pAStack4 = (Action_1_IWinningCondition___Class *)0x0;
+      *ppAVar4 = (Action_1_IWinningCondition_ *)0x0;
+      pDStack5 = (Delegate *)ppAVar4;
+      pAStack6 = (Action_1_IWinningCondition___Class *)unaff_ESI;
+      func_?();
+      return;
     }
-    else {
-      pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+    pAStack6 = TypeInfo__System__Action<IWinningCondition>;
+    pDStack5 = unaff_ESI;
+    pAVar3 = (Action_1_IWinningCondition_ *)func_?();
+    if (pAVar3 != (Action_1_IWinningCondition_ *)0x0) {
+      *ppAVar4 = pAVar3;
+      unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
+      pAStack6 = TypeInfo__System__Action<IWinningCondition>;
       pDStack5 = unaff_ESI;
-      pAVar3 = (Action_1_IWinningCondition_ *)func_?();
-      if (pAVar3 == (Action_1_IWinningCondition_ *)0x0) {
-code_?:
-        pDStack5 = unaff_ESI;
-        pAStack4 = unaff_EDI;
+      pAStack6 = (Action_1_IWinningCondition___Class *)func_?();
+      if (pAStack6 != (Action_1_IWinningCondition___Class *)0x0) {
+        pDStack5 = (Delegate *)ppAVar4;
         func_?();
-        pcVar6 = (code *)swi(3);
-        (*pcVar6)();
         return;
       }
-      (pMVar2->fields).OnWinningConditionFulfilled = pAVar3;
-      unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
-      pAStack4 = TypeInfo__System__Action<IWinningCondition>;
-      pDStack5 = unaff_ESI;
-      pAStack4 = (Action_1_IWinningCondition___Class *)func_?();
-      if (pAStack4 == (Action_1_IWinningCondition___Class *)0x0) goto code_?;
     }
-    pDStack5 = (Delegate *)&(pMVar2->fields).OnWinningConditionFulfilled;
-    func_?();
   }
+  pDStack5 = unaff_ESI;
+  pAStack6 = unaff_EDI;
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -99,33 +103,33 @@ void Assembly-CSharp.dll::GameTierProgressBarRoundEndController::
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar1 != (MVNetworkGame *)0x0) {
     pAVar2 = (pMVar1->fields).OnWinningConditionFulfilled;
-    this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+    ppAVar3 = &(pMVar1->fields).OnWinningConditionFulfilled;
+    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *)func_?(TypeInfo__System__Action<IWinningCondition>);
     DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
     __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
     DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (this_02,(Object *)this,
+              (this_01,(Object *)this,
                MethodInfo__GameTierProgressBarRoundEndController__OnRoundEnd_IWinningCondition_,
                (MethodInfo *)0x0);
-    uVar3 = 0;
     pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar2,(Delegate *)this_02,(MethodInfo *)0x0);
+                       ((Delegate *)pAVar2,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pDVar4 == (Delegate *)0x0) {
-      (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+      *ppAVar3 = (Action_1_IWinningCondition_ *)0x0;
     }
     else {
       pAVar2 = (Action_1_IWinningCondition_ *)func_?();
       if (pAVar2 == (Action_1_IWinningCondition_ *)0x0) goto code_?;
-      (pMVar1->fields).OnWinningConditionFulfilled = pAVar2;
+      *ppAVar3 = pAVar2;
       iVar5 = func_?();
       if (iVar5 == 0) goto code_?;
     }
     func_?();
     if ((_UNK_? != (GameTierProgressBar *)0x0) &&
        (GameTierProgressBar::GameTierProgressBar_Initialize(_UNK_?,(MethodInfo *)0x0),
-       this_00 = _UNK_?, _UNK_? != (GameTierProgressBarGainEffectController *)0x0)) {
+       _UNK_? != 0)) {
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__System__Action<int>,unaff_EBP);
+        func_?(&TypeInfo__System__Action<int>);
         func_?(&TypeInfo__System__Action);
         func_?(&TypeInfo__GamePassesManager);
         func_?(&TypeInfo__GamePointGainEffectManager);
@@ -140,27 +144,27 @@ void Assembly-CSharp.dll::GameTierProgressBarRoundEndController::
                        );
         cRam_? = '\x01';
       }
-      if ((this_00->fields).isInitialized != 0) {
+      if (cRam_? != '\0') {
         return;
       }
-      (this_00->fields).isInitialized = 1;
+      cRam_? = 1;
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__GamePassesManager,unaff_ESI);
+        func_?(&TypeInfo__GamePassesManager,unaff_EBX);
         cRam_? = '\x01';
       }
       if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField == 0) {
 code_?:
         pAVar6 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
-        this_01 = (NavMesh_OnNavMeshPreUpdate *)
-                  func_?(TypeInfo__System__Action,this_02,uVar3);
+        this_00 = (NavMesh_OnNavMeshPreUpdate *)
+                  func_?(TypeInfo__System__Action,unaff_EDI,unaff_ESI);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
-                  (this_01,(Object *)this_00,
+                  (this_00,(Object *)0x0,
                    MethodInfo__GameTierProgressBarGainEffectController__OnPlayerPlanetDataUpdated__,
                    (MethodInfo *)0x0);
         pAVar6 = (Action *)
                  mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pAVar6,(Delegate *)this_01,(MethodInfo *)0x0);
+                           ((Delegate *)pAVar6,(Delegate *)this_00,(MethodInfo *)0x0);
         if (pAVar6 == (Action *)0x0) {
           TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
         }
@@ -185,7 +189,7 @@ code_?:
         pUVar9 = (UnityAction_1_System_Int32Enum_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
         UnityAction_1_System_Int32Enum___ctor
-                  (pUVar9,(Object *)this_00,
+                  (pUVar9,(Object *)0x0,
                    MethodInfo__GameTierProgressBarGainEffectController__OnHaveShownGainEffect_int_,
                    (MethodInfo *)0x0);
         pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
@@ -200,7 +204,7 @@ code_?:
           pUVar9 = (UnityAction_1_System_Int32Enum_ *)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
           UnityAction_1_System_Int32Enum___ctor
-                    (pUVar9,(Object *)this_00,
+                    (pUVar9,(Object *)0x0,
                      MethodInfo__GameTierProgressBarGainEffectController__OnHaveShownTierProgressBarGainEffect_int_
                      ,(MethodInfo *)0x0);
           pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
@@ -214,7 +218,7 @@ code_?:
             do {
               GameTierProgressBarGainEffectController::
               GameTierProgressBarGainEffectController_CreateGamePointGainEffect
-                        (this_00,(MethodInfo *)0x0);
+                        ((GameTierProgressBarGainEffectController *)0x0,(MethodInfo *)0x0);
               iVar5 = iVar5 + -1;
             } while (iVar5 != 0);
             return;
@@ -239,12 +243,12 @@ code_?:
       }
       else {
         if (cRam_? == '\0') {
-          func_?(&TypeInfo__GamePassesManager,unaff_ESI);
+          func_?(&TypeInfo__GamePassesManager,unaff_EBX);
           cRam_? = '\x01';
         }
         pPVar10 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
         if (pPVar10 != (PlayerPlanetData *)0x0) {
-          (this_00->fields).currentGamePoints = (pPVar10->fields).progressionGamePoints;
+          iRam_? = (pPVar10->fields).progressionGamePoints;
           goto code_?;
         }
 code_?:

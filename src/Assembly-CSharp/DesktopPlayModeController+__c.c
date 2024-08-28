@@ -20,10 +20,9 @@ void Assembly-CSharp.dll::DesktopPlayModeController+<>c::
       do {
         if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
-          pIVar1 = handler->klass;
           iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(pIVar1->vtable).PopGroups)[iVar4].method)
-                    (handler,0xc,(&(pIVar1->vtable).PopToGroup)[iVar4].methodPtr);
+          (*(code *)(&(handler->klass->vtable).PopGroups)[iVar4].method)
+                    (handler,0xc,(&(handler->klass->vtable).PopToGroup)[iVar4].methodPtr);
           return;
         }
         uVar2 = uVar2 + 1;

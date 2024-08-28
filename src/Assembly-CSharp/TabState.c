@@ -26,20 +26,27 @@ bool Assembly-CSharp.dll::TabState::TabState_SlotIndexIsInRange
 {
   pIVar1 = TabState_get_SlotRange(this,(MethodInfo *)0x0);
   if (pIVar1 == (Int32__Array *)0x0) {
-    func_?();
+    uVar2 = func_?(&stack0xfffffff8);
+    func_?(uVar2);
+    pcVar3 = (code *)swi(3);
+    bVar4 = (*pcVar3)();
+    return bVar4;
   }
-  else if (pIVar1->max_length != 0) {
-    if (slotIndex < pIVar1->vector[0]) {
-      return 0;
+  if (pIVar1->max_length != 0) {
+    if (pIVar1->vector[0] <= slotIndex) {
+      if (pIVar1->max_length < 2) goto code_?;
+      if (slotIndex < pIVar1->vector[1]) {
+        return 1;
+      }
     }
-    if (1 < pIVar1->max_length) {
-      return slotIndex < pIVar1->vector[1];
-    }
+    return 0;
   }
+code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  func_?();
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 
@@ -79,10 +86,11 @@ void Assembly-CSharp.dll::TabState::TabState__ctor
   (this->fields).currentPage = 1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  ppSVar1 = &(this->fields).name;
   (this->fields)._TabID_k__BackingField = tabId;
   (this->fields).slotsPrPage = slotsPrPage;
-  (this->fields).name = name;
-  func_?(&(this->fields).name,name);
+  *ppSVar1 = name;
+  func_?(ppSVar1,name);
   return;
 }
 

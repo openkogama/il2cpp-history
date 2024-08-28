@@ -9,18 +9,20 @@ bool Assembly-CSharp.dll::MVNetworkGame+UpdateEvaluator::MVNetworkGame_UpdateEva
   iVar1 = WaitForTicksLocal::WaitForTicksLocal_Diff((this->fields).lastUpdateTick,(MethodInfo *)0x0)
   ;
   iVar2 = WaitForTicksLocal::WaitForTicksLocal_GetEnvironmentTick(0,(MethodInfo *)0x0);
-  iVar3 = (this->fields).accumulatedTime + iVar1;
+  piVar3 = &(this->fields).accumulatedTime;
+  *piVar3 = *piVar3 + iVar1;
+  iVar4 = (this->fields).accumulatedTime;
+  iVar5 = (this->fields).updateInterval;
   (this->fields).lastUpdateTick = iVar2;
-  (this->fields).accumulatedTime = iVar3;
-  if ((this->fields).updateInterval <= iVar3) {
+  if (iVar5 <= iVar4) {
     if (logicObjectManager == (LogicObjectManager *)0x0) {
       func_?();
-      pcVar4 = (code *)swi(3);
-      bVar5 = (*pcVar4)();
-      return bVar5;
+      pcVar6 = (code *)swi(3);
+      bVar7 = (*pcVar6)();
+      return bVar7;
     }
     if ((logicObjectManager->fields)._TimeStamp_k__BackingField < (this->fields).stepTimestamp) {
-      (this->fields).accumulatedTime = iVar3 - (this->fields).updateInterval;
+      (this->fields).accumulatedTime = iVar4 - iVar5;
       return 1;
     }
   }

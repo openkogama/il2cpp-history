@@ -819,10 +819,9 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                                   );
                                                   method_00 = (MethodInfo *)
                                                               &(this->fields).KeyCodeMapping;
-                                                  (this->fields).KeyCodeMapping =
-                                                       (
-                                                  Dictionary_2_KogamaControls_UnityEngine_KeyCode_ *
-                                                  )pDVar1;
+                                                  *(
+                                                  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_
+                                                  **)method_00 = pDVar1;
                                                   func_?(method_00,pDVar1);
                                                   mscorlib.dll::System::ThrowHelper::
                                                   ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55

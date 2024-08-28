@@ -63,9 +63,8 @@ int64_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obsc
   }
   return CONCAT44(*(uint *)((int)&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredLong->
                                   static_fields->cryptoKey + 4) ^ value._4_4_,
-                  (uint)value ^
                   (uint)TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredLong->static_fields->
-                        cryptoKey);
+                        cryptoKey ^ (uint)value);
 }
 
 
@@ -88,9 +87,8 @@ int64_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obsc
   }
   return CONCAT44(*(uint *)((int)&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredLong->
                                   static_fields->cryptoKey + 4) ^ value._4_4_,
-                  (uint)value ^
                   (uint)TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredLong->static_fields->
-                        cryptoKey);
+                        cryptoKey ^ (uint)value);
 }
 
 
@@ -118,9 +116,8 @@ int64_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obsc
   }
   return CONCAT44(*(uint *)((int)&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredLong->
                                   static_fields->cryptoKey + 4) ^ value._4_4_,
-                  (uint)value ^
                   (uint)TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredLong->static_fields->
-                        cryptoKey);
+                        cryptoKey ^ (uint)value);
 }
 
 
@@ -143,9 +140,8 @@ int64_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obsc
   }
   return CONCAT44(*(uint *)((int)&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredLong->
                                   static_fields->cryptoKey + 4) ^ value._4_4_,
-                  (uint)value ^
                   (uint)TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredLong->static_fields->
-                        cryptoKey);
+                        cryptoKey ^ (uint)value);
 }
 
 
@@ -198,30 +194,30 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredLong);
     cRam_? = '\x01';
   }
-  iVar1 = this->hiddenValue;
-  if (((int)this->currentCryptoKey == in_stack_2) &&
+  iVar1 = this->currentCryptoKey;
+  iVar2 = this->hiddenValue;
+  if (((int)this->currentCryptoKey == in_stack_3) &&
      (*(int *)((int)&this->currentCryptoKey + 4) == (int)obj.currentCryptoKey)) {
     if ((int)this->hiddenValue != obj.currentCryptoKey._4_4_) {
       return 0;
     }
-    bVar3 = *(int *)((int)&this->hiddenValue + 4) == (int)obj.hiddenValue;
+    bVar4 = *(int *)((int)&this->hiddenValue + 4) == (int)obj.hiddenValue;
   }
   else {
-    iVar4 = this->currentCryptoKey;
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredLong->_1).cctor_finished_or_no_cctor
         == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredLong);
     }
-    iVar1 = ObscuredLong_Decrypt_1(iVar1,iVar4,(MethodInfo *)0x0);
-    iVar4 = ObscuredLong_Decrypt_1
-                      (obj._4_8_,CONCAT44((int)obj.currentCryptoKey,in_stack_2),
+    iVar2 = ObscuredLong_Decrypt_1(iVar2,iVar1,(MethodInfo *)0x0);
+    iVar1 = ObscuredLong_Decrypt_1
+                      (obj._4_8_,CONCAT44((int)obj.currentCryptoKey,in_stack_3),
                        (MethodInfo *)0x0);
-    if ((int)iVar1 != (int)iVar4) {
+    if ((int)iVar2 != (int)iVar1) {
       return 0;
     }
-    bVar3 = (int)((ulonglong)iVar1 >> 0x20) == (int)((ulonglong)iVar4 >> 0x20);
+    bVar4 = (int)((ulonglong)iVar2 >> 0x20) == (int)((ulonglong)iVar1 >> 0x20);
   }
-  if (!bVar3) {
+  if (!bVar4) {
     return 0;
   }
   return 1;
@@ -276,21 +272,21 @@ int64_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obsc
   bVar4 = Detectors::ObscuredCheatingDetector::ObscuredCheatingDetector_get_IsRunning
                     ((MethodInfo *)0x0);
   if (((bVar4 != 0) && ((int)this->fakeValue != 0 || *(int *)((int)&this->fakeValue + 4) != 0)) &&
-     (((int)iVar2 != (int)this->fakeValue ||
-      ((int)((ulonglong)iVar2 >> 0x20) != *(int *)((int)&this->fakeValue + 4))))) {
+     (iVar2 != this->fakeValue)) {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
     pOVar5 = TypeInfo__CodeStage__AntiCheat__Detectors__ObscuredCheatingDetector->static_fields->
              _Instance_k__BackingField;
-    if (pOVar5 == (ObscuredCheatingDetector *)0x0) {
-      func_?();
-      pcVar6 = (code *)swi(3);
-      iVar2 = (*pcVar6)();
+    if (pOVar5 != (ObscuredCheatingDetector *)0x0) {
+      (*(code *)(pOVar5->klass->vtable).OnCheatingDetected.method)(pOVar5);
       return iVar2;
     }
-    (*(code *)(pOVar5->klass->vtable).OnCheatingDetected.method)(pOVar5);
+    func_?();
+    pcVar6 = (code *)swi(3);
+    iVar2 = (*pcVar6)();
+    return iVar2;
   }
   return iVar2;
 }
@@ -372,21 +368,21 @@ int64_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obsc
   bVar3 = Detectors::ObscuredCheatingDetector::ObscuredCheatingDetector_get_IsRunning
                     ((MethodInfo *)0x0);
   if (((bVar3 != 0) && ((int)this->fakeValue != 0 || *(int *)((int)&this->fakeValue + 4) != 0)) &&
-     (((int)iVar2 != (int)this->fakeValue ||
-      ((int)((ulonglong)iVar2 >> 0x20) != *(int *)((int)&this->fakeValue + 4))))) {
+     (iVar2 != this->fakeValue)) {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
     pOVar4 = TypeInfo__CodeStage__AntiCheat__Detectors__ObscuredCheatingDetector->static_fields->
              _Instance_k__BackingField;
-    if (pOVar4 == (ObscuredCheatingDetector *)0x0) {
-      func_?();
-      pcVar5 = (code *)swi(3);
-      iVar2 = (*pcVar5)();
+    if (pOVar4 != (ObscuredCheatingDetector *)0x0) {
+      (*(code *)(pOVar4->klass->vtable).OnCheatingDetected.method)(pOVar4);
       return iVar2;
     }
-    (*(code *)(pOVar4->klass->vtable).OnCheatingDetected.method)(pOVar4);
+    func_?();
+    pcVar5 = (code *)swi(3);
+    iVar2 = (*pcVar5)();
+    return iVar2;
   }
   return iVar2;
 }

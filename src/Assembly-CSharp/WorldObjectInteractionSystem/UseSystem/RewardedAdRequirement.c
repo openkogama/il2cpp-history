@@ -12,63 +12,60 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
   auVar3._4_8_ = 0;
   auVar3._0_4_ = spacingAngle * _UNK_?;
   pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                      ((Quaternion *)&puStack_5,(Vector3)(auVar3 << 0x20),(MethodInfo *)0x0);
+                     ((Quaternion *)&puStack_5,(Vector3)(auVar3 << 0x20),(MethodInfo *)0x0);
   point.y = fVar2;
   point.x = fVar1;
   point.z = pivot.z - (pivot.z + distanceFromPivot);
-  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                      ((Vector3 *)&puStack_5,*pQVar4,point,(MethodInfo *)0x0);
-  uVar7 = pVVar6->x;
-  uVar8 = pVVar6->y;
-  fVar2 = pVVar6->z;
-  fVar9 = pivot.x + (float)uVar7;
-  fVar1 = pivot.y + (float)uVar8;
-  pGVar10 = (this->fields).displayGO;
-  if (pGVar10 != (GameObject *)0x0) {
-    pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                        (pGVar10,(MethodInfo *)0x0);
-    if (pTVar11 != (Transform *)0x0) {
-      value_00.y = fVar1;
-      value_00.x = fVar9;
-      value_00.z = pivot.z + fVar2;
+  UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+            ((Vector3 *)&puStack_5,*pQVar4,point,(MethodInfo *)0x0);
+  pGVar6 = (this->fields).displayGO;
+  if (pGVar6 != (GameObject *)0x0) {
+    fVar2 = 0.0;
+    puVar7 = &UNK_?;
+    pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                        (pGVar6,(MethodInfo *)0x0);
+    if (pTVar8 != (Transform *)0x0) {
+      value_00.y = (float)pGVar6;
+      value_00.x = (float)puVar7;
+      value_00.z = fVar2;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                (pTVar11,value_00,(MethodInfo *)0x0);
-      pGVar10 = (this->fields).displayGO;
-      if (pGVar10 != (GameObject *)0x0) {
-        pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (pGVar10,(MethodInfo *)0x0);
-        pGVar10 = (this->fields).displayObjectRoot;
-        if (pGVar10 != (GameObject *)0x0) {
+                (pTVar8,value_00,(MethodInfo *)0x0);
+      pGVar6 = (this->fields).displayGO;
+      if (pGVar6 != (GameObject *)0x0) {
+        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar6,(MethodInfo *)0x0);
+        pGVar6 = (this->fields).displayObjectRoot;
+        if (pGVar6 != (GameObject *)0x0) {
           this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (pGVar10,(MethodInfo *)0x0);
+                              (pGVar6,(MethodInfo *)0x0);
           if (this_01 != (Transform *)0x0) {
-            pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                ((Vector3 *)&puStack_5,this_01,(MethodInfo *)0x0);
-            uVar12 = pVVar6->x;
-            uVar13 = pVVar6->y;
-            if (pTVar11 != (Transform *)0x0) {
-              worldPosition.y = pivot.y + (float)uVar13;
-              worldPosition.x = pivot.x + (float)uVar12;
-              worldPosition.z = pivot.z + pVVar6->z;
+            pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                ((Vector3 *)&stack0xffffffd8,this_01,(MethodInfo *)0x0);
+            uVar10 = pVVar9->x;
+            uVar11 = pVVar9->y;
+            if (pTVar8 != (Transform *)0x0) {
+              worldPosition.y = pivot.y + (float)uVar11;
+              worldPosition.x = pivot.x + (float)uVar10;
+              worldPosition.z = pivot.z + pVVar9->z;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_LookAt_2
-                        (pTVar11,worldPosition,(MethodInfo *)0x0);
+                        (pTVar8,worldPosition,(MethodInfo *)0x0);
               this_00 = (this->fields).displayObject;
               if (this_00 != (RewardedAdDisplayObject *)0x0) {
-                pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                           Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
-                if (pTVar11 != (Transform *)0x0) {
-                  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                            Transform_get_position
-                                      ((Vector3 *)&stack0xffffffd8,pTVar11,(MethodInfo *)0x0);
-                  uVar14 = pVVar6->x;
-                  uVar15 = pVVar6->y;
-                  uVar16 = (this->fields).displayObjectOffset.x;
-                  uVar17 = (this->fields).displayObjectOffset.y;
-                  value.y = (float)uVar17 + (float)uVar15;
-                  value.x = (float)uVar16 + (float)uVar14;
-                  value.z = (this->fields).displayObjectOffset.z + pVVar6->z;
+                if (pTVar8 != (Transform *)0x0) {
+                  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                            Transform_get_position((Vector3 *)&puStack_5,pTVar8,(MethodInfo *)0x0)
+                  ;
+                  uVar12 = pVVar9->x;
+                  uVar13 = pVVar9->y;
+                  uVar14 = (this->fields).displayObjectOffset.x;
+                  uVar15 = (this->fields).displayObjectOffset.y;
+                  value.y = (float)uVar15 + (float)uVar13;
+                  value.x = (float)uVar14 + (float)uVar12;
+                  value.z = (this->fields).displayObjectOffset.z + pVVar9->z;
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                            (pTVar11,value,(MethodInfo *)0x0);
+                            (pTVar8,value,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -79,8 +76,8 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
     }
   }
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -107,49 +104,31 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
   if ((pPVar1 != (PrefabPool *)0x0) &&
-     (pRVar2 = (pPVar1->fields).rewardedAdDisplayPrefab, pRVar2 != (RewardedAdDisplayObject *)0x0))
-  {
+     (this_00 = (pPVar1->fields).rewardedAdDisplayPrefab, this_00 != (RewardedAdDisplayObject *)0x0)
+     ) {
     original = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)pRVar2,(MethodInfo *)0x0);
-    pGVar3 = (this->fields).displayObjectRoot;
-    if (pGVar3 != (GameObject *)0x0) {
-      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                         (pGVar3,(MethodInfo *)0x0);
+                         ((Component *)this_00,(MethodInfo *)0x0);
+    pGVar2 = (this->fields).displayObjectRoot;
+    if (pGVar2 != (GameObject *)0x0) {
+      parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                         (pGVar2,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+        func_?();
       }
-      pGVar3 = (GameObject *)
+      pGVar2 = (GameObject *)
                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                         ((Object *)original,pTVar4,1,
+                         ((Object *)original,parent,1,
                           UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Transform__bool_
                          );
-      (this->fields).displayGO = pGVar3;
-      func_?(&(this->fields).displayGO,pGVar3);
-      pGVar3 = (this->fields).displayGO;
-      if (pGVar3 != (GameObject *)0x0) {
-        pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (pGVar3,(MethodInfo *)0x0);
-        if (pTVar4 != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                    (pTVar4,(this->fields).displayObjectOffset,(MethodInfo *)0x0);
-          pGVar3 = (this->fields).displayGO;
-          if (pGVar3 != (GameObject *)0x0) {
-            pRVar2 = (RewardedAdDisplayObject *)
-                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                               (pGVar3,
-                                WorldObjectInteractionSystem__UseSystem__RewardedAdDisplayObject_MethodInfo__UnityEngine__GameObject__GetComponent<WorldObjectInteractionSystem::UseSystem::RewardedAdDisplayObject>__
-                               );
-            (this->fields).displayObject = pRVar2;
-            func_?(&(this->fields).displayObject,pRVar2);
-            return;
-          }
-        }
-      }
+      ppGVar3 = &(this->fields).displayGO;
+      *ppGVar3 = pGVar2;
+      func_?(ppGVar3,&stack0xfffffffc,&UNK_?);
+      return;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -273,26 +252,24 @@ Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdRequirem
 RewardedAdRequirement_GetShowOption(RewardedAdRequirement *this,MethodInfo *method)
 
 {
-  if ((this->fields).requiresRewardedAd == 0) {
-    return ShowUseOption__Enum_Normal;
-  }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-  if ((pMVar1 != (MVLocalPlayer *)0x0) &&
-     (this_00 = (pMVar1->fields)._WorldObjectUseRequirementTracker_k__BackingField,
-     this_00 != (WorldObjectUseRequirementTracker *)0x0)) {
-    bVar2 = WorldObjectTypes::Avatar::Local::WorldObjectUseRequirementTracker::
+  if ((this->fields).requiresRewardedAd != 0) {
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+    if ((pMVar1 == (MVLocalPlayer *)0x0) ||
+       (this_00 = (pMVar1->fields)._WorldObjectUseRequirementTracker_k__BackingField,
+       this_00 == (WorldObjectUseRequirementTracker *)0x0)) {
+      func_?();
+      pcVar2 = (code *)swi(3);
+      SVar3 = (*pcVar2)();
+      return SVar3;
+    }
+    bVar4 = WorldObjectTypes::Avatar::Local::WorldObjectUseRequirementTracker::
             WorldObjectUseRequirementTracker_HasUnlocked
                       (this_00,(this->fields).worldObjectID,(MethodInfo *)0x0);
-    SVar3 = ShowUseOption__Enum_Normal;
-    if (bVar2 == 0) {
-      SVar3 = ShowUseOption__Enum_RewardedAdPossible;
+    if (bVar4 == 0) {
+      return ShowUseOption__Enum_RewardedAdPossible;
     }
-    return SVar3;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  SVar3 = (*pcVar4)();
-  return SVar3;
+  return ShowUseOption__Enum_Normal;
 }
 
 
@@ -481,13 +458,14 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
       if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
           (TypeInfo__System__Boolean->_0).element_class) {
         pbVar3 = (bool *)func_?();
-        pRVar4 = (this->fields).displayObject;
+        ppRVar4 = &(this->fields).displayObject;
         (this->fields).requiresRewardedAd = *pbVar3;
+        pRVar5 = *ppRVar4;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
         bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                          ((Object_1 *)pRVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
+                          ((Object_1 *)pRVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
         if (bVar1 != 0) {
           if (cRam_? == '\0') {
             func_?(&
@@ -503,83 +481,82 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
             func_?(&TypeInfo__PrefabPool);
             cRam_? = '\x01';
           }
-          pPVar5 = TypeInfo__PrefabPool->static_fields->instance;
-          if ((pPVar5 == (PrefabPool *)0x0) ||
-             (pRVar4 = (pPVar5->fields).rewardedAdDisplayPrefab,
-             pRVar4 == (RewardedAdDisplayObject *)0x0)) goto code_?;
+          pPVar6 = TypeInfo__PrefabPool->static_fields->instance;
+          if ((pPVar6 == (PrefabPool *)0x0) ||
+             (pRVar5 = (pPVar6->fields).rewardedAdDisplayPrefab,
+             pRVar5 == (RewardedAdDisplayObject *)0x0)) goto code_?;
           original = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)pRVar4,(MethodInfo *)0x0);
-          pGVar6 = (this->fields).displayObjectRoot;
-          if (pGVar6 == (GameObject *)0x0) goto code_?;
-          ownerID = (int32_t)UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                             GameObject_get_transform(pGVar6,(MethodInfo *)0x0);
+                               ((Component *)pRVar5,(MethodInfo *)0x0);
+          pGVar7 = (this->fields).displayObjectRoot;
+          if (pGVar7 == (GameObject *)0x0) goto code_?;
+          pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                             (pGVar7,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Object);
           }
-          pGVar6 = (GameObject *)
+          pGVar7 = (GameObject *)
                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                             ((Object *)original,(Transform *)ownerID,1,
+                             ((Object *)original,pTVar8,1,
                               UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Transform__bool_
                              );
-          (this->fields).displayGO = pGVar6;
-          func_?(&(this->fields).displayGO,pGVar6);
-          pGVar6 = (this->fields).displayGO;
-          if ((pGVar6 == (GameObject *)0x0) ||
-             (this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                        GameObject_get_transform(pGVar6,(MethodInfo *)0x0),
-             this_00 == (Transform *)0x0)) goto code_?;
+          ppGVar9 = &(this->fields).displayGO;
+          *ppGVar9 = pGVar7;
+          func_?(ppGVar9,pGVar7);
+          if ((*ppGVar9 == (GameObject *)0x0) ||
+             (pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                 (*ppGVar9,(MethodInfo *)0x0), pTVar8 == (Transform *)0x0))
+          goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                    (this_00,(this->fields).displayObjectOffset,(MethodInfo *)0x0);
-          pGVar6 = (this->fields).displayGO;
-          if (pGVar6 == (GameObject *)0x0) goto code_?;
-          pRVar4 = (RewardedAdDisplayObject *)
-                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                             (pGVar6,
-                              WorldObjectInteractionSystem__UseSystem__RewardedAdDisplayObject_MethodInfo__UnityEngine__GameObject__GetComponent<WorldObjectInteractionSystem::UseSystem::RewardedAdDisplayObject>__
-                             );
-          (this->fields).displayObject = pRVar4;
-          func_?(&(this->fields).displayObject,pRVar4);
+                    (pTVar8,(this->fields).displayObjectOffset,(MethodInfo *)0x0);
+          if (*ppGVar9 == (GameObject *)0x0) goto code_?;
+          pRVar5 = (RewardedAdDisplayObject *)
+                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                              (*ppGVar9,
+                               WorldObjectInteractionSystem__UseSystem__RewardedAdDisplayObject_MethodInfo__UnityEngine__GameObject__GetComponent<WorldObjectInteractionSystem::UseSystem::RewardedAdDisplayObject>__
+                              );
+          *ppRVar4 = pRVar5;
+          func_?(ppRVar4,pRVar5);
+          worldObjectID = ownerID;
         }
         if ((this->fields).requiresRewardedAd != 0) {
           return;
         }
-        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+        this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                    *)func_?(
                                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                                     );
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
         UIElements::StyleComplexSelector+PseudoStateData]::
         Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                  (this_01,
+                  (this_00,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
         ownerID = ownerID & 0xffffff;
         value = (Object *)func_?(TypeInfo__System__Boolean,(int)&ownerID + 3);
-        if (this_01 !=
+        if (this_00 !=
             (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
              *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    ((Dictionary_2_System_Object_System_Object_ *)this_01,
+                    ((Dictionary_2_System_Object_System_Object_ *)this_00,
                      (Object *)StringLiteral_rewardedAd,value,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
-          this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+          this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                               ((MethodInfo *)0x0);
-          if (this_02 != (MVNetworkGame_OperationRequests *)0x0) {
+          if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
             MVNetworkGame+OperationRequests::
             MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1
-                      (this_02,worldObjectID,(Dictionary_2_System_Object_System_Object_ *)this_01,
+                      (this_01,worldObjectID,(Dictionary_2_System_Object_System_Object_ *)this_00,
                        (MethodInfo *)0x0);
-            pRVar4 = (this->fields).displayObject;
-            if (pRVar4 != (RewardedAdDisplayObject *)0x0) {
-              pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)pRVar4,(MethodInfo *)0x0);
+            if (*ppRVar4 != (RewardedAdDisplayObject *)0x0) {
+              pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                 ((Component *)*ppRVar4,(MethodInfo *)0x0);
               if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__UnityEngine__Object);
               }
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                        ((Object_1 *)pGVar6,(MethodInfo *)0x0);
+                        ((Object_1 *)pGVar7,(MethodInfo *)0x0);
               return;
             }
           }
@@ -592,8 +569,8 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -680,8 +657,8 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
      RewardedAdRequirement_SetScale(RewardedAdRequirement *this,Vector3 scale,MethodInfo *method)
 
 {
-  this_00 = (this->fields).displayObject;
   fVar1 = scale.x * _UNK_?;
+  this_00 = (this->fields).displayObject;
   fVar2 = scale.y * _UNK_?;
   fVar3 = scale.z * _UNK_?;
   if (this_00 != (RewardedAdDisplayObject *)0x0) {
@@ -696,10 +673,9 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
       return;
     }
   }
-  uVar4 = func_?(&stack0xfffffff8);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -725,8 +701,9 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
             ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
-  (this->fields).displayObjectRoot = root;
-  func_?(&(this->fields).displayObjectRoot,root);
+  ppGVar1 = &(this->fields).displayObjectRoot;
+  *ppGVar1 = root;
+  func_?(ppGVar1,root);
   this_00 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                       ((MethodInfo *)0x0);
   this_01 = (Action_3_Int32_Int32_ByteEnum_ *)
@@ -743,8 +720,8 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -772,11 +749,13 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
             ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
-  (this->fields).displayObjectRoot = root;
-  func_?(&(this->fields).displayObjectRoot,root);
-  (this->fields).checkNoCost = action;
-  func_?(&(this->fields).checkNoCost,action);
-  (this->fields).hasCheckNoCost = (this->fields).checkNoCost != (RewardedCheckNoCost *)0x0;
+  ppGVar1 = &(this->fields).displayObjectRoot;
+  *ppGVar1 = root;
+  func_?(ppGVar1,root);
+  ppRVar2 = &(this->fields).checkNoCost;
+  *ppRVar2 = action;
+  func_?(ppRVar2,action);
+  (this->fields).hasCheckNoCost = *ppRVar2 != (RewardedCheckNoCost *)0x0;
   this_00 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                       ((MethodInfo *)0x0);
   this_01 = (Action_3_Int32_Int32_ByteEnum_ *)
@@ -793,8 +772,8 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -822,8 +801,9 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
             ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
-  (this->fields).displayObjectRoot = root;
-  func_?(&(this->fields).displayObjectRoot,root);
+  ppGVar1 = &(this->fields).displayObjectRoot;
+  *ppGVar1 = root;
+  func_?(ppGVar1,root);
   this_00 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                       ((MethodInfo *)0x0);
   this_01 = (Action_3_Int32_Int32_ByteEnum_ *)
@@ -837,17 +817,17 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
     SpawnRoleDataMediator_add_OnKilled
               (this_00,(Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)this_01,
                (MethodInfo *)0x0);
-    uVar1 = (this->fields).displayObjectOffset.x;
-    uVar2 = (this->fields).displayObjectOffset.y;
-    fVar3 = (this->fields).displayObjectOffset.z;
-    (this->fields).displayObjectOffset.x = displayOffset.x + (float)uVar1;
-    (this->fields).displayObjectOffset.y = displayOffset.y + (float)uVar2;
-    (this->fields).displayObjectOffset.z = displayOffset.z + fVar3;
+    uVar2 = (this->fields).displayObjectOffset.x;
+    uVar3 = (this->fields).displayObjectOffset.y;
+    fVar4 = (this->fields).displayObjectOffset.z;
+    (this->fields).displayObjectOffset.x = displayOffset.x + (float)uVar2;
+    (this->fields).displayObjectOffset.y = displayOffset.y + (float)uVar3;
+    (this->fields).displayObjectOffset.z = displayOffset.z + fVar4;
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -875,11 +855,13 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
             ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
-  (this->fields).displayObjectRoot = root;
-  func_?(&(this->fields).displayObjectRoot,root);
-  (this->fields).checkNoCost = action;
-  func_?(&(this->fields).checkNoCost,action);
-  (this->fields).hasCheckNoCost = (this->fields).checkNoCost != (RewardedCheckNoCost *)0x0;
+  ppGVar1 = &(this->fields).displayObjectRoot;
+  *ppGVar1 = root;
+  func_?(ppGVar1,root);
+  ppRVar2 = &(this->fields).checkNoCost;
+  *ppRVar2 = action;
+  func_?(ppRVar2,action);
+  (this->fields).hasCheckNoCost = *ppRVar2 != (RewardedCheckNoCost *)0x0;
   this_00 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                       ((MethodInfo *)0x0);
   this_01 = (Action_3_Int32_Int32_ByteEnum_ *)
@@ -893,17 +875,17 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
     SpawnRoleDataMediator_add_OnKilled
               (this_00,(Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)this_01,
                (MethodInfo *)0x0);
-    uVar1 = (this->fields).displayObjectOffset.x;
-    uVar2 = (this->fields).displayObjectOffset.y;
-    fVar3 = (this->fields).displayObjectOffset.z;
-    (this->fields).displayObjectOffset.x = displayOffset.x + (float)uVar1;
-    (this->fields).displayObjectOffset.y = displayOffset.y + (float)uVar2;
-    (this->fields).displayObjectOffset.z = displayOffset.z + fVar3;
+    uVar3 = (this->fields).displayObjectOffset.x;
+    uVar4 = (this->fields).displayObjectOffset.y;
+    fVar5 = (this->fields).displayObjectOffset.z;
+    (this->fields).displayObjectOffset.x = displayOffset.x + (float)uVar3;
+    (this->fields).displayObjectOffset.y = displayOffset.y + (float)uVar4;
+    (this->fields).displayObjectOffset.z = displayOffset.z + fVar5;
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

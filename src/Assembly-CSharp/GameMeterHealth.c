@@ -73,16 +73,18 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
           if ((pSVar1 != (SpawnRoleDataMediator *)0x0) &&
              (this_00 = (SpawnRoleVariable_1_System_Single_ *)(pSVar1->fields).health,
              this_00 != (SpawnRoleVariable_1_System_Single_ *)0x0)) {
-            fVar4 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
-                    SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Single]::
-                    SpawnRoleVariable_1_System_Single__get_Value
-                              (this_00,
-                               MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__
-                              );
+            ppMVar4 = (MethodInfo **)
+                      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+                      SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Single]::
+                      SpawnRoleVariable_1_System_Single__get_Value
+                                (this_00,
+                                 MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__
+                                );
             if (cRam_? == '\0') {
-              func_?(&
-                              MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Count__
-                             );
+              ppMVar4 = &
+                        MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Count__
+              ;
+              func_?();
               func_?(&
                               MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
                              );
@@ -91,26 +93,27 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
             this_01 = (ProgressBarAndroid *)(this->fields).progressBar;
             if (this_01 != (ProgressBarAndroid *)0x0) {
               ProgressBarAndroid::ProgressBarAndroid_set_Progress
-                        (this_01,fVar4 / (float)(this->fields).maxValue,(MethodInfo *)0x0);
+                        (this_01,(float)ppMVar4 / (float)(this->fields).maxValue,(MethodInfo *)0x0);
               index = 0;
-              pLVar5 = (this->fields)._.gameMeterVisualEffects;
-              while (pLVar5 != (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) {
-                if ((pLVar5->fields)._size <= index) {
+              this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                        (this->fields)._.gameMeterVisualEffects;
+              while (this_02 !=
+                     (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+                if ((this_02->fields)._size <= index) {
                   return;
                 }
-                this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                          (this->fields)._.gameMeterVisualEffects;
                 if ((this_02 ==
                      (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-                   (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                   (RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                             RegularExpressions::RegexCharClass+SingleRange]::
                             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                                       (this_02,index,
                                        MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
-                                      ), RVar6 == (RegexCharClass_SingleRange)0x0)) break;
-                (**(code **)(*(int *)RVar6 + 0xe0))(RVar6,*(undefined4 *)(*(int *)RVar6 + 0xe4));
+                                      ), RVar5 == (RegexCharClass_SingleRange)0x0)) break;
+                (**(code **)(*(int *)RVar5 + 0xe0))();
                 index = index + 1;
-                pLVar5 = (this->fields)._.gameMeterVisualEffects;
+                this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                          (this->fields)._.gameMeterVisualEffects;
               }
             }
           }
@@ -119,8 +122,8 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -145,28 +148,28 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_OnProgressUpdate
     ProgressBarAndroid::ProgressBarAndroid_set_Progress
               (this_00,newValue / (float)(this->fields).maxValue,(MethodInfo *)0x0);
     index = 0;
-    pLVar1 = (this->fields)._.gameMeterVisualEffects;
-    while (pLVar1 != (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) {
-      if ((pLVar1->fields)._size <= index) {
+    this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields)._.gameMeterVisualEffects;
+    while (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      if ((this_01->fields)._size <= index) {
         return;
       }
-      this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (this->fields)._.gameMeterVisualEffects;
       if ((this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-         (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+         (RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                             (this_01,index,
                              MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
-                            ), RVar2 == (RegexCharClass_SingleRange)0x0)) break;
-      (**(code **)(*(int *)RVar2 + 0xe0))();
+                            ), RVar1 == (RegexCharClass_SingleRange)0x0)) break;
+      (**(code **)(*(int *)RVar1 + 0xe0))();
       index = index + 1;
-      pLVar1 = (this->fields)._.gameMeterVisualEffects;
+      this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                (this->fields)._.gameMeterVisualEffects;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -197,8 +200,9 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth__ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__List__
             );
-  (this->fields)._.gameMeterVisualEffects = this_00;
-  func_?(&(this->fields)._.gameMeterVisualEffects,this_00);
+  ppLVar1 = &(this->fields)._.gameMeterVisualEffects;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   (this->fields)._.meterActive = 1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

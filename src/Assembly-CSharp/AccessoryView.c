@@ -40,91 +40,93 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_AvatarAccessoryCreateHand
                        ((Object *)pAVar3,
                         AccessoryPreviewer_MethodInfo__UnityEngine__Object__Instantiate<AccessoryPreviewer>_AccessoryPreviewer_
                        );
-    (this->fields).previewer = pAVar3;
-    func_?(&(this->fields).previewer,pAVar3);
-    pAVar3 = (this->fields).previewer;
-    if (pAVar3 != (AccessoryPreviewer *)0x0) {
+    ppAVar4 = &(this->fields).previewer;
+    *ppAVar4 = pAVar3;
+    func_?(ppAVar4,pAVar3);
+    if (*ppAVar4 != (AccessoryPreviewer *)0x0) {
       pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)pAVar3,(MethodInfo *)0x0);
+                         ((Component *)*ppAVar4,(MethodInfo *)0x0);
       if (pTVar1 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
                   (pTVar1,(this->fields).rootTransform,(MethodInfo *)0x0);
-        pAVar3 = (this->fields).previewer;
-        pEVar4 = (Enum__Class *)0x0;
-        pMVar5 = (MonitorData *)0x40333333;
+        pAVar3 = *ppAVar4;
+        pEVar5 = (Enum__Class *)0x0;
+        pMVar6 = (MonitorData *)0x40333333;
         if (avatarAccessory != (AvatarAccessory *)0x0) {
-          pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)avatarAccessory,(MethodInfo *)0x0);
+          pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)avatarAccessory,(MethodInfo *)0x0);
           if (pAVar3 != (AccessoryPreviewer *)0x0) {
-            cameraPosOffset.y = (float)pMVar5;
-            cameraPosOffset.x = (float)pEVar4;
+            cameraPosOffset.y = (float)pMVar6;
+            cameraPosOffset.x = (float)pEVar5;
             cameraPosOffset.z = -3.5;
             AccessoryPreviewer::AccessoryPreviewer_Initialize
                       (pAVar3,0x200,0x200,LayerFlags__Enum_CamRotateTarget|LayerFlags__Enum_Default,
                        CameraClearFlags__Enum_Color,cameraPosOffset,(Vector3)ZEXT812(0xc0400000),
-                       pGVar6,(this->fields).rootTransform,(MethodInfo *)0x0);
-            if ((this->fields).OnFinished != (Action *)0x0) {
-              (*(((this->fields).OnFinished)->fields)._._.invoke_impl)();
+                       pGVar7,(this->fields).rootTransform,(MethodInfo *)0x0);
+            pAVar8 = (this->fields).OnFinished;
+            if (pAVar8 != (Action *)0x0) {
+              (*(pAVar8->fields)._._.invoke_impl)();
             }
             (this->fields).OnFinished = (Action *)0x0;
             func_?();
             if ((this->fields).accessoryDataClient != (AccessoryDataClient *)0x0) {
-              pSVar7 = mscorlib.dll::System::Enum::Enum_ToString
-                                 ((Enum *)&stack0xffffffe0,(MethodInfo *)0x0);
-              pSVar7 = mscorlib.dll::System::String::String_Concat_4
-                                 (StringLiteral_AvatarAccessory_,pSVar7,StringLiteral__Images_,
-                                  (MethodInfo *)0x0);
-              pAVar8 = (this->fields).accessoryDataClient;
-              if (pAVar8 != (AccessoryDataClient *)0x0) {
-                pSVar9 = (pAVar8->fields)._.url;
-                pSVar10 = (String__Array *)func_?(TypeInfo__System__String,1);
-                pSVar11 = ::StringLiteral__;
-                if (pSVar10 != (String__Array *)0x0) {
-                  if (pSVar10->max_length != 0) {
-                    pSVar10->vector[0] = ::StringLiteral__;
-                    func_?(pSVar10->vector,pSVar11);
-                    if (pSVar9 == (String *)0x0) goto code_?;
-                    pSVar10 = mscorlib.dll::System::String::String_Split_4
-                                       (pSVar9,pSVar10,StringSplitOptions__Enum_None,
-                                        (MethodInfo *)0x0);
-                    if (pSVar10 == (String__Array *)0x0) goto code_?;
-                    if (pSVar10->max_length - 1 < pSVar10->max_length) {
-                      pSVar9 = pSVar10->vector[pSVar10->max_length - 1];
-                      pSVar10 = (String__Array *)func_?(TypeInfo__System__String,1);
-                      pSVar11 = ::StringLiteral__;
-                      if (pSVar10 == (String__Array *)0x0) goto code_?;
-                      if (pSVar10->max_length != 0) {
-                        pSVar10->vector[0] = ::StringLiteral__;
-                        func_?(pSVar10->vector,pSVar11);
-                        if (pSVar9 == (String *)0x0) goto code_?;
-                        pSVar10 = mscorlib.dll::System::String::String_Split_4
-                                           (pSVar9,pSVar10,StringSplitOptions__Enum_None,
-                                            (MethodInfo *)0x0);
-                        if (pSVar10 == (String__Array *)0x0) goto code_?;
-                        if (pSVar10->max_length != 0) {
-                          pSVar9 = mscorlib.dll::System::String::String_Concat_3
-                                              (pSVar10->vector[0],StringLiteral_Image_unity3d,
+              pSVar9 = mscorlib.dll::System::Enum::Enum_ToString
+                                  ((Enum *)&stack0xffffffe0,(MethodInfo *)0x0);
+              pSVar9 = mscorlib.dll::System::String::String_Concat_4
+                                  (StringLiteral_AvatarAccessory_,pSVar9,StringLiteral__Images_,
+                                   (MethodInfo *)0x0);
+              pAVar10 = (this->fields).accessoryDataClient;
+              if (pAVar10 != (AccessoryDataClient *)0x0) {
+                pSVar11 = (pAVar10->fields)._.url;
+                pSVar12 = (String__Array *)func_?(TypeInfo__System__String,1);
+                pSVar13 = ::StringLiteral__;
+                if (pSVar12 != (String__Array *)0x0) {
+                  if (pSVar12->max_length != 0) {
+                    pSVar12->vector[0] = ::StringLiteral__;
+                    func_?(pSVar12->vector,pSVar13);
+                    if (pSVar11 == (String *)0x0) goto code_?;
+                    pSVar12 = mscorlib.dll::System::String::String_Split_4
+                                        (pSVar11,pSVar12,StringSplitOptions__Enum_None,
+                                         (MethodInfo *)0x0);
+                    if (pSVar12 == (String__Array *)0x0) goto code_?;
+                    uVar14 = pSVar12->max_length;
+                    if (uVar14 - 1 < uVar14) {
+                      pSVar11 = pSVar12->vector[uVar14 - 1];
+                      pSVar12 = (String__Array *)func_?(TypeInfo__System__String,1);
+                      pSVar13 = ::StringLiteral__;
+                      if (pSVar12 == (String__Array *)0x0) goto code_?;
+                      if (pSVar12->max_length != 0) {
+                        pSVar12->vector[0] = ::StringLiteral__;
+                        func_?(pSVar12->vector,pSVar13);
+                        if (pSVar11 == (String *)0x0) goto code_?;
+                        pSVar12 = mscorlib.dll::System::String::String_Split_4
+                                            (pSVar11,pSVar12,StringSplitOptions__Enum_None,
+                                             (MethodInfo *)0x0);
+                        if (pSVar12 == (String__Array *)0x0) goto code_?;
+                        if (pSVar12->max_length != 0) {
+                          pSVar11 = mscorlib.dll::System::String::String_Concat_3
+                                              (pSVar12->vector[0],StringLiteral_Image_unity3d,
                                                (MethodInfo *)0x0);
-                          if (pSVar9 != (String *)0x0) {
-                            pSVar9 = mscorlib.dll::System::String::String_ToLower
-                                                (pSVar9,(MethodInfo *)0x0);
-                            pSVar7 = mscorlib.dll::System::String::String_Concat_3
-                                               (pSVar7,pSVar9,(MethodInfo *)0x0);
-                            pOVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          if (pSVar11 != (String *)0x0) {
+                            pSVar11 = mscorlib.dll::System::String::String_ToLower
+                                                (pSVar11,(MethodInfo *)0x0);
+                            pSVar9 = mscorlib.dll::System::String::String_Concat_3
+                                                (pSVar9,pSVar11,(MethodInfo *)0x0);
+                            pOVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                       Component_GetComponentsInChildren
                                                 ((Component *)avatarAccessory,
                                                  SkinnedMeshOptimizer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<SkinnedMeshOptimizer>______
                                                 );
-                            uVar13 = 0;
-                            if (pOVar12 != (Object__Array *)0x0) {
-                              ppOVar14 = pOVar12->vector;
-                              for (; (int)uVar13 < (int)pOVar12->max_length; uVar13 = uVar13 + 1) {
-                                if (pOVar12->max_length <= uVar13) goto code_?;
-                                if ((SkinnedMeshOptimizer *)*ppOVar14 == (SkinnedMeshOptimizer *)0x0
+                            uVar14 = 0;
+                            if (pOVar15 != (Object__Array *)0x0) {
+                              ppOVar16 = pOVar15->vector;
+                              for (; (int)uVar14 < (int)pOVar15->max_length; uVar14 = uVar14 + 1) {
+                                if (pOVar15->max_length <= uVar14) goto code_?;
+                                if ((SkinnedMeshOptimizer *)*ppOVar16 == (SkinnedMeshOptimizer *)0x0
                                    ) goto code_?;
                                 SkinnedMeshOptimizer::SkinnedMeshOptimizer_DisableOptimizer
-                                          ((SkinnedMeshOptimizer *)*ppOVar14,(MethodInfo *)0x0);
-                                ppOVar14 = ppOVar14 + 1;
+                                          ((SkinnedMeshOptimizer *)*ppOVar16,(MethodInfo *)0x0);
+                                ppOVar16 = ppOVar16 + 1;
                               }
                               this_00 = (this->fields).previewImageStreamingManager;
                               this_01 = (NavMesh_OnNavMeshPreUpdate *)
@@ -136,9 +138,11 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_AvatarAccessoryCreateHand
                                          ,(MethodInfo *)0x0);
                               if (this_00 != (StreamedSpriteToImageManual *)0x0) {
                                 StreamedSpriteToImageManual::StreamedSpriteToImageManual_Download
-                                          (this_00,pSVar7,(UnityAction *)this_01,(MethodInfo *)0x0);
-                                (this->fields).previewImageUrl = pSVar7;
-                                func_?(&(this->fields).previewImageUrl,pSVar7);
+                                          (this_00,pSVar9,(UnityAction *)this_01,(MethodInfo *)0x0)
+                                ;
+                                ppSVar17 = &(this->fields).previewImageUrl;
+                                *ppSVar17 = pSVar9;
+                                func_?(ppSVar17,pSVar9);
                                 return;
                               }
                             }
@@ -159,19 +163,19 @@ code_?:
     }
   }
   else if (avatarAccessory != (AvatarAccessory *)0x0) {
-    pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)avatarAccessory,(MethodInfo *)0x0);
+    pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)avatarAccessory,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)pGVar6,(MethodInfo *)0x0);
+              ((Object_1 *)pGVar7,(MethodInfo *)0x0);
     return;
   }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -207,52 +211,54 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_BackToShop
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).rootTransform;
+  ppTVar2 = &(this->fields).rootTransform;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pTVar1 = (this->fields).rootTransform;
+  if (bVar3 != 0) {
+    pTVar1 = *ppTVar2;
     if (pTVar1 == (Transform *)0x0) goto code_?;
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)pTVar1,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)pGVar3,(MethodInfo *)0x0);
+              ((Object_1 *)pGVar4,(MethodInfo *)0x0);
   }
-  (this->fields).rootTransform = (Transform *)0x0;
+  *ppTVar2 = (Transform *)0x0;
   func_?();
-  if ((this->fields).accessoryLoader != (AccessoryLoader *)0x0) {
+  this_00 = (this->fields).accessoryLoader;
+  if (this_00 != (AccessoryLoader *)0x0) {
     Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader_Destroy
-              ((this->fields).accessoryLoader,(MethodInfo *)0x0);
+              (this_00,(MethodInfo *)0x0);
   }
-  pAVar4 = (this->fields).previewer;
+  pAVar5 = (this->fields).previewer;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pAVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pAVar4 = (this->fields).previewer;
-    if (pAVar4 == (AccessoryPreviewer *)0x0) goto code_?;
-    AccessoryPreviewer::AccessoryPreviewer_Destroy(pAVar4,(MethodInfo *)0x0);
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)pAVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    pAVar5 = (this->fields).previewer;
+    if (pAVar5 == (AccessoryPreviewer *)0x0) goto code_?;
+    AccessoryPreviewer::AccessoryPreviewer_Destroy(pAVar5,(MethodInfo *)0x0);
   }
-  this_00 = (this->fields).tabMenu;
-  if (this_00 != (TabMenuAccessoryShop *)0x0) {
+  this_01 = (this->fields).tabMenu;
+  if (this_01 != (TabMenuAccessoryShop *)0x0) {
     x = TabMenuAccessoryShop::TabMenuAccessoryShop_GetTabMenuButton
-                  (this_00,AccessoryCategoryClient__Enum_Featured,(MethodInfo *)0x0);
+                  (this_01,AccessoryCategoryClient__Enum_Featured,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                       ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+    if (bVar3 != 0) {
       AccessoryView_DestroyFeaturedTab(this,(MethodInfo *)0x0);
     }
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__AccessoryView____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -262,11 +268,11 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_BackToShop
       if ((TypeInfo__AccessoryView____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pAVar5 = TypeInfo__AccessoryView____c->static_fields->__9;
+      pAVar6 = TypeInfo__AccessoryView____c->static_fields->__9;
       callbackFunction = (ExecuteEvents_EventFunction_1_IAccessoryClicked_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pAVar5,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pAVar6,
                  MethodInfo__AccessoryView____c___BackToShop_b__50_0_UnityEngine__EventSystems__IAccessoryClicked__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       TypeInfo__AccessoryView____c->static_fields->__9__50_0 = callbackFunction;
@@ -276,11 +282,11 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_BackToShop
       func_?();
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar3,(BaseEventData *)0x0,
+              (pGVar4,(BaseEventData *)0x0,
                (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAccessoryClicked>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAccessoryClicked>_
               );
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__AccessoryView____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -290,12 +296,12 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_BackToShop
       if ((TypeInfo__AccessoryView____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pAVar5 = TypeInfo__AccessoryView____c->static_fields->__9;
+      pAVar6 = TypeInfo__AccessoryView____c->static_fields->__9;
       callbackFunction_00 =
            (ExecuteEvents_EventFunction_1_IAccessoryInventoryControl_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)pAVar5,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)pAVar6,
                  MethodInfo__AccessoryView____c___BackToShop_b__50_1_UnityEngine__EventSystems__IAccessoryInventoryControl__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       TypeInfo__AccessoryView____c->static_fields->__9__50_1 = callbackFunction_00;
@@ -305,7 +311,7 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_BackToShop
       func_?();
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar3,(BaseEventData *)0x0,
+              (pGVar4,(BaseEventData *)0x0,
                (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAccessoryInventoryControl>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAccessoryInventoryControl>_
               );
@@ -313,8 +319,8 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_BackToShop
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -326,17 +332,20 @@ bool Assembly-CSharp.dll::AccessoryView::AccessoryView_CurrentlyViewingAccessory
 
 {
   puStack_1 = &stack0xfffffffc;
-  if ((this->fields).accessoryDataClient == (AccessoryDataClient *)0x0) {
-    return 0;
+  pAVar2 = (this->fields).accessoryDataClient;
+  if (pAVar2 != (AccessoryDataClient *)0x0) {
+    if (data == (AccessoryDataClient *)0x0) {
+      uVar3 = func_?(auStack_4);
+      func_?(uVar3);
+      pcVar5 = (code *)swi(3);
+      bVar6 = (*pcVar5)();
+      return bVar6;
+    }
+    if ((pAVar2->fields)._.aMDID == (data->fields)._.aMDID) {
+      return 1;
+    }
   }
-  if (data != (AccessoryDataClient *)0x0) {
-    return (((this->fields).accessoryDataClient)->fields)._.aMDID == (data->fields)._.aMDID;
-  }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  return 0;
 }
 
 
@@ -347,73 +356,180 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_Destroy
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__AccessoryView__OnLevelRequirementLoaded_UnityEngine__Networking__UnityWebRequest_
-                   );
-    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-    func_?(&TypeInfo__AsyncWWWManager);
-    func_?(&TypeInfo__UnityEngine__Object);
+    func_?();
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  pDVar1 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+            *)func_?();
   DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
   DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            (this_00,(Object *)this,
+            (pDVar1,(Object *)this,
              MethodInfo__AccessoryView__OnLevelRequirementLoaded_UnityEngine__Networking__UnityWebRequest_
              ,(MethodInfo *)0x0);
   if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
-  pTVar1 = (this->fields).rootTransform;
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar1,(MethodInfo *)0x0);
+  ppTVar2 = &(this->fields).rootTransform;
+  x = *ppTVar2;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pTVar1 = (this->fields).rootTransform;
-    if (pTVar1 == (Transform *)0x0) goto code_?;
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)pTVar1,(MethodInfo *)0x0);
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    if (*ppTVar2 == (Transform *)0x0) goto code_?;
+    in_stack_4 = (undefined *)0x0;
+    pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)*ppTVar2,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      in_stack_6 = TypeInfo__UnityEngine__Object;
+      in_stack_7 = (GameObject *)&UNK_?;
       func_?();
     }
+    in_stack_6 = (Object_1__Class *)0x0;
+    in_stack_4 = &UNK_?;
+    in_stack_7 = pGVar5;
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)pGVar3,(MethodInfo *)0x0);
+              ((Object_1 *)pGVar5,(MethodInfo *)0x0);
   }
-  (this->fields).rootTransform = (Transform *)0x0;
+  *ppTVar2 = (Transform *)0x0;
+  in_stack_6 = (Object_1__Class *)&UNK_?;
   func_?();
-  pAVar4 = (this->fields).previewer;
+  pAVar8 = (this->fields).previewer;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pAVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pAVar4 = (this->fields).previewer;
-    if (pAVar4 == (AccessoryPreviewer *)0x0) {
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)pAVar8,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    pAVar8 = (this->fields).previewer;
+    if (pAVar8 == (AccessoryPreviewer *)0x0) {
 code_?:
+      in_stack_4 = &UNK_?;
       func_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
       return;
     }
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)pAVar4,(MethodInfo *)0x0);
+    in_stack_4 = (undefined *)0x0;
+    pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)pAVar8,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      in_stack_6 = TypeInfo__UnityEngine__Object;
+      in_stack_7 = (GameObject *)&UNK_?;
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)pGVar3,(MethodInfo *)0x0);
+              ((Object_1 *)pGVar5,(MethodInfo *)0x0);
   }
-  if ((this->fields).accessoryLoader != (AccessoryLoader *)0x0) {
-    Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader_Destroy
-              ((this->fields).accessoryLoader,(MethodInfo *)0x0);
+  if ((this->fields).accessoryLoader == (AccessoryLoader *)0x0) {
+    return;
   }
+  in_stack_6 = (Object_1__Class *)0xffffffff;
+  in_stack_7 = (GameObject *)&DAT_?;
+  in_stack_4 = (undefined *)*unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &stack0x00000010;
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::Request>__Clear__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::Request>__GetEnumerator__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::Request>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::Request>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::Request>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<int,_Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::Request>__get_Value__
+                   );
+    cRam_? = '\x01';
+  }
+  method_00 = *(MethodInfo **)(in_stack_10 + 0xc);
+  if (method_00 != (MethodInfo *)0x0) {
+    pDVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                        &stack0xffffffcc,(Dictionary_2_System_UInt32_System_Object_ *)method_00,
+                        MethodInfo__System__Collections__Generic__Dictionary<int,_Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::Request>__GetEnumerator__
+                       );
+    uVar12 = *(undefined8 *)&(pDVar11->_current).value;
+    in_stack_6 = (Object_1__Class *)0x1;
+    while( true ) {
+      bVar3 = mscorlib.dll::System::Collections::Generic::
+              Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+              Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                         &stack0xffffffe4,
+                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::Request>__MoveNext__
+                        );
+      if (bVar3 == 0) break;
+      if (((Object *)uVar12 == (Object *)0x0) ||
+         (object = (Object *)((Object *)uVar12)[1].monitor, object == (Object *)0x0))
+      goto code_?;
+      if (cRam_? == '\0') {
+        func_?(&
+                        MethodInfo__Assets__Scripts__WorldObjectTypes__Avatar__Accessories__AccessoryLoader__AccessoryLoaderRequest__Callback_UnityEngine__Networking__UnityWebRequest_
+                       );
+        func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+        func_?(&TypeInfo__AsyncWWWManager);
+        cRam_? = '\x01';
+      }
+      object[1].monitor = (MonitorData *)0x0;
+      func_?(&object[1].monitor,0);
+      method_00 = (MethodInfo *)&UNK_?;
+      pDVar1 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
+                                 );
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (pDVar1,object,
+                 MethodInfo__Assets__Scripts__WorldObjectTypes__Avatar__Accessories__AccessoryLoader__AccessoryLoaderRequest__Callback_UnityEngine__Networking__UnityWebRequest_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__AsyncWWWManager);
+      }
+      AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
+                ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar1,(MethodInfo *)0x0);
+    }
+    in_stack_6 = (Object_1__Class *)0xffffffff;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)&stack0xffffffe4,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::Request>__Dispose__
+               ,method_00);
+    in_stack_6 = (Object_1__Class *)0xffffffff;
+    if (*(Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+          **)(in_stack_10 + 0xc) !=
+        (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+         *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets
+      ::StyleSheetCache+SheetHandleKey,System::Object]::
+      Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
+                (*(Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                   **)(in_stack_10 + 0xc),
+                 MethodInfo__System__Collections__Generic__Dictionary<int,_Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::Request>__Clear__
+                );
+      *unaff_FS_OFFSET = in_stack_4;
+      return;
+    }
+  }
+code_?:
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -492,9 +608,10 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_DestroyFeaturedTab
         if (bVar7 == 0) break;
         index = 0;
         pLVar6 = this_03;
-        if (this_03 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-        goto code_?;
-        for (; index < (this_03->fields)._size; index = index + 1) {
+        while( true ) {
+          if (this_03 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+          goto code_?;
+          if ((this_03->fields)._size <= index) break;
           RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
@@ -517,6 +634,7 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_DestroyFeaturedTab
               bVar4 = true;
             }
           }
+          index = index + 1;
         }
       }
       uStack_1 = 0xffffffff;
@@ -710,24 +828,25 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_HandlePreviewing
                (AccessoryView *this,MVBody *avatarBody,MethodInfo *method)
 
 {
-  (this->fields).avatarBody = avatarBody;
-  func_?(&(this->fields).avatarBody,avatarBody);
-  pAVar1 = (this->fields).accessoryDataClient;
-  if ((pAVar1 != (AccessoryDataClient *)0x0) && (avatarBody != (MVBody *)0x0)) {
-    bVar2 = MVBody::MVBody_IsAccessoryEquipped(avatarBody,(pAVar1->fields)._.sAID,(MethodInfo *)0x0)
+  ppMVar1 = &(this->fields).avatarBody;
+  *ppMVar1 = avatarBody;
+  func_?(ppMVar1,avatarBody);
+  pAVar2 = (this->fields).accessoryDataClient;
+  if ((pAVar2 != (AccessoryDataClient *)0x0) && (avatarBody != (MVBody *)0x0)) {
+    bVar3 = MVBody::MVBody_IsAccessoryEquipped(avatarBody,(pAVar2->fields)._.sAID,(MethodInfo *)0x0)
     ;
-    pAVar3 = (this->fields).sizeSlider;
-    (this->fields).isPreviewing = bVar2 ^ 1;
-    if (pAVar3 != (AccessorySizeSlider *)0x0) {
-      (pAVar3->fields).isInPreview = bVar2 ^ 1;
-      pAVar4 = (this->fields).offsetSlider;
-      if (pAVar4 != (AccessoryOffsetSlider *)0x0) {
-        (pAVar4->fields).isInPreview = (this->fields).isPreviewing;
-        pAVar1 = (this->fields).accessoryDataClient;
-        if (pAVar1 != (AccessoryDataClient *)0x0) {
-          bVar2 = MVBody::MVBody_IsAccessoryEquipped
-                            (avatarBody,(pAVar1->fields)._.sAID,(MethodInfo *)0x0);
-          if (bVar2 == 0) {
+    pAVar4 = (this->fields).sizeSlider;
+    (this->fields).isPreviewing = bVar3 == 0;
+    if (pAVar4 != (AccessorySizeSlider *)0x0) {
+      (pAVar4->fields).isInPreview = bVar3 == 0;
+      pAVar5 = (this->fields).offsetSlider;
+      if (pAVar5 != (AccessoryOffsetSlider *)0x0) {
+        (pAVar5->fields).isInPreview = (this->fields).isPreviewing;
+        pAVar2 = (this->fields).accessoryDataClient;
+        if (pAVar2 != (AccessoryDataClient *)0x0) {
+          bVar3 = MVBody::MVBody_IsAccessoryEquipped
+                            (avatarBody,(pAVar2->fields)._.sAID,(MethodInfo *)0x0);
+          if (bVar3 == 0) {
             MVBody::MVBody_PreviewAccessory
                       (avatarBody,(this->fields).accessoryDataClient,(MethodInfo *)0x0);
           }
@@ -737,8 +856,8 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_HandlePreviewing
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -1060,42 +1179,42 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_Initialize
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).rootTransform;
+  ppTVar2 = &(this->fields).rootTransform;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pTVar1 = (this->fields).rootTransform;
-    if (pTVar1 == (Transform *)0x0) goto code_?;
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        ((Component *)pTVar1,(MethodInfo *)0x0);
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                     ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    if (*ppTVar2 == (Transform *)0x0) goto code_?;
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)*ppTVar2,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)pGVar3,(MethodInfo *)0x0);
+              ((Object_1 *)pGVar4,(MethodInfo *)0x0);
   }
-  pGVar3 = (GameObject *)func_?();
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(pGVar3,(MethodInfo *)0x0)
+  pGVar4 = (GameObject *)func_?();
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(pGVar4,(MethodInfo *)0x0)
   ;
-  if (pGVar3 != (GameObject *)0x0) {
+  if (pGVar4 != (GameObject *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                        (pGVar3,(MethodInfo *)0x0);
-    (this->fields).rootTransform = pTVar1;
-    func_?(&(this->fields).rootTransform);
-    pTVar1 = (this->fields).rootTransform;
-    if (pTVar1 != (Transform *)0x0) {
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)pTVar1,(MethodInfo *)0x0);
-      if (pGVar3 != (GameObject *)0x0) {
+                        (pGVar4,(MethodInfo *)0x0);
+    *ppTVar2 = pTVar1;
+    func_?(ppTVar2,pTVar1);
+    if (*ppTVar2 != (Transform *)0x0) {
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)*ppTVar2,(MethodInfo *)0x0);
+      if (pGVar4 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
-                  ((Object_1 *)pGVar3,StringLiteral_Accessory_Preview,(MethodInfo *)0x0);
-        (this->fields).accessoryDataClient = accessoryData;
-        func_?(&(this->fields).accessoryDataClient,accessoryData);
-        MVar4 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-        if (MVar4 == MVGameMode__Enum_CharacterEditor) {
-          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                  ((Object_1 *)pGVar4,StringLiteral_Accessory_Preview,(MethodInfo *)0x0);
+        ppAVar5 = &(this->fields).accessoryDataClient;
+        *ppAVar5 = accessoryData;
+        func_?(ppAVar5,accessoryData);
+        MVar6 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+        if (MVar6 == MVGameMode__Enum_CharacterEditor) {
+          pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                               ((Component *)this,(MethodInfo *)0x0);
           callbackFunction =
                (ExecuteEvents_EventFunction_1_System_Object_ *)
@@ -1113,115 +1232,112 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_Initialize
           }
           UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
           ExecuteEvents_ExecuteHierarchy
-                    (pGVar3,(BaseEventData *)0x0,callbackFunction,
+                    (pGVar4,(BaseEventData *)0x0,callbackFunction,
                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IGetCurrentBody>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>_
                     );
         }
         else {
-          pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-          if (pMVar5 == (MVLocalPlayer *)0x0) goto code_?;
-          this_05 = MVLocalPlayer::MVLocalPlayer_get_Body(pMVar5,(MethodInfo *)0x0);
-          (this->fields).avatarBody = this_05;
-          func_?(&(this->fields).avatarBody);
-          pAVar6 = (this->fields).accessoryDataClient;
-          if ((pAVar6 == (AccessoryDataClient *)0x0) || (this_05 == (MVBody *)0x0))
+          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+          if (pMVar7 == (MVLocalPlayer *)0x0) goto code_?;
+          this_05 = MVLocalPlayer::MVLocalPlayer_get_Body(pMVar7,(MethodInfo *)0x0);
+          ppMVar8 = &(this->fields).avatarBody;
+          *ppMVar8 = this_05;
+          func_?(ppMVar8,this_05);
+          if ((*ppAVar5 == (AccessoryDataClient *)0x0) || (this_05 == (MVBody *)0x0))
           goto code_?;
-          bVar2 = MVBody::MVBody_IsAccessoryEquipped
-                            (this_05,(pAVar6->fields)._.sAID,(MethodInfo *)0x0);
-          pAVar7 = (this->fields).sizeSlider;
-          (this->fields).isPreviewing = bVar2 ^ 1;
-          if (pAVar7 == (AccessorySizeSlider *)0x0) goto code_?;
-          (pAVar7->fields).isInPreview = bVar2 ^ 1;
-          pAVar8 = (this->fields).offsetSlider;
-          if (pAVar8 == (AccessoryOffsetSlider *)0x0) goto code_?;
-          (pAVar8->fields).isInPreview = (this->fields).isPreviewing;
-          pAVar6 = (this->fields).accessoryDataClient;
-          if (pAVar6 == (AccessoryDataClient *)0x0) goto code_?;
-          bVar2 = MVBody::MVBody_IsAccessoryEquipped
-                            (this_05,(pAVar6->fields)._.sAID,(MethodInfo *)0x0);
-          if (bVar2 == 0) {
-            MVBody::MVBody_PreviewAccessory
-                      (this_05,(this->fields).accessoryDataClient,(MethodInfo *)0x0);
+          bVar3 = MVBody::MVBody_IsAccessoryEquipped
+                             (this_05,((*ppAVar5)->fields)._.sAID,(MethodInfo *)0x0);
+          pAVar9 = (this->fields).sizeSlider;
+          (this->fields).isPreviewing = bVar3 == 0;
+          if (pAVar9 == (AccessorySizeSlider *)0x0) goto code_?;
+          (pAVar9->fields).isInPreview = bVar3 == 0;
+          pAVar10 = (this->fields).offsetSlider;
+          if (pAVar10 == (AccessoryOffsetSlider *)0x0) goto code_?;
+          (pAVar10->fields).isInPreview = (this->fields).isPreviewing;
+          if (*ppAVar5 == (AccessoryDataClient *)0x0) goto code_?;
+          bVar3 = MVBody::MVBody_IsAccessoryEquipped
+                             (this_05,((*ppAVar5)->fields)._.sAID,(MethodInfo *)0x0);
+          if (bVar3 == 0) {
+            MVBody::MVBody_PreviewAccessory(this_05,*ppAVar5,(MethodInfo *)0x0);
           }
         }
-        pTVar9 = (this->fields).goldSavedText;
-        if (pTVar9 != (Text *)0x0) {
-          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pTVar9,(MethodInfo *)0x0);
-          if (pGVar3 != (GameObject *)0x0) {
+        pTVar11 = (this->fields).goldSavedText;
+        if (pTVar11 != (Text *)0x0) {
+          pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)pTVar11,(MethodInfo *)0x0);
+          if (pGVar4 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar3,0,(MethodInfo *)0x0);
-            pTVar9 = (this->fields).nameText;
+                      (pGVar4,0,(MethodInfo *)0x0);
+            pTVar11 = (this->fields).nameText;
             if ((accessoryData != (AccessoryDataClient *)0x0) &&
-               (pSVar10 = (accessoryData->fields)._.name, pSVar10 != (String *)0x0)) {
-              mscorlib.dll::System::String::String_ToUpper(pSVar10,(MethodInfo *)0x0);
-              if (pTVar9 != (Text *)0x0) {
-                (*(code *)(pTVar9->klass->vtable).set_text.method)();
-                pAVar8 = (this->fields).offsetSlider;
-                if (pAVar8 != (AccessoryOffsetSlider *)0x0) {
+               (pSVar12 = (accessoryData->fields)._.name, pSVar12 != (String *)0x0)) {
+              mscorlib.dll::System::String::String_ToUpper(pSVar12,(MethodInfo *)0x0);
+              if (pTVar11 != (Text *)0x0) {
+                (*(code *)(pTVar11->klass->vtable).set_text.method)();
+                pAVar10 = (this->fields).offsetSlider;
+                if (pAVar10 != (AccessoryOffsetSlider *)0x0) {
                   AccessoryOffsetSlider::AccessoryOffsetSlider_Initialize
-                            (pAVar8,(accessoryData->fields)._.slot,(accessoryData->fields)._.sAID,
+                            (pAVar10,(accessoryData->fields)._.slot,(accessoryData->fields)._.sAID,
                              (MethodInfo *)0x0);
-                  pAVar7 = (this->fields).sizeSlider;
-                  if (pAVar7 != (AccessorySizeSlider *)0x0) {
+                  pAVar9 = (this->fields).sizeSlider;
+                  if (pAVar9 != (AccessorySizeSlider *)0x0) {
                     AccessorySizeSlider::AccessorySizeSlider_Initialize
-                              (pAVar7,(accessoryData->fields)._.slot,(accessoryData->fields)._.sAID,
+                              (pAVar9,(accessoryData->fields)._.slot,(accessoryData->fields)._.sAID,
                                (MethodInfo *)0x0);
                     this_00 = (this->fields).accessoryItemBackground;
                     if (this_00 != (AccessoryItemBackground *)0x0) {
                       AccessoryItemBackground::AccessoryItemBackground_Initialize
                                 (this_00,accessoryData,(MethodInfo *)0x0);
                       AccessoryView_SetShowNotOwnedUI(this,0,(MethodInfo *)0x0);
-                      pBVar11 = (this->fields).purchaseButton;
-                      if (pBVar11 != (Button *)0x0) {
-                        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                  Component_get_gameObject((Component *)pBVar11,(MethodInfo *)0x0);
-                        if (pGVar3 != (GameObject *)0x0) {
+                      pBVar13 = (this->fields).purchaseButton;
+                      if (pBVar13 != (Button *)0x0) {
+                        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                  Component_get_gameObject((Component *)pBVar13,(MethodInfo *)0x0);
+                        if (pGVar4 != (GameObject *)0x0) {
                           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                    (pGVar3,(accessoryData->fields)._.owns == 0,(MethodInfo *)0x0);
+                                    (pGVar4,(accessoryData->fields)._.owns == 0,(MethodInfo *)0x0);
                           this_01 = (this->fields).levelRequirementPurchaseButton;
                           if (this_01 != (RawImage *)0x0) {
-                            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                       Component_get_gameObject
                                                 ((Component *)this_01,(MethodInfo *)0x0);
-                            if (pGVar3 != (GameObject *)0x0) {
+                            if (pGVar4 != (GameObject *)0x0) {
                               UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                              GameObject_SetActive(pGVar3,0,(MethodInfo *)0x0);
-                              pAVar6 = (this->fields).accessoryDataClient;
-                              if (pAVar6 != (AccessoryDataClient *)0x0) {
-                                if ((pAVar6->fields)._.owns == 0) {
+                              GameObject_SetActive(pGVar4,0,(MethodInfo *)0x0);
+                              if (*ppAVar5 != (AccessoryDataClient *)0x0) {
+                                if (((*ppAVar5)->fields)._.owns == 0) {
                                   AccessoryView_SetShowNotOwnedUI(this,1,(MethodInfo *)0x0);
                                   this_06 = MVGameControllerBase::MVGameControllerBase_get_Game
                                                       ((MethodInfo *)0x0);
                                   if (this_06 == (MVNetworkGame *)0x0) goto code_?;
-                                  pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
+                                  pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
                                                       (this_06,(MethodInfo *)0x0);
-                                  if ((pMVar5 == (MVLocalPlayer *)0x0) ||
-                                     (pAVar6 = (this->fields).accessoryDataClient,
-                                     pAVar6 == (AccessoryDataClient *)0x0)) goto code_?;
-                                  if ((pMVar5->fields)._.level < (pAVar6->fields)._.lvl) {
+                                  if ((pMVar7 == (MVLocalPlayer *)0x0) ||
+                                     (pAVar14 = *ppAVar5, pAVar14 == (AccessoryDataClient *)0x0))
+                                  goto code_?;
+                                  if ((pMVar7->fields)._.level < (pAVar14->fields)._.lvl) {
                                     AccessoryView_SetShowPrices(this,0,(MethodInfo *)0x0);
                                   }
                                   else {
-                                    AccessoryView_HandlePrices(this,pAVar6,(MethodInfo *)0x0);
+                                    AccessoryView_HandlePrices(this,pAVar14,(MethodInfo *)0x0);
                                   }
-                                  pAVar6 = (this->fields).accessoryDataClient;
-                                  if ((pAVar6 == (AccessoryDataClient *)0x0) ||
-                                     (pAVar12 = (this->fields).timeLimitDisplayer,
-                                     pAVar12 == (AccessoryTimeLimitDisplayer *)0x0))
+                                  if ((*ppAVar5 == (AccessoryDataClient *)0x0) ||
+                                     (pAVar15 = (this->fields).timeLimitDisplayer,
+                                     pAVar15 == (AccessoryTimeLimitDisplayer *)0x0))
                                   goto code_?;
-                                  (pAVar12->fields).accessoryTimeLimitData = (pAVar6->fields)._.time;
+                                  (pAVar15->fields).accessoryTimeLimitData =
+                                       ((*ppAVar5)->fields)._.time;
                                   func_?();
-                                  pAVar12 = (this->fields).timeLimitDisplayer;
-                                  if (pAVar12 == (AccessoryTimeLimitDisplayer *)0x0)
+                                  pAVar15 = (this->fields).timeLimitDisplayer;
+                                  if (pAVar15 == (AccessoryTimeLimitDisplayer *)0x0)
                                   goto code_?;
-                                  pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                  pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                             Component_get_gameObject
-                                                      ((Component *)pAVar12,(MethodInfo *)0x0);
-                                  pAVar6 = (this->fields).accessoryDataClient;
-                                  if (pAVar6 == (AccessoryDataClient *)0x0) goto code_?;
-                                  if ((pAVar6->fields)._.owns == 0) {
-                                    this_02 = (pAVar6->fields)._.time;
+                                                      ((Component *)pAVar15,(MethodInfo *)0x0);
+                                  pAVar14 = *ppAVar5;
+                                  if (pAVar14 == (AccessoryDataClient *)0x0) goto code_?;
+                                  if ((pAVar14->fields)._.owns == 0) {
+                                    this_02 = (pAVar14->fields)._.time;
                                     if (this_02 == (AccessoryTimelimit *)0x0) goto code_?;
                                     this._0_1_ = MVWorldObject.dll::MV::WorldObject::Accessories::
                                                  AccessoryTimelimit::
@@ -1231,45 +1347,44 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_Initialize
                                   else {
                                     this._0_1_ = 0;
                                   }
-                                  if (pGVar3 == (GameObject *)0x0) goto code_?;
+                                  if (pGVar4 == (GameObject *)0x0) goto code_?;
                                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                  GameObject_SetActive(pGVar3,(bool)this,(MethodInfo *)0x0);
-                                  pAVar6 = (object->fields).accessoryDataClient;
-                                  if ((pAVar6 == (AccessoryDataClient *)0x0) ||
-                                     (pGVar3 = (object->fields).newAccessoryImage,
-                                     pGVar3 == (GameObject *)0x0)) goto code_?;
+                                  GameObject_SetActive(pGVar4,(bool)this,(MethodInfo *)0x0);
+                                  if ((*ppAVar5 == (AccessoryDataClient *)0x0) ||
+                                     (pGVar4 = (object->fields).newAccessoryImage,
+                                     pGVar4 == (GameObject *)0x0)) goto code_?;
                                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                                   GameObject_SetActive
-                                            (pGVar3,(pAVar6->fields)._.iNew,(MethodInfo *)0x0);
+                                            (pGVar4,((*ppAVar5)->fields)._.iNew,(MethodInfo *)0x0);
                                 }
                                 else {
                                   AccessoryView_SetShowNotOwnedUI(this,0,(MethodInfo *)0x0);
                                 }
-                                pAVar12 = (object->fields).timeLimitDisplayer;
-                                if (pAVar12 != (AccessoryTimeLimitDisplayer *)0x0) {
-                                  pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                pAVar15 = (object->fields).timeLimitDisplayer;
+                                if (pAVar15 != (AccessoryTimeLimitDisplayer *)0x0) {
+                                  pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                             Component_get_gameObject
-                                                      ((Component *)pAVar12,(MethodInfo *)0x0);
-                                  if (pGVar3 != (GameObject *)0x0) {
+                                                      ((Component *)pAVar15,(MethodInfo *)0x0);
+                                  if (pGVar4 != (GameObject *)0x0) {
                                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                    GameObject_SetActive(pGVar3,0,(MethodInfo *)0x0);
-                                    pGVar3 = (object->fields).newAccessoryImage;
-                                    if (pGVar3 != (GameObject *)0x0) {
+                                    GameObject_SetActive(pGVar4,0,(MethodInfo *)0x0);
+                                    pGVar4 = (object->fields).newAccessoryImage;
+                                    if (pGVar4 != (GameObject *)0x0) {
                                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                      GameObject_SetActive(pGVar3,0,(MethodInfo *)0x0);
-                                      pGVar3 = (object->fields).discountTag;
-                                      if (pGVar3 != (GameObject *)0x0) {
+                                      GameObject_SetActive(pGVar4,0,(MethodInfo *)0x0);
+                                      pGVar4 = (object->fields).discountTag;
+                                      if (pGVar4 != (GameObject *)0x0) {
                                         UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                        GameObject_SetActive(pGVar3,0,(MethodInfo *)0x0);
-                                        pGVar3 = (object->fields).loadingWheel;
-                                        if (pGVar3 != (GameObject *)0x0) {
+                                        GameObject_SetActive(pGVar4,0,(MethodInfo *)0x0);
+                                        pGVar4 = (object->fields).loadingWheel;
+                                        if (pGVar4 != (GameObject *)0x0) {
                                           UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                          GameObject_SetActive(pGVar3,1,(MethodInfo *)0x0);
-                                          pGVar3 = (object->fields).emptyFrame;
-                                          if (pGVar3 != (GameObject *)0x0) {
+                                          GameObject_SetActive(pGVar4,1,(MethodInfo *)0x0);
+                                          pGVar4 = (object->fields).emptyFrame;
+                                          if (pGVar4 != (GameObject *)0x0) {
                                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                            GameObject_SetActive(pGVar3,1,(MethodInfo *)0x0);
-                                            pSVar10 = (accessoryData->fields)._.url;
+                                            GameObject_SetActive(pGVar4,1,(MethodInfo *)0x0);
+                                            pSVar12 = (accessoryData->fields)._.url;
                                             this_03 = (object->fields).accessoryLoader;
                                             this_07 = (
                                                   DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
@@ -1285,37 +1400,37 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_Initialize
                                             if (this_03 != (AccessoryLoader *)0x0) {
                                               Assets::Scripts::WorldObjectTypes::Avatar::Accessories
                                               ::AccessoryLoader::AccessoryLoader_LoadAccessory
-                                                        (this_03,pSVar10,
+                                                        (this_03,pSVar12,
                                                          (Action_1_AvatarAccessory_ *)this_07,
                                                          (MethodInfo *)0x0);
                                               this_04 = (object->fields).embeddedPlayerConfig;
                                               if (this_04 != (EmbeddedPlayerConfig *)0x0) {
-                                                pEVar13 = EmbeddedPlayerConfig::
+                                                pEVar16 = EmbeddedPlayerConfig::
                                                           EmbeddedPlayerConfig_GetCurrentSiteData
                                                                     ((EmbeddedSiteConfigData *)
-                                                                     &stack0xffffffd4,this_04,
+                                                                     &stack0xffffffd0,this_04,
                                                                      (MethodInfo *)0x0);
-                                                uVar14._0_1_ = pEVar13->showTouristPromotion;
-                                                uVar14._1_1_ = pEVar13->allowsOpenInNewTab;
-                                                uVar14._2_1_ = pEVar13->allowsRedirectToWebpage;
-                                                uVar14._3_1_ = pEVar13->allowsModals;
-                                                bVar2 = MVGameControllerBase::
-                                                        MVGameControllerBase_get_IsTouristSession
-                                                                  ((MethodInfo *)0x0);
-                                                if (bVar2 != 0) {
-                                                  pBVar11 = (object->fields).purchaseButton;
-                                                  if (((char)(uVar14 >> 0x18) == '\0') &&
-                                                     ((char)(uVar14 >> 8) == '\0')) {
-                                                    uVar14 = uVar14 >> 0x10 & 0xff;
+                                                uVar17._0_1_ = pEVar16->showTouristPromotion;
+                                                uVar17._1_1_ = pEVar16->allowsOpenInNewTab;
+                                                uVar17._2_1_ = pEVar16->allowsRedirectToWebpage;
+                                                uVar17._3_1_ = pEVar16->allowsModals;
+                                                bVar3 = MVGameControllerBase::
+                                                         MVGameControllerBase_get_IsTouristSession
+                                                                   ((MethodInfo *)0x0);
+                                                if (bVar3 != 0) {
+                                                  pBVar13 = (object->fields).purchaseButton;
+                                                  if (((char)(uVar17 >> 0x18) == '\0') &&
+                                                     ((char)(uVar17 >> 8) == '\0')) {
+                                                    uVar17 = uVar17 >> 0x10 & 0xff;
                                                   }
                                                   else {
-                                                    uVar14 = 1;
+                                                    uVar17 = 1;
                                                   }
-                                                  if (pBVar11 == (Button *)0x0)
+                                                  if (pBVar13 == (Button *)0x0)
                                                   goto code_?;
                                                   UnityEngine.UI.dll::UnityEngine::UI::Selectable::
                                                   Selectable_set_interactable
-                                                            ((Selectable *)pBVar11,uVar14 != 0,
+                                                            ((Selectable *)pBVar13,uVar17 != 0,
                                                              (MethodInfo *)0x0);
                                                 }
                                                 return;
@@ -1344,8 +1459,8 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_Initialize
   }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -1380,57 +1495,60 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_OnDisable
   if (pGVar1 == (GameObject *)0x0) goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
             (pGVar1,1,(MethodInfo *)0x0);
-  if (((this->fields).accessoryDataClient != (AccessoryDataClient *)0x0) &&
-     (pAVar2 = (this->fields).accessoryDataClient, (pAVar2->fields)._.owns != 0)) {
-    pMVar3 = (this->fields).avatarBody;
-    if (pMVar3 == (MVBody *)0x0) goto code_?;
-    bVar4 = MVBody::MVBody_IsAccessoryEquipped(pMVar3,(pAVar2->fields)._.sAID,(MethodInfo *)0x0);
-    if (bVar4 == 0) {
-      this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+  pAVar2 = (this->fields).accessoryDataClient;
+  ppAVar3 = &(this->fields).accessoryDataClient;
+  if ((pAVar2 != (AccessoryDataClient *)0x0) && ((pAVar2->fields)._.owns != 0)) {
+    pMVar4 = (this->fields).avatarBody;
+    if (pMVar4 == (MVBody *)0x0) goto code_?;
+    bVar5 = MVBody::MVBody_IsAccessoryEquipped(pMVar4,(pAVar2->fields)._.sAID,(MethodInfo *)0x0);
+    if (bVar5 == 0) {
+      this_02 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
                 func_?(TypeInfo__AccessoryView____c__DisplayClass42_0);
       UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
       UxmlObjectListAttributeDescription`1[System::Object]::
-      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-      pAVar5 = (this->fields).avatarAccessoryEquipPopup;
+      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_02,(MethodInfo *)0x0);
+      pAVar6 = (this->fields).avatarAccessoryEquipPopup;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__UnityEngine__Object);
       }
-      pLVar6 = (List_1_System_Object_ *)
+      pLVar7 = (List_1_System_Object_ *)
                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                         ((Object *)pAVar5,
+                         ((Object *)pAVar6,
                           AvatarAccessoryEquipPopup_MethodInfo__UnityEngine__Object__Instantiate<AvatarAccessoryEquipPopup>_AvatarAccessoryEquipPopup_
                          );
-      if (this_01 == (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0)
+      if (this_02 == (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0)
       goto code_?;
-      (this_01->fields)._._defaultValue_k__BackingField = pLVar6;
-      func_?();
-      pAVar2 = (this->fields).accessoryDataClient;
-      if ((pAVar2 == (AccessoryDataClient *)0x0) ||
-         (pMVar3 = (this->fields).avatarBody, pMVar3 == (MVBody *)0x0)) goto code_?;
+      (this_02->fields)._._defaultValue_k__BackingField = pLVar7;
+      func_?(&this_02->fields,pLVar7);
+      if ((*ppAVar3 == (AccessoryDataClient *)0x0) ||
+         (pMVar4 = (this->fields).avatarBody, pMVar4 == (MVBody *)0x0)) goto code_?;
       accessoryOffset =
-           MVBody::MVBody_GetAccessoryOffset(pMVar3,(pAVar2->fields)._.slot,(MethodInfo *)0x0);
-      pAVar2 = (this->fields).accessoryDataClient;
-      if ((pAVar2 == (AccessoryDataClient *)0x0) ||
-         (pMVar3 = (this->fields).avatarBody, pMVar3 == (MVBody *)0x0)) goto code_?;
+           MVBody::MVBody_GetAccessoryOffset(pMVar4,((*ppAVar3)->fields)._.slot,(MethodInfo *)0x0);
+      if ((*ppAVar3 == (AccessoryDataClient *)0x0) ||
+         (pMVar4 = (this->fields).avatarBody, pMVar4 == (MVBody *)0x0)) goto code_?;
       accessoryScale =
-           MVBody::MVBody_GetAccessoryScale(pMVar3,(pAVar2->fields)._.slot,(MethodInfo *)0x0);
-      pAVar5 = (AvatarAccessoryEquipPopup *)(this_01->fields)._._defaultValue_k__BackingField;
-      this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+           MVBody::MVBody_GetAccessoryScale(pMVar4,((*ppAVar3)->fields)._.slot,(MethodInfo *)0x0);
+      pAVar6 = (AvatarAccessoryEquipPopup *)(this_02->fields)._._defaultValue_k__BackingField;
+      this_03 = (NavMesh_OnNavMeshPreUpdate *)
+                func_?(TypeInfo__UnityEngine__Events__UnityAction);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
-                (this_02,(Object *)this,MethodInfo__AccessoryView__EquipPopupResultCallback__,
+                (this_03,(Object *)this,MethodInfo__AccessoryView__EquipPopupResultCallback__,
                  (MethodInfo *)0x0);
-      if (pAVar5 == (AvatarAccessoryEquipPopup *)0x0) goto code_?;
+      if (pAVar6 == (AvatarAccessoryEquipPopup *)0x0) goto code_?;
       AvatarAccessoryEquipPopup::AvatarAccessoryEquipPopup_Initialize
-                (pAVar5,(UnityAction *)this_02,(this->fields).previewImageUrl,
-                 (this->fields).accessoryDataClient,accessoryOffset,accessoryScale,(MethodInfo *)0x0
-                );
+                (pAVar6,(UnityAction *)this_03,(this->fields).previewImageUrl,*ppAVar3,
+                 accessoryOffset,accessoryScale,(MethodInfo *)0x0);
       pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+                          ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                          );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_01,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_02,
                  MethodInfo__AccessoryView____c__DisplayClass42_0___OnDisable_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
@@ -1443,82 +1561,83 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_OnDisable
                 );
     }
   }
-  bVar4 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
-  if (bVar4 != 0) {
-    pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar7 == (MVNetworkGame *)0x0) {
+  bVar5 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
+  if (bVar5 != 0) {
+    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar8 == (MVNetworkGame *)0x0) {
       return;
     }
     if ((this->fields).isPreviewing != 0) {
-      pMVar3 = (this->fields).avatarBody;
-      if (pMVar3 == (MVBody *)0x0) goto code_?;
-      MVBody::MVBody_EndPreviewAccessory(pMVar3,(MethodInfo *)0x0);
+      pMVar4 = (this->fields).avatarBody;
+      if (pMVar4 == (MVBody *)0x0) goto code_?;
+      MVBody::MVBody_EndPreviewAccessory(pMVar4,(MethodInfo *)0x0);
     }
     this_00 = (this->fields).tabMenu;
     if (this_00 == (TabMenuAccessoryShop *)0x0) {
 code_?:
       func_?();
-      pcVar8 = (code *)swi(3);
-      (*pcVar8)();
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
       return;
     }
-    this_03 = TabMenuAccessoryShop::TabMenuAccessoryShop_GetTabMenuButton
+    this_04 = TabMenuAccessoryShop::TabMenuAccessoryShop_GetTabMenuButton
                         (this_00,AccessoryCategoryClient__Enum_Bundles,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)this_03,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      if ((this_03 == (TabMenuButtonBase *)0x0) ||
+    bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)this_04,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar5 != 0) {
+      if ((this_04 == (TabMenuButtonBase *)0x0) ||
          (pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)this_03,(MethodInfo *)0x0), pGVar1 == (GameObject *)0x0))
-      goto code_?;
+                              ((Component *)this_04,(MethodInfo *)0x0), pGVar1 == (GameObject *)0x0
+         )) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar1,1,(MethodInfo *)0x0);
     }
-    pTVar9 = (this->fields).rootTransform;
+    x = (this->fields).rootTransform;
+    ppTVar10 = &(this->fields).rootTransform;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pTVar9,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      pTVar9 = (this->fields).rootTransform;
-      if (pTVar9 == (Transform *)0x0) goto code_?;
+    bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar5 != 0) {
+      if (*ppTVar10 == (Transform *)0x0) goto code_?;
       pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)pTVar9,(MethodInfo *)0x0);
+                          ((Component *)*ppTVar10,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__UnityEngine__Object);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                 ((Object_1 *)pGVar1,(MethodInfo *)0x0);
-      (this->fields).rootTransform = (Transform *)0x0;
-      func_?();
+      *ppTVar10 = (Transform *)0x0;
+      func_?(ppTVar10,0);
     }
-    pAVar10 = (this->fields).previewer;
+    pAVar11 = (this->fields).previewer;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pAVar10,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      pAVar10 = (this->fields).previewer;
-      if (pAVar10 == (AccessoryPreviewer *)0x0) goto code_?;
+    bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)pAVar11,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar5 != 0) {
+      pAVar11 = (this->fields).previewer;
+      if (pAVar11 == (AccessoryPreviewer *)0x0) goto code_?;
       pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)pAVar10,(MethodInfo *)0x0);
+                          ((Component *)pAVar11,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__UnityEngine__Object);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                 ((Object_1 *)pGVar1,(MethodInfo *)0x0);
     }
-    if ((this->fields).accessoryLoader != (AccessoryLoader *)0x0) {
+    this_01 = (this->fields).accessoryLoader;
+    if (this_01 != (AccessoryLoader *)0x0) {
       Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::
-      AccessoryLoader_Destroy((this->fields).accessoryLoader,(MethodInfo *)0x0);
+      AccessoryLoader_Destroy(this_01,(MethodInfo *)0x0);
     }
-    (this->fields).accessoryDataClient = (AccessoryDataClient *)0x0;
-    func_?();
+    *ppAVar3 = (AccessoryDataClient *)0x0;
+    func_?(ppAVar3,0);
   }
   return;
 }
@@ -1770,22 +1889,23 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_OnPurchaseButtonPressed
                 func_?(TypeInfo__UnityEngine__Object);
               }
               pLVar7 = (List_1_System_Object_ *)
-                       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                                 ((Object *)pLVar6,
-                                  LevelErrorPopup_MethodInfo__UnityEngine__Object__Instantiate<LevelErrorPopup>_LevelErrorPopup_
-                                 );
+                        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                  ((Object *)pLVar6,
+                                   LevelErrorPopup_MethodInfo__UnityEngine__Object__Instantiate<LevelErrorPopup>_LevelErrorPopup_
+                                  );
               if (pUVar5 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-                (pUVar5->fields)._._defaultValue_k__BackingField = pLVar7;
-                func_?(&pUVar5->fields,pLVar7);
-                pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                pUVar8 = &pUVar5->fields;
+                (pUVar8->_)._defaultValue_k__BackingField = pLVar7;
+                func_?(pUVar8,pLVar7);
+                pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                           Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-                pEVar9 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                pEVar10 = (ExecuteEvents_EventFunction_1_System_Object_ *)
                           func_?(
                                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                                          );
                 UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
                 ::Object]::UnityAction_2_System_Object_System_Object___ctor
-                          ((UnityAction_2_System_Object_System_Object_ *)pEVar9,(Object *)pUVar5,
+                          ((UnityAction_2_System_Object_System_Object_ *)pEVar10,(Object *)pUVar5,
                            MethodInfo__AccessoryView____c__DisplayClass47_1___OnPurchaseButtonPressed_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                            ,(MethodInfo *)0x0);
                 if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
@@ -1794,12 +1914,12 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_OnPurchaseButtonPressed
                 }
                 UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
                 ExecuteEvents_ExecuteHierarchy
-                          (pGVar8,(BaseEventData *)0x0,pEVar9,
+                          (pGVar9,(BaseEventData *)0x0,pEVar10,
                            UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                           );
                 pAVar4 = (this->fields).accessoryDataClient;
                 if ((pAVar4 != (AccessoryDataClient *)0x0) &&
-                   (pLVar6 = (LevelErrorPopup *)(pUVar5->fields)._._defaultValue_k__BackingField,
+                   (pLVar6 = (LevelErrorPopup *)(pUVar8->_)._defaultValue_k__BackingField,
                    pLVar6 != (LevelErrorPopup *)0x0)) {
                   LevelErrorPopup::LevelErrorPopup_Initialize
                             (pLVar6,(UnityAction *)0x0,(pAVar4->fields)._.lvl,(MethodInfo *)0x0);
@@ -1816,27 +1936,28 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_OnPurchaseButtonPressed
         UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
         UxmlObjectListAttributeDescription`1[System::Object]::
         UxmlObjectListAttributeDescription_1_System_Object___ctor(pUVar5,(MethodInfo *)0x0);
-        pAVar10 = (this->fields).touristErrorPopup;
+        pAVar11 = (this->fields).touristErrorPopup;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
         pLVar7 = (List_1_System_Object_ *)
-                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                           ((Object *)pAVar10,
-                            AvatarAccessoryErrorPopup_MethodInfo__UnityEngine__Object__Instantiate<AvatarAccessoryErrorPopup>_AvatarAccessoryErrorPopup_
-                           );
+                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                            ((Object *)pAVar11,
+                             AvatarAccessoryErrorPopup_MethodInfo__UnityEngine__Object__Instantiate<AvatarAccessoryErrorPopup>_AvatarAccessoryErrorPopup_
+                            );
         if (pUVar5 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-          (pUVar5->fields)._._defaultValue_k__BackingField = pLVar7;
-          func_?(&pUVar5->fields,pLVar7);
-          pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+          pUVar8 = &pUVar5->fields;
+          (pUVar8->_)._defaultValue_k__BackingField = pLVar7;
+          func_?(pUVar8,pLVar7);
+          pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                               ((Component *)this,(MethodInfo *)0x0);
-          pEVar9 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+          pEVar10 = (ExecuteEvents_EventFunction_1_System_Object_ *)
                     func_?(
                                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                                    );
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)pEVar9,(Object *)pUVar5,
+                    ((UnityAction_2_System_Object_System_Object_ *)pEVar10,(Object *)pUVar5,
                      MethodInfo__AccessoryView____c__DisplayClass47_0___OnPurchaseButtonPressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
@@ -1845,10 +1966,10 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_OnPurchaseButtonPressed
           }
           UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
           ExecuteEvents_ExecuteHierarchy
-                    (pGVar8,(BaseEventData *)0x0,pEVar9,
+                    (pGVar9,(BaseEventData *)0x0,pEVar10,
                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                     );
-          pAVar10 = (AvatarAccessoryErrorPopup *)(pUVar5->fields)._._defaultValue_k__BackingField;
+          pAVar11 = (AvatarAccessoryErrorPopup *)(pUVar8->_)._defaultValue_k__BackingField;
           this_00 = (UnityAction_1_System_Int32Enum_ *)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
           UnityAction_1_System_Int32Enum___ctor
@@ -1858,9 +1979,9 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_OnPurchaseButtonPressed
           pAVar4 = (this->fields).accessoryDataClient;
           header = TM::TM__(StringLiteral_Signup_required,(MethodInfo *)0x0);
           buttonText = TM::TM__(StringLiteral_Sign_up,(MethodInfo *)0x0);
-          if (pAVar10 != (AvatarAccessoryErrorPopup *)0x0) {
+          if (pAVar11 != (AvatarAccessoryErrorPopup *)0x0) {
             AvatarAccessoryErrorPopup::AvatarAccessoryErrorPopup_Initialize
-                      (pAVar10,(UnityAction_1_System_Boolean_ *)this_00,previewImageUrl,pAVar4,header
+                      (pAVar11,(UnityAction_1_System_Boolean_ *)this_00,previewImageUrl,pAVar4,header
                        ,buttonText,(MethodInfo *)0x0);
             return;
           }
@@ -1869,8 +1990,8 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_OnPurchaseButtonPressed
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -2037,13 +2158,14 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_Purchase
               func_?(TypeInfo__UnityEngine__Object);
             }
             pLVar7 = (List_1_System_Object_ *)
-                     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                               ((Object *)pAVar6,
-                                AvatarAccessoryErrorPopup_MethodInfo__UnityEngine__Object__Instantiate<AvatarAccessoryErrorPopup>_AvatarAccessoryErrorPopup_
-                               );
-            (pUVar5->fields)._._defaultValue_k__BackingField = pLVar7;
-            func_?(&pUVar5->fields,pLVar7);
-            pAVar6 = (AvatarAccessoryErrorPopup *)(pUVar5->fields)._._defaultValue_k__BackingField;
+                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                ((Object *)pAVar6,
+                                 AvatarAccessoryErrorPopup_MethodInfo__UnityEngine__Object__Instantiate<AvatarAccessoryErrorPopup>_AvatarAccessoryErrorPopup_
+                                );
+            pUVar8 = &pUVar5->fields;
+            (pUVar8->_)._defaultValue_k__BackingField = pLVar7;
+            func_?(pUVar8,pLVar7);
+            pAVar6 = (AvatarAccessoryErrorPopup *)(pUVar8->_)._defaultValue_k__BackingField;
             this_02 = (UnityAction_1_System_Int32Enum_ *)
                       func_?(TypeInfo__UnityEngine__Events__UnityAction<bool>);
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
@@ -2095,22 +2217,22 @@ code_?:
           if (pUVar5 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
             pUVar5[1].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)this;
             func_?(pUVar5 + 1,this);
-            pAVar8 = (this->fields).AvatarAccessoryPurchasePopupPrefab;
+            pAVar9 = (this->fields).AvatarAccessoryPurchasePopupPrefab;
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Object);
             }
             pLVar7 = (List_1_System_Object_ *)
-                     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                               ((Object *)pAVar8,
-                                AvatarAccessoryPurchasePopup_MethodInfo__UnityEngine__Object__Instantiate<AvatarAccessoryPurchasePopup>_AvatarAccessoryPurchasePopup_
-                               );
-            (pUVar5->fields)._._defaultValue_k__BackingField = pLVar7;
-            func_?(&pUVar5->fields,pLVar7);
-            pAVar8 = (AvatarAccessoryPurchasePopup *)
-                     (pUVar5->fields)._._defaultValue_k__BackingField;
-            if (pAVar8 != (AvatarAccessoryPurchasePopup *)0x0) {
+                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                ((Object *)pAVar9,
+                                 AvatarAccessoryPurchasePopup_MethodInfo__UnityEngine__Object__Instantiate<AvatarAccessoryPurchasePopup>_AvatarAccessoryPurchasePopup_
+                                );
+            pUVar8 = &pUVar5->fields;
+            (pUVar8->_)._defaultValue_k__BackingField = pLVar7;
+            func_?(pUVar8,pLVar7);
+            pAVar9 = (AvatarAccessoryPurchasePopup *)(pUVar8->_)._defaultValue_k__BackingField;
+            if (pAVar9 != (AvatarAccessoryPurchasePopup *)0x0) {
               AvatarAccessoryPurchasePopup::AvatarAccessoryPurchasePopup_Initialize
-                        (pAVar8,(this->fields).accessoryDataClient,(this->fields).previewImageUrl,
+                        (pAVar9,(this->fields).accessoryDataClient,(this->fields).previewImageUrl,
                          (MethodInfo *)0x0);
               root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                ((Component *)this,(MethodInfo *)0x0);
@@ -2133,8 +2255,8 @@ code_?:
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -2444,8 +2566,8 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView__Initialize_b__39_0
     do {
       if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IGetCurrentBody) {
-        ppMVar5 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar3].offset].GetCurrentBody.
-                   method;
+        ppMVar5 = &(&x->klass->vtable)[pIVar2->interfaceOffsets[uVar3].offset].GetCurrentBody.method
+        ;
         goto code_?;
       }
       uVar3 = uVar3 + 1;
@@ -2476,8 +2598,9 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView__ctor(AccessoryView *this
                            );
   Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader__ctor
             (this_00,(MethodInfo *)0x0);
-  (this->fields).accessoryLoader = this_00;
-  func_?(&(this->fields).accessoryLoader,this_00);
+  ppAVar1 = &(this->fields).accessoryLoader;
+  *ppAVar1 = this_00;
+  func_?(ppAVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

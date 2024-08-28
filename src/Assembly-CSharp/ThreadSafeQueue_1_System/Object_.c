@@ -158,7 +158,7 @@ void Assembly-CSharp.dll::ThreadSafeQueue`1[System::Object]::ThreadSafeQueue_1_S
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
   method_00 = (MethodInfo *)&(this->fields)._lock;
-  (this->fields)._lock = value;
+  *(Object **)method_00 = value;
   func_?(method_00,value);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

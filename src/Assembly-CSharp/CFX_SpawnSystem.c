@@ -334,31 +334,33 @@ void Assembly-CSharp.dll::CFX_SpawnSystem::CFX_SpawnSystem__ctor
     cRam_? = '\x01';
   }
   pGVar1 = (GameObject__Array *)func_?(TypeInfo__UnityEngine__GameObject,0);
-  (this->fields).objectsToPreload = pGVar1;
-  func_?(&(this->fields).objectsToPreload,pGVar1);
-  pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,0);
-  (this->fields).objectsToPreloadTimes = pIVar2;
-  func_?(&(this->fields).objectsToPreloadTimes,pIVar2);
-  pDVar3 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)
+  ppGVar2 = &(this->fields).objectsToPreload;
+  *ppGVar2 = pGVar1;
+  func_?(ppGVar2,pGVar1);
+  pIVar3 = (Int32__Array *)func_?(TypeInfo__System__Int32,0);
+  ppIVar4 = &(this->fields).objectsToPreloadTimes;
+  *ppIVar4 = pIVar3;
+  func_?(ppIVar4,pIVar3);
+  pDVar5 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)
            func_?(
                           TypeInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<UnityEngine::GameObject>_>
                           );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
   ::TextResourceManager+FontAssetRef]::
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-            (pDVar3,
+            (pDVar5,
              MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<UnityEngine::GameObject>_>__Dictionary__
             );
-  (this->fields).instantiatedObjects =
-       (Dictionary_2_System_Int32_List_1_UnityEngine_GameObject_ *)pDVar3;
-  func_?(&(this->fields).instantiatedObjects,pDVar3);
-  pDVar3 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)
+  ppDVar6 = &(this->fields).instantiatedObjects;
+  *ppDVar6 = (Dictionary_2_System_Int32_List_1_UnityEngine_GameObject_ *)pDVar5;
+  func_?(ppDVar6,pDVar5);
+  pDVar5 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)
            func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
   ::TextResourceManager+FontAssetRef]::
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-            (pDVar3,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
-  (this->fields).poolCursors = (Dictionary_2_System_Int32_System_Int32_ *)pDVar3;
+            (pDVar5,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
+  (this->fields).poolCursors = (Dictionary_2_System_Int32_System_Int32_ *)pDVar5;
   func_?(&(this->fields).poolCursors);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
@@ -454,12 +456,14 @@ void Assembly-CSharp.dll::CFX_SpawnSystem::CFX_SpawnSystem_addObjectToPool
                              (sourceObject,1,
                               CFX_AutoDestructShuriken__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<CFX_AutoDestructShuriken>_bool_____
                              );
-          pp_Var5 = p_Var3->vector;
           uVar3 = 0;
-          if (p_Var3 == (_Il2CppFullySharedGenericType__Array *)0x0) goto code_?;
-          for (; (int)uVar3 < (int)p_Var3->max_length; uVar3 = uVar3 + 1) {
+          pp_Var5 = p_Var3->vector;
+          while( true ) {
+            if (p_Var3 == (_Il2CppFullySharedGenericType__Array *)0x0) goto code_?;
+            if ((int)p_Var3->max_length <= (int)uVar3) break;
             if (p_Var3->max_length <= uVar3) goto code_?;
             if (*pp_Var5 == (_Il2CppFullySharedGenericType *)0x0) goto code_?;
+            uVar3 = uVar3 + 1;
             *(undefined1 *)&(*pp_Var5)[2].klass = 1;
             pp_Var5 = pp_Var5 + 1;
           }
@@ -468,12 +472,14 @@ void Assembly-CSharp.dll::CFX_SpawnSystem::CFX_SpawnSystem_addObjectToPool
                              (sourceObject,1,
                               CFX_LightIntensityFade__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<CFX_LightIntensityFade>_bool_____
                              );
-          pp_Var5 = p_Var3->vector;
           uVar3 = 0;
-          if (p_Var3 == (_Il2CppFullySharedGenericType__Array *)0x0) goto code_?;
-          for (; (int)uVar3 < (int)p_Var3->max_length; uVar3 = uVar3 + 1) {
+          pp_Var5 = p_Var3->vector;
+          while( true ) {
+            if (p_Var3 == (_Il2CppFullySharedGenericType__Array *)0x0) goto code_?;
+            if ((int)p_Var3->max_length <= (int)uVar3) break;
             if (p_Var3->max_length <= uVar3) goto code_?;
             if (*pp_Var5 == (_Il2CppFullySharedGenericType *)0x0) goto code_?;
+            uVar3 = uVar3 + 1;
             *(undefined1 *)&(*pp_Var5)[4].klass = 0;
             pp_Var5 = pp_Var5 + 1;
           }

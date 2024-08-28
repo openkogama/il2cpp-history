@@ -64,34 +64,34 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarHeadRotationHandlerLocal:
               (this_00,(Object *)this,
                MethodInfo__AvatarLimbManagerLocal__AvatarHeadRotationHandlerLocal__HandleOnRotationChange__
                ,(MethodInfo *)0x0);
-    pAVar1 = (Action *)
+    pAVar2 = (Action *)
              mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pAVar1 == (Action *)0x0) {
+    pAVar1 = (Action *)0x0;
+    if (pAVar2 == (Action *)0x0) {
       (lookDirectionHandler->fields).OnRotationChange = (Action *)0x0;
 code_?:
       func_?();
       AvatarLimbManager+AvatarHeadRotationHandler::
       AvatarLimbManager_AvatarHeadRotationHandler_Initialize
-                ((AvatarLimbManager_AvatarHeadRotationHandler *)lookDirectionHandler,
-                 (AvatarLimbManager *)0x0,
-                 (AvatarLimbManager_LimbRotator *)&(lookDirectionHandler->fields).OnRotationChange,
-                 lookDirectionHandler,(MethodInfo *)0x0);
+                ((AvatarLimbManager_AvatarHeadRotationHandler *)0x0,
+                 (AvatarLimbManager *)&(lookDirectionHandler->fields).OnRotationChange,
+                 (AvatarLimbManager_LimbRotator *)pAVar1,lookDirectionHandler,(MethodInfo *)0x0);
       return;
     }
-    pAVar2 = (Action *)0x0;
-    if (pAVar1->klass == TypeInfo__System__Action) {
-      pAVar2 = pAVar1;
+    if (pAVar2->klass == TypeInfo__System__Action) {
+      pAVar1 = pAVar2;
     }
-    if (pAVar2 != (Action *)0x0) {
-      (lookDirectionHandler->fields).OnRotationChange = pAVar2;
-      pAVar2 = (Action *)0x0;
-      if (pAVar1->klass == TypeInfo__System__Action) {
-        pAVar2 = pAVar1;
-      }
-      if (pAVar2 != (Action *)0x0) goto code_?;
+    if (pAVar1 == (Action *)0x0) goto code_?;
+    (lookDirectionHandler->fields).OnRotationChange = pAVar1;
+    pAVar1 = (Action *)0x0;
+    if (pAVar2->klass == TypeInfo__System__Action) {
+      pAVar1 = pAVar2;
     }
+    if (pAVar1 != (Action *)0x0) goto code_?;
   }
+  func_?();
+code_?:
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
@@ -129,8 +129,8 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarHeadRotationHandlerLocal:
   fVar1 = fVar1 - fVar2;
   (this->fields).networkMessageCooldown = fVar1;
   if ((fVar1 <= 0.0) && ((this->fields).shouldSendNetworkMessage != 0)) {
-    if ((this->fields).OnUpdateHeadRotationValue != (Action_1_UnityEngine_Quaternion_ *)0x0) {
-      pAVar3 = (this->fields).OnUpdateHeadRotationValue;
+    pAVar3 = (this->fields).OnUpdateHeadRotationValue;
+    if (pAVar3 != (Action_1_UnityEngine_Quaternion_ *)0x0) {
       (*(pAVar3->fields)._._.invoke_impl)
                 ((pAVar3->fields)._._.method_code,rotation.x,rotation.y,rotation.z,rotation.w,
                  (pAVar3->fields)._._.method);
@@ -170,8 +170,8 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarHeadRotationHandlerLocal:
   fVar1 = fVar1 - fVar3;
   (this->fields).networkMessageCooldown = fVar1;
   if ((fVar1 <= 0.0) && ((this->fields).shouldSendNetworkMessage != 0)) {
-    if ((this->fields).OnUpdateHeadRotationValue != (Action_1_UnityEngine_Quaternion_ *)0x0) {
-      pAVar11 = (this->fields).OnUpdateHeadRotationValue;
+    pAVar11 = (this->fields).OnUpdateHeadRotationValue;
+    if (pAVar11 != (Action_1_UnityEngine_Quaternion_ *)0x0) {
       (*(pAVar11->fields)._._.invoke_impl)
                 ((pAVar11->fields)._._.method_code,fVar8,fVar9,fVar10,fVar2,
                  (pAVar11->fields)._._.method);

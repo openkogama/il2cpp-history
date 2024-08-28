@@ -247,68 +247,70 @@ void Assembly-CSharp.dll::TouristAdController::TouristAdController_ShowPromotion
     func_?(&TypeInfo__TouristAdController____c__DisplayClass16_1);
     cRam_? = '\x01';
   }
+  ppUVar1 = &(this->fields).onPromotionWasPopped;
   original_00 = (TouristPromotion *)0x0;
-  (this->fields).onPromotionWasPopped = onPop;
   (this->fields).eligibleForPromotion = 0;
-  func_?(&(this->fields).onPromotionWasPopped);
-  bVar1 = MVClientSettings::MVClientSettings_get_InterstitialsAdsEnabled((MethodInfo *)0x0);
-  if ((bVar1 == 0) || ((this->fields).timer < (this->fields).timeBeforeAdShown)) {
-    bVar1 = 0;
+  *ppUVar1 = onPop;
+  func_?(ppUVar1);
+  bVar2 = MVClientSettings::MVClientSettings_get_InterstitialsAdsEnabled((MethodInfo *)0x0);
+  if ((bVar2 == 0) || ((this->fields).timer < (this->fields).timeBeforeAdShown)) {
+    bVar2 = 0;
   }
   else {
-    pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-    if (pIVar2 == (IAdManager *)0x0) goto code_?;
+    pIVar3 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+    if (pIVar3 == (IAdManager *)0x0) goto code_?;
     onPop = (UnityAction_2_System_Boolean_System_Boolean_ *)0x5;
-    bVar1 = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar2);
+    bVar2 = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar3);
   }
-  (this->fields).withAd = bVar1;
-  bVar1 = MVClientSettings::MVClientSettings_get_ShowTouristPromotion((MethodInfo *)0x0);
-  if (bVar1 != 0) {
+  (this->fields).withAd = bVar2;
+  bVar2 = MVClientSettings::MVClientSettings_get_ShowTouristPromotion((MethodInfo *)0x0);
+  if (bVar2 != 0) {
     this_00 = (this->fields).embeddedPlayerConfig;
     if (this_00 == (EmbeddedPlayerConfig *)0x0) goto code_?;
-    pEVar3 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                       ((EmbeddedSiteConfigData *)&pLStack_4,this_00,(MethodInfo *)0x0);
-    if (pEVar3->showTouristPromotion != 0) {
+    pEVar4 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
+                       ((EmbeddedSiteConfigData *)&pLStack_5,this_00,(MethodInfo *)0x0);
+    if (pEVar4->showTouristPromotion != 0) {
       x = (this->fields).touristPromotionExternalEvaluator;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                         ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar1 != 0) {
+      if (bVar2 != 0) {
         onPop = (UnityAction_2_System_Boolean_System_Boolean_ *)
                 (this->fields).touristPromotionExternalEvaluator;
         if (onPop == (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) goto code_?;
-        bVar1 = TouristPromotionExternalEvaluator::
+        bVar2 = TouristPromotionExternalEvaluator::
                 TouristPromotionExternalEvaluator_TryGetExternalPromotion
                           ((TouristPromotionExternalEvaluator *)onPop,
                            (TouristPromotion **)&stack0xfffffff8,(MethodInfo *)0x0);
-        if (bVar1 != 0) {
-          pTStack_5 = TypeInfo__TouristAdController____c__DisplayClass16_0;
-          pOVar6 = (Object *)func_?();
+        if (bVar2 != 0) {
+          pTStack_6 = TypeInfo__TouristAdController____c__DisplayClass16_0;
+          pOVar7 = (Object *)func_?();
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    (pOVar6,ExceptionArgument__Enum_obj,(MethodInfo *)onPop);
-          if (pOVar6 != (Object *)0x0) {
-            pOVar6[1].monitor = (MonitorData *)this;
-            func_?(&pOVar6[1].monitor,this);
+                    (pOVar7,ExceptionArgument__Enum_obj,(MethodInfo *)onPop);
+          if (pOVar7 != (Object *)0x0) {
+            pOVar7[1].monitor = (MonitorData *)this;
+            func_?(&pOVar7[1].monitor,this);
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Object);
             }
-            pOVar7 = (Object__Class *)
-                     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                               ((Object *)original_00,
-                                TouristPromotion_MethodInfo__UnityEngine__Object__Instantiate<TouristPromotion>_TouristPromotion_
-                               );
-            pOVar6[1].klass = pOVar7;
-            func_?(pOVar6 + 1,pOVar7);
-            pOVar7 = pOVar6[1].klass;
-            if (pOVar7 == (Object__Class *)0x0) goto code_?;
-            bVar1 = (this->fields).withAd;
-            *(bool *)&(pOVar7->_0).castClass = bVar1;
-            this_01 = (pOVar7->_0).element_class;
+            pOVar8 = (Object__Class *)
+                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                ((Object *)original_00,
+                                 TouristPromotion_MethodInfo__UnityEngine__Object__Instantiate<TouristPromotion>_TouristPromotion_
+                                );
+            pOVar9 = pOVar7 + 1;
+            pOVar9->klass = pOVar8;
+            func_?(pOVar9,pOVar8);
+            pOVar8 = pOVar9->klass;
+            if (pOVar8 == (Object__Class *)0x0) goto code_?;
+            bVar2 = (this->fields).withAd;
+            *(bool *)&(pOVar8->_0).castClass = bVar2;
+            this_01 = (pOVar8->_0).element_class;
             if (this_01 == (Il2CppClass *)0x0) goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      ((GameObject *)this_01,bVar1,(MethodInfo *)0x0);
+                      ((GameObject *)this_01,bVar2,(MethodInfo *)0x0);
             root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
             callbackFunction =
@@ -318,7 +320,7 @@ void Assembly-CSharp.dll::TouristAdController::TouristAdController_ShowPromotion
                                 );
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
             Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,pOVar6,
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,pOVar7,
                        MethodInfo__TouristAdController____c__DisplayClass16_0___ShowPromotion_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                        ,(MethodInfo *)0x0);
             goto code_?;
@@ -326,37 +328,38 @@ void Assembly-CSharp.dll::TouristAdController::TouristAdController_ShowPromotion
           goto code_?;
         }
       }
-      pOVar6 = (Object *)func_?(TypeInfo__TouristAdController____c__DisplayClass16_1);
+      pOVar7 = (Object *)func_?(TypeInfo__TouristAdController____c__DisplayClass16_1);
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                (pOVar6,ExceptionArgument__Enum_obj,(MethodInfo *)onPop);
-      if (pOVar6 != (Object *)0x0) {
-        pOVar6[1].monitor = (MonitorData *)this;
-        func_?(&pOVar6[1].monitor,this);
+                (pOVar7,ExceptionArgument__Enum_obj,(MethodInfo *)onPop);
+      if (pOVar7 != (Object *)0x0) {
+        pOVar7[1].monitor = (MonitorData *)this;
+        func_?(&pOVar7[1].monitor,this);
         original = (this->fields).generalPromotionPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pOVar7 = (Object__Class *)
-                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                           ((Object *)original,
-                            AdIntegration__InHouse__GeneralPromotionAd_MethodInfo__UnityEngine__Object__Instantiate<AdIntegration::InHouse::GeneralPromotionAd>_AdIntegration__InHouse__GeneralPromotionAd_
-                           );
-        pOVar6[1].klass = pOVar7;
-        func_?(pOVar6 + 1,pOVar7);
-        pPVar8 = (this->fields).touristLooksData;
-        uVar9 = ZEXT48(pPVar8);
-        func_?(&stack0xfffffff0,pPVar8);
-        if (pOVar6[1].klass != (Object__Class *)0x0) {
-          uVar10 = (undefined4)
-                   (CONCAT26((short)(uVar9 >> 0x30),
-                             CONCAT15(1,CONCAT14((this->fields).withAd,(PromotionLooksData *)uVar9))
-                            ) >> 0x20);
-          initWithAd.hasAd = (char)uVar10;
-          initWithAd.showWhyText = (char)((uint)uVar10 >> 8);
-          initWithAd._6_2_ = (short)((uint)uVar10 >> 0x10);
-          initWithAd.looksData = (PromotionLooksData *)uVar9;
+        pOVar8 = (Object__Class *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                            ((Object *)original,
+                             AdIntegration__InHouse__GeneralPromotionAd_MethodInfo__UnityEngine__Object__Instantiate<AdIntegration::InHouse::GeneralPromotionAd>_AdIntegration__InHouse__GeneralPromotionAd_
+                            );
+        pOVar9 = pOVar7 + 1;
+        pOVar9->klass = pOVar8;
+        func_?(pOVar9,pOVar8);
+        pPVar10 = (this->fields).touristLooksData;
+        uVar11 = ZEXT48(pPVar10);
+        func_?(&stack0xfffffff0,pPVar10);
+        if (pOVar9->klass != (Object__Class *)0x0) {
+          uVar12 = (undefined4)
+                   (CONCAT26((short)(uVar11 >> 0x30),
+                             CONCAT15(1,CONCAT14((this->fields).withAd,(PromotionLooksData *)uVar11)
+                                     )) >> 0x20);
+          initWithAd.hasAd = (char)uVar12;
+          initWithAd.showWhyText = (char)((uint)uVar12 >> 8);
+          initWithAd._6_2_ = (short)((uint)uVar12 >> 0x10);
+          initWithAd.looksData = (PromotionLooksData *)uVar11;
           AdIntegration::InHouse::GeneralPromotionAd::GeneralPromotionAd_InitializeWithAd
-                    ((GeneralPromotionAd *)pOVar6[1].klass,initWithAd,(MethodInfo *)0x0);
+                    ((GeneralPromotionAd *)pOVar9->klass,initWithAd,(MethodInfo *)0x0);
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
           callbackFunction =
@@ -366,7 +369,7 @@ void Assembly-CSharp.dll::TouristAdController::TouristAdController_ShowPromotion
                               );
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,pOVar6,
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,pOVar7,
                      MethodInfo__TouristAdController____c__DisplayClass16_1___ShowPromotion_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
 code_?:
@@ -390,16 +393,16 @@ code_?:
       func_?(&StringLiteral_TouristAdController___OnPromotio);
       cRam_? = '\x01';
     }
-    pUVar11 = (this->fields).onPromotionWasPopped;
-    if (pUVar11 == (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
+    pUVar13 = *ppUVar1;
+    if (pUVar13 == (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
       return;
     }
-    (*(pUVar11->fields)._._.invoke_impl)
-              ((pUVar11->fields)._._.method_code,1,(this->fields).withAd,(pUVar11->fields)._._.method)
+    (*(pUVar13->fields)._._.invoke_impl)
+              ((pUVar13->fields)._._.method_code,1,(this->fields).withAd,(pUVar13->fields)._._.method)
     ;
     return;
   }
-  pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+  pIVar3 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
   this_02 = (UnityAction_1_System_Int32Enum_ *)
             func_?(
                            TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>
@@ -409,14 +412,14 @@ code_?:
             (this_02,(Object *)this,
              MethodInfo__TouristAdController__ShowAdWithoutPromotion_Assets__Scripts__AdIntegration__InterstitialAdResult_
              ,(MethodInfo *)0x0);
-  if (pIVar2 != (IAdManager *)0x0) {
-    func_?(7,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar2,this_02,0xd);
+  if (pIVar3 != (IAdManager *)0x0) {
+    func_?(7,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar3,this_02,0xd);
     return;
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

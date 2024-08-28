@@ -37,165 +37,164 @@ bool Assembly-CSharp.dll::GenerateTextureData+<GenerateTexture>d__5::
     if (pGVar2 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
                 (pGVar2,iVar3,(MethodInfo *)0x0);
-      (this->fields)._screenshotCamObject_5__2 = pGVar2;
+      ppGVar4 = &(this->fields)._screenshotCamObject_5__2;
+      *ppGVar4 = pGVar2;
       func_?();
       x = MVGameControllerBase::MVGameControllerBase_get_SkyboxManager((MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+      bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                         ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar4 == 0) {
+      if (bVar5 == 0) {
         if ((TypeInfo__SkyboxManager->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pSVar5 = TypeInfo__SkyboxManager->static_fields;
-        auStack_6._0_4_ = (pSVar5->defaultColor).r;
-        auStack_6._4_4_ = (pSVar5->defaultColor).g;
-        fStack_7 = (pSVar5->defaultColor).b;
-        fStack_8 = (pSVar5->defaultColor).a;
+        pSVar6 = TypeInfo__SkyboxManager->static_fields;
+        auStack_7._0_4_ = (pSVar6->defaultColor).r;
+        auStack_7._4_4_ = (pSVar6->defaultColor).g;
+        fStack_8 = (pSVar6->defaultColor).b;
+        fStack_9 = (pSVar6->defaultColor).a;
       }
       else {
         if (x == (SkyboxManager *)0x0) goto code_?;
-        auStack_6._0_4_ = (x->fields).currentColor.r;
-        auStack_6._4_4_ = (x->fields).currentColor.g;
-        fStack_7 = (x->fields).currentColor.b;
-        fStack_8 = (x->fields).currentColor.a;
+        auStack_7._0_4_ = (x->fields).currentColor.r;
+        auStack_7._4_4_ = (x->fields).currentColor.g;
+        fStack_8 = (x->fields).currentColor.b;
+        fStack_9 = (x->fields).currentColor.a;
       }
-      pGVar2 = (this->fields)._screenshotCamObject_5__2;
-      if (pGVar2 != (GameObject *)0x0) {
-        pCVar9 = (Camera *)
+      if (*ppGVar4 != (GameObject *)0x0) {
+        pCVar10 = (Camera *)
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                            (pGVar2,
+                            (*ppGVar4,
                              UnityEngine__Camera_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::Camera>__
                             );
-        (this->fields)._screenshotCam_5__3 = pCVar9;
+        ppCVar11 = &(this->fields)._screenshotCam_5__3;
+        *ppCVar11 = pCVar10;
         func_?();
-        pMVar10 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+        pMStack_12 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                               ((MethodInfo *)0x0);
+        uVar13 = 0;
+        puVar14 = &UNK_?;
+        pCVar10 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
                             ((MethodInfo *)0x0);
-        uVar11 = 0;
-        puVar12 = &UNK_?;
-        pCVar9 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
-                            ((MethodInfo *)0x0);
-        if (pCVar9 != (Camera *)0x0) {
-          pBStack_13 = (Byte__Array__Class *)
-                      UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_aspect
-                                (pCVar9,(MethodInfo *)0x0);
-          pCVar14 = (this->fields)._screenshotCam_5__3;
-          uVar15 = 0;
-          puVar16 = &UNK_?;
-          pCVar17 = pCVar9;
+        if (pCVar10 != (Camera *)0x0) {
+          pBStack_15 = (Byte__Array__Class *)
+                       UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_aspect
+                                 (pCVar10,(MethodInfo *)0x0);
+          pCStack_16 = *ppCVar11;
+          uVar17 = 0;
+          puVar18 = &UNK_?;
+          pCVar19 = pCVar10;
           value_00 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_clearFlags
-                               (pCVar9,(MethodInfo *)0x0);
-          if (pCVar14 != (Camera *)0x0) {
+                               (pCVar10,(MethodInfo *)0x0);
+          if (pCStack_16 != (Camera *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_clearFlags
-                      (pCVar14,value_00,(MethodInfo *)0x0);
-            pCVar14 = (this->fields)._screenshotCam_5__3;
-            if (pCVar14 != (Camera *)0x0) {
-              uVar18 = 0;
-              puVar19 = &UNK_?;
-              value.g = (float)auStack_6._4_4_;
-              value.r = (float)auStack_6._0_4_;
-              value.b = fStack_7;
-              value.a = fStack_8;
-              fVar20 = (float)auStack_6._0_4_;
-              fVar21 = (float)auStack_6._4_4_;
-              fVar22 = fStack_7;
-              fVar23 = fStack_8;
+                      (pCStack_16,value_00,(MethodInfo *)0x0);
+            this_06 = *ppCVar11;
+            if (this_06 != (Camera *)0x0) {
+              uVar20 = 0;
+              puVar21 = &UNK_?;
+              value.g = (float)auStack_7._4_4_;
+              value.r = (float)auStack_7._0_4_;
+              value.b = fStack_8;
+              value.a = fStack_9;
+              fVar22 = (float)auStack_7._0_4_;
+              fVar23 = (float)auStack_7._4_4_;
+              fVar24 = fStack_8;
+              fVar25 = fStack_9;
               UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_backgroundColor
-                        (pCVar14,value,(MethodInfo *)0x0);
-              pGVar2 = (this->fields)._screenshotCamObject_5__2;
+                        (this_06,value,(MethodInfo *)0x0);
+              pGVar2 = *ppGVar4;
               if (pGVar2 != (GameObject *)0x0) {
-                puVar24 = &UNK_?;
-                this_05 = (Skybox *)
-                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                          GameObject_AddComponent_1
-                                    (pGVar2,
-                                     UnityEngine__Skybox_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::Skybox>__
-                                    );
-                this_08 = (this->fields)._screenshotCamObject_5__2;
-                if (this_08 != (GameObject *)0x0) {
-                  puVar25 = &UNK_?;
+                puVar26 = &UNK_?;
+                pCStack_16 = (Camera *)
+                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                            GameObject_AddComponent_1
+                                      (pGVar2,
+                                       UnityEngine__Skybox_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::Skybox>__
+                                      );
+                this_07 = *ppGVar4;
+                if (this_07 != (GameObject *)0x0) {
+                  puVar27 = &UNK_?;
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                            (this_08,
+                            (this_07,
                              UnityEngine__FlareLayer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::FlareLayer>__
                             );
-                  if ((pMVar10 != (MainCameraManager *)0x0) &&
-                     (this_01 = (pMVar10->fields).skybox, this_01 != (Skybox *)0x0)) {
-                    puVar26 = &UNK_?;
+                  if ((pMStack_12 != (MainCameraManager *)0x0) &&
+                     (this_01 = (pMStack_12->fields).skybox, this_01 != (Skybox *)0x0)) {
+                    puVar28 = &UNK_?;
                     value_01 = UnityEngine.CoreModule.dll::UnityEngine::Skybox::Skybox_get_material
                                          (this_01,(MethodInfo *)0x0);
-                    if (this_05 != (Skybox *)0x0) {
-                      puVar27 = &UNK_?;
-                      UnityEngine.CoreModule.dll::UnityEngine::Skybox::Skybox_set_material
-                                (this_05,value_01,(MethodInfo *)0x0);
-                      this_09 = (this->fields)._screenshotCam_5__3;
-                      uVar28 = 0;
+                    if (pCStack_16 != (Camera *)0x0) {
                       puVar29 = &UNK_?;
-                      pCVar30 = pCVar9;
+                      UnityEngine.CoreModule.dll::UnityEngine::Skybox::Skybox_set_material
+                                ((Skybox *)pCStack_16,value_01,(MethodInfo *)0x0);
+                      pCStack_16 = *ppCVar11;
+                      uVar30 = 0;
+                      puVar31 = &UNK_?;
+                      pCVar32 = pCVar10;
                       value_02 = (PostProcessLayer *)
                                  UnityEngine.CoreModule.dll::UnityEngine::Camera::
-                                 Camera_get_fieldOfView(pCVar9,(MethodInfo *)0x0);
-                      pPStack_31 = value_02;
-                      if (this_09 != (Camera *)0x0) {
-                        puVar32 = &UNK_?;
+                                 Camera_get_fieldOfView(pCVar10,(MethodInfo *)0x0);
+                      pPStack_33 = value_02;
+                      if (pCStack_16 != (Camera *)0x0) {
+                        puVar34 = &UNK_?;
+                        pCVar35 = pCStack_16;
                         UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView
-                                  (this_09,(float)value_02,(MethodInfo *)0x0);
-                        pCVar33 = (this->fields)._screenshotCam_5__3;
-                        if (pCVar33 != (Camera *)0x0) {
+                                  (pCStack_16,(float)value_02,(MethodInfo *)0x0);
+                        if (*ppCVar11 != (Camera *)0x0) {
                           UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_aspect
-                                    (pCVar33,(float)pBStack_13,(MethodInfo *)0x0);
-                          pCVar33 = (this->fields)._screenshotCam_5__3;
-                          pPStack_31 = (PostProcessLayer *)
+                                    (*ppCVar11,(float)pBStack_15,(MethodInfo *)0x0);
+                          pPStack_33 = (PostProcessLayer *)*ppCVar11;
+                          pCStack_16 = (Camera *)
                                       UnityEngine.CoreModule.dll::UnityEngine::Camera::
-                                      Camera_get_nearClipPlane(pCVar9,(MethodInfo *)0x0);
-                          if (pCVar33 != (Camera *)0x0) {
+                                      Camera_get_nearClipPlane(pCVar10,(MethodInfo *)0x0);
+                          if (pPStack_33 != (PostProcessLayer *)0x0) {
                             UnityEngine.CoreModule.dll::UnityEngine::Camera::
-                            Camera_set_nearClipPlane(pCVar33,(float)pPStack_31,(MethodInfo *)0x0);
-                            pCVar33 = (this->fields)._screenshotCam_5__3;
+                            Camera_set_nearClipPlane
+                                      ((Camera *)pPStack_33,(float)pCStack_16,(MethodInfo *)0x0);
+                            this_02 = *ppCVar11;
                             p_Var14 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::
                                       Unsafe::UnsafeUtility::UnsafeUtility_AsRef_1
                                                 ((Void *)0x1011,(MethodInfo *)0x0);
                             p_Var14 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::
                                       Unsafe::UnsafeUtility::UnsafeUtility_AsRef_1
                                                 ((Void *)p_Var14,(MethodInfo *)0x0);
-                            if (pCVar33 != (Camera *)0x0) {
+                            if (this_02 != (Camera *)0x0) {
                               UnityEngine.CoreModule.dll::UnityEngine::Camera::
-                              Camera_set_cullingMask(pCVar33,(int32_t)p_Var14,(MethodInfo *)0x0);
-                              this_06 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                              Camera_set_cullingMask(this_02,(int32_t)p_Var14,(MethodInfo *)0x0);
+                              pGVar36 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                         Component_get_gameObject
-                                                  ((Component *)pCVar9,(MethodInfo *)0x0);
-                              pGVar34 = (this->fields)._screenshotCamObject_5__2;
-                              if ((((pGVar34 != (GameObject *)0x0) &&
-                                   (pTVar35 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                              GameObject_get_transform(pGVar34,(MethodInfo *)0x0),
-                                   this_06 != (GameObject *)0x0)) &&
-                                  (pTVar36 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                             GameObject_get_transform(this_06,(MethodInfo *)0x0),
-                                  pTVar36 != (Transform *)0x0)) &&
-                                 (pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                                  ((Component *)pCVar10,(MethodInfo *)0x0);
+                              if ((((*ppGVar4 != (GameObject *)0x0) &&
+                                   (pTVar37 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                              GameObject_get_transform(*ppGVar4,(MethodInfo *)0x0),
+                                   pGVar36 != (GameObject *)0x0)) &&
+                                  (pTVar38 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                             GameObject_get_transform(pGVar36,(MethodInfo *)0x0),
+                                  pTVar38 != (Transform *)0x0)) &&
+                                 (pVVar39 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                             Transform_get_position
-                                                      ((Vector3 *)(auStack_6 + 4),pTVar36,
+                                                      ((Vector3 *)(auStack_7 + 4),pTVar38,
                                                        (MethodInfo *)0x0),
-                                 pTVar35 != (Transform *)0x0)) {
+                                 pTVar37 != (Transform *)0x0)) {
                                 UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                Transform_set_position(pTVar35,*pVVar37,(MethodInfo *)0x0);
-                                pGVar34 = (this->fields)._screenshotCamObject_5__2;
-                                if (pGVar34 != (GameObject *)0x0) {
-                                  pTVar35 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                            GameObject_get_transform(pGVar34,(MethodInfo *)0x0);
-                                  pTVar36 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                            GameObject_get_transform(this_06,(MethodInfo *)0x0);
-                                  if ((pTVar36 != (Transform *)0x0) &&
-                                     (pQVar38 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                Transform_set_position(pTVar37,*pVVar39,(MethodInfo *)0x0);
+                                if (*ppGVar4 != (GameObject *)0x0) {
+                                  pTVar37 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                            GameObject_get_transform(*ppGVar4,(MethodInfo *)0x0);
+                                  pTVar38 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                            GameObject_get_transform(pGVar36,(MethodInfo *)0x0);
+                                  if ((pTVar38 != (Transform *)0x0) &&
+                                     (pQVar40 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                                 Transform_get_rotation
-                                                          ((Quaternion *)auStack_6,pTVar36,
+                                                          ((Quaternion *)auStack_7,pTVar38,
                                                            (MethodInfo *)0x0),
-                                     pTVar35 != (Transform *)0x0)) {
+                                     pTVar37 != (Transform *)0x0)) {
                                     UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                    Transform_set_rotation(pTVar35,*pQVar38,(MethodInfo *)0x0);
-                                    pPStack_31 = (PostProcessLayer *)
-                                                (this->fields)._screenshotCamObject_5__2;
+                                    Transform_set_rotation(pTVar37,*pQVar40,(MethodInfo *)0x0);
+                                    pGVar36 = *ppGVar4;
                                     if (cRam_? == '\0') {
                                       func_?();
                                       func_?();
@@ -218,29 +217,28 @@ bool Assembly-CSharp.dll::GenerateTextureData+<GenerateTexture>d__5::
                                     if (TypeInfo__MainCameraManager->static_fields->
                                         gameHasCameraEffects == 0) {
 code_?:
-                                      fVar20 = _UNK_? / (float)pBStack_13;
-                                      (this->fields)._height_5__4 = (int)fVar20;
-                                      pRVar39 = (RenderTexture *)func_?();
+                                      fVar22 = _UNK_? / (float)pBStack_15;
+                                      (this->fields)._height_5__4 = (int)fVar22;
+                                      pRVar41 = (RenderTexture *)func_?();
                                       UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::
                                       RenderTexture__ctor_10
-                                                (pRVar39,0x398,(int)fVar20,0x18,(MethodInfo *)0x0);
-                                      if (pRVar39 != (RenderTexture *)0x0) {
+                                                (pRVar41,0x398,(int)fVar22,0x18,(MethodInfo *)0x0);
+                                      if (pRVar41 != (RenderTexture *)0x0) {
                                         UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::
-                                        RenderTexture_set_antiAliasing(pRVar39,8,(MethodInfo *)0x0);
+                                        RenderTexture_set_antiAliasing(pRVar41,8,(MethodInfo *)0x0);
                                         UnityEngine.CoreModule.dll::UnityEngine::Texture::
                                         Texture_set_anisoLevel
-                                                  ((Texture *)pRVar39,0x10,(MethodInfo *)0x0);
-                                        (this->fields)._screenshotRenderTexture_5__5 = pRVar39;
+                                                  ((Texture *)pRVar41,0x10,(MethodInfo *)0x0);
+                                        ppRVar42 = &(this->fields)._screenshotRenderTexture_5__5;
+                                        *ppRVar42 = pRVar41;
                                         func_?();
-                                        pCVar9 = (this->fields)._screenshotCam_5__3;
-                                        if (pCVar9 != (Camera *)0x0) {
+                                        pCVar10 = (this->fields)._screenshotCam_5__3;
+                                        if (pCVar10 != (Camera *)0x0) {
                                           UnityEngine.CoreModule.dll::UnityEngine::Camera::
                                           Camera_set_targetTexture
-                                                    (pCVar9,(this->fields).
-                                                             _screenshotRenderTexture_5__5,
-                                                     (MethodInfo *)0x0);
-                                          pOVar40 = (Object *)func_?();
-                                          (this->fields).__2__current = pOVar40;
+                                                    (pCVar10,*ppRVar42,(MethodInfo *)0x0);
+                                          pOVar43 = (Object *)func_?();
+                                          (this->fields).__2__current = pOVar43;
                                           func_?();
                                           (this->fields).__1__state = 1;
                                           return 1;
@@ -252,129 +250,125 @@ code_?:
                                           cctor_finished_or_no_cctor == 0) {
                                         func_?();
                                       }
-                                      pMVar41 = TypeInfo__MainCameraManager->static_fields;
-                                      puVar42 = (undefined4 *)&stack0xffffff38;
-                                      for (iVar1 = 0x2a; this_02 = pPStack_31, iVar1 != 0;
-                                          iVar1 = iVar1 + -1) {
-                                        *puVar42 = *(undefined4 *)
-                                                    &(pMVar41->CurrentPostProcessingSettings).
+                                      pMVar44 = TypeInfo__MainCameraManager->static_fields;
+                                      puVar45 = (undefined4 *)&stack0xffffff30;
+                                      for (iVar1 = 0x2a; iVar1 != 0; iVar1 = iVar1 + -1) {
+                                        *puVar45 = *(undefined4 *)
+                                                    &(pMVar44->CurrentPostProcessingSettings).
                                                      colorSettings;
-                                        pMVar41 = (MainCameraManager__StaticFields *)
-                                                  &(pMVar41->CurrentPostProcessingSettings).
+                                        pMVar44 = (MainCameraManager__StaticFields *)
+                                                  &(pMVar44->CurrentPostProcessingSettings).
                                                    colorSettings.postExposure;
-                                        puVar42 = puVar42 + 1;
+                                        puVar45 = puVar45 + 1;
                                       }
-                                      if ((pPStack_31 != (PostProcessLayer *)0x0) &&
-                                         (this_07 = (PostProcessLayer *)
+                                      if ((pGVar36 != (GameObject *)0x0) &&
+                                         (this_05 = (PostProcessLayer *)
                                                     UnityEngine.CoreModule.dll::UnityEngine::
                                                     GameObject::GameObject_AddComponent_1
-                                                              ((GameObject *)pPStack_31,
-                                                                                                                              
+                                                              (pGVar36,
                                                   UnityEngine__Rendering__PostProcessing__PostProcessLayer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::Rendering::PostProcessing::PostProcessLayer>__
-                                                  ), pPStack_31 = this_07,
-                                         this_07 != (PostProcessLayer *)0x0)) {
+                                                  ), pPStack_33 = this_05,
+                                         this_05 != (PostProcessLayer *)0x0)) {
                                         Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::
                                         PostProcessing::PostProcessLayer::PostProcessLayer_Init
-                                                  (this_07,(pMVar10->fields).postProcessResources,
-                                                   (MethodInfo *)0x0);
-                                        pTVar35 = UnityEngine.CoreModule.dll::UnityEngine::
+                                                  (this_05,(pMStack_12->fields).postProcessResources
+                                                   ,(MethodInfo *)0x0);
+                                        pTVar37 = UnityEngine.CoreModule.dll::UnityEngine::
                                                   GameObject::GameObject_get_transform
-                                                            ((GameObject *)this_02,(MethodInfo *)0x0
-                                                            );
-                                        (this_07->fields).volumeTrigger = pTVar35;
+                                                            (pGVar36,(MethodInfo *)0x0);
+                                        (this_05->fields).volumeTrigger = pTVar37;
                                         func_?();
                                         p_Var14 = UnityEngine.CoreModule.dll::Unity::Collections::
                                                   LowLevel::Unsafe::UnsafeUtility::
                                                   UnsafeUtility_AsRef_1
                                                             ((Void *)0x1011,(MethodInfo *)0x0);
-                                        (this_07->fields).volumeLayer.m_Mask = (int32_t)p_Var14;
-                                        (this_07->fields).antialiasingMode = 0;
-                                        (this_07->fields).stopNaNPropagation = 1;
-                                        (this_07->fields).finalBlitToCameraTarget = 0;
+                                        (this_05->fields).volumeLayer.m_Mask = (int32_t)p_Var14;
+                                        (this_05->fields).antialiasingMode = 0;
+                                        (this_05->fields).stopNaNPropagation = 1;
+                                        (this_05->fields).finalBlitToCameraTarget = 0;
                                         ppVolume = (PostProcessVolume *)
                                                    UnityEngine.CoreModule.dll::UnityEngine::
                                                    GameObject::GameObject_AddComponent_1
-                                                             ((GameObject *)this_02,
-                                                                                                                            
+                                                             (pGVar36,
                                                   UnityEngine__Rendering__PostProcessing__PostProcessVolume_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::Rendering::PostProcessing::PostProcessVolume>__
                                                   );
                                         if (ppVolume != (PostProcessVolume *)0x0) {
                                           (ppVolume->fields).isGlobal = 1;
                                           (ppVolume->fields).weight = 0.0;
-                                          pPVar43 = (PostProcessProfile *)
+                                          pPVar46 = (PostProcessProfile *)
                                                     UnityEngine.CoreModule.dll::UnityEngine::
                                                     ScriptableObject::
                                                     ScriptableObject_CreateInstance_1
                                                               (
                                                   UnityEngine__Rendering__PostProcessing__PostProcessProfile_MethodInfo__UnityEngine__ScriptableObject__CreateInstance<UnityEngine::Rendering::PostProcessing::PostProcessProfile>__
                                                   );
-                                          (ppVolume->fields).m_InternalProfile = pPVar43;
+                                          (ppVolume->fields).m_InternalProfile = pPVar46;
                                           func_?();
                                           method_00 = (MethodInfo *)0x0;
-                                          puVar42 = (undefined4 *)&stack0xffffff38;
-                                          puVar44 = (undefined4 *)&stack0xfffffe24;
+                                          puVar45 = (undefined4 *)&stack0xffffff30;
+                                          puVar47 = (undefined4 *)&stack0xfffffe1c;
                                           for (iVar1 = 0x2a; iVar1 != 0; iVar1 = iVar1 + -1) {
-                                            *puVar44 = *puVar42;
-                                            puVar42 = puVar42 + 1;
-                                            puVar44 = puVar44 + 1;
+                                            *puVar47 = *puVar45;
+                                            puVar45 = puVar45 + 1;
+                                            puVar47 = puVar47 + 1;
                                           }
-                                          data.bloomSettings.color.b = (float)puVar12;
-                                          auVar45 = in_stack_46._0_20_;
-                                          data.colorSettings.colors = auVar45[0];
-                                          data.colorSettings._1_3_ = auVar45._1_3_;
-                                          data.colorSettings.postExposure = auVar45._4_4_;
-                                          data.colorSettings.temperature = auVar45._8_4_;
-                                          data.colorSettings.saturation = auVar45._12_4_;
-                                          data.colorSettings.contrast = auVar45._16_4_;
-                                          data.bloomSettings.bloom = in_stack_46[0x14];
-                                          data.bloomSettings._1_3_ = in_stack_46._21_3_;
-                                          data.bloomSettings.intensity = in_stack_46._24_4_;
-                                          data.bloomSettings.softKnee = in_stack_46._28_4_;
-                                          data.bloomSettings.diffusion = in_stack_46._32_4_;
+                                          data.bloomSettings.color.b = (float)puVar14;
+                                          auVar48 = in_stack_49._0_20_;
+                                          data.colorSettings.colors = auVar48[0];
+                                          data.colorSettings._1_3_ = auVar48._1_3_;
+                                          data.colorSettings.postExposure = auVar48._4_4_;
+                                          data.colorSettings.temperature = auVar48._8_4_;
+                                          data.colorSettings.saturation = auVar48._12_4_;
+                                          data.colorSettings.contrast = auVar48._16_4_;
+                                          data.bloomSettings.bloom = in_stack_49[0x14];
+                                          data.bloomSettings._1_3_ = in_stack_49._21_3_;
+                                          data.bloomSettings.intensity = in_stack_49._24_4_;
+                                          data.bloomSettings.softKnee = in_stack_49._28_4_;
+                                          data.bloomSettings.diffusion = in_stack_49._32_4_;
                                           data.bloomSettings.color.r =
-                                               (float)in_stack_46._36_4_;
+                                               (float)in_stack_49._36_4_;
                                           data.bloomSettings.color.g =
-                                               (float)in_stack_46._40_4_;
-                                          data.bloomSettings.color.a = (float)uVar11;
+                                               (float)in_stack_49._40_4_;
+                                          data.bloomSettings.color.a = (float)uVar13;
                                           data.ambientOcclusionSettings.ambientOcclusion =
-                                               in_stack_47[0];
+                                               in_stack_50[0];
                                           data.ambientOcclusionSettings._1_3_ =
-                                               in_stack_47._1_3_;
+                                               in_stack_50._1_3_;
                                           data.ambientOcclusionSettings.intensity =
-                                               in_stack_47._4_4_;
+                                               in_stack_50._4_4_;
                                           data.ambientOcclusionSettings.thickness =
-                                               in_stack_47._8_4_;
-                                          data.ambientOcclusionSettings.color.r = (float)puVar16;
-                                          data.ambientOcclusionSettings.color.g = (float)pCVar17;
-                                          data.ambientOcclusionSettings.color.b = (float)uVar15;
-                                          data.ambientOcclusionSettings.color.a = (float)puVar19;
-                                          data.depthOfFieldSettings._0_4_ = pCVar14;
-                                          data.depthOfFieldSettings.focusDistance = (int32_t)fVar20;
-                                          data.depthOfFieldSettings.aperture = (int32_t)fVar21;
-                                          data.depthOfFieldSettings.focalLength = (int32_t)fVar22;
-                                          data.depthOfFieldSettings.maxBlurSize = (int32_t)fVar23;
-                                          data.vignetteSettings._0_4_ = uVar18;
-                                          data.vignetteSettings.intensity = in_stack_48._0_4_;
-                                          data.vignetteSettings.smoothness = in_stack_48._4_4_
+                                               in_stack_50._8_4_;
+                                          data.ambientOcclusionSettings.color.r = (float)puVar18;
+                                          data.ambientOcclusionSettings.color.g = (float)pCVar19;
+                                          data.ambientOcclusionSettings.color.b = (float)uVar17;
+                                          data.ambientOcclusionSettings.color.a = (float)puVar21;
+                                          data.depthOfFieldSettings._0_4_ = this_06;
+                                          data.depthOfFieldSettings.focusDistance = (int32_t)fVar22;
+                                          data.depthOfFieldSettings.aperture = (int32_t)fVar23;
+                                          data.depthOfFieldSettings.focalLength = (int32_t)fVar24;
+                                          data.depthOfFieldSettings.maxBlurSize = (int32_t)fVar25;
+                                          data.vignetteSettings._0_4_ = uVar20;
+                                          data.vignetteSettings.intensity = in_stack_51._0_4_;
+                                          data.vignetteSettings.smoothness = in_stack_51._4_4_
                                           ;
-                                          data.vignetteSettings.roundness = in_stack_48._8_4_;
-                                          data.vignetteSettings.color.r = (float)puVar24;
+                                          data.vignetteSettings.roundness = in_stack_51._8_4_;
+                                          data.vignetteSettings.color.r = (float)puVar26;
                                           data.vignetteSettings.color.g = (float)pGVar2;
-                                          data.vignetteSettings.color.b = (float)puVar25;
-                                          data.vignetteSettings.color.a = (float)this_08;
-                                          data.vignetteSettings._32_4_ = puVar26;
-                                          data.grainSettings._0_4_ = puVar27;
-                                          data.grainSettings.intensity = (int32_t)puVar29;
-                                          data.grainSettings.size = (int32_t)pCVar30;
-                                          data.grainSettings.luminanceContribution = uVar28;
-                                          data.lensDistortionSettings._0_4_ = in_stack_49;
-                                          data.lensDistortionSettings.intensity = (int32_t)puVar32;
-                                          data.lensDistortionSettings.xMultiplier = (int32_t)this_09
+                                          data.vignetteSettings.color.b = (float)puVar27;
+                                          data.vignetteSettings.color.a = (float)this_07;
+                                          data.vignetteSettings._32_4_ = puVar28;
+                                          data.grainSettings._0_4_ = puVar29;
+                                          data.grainSettings.intensity = (int32_t)puVar31;
+                                          data.grainSettings.size = (int32_t)pCVar32;
+                                          data.grainSettings.luminanceContribution = uVar30;
+                                          data.lensDistortionSettings._0_4_ = in_stack_52;
+                                          data.lensDistortionSettings.intensity = (int32_t)puVar34;
+                                          data.lensDistortionSettings.xMultiplier = (int32_t)pCVar35
                                           ;
                                           data.lensDistortionSettings.yMultiplier =
                                                (int32_t)value_02;
                                           MainCameraManager::MainCameraManager_ApplyPostProcessing
-                                                    (pPStack_31,ppVolume,data,method_00);
+                                                    (pPStack_33,ppVolume,data,method_00);
                                           goto code_?;
                                         }
                                       }
@@ -399,8 +393,8 @@ code_?:
   else {
     if (iVar1 == 1) {
       (this->fields).__1__state = -1;
-      pOVar40 = (Object *)func_?();
-      (this->fields).__2__current = pOVar40;
+      pOVar43 = (Object *)func_?();
+      (this->fields).__2__current = pOVar43;
       func_?();
       (this->fields).__1__state = 2;
       return 1;
@@ -415,39 +409,39 @@ code_?:
     this_03 = (Texture2D *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D__ctor_3
               (this_03,0x398,iVar3,TextureFormat__Enum_RGB24,0,(MethodInfo *)0x0);
-    auStack_6._0_4_ = 0.0;
-    auStack_6._4_4_ = 0.0;
-    fStack_7 = 920.0;
-    fStack_8 = (float)(this->fields)._height_5__4;
+    auStack_7._0_4_ = 0.0;
+    auStack_7._4_4_ = 0.0;
+    fStack_8 = 920.0;
+    fStack_9 = (float)(this->fields)._height_5__4;
     if (this_03 != (Texture2D *)0x0) {
-      auVar50 = ZEXT412(0x44660000) << 0x40;
-      source.m_Height = fStack_8;
-      source.m_XMin = (float)auVar50._0_4_;
-      source.m_YMin = (float)auVar50._4_4_;
-      source.m_Width = (float)auVar50._8_4_;
+      auVar53 = ZEXT412(0x44660000) << 0x40;
+      source.m_Height = fStack_9;
+      source.m_XMin = (float)auVar53._0_4_;
+      source.m_YMin = (float)auVar53._4_4_;
+      source.m_Width = (float)auVar53._8_4_;
       UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_ReadPixels_1
                 (this_03,source,0,0,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_Apply_1
                 (this_03,(MethodInfo *)0x0);
       this_04 = UnityEngine.ImageConversionModule.dll::UnityEngine::ImageConversion::
                 ImageConversion_EncodeToPNG(this_03,(MethodInfo *)0x0);
-      pAVar51 = (this->fields).textureDataCallback;
+      pAVar54 = (this->fields).textureDataCallback;
       if ((this_04 != (Byte__Array *)0x0) &&
-         (pOVar40 = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
+         (pOVar43 = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
                    PlayableBehaviour_Clone((PlayableBehaviour *)this_04,(MethodInfo *)0x0),
-         pAVar51 != (Action_1_Byte_ *)0x0)) {
-        pBStack_13 = TypeInfo__System__Byte;
-        if ((pOVar40 != (Object *)0x0) && (iVar1 = func_?(), iVar1 == 0))
+         pAVar54 != (Action_1_Byte_ *)0x0)) {
+        pBStack_15 = TypeInfo__System__Byte;
+        if ((pOVar43 != (Object *)0x0) && (iVar1 = func_?(), iVar1 == 0))
         goto code_?;
-        (*(pAVar51->fields)._._.invoke_impl)();
-        pCVar9 = (this->fields)._screenshotCam_5__3;
-        if (pCVar9 != (Camera *)0x0) {
+        (*(pAVar54->fields)._._.invoke_impl)();
+        pCVar10 = (this->fields)._screenshotCam_5__3;
+        if (pCVar10 != (Camera *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture
-                    (pCVar9,(RenderTexture *)0x0,(MethodInfo *)0x0);
-          pRVar39 = (this->fields)._screenshotRenderTexture_5__5;
-          if (pRVar39 != (RenderTexture *)0x0) {
+                    (pCVar10,(RenderTexture *)0x0,(MethodInfo *)0x0);
+          pRVar41 = (this->fields)._screenshotRenderTexture_5__5;
+          if (pRVar41 != (RenderTexture *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_Release
-                      (pRVar39,(MethodInfo *)0x0);
+                      (pRVar41,(MethodInfo *)0x0);
             UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_set_active
                       ((RenderTexture *)0x0,(MethodInfo *)0x0);
             pGVar2 = (this->fields)._screenshotCamObject_5__2;
@@ -478,9 +472,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar52 = (code *)swi(3);
-  bVar4 = (*pcVar52)();
-  return bVar4;
+  pcVar55 = (code *)swi(3);
+  bVar5 = (*pcVar55)();
+  return bVar5;
 }
 
 

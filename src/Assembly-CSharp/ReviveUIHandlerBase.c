@@ -87,32 +87,28 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase::ReviveUIHandlerBase_OnDestroy
     return;
   }
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar2 != (MVNetworkGame *)0x0) {
-    pAVar3 = (pMVar2->fields).OnWinningConditionFulfilled;
+  if (pMVar2 == (MVNetworkGame *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
+    ppAVar3 = &(pMVar2->fields).OnWinningConditionFulfilled;
     this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *)func_?(TypeInfo__System__Action<IWinningCondition>);
-    if (this != (ReviveUIHandlerBase *)0x0) {
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                (this_01,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0)
-      ;
-      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pAVar3,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pDVar4 == (Delegate *)0x0) {
-        (pMVar2->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-      }
-      else {
-        pAVar3 = (Action_1_IWinningCondition_ *)func_?();
-        if (pAVar3 == (Action_1_IWinningCondition_ *)0x0) goto code_?;
-        (pMVar2->fields).OnWinningConditionFulfilled = pAVar3;
-        iVar5 = func_?();
-        if (iVar5 == 0) goto code_?;
-      }
+    if (this == (ReviveUIHandlerBase *)0x0) goto code_?;
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_01,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0);
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)this_01,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar4 == (Delegate *)0x0) {
+      *ppAVar3 = (Action_1_IWinningCondition_ *)0x0;
+code_?:
       func_?();
-      pGVar6 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if (pGVar6 != (GameEventManager *)0x0) {
-        this_00 = (pGVar6->fields).AvatarCommandsPlayMode;
+      pGVar5 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if (pGVar5 != (GameEventManager *)0x0) {
+        this_00 = (pGVar5->fields).AvatarCommandsPlayMode;
         this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
@@ -125,13 +121,19 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase::ReviveUIHandlerBase_OnDestroy
           return;
         }
       }
+      goto code_?;
     }
+    pAVar6 = (Action_1_IWinningCondition_ *)func_?();
+    if (pAVar6 == (Action_1_IWinningCondition_ *)0x0) goto code_?;
+    *ppAVar3 = pAVar6;
+    iVar7 = func_?();
+    if (iVar7 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -177,9 +179,10 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase::ReviveUIHandlerBase_OnSubscriberC
                        ((Object *)original,
                         ContinueButtonLockCursor_MethodInfo__UnityEngine__Object__Instantiate<ContinueButtonLockCursor>_ContinueButtonLockCursor_
                        );
-    value[1].klass = pOVar1;
-    func_?(value + 1,pOVar1);
-    pOVar1 = value[1].klass;
+    pOVar2 = value + 1;
+    pOVar2->klass = pOVar1;
+    func_?(pOVar2,pOVar1);
+    pOVar1 = pOVar2->klass;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
@@ -211,8 +214,8 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase::ReviveUIHandlerBase_OnSubscriberC
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -249,119 +252,118 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase::ReviveUIHandlerBase_OnWatchAdClic
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
+  if (value == (Object *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
     value[1].monitor = (MonitorData *)this;
     func_?(&value[1].monitor,this);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 != (MVNetworkGame *)0x0) {
-      pAVar2 = (pMVar1->fields).OnWinningConditionFulfilled;
-      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 *)func_?(TypeInfo__System__Action<IWinningCondition>);
-      if (this != (ReviveUIHandlerBase *)0x0) {
-        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata
-        ::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-        DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                  (this_00,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,
-                   (MethodInfo *)0x0);
-        pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-        if (pDVar3 == (Delegate *)0x0) {
-          (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-        }
-        else {
-          pAVar2 = (Action_1_IWinningCondition_ *)func_?();
-          if (pAVar2 == (Action_1_IWinningCondition_ *)0x0) goto code_?;
-          (pMVar1->fields).OnWinningConditionFulfilled = pAVar2;
-          iVar4 = func_?();
-          if (iVar4 == 0) goto code_?;
-        }
+    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+    ppAVar2 = &(pMVar1->fields).OnWinningConditionFulfilled;
+    pAVar3 = *ppAVar2;
+    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<IWinningCondition>);
+    if (this == (ReviveUIHandlerBase *)0x0) goto code_?;
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_00,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0);
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar4 == (Delegate *)0x0) {
+      *ppAVar2 = (Action_1_IWinningCondition_ *)0x0;
+code_?:
+      func_?();
+      (this->fields).watchAdClicked = 1;
+      MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(0,0,(MethodInfo *)0x0);
+      original = (this->fields).continuePopup;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
-        (this->fields).watchAdClicked = 1;
-        MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(0,0,(MethodInfo *)0x0);
-        original = (this->fields).continuePopup;
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      }
+      pOVar5 = (Object__Class *)
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                         ((Object *)original,
+                          ContinueButtonLockCursor_MethodInfo__UnityEngine__Object__Instantiate<ContinueButtonLockCursor>_ContinueButtonLockCursor_
+                         );
+      value[1].klass = pOVar5;
+      func_?();
+      pOVar5 = value[1].klass;
+      this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_01,(Object *)this,(this->klass->vtable).Initialize.methodPtr,(MethodInfo *)0x0
+                );
+      if (pOVar5 != (Object__Class *)0x0) {
+        ContinueButtonLockCursor::ContinueButtonLockCursor_Initialize
+                  ((ContinueButtonLockCursor *)pOVar5,(Action *)this_01,(MethodInfo *)0x0);
+        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+        callbackFunction =
+             (ExecuteEvents_EventFunction_1_System_Object_ *)
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                            );
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                   MethodInfo__ReviveUIHandlerBase____c__DisplayClass23_0___OnWatchAdClicked_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
           func_?();
         }
-        pOVar5 = (Object__Class *)
-                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                           ((Object *)original,
-                            ContinueButtonLockCursor_MethodInfo__UnityEngine__Object__Instantiate<ContinueButtonLockCursor>_ContinueButtonLockCursor_
-                           );
-        value[1].klass = pOVar5;
-        func_?();
-        pOVar5 = value[1].klass;
-        this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (this_01,(Object *)this,(this->klass->vtable).Initialize.methodPtr,
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (root,(BaseEventData *)0x0,callbackFunction,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                  );
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
+            (IEditModeUI *)0x0) {
+          (*(code *)(this->klass->vtable).__unknown_1.method)();
+          return;
+        }
+        pIVar6 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+        this_02 = (UnityAction_1_System_Int32Enum_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+        UnityAction_1_System_Int32Enum___ctor
+                  (this_02,(Object *)this,(this->klass->vtable).__unknown_2.methodPtr,
                    (MethodInfo *)0x0);
-        if (pOVar5 != (Object__Class *)0x0) {
-          ContinueButtonLockCursor::ContinueButtonLockCursor_Initialize
-                    ((ContinueButtonLockCursor *)pOVar5,(Action *)this_01,(MethodInfo *)0x0);
-          root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
-          callbackFunction =
-               (ExecuteEvents_EventFunction_1_System_Object_ *)
-               func_?(
-                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                              );
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                     MethodInfo__ReviveUIHandlerBase____c__DisplayClass23_0___OnWatchAdClicked_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?();
+        uVar7 = (*(code *)(this->klass->vtable).__unknown.method)();
+        if (pIVar6 != (IAdManager *)0x0) {
+          pIVar8 = pIVar6->klass;
+          uVar9 = 0;
+          uVar10._0_1_ = (pIVar8->_1).rank;
+          uVar10._1_1_ = (pIVar8->_1).minimumAlignment;
+          if (uVar10 != 0) {
+            do {
+              if (pIVar8->interfaceOffsets[uVar9].interfaceType ==
+                  (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
+                ppMVar11 = &(&(pIVar6->klass->vtable).RequestRewardedAd)
+                            [pIVar8->interfaceOffsets[uVar9].offset].method;
+                goto code_?;
+              }
+              uVar9 = uVar9 + 1;
+            } while (uVar9 < uVar10);
           }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (root,(BaseEventData *)0x0,callbackFunction,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                    );
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
-              (IEditModeUI *)0x0) {
-            (*(code *)(this->klass->vtable).__unknown_1.method)();
-            return;
-          }
-          pIVar6 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-          pIVar7 = pIVar6;
-          this_02 = (UnityAction_1_System_Int32Enum_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-          UnityAction_1_System_Int32Enum___ctor
-                    (this_02,(Object *)this,(this->klass->vtable).__unknown_2.methodPtr,
-                     (MethodInfo *)0x0);
-          uVar8 = (*(code *)(this->klass->vtable).__unknown.method)();
-          if (pIVar6 != (IAdManager *)0x0) {
-            pIVar9 = pIVar6->klass;
-            uVar10 = 0;
-            uVar11._0_1_ = (pIVar9->_1).rank;
-            uVar11._1_1_ = (pIVar9->_1).minimumAlignment;
-            if (uVar11 != 0) {
-              do {
-                if (pIVar9->interfaceOffsets[uVar10].interfaceType ==
-                    (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-                  ppMVar12 = &(&(pIVar9->vtable).RequestRewardedAd)
-                              [pIVar9->interfaceOffsets[uVar10].offset].method;
-                  goto code_?;
-                }
-                uVar10 = uVar10 + 1;
-              } while (uVar10 < uVar11);
-            }
-            ppMVar12 = (MethodInfo **)
-                       func_?(pIVar7,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,
-                                       6);
+          ppMVar11 = (MethodInfo **)
+                     func_?(pIVar6,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,6);
 code_?:
-            (*(code *)*ppMVar12)(pIVar7,this_02,uVar8,ppMVar12[1]);
-            return;
-          }
+          (*(code *)*ppMVar11)(pIVar6,this_02,uVar7,ppMVar11[1]);
+          return;
         }
       }
+      goto code_?;
     }
+    pAVar3 = (Action_1_IWinningCondition_ *)func_?();
+    if (pAVar3 == (Action_1_IWinningCondition_ *)0x0) goto code_?;
+    *ppAVar2 = pAVar3;
+    iVar12 = func_?();
+    if (iVar12 != 0) goto code_?;
   }
   func_?();
 code_?:
@@ -420,37 +422,58 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase::ReviveUIHandlerBase_RoundEnded
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar1 != (MVNetworkGame *)0x0) {
-    pAVar2 = (pMVar1->fields).OnWinningConditionFulfilled;
-    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?(TypeInfo__System__Action<IWinningCondition>);
+    unaff_EBX = (Action_1_IWinningCondition___Class *)(pMVar1->fields).OnWinningConditionFulfilled;
+    ppAVar2 = &(pMVar1->fields).OnWinningConditionFulfilled;
+    unaff_ESI = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?(TypeInfo__System__Action<IWinningCondition>);
     if (this != (ReviveUIHandlerBase *)0x0) {
       DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
       __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
       DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                (this_00,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0)
-      ;
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-      if (pDVar3 == (Delegate *)0x0) {
-        (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-code_?:
+                (unaff_ESI,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,
+                 (MethodInfo *)0x0);
+      unaff_ESI = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                   *)mscorlib.dll::System::Delegate::Delegate_Remove
+                               ((Delegate *)unaff_EBX,(Delegate *)unaff_ESI,(MethodInfo *)0x0);
+      unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
+      if (unaff_ESI ==
+          (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+           *)0x0) {
+        *ppAVar2 = (Action_1_IWinningCondition_ *)0x0;
+        pDStack3 =
+             (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+              *)ppAVar2;
+        pAStack4 = (Action_1_IWinningCondition___Class *)unaff_ESI;
         func_?();
         return;
       }
-      pAVar2 = (Action_1_IWinningCondition_ *)func_?();
-      if (pAVar2 != (Action_1_IWinningCondition_ *)0x0) {
-        (pMVar1->fields).OnWinningConditionFulfilled = pAVar2;
-        iVar4 = func_?();
-        if (iVar4 != 0) goto code_?;
+      pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+      pDStack3 = unaff_ESI;
+      pAVar5 = (Action_1_IWinningCondition_ *)func_?();
+      if (pAVar5 != (Action_1_IWinningCondition_ *)0x0) {
+        *ppAVar2 = pAVar5;
+        unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
+        pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+        pDStack3 = unaff_ESI;
+        pAStack4 = (Action_1_IWinningCondition___Class *)func_?();
+        if (pAStack4 != (Action_1_IWinningCondition___Class *)0x0) {
+          pDStack3 =
+               (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                *)ppAVar2;
+          func_?();
+          return;
+        }
       }
       goto code_?;
     }
   }
   func_?();
 code_?:
+  pDStack3 = unaff_ESI;
+  pAStack4 = unaff_EBX;
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

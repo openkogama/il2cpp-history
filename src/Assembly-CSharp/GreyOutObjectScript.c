@@ -26,13 +26,15 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_Awake
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
   if (pMVar2 != (MaterialLoader *)0x0) {
     pSVar3 = MaterialLoader::MaterialLoader_GetCubeModelUnavailableShader(pMVar2,(MethodInfo *)0x0);
-    (this->fields).cubeModelHiddenShader = pSVar3;
+    ppSVar4 = &(this->fields).cubeModelHiddenShader;
+    *ppSVar4 = pSVar3;
     func_?();
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
     if (pMVar2 != (MaterialLoader *)0x0) {
-      (this->fields).standardHiddenShader = (pMVar2->fields).pickupUnavailableShader;
+      ppSVar5 = &(this->fields).standardHiddenShader;
+      *ppSVar5 = (pMVar2->fields).pickupUnavailableShader;
       func_?();
-      pSVar3 = (this->fields).cubeModelHiddenShader;
+      pSVar3 = *ppSVar4;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -45,7 +47,7 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_Awake
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)StringLiteral_Cubemodel_hiddenShader_not_found,(MethodInfo *)0x0);
       }
-      pSVar3 = (this->fields).standardHiddenShader;
+      pSVar3 = *ppSVar5;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -62,8 +64,8 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_Awake
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -267,45 +269,48 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_GreyOutExec
   }
   if ((pickupOriginalMaterial != (GreyOutObjectScript_PickupOriginalMaterials *)0x0) &&
      (this_00 = (pickupOriginalMaterial->fields).meshRenderer, this_00 != (MeshRenderer *)0x0)) {
-    pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials
-                       ((Renderer *)this_00,(MethodInfo *)0x0);
-    uVar2 = 0;
-    if (pMVar1 != (Material__Array *)0x0) {
-      ppMVar3 = pMVar1->vector;
+    pickupOriginalMaterial =
+         (GreyOutObjectScript_PickupOriginalMaterials *)
+         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials
+                   ((Renderer *)this_00,(MethodInfo *)0x0);
+    uVar1 = 0;
+    if ((Material__Array *)pickupOriginalMaterial != (Material__Array *)0x0) {
+      ppMVar2 = ((Material__Array *)pickupOriginalMaterial)->vector;
       while( true ) {
-        if ((int)pMVar1->max_length <= (int)uVar2) {
+        if ((int)((Material__Array *)pickupOriginalMaterial)->max_length <= (int)uVar1) {
           return;
         }
-        if (pMVar1->max_length <= uVar2) break;
-        this_01 = *ppMVar3;
+        if (((Material__Array *)pickupOriginalMaterial)->max_length <= uVar1) break;
+        this_01 = *ppMVar2;
         if (this_01 == (Material *)0x0) goto code_?;
-        pSVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_shader
+        pSVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_shader
                            (this_01,(MethodInfo *)0x0);
-        if (pSVar4 == (Shader *)0x0) goto code_?;
+        if (pSVar3 == (Shader *)0x0) goto code_?;
         this_02 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
-                            ((Object_1 *)pSVar4,(MethodInfo *)0x0);
-        pSVar5 = StringLiteral_CubeModel;
+                            ((Object_1 *)pSVar3,(MethodInfo *)0x0);
+        pSVar4 = StringLiteral_CubeModel;
         if (this_02 == (String *)0x0) goto code_?;
-        bVar6 = mscorlib.dll::System::String::String_Contains
+        bVar5 = mscorlib.dll::System::String::String_Contains
                           (this_02,StringLiteral_CubeModel,(MethodInfo *)0x0);
-        if (bVar6 == 0) {
-          pSVar4 = (Shader *)pSVar5[1].fields._stringLength;
+        if (bVar5 == 0) {
+          pSVar3 = (Shader *)pSVar4[1].fields._stringLength;
         }
         else {
-          pSVar4 = (Shader *)pSVar5[1].monitor;
+          pSVar3 = (Shader *)pSVar4[1].monitor;
         }
+        pickupOriginalMaterial = (GreyOutObjectScript_PickupOriginalMaterials *)&UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_shader
-                  (this_01,pSVar4,(MethodInfo *)0x0);
-        uVar2 = uVar2 + 1;
-        ppMVar3 = (Material **)&UNK_?;
+                  (this_01,pSVar3,(MethodInfo *)0x0);
+        uVar1 = uVar1 + 1;
+        ppMVar2 = ppMVar2 + 1;
       }
       func_?();
     }
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -419,7 +424,7 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_InitializeOri
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
           pOVar6 = value + 1;
-          value[1].klass = this_01;
+          pOVar6->klass = this_01;
           func_?(pOVar6,this_01);
           if (this_01 == (Object__Class *)0x0) goto code_?;
           pMVar7 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterials
@@ -458,8 +463,9 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_SetPickupObje
                (GreyOutObjectScript *this,GameObject *pickupObject,MethodInfo *method)
 
 {
-  (this->fields).pickupObject = pickupObject;
-  func_?(&(this->fields).pickupObject,pickupObject);
+  ppGVar1 = &(this->fields).pickupObject;
+  *ppGVar1 = pickupObject;
+  func_?(ppGVar1,pickupObject);
   GreyOutObjectScript_InitializeOriginalMaterials(this,(MethodInfo *)0x0);
   return;
 }
@@ -490,8 +496,9 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript__ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__List__
             );
-  (this->fields).pickupOriginalMaterials = this_00;
-  func_?(&(this->fields).pickupOriginalMaterials,this_00);
+  ppLVar1 = &(this->fields).pickupOriginalMaterials;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   (this->fields).isGreyedIn = 1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

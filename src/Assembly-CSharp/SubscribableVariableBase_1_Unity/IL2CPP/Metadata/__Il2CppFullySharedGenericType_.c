@@ -11,25 +11,26 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata::
 
 {
   pMVar1 = method;
-  uVar2 = (method->klass->rgctx_data[5].klass)->actualSize;
-  pIVar3 = method->klass->rgctx_data[5].klass;
-  if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
-    func_?(pIVar3);
+  pIVar2 = method->klass->rgctx_data[5].klass;
+  uVar3 = pIVar2->actualSize;
+  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+    func_?(pIVar2);
   }
   func_?();
   func_?();
   uVar4 = func_?(other,pMVar1->klass->rgctx_data->klass->fields);
-  func_?(&stack0xffffffe8,uVar4,uVar2);
+  func_?(&stack0xffffffec,uVar4,uVar3);
   pSVar5 = (SubscribableVariableBase_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-           func_?(pMVar1->klass->rgctx_data[5].rgctxDataDummy,&stack0xffffffe8);
+           func_?(pMVar1->klass->rgctx_data[5].rgctxDataDummy,&stack0xffffffec);
   uVar4 = func_?(this,pMVar1->klass->rgctx_data->klass->fields);
-  pvVar6 = pMVar1->klass->rgctx_data[9].rgctxDataDummy;
-  pIVar3 = pMVar1->klass->rgctx_data[5].klass;
-  if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar3 = (Il2CppClass *)func_?(pIVar3);
+  pIVar6 = pMVar1->klass->rgctx_data;
+  pIVar2 = pIVar6[5].klass;
+  pvVar7 = pIVar6[9].rgctxDataDummy;
+  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar2 = (Il2CppClass *)func_?(pIVar2);
   }
   other = pSVar5;
-  func_?(pIVar3,pvVar6,&stack0xffffffe8,uVar4,&other,(int)&method + 3);
+  func_?(pIVar2,pvVar7,&stack0xffffffec,uVar4,&other,(int)&method + 3);
   return method._3_1_;
 }
 
@@ -67,21 +68,22 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata::
     if (bVar1 != 0) {
       return 0;
     }
-    pIVar2 = (method->klass->rgctx_data[1].method)->methodPointer;
-    pIVar3 = method->klass->rgctx_data->klass;
-    if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar3 = (Il2CppClass *)func_?();
+    pIVar2 = method->klass->rgctx_data;
+    IVar3 = pIVar2[1];
+    pIVar4 = pIVar2->klass;
+    if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar4 = (Il2CppClass *)func_?();
     }
-    if ((pIVar3->naturalAligment <= (obj->klass->_1).naturalAligment) &&
-       ((obj->klass->_1).typeHierarchy[pIVar3->naturalAligment - 1] == pIVar3)) {
-      bVar1 = (*pIVar2)(this);
+    if ((pIVar4->naturalAligment <= (obj->klass->_1).naturalAligment) &&
+       ((obj->klass->_1).typeHierarchy[pIVar4->naturalAligment - 1] == pIVar4)) {
+      bVar1 = (*(code *)IVar3)();
       return bVar1;
     }
     func_?();
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar1 = (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  bVar1 = (*pcVar5)();
   return bVar1;
 }
 
@@ -95,29 +97,27 @@ int32_t Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata:
                    *this,MethodInfo *method)
 
 {
-  pMVar1 = method;
-  uVar2 = (method->klass->rgctx_data[5].klass)->actualSize;
+  pIVar1 = method->klass->rgctx_data;
+  uVar2 = (pIVar1[5].klass)->actualSize;
   func_?();
-  method = (MethodInfo *)
-           (*(pMVar1->klass->rgctx_data[2].method)->methodPointer)
-                     (pMVar1->klass->rgctx_data[2].rgctxDataDummy);
-  uVar3 = func_?(this,pMVar1->klass->rgctx_data->klass->fields);
-  func_?(&stack0xffffffec,uVar3,uVar2);
-  pMVar4 = method;
-  if (method != (MethodInfo *)0x0) {
-    pMVar5 = (MethodInfo *)&stack0xffffffec;
-    if (-1 < (int)(pMVar1->klass->rgctx_data[5].method)->return_type) {
-      pMVar5 = unaff_EDI;
+  pMVar3 = pIVar1[2].method;
+  piVar4 = (int *)(*pMVar3->methodPointer)(pMVar3);
+  uVar5 = func_?(this,method->klass->rgctx_data->klass->fields);
+  func_?(&stack0xffffffec,uVar5,uVar2);
+  if (piVar4 != (int *)0x0) {
+    ppIVar6 = &method->klass;
+    method = (MethodInfo *)&stack0xffffffec;
+    if (-1 < (int)((*ppIVar6)->rgctx_data[5].method)->return_type) {
+      method = unaff_EDI;
     }
-    iVar6 = *(int *)(method->methodPointer + 0x10c);
-    method = pMVar5;
-    (**(code **)(iVar6 + 8))(*(undefined4 *)(iVar6 + 4),iVar6,pMVar4,&method,&pcStack_7);
-    return (int32_t)pcStack_7;
+    iVar7 = *(int *)(*piVar4 + 0x10c);
+    (**(code **)(iVar7 + 8))(*(undefined4 *)(iVar7 + 4),iVar7,piVar4,&method,&pcStack_8);
+    return (int32_t)pcStack_8;
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  iVar9 = (*pcVar8)();
-  return iVar9;
+  pcVar9 = (code *)swi(3);
+  iVar10 = (*pcVar9)();
+  return iVar10;
 }
 
 
@@ -131,27 +131,28 @@ void Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata::
 
 {
   pMVar1 = method;
-  method = (MethodInfo *)(method->klass->rgctx_data[5].klass)->actualSize;
+  pIVar2 = method->klass->rgctx_data;
+  method = (MethodInfo *)(pIVar2[5].klass)->actualSize;
   func_?();
-  piVar2 = (int *)func_?(this,pMVar1->klass->rgctx_data->klass->fields + 1);
-  if (*piVar2 != 0) {
-    puVar3 = (undefined4 *)func_?(this,pMVar1->klass->rgctx_data->klass->fields + 1);
-    pvVar4 = (void *)*puVar3;
-    uVar5 = func_?(this,pMVar1->klass->rgctx_data->klass->fields);
-    func_?(&stack0xffffffec,uVar5,method);
-    if (pvVar4 == (void *)0x0) {
+  piVar3 = (int *)func_?(this,pIVar2->klass->fields + 1);
+  if (*piVar3 != 0) {
+    puVar4 = (undefined4 *)func_?(this,pMVar1->klass->rgctx_data->klass->fields + 1);
+    pvVar5 = (void *)*puVar4;
+    uVar6 = func_?(this,pMVar1->klass->rgctx_data->klass->fields);
+    func_?(&stack0xffffffec,uVar6,method);
+    if (pvVar5 == (void *)0x0) {
       func_?();
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
       return;
     }
+    pIVar2 = pMVar1->klass->rgctx_data;
     method = (MethodInfo *)&stack0xffffffec;
-    if (-1 < (int)(pMVar1->klass->rgctx_data[5].method)->return_type) {
+    if (-1 < (int)(pIVar2[5].method)->return_type) {
       method = unaff_EDI;
     }
-    pMVar7 = pMVar1->klass->rgctx_data[0xc].method;
-    (*pMVar7->invoker_method)
-              ((pMVar1->klass->rgctx_data[0xc].method)->methodPointer,pMVar7,pvVar4,&method,method);
+    pMVar1 = pIVar2[0xc].method;
+    (*pMVar1->invoker_method)(pMVar1->methodPointer,pMVar1,pvVar5,&method,method);
   }
   return;
 }
@@ -231,14 +232,13 @@ SubscribableVariableBase_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__g
           MethodInfo *method)
 
 {
-  uVar1 = *(undefined4 *)
-           (*(int *)(*(int *)(*(int *)(in_stack_2 + 0x10) + 0x60) + 0x14) + 0x84);
+  piVar1 = *(int **)(*(int *)(in_stack_2 + 0x10) + 0x60);
+  uVar3 = *(undefined4 *)(piVar1[5] + 0x84);
   func_?();
-  uVar3 = func_?(this,*(undefined4 *)
-                                (**(int **)(*(int *)(in_stack_2 + 0x10) + 0x60) + 0x40));
-  func_?(&stack0xfffffff0,uVar3,uVar1);
-  p_Var3 = (_Il2CppFullySharedGenericType *)func_?(method,&stack0xfffffff0,uVar1);
-  return p_Var3;
+  uVar4 = func_?(this,*(undefined4 *)(*piVar1 + 0x40));
+  func_?(&stack0xfffffff0,uVar4,uVar3);
+  p_Var4 = (_Il2CppFullySharedGenericType *)func_?(method,&stack0xfffffff0,uVar3);
+  return p_Var4;
 }
 
 

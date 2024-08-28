@@ -73,10 +73,11 @@ void Assembly-CSharp.dll::TextStyleBase::TextStyleBase_Reset(TextStyleBase *this
                              ((Component *)this,
                               UnityEngine__UI__Text_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Text>__
                              );
-  (this->fields).text = pTVar1;
-  func_?(&(this->fields).text,pTVar1);
-  pTVar1 = (this->fields).text;
+  ppTVar2 = &(this->fields).text;
+  *ppTVar2 = pTVar1;
+  func_?(ppTVar2,pTVar1);
   textStyle = (this->fields).textStyle;
+  pTVar1 = *ppTVar2;
   colorStyle = (this->fields).colorStyle;
   if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Styles);

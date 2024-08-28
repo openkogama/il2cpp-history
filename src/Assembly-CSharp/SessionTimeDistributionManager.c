@@ -16,6 +16,7 @@ void Assembly-CSharp.dll::SessionTimeDistributionManager::
     pMVar2 = (pMVar1->fields).playerContainer;
     if (pMVar2 != (MVPlayerContainer *)0x0) {
       pAVar3 = (pMVar2->fields).OnLocalPlayerReady;
+      ppAVar4 = &(pMVar2->fields).OnLocalPlayerReady;
       this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
@@ -24,39 +25,39 @@ void Assembly-CSharp.dll::SessionTimeDistributionManager::
       pAVar3 = (Action *)
                mscorlib.dll::System::Delegate::Delegate_Remove
                          ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-      uVar4 = CONCAT44(TypeInfo__System__Action,pAVar3);
-      pAStack5 = (Action *)0x0;
+      uVar5 = CONCAT44(TypeInfo__System__Action,pAVar3);
+      pAStack6 = (Action *)0x0;
       if (pAVar3 == (Action *)0x0) {
-        (pMVar2->fields).OnLocalPlayerReady = (Action *)0x0;
+        *ppAVar4 = (Action *)0x0;
 code_?:
-        ppAStack6 = &(pMVar2->fields).OnLocalPlayerReady;
+        ppAStack7 = ppAVar4;
         func_?();
         (this->fields).countingSessionTime = 1;
-        fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        (this->fields).startTime = fVar7;
+        fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        (this->fields).startTime = fVar8;
         return;
       }
       if (pAVar3->klass == TypeInfo__System__Action) {
-        pAStack5 = pAVar3;
+        pAStack6 = pAVar3;
       }
-      if (pAStack5 != (Action *)0x0) {
-        (pMVar2->fields).OnLocalPlayerReady = pAStack5;
-        uVar4 = CONCAT44(TypeInfo__System__Action,pAVar3);
-        pAStack5 = (Action *)0x0;
+      if (pAStack6 != (Action *)0x0) {
+        *ppAVar4 = pAStack6;
+        uVar5 = CONCAT44(TypeInfo__System__Action,pAVar3);
+        pAStack6 = (Action *)0x0;
         if (pAVar3->klass == TypeInfo__System__Action) {
-          pAStack5 = pAVar3;
+          pAStack6 = pAVar3;
         }
-        if (pAStack5 != (Action *)0x0) goto code_?;
+        if (pAStack6 != (Action *)0x0) goto code_?;
       }
       goto code_?;
     }
   }
-  uVar4 = func_?();
+  uVar5 = func_?();
 code_?:
-  _ppAStack00000010 = uVar4;
+  _ppAStack00000010 = uVar5;
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -250,8 +251,9 @@ void Assembly-CSharp.dll::SessionTimeDistributionManager::SessionTimeDistributio
   mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32]::Stack_1_System_Int32___ctor
             ((Stack_1_System_Int32_ *)this_00,
              MethodInfo__System__Collections__Generic__Queue<int>__Queue__);
-  (this->fields).intervals = this_00;
-  func_?(&(this->fields).intervals,this_00);
+  ppQVar1 = &(this->fields).intervals;
+  *ppQVar1 = this_00;
+  func_?(ppQVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

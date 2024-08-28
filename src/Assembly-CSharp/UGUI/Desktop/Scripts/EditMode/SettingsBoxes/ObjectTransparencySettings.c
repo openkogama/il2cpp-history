@@ -163,89 +163,86 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::
     root = (GameObject *)&UNK_?;
     func_?();
   }
-  woID = (int32_t)TypeInfo__WorldObjectTypes__MVObjectTransparency__ObjectTransparencyData__Keys->
-                  static_fields->ShowOutline;
+  pSVar6 = TypeInfo__WorldObjectTypes__MVObjectTransparency__ObjectTransparencyData__Keys->
+           static_fields->ShowOutline;
+  woID = (int32_t)pSVar6;
   if (this_05 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
     method = 
     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
     ;
-    root = (GameObject *)
-           TypeInfo__WorldObjectTypes__MVObjectTransparency__ObjectTransparencyData__Keys->
-           static_fields->ShowOutline;
     this = (ObjectTransparencySettings *)&UNK_?;
     woID = (int32_t)this_05;
-    TVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    root = (GameObject *)pSVar6;
+    TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (this_05,(Object *)root,
+                      (this_05,(Object *)pSVar6,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    if ((this_02 != (SettingsToggle *)0x0) && (TVar6.m_Index != 0)) {
-      pSVar7 = (Single__Class *)TypeInfo__System__Boolean;
-      if (*(Il2CppClass **)(*(int *)TVar6.m_Index + 0x20) ==
+    if ((this_02 != (SettingsToggle *)0x0) && (TVar7.m_Index != 0)) {
+      pSVar8 = (Single__Class *)TypeInfo__System__Boolean;
+      if (*(Il2CppClass **)(*(int *)TVar7.m_Index + 0x20) ==
           (TypeInfo__System__Boolean->_0).element_class) {
-        in_stack_8 = &UNK_?;
-        in_stack_5 = TVar6;
-        pbVar9 = (bool *)func_?();
-        SettingsToggle::SettingsToggle_Initialize(this_02,(String *)woID,*pbVar9,(MethodInfo *)0x0);
+        in_stack_9 = &UNK_?;
+        in_stack_5 = TVar7;
+        pbVar10 = (bool *)func_?();
+        SettingsToggle::SettingsToggle_Initialize(this_02,(String *)woID,*pbVar10,(MethodInfo *)0x0);
         this_03 = (pOVar1->fields).alphaSlider;
         woID = (int32_t)TypeInfo__WorldObjectTypes__MVObjectTransparency__ObjectTransparencyData__Keys
                         ->static_fields->Alpha;
-        TVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+        TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                 ::UIElements::TextureId]::
                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          (this_05,(Object *)
-                                   TypeInfo__WorldObjectTypes__MVObjectTransparency__ObjectTransparencyData__Keys
-                                   ->static_fields->Alpha,
+                          (this_05,(Object *)woID,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
-        if ((this_03 == (SettingsSlider *)0x0) || (TVar6.m_Index == 0)) goto code_?;
-        pSVar7 = TypeInfo__System__Single;
-        if (*(Il2CppClass **)(*(int *)TVar6.m_Index + 0x20) ==
+        if ((this_03 == (SettingsSlider *)0x0) || (TVar7.m_Index == 0)) goto code_?;
+        pSVar8 = TypeInfo__System__Single;
+        if (*(Il2CppClass **)(*(int *)TVar7.m_Index + 0x20) ==
             (TypeInfo__System__Single->_0).element_class) {
           root = (GameObject *)&UNK_?;
-          method = (MethodInfo *)TVar6;
-          pfVar10 = (float *)func_?();
+          method = (MethodInfo *)TVar7;
+          pfVar11 = (float *)func_?();
           SettingsSlider::SettingsSlider_Initialize
-                    (this_03,(String *)woID,*pfVar10 * _UNK_?,0.0,100.0,(MethodInfo *)0x0);
+                    (this_03,(String *)woID,*pfVar11 * _UNK_?,0.0,100.0,(MethodInfo *)0x0);
           pOVar1 = (ObjectTransparencySettings *)(pOVar1->fields).alphaInputField;
-          key = TypeInfo__WorldObjectTypes__MVObjectTransparency__ObjectTransparencyData__Keys->
-                static_fields->Alpha;
-          TVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+          pSVar6 = TypeInfo__WorldObjectTypes__MVObjectTransparency__ObjectTransparencyData__Keys->
+                   static_fields->Alpha;
+          TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                   Object,UnityEngine::UIElements::TextureId]::
                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (this_05,(Object *)key,
+                            (this_05,(Object *)pSVar6,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                             );
-          if ((pOVar1 == (ObjectTransparencySettings *)0x0) || (TVar6.m_Index == 0))
+          if ((pOVar1 == (ObjectTransparencySettings *)0x0) || (TVar7.m_Index == 0))
           goto code_?;
-          pSVar7 = TypeInfo__System__Single;
-          if (*(Il2CppClass **)(*(int *)TVar6.m_Index + 0x20) ==
+          pSVar8 = TypeInfo__System__Single;
+          if (*(Il2CppClass **)(*(int *)TVar7.m_Index + 0x20) ==
               (TypeInfo__System__Single->_0).element_class) {
             root = (GameObject *)&UNK_?;
-            method = (MethodInfo *)TVar6;
-            pfVar10 = (float *)func_?();
-            root = (GameObject *)(*pfVar10 * _UNK_?);
+            method = (MethodInfo *)TVar7;
+            pfVar11 = (float *)func_?();
+            root = (GameObject *)(*pfVar11 * _UNK_?);
             method = (MethodInfo *)0x0;
             this = pOVar1;
-            woID = (int32_t)key;
+            woID = (int32_t)pSVar6;
             SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                      ((SettingsInputFieldSlider *)pOVar1,key,(float)root,(MethodInfo *)0x0);
+                      ((SettingsInputFieldSlider *)pOVar1,pSVar6,(float)root,(MethodInfo *)0x0);
             return;
           }
         }
       }
       woID = (int32_t)&UNK_?;
-      root = (GameObject *)TVar6.m_Index;
-      method = (MethodInfo *)pSVar7;
+      root = (GameObject *)TVar7.m_Index;
+      method = (MethodInfo *)pSVar8;
       func_?();
     }
   }
 code_?:
   method = (MethodInfo *)&UNK_?;
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

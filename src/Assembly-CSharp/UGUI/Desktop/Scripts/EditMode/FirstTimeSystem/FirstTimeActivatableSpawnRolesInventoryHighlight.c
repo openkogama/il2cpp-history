@@ -320,14 +320,16 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
   value = (WorldObjectTypeInShopChecker *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  (this->fields).inShopChecker = value;
-  func_?(&(this->fields).inShopChecker,value);
+  ppWVar1 = &(this->fields).inShopChecker;
+  *ppWVar1 = value;
+  func_?(ppWVar1,value);
   method_00 = TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeGuiHandler;
   value_00 = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             (value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (this->fields).firstTimeGuiHandler = (FirstTimeGuiHandler *)value_00;
-  func_?(&(this->fields).firstTimeGuiHandler,value_00);
+  ppFVar2 = &(this->fields).firstTimeGuiHandler;
+  *ppFVar2 = (FirstTimeGuiHandler *)value_00;
+  func_?(ppFVar2,value_00);
   FirstTimeActivatableMessage::FirstTimeActivatableMessage__ctor
             ((FirstTimeActivatableMessage *)this,(MethodInfo *)0x0);
   return;
@@ -393,28 +395,23 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
                 (pGVar2,(MethodInfo *)0x0);
       this_01 = (this->fields).slots;
-      if (this_01 != (InventorySlots *)0x0) {
-        this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)this_01,(MethodInfo *)0x0);
-        if (this_02 != (Transform *)0x0) {
-          iVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
-                            (this_02,(MethodInfo *)0x0);
-          bVar4 = FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked
-                            ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-          bVar5 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory
-                            ((this->fields).insideInventory,(MethodInfo *)0x0);
-          bVar6 = 0;
-          if (0 < iVar3) {
-            bVar6 = bVar5 & bVar4 & 0x10 & bVar1;
-          }
-          return bVar6;
-        }
+      if ((this_01 != (InventorySlots *)0x0) &&
+         (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)this_01,(MethodInfo *)0x0), this_02 != (Transform *)0x0)
+         ) {
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
+                  (this_02,(MethodInfo *)0x0);
+        FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked
+                  ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
+        MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory
+                  ((this->fields).insideInventory,(MethodInfo *)0x0);
+        return 0;
       }
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  bVar1 = (*pcVar7)();
+  pcVar3 = (code *)swi(3);
+  bVar1 = (*pcVar3)();
   return bVar1;
 }
 

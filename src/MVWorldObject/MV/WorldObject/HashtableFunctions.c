@@ -52,60 +52,59 @@ MVWorldObject.dll::MV::WorldObject::HashtableFunctions::HashtableFunctions_DeepC
     func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
-  pOStack_5 = (Object__Class *)0x0;
   if (from == (Dictionary_2_System_Object_System_Object_ *)0x0) {
 code_?:
     func_?();
-    this_00 = unaff_ESI;
-    pSVar6 = pSStack_7;
+    from_00 = unaff_ESI;
+    pIVar5 = (Int32__Array__Class *)pBStack_6;
 code_?:
-    func_?(unaff_ESI,pSVar6);
+    func_?(unaff_ESI,pIVar5);
 code_?:
-    func_?(from,pSStack_7);
+    func_?(from,pBStack_6);
 code_?:
-    func_?(this_00,from);
-code_?:
-    func_?();
+    func_?(from_00,from);
 code_?:
     func_?();
-    pcVar8 = (code *)swi(3);
-    pDVar9 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar8)();
-    return pDVar9;
+code_?:
+    func_?();
+    pcVar7 = (code *)swi(3);
+    pDVar8 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar7)();
+    return pDVar8;
   }
-  pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::
+  pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::
            Dictionary_2_System_UInt32_System_Object__GetEnumerator
                      ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                       &stack0xffffff98,(Dictionary_2_System_UInt32_System_Object_ *)from,
                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
                      );
-  pOStack_5 = (Object__Class *)pDVar10->_dictionary;
-  uVar11 = *(undefined8 *)&(pDVar10->_current).value;
+  pOStack_10 = (Object__Class *)pDVar9->_dictionary;
+  uVar11 = *(undefined8 *)&(pDVar9->_current).value;
   uStack_1 = 1;
-  key = (Object *)(pDVar10->_current).key;
+  key = (Object *)(pDVar9->_current).key;
 code_?:
   bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::
           Object,System::Object]::
           Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                    ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)&pOStack_5
+                    ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)&pOStack_10
                      ,
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
                     );
   if (bVar12 == 0) {
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)&pOStack_5,
+              ((Object *)&pOStack_10,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
                ,in_stack_4);
     *unaff_FS_OFFSET = uStack_3;
     return to;
   }
-  this_00 = (Single__Array__Class *)uVar11;
-  pSStack_7 = this_00;
-  if (this_00 == (Single__Array__Class *)0x0) goto code_?;
+  from_00 = (Byte__Array__Class *)uVar11;
+  pBStack_6 = from_00;
+  if (from_00 == (Byte__Array__Class *)0x0) goto code_?;
   pOVar13 = key;
   from = (Dictionary_2_System_Object_System_Object_ *)
-         mscorlib.dll::System::Object::Object_GetType((Object *)this_00,(MethodInfo *)0x0);
+         mscorlib.dll::System::Object::Object_GetType((Object *)from_00,(MethodInfo *)0x0);
   pIVar14 = TypeRef__System__Single;
   if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Type);
@@ -116,8 +115,8 @@ code_?:
   bVar12 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
           UnsafeUtility_EnumEquals((Int32Enum__Enum)from,(Int32Enum__Enum)pTVar15,(MethodInfo *)0x0);
   pIVar14 = TypeRef__System__Int32;
-  pSVar6 = TypeInfo__System__Single;
-  unaff_ESI = this_00;
+  pIVar5 = (Int32__Array__Class *)TypeInfo__System__Single;
+  unaff_ESI = from_00;
   if (bVar12 == 0) {
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Type);
@@ -127,8 +126,8 @@ code_?:
     bVar12 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
             UnsafeUtility_EnumEquals
                       ((Int32Enum__Enum)from,(Int32Enum__Enum)pTVar15,(MethodInfo *)0x0);
-    pSVar6 = (Single__Array__Class *)TypeInfo__System__Int32;
     pIVar14 = TypeRef__System__Byte;
+    pIVar5 = TypeInfo__System__Int32;
     if (bVar12 == 0) {
       if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Type);
@@ -149,11 +148,11 @@ code_?:
                 UnsafeUtility_EnumEquals
                           ((Int32Enum__Enum)from,(Int32Enum__Enum)pTVar15,(MethodInfo *)0x0);
         if (bVar12 == 0) {
-          unaff_ESI = (Single__Array__Class *)from;
-          if ((Single__Array__Class *)from == (Single__Array__Class *)0x0) goto code_?;
+          unaff_ESI = (Byte__Array__Class *)from;
+          if ((Byte__Array__Class *)from == (Byte__Array__Class *)0x0) goto code_?;
           bVar12 = mscorlib.dll::System::Type::Type_get_IsPrimitive((Type *)from,(MethodInfo *)0x0);
           pIVar14 = TypeRef__System__String;
-          pSVar6 = this_00;
+          pBVar16 = from_00;
           if (bVar12 == 0) {
             if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
@@ -163,15 +162,15 @@ code_?:
             bVar12 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility
                     ::UnsafeUtility_EnumEquals
                               ((Int32Enum__Enum)from,(Int32Enum__Enum)pTVar15,(MethodInfo *)0x0);
-            unaff_ESI = (Single__Array__Class *)pIVar14;
+            unaff_ESI = (Byte__Array__Class *)pIVar14;
             if (bVar12 == 0) {
               func_?();
               this = (Object__Class *)func_?();
-              pOStack_5 = this;
+              pOStack_10 = this;
               func_?();
               pTVar15 = mscorlib.dll::System::Object::Object_GetType
                                  ((Object *)this,(MethodInfo *)0x0);
-              pSVar16 = (String *)func_?();
+              pSVar17 = (String *)func_?();
               if (pTVar15 == (Type *)0x0) {
                 str1 = (String *)0x0;
               }
@@ -179,125 +178,135 @@ code_?:
                 func_?();
                 str1 = (String *)func_?();
               }
-              pSVar16 = mscorlib.dll::System::String::String_Concat_3
-                                  (pSVar16,str1,(MethodInfo *)0x0);
+              pSVar17 = mscorlib.dll::System::String::String_Concat_3
+                                  (pSVar17,str1,(MethodInfo *)0x0);
               func_?();
-              unaff_ESI = (Single__Array__Class *)func_?();
+              unaff_ESI = (Byte__Array__Class *)func_?();
               mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
-                        ((ArgumentException *)unaff_ESI,pSVar16,(MethodInfo *)0x0);
+                        ((ArgumentException *)unaff_ESI,pSVar17,(MethodInfo *)0x0);
               func_?();
               func_?();
+              pDVar18 = extraout_EDX;
 code_?:
-              func_?(unaff_ESI,
-                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                             );
+              func_?(unaff_ESI,pDVar18);
               goto code_?;
             }
           }
         }
-        else if (this_00 == (Single__Array__Class *)0x0) {
-          pSVar6 = (Single__Array__Class *)
-                   HashtableFunctions_DeepCopyHashTable_1
-                             ((Dictionary_2_System_Object_System_Object_ *)0x0,(MethodInfo *)0x0);
+        else if (from_00 == (Byte__Array__Class *)0x0) {
+          pBVar16 = (Byte__Array__Class *)
+                    HashtableFunctions_DeepCopyHashTable_1
+                              ((Dictionary_2_System_Object_System_Object_ *)0x0,(MethodInfo *)0x0);
         }
         else {
-          pDVar9 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-          if (pDVar9 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-          pSVar6 = (Single__Array__Class *)
-                   HashtableFunctions_DeepCopyHashTable_1(pDVar9,(MethodInfo *)0x0);
+          pIVar19 = (from_00->_0).image;
+          bVar20 = (
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                  ->_1).naturalAligment;
+          pDVar18 = 
+          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+          if (((*(byte *)&pIVar19[4].assembly < bVar20) ||
+              (*(Dictionary_2_System_Object_System_Object___Class **)
+                ((pIVar19[2].typeCount - 4) + (uint)bVar20 * 4) !=
+               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+             || (from_00 == (Byte__Array__Class *)0x0)) goto code_?;
+          pBVar16 = (Byte__Array__Class *)
+                    HashtableFunctions_DeepCopyHashTable_1
+                              ((Dictionary_2_System_Object_System_Object_ *)from_00,
+                               (MethodInfo *)0x0);
         }
         goto code_?;
       }
       from = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__System__Byte;
-      if (this_00 == (Single__Array__Class *)0x0) goto code_?;
-      iVar17 = func_?(this_00,TypeInfo__System__Byte);
-      if (iVar17 == 0) goto code_?;
+      if (from_00 == (Byte__Array__Class *)0x0) goto code_?;
+      iVar21 = func_?(from_00,TypeInfo__System__Byte);
+      if (iVar21 == 0) goto code_?;
       from = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__System__Byte;
-      iVar17 = func_?(this_00,TypeInfo__System__Byte);
-      if (iVar17 == 0) goto code_?;
-      iStack_18 = *(int32_t *)(iVar17 + 0xc);
+      iVar21 = func_?(from_00,TypeInfo__System__Byte);
+      if (iVar21 == 0) goto code_?;
+      iStack_22 = *(int32_t *)(iVar21 + 0xc);
       from = (Dictionary_2_System_Object_System_Object_ *)
-             func_?(TypeInfo__System__Byte,iStack_18);
-      pSStack_7 = (Single__Array__Class *)TypeInfo__System__Byte;
+             func_?(TypeInfo__System__Byte,iStack_22);
+      pBStack_6 = TypeInfo__System__Byte;
       if (from == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        pAStack_19 = (Array *)0x0;
-        pSVar20 = pSStack_7;
+        pAStack_23 = (Array *)0x0;
+        pBVar16 = pBStack_6;
         goto code_?;
       }
-      pAStack_19 = (Array *)func_?(from,TypeInfo__System__Byte);
-      pSVar20 = (Single__Array__Class *)TypeInfo__System__Byte;
-      if (pAStack_19 == (Array *)0x0) goto code_?;
+      pAStack_23 = (Array *)func_?(from,TypeInfo__System__Byte);
+      pBVar16 = TypeInfo__System__Byte;
+      if (pAStack_23 == (Array *)0x0) goto code_?;
     }
     else {
       from = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__System__Int32;
-      if (this_00 == (Single__Array__Class *)0x0) goto code_?;
-      iVar17 = func_?(this_00,TypeInfo__System__Int32);
-      pIVar21 = TypeInfo__System__Int32;
-      if (iVar17 == 0) goto code_?;
+      if (from_00 == (Byte__Array__Class *)0x0) goto code_?;
+      iVar21 = func_?(from_00,TypeInfo__System__Int32);
+      pIVar24 = TypeInfo__System__Int32;
+      if (iVar21 == 0) goto code_?;
       from = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__System__Int32;
-      iVar17 = func_?(this_00,TypeInfo__System__Int32);
-      pSVar6 = (Single__Array__Class *)pIVar21;
-      if (iVar17 == 0) goto code_?;
-      iStack_18 = *(int32_t *)(iVar17 + 0xc);
+      iVar21 = func_?(from_00,TypeInfo__System__Int32);
+      pIVar5 = pIVar24;
+      if (iVar21 == 0) goto code_?;
+      iStack_22 = *(int32_t *)(iVar21 + 0xc);
       from = (Dictionary_2_System_Object_System_Object_ *)
-             func_?(TypeInfo__System__Int32,iStack_18);
-      pSVar6 = (Single__Array__Class *)TypeInfo__System__Int32;
-      pSStack_7 = (Single__Array__Class *)TypeInfo__System__Int32;
-      if ((Single__Array__Class *)from == (Single__Array__Class *)0x0) {
-        pAStack_19 = (Array *)0x0;
-        pSVar20 = pSStack_7;
+             func_?(TypeInfo__System__Int32,iStack_22);
+      pIVar5 = TypeInfo__System__Int32;
+      pBStack_6 = (Byte__Array__Class *)TypeInfo__System__Int32;
+      if ((Byte__Array__Class *)from == (Byte__Array__Class *)0x0) {
+        pAStack_23 = (Array *)0x0;
+        pBVar16 = pBStack_6;
       }
       else {
-        pAStack_19 = (Array *)func_?(from,TypeInfo__System__Int32);
-        unaff_ESI = (Single__Array__Class *)from;
-        pSVar20 = (Single__Array__Class *)TypeInfo__System__Int32;
-        if (pAStack_19 == (Array *)0x0) goto code_?;
+        pAStack_23 = (Array *)func_?(from,TypeInfo__System__Int32);
+        unaff_ESI = (Byte__Array__Class *)from;
+        pBVar16 = (Byte__Array__Class *)TypeInfo__System__Int32;
+        if (pAStack_23 == (Array *)0x0) goto code_?;
       }
     }
 code_?:
-    pSStack_7 = pSVar20;
-    sourceArray = (Array *)func_?(this_00,pSStack_7);
-    unaff_ESI = this_00;
-    pSVar6 = pSStack_7;
+    pBStack_6 = pBVar16;
+    sourceArray = (Array *)func_?(from_00,pBStack_6);
+    unaff_ESI = from_00;
+    pIVar5 = (Int32__Array__Class *)pBStack_6;
     if (sourceArray != (Array *)0x0) goto code_?;
     goto code_?;
   }
   from = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__System__Single;
-  if (this_00 == (Single__Array__Class *)0x0) goto code_?;
-  iVar17 = func_?(this_00,TypeInfo__System__Single);
-  pSVar20 = TypeInfo__System__Single;
-  if (iVar17 == 0) goto code_?;
+  if (from_00 == (Byte__Array__Class *)0x0) goto code_?;
+  iVar21 = func_?(from_00,TypeInfo__System__Single);
+  pSVar25 = TypeInfo__System__Single;
+  if (iVar21 == 0) goto code_?;
   from = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__System__Single;
-  iVar17 = func_?(this_00,TypeInfo__System__Single);
-  pSVar6 = pSVar20;
-  if (iVar17 == 0) goto code_?;
-  iStack_18 = *(int32_t *)(iVar17 + 0xc);
+  iVar21 = func_?(from_00,TypeInfo__System__Single);
+  pIVar5 = (Int32__Array__Class *)pSVar25;
+  if (iVar21 == 0) goto code_?;
+  iStack_22 = *(int32_t *)(iVar21 + 0xc);
   from = (Dictionary_2_System_Object_System_Object_ *)
-         func_?(TypeInfo__System__Single,iStack_18);
-  pSVar6 = TypeInfo__System__Single;
-  pSStack_7 = TypeInfo__System__Single;
-  if ((Single__Array__Class *)from == (Single__Array__Class *)0x0) {
-    pAStack_19 = (Array *)0x0;
+         func_?(TypeInfo__System__Single,iStack_22);
+  pIVar5 = (Int32__Array__Class *)TypeInfo__System__Single;
+  pBStack_6 = (Byte__Array__Class *)TypeInfo__System__Single;
+  if ((Byte__Array__Class *)from == (Byte__Array__Class *)0x0) {
+    pAStack_23 = (Array *)0x0;
   }
   else {
-    pAStack_19 = (Array *)func_?(from,TypeInfo__System__Single);
-    unaff_ESI = (Single__Array__Class *)from;
-    if (pAStack_19 == (Array *)0x0) goto code_?;
+    pAStack_23 = (Array *)func_?(from,TypeInfo__System__Single);
+    unaff_ESI = (Byte__Array__Class *)from;
+    if (pAStack_23 == (Array *)0x0) goto code_?;
   }
-  pSVar6 = TypeInfo__System__Single;
-  sourceArray = (Array *)func_?(this_00,TypeInfo__System__Single);
-  unaff_ESI = this_00;
-  pSStack_7 = pSVar6;
+  pIVar5 = (Int32__Array__Class *)TypeInfo__System__Single;
+  sourceArray = (Array *)func_?(from_00,TypeInfo__System__Single);
+  unaff_ESI = from_00;
+  pBStack_6 = (Byte__Array__Class *)pIVar5;
   if (sourceArray == (Array *)0x0) goto code_?;
 code_?:
-  mscorlib.dll::System::Array::Array_Copy_2(sourceArray,pAStack_19,iStack_18,(MethodInfo *)0x0);
-  pSVar6 = (Single__Array__Class *)from;
-  unaff_ESI = this_00;
+  mscorlib.dll::System::Array::Array_Copy_2(sourceArray,pAStack_23,iStack_22,(MethodInfo *)0x0);
+  pBVar16 = (Byte__Array__Class *)from;
+  unaff_ESI = from_00;
 code_?:
   if (to == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
   Dictionary_2_System_Object_System_Object__Add
-            (to,key,(Object *)pSVar6,
+            (to,key,(Object *)pBVar16,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
             );
   key = pOVar13;
@@ -394,84 +403,91 @@ String * MVWorldObject.dll::MV::WorldObject::HashtableFunctions::HashtableFuncti
     cRam_? = '\x01';
   }
   pSVar4 = ::StringLiteral__;
-  if (dictionary != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                        &pDStack_6,(Dictionary_2_System_UInt32_System_Object_ *)dictionary,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
-                       );
-    uVar7 = *(undefined8 *)&(pDVar5->_current).value;
-    uStack_1 = 1;
-    arg1 = (MethodInfo *)(pDVar5->_current).key;
-    do {
-      while( true ) {
-        bVar8 = mscorlib.dll::System::Collections::Generic::
-                Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
-                Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                          ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
-                           &stack0xffffffc0,
-                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
-                          );
-        if (bVar8 == 0) {
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    ((Object *)&stack0xffffffc0,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
-                     ,unaff_EDI);
-          *unaff_FS_OFFSET = uStack_3;
-          return pSVar4;
-        }
-        pOStack_9 = (Object *)uVar7;
-        if ((((pOStack_9 != (Object *)0x0) &&
-             ((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-              _1).naturalAligment <= (pOStack_9->klass->_1).naturalAligment)) &&
-            ((Dictionary_2_System_Object_System_Object___Class *)
-             (pOStack_9->klass->_1).typeHierarchy
-             [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-              _1).naturalAligment - 1] ==
-             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) &&
-           (pOStack_9 != (Object *)0x0)) break;
-        if (::StringLiteral__ == (String *)0x0) goto code_?;
-        pMVar10 = arg1;
-        pSVar11 = mscorlib.dll::System::String::String_PadLeft
-                           (::StringLiteral__,padLeft,(MethodInfo *)0x0);
-        pSVar11 = mscorlib.dll::System::String::String_Format_2
-                           (StringLiteral__0_____1____2__u000A,(Object *)pSVar11,(Object *)arg1,
-                            pOStack_9,(MethodInfo *)0x0);
-        pSVar4 = mscorlib.dll::System::String::String_Concat_3(pSVar4,pSVar11,(MethodInfo *)0x0);
-        unaff_EDI = arg1;
-        arg1 = pMVar10;
-      }
-      if (::StringLiteral__ == (String *)0x0) break;
-      unaff_EDI = (MethodInfo *)
-                  mscorlib.dll::System::String::String_PadLeft
-                            (::StringLiteral__,padLeft,(MethodInfo *)0x0);
-      pSVar11 = mscorlib.dll::System::String::String_Format_1
-                         (StringLiteral__0____1_u000A,(Object *)unaff_EDI,(Object *)arg1,
-                          (MethodInfo *)0x0);
-      pSVar4 = mscorlib.dll::System::String::String_Concat_3(pSVar4,pSVar11,(MethodInfo *)0x0);
-      if (pOStack_9 == (Object *)0x0) {
-        dictionary_00 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-      }
-      else {
-        dictionary_00 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-        if (dictionary_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          func_?();
-          break;
-        }
-      }
-      pSVar11 = HashtableFunctions_PrettyString_1(dictionary_00,padLeft + 1,(MethodInfo *)0x0);
-      arg1 = (MethodInfo *)0x0;
-      pSVar4 = mscorlib.dll::System::String::String_Concat_3(pSVar4,pSVar11,(MethodInfo *)0x0);
-    } while( true );
-  }
+  if (dictionary == (Dictionary_2_System_Object_System_Object_ *)0x0) {
 code_?:
-  uVar12 = func_?();
-  func_?(uVar12);
-  pcVar13 = (code *)swi(3);
-  pSVar4 = (String *)(*pcVar13)();
-  return pSVar4;
+    uVar5 = func_?();
+    func_?(uVar5);
+    pcVar6 = (code *)swi(3);
+    pSVar4 = (String *)(*pcVar6)();
+    return pSVar4;
+  }
+  pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::
+           Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                     ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                      &pDStack_8,(Dictionary_2_System_UInt32_System_Object_ *)dictionary,
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
+                     );
+  uVar9 = *(undefined8 *)&(pDVar7->_current).value;
+  uStack_1 = 1;
+  arg1 = (MethodInfo *)(pDVar7->_current).key;
+code_?:
+  do {
+    bVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System
+            ::Object,System::Object]::
+            Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                      ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                       &stack0xffffffc0,
+                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
+                      );
+    if (bVar10 == 0) {
+      uStack_1 = 0xffffffff;
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                ((Object *)&stack0xffffffc0,
+                 (ExceptionArgument__Enum)
+                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
+                 ,unaff_EDI);
+      *unaff_FS_OFFSET = uStack_3;
+      return pSVar4;
+    }
+    pDStack_11 = (Dictionary_2_System_Object_System_Object_ *)uVar9;
+    if (pDStack_11 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      bVar12 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+              _1).naturalAligment;
+      if (((bVar12 <= (pDStack_11->klass->_1).naturalAligment) &&
+          ((Dictionary_2_System_Object_System_Object___Class *)
+           (pDStack_11->klass->_1).typeHierarchy[bVar12 - 1] ==
+           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) &&
+         (pDStack_11 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+        if (::StringLiteral__ == (String *)0x0) goto code_?;
+        unaff_EDI = (MethodInfo *)
+                    mscorlib.dll::System::String::String_PadLeft
+                              (::StringLiteral__,padLeft,(MethodInfo *)0x0);
+        pSVar13 = mscorlib.dll::System::String::String_Format_1
+                           (StringLiteral__0____1_u000A,(Object *)unaff_EDI,(Object *)arg1,
+                            (MethodInfo *)0x0);
+        pSVar4 = mscorlib.dll::System::String::String_Concat_3(pSVar4,pSVar13,(MethodInfo *)0x0);
+        if (pDStack_11 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          pDStack_11 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+        }
+        else {
+          bVar12 = (
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                  ->_1).naturalAligment;
+          if ((((pDStack_11->klass->_1).naturalAligment < bVar12) ||
+              ((Dictionary_2_System_Object_System_Object___Class *)
+               (pDStack_11->klass->_1).typeHierarchy[bVar12 - 1] !=
+               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+             || (pDStack_11 == (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+            func_?();
+            goto code_?;
+          }
+        }
+        pSVar13 = HashtableFunctions_PrettyString_1(pDStack_11,padLeft + 1,(MethodInfo *)0x0);
+        arg1 = (MethodInfo *)0x0;
+        pSVar4 = mscorlib.dll::System::String::String_Concat_3(pSVar4,pSVar13,(MethodInfo *)0x0);
+        goto code_?;
+      }
+    }
+    if (::StringLiteral__ == (String *)0x0) goto code_?;
+    pMVar14 = arg1;
+    pSVar13 = mscorlib.dll::System::String::String_PadLeft
+                       (::StringLiteral__,padLeft,(MethodInfo *)0x0);
+    pSVar13 = mscorlib.dll::System::String::String_Format_2
+                       (StringLiteral__0_____1____2__u000A,(Object *)pSVar13,(Object *)arg1,
+                        (Object *)pDStack_11,(MethodInfo *)0x0);
+    pSVar4 = mscorlib.dll::System::String::String_Concat_3(pSVar4,pSVar13,(MethodInfo *)0x0);
+    unaff_EDI = arg1;
+    arg1 = pMVar14;
+  } while( true );
 }
 

@@ -57,49 +57,49 @@ bool Assembly-CSharp.dll::TeleportAvatar+<Start>d__16::TeleportAvatar_Start_d_16
                                   (pGVar6,
                                    MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__
                                   );
-              (this->fields)._rigidBody_5__2 = pMVar7;
-              func_?(&(this->fields)._rigidBody_5__2,pMVar7);
-              pMVar7 = (this->fields)._rigidBody_5__2;
+              ppMVar8 = &(this->fields)._rigidBody_5__2;
+              *ppMVar8 = pMVar7;
+              func_?(ppMVar8,pMVar7);
+              pMVar7 = *ppMVar8;
               if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__UnityEngine__Object);
               }
-              bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                                ((Object_1 *)pMVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
-              if (bVar8 != 0) {
-                if ((this->fields)._rigidBody_5__2 == (MVRigidBody *)0x0) goto code_?;
+              bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                                 ((Object_1 *)pMVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
+              if (bVar9 != 0) {
+                if (*ppMVar8 == (MVRigidBody *)0x0) goto code_?;
                 func_?();
-                pMVar7 = (this->fields)._rigidBody_5__2;
-                if (pMVar7 == (MVRigidBody *)0x0) goto code_?;
-                func_?(9,pMVar7);
+                if (*ppMVar8 == (MVRigidBody *)0x0) goto code_?;
+                func_?(9,*ppMVar8);
               }
-              pSVar9 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+              pSVar10 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                                   ((MethodInfo *)0x0);
-              if (pSVar9 != (SpawnRoleDataMediator *)0x0) {
-                pSVar10 = (pSVar9->fields).SpawnRoleModeTypeWrapper;
-                pUVar11 = (UnityAction_1_System_Int32Enum_ *)
+              if (pSVar10 != (SpawnRoleDataMediator *)0x0) {
+                pSVar11 = (pSVar10->fields).SpawnRoleModeTypeWrapper;
+                pUVar12 = (UnityAction_1_System_Int32Enum_ *)
                           func_?(TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
                 UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
                 UnityAction_1_System_Int32Enum___ctor
-                          (pUVar11,(Object *)this_00,
+                          (pUVar12,(Object *)this_00,
                            MethodInfo__TeleportAvatar__OnAvatarStateChanged_MV__Common__SpawnRoleModeType_
                            ,(MethodInfo *)0x0);
-                if (pSVar10 != (SpawnRoleModeTypeWrapper *)0x0) {
+                if (pSVar11 != (SpawnRoleModeTypeWrapper *)0x0) {
                   SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_add_OnChange
-                            (pSVar10,(Action_1_MV_Common_SpawnRoleModeType_ *)pUVar11,
+                            (pSVar11,(Action_1_MV_Common_SpawnRoleModeType_ *)pUVar12,
                              (MethodInfo *)0x0);
-                  fVar12 = (this_00->fields).teleportTime;
-                  pTVar13 = (TeleportAvatar_ActionDelegate *)
+                  fVar13 = (this_00->fields).teleportTime;
+                  pTVar14 = (TeleportAvatar_ActionDelegate *)
                             func_?(TypeInfo__TeleportAvatar__ActionDelegate);
                   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
                   UnityAction_1_System_Single___ctor
-                            ((UnityAction_1_System_Single_ *)pTVar13,(Object *)this_00,
+                            ((UnityAction_1_System_Single_ *)pTVar14,(Object *)this_00,
                              MethodInfo__TeleportAvatar___Start_b__16_0_float_,(MethodInfo *)0x0);
-                  pIVar14 = TeleportAvatar::TeleportAvatar_DoForSeconds
-                                      (this_00,fVar12,pTVar13,(MethodInfo *)0x0);
-                  pCVar15 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+                  pIVar15 = TeleportAvatar::TeleportAvatar_DoForSeconds
+                                      (this_00,fVar13,pTVar14,(MethodInfo *)0x0);
+                  pCVar16 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
                             MonoBehaviour_StartCoroutine_Auto
-                                      ((MonoBehaviour *)this_00,pIVar14,(MethodInfo *)0x0);
-                  (this->fields).__2__current = (Object *)pCVar15;
+                                      ((MonoBehaviour *)this_00,pIVar15,(MethodInfo *)0x0);
+                  (this->fields).__2__current = (Object *)pCVar16;
                   func_?();
                   (this->fields).__1__state = 1;
                   return 1;
@@ -118,17 +118,17 @@ bool Assembly-CSharp.dll::TeleportAvatar+<Start>d__16::TeleportAvatar_Start_d_16
     pMVar3 = (this_00->fields).avatar;
     if ((this_00->fields).shouldCancelTeleportation == 0) {
       if (pMVar3 != (MVAvatarLocal *)0x0) {
-        uVar16._0_4_ = (this_00->fields).targetPosition.x;
-        uVar16._4_4_ = (this_00->fields).targetPosition.y;
+        uVar17._0_4_ = (this_00->fields).targetPosition.x;
+        uVar17._4_4_ = (this_00->fields).targetPosition.y;
         (*(code *)(pMVar3->klass->vtable).set_WorldPosition.method)
-                  (pMVar3,uVar16,(this_00->fields).targetPosition.z,
+                  (pMVar3,uVar17,(this_00->fields).targetPosition.z,
                    (pMVar3->klass->vtable).get_WorldRotation_1.methodPtr);
         pMVar3 = (this_00->fields).avatar;
         if (pMVar3 != (MVAvatarLocal *)0x0) {
-          uVar17._0_4_ = (this_00->fields).targetPosition.x;
-          uVar17._4_4_ = (this_00->fields).targetPosition.y;
+          uVar18._0_4_ = (this_00->fields).targetPosition.x;
+          uVar18._4_4_ = (this_00->fields).targetPosition.y;
           (*(code *)(pMVar3->klass->vtable).set_SyncPos.method)
-                    (pMVar3,uVar17,(this_00->fields).targetPosition.z,
+                    (pMVar3,uVar18,(this_00->fields).targetPosition.z,
                      (pMVar3->klass->vtable).get_SyncRot.methodPtr);
           this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                               ((Component *)this_00,(MethodInfo *)0x0);
@@ -139,19 +139,20 @@ bool Assembly-CSharp.dll::TeleportAvatar+<Start>d__16::TeleportAvatar_Start_d_16
             if (pMVar7 != (MVRigidBody *)0x0) {
               (*(code *)(pMVar7->klass->vtable).Reset.method)
                         (pMVar7,(pMVar7->klass->vtable).__unknown_4.methodPtr);
-              fVar12 = (this_00->fields).teleportTime;
-              pTVar13 = (TeleportAvatar_ActionDelegate *)func_?();
+              fVar13 = (this_00->fields).teleportTime;
+              pTVar14 = (TeleportAvatar_ActionDelegate *)func_?();
               UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
               UnityAction_1_System_Single___ctor
-                        ((UnityAction_1_System_Single_ *)pTVar13,(Object *)this_00,
+                        ((UnityAction_1_System_Single_ *)pTVar14,(Object *)this_00,
                          MethodInfo__TeleportAvatar___Start_b__16_1_float_,(MethodInfo *)0x0);
-              pIVar14 = TeleportAvatar::TeleportAvatar_DoForSeconds
-                                  (this_00,fVar12,pTVar13,(MethodInfo *)0x0);
-              pCVar15 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+              pIVar15 = TeleportAvatar::TeleportAvatar_DoForSeconds
+                                  (this_00,fVar13,pTVar14,(MethodInfo *)0x0);
+              pCVar16 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
                         MonoBehaviour_StartCoroutine_Auto
-                                  ((MonoBehaviour *)this_00,pIVar14,(MethodInfo *)0x0);
-              (this->fields).__2__current = (Object *)pCVar15;
-              func_?(&(this->fields).__2__current,pCVar15);
+                                  ((MonoBehaviour *)this_00,pIVar15,(MethodInfo *)0x0);
+              ppOVar19 = &(this->fields).__2__current;
+              *ppOVar19 = (Object *)pCVar16;
+              func_?(ppOVar19,pCVar16);
               (this->fields).__1__state = 2;
               return 1;
             }
@@ -181,9 +182,9 @@ bool Assembly-CSharp.dll::TeleportAvatar+<Start>d__16::TeleportAvatar_Start_d_16
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pMVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar8 != 0) {
+  bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                     ((Object_1 *)pMVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar9 != 0) {
     if (pMVar7 == (MVRigidBody *)0x0) goto code_?;
     (*(code *)(pMVar7->klass->vtable).__unknown_3.method)();
   }
@@ -198,19 +199,19 @@ bool Assembly-CSharp.dll::TeleportAvatar+<Start>d__16::TeleportAvatar_Start_d_16
       MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_TriggerBoxExit
                 (pMVar2,(this_00->fields)._TeleporterOrigin_k__BackingField,
                  (pMVar3->fields)._._._._.id,(MethodInfo *)0x0);
-      pSVar9 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+      pSVar10 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                           ((MethodInfo *)0x0);
-      if (pSVar9 != (SpawnRoleDataMediator *)0x0) {
-        pSVar10 = (pSVar9->fields).SpawnRoleModeTypeWrapper;
-        pUVar11 = (UnityAction_1_System_Int32Enum_ *)func_?();
+      if (pSVar10 != (SpawnRoleDataMediator *)0x0) {
+        pSVar11 = (pSVar10->fields).SpawnRoleModeTypeWrapper;
+        pUVar12 = (UnityAction_1_System_Int32Enum_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
         UnityAction_1_System_Int32Enum___ctor
-                  (pUVar11,(Object *)this_00,
+                  (pUVar12,(Object *)this_00,
                    MethodInfo__TeleportAvatar__OnAvatarStateChanged_MV__Common__SpawnRoleModeType_,
                    (MethodInfo *)0x0);
-        if (pSVar10 != (SpawnRoleModeTypeWrapper *)0x0) {
+        if (pSVar11 != (SpawnRoleModeTypeWrapper *)0x0) {
           SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_remove_OnChange
-                    (pSVar10,(Action_1_MV_Common_SpawnRoleModeType_ *)pUVar11,(MethodInfo *)0x0);
+                    (pSVar11,(Action_1_MV_Common_SpawnRoleModeType_ *)pUVar12,(MethodInfo *)0x0);
           pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                               ((Component *)this_00,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -225,9 +226,9 @@ bool Assembly-CSharp.dll::TeleportAvatar+<Start>d__16::TeleportAvatar_Start_d_16
   }
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  bVar8 = (*pcVar18)();
-  return bVar8;
+  pcVar20 = (code *)swi(3);
+  bVar9 = (*pcVar20)();
+  return bVar9;
 }
 
 

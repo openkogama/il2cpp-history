@@ -104,7 +104,7 @@ code_?:
     pTVar1 = (this->fields)._._.muzzlePoint;
     if (pTVar1 == (Transform *)0x0) goto code_?;
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffd8,pTVar1,(MethodInfo *)0x0);
     pBVar3 = Bullet::Bullet_CreateBullet
                         (PoolEnums__Enum_SixShooterBullet,*pVVar2,(MethodInfo *)0x0);
     if (pBVar3 == (Bullet *)0x0) goto code_?;
@@ -117,8 +117,8 @@ code_?:
     pBVar5 = (Bullet *)
               mscorlib.dll::System::Delegate::Delegate_Combine
                         ((Delegate *)a,(Delegate *)pBVar4,(MethodInfo *)0x0);
-    this_04 = (Bullet *)0x0;
     if (pBVar5 == (Bullet *)0x0) {
+      pBVar6 = (Bullet *)0x0;
       (pBVar3->fields).onHit = (Bullet_OnHitDelegate *)0x0;
 code_?:
       func_?();
@@ -129,94 +129,94 @@ code_?:
                   (pBVar4,(Object *)this,
                    MethodInfo__PickupItemSixShooter__OnLocalBulletHit_VoxelHit__UnityEngine__Ray_,
                    (MethodInfo *)0x0);
-        (this_04->fields).onHitLocal = (Bullet_OnHitDelegate *)pBVar4;
-        func_?(&(this_04->fields).onHitLocal,pBVar4);
+        ppBVar7 = &(pBVar6->fields).onHitLocal;
+        *ppBVar7 = (Bullet_OnHitDelegate *)pBVar4;
+        func_?(ppBVar7,pBVar4);
       }
-      pMVar6 = (this->fields)._._.owner;
-      if (pMVar6 != (MVPickupOwner *)0x0) {
-        fVar7 = (pMVar6->fields).lookOrigin.y;
+      pMVar8 = (this->fields)._._.owner;
+      if (pMVar8 != (MVPickupOwner *)0x0) {
+        fVar9 = (pMVar8->fields).lookOrigin.y;
         pVVar2 = MVPickupOwner::MVPickupOwner_get_LookDirection
-                            ((Vector3 *)&stack0xffffffd8,(this->fields)._._.owner,(MethodInfo *)0x0)
-        ;
-        uVar8 = 0;
+                            ((Vector3 *)&stack0xffffffd8,pMVar8,(MethodInfo *)0x0);
+        uVar10 = 0;
         UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                   ((Vector3 *)&stack0xffffffd8,*pVVar2,(MethodInfo *)0x0);
-        pMVar6 = (this->fields)._._.owner;
-        if (pMVar6 != (MVPickupOwner *)0x0) {
-          fVar9 = (this->fields).bulletSpeed;
-          uVar10 = 0;
-          puVar11 = &UNK_?;
-          fVar12 = MVPickupOwner::MVPickupOwner_GetAbsolutProjectileSpeed
-                             (pMVar6,fVar9,(MethodInfo *)0x0);
-          fVar13 = (this->fields).bulletRange;
-          pMVar14 = (this->fields)._._.owner;
-          if (pMVar14 != (MVPickupOwner *)0x0) {
+        pMVar8 = (this->fields)._._.owner;
+        if (pMVar8 != (MVPickupOwner *)0x0) {
+          fVar11 = (this->fields).bulletSpeed;
+          uVar12 = 0;
+          puVar13 = &UNK_?;
+          fVar14 = MVPickupOwner::MVPickupOwner_GetAbsolutProjectileSpeed
+                             (pMVar8,fVar11,(MethodInfo *)0x0);
+          fVar15 = (this->fields).bulletRange;
+          pMVar16 = (this->fields)._._.owner;
+          if (pMVar16 != (MVPickupOwner *)0x0) {
             ignoreWoIDs = (HashSet_1_System_Int32_ *)
-                          (*(code *)(pMVar14->klass->vtable).get_IgnoreWOIDs.method)();
-            lineOfFire.m_Direction.z = (float)uVar10;
-            lineOfFire.m_Direction.y = fVar9;
-            lineOfFire.m_Origin.y = fVar7;
-            lineOfFire.m_Origin.x = (float)uVar8;
-            lineOfFire.m_Origin.z = (float)puVar11;
-            lineOfFire.m_Direction.x = (float)pMVar6;
-            Bullet::Bullet_Fire(this_04,fVar12,fVar13,lineOfFire,ignoreWoIDs,(MethodInfo *)0x0);
-            fVar7 = (float)(this->fields).currentAmmo.currentCryptoKey;
-            fVar9 = (float)(this->fields).currentAmmo.hiddenValue;
-            fVar13 = (float)(this->fields).currentAmmo.fakeValue;
-            fVar12 = *(float *)&(this->fields).currentAmmo.inited;
+                          (*(code *)(pMVar16->klass->vtable).get_IgnoreWOIDs.method)();
+            lineOfFire.m_Direction.z = (float)uVar12;
+            lineOfFire.m_Direction.y = fVar11;
+            lineOfFire.m_Origin.y = fVar9;
+            lineOfFire.m_Origin.x = (float)uVar10;
+            lineOfFire.m_Origin.z = (float)puVar13;
+            lineOfFire.m_Direction.x = (float)pMVar8;
+            Bullet::Bullet_Fire(pBVar6,fVar14,fVar15,lineOfFire,ignoreWoIDs,(MethodInfo *)0x0);
+            fVar9 = (float)(this->fields).currentAmmo.currentCryptoKey;
+            fVar11 = (float)(this->fields).currentAmmo.hiddenValue;
+            fVar15 = (float)(this->fields).currentAmmo.fakeValue;
+            fVar14 = *(float *)&(this->fields).currentAmmo.inited;
             if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
                 cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
             }
-            input.hiddenValue = (int32_t)fVar9;
-            input.currentCryptoKey = (int32_t)fVar7;
-            input.fakeValue = (int32_t)fVar13;
-            input._12_4_ = fVar12;
-            pOVar15 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+            input.hiddenValue = (int32_t)fVar11;
+            input.currentCryptoKey = (int32_t)fVar9;
+            input.fakeValue = (int32_t)fVar15;
+            input._12_4_ = fVar14;
+            pOVar17 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
                       ObscuredInt::ObscuredInt_op_Decrement
                                 ((ObscuredInt *)&stack0xffffffd4,input,(MethodInfo *)0x0);
-            iVar16 = pOVar15->hiddenValue;
-            iVar17 = pOVar15->fakeValue;
-            bVar18 = pOVar15->inited;
-            uVar19 = *(undefined3 *)&pOVar15->field_0xd;
-            pPVar20 = (this->fields).muzzleParticles;
+            iVar18 = pOVar17->hiddenValue;
+            iVar19 = pOVar17->fakeValue;
+            bVar20 = pOVar17->inited;
+            uVar21 = *(undefined3 *)&pOVar17->field_0xd;
+            pPVar22 = (this->fields).muzzleParticles;
             pTVar1 = (this->fields)._._.muzzlePoint;
-            (this->fields).currentAmmo.currentCryptoKey = pOVar15->currentCryptoKey;
-            (this->fields).currentAmmo.hiddenValue = iVar16;
-            (this->fields).currentAmmo.fakeValue = iVar17;
-            (this->fields).currentAmmo.inited = bVar18;
-            *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar19;
+            (this->fields).currentAmmo.currentCryptoKey = pOVar17->currentCryptoKey;
+            (this->fields).currentAmmo.hiddenValue = iVar18;
+            (this->fields).currentAmmo.fakeValue = iVar19;
+            (this->fields).currentAmmo.inited = bVar20;
+            *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar21;
             if (pTVar1 != (Transform *)0x0) {
               pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                                   ((Vector3 *)&stack0xffffffd8,pTVar1,(MethodInfo *)0x0);
-              VVar21 = *pVVar2;
+              VVar23 = *pVVar2;
               this_01 = (this->fields).muzzleParticles;
               if ((this_01 != (ParticleSystem *)0x0) &&
                  (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                             Component_get_transform((Component *)this_01,(MethodInfo *)0x0),
                  pTVar1 != (Transform *)0x0)) {
-                pQVar22 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                pQVar24 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                                     ((Quaternion *)&stack0xffffffd4,pTVar1,(MethodInfo *)0x0);
                 pTVar1 = (this->fields)._._.muzzlePoint;
-                fVar7 = pQVar22->x;
-                fVar9 = pQVar22->y;
-                fVar13 = pQVar22->z;
-                fVar12 = pQVar22->w;
+                fVar9 = pQVar24->x;
+                fVar11 = pQVar24->y;
+                fVar15 = pQVar24->z;
+                fVar14 = pQVar24->w;
                 if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                   func_?(TypeInfo__UnityEngine__Object);
                 }
-                rotation.y = fVar9;
-                rotation.x = fVar7;
-                rotation.z = fVar13;
-                rotation.w = fVar12;
-                pPVar20 = (ParticleSystem *)
+                rotation.y = fVar11;
+                rotation.x = fVar9;
+                rotation.z = fVar15;
+                rotation.w = fVar14;
+                pPVar22 = (ParticleSystem *)
                           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_8
-                                    ((Object *)pPVar20,VVar21,rotation,pTVar1,
+                                    ((Object *)pPVar22,VVar23,rotation,pTVar1,
                                      UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion__UnityEngine__Transform_
                                     );
-                if (pPVar20 != (ParticleSystem *)0x0) {
+                if (pPVar22 != (ParticleSystem *)0x0) {
                   UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-                  ParticleSystem_Play_1(pPVar20,(MethodInfo *)0x0);
+                  ParticleSystem_Play_1(pPVar22,(MethodInfo *)0x0);
                   this_02 = MVGameControllerBase::MVGameControllerBase_get_AudioManager
                                       ((MethodInfo *)0x0);
                   audioSource = (this->fields).fireSound;
@@ -228,52 +228,52 @@ code_?:
                                   Transform_get_position
                                             ((Vector3 *)&stack0xffffffd8,pTVar1,(MethodInfo *)0x0),
                        this_02 != (AudioManager *)0x0)) {
-                      uVar23._0_4_ = pVVar2->x;
-                      uVar23._4_4_ = pVVar2->y;
-                      fVar7 = pVVar2->z;
+                      uVar25._0_4_ = pVVar2->x;
+                      uVar25._4_4_ = pVVar2->y;
+                      fVar9 = pVVar2->z;
 code_?:
-                      VVar21.z = fVar7;
-                      VVar21.x = (float)(int)uVar23;
-                      VVar21.y = (float)(int)((ulonglong)uVar23 >> 0x20);
+                      VVar23.z = fVar9;
+                      VVar23.x = (float)(int)uVar25;
+                      VVar23.y = (float)(int)((ulonglong)uVar25 >> 0x20);
                       AudioManager::AudioManager_Play_2
-                                (this_02,StringLiteral_projectile_fire,audioSource,VVar21,
+                                (this_02,StringLiteral_projectile_fire,audioSource,VVar23,
                                  (MethodInfo *)0x0);
-                      pMVar6 = (this->fields)._._.owner;
+                      pMVar8 = (this->fields)._._.owner;
                       (this->fields)._.isFiring = 0;
-                      if (pMVar6 != (MVPickupOwner *)0x0) {
+                      if (pMVar8 != (MVPickupOwner *)0x0) {
                         this_03 = (MVRigidBody *)
                                   UnityEngine.CoreModule.dll::UnityEngine::Component::
                                   Component_GetComponent_1
-                                            ((Component *)pMVar6,
+                                            ((Component *)pMVar8,
                                              MVRigidBody_MethodInfo__UnityEngine__Component__GetComponent<MVRigidBody>__
                                             );
                         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                           func_?();
                         }
-                        bVar18 = UnityEngine.CoreModule.dll::UnityEngine::Object::
+                        bVar20 = UnityEngine.CoreModule.dll::UnityEngine::Object::
                                  Object_1_op_Inequality
                                            ((Object_1 *)this_03,(Object_1 *)0x0,(MethodInfo *)0x0);
-                        if (bVar18 == 0) {
+                        if (bVar20 == 0) {
                           return;
                         }
-                        pMVar6 = (this->fields)._._.owner;
-                        if (pMVar6 != (MVPickupOwner *)0x0) {
+                        pMVar8 = (this->fields)._._.owner;
+                        if (pMVar8 != (MVPickupOwner *)0x0) {
                           pVVar2 = MVPickupOwner::MVPickupOwner_get_LookDirection
-                                              ((Vector3 *)&stack0xffffffd8,pMVar6,(MethodInfo *)0x0
+                                              ((Vector3 *)&stack0xffffffe4,pMVar8,(MethodInfo *)0x0
                                               );
-                          uVar24 = pVVar2->x;
-                          uVar25 = pVVar2->y;
-                          fVar7 = (this->fields).recoilImpact;
+                          uVar26 = pVVar2->x;
+                          uVar27 = pVVar2->y;
+                          fVar9 = (this->fields).recoilImpact;
                           if (this_03 != (MVRigidBody *)0x0) {
-                            impulse.y = (float)(uVar25 ^ 
+                            impulse.y = (float)(uVar27 ^ 
                                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                               ) * fVar7;
-                            impulse.x = (float)(uVar24 ^ 
+                                               ) * fVar9;
+                            impulse.x = (float)(uVar26 ^ 
                                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                               ) * fVar7;
+                                               ) * fVar9;
                             impulse.z = (float)((uint)pVVar2->z ^
                                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                               ) * fVar7;
+                                               ) * fVar9;
                             MVRigidBody::MVRigidBody_AddImpulse_1
                                       (this_03,impulse,0,(MethodInfo *)0x0);
                             return;
@@ -283,32 +283,32 @@ code_?:
                     }
                   }
                   else {
-                    pCVar26 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
+                    pCVar28 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
                                         ((MethodInfo *)0x0);
-                    if ((pCVar26 != (Camera *)0x0) &&
+                    if ((pCVar28 != (Camera *)0x0) &&
                        (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                  Component_get_transform((Component *)pCVar26,(MethodInfo *)0x0),
+                                  Component_get_transform((Component *)pCVar28,(MethodInfo *)0x0),
                        pTVar1 != (Transform *)0x0)) {
                       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                 Transform_get_position
                                           ((Vector3 *)&stack0xffffffd8,pTVar1,(MethodInfo *)0x0);
-                      uVar27 = pVVar2->x;
-                      uVar28 = pVVar2->y;
-                      fVar7 = pVVar2->z;
-                      pCVar26 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
+                      uVar29 = pVVar2->x;
+                      uVar30 = pVVar2->y;
+                      fVar9 = pVVar2->z;
+                      pCVar28 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
                                           ((MethodInfo *)0x0);
-                      if ((pCVar26 != (Camera *)0x0) &&
+                      if ((pCVar28 != (Camera *)0x0) &&
                          (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                    Component_get_transform((Component *)pCVar26,(MethodInfo *)0x0),
+                                    Component_get_transform((Component *)pCVar28,(MethodInfo *)0x0),
                          pTVar1 != (Transform *)0x0)) {
                         pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                   Transform_get_forward
                                             ((Vector3 *)&stack0xffffffd8,pTVar1,(MethodInfo *)0x0);
-                        uVar29 = pVVar2->x;
-                        uVar30 = pVVar2->y;
-                        fVar7 = pVVar2->z + fVar7;
+                        uVar31 = pVVar2->x;
+                        uVar32 = pVVar2->y;
+                        fVar9 = pVVar2->z + fVar9;
                         if (this_02 != (AudioManager *)0x0) {
-                          uVar23 = CONCAT44((float)uVar30 + (float)uVar28,(float)uVar29 + (float)uVar27);
+                          uVar25 = CONCAT44((float)uVar32 + (float)uVar30,(float)uVar31 + (float)uVar29);
                           goto code_?;
                         }
                       }
@@ -322,22 +322,23 @@ code_?:
       }
       goto code_?;
     }
+    pBVar6 = (Bullet *)0x0;
     if ((Bullet_OnHitDelegate__Class *)pBVar5->klass == TypeInfo__Bullet__OnHitDelegate) {
-      this_04 = pBVar5;
+      pBVar6 = pBVar5;
     }
-    if (this_04 == (Bullet *)0x0) goto code_?;
-    (pBVar3->fields).onHit = (Bullet_OnHitDelegate *)this_04;
-    this_04 = (Bullet *)0x0;
+    if (pBVar6 == (Bullet *)0x0) goto code_?;
+    (pBVar3->fields).onHit = (Bullet_OnHitDelegate *)pBVar6;
+    pBVar6 = (Bullet *)0x0;
     if ((Bullet_OnHitDelegate__Class *)pBVar5->klass == TypeInfo__Bullet__OnHitDelegate) {
-      this_04 = pBVar5;
+      pBVar6 = pBVar5;
     }
-    if (this_04 != (Bullet *)0x0) goto code_?;
+    if (pBVar6 != (Bullet *)0x0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar31 = (code *)swi(3);
-  (*pcVar31)();
+  pcVar33 = (code *)swi(3);
+  (*pcVar33)();
   return;
 }
 

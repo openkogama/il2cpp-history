@@ -10,15 +10,15 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Initialize
     func_?(&TypeInfo__ThemeTimers__Timer);
     cRam_? = '\x01';
   }
-  fVar1 = (this->fields)._sunset;
-  fVar2 = (this->fields)._sunrise;
-  if (fVar1 <= fVar2) {
-    fVar1 = fVar1 + (_UNK_? - fVar2);
+  fVar1 = (this->fields)._sunrise;
+  fVar2 = (this->fields)._sunset;
+  if (fVar2 <= fVar1) {
+    fVar2 = fVar2 + (_UNK_? - fVar1);
   }
   else {
-    fVar1 = fVar1 - fVar2;
+    fVar2 = fVar2 - fVar1;
   }
-  (this->fields)._sunDuration = fVar1;
+  (this->fields)._sunDuration = fVar2;
   fVar1 = (this->fields)._sunAltitude * _UNK_?;
   dVar3 = (double)fVar1;
   func_?();
@@ -42,6 +42,7 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Initialize
   dVar4 = (double)fVar1;
   func_?();
   pDVar5 = (this->fields).activeColorPreset;
+  ppDVar6 = &(this->fields).activeColorPreset;
   (this->fields)._moonAttitudeVector.x = (float)dVar3;
   (this->fields)._moonAttitudeVector.y = (float)dVar4;
   (this->fields)._moonAttitudeVector.z = 0.0;
@@ -49,21 +50,21 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Initialize
     this_00 = (this->fields).colorPresets;
     if (this_00 == (DayNightCycleColorPresets *)0x0) {
       func_?();
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
       return;
     }
     pDVar5 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
                        (this_00,0,(MethodInfo *)0x0);
-    (this->fields).activeColorPreset = pDVar5;
-    func_?(&(this->fields).activeColorPreset,pDVar5);
+    *ppDVar6 = pDVar5;
+    func_?(ppDVar6,pDVar5);
   }
   if ((this->fields).useServerTime == 0) {
     fVar1 = (this->fields).cycleLength;
     this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
     method_00 = (MethodInfo *)0x0;
-    fVar7 = (float10)func_?();
-    ThemeTimers::Timer::Timer_1__ctor(this_01,(float)fVar7,fVar1,method_00);
+    fVar8 = (float10)func_?();
+    ThemeTimers::Timer::Timer_1__ctor(this_01,(float)fVar8,fVar1,method_00);
   }
   else {
     this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__SystemTimer);
@@ -72,8 +73,9 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Initialize
     UxmlObjectListAttributeDescription_1_System_Object___ctor
               ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_01,(MethodInfo *)0x0);
   }
-  (this->fields).timer = (ITimer *)this_01;
-  func_?(&(this->fields).timer,this_01);
+  ppIVar9 = &(this->fields).timer;
+  *ppIVar9 = (ITimer *)this_01;
+  func_?(ppIVar9,this_01);
   (this->fields).initialized = 1;
   return;
 }
@@ -85,15 +87,15 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_OnValidate
                (DayNightCycle *this,MethodInfo *method)
 
 {
-  fVar1 = (this->fields)._sunset;
-  fVar2 = (this->fields)._sunrise;
-  if (fVar1 <= fVar2) {
-    fVar1 = fVar1 + (_UNK_? - fVar2);
+  fVar1 = (this->fields)._sunrise;
+  fVar2 = (this->fields)._sunset;
+  if (fVar2 <= fVar1) {
+    fVar2 = fVar2 + (_UNK_? - fVar1);
   }
   else {
-    fVar1 = fVar1 - fVar2;
+    fVar2 = fVar2 - fVar1;
   }
-  (this->fields)._sunDuration = fVar1;
+  (this->fields)._sunDuration = fVar2;
   fVar1 = (this->fields)._sunAltitude * _UNK_?;
   dVar3 = (double)fVar1;
   func_?();
@@ -147,14 +149,13 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_RecalcMoonDuration
                (DayNightCycle *this,MethodInfo *method)
 
 {
-  fVar1 = (this->fields)._moonset;
-  pfVar2 = &(this->fields)._moonrise;
-  if (*pfVar2 <= fVar1 && fVar1 != *pfVar2) {
-    (this->fields)._moonDuration = fVar1 - (this->fields)._moonrise;
+  fVar1 = (this->fields)._moonrise;
+  fVar2 = (this->fields)._moonset;
+  if (fVar1 < fVar2) {
+    (this->fields)._moonDuration = fVar2 - fVar1;
     return;
   }
-  (this->fields)._moonDuration =
-       (_UNK_? - (this->fields)._moonrise) + (this->fields)._moonset;
+  (this->fields)._moonDuration = (_UNK_? - fVar1) + fVar2;
   return;
 }
 
@@ -183,13 +184,13 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_RecalcSunDuration
                (DayNightCycle *this,MethodInfo *method)
 
 {
-  fVar1 = (this->fields)._sunset;
-  pfVar2 = &(this->fields)._sunrise;
-  if (*pfVar2 <= fVar1 && fVar1 != *pfVar2) {
-    (this->fields)._sunDuration = fVar1 - (this->fields)._sunrise;
+  fVar1 = (this->fields)._sunrise;
+  fVar2 = (this->fields)._sunset;
+  if (fVar1 < fVar2) {
+    (this->fields)._sunDuration = fVar2 - fVar1;
     return;
   }
-  (this->fields)._sunDuration = (_UNK_? - (this->fields)._sunrise) + (this->fields)._sunset;
+  (this->fields)._sunDuration = (_UNK_? - fVar1) + fVar2;
   return;
 }
 
@@ -208,8 +209,9 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Reset(DayNightCycle *this
     cycleLength = (this->fields).cycleLength;
     this_00 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
     ThemeTimers::Timer::Timer_1__ctor(this_00,initialTime,cycleLength,(MethodInfo *)0x0);
-    (this->fields).timer = (ITimer *)this_00;
-    func_?(&(this->fields).timer,this_00);
+    ppIVar1 = &(this->fields).timer;
+    *ppIVar1 = (ITimer *)this_00;
+    func_?(ppIVar1,this_00);
   }
   return;
 }
@@ -252,412 +254,320 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Update_1
 
 {
   pDVar1 = (this->fields).activeColorPreset;
-  if ((pDVar1 != (DayNightCycleColorPresets_Preset *)0x0) &&
-     (this_00 = (pDVar1->fields).skyParamList, this_00 != (SkyParamsList *)0x0)) {
-    pSVar2 = Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParamsList::
-             SkyParamsList_GetParamPerTime(this_00,timeOfDay,(MethodInfo *)0x0);
-    (this->fields)._CurrentSkyParam_k__BackingField = pSVar2;
+  if ((pDVar1 == (DayNightCycleColorPresets_Preset *)0x0) ||
+     (this_00 = (pDVar1->fields).skyParamList, this_00 == (SkyParamsList *)0x0))
+  goto code_?;
+  pSVar2 = Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParamsList::
+           SkyParamsList_GetParamPerTime(this_00,timeOfDay,(MethodInfo *)0x0);
+  ppSVar3 = &(this->fields)._CurrentSkyParam_k__BackingField;
+  *ppSVar3 = pSVar2;
+  func_?();
+  if ((*ppSVar3 == (SkyParam *)0x0) ||
+     (pTVar4 = (this->fields).skybox, pTVar4 == (ThemeSkybox *)0x0)) goto code_?;
+  ThemeSkybox::ThemeSkybox_set_TopColor(pTVar4,((*ppSVar3)->fields).TopColor,(MethodInfo *)0x0);
+  if ((*ppSVar3 == (SkyParam *)0x0) ||
+     (pTVar4 = (this->fields).skybox, pTVar4 == (ThemeSkybox *)0x0)) goto code_?;
+  ThemeSkybox::ThemeSkybox_set_BottomColor
+            (pTVar4,((*ppSVar3)->fields).BottomColor,(MethodInfo *)0x0);
+  pDVar1 = (this->fields).activeColorPreset;
+  if ((pDVar1 == (DayNightCycleColorPresets_Preset *)0x0) ||
+     (this_01 = (pDVar1->fields).starsParamList, this_01 == (StarsParamsList *)0x0))
+  goto code_?;
+  pSVar5 = Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParamsList::
+           StarsParamsList_GetParamPerTime(this_01,timeOfDay,(MethodInfo *)0x0);
+  ppSVar6 = &(this->fields)._CurrentStarsParam_k__BackingField;
+  *ppSVar6 = pSVar5;
+  func_?();
+  pSVar5 = *ppSVar6;
+  if ((pSVar5 == (StarsParam *)0x0) ||
+     (pTVar4 = (this->fields).skybox, pTVar4 == (ThemeSkybox *)0x0)) goto code_?;
+  ThemeSkybox::ThemeSkybox_set_StarsTint(pTVar4,(pSVar5->fields).TintColor,(MethodInfo *)0x0);
+  fVar7 = (this->fields)._sunrise;
+  fVar8 = timeOfDay;
+  if (fVar7 < timeOfDay) {
+code_?:
+    fVar8 = fVar8 - fVar7;
+    fVar7 = (this->fields)._sunDuration;
+    if (fVar7 <= fVar8) {
+      fVar8 = fVar7 - fVar8;
+    }
+    fVar8 = fVar8 / fVar7;
+    fStack_9 = (this->fields)._sunOrbit.x;
+    if (fVar8 < 0.0) {
+      fVar8 = 0.0;
+    }
+    else if (_UNK_? < fVar8) {
+      fVar8 = _UNK_?;
+    }
+    fStack_10 = (this->fields)._sunLongitude;
+    fStack_9 = ((this->fields)._sunOrbit.y - fStack_9) * fVar8 + fStack_9;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
+                        (&QStack_12,fStack_10 - _UNK_?,
+                         TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
+    fStack_13 = pQVar11->x;
+    fStack_14 = pQVar11->y;
+    fStack_15 = pQVar11->z;
+    fStack_16 = pQVar11->w;
+    pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
+                        ((Quaternion *)&stack0xffffffa0,fStack_9,(this->fields)._sunAttitudeVector,
+                         (MethodInfo *)0x0);
+    fVar7 = pQVar11->y;
+    fVar8 = pQVar11->z;
+    fVar17 = pQVar11->w;
+    QStack_12.x = fStack_16;
+    QStack_12.y = fStack_16;
+    QStack_12.z = fStack_16;
+    QStack_12.w = fStack_16;
+    fStack_18 = (fVar17 * fStack_13 + pQVar11->x * fStack_16 + fVar8 * fStack_14) -
+                fVar7 * fStack_15;
+    fStack_19 = (fStack_14 * fVar17 + fVar7 * fStack_16 + fStack_15 * pQVar11->x) -
+                fVar8 * fStack_13;
+    fStack_20 = (fStack_15 * fVar17 + fVar8 * fStack_16 + fVar7 * fStack_13) -
+                fStack_14 * pQVar11->x;
+    fStack_21 = ((fVar17 * fStack_16 - fStack_13 * pQVar11->x) - fVar7 * fStack_14) -
+                fStack_15 * fVar8;
+    fStack_13 = fStack_18;
+    fStack_14 = fStack_19;
+    fStack_15 = fStack_20;
+    fStack_16 = fStack_21;
+    fStack_9 = fStack_18;
+    pfVar22 = (float *)func_?();
+    QStack_12.x = *pfVar22;
+    QStack_12.y = 0.0;
+    QStack_12.z = 0.0;
+    QStack_12.w = 0.0;
+    iVar23 = func_?();
+    fStack_16 = 0.0;
+    euler.y = *(float *)(iVar23 + 4) * _UNK_?;
+    euler.x = QStack_12.x * _UNK_?;
+    euler.z = 0.0;
+    pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+                        ((Quaternion *)&stack0xffffffa0,euler,(MethodInfo *)0x0);
+    pTVar4 = (this->fields).skybox;
+    if (pTVar4 == (ThemeSkybox *)0x0) goto code_?;
+    ThemeSkybox::ThemeSkybox_set_SunRotation(pTVar4,*pQVar11,(MethodInfo *)0x0);
+  }
+  else if (timeOfDay < (this->fields)._sunset) {
+    if (timeOfDay <= fVar7) {
+      fVar8 = timeOfDay + _UNK_?;
+    }
+    goto code_?;
+  }
+  pDVar1 = (this->fields).activeColorPreset;
+  if ((pDVar1 == (DayNightCycleColorPresets_Preset *)0x0) ||
+     (pCVar24 = (pDVar1->fields).sunParamsList, pCVar24 == (CelestialParamsList *)0x0))
+  goto code_?;
+  pCVar25 = Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParamsList::
+            CelestialParamsList_GetParamPerTime(pCVar24,timeOfDay,(MethodInfo *)0x0);
+  ppCVar26 = &(this->fields)._CurrentSunParam_k__BackingField;
+  *ppCVar26 = pCVar25;
+  func_?();
+  if ((*ppCVar26 == (CelestialParam *)0x0) ||
+     (pTVar4 = (this->fields).skybox, pTVar4 == (ThemeSkybox *)0x0)) goto code_?;
+  ThemeSkybox::ThemeSkybox_set_SunTint(pTVar4,((*ppCVar26)->fields).TintColor,(MethodInfo *)0x0);
+  pTVar4 = (this->fields).skybox;
+  if (pTVar4 == (ThemeSkybox *)0x0) goto code_?;
+  pLVar27 = ThemeSkybox::ThemeSkybox_get_SunLight(pTVar4,(MethodInfo *)0x0);
+  if ((*ppCVar26 == (CelestialParam *)0x0) || (pLVar27 == (Light *)0x0)) goto code_?;
+  UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_color
+            (pLVar27,((*ppCVar26)->fields).LightColor,(MethodInfo *)0x0);
+  pTVar4 = (this->fields).skybox;
+  if (pTVar4 == (ThemeSkybox *)0x0) goto code_?;
+  pLVar27 = ThemeSkybox::ThemeSkybox_get_SunLight(pTVar4,(MethodInfo *)0x0);
+  if ((*ppCVar26 == (CelestialParam *)0x0) || (pLVar27 == (Light *)0x0)) goto code_?;
+  UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_intensity
+            (pLVar27,((*ppCVar26)->fields).LightIntencity,(MethodInfo *)0x0);
+  pTVar4 = (this->fields).skybox;
+  if (pTVar4 == (ThemeSkybox *)0x0) goto code_?;
+  pLVar28 = ThemeSkybox::ThemeSkybox_get_SunFlare(pTVar4,(MethodInfo *)0x0);
+  pTVar4 = (this->fields).skybox;
+  if ((pTVar4 == (ThemeSkybox *)0x0) ||
+     (pLVar27 = ThemeSkybox::ThemeSkybox_get_SunLight(pTVar4,(MethodInfo *)0x0),
+     pLVar27 == (Light *)0x0)) goto code_?;
+  fStack_9 = UnityEngine.CoreModule.dll::UnityEngine::Light::Light_get_intensity
+                        (pLVar27,(MethodInfo *)0x0);
+  pTVar4 = (this->fields).skybox;
+  if ((pTVar4 == (ThemeSkybox *)0x0) || (pLVar28 == (LensFlare *)0x0)) goto code_?;
+  UnityEngine.CoreModule.dll::UnityEngine::LensFlare::LensFlare_set_brightness
+            (pLVar28,(pTVar4->fields)._sunFlareBrightness * fStack_9,(MethodInfo *)0x0);
+  pTVar4 = (this->fields).skybox;
+  if (pTVar4 == (ThemeSkybox *)0x0) goto code_?;
+  pLVar28 = ThemeSkybox::ThemeSkybox_get_SunFlare(pTVar4,(MethodInfo *)0x0);
+  pTVar4 = (this->fields).skybox;
+  if ((pTVar4 == (ThemeSkybox *)0x0) ||
+     (pLVar29 = ThemeSkybox::ThemeSkybox_get_SunFlare(pTVar4,(MethodInfo *)0x0),
+     pLVar29 == (LensFlare *)0x0)) goto code_?;
+  fStack_9 = UnityEngine.CoreModule.dll::UnityEngine::LensFlare::LensFlare_get_brightness
+                        (pLVar29,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
     func_?();
-    pSVar2 = (this->fields)._CurrentSkyParam_k__BackingField;
-    if ((pSVar2 != (SkyParam *)0x0) &&
-       (pTVar3 = (this->fields).skybox, pTVar3 != (ThemeSkybox *)0x0)) {
-      ThemeSkybox::ThemeSkybox_set_TopColor(pTVar3,(pSVar2->fields).TopColor,(MethodInfo *)0x0);
-      pSVar2 = (this->fields)._CurrentSkyParam_k__BackingField;
-      if ((pSVar2 != (SkyParam *)0x0) &&
-         (pTVar3 = (this->fields).skybox, pTVar3 != (ThemeSkybox *)0x0)) {
-        ThemeSkybox::ThemeSkybox_set_BottomColor
-                  (pTVar3,(pSVar2->fields).BottomColor,(MethodInfo *)0x0);
-        pDVar1 = (this->fields).activeColorPreset;
-        if ((pDVar1 != (DayNightCycleColorPresets_Preset *)0x0) &&
-           (this_01 = (pDVar1->fields).starsParamList, this_01 != (StarsParamsList *)0x0)) {
-          pSVar4 = Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParamsList::
-                   StarsParamsList_GetParamPerTime(this_01,timeOfDay,(MethodInfo *)0x0);
-          (this->fields)._CurrentStarsParam_k__BackingField = pSVar4;
-          func_?();
-          pSVar4 = (this->fields)._CurrentStarsParam_k__BackingField;
-          if ((pSVar4 != (StarsParam *)0x0) &&
-             (pTVar3 = (this->fields).skybox, pTVar3 != (ThemeSkybox *)0x0)) {
-            ThemeSkybox::ThemeSkybox_set_StarsTint
-                      (pTVar3,(pSVar4->fields).TintColor,(MethodInfo *)0x0);
-            pfVar5 = &(this->fields)._sunrise;
-            if ((*pfVar5 <= timeOfDay && timeOfDay != *pfVar5) ||
-               (timeOfDay < (this->fields)._sunset)) {
-              fVar6 = (this->fields)._sunrise;
-              fVar7 = timeOfDay;
-              if (timeOfDay <= fVar6) {
-                fVar7 = timeOfDay + _UNK_?;
-              }
-              fVar7 = fVar7 - fVar6;
-              fVar6 = (this->fields)._sunDuration;
-              if (fVar6 <= fVar7) {
-                fVar7 = (fVar6 - fVar7) / (this->fields)._sunDuration;
-              }
-              else {
-                fVar7 = fVar7 / fVar6;
-              }
-              fStack_8 = (this->fields)._sunOrbit.x;
-              if (fVar7 < 0.0) {
-                fVar7 = 0.0;
-              }
-              else if (_UNK_? < fVar7) {
-                fVar7 = _UNK_?;
-              }
-              fStack_9 = (this->fields)._sunLongitude;
-              fStack_8 = ((this->fields)._sunOrbit.y - fStack_8) * fVar7 + fStack_8;
-              if (cRam_? == '\0') {
-                func_?();
-                cRam_? = '\x01';
-              }
-              pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                                 (&QStack_11,fStack_9 - _UNK_?,
-                                  TypeInfo__UnityEngine__Vector3->static_fields->upVector,
-                                  (MethodInfo *)0x0);
-              fStack_12 = pQVar10->x;
-              fStack_13 = pQVar10->y;
-              fStack_14 = pQVar10->z;
-              fStack_15 = pQVar10->w;
-              pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                                 ((Quaternion *)&stack0xffffffa0,fStack_8,
-                                  (this->fields)._sunAttitudeVector,(MethodInfo *)0x0);
-              fVar6 = pQVar10->y;
-              fVar7 = pQVar10->z;
-              fVar16 = pQVar10->w;
-              QStack_11.x = fStack_15;
-              QStack_11.y = fStack_15;
-              QStack_11.z = fStack_15;
-              QStack_11.w = fStack_15;
-              fStack_17 = (fVar16 * fStack_12 + pQVar10->x * fStack_15 + fVar7 * fStack_13) -
-                          fVar6 * fStack_14;
-              fStack_18 = (fStack_13 * fVar16 + fVar6 * fStack_15 + fStack_14 * pQVar10->x) -
-                          fVar7 * fStack_12;
-              fStack_19 = (fStack_14 * fVar16 + fVar7 * fStack_15 + fVar6 * fStack_12) -
-                          fStack_13 * pQVar10->x;
-              fStack_20 = ((fVar16 * fStack_15 - fStack_12 * pQVar10->x) - fVar6 * fStack_13) -
-                          fStack_14 * fVar7;
-              fStack_12 = fStack_17;
-              fStack_13 = fStack_18;
-              fStack_14 = fStack_19;
-              fStack_15 = fStack_20;
-              fStack_8 = fStack_17;
-              pfVar5 = (float *)func_?();
-              QStack_11.x = *pfVar5;
-              QStack_11.y = 0.0;
-              QStack_11.z = 0.0;
-              QStack_11.w = 0.0;
-              iVar21 = func_?();
-              fStack_14 = 0.0;
-              euler.y = *(float *)(iVar21 + 4) * _UNK_?;
-              euler.x = QStack_11.x * _UNK_?;
-              euler.z = 0.0;
-              pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                       Quaternion_Internal_FromEulerRad
-                                 ((Quaternion *)&stack0xffffffa0,euler,(MethodInfo *)0x0);
-              pTVar3 = (this->fields).skybox;
-              if (pTVar3 == (ThemeSkybox *)0x0) goto code_?;
-              ThemeSkybox::ThemeSkybox_set_SunRotation(pTVar3,*pQVar10,(MethodInfo *)0x0);
-            }
-            pDVar1 = (this->fields).activeColorPreset;
-            if ((pDVar1 != (DayNightCycleColorPresets_Preset *)0x0) &&
-               (pCVar22 = (pDVar1->fields).sunParamsList, pCVar22 != (CelestialParamsList *)0x0)) {
-              pCVar23 = Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParamsList::
-                        CelestialParamsList_GetParamPerTime(pCVar22,timeOfDay,(MethodInfo *)0x0);
-              (this->fields)._CurrentSunParam_k__BackingField = pCVar23;
-              func_?();
-              pCVar23 = (this->fields)._CurrentSunParam_k__BackingField;
-              if ((pCVar23 != (CelestialParam *)0x0) &&
-                 (pTVar3 = (this->fields).skybox, pTVar3 != (ThemeSkybox *)0x0)) {
-                ThemeSkybox::ThemeSkybox_set_SunTint
-                          (pTVar3,(pCVar23->fields).TintColor,(MethodInfo *)0x0);
-                pTVar3 = (this->fields).skybox;
-                if (pTVar3 != (ThemeSkybox *)0x0) {
-                  pLVar24 = ThemeSkybox::ThemeSkybox_get_SunLight(pTVar3,(MethodInfo *)0x0);
-                  pCVar23 = (this->fields)._CurrentSunParam_k__BackingField;
-                  if ((pCVar23 != (CelestialParam *)0x0) && (pLVar24 != (Light *)0x0)) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_color
-                              (pLVar24,(pCVar23->fields).LightColor,(MethodInfo *)0x0);
-                    pTVar3 = (this->fields).skybox;
-                    if (pTVar3 != (ThemeSkybox *)0x0) {
-                      pLVar24 = ThemeSkybox::ThemeSkybox_get_SunLight(pTVar3,(MethodInfo *)0x0);
-                      pCVar23 = (this->fields)._CurrentSunParam_k__BackingField;
-                      if ((pCVar23 != (CelestialParam *)0x0) && (pLVar24 != (Light *)0x0)) {
-                        UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_intensity
-                                  (pLVar24,(pCVar23->fields).LightIntencity,(MethodInfo *)0x0);
-                        pTVar3 = (this->fields).skybox;
-                        if (pTVar3 != (ThemeSkybox *)0x0) {
-                          pLVar25 = ThemeSkybox::ThemeSkybox_get_SunFlare(pTVar3,(MethodInfo *)0x0);
-                          pTVar3 = (this->fields).skybox;
-                          if (pTVar3 != (ThemeSkybox *)0x0) {
-                            pLVar24 = ThemeSkybox::ThemeSkybox_get_SunLight
-                                                (pTVar3,(MethodInfo *)0x0);
-                            if (pLVar24 != (Light *)0x0) {
-                              fStack_8 = UnityEngine.CoreModule.dll::UnityEngine::Light::
-                                          Light_get_intensity(pLVar24,(MethodInfo *)0x0);
-                              pTVar3 = (this->fields).skybox;
-                              if ((pTVar3 != (ThemeSkybox *)0x0) && (pLVar25 != (LensFlare *)0x0)) {
-                                UnityEngine.CoreModule.dll::UnityEngine::LensFlare::
-                                LensFlare_set_brightness
-                                          (pLVar25,fStack_8 * (pTVar3->fields)._sunFlareBrightness,
-                                           (MethodInfo *)0x0);
-                                pTVar3 = (this->fields).skybox;
-                                if (pTVar3 != (ThemeSkybox *)0x0) {
-                                  pLVar25 = ThemeSkybox::ThemeSkybox_get_SunFlare
-                                                      (pTVar3,(MethodInfo *)0x0);
-                                  pTVar3 = (this->fields).skybox;
-                                  if (pTVar3 != (ThemeSkybox *)0x0) {
-                                    pLVar26 = ThemeSkybox::ThemeSkybox_get_SunFlare
-                                                        (pTVar3,(MethodInfo *)0x0);
-                                    if (pLVar26 != (LensFlare *)0x0) {
-                                      fStack_8 = UnityEngine.CoreModule.dll::UnityEngine::LensFlare
-                                                  ::LensFlare_get_brightness
-                                                            (pLVar26,(MethodInfo *)0x0);
-                                      if (cRam_? == '\0') {
-                                        func_?();
-                                        cRam_? = '\x01';
-                                      }
-                                      if (pLVar25 != (LensFlare *)0x0) {
-                                        fVar6 = (float)((uint)fStack_8 & _UNK_?);
-                                        if ((float)((uint)fStack_8 & _UNK_?) <= 0.0) {
-                                          fVar6 = 0.0;
-                                        }
-                                        fVar16 = TypeInfo__UnityEngine__Mathf->static_fields->
-                                                 Epsilon * _UNK_?;
-                                        fVar7 = fVar6 * _UNK_?;
-                                        if (fVar6 * _UNK_? <= fVar16) {
-                                          fVar7 = fVar16;
-                                        }
-                                        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::
-                                        Behaviour_set_enabled
-                                                  ((Behaviour *)pLVar25,
-                                                   fVar7 <= (float)((uint)(0.0 - fStack_8) &
-                                                                    _UNK_?),(MethodInfo *)0x0
-                                                  );
-                                        pfVar5 = &(this->fields)._moonrise;
-                                        if ((*pfVar5 <= timeOfDay && timeOfDay != *pfVar5) ||
-                                           (timeOfDay < (this->fields)._moonset)) {
-                                          fVar6 = (this->fields)._moonrise;
-                                          fVar7 = timeOfDay;
-                                          if (timeOfDay <= fVar6) {
-                                            fVar7 = timeOfDay + _UNK_?;
-                                          }
-                                          fVar7 = fVar7 - fVar6;
-                                          fVar6 = (this->fields)._moonDuration;
-                                          if (fVar6 <= fVar7) {
-                                            fVar7 = (fVar6 - fVar7) /
-                                                     (this->fields)._moonDuration;
-                                          }
-                                          else {
-                                            fVar7 = fVar7 / fVar6;
-                                          }
-                                          fStack_9 = (this->fields)._moonOrbit.x;
-                                          if (fVar7 < 0.0) {
-                                            fVar7 = 0.0;
-                                          }
-                                          else if (_UNK_? < fVar7) {
-                                            fVar7 = _UNK_?;
-                                          }
-                                          fStack_8 = (this->fields)._moonLongitude;
-                                          fStack_9 = ((this->fields)._moonOrbit.y - fStack_9) *
-                                                      fVar7 + fStack_9;
-                                          if (cRam_? == '\0') {
-                                            func_?();
-                                            cRam_? = '\x01';
-                                          }
-                                          pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::
-                                                   Quaternion::Quaternion_AngleAxis
-                                                             ((Quaternion *)&stack0xffffffa0,
-                                                              fStack_8 - _UNK_?,
-                                                              TypeInfo__UnityEngine__Vector3->
-                                                              static_fields->upVector,
-                                                              (MethodInfo *)0x0);
-                                          fStack_17 = pQVar10->x;
-                                          fStack_18 = pQVar10->y;
-                                          fStack_19 = pQVar10->z;
-                                          fStack_20 = pQVar10->w;
-                                          pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::
-                                                   Quaternion::Quaternion_AngleAxis
-                                                             ((Quaternion *)&stack0xffffffa0,
-                                                              fStack_9,
-                                                              (this->fields)._moonAttitudeVector,
-                                                              (MethodInfo *)0x0);
-                                          fVar6 = pQVar10->y;
-                                          fVar7 = pQVar10->z;
-                                          fStack_13 = pQVar10->w;
-                                          QStack_11.x = fStack_20;
-                                          QStack_11.y = fStack_20;
-                                          QStack_11.z = fStack_20;
-                                          QStack_11.w = fStack_20;
-                                          fStack_8 = (fStack_13 * fStack_17 + pQVar10->x * fStack_20
-                                                      + fVar7 * fStack_18) - fVar6 * fStack_19;
-                                          fVar16 = fVar6 * fStack_20;
-                                          fVar27 = fVar7 * fStack_17;
-                                          fVar28 = fVar7 * fStack_20;
-                                          fVar29 = fVar6 * fStack_17;
-                                          fVar30 = fStack_18 * pQVar10->x;
-                                          fStack_20 = ((fStack_13 * fStack_20 -
-                                                       fStack_17 * pQVar10->x) - fVar6 * fStack_18)
-                                                      - fStack_19 * fVar7;
-                                          fStack_17 = fStack_8;
-                                          fStack_18 = (fStack_18 * fStack_13 + fVar16 +
-                                                      fStack_19 * pQVar10->x) - fVar27;
-                                          fStack_19 = (fStack_19 * fStack_13 + fVar28 + fVar29) -
-                                                      fVar30;
-                                          fStack_12 = fStack_20;
-                                          fStack_14 = fStack_13;
-                                          fStack_15 = fStack_13;
-                                          pfVar5 = (float *)func_?();
-                                          QStack_11.x = *pfVar5;
-                                          QStack_11.y = 0.0;
-                                          QStack_11.z = 0.0;
-                                          QStack_11.w = 0.0;
-                                          iVar21 = func_?();
-                                          fStack_14 = 0.0;
-                                          euler_00.y = *(float *)(iVar21 + 4) * _UNK_?;
-                                          euler_00.x = QStack_11.x * _UNK_?;
-                                          euler_00.z = 0.0;
-                                          pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::
-                                                   Quaternion::Quaternion_Internal_FromEulerRad
-                                                             ((Quaternion *)&stack0xffffffa0,
-                                                              euler_00,(MethodInfo *)0x0);
-                                          pTVar3 = (this->fields).skybox;
-                                          if (pTVar3 == (ThemeSkybox *)0x0) goto code_?;
-                                          ThemeSkybox::ThemeSkybox_set_MoonRotation
-                                                    (pTVar3,*pQVar10,(MethodInfo *)0x0);
-                                        }
-                                        pDVar1 = (this->fields).activeColorPreset;
-                                        if ((pDVar1 != (DayNightCycleColorPresets_Preset *)0x0) &&
-                                           (pCVar22 = (pDVar1->fields).moonParamsList,
-                                           pCVar22 != (CelestialParamsList *)0x0)) {
-                                          pCVar23 = Borodar::FarlandSkies::CloudyCrownPro::DotParams
-                                                    ::CelestialParamsList::
-                                                    CelestialParamsList_GetParamPerTime
-                                                              (pCVar22,timeOfDay,(MethodInfo *)0x0);
-                                          (this->fields)._CurrentMoonParam_k__BackingField = pCVar23
-                                          ;
-                                          func_?();
-                                          pCVar23 = (this->fields)._CurrentMoonParam_k__BackingField
-                                          ;
-                                          if ((pCVar23 != (CelestialParam *)0x0) &&
-                                             (pTVar3 = (this->fields).skybox,
-                                             pTVar3 != (ThemeSkybox *)0x0)) {
-                                            ThemeSkybox::ThemeSkybox_set_MoonTint
-                                                      (pTVar3,(pCVar23->fields).TintColor,
-                                                       (MethodInfo *)0x0);
-                                            pTVar3 = (this->fields).skybox;
-                                            if (pTVar3 != (ThemeSkybox *)0x0) {
-                                              pLVar24 = (Light *)UnityEngine.UI.dll::UnityEngine::UI
-                                                                 ::Text::Text_get_fontStyle
-                                                                           ((Text *)pTVar3,
-                                                                            (MethodInfo *)0x0);
-                                              pCVar23 = (this->fields).
-                                                        _CurrentMoonParam_k__BackingField;
-                                              if ((pCVar23 != (CelestialParam *)0x0) &&
-                                                 (pLVar24 != (Light *)0x0)) {
-                                                UnityEngine.CoreModule.dll::UnityEngine::Light::
-                                                Light_set_color(pLVar24,(pCVar23->fields).LightColor
-                                                                ,(MethodInfo *)0x0);
-                                                pTVar3 = (this->fields).skybox;
-                                                if (pTVar3 != (ThemeSkybox *)0x0) {
-                                                  pLVar24 = (Light *)UnityEngine.UI.dll::UnityEngine
-                                                                     ::UI::Text::Text_get_fontStyle
-                                                                               ((Text *)pTVar3,
-                                                                                (MethodInfo *)0x0);
-                                                  pCVar23 = (this->fields).
-                                                            _CurrentMoonParam_k__BackingField;
-                                                  if ((pCVar23 != (CelestialParam *)0x0) &&
-                                                     (pLVar24 != (Light *)0x0)) {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Light::
-                                                    Light_set_intensity(pLVar24,(pCVar23->fields).
-                                                                                LightIntencity,
-                                                                        (MethodInfo *)0x0);
-                                                    pTVar3 = (this->fields).skybox;
-                                                    if (pTVar3 != (ThemeSkybox *)0x0) {
-                                                      pLVar25 = ThemeSkybox::
-                                                                ThemeSkybox_get_MoonFlare
-                                                                          (pTVar3,(MethodInfo *)0x0)
-                                                      ;
-                                                      pTVar3 = (this->fields).skybox;
-                                                      if (pTVar3 != (ThemeSkybox *)0x0) {
-                                                        pLVar24 = (Light *)UnityEngine.UI.dll::
-                                                                           UnityEngine::UI::Text::
-                                                                           Text_get_fontStyle((Text 
-                                                  *)pTVar3,(MethodInfo *)0x0);
-                                                  if (pLVar24 != (Light *)0x0) {
-                                                    fStack_8 = UnityEngine.CoreModule.dll::
-                                                                UnityEngine::Light::
-                                                                Light_get_intensity(pLVar24,(
-                                                  MethodInfo *)0x0);
-                                                  pTVar3 = (this->fields).skybox;
-                                                  if ((pTVar3 != (ThemeSkybox *)0x0) &&
-                                                     (pLVar25 != (LensFlare *)0x0)) {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::
-                                                    LensFlare::LensFlare_set_brightness
-                                                              (pLVar25,fStack_8 *
-                                                                       (pTVar3->fields).
-                                                                       _moonFlareBrightness,
-                                                               (MethodInfo *)0x0);
-                                                    pTVar3 = (this->fields).skybox;
-                                                    if (pTVar3 != (ThemeSkybox *)0x0) {
-                                                      pLVar25 = ThemeSkybox::
-                                                                ThemeSkybox_get_MoonFlare
-                                                                          (pTVar3,(MethodInfo *)0x0)
-                                                      ;
-                                                      pTVar3 = (this->fields).skybox;
-                                                      if (pTVar3 != (ThemeSkybox *)0x0) {
-                                                        pLVar26 = ThemeSkybox::
-                                                                  ThemeSkybox_get_MoonFlare
-                                                                            (pTVar3,(MethodInfo *)
-                                                                                    0x0);
-                                                        if (pLVar26 != (LensFlare *)0x0) {
-                                                          fStack_8 = UnityEngine.CoreModule.dll::
-                                                                      UnityEngine::LensFlare::
-                                                                      LensFlare_get_brightness
-                                                                                (pLVar26,(MethodInfo
-                                                                                          *)0x0);
-                                                          if (cRam_? == '\0') {
-                                                            func_?();
-                                                            cRam_? = '\x01';
-                                                          }
-                                                          if (pLVar25 != (LensFlare *)0x0) {
-                                                            fVar6 = (float)((uint)fStack_8 &
-                                                                            _UNK_?);
-                                                            if ((float)((uint)fStack_8 &
-                                                                       _UNK_?) <= 0.0) {
-                                                              fVar6 = 0.0;
-                                                            }
-                                                            fVar16 = TypeInfo__UnityEngine__Mathf->
-                                                                     static_fields->Epsilon *
-                                                                     _UNK_?;
-                                                            fVar7 = fVar6 * _UNK_?;
-                                                            if (fVar6 * _UNK_? <= fVar16) {
-                                                              fVar7 = fVar16;
-                                                            }
-                                                            UnityEngine.CoreModule.dll::UnityEngine
-                                                            ::Behaviour::Behaviour_set_enabled
-                                                                      ((Behaviour *)pLVar25,
-                                                                       fVar7 <= (float)((uint)(0.0 
-                                                  - fStack_8) & _UNK_?),(MethodInfo *)0x0);
-                                                  return;
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
+    cRam_? = '\x01';
+  }
+  if (pLVar28 == (LensFlare *)0x0) goto code_?;
+  fVar7 = (float)((uint)fStack_9 & _UNK_?);
+  if ((float)((uint)fStack_9 & _UNK_?) <= 0.0) {
+    fVar7 = 0.0;
+  }
+  fStack_30 = 0.0;
+  fVar17 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
+  fVar8 = fVar7 * _UNK_?;
+  if (fVar7 * _UNK_? <= fVar17) {
+    fVar8 = fVar17;
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+            ((Behaviour *)pLVar28,fVar8 <= (float)((uint)(0.0 - fStack_9) & _UNK_?),
+             (MethodInfo *)0x0);
+  fVar7 = (this->fields)._moonrise;
+  fVar8 = timeOfDay;
+  if (fVar7 < timeOfDay) {
+code_?:
+    fVar8 = fVar8 - fVar7;
+    fVar7 = (this->fields)._moonDuration;
+    if (fVar7 <= fVar8) {
+      fVar8 = fVar7 - fVar8;
+    }
+    fVar8 = fVar8 / fVar7;
+    fStack_10 = (this->fields)._moonOrbit.x;
+    if (fVar8 < 0.0) {
+      fVar8 = 0.0;
+    }
+    else if (_UNK_? < fVar8) {
+      fVar8 = _UNK_?;
+    }
+    fStack_9 = (this->fields)._moonLongitude;
+    fStack_10 = ((this->fields)._moonOrbit.y - fStack_10) * fVar8 + fStack_10;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
+                        ((Quaternion *)&stack0xffffffa0,fStack_9 - _UNK_?,
+                         TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
+    fStack_18 = pQVar11->x;
+    fStack_19 = pQVar11->y;
+    fStack_20 = pQVar11->z;
+    fStack_21 = pQVar11->w;
+    pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
+                        ((Quaternion *)&stack0xffffffa0,fStack_10,(this->fields)._moonAttitudeVector
+                         ,(MethodInfo *)0x0);
+    fVar7 = pQVar11->y;
+    fVar8 = pQVar11->z;
+    fStack_14 = pQVar11->w;
+    QStack_12.x = fStack_21;
+    QStack_12.y = fStack_21;
+    QStack_12.z = fStack_21;
+    QStack_12.w = fStack_21;
+    fStack_9 = (fStack_14 * fStack_18 + pQVar11->x * fStack_21 + fVar8 * fStack_19) -
+                fVar7 * fStack_20;
+    fVar17 = fVar7 * fStack_21;
+    fVar31 = fVar8 * fStack_18;
+    fVar32 = fVar8 * fStack_21;
+    fVar33 = fVar7 * fStack_18;
+    fVar34 = fStack_19 * pQVar11->x;
+    fStack_21 = ((fStack_14 * fStack_21 - fStack_18 * pQVar11->x) - fVar7 * fStack_19) -
+                fStack_20 * fVar8;
+    fStack_18 = fStack_9;
+    fStack_19 = (fStack_19 * fStack_14 + fVar17 + fStack_20 * pQVar11->x) - fVar31;
+    fStack_20 = (fStack_20 * fStack_14 + fVar32 + fVar33) - fVar34;
+    fStack_13 = fStack_21;
+    fStack_15 = fStack_14;
+    fStack_16 = fStack_14;
+    pfVar22 = (float *)func_?();
+    QStack_12.x = *pfVar22;
+    QStack_12.y = 0.0;
+    QStack_12.z = 0.0;
+    QStack_12.w = 0.0;
+    iVar23 = func_?();
+    fStack_16 = 0.0;
+    euler_00.y = *(float *)(iVar23 + 4) * _UNK_?;
+    euler_00.x = QStack_12.x * _UNK_?;
+    euler_00.z = 0.0;
+    pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+                        ((Quaternion *)&stack0xffffffa0,euler_00,(MethodInfo *)0x0);
+    pTVar4 = (this->fields).skybox;
+    if (pTVar4 == (ThemeSkybox *)0x0) goto code_?;
+    ThemeSkybox::ThemeSkybox_set_MoonRotation(pTVar4,*pQVar11,(MethodInfo *)0x0);
+  }
+  else if (timeOfDay < (this->fields)._moonset) {
+    if (timeOfDay <= fVar7) {
+      fVar8 = timeOfDay + _UNK_?;
+    }
+    goto code_?;
+  }
+  pDVar1 = (this->fields).activeColorPreset;
+  if ((pDVar1 != (DayNightCycleColorPresets_Preset *)0x0) &&
+     (pCVar24 = (pDVar1->fields).moonParamsList, pCVar24 != (CelestialParamsList *)0x0)) {
+    pCVar25 = Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParamsList::
+              CelestialParamsList_GetParamPerTime(pCVar24,timeOfDay,(MethodInfo *)0x0);
+    ppCVar26 = &(this->fields)._CurrentMoonParam_k__BackingField;
+    *ppCVar26 = pCVar25;
+    func_?();
+    if ((*ppCVar26 != (CelestialParam *)0x0) &&
+       (pTVar4 = (this->fields).skybox, pTVar4 != (ThemeSkybox *)0x0)) {
+      ThemeSkybox::ThemeSkybox_set_MoonTint(pTVar4,((*ppCVar26)->fields).TintColor,(MethodInfo *)0x0)
+      ;
+      pTVar4 = (this->fields).skybox;
+      if (pTVar4 != (ThemeSkybox *)0x0) {
+        pLVar27 = (Light *)UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontStyle
+                                     ((Text *)pTVar4,(MethodInfo *)0x0);
+        if ((*ppCVar26 != (CelestialParam *)0x0) && (pLVar27 != (Light *)0x0)) {
+          UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_color
+                    (pLVar27,((*ppCVar26)->fields).LightColor,(MethodInfo *)0x0);
+          pTVar4 = (this->fields).skybox;
+          if (pTVar4 != (ThemeSkybox *)0x0) {
+            pLVar27 = (Light *)UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontStyle
+                                         ((Text *)pTVar4,(MethodInfo *)0x0);
+            if ((*ppCVar26 != (CelestialParam *)0x0) && (pLVar27 != (Light *)0x0)) {
+              UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_intensity
+                        (pLVar27,((*ppCVar26)->fields).LightIntencity,(MethodInfo *)0x0);
+              pTVar4 = (this->fields).skybox;
+              if (pTVar4 != (ThemeSkybox *)0x0) {
+                pLVar28 = ThemeSkybox::ThemeSkybox_get_MoonFlare(pTVar4,(MethodInfo *)0x0);
+                pTVar4 = (this->fields).skybox;
+                if ((pTVar4 != (ThemeSkybox *)0x0) &&
+                   (pLVar27 = (Light *)UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontStyle
+                                                 ((Text *)pTVar4,(MethodInfo *)0x0),
+                   pLVar27 != (Light *)0x0)) {
+                  fStack_9 = UnityEngine.CoreModule.dll::UnityEngine::Light::Light_get_intensity
+                                        (pLVar27,(MethodInfo *)0x0);
+                  pTVar4 = (this->fields).skybox;
+                  if ((pTVar4 != (ThemeSkybox *)0x0) && (pLVar28 != (LensFlare *)0x0)) {
+                    UnityEngine.CoreModule.dll::UnityEngine::LensFlare::LensFlare_set_brightness
+                              (pLVar28,(pTVar4->fields)._moonFlareBrightness * fStack_9,
+                               (MethodInfo *)0x0);
+                    pTVar4 = (this->fields).skybox;
+                    if (pTVar4 != (ThemeSkybox *)0x0) {
+                      pLVar28 = ThemeSkybox::ThemeSkybox_get_MoonFlare(pTVar4,(MethodInfo *)0x0);
+                      pTVar4 = (this->fields).skybox;
+                      if ((pTVar4 != (ThemeSkybox *)0x0) &&
+                         (pLVar29 = ThemeSkybox::ThemeSkybox_get_MoonFlare(pTVar4,(MethodInfo *)0x0)
+                         , pLVar29 != (LensFlare *)0x0)) {
+                        fStack_9 = UnityEngine.CoreModule.dll::UnityEngine::LensFlare::
+                                    LensFlare_get_brightness(pLVar29,(MethodInfo *)0x0);
+                        if (cRam_? == '\0') {
+                          func_?();
+                          cRam_? = '\x01';
+                        }
+                        if (pLVar28 != (LensFlare *)0x0) {
+                          fVar7 = (float)((uint)fStack_9 & _UNK_?);
+                          if ((float)((uint)fStack_9 & _UNK_?) <= fStack_30) {
+                            fVar7 = fStack_30;
                           }
+                          fVar17 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon *
+                                   _UNK_?;
+                          fVar8 = fVar7 * _UNK_?;
+                          if (fVar7 * _UNK_? <= fVar17) {
+                            fVar8 = fVar17;
+                          }
+                          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                                    ((Behaviour *)pLVar28,
+                                     fVar8 <= (float)((uint)(0.0 - fStack_9) & _UNK_?),
+                                     (MethodInfo *)0x0);
+                          return;
                         }
                       }
                     }
@@ -672,8 +582,8 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Update_1
   }
 code_?:
   func_?();
-  pcVar31 = (code *)swi(3);
-  (*pcVar31)();
+  pcVar35 = (code *)swi(3);
+  (*pcVar35)();
   return;
 }
 
@@ -826,20 +736,21 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_set_ColorPreset
   if (this_00 != (DayNightCycleColorPresets *)0x0) {
     pDVar1 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
                        (this_00,value,(MethodInfo *)0x0);
-    (this->fields).activeColorPreset = pDVar1;
-    func_?(&(this->fields).activeColorPreset,pDVar1);
+    ppDVar2 = &(this->fields).activeColorPreset;
+    *ppDVar2 = pDVar1;
+    func_?(ppDVar2,pDVar1);
     if ((this->fields).initialized != 0) {
-      pIVar2 = (this->fields).timer;
-      if (pIVar2 == (ITimer *)0x0) goto code_?;
-      fVar3 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar2);
-      DayNightCycle_Update_1(this,(float)fVar3,(MethodInfo *)0x0);
+      pIVar3 = (this->fields).timer;
+      if (pIVar3 == (ITimer *)0x0) goto code_?;
+      fVar4 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar3);
+      DayNightCycle_Update_1(this,(float)fVar4,(MethodInfo *)0x0);
     }
     return;
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -860,23 +771,23 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_set_CycleLength
     return;
   }
   pIVar1 = (this->fields).timer;
+  ppIVar2 = &(this->fields).timer;
   if (pIVar1 != (ITimer *)0x0) {
-    fVar2 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar1);
+    fVar3 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar1);
     cycleLength = (this->fields).cycleLength;
     this_00 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
-    ThemeTimers::Timer::Timer_1__ctor(this_00,(float)fVar2,cycleLength,(MethodInfo *)0x0);
-    (this->fields).timer = (ITimer *)this_00;
-    func_?(&(this->fields).timer,this_00);
-    pIVar1 = (this->fields).timer;
-    if (pIVar1 != (ITimer *)0x0) {
-      fVar2 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar1);
-      DayNightCycle_Update_1(this,(float)fVar2,(MethodInfo *)0x0);
+    ThemeTimers::Timer::Timer_1__ctor(this_00,(float)fVar3,cycleLength,(MethodInfo *)0x0);
+    *ppIVar2 = (ITimer *)this_00;
+    func_?(ppIVar2,this_00);
+    if (*ppIVar2 != (ITimer *)0x0) {
+      fVar3 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,*ppIVar2);
+      DayNightCycle_Update_1(this,(float)fVar3,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -898,16 +809,16 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_set_InitialTimeOfDay
     cycleLength = (this->fields).cycleLength;
     this_00 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
     ThemeTimers::Timer::Timer_1__ctor(this_00,(float)fVar1,cycleLength,(MethodInfo *)0x0);
-    (this->fields).timer = (ITimer *)this_00;
-    func_?(&(this->fields).timer,this_00);
-    pIVar2 = (this->fields).timer;
-    if (pIVar2 == (ITimer *)0x0) {
+    ppIVar2 = &(this->fields).timer;
+    *ppIVar2 = (ITimer *)this_00;
+    func_?(ppIVar2,this_00);
+    if (*ppIVar2 == (ITimer *)0x0) {
       func_?();
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    fVar1 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar2);
+    fVar1 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,*ppIVar2);
     DayNightCycle_Update_1(this,(float)fVar1,(MethodInfo *)0x0);
   }
   return;
@@ -1198,17 +1109,18 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_set_TimeOfDay
   cycleLength = (this->fields).cycleLength;
   this_00 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
   ThemeTimers::Timer::Timer_1__ctor(this_00,value,cycleLength,(MethodInfo *)0x0);
-  (this->fields).timer = (ITimer *)this_00;
-  func_?(&(this->fields).timer,this_00);
+  ppIVar1 = &(this->fields).timer;
+  *ppIVar1 = (ITimer *)this_00;
+  func_?(ppIVar1,this_00);
   if ((this->fields).initialized != 0) {
-    if ((this->fields).timer == (ITimer *)0x0) {
+    if (*ppIVar1 == (ITimer *)0x0) {
       func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    fVar2 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer);
-    DayNightCycle_Update_1(this,(float)fVar2,(MethodInfo *)0x0);
+    fVar3 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,*ppIVar1);
+    DayNightCycle_Update_1(this,(float)fVar3,(MethodInfo *)0x0);
   }
   return;
 }
@@ -1227,6 +1139,7 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_set_UseServerTime
     cRam_? = '\x01';
   }
   (this->fields).useServerTime = value;
+  ppIVar1 = &(this->fields).timer;
   if (value == 0) {
     initialTime = (this->fields).cycleStartTime;
     cycleLength = (this->fields).cycleLength;
@@ -1240,17 +1153,17 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_set_UseServerTime
     UxmlObjectListAttributeDescription_1_System_Object___ctor
               ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_00,(MethodInfo *)0x0);
   }
-  (this->fields).timer = (ITimer *)this_00;
-  func_?(&(this->fields).timer);
+  *ppIVar1 = (ITimer *)this_00;
+  func_?(ppIVar1,this_00);
   if ((this->fields).initialized != 0) {
-    if ((this->fields).timer == (ITimer *)0x0) {
+    if (*ppIVar1 == (ITimer *)0x0) {
       func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    fVar2 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer);
-    DayNightCycle_Update_1(this,(float)fVar2,(MethodInfo *)0x0);
+    fVar3 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,*ppIVar1);
+    DayNightCycle_Update_1(this,(float)fVar3,(MethodInfo *)0x0);
   }
   return;
 }

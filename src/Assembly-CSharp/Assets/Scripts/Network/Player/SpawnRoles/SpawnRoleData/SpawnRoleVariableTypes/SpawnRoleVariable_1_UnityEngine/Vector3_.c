@@ -127,8 +127,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
                (SpawnRoleVariable_1_UnityEngine_Vector3_ *this,Vector3 value,MethodInfo *method)
 
 {
-  if ((this->fields).OnChange != (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)0x0) {
-    pSVar1 = (this->fields).OnChange;
+  pSVar1 = (this->fields).OnChange;
+  if (pSVar1 != (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)0x0) {
     (*(pSVar1->fields)._._.invoke_impl)
               ((pSVar1->fields)._._.method_code,value._0_8_,value.z,(pSVar1->fields)._._.method);
   }
@@ -150,29 +150,32 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
     pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  this_00 = (SubscribableVariable_1_UnityEngine_Vector3_ *)func_?(pIVar1);
+  this_01 = (SubscribableVariable_1_UnityEngine_Vector3_ *)func_?(pIVar1);
   SubscribableVariable`1[UnityEngine::Vector3]::SubscribableVariable_1_UnityEngine_Vector3___ctor
-            (this_00,value,method->klass->rgctx_data[10].method);
-  (this->fields).subscribableVariable = this_00;
-  func_?(&this->fields,this_00);
+            (this_01,value,method->klass->rgctx_data[10].method);
+  pSVar2 = &this->fields;
+  pSVar2->subscribableVariable = this_01;
+  func_?(pSVar2,this_01);
+  this_00 = (SubscribableVariableBase_1_UnityEngine_Vector3_ *)pSVar2->subscribableVariable;
   if (((uint)(method->klass->rgctx_data[0xc].klass)->vtable[0].methodPtr & 0x100) == 0) {
     func_?();
   }
-  this_01 = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)func_?();
-  method_00 = method->klass->rgctx_data[0xd].method;
+  this_02 = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)func_?();
+  pIVar3 = method->klass->rgctx_data;
+  method_00 = pIVar3[0xd].method;
   SpawnRoleVariable`1[T]+SubDelegate[UnityEngine::Vector3]::
   SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3___ctor
-            (this_01,(Object *)this,method->klass->rgctx_data[0xb].rgctxDataDummy,method_00);
-  if (method_00 != (MethodInfo *)0x0) {
+            (this_02,(Object *)method_00,pIVar3[0xb].rgctxDataDummy,method_00);
+  if (this_00 != (SubscribableVariableBase_1_UnityEngine_Vector3_ *)0x0) {
     SubscribableVariableBase`1[UnityEngine::Vector3]::
     SubscribableVariableBase_1_UnityEngine_Vector3__add_OnChange
-              ((SubscribableVariableBase_1_UnityEngine_Vector3_ *)method_00,
-               (Action_1_UnityEngine_Vector3_ *)this_01,method->klass->rgctx_data[0xe].method);
+              (this_00,(Action_1_UnityEngine_Vector3_ *)this_02,
+               method->klass->rgctx_data[0xe].method);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -383,8 +386,8 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
         pIVar4 = (Il2CppClass *)func_?(pIVar4);
       }
-      bVar6 = func_?(&b,uVar5,pIVar4->rgctx_data[0x10].rgctxDataDummy);
-      return bVar6 ^ 1;
+      cVar6 = func_?(&b,uVar5,pIVar4->rgctx_data[0x10].rgctxDataDummy);
+      return cVar6 == '\0';
     }
   }
   func_?();
@@ -420,8 +423,8 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
         pIVar4 = (Il2CppClass *)func_?(pIVar4);
       }
-      bVar6 = func_?(&b,uVar5,pIVar4->rgctx_data[0x10].rgctxDataDummy);
-      return bVar6 ^ 1;
+      cVar6 = func_?(&b,uVar5,pIVar4->rgctx_data[0x10].rgctxDataDummy);
+      return cVar6 == '\0';
     }
   }
   func_?();
@@ -445,36 +448,39 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
     pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  pMVar2 = pIVar1->rgctx_data[0x11].method;
-  if ((a != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0) &&
-     (pSVar3 = (a->fields).subscribableVariable,
-     pSVar3 != (SubscribableVariable_1_UnityEngine_Vector3_ *)0x0)) {
-    if (((uint)pMVar2->klass->vtable[0].methodPtr & 0x100) == 0) {
-      func_?(pMVar2->klass);
-    }
-    uStack_4._0_4_ = (pSVar3->fields)._.value.x;
-    uStack_4._4_4_ = (pSVar3->fields)._.value.y;
-    fStack_5 = (pSVar3->fields)._.value.z;
-    if ((b != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0) &&
-       (pSVar3 = (b->fields).subscribableVariable,
-       pSVar3 != (SubscribableVariable_1_UnityEngine_Vector3_ *)0x0)) {
-      if (((uint)pMVar2->klass->vtable[0].methodPtr & 0x100) == 0) {
-        func_?(pMVar2->klass);
+  if (a != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0) {
+    pSVar2 = (a->fields).subscribableVariable;
+    if (pSVar2 != (SubscribableVariable_1_UnityEngine_Vector3_ *)0x0) {
+      pMVar3 = pIVar1->rgctx_data[0x11].method;
+      if (((uint)pMVar3->klass->vtable[0].methodPtr & 0x100) == 0) {
+        func_?(pMVar3->klass);
       }
-      uStack_6._0_4_ = (pSVar3->fields)._.value.x;
-      uStack_6._4_4_ = (pSVar3->fields)._.value.y;
-      fStack_7 = (pSVar3->fields)._.value.z;
-      pIVar1 = pMVar2->klass;
-      if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-        pIVar1 = (Il2CppClass *)func_?(pIVar1);
+      uStack_4._0_4_ = (pSVar2->fields)._.value.x;
+      uStack_4._4_4_ = (pSVar2->fields)._.value.y;
+      fStack_5 = (pSVar2->fields)._.value.z;
+      if ((b != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0) &&
+         (pSVar2 = (b->fields).subscribableVariable,
+         pSVar2 != (SubscribableVariable_1_UnityEngine_Vector3_ *)0x0)) {
+        if (((uint)pMVar3->klass->vtable[0].methodPtr & 0x100) == 0) {
+          func_?(pMVar3->klass);
+        }
+        uStack_6._0_4_ = (pSVar2->fields)._.value.x;
+        uStack_6._4_4_ = (pSVar2->fields)._.value.y;
+        fStack_7 = (pSVar2->fields)._.value.z;
+        pIVar1 = pMVar3->klass;
+        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+          pIVar1 = (Il2CppClass *)func_?(pIVar1);
+        }
+        uVar8 = func_?(pIVar1->rgctx_data[9].rgctxDataDummy,&uStack_6);
+        pIVar1 = pMVar3->klass;
+        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+          uStack_4 = CONCAT44(uStack_4._4_4_,pIVar1);
+          pIVar1 = (Il2CppClass *)func_?();
+        }
+        uStack_4 = CONCAT44(uStack_4._4_4_,pIVar1->rgctx_data[0x10].rgctxDataDummy);
+        cVar9 = func_?(&uStack_4,uVar8);
+        return cVar9 == '\0';
       }
-      uVar8 = func_?(pIVar1->rgctx_data[9].rgctxDataDummy,&uStack_6);
-      pIVar1 = pMVar2->klass;
-      if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-        pIVar1 = (Il2CppClass *)func_?(pIVar1);
-      }
-      bVar9 = func_?(&uStack_4,uVar8,pIVar1->rgctx_data[0x10].rgctxDataDummy);
-      return bVar9 ^ 1;
     }
   }
   func_?();

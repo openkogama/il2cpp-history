@@ -106,56 +106,69 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_Generate
     }
     pSVar10 = StringLiteral_Start_generate_screenshot_of_;
     pSVar11 = StringLiteral_Already_generating_a_screenshot_;
-    if ((this->fields).generating != 0) {
-      pGVar12 = (this->fields).targetObject;
-      if (pGVar12 == (GameObject *)0x0) {
-        pSVar10 = (String *)0x0;
+    if ((this->fields).generating == 0) {
+      if (obj == (GameObject *)0x0) {
+        pSVar11 = (String *)0x0;
       }
       else {
-        pSVar10 = (String *)(*(code *)(pGVar12->klass->vtable).ToString.method)();
+        pSVar11 = (String *)(*(code *)(obj->klass->vtable).ToString.method)();
       }
-      pSVar11 = mscorlib.dll::System::String::String_Concat_3(pSVar11,pSVar10,(MethodInfo *)0x0);
+      message = mscorlib.dll::System::String::String_Concat_3(pSVar10,pSVar11,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)pSVar11,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)message,(MethodInfo *)0x0);
+      (this->fields).clonedObject = cloneObject;
+      ppGVar12 = &(this->fields).targetObject;
+      *ppGVar12 = obj;
+      func_?();
+      (this->fields).cameraOffset.x = (float)pSVar10;
+      (this->fields).cameraOffset.y = (float)pSVar11;
+      (this->fields).cameraOffset.z = 0.0;
+      (this->fields).lookAtOffset.x = (float)&UNK_?;
+      (this->fields).lookAtOffset.y = (float)ppGVar12;
+      (this->fields).lookAtOffset.z = (float)obj;
+      (this->fields).generatedScreenShotPNGCallback = generatedScreenShotPNGCallback;
+      func_?();
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      method_00 = TypeInfo__ScreenShotGenerator___GenerateCoroutine_d__19;
+      value = (Object *)func_?();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+      value[1].klass = (Object__Class *)0x0;
+      value[2].monitor = (MonitorData *)this;
+      func_?();
+      value[2].klass = (Object__Class *)obj;
+      func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+                ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
       return;
     }
-    if (obj == (GameObject *)0x0) {
-      pSVar11 = (String *)0x0;
+    pGVar13 = (this->fields).targetObject;
+    if (pGVar13 == (GameObject *)0x0) {
+      pSVar10 = (String *)0x0;
     }
     else {
-      pSVar11 = (String *)(*(code *)(obj->klass->vtable).ToString.method)();
+      pSVar10 = (String *)(*(code *)(pGVar13->klass->vtable).ToString.method)();
     }
-    message = mscorlib.dll::System::String::String_Concat_3(pSVar10,pSVar11,(MethodInfo *)0x0);
+    pSVar11 = mscorlib.dll::System::String::String_Concat_3(pSVar11,pSVar10,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)message,(MethodInfo *)0x0)
-    ;
-    (this->fields).clonedObject = cloneObject;
-    (this->fields).targetObject = obj;
-    func_?();
-    (this->fields).cameraOffset.x = (float)pSVar10;
-    (this->fields).cameraOffset.y = (float)pSVar11;
-    (this->fields).cameraOffset.z = 0.0;
-    (this->fields).lookAtOffset.x = (float)&UNK_?;
-    (this->fields).lookAtOffset.y = (float)&(this->fields).targetObject;
-    (this->fields).lookAtOffset.z = (float)obj;
-    (this->fields).generatedScreenShotPNGCallback = generatedScreenShotPNGCallback;
-    func_?();
-    routine = ScreenShotGenerator_GenerateCoroutine(this,obj,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-              ((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+              ((Object *)pSVar11,(MethodInfo *)0x0);
     return;
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -175,8 +188,8 @@ Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_GenerateCoroutine
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].monitor = (MonitorData *)this;
   value[1].klass = (Object__Class *)0x0;
+  value[2].monitor = (MonitorData *)this;
   func_?(&value[2].monitor,this);
   value[2].klass = (Object__Class *)obj;
   func_?(value + 2,obj);
@@ -215,14 +228,15 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_GenerateTextu
     if (pTVar1 != (Texture2D *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_Apply_1
                 (pTVar1,(MethodInfo *)0x0);
-      if ((this->fields).generatedScreenShotPNGCallback != (Action_1_Byte_ *)0x0) {
-        pAVar2 = (this->fields).generatedScreenShotPNGCallback;
+      pAVar2 = (this->fields).generatedScreenShotPNGCallback;
+      if (pAVar2 != (Action_1_Byte_ *)0x0) {
         UnityEngine.ImageConversionModule.dll::UnityEngine::ImageConversion::
         ImageConversion_EncodeToPNG((this->fields).genTexture,(MethodInfo *)0x0);
         (*(pAVar2->fields)._._.invoke_impl)();
       }
-      if ((this->fields).generatedScreenShotTexCallback != (Action_1_UnityEngine_Texture2D_ *)0x0) {
-        (*(((this->fields).generatedScreenShotTexCallback)->fields)._._.invoke_impl)();
+      pAVar3 = (this->fields).generatedScreenShotTexCallback;
+      if (pAVar3 != (Action_1_UnityEngine_Texture2D_ *)0x0) {
+        (*(pAVar3->fields)._._.invoke_impl)();
       }
       this_00 = (this->fields).shotCamera;
       if (this_00 != (Camera *)0x0) {
@@ -231,12 +245,12 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_GenerateTextu
         UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_set_active
                   ((RenderTexture *)0x0,(MethodInfo *)0x0);
         if ((this->fields).clonedObject != 0) {
-          pGVar3 = (this->fields).targetObject;
+          pGVar4 = (this->fields).targetObject;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                    ((Object_1 *)pGVar3,(MethodInfo *)0x0);
+                    ((Object_1 *)pGVar4,(MethodInfo *)0x0);
         }
         if ((this->fields).generatedScreenShotTexCallback == (Action_1_UnityEngine_Texture2D_ *)0x0)
         {
@@ -247,13 +261,13 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_GenerateTextu
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                     ((Object_1 *)pTVar1,(MethodInfo *)0x0);
         }
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                  ((Object_1 *)pGVar3,(MethodInfo *)0x0);
+                  ((Object_1 *)pGVar4,(MethodInfo *)0x0);
         this_01 = (this->fields).genRenderTexture;
         if (this_01 != (RenderTexture *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_Release
@@ -266,8 +280,8 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_GenerateTextu
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -348,56 +362,69 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_Generate_1
     }
     pSVar10 = StringLiteral_Start_generate_screenshot_of_;
     pSVar11 = StringLiteral_Already_generating_a_screenshot_;
-    if ((this->fields).generating != 0) {
-      pGVar12 = (this->fields).targetObject;
-      if (pGVar12 == (GameObject *)0x0) {
-        pSVar10 = (String *)0x0;
+    if ((this->fields).generating == 0) {
+      if (obj == (GameObject *)0x0) {
+        pSVar11 = (String *)0x0;
       }
       else {
-        pSVar10 = (String *)(*(code *)(pGVar12->klass->vtable).ToString.method)();
+        pSVar11 = (String *)(*(code *)(obj->klass->vtable).ToString.method)();
       }
-      pSVar11 = mscorlib.dll::System::String::String_Concat_3(pSVar11,pSVar10,(MethodInfo *)0x0);
+      message = mscorlib.dll::System::String::String_Concat_3(pSVar10,pSVar11,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)pSVar11,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)message,(MethodInfo *)0x0);
+      (this->fields).clonedObject = cloneObject;
+      ppGVar12 = &(this->fields).targetObject;
+      *ppGVar12 = obj;
+      func_?();
+      (this->fields).cameraOffset.x = (float)pSVar10;
+      (this->fields).cameraOffset.y = (float)pSVar11;
+      (this->fields).cameraOffset.z = 0.0;
+      (this->fields).lookAtOffset.x = (float)&UNK_?;
+      (this->fields).lookAtOffset.y = (float)ppGVar12;
+      (this->fields).lookAtOffset.z = (float)obj;
+      (this->fields).generatedScreenShotTexCallback = generatedScreenShotTexCallback;
+      func_?();
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      method_00 = TypeInfo__ScreenShotGenerator___GenerateCoroutine_d__19;
+      value = (Object *)func_?();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+      value[1].klass = (Object__Class *)0x0;
+      value[2].monitor = (MonitorData *)this;
+      func_?();
+      value[2].klass = (Object__Class *)obj;
+      func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+                ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
       return;
     }
-    if (obj == (GameObject *)0x0) {
-      pSVar11 = (String *)0x0;
+    pGVar13 = (this->fields).targetObject;
+    if (pGVar13 == (GameObject *)0x0) {
+      pSVar10 = (String *)0x0;
     }
     else {
-      pSVar11 = (String *)(*(code *)(obj->klass->vtable).ToString.method)();
+      pSVar10 = (String *)(*(code *)(pGVar13->klass->vtable).ToString.method)();
     }
-    message = mscorlib.dll::System::String::String_Concat_3(pSVar10,pSVar11,(MethodInfo *)0x0);
+    pSVar11 = mscorlib.dll::System::String::String_Concat_3(pSVar11,pSVar10,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)message,(MethodInfo *)0x0)
-    ;
-    (this->fields).clonedObject = cloneObject;
-    (this->fields).targetObject = obj;
-    func_?();
-    (this->fields).cameraOffset.x = (float)pSVar10;
-    (this->fields).cameraOffset.y = (float)pSVar11;
-    (this->fields).cameraOffset.z = 0.0;
-    (this->fields).lookAtOffset.x = (float)&UNK_?;
-    (this->fields).lookAtOffset.y = (float)&(this->fields).targetObject;
-    (this->fields).lookAtOffset.z = (float)obj;
-    (this->fields).generatedScreenShotTexCallback = generatedScreenShotTexCallback;
-    func_?();
-    routine = ScreenShotGenerator_GenerateCoroutine(this,obj,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-              ((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+              ((Object *)pSVar11,(MethodInfo *)0x0);
     return;
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -418,111 +445,107 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_InitCamera
     func_?(&StringLiteral_Preview);
     cRam_? = '\x01';
   }
-  pTVar1 = (this->fields).genTexture;
+  ppTVar1 = &(this->fields).genTexture;
+  pTVar2 = *ppTVar1;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pTVar1 = (Texture2D *)func_?(TypeInfo__UnityEngine__Texture2D);
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    pTVar2 = (Texture2D *)func_?(TypeInfo__UnityEngine__Texture2D);
     UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D__ctor_3
-              (pTVar1,width,height,TextureFormat__Enum_ARGB32,0,(MethodInfo *)0x0);
-    (this->fields).genTexture = pTVar1;
-    func_?(&(this->fields).genTexture,pTVar1);
+              (pTVar2,width,height,TextureFormat__Enum_ARGB32,0,(MethodInfo *)0x0);
+    *ppTVar1 = pTVar2;
+    func_?(ppTVar1,pTVar2);
   }
-  pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+  pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
-  if (pGVar3 != (GameObject *)0x0) {
-    pCVar4 = (Camera *)
-             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                       (pGVar3,
-                        UnityEngine__Camera_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::Camera>__
-                       );
-    (this->fields).shotCamera = pCVar4;
+  if (pGVar4 != (GameObject *)0x0) {
+    pCVar5 = (Camera *)
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                        (pGVar4,
+                         UnityEngine__Camera_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::Camera>__
+                        );
+    ppCVar6 = &(this->fields).shotCamera;
+    *ppCVar6 = pCVar5;
     func_?();
-    pCVar4 = (this->fields).shotCamera;
-    if (pCVar4 != (Camera *)0x0) {
+    if (*ppCVar6 != (Camera *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_clearFlags
-                (pCVar4,CameraClearFlags__Enum_Color,(MethodInfo *)0x0);
-      pCVar4 = (this->fields).shotCamera;
-      if (pCVar4 != (Camera *)0x0) {
+                (*ppCVar6,CameraClearFlags__Enum_Color,(MethodInfo *)0x0);
+      if (*ppCVar6 != (Camera *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_backgroundColor
-                  (pCVar4,(Color)ZEXT816(0),(MethodInfo *)0x0);
-        pCVar4 = (this->fields).shotCamera;
-        if (pCVar4 != (Camera *)0x0) {
+                  (*ppCVar6,(Color)ZEXT816(0),(MethodInfo *)0x0);
+        if (*ppCVar6 != (Camera *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView
-                    (pCVar4,35.0,(MethodInfo *)0x0);
-          pCVar4 = (this->fields).shotCamera;
-          if (pCVar4 != (Camera *)0x0) {
+                    (*ppCVar6,35.0,(MethodInfo *)0x0);
+          if (*ppCVar6 != (Camera *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_depth
-                      (pCVar4,-2.0,(MethodInfo *)0x0);
-            pCVar4 = (this->fields).shotCamera;
-            if (pCVar4 != (Camera *)0x0) {
+                      (*ppCVar6,-2.0,(MethodInfo *)0x0);
+            if (*ppCVar6 != (Camera *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_aspect
-                        (pCVar4,1.0,(MethodInfo *)0x0);
-              pCVar4 = (this->fields).shotCamera;
-              iVar5 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                                (StringLiteral_Preview,(MethodInfo *)0x0);
-              if (pCVar4 != (Camera *)0x0) {
+                        (*ppCVar6,1.0,(MethodInfo *)0x0);
+              pCVar5 = *ppCVar6;
+              iVar7 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                                 (StringLiteral_Preview,(MethodInfo *)0x0);
+              if (pCVar5 != (Camera *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
-                          (pCVar4,1 << ((byte)iVar5 & 0x1f),(MethodInfo *)0x0);
+                          (pCVar5,1 << ((byte)iVar7 & 0x1f),(MethodInfo *)0x0);
                 this_00 = (RenderTexture *)func_?();
                 UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture__ctor_10
                           (this_00,width,height,0x18,(MethodInfo *)0x0);
-                (this->fields).genRenderTexture = this_00;
-                func_?(&(this->fields).genRenderTexture);
-                pCVar4 = (this->fields).shotCamera;
-                if (pCVar4 != (Camera *)0x0) {
+                ppRVar8 = &(this->fields).genRenderTexture;
+                *ppRVar8 = this_00;
+                func_?(ppRVar8);
+                if (*ppCVar6 != (Camera *)0x0) {
                   UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture
-                            (pCVar4,(this->fields).genRenderTexture,(MethodInfo *)0x0);
-                  VStack_6.y = (this->fields).targetBounds.m_Center.x;
-                  VStack_6.z = (this->fields).targetBounds.m_Center.y;
-                  pGVar3 = (this->fields).targetObject;
-                  fVar7 = (this->fields).targetBounds.m_Center.z;
-                  if (pGVar3 != (GameObject *)0x0) {
-                    pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                             GameObject_get_transform(pGVar3,(MethodInfo *)0x0);
-                    VVar9.z = fVar7;
-                    VVar9.x = VStack_6.y;
-                    VVar9.y = VStack_6.z;
-                    pVVar10 = ScreenShotGenerator_Translate
-                                        (&VStack_6,this,VVar9,pTVar8,(this->fields).cameraOffset,
+                            (*ppCVar6,(this->fields).genRenderTexture,(MethodInfo *)0x0);
+                  VStack_9.y = (this->fields).targetBounds.m_Center.x;
+                  VStack_9.z = (this->fields).targetBounds.m_Center.y;
+                  pGVar4 = (this->fields).targetObject;
+                  fVar10 = (this->fields).targetBounds.m_Center.z;
+                  if (pGVar4 != (GameObject *)0x0) {
+                    pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                              GameObject_get_transform(pGVar4,(MethodInfo *)0x0);
+                    VVar12.z = fVar10;
+                    VVar12.x = VStack_9.y;
+                    VVar12.y = VStack_9.z;
+                    pVVar13 = ScreenShotGenerator_Translate
+                                        (&VStack_9,this,VVar12,pTVar11,(this->fields).cameraOffset,
                                          (MethodInfo *)0x0);
-                    VVar9 = *pVVar10;
-                    VStack_6.y = (this->fields).targetBounds.m_Center.x;
-                    VStack_6.z = (this->fields).targetBounds.m_Center.y;
-                    pGVar3 = (this->fields).targetObject;
-                    fVar7 = (this->fields).targetBounds.m_Center.z;
-                    if (pGVar3 != (GameObject *)0x0) {
-                      pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                               GameObject_get_transform(pGVar3,(MethodInfo *)0x0);
-                      pos.z = fVar7;
-                      pos.x = VStack_6.y;
-                      pos.y = VStack_6.z;
-                      pVVar10 = ScreenShotGenerator_Translate
-                                          ((Vector3 *)&stack0xffffffdc,this,pos,pTVar8,
+                    VVar12 = *pVVar13;
+                    VStack_9.y = (this->fields).targetBounds.m_Center.x;
+                    VStack_9.z = (this->fields).targetBounds.m_Center.y;
+                    pGVar4 = (this->fields).targetObject;
+                    fVar10 = (this->fields).targetBounds.m_Center.z;
+                    if (pGVar4 != (GameObject *)0x0) {
+                      pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                GameObject_get_transform(pGVar4,(MethodInfo *)0x0);
+                      pos.z = fVar10;
+                      pos.x = VStack_9.y;
+                      pos.y = VStack_9.z;
+                      pVVar13 = ScreenShotGenerator_Translate
+                                          ((Vector3 *)&stack0xffffffdc,this,pos,pTVar11,
                                            (this->fields).lookAtOffset,(MethodInfo *)0x0);
-                      VStack_6.y = pVVar10->x;
-                      VStack_6.z = pVVar10->y;
-                      fVar7 = pVVar10->z;
-                      pCVar4 = (this->fields).shotCamera;
-                      if (pCVar4 != (Camera *)0x0) {
-                        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                 Component_get_transform((Component *)pCVar4,(MethodInfo *)0x0);
-                        if (pTVar8 != (Transform *)0x0) {
+                      VStack_9.y = pVVar13->x;
+                      VStack_9.z = pVVar13->y;
+                      fVar10 = pVVar13->z;
+                      if (*ppCVar6 != (Camera *)0x0) {
+                        pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                  Component_get_transform((Component *)*ppCVar6,(MethodInfo *)0x0);
+                        if (pTVar11 != (Transform *)0x0) {
                           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                                    (pTVar8,VVar9,(MethodInfo *)0x0);
-                          pCVar4 = (this->fields).shotCamera;
-                          if (pCVar4 != (Camera *)0x0) {
-                            pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                     Component_get_transform((Component *)pCVar4,(MethodInfo *)0x0);
-                            if (pTVar8 != (Transform *)0x0) {
-                              worldPosition.z = fVar7;
-                              worldPosition.x = VStack_6.y;
-                              worldPosition.y = VStack_6.z;
+                                    (pTVar11,VVar12,(MethodInfo *)0x0);
+                          if (*ppCVar6 != (Camera *)0x0) {
+                            pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                      Component_get_transform
+                                                ((Component *)*ppCVar6,(MethodInfo *)0x0);
+                            if (pTVar11 != (Transform *)0x0) {
+                              worldPosition.z = fVar10;
+                              worldPosition.x = VStack_9.y;
+                              worldPosition.y = VStack_9.z;
                               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_LookAt_2
-                                        (pTVar8,worldPosition,(MethodInfo *)0x0);
+                                        (pTVar11,worldPosition,(MethodInfo *)0x0);
                               return;
                             }
                           }
@@ -539,8 +562,8 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_InitCamera
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -574,28 +597,30 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_StartGenerate
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
     (this->fields).clonedObject = clonedObject;
-    (this->fields).targetObject = obj;
-    func_?(&(this->fields).targetObject,obj);
+    ppGVar3 = &(this->fields).targetObject;
+    *ppGVar3 = obj;
+    func_?(ppGVar3,obj);
+    ppAVar4 = &(this->fields).generatedScreenShotPNGCallback;
     (this->fields).cameraOffset.x = cameraOffset.x;
     (this->fields).cameraOffset.y = cameraOffset.y;
     (this->fields).cameraOffset.z = cameraOffset.z;
     (this->fields).lookAtOffset.x = lookAtOffset.x;
     (this->fields).lookAtOffset.y = lookAtOffset.y;
     (this->fields).lookAtOffset.z = lookAtOffset.z;
-    (this->fields).generatedScreenShotPNGCallback = generatedScreenShotPNGCallback;
-    func_?(&(this->fields).generatedScreenShotPNGCallback,generatedScreenShotPNGCallback);
+    *ppAVar4 = generatedScreenShotPNGCallback;
+    func_?(ppAVar4,generatedScreenShotPNGCallback);
     routine = ScreenShotGenerator_GenerateCoroutine(this,obj,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
               ((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
     return;
   }
-  pGVar3 = (this->fields).targetObject;
-  if (pGVar3 == (GameObject *)0x0) {
+  pGVar5 = (this->fields).targetObject;
+  if (pGVar5 == (GameObject *)0x0) {
     pSVar1 = (String *)0x0;
   }
   else {
     pSVar1 = (String *)
-             (*(code *)(pGVar3->klass->vtable).ToString.method)(pGVar3,pGVar3->klass[1]._0.image);
+             (*(code *)(pGVar5->klass->vtable).ToString.method)(pGVar5,pGVar5->klass[1]._0.image);
   }
   pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,pSVar1,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -637,28 +662,30 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_StartGenerate
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
     (this->fields).clonedObject = clonedObject;
-    (this->fields).targetObject = obj;
-    func_?(&(this->fields).targetObject,obj);
+    ppGVar3 = &(this->fields).targetObject;
+    *ppGVar3 = obj;
+    func_?(ppGVar3,obj);
+    ppAVar4 = &(this->fields).generatedScreenShotTexCallback;
     (this->fields).cameraOffset.x = cameraOffset.x;
     (this->fields).cameraOffset.y = cameraOffset.y;
     (this->fields).cameraOffset.z = cameraOffset.z;
     (this->fields).lookAtOffset.x = lookAtOffset.x;
     (this->fields).lookAtOffset.y = lookAtOffset.y;
     (this->fields).lookAtOffset.z = lookAtOffset.z;
-    (this->fields).generatedScreenShotTexCallback = generatedScreenShotTexCallback;
-    func_?(&(this->fields).generatedScreenShotTexCallback,generatedScreenShotTexCallback);
+    *ppAVar4 = generatedScreenShotTexCallback;
+    func_?(ppAVar4,generatedScreenShotTexCallback);
     routine = ScreenShotGenerator_GenerateCoroutine(this,obj,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
               ((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
     return;
   }
-  pGVar3 = (this->fields).targetObject;
-  if (pGVar3 == (GameObject *)0x0) {
+  pGVar5 = (this->fields).targetObject;
+  if (pGVar5 == (GameObject *)0x0) {
     pSVar1 = (String *)0x0;
   }
   else {
     pSVar1 = (String *)
-             (*(code *)(pGVar3->klass->vtable).ToString.method)(pGVar3,pGVar3->klass[1]._0.image);
+             (*(code *)(pGVar5->klass->vtable).ToString.method)(pGVar5,pGVar5->klass[1]._0.image);
   }
   pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,pSVar1,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -699,9 +726,9 @@ Vector3 * Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_Translat
     uVar11 = pVVar1->x;
     uVar12 = pVVar1->y;
     fVar13 = pVVar1->z;
-    __return_storage_ptr__->x = (float)uVar11 * translation.y + fStack_8 + pos.x + fVar5;
-    __return_storage_ptr__->y = fStack_9 + pos.y + fStack_6 + (float)uVar12 * translation.y;
-    __return_storage_ptr__->z = fStack_10 + pos.z + fStack_7 + fVar13 * translation.y;
+    __return_storage_ptr__->x = pos.x + fVar5 + fStack_8 + (float)uVar11 * translation.y;
+    __return_storage_ptr__->y = pos.y + fStack_6 + fStack_9 + (float)uVar12 * translation.y;
+    __return_storage_ptr__->z = pos.z + fStack_7 + fStack_10 + fVar13 * translation.y;
     return __return_storage_ptr__;
   }
   func_?();

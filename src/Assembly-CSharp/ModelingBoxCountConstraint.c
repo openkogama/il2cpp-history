@@ -114,7 +114,7 @@ bool Assembly-CSharp.dll::ModelingBoxCountConstraint::ModelingBoxCountConstraint
             value_00.hiddenValue = (short)((uint)uVar1 >> 0x10);
             iVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
                     ObscuredShort::ObscuredShort_op_Implicit_1(value_00,(MethodInfo *)0x0);
-            if (-0x70cf < iVar5) {
+            if (0x1661 < iVar5) {
               return 1;
             }
           }
@@ -138,16 +138,16 @@ bool Assembly-CSharp.dll::ModelingBoxCountConstraint::ModelingBoxCountConstraint
     func_?(&StringLiteral__current_);
     cRam_? = '\x01';
   }
-  pMVar1 = (this->fields).cubeModel;
-  iVar2 = (this->fields).minCubesCount;
-  if (pMVar1 != (MVCubeModelBase *)0x0) {
-    iVar3 = MVCubeModelBase::MVCubeModelBase_get_CubeCount(pMVar1,(MethodInfo *)0x0);
-    if (iVar3 <= iVar2) {
+  iVar1 = (this->fields).minCubesCount;
+  pMVar2 = (this->fields).cubeModel;
+  if (pMVar2 != (MVCubeModelBase *)0x0) {
+    iVar3 = MVCubeModelBase::MVCubeModelBase_get_CubeCount(pMVar2,(MethodInfo *)0x0);
+    if (iVar3 <= iVar1) {
       pSVar4 = mscorlib.dll::System::Int32::Int32_ToString
                          ((Int32 *)&(this->fields).minCubesCount,(MethodInfo *)0x0);
-      pMVar1 = (this->fields).cubeModel;
-      if (pMVar1 == (MVCubeModelBase *)0x0) goto code_?;
-      MVCubeModelBase::MVCubeModelBase_get_CubeCount(pMVar1,(MethodInfo *)0x0);
+      pMVar2 = (this->fields).cubeModel;
+      if (pMVar2 == (MVCubeModelBase *)0x0) goto code_?;
+      MVCubeModelBase::MVCubeModelBase_get_CubeCount(pMVar2,(MethodInfo *)0x0);
       str3 = mscorlib.dll::System::Int32::Int32_ToString
                        ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
       pSVar4 = mscorlib.dll::System::String::String_Concat_5
@@ -159,7 +159,7 @@ bool Assembly-CSharp.dll::ModelingBoxCountConstraint::ModelingBoxCountConstraint
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)pSVar4,(MethodInfo *)0x0);
     }
-    return iVar2 < iVar3;
+    return iVar1 < iVar3;
   }
 code_?:
   func_?();
@@ -197,8 +197,9 @@ void Assembly-CSharp.dll::ModelingBoxCountConstraint::ModelingBoxCountConstraint
 {
   ModelingBoxConstraint::ModelingBoxConstraint__ctor_1
             ((ModelingBoxConstraint *)this,minCorner,maxCorner,(MethodInfo *)0x0);
-  (this->fields).cubeModel = cubeModel;
-  func_?((short)&(this->fields).cubeModel,cubeModel);
+  ppMVar1 = &(this->fields).cubeModel;
+  *ppMVar1 = cubeModel;
+  func_?((short)ppMVar1,cubeModel);
   (this->fields).minCubesCount = minCubeCount;
   return;
 }

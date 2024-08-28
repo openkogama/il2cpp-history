@@ -93,9 +93,10 @@ void Assembly-CSharp.dll::SkinnedMeshOptimizer::SkinnedMeshOptimizer_Start
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,
              MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__List__);
   index = 0;
-  pLVar3 = (this->fields).meshData;
+  pLVar3 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+           (this->fields).meshData;
   do {
-    if (pLVar3 == (List_1_SkinnedMeshOptimizer_MeshData_ *)0x0) {
+    if (pLVar3 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
 code_?:
       func_?();
       pcVar4 = (code *)swi(3);
@@ -106,8 +107,9 @@ code_?:
       pSVar5 = &(this->fields).optimizationData;
       pSVar5->skinnedMesh = pLVar1;
       func_?(pSVar5,pLVar1);
-      (this->fields).optimizationData.mesh = pLVar2;
-      func_?(&(this->fields).optimizationData.mesh,pLVar2);
+      ppLVar6 = &(this->fields).optimizationData.mesh;
+      *ppLVar6 = pLVar2;
+      func_?(ppLVar6,pLVar2);
       if ((this->fields).isEnabled != 0) {
         obj = MVGameControllerBase::MVGameControllerBase_get_SkinnedMeshOptimizeManager
                         ((MethodInfo *)0x0);
@@ -124,10 +126,10 @@ code_?:
           func_?(&TypeInfo__UpdateController);
           cRam_? = '\x01';
         }
-        pLVar6 = (obj->fields).optimizationDataList;
-        if (pLVar6 == (List_1_SkinnedMeshOptimizeManager_SkinnedMeshOptimizationData_ *)0x0)
+        pLVar7 = (obj->fields).optimizationDataList;
+        if (pLVar7 == (List_1_SkinnedMeshOptimizeManager_SkinnedMeshOptimizationData_ *)0x0)
         goto code_?;
-        if ((pLVar6->fields)._size == 0) {
+        if ((pLVar7->fields)._size == 0) {
           if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UpdateController);
           }
@@ -135,23 +137,21 @@ code_?:
                     ((IUpdatecontrollerSubscriberUpdate *)obj,
                      UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,(MethodInfo *)0x0);
         }
-        pLVar6 = (obj->fields).optimizationDataList;
-        if (pLVar6 == (List_1_SkinnedMeshOptimizeManager_SkinnedMeshOptimizationData_ *)0x0)
+        pLVar7 = (obj->fields).optimizationDataList;
+        if (pLVar7 == (List_1_SkinnedMeshOptimizeManager_SkinnedMeshOptimizationData_ *)0x0)
         goto code_?;
-        func_?(pLVar6,pLVar1,pLVar2,
+        func_?(pLVar7,pLVar1,pLVar2,
                         MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>__Add_SkinnedMeshOptimizeManager__SkinnedMeshOptimizationData_
                        );
       }
       return;
     }
-    pLVar7 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-             (this->fields).meshData;
-    if (pLVar7 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+    if (pLVar3 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
     goto code_?;
     XVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
             XmlSchemaObjectTable+XmlSchemaObjectEntry]::
             List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                      (pLVar7,index,
+                      (pLVar3,index,
                        MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizer::MeshData>__get_Item_int_
                       );
     pLVar2 = (List_1_UnityEngine_MeshRenderer_ *)XVar8.qname;
@@ -160,14 +160,14 @@ code_?:
               ((List_1_System_Object_ *)pLVar1,(Object *)pLVar2,
                MethodInfo__System__Collections__Generic__List<UnityEngine::SkinnedMeshRenderer>__Add_UnityEngine__SkinnedMeshRenderer_
               );
-    pLVar7 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+    pLVar3 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
              (this->fields).meshData;
-    if (pLVar7 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+    if (pLVar3 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
     goto code_?;
     XVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
             XmlSchemaObjectTable+XmlSchemaObjectEntry]::
             List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                      (pLVar7,index,
+                      (pLVar3,index,
                        MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizer::MeshData>__get_Item_int_
                       );
     if (pLVar2 == (List_1_UnityEngine_MeshRenderer_ *)0x0) goto code_?;
@@ -175,7 +175,8 @@ code_?:
               ((List_1_System_Object_ *)pLVar2,(Object *)XVar8.xso,
                MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__Add_UnityEngine__MeshRenderer_
               );
-    pLVar3 = (this->fields).meshData;
+    pLVar3 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+             (this->fields).meshData;
     index = index + 1;
   } while( true );
 }
@@ -197,30 +198,30 @@ void Assembly-CSharp.dll::SkinnedMeshOptimizer::SkinnedMeshOptimizer_TurnOffMesh
     cRam_? = '\x01';
   }
   index = 0;
-  pLVar1 = (this->fields).meshData;
-  while (pLVar1 != (List_1_SkinnedMeshOptimizer_MeshData_ *)0x0) {
-    if ((pLVar1->fields)._size <= index) {
+  this_00 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+            (this->fields).meshData;
+  while (this_00 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
+    if ((this_00->fields)._size <= index) {
       return;
     }
-    this_00 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-              (this->fields).meshData;
     if (this_00 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
     break;
-    XVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+    XVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
             XmlSchemaObjectTable+XmlSchemaObjectEntry]::
             List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
                       (this_00,index,
                        MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizer::MeshData>__get_Item_int_
                       );
-    if (XVar2.xso == (XmlSchemaObject *)0x0) break;
+    if (XVar1.xso == (XmlSchemaObject *)0x0) break;
     UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-              ((Renderer *)XVar2.xso,0,(MethodInfo *)0x0);
+              ((Renderer *)XVar1.xso,0,(MethodInfo *)0x0);
     index = index + 1;
-    pLVar1 = (this->fields).meshData;
+    this_00 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+              (this->fields).meshData;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

@@ -591,10 +591,10 @@ bool Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup::
         iVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
                           (this_02,(MethodInfo *)0x0);
         bVar4 = 0;
-        if (0 < iVar3) {
-          bVar4 = (bVar1 ^ 1) & bVar2;
+        if (bVar1 == 0) {
+          bVar4 = bVar2;
         }
-        return bVar4;
+        return 0 < iVar3 & bVar4;
       }
     }
   }

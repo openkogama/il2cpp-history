@@ -7,7 +7,7 @@ void Assembly-CSharp.dll::ThemeTimers::Timer::Timer_1_Update(Timer_1 *this,Metho
   fVar1 = (this->fields)._Time_k__BackingField;
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   fVar3 = _UNK_?;
-  fVar1 = fVar2 * (this->fields).timeScale + fVar1;
+  fVar1 = (this->fields).timeScale * fVar2 + fVar1;
   (this->fields)._Time_k__BackingField = fVar1;
   while (fVar3 < fVar1) {
     fVar1 = (this->fields)._Time_k__BackingField - fVar3;

@@ -14,12 +14,13 @@ Assembly-CSharp.dll::ReviveState::ReviveState_GetSafeGroundedDataAtSelectedIndex
     func_?(&StringLiteral_GetSafeGroundedPosition__);
     cRam_? = '\x01';
   }
-  this_01 = (List_1_UnityEngine_UIElements_UIR_RenderChain_RenderNodeData_ *)
+  this_00 = (List_1_UnityEngine_UIElements_UIR_RenderChain_RenderNodeData_ *)
             (this->fields).safePositions;
-  if (this_01 != (List_1_UnityEngine_UIElements_UIR_RenderChain_RenderNodeData_ *)0x0) {
-    this_00 = &(this->fields).currentPreviewedSafePosition;
-    if ((this_01->fields)._size <= (this->fields).currentPreviewedSafePosition) {
-      pSVar1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_00,(MethodInfo *)0x0);
+  if (this_00 != (List_1_UnityEngine_UIElements_UIR_RenderChain_RenderNodeData_ *)0x0) {
+    index = (this->fields).currentPreviewedSafePosition;
+    if ((this_00->fields)._size <= index) {
+      pSVar1 = mscorlib.dll::System::Int32::Int32_ToString
+                         ((Int32 *)&(this->fields).currentPreviewedSafePosition,(MethodInfo *)0x0);
       pSVar1 = mscorlib.dll::System::String::String_Concat_3
                          (StringLiteral_GetSafeGroundedPosition__,pSVar1,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -49,39 +50,37 @@ Assembly-CSharp.dll::ReviveState::ReviveState_GetSafeGroundedDataAtSelectedIndex
       (__return_storage_ptr__->CameraRotation).w = (float)iStack_15;
       return __return_storage_ptr__;
     }
-    if (this_01 != (List_1_UnityEngine_UIElements_UIR_RenderChain_RenderNodeData_ *)0x0) {
-      pRVar16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
-                RenderChain+RenderNodeData]::
-                List_1_UnityEngine_UIElements_UIR_RenderChain_RenderNodeData__get_Item
-                          ((RenderChain_RenderNodeData *)&pMStack_4,this_01,*this_00,
-                           MethodInfo__System__Collections__Generic__List<SafeSpotData>__get_Item_int_
-                          );
-      pMVar17 = pRVar16->initialMaterial;
-      pMVar5 = pRVar16->matPropBlock;
-      pRVar2 = pRVar16->firstCommand;
-      (__return_storage_ptr__->Position).x = (float)pRVar16->standardMaterial;
-      (__return_storage_ptr__->Position).y = (float)pMVar17;
-      (__return_storage_ptr__->Position).z = (float)pMVar5;
-      (__return_storage_ptr__->Rotation).x = (float)pRVar2;
-      pTVar18 = pRVar16->vectorAtlas;
-      pTVar19 = pRVar16->shaderInfoAtlas;
-      fVar20 = pRVar16->dpiScale;
-      (__return_storage_ptr__->Rotation).y = (float)pRVar16->device;
-      (__return_storage_ptr__->Rotation).z = (float)pTVar18;
-      (__return_storage_ptr__->Rotation).w = (float)pTVar19;
-      (__return_storage_ptr__->CameraPosition).x = fVar20;
-      fVar20 = (float)(pRVar16->transformConstants).m_Stride;
-      fVar21 = (float)(pRVar16->transformConstants).m_Length;
-      puVar22 = (pRVar16->clipRectConstants).m_Buffer;
-      (__return_storage_ptr__->CameraPosition).y = (float)(pRVar16->transformConstants).m_Buffer;
-      (__return_storage_ptr__->CameraPosition).z = fVar20;
-      (__return_storage_ptr__->CameraRotation).x = fVar21;
-      (__return_storage_ptr__->CameraRotation).y = (float)puVar22;
-      iVar23 = (pRVar16->clipRectConstants).m_Length;
-      (__return_storage_ptr__->CameraRotation).z = (float)(pRVar16->clipRectConstants).m_Stride;
-      (__return_storage_ptr__->CameraRotation).w = (float)iVar23;
-      return __return_storage_ptr__;
-    }
+    pRVar16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
+              RenderChain+RenderNodeData]::
+              List_1_UnityEngine_UIElements_UIR_RenderChain_RenderNodeData__get_Item
+                        ((RenderChain_RenderNodeData *)&pMStack_4,this_00,index,
+                         MethodInfo__System__Collections__Generic__List<SafeSpotData>__get_Item_int_
+                        );
+    pMVar17 = pRVar16->initialMaterial;
+    pMVar5 = pRVar16->matPropBlock;
+    pRVar2 = pRVar16->firstCommand;
+    (__return_storage_ptr__->Position).x = (float)pRVar16->standardMaterial;
+    (__return_storage_ptr__->Position).y = (float)pMVar17;
+    (__return_storage_ptr__->Position).z = (float)pMVar5;
+    (__return_storage_ptr__->Rotation).x = (float)pRVar2;
+    pTVar18 = pRVar16->vectorAtlas;
+    pTVar19 = pRVar16->shaderInfoAtlas;
+    fVar20 = pRVar16->dpiScale;
+    (__return_storage_ptr__->Rotation).y = (float)pRVar16->device;
+    (__return_storage_ptr__->Rotation).z = (float)pTVar18;
+    (__return_storage_ptr__->Rotation).w = (float)pTVar19;
+    (__return_storage_ptr__->CameraPosition).x = fVar20;
+    fVar20 = (float)(pRVar16->transformConstants).m_Stride;
+    fVar21 = (float)(pRVar16->transformConstants).m_Length;
+    puVar22 = (pRVar16->clipRectConstants).m_Buffer;
+    (__return_storage_ptr__->CameraPosition).y = (float)(pRVar16->transformConstants).m_Buffer;
+    (__return_storage_ptr__->CameraPosition).z = fVar20;
+    (__return_storage_ptr__->CameraRotation).x = fVar21;
+    (__return_storage_ptr__->CameraRotation).y = (float)puVar22;
+    iVar23 = (pRVar16->clipRectConstants).m_Length;
+    (__return_storage_ptr__->CameraRotation).z = (float)(pRVar16->clipRectConstants).m_Stride;
+    (__return_storage_ptr__->CameraRotation).w = (float)iVar23;
+    return __return_storage_ptr__;
   }
   func_?();
   pcVar24 = (code *)swi(3);
@@ -101,8 +100,8 @@ void Assembly-CSharp.dll::ReviveState::ReviveState_ResetSafePostions
     func_?();
     cRam_? = '\x01';
   }
-  pLVar2 = (this->fields).safePositions;
   (this->fields).currentPreviewedSafePosition = 0;
+  pLVar2 = (this->fields).safePositions;
   if (pLVar2 != (List_1_SafeSpotData_ *)0x0) {
     piVar3 = &(pLVar2->fields)._version;
     *piVar3 = *piVar3 + 1;
@@ -191,7 +190,7 @@ void Assembly-CSharp.dll::ReviveState::ReviveState__ctor(ReviveState *this,Metho
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<SafeSpotData>__List__);
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).safePositions = this_00;
+  ((ReviveState__Fields *)method_00)->safePositions = this_00;
   func_?(method_00,this_00);
   (this->fields).minDistanceBetweenSafePositions = 3.0;
   (this->fields).maxNumberOfSafePositions = 3;
@@ -258,39 +257,37 @@ Assembly-CSharp.dll::ReviveState::ReviveState_get_SafeGroundedData
       (__return_storage_ptr__->CameraRotation).w = (float)RStack_1.clipRectConstants.m_Length;
       return __return_storage_ptr__;
     }
-    if (this_00 != (List_1_UnityEngine_UIElements_UIR_RenderChain_RenderNodeData_ *)0x0) {
-      pRVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
-                RenderChain+RenderNodeData]::
-                List_1_UnityEngine_UIElements_UIR_RenderChain_RenderNodeData__get_Item
-                          (&RStack_1,this_00,(this->fields).currentPreviewedSafePosition,
-                           MethodInfo__System__Collections__Generic__List<SafeSpotData>__get_Item_int_
-                          );
-      pMVar3 = pRVar2->initialMaterial;
-      pMVar4 = pRVar2->matPropBlock;
-      pRVar5 = pRVar2->firstCommand;
-      (__return_storage_ptr__->Position).x = (float)pRVar2->standardMaterial;
-      (__return_storage_ptr__->Position).y = (float)pMVar3;
-      (__return_storage_ptr__->Position).z = (float)pMVar4;
-      (__return_storage_ptr__->Rotation).x = (float)pRVar5;
-      pTVar6 = pRVar2->vectorAtlas;
-      pTVar7 = pRVar2->shaderInfoAtlas;
-      fVar8 = pRVar2->dpiScale;
-      (__return_storage_ptr__->Rotation).y = (float)pRVar2->device;
-      (__return_storage_ptr__->Rotation).z = (float)pTVar6;
-      (__return_storage_ptr__->Rotation).w = (float)pTVar7;
-      (__return_storage_ptr__->CameraPosition).x = fVar8;
-      fVar8 = (float)(pRVar2->transformConstants).m_Stride;
-      fVar9 = (float)(pRVar2->transformConstants).m_Length;
-      puVar10 = (pRVar2->clipRectConstants).m_Buffer;
-      (__return_storage_ptr__->CameraPosition).y = (float)(pRVar2->transformConstants).m_Buffer;
-      (__return_storage_ptr__->CameraPosition).z = fVar8;
-      (__return_storage_ptr__->CameraRotation).x = fVar9;
-      (__return_storage_ptr__->CameraRotation).y = (float)puVar10;
-      iVar11 = (pRVar2->clipRectConstants).m_Length;
-      (__return_storage_ptr__->CameraRotation).z = (float)(pRVar2->clipRectConstants).m_Stride;
-      (__return_storage_ptr__->CameraRotation).w = (float)iVar11;
-      return __return_storage_ptr__;
-    }
+    pRVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
+              RenderChain+RenderNodeData]::
+              List_1_UnityEngine_UIElements_UIR_RenderChain_RenderNodeData__get_Item
+                        (&RStack_1,this_00,(this->fields).currentPreviewedSafePosition,
+                         MethodInfo__System__Collections__Generic__List<SafeSpotData>__get_Item_int_
+                        );
+    pMVar3 = pRVar2->initialMaterial;
+    pMVar4 = pRVar2->matPropBlock;
+    pRVar5 = pRVar2->firstCommand;
+    (__return_storage_ptr__->Position).x = (float)pRVar2->standardMaterial;
+    (__return_storage_ptr__->Position).y = (float)pMVar3;
+    (__return_storage_ptr__->Position).z = (float)pMVar4;
+    (__return_storage_ptr__->Rotation).x = (float)pRVar5;
+    pTVar6 = pRVar2->vectorAtlas;
+    pTVar7 = pRVar2->shaderInfoAtlas;
+    fVar8 = pRVar2->dpiScale;
+    (__return_storage_ptr__->Rotation).y = (float)pRVar2->device;
+    (__return_storage_ptr__->Rotation).z = (float)pTVar6;
+    (__return_storage_ptr__->Rotation).w = (float)pTVar7;
+    (__return_storage_ptr__->CameraPosition).x = fVar8;
+    fVar8 = (float)(pRVar2->transformConstants).m_Stride;
+    fVar9 = (float)(pRVar2->transformConstants).m_Length;
+    puVar10 = (pRVar2->clipRectConstants).m_Buffer;
+    (__return_storage_ptr__->CameraPosition).y = (float)(pRVar2->transformConstants).m_Buffer;
+    (__return_storage_ptr__->CameraPosition).z = fVar8;
+    (__return_storage_ptr__->CameraRotation).x = fVar9;
+    (__return_storage_ptr__->CameraRotation).y = (float)puVar10;
+    iVar11 = (pRVar2->clipRectConstants).m_Length;
+    (__return_storage_ptr__->CameraRotation).z = (float)(pRVar2->clipRectConstants).m_Stride;
+    (__return_storage_ptr__->CameraRotation).w = (float)iVar11;
+    return __return_storage_ptr__;
   }
   func_?();
   pcVar12 = (code *)swi(3);
@@ -314,57 +311,65 @@ void Assembly-CSharp.dll::ReviveState::ReviveState_set_SafeGroundedData
     cRam_? = '\x01';
   }
   bVar1 = MVClientSettings::MVClientSettings_get_ReviveEnabled((MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    return;
-  }
-  fStack_2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  if (fStack_2 - (this->fields).safeSpotSuppressedTime < (this->fields).safeSpotSuppressedDuration)
+  if ((bVar1 != 0) &&
+     (fStack_2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0),
+     (this->fields).safeSpotSuppressedDuration <= fStack_2 - (this->fields).safeSpotSuppressedTime))
   {
-    return;
-  }
-  pLVar3 = (this->fields).safePositions;
-  if (pLVar3 != (List_1_SafeSpotData_ *)0x0) {
+    pLVar3 = (this->fields).safePositions;
+    if (pLVar3 == (List_1_SafeSpotData_ *)0x0) goto code_?;
     if ((pLVar3->fields)._size != 0) {
-      pfVar4 = (float *)func_?(&stack0xffffff70,(this->fields).safePositions);
-      fStack_5 = pfVar4[2] - value.Position.z;
-      uStack_6 = CONCAT44(pfVar4[1] - value.Position.y,*pfVar4 - value.Position.x);
-      fVar7 = (float10)func_?(&uStack_6,0);
-      fStack_2 = (float)fVar7;
-      pfVar4 = &(this->fields).minDistanceBetweenSafePositions;
-      if (fStack_2 < *pfVar4 || fStack_2 == *pfVar4) {
+      apMStack_4[0] = MethodInfo__System__Collections__Generic__List<SafeSpotData>__get_Item_int_;
+      pfVar5 = (float *)func_?(apMStack_4,pLVar3,(pLVar3->fields)._size + -1);
+      fStack_6 = pfVar5[4];
+      fStack_7 = pfVar5[5];
+      fStack_8 = pfVar5[6];
+      fStack_9 = pfVar5[7];
+      fStack_10 = pfVar5[8];
+      fStack_11 = pfVar5[9];
+      fStack_12 = pfVar5[10];
+      fStack_13 = pfVar5[0xb];
+      uStack_14 = *(undefined8 *)(pfVar5 + 0xc);
+      fStack_15 = pfVar5[2] - value.Position.z;
+      uStack_16 = CONCAT44(pfVar5[1] - value.Position.y,*pfVar5 - value.Position.x);
+      fStack_17 = fStack_15;
+      fVar18 = (float10)func_?(&uStack_16,0);
+      fStack_2 = (float)fVar18;
+      pfVar5 = &(this->fields).minDistanceBetweenSafePositions;
+      if (fStack_2 < *pfVar5 || fStack_2 == *pfVar5) {
         return;
       }
       pLVar3 = (this->fields).safePositions;
       if (pLVar3 == (List_1_SafeSpotData_ *)0x0) goto code_?;
-      if ((pLVar3->fields)._size < (this->fields).maxNumberOfSafePositions) {
+      if ((this->fields).maxNumberOfSafePositions <= (pLVar3->fields)._size) {
+        apMStack_4[0] = (MethodInfo *)0x0;
+        iVar19 = func_?();
+        (this->fields).currentPreviewedSafePosition = iVar19;
         pLVar3 = (this->fields).safePositions;
-        goto code_?;
+        if (pLVar3 == (List_1_SafeSpotData_ *)0x0) {
+code_?:
+          apMStack_4[0] = (MethodInfo *)&UNK_?;
+          func_?();
+          pcVar20 = (code *)swi(3);
+          (*pcVar20)();
+          return;
+        }
+        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
+        Implementation::UIRStylePainter+RepeatRectUV]::
+        List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV__RemoveAt
+                  ((List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *
+                   )pLVar3,0,
+                   MethodInfo__System__Collections__Generic__List<SafeSpotData>__RemoveAt_int_);
+        pLVar3 = (this->fields).safePositions;
+        if (pLVar3 == (List_1_SafeSpotData_ *)0x0) goto code_?;
       }
-      iVar8 = func_?();
-      (this->fields).currentPreviewedSafePosition = iVar8;
-      pLVar3 = (this->fields).safePositions;
-      if (pLVar3 == (List_1_SafeSpotData_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
-      Implementation::UIRStylePainter+RepeatRectUV]::
-      List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV__RemoveAt
-                ((List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *)
-                 pLVar3,0,
-                 MethodInfo__System__Collections__Generic__List<SafeSpotData>__RemoveAt_int_);
-      pLVar3 = (this->fields).safePositions;
     }
-    if (pLVar3 != (List_1_SafeSpotData_ *)0x0) {
-code_?:
-      func_?(pLVar3,value.Position.x,value.Position.y,value.Position.z,value.Rotation.x,
-                      value.Rotation.y,value.Rotation.z,value.Rotation.w,value.CameraPosition.x,
-                      value.CameraPosition.y,value.CameraPosition.z,value.CameraRotation.x,
-                      value.CameraRotation.y,value.CameraRotation._8_8_);
-      return;
-    }
+    apMStack_4[0] = MethodInfo__System__Collections__Generic__List<SafeSpotData>__Add_SafeSpotData_
+    ;
+    func_?(pLVar3,value.Position.x,value.Position.y,value.Position.z,value.Rotation.x,
+                    value.Rotation.y,value.Rotation.z,value.Rotation.w,value.CameraPosition.x,
+                    value.CameraPosition.y,value.CameraPosition.z,value.CameraRotation.x,
+                    value.CameraRotation.y,value.CameraRotation._8_8_);
   }
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
   return;
 }
 
