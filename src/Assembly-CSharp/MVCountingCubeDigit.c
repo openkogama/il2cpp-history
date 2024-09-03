@@ -79,22 +79,21 @@ Assembly-CSharp.dll::MVCountingCubeDigit::MVCountingCubeDigit_get_MeshRenderer
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).meshRenderer;
-  ppMVar2 = &(this->fields).meshRenderer;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pMVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  if (bVar2 != 0) {
     pMVar1 = (MeshRenderer *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         UnityEngine__MeshRenderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::MeshRenderer>__
                        );
-    *ppMVar2 = pMVar1;
-    func_?(ppMVar2,pMVar1);
+    (this->fields).meshRenderer = pMVar1;
+    func_?(&(this->fields).meshRenderer,pMVar1);
   }
-  return *ppMVar2;
+  return (this->fields).meshRenderer;
 }
 
 

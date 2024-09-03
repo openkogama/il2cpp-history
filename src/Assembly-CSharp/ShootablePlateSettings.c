@@ -50,7 +50,7 @@ void Assembly-CSharp.dll::ShootablePlateSettings::ShootablePlateSettings_Initial
                     (this_02,StringLiteral_duration,value_00,0.5,30.0,(MethodInfo *)0x0);
           this_03 = (this->fields).inputField;
           if (this_03 != (SettingsInputFieldSlider *)0x0) {
-            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
                       (this_03,StringLiteral_duration,value_00,(MethodInfo *)0x0);
             return;
           }

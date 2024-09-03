@@ -122,69 +122,71 @@ void Assembly-CSharp.dll::AsyncWWWManager+Cache::AsyncWWWManager_Cache_Unsubscri
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = (Object *)0x0;
+  DStack_6._current.value = (Object *)0x0;
+  DStack_6._getEnumeratorRetType = 0;
   this_00 = (this->fields).cachedRequests;
   if (this_00 != (Dictionary_2_System_String_CachedGetRequest_ *)0x0) {
-    pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffffac,(Dictionary_2_System_UInt32_System_Object_ *)this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<System::String,_CachedGetRequest>__GetEnumerator__
                        );
-    uStack_7 = 0;
-    DStack_8._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar6->_dictionary;
-    DStack_8._version = pDVar6->_version;
-    DStack_8._index = pDVar6->_index;
-    DStack_8._current.key = (Object *)(pDVar6->_current).key;
-    DStack_8._16_8_ = *(undefined8 *)&(pDVar6->_current).value;
+    uStack_8 = 0;
+    DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar7->_dictionary;
+    DStack_6._version = pDVar7->_version;
+    DStack_6._index = pDVar7->_index;
+    DStack_6._current.key = (Object *)(pDVar7->_current).key;
+    DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
     uStack_1 = 1;
-    pDStack_9 = &DStack_8;
-    while( true ) {
-      while( true ) {
-        do {
-          bVar10 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
-                  Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                            (&DStack_8,
-                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_CachedGetRequest>__MoveNext__
-                            );
-          if (bVar10 == 0) {
-            uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                      ((Object *)&DStack_8,
-                       (ExceptionArgument__Enum)
-                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_CachedGetRequest>__Dispose__
-                       ,(MethodInfo *)in_stack_11);
-            *unaff_FS_OFFSET = uStack_3;
-            return;
-          }
-          pOVar12 = DStack_8._current.value;
-          if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-            cRam_? = '\x01';
-          }
-          if (pOVar12 == (Object *)0x0) goto code_?;
-          pOVar12 = pOVar12 + 1;
-          bVar10 = mscorlib.dll::System::Delegate::Delegate_op_Equality
-                            ((Delegate *)pOVar12->klass,(Delegate *)callback,(MethodInfo *)0x0);
-        } while (bVar10 == 0);
-        in_stack_11 =
-             (Object__Class *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pOVar12->klass,(Delegate *)callback,(MethodInfo *)0x0);
-        pOStack_13 = in_stack_11;
-        if (in_stack_11 != (Object__Class *)0x0) break;
-        pOVar12->klass = (Object__Class *)0x0;
-        func_?();
+    pDStack_9 = &DStack_6;
+    do {
+      do {
+        bVar10 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
+                Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                          (&DStack_6,
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_CachedGetRequest>__MoveNext__
+                          );
+        if (bVar10 == 0) {
+          uStack_1 = 0xffffffff;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                    ((Object *)&DStack_6,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_CachedGetRequest>__Dispose__
+                     ,(MethodInfo *)in_stack_11);
+          *unaff_FS_OFFSET = uStack_3;
+          return;
+        }
+        pOVar12 = DStack_6._current.value;
+        if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+          cRam_? = '\x01';
+        }
+        if (pOVar12 == (Object *)0x0) goto code_?;
+        bVar10 = mscorlib.dll::System::Delegate::Delegate_op_Equality
+                          ((Delegate *)pOVar12[1].klass,(Delegate *)callback,(MethodInfo *)0x0);
+      } while (bVar10 == 0);
+      pDStack_13 = mscorlib.dll::System::Delegate::Delegate_Remove
+                             ((Delegate *)pOVar12[1].klass,(Delegate *)callback,(MethodInfo *)0x0);
+      in_stack_11 = (Object__Class *)0x0;
+      if (pDStack_13 != (Delegate *)0x0) {
+        in_stack_11 = (Object__Class *)func_?();
+        if (in_stack_11 == (Object__Class *)0x0) {
+          func_?();
+          break;
+        }
       }
-      in_stack_11 = (Object__Class *)func_?();
-      if (in_stack_11 == (Object__Class *)0x0) break;
-      pOVar12->klass = in_stack_11;
+      pOVar12[1].klass = in_stack_11;
       func_?();
-    }
-    func_?();
+    } while( true );
   }
 code_?:
   func_?();
@@ -220,10 +222,9 @@ void Assembly-CSharp.dll::AsyncWWWManager+Cache::AsyncWWWManager_Cache__ctor
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_CachedGetRequest>__Dictionary__
             );
   method_00 = (MethodInfo *)&this->fields;
-  ((AsyncWWWManager_Cache__Fields *)method_00)->cachedRequests =
-       (Dictionary_2_System_String_CachedGetRequest_ *)this_00;
+  (this->fields).cachedRequests = (Dictionary_2_System_String_CachedGetRequest_ *)this_00;
   func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }

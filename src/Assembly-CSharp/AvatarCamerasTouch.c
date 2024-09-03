@@ -7,228 +7,224 @@ void Assembly-CSharp.dll::AvatarCamerasTouch::AvatarCamerasTouch_Initialize
 {
   pAVar1 = (this->fields).firstPersonMobileCamera;
   if (pAVar1 != (AndroidFirstPersonCamera *)0x0) {
-    ppMVar2 = &(pAVar1->fields)._.localAvatar;
-    *ppMVar2 = avatarLocal;
-    func_?(ppMVar2,avatarLocal);
-    pAVar3 = (this->fields).thirdPersonMobileCamera;
-    if (pAVar3 != (AndroidThirdPersonCamera *)0x0) {
+    (pAVar1->fields)._.localAvatar = avatarLocal;
+    func_?(&(pAVar1->fields)._.localAvatar,avatarLocal);
+    pAVar2 = (this->fields).thirdPersonMobileCamera;
+    if (pAVar2 != (AndroidThirdPersonCamera *)0x0) {
       AndroidThirdPersonCamera::AndroidThirdPersonCamera_Initialize
-                (pAVar3,avatarLocal,(MethodInfo *)0x0);
-      pLVar4 = (this->fields).lobbyStateCamera;
-      if (pLVar4 != (LobbyStateCamera *)0x0) {
-        LobbyStateCamera::LobbyStateCamera_Initialize(pLVar4,avatarLocal,(MethodInfo *)0x0);
-        pTVar5 = (this->fields).timeAttackFlagDebriefingCamera;
-        if (pTVar5 != (TimeAttackFlagDebriefingCamera *)0x0) {
-          ppMVar2 = &(pTVar5->fields).avatarLocal;
-          *ppMVar2 = avatarLocal;
-          func_?(ppMVar2,avatarLocal);
-          pTVar6 = (this->fields).timeAttackFlagCountdownCamera;
-          if (pTVar6 != (TimeAttackFlagCountdownCamera *)0x0) {
-            ppMVar2 = &(pTVar6->fields).avatarLocal;
-            *ppMVar2 = avatarLocal;
-            func_?(ppMVar2,avatarLocal);
-            pGVar7 = (this->fields).ghostCamera;
-            if (pGVar7 != (GhostCamera *)0x0) {
-              GhostCamera::GhostCamera_Initialize(pGVar7,avatarLocal,(MethodInfo *)0x0);
-              pDVar8 = (this->fields).deadCamera;
-              if (pDVar8 != (DeadCamera *)0x0) {
-                ppMVar2 = &(pDVar8->fields).avatarLocal;
-                *ppMVar2 = avatarLocal;
-                func_?(ppMVar2,avatarLocal);
-                pAVar9 = (this->fields).avatarCamerasWrapper;
+                (pAVar2,avatarLocal,(MethodInfo *)0x0);
+      pLVar3 = (this->fields).lobbyStateCamera;
+      if (pLVar3 != (LobbyStateCamera *)0x0) {
+        LobbyStateCamera::LobbyStateCamera_Initialize(pLVar3,avatarLocal,(MethodInfo *)0x0);
+        pTVar4 = (this->fields).timeAttackFlagDebriefingCamera;
+        if (pTVar4 != (TimeAttackFlagDebriefingCamera *)0x0) {
+          (pTVar4->fields).avatarLocal = avatarLocal;
+          func_?(&(pTVar4->fields).avatarLocal,avatarLocal);
+          pTVar5 = (this->fields).timeAttackFlagCountdownCamera;
+          if (pTVar5 != (TimeAttackFlagCountdownCamera *)0x0) {
+            (pTVar5->fields).avatarLocal = avatarLocal;
+            func_?(&(pTVar5->fields).avatarLocal,avatarLocal);
+            pGVar6 = (this->fields).ghostCamera;
+            if (pGVar6 != (GhostCamera *)0x0) {
+              GhostCamera::GhostCamera_Initialize(pGVar6,avatarLocal,(MethodInfo *)0x0);
+              pDVar7 = (this->fields).deadCamera;
+              if (pDVar7 != (DeadCamera *)0x0) {
+                (pDVar7->fields).avatarLocal = avatarLocal;
+                func_?(&(pDVar7->fields).avatarLocal,avatarLocal);
+                pAVar8 = (this->fields).avatarCamerasWrapper;
                 pAVar1 = (this->fields).firstPersonMobileCamera;
-                if (pAVar9 != (AvatarCamerasWrapper *)0x0) {
+                if (pAVar8 != (AvatarCamerasWrapper *)0x0) {
                   if (cRam_? == '\0') {
                     func_?(&
                                     MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Add_CameraType__MVCameraBase_
                                    );
                     cRam_? = '\x01';
                   }
-                  pDVar10 = (pAVar9->fields).avatarCameras;
+                  pDVar9 = (pAVar8->fields).avatarCameras;
                   if (pAVar1 != (AndroidFirstPersonCamera *)0x0) {
-                    IVar11 = (*(code *)(pAVar1->klass->vtable).get_CameraType.method)
+                    IVar10 = (*(code *)(pAVar1->klass->vtable).get_CameraType.method)
                                        (pAVar1,(pAVar1->klass->vtable).Awake.methodPtr);
-                    if (pDVar10 != (Dictionary_2_CameraType_MVCameraBase_ *)0x0) {
+                    if (pDVar9 != (Dictionary_2_CameraType_MVCameraBase_ *)0x0) {
                       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                       Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add
-                                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar10,IVar11,
+                                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar9,IVar10,
                                  (Object *)pAVar1,
                                  MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Add_CameraType__MVCameraBase_
                                 );
-                      pAVar9 = (this->fields).avatarCamerasWrapper;
-                      pAVar3 = (this->fields).thirdPersonMobileCamera;
-                      if (pAVar9 != (AvatarCamerasWrapper *)0x0) {
+                      pAVar8 = (this->fields).avatarCamerasWrapper;
+                      pAVar2 = (this->fields).thirdPersonMobileCamera;
+                      if (pAVar8 != (AvatarCamerasWrapper *)0x0) {
                         if (cRam_? == '\0') {
                           func_?(&
                                           MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Add_CameraType__MVCameraBase_
                                          );
                           cRam_? = '\x01';
                         }
-                        pDVar10 = (pAVar9->fields).avatarCameras;
-                        if (pAVar3 != (AndroidThirdPersonCamera *)0x0) {
-                          IVar11 = (*(code *)(pAVar3->klass->vtable).get_CameraType.method)
-                                             (pAVar3,(pAVar3->klass->vtable).Awake.methodPtr);
-                          if (pDVar10 != (Dictionary_2_CameraType_MVCameraBase_ *)0x0) {
+                        pDVar9 = (pAVar8->fields).avatarCameras;
+                        if (pAVar2 != (AndroidThirdPersonCamera *)0x0) {
+                          IVar10 = (*(code *)(pAVar2->klass->vtable).get_CameraType.method)
+                                             (pAVar2,(pAVar2->klass->vtable).Awake.methodPtr);
+                          if (pDVar9 != (Dictionary_2_CameraType_MVCameraBase_ *)0x0) {
                             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                             Int32Enum,System::Object]::
                             Dictionary_2_System_Int32Enum_System_Object__Add
-                                      ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar10,IVar11
-                                       ,(Object *)pAVar3,
+                                      ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar9,IVar10
+                                       ,(Object *)pAVar2,
                                        MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Add_CameraType__MVCameraBase_
                                       );
-                            pAVar9 = (this->fields).avatarCamerasWrapper;
-                            pLVar4 = (this->fields).lobbyStateCamera;
-                            if (pAVar9 != (AvatarCamerasWrapper *)0x0) {
+                            pAVar8 = (this->fields).avatarCamerasWrapper;
+                            pLVar3 = (this->fields).lobbyStateCamera;
+                            if (pAVar8 != (AvatarCamerasWrapper *)0x0) {
                               if (cRam_? == '\0') {
                                 func_?(&
                                                 MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Add_CameraType__MVCameraBase_
                                                );
                                 cRam_? = '\x01';
                               }
-                              pDVar10 = (pAVar9->fields).avatarCameras;
-                              if (pLVar4 != (LobbyStateCamera *)0x0) {
-                                IVar11 = (*(code *)(pLVar4->klass->vtable).get_CameraType.method)
-                                                   (pLVar4,(pLVar4->klass->vtable).Awake.methodPtr);
-                                if (pDVar10 != (Dictionary_2_CameraType_MVCameraBase_ *)0x0) {
+                              pDVar9 = (pAVar8->fields).avatarCameras;
+                              if (pLVar3 != (LobbyStateCamera *)0x0) {
+                                IVar10 = (*(code *)(pLVar3->klass->vtable).get_CameraType.method)
+                                                   (pLVar3,(pLVar3->klass->vtable).Awake.methodPtr);
+                                if (pDVar9 != (Dictionary_2_CameraType_MVCameraBase_ *)0x0) {
                                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                                   Int32Enum,System::Object]::
                                   Dictionary_2_System_Int32Enum_System_Object__Add
-                                            ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar10,
-                                             IVar11,(Object *)pLVar4,
+                                            ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar9,
+                                             IVar10,(Object *)pLVar3,
                                              MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Add_CameraType__MVCameraBase_
                                             );
-                                  pAVar9 = (this->fields).avatarCamerasWrapper;
-                                  pTVar5 = (this->fields).timeAttackFlagDebriefingCamera;
-                                  if (pAVar9 != (AvatarCamerasWrapper *)0x0) {
+                                  pAVar8 = (this->fields).avatarCamerasWrapper;
+                                  pTVar4 = (this->fields).timeAttackFlagDebriefingCamera;
+                                  if (pAVar8 != (AvatarCamerasWrapper *)0x0) {
                                     if (cRam_? == '\0') {
                                       func_?(&
                                                   MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Add_CameraType__MVCameraBase_
                                                   );
                                       cRam_? = '\x01';
                                     }
-                                    pDVar10 = (pAVar9->fields).avatarCameras;
-                                    if (pTVar5 != (TimeAttackFlagDebriefingCamera *)0x0) {
-                                      IVar11 = (*(code *)(pTVar5->klass->vtable).get_CameraType.
-                                                         method)(pTVar5,(pTVar5->klass->vtable).
+                                    pDVar9 = (pAVar8->fields).avatarCameras;
+                                    if (pTVar4 != (TimeAttackFlagDebriefingCamera *)0x0) {
+                                      IVar10 = (*(code *)(pTVar4->klass->vtable).get_CameraType.
+                                                         method)(pTVar4,(pTVar4->klass->vtable).
                                                                         Awake.methodPtr);
-                                      if (pDVar10 != (Dictionary_2_CameraType_MVCameraBase_ *)0x0) {
+                                      if (pDVar9 != (Dictionary_2_CameraType_MVCameraBase_ *)0x0) {
                                         mscorlib.dll::System::Collections::Generic::
                                         Dictionary`2[System::Int32Enum,System::Object]::
                                         Dictionary_2_System_Int32Enum_System_Object__Add
                                                   ((Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                   pDVar10,IVar11,(Object *)pTVar5,
+                                                   pDVar9,IVar10,(Object *)pTVar4,
                                                                                                       
                                                   MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Add_CameraType__MVCameraBase_
                                                   );
-                                        pAVar9 = (this->fields).avatarCamerasWrapper;
-                                        pTVar6 = (this->fields).timeAttackFlagCountdownCamera;
-                                        if (pAVar9 != (AvatarCamerasWrapper *)0x0) {
+                                        pAVar8 = (this->fields).avatarCamerasWrapper;
+                                        pTVar5 = (this->fields).timeAttackFlagCountdownCamera;
+                                        if (pAVar8 != (AvatarCamerasWrapper *)0x0) {
                                           if (cRam_? == '\0') {
                                             func_?(&
                                                   MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Add_CameraType__MVCameraBase_
                                                   );
                                             cRam_? = '\x01';
                                           }
-                                          pDVar10 = (pAVar9->fields).avatarCameras;
-                                          if (pTVar6 != (TimeAttackFlagCountdownCamera *)0x0) {
-                                            IVar11 = (*(code *)(pTVar6->klass->vtable).
+                                          pDVar9 = (pAVar8->fields).avatarCameras;
+                                          if (pTVar5 != (TimeAttackFlagCountdownCamera *)0x0) {
+                                            IVar10 = (*(code *)(pTVar5->klass->vtable).
                                                                get_CameraType.method)
-                                                               (pTVar6,(pTVar6->klass->vtable).Awake
+                                                               (pTVar5,(pTVar5->klass->vtable).Awake
                                                                        .methodPtr);
-                                            if (pDVar10 != (Dictionary_2_CameraType_MVCameraBase_ *)
+                                            if (pDVar9 != (Dictionary_2_CameraType_MVCameraBase_ *)
                                                           0x0) {
                                               mscorlib.dll::System::Collections::Generic::
                                               Dictionary`2[System::Int32Enum,System::Object]::
                                               Dictionary_2_System_Int32Enum_System_Object__Add
                                                         ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  pDVar10,IVar11,(Object *)pTVar6,
+                                                  pDVar9,IVar10,(Object *)pTVar5,
                                                   MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Add_CameraType__MVCameraBase_
                                                   );
-                                              pAVar9 = (this->fields).avatarCamerasWrapper;
-                                              pGVar7 = (this->fields).ghostCamera;
-                                              if (pAVar9 != (AvatarCamerasWrapper *)0x0) {
+                                              pAVar8 = (this->fields).avatarCamerasWrapper;
+                                              pGVar6 = (this->fields).ghostCamera;
+                                              if (pAVar8 != (AvatarCamerasWrapper *)0x0) {
                                                 if (cRam_? == '\0') {
                                                   func_?(&
                                                   MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Add_CameraType__MVCameraBase_
                                                   );
                                                   cRam_? = '\x01';
                                                 }
-                                                pDVar10 = (pAVar9->fields).avatarCameras;
-                                                if (pGVar7 != (GhostCamera *)0x0) {
-                                                  IVar11 = (*(code *)(pGVar7->klass->vtable).
+                                                pDVar9 = (pAVar8->fields).avatarCameras;
+                                                if (pGVar6 != (GhostCamera *)0x0) {
+                                                  IVar10 = (*(code *)(pGVar6->klass->vtable).
                                                                      get_CameraType.method)
-                                                                     (pGVar7,(pGVar7->klass->vtable)
+                                                                     (pGVar6,(pGVar6->klass->vtable)
                                                                              .Awake.methodPtr);
-                                                  if (pDVar10 != (
+                                                  if (pDVar9 != (
                                                   Dictionary_2_CameraType_MVCameraBase_ *)0x0) {
                                                     mscorlib.dll::System::Collections::Generic::
                                                     Dictionary`2[System::Int32Enum,System::Object]::
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  pDVar10,IVar11,(Object *)pGVar7,
+                                                  pDVar9,IVar10,(Object *)pGVar6,
                                                   MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Add_CameraType__MVCameraBase_
                                                   );
-                                                  pAVar9 = (this->fields).avatarCamerasWrapper;
-                                                  pDVar8 = (this->fields).deadCamera;
-                                                  if (pAVar9 != (AvatarCamerasWrapper *)0x0) {
+                                                  pAVar8 = (this->fields).avatarCamerasWrapper;
+                                                  pDVar7 = (this->fields).deadCamera;
+                                                  if (pAVar8 != (AvatarCamerasWrapper *)0x0) {
                                                     if (cRam_? == '\0') {
                                                       func_?(&
                                                   MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Add_CameraType__MVCameraBase_
                                                   );
                                                   cRam_? = '\x01';
                                                   }
-                                                  pDVar10 = (pAVar9->fields).avatarCameras;
-                                                  if (pDVar8 != (DeadCamera *)0x0) {
-                                                    IVar11 = (*(code *)(pDVar8->klass->vtable).
+                                                  pDVar9 = (pAVar8->fields).avatarCameras;
+                                                  if (pDVar7 != (DeadCamera *)0x0) {
+                                                    IVar10 = (*(code *)(pDVar7->klass->vtable).
                                                                        get_CameraType.method)
-                                                                       (pDVar8,(pDVar8->klass->
+                                                                       (pDVar7,(pDVar7->klass->
                                                                                vtable).Awake.
                                                                                methodPtr);
-                                                    if (pDVar10 != (
+                                                    if (pDVar9 != (
                                                   Dictionary_2_CameraType_MVCameraBase_ *)0x0) {
                                                     mscorlib.dll::System::Collections::Generic::
                                                     Dictionary`2[System::Int32Enum,System::Object]::
                                                     Dictionary_2_System_Int32Enum_System_Object__Add
                                                               ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
-                                                  pDVar10,IVar11,(Object *)pDVar8,
+                                                  pDVar9,IVar10,(Object *)pDVar7,
                                                   MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Add_CameraType__MVCameraBase_
                                                   );
-                                                  pAVar9 = (this->fields).avatarCamerasWrapper;
+                                                  pAVar8 = (this->fields).avatarCamerasWrapper;
                                                   this_00 = (this->fields).cameraController;
-                                                  if (pAVar9 != (AvatarCamerasWrapper *)0x0) {
+                                                  if (pAVar8 != (AvatarCamerasWrapper *)0x0) {
                                                     cameraBases = AvatarCamerasWrapper::
                                                                                                                                     
                                                   AvatarCamerasWrapper_GetCameraBases
-                                                            (pAVar9,(MethodInfo *)0x0);
+                                                            (pAVar8,(MethodInfo *)0x0);
                                                   if (this_00 != (MVCameraController *)0x0) {
                                                     MVCameraController::
                                                     MVCameraController_Initialize
                                                               (this_00,cameraBases,(MethodInfo *)0x0
                                                               );
-                                                    pMVar12 = MVGameControllerBase::
+                                                    pMVar11 = MVGameControllerBase::
                                                                                                                             
                                                   MVGameControllerBase_get_MainCameraManager
                                                             ((MethodInfo *)0x0);
-                                                  if (pMVar12 != (MainCameraManager *)0x0) {
-                                                    bVar13 = mscorlib.dll::System::Runtime::
+                                                  if (pMVar11 != (MainCameraManager *)0x0) {
+                                                    bVar12 = mscorlib.dll::System::Runtime::
                                                              Serialization::ObjectHolder::
                                                                                                                           
                                                   ObjectHolder_get_TypeLoadExceptionReachable
-                                                            ((ObjectHolder *)pMVar12,
+                                                            ((ObjectHolder *)pMVar11,
                                                              (MethodInfo *)0x0);
-                                                  if (bVar13 == 0) {
-                                                    pMVar12 = MVGameControllerBase::
+                                                  if (bVar12 == 0) {
+                                                    pMVar11 = MVGameControllerBase::
                                                                                                                             
                                                   MVGameControllerBase_get_MainCameraManager
                                                             ((MethodInfo *)0x0);
-                                                  if (pMVar12 == (MainCameraManager *)0x0)
+                                                  if (pMVar11 == (MainCameraManager *)0x0)
                                                   goto code_?;
                                                   MainCameraManager::
                                                   MainCameraManager_SetCameraController
-                                                            (pMVar12,(this->fields).cameraController
+                                                            (pMVar11,(this->fields).cameraController
                                                              ,(MethodInfo *)0x0);
                                                   }
                                                   return;
@@ -265,8 +261,8 @@ void Assembly-CSharp.dll::AvatarCamerasTouch::AvatarCamerasTouch_Initialize
   }
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -284,17 +280,15 @@ void Assembly-CSharp.dll::AvatarCamerasTouch::AvatarCamerasTouch__ctor
   }
   this_00 = (AvatarCamerasWrapper *)func_?(TypeInfo__AvatarCamerasWrapper);
   AvatarCamerasWrapper::AvatarCamerasWrapper__ctor(this_00,(MethodInfo *)0x0);
-  ppAVar1 = &(this->fields).avatarCamerasWrapper;
-  *ppAVar1 = this_00;
-  func_?(ppAVar1,this_00);
+  (this->fields).avatarCamerasWrapper = this_00;
+  func_?(&(this->fields).avatarCamerasWrapper,this_00);
   this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
             func_?(TypeInfo__MVCameraController);
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-  ppMVar2 = &(this->fields).cameraController;
-  *ppMVar2 = (MVCameraController *)this_01;
-  func_?(ppMVar2,this_01);
+  (this->fields).cameraController = (MVCameraController *)this_01;
+  func_?(&(this->fields).cameraController,this_01);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

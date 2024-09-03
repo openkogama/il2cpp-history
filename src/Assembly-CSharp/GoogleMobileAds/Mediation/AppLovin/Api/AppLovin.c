@@ -20,7 +20,7 @@ AppLovin_1_GetAppLovinClient(MethodInfo *method)
     func_?(&StringLiteral_Dummy_);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,unaff_EDI);
   pMVar1 = MethodInfo__GoogleMobileAds__Mediation__AppLovin__Common__DummyClient__DummyClient__;
   if (MethodInfo__GoogleMobileAds__Mediation__AppLovin__Common__DummyClient__DummyClient__->
@@ -55,43 +55,27 @@ void Assembly-CSharp.dll::GoogleMobileAds::Mediation::AppLovin::Api::AppLovin::A
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin);
-    func_?(&TypeInfo__GoogleMobileAds__Mediation__AppLovin__Common__IAppLovinClient);
+    func_?();
+    pIStack_1 = (IAppLovinClient__Class *)
+                &TypeInfo__GoogleMobileAds__Mediation__AppLovin__Common__IAppLovinClient;
+    func_?();
     cRam_? = '\x01';
   }
   if ((TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin->_1).cctor_finished_or_no_cctor
       == 0) {
-    func_?(TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin);
+    func_?();
   }
-  pIVar1 = TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin->static_fields->client;
-  if (pIVar1 != (IAppLovinClient *)0x0) {
-    pIVar2 = pIVar1->klass;
-    uVar3 = 0;
-    uVar4._0_1_ = (pIVar2->_1).rank;
-    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-    if (uVar4 != 0) {
-      do {
-        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
-            (Il2CppClass *)TypeInfo__GoogleMobileAds__Mediation__AppLovin__Common__IAppLovinClient)
-        {
-          iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-          (*(code *)(&(pIVar1->klass->vtable).Initialize)[iVar5].method)
-                    (pIVar1,(&(pIVar1->klass->vtable).SetHasUserConsent)[iVar5].methodPtr);
-          return;
-        }
-        uVar3 = uVar3 + 1;
-      } while (uVar3 < uVar4);
-    }
-    puVar6 = (undefined4 *)
-             func_?(pIVar1,
-                             TypeInfo__GoogleMobileAds__Mediation__AppLovin__Common__IAppLovinClient
-                             ,0);
-    (*(code *)*puVar6)(pIVar1,puVar6[1]);
+  if (TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin->static_fields->client !=
+      (IAppLovinClient *)0x0) {
+    pIStack_1 = TypeInfo__GoogleMobileAds__Mediation__AppLovin__Common__IAppLovinClient;
+    puStack_2 = (undefined *)0x0;
+    func_?();
     return;
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  uVar3 = func_?(&puStack_2);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

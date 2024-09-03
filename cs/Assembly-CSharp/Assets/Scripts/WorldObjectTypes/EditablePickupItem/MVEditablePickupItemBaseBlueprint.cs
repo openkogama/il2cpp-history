@@ -17,7 +17,6 @@ namespace Assets.Scripts.WorldObjectTypes.EditablePickupItem
 		// Fields
 		public const string ItemBaseKey = "ItemBase";
 		public const string ItemCubeModelKey = "ItemCubeModel";
-		protected const float scale = 0.3f;
 		protected MVEditablePickupItemBase itemBase;
 		protected EditableCubeModelWrapper editableCubeModelWrapper;
 		protected MVCubeModelInstance editableCubeModel;
@@ -29,6 +28,7 @@ namespace Assets.Scripts.WorldObjectTypes.EditablePickupItem
 		public MVEditablePickupItemBase ItemBase { get; }
 		public int CubeModelId { get; }
 		public int CubeModelPid { get; }
+		protected virtual float CubeModelScale { get; }
 	
 		// Constructors
 		public MVEditablePickupItemBaseBlueprint(Dictionary<object, object> data, Dictionary<int, MVWorldObjectClient> worldObjects);
@@ -39,11 +39,11 @@ namespace Assets.Scripts.WorldObjectTypes.EditablePickupItem
 		public virtual void OnStartEditing();
 		public virtual void OnEndEditing();
 		public override void OnDataUpdate();
-		private void ToggleCubeModelColliders(bool state);
+		protected void ToggleCubeModelColliders(bool state);
 		public override void Select(Color color);
 		public override void DeSelect();
 		public override bool OnEnterObject(EditorStateMachine e);
 		public override bool OnExitObject(EditorStateMachine e);
-		private void SetCubeSize();
+		protected virtual void SetCubeSize();
 	}
 }

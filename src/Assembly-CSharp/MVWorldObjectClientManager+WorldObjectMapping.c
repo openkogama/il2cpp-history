@@ -373,16 +373,16 @@ void Assembly-CSharp.dll::MVWorldObjectClientManager+WorldObjectMapping::
     }
     pDVar1 = (this->fields).worldObjectTypeSets;
     if (pDVar1 != (Dictionary_2_MV_WorldObject_WorldObjectType_HashSet_1_System_Int32_ *)0x0) {
-      pHVar4 = (HashSet_1_System_Int32Enum_ *)
+      pHVar4 = (HashSet_1_System_UInt32_ *)
                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
                          ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,(wo->fields)._.type
                           ,
                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::WorldObjectType,_System::Collections::Generic::HashSet<int>_>__get_Item_MV__WorldObject__WorldObjectType_
                          );
-      if (pHVar4 != (HashSet_1_System_Int32Enum_ *)0x0) {
-        bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
-                HashSet_1_System_Int32Enum__Contains
+      if (pHVar4 != (HashSet_1_System_UInt32_ *)0x0) {
+        bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+                HashSet_1_System_UInt32__Contains
                           (pHVar4,(wo->fields)._.id,
                            MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
         if (bVar2 == 0) {
@@ -398,16 +398,16 @@ void Assembly-CSharp.dll::MVWorldObjectClientManager+WorldObjectMapping::
         }
         pDVar1 = (this->fields).worldObjectTypeSets;
         if (pDVar1 != (Dictionary_2_MV_WorldObject_WorldObjectType_HashSet_1_System_Int32_ *)0x0) {
-          pHVar4 = (HashSet_1_System_Int32Enum_ *)
+          pHVar4 = (HashSet_1_System_UInt32_ *)
                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
                    ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
                              ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,
                               (wo->fields)._.type,
                               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::WorldObjectType,_System::Collections::Generic::HashSet<int>_>__get_Item_MV__WorldObject__WorldObjectType_
                              );
-          if (pHVar4 != (HashSet_1_System_Int32Enum_ *)0x0) {
-            System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
-            HashSet_1_System_Int32Enum__Remove
+          if (pHVar4 != (HashSet_1_System_UInt32_ *)0x0) {
+            System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+            HashSet_1_System_UInt32__Remove
                       (pHVar4,(wo->fields)._.id,
                        MethodInfo__System__Collections__Generic__HashSet<int>__Remove_int_);
             pDVar1 = (this->fields).worldObjectTypeSets;
@@ -676,9 +676,9 @@ void Assembly-CSharp.dll::MVWorldObjectClientManager+WorldObjectMapping::
   ::TextResourceManager+FontAssetRef]::
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
             (this_01,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
-  ppDVar1 = &(this->fields).gameObjectIdToWorldObjectIdMap;
-  *ppDVar1 = (Dictionary_2_System_Int32_System_Int32_ *)this_01;
-  func_?(ppDVar1,this_01);
+  (this->fields).gameObjectIdToWorldObjectIdMap = (Dictionary_2_System_Int32_System_Int32_ *)this_01
+  ;
+  func_?(&(this->fields).gameObjectIdToWorldObjectIdMap,this_01);
   this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
              *)func_?(
                               TypeInfo__System__Collections__Generic__Dictionary<System::Type,_MV::WorldObject::WorldObjectType>
@@ -690,10 +690,10 @@ void Assembly-CSharp.dll::MVWorldObjectClientManager+WorldObjectMapping::
              MethodInfo__System__Collections__Generic__Dictionary<System::Type,_MV::WorldObject::WorldObjectType>__Dictionary__
             );
   method_00 = (MethodInfo *)&(this->fields).typeWorldObjectTypeMap;
-  *(Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ **)
-   method_00 = this_02;
+  (this->fields).typeWorldObjectTypeMap =
+       (Dictionary_2_System_Type_MV_WorldObject_WorldObjectType_ *)this_02;
   func_?(method_00,this_02);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }

@@ -301,7 +301,7 @@ List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSetting
   TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterPrototypeSettings__GameBoosterPrototypeSettingsManager____c__DisplayClass9_0
   ;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   this = (Object__Class *)
          func_?(
@@ -314,17 +314,15 @@ List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSetting
              MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__List__
             );
   if (value != (Object *)0x0) {
-    pOVar1 = value + 1;
-    pOVar1->klass = this;
-    func_?(pOVar1,this);
-    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?(
-                                TypeInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>
-                                );
-    Assembly-CSharp.dll::DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::
-    IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+    value[1].klass = this;
+    func_?(value + 1);
+    this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+              func_?(
+                             TypeInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>
+                             );
+    Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+    SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
               (this_00,value,
                MethodInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterPrototypeSettings__GameBoosterPrototypeSettingsManager____c__DisplayClass9_0___GetSettingsSettingsList_b__0_MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingWrapperBase_
                ,(MethodInfo *)0x0);
@@ -332,12 +330,12 @@ List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSetting
               (root,(Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
                      *)this_00,(MethodInfo *)0x0);
     return (List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSettings_GameBoosterSettingTypes_GameBoosterSettingWithGoldSetting_
-            *)pOVar1->klass;
+            *)value[1].klass;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  pLVar3 = (List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSettings_GameBoosterSettingTypes_GameBoosterSettingWithGoldSetting_
-            *)(*pcVar2)();
-  return pLVar3;
+  pcVar1 = (code *)swi(3);
+  pLVar2 = (List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSettings_GameBoosterSettingTypes_GameBoosterSettingWithGoldSetting_
+            *)(*pcVar1)();
+  return pLVar2;
 }
 

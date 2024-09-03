@@ -6,12 +6,11 @@ void Assembly-CSharp.dll::CreySettings::CreySettings__ctor
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  ppSVar1 = &(this->fields)._TouristPromotionCreyURL_k__BackingField;
   (this->fields)._TouristPromotionCreyFrequencyPercent_k__BackingField = frequency;
-  *ppSVar1 = url;
-  func_?(ppSVar1,url);
+  (this->fields)._TouristPromotionCreyURL_k__BackingField = url;
+  func_?(&(this->fields)._TouristPromotionCreyURL_k__BackingField,url);
   (this->fields)._TouristPromotionCreyRedirect_k__BackingField = shouldRedirect;
   return;
 }

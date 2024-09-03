@@ -1,0 +1,29 @@
+
+/* RotationGizmoHotkeys() */
+
+void Assembly-CSharp.dll::RTG::RotationGizmoHotkeys::RotationGizmoHotkeys__ctor
+               (RotationGizmoHotkeys *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__RTG__Hotkeys);
+    func_?(&StringLiteral_Enable_snapping);
+    cRam_? = '\x01';
+  }
+  staticData.CanHaveMouseButtons = 0;
+  this_00 = (Hotkeys *)func_?(TypeInfo__RTG__Hotkeys);
+  Hotkeys::Hotkeys__ctor_1(this_00,StringLiteral_Enable_snapping,staticData,(MethodInfo *)0x0);
+  if (this_00 != (Hotkeys *)0x0) {
+    Hotkeys::Hotkeys_set_Key(this_00,KeyCode__Enum_None,(MethodInfo *)0x0);
+    (this_00->fields)._lCtrl = 1;
+    (this->fields)._enableSnapping = this_00;
+    func_?(&(this->fields)._enableSnapping,this_00);
+    Settings::Settings__ctor((Settings *)this,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
+  return;
+}
+

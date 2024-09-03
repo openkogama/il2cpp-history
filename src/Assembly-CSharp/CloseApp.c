@@ -23,7 +23,7 @@ void Assembly-CSharp.dll::CloseApp::CloseApp_Close(CloseApp *this,MethodInfo *me
   }
   method_00 = TypeInfo__CloseApp____c__DisplayClass3_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if ((TypeInfo__CloseApp____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CloseApp____c);

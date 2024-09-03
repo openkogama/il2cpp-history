@@ -125,7 +125,7 @@ void Assembly-CSharp.dll::PickColorCursor::PickColorCursor__ctor
     cRam_? = '\x01';
   }
   (this->fields).currentMaterial = 1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__PrefabPool);

@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -21,6 +22,8 @@ public class SettingsInputFieldSlider : MonoBehaviour
 	private SettingsSlider settingsSlider;
 	[SerializeField]
 	private bool round;
+	[SerializeField]
+	private string suffix;
 	private string key;
 
 	// Properties
@@ -29,14 +32,14 @@ public class SettingsInputFieldSlider : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass16_0
+	private sealed class __c__DisplayClass18_0
 	{
 		// Fields
 		public SettingsInputFieldSlider __4__this;
 		public float floatValue;
 
 		// Constructors
-		public __c__DisplayClass16_0();
+		public __c__DisplayClass18_0();
 
 		// Methods
 		internal void _ValueChanged_b__0(IHandleSettingChanged handler, BaseEventData data);
@@ -47,6 +50,7 @@ public class SettingsInputFieldSlider : MonoBehaviour
 
 	// Methods
 	public void SetText(string text);
+	public void Initialize(string key, Dictionary<object, object> itemData, Func<string, ValueTuple<float, float>> mimMaxFunc);
 	public void Initialize(string key, float value);
 	public void Initialize(string key, int value);
 	private void Update();

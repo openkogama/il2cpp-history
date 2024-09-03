@@ -13,6 +13,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 	// Fields
+	private const float MaxAllowedBulletAirTime = 20f;
 	public OnHitDelegate onHit;
 	public OnHitDelegate onHitLocal;
 	public Action<Ray> onOutOfRange;
@@ -31,7 +32,9 @@ public class Bullet : MonoBehaviour
 	private bool hit;
 	private bool hasCleaned;
 	private float currentAirTime;
+	private float targetAirTime;
 	private float maxAirTime;
+	private float handToMuzzleDist;
 	private Vector3 startPosition;
 	private Vector3 targetPosition;
 	private Transform localTransform;
@@ -80,12 +83,14 @@ public class Bullet : MonoBehaviour
 	// Methods
 	private void Awake();
 	private void Update();
-	public static Bullet CreateBullet(PoolEnums bulletType, Vector3 pos);
+	public static Bullet CreateBullet(PoolEnums bulletType, Vector3 pos, float handToMuzzleDist = 0f);
+	public void SetBulletTrail(Color bulletColor, Color trailColor, float speed, float size);
 	public void ResetBullet();
 	public void ReturnToPool(PoolEnums bulletType);
-	public void Fire(float speed, float range, Ray lineOfFire, HashSet<int> ignoreWoIDs);
-	private void DoFire(float speed, float maxRange);
+	public void Fire(float speed, float range, Ray lineOfFire, HashSet<int> ignoreWoIDs, bool thirdPersonWeapon = false);
+	private void DoFire(float speed, float maxRange, bool thirdPersonWeapon);
 	private void OnStateChanged(CullingGroupEvent cullingGroupEvent);
-	public Vector3 FindTargetPos(float maxRange);
+	private Vector3 FindTargetPos(float maxRange);
+	private Ray CalculateLineOfFireFromMuzzle(float maxRange);
 }
 

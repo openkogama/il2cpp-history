@@ -12,10 +12,10 @@ Assembly-CSharp.dll::RegisteredPromotionPopup::RegisteredPromotionPopup_FadeOutA
   }
   method_00 = TypeInfo__RegisteredPromotionPopup___FadeOutAndPopPromotion_d__17;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -78,11 +78,10 @@ code_?:
     pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar4 == (MVNetworkGame *)0x0) goto code_?;
     pAVar5 = (pMVar4->fields).OnWinningConditionFulfilled;
-    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+    this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
               (this_01,(Object *)this,
                MethodInfo__RegisteredPromotionPopup__OnWinningConditionFulfilled_IWinningCondition_,
                (MethodInfo *)0x0);
@@ -169,7 +168,7 @@ void Assembly-CSharp.dll::RegisteredPromotionPopup::RegisteredPromotionPopup_Kog
       cRam_? = '\x01';
     }
     value = (Object *)func_?(TypeInfo__RegisteredPromotionPopup____c__DisplayClass19_0);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (value,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_2);
     pGVar3 = (this->fields).goToKogamaPopupPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -225,7 +224,7 @@ void Assembly-CSharp.dll::RegisteredPromotionPopup::RegisteredPromotionPopup_OnC
   }
   method_00 = TypeInfo__RegisteredPromotionPopup___FadeOutAndPopPromotion_d__17;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
@@ -250,21 +249,18 @@ void Assembly-CSharp.dll::RegisteredPromotionPopup::RegisteredPromotionPopup_OnD
     cRam_? = '\x01';
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    return;
-  }
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar2 == (MVNetworkGame *)0x0) {
-    func_?();
-  }
-  else {
+  if (bVar1 != 0) {
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar2 == (MVNetworkGame *)0x0) {
+      func_?();
+      goto code_?;
+    }
     pAVar3 = (pMVar2->fields).OnWinningConditionFulfilled;
-    ppAVar4 = &(pMVar2->fields).OnWinningConditionFulfilled;
-    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?(TypeInfo__System__Action<IWinningCondition>);
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+    this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+              func_?(TypeInfo__System__Action<IWinningCondition>);
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
               (this_00,(Object *)this,
                MethodInfo__RegisteredPromotionPopup__OnWinningConditionFulfilled_IWinningCondition_,
                (MethodInfo *)0x0);
@@ -272,33 +268,32 @@ void Assembly-CSharp.dll::RegisteredPromotionPopup::RegisteredPromotionPopup_OnD
                           ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
     unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
     if (unaff_ESI == (Delegate *)0x0) {
-      *ppAVar4 = (Action_1_IWinningCondition_ *)0x0;
-      pDStack5 = (Delegate *)ppAVar4;
-      pAStack6 = (Action_1_IWinningCondition___Class *)unaff_ESI;
-      func_?();
-      return;
+      (pMVar2->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+      pAStack4 = (Action_1_IWinningCondition___Class *)0x0;
     }
-    pAStack6 = TypeInfo__System__Action<IWinningCondition>;
-    pDStack5 = unaff_ESI;
-    pAVar3 = (Action_1_IWinningCondition_ *)func_?();
-    if (pAVar3 != (Action_1_IWinningCondition_ *)0x0) {
-      *ppAVar4 = pAVar3;
-      unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
-      pAStack6 = TypeInfo__System__Action<IWinningCondition>;
+    else {
+      pAStack4 = TypeInfo__System__Action<IWinningCondition>;
       pDStack5 = unaff_ESI;
-      pAStack6 = (Action_1_IWinningCondition___Class *)func_?();
-      if (pAStack6 != (Action_1_IWinningCondition___Class *)0x0) {
-        pDStack5 = (Delegate *)ppAVar4;
+      pAVar3 = (Action_1_IWinningCondition_ *)func_?();
+      if (pAVar3 == (Action_1_IWinningCondition_ *)0x0) {
+code_?:
+        pDStack5 = unaff_ESI;
+        pAStack4 = unaff_EDI;
         func_?();
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
         return;
       }
+      (pMVar2->fields).OnWinningConditionFulfilled = pAVar3;
+      unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
+      pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+      pDStack5 = unaff_ESI;
+      pAStack4 = (Action_1_IWinningCondition___Class *)func_?();
+      if (pAStack4 == (Action_1_IWinningCondition___Class *)0x0) goto code_?;
     }
+    pDStack5 = (Delegate *)&(pMVar2->fields).OnWinningConditionFulfilled;
+    func_?();
   }
-  pDStack5 = unaff_ESI;
-  pAStack6 = unaff_EDI;
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
   return;
 }
 
@@ -332,7 +327,7 @@ void Assembly-CSharp.dll::RegisteredPromotionPopup::RegisteredPromotionPopup_OnV
     }
     method_00 = TypeInfo__RegisteredPromotionPopup___FadeOutAndPopPromotion_d__17;
     value = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     value[1].klass = (Object__Class *)0x0;
     value[2].klass = (Object__Class *)this;
@@ -417,7 +412,7 @@ void Assembly-CSharp.dll::RegisteredPromotionPopup::RegisteredPromotionPopup_Sho
   }
   method_00 = TypeInfo__RegisteredPromotionPopup____c__DisplayClass19_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   pGVar1 = (this->fields).goToKogamaPopupPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {

@@ -98,7 +98,7 @@ void Assembly-CSharp.dll::WindTurbineSettings::WindTurbineSettings_Initialize
                       );
     iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32(TVar7.m_Index,(MethodInfo *)0x0);
     if (pSVar6 != (SettingsInputFieldSlider *)0x0) {
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                 (pSVar6,StringLiteral_windPitch,iVar2,(MethodInfo *)0x0);
       pSVar4 = (pWVar1->fields).powerSlider;
       TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
@@ -122,7 +122,7 @@ void Assembly-CSharp.dll::WindTurbineSettings::WindTurbineSettings_Initialize
                           );
         iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32(TVar7.m_Index,(MethodInfo *)0x0);
         if (pSVar6 != (SettingsInputFieldSlider *)0x0) {
-          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                     (pSVar6,StringLiteral_windSize,iVar2,(MethodInfo *)0x0);
           return;
         }
@@ -152,8 +152,8 @@ void Assembly-CSharp.dll::WindTurbineSettings::WindTurbineSettings_OnSettingChan
     func_?(&StringLiteral_Setting_changed_);
     cRam_? = '\x01';
   }
-  str2 = ::StringLiteral__;
-  pSVar1 = StringLiteral_Setting_changed_;
+  str0 = StringLiteral_Setting_changed_;
+  pSVar1 = ::StringLiteral__;
   if (value == (Object *)0x0) {
     str3 = (String *)0x0;
   }
@@ -161,7 +161,7 @@ void Assembly-CSharp.dll::WindTurbineSettings::WindTurbineSettings_OnSettingChan
     str3 = (String *)
            (*(code *)(value->klass->vtable).ToString.method)(value,value->klass[1]._0.image);
   }
-  pSVar1 = mscorlib.dll::System::String::String_Concat_5(pSVar1,key,str2,str3,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::String::String_Concat_5(str0,key,pSVar1,str3,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }

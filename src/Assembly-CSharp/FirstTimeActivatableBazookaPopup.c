@@ -56,7 +56,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup::
   method_01 = TypeInfo__FirstTimeActivatableBazookaPopup____c__DisplayClass7_0;
   value = (Debug_2__Class *)func_?();
   object_00 = value;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
   pTVar2 = (this->fields).tabGroup;
   (this->fields).showing = 1;
@@ -197,7 +197,7 @@ code_?:
               }
             }
           }
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     ((Object *)&stack0xffffffb8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
@@ -308,7 +308,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup::FirstTimeActivatable
   method_01 = TypeInfo__FirstTimeActivatableBazookaPopup____c__DisplayClass7_0;
   value = (Debug_2__Class *)func_?();
   object_00 = value;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
   pTVar2 = (this->fields).tabGroup;
   (this->fields).showing = 1;
@@ -449,7 +449,7 @@ code_?:
               }
             }
           }
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     ((Object *)&stack0xffffffb8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
@@ -591,10 +591,10 @@ bool Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup::
         iVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
                           (this_02,(MethodInfo *)0x0);
         bVar4 = 0;
-        if (bVar1 == 0) {
-          bVar4 = bVar2;
+        if (0 < iVar3) {
+          bVar4 = (bVar1 ^ 1) & bVar2;
         }
-        return 0 < iVar3 & bVar4;
+        return bVar4;
       }
     }
   }

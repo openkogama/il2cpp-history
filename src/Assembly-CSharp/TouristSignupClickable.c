@@ -35,7 +35,7 @@ void Assembly-CSharp.dll::TouristSignupClickable::TouristSignupClickable_OnClick
       return;
     }
     value = (Object *)func_?(TypeInfo__TouristSignupClickable____c__DisplayClass4_0);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (value,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_1);
     pGVar4 = (this->fields).redirectNotAllowedPopup;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {

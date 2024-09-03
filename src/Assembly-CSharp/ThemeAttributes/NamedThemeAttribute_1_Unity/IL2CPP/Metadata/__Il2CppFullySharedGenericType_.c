@@ -70,13 +70,13 @@ void Assembly-CSharp.dll::ThemeAttributes::NamedThemeAttribute`1[Unity::IL2CPP::
 
 {
   puVar1 = (undefined4 *)func_?(this,method->klass->rgctx_data->klass->fields);
-  pMVar2 = method->klass->rgctx_data[4].method;
-  uVar3 = (*pMVar2->methodPointer)(this,*puVar1,pMVar2);
-  pFVar4 = method->klass->rgctx_data->klass->fields;
-  _guard_check_icall(pFVar4,4);
-  puVar1 = (undefined4 *)func_?(this,pFVar4);
-  *puVar1 = uVar3;
-  func_?(pFVar4->type,puVar1,0);
+  uVar2 = (*(method->klass->rgctx_data[4].method)->methodPointer)
+                    (this,*puVar1,method->klass->rgctx_data[4].rgctxDataDummy);
+  pFVar3 = method->klass->rgctx_data->klass->fields;
+  _guard_check_icall(pFVar3,4);
+  puVar1 = (undefined4 *)func_?(this,pFVar3);
+  *puVar1 = uVar2;
+  func_?(pFVar3->type,puVar1,0);
   return;
 }
 
@@ -96,38 +96,38 @@ String * Assembly-CSharp.dll::ThemeAttributes::NamedThemeAttribute`1[Unity::IL2C
     cRam_? = '\x01';
   }
   if ((str == (String *)0x0) || (::StringLiteral____ == (String *)0x0)) goto code_?;
-  iVar1 = (::StringLiteral____->fields)._stringLength;
-  if ((str->fields)._stringLength < iVar1) {
+  if ((str->fields)._stringLength < (::StringLiteral____->fields)._stringLength) {
 code_?:
     str = mscorlib.dll::System::String::String_Concat_3(::StringLiteral____,str,(MethodInfo *)0x0);
     if (str == (String *)0x0) goto code_?;
   }
   else {
-    pSVar2 = mscorlib.dll::System::String::String_Substring_1(str,0,iVar1,(MethodInfo *)0x0);
-    bVar3 = mscorlib.dll::System::String::String_op_Inequality
-                      (pSVar2,::StringLiteral____,(MethodInfo *)0x0);
-    if (bVar3 != 0) goto code_?;
+    pSVar1 = mscorlib.dll::System::String::String_Substring_1
+                       (str,0,(::StringLiteral____->fields)._stringLength,(MethodInfo *)0x0);
+    bVar2 = mscorlib.dll::System::String::String_op_Inequality
+                      (pSVar1,::StringLiteral____,(MethodInfo *)0x0);
+    if (bVar2 != 0) goto code_?;
   }
   if (::StringLiteral___ != (String *)0x0) {
-    iVar1 = (str->fields)._stringLength;
-    length = (::StringLiteral___->fields)._stringLength;
-    if (length <= iVar1) {
-      pSVar2 = mscorlib.dll::System::String::String_Substring_1
-                         (str,iVar1 - length,length,(MethodInfo *)0x0);
-      bVar3 = mscorlib.dll::System::String::String_op_Inequality
-                        (pSVar2,::StringLiteral___,(MethodInfo *)0x0);
-      if (bVar3 == 0) {
+    iVar3 = (str->fields)._stringLength;
+    if ((::StringLiteral___->fields)._stringLength <= iVar3) {
+      pSVar1 = mscorlib.dll::System::String::String_Substring_1
+                         (str,iVar3 - (::StringLiteral___->fields)._stringLength,
+                          (::StringLiteral___->fields)._stringLength,(MethodInfo *)0x0);
+      bVar2 = mscorlib.dll::System::String::String_op_Inequality
+                        (pSVar1,::StringLiteral___,(MethodInfo *)0x0);
+      if (bVar2 == 0) {
         return str;
       }
     }
-    pSVar2 = mscorlib.dll::System::String::String_Concat_3(str,::StringLiteral___,(MethodInfo *)0x0)
+    pSVar1 = mscorlib.dll::System::String::String_Concat_3(str,::StringLiteral___,(MethodInfo *)0x0)
     ;
-    return pSVar2;
+    return pSVar1;
   }
 code_?:
   func_?();
   pcVar4 = (code *)swi(3);
-  pSVar2 = (String *)(*pcVar4)();
-  return pSVar2;
+  pSVar1 = (String *)(*pcVar4)();
+  return pSVar1;
 }
 

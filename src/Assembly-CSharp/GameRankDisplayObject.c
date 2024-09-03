@@ -27,15 +27,15 @@ void Assembly-CSharp.dll::GameRankDisplayObject::GameRankDisplayObject_SetAmount
                (GameRankDisplayObject *this,GamePassTier__Enum requiredRank,MethodInfo *method)
 
 {
-  GVar1 = requiredRank & 0xff;
+  GVar1 = requiredRank;
+  requiredRank = requiredRank & 0xff;
   pTVar2 = (this->fields).frontText;
-  requiredRank = GVar1;
   pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&requiredRank,(MethodInfo *)0x0);
   if (pTVar2 != (TextMesh *)0x0) {
     UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
               (pTVar2,pSVar3,(MethodInfo *)0x0);
     pTVar2 = (this->fields).backText;
-    requiredRank = GVar1;
+    requiredRank = GVar1 & 0xff;
     pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&requiredRank,(MethodInfo *)0x0);
     if (pTVar2 != (TextMesh *)0x0) {
       requiredRank = GamePassTier__Enum_Tier0;

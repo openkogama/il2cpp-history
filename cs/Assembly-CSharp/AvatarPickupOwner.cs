@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using MV.Common;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -28,8 +27,11 @@ public class AvatarPickupOwner : MVPickupOwner
 	// Methods
 	public void Init(MVRuntimeDataVariable currentItemRuntimeDataVariable, MVRuntimeDataVariable isFiringRuntimeDataVariable, MVAvatar mvAvatar, WorldObjectSkillDataManager skillsDataManager);
 	private void InitSkills(WorldObjectSkillDataManager skillDataManager);
-	protected override void Equip(AvatarItemType type, int variantId);
+	protected override void SetupItemTransform();
 	protected override void Unequip();
 	public void HandlePointing(bool inputFire);
+	public void HandlePointWeapon();
+	public void HandlePointWeaponOnlyNetworked();
+	public void HandleSetHandEquippableItem(bool value);
 }
 

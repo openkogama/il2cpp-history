@@ -12,10 +12,10 @@ Assembly-CSharp.dll::PurchasedAccessoryPreviewer::PurchasedAccessoryPreviewer_Di
   }
   method_00 = TypeInfo__PurchasedAccessoryPreviewer___DisplayAndFadeImages_d__17;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -130,9 +130,8 @@ String * Assembly-CSharp.dll::PurchasedAccessoryPreviewer::PurchasedAccessoryPre
         pSVar4 = mscorlib.dll::System::String::String_Split_4
                            (pSVar3,pSVar4,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
         if (pSVar4 != (String__Array *)0x0) {
-          uVar6 = pSVar4->max_length;
-          if (uVar6 <= uVar6 - 1) goto code_?;
-          pSVar3 = pSVar4->vector[uVar6 - 1];
+          if (pSVar4->max_length <= pSVar4->max_length - 1) goto code_?;
+          pSVar3 = pSVar4->vector[pSVar4->max_length - 1];
           pSVar4 = (String__Array *)func_?(TypeInfo__System__String,1);
           pSVar5 = ::StringLiteral__;
           if (pSVar4 != (String__Array *)0x0) {
@@ -163,8 +162,8 @@ String * Assembly-CSharp.dll::PurchasedAccessoryPreviewer::PurchasedAccessoryPre
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  pSVar3 = (String *)(*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  pSVar3 = (String *)(*pcVar6)();
   return pSVar3;
 }
 
@@ -182,57 +181,62 @@ void Assembly-CSharp.dll::PurchasedAccessoryPreviewer::PurchasedAccessoryPreview
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  pRVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_currentResolution
-                      ((Resolution *)&stack0xffffffdc,(MethodInfo *)0x0);
-  TStack_2._id_k__BackingField = pRVar1->m_Width;
-  TStack_2.m_Data = (Object *)pRVar1->m_Height;
-  TStack_2.m_Children =
+  TStack_1._id_k__BackingField = 0;
+  TStack_1.m_Data = (Object *)0x0;
+  TStack_1.m_Children = (IList_1_UnityEngine_UIElements_TreeViewItemData_1_System_Object_ *)0x0;
+  uStack_2 = 0;
+  pRVar3 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_currentResolution
+                     ((Resolution *)&stack0xffffffdc,(MethodInfo *)0x0);
+  TStack_1._id_k__BackingField = pRVar3->m_Width;
+  TStack_1.m_Data = (Object *)pRVar3->m_Height;
+  TStack_1.m_Children =
        (IList_1_UnityEngine_UIElements_TreeViewItemData_1_System_Object_ *)
-       (pRVar1->m_RefreshRate).numerator;
-  uStack_3 = (pRVar1->m_RefreshRate).denominator;
+       (pRVar3->m_RefreshRate).numerator;
+  uStack_2 = (pRVar3->m_RefreshRate).denominator;
   pOVar4 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::TreeViewItemData`1[System::
-            Object]::TreeViewItemData_1_System_Object__get_data(&TStack_2,(MethodInfo *)0x0);
-  ppAVar5 = &(this->fields).previewData;
+           Object]::TreeViewItemData_1_System_Object__get_data(&TStack_1,(MethodInfo *)0x0);
   (this->fields).targetHeight = (int32_t)pOVar4;
-  *ppAVar5 = previewAccessories;
-  func_?(ppAVar5,previewAccessories);
-  pAVar6 = *ppAVar5;
-  if (pAVar6 != (AccessoryDataClient__Array *)0x0) {
-    uVar7 = (this->fields).currentStreamingAssetIndex;
-    if (pAVar6->max_length <= uVar7) goto code_?;
-    pAVar8 = pAVar6->vector[uVar7];
-    if (pAVar8 != (AccessoryDataClient *)0x0) {
-      if ((pAVar8->fields)._.lvl == 0) {
-code_?:
-        if (pAVar6->max_length <= uVar7) goto code_?;
-        if (pAVar8 != (AccessoryDataClient *)0x0) {
-          iVar9 = (pAVar8->fields)._.cost;
+  (this->fields).previewData = previewAccessories;
+  func_?(&(this->fields).previewData,previewAccessories);
+  pAVar5 = (this->fields).previewData;
+  if (pAVar5 != (AccessoryDataClient__Array *)0x0) {
+    uVar6 = (this->fields).currentStreamingAssetIndex;
+    if (pAVar5->max_length <= uVar6) goto code_?;
+    if (pAVar5->vector[uVar6] != (AccessoryDataClient *)0x0) {
+      if (((pAVar5->vector[uVar6]->fields)._.lvl == 0) ||
+         (pAVar5 = (this->fields).previewData,
+         (pAVar5->vector[(this->fields).currentStreamingAssetIndex]->fields)._.cost != 0)) {
+        pAVar5 = (this->fields).previewData;
+        if (pAVar5 != (AccessoryDataClient__Array *)0x0) {
+          uVar6 = (this->fields).currentStreamingAssetIndex;
+          if (pAVar5->max_length <= uVar6) goto code_?;
+          iVar7 = (pAVar5->vector[uVar6]->fields)._.cost;
           if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pRVar10 = Styles::Styles_GetAccessoryColorsFromPrice(iVar9,(MethodInfo *)0x0);
+          pRVar8 = Styles::Styles_GetAccessoryColorsFromPrice(iVar7,(MethodInfo *)0x0);
 code_?:
-          if (pRVar10 != (RarityStylesDef *)0x0) {
-            fVar11 = (pRVar10->fields).backgroundColor.g;
-            fVar12 = (pRVar10->fields).backgroundColor.b;
-            fVar13 = (pRVar10->fields).backgroundColor.a;
-            pAVar6 = *ppAVar5;
-            (this->fields).targetColorBackground.r = (pRVar10->fields).backgroundColor.r;
-            (this->fields).targetColorBackground.g = fVar11;
-            (this->fields).targetColorBackground.b = fVar12;
-            (this->fields).targetColorBackground.a = fVar13;
-            fVar11 = (pRVar10->fields).glowColor.g;
-            fVar12 = (pRVar10->fields).glowColor.b;
-            fVar13 = (pRVar10->fields).glowColor.a;
-            (this->fields).targetColorGlow.r = (pRVar10->fields).glowColor.r;
-            (this->fields).targetColorGlow.g = fVar11;
-            (this->fields).targetColorGlow.b = fVar12;
-            (this->fields).targetColorGlow.a = fVar13;
-            if (pAVar6 != (AccessoryDataClient__Array *)0x0) {
-              uVar7 = (this->fields).currentStreamingAssetIndex;
-              if (pAVar6->max_length <= uVar7) goto code_?;
+          if (pRVar8 != (RarityStylesDef *)0x0) {
+            fVar9 = (pRVar8->fields).backgroundColor.g;
+            fVar10 = (pRVar8->fields).backgroundColor.b;
+            fVar11 = (pRVar8->fields).backgroundColor.a;
+            pAVar5 = (this->fields).previewData;
+            (this->fields).targetColorBackground.r = (pRVar8->fields).backgroundColor.r;
+            (this->fields).targetColorBackground.g = fVar9;
+            (this->fields).targetColorBackground.b = fVar10;
+            (this->fields).targetColorBackground.a = fVar11;
+            fVar9 = (pRVar8->fields).glowColor.g;
+            fVar10 = (pRVar8->fields).glowColor.b;
+            fVar11 = (pRVar8->fields).glowColor.a;
+            (this->fields).targetColorGlow.r = (pRVar8->fields).glowColor.r;
+            (this->fields).targetColorGlow.g = fVar9;
+            (this->fields).targetColorGlow.b = fVar10;
+            (this->fields).targetColorGlow.a = fVar11;
+            if (pAVar5 != (AccessoryDataClient__Array *)0x0) {
+              uVar6 = (this->fields).currentStreamingAssetIndex;
+              if (pAVar5->max_length <= uVar6) goto code_?;
               url = PurchasedAccessoryPreviewer_GetImageUrl
-                              (this,pAVar6->vector[uVar7],(MethodInfo *)0x0);
+                              (this,pAVar5->vector[uVar6],(MethodInfo *)0x0);
               this_00 = (this->fields).imageLoader;
               this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
               UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
@@ -248,28 +252,25 @@ code_?:
           }
         }
       }
-      else {
-        if (pAVar6->max_length <= uVar7) goto code_?;
-        if (pAVar8 != (AccessoryDataClient *)0x0) {
-          if ((pAVar8->fields)._.cost != 0) goto code_?;
-          if (pAVar6->max_length <= uVar7) goto code_?;
-          if (pAVar8 == (AccessoryDataClient *)0x0) goto code_?;
-          iVar9 = (pAVar8->fields)._.lvl;
+      else if (pAVar5 != (AccessoryDataClient__Array *)0x0) {
+        uVar6 = (this->fields).currentStreamingAssetIndex;
+        if (pAVar5->max_length <= uVar6) goto code_?;
+        if (pAVar5->vector[uVar6] != (AccessoryDataClient *)0x0) {
+          iVar7 = (pAVar5->vector[uVar6]->fields)._.lvl;
           if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pRVar10 = Styles::Styles_GetAccessoryColorsFromLevel(iVar9,(MethodInfo *)0x0);
+          pRVar8 = Styles::Styles_GetAccessoryColorsFromLevel(iVar7,(MethodInfo *)0x0);
           goto code_?;
         }
       }
     }
   }
-code_?:
   func_?();
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -286,7 +287,7 @@ void Assembly-CSharp.dll::PurchasedAccessoryPreviewer::PurchasedAccessoryPreview
   }
   method_00 = TypeInfo__PurchasedAccessoryPreviewer___DisplayAndFadeImages_d__17;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;

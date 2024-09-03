@@ -72,7 +72,7 @@ void Assembly-CSharp.dll::ShopRepository::ShopRepository_CreateWorldObjectHierar
               TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<int,_MV::WorldObject::MVItem>_>
              ) {
             puVar14 = (undefined4 *)
-                     (iVar12 + 0xc0 + *(int *)(*(int *)(iVar12 + 0x58) + 4 + (uint)uVar13 * 8) * 8);
+                     (iVar12 + (*(int *)(*(int *)(iVar12 + 0x58) + 4 + (uint)uVar13 * 8) + 0x18) * 8);
             goto code_?;
           }
           uVar13 = uVar13 + 1;
@@ -162,7 +162,7 @@ Assembly-CSharp.dll::ShopRepository::ShopRepository_GetItemsByCategory
       cRam_? = '\x01';
     }
     value = (Object *)func_?(TypeInfo__ShopRepository____c__DisplayClass8_0);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (value,ExceptionArgument__Enum_obj,unaff_ESI);
     if (value != (Object *)0x0) {
       value[1].klass = pOVar1;
@@ -285,7 +285,7 @@ Assembly-CSharp.dll::ShopRepository::ShopRepository_GetItemsByItemCategories
   }
   method_00 = TypeInfo__ShopRepository____c__DisplayClass8_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)itemCategories;
@@ -461,15 +461,15 @@ void Assembly-CSharp.dll::ShopRepository::ShopRepository_ReorganizeItemsByItemTy
                         );
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   ((Object *)&stack0xffffffb4,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__,
                    (MethodInfo *)method_00);
         uStack_1 = 0xffffffff;
         if ((notifyOfChange != 0) &&
-           (pAVar10 = (this->fields)._.OnRepositoryChange,
-           pAVar10 != (ARepository_OnRepositoryChangeDelegate *)0x0)) {
+           ((this->fields)._.OnRepositoryChange != (ARepository_OnRepositoryChangeDelegate *)0x0)) {
+          pAVar10 = (this->fields)._.OnRepositoryChange;
           LStack_8._list = (pAVar10->fields)._._.method;
           (*(pAVar10->fields)._._.invoke_impl)();
         }
@@ -638,9 +638,8 @@ void Assembly-CSharp.dll::ShopRepository::ShopRepository__ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__Dictionary__
             );
-  ppDVar1 = &(this->fields).shopInventory;
-  *ppDVar1 = (Dictionary_2_System_Int32_MV_WorldObject_MVItem_ *)this_00;
-  func_?(ppDVar1,this_00);
+  (this->fields).shopInventory = (Dictionary_2_System_Int32_MV_WorldObject_MVItem_ *)this_00;
+  func_?(&(this->fields).shopInventory,this_00);
   this_01 = (List_1_System_Int32_ *)
             func_?(TypeInfo__System__Collections__Generic__List<int>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -648,9 +647,8 @@ void Assembly-CSharp.dll::ShopRepository::ShopRepository__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<int>__List__);
-  ppLVar2 = &(this->fields).ItemCategoriesInShop;
-  *ppLVar2 = this_01;
-  func_?(ppLVar2,this_01);
+  (this->fields).ItemCategoriesInShop = this_01;
+  func_?(&(this->fields).ItemCategoriesInShop,this_01);
   return;
 }
 

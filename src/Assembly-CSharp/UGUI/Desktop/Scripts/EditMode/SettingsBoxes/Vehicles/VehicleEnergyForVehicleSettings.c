@@ -177,7 +177,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                   pSVar4 = mscorlib.dll::System::String::String_Concat_3
                                       (StringLiteral_BlueprintData_,pSVar4,(MethodInfo *)0x0);
                   if (pSVar15 != (SettingsInputFieldSlider *)0x0) {
-                    SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                    SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                               (pSVar15,pSVar4,iVar14,(MethodInfo *)0x0);
                     pSVar4 = StringLiteral_vehicleEnergyConsumption;
                     pVVar1 = (this->fields).vehicleBaseSettings;
@@ -227,7 +227,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                                                 (StringLiteral_BlueprintData_,pSVar4,
                                                  (MethodInfo *)0x0);
                             if (pSVar15 != (SettingsInputFieldSlider *)0x0) {
-                              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                                         (pSVar15,pSVar4,iVar14,(MethodInfo *)0x0);
                               return;
                             }

@@ -27,10 +27,9 @@ void Assembly-CSharp.dll::UIStack::UIStack_DebugStack(UIStack *this,MethodInfo *
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_____Debugging_UI_Stack____,(MethodInfo *)0x0);
   IStack_1.m_value = 0;
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).stackableUiElements;
-  while (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    if ((this_00->fields)._size <= IStack_1.m_value) {
+  pLVar2 = (this->fields).stackableUiElements;
+  while (pLVar2 != (List_1_UIStack_StackElement_ *)0x0) {
+    if ((pLVar2->fields)._size <= IStack_1.m_value) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
@@ -38,60 +37,61 @@ void Assembly-CSharp.dll::UIStack::UIStack_DebugStack(UIStack *this,MethodInfo *
                 ((Object *)StringLiteral_____Debugging_UI_Stack____,(MethodInfo *)0x0);
       return;
     }
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).stackableUiElements;
     if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
-    RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
             RegexCharClass+SingleRange]::
             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                       (this_00,IStack_1.m_value,
                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
                       );
     values = (String__Array *)func_?(TypeInfo__System__String,6);
-    pSVar3 = ::StringLiteral_____;
+    pSVar4 = ::StringLiteral_____;
     if (values == (String__Array *)0x0) break;
     if (values->max_length == 0) goto code_?;
     values->vector[0] = ::StringLiteral_____;
-    func_?(values->vector,pSVar3);
-    EStack_4.klass =
+    func_?(values->vector,pSVar4);
+    EStack_5.klass =
          (Enum__Class *)mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
     if (values->max_length < 2) goto code_?;
-    values->vector[1] = (String *)EStack_4.klass;
+    values->vector[1] = (String *)EStack_5.klass;
     func_?(values->vector + 1);
-    EStack_4.klass = (Enum__Class *)::StringLiteral___;
     if (values->max_length < 3) goto code_?;
+    EStack_5.klass = (Enum__Class *)::StringLiteral___;
     values->vector[2] = ::StringLiteral___;
     func_?(values->vector + 2);
-    if (RVar2 == (RegexCharClass_SingleRange)0x0) break;
-    EStack_4.klass = (Enum__Class *)TypeInfo__UIGroupFlags;
-    EStack_4.monitor = (MonitorData *)0xffffffff;
-    uStack_5 = *(undefined4 *)((int)RVar2 + 0x18);
-    EStack_4.klass =
-         (Enum__Class *)mscorlib.dll::System::Enum::Enum_ToString(&EStack_4,(MethodInfo *)0x0);
+    if (RVar3 == (RegexCharClass_SingleRange)0x0) break;
+    EStack_5.klass = (Enum__Class *)TypeInfo__UIGroupFlags;
+    EStack_5.monitor = (MonitorData *)0xffffffff;
+    uStack_6 = *(undefined4 *)((int)RVar3 + 0x18);
+    EStack_5.klass =
+         (Enum__Class *)mscorlib.dll::System::Enum::Enum_ToString(&EStack_5,(MethodInfo *)0x0);
     if (values->max_length < 4) goto code_?;
-    values->vector[3] = (String *)EStack_4.klass;
+    values->vector[3] = (String *)EStack_5.klass;
     func_?(values->vector + 3);
-    EStack_4.klass = (Enum__Class *)::StringLiteral____;
     if (values->max_length < 5) goto code_?;
+    EStack_5.klass = (Enum__Class *)::StringLiteral____;
     values->vector[4] = ::StringLiteral____;
     func_?(values->vector + 4);
-    EStack_4.klass = *(Enum__Class **)((int)RVar2 + 0x1c);
+    EStack_5.klass = *(Enum__Class **)((int)RVar3 + 0x1c);
     if (values->max_length < 6) goto code_?;
-    values->vector[5] = (String *)EStack_4.klass;
+    values->vector[5] = (String *)EStack_5.klass;
     func_?(values->vector + 5);
-    pSVar3 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
+    pSVar4 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar3,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar4,(MethodInfo *)0x0);
     IStack_1.m_value = IStack_1.m_value + 1;
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).stackableUiElements;
+    pLVar2 = (this->fields).stackableUiElements;
   }
   func_?();
 code_?:
-  EStack_4.klass = (Enum__Class *)&UNK_?;
+  EStack_5.klass = (Enum__Class *)&UNK_?;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -184,42 +184,46 @@ void Assembly-CSharp.dll::UIStack::UIStack_HideAll(UIStack *this,MethodInfo *met
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).stackableUiElements;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_7,this_00,
+                       (&LStack_8,this_00,
                         MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
                        );
-    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
-    LStack_8._index = pLVar6->_index;
-    LStack_8._version = pLVar6->_version;
-    LStack_8._current = *(Object **)&pLVar6->_current;
-    LStack_7._version = 0;
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
     uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
     while( true ) {
       bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_8,
+                        (&LStack_6,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
                         );
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)&LStack_8,
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                  ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
                    ,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if (((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0) ||
-         (*(GameObject **)((int)LStack_8._current + 8) == (GameObject *)0x0)) break;
+      if (((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) ||
+         (*(GameObject **)((int)LStack_6._current + 8) == (GameObject *)0x0)) break;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (*(GameObject **)((int)LStack_8._current + 8),0,(MethodInfo *)0x0);
+                (*(GameObject **)((int)LStack_6._current + 8),0,(MethodInfo *)0x0);
     }
   }
   func_?();
@@ -258,45 +262,49 @@ void Assembly-CSharp.dll::UIStack::UIStack_HideAllExceptStackBottom
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).stackableUiElements;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_7,this_00,
+                       (&LStack_8,this_00,
                         MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
                        );
-    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
-    LStack_8._index = pLVar6->_index;
-    LStack_8._version = pLVar6->_version;
-    LStack_8._current = *(Object **)&pLVar6->_current;
-    LStack_7._version = 0;
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
     uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
     while( true ) {
       do {
         bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_8,
+                          (&LStack_6,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
                           );
         if (bVar9 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    ((Object *)&LStack_8,
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                    ((Object *)&LStack_6,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
                      ,unaff_EDI);
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0)
+        if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
         goto code_?;
-      } while (*(int *)((int)LStack_8._current + 0x18) == 0x100);
-      if (*(GameObject **)((int)LStack_8._current + 8) == (GameObject *)0x0) break;
+      } while (*(int *)((int)LStack_6._current + 0x18) == 0x100);
+      if (*(GameObject **)((int)LStack_6._current + 8) == (GameObject *)0x0) break;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (*(GameObject **)((int)LStack_8._current + 8),0,(MethodInfo *)0x0);
+                (*(GameObject **)((int)LStack_6._current + 8),0,(MethodInfo *)0x0);
     }
   }
 code_?:
@@ -367,37 +375,37 @@ bool Assembly-CSharp.dll::UIStack::UIStack_IsUIElementBlocked
                 ((Object *)pSVar2,(MethodInfo *)0x0);
       return 0;
     }
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).stackableUiElements;
+    pLVar3 = (this->fields).stackableUiElements;
     index = IVar1.m_value + 1;
-    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      if ((this_00->fields)._size <= index) {
+    if (pLVar3 != (List_1_UIStack_StackElement_ *)0x0) {
+      if ((pLVar3->fields)._size <= index) {
         return 0;
       }
       do {
-        if ((this_00->fields)._size <= index) {
+        if ((pLVar3->fields)._size <= index) {
           return 0;
         }
+        this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                  (this->fields).stackableUiElements;
         if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-           (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+           (RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                               (this_00,index,
                                MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                              ), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-        if (*(char *)((int)RVar3 + 0xc) != '\0') {
+                              ), RVar4 == (RegexCharClass_SingleRange)0x0)) break;
+        if (*(char *)((int)RVar4 + 0xc) != '\0') {
           return 1;
         }
-        this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                  (this->fields).stackableUiElements;
+        pLVar3 = (this->fields).stackableUiElements;
         index = index + 1;
-      } while (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0);
+      } while (pLVar3 != (List_1_UIStack_StackElement_ *)0x0);
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 
@@ -430,46 +438,50 @@ void Assembly-CSharp.dll::UIStack::UIStack_LateUpdate(UIStack *this,MethodInfo *
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).stackableUiElements;
   if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
 code_?:
     func_?();
-    pcVar6 = (code *)swi(3);
-    (*pcVar6)();
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
     return;
   }
-  pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
            RegexCharClass+SingleRange]::
            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                     (&LStack_8,this_00,
+                     (&LStack_9,this_00,
                       MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
                      );
-  LStack_9._list = (List_1_System_Object_ *)pLVar7->_list;
-  LStack_9._index = pLVar7->_index;
-  LStack_9._version = pLVar7->_version;
-  LStack_9._current = *(Object **)&pLVar7->_current;
-  LStack_8._version = 0;
+  LStack_6._list = (List_1_System_Object_ *)pLVar8->_list;
+  LStack_6._index = pLVar8->_index;
+  LStack_6._version = pLVar8->_version;
+  LStack_6._current = *(Object **)&pLVar8->_current;
+  LStack_9._version = 0;
   uStack_1 = 1;
-  LStack_8._current = (RegexCharClass_SingleRange)&LStack_9;
+  LStack_9._current = (RegexCharClass_SingleRange)&LStack_6;
   do {
     bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
             List_1_T_Enumerator_System_Object__MoveNext
-                      (&LStack_9,
+                      (&LStack_6,
                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
                       );
     if (bVar10 == 0) goto code_?;
-    if ((RegexCharClass_SingleRange)LStack_9._current == (RegexCharClass_SingleRange)0x0)
+    if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
     goto code_?;
-  } while (*(char *)((int)LStack_9._current + 0xc) == '\0');
+  } while (*(char *)((int)LStack_6._current + 0xc) == '\0');
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
   MVInputWrapper::MVInputWrapper_SuppressShortcutKeys((MethodInfo *)0x0);
 code_?:
   uStack_1 = 0xffffffff;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)&LStack_9,
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            ((Object *)&LStack_6,
              (ExceptionArgument__Enum)
              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
              ,unaff_EDI);
@@ -488,24 +500,24 @@ GameObject * Assembly-CSharp.dll::UIStack::UIStack_Peak(UIStack *this,MethodInfo
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).stackableUiElements;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  pLVar1 = (this->fields).stackableUiElements;
+  if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
+    RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
             RegexCharClass+SingleRange]::
             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      (this_00,(this_00->fields)._size + -1,
+                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                       (this->fields).stackableUiElements,(pLVar1->fields)._size + -1,
                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
                       );
-    if (RVar1 != (RegexCharClass_SingleRange)0x0) {
-      return *(GameObject **)((int)RVar1 + 8);
+    if (RVar2 != (RegexCharClass_SingleRange)0x0) {
+      return *(GameObject **)((int)RVar2 + 8);
     }
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  pGVar4 = (GameObject *)(*pcVar3)();
-  return pGVar4;
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  pGVar5 = (GameObject *)(*pcVar4)();
+  return pGVar5;
 }
 
 
@@ -618,34 +630,38 @@ void Assembly-CSharp.dll::UIStack::UIStack_PopToGroup
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  uStack_6 = 0;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
+  uStack_7 = 0;
   method_00 = (MethodInfo *)(this->fields).stackableUiElements;
   if (method_00 != (MethodInfo *)0x0) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_8,
+                       (&LStack_9,
                         (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                         method_00,
                         MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
                        );
-    LStack_9._list = (List_1_System_Object_ *)pLVar7->_list;
-    LStack_9._index = pLVar7->_index;
-    LStack_9._version = pLVar7->_version;
-    LStack_9._current = *(Object **)&pLVar7->_current;
-    LStack_8._version = 0;
+    LStack_6._list = (List_1_System_Object_ *)pLVar8->_list;
+    LStack_6._index = pLVar8->_index;
+    LStack_6._version = pLVar8->_version;
+    LStack_6._current = *(Object **)&pLVar8->_current;
+    LStack_9._version = 0;
     uStack_1 = 1;
-    LStack_8._current = (RegexCharClass_SingleRange)&LStack_9;
+    LStack_9._current = (RegexCharClass_SingleRange)&LStack_6;
     do {
       bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_9,
+                        (&LStack_6,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
                         );
       if (bVar10 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)&LStack_9,
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                  ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
                    ,method_00);
@@ -664,13 +680,13 @@ void Assembly-CSharp.dll::UIStack::UIStack_PopToGroup
                   ((Object *)StringLiteral_PopToGroup__Element_not_found_ab,(MethodInfo *)0x0);
         goto code_?;
       }
-      if ((RegexCharClass_SingleRange)LStack_9._current == (RegexCharClass_SingleRange)0x0)
+      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
       goto code_?;
-    } while (*(UIGroupFlags__Enum *)((int)LStack_9._current + 0x18) != group);
-    uStack_6 = 1;
+    } while (*(UIGroupFlags__Enum *)((int)LStack_6._current + 0x18) != group);
+    uStack_7 = 1;
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)&LStack_9,
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)&LStack_6,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
                ,method_00);
@@ -739,29 +755,29 @@ bool Assembly-CSharp.dll::UIStack::UIStack_PopToStackElement
     func_?(&StringLiteral_PopToStackElement__Element_not_f);
     cRam_? = '\x01';
   }
-  pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-           (this->fields).stackableUiElements;
-  if (pLVar4 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).stackableUiElements;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                         *)&stack0xffffffd0,pLVar4,
+                         *)&stack0xffffffd0,this_00,
                         MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
                        );
-    method_00 = (Object__Class *)pLVar5->_list;
-    method_01 = (MethodInfo *)pLVar5->_version;
-    RVar6 = pLVar5->_current;
+    method_00 = (Object__Class *)pLVar4->_list;
+    method_01 = (MethodInfo *)pLVar4->_version;
+    RVar5 = pLVar4->_current;
     uStack_1 = 1;
     do {
-      bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+      bVar6 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
                         ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc0,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
                         );
-      if (bVar7 == 0) {
+      if (bVar6 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   ((Object *)&stack0xffffffc0,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
@@ -782,17 +798,17 @@ bool Assembly-CSharp.dll::UIStack::UIStack_PopToStackElement
         *unaff_FS_OFFSET = uStack_3;
         return 0;
       }
-      if (RVar6 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      pOVar8 = *(Object_1 **)((int)RVar6 + 8);
+      if (RVar5 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      pOVar7 = *(Object_1 **)((int)RVar5 + 8);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         method_00 = (Object__Class *)&UNK_?;
         func_?();
       }
-      bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                        (pOVar8,(Object_1 *)gameObject,(MethodInfo *)0x0);
-    } while (bVar7 == 0);
+      bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                        (pOVar7,(Object_1 *)gameObject,(MethodInfo *)0x0);
+    } while (bVar6 == 0);
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)&stack0xffffffc0,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
@@ -804,26 +820,26 @@ bool Assembly-CSharp.dll::UIStack::UIStack_PopToStackElement
         func_?();
         cRam_? = '\x01';
       }
-      pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (this->fields).stackableUiElements;
-      if (pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
-      RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      pLVar8 = (this->fields).stackableUiElements;
+      if (pLVar8 == (List_1_UIStack_StackElement_ *)0x0) break;
+      RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (pLVar4,(pLVar4->fields)._size + -1,
+                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                         (this->fields).stackableUiElements,(pLVar8->fields)._size + -1,
                          MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
                         );
-      if ((RVar6 == (RegexCharClass_SingleRange)0x0) || (*(Void **)((int)RVar6 + 8) == (Void *)0x0))
+      if ((RVar5 == (RegexCharClass_SingleRange)0x0) || (*(Void **)((int)RVar5 + 8) == (Void *)0x0))
       break;
-      pOVar8 = (Object_1 *)
+      pOVar7 = (Object_1 *)
                UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-               UnsafeUtility_AsRef_1(*(Void **)((int)RVar6 + 8),(MethodInfo *)0x0);
+               UnsafeUtility_AsRef_1(*(Void **)((int)RVar5 + 8),(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        (pOVar8,(Object_1 *)gameObject,(MethodInfo *)0x0);
-      if (bVar7 == 0) {
+      bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        (pOVar7,(Object_1 *)gameObject,(MethodInfo *)0x0);
+      if (bVar6 == 0) {
         *unaff_FS_OFFSET = uStack_3;
         return 1;
       }
@@ -833,18 +849,18 @@ bool Assembly-CSharp.dll::UIStack::UIStack_PopToStackElement
                        );
         cRam_? = '\x01';
       }
-      pLVar9 = (this->fields).stackableUiElements;
-      if (pLVar9 == (List_1_UIStack_StackElement_ *)0x0) break;
-      UIStack_RemoveElement(this,(pLVar9->fields)._size + -1,(MethodInfo *)0x0);
+      pLVar8 = (this->fields).stackableUiElements;
+      if (pLVar8 == (List_1_UIStack_StackElement_ *)0x0) break;
+      UIStack_RemoveElement(this,(pLVar8->fields)._size + -1,(MethodInfo *)0x0);
       UIStack_UpdateStack(this,(MethodInfo *)0x0);
     }
   }
 code_?:
-  uVar10 = func_?();
-  func_?(uVar10);
-  pcVar11 = (code *)swi(3);
-  bVar7 = (*pcVar11)();
-  return bVar7;
+  uVar9 = func_?();
+  func_?(uVar9);
+  pcVar10 = (code *)swi(3);
+  bVar6 = (*pcVar10)();
+  return bVar6;
 }
 
 
@@ -905,25 +921,25 @@ void Assembly-CSharp.dll::UIStack::UIStack_Push
     pOVar2[2].monitor = (MonitorData *)group;
   }
   index = 0;
-  this_02 = (MethodInfo *)(this->fields).stackableUiElements;
-  if (this_02 != (MethodInfo *)0x0) {
-    while (index < (int)this_02->name) {
-      if ((((this_02 == (MethodInfo *)0x0) ||
-           (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+  pLVar3 = (this->fields).stackableUiElements;
+  if (pLVar3 != (List_1_UIStack_StackElement_ *)0x0) {
+    while (index < (pLVar3->fields)._size) {
+      method_00 = (MethodInfo *)(this->fields).stackableUiElements;
+      if ((((method_00 == (MethodInfo *)0x0) ||
+           (RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                               ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                               this_02,index,
+                               method_00,index,
                                MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                              ), RVar3 == (RegexCharClass_SingleRange)0x0)) ||
-          (*(Object_1 **)((int)RVar3 + 8) == (Object_1 *)0x0)) ||
-         (iVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
-                            (*(Object_1 **)((int)RVar3 + 8),(MethodInfo *)0x0),
+                              ), RVar4 == (RegexCharClass_SingleRange)0x0)) ||
+          (*(Object_1 **)((int)RVar4 + 8) == (Object_1 *)0x0)) ||
+         (iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
+                            (*(Object_1 **)((int)RVar4 + 8),(MethodInfo *)0x0),
          gameObject == (GameObject *)0x0)) goto code_?;
-      method_00 = this_02;
-      iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
+      iVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
                         ((Object_1 *)gameObject,(MethodInfo *)0x0);
-      if (iVar4 == iVar5) {
+      if (iVar5 == iVar6) {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -931,18 +947,18 @@ void Assembly-CSharp.dll::UIStack::UIStack_Push
                   ((Object *)StringLiteral_You_cannot_push_an_object_to_the,(MethodInfo *)0x0);
         return;
       }
-      this_02 = (MethodInfo *)(this->fields).stackableUiElements;
+      pLVar3 = (this->fields).stackableUiElements;
       index = index + 1;
-      if (this_02 == (MethodInfo *)0x0) goto code_?;
+      if (pLVar3 == (List_1_UIStack_StackElement_ *)0x0) goto code_?;
     }
     pOVar2 = (Object *)func_?(TypeInfo__UIStack__StackElement);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (pOVar2,ExceptionArgument__Enum_obj,method_00);
     if (gameObject != (GameObject *)0x0) {
-      pSVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
+      pSVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
                          ((Object_1 *)gameObject,(MethodInfo *)0x0);
-      pOVar2[3].monitor = (MonitorData *)pSVar6;
-      func_?(&pOVar2[3].monitor,pSVar6);
+      pOVar2[3].monitor = (MonitorData *)pSVar7;
+      func_?(&pOVar2[3].monitor,pSVar7);
       pOVar2[1].klass = (Object__Class *)gameObject;
       func_?(pOVar2 + 1,gameObject);
       *(bool *)&pOVar2[1].monitor =
@@ -966,56 +982,56 @@ void Assembly-CSharp.dll::UIStack::UIStack_Push
         UIStack_HideAllExceptStackBottom(this,(MethodInfo *)0x0);
       }
       if (*(char *)&pOVar2[1].monitor != '\0') {
-        pGVar7 = (this->fields).blockingObject;
-        if ((pGVar7 == (GameObject *)0x0) ||
-           (pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (pGVar7,(MethodInfo *)0x0), pTVar8 == (Transform *)0x0))
+        pGVar8 = (this->fields).blockingObject;
+        if ((pGVar8 == (GameObject *)0x0) ||
+           (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                (pGVar8,(MethodInfo *)0x0), pTVar9 == (Transform *)0x0))
         goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                  (pTVar8,(MethodInfo *)0x0);
+                  (pTVar9,(MethodInfo *)0x0);
         this_00 = (this->fields).inputBlocker;
         if (this_00 == (DisableInput *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                   ((Behaviour *)this_00,*(bool *)&pOVar2[2].klass,(MethodInfo *)0x0);
-        pGVar7 = (this->fields).blockingObject;
-        if ((pGVar7 == (GameObject *)0x0) ||
-           (pGVar7 = (GameObject *)
+        pGVar8 = (this->fields).blockingObject;
+        if ((pGVar8 == (GameObject *)0x0) ||
+           (pGVar8 = (GameObject *)
                       UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
-                      UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar7,(MethodInfo *)0x0),
-           pGVar7 == (GameObject *)0x0)) goto code_?;
+                      UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar8,(MethodInfo *)0x0),
+           pGVar8 == (GameObject *)0x0)) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar7,1,(MethodInfo *)0x0);
+                  (pGVar8,1,(MethodInfo *)0x0);
       }
       if (pOVar2[1].klass != (Object__Class *)0x0) {
-        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           ((GameObject *)pOVar2[1].klass,(MethodInfo *)0x0);
-        pGVar7 = (this->fields).root;
-        if ((pGVar7 != (GameObject *)0x0) &&
+        pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            ((GameObject *)pOVar2[1].klass,(MethodInfo *)0x0);
+        pGVar8 = (this->fields).root;
+        if ((pGVar8 != (GameObject *)0x0) &&
            (parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (pGVar7,(MethodInfo *)0x0), pTVar8 != (Transform *)0x0)) {
+                               (pGVar8,(MethodInfo *)0x0), pTVar9 != (Transform *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (pTVar8,parent,0,(MethodInfo *)0x0);
+                    (pTVar9,parent,0,(MethodInfo *)0x0);
           if (pOVar2[1].klass != (Object__Class *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                       ((GameObject *)pOVar2[1].klass,1,(MethodInfo *)0x0);
-            this_01 = (this->fields).stackableUiElements;
-            if (this_01 != (List_1_UIStack_StackElement_ *)0x0) {
+            pLVar3 = (this->fields).stackableUiElements;
+            if (pLVar3 != (List_1_UIStack_StackElement_ *)0x0) {
               mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
               List_1_System_Object__Add
-                        ((List_1_System_Object_ *)this_01,pOVar2,
+                        ((List_1_System_Object_ *)pLVar3,pOVar2,
                          MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__Add_UIStack__StackElement_
                         );
               if ((this->fields).stackReady == 0) {
                 UIStack_HideAll(this,(MethodInfo *)0x0);
               }
               UIStack_UpdateBlocking(this,(MethodInfo *)0x0);
-              pAVar9 = (this->fields).uiStackChangedPublisher;
-              if (pAVar9 == (Action *)0x0) {
+              if ((this->fields).uiStackChangedPublisher == (Action *)0x0) {
                 return;
               }
-              pvStack10 = (pAVar9->fields)._._.method;
-              pvStack11 = (pAVar9->fields)._._.method_code;
-              (*(pAVar9->fields)._._.invoke_impl)();
+              pAVar10 = (this->fields).uiStackChangedPublisher;
+              pvStack11 = (pAVar10->fields)._._.method;
+              pvStack12 = (pAVar10->fields)._._.method_code;
+              (*(pAVar10->fields)._._.invoke_impl)();
               return;
             }
           }
@@ -1025,8 +1041,8 @@ void Assembly-CSharp.dll::UIStack::UIStack_Push
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -1098,16 +1114,16 @@ void Assembly-CSharp.dll::UIStack::UIStack_SetStackReady(UIStack *this,MethodInf
                    );
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-           (this->fields).stackableUiElements;
-  if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+  pLVar1 = (this->fields).stackableUiElements;
+  if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
     if ((pLVar1->fields)._size == 0) {
       return;
     }
     RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
             RegexCharClass+SingleRange]::
             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      (pLVar1,(pLVar1->fields)._size + -1,
+                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                       (this->fields).stackableUiElements,(pLVar1->fields)._size + -1,
                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
                       );
     if ((RVar2 != (RegexCharClass_SingleRange)0x0) &&
@@ -1119,42 +1135,42 @@ void Assembly-CSharp.dll::UIStack::UIStack_SetStackReady(UIStack *this,MethodInf
         func_?();
         cRam_? = '\x01';
       }
-      pLVar3 = (this->fields).stackableUiElements;
-      if (pLVar3 != (List_1_UIStack_StackElement_ *)0x0) {
-        if (1 < (pLVar3->fields)._size) {
-          index = (pLVar3->fields)._size;
+      pLVar1 = (this->fields).stackableUiElements;
+      if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
+        if (1 < (pLVar1->fields)._size) {
+          index = (pLVar1->fields)._size;
           index_00 = index + -2;
           do {
             index = index + -1;
-            pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                      (this->fields).stackableUiElements;
-            if ((pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+            if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
                || (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                            RegularExpressions::RegexCharClass+SingleRange]::
                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar1,index,
+                                     (pLVar3,index,
                                       MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
                                      ), RVar2 == (RegexCharClass_SingleRange)0x0))
             goto code_?;
             if (*(char *)((int)RVar2 + 0xd) != '\0') break;
-            pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                      (this->fields).stackableUiElements;
-            if ((pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+            if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
                || (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                            RegularExpressions::RegexCharClass+SingleRange]::
                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar1,index,
+                                     (pLVar3,index,
                                       MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
                                      ), RVar2 == (RegexCharClass_SingleRange)0x0))
             goto code_?;
             if (*(char *)((int)RVar2 + 0xf) != '\0') break;
-            pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                      (this->fields).stackableUiElements;
-            if (((pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
+            if (((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
                  ) || (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                                RegularExpressions::RegexCharClass+SingleRange]::
                                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                         (pLVar1,index_00,
+                                         (pLVar3,index_00,
                                           MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
                                          ), RVar2 == (RegexCharClass_SingleRange)0x0)) ||
                (*(GameObject **)((int)RVar2 + 8) == (GameObject *)0x0)) goto code_?;
@@ -1164,20 +1180,18 @@ void Assembly-CSharp.dll::UIStack::UIStack_SetStackReady(UIStack *this,MethodInf
           } while (-1 < index_00);
         }
         UIStack_UpdateBlocking(this,(MethodInfo *)0x0);
-        pAVar4 = (this->fields).uiStackChangedPublisher;
-        if (pAVar4 == (Action *)0x0) {
+        if ((this->fields).uiStackChangedPublisher == (Action *)0x0) {
           return;
         }
-        pvStack5 = (pAVar4->fields)._._.method;
-        (*(pAVar4->fields)._._.invoke_impl)();
+        (*(((this->fields).uiStackChangedPublisher)->fields)._._.invoke_impl)();
         return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1281,33 +1295,33 @@ void Assembly-CSharp.dll::UIStack::UIStack_SubscribeToStackChanges
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).uiStackChangedPublisher;
-  pAVar2 = (Action *)
+  pAVar1 = (Action *)
            mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)*ppAVar1,(Delegate *)onStackChanged,(MethodInfo *)0x0);
-  if (pAVar2 == (Action *)0x0) {
-    *ppAVar1 = (Action *)0x0;
-    func_?(ppAVar1);
+                     ((Delegate *)(this->fields).uiStackChangedPublisher,(Delegate *)onStackChanged,
+                      (MethodInfo *)0x0);
+  if (pAVar1 == (Action *)0x0) {
+    (this->fields).uiStackChangedPublisher = (Action *)0x0;
+    func_?(&(this->fields).uiStackChangedPublisher);
     return;
   }
-  pAVar3 = (Action *)0x0;
-  if (pAVar2->klass == TypeInfo__System__Action) {
-    pAVar3 = pAVar2;
+  pAVar2 = (Action *)0x0;
+  if (pAVar1->klass == TypeInfo__System__Action) {
+    pAVar2 = pAVar1;
   }
-  if (pAVar3 != (Action *)0x0) {
-    *ppAVar1 = pAVar3;
-    pAVar3 = (Action *)0x0;
-    if (pAVar2->klass == TypeInfo__System__Action) {
-      pAVar3 = pAVar2;
+  if (pAVar2 != (Action *)0x0) {
+    (this->fields).uiStackChangedPublisher = pAVar2;
+    pAVar2 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar2 = pAVar1;
     }
-    if (pAVar3 != (Action *)0x0) {
-      func_?(ppAVar1);
+    if (pAVar2 != (Action *)0x0) {
+      func_?(&(this->fields).uiStackChangedPublisher);
       return;
     }
   }
-  func_?(pAVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?(pAVar1);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1322,33 +1336,33 @@ void Assembly-CSharp.dll::UIStack::UIStack_UnSubscribeToStackChanges
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).uiStackChangedPublisher;
-  pAVar2 = (Action *)
+  pAVar1 = (Action *)
            mscorlib.dll::System::Delegate::Delegate_Remove
-                     ((Delegate *)*ppAVar1,(Delegate *)onStackChanged,(MethodInfo *)0x0);
-  if (pAVar2 == (Action *)0x0) {
-    *ppAVar1 = (Action *)0x0;
-    func_?(ppAVar1);
+                     ((Delegate *)(this->fields).uiStackChangedPublisher,(Delegate *)onStackChanged,
+                      (MethodInfo *)0x0);
+  if (pAVar1 == (Action *)0x0) {
+    (this->fields).uiStackChangedPublisher = (Action *)0x0;
+    func_?(&(this->fields).uiStackChangedPublisher);
     return;
   }
-  pAVar3 = (Action *)0x0;
-  if (pAVar2->klass == TypeInfo__System__Action) {
-    pAVar3 = pAVar2;
+  pAVar2 = (Action *)0x0;
+  if (pAVar1->klass == TypeInfo__System__Action) {
+    pAVar2 = pAVar1;
   }
-  if (pAVar3 != (Action *)0x0) {
-    *ppAVar1 = pAVar3;
-    pAVar3 = (Action *)0x0;
-    if (pAVar2->klass == TypeInfo__System__Action) {
-      pAVar3 = pAVar2;
+  if (pAVar2 != (Action *)0x0) {
+    (this->fields).uiStackChangedPublisher = pAVar2;
+    pAVar2 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar2 = pAVar1;
     }
-    if (pAVar3 != (Action *)0x0) {
-      func_?(ppAVar1);
+    if (pAVar2 != (Action *)0x0) {
+      func_?(&(this->fields).uiStackChangedPublisher);
       return;
     }
   }
-  func_?(pAVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?(pAVar1);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1415,60 +1429,61 @@ void Assembly-CSharp.dll::UIStack::UIStack_UpdateBlocking(UIStack *this,MethodIn
       if (*(char *)((int)RVar5 + 0xe) == '\0') {
         if (pIVar6 == (Image *)0x0) goto code_?;
         puVar7 = (undefined4 *)func_?();
-        pIVar6 = (this->fields).blockingObjectImage;
         uVar8 = *puVar7;
         uVar9 = puVar7[1];
         uVar10 = puVar7[2];
         fVar11 = (this->fields).origBlockerAlpha;
-        if (pIVar6 == (Image *)0x0) goto code_?;
       }
       else {
         if (pIVar6 == (Image *)0x0) goto code_?;
         puVar7 = (undefined4 *)func_?();
-        pIVar6 = (this->fields).blockingObjectImage;
         uVar8 = *puVar7;
         uVar9 = puVar7[1];
         uVar10 = puVar7[2];
-        if (pIVar6 == (Image *)0x0) goto code_?;
         fVar11 = 0.0;
       }
-      func_?(0x17,pIVar6,uVar8,uVar9,uVar10,fVar11);
-      pGVar2 = (this->fields).blockingObject;
-      if ((pGVar2 != (GameObject *)0x0) &&
-         (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                             (pGVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                  (pTVar3,(MethodInfo *)0x0);
-        pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 (this->fields).stackableUiElements;
-        if ((pLVar4 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
-           (((RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                      RegularExpressions::RegexCharClass+SingleRange]::
-                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                (pLVar4,index,
-                                 MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                                ), RVar5 != (RegexCharClass_SingleRange)0x0 &&
-             (*(GameObject **)((int)RVar5 + 8) != (GameObject *)0x0)) &&
-            (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (*(GameObject **)((int)RVar5 + 8),(MethodInfo *)0x0),
-            pTVar3 != (Transform *)0x0)))) {
-          index_00 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetSiblingIndex
-                               (pTVar3,(MethodInfo *)0x0);
-          pGVar2 = (this->fields).blockingObject;
-          if ((pGVar2 != (GameObject *)0x0) &&
-             (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                 (pGVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetSiblingIndex
-                      (pTVar3,index_00,(MethodInfo *)0x0);
+      pIVar6 = (this->fields).blockingObjectImage;
+      if (pIVar6 != (Image *)0x0) {
+        func_?(0x17,pIVar6,uVar8,uVar9,uVar10,fVar11);
+        pGVar2 = (this->fields).blockingObject;
+        if ((pGVar2 != (GameObject *)0x0) &&
+           (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                               (pGVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
+                    (pTVar3,(MethodInfo *)0x0);
+          pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                   (this->fields).stackableUiElements;
+          if ((pLVar4 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+             && (((RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                           RegularExpressions::RegexCharClass+SingleRange]::
+                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                     (pLVar4,index,
+                                      MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                                     ), RVar5 != (RegexCharClass_SingleRange)0x0 &&
+                  (*(GameObject **)((int)RVar5 + 8) != (GameObject *)0x0)) &&
+                 (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                           GameObject_get_transform
+                                     (*(GameObject **)((int)RVar5 + 8),(MethodInfo *)0x0),
+                 pTVar3 != (Transform *)0x0)))) {
+            index_00 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetSiblingIndex
+                                 (pTVar3,(MethodInfo *)0x0);
             pGVar2 = (this->fields).blockingObject;
             if ((pGVar2 != (GameObject *)0x0) &&
-               (pGVar2 = (GameObject *)
-                         UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
-                         UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0),
-               pGVar2 != (GameObject *)0x0)) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar2,1,(MethodInfo *)0x0);
-              return;
+               (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                         GameObject_get_transform(pGVar2,(MethodInfo *)0x0),
+               pTVar3 != (Transform *)0x0)) {
+              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetSiblingIndex
+                        (pTVar3,index_00,(MethodInfo *)0x0);
+              pGVar2 = (this->fields).blockingObject;
+              if ((pGVar2 != (GameObject *)0x0) &&
+                 (pGVar2 = (GameObject *)
+                           UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
+                           UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0),
+                 pGVar2 != (GameObject *)0x0)) {
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          (pGVar2,1,(MethodInfo *)0x0);
+                return;
+              }
             }
           }
         }
@@ -1497,16 +1512,16 @@ void Assembly-CSharp.dll::UIStack::UIStack_UpdateStack(UIStack *this,MethodInfo 
                    );
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-           (this->fields).stackableUiElements;
-  if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+  pLVar1 = (this->fields).stackableUiElements;
+  if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
     if ((pLVar1->fields)._size == 0) {
       return;
     }
     RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
             RegexCharClass+SingleRange]::
             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      (pLVar1,(pLVar1->fields)._size + -1,
+                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                       (this->fields).stackableUiElements,(pLVar1->fields)._size + -1,
                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
                       );
     if ((RVar2 != (RegexCharClass_SingleRange)0x0) &&
@@ -1518,42 +1533,42 @@ void Assembly-CSharp.dll::UIStack::UIStack_UpdateStack(UIStack *this,MethodInfo 
         func_?();
         cRam_? = '\x01';
       }
-      pLVar3 = (this->fields).stackableUiElements;
-      if (pLVar3 != (List_1_UIStack_StackElement_ *)0x0) {
-        if (1 < (pLVar3->fields)._size) {
-          index = (pLVar3->fields)._size;
+      pLVar1 = (this->fields).stackableUiElements;
+      if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
+        if (1 < (pLVar1->fields)._size) {
+          index = (pLVar1->fields)._size;
           index_00 = index + -2;
           do {
             index = index + -1;
-            pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                      (this->fields).stackableUiElements;
-            if ((pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+            if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
                || (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                            RegularExpressions::RegexCharClass+SingleRange]::
                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar1,index,
+                                     (pLVar3,index,
                                       MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
                                      ), RVar2 == (RegexCharClass_SingleRange)0x0))
             goto code_?;
             if (*(char *)((int)RVar2 + 0xd) != '\0') break;
-            pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                      (this->fields).stackableUiElements;
-            if ((pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+            if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
                || (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                            RegularExpressions::RegexCharClass+SingleRange]::
                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar1,index,
+                                     (pLVar3,index,
                                       MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
                                      ), RVar2 == (RegexCharClass_SingleRange)0x0))
             goto code_?;
             if (*(char *)((int)RVar2 + 0xf) != '\0') break;
-            pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                      (this->fields).stackableUiElements;
-            if (((pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
+            if (((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
                  ) || (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                                RegularExpressions::RegexCharClass+SingleRange]::
                                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                         (pLVar1,index_00,
+                                         (pLVar3,index_00,
                                           MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
                                          ), RVar2 == (RegexCharClass_SingleRange)0x0)) ||
                (*(GameObject **)((int)RVar2 + 8) == (GameObject *)0x0)) goto code_?;
@@ -1563,20 +1578,18 @@ void Assembly-CSharp.dll::UIStack::UIStack_UpdateStack(UIStack *this,MethodInfo 
           } while (-1 < index_00);
         }
         UIStack_UpdateBlocking(this,(MethodInfo *)0x0);
-        pAVar4 = (this->fields).uiStackChangedPublisher;
-        if (pAVar4 == (Action *)0x0) {
+        if ((this->fields).uiStackChangedPublisher == (Action *)0x0) {
           return;
         }
-        pvStack5 = (pAVar4->fields)._._.method;
-        (*(pAVar4->fields)._._.invoke_impl)();
+        (*(((this->fields).uiStackChangedPublisher)->fields)._._.invoke_impl)();
         return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1599,9 +1612,8 @@ void Assembly-CSharp.dll::UIStack::UIStack__ctor(UIStack *this,MethodInfo *metho
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__List__);
-  ppLVar1 = &(this->fields).stackableUiElements;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).stackableUiElements = this_00;
+  func_?(&(this->fields).stackableUiElements,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

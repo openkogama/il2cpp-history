@@ -27,7 +27,7 @@ void Assembly-CSharp.dll::WaitForTicksLocal::WaitForTicksLocal__ctor
                (WaitForTicksLocal *this,int32_t milliseconds,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   dVar1 = (double)milliseconds;
   if (dVar1 <= _UNK_?) {

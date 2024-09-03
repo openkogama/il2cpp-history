@@ -1,7 +1,7 @@
 
-/* Void <Pop>b__9_0(IUIStack, BaseEventData) */
+/* Void <Pop>b__10_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenu+<>c::ContextMenu_c__Pop_b__9_0
+void Assembly-CSharp.dll::ContextMenu+<>c::ContextMenu_c__Pop_b__10_0
                (ContextMenu_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
@@ -37,7 +37,7 @@ void Assembly-CSharp.dll::ContextMenu+<>c::ContextMenu_c__cctor(MethodInfo *meth
   }
   method_00 = TypeInfo__ContextMenu____c;
   value = (ContextMenu_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__ContextMenu____c->static_fields->__9 = value;
   func_?(TypeInfo__ContextMenu____c->static_fields,value);

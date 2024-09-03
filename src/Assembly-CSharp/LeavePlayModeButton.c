@@ -57,7 +57,7 @@ void Assembly-CSharp.dll::LeavePlayModeButton::LeavePlayModeButton_Execute
       }
       method_00 = TypeInfo__LeavePlayModeButton___ExecuteLeaveEditDelayed_d__2;
       value = (Object *)func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
       value[1].klass = (Object__Class *)0x0;
       value[2].klass = (Object__Class *)this;
@@ -117,10 +117,10 @@ Assembly-CSharp.dll::LeavePlayModeButton::LeavePlayModeButton_ExecuteLeaveEditDe
   }
   method_00 = TypeInfo__LeavePlayModeButton___ExecuteLeaveEditDelayed_d__2;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }

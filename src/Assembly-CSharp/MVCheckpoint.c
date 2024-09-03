@@ -20,18 +20,17 @@ void Assembly-CSharp.dll::MVCheckpoint::MVCheckpoint_Destroy(MVCheckpoint *this,
   pMVar1 = (this->fields).checkpointObject;
   if (pMVar1 != (MVCheckpointObject *)0x0) {
     pTVar2 = (pMVar1->fields).triggerBoxEvents;
-    pEVar3 = (EventHandler_1_Object_ *)
+    pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
              func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-              (pEVar3,(Object *)this,
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (pUVar3,(Object *)this,
                MethodInfo__MVCheckpoint__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                ,(MethodInfo *)0x0);
     if (pTVar2 != (TriggerBoxEvents *)0x0) {
       TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
-                (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
-      pUVar4 = (this->fields).useInteractor;
-      ppUVar5 = &(this->fields).useInteractor;
-      if (pUVar4 == (UseInteractor *)0x0) {
+                (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+      if ((this->fields).useInteractor == (UseInteractor *)0x0) {
 code_?:
         MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
         return;
@@ -39,33 +38,37 @@ code_?:
       pMVar1 = (this->fields).checkpointObject;
       if (pMVar1 != (MVCheckpointObject *)0x0) {
         pTVar2 = (pMVar1->fields).triggerBoxEvents;
-        pEVar3 = (EventHandler_1_Object_ *)
+        pUVar4 = (this->fields).useInteractor;
+        pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                  (pEVar3,(Object *)pUVar4,
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (pUVar3,(Object *)pUVar4,
                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar2 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
-                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
+                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
           pMVar1 = (this->fields).checkpointObject;
           if (pMVar1 != (MVCheckpointObject *)0x0) {
             pTVar2 = (pMVar1->fields).triggerBoxEvents;
-            pUVar4 = *ppUVar5;
-            pEVar3 = (EventHandler_1_Object_ *)
+            pUVar4 = (this->fields).useInteractor;
+            pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                      (pEVar3,(Object *)pUVar4,
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      (pUVar3,(Object *)pUVar4,
                        MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar2 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
-                        (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
-              if (*ppUVar5 != (UseInteractor *)0x0) {
+                        (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+              pUVar4 = (this->fields).useInteractor;
+              if (pUVar4 != (UseInteractor *)0x0) {
                 UseInteractor::UseInteractor_OnDestroy
-                          (*ppUVar5,(this->fields)._._._.data,(MethodInfo *)0x0);
-                *ppUVar5 = (UseInteractor *)0x0;
-                func_?(ppUVar5,0);
+                          (pUVar4,(this->fields)._._._.data,(MethodInfo *)0x0);
+                (this->fields).useInteractor = (UseInteractor *)0x0;
+                func_?(&(this->fields).useInteractor,0);
                 goto code_?;
               }
             }
@@ -75,8 +78,8 @@ code_?:
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -307,8 +310,6 @@ void Assembly-CSharp.dll::MVCheckpoint::MVCheckpoint_Initialize
 void Assembly-CSharp.dll::MVCheckpoint::MVCheckpoint_OnUpdate(MVCheckpoint *this,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if ((this->fields).playingAnimation == 0) {
     return;
   }
@@ -376,79 +377,82 @@ void Assembly-CSharp.dll::MVCheckpoint::MVCheckpoint_SetupUseInteractor
                    );
     cRam_? = '\x01';
   }
-  pMVar1 = (this->fields).checkpointObject;
-  if (pMVar1 != (MVCheckpointObject *)0x0) {
-    pTVar2 = (pMVar1->fields).triggerBoxEvents;
-    if (pTVar2 != (TriggerBoxEvents *)0x0) {
-      triggerCollider = TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar2,(MethodInfo *)0x0);
+  if ((this->fields).checkpointObject != (MVCheckpointObject *)0x0) {
+    pTVar1 = (((this->fields).checkpointObject)->fields).triggerBoxEvents;
+    if (pTVar1 != (TriggerBoxEvents *)0x0) {
+      triggerCollider = TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar1,(MethodInfo *)0x0);
       this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
       mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
                 (this_00,(Object *)this,MethodInfo__MVCheckpoint__DoReachCheckpoint_int_,
                  (MethodInfo *)0x0);
-      pUVar3 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
+      pUVar2 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
       UseInteractor::UseInteractor__ctor
-                (pUVar3,(MVWorldObjectClient *)this,(GameObject *)0x40200000,0,triggerCollider,
+                (pUVar2,(MVWorldObjectClient *)this,(GameObject *)0x40200000,0,triggerCollider,
                  (Func_2_Int32_Boolean_ *)this_00,(Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,
                  2.5,0,(MethodInfo *)0x0);
-      ppUVar4 = &(this->fields).useInteractor;
-      *ppUVar4 = pUVar3;
-      func_?(ppUVar4);
-      pMVar1 = (this->fields).checkpointObject;
-      if (pMVar1 != (MVCheckpointObject *)0x0) {
-        pTVar2 = (pMVar1->fields).triggerBoxEvents;
-        pUVar3 = *ppUVar4;
-        pEVar5 = (EventHandler_1_Object_ *)
+      (this->fields).useInteractor = pUVar2;
+      func_?(&(this->fields).useInteractor);
+      pMVar3 = (this->fields).checkpointObject;
+      if (pMVar3 != (MVCheckpointObject *)0x0) {
+        pTVar1 = (pMVar3->fields).triggerBoxEvents;
+        pUVar2 = (this->fields).useInteractor;
+        pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                  (pEVar5,(Object *)pUVar3,
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (pUVar4,(Object *)pUVar2,
                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
-        if (pTVar2 != (TriggerBoxEvents *)0x0) {
+        if (pTVar1 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
-          pMVar1 = (this->fields).checkpointObject;
-          if (pMVar1 != (MVCheckpointObject *)0x0) {
-            pTVar2 = (pMVar1->fields).triggerBoxEvents;
-            pUVar3 = *ppUVar4;
-            pEVar5 = (EventHandler_1_Object_ *)
+                    (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar4,(MethodInfo *)0x0);
+          pMVar3 = (this->fields).checkpointObject;
+          if (pMVar3 != (MVCheckpointObject *)0x0) {
+            pTVar1 = (pMVar3->fields).triggerBoxEvents;
+            pUVar2 = (this->fields).useInteractor;
+            pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                      (pEVar5,(Object *)pUVar3,
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      (pUVar4,(Object *)pUVar2,
                        MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
-            if (pTVar2 != (TriggerBoxEvents *)0x0) {
+            if (pTVar1 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                        (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
-              pMVar1 = (this->fields).checkpointObject;
-              if (pMVar1 != (MVCheckpointObject *)0x0) {
-                pGVar6 = (pMVar1->fields).useInteractionRotator;
+                        (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar4,(MethodInfo *)0x0);
+              pMVar3 = (this->fields).checkpointObject;
+              if (pMVar3 != (MVCheckpointObject *)0x0) {
+                pGVar5 = (pMVar3->fields).useInteractionRotator;
                 this_01 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);
-                GameCoinLogic::GameCoinLogic__ctor(this_01,pGVar6,0,(MethodInfo *)0x0);
-                if (*ppUVar4 != (UseInteractor *)0x0) {
+                GameCoinLogic::GameCoinLogic__ctor(this_01,pGVar5,0,(MethodInfo *)0x0);
+                pUVar2 = (this->fields).useInteractor;
+                if (pUVar2 != (UseInteractor *)0x0) {
                   UseInteractor::UseInteractor_AddRequirement
-                            (*ppUVar4,(UseRequirement *)this_01,(MethodInfo *)0x0);
-                  pMVar1 = (this->fields).checkpointObject;
-                  if (pMVar1 != (MVCheckpointObject *)0x0) {
-                    pGVar6 = (pMVar1->fields).useInteractionRotator;
+                            (pUVar2,(UseRequirement *)this_01,(MethodInfo *)0x0);
+                  pMVar3 = (this->fields).checkpointObject;
+                  if (pMVar3 != (MVCheckpointObject *)0x0) {
+                    pGVar5 = (pMVar3->fields).useInteractionRotator;
                     this_02 = (LevelBasedUseRequirement *)
                               func_?(TypeInfo__LevelBasedUseRequirement);
                     LevelBasedUseRequirement::LevelBasedUseRequirement__ctor
-                              (this_02,pGVar6,0,(MethodInfo *)0x0);
-                    if (*ppUVar4 != (UseInteractor *)0x0) {
+                              (this_02,pGVar5,0,(MethodInfo *)0x0);
+                    pUVar2 = (this->fields).useInteractor;
+                    if (pUVar2 != (UseInteractor *)0x0) {
                       UseInteractor::UseInteractor_AddRequirement
-                                (*ppUVar4,(UseRequirement *)this_02,(MethodInfo *)0x0);
-                      pMVar1 = (this->fields).checkpointObject;
-                      if (pMVar1 != (MVCheckpointObject *)0x0) {
-                        pGVar6 = (pMVar1->fields).useInteractionRotator;
+                                (pUVar2,(UseRequirement *)this_02,(MethodInfo *)0x0);
+                      pMVar3 = (this->fields).checkpointObject;
+                      if (pMVar3 != (MVCheckpointObject *)0x0) {
+                        pGVar5 = (pMVar3->fields).useInteractionRotator;
                         this_03 = (RewardedAdRequirement *)
                                   func_?(
                                                  TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement
                                                  );
                         WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::
-                        RewardedAdRequirement__ctor(this_03,pGVar6,(MethodInfo *)0x0);
-                        if (*ppUVar4 != (UseInteractor *)0x0) {
+                        RewardedAdRequirement__ctor(this_03,pGVar5,(MethodInfo *)0x0);
+                        pUVar2 = (this->fields).useInteractor;
+                        if (pUVar2 != (UseInteractor *)0x0) {
                           UseInteractor::UseInteractor_AddRequirement
-                                    (*ppUVar4,(UseRequirement *)this_03,(MethodInfo *)0x0);
+                                    (pUVar2,(UseRequirement *)this_03,(MethodInfo *)0x0);
                           return;
                         }
                       }
@@ -463,8 +467,8 @@ void Assembly-CSharp.dll::MVCheckpoint::MVCheckpoint_SetupUseInteractor
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -490,64 +494,57 @@ void Assembly-CSharp.dll::MVCheckpoint::MVCheckpoint__ctor
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-  if (pPVar1 == (PrefabPool *)0x0) {
-code_?:
-    func_?();
-    pMVar2 = extraout_EDX;
-  }
-  else {
+  if (pPVar1 != (PrefabPool *)0x0) {
     MVLogicObject::MVLogicObject__ctor
               ((MVLogicObject *)this,data,(pPVar1->fields).mvCheckpointPrefab,worldObjects,
                (MethodInfo *)0x0);
     pMVar2 = (MVCheckpointObject *)(this->fields)._._.component;
     if (pMVar2 == (MVCheckpointObject *)0x0) {
       (this->fields).checkpointObject = (MVCheckpointObject *)0x0;
-code_?:
-      ppMVar3 = &(this->fields).checkpointObject;
-      func_?(ppMVar3);
-      pMVar2 = *ppMVar3;
-      if (pMVar2 != (MVCheckpointObject *)0x0) {
-        this_00 = (pMVar2->fields).triggerBoxEvents;
-        this_01 = (EventHandler_1_Object_ *)
-                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                  (this_01,(Object *)this,
-                   MethodInfo__MVCheckpoint__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                   ,(MethodInfo *)0x0);
-        if (this_00 != (TriggerBoxEvents *)0x0) {
-          TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                    (this_00,(EventHandler_1_TriggerEventArgs_ *)this_01,(MethodInfo *)0x0);
-          piVar4 = &(this->fields)._._.interactionFlags;
-          *(uint *)piVar4 = (uint)*piVar4 | 0x100000;
-          uVar5 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-          piVar4 = &(this->fields)._._.interactionFlags;
-          *(uint *)piVar4 = (uint)*piVar4 | 0x200000;
-          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar5;
-          iVar6 = (this->fields)._._.interactionFlags;
-          puVar7 = (uint *)((int)&(this->fields)._._.interactionFlags + 4);
-          *puVar7 = *puVar7 | 2;
-          *(int *)&(this->fields)._._.interactionFlags = (int)iVar6;
-          return;
-        }
-      }
-      goto code_?;
     }
-    bVar8 = (TypeInfo__MVCheckpointObject->_1).naturalAligment;
-    if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment < bVar8) ||
-       ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[bVar8 - 1] !=
-        (Il2CppClass *)TypeInfo__MVCheckpointObject)) goto code_?;
-    (this->fields).checkpointObject = pMVar2;
-    bVar8 = (TypeInfo__MVCheckpointObject->_1).naturalAligment;
-    if ((bVar8 <= (((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment) &&
-       ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[bVar8 - 1] ==
-        (Il2CppClass *)TypeInfo__MVCheckpointObject)) goto code_?;
+    else {
+      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment <
+           (TypeInfo__MVCheckpointObject->_1).naturalAligment) ||
+         ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy
+          [(TypeInfo__MVCheckpointObject->_1).naturalAligment - 1] !=
+          (Il2CppClass *)TypeInfo__MVCheckpointObject)) goto code_?;
+      (this->fields).checkpointObject = pMVar2;
+      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment <
+           (TypeInfo__MVCheckpointObject->_1).naturalAligment) ||
+         ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy
+          [(TypeInfo__MVCheckpointObject->_1).naturalAligment - 1] !=
+          (Il2CppClass *)TypeInfo__MVCheckpointObject)) goto code_?;
+    }
+    func_?(&(this->fields).checkpointObject);
+    pMVar2 = (this->fields).checkpointObject;
+    if (pMVar2 != (MVCheckpointObject *)0x0) {
+      this_00 = (pMVar2->fields).triggerBoxEvents;
+      this_01 = (UnityAction_2_System_Object_System_Object_ *)
+                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (this_01,(Object *)this,
+                 MethodInfo__MVCheckpoint__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                 ,(MethodInfo *)0x0);
+      if (this_00 != (TriggerBoxEvents *)0x0) {
+        TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                  (this_00,(EventHandler_1_TriggerEventArgs_ *)this_01,(MethodInfo *)0x0);
+        iVar3 = (this->fields)._._.interactionFlags;
+        *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
+             *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+        puVar4 = (uint *)((int)&(this->fields)._._.interactionFlags + 4);
+        *puVar4 = *puVar4 | 2;
+        *(uint *)&(this->fields)._._.interactionFlags = (uint)iVar3 | 0x300000;
+        return;
+      }
+    }
   }
-  func_?(pMVar2);
-  pMVar2 = extraout_EDX_00;
+  func_?();
+  pMVar2 = extraout_EDX;
 code_?:
   func_?(pMVar2);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

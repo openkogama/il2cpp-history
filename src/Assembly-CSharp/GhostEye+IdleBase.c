@@ -68,7 +68,7 @@ void Assembly-CSharp.dll::GhostEye+IdleBase::GhostEye_IdleBase_UpdateWrappedTime
 
 {
   fVar1 = _UNK_?;
-  fVar2 = (this->fields).direction * deltaTime * (this->fields).rotatationPrSecond * _UNK_? +
+  fVar2 = deltaTime * (this->fields).direction * (this->fields).rotatationPrSecond * _UNK_? +
           (this->fields).wrappedTime;
   (this->fields).wrappedTime = fVar2;
   fVar3 = _UNK_?;

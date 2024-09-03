@@ -37,18 +37,17 @@ void Assembly-CSharp.dll::MVAvatarLocal+<>c__DisplayClass131_0::
     if (pTVar9 != (Transform *)0x0) {
       pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                          ((Vector3 *)&stack0xffffffe0,pTVar9,(MethodInfo *)0x0);
-      uVar11 = pVVar10->x;
-      uVar12 = pVVar10->y;
-      fVar13 = pVVar10->z;
+      fVar11 = pVVar10->z;
+      camPos = *pVVar10;
       pTVar9 = (this->fields).cam;
       if (pTVar9 != (Transform *)0x0) {
         pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                            ((Quaternion *)&stack0xffffffdc,pTVar9,(MethodInfo *)0x0);
-        fVar14 = pQVar4->x;
-        fVar15 = pQVar4->y;
-        fVar16 = pQVar4->z;
-        fVar17 = pQVar4->w;
-        fVar18 = 0.0;
+        fVar12 = pQVar4->x;
+        fVar13 = pQVar4->y;
+        fVar14 = pQVar4->z;
+        fVar15 = pQVar4->w;
+        fVar16 = 0.0;
         pos.y = (float)uVar2;
         pos.x = (float)uVar1;
         pos.z = fVar3;
@@ -56,9 +55,6 @@ void Assembly-CSharp.dll::MVAvatarLocal+<>c__DisplayClass131_0::
         rot.x = fVar5;
         rot.z = fVar7;
         rot.w = fVar8;
-        camPos.y = (float)uVar12;
-        camPos.x = (float)uVar11;
-        camPos.z = fVar13;
         SafeSpotData::SafeSpotData__ctor
                   ((SafeSpotData *)&stack0xffffff94,pos,rot,camPos,*pQVar4,(MethodInfo *)0x0);
         this_01 = (receiver->fields).reviveState;
@@ -71,17 +67,17 @@ void Assembly-CSharp.dll::MVAvatarLocal+<>c__DisplayClass131_0::
                                MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleReceiverVariable<ReviveState>__get_Value__
                               );
           if (this_02 != (ReviveState *)0x0) {
-            value.Position.y = fVar14;
-            value.Position.x = fVar13;
-            value.Position.z = fVar15;
-            value.Rotation.x = fVar16;
-            value.Rotation.y = fVar17;
-            value.Rotation.z = fVar18;
-            value.Rotation.w = fStack_19;
-            value.CameraPosition.x = fStack_20;
-            value.CameraPosition.y = fStack_21;
-            value.CameraPosition.z = fStack_22;
-            value.CameraRotation.x = (float)this_02;
+            value.Position.y = fVar12;
+            value.Position.x = fVar11;
+            value.Position.z = fVar13;
+            value.Rotation.x = fVar14;
+            value.Rotation.y = fVar15;
+            value.Rotation.z = fVar16;
+            value.Rotation.w = fStack_17;
+            value.CameraPosition.x = fStack_18;
+            value.CameraPosition.y = (float)this_02;
+            value.CameraPosition.z = fVar11;
+            value.CameraRotation.x = fVar12;
             value.CameraRotation.y = fVar13;
             value.CameraRotation.z = fVar14;
             value.CameraRotation.w = fVar15;
@@ -93,8 +89,8 @@ void Assembly-CSharp.dll::MVAvatarLocal+<>c__DisplayClass131_0::
     }
   }
   func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

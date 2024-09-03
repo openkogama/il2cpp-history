@@ -156,30 +156,31 @@ void Assembly-CSharp.dll::TransformNetworkManager::TransformNetworkManager_AddTr
                               MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__get_Item_int_
                              );
           if (pMVar5 != (MVNetworkListener *)0x0) {
-            bVar6 = (TypeInfo__MVNetworkListener->_1).naturalAligment;
-            if ((bVar6 <= (pMVar5->klass->_1).naturalAligment) &&
-               ((pMVar5->klass->_1).typeHierarchy[bVar6 - 1] ==
+            if (((TypeInfo__MVNetworkListener->_1).naturalAligment <=
+                 (pMVar5->klass->_1).naturalAligment) &&
+               ((pMVar5->klass->_1).typeHierarchy
+                [(TypeInfo__MVNetworkListener->_1).naturalAligment - 1] ==
                 (Il2CppClass *)TypeInfo__MVNetworkListener)) {
               MVNetworkListener::MVNetworkListener_AddTransformPackage(pMVar5,p,(MethodInfo *)0x0);
               return;
             }
-            pTVar7 = mscorlib.dll::System::Object::Object_GetType
+            pTVar6 = mscorlib.dll::System::Object::Object_GetType
                                ((Object *)pMVar5,(MethodInfo *)0x0);
-            pSVar8 = StringLiteral_worldObjectClientManager_WorldOb;
-            if (pTVar7 == (Type *)0x0) {
+            pSVar7 = StringLiteral_worldObjectClientManager_WorldOb;
+            if (pTVar6 == (Type *)0x0) {
               str1 = (String *)0x0;
             }
             else {
-              str1 = (String *)(*(code *)(pTVar7->klass->vtable).ToString.method)();
+              str1 = (String *)(*(code *)(pTVar6->klass->vtable).ToString.method)();
             }
-            pSVar8 = mscorlib.dll::System::String::String_Concat_4
-                               (pSVar8,str1,StringLiteral__this_is_probably_due_to_ownersh,
+            pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                               (pSVar7,str1,StringLiteral__this_is_probably_due_to_ownersh,
                                 (MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                      ((Object *)pSVar8,(MethodInfo *)0x0);
+                      ((Object *)pSVar7,(MethodInfo *)0x0);
           }
           return;
         }
@@ -188,8 +189,8 @@ void Assembly-CSharp.dll::TransformNetworkManager::TransformNetworkManager_AddTr
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -294,46 +295,51 @@ void Assembly-CSharp.dll::TransformNetworkManager::TransformNetworkManager_Updat
     pIVar5 = pIStack_4;
   }
   pIStack_4 = pIVar5;
-  auStack_7._0_4_ = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  auStack_7._4_4_ = 0;
-  auStack_7._8_4_ = 0;
-  auStack_7._12_2_ = 0;
-  auStack_7._14_2_ = 0;
+  DStack_7._current.value = (Object *)0x0;
+  DStack_7._getEnumeratorRetType = 0;
+  DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_7._version = 0;
+  DStack_7._index = 0;
+  DStack_7._current.key = 0;
+  auStack_8._0_4_ = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  auStack_8._4_4_ = 0;
+  auStack_8._8_4_ = 0;
+  auStack_8._12_2_ = 0;
+  auStack_8._14_2_ = 0;
   if (game != (MVNetworkGame *)0x0) {
-    iVar8 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(game,(MethodInfo *)0x0);
+    iVar9 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(game,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    TypeInfo__TransformNetworkManager->static_fields->_DelayedTime_k__BackingField = iVar8 + -600;
+    TypeInfo__TransformNetworkManager->static_fields->_DelayedTime_k__BackingField = iVar9 + -600;
     method_00 = (MethodInfo *)(this->fields).networkedObjects;
     if (method_00 != (MethodInfo *)0x0) {
-      pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+      pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                          ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                          (auStack_7 + 0x10),(Dictionary_2_System_UInt32_System_Object_ *)method_00
+                          (auStack_8 + 0x10),(Dictionary_2_System_UInt32_System_Object_ *)method_00
                           ,
                           MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__GetEnumerator__
                          );
-      DStack_10._dictionary = pDVar9->_dictionary;
-      DStack_10._version = pDVar9->_version;
-      DStack_10._index = pDVar9->_index;
-      DStack_10._current.key = (pDVar9->_current).key;
-      DStack_10._current.value = (pDVar9->_current).value;
-      DStack_10._getEnumeratorRetType = pDVar9->_getEnumeratorRetType;
+      DStack_7._dictionary = pDVar10->_dictionary;
+      DStack_7._version = pDVar10->_version;
+      DStack_7._index = pDVar10->_index;
+      DStack_7._current.key = (pDVar10->_current).key;
+      DStack_7._16_8_ = *(undefined8 *)&(pDVar10->_current).value;
       pOStack_11 = (Object *)0x0;
       pIStack_1 = (Il2CppType *)0x1;
-      pDStack_12 = &DStack_10;
+      pDStack_12 = &DStack_7;
 code_?:
       bVar13 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                        (&DStack_10,
+                        (&DStack_7,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVNetworkObject>__MoveNext__
                         );
       if (bVar13 != 0) {
-        pMStack_14 = (MethodInfo *)DStack_10._current.key;
-        pDStack_15 = (Dictionary_2_System_UInt32_System_Object_ *)DStack_10._current.value;
+        pMStack_14 = (MethodInfo *)DStack_7._current.key;
+        pDStack_15 = (Dictionary_2_System_UInt32_System_Object_ *)DStack_7._current.value;
         pMStack_16 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if (pMStack_16 != (MVWorldObjectClientManager *)0x0) {
           if (cRam_? == '\0') {
@@ -365,8 +371,8 @@ code_?:
         goto code_?;
       }
       pIStack_1 = (Il2CppType *)0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                ((Object *)&DStack_10,
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                ((Object *)&DStack_7,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVNetworkObject>__Dispose__
                  ,(MethodInfo *)in_stack_6);
@@ -381,31 +387,31 @@ code_?:
                          ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                            *)auStack_20,this_01,
                           MethodInfo__System__Collections__Generic__List<int>__GetEnumerator__);
-      auStack_7._0_4_ = pLVar19->_list;
-      auStack_7._4_4_ = pLVar19->_index;
-      auStack_7._8_4_ = pLVar19->_version;
-      auStack_7._12_4_ = pLVar19->_current;
+      auStack_8._0_4_ = pLVar19->_list;
+      auStack_8._4_4_ = pLVar19->_index;
+      auStack_8._8_4_ = pLVar19->_version;
+      auStack_8._12_4_ = pLVar19->_current;
       pOStack_11 = (Object *)0x0;
       pIStack_1 = (Il2CppType *)0x4;
-      pDStack_12 = (Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)auStack_7;
+      pDStack_12 = (Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)auStack_8;
       while (bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::
                      RegularExpressions::RegexCharClass+SingleRange]::
                      List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext
                                ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                 *)auStack_7,
+                                 *)auStack_8,
                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__MoveNext__
                                ), bVar13 != 0) {
         this_02 = (this->fields).networkedObjects;
         if (this_02 == (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) goto code_?;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
         Dictionary_2_System_Int32_System_Object__Remove
-                  ((Dictionary_2_System_Int32_System_Object_ *)this_02,auStack_7._12_4_,
+                  ((Dictionary_2_System_Int32_System_Object_ *)this_02,auStack_8._12_4_,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Remove_int_
                   );
       }
       pIStack_1 = (Il2CppType *)0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                ((Object *)auStack_7,
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                ((Object *)auStack_8,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__,
                  method_00);
@@ -428,9 +434,9 @@ code_?:
   (*pcVar23)();
   return;
 code_?:
-  DStack_10._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)game;
+  DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)game;
   func_?();
-  DStack_10._dictionary = pDStack_15;
+  DStack_7._dictionary = pDStack_15;
   cVar24 = func_?();
   if (cVar24 != '\0') {
     pLVar18 = (this->fields).removeList;
@@ -479,9 +485,9 @@ void Assembly-CSharp.dll::TransformNetworkManager::TransformNetworkManager__ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<int>__List__);
   method_00 = (MethodInfo *)&(this->fields).removeList;
-  *(List_1_System_Int32_ **)method_00 = this_01;
+  (this->fields).removeList = this_01;
   func_?(method_00,this_01);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }

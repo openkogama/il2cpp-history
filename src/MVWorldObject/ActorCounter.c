@@ -5,8 +5,9 @@ int32_t MVWorldObject.dll::ActorCounter::ActorCounter_Increment
                   (ActorCounter *this,int32_t value,MethodInfo *method)
 
 {
-  (this->fields).count = (this->fields).count + value;
-  return (this->fields).count;
+  iVar1 = value + (this->fields).count;
+  (this->fields).count = iVar1;
+  return iVar1;
 }
 
 
@@ -41,7 +42,7 @@ void MVWorldObject.dll::ActorCounter::ActorCounter__ctor_1
                (ActorCounter *this,BytePacker *bp,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if (bp != (BytePacker *)0x0) {
     iVar1 = MV::WorldObject::BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);

@@ -26,12 +26,11 @@ code_?:
     uVar2 = 0;
     ppSVar3 = pSVar1->vector;
     while( true ) {
-      uVar4 = pSVar1->max_length;
-      if ((int)uVar4 <= (int)uVar2) {
+      if ((int)pSVar1->max_length <= (int)uVar2) {
         return 1;
       }
-      if ((uVar4 <= uVar2) ||
-         (uVar4 = (applicationHost->max_length - uVar4) + uVar2,
+      if ((pSVar1->max_length <= uVar2) ||
+         (uVar4 = (applicationHost->max_length - pSVar1->max_length) + uVar2,
          applicationHost->max_length <= uVar4)) break;
       if (*ppSVar3 == (String *)0x0) goto code_?;
       bVar5 = mscorlib.dll::System::String::String_Equals_1
@@ -134,23 +133,24 @@ code_?:
     index = (undefined *)0x0;
     while (pLVar11 = (this->fields).siteData, pLVar11 != (List_1_EmbeddedSiteConfigData_ *)0x0) {
       if ((pLVar11->fields)._size <= (int)index) goto code_?;
-      pIVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Linq::Expressions::
-               Interpreter::InstructionList+DebugView+InstructionView]::
-               List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView__get_Item
-                         ((InstructionList_DebugView_InstructionView *)&puStack_13,
-                          (List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView_
+      if (pLVar11 == (List_1_EmbeddedSiteConfigData_ *)0x0) break;
+      pMVar12 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                         ((MultiColumnCollectionHeader_ViewState_ColumnState *)&puStack_13,
+                          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                            *)pLVar11,(int32_t)index,
                           MethodInfo__System__Collections__Generic__List<EmbeddedSiteConfigData>__get_Item_int_
                          );
       if ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-           *)pIVar12->_index ==
+           *)pMVar12->index ==
           (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
            *)0x0) break;
       pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
                ::MultiColumnCollectionHeader+ViewState+ColumnState]::
                List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
                          ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                           *)pIVar12->_index,
+                           *)pMVar12->index,
                           MethodInfo__System__Collections__Generic__List<System::String>__ToArray__)
       ;
       bVar4 = EmbeddedPlayerConfig_IsValidHost(host,(String__Array *)pMVar5,(MethodInfo *)0x0);
@@ -275,44 +275,43 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_Initialize
     func_?(&StringLiteral_kogama_com);
     cRam_? = '\x01';
   }
-  pEVar1 = &(this->fields).currentSite;
-  iVar2 = (this->fields).kogamaDefaultData.siteEnum;
-  bVar3 = (this->fields).kogamaDefaultData.showTouristPromotion;
-  bVar4 = (this->fields).kogamaDefaultData.allowsOpenInNewTab;
-  bVar5 = (this->fields).kogamaDefaultData.allowsRedirectToWebpage;
-  bVar6 = (this->fields).kogamaDefaultData.allowsModals;
-  bVar7 = (this->fields).kogamaDefaultData.integratedSdk;
-  bVar8 = (this->fields).kogamaDefaultData.allowsFallbackAds;
-  bVar9 = (this->fields).kogamaDefaultData.showPlayButtonAd;
-  bVar10 = (this->fields).kogamaDefaultData.hideGoldShop;
-  bVar11 = (this->fields).kogamaDefaultData.allowInHouseAds;
-  bVar12 = (this->fields).kogamaDefaultData.removeFullscreenButton;
-  bVar13 = (this->fields).kogamaDefaultData.hideSignUp;
-  bVar14 = (this->fields).kogamaDefaultData.noPlayButtonVideoIcon;
-  pEVar1->sites = (this->fields).kogamaDefaultData.sites;
-  (this->fields).currentSite.siteEnum = iVar2;
-  (this->fields).currentSite.showTouristPromotion = bVar3;
-  (this->fields).currentSite.allowsOpenInNewTab = bVar4;
-  (this->fields).currentSite.allowsRedirectToWebpage = bVar5;
-  (this->fields).currentSite.allowsModals = bVar6;
-  (this->fields).currentSite.integratedSdk = bVar7;
-  (this->fields).currentSite.allowsFallbackAds = bVar8;
-  (this->fields).currentSite.showPlayButtonAd = bVar9;
-  (this->fields).currentSite.hideGoldShop = bVar10;
-  (this->fields).currentSite.allowInHouseAds = bVar11;
-  (this->fields).currentSite.removeFullscreenButton = bVar12;
-  (this->fields).currentSite.hideSignUp = bVar13;
-  (this->fields).currentSite.noPlayButtonVideoIcon = bVar14;
-  func_?(pEVar1,0);
+  iVar1 = (this->fields).kogamaDefaultData.siteEnum;
+  bVar2 = (this->fields).kogamaDefaultData.showTouristPromotion;
+  bVar3 = (this->fields).kogamaDefaultData.allowsOpenInNewTab;
+  bVar4 = (this->fields).kogamaDefaultData.allowsRedirectToWebpage;
+  bVar5 = (this->fields).kogamaDefaultData.allowsModals;
+  bVar6 = (this->fields).kogamaDefaultData.integratedSdk;
+  bVar7 = (this->fields).kogamaDefaultData.allowsFallbackAds;
+  bVar8 = (this->fields).kogamaDefaultData.showPlayButtonAd;
+  bVar9 = (this->fields).kogamaDefaultData.hideGoldShop;
+  bVar10 = (this->fields).kogamaDefaultData.allowInHouseAds;
+  bVar11 = (this->fields).kogamaDefaultData.removeFullscreenButton;
+  bVar12 = (this->fields).kogamaDefaultData.hideSignUp;
+  bVar13 = (this->fields).kogamaDefaultData.noPlayButtonVideoIcon;
+  (this->fields).currentSite.sites = (this->fields).kogamaDefaultData.sites;
+  (this->fields).currentSite.siteEnum = iVar1;
+  (this->fields).currentSite.showTouristPromotion = bVar2;
+  (this->fields).currentSite.allowsOpenInNewTab = bVar3;
+  (this->fields).currentSite.allowsRedirectToWebpage = bVar4;
+  (this->fields).currentSite.allowsModals = bVar5;
+  (this->fields).currentSite.integratedSdk = bVar6;
+  (this->fields).currentSite.allowsFallbackAds = bVar7;
+  (this->fields).currentSite.showPlayButtonAd = bVar8;
+  (this->fields).currentSite.hideGoldShop = bVar9;
+  (this->fields).currentSite.allowInHouseAds = bVar10;
+  (this->fields).currentSite.removeFullscreenButton = bVar11;
+  (this->fields).currentSite.hideSignUp = bVar12;
+  (this->fields).currentSite.noPlayButtonVideoIcon = bVar13;
+  func_?(&(this->fields).currentSite,0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
-  pGVar15 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar15 != (GameSessionData *)0x0) {
-    bVar3 = mscorlib.dll::System::String::String_IsNullOrEmpty
-                       ((pGVar15->fields).embeddedSite,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
+  pGVar14 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar14 != (GameSessionData *)0x0) {
+    bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty
+                       ((pGVar14->fields).embeddedSite,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
@@ -326,10 +325,10 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_Initialize
       func_?(&TypeInfo__MVGameControllerBase);
       cRam_? = '\x01';
     }
-    pGVar15 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-    if (pGVar15 != (GameSessionData *)0x0) {
+    pGVar14 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar14 != (GameSessionData *)0x0) {
       message = mscorlib.dll::System::String::String_Concat_3
-                          (StringLiteral_Embedded_site_set_to_,(pGVar15->fields).embeddedSite,
+                          (StringLiteral_Embedded_site_set_to_,(pGVar14->fields).embeddedSite,
                            (MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
@@ -340,9 +339,9 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_Initialize
         func_?(&TypeInfo__MVGameControllerBase);
         cRam_? = '\x01';
       }
-      pGVar15 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-      if (pGVar15 != (GameSessionData *)0x0) {
-        EmbeddedPlayerConfig_InitializeWithURL(this,(pGVar15->fields).embeddedSite,(MethodInfo *)0x0)
+      pGVar14 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar14 != (GameSessionData *)0x0) {
+        EmbeddedPlayerConfig_InitializeWithURL(this,(pGVar14->fields).embeddedSite,(MethodInfo *)0x0)
         ;
         (this->fields).initialized = 1;
         return;
@@ -350,8 +349,8 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_Initialize
     }
   }
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -439,23 +438,24 @@ code_?:
     index = (undefined *)0x0;
     while (pLVar11 = (this->fields).siteData, pLVar11 != (List_1_EmbeddedSiteConfigData_ *)0x0) {
       if ((pLVar11->fields)._size <= (int)index) goto code_?;
-      pIVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Linq::Expressions::
-               Interpreter::InstructionList+DebugView+InstructionView]::
-               List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView__get_Item
-                         ((InstructionList_DebugView_InstructionView *)&puStack_13,
-                          (List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView_
+      if (pLVar11 == (List_1_EmbeddedSiteConfigData_ *)0x0) break;
+      pMVar12 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                         ((MultiColumnCollectionHeader_ViewState_ColumnState *)&puStack_13,
+                          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                            *)pLVar11,(int32_t)index,
                           MethodInfo__System__Collections__Generic__List<EmbeddedSiteConfigData>__get_Item_int_
                          );
       if ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-           *)pIVar12->_index ==
+           *)pMVar12->index ==
           (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
            *)0x0) break;
       pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
                ::MultiColumnCollectionHeader+ViewState+ColumnState]::
                List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
                          ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                           *)pIVar12->_index,
+                           *)pMVar12->index,
                           MethodInfo__System__Collections__Generic__List<System::String>__ToArray__)
       ;
       bVar4 = EmbeddedPlayerConfig_IsValidHost(host,(String__Array *)pMVar5,(MethodInfo *)0x0);
@@ -534,14 +534,14 @@ bool Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_IsValidHost
           if (hosts->max_length <= uVar2) break;
           pSVar4 = *ppSVar3;
           if (this_00 == (Uri *)0x0) goto code_?;
-          pSVar5 = System.dll::System::Uri::Uri_get_Host(this_00,(MethodInfo *)0x0);
-          if (pSVar5 == (String *)0x0) goto code_?;
-          bVar6 = mscorlib.dll::System::String::String_Contains(pSVar5,pSVar4,(MethodInfo *)0x0);
-          if (bVar6 != 0) {
-            pSVar5 = System.dll::System::Uri::Uri_get_Host(this_00,(MethodInfo *)0x0);
+          this_01 = System.dll::System::Uri::Uri_get_Host(this_00,(MethodInfo *)0x0);
+          if (this_01 == (String *)0x0) goto code_?;
+          bVar5 = mscorlib.dll::System::String::String_Contains(this_01,pSVar4,(MethodInfo *)0x0);
+          if (bVar5 != 0) {
+            pSVar4 = System.dll::System::Uri::Uri_get_Host(this_00,(MethodInfo *)0x0);
             pSVar4 = mscorlib.dll::System::String::String_Concat_5
                                (StringLiteral_Host_match_found__,pSVar4,StringLiteral__matching_,
-                                pSVar5,(MethodInfo *)0x0);
+                                pSVar4,(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
@@ -560,9 +560,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  bVar6 = (*pcVar7)();
-  return bVar6;
+  pcVar6 = (code *)swi(3);
+  bVar5 = (*pcVar6)();
+  return bVar5;
 }
 
 

@@ -68,6 +68,48 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarPointingHandler::
 }
 
 
+/* Void HandleWeaponPointing(Quaternion, Quaternion) */
+
+void Assembly-CSharp.dll::AvatarLimbManager+AvatarPointingHandler::
+     AvatarLimbManager_AvatarPointingHandler_HandleWeaponPointing
+               (AvatarLimbManager_AvatarPointingHandler *this,Quaternion yawRotation,
+               Quaternion pitchRotation,MethodInfo *method)
+
+{
+  pAVar1 = (this->fields).limbRotator;
+  if (pAVar1 != (AvatarLimbManager_LimbRotator *)0x0) {
+    AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbRotator_SetLimbRotation
+              (pAVar1,BodyData_PartIndex__Enum_RArm,yawRotation,pitchRotation,
+               (this->fields).elapsedPointingTime,(MethodInfo *)0x0);
+    pAVar1 = (this->fields).limbRotator;
+    if (pAVar1 != (AvatarLimbManager_LimbRotator *)0x0) {
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      this_00 = (pAVar1->fields).limbControllers;
+      if (this_00 != (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) {
+        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,3,
+                            MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_
+                           );
+        if (pOVar2 != (Object *)0x0) {
+          if (*(char *)&pOVar2[0x11].klass == '\0') {
+            *(undefined1 *)&pOVar2[0xf].klass = 0;
+          }
+          return;
+        }
+      }
+    }
+  }
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
+  return;
+}
+
+
 /* Void Initialize(AvatarLimbManager, AvatarLimbManager+LimbRotator, AvatarEnabledChangeHandler) */
 
 void Assembly-CSharp.dll::AvatarLimbManager+AvatarPointingHandler::
@@ -83,103 +125,73 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarPointingHandler::
     func_?(&MethodInfo__AvatarLimbManager__AvatarPointingHandler__OnEnable__);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).limbManager;
-  *ppAVar1 = limbManager;
-  func_?(ppAVar1,limbManager);
-  ppAVar2 = &(this->fields).limbRotator;
-  *ppAVar2 = limbRotator;
-  func_?(ppAVar2,limbRotator);
+  (this->fields).limbManager = limbManager;
+  func_?(&(this->fields).limbManager,limbManager);
+  (this->fields).limbRotator = limbRotator;
+  func_?(&(this->fields).limbRotator,limbRotator);
   if (enableChangeHandler == (AvatarEnabledChangeHandler *)0x0) {
     func_?();
+    goto code_?;
+  }
+  pAVar1 = (enableChangeHandler->fields).OnEnabled;
+  pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar2,(Object *)this,MethodInfo__AvatarLimbManager__AvatarPointingHandler__OnEnable__,
+             (MethodInfo *)0x0);
+  pAVar1 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar1,(Delegate *)pNVar2,(MethodInfo *)0x0);
+  if (pAVar1 == (Action *)0x0) {
+    (enableChangeHandler->fields).OnEnabled = (Action *)0x0;
   }
   else {
-    pAVar3 = (enableChangeHandler->fields).OnEnabled;
-    pNVar4 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar4,(Object *)this,
-               MethodInfo__AvatarLimbManager__AvatarPointingHandler__OnEnable__,(MethodInfo *)0x0);
-    pAVar3 = (Action *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar3,(Delegate *)pNVar4,(MethodInfo *)0x0);
-    if (pAVar3 == (Action *)0x0) {
-      (enableChangeHandler->fields).OnEnabled = (Action *)0x0;
+    pAVar3 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar1;
     }
-    else {
-      pAVar5 = (Action *)0x0;
-      if (pAVar3->klass == TypeInfo__System__Action) {
-        pAVar5 = pAVar3;
-      }
-      if (pAVar5 == (Action *)0x0) goto code_?;
-      (enableChangeHandler->fields).OnEnabled = pAVar5;
-      pAVar5 = (Action *)0x0;
-      if (pAVar3->klass == TypeInfo__System__Action) {
-        pAVar5 = pAVar3;
-      }
-      if (pAVar5 == (Action *)0x0) goto code_?;
+    if (pAVar3 == (Action *)0x0) goto code_?;
+    (enableChangeHandler->fields).OnEnabled = pAVar3;
+    pAVar3 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar1;
     }
+    if (pAVar3 == (Action *)0x0) goto code_?;
+  }
+  func_?();
+  pAVar1 = (enableChangeHandler->fields).OnDisabled;
+  pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar2,(Object *)&(enableChangeHandler->fields).OnEnabled,
+             MethodInfo__AvatarLimbManager__AvatarPointingHandler__OnDisable__,(MethodInfo *)0x0);
+  pAVar1 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar1,(Delegate *)pNVar2,(MethodInfo *)0x0);
+  if (pAVar1 == (Action *)0x0) {
+    (enableChangeHandler->fields).OnDisabled = (Action *)0x0;
     func_?();
-    pAVar3 = (enableChangeHandler->fields).OnDisabled;
-    ppAVar6 = &(enableChangeHandler->fields).OnDisabled;
-    pNVar4 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar4,(Object *)&(enableChangeHandler->fields).OnEnabled,
-               MethodInfo__AvatarLimbManager__AvatarPointingHandler__OnDisable__,(MethodInfo *)0x0);
-    pAVar3 = (Action *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar3,(Delegate *)pNVar4,(MethodInfo *)0x0);
-    if (pAVar3 == (Action *)0x0) {
-      *ppAVar6 = (Action *)0x0;
+    return;
+  }
+  pAVar3 = (Action *)0x0;
+  if (pAVar1->klass == TypeInfo__System__Action) {
+    pAVar3 = pAVar1;
+  }
+  if (pAVar3 != (Action *)0x0) {
+    (enableChangeHandler->fields).OnDisabled = pAVar3;
+    pAVar3 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar1;
+    }
+    if (pAVar3 != (Action *)0x0) {
       func_?();
       return;
     }
-    pAVar5 = (Action *)0x0;
-    if (pAVar3->klass == TypeInfo__System__Action) {
-      pAVar5 = pAVar3;
-    }
-    if (pAVar5 != (Action *)0x0) {
-      *ppAVar6 = pAVar5;
-      pAVar5 = (Action *)0x0;
-      if (pAVar3->klass == TypeInfo__System__Action) {
-        pAVar5 = pAVar3;
-      }
-      if (pAVar5 != (Action *)0x0) {
-        func_?();
-        return;
-      }
-    }
   }
 code_?:
   func_?();
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
-  return;
-}
-
-
-/* Void OnDisable() */
-
-void Assembly-CSharp.dll::AvatarLimbManager+AvatarPointingHandler::
-     AvatarLimbManager_AvatarPointingHandler_OnDisable
-               (AvatarLimbManager_AvatarPointingHandler *this,MethodInfo *method)
-
-{
-  (this->fields).isActive = 0;
-  return;
-}
-
-
-/* Void OnEnable() */
-
-void Assembly-CSharp.dll::AvatarLimbManager+AvatarPointingHandler::
-     AvatarLimbManager_AvatarPointingHandler_OnEnable
-               (AvatarLimbManager_AvatarPointingHandler *this,MethodInfo *method)
-
-{
-  (this->fields).isActive = 1;
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -270,7 +282,7 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarPointingHandler::
 
 {
   (this->fields).pointingDuration = 0.8;
-  (this->fields).shouldPoint = 1;
+  (this->fields).pointState = 1;
   (this->fields).isActive = 1;
   return;
 }

@@ -167,11 +167,11 @@ void Assembly-CSharp.dll::FirstTimeButtonClicked::FirstTimeButtonClicked_OnDestr
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  this_01 = (EventHandler_1_Object_ *)
+  this_01 = (Action_2_Object_Int32Enum_ *)
             func_?(
                            TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                            );
-  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+  mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
             (this_01,(Object *)this,
              MethodInfo__FirstTimeButtonClicked__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
              ,(MethodInfo *)0x0);
@@ -228,11 +228,11 @@ void Assembly-CSharp.dll::FirstTimeButtonClicked::FirstTimeButtonClicked_Start
     if (this_00 != (UnityEvent *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
                 (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
-      this_02 = (EventHandler_1_Object_ *)
+      this_02 = (Action_2_Object_Int32Enum_ *)
                 func_?(
                                TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                                );
-      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+      mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
                 (this_02,(Object *)this,
                  MethodInfo__FirstTimeButtonClicked__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
                  ,(MethodInfo *)0x0);

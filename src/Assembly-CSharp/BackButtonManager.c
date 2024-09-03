@@ -63,7 +63,6 @@ void Assembly-CSharp.dll::BackButtonManager::BackButtonManager_PostDestroyCleanu
                (MethodInfo *method)
 
 {
-  iStack_1 = in_ECX;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__BackButtonManager);
     func_?(&TypeInfo__UnityEngine__Debug);
@@ -81,55 +80,54 @@ void Assembly-CSharp.dll::BackButtonManager::BackButtonManager_PostDestroyCleanu
   if ((TypeInfo__BackButtonManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BackButtonManager);
   }
-  pLVar2 = TypeInfo__BackButtonManager->static_fields->subscribers;
-  if (pLVar2 == (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) {
+  pLVar1 = TypeInfo__BackButtonManager->static_fields->subscribers;
+  if (pLVar1 == (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) {
 code_?:
     func_?();
   }
   else {
-    if ((pLVar2->fields)._size < 1) {
+    if ((pLVar1->fields)._size < 1) {
       return;
     }
     args = (Object__Array *)func_?(TypeInfo__System__Object,1);
     if ((TypeInfo__BackButtonManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__BackButtonManager);
+      func_?();
     }
-    pLVar2 = TypeInfo__BackButtonManager->static_fields->subscribers;
-    if (pLVar2 == (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) goto code_?;
-    iStack_1 = (pLVar2->fields)._size;
-    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&iStack_1);
-    if (args == (Object__Array *)0x0) goto code_?;
-    if ((pOVar3 == (Object *)0x0) ||
-       (iVar4 = func_?(pOVar3,(args->klass->_0).element_class), iVar4 != 0)) {
+    if ((TypeInfo__BackButtonManager->static_fields->subscribers ==
+         (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) ||
+       (pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff8),
+       args == (Object__Array *)0x0)) goto code_?;
+    if ((pOVar2 == (Object *)0x0) ||
+       (iVar3 = func_?(pOVar2,(args->klass->_0).element_class), iVar3 != 0)) {
       if (args->max_length == 0) goto code_?;
-      args->vector[0] = pOVar3;
-      func_?(args->vector,pOVar3);
+      args->vector[0] = pOVar2;
+      func_?(args->vector,pOVar2);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarningFormat
                 (StringLiteral__0__subscribers_are_never_unsubs,args,(MethodInfo *)0x0);
-      pLVar2 = TypeInfo__BackButtonManager->static_fields->subscribers;
-      if (pLVar2 != (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) {
-        iVar4 = (pLVar2->fields)._size;
-        piVar5 = &(pLVar2->fields)._version;
-        *piVar5 = *piVar5 + 1;
-        (pLVar2->fields)._size = 0;
-        if (0 < iVar4) {
+      pLVar1 = TypeInfo__BackButtonManager->static_fields->subscribers;
+      if (pLVar1 != (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) {
+        iVar3 = (pLVar1->fields)._size;
+        piVar4 = &(pLVar1->fields)._version;
+        *piVar4 = *piVar4 + 1;
+        (pLVar1->fields)._size = 0;
+        if (0 < iVar3) {
           mscorlib.dll::System::Array::Array_Clear
-                    ((Array *)(pLVar2->fields)._items,0,iVar4,(MethodInfo *)0x0);
+                    ((Array *)(pLVar1->fields)._items,0,iVar3,(MethodInfo *)0x0);
         }
         return;
       }
       goto code_?;
     }
   }
-  uVar6 = func_?(0);
-  func_?(uVar6);
+  uVar5 = func_?(0);
+  func_?(uVar5);
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -177,7 +175,7 @@ void Assembly-CSharp.dll::BackButtonManager::BackButtonManager_Subscribe
       pLVar1 = TypeInfo__BackButtonManager->static_fields->subscribers;
       method_00 = TypeInfo__BackButtonManager__BackButtonSubscriber;
       value = (Object *)func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
       value[1].klass = (Object__Class *)handler;
       func_?(value + 1,handler);

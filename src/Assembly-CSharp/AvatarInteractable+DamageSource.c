@@ -11,7 +11,7 @@ void Assembly-CSharp.dll::AvatarInteractable+DamageSource::AvatarInteractable_Da
   }
   method_00 = TypeInfo__AvatarInteractable__DamageSource;
   value = (AvatarInteractable_DamageSource *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (value->fields).time = 0.0;
   TypeInfo__AvatarInteractable__DamageSource->static_fields->none = value;
@@ -20,20 +20,35 @@ void Assembly-CSharp.dll::AvatarInteractable+DamageSource::AvatarInteractable_Da
 }
 
 
-/* AvatarInteractable+DamageSource(MVPlayer, PlayerKilledByType) */
+/* AvatarInteractable+DamageSource(MVPlayer, PlayerKilledByType, String) */
 
 void Assembly-CSharp.dll::AvatarInteractable+DamageSource::AvatarInteractable_DamageSource__ctor
                (AvatarInteractable_DamageSource *this,MVPlayer *shooter,
-               PlayerKilledByType__Enum damageType,MethodInfo *method)
+               PlayerKilledByType__Enum damageType,String *weaponName,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).shooter = shooter;
   func_?(&this->fields,shooter);
   (this->fields).damageType = (undefined1)damageType;
+  (this->fields).weaponName = weaponName;
+  func_?(&(this->fields).weaponName,weaponName);
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   (this->fields).time = fVar1;
+  return;
+}
+
+
+/* AvatarInteractable+DamageSource() */
+
+void Assembly-CSharp.dll::AvatarInteractable+DamageSource::AvatarInteractable_DamageSource__ctor_1
+               (AvatarInteractable_DamageSource *this,MethodInfo *method)
+
+{
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  (this->fields).time = 0.0;
   return;
 }
 

@@ -9,7 +9,7 @@ GhostEye_SneakySideToSide_GetSneakySideToSideRotation
 {
   fStack_1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   fVar2 = _UNK_?;
-  fVar3 = (this->fields)._.direction * fStack_1 * (this->fields)._.rotatationPrSecond *
+  fVar3 = fStack_1 * (this->fields)._.direction * (this->fields)._.rotatationPrSecond *
           _UNK_? + (this->fields)._.wrappedTime;
   (this->fields)._.wrappedTime = fVar3;
   fVar4 = _UNK_?;

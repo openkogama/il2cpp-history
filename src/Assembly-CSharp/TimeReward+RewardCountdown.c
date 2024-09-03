@@ -35,7 +35,7 @@ Assembly-CSharp.dll::TimeReward+RewardCountdown::TimeReward_RewardCountdown_Upda
       func_?(&StringLiteral_s_gameRewardURL__);
       cRam_? = '\x01';
     }
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)pTVar2,ExceptionArgument__Enum_obj,unaff_retaddr);
     if (cRam_? == '\0') {
       func_?();
@@ -93,7 +93,7 @@ void Assembly-CSharp.dll::TimeReward+RewardCountdown::TimeReward_RewardCountdown
     func_?(&StringLiteral_Time_is_started);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
@@ -102,9 +102,8 @@ void Assembly-CSharp.dll::TimeReward+RewardCountdown::TimeReward_RewardCountdown
             ((Object *)StringLiteral_Time_is_started,(MethodInfo *)0x0);
   this_00 = (WaitForTicks *)func_?(TypeInfo__WaitForTicks);
   WaitForTicks::WaitForTicks__ctor(this_00,timeInSeconds * 1000,(MethodInfo *)0x0);
-  ppWVar1 = &(this->fields).waitForTicks;
-  *ppWVar1 = this_00;
-  func_?(ppWVar1,this_00);
+  (this->fields).waitForTicks = this_00;
+  func_?(&(this->fields).waitForTicks,this_00);
   this_01 = (RewardStateDataEventArgs *)func_?(TypeInfo__RewardStateDataEventArgs);
   if (cRam_? == '\0') {
     func_?();
@@ -117,13 +116,13 @@ void Assembly-CSharp.dll::TimeReward+RewardCountdown::TimeReward_RewardCountdown
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
             ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_01,(MethodInfo *)0x0);
-  TVar2._ticks = 0;
+  TVar1._ticks = 0;
   mscorlib.dll::System::TimeSpan::TimeSpan__ctor_2
             ((TimeSpan *)&stack0xfffffff4,0,0,0,timeInSeconds,(MethodInfo *)0x0);
   *(List_1_System_Object_ **)&(this_01->fields).timeSpan._ticks =
-       (List_1_System_Object_ *)TVar2._ticks;
+       (List_1_System_Object_ *)TVar1._ticks;
   (this_01->fields).amountGold = amountGold;
-  *(int *)((int)&(this_01->fields).timeSpan._ticks + 4) = (int)((ulonglong)TVar2._ticks >> 0x20);
+  *(int *)((int)&(this_01->fields).timeSpan._ticks + 4) = (int)((ulonglong)TVar1._ticks >> 0x20);
   (this->fields)._.rewardStateEventArgs = this_01;
   func_?();
   return;

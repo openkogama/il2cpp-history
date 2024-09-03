@@ -28,7 +28,8 @@ public class PickupItemSlapGun : PickupItemWithDelay
 	// Properties
 	public override AvatarItemType Type { get; }
 	public override bool CanUnequip { get; }
-	public override bool ActivateGunModeOnEquip { get; }
+	public override bool FirstPerson { get; }
+	public override bool GunMode { get; }
 	public override int Quantity { get; }
 	public override bool CanHolster { get; }
 

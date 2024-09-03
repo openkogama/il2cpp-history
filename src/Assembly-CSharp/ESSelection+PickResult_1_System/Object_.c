@@ -7,7 +7,7 @@ void Assembly-CSharp.dll::ESSelection+PickResult`1[System::Object]::
                Object *data,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).mousePosition.x = mousePosition.x;
   (this->fields).mousePosition.y = mousePosition.y;
@@ -32,9 +32,8 @@ void Assembly-CSharp.dll::ESSelection+PickResult`1[System::Object]::
   *(undefined4 *)&(this->fields).hit.field_0x3c = hit._60_4_;
   (this->fields).hit.interactionFlags = hit.interactionFlags;
   func_?(&(this->fields).hit.cube,0);
-  ppOVar1 = &(this->fields).data;
-  *ppOVar1 = data;
-  func_?(ppOVar1,data);
+  (this->fields).data = data;
+  func_?(&(this->fields).data,data);
   return;
 }
 

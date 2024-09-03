@@ -7,47 +7,34 @@ Vector3 * Assembly-CSharp.dll::InputMovementPrecisionModifier::
                     Vector3 input,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Math);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Math);
-  }
-  dVar1 = (double)(input.x * input.x + input.y * input.y + input.z * input.z);
-  if (dVar1 < 0.0) {
-    func_?();
-  }
-  else {
-    dVar1 = SQRT(dVar1);
-  }
-  if ((float)dVar1 < _UNK_?) {
-    __return_storage_ptr__->x = (float)(int)input._0_8_;
-    __return_storage_ptr__->y = (float)(int)((ulonglong)input._0_8_ >> 0x20);
+  fVar1 = (float10)func_?(&input,0);
+  if ((float)fVar1 < _UNK_?) {
+    __return_storage_ptr__->x = input.x;
+    __return_storage_ptr__->y = input.y;
     __return_storage_ptr__->z = input.z;
     return __return_storage_ptr__;
   }
-  fVar2 = (float)dVar1 / (this->fields).maxMagnitude;
-  if (fVar2 < 0.0) {
-    fVar3 = 0.0;
+  time = (float)fVar1 / (this->fields).maxMagnitude;
+  if (time < 0.0) {
+    fVar2 = 0.0;
   }
   else {
-    fVar3 = _UNK_?;
-    if (fVar2 <= _UNK_?) goto code_?;
+    fVar2 = _UNK_?;
+    if (time <= _UNK_?) goto code_?;
   }
-  fVar2 = fVar3;
+  time = fVar2;
 code_?:
   this_00 = (this->fields).inputMovementModificationCurve;
   if (this_00 == (AnimationCurve *)0x0) {
     func_?();
-    pcVar4 = (code *)swi(3);
-    pVVar5 = (Vector3 *)(*pcVar4)();
-    return pVVar5;
+    pcVar3 = (code *)swi(3);
+    pVVar4 = (Vector3 *)(*pcVar3)();
+    return pVVar4;
   }
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                    (this_00,fVar2,(MethodInfo *)0x0);
-  fVar2 = fVar2 * (_UNK_? / 0.0);
-  __return_storage_ptr__->x = fVar2 * 0.0;
+                    (this_00,time,(MethodInfo *)0x0);
+  fVar2 = fVar2 * (_UNK_? / time);
+  __return_storage_ptr__->x = input.x * fVar2;
   __return_storage_ptr__->y = input.y * fVar2;
   __return_storage_ptr__->z = input.z * fVar2;
   return __return_storage_ptr__;

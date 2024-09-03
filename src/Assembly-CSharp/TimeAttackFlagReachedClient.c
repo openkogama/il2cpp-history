@@ -18,10 +18,10 @@ void Assembly-CSharp.dll::TimeAttackFlagReachedClient::TimeAttackFlagReachedClie
     if (uVar3 != 0) {
       do {
         if (pIVar1->interfaceOffsets[uVar2].interfaceType == (Il2CppClass *)TypeInfo__IBriefing) {
+          pIVar1 = winningConditionBriefingView->klass;
           iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(winningConditionBriefingView->klass->vtable).AddBriefing_1)[iVar4].method)
-                    (winningConditionBriefingView,5,
-                     (&winningConditionBriefingView->klass[1]._0.image)[iVar4 * 2]);
+          (*(code *)(&(pIVar1->vtable).AddBriefing_1)[iVar4].method)
+                    (winningConditionBriefingView,5,(&pIVar1[1]._0.image)[iVar4 * 2]);
           return;
         }
         uVar2 = uVar2 + 1;

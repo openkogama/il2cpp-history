@@ -14,7 +14,8 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::UnityAds::UnityAds::
     func_?(TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds);
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient);
+    func_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient,
+                    unaff_EBP);
     func_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds);
     cRam_? = '\x01';
   }
@@ -37,7 +38,7 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::UnityAds::UnityAds::
     do {
       if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient) {
-        ppMVar6 = &(&pIVar1->klass->vtable)[pIVar3->interfaceOffsets[uVar4].offset].
+        ppMVar6 = &(&pIVar1->klass->vtable)[pIVar1->klass->interfaceOffsets[uVar4].offset].
                    SetConsentMetaData.method;
         goto code_?;
       }

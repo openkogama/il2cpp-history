@@ -7,10 +7,9 @@ void Assembly-CSharp.dll::AdConfigSettings::AdConfigSettings__ctor
                int32_t interstitialTimeoutAfterRewardedAd,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  pEVar1 = &(this->fields)._EmbeddedSiteConfigData_k__BackingField;
-  pEVar1->sites = embeddedSiteConfigData.sites;
+  (this->fields)._EmbeddedSiteConfigData_k__BackingField.sites = embeddedSiteConfigData.sites;
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.siteEnum = embeddedSiteConfigData.siteEnum;
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.showTouristPromotion =
        embeddedSiteConfigData.showTouristPromotion;
@@ -36,7 +35,7 @@ void Assembly-CSharp.dll::AdConfigSettings::AdConfigSettings__ctor
        embeddedSiteConfigData.hideSignUp;
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.noPlayButtonVideoIcon =
        embeddedSiteConfigData.noPlayButtonVideoIcon;
-  func_?(pEVar1,0);
+  func_?(&(this->fields)._EmbeddedSiteConfigData_k__BackingField,0);
   (this->fields)._AdTimeoutAsSuccess_k__BackingField = adAutoSuccessAfterDelayEnabled;
   (this->fields)._AdTimeoutAsSuccessDelay_k__BackingField = delayBeforeAdIsAutoSuccess;
   (this->fields)._InterstitialTimeoutAfterRewardedAd_k__BackingField =
@@ -89,8 +88,7 @@ void Assembly-CSharp.dll::AdConfigSettings::AdConfigSettings_set_EmbeddedSiteCon
                (AdConfigSettings *this,EmbeddedSiteConfigData value,MethodInfo *method)
 
 {
-  pEVar1 = &(this->fields)._EmbeddedSiteConfigData_k__BackingField;
-  pEVar1->sites = value.sites;
+  (this->fields)._EmbeddedSiteConfigData_k__BackingField.sites = value.sites;
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.siteEnum = value.siteEnum;
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.showTouristPromotion =
        value.showTouristPromotion;
@@ -110,7 +108,7 @@ void Assembly-CSharp.dll::AdConfigSettings::AdConfigSettings_set_EmbeddedSiteCon
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.hideSignUp = value.hideSignUp;
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.noPlayButtonVideoIcon =
        value.noPlayButtonVideoIcon;
-  func_?(pEVar1,0);
+  func_?(&(this->fields)._EmbeddedSiteConfigData_k__BackingField,0);
   return;
 }
 

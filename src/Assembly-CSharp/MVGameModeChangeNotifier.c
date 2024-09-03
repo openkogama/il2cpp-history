@@ -83,7 +83,7 @@ void Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier_Rem
   }
   method_00 = TypeInfo__MVGameModeChangeNotifier____c__DisplayClass4_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)obj;
@@ -196,7 +196,7 @@ void Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier_Upd
         }
       }
       uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 ((Object *)&stack0xffffffc0,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<IGameStateControllerSubscriber>__Dispose__
@@ -241,9 +241,9 @@ void Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier__ct
              MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__List__)
   ;
   method_00 = (MethodInfo *)&(this->fields).UpdateList;
-  *(List_1_IGameStateControllerSubscriber_ **)method_00 = this_00;
+  (this->fields).UpdateList = this_00;
   func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   UVar1 = MVGameModeChangeNotifier_GetPresentState(this,(MethodInfo *)0x0);
   (this->fields)._currentState = UVar1;

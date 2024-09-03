@@ -9,7 +9,7 @@ void MVWorldObject.dll::MV::WorldObject::Link::Link__ctor
   (this->fields).id = -1;
   (this->fields).outputWOID = -1;
   (this->fields).inputWOID = -1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).id = id;
   (this->fields).outputWOID = outputWOID;

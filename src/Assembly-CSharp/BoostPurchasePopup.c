@@ -19,50 +19,52 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_CreateBoostImag
     cRam_? = '\x01';
   }
   index = 0;
-  this_00 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-            (this->fields).boosterList;
+  pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+           (this->fields).boosterList;
   do {
-    if (this_00 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
+    if (pLVar1 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
 code_?:
       func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    if ((this_00->fields)._size <= index) {
+    if ((pLVar1->fields)._size <= index) {
       return;
     }
-    if (this_00 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+    pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+             (this->fields).boosterList;
+    if (pLVar1 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
     goto code_?;
-    XVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+    XVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
             XmlSchemaObjectTable+XmlSchemaObjectEntry]::
             List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                      (this_00,index,
+                      (pLVar1,index,
                        MethodInfo__System__Collections__Generic__List<BoostPurchasePopup::BoosterDef>__get_Item_int_
                       );
-    this_00 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-              (this->fields).boosterList;
-    if (XVar2.qname == (XmlQualifiedName *)boostType) {
-      if (this_00 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
-        XVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+    pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+             (this->fields).boosterList;
+    if (XVar3.qname == (XmlQualifiedName *)boostType) {
+      if (pLVar1 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
+        XVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
                 XmlSchemaObjectTable+XmlSchemaObjectEntry]::
                 List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                          (this_00,index,
+                          (pLVar1,index,
                            MethodInfo__System__Collections__Generic__List<BoostPurchasePopup::BoosterDef>__get_Item_int_
                           );
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        this_01 = (GameObject *)
+        this_00 = (GameObject *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)XVar2.xso,
+                            ((Object *)XVar3.xso,
                              UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                             );
-        if ((this_01 != (GameObject *)0x0) &&
-           (this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (this_01,(MethodInfo *)0x0), this_02 != (Transform *)0x0)) {
+        if ((this_00 != (GameObject *)0x0) &&
+           (this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                (this_00,(MethodInfo *)0x0), this_01 != (Transform *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (this_02,(Transform *)(this->fields).boostImageParent,0,(MethodInfo *)0x0);
+                    (this_01,(Transform *)(this->fields).boostImageParent,0,(MethodInfo *)0x0);
           return;
         }
       }
@@ -108,26 +110,24 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_Initialize
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  ppSVar1 = &(this->fields).boostKey;
-  *ppSVar1 = boostKey;
-  func_?(ppSVar1,boostKey);
-  ppUVar2 = &(this->fields).OnPurchaseSuccessful;
+  (this->fields).boostKey = boostKey;
+  func_?(&(this->fields).boostKey,boostKey);
   (this->fields).price = price;
-  *ppUVar2 = OnPurchaseSuccessful;
-  func_?(ppUVar2,OnPurchaseSuccessful);
-  pTVar3 = (this->fields).headerText;
-  if (pTVar3 != (Text *)0x0) {
-    (*(code *)(pTVar3->klass->vtable).set_text.method)
-              (pTVar3,boostName,(pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    pTVar3 = (this->fields).priceText;
-    pSVar4 = mscorlib.dll::System::Int32::Int32_ToString_1
+  (this->fields).OnPurchaseSuccessful = OnPurchaseSuccessful;
+  func_?(&(this->fields).OnPurchaseSuccessful,OnPurchaseSuccessful);
+  pTVar1 = (this->fields).headerText;
+  if (pTVar1 != (Text *)0x0) {
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,boostName,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    pTVar1 = (this->fields).priceText;
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString_1
                        ((Int32 *)&price,StringLiteral_N0,(MethodInfo *)0x0);
-    if ((pSVar4 != (String *)0x0) &&
-       (pSVar4 = mscorlib.dll::System::String::String_Replace_1
-                           (pSVar4,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0),
-       pTVar3 != (Text *)0x0)) {
-      (*(code *)(pTVar3->klass->vtable).set_text.method)
-                (pTVar3,pSVar4,(pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    if ((pSVar2 != (String *)0x0) &&
+       (pSVar2 = mscorlib.dll::System::String::String_Replace_1
+                           (pSVar2,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0),
+       pTVar1 != (Text *)0x0)) {
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__List<BoostPurchasePopup::BoosterDef>__get_Count__
@@ -141,32 +141,32 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_Initialize
         func_?(&TypeInfo__UnityEngine__Object);
         cRam_? = '\x01';
       }
-      pLVar5 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+      pLVar3 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
                (this->fields).boosterList;
       index = 0;
-      while (pLVar5 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
-        if ((pLVar5->fields)._size <= index) {
+      while (pLVar3 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
+        if ((pLVar3->fields)._size <= index) {
           return;
         }
-        pLVar5 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+        pLVar3 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
                  (this->fields).boosterList;
-        if (pLVar5 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+        if (pLVar3 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
         break;
-        XVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+        XVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
                 XmlSchemaObjectTable+XmlSchemaObjectEntry]::
                 List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                          (pLVar5,index,
+                          (pLVar3,index,
                            MethodInfo__System__Collections__Generic__List<BoostPurchasePopup::BoosterDef>__get_Item_int_
                           );
-        pLVar5 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+        pLVar3 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
                  (this->fields).boosterList;
-        if (XVar6.qname == (XmlQualifiedName *)boostType) {
-          if (pLVar5 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+        if (XVar4.qname == (XmlQualifiedName *)boostType) {
+          if (pLVar3 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
           {
-            XVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+            XVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
                     XmlSchemaObjectTable+XmlSchemaObjectEntry]::
                     List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                              (pLVar5,index,
+                              (pLVar3,index,
                                MethodInfo__System__Collections__Generic__List<BoostPurchasePopup::BoosterDef>__get_Item_int_
                               );
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -174,7 +174,7 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_Initialize
             }
             this_00 = (GameObject *)
                       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                                ((Object *)XVar6.xso,
+                                ((Object *)XVar4.xso,
                                  UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                                 );
             if ((this_00 != (GameObject *)0x0) &&
@@ -193,8 +193,8 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_Initialize
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -241,15 +241,15 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_ProductPurchase
   }
   method_00 = TypeInfo__BoostPurchasePopup____c__DisplayClass9_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value == (Object *)0x0) {
 code_?:
     func_?();
   }
   else {
-    value[1].klass = (Object__Class *)returnCode;
     value[1].monitor = (MonitorData *)this;
+    value[1].klass = (Object__Class *)returnCode;
     func_?(&value[1].monitor,this);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
@@ -440,27 +440,27 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_Purchase
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar1 != (MVNetworkGame *)0x0) {
     pAVar2 = (pMVar1->fields).PurchaseProductResponseHandler;
-    ppAVar3 = &(pMVar1->fields).PurchaseProductResponseHandler;
     this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
     UnityAction_2_System_Int32_System_Int32___ctor
               (this_00,(Object *)0x0,
                MethodInfo__BoostPurchasePopup__ProductPurchaseResponseHandler_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                ,(MethodInfo *)0x0);
-    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar4 == (Delegate *)0x0) {
-      *ppAVar3 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                  *)0x0;
+    if (pDVar3 == (Delegate *)0x0) {
+      (pMVar1->fields).PurchaseProductResponseHandler =
+           (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+           0x0;
     }
     else {
       pAVar2 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                 *)func_?();
       if (pAVar2 == (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                      *)0x0) goto code_?;
-      *ppAVar3 = pAVar2;
-      iVar5 = func_?();
-      if (iVar5 == 0) goto code_?;
+      (pMVar1->fields).PurchaseProductResponseHandler = pAVar2;
+      iVar4 = func_?();
+      if (iVar4 == 0) goto code_?;
     }
     func_?();
     this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
@@ -473,8 +473,8 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_Purchase
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

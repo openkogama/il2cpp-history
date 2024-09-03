@@ -41,10 +41,10 @@ VehicleEnergyMeter_BlinkingBar(VehicleEnergyMeter *this,MethodInfo *method)
   method_00 = 
   TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter___BlinkingBar_d__17;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -70,23 +70,22 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEn
                    );
     cRam_? = '\x01';
   }
-  ppVVar1 = &(this->fields).vehicleEnergyContainer;
-  *ppVVar1 = (VehicleEnergyContainer *)0x0;
-  func_?(ppVVar1,0);
+  (this->fields).vehicleEnergyContainer = (VehicleEnergyContainer *)0x0;
+  func_?(&(this->fields).vehicleEnergyContainer,0);
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)rigidBody,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
+  if (bVar1 == 0) {
 code_?:
-    pVVar3 = *ppVVar1;
+    pVVar2 = (this->fields).vehicleEnergyContainer;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pVVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)pVVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
       (this->fields).updateEnergy = 0;
 code_?:
       if ((insideVehicle == 0) && ((this->fields).currentColor.hasValue != 0)) {
@@ -95,13 +94,13 @@ code_?:
       if ((this->fields).updateEnergy == 0) {
         return;
       }
-      pVVar3 = (this->fields).vehicleEnergyContainer;
+      pVVar2 = (this->fields).vehicleEnergyContainer;
       this_00 = (ProgressBarAndroid *)(this->fields).progressBar;
-      if ((pVVar3 != (VehicleEnergyContainer *)0x0) &&
-         (fVar4 = WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer::
-                   VehicleEnergyContainer_get_EnergyStatus(pVVar3,(MethodInfo *)0x0),
+      if ((pVVar2 != (VehicleEnergyContainer *)0x0) &&
+         (fVar3 = WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer::
+                   VehicleEnergyContainer_get_EnergyStatus(pVVar2,(MethodInfo *)0x0),
          this_00 != (ProgressBarAndroid *)0x0)) {
-        ProgressBarAndroid::ProgressBarAndroid_set_Progress(this_00,fVar4,(MethodInfo *)0x0);
+        ProgressBarAndroid::ProgressBarAndroid_set_Progress(this_00,fVar3,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?();
           func_?();
@@ -109,10 +108,10 @@ code_?:
           func_?();
           cRam_? = '\x01';
         }
-        pPVar5 = (this->fields).progressBar;
-        if (pPVar5 != (ProgressBar *)0x0) {
-          if (((pPVar5->fields).progress <= _UNK_?) &&
-             (_UNK_? < (pPVar5->fields).progress)) {
+        pPVar4 = (this->fields).progressBar;
+        if (pPVar4 != (ProgressBar *)0x0) {
+          if (((pPVar4->fields).progress <= _UNK_?) &&
+             (_UNK_? < (pPVar4->fields).progress)) {
             if ((this->fields).currentColor.hasValue != 0) {
               return;
             }
@@ -122,22 +121,22 @@ code_?:
                              TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter
                              );
             }
-            pVVar6 = TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter->
+            pVVar5 = TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter->
                      static_fields;
-            value.m_XMin = (pVVar6->WarningColor).r;
-            value.m_YMin = (pVVar6->WarningColor).g;
-            value.m_Width = (pVVar6->WarningColor).b;
-            value.m_Height = (pVVar6->WarningColor).a;
-            uVar7._0_1_ = 0;
-            uVar7._1_3_ = 0;
-            fVar4 = 0.0;
+            value.m_XMin = (pVVar5->WarningColor).r;
+            value.m_YMin = (pVVar5->WarningColor).g;
+            value.m_Width = (pVVar5->WarningColor).b;
+            value.m_Height = (pVVar5->WarningColor).a;
+            uVar6._0_1_ = 0;
+            uVar6._1_3_ = 0;
+            fVar3 = 0.0;
             mscorlib.dll::System::Nullable`1[UnityEngine::Rect]::Nullable_1_UnityEngine_Rect___ctor
                       ((Nullable_1_UnityEngine_Rect_ *)&stack0xffffffe8,value,
                        MethodInfo__System__Nullable<UnityEngine::Color>__Nullable_UnityEngine__Color_
                       );
-            (this->fields).currentColor.hasValue = (bool)uVar7;
-            *(int3 *)&(this->fields).currentColor.field_0x1 = SUB43(uVar7,1);
-            (this->fields).currentColor.value.r = fVar4;
+            (this->fields).currentColor.hasValue = (bool)uVar6;
+            *(int3 *)&(this->fields).currentColor.field_0x1 = SUB43(uVar6,1);
+            (this->fields).currentColor.value.r = fVar3;
             (this->fields).currentColor.value.g = 0.0;
             (this->fields).currentColor.value.b = 0.0;
             (this->fields).currentColor.value.a = 0.0;
@@ -149,28 +148,27 @@ code_?:
           if ((this->fields).currentColor.hasValue == 0) {
             return;
           }
-          fVar4 = (this->fields).currentColor.value.a;
-          bVar2 = (bool)*(undefined4 *)&(this->fields).currentColor;
-          fVar8 = (this->fields).currentColor.value.r;
-          fVar9 = (this->fields).currentColor.value.g;
-          fVar10 = (this->fields).currentColor.value.b;
+          fVar3 = (this->fields).currentColor.value.a;
+          bVar1 = (bool)*(undefined4 *)&(this->fields).currentColor;
+          fVar7 = (this->fields).currentColor.value.r;
+          fVar8 = (this->fields).currentColor.value.g;
+          fVar9 = (this->fields).currentColor.value.b;
           if ((TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter->_1).
               cctor_finished_or_no_cctor == 0) {
             func_?(
                            TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter
                            );
           }
-          pVVar6 = TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter->
+          pVVar5 = TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter->
                    static_fields;
-          if (bVar2 == 0) {
+          if (bVar1 == 0) {
             return;
           }
-          fVar8 = fVar8 - (pVVar6->WarningColor).r;
-          fVar9 = fVar9 - (pVVar6->WarningColor).g;
-          fVar10 = fVar10 - (pVVar6->WarningColor).b;
-          fVar4 = fVar4 - (pVVar6->WarningColor).a;
-          if (_UNK_? <= fVar8 * fVar8 + fVar9 * fVar9 + fVar10 * fVar10 + fVar4 * fVar4)
-          {
+          fVar7 = fVar7 - (pVVar5->WarningColor).r;
+          fVar8 = fVar8 - (pVVar5->WarningColor).g;
+          fVar9 = fVar9 - (pVVar5->WarningColor).b;
+          fVar3 = fVar3 - (pVVar5->WarningColor).a;
+          if (_UNK_? <= fVar7 * fVar7 + fVar8 * fVar8 + fVar9 * fVar9 + fVar3 * fVar3) {
             return;
           }
           VehicleEnergyMeter_StopBlinkingBar(this,(MethodInfo *)0x0);
@@ -179,46 +177,48 @@ code_?:
       }
       goto code_?;
     }
-    pVVar3 = *ppVVar1;
-    if (pVVar3 == (VehicleEnergyContainer *)0x0) goto code_?;
-    (this->fields).updateEnergy = (pVVar3->fields)._UsingEnergy_k__BackingField;
-    pAVar11 = (pVVar3->fields).OnRefill;
+    pVVar2 = (this->fields).vehicleEnergyContainer;
+    if (pVVar2 == (VehicleEnergyContainer *)0x0) goto code_?;
+    (this->fields).updateEnergy = (pVVar2->fields)._UsingEnergy_k__BackingField;
+    pVVar2 = (this->fields).vehicleEnergyContainer;
+    if (pVVar2 == (VehicleEnergyContainer *)0x0) goto code_?;
+    pAVar10 = (pVVar2->fields).OnRefill;
     this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_01,(Object *)this,
                MethodInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter__OnRefillCallback__
                ,(MethodInfo *)0x0);
-    pAVar11 = (Action *)
+    pAVar10 = (Action *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar11,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pAVar11 == (Action *)0x0) {
-      (pVVar3->fields).OnRefill = (Action *)0x0;
+                       ((Delegate *)pAVar10,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pAVar10 == (Action *)0x0) {
+      (pVVar2->fields).OnRefill = (Action *)0x0;
 code_?:
       func_?();
       goto code_?;
     }
-    pAVar12 = (Action *)0x0;
-    if (pAVar11->klass == TypeInfo__System__Action) {
-      pAVar12 = pAVar11;
+    pAVar11 = (Action *)0x0;
+    if (pAVar10->klass == TypeInfo__System__Action) {
+      pAVar11 = pAVar10;
     }
-    if (pAVar12 == (Action *)0x0) goto code_?;
-    (pVVar3->fields).OnRefill = pAVar12;
-    pAVar12 = (Action *)0x0;
-    if (pAVar11->klass == TypeInfo__System__Action) {
-      pAVar12 = pAVar11;
+    if (pAVar11 == (Action *)0x0) goto code_?;
+    (pVVar2->fields).OnRefill = pAVar11;
+    pAVar11 = (Action *)0x0;
+    if (pAVar10->klass == TypeInfo__System__Action) {
+      pAVar11 = pAVar10;
     }
-    if (pAVar12 != (Action *)0x0) goto code_?;
+    if (pAVar11 != (Action *)0x0) goto code_?;
   }
   else {
     if (rigidBody != (MVRigidBody *)0x0) {
-      pVVar3 = (VehicleEnergyContainer *)
+      pVVar2 = (VehicleEnergyContainer *)
                UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                          ((Component *)rigidBody,
                           WorldObjectTypes__VehicleEnergy__VehicleEnergyContainer_MethodInfo__UnityEngine__Component__GetComponent<WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer>__
                          );
-      *ppVVar1 = pVVar3;
-      func_?(ppVVar1,pVVar3);
+      (this->fields).vehicleEnergyContainer = pVVar2;
+      func_?(&(this->fields).vehicleEnergyContainer,pVVar2);
       goto code_?;
     }
 code_?:
@@ -227,8 +227,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -348,10 +348,10 @@ VehicleEnergyMeter_StopBlinking(VehicleEnergyMeter *this,MethodInfo *method)
   method_00 = 
   TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter___StopBlinking_d__14;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -372,7 +372,7 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEn
   method_00 = 
   TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter___BlinkingBar_d__17;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;

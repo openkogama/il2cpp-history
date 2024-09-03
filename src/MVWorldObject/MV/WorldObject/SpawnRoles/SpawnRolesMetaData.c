@@ -25,10 +25,10 @@ void MVWorldObject.dll::MV::WorldObject::SpawnRoles::SpawnRolesMetaData::SpawnRo
              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::SpawnRoles::DefaultSpawnRoleType,_int>__Dictionary__
             );
   method_00 = (MethodInfo *)&this->fields;
-  ((SpawnRolesMetaData__Fields *)method_00)->spawnRolesDefaultTypeWoIDMap =
+  (this->fields).spawnRolesDefaultTypeWoIDMap =
        (Dictionary_2_MV_WorldObject_SpawnRoles_DefaultSpawnRoleType_System_Int32_ *)this_00;
   func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }

@@ -37,7 +37,7 @@ void Assembly-CSharp.dll::SettingsMenuButton+<>c::SettingsMenuButton_c__cctor(Me
   }
   method_00 = TypeInfo__SettingsMenuButton____c;
   value = (SettingsMenuButton_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__SettingsMenuButton____c->static_fields->__9 = value;
   func_?(TypeInfo__SettingsMenuButton____c->static_fields,value);

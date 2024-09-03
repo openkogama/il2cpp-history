@@ -190,7 +190,7 @@ void Assembly-CSharp.dll::GamePassesViewCrystalsInInventory::
   }
   method_00 = TypeInfo__GamePassesViewCrystalsInInventory____c__DisplayClass8_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)category;
@@ -249,7 +249,7 @@ void Assembly-CSharp.dll::GamePassesViewCrystalsInInventory::
   }
   method_00 = TypeInfo__GamePassesViewCrystalsInInventory____c__DisplayClass8_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)categoryId;
@@ -325,7 +325,7 @@ void Assembly-CSharp.dll::GamePassesViewCrystalsInInventory::
   }
   method_00 = TypeInfo__GamePassesViewCrystalsInInventory____c__DisplayClass10_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)returnCode;
@@ -335,19 +335,18 @@ void Assembly-CSharp.dll::GamePassesViewCrystalsInInventory::
       return;
     }
     pLVar2 = (this->fields).buyingItems;
-    returnCode = 0;
+    iVar3 = 0;
     if (pLVar2 != (List_1_ShopItem_ *)0x0) {
-      while (returnCode < (pLVar2->fields)._size) {
+      while (iVar3 < (pLVar2->fields)._size) {
         value_00 = (Object *)
                    func_?(
                                   TypeInfo__GamePassesViewCrystalsInInventory____c__DisplayClass10_1
                                   );
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   (value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
         if (value_00 == (Object *)0x0) goto code_?;
-        ppMVar3 = &value_00[1].monitor;
-        *ppMVar3 = (MonitorData *)value;
-        func_?(ppMVar3,value);
+        value_00[1].monitor = (MonitorData *)value;
+        func_?(&value_00[1].monitor,value);
         this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                   (this->fields).buyingItems;
         if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
@@ -355,12 +354,12 @@ void Assembly-CSharp.dll::GamePassesViewCrystalsInInventory::
         RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_00,returnCode,
+                          (this_00,iVar3,
                            MethodInfo__System__Collections__Generic__List<ShopItem>__get_Item_int_);
         value_00[1].klass = (Object__Class *)RVar4;
         func_?(value_00 + 1,RVar4);
-        if (*ppMVar3 == (MonitorData *)0x0) goto code_?;
-        if (*(int *)(*ppMVar3 + 8) == 0) {
+        if (value_00[1].monitor == (MonitorData *)0x0) goto code_?;
+        if (*(int *)(value_00[1].monitor + 8) == 0) {
           iVar5 = func_?(0);
           if ((iVar5 == 0) ||
              (method_00 = (GamePassesViewCrystalsInInventory_c_DisplayClass10_0__Class *)
@@ -402,18 +401,18 @@ void Assembly-CSharp.dll::GamePassesViewCrystalsInInventory::
                     );
         }
         pLVar2 = (this->fields).buyingItems;
-        returnCode = returnCode + 1;
+        iVar3 = iVar3 + 1;
         if (pLVar2 == (List_1_ShopItem_ *)0x0) goto code_?;
       }
       pLVar2 = (this->fields).buyingItems;
       if (pLVar2 != (List_1_ShopItem_ *)0x0) {
-        iVar5 = (pLVar2->fields)._size;
+        iVar3 = (pLVar2->fields)._size;
         piVar1 = &(pLVar2->fields)._version;
         *piVar1 = *piVar1 + 1;
         (pLVar2->fields)._size = 0;
-        if (0 < iVar5) {
+        if (0 < iVar3) {
           mscorlib.dll::System::Array::Array_Clear
-                    ((Array *)(pLVar2->fields)._items,0,iVar5,(MethodInfo *)0x0);
+                    ((Array *)(pLVar2->fields)._items,0,iVar3,(MethodInfo *)0x0);
         }
         pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
@@ -666,9 +665,8 @@ void Assembly-CSharp.dll::GamePassesViewCrystalsInInventory::GamePassesViewCryst
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<ShopItem>__List__);
-  ppLVar1 = &(this->fields).buyingItems;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).buyingItems = this_00;
+  func_?(&(this->fields).buyingItems,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

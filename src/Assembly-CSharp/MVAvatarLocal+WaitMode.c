@@ -163,7 +163,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+WaitMode::MVAvatarLocal_WaitMode_FrameUp
       }
       interactionMap = (InputToInGameAction *)(uint)bRam_?;
       if ((pORam0000000d != (Object *)0x0) &&
-         ((*pORam0000000d->klass[1]._0.gc_desc)(pORam0000000d,0,pORam0000000d->klass[1]._0.name),
+         ((*pORam0000000d->klass[1]._0.gc_desc)(pORam0000000d,0),
          pDRam00000009 != (Dictionary_2_System_ByteEnum_System_Object_ *)0x0)) {
         pORam0000000d =
              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
@@ -171,11 +171,10 @@ void Assembly-CSharp.dll::MVAvatarLocal+WaitMode::MVAvatarLocal_WaitMode_FrameUp
                        (pDRam00000009,0,
                         MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__get_Item_AvatarRuntimeState_
                        );
-        func_?(0xd,pORam0000000d);
+        func_?(0xd);
         bRam_? = 0;
         if (pORam0000000d != (Object *)0x0) {
-          (**(code **)&pORam0000000d->klass[1]._0.this_arg.attrs)
-                    (pORam0000000d,interactionMap,pORam0000000d->klass[1]._0.element_class);
+          (**(code **)&pORam0000000d->klass[1]._0.this_arg.attrs)(pORam0000000d,interactionMap);
           return;
         }
       }
@@ -323,7 +322,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+WaitMode::MVAvatarLocal_WaitMode__ctor
                (MVAvatarLocal_WaitMode *this,MVAvatarLocal *mvAvatar,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields)._.mvAvatar = mvAvatar;
   func_?(&this->fields,mvAvatar);

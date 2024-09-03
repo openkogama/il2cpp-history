@@ -5,24 +5,23 @@ void Assembly-CSharp.dll::ItemInventoryDeleteTab::ItemInventoryDeleteTab_Initial
                (ItemInventoryDeleteTab *this,RawImage *image,InventoryItem *item,MethodInfo *method)
 
 {
-  ppIVar1 = &(this->fields).previewedItem;
-  *ppIVar1 = item;
-  func_?(ppIVar1,item);
+  (this->fields).previewedItem = item;
+  func_?(&(this->fields).previewedItem,item);
   if ((image != (RawImage *)0x0) && (this_00 = (this->fields).preview, this_00 != (RawImage *)0x0))
   {
     UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
               (this_00,(image->fields).m_Texture,(MethodInfo *)0x0);
-    if ((item != (InventoryItem *)0x0) && (pTVar2 = (this->fields).itemName, pTVar2 != (Text *)0x0))
+    if ((item != (InventoryItem *)0x0) && (pTVar1 = (this->fields).itemName, pTVar1 != (Text *)0x0))
     {
-      (*(code *)(pTVar2->klass->vtable).set_text.method)
-                (pTVar2,(item->fields).name,
-                 (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,(item->fields).name,
+                 (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -102,7 +101,7 @@ void Assembly-CSharp.dll::ItemInventoryDeleteTab::ItemInventoryDeleteTab_OnConfi
       return;
     }
     value = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (value,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_1);
     this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
     pIVar3 = (this->fields).previewedItem;
@@ -126,18 +125,17 @@ void Assembly-CSharp.dll::ItemInventoryDeleteTab::ItemInventoryDeleteTab_OnConfi
                      (*(code *)(pTVar5->klass->vtable).get_text.method)
                                (pTVar5,(pTVar5->klass->vtable).set_text.methodPtr),
            value != (Object *)0x0)) {
-          pOVar7 = value + 1;
-          pOVar7->klass = pOVar6;
-          func_?(pOVar7,pOVar6);
+          value[1].klass = pOVar6;
+          func_?(value + 1,pOVar6);
           pTVar5 = (this->fields).itemName;
           if (pTVar5 != (Text *)0x0) {
             a = (String *)
                 (*(code *)(pTVar5->klass->vtable).get_text.method)
                           (pTVar5,(pTVar5->klass->vtable).set_text.methodPtr);
-            bVar8 = mscorlib.dll::System::String::String_op_Equality
+            bVar7 = mscorlib.dll::System::String::String_op_Equality
                               (a,::StringLiteral__,(MethodInfo *)0x0);
-            if (bVar8 != 0) {
-              pOVar7->klass = (Object__Class *)StringLiteral_item;
+            if (bVar7 != 0) {
+              value[1].klass = (Object__Class *)StringLiteral_item;
               func_?();
             }
             pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -164,8 +162,8 @@ void Assembly-CSharp.dll::ItemInventoryDeleteTab::ItemInventoryDeleteTab_OnConfi
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

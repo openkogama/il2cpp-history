@@ -84,46 +84,45 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_FriendR
   }
   key = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,key,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if (TVar1.m_Index == 0) {
-      TVar1.m_Index = 0;
+    unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,key,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+    if (unaff_ESI.m_Index != 0) {
+      if ((*(byte *)(*(int *)unaff_ESI.m_Index + 0xb8) < (TypeInfo__Friend->_1).naturalAligment) ||
+         (*(Friend__Class **)
+           (*(int *)(*(int *)unaff_ESI.m_Index + 100) + -4 +
+           (uint)(TypeInfo__Friend->_1).naturalAligment * 4) != TypeInfo__Friend))
+      goto code_?;
     }
-    else {
-      bVar2 = (TypeInfo__Friend->_1).naturalAligment;
-      if ((*(byte *)(*(int *)TVar1.m_Index + 0xb8) < bVar2) ||
-         (*(Friend__Class **)(*(int *)(*(int *)TVar1.m_Index + 100) + -4 + (uint)bVar2 * 4) !=
-          TypeInfo__Friend)) goto code_?;
-    }
-    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (((pMVar3 != (MVNetworkGame *)0x0) && (TVar1.m_Index != 0)) &&
-       (this = (pMVar3->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
-      profileId = *(MVPlayer **)(TVar1.m_Index + 8);
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar1 != (MVNetworkGame *)0x0) &&
+       ((unaff_ESI.m_Index != 0 &&
+        (this = (pMVar1->fields).playerContainer, this != (MVPlayerContainer *)0x0)))) {
+      profileId = *(MVPlayer **)(unaff_ESI.m_Index + 8);
       MVPlayerContainer::MVPlayerContainer_TryGetPlayerByProfileId
                 (this,(int32_t)profileId,(MVPlayer **)&stack0xfffffff4,(MethodInfo *)0x0);
       if ((profileId != (MVPlayer *)0x0) &&
-         (pUVar4 = (profileId->fields)._UserProfileData_k__BackingField,
-         pUVar4 != (UserProfileData *)0x0)) {
-        pSVar5 = (pUVar4->fields).UserName;
+         (pUVar2 = (profileId->fields)._UserProfileData_k__BackingField, unaff_ESI.m_Index = 0,
+         pUVar2 != (UserProfileData *)0x0)) {
+        pSVar3 = (pUVar2->fields).UserName;
         str1 = TM::TM__(StringLiteral__accepted_your_friend_request_,(MethodInfo *)0x0);
-        pSVar5 = mscorlib.dll::System::String::String_Concat_3(pSVar5,str1,(MethodInfo *)0x0);
+        pSVar3 = mscorlib.dll::System::String::String_Concat_3(pSVar3,str1,(MethodInfo *)0x0);
         if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        NotificationController_PushNotification(pSVar5,(Sprite *)0x0,5,(MethodInfo *)0x0);
+        NotificationController_PushNotification(pSVar3,(Sprite *)0x0,5,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
 code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?(unaff_ESI.m_Index);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -243,34 +242,31 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_OnNotif
                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,key,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      if (TVar2.m_Index == 0) {
-        TVar2.m_Index = 0;
+      if ((TVar2.m_Index == 0) ||
+         (((TypeInfo__Friend->_1).naturalAligment <= *(byte *)(*(int *)TVar2.m_Index + 0xb8) &&
+          (*(Friend__Class **)
+            (*(int *)(*(int *)TVar2.m_Index + 100) + -4 +
+            (uint)(TypeInfo__Friend->_1).naturalAligment * 4) == TypeInfo__Friend)))) {
+        pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((((pMVar3 != (MVNetworkGame *)0x0) && (TVar2.m_Index != 0)) &&
+            (this = (pMVar3->fields).playerContainer, this != (MVPlayerContainer *)0x0)) &&
+           ((MVPlayerContainer::MVPlayerContainer_TryGetPlayerByProfileId
+                       (this,*(int32_t *)(TVar2.m_Index + 8),(MVPlayer **)&stack0xfffffff4,
+                        (MethodInfo *)0x0), pMVar1 != (MVPlayer *)0x0 &&
+            (pUVar4 = (pMVar1->fields)._UserProfileData_k__BackingField,
+            pUVar4 != (UserProfileData *)0x0)))) {
+          pSVar5 = (pUVar4->fields).UserName;
+          str1 = TM::TM__(StringLiteral__accepted_your_friend_request_,(MethodInfo *)0x0);
+          pSVar5 = mscorlib.dll::System::String::String_Concat_3(pSVar5,str1,(MethodInfo *)0x0);
+          if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          NotificationController_PushNotification(pSVar5,(Sprite *)0x0,5,(MethodInfo *)0x0);
+          return;
+        }
       }
       else {
-        bVar3 = (TypeInfo__Friend->_1).naturalAligment;
-        if ((*(byte *)(*(int *)TVar2.m_Index + 0xb8) < bVar3) ||
-           (*(Friend__Class **)(*(int *)(*(int *)TVar2.m_Index + 100) + -4 + (uint)bVar3 * 4) !=
-            TypeInfo__Friend)) {
-          func_?(TVar2.m_Index,TypeInfo__Friend);
-          goto code_?;
-        }
-      }
-      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((((pMVar4 != (MVNetworkGame *)0x0) && (TVar2.m_Index != 0)) &&
-          (this = (pMVar4->fields).playerContainer, this != (MVPlayerContainer *)0x0)) &&
-         ((MVPlayerContainer::MVPlayerContainer_TryGetPlayerByProfileId
-                     (this,*(int32_t *)(TVar2.m_Index + 8),(MVPlayer **)&stack0xfffffff4,
-                      (MethodInfo *)0x0), pMVar1 != (MVPlayer *)0x0 &&
-          (pUVar5 = (pMVar1->fields)._UserProfileData_k__BackingField,
-          pUVar5 != (UserProfileData *)0x0)))) {
-        pSVar6 = (pUVar5->fields).UserName;
-        str1 = TM::TM__(StringLiteral__accepted_your_friend_request_,(MethodInfo *)0x0);
-        pSVar6 = mscorlib.dll::System::String::String_Concat_3(pSVar6,str1,(MethodInfo *)0x0);
-        if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        NotificationController_PushNotification(pSVar6,(Sprite *)0x0,5,(MethodInfo *)0x0);
-        return;
+        func_?(TVar2.m_Index,TypeInfo__Friend);
       }
     }
   }
@@ -289,10 +285,9 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_OnNotif
       return;
     }
   }
-code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -593,12 +588,12 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_Receive
       if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      this_00 = (HashSet_1_System_Int32Enum_ *)
+      this_00 = (HashSet_1_System_UInt32_ *)
                 TypeInfo__NotificationController->static_fields->incomingPlayerFriendRequests;
-      if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
-        bVar5 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
-                HashSet_1_System_Int32Enum__Contains
-                          (this_00,*(Int32Enum__Enum *)((int)RVar3 + 8),
+      if (this_00 != (HashSet_1_System_UInt32_ *)0x0) {
+        bVar5 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+                HashSet_1_System_UInt32__Contains
+                          (this_00,*(uint32_t *)((int)RVar3 + 8),
                            MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
         if (bVar5 != 0) {
           return;

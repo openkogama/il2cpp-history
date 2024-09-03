@@ -132,58 +132,66 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_HandleTranslateDa
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  auStack_6._0_4_ = (Object__Class *)0x0;
+  auStack_6._4_4_ = (MonitorData *)0x0;
+  auStack_6._8_4_ = 0;
+  auStack_6._12_4_ = 0.0;
+  pSStack_7 = (String *)0x0;
+  fStack_8 = 0.0;
+  fStack_9 = 0.0;
+  pMStack_10 = (MethodInfo *)0x0;
   if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__AudioEventHandler);
   }
   method_00 = (MethodInfo *)TypeInfo__AudioEventHandler->static_fields->translateSoundDatas;
   if (method_00 != (MethodInfo *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Linq::Expressions::
-             Interpreter::InstructionList+DebugView+InstructionView]::
-             List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView__GetEnumerator
-                       (&LStack_7,
-                        (List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView_
+    pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+             MultiColumnCollectionHeader+ViewState+ColumnState]::
+             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__GetEnumerator
+                       (&LStack_12,
+                        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                          *)method_00,
                         MethodInfo__System__Collections__Generic__List<TranslateSoundData>__GetEnumerator__
                        );
-    uStack_8 = 0;
-    LStack_9._list = (List_1_TranslateSoundData_ *)pLVar6->_list;
-    LStack_9._index = pLVar6->_index;
-    LStack_9._version = pLVar6->_version;
-    LStack_9._current.moveValue = (float)(pLVar6->_current)._index;
-    LStack_9._current._4_4_ = (pLVar6->_current)._stackDepth;
-    LStack_9._current.worldPos.x = (float)(pLVar6->_current)._continuationsDepth;
-    LStack_9._current.worldPos.y = (float)(pLVar6->_current)._name;
-    LStack_9._current.worldPos.z = (float)(pLVar6->_current)._instruction;
+    uStack_13 = 0;
+    auStack_6._0_4_ = pLVar11->_list;
+    auStack_6._4_4_ = pLVar11->_index;
+    auStack_6._8_4_ = pLVar11->_version;
+    auStack_6._12_4_ = (pLVar11->_current).index;
+    pSStack_7 = (pLVar11->_current).name;
+    fStack_8 = (pLVar11->_current).actualWidth;
+    fStack_9 = (pLVar11->_current).width;
+    pMStack_10 = *(MethodInfo **)&(pLVar11->_current).visible;
     uStack_1 = 1;
-    pLStack_10 = &LStack_9;
+    pOStack_14 = (Object *)auStack_6;
     while( true ) {
-      bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[TranslateSoundData]::
+      bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[TranslateSoundData]::
               List_1_T_Enumerator_TranslateSoundData__MoveNext
-                        (&LStack_9,
+                        ((List_1_T_Enumerator_TranslateSoundData_ *)auStack_6,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<TranslateSoundData>__MoveNext__
                         );
-      pMVar12 = (MethodInfo *)LStack_9._current.worldPos.z;
-      if (bVar11 == 0) break;
-      LStack_7._current._index = (int32_t)LStack_9._current.moveValue;
-      LStack_7._current._stackDepth = LStack_9._current._4_4_;
-      LStack_7._current._continuationsDepth = (int32_t)LStack_9._current.worldPos.x;
-      LStack_7._current._name = (String *)LStack_9._current.worldPos.y;
+      pMVar16 = pMStack_10;
+      if (bVar15 == 0) break;
+      LStack_12._current.index = auStack_6._12_4_;
+      LStack_12._current.name = pSStack_7;
+      LStack_12._current.actualWidth = fStack_8;
+      LStack_12._current.width = fStack_9;
       if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__AudioEventHandler);
       }
       this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
       if (this == (AudioBuild *)0x0) goto code_?;
-      worldPos.y = (float)LStack_7._current._name;
-      worldPos.x = (float)LStack_7._current._continuationsDepth;
-      worldPos.z = (float)pMVar12;
+      worldPos.y = LStack_12._current.width;
+      worldPos.x = LStack_12._current.actualWidth;
+      worldPos.z = (float)pMVar16;
       AudioBuild::AudioBuild_Translate
-                (this,(float)LStack_7._current._index,(bool)LStack_7._current._stackDepth,worldPos
-                 ,(MethodInfo *)0x0);
-      method_00 = pMVar12;
+                (this,(float)LStack_12._current.index,(bool)LStack_12._current.name,worldPos,
+                 (MethodInfo *)0x0);
+      method_00 = pMVar16;
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)&LStack_9,
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)auStack_6,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<TranslateSoundData>__Dispose__
                ,method_00);
@@ -191,19 +199,19 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_HandleTranslateDa
     if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__AudioEventHandler);
     }
-    pLVar13 = TypeInfo__AudioEventHandler->static_fields->translateSoundDatas;
-    if (pLVar13 != (List_1_TranslateSoundData_ *)0x0) {
-      piVar14 = &(pLVar13->fields)._version;
-      *piVar14 = *piVar14 + 1;
-      (pLVar13->fields)._size = 0;
+    pLVar17 = TypeInfo__AudioEventHandler->static_fields->translateSoundDatas;
+    if (pLVar17 != (List_1_TranslateSoundData_ *)0x0) {
+      piVar18 = &(pLVar17->fields)._version;
+      *piVar18 = *piVar18 + 1;
+      (pLVar17->fields)._size = 0;
       *unaff_FS_OFFSET = uStack_3;
       return;
     }
   }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 
@@ -236,7 +244,7 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0xc5dc);
+    func_?(0x6be4);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -254,17 +262,10 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
     if (this == (AudioBuild *)0x0) {
 code_?:
       uVar2 = func_?();
-      uVar3 = (uint)((ulonglong)uVar2 >> 0x20);
-      uVar4 = in(0x59);
-      puVar5 = (uint *)CONCAT31((int3)((ulonglong)uVar2 >> 8),uVar4);
-      *puVar5 = *puVar5 & uVar3;
-      *(char *)(uVar3 + 0x5a) =
-           *(char *)(uVar3 + 0x5a) + (char)((ulonglong)uVar2 >> 0x28) +
-           (unaff_EBX < *(uint *)(uVar3 + 0x21));
-      *puVar5 = *puVar5 & uVar3;
-      *puVar5 = *puVar5 & unaff_retaddr;
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
+      if ((POPCOUNT(extraout_DL & *(byte *)(uVar2 ^ 0x49)) & 1U) != 0) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
       return;
     }
     randMax = 1.1;

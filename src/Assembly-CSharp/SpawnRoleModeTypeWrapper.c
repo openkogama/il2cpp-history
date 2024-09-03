@@ -45,7 +45,7 @@ void Assembly-CSharp.dll::SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper__ct
                    );
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).spawnRoleType = spawnRoleType;
   func_?(&this->fields,spawnRoleType);
@@ -86,26 +86,26 @@ void Assembly-CSharp.dll::SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_add
     func_?(&TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnChange;
-  a = *ppAVar1;
+  a = (this->fields).OnChange;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = TypeInfo__System__Action<MV::Common::SpawnRoleModeType>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pAVar2 = TypeInfo__System__Action<MV::Common::SpawnRoleModeType>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_MV_Common_SpawnRoleModeType_ *)func_?(ppAVar1,iVar4,a);
-    bVar7 = pAVar6 != a;
-    a = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_MV_Common_SpawnRoleModeType_ *)
+             func_?(&(this->fields).OnChange,iVar3,a);
+    bVar6 = pAVar5 != a;
+    a = pAVar5;
+  } while (bVar6);
   return;
 }
 
@@ -121,26 +121,26 @@ void Assembly-CSharp.dll::SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_rem
     func_?(&TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnChange;
-  source = *ppAVar1;
+  source = (this->fields).OnChange;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = TypeInfo__System__Action<MV::Common::SpawnRoleModeType>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pAVar2 = TypeInfo__System__Action<MV::Common::SpawnRoleModeType>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_MV_Common_SpawnRoleModeType_ *)func_?(ppAVar1,iVar4,source);
-    bVar7 = pAVar6 != source;
-    source = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_MV_Common_SpawnRoleModeType_ *)
+             func_?(&(this->fields).OnChange,iVar3,source);
+    bVar6 = pAVar5 != source;
+    source = pAVar5;
+  } while (bVar6);
   return;
 }
 

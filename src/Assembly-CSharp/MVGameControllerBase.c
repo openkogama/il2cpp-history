@@ -67,15 +67,15 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Application
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&TypeInfo__MVGameControllerBase);
     func_?(&
-                    MethodInfo__MVGameControllerBase____c__DisplayClass182_0___ApplicationQuit_b__0__
+                    MethodInfo__MVGameControllerBase____c__DisplayClass183_0___ApplicationQuit_b__0__
                    );
-    func_?(&TypeInfo__MVGameControllerBase____c__DisplayClass182_0);
+    func_?(&TypeInfo__MVGameControllerBase____c__DisplayClass183_0);
     func_?(&StringLiteral_Application_quit);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__MVGameControllerBase____c__DisplayClass182_0;
+  method_00 = TypeInfo__MVGameControllerBase____c__DisplayClass183_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)applicationQuitObject;
@@ -88,12 +88,12 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Application
     pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
     if (pMVar1 != (MVGameControllerBase *)0x0) {
       if ((pMVar1->fields).quitHasBeenCalled == 0) {
-        (pMVar1->fields).quitHasBeenCalled = 1;
+        (TypeInfo__MVGameControllerBase->static_fields->instance->fields).quitHasBeenCalled = 1;
         this = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
                   (this,value,
-                   MethodInfo__MVGameControllerBase____c__DisplayClass182_0___ApplicationQuit_b__0__
+                   MethodInfo__MVGameControllerBase____c__DisplayClass183_0___ApplicationQuit_b__0__
                    ,(MethodInfo *)0x0);
         if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
@@ -131,17 +131,21 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Awake
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&MVUtils_MethodInfo__UnityEngine__GameObject__AddComponent<MVUtils>__);
     func_?(&TypeInfo__LoadStats);
+    func_?(&MethodInfo__MVGameControllerBase__OnRTGAppInitialize__);
     func_?(&TypeInfo__MVGameControllerBase);
-    func_?(&PrefabPool_MethodInfo__UnityEngine__Object__Instantiate<PrefabPool>_PrefabPool_
-                   );
+    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
+    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
+    in_stack_1 =
+         &PrefabPool_MethodInfo__UnityEngine__Object__Instantiate<PrefabPool>_PrefabPool_;
+    func_?();
     func_?(&
                     Styles_MethodInfo__UnityEngine__Object__Instantiate<Styles>_Styles__UnityEngine__Transform__bool_
                    );
     func_?(&
                     WaterPlaneManager_MethodInfo__UnityEngine__Object__Instantiate<WaterPlaneManager>_WaterPlaneManager_
                    );
-    in_stack_1 = &TypeInfo__UnityEngine__Object;
-    func_?();
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__RTG__RTGAppInitializedHandler);
     func_?(&TypeInfo__StatHatWrapper);
     func_?(&TypeInfo__System__Text__StringBuilder);
     func_?(&TypeInfo__TimeReward);
@@ -175,10 +179,10 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Awake
       if ((pMVar2 != (MVGameControllerBase *)0x0) &&
          (pKVar3 = (pMVar2->fields).koGaMaSettings, pKVar3 != (KoGaMaSettingsContainer *)0x0)) {
         pSVar4 = KoGaMaSettingsContainer::KoGaMaSettingsContainer_get_VersionString
-                            (pKVar3,(MethodInfo *)0x0);
+                           (pKVar3,(MethodInfo *)0x0);
         mscorlib.dll::System::Text::StringBuilder::StringBuilder_AppendFormat
-                  (this_03,StringLiteral_Version_Number___0_u000A,(Object *)pSVar4,
-                   (MethodInfo *)0x0);
+                  (this_03,StringLiteral_Version_Number___0_u000A,(Object *)pSVar4,(MethodInfo *)0x0
+                  );
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
@@ -187,10 +191,10 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Awake
         if ((pMVar2 != (MVGameControllerBase *)0x0) &&
            (pKVar3 = (pMVar2->fields).koGaMaSettings, pKVar3 != (KoGaMaSettingsContainer *)0x0)) {
           pSVar4 = KoGaMaSettingsContainer::KoGaMaSettingsContainer_get_ReleaseName
-                              (pKVar3,(MethodInfo *)0x0);
+                             (pKVar3,(MethodInfo *)0x0);
           mscorlib.dll::System::Text::StringBuilder::StringBuilder_AppendFormat
-                    (this_03,StringLiteral_Release_Name___0_u000A,(Object *)pSVar4,
-                     (MethodInfo *)0x0);
+                    (this_03,StringLiteral_Release_Name___0_u000A,(Object *)pSVar4,(MethodInfo *)0x0
+                    );
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
@@ -220,7 +224,7 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Awake
               pRVar5 = (this->fields).regionConfigManager;
               if (pRVar5 != (RegionConfigManager *)0x0) {
                 pRVar6 = RegionConfigManager::RegionConfigManager_get_RegionConfig
-                                    (pRVar5,(MethodInfo *)0x0);
+                                   (pRVar5,(MethodInfo *)0x0);
                 if (pRVar6 != (RegionConfig *)0x0) {
                   statHatConfig = (pRVar6->fields).StathatConfig;
                   if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
@@ -232,13 +236,13 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Awake
                   this_00 = (this->fields).debugLogHandler;
                   if (pRVar5 != (RegionConfigManager *)0x0) {
                     pRVar6 = RegionConfigManager::RegionConfigManager_get_RegionConfig
-                                        (pRVar5,(MethodInfo *)0x0);
+                                       (pRVar5,(MethodInfo *)0x0);
                     if (pRVar6 != (RegionConfig *)0x0) {
                       uVar7._0_1_ = (pRVar6->fields).DebuggerLoggerConfig.
                                      useSamplingOnAndroidAndWebGL;
                       uVar7._1_1_ = (pRVar6->fields).DebuggerLoggerConfig.useProxyLogHandler;
-                      uVar7._2_2_ = *(undefined2 *)
-                                      &(pRVar6->fields).DebuggerLoggerConfig.field_0x2;
+                      uVar7._2_2_ = *(undefined2 *)&(pRVar6->fields).DebuggerLoggerConfig.field_0x2
+                      ;
                       uVar7._4_4_ = (pRVar6->fields).DebuggerLoggerConfig.maxLogContextQueueCount;
                       PVar8.filterLogTypeConsoleWrite =
                            (pRVar6->fields).DebuggerLoggerConfig.proxyLogHandlerConfig.
@@ -246,7 +250,7 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Awake
                       pRVar5 = (this->fields).regionConfigManager;
                       if (pRVar5 != (RegionConfigManager *)0x0) {
                         pRVar6 = RegionConfigManager::RegionConfigManager_get_RegionConfig
-                                            (pRVar5,(MethodInfo *)0x0);
+                                           (pRVar5,(MethodInfo *)0x0);
                         if ((pRVar6 != (RegionConfig *)0x0) && (this_00 != (DebugLogHandler *)0x0))
                         {
                           debugLogHandlerConfig.proxyLogHandlerConfig.filterLogTypeConsoleWrite =
@@ -266,11 +270,11 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Awake
                             func_?();
                           }
                           pSVar9 = (Styles *)
-                                    UnityEngine.CoreModule.dll::UnityEngine::Object::
-                                    Object_1_Instantiate_6
-                                              ((Object *)pSVar9,parent,1,
-                                               Styles_MethodInfo__UnityEngine__Object__Instantiate<Styles>_Styles__UnityEngine__Transform__bool_
-                                              );
+                                   UnityEngine.CoreModule.dll::UnityEngine::Object::
+                                   Object_1_Instantiate_6
+                                             ((Object *)pSVar9,parent,1,
+                                              Styles_MethodInfo__UnityEngine__Object__Instantiate<Styles>_Styles__UnityEngine__Transform__bool_
+                                             );
                           (this->fields).styles = pSVar9;
                           func_?();
                           this_04 = (LoadStats *)func_?();
@@ -297,48 +301,44 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Awake
                           dVar11 = mscorlib.dll::System::TimeSpan::TimeSpan_get_TotalMilliseconds
                                              ((TimeSpan *)&stack0xffffffe4,(MethodInfo *)0x0);
                           if (this_04 != (LoadStats *)0x0) {
-                            ppLVar12 = &(this->fields).loadStats;
                             (this_04->fields).GameStartTime = dVar11;
-                            *ppLVar12 = this_04;
-                            func_?(ppLVar12,this_04);
+                            (this->fields).loadStats = this_04;
+                            func_?(&(this->fields).loadStats,this_04);
                             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                                       ((Object *)(this->fields).prefabPool,
                                        PrefabPool_MethodInfo__UnityEngine__Object__Instantiate<PrefabPool>_PrefabPool_
                                       );
-                            pLVar13 = (LevelLoader *)
+                            pLVar12 = (LevelLoader *)
                                       UnityEngine.CoreModule.dll::UnityEngine::Component::
                                       Component_GetComponent_1
                                                 ((Component *)this,
                                                  LevelLoader_MethodInfo__UnityEngine__Component__GetComponent<LevelLoader>__
                                                 );
-                            ppLVar14 = &(this->fields).levelLoader;
-                            *ppLVar14 = pLVar13;
-                            func_?(ppLVar14,pLVar13);
-                            pAVar15 = (AudioManager *)
+                            (this->fields).levelLoader = pLVar12;
+                            func_?(&(this->fields).levelLoader,pLVar12);
+                            pAVar13 = (AudioManager *)
                                       UnityEngine.CoreModule.dll::UnityEngine::Component::
                                       Component_GetComponent_1
                                                 ((Component *)this,
                                                  AudioManager_MethodInfo__UnityEngine__Component__GetComponent<AudioManager>__
                                                 );
-                            ppAVar16 = &(this->fields).audioManager;
-                            *ppAVar16 = pAVar15;
-                            func_?(ppAVar16,pAVar15);
-                            pBVar17 = (BrowserComm *)
+                            (this->fields).audioManager = pAVar13;
+                            func_?(&(this->fields).audioManager,pAVar13);
+                            pBVar14 = (BrowserComm *)
                                       UnityEngine.CoreModule.dll::UnityEngine::Component::
                                       Component_GetComponentInChildren_1
                                                 ((Component *)this,
                                                  BrowserComm_MethodInfo__UnityEngine__Component__GetComponentInChildren<BrowserComm>__
                                                 );
-                            ppBVar18 = &(this->fields).browserComm;
-                            *ppBVar18 = pBVar17;
-                            func_?(ppBVar18,pBVar17);
-                            pOVar19 = (OverrideMaterials *)
+                            (this->fields).browserComm = pBVar14;
+                            func_?(&(this->fields).browserComm,pBVar14);
+                            pOVar15 = (OverrideMaterials *)
                                       UnityEngine.CoreModule.dll::UnityEngine::Component::
                                       Component_GetComponentInChildren_1
                                                 ((Component *)this,
                                                  OverrideMaterials_MethodInfo__UnityEngine__Component__GetComponentInChildren<OverrideMaterials>__
                                                 );
-                            (this->fields).overrideMaterials = pOVar19;
+                            (this->fields).overrideMaterials = pOVar15;
                             func_?();
                             value = (TimeReward *)func_?();
                             if (cRam_? == '\0') {
@@ -348,19 +348,19 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Awake
                             method_01 = TypeInfo__TimeReward__RewardDone;
                             value_00 = (TimeReward_RewardStateBase *)func_?();
                             mscorlib.dll::System::ThrowHelper::
-                            ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                            ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                                       ((Object *)value_00,ExceptionArgument__Enum_obj,
                                        (MethodInfo *)method_01);
                             method_00 = (MethodInfo *)&value->fields;
-                            ((TimeReward__Fields *)method_00)->rewardStateBase = value_00;
+                            (value->fields).rewardStateBase = value_00;
                             func_?();
                             mscorlib.dll::System::ThrowHelper::
-                            ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                            ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                                       ((Object *)value,ExceptionArgument__Enum_obj,method_00);
                             (this->fields).timeReward = value;
                             func_?();
                             CheatHandling::CheatHandling_Init((MethodInfo *)0x0);
-                            pAVar20 = (this->fields).audioBuild;
+                            pAVar16 = (this->fields).audioBuild;
                             if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
                               func_?();
                             }
@@ -371,41 +371,60 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Awake
                             if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
                               func_?();
                             }
-                            TypeInfo__AudioEventHandler->static_fields->audioBuild = pAVar20;
+                            TypeInfo__AudioEventHandler->static_fields->audioBuild = pAVar16;
                             func_?();
-                            this_01 = (this->fields).themeRepository;
-                            if (this_01 != (ThemeRepository *)0x0) {
-                              ThemeRepository::ThemeRepository_Initialize(this_01,(MethodInfo *)0x0)
-                              ;
-                              if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0)
-                              {
-                                func_?(TypeInfo__UpdateController);
-                              }
-                              UpdateController::UpdateController_AddUpdateObject
-                                        ((IUpdatecontrollerSubscriberUpdate *)this,
-                                         UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,
-                                         (MethodInfo *)0x0);
-                              MeshDataPool::MeshDataPool_Create((MethodInfo *)0x0);
-                              pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
-                              if (pMVar2 != (MVGameControllerBase *)0x0) {
-                                pWVar21 = (WaterPlaneManager *)
-                                          UnityEngine.CoreModule.dll::UnityEngine::Object::
-                                          Object_1_Instantiate_4
-                                                    ((Object *)
-                                                     (pMVar2->fields).waterPlaneManagerPrefab,
-                                                                                                          
+                            if ((TypeInfo__RTG__MonoSingleton<RTG::RTGApp>->_1).
+                                cctor_finished_or_no_cctor == 0) {
+                              func_?();
+                            }
+                            this_05 = (RTGApp *)
+                                      RTG::MonoSingleton`1[System::Object]::
+                                      MonoSingleton_1_System_Object__get_Get
+                                                (
+                                                MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__
+                                                );
+                            value_01 = (RTGAppInitializedHandler *)func_?();
+                            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+                            NavMesh_OnNavMeshPreUpdate__ctor
+                                      ((NavMesh_OnNavMeshPreUpdate *)value_01,(Object *)this,
+                                       MethodInfo__MVGameControllerBase__OnRTGAppInitialize__,
+                                       (MethodInfo *)0x0);
+                            if (this_05 != (RTGApp *)0x0) {
+                              RTG::RTGApp::RTGApp_add_Initialized
+                                        (this_05,value_01,(MethodInfo *)0x0);
+                              this_01 = (this->fields).themeRepository;
+                              if (this_01 != (ThemeRepository *)0x0) {
+                                ThemeRepository::ThemeRepository_Initialize
+                                          (this_01,(MethodInfo *)0x0);
+                                if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0
+                                   ) {
+                                  func_?(TypeInfo__UpdateController);
+                                }
+                                UpdateController::UpdateController_AddUpdateObject
+                                          ((IUpdatecontrollerSubscriberUpdate *)this,
+                                           UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,
+                                           (MethodInfo *)0x0);
+                                MeshDataPool::MeshDataPool_Create((MethodInfo *)0x0);
+                                pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+                                if (pMVar2 != (MVGameControllerBase *)0x0) {
+                                  pWVar17 = (WaterPlaneManager *)
+                                            UnityEngine.CoreModule.dll::UnityEngine::Object::
+                                            Object_1_Instantiate_4
+                                                      ((Object *)
+                                                       (pMVar2->fields).waterPlaneManagerPrefab,
+                                                                                                              
                                                   WaterPlaneManager_MethodInfo__UnityEngine__Object__Instantiate<WaterPlaneManager>_WaterPlaneManager_
                                                   );
-                                ppWVar22 = &(this->fields).waterPlaneManager;
-                                *ppWVar22 = pWVar21;
-                                func_?(ppWVar22,pWVar21);
-                                if ((TypeInfo__UnityEngine__Application->_1).
-                                    cctor_finished_or_no_cctor == 0) {
-                                  func_?(TypeInfo__UnityEngine__Application);
+                                  (this->fields).waterPlaneManager = pWVar17;
+                                  func_?(&(this->fields).waterPlaneManager,pWVar17);
+                                  if ((TypeInfo__UnityEngine__Application->_1).
+                                      cctor_finished_or_no_cctor == 0) {
+                                    func_?(TypeInfo__UnityEngine__Application);
+                                  }
+                                  UnityEngine.CoreModule.dll::UnityEngine::Application::
+                                  Application_set_runInBackground(1,(MethodInfo *)0x0);
+                                  return;
                                 }
-                                UnityEngine.CoreModule.dll::UnityEngine::Application::
-                                Application_set_runInBackground(1,(MethodInfo *)0x0);
-                                return;
                               }
                             }
                           }
@@ -422,8 +441,8 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Awake
     }
   }
   func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -444,6 +463,7 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_CleanUp
     cRam_? = '\x01';
   }
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  pMVar2 = unaff_ESI;
   if ((pMVar1 != (MVGameControllerBase *)0x0) &&
      (this_00 = (pMVar1->fields).game, this_00 != (MVNetworkGame *)0x0)) {
     MVNetworkGame::MVNetworkGame_Cleanup(this_00,(MethodInfo *)0x0);
@@ -455,17 +475,18 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_CleanUp
         (IPlayModeUI *)0x0) {
 code_?:
       this_01 = MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      pMVar2 = unaff_ESI;
       if (this_01 != (MainCameraManager *)0x0) {
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this_01,(MethodInfo *)0x0);
-        if (pGVar2 != (GameObject *)0x0) {
+        if (pGVar3 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar2,0,(MethodInfo *)0x0);
-          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (pGVar3,0,(MethodInfo *)0x0);
+          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
-          if (pGVar2 != (GameObject *)0x0) {
+          if (pGVar3 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar2,0,(MethodInfo *)0x0);
+                      (pGVar3,0,(MethodInfo *)0x0);
             if ((TypeInfo__GameLoader->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
@@ -482,18 +503,20 @@ code_?:
       }
       this_02 = (Component *)
                 TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
-      unaff_ESI = TypeInfo__UnityEngine__MonoBehaviour;
+      pMVar2 = TypeInfo__UnityEngine__MonoBehaviour;
       if (this_02 != (Component *)0x0) {
-        bVar3 = (TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment;
-        if (((this_02->klass->_1).naturalAligment < bVar3) ||
-           ((this_02->klass->_1).typeHierarchy[bVar3 - 1] !=
+        pMVar2 = TypeInfo__UnityEngine__MonoBehaviour;
+        if (((this_02->klass->_1).naturalAligment <
+             (TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment) ||
+           ((this_02->klass->_1).typeHierarchy
+            [(TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment - 1] !=
             (Il2CppClass *)TypeInfo__UnityEngine__MonoBehaviour)) goto code_?;
-        unaff_ESI = in_stack_4;
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            (this_02,(MethodInfo *)0x0);
-        if (pGVar2 != (GameObject *)0x0) {
+        pMVar2 = unaff_ESI;
+        if (pGVar3 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar2,0,(MethodInfo *)0x0);
+                    (pGVar3,0,(MethodInfo *)0x0);
           goto code_?;
         }
       }
@@ -502,9 +525,9 @@ code_?:
   func_?();
   this_02 = extraout_EDX;
 code_?:
-  func_?(this_02,unaff_ESI);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?(this_02,pMVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -561,9 +584,10 @@ code_?:
     }
   }
   else {
-    bVar2 = (TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment;
-    if (((this_00->klass->_1).naturalAligment < bVar2) ||
-       ((this_00->klass->_1).typeHierarchy[bVar2 - 1] !=
+    if (((this_00->klass->_1).naturalAligment <
+         (TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment) ||
+       ((this_00->klass->_1).typeHierarchy
+        [(TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment - 1] !=
         (Il2CppClass *)TypeInfo__UnityEngine__MonoBehaviour)) goto code_?;
     pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        (this_00,(MethodInfo *)0x0);
@@ -576,8 +600,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -938,13 +962,11 @@ code_?:
                          (pEVar19,pBVar18,(pEVar19->klass->vtable).GetString_1.methodPtr);
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)pSVar3,(MethodInfo *)0x0);
-      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 *)func_?(
-                                  TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
-                                  );
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+      this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+                func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
                 (this_00,(Object *)this,
                  MethodInfo__MVGameControllerBase__OnReceivedSessionData_UnityEngine__Networking__UnityWebRequest_
                  ,(MethodInfo *)0x0);
@@ -1293,6 +1315,66 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_OnDrawGizmo
 }
 
 
+/* Void OnRTGAppInitialize() */
+
+void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_OnRTGAppInitialize
+               (MVGameControllerBase *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__RTG__ISceneGizmo);
+    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
+    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
+    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>);
+    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>);
+  }
+  this_00 = (RTGizmosEngine *)
+            RTG::MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                      (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
+  if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
+  }
+  pOVar1 = RTG::MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                     (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
+  if ((pOVar1 != (Object *)0x0) && (this_00 != (RTGizmosEngine *)0x0)) {
+    pIVar2 = RTG::RTGizmosEngine::RTGizmosEngine_GetSceneGizmoByCamera
+                       (this_00,(Camera *)pOVar1[4].monitor,(MethodInfo *)0x0);
+    if (pIVar2 != (ISceneGizmo *)0x0) {
+      pIVar3 = pIVar2->klass;
+      uVar4 = 0;
+      uVar5._0_1_ = (pIVar3->_1).rank;
+      uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
+      if (uVar5 != 0) {
+        do {
+          if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
+              (Il2CppClass *)TypeInfo__RTG__ISceneGizmo) {
+            ppMVar6 = &(&(pIVar2->klass->vtable).get_OwnerGizmo)
+                       [pIVar2->klass->interfaceOffsets[uVar4].offset].method;
+            goto code_?;
+          }
+          uVar4 = uVar4 + 1;
+        } while (uVar4 < uVar5);
+      }
+      ppMVar6 = (MethodInfo **)func_?(pIVar2);
+code_?:
+      this_01 = (Gizmo *)(*(code *)*ppMVar6)();
+      if (this_01 != (Gizmo *)0x0) {
+        RTG::Gizmo::Gizmo_SetEnabled(this_01,0,(MethodInfo *)0x0);
+        return;
+      }
+    }
+  }
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
+  return;
+}
+
+
 /* Void OnReceivedReAuthWebParametersFromHttpRequest(UnityWebRequest) */
 
 void Assembly-CSharp.dll::MVGameControllerBase::
@@ -1445,8 +1527,9 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_PostGameMsg
     func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
-  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->OnReceivedGameMsg;
-  if (pMVar1 != (MVGameControllerBase_OnReceivedGameMsgDelegate *)0x0) {
+  if (TypeInfo__MVGameControllerBase->static_fields->OnReceivedGameMsg !=
+      (MVGameControllerBase_OnReceivedGameMsgDelegate *)0x0) {
+    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->OnReceivedGameMsg;
     (*(pMVar1->fields)._._.invoke_impl)
               ((pMVar1->fields)._._.method_code,gameMsgType,gameMsgData,(pMVar1->fields)._._.method)
     ;
@@ -1496,15 +1579,16 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_PostGameMsg
       func_?();
       cRam_? = '\x01';
     }
-    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->OnReceivedGameMsg;
-    if (pMVar1 != (MVGameControllerBase_OnReceivedGameMsgDelegate *)0x0) {
-      (*(pMVar1->fields)._._.invoke_impl)();
+    if (TypeInfo__MVGameControllerBase->static_fields->OnReceivedGameMsg !=
+        (MVGameControllerBase_OnReceivedGameMsgDelegate *)0x0) {
+      (*(TypeInfo__MVGameControllerBase->static_fields->OnReceivedGameMsg->fields)._._.invoke_impl)
+                ();
     }
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -1564,9 +1648,8 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_ReceivedLoa
                      (data,
                       LoadStats_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<LoadStats>_System__String_
                      );
-  if ((pOVar1 != (Object *)0x0) && (pLVar2 = (this->fields).loadStats, pLVar2 != (LoadStats *)0x0))
-  {
-    (pLVar2->fields).DOMReady = (double)pOVar1[1];
+  if (((pOVar1 != (Object *)0x0) && (pLVar2 = (this->fields).loadStats, pLVar2 != (LoadStats *)0x0))
+     && ((pLVar2->fields).DOMReady = (double)pOVar1[1], pLVar2 != (LoadStats *)0x0)) {
     (pLVar2->fields).PluginInit = (double)pOVar1[2];
     return;
   }
@@ -1591,8 +1674,8 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_RegisterJoy
   }
   pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
   if (pMVar2 != (MVGameControllerBase *)0x0) {
+    (pMVar2->fields).joystickControllerStack = joystickControllerStack;
     ppJStack_1 = &(pMVar2->fields).joystickControllerStack;
-    *ppJStack_1 = joystickControllerStack;
     func_?();
     return;
   }
@@ -1653,9 +1736,8 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_RegisterPla
   }
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
   if (pMVar1 != (MVGameControllerBase *)0x0) {
-    ppMVar2 = &(pMVar1->fields).modeController;
-    *ppMVar2 = playModeController;
-    func_?(ppMVar2,playModeController);
+    (pMVar1->fields).modeController = playModeController;
+    func_?(&(pMVar1->fields).modeController,playModeController);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__MVGameControllerBase);
       cRam_? = '\x01';
@@ -1667,8 +1749,8 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_RegisterPla
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1884,7 +1966,7 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Start
     (this_00->fields).renderTextureDesc._flags = iVar8;
     (this_00->fields).renderTextureDesc._memoryless_k__BackingField = iVar9;
     puVar14 = &UNK_?;
-    this_01 = (RenderTexture *)func_?();
+    pRVar15 = (RenderTexture *)func_?();
     desc._height_k__BackingField = iVar12;
     desc._width_k__BackingField = iVar11;
     desc._msaaSamples_k__BackingField = iVar13;
@@ -1899,19 +1981,21 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Start
     desc._flags = iVar8;
     desc._memoryless_k__BackingField = iVar9;
     UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture__ctor_1
-              (this_01,desc,(MethodInfo *)0x0);
-    ppRVar15 = &(this_00->fields).renderTexture;
-    *ppRVar15 = this_01;
+              (pRVar15,desc,(MethodInfo *)0x0);
+    (this_00->fields).renderTexture = pRVar15;
     func_?();
-    if (*ppRVar15 != (RenderTexture *)0x0) {
+    pRVar15 = (this_00->fields).renderTexture;
+    if (pRVar15 != (RenderTexture *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_wrapMode
-                ((Texture *)*ppRVar15,TextureWrapMode__Enum_Clamp,(MethodInfo *)0x0);
-      if (*ppRVar15 != (RenderTexture *)0x0) {
+                ((Texture *)pRVar15,TextureWrapMode__Enum_Clamp,(MethodInfo *)0x0);
+      pRVar15 = (this_00->fields).renderTexture;
+      if (pRVar15 != (RenderTexture *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
-                  ((Texture *)*ppRVar15,FilterMode__Enum_Point,(MethodInfo *)0x0);
-        if (*ppRVar15 != (RenderTexture *)0x0) {
+                  ((Texture *)pRVar15,FilterMode__Enum_Point,(MethodInfo *)0x0);
+        pRVar15 = (this_00->fields).renderTexture;
+        if (pRVar15 != (RenderTexture *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_anisoLevel
-                    ((Texture *)*ppRVar15,1,(MethodInfo *)0x0);
+                    ((Texture *)pRVar15,1,(MethodInfo *)0x0);
           AntiHack::MaterialPlaneRenderer::MaterialPlaneRenderer_GenerateNewHashes
                     (this_00,(MethodInfo *)0x0);
           return;
@@ -1951,31 +2035,33 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_StartGame
     func_?(TypeInfo__StatHatWrapper);
   }
   StatHatWrapper::StatHatWrapper_Count(StringLiteral_MVGameControllerStartGame,1,(MethodInfo *)0x0);
-  pEVar1 = (this->fields).embeddedPlayerConfig;
-  if (pEVar1 != (EmbeddedPlayerConfig *)0x0) {
-    EmbeddedPlayerConfig::EmbeddedPlayerConfig_Initialize(pEVar1,(MethodInfo *)0x0);
-    pRVar2 = (this->fields).regionConfigManager;
-    if (pRVar2 != (RegionConfigManager *)0x0) {
-      pRVar3 = RegionConfigManager::RegionConfigManager_get_RegionConfig(pRVar2,(MethodInfo *)0x0);
-      if (pRVar3 != (RegionConfig *)0x0) {
-        if ((pRVar3->fields).TestSetup.testAlternatePort == 0) {
+  pMVar1 = this;
+  pEVar2 = (this->fields).embeddedPlayerConfig;
+  if (pEVar2 != (EmbeddedPlayerConfig *)0x0) {
+    EmbeddedPlayerConfig::EmbeddedPlayerConfig_Initialize(pEVar2,(MethodInfo *)0x0);
+    pRVar3 = (pMVar1->fields).regionConfigManager;
+    if (pRVar3 != (RegionConfigManager *)0x0) {
+      pRVar4 = RegionConfigManager::RegionConfigManager_get_RegionConfig(pRVar3,(MethodInfo *)0x0);
+      if (pRVar4 != (RegionConfig *)0x0) {
+        if ((pRVar4->fields).TestSetup.testAlternatePort == 0) {
 code_?:
-          pRVar2 = (this->fields).regionConfigManager;
-          if (pRVar2 != (RegionConfigManager *)0x0) {
-            pRVar3 = RegionConfigManager::RegionConfigManager_get_RegionConfig
-                                (pRVar2,(MethodInfo *)0x0);
-            if (pRVar3 != (RegionConfig *)0x0) {
-              IStack_4.m_value._0_2_ = (pRVar3->fields).PhotonLoggingConfig;
+          pRVar3 = (pMVar1->fields).regionConfigManager;
+          if (pRVar3 != (RegionConfigManager *)0x0) {
+            pRVar4 = RegionConfigManager::RegionConfigManager_get_RegionConfig
+                                (pRVar3,(MethodInfo *)0x0);
+            if (pRVar4 != (RegionConfig *)0x0) {
+              this = (MVGameControllerBase *)
+                     CONCAT22(this._2_2_,(pRVar4->fields).PhotonLoggingConfig);
               if (cRam_? == '\0') {
                 func_?();
                 cRam_? = '\x01';
               }
               pMVar5 = TypeInfo__MVGameControllerBase->static_fields->instance;
               if ((pMVar5 != (MVGameControllerBase *)0x0) &&
-                 (pEVar1 = (pMVar5->fields).embeddedPlayerConfig,
-                 pEVar1 != (EmbeddedPlayerConfig *)0x0)) {
+                 (pEVar2 = (pMVar5->fields).embeddedPlayerConfig,
+                 pEVar2 != (EmbeddedPlayerConfig *)0x0)) {
                 pEVar6 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                                    ((EmbeddedSiteConfigData *)&stack0xffffffd4,pEVar1,
+                                    ((EmbeddedSiteConfigData *)&stack0xffffffd4,pEVar2,
                                      (MethodInfo *)0x0);
                 pLVar7 = pEVar6->sites;
                 iVar8 = pEVar6->siteEnum;
@@ -2012,11 +2098,10 @@ code_?:
                 embeddedSiteConfigData.siteEnum._2_1_ = (bool)uVar22;
                 embeddedSiteConfigData.siteEnum._3_1_ = SUB21(uVar22,1);
                 MVNetworkGame::MVNetworkGame__ctor
-                          (pMVar21,SUB42(IStack_4.m_value,0),embeddedSiteConfigData,
-                           (MethodInfo *)0x0);
-                (this->fields).game = pMVar21;
+                          (pMVar21,SUB42(this,0),embeddedSiteConfigData,(MethodInfo *)0x0);
+                (pMVar1->fields).game = pMVar21;
                 func_?();
-                value = (FirstFrameUpdateActorReady *)func_?();
+                value = (Object *)func_?();
                 if (cRam_? == '\0') {
                   func_?(&TypeInfo__System__Action);
                   func_?(&MethodInfo__FirstFrameUpdateActorReady__OnLocalPlayerReady__);
@@ -2024,8 +2109,8 @@ code_?:
                   cRam_? = '\x01';
                 }
                 mscorlib.dll::System::ThrowHelper::
-                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                          ((Object *)value,ExceptionArgument__Enum_obj,method_00);
+                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                          (value,ExceptionArgument__Enum_obj,method_00);
                 if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
                   func_?(TypeInfo__UpdateController);
                 }
@@ -2039,51 +2124,51 @@ code_?:
                 pMVar5 = TypeInfo__MVGameControllerBase->static_fields->instance;
                 if ((pMVar5 != (MVGameControllerBase *)0x0) &&
                    (pMVar21 = (pMVar5->fields).game, pMVar21 != (MVNetworkGame *)0x0)) {
-                  IStack_4.m_value = (int32_t)(pMVar21->fields).playerContainer;
-                  if ((MVPlayerContainer *)IStack_4.m_value != (MVPlayerContainer *)0x0) {
-                    a = (((Action *)IStack_4.m_value)->fields)._._.extra_arg;
+                  this = (MVGameControllerBase *)(pMVar21->fields).playerContainer;
+                  if (this != (MVGameControllerBase *)0x0) {
+                    pMVar23 = (this->fields).mainCameraManager;
                     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
                     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
                     NavMesh_OnNavMeshPreUpdate__ctor
-                              (this_00,(Object *)value,
+                              (this_00,value,
                                MethodInfo__FirstFrameUpdateActorReady__OnLocalPlayerReady__,
                                (MethodInfo *)0x0);
-                    pAVar23 = (Action *)
+                    pMVar23 = (MainCameraManager *)
                               mscorlib.dll::System::Delegate::Delegate_Combine
-                                        (a,(Delegate *)this_00,(MethodInfo *)0x0);
-                    if (pAVar23 == (Action *)0x0) {
-                      *(Action **)(IStack_4.m_value + 0x1c) = (Action *)0x0;
+                                        ((Delegate *)pMVar23,(Delegate *)this_00,(MethodInfo *)0x0);
+                    if (pMVar23 == (MainCameraManager *)0x0) {
+                      (this->fields).mainCameraManager = (MainCameraManager *)0x0;
                     }
                     else {
-                      pAVar24 = (Action *)0x0;
-                      if (pAVar23->klass == TypeInfo__System__Action) {
-                        pAVar24 = pAVar23;
+                      pMVar24 = (MainCameraManager *)0x0;
+                      if ((Action__Class *)pMVar23->klass == TypeInfo__System__Action) {
+                        pMVar24 = pMVar23;
                       }
-                      if (pAVar24 == (Action *)0x0) {
-                        IStack_4.m_value = (int32_t)pAVar23;
+                      if (pMVar24 == (MainCameraManager *)0x0) {
                         func_?();
                         goto code_?;
                       }
-                      *(Action **)(IStack_4.m_value + 0x1c) = pAVar24;
-                      pAVar24 = (Action *)0x0;
-                      if (pAVar23->klass == TypeInfo__System__Action) {
-                        pAVar24 = pAVar23;
+                      (this->fields).mainCameraManager = pMVar24;
+                      pMVar24 = (MainCameraManager *)0x0;
+                      if ((Action__Class *)pMVar23->klass == TypeInfo__System__Action) {
+                        pMVar24 = pMVar23;
                       }
-                      if (pAVar24 == (Action *)0x0) goto code_?;
+                      if (pMVar24 == (MainCameraManager *)0x0) goto code_?;
                     }
-                    IStack_4.m_value = IStack_4.m_value + 0x1c;
+                    pMVar25 = &this->fields;
                     func_?();
-                    (this->fields).firstFrameUpdateActorReady = value;
+                    (pMVar1->fields).firstFrameUpdateActorReady =
+                         (FirstFrameUpdateActorReady *)&pMVar25->mainCameraManager;
                     func_?();
                     if (cRam_? == '\0') {
                       func_?();
                       cRam_? = '\x01';
                     }
-                    pMVar5 = TypeInfo__MVGameControllerBase->static_fields->instance;
-                    if ((pMVar5 != (MVGameControllerBase *)0x0) &&
-                       (pMVar21 = (pMVar5->fields).game, pMVar21 != (MVNetworkGame *)0x0)) {
-                      bVar25 = MVNetworkGame::MVNetworkGame_Join(pMVar21,(MethodInfo *)0x0);
-                      if (bVar25 == 0) {
+                    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+                    if ((pMVar1 != (MVGameControllerBase *)0x0) &&
+                       (pMVar21 = (pMVar1->fields).game, pMVar21 != (MVNetworkGame *)0x0)) {
+                      bVar26 = MVNetworkGame::MVNetworkGame_Join(pMVar21,(MethodInfo *)0x0);
+                      if (bVar26 == 0) {
                         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                           func_?();
                         }
@@ -2114,33 +2199,33 @@ code_?:
             func_?();
             cRam_? = '\x01';
           }
-          pGVar26 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-          if ((pGVar26 != (GameSessionData *)0x0) &&
-             (pSVar27 = (pGVar26->fields).serverIP, pSVar27 != (String *)0x0)) {
+          pGVar27 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+          if ((pGVar27 != (GameSessionData *)0x0) &&
+             (pSVar28 = (pGVar27->fields).serverIP, pSVar28 != (String *)0x0)) {
             iVar8 = mscorlib.dll::System::String::String_LastIndexOf
-                               (pSVar27,0x3a,(MethodInfo *)0x0);
+                               (pSVar28,0x3a,(MethodInfo *)0x0);
             if (cRam_? == '\0') {
               func_?();
               cRam_? = '\x01';
             }
-            pGVar26 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField
+            pGVar27 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField
             ;
-            if ((pGVar26 != (GameSessionData *)0x0) &&
-               (pSVar27 = (pGVar26->fields).serverIP, pSVar27 != (String *)0x0)) {
-              pSVar27 = mscorlib.dll::System::String::String_Remove_1
-                                  (pSVar27,iVar8,(MethodInfo *)0x0);
+            if ((pGVar27 != (GameSessionData *)0x0) &&
+               (pSVar28 = (pGVar27->fields).serverIP, pSVar28 != (String *)0x0)) {
+              pSVar28 = mscorlib.dll::System::String::String_Remove_1
+                                  (pSVar28,iVar8,(MethodInfo *)0x0);
               if (cRam_? == '\0') {
                 func_?();
                 cRam_? = '\x01';
               }
-              pGVar26 = TypeInfo__MVGameControllerBase->static_fields->
+              pGVar27 = TypeInfo__MVGameControllerBase->static_fields->
                        _GameSessionData_k__BackingField;
-              IStack_4.m_value = 10000;
-              str2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_4,(MethodInfo *)0x0);
-              pSVar27 = mscorlib.dll::System::String::String_Concat_4
-                                  (pSVar27,::StringLiteral__,str2,(MethodInfo *)0x0);
-              if (pGVar26 != (GameSessionData *)0x0) {
-                (pGVar26->fields).serverIP = pSVar27;
+              this = (MVGameControllerBase *)0x2710;
+              str2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
+              pSVar28 = mscorlib.dll::System::String::String_Concat_4
+                                  (pSVar28,::StringLiteral__,str2,(MethodInfo *)0x0);
+              if (pGVar27 != (GameSessionData *)0x0) {
+                (pGVar27->fields).serverIP = pSVar28;
                 func_?();
                 goto code_?;
               }
@@ -2151,12 +2236,11 @@ code_?:
     }
   }
 code_?:
-  pAVar23 = (Action *)func_?();
-code_?:
-  IStack_4.m_value = (int32_t)pAVar23;
   func_?();
-  pcVar28 = (code *)swi(3);
-  (*pcVar28)();
+code_?:
+  func_?();
+  pcVar29 = (code *)swi(3);
+  (*pcVar29)();
   return;
 }
 
@@ -2283,14 +2367,13 @@ bool Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_TryReauth(M
           if (pGVar6 != (GameSessionData *)0x0) {
             path = (pGVar6->fields).reauthURL;
             pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-            this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                    *)func_?(
-                                     TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
-                                     );
-            DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
-            Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-            __Il2CppFullySharedGenericType]::
-            DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            this = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+                   func_?(
+                                  TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
+                                  );
+            Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+            SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+            SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
                       (this,(Object *)pMVar1,
                        MethodInfo__MVGameControllerBase__OnReceivedReAuthWebParametersFromHttpRequest_UnityEngine__Networking__UnityWebRequest_
                        ,(MethodInfo *)0x0);
@@ -2481,25 +2564,22 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase__ctor
   }
   this_00 = (SkinnedMeshOptimizeManager *)func_?(TypeInfo__SkinnedMeshOptimizeManager);
   SkinnedMeshOptimizeManager::SkinnedMeshOptimizeManager__ctor(this_00,(MethodInfo *)0x0);
-  ppSVar1 = &(this->fields).skinnedMeshOptimizeManager;
-  *ppSVar1 = this_00;
-  func_?(ppSVar1,this_00);
+  (this->fields).skinnedMeshOptimizeManager = this_00;
+  func_?(&(this->fields).skinnedMeshOptimizeManager,this_00);
   this_01 = (FlagDebriefingControl *)func_?(TypeInfo__FlagDebriefingControl);
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
             ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_01,(MethodInfo *)0x0);
-  ppFVar2 = &(this->fields).flagDebriefingControl;
-  *ppFVar2 = this_01;
-  func_?(ppFVar2,this_01);
+  (this->fields).flagDebriefingControl = this_01;
+  func_?(&(this->fields).flagDebriefingControl,this_01);
   this_02 = (GoldRewardManager *)func_?(TypeInfo__GoldRewardManager);
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
             ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_02,(MethodInfo *)0x0);
-  ppGVar3 = &(this->fields).goldRewardManager;
-  *ppGVar3 = this_02;
-  func_?(ppGVar3,this_02);
+  (this->fields).goldRewardManager = this_02;
+  func_?(&(this->fields).goldRewardManager,this_02);
   (this->fields).reAuthTestTries = 3;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
@@ -3706,7 +3786,8 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_set_JoinSta
     pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
     if (pMVar2 != (MVGameControllerBase *)0x0) {
       if ((pMVar2->fields).onJoinStateChanged != (Action_1_MVJoinState_ *)0x0) {
-        pAVar3 = (pMVar2->fields).onJoinStateChanged;
+        pAVar3 = (TypeInfo__MVGameControllerBase->static_fields->instance->fields).
+                 onJoinStateChanged;
         ppMStack_1 = (pAVar3->fields)._._.method;
         puStack_4 = (undefined *)value;
         pvStack_5 = (pAVar3->fields)._._.method_code;
@@ -3754,8 +3835,8 @@ void Assembly-CSharp.dll::MVGameControllerBase::
   if ((pMVar2 != (MVGameControllerBase *)0x0) &&
      (pFVar3 = (pMVar2->fields).firstFrameUpdateActorReady,
      pFVar3 != (FirstFrameUpdateActorReady *)0x0)) {
+    (pFVar3->fields).callbacks = value;
     ppAStack_1 = &(pFVar3->fields).callbacks;
-    *ppAStack_1 = value;
     func_?();
     return;
   }
@@ -3781,13 +3862,14 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_set_OnJoinS
   }
   pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
   if (pMVar2 != (MVGameControllerBase *)0x0) {
-    ppAStack_3 = &(pMVar2->fields).onJoinStateChanged;
     pAStack_1 = value;
-    *ppAStack_3 = value;
+    (pMVar2->fields).onJoinStateChanged = value;
+    ppAStack_3 = &(pMVar2->fields).onJoinStateChanged;
     func_?();
     pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
     if (pMVar2 != (MVGameControllerBase *)0x0) {
       if ((pMVar2->fields).onJoinStateChanged != (Action_1_MVJoinState_ *)0x0) {
+        pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
         pAVar4 = (pMVar2->fields).onJoinStateChanged;
         pAStack_1 = (pAVar4->fields)._._.method;
         ppAStack_3 = (Action_1_MVJoinState_ **)(pMVar2->fields)._joinState;

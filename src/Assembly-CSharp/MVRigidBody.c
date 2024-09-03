@@ -92,42 +92,25 @@ Vector3 * Assembly-CSharp.dll::MVRigidBody::MVRigidBody_AdjustGroundVelocityToNo
     cRam_? = '\x01';
   }
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar2 = (pVVar1->upVector).x;
-  uVar3 = (pVVar1->upVector).y;
-  fVar4 = (pVVar1->upVector).z;
-  fVar5 = (float)uVar3 * hVelocity.z - fVar4 * hVelocity.y;
-  fVar6 = fVar4 * hVelocity.x - (float)uVar2 * hVelocity.z;
-  fVar4 = (float)uVar2 * hVelocity.y - (float)uVar3 * hVelocity.x;
-  value.y = groundNormal.x * fVar4 - groundNormal.z * fVar5;
-  value.x = groundNormal.z * fVar6 - groundNormal.y * fVar4;
-  value.z = groundNormal.y * fVar5 - groundNormal.x * fVar6;
-  pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     ((Vector3 *)auStack_8,value,(MethodInfo *)0x0);
-  auStack_8._8_4_ = pVVar7->x;
-  fStack_9 = pVVar7->y;
-  fStack_10 = pVVar7->z;
-  if (cRam_? == '\0') {
-    auStack_8._0_4_ = &TypeInfo__System__Math;
-    func_?();
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    auStack_8._0_4_ = TypeInfo__System__Math;
-    func_?();
-  }
-  dVar11 = (double)(hVelocity.x * hVelocity.x + hVelocity.y * hVelocity.y + hVelocity.z * hVelocity.z
-                  );
-  if (dVar11 < 0.0) {
-    auStack_8._0_4_ = &UNK_?;
-    func_?();
-  }
-  else {
-    dVar11 = SQRT(dVar11);
-  }
-  fVar4 = (float)dVar11;
-  __return_storage_ptr__->x = (float)auStack_8._8_4_ * fVar4;
-  __return_storage_ptr__->y = fStack_9 * fVar4;
-  __return_storage_ptr__->z = fStack_10 * fVar4;
+  VStack_2.x = (pVVar1->upVector).x;
+  VStack_2.y = (pVVar1->upVector).y;
+  VStack_2.z = (pVVar1->upVector).z;
+  fVar3 = hVelocity.x * VStack_2.z - hVelocity.z * VStack_2.x;
+  fVar4 = hVelocity.z * VStack_2.y - hVelocity.y * VStack_2.z;
+  fVar5 = hVelocity.y * VStack_2.x - hVelocity.x * VStack_2.y;
+  value.y = groundNormal.x * fVar5 - groundNormal.z * fVar4;
+  value.x = groundNormal.z * fVar3 - groundNormal.y * fVar5;
+  value.z = groundNormal.y * fVar4 - groundNormal.x * fVar3;
+  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&VStack_2,value,(MethodInfo *)0x0);
+  uVar7 = pVVar6->x;
+  uVar8 = pVVar6->y;
+  fVar3 = pVVar6->z;
+  fVar9 = (float10)func_?(&hVelocity,0);
+  fVar5 = (float)fVar9;
+  __return_storage_ptr__->x = (float)uVar7 * fVar5;
+  __return_storage_ptr__->y = (float)uVar8 * fVar5;
+  __return_storage_ptr__->z = fVar3 * fVar5;
   return __return_storage_ptr__;
 }
 
@@ -223,9 +206,15 @@ Vector3 * Assembly-CSharp.dll::MVRigidBody::MVRigidBody_GetImpulse
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  pLVar6 = (this->fields).impulseVectors;
-  if (pLVar6 != (List_1_UnityEngine_Vector3_ *)0x0) {
-    if ((pLVar6->fields)._size == 0) {
+  LStack_6._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current.Quadrant = 0;
+  LStack_6._current.FirstAxisSign = 0;
+  LStack_6._current.SecondAxisSign = 0;
+  pLVar7 = (this->fields).impulseVectors;
+  if (pLVar7 != (List_1_UnityEngine_Vector3_ *)0x0) {
+    if ((pLVar7->fields)._size == 0) {
       __return_storage_ptr__->x = (float)(int)velocity._0_8_;
       __return_storage_ptr__->y = (float)(int)((ulonglong)velocity._0_8_ >> 0x20);
       __return_storage_ptr__->z = velocity.z;
@@ -236,45 +225,45 @@ Vector3 * Assembly-CSharp.dll::MVRigidBody::MVRigidBody_GetImpulse
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
     }
-    pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uStack_8._0_4_ = (pVVar7->zeroVector).x;
-    uStack_8._4_4_ = (pVVar7->zeroVector).y;
-    pVStack_9 = (VisualTreeAsset *)(pVVar7->zeroVector).z;
+    pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uStack_9._0_4_ = (pVVar8->zeroVector).x;
+    uStack_9._4_4_ = (pVVar8->zeroVector).y;
+    pVStack_10 = (VisualTreeAsset *)(pVVar8->zeroVector).z;
     method_00 = (MethodInfo *)(this->fields).impulseVectors;
     if (method_00 != (MethodInfo *)0x0) {
-      pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+      pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                VisualTreeAsset+UsingEntry]::
                List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__GetEnumerator
-                         (&LStack_11,
+                         (&LStack_12,
                           (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)method_00,
                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
                          );
-      uStack_12 = 0;
-      auStack_13._0_4_ = pLVar10->_list;
-      auStack_13._4_4_ = pLVar10->_index;
-      auStack_13._8_4_ = pLVar10->_version;
-      auStack_13._12_4_ = (pLVar10->_current).alias;
-      auStack_13._16_8_ = *(undefined8 *)&(pLVar10->_current).path;
+      uStack_13 = 0;
+      LStack_6._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar11->_list;
+      LStack_6._index = pLVar11->_index;
+      LStack_6._version = pLVar11->_version;
+      LStack_6._current.Quadrant = (int32_t)(pLVar11->_current).alias;
+      LStack_6._current.FirstAxisSign = (int32_t)(pLVar11->_current).path;
+      LStack_6._current.SecondAxisSign = (int32_t)(pLVar11->_current).asset;
       uStack_1 = 1;
-      pOStack_14 = (Object *)auStack_13;
+      pLStack_14 = &LStack_6;
       while( true ) {
-        bVar15 = mscorlib.dll::System::Collections::Generic::
-                List`1[T]+Enumerator[AnimatedTextureOffset+TextureOffsetAnimationData]::
-                List_1_T_Enumerator_AnimatedTextureOffset_TextureOffsetAnimationData__MoveNext
-                          ((List_1_T_Enumerator_AnimatedTextureOffset_TextureOffsetAnimationData_ *)
-                           auStack_13,
+        bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[RTG::
+                PlaneIdHelper+PlaneQuadrantInfo]::
+                List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo__MoveNext
+                          (&LStack_6,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
                           );
         if (bVar15 == 0) break;
-        LStack_11._current.asset = (VisualTreeAsset *)((float)pVStack_9 + (float)auStack_13._20_4_)
-        ;
-        uStack_8 = CONCAT44(uStack_8._4_4_ + (float)auStack_13._16_4_,
-                             (float)uStack_8 + (float)auStack_13._12_4_);
-        pVStack_9 = LStack_11._current.asset;
+        LStack_12._current.asset =
+             (VisualTreeAsset *)((float)LStack_6._current.SecondAxisSign + (float)pVStack_10);
+        uStack_9 = CONCAT44((float)LStack_6._current.FirstAxisSign + uStack_9._4_4_,
+                             (float)LStack_6._current.Quadrant + (float)uStack_9);
+        pVStack_10 = LStack_12._current.asset;
       }
       uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                ((Object *)auStack_13,
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                ((Object *)&LStack_6,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
                  ,method_00);
@@ -284,14 +273,14 @@ Vector3 * Assembly-CSharp.dll::MVRigidBody::MVRigidBody_GetImpulse
                                     (interactableLocal,1,(this->fields).weight,
                                      (interactableLocal->klass->vtable).__unknown_7.methodPtr);
         fVar17 = (float)((float10)_UNK_? / fVar16);
-        pLVar6 = (this->fields).impulseVectors;
-        if (pLVar6 != (List_1_UnityEngine_Vector3_ *)0x0) {
-          piVar18 = &(pLVar6->fields)._version;
+        pLVar7 = (this->fields).impulseVectors;
+        if (pLVar7 != (List_1_UnityEngine_Vector3_ *)0x0) {
+          piVar18 = &(pLVar7->fields)._version;
           *piVar18 = *piVar18 + 1;
-          (pLVar6->fields)._size = 0;
-          __return_storage_ptr__->x = velocity.x + (float)uStack_8 * fVar17;
-          __return_storage_ptr__->y = velocity.y + uStack_8._4_4_ * fVar17;
-          __return_storage_ptr__->z = velocity.z + (float)pVStack_9 * fVar17;
+          (pLVar7->fields)._size = 0;
+          __return_storage_ptr__->x = velocity.x + (float)uStack_9 * fVar17;
+          __return_storage_ptr__->y = velocity.y + uStack_9._4_4_ * fVar17;
+          __return_storage_ptr__->z = velocity.z + (float)pVStack_10 * fVar17;
           *unaff_FS_OFFSET = uStack_3;
           return __return_storage_ptr__;
         }
@@ -412,7 +401,7 @@ void Assembly-CSharp.dll::MVRigidBody::MVRigidBody__ctor(MVRigidBody *this,Metho
   (value->fields).groundNormal.x = (pVVar8->zeroVector).x;
   (value->fields).groundNormal.y = fVar9;
   (value->fields).groundNormal.z = fVar10;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,in_stack_11);
   (this->fields).groundState = value;
   func_?();
@@ -426,9 +415,8 @@ void Assembly-CSharp.dll::MVRigidBody::MVRigidBody__ctor(MVRigidBody *this,Metho
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
-  ppLVar12 = &(this->fields).impulseVectors;
-  *ppLVar12 = this_01;
-  func_?(ppLVar12,this_01);
+  (this->fields).impulseVectors = this_01;
+  func_?(&(this->fields).impulseVectors,this_01);
   (this->fields)._.findWorldObjectParent = 1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

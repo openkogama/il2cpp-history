@@ -20,7 +20,7 @@ void MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionTypes::Subscr
   method_01 = TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster;
   value = (MethodInfo *)func_?();
   method_00 = value;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
   value->invoker_method = (InvokerMethod)0x32;
   value->name = (char *)0xa;
@@ -37,7 +37,7 @@ void MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionTypes::Subscr
              func_?(
                             TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
                             );
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (pOVar2,ExceptionArgument__Enum_obj,method_00);
     *(undefined1 *)&pOVar2[1].klass = 1;
     if (pDVar1 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
@@ -51,7 +51,7 @@ void MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionTypes::Subscr
                func_?(
                               TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
                               );
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 (pOVar2,ExceptionArgument__Enum_obj,method_00);
       *(undefined1 *)&pOVar2[1].klass = 1;
       if (pDVar1 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
@@ -65,7 +65,7 @@ void MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionTypes::Subscr
                  func_?(
                                 TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
                                 );
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   (pOVar2,ExceptionArgument__Enum_obj,method_00);
         *(undefined1 *)&pOVar2[1].klass = 1;
         if (pDVar1 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {

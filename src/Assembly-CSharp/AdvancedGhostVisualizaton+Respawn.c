@@ -87,7 +87,7 @@ void Assembly-CSharp.dll::AdvancedGhostVisualizaton+Respawn::AdvancedGhostVisual
                AdvancedGhostVisualizaton *ghostVisualizaton,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields)._.duration = duration;
   (this->fields)._.timeLeft = duration;

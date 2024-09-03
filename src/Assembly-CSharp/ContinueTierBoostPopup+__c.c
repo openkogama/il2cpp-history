@@ -237,7 +237,7 @@ void Assembly-CSharp.dll::ContinueTierBoostPopup+<>c::ContinueTierBoostPopup_c__
   }
   method_00 = TypeInfo__ContinueTierBoostPopup____c;
   value = (ContinueTierBoostPopup_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__ContinueTierBoostPopup____c->static_fields->__9 = value;
   func_?(TypeInfo__ContinueTierBoostPopup____c->static_fields,value);

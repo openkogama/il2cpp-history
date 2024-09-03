@@ -110,7 +110,7 @@ void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__cctor(Meth
   }
   method_00 = TypeInfo__DeathUIController____c;
   value = (DeathUIController_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__DeathUIController____c->static_fields->__9 = value;
   func_?(TypeInfo__DeathUIController____c->static_fields,value);

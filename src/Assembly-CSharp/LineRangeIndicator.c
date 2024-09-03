@@ -13,23 +13,22 @@ void Assembly-CSharp.dll::LineRangeIndicator::LineRangeIndicator_CopyMaterial
   this_00 = (Material *)func_?(TypeInfo__UnityEngine__Material);
   UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
             (this_00,source,(MethodInfo *)0x0);
-  ppMVar1 = &(this->fields).materialCopy;
-  *ppMVar1 = this_00;
-  func_?(ppMVar1,this_00);
-  pMVar2 = (this->fields).rangeIndicator;
-  if (pMVar2 != (MeshRenderer *)0x0) {
+  (this->fields).materialCopy = this_00;
+  func_?(&(this->fields).materialCopy,this_00);
+  pMVar1 = (this->fields).rangeIndicator;
+  if (pMVar1 != (MeshRenderer *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-              ((Renderer *)pMVar2,*ppMVar1,(MethodInfo *)0x0);
-    pMVar2 = (this->fields).rangeIndicator_backside;
-    if (pMVar2 != (MeshRenderer *)0x0) {
+              ((Renderer *)pMVar1,(this->fields).materialCopy,(MethodInfo *)0x0);
+    pMVar1 = (this->fields).rangeIndicator_backside;
+    if (pMVar1 != (MeshRenderer *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                ((Renderer *)pMVar2,*ppMVar1,(MethodInfo *)0x0);
+                ((Renderer *)pMVar1,(this->fields).materialCopy,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -112,7 +111,7 @@ void Assembly-CSharp.dll::LineRangeIndicator::LineRangeIndicator_SetRange
                             this_00 = (this->fields).materialCopy;
                             if (this_00 != (Material *)0x0) {
                               value_00.y = 1.0;
-                              value_00.x = (this->fields).lineDotDensity * (float)&stack0xffffffd4;
+                              value_00.x = (float)&stack0xffffffd4 * (this->fields).lineDotDensity;
                               UnityEngine.CoreModule.dll::UnityEngine::Material::
                               Material_SetTextureScale
                                         (this_00,StringLiteral__MainTex,value_00,(MethodInfo *)0x0);

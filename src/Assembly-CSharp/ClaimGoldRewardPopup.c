@@ -29,7 +29,7 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup::ClaimGoldRewardPopup_ClaimGold
   }
   method_00 = TypeInfo__ClaimGoldRewardPopup____c__DisplayClass10_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
   if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
@@ -79,8 +79,8 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup::ClaimGoldRewardPopup_ClaimGold
                     UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                    );
     if (value != (Object *)0x0) {
+      value[1].klass = pOStack2;
       pOStack3 = value + 1;
-      pOStack3->klass = pOStack2;
       func_?();
       pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
@@ -191,15 +191,33 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup::ClaimGoldRewardPopup_OnClickClai
   }
   pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
   if (pIVar1 != (IAdManager *)0x0) {
-    cVar2 = func_?(4,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar1);
-    if (cVar2 == '\0') {
+    pIVar2 = pIVar1->klass;
+    uVar3 = 0;
+    uVar4._0_1_ = (pIVar2->_1).rank;
+    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar4 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
+            (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
+          ppMVar5 = &(&(pIVar1->klass->vtable).get_ReadyForRewardedAdRequest)
+                     [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
+          goto code_?;
+        }
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
+    }
+    ppMVar5 = (MethodInfo **)
+              func_?(pIVar1,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,4);
+code_?:
+    cVar6 = (*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
+    if (cVar6 == '\0') {
       ClaimGoldRewardPopup_CreateErrorMessage(this,(MethodInfo *)0x0);
       return;
     }
-    pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
-    if (pGVar3 != (GoldRewardManager *)0x0) {
-      (pGVar3->fields).isCountingDownGoldReward = 0;
-      (pGVar3->fields).isGoldRewardDone = 1;
+    pGVar7 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
+    if (pGVar7 != (GoldRewardManager *)0x0) {
+      (pGVar7->fields).isCountingDownGoldReward = 0;
+      (pGVar7->fields).isGoldRewardDone = 1;
       pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
       this_00 = (UnityAction_1_System_Int32Enum_ *)
                 func_?(
@@ -211,25 +229,25 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup::ClaimGoldRewardPopup_OnClickClai
                  MethodInfo__ClaimGoldRewardPopup__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
                  ,(MethodInfo *)0x0);
       if (pIVar1 != (IAdManager *)0x0) {
-        pIVar4 = pIVar1->klass;
-        uVar5 = 0;
-        uVar6._0_1_ = (pIVar4->_1).rank;
-        uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-        if (uVar6 != 0) {
+        pIVar2 = pIVar1->klass;
+        uVar4 = 0;
+        uVar3._0_1_ = (pIVar2->_1).rank;
+        uVar3._1_1_ = (pIVar2->_1).minimumAlignment;
+        if (uVar3 != 0) {
           do {
-            if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
+            if (pIVar2->interfaceOffsets[uVar4].interfaceType ==
                 (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-              ppMVar7 = &(&(pIVar1->klass->vtable).RequestRewardedAd)
-                         [pIVar4->interfaceOffsets[uVar5].offset].method;
+              ppMVar5 = &(&(pIVar1->klass->vtable).RequestRewardedAd)
+                         [pIVar1->klass->interfaceOffsets[uVar4].offset].method;
               goto code_?;
             }
-            uVar5 = uVar5 + 1;
-          } while (uVar5 < uVar6);
+            uVar4 = uVar4 + 1;
+          } while (uVar4 < uVar3);
         }
-        ppMVar7 = (MethodInfo **)
+        ppMVar5 = (MethodInfo **)
                   func_?(pIVar1,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,6);
 code_?:
-        (*(code *)*ppMVar7)(pIVar1,ppMVar7[1],0xb);
+        (*(code *)*ppMVar5)(pIVar1,this_00,0xb,ppMVar5[1]);
         return;
       }
     }
@@ -271,7 +289,7 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup::ClaimGoldRewardPopup_OnClickClai
   }
   method_00 = TypeInfo__ClaimGoldRewardPopup____c__DisplayClass10_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
   if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
@@ -321,8 +339,8 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup::ClaimGoldRewardPopup_OnClickClai
                     UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                    );
     if (value != (Object *)0x0) {
+      value[1].klass = pOStack2;
       pOStack3 = value + 1;
-      pOStack3->klass = pOStack2;
       func_?();
       pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
@@ -407,7 +425,7 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup::ClaimGoldRewardPopup_Update
   }
   method_00 = TypeInfo__ClaimGoldRewardPopup____c__DisplayClass4_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].monitor = (MonitorData *)this;

@@ -61,32 +61,31 @@ void Assembly-CSharp.dll::FpsCounter::FpsCounter_Update(FpsCounter *this,MethodI
       if (TypeInfo__FpsCounter->static_fields->_StartedPlaying_k__BackingField == 0) {
         return;
       }
-      ppFVar5 = &(this->fields).metricsCollector;
-      if (*ppFVar5 == (FpsCounter_FPSMetricCollector *)0x0) {
+      if ((this->fields).metricsCollector == (FpsCounter_FPSMetricCollector *)0x0) {
         method_00 = TypeInfo__FpsCounter__FPSMetricCollector;
-        pFVar6 = (FpsCounter_FPSMetricCollector *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)pFVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+        pFVar5 = (FpsCounter_FPSMetricCollector *)func_?();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                  ((Object *)pFVar5,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
         fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        (pFVar6->fields).startTime = fVar3;
-        (pFVar6->fields).metricsCollected = 0;
-        *ppFVar5 = pFVar6;
-        func_?(ppFVar5,pFVar6);
+        (pFVar5->fields).metricsCollected = 0;
+        (pFVar5->fields).startTime = fVar3;
+        (this->fields).metricsCollector = pFVar5;
+        func_?(&(this->fields).metricsCollector,pFVar5);
       }
-      pFVar6 = *ppFVar5;
-      if (pFVar6 != (FpsCounter_FPSMetricCollector *)0x0) {
-        if ((pFVar6->fields).metricsCollected != 0) {
+      pFVar5 = (this->fields).metricsCollector;
+      if (pFVar5 != (FpsCounter_FPSMetricCollector *)0x0) {
+        if ((pFVar5->fields).metricsCollected != 0) {
           return;
         }
         fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        if (fVar3 - (pFVar6->fields).startTime <= _UNK_?) {
+        if (fVar3 - (pFVar5->fields).startTime <= _UNK_?) {
           return;
         }
-        pFVar6 = *ppFVar5;
+        pFVar5 = (this->fields).metricsCollector;
         fVar3 = FpsCounter_get_Fps((MethodInfo *)0x0);
-        if (pFVar6 != (FpsCounter_FPSMetricCollector *)0x0) {
+        if (pFVar5 != (FpsCounter_FPSMetricCollector *)0x0) {
           FpsCounter+FPSMetricCollector::FpsCounter_FPSMetricCollector_CollectFPSMetric
-                    (pFVar6,fVar3,(MethodInfo *)0x0);
+                    (pFVar5,fVar3,(MethodInfo *)0x0);
           return;
         }
       }
@@ -95,8 +94,8 @@ void Assembly-CSharp.dll::FpsCounter::FpsCounter_Update(FpsCounter *this,MethodI
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -111,9 +110,8 @@ void Assembly-CSharp.dll::FpsCounter::FpsCounter__ctor(FpsCounter *this,MethodIn
     cRam_? = '\x01';
   }
   pSVar1 = (Single__Array *)func_?(TypeInfo__System__Single,10);
-  ppSVar2 = &(this->fields).frameTimes;
-  *ppSVar2 = pSVar1;
-  func_?(ppSVar2,pSVar1);
+  (this->fields).frameTimes = pSVar1;
+  func_?(&(this->fields).frameTimes,pSVar1);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

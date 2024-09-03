@@ -6,8 +6,8 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_Destroy
 
 {
   MVWorldObjectClient::MVWorldObjectClient_Destroy((MVWorldObjectClient *)this,(MethodInfo *)0x0);
-  obj = (this->fields).spawnStateWrapper;
-  if (obj != (SpawnStateWrapper *)0x0) {
+  if ((this->fields).spawnStateWrapper != (SpawnStateWrapper *)0x0) {
+    obj = (this->fields).spawnStateWrapper;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UpdateController);
       cRam_? = '\x01';
@@ -220,7 +220,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_Initialize
     func_?();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,in_stack_6);
   (value->fields).respawnInterval = SVar1.respawnInterval;
   (value->fields).respawnCount = (int32_t)puVar5;
@@ -279,10 +279,9 @@ code_?:
                            (this_00,
                             TriggerBoxEvents_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<TriggerBoxEvents>__
                            );
-        ppTVar12 = &(this->fields).triggerBoxEvents;
-        *ppTVar12 = pTVar11;
-        func_?(ppTVar12);
-        pTVar11 = *ppTVar12;
+        (this->fields).triggerBoxEvents = pTVar11;
+        func_?(&(this->fields).triggerBoxEvents);
+        pTVar11 = (this->fields).triggerBoxEvents;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -303,8 +302,8 @@ code_?:
   func_?(TVar8.m_Index);
 code_?:
   func_?(value);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -590,10 +589,37 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner__ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  ppDVar1 = &(this->fields)._.idChildMap;
-  *ppDVar1 = (Dictionary_2_System_Object_System_Object_ *)this_00;
-  func_?(ppDVar1,this_00);
-  MVGroup::MVGroup__ctor_2((MVGroup *)this,data,worldObjects,(MethodInfo *)0x0);
+  (this->fields)._.idChildMap = (Dictionary_2_System_Object_System_Object_ *)this_00;
+  func_?(&(this->fields)._.idChildMap,this_00);
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>);
+    func_?(&TypeInfo__MVWorldObjectClient);
+    cRam_? = '\x01';
+  }
+  this_01 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
+            )func_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>
+                            );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this_01,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
+            );
+  (this->fields)._._.children = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)this_01;
+  func_?(&(this->fields)._._.children,this_01);
+  if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  MVWorldObjectClient::MVWorldObjectClient__ctor_2
+            ((MVWorldObjectClient *)this,data,worldObjects,(MethodInfo *)0x0);
+  uVar1 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
+  piVar2 = &(this->fields)._._._.interactionFlags;
+  *(uint *)piVar2 = (uint)*piVar2 | 0x82101;
+  *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar1;
   MVBlueprintBase::MVBlueprintBase_MapDataToFields((MVBlueprintBase *)this,(MethodInfo *)0x0);
   return;
 }
@@ -629,10 +655,37 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner__ctor_1
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  ppDVar1 = &(this->fields)._.idChildMap;
-  *ppDVar1 = (Dictionary_2_System_Object_System_Object_ *)this_00;
-  func_?(ppDVar1,this_00);
-  MVGroup::MVGroup__ctor_1((MVGroup *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
+  (this->fields)._.idChildMap = (Dictionary_2_System_Object_System_Object_ *)this_00;
+  func_?(&(this->fields)._.idChildMap,this_00);
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>);
+    func_?(&TypeInfo__MVWorldObjectClient);
+    cRam_? = '\x01';
+  }
+  this_01 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
+            )func_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>
+                            );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this_01,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
+            );
+  (this->fields)._._.children = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)this_01;
+  func_?(&(this->fields)._._.children,this_01);
+  if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  MVWorldObjectClient::MVWorldObjectClient__ctor_1
+            ((MVWorldObjectClient *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
+  uVar1 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
+  piVar2 = &(this->fields)._._._.interactionFlags;
+  *(uint *)piVar2 = (uint)*piVar2 | 0x82101;
+  *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar1;
   MVBlueprintBase::MVBlueprintBase_MapDataToFields((MVBlueprintBase *)this,(MethodInfo *)0x0);
   return;
 }

@@ -36,7 +36,7 @@ void Assembly-CSharp.dll::MoveableController+<>c::MoveableController_c__cctor(Me
   }
   method_00 = TypeInfo__MoveableController____c;
   value = (MoveableController_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__MoveableController____c->static_fields->__9 = value;
   func_?(TypeInfo__MoveableController____c->static_fields,value);

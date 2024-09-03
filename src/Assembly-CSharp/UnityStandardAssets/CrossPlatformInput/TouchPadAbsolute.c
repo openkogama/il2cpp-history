@@ -15,26 +15,24 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::TouchPadAbsol
   pCVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
   ;
   pCVar3 = (CrossPlatformInputManager_VirtualAxis *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
   (pCVar3->fields)._name_k__BackingField = pSVar1;
   func_?(&pCVar3->fields,pSVar1);
-  ppCVar4 = &(this->fields).horizontalVirtualAxis;
   (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
-  *ppCVar4 = pCVar3;
-  func_?(ppCVar4,pCVar3);
+  (this->fields).horizontalVirtualAxis = pCVar3;
+  func_?(&(this->fields).horizontalVirtualAxis,pCVar3);
   pSVar1 = (this->fields).verticalAxisName;
   pCVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
   ;
   pCVar3 = (CrossPlatformInputManager_VirtualAxis *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)pCVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pCVar2);
   (pCVar3->fields)._name_k__BackingField = pSVar1;
   func_?(&pCVar3->fields,pSVar1);
-  ppCVar4 = &(this->fields).verticalVirtualAxis;
   (pCVar3->fields)._matchWithInputManager_k__BackingField = 1;
-  *ppCVar4 = pCVar3;
-  func_?(ppCVar4,pCVar3);
+  (this->fields).verticalVirtualAxis = pCVar3;
+  func_?(&(this->fields).verticalVirtualAxis,pCVar3);
   return;
 }
 
@@ -352,129 +350,83 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::TouchPadAbsol
   if ((this->fields).dragging == 0) {
     return;
   }
-  pvStack_1 = (void *)(this->fields).fingerId;
-  func_?(&ppSStack_2,0,0x44);
-  func_?(&TStack_3,0,0x44);
-  pTStack_4 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_touches
+  VStack_1.y = (float)(this->fields).fingerId;
+  func_?(&pMStack_2,0,0x44);
+  func_?(&stack0xffffff4c,0,0x44);
+  pTStack_3 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_touches
                         ((MethodInfo *)0x0);
-  uVar5 = 0;
-  if (pTStack_4 != (Touch__Array *)0x0) {
-    pTVar6 = pTStack_4->vector;
+  uVar4 = 0;
+  if (pTStack_3 != (Touch__Array *)0x0) {
+    pTVar5 = pTStack_3->vector;
     while( true ) {
-      if ((int)pTStack_4->max_length <= (int)uVar5) break;
-      if (pTStack_4->max_length <= uVar5) goto code_?;
-      ppSStack_2 = (ScaleToPhysicalSize__Class **)pTVar6->m_FingerId;
-      fStack_7 = (pTVar6->m_Position).x;
-      fStack_8 = (pTVar6->m_Position).y;
-      fStack_9 = (pTVar6->m_RawPosition).x;
-      fStack_10 = (pTVar6->m_RawPosition).y;
-      fStack_11 = (pTVar6->m_PositionDelta).x;
-      fStack_12 = (pTVar6->m_PositionDelta).y;
-      fStack_13 = pTVar6->m_TimeDelta;
-      iStack_14 = pTVar6->m_TapCount;
-      iStack_15 = pTVar6->m_Phase;
-      iStack_16 = pTVar6->m_Type;
-      fStack_17 = pTVar6->m_Pressure;
-      fStack_18 = pTVar6->m_maximumPossiblePressure;
-      fStack_19 = pTVar6->m_Radius;
-      fStack_20 = pTVar6->m_RadiusVariance;
-      fStack_21 = pTVar6->m_AltitudeAngle;
-      fStack_22 = pTVar6->m_AzimuthAngle;
-      pvVar23 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_ReadUnaligned_6
-                         ((uint8_t *)&ppSStack_2,(MethodInfo *)0x0);
-      if (pvVar23 == pvStack_1) {
-        TStack_3.m_AzimuthAngle = fStack_22;
-        TStack_3.m_FingerId = (int32_t)ppSStack_2;
-        TStack_3.m_Position.x = fStack_7;
-        TStack_3.m_Position.y = fStack_8;
-        TStack_3.m_RawPosition.x = fStack_9;
-        TStack_3.m_RawPosition.y = fStack_10;
-        TStack_3.m_PositionDelta.x = fStack_11;
-        TStack_3.m_PositionDelta.y = fStack_12;
-        TStack_3.m_TimeDelta = fStack_13;
-        TStack_3.m_TapCount = iStack_14;
-        TStack_3.m_Phase = iStack_15;
-        TStack_3.m_Type = iStack_16;
-        TStack_3.m_Pressure = fStack_17;
-        TStack_3.m_maximumPossiblePressure = fStack_18;
-        TStack_3.m_Radius = fStack_19;
-        TStack_3.m_RadiusVariance = fStack_20;
-        TStack_3.m_AltitudeAngle = fStack_21;
-        if (cRam_? == '\0') {
-          TStack_3.m_FingerId = (int32_t)&TypeInfo__ScaleToPhysicalSize;
-          func_?();
-          cRam_? = '\x01';
-        }
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__ResolutionManager);
-          cRam_? = '\x01';
-        }
-        pCVar24 = TypeInfo__ResolutionManager->static_fields->canvasScaler;
-        if (pCVar24 == (CanvasScaler *)0x0) goto code_?;
-        pvStack_1 = (void *)(pCVar24->fields).m_ReferenceResolution.x;
-        iVar25 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0)
-        ;
-        if ((TypeInfo__ScaleToPhysicalSize->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__ScaleToPhysicalSize);
-        }
-        pTStack_4 = (Touch__Array *)
-                    ScaleToPhysicalSize::ScaleToPhysicalSize_get_DpiScale((MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__ResolutionManager);
-          cRam_? = '\x01';
-        }
-        pCVar24 = TypeInfo__ResolutionManager->static_fields->canvasScaler;
-        if (pCVar24 == (CanvasScaler *)0x0) goto code_?;
-        fStack_26 = (pCVar24->fields).m_ReferenceResolution.y;
-        iVar27 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height
-                          ((MethodInfo *)0x0);
-        pvStack_1 = (void *)(((float)pvStack_1 / (float)iVar25) * (float)pTStack_4);
-        fVar28 = ScaleToPhysicalSize::ScaleToPhysicalSize_get_DpiScale((MethodInfo *)0x0);
-        fStack_26 = fStack_26 / (float)iVar27;
-        fVar29 = (this->fields).previousInputPosition.x;
-        pTStack_4 = (Touch__Array *)(fVar28 * fStack_26);
-        VVar30 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_position
-                           (&TStack_3,(MethodInfo *)0x0);
-        fStack_31 = VVar30.x;
-        fStack_26 = (this->fields).previousInputPosition.y;
-        VVar30 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_position
-                           (&TStack_3,(MethodInfo *)0x0);
-        fStack_32 = VVar30.y;
-        VStack_33 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_position
-                              (&TStack_3,(MethodInfo *)0x0);
-        (this->fields).previousInputPosition = VStack_33;
+      if ((int)pTStack_3->max_length <= (int)uVar4) break;
+      if (pTStack_3->max_length <= uVar4) goto code_?;
+      pMStack_2 = (MethodInfo *)pTVar5->m_FingerId;
+      fStack_6 = (pTVar5->m_Position).x;
+      fStack_7 = (pTVar5->m_Position).y;
+      fStack_8 = (pTVar5->m_RawPosition).x;
+      fStack_9 = (pTVar5->m_RawPosition).y;
+      fStack_10 = (pTVar5->m_PositionDelta).x;
+      fStack_11 = (pTVar5->m_PositionDelta).y;
+      fStack_12 = pTVar5->m_TimeDelta;
+      iStack_13 = pTVar5->m_TapCount;
+      iStack_14 = pTVar5->m_Phase;
+      iStack_15 = pTVar5->m_Type;
+      fStack_16 = pTVar5->m_Pressure;
+      fStack_17 = pTVar5->m_maximumPossiblePressure;
+      fStack_18 = pTVar5->m_Radius;
+      fStack_19 = pTVar5->m_RadiusVariance;
+      fStack_20 = pTVar5->m_AltitudeAngle;
+      fStack_21 = pTVar5->m_AzimuthAngle;
+      pvVar22 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_ReadUnaligned_6
+                         ((uint8_t *)&pMStack_2,(MethodInfo *)0x0);
+      if (pvVar22 == (void *)VStack_1.y) {
+        VStack_23 = ResolutionManager::ResolutionManager_get_PhysicalDistanceToPixels(pMStack_2);
+        fVar24 = (this->fields).previousInputPosition.x;
+        VVar25 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_position
+                           ((Touch *)&stack0xffffff4c,(MethodInfo *)0x0);
+        fStack_26 = VVar25.x;
+        pTStack_3 = (Touch__Array *)(this->fields).previousInputPosition.y;
+        VVar25 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_position
+                           ((Touch *)&stack0xffffff4c,(MethodInfo *)0x0);
+        fStack_27 = VVar25.y;
+        VStack_1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_position
+                              ((Touch *)&stack0xffffff4c,(MethodInfo *)0x0);
+        fVar28 = ((float)pTStack_3 - fStack_27) * VStack_23.y;
+        (this->fields).previousInputPosition = VStack_1;
+        fVar24 = (fVar24 - fStack_26) * VStack_23.x;
         if (((this->fields).state & 1) != 0) {
-          pCVar34 = (this->fields).horizontalVirtualAxis;
-          if (pCVar34 == (CrossPlatformInputManager_VirtualAxis *)0x0) goto code_?;
-          (pCVar34->fields).m_Value =
-               (float)((uint)((fVar29 - fStack_31) * (float)pvStack_1) ^
+          pCVar29 = (this->fields).horizontalVirtualAxis;
+          if (pCVar29 == (CrossPlatformInputManager_VirtualAxis *)0x0) goto code_?;
+          (pCVar29->fields).m_Value =
+               (float)((uint)fVar24 ^
                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         }
         if (((this->fields).state & 2) == 0) {
           return;
         }
-        pCVar34 = (this->fields).verticalVirtualAxis;
-        if (pCVar34 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
-          (pCVar34->fields).m_Value = (fStack_26 - fStack_32) * (float)pTStack_4;
+        pCVar29 = (this->fields).verticalVirtualAxis;
+        if (pCVar29 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
+          (pCVar29->fields).m_Value = fVar28;
           return;
         }
         goto code_?;
       }
-      uVar5 = uVar5 + 1;
-      pTVar6 = pTVar6 + 1;
+      uVar4 = uVar4 + 1;
+      pTVar5 = pTVar5 + 1;
     }
-    bVar35 = cRam_? == '\0';
+    bVar30 = cRam_? == '\0';
     (this->fields).fingerId = -1;
     (this->fields).dragging = 0;
-    if (bVar35) {
+    if (bVar30) {
       func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager)
       ;
       func_?(&::StringLiteral__);
       cRam_? = '\x01';
     }
-    bVar36 = mscorlib.dll::System::String::String_op_Inequality
+    bVar31 = mscorlib.dll::System::String::String_op_Inequality
                       ((this->fields).onTouchButtonName,::StringLiteral__,(MethodInfo *)0x0);
-    if (bVar36 != 0) {
+    if (bVar31 != 0) {
       name = (this->fields).onTouchButtonName;
       if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
           cctor_finished_or_no_cctor == 0) {
@@ -487,22 +439,25 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::TouchPadAbsol
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
     }
-    VVar30.y = VStack_33.y;
-    VVar30.x = VStack_33.x;
-    uStack_37._0_4_ = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
-    uStack_37._4_4_ = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
+    VVar32.y = VStack_23.y;
+    VVar32.x = VStack_23.x;
+    VVar25.y = VStack_1.y;
+    VVar25.x = VStack_1.x;
+    uStack_33._0_4_ = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
+    uStack_33._4_4_ = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
     if (((this->fields).state & 1) != 0) {
-      pCVar34 = (this->fields).horizontalVirtualAxis;
-      if (pCVar34 == (CrossPlatformInputManager_VirtualAxis *)0x0) goto code_?;
-      (pCVar34->fields).m_Value = (float)(undefined4)uStack_37;
+      pCVar29 = (this->fields).horizontalVirtualAxis;
+      if (pCVar29 == (CrossPlatformInputManager_VirtualAxis *)0x0) goto code_?;
+      (pCVar29->fields).m_Value = (float)(undefined4)uStack_33;
     }
     if (((this->fields).state & 2) == 0) {
       return;
     }
-    pCVar34 = (this->fields).verticalVirtualAxis;
-    VStack_33 = VVar30;
-    if (pCVar34 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
-      (pCVar34->fields).m_Value = (float)uStack_37._4_4_;
+    pCVar29 = (this->fields).verticalVirtualAxis;
+    VStack_1 = VVar25;
+    VStack_23 = VVar32;
+    if (pCVar29 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
+      (pCVar29->fields).m_Value = (float)uStack_33._4_4_;
       return;
     }
   }
@@ -510,8 +465,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar38 = (code *)swi(3);
-  (*pcVar38)();
+  pcVar34 = (code *)swi(3);
+  (*pcVar34)();
   return;
 }
 
@@ -522,129 +477,83 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::TouchPadAbsol
      TouchPadAbsolute_UpdateAxis(TouchPadAbsolute *this,MethodInfo *method)
 
 {
-  pvStack_1 = (void *)(this->fields).fingerId;
-  func_?(&ppSStack_2,0,0x44);
-  func_?(&TStack_3,0,0x44);
-  pTStack_4 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_touches
+  VStack_1.y = (float)(this->fields).fingerId;
+  func_?(&pMStack_2,0,0x44);
+  func_?(&stack0xffffff4c,0,0x44);
+  pTStack_3 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_touches
                         ((MethodInfo *)0x0);
-  uVar5 = 0;
-  if (pTStack_4 != (Touch__Array *)0x0) {
-    pTVar6 = pTStack_4->vector;
+  uVar4 = 0;
+  if (pTStack_3 != (Touch__Array *)0x0) {
+    pTVar5 = pTStack_3->vector;
     while( true ) {
-      if ((int)pTStack_4->max_length <= (int)uVar5) break;
-      if (pTStack_4->max_length <= uVar5) goto code_?;
-      ppSStack_2 = (ScaleToPhysicalSize__Class **)pTVar6->m_FingerId;
-      fStack_7 = (pTVar6->m_Position).x;
-      fStack_8 = (pTVar6->m_Position).y;
-      fStack_9 = (pTVar6->m_RawPosition).x;
-      fStack_10 = (pTVar6->m_RawPosition).y;
-      fStack_11 = (pTVar6->m_PositionDelta).x;
-      fStack_12 = (pTVar6->m_PositionDelta).y;
-      fStack_13 = pTVar6->m_TimeDelta;
-      iStack_14 = pTVar6->m_TapCount;
-      iStack_15 = pTVar6->m_Phase;
-      iStack_16 = pTVar6->m_Type;
-      fStack_17 = pTVar6->m_Pressure;
-      fStack_18 = pTVar6->m_maximumPossiblePressure;
-      fStack_19 = pTVar6->m_Radius;
-      fStack_20 = pTVar6->m_RadiusVariance;
-      fStack_21 = pTVar6->m_AltitudeAngle;
-      fStack_22 = pTVar6->m_AzimuthAngle;
-      pvVar23 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_ReadUnaligned_6
-                         ((uint8_t *)&ppSStack_2,(MethodInfo *)0x0);
-      if (pvVar23 == pvStack_1) {
-        TStack_3.m_AzimuthAngle = fStack_22;
-        TStack_3.m_FingerId = (int32_t)ppSStack_2;
-        TStack_3.m_Position.x = fStack_7;
-        TStack_3.m_Position.y = fStack_8;
-        TStack_3.m_RawPosition.x = fStack_9;
-        TStack_3.m_RawPosition.y = fStack_10;
-        TStack_3.m_PositionDelta.x = fStack_11;
-        TStack_3.m_PositionDelta.y = fStack_12;
-        TStack_3.m_TimeDelta = fStack_13;
-        TStack_3.m_TapCount = iStack_14;
-        TStack_3.m_Phase = iStack_15;
-        TStack_3.m_Type = iStack_16;
-        TStack_3.m_Pressure = fStack_17;
-        TStack_3.m_maximumPossiblePressure = fStack_18;
-        TStack_3.m_Radius = fStack_19;
-        TStack_3.m_RadiusVariance = fStack_20;
-        TStack_3.m_AltitudeAngle = fStack_21;
-        if (cRam_? == '\0') {
-          TStack_3.m_FingerId = (int32_t)&TypeInfo__ScaleToPhysicalSize;
-          func_?();
-          cRam_? = '\x01';
-        }
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__ResolutionManager);
-          cRam_? = '\x01';
-        }
-        pCVar24 = TypeInfo__ResolutionManager->static_fields->canvasScaler;
-        if (pCVar24 == (CanvasScaler *)0x0) goto code_?;
-        pvStack_1 = (void *)(pCVar24->fields).m_ReferenceResolution.x;
-        iVar25 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0)
-        ;
-        if ((TypeInfo__ScaleToPhysicalSize->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__ScaleToPhysicalSize);
-        }
-        pTStack_4 = (Touch__Array *)
-                    ScaleToPhysicalSize::ScaleToPhysicalSize_get_DpiScale((MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__ResolutionManager);
-          cRam_? = '\x01';
-        }
-        pCVar24 = TypeInfo__ResolutionManager->static_fields->canvasScaler;
-        if (pCVar24 == (CanvasScaler *)0x0) goto code_?;
-        fStack_26 = (pCVar24->fields).m_ReferenceResolution.y;
-        iVar27 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height
-                          ((MethodInfo *)0x0);
-        pvStack_1 = (void *)(((float)pvStack_1 / (float)iVar25) * (float)pTStack_4);
-        fVar28 = ScaleToPhysicalSize::ScaleToPhysicalSize_get_DpiScale((MethodInfo *)0x0);
-        fStack_26 = fStack_26 / (float)iVar27;
-        fVar29 = (this->fields).previousInputPosition.x;
-        pTStack_4 = (Touch__Array *)(fVar28 * fStack_26);
-        VVar30 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_position
-                           (&TStack_3,(MethodInfo *)0x0);
-        fStack_31 = VVar30.x;
-        fStack_26 = (this->fields).previousInputPosition.y;
-        VVar30 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_position
-                           (&TStack_3,(MethodInfo *)0x0);
-        fStack_32 = VVar30.y;
-        VStack_33 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_position
-                              (&TStack_3,(MethodInfo *)0x0);
-        (this->fields).previousInputPosition = VStack_33;
+      if ((int)pTStack_3->max_length <= (int)uVar4) break;
+      if (pTStack_3->max_length <= uVar4) goto code_?;
+      pMStack_2 = (MethodInfo *)pTVar5->m_FingerId;
+      fStack_6 = (pTVar5->m_Position).x;
+      fStack_7 = (pTVar5->m_Position).y;
+      fStack_8 = (pTVar5->m_RawPosition).x;
+      fStack_9 = (pTVar5->m_RawPosition).y;
+      fStack_10 = (pTVar5->m_PositionDelta).x;
+      fStack_11 = (pTVar5->m_PositionDelta).y;
+      fStack_12 = pTVar5->m_TimeDelta;
+      iStack_13 = pTVar5->m_TapCount;
+      iStack_14 = pTVar5->m_Phase;
+      iStack_15 = pTVar5->m_Type;
+      fStack_16 = pTVar5->m_Pressure;
+      fStack_17 = pTVar5->m_maximumPossiblePressure;
+      fStack_18 = pTVar5->m_Radius;
+      fStack_19 = pTVar5->m_RadiusVariance;
+      fStack_20 = pTVar5->m_AltitudeAngle;
+      fStack_21 = pTVar5->m_AzimuthAngle;
+      pvVar22 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_ReadUnaligned_6
+                         ((uint8_t *)&pMStack_2,(MethodInfo *)0x0);
+      if (pvVar22 == (void *)VStack_1.y) {
+        VStack_23 = ResolutionManager::ResolutionManager_get_PhysicalDistanceToPixels(pMStack_2);
+        fVar24 = (this->fields).previousInputPosition.x;
+        VVar25 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_position
+                           ((Touch *)&stack0xffffff4c,(MethodInfo *)0x0);
+        fStack_26 = VVar25.x;
+        pTStack_3 = (Touch__Array *)(this->fields).previousInputPosition.y;
+        VVar25 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_position
+                           ((Touch *)&stack0xffffff4c,(MethodInfo *)0x0);
+        fStack_27 = VVar25.y;
+        VStack_1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_position
+                              ((Touch *)&stack0xffffff4c,(MethodInfo *)0x0);
+        fVar28 = ((float)pTStack_3 - fStack_27) * VStack_23.y;
+        (this->fields).previousInputPosition = VStack_1;
+        fVar24 = (fVar24 - fStack_26) * VStack_23.x;
         if (((this->fields).state & 1) != 0) {
-          pCVar34 = (this->fields).horizontalVirtualAxis;
-          if (pCVar34 == (CrossPlatformInputManager_VirtualAxis *)0x0) goto code_?;
-          (pCVar34->fields).m_Value =
-               (float)((uint)((fVar29 - fStack_31) * (float)pvStack_1) ^
+          pCVar29 = (this->fields).horizontalVirtualAxis;
+          if (pCVar29 == (CrossPlatformInputManager_VirtualAxis *)0x0) goto code_?;
+          (pCVar29->fields).m_Value =
+               (float)((uint)fVar24 ^
                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         }
         if (((this->fields).state & 2) == 0) {
           return;
         }
-        pCVar34 = (this->fields).verticalVirtualAxis;
-        if (pCVar34 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
-          (pCVar34->fields).m_Value = (fStack_26 - fStack_32) * (float)pTStack_4;
+        pCVar29 = (this->fields).verticalVirtualAxis;
+        if (pCVar29 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
+          (pCVar29->fields).m_Value = fVar28;
           return;
         }
         goto code_?;
       }
-      uVar5 = uVar5 + 1;
-      pTVar6 = pTVar6 + 1;
+      uVar4 = uVar4 + 1;
+      pTVar5 = pTVar5 + 1;
     }
-    bVar35 = cRam_? == '\0';
+    bVar30 = cRam_? == '\0';
     (this->fields).fingerId = -1;
     (this->fields).dragging = 0;
-    if (bVar35) {
+    if (bVar30) {
       func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager)
       ;
       func_?(&::StringLiteral__);
       cRam_? = '\x01';
     }
-    bVar36 = mscorlib.dll::System::String::String_op_Inequality
+    bVar31 = mscorlib.dll::System::String::String_op_Inequality
                       ((this->fields).onTouchButtonName,::StringLiteral__,(MethodInfo *)0x0);
-    if (bVar36 != 0) {
+    if (bVar31 != 0) {
       name = (this->fields).onTouchButtonName;
       if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
           cctor_finished_or_no_cctor == 0) {
@@ -657,22 +566,25 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::TouchPadAbsol
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
     }
-    VVar30.y = VStack_33.y;
-    VVar30.x = VStack_33.x;
-    uStack_37._0_4_ = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
-    uStack_37._4_4_ = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
+    VVar32.y = VStack_23.y;
+    VVar32.x = VStack_23.x;
+    VVar25.y = VStack_1.y;
+    VVar25.x = VStack_1.x;
+    uStack_33._0_4_ = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
+    uStack_33._4_4_ = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
     if (((this->fields).state & 1) != 0) {
-      pCVar34 = (this->fields).horizontalVirtualAxis;
-      if (pCVar34 == (CrossPlatformInputManager_VirtualAxis *)0x0) goto code_?;
-      (pCVar34->fields).m_Value = (float)(undefined4)uStack_37;
+      pCVar29 = (this->fields).horizontalVirtualAxis;
+      if (pCVar29 == (CrossPlatformInputManager_VirtualAxis *)0x0) goto code_?;
+      (pCVar29->fields).m_Value = (float)(undefined4)uStack_33;
     }
     if (((this->fields).state & 2) == 0) {
       return;
     }
-    pCVar34 = (this->fields).verticalVirtualAxis;
-    VStack_33 = VVar30;
-    if (pCVar34 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
-      (pCVar34->fields).m_Value = (float)uStack_37._4_4_;
+    pCVar29 = (this->fields).verticalVirtualAxis;
+    VStack_1 = VVar25;
+    VStack_23 = VVar32;
+    if (pCVar29 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
+      (pCVar29->fields).m_Value = (float)uStack_33._4_4_;
       return;
     }
   }
@@ -680,8 +592,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar38 = (code *)swi(3);
-  (*pcVar38)();
+  pcVar34 = (code *)swi(3);
+  (*pcVar34)();
   return;
 }
 
@@ -726,16 +638,13 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::TouchPadAbsol
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  ppSVar1 = &(this->fields).horizontalAxisName;
   (this->fields).state = 3;
-  *ppSVar1 = StringLiteral_Horizontal;
-  func_?(ppSVar1,StringLiteral_Horizontal);
-  ppSVar1 = &(this->fields).verticalAxisName;
-  *ppSVar1 = StringLiteral_Vertical;
-  func_?(ppSVar1,StringLiteral_Vertical);
-  ppSVar1 = &(this->fields).onTouchButtonName;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
+  (this->fields).horizontalAxisName = StringLiteral_Horizontal;
+  func_?(&(this->fields).horizontalAxisName,StringLiteral_Horizontal);
+  (this->fields).verticalAxisName = StringLiteral_Vertical;
+  func_?(&(this->fields).verticalAxisName,StringLiteral_Vertical);
+  (this->fields).onTouchButtonName = ::StringLiteral__;
+  func_?(&(this->fields).onTouchButtonName,::StringLiteral__);
   (this->fields).fingerId = -1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

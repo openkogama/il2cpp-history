@@ -79,68 +79,68 @@ code_?:
     pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
     profileID_00 = profileID;
     if (pMVar3 == (MVLocalPlayer *)0x0) goto code_?;
-    pTVar4 = (this->fields).userRankText;
+    unaff_ESI = (FriendList_OnFriendRequestUpdated__Class *)(this->fields).userRankText;
     (this->fields).isLocalPlayerElement = profileID == (pMVar3->fields)._._ProfileID_k__BackingField
     ;
     (this->fields).profileId = profileID;
-    pSVar5 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&userRank,(MethodInfo *)0x0);
-    unaff_ESI = (FriendList_OnFriendRequestUpdated__Class *)profileID_00;
-    if (pTVar4 == (Text *)0x0) goto code_?;
-    (*(code *)(pTVar4->klass->vtable).set_text.method)
-              (pTVar4,pSVar5,(pTVar4->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    pTVar4 = (this->fields).userNameText;
-    if (pTVar4 == (Text *)0x0) goto code_?;
-    (*(code *)(pTVar4->klass->vtable).set_text.method)
-              (pTVar4,userName,(pTVar4->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    pTVar4 = (this->fields).userAmountOfGamePointText;
-    pSVar5 = mscorlib.dll::System::Int32::Int32_ToString
+    pSVar4 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&userRank,(MethodInfo *)0x0);
+    if (unaff_ESI == (FriendList_OnFriendRequestUpdated__Class *)0x0) goto code_?;
+    pIVar5 = (unaff_ESI->_0).image;
+    (*(code *)pIVar5[0x12].name)(unaff_ESI,pSVar4,pIVar5[0x12].nameNoExt);
+    pTVar6 = (this->fields).userNameText;
+    if (pTVar6 == (Text *)0x0) goto code_?;
+    (*(code *)(pTVar6->klass->vtable).set_text.method)
+              (pTVar6,userName,(pTVar6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    unaff_ESI = (FriendList_OnFriendRequestUpdated__Class *)(this->fields).userAmountOfGamePointText
+    ;
+    pSVar4 = mscorlib.dll::System::Int32::Int32_ToString
                        ((Int32 *)&amountOfGamePoints,(MethodInfo *)0x0);
-    if (pTVar4 == (Text *)0x0) goto code_?;
-    (*(code *)(pTVar4->klass->vtable).set_text.method)
-              (pTVar4,pSVar5,(pTVar4->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    if (unaff_ESI == (FriendList_OnFriendRequestUpdated__Class *)0x0) goto code_?;
+    pIVar5 = (unaff_ESI->_0).image;
+    (*(code *)pIVar5[0x12].name)(unaff_ESI,pSVar4,pIVar5[0x12].nameNoExt);
     (this->fields).subscriber = isSubscriber;
     if ((this->fields).isLocalPlayerElement != 0) {
       unaff_ESI = (FriendList_OnFriendRequestUpdated__Class *)(this->fields).backgroundImage;
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Styles);
       }
-      pCVar6 = Styles::Styles_GetColor
-                         ((Color *)(auStack_7 + 4),ColorStyle__Enum_OffGray,(MethodInfo *)0x0);
+      pCVar7 = Styles::Styles_GetColor
+                         ((Color *)(auStack_8 + 4),ColorStyle__Enum_OffGray,(MethodInfo *)0x0);
       if (unaff_ESI != (FriendList_OnFriendRequestUpdated__Class *)0x0) {
-        pIVar8 = (unaff_ESI->_0).image;
-        (*(code *)pIVar8[8].metadataHandle)
-                  (unaff_ESI,pCVar6->r,pCVar6->g,pCVar6->b,pCVar6->a,pIVar8[8].nameToClassHashTable)
+        pIVar5 = (unaff_ESI->_0).image;
+        (*(code *)pIVar5[8].metadataHandle)
+                  (unaff_ESI,pCVar7->r,pCVar7->g,pCVar7->b,pCVar7->a,pIVar5[8].nameToClassHashTable)
         ;
         pBVar9 = (this->fields).buttonElement;
         if (pBVar9 != (Button *)0x0) {
           UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable
                     ((Selectable *)pBVar9,0,(MethodInfo *)0x0);
-          pTVar4 = (this->fields).userRankText;
-          pCVar6 = Styles::Styles_GetColor
-                             ((Color *)(auStack_7 + 4),ColorStyle__Enum_Gray,(MethodInfo *)0x0);
+          pTVar6 = (this->fields).userRankText;
+          pCVar7 = Styles::Styles_GetColor
+                             ((Color *)(auStack_8 + 4),ColorStyle__Enum_Gray,(MethodInfo *)0x0);
           unaff_ESI = (FriendList_OnFriendRequestUpdated__Class *)0x0;
-          if (pTVar4 != (Text *)0x0) {
-            (*(code *)(pTVar4->klass->vtable).set_color.method)
-                      (pTVar4,pCVar6->r,pCVar6->g,pCVar6->b,pCVar6->a,
-                       (pTVar4->klass->vtable).get_raycastTarget.methodPtr);
-            pTVar4 = (this->fields).userNameText;
-            pCVar6 = Styles::Styles_GetColor
-                               ((Color *)(auStack_7 + 4),ColorStyle__Enum_Gray,(MethodInfo *)0x0);
+          if (pTVar6 != (Text *)0x0) {
+            (*(code *)(pTVar6->klass->vtable).set_color.method)
+                      (pTVar6,pCVar7->r,pCVar7->g,pCVar7->b,pCVar7->a,
+                       (pTVar6->klass->vtable).get_raycastTarget.methodPtr);
+            pTVar6 = (this->fields).userNameText;
+            pCVar7 = Styles::Styles_GetColor
+                               ((Color *)(auStack_8 + 4),ColorStyle__Enum_Gray,(MethodInfo *)0x0);
             unaff_ESI = (FriendList_OnFriendRequestUpdated__Class *)0x0;
-            if (pTVar4 != (Text *)0x0) {
-              (*(code *)(pTVar4->klass->vtable).set_color.method)
-                        (pTVar4,pCVar6->r,pCVar6->g,pCVar6->b,pCVar6->a,
-                         (pTVar4->klass->vtable).get_raycastTarget.methodPtr);
+            if (pTVar6 != (Text *)0x0) {
+              (*(code *)(pTVar6->klass->vtable).set_color.method)
+                        (pTVar6,pCVar7->r,pCVar7->g,pCVar7->b,pCVar7->a,
+                         (pTVar6->klass->vtable).get_raycastTarget.methodPtr);
               unaff_ESI = (FriendList_OnFriendRequestUpdated__Class *)
                           (this->fields).userAmountOfGamePointText;
-              pCVar6 = Styles::Styles_GetColor
-                                 ((Color *)(auStack_7 + 4),ColorStyle__Enum_Gray,(MethodInfo *)0x0)
+              pCVar7 = Styles::Styles_GetColor
+                                 ((Color *)(auStack_8 + 4),ColorStyle__Enum_Gray,(MethodInfo *)0x0)
               ;
               if (unaff_ESI != (FriendList_OnFriendRequestUpdated__Class *)0x0) {
-                pIVar8 = (unaff_ESI->_0).image;
-                (*(code *)pIVar8[8].metadataHandle)
-                          (unaff_ESI,pCVar6->r,pCVar6->g,pCVar6->b,pCVar6->a,
-                           pIVar8[8].nameToClassHashTable);
+                pIVar5 = (unaff_ESI->_0).image;
+                (*(code *)pIVar5[8].metadataHandle)
+                          (unaff_ESI,pCVar7->r,pCVar7->g,pCVar7->b,pCVar7->a,
+                           pIVar5[8].nameToClassHashTable);
                 goto code_?;
               }
             }
@@ -159,17 +159,17 @@ code_?:
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Styles);
       }
-      pCVar6 = Styles::Styles_GetColor
-                         ((Color *)(auStack_7 + 4),ColorStyle__Enum_FriendGreen,(MethodInfo *)0x0);
+      pCVar7 = Styles::Styles_GetColor
+                         ((Color *)(auStack_8 + 4),ColorStyle__Enum_FriendGreen,(MethodInfo *)0x0);
       if (unaff_ESI == (FriendList_OnFriendRequestUpdated__Class *)0x0) goto code_?;
-      pIVar8 = (unaff_ESI->_0).image;
-      auStack_7._0_4_ = pIVar8[8].nameToClassHashTable;
-      (*(code *)pIVar8[8].metadataHandle)(unaff_ESI,pCVar6->r,pCVar6->g,pCVar6->b,pCVar6->a);
+      pIVar5 = (unaff_ESI->_0).image;
+      auStack_8._0_4_ = pIVar5[8].nameToClassHashTable;
+      (*(code *)pIVar5[8].metadataHandle)(unaff_ESI,pCVar7->r,pCVar7->g,pCVar7->b,pCVar7->a);
     }
     this_01 = (this->fields).embeddedPlayerConfig;
     if (this_01 == (EmbeddedPlayerConfig *)0x0) goto code_?;
     pEVar11 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                        ((EmbeddedSiteConfigData *)auStack_7,this_01,(MethodInfo *)0x0);
+                        ((EmbeddedSiteConfigData *)auStack_8,this_01,(MethodInfo *)0x0);
     if ((pEVar11->allowsOpenInNewTab == 0) && (pEVar11->allowsRedirectToWebpage == 0)) {
       pBVar9 = (this->fields).buttonElement;
       if (pBVar9 == (Button *)0x0) goto code_?;
@@ -197,12 +197,11 @@ code_?:
                (MethodInfo *)0x0);
     pDStack_2 = mscorlib.dll::System::Delegate::Delegate_Combine
                            ((Delegate *)a,(Delegate *)this_03,(MethodInfo *)0x0);
-    pFStack_12 = TypeInfo__FriendList__OnFriendRequestUpdated;
     if (pDStack_2 == (Delegate *)0x0) {
-      pDStack_2 = (Delegate *)(profileID + 0xc);
       pFStack_12 = (FriendList_OnFriendRequestUpdated__Class *)0x0;
-      *(undefined4 *)pDStack_2 = 0;
-      auStack_7._4_4_ = &UNK_?;
+      *(undefined4 *)(profileID + 0xc) = 0;
+      pDStack_2 = (Delegate *)(profileID + 0xc);
+      auStack_8._4_4_ = &UNK_?;
       func_?();
       return;
     }
@@ -211,8 +210,9 @@ code_?:
         TypeInfo__FriendList__OnFriendRequestUpdated) {
       pDVar13 = pDStack_2;
     }
+    pFStack_12 = TypeInfo__FriendList__OnFriendRequestUpdated;
     if (pDVar13 == (Delegate *)0x0) goto code_?;
-    *(undefined4 *)(profileID + 0xc) = pDVar13;
+    *(Delegate **)(profileID + 0xc) = pDVar13;
     pFStack_12 = (FriendList_OnFriendRequestUpdated__Class *)(Delegate *)0x0;
     if ((FriendList_OnFriendRequestUpdated__Class *)pDStack_2->klass ==
         TypeInfo__FriendList__OnFriendRequestUpdated) {
@@ -220,17 +220,18 @@ code_?:
     }
     unaff_ESI = TypeInfo__FriendList__OnFriendRequestUpdated;
     if (pFStack_12 != (FriendList_OnFriendRequestUpdated__Class *)0x0) {
-      auStack_7._4_4_ = &UNK_?;
       pDStack_2 = (Delegate *)(profileID + 0xc);
+      auStack_8._4_4_ = &UNK_?;
       func_?();
       return;
     }
   }
-  auStack_7._4_4_ = &UNK_?;
+  auStack_8._4_4_ = &UNK_?;
   pFStack_12 = unaff_ESI;
-  _pDStack_10 = func_?();
+  pDStack_2 = (Delegate *)func_?();
+  pFStack_12 = extraout_ECX;
 code_?:
-  auStack_7._4_4_ = &UNK_?;
+  auStack_8._4_4_ = &UNK_?;
   func_?();
   pcVar14 = (code *)swi(3);
   (*pcVar14)();
@@ -264,7 +265,7 @@ void Assembly-CSharp.dll::GamePassesHighScoreElement::GamePassesHighScoreElement
   }
   method_00 = TypeInfo__GamePassesHighScoreElement____c__DisplayClass15_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   original = (this->fields).playerSocialPopup;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -276,16 +277,15 @@ void Assembly-CSharp.dll::GamePassesHighScoreElement::GamePassesHighScoreElement
                       PlayerSocialPopup_MethodInfo__UnityEngine__Object__Instantiate<PlayerSocialPopup>_PlayerSocialPopup_
                      );
   if (value != (Object *)0x0) {
-    pOVar2 = value + 1;
-    pOVar2->klass = pOVar1;
-    func_?(pOVar2,pOVar1);
-    pTVar3 = (this->fields).userNameText;
+    value[1].klass = pOVar1;
+    func_?(value + 1,pOVar1);
+    pTVar2 = (this->fields).userNameText;
     remotePlayerProfileId = (this->fields).profileId;
-    pOVar1 = pOVar2->klass;
-    if (pTVar3 != (Text *)0x0) {
+    pOVar1 = value[1].klass;
+    if (pTVar2 != (Text *)0x0) {
       name = (String *)
-             (*(code *)(pTVar3->klass->vtable).get_text.method)
-                       (pTVar3,(pTVar3->klass->vtable).set_text.methodPtr);
+             (*(code *)(pTVar2->klass->vtable).get_text.method)
+                       (pTVar2,(pTVar2->klass->vtable).set_text.methodPtr);
       if (pOVar1 != (Object__Class *)0x0) {
         PlayerSocialPopup::PlayerSocialPopup_Initialize
                   ((PlayerSocialPopup *)pOVar1,remotePlayerProfileId,name,(this->fields).subscriber,
@@ -315,8 +315,8 @@ void Assembly-CSharp.dll::GamePassesHighScoreElement::GamePassesHighScoreElement
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -337,7 +337,6 @@ void Assembly-CSharp.dll::GamePassesHighScoreElement::GamePassesHighScoreElement
     pFVar2 = (pMVar1->fields)._Friends_k__BackingField;
     if (pFVar2 != (FriendList *)0x0) {
       pFVar3 = (pFVar2->fields).OnFriendRequestAccepted;
-      ppFVar4 = &(pFVar2->fields).OnFriendRequestAccepted;
       this_00 = (UnityAction_1_System_Object_ *)
                 func_?(TypeInfo__FriendList__OnFriendRequestUpdated);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
@@ -348,26 +347,27 @@ void Assembly-CSharp.dll::GamePassesHighScoreElement::GamePassesHighScoreElement
       pFVar3 = (FriendList_OnFriendRequestUpdated *)
                mscorlib.dll::System::Delegate::Delegate_Remove
                          ((Delegate *)pFVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-      uVar5 = CONCAT44(TypeInfo__FriendList__OnFriendRequestUpdated,pFVar3);
-      ppFStack6 = ppFVar4;
+      uVar4 = CONCAT44(TypeInfo__FriendList__OnFriendRequestUpdated,pFVar3);
       if (pFVar3 == (FriendList_OnFriendRequestUpdated *)0x0) {
-        pFStack7 = (FriendList_OnFriendRequestUpdated *)0x0;
-        *ppFVar4 = (FriendList_OnFriendRequestUpdated *)0x0;
+        (pFVar2->fields).OnFriendRequestAccepted = (FriendList_OnFriendRequestUpdated *)0x0;
+        ppFStack5 = &(pFVar2->fields).OnFriendRequestAccepted;
+        pFStack6 = (FriendList_OnFriendRequestUpdated *)0x0;
         func_?();
         return;
       }
-      pFVar8 = (FriendList_OnFriendRequestUpdated *)0x0;
+      pFVar7 = (FriendList_OnFriendRequestUpdated *)0x0;
       if (pFVar3->klass == TypeInfo__FriendList__OnFriendRequestUpdated) {
-        pFVar8 = pFVar3;
+        pFVar7 = pFVar3;
       }
-      if (pFVar8 != (FriendList_OnFriendRequestUpdated *)0x0) {
-        *ppFVar4 = pFVar8;
-        uVar5 = CONCAT44(TypeInfo__FriendList__OnFriendRequestUpdated,pFVar3);
-        pFStack7 = (FriendList_OnFriendRequestUpdated *)0x0;
+      if (pFVar7 != (FriendList_OnFriendRequestUpdated *)0x0) {
+        (pFVar2->fields).OnFriendRequestAccepted = pFVar7;
+        uVar4 = CONCAT44(TypeInfo__FriendList__OnFriendRequestUpdated,pFVar3);
+        pFStack6 = (FriendList_OnFriendRequestUpdated *)0x0;
         if (pFVar3->klass == TypeInfo__FriendList__OnFriendRequestUpdated) {
-          pFStack7 = pFVar3;
+          pFStack6 = pFVar3;
         }
-        if (pFStack7 != (FriendList_OnFriendRequestUpdated *)0x0) {
+        if (pFStack6 != (FriendList_OnFriendRequestUpdated *)0x0) {
+          ppFStack5 = &(pFVar2->fields).OnFriendRequestAccepted;
           func_?();
           return;
         }
@@ -375,12 +375,12 @@ void Assembly-CSharp.dll::GamePassesHighScoreElement::GamePassesHighScoreElement
       goto code_?;
     }
   }
-  uVar5 = func_?();
+  uVar4 = func_?();
 code_?:
-  _ppFStack00000010 = uVar5;
+  _ppFStack00000010 = uVar4;
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

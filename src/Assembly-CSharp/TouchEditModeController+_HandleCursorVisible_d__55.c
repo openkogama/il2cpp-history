@@ -13,9 +13,8 @@ bool Assembly-CSharp.dll::TouchEditModeController+<HandleCursorVisible>d__55::
     ;
     if (bVar2 == 0) {
       UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_set_visible(1,(MethodInfo *)0x0);
-      ppOVar3 = &(this->fields).__2__current;
-      *ppOVar3 = (Object *)0x0;
-      func_?(ppOVar3,0);
+      (this->fields).__2__current = (Object *)0x0;
+      func_?(&(this->fields).__2__current,0);
       (this->fields).__1__state = 1;
       return 1;
     }

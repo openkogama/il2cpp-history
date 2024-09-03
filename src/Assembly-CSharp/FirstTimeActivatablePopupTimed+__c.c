@@ -40,7 +40,7 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed+<>c::
   }
   method_00 = TypeInfo__FirstTimeActivatablePopupTimed____c;
   value = (FirstTimeActivatablePopupTimed_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__FirstTimeActivatablePopupTimed____c->static_fields->__9 = value;
   func_?(TypeInfo__FirstTimeActivatablePopupTimed____c->static_fields,value);

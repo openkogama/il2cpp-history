@@ -5,6 +5,7 @@ void Assembly-CSharp.dll::AndroidInGameMenu::AndroidInGameMenu_Initialize
                (AndroidInGameMenu *this,MethodInfo *method)
 
 {
+  this_01 = this;
   if (cRam_? == '\0') {
     func_?(&
                     GamePassesUI_MethodInfo__UnityEngine__Object__Instantiate<GamePassesUI>_GamePassesUI__UnityEngine__Transform__bool_
@@ -42,7 +43,7 @@ void Assembly-CSharp.dll::AndroidInGameMenu::AndroidInGameMenu_Initialize
   this_00 = (this->fields).embeddedPlayerConfig;
   if (this_00 == (EmbeddedPlayerConfig *)0x0) goto code_?;
   pEVar6 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                     ((EmbeddedSiteConfigData *)&stack0xffffffd4,this_00,(MethodInfo *)0x0);
+                     ((EmbeddedSiteConfigData *)&stack0xffffffd0,this_00,(MethodInfo *)0x0);
   if ((pEVar6->allowsModals == 0) && (pEVar6->allowsOpenInNewTab == 0)) {
     uVar7._0_1_ = pEVar6->showTouristPromotion;
     uVar7._1_1_ = pEVar6->allowsOpenInNewTab;
@@ -64,48 +65,50 @@ void Assembly-CSharp.dll::AndroidInGameMenu::AndroidInGameMenu_Initialize
             (pGVar5,value,(MethodInfo *)0x0);
   pGVar5 = (this->fields).accessoryShopButton;
   if (uVar8 == '\0') {
+    pGVar5 = (GameObject *)0x0;
     bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
     if (bVar1 == 0) {
-      bVar1 = 1;
+      this._0_1_ = 1;
     }
     else {
+      pGVar5 = (GameObject *)&UNK_?;
       bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-      bVar1 = -(uVar7 != 0) & bVar1;
+      this._0_1_ = -(uVar7 != 0) & bVar1;
     }
   }
   else {
-    bVar1 = 0;
+    this._0_1_ = 0;
   }
   if (pGVar5 == (GameObject *)0x0) goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            (pGVar5,bVar1,(MethodInfo *)0x0);
+            (pGVar5,(byte)this,(MethodInfo *)0x0);
   if (bVar3) {
-    pTVar4 = (this->fields).playReward;
+    pTVar4 = (this_01->fields).playReward;
     if (pTVar4 == (TimedPlayReward *)0x0) goto code_?;
     TimedPlayReward::TimedPlayReward_Initialize(pTVar4,(MethodInfo *)0x0);
   }
-  if ((this->fields).rewardedAd == (FreeGoldAndroid *)0x0) goto code_?;
+  if ((this_01->fields).rewardedAd == (FreeGoldAndroid *)0x0) goto code_?;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
   if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField != 0) {
-    pGVar9 = (this->fields).gamePassesUIPrefab;
+    pGVar9 = (this_01->fields).gamePassesUIPrefab;
     pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)this,(MethodInfo *)0x0);
+                       ((Component *)this_01,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     pGVar9 = (GamePassesUI *)
-              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                        ((Object *)pGVar9,pTVar10,0,
-                         GamePassesUI_MethodInfo__UnityEngine__Object__Instantiate<GamePassesUI>_GamePassesUI__UnityEngine__Transform__bool_
-                        );
-    ppGVar11 = &(this->fields).gamePassesUI;
-    *ppGVar11 = pGVar9;
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                       ((Object *)pGVar9,pTVar10,0,
+                        GamePassesUI_MethodInfo__UnityEngine__Object__Instantiate<GamePassesUI>_GamePassesUI__UnityEngine__Transform__bool_
+                       );
+    (this_01->fields).gamePassesUI = pGVar9;
     func_?();
-    if (*ppGVar11 == (GamePassesUI *)0x0) goto code_?;
-    GamePassesUI::GamePassesUI_Initialize(*ppGVar11,(MethodInfo *)0x0);
+    pGVar9 = (this_01->fields).gamePassesUI;
+    if (pGVar9 == (GamePassesUI *)0x0) goto code_?;
+    GamePassesUI::GamePassesUI_Initialize(pGVar9,(MethodInfo *)0x0);
     bVar1 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
                       ((MethodInfo *)0x0);
     if (bVar1 != 0) {
@@ -116,15 +119,16 @@ void Assembly-CSharp.dll::AndroidInGameMenu::AndroidInGameMenu_Initialize
       if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField != 0)
       goto code_?;
     }
-    if ((*ppGVar11 == (GamePassesUI *)0x0) ||
+    pGVar9 = (this_01->fields).gamePassesUI;
+    if ((pGVar9 == (GamePassesUI *)0x0) ||
        (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)*ppGVar11,(MethodInfo *)0x0), pGVar5 == (GameObject *)0x0))
+                           ((Component *)pGVar9,(MethodInfo *)0x0), pGVar5 == (GameObject *)0x0))
     goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar5,0,(MethodInfo *)0x0);
   }
 code_?:
-  pGVar5 = (this->fields).winningConditionDebriefing;
+  pGVar5 = (this_01->fields).winningConditionDebriefing;
   if ((pGVar5 != (GameObject *)0x0) &&
      (pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                          (pGVar5,(MethodInfo *)0x0), pTVar10 != (Transform *)0x0)) {
@@ -134,8 +138,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -202,7 +206,7 @@ void Assembly-CSharp.dll::AndroidInGameMenu::AndroidInGameMenu_OnEnable
       fVar4 = GoldRewardManager::GoldRewardManager_GetGoldRewardTimeLeft(this_00,(MethodInfo *)0x0);
       if (fVar4 <= 0.0) {
         value = (Object *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   (value,ExceptionArgument__Enum_obj,method_00);
         pGVar3 = (this->fields).claimGoldRewardPopupPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {

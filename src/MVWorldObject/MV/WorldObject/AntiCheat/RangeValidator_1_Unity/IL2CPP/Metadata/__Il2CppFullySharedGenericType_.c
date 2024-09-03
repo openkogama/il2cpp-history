@@ -12,19 +12,18 @@ String * MVWorldObject.dll::MV::WorldObject::AntiCheat::RangeValidator`1[Unity::
     func_?(&StringLiteral_min__0___max__1__);
     cRam_? = '\x01';
   }
-  pIVar1 = method->klass->rgctx_data;
-  uVar2 = pIVar1->klass->actualSize;
+  uVar1 = method->klass->rgctx_data->klass->actualSize;
   func_?();
   func_?();
-  uVar3 = func_?(this,(pIVar1[1].klass)->fields);
-  func_?(&stack0xffffffec,uVar3,uVar2);
+  uVar2 = func_?(this,(method->klass->rgctx_data[1].klass)->fields);
+  func_?(&stack0xffffffec,uVar2,uVar1);
   arg0 = (Object *)func_?(method->klass->rgctx_data->rgctxDataDummy,&stack0xffffffec);
-  uVar3 = func_?(this,(method->klass->rgctx_data[1].klass)->fields + 1);
-  func_?(&stack0xffffffec,uVar3,uVar2);
+  uVar2 = func_?(this,(method->klass->rgctx_data[1].klass)->fields + 1);
+  func_?(&stack0xffffffec,uVar2,uVar1);
   arg1 = (Object *)func_?(method->klass->rgctx_data->rgctxDataDummy,&stack0xffffffec);
-  pSVar4 = mscorlib.dll::System::String::String_Format_1
+  pSVar3 = mscorlib.dll::System::String::String_Format_1
                      (StringLiteral_min__0___max__1__,arg0,arg1,(MethodInfo *)0x0);
-  return pSVar4;
+  return pSVar3;
 }
 
 
@@ -39,89 +38,94 @@ RangeValidator_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Validate
 
 {
   iVar1 = (int)in_stack_2;
-  iVar3 = **(int **)(*(int *)((int)in_stack_2 + 0x10) + 0x60);
-  uVar4 = *(undefined4 *)(iVar3 + 0x84);
-  if ((*(byte *)(iVar3 + 0xbd) & 1) == 0) {
-    func_?(iVar3);
+  uVar3 = *(undefined4 *)(**(int **)(*(int *)((int)in_stack_2 + 0x10) + 0x60) + 0x84);
+  iVar4 = **(int **)(*(int *)((int)in_stack_2 + 0x10) + 0x60);
+  if ((*(byte *)(iVar4 + 0xbd) & 1) == 0) {
+    func_?(iVar4);
   }
   func_?();
-  iVar3 = **(int **)(*(int *)((int)in_stack_2 + 0x10) + 0x60);
-  if ((*(byte *)(iVar3 + 0xbd) & 1) == 0) {
-    func_?(iVar3);
+  iVar4 = **(int **)(*(int *)((int)in_stack_2 + 0x10) + 0x60);
+  puStack_5 = &stack0xffffffdc;
+  if ((*(byte *)(iVar4 + 0xbd) & 1) == 0) {
+    puStack_5 = &stack0xffffffdc;
+    func_?(iVar4);
   }
   func_?();
   func_?();
-  uVar5 = func_?(this,*(undefined4 *)
+  uVar6 = func_?(this,*(undefined4 *)
                                 (*(int *)(*(int *)(*(int *)((int)in_stack_2 + 0x10) + 0x60) +
                                          4) + 0x40));
-  func_?(&stack0xffffffe0,uVar5,uVar4);
-  piVar6 = *(int **)(*(int *)((int)in_stack_2 + 0x10) + 0x60);
-  iVar3 = *piVar6;
-  p_Stack_c = (_Il2CppFullySharedGenericType *)&value;
+  func_?(&stack0xffffffdc,uVar6,uVar3);
+  piVar7 = (int *)((int)in_stack_2 + 0x10);
   in_stack_2 = unaff_EDI;
-  if (*(int *)(iVar3 + 0x14) < 0) {
-    p_Stack_c = value;
-    in_stack_2 = &stack0xffffffe0;
+  if (*(int *)(**(int **)(*piVar7 + 0x60) + 0x14) < 0) {
+    in_stack_2 = &stack0xffffffdc;
   }
-  iStack_7 = piVar6[3];
-  if ((*(byte *)(iVar3 + 0xbd) & 1) == 0) {
-    iVar3 = func_?(iVar3);
+  p_Stack_8 = (_Il2CppFullySharedGenericType *)&value;
+  if (*(int *)(**(int **)(*(int *)(iVar1 + 0x10) + 0x60) + 0x14) < 0) {
+    p_Stack_8 = value;
   }
-  func_?(iVar3,iStack_7,&stack0xffffffe0,p_Stack_c,&stack0x00000014,&p_Stack_c);
-  if ((int)p_Stack_c < 0) {
+  uStack_8 = *(undefined4 *)(*(int *)(*(int *)(iVar1 + 0x10) + 0x60) + 0xc);
+  iVar4 = **(int **)(*(int *)(iVar1 + 0x10) + 0x60);
+  if ((*(byte *)(iVar4 + 0xbd) & 1) == 0) {
+    iVar4 = func_?(iVar4);
+  }
+  func_?(iVar4,uStack_8,puStack_5,p_Stack_8,&stack0x00000014,&p_Stack_14);
+  if ((int)p_Stack_14 < 0) {
     if (fixIfInValid == 0) goto code_?;
-    iVar3 = *(int *)(*(int *)(*(int *)(*(int *)(iVar1 + 0x10) + 0x60) + 4) + 0x40);
+    iVar4 = *(int *)(*(int *)(*(int *)(*(int *)(iVar1 + 0x10) + 0x60) + 4) + 0x40);
   }
   else {
-    uVar5 = func_?(this,*(int *)(*(int *)(*(int *)(*(int *)(iVar1 + 0x10) + 0x60) + 4) +
+    uVar6 = func_?(this,*(int *)(*(int *)(*(int *)(*(int *)(iVar1 + 0x10) + 0x60) + 4) +
                                          0x40) + 0x14);
-    func_?(&stack0xffffffe0,uVar5,uVar4);
-    piVar6 = *(int **)(*(int *)(iVar1 + 0x10) + 0x60);
-    iVar3 = *piVar6;
-    p_Stack_c = (_Il2CppFullySharedGenericType *)&value;
+    func_?(&stack0xffffffdc,uVar6,uVar3);
     in_stack_2 = unaff_EDI;
-    if (*(int *)(iVar3 + 0x14) < 0) {
-      p_Stack_c = value;
-      in_stack_2 = &stack0xffffffe0;
+    if (*(int *)(**(int **)(*(int *)(iVar1 + 0x10) + 0x60) + 0x14) < 0) {
+      in_stack_2 = &stack0xffffffdc;
     }
-    iVar8 = piVar6[3];
-    if ((*(byte *)(iVar3 + 0xbd) & 1) == 0) {
-      iVar3 = func_?(iVar3);
+    p_Stack_14 = (_Il2CppFullySharedGenericType *)&value;
+    if (*(int *)(**(int **)(*(int *)(iVar1 + 0x10) + 0x60) + 0x14) < 0) {
+      p_Stack_14 = value;
     }
-    func_?(iVar3,iVar8,&stack0xffffffe0,p_Stack_c,&stack0x00000014,&p_Stack_c);
-    if ((int)p_Stack_c < 1) {
-      p_Var7 = (_Il2CppFullySharedGenericType *)&value;
+    uStack_8 = *(undefined4 *)(*(int *)(*(int *)(iVar1 + 0x10) + 0x60) + 0xc);
+    iVar4 = **(int **)(*(int *)(iVar1 + 0x10) + 0x60);
+    if ((*(byte *)(iVar4 + 0xbd) & 1) == 0) {
+      iVar4 = func_?(iVar4);
+    }
+    func_?(iVar4,uStack_8,&stack0xffffffdc,p_Stack_14,&stack0x00000014,&puStack_5);
+    if ((int)puStack_5 < 1) {
+      p_Var6 = (_Il2CppFullySharedGenericType *)&value;
       if (*(int *)(**(int **)(*(int *)(iVar1 + 0x10) + 0x60) + 0x14) < 0) {
-        p_Var7 = value;
+        p_Var6 = value;
       }
-      func_?(&stack0xffffffe0,p_Var7,uVar4);
-      p_Var7 = (_Il2CppFullySharedGenericType *)func_?(method,&stack0xffffffe0,uVar4);
-      return p_Var7;
+      func_?(&stack0xffffffdc,p_Var6,uVar3);
+      p_Var6 = (_Il2CppFullySharedGenericType *)func_?(method,&stack0xffffffdc,uVar3);
+      return p_Var6;
     }
     if (fixIfInValid == 0) {
-      uVar4 = func_?(&TypeInfo__System__Exception);
-      pEVar9 = (Exception *)func_?(uVar4);
+      uVar3 = func_?(&TypeInfo__System__Exception);
+      pEVar9 = (Exception *)func_?(uVar3);
       pMVar10 = (MethodInfo *)0x0;
       pSVar11 = (String *)func_?(&StringLiteral_value___maxVal);
       mscorlib.dll::System::Exception::Exception__ctor_1(pEVar9,pSVar11,pMVar10);
       func_?();
 code_?:
-      uVar4 = func_?(&TypeInfo__System__Exception);
-      pEVar9 = (Exception *)func_?(uVar4);
+      uVar3 = func_?(&TypeInfo__System__Exception);
+      pEVar9 = (Exception *)func_?(uVar3);
       pMVar10 = (MethodInfo *)0x0;
       pSVar11 = (String *)func_?(&StringLiteral_value__minVal);
       mscorlib.dll::System::Exception::Exception__ctor_1(pEVar9,pSVar11,pMVar10);
       func_?();
       pcVar12 = (code *)swi(3);
-      p_Var7 = (_Il2CppFullySharedGenericType *)(*pcVar12)();
-      return p_Var7;
+      p_Var6 = (_Il2CppFullySharedGenericType *)(*pcVar12)();
+      return p_Var6;
     }
-    iVar3 = *(int *)(*(int *)(*(int *)(*(int *)(iVar1 + 0x10) + 0x60) + 4) + 0x40) + 0x14;
+    iVar4 = *(int *)(*(int *)(*(int *)(*(int *)(iVar1 + 0x10) + 0x60) + 4) + 0x40) + 0x14;
   }
-  uVar5 = func_?(this,iVar3);
-  func_?(&stack0xffffffe0,uVar5,uVar4);
-  p_Var7 = (_Il2CppFullySharedGenericType *)func_?(method,&stack0xffffffe0,uVar4);
-  return p_Var7;
+  uVar6 = func_?(this,iVar4);
+  func_?(&stack0xffffffdc,uVar6,uVar3);
+  p_Var6 = (_Il2CppFullySharedGenericType *)func_?(method,&stack0xffffffdc,uVar3);
+  return p_Var6;
 }
 
 
@@ -139,7 +143,7 @@ void MVWorldObject.dll::MV::WorldObject::AntiCheat::RangeValidator`1[Unity::IL2C
   uVar1 = method->klass->rgctx_data->klass->actualSize;
   func_?();
   func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   p_Var2 = (_Il2CppFullySharedGenericType *)&min;
   if ((int)method->klass->rgctx_data->method->return_type < 0) {

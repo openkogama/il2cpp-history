@@ -1,18 +1,4 @@
 
-/* IAsyncResult BeginInvoke(AsyncCallback, Object) */
-
-IAsyncResult *
-Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedCheckNoCost::
-RewardedCheckNoCost_BeginInvoke
-          (RewardedCheckNoCost *this,AsyncCallback *callback,Object *object,MethodInfo *method)
-
-{
-  uStack_1 = 0;
-  pIVar2 = (IAsyncResult *)func_?(this,&uStack_1,callback,object);
-  return pIVar2;
-}
-
-
 /* Boolean EndInvoke(IAsyncResult) */
 
 bool Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedCheckNoCost::

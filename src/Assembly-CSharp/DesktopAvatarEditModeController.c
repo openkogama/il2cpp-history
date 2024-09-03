@@ -85,7 +85,7 @@ code_?:
         cRam_? = '\x01';
       }
       method_00 = (Object *)func_?(TypeInfo__AvatarShopController____c__DisplayClass10_0);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 (method_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
       if (method_00 != (Object *)0x0) {
         method_00[1].klass = this_00;
@@ -100,35 +100,35 @@ code_?:
                            ((Object *)pIVar4,
                             InventoryController_MethodInfo__UnityEngine__Object__Instantiate<InventoryController>_InventoryController_
                            );
-        pIVar5 = &(this_00->_0).byval_arg;
-        (pIVar5->data).typeHandle = (Il2CppMetadataTypeHandle)pIVar4;
+        (this_00->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)pIVar4;
         func_?();
-        if ((InventoryController *)(pIVar5->data).typeHandle != (InventoryController *)0x0) {
+        pIVar4 = (InventoryController *)(this_00->_0).byval_arg.data.typeHandle;
+        if (pIVar4 != (InventoryController *)0x0) {
           InventoryController::InventoryController_Initialize
-                    ((InventoryController *)(pIVar5->data).typeHandle,
-                     (this_00->_0).this_arg.data.__klassIndex,(MethodInfo *)0x0);
-          pTVar6 = *(TabState **)&(this_00->_0).byval_arg.attrs;
-          if ((pTVar6 != (TabState *)0x0) &&
-             ((InventoryController *)(pIVar5->data).typeHandle != (InventoryController *)0x0)) {
+                    (pIVar4,(this_00->_0).this_arg.data.__klassIndex,(MethodInfo *)0x0);
+          pTVar5 = *(TabState **)&(this_00->_0).byval_arg.attrs;
+          if ((pTVar5 != (TabState *)0x0) &&
+             (pIVar4 = (InventoryController *)(this_00->_0).byval_arg.data.typeHandle,
+             pIVar4 != (InventoryController *)0x0)) {
             InventoryController::InventoryController_AddTab
-                      ((InventoryController *)(pIVar5->data).typeHandle,0,(pTVar6->fields).name,
-                       (MethodInfo *)0x0);
-            if ((InventoryController *)(pIVar5->data).array != (InventoryController *)0x0) {
-              a = (((InventoryController *)(pIVar5->data).array)->fields).OnPageTurned;
+                      (pIVar4,0,(pTVar5->fields).name,(MethodInfo *)0x0);
+            pIVar4 = (InventoryController *)(this_00->_0).byval_arg.data.array;
+            if (pIVar4 != (InventoryController *)0x0) {
+              a = (pIVar4->fields).OnPageTurned;
               this_01 = (UnityAction_1_System_Int32Enum_ *)func_?();
               UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
               UnityAction_1_System_Int32Enum___ctor
                         (this_01,(Object *)this_00,MethodInfo__AvatarShopController__PageTurned_int_
                          ,(MethodInfo *)0x0);
-              iVar7 = 0;
-              pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
+              iVar6 = 0;
+              pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
                                  ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
-              if (pDVar8 != (Delegate *)0x0) {
-                iVar9 = func_?();
-                if (iVar9 != 0) {
-                  *(int *)(iVar7 + 0x20) = iVar9;
-                  iVar7 = func_?();
-                  if (iVar7 != 0) goto code_?;
+              if (pDVar7 != (Delegate *)0x0) {
+                iVar8 = func_?();
+                if (iVar8 != 0) {
+                  *(int *)(iVar6 + 0x20) = iVar8;
+                  iVar6 = func_?();
+                  if (iVar6 != 0) goto code_?;
                   func_?();
                 }
                 func_?();
@@ -136,21 +136,21 @@ code_?:
                 (*pcVar3)();
                 return;
               }
-              *(undefined4 *)(iVar7 + 0x20) = 0;
+              *(undefined4 *)(iVar6 + 0x20) = 0;
 code_?:
               func_?();
-              pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+              pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                  ((Component *)this_00,(MethodInfo *)0x0);
-              pGVar11 = pGVar10;
+              pGVar10 = pGVar9;
               if ((TypeInfo__AvatarShopController____c->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
               callbackFunction = TypeInfo__AvatarShopController____c->static_fields->__9__10_0;
               if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-                pGVar10 = pGVar11;
+                pGVar9 = pGVar10;
                 if ((TypeInfo__AvatarShopController____c->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
-                  pGVar10 = pGVar11;
+                  pGVar9 = pGVar10;
                 }
                 object = TypeInfo__AvatarShopController____c->static_fields->__9;
                 callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
@@ -169,11 +169,11 @@ code_?:
               }
               UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
               ExecuteEvents_ExecuteHierarchy
-                        (pGVar10,(BaseEventData *)0x0,
+                        (pGVar9,(BaseEventData *)0x0,
                          (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                          UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                         );
-              pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+              pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                  ((Component *)this_00,(MethodInfo *)0x0);
               callbackFunction_00 =
                    (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
@@ -185,7 +185,7 @@ code_?:
                          ,(MethodInfo *)0x0);
               UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
               ExecuteEvents_ExecuteHierarchy
-                        (pGVar10,(BaseEventData *)0x0,callbackFunction_00,
+                        (pGVar9,(BaseEventData *)0x0,callbackFunction_00,
                          UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                         );
               AvatarShopController::AvatarShopController_UpdateContent
@@ -197,8 +197,8 @@ code_?:
       }
     }
   }
-  uVar12 = func_?(&stack0xfffffff0);
-  func_?(uVar12);
+  uVar11 = func_?(&stack0xfffffff0);
+  func_?(uVar11);
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -258,48 +258,48 @@ code_?:
       if (pGVar5 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar5,1,(MethodInfo *)0x0);
-      ppAVar6 = &(this->fields).avatarSelectionController;
-      pAVar7 = *ppAVar6;
+      pAVar6 = (this->fields).avatarSelectionController;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pAVar7 = (AvatarSelectionController *)
+      pAVar6 = (AvatarSelectionController *)
                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                         ((Object *)pAVar7,
+                         ((Object *)pAVar6,
                           AvatarSelectionController_MethodInfo__UnityEngine__Object__Instantiate<AvatarSelectionController>_AvatarSelectionController_
                          );
-      *ppAVar6 = pAVar7;
-      func_?(ppAVar6);
+      (this->fields).avatarSelectionController = pAVar6;
+      func_?(&(this->fields).avatarSelectionController);
+      pAVar6 = (this->fields).avatarSelectionController;
       pUVar4 = (this->fields).uiStack;
-      if ((*ppAVar6 == (AvatarSelectionController *)0x0) ||
+      if ((pAVar6 == (AvatarSelectionController *)0x0) ||
          (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)*ppAVar6,(MethodInfo *)0x0), pUVar4 == (UIStack *)0x0))
+                             ((Component *)pAVar6,(MethodInfo *)0x0), pUVar4 == (UIStack *)0x0))
       goto code_?;
       UIStack::UIStack_Push
-                (pUVar4,pGVar5,UIPushOption__Enum_None,(UnityAction *)0x0,UIGroupFlags__Enum_MainUI
-                 ,(MethodInfo *)0x0);
+                (pUVar4,pGVar5,UIPushOption__Enum_None,(UnityAction *)0x0,UIGroupFlags__Enum_MainUI,
+                 (MethodInfo *)0x0);
       MVGameControllerDesktop::MVGameControllerDesktop_RegisterAvaterEditModeController
                 (this,(MethodInfo *)0x0);
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if ((pMVar1 == (MVNetworkGame *)0x0) ||
          (this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
          this_02 == (MVLocalPlayer *)0x0)) goto code_?;
-      bVar8 = MVPlayer::MVPlayer_get_IsReady((MVPlayer *)this_02,(MethodInfo *)0x0);
-      if (bVar8 == 0) {
-        pAVar9 = MVGameControllerBase::MVGameControllerBase_get_OnFirstFrameUpdateActorReady
+      bVar7 = MVPlayer::MVPlayer_get_IsReady((MVPlayer *)this_02,(MethodInfo *)0x0);
+      if (bVar7 == 0) {
+        pAVar8 = MVGameControllerBase::MVGameControllerBase_get_OnFirstFrameUpdateActorReady
                             ((MethodInfo *)0x0);
-        pNVar10 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+        pNVar9 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar10,(Object *)this,MethodInfo__DesktopAvatarEditModeController__SetUIReady__,
+                  (pNVar9,(Object *)this,MethodInfo__DesktopAvatarEditModeController__SetUIReady__,
                    (MethodInfo *)0x0);
-        pAVar11 = (Action *)
+        pAVar10 = (Action *)
                   mscorlib.dll::System::Delegate::Delegate_Combine
-                            ((Delegate *)pAVar9,(Delegate *)pNVar10,(MethodInfo *)0x0);
-        pAVar9 = (Action *)0x0;
-        if (pAVar11 == (Action *)0x0) goto code_?;
-        if (pAVar11->klass == TypeInfo__System__Action) {
-          pAVar9 = pAVar11;
+                            ((Delegate *)pAVar8,(Delegate *)pNVar9,(MethodInfo *)0x0);
+        pAVar8 = (Action *)0x0;
+        if (pAVar10 == (Action *)0x0) goto code_?;
+        if (pAVar10->klass == TypeInfo__System__Action) {
+          pAVar8 = pAVar10;
         }
       }
       else {
@@ -311,26 +311,26 @@ code_?:
         pUVar4 = (this->fields).uiStack;
         if (pUVar4 == (UIStack *)0x0) goto code_?;
         UIStack::UIStack_SetStackReady(pUVar4,(MethodInfo *)0x0);
-        pAVar9 = MVGameControllerBase::MVGameControllerBase_get_OnFirstFrameUpdateActorReady
+        pAVar8 = MVGameControllerBase::MVGameControllerBase_get_OnFirstFrameUpdateActorReady
                             ((MethodInfo *)0x0);
-        pNVar10 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+        pNVar9 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar10,(Object *)this,MethodInfo__DesktopAvatarEditModeController__SetUIReady__,
+                  (pNVar9,(Object *)this,MethodInfo__DesktopAvatarEditModeController__SetUIReady__,
                    (MethodInfo *)0x0);
-        pAVar11 = (Action *)
+        pAVar10 = (Action *)
                   mscorlib.dll::System::Delegate::Delegate_Remove
-                            ((Delegate *)pAVar9,(Delegate *)pNVar10,(MethodInfo *)0x0);
-        pAVar9 = (Action *)0x0;
-        if (pAVar11 == (Action *)0x0) goto code_?;
-        if (pAVar11->klass == TypeInfo__System__Action) {
-          pAVar9 = pAVar11;
+                            ((Delegate *)pAVar8,(Delegate *)pNVar9,(MethodInfo *)0x0);
+        pAVar8 = (Action *)0x0;
+        if (pAVar10 == (Action *)0x0) goto code_?;
+        if (pAVar10->klass == TypeInfo__System__Action) {
+          pAVar8 = pAVar10;
         }
       }
-      if (pAVar9 != (Action *)0x0) {
+      if (pAVar8 != (Action *)0x0) {
 code_?:
         MVGameControllerBase::MVGameControllerBase_set_OnFirstFrameUpdateActorReady
-                  (pAVar9,(MethodInfo *)0x0);
+                  (pAVar8,(MethodInfo *)0x0);
         return;
       }
     }
@@ -340,14 +340,14 @@ code_?:
     pAVar2 = (Action_1_Int32_ *)func_?();
     if (pAVar2 == (Action_1_Int32_ *)0x0) goto code_?;
     (pMVar1->fields).OnActiveAvatar = pAVar2;
-    iVar12 = func_?();
-    if (iVar12 != 0) goto code_?;
+    iVar11 = func_?();
+    if (iVar11 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -438,217 +438,190 @@ void Assembly-CSharp.dll::DesktopAvatarEditModeController::
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
+  this_03 = this;
   ModeControllerBase::ModeControllerBase_Initialize((ModeControllerBase *)this,(MethodInfo *)0x0);
-  pAVar1 = (this->fields).avatarShopController;
-  pAVar2 = (this->fields).avatarEditModeBodyController;
+  pAVar1 = (this_03->fields).avatarShopController;
+  pAVar2 = (this_03->fields).avatarEditModeBodyController;
   if (pAVar1 != (AvatarShopController *)0x0) {
+    pAVar3 = pAVar1;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__TabState);
       func_?(&StringLiteral_Avatars);
       cRam_? = '\x01';
     }
-    ppAVar3 = &(pAVar1->fields).avatarEditModeBodyController;
-    *ppAVar3 = pAVar2;
-    func_?(ppAVar3,pAVar2);
+    (pAVar1->fields).avatarEditModeBodyController = pAVar2;
+    func_?(&(pAVar1->fields).avatarEditModeBodyController,pAVar2);
     pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar4 != (MVNetworkGame *)0x0) {
       pAVar5 = (pMVar4->fields)._AvatarShopRepository_k__BackingField;
-      ppAVar6 = &(pAVar1->fields).avatarRepository;
-      *ppAVar6 = pAVar5;
-      func_?(ppAVar6,pAVar5);
+      (pAVar1->fields).avatarRepository = pAVar5;
+      func_?(&(pAVar1->fields).avatarRepository,pAVar5);
       name = TM::TM__(StringLiteral_Avatars,(MethodInfo *)0x0);
-      iVar7 = (pAVar1->fields).numberOfSlotsPrPage;
-      this_04 = (TabState *)func_?(TypeInfo__TabState);
-      TabState::TabState__ctor(this_04,1,name,iVar7,(MethodInfo *)0x0);
-      pAVar5 = *ppAVar6;
-      if (pAVar5 != (AvatarRepository *)0x0) {
+      iVar6 = (pAVar1->fields).numberOfSlotsPrPage;
+      this_04 = (DesktopAvatarEditModeController *)func_?(TypeInfo__TabState);
+      this = this_04;
+      TabState::TabState__ctor((TabState *)this_04,1,name,iVar6,(MethodInfo *)0x0);
+      this = (DesktopAvatarEditModeController *)(pAVar3->fields).avatarRepository;
+      if (this != (DesktopAvatarEditModeController *)0x0) {
         if (cRam_? == '\0') {
           func_?(&
                           MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__get_Count__
                          );
           cRam_? = '\x01';
         }
-        this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                   *)(pAVar5->fields).avatars;
+        this_00 = (this->fields)._._._._._.m_CachedPtr;
         if ((this_00 !=
              (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
               *)0x0) &&
-           (iVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::
+           (iVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::
                      UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
                      Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
                                (this_00,
                                 MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__get_Count__
-                               ), this_04 != (TabState *)0x0)) {
-          (this_04->fields).highestSlotIndex = iVar7 + -1;
-          ppTVar8 = &(pAVar1->fields).tab;
-          *ppTVar8 = this_04;
-          func_?(ppTVar8,this_04);
+                               ), this_04 != (DesktopAvatarEditModeController *)0x0)) {
+          (this_04->fields)._.fpsCounterPrefab = (GameObject *)(iVar6 + -1);
+          (pAVar3->fields).tab = (TabState *)this_04;
+          func_?(&(pAVar3->fields).tab,this_04);
           this_05 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
                               ((MethodInfo *)0x0);
           if (this_05 != (MainCameraManager *)0x0) {
             MainCameraManager::MainCameraManager_set_IsLogicRendered(this_05,0,(MethodInfo *)0x0);
-            DesktopAvatarEditModeController_InitializeLocalAvatar(this,(MethodInfo *)0x0);
-            pDVar9 = (this->fields).drawPlaneController;
-            if (pDVar9 != (DrawPlaneControllerUUI *)0x0) {
-              DrawPlaneControllerUUI::DrawPlaneControllerUUI_Initialize(pDVar9,(MethodInfo *)0x0);
-              pDVar9 = (this->fields).drawPlaneController;
+            DesktopAvatarEditModeController_InitializeLocalAvatar(this_03,(MethodInfo *)0x0);
+            pDVar7 = (this_03->fields).drawPlaneController;
+            if (pDVar7 != (DrawPlaneControllerUUI *)0x0) {
+              DrawPlaneControllerUUI::DrawPlaneControllerUUI_Initialize(pDVar7,(MethodInfo *)0x0);
+              pDVar7 = (this_03->fields).drawPlaneController;
               if (cRam_? == '\0') {
                 func_?(&TypeInfo__DrawPlane);
                 cRam_? = '\x01';
               }
-              TypeInfo__DrawPlane->static_fields->drawPlaneController = pDVar9;
-              func_?(TypeInfo__DrawPlane->static_fields,pDVar9);
-              ppNVar10 = &(this->fields).notificationsManager;
-              pNVar11 = *ppNVar10;
+              TypeInfo__DrawPlane->static_fields->drawPlaneController = pDVar7;
+              func_?(TypeInfo__DrawPlane->static_fields,pDVar7);
+              pNVar8 = (this_03->fields).notificationsManager;
               if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__UnityEngine__Object);
               }
-              pNVar11 = (NotificationsManager *)
+              pNVar8 = (NotificationsManager *)
                         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                                  ((Object *)pNVar11,
+                                  ((Object *)pNVar8,
                                    NotificationsManager_MethodInfo__UnityEngine__Object__Instantiate<NotificationsManager>_NotificationsManager_
                                   );
-              *ppNVar10 = pNVar11;
-              func_?(ppNVar10,pNVar11);
-              if (*ppNVar10 != (NotificationsManager *)0x0) {
+              (this_03->fields).notificationsManager = pNVar8;
+              func_?(&(this_03->fields).notificationsManager,pNVar8);
+              pNVar8 = (this_03->fields).notificationsManager;
+              if (pNVar8 != (NotificationsManager *)0x0) {
                 this_06 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_transform((Component *)*ppNVar10,(MethodInfo *)0x0);
-                pGVar12 = (this->fields).stackBottom;
-                if ((pGVar12 != (GameObject *)0x0) &&
+                          Component_get_transform((Component *)pNVar8,(MethodInfo *)0x0);
+                pGVar9 = (this_03->fields).stackBottom;
+                if ((pGVar9 != (GameObject *)0x0) &&
                    (parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                             GameObject_get_transform(pGVar12,(MethodInfo *)0x0),
+                             GameObject_get_transform(pGVar9,(MethodInfo *)0x0),
                    this_06 != (Transform *)0x0)) {
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
                             (this_06,parent,0,(MethodInfo *)0x0);
-                  pAVar2 = (this->fields).avatarEditModeBodyController;
+                  pAVar2 = (this_03->fields).avatarEditModeBodyController;
                   if (pAVar2 != (AvatarEditModeBodyController *)0x0) {
                     AvatarEditModeBodyController::AvatarEditModeBodyController_Initialize
                               (pAVar2,(MethodInfo *)0x0);
-                    pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-                    pAVar2 = (this->fields).avatarEditModeBodyController;
+                    this = (DesktopAvatarEditModeController *)
+                           UnityEngine.CoreModule.dll::UnityEngine::Component::
+                           Component_get_gameObject((Component *)this_03,(MethodInfo *)0x0);
+                    pAVar2 = (this_03->fields).avatarEditModeBodyController;
                     if (pAVar2 != (AvatarEditModeBodyController *)0x0) {
-                      uVar13._0_4_ = (pAVar2->fields).displayPos.x;
-                      uVar13._4_4_ = (pAVar2->fields).displayPos.y;
-                      fVar14 = (pAVar2->fields).displayPos.z;
-                      pEVar15 = (EditorStateMachine *)func_?(TypeInfo__EditorStateMachine);
-                      avatarEditModeCenterPos.z = fVar14;
-                      avatarEditModeCenterPos.x = (float)(int)uVar13;
-                      avatarEditModeCenterPos.y = (float)(int)((ulonglong)uVar13 >> 0x20);
+                      uVar10._0_4_ = (pAVar2->fields).displayPos.x;
+                      uVar10._4_4_ = (pAVar2->fields).displayPos.y;
+                      fVar11 = (pAVar2->fields).displayPos.z;
+                      pEVar12 = (EditorStateMachine *)func_?(TypeInfo__EditorStateMachine);
+                      avatarEditModeCenterPos.z = fVar11;
+                      avatarEditModeCenterPos.x = (float)(int)uVar10;
+                      avatarEditModeCenterPos.y = (float)(int)((ulonglong)uVar10 >> 0x20);
                       EditorStateMachine::EditorStateMachine__ctor_1
-                                (pEVar15,pGVar12,avatarEditModeCenterPos,(MethodInfo *)0x0);
-                      ppEVar16 = &(this->fields).editorStateMachine;
-                      *ppEVar16 = pEVar15;
-                      func_?(ppEVar16,pEVar15);
-                      if ((*ppEVar16 != (EditorStateMachine *)0x0) &&
-                         (this_01 = (this->fields).materialsController,
+                                (pEVar12,(GameObject *)this,avatarEditModeCenterPos,
+                                 (MethodInfo *)0x0);
+                      (this_03->fields).editorStateMachine = pEVar12;
+                      func_?(&(this_03->fields).editorStateMachine,pEVar12);
+                      pEVar12 = (this_03->fields).editorStateMachine;
+                      if ((pEVar12 != (EditorStateMachine *)0x0) &&
+                         (this_01 = (this_03->fields).materialsController,
                          this_01 != (MaterialsController *)0x0)) {
                         MaterialsController::MaterialsController_Initialize
-                                  (this_01,((*ppEVar16)->fields).cubeModelingStateMachine,
+                                  (this_01,(pEVar12->fields).cubeModelingStateMachine,
                                    (MethodInfo *)0x0);
-                        this_02 = (this->fields).avatarSelectionController;
-                        if (this_02 != (AvatarSelectionController *)0x0) {
-                          AvatarSelectionController::AvatarSelectionController_Initialize
-                                    (this_02,(this->fields).avatarEditModeBodyController,*ppEVar16,
-                                     (MethodInfo *)0x0);
-                          iVar17 = (this->fields).firstTimeActiveAvatar;
-                          if (iVar17 == -1) {
-code_?:
-                            ppEVar16 = &(this->fields).editorStateMachine;
-                            pAVar2 = (this->fields).avatarEditModeBodyController;
-                            pEVar15 = *ppEVar16;
-                            if (pAVar2 != (AvatarEditModeBodyController *)0x0) {
-                              if (cRam_? == '\0') {
-                                func_?(&
-                                                MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
-                                               );
-                                cRam_? = '\x01';
-                              }
-                              pLVar18 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                         *)(pAVar2->fields).bodies;
-                              if ((pLVar18 !=
-                                   (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                    *)0x0) &&
-                                 (RVar19 = mscorlib.dll::System::Collections::Generic::List`1[System
-                                           ::Text::RegularExpressions::RegexCharClass+SingleRange]::
-                                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                                     (pLVar18,(pAVar2->fields).currentBodyIndex,
-                                                                                                            
-                                                  MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
-                                                  ), pEVar15 != (EditorStateMachine *)0x0)) {
-                                EditorStateMachine::EditorStateMachine_EnterGroup
-                                          (pEVar15,(MVGroup *)RVar19,(MethodInfo *)0x0);
-                                pEVar15 = *ppEVar16;
-                                value = (Object *)func_?(TypeInfo__EditorEvent);
-                                if (pEVar15 != (EditorStateMachine *)0x0) {
-                                  FSMEntity::FSMEntity_set_Event
-                                            ((FSMEntity *)pEVar15,value,(MethodInfo *)0x0);
-                                  if ((*ppEVar16 != (EditorStateMachine *)0x0) &&
-                                     (pCVar20 = ((*ppEVar16)->fields).cubeModelingStateMachine,
-                                     pCVar20 != (CubeModelingStateMachine *)0x0)) {
-                                    CubeModelingStateMachine::
-                                    CubeModelingStateMachine_set_CurrentMaterialId
-                                              (pCVar20,0x15,(MethodInfo *)0x0);
-                                    if ((*ppEVar16 != (EditorStateMachine *)0x0) &&
-                                       (pSVar21 = (this->fields).setupCubeModelTutorialUI,
-                                       pSVar21 != (SetupCubeModelTutorialUI *)0x0)) {
-                                      pCVar20 = ((*ppEVar16)->fields).cubeModelingStateMachine;
-                                      ppCVar22 = &(pSVar21->fields).cubeModelingStateMachine;
-                                      *ppCVar22 = pCVar20;
-                                      func_?(ppCVar22,pCVar20);
-                                      this_03 = (this->fields).goldPurchasedTracker;
-                                      if (this_03 != (GoldPurchasedTracker *)0x0) {
-                                        GoldPurchasedTracker::GoldPurchasedTracker_Initialize
-                                                  (this_03,(MethodInfo *)0x0);
-                                        return;
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
+                        object = (this_03->fields).avatarSelectionController;
+                        pAVar2 = (this_03->fields).avatarEditModeBodyController;
+                        if (object != (AvatarSelectionController *)0x0) {
+                          if (cRam_? == '\0') {
+                            func_?(&TypeInfo__System__Action<int,_UnityEngine::Texture2D>);
+                            func_?(&
+                                            MethodInfo__AvatarSelectionController__OnPictureTakenCallback_int__UnityEngine__Texture2D_
+                                           );
+                            func_?(&TypeInfo__AvatarSelectionController);
+                            cRam_? = '\x01';
                           }
-                          else {
-                            pAVar2 = (this->fields).avatarEditModeBodyController;
+                          TypeInfo__AvatarSelectionController->static_fields->instance = object;
+                          func_?(TypeInfo__AvatarSelectionController->static_fields,object)
+                          ;
+                          (object->fields).avatarBodyController = pAVar2;
+                          func_?(&(object->fields).avatarBodyController,pAVar2);
+                          pAVar2 = (object->fields).avatarBodyController;
+                          if (pAVar2 != (AvatarEditModeBodyController *)0x0) {
+                            pGVar9 = (object->fields).publishAvatarGO;
+                            (pAVar2->fields).publishAvatarBtn = pGVar9;
+                            func_?(&(pAVar2->fields).publishAvatarBtn,pGVar9);
+                            AvatarEditModeBodyController::
+                            AvatarEditModeBodyController_SetPublishAvatarButtonActive
+                                      (pAVar2,(MethodInfo *)0x0);
+                            pAVar2 = (object->fields).avatarBodyController;
+                            this = (DesktopAvatarEditModeController *)
+                                   func_?(
+                                                  TypeInfo__System__Action<int,_UnityEngine::Texture2D>
+                                                  );
+                            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
+                            Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor
+                                      ((UnityAction_2_System_Int32_System_Int32_ *)this,
+                                       (Object *)object,
+                                       MethodInfo__AvatarSelectionController__OnPictureTakenCallback_int__UnityEngine__Texture2D_
+                                       ,(MethodInfo *)0x0);
                             if (pAVar2 != (AvatarEditModeBodyController *)0x0) {
                               if (cRam_? == '\0') {
                                 func_?(&
                                                 MethodInfo__System__Collections__Generic__List<MVBody>__get_Count__
                                                );
-                                func_?(&
-                                                MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
-                                               );
                                 cRam_? = '\x01';
                               }
-                              index = 0;
-                              pLVar23 = (pAVar2->fields).bodies;
-                              while (pLVar23 != (List_1_MVBody_ *)0x0) {
-                                if ((pLVar23->fields)._size <= index) goto code_?;
-                                pLVar18 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                           *)(pAVar2->fields).bodies;
-                                if ((pLVar18 ==
-                                     (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                      *)0x0) ||
-                                   (RVar19 = mscorlib.dll::System::Collections::Generic::
-                                             List`1[System::Text::RegularExpressions::
-                                             RegexCharClass+SingleRange]::
-                                             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                                       (pLVar18,index,
-                                                                                                                
-                                                  MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
-                                                  ), RVar19 == (RegexCharClass_SingleRange)0x0))
-                                break;
-                                if (*(int *)((int)RVar19 + 8) == iVar17) {
-                                  AvatarEditModeBodyController::
-                                  AvatarEditModeBodyController_SetCurrentBody
-                                            (pAVar2,index,(MethodInfo *)0x0);
-                                  AvatarSelectionController::
-                                  AvatarSelectionController_set_CurrentlySelectedSlotIndex
-                                            (index,(MethodInfo *)0x0);
+                              (pAVar2->fields).Picture2DTakenCallback =
+                                   (Action_2_Int32_UnityEngine_Texture2D_ *)this;
+                              func_?(&(pAVar2->fields).Picture2DTakenCallback,this);
+                              iVar13 = 0;
+                              pLVar14 = (pAVar2->fields).bodies;
+                              while (pLVar14 != (List_1_MVBody_ *)0x0) {
+                                if ((pLVar14->fields)._size <= iVar13) {
+                                  if ((this_03->fields).firstTimeActiveAvatar == -1)
                                   goto code_?;
+                                  pAVar2 = (this_03->fields).avatarEditModeBodyController;
+                                  this = (DesktopAvatarEditModeController *)
+                                         (this_03->fields).firstTimeActiveAvatar;
+                                  if (pAVar2 != (AvatarEditModeBodyController *)0x0) {
+                                    if (cRam_? == '\0') {
+                                      func_?(&
+                                                  MethodInfo__System__Collections__Generic__List<MVBody>__get_Count__
+                                                  );
+                                      func_?(&
+                                                  MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
+                                                  );
+                                      cRam_? = '\x01';
+                                    }
+                                    pLVar14 = (pAVar2->fields).bodies;
+                                    iVar13 = 0;
+                                    if (pLVar14 != (List_1_MVBody_ *)0x0) goto code_?;
+                                  }
+                                  break;
                                 }
-                                index = index + 1;
-                                pLVar23 = (pAVar2->fields).bodies;
+                                AvatarEditModeBodyController::
+                                AvatarEditModeBodyController_GenerateIconForBody
+                                          (pAVar2,iVar13,(MethodInfo *)0x0);
+                                iVar13 = iVar13 + 1;
+                                pLVar14 = (pAVar2->fields).bodies;
                               }
                             }
                           }
@@ -664,9 +637,82 @@ code_?:
       }
     }
   }
+  goto code_?;
+code_?:
+  pAVar2 = (this_03->fields).avatarEditModeBodyController;
+  pEVar12 = (this_03->fields).editorStateMachine;
+  if (pAVar2 != (AvatarEditModeBodyController *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
+      cRam_? = '\x01';
+    }
+    pLVar15 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (pAVar2->fields).bodies;
+    if ((pLVar15 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
+       (RVar16 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                 ::RegexCharClass+SingleRange]::
+                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                           (pLVar15,(pAVar2->fields).currentBodyIndex,
+                            MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_),
+       pEVar12 != (EditorStateMachine *)0x0)) {
+      EditorStateMachine::EditorStateMachine_EnterGroup(pEVar12,(MVGroup *)RVar16,(MethodInfo *)0x0)
+      ;
+      pEVar12 = (this_03->fields).editorStateMachine;
+      this = (DesktopAvatarEditModeController *)0x34;
+      value = (Object *)func_?(TypeInfo__EditorEvent,&this);
+      if (pEVar12 != (EditorStateMachine *)0x0) {
+        FSMEntity::FSMEntity_set_Event((FSMEntity *)pEVar12,value,(MethodInfo *)0x0);
+        pEVar12 = (this_03->fields).editorStateMachine;
+        if ((pEVar12 != (EditorStateMachine *)0x0) &&
+           (pCVar17 = (pEVar12->fields).cubeModelingStateMachine,
+           pCVar17 != (CubeModelingStateMachine *)0x0)) {
+          CubeModelingStateMachine::CubeModelingStateMachine_set_CurrentMaterialId
+                    (pCVar17,0x15,(MethodInfo *)0x0);
+          pEVar12 = (this_03->fields).editorStateMachine;
+          if ((pEVar12 != (EditorStateMachine *)0x0) &&
+             (pSVar18 = (this_03->fields).setupCubeModelTutorialUI,
+             pSVar18 != (SetupCubeModelTutorialUI *)0x0)) {
+            pCVar17 = (pEVar12->fields).cubeModelingStateMachine;
+            (pSVar18->fields).cubeModelingStateMachine = pCVar17;
+            func_?(&(pSVar18->fields).cubeModelingStateMachine,pCVar17);
+            this_02 = (this_03->fields).goldPurchasedTracker;
+            if (this_02 != (GoldPurchasedTracker *)0x0) {
+              GoldPurchasedTracker::GoldPurchasedTracker_Initialize(this_02,(MethodInfo *)0x0);
+              return;
+            }
+          }
+        }
+      }
+    }
+  }
+  goto code_?;
+  while( true ) {
+    if (*(DesktopAvatarEditModeController **)((int)RVar16 + 8) == this) {
+      AvatarEditModeBodyController::AvatarEditModeBodyController_SetCurrentBody
+                (pAVar2,iVar13,(MethodInfo *)0x0);
+      AvatarSelectionController::AvatarSelectionController_set_CurrentlySelectedSlotIndex
+                (iVar13,(MethodInfo *)0x0);
+      goto code_?;
+    }
+    pLVar14 = (pAVar2->fields).bodies;
+    iVar13 = iVar13 + 1;
+    if (pLVar14 == (List_1_MVBody_ *)0x0) break;
+code_?:
+    if ((pLVar14->fields)._size <= iVar13) goto code_?;
+    pLVar15 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (pAVar2->fields).bodies;
+    if ((pLVar15 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+       (RVar16 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                 ::RegexCharClass+SingleRange]::
+                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                           (pLVar15,iVar13,
+                            MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_),
+       RVar16 == (RegexCharClass_SingleRange)0x0)) break;
+  }
+code_?:
   func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 
@@ -696,11 +742,12 @@ void Assembly-CSharp.dll::DesktopAvatarEditModeController::
     if ((TypeInfo__DesktopAvatarEditModeController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__DesktopAvatarEditModeController____c);
     }
-    object = TypeInfo__DesktopAvatarEditModeController____c->static_fields->__9;
+    unaff_ESI = (MVWorldObjectClient *)
+                TypeInfo__DesktopAvatarEditModeController____c->static_fields->__9;
     this_02 = (Func_2_MVWorldObjectClient_Boolean_ *)
               func_?(TypeInfo__System__Func<MVWorldObjectClient,_bool>);
     mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-              ((Func_2_Object_Boolean_ *)this_02,(Object *)object,
+              ((Func_2_Object_Boolean_ *)this_02,(Object *)unaff_ESI,
                MethodInfo__DesktopAvatarEditModeController____c___InitializeLocalAvatar_b__23_0_MVWorldObjectClient_
                ,(MethodInfo *)0x0);
     TypeInfo__DesktopAvatarEditModeController____c->static_fields->__9__23_0 = this_02;
@@ -708,55 +755,50 @@ void Assembly-CSharp.dll::DesktopAvatarEditModeController::
                     this_02);
   }
   if (this_01 != (MVWorldObjectClientManager *)0x0) {
-    this_03 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientWhere
-                        (this_01,this_02,(MethodInfo *)0x0);
-    if (this_03 == (MVWorldObjectClient *)0x0) {
-      this_03 = (MVWorldObjectClient *)0x0;
-    }
-    else {
-      bVar1 = (TypeInfo__MVSpawnPointBlue->_1).naturalAligment;
-      if (((this_03->klass->_1).naturalAligment < bVar1) ||
-         ((MVSpawnPointBlue__Class *)(this_03->klass->_1).typeHierarchy[bVar1 - 1] !=
-          TypeInfo__MVSpawnPointBlue)) goto code_?;
-    }
-    pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if ((pGVar2 != (GameEventManager *)0x0) &&
-       (this_00 = (pGVar2->fields).AvatarCommandsBuildMode, this_03 != (MVWorldObjectClient *)0x0))
-    {
-      puVar3 = (undefined8 *)
-               (*(code *)(this_03->klass->vtable).get_WorldPosition_1.method)(&stack0xffffffd4);
-      uStack_4 = *puVar3;
-      fStack_5 = *(float *)(puVar3 + 1);
+    unaff_ESI = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientWhere
+                          (this_01,this_02,(MethodInfo *)0x0);
+    if ((unaff_ESI != (MVWorldObjectClient *)0x0) &&
+       (((unaff_ESI->klass->_1).naturalAligment < (TypeInfo__MVSpawnPointBlue->_1).naturalAligment
+        || ((MVSpawnPointBlue__Class *)
+            (unaff_ESI->klass->_1).typeHierarchy
+            [(TypeInfo__MVSpawnPointBlue->_1).naturalAligment - 1] != TypeInfo__MVSpawnPointBlue))))
+    goto code_?;
+    pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+    if ((pGVar1 != (GameEventManager *)0x0) &&
+       (this_00 = (pGVar1->fields).AvatarCommandsBuildMode, unaff_ESI != (MVWorldObjectClient *)0x0)
+       ) {
+      puVar2 = (undefined8 *)
+               (*(code *)(unaff_ESI->klass->vtable).get_WorldPosition_1.method)(&stack0xffffffe0);
+      QStack_3._4_8_ = *puVar2;
+      QStack_3.w = *(float *)(puVar2 + 1);
       if (cRam_? == '\0') {
         func_?(&TypeInfo__UnityEngine__Vector3);
         cRam_? = '\x01';
       }
-      pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
-      QStack_7.y = (pVVar6->upVector).x;
-      QStack_7.z = (pVVar6->upVector).y;
-      QStack_7.w = (pVVar6->upVector).z;
-      fVar8 = (float)uStack_4 - QStack_7.y;
-      fVar9 = uStack_4._4_4_ - QStack_7.z;
-      fVar10 = fStack_5 - QStack_7.w;
-      pQVar11 = MVWorldObjectClient::MVWorldObjectClient_get_SyncRot
-                         (&QStack_7,this_03,(MethodInfo *)0x0);
+      pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar5 = (pVVar4->upVector).x;
+      uVar6 = (pVVar4->upVector).y;
+      fVar7 = QStack_3.y - (float)uVar5;
+      fVar8 = QStack_3.z - (float)uVar6;
+      fVar9 = QStack_3.w - (pVVar4->upVector).z;
+      pQVar10 = MVWorldObjectClient::MVWorldObjectClient_get_SyncRot
+                         (&QStack_3,unaff_ESI,(MethodInfo *)0x0);
       if (this_00 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0) {
-        position.y = fVar9;
-        position.x = fVar8;
-        position.z = fVar10;
+        position.y = fVar8;
+        position.x = fVar7;
+        position.z = fVar9;
         GameEventManager+AvatarCommandsBuildModeManager::
         GameEventManager_AvatarCommandsBuildModeManager_SetSpawn
-                  (this_00,position,*pQVar11,(MethodInfo *)0x0);
+                  (this_00,position,*pQVar10,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  this_03 = extraout_EDX;
 code_?:
-  func_?(this_03);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?(unaff_ESI);
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -767,21 +809,23 @@ void Assembly-CSharp.dll::DesktopAvatarEditModeController::DesktopAvatarEditMode
                (DesktopAvatarEditModeController *this,MethodInfo *method)
 
 {
-  pAStack_1 = (AvatarSelectionController__StaticFields *)&stack0xfffffffc;
+  ppAStack_1 = (AvatarSelectionController__Class **)&stack0xfffffffc;
   if ((this->fields).avatarSelectionController != (AvatarSelectionController *)0x0) {
     if (cRam_? == '\0') {
+      ppAStack_1 = &TypeInfo__AvatarSelectionController;
       func_?();
       cRam_? = '\x01';
     }
+    ppAStack_1 = (AvatarSelectionController__Class **)0x0;
     TypeInfo__AvatarSelectionController->static_fields->instance = (AvatarSelectionController *)0x0;
-    pAStack_1 = TypeInfo__AvatarSelectionController->static_fields;
+    pAStack_2 = TypeInfo__AvatarSelectionController->static_fields;
     func_?();
     return;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  uVar3 = func_?(&puStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -834,46 +878,45 @@ void Assembly-CSharp.dll::DesktopAvatarEditModeController::
     func_?();
     cRam_? = '\x01';
   }
-  ppAVar3 = &(object->fields).accessoryDataToShow;
-  *ppAVar3 = displayShopItems;
-  func_?(ppAVar3,displayShopItems);
+  (object->fields).accessoryDataToShow = displayShopItems;
+  func_?(&(object->fields).accessoryDataToShow,displayShopItems);
   (object->fields).pushOption = pushOption;
-  pUVar4 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
+  pUVar3 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)object,
              MethodInfo__AccessoryShopController__ReadyCallbackAccessoryView__,(MethodInfo *)0x0);
-  pUVar4 = (UnityAction *)
+  pUVar3 = (UnityAction *)
            mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pUVar4,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pUVar4 == (UnityAction *)0x0) {
+                     ((Delegate *)pUVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pUVar3 == (UnityAction *)0x0) {
     TypeInfo__AccessoryDataManager->static_fields->readyCallback = (UnityAction *)0x0;
-    pUVar5 = (UnityAction *)0x0;
+    pUVar4 = (UnityAction *)0x0;
 code_?:
-    pUStack6 = (UnityAction__Class *)pUVar5;
+    pUStack5 = (UnityAction__Class *)pUVar4;
     func_?();
     AccessoryDataManager::AccessoryDataManager_SetReady((MethodInfo *)0x0);
     return;
   }
-  pUVar5 = (UnityAction *)0x0;
-  if (pUVar4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-    pUVar5 = pUVar4;
+  pUVar4 = (UnityAction *)0x0;
+  if (pUVar3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+    pUVar4 = pUVar3;
   }
-  if (pUVar5 == (UnityAction *)0x0) {
-    pUStack6 = TypeInfo__UnityEngine__Events__UnityAction;
+  if (pUVar4 == (UnityAction *)0x0) {
+    pUStack5 = TypeInfo__UnityEngine__Events__UnityAction;
     func_?();
-    pUStack6 = extraout_EDX;
+    pUStack5 = extraout_EDX;
   }
   else {
-    TypeInfo__AccessoryDataManager->static_fields->readyCallback = pUVar5;
-    pUVar5 = (UnityAction *)0x0;
-    if (pUVar4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar5 = pUVar4;
+    TypeInfo__AccessoryDataManager->static_fields->readyCallback = pUVar4;
+    pUVar4 = (UnityAction *)0x0;
+    if (pUVar3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUVar4 = pUVar3;
     }
-    pUStack6 = TypeInfo__UnityEngine__Events__UnityAction;
-    if (pUVar5 != (UnityAction *)0x0) goto code_?;
+    pUStack5 = TypeInfo__UnityEngine__Events__UnityAction;
+    if (pUVar4 != (UnityAction *)0x0) goto code_?;
   }
   func_?();
   pcVar2 = (code *)swi(3);
@@ -1120,9 +1163,10 @@ void Assembly-CSharp.dll::DesktopAvatarEditModeController::DesktopAvatarEditMode
 {
   ModeControllerBase::ModeControllerBase_HandleFpsShortcut
             ((ModeControllerBase *)this,(MethodInfo *)0x0);
-  pEVar1 = (this->fields).editorStateMachine;
-  if (pEVar1 != (EditorStateMachine *)0x0) {
-    (*(code *)(pEVar1->klass->vtable).Update.method)(pEVar1);
+  if ((this->fields).editorStateMachine != (EditorStateMachine *)0x0) {
+    pEVar1 = (this->fields).editorStateMachine;
+    pEVar2 = pEVar1->klass;
+    (*(code *)(pEVar2->vtable).Update.method)(pEVar1,pEVar2[1]._0.image);
   }
   return;
 }

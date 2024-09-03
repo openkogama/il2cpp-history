@@ -8,34 +8,23 @@ void Assembly-CSharp.dll::GizmoMenu+<>c__DisplayClass22_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__ICloneHandler);
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__ICloneHandler;
+    func_?();
     cRam_? = '\x01';
   }
-  pMVar1 = (this->fields).root;
-  if (handler == (ICloneHandler *)0x0) {
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+  if (handler != (ICloneHandler *)0x0) {
+    ppIStack_1 = (ICloneHandler__Class **)0x0;
+    puStack_2 = (undefined *)0x0;
+    uStack_3 = 0;
+    func_?(0,TypeInfo__UnityEngine__EventSystems__ICloneHandler,handler,(this->fields).root
+                   );
     return;
   }
-  pIVar3 = handler->klass;
-  uVar4 = 0;
-  uVar5._0_1_ = (pIVar3->_1).rank;
-  uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
-  if (uVar5 != 0) {
-    do {
-      if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
-          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__ICloneHandler) {
-        ppMVar6 = &(&handler->klass->vtable)[pIVar3->interfaceOffsets[uVar4].offset].Clone.method;
-        goto code_?;
-      }
-      uVar4 = uVar4 + 1;
-    } while (uVar4 < uVar5);
-  }
-  ppMVar6 = (MethodInfo **)
-            func_?(handler,TypeInfo__UnityEngine__EventSystems__ICloneHandler,0);
-code_?:
-  (*(code *)*ppMVar6)(handler,pMVar1,0,0,0,ppMVar6[1]);
+  ppIStack_1 = (ICloneHandler__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&uStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

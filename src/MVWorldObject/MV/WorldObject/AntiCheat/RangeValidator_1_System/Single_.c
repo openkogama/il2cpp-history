@@ -78,7 +78,7 @@ void MVWorldObject.dll::MV::WorldObject::AntiCheat::RangeValidator`1[System::Sin
                (RangeValidator_1_System_Single_ *this,float min,float max,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).min = min;
   (this->fields).max = max;

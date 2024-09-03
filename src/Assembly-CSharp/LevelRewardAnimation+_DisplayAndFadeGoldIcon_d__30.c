@@ -8,8 +8,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
 {
   pLVar1 = this;
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    func_?(&TypeInfo__System__Int32);
+    func_?(&StringLiteral_REWARD_);
     cRam_? = '\x01';
   }
   pLVar2 = (this->fields).__4__this;
@@ -75,9 +75,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
   default:
     return 0;
   }
-  fVar6 = (pLVar1->fields)._currentTime_5__2;
-  in_AF = 0;
-  if (_UNK_? <= fVar6 / (pLVar2->fields).rotateUIYAxisTime) {
+  if (_UNK_? <= (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).rotateUIYAxisTime) {
     pIVar4 = (pLVar2->fields).goldImage;
     if (pIVar4 != (Image *)0x0) {
       pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -121,9 +119,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
                             (pCVar13,0.0,(MethodInfo *)0x0);
                   (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
-                  fVar3 = (pLVar1->fields)._currentTime_5__2;
-                  in_AF = 0;
-                  if (_UNK_? <= fVar3 / (pLVar2->fields).goldImageDisplayTime) {
+                  if (_UNK_? <=
+                      (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).goldImageDisplayTime) {
                     pAVar5 = (pLVar2->fields).goldBounceEffect;
                     if (pAVar5 != (AnimationCurve *)0x0) {
                       fVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
@@ -163,6 +160,7 @@ code_?:
                     }
                   }
                   else {
+                    fVar3 = (pLVar1->fields)._currentTime_5__2;
                     fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                                        ((MethodInfo *)0x0);
                     (pLVar1->fields)._currentTime_5__2 = fVar6 + fVar3;
@@ -222,6 +220,7 @@ code_?:
     }
   }
   else {
+    fVar6 = (pLVar1->fields)._currentTime_5__2;
     fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     (pLVar1->fields)._currentTime_5__2 = fVar15 + fVar6;
     pAVar5 = (pLVar2->fields).rotateUIYAxisIn;
@@ -252,12 +251,9 @@ code_?:
     }
   }
 code_?:
-  bRam_? = func_?();
-  in_AF = 9 < (bRam_? & 0xf) | in_AF;
-  (&stack0xcccc0ff3)[extraout_ECX_00] =
-       (&stack0xcccc0ff3)[extraout_ECX_00] + extraout_DH +
-       (9 < (bRam_? + in_AF * -6 & 0xf) | in_AF);
-  pcVar16 = (code *)swi(3);
+  func_?();
+  *(char *)&pLVar1->klass = *(char *)&pLVar1->klass + extraout_AH;
+  pcVar16 = (code *)swi(1);
   bVar17 = (*pcVar16)();
   return bVar17;
 }

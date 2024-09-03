@@ -52,17 +52,16 @@ void Assembly-CSharp.dll::GameCoinStringRenderer::GameCoinStringRenderer_DrawStr
     ;
     UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Color(s.color,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
-              (s.start.x,s.start.y,s.start.z,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
-              (s.end.x,s.end.y,s.end.z,(MethodInfo *)0x0);
+    fVar1 = s.start.x;
+    UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(s.start,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(s.end,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-    *unaff_FS_OFFSET = s.start.x;
+    *unaff_FS_OFFSET = fVar1;
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -156,13 +155,13 @@ void Assembly-CSharp.dll::GameCoinStringRenderer::GameCoinStringRenderer__ctor
             func_?(
                            TypeInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>
                            );
-  mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32]::Stack_1_System_Int32___ctor
-            ((Stack_1_System_Int32_ *)this_00,
+  System.Core.dll::System::Runtime::CompilerServices::ReadOnlyCollectionBuilder`1[System::Object]::
+  ReadOnlyCollectionBuilder_1_System_Object___ctor
+            ((ReadOnlyCollectionBuilder_1_System_Object_ *)this_00,
              MethodInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>__Queue__
             );
-  ppQVar1 = &(this->fields).strings;
-  *ppQVar1 = this_00;
-  func_?(ppQVar1,this_00);
+  (this->fields).strings = this_00;
+  func_?(&(this->fields).strings,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

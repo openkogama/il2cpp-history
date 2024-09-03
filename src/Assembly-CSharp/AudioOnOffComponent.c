@@ -30,28 +30,29 @@ void Assembly-CSharp.dll::AudioOnOffComponent::AudioOnOffComponent_Awake
                        (pGVar1,
                         UnityEngine__AudioSource_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::AudioSource>__
                        );
-    ppAVar3 = &(this->fields).onOffAudioSource;
-    *ppAVar3 = pAVar2;
-    func_?(ppAVar3,pAVar2);
-    if (*ppAVar3 != (AudioSource *)0x0) {
+    (this->fields).onOffAudioSource = pAVar2;
+    func_?(&(this->fields).onOffAudioSource,pAVar2);
+    pAVar2 = (this->fields).onOffAudioSource;
+    if (pAVar2 != (AudioSource *)0x0) {
       this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)*ppAVar3,(MethodInfo *)0x0);
+                          ((Component *)pAVar2,(MethodInfo *)0x0);
       value = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)this,(MethodInfo *)0x0);
       if (this_00 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
                   (this_00,value,(MethodInfo *)0x0);
-        if (*ppAVar3 != (AudioSource *)0x0) {
+        pAVar2 = (this->fields).onOffAudioSource;
+        if (pAVar2 != (AudioSource *)0x0) {
           UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop
-                    (*ppAVar3,(this->fields).loop,(MethodInfo *)0x0);
+                    (pAVar2,(this->fields).loop,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -69,10 +70,10 @@ Assembly-CSharp.dll::AudioOnOffComponent::AudioOnOffComponent_Fader
   }
   method_00 = TypeInfo__AudioOnOffComponent___Fader_d__13;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   value[2].monitor = (MonitorData *)minEndPoint;
   value[3].klass = (Object__Class *)maxEndPoint;
@@ -98,7 +99,7 @@ void Assembly-CSharp.dll::AudioOnOffComponent::AudioOnOffComponent_PlayClip
                       (minVol,maxVol,(MethodInfo *)0x0);
     UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume
               (aS,fVar1,(MethodInfo *)0x0);
-    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play(aS,(MethodInfo *)0x0);
+    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1(aS,(MethodInfo *)0x0);
     pAVar2 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_clip
                        (aS,(MethodInfo *)0x0);
     if (pAVar2 != (AudioClip *)0x0) {
@@ -153,7 +154,7 @@ code_?:
   }
   method_00 = TypeInfo__AudioOnOffComponent___Fader_d__13;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
@@ -200,7 +201,7 @@ void Assembly-CSharp.dll::AudioOnOffComponent::AudioOnOffComponent_TurnOn
                       (minInclusive,fVar3,(MethodInfo *)0x0);
     UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume
               (this_00,fVar3,(MethodInfo *)0x0);
-    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play
+    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1
               (this_00,(MethodInfo *)0x0);
     pAVar1 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_clip
                        (this_00,(MethodInfo *)0x0);

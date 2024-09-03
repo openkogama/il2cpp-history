@@ -144,8 +144,7 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetData::
                MethodInfo *method)
 
 {
-  piVar1 = &(this->fields).progressionGamePoints;
-  *piVar1 = *piVar1 + deltaGamePoints;
+  (this->fields).progressionGamePoints = (this->fields).progressionGamePoints + deltaGamePoints;
   (this->fields).gamePassTier = (undefined1)gamePassTier;
   return;
 }
@@ -173,9 +172,9 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetData::Playe
             func_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
   PlayerPlanetMetaDataClient::PlayerPlanetMetaDataClient__ctor(this_00,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&(this->fields).playerPlanetMetaData;
-  *(PlayerPlanetMetaDataClient **)method_00 = this_00;
+  (this->fields).playerPlanetMetaData = this_00;
   func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
@@ -206,24 +205,23 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetData::Playe
   pPVar2 = (PlayerPlanetMetaDataClient *)
            func_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
   PlayerPlanetMetaDataClient::PlayerPlanetMetaDataClient__ctor(pPVar2,(MethodInfo *)0x0);
-  ppPVar3 = &(this->fields).playerPlanetMetaData;
-  *ppPVar3 = pPVar2;
-  method_00 = (MethodInfo *)ppPVar3;
-  func_?(ppPVar3,pPVar2);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  method_00 = (MethodInfo *)&(this->fields).playerPlanetMetaData;
+  (this->fields).playerPlanetMetaData = pPVar2;
+  func_?(method_00,pPVar2);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).highScoreGamePoints = highScoreGamePoints;
   (this->fields).rank = previewGamePassTier;
   (this->fields).progressionGamePoints = progressionGamePoints;
   (this->fields).gamePassTier = playtime._ticks._4_1_;
   (this->fields).previewGamePassTier = (undefined1)gamePassTier;
-  *(undefined4 *)&(this->fields).playtime._ticks = in_stack_4;
+  *(undefined4 *)&(this->fields).playtime._ticks = in_stack_3;
   *(undefined4 *)((int)&(this->fields).playtime._ticks + 4) = (undefined4)playtime._ticks;
   if (rank != 0) {
-    uVar5 = *(uint8_t *)(rank + 8);
     uVar1 = *(undefined4 *)(rank + 0x10);
-    bVar6 = *(bool *)(rank + 9);
-    uVar7 = *(undefined4 *)(rank + 0x14);
+    uVar4 = *(uint8_t *)(rank + 8);
+    bVar5 = *(bool *)(rank + 9);
+    uVar6 = *(undefined4 *)(rank + 0x14);
     pPVar2 = (PlayerPlanetMetaDataClient *)
              func_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
     if (cRam_? == '\0') {
@@ -233,24 +231,24 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetData::Playe
     if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__DateTime);
     }
-    uVar8 = *(undefined4 *)
+    uVar7 = *(undefined4 *)
              ((int)&(TypeInfo__System__DateTime->static_fields->MinValue)._dateData + 4);
     *(int *)&(pPVar2->fields).lastDailyWelcomeRewardClaim._dateData =
          (int)(TypeInfo__System__DateTime->static_fields->MinValue)._dateData;
-    *(undefined4 *)((int)&(pPVar2->fields).lastDailyWelcomeRewardClaim._dateData + 4) = uVar8;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)pPVar2,ExceptionArgument__Enum_obj,unaff_retaddr);
-    (pPVar2->fields).gamePassTierSeen = uVar5;
-    (pPVar2->fields).welcomeRewardClaimed = bVar6;
-    *(undefined4 *)&(pPVar2->fields).lastDailyWelcomeRewardClaim._dateData = uVar1;
     *(undefined4 *)((int)&(pPVar2->fields).lastDailyWelcomeRewardClaim._dateData + 4) = uVar7;
-    *ppPVar3 = pPVar2;
-    func_?(ppPVar3,pPVar2);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)pPVar2,ExceptionArgument__Enum_obj,unaff_retaddr);
+    *(undefined4 *)&(pPVar2->fields).lastDailyWelcomeRewardClaim._dateData = uVar1;
+    *(undefined4 *)((int)&(pPVar2->fields).lastDailyWelcomeRewardClaim._dateData + 4) = uVar6;
+    (pPVar2->fields).gamePassTierSeen = uVar4;
+    (pPVar2->fields).welcomeRewardClaimed = bVar5;
+    (this->fields).playerPlanetMetaData = pPVar2;
+    func_?(&(this->fields).playerPlanetMetaData,pPVar2);
     return;
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

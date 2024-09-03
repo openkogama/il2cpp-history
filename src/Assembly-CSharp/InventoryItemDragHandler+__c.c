@@ -39,7 +39,7 @@ void Assembly-CSharp.dll::InventoryItemDragHandler+<>c::InventoryItemDragHandler
   }
   method_00 = TypeInfo__InventoryItemDragHandler____c;
   value = (InventoryItemDragHandler_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__InventoryItemDragHandler____c->static_fields->__9 = value;
   func_?(TypeInfo__InventoryItemDragHandler____c->static_fields,value);

@@ -120,23 +120,6 @@ int32_t Assembly-CSharp.dll::MVLocalPlayerBuilder::MVLocalPlayerBuilder_get_Buil
 }
 
 
-/* MVLocalPlayerBuilder+EnterPlayStateDataStruct get_EnterPlayStateData() */
-
-MVLocalPlayerBuilder_EnterPlayStateDataStruct *
-Assembly-CSharp.dll::MVLocalPlayerBuilder::MVLocalPlayerBuilder_get_EnterPlayStateData
-          (MVLocalPlayerBuilder_EnterPlayStateDataStruct *__return_storage_ptr__,
-          MVLocalPlayerBuilder *this,MethodInfo *method)
-
-{
-  iVar1 = (this->fields).enterPlayStateData.selectedSpawnRoleCreator;
-  iVar2 = (this->fields).enterPlayStateData.previousSpawnRoleId;
-  __return_storage_ptr__->selectedTeam = (this->fields).enterPlayStateData.selectedTeam;
-  __return_storage_ptr__->selectedSpawnRoleCreator = iVar1;
-  __return_storage_ptr__->previousSpawnRoleId = iVar2;
-  return __return_storage_ptr__;
-}
-
-
 /* Void set_EnterPlayStateData(MVLocalPlayerBuilder+EnterPlayStateDataStruct) */
 
 void Assembly-CSharp.dll::MVLocalPlayerBuilder::MVLocalPlayerBuilder_set_EnterPlayStateData

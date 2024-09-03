@@ -20,7 +20,8 @@ void Assembly-CSharp.dll::MVAvatarLocal+ReviveMode::MVAvatarLocal_ReviveMode_Act
   (this->fields).deadTime = fVar1;
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
   if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
-  fVar1 = MVLocalPlayer::MVLocalPlayer_get_ReviveTimeout(pMVar2,(MethodInfo *)0x0);
+  fVar1 = RTG::DirectionalLightGizmo3DLookAndFeel::
+           DirectionalLightGizmo3DLookAndFeel_get_DefaultLightRayLength((MethodInfo *)pMVar2);
   pMVar3 = (this->fields)._.mvAvatar;
   (this->fields).reviveInterval = fVar1;
   if (pMVar3 == (MVAvatarLocal *)0x0) goto code_?;
@@ -47,7 +48,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+ReviveMode::MVAvatarLocal_ReviveMode_Act
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
-  (pMVar2->fields).respawnTime = (this->fields).reviveInterval + fVar1;
+  (pMVar2->fields).respawnTime = fVar1 + (this->fields).reviveInterval;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -65,7 +66,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+ReviveMode::MVAvatarLocal_ReviveMode_Act
   pMVar3 = (this->fields)._.mvAvatar;
   (this->fields).setDeadCamDelayed = 0;
   if (pMVar3 == (MVAvatarLocal *)0x0) goto code_?;
-  bVar5 = MVAvatarLocal::MVAvatarLocal_get_InGunMode(pMVar3,(MethodInfo *)0x0);
+  bVar5 = MVAvatarLocal::MVAvatarLocal_get_InFirstPersonGunMode(pMVar3,(MethodInfo *)0x0);
   if (bVar5 == 0) {
     this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
     if (this_02 == (MainCameraManager *)0x0) goto code_?;
@@ -308,12 +309,12 @@ void Assembly-CSharp.dll::MVAvatarLocal+ReviveMode::MVAvatarLocal_ReviveMode__ct
   (value->fields).rot.y = fVar2;
   (value->fields).rot.z = fVar3;
   (value->fields).rot.w = fVar4;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
   method_00 = (MethodInfo *)&(this->fields).inputController;
-  *(MVAvatarLocal_ReviveMode_AvatarInputControllerDead **)method_00 = value;
+  (this->fields).inputController = value;
   func_?(method_00,value);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields)._.mvAvatar = mvAvatar;
   func_?(&this->fields,mvAvatar);

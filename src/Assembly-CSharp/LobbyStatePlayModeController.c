@@ -34,10 +34,10 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
           }
           pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
           if (pIVar2 != (IPlayModeUI *)0x0) {
-            cVar3 = func_?(5,TypeInfo__IPlayModeUI,pIVar2);
+            bVar3 = func_?(5,TypeInfo__IPlayModeUI,pIVar2);
             if (pGVar1 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar1,cVar3 == '\0',(MethodInfo *)0x0);
+                        (pGVar1,bVar3 ^ 1,(MethodInfo *)0x0);
               this_02 = (this->fields).inGameController;
               if (this_02 != (DesktopInGameGUIController *)0x0) {
                 pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
@@ -255,7 +255,7 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::LobbyStatePlayModeContro
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__ILockCursorManager) {
           ppMVar5 = &(&(pIVar1->klass->vtable).get_OnCursorLockChanged)
-                     [pIVar2->interfaceOffsets[uVar3].offset].method;
+                     [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
           goto code_?;
         }
         uVar3 = uVar3 + 1;
@@ -284,7 +284,7 @@ code_?:
           if (pIVar2->interfaceOffsets[uVar4].interfaceType ==
               (Il2CppClass *)TypeInfo__ILockCursorManager) {
             ppMVar5 = &(&(pIVar1->klass->vtable).set_OnCursorLockChanged)
-                       [pIVar2->interfaceOffsets[uVar4].offset].method;
+                       [pIVar1->klass->interfaceOffsets[uVar4].offset].method;
             goto code_?;
           }
           uVar4 = uVar4 + 1;
@@ -304,17 +304,16 @@ code_?:
     if ((pGVar7 != (GameEventManager *)0x0) &&
        (pGVar8 = (pGVar7->fields).GameState, pGVar8 != (GameEventManager_GameStateManager *)0x0)) {
       pAVar9 = (pGVar8->fields).OnEnableLobbyState;
-      object = &pGVar8->fields;
       pNVar10 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar10,(Object *)this,MethodInfo__LobbyStatePlayModeController__EnableLobbyState__
-                 ,(MethodInfo *)0x0);
+                (pNVar10,(Object *)this,MethodInfo__LobbyStatePlayModeController__EnableLobbyState__,
+                 (MethodInfo *)0x0);
       pAVar9 = (Action *)
                 mscorlib.dll::System::Delegate::Delegate_Combine
                           ((Delegate *)pAVar9,(Delegate *)pNVar10,(MethodInfo *)0x0);
       if (pAVar9 == (Action *)0x0) {
-        object->OnEnableLobbyState = (Action *)0x0;
+        (pGVar8->fields).OnEnableLobbyState = (Action *)0x0;
       }
       else {
         pAVar11 = (Action *)0x0;
@@ -322,7 +321,7 @@ code_?:
           pAVar11 = pAVar9;
         }
         if (pAVar11 == (Action *)0x0) goto code_?;
-        object->OnEnableLobbyState = pAVar11;
+        (pGVar8->fields).OnEnableLobbyState = pAVar11;
         pAVar11 = (Action *)0x0;
         if (pAVar9->klass == TypeInfo__System__Action) {
           pAVar11 = pAVar9;
@@ -332,44 +331,42 @@ code_?:
       func_?();
       pGVar7 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
       if ((pGVar7 != (GameEventManager *)0x0) &&
-         (pGVar8 = (pGVar7->fields).GameState, pGVar8 != (GameEventManager_GameStateManager *)0x0))
+         (pGVar12 = (pGVar7->fields).GameState, pGVar12 != (GameEventManager_GameStateManager *)0x0))
       {
-        pAVar9 = (pGVar8->fields).OnDisableLobbyState;
-        this_01 = &(pGVar8->fields).OnDisableLobbyState;
+        pAVar9 = (pGVar12->fields).OnDisableLobbyState;
         pNVar10 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar10,(Object *)object,
+                  (pNVar10,(Object *)&pGVar8->fields,
                    MethodInfo__LobbyStatePlayModeController__DisableLobbyState__,(MethodInfo *)0x0);
         pAVar11 = (Action *)
                   mscorlib.dll::System::Delegate::Delegate_Combine
                             ((Delegate *)pAVar9,(Delegate *)pNVar10,(MethodInfo *)0x0);
         pAVar9 = (Action *)0x0;
         if (pAVar11 == (Action *)0x0) {
-          *this_01 = (Action *)0x0;
+          (pGVar12->fields).OnDisableLobbyState = (Action *)0x0;
 code_?:
           func_?();
-          ppAVar12 = &pGVar8[1].fields.OnDisableLobbyState;
-          *ppAVar12 = pAVar9;
-          func_?(ppAVar12);
-          ppGVar13 = &pGVar8[1].fields.gameStateType;
-          *ppGVar13 = (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)
-                     lobbyState;
-          func_?(ppGVar13,lobbyState);
-          pGVar8[2].klass = (GameEventManager_GameStateManager__Class *)inGameMenu;
-          func_?(pGVar8 + 2,inGameMenu);
-          pGVar8[2].monitor = (MonitorData *)chatController;
-          func_?(&pGVar8[2].monitor,chatController);
+          pGVar12[1].fields.OnDisableLobbyState = pAVar9;
+          func_?(&pGVar12[1].fields.OnDisableLobbyState);
+          pGVar12[1].fields.gameStateType =
+               (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)
+               lobbyState;
+          func_?(&pGVar12[1].fields.gameStateType,lobbyState);
+          pGVar12[2].klass = (GameEventManager_GameStateManager__Class *)inGameMenu;
+          func_?(pGVar12 + 2,inGameMenu);
+          pGVar12[2].monitor = (MonitorData *)chatController;
+          func_?(&pGVar12[2].monitor,chatController);
           LobbyStatePlayModeController_SetObjectToLobbyState
-                    ((LobbyStatePlayModeController *)this_01,
-                     *(bool *)&pGVar8[1].fields.OnEnableLobbyState,(MethodInfo *)0x0);
+                    ((LobbyStatePlayModeController *)&(pGVar12->fields).OnDisableLobbyState,
+                     *(bool *)&pGVar12[1].fields.OnEnableLobbyState,(MethodInfo *)0x0);
           return;
         }
         if (pAVar11->klass == TypeInfo__System__Action) {
           pAVar9 = pAVar11;
         }
         if (pAVar9 != (Action *)0x0) {
-          *this_01 = pAVar9;
+          (pGVar12->fields).OnDisableLobbyState = pAVar9;
           pAVar9 = (Action *)0x0;
           if (pAVar11->klass == TypeInfo__System__Action) {
             pAVar9 = pAVar11;
@@ -385,8 +382,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -469,10 +466,10 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
           }
           pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
           if ((pIVar6 != (IPlayModeUI *)0x0) &&
-             (cVar8 = func_?(5,TypeInfo__IPlayModeUI,pIVar6), pGVar2 != (GameObject *)0x0))
+             (bVar8 = func_?(5,TypeInfo__IPlayModeUI,pIVar6), pGVar2 != (GameObject *)0x0))
           {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar2,cVar8 == '\0',(MethodInfo *)0x0);
+                      (pGVar2,bVar8 ^ 1,(MethodInfo *)0x0);
             pDVar4 = (this->fields).inGameController;
             if ((pDVar4 != (DesktopInGameGUIController *)0x0) &&
                (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
@@ -496,7 +493,7 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
                                Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0),
                      pGVar2 != (GameObject *)0x0)) {
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                              (pGVar2,0xd6,(MethodInfo *)0x0);
+                              (pGVar2,bVar7 == 0,(MethodInfo *)0x0);
                     pRVar1 = (pCVar5->fields).inputAreaDeactivated;
                     if ((pRVar1 != (RectTransform *)0x0) &&
                        (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
@@ -547,22 +544,23 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::LobbyStatePlayModeContro
     func_?(&StringLiteral_This_happens_when_playmode_avata);
     cRam_? = '\x01';
   }
+  bVar1 = (this->fields).isInLobbyState;
   if ((this->fields).wantsToEnterPlayState == 0) {
-    if ((this->fields).isInLobbyState == 0) {
+    if (bVar1 == 0) {
       MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(0,0,(MethodInfo *)0x0);
       LobbyStatePlayModeController_SetObjectToLobbyState(this,1,(MethodInfo *)0x0);
     }
   }
-  else if ((this->fields).isInLobbyState != 0) {
+  else if (bVar1 != 0) {
     LobbyStatePlayModeController_SetObjectToLobbyState(this,0,(MethodInfo *)0x0);
-    pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+    pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                        ((MethodInfo *)0x0);
-    if ((pSVar1 == (SpawnRoleDataMediator *)0x0) ||
-       (this_00 = (pSVar1->fields).SpawnRoleModeTypeWrapper,
+    if ((pSVar2 == (SpawnRoleDataMediator *)0x0) ||
+       (this_00 = (pSVar2->fields).SpawnRoleModeTypeWrapper,
        this_00 == (SpawnRoleModeTypeWrapper *)0x0)) goto code_?;
-    bVar2 = SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsInMode
+    bVar1 = SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsInMode
                       (this_00,SpawnRoleModeType__Enum_Hidden,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+    if (bVar1 != 0) {
       pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
       if ((pGVar3 == (GameEventManager *)0x0) ||
          (this_01 = (pGVar3->fields).AvatarCommandsPlayMode,
@@ -571,18 +569,18 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::LobbyStatePlayModeContro
                 ((RewardedAd *)this_01,(MethodInfo *)0x0);
     }
   }
-  pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+  pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
-  if (pSVar1 == (SpawnRoleDataMediator *)0x0) goto code_?;
-  bVar2 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+  if (pSVar2 == (SpawnRoleDataMediator *)0x0) goto code_?;
+  bVar1 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
           SpawnRoleVariable`1[System::Int32Enum]::
           SpawnRoleVariable_1_System_Int32Enum__op_Equality_1
-                    ((SpawnRoleVariable_1_System_Int32Enum_ *)(pSVar1->fields).spawnRoleMode,1,
+                    ((SpawnRoleVariable_1_System_Int32Enum_ *)(pSVar2->fields).spawnRoleMode,1,
                      MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__op_Equality_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__MV__Common__SpawnRoleModeType_
                     );
-  if (bVar2 != 0) {
-    bVar2 = MVGameControllerDesktop::MVGameControllerDesktop_get_IsCursorLock((MethodInfo *)0x0);
-    if (bVar2 == 0) {
+  if (bVar1 != 0) {
+    bVar1 = MVGameControllerDesktop::MVGameControllerDesktop_get_IsCursorLock((MethodInfo *)0x0);
+    if (bVar1 == 0) {
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';

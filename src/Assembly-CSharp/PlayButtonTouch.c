@@ -5,8 +5,8 @@ void Assembly-CSharp.dll::PlayButtonTouch::PlayButtonTouch_OnConfirmPlay
                (PlayButtonTouch *this,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields).OnPlayButtonPressed;
-  if (pAVar1 != (Action *)0x0) {
+  if ((this->fields).OnPlayButtonPressed != (Action *)0x0) {
+    pAVar1 = (this->fields).OnPlayButtonPressed;
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }

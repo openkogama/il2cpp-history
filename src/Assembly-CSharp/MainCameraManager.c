@@ -419,43 +419,42 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_Awake
   ::
   SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             (this_00,dictionary,(MethodInfo *)0x0);
-  ppPVar4 = &(this->fields).protectedTransform;
-  *ppPVar4 = (ProtectedTransform *)this_00;
-  func_?(ppPVar4,this_00);
+  (this->fields).protectedTransform = (ProtectedTransform *)this_00;
+  func_?(&(this->fields).protectedTransform,this_00);
   pAVar3 = TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved;
   this_01 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
   UnityAction_1_System_Int32Enum___ctor
             (this_01,(Object *)this,
              MethodInfo__MainCameraManager__HandleCameraCubeAddedRemoved_bool_,(MethodInfo *)0x0);
-  pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
+  pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
                      ((Delegate *)pAVar3,(Delegate *)this_01,(MethodInfo *)0x0);
-  pAVar6 = TypeInfo__System__Action<bool>;
-  if (pDVar5 == (Delegate *)0x0) {
+  pAVar5 = TypeInfo__System__Action<bool>;
+  if (pDVar4 == (Delegate *)0x0) {
     TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved = (Action_1_Boolean_ *)0x0;
-    pAStack7 = (Action_1_Boolean___Class *)0x0;
+    pAStack6 = (Action_1_Boolean___Class *)0x0;
 code_?:
-    pDStack8 =
+    pDStack7 =
          (Delegate *)&TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved;
     func_?();
     return;
   }
-  pAStack7 = TypeInfo__System__Action<bool>;
-  pDStack8 = pDVar5;
+  pAStack6 = TypeInfo__System__Action<bool>;
+  pDStack7 = pDVar4;
   pAVar3 = (Action_1_Boolean_ *)func_?();
   if (pAVar3 != (Action_1_Boolean_ *)0x0) {
     TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved = pAVar3;
-    pAVar6 = TypeInfo__System__Action<bool>;
-    pAStack7 = TypeInfo__System__Action<bool>;
-    pDStack8 = pDVar5;
-    pAStack7 = (Action_1_Boolean___Class *)func_?();
-    if (pAStack7 != (Action_1_Boolean___Class *)0x0) goto code_?;
+    pAVar5 = TypeInfo__System__Action<bool>;
+    pAStack6 = TypeInfo__System__Action<bool>;
+    pDStack7 = pDVar4;
+    pAStack6 = (Action_1_Boolean___Class *)func_?();
+    if (pAStack6 != (Action_1_Boolean___Class *)0x0) goto code_?;
   }
-  pDStack8 = pDVar5;
-  pAStack7 = pAVar6;
+  pDStack7 = pDVar4;
+  pAStack6 = pAVar5;
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1548,17 +1547,18 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_SetCameraControll
                (MainCameraManager *this,MVCameraController *camController,MethodInfo *method)
 
 {
-  ppMVar1 = &(this->fields).cameraController;
-  if (*ppMVar1 != (MVCameraController *)0x0) {
-    pMVar2 = ((*ppMVar1)->fields).cameraStack;
+  pMVar1 = (this->fields).cameraController;
+  if (pMVar1 != (MVCameraController *)0x0) {
+    pMVar2 = (pMVar1->fields).cameraStack;
     if (pMVar2 == (MVCameraController_CameraStack *)0x0) goto code_?;
     MVCameraController+CameraStack::MVCameraController_CameraStack_Deactivate
               (pMVar2,(MethodInfo *)0x0);
   }
-  *ppMVar1 = camController;
-  func_?(ppMVar1,camController);
-  if ((*ppMVar1 != (MVCameraController *)0x0) &&
-     (pMVar2 = ((*ppMVar1)->fields).cameraStack, pMVar2 != (MVCameraController_CameraStack *)0x0)) {
+  (this->fields).cameraController = camController;
+  func_?(&(this->fields).cameraController,camController);
+  pMVar1 = (this->fields).cameraController;
+  if ((pMVar1 != (MVCameraController *)0x0) &&
+     (pMVar2 = (pMVar1->fields).cameraStack, pMVar2 != (MVCameraController_CameraStack *)0x0)) {
     MVCameraController+CameraStack::MVCameraController_CameraStack_Activate
               (pMVar2,(MethodInfo *)0x0);
     return;
@@ -1635,7 +1635,7 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_StartTransitionCa
                       Transform_set_localRotation
                                 (pTVar3,(this_00->fields).prevCameraRotation,(MethodInfo *)0x0);
                       (this_00->fields).time = (float)&UNK_?;
-                      (this_00->fields).superSoft = 0x5a;
+                      (this_00->fields).superSoft = 0x1a;
                       (this_00->fields).transitionPercentage = 0.0;
                       return;
                     }
@@ -1787,26 +1787,26 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_add_onIgnoreInput
     func_?(&TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).onIgnoreInputTypes;
-  a = *ppEVar1;
+  a = (this->fields).onIgnoreInputTypes;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar3 = TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pEVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pEVar2 = TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pEVar6 = (EventHandler_1_OnIgnoreInputTypesArgs_ *)func_?(ppEVar1,iVar4,a);
-    bVar7 = pEVar6 != a;
-    a = pEVar6;
-  } while (bVar7);
+    pEVar5 = (EventHandler_1_OnIgnoreInputTypesArgs_ *)
+             func_?(&(this->fields).onIgnoreInputTypes,iVar3,a);
+    bVar6 = pEVar5 != a;
+    a = pEVar5;
+  } while (bVar6);
   return;
 }
 
@@ -1826,26 +1826,26 @@ Assembly-CSharp.dll::MainCameraManager::MainCameraManager_get_CurrentCamera
       func_?();
       cRam_? = '\x01';
     }
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (pMVar2->fields).activeCameras;
-    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      if ((this_00->fields)._size == 0) {
+    pLVar3 = (pMVar2->fields).activeCameras;
+    if (pLVar3 != (List_1_MVCameraBase_ *)0x0) {
+      if ((pLVar3->fields)._size == 0) {
         return (MVCameraBase *)0x0;
       }
-      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_00,(this_00->fields)._size + -1,
+                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                         (pMVar2->fields).activeCameras,(pLVar3->fields)._size + -1,
                          MethodInfo__System__Collections__Generic__List<MVCameraBase>__get_Item_int_
                         );
-      return (MVCameraBase *)RVar3;
+      return (MVCameraBase *)RVar4;
     }
   }
-  uVar4 = func_?(&stack0xfffffff0);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  pMVar6 = (MVCameraBase *)(*pcVar5)();
-  return pMVar6;
+  uVar5 = func_?(&stack0xfffffff0);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  pMVar7 = (MVCameraBase *)(*pcVar6)();
+  return pMVar7;
 }
 
 
@@ -2065,26 +2065,26 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_remove_onIgnoreIn
     func_?(&TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).onIgnoreInputTypes;
-  source = *ppEVar1;
+  source = (this->fields).onIgnoreInputTypes;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar3 = TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pEVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pEVar2 = TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pEVar6 = (EventHandler_1_OnIgnoreInputTypesArgs_ *)func_?(ppEVar1,iVar4,source);
-    bVar7 = pEVar6 != source;
-    source = pEVar6;
-  } while (bVar7);
+    pEVar5 = (EventHandler_1_OnIgnoreInputTypesArgs_ *)
+             func_?(&(this->fields).onIgnoreInputTypes,iVar3,source);
+    bVar6 = pEVar5 != source;
+    source = pEVar5;
+  } while (bVar6);
   return;
 }
 

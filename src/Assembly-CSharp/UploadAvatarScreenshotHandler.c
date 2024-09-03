@@ -179,7 +179,7 @@ void Assembly-CSharp.dll::UploadAvatarScreenshotHandler::
   }
   method_00 = TypeInfo__UploadAvatarScreenshotHandler____c__DisplayClass12_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   original = (this->fields).pleaseWaitPopupPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -264,35 +264,33 @@ void Assembly-CSharp.dll::UploadAvatarScreenshotHandler::
   }
   method_00 = TypeInfo__UploadAvatarScreenshotHandler____c__DisplayClass9_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  ppAVar1 = &(this->fields).OnUploadScreenshot;
-  *ppAVar1 = onUploadScreenshot;
-  func_?(ppAVar1,onUploadScreenshot);
+  (this->fields).OnUploadScreenshot = onUploadScreenshot;
+  func_?(&(this->fields).OnUploadScreenshot,onUploadScreenshot);
   if (purchasedAvatar == 0) {
-    pSVar2 = TM::TM__(StringLiteral_Screenshot_taken_successfully,(MethodInfo *)0x0);
+    pSVar1 = TM::TM__(StringLiteral_Screenshot_taken_successfully,(MethodInfo *)0x0);
   }
   else {
-    pSVar2 = TM::TM__(StringLiteral_New_avatar_purchased_,(MethodInfo *)0x0);
+    pSVar1 = TM::TM__(StringLiteral_New_avatar_purchased_,(MethodInfo *)0x0);
   }
-  *successText = pSVar2;
-  func_?(successText,pSVar2);
-  ppMVar3 = &(this->fields).avatarBody;
-  *ppMVar3 = currentBody;
-  func_?(ppMVar3,currentBody);
-  pGVar4 = (this->fields).invisibleBlocker;
+  *successText = pSVar1;
+  func_?(successText,pSVar1);
+  (this->fields).avatarBody = currentBody;
+  func_?(&(this->fields).avatarBody,currentBody);
+  pGVar2 = (this->fields).invisibleBlocker;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pOVar5 = (Object__Class *)
+  pOVar3 = (Object__Class *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                     ((Object *)pGVar4,
+                     ((Object *)pGVar2,
                       UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                      );
   if (value != (Object *)0x0) {
-    value[1].klass = pOVar5;
+    value[1].klass = pOVar3;
     func_?();
-    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
     callbackFunction =
          (ExecuteEvents_EventFunction_1_System_Object_ *)
@@ -308,14 +306,14 @@ void Assembly-CSharp.dll::UploadAvatarScreenshotHandler::
       func_?();
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar4,(BaseEventData *)0x0,callbackFunction,
+              (pGVar2,(BaseEventData *)0x0,callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
     return;
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

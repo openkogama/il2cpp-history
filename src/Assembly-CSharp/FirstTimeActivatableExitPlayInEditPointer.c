@@ -43,16 +43,17 @@ void Assembly-CSharp.dll::FirstTimeActivatableExitPlayInEditPointer::
     func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
-  pDVar1 = TypeInfo__DesktopPlayModeController;
   this_00 = (Component *)TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (this_00 == (Component *)0x0) {
     func_?();
-    this_00 = extraout_EDX;
+    pDVar1 = extraout_EDX;
   }
   else {
-    bVar2 = (TypeInfo__DesktopPlayModeController->_1).naturalAligment;
-    if ((bVar2 <= (this_00->klass->_1).naturalAligment) &&
-       ((this_00->klass->_1).typeHierarchy[bVar2 - 1] ==
+    pDVar1 = TypeInfo__DesktopPlayModeController;
+    if (((TypeInfo__DesktopPlayModeController->_1).naturalAligment <=
+         (this_00->klass->_1).naturalAligment) &&
+       ((this_00->klass->_1).typeHierarchy
+        [(TypeInfo__DesktopPlayModeController->_1).naturalAligment - 1] ==
         (Il2CppClass *)TypeInfo__DesktopPlayModeController)) {
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        (this_00,(MethodInfo *)0x0);
@@ -78,8 +79,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableExitPlayInEditPointer::
     }
   }
   func_?(this_00,pDVar1);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -168,16 +169,17 @@ void Assembly-CSharp.dll::FirstTimeActivatableExitPlayInEditPointer::
     func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
-  pDVar4 = TypeInfo__DesktopPlayModeController;
   this_00 = (Component *)TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (this_00 == (Component *)0x0) {
     func_?();
-    this_00 = extraout_EDX;
+    pDVar4 = extraout_EDX;
   }
   else {
-    bVar5 = (TypeInfo__DesktopPlayModeController->_1).naturalAligment;
-    if ((bVar5 <= (this_00->klass->_1).naturalAligment) &&
-       ((this_00->klass->_1).typeHierarchy[bVar5 - 1] ==
+    pDVar4 = TypeInfo__DesktopPlayModeController;
+    if (((TypeInfo__DesktopPlayModeController->_1).naturalAligment <=
+         (this_00->klass->_1).naturalAligment) &&
+       ((this_00->klass->_1).typeHierarchy
+        [(TypeInfo__DesktopPlayModeController->_1).naturalAligment - 1] ==
         (Il2CppClass *)TypeInfo__DesktopPlayModeController)) {
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          (this_00,(MethodInfo *)0x0);
@@ -212,8 +214,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableExitPlayInEditPointer::
     }
   }
   func_?(this_00,pDVar4);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -261,11 +263,7 @@ bool Assembly-CSharp.dll::FirstTimeActivatableExitPlayInEditPointer::
   }
   bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
                     (this_00,(MethodInfo *)0x0);
-  bVar4 = 0;
-  if (bVar1 == 0) {
-    bVar4 = bVar3;
-  }
-  if (bVar4 == 0) {
+  if (((bVar1 ^ 1) & bVar3) == 0) {
     return 0;
   }
   return (this->fields).canShow;

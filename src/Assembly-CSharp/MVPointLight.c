@@ -55,21 +55,21 @@ code_?:
             CullingSubscriberBase::CullingSubscriberBase_Destroy(this_01,(MethodInfo *)0x0);
             puVar4 = (undefined8 *)(*(code *)(this->klass->vtable).get_WorldPosition_1.method)();
             uVar5 = *puVar4;
-            fVar6 = *(float *)(puVar4 + 1);
+            worldObject = *(MVWorldObject **)(puVar4 + 1);
             this_03 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
             UnityAction_1_UnityEngine_Vector2___ctor
                       (this_03,(Object *)this,
                        (this->klass->vtable).UpdateControllerUpdate_1.methodPtr,(MethodInfo *)0x0);
-            this_04 = (MVWorldObject__Class *)func_?();
-            worldObject = (MVWorldObject *)uVar5;
-            position.z = fVar6;
-            position.x = (float)(int)uVar5;
-            position.y = (float)(int)((ulonglong)uVar5 >> 0x20);
+            this_04 = (List_1_MV_WorldObject_Link_ *)func_?();
+            fVar6 = (float)uVar5;
+            this = (MVPointLight *)worldObject;
+            fVar7 = (float)(int)((ulonglong)uVar5 >> 0x20);
+            position = (Vector3)CONCAT84(uVar8,fVar6);
             CullingSubscriberBase::CullingSubscriberBase__ctor_2
-                      ((CullingSubscriberBase *)this_04,(float)worldObject,position,
+                      ((CullingSubscriberBase *)this_04,(float)&stack0xfffffffc,position,
                        (UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_03,(MethodInfo *)0x0);
-            worldObject->klass = this_04;
+            worldObject[2].fields.outputLinkRefs = this_04;
             func_?();
             this_05 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::
@@ -77,12 +77,12 @@ code_?:
                       (this_05,(Object *)worldObject,
                        MethodInfo__MVPointLight__OnInputStateUpdate_LogicInputState__LogicObjectManager_
                        ,(MethodInfo *)0x0);
-            pIVar7 = LogicClientsideFactory::
+            pIVar9 = LogicClientsideFactory::
                      LogicClientsideFactory_CreateStateChangeInputSignalReceiver
                                (worldObject,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
                                 (Action_2_LogicInputState_LogicObjectManager_ *)this_05,
                                 (MethodInfo *)0x0);
-            worldObject[2].fields.rotation.x = (float)pIVar7;
+            worldObject[2].fields.rotation.x = (float)pIVar9;
             func_?();
             this_02 = (Behaviour *)worldObject[2].fields.ownerActorNr;
             if (worldObject[2].fields.rotation.x != 0.0) {
@@ -101,17 +101,17 @@ code_?:
       pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                (this->fields)._._._.data;
       if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-        TVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+        TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                 ::UIElements::TextureId]::
                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                           (pDVar1,(Object *)StringLiteral_hide,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
-        if (TVar8.m_Index != 0) {
-          if (*(Il2CppClass **)(*(int *)TVar8.m_Index + 0x20) !=
+        if (TVar10.m_Index != 0) {
+          if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
               (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-          pcVar9 = (char *)func_?();
-          (this->fields).inputVisible = *pcVar9 == '\0';
+          pcVar11 = (char *)func_?();
+          (this->fields).inputVisible = *pcVar11 == '\0';
           goto code_?;
         }
       }
@@ -120,8 +120,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -341,7 +341,7 @@ code_?:
                                 (pLVar6,value,(MethodInfo *)0x0);
                       fVar7 = (this->fields).minumumScale;
                       fVar8 = (value / (this->fields).rangeMaxValue) /
-                               (this->fields).scaleRestriction;
+                              (this->fields).scaleRestriction;
                       if (fVar7 <= fVar8) {
                         fVar7 = fVar8;
                       }
@@ -383,9 +383,9 @@ code_?:
     goto code_?;
     iVar10 = func_?(unaff_EDI.m_Index,TypeInfo__System__Single);
     if (iVar10 != 0) {
-      uVar11 = *(uint *)(iVar10 + 0xc);
       pLVar6 = (this->fields).lightComponent;
-      if (((uVar11 != 0) && (1 < uVar11)) && (2 < uVar11)) {
+      if (((*(int *)(iVar10 + 0xc) != 0) && (1 < *(uint *)(iVar10 + 0xc))) &&
+         (2 < *(uint *)(iVar10 + 0xc))) {
         if (pLVar6 != (Light *)0x0) {
           value_00.g = (float)*(undefined4 *)(iVar10 + 0x14);
           value_00.r = (float)*(undefined4 *)(iVar10 + 0x10);
@@ -403,8 +403,8 @@ code_?:
   uVar4 = func_?(unaff_EDI.m_Index,unaff_EBX);
 code_?:
   func_?(uVar4);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -420,14 +420,13 @@ void Assembly-CSharp.dll::MVPointLight::MVPointLight_SetupLightCulling
     func_?(&TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
     cRam_? = '\x01';
   }
-  ppCVar1 = &(this->fields)._.cullingSubscriberBase;
-  pCVar2 = *ppCVar1;
-  if (pCVar2 != (CullingSubscriberBase *)0x0) {
-    CullingSubscriberBase::CullingSubscriberBase_Destroy(pCVar2,(MethodInfo *)0x0);
-    pVVar3 = (Vector3 *)
+  pCVar1 = (this->fields)._.cullingSubscriberBase;
+  if (pCVar1 != (CullingSubscriberBase *)0x0) {
+    CullingSubscriberBase::CullingSubscriberBase_Destroy(pCVar1,(MethodInfo *)0x0);
+    pVVar2 = (Vector3 *)
              (*(code *)(this->klass->vtable).get_WorldPosition_1.method)
                        (&stack0xffffffe8,this,(this->klass->vtable).set_WorldPosition.methodPtr);
-    position = *pVVar3;
+    position = *pVVar2;
     this_00 = (UnityAction_1_UnityEngine_Vector2_ *)
               func_?(
                              TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
@@ -436,17 +435,17 @@ void Assembly-CSharp.dll::MVPointLight::MVPointLight_SetupLightCulling
     UnityAction_1_UnityEngine_Vector2___ctor
               (this_00,(Object *)this,(this->klass->vtable).UpdateControllerUpdate_1.methodPtr,
                (MethodInfo *)0x0);
-    pCVar2 = (CullingSubscriberBase *)func_?(TypeInfo__CullingSubscriberBase);
+    pCVar1 = (CullingSubscriberBase *)func_?(TypeInfo__CullingSubscriberBase);
     CullingSubscriberBase::CullingSubscriberBase__ctor_2
-              (pCVar2,radius,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,
+              (pCVar1,radius,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,
                (MethodInfo *)0x0);
-    *ppCVar1 = pCVar2;
+    (this->fields)._.cullingSubscriberBase = pCVar1;
     func_?();
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -497,8 +496,8 @@ code_?:
     if (pMVar4 == (Material__Array *)0x0) goto code_?;
     if (pMVar4->max_length != 0) {
       if (iVar2 != 0) {
-        uVar5 = *(uint *)(iVar2 + 0xc);
-        if (((uVar5 == 0) || (uVar5 < 2)) || (uVar5 < 3)) goto code_?;
+        if (((*(int *)(iVar2 + 0xc) == 0) || (*(uint *)(iVar2 + 0xc) < 2)) ||
+           (*(uint *)(iVar2 + 0xc) < 3)) goto code_?;
         if (pMVar4->vector[0] != (Material *)0x0) {
           value.y = (float)*(undefined4 *)(iVar2 + 0x14);
           value.x = (float)*(undefined4 *)(iVar2 + 0x10);
@@ -516,8 +515,8 @@ code_?:
   func_?();
 code_?:
   func_?(unaff_EBX.m_Index,this);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -690,71 +689,67 @@ void Assembly-CSharp.dll::MVPointLight::MVPointLight__ctor
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-  if (pPVar1 == (PrefabPool *)0x0) {
-code_?:
-    func_?();
-    pMVar2 = extraout_EDX;
-  }
-  else {
+  if (pPVar1 != (PrefabPool *)0x0) {
     MVLogicObject::MVLogicObject__ctor
               ((MVLogicObject *)this,data,(ObjectPrefab *)(pPVar1->fields).mvPointLightPrefab,
                worldObjects,(MethodInfo *)0x0);
-    piVar3 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar3 = (uint)*piVar3 | 0x10000;
-    piVar3 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar3 = (uint)*piVar3 | 0x8000;
-    pMVar2 = (MVPointLightObject *)(this->fields)._._.component;
+    piVar2 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 | 0x10000;
+    piVar2 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
+    pMVar3 = (MVPointLightObject *)(this->fields)._._.component;
     *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-    if (pMVar2 == (MVPointLightObject *)0x0) {
+    if (pMVar3 == (MVPointLightObject *)0x0) {
       (this->fields).lightObject = (MVPointLightObject *)0x0;
-code_?:
-      ppMVar4 = &(this->fields).lightObject;
-      func_?(ppMVar4);
-      pMVar2 = *ppMVar4;
-      if (pMVar2 != (MVPointLightObject *)0x0) {
-        pLVar5 = (pMVar2->fields).pointLight;
-        ppLVar6 = &(this->fields).lightComponent;
-        *ppLVar6 = pLVar5;
-        func_?(ppLVar6,pLVar5);
-        if (*ppLVar6 != (Light *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                    ((Behaviour *)*ppLVar6,0,(MethodInfo *)0x0);
-          this_00 = (this->fields)._._.gameObject;
-          if (this_00 != (GameObject *)0x0) {
-            this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (this_00,(MethodInfo *)0x0);
-            if (cRam_? == '\0') {
-              func_?(&TypeInfo__UnityEngine__Vector3);
-              cRam_? = '\x01';
-            }
-            if (this_01 != (Transform *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                        (this_01,TypeInfo__UnityEngine__Vector3->static_fields->oneVector,
-                         (MethodInfo *)0x0);
-              return;
-            }
+    }
+    else {
+      if (((((ObjectPrefab__Class *)pMVar3->klass)->_1).naturalAligment <
+           (TypeInfo__MVPointLightObject->_1).naturalAligment) ||
+         ((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchy
+          [(TypeInfo__MVPointLightObject->_1).naturalAligment - 1] !=
+          (Il2CppClass *)TypeInfo__MVPointLightObject)) goto code_?;
+      (this->fields).lightObject = pMVar3;
+      if (((((ObjectPrefab__Class *)pMVar3->klass)->_1).naturalAligment <
+           (TypeInfo__MVPointLightObject->_1).naturalAligment) ||
+         ((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchy
+          [(TypeInfo__MVPointLightObject->_1).naturalAligment - 1] !=
+          (Il2CppClass *)TypeInfo__MVPointLightObject)) goto code_?;
+    }
+    func_?(&(this->fields).lightObject);
+    pMVar3 = (this->fields).lightObject;
+    if (pMVar3 != (MVPointLightObject *)0x0) {
+      pLVar4 = (pMVar3->fields).pointLight;
+      (this->fields).lightComponent = pLVar4;
+      func_?(&(this->fields).lightComponent,pLVar4);
+      pLVar4 = (this->fields).lightComponent;
+      if (pLVar4 != (Light *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                  ((Behaviour *)pLVar4,0,(MethodInfo *)0x0);
+        this_00 = (this->fields)._._.gameObject;
+        if (this_00 != (GameObject *)0x0) {
+          this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (this_00,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__UnityEngine__Vector3);
+            cRam_? = '\x01';
+          }
+          if (this_01 != (Transform *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
+                      (this_01,TypeInfo__UnityEngine__Vector3->static_fields->oneVector,
+                       (MethodInfo *)0x0);
+            return;
           }
         }
       }
-      goto code_?;
     }
-    bVar7 = (TypeInfo__MVPointLightObject->_1).naturalAligment;
-    if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment < bVar7) ||
-       ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[bVar7 - 1] !=
-        (Il2CppClass *)TypeInfo__MVPointLightObject)) goto code_?;
-    (this->fields).lightObject = pMVar2;
-    bVar7 = (TypeInfo__MVPointLightObject->_1).naturalAligment;
-    if ((bVar7 <= (((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment) &&
-       ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[bVar7 - 1] ==
-        (Il2CppClass *)TypeInfo__MVPointLightObject)) goto code_?;
   }
-  func_?(pMVar2);
-  pMVar2 = extraout_EDX_00;
+  func_?();
+  pMVar3 = extraout_EDX;
 code_?:
-  func_?(pMVar2);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?(pMVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

@@ -24,41 +24,39 @@ void Assembly-CSharp.dll::DynamicCullingHandler::DynamicCullingHandler_ActivateC
     cRam_? = '\x01';
   }
   (value->fields).overrideDistanceBandIndex = -1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
-  ppGVar2 = &(value->fields).root;
   (value->fields).cullingBandIndex = 3;
-  *ppGVar2 = cullingObject;
-  func_?(ppGVar2,cullingObject);
+  (value->fields).root = cullingObject;
+  func_?(&(value->fields).root,cullingObject);
   if (cullingObject != (GameObject *)0x0) {
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                        (cullingObject,(MethodInfo *)0x0);
-    ppTVar4 = &(value->fields).rootTransform;
-    *ppTVar4 = pTVar3;
-    func_?(ppTVar4);
-    ppGVar5 = &(value->fields).children;
-    *ppGVar5 = (GameObject__Array *)0x0;
-    func_?(ppGVar5,0);
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                       (cullingObject,(MethodInfo *)0x0);
+    (value->fields).rootTransform = pTVar2;
+    func_?(&(value->fields).rootTransform);
+    (value->fields).children = (GameObject__Array *)0x0;
+    func_?(&(value->fields).children,0);
     if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CullingApiWrapper);
     }
     CullingApiWrapper::CullingApiWrapper_Subscribe((ICullingSubscriber *)value,(MethodInfo *)0x0);
-    uVar6 = (value->fields)._CullingIndex_k__BackingField;
-    pBVar7 = TypeInfo__CullingApiWrapper->static_fields->spheres;
-    if ((pBVar7 != (BoundingSphere__Array *)0x0) && (*ppTVar4 != (Transform *)0x0)) {
-      pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffffec,*ppTVar4,(MethodInfo *)0x0);
-      fVar9 = pVVar8->y;
-      fVar10 = pVVar8->z;
-      if (pBVar7->max_length <= uVar6) goto code_?;
-      pBVar7->vector[uVar6].position.x = pVVar8->x;
-      pBVar7->vector[uVar6].position.y = fVar9;
-      pBVar7->vector[uVar6].position.z = fVar10;
-      pBVar7 = TypeInfo__CullingApiWrapper->static_fields->spheres;
-      if (pBVar7 != (BoundingSphere__Array *)0x0) {
-        uVar6 = (value->fields)._CullingIndex_k__BackingField;
-        if (uVar6 < pBVar7->max_length) {
-          pBVar7->vector[uVar6].radius = fVar1;
+    pBVar3 = TypeInfo__CullingApiWrapper->static_fields->spheres;
+    uVar4 = (value->fields)._CullingIndex_k__BackingField;
+    if ((pBVar3 != (BoundingSphere__Array *)0x0) &&
+       (pTVar2 = (value->fields).rootTransform, pTVar2 != (Transform *)0x0)) {
+      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                         ((Vector3 *)&stack0xffffffec,pTVar2,(MethodInfo *)0x0);
+      fVar6 = pVVar5->y;
+      fVar7 = pVVar5->z;
+      if (pBVar3->max_length <= uVar4) goto code_?;
+      pBVar3->vector[uVar4].position.x = pVVar5->x;
+      pBVar3->vector[uVar4].position.y = fVar6;
+      pBVar3->vector[uVar4].position.z = fVar7;
+      pBVar3 = TypeInfo__CullingApiWrapper->static_fields->spheres;
+      if (pBVar3 != (BoundingSphere__Array *)0x0) {
+        uVar4 = (value->fields)._CullingIndex_k__BackingField;
+        if (uVar4 < pBVar3->max_length) {
+          pBVar3->vector[uVar4].radius = fVar1;
           if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
@@ -76,8 +74,8 @@ void Assembly-CSharp.dll::DynamicCullingHandler::DynamicCullingHandler_ActivateC
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -88,9 +86,8 @@ void Assembly-CSharp.dll::DynamicCullingHandler::DynamicCullingHandler_DeActivat
                (DynamicCullingHandler *this,MethodInfo *method)
 
 {
-  pDVar1 = &this->fields;
-  unSubscriber = pDVar1->cullingSubscriberDynamic;
-  if (unSubscriber != (CullingSubscriberDynamic *)0x0) {
+  if ((this->fields).cullingSubscriberDynamic != (CullingSubscriberDynamic *)0x0) {
+    unSubscriber = (this->fields).cullingSubscriberDynamic;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__CullingApiWrapper);
       func_?(&TypeInfo__UpdateController);
@@ -106,8 +103,8 @@ void Assembly-CSharp.dll::DynamicCullingHandler::DynamicCullingHandler_DeActivat
     }
     UpdateController::UpdateController_RemoveUpdateObject
               ((IUpdatecontrollerSubscriberUpdate *)unSubscriber,(MethodInfo *)0x0);
-    pDVar1->cullingSubscriberDynamic = (CullingSubscriberDynamic *)0x0;
-    func_?(pDVar1,0);
+    (this->fields).cullingSubscriberDynamic = (CullingSubscriberDynamic *)0x0;
+    func_?(&this->fields,0);
   }
   return;
 }
@@ -159,7 +156,7 @@ void Assembly-CSharp.dll::DynamicCullingHandler::DynamicCullingHandler__ctor
 
 {
   (this->fields).cullingRadius = 2.0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).cullingRadius = cullingRadius;
   return;

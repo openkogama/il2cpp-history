@@ -98,12 +98,18 @@ void Assembly-CSharp.dll::TimeoutMap::TimeoutMap_Update(TimeoutMap *this,MethodI
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  auStack_7._0_4_ = (Dictionary_2_System_Int32Enum_System_Single_ *)0x0;
-  auStack_7._4_4_ = 0;
-  auStack_7._8_4_ = 0;
-  auStack_7._12_4_ = 0;
+  DStack_7._dictionary = (Dictionary_2_System_Int32Enum_System_Single_ *)0x0;
+  DStack_7._version = 0;
+  DStack_7._index = 0;
+  DStack_7._current.key = 0;
+  DStack_7._current.value = 0.0;
+  DStack_7._getEnumeratorRetType = 0;
   this_00 = (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
             (this->fields).removeSet;
+  auStack_8._0_4_ = (Dictionary_2_System_Int32Enum_System_Single_ *)0x0;
+  auStack_8._4_4_ = 0;
+  auStack_8._8_4_ = 0;
+  auStack_8._12_4_ = 0;
   if (this_00 != (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
     System.Core.dll::System::Collections::Generic::HashSet`1[Unity::IL2CPP::Metadata::
     __Il2CppFullySharedGenericType]::
@@ -111,32 +117,32 @@ void Assembly-CSharp.dll::TimeoutMap::TimeoutMap_Update(TimeoutMap *this,MethodI
               (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
     method_00 = (MethodInfo *)(this->fields).weaponTimeOutMap;
     if (method_00 != (MethodInfo *)0x0) {
-      pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+      pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                          ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                          (auStack_7 + 0x10),(Dictionary_2_System_UInt32_System_Object_ *)method_00
+                          (auStack_8 + 0x10),(Dictionary_2_System_UInt32_System_Object_ *)method_00
                           ,
                           MethodInfo__System__Collections__Generic__Dictionary<int,_float>__GetEnumerator__
                          );
-      uStack_9 = 0;
-      DStack_10._dictionary = (Dictionary_2_System_Int32Enum_System_Single_ *)pDVar8->_dictionary;
-      DStack_10._version = pDVar8->_version;
-      DStack_10._index = pDVar8->_index;
-      DStack_10._current.key = (pDVar8->_current).key;
-      DStack_10._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
+      uStack_10 = 0;
+      DStack_7._dictionary = (Dictionary_2_System_Int32Enum_System_Single_ *)pDVar9->_dictionary;
+      DStack_7._version = pDVar9->_version;
+      DStack_7._index = pDVar9->_index;
+      DStack_7._current.key = (pDVar9->_current).key;
+      DStack_7._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
       uStack_1 = 1;
-      pDStack_11 = &DStack_10;
+      pDStack_11 = &DStack_7;
       while( true ) {
         bVar12 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Single]::
                 Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Single__MoveNext
-                          (&DStack_10,
+                          (&DStack_7,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_float>__MoveNext__
                           );
         if (bVar12 == 0) break;
         fStack_13 = (this->fields).timeOut;
-        uStack_14 = DStack_10._current.key;
-        HStack_15._current = (uint32_t)DStack_10._current.value;
+        uStack_14 = DStack_7._current.key;
+        HStack_15._current = (uint32_t)DStack_7._current.value;
         fStack_16 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
                               ((MethodInfo *)0x0);
         if ((float)HStack_15._current + fStack_13 <= fStack_16) {
@@ -151,8 +157,8 @@ void Assembly-CSharp.dll::TimeoutMap::TimeoutMap_Update(TimeoutMap *this,MethodI
         }
       }
       uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                ((Object *)&DStack_10,
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                ((Object *)&DStack_7,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_float>__Dispose__
                  ,(MethodInfo *)in_stack_6);
@@ -164,24 +170,24 @@ void Assembly-CSharp.dll::TimeoutMap::TimeoutMap_Update(TimeoutMap *this,MethodI
                            (&HStack_15,this_02,
                             MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__)
         ;
-        uStack_9 = 0;
-        auStack_7._0_4_ = pHVar17->_set;
-        auStack_7._4_4_ = pHVar17->_index;
-        auStack_7._8_4_ = pHVar17->_version;
-        auStack_7._12_4_ = pHVar17->_current;
+        uStack_10 = 0;
+        auStack_8._0_4_ = pHVar17->_set;
+        auStack_8._4_4_ = pHVar17->_index;
+        auStack_8._8_4_ = pHVar17->_version;
+        auStack_8._12_4_ = pHVar17->_current;
         uStack_1 = 4;
         pDStack_11 = (Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Single_ *)
-                     auStack_7;
+                     auStack_8;
         while( true ) {
           bVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
                   UInt32]::HashSet_1_T_Enumerator_System_UInt32__MoveNext
-                            ((HashSet_1_T_Enumerator_System_UInt32_ *)auStack_7,
+                            ((HashSet_1_T_Enumerator_System_UInt32_ *)auStack_8,
                              MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
                             );
           if (bVar12 == 0) {
             uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                      ((Object *)auStack_7,
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                      ((Object *)auStack_8,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
                        ,method_00);
@@ -192,7 +198,7 @@ void Assembly-CSharp.dll::TimeoutMap::TimeoutMap_Update(TimeoutMap *this,MethodI
           if (this_03 == (Dictionary_2_System_Int32_System_Single_ *)0x0) break;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
           Dictionary_2_System_Int32_System_Single__Remove
-                    (this_03,auStack_7._12_4_,
+                    (this_03,auStack_8._12_4_,
                      MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Remove_int_);
         }
       }
@@ -228,18 +234,17 @@ void Assembly-CSharp.dll::TimeoutMap::TimeoutMap__ctor
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
             (this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Dictionary__)
   ;
-  ppDVar1 = &(this->fields).weaponTimeOutMap;
-  *ppDVar1 = (Dictionary_2_System_Int32_System_Single_ *)this_00;
-  func_?(ppDVar1,this_00);
+  (this->fields).weaponTimeOutMap = (Dictionary_2_System_Int32_System_Single_ *)this_00;
+  func_?(&(this->fields).weaponTimeOutMap,this_00);
   this_01 = (HashSet_1_System_Int32_ *)
             func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
   System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
   HashSet_1_System_Int32___ctor
             (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
   method_00 = (MethodInfo *)&(this->fields).removeSet;
-  *(HashSet_1_System_Int32_ **)method_00 = this_01;
+  (this->fields).removeSet = this_01;
   func_?(method_00,this_01);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).timeOut = timeOut;
   return;

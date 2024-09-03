@@ -40,7 +40,7 @@ void Assembly-CSharp.dll::FirstTimeSystemPopupMovementHeight+<>c::
   }
   method_00 = TypeInfo__FirstTimeSystemPopupMovementHeight____c;
   value = (FirstTimeSystemPopupMovementHeight_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__FirstTimeSystemPopupMovementHeight____c->static_fields->__9 = value;
   func_?(TypeInfo__FirstTimeSystemPopupMovementHeight____c->static_fields,value);

@@ -117,7 +117,7 @@ void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::
       if (pIVar5->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
         ppMVar7 = &(&(x->klass->vtable).CreateErrorNotificationPopup)
-                   [pIVar5->interfaceOffsets[uVar4].offset].method;
+                   [x->klass->interfaceOffsets[uVar4].offset].method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;
@@ -143,7 +143,7 @@ void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::DesktopCubeModeling
   }
   method_00 = TypeInfo__DesktopCubeModelingController____c;
   value = (DesktopCubeModelingController_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__DesktopCubeModelingController____c->static_fields->__9 = value;
   func_?(TypeInfo__DesktopCubeModelingController____c->static_fields,value);

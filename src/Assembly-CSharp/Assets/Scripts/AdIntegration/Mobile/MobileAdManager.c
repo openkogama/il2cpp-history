@@ -52,11 +52,9 @@ MobileAdManager_CreateAdRequest(MethodInfo *method)
       func_?();
       pMVar1 = TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->static_fields->
                consentAndCompliance;
-      if (pMVar1 != (MobileAdManager_ConsentAndCompliance *)0x0) {
-        bVar2 = MobileAdManager+ConsentAndCompliance::
-                MobileAdManager_ConsentAndCompliance_get_DoTagForChildDirectedTreatment
-                          (pMVar1,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
+      if ((pMVar1 != (MobileAdManager_ConsentAndCompliance *)0x0) &&
+         (pCVar2 = (pMVar1->fields).consentData, pCVar2 != (ConsentData *)0x0)) {
+        if (((pCVar2->fields).isChild != 0) && ((pCVar2->fields).isAmerican != 0)) {
           NVar3.hasValue = 0;
           NVar3._1_3_ = 0;
           NVar3.value = 0;
@@ -70,37 +68,35 @@ MobileAdManager_CreateAdRequest(MethodInfo *method)
         }
         pMVar1 = TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->static_fields->
                  consentAndCompliance;
-        if (pMVar1 != (MobileAdManager_ConsentAndCompliance *)0x0) {
-          bVar2 = MobileAdManager+ConsentAndCompliance::
-                  MobileAdManager_ConsentAndCompliance_get_TagForUnderAgeOfConsent
-                            (pMVar1,(MethodInfo *)0x0);
-          if (bVar2 != 0) {
-            uVar4 = 0;
-            puVar5 = &UNK_?;
+        if ((pMVar1 != (MobileAdManager_ConsentAndCompliance *)0x0) &&
+           (pCVar2 = (pMVar1->fields).consentData, pCVar2 != (ConsentData *)0x0)) {
+          if (((pCVar2->fields).isChild != 0) && ((pCVar2->fields).isEuropean != 0)) {
+            NVar4.hasValue = 0;
+            NVar4._1_3_ = 0;
+            NVar4.value = 0;
             mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
-                      ((Nullable_1_UInt32_ *)0x0,1,
-                       MethodInfo__System__Nullable<GoogleMobileAds::Api::TagForUnderAgeOfConsent>__Nullable_GoogleMobileAds__Api__TagForUnderAgeOfConsent_
-                      );
-            *(undefined **)&(this_00->fields).TagForUnderAgeOfConsent = puVar5;
-            (this_00->fields).TagForUnderAgeOfConsent.value = uVar4;
+                      ((Nullable_1_UInt32_ *)&stack0xfffffff4,0,(MethodInfo *)0x0);
+            (this_00->fields).TagForUnderAgeOfConsent.hasValue = (bool)NVar4._0_4_;
+            *(int3 *)&(this_00->fields).TagForUnderAgeOfConsent.field_0x1 = SUB43(NVar4._0_4_,1);
+            (this_00->fields).TagForUnderAgeOfConsent.value = NVar4.value;
           }
           if ((TypeInfo__GoogleMobileAds__Api__MobileAds->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           GoogleMobileAds.dll::GoogleMobileAds::Api::MobileAds::MobileAds_SetRequestConfiguration
                     (this_00,(MethodInfo *)0x0);
-          pAVar6 = (AdRequest *)func_?();
+          pAVar5 = (AdRequest *)func_?();
           GoogleMobileAds.Core.dll::GoogleMobileAds::Api::AdRequest::AdRequest__ctor
-                    (pAVar6,(MethodInfo *)0x0);
-          return pAVar6;
+                    (pAVar5,(MethodInfo *)0x0);
+          return pAVar5;
         }
       }
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  pAVar6 = (AdRequest *)(*pcVar7)();
-  return pAVar6;
+  pcVar6 = (code *)swi(3);
+  pAVar5 = (AdRequest *)(*pcVar6)();
+  return pAVar5;
 }
 
 
@@ -126,21 +122,68 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
   }
   UpdateController::UpdateController_RemoveUpdateObject
             ((IUpdatecontrollerSubscriberUpdate *)this,(MethodInfo *)0x0);
-  ppMVar1 = &(this->fields).rewardedAdResultHandler;
-  *ppMVar1 = (MobileAdManager_RewardedAdResultHandler *)0x0;
-  func_?(ppMVar1,0);
-  ppMVar2 = &(this->fields).interstitialAdResultHandler;
-  *ppMVar2 = (MobileAdManager_InterstitialAdResultHandler *)0x0;
-  func_?(ppMVar2,0);
-  this_00 = (this->fields).internalAdManagerState;
-  ppMVar3 = &(this->fields).internalAdManagerState;
-  if (this_00 != (MobileAdManager_InternalAdManagerState *)0x0) {
-    MobileAdManager+InternalAdManagerState::MobileAdManager_InternalAdManagerState_Destroy
-              (this_00,(MethodInfo *)0x0);
-    *ppMVar3 = (MobileAdManager_InternalAdManagerState *)0x0;
-    func_?(ppMVar3);
+  (this->fields).rewardedAdResultHandler = (MobileAdManager_RewardedAdResultHandler *)0x0;
+  func_?(&(this->fields).rewardedAdResultHandler,0);
+  (this->fields).interstitialAdResultHandler = (MobileAdManager_InterstitialAdResultHandler *)0x0;
+  func_?(&(this->fields).interstitialAdResultHandler,0);
+  if ((this->fields).internalAdManagerState == (MobileAdManager_InternalAdManagerState *)0x0) {
+code_?:
+    (this->fields).isInitialized = 0;
+    return;
   }
-  (this->fields).isInitialized = 0;
+  pMVar1 = (this->fields).internalAdManagerState;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_InternalAdManagerState_Destroy);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Debug);
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+            ((Object *)StringLiteral_InternalAdManagerState_Destroy,(MethodInfo *)0x0);
+  this_00 = (pMVar1->fields).internalStateRewardedAds;
+  if (this_00 != (MobileAdManager_InternalStateRewardedAd *)0x0) {
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+              ((Object *)StringLiteral_InternalStateRewardedAd_Destroy,(MethodInfo *)0x0);
+    (this_00->fields).rewardedAdCallback =
+         (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0;
+    func_?();
+    MobileAdManager+InternalStateRewardedAd::
+    MobileAdManager_InternalStateRewardedAd_DestroyRewardedAd(this_00,(MethodInfo *)0x0);
+    this_01 = (pMVar1->fields).internalStateInterstitial;
+    if (this_01 != (MobileAdManager_InternalStateInterstitial *)0x0) {
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)StringLiteral_InternalStateInterstitial_Destro,(MethodInfo *)0x0);
+      MobileAdManager+InternalStateInterstitial::
+      MobileAdManager_InternalStateInterstitial_DestroyInterstitial(this_01,(MethodInfo *)0x0);
+      (this_01->fields).interstitialAdCallback =
+           (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0;
+      func_?();
+      (this->fields).internalAdManagerState = (MobileAdManager_InternalAdManagerState *)0x0;
+      func_?(&(this->fields).internalAdManagerState,0);
+      goto code_?;
+    }
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -208,7 +251,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
                           );
         if (bVar6 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     ((Object *)&stack0xffffffb8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_GoogleMobileAds::Api::AdapterStatus>__Dispose__
@@ -302,25 +345,25 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
             ((Object *)StringLiteral_MobileAdManager_Initialize,(MethodInfo *)0x0);
   pSVar1 = ::StringLiteral__;
   if ((this->fields).isInitialized == 0) {
-    pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_AdConsent__,::StringLiteral__,(MethodInfo *)0x0);
+    message = mscorlib.dll::System::String::String_Concat_3
+                        (StringLiteral_AdConsent__,::StringLiteral__,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
-    dictionary = (SortedList_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                  *)0x0;
-    bVar3 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar1,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)message,(MethodInfo *)0x0)
+    ;
+    consentData = (ConsentData *)0x0;
+    bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar1,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      dictionary = (SortedList_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                    *)Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::
-                      JsonConvert_DeserializeObject_2
-                                (pSVar1,
-                                 Assets__Scripts__AdIntegration__ConsentData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<Assets::Scripts::AdIntegration::ConsentData>_System__String_
-                                );
+      consentData = (ConsentData *)
+                    Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::
+                    JsonConvert_DeserializeObject_2
+                              (pSVar1,
+                               Assets__Scripts__AdIntegration__ConsentData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<Assets::Scripts::AdIntegration::ConsentData>_System__String_
+                              );
     }
     else {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -329,86 +372,99 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_consent_data_string_is_null_or_e,(MethodInfo *)0x0);
     }
+    MobileAdManager_SetupConsentAndCompliance(this,consentData,(MethodInfo *)0x0);
+    pMVar3 = (MobileAdManager_InternalAdManagerState *)func_?();
     if (cRam_? == '\0') {
-      func_?();
       func_?();
       func_?();
       func_?();
       func_?();
       cRam_? = '\x01';
     }
-    if (dictionary ==
-        (SortedList_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-         *)0x0) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)StringLiteral_Consent_data_not_set__Using_defa,(MethodInfo *)0x0);
-      pMVar4 = (MobileAdManager_ConsentAndCompliance *)func_?();
-      MobileAdManager+ConsentAndCompliance::MobileAdManager_ConsentAndCompliance__ctor
-                (pMVar4,(MethodInfo *)0x0);
-      TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->static_fields->
-      consentAndCompliance = pMVar4;
-    }
-    else {
-      this_00 = (SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 *)func_?();
-      System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::IL2CPP::
-      Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType]::
-      SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                (this_00,dictionary,(MethodInfo *)0x0);
-      TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->static_fields->
-      consentAndCompliance = (MobileAdManager_ConsentAndCompliance *)this_00;
-    }
-    func_?();
-    pSVar1 = StringLiteral_consentAndCompliance__;
-    pMVar4 = TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->static_fields->
-             consentAndCompliance;
-    if (pMVar4 == (MobileAdManager_ConsentAndCompliance *)0x0) {
-      pSVar2 = (String *)0x0;
-    }
-    else {
-      pSVar2 = (String *)(*(code *)(pMVar4->klass->vtable).ToString.method)();
-    }
-    pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,pSVar2,(MethodInfo *)0x0);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)pMVar3,ExceptionArgument__Enum_obj,in_stack_4);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
-    MobileAdManager_SetConsent
-              (this,TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->static_fields
-                    ->consentAndCompliance,(MethodInfo *)0x0);
-    this_01 = (MobileAdManager_InternalAdManagerState *)func_?();
-    MobileAdManager+InternalAdManagerState::MobileAdManager_InternalAdManagerState__ctor
-              (this_01,(MethodInfo *)0x0);
-    ppMVar5 = &(this->fields).internalAdManagerState;
-    *ppMVar5 = this_01;
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+              ((Object *)StringLiteral_InternalAdManagerState_construct,(MethodInfo *)0x0);
+    pMVar5 = (MobileAdManager_InternalStateRewardedAd *)func_?();
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    uVar6 = *(undefined4 *)
+             ((int)&(TypeInfo__System__DateTime->static_fields->MinValue)._dateData + 4);
+    *(int *)&(pMVar5->fields).prevInterstitialTime._dateData =
+         (int)(TypeInfo__System__DateTime->static_fields->MinValue)._dateData;
+    *(undefined4 *)((int)&(pMVar5->fields).prevInterstitialTime._dateData + 4) = uVar6;
+    pMVar7 = TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__AdLoadState;
+    pMVar8 = (MobileAdManager_AdLoadState *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)pMVar8,ExceptionArgument__Enum_obj,(MethodInfo *)pMVar7);
+    (pMVar5->fields).adLoadState = pMVar8;
+    func_?();
+    (pMVar5->fields).rewardAdResult = 4;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)pMVar5,ExceptionArgument__Enum_obj,
+               (MethodInfo *)&(pMVar5->fields).adLoadState);
+    (pMVar3->fields).internalStateRewardedAds = pMVar5;
+    func_?();
+    pMVar9 = (MobileAdManager_InternalStateInterstitial *)func_?();
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    uVar6 = *(undefined4 *)
+             ((int)&(TypeInfo__System__DateTime->static_fields->MinValue)._dateData + 4);
+    *(int *)&(pMVar9->fields).prevInterstitialTime._dateData =
+         (int)(TypeInfo__System__DateTime->static_fields->MinValue)._dateData;
+    *(undefined4 *)((int)&(pMVar9->fields).prevInterstitialTime._dateData + 4) = uVar6;
+    pMVar7 = TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__AdLoadState;
+    pMVar8 = (MobileAdManager_AdLoadState *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)pMVar8,ExceptionArgument__Enum_obj,(MethodInfo *)pMVar7);
+    (pMVar9->fields).adLoadState = pMVar8;
+    func_?();
+    (pMVar9->fields).interstitialAdResult = 3;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)pMVar9,ExceptionArgument__Enum_obj,
+               (MethodInfo *)&(pMVar9->fields).adLoadState);
+    (pMVar3->fields).internalStateInterstitial = pMVar9;
+    func_?();
+    (this->fields).internalAdManagerState = pMVar3;
     func_?();
     if ((TypeInfo__GoogleMobileAds__Api__MobileAds->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     GoogleMobileAds.dll::GoogleMobileAds::Api::MobileAds::MobileAds_SetiOSAppPauseOnBackground
               (1,(MethodInfo *)0x0);
-    this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (this_02,(Object *)this,
+    this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+              (this_00,(Object *)this,
                MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InitCompleteAction_GoogleMobileAds__Api__InitializationStatus_
                ,(MethodInfo *)0x0);
     GoogleMobileAds.dll::GoogleMobileAds::Api::MobileAds::MobileAds_Initialize
-              ((Action_1_GoogleMobileAds_Api_InitializationStatus_ *)this_02,(MethodInfo *)0x0);
+              ((Action_1_GoogleMobileAds_Api_InitializationStatus_ *)this_00,(MethodInfo *)0x0);
     if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UpdateController::UpdateController_AddUpdateObject
               ((IUpdatecontrollerSubscriberUpdate *)this,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,
                1,(MethodInfo *)0x0);
+    pMVar3 = (this->fields).internalAdManagerState;
     (this->fields).isInitialized = 1;
-    if (*ppMVar5 != (MobileAdManager_InternalAdManagerState *)0x0) {
+    if (pMVar3 != (MobileAdManager_InternalAdManagerState *)0x0) {
       if (cRam_? == '\0') {
         func_?();
         func_?();
@@ -419,42 +475,35 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)StringLiteral_InternalAdManagerState_Initializ,(MethodInfo *)0x0);
-      if (*(MobileAdManager_InternalStateRewardedAd **)(in_stack_6 + 0xc) !=
-          (MobileAdManager_InternalStateRewardedAd *)0x0) {
+      pMVar5 = (pMVar3->fields).internalStateRewardedAds;
+      if (pMVar5 != (MobileAdManager_InternalStateRewardedAd *)0x0) {
         MobileAdManager+InternalStateRewardedAd::
-        MobileAdManager_InternalStateRewardedAd_CreateAndLoadRewardedAd
-                  (*(MobileAdManager_InternalStateRewardedAd **)(in_stack_6 + 0xc),
-                   (MethodInfo *)0x0);
-        if (*(MobileAdManager_InternalStateInterstitial **)(in_stack_6 + 0x10) !=
-            (MobileAdManager_InternalStateInterstitial *)0x0) {
+        MobileAdManager_InternalStateRewardedAd_CreateAndLoadRewardedAd(pMVar5,(MethodInfo *)0x0);
+        pMVar9 = (pMVar3->fields).internalStateInterstitial;
+        if (pMVar9 != (MobileAdManager_InternalStateInterstitial *)0x0) {
           MobileAdManager+InternalStateInterstitial::
           MobileAdManager_InternalStateInterstitial_CreateAndLoadInterstitialAd
-                    (*(MobileAdManager_InternalStateInterstitial **)(in_stack_6 + 0x10),
-                     (MethodInfo *)0x0);
-          *(undefined1 *)(in_stack_6 + 8) = 1;
+                    (pMVar9,(MethodInfo *)0x0);
+          (pMVar3->fields).isReady = 1;
           return;
         }
       }
-      func_?();
-      pcVar7 = (code *)swi(3);
-      (*pcVar7)();
-      return;
     }
   }
   else {
-    uVar8 = func_?(&TypeInfo__System__Exception);
-    this_03 = (Exception *)func_?(uVar8);
+    uVar6 = func_?(&TypeInfo__System__Exception);
+    this_01 = (Exception *)func_?(uVar6);
     method_00 = (MethodInfo *)0x0;
     pSVar1 = (String *)func_?(&StringLiteral_AdManager_already_initialized);
-    mscorlib.dll::System::Exception::Exception__ctor_1(this_03,pSVar1,method_00);
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_01,pSVar1,method_00);
     func_?(&
                     MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__Initialize__
                    );
-    func_?(this_03);
+    func_?();
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -496,18 +545,30 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
     func_?(&StringLiteral_MobileAdManager_InterstitialCall);
     cRam_? = '\x01';
   }
-  pIStack_1 = TypeInfo__Assets__Scripts__AdIntegration__InterstitialAdResult;
-  pSVar2 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pIStack_1,(MethodInfo *)0x0);
-  pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_MobileAdManager_InterstitialCall,pSVar2,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_MobileAdManager_InterstitialCall,pSVar1,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
-  this_00 = (this->fields).interstitialAdResultHandler;
-  if (this_00 != (MobileAdManager_InterstitialAdResultHandler *)0x0) {
-    MobileAdManager+InterstitialAdResultHandler::
-    MobileAdManager_InterstitialAdResultHandler_SetResult(this_00,obj,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  pMVar2 = (this->fields).interstitialAdResultHandler;
+  if (pMVar2 != (MobileAdManager_InterstitialAdResultHandler *)0x0) {
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      func_?();
+      cRam_? = '\x01';
+    }
+    pSVar1 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)obj,(MethodInfo *)0x0);
+    pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                       (StringLiteral_MobileAdManager_InterstitialAdRe,pSVar1,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
+    (pMVar2->fields).interstitialAdResult = obj;
+    (pMVar2->fields).IsDone = 1;
     return;
   }
   func_?();
@@ -559,6 +620,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
         func_?(&StringLiteral_Ad_InterstitialRequest);
         cRam_? = '\x01';
       }
+      method_00 = (MethodInfo *)0xffffffff;
       pSVar2 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0)
       ;
       pSVar2 = mscorlib.dll::System::String::String_Concat_3
@@ -585,17 +647,30 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
           if (pIVar4 != (IAdUIManager *)0x0) {
             func_?(1,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar4);
             pIVar4 = (this->fields).adUIManager;
-            this_01 = (MobileAdManager_InterstitialAdResultHandler *)
-                      func_?(
-                                     TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InterstitialAdResultHandler
-                                     );
-            MobileAdManager+InterstitialAdResultHandler::
-            MobileAdManager_InterstitialAdResultHandler__ctor
-                      (this_01,(Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)
-                               &UNK_?,pIVar4,(AdContext__Enum)pMVar3,(MethodInfo *)0x0);
-            ppMVar6 = &(this->fields).interstitialAdResultHandler;
-            *ppMVar6 = this_01;
-            func_?(ppMVar6,this_01);
+            value = (MobileAdManager_InterstitialAdResultHandler *)
+                    func_?(
+                                   TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InterstitialAdResultHandler
+                                   );
+            if (cRam_? == '\0') {
+              func_?();
+              func_?(&StringLiteral_MobileAdManager_InterstitialAdRe);
+              cRam_? = '\x01';
+            }
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                      ((Object *)value,ExceptionArgument__Enum_obj,method_00);
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                      ((Object *)StringLiteral_MobileAdManager_InterstitialAdRe,(MethodInfo *)0x0);
+            (value->fields).context = (int32_t)pMVar3;
+            (value->fields).adUIManager = pIVar4;
+            func_?();
+            (value->fields).interstitialCallback =
+                 (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)&UNK_?;
+            func_?(&(value->fields).interstitialCallback);
+            (this->fields).interstitialAdResultHandler = value;
+            func_?(&(this->fields).interstitialAdResultHandler,value);
             this_00 = (this->fields).internalAdManagerState;
             pUVar5 = (UnityAction_1_System_Int32Enum_ *)
                      func_?(
@@ -638,8 +713,8 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -687,6 +762,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
         cRam_? = '\x01';
       }
       MobileAdManager_SendStat(StringLiteral_Ad_RewardRequest,(MethodInfo *)0x0);
+      method_00 = (MethodInfo *)0xffffffff;
       pSVar4 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0)
       ;
       pSVar4 = mscorlib.dll::System::String::String_Concat_3
@@ -712,16 +788,30 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
           if (pIVar6 != (IAdUIManager *)0x0) {
             func_?(2,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar6);
             pIVar6 = (this->fields).adUIManager;
-            this_01 = (MobileAdManager_RewardedAdResultHandler *)
-                      func_?(
-                                     TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__RewardedAdResultHandler
-                                     );
-            MobileAdManager+RewardedAdResultHandler::MobileAdManager_RewardedAdResultHandler__ctor
-                      (this_01,(Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)
-                               &UNK_?,pIVar6,0xADDR,(MethodInfo *)0x0);
-            ppMVar8 = &(this->fields).rewardedAdResultHandler;
-            *ppMVar8 = this_01;
-            func_?(ppMVar8,this_01);
+            value = (MobileAdManager_RewardedAdResultHandler *)
+                    func_?(
+                                   TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__RewardedAdResultHandler
+                                   );
+            if (cRam_? == '\0') {
+              func_?();
+              func_?(&StringLiteral_MobileAdManager_RewardedAdResult);
+              cRam_? = '\x01';
+            }
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                      ((Object *)value,ExceptionArgument__Enum_obj,method_00);
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                      ((Object *)StringLiteral_MobileAdManager_RewardedAdResult,(MethodInfo *)0x0);
+            (value->fields).context = (int32_t)&UNK_?;
+            (value->fields).adUIManager = pIVar6;
+            func_?();
+            (value->fields).rewardedAdCallback =
+                 (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)&UNK_?;
+            func_?(&(value->fields).rewardedAdCallback);
+            (this->fields).rewardedAdResultHandler = value;
+            func_?(&(this->fields).rewardedAdResultHandler,value);
             this_00 = (this->fields).internalAdManagerState;
             pUVar7 = (UnityAction_1_System_Int32Enum_ *)
                      func_?(
@@ -763,8 +853,8 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -782,31 +872,43 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
     func_?(&StringLiteral_MobileAdManager_RewardedAdCallba);
     cRam_? = '\x01';
   }
-  pRStack_1 = TypeInfo__Assets__Scripts__AdIntegration__RewardedAdResult;
-  pSVar2 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pRStack_1,(MethodInfo *)0x0);
-  pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_MobileAdManager_RewardedAdCallba,pSVar2,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_MobileAdManager_RewardedAdCallba,pSVar1,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
   if ((this->fields).timeoutAdAfterDelayAsUnlocked == 0) {
 code_?:
     if (obj != RewardedAdResult__Enum_RewardUnlocked) goto code_?;
   }
   else {
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    if (fVar3 - (this->fields).timeOfRewardedAdStart < (float)(this->fields).timeoutSuccessDelay)
+    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    if (fVar2 - (this->fields).timeOfRewardedAdStart < (float)(this->fields).timeoutSuccessDelay)
     goto code_?;
     obj = RewardedAdResult__Enum_RewardUnlocked;
   }
-  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  (this->fields).lastSeenRewardedAd = fVar3;
+  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  (this->fields).lastSeenRewardedAd = fVar2;
 code_?:
-  this_00 = (this->fields).rewardedAdResultHandler;
-  if (this_00 != (MobileAdManager_RewardedAdResultHandler *)0x0) {
-    MobileAdManager+RewardedAdResultHandler::MobileAdManager_RewardedAdResultHandler_SetResult
-              (this_00,obj,(MethodInfo *)0x0);
+  pMVar3 = (this->fields).rewardedAdResultHandler;
+  if (pMVar3 != (MobileAdManager_RewardedAdResultHandler *)0x0) {
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      func_?();
+      cRam_? = '\x01';
+    }
+    pSVar1 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
+    pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                       (StringLiteral_MobileAdManager_RewardedAdResult,pSVar1,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
+    (pMVar3->fields).rewardedAdResult = obj;
+    (pMVar3->fields).IsDone = 1;
     return;
   }
   func_?();
@@ -913,6 +1015,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
                (MobileAdManager *this,MobileAdManager_ConsentAndCompliance *cac,MethodInfo *method)
 
 {
+  pMVar1 = cac;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&StringLiteral_MobileAdManager_SetConsent);
@@ -923,104 +1026,158 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_MobileAdManager_SetConsent,(MethodInfo *)0x0);
-  if (cac != (MobileAdManager_ConsentAndCompliance *)0x0) {
-    bVar1 = MobileAdManager+ConsentAndCompliance::
-            MobileAdManager_ConsentAndCompliance_get_HasConsented(cac,(MethodInfo *)0x0);
+  if ((cac != (MobileAdManager_ConsentAndCompliance *)0x0) &&
+     (pCVar2 = (cac->fields).consentData, pCVar2 != (ConsentData *)0x0)) {
+    if ((pCVar2->fields).isEuropean == 0) {
+      bVar3 = (pCVar2->fields).isAmerican;
+      bVar4 = true;
+    }
+    else {
+      bVar4 = (pCVar2->fields).isChild == 0;
+      bVar3 = 1;
+    }
+    cac._0_1_ = ((pCVar2->fields).hasConsented & bVar4) != 0 || bVar3 == 0;
     if (cRam_? == '\0') {
-      func_?();
-      func_?();
+      func_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds);
+      func_?(&StringLiteral_gdpr_consent);
       cRam_? = '\x01';
     }
     if ((TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds->_1).
         cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds);
     }
     GoogleMobileAds::Mediation::UnityAds::Api::UnityAds::UnityAds_1_SetConsentMetaData
-              (StringLiteral_gdpr_consent,bVar1,(MethodInfo *)0x0);
-    bVar1 = MobileAdManager+ConsentAndCompliance::
-            MobileAdManager_ConsentAndCompliance_get_HasConsented(cac,(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__GoogleMobileAds__Mediation__IronSource__Api__IronSource->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    GoogleMobileAds::Mediation::IronSource::Api::IronSource::IronSource_1_SetConsent
-              (bVar1,(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    bVar1 = MobileAdManager+ConsentAndCompliance::
-            MobileAdManager_ConsentAndCompliance_get_HasConsented(cac,(MethodInfo *)0x0);
-    if ((TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    GoogleMobileAds::Mediation::AppLovin::Api::AppLovin::AppLovin_1_SetHasUserConsent
-              (bVar1,(MethodInfo *)0x0);
-    bVar1 = MobileAdManager+ConsentAndCompliance::
-            MobileAdManager_ConsentAndCompliance_get_IsGDPRConsentRequired(cac,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      bVar1 = MobileAdManager+ConsentAndCompliance::
-              MobileAdManager_ConsentAndCompliance_get_TagForUnderAgeOfConsent
-                        (cac,(MethodInfo *)0x0);
-      if ((TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?();
+              (StringLiteral_gdpr_consent,(bool)cac,(MethodInfo *)0x0);
+    pCVar2 = (pMVar1->fields).consentData;
+    if (pCVar2 != (ConsentData *)0x0) {
+      if ((pCVar2->fields).isEuropean == 0) {
+        bVar3 = (pCVar2->fields).isAmerican;
+        bVar4 = true;
       }
-      GoogleMobileAds::Mediation::AppLovin::Api::AppLovin::AppLovin_1_SetIsAgeRestrictedUser
-                (bVar1,(MethodInfo *)0x0);
-    }
-    if (cRam_? == '\0') {
-      func_?();
-      func_?();
-      cRam_? = '\x01';
-    }
-    bVar1 = MobileAdManager+ConsentAndCompliance::
-            MobileAdManager_ConsentAndCompliance_get_IsGDPRConsentRequired(cac,(MethodInfo *)0x0);
-    if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    GoogleMobileAds::Mediation::AdColony::Api::AdColonyAppOptions::
-    AdColonyAppOptions_1_SetPrivacyFrameworkRequired
-              (AdColonyPrivacyFramework__Enum_GDPR,bVar1,(MethodInfo *)0x0);
-    bVar1 = MobileAdManager+ConsentAndCompliance::
-            MobileAdManager_ConsentAndCompliance_get_HasConsented(cac,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?();
+      else {
+        bVar4 = (pCVar2->fields).isChild == 0;
+        bVar3 = 1;
       }
-      GoogleMobileAds::Mediation::AdColony::Api::AdColonyAppOptions::
-      AdColonyAppOptions_1_SetPrivacyConsentString
-                (AdColonyPrivacyFramework__Enum_GDPR,StringLiteral__1,(MethodInfo *)0x0);
-    }
-    if (cRam_? == '\0') {
-      func_?();
-      func_?();
-      cRam_? = '\x01';
-    }
-    bVar1 = MobileAdManager+ConsentAndCompliance::
-            MobileAdManager_ConsentAndCompliance_get_IsGDPRConsentRequired(cac,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      bVar1 = MobileAdManager+ConsentAndCompliance::
-              MobileAdManager_ConsentAndCompliance_get_HasConsented(cac,(MethodInfo *)0x0);
-      if ((TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?();
+      cac._0_1_ = ((pCVar2->fields).hasConsented & bVar4) != 0 || bVar3 == 0;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__GoogleMobileAds__Mediation__IronSource__Api__IronSource);
+        cRam_? = '\x01';
       }
-      GoogleMobileAds::Mediation::LiftoffMonetize::Api::LiftoffMonetize::
-      LiftoffMonetize_1_UpdateConsentStatus((uint)(bVar1 == 0),StringLiteral__1,(MethodInfo *)0x0);
+      if ((TypeInfo__GoogleMobileAds__Mediation__IronSource__Api__IronSource->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__GoogleMobileAds__Mediation__IronSource__Api__IronSource);
+      }
+      GoogleMobileAds::Mediation::IronSource::Api::IronSource::IronSource_1_SetConsent
+                ((bool)cac,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin);
+        cRam_? = '\x01';
+      }
+      pCVar2 = (pMVar1->fields).consentData;
+      if (pCVar2 != (ConsentData *)0x0) {
+        if ((pCVar2->fields).isEuropean == 0) {
+          bVar3 = (pCVar2->fields).isAmerican;
+          bVar4 = true;
+        }
+        else {
+          bVar4 = (pCVar2->fields).isChild == 0;
+          bVar3 = 1;
+        }
+        cac._0_1_ = ((pCVar2->fields).hasConsented & bVar4) != 0 || bVar3 == 0;
+        if ((TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin->_1).
+            cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin);
+        }
+        GoogleMobileAds::Mediation::AppLovin::Api::AppLovin::AppLovin_1_SetHasUserConsent
+                  ((bool)cac,(MethodInfo *)0x0);
+        pCVar2 = (pMVar1->fields).consentData;
+        if (pCVar2 != (ConsentData *)0x0) {
+          if ((pCVar2->fields).isEuropean != 0) {
+            if ((pCVar2->fields).isChild == 0) {
+              cac._0_1_ = 0;
+            }
+            else {
+              cac._0_1_ = (pCVar2->fields).isEuropean;
+            }
+            if ((TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin->_1).
+                cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin);
+            }
+            GoogleMobileAds::Mediation::AppLovin::Api::AppLovin::AppLovin_1_SetIsAgeRestrictedUser
+                      ((bool)cac,(MethodInfo *)0x0);
+          }
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions
+                           );
+            func_?(&StringLiteral__1);
+            cRam_? = '\x01';
+          }
+          pCVar2 = (pMVar1->fields).consentData;
+          if (pCVar2 != (ConsentData *)0x0) {
+            bVar3 = (pCVar2->fields).isEuropean;
+            if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
+                cctor_finished_or_no_cctor == 0) {
+              func_?(
+                             TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions
+                             );
+            }
+            GoogleMobileAds::Mediation::AdColony::Api::AdColonyAppOptions::
+            AdColonyAppOptions_1_SetPrivacyFrameworkRequired
+                      (AdColonyPrivacyFramework__Enum_GDPR,bVar3,(MethodInfo *)0x0);
+            pCVar2 = (pMVar1->fields).consentData;
+            if (pCVar2 != (ConsentData *)0x0) {
+              if ((pCVar2->fields).isEuropean == 0) {
+                bVar3 = (pCVar2->fields).isAmerican;
+                bVar4 = true;
+              }
+              else {
+                bVar4 = (pCVar2->fields).isChild == 0;
+                bVar3 = 1;
+              }
+              if ((((pCVar2->fields).hasConsented & bVar4) != 0) || (bVar3 == 0)) {
+                if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
+                    cctor_finished_or_no_cctor == 0) {
+                  func_?(
+                                 TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions
+                                 );
+                }
+                GoogleMobileAds::Mediation::AdColony::Api::AdColonyAppOptions::
+                AdColonyAppOptions_1_SetPrivacyConsentString
+                          (AdColonyPrivacyFramework__Enum_GDPR,StringLiteral__1,(MethodInfo *)0x0);
+              }
+              if (cRam_? == '\0') {
+                func_?(&
+                                TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize
+                               );
+                func_?(&StringLiteral__1);
+                cRam_? = '\x01';
+              }
+              pCVar2 = (pMVar1->fields).consentData;
+              if (pCVar2 != (ConsentData *)0x0) {
+                if ((pCVar2->fields).isEuropean != 0) {
+                  bVar3 = (pCVar2->fields).isChild;
+                  bVar5 = (pCVar2->fields).hasConsented;
+                  if ((TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize->
+                      _1).cctor_finished_or_no_cctor == 0) {
+                    func_?(
+                                   TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize
+                                   );
+                  }
+                  GoogleMobileAds::Mediation::LiftoffMonetize::Api::LiftoffMonetize::
+                  LiftoffMonetize_1_UpdateConsentStatus
+                            ((uint)((bVar5 & bVar3 == 0) == 0),StringLiteral__1,(MethodInfo *)0x0);
+                }
+                return;
+              }
+            }
+          }
+        }
+      }
     }
-    return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -1037,32 +1194,41 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
     func_?(&StringLiteral__1);
     cRam_? = '\x01';
   }
-  if (cac != (MobileAdManager_ConsentAndCompliance *)0x0) {
-    bVar1 = MobileAdManager+ConsentAndCompliance::
-            MobileAdManager_ConsentAndCompliance_get_IsGDPRConsentRequired(cac,(MethodInfo *)0x0);
+  if ((cac != (MobileAdManager_ConsentAndCompliance *)0x0) &&
+     (pCVar1 = (cac->fields).consentData, pCVar1 != (ConsentData *)0x0)) {
+    bVar2 = (pCVar1->fields).isEuropean;
     if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
         cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
     }
     GoogleMobileAds::Mediation::AdColony::Api::AdColonyAppOptions::
     AdColonyAppOptions_1_SetPrivacyFrameworkRequired
-              (AdColonyPrivacyFramework__Enum_GDPR,bVar1,(MethodInfo *)0x0);
-    bVar1 = MobileAdManager+ConsentAndCompliance::
-            MobileAdManager_ConsentAndCompliance_get_HasConsented(cac,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?();
+              (AdColonyPrivacyFramework__Enum_GDPR,bVar2,(MethodInfo *)0x0);
+    pCVar1 = (cac->fields).consentData;
+    if (pCVar1 != (ConsentData *)0x0) {
+      if ((pCVar1->fields).isEuropean == 0) {
+        bVar2 = (pCVar1->fields).isAmerican;
+        bVar3 = true;
       }
-      GoogleMobileAds::Mediation::AdColony::Api::AdColonyAppOptions::
-      AdColonyAppOptions_1_SetPrivacyConsentString
-                (AdColonyPrivacyFramework__Enum_GDPR,StringLiteral__1,(MethodInfo *)0x0);
+      else {
+        bVar3 = (pCVar1->fields).isChild == 0;
+        bVar2 = 1;
+      }
+      if ((((pCVar1->fields).hasConsented & bVar3) != 0) || (bVar2 == 0)) {
+        if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
+            cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        GoogleMobileAds::Mediation::AdColony::Api::AdColonyAppOptions::
+        AdColonyAppOptions_1_SetPrivacyConsentString
+                  (AdColonyPrivacyFramework__Enum_GDPR,StringLiteral__1,(MethodInfo *)0x0);
+      }
+      return;
     }
-    return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1074,37 +1240,50 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
                (MobileAdManager *this,MobileAdManager_ConsentAndCompliance *cac,MethodInfo *method)
 
 {
+  pMVar1 = cac;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin);
     cRam_? = '\x01';
   }
-  if (cac != (MobileAdManager_ConsentAndCompliance *)0x0) {
-    bVar1 = MobileAdManager+ConsentAndCompliance::
-            MobileAdManager_ConsentAndCompliance_get_HasConsented(cac,(MethodInfo *)0x0);
+  if ((cac != (MobileAdManager_ConsentAndCompliance *)0x0) &&
+     (pCVar2 = (cac->fields).consentData, pCVar2 != (ConsentData *)0x0)) {
+    if ((pCVar2->fields).isEuropean == 0) {
+      bVar3 = (pCVar2->fields).isAmerican;
+      bVar4 = true;
+    }
+    else {
+      bVar4 = (pCVar2->fields).isChild == 0;
+      bVar3 = 1;
+    }
+    cac._0_1_ = ((pCVar2->fields).hasConsented & bVar4) != 0 || bVar3 == 0;
     if ((TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin->_1).
         cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin);
     }
     GoogleMobileAds::Mediation::AppLovin::Api::AppLovin::AppLovin_1_SetHasUserConsent
-              (bVar1,(MethodInfo *)0x0);
-    bVar1 = MobileAdManager+ConsentAndCompliance::
-            MobileAdManager_ConsentAndCompliance_get_IsGDPRConsentRequired(cac,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      bVar1 = MobileAdManager+ConsentAndCompliance::
-              MobileAdManager_ConsentAndCompliance_get_TagForUnderAgeOfConsent
-                        (cac,(MethodInfo *)0x0);
-      if ((TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?();
+              ((bool)cac,(MethodInfo *)0x0);
+    pCVar2 = (pMVar1->fields).consentData;
+    if (pCVar2 != (ConsentData *)0x0) {
+      if ((pCVar2->fields).isEuropean != 0) {
+        if ((pCVar2->fields).isChild == 0) {
+          cac._0_1_ = 0;
+        }
+        else {
+          cac._0_1_ = (pCVar2->fields).isEuropean;
+        }
+        if ((TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin->_1).
+            cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__GoogleMobileAds__Mediation__AppLovin__Api__AppLovin);
+        }
+        GoogleMobileAds::Mediation::AppLovin::Api::AppLovin::AppLovin_1_SetIsAgeRestrictedUser
+                  ((bool)cac,(MethodInfo *)0x0);
       }
-      GoogleMobileAds::Mediation::AppLovin::Api::AppLovin::AppLovin_1_SetIsAgeRestrictedUser
-                (bVar1,(MethodInfo *)0x0);
+      return;
     }
-    return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -1163,24 +1342,25 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
     func_?(&StringLiteral__1);
     cRam_? = '\x01';
   }
-  if (cac != (MobileAdManager_ConsentAndCompliance *)0x0) {
-    bVar1 = MobileAdManager+ConsentAndCompliance::
-            MobileAdManager_ConsentAndCompliance_get_IsGDPRConsentRequired(cac,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      bVar1 = MobileAdManager+ConsentAndCompliance::
-              MobileAdManager_ConsentAndCompliance_get_HasConsented(cac,(MethodInfo *)0x0);
+  if ((cac != (MobileAdManager_ConsentAndCompliance *)0x0) &&
+     (pCVar1 = (cac->fields).consentData, pCVar1 != (ConsentData *)0x0)) {
+    if ((pCVar1->fields).isEuropean != 0) {
+      bVar2 = (pCVar1->fields).isChild;
+      bVar3 = (pCVar1->fields).hasConsented;
       if ((TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize->_1).
           cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize)
+        ;
       }
       GoogleMobileAds::Mediation::LiftoffMonetize::Api::LiftoffMonetize::
-      LiftoffMonetize_1_UpdateConsentStatus((uint)(bVar1 == 0),StringLiteral__1,(MethodInfo *)0x0);
+      LiftoffMonetize_1_UpdateConsentStatus
+                ((uint)((bVar3 & bVar2 == 0) == 0),StringLiteral__1,(MethodInfo *)0x0);
     }
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1212,44 +1392,51 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
              func_?(
                             TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__ConsentAndCompliance
                             );
-    MobileAdManager+ConsentAndCompliance::MobileAdManager_ConsentAndCompliance__ctor
-              (pMVar1,(MethodInfo *)0x0);
-    TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->static_fields->
-    consentAndCompliance = pMVar1;
-    pMVar2 = TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->static_fields;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__Assets__Scripts__AdIntegration__ConsentData);
+      cRam_? = '\x01';
+    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)pMVar1,ExceptionArgument__Enum_obj,unaff_EBP);
+    method_01 = TypeInfo__Assets__Scripts__AdIntegration__ConsentData;
+    value = (ConsentData *)func_?();
+    (value->fields).isAmerican = 1;
+    (value->fields).isEuropean = 1;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+    (pMVar1->fields).consentData = value;
+    func_?(&pMVar1->fields,value);
   }
   else {
-    this_00 = (SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?(
-                                TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__ConsentAndCompliance
-                                );
-    System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::IL2CPP::
-    Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType]::
-    SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (this_00,(SortedList_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                        *)consentData,(MethodInfo *)0x0);
-    TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->static_fields->
-    consentAndCompliance = (MobileAdManager_ConsentAndCompliance *)this_00;
-    pMVar2 = TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->static_fields;
+    method_00 = 
+    TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__ConsentAndCompliance;
+    pMVar1 = (MobileAdManager_ConsentAndCompliance *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)pMVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    (pMVar1->fields).consentData = consentData;
+    func_?(&pMVar1->fields,consentData);
   }
-  func_?(pMVar2);
-  pSVar3 = StringLiteral_consentAndCompliance__;
+  TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->static_fields->
+  consentAndCompliance = pMVar1;
+  func_?(TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->static_fields,
+                  pMVar1);
+  pSVar2 = StringLiteral_consentAndCompliance__;
   pMVar1 = TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->static_fields->
            consentAndCompliance;
   if (pMVar1 == (MobileAdManager_ConsentAndCompliance *)0x0) {
     str1 = (String *)0x0;
   }
   else {
-    str1 = (String *)(*(code *)(pMVar1->klass->vtable).ToString.method)(pMVar1);
+    str1 = (String *)
+           (*(code *)(pMVar1->klass->vtable).ToString.method)(pMVar1,pMVar1->klass[1]._0.image);
   }
-  pSVar3 = mscorlib.dll::System::String::String_Concat_3(pSVar3,str1,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,str1,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar3,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
   MobileAdManager_SetConsent
-            ((MobileAdManager *)&UNK_?,
+            ((MobileAdManager *)0x0,
              TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->static_fields->
              consentAndCompliance,(MethodInfo *)0x0);
   return;
@@ -1268,13 +1455,13 @@ String * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdMa
     func_?(&StringLiteral__0_u000A_1_);
     cRam_? = '\x01';
   }
-  arg1 = (this->fields).internalAdManagerState;
-  if (arg1 != (MobileAdManager_InternalAdManagerState *)0x0) {
+  if ((this->fields).internalAdManagerState != (MobileAdManager_InternalAdManagerState *)0x0) {
     pSVar1 = mscorlib.dll::System::String::String_Format_1
                        (StringLiteral__0_u000A_1_,
                         (Object *)
                         TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->
-                        static_fields->consentAndCompliance,(Object *)arg1,(MethodInfo *)0x0);
+                        static_fields->consentAndCompliance,
+                        (Object *)(this->fields).internalAdManagerState,(MethodInfo *)0x0);
     return pSVar1;
   }
   return StringLiteral_internalAdManagerState_not_initi;
@@ -1287,23 +1474,20 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
      MobileAdManager_UpdateControllerUpdate(MobileAdManager *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).rewardedAdResultHandler;
-  ppMVar1 = &(this->fields).rewardedAdResultHandler;
-  if ((this_00 != (MobileAdManager_RewardedAdResultHandler *)0x0) && ((this_00->fields).IsDone != 0)
-     ) {
+  if (((this->fields).rewardedAdResultHandler != (MobileAdManager_RewardedAdResultHandler *)0x0) &&
+     (this_00 = (this->fields).rewardedAdResultHandler, (this_00->fields).IsDone != 0)) {
     MobileAdManager+RewardedAdResultHandler::MobileAdManager_RewardedAdResultHandler_DoCallBack
               (this_00,(MethodInfo *)0x0);
-    *ppMVar1 = (MobileAdManager_RewardedAdResultHandler *)0x0;
-    func_?(ppMVar1,0);
+    (this->fields).rewardedAdResultHandler = (MobileAdManager_RewardedAdResultHandler *)0x0;
+    func_?(&(this->fields).rewardedAdResultHandler,0);
   }
-  this_01 = (this->fields).interstitialAdResultHandler;
-  ppMVar2 = &(this->fields).interstitialAdResultHandler;
-  if ((this_01 != (MobileAdManager_InterstitialAdResultHandler *)0x0) &&
-     ((this_01->fields).IsDone != 0)) {
+  if (((this->fields).interstitialAdResultHandler !=
+       (MobileAdManager_InterstitialAdResultHandler *)0x0) &&
+     (this_01 = (this->fields).interstitialAdResultHandler, (this_01->fields).IsDone != 0)) {
     MobileAdManager+InterstitialAdResultHandler::
     MobileAdManager_InterstitialAdResultHandler_DoCallBack(this_01,(MethodInfo *)0x0);
-    *ppMVar2 = (MobileAdManager_InterstitialAdResultHandler *)0x0;
-    func_?(ppMVar2,0);
+    (this->fields).interstitialAdResultHandler = (MobileAdManager_InterstitialAdResultHandler *)0x0;
+    func_?(&(this->fields).interstitialAdResultHandler,0);
   }
   return;
 }
@@ -1320,7 +1504,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
     cRam_? = '\x01';
   }
   (this->fields).timeoutSuccessDelay = 0x1e;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
   TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager->static_fields->testing =
        testing;
@@ -1348,22 +1532,33 @@ bool Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
      MobileAdManager_get_ReadyForInterstitialAdRequest(MobileAdManager *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).internalAdManagerState;
-  if (this_00 == (MobileAdManager_InternalAdManagerState *)0x0) {
-    func_?();
-    pcVar1 = (code *)swi(3);
-    bVar2 = (*pcVar1)();
-    return bVar2;
-  }
-  bVar2 = MobileAdManager+InternalAdManagerState::
-          MobileAdManager_InternalAdManagerState_get_ReadyForRewardedAdRequest
-                    (this_00,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
+  pMVar1 = (this->fields).internalAdManagerState;
+  if (pMVar1 != (MobileAdManager_InternalAdManagerState *)0x0) {
+    if ((pMVar1->fields).isReady != 0) {
+      pMVar2 = (pMVar1->fields).internalStateRewardedAds;
+      if (pMVar2 == (MobileAdManager_InternalStateRewardedAd *)0x0) goto code_?;
+      if ((pMVar2->fields).isHandlingRequest == 0) {
+        pMVar3 = (pMVar1->fields).internalStateInterstitial;
+        if (pMVar3 == (MobileAdManager_InternalStateInterstitial *)0x0) goto code_?;
+        if ((pMVar3->fields).isHandlingRequest == 0) {
+          pMVar4 = (((pMVar1->fields).internalStateRewardedAds)->fields).adLoadState;
+          if (pMVar4 == (MobileAdManager_AdLoadState *)0x0) goto code_?;
+          if (-1 < (pMVar4->fields).loadAttempts) {
+            fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                              ((MethodInfo *)0x0);
+            return (this->fields).interstitialTimeoutAfterRewardedAd <=
+                   fVar5 - (this->fields).lastSeenRewardedAd;
+          }
+        }
+      }
+    }
     return 0;
   }
-  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  return (this->fields).interstitialTimeoutAfterRewardedAd <=
-         fVar3 - (this->fields).lastSeenRewardedAd;
+code_?:
+  func_?();
+  pcVar6 = (code *)swi(3);
+  bVar7 = (*pcVar6)();
+  return bVar7;
 }
 
 
@@ -1373,29 +1568,29 @@ bool Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
      MobileAdManager_get_ReadyForRewardedAdRequest(MobileAdManager *this,MethodInfo *method)
 
 {
-  pMVar1 = (this->fields).internalAdManagerState;
-  if (pMVar1 != (MobileAdManager_InternalAdManagerState *)0x0) {
-    if ((pMVar1->fields).isReady == 0) {
+  puStack_1 = &stack0xfffffffc;
+  pMVar2 = (this->fields).internalAdManagerState;
+  if (pMVar2 != (MobileAdManager_InternalAdManagerState *)0x0) {
+    if ((pMVar2->fields).isReady == 0) {
       return 0;
     }
-    pMVar2 = (pMVar1->fields).internalStateRewardedAds;
-    if (pMVar2 != (MobileAdManager_InternalStateRewardedAd *)0x0) {
-      if ((pMVar2->fields).isHandlingRequest != 0) {
+    pMVar3 = (pMVar2->fields).internalStateRewardedAds;
+    if (pMVar3 != (MobileAdManager_InternalStateRewardedAd *)0x0) {
+      if ((pMVar3->fields).isHandlingRequest != 0) {
         return 0;
       }
-      pMVar3 = (pMVar1->fields).internalStateInterstitial;
-      if (pMVar3 != (MobileAdManager_InternalStateInterstitial *)0x0) {
-        if ((pMVar3->fields).isHandlingRequest != 0) {
+      pMVar4 = (pMVar2->fields).internalStateInterstitial;
+      if (pMVar4 != (MobileAdManager_InternalStateInterstitial *)0x0) {
+        if ((pMVar4->fields).isHandlingRequest != 0) {
           return 0;
         }
-        pMVar4 = (pMVar2->fields).adLoadState;
-        if (pMVar4 != (MobileAdManager_AdLoadState *)0x0) {
-          return (byte)((uint)(pMVar4->fields).loadAttempts >> 0x1f) ^ 1;
+        pMVar5 = (((pMVar2->fields).internalStateRewardedAds)->fields).adLoadState;
+        if (pMVar5 != (MobileAdManager_AdLoadState *)0x0) {
+          return (byte)((uint)(pMVar5->fields).loadAttempts >> 0x1f) ^ 1;
         }
       }
     }
   }
-  puStack_5 = &stack0xfffffffc;
   uVar6 = func_?(auStack_7);
   func_?(uVar6);
   pcVar8 = (code *)swi(3);
@@ -1418,9 +1613,42 @@ String * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdMa
   return pSVar1;
 }
 
-/* decompilation failed: Exception while decompiling 104e48f0: Decompiler process died */
 
-/* decompilation failed: Exception while decompiling 104e4920: Decompiler process died */
+/* TimeSpan get_TimeSinceLastAd() */
 
-/* decompilation failed: Exception while decompiling 104e4950: Decompiler process died */
+TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManager::
+         MobileAdManager_get_TimeSinceLastAd(MobileAdManager *this,MethodInfo *method)
+
+{
+  this_00 = (this->fields).internalAdManagerState;
+  if (this_00 != (MobileAdManager_InternalAdManagerState *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__Math);
+      func_?(&TypeInfo__System__TimeSpan);
+      cRam_? = '\x01';
+    }
+    TVar1 = MobileAdManager+InternalAdManagerState::
+            MobileAdManager_InternalAdManagerState_get_TimeSinceLastInterstitial
+                      (this_00,(MethodInfo *)0x0);
+    if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__TimeSpan);
+    }
+    val2 = MobileAdManager+InternalAdManagerState::
+           MobileAdManager_InternalAdManagerState_get_TimeSinceLastRewarded
+                     (this_00,(MethodInfo *)0x0);
+    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Math);
+    }
+    iVar2 = mscorlib.dll::System::Math::Math_Min_5(TVar1._ticks,val2._ticks,(MethodInfo *)0x0);
+    return (TimeSpan)iVar2;
+  }
+  func_?();
+  pcVar3 = (code *)swi(3);
+  TVar1._ticks = (*pcVar3)();
+  return (TimeSpan)TVar1._ticks;
+}
+
+/* decompilation failed: Exception while decompiling 1051af90: Decompiler process died */
+
+/* decompilation failed: Exception while decompiling 1051afc0: Decompiler process died */
 

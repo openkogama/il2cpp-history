@@ -32,17 +32,16 @@ bool Assembly-CSharp.dll::SendMessageControl+<OOMTest>d__59::
                     (this_00,collection,
                      MethodInfo__System__Collections__Generic__List<unsigned_char>__AddRange_System__Collections__Generic__IEnumerable<unsigned_char>_
                     );
-          ppOVar3 = &(this->fields).__2__current;
-          *ppOVar3 = (Object *)0x0;
-          func_?(ppOVar3,0);
+          (this->fields).__2__current = (Object *)0x0;
+          func_?(&(this->fields).__2__current,0);
           (this->fields).__1__state = 1;
           return 1;
         }
       }
       func_?();
-      pcVar4 = (code *)swi(3);
-      bVar5 = (*pcVar4)();
-      return bVar5;
+      pcVar3 = (code *)swi(3);
+      bVar4 = (*pcVar3)();
+      return bVar4;
     }
   }
   return 0;

@@ -21,15 +21,16 @@ bool Assembly-CSharp.dll::LaserPointer+<DoDeactivateLaserAfterDuration>d__46::
   (this->fields).__1__state = -1;
   if (pLVar2 != (LaserPointer *)0x0) {
     if (((pLVar2->fields).isActive != 0) &&
-       (fVar3 = (this->fields)._t_5__2, fVar3 < (pLVar2->fields).activeDuration)) {
-      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
+       (fVar3 = (pLVar2->fields).activeDuration, pfVar4 = &(this->fields)._t_5__2,
+       *pfVar4 <= fVar3 && fVar3 != *pfVar4)) {
+      fVar3 = (this->fields)._t_5__2;
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
       ;
-      uStack_5 = 0;
-      (this->fields)._t_5__2 = fVar4 + fVar3;
-      pOVar6 = (Object *)func_?(TypeInfo__System__Int32,&uStack_5);
-      ppOVar7 = &(this->fields).__2__current;
-      *ppOVar7 = pOVar6;
-      func_?(ppOVar7,pOVar6);
+      uStack_6 = 0;
+      (this->fields)._t_5__2 = fVar5 + fVar3;
+      pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&uStack_6);
+      (this->fields).__2__current = pOVar7;
+      func_?(&(this->fields).__2__current,pOVar7);
       (this->fields).__1__state = 1;
       return 1;
     }

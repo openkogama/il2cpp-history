@@ -11,13 +11,12 @@ void Assembly-CSharp.dll::ThemeTimeSlider::ThemeTimeSlider_Initialize
     func_?(&MethodInfo__ThemeAttributes__ThemeAttribute<float>__get_Value__);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).onChange;
-  *ppAVar1 = onChange;
-  func_?(ppAVar1,onChange);
-  if ((attrib != (FloatAttribute *)0x0) && (pTVar2 = (this->fields).label, pTVar2 != (Text *)0x0)) {
-    (*(code *)(pTVar2->klass->vtable).set_text.method)
-              (pTVar2,(attrib->fields)._.name,
-               (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+  (this->fields).onChange = onChange;
+  func_?(&(this->fields).onChange,onChange);
+  if ((attrib != (FloatAttribute *)0x0) && (pTVar1 = (this->fields).label, pTVar1 != (Text *)0x0)) {
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,(attrib->fields)._.name,
+               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     this_00 = (this->fields).slider;
     if (this_00 != (SettingsSlider *)0x0) {
       SettingsSlider::SettingsSlider_Initialize
@@ -28,8 +27,8 @@ void Assembly-CSharp.dll::ThemeTimeSlider::ThemeTimeSlider_Initialize
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

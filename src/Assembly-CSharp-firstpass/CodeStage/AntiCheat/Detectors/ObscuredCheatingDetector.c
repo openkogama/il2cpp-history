@@ -292,8 +292,9 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredChe
                  (MethodInfo *)0x0);
       return;
     }
+    bVar1 = (this->fields)._.detectionEventHasListener;
     if (callback == (UnityAction *)0x0) {
-      if ((this->fields)._.detectionEventHasListener == 0) {
+      if (bVar1 == 0) {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Debug);
         }
@@ -305,7 +306,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredChe
         return;
       }
     }
-    else if ((this->fields)._.detectionEventHasListener != 0) {
+    else if (bVar1 != 0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
@@ -313,9 +314,8 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredChe
                 ((Object *)StringLiteral__ACTk__Obscured_Cheating_Detecto,(Object_1 *)this,
                  (MethodInfo *)0x0);
     }
-    ppUVar2 = &(this->fields)._.detectionAction;
-    *ppUVar2 = callback;
-    func_?(ppUVar2,callback);
+    (this->fields)._.detectionAction = callback;
+    func_?(&(this->fields)._.detectionAction,callback);
     (this->fields)._.isRunning = 1;
     (this->fields)._.started = 1;
     return;

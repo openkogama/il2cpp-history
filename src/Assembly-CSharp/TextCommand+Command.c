@@ -96,7 +96,7 @@ Assembly-CSharp.dll::TextCommand+Command::TextCommand_Command_op_Implicit
                        (commandLine,0x20,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
     method_00 = TypeInfo__TextCommand__Command;
     pTVar2 = (TextCommand_Command *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)pTVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     (pTVar2->fields).commandComponents = pSVar1;
     func_?(&pTVar2->fields,pSVar1);

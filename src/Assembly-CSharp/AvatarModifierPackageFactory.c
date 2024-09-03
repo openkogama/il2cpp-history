@@ -86,7 +86,7 @@ Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFactory_
   }
   method_00 = TypeInfo__AvatarModifierPackageFactory____c__DisplayClass0_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)c;

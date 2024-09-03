@@ -123,8 +123,7 @@ void Assembly-CSharp.dll::CrossHairAndroid::CrossHairAndroid_UpdateCrossHair
     fVar4 = pfVar2[1];
     fVar5 = pfVar2[2];
     fVar6 = (float10)(*(code *)(pickupItem->klass->vtable).get_ChargeState.method)
-                                (pickupItem,
-                                 (pickupItem->klass->vtable).get_ActivateGunModeOnEquip.methodPtr);
+                                (pickupItem,(pickupItem->klass->vtable).get_FirstPerson.methodPtr);
     fVar7 = (float)fVar6;
     bVar8 = false;
     if (IStack_1.m_value == 0) {

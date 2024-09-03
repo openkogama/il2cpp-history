@@ -25,23 +25,22 @@ Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_CanRem
     if (pBVar2->max_length == 0) {
       func_?();
     }
-    else if (getPhysicalProperites != (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0) {
-      puStack_3 = (getPhysicalProperites->fields)._._.method;
+    else {
       cubeBase = (CubeBase *)CONCAT31(cubeBase._1_3_,pBVar2->vector[0]);
-      pCStack_4 = cubeBase;
-      iVar5 = (*(getPhysicalProperites->fields)._._.invoke_impl)
-                        (&pCStack_4,(getPhysicalProperites->fields)._._.method_code);
-      fVar6 = *(float *)(iVar5 + 0x10);
-      if (fVar6 == _UNK_?) {
-        return CubeDamageState__Enum_NoDamage;
-      }
-      if (damage < fVar6) {
-        if (fVar6 <= damage) {
+      if (getPhysicalProperites != (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0) {
+        puStack_3 = (getPhysicalProperites->fields)._._.method;
+        pCStack_4 = cubeBase;
+        iVar5 = (*(getPhysicalProperites->fields)._._.invoke_impl)
+                          (&pCStack_4,(getPhysicalProperites->fields)._._.method_code);
+        fVar6 = *(float *)(iVar5 + 0x10);
+        if (fVar6 == _UNK_?) {
           return CubeDamageState__Enum_NoDamage;
         }
-        return CubeDamageState__Enum_ReceivedDamage;
+        if (fVar6 <= damage) {
+          return CubeDamageState__Enum_Destroyed;
+        }
+        return (uint)(damage < fVar6);
       }
-      return CubeDamageState__Enum_Destroyed;
     }
   }
   func_?();
@@ -67,7 +66,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_H
   if (cRam_? == '\0') {
     func_?();
     func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-    uVar1 = 0x1035;
+    uVar1 = 0x1036;
     func_?(&TypeInfo__MoveCubeFromCoarseToFine);
     cRam_? = '\x01';
   }
@@ -170,7 +169,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-    uVar1 = 0x1035;
+    uVar1 = 0x1036;
     func_?(&TypeInfo__MoveCubeFromCoarseToFine);
     cRam_? = '\x01';
   }

@@ -22,8 +22,8 @@ bool Assembly-CSharp.dll::AvatarScreenshotGenerator+<GenerateScreenshot>d__9::
   if (iVar1 == 0) {
     (this->fields).__1__state = -1;
     if (object != (AvatarScreenshotGenerator *)0x0) {
-      pPVar2 = (object->fields).particleSystems;
-      if (pPVar2 != (ParticleSystem__Array *)0x0) {
+      if ((object->fields).particleSystems != (ParticleSystem__Array *)0x0) {
+        pPVar2 = (object->fields).particleSystems;
         ppPVar3 = pPVar2->vector;
         for (uVar4 = 0; (int)uVar4 < (int)pPVar2->max_length; uVar4 = uVar4 + 1) {
           if (pPVar2->max_length <= uVar4) goto code_?;
@@ -46,9 +46,8 @@ bool Assembly-CSharp.dll::AvatarScreenshotGenerator+<GenerateScreenshot>d__9::
       UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
       UxmlObjectListAttributeDescription`1[System::Object]::
       UxmlObjectListAttributeDescription_1_System_Object___ctor(this_02,(MethodInfo *)0x0);
-      ppOVar6 = &(this->fields).__2__current;
-      *ppOVar6 = (Object *)this_02;
-      func_?(ppOVar6,this_02);
+      (this->fields).__2__current = (Object *)this_02;
+      func_?(&(this->fields).__2__current,this_02);
       (this->fields).__1__state = 1;
       return 1;
     }
@@ -56,8 +55,8 @@ code_?:
     func_?();
 code_?:
     func_?();
-    pcVar7 = (code *)swi(3);
-    bVar5 = (*pcVar7)();
+    pcVar6 = (code *)swi(3);
+    bVar5 = (*pcVar6)();
     return bVar5;
   }
   if (iVar1 == 1) {
@@ -66,31 +65,31 @@ code_?:
     if ((this_01 == (CloudyThemeBase *)0x0) ||
        (Theme::Theme_Deactivate((Theme *)this_01,(MethodInfo *)0x0),
        object == (AvatarScreenshotGenerator *)0x0)) goto code_?;
-    fVar8 = (object->fields).cameraOffset.z;
+    fVar7 = (object->fields).cameraOffset.z;
     obj = (object->fields).bodyCloneGO;
-    uVar9._0_4_ = (object->fields).lookAtOffset.x;
-    uVar9._4_4_ = (object->fields).lookAtOffset.y;
-    fVar10 = (object->fields).lookAtOffset.z;
-    this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?(TypeInfo__System__Action<UnityEngine::Texture2D>);
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+    uVar8._0_4_ = (object->fields).lookAtOffset.x;
+    uVar8._4_4_ = (object->fields).lookAtOffset.y;
+    fVar9 = (object->fields).lookAtOffset.z;
+    this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+              func_?(TypeInfo__System__Action<UnityEngine::Texture2D>);
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
               (this_03,(Object *)object,
                MethodInfo__AvatarScreenshotGenerator__ScreenShotDataTexHandler_UnityEngine__Texture2D_
                ,(MethodInfo *)0x0);
     if ((TypeInfo__ScreenShotGenerator->_1).cctor_finished_or_no_cctor == 0) {
-      uVar9._4_4_ = (undefined4)((ulonglong)uVar9 >> 0x20);
-      uVar9 = CONCAT44(uVar9._4_4_,TypeInfo__ScreenShotGenerator);
+      uVar8._4_4_ = (undefined4)((ulonglong)uVar8 >> 0x20);
+      uVar8 = CONCAT44(uVar8._4_4_,TypeInfo__ScreenShotGenerator);
       func_?();
     }
     cameraOffset.y = 0.0;
     cameraOffset.x = (float)this_03;
-    cameraOffset.z = fVar8;
-    lookAtOffset.z = fVar10;
-    uVar9._4_4_ = (undefined4)((ulonglong)uVar9 >> 0x20);
-    lookAtOffset.x = (float)(undefined4)uVar9;
-    lookAtOffset.y = (float)uVar9._4_4_;
+    cameraOffset.z = fVar7;
+    lookAtOffset.z = fVar9;
+    uVar8._4_4_ = (undefined4)((ulonglong)uVar8 >> 0x20);
+    lookAtOffset.x = (float)(undefined4)uVar8;
+    lookAtOffset.y = (float)uVar8._4_4_;
     ScreenShotGenerator::ScreenShotGenerator_Generate_1
               (obj,cameraOffset,lookAtOffset,(Action_1_UnityEngine_Texture2D_ *)this_03,0,
                (MethodInfo *)0x0);

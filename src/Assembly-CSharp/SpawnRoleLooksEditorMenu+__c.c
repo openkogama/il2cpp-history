@@ -29,7 +29,7 @@ void Assembly-CSharp.dll::SpawnRoleLooksEditorMenu+<>c::
     do {
       if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-        ppMVar6 = &(&(x->klass->vtable).Create_3)[pIVar3->interfaceOffsets[uVar4].offset].method;
+        ppMVar6 = &(&(x->klass->vtable).Create_3)[x->klass->interfaceOffsets[uVar4].offset].method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;
@@ -55,7 +55,7 @@ void Assembly-CSharp.dll::SpawnRoleLooksEditorMenu+<>c::SpawnRoleLooksEditorMenu
   }
   method_00 = TypeInfo__SpawnRoleLooksEditorMenu____c;
   value = (SpawnRoleLooksEditorMenu_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__SpawnRoleLooksEditorMenu____c->static_fields->__9 = value;
   func_?(TypeInfo__SpawnRoleLooksEditorMenu____c->static_fields,value);

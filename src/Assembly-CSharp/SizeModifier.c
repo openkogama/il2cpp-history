@@ -28,13 +28,13 @@ Assembly-CSharp.dll::SizeModifier::SizeModifier_DoForSeconds
   }
   method_00 = TypeInfo__SizeModifier___DoForSeconds_d__17;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
-  value[3].klass = (Object__Class *)duration;
   value[2].monitor = (MonitorData *)body;
+  value[3].klass = (Object__Class *)duration;
   func_?(&value[2].monitor,body);
   return (IEnumerator *)value;
 }
@@ -54,46 +54,45 @@ void Assembly-CSharp.dll::SizeModifier::SizeModifier_OnActivated
   }
   (this->fields).isDeactivating = 0;
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  ppAVar2 = &(this->fields)._.owner;
+  (this->fields)._.owner = target;
   (this->fields)._.timeStamp = fVar1;
-  *ppAVar2 = target;
-  func_?(ppAVar2,target);
-  if (((((*ppAVar2 != (Avatar *)0x0) &&
-        (pMVar3 = ((*ppAVar2)->fields).mvAvatar, pMVar3 != (MVAvatar *)0x0)) &&
-       (pMVar4 = (pMVar3->fields).body, pMVar4 != (MVBody *)0x0)) &&
-      ((pMVar5 = (pMVar4->fields).bodyObject, pMVar5 != (MVBodyObject *)0x0 &&
-       (pAVar6 = (pMVar5->fields).avatarBlobShadowController,
-       pAVar6 != (AvatarBlobShadowController *)0x0)))) &&
-     (this_00 = (pAVar6->fields).blobProjector, this_00 != (Projector *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::Projector::Projector_set_orthographicSize
-              (this_00,(this->fields).sizeModifier,(MethodInfo *)0x0);
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (this_01 != (MVNetworkGame *)0x0) {
-      pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-      if ((pMVar7 != (MVLocalPlayer *)0x0) &&
-         (pSVar8 = (pMVar7->fields).spawnRoleDataMediator, pSVar8 != (SpawnRoleDataMediator *)0x0))
-      {
-        pVVar9 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
-                  SpawnRoleVariableTypes::SpawnRoleVariable`1[UnityEngine::Vector3]::
-                  SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
-                            ((Vector3 *)&puStack_10,
-                             (SpawnRoleVariable_1_UnityEngine_Vector3_ *)
-                             (pSVar8->fields).defaultScale,
-                             MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
-                            );
-        fVar11 = pVVar9->y;
-        fVar1 = pVVar9->z;
-        (this->fields).defaultScale.x = pVVar9->x;
-        (this->fields).defaultScale.y = fVar11;
-        (this->fields).defaultScale.z = fVar1;
-        (*(code *)(this->klass->vtable).Scale.method)();
-        return;
+  func_?(&(this->fields)._.owner,target);
+  pAVar2 = (this->fields)._.owner;
+  if (((pAVar2 != (Avatar *)0x0) && (pMVar3 = (pAVar2->fields).mvAvatar, pMVar3 != (MVAvatar *)0x0))
+     && (this_00 = (pMVar3->fields).body, this_00 != (MVBody *)0x0)) {
+    pAVar4 = MVBody::MVBody_get_BlobShadow(this_00,(MethodInfo *)0x0);
+    if ((pAVar4 != (AvatarBlobShadowController *)0x0) &&
+       (this_01 = (pAVar4->fields).blobProjector, this_01 != (Projector *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Projector::Projector_set_orthographicSize
+                (this_01,(this->fields).sizeModifier,(MethodInfo *)0x0);
+      this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (this_02 != (MVNetworkGame *)0x0) {
+        pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0);
+        if ((pMVar5 != (MVLocalPlayer *)0x0) &&
+           (pSVar6 = (pMVar5->fields).spawnRoleDataMediator, pSVar6 != (SpawnRoleDataMediator *)0x0)
+           ) {
+          pVVar7 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+                   SpawnRoleVariableTypes::SpawnRoleVariable`1[UnityEngine::Vector3]::
+                   SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
+                             ((Vector3 *)&stack0xfffffff0,
+                              (SpawnRoleVariable_1_UnityEngine_Vector3_ *)
+                              (pSVar6->fields).defaultScale,
+                              MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
+                             );
+          fVar8 = pVVar7->y;
+          fVar1 = pVVar7->z;
+          (this->fields).defaultScale.x = pVVar7->x;
+          (this->fields).defaultScale.y = fVar8;
+          (this->fields).defaultScale.z = fVar1;
+          (*(code *)(this->klass->vtable).Scale.method)();
+          return;
+        }
       }
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -104,25 +103,24 @@ void Assembly-CSharp.dll::SizeModifier::SizeModifier_OnDeactivated
                (SizeModifier *this,Avatar *target,MethodInfo *method)
 
 {
-  ppAVar1 = &(this->fields)._.owner;
-  *ppAVar1 = target;
+  (this->fields)._.owner = target;
   (this->fields).isDeactivating = 1;
-  func_?(ppAVar1,target);
-  if ((((*ppAVar1 != (Avatar *)0x0) &&
-       (pMVar2 = ((*ppAVar1)->fields).mvAvatar, pMVar2 != (MVAvatar *)0x0)) &&
-      (pMVar3 = (pMVar2->fields).body, pMVar3 != (MVBody *)0x0)) &&
-     (((pMVar4 = (pMVar3->fields).bodyObject, pMVar4 != (MVBodyObject *)0x0 &&
-       (pAVar5 = (pMVar4->fields).avatarBlobShadowController,
-       pAVar5 != (AvatarBlobShadowController *)0x0)) &&
-      (this_00 = (pAVar5->fields).blobProjector, this_00 != (Projector *)0x0)))) {
-    UnityEngine.CoreModule.dll::UnityEngine::Projector::Projector_set_orthographicSize
-              (this_00,1.0,(MethodInfo *)0x0);
-    (*(code *)(this->klass->vtable).UnScale.method)(this,(this->klass->vtable).Scale.methodPtr);
-    return;
+  func_?(&(this->fields)._.owner,target);
+  pAVar1 = (this->fields)._.owner;
+  if (((pAVar1 != (Avatar *)0x0) && (pMVar2 = (pAVar1->fields).mvAvatar, pMVar2 != (MVAvatar *)0x0))
+     && (this_00 = (pMVar2->fields).body, this_00 != (MVBody *)0x0)) {
+    pAVar3 = MVBody::MVBody_get_BlobShadow(this_00,(MethodInfo *)0x0);
+    if ((pAVar3 != (AvatarBlobShadowController *)0x0) &&
+       (this_01 = (pAVar3->fields).blobProjector, this_01 != (Projector *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Projector::Projector_set_orthographicSize
+                (this_01,1.0,(MethodInfo *)0x0);
+      (*(code *)(this->klass->vtable).UnScale.method)(this,(this->klass->vtable).Scale.methodPtr);
+      return;
+    }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -139,19 +137,19 @@ void Assembly-CSharp.dll::SizeModifier::SizeModifier_ResetTimeStamp
   if (pAVar2 != (Avatar *)0x0) {
     uVar3 = (this->fields).defaultScale.x;
     uVar4 = (this->fields).defaultScale.y;
-    fVar1 = (this->fields).sizeModifier;
     pMVar5 = (pAVar2->fields).mvAvatar;
+    fVar1 = (this->fields).sizeModifier;
+    uStack_6 = CONCAT44((float)uVar4 * fVar1,(float)uVar3 * fVar1);
     if (pMVar5 != (MVAvatar *)0x0) {
       (*(code *)(pMVar5->klass->vtable).set_Scale.method)
-                (pMVar5,CONCAT44((float)uVar4 * fVar1,(float)uVar3 * fVar1),
-                 (this->fields).defaultScale.z * fVar1,
+                (pMVar5,uStack_6,(this->fields).defaultScale.z * fVar1,
                  (pMVar5->klass->vtable).get_WorldPosition.methodPtr);
       return;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -187,11 +185,11 @@ void Assembly-CSharp.dll::SizeModifier::SizeModifier_Unstablize
     dVar15 = (double)((fVar1 - (this->fields).sizeUnstableAfterSeconds) * fVar4);
     func_?();
     fVar1 = _UNK_? - (float)dVar15;
-    uStack_16 = CONCAT44(fVar13 * fVar1 + (float)uVar7 * fVar3,
-                         fVar12 * fVar1 + (float)uVar6 * fVar3);
+    uStack_16 = CONCAT44((float)uVar7 * fVar3 + fVar13 * fVar1,
+                         (float)uVar6 * fVar3 + fVar12 * fVar1);
     if (pMVar9 != (MVAvatar *)0x0) {
       (*(code *)(pMVar9->klass->vtable).set_Scale.method)
-                (pMVar9,uStack_16,fVar14 * fVar1 + fVar8 * fVar3,
+                (pMVar9,uStack_16,fVar8 * fVar3 + fVar14 * fVar1,
                  (pMVar9->klass->vtable).get_WorldPosition.methodPtr);
       return;
     }

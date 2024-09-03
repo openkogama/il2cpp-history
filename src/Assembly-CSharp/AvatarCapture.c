@@ -10,7 +10,7 @@ Vector3 * Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CalculateTieOffset
   __return_storage_ptr__->y = 0.0;
   __return_storage_ptr__->z = 0.0;
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
   fVar1 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
@@ -18,41 +18,42 @@ Vector3 * Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CalculateTieOffset
   __return_storage_ptr__->y = fVar1;
   __return_storage_ptr__->z = (float)amountOfWinners * _UNK_?;
   if (((amountOfWinners & 1U) == 0) || (currentWinner != 1)) {
-    uVar2 = CONCAT44(unaff_EBX,unaff_EDI);
     fVar1 = (float)(amountOfWinners + 2) * _UNK_?;
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__System__Math);
       cRam_? = '\x01';
     }
     if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__System__Math);
     }
-    cVar3 = cRam_?;
-    fVar4 = (float10)func_?((double)fVar1,uVar2);
+    cVar2 = cRam_?;
+    fVar3 = (float10)func_?((double)fVar1);
     fVar1 = ((float)currentWinner - _UNK_?) * _UNK_?;
-    if (cVar3 == '\0') {
-      func_?();
+    if (cVar2 == '\0') {
+      func_?(&TypeInfo__System__Math);
       cRam_? = '\x01';
     }
     if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    fVar5 = (float10)func_?((double)fVar1);
-    fVar6 = ((float)(int)fVar5 + _UNK_?) *
-            (_UNK_? / (float)(int)fVar4) * _UNK_?;
-    __return_storage_ptr__->x = fVar6;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__System__Math);
     }
     fVar4 = (float10)func_?((double)fVar1);
-    fVar6 = (float)(int)fVar4 + _UNK_? + fVar6;
-    __return_storage_ptr__->x = fVar6;
+    fVar1 = _UNK_?;
+    fVar5 = ((float)(int)fVar4 + _UNK_?) *
+            (_UNK_? / (float)(int)fVar3) * _UNK_?;
+    __return_storage_ptr__->x = fVar5;
+    fVar1 = ((float)currentWinner - fVar1) * _UNK_?;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__Math);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Math);
+    }
+    fVar3 = (float10)func_?((double)fVar1);
+    fVar5 = (float)(int)fVar3 + _UNK_? + fVar5;
+    __return_storage_ptr__->x = fVar5;
     if ((currentWinner & 1U) == 0) {
-      __return_storage_ptr__->x = fVar6 * _UNK_?;
+      __return_storage_ptr__->x = fVar5 * _UNK_?;
     }
   }
   return __return_storage_ptr__;
@@ -137,7 +138,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayer
   AvatarCapture_InitializeCamera(this,(MethodInfo *)0x0);
   if (players != (List_1_MVPlayer_ *)0x0) {
     iVar1 = (players->fields)._size;
-    this_02 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+    this_02 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
               func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
     mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
     __Il2CppFullySharedGenericType]::
@@ -148,11 +149,10 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayer
     AvatarCapture_CreateTriangleFormation
               (this,(List_1_UnityEngine_Vector3_ **)&pLStack_2,(this->fields).formationSpacing,iVar1
                ,(MethodInfo *)0x0);
-    if (pLStack_2 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::
-      List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
-      List_1_AnimatedTextureOffset_TextureOffsetAnimationData__Reverse
-                ((List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)pLStack_2,
+    if (pLStack_2 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
+      List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__Reverse
+                (pLStack_2,
                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Reverse__);
       index = 0;
       while( true ) {
@@ -160,8 +160,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayer
           return;
         }
         iStack_3 = index;
-        pOStack_4 = (Object__Class *)
-                     MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        pMStack_4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         this_03 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
@@ -171,17 +170,17 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayer
                             );
         if (this_03 == (RegexCharClass_SingleRange)0x0) break;
         iVar1 = MVPlayer::MVPlayer_get_WoId((MVPlayer *)this_03,(MethodInfo *)0x0);
-        if (pOStack_4 == (Object__Class *)0x0) break;
+        if (pMStack_4 == (MVWorldObjectClientManager *)0x0) break;
         pMVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                           ((MVWorldObjectClientManager *)pOStack_4,iVar1,(MethodInfo *)0x0);
+                           (pMStack_4,iVar1,(MethodInfo *)0x0);
         if (pMVar5 == (MVWorldObject *)0x0) break;
-        this_00 = (Object__Class *)pMVar5[1].fields.ownerActorNr;
+        this_00 = (MVWorldObjectClientManager *)pMVar5[1].fields.ownerActorNr;
         this_01 = (this->fields).renderCam;
-        pOStack_4 = this_00;
+        pMStack_4 = this_00;
         if (this_01 == (Camera *)0x0) break;
         this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                             ((Component *)this_01,(MethodInfo *)0x0);
-        if (this_00 == (Object__Class *)0x0) break;
+        if (this_00 == (MVWorldObjectClientManager *)0x0) break;
         pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                            (&VStack_7,(Transform *)this_00,(MethodInfo *)0x0);
         if (this_04 == (Transform *)0x0) break;
@@ -214,11 +213,13 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayer
         uStack_20._0_4_ = pVVar6->x;
         uStack_20._4_4_ = pVVar6->y;
         fStack_21 = pVVar6->z;
-        if (pLStack_2 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
+        if (pLStack_2 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) break;
         pVVar22 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                  VisualTreeAsset+UsingEntry]::
                  List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           (&VStack_23,pLStack_2,iStack_3,
+                           (&VStack_23,
+                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pLStack_2,
+                            iStack_3,
                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                            );
         uStack_24._0_4_ = pVVar22->alias;
@@ -259,11 +260,13 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayer
         uStack_37._0_4_ = pVVar6->x;
         uStack_37._4_4_ = pVVar6->y;
         fStack_38 = pVVar6->z;
-        if (pLStack_2 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
+        if (pLStack_2 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) break;
         pVVar22 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                  VisualTreeAsset+UsingEntry]::
                  List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           (&VStack_39,pLStack_2,iStack_3,
+                           (&VStack_39,
+                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pLStack_2,
+                            iStack_3,
                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                            );
         uStack_40._0_4_ = pVVar22->alias;
@@ -295,53 +298,58 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayer
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                   (this_04,value_03,(MethodInfo *)0x0);
         pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                           ((Vector3 *)&stack0xfffffe4c,this_04,(MethodInfo *)0x0);
-        uStack_50._0_4_ = pVVar6->x;
-        uStack_50._4_4_ = pVVar6->y;
-        fStack_51 = pVVar6->z;
+                           (&VStack_50,this_04,(MethodInfo *)0x0);
+        uStack_51._0_4_ = pVVar6->x;
+        uStack_51._4_4_ = pVVar6->y;
+        fStack_52 = pVVar6->z;
         pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
                            ((Vector3 *)&stack0xfffffe40,(Transform *)this_00,(MethodInfo *)0x0);
-        uStack_52._0_4_ = pVVar6->x;
-        uStack_52._4_4_ = pVVar6->y;
-        fStack_53 = pVVar6->z;
-        if (pLStack_2 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
+        uStack_53._0_4_ = pVVar6->x;
+        uStack_53._4_4_ = pVVar6->y;
+        fStack_54 = pVVar6->z;
+        if (pLStack_2 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) break;
         pVVar22 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                  VisualTreeAsset+UsingEntry]::
                  List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           ((VisualTreeAsset_UsingEntry *)&stack0xfffffe34,pLStack_2,iStack_3,
+                           ((VisualTreeAsset_UsingEntry *)&stack0xfffffe34,
+                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pLStack_2,
+                            iStack_3,
                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                            );
-        uStack_54._0_4_ = pVVar22->alias;
-        uStack_54._4_4_ = pVVar22->path;
-        fStack_55 = fStack_51 + fStack_53 * (float)uStack_54._4_4_;
-        value_04.y = uStack_50._4_4_ + uStack_52._4_4_ * (float)uStack_54._4_4_;
-        value_04.x = (float)uStack_50 + (float)uStack_52 * (float)uStack_54._4_4_;
-        value_04.z = fStack_55;
+        uStack_55._0_4_ = pVVar22->alias;
+        uStack_55._4_4_ = pVVar22->path;
+        fStack_56 = fStack_52 + fStack_54 * (float)uStack_55._4_4_;
+        value_04.y = uStack_51._4_4_ + uStack_53._4_4_ * (float)uStack_55._4_4_;
+        value_04.x = (float)uStack_51 + (float)uStack_53 * (float)uStack_55._4_4_;
+        value_04.z = fStack_56;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                   (this_04,value_04,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
+          VStack_50.z = (float)&TypeInfo__AvatarCapture___DrawAvatarRoutine_d__12;
+          VStack_50.y = (float)&UNK_?;
           func_?();
           cRam_? = '\x01';
         }
-        method_00 = TypeInfo__AvatarCapture___DrawAvatarRoutine_d__12;
-        value_05 = (Object *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  (value_05,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-        value_05[1].klass = (Object__Class *)0x0;
-        value_05[2].klass = (Object__Class *)this;
-        func_?();
-        value_05[2].monitor = (MonitorData *)this_04;
-        func_?();
-        value_05[3].klass = pOStack_4;
-        func_?();
-        Coroutines::Coroutines_Start((IEnumerator *)value_05,(MethodInfo *)0x0);
+        VStack_50.z = (float)TypeInfo__AvatarCapture___DrawAvatarRoutine_d__12;
+        VStack_50.y = (float)&UNK_?;
+        this_05 = (SubscribableVariable_1_System_Int32Enum_ *)func_?();
+        SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
+                  (this_05,0,(MethodInfo *)0x0);
+        if (this_05 == (SubscribableVariable_1_System_Int32Enum_ *)0x0) break;
+        this_05[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
+        func_?(this_05 + 1,this);
+        this_05[1].monitor = (MonitorData *)this_04;
+        func_?(&this_05[1].monitor,this_04);
+        this_05[1].fields._.value = (int32_t)pMStack_4;
+        func_?(&this_05[1].fields,pMStack_4);
+        Coroutines::Coroutines_Start((IEnumerator *)this_05,(MethodInfo *)0x0);
         index = iStack_3 + 1;
       }
     }
   }
   func_?();
-  pcVar56 = (code *)swi(3);
-  (*pcVar56)();
+  pcVar57 = (code *)swi(3);
+  (*pcVar57)();
   return;
 }
 
@@ -376,7 +384,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayerGroup
     func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
     cRam_? = '\x01';
   }
-  pLStack_1 = (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0;
+  pLStack_1 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0;
   iStack_2 = 0;
   if (sortedList != (List_1_List_1_MVPlayer_ *)0x0) {
     while( true ) {
@@ -394,7 +402,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayerGroup
       if (RVar4 == (RegexCharClass_SingleRange)0x0) break;
       iStack_5 = *(int32_t *)((int)RVar4 + 0xc);
       apLStack_6[0] = TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>;
-      pLVar7 = (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)func_?();
+      pLVar7 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)func_?();
       mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
       __Il2CppFullySharedGenericType]::
       LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
@@ -404,10 +412,9 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayerGroup
       AvatarCapture_CreateTriangleFormation
                 (this,(List_1_UnityEngine_Vector3_ **)&pLStack_1,(this->fields).formationSpacing,
                  iStack_5,(MethodInfo *)0x0);
-      if (pLStack_1 == (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) break;
-      mscorlib.dll::System::Collections::Generic::
-      List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
-      List_1_AnimatedTextureOffset_TextureOffsetAnimationData__Reverse
+      if (pLStack_1 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) break;
+      mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
+      List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__Reverse
                 (pLStack_1,
                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Reverse__);
       iStack_8 = iVar3 + 1;
@@ -415,8 +422,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayerGroup
       iStack_9 = (sortedList->fields)._size;
       while( true ) {
         pLVar7 = pLStack_1;
-        if (pLStack_1 == (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0)
-        goto code_?;
+        if (pLStack_1 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) goto code_?;
         if ((pLStack_1->fields)._size <= iVar3) break;
         puVar10 = (undefined8 *)
                  func_?(auStack_11,pLStack_1,iVar3,
@@ -432,14 +438,12 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayerGroup
         fStack_18 = (float)(undefined4)uStack_16 + (float)uStack_12;
         fStack_19 = (float)uStack_16._4_4_ + uStack_12._4_4_;
         fStack_20 = fStack_17 + fStack_13;
-        if (pLVar7 == (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0)
-        goto code_?;
-        value_05.frameToChangeTextureAt = fStack_19;
-        value_05.textureOffset = fStack_18;
-        value_05._8_4_ = fStack_20;
-        mscorlib.dll::System::Collections::Generic::
-        List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::
-        List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item
+        if (pLVar7 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) goto code_?;
+        value_05.FirstAxisSign = (int32_t)fStack_19;
+        value_05.Quadrant = (int32_t)fStack_18;
+        value_05.SecondAxisSign = (int32_t)fStack_20;
+        mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
+        List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
                   (pLVar7,iVar3,value_05,
                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
                   );
@@ -508,7 +512,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayerGroup
           uStack_35._0_4_ = pVVar14->x;
           uStack_35._4_4_ = pVVar14->y;
           fStack_36 = pVVar14->z;
-          if (pLStack_1 == (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0)
+          if (pLStack_1 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0)
           goto code_?;
           puVar37 = (uint *)func_?(auStack_38,pLStack_1,iStack_9,
                                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
@@ -549,7 +553,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayerGroup
           uStack_51._0_4_ = pVVar14->x;
           uStack_51._4_4_ = pVVar14->y;
           fStack_52 = pVVar14->z;
-          if (pLStack_1 == (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0)
+          if (pLStack_1 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0)
           goto code_?;
           iVar3 = func_?(auStack_53,pLStack_1,iStack_9,
                                   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
@@ -589,7 +593,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayerGroup
           uStack_66._0_4_ = pVVar14->x;
           uStack_66._4_4_ = pVVar14->y;
           fStack_67 = pVVar14->z;
-          if (pLStack_1 == (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0)
+          if (pLStack_1 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0)
           goto code_?;
           iVar3 = func_?(apLStack_6,pLStack_1,iStack_9,
                                   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
@@ -606,7 +610,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayerGroup
           iStack_9 = iStack_9 + 1;
         } while (iStack_9 < iStack_5);
       }
-      iStack_2 = iStack_8;
+      iStack_2 = iStack_2 + 1;
     }
   }
 code_?:
@@ -651,7 +655,7 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayersInTeam
   }
   method_00 = TypeInfo__AvatarCapture____c__DisplayClass8_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     *(undefined1 *)&value[1].klass = (undefined1)counterType;
@@ -666,51 +670,47 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayersInTeam
               ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)sortedList,
                MethodInfo__System__Collections__Generic__List<System::Collections::Generic::List<MVPlayer>_>__List__
               );
-    index = (Object *)0x0;
+    index = 0;
     if (scoreTeamEntries != (List_1_ScoreTeamEntry_ *)0x0) {
       while( true ) {
-        if ((scoreTeamEntries->fields)._size <= (int)index) {
+        if ((scoreTeamEntries->fields)._size <= index) {
           AvatarCapture_CapturePlayerGroup(this,sortedList,(MethodInfo *)0x0);
           return;
         }
         pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if (pMVar1 == (MVNetworkGame *)0x0) break;
-        this_00 = (pMVar1->fields).teamManager;
-        sortedList = (List_1_List_1_MVPlayer_ *)scoreTeamEntries;
-        object = index;
+        this = (AvatarCapture *)(pMVar1->fields).teamManager;
         RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                           ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                           scoreTeamEntries,(int32_t)index,
+                           scoreTeamEntries,index,
                            MethodInfo__System__Collections__Generic__List<ScoreTeamEntry>__get_Item_int_
                           );
-        if ((RVar2 == (RegexCharClass_SingleRange)0x0) || (this_00 == (MVTeamManager *)0x0)) break;
-        scoreTeamEntries = (List_1_ScoreTeamEntry_ *)0x0;
-        this = *(AvatarCapture **)((int)RVar2 + 8);
+        if ((RVar2 == (RegexCharClass_SingleRange)0x0) || (this == (AvatarCapture *)0x0)) break;
+        team = *(List_1_ScoreTeamEntry_ **)((int)RVar2 + 8);
+        sortedList = (List_1_List_1_MVPlayer_ *)scoreTeamEntries;
         source = MVTeamManager::MVTeamManager_GetPlayersInTeam
-                           (this_00,(MVTeam__Enum)this,(MethodInfo *)0x0);
-        this_01 = (Func_2_Object_Int32_ *)value[1].monitor;
-        pOVar3 = value + 1;
-        value = object;
-        if (this_01 == (Func_2_Object_Int32_ *)0x0) {
-          this_01 = (Func_2_Object_Int32_ *)func_?();
+                           ((MVTeamManager *)this,(MVTeam__Enum)team,(MethodInfo *)0x0);
+        this_00 = (Func_2_Object_Int32_ *)value[1].monitor;
+        scoreTeamEntries = team;
+        if (this_00 == (Func_2_Object_Int32_ *)0x0) {
+          this_00 = (Func_2_Object_Int32_ *)func_?();
+          this = (AvatarCapture *)&UNK_?;
           Newtonsoft.Json.dll::Newtonsoft::Json::Serialization::ObjectConstructor`1[Unity::IL2CPP::
           Metadata::__Il2CppFullySharedGenericType]::
           ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                     ((ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                     this_01,object,
+                     this_00,value,
                      MethodInfo__AvatarCapture____c__DisplayClass8_0___CapturePlayersInTeam_b__0_MVPlayer_
                      ,(MethodInfo *)0x0);
-          pOVar3->monitor = (MonitorData *)this_01;
-          scoreTeamEntries = (List_1_ScoreTeamEntry_ *)&UNK_?;
+          value[1].monitor = (MonitorData *)this_00;
           func_?();
-          source = (List_1_MVPlayer_ *)&pOVar3->monitor;
-          this = (AvatarCapture *)this_01;
-          value = object;
+          source = (List_1_MVPlayer_ *)&UNK_?;
+          scoreTeamEntries = (List_1_ScoreTeamEntry_ *)this_00;
         }
         source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_OrderBy_3
-                              ((IEnumerable_1_System_Object_ *)source,this_01,
+                              ((IEnumerable_1_System_Object_ *)source,this_00,
                                System__Linq__IOrderedEnumerable<MVPlayer>_MethodInfo__System__Linq__Enumerable__OrderBy<MVPlayer,_int>_System__Collections__Generic__IEnumerable<MVPlayer>__System__Func<MVPlayer,_int>_
                               );
         item = System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_8
@@ -723,13 +723,13 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayersInTeam
                   ((List_1_System_Object_ *)sortedList,(Object *)item,
                    MethodInfo__System__Collections__Generic__List<System::Collections::Generic::List<MVPlayer>_>__Add_System__Collections__Generic__List<MVPlayer>_
                   );
-        index = (Object *)((int)&index->klass + 1);
+        index = index + 1;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -834,18 +834,23 @@ Assembly-CSharp.dll::AvatarCapture::AvatarCapture_DrawAvatarRoutine
     func_?(&TypeInfo__AvatarCapture___DrawAvatarRoutine_d__12);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__AvatarCapture___DrawAvatarRoutine_d__12;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
-  value[2].klass = (Object__Class *)this;
-  func_?(value + 2,this);
-  value[2].monitor = (MonitorData *)cameraTransform;
-  func_?(&value[2].monitor,cameraTransform);
-  value[3].klass = (Object__Class *)objectTransform;
-  func_?(value + 3,objectTransform);
-  return (IEnumerator *)value;
+  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
+            func_?(TypeInfo__AvatarCapture___DrawAvatarRoutine_d__12);
+  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
+            (this_00,0,(MethodInfo *)0x0);
+  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
+    func_?(this_00 + 1);
+    this_00[1].monitor = (MonitorData *)cameraTransform;
+    func_?(&this_00[1].monitor,cameraTransform);
+    this_00[1].fields._.value = (int32_t)objectTransform;
+    func_?(&this_00[1].fields,objectTransform);
+    return (IEnumerator *)this_00;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  pIVar2 = (IEnumerator *)(*pcVar1)();
+  return pIVar2;
 }
 
 
@@ -856,12 +861,6 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_DrawObject
                MethodInfo *method)
 
 {
-  auVar1._0_48_ = in_stack_2._0_48_;
-  auVar1._48_4_ = unaff_EBX;
-  auVar3._0_36_ = in_stack_2._0_36_;
-  auVar3._36_4_ = unaff_EBP;
-  auVar3._44_8_ = auVar1._44_8_;
-  auVar3._40_4_ = unaff_retaddr;
   if (cRam_? == '\0') {
     func_?(&
                     UnityEngine__MeshFilter__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::MeshFilter>_bool_____
@@ -873,261 +872,162 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_DrawObject
     func_?(&StringLiteral_UXElementSecondary);
     cRam_? = '\x01';
   }
-  iVar4 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_RandomRangeInt
+  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_RandomRangeInt
                      (-0x23,0x23,(MethodInfo *)0x0);
-  auVar5._36_16_ = auVar3._36_16_;
-  auVar5._0_32_ = auVar3._0_32_;
-  auVar5._32_4_ = (float)iVar4;
+  fVar2 = (float)iVar1;
   if (cameraTransform != (Transform *)0x0) {
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                         ((Vector3 *)&stack0xffffffd8,cameraTransform,(MethodInfo *)0x0);
-    fVar7 = pVVar6->x;
-    fVar8 = pVVar6->y;
-    fVar9 = pVVar6->z;
+    fVar4 = pVVar3->x;
+    fVar5 = pVVar3->y;
+    fVar6 = pVVar3->z;
     if (objectTransform != (Transform *)0x0) {
-      pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&puStack_10,objectTransform,(MethodInfo *)0x0);
-      uVar11._0_4_ = pVVar6->x;
-      uVar11._4_4_ = pVVar6->y;
-      VVar12 = *pVVar6;
-      auVar13._24_28_ = auVar5._24_28_;
-      auVar13._0_16_ = auVar5._0_16_;
-      auVar13._16_8_ = uVar11;
-      puStack_10 = (undefined *)(fVar7 - (float)(undefined4)uVar11);
-      auVar14._12_40_ = auVar13._12_40_;
-      auVar14._0_4_ = VVar12.x;
-      auVar14._4_4_ = VVar12.y;
-      auVar14._8_4_ = VVar12.z;
-      auVar15._0_24_ = auVar14._0_24_;
-      auVar15._24_4_ = pVVar6->z;
-      auVar15._32_20_ = auVar5._32_20_;
-      auVar15._28_4_ = fVar8 - VVar12.y;
-      fVar9 = fVar9 - VVar12.z;
-      auVar16._12_40_ = auVar15._12_40_;
-      auVar16._0_8_ = VVar12._0_8_;
-      auVar16._8_4_ = 0;
-      auVar17._4_8_ = 0;
-      auVar17._0_4_ = auVar5._32_4_ * _UNK_?;
-      pQVar18 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                          ((Vector3 *)&puStack_7,objectTransform,(MethodInfo *)0x0);
+      fVar8 = pVVar3->x;
+      fVar9 = pVVar3->y;
+      fVar10 = pVVar3->z;
+      puStack_7 = (undefined *)(fVar4 - fVar8);
+      fVar5 = fVar5 - fVar9;
+      fVar6 = fVar6 - fVar10;
+      auVar11._4_8_ = 0;
+      auVar11._0_4_ = fVar2 * _UNK_?;
+      pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                 Quaternion_Internal_FromEulerRad
-                          ((Quaternion *)&stack0xffffff70,(Vector3)(auVar17 << 0x20),
+                          ((Quaternion *)&stack0xffffff70,(Vector3)(auVar11 << 0x20),
                            (MethodInfo *)0x0);
-      VVar12.y = (float)auVar16._28_4_;
-      VVar12.x = (float)puStack_10;
-      VVar12.z = fVar9;
-      pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                          ((Vector3 *)&puStack_10,*pQVar18,VVar12,(MethodInfo *)0x0);
-      uVar19 = pVVar6->x;
-      uVar20 = pVVar6->y;
-      VVar12 = *pVVar6;
-      auVar21._12_40_ = auVar16._12_40_;
-      auVar21._0_4_ = VVar12.x;
-      auVar21._4_4_ = VVar12.y;
-      auVar21._8_4_ = VVar12.z;
-      fVar7 = auVar16._24_4_ + VVar12.z;
-      auVar22._28_24_ = auVar16._28_24_;
-      auVar22._0_24_ = auVar21._0_24_;
-      auVar22._24_4_ = fVar7;
-      value.y = auVar16._20_4_ + (float)uVar20;
-      value.x = auVar16._16_4_ + (float)uVar19;
-      value.z = fVar7;
+      point.y = fVar5;
+      point.x = (float)puStack_7;
+      point.z = fVar6;
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                          ((Vector3 *)&puStack_7,*pQVar12,point,(MethodInfo *)0x0);
+      uVar13 = pVVar3->x;
+      uVar14 = pVVar3->y;
+      value.y = fVar9 + (float)uVar14;
+      value.x = fVar8 + (float)uVar13;
+      value.z = fVar10 + pVVar3->z;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                 (cameraTransform,value,(MethodInfo *)0x0);
-      pQVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+      pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                           ((Quaternion *)&stack0xffffff70,objectTransform,(MethodInfo *)0x0);
-      pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_ToEulerRad
-                          ((Vector3 *)&puStack_10,*pQVar18,(MethodInfo *)0x0);
-      uVar23 = pVVar6->x;
-      uVar24 = pVVar6->y;
-      auVar25._20_4_ = uVar24;
-      auVar25._16_4_ = uVar23;
-      auVar25._0_16_ = auVar22._0_16_;
-      auVar25._28_24_ = auVar22._28_24_;
-      fVar7 = pVVar6->z * _UNK_?;
-      auVar25._24_4_ = fVar7;
-      euler.y = (float)uVar24 * _UNK_?;
-      euler.x = (float)uVar23 * _UNK_?;
-      euler.z = fVar7;
-      pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_ToEulerRad
+                          ((Vector3 *)&puStack_7,*pQVar12,(MethodInfo *)0x0);
+      uVar15 = pVVar3->x;
+      uVar16 = pVVar3->y;
+      euler.y = (float)uVar16 * _UNK_?;
+      euler.x = (float)uVar15 * _UNK_?;
+      euler.z = pVVar3->z * _UNK_?;
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                 Quaternion_Internal_MakePositive
                           ((Vector3 *)&stack0xffffffc8,euler,(MethodInfo *)0x0);
-      uVar26 = pVVar6->x;
-      uVar27 = pVVar6->y;
-      auVar28._20_4_ = uVar27;
-      auVar28._16_4_ = uVar26;
-      auVar28._0_16_ = auVar25._0_16_;
-      auVar28._28_24_ = auVar25._28_24_;
-      auVar28._24_4_ = pVVar6->z;
+      fVar6 = pVVar3->y;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      pQVar18 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                          ((Quaternion *)&stack0xffffff70,
-                           auVar28._20_4_ + _UNK_? + auVar28._32_4_,
+      pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
+                          ((Quaternion *)&stack0xffffff70,fVar6 + _UNK_? + fVar2,
                            TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0
                           );
-      value_00 = *pQVar18;
-      auVar29._20_32_ = auVar28._20_32_;
-      auVar29._0_16_ = auVar28._0_16_;
-      auVar29._16_4_ = 0;
-      auVar30._16_36_ = auVar29._16_36_;
-      auVar30._0_4_ = value_00.x;
-      auVar30._4_4_ = value_00.y;
-      auVar30._8_4_ = value_00.z;
-      auVar30._12_4_ = value_00.w;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                (cameraTransform,value_00,(MethodInfo *)0x0);
-      auVar31._20_32_ = auVar30._20_32_;
-      auVar31._0_16_ = auVar30._0_16_;
-      auVar31._16_4_ =
-           UnityEngine__MeshFilter__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::MeshFilter>_bool_____
-      ;
-      auVar32._16_36_ = auVar31._16_36_;
-      auVar32._0_12_ = auVar30._0_12_;
-      auVar32._12_4_ = 1;
-      auVar33._12_40_ = auVar32._12_40_;
-      auVar33._0_8_ = auVar30._0_8_;
-      auVar33._8_4_ = objectTransform;
-      auVar34._8_44_ = auVar33._8_44_;
-      auVar34._0_8_ = 0x10489d9600000000;
-      pOVar35 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                (cameraTransform,*pQVar12,(MethodInfo *)0x0);
+      pOVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                 Component_GetComponentsInChildren_2
                           ((Component *)objectTransform,1,
                            UnityEngine__MeshFilter__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::MeshFilter>_bool_____
                           );
-      puVar36 = (undefined *)0x0;
-      if (pOVar35 != (Object__Array *)0x0) {
-        ppOVar37 = pOVar35->vector;
+      fVar2 = 0.0;
+      if (pOVar17 != (Object__Array *)0x0) {
+        ppOVar18 = pOVar17->vector;
         while( true ) {
-          auVar38._32_20_ = auVar34._32_20_;
-          auVar38._0_28_ = auVar34._0_28_;
-          auVar38._28_4_ = ppOVar37;
-          if ((int)pOVar35->max_length <= (int)puVar36) {
+          if ((int)pOVar17->max_length <= (int)fVar2) {
             return;
           }
-          if ((undefined *)pOVar35->max_length <= puVar36) break;
-          this_00 = (MeshFilter *)*ppOVar37;
+          if (pOVar17->max_length <= (uint)fVar2) break;
+          this_00 = (MeshFilter *)*ppOVar18;
           if (this_00 == (MeshFilter *)0x0) goto code_?;
-          auVar39._0_44_ = auVar38._0_44_;
-          auVar39._44_4_ = &UNK_?;
-          auVar39._48_4_ = this_00;
           this_04 = this_00;
           this_01 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_mesh
                               (this_00,(MethodInfo *)0x0);
-          auVar34._0_44_ = auVar39._0_44_;
-          auVar34._44_4_ = &UNK_?;
-          auVar34._48_4_ = this_00;
-          pGVar40 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+          pGVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                               ((Component *)this_00,(MethodInfo *)0x0);
-          if (pGVar40 == (GameObject *)0x0) goto code_?;
+          if (pGVar19 == (GameObject *)0x0) goto code_?;
           this_02 = (Renderer *)
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                              (pGVar40,
+                              (pGVar19,
                                UnityEngine__Renderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Renderer>__
                               );
-          pGVar40 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+          pGVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                               ((Component *)this_00,(MethodInfo *)0x0);
-          if (pGVar40 == (GameObject *)0x0) goto code_?;
+          if (pGVar19 == (GameObject *)0x0) goto code_?;
           flagSet = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                              (pGVar40,(MethodInfo *)0x0);
-          bVar41 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::PointerDeviceState::
+                              (pGVar19,(MethodInfo *)0x0);
+          bVar20 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::PointerDeviceState::
                    PointerDeviceState_HasFlagFast(flagSet,2,(MethodInfo *)0x0);
-          if (bVar41 == 0) {
+          if (bVar20 == 0) {
             submeshIndex = 0;
-            auVar42._36_16_ = auVar34._36_16_;
-            auVar42._0_32_ = auVar34._0_32_;
-            auVar42._32_4_ = 0x10;
+            iVar21 = 0x10;
+            if (this_01 == (Mesh *)0x0) goto code_?;
             while( true ) {
-              if (this_01 == (Mesh *)0x0) goto code_?;
-              auVar34._0_44_ = auVar42._0_44_;
-              auVar34._44_4_ = &UNK_?;
-              auVar34._48_4_ = this_01;
-              iVar4 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_subMeshCount
+              ppOVar18 = (Object **)0x0;
+              iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_subMeshCount
                                  (this_01,(MethodInfo *)0x0);
-              if (iVar4 <= (int)submeshIndex) break;
+              if (iVar1 <= (int)submeshIndex) break;
               if (this_02 == (Renderer *)0x0) goto code_?;
-              pRVar43 = this_02;
-              pMVar44 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::
+              pMVar22 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::
                         Renderer_get_sharedMaterials(this_02,(MethodInfo *)0x0);
-              if (pMVar44 == (Material__Array *)0x0) goto code_?;
-              if (pMVar44->max_length <= submeshIndex) goto code_?;
-              material = *(Material **)((int)pMVar44->vector + auVar34._32_4_ + -0x10);
+              if (pMVar22 == (Material__Array *)0x0) goto code_?;
+              if (pMVar22->max_length <= submeshIndex) goto code_?;
+              material = *(Material **)((int)pMVar22->vector + iVar21 + -0x10);
               this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                   ((Component *)this_04,(MethodInfo *)0x0);
               if (this_03 == (Transform *)0x0) goto code_?;
-              pMVar45 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+              pMVar23 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                         Transform_get_localToWorldMatrix
                                   ((Matrix4x4 *)&stack0xffffff30,this_03,(MethodInfo *)0x0);
-              puStack_10 = (undefined *)pMVar45->m00;
-              fVar7 = pMVar45->m10;
-              fVar8 = pMVar45->m20;
-              fVar9 = pMVar45->m30;
-              auVar46._0_12_ = auVar34._0_12_;
-              auVar46._12_4_ = pMVar45->m01;
-              auVar46._16_4_ = pMVar45->m11;
-              auVar46._20_4_ = pMVar45->m21;
-              auVar46._28_24_ = auVar34._28_24_;
-              auVar46._24_4_ = pMVar45->m31;
-              uVar47 = pMVar45->m12;
-              uVar48 = pMVar45->m22;
-              uVar49 = pMVar45->m32;
-              auVar50._8_4_ = uVar49;
-              auVar50._4_4_ = uVar48;
-              auVar50._0_4_ = uVar47;
-              auVar50._12_40_ = auVar46._12_40_;
-              fVar51 = pMVar45->m03;
-              fVar52 = pMVar45->m13;
-              this = (AvatarCapture *)pMVar45->m23;
-              cameraTransform = (Transform *)pMVar45->m33;
-              iVar4 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+              puStack_7 = (undefined *)pMVar23->m00;
+              this_01 = (Mesh *)pMVar23->m10;
+              fVar4 = pMVar23->m20;
+              fVar5 = pMVar23->m30;
+              fVar2 = pMVar23->m01;
+              fVar6 = pMVar23->m11;
+              fVar8 = pMVar23->m21;
+              fVar9 = pMVar23->m31;
+              fVar10 = pMVar23->m32;
+              fVar24 = pMVar23->m03;
+              iVar1 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                                  (StringLiteral_UXElementSecondary,(MethodInfo *)0x0);
-              camera = (Camera *)this_02[1].monitor;
-              this_02 = pRVar43;
+              camera = (this->fields).renderCam;
               if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
-                this_02 = pRVar43;
               }
-              auVar53._4_4_ = fVar7;
-              auVar53._0_4_ = puStack_10;
-              auVar53._8_4_ = fVar8;
-              auVar53._12_4_ = fVar9;
-              auVar53._16_4_ = fVar9;
-              auVar53._20_4_ = auVar50._16_4_;
-              auVar53._24_4_ = auVar50._20_4_;
-              auVar53._28_4_ = auVar50._24_4_;
-              auVar53._32_4_ = this_01;
-              auVar53._36_4_ = puStack_10;
-              auVar53._40_4_ = fVar7;
-              auVar53._44_4_ = fVar8;
-              auVar53._48_4_ = fVar51;
-              unaff_retaddr = fVar52;
-              puVar36 = &UNK_?;
-              fVar54 = (float)puStack_10;
-              stack0xffffffd0 = fVar7;
-              stack0xffffffd4 = fVar8;
-              stack0xffffffd8 = fVar9;
-              stack0xffffffdc = fVar9;
-              stack0xffffffe0 = auVar50._16_4_;
-              stack0xffffffe4 = auVar50._20_4_;
-              stack0xffffffe8 = (float)auVar50._24_4_;
-              stack0xffffffec = (float)this_01;
-              stack0xfffffff0 = (float)puStack_10;
-              stack0xfffffff4 = fVar7;
-              stack0xfffffff8 = fVar8;
-              stack0xfffffffc = fVar51;
-              matrix = (Matrix4x4)CONCAT1252(auVar55,auVar56);
+              this = (AvatarCapture *)0x0;
+              this_02 = (Renderer *)&UNK_?;
+              matrix.m10 = (float)this_01;
+              matrix.m00 = (float)puStack_7;
+              matrix.m20 = fVar4;
+              matrix.m30 = fVar5;
+              matrix.m01 = fVar2;
+              matrix.m11 = fVar6;
+              matrix.m21 = fVar8;
+              matrix.m31 = fVar9;
+              matrix.m02 = fVar6;
+              matrix.m12 = fVar8;
+              matrix.m22 = fVar9;
+              matrix.m32 = fVar10;
+              matrix.m03 = fVar24;
+              matrix.m13 = (float)puStack_7;
+              matrix.m23 = (float)this_01;
+              matrix.m33 = fVar4;
               UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMesh
-                        (this_01,matrix,material,iVar4,camera,submeshIndex,
+                        (this_01,matrix,material,iVar1,camera,submeshIndex,
                          (MaterialPropertyBlock *)0x0,1,1,0,(MethodInfo *)0x0);
               submeshIndex = submeshIndex + 1;
-              auVar42._36_16_ = auVar53._36_16_;
-              auVar42._0_32_ = auVar53._0_32_;
-              auVar42._32_4_ = auVar53._32_4_ + 4;
+              iVar21 = iVar21 + 4;
             }
           }
-          puVar36 = puVar36 + 1;
-          ppOVar37 = (Object **)(auVar34._28_4_ + 4);
+          fVar2 = (float)((int)fVar2 + 1);
+          ppOVar18 = ppOVar18 + 1;
         }
 code_?:
         func_?();
@@ -1136,8 +1036,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar57 = (code *)swi(3);
-  (*pcVar57)();
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 
@@ -1152,28 +1052,32 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_InitializeCamera
     func_?(&TypeInfo__UnityEngine__RenderTexture);
     cRam_? = '\x01';
   }
-  pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-  if ((pGVar1 != (GameEventManager *)0x0) &&
-     (this_00 = (pGVar1->fields).AvatarCommandsPlayMode,
+  TStack_1._id_k__BackingField = 0;
+  TStack_1.m_Data = (Object *)0x0;
+  TStack_1.m_Children = (IList_1_UnityEngine_UIElements_TreeViewItemData_1_System_Object_ *)0x0;
+  uStack_2 = 0;
+  pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+  if ((pGVar3 != (GameEventManager *)0x0) &&
+     (this_00 = (pGVar3->fields).AvatarCommandsPlayMode,
      this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
     GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd__RegisterAdEvents_m__A
               ((RewardedAd *)this_00,(MethodInfo *)0x0);
-    pCVar2 = (this->fields).renderCam;
-    if (pCVar2 != (Camera *)0x0) {
+    pCVar4 = (this->fields).renderCam;
+    if (pCVar4 != (Camera *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_clearFlags
-                (pCVar2,CameraClearFlags__Enum_Depth,(MethodInfo *)0x0);
-      pRVar3 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_currentResolution
-                         (&RStack_4,(MethodInfo *)0x0);
-      TStack_5._id_k__BackingField = pRVar3->m_Width;
-      TStack_5.m_Data = (Object *)pRVar3->m_Height;
-      TStack_5.m_Children =
+                (pCVar4,CameraClearFlags__Enum_Depth,(MethodInfo *)0x0);
+      pRVar5 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_currentResolution
+                         (&RStack_6,(MethodInfo *)0x0);
+      TStack_1._id_k__BackingField = pRVar5->m_Width;
+      TStack_1.m_Data = (Object *)pRVar5->m_Height;
+      TStack_1.m_Children =
            (IList_1_UnityEngine_UIElements_TreeViewItemData_1_System_Object_ *)
-           (pRVar3->m_RefreshRate).numerator;
-      uStack_6 = (pRVar3->m_RefreshRate).denominator;
+           (pRVar5->m_RefreshRate).numerator;
+      uStack_2 = (pRVar5->m_RefreshRate).denominator;
       width = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_ReadUnaligned_6
-                        ((uint8_t *)&TStack_5,(MethodInfo *)0x0);
+                        ((uint8_t *)&TStack_1,(MethodInfo *)0x0);
       height = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::TreeViewItemData`1[System
-               ::Object]::TreeViewItemData_1_System_Object__get_data(&TStack_5,(MethodInfo *)0x0);
+               ::Object]::TreeViewItemData_1_System_Object__get_data(&TStack_1,(MethodInfo *)0x0);
       this_01 = (RenderTexture *)func_?(TypeInfo__UnityEngine__RenderTexture);
       UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture__ctor_8
                 (this_01,(int32_t)width,(int32_t)height,0x10,RenderTextureFormat__Enum_ARGB32,
@@ -1191,10 +1095,10 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_InitializeCamera
                   ((Texture *)this_01,TextureWrapMode__Enum_Clamp,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
                   ((Texture *)this_01,FilterMode__Enum_Trilinear,(MethodInfo *)0x0);
-        pCVar2 = (this->fields).renderCam;
-        if (pCVar2 != (Camera *)0x0) {
+        pCVar4 = (this->fields).renderCam;
+        if (pCVar4 != (Camera *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture
-                    (pCVar2,this_01,(MethodInfo *)0x0);
+                    (pCVar4,this_01,(MethodInfo *)0x0);
           return;
         }
       }
@@ -1254,10 +1158,10 @@ Vector3 * Assembly-CSharp.dll::AvatarCapture::AvatarCapture_RotatePointAroundPiv
   fVar1 = point.x - pivot.x;
   fStack_2 = point.y - pivot.y;
   VStack_3.z = point.z - pivot.z;
-  QStack_4.w = angles.z * _UNK_?;
+  QStack_4.z = angles.z * _UNK_?;
   euler.y = angles.y * _UNK_?;
   euler.x = angles.x * _UNK_?;
-  euler.z = QStack_4.w;
+  euler.z = angles.z * _UNK_?;
   pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
                      (&QStack_4,euler,(MethodInfo *)0x0);
   fVar6 = pQVar5->w;

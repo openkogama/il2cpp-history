@@ -101,7 +101,7 @@ void Assembly-CSharp.dll::KillLimitSettings::KillLimitSettings_Initialize
           if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
               (TypeInfo__System__Int32->_0).element_class) {
             piVar5 = (int32_t *)func_?(TVar4.m_Index);
-            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                       (this_01,StringLiteral_killLimit,*piVar5,(MethodInfo *)0x0);
             return;
           }

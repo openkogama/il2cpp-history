@@ -62,8 +62,8 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionMenu::
                   );
         if (pSVar4 != (SpawnRoleAvatarSelectionElement *)0x0) {
           (pSVar4->fields).avatarId = (int32_t)pVVar5;
-          (pSVar4->fields).elementIndex = index;
           (pSVar4->fields).onSelectedCallback = (UnityAction_1_System_Int32_ *)this_01;
+          (pSVar4->fields).elementIndex = index;
           func_?();
           pLVar1 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
                    (this->fields).avatarSelectionDataList;
@@ -128,40 +128,39 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionMenu::SpawnRoleAvatarSelection
       cRam_? = '\x01';
     }
     if (-1 < previousStartElement) {
-      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (this->fields).selectionElements;
-      if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-      goto code_?;
-      if ((previousStartElement < (this_00->fields)._size) &&
+      pLVar2 = (this->fields).selectionElements;
+      if (pLVar2 == (List_1_SpawnRoleAvatarSelectionElement_ *)0x0) goto code_?;
+      if ((previousStartElement < (pLVar2->fields)._size) &&
          ((previousStartElement < newStartElement ||
           ((this->fields).maxSelectionElementsOnScreen + newStartElement < previousStartElement))))
       {
-        this_02 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+        this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_00,previousStartElement,
+                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             (this->fields).selectionElements,previousStartElement,
                              MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionElement>__get_Item_int_
                             );
-        if (this_02 == (RegexCharClass_SingleRange)0x0) {
+        if (this_01 == (RegexCharClass_SingleRange)0x0) {
 code_?:
           func_?();
-          pcVar2 = (code *)swi(3);
-          (*pcVar2)();
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
           return;
         }
         SpawnRoleAvatarSelectionElement::SpawnRoleAvatarSelectionElement_Deactivate
-                  ((SpawnRoleAvatarSelectionElement *)this_02,(MethodInfo *)0x0);
-        pLVar3 = (this->fields).avatarSelectionDataList;
-        if (pLVar3 == (List_1_SpawnRoleAvatarSelectionData_ *)0x0) goto code_?;
-        pMStack_4 = 
+                  ((SpawnRoleAvatarSelectionElement *)this_01,(MethodInfo *)0x0);
+        pLVar4 = (this->fields).avatarSelectionDataList;
+        if (pLVar4 == (List_1_SpawnRoleAvatarSelectionData_ *)0x0) goto code_?;
+        pMStack_5 = 
         MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionData>__get_Item_int_;
-        iStack_5 = previousStartElement;
-        piVar6 = (int *)func_?(&iStack_5,pLVar3);
-        if ((*piVar6 == 0) ||
-           (this_01 = *(GameObject **)(*piVar6 + 0x88), this_01 == (GameObject *)0x0))
+        iStack_6 = previousStartElement;
+        piVar7 = (int *)func_?(&iStack_6,pLVar4);
+        if ((*piVar7 == 0) ||
+           (this_00 = *(GameObject **)(*piVar7 + 0x88), this_00 == (GameObject *)0x0))
         goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (this_01,0,(MethodInfo *)0x0);
+                  (this_00,0,(MethodInfo *)0x0);
       }
     }
     previousStartElement = previousStartElement + 1;
@@ -280,35 +279,35 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionMenu::SpawnRoleAvatarSelection
                    );
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-            (this->fields).avatarSelectionDataList;
-  if (this_00 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+  if ((this->fields).avatarSelectionDataList == (List_1_SpawnRoleAvatarSelectionData_ *)0x0) {
     return;
   }
+  pLVar1 = (this->fields).avatarSelectionDataList;
   index = 0;
   while( true ) {
-    if ((this_00->fields)._size <= index) {
+    if ((pLVar1->fields)._size <= index) {
       return;
     }
+    this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+              (this->fields).avatarSelectionDataList;
     if (this_00 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
-    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+    pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
              VisualTreeAsset+UsingEntry]::
              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                        ((VisualTreeAsset_UsingEntry *)&stack0xffffffe4,this_00,index,
                         MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionData>__get_Item_int_
                        );
-    uVar2 = pVVar1->alias;
-    if ((uVar2 == 0) || (*(GameObject **)(uVar2 + 0x88) == (GameObject *)0x0)) break;
+    uVar3 = pVVar2->alias;
+    if ((uVar3 == 0) || (*(GameObject **)(uVar3 + 0x88) == (GameObject *)0x0)) break;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (*(GameObject **)(uVar2 + 0x88),0,(MethodInfo *)0x0);
-    this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-              (this->fields).avatarSelectionDataList;
+              (*(GameObject **)(uVar3 + 0x88),0,(MethodInfo *)0x0);
+    pLVar1 = (this->fields).avatarSelectionDataList;
     index = index + 1;
-    if (this_00 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
+    if (pLVar1 == (List_1_SpawnRoleAvatarSelectionData_ *)0x0) break;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -390,9 +389,8 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionMenu::
   if (this_00 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (this_00,0,(MethodInfo *)0x0);
-    ppLVar1 = &(this->fields).avatarSelectionDataList;
-    *ppLVar1 = avatarSelectionDataList;
-    func_?(ppLVar1,avatarSelectionDataList);
+    (this->fields).avatarSelectionDataList = avatarSelectionDataList;
+    func_?(&(this->fields).avatarSelectionDataList,avatarSelectionDataList);
     index = 0;
     if (avatarSelectionDataList != (List_1_SpawnRoleAvatarSelectionData_ *)0x0) {
       for (; index < (avatarSelectionDataList->fields)._size; index = index + 1) {
@@ -405,8 +403,8 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionMenu::
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -577,7 +575,7 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionMenu::
     do {
       if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IHandleSpawnRoleAvatarSelectionData) {
-        ppMVar5 = &(&handler->klass->vtable)[pIVar2->interfaceOffsets[uVar3].offset].
+        ppMVar5 = &(&handler->klass->vtable)[handler->klass->interfaceOffsets[uVar3].offset].
                    TryGetSpawnRoleAvatarSelectionData.method;
         goto code_?;
       }
@@ -618,9 +616,8 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionMenu::SpawnRoleAvatarSelection
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionElement>__List__
             );
-  ppLVar1 = &(this->fields).selectionElements;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).selectionElements = this_00;
+  func_?(&(this->fields).selectionElements,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

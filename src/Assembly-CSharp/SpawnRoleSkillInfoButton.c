@@ -6,15 +6,12 @@ void Assembly-CSharp.dll::SpawnRoleSkillInfoButton::SpawnRoleSkillInfoButton_Ini
                int32_t skillCost,SpawnRolesSkillDataManager *skillDataManager,MethodInfo *method)
 
 {
-  ppSVar1 = &(this->fields).skillType;
-  *ppSVar1 = skillType;
-  func_?(ppSVar1,skillType);
-  ppOVar2 = &(this->fields).skillValue;
-  *ppOVar2 = skillValue;
-  func_?(ppOVar2,skillValue);
-  ppSVar3 = &(this->fields).skillDataManager;
-  *ppSVar3 = skillDataManager;
-  func_?(ppSVar3,skillDataManager);
+  (this->fields).skillType = skillType;
+  func_?(&(this->fields).skillType,skillType);
+  (this->fields).skillValue = skillValue;
+  func_?(&(this->fields).skillValue,skillValue);
+  (this->fields).skillDataManager = skillDataManager;
+  func_?(&(this->fields).skillDataManager,skillDataManager);
   (this->fields).skillCost = skillCost;
   return;
 }

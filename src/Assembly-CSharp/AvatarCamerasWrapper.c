@@ -109,7 +109,7 @@ Assembly-CSharp.dll::AvatarCamerasWrapper::AvatarCamerasWrapper_GetCameraBases
                           );
         if (bVar5 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     ((Object *)&stack0xffffffc4,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<CameraType,_MVCameraBase>__Dispose__
@@ -157,10 +157,9 @@ void Assembly-CSharp.dll::AvatarCamerasWrapper::AvatarCamerasWrapper__ctor
              MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Dictionary__
             );
   method_00 = (MethodInfo *)&this->fields;
-  ((AvatarCamerasWrapper__Fields *)method_00)->avatarCameras =
-       (Dictionary_2_CameraType_MVCameraBase_ *)this_00;
+  (this->fields).avatarCameras = (Dictionary_2_CameraType_MVCameraBase_ *)this_00;
   func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }

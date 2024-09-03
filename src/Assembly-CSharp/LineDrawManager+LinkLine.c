@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::LineDrawManager+LinkLine::LineDrawManager_LinkLine__ct
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).startPos.x = startPos.x;
   (this->fields).startPos.y = startPos.y;

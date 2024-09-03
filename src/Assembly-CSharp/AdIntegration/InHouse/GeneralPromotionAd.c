@@ -67,9 +67,8 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
     pSVar1 = (String *)
              (*(code *)(pTVar2->klass->vtable).get_text.method)
                        (pTVar2,(pTVar2->klass->vtable).set_text.methodPtr);
-    ppSVar3 = &(this->fields).startContinueText;
-    *ppSVar3 = pSVar1;
-    func_?(ppSVar3,pSVar1);
+    (this->fields).startContinueText = pSVar1;
+    func_?(&(this->fields).startContinueText,pSVar1);
   }
   else if (pTVar2 == (Text *)0x0) goto code_?;
   (*(code *)(pTVar2->klass->vtable).set_text.method)
@@ -82,8 +81,8 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -101,10 +100,10 @@ Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPromotio
   }
   method_00 = TypeInfo__AdIntegration__InHouse__GeneralPromotionAd___FadeOutAndPop_d__37;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -346,7 +345,7 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
         }
         method_00 = TypeInfo__AdIntegration__InHouse__GeneralPromotionAd____c__DisplayClass32_0;
         value = (Object *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
         original = in_stack_3[3].klass;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -464,7 +463,7 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
     }
     method_00 = TypeInfo__AdIntegration__InHouse__GeneralPromotionAd___FadeOutAndPop_d__37;
     value = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     value[1].klass = (Object__Class *)0x0;
     value[2].klass = (Object__Class *)this;
@@ -495,12 +494,11 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPro
   }
   else {
     pAVar2 = (pMVar1->fields).OnWinningConditionFulfilled;
-    ppAVar3 = &(pMVar1->fields).OnWinningConditionFulfilled;
-    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?(TypeInfo__System__Action<IWinningCondition>);
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+    this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+              func_?(TypeInfo__System__Action<IWinningCondition>);
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
               (this_00,(Object *)0x0,
                MethodInfo__AdIntegration__InHouse__GeneralPromotionAd__OnWinningConditionFulfilled_IWinningCondition_
                ,(MethodInfo *)0x0);
@@ -508,33 +506,33 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPro
                           ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
     unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
     if (unaff_ESI == (Delegate *)0x0) {
-      *ppAVar3 = (Action_1_IWinningCondition_ *)0x0;
-      pDStack4 = (Delegate *)ppAVar3;
-      pAStack5 = (Action_1_IWinningCondition___Class *)unaff_ESI;
+      (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+      pDStack3 = (Delegate *)&(pMVar1->fields).OnWinningConditionFulfilled;
+      pAStack4 = (Action_1_IWinningCondition___Class *)unaff_ESI;
       func_?();
       return;
     }
-    pAStack5 = TypeInfo__System__Action<IWinningCondition>;
-    pDStack4 = unaff_ESI;
+    pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+    pDStack3 = unaff_ESI;
     pAVar2 = (Action_1_IWinningCondition_ *)func_?();
     if (pAVar2 != (Action_1_IWinningCondition_ *)0x0) {
-      *ppAVar3 = pAVar2;
+      (pMVar1->fields).OnWinningConditionFulfilled = pAVar2;
       unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
-      pAStack5 = TypeInfo__System__Action<IWinningCondition>;
-      pDStack4 = unaff_ESI;
-      pAStack5 = (Action_1_IWinningCondition___Class *)func_?();
-      if (pAStack5 != (Action_1_IWinningCondition___Class *)0x0) {
-        pDStack4 = (Delegate *)ppAVar3;
+      pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+      pDStack3 = unaff_ESI;
+      pAStack4 = (Action_1_IWinningCondition___Class *)func_?();
+      if (pAStack4 != (Action_1_IWinningCondition___Class *)0x0) {
+        pDStack3 = (Delegate *)&(pMVar1->fields).OnWinningConditionFulfilled;
         func_?();
         return;
       }
     }
   }
-  pDStack4 = unaff_ESI;
-  pAStack5 = unaff_EDI;
+  pDStack3 = unaff_ESI;
+  pAStack4 = unaff_EDI;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -618,7 +616,7 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPro
     }
     method_00 = TypeInfo__AdIntegration__InHouse__GeneralPromotionAd___FadeOutAndPop_d__37;
     value = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     value[1].klass = (Object__Class *)0x0;
     value[2].klass = (Object__Class *)this;
@@ -656,7 +654,7 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
   }
   method_00 = TypeInfo__AdIntegration__InHouse__GeneralPromotionAd____c__DisplayClass32_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   pGVar1 = (this->fields).goToKogamaPopupPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -780,11 +778,10 @@ code_?:
     pMVar16 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar16 == (MVNetworkGame *)0x0) goto code_?;
     a = (pMVar16->fields).OnWinningConditionFulfilled;
-    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+    this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
               (this_01,(Object *)0x0,
                MethodInfo__AdIntegration__InHouse__GeneralPromotionAd__OnWinningConditionFulfilled_IWinningCondition_
                ,(MethodInfo *)0x0);
@@ -865,54 +862,44 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPro
 {
   if (cRam_? == '\0') {
     func_?(&::StringLiteral__);
-    func_?(&::StringLiteral___);
+    func_?();
     cRam_? = '\x01';
   }
-  if ((this->fields).finishedWaiting != 0) {
-    return;
-  }
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar2 = (this->fields).secondsToWait;
-  pTStack_3 = (Text *)(fVar1 - (this->fields).startTime);
-  if (fVar2 <= (float)pTStack_3) {
+  if ((this->fields).finishedWaiting == 0) {
+    fStack_1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    fStack_1 = fStack_1 - (this->fields).startTime;
+    if (fStack_1 < (this->fields).secondsToWait) {
+      fVar2 = (this->fields).secondsToWait;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__System__Math);
+        cRam_? = '\x01';
+      }
+      fVar2 = fVar2 - fStack_1;
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Math);
+      }
+      uStack_3 = (double)fVar2;
+      fVar4 = (float10)func_?(uStack_3);
+      pTVar5 = (this->fields).continueText;
+      uStack_3 = (double)CONCAT44((int)fVar4,SUB84((double)fVar4,0));
+      str0 = GeneralPromotionAd_get_StartContinueText(this,(MethodInfo *)0x0);
+      str2 = mscorlib.dll::System::Int32::Int32_ToString
+                       ((Int32 *)((int)&uStack_3 + 4),(MethodInfo *)0x0);
+      mscorlib.dll::System::String::String_Concat_5
+                (str0,::StringLiteral___,str2,::StringLiteral__,(MethodInfo *)0x0);
+      if (pTVar5 != (Text *)0x0) {
+        pTVar6 = pTVar5->klass;
+        pIStack7 = (pTVar6->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+        (*(code *)(pTVar6->vtable).set_text.method)();
+        return;
+      }
+      func_?();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
     GeneralPromotionAd_ActivateContinueButton(this,(MethodInfo *)0x0);
-    return;
   }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Math);
-    cRam_? = '\x01';
-  }
-  fVar2 = fVar2 - (float)pTStack_3;
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Math);
-  }
-  uStack_4 = (double)fVar2;
-  fVar5 = (float10)func_?(uStack_4);
-  pTVar6 = (this->fields).continueText;
-  ppSVar7 = &(this->fields).startContinueText;
-  str0 = *ppSVar7;
-  uStack_4._0_4_ = SUB84((double)fVar5,0);
-  uStack_4 = (double)CONCAT44((int)fVar5,(undefined4)uStack_4);
-  if (str0 == (String *)0x0) {
-    if (pTVar6 == (Text *)0x0) goto code_?;
-    str0 = (String *)(*(code *)(pTVar6->klass->vtable).get_text.method)(pTVar6);
-    *ppSVar7 = str0;
-    func_?(ppSVar7,str0);
-  }
-  str2 = mscorlib.dll::System::Int32::Int32_ToString
-                   ((Int32 *)((int)&uStack_4 + 4),(MethodInfo *)0x0);
-  mscorlib.dll::System::String::String_Concat_5
-            (str0,::StringLiteral___,str2,::StringLiteral__,(MethodInfo *)0x0);
-  if (pTVar6 != (Text *)0x0) {
-    uStack_4 = (double)CONCAT44(&UNK_?,(undefined4)uStack_4);
-    pTStack_3 = pTVar6;
-    (*(code *)(pTVar6->klass->vtable).set_text.method)();
-    return;
-  }
-code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
   return;
 }
 
@@ -1015,20 +1002,19 @@ String * Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
 
 {
   pSVar1 = (this->fields).startContinueText;
-  ppSVar2 = &(this->fields).startContinueText;
   if (pSVar1 == (String *)0x0) {
-    pTVar3 = (this->fields).continueText;
-    if (pTVar3 == (Text *)0x0) {
+    pTVar2 = (this->fields).continueText;
+    if (pTVar2 == (Text *)0x0) {
       func_?();
-      pcVar4 = (code *)swi(3);
-      pSVar1 = (String *)(*pcVar4)();
+      pcVar3 = (code *)swi(3);
+      pSVar1 = (String *)(*pcVar3)();
       return pSVar1;
     }
     pSVar1 = (String *)
-             (*(code *)(pTVar3->klass->vtable).get_text.method)
-                       (pTVar3,(pTVar3->klass->vtable).set_text.methodPtr);
-    *ppSVar2 = pSVar1;
-    func_?(ppSVar2,pSVar1);
+             (*(code *)(pTVar2->klass->vtable).get_text.method)
+                       (pTVar2,(pTVar2->klass->vtable).set_text.methodPtr);
+    (this->fields).startContinueText = pSVar1;
+    func_?(&(this->fields).startContinueText,pSVar1);
   }
   return pSVar1;
 }

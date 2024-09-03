@@ -5,31 +5,30 @@ void Assembly-CSharp.dll::FirstPersonWeaponBob::FirstPersonWeaponBob_Initialize
                (FirstPersonWeaponBob *this,Transform *weapon,MethodInfo *method)
 
 {
-  ppTVar1 = &(this->fields).weapon;
-  *ppTVar1 = weapon;
-  func_?(ppTVar1,weapon);
+  (this->fields).weapon = weapon;
+  func_?(&(this->fields).weapon,weapon);
   if (weapon != (Transform *)0x0) {
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       ((Vector3 *)(auStack_3 + 4),weapon,(MethodInfo *)0x0);
-    fVar4 = pVVar2->y;
-    fVar5 = pVVar2->z;
-    (this->fields).weaponPosition.x = pVVar2->x;
-    (this->fields).weaponPosition.y = fVar4;
-    (this->fields).weaponPosition.z = fVar5;
-    pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
-                       ((Quaternion *)auStack_3,weapon,(MethodInfo *)0x0);
-    fVar5 = pQVar6->y;
-    fVar4 = pQVar6->z;
-    fVar7 = pQVar6->w;
-    (this->fields).weaponRotation.x = pQVar6->x;
-    (this->fields).weaponRotation.y = fVar5;
-    (this->fields).weaponRotation.z = fVar4;
-    (this->fields).weaponRotation.w = fVar7;
+    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+                       ((Vector3 *)(auStack_2 + 4),weapon,(MethodInfo *)0x0);
+    fVar3 = pVVar1->y;
+    fVar4 = pVVar1->z;
+    (this->fields).weaponPosition.x = pVVar1->x;
+    (this->fields).weaponPosition.y = fVar3;
+    (this->fields).weaponPosition.z = fVar4;
+    pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
+                       ((Quaternion *)auStack_2,weapon,(MethodInfo *)0x0);
+    fVar4 = pQVar5->y;
+    fVar3 = pQVar5->z;
+    fVar6 = pQVar5->w;
+    (this->fields).weaponRotation.x = pQVar5->x;
+    (this->fields).weaponRotation.y = fVar4;
+    (this->fields).weaponRotation.z = fVar3;
+    (this->fields).weaponRotation.w = fVar6;
     return;
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -64,7 +63,7 @@ void Assembly-CSharp.dll::FirstPersonWeaponBob::FirstPersonWeaponBob_Update
     pTVar6 = (this->fields).weapon;
     uVar7 = (this->fields).bobAxis.x;
     uVar8 = (this->fields).bobAxis.y;
-    fVar2 = (this->fields).bobMultiplier * fVar2 * fVar1;
+    fVar2 = fVar2 * (this->fields).bobMultiplier * fVar1;
     if (pTVar6 != (Transform *)0x0) {
       value.y = (float)uVar5 + (float)uVar8 * fVar2;
       value.x = (float)uVar4 + (float)uVar7 * fVar2;
@@ -79,7 +78,7 @@ void Assembly-CSharp.dll::FirstPersonWeaponBob::FirstPersonWeaponBob_Update
                            (MethodInfo *)0x0);
         fVar9 = (this->fields).rotationAxis.z;
         pTVar6 = (this->fields).weapon;
-        fVar1 = (this->fields).rotationMultiplier * fVar2 * fVar1;
+        fVar1 = fVar2 * (this->fields).rotationMultiplier * fVar1;
         pVVar10 = &(this->fields).rotationAxis;
         fVar2 = pVVar10->x;
         fVar11 = pVVar10->y;
@@ -114,20 +113,20 @@ void Assembly-CSharp.dll::FirstPersonWeaponBob::FirstPersonWeaponBob__ctor
 
 {
   uVar1 = _UNK_?;
-  this_00 = &(this->fields).bobAxis;
-  this_01 = &(this->fields).rotationAxis;
   uVar2 = (ulonglong)_UNK_?;
-  this_00->x = (float)(int)(uVar2 << 0x20);
-  this_00->y = (float)(int)((uVar2 << 0x20) >> 0x20);
+  (this->fields).bobAxis.x = (float)(int)(uVar2 << 0x20);
+  (this->fields).bobAxis.y = (float)(int)((uVar2 << 0x20) >> 0x20);
   (this->fields).bobAxis.z = 0.0;
-  this_01->x = (float)(int)((ulonglong)uVar1 << 0x20);
-  this_01->y = (float)(int)(((ulonglong)uVar1 << 0x20) >> 0x20);
+  (this->fields).rotationAxis.x = (float)(int)((ulonglong)uVar1 << 0x20);
+  (this->fields).rotationAxis.y = (float)(int)(((ulonglong)uVar1 << 0x20) >> 0x20);
   (this->fields).bobFrequency = 1.0;
   (this->fields).rotationAxis.z = 0.0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(this_00,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(this_01,(MethodInfo *)0x0);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
+            (&(this->fields).bobAxis,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
+            (&(this->fields).rotationAxis,(MethodInfo *)0x0);
   return;
 }
 

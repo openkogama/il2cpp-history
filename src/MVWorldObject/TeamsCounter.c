@@ -45,7 +45,7 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter_AddIfNotPresent
                 );
       value[1].klass = this_00;
       func_?(value + 1,this_00);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 (value,ExceptionArgument__Enum_obj,in_stack_3);
       if (pDVar1 == (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
@@ -168,52 +168,57 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter_GetActorWithBestScore
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = 0;
+  DStack_6._16_8_ = 0;
   *score = 0;
   this_00 = (this->fields).teamCounters;
   if (((this_00 != (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)0x0) &&
-      (pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,team,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>__get_Item_MV__WorldObject__MVTeam_
-                           ), pOVar6 != (Object *)0x0)) &&
-     (pOVar6[1].klass != (Object__Class *)0x0)) {
-    method_00 = (MethodInfo *)auStack_7;
-    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
-              Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                         method_00,(Dictionary_2_System_UInt32_System_Object_ *)pOVar6[1].klass,
-                         MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__GetEnumerator__
-                        );
-    uStack_9 = 0;
-    DStack_10._dictionary = pDVar8->_dictionary;
-    DStack_10._version = pDVar8->_version;
-    DStack_10._index = pDVar8->_index;
-    DStack_10._current.key = (pDVar8->_current).key;
-    DStack_10._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
+      (pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,team,
+                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>__get_Item_MV__WorldObject__MVTeam_
+                          ), pOVar7 != (Object *)0x0)) && (pOVar7[1].klass != (Object__Class *)0x0))
+  {
+    method_00 = (MethodInfo *)auStack_8;
+    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                        method_00,(Dictionary_2_System_UInt32_System_Object_ *)pOVar7[1].klass,
+                        MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__GetEnumerator__
+                       );
+    uStack_10 = 0;
+    DStack_6._dictionary = pDVar9->_dictionary;
+    DStack_6._version = pDVar9->_version;
+    DStack_6._index = pDVar9->_index;
+    DStack_6._current.key = (pDVar9->_current).key;
+    DStack_6._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
     uStack_1 = 1;
-    pOStack_11 = (Object *)(auStack_7 + 0x18);
+    pOStack_11 = (Object *)(auStack_8 + 0x18);
     while( true ) {
       do {
         bVar12 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
                 Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                           ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                           (auStack_7 + 0x18),
+                           (auStack_8 + 0x18),
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__MoveNext__
                           );
         if (bVar12 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    ((Object *)(auStack_7 + 0x18),
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                    ((Object *)(auStack_8 + 0x18),
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__Dispose__
                      ,method_00);
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
-      } while (DStack_10._current.key == excludedActorNr);
-      if (DStack_10._current.value == (Object *)0x0) break;
-      iVar13 = *(int *)((int)DStack_10._current.value + 8);
+      } while (DStack_6._current.key == excludedActorNr);
+      if (DStack_6._current.value == (Object *)0x0) break;
+      iVar13 = *(int *)((int)DStack_6._current.value + 8);
       if (0 < iVar13) {
         switch(statType & 0xff) {
         case GameStatCounterType__Enum_Kill:
@@ -232,37 +237,9 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter_GetActorWithBestScore
       }
     }
   }
-  bVar14 = func_?();
-  pbVar15 = (byte *)(unaff_EBX ^ *(uint *)(unaff_EBX * 9));
-  bVar16 = *pbVar15;
-  bVar17 = (byte)((uint)pbVar15 >> 8);
-  *pbVar15 = *pbVar15 + bVar17;
-  bVar18 = bVar14 < 0xdb || (byte)(bVar14 + 0x25) < CARRY1(bVar16,bVar17);
-  bVar16 = (bVar14 + 0x25) - CARRY1(bVar16,bVar17);
-  bVar19 = CARRY1(*pbVar15,extraout_DH) || CARRY1(*pbVar15 + extraout_DH,bVar18);
-  *pbVar15 = *pbVar15 + extraout_DH + bVar18;
-  bVar17 = bVar16 + 0x25;
-  bVar18 = bVar16 < 0xdb || bVar17 < bVar19;
-  bVar17 = bVar17 - bVar19;
-  bVar19 = CARRY1(extraout_DL,extraout_DH) || CARRY1(extraout_DL + extraout_DH,bVar18);
-  bVar14 = extraout_DL + extraout_DH + bVar18;
-  bVar16 = bVar14 + extraout_DH;
-  bVar20 = bVar16 + bVar19;
-  uVar21 = (uint)(CARRY1(bVar14,extraout_DH) || CARRY1(bVar16,bVar19));
-  pbVar15 = (byte *)-uVar21;
-  bVar16 = *pbVar15;
-  bVar14 = *pbVar15;
-  *pbVar15 = bVar14 + extraout_DH + (uVar21 != 0);
-  uVar21 = (uint)(CARRY1(bVar20,extraout_DH) ||
-                CARRY1(bVar20 + extraout_DH,
-                       bVar17 < 0xdb ||
-                       (byte)(bVar17 + 0x25) <
-                       (CARRY1(bVar16,extraout_DH) || CARRY1(bVar14 + extraout_DH,uVar21 != 0))));
-  pcVar22 = (char *)-uVar21;
-  *pcVar22 = *pcVar22 + (char)((uint)pcVar22 >> 8) + (uVar21 != 0);
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
-  return;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -373,15 +350,15 @@ int32_t MVWorldObject.dll::TeamsCounter::TeamsCounter_Increment
                            MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__ContainsKey_int_
                           );
         if (bVar2 == 0) {
-          this_01 = pOVar1[1].klass;
+          pOVar3 = pOVar1[1].klass;
           value_00 = (Object *)func_?();
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     (value_00,ExceptionArgument__Enum_obj,method_00);
           value_00[1].klass = (Object__Class *)0x0;
-          if (this_01 == (Object__Class *)0x0) goto code_?;
+          if (pOVar3 == (Object__Class *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
           Dictionary_2_System_Int32_System_Object__Add
-                    ((Dictionary_2_System_Int32_System_Object_ *)this_01,actorNumber,value_00,
+                    ((Dictionary_2_System_Int32_System_Object_ *)pOVar3,actorNumber,value_00,
                      MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__Add_int__ActorCounter_
                     );
         }
@@ -396,8 +373,9 @@ int32_t MVWorldObject.dll::TeamsCounter::TeamsCounter_Increment
                               MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__get_Item_int_
                              );
           if (pOVar1 != (Object *)0x0) {
-            pOVar1[1].klass = (Object__Class *)((int)&((pOVar1[1].klass)->_0).image + value);
-            return (int32_t)pOVar1[1].klass;
+            pOVar3 = (Object__Class *)((int)&((pOVar1[1].klass)->_0).image + value);
+            pOVar1[1].klass = pOVar3;
+            return (int32_t)pOVar3;
           }
         }
       }
@@ -405,9 +383,9 @@ int32_t MVWorldObject.dll::TeamsCounter::TeamsCounter_Increment
   }
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  iVar4 = (*pcVar3)();
-  return iVar4;
+  pcVar4 = (code *)swi(3);
+  iVar5 = (*pcVar4)();
+  return iVar5;
 }
 
 
@@ -443,41 +421,47 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter_RemoveStatsFromActor
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = 0;
+  DStack_6._current.value = (Object *)0x0;
+  DStack_6._getEnumeratorRetType = 0;
   this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).teamCounters;
   if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffffb0,this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>__GetEnumerator__
                        );
-    uStack_7 = 0;
-    DStack_8._dictionary = pDVar6->_dictionary;
-    DStack_8._version = pDVar6->_version;
-    DStack_8._index = pDVar6->_index;
-    DStack_8._current.key = (pDVar6->_current).key;
-    DStack_8._16_8_ = *(undefined8 *)&(pDVar6->_current).value;
+    uStack_8 = 0;
+    DStack_6._dictionary = pDVar7->_dictionary;
+    DStack_6._version = pDVar7->_version;
+    DStack_6._index = pDVar7->_index;
+    DStack_6._current.key = (pDVar7->_current).key;
+    DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
     uStack_1 = 1;
-    pDStack_9 = &DStack_8;
+    pDStack_9 = &DStack_6;
     while( true ) {
       bVar10 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                        (&DStack_8,
+                        (&DStack_6,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_TeamCounter>__MoveNext__
                         );
       if (bVar10 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)&DStack_8,
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                  ((Object *)&DStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_TeamCounter>__Dispose__
                    ,in_stack_11);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      pOVar12 = DStack_8._current.value;
-      if (DStack_8._current.value == (Object *)0x0) break;
+      pOVar12 = DStack_6._current.value;
+      if (DStack_6._current.value == (Object *)0x0) break;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
@@ -563,42 +547,48 @@ String * MVWorldObject.dll::TeamsCounter::TeamsCounter_ToString
   }
   puStack_4 = puVar5;
   pSVar6 = ::StringLiteral__;
-  pSStack_7 = ::StringLiteral__;
+  DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_7._version = 0;
+  DStack_7._index = 0;
+  DStack_7._current.key = 0;
+  pSStack_8 = ::StringLiteral__;
   this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).teamCounters;
+  DStack_7._current.value = (Object *)0x0;
+  DStack_7._getEnumeratorRetType = 0;
   if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffffa0,this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>__GetEnumerator__
                        );
-    uStack_9 = 0;
-    DStack_10._dictionary = pDVar8->_dictionary;
-    DStack_10._version = pDVar8->_version;
-    DStack_10._index = pDVar8->_index;
-    DStack_10._current.key = (pDVar8->_current).key;
-    DStack_10._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
+    uStack_10 = 0;
+    DStack_7._dictionary = pDVar9->_dictionary;
+    DStack_7._version = pDVar9->_version;
+    DStack_7._index = pDVar9->_index;
+    DStack_7._current.key = (pDVar9->_current).key;
+    DStack_7._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
     uStack_1 = 1;
-    pDStack_11 = &DStack_10;
+    pDStack_11 = &DStack_7;
     while( true ) {
       bVar12 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                        (&DStack_10,
+                        (&DStack_7,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_TeamCounter>__MoveNext__
                         );
       if (bVar12 == 0) break;
-      pOStack_13 = DStack_10._current.value;
+      pOStack_13 = DStack_7._current.value;
       arg0 = (Object *)func_?();
       str1 = mscorlib.dll::System::String::String_Format_1
                        (StringLiteral_u000ATeam___0___TeamCounter___1_u000A,arg0,pOStack_13,
                         (MethodInfo *)0x0);
       pSVar6 = mscorlib.dll::System::String::String_Concat_3(pSVar6,str1,(MethodInfo *)0x0);
-      pSStack_7 = pSVar6;
+      pSStack_8 = pSVar6;
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)&DStack_10,
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)&DStack_7,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_TeamCounter>__Dispose__
                ,in_stack_14);
@@ -648,7 +638,7 @@ int32_t MVWorldObject.dll::TeamsCounter::TeamsCounter_Update
       }
       this_01 = pOVar1[1].klass;
       value_00 = (Object *)func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 (value_00,ExceptionArgument__Enum_obj,in_stack_2);
       value_00[1].klass = (Object__Class *)value;
       if (this_01 != (Object__Class *)0x0) {
@@ -735,10 +725,9 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter__ctor(TeamsCounter *this,Meth
              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>__Dictionary__
             );
   method_00 = (MethodInfo *)&this->fields;
-  ((TeamsCounter__Fields *)method_00)->teamCounters =
-       (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)this_00;
+  (this->fields).teamCounters = (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)this_00;
   func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
@@ -800,6 +789,7 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter__ctor_1
                    );
     cRam_? = '\x01';
   }
+  method_00 = (Object__Class *)0x0;
   this_01 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>
@@ -811,10 +801,9 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter__ctor_1
              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>__Dictionary__
             );
   pMVar4 = (MethodInfo *)&this->fields;
-  ((TeamsCounter__Fields *)pMVar4)->teamCounters =
-       (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)this_01;
+  (this->fields).teamCounters = (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)this_01;
   func_?(pMVar4,this_01);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,pMVar4);
   if ((teamCounterCopy != (TeamsCounter *)0x0) &&
      (this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(teamCounterCopy->fields).teamCounters,
@@ -825,77 +814,71 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter__ctor_1
                         &stack0xffffff84,this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>__GetEnumerator__
                        );
-    method_00 = (Object__Class *)pDVar5->_dictionary;
-    lVar6 = *(longlong *)&(pDVar5->_current).value;
+    team = (pDVar5->_current).key;
+    uVar6 = *(undefined8 *)&(pDVar5->_current).value;
     uStack_1._0_1_ = 1;
     uStack_1._1_3_ = 0;
-    team = (TeamsCounter *)(pDVar5->_current).key;
     while( true ) {
       bVar7 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                         ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                         &stack0xffffff9c,
+                         &stack0xffffffb4,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_TeamCounter>__MoveNext__
                         );
       if (bVar7 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)&stack0xffffff9c,
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                  ((Object *)&stack0xffffffb4,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_TeamCounter>__Dispose__
                    ,(MethodInfo *)method_00);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      pOVar8 = (Object *)lVar6;
-      if ((pOVar8 == (Object *)0x0) || (pOVar8[1].klass == (Object__Class *)0x0)) break;
+      pOStack_8 = (Object *)uVar6;
+      if ((pOStack_8 == (Object *)0x0) || (pOStack_8[1].klass == (Object__Class *)0x0)) break;
       pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                          ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                           &stack0xffffff84,
-                          (Dictionary_2_System_UInt32_System_Object_ *)pOVar8[1].klass,
+                          (Dictionary_2_System_UInt32_System_Object_ *)pOStack_8[1].klass,
                           MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__GetEnumerator__
                          );
-      actorNumber = (pDVar5->_current).key;
-      uVar9 = *(undefined8 *)&(pDVar5->_current).value;
+      lVar9 = *(longlong *)&(pDVar5->_current).value;
       uStack_1._0_1_ = 3;
       while( true ) {
-        pMVar4 = (MethodInfo *)((ulonglong)lVar6 >> 0x20);
         method_00 = (Object__Class *)&UNK_?;
         bVar7 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
                 Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                           ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                           &stack0xffffffb4,
+                           &stack0xffffff9c,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__MoveNext__
                           );
+        pMVar4 = (MethodInfo *)((ulonglong)lVar9 >> 0x20);
         if (bVar7 == 0) break;
-        pOStack_10 = (Object *)uVar9;
-        if (pOStack_10 == (Object *)0x0) goto code_?;
-        lVar6 = ZEXT48(pMVar4) << 0x20;
-        TeamsCounter_Update(this,(MVTeam__Enum)team,actorNumber,(int32_t)pOStack_10[1].klass,0,
-                            (MethodInfo *)0x0);
+        pOVar10 = (Object *)lVar9;
+        if (pOVar10 == (Object *)0x0) goto code_?;
+        lVar9 = ZEXT48(pMVar4) << 0x20;
+        TeamsCounter_Update(this,team,0,(int32_t)pOVar10[1].klass,0,(MethodInfo *)0x0);
       }
       uStack_1._0_1_ = 1;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                ((Object *)&stack0xffffffb4,
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                ((Object *)&stack0xffffff9c,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__Dispose__
                  ,pMVar4);
       uStack_1._0_1_ = 1;
-      if (pOVar8 == (Object *)0x0) break;
-      lVar6 = CONCAT44(pOVar8[1].monitor,team);
-      pTVar11 = this;
-      TeamsCounter_UpdateTeam(this,(MVTeam__Enum)team,(int32_t)pOVar8[1].monitor,(MethodInfo *)0x0);
-      team = pTVar11;
+      if (pOStack_8 == (Object *)0x0) break;
+      TeamsCounter_UpdateTeam(this,team,(int32_t)pOStack_8[1].monitor,(MethodInfo *)0x0);
     }
   }
 code_?:
   func_?();
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -906,7 +889,6 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter__ctor_2
                (TeamsCounter *this,BytePacker *bp,MethodInfo *method)
 
 {
-  this_00 = bp;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>__Add_MV__WorldObject__MVTeam__TeamCounter_
@@ -930,12 +912,12 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter__ctor_2
             (this_01,
              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>__Dictionary__
             );
-  method_00 = (MethodInfo *)&this->fields;
-  ((TeamsCounter__Fields *)method_00)->teamCounters =
-       (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)this_01;
-  func_?(method_00,this_01);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  method_01 = (MethodInfo *)&this->fields;
+  (this->fields).teamCounters = (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)this_01;
+  func_?(method_01,this_01);
+  method_00 = (MethodInfo *)&UNK_?;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            ((Object *)this,ExceptionArgument__Enum_obj,method_01);
   if (bp == (BytePacker *)0x0) {
 code_?:
     func_?();
@@ -944,11 +926,10 @@ code_?:
     return;
   }
   iVar2 = MV::WorldObject::BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-  bp = (BytePacker *)0x0;
   if (0 < iVar2) {
     do {
       puVar3 = &UNK_?;
-      MV::WorldObject::BytePacker::BytePacker_ReadByte(this_00,(MethodInfo *)0x0);
+      MV::WorldObject::BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
       value = (Object *)func_?(TypeInfo__TeamCounter);
       if (cRam_? == '\0') {
         func_?(&TypeInfo__ActorCounter);
@@ -962,36 +943,34 @@ code_?:
         func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>);
         cRam_? = '\x01';
       }
-      pOVar4 = (Object__Class *)
-               func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>
-                              );
+      pDVar4 = TypeInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>;
+      pOVar5 = (Object__Class *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::
       Text::TextResourceManager+FontAssetRef]::
       Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
                 ((Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
-                  *)pOVar4,
+                  *)pOVar5,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__Dictionary__
                 );
-      pOVar5 = value + 1;
-      pOVar5->klass = pOVar4;
+      value[1].klass = pOVar5;
       key_00 = &UNK_?;
-      func_?(pOVar5,pOVar4);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+      func_?(value + 1,pOVar5);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 (value,ExceptionArgument__Enum_obj,in_stack_6);
       pMVar7 = (MonitorData *)
-               MV::WorldObject::BytePacker::BytePacker_ReadInt32(this_00,(MethodInfo *)0x0);
+               MV::WorldObject::BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
       value[1].monitor = pMVar7;
-      iVar2 = MV::WorldObject::BytePacker::BytePacker_ReadInt32(this_00,(MethodInfo *)0x0);
+      iVar2 = MV::WorldObject::BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
       iVar8 = 0;
       if (0 < iVar2) {
         do {
-          key = MV::WorldObject::BytePacker::BytePacker_ReadInt32(this_00,(MethodInfo *)0x0);
+          key = MV::WorldObject::BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
           value_00 = (Object *)func_?(TypeInfo__ActorCounter);
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    (value_00,ExceptionArgument__Enum_obj,(MethodInfo *)this);
-          pOVar4 = (Object__Class *)
-                   MV::WorldObject::BytePacker::BytePacker_ReadInt32(this_00,(MethodInfo *)0x0);
-          value_00[1].klass = pOVar4;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                    (value_00,ExceptionArgument__Enum_obj,method_00);
+          pOVar5 = (Object__Class *)
+                   MV::WorldObject::BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+          value_00[1].klass = pOVar5;
           if (value[1].klass == (Object__Class *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
           Dictionary_2_System_Int32_System_Object__Add
@@ -1001,15 +980,15 @@ code_?:
           iVar8 = iVar8 + 1;
         } while (iVar8 < iVar2);
       }
-      if (pOVar5->klass == (Object__Class *)0x0) goto code_?;
+      this_00 = (this->fields).teamCounters;
+      if (this_00 == (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
       Dictionary_2_System_Int32Enum_System_Object__Add
-                ((Dictionary_2_System_Int32Enum_System_Object_ *)pOVar5->klass,
-                 (Int32Enum__Enum)key_00,value,
+                ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,(Int32Enum__Enum)key_00,
+                 value,
                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>__Add_MV__WorldObject__MVTeam__TeamCounter_
                 );
-      bp = (BytePacker *)((int)&bp->klass + 1);
-    } while ((int)bp < (int)puVar3);
+    } while ((int)((int)&(pDVar4->_0).image + 1) < (int)puVar3);
   }
   return;
 }

@@ -12,8 +12,9 @@ void Assembly-CSharp.dll::GamePointGainEffectManager::
   }
   TypeInfo__GamePointGainEffectManager->static_fields->progressBarGamePointAmountShown =
        gamePointAmountShown;
-  pAVar1 = TypeInfo__GamePointGainEffectManager->static_fields->OnGamePointGainEffectShown;
-  if (pAVar1 != (Action_1_Int32_ *)0x0) {
+  if (TypeInfo__GamePointGainEffectManager->static_fields->OnGamePointGainEffectShown !=
+      (Action_1_Int32_ *)0x0) {
+    pAVar1 = TypeInfo__GamePointGainEffectManager->static_fields->OnGamePointGainEffectShown;
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,gamePointAmountShown,(pAVar1->fields)._._.method);
   }
@@ -32,8 +33,9 @@ void Assembly-CSharp.dll::GamePointGainEffectManager::
     func_?(&TypeInfo__GamePointGainEffectManager);
     cRam_? = '\x01';
   }
-  pAVar1 = TypeInfo__GamePointGainEffectManager->static_fields->OnInGamePointGainEffectShown;
-  if (pAVar1 != (Action_1_Int32_ *)0x0) {
+  if (TypeInfo__GamePointGainEffectManager->static_fields->OnInGamePointGainEffectShown !=
+      (Action_1_Int32_ *)0x0) {
+    pAVar1 = TypeInfo__GamePointGainEffectManager->static_fields->OnInGamePointGainEffectShown;
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,gamePointAmountShown,(pAVar1->fields)._._.method);
   }
@@ -54,9 +56,10 @@ void Assembly-CSharp.dll::GamePointGainEffectManager::
   }
   TypeInfo__GamePointGainEffectManager->static_fields->progressBarGamePointAmountShown =
        gamePointAmountShown;
-  pAVar1 = TypeInfo__GamePointGainEffectManager->static_fields->
-           OnTierProgressBarGamePointGainEffectShown;
-  if (pAVar1 != (Action_1_Int32_ *)0x0) {
+  if (TypeInfo__GamePointGainEffectManager->static_fields->OnTierProgressBarGamePointGainEffectShown
+      != (Action_1_Int32_ *)0x0) {
+    pAVar1 = TypeInfo__GamePointGainEffectManager->static_fields->
+             OnTierProgressBarGamePointGainEffectShown;
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,gamePointAmountShown,(pAVar1->fields)._._.method);
   }

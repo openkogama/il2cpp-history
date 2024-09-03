@@ -80,11 +80,10 @@ code_?:
     func_?();
     if ((this->fields).completed == 0) {
       this_00 = (this->fields).popup;
-      this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 *)func_?();
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+      this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
                 (this_02,(Object *)this,
                  MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnPopupRemoved_UnityEngine__GameObject_
                  ,(MethodInfo *)0x0);
@@ -191,11 +190,10 @@ code_?:
 code_?:
     func_?();
     pFVar5 = (this->fields).popup;
-    this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+    this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
               (this_02,(Object *)this,
                MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnPopupRemoved_UnityEngine__GameObject_
                ,(MethodInfo *)0x0);
@@ -295,7 +293,7 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::
   }
   method_00 = TypeInfo__FirstTimeActivatablePointerWaitForCubeTool____c__DisplayClass18_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)popupGameObject;
@@ -373,18 +371,20 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::
                        ((Object *)pFVar1,
                         FirstTimeEventPopupWithProgress_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventPopupWithProgress>_FirstTimeEventPopupWithProgress_
                        );
-    ppFVar2 = &(this->fields).popup;
-    *ppFVar2 = pFVar1;
-    func_?(ppFVar2,pFVar1);
-    if (*ppFVar2 != (FirstTimeEventPopupWithProgress *)0x0) {
+    (this->fields).popup = pFVar1;
+    func_?(&(this->fields).popup,pFVar1);
+    pFVar1 = (this->fields).popup;
+    if (pFVar1 != (FirstTimeEventPopupWithProgress *)0x0) {
       FirstTimeEventPopup::FirstTimeEventPopup_SetSkippable
-                ((FirstTimeEventPopup *)*ppFVar2,(this->fields).skipAllowed,(MethodInfo *)0x0);
-      if (*ppFVar2 != (FirstTimeEventPopupWithProgress *)0x0) {
+                ((FirstTimeEventPopup *)pFVar1,(this->fields).skipAllowed,(MethodInfo *)0x0);
+      pFVar1 = (this->fields).popup;
+      if (pFVar1 != (FirstTimeEventPopupWithProgress *)0x0) {
         FirstTimeEventPopup::FirstTimeEventPopup_FadeIn
-                  ((FirstTimeEventPopup *)*ppFVar2,(MethodInfo *)0x0);
-        if (*ppFVar2 != (FirstTimeEventPopupWithProgress *)0x0) {
+                  ((FirstTimeEventPopup *)pFVar1,(MethodInfo *)0x0);
+        pFVar1 = (this->fields).popup;
+        if (pFVar1 != (FirstTimeEventPopupWithProgress *)0x0) {
           FirstTimeEventPopupWithProgress::FirstTimeEventPopupWithProgress_SetProgress
-                    (*ppFVar2,(float)(this->fields).currentChangeCount,
+                    (pFVar1,(float)(this->fields).currentChangeCount,
                      (float)(this->fields).numberOfChangesBeforePointer,(MethodInfo *)0x0);
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
@@ -408,8 +408,8 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::
       }
     }
     func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -458,11 +458,10 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::
 code_?:
     func_?();
     this_00 = (this->fields).popup;
-    this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+    this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
               (this_02,(Object *)this,
                MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnPopupRemoved_UnityEngine__GameObject_
                ,(MethodInfo *)0x0);

@@ -18,8 +18,8 @@ void Assembly-CSharp.dll::MVNetworkGameStateListener::MVNetworkGameStateListener
     iVar1 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_00,(MethodInfo *)0x0);
     (this->fields).timeLeft = (startTime + duration) - iVar1;
     if ((fromGameSnapshot == 0) &&
-       (pEVar2 = (this->fields).OnGameStateChanged,
-       pEVar2 != (EventHandler_1_GameStateChangeEventArgs_ *)0x0)) {
+       ((this->fields).OnGameStateChanged != (EventHandler_1_GameStateChangeEventArgs_ *)0x0)) {
+      pEVar2 = (this->fields).OnGameStateChanged;
       this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
                 func_?(TypeInfo__GameStateChangeEventArgs);
       if (cRam_? == '\0') {
@@ -84,26 +84,26 @@ void Assembly-CSharp.dll::MVNetworkGameStateListener::
     func_?(&TypeInfo__System__EventHandler<GameStateChangeEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).OnGameStateChanged;
-  a = *ppEVar1;
+  a = (this->fields).OnGameStateChanged;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar3 = TypeInfo__System__EventHandler<GameStateChangeEventArgs>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__EventHandler<GameStateChangeEventArgs>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pEVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pEVar2 = TypeInfo__System__EventHandler<GameStateChangeEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<GameStateChangeEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pEVar6 = (EventHandler_1_GameStateChangeEventArgs_ *)func_?(ppEVar1,iVar4,a);
-    bVar7 = pEVar6 != a;
-    a = pEVar6;
-  } while (bVar7);
+    pEVar5 = (EventHandler_1_GameStateChangeEventArgs_ *)
+             func_?(&(this->fields).OnGameStateChanged,iVar3,a);
+    bVar6 = pEVar5 != a;
+    a = pEVar5;
+  } while (bVar6);
   return;
 }
 
@@ -152,26 +152,26 @@ void Assembly-CSharp.dll::MVNetworkGameStateListener::
     func_?(&TypeInfo__System__EventHandler<GameStateChangeEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).OnGameStateChanged;
-  source = *ppEVar1;
+  source = (this->fields).OnGameStateChanged;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar3 = TypeInfo__System__EventHandler<GameStateChangeEventArgs>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__EventHandler<GameStateChangeEventArgs>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pEVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pEVar2 = TypeInfo__System__EventHandler<GameStateChangeEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<GameStateChangeEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pEVar6 = (EventHandler_1_GameStateChangeEventArgs_ *)func_?(ppEVar1,iVar4,source);
-    bVar7 = pEVar6 != source;
-    source = pEVar6;
-  } while (bVar7);
+    pEVar5 = (EventHandler_1_GameStateChangeEventArgs_ *)
+             func_?(&(this->fields).OnGameStateChanged,iVar3,source);
+    bVar6 = pEVar5 != source;
+    source = pEVar5;
+  } while (bVar6);
   return;
 }
 

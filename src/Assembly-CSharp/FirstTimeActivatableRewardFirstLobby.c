@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableRewardFirstLobby::
   this = (FirstTimeActivatableRewardFirstLobby *)(pFVar1->fields)._._._.firstTimeEvent;
   message = (Object *)func_?(TypeInfo__MV__WorldObject__MetaData__FirstTimeEvent,&this);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+    func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(message,(MethodInfo *)0x0);
   return;

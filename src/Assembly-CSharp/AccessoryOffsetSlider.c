@@ -59,28 +59,27 @@ void Assembly-CSharp.dll::AccessoryOffsetSlider::AccessoryOffsetSlider_Initializ
        (this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
        this_01 != (MVLocalPlayer *)0x0)) {
       this_02 = MVLocalPlayer::MVLocalPlayer_get_Body(this_01,(MethodInfo *)0x0);
-      ppMVar3 = &(this->fields).avatarBody;
-      *ppMVar3 = this_02;
-      func_?(ppMVar3,this_02);
-      pSVar4 = (this->fields).slider;
+      (this->fields).avatarBody = this_02;
+      func_?(&(this->fields).avatarBody,this_02);
+      pSVar3 = (this->fields).slider;
       if ((this->fields).isInPreview == 0) {
         if ((this_02 != (MVBody *)0x0) &&
-           (fVar5 = MVBody::MVBody_GetAccessoryOffset
+           (fVar4 = MVBody::MVBody_GetAccessoryOffset
                               (this_02,(this->fields).accessorySlot,(MethodInfo *)0x0),
-           pSVar4 != (Slider *)0x0)) goto code_?;
+           pSVar3 != (Slider *)0x0)) goto code_?;
       }
-      else if (pSVar4 != (Slider *)0x0) {
-        fVar5 = (this->fields).defaultValue;
+      else if (pSVar3 != (Slider *)0x0) {
+        fVar4 = (this->fields).defaultValue;
 code_?:
-        (*(code *)(pSVar4->klass->vtable).set_value.method)
-                  (pSVar4,fVar5,(pSVar4->klass->vtable).SetValueWithoutNotify.methodPtr);
+        (*(code *)(pSVar3->klass->vtable).set_value.method)
+                  (pSVar3,fVar4,(pSVar3->klass->vtable).SetValueWithoutNotify.methodPtr);
         return;
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -91,26 +90,25 @@ void Assembly-CSharp.dll::AccessoryOffsetSlider::AccessoryOffsetSlider_Initializ
                (AccessoryOffsetSlider *this,MVBody *avatarBody,MethodInfo *method)
 
 {
-  ppMVar1 = &(this->fields).avatarBody;
-  *ppMVar1 = avatarBody;
-  func_?(ppMVar1,avatarBody);
-  pSVar2 = (this->fields).slider;
+  (this->fields).avatarBody = avatarBody;
+  func_?(&(this->fields).avatarBody,avatarBody);
+  pSVar1 = (this->fields).slider;
   if ((this->fields).isInPreview == 0) {
     if ((avatarBody != (MVBody *)0x0) &&
-       (fVar3 = MVBody::MVBody_GetAccessoryOffset
+       (fVar2 = MVBody::MVBody_GetAccessoryOffset
                           (avatarBody,(this->fields).accessorySlot,(MethodInfo *)0x0),
-       pSVar2 != (Slider *)0x0)) goto code_?;
+       pSVar1 != (Slider *)0x0)) goto code_?;
   }
-  else if (pSVar2 != (Slider *)0x0) {
-    fVar3 = (this->fields).defaultValue;
+  else if (pSVar1 != (Slider *)0x0) {
+    fVar2 = (this->fields).defaultValue;
 code_?:
-    (*(code *)(pSVar2->klass->vtable).set_value.method)
-              (pSVar2,fVar3,(pSVar2->klass->vtable).SetValueWithoutNotify.methodPtr);
+    (*(code *)(pSVar1->klass->vtable).set_value.method)
+              (pSVar1,fVar2,(pSVar1->klass->vtable).SetValueWithoutNotify.methodPtr);
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -133,7 +131,7 @@ void Assembly-CSharp.dll::AccessoryOffsetSlider::AccessoryOffsetSlider_Reset
                       UnityEngine__UI__Slider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Slider>__
                      );
   (this->fields).slider = pSVar1;
-  func_?();
+  func_?(&(this->fields).slider,pSVar1);
   return;
 }
 
@@ -198,11 +196,11 @@ void Assembly-CSharp.dll::AccessoryOffsetSlider::AccessoryOffsetSlider__Initiali
     func_?(&TypeInfo__UnityEngine__EventSystems__IGetCurrentBody);
     cRam_? = '\x01';
   }
-  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)func_?(TypeInfo__System__Action<MVBody>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+  this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+            func_?(TypeInfo__System__Action<MVBody>);
+  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
             (this_00,(Object *)this,MethodInfo__AccessoryOffsetSlider__Initialize_MVBody_,
              (MethodInfo *)0x0);
   if (x != (IGetCurrentBody *)0x0) {

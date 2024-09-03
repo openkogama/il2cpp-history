@@ -5,7 +5,7 @@ void Assembly-CSharp.dll::SplashController+ObjectData::SplashController_ObjectDa
                (SplashController_ObjectData *this,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._TimeSinceLastRingEmission_k__BackingField = INFINITY;
   (this->fields)._IsInWater_k__BackingField = 0;

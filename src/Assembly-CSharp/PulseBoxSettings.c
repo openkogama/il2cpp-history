@@ -119,7 +119,7 @@ void Assembly-CSharp.dll::PulseBoxSettings::PulseBoxSettings_Initialize
                 (pSVar6,StringLiteral_intervalOn,value_01,0.1,1000.0,(MethodInfo *)0x0);
       pSVar7 = (this->fields).enabledInputField;
       if (pSVar7 != (SettingsInputFieldSlider *)0x0) {
-        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
                   (pSVar7,StringLiteral_intervalOn,value_01,(MethodInfo *)0x0);
         pSVar6 = (this->fields).disabledSlider;
         if (pSVar6 != (SettingsSlider *)0x0) {
@@ -129,7 +129,7 @@ void Assembly-CSharp.dll::PulseBoxSettings::PulseBoxSettings_Initialize
           if (pSVar7 != (SettingsInputFieldSlider *)0x0) {
             method = (MethodInfo *)0x0;
             woID = (int32_t)StringLiteral_intervalOff;
-            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
                       (pSVar7,StringLiteral_intervalOff,(float)root,(MethodInfo *)0x0);
             return;
           }

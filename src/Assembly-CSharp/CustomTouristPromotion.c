@@ -208,11 +208,10 @@ void Assembly-CSharp.dll::CustomTouristPromotion::CustomTouristPromotion_Start
        pCVar3 != (CustomTouristPromotionSettings *)0x0)) {
       pSVar1 = mscorlib.dll::System::String::String_Concat_3
                          (pSVar1,(pCVar3->fields)._AssetURL_k__BackingField,(MethodInfo *)0x0);
-      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 *)func_?();
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+      this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
                 (this_01,(Object *)this,
                  MethodInfo__CustomTouristPromotion__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
                  ,(MethodInfo *)0x0);

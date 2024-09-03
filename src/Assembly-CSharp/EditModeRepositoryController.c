@@ -111,15 +111,15 @@ void Assembly-CSharp.dll::EditModeRepositoryController::
   }
   method_00 = TypeInfo__EditModeRepositoryController____c__DisplayClass4_0;
   pOVar1 = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (pOVar1 == (Object *)0x0) {
 code_?:
     func_?();
   }
   else {
-    pOVar1[1].klass = (Object__Class *)returnCode;
     pOVar1[1].monitor = (MonitorData *)this;
+    pOVar1[1].klass = (Object__Class *)returnCode;
     func_?(&pOVar1[1].monitor,this);
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
@@ -192,7 +192,7 @@ code_?:
         return;
       }
       pOVar1 = (Object *)func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)this_00);
       if (cRam_? == '\0') {
         func_?(&TypeInfo__MVGameControllerBase);
@@ -271,9 +271,8 @@ void Assembly-CSharp.dll::EditModeRepositoryController::
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     cRam_? = '\x01';
   }
-  ppSVar1 = &(this->fields).currentlyBuyingItem;
-  *ppSVar1 = item;
-  func_?(ppSVar1,item);
+  (this->fields).currentlyBuyingItem = item;
+  func_?(&(this->fields).currentlyBuyingItem,item);
   root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                    ((Component *)this,(MethodInfo *)0x0);
   callbackFunction =
@@ -400,27 +399,27 @@ void Assembly-CSharp.dll::EditModeRepositoryController::
   pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar4 != (MVNetworkGame *)0x0) {
     pAVar5 = (pMVar4->fields).PurchaseProductResponseHandler;
-    ppAVar6 = &(pMVar4->fields).PurchaseProductResponseHandler;
     this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
     UnityAction_2_System_Int32_System_Int32___ctor
               (this_00,(Object *)&UNK_?,
                MethodInfo__EditModeRepositoryController__ProductPurchaseResponseHandler_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                ,(MethodInfo *)0x0);
-    pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)pAVar5,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar7 == (Delegate *)0x0) {
-      *ppAVar6 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                  *)0x0;
+    if (pDVar6 == (Delegate *)0x0) {
+      (pMVar4->fields).PurchaseProductResponseHandler =
+           (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+           0x0;
     }
     else {
       pAVar5 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                 *)func_?();
       if (pAVar5 == (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                      *)0x0) goto code_?;
-      *ppAVar6 = pAVar5;
-      iVar8 = func_?();
-      if (iVar8 == 0) goto code_?;
+      (pMVar4->fields).PurchaseProductResponseHandler = pAVar5;
+      iVar7 = func_?();
+      if (iVar7 == 0) goto code_?;
     }
     func_?();
     this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
@@ -433,8 +432,8 @@ void Assembly-CSharp.dll::EditModeRepositoryController::
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

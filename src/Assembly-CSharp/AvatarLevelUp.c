@@ -18,8 +18,6 @@ void Assembly-CSharp.dll::AvatarLevelUp::AvatarLevelUp_Init
      (this_00 = (pMVar1->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0)) {
 code_?:
     func_?();
-code_?:
-    func_?();
   }
   else {
     pMVar2 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
@@ -36,53 +34,53 @@ code_?:
                        ((Delegate *)pUVar3,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pDVar4 == (Delegate *)0x0) {
       (pMVar2->fields).OnLevelChanged = (UnityAction_1_System_Int32_ *)0x0;
-code_?:
+    }
+    else {
+      pUVar3 = (UnityAction_1_System_Int32_ *)func_?();
+      if (pUVar3 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
+      (pMVar2->fields).OnLevelChanged = pUVar3;
+      iVar5 = func_?();
+      if (iVar5 == 0) goto code_?;
+    }
+    func_?();
+    pSVar6 = (this->fields).scaleAnimation;
+    if (pSVar6 == (ScaleAnimation *)0x0) goto code_?;
+    pSVar7 = (pSVar6->fields)._.OnScaleAnimationStopped;
+    this_02 = (UnityAction_1_System_Single_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
+    UnityAction_1_System_Single___ctor
+              (this_02,(Object *)this,MethodInfo__AvatarLevelUp__OnScaleAnimationStopped_float_,
+               (MethodInfo *)0x0);
+    pSVar7 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pSVar7,(Delegate *)this_02,(MethodInfo *)0x0);
+    if (pSVar7 == (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+      (pSVar6->fields)._.OnScaleAnimationStopped =
+           (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
       func_?();
-      pSVar5 = (this->fields).scaleAnimation;
-      if (pSVar5 == (ScaleAnimation *)0x0) goto code_?;
-      pSVar6 = (pSVar5->fields)._.OnScaleAnimationStopped;
-      ppSVar7 = &(pSVar5->fields)._.OnScaleAnimationStopped;
-      this_02 = (UnityAction_1_System_Single_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
-      UnityAction_1_System_Single___ctor
-                (this_02,(Object *)this,MethodInfo__AvatarLevelUp__OnScaleAnimationStopped_float_,
-                 (MethodInfo *)0x0);
-      pSVar6 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pSVar6,(Delegate *)this_02,(MethodInfo *)0x0);
-      if (pSVar6 == (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
-        *ppSVar7 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
+      return;
+    }
+    pSVar8 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
+    if (pSVar7->klass == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
+      pSVar8 = pSVar7;
+    }
+    if (pSVar8 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+      (pSVar6->fields)._.OnScaleAnimationStopped = pSVar8;
+      pSVar8 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
+      if (pSVar7->klass == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
+        pSVar8 = pSVar7;
+      }
+      if (pSVar8 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
         func_?();
         return;
       }
-      pSVar8 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
-      if (pSVar6->klass == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
-        pSVar8 = pSVar6;
-      }
-      if (pSVar8 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
-        *ppSVar7 = pSVar8;
-        pSVar8 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
-        if (pSVar6->klass == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
-          pSVar8 = pSVar6;
-        }
-        if (pSVar8 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
-          func_?();
-          return;
-        }
-      }
-      goto code_?;
     }
-    pUVar3 = (UnityAction_1_System_Int32_ *)func_?();
-    if (pUVar3 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
-    (pMVar2->fields).OnLevelChanged = pUVar3;
-    iVar9 = func_?();
-    if (iVar9 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

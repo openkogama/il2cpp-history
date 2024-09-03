@@ -92,7 +92,7 @@ void Assembly-CSharp.dll::TouristPromotion+<>c::TouristPromotion_c__cctor(Method
   }
   method_00 = TypeInfo__TouristPromotion____c;
   value = (TouristPromotion_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__TouristPromotion____c->static_fields->__9 = value;
   func_?(TypeInfo__TouristPromotion____c->static_fields,value);

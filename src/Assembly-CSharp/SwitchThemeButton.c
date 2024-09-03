@@ -28,12 +28,10 @@ void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_Initialize
           if (pGVar3 == (GameObject *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (pGVar3,1,(MethodInfo *)0x0);
-          this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                     *)func_?();
-          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
-          Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-          __Il2CppFullySharedGenericType]::
-          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+          this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+          Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+          SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+          SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
                     (this_01,(Object *)this,
                      MethodInfo__SwitchThemeButton__OnLevelTextureReceived_UnityEngine__Networking__UnityWebRequest_
                      ,(MethodInfo *)0x0);
@@ -123,11 +121,11 @@ void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_OnDestroy
                    );
     cRam_? = '\x01';
   }
-  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+  this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
             (this_00,(Object *)this,
              MethodInfo__SwitchThemeButton__OnLevelTextureReceived_UnityEngine__Networking__UnityWebRequest_
              ,(MethodInfo *)0x0);
@@ -151,21 +149,20 @@ void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_OnLevelTextureRec
             UnityWebRequest_get_error(www,(MethodInfo *)0x0);
     bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
     if (bVar1 != 0) {
-      pTVar2 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
-               DownloadHandlerTexture::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
-      puVar3 = (undefined4 *)(unaff_EDI + 0x28);
-      *puVar3 = pTVar2;
-      func_?(puVar3);
-      if (*(RawImage **)(unaff_EDI + 0x14) == (RawImage *)0x0) goto code_?;
+      pTRam00000028 =
+           UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
+           DownloadHandlerTexture::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
+      func_?();
+      if (pRRam00000014 == (RawImage *)0x0) goto code_?;
       UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                (*(RawImage **)(unaff_EDI + 0x14),(Texture *)*puVar3,(MethodInfo *)0x0);
+                (pRRam00000014,(Texture *)pTRam00000028,(MethodInfo *)0x0);
     }
     return;
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -184,20 +181,19 @@ void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_Reset
     cRam_? = '\x01';
   }
   pBVar1 = (this->fields).button;
-  ppBVar2 = &(this->fields).button;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pBVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  if (bVar2 != 0) {
     pBVar1 = (Button *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
                        );
-    *ppBVar2 = pBVar1;
-    func_?(ppBVar2,pBVar1);
+    (this->fields).button = pBVar1;
+    func_?(&(this->fields).button,pBVar1);
   }
   return;
 }
@@ -250,12 +246,11 @@ void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_set_LevelRequirem
   else if (this_00 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (this_00,1,(MethodInfo *)0x0);
-    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>)
-    ;
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+    this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+              func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
               (this_01,(Object *)this,
                MethodInfo__SwitchThemeButton__OnLevelTextureReceived_UnityEngine__Networking__UnityWebRequest_
                ,(MethodInfo *)0x0);

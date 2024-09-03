@@ -179,8 +179,8 @@ code_?:
   else {
     fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     fVar1 = 0.0;
-    if (0.0 <= 3.3242442e-29 - fVar3) {
-      fVar1 = 3.3242442e-29 - fVar3;
+    if (0.0 <= 3.3436518e-29 - fVar3) {
+      fVar1 = 3.3436518e-29 - fVar3;
     }
     (this->fields).oxygen = fVar1;
     if (fVar1 <= 0.0) {
@@ -208,8 +208,8 @@ void Assembly-CSharp.dll::WaterState::WaterState_UpdateLocalAvatarOxygen
   else {
     fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     fVar1 = 0.0;
-    if (0.0 <= 3.324019e-29 - fVar2) {
-      fVar1 = 3.324019e-29 - fVar2;
+    if (0.0 <= 3.3434276e-29 - fVar2) {
+      fVar1 = 3.3434276e-29 - fVar2;
     }
     (this->fields).oxygen = fVar1;
     if (fVar1 <= 0.0) {
@@ -310,7 +310,7 @@ void Assembly-CSharp.dll::WaterState::WaterState__ctor
   (this->fields).worldPosition.x = (pVVar1->zeroVector).x;
   (this->fields).worldPosition.y = fVar2;
   (this->fields).worldPosition.z = fVar3;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   pAVar4 = (AvatarModifierPackage_AvatarModifier__Array *)
            func_?(TypeInfo__AvatarModifierPackage__AvatarModifier,2);
@@ -380,7 +380,7 @@ void Assembly-CSharp.dll::WaterState::WaterState__ctor
                               (skillDataManager,StringLiteral_OxygenSupply,(MethodInfo *)0x0);
           }
           (this->fields).oxygenMax = fVar3;
-          (this->fields).oxygen = fVar3;
+          (this->fields).oxygen = (this->fields).oxygenMax;
           bVar10 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
                             (skillDataManager,StringLiteral_BreathesWater,(MethodInfo *)0x0);
           (this->fields).hasGillsNoLungs = bVar10;

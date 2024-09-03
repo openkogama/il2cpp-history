@@ -46,7 +46,6 @@ void Assembly-CSharp.dll::InteractableMaterialHitHandler::InteractableMaterialHi
      (pDVar1 = (this->fields).particles,
      pDVar1 != (Dictionary_2_AvatarModifierPackageType_UnityEngine_ParticleSystem_ *)0x0)) {
     key = *(Int32Enum__Enum *)(moveHit.hit.interactionFlags._4_4_ + 0x30);
-    key_00 = key;
     bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
             Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
                       ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar1,key,
@@ -83,20 +82,21 @@ void Assembly-CSharp.dll::InteractableMaterialHitHandler::InteractableMaterialHi
           cRam_? = '\x01';
         }
         pPVar4 = (this->fields).currentParticleSystem;
-        ppPVar5 = &(this->fields).currentParticleSystem;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
         bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                           ((Object_1 *)pPVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
         if (bVar2 != 0) {
-          if (*ppPVar5 == (ParticleSystem *)0x0) goto code_?;
+          pPVar4 = (this->fields).currentParticleSystem;
+          if (pPVar4 == (ParticleSystem *)0x0) goto code_?;
           bVar2 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-                  ParticleSystem_get_isPlaying(*ppPVar5,(MethodInfo *)0x0);
+                  ParticleSystem_get_isPlaying(pPVar4,(MethodInfo *)0x0);
           if (bVar2 != 0) {
-            if (*ppPVar5 == (ParticleSystem *)0x0) goto code_?;
+            pPVar4 = (this->fields).currentParticleSystem;
+            if (pPVar4 == (ParticleSystem *)0x0) goto code_?;
             UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_1
-                      (*ppPVar5,1,(MethodInfo *)0x0);
+                      (pPVar4,1,(MethodInfo *)0x0);
           }
         }
         pDVar1 = (this->fields).particles;
@@ -105,12 +105,12 @@ void Assembly-CSharp.dll::InteractableMaterialHitHandler::InteractableMaterialHi
         pPVar4 = (ParticleSystem *)
                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
                  Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                           ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,key_00,
+                           ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,key,
                             MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_UnityEngine::ParticleSystem>__get_Item_AvatarModifierPackageType_
                            );
-        *ppPVar5 = pPVar4;
-        func_?(ppPVar5,pPVar4);
-        (this->fields).currentMoveHitParticleType = key_00;
+        (this->fields).currentParticleSystem = pPVar4;
+        func_?(&(this->fields).currentParticleSystem,pPVar4);
+        (this->fields).currentMoveHitParticleType = key;
         InteractableMaterialHitHandler_SetParticlePlacement
                   (this,moveHit._60_12_,moveHit.hit._8_12_,(MethodInfo *)0x0);
       }
@@ -119,10 +119,10 @@ void Assembly-CSharp.dll::InteractableMaterialHitHandler::InteractableMaterialHi
         bVar2 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
                 ParticleSystem_get_isPlaying(pPVar4,(MethodInfo *)0x0);
         if ((bVar2 == 0) &&
-           (fVar6 = (this->fields).prevPos.y, fVar7 = (this->fields).prevPos.x,
-           fVar8 = (this->fields).prevPos.z,
+           (fVar5 = (this->fields).prevPos.y, fVar6 = (this->fields).prevPos.x,
+           fVar7 = (this->fields).prevPos.z,
            _UNK_? <
-           (float)((uint)((fVar7 * fVar7 + fVar6 * fVar6 + fVar8 * fVar8) -
+           (float)((uint)((fVar6 * fVar6 + fVar5 * fVar5 + fVar7 * fVar7) -
                          ((float)moveHit._60_4_ * (float)moveHit._60_4_ +
                           moveHit.hit.point.x * moveHit.hit.point.x +
                          moveHit.hit.point.y * moveHit.hit.point.y)) & _UNK_?))) {
@@ -142,8 +142,8 @@ void Assembly-CSharp.dll::InteractableMaterialHitHandler::InteractableMaterialHi
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -229,20 +229,21 @@ void Assembly-CSharp.dll::InteractableMaterialHitHandler::
     cRam_? = '\x01';
   }
   pPVar1 = (this->fields).currentParticleSystem;
-  ppPVar2 = &(this->fields).currentParticleSystem;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)pPVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    if (*ppPVar2 == (ParticleSystem *)0x0) goto code_?;
-    bVar3 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-            ParticleSystem_get_isPlaying(*ppPVar2,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
-      if (*ppPVar2 == (ParticleSystem *)0x0) goto code_?;
+  if (bVar2 != 0) {
+    pPVar1 = (this->fields).currentParticleSystem;
+    if (pPVar1 == (ParticleSystem *)0x0) goto code_?;
+    bVar2 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+            ParticleSystem_get_isPlaying(pPVar1,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      pPVar1 = (this->fields).currentParticleSystem;
+      if (pPVar1 == (ParticleSystem *)0x0) goto code_?;
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_1
-                (*ppPVar2,1,(MethodInfo *)0x0);
+                (pPVar1,1,(MethodInfo *)0x0);
     }
   }
   this_00 = (this->fields).particles;
@@ -253,15 +254,15 @@ void Assembly-CSharp.dll::InteractableMaterialHitHandler::
                        ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,newParticleType,
                         MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_UnityEngine::ParticleSystem>__get_Item_AvatarModifierPackageType_
                        );
-    *ppPVar2 = pPVar1;
+    (this->fields).currentParticleSystem = pPVar1;
     func_?();
     (this->fields).currentMoveHitParticleType = newParticleType;
     return;
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -369,13 +370,13 @@ void Assembly-CSharp.dll::InteractableMaterialHitHandler::InteractableMaterialHi
              MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_UnityEngine::ParticleSystem>__Dictionary__
             );
   method_00 = (MethodInfo *)&this->fields;
-  ((InteractableMaterialHitHandler__Fields *)method_00)->particles =
+  (this->fields).particles =
        (Dictionary_2_AvatarModifierPackageType_UnityEngine_ParticleSystem_ *)this_00;
   func_?(method_00,this_00);
   (this->fields).prevPos.x = 0.0;
   (this->fields).prevPos.y = 0.0;
   (this->fields).prevPos.z = 0.0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }

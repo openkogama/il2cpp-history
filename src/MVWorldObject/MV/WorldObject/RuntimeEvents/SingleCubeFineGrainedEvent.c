@@ -37,7 +37,7 @@ void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEve
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._.position.x = position.x;
   (this->fields)._.position.y = position.y;
@@ -55,7 +55,7 @@ void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEve
                (SingleCubeFineGrainedEvent *this,IntVector position,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._.position.x = position.x;
   (this->fields)._.position.y = position.y;
@@ -73,7 +73,7 @@ void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEve
                BytePacker *bp,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields)._._RuntimeEventType_k__BackingField = (undefined1)runtimeEventType;
   if ((undefined1)runtimeEventType == RuntimeEventType__Enum_FineGrainedSingleCubeAdd) {

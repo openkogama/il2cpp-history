@@ -60,12 +60,11 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::
   iVar3 = pMVar1->spawnOption;
   iVar4 = pMVar1->spawnTime;
   iVar5 = pMVar1->energyAmount;
-  pMVar6 = &(this->fields)._VehicleEnergyConfig_k__BackingField;
-  pMVar6->name = pMVar1->name;
+  (this->fields)._VehicleEnergyConfig_k__BackingField.name = pMVar1->name;
   (this->fields)._VehicleEnergyConfig_k__BackingField.spawnOption = iVar3;
   (this->fields)._VehicleEnergyConfig_k__BackingField.spawnTime = iVar4;
   (this->fields)._VehicleEnergyConfig_k__BackingField.energyAmount = iVar5;
-  func_?(pMVar6,0);
+  func_?(&(this->fields)._VehicleEnergyConfig_k__BackingField,0);
   cubeModelBase =
        (MVCubeModelInstance *)
        MVBlueprintBase::MVBlueprintBase_GetChild
@@ -73,39 +72,39 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::
   if (cubeModelBase == (MVCubeModelInstance *)0x0) {
     func_?();
   }
-  else {
-    bVar7 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
-    if ((bVar7 <= (cubeModelBase->klass->_1).naturalAligment) &&
-       ((MVCubeModelInstance__Class *)(cubeModelBase->klass->_1).typeHierarchy[bVar7 - 1] ==
-        TypeInfo__MVCubeModelInstance)) {
-      pMStack_8 = (MVCubeModelInstance *)0x1;
-      pMStack_9 = cubeModelBase;
-      (*(code *)(cubeModelBase->klass->vtable).set_Visible.method)();
-      MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                ((IntVector *)&stack0xffffffec,-5,-2,0,(MethodInfo *)0x0);
-      pMStack_9 = (MVCubeModelInstance *)0x0;
-      pMStack_8 = (MVCubeModelInstance *)((uint)pMStack_8 & 0xffff0000);
-      MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                ((IntVector *)&pMStack_9,2,6,3,(MethodInfo *)0x0);
-      puVar10 = &UNK_?;
-      pEVar11 = TypeInfo__EditableCubeModelWrapper;
-      this_00 = (EditableCubeModelWrapper *)func_?();
-      min.z = (int16_t)pEVar11;
-      min._0_4_ = puVar10;
-      max.z = (int16_t)pMStack_8;
-      max._0_4_ = pMStack_9;
-      EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1
-                (this_00,cubeModelBase,min,max,0x14,(MethodInfo *)0x0);
-      (this->fields).editableCubeModelWrapper = this_00;
-      uStack12 = 0x104d;
-      func_?();
-      return;
-    }
+  else if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <=
+            (cubeModelBase->klass->_1).naturalAligment) &&
+          ((MVCubeModelInstance__Class *)
+           (cubeModelBase->klass->_1).typeHierarchy
+           [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
+           TypeInfo__MVCubeModelInstance)) {
+    pMStack_6 = (MVCubeModelInstance *)0x1;
+    pMStack_7 = cubeModelBase;
+    (*(code *)(cubeModelBase->klass->vtable).set_Visible.method)();
+    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+              ((IntVector *)&stack0xffffffec,-5,-2,0,(MethodInfo *)0x0);
+    pMStack_7 = (MVCubeModelInstance *)0x0;
+    pMStack_6 = (MVCubeModelInstance *)((uint)pMStack_6 & 0xffff0000);
+    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+              ((IntVector *)&pMStack_7,2,6,3,(MethodInfo *)0x0);
+    puVar8 = &UNK_?;
+    pEVar9 = TypeInfo__EditableCubeModelWrapper;
+    this_00 = (EditableCubeModelWrapper *)func_?();
+    min.z = (int16_t)pEVar9;
+    min._0_4_ = puVar8;
+    max.z = (int16_t)pMStack_6;
+    max._0_4_ = pMStack_7;
+    EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1
+              (this_00,cubeModelBase,min,max,0x14,(MethodInfo *)0x0);
+    (this->fields).editableCubeModelWrapper = this_00;
+    uStack10 = 0x104d;
+    func_?();
+    return;
   }
-  pMStack_8 = cubeModelBase;
+  pMStack_6 = cubeModelBase;
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -121,12 +120,11 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::
   iVar3 = pMVar1->spawnOption;
   iVar4 = pMVar1->spawnTime;
   iVar5 = pMVar1->energyAmount;
-  pMVar6 = &(this->fields)._VehicleEnergyConfig_k__BackingField;
-  pMVar6->name = pMVar1->name;
+  (this->fields)._VehicleEnergyConfig_k__BackingField.name = pMVar1->name;
   (this->fields)._VehicleEnergyConfig_k__BackingField.spawnOption = iVar3;
   (this->fields)._VehicleEnergyConfig_k__BackingField.spawnTime = iVar4;
   (this->fields)._VehicleEnergyConfig_k__BackingField.energyAmount = iVar5;
-  func_?(pMVar6,0);
+  func_?(&(this->fields)._VehicleEnergyConfig_k__BackingField,0);
   return;
 }
 
@@ -205,11 +203,11 @@ MVVehicleEnergy_ReadWorldObjectData
   bVar1 = cRam_? == '\0';
   pSStack_2 = (String *)0x0;
   pIStack_3 = (Int32__Class *)0x0;
+  pIStack_4 = (Int32__Class *)0x0;
   __return_storage_ptr__->name = (String *)0x0;
   __return_storage_ptr__->spawnOption = 0;
   __return_storage_ptr__->spawnTime = 0;
   __return_storage_ptr__->energyAmount = 0;
-  pIStack_4 = (Int32__Class *)0x0;
   pIStack_5 = (Int32__Class *)0x0;
   if (bVar1) {
     func_?(&StringLiteral_Vehicle_Energy);
@@ -246,18 +244,18 @@ MVVehicleEnergy_ReadWorldObjectData
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
                         );
       if ((bVar8 != 0) && (pIStack_3 != (Int32__Class *)0x0)) {
-        pIVar9 = (Int32__Class *)(pIStack_3->_0).image;
-        pIVar10 = (Int32__Class *)0x0;
-        if (pIVar9 == TypeInfo__System__Int32) {
-          pIVar10 = pIStack_3;
+        pIVar9 = (Int32__Class *)0x0;
+        if ((Int32__Class *)(pIStack_3->_0).image == TypeInfo__System__Int32) {
+          pIVar9 = pIStack_3;
         }
-        if (pIVar10 != (Int32__Class *)0x0) {
+        if (pIVar9 != (Int32__Class *)0x0) {
           pIStack_5 = pIStack_3;
-          pIVar10 = TypeInfo__System__Int32;
-          if ((pIVar9->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-          goto code_?;
-          piVar11 = (int32_t *)func_?();
-          __return_storage_ptr__->spawnOption = *piVar11;
+          pIVar9 = TypeInfo__System__Int32;
+          if ((Il2CppClass *)((pIStack_3->_0).image)->codeGenModule !=
+              (TypeInfo__System__Int32->_0).element_class) goto code_?;
+          pIStack_4 = pIStack_3;
+          piVar10 = (int32_t *)func_?();
+          __return_storage_ptr__->spawnOption = *piVar10;
         }
       }
       pDVar7 = (this->fields)._.blueprintData;
@@ -268,18 +266,17 @@ MVVehicleEnergy_ReadWorldObjectData
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
                           );
         if ((bVar8 != 0) && (pIStack_4 != (Int32__Class *)0x0)) {
-          pIVar9 = (Int32__Class *)(pIStack_4->_0).image;
-          pIVar10 = (Int32__Class *)0x0;
-          if (pIVar9 == TypeInfo__System__Int32) {
-            pIVar10 = pIStack_4;
+          pIVar9 = (Int32__Class *)0x0;
+          if ((Int32__Class *)(pIStack_4->_0).image == TypeInfo__System__Int32) {
+            pIVar9 = pIStack_4;
           }
-          if (pIVar10 != (Int32__Class *)0x0) {
+          if (pIVar9 != (Int32__Class *)0x0) {
             pIStack_5 = pIStack_4;
-            pIVar10 = TypeInfo__System__Int32;
-            if ((pIVar9->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-            goto code_?;
-            piVar11 = (int32_t *)func_?();
-            __return_storage_ptr__->spawnTime = *piVar11;
+            pIVar9 = TypeInfo__System__Int32;
+            if ((Il2CppClass *)((pIStack_4->_0).image)->codeGenModule !=
+                (TypeInfo__System__Int32->_0).element_class) goto code_?;
+            piVar10 = (int32_t *)func_?();
+            __return_storage_ptr__->spawnTime = *piVar10;
           }
         }
         pDVar7 = (this->fields)._.blueprintData;
@@ -293,19 +290,19 @@ MVVehicleEnergy_ReadWorldObjectData
           if ((bVar8 == 0) || (pIStack_5 == (Int32__Class *)0x0)) {
             return __return_storage_ptr__;
           }
-          pIVar9 = (Int32__Class *)(pIStack_5->_0).image;
-          pIVar10 = (Int32__Class *)0x0;
-          if (pIVar9 == TypeInfo__System__Int32) {
-            pIVar10 = pIStack_5;
+          pIVar9 = (Int32__Class *)0x0;
+          if ((Int32__Class *)(pIStack_5->_0).image == TypeInfo__System__Int32) {
+            pIVar9 = pIStack_5;
           }
-          if (pIVar10 == (Int32__Class *)0x0) {
+          if (pIVar9 == (Int32__Class *)0x0) {
             return __return_storage_ptr__;
           }
-          pIVar10 = TypeInfo__System__Int32;
-          if ((pIVar9->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+          pIVar9 = TypeInfo__System__Int32;
+          if ((Il2CppClass *)((pIStack_5->_0).image)->codeGenModule ==
+              (TypeInfo__System__Int32->_0).element_class) {
             pIStack_4 = pIStack_5;
-            piVar11 = (int32_t *)func_?();
-            __return_storage_ptr__->energyAmount = *piVar11;
+            piVar10 = (int32_t *)func_?();
+            __return_storage_ptr__->energyAmount = *piVar10;
             return __return_storage_ptr__;
           }
           goto code_?;
@@ -315,13 +312,13 @@ MVVehicleEnergy_ReadWorldObjectData
   }
   func_?();
   pIStack_5 = extraout_ECX;
-  pIVar10 = extraout_EDX;
+  pIVar9 = extraout_EDX;
 code_?:
-  pIStack_4 = pIVar10;
+  pIStack_4 = pIVar9;
   func_?();
-  pcVar12 = (code *)swi(3);
-  pMVar13 = (MVVehicleEnergy_VehicleEnergyConfiguration *)(*pcVar12)();
-  return pMVar13;
+  pcVar11 = (code *)swi(3);
+  pMVar12 = (MVVehicleEnergy_VehicleEnergyConfiguration *)(*pcVar11)();
+  return pMVar12;
 }
 
 
@@ -488,12 +485,11 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::
   iVar3 = pMVar1->spawnOption;
   iVar4 = pMVar1->spawnTime;
   iVar5 = pMVar1->energyAmount;
-  pMVar6 = &(this->fields)._VehicleEnergyConfig_k__BackingField;
-  pMVar6->name = pMVar1->name;
+  (this->fields)._VehicleEnergyConfig_k__BackingField.name = pMVar1->name;
   (this->fields)._VehicleEnergyConfig_k__BackingField.spawnOption = iVar3;
   (this->fields)._VehicleEnergyConfig_k__BackingField.spawnTime = iVar4;
   (this->fields)._VehicleEnergyConfig_k__BackingField.energyAmount = iVar5;
-  func_?(pMVar6,0);
+  func_?(&(this->fields)._VehicleEnergyConfig_k__BackingField,0);
   return;
 }
 
@@ -515,54 +511,52 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::MVVe
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-  if (pPVar1 == (PrefabPool *)0x0) {
-code_?:
-    func_?();
-    pMVar2 = extraout_EDX;
-  }
-  else {
+  if (pPVar1 != (PrefabPool *)0x0) {
     MVBlueprintBase::MVBlueprintBase__ctor_1
               ((MVBlueprintBase *)this,data,(pPVar1->fields).vehicleEnergyPrefab,worldObjects,
                (MethodInfo *)0x0);
-    piVar3 = &(this->fields)._._._.interactionFlags;
-    *(uint *)piVar3 = (uint)*piVar3 | 0x9000;
-    pMVar2 = (MVVehicleEnergyObject *)(this->fields)._._._.component;
+    piVar2 = &(this->fields)._._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 | 0x9000;
+    pMVar3 = (MVVehicleEnergyObject *)(this->fields)._._._.component;
     *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) =
          *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-    if (pMVar2 == (MVVehicleEnergyObject *)0x0) {
+    if (pMVar3 == (MVVehicleEnergyObject *)0x0) {
       (this->fields).vehicleEnergyObject = (MVVehicleEnergyObject *)0x0;
-code_?:
-      func_?();
-      pMVar2 = (this->fields).vehicleEnergyObject;
-      if ((pMVar2 != (MVVehicleEnergyObject *)0x0) &&
-         (this_00 = (pMVar2->fields).vehicleEnergyVisuals, this_00 != (VehicleEnergyVisuals *)0x0))
-      {
-        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this_00,(MethodInfo *)0x0);
-        ppGVar5 = &(this->fields)._VehicleEnergyVisualsGameObject_k__BackingField;
-        *ppGVar5 = pGVar4;
-        func_?(ppGVar5,pGVar4);
-        return;
-      }
+    }
+    else {
+      if (((((ObjectPrefab__Class *)pMVar3->klass)->_1).naturalAligment <
+           (TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject->_1).naturalAligment)
+         || ((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchy
+             [(TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject->_1).naturalAligment
+              - 1] != (Il2CppClass *)
+                      TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject))
+      goto code_?;
+      (this->fields).vehicleEnergyObject = pMVar3;
+      if (((((ObjectPrefab__Class *)pMVar3->klass)->_1).naturalAligment <
+           (TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject->_1).naturalAligment)
+         || ((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchy
+             [(TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject->_1).naturalAligment
+              - 1] != (Il2CppClass *)
+                      TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject))
       goto code_?;
     }
-    bVar6 = (TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject->_1).naturalAligment;
-    if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment < bVar6) ||
-       ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[bVar6 - 1] !=
-        (Il2CppClass *)TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject))
-    goto code_?;
-    (this->fields).vehicleEnergyObject = pMVar2;
-    bVar6 = (TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject->_1).naturalAligment;
-    if ((bVar6 <= (((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment) &&
-       ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[bVar6 - 1] ==
-        (Il2CppClass *)TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject))
-    goto code_?;
+    func_?();
+    pMVar3 = (this->fields).vehicleEnergyObject;
+    if ((pMVar3 != (MVVehicleEnergyObject *)0x0) &&
+       (this_00 = (pMVar3->fields).vehicleEnergyVisuals, this_00 != (VehicleEnergyVisuals *)0x0)) {
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this_00,(MethodInfo *)0x0);
+      (this->fields)._VehicleEnergyVisualsGameObject_k__BackingField = pGVar4;
+      func_?(&(this->fields)._VehicleEnergyVisualsGameObject_k__BackingField,pGVar4);
+      return;
+    }
   }
-  func_?(pMVar2);
-code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pMVar3 = extraout_EDX;
+code_?:
+  func_?(pMVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -626,12 +620,11 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::
                MethodInfo *method)
 
 {
-  pMVar1 = &(this->fields)._VehicleEnergyConfig_k__BackingField;
-  pMVar1->name = value.name;
+  (this->fields)._VehicleEnergyConfig_k__BackingField.name = value.name;
   (this->fields)._VehicleEnergyConfig_k__BackingField.spawnOption = value.spawnOption;
   (this->fields)._VehicleEnergyConfig_k__BackingField.spawnTime = value.spawnTime;
   (this->fields)._VehicleEnergyConfig_k__BackingField.energyAmount = value.energyAmount;
-  func_?(pMVar1,0);
+  func_?(&(this->fields)._VehicleEnergyConfig_k__BackingField,0);
   return;
 }
 
@@ -643,9 +636,8 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::
                (MVVehicleEnergy *this,GameObject *value,MethodInfo *method)
 
 {
-  ppGVar1 = &(this->fields)._VehicleEnergyVisualsGameObject_k__BackingField;
-  *ppGVar1 = value;
-  func_?(ppGVar1,value);
+  (this->fields)._VehicleEnergyVisualsGameObject_k__BackingField = value;
+  func_?(&(this->fields)._VehicleEnergyVisualsGameObject_k__BackingField,value);
   return;
 }
 

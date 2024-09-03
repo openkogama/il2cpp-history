@@ -23,13 +23,13 @@ bool Assembly-CSharp.dll::ProfileSettingsMenu+<MouseSetRoutine>d__12::
         (pSVar3 = (pPVar2->fields).mouseSensitivitySlider, pSVar3 != (SettingsSlider *)0x0)) &&
        (pSVar4 = (pSVar3->fields).slider, pSVar4 != (Slider *)0x0)) {
       fVar5 = (float10)(*(code *)(pSVar4->klass->vtable).get_value.method)
-                                  (pSVar4,(pSVar4->klass->vtable).set_value.methodPtr);
+                                 (pSVar4,(pSVar4->klass->vtable).set_value.methodPtr);
       pSVar3 = (pPVar2->fields).mouseSensitivitySlider;
       if (pSVar3 != (SettingsSlider *)0x0) {
         fVar5 = (float10)func_?((float)fVar5 / (pSVar3->fields).interval);
         pSVar3 = (pPVar2->fields).mouseSensitivitySlider;
         if (pSVar3 != (SettingsSlider *)0x0) {
-          fStack_6 = (pSVar3->fields).interval * (float)fVar5;
+          fStack_6 = (float)fVar5 * (pSVar3->fields).interval;
           fVar7 = _UNK_?;
           if ((fStack_6 < _UNK_?) || (fVar7 = _UNK_?, _UNK_? < fStack_6)) {
             fStack_6 = fVar7;
@@ -42,26 +42,24 @@ bool Assembly-CSharp.dll::ProfileSettingsMenu+<MouseSetRoutine>d__12::
           Assets::Scripts::ProfileSettings::ProfileSettingsManager::
           ProfileSettingsManager_SetSettingValue
                     (ProfileSettingKey__Enum_MouseSensitivity,value,(MethodInfo *)0x0);
-          ppIVar8 = &(pPVar2->fields).mouseSenseSetRoutine;
-          *ppIVar8 = (IEnumerator *)0x0;
-          func_?(ppIVar8,0);
+          (pPVar2->fields).mouseSenseSetRoutine = (IEnumerator *)0x0;
+          func_?(&(pPVar2->fields).mouseSenseSetRoutine,0);
           return 0;
         }
       }
     }
     func_?();
-    pcVar9 = (code *)swi(3);
-    bVar10 = (*pcVar9)();
-    return bVar10;
+    pcVar8 = (code *)swi(3);
+    bVar9 = (*pcVar8)();
+    return bVar9;
   }
   (this->fields).__1__state = -1;
   this_00 = (SubscribableVariable_1_System_Single_ *)
             func_?(TypeInfo__UnityEngine__WaitForSeconds);
   SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
             (this_00,1.0,(MethodInfo *)0x0);
-  ppOVar11 = &(this->fields).__2__current;
-  *ppOVar11 = (Object *)this_00;
-  func_?(ppOVar11,this_00);
+  (this->fields).__2__current = (Object *)this_00;
+  func_?(&(this->fields).__2__current,this_00);
   (this->fields).__1__state = 1;
   return 1;
 }

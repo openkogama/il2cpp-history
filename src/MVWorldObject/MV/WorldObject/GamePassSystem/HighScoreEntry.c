@@ -87,10 +87,10 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::HighScoreEntry::HighSco
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
+  (this->fields).username = ::StringLiteral__;
   method_00 = (MethodInfo *)&(this->fields).username;
-  *(String **)method_00 = ::StringLiteral__;
   func_?(method_00,::StringLiteral__);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
@@ -107,15 +107,14 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::HighScoreEntry::HighSco
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  ppSVar1 = &(this->fields).username;
-  *ppSVar1 = ::StringLiteral__;
-  method_00 = (MethodInfo *)ppSVar1;
-  func_?(ppSVar1,::StringLiteral__);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  (this->fields).username = ::StringLiteral__;
+  method_00 = (MethodInfo *)&(this->fields).username;
+  func_?(method_00,::StringLiteral__);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).profileID = profileID;
-  *ppSVar1 = username;
-  func_?(ppSVar1,username);
+  (this->fields).username = username;
+  func_?(&(this->fields).username,username);
   (this->fields).gamePoints = gamePoints;
   (this->fields).isSubscriber = isSubscriber;
   return;

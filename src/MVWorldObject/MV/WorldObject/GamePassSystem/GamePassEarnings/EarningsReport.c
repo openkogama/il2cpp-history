@@ -180,76 +180,81 @@ int32_t MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::Ea
   iVar6 = 0;
   DStack_7._current.value = 0;
   DStack_7._getEnumeratorRetType = 0;
-  DStack_7._dictionary = (Dictionary_2_System_Object_System_Int32Enum_ *)0x0;
+  DStack_7._dictionary = (Dictionary_2_System_ByteEnum_System_Int32_ *)0x0;
   DStack_7._version = 0;
   DStack_7._index = 0;
-  DStack_7._current.key = (Object *)0x0;
+  DStack_7._current._0_4_ = 0;
   iStack_8 = 0;
   method_00 = (MethodInfo *)(this->fields).gamePassTierEarningsGold;
+  DStack_9._current.value = 0;
+  DStack_9._getEnumeratorRetType = 0;
+  DStack_9._dictionary = (Dictionary_2_System_Object_System_Int32Enum_ *)0x0;
+  DStack_9._version = 0;
+  DStack_9._index = 0;
+  DStack_9._current.key = (Object *)0x0;
   if (method_00 != (MethodInfo *)0x0) {
-    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffff90,(Dictionary_2_System_UInt32_System_Object_ *)method_00,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__GetEnumerator__
                        );
-    uStack_10 = 0;
-    DStack_11._dictionary = (Dictionary_2_System_ByteEnum_System_Int32_ *)pDVar9->_dictionary;
-    DStack_11._version = pDVar9->_version;
-    DStack_11._index = pDVar9->_index;
-    DStack_11._current._0_4_ = (pDVar9->_current).key;
-    DStack_11._current.value = (int32_t)(pDVar9->_current).value;
-    DStack_11._getEnumeratorRetType = pDVar9->_getEnumeratorRetType;
+    uStack_11 = 0;
+    DStack_7._dictionary = (Dictionary_2_System_ByteEnum_System_Int32_ *)pDVar10->_dictionary;
+    DStack_7._version = pDVar10->_version;
+    DStack_7._index = pDVar10->_index;
+    DStack_7._current._0_4_ = (pDVar10->_current).key;
+    DStack_7._16_8_ = *(undefined8 *)&(pDVar10->_current).value;
     uStack_1 = 1;
-    pDStack_12 = &DStack_11;
+    pDStack_12 = &DStack_7;
     while( true ) {
       bVar13 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::ByteEnum,System::Int32]::
               Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Int32__MoveNext
-                        (&DStack_11,
+                        (&DStack_7,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_int>__MoveNext__
                         );
       if (bVar13 == 0) break;
-      iVar6 = (int)(Object__Class **)DStack_11._current.value + iVar6;
+      iVar6 = iVar6 + DStack_7._current.value;
       iStack_8 = iVar6;
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)&DStack_11,
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)&DStack_7,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_int>__Dispose__
                ,method_00);
     uStack_1 = 0xffffffff;
     this_00 = (this->fields).gameBoosterEarningsGold;
     if (this_00 != (Dictionary_2_System_String_System_Int32_ *)0x0) {
-      pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+      pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                          ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                           &stack0xffffff90,(Dictionary_2_System_UInt32_System_Object_ *)this_00,
                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__GetEnumerator__
                          );
-      uStack_10 = 0;
-      DStack_7._dictionary = (Dictionary_2_System_Object_System_Int32Enum_ *)pDVar9->_dictionary;
-      DStack_7._version = pDVar9->_version;
-      DStack_7._index = pDVar9->_index;
-      DStack_7._current.key = (Object *)(pDVar9->_current).key;
-      DStack_7._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
+      uStack_11 = 0;
+      DStack_9._dictionary = (Dictionary_2_System_Object_System_Int32Enum_ *)pDVar10->_dictionary;
+      DStack_9._version = pDVar10->_version;
+      DStack_9._index = pDVar10->_index;
+      DStack_9._current.key = (Object *)(pDVar10->_current).key;
+      DStack_9._16_8_ = *(undefined8 *)&(pDVar10->_current).value;
       uStack_1 = 4;
-      pDStack_12 = (Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Int32_ *)&DStack_7;
+      pDStack_12 = (Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Int32_ *)&DStack_9;
       while( true ) {
         bVar13 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Int32Enum]::
                 Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Int32Enum__MoveNext
-                          (&DStack_7,
+                          (&DStack_9,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_int>__MoveNext__
                           );
         if (bVar13 == 0) break;
-        iVar6 = iVar6 + DStack_7._current.value;
+        iVar6 = iVar6 + DStack_9._current.value;
         iStack_8 = iVar6;
       }
       uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                ((Object *)&DStack_7,
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                ((Object *)&DStack_9,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_int>__Dispose__
                  ,in_stack_14);
@@ -337,7 +342,7 @@ String * MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::E
       pSStack_9 = pSVar8;
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)&stack0xffffffb0,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_int>__Dispose__
@@ -396,10 +401,9 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::Earni
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__Dictionary__
             );
   method_00 = (MethodInfo *)&(this->fields).gameBoosterEarningsGold;
-  *(Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ **)
-   method_00 = this_01;
+  (this->fields).gameBoosterEarningsGold = (Dictionary_2_System_String_System_Int32_ *)this_01;
   func_?(method_00,this_01);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
@@ -451,16 +455,15 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::Earni
             (this_01,
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__Dictionary__
             );
-  ppDVar1 = &(this->fields).gameBoosterEarningsGold;
-  *ppDVar1 = (Dictionary_2_System_String_System_Int32_ *)this_01;
-  method_00 = (MethodInfo *)ppDVar1;
-  func_?(ppDVar1,this_01);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  method_00 = (MethodInfo *)&(this->fields).gameBoosterEarningsGold;
+  (this->fields).gameBoosterEarningsGold = (Dictionary_2_System_String_System_Int32_ *)this_01;
+  func_?(method_00,this_01);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).gamePassTierEarningsGold = gamePassTierEarningsGold;
   func_?(&this->fields,gamePassTierEarningsGold);
-  *ppDVar1 = gameBoosterEarningsGold;
-  func_?(ppDVar1,gameBoosterEarningsGold);
+  (this->fields).gameBoosterEarningsGold = gameBoosterEarningsGold;
+  func_?(&(this->fields).gameBoosterEarningsGold,gameBoosterEarningsGold);
   return;
 }
 
@@ -515,76 +518,81 @@ int32_t MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::Ea
   iVar6 = 0;
   DStack_7._current.value = 0;
   DStack_7._getEnumeratorRetType = 0;
-  DStack_7._dictionary = (Dictionary_2_System_Object_System_Int32Enum_ *)0x0;
+  DStack_7._dictionary = (Dictionary_2_System_ByteEnum_System_Int32_ *)0x0;
   DStack_7._version = 0;
   DStack_7._index = 0;
-  DStack_7._current.key = (Object *)0x0;
+  DStack_7._current._0_4_ = 0;
   iStack_8 = 0;
   method_00 = (MethodInfo *)(this->fields).gamePassTierEarningsGold;
+  DStack_9._current.value = 0;
+  DStack_9._getEnumeratorRetType = 0;
+  DStack_9._dictionary = (Dictionary_2_System_Object_System_Int32Enum_ *)0x0;
+  DStack_9._version = 0;
+  DStack_9._index = 0;
+  DStack_9._current.key = (Object *)0x0;
   if (method_00 != (MethodInfo *)0x0) {
-    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffff90,(Dictionary_2_System_UInt32_System_Object_ *)method_00,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__GetEnumerator__
                        );
-    uStack_10 = 0;
-    DStack_11._dictionary = (Dictionary_2_System_ByteEnum_System_Int32_ *)pDVar9->_dictionary;
-    DStack_11._version = pDVar9->_version;
-    DStack_11._index = pDVar9->_index;
-    DStack_11._current._0_4_ = (pDVar9->_current).key;
-    DStack_11._current.value = (int32_t)(pDVar9->_current).value;
-    DStack_11._getEnumeratorRetType = pDVar9->_getEnumeratorRetType;
+    uStack_11 = 0;
+    DStack_7._dictionary = (Dictionary_2_System_ByteEnum_System_Int32_ *)pDVar10->_dictionary;
+    DStack_7._version = pDVar10->_version;
+    DStack_7._index = pDVar10->_index;
+    DStack_7._current._0_4_ = (pDVar10->_current).key;
+    DStack_7._16_8_ = *(undefined8 *)&(pDVar10->_current).value;
     uStack_1 = 1;
-    pDStack_12 = &DStack_11;
+    pDStack_12 = &DStack_7;
     while( true ) {
       bVar13 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::ByteEnum,System::Int32]::
               Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Int32__MoveNext
-                        (&DStack_11,
+                        (&DStack_7,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_int>__MoveNext__
                         );
       if (bVar13 == 0) break;
-      iVar6 = (int)(Object__Class **)DStack_11._current.value + iVar6;
+      iVar6 = iVar6 + DStack_7._current.value;
       iStack_8 = iVar6;
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)&DStack_11,
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)&DStack_7,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_int>__Dispose__
                ,method_00);
     uStack_1 = 0xffffffff;
     this_00 = (this->fields).gameBoosterEarningsGold;
     if (this_00 != (Dictionary_2_System_String_System_Int32_ *)0x0) {
-      pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+      pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                          ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                           &stack0xffffff90,(Dictionary_2_System_UInt32_System_Object_ *)this_00,
                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__GetEnumerator__
                          );
-      uStack_10 = 0;
-      DStack_7._dictionary = (Dictionary_2_System_Object_System_Int32Enum_ *)pDVar9->_dictionary;
-      DStack_7._version = pDVar9->_version;
-      DStack_7._index = pDVar9->_index;
-      DStack_7._current.key = (Object *)(pDVar9->_current).key;
-      DStack_7._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
+      uStack_11 = 0;
+      DStack_9._dictionary = (Dictionary_2_System_Object_System_Int32Enum_ *)pDVar10->_dictionary;
+      DStack_9._version = pDVar10->_version;
+      DStack_9._index = pDVar10->_index;
+      DStack_9._current.key = (Object *)(pDVar10->_current).key;
+      DStack_9._16_8_ = *(undefined8 *)&(pDVar10->_current).value;
       uStack_1 = 4;
-      pDStack_12 = (Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Int32_ *)&DStack_7;
+      pDStack_12 = (Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Int32_ *)&DStack_9;
       while( true ) {
         bVar13 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Int32Enum]::
                 Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Int32Enum__MoveNext
-                          (&DStack_7,
+                          (&DStack_9,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_int>__MoveNext__
                           );
         if (bVar13 == 0) break;
-        iVar6 = iVar6 + DStack_7._current.value;
+        iVar6 = iVar6 + DStack_9._current.value;
         iStack_8 = iVar6;
       }
       uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                ((Object *)&DStack_7,
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                ((Object *)&DStack_9,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_int>__Dispose__
                  ,in_stack_14);

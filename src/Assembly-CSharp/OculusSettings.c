@@ -29,16 +29,15 @@ void Assembly-CSharp.dll::OculusSettings::OculusSettings_Initialize
       pMVar1 = (MVWorldObjectClient *)
                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                          (this_02,woID,(MethodInfo *)0x0);
-      ppMVar2 = &(this->fields).target;
-      *ppMVar2 = pMVar1;
+      (this->fields).target = pMVar1;
       func_?();
-      pMVar1 = *ppMVar2;
+      pMVar1 = (this->fields).target;
       if (pMVar1 != (MVWorldObjectClient *)0x0) {
         this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                   (pMVar1->fields)._.data;
-        pSVar3 = (this->fields).rangeSlider;
+        pSVar2 = (this->fields).rangeSlider;
         if (this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-          TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+          TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                   Object,UnityEngine::UIElements::TextureId]::
                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                             (this_01,(Object *)StringLiteral_Radius,
@@ -47,39 +46,39 @@ void Assembly-CSharp.dll::OculusSettings::OculusSettings_Initialize
           if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__System__Globalization__CultureInfo);
           }
-          pCVar5 = mscorlib.dll::System::Globalization::CultureInfo::
+          pCVar4 = mscorlib.dll::System::Globalization::CultureInfo::
                    CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
           if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__System__Convert);
           }
-          fVar6 = mscorlib.dll::System::Convert::Convert_ToSingle_1
-                            ((Object *)TVar4.m_Index,(IFormatProvider *)pCVar5,(MethodInfo *)0x0);
-          if (pSVar3 != (SettingsSlider *)0x0) {
+          fVar5 = mscorlib.dll::System::Convert::Convert_ToSingle_1
+                            ((Object *)TVar3.m_Index,(IFormatProvider *)pCVar4,(MethodInfo *)0x0);
+          if (pSVar2 != (SettingsSlider *)0x0) {
             SettingsSlider::SettingsSlider_Initialize
-                      (pSVar3,StringLiteral_Radius,fVar6,5.0,40.0,(MethodInfo *)0x0);
-            pSVar3 = (this->fields).aggresionSlider;
-            TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      (pSVar2,StringLiteral_Radius,fVar5,5.0,40.0,(MethodInfo *)0x0);
+            pSVar2 = (this->fields).aggresionSlider;
+            TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                     Object,UnityEngine::UIElements::TextureId]::
                     Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                               (this_01,(Object *)StringLiteral_Speed,
                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                               );
-            pCVar5 = mscorlib.dll::System::Globalization::CultureInfo::
+            pCVar4 = mscorlib.dll::System::Globalization::CultureInfo::
                      CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-            fVar6 = mscorlib.dll::System::Convert::Convert_ToSingle_1
-                              ((Object *)TVar4.m_Index,(IFormatProvider *)pCVar5,(MethodInfo *)0x0);
-            if (pSVar3 != (SettingsSlider *)0x0) {
+            fVar5 = mscorlib.dll::System::Convert::Convert_ToSingle_1
+                              ((Object *)TVar3.m_Index,(IFormatProvider *)pCVar4,(MethodInfo *)0x0);
+            if (pSVar2 != (SettingsSlider *)0x0) {
               SettingsSlider::SettingsSlider_Initialize
-                        (pSVar3,StringLiteral_Speed,fVar6,10.0,50.0,(MethodInfo *)0x0);
+                        (pSVar2,StringLiteral_Speed,fVar5,10.0,50.0,(MethodInfo *)0x0);
               value = 100;
-              bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                       Object,UnityEngine::UIElements::TextureId]::
                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                                 (this_01,(Object *)StringLiteral_Lives,
                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                                 );
-              if (bVar7 != 0) {
-                TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              if (bVar6 != 0) {
+                TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                         Object,UnityEngine::UIElements::TextureId]::
                         Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                                   (this_01,(Object *)StringLiteral_Lives,
@@ -89,21 +88,21 @@ void Assembly-CSharp.dll::OculusSettings::OculusSettings_Initialize
                   func_?(TypeInfo__System__Convert);
                 }
                 value = mscorlib.dll::System::Convert::Convert_ToInt32
-                                  (TVar4.m_Index,(MethodInfo *)0x0);
+                                  (TVar3.m_Index,(MethodInfo *)0x0);
               }
-              pSVar3 = (this->fields).numOfLivesSlider;
-              if (pSVar3 != (SettingsSlider *)0x0) {
+              pSVar2 = (this->fields).numOfLivesSlider;
+              if (pSVar2 != (SettingsSlider *)0x0) {
                 SettingsSlider::SettingsSlider_Initialize_1
-                          (pSVar3,StringLiteral_Lives,value,1,100,(MethodInfo *)0x0);
-                pSVar8 = (this->fields).numOfLivesInputSlider;
-                if (pSVar8 != (SettingsInputFieldSlider *)0x0) {
-                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                            (pSVar8,StringLiteral_Lives,value,(MethodInfo *)0x0);
+                          (pSVar2,StringLiteral_Lives,value,1,100,(MethodInfo *)0x0);
+                pSVar7 = (this->fields).numOfLivesInputSlider;
+                if (pSVar7 != (SettingsInputFieldSlider *)0x0) {
+                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
+                            (pSVar7,StringLiteral_Lives,value,(MethodInfo *)0x0);
                   if (value == 100) {
-                    pSVar8 = (this->fields).numOfLivesInputSlider;
-                    if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+                    pSVar7 = (this->fields).numOfLivesInputSlider;
+                    if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
                     SettingsInputFieldSlider::SettingsInputFieldSlider_SetText
-                              (pSVar8,StringLiteral_u221E,(MethodInfo *)0x0);
+                              (pSVar7,StringLiteral_u221E,(MethodInfo *)0x0);
                   }
                   return;
                 }
@@ -116,8 +115,8 @@ void Assembly-CSharp.dll::OculusSettings::OculusSettings_Initialize
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

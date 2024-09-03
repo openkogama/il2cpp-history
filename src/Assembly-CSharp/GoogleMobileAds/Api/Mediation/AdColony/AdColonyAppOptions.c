@@ -37,11 +37,12 @@ String * Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColon
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)
             TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient) {
+          pIVar2 = pIVar1->klass;
           iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
           pSVar6 = (String *)
-                   (*(code *)(&(pIVar1->klass->vtable).GetPrivacyConsentString)[iVar5].method)
-                             (pIVar1,privacyFramework,
-                              (&(pIVar1->klass->vtable).SetUserId)[iVar5].methodPtr);
+                   (*(code *)(&(pIVar2->vtable).GetPrivacyConsentString)[iVar5].method)
+                             (pIVar1,privacyFramework,(&(pIVar2->vtable).SetUserId)[iVar5].methodPtr
+                             );
           return pSVar6;
         }
         uVar3 = uVar3 + 1;
@@ -99,10 +100,11 @@ bool Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)
             TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient) {
+          pIVar2 = pIVar1->klass;
           iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-          bVar6 = (*(code *)(&(pIVar1->klass->vtable).GetPrivacyFrameworkRequired)[iVar5].method)
+          bVar6 = (*(code *)(&(pIVar2->vtable).GetPrivacyFrameworkRequired)[iVar5].method)
                             (pIVar1,privacyFramework,
-                             (&(pIVar1->klass->vtable).SetPrivacyConsentString)[iVar5].methodPtr);
+                             (&(pIVar2->vtable).SetPrivacyConsentString)[iVar5].methodPtr);
           return bVar6;
         }
         uVar3 = uVar3 + 1;
@@ -159,10 +161,11 @@ String * Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColon
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)
             TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient) {
+          pIVar2 = pIVar1->klass;
           iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
           pSVar6 = (String *)
-                   (*(code *)(&(pIVar1->klass->vtable).GetUserId)[iVar5].method)
-                             (pIVar1,(&(pIVar1->klass->vtable).SetTestMode)[iVar5].methodPtr);
+                   (*(code *)(&(pIVar2->vtable).GetUserId)[iVar5].method)
+                             (pIVar1,(&(pIVar2->vtable).SetTestMode)[iVar5].methodPtr);
           return pSVar6;
         }
         uVar3 = uVar3 + 1;
@@ -189,55 +192,36 @@ bool Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
+    func_?();
     cRam_? = '\x01';
   }
   if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
       cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
+    func_?();
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
-    func_?(&
-                    TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient
-                   );
+    func_?();
+    pIStack_1 = (IAdColonyAppOptionsClient__Class *)
+                &TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient;
+    func_?();
     cRam_? = '\x01';
   }
   if ((TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->_1).
       cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
+    func_?();
   }
-  pIVar1 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->static_fields->
-           client;
-  if (pIVar1 != (IAdColonyAppOptionsClient *)0x0) {
-    pIVar2 = pIVar1->klass;
-    uVar3 = 0;
-    uVar4._0_1_ = (pIVar2->_1).rank;
-    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-    if (uVar4 != 0) {
-      do {
-        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
-            (Il2CppClass *)
-            TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient) {
-          iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-          bVar6 = (*(code *)(&(pIVar1->klass->vtable).IsTestMode)[iVar5].method)
-                            (pIVar1,(&pIVar1->klass[1]._0.image)[iVar5 * 2]);
-          return bVar6;
-        }
-        uVar3 = uVar3 + 1;
-      } while (uVar3 < uVar4);
-    }
-    puVar7 = (undefined4 *)
-             func_?(pIVar1,
-                             TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient
-                             ,7);
-    bVar6 = (*(code *)*puVar7)(pIVar1,puVar7[1]);
-    return bVar6;
+  if (TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions->static_fields->client
+      != (IAdColonyAppOptionsClient *)0x0) {
+    pIStack_1 = TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient;
+    puStack_2 = (undefined *)0x7;
+    bVar3 = func_?();
+    return bVar3;
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  bVar6 = (*pcVar8)();
-  return bVar6;
+  uVar4 = func_?(&puStack_2);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  bVar3 = (*pcVar5)();
+  return bVar3;
 }
 
 
@@ -309,7 +293,8 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
     func_?(TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions);
+    func_?(&TypeInfo__GoogleMobileAds__Mediation__AdColony__Api__AdColonyAppOptions,
+                    unaff_EBP);
     func_?(&
                     TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient
                    );
@@ -337,7 +322,7 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
           (Il2CppClass *)
           TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient) {
         ppMVar6 = &(&(pIVar1->klass->vtable).SetPrivacyFrameworkRequired)
-                   [pIVar3->interfaceOffsets[uVar4].offset].method;
+                   [pIVar1->klass->interfaceOffsets[uVar4].offset].method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;

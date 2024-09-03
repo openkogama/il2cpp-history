@@ -28,6 +28,36 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarLimbDataManagerLocal::
 }
 
 
+/* Void SynchronizeHasHandEquippableUpdate(Boolean) */
+
+void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarLimbDataManagerLocal::
+     AvatarLimbManagerLocal_AvatarLimbDataManagerLocal_SynchronizeHasHandEquippableUpdate
+               (AvatarLimbManagerLocal_AvatarLimbDataManagerLocal *this,
+               bool newIsPoingtingWeaponValue,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Boolean);
+    cRam_? = '\x01';
+  }
+  pLVar1 = (this->fields).limbRotationRuntimeData;
+  if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
+    this_00 = (pLVar1->fields).HasHandEquippableItem;
+    this = (AvatarLimbManagerLocal_AvatarLimbDataManagerLocal *)
+           CONCAT13(newIsPoingtingWeaponValue,this._0_3_);
+    value = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
+    if (this_00 != (MVRuntimeDataVariable *)0x0) {
+      MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(this_00,value,(MethodInfo *)0x0);
+      return;
+    }
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
 /* Void SynchronizeHeadRotationUpdate(Quaternion) */
 
 void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarLimbDataManagerLocal::

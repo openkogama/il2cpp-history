@@ -47,7 +47,7 @@ void Assembly-CSharp.dll::DeleteCursor::DeleteCursor_UpdateCursor
                                 (pCVar4,(selectedCube->fields).iLocalPos,(MethodInfo *)0x0),
            this_00 != (CellCursorCubeLineMesh *)0x0)) {
           iStack6 = (int16_t)((uint)pCVar4 >> 0x10);
-          uStack7 = 0x1044;
+          uStack7 = 0x1045;
           position.z = iStack6;
           position.x = (short)uVar5;
           position.y = (short)((uint)uVar5 >> 0x10);
@@ -76,7 +76,7 @@ void Assembly-CSharp.dll::DeleteCursor::DeleteCursor__ctor
     func_?(&TypeInfo__CellCursor);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__PrefabPool);

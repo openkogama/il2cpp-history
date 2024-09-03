@@ -7,8 +7,8 @@ void Assembly-CSharp.dll::AvatarCameraDistTransparency::
 
 {
   fVar1 = (this->fields).camMoveTowardsOffset.z;
-  (this->fields).fadeEndDistance = (this->fields).fadeEndBase * scale;
-  (this->fields).fadeStartDistance = (this->fields).fadeStartBase * scale;
+  (this->fields).fadeEndDistance = scale * (this->fields).fadeEndBase;
+  (this->fields).fadeStartDistance = scale * (this->fields).fadeStartBase;
   uVar2 = (this->fields).camMoveTowardsOffset.x;
   uVar3 = (this->fields).camMoveTowardsOffset.y;
   (this->fields).camMoveTowardsOffset.x = (float)uVar2 * scale;
@@ -114,7 +114,7 @@ void Assembly-CSharp.dll::AvatarCameraDistTransparency::AvatarCameraDistTranspar
   (this->fields).fadeStartBase = 4.0;
   (this->fields).fadeEndBase = 2.0;
   (this->fields).prevDist = -1.0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).camMoveTowardsOffset.x = camMoveTowardsOffset.x;
   (this->fields).camMoveTowardsOffset.y = camMoveTowardsOffset.y;

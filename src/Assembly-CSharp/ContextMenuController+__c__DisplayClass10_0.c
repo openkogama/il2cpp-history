@@ -1,8 +1,8 @@
 
-/* Boolean <ShowContextMenu>b__1() */
+/* Boolean <ShowContextMenu>b__2() */
 
 bool Assembly-CSharp.dll::ContextMenuController+<>c__DisplayClass10_0::
-     ContextMenuController_c_DisplayClass10_0__ShowContextMenu_b__1
+     ContextMenuController_c_DisplayClass10_0__ShowContextMenu_b__2
                (ContextMenuController_c_DisplayClass10_0 *this,MethodInfo *method)
 
 {
@@ -13,10 +13,10 @@ bool Assembly-CSharp.dll::ContextMenuController+<>c__DisplayClass10_0::
 }
 
 
-/* Void <ShowContextMenu>b__3(IUIStack, BaseEventData) */
+/* Void <ShowContextMenu>b__4(IUIStack, BaseEventData) */
 
 void Assembly-CSharp.dll::ContextMenuController+<>c__DisplayClass10_0::
-     ContextMenuController_c_DisplayClass10_0__ShowContextMenu_b__3
+     ContextMenuController_c_DisplayClass10_0__ShowContextMenu_b__4
                (ContextMenuController_c_DisplayClass10_0 *this,IUIStack *x,BaseEventData *y,
                MethodInfo *method)
 

@@ -163,8 +163,17 @@ public abstract class AvatarLimbManager
 		protected float pointingDuration;
 		protected float elapsedPointingTime;
 		protected Vector3 pointingDirection;
-		protected bool shouldPoint;
+		protected PointState pointState;
 		protected bool isActive;
+
+		// Nested types
+		protected enum PointState
+		{
+			None = 0,
+			PointFinger = 1,
+			PointWeapon = 2,
+			OnlyNetworked = 3
+		}
 
 		// Constructors
 		public AvatarPointingHandler();
@@ -172,6 +181,7 @@ public abstract class AvatarLimbManager
 		// Methods
 		public virtual void Initialize(AvatarLimbManager limbManager, LimbRotator limbRotator, AvatarEnabledChangeHandler enableChangeHandler);
 		public virtual void UpdatePointing(Vector3 localLookDirection);
+		public void HandleWeaponPointing(Quaternion yawRotation, Quaternion pitchRotation);
 		protected void HandlePointing(Quaternion yawRotation, Quaternion pitchRotation);
 		protected void StopPointing();
 		private void OnDisable();

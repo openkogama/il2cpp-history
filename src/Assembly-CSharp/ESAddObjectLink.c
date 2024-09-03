@@ -45,9 +45,8 @@ void Assembly-CSharp.dll::ESAddObjectLink::ESAddObjectLink_Enter
     }
     pOVar2 = (ObjectLink *)func_?(TypeInfo__MV__WorldObject__ObjectLink);
     MVWorldObject.dll::MV::WorldObject::ObjectLink::ObjectLink__ctor_1(pOVar2,(MethodInfo *)0x0);
-    ppOVar3 = &(this->fields).tempLink;
-    *ppOVar3 = pOVar2;
-    func_?(ppOVar3,pOVar2);
+    (this->fields).tempLink = pOVar2;
+    func_?(&(this->fields).tempLink,pOVar2);
     if ((pMVar1->fields).selectedConnector != 3) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
@@ -58,31 +57,29 @@ void Assembly-CSharp.dll::ESAddObjectLink::ESAddObjectLink_Enter
       return;
     }
     pOVar2 = (this->fields).tempLink;
-    pMVar4 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
-    if ((pMVar4 != (MVWorldObjectClient *)0x0) && (pOVar2 != (ObjectLink *)0x0)) {
-      (pOVar2->fields).objectConnectorWOID = (pMVar4->fields)._.id;
-      pMVar5 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      if ((pMVar5 != (MainCameraManager *)0x0) &&
-         (pLVar6 = (pMVar5->fields).lineDrawManager, pLVar6 != (LineDrawManager *)0x0)) {
-        ppOVar3 = &(pLVar6->fields).tempObjectLink;
+    pMVar3 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
+    if ((pMVar3 != (MVWorldObjectClient *)0x0) && (pOVar2 != (ObjectLink *)0x0)) {
+      (pOVar2->fields).objectConnectorWOID = (pMVar3->fields)._.id;
+      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      if ((pMVar4 != (MainCameraManager *)0x0) &&
+         (pLVar5 = (pMVar4->fields).lineDrawManager, pLVar5 != (LineDrawManager *)0x0)) {
         pOVar2 = (this->fields).tempLink;
-        *ppOVar3 = pOVar2;
-        func_?(ppOVar3,pOVar2);
+        (pLVar5->fields).tempObjectLink = pOVar2;
+        func_?(&(pLVar5->fields).tempObjectLink,pOVar2);
         this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if (this_00 != (MVWorldObjectClientManager *)0x0) {
-          pWVar7 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
+          pWVar6 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
                              (this_00,(pMVar1->fields)._.id,(MethodInfo *)0x0);
-          ppWVar8 = &(this->fields).woRef;
-          *ppWVar8 = pWVar7;
-          func_?(ppWVar8,pWVar7);
+          (this->fields).woRef = pWVar6;
+          func_?(&(this->fields).woRef,pWVar6);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -107,7 +104,7 @@ void Assembly-CSharp.dll::ESAddObjectLink::ESAddObjectLink_Execute
     ;
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,(ExceptionArgument__Enum)e,(MethodInfo *)0x0);
   this_00 = (this->fields).woRef;
   if (this_00 == (WorldObjectClientRef *)0x0) goto code_?;
@@ -124,32 +121,34 @@ void Assembly-CSharp.dll::ESAddObjectLink::ESAddObjectLink_Execute
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
-  bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
+  uVar2 = 5;
+  bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
                     (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     value = (Object *)func_?(TypeInfo__ESAddObjectLink____c__DisplayClass3_0);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (value,ExceptionArgument__Enum_obj,method_00);
     if (value == (Object *)0x0) goto code_?;
-    func_?((VoxelHit *)(value + 1),0,0x48);
-    bVar2 = EditModeObjectPicker::EditModeObjectPicker_Pick
+    func_?(value + 1,0,0x48);
+    bVar3 = EditModeObjectPicker::EditModeObjectPicker_Pick
                       ((VoxelHit *)(value + 1),(HashSet_1_System_Int32_ *)0x0,-0x40005,
                        (MethodInfo *)0x0);
-    if ((bVar2 != 0) && (value[6].klass != (Object__Class *)0xffffffff)) {
+    if ((bVar3 != 0) && (value[6].klass != (Object__Class *)0xffffffff)) {
       this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if (this_03 == (MVWorldObjectClientManager *)0x0) goto code_?;
-      pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+      pMVar4 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                          (this_03,(int32_t)value[6].klass,(MethodInfo *)0x0);
-      if ((pMVar3 != (MVWorldObject *)0x0) && (pOVar1[1].klass != value[6].klass)) {
+      if ((pMVar4 != (MVWorldObject *)0x0) && (pOVar1[1].klass != value[6].klass)) {
         this_01 = pOVar1[4].klass;
         this_04 = (Predicate_1_Object_ *)
-                  func_?(TypeInfo__System__Predicate<MV::WorldObject::ObjectLink>,pMVar3);
+                  func_?(TypeInfo__System__Predicate<MV::WorldObject::ObjectLink>,uVar2,
+                                  pMVar4);
         mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
                   (this_04,value,
                    MethodInfo__ESAddObjectLink____c__DisplayClass3_0___Execute_b__0_MV__WorldObject__ObjectLink_
                    ,(MethodInfo *)0x0);
         if (this_01 == (Object__Class *)0x0) goto code_?;
-        bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+        bVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Exists
                           ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
@@ -157,13 +156,13 @@ void Assembly-CSharp.dll::ESAddObjectLink::ESAddObjectLink_Execute
                                     *)this_04,
                            MethodInfo__System__Collections__Generic__List<MV::WorldObject::ObjectLink>__Exists_System__Predicate<MV::WorldObject::ObjectLink>_
                           );
-        if (bVar2 == 0) {
-          cVar4 = (*(code *)pOVar1->klass[3]._0.namespaze)
-                            (pOVar1,pMVar3,pOVar1->klass[3]._0.byval_arg.data.dummy);
-          if (cVar4 != '\0') {
-            pOVar5 = (this->fields).tempLink;
-            if (pOVar5 == (ObjectLink *)0x0) goto code_?;
-            (pOVar5->fields).objectWOID = (int32_t)value[6].klass;
+        if (bVar3 == 0) {
+          cVar5 = (*(code *)pOVar1->klass[3]._0.namespaze)
+                            (pOVar1,pMVar4,pOVar1->klass[3]._0.byval_arg.data.dummy);
+          if (cVar5 != '\0') {
+            pOVar6 = (this->fields).tempLink;
+            if (pOVar6 == (ObjectLink *)0x0) goto code_?;
+            (pOVar6->fields).objectWOID = (int32_t)value[6].klass;
             this_05 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                                 ((MethodInfo *)0x0);
             if (this_05 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
@@ -177,8 +176,8 @@ void Assembly-CSharp.dll::ESAddObjectLink::ESAddObjectLink_Execute
        (this_02 = (e->fields).selectionController, this_02 == (SelectionController *)0x0)) {
 code_?:
       func_?();
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
       return;
     }
     SelectionController::SelectionController_DeSelectAll(this_02,(MethodInfo *)0x0);

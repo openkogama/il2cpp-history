@@ -52,34 +52,23 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IFirstTimeElementActivator);
+    pFStack_1 = (FirstTimeActivatableSpawnRoleMessage *)
+                &TypeInfo__UnityEngine__EventSystems__IFirstTimeElementActivator;
+    func_?();
     cRam_? = '\x01';
   }
   if (x != (IFirstTimeElementActivator *)0x0) {
-    pIVar1 = x->klass;
-    uVar2 = 0;
-    uVar3._0_1_ = (pIVar1->_1).rank;
-    uVar3._1_1_ = (pIVar1->_1).minimumAlignment;
-    if (uVar3 != 0) {
-      do {
-        if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
-            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IFirstTimeElementActivator) {
-          iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(x->klass->vtable).RegisterActivatableElement)[iVar4].method)
-                    (x,this,(&(x->klass->vtable).UnRegisterActivatableElement)[iVar4].methodPtr);
-          return;
-        }
-        uVar2 = uVar2 + 1;
-      } while (uVar2 < uVar3);
-    }
-    puVar5 = (undefined4 *)
-             func_?(x,TypeInfo__UnityEngine__EventSystems__IFirstTimeElementActivator,0);
-    (*(code *)*puVar5)(x,this,puVar5[1]);
+    pFStack_1 = this;
+    pIStack_2 = x;
+    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IFirstTimeElementActivator;
+    func_?(0);
     return;
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pFStack_1 = (FirstTimeActivatableSpawnRoleMessage *)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -97,16 +86,13 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                    );
     cRam_? = '\x01';
   }
-  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-            func_?(
-                           TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__WorldObjectTypeInShopChecker
-                           );
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-  ppWVar1 = &(this->fields).inShopChecker;
-  *ppWVar1 = (WorldObjectTypeInShopChecker *)this_00;
-  func_?(ppWVar1,this_00);
+  method_00 = 
+  TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__WorldObjectTypeInShopChecker;
+  value = (WorldObjectTypeInShopChecker *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  (this->fields).inShopChecker = value;
+  func_?(&(this->fields).inShopChecker,value);
   FirstTimeActivatableGotItPointer::FirstTimeActivatableGotItPointer__ctor
             ((FirstTimeActivatableGotItPointer *)this,(MethodInfo *)0x0);
   return;
@@ -162,7 +148,7 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
     }
     FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked
               ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-    cVar3 = '\0';
+    bVar3 = 0;
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
@@ -170,16 +156,12 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                         (pGVar2,(MethodInfo *)0x0);
       bVar5 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory
                         ((this->fields).inventoryButton,(MethodInfo *)0x0);
-      bVar6 = 0;
-      if (cVar3 == '\0') {
-        bVar6 = bVar5 & bVar4 & bVar1;
-      }
-      return bVar6;
+      return bVar5 & (bVar3 ^ 1) & bVar4 & bVar1;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  bVar1 = (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  bVar1 = (*pcVar6)();
   return bVar1;
 }
 

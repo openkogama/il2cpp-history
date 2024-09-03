@@ -38,7 +38,7 @@ void Assembly-CSharp.dll::ThemeMenuButton+<>c::ThemeMenuButton_c__cctor(MethodIn
   }
   method_00 = TypeInfo__ThemeMenuButton____c;
   value = (ThemeMenuButton_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__ThemeMenuButton____c->static_fields->__9 = value;
   func_?(TypeInfo__ThemeMenuButton____c->static_fields,value);

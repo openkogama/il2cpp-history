@@ -41,32 +41,32 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
   if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
     pIVar2 = (Il2CppClass *)func_?(pIVar2);
   }
-  this_01 = (Tuple_2_Int32_Int32_ *)func_?(pIVar2);
+  this_00 = (Tuple_2_Int32_Int32_ *)func_?(pIVar2);
   mscorlib.dll::System::Tuple`2[Int32,Int32]::Tuple_2_Int32_Int32___ctor
-            (this_01,min,max,pMVar1->klass->rgctx_data[5].method);
-  ppRVar3 = &(this->fields).RangeValidator;
-  *ppRVar3 = (RangeValidator_1_System_Int32_ *)this_01;
-  func_?(ppRVar3,this_01);
-  if (*ppRVar3 != (RangeValidator_1_System_Int32_ *)0x0) {
+            (this_00,min,max,pMVar1->klass->rgctx_data[5].method);
+  (this->fields).RangeValidator = (RangeValidator_1_System_Int32_ *)this_00;
+  func_?(&(this->fields).RangeValidator,this_00);
+  pRVar3 = (this->fields).RangeValidator;
+  if (pRVar3 != (RangeValidator_1_System_Int32_ *)0x0) {
     AntiCheat::RangeValidator`1[System::Int32]::RangeValidator_1_System_Int32__Validate
-              (*ppRVar3,value,0,pMVar1->klass->rgctx_data[4].method);
+              (pRVar3,value,0,pMVar1->klass->rgctx_data[4].method);
     value_00 = value;
-    this_00 = *ppRVar3;
-    if (this_00 != (RangeValidator_1_System_Int32_ *)0x0) {
+    pRVar3 = (this->fields).RangeValidator;
+    if (pRVar3 != (RangeValidator_1_System_Int32_ *)0x0) {
       pMVar1 = pMVar1->klass->rgctx_data[6].method;
       method = pMVar1->klass->rgctx_data[4].method;
       max = 1;
       min = value;
-      value = (int32_t)this_00;
+      value = (int32_t)pRVar3;
       value = AntiCheat::RangeValidator`1[System::Int32]::RangeValidator_1_System_Int32__Validate
-                        (this_00,value_00,1,method);
+                        (pRVar3,value_00,1,method);
       method = (MethodInfo *)&value;
       max = *(int32_t *)(pMVar1->klass->rgctx_data + 1);
       min = (int32_t)&UNK_?;
       value = func_?();
       min = 0;
       KogamaSettingBase::KogamaSettingBase_set_Value
-                ((KogamaSettingBase *)&UNK_?,(Object *)value,(MethodInfo *)0x0);
+                ((KogamaSettingBase *)this,(Object *)value,(MethodInfo *)0x0);
       return;
     }
   }

@@ -64,7 +64,7 @@ void Assembly-CSharp.dll::SkyboxManager+<>c::SkyboxManager_c__cctor(MethodInfo *
   }
   method_00 = TypeInfo__SkyboxManager____c;
   value = (SkyboxManager_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__SkyboxManager____c->static_fields->__9 = value;
   func_?(TypeInfo__SkyboxManager____c->static_fields,value);

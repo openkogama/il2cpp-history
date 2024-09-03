@@ -18,7 +18,7 @@ void Assembly-CSharp.dll::LogFileAppender::LogFileAppender_Finalize
       (*(code *)(pFVar5->klass->vtable).Close.method)
                 (pFVar5,(pFVar5->klass->vtable).Dispose_1.methodPtr);
       uStack_3 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
       *unaff_FS_OFFSET = uStack_2;
       return;
@@ -70,21 +70,19 @@ void Assembly-CSharp.dll::LogFileAppender::LogFileAppender__ctor
     func_?(&TypeInfo__System__IO__StreamWriter);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   pFVar1 = (FileStream *)func_?(TypeInfo__System__IO__FileStream);
   mscorlib.dll::System::IO::FileStream::FileStream__ctor_2
             (pFVar1,filename,FileMode__Enum_OpenOrCreate,FileAccess__Enum_Write,(MethodInfo *)0x0);
-  pLVar2 = &this->fields;
-  pLVar2->fs = pFVar1;
-  func_?(pLVar2,pFVar1);
-  pFVar1 = pLVar2->fs;
+  (this->fields).fs = pFVar1;
+  func_?(&this->fields,pFVar1);
+  pFVar1 = (this->fields).fs;
   this_00 = (StreamWriter *)func_?(TypeInfo__System__IO__StreamWriter);
   mscorlib.dll::System::IO::StreamWriter::StreamWriter__ctor_1
             (this_00,(Stream *)pFVar1,(MethodInfo *)0x0);
-  ppSVar3 = &(this->fields).writer;
-  *ppSVar3 = this_00;
-  func_?(ppSVar3,this_00);
+  (this->fields).writer = this_00;
+  func_?(&(this->fields).writer,this_00);
   return;
 }
 

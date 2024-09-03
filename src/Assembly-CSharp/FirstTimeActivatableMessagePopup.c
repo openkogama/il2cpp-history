@@ -13,11 +13,11 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessagePopup::FirstTimeActivatable
     cRam_? = '\x01';
   }
   this_00 = (this->fields).firstTimeEventMessage;
-  this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+  this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+            func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
+  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
             (this_02,(Object *)this,
              MethodInfo__FirstTimeActivatableMessagePopup__OnFinished_UnityEngine__GameObject_,
              (MethodInfo *)0x0);
@@ -64,7 +64,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessagePopup::
   }
   method_00 = TypeInfo__FirstTimeActivatableMessagePopup____c__DisplayClass12_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)firstTimeEventMessage;
@@ -131,20 +131,16 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessagePopup::FirstTimeActivatable
                      ((Object *)pFVar1,
                       FirstTimeEventMessage_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventMessage>_FirstTimeEventMessage_
                      );
-  ppFVar2 = &(this->fields).firstTimeEventMessage;
-  *ppFVar2 = pFVar1;
-  func_?(ppFVar2,pFVar1);
-  pFVar1 = *ppFVar2;
-  pSVar3 = TM::TM__((this->fields).messageText,(MethodInfo *)0x0);
+  (this->fields).firstTimeEventMessage = pFVar1;
+  func_?(&(this->fields).firstTimeEventMessage,pFVar1);
+  pFVar1 = (this->fields).firstTimeEventMessage;
+  pSVar2 = TM::TM__((this->fields).messageText,(MethodInfo *)0x0);
   if ((pFVar1 != (FirstTimeEventMessage *)0x0) &&
-     (pTVar4 = (pFVar1->fields).message, pTVar4 != (Text *)0x0)) {
-    (*(code *)(pTVar4->klass->vtable).set_text.method)
-              (pTVar4,pSVar3,(pTVar4->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+     (pTVar3 = (pFVar1->fields).message, pTVar3 != (Text *)0x0)) {
+    (*(code *)(pTVar3->klass->vtable).set_text.method)(pTVar3,pSVar2);
     (this->fields).isShown = 1;
     if (cRam_? == '\0') {
-      func_?(&
-                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                     );
+      func_?();
       func_?(&
                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                      );
@@ -173,21 +169,22 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessagePopup::FirstTimeActivatable
               (root,(BaseEventData *)0x0,callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
-    if ((*ppFVar2 != (FirstTimeEventMessage *)0x0) &&
-       (pFVar5 = ((*ppFVar2)->fields).fader, pFVar5 != (FirstTimeFadeHandler *)0x0)) {
-      this_00 = (pFVar5->fields).canvasGroup;
-      (pFVar5->fields).fadingIn = 1;
+    pFVar1 = (this->fields).firstTimeEventMessage;
+    if ((pFVar1 != (FirstTimeEventMessage *)0x0) &&
+       (pFVar4 = (pFVar1->fields).fader, pFVar4 != (FirstTimeFadeHandler *)0x0)) {
+      this_00 = (pFVar4->fields).canvasGroup;
+      (pFVar4->fields).fadingIn = 1;
       if (this_00 != (CanvasGroup *)0x0) {
         UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                   (this_00,0.0,(MethodInfo *)0x0);
-        (pFVar5->fields).currentFadeInTime = 0.0;
+        (pFVar4->fields).currentFadeInTime = 0.0;
         return;
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -253,11 +250,11 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessagePopup::FirstTimeActivatable
         cRam_? = '\x01';
       }
       this_00 = (this->fields).firstTimeEventMessage;
-      this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 *)func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+      this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+                func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
+      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
                 (this_02,(Object *)this,
                  MethodInfo__FirstTimeActivatableMessagePopup__OnFinished_UnityEngine__GameObject_,
                  (MethodInfo *)0x0);
@@ -369,9 +366,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessagePopup::FirstTimeActivatable
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UIPushOption>__List__);
-  ppLVar1 = &(this->fields).pushOptions;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).pushOptions = this_00;
+  func_?(&(this->fields).pushOptions,this_00);
   (this->fields).stayTimeInSeconds = 2.0;
   (this->fields)._.onShowSound = 3;
   (this->fields)._.prerequisiteEvent = -1;

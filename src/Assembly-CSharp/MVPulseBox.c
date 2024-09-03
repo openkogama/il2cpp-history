@@ -13,17 +13,16 @@ void Assembly-CSharp.dll::MVPulseBox::MVPulseBox_Initialize(MVPulseBox *this,Met
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
   MVLogicObject::MVLogicObject_SetupCulling
             ((MVLogicObject *)this,(this->fields)._._.gameObject,2.0,(MethodInfo *)0x0);
-  this_00 = (Action_3_Boolean_Boolean_Object_ *)
+  this_00 = (Action_3_Int32_Int32_ByteEnum_ *)
             func_?(TypeInfo__System__Action<bool,_bool,_LogicObjectManager>);
-  mscorlib.dll::System::Action`3[Boolean,Boolean,Object]::Action_3_Boolean_Boolean_Object___ctor
+  mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
             (this_00,(Object *)this,MethodInfo__MVPulseBox__OnSignal_bool__bool__LogicObjectManager_
              ,(MethodInfo *)0x0);
   pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver
                      ((MVWorldObject *)this,1,
                       (Action_3_Boolean_Boolean_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
-  ppIVar2 = &(this->fields)._InputSignalReceiver_k__BackingField;
-  *ppIVar2 = pIVar1;
-  func_?(ppIVar2,pIVar1);
+  (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
+  func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar1);
   woId = (this->fields)._._._.id;
   this_01 = (WorldObjectClientRef_1_System_Object_ *)
             func_?(TypeInfo__OutputSignalTransmitter);

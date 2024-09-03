@@ -70,30 +70,29 @@ void Assembly-CSharp.dll::TimeReward::TimeReward_UpdateControllerUpdate
 
 {
   pTVar1 = (this->fields).rewardStateBase;
-  pTVar2 = &this->fields;
   if (pTVar1 != (TimeReward_RewardStateBase *)0x0) {
     pTVar1 = (TimeReward_RewardStateBase *)
              (*(code *)(pTVar1->klass->vtable).__unknown.method)
                        (pTVar1,(pTVar1->klass->vtable).__unknown_1.methodPtr);
-    pTVar2->rewardStateBase = pTVar1;
-    func_?(pTVar2,pTVar1);
-    pTVar1 = pTVar2->rewardStateBase;
+    (this->fields).rewardStateBase = pTVar1;
+    func_?(&this->fields,pTVar1);
+    pTVar1 = (this->fields).rewardStateBase;
     if (pTVar1 != (TimeReward_RewardStateBase *)0x0) {
-      pRVar3 = (pTVar1->fields).rewardStateEventArgs;
+      pRVar2 = (pTVar1->fields).rewardStateEventArgs;
       (pTVar1->fields).rewardStateEventArgs = (RewardStateDataEventArgs *)0x0;
       func_?(&pTVar1->fields,0);
-      if ((pRVar3 != (RewardStateDataEventArgs *)0x0) &&
-         (pEVar4 = (this->fields).RewardStateChanged,
-         pEVar4 != (EventHandler_1_RewardStateDataEventArgs_ *)0x0)) {
-        (*(pEVar4->fields)._._.invoke_impl)
-                  ((pEVar4->fields)._._.method_code,this,pRVar3,(pEVar4->fields)._._.method);
+      if ((pRVar2 != (RewardStateDataEventArgs *)0x0) &&
+         ((this->fields).RewardStateChanged != (EventHandler_1_RewardStateDataEventArgs_ *)0x0)) {
+        pEVar3 = (this->fields).RewardStateChanged;
+        (*(pEVar3->fields)._._.invoke_impl)
+                  ((pEVar3->fields)._._.method_code,this,pRVar2,(pEVar3->fields)._._.method);
       }
       return;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -109,12 +108,12 @@ void Assembly-CSharp.dll::TimeReward::TimeReward__ctor(TimeReward *this,MethodIn
   }
   method_01 = TypeInfo__TimeReward__RewardDone;
   value = (TimeReward_RewardStateBase *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
   method_00 = (MethodInfo *)&this->fields;
-  ((TimeReward__Fields *)method_00)->rewardStateBase = value;
+  (this->fields).rewardStateBase = value;
   func_?(method_00,value);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
@@ -130,26 +129,26 @@ void Assembly-CSharp.dll::TimeReward::TimeReward_add_RewardStateChanged
     func_?(&TypeInfo__System__EventHandler<RewardStateDataEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).RewardStateChanged;
-  a = *ppEVar1;
+  a = (this->fields).RewardStateChanged;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar3 = TypeInfo__System__EventHandler<RewardStateDataEventArgs>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__EventHandler<RewardStateDataEventArgs>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pEVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pEVar2 = TypeInfo__System__EventHandler<RewardStateDataEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<RewardStateDataEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pEVar6 = (EventHandler_1_RewardStateDataEventArgs_ *)func_?(ppEVar1,iVar4,a);
-    bVar7 = pEVar6 != a;
-    a = pEVar6;
-  } while (bVar7);
+    pEVar5 = (EventHandler_1_RewardStateDataEventArgs_ *)
+             func_?(&(this->fields).RewardStateChanged,iVar3,a);
+    bVar6 = pEVar5 != a;
+    a = pEVar5;
+  } while (bVar6);
   return;
 }
 
@@ -164,26 +163,26 @@ void Assembly-CSharp.dll::TimeReward::TimeReward_remove_RewardStateChanged
     func_?(&TypeInfo__System__EventHandler<RewardStateDataEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).RewardStateChanged;
-  source = *ppEVar1;
+  source = (this->fields).RewardStateChanged;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar3 = TypeInfo__System__EventHandler<RewardStateDataEventArgs>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__EventHandler<RewardStateDataEventArgs>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pEVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pEVar2 = TypeInfo__System__EventHandler<RewardStateDataEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<RewardStateDataEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pEVar6 = (EventHandler_1_RewardStateDataEventArgs_ *)func_?(ppEVar1,iVar4,source);
-    bVar7 = pEVar6 != source;
-    source = pEVar6;
-  } while (bVar7);
+    pEVar5 = (EventHandler_1_RewardStateDataEventArgs_ *)
+             func_?(&(this->fields).RewardStateChanged,iVar3,source);
+    bVar6 = pEVar5 != source;
+    source = pEVar5;
+  } while (bVar6);
   return;
 }
 

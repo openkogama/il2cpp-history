@@ -44,7 +44,6 @@ code_?:
     pTVar5 = (this->fields).toggleStateHandler;
     if (pTVar5 == (ToggleStateHandler *)0x0) goto code_?;
     pTVar6 = (pTVar5->fields)._.OnStartSetValue;
-    ppTVar7 = &(pTVar5->fields)._.OnStartSetValue;
     this_02 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)func_?();
     mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::
     Func_1_System_Threading_Tasks_VoidTaskResult___ctor
@@ -54,21 +53,21 @@ code_?:
              mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)pTVar6,(Delegate *)this_02,(MethodInfo *)0x0);
     if (pTVar6 == (ToggleStateHandlerOnStartSetValue *)0x0) {
-      *ppTVar7 = (ToggleStateHandlerOnStartSetValue *)0x0;
+      (pTVar5->fields)._.OnStartSetValue = (ToggleStateHandlerOnStartSetValue *)0x0;
       func_?();
       return;
     }
-    pTVar8 = (ToggleStateHandlerOnStartSetValue *)0x0;
+    pTVar7 = (ToggleStateHandlerOnStartSetValue *)0x0;
     if (pTVar6->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
-      pTVar8 = pTVar6;
+      pTVar7 = pTVar6;
     }
-    if (pTVar8 != (ToggleStateHandlerOnStartSetValue *)0x0) {
-      *ppTVar7 = pTVar8;
-      pTVar8 = (ToggleStateHandlerOnStartSetValue *)0x0;
+    if (pTVar7 != (ToggleStateHandlerOnStartSetValue *)0x0) {
+      (pTVar5->fields)._.OnStartSetValue = pTVar7;
+      pTVar7 = (ToggleStateHandlerOnStartSetValue *)0x0;
       if (pTVar6->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
-        pTVar8 = pTVar6;
+        pTVar7 = pTVar6;
       }
-      if (pTVar8 != (ToggleStateHandlerOnStartSetValue *)0x0) {
+      if (pTVar7 != (ToggleStateHandlerOnStartSetValue *)0x0) {
         func_?();
         return;
       }
@@ -78,16 +77,16 @@ code_?:
     pUVar1 = (UnityAction_1_System_Boolean_ *)func_?();
     if (pUVar1 != (UnityAction_1_System_Boolean_ *)0x0) {
       TypeInfo__FullScreenController->static_fields->OnFullScreenChange = pUVar1;
-      iVar9 = func_?();
-      if (iVar9 != 0) goto code_?;
+      iVar8 = func_?();
+      if (iVar8 != 0) goto code_?;
     }
     func_?();
   }
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

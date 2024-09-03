@@ -119,7 +119,7 @@ void Assembly-CSharp.dll::GameRankRequirementSettings::GameRankRequirementSettin
           method = (MethodInfo *)StringLiteral_RequiredRank;
           woID = (int32_t)&UNK_?;
           root = (GameObject *)this_02;
-          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                     (this_02,StringLiteral_RequiredRank,iVar2,(MethodInfo *)0x0);
           return;
         }

@@ -5,7 +5,7 @@ void Assembly-CSharp.dll::CubePickingInfo::CubePickingInfo__ctor_1
                (CubePickingInfo *this,CubePickingInfo *cubePickingInfo,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if (cubePickingInfo != (CubePickingInfo *)0x0) {
     pCVar1 = (cubePickingInfo->fields).cube;

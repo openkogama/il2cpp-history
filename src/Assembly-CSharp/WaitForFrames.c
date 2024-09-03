@@ -12,7 +12,7 @@ Assembly-CSharp.dll::WaitForFrames::WaitForFrames_Frames
   }
   method_00 = TypeInfo__WaitForFrames___Frames_d__0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[2].klass = (Object__Class *)frameCount;
   value[1].klass = (Object__Class *)0x0;

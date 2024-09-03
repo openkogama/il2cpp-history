@@ -1,4 +1,22 @@
 
+/* Void KogamaSettingOnOnValueChange(IKogamaSetting) */
+
+void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
+     KogamaSettingValueWrapperBase::KogamaSettingValueWrapperBase_KogamaSettingOnOnValueChange
+               (KogamaSettingValueWrapperBase *this,IKogamaSetting *obj,MethodInfo *method)
+
+{
+  if ((this->fields).OnValueChange !=
+      (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_
+       *)0x0) {
+    pAVar1 = (this->fields).OnValueChange;
+    (*(pAVar1->fields)._._.invoke_impl)
+              ((pAVar1->fields)._._.method_code,this,(pAVar1->fields)._._.method);
+  }
+  return;
+}
+
+
 /* String ToString() */
 
 String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes
@@ -32,13 +50,12 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
                ,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._._Parent_k__BackingField = parent;
   func_?(&this->fields,parent);
-  ppSVar1 = &(this->fields)._.key;
-  *ppSVar1 = key;
-  func_?(ppSVar1,key);
+  (this->fields)._.key = key;
+  func_?(&(this->fields)._.key,key);
   return;
 }
 

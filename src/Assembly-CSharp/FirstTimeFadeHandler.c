@@ -5,15 +5,16 @@ void Assembly-CSharp.dll::FirstTimeFadeHandler::FirstTimeFadeHandler_DoAction
                (FirstTimeFadeHandler *this,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields).finishedAction;
-  ppAVar2 = &(this->fields).finishedAction;
-  if (pAVar1 != (Action_1_UnityEngine_GameObject_ *)0x0) {
+  if ((this->fields).finishedAction != (Action_1_UnityEngine_GameObject_ *)0x0) {
+    pAVar1 = (this->fields).finishedAction;
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,(this->fields).targetGameObject,
                (pAVar1->fields)._._.method);
   }
-  *ppAVar2 = (Action_1_UnityEngine_GameObject_ *)0x0;
-  func_?(ppAVar2,&stack0xfffffffc,&UNK_?,ppAVar2,0);
+  (this->fields).finishedAction = (Action_1_UnityEngine_GameObject_ *)0x0;
+  func_?(&(this->fields).finishedAction,0);
+  (this->fields).targetGameObject = (GameObject *)0x0;
+  func_?(&(this->fields).targetGameObject,0);
   return;
 }
 
@@ -59,29 +60,27 @@ void Assembly-CSharp.dll::FirstTimeFadeHandler::FirstTimeFadeHandler_StartFadeOu
   else {
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
               (this_00,1.0,(MethodInfo *)0x0);
-    ppAVar1 = &(this->fields).finishedAction;
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)*ppAVar1,(Delegate *)finishedAction,(MethodInfo *)0x0);
-    if (pDVar2 == (Delegate *)0x0) {
-      *ppAVar1 = (Action_1_UnityEngine_GameObject_ *)0x0;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)(this->fields).finishedAction,(Delegate *)finishedAction,
+                        (MethodInfo *)0x0);
+    if (pDVar1 == (Delegate *)0x0) {
+      (this->fields).finishedAction = (Action_1_UnityEngine_GameObject_ *)0x0;
 code_?:
       func_?();
-      ppGVar3 = &(this->fields).targetGameObject;
-      *ppGVar3 = targetGameObject;
-      func_?(ppGVar3,targetGameObject);
+      (this->fields).targetGameObject = targetGameObject;
+      func_?(&(this->fields).targetGameObject,targetGameObject);
       return;
     }
-    pAVar4 = (Action_1_UnityEngine_GameObject_ *)func_?();
-    if (pAVar4 == (Action_1_UnityEngine_GameObject_ *)0x0) goto code_?;
-    *ppAVar1 = pAVar4;
-    iVar5 = func_?();
-    if (iVar5 != 0) goto code_?;
+    pAVar2 = (Action_1_UnityEngine_GameObject_ *)func_?();
+    if (pAVar2 != (Action_1_UnityEngine_GameObject_ *)0x0) {
+      (this->fields).finishedAction = pAVar2;
+      iVar3 = func_?();
+      if (iVar3 != 0) goto code_?;
+    }
   }
   func_?();
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -124,14 +123,15 @@ code_?:
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
               (pCVar3,fVar1 / (this->fields).fadeOutTime,(MethodInfo *)0x0);
     if ((this->fields).currentFadeOutTime <= 0.0) {
-      pAVar5 = (this->fields).finishedAction;
       (this->fields).fadingOut = 0;
-      ppAVar6 = &(this->fields).finishedAction;
-      if (pAVar5 != (Action_1_UnityEngine_GameObject_ *)0x0) {
+      if ((this->fields).finishedAction != (Action_1_UnityEngine_GameObject_ *)0x0) {
+        pAVar5 = (this->fields).finishedAction;
         (*(pAVar5->fields)._._.invoke_impl)((pAVar5->fields)._._.method_code);
       }
-      *ppAVar6 = (Action_1_UnityEngine_GameObject_ *)0x0;
-      func_?(ppAVar6,&stack0xfffffffc,&UNK_?);
+      (this->fields).finishedAction = (Action_1_UnityEngine_GameObject_ *)0x0;
+      func_?();
+      (this->fields).targetGameObject = (GameObject *)0x0;
+      func_?(&(this->fields).targetGameObject,0);
       return;
     }
   }

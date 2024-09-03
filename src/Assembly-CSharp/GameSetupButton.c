@@ -108,7 +108,7 @@ void Assembly-CSharp.dll::GameSetupButton::GameSetupButton_ShowGameSetupMenu
   }
   method_00 = TypeInfo__GameSetupButton____c__DisplayClass3_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   original = (this->fields).gameSetupMenuPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {

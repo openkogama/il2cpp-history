@@ -55,6 +55,9 @@ public static class Extensions
 	public static T GetValueOrDefault<T>(this Dictionary<object, object> hashtable, string key, T defaultValue = default);
 	public static Color GetColor(this Dictionary<object, object> hashtable, string colorKey);
 	public static Color GetColorOrDefault(this Dictionary<object, object> hashtable, string colorKey, Color defaultColor = default);
+	public static Vector3 GetVector3(this Dictionary<object, object> hashtable, string vectorKey);
+	public static Vector3 GetVector3OrDefault(this Dictionary<object, object> hashtable, string vectorKey, Vector3 defaultValue = default);
 	public static void SetColor(this Dictionary<object, object> hashtable, string colorKey, Color color);
+	public static string AddSpacesToSentence(this string text);
 }
 

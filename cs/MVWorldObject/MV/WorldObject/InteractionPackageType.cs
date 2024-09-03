@@ -33,6 +33,7 @@ namespace MV.WorldObject
 		MouseGunHit = 16,
 		GrowthGunHit = 17,
 		IceGunHit = 18,
+		CustomGunHit = 19,
 		MultiThrowingStarHit = 24,
 		DoubleSixShooterHit = 25,
 		SlapGunHit = 26,

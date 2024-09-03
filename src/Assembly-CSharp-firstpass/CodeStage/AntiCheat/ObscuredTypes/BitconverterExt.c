@@ -37,8 +37,7 @@ BitconverterExt_GetBytes(Decimal dec,MethodInfo *method)
   uVar3 = 0;
   if (pIVar2 != (Int32__Array *)0x0) {
     piVar4 = pIVar2->vector;
-    while( true ) {
-      if ((int)pIVar2->max_length <= (int)uVar3) break;
+    for (; (int)uVar3 < (int)pIVar2->max_length; uVar3 = uVar3 + 1) {
       if (pIVar2->max_length <= uVar3) goto code_?;
       pBVar5 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_3
                          (*piVar4,(MethodInfo *)0x0);
@@ -47,7 +46,6 @@ BitconverterExt_GetBytes(Decimal dec,MethodInfo *method)
                 ((List_1_System_Byte_ *)this,(IEnumerable_1_System_Byte_ *)pBVar5,
                  MethodInfo__System__Collections__Generic__List<unsigned_char>__AddRange_System__Collections__Generic__IEnumerable<unsigned_char>_
                 );
-      uVar3 = uVar3 + 1;
       piVar4 = piVar4 + 1;
       pIVar2 = this;
     }
@@ -90,11 +88,11 @@ Decimal * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Bi
       uVar1 = mscorlib.dll::System::BitConverter::BitConverter_ToUInt32
                         (bytes,startIndex,(MethodInfo *)0x0);
       if (bits == (Int32__Array *)0x0) break;
-      uVar2 = startIndex >> 2;
+      uVar2 = (int)(startIndex + (startIndex >> 0x1f & 3U)) >> 2;
       if (bits->max_length <= uVar2) goto code_?;
       startIndex = startIndex + 4;
       bits->vector[uVar2] = uVar1;
-      if (0xf < (int)startIndex) {
+      if (0xf < startIndex) {
         __return_storage_ptr__->flags = 0;
         __return_storage_ptr__->hi = 0;
         __return_storage_ptr__->lo = 0;

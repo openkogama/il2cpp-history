@@ -128,8 +128,6 @@ Vector3 * Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_GetClosestGridPoint
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void Initialize() */
 
 void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
@@ -153,58 +151,50 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
   pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
            (pMVar1->fields)._._._.data;
   (pMVar1->fields).isInWorld = 1;
-  cVar3 = (int)pDVar2 < 0;
-  uVar4 = pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0;
-  if (!(bool)uVar4) {
-    bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+  if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                       (pDVar2,(Object *)StringLiteral_onlyFirstSpawn,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar5 != 0) {
+    if (bVar3 != 0) {
       pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                (pMVar1->fields)._._._.data;
-      cVar3 = (int)pDVar2 < 0;
-      uVar4 = true;
       if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
       goto code_?;
       this = (MVSpawnPoint *)
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
       ;
-      TVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                         (pDVar2,(Object *)StringLiteral_onlyFirstSpawn,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      if (TVar6.m_Index != 0) {
-        TVar7.m_Index = 0;
-        if (*(Boolean__Class **)TVar6.m_Index == TypeInfo__System__Boolean) {
-          TVar7 = TVar6;
+      if (TVar4.m_Index != 0) {
+        TVar5.m_Index = 0;
+        if (*(Boolean__Class **)TVar4.m_Index == TypeInfo__System__Boolean) {
+          TVar5 = TVar4;
         }
-        if (TVar7.m_Index != 0) {
-          pIVar8 = ((*(Boolean__Class **)TVar6.m_Index)->_0).element_class;
-          pIVar9 = (TypeInfo__System__Boolean->_0).element_class;
-          cVar10 = SBORROW4((int)pIVar8,(int)pIVar9);
-          cVar3 = (int)pIVar8 - (int)pIVar9 < 0;
-          uVar4 = pIVar8 == pIVar9;
-          if (!(bool)uVar4) goto code_?;
+        if (TVar5.m_Index != 0) {
+          in_stack_6 = unaff_EDI;
+          if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+              (TypeInfo__System__Boolean->_0).element_class) goto code_?;
           method = (MethodInfo *)&UNK_?;
-          piVar11 = (int8_t *)func_?();
+          piVar7 = (int8_t *)func_?();
           this = (MVSpawnPoint *)((uint)this & 0xffff0000);
           mscorlib.dll::System::Nullable`1[SByte]::Nullable_1_SByte___ctor
-                    ((Nullable_1_SByte_ *)&this,*piVar11,
+                    ((Nullable_1_SByte_ *)&this,*piVar7,
                      MethodInfo__System__Nullable<bool>__Nullable_bool_);
           (pMVar1->fields).spawnPointOnlyFirstDeath = this._0_2_;
         }
       }
     }
-    pMVar12 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    cVar3 = (int)pMVar12 < 0;
-    uVar4 = pMVar12 == (MVNetworkGame *)0x0;
-    if (!(bool)uVar4) {
-      this_00 = (MethodInfo *)(pMVar12->fields).teamManager;
+    in_stack_6 = 0;
+    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar8 != (MVNetworkGame *)0x0) {
+      this_00 = (MethodInfo *)(pMVar8->fields).teamManager;
       switch((pMVar1->fields)._._._.type) {
       case 0x27:
         team = MVTeam__Enum_Red;
@@ -221,9 +211,7 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
       default:
         team = MVTeam__Enum_None;
       }
-      cVar3 = (int)this_00 < 0;
-      uVar4 = this_00 == (MethodInfo *)0x0;
-      if (!(bool)uVar4) {
+      if (this_00 != (MethodInfo *)0x0) {
         this = (MVSpawnPoint *)&UNK_?;
         method = this_00;
         MVTeamManager::MVTeamManager_OnAddSpawnPoint
@@ -233,41 +221,37 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
     }
   }
 code_?:
-  cVar10 = '\0';
   func_?();
-  TVar6.m_Index = (int32_t)extraout_EDX;
+  TVar4.m_Index = (int32_t)extraout_EDX;
 code_?:
   this = (MVSpawnPoint *)&UNK_?;
-  method = (MethodInfo *)TVar6.m_Index;
-  uVar13 = func_?();
-  piVar14 = (int *)uVar13;
-  piVar15 = piVar14;
-  if (!(bool)uVar4 && cVar10 == cVar3) {
-    iVar16 = *piVar14;
-    iVar17 = *piVar14;
-    *(undefined2 *)unaff_EBX = in_DS;
-    pMVar1 = (MVSpawnPoint *)((int)pMVar1 - *piVar14);
-    in((ushort)((uint6)uVar13 >> 0x20) ^ (ushort)iVar16 ^ (ushort)iVar17 ^ (ushort)*piVar14);
-    switch(this) {
-    case (MVSpawnPoint *)0x27:
-      piVar15 = (int *)0x1;
-      unaff_EBX = piVar14;
-      break;
-    case (MVSpawnPoint *)0x28:
-      return;
-    case (MVSpawnPoint *)0x29:
-      return;
-    case (MVSpawnPoint *)0x2a:
-      return;
-    default:
-      return;
-    }
+  method = (MethodInfo *)TVar4.m_Index;
+  cVar9 = func_?();
+  puVar10 = (uint *)((int)&pMVar1->klass + 1);
+  out(*(undefined1 *)&pMVar1->klass,extraout_DX);
+  puVar11 = (uint *)*puVar10;
+  *puVar10 = *puVar10 - (int)puVar10;
+  bVar12 = (byte)((ushort)extraout_DX >> 8);
+  bVar13 = CARRY1(in_stack_14,bVar12) || CARRY1(in_stack_14 + bVar12,puVar11 < puVar10);
+  pbVar15 = &stack0x00000032 + extraout_ECX;
+  bVar12 = *pbVar15;
+  bVar16 = (byte)((uint)unaff_EBX >> 8);
+  bVar17 = *pbVar15 + bVar16;
+  *pbVar15 = bVar17 + bVar13;
+  *(char *)(unaff_EBX + 0x55103629) =
+       *(char *)(unaff_EBX + 0x55103629) + cVar9 + (CARRY1(bVar12,bVar16) || CARRY1(bVar17,bVar13));
+  switch(in_stack_6) {
+  case 0x27:
+    return;
+  case 0x28:
+    return;
+  case 0x29:
+    return;
+  case 0x2a:
+    return;
+  default:
+    return;
   }
-  *(byte *)((int)unaff_EBX + (int)pMVar1) =
-       *(byte *)((int)unaff_EBX + (int)pMVar1) | (byte)unaff_EBX;
-  pcVar18 = (char *)(((uint)piVar15 & 0xffffff85) + 1);
-  *pcVar18 = *pcVar18 + (char)((uint)unaff_EBX >> 8);
-  return;
 }
 
 
@@ -331,70 +315,68 @@ bool Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_get_SpawnPointOnlyFirstDeat
     cRam_? = '\x01';
   }
   pMVar1 = this;
-  this_00 = &(this->fields).spawnPointOnlyFirstDeath;
   if ((this->fields).spawnPointOnlyFirstDeath.hasValue != 0) {
     bVar2 = mscorlib.dll::System::Nullable`1[SByte]::Nullable_1_SByte__get_Value
-                      ((Nullable_1_SByte_ *)this_00,MethodInfo__System__Nullable<bool>__get_Value__)
-    ;
+                      ((Nullable_1_SByte_ *)&(this->fields).spawnPointOnlyFirstDeath,
+                       MethodInfo__System__Nullable<bool>__get_Value__);
     return bVar2;
   }
   pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data
   ;
-  value = 0;
-  if (pDVar3 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                      (pDVar3,(Object *)StringLiteral_onlyFirstSpawn,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                      );
-    if (bVar2 != 0) {
-      pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-               (pMVar1->fields)._._._.data;
-      if (pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
-      goto code_?;
-      pMVar4 = 
-      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-      ;
-      this = (MVSpawnPoint *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-             UIElements::TextureId]::
-             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                       (pDVar3,(Object *)StringLiteral_onlyFirstSpawn,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-      value = (int8_t)pMVar4;
-      if (this != (MVSpawnPoint *)0x0) {
-        TVar5.m_Index = 0;
-        if (*(Boolean__Class **)this == TypeInfo__System__Boolean) {
-          TVar5 = (TextureId)this;
-        }
-        if (TVar5.m_Index != 0) {
-          if (((*(Boolean__Class **)this)->_0).element_class !=
-              (TypeInfo__System__Boolean->_0).element_class) {
-            this = (MVSpawnPoint *)TypeInfo__System__Boolean;
-            func_?();
-            goto code_?;
-          }
-          piVar6 = (int8_t *)func_?();
-          value = *piVar6;
-        }
-      }
-    }
-    this = (MVSpawnPoint *)((uint)MethodInfo__System__Nullable<bool>__Nullable_bool_ & 0xffff0000);
-    mscorlib.dll::System::Nullable`1[SByte]::Nullable_1_SByte___ctor
-              ((Nullable_1_SByte_ *)&this,value,(MethodInfo *)this);
-    *this_00 = this._0_2_;
-    this = (MVSpawnPoint *)MethodInfo__System__Nullable<bool>__get_Value__;
-    bVar2 = mscorlib.dll::System::Nullable`1[SByte]::Nullable_1_SByte__get_Value
-                      ((Nullable_1_SByte_ *)this_00,MethodInfo__System__Nullable<bool>__get_Value__)
-    ;
+  pSVar4 = (String *)0x0;
+  if (pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+code_?:
+    func_?();
+    pcVar5 = (code *)swi(3);
+    bVar2 = (*pcVar5)();
     return bVar2;
   }
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  bVar2 = (*pcVar7)();
+  bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::TextureId]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                    (pDVar3,(Object *)StringLiteral_onlyFirstSpawn,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                    );
+  if (bVar2 != 0) {
+    pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (pMVar1->fields)._._._.data;
+    if (pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
+    pSVar4 = StringLiteral_onlyFirstSpawn;
+    this = (MVSpawnPoint *)
+           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+           UIElements::TextureId]::
+           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                     (pDVar3,(Object *)StringLiteral_onlyFirstSpawn,
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                     );
+    if (this != (MVSpawnPoint *)0x0) {
+      TVar6.m_Index = 0;
+      if (*(Boolean__Class **)this == TypeInfo__System__Boolean) {
+        TVar6 = (TextureId)this;
+      }
+      if (TVar6.m_Index != 0) {
+        if (*(Il2CppClass **)(*(int *)this + 0x20) != (TypeInfo__System__Boolean->_0).element_class)
+        {
+          this = (MVSpawnPoint *)TypeInfo__System__Boolean;
+          method = unaff_EDI;
+          func_?();
+          goto code_?;
+        }
+        func_?();
+        pSVar4 = (String *)((uint)pSVar4 & 0xffffff00);
+      }
+    }
+  }
+  method = MethodInfo__System__Nullable<bool>__Nullable_bool_;
+  this = (MVSpawnPoint *)((uint)pSVar4 & 0xffff0000);
+  mscorlib.dll::System::Nullable`1[SByte]::Nullable_1_SByte___ctor
+            ((Nullable_1_SByte_ *)&this,0,MethodInfo__System__Nullable<bool>__Nullable_bool_);
+  (pMVar1->fields).spawnPointOnlyFirstDeath = this._0_2_;
+  this = (MVSpawnPoint *)&(pMVar1->fields).spawnPointOnlyFirstDeath;
+  method = MethodInfo__System__Nullable<bool>__get_Value__;
+  bVar2 = mscorlib.dll::System::Nullable`1[SByte]::Nullable_1_SByte__get_Value
+                    ((Nullable_1_SByte_ *)this,MethodInfo__System__Nullable<bool>__get_Value__);
   return bVar2;
 }
 

@@ -129,7 +129,7 @@ void Assembly-CSharp.dll::TierTestDetailsPopup::TierTestDetailsPopup_ShowTier
   }
   method_00 = TypeInfo__TierTestDetailsPopup____c__DisplayClass5_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   original = (this->fields).gamePassesShopPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -141,9 +141,8 @@ void Assembly-CSharp.dll::TierTestDetailsPopup::TierTestDetailsPopup_ShowTier
                       GamePassesShop_MethodInfo__UnityEngine__Object__Instantiate<GamePassesShop>_GamePassesShop_
                      );
   if (value != (Object *)0x0) {
-    pOVar2 = value + 1;
-    pOVar2->klass = pOVar1;
-    func_?(pOVar2,pOVar1);
+    value[1].klass = pOVar1;
+    func_?(value + 1,pOVar1);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
     callbackFunction =
@@ -163,16 +162,16 @@ void Assembly-CSharp.dll::TierTestDetailsPopup::TierTestDetailsPopup_ShowTier
               (root,(BaseEventData *)0x0,callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
-    if (pOVar2->klass != (Object__Class *)0x0) {
+    if (value[1].klass != (Object__Class *)0x0) {
       GamePassesShop::GamePassesShop_Initialize
-                ((GamePassesShop *)pOVar2->klass,(uint)(this->fields).tierToPurchase,
+                ((GamePassesShop *)value[1].klass,(uint)(this->fields).tierToPurchase,
                  (MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

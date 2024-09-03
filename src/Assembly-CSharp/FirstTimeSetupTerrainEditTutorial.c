@@ -8,12 +8,10 @@ void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::
                MaterialsController *materialsController,MethodInfo *method)
 
 {
-  ppCVar1 = &(this->fields).cubeModelingStateMachine;
-  *ppCVar1 = cubeModelingStateMachine;
-  func_?(ppCVar1,cubeModelingStateMachine);
-  ppMVar2 = &(this->fields).materialsController;
-  *ppMVar2 = materialsController;
-  func_?(ppMVar2,materialsController);
+  (this->fields).cubeModelingStateMachine = cubeModelingStateMachine;
+  func_?(&(this->fields).cubeModelingStateMachine,cubeModelingStateMachine);
+  (this->fields).materialsController = materialsController;
+  func_?(&(this->fields).materialsController,materialsController);
   return;
 }
 
@@ -47,7 +45,7 @@ void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::
   }
   method_00 = TypeInfo__FirstTimeSetupTerrainEditTutorial____c__DisplayClass4_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     index = 0;
@@ -65,12 +63,11 @@ void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::
                            ((Object *)original,
                             TerrainCubeModelingControllerTutorial_MethodInfo__UnityEngine__Object__Instantiate<TerrainCubeModelingControllerTutorial>_TerrainCubeModelingControllerTutorial_
                            );
-        pOVar2 = value + 1;
-        pOVar2->klass = pOVar1;
-        func_?(pOVar2,pOVar1);
-        if (pOVar2->klass != (Object__Class *)0x0) {
+        value[1].klass = pOVar1;
+        func_?(value + 1,pOVar1);
+        if (value[1].klass != (Object__Class *)0x0) {
           TerrainCubeModelingControllerTutorial::TerrainCubeModelingControllerTutorial_Initialize
-                    ((TerrainCubeModelingControllerTutorial *)pOVar2->klass,
+                    ((TerrainCubeModelingControllerTutorial *)value[1].klass,
                      (this->fields).cubeModelingStateMachine,(this->fields).materialsController,
                      (MethodInfo *)0x0);
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -100,24 +97,24 @@ void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::
         }
         break;
       }
-      pMVar3 = value[1].monitor;
+      pMVar2 = value[1].monitor;
       if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
       break;
-      RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                         (this_00,index,
                          MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_
                         );
       index = index + 1;
-      value[1].monitor = (MonitorData *)((uint)RVar4 | (uint)pMVar3);
+      value[1].monitor = (MonitorData *)((uint)RVar3 | (uint)pMVar2);
       this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                 (this->fields).pushOptions;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -140,9 +137,8 @@ void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::FirstTimeSetupTerra
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UIPushOption>__List__);
-  ppLVar1 = &(this->fields).pushOptions;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).pushOptions = this_00;
+  func_?(&(this->fields).pushOptions,this_00);
   FirstTimeActivatableMessage::FirstTimeActivatableMessage__ctor
             ((FirstTimeActivatableMessage *)this,(MethodInfo *)0x0);
   return;

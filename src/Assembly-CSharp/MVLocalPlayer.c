@@ -40,8 +40,8 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_AddXp
         pXVar3 = (pXVar2->fields).xpProgressData;
         if (pXVar3 != (XPProgressData *)0x0) {
           (pXVar3->fields).memberCount = memberCount;
-          pXVar4 = (pXVar2->fields).OnXPProgressData;
-          if (pXVar4 != (XPProgress_OnXPProgressDataDelegate *)0x0) {
+          if ((pXVar2->fields).OnXPProgressData != (XPProgress_OnXPProgressDataDelegate *)0x0) {
+            pXVar4 = (pXVar2->fields).OnXPProgressData;
             pLStack_1 = (pXVar4->fields)._._.method;
             pXStack_5 = (pXVar2->fields).xpProgressData;
             pvStack_6 = (pXVar4->fields)._._.method_code;
@@ -133,11 +133,10 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_Destroy
       func_?();
       cRam_? = '\x01';
     }
-    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+    this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
               (this_00,(Object *)object,
                MethodInfo__XPProgress__XPLimitsCallback_UnityEngine__Networking__UnityWebRequest_,
                (MethodInfo *)0x0);
@@ -230,18 +229,18 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_InitializeLeveling
     (this->fields)._.level = (initialLevelData->fields).Level;
     this_00 = (XPProgress *)func_?(TypeInfo__XPProgress);
     XPProgress::XPProgress__ctor(this_00,this,initialLevelData,(MethodInfo *)0x0);
-    ppXVar1 = &(this->fields).xpProgress;
-    *ppXVar1 = this_00;
-    func_?(ppXVar1,this_00);
-    pAVar2 = (this->fields).OnInitializeLeveling;
-    if (pAVar2 != (Action *)0x0) {
-      (*(pAVar2->fields)._._.invoke_impl)();
+    (this->fields).xpProgress = this_00;
+    func_?(&(this->fields).xpProgress,this_00);
+    if ((this->fields).OnInitializeLeveling != (Action *)0x0) {
+      pAVar1 = (this->fields).OnInitializeLeveling;
+      (*(pAVar1->fields)._._.invoke_impl)
+                ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
     }
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -400,8 +399,8 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_SendXpProgressEvent
     cRam_? = '\x01';
   }
   pXVar1 = xpProgressData;
-  pXVar2 = (this->fields).OnXPProgressData;
-  if (pXVar2 != (XPProgress_OnXPProgressDataDelegate *)0x0) {
+  if ((this->fields).OnXPProgressData != (XPProgress_OnXPProgressDataDelegate *)0x0) {
+    pXVar2 = (this->fields).OnXPProgressData;
     (*(pXVar2->fields)._._.invoke_impl)
               ((pXVar2->fields)._._.method_code,xpProgressData,(pXVar2->fields)._._.method);
   }
@@ -415,12 +414,12 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_SendXpProgressEvent
     }
     NotificationController::NotificationController_PushNotification
               (pSVar3,(Sprite *)0x0,5,(MethodInfo *)0x0);
-    this_00 = (ContextualMenuManipulator *)
+    this_00 = (GameEventManager_AvatarCommandsPlayModeManager *)
               MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if (this_00 != (ContextualMenuManipulator *)0x0) {
-      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::ContextualMenuManipulator::
-      ContextualMenuManipulator_OnContextualMenuEvent
-                (this_00,(ContextualMenuPopulateEvent *)(pXVar1->fields).xpDelta,(MethodInfo *)0x0);
+    if (this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0) {
+      GameEventManager+AvatarCommandsPlayModeManager::
+      GameEventManager_AvatarCommandsPlayModeManager_SetIntermediateDebriefing
+                (this_00,(pXVar1->fields).xpDelta,(MethodInfo *)0x0);
       return;
     }
   }
@@ -499,35 +498,32 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_SetupPlayerWorldObjects
                            );
   Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::SpawnRoleDataMediator::
   SpawnRoleDataMediator__ctor((SpawnRoleDataMediator *)this_01,(MethodInfo *)0x0);
-  pMVar2 = (MethodInfo *)(value + 1);
-  pMVar2->methodPointer = (Il2CppMethodPointer)this_01;
-  method_00 = pMVar2;
-  func_?(pMVar2,this_01);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  method_00 = (MethodInfo *)(value + 1);
+  value[1].klass = this_01;
+  func_?(method_00,this_01);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,method_00);
-  pMVar2->methodPointer = (Il2CppMethodPointer)pOVar1;
-  func_?(pMVar2,pOVar1);
+  value[1].klass = pOVar1;
+  func_?(value + 1,pOVar1);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__SpawnRolesManager);
     cRam_? = '\x01';
   }
   method_01 = TypeInfo__SpawnRolesManager;
   value_00 = (SpawnRolesManager *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
   (value_00->fields).spawnRolesRuntimeData = spawnRolesRuntimeData;
   func_?(&value_00->fields,spawnRolesRuntimeData);
-  ppIVar3 = &(value_00->fields).spawnRoleChangeHandler;
-  *ppIVar3 = (ISpawnRoleChangeHandler *)value;
-  func_?(ppIVar3,value);
-  ppSVar4 = &(this->fields)._.spawnRolesManager;
-  *ppSVar4 = value_00;
-  func_?(ppSVar4,value_00);
-  pSVar5 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+  (value_00->fields).spawnRoleChangeHandler = (ISpawnRoleChangeHandler *)value;
+  func_?(&(value_00->fields).spawnRoleChangeHandler,value);
+  (this->fields)._.spawnRolesManager = value_00;
+  func_?(&(this->fields)._.spawnRolesManager,value_00);
+  pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
-  if (pSVar5 != (SpawnRoleDataMediator *)0x0) {
+  if (pSVar2 != (SpawnRoleDataMediator *)0x0) {
     this_00 = (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-              (pSVar5->fields).spawnRoleMode;
+              (pSVar2->fields).spawnRoleMode;
     value_01 = (SpawnRoleVariable_1_T_SubDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                 *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
@@ -546,8 +542,8 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_SetupPlayerWorldObjects
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -648,10 +644,12 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_SuspendCurrentSpawnRole
         pIVar5 = TypeInfo__ISpawnRoleLocal;
         if (iVar4 != 0) {
           this = (MVLocalPlayer *)TypeInfo__ISpawnRoleLocal;
-          this = (MVLocalPlayer *)func_?();
+          iStack6 = func_?();
           unaff_EDI = pIVar5;
-          if (this != (MVLocalPlayer *)0x0) {
-            func_?(2);
+          if (iStack6 != 0) {
+            method = (MethodInfo *)TypeInfo__ISpawnRoleLocal;
+            this = (MVLocalPlayer *)0x2;
+            func_?();
             return;
           }
         }
@@ -663,8 +661,8 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_SuspendCurrentSpawnRole
 code_?:
   this = (MVLocalPlayer *)unaff_EDI;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -707,10 +705,12 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_UnSuspendCurrentSpawnRole
         pIVar5 = TypeInfo__ISpawnRoleLocal;
         if (iVar4 != 0) {
           this = (MVLocalPlayer *)TypeInfo__ISpawnRoleLocal;
-          this = (MVLocalPlayer *)func_?();
+          iStack6 = func_?();
           unaff_EDI = pIVar5;
-          if (this != (MVLocalPlayer *)0x0) {
-            func_?(3);
+          if (iStack6 != 0) {
+            method = (MethodInfo *)TypeInfo__ISpawnRoleLocal;
+            this = (MVLocalPlayer *)0x3;
+            func_?();
             return;
           }
         }
@@ -722,8 +722,8 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_UnSuspendCurrentSpawnRole
 code_?:
   this = (MVLocalPlayer *)unaff_EDI;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -749,34 +749,32 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer__ctor
   }
   this_01 = (BoostController *)func_?(TypeInfo__BoostController);
   BoostController::BoostController__ctor(this_01,(MethodInfo *)0x0);
-  ppBVar1 = &(this->fields).boostController;
-  *ppBVar1 = this_01;
-  func_?(ppBVar1,this_01);
+  (this->fields).boostController = this_01;
+  func_?(&(this->fields).boostController,this_01);
   (this->fields).defaultBodyWoId = -1;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
       0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
-  pOVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-           ObscuredInt_op_Implicit(&OStack_3,-0xe91,(MethodInfo *)0x0);
-  iVar4 = pOVar2->hiddenValue;
-  iVar5 = pOVar2->fakeValue;
-  bVar6 = pOVar2->inited;
-  uVar7 = *(undefined3 *)&pOVar2->field_0xd;
-  (this->fields).numberOfTimesDiedInRound.currentCryptoKey = pOVar2->currentCryptoKey;
-  (this->fields).numberOfTimesDiedInRound.hiddenValue = iVar4;
-  (this->fields).numberOfTimesDiedInRound.fakeValue = iVar5;
-  (this->fields).numberOfTimesDiedInRound.inited = bVar6;
-  *(undefined3 *)&(this->fields).numberOfTimesDiedInRound.field_0xd = uVar7;
+  pOVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+           ObscuredInt_op_Implicit(&OStack_2,-0xe91,(MethodInfo *)0x0);
+  iVar3 = pOVar1->hiddenValue;
+  iVar4 = pOVar1->fakeValue;
+  bVar5 = pOVar1->inited;
+  uVar6 = *(undefined3 *)&pOVar1->field_0xd;
+  (this->fields).numberOfTimesDiedInRound.currentCryptoKey = pOVar1->currentCryptoKey;
+  (this->fields).numberOfTimesDiedInRound.hiddenValue = iVar3;
+  (this->fields).numberOfTimesDiedInRound.fakeValue = iVar4;
+  (this->fields).numberOfTimesDiedInRound.inited = bVar5;
+  *(undefined3 *)&(this->fields).numberOfTimesDiedInRound.field_0xd = uVar6;
   this_02 = (SpawnRoleDataMediator *)
             func_?(
                            TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__Mediator__SpawnRoleDataMediator
                            );
   Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::SpawnRoleDataMediator::
   SpawnRoleDataMediator__ctor(this_02,(MethodInfo *)0x0);
-  ppSVar8 = &(this->fields).spawnRoleDataMediator;
-  *ppSVar8 = this_02;
-  func_?(ppSVar8,this_02);
+  (this->fields).spawnRoleDataMediator = this_02;
+  func_?(&(this->fields).spawnRoleDataMediator,this_02);
   this_03 = (WorldObjectUseRequirementTracker *)
             func_?(
                            TypeInfo__WorldObjectTypes__Avatar__Local__WorldObjectUseRequirementTracker
@@ -784,64 +782,59 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer__ctor
   WorldObjectTypes::Avatar::Local::WorldObjectUseRequirementTracker::
   WorldObjectUseRequirementTracker__ctor(this_03,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&(this->fields)._WorldObjectUseRequirementTracker_k__BackingField;
-  *(WorldObjectUseRequirementTracker **)method_00 = this_03;
+  (this->fields)._WorldObjectUseRequirementTracker_k__BackingField = this_03;
   func_?(method_00,this_03);
-  bVar6 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  bVar5 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
           VerticalVirtualizationController`1[System::Object]::
           VerticalVirtualizationController_1_System_Object__get_alwaysRebindOnRefresh
                     ((VerticalVirtualizationController_1_System_Object_ *)0x0,method_00);
-  this = (MVLocalPlayer *)CONCAT31(this._1_3_,bVar6);
+  this = (MVLocalPlayer *)CONCAT31(this._1_3_,bVar5);
   MVPlayer::MVPlayer__ctor
             ((MVPlayer *)this_00,actorNumber,profileID,regionCode,(BuildTarget__Enum)this,
              userProfileData,0,0,(MethodInfo *)0x0);
-  pUVar9 = (this_00->fields)._.OnLevelChanged;
-  pUStack10 = TypeInfo__UnityEngine__Events__UnityAction<int>;
+  pUVar7 = (this_00->fields)._.OnLevelChanged;
+  pUStack8 = TypeInfo__UnityEngine__Events__UnityAction<int>;
   this_04 = (UnityAction_1_System_Int32Enum_ *)func_?();
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
   UnityAction_1_System_Int32Enum___ctor
             (this_04,(Object *)this_00,MethodInfo__MVLocalPlayer__OnLevelChangedLocal_int_,
              (MethodInfo *)0x0);
-  pDVar11 = mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pUVar9,(Delegate *)this_04,(MethodInfo *)0x0);
-  pUVar12 = TypeInfo__UnityEngine__Events__UnityAction<int>;
-  if (pDVar11 == (Delegate *)0x0) {
+  pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pUVar7,(Delegate *)this_04,(MethodInfo *)0x0);
+  pUVar10 = TypeInfo__UnityEngine__Events__UnityAction<int>;
+  if (pDVar9 == (Delegate *)0x0) {
     (this_00->fields)._.OnLevelChanged = (UnityAction_1_System_Int32_ *)0x0;
-    pUStack13 = (UnityAction_1_System_Int32___Class *)0x0;
+    pUStack11 = (UnityAction_1_System_Int32___Class *)0x0;
 code_?:
-    pDStack14 = (Delegate *)&(this_00->fields)._.OnLevelChanged;
+    pDStack12 = (Delegate *)&(this_00->fields)._.OnLevelChanged;
     func_?();
     (this_00->fields).planetOwnershipTypeID = planetOwnershipTypeID;
     this_05 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (this_05 != (MVNetworkGame *)0x0) {
-      iVar4 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_05,(MethodInfo *)0x0);
-      (this_00->fields).joinTime = iVar4;
+      iVar3 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_05,(MethodInfo *)0x0);
+      (this_00->fields).joinTime = iVar3;
       return;
     }
   }
   else {
-    pUStack13 = TypeInfo__UnityEngine__Events__UnityAction<int>;
-    pDStack14 = pDVar11;
-    pUVar9 = (UnityAction_1_System_Int32_ *)func_?();
-    if (pUVar9 != (UnityAction_1_System_Int32_ *)0x0) {
-      (this_00->fields)._.OnLevelChanged = pUVar9;
-      pUStack13 = TypeInfo__UnityEngine__Events__UnityAction<int>;
-      this = (MVLocalPlayer *)TypeInfo__UnityEngine__Events__UnityAction<int>;
-      pDStack14 = pDVar11;
-      pUStack13 = (UnityAction_1_System_Int32___Class *)func_?();
-      if (pUStack13 == (UnityAction_1_System_Int32___Class *)0x0) goto code_?;
-      goto code_?;
+    pUStack11 = TypeInfo__UnityEngine__Events__UnityAction<int>;
+    pDStack12 = pDVar9;
+    pUVar7 = (UnityAction_1_System_Int32_ *)func_?();
+    if (pUVar7 != (UnityAction_1_System_Int32_ *)0x0) {
+      (this_00->fields)._.OnLevelChanged = pUVar7;
+      pUVar10 = TypeInfo__UnityEngine__Events__UnityAction<int>;
+      pUStack11 = TypeInfo__UnityEngine__Events__UnityAction<int>;
+      pDStack12 = pDVar9;
+      pUStack11 = (UnityAction_1_System_Int32___Class *)func_?();
+      if (pUStack11 != (UnityAction_1_System_Int32___Class *)0x0) goto code_?;
     }
-    pUStack13 = pUVar12;
-    pDStack14 = pDVar11;
+    pDStack12 = pDVar9;
+    pUStack11 = pUVar10;
     func_?();
   }
   func_?();
-code_?:
-  pUStack13 = (UnityAction_1_System_Int32___Class *)this;
-  pDStack14 = pDVar11;
-  func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -877,21 +870,20 @@ Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_AvatarLocal
                 ((Dictionary_2_System_Int32_System_Object_ *)this_00,key,(Object **)&this,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
                 );
-      if (this != (MVLocalPlayer *)0x0) {
-        bVar4 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
-        if (((bVar4 <= (this->klass->_1).naturalAligment) &&
-            ((MVAvatarLocal__Class *)(this->klass->_1).typeHierarchy[bVar4 - 1] ==
-             TypeInfo__MVAvatarLocal)) && (this != (MVLocalPlayer *)0x0)) {
-          return (MVAvatarLocal *)this;
-        }
+      if (((this != (MVLocalPlayer *)0x0) &&
+          ((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (this->klass->_1).naturalAligment)) &&
+         ((MVAvatarLocal__Class *)
+          (this->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] ==
+          TypeInfo__MVAvatarLocal)) {
+        return (MVAvatarLocal *)this;
       }
       return (MVAvatarLocal *)0x0;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  pMVar6 = (MVAvatarLocal *)(*pcVar5)();
-  return pMVar6;
+  pcVar4 = (code *)swi(3);
+  pMVar5 = (MVAvatarLocal *)(*pcVar4)();
+  return pMVar5;
 }
 
 
@@ -1050,16 +1042,6 @@ float Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_RespawnTime
 }
 
 
-/* Single get_ReviveTimeout() */
-
-float Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_ReviveTimeout
-                (MVLocalPlayer *this,MethodInfo *method)
-
-{
-  return _UNK_?;
-}
-
-
 /* Void set_PlayerPlanetData(PlayerPlanetData) */
 
 void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_set_PlayerPlanetData
@@ -1070,25 +1052,23 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_set_PlayerPlanetData
     func_?(&TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetDataRemote);
     cRam_? = '\x01';
   }
-  ppPVar1 = &(this->fields).playerPlanetData;
-  *ppPVar1 = value;
-  func_?(ppPVar1,value);
-  pPVar2 = *ppPVar1;
-  if (pPVar2 != (PlayerPlanetData *)0x0) {
-    ptr = (void *)(pPVar2->fields).highScoreGamePoints;
-    owner = (pPVar2->fields).gamePassTier;
+  (this->fields).playerPlanetData = value;
+  func_?(&(this->fields).playerPlanetData,value);
+  pPVar1 = (this->fields).playerPlanetData;
+  if (pPVar1 != (PlayerPlanetData *)0x0) {
+    ptr = (void *)(pPVar1->fields).highScoreGamePoints;
+    owner = (((this->fields).playerPlanetData)->fields).gamePassTier;
     this_00 = (VFXSpawnerState *)
               func_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetDataRemote);
     UnityEngine.VFXModule.dll::UnityEngine::VFX::VFXSpawnerState::VFXSpawnerState__ctor
               (this_00,ptr,owner,(MethodInfo *)0x0);
-    ppPVar3 = &(this->fields)._.playerPlanetDataRemote;
-    *ppPVar3 = (PlayerPlanetDataRemote *)this_00;
-    func_?(ppPVar3,this_00);
+    (this->fields)._.playerPlanetDataRemote = (PlayerPlanetDataRemote *)this_00;
+    func_?(&(this->fields)._.playerPlanetDataRemote,this_00);
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

@@ -30,21 +30,20 @@ void MVWorldObject.dll::OculusKillLimit::OculusKillLimit_GameCountersQuery_OnCou
       UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
       UxmlObjectListAttributeDescription`1[System::Object]::
       UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-      ppOVar4 = &(pOVar1->fields)._.instigatorCounterTypeChangedEvent;
       (pOVar1->fields)._.forfilled = 1;
-      *ppOVar4 = e;
-      func_?(ppOVar4,e);
-      pEVar5 = (pOVar1->fields)._.OnWinningConditionChanged;
-      if (pEVar5 != (EventHandler_1_EventArgs_ *)0x0) {
-        (*(pEVar5->fields)._._.invoke_impl)((pEVar5->fields)._._.method_code,pOVar1);
+      (pOVar1->fields)._.instigatorCounterTypeChangedEvent = e;
+      func_?(&(pOVar1->fields)._.instigatorCounterTypeChangedEvent,e);
+      if ((pOVar1->fields)._.OnWinningConditionChanged != (EventHandler_1_EventArgs_ *)0x0) {
+        pEVar4 = (pOVar1->fields)._.OnWinningConditionChanged;
+        (*(pEVar4->fields)._._.invoke_impl)((pEVar4->fields)._._.method_code,pOVar1);
       }
     }
     return;
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

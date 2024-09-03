@@ -35,17 +35,16 @@ void Assembly-CSharp.dll::AccessoryPreviewPopup::AccessoryPreviewPopup_Initializ
   if (pGVar1 != (GameObject *)0x0) {
     pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (pGVar1,(MethodInfo *)0x0);
-    ppTVar3 = &(this->fields).tempTransform;
-    *ppTVar3 = pTVar2;
-    func_?(ppTVar3,pTVar2);
-    if ((*ppTVar3 != (Transform *)0x0) &&
+    (this->fields).tempTransform = pTVar2;
+    func_?(&(this->fields).tempTransform,pTVar2);
+    pTVar2 = (this->fields).tempTransform;
+    if ((pTVar2 != (Transform *)0x0) &&
        (pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)*ppTVar3,(MethodInfo *)0x0), pGVar1 != (GameObject *)0x0))
-    {
+                           ((Component *)pTVar2,(MethodInfo *)0x0), pGVar1 != (GameObject *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar1,0,(MethodInfo *)0x0);
-      MVar4 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-      if (MVar4 == MVGameMode__Enum_CharacterEditor) {
+      MVar3 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+      if (MVar3 == MVGameMode__Enum_CharacterEditor) {
         pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
         callbackFunction =
@@ -70,10 +69,9 @@ void Assembly-CSharp.dll::AccessoryPreviewPopup::AccessoryPreviewPopup_Initializ
       else {
         this_01 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
         if (this_01 == (MVLocalPlayer *)0x0) goto code_?;
-        pMVar5 = MVLocalPlayer::MVLocalPlayer_get_Body(this_01,(MethodInfo *)0x0);
-        ppMVar6 = &(this->fields).body;
-        *ppMVar6 = pMVar5;
-        func_?(ppMVar6,pMVar5);
+        pMVar4 = MVLocalPlayer::MVLocalPlayer_get_Body(this_01,(MethodInfo *)0x0);
+        (this->fields).body = pMVar4;
+        func_?(&(this->fields).body,pMVar4);
       }
       index = 0;
       if (previewedAccessories != (List_1_AccessoryDataClient_ *)0x0) {
@@ -81,13 +79,13 @@ void Assembly-CSharp.dll::AccessoryPreviewPopup::AccessoryPreviewPopup_Initializ
           if ((previewedAccessories->fields)._size <= index) {
             return;
           }
-          pAVar7 = (this->fields).accessoryPopupItemPrefab;
+          pAVar5 = (this->fields).accessoryPopupItemPrefab;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Object);
           }
-          pAVar7 = (AccessoryInventoryViewItem *)
+          pAVar5 = (AccessoryInventoryViewItem *)
                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                             ((Object *)pAVar7,
+                             ((Object *)pAVar5,
                               AccessoryInventoryViewItem_MethodInfo__UnityEngine__Object__Instantiate<AccessoryInventoryViewItem>_AccessoryInventoryViewItem_
                              );
           accessoryDataClient =
@@ -98,12 +96,12 @@ void Assembly-CSharp.dll::AccessoryPreviewPopup::AccessoryPreviewPopup_Initializ
                           previewedAccessories,index,
                           MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__get_Item_int_
                          );
-          if (pAVar7 == (AccessoryInventoryViewItem *)0x0) break;
+          if (pAVar5 == (AccessoryInventoryViewItem *)0x0) break;
           AccessoryInventoryViewItem::AccessoryInventoryViewItem_Initialize
-                    (pAVar7,(AccessoryDataClient *)accessoryDataClient,(this->fields).tempTransform,
+                    (pAVar5,(AccessoryDataClient *)accessoryDataClient,(this->fields).tempTransform,
                      (this->fields).body,0,(MethodInfo *)0x0);
           pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)pAVar7,(MethodInfo *)0x0);
+                             ((Component *)pAVar5,(MethodInfo *)0x0);
           this_00 = (this->fields).layoutGroup;
           if ((this_00 == (HorizontalLayoutGroup *)0x0) ||
              (parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -118,8 +116,8 @@ void Assembly-CSharp.dll::AccessoryPreviewPopup::AccessoryPreviewPopup_Initializ
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -134,28 +132,28 @@ void Assembly-CSharp.dll::AccessoryPreviewPopup::AccessoryPreviewPopup_OnDestroy
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  ppTVar1 = &(this->fields).tempTransform;
-  x = *ppTVar1;
+  pTVar1 = (this->fields).tempTransform;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+                    ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 != 0) {
-    if (*ppTVar1 == (Transform *)0x0) {
+    pTVar1 = (this->fields).tempTransform;
+    if (pTVar1 == (Transform *)0x0) {
       func_?();
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
     obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                    ((Component *)*ppTVar1,(MethodInfo *)0x0);
+                    ((Component *)pTVar1,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
               ((Object_1 *)obj,(MethodInfo *)0x0);
-    *ppTVar1 = (Transform *)0x0;
+    (this->fields).tempTransform = (Transform *)0x0;
     func_?();
   }
   return;
@@ -184,7 +182,7 @@ void Assembly-CSharp.dll::AccessoryPreviewPopup::AccessoryPreviewPopup_OpenAcces
   }
   method_00 = TypeInfo__AccessoryPreviewPopup____c__DisplayClass6_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)accessoryData;
@@ -229,11 +227,11 @@ void Assembly-CSharp.dll::AccessoryPreviewPopup::AccessoryPreviewPopup__Initiali
     func_?(&TypeInfo__UnityEngine__EventSystems__IGetCurrentBody);
     cRam_? = '\x01';
   }
-  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)func_?(TypeInfo__System__Action<MVBody>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+  this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+            func_?(TypeInfo__System__Action<MVBody>);
+  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
             (this_00,(Object *)this,MethodInfo__AccessoryPreviewPopup__SetBody_MVBody_,
              (MethodInfo *)0x0);
   if (x != (IGetCurrentBody *)0x0) {

@@ -54,8 +54,8 @@ Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_AddItem
             (Il2CppClass *)
             TypeInfo__System__Collections__Generic__IDictionary<System::String,_GNU::Gettext::CatalogEntry>
            ) {
-          ppMVar6 = &(&(pIVar2->klass->vtable).TryGetValue)[pIVar3->interfaceOffsets[uVar4].offset]
-                     .method;
+          ppMVar6 = &(&(pIVar2->klass->vtable).TryGetValue)
+                     [pIVar2->klass->interfaceOffsets[uVar4].offset].method;
           goto code_?;
         }
         uVar4 = uVar4 + 1;
@@ -164,20 +164,18 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_Append
                    );
     cRam_? = '\x01';
   }
-  RVar1.First = 0;
-  RVar1.Last = 0;
+  iStack_1 = 0;
   if (catalog != (Catalog *)0x0) {
     while( true ) {
-      RVar2 = RVar1;
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__List<GNU::Gettext::CatalogEntry>__get_Count__
                        );
         cRam_? = '\x01';
       }
-      pLVar3 = (catalog->fields).entriesList;
-      if (pLVar3 == (List_1_GNU_Gettext_CatalogEntry_ *)0x0) break;
-      if ((pLVar3->fields)._size <= (int)RVar1) {
+      pLVar2 = (catalog->fields).entriesList;
+      if (pLVar2 == (List_1_GNU_Gettext_CatalogEntry_ *)0x0) break;
+      if ((pLVar2->fields)._size <= iStack_1) {
         Catalog_set_IsDirty(this,1,(MethodInfo *)0x0);
         return;
       }
@@ -190,7 +188,7 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_Append
                        );
         cRam_? = '\x01';
       }
-      if ((int)RVar1 < 0) {
+      if (iStack_1 < 0) {
 code_?:
         entry.First = 0;
         entry.Last = 0;
@@ -200,19 +198,18 @@ code_?:
                   (catalog->fields).entriesList;
         if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
         break;
-        if ((this_00->fields)._size <= (int)RVar1) goto code_?;
+        if ((this_00->fields)._size <= iStack_1) goto code_?;
         entry = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_00,(int32_t)RVar1,
+                          (this_00,iStack_1,
                            MethodInfo__System__Collections__Generic__List<GNU::Gettext::CatalogEntry>__get_Item_int_
                           );
       }
-      RVar1 = (RegexCharClass_SingleRange)
-              Catalog_FindItem_1(this,(CatalogEntry *)entry,(MethodInfo *)0x0);
-      if (RVar1 == (RegexCharClass_SingleRange)0x0) {
-        this_01 = (CatalogEntry *)func_?(TypeInfo__GNU__Gettext__CatalogEntry);
-        CatalogEntry::CatalogEntry__ctor_1(this_01,this,(CatalogEntry *)entry,(MethodInfo *)0x0);
+      pCVar3 = Catalog_FindItem_1(this,(CatalogEntry *)entry,(MethodInfo *)0x0);
+      if (pCVar3 == (CatalogEntry *)0x0) {
+        pCVar3 = (CatalogEntry *)func_?(TypeInfo__GNU__Gettext__CatalogEntry);
+        CatalogEntry::CatalogEntry__ctor_1(pCVar3,this,(CatalogEntry *)entry,(MethodInfo *)0x0);
         pIVar4 = (this->fields).entriesDict;
         if ((entry == (RegexCharClass_SingleRange)0x0) ||
            (pSVar5 = CatalogEntry::CatalogEntry_MakeKey
@@ -221,24 +218,24 @@ code_?:
            pIVar4 == (IDictionary_2_System_String_GNU_Gettext_CatalogEntry_ *)0x0)) break;
         func_?(5,
                         TypeInfo__System__Collections__Generic__IDictionary<System::String,_GNU::Gettext::CatalogEntry>
-                        ,pIVar4,pSVar5,this_01);
-        pLVar3 = (this->fields).entriesList;
-        if (pLVar3 == (List_1_GNU_Gettext_CatalogEntry_ *)0x0) break;
+                        ,pIVar4,pSVar5,pCVar3);
+        pLVar2 = (this->fields).entriesList;
+        if (pLVar2 == (List_1_GNU_Gettext_CatalogEntry_ *)0x0) break;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__Add
-                  ((List_1_System_Object_ *)pLVar3,(Object *)this_01,
+                  ((List_1_System_Object_ *)pLVar2,(Object *)pCVar3,
                    MethodInfo__System__Collections__Generic__List<GNU::Gettext::CatalogEntry>__Add_GNU__Gettext__CatalogEntry_
                   );
-        RVar1 = (RegexCharClass_SingleRange)((int)RVar2 + 1);
+        iStack_1 = iStack_1 + 1;
       }
       else {
         uVar6 = 0;
         iVar7 = 0x10;
+        if (entry == (RegexCharClass_SingleRange)0x0) break;
         while( true ) {
-          if ((entry == (RegexCharClass_SingleRange)0x0) ||
-             (pSVar8 = CatalogEntry::CatalogEntry_get_References
-                                 ((CatalogEntry *)entry,(MethodInfo *)0x0),
-             pSVar8 == (String__Array *)0x0)) goto code_?;
+          pSVar8 = CatalogEntry::CatalogEntry_get_References
+                             ((CatalogEntry *)entry,(MethodInfo *)0x0);
+          if (pSVar8 == (String__Array *)0x0) goto code_?;
           uVar9 = pSVar8->max_length;
           if (((int)uVar9 < 0 && (int)uVar9 >> 0x1f < 1) ||
              (((int)uVar9 >> 0x1f < 1 && (uVar9 <= uVar6)))) break;
@@ -246,11 +243,8 @@ code_?:
                              ((CatalogEntry *)entry,(MethodInfo *)0x0);
           if (pSVar8 == (String__Array *)0x0) goto code_?;
           if (pSVar8->max_length <= uVar6) goto code_?;
-          RVar2.First = 0;
-          RVar2.Last = 0;
           CatalogEntry::CatalogEntry_AddReference
-                    ((CatalogEntry *)RVar1,*(String **)((int)pSVar8->vector + iVar7 + -0x10),
-                     (MethodInfo *)0x0);
+                    (pCVar3,*(String **)((int)pSVar8->vector + iVar7 + -0x10),(MethodInfo *)0x0);
           uVar6 = uVar6 + 1;
           iVar7 = iVar7 + 4;
         }
@@ -258,23 +252,23 @@ code_?:
                            ((CatalogEntry *)entry,0,(MethodInfo *)0x0);
         bVar10 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar5,(MethodInfo *)0x0);
         if (bVar10 == 0) {
-          RVar1 = entry;
           pSVar5 = CatalogEntry::CatalogEntry_GetTranslation
                              ((CatalogEntry *)entry,0,(MethodInfo *)0x0);
-          RVar2 = RVar1;
-          CatalogEntry::CatalogEntry_SetTranslation
-                    ((CatalogEntry *)RVar1,pSVar5,0,(MethodInfo *)0x0);
+          CatalogEntry::CatalogEntry_SetTranslation(pCVar3,pSVar5,0,(MethodInfo *)0x0);
         }
         if (*(char *)((int)entry + 0x20) != '\0') {
-          CatalogEntry::CatalogEntry_set_IsFuzzy((CatalogEntry *)RVar1,1,(MethodInfo *)0x0);
+          CatalogEntry::CatalogEntry_set_IsFuzzy(pCVar3,1,(MethodInfo *)0x0);
         }
-        pSVar5 = CatalogEntry::CatalogEntry_get_Flags((CatalogEntry *)entry,(MethodInfo *)0x0);
-        bVar10 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar5,(MethodInfo *)0x0);
+        catalog = (Catalog *)
+                  CatalogEntry::CatalogEntry_get_Flags((CatalogEntry *)entry,(MethodInfo *)0x0);
+        this = (Catalog *)&UNK_?;
+        bVar10 = mscorlib.dll::System::String::String_IsNullOrEmpty
+                          ((String *)catalog,(MethodInfo *)0x0);
         if (bVar10 == 0) {
           pSVar5 = CatalogEntry::CatalogEntry_get_Flags((CatalogEntry *)entry,(MethodInfo *)0x0);
-          CatalogEntry::CatalogEntry_set_Flags((CatalogEntry *)RVar1,pSVar5,(MethodInfo *)0x0);
+          CatalogEntry::CatalogEntry_set_Flags(pCVar3,pSVar5,(MethodInfo *)0x0);
         }
-        RVar1 = (RegexCharClass_SingleRange)((int)RVar2 + 1);
+        iStack_1 = iStack_1 + 1;
       }
     }
   }
@@ -298,44 +292,37 @@ bool Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_CanEncodeToCharset
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffc4;
-  pEVar5 = mscorlib.dll::System::Text::Encoding::Encoding_GetEncodings((MethodInfo *)0x0);
-  uVar6 = 0;
-  pEStack_7 = pEVar5;
-  do {
-    uStack_8 = uVar6;
-    if (pEVar5 == (EncodingInfo__Array *)0x0) {
+  pEVar4 = mscorlib.dll::System::Text::Encoding::Encoding_GetEncodings((MethodInfo *)0x0);
+  uVar5 = 0;
+  if (pEVar4 != (EncodingInfo__Array *)0x0) {
+    while( true ) {
+      if ((int)pEVar4->max_length <= (int)uVar5) {
+        *unaff_FS_OFFSET = uStack_3;
+        return 0;
+      }
+      if (pEVar4->max_length <= uVar5) break;
+      uStack_1 = 0;
+      if (((pEVar4->vector[uVar5] == (EncodingInfo *)0x0) ||
+          (pSVar6 = (pEVar4->vector[uVar5]->fields).strEncodingName, pSVar6 == (String *)0x0)) ||
+         (pSVar6 = mscorlib.dll::System::String::String_ToLower(pSVar6,(MethodInfo *)0x0),
+         charset == (String *)0x0)) goto code_?;
+      b = mscorlib.dll::System::String::String_ToLower(charset,(MethodInfo *)0x0);
+      bVar7 = mscorlib.dll::System::String::String_op_Equality(pSVar6,b,(MethodInfo *)0x0);
+      if (bVar7 != 0) {
+        *unaff_FS_OFFSET = uStack_3;
+        return 1;
+      }
+      uStack_1 = 0xffffffff;
+      uVar5 = uVar5 + 1;
+    }
+    func_?();
+  }
 code_?:
-      func_?();
-      pEStack_9 = pEVar5->klass;
-      func_?(&pEStack_9);
-      pcVar10 = (code *)swi(3);
-      bVar11 = (*pcVar10)();
-      return bVar11;
-    }
-    if ((int)pEVar5->max_length <= (int)uVar6) {
-      *unaff_FS_OFFSET = uStack_3;
-      return 0;
-    }
-    if (pEVar5->max_length <= uVar6) {
-      func_?();
-      goto code_?;
-    }
-    uStack_1 = 0;
-    if ((pEVar5->vector[uVar6] == (EncodingInfo *)0x0) ||
-       (pSVar12 = (pEVar5->vector[uVar6]->fields).strEncodingName, pSVar12 == (String *)0x0))
-    goto code_?;
-    pSStack_13 = mscorlib.dll::System::String::String_ToLower(pSVar12,(MethodInfo *)0x0);
-    if (charset == (String *)0x0) goto code_?;
-    pSVar12 = mscorlib.dll::System::String::String_ToLower(charset,(MethodInfo *)0x0);
-    bVar11 = mscorlib.dll::System::String::String_op_Equality(pSStack_13,pSVar12,(MethodInfo *)0x0);
-    if (bVar11 != 0) {
-      *unaff_FS_OFFSET = uStack_3;
-      return 1;
-    }
-    uStack_1 = 0xffffffff;
-    uVar6 = uVar6 + 1;
-  } while( true );
+  func_?();
+  func_?(&stack0xffffffdc);
+  pcVar8 = (code *)swi(3);
+  bVar7 = (*pcVar8)();
+  return bVar7;
 }
 
 
@@ -443,32 +430,25 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_CreateNewHeaders
   pSVar2 = mscorlib.dll::System::DateTime::DateTime_ToString_1
                      ((DateTime *)&uStack_1,StringLiteral_yyyy_MM_dd_HH___mm___sszz00,
                       (MethodInfo *)0x0);
-  ppSVar3 = &(this->fields).CreationDate;
-  *ppSVar3 = pSVar2;
-  func_?(ppSVar3,pSVar2);
-  ppSVar3 = &(this->fields).RevisionDate;
-  *ppSVar3 = pSVar2;
-  func_?(ppSVar3,pSVar2);
+  (this->fields).CreationDate = pSVar2;
+  func_?(&(this->fields).CreationDate,pSVar2);
+  (this->fields).RevisionDate = pSVar2;
+  func_?(&(this->fields).RevisionDate,pSVar2);
   pSVar2 = ::StringLiteral__;
-  ppSVar3 = &(this->fields).TeamEmail;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,pSVar2);
-  ppSVar3 = &(this->fields).Team;
-  *ppSVar3 = pSVar2;
-  func_?(ppSVar3,pSVar2);
-  ppSVar3 = &(this->fields).Project;
-  *ppSVar3 = pSVar2;
-  func_?(ppSVar3,pSVar2);
-  ppSVar3 = &(this->fields).Country;
-  *ppSVar3 = pSVar2;
-  func_?(ppSVar3,pSVar2);
+  (this->fields).TeamEmail = ::StringLiteral__;
+  func_?(&(this->fields).TeamEmail,pSVar2);
+  (this->fields).Team = pSVar2;
+  func_?(&(this->fields).Team,pSVar2);
+  (this->fields).Project = pSVar2;
+  func_?(&(this->fields).Project,pSVar2);
+  (this->fields).Country = pSVar2;
+  func_?(&(this->fields).Country,pSVar2);
   (this->fields).Language = pSVar2;
   uStack_1._0_4_ = &(this->fields).Language;
   uStack_1._4_4_ = pSVar2;
   func_?();
-  ppSVar3 = &(this->fields).Charset;
-  *ppSVar3 = StringLiteral_utf_8;
-  func_?(ppSVar3,StringLiteral_utf_8);
+  (this->fields).Charset = StringLiteral_utf_8;
+  func_?(&(this->fields).Charset,StringLiteral_utf_8);
   Catalog_UpdateHeaderDict(this,(MethodInfo *)0x0);
   return;
 }
@@ -532,10 +512,10 @@ String * Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_EnsureCorrectEnding
     cRam_? = '\x01';
   }
   if (text != (String *)0x0) {
-    iVar1 = (text->fields)._stringLength;
-    if (iVar1 == 0) {
+    if ((text->fields)._stringLength == 0) {
       return ::StringLiteral__;
     }
+    iVar1 = (text->fields)._stringLength;
     iVar2 = 0;
     while ((iVar1 = iVar1 + -1, -1 < iVar1 &&
            (uVar3 = mscorlib.dll::System::String::String_get_Chars(text,iVar1,(MethodInfo *)0x0),
@@ -548,22 +528,26 @@ String * Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_EnsureCorrectEnding
       this = (StringBuilder *)func_?(TypeInfo__System__Text__StringBuilder);
       mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor_4
                 (this,text,0,iVar1 - iVar2,(iVar4 - iVar2) + iVar1,(MethodInfo *)0x0);
-      iVar1 = (reference->fields)._stringLength;
-      while ((iVar1 = iVar1 + -1, -1 < iVar1 &&
-             (uVar3 = mscorlib.dll::System::String::String_get_Chars
-                                (reference,iVar1,(MethodInfo *)0x0), uVar3 == 10))) {
+      iVar1 = (reference->fields)._stringLength + -1;
+      if (iVar1 < 0) {
+code_?:
         if (this == (StringBuilder *)0x0) goto code_?;
-        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6(this,10,(MethodInfo *)0x0)
-        ;
       }
-      if (this != (StringBuilder *)0x0) {
-        pSVar5 = (String *)
-                 (*(code *)(this->klass->vtable).ToString.method)
-                           (this,(this->klass->vtable).
-                                 System_Runtime_Serialization_ISerializable_GetObjectData.methodPtr)
-        ;
-        return pSVar5;
+      else {
+        do {
+          uVar3 = mscorlib.dll::System::String::String_get_Chars(reference,iVar1,(MethodInfo *)0x0);
+          if (uVar3 != 10) goto code_?;
+          if (this == (StringBuilder *)0x0) goto code_?;
+          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6
+                    (this,10,(MethodInfo *)0x0);
+          iVar1 = iVar1 + -1;
+        } while (-1 < iVar1);
       }
+      pSVar5 = (String *)
+               (*(code *)(this->klass->vtable).ToString.method)
+                         (this,(this->klass->vtable).
+                               System_Runtime_Serialization_ISerializable_GetObjectData.methodPtr);
+      return pSVar5;
     }
   }
 code_?:
@@ -672,7 +656,7 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_FormatMessageForFile
   }
   pSVar1 = StringEscaping::StringEscaping_ToGettextFormat(message,(MethodInfo *)0x0);
   if ((prefix != (String *)0x0) && (pSVar1 != (String *)0x0)) {
-    if (((prefix->fields)._stringLength + (pSVar1->fields)._stringLength < 0x4d) &&
+    if (((pSVar1->fields)._stringLength + (prefix->fields)._stringLength < 0x4d) &&
        (bVar2 = mscorlib.dll::System::String::String_Contains
                           (pSVar1,StringLiteral__n,(MethodInfo *)0x0), bVar2 == 0)) {
       if (sb != (StringBuilder *)0x0) {
@@ -696,82 +680,81 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_FormatMessageForFile
                 (sb,::StringLiteral____,(MethodInfo *)0x0);
       mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                 (sb,newlineChar,(MethodInfo *)0x0);
-      message = (String *)0x0;
-      prefix = (String *)0x0;
       pSVar3 = (String *)0xffffffff;
-      pSVar4 = (String *)0x0;
-      while ((int)pSVar4 < (pSVar1->fields)._stringLength) {
-        pSVar5 = pSVar3;
-        uVar6 = mscorlib.dll::System::String::String_get_Chars
-                          (pSVar1,(int32_t)pSVar4,(MethodInfo *)0x0);
-        if (uVar6 == 0x5c) {
-          index = (undefined1 *)((int)&pSVar4->klass + 1);
-          if ((pSVar1->fields)._stringLength <= (int)index) {
-            pSVar7 = (String *)((int)&pSVar4->klass + 1);
-            goto code_?;
-          }
+      prefix = (String *)0x0;
+      message = (String *)0x0;
+      index = 0;
+code_?:
+      do {
+        if ((pSVar1->fields)._stringLength <= index) goto code_?;
+        pSVar4 = pSVar3;
+        uVar5 = mscorlib.dll::System::String::String_get_Chars(pSVar1,index,(MethodInfo *)0x0);
+        iVar6 = index;
+        if (uVar5 == 0x5c) {
+          if ((pSVar1->fields)._stringLength <= index + 1) goto code_?;
+          pSVar3 = (String *)0x0;
+          iVar6 = index + 1;
           message = (String *)((int)&message->klass + 1);
-          uVar6 = mscorlib.dll::System::String::String_get_Chars
-                            (pSVar1,(int32_t)index,(MethodInfo *)0x0);
-          pSVar7 = (String *)((int)&pSVar4->klass + 2);
-          if (uVar6 != 0x6e) {
-            if (uVar6 == 0x74) {
-              pSVar5 = (String *)((int)&pSVar4->klass + 2);
+          uVar5 = mscorlib.dll::System::String::String_get_Chars(pSVar1,iVar6,(MethodInfo *)0x0);
+          if (uVar5 != 0x6e) {
+            if (uVar5 == 0x74) {
+              pSVar3 = (String *)(index + 2);
             }
             goto code_?;
           }
-          pSVar5 = (String *)((int)&pSVar4->klass + 2);
-code_?:
-          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                    (sb,::StringLiteral__,(MethodInfo *)0x0);
-          pSVar4 = mscorlib.dll::System::String::String_Substring_1
-                             (pSVar1,(int32_t)prefix,(int)pSVar5 - (int)prefix,(MethodInfo *)0x0);
-          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                    (sb,pSVar4,(MethodInfo *)0x0);
-          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                    (sb,::StringLiteral__,(MethodInfo *)0x0);
-          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                    (sb,newlineChar,(MethodInfo *)0x0);
-          pSVar3 = (String *)0xffffffff;
-          message = (String *)0x1;
-          pSVar4 = pSVar7;
-          prefix = pSVar5;
+          pSVar4 = (String *)(index + 2);
         }
         else {
-          pSVar7 = (String *)((int)&pSVar4->klass + 1);
-          pSVar5 = pSVar7;
-          if (uVar6 != 0x20) {
-            pSVar5 = pSVar3;
+          pSVar3 = (String *)(index + 1);
+          if (uVar5 != 0x20) {
+            pSVar3 = pSVar4;
           }
 code_?:
-          pSVar3 = pSVar5;
-          if ((0x4c < (int)message) && (pSVar5 = pSVar3, pSVar3 != (String *)0xffffffff))
-          goto code_?;
-          message = (String *)((int)&message->klass + 1);
-          pSVar4 = pSVar7;
+          if (((int)message < 0x4d) || (pSVar4 = pSVar3, pSVar3 == (String *)0xffffffff)) {
+            index = iVar6 + 1;
+            message = (String *)((int)&message->klass + 1);
+            goto code_?;
+          }
         }
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Substring
-                         (pSVar1,(int32_t)prefix,(MethodInfo *)0x0);
-      if (pSVar1 != (String *)0x0) {
-        if (0 < (pSVar1->fields)._stringLength) {
-          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                    (sb,::StringLiteral__,(MethodInfo *)0x0);
-          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                    (sb,pSVar1,(MethodInfo *)0x0);
-          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                    (sb,::StringLiteral__,(MethodInfo *)0x0);
-          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                    (sb,newlineChar,(MethodInfo *)0x0);
-        }
-        return;
-      }
+        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+                  ((StringBuilder *)0x0,::StringLiteral__,(MethodInfo *)0x0);
+        pSVar3 = mscorlib.dll::System::String::String_Substring_1
+                           (pSVar1,(int32_t)prefix,(int)pSVar4 - (int)prefix,(MethodInfo *)0x0);
+        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+                  ((StringBuilder *)0x0,pSVar3,(MethodInfo *)0x0);
+        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+                  ((StringBuilder *)0x0,::StringLiteral__,(MethodInfo *)0x0);
+        sb = (StringBuilder *)0x0;
+        mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+                  ((StringBuilder *)0x0,newlineChar,(MethodInfo *)0x0);
+        index = iVar6 + 1;
+        pSVar3 = (String *)0xffffffff;
+        message = (String *)0x1;
+        prefix = pSVar4;
+      } while( true );
     }
   }
+code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
+code_?:
+  pSVar1 = mscorlib.dll::System::String::String_Substring(pSVar1,(int32_t)prefix,(MethodInfo *)0x0);
+  if (pSVar1 != (String *)0x0) {
+    if ((pSVar1->fields)._stringLength < 1) {
+      return;
+    }
+    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+              (sb,::StringLiteral__,(MethodInfo *)0x0);
+    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2(sb,pSVar1,(MethodInfo *)0x0);
+    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+              (sb,::StringLiteral__,(MethodInfo *)0x0);
+    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+              (sb,newlineChar,(MethodInfo *)0x0);
+    return;
+  }
+  goto code_?;
 }
 
 
@@ -808,40 +791,38 @@ Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_GetEncoding(String *charset,
   *unaff_FS_OFFSET = &uStack_3;
   pEVar4 = mscorlib.dll::System::Text::Encoding::Encoding_GetEncodings((MethodInfo *)0x0);
   uVar5 = 0;
-  do {
-    if (pEVar4 == (EncodingInfo__Array *)0x0) {
+  if (pEVar4 != (EncodingInfo__Array *)0x0) {
+    while( true ) {
+      if ((int)pEVar4->max_length <= (int)uVar5) {
+        *unaff_FS_OFFSET = uStack_3;
+        return (Encoding *)0x0;
+      }
+      if (pEVar4->max_length <= uVar5) break;
+      this = pEVar4->vector[uVar5];
+      uStack_1 = 0;
+      if ((this == (EncodingInfo *)0x0) ||
+         (pSVar6 = (this->fields).strEncodingName, pSVar6 == (String *)0x0)) goto code_?;
+      pSVar6 = mscorlib.dll::System::String::String_ToLower(pSVar6,(MethodInfo *)0x0);
+      if (charset == (String *)0x0) goto code_?;
+      b = mscorlib.dll::System::String::String_ToLower(charset,(MethodInfo *)0x0);
+      bVar7 = mscorlib.dll::System::String::String_op_Equality(pSVar6,b,(MethodInfo *)0x0);
+      if (bVar7 != 0) {
+        pEVar8 = mscorlib.dll::System::Text::EncodingInfo::EncodingInfo_GetEncoding
+                           (this,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
+        return pEVar8;
+      }
+      uStack_1 = 0xffffffff;
+      uVar5 = uVar5 + 1;
+    }
+    func_?();
+  }
 code_?:
-      func_?();
-      func_?(&stack0xffffffdc);
-      pcVar6 = (code *)swi(3);
-      pEVar7 = (Encoding *)(*pcVar6)();
-      return pEVar7;
-    }
-    if ((int)pEVar4->max_length <= (int)uVar5) {
-      *unaff_FS_OFFSET = uStack_3;
-      return (Encoding *)0x0;
-    }
-    if (pEVar4->max_length <= uVar5) {
-      func_?();
-      goto code_?;
-    }
-    this = pEVar4->vector[uVar5];
-    uStack_1 = 0;
-    if ((this == (EncodingInfo *)0x0) ||
-       (pSVar8 = (this->fields).strEncodingName, pSVar8 == (String *)0x0)) goto code_?;
-    pSVar8 = mscorlib.dll::System::String::String_ToLower(pSVar8,(MethodInfo *)0x0);
-    if (charset == (String *)0x0) goto code_?;
-    b = mscorlib.dll::System::String::String_ToLower(charset,(MethodInfo *)0x0);
-    bVar9 = mscorlib.dll::System::String::String_op_Equality(pSVar8,b,(MethodInfo *)0x0);
-    if (bVar9 != 0) {
-      pEVar7 = mscorlib.dll::System::Text::EncodingInfo::EncodingInfo_GetEncoding
-                         (this,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = uStack_3;
-      return pEVar7;
-    }
-    uStack_1 = 0xffffffff;
-    uVar5 = uVar5 + 1;
-  } while( true );
+  func_?();
+  func_?(&stack0xffffffdc);
+  pcVar9 = (code *)swi(3);
+  pEVar8 = (Encoding *)(*pcVar9)();
+  return pEVar8;
 }
 
 
@@ -1031,7 +1012,7 @@ String * Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_GetHeaderString
                 (this_01,StringLiteral___0____1__n__2_,pOStack_7,(Object *)pSVar3,
                  (Object *)lineDelimeter,(MethodInfo *)0x0);
     }
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)&stack0xffffffbc,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::String,_System::String>__Dispose__
@@ -1079,13 +1060,6 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_GetMergeSummary
     func_?(&TypeInfo__System__Collections__Generic__List<System::String>);
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-            *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType]::
-  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
-             MethodInfo__System__Collections__Generic__List<System::String>__List__);
   this_00 = (IDictionary_2_System_String_GNU_Gettext_CatalogEntry___Class *)
             func_?(TypeInfo__System__Collections__Generic__List<System::String>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -1093,41 +1067,49 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_GetMergeSummary
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  iVar2 = 0;
+  this_01 = (MethodInfo **)
+            func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
+             MethodInfo__System__Collections__Generic__List<System::String>__List__);
+  iVar1 = 0;
   while( true ) {
     if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__List<GNU::Gettext::CatalogEntry>__get_Count__
-                      ,this_00);
+      this_01 = &
+                MethodInfo__System__Collections__Generic__List<GNU::Gettext::CatalogEntry>__get_Count__
+      ;
+      func_?();
       cRam_? = '\x01';
     }
-    pLVar3 = (this->fields).entriesList;
-    if (pLVar3 == (List_1_GNU_Gettext_CatalogEntry_ *)0x0) goto code_?;
-    if ((pLVar3->fields)._size <= iVar2) break;
+    pLVar2 = (this->fields).entriesList;
+    if (pLVar2 == (List_1_GNU_Gettext_CatalogEntry_ *)0x0) goto code_?;
+    if ((pLVar2->fields)._size <= iVar1) break;
     if (cRam_? == '\0') {
       func_?(&
                       MethodInfo__System__Collections__Generic__List<GNU::Gettext::CatalogEntry>__get_Count__
-                      ,this_00);
+                     );
       func_?(&
                       MethodInfo__System__Collections__Generic__List<GNU::Gettext::CatalogEntry>__get_Item_int_
                      );
       cRam_? = '\x01';
     }
-    if (iVar2 < 0) {
+    if (iVar1 < 0) {
 code_?:
-      RVar4.First = 0;
-      RVar4.Last = 0;
+      RVar3.First = 0;
+      RVar3.Last = 0;
     }
     else {
-      pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+      pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                (this->fields).entriesList;
-      if (pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+      if (pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
       goto code_?;
-      if ((pLVar5->fields)._size <= iVar2) goto code_?;
-      RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      if ((pLVar4->fields)._size <= iVar1) goto code_?;
+      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (pLVar5,iVar2,
+                        (pLVar4,iVar1,
                          MethodInfo__System__Collections__Generic__List<GNU::Gettext::CatalogEntry>__get_Item_int_
                         );
     }
@@ -1138,83 +1120,83 @@ code_?:
                      );
       cRam_? = '\x01';
     }
-    if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
-    pLVar1 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-              *)0x0;
-    pSVar6 = CatalogEntry::CatalogEntry_MakeKey
-                       (*(String **)((int)RVar4 + 8),*(String **)((int)RVar4 + 0x34),
-                        (MethodInfo *)0x0);
-    if (pLVar1 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                   *)0x0) goto code_?;
+    pIVar5 = (refCat->fields).entriesDict;
+    if (RVar3 == (RegexCharClass_SingleRange)0x0) goto code_?;
+    CatalogEntry::CatalogEntry_MakeKey
+              (*(String **)((int)RVar3 + 8),*(String **)((int)RVar3 + 0x34),(MethodInfo *)0x0);
+    if (pIVar5 == (IDictionary_2_System_String_GNU_Gettext_CatalogEntry_ *)0x0)
+    goto code_?;
+    this_02 = (MethodInfo *)0x4;
     this_00 = 
     TypeInfo__System__Collections__Generic__IDictionary<System::String,_GNU::Gettext::CatalogEntry>;
-    cVar7 = func_?(4,
+    cVar6 = func_?(4,
                             TypeInfo__System__Collections__Generic__IDictionary<System::String,_GNU::Gettext::CatalogEntry>
-                            ,pLVar1,pSVar6);
-    if (cVar7 == '\0') {
+                            ,pIVar5);
+    if (cVar6 == '\0') {
 code_?:
-      pCVar8 = Catalog_get_Item(this,iVar2,(MethodInfo *)0x0);
-      if ((pCVar8 == (CatalogEntry *)0x0) ||
-         (this_00 == (IDictionary_2_System_String_GNU_Gettext_CatalogEntry___Class *)0x0))
-      goto code_?;
+      pCVar7 = Catalog_get_Item(this,iVar1,(MethodInfo *)0x0);
+      if ((pCVar7 == (CatalogEntry *)0x0) || (this_02 == (MethodInfo *)0x0)) goto code_?;
+      this_01 = (MethodInfo **)
+                MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_;
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)this_00,(Object *)(pCVar8->fields).str,
+                ((List_1_System_Object_ *)this_02,(Object *)(pCVar7->fields).str,
                  MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
                 );
     }
     else {
-      pIVar9 = (refCat->fields).entriesDict;
-      pSVar6 = CatalogEntry::CatalogEntry_MakeKey
-                         (*(String **)((int)RVar4 + 8),*(String **)((int)RVar4 + 0x34),
-                          (MethodInfo *)0x0);
-      if (pIVar9 == (IDictionary_2_System_String_GNU_Gettext_CatalogEntry_ *)0x0)
+      pIVar5 = (refCat->fields).entriesDict;
+      this_01 = (MethodInfo **)
+                CatalogEntry::CatalogEntry_MakeKey
+                          (*(String **)((int)RVar3 + 8),*(String **)((int)RVar3 + 0x34),
+                           (MethodInfo *)0x0);
+      if (pIVar5 == (IDictionary_2_System_String_GNU_Gettext_CatalogEntry_ *)0x0)
       goto code_?;
-      iVar10 = func_?(0,
+      iVar8 = func_?(0,
                               TypeInfo__System__Collections__Generic__IDictionary<System::String,_GNU::Gettext::CatalogEntry>
-                              ,pIVar9,pSVar6);
-      if (iVar10 == 0) goto code_?;
+                              ,pIVar5);
+      this_02 = (MethodInfo *)this_01;
+      if (iVar8 == 0) goto code_?;
     }
-    iVar2 = iVar2 + 1;
+    iVar1 = iVar1 + 1;
   }
-  iVar2 = 0;
+  iVar1 = 0;
   if (refCat != (Catalog *)0x0) goto code_?;
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 code_?:
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<GNU::Gettext::CatalogEntry>__get_Count__
-                    ,this_00);
+    this_01 = &
+              MethodInfo__System__Collections__Generic__List<GNU::Gettext::CatalogEntry>__get_Count__
+    ;
+    func_?();
     cRam_? = '\x01';
   }
-  pLVar3 = (refCat->fields).entriesList;
-  if (pLVar3 == (List_1_GNU_Gettext_CatalogEntry_ *)0x0) goto code_?;
-  if ((pLVar3->fields)._size <= iVar2) {
-    if (pLVar1 != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                   *)0x0) {
-      pMVar12 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+  pLVar2 = (refCat->fields).entriesList;
+  if (pLVar2 == (List_1_GNU_Gettext_CatalogEntry_ *)0x0) goto code_?;
+  if ((pLVar2->fields)._size <= iVar1) {
+    if (this_00 != (IDictionary_2_System_String_GNU_Gettext_CatalogEntry___Class *)0x0) {
+      pMVar10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
                 ::MultiColumnCollectionHeader+ViewState+ColumnState]::
                 List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
-                          (pLVar1,
+                          ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                            *)this_00,
                            MethodInfo__System__Collections__Generic__List<System::String>__ToArray__
                           );
-      *newEntries = (String__Array *)pMVar12;
-      pLVar1 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                *)&UNK_?;
-      func_?(newEntries,pMVar12);
-      if (pLVar1 != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                     *)0x0) {
-        pMVar12 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+      *newEntries = (String__Array *)pMVar10;
+      func_?(newEntries);
+      if ((MethodInfo *)this_01 != (MethodInfo *)0x0) {
+        pMVar10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                   Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::
                   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
-                            (pLVar1,
+                            ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                              *)this_01,
                              MethodInfo__System__Collections__Generic__List<System::String>__ToArray__
                             );
-        *obsoleteEntries = (String__Array *)pMVar12;
-        func_?(obsoleteEntries,pMVar12);
+        *obsoleteEntries = (String__Array *)pMVar10;
+        func_?(obsoleteEntries,pMVar10);
         return;
       }
     }
@@ -1229,23 +1211,23 @@ code_?:
                    );
     cRam_? = '\x01';
   }
-  if (iVar2 < 0) {
+  if (iVar1 < 0) {
 code_?:
-    RVar13.First = 0;
-    RVar13.Last = 0;
+    RVar11.First = 0;
+    RVar11.Last = 0;
   }
   else {
-    pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+    pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (refCat->fields).entriesList;
-    if (pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+    if (pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
     goto code_?;
-    if ((pLVar5->fields)._size <= iVar2) goto code_?;
-    RVar13 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                       (pLVar5,iVar2,
-                        MethodInfo__System__Collections__Generic__List<GNU::Gettext::CatalogEntry>__get_Item_int_
-                       );
+    if ((pLVar4->fields)._size <= iVar1) goto code_?;
+    RVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                      (pLVar4,iVar1,
+                       MethodInfo__System__Collections__Generic__List<GNU::Gettext::CatalogEntry>__get_Item_int_
+                      );
   }
   if (cRam_? == '\0') {
     func_?(&
@@ -1253,42 +1235,43 @@ code_?:
                    );
     cRam_? = '\x01';
   }
-  if (RVar13 == (RegexCharClass_SingleRange)0x0) goto code_?;
-  pLVar1 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-            *)0x0;
-  pSVar6 = CatalogEntry::CatalogEntry_MakeKey
-                     (*(String **)((int)RVar13 + 8),*(String **)((int)RVar13 + 0x34),
-                      (MethodInfo *)0x0);
-  if (pLVar1 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                 *)0x0) goto code_?;
+  pIVar5 = (this->fields).entriesDict;
+  if (RVar11 == (RegexCharClass_SingleRange)0x0) goto code_?;
+  CatalogEntry::CatalogEntry_MakeKey
+            (*(String **)((int)RVar11 + 8),*(String **)((int)RVar11 + 0x34),(MethodInfo *)0x0);
+  if (pIVar5 == (IDictionary_2_System_String_GNU_Gettext_CatalogEntry_ *)0x0) goto code_?;
   this_00 = 
   TypeInfo__System__Collections__Generic__IDictionary<System::String,_GNU::Gettext::CatalogEntry>;
-  cVar7 = func_?(4,
+  cVar6 = func_?(4,
                           TypeInfo__System__Collections__Generic__IDictionary<System::String,_GNU::Gettext::CatalogEntry>
-                          ,pLVar1,pSVar6);
-  if (cVar7 == '\0') {
+                          ,pIVar5);
+  if (cVar6 == '\0') {
 code_?:
-    pCVar8 = Catalog_get_Item(refCat,iVar2,(MethodInfo *)0x0);
-    if ((pCVar8 == (CatalogEntry *)0x0) ||
-       (pLVar1 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                   *)0x0)) goto code_?;
+    pCVar7 = Catalog_get_Item(refCat,iVar1,(MethodInfo *)0x0);
+    if ((pCVar7 == (CatalogEntry *)0x0) ||
+       (this_00 == (IDictionary_2_System_String_GNU_Gettext_CatalogEntry___Class *)0x0))
+    goto code_?;
+    this_01 = (MethodInfo **)
+              MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              ((List_1_System_Object_ *)pLVar1,(Object *)(pCVar8->fields).str,
+              ((List_1_System_Object_ *)this_00,(Object *)(pCVar7->fields).str,
                MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
+    iVar1 = iVar1 + 1;
   }
   else {
-    pIVar9 = (this->fields).entriesDict;
-    pSVar6 = CatalogEntry::CatalogEntry_MakeKey
-                       (*(String **)((int)RVar13 + 8),*(String **)((int)RVar13 + 0x34),
-                        (MethodInfo *)0x0);
-    if (pIVar9 == (IDictionary_2_System_String_GNU_Gettext_CatalogEntry_ *)0x0)
+    pIVar5 = (this->fields).entriesDict;
+    this_01 = (MethodInfo **)
+              CatalogEntry::CatalogEntry_MakeKey
+                        (*(String **)((int)RVar11 + 8),*(String **)((int)RVar11 + 0x34),
+                         (MethodInfo *)0x0);
+    if (pIVar5 == (IDictionary_2_System_String_GNU_Gettext_CatalogEntry_ *)0x0)
     goto code_?;
-    iVar10 = func_?(0,
+    iVar8 = func_?(0,
                             TypeInfo__System__Collections__Generic__IDictionary<System::String,_GNU::Gettext::CatalogEntry>
-                            ,pIVar9,pSVar6);
-    if (iVar10 == 0) goto code_?;
+                            ,pIVar5);
+    if (iVar8 == 0) goto code_?;
+    iVar1 = iVar1 + 1;
   }
-  iVar2 = iVar2 + 1;
   goto code_?;
 }
 
@@ -1493,12 +1476,11 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_Load
           mscorlib.dll::System::Array::Array_Clear
                     ((Array *)(pLVar5->fields)._items,0,iVar3,(MethodInfo *)0x0);
         }
-        ppSVar6 = &(this->fields).fileName;
+        (this->fields).fileName = fileName;
         (this->fields).isOk = 0;
-        *ppSVar6 = fileName;
-        func_?(ppSVar6,fileName);
-        pCVar7 = (CatalogParser *)func_?(TypeInfo__GNU__Gettext__CharsetInfoFinder);
-        pEStack_8 = (Encoding *)pCVar7;
+        func_?(&(this->fields).fileName,fileName);
+        pCVar6 = (CatalogParser *)func_?(TypeInfo__GNU__Gettext__CharsetInfoFinder);
+        pEStack_7 = (Encoding *)pCVar6;
         if (cRam_? == '\0') {
           func_?(&TypeInfo__GNU__Gettext__CatalogParser);
           func_?(&StringLiteral_iso_8859_1);
@@ -1509,20 +1491,19 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_Load
         if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        CatalogParser::CatalogParser__ctor(pCVar7,text,encoding,(MethodInfo *)0x0);
-        pCVar7[1].klass = (CatalogParser__Class *)StringLiteral_iso_8859_1;
+        CatalogParser::CatalogParser__ctor(pCVar6,text,encoding,(MethodInfo *)0x0);
+        pCVar6[1].klass = (CatalogParser__Class *)StringLiteral_iso_8859_1;
         func_?();
-        pCVar9 = pCVar7[1].klass;
-        ppSVar6 = &(this->fields).Charset;
-        *ppSVar6 = (String *)pCVar9;
-        func_?(ppSVar6,pCVar9);
-        CatalogParser::CatalogParser_Parse((CatalogParser *)pEStack_8,text,(MethodInfo *)0x0);
-        *ppSVar6 = (String *)((CatalogParser *)((int)pEStack_8 + 0xc))->klass;
+        pCVar8 = pCVar6[1].klass;
+        (this->fields).Charset = (String *)pCVar8;
+        func_?(&(this->fields).Charset,pCVar8);
+        CatalogParser::CatalogParser_Parse(pCVar6,text,(MethodInfo *)0x0);
+        (this->fields).Charset = (String *)pCVar6[1].klass;
         func_?();
-        *ppSVar6 = (String *)((CatalogParser *)((int)pEStack_8 + 0xc))->klass;
+        (this->fields).Charset = (String *)pCVar6[1].klass;
         func_?();
-        pEStack_8 = Catalog_GetEncoding((this->fields).Charset,(MethodInfo *)0x0);
-        pCVar7 = (CatalogParser *)func_?();
+        pEStack_7 = Catalog_GetEncoding((this->fields).Charset,(MethodInfo *)0x0);
+        pCVar6 = (CatalogParser *)func_?();
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
@@ -1530,12 +1511,12 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_Load
         if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        CatalogParser::CatalogParser__ctor(pCVar7,text,pEStack_8,(MethodInfo *)0x0);
-        pCVar7[1].klass = (CatalogParser__Class *)this;
+        CatalogParser::CatalogParser__ctor(pCVar6,text,pEStack_7,(MethodInfo *)0x0);
+        pCVar6[1].klass = (CatalogParser__Class *)this;
         func_?();
-        bVar10 = CatalogParser::CatalogParser_Parse(pCVar7,text,(MethodInfo *)0x0);
-        in_stack_11 = (MethodInfo *)0x0;
-        if (bVar10 != 0) {
+        bVar9 = CatalogParser::CatalogParser_Parse(pCVar6,text,(MethodInfo *)0x0);
+        in_stack_10 = (MethodInfo *)0x0;
+        if (bVar9 != 0) {
           (this->fields).isOk = 1;
           Catalog_set_IsDirty(this,0,(MethodInfo *)0x0);
           *unaff_FS_OFFSET = text;
@@ -1548,20 +1529,20 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_Load
   func_?();
   fileName = unaff_EDI;
 code_?:
-  pSVar12 = (String *)func_?();
-  pSVar12 = mscorlib.dll::System::String::String_Format
-                      (pSVar12,(Object *)fileName,in_stack_11);
+  pSVar11 = (String *)func_?();
+  pSVar11 = mscorlib.dll::System::String::String_Format
+                      (pSVar11,(Object *)fileName,in_stack_10);
   func_?();
   this_00 = (Exception *)func_?();
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,pSVar12,(MethodInfo *)0x0);
-  uStack13 = func_?();
-  pEStack14 = this_00;
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,pSVar11,(MethodInfo *)0x0);
+  uStack12 = func_?();
+  pEStack13 = this_00;
   func_?();
-  pEStack_15 = this_00->klass;
-  ppEStack16 = &pEStack_15;
+  pEStack_14 = this_00->klass;
+  ppEStack15 = &pEStack_14;
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -1586,9 +1567,119 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_ParseHeaderDict
     cRam_? = '\x01';
   }
   pSVar1 = Catalog_GetHeader(this,StringLiteral_Project_Id_Version,(MethodInfo *)0x0);
-  ppSVar2 = &(this->fields).Project;
-  *ppSVar2 = pSVar1;
-  func_?(ppSVar2,&stack0xfffffffc,&UNK_?,ppSVar2,pSVar1);
+  (this->fields).Project = pSVar1;
+  func_?(&(this->fields).Project,pSVar1);
+  pSVar1 = Catalog_GetHeader(this,StringLiteral_POT_Creation_Date,(MethodInfo *)0x0);
+  (this->fields).CreationDate = pSVar1;
+  func_?(&(this->fields).CreationDate,pSVar1);
+  pSVar1 = Catalog_GetHeader(this,StringLiteral_PO_Revision_Date,(MethodInfo *)0x0);
+  (this->fields).RevisionDate = pSVar1;
+  func_?(&(this->fields).RevisionDate,pSVar1);
+  pSVar1 = Catalog_GetHeader(this,StringLiteral_Last_Translator,(MethodInfo *)0x0);
+  bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar1,(MethodInfo *)0x0);
+  if (bVar2 == 0) {
+    pCVar3 = (Char__Array *)func_?();
+    if (pCVar3 != (Char__Array *)0x0) {
+      if ((pCVar3->max_length == 0) || (pCVar3->vector[0] = 0x3c, pCVar3->max_length < 2))
+      goto code_?;
+      pCVar3->vector[1] = 0x3e;
+      if (pSVar1 != (String *)0x0) {
+        pSVar4 = mscorlib.dll::System::String::String_Split_1(pSVar1,pCVar3,(MethodInfo *)0x0);
+        if (pSVar4 != (String__Array *)0x0) {
+          if ((int)pSVar4->max_length < 2) {
+            (this->fields).Translator = pSVar1;
+            func_?();
+            pSVar1 = TypeInfo__System__String->static_fields->Empty;
+code_?:
+            (this->fields).TranslatorEmail = pSVar1;
+            func_?();
+            goto code_?;
+          }
+          if (pSVar4->max_length == 0) goto code_?;
+          if (pSVar4->vector[0] != (String *)0x0) {
+            pSVar1 = mscorlib.dll::System::String::String_Trim(pSVar4->vector[0],(MethodInfo *)0x0);
+            (this->fields).Translator = pSVar1;
+            func_?();
+            if (pSVar4->max_length < 2) goto code_?;
+            if (pSVar4->vector[1] != (String *)0x0) {
+              pSVar1 = mscorlib.dll::System::String::String_Trim
+                                 (pSVar4->vector[1],(MethodInfo *)0x0);
+              goto code_?;
+            }
+          }
+        }
+      }
+    }
+  }
+  else {
+code_?:
+    pSVar1 = Catalog_GetHeader(this,StringLiteral_Language_Team,(MethodInfo *)0x0);
+    bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar1,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
+      pCVar3 = (Char__Array *)func_?();
+      if (pCVar3 != (Char__Array *)0x0) {
+        if ((pCVar3->max_length == 0) || (pCVar3->vector[0] = 0x3c, pCVar3->max_length < 2))
+        goto code_?;
+        pCVar3->vector[1] = 0x3e;
+        if (pSVar1 != (String *)0x0) {
+          pSVar4 = mscorlib.dll::System::String::String_Split_1(pSVar1,pCVar3,(MethodInfo *)0x0);
+          if (pSVar4 != (String__Array *)0x0) {
+            if ((int)pSVar4->max_length < 2) {
+              (this->fields).Team = pSVar1;
+              func_?();
+              pSVar1 = TypeInfo__System__String->static_fields->Empty;
+code_?:
+              (this->fields).TeamEmail = pSVar1;
+              func_?();
+              goto code_?;
+            }
+            if (pSVar4->max_length == 0) goto code_?;
+            if (pSVar4->vector[0] != (String *)0x0) {
+              pSVar1 = mscorlib.dll::System::String::String_Trim
+                                 (pSVar4->vector[0],(MethodInfo *)0x0);
+              (this->fields).Team = pSVar1;
+              func_?();
+              if (pSVar4->max_length < 2) goto code_?;
+              if (pSVar4->vector[1] != (String *)0x0) {
+                pSVar1 = mscorlib.dll::System::String::String_Trim
+                                   (pSVar4->vector[1],(MethodInfo *)0x0);
+                goto code_?;
+              }
+            }
+          }
+        }
+      }
+    }
+    else {
+code_?:
+      pSVar1 = Catalog_GetHeader(this,StringLiteral_Content_Type,(MethodInfo *)0x0);
+      if (pSVar1 != (String *)0x0) {
+        iVar5 = mscorlib.dll::System::String::String_IndexOf_3
+                          (pSVar1,StringLiteral___charset_,(MethodInfo *)0x0);
+        if (iVar5 == -1) {
+          (this->fields).Charset = StringLiteral_iso_8859_1;
+          func_?();
+          return;
+        }
+        if (StringLiteral___charset_ != (String *)0x0) {
+          pSVar1 = mscorlib.dll::System::String::String_Substring
+                             (pSVar1,(StringLiteral___charset_->fields)._stringLength + iVar5,
+                              (MethodInfo *)0x0);
+          if (pSVar1 != (String *)0x0) {
+            pSVar1 = mscorlib.dll::System::String::String_Trim(pSVar1,(MethodInfo *)0x0);
+            (this->fields).Charset = pSVar1;
+            func_?();
+            return;
+          }
+        }
+      }
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -2103,26 +2194,20 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_UpdateHeaderDict
                   );
         bVar4 = mscorlib.dll::System::String::String_IsNullOrEmpty
                           ((this->fields).TranslatorEmail,(MethodInfo *)0x0);
-        pSVar1 = StringLiteral_Last_Translator;
         pSVar2 = (this->fields).Translator;
         if (bVar4 == 0) {
           pSVar2 = mscorlib.dll::System::String::String_Format_1
                              (StringLiteral__0____1__,(Object *)pSVar2,
                               (Object *)(this->fields).TranslatorEmail,(MethodInfo *)0x0);
-          pSVar1 = StringLiteral_Last_Translator;
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pDVar3 = (this->fields).headerEntries;
         }
-        else {
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pDVar3 = (this->fields).headerEntries;
+        pSVar1 = StringLiteral_Last_Translator;
+        if (cRam_? == '\0') {
+          func_?(&
+                          MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__set_Item_System__String__System__String_
+                         );
+          cRam_? = '\x01';
         }
+        pDVar3 = (this->fields).headerEntries;
         if (pDVar3 != (Dictionary_2_System_String_System_String_ *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__set_Item
@@ -2140,7 +2225,9 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_UpdateHeaderDict
           }
           pSVar1 = StringLiteral_Language_Team;
           if (cRam_? == '\0') {
-            func_?();
+            func_?(&
+                            MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__set_Item_System__String__System__String_
+                           );
             cRam_? = '\x01';
           }
           pDVar3 = (this->fields).headerEntries;
@@ -2199,8 +2286,8 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_UpdateHeaderDict
                              (Object *)pSVar1,
                              MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__set_Item_System__String__System__String_
                             );
-                  pSVar1 = StringLiteral_MonoDevelop_Gettext_addin;
-                  pSVar2 = StringLiteral_X_Generator;
+                  pSVar1 = StringLiteral_X_Generator;
+                  pSVar2 = StringLiteral_MonoDevelop_Gettext_addin;
                   if (cRam_? == '\0') {
                     func_?(&
                                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__set_Item_System__String__System__String_
@@ -2211,8 +2298,8 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_UpdateHeaderDict
                   if (pDVar3 != (Dictionary_2_System_String_System_String_ *)0x0) {
                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                     Object]::Dictionary_2_System_Object_System_Object__set_Item
-                              ((Dictionary_2_System_Object_System_Object_ *)pDVar3,(Object *)pSVar2,
-                               (Object *)pSVar1,
+                              ((Dictionary_2_System_Object_System_Object_ *)pDVar3,(Object *)pSVar1,
+                               (Object *)pSVar2,
                                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__set_Item_System__String__System__String_
                               );
                     return;
@@ -2272,54 +2359,43 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog__ctor(Catalog *this,Met
             (pDVar1,
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
             );
-  ppDVar2 = &(this->fields).headerEntries;
-  *ppDVar2 = (Dictionary_2_System_String_System_String_ *)pDVar1;
-  func_?(ppDVar2,pDVar1);
-  ppSVar3 = &(this->fields).Project;
-  pSVar4 = TypeInfo__System__String->static_fields->Empty;
-  *ppSVar3 = pSVar4;
-  func_?(ppSVar3,pSVar4);
-  ppSVar5 = &(this->fields).CreationDate;
-  pSVar4 = TypeInfo__System__String->static_fields->Empty;
-  *ppSVar5 = pSVar4;
-  func_?(ppSVar5,pSVar4);
-  ppSVar5 = &(this->fields).RevisionDate;
-  pSVar4 = TypeInfo__System__String->static_fields->Empty;
-  *ppSVar5 = pSVar4;
-  func_?(ppSVar5,pSVar4);
-  ppSVar5 = &(this->fields).Translator;
-  pSVar4 = TypeInfo__System__String->static_fields->Empty;
-  *ppSVar5 = pSVar4;
-  func_?(ppSVar5,pSVar4);
-  ppSVar5 = &(this->fields).TranslatorEmail;
-  pSVar4 = TypeInfo__System__String->static_fields->Empty;
-  *ppSVar5 = pSVar4;
-  func_?(ppSVar5,pSVar4);
-  ppSVar5 = &(this->fields).Team;
-  pSVar4 = TypeInfo__System__String->static_fields->Empty;
-  *ppSVar5 = pSVar4;
-  func_?(ppSVar5,pSVar4);
-  ppSVar5 = &(this->fields).TeamEmail;
-  pSVar4 = TypeInfo__System__String->static_fields->Empty;
-  *ppSVar5 = pSVar4;
-  func_?(ppSVar5,pSVar4);
-  ppSVar5 = &(this->fields).Charset;
-  pSVar4 = TypeInfo__System__String->static_fields->Empty;
-  *ppSVar5 = pSVar4;
-  func_?(ppSVar5,pSVar4);
-  ppSVar5 = &(this->fields).Language;
-  pSVar4 = TypeInfo__System__String->static_fields->Empty;
-  *ppSVar5 = pSVar4;
-  func_?(ppSVar5,pSVar4);
-  ppSVar5 = &(this->fields).Country;
-  pSVar4 = TypeInfo__System__String->static_fields->Empty;
-  *ppSVar5 = pSVar4;
-  func_?(ppSVar5,pSVar4);
+  (this->fields).headerEntries = (Dictionary_2_System_String_System_String_ *)pDVar1;
+  func_?(&(this->fields).headerEntries,pDVar1);
+  pSVar2 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).Project = pSVar2;
+  func_?(&(this->fields).Project,pSVar2);
+  pSVar2 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).CreationDate = pSVar2;
+  func_?(&(this->fields).CreationDate,pSVar2);
+  pSVar2 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).RevisionDate = pSVar2;
+  func_?(&(this->fields).RevisionDate,pSVar2);
+  pSVar2 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).Translator = pSVar2;
+  func_?(&(this->fields).Translator,pSVar2);
+  pSVar2 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).TranslatorEmail = pSVar2;
+  func_?(&(this->fields).TranslatorEmail,pSVar2);
+  pSVar2 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).Team = pSVar2;
+  func_?(&(this->fields).Team,pSVar2);
+  pSVar2 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).TeamEmail = pSVar2;
+  func_?(&(this->fields).TeamEmail,pSVar2);
+  pSVar2 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).Charset = pSVar2;
+  func_?(&(this->fields).Charset,pSVar2);
+  pSVar2 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).Language = pSVar2;
+  func_?(&(this->fields).Language,pSVar2);
+  pSVar2 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).Country = pSVar2;
+  func_?(&(this->fields).Country,pSVar2);
+  pSVar2 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).Comment = pSVar2;
   method_00 = (MethodInfo *)&(this->fields).Comment;
-  pSVar4 = TypeInfo__System__String->static_fields->Empty;
-  *(String **)method_00 = pSVar4;
-  func_?(method_00,pSVar4);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  func_?(method_00,pSVar2);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
             *)func_?(
@@ -2341,19 +2417,16 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog__ctor(Catalog *this,Met
              MethodInfo__System__Collections__Generic__List<GNU::Gettext::CatalogEntry>__List__);
   (this->fields).entriesList = this_00;
   func_?();
-  this_01 = (List_1_GNU_Gettext_CatalogDeletedEntry_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__List<GNU::Gettext::CatalogDeletedEntry>
-                           );
+  pLStack_3 = TypeInfo__System__Collections__Generic__List<GNU::Gettext::CatalogDeletedEntry>;
+  this_01 = (List_1_GNU_Gettext_CatalogDeletedEntry_ *)func_?();
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<GNU::Gettext::CatalogDeletedEntry>__List__
             );
-  ppLVar6 = &(this->fields).deletedEntriesList;
-  *ppLVar6 = this_01;
-  func_?(ppLVar6,this_01);
+  (this->fields).deletedEntriesList = this_01;
+  func_?(&(this->fields).deletedEntriesList,this_01);
   (this->fields).isOk = 1;
   if (cRam_? == '\0') {
     func_?();
@@ -2368,32 +2441,32 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog__ctor(Catalog *this,Met
   if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  mscorlib.dll::System::DateTime::DateTime_get_Now((MethodInfo *)0x0);
-  pSVar4 = mscorlib.dll::System::DateTime::DateTime_ToString_1
-                     ((DateTime *)&stack0xfffffff4,StringLiteral_yyyy_MM_dd_HH___mm___sszz00,
+  DVar4 = mscorlib.dll::System::DateTime::DateTime_get_Now((MethodInfo *)0x0);
+  pLStack_3 = (List_1_GNU_Gettext_CatalogDeletedEntry___Class *)DVar4._dateData;
+  pSVar2 = mscorlib.dll::System::DateTime::DateTime_ToString_1
+                     ((DateTime *)&pLStack_3,StringLiteral_yyyy_MM_dd_HH___mm___sszz00,
                       (MethodInfo *)0x0);
-  (this->fields).CreationDate = pSVar4;
+  (this->fields).CreationDate = pSVar2;
   func_?();
-  (this->fields).RevisionDate = pSVar4;
+  (this->fields).RevisionDate = pSVar2;
   func_?();
-  pSVar4 = ::StringLiteral__;
+  pSVar2 = ::StringLiteral__;
   (this->fields).TeamEmail = ::StringLiteral__;
   func_?();
-  ppSVar5 = &(this->fields).Team;
-  *ppSVar5 = pSVar4;
-  func_?(ppSVar5);
-  *ppSVar3 = pSVar4;
-  func_?(ppSVar3,pSVar4);
-  ppSVar3 = &(this->fields).Country;
-  *ppSVar3 = pSVar4;
-  func_?(ppSVar3,pSVar4);
-  (this->fields).Language = pSVar4;
-  ppSStack7 = &(this->fields).Language;
-  pSStack8 = pSVar4;
+  pLStack_3 = (List_1_GNU_Gettext_CatalogDeletedEntry___Class *)&(this->fields).Team;
+  (this->fields).Team = pSVar2;
   func_?();
-  ppSStack9 = &(this->fields).Charset;
-  *ppSStack9 = StringLiteral_utf_8;
-  pSStack10 = StringLiteral_utf_8;
+  (this->fields).Project = pSVar2;
+  func_?(&(this->fields).Project,pSVar2);
+  (this->fields).Country = pSVar2;
+  func_?(&(this->fields).Country,pSVar2);
+  (this->fields).Language = pSVar2;
+  ppSStack5 = &(this->fields).Language;
+  pSStack6 = pSVar2;
+  func_?();
+  (this->fields).Charset = StringLiteral_utf_8;
+  ppSStack7 = &(this->fields).Charset;
+  pSStack8 = StringLiteral_utf_8;
   func_?();
   Catalog_UpdateHeaderDict(this,(MethodInfo *)0x0);
   return;
@@ -2410,27 +2483,26 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_add_DirtyChanged
     func_?(&TypeInfo__System__EventHandler);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).DirtyChanged;
-  a = *ppEVar1;
+  a = (this->fields).DirtyChanged;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler__Class *)pDVar2->klass == TypeInfo__System__EventHandler) {
-        pDVar3 = pDVar2;
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((EventHandler__Class *)pDVar1->klass == TypeInfo__System__EventHandler) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__EventHandler);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pEVar5 = (EventHandler *)func_?(ppEVar1,pDVar3,a);
-    bVar6 = pEVar5 == a;
-    a = pEVar5;
-    if (bVar6) {
+    pEVar4 = (EventHandler *)func_?(&(this->fields).DirtyChanged,pDVar2,a);
+    bVar5 = pEVar4 == a;
+    a = pEVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -2703,8 +2775,7 @@ code_?:
         pSVar1 = (String *)(*pcVar7)();
         return pSVar1;
       }
-      iVar4 = (pSVar5->fields)._stringLength;
-      if (iVar4 == 2) {
+      if ((pSVar5->fields)._stringLength == 2) {
         if ((TypeInfo__GNU__Gettext__IsoCodes->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -2714,7 +2785,7 @@ code_?:
         }
         return pSVar1;
       }
-      if (iVar4 == 5) {
+      if ((pSVar5->fields)._stringLength == 5) {
         uVar8 = mscorlib.dll::System::String::String_get_Chars(pSVar5,2,(MethodInfo *)0x0);
         if (uVar8 == 0x5f) {
           code = mscorlib.dll::System::String::String_Substring_1(pSVar5,0,2,(MethodInfo *)0x0);
@@ -2846,7 +2917,7 @@ Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_get_PluralFormsDescriptions
       pSVar2 = Catalog_GetHeader(this,StringLiteral_Plural_Forms,(MethodInfo *)0x0);
       this_02 = PluralFormsCalculator::PluralFormsCalculator_Make(pSVar2,(MethodInfo *)0x0);
       iVar4 = Catalog_get_PluralFormsCount(this,(MethodInfo *)0x0);
-      this = (Catalog *)0x0;
+      iVar5 = 0;
       if (iVar4 < 1) {
         if (this_01 ==
             (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
@@ -2854,41 +2925,40 @@ Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_get_PluralFormsDescriptions
       }
       else {
         do {
-          pMVar5 = in_stack_6;
+          iVar6 = iVar5;
+          pMVar7 = in_stack_8;
           if (this_02 == (PluralFormsCalculator *)0x0) {
 code_?:
-            pIVar7 = TypeInfo__System__Int32;
-            pOVar8 = (Object *)func_?();
+            pIVar9 = TypeInfo__System__Int32;
+            pOVar10 = (Object *)func_?();
             pSVar2 = mscorlib.dll::System::String::String_Format
-                               (StringLiteral_Form__0_,pOVar8,(MethodInfo *)0x0);
+                               (StringLiteral_Form__0_,pOVar10,(MethodInfo *)0x0);
           }
           else {
-            pMVar5 = (MethodInfo *)0x1;
+            pMVar7 = (MethodInfo *)0x1;
             this_01 = pLVar1;
             do {
-              iVar9 = PluralFormsCalculator::PluralFormsCalculator_Evaluate_1
-                                (this_02,0,in_stack_6);
-              if (iVar9 == (int)this) break;
-              pMVar5 = (MethodInfo *)((int)&pMVar5->methodPointer + 1);
-            } while ((int)pMVar5 < 1000);
-            if (pMVar5 == (MethodInfo *)0x3e8) {
+              iVar11 = PluralFormsCalculator::PluralFormsCalculator_Evaluate_1
+                                 (this_02,(ulonglong)(uint)((int)pMVar7 >> 0x1f),in_stack_8);
+              if (iVar11 == iVar5) break;
+              pMVar7 = (MethodInfo *)((int)&pMVar7->methodPointer + 1);
+            } while ((int)pMVar7 < 1000);
+            if (pMVar7 == (MethodInfo *)0x3e8) {
               this_01 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                          *)0x0;
-              pMVar5 = (MethodInfo *)&UNK_?;
-              iVar9 = PluralFormsCalculator::PluralFormsCalculator_Evaluate_1
-                                (this_02,0,unaff_retaddr);
+              pMVar7 = (MethodInfo *)&UNK_?;
+              iVar11 = PluralFormsCalculator::PluralFormsCalculator_Evaluate_1(this_02,0,unaff_EBP);
               pLVar1 = this_01;
-              if (iVar9 != (ulonglong)(uint)((int)this >> 0x1f) << 0x20) goto code_?;
-              pMVar5 = (MethodInfo *)0x0;
+              if (iVar11 != iVar6) goto code_?;
+              pMVar7 = (MethodInfo *)0x0;
             }
-            pIVar7 = TypeInfo__System__Int32;
-            pOVar8 = (Object *)func_?();
-            arg1 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffec);
+            pIVar9 = TypeInfo__System__Int32;
+            pOVar10 = (Object *)func_?();
+            arg1 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffe8);
             pSVar2 = mscorlib.dll::System::String::String_Format_1
-                               (StringLiteral_Form__0___e_g____1___,pOVar8,arg1,(MethodInfo *)0x0);
+                               (StringLiteral_Form__0___e_g____1___,pOVar10,arg1,(MethodInfo *)0x0);
             pLVar1 = this_01;
           }
-          this = (Catalog *)((int)&this->klass + 1);
           if (this_01 ==
               (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                *)0x0) goto code_?;
@@ -2897,16 +2967,17 @@ code_?:
                     ((List_1_System_Object_ *)this_01,(Object *)pSVar2,
                      MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
                     );
-          in_stack_6 = pMVar5;
-        } while ((int)this < (int)pIVar7);
+          iVar5 = iVar6 + 1;
+          in_stack_8 = pMVar7;
+        } while (iVar5 < (int)pIVar9);
       }
-      pMVar10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+      pMVar12 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
                ::MultiColumnCollectionHeader+ViewState+ColumnState]::
                List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
                          (this_01,
                           MethodInfo__System__Collections__Generic__List<System::String>__ToArray__)
       ;
-      return (String__Array *)pMVar10;
+      return (String__Array *)pMVar12;
     }
     if (this_01 !=
         (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
@@ -2919,20 +2990,20 @@ code_?:
                 ((List_1_System_Object_ *)this_01,(Object *)StringLiteral_Plural,
                  MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
                 );
-      pMVar10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+      pMVar12 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
                ::MultiColumnCollectionHeader+ViewState+ColumnState]::
                List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
                          (this_01,
                           MethodInfo__System__Collections__Generic__List<System::String>__ToArray__)
       ;
-      return (String__Array *)pMVar10;
+      return (String__Array *)pMVar12;
     }
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  pSVar12 = (String__Array *)(*pcVar11)();
-  return pSVar12;
+  pcVar13 = (code *)swi(3);
+  pSVar14 = (String__Array *)(*pcVar13)();
+  return pSVar14;
 }
 
 
@@ -2946,27 +3017,26 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_remove_DirtyChanged
     func_?(&TypeInfo__System__EventHandler);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).DirtyChanged;
-  source = *ppEVar1;
+  source = (this->fields).DirtyChanged;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((EventHandler__Class *)pDVar2->klass == TypeInfo__System__EventHandler) {
-        pDVar3 = pDVar2;
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((EventHandler__Class *)pDVar1->klass == TypeInfo__System__EventHandler) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__EventHandler);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__EventHandler);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pEVar5 = (EventHandler *)func_?(ppEVar1,pDVar3,source);
-    bVar6 = pEVar5 == source;
-    source = pEVar5;
-    if (bVar6) {
+    pEVar4 = (EventHandler *)func_?(&(this->fields).DirtyChanged,pDVar2,source);
+    bVar5 = pEVar4 == source;
+    source = pEVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -2989,58 +3059,50 @@ void Assembly-CSharp.dll::GNU::Gettext::Catalog::Catalog_set_CommentForGui
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
   if (bVar1 != 0) {
     pSVar2 = TypeInfo__System__String->static_fields->Empty;
-    ppSVar3 = &(this->fields).Comment;
-    *ppSVar3 = pSVar2;
-    func_?(ppSVar3,pSVar2);
+    (this->fields).Comment = pSVar2;
+    func_?(&(this->fields).Comment,pSVar2);
     return;
   }
-  this_00 = (String__Array *)func_?(TypeInfo__System__Text__StringBuilder);
+  this_00 = (Catalog *)func_?(TypeInfo__System__Text__StringBuilder);
   mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor
             ((StringBuilder *)this_00,(MethodInfo *)0x0);
-  pSVar4 = (String__Array *)func_?(TypeInfo__System__String,1);
+  pSVar3 = (String__Array *)func_?(TypeInfo__System__String,1);
   pSVar2 = mscorlib.dll::System::Environment::Environment_get_NewLine((MethodInfo *)0x0);
-  if (pSVar4 != (String__Array *)0x0) {
-    if (pSVar4->max_length == 0) {
+  if (pSVar3 != (String__Array *)0x0) {
+    if (pSVar3->max_length == 0) {
 code_?:
       func_?();
     }
     else {
-      pSVar4->vector[0] = pSVar2;
-      func_?(pSVar4->vector,pSVar2);
+      pSVar3->vector[0] = pSVar2;
+      func_?(pSVar3->vector,pSVar2);
       if (value != (String *)0x0) {
-        pSVar4 = mscorlib.dll::System::String::String_Split_4
-                           (value,pSVar4,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
-        pSVar5 = (StringBuilder *)0x0;
-        if (pSVar4 != (String__Array *)0x0) {
-          ppSVar3 = pSVar4->vector;
-          for (; (int)pSVar5 < (int)pSVar4->max_length;
-              pSVar5 = (StringBuilder *)((int)&pSVar5->klass + 1)) {
-            if ((StringBuilder *)pSVar4->max_length <= pSVar5) goto code_?;
-            pSVar2 = *ppSVar3;
-            if (this_00 == (String__Array *)0x0) goto code_?;
-            pSVar4 = this_00;
-            iVar6 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_get_Length
+        pSVar3 = mscorlib.dll::System::String::String_Split_4
+                           (value,pSVar3,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
+        uVar4 = 0;
+        if (pSVar3 != (String__Array *)0x0) {
+          for (; (int)uVar4 < (int)pSVar3->max_length; uVar4 = uVar4 + 1) {
+            if (pSVar3->max_length <= uVar4) goto code_?;
+            if (this_00 == (Catalog *)0x0) goto code_?;
+            str1 = this_00;
+            iVar5 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_get_Length
                               ((StringBuilder *)this_00,(MethodInfo *)0x0);
-            if (iVar6 != 0) {
+            if (iVar5 != 0) {
               mscorlib.dll::System::Text::StringBuilder::StringBuilder_AppendLine
                         ((StringBuilder *)this_00,(MethodInfo *)0x0);
             }
             pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                               (::StringLiteral___,pSVar2,(MethodInfo *)0x0);
+                               (::StringLiteral___,(String *)str1,(MethodInfo *)0x0);
             mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                       ((StringBuilder *)this_00,pSVar2,(MethodInfo *)0x0);
-            ppSVar3 = ppSVar3 + 1;
-            this = (Catalog *)this_00;
+            this = this_00;
           }
-          if (this_00 != (String__Array *)0x0) {
+          if (this_00 != (Catalog *)0x0) {
             pSVar2 = (String *)
-                     (*(code *)(((StringBuilder__Class *)this_00->klass)->vtable).ToString.method)
-                               (this_00,(((StringBuilder__Class *)this_00->klass)->vtable).
-                                        System_Runtime_Serialization_ISerializable_GetObjectData.
-                                        methodPtr);
-            ppSVar3 = &(this->fields).Comment;
-            *ppSVar3 = pSVar2;
-            func_?(ppSVar3,pSVar2);
+                     (*(code *)(this_00->klass->vtable).ToString.method)
+                               (this_00,(this_00->klass->vtable).GetEnumerator.methodPtr);
+            (this->fields).Comment = pSVar2;
+            func_?(&(this->fields).Comment,pSVar2);
             return;
           }
         }
@@ -3049,8 +3111,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

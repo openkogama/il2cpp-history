@@ -819,12 +819,13 @@ void Assembly-CSharp.dll::TouchInputMap::TouchInputMap__ctor(TouchInputMap *this
                                                   );
                                                   method_00 = (MethodInfo *)
                                                               &(this->fields).KeyCodeMapping;
-                                                  *(
-                                                  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_
-                                                  **)method_00 = pDVar1;
+                                                  (this->fields).KeyCodeMapping =
+                                                       (
+                                                  Dictionary_2_KogamaControls_UnityEngine_KeyCode_ *
+                                                  )pDVar1;
                                                   func_?(method_00,pDVar1);
                                                   mscorlib.dll::System::ThrowHelper::
-                                                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                                                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                                                             ((Object *)this,
                                                              ExceptionArgument__Enum_obj,method_00);
                                                   return;

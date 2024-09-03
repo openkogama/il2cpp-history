@@ -44,92 +44,75 @@ void Assembly-CSharp.dll::PlayerListToggle::PlayerListToggle_CreatePlayerList
   }
   method_00 = TypeInfo__PlayerListToggle____c__DisplayClass5_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].monitor = (MonitorData *)this;
     func_?(&value[1].monitor,this);
-    pPVar1 = (this->fields).playerListsPrefab;
+    original = (this->fields).playerListsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pOVar2 = (Object__Class *)
+    pOVar1 = (Object__Class *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)pPVar1,
+                       ((Object *)original,
                         PlayerListsHold_MethodInfo__UnityEngine__Object__Instantiate<PlayerListsHold>_PlayerListsHold_
                        );
-    pOVar3 = value + 1;
-    pOVar3->klass = pOVar2;
-    func_?(pOVar3,pOVar2);
-    pOVar2 = pOVar3->klass;
-    if (pOVar2 != (Object__Class *)0x0) {
-      pPVar1 = (this->fields).playerListsPrefab;
-      pIVar4 = &(pOVar2->_0).byval_arg;
-      (pIVar4->data).dummy = pPVar1;
-      func_?(pIVar4,pPVar1);
-      *(undefined1 *)&(pOVar2->_0).typeMetadataHandle = 1;
-      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                ((Component *)this,(MethodInfo *)0x0);
+    value[1].klass = pOVar1;
+    func_?(value + 1,pOVar1);
+    if (value[1].klass != (Object__Class *)0x0) {
+      PlayerLists::PlayerLists_Initialize
+                ((PlayerLists *)value[1].klass,(PlayerLists *)(this->fields).playerListsPrefab,
+                 GameStatCounterType__Enum_Kill,(MethodInfo *)0x0);
+      root = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
       if ((TypeInfo__PlayerListToggle____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__PlayerListToggle____c);
+        func_?();
       }
       callbackFunction = TypeInfo__PlayerListToggle____c->static_fields->__9__5_0;
       if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
         if ((TypeInfo__PlayerListToggle____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__PlayerListToggle____c);
+          func_?();
         }
         object = TypeInfo__PlayerListToggle____c->static_fields->__9;
-        pEVar5 = 
-        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-        ;
-        callbackFunction =
-             (ExecuteEvents_EventFunction_1_IUIStack_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                            );
-        pEVar6 = callbackFunction;
+        callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+        root = callbackFunction;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                    MethodInfo__PlayerListToggle____c___CreatePlayerList_b__5_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         TypeInfo__PlayerListToggle____c->static_fields->__9__5_0 = callbackFunction;
-        func_?(&TypeInfo__PlayerListToggle____c->static_fields->__9__5_0,callbackFunction,
-                        pEVar5,pEVar6);
+        func_?(&TypeInfo__PlayerListToggle____c->static_fields->__9__5_0);
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        func_?();
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                ((GameObject *)
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                 ,(BaseEventData *)0x0,
+                ((GameObject *)root,(BaseEventData *)0x0,
                  (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-      callbackFunction_00 =
-           (ExecuteEvents_EventFunction_1_System_Object_ *)
-           func_?(
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                          );
+      root_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
                  MethodInfo__PlayerListToggle____c__DisplayClass5_0___CreatePlayerList_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction_00,
+                (root_00,(BaseEventData *)0x0,callbackFunction_00,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
       return;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

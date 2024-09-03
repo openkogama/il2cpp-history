@@ -29,8 +29,8 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  pAVar6 = (this->fields).onDestroy;
-  if (pAVar6 != (Action *)0x0) {
+  if ((this->fields).onDestroy != (Action *)0x0) {
+    pAVar6 = (this->fields).onDestroy;
     (*(pAVar6->fields)._._.invoke_impl)
               ((pAVar6->fields)._._.method_code,(pAVar6->fields)._._.method);
   }
@@ -62,7 +62,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
                 ((Object_1 *)obj,(MethodInfo *)0x0);
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)&stack0xffffffc8,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Component>__Dispose__
@@ -105,8 +105,8 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
     func_?(&StringLiteral_Failed_to_get_rigid_bodies);
     cRam_? = '\x01';
   }
-  pAVar1 = (this->fields).onEnter;
-  if (pAVar1 != (Action *)0x0) {
+  if ((this->fields).onEnter != (Action *)0x0) {
+    pAVar1 = (this->fields).onEnter;
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }
@@ -244,7 +244,7 @@ code_?:
                         );
       if (bVar10 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   ((Object *)&stack0xffffffbc,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Component>__Dispose__
@@ -392,7 +392,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::
   }
   method_00 = TypeInfo__MVVehicleBase_LocalObjectsBase____c__DisplayClass15_0;
   pOVar1 = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   pMVar2 = this;
   this = (MVVehicleBase_LocalObjectsBase *)
@@ -489,9 +489,9 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Component>__List__);
   method_00 = (MethodInfo *)&(this->fields).localComponents;
-  *(List_1_UnityEngine_Component_ **)method_00 = this_00;
+  (this->fields).localComponents = this_00;
   func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }

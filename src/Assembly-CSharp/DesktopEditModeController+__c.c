@@ -40,7 +40,7 @@ void Assembly-CSharp.dll::DesktopEditModeController+<>c::DesktopEditModeControll
   }
   method_00 = TypeInfo__DesktopEditModeController____c;
   value = (DesktopEditModeController_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__DesktopEditModeController____c->static_fields->__9 = value;
   func_?(TypeInfo__DesktopEditModeController____c->static_fields,value);

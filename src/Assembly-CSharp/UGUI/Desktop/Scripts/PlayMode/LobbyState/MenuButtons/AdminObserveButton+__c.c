@@ -7,22 +7,34 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::PlayMode::LobbyState::MenuButt
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IUIStack *)&TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    func_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
     cRam_? = '\x01';
   }
   if (handler != (IUIStack *)0x0) {
-    pIStack_1 = handler;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    uStack_3 = 2;
-    func_?();
+    pIVar1 = handler->klass;
+    uVar2 = 0;
+    uVar3._0_1_ = (pIVar1->_1).rank;
+    uVar3._1_1_ = (pIVar1->_1).minimumAlignment;
+    if (uVar3 != 0) {
+      do {
+        if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
+            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+          pIVar1 = handler->klass;
+          iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
+          (*(code *)(&(pIVar1->vtable).Pop)[iVar4].method)
+                    (handler,(&(pIVar1->vtable).PopGroups)[iVar4].methodPtr);
+          return;
+        }
+        uVar2 = uVar2 + 1;
+      } while (uVar2 < uVar3);
+    }
+    puVar5 = (undefined4 *)func_?(handler,TypeInfo__UnityEngine__EventSystems__IUIStack,2);
+    (*(code *)*puVar5)(handler,puVar5[1]);
     return;
   }
-  pIStack_1 = (IUIStack *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -42,7 +54,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::PlayMode::LobbyState::MenuButt
   method_00 = 
   TypeInfo__UGUI__Desktop__Scripts__PlayMode__LobbyState__MenuButtons__AdminObserveButton____c;
   value = (AdminObserveButton_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__UGUI__Desktop__Scripts__PlayMode__LobbyState__MenuButtons__AdminObserveButton____c->
   static_fields->__9 = value;

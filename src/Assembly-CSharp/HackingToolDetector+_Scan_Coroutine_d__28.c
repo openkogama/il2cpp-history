@@ -67,17 +67,16 @@ bool Assembly-CSharp.dll::HackingToolDetector+<Scan_Coroutine>d__28::
                 func_?(TypeInfo__UnityEngine__WaitForSeconds);
       SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
                 (this_00,fVar3,(MethodInfo *)0x0);
-      ppOVar6 = &(this->fields).__2__current;
-      *ppOVar6 = (Object *)this_00;
-      func_?(ppOVar6,this_00);
+      (this->fields).__2__current = (Object *)this_00;
+      func_?(&(this->fields).__2__current,this_00);
       (this->fields).__1__state = 1;
       return 1;
     }
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  bVar5 = (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  bVar5 = (*pcVar6)();
   return bVar5;
 }
 

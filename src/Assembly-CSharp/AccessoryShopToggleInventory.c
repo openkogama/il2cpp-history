@@ -123,23 +123,39 @@ void Assembly-CSharp.dll::AccessoryShopToggleInventory::
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IAccessoryInventoryControl;
-    func_?();
+    func_?(&TypeInfo__UnityEngine__EventSystems__IAccessoryInventoryControl);
     cRam_? = '\x01';
   }
-  pTVar2 = (this->fields).toggle;
-  if ((pTVar2 != (Toggle *)0x0) && (x != (IAccessoryInventoryControl *)0x0)) {
-    ppIStack_1 = (IAccessoryInventoryControl__Class **)(uint)((pTVar2->fields).m_IsOn == 0);
-    pIStack_3 = x;
-    pIStack_4 = TypeInfo__UnityEngine__EventSystems__IAccessoryInventoryControl;
-    func_?(0);
-    return;
+  pTVar1 = (this->fields).toggle;
+  if (pTVar1 != (Toggle *)0x0) {
+    bVar2 = (pTVar1->fields).m_IsOn;
+    if (x != (IAccessoryInventoryControl *)0x0) {
+      pIVar3 = x->klass;
+      uVar4 = 0;
+      uVar5._0_1_ = (pIVar3->_1).rank;
+      uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
+      if (uVar5 != 0) {
+        do {
+          if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
+              (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAccessoryInventoryControl) {
+            ppMVar6 = &(&(x->klass->vtable).DisplayPurchasableItems)
+                       [x->klass->interfaceOffsets[uVar4].offset].method;
+            goto code_?;
+          }
+          uVar4 = uVar4 + 1;
+        } while (uVar4 < uVar5);
+      }
+      ppMVar6 = (MethodInfo **)
+                func_?(x,TypeInfo__UnityEngine__EventSystems__IAccessoryInventoryControl,0)
+      ;
+code_?:
+      (*(code *)*ppMVar6)(x,bVar2 == 0,ppMVar6[1]);
+      return;
+    }
   }
-  ppIStack_1 = (IAccessoryInventoryControl__Class **)&stack0xfffffffc;
-  uVar5 = func_?(&pIStack_4);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

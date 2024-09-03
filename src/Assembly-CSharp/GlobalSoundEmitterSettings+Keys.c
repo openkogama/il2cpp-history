@@ -24,9 +24,9 @@ void Assembly-CSharp.dll::GlobalSoundEmitterSettings+Keys::GlobalSoundEmitterSet
       pSVar1->vector[1] = StringLiteral_pitch;
       func_?(pSVar1->vector + 1,pSVar2);
       method_00 = (MethodInfo *)&this->fields;
-      ((GlobalSoundEmitterSettings_Keys__Fields *)method_00)->keys = pSVar1;
+      (this->fields).keys = pSVar1;
       func_?(method_00,pSVar1);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 ((Object *)this,ExceptionArgument__Enum_obj,method_00);
       return;
     }

@@ -213,7 +213,7 @@ void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::Explosio
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields)._._RuntimeEventType_k__BackingField = (undefined1)runtimeEventType;
   if (bytePacker != (BytePacker *)0x0) {
@@ -243,7 +243,7 @@ void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::Explosio
                Vector3 normal,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._._RuntimeEventType_k__BackingField = (undefined1)runtimeEventType;
   worldPos.y = worldPosition.x;
@@ -270,7 +270,7 @@ void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::Explosio
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._._RuntimeEventType_k__BackingField = (undefined1)runtimeEventType;
   worldPos.y = worldPosition.x;

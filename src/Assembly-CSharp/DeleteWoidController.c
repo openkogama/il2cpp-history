@@ -180,7 +180,7 @@ void Assembly-CSharp.dll::DeleteWoidController::DeleteWoidController_Initialize
   }
   method_00 = TypeInfo__DeleteWoidController____c__DisplayClass2_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   original = (this->fields).pickHelperPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -192,9 +192,8 @@ void Assembly-CSharp.dll::DeleteWoidController::DeleteWoidController_Initialize
                       PickHelper_MethodInfo__UnityEngine__Object__Instantiate<PickHelper>_PickHelper_
                      );
   if (value != (Object *)0x0) {
-    pOVar2 = value + 1;
-    pOVar2->klass = pOVar1;
-    func_?(pOVar2,pOVar1);
+    value[1].klass = pOVar1;
+    func_?(value + 1,pOVar1);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
     callbackFunction =
@@ -214,7 +213,7 @@ void Assembly-CSharp.dll::DeleteWoidController::DeleteWoidController_Initialize
               (root,(BaseEventData *)0x0,callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
-    pOVar1 = pOVar2->klass;
+    pOVar1 = value[1].klass;
     this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
@@ -222,18 +221,17 @@ void Assembly-CSharp.dll::DeleteWoidController::DeleteWoidController_Initialize
                MethodInfo__DeleteWoidController__OnPick_MVWorldObjectClient__MVWorldObjectClient_,
                (MethodInfo *)0x0);
     if ((pOVar1 != (Object__Class *)0x0) &&
-       (piVar3 = *(int **)&(pOVar1->_0).byval_arg.attrs, piVar3 != (int *)0x0)) {
-      (**(code **)(*piVar3 + 0x318))
-                (piVar3,StringLiteral_Select_object_to_delete,*(undefined4 *)(*piVar3 + 0x31c));
-      pIVar4 = &(pOVar1->_0).byval_arg;
-      (pIVar4->data).typeHandle = (Il2CppMetadataTypeHandle)this_00;
-      func_?(pIVar4,this_00);
+       (piVar2 = *(int **)&(pOVar1->_0).byval_arg.attrs, piVar2 != (int *)0x0)) {
+      (**(code **)(*piVar2 + 0x318))
+                (piVar2,StringLiteral_Select_object_to_delete,*(undefined4 *)(*piVar2 + 0x31c));
+      (pOVar1->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)this_00;
+      func_?(&(pOVar1->_0).byval_arg,this_00);
       return;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -364,14 +362,29 @@ void Assembly-CSharp.dll::DeleteWoidController::DeleteWoidController__OnPick_b__
             (this_00,(Object *)this,
              MethodInfo__DeleteWoidController__DeleteWorldObject_bool__ConfirmationPopup_,
              (MethodInfo *)0x0);
-  if (x != (IModalPopupCreator *)0x0) {
-    pSStack1 = ::StringLiteral__;
+  if (x == (IModalPopupCreator *)0x0) {
     func_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = 0;
+  pIVar3 = x->klass;
+  uVar4._0_1_ = (pIVar3->_1).rank;
+  uVar4._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar4 != 0) {
+    do {
+      if (pIVar3->interfaceOffsets[uVar2].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
+        ppMVar5 = &(&(x->klass->vtable).Create_2)[x->klass->interfaceOffsets[uVar2].offset].method;
+        goto code_?;
+      }
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < uVar4);
+  }
+  ppMVar5 = (MethodInfo **)func_?();
+code_?:
+  (*(code *)*ppMVar5)(x);
   return;
 }
 

@@ -22,7 +22,8 @@ public class PickupItemMeleeWeapon : PickupItemEditable
 
 	// Properties
 	public override AvatarItemType Type { get; }
-	public override bool ActivateGunModeOnEquip { get; }
+	public override bool FirstPerson { get; }
+	public override bool GunMode { get; }
 	public Color TrailColor { get; }
 	public Color HitEffectColor { get; }
 	protected new MeleeWeaponConfiguration Configuration { get; set; }
@@ -42,7 +43,7 @@ public class PickupItemMeleeWeapon : PickupItemEditable
 	}
 
 	[CompilerGenerated]
-	private sealed class _CheckHitCoroutine_d__25 : IEnumerator<object>
+	private sealed class _CheckHitCoroutine_d__28 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -56,7 +57,7 @@ public class PickupItemMeleeWeapon : PickupItemEditable
 
 		// Constructors
 		[DebuggerHidden]
-		public _CheckHitCoroutine_d__25(int __1__state);
+		public _CheckHitCoroutine_d__28(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -73,11 +74,14 @@ public class PickupItemMeleeWeapon : PickupItemEditable
 	protected override EditableItemConfiguration GetDefaultConfiguration();
 	protected override void SetConfiguration(Dictionary<object, object> itemData);
 	public override void OnStateChanged(Dictionary<object, object> newState);
+	protected override void SetValuesBasedOnConfiguration();
 	protected override void OnFire(bool isLocal);
-	[IteratorStateMachine(typeof(_CheckHitCoroutine_d__25))]
+	[IteratorStateMachine(typeof(_CheckHitCoroutine_d__28))]
 	private IEnumerator CheckHitCoroutine(bool isLocal);
 	private void CheckHit(bool isLocal);
-	protected override void OnHit(List<VoxelHit> voxelHits, Ray lineOfFire);
+	private void OnHit(List<VoxelHit> voxelHits, Ray lineOfFire);
+	private void OnLocalHit(List<VoxelHit> voxelHits);
+	private void OnLocalHit(VoxelHit voxelHit);
 	public override void UpdateWithDirection(Vector3 dir);
 	private void OnValidate();
 	public override bool IsSameItemData(Dictionary<object, object> itemData);

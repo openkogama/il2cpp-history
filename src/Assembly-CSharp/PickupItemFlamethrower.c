@@ -12,10 +12,10 @@ Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower_DoFlaming
   }
   method_00 = TypeInfo__PickupItemFlamethrower___DoFlaming_d__16;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -34,10 +34,10 @@ Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower_DoFuelBurn
   }
   method_00 = TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__17;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -69,7 +69,7 @@ void Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower_ResetAm
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   AStack_1 = (ACTkByte4)(this->fields).maxFuelTime.currentCryptoKey;
   AStack_2 = (this->fields).maxFuelTime.hiddenValue;
@@ -151,7 +151,7 @@ code_?:
           }
           this = (PickupItemFlamethrower *)TypeInfo__PickupItemFlamethrower___DoFlaming_d__16;
           pOVar5 = (Object *)func_?();
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     (pOVar5,ExceptionArgument__Enum_obj,(MethodInfo *)this);
           pOVar5[1].klass = (Object__Class *)0x0;
           pOVar5[2].klass = (Object__Class *)this_01;
@@ -165,7 +165,7 @@ code_?:
           method_00 = TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__17;
           pOVar5 = (Object *)func_?();
           method = (MethodInfo *)&UNK_?;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     (pOVar5,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
           pOVar5[1].klass = (Object__Class *)0x0;
           pOVar5[2].klass = (Object__Class *)this_01;
@@ -241,7 +241,7 @@ void Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower_Update
     if (bVar2 == 0) {
       pAVar1 = (this->fields).audioSource;
       if (pAVar1 == (AudioSource *)0x0) goto code_?;
-      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play
+      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1
                 (pAVar1,(MethodInfo *)0x0);
     }
     pPVar3 = (this->fields).flameParticles;

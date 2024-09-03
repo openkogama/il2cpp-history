@@ -6,16 +6,15 @@ void Assembly-CSharp.dll::AvatarPurchasePopup::AvatarPurchasePopup_Initialize
                MethodInfo *method)
 
 {
-  ppAVar1 = &(this->fields).item;
-  *ppAVar1 = item;
-  func_?(ppAVar1,item);
-  pTVar2 = (this->fields).avatarGoldCost;
+  (this->fields).item = item;
+  func_?(&(this->fields).item,item);
+  pTVar1 = (this->fields).avatarGoldCost;
   if (item != (AvatarRepositoryItem *)0x0) {
-    pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
                        ((Int32 *)&(item->fields).priceGold,(MethodInfo *)0x0);
-    if (pTVar2 != (Text *)0x0) {
-      (*(code *)(pTVar2->klass->vtable).set_text.method)
-                (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    if (pTVar1 != (Text *)0x0) {
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       if ((image != (RawImage *)0x0) &&
          (this_00 = (this->fields).avatarImage, this_00 != (RawImage *)0x0)) {
         UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
@@ -25,8 +24,8 @@ void Assembly-CSharp.dll::AvatarPurchasePopup::AvatarPurchasePopup_Initialize
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -93,9 +92,10 @@ void Assembly-CSharp.dll::AvatarPurchasePopup::AvatarPurchasePopup__OnPurchaseCl
       do {
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IPurchaseAvatar) {
+          pIVar2 = x->klass;
           iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-          (*(code *)(&x->klass->vtable)[iVar5].PurchaseAvatar.method)
-                    (x,pAVar1,(&x->klass[1]._0.image)[iVar5 * 2]);
+          (*(code *)(&pIVar2->vtable)[iVar5].PurchaseAvatar.method)
+                    (x,pAVar1,(&pIVar2[1]._0.image)[iVar5 * 2]);
           return;
         }
         uVar3 = uVar3 + 1;

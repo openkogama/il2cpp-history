@@ -25,15 +25,16 @@ Assembly-CSharp.dll::AdminToolController::AdminToolController_GetPlayer
                    );
     cRam_? = '\x01';
   }
-  pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar4 != (MVNetworkGame *)0x0) &&
-     (this = (pMVar4->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
+  pOStack_4 = (Object__Class *)0x0;
+  pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar5 != (MVNetworkGame *)0x0) &&
+     (this = (pMVar5->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
     this_00 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                *)MVPlayerContainer::MVPlayerContainer_get_Values(this,(MethodInfo *)0x0);
     if (this_00 !=
         (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
-      pDVar5 = mscorlib.dll::System::Collections::Generic::
+      pDVar6 = mscorlib.dll::System::Collections::Generic::
                Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                StyleSheetCache+SheetHandleKey,System::Object]::
                Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
@@ -42,50 +43,50 @@ Assembly-CSharp.dll::AdminToolController::AdminToolController_GetPlayer
                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
                          );
       uStack_1 = 1;
-      pMVar6 = (MVPlayer *)pDVar5->_currentValue;
+      pMVar7 = (MVPlayer *)pDVar6->_currentValue;
       while( true ) {
-        pMVar7 = pMVar6;
-        bVar8 = mscorlib.dll::System::Collections::Generic::
+        pMVar8 = pMVar7;
+        bVar9 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                 UInt32,System::Object]::
                 Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                           ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                            *)&pOStack_9,
+                            *)&pOStack_4,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
                           );
-        if (bVar8 == 0) {
+        if (bVar9 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    ((Object *)&pOStack_9,
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                    ((Object *)&pOStack_4,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
                      ,in_stack_10);
           *unaff_FS_OFFSET = uStack_3;
           return (MVPlayer *)0x0;
         }
-        if ((pMVar7 == (MVPlayer *)0x0) ||
-           (pUVar11 = (pMVar7->fields)._UserProfileData_k__BackingField,
+        if ((pMVar8 == (MVPlayer *)0x0) ||
+           (pUVar11 = (pMVar8->fields)._UserProfileData_k__BackingField,
            pUVar11 == (UserProfileData *)0x0)) break;
-        pMVar6 = (MVPlayer *)userName;
-        bVar8 = mscorlib.dll::System::String::String_op_Equality
+        pMVar7 = (MVPlayer *)userName;
+        bVar9 = mscorlib.dll::System::String::String_op_Equality
                           ((pUVar11->fields).UserName,userName,(MethodInfo *)0x0);
-        if (bVar8 != 0) {
+        if (bVar9 != 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    ((Object *)&pOStack_9,
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                    ((Object *)&pOStack_4,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
                      ,in_stack_12);
           *unaff_FS_OFFSET = uStack_3;
-          return pMVar7;
+          return pMVar8;
         }
       }
     }
   }
   func_?();
   pcVar13 = (code *)swi(3);
-  pMVar6 = (MVPlayer *)(*pcVar13)();
-  return pMVar6;
+  pMVar7 = (MVPlayer *)(*pcVar13)();
+  return pMVar7;
 }
 
 
@@ -718,28 +719,81 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController_OnRevokeEditR
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).playerName;
-  if (pTVar1 == (Text *)0x0) {
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  userName = (String *)
-             (*(code *)(pTVar1->klass->vtable).get_text.method)
-                       (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
-  if ((TypeInfo__AdminToolController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__AdminToolController);
-  }
-  player = AdminToolController_GetPlayer(userName,(MethodInfo *)0x0);
-  if (player == (MVPlayer *)0x0) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+  if (pTVar1 != (Text *)0x0) {
+    userName = (String *)
+               (*(code *)(pTVar1->klass->vtable).get_text.method)
+                         (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
+    if ((TypeInfo__AdminToolController->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__AdminToolController);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-              ((Object *)StringLiteral_Player_is_not_present_in_session,(MethodInfo *)0x0);
-    return;
+    target = AdminToolController_GetPlayer(userName,(MethodInfo *)0x0);
+    if (target == (MVPlayer *)0x0) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+                ((Object *)StringLiteral_Player_is_not_present_in_session,(MethodInfo *)0x0);
+      return;
+    }
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&
+                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                     );
+      func_?(&
+                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                     );
+      func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      func_?(&
+                      MethodInfo__OwnerOps____c___RevokeEditRightsAndKick_b__1_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     );
+      func_?(&TypeInfo__OwnerOps____c);
+      cRam_? = '\x01';
+    }
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar2 != (MVNetworkGame *)0x0) &&
+       (this_00 = (pMVar2->fields).operationRequests,
+       this_00 != (MVNetworkGame_OperationRequests *)0x0)) {
+      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_RevokeEditRights
+                (this_00,target,(MethodInfo *)0x0);
+      if ((TypeInfo__OwnerOps____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__OwnerOps____c);
+      }
+      callbackFunction = TypeInfo__OwnerOps____c->static_fields->__9__1_0;
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+        if ((TypeInfo__OwnerOps____c->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__OwnerOps____c);
+        }
+        object = TypeInfo__OwnerOps____c->static_fields->__9;
+        callbackFunction =
+             (ExecuteEvents_EventFunction_1_IUIStack_ *)
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                            );
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                   MethodInfo__OwnerOps____c___RevokeEditRightsAndKick_b__1_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        TypeInfo__OwnerOps____c->static_fields->__9__1_0 = callbackFunction;
+        func_?(&TypeInfo__OwnerOps____c->static_fields->__9__1_0,callbackFunction);
+      }
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      return;
+    }
   }
-  OwnerOps::OwnerOps_RevokeEditRightsAndKick((MonoBehaviour *)this,player,(MethodInfo *)0x0);
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -839,15 +893,15 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController__cctor(Method
                  (Object *)StringLiteral_Cheating,value_00,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Add_System__String__AdminToolController__DefaultBan_
                 );
-      pSVar1 = StringLiteral__24;
-      pSVar2 = StringLiteral_Hours;
+      pSVar1 = StringLiteral_Hours;
+      pSVar2 = StringLiteral__24;
       pSVar4 = StringLiteral_You_are_banned_for_inappropriate;
       func_?(&stack0xffffffe4,StringLiteral_You_are_banned_for_inappropriate);
-      func_?(&stack0xffffffe8,pSVar1);
-      func_?(&stack0xffffffec,pSVar2);
-      value_01.BanDuration = pSVar1;
+      func_?(&stack0xffffffe8,pSVar2);
+      func_?(&stack0xffffffec,pSVar1);
+      value_01.BanDuration = pSVar2;
       value_01.BanReason = pSVar4;
-      value_01.BanDurationFormat = pSVar2;
+      value_01.BanDurationFormat = pSVar1;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
       Object,AdminToolController+DefaultBan]::
       Dictionary_2_System_Object_AdminToolController_DefaultBan__Add
@@ -855,15 +909,15 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController__cctor(Method
                  (Object *)StringLiteral_Abusive_chat,value_01,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Add_System__String__AdminToolController__DefaultBan_
                 );
-      pSVar1 = StringLiteral__2;
-      pSVar2 = StringLiteral_Weeks;
+      pSVar1 = StringLiteral_Weeks;
+      pSVar2 = StringLiteral__2;
       puVar3 = &stack0xffffffd8;
       func_?();
       func_?();
       func_?(&stack0xffffffe0);
-      value_02.BanDuration = pSVar1;
+      value_02.BanDuration = pSVar2;
       value_02.BanReason = (String *)puVar3;
-      value_02.BanDurationFormat = pSVar2;
+      value_02.BanDurationFormat = pSVar1;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
       Object,AdminToolController+DefaultBan]::
       Dictionary_2_System_Object_AdminToolController_DefaultBan__Add
@@ -871,14 +925,14 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController__cctor(Method
                  (Object *)StringLiteral_Sexual_behavior,value_02,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Add_System__String__AdminToolController__DefaultBan_
                 );
-      pSVar1 = StringLiteral__2;
-      pSVar2 = StringLiteral_Weeks;
+      pSVar1 = StringLiteral_Weeks;
+      pSVar2 = StringLiteral__2;
       pSVar4 = StringLiteral_You_are_banned_for_pretending_to;
       func_?();
       func_?();
-      pSStack5 = pSVar2;
+      pSStack5 = pSVar1;
       func_?();
-      value.BanDuration = pSVar1;
+      value.BanDuration = pSVar2;
       value.BanReason = pSVar4;
       value.BanDurationFormat = pSStack5;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::

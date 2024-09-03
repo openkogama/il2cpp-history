@@ -177,11 +177,11 @@ code_?:
         }
         FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_UnRegister
                   ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-        this_02 = (EventHandler_1_Object_ *)
+        this_02 = (Action_2_Object_Int32Enum_ *)
                   func_?(
                                  TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                                  );
-        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+        mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
                   (this_02,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,
                    (MethodInfo *)0x0);
         FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
@@ -353,8 +353,8 @@ code_?:
           return;
         }
       }
-      this_03 = (EventHandler_1_Object_ *)func_?();
-      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+      this_03 = (Action_2_Object_Int32Enum_ *)func_?();
+      mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
                 (this_03,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0)
       ;
       FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState
@@ -530,16 +530,12 @@ bool Assembly-CSharp.dll::FirstTimeActivatableCubeTutorialPointer::
       bVar3 = MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::
               FirstTimeState_HasFirstTimeEventOccured
                         (this_00,FirstTimeEvent__Enum_BM_CubeTutorialDone,(MethodInfo *)0x0);
-      bVar4 = 0;
-      if (bVar1 == 0) {
-        bVar4 = bVar2;
-      }
-      return bVar3 == 0 & bVar4;
+      return (bVar3 ^ 1) & (bVar1 ^ 1) & bVar2;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  bVar1 = (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  bVar1 = (*pcVar4)();
   return bVar1;
 }
 

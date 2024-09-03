@@ -104,9 +104,10 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement+<>c::
       do {
         if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
+          pIVar1 = x->klass;
           iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(x->klass->vtable).Create_1)[iVar4].method)
-                    (x,(&(x->klass->vtable).Create_2)[iVar4].methodPtr);
+          (*(code *)(&(pIVar1->vtable).Create_1)[iVar4].method)
+                    (x,(&(pIVar1->vtable).Create_2)[iVar4].methodPtr);
           return;
         }
         uVar2 = uVar2 + 1;
@@ -203,7 +204,7 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement+<>c::
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
           ppMVar5 = &(&(pIVar1->klass->vtable).get_RewardedAdNotAvailableText)
-                     [pIVar2->interfaceOffsets[uVar3].offset].method;
+                     [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
           goto code_?;
         }
         uVar3 = uVar3 + 1;
@@ -264,7 +265,7 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement+<>c::SpawnRoleSelectionEleme
   }
   method_00 = TypeInfo__SpawnRoleSelectionElement____c;
   value = (SpawnRoleSelectionElement_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__SpawnRoleSelectionElement____c->static_fields->__9 = value;
   func_?(TypeInfo__SpawnRoleSelectionElement____c->static_fields,value);

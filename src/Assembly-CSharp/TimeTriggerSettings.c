@@ -60,7 +60,7 @@ void Assembly-CSharp.dll::TimeTriggerSettings::TimeTriggerSettings_Initialize
                     (pSVar4,StringLiteral_duration,value,0.1,1000.0,(MethodInfo *)0x0);
           pSVar5 = (this->fields).durationInputField;
           if (pSVar5 != (SettingsInputFieldSlider *)0x0) {
-            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
                       (pSVar5,StringLiteral_duration,value,(MethodInfo *)0x0);
             pSVar4 = (this->fields).delaySlider;
             if (pSVar4 != (SettingsSlider *)0x0) {
@@ -68,7 +68,7 @@ void Assembly-CSharp.dll::TimeTriggerSettings::TimeTriggerSettings_Initialize
                         (pSVar4,StringLiteral_time,value_00,0.0,1000.0,(MethodInfo *)0x0);
               pSVar5 = (this->fields).delayInputField;
               if (pSVar5 != (SettingsInputFieldSlider *)0x0) {
-                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
                           (pSVar5,StringLiteral_time,value_00,(MethodInfo *)0x0);
                 return;
               }

@@ -27,25 +27,26 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
   }
   else {
     pAVar2 = (pEVar1->fields).enteringPlayMode;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,
+              (this_01,(Object *)this,
                MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__,
                (MethodInfo *)0x0);
     pAVar2 = (Action *)
              mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+                       ((Delegate *)pAVar2,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pAVar2 == (Action *)0x0) {
       (pEVar1->fields).enteringPlayMode = (Action *)0x0;
 code_?:
+      this_00 = &(pEVar1->fields).enteringPlayMode;
       func_?();
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
+                       ((Component *)this_00,(MethodInfo *)0x0);
       callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_00,
                  MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode___Clear_b__15_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
@@ -62,16 +63,15 @@ code_?:
     if (pAVar2->klass == TypeInfo__System__Action) {
       pAVar3 = pAVar2;
     }
-    if (pAVar3 == (Action *)0x0) goto code_?;
-    (pEVar1->fields).enteringPlayMode = pAVar3;
-    pAVar3 = (Action *)0x0;
-    if (pAVar2->klass == TypeInfo__System__Action) {
-      pAVar3 = pAVar2;
+    if (pAVar3 != (Action *)0x0) {
+      (pEVar1->fields).enteringPlayMode = pAVar3;
+      pAVar3 = (Action *)0x0;
+      if (pAVar2->klass == TypeInfo__System__Action) {
+        pAVar3 = pAVar2;
+      }
+      if (pAVar3 != (Action *)0x0) goto code_?;
     }
-    if (pAVar3 != (Action *)0x0) goto code_?;
   }
-  func_?();
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -140,7 +140,6 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
   }
   else {
     pAVar3 = (pEVar1->fields).enteringPlayMode;
-    ppAVar4 = &(pEVar1->fields).enteringPlayMode;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
@@ -151,25 +150,26 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
              mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
     uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
-    ppAStack5 = ppAVar4;
     if (pAVar3 == (Action *)0x0) {
-      pAStack6 = (Action *)0x0;
-      *ppAVar4 = (Action *)0x0;
+      (pEVar1->fields).enteringPlayMode = (Action *)0x0;
+      ppAStack4 = &(pEVar1->fields).enteringPlayMode;
+      pAStack5 = (Action *)0x0;
       func_?();
       return;
     }
-    pAVar7 = (Action *)0x0;
+    pAVar6 = (Action *)0x0;
     if (pAVar3->klass == TypeInfo__System__Action) {
-      pAVar7 = pAVar3;
+      pAVar6 = pAVar3;
     }
-    if (pAVar7 != (Action *)0x0) {
-      *ppAVar4 = pAVar7;
+    if (pAVar6 != (Action *)0x0) {
+      (pEVar1->fields).enteringPlayMode = pAVar6;
       uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
-      pAStack6 = (Action *)0x0;
+      pAStack5 = (Action *)0x0;
       if (pAVar3->klass == TypeInfo__System__Action) {
-        pAStack6 = pAVar3;
+        pAStack5 = pAVar3;
       }
-      if (pAStack6 != (Action *)0x0) {
+      if (pAStack5 != (Action *)0x0) {
+        ppAStack4 = &(pEVar1->fields).enteringPlayMode;
         func_?();
         return;
       }
@@ -177,8 +177,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
   }
   _ppAStack0000000c = uVar2;
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -246,8 +246,8 @@ code_?:
       }
       FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_UnRegister
                 ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-      this_01 = (EventHandler_1_Object_ *)func_?();
-      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+      this_01 = (Action_2_Object_Int32Enum_ *)func_?();
+      mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
                 (this_01,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0)
       ;
       FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
@@ -311,8 +311,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
   }
   pEVar1 = (this->fields).button;
   if (pEVar1 == (EnterPlayModeButton *)0x0) {
-    func_?();
-    pAStack2 = unaff_ESI;
+    uVar2 = func_?();
   }
   else {
     pAVar3 = (pEVar1->fields).enteringPlayMode;
@@ -325,38 +324,33 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
     pAVar3 = (Action *)
              mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+    uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
+    pAStack4 = (Action *)0x0;
     if (pAVar3 == (Action *)0x0) {
-      pAStack2 = (Action__Class *)0x0;
       (pEVar1->fields).enteringPlayMode = (Action *)0x0;
+code_?:
+      ppAStack5 = &(pEVar1->fields).enteringPlayMode;
       func_?();
       (this->fields).shouldBeDelayedDestroyed = 1;
       return;
     }
-    pAVar4 = (Action *)0x0;
     if (pAVar3->klass == TypeInfo__System__Action) {
-      pAVar4 = pAVar3;
+      pAStack4 = pAVar3;
     }
-    pAStack2 = TypeInfo__System__Action;
-    if (pAVar4 == (Action *)0x0) goto code_?;
-    (pEVar1->fields).enteringPlayMode = pAVar4;
-    pAVar4 = (Action *)0x0;
-    if (pAVar3->klass == TypeInfo__System__Action) {
-      pAVar4 = pAVar3;
-    }
-    pAStack2 = TypeInfo__System__Action;
-    if (pAVar4 != (Action *)0x0) {
-      pAStack2 = (Action__Class *)pAVar4;
-      func_?();
-      (this->fields).shouldBeDelayedDestroyed = 1;
-      return;
+    if (pAStack4 != (Action *)0x0) {
+      (pEVar1->fields).enteringPlayMode = pAStack4;
+      uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
+      pAStack4 = (Action *)0x0;
+      if (pAVar3->klass == TypeInfo__System__Action) {
+        pAStack4 = pAVar3;
+      }
+      if (pAStack4 != (Action *)0x0) goto code_?;
     }
   }
+  _ppAStack0000000c = uVar2;
   func_?();
-  pAStack2 = extraout_EDX;
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -369,8 +363,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
                BaseEventData *y,MethodInfo *method)
 
 {
-  bubbleId = (this->fields).bubbleId;
-  if (bubbleId != -1) {
+  if ((this->fields).bubbleId != -1) {
     if (x == (TextBubbleController *)0x0) {
       uVar1 = func_?(&stack0xfffffff0);
       func_?(uVar1);
@@ -379,7 +372,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
       return;
     }
     TextBubbleController::TextBubbleController_ClearBubblesOfTypeImmediately
-              (x,bubbleId,(MethodInfo *)0x0);
+              (x,(this->fields).bubbleId,(MethodInfo *)0x0);
   }
   return;
 }

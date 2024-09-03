@@ -24,7 +24,7 @@ bool Assembly-CSharp.dll::NotificationArea::NotificationArea_CanInstantiateNotif
       cRam_? = '\x01';
     }
     value = (Object *)func_?(TypeInfo__NotificationObjectPool____c__DisplayClass6_0);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (value,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_2);
     if (value != (Object *)0x0) {
       value[1].klass = (Object__Class *)notificationType;

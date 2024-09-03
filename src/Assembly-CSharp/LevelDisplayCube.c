@@ -5,6 +5,7 @@ void Assembly-CSharp.dll::LevelDisplayCube::LevelDisplayCube_Destroy
                (LevelDisplayCube *this,MethodInfo *method)
 
 {
+  this_01 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
     func_?(&TypeInfo__BadgeManager);
@@ -14,60 +15,59 @@ void Assembly-CSharp.dll::LevelDisplayCube::LevelDisplayCube_Destroy
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            (this_01,(Object *)this,
+  this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+            (this_02,(Object *)this,
              MethodInfo__LevelDisplayCube__OnBadgeTextureReceived_UnityEngine__Networking__UnityWebRequest_
              ,(MethodInfo *)0x0);
   if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BadgeManager);
   }
   BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
-            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,(MethodInfo *)0x0);
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_02,(MethodInfo *)0x0);
+  this = (LevelDisplayCube *)0x10;
   uVar1 = 0;
-  ppRVar2 = &(this->fields).renderers;
-  iVar3 = 0x10;
+  ppRVar2 = &(this_01->fields).renderers;
   do {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
     if (*ppRVar2 == (Renderer__Array *)0x0) {
-      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      if (pGVar4 == (GameObject *)0x0) {
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this_01,(MethodInfo *)0x0);
+      if (pGVar3 == (GameObject *)0x0) {
 code_?:
         func_?();
 code_?:
         func_?();
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
-      pRVar6 = (Renderer__Array *)
+      pRVar5 = (Renderer__Array *)
                UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                GameObject_GetComponentsInChildren
-                         (pGVar4,
+                         (pGVar3,
                           UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
                          );
-      *ppRVar2 = pRVar6;
+      *ppRVar2 = pRVar5;
       func_?();
       this = (LevelDisplayCube *)ppRVar2;
     }
     if (*ppRVar2 == (Renderer__Array *)0x0) goto code_?;
     if ((int)(*ppRVar2)->max_length <= (int)uVar1) {
-      pGVar4 = (this->fields).cube;
+      pGVar3 = (this_01->fields).cube;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                ((Object_1 *)pGVar4,(MethodInfo *)0x0);
-      ppTVar7 = &(this->fields).badgeTextureAsset;
-      *ppTVar7 = (Texture2D *)0x0;
-      func_?(ppTVar7);
+                ((Object_1 *)pGVar3,(MethodInfo *)0x0);
+      (this_01->fields).badgeTextureAsset = (Texture2D *)0x0;
+      func_?();
       return;
     }
     if (cRam_? == '\0') {
@@ -75,33 +75,33 @@ code_?:
       cRam_? = '\x01';
     }
     if (*ppRVar2 == (Renderer__Array *)0x0) {
-      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      if (pGVar4 == (GameObject *)0x0) goto code_?;
-      pRVar6 = (Renderer__Array *)
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this_01,(MethodInfo *)0x0);
+      if (pGVar3 == (GameObject *)0x0) goto code_?;
+      pRVar5 = (Renderer__Array *)
                UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                GameObject_GetComponentsInChildren
-                         (pGVar4,
+                         (pGVar3,
                           UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
                          );
-      *ppRVar2 = pRVar6;
+      *ppRVar2 = pRVar5;
       func_?();
+      this = (LevelDisplayCube *)ppRVar2;
     }
-    pRVar6 = *ppRVar2;
-    if (pRVar6 == (Renderer__Array *)0x0) goto code_?;
-    if (pRVar6->max_length <= uVar1) goto code_?;
-    this_00 = *(Component **)((int)&pRVar6->klass + iVar3);
+    pRVar5 = *ppRVar2;
+    if (pRVar5 == (Renderer__Array *)0x0) goto code_?;
+    if (pRVar5->max_length <= uVar1) goto code_?;
+    this_00 = *(Component **)((int)&this->klass + (int)&pRVar5->klass);
     if (this_00 == (Component *)0x0) goto code_?;
-    this = (LevelDisplayCube *)
-           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     (this_00,(MethodInfo *)0x0);
+    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       (this_00,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)this,(MethodInfo *)0x0);
+              ((Object_1 *)pGVar3,(MethodInfo *)0x0);
     uVar1 = uVar1 + 1;
-    iVar3 = iVar3 + 4;
+    this = (LevelDisplayCube *)&pGVar3->monitor;
   } while( true );
 }
 
@@ -163,19 +163,18 @@ code_?:
   if (bVar2 != 0) {
     pTVar3 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
              DownloadHandlerTexture::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
-    ppTVar4 = &(this->fields).badgeTextureAsset;
-    *ppTVar4 = pTVar3;
-    func_?(ppTVar4);
-    pRVar5 = LevelDisplayCube_get_Renderers(this,(MethodInfo *)0x0);
-    uVar6 = 0;
-    if (pRVar5 == (Renderer__Array *)0x0) goto code_?;
-    ppRVar7 = pRVar5->vector;
-    for (; (int)uVar6 < (int)pRVar5->max_length; uVar6 = uVar6 + 1) {
-      if (pRVar5->max_length <= uVar6) {
+    (unaff_EBX->fields).badgeTextureAsset = pTVar3;
+    func_?(&(unaff_EBX->fields).badgeTextureAsset);
+    pRVar4 = LevelDisplayCube_get_Renderers(unaff_EBX,(MethodInfo *)0x0);
+    uVar5 = 0;
+    if (pRVar4 == (Renderer__Array *)0x0) goto code_?;
+    ppRVar6 = pRVar4->vector;
+    for (; (int)uVar5 < (int)pRVar4->max_length; uVar5 = uVar5 + 1) {
+      if (pRVar4->max_length <= uVar5) {
         func_?();
         goto code_?;
       }
-      this_00 = *ppRVar7;
+      this_00 = *ppRVar6;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
@@ -187,9 +186,9 @@ code_?:
                                 (this_00,(MethodInfo *)0x0), this_01 == (Material *)0x0))
         goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTexture
-                  (this_01,(Texture *)*ppTVar4,(MethodInfo *)0x0);
+                  (this_01,(Texture *)(unaff_EBX->fields).badgeTextureAsset,(MethodInfo *)0x0);
       }
-      ppRVar7 = ppRVar7 + 1;
+      ppRVar6 = ppRVar6 + 1;
     }
   }
   return;
@@ -216,7 +215,7 @@ void Assembly-CSharp.dll::LevelDisplayCube::LevelDisplayCube_SetAmount
   }
   method_00 = TypeInfo__LevelDisplayCube____c__DisplayClass7_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value == (Object *)0x0) {
     func_?();
@@ -238,13 +237,11 @@ void Assembly-CSharp.dll::LevelDisplayCube::LevelDisplayCube_SetAmount
     }
     if (TypeInfo__LevelingManager->static_fields->_IsInitialized_k__BackingField != 0) {
       level = value[1].klass;
-      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 *)func_?(
-                                  TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
-                                  );
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+      this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+                func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
                 (this_00,(Object *)this,
                  MethodInfo__LevelDisplayCube__OnBadgeTextureReceived_UnityEngine__Networking__UnityWebRequest_
                  ,(MethodInfo *)0x0);
@@ -317,24 +314,23 @@ Assembly-CSharp.dll::LevelDisplayCube::LevelDisplayCube_get_Renderers
                    );
     cRam_? = '\x01';
   }
-  ppRVar1 = &(this->fields).renderers;
   if ((this->fields).renderers == (Renderer__Array *)0x0) {
     this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
     if (this_00 == (GameObject *)0x0) {
       func_?();
-      pcVar2 = (code *)swi(3);
-      pRVar3 = (Renderer__Array *)(*pcVar2)();
-      return pRVar3;
+      pcVar1 = (code *)swi(3);
+      pRVar2 = (Renderer__Array *)(*pcVar1)();
+      return pRVar2;
     }
-    pRVar3 = (Renderer__Array *)
+    pRVar2 = (Renderer__Array *)
              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren
                        (this_00,
                         UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
                        );
-    *ppRVar1 = pRVar3;
-    func_?(ppRVar1,pRVar3);
+    (this->fields).renderers = pRVar2;
+    func_?(&(this->fields).renderers,pRVar2);
   }
-  return *ppRVar1;
+  return (this->fields).renderers;
 }
 

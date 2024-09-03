@@ -53,16 +53,16 @@ bool Assembly-CSharp.dll::ScreenShotGenerator+<GenerateCoroutine>d__19::
       pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
       uVar9 = (pVVar5->oneVector).x;
       uVar10 = (pVVar5->oneVector).y;
-      fVar11 = (pVVar5->oneVector).z * _UNK_?;
-      fVar12 = (float)uVar9 * _UNK_?;
-      fVar13 = (float)uVar10 * _UNK_?;
+      fVar11 = (float)uVar9 * _UNK_?;
+      fVar12 = (float)uVar10 * _UNK_?;
+      fVar13 = (pVVar5->oneVector).z * _UNK_?;
       if (this_00 == (ScreenShotGenerator *)0x0) goto code_?;
       (this_00->fields).targetBounds.m_Center.x = (float)uVar6;
       (this_00->fields).targetBounds.m_Center.y = (float)uVar7;
       (this_00->fields).targetBounds.m_Center.z = fVar8;
-      (this_00->fields).targetBounds.m_Extents.x = fVar12;
-      (this_00->fields).targetBounds.m_Extents.y = fVar13;
-      (this_00->fields).targetBounds.m_Extents.z = fVar11;
+      (this_00->fields).targetBounds.m_Extents.x = fVar11;
+      (this_00->fields).targetBounds.m_Extents.y = fVar12;
+      (this_00->fields).targetBounds.m_Extents.z = fVar13;
     }
     else {
       pBVar14 = mscorlib.dll::System::Nullable`1[UnityEngine::Bounds]::
@@ -70,17 +70,17 @@ bool Assembly-CSharp.dll::ScreenShotGenerator+<GenerateCoroutine>d__19::
                           ((Bounds *)&stack0xffffffd8,
                            (Nullable_1_UnityEngine_Bounds_ *)&stack0xffffffb8,
                            MethodInfo__System__Nullable<UnityEngine::Bounds>__get_Value__);
-      fVar12 = (pBVar14->m_Extents).y;
+      fVar11 = (pBVar14->m_Extents).y;
       fVar15 = (pBVar14->m_Extents).z;
       fVar8 = (pBVar14->m_Center).y;
-      fVar11 = (pBVar14->m_Center).z;
-      fVar13 = (pBVar14->m_Extents).x;
+      fVar13 = (pBVar14->m_Center).z;
+      fVar12 = (pBVar14->m_Extents).x;
       if (this_00 == (ScreenShotGenerator *)0x0) goto code_?;
       (this_00->fields).targetBounds.m_Center.x = (pBVar14->m_Center).x;
       (this_00->fields).targetBounds.m_Center.y = fVar8;
-      (this_00->fields).targetBounds.m_Center.z = fVar11;
-      (this_00->fields).targetBounds.m_Extents.x = fVar13;
-      (this_00->fields).targetBounds.m_Extents.y = fVar12;
+      (this_00->fields).targetBounds.m_Center.z = fVar13;
+      (this_00->fields).targetBounds.m_Extents.x = fVar12;
+      (this_00->fields).targetBounds.m_Extents.y = fVar11;
       (this_00->fields).targetBounds.m_Extents.z = fVar15;
     }
     ScreenShotGenerator::ScreenShotGenerator_InitCamera(this_00,0x200,0x200,(MethodInfo *)0x0);

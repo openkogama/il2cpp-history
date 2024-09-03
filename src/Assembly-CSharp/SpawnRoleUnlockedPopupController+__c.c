@@ -40,7 +40,7 @@ void Assembly-CSharp.dll::SpawnRoleUnlockedPopupController+<>c::
   }
   method_00 = TypeInfo__SpawnRoleUnlockedPopupController____c;
   value = (SpawnRoleUnlockedPopupController_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__SpawnRoleUnlockedPopupController____c->static_fields->__9 = value;
   func_?(TypeInfo__SpawnRoleUnlockedPopupController____c->static_fields,value);

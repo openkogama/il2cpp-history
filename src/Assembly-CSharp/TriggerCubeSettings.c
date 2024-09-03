@@ -52,7 +52,7 @@ void Assembly-CSharp.dll::TriggerCubeSettings::TriggerCubeSettings_Initialize
               if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
                   (TypeInfo__System__Single->_0).element_class) goto code_?;
               pfVar4 = (float *)func_?();
-              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
                         (pSVar5,StringLiteral_scaleX,*pfVar4,(MethodInfo *)0x0);
               pSVar2 = (this->fields).ScaleY;
               TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
@@ -78,7 +78,7 @@ void Assembly-CSharp.dll::TriggerCubeSettings::TriggerCubeSettings_Initialize
                   if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
                       (TypeInfo__System__Single->_0).element_class) goto code_?;
                   pfVar4 = (float *)func_?();
-                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
                             (pSVar5,StringLiteral_scaleY,*pfVar4,(MethodInfo *)0x0);
                   pSVar2 = (this->fields).ScaleZ;
                   TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
@@ -104,7 +104,7 @@ void Assembly-CSharp.dll::TriggerCubeSettings::TriggerCubeSettings_Initialize
                       if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
                           (TypeInfo__System__Single->_0).element_class) {
                         pfVar4 = (float *)func_?();
-                        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
                                   (pSVar5,StringLiteral_scaleZ,*pfVar4,(MethodInfo *)0x0);
                         return;
                       }

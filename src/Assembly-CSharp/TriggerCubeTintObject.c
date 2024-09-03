@@ -9,10 +9,9 @@ void Assembly-CSharp.dll::TriggerCubeTintObject::TriggerCubeTintObject_Awake
     func_?(&TypeInfo__UnityEngine__Material);
     cRam_? = '\x01';
   }
-  pMStack_1 = (this->fields).meshRendererToTint;
+  pMVar1 = (this->fields).meshRendererToTint;
   pMVar2 = (Material__Array *)func_?(TypeInfo__UnityEngine__Material,1);
   pMVar3 = (this->fields).materialCylinderToTint;
-  ppMVar4 = &(this->fields).materialCylinderToTint;
   if (pMVar2 == (Material__Array *)0x0) {
 code_?:
     func_?();
@@ -23,28 +22,29 @@ code_?:
       if (pMVar2->max_length == 0) goto code_?;
       pMVar2->vector[0] = pMVar3;
       func_?(pMVar2->vector,pMVar3);
-      if (pMStack_1 != (MeshRenderer *)0x0) {
+      if (pMVar1 != (MeshRenderer *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterials
-                  ((Renderer *)pMStack_1,pMVar2,(MethodInfo *)0x0);
-        if (*ppMVar4 != (Material *)0x0) {
-          pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
-                             (&CStack_6,*ppMVar4,(MethodInfo *)0x0);
-          fVar7 = pCVar5->g;
-          fVar8 = pCVar5->b;
-          fVar9 = pCVar5->a;
-          (this->fields).OriginalColor.r = pCVar5->r;
-          (this->fields).OriginalColor.g = fVar7;
-          (this->fields).OriginalColor.b = fVar8;
-          (this->fields).OriginalColor.a = fVar9;
-          this_00 = (this->fields).meshRendererToTint;
-          if (this_00 != (MeshRenderer *)0x0) {
+                  ((Renderer *)pMVar1,pMVar2,(MethodInfo *)0x0);
+        pMVar3 = (this->fields).materialCylinderToTint;
+        if (pMVar3 != (Material *)0x0) {
+          pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
+                             (&CStack_5,pMVar3,(MethodInfo *)0x0);
+          fVar6 = pCVar4->g;
+          fVar7 = pCVar4->b;
+          fVar8 = pCVar4->a;
+          pMVar1 = (this->fields).meshRendererToTint;
+          (this->fields).OriginalColor.r = pCVar4->r;
+          (this->fields).OriginalColor.g = fVar6;
+          (this->fields).OriginalColor.b = fVar7;
+          (this->fields).OriginalColor.a = fVar8;
+          if (pMVar1 != (MeshRenderer *)0x0) {
             pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials
-                               ((Renderer *)this_00,(MethodInfo *)0x0);
+                               ((Renderer *)pMVar1,(MethodInfo *)0x0);
             if (pMVar2 != (Material__Array *)0x0) {
               if (pMVar2->max_length != 0) {
                 pMVar3 = pMVar2->vector[0];
-                *ppMVar4 = pMVar3;
-                func_?(ppMVar4,pMVar3);
+                (this->fields).materialCylinderToTint = pMVar3;
+                func_?(&(this->fields).materialCylinderToTint,pMVar3);
                 return;
               }
               goto code_?;
@@ -54,15 +54,15 @@ code_?:
       }
       goto code_?;
     }
-    iVar10 = func_?(pMVar3,(pMVar2->klass->_0).element_class);
-    if (iVar10 != 0) goto code_?;
+    iVar9 = func_?(pMVar3,(pMVar2->klass->_0).element_class);
+    if (iVar9 != 0) goto code_?;
   }
-  uVar11 = func_?(0);
-  func_?(uVar11);
+  uVar10 = func_?(0);
+  func_?(uVar10);
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

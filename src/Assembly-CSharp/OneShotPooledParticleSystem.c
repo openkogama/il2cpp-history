@@ -35,89 +35,199 @@ Assembly-CSharp.dll::OneShotPooledParticleSystem::OneShotPooledParticleSystem_In
 }
 
 
-/* ParticleSystem Instantiate(PoolEnums, Vector3, Quaternion, Nullable`1[UnityEngine.Color]) */
+/* ParticleSystem Instantiate(PoolEnums, Vector3, Quaternion, Nullable`1[Single],
+   Nullable`1[UnityEngine.Color]) */
 
 ParticleSystem *
 Assembly-CSharp.dll::OneShotPooledParticleSystem::OneShotPooledParticleSystem_Instantiate_1
-          (PoolEnums__Enum type,Vector3 position,Quaternion rotation,
-          Nullable_1_UnityEngine_Color_ particleColor,MethodInfo *method)
+          (PoolEnums__Enum type,Vector3 position,Quaternion rotation,Nullable_1_Single_ scale,
+          Nullable_1_UnityEngine_Color_ color,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
     func_?(&
-                    UnityEngine__ParticleSystemRenderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::ParticleSystemRenderer>__
-                   );
-    func_?(&
                     OneShotPooledParticleSystem_MethodInfo__EnumPoolManager__Instantiate<OneShotPooledParticleSystem>_PoolEnums_
                    );
+    func_?(&TypeInfo__UnityEngine__Gradient);
+    func_?(&MethodInfo__System__Nullable<float>__get_HasValue__);
     func_?(&MethodInfo__System__Nullable<UnityEngine::Color>__get_HasValue__);
     func_?(&MethodInfo__System__Nullable<UnityEngine::Color>__get_Value__);
-    func_?(&StringLiteral__TintColor);
+    func_?(&MethodInfo__System__Nullable<float>__get_Value__);
     cRam_? = '\x01';
   }
+  PStack_1.m_ParticleSystem = (ParticleSystem *)0x0;
+  func_?(&UStack_2,0,0x2c);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__PrefabPool);
     cRam_? = '\x01';
   }
-  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-  if ((pPVar1 != (PrefabPool *)0x0) &&
-     (this = (pPVar1->fields).enumPoolManager, this != (EnumPoolManager *)0x0)) {
+  pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
+  if ((pPVar3 != (PrefabPool *)0x0) &&
+     (this = (pPVar3->fields).enumPoolManager, this != (EnumPoolManager *)0x0)) {
     this_00 = (Component *)
               EnumPoolManager::EnumPoolManager_Instantiate
                         (this,type,
                          OneShotPooledParticleSystem_MethodInfo__EnumPoolManager__Instantiate<OneShotPooledParticleSystem>_PoolEnums_
                         );
+    pCStack_4 = this_00;
     if (this_00 != (Component *)0x0) {
       this_00[1].fields._.m_CachedPtr = (void *)type;
-      this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          (this_00,(MethodInfo *)0x0);
-      if (this_01 != (Transform *)0x0) {
+      pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         (this_00,(MethodInfo *)0x0);
+      if (pTVar5 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                  (this_01,position,(MethodInfo *)0x0);
+                  (pTVar5,position,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                  (this_01,rotation,(MethodInfo *)0x0);
-        if (particleColor.hasValue == 0) {
+                  (pTVar5,rotation,(MethodInfo *)0x0);
+        if (scale.hasValue != 0) {
+          in_stack_6 = (Component *)this_00[1].monitor;
+          if (in_stack_6 == (Component *)0x0) goto code_?;
+          in_stack_7 = (Gradient *)0x0;
+          pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             (in_stack_6,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            ppVStack_8 = &TypeInfo__UnityEngine__Vector3;
+            func_?();
+            cRam_? = '\x01';
+          }
+          pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+          RStack_10.m_YMin = (pVVar9->oneVector).x;
+          RStack_10.m_Width = (pVVar9->oneVector).y;
+          RStack_10.m_Height = (pVVar9->oneVector).z;
+          fStack_11 = mscorlib.dll::System::Nullable`1[Single]::Nullable_1_Single__get_Value
+                                (&scale,MethodInfo__System__Nullable<float>__get_Value__);
+          RStack_10.m_YMin = RStack_10.m_YMin * fStack_11;
+          RStack_10.m_Width = RStack_10.m_Width * fStack_11;
+          RStack_10.m_Height = RStack_10.m_Height * fStack_11;
+          if (pTVar5 == (Transform *)0x0) goto code_?;
+          value.y = RStack_10.m_Width;
+          value.x = RStack_10.m_YMin;
+          value.z = RStack_10.m_Height;
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
+                    (pTVar5,value,(MethodInfo *)0x0);
+        }
+        if (color.hasValue == 0) {
 code_?:
           return (ParticleSystem *)this_00[1].monitor;
         }
-        if ((Component *)this_00[1].monitor != (Component *)0x0) {
-          this_02 = (Renderer *)
-                    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                              ((Component *)this_00[1].monitor,
-                               UnityEngine__ParticleSystemRenderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::ParticleSystemRenderer>__
-                              );
-          if (this_02 != (Renderer *)0x0) {
-            particleColor.value.r = 0.0;
-            particleColor._0_4_ = this_02;
-            this_03 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                (this_02,(MethodInfo *)0x0);
-            particleColor.value.r =
-                 (float)MethodInfo__System__Nullable<UnityEngine::Color>__get_Value__;
-            particleColor._0_4_ = &particleColor;
-            pRVar2 = mscorlib.dll::System::Nullable`1[UnityEngine::Rect]::
-                     Nullable_1_UnityEngine_Rect__get_Value
-                               ((Rect *)&stack0xffffffec,
-                                (Nullable_1_UnityEngine_Rect_ *)particleColor._0_4_,
-                                MethodInfo__System__Nullable<UnityEngine::Color>__get_Value__);
-            if (this_03 != (Material *)0x0) {
-              particleColor.value.g = pRVar2->m_XMin;
-              particleColor.value.b = pRVar2->m_YMin;
-              particleColor.value.a = pRVar2->m_Width;
-              particleColor.value.r = (float)StringLiteral__TintColor;
-              particleColor._0_4_ = this_03;
-              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-                        (this_03,StringLiteral__TintColor,(Vector4)*pRVar2,(MethodInfo *)0x0);
-              goto code_?;
+        if ((ParticleSystem *)this_00[1].monitor != (ParticleSystem *)0x0) {
+          PStack_1.m_ParticleSystem =
+               (ParticleSystem *)
+               UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+               ParticleSystem_get_collision((ParticleSystem *)this_00[1].monitor,(MethodInfo *)0x0);
+          pPVar12 = UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                   ParticleSystem+ColorOverLifetimeModule::
+                   ParticleSystem_ColorOverLifetimeModule_get_color
+                             ((ParticleSystem_MinMaxGradient *)&stack0xffffff88,&PStack_1,
+                              (MethodInfo *)0x0);
+          UStack_2.klass = (UxmlObjectAttributeDescription_1_System_Object___Class *)pPVar12->m_Mode
+          ;
+          UStack_2.monitor = (MonitorData *)pPVar12->m_GradientMin;
+          UStack_2.fields._defaultValue_k__BackingField = (Object *)pPVar12->m_GradientMax;
+          fStack_13 = (pPVar12->m_ColorMin).r;
+          fStack_14 = (pPVar12->m_ColorMin).g;
+          fStack_15 = (pPVar12->m_ColorMin).b;
+          fStack_16 = (pPVar12->m_ColorMin).a;
+          fStack_17 = (pPVar12->m_ColorMax).r;
+          uStack_18._0_4_ = (pPVar12->m_ColorMax).g;
+          uStack_18._4_4_ = (pPVar12->m_ColorMax).b;
+          fStack_19 = (pPVar12->m_ColorMax).a;
+          pGVar20 = (Gradient *)
+                   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+                   UxmlObjectAttributeDescription`1[System::Object]::
+                   UxmlObjectAttributeDescription_1_System_Object__get_defaultValue
+                             (&UStack_2,(MethodInfo *)0x0);
+          if (pGVar20 != (Gradient *)0x0) {
+            value_01 = UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_get_colorKeys
+                                 (pGVar20,(MethodInfo *)0x0);
+            uVar21 = 0;
+            if (value_01 != (GradientColorKey__Array *)0x0) {
+              pGVar22 = value_01->vector;
+              for (; (int)uVar21 < (int)value_01->max_length; uVar21 = uVar21 + 1) {
+                pRVar23 = mscorlib.dll::System::Nullable`1[UnityEngine::Rect]::
+                          Nullable_1_UnityEngine_Rect__get_Value
+                                    (&RStack_10,(Nullable_1_UnityEngine_Rect_ *)&color,
+                                     MethodInfo__System__Nullable<UnityEngine::Color>__get_Value__);
+                fVar24 = pRVar23->m_YMin;
+                fVar25 = pRVar23->m_Width;
+                fVar26 = pRVar23->m_Height;
+                if (value_01->max_length <= uVar21) goto code_?;
+                (pGVar22->color).r = pRVar23->m_XMin;
+                (pGVar22->color).g = fVar24;
+                (pGVar22->color).b = fVar25;
+                (pGVar22->color).a = fVar26;
+                pGVar22 = pGVar22 + 1;
+              }
+              pGVar20 = (Gradient *)func_?(TypeInfo__UnityEngine__Gradient);
+              UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient__ctor
+                        (pGVar20,(MethodInfo *)0x0);
+              pPVar12 = UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                       ParticleSystem+ColorOverLifetimeModule::
+                       ParticleSystem_ColorOverLifetimeModule_get_color
+                                 ((ParticleSystem_MinMaxGradient *)&stack0xffffff5c,&PStack_1,
+                                  (MethodInfo *)0x0);
+              UStack_2.klass =
+                   (UxmlObjectAttributeDescription_1_System_Object___Class *)pPVar12->m_Mode;
+              UStack_2.monitor = (MonitorData *)pPVar12->m_GradientMin;
+              UStack_2.fields._defaultValue_k__BackingField = (Object *)pPVar12->m_GradientMax;
+              fStack_13 = (pPVar12->m_ColorMin).r;
+              fStack_14 = (pPVar12->m_ColorMin).g;
+              fStack_15 = (pPVar12->m_ColorMin).b;
+              fStack_16 = (pPVar12->m_ColorMin).a;
+              fStack_17 = (pPVar12->m_ColorMax).r;
+              uStack_18._0_4_ = (pPVar12->m_ColorMax).g;
+              uStack_18._4_4_ = (pPVar12->m_ColorMax).b;
+              fStack_19 = (pPVar12->m_ColorMax).a;
+              this_01 = (Gradient *)
+                        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+                        UxmlObjectAttributeDescription`1[System::Object]::
+                        UxmlObjectAttributeDescription_1_System_Object__get_defaultValue
+                                  (&UStack_2,(MethodInfo *)0x0);
+              if (this_01 != (Gradient *)0x0) {
+                value_02 = UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_get_alphaKeys
+                                     (this_01,(MethodInfo *)0x0);
+                if (pGVar20 != (Gradient *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_alphaKeys
+                            (pGVar20,value_02,(MethodInfo *)0x0);
+                  UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_colorKeys
+                            (pGVar20,value_01,(MethodInfo *)0x0);
+                  func_?(&stack0xffffff88,0,0x2c);
+                  UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
+                  ParticleSystem_MinMaxGradient__ctor_1
+                            ((ParticleSystem_MinMaxGradient *)&stack0xffffff88,pGVar20,
+                             (MethodInfo *)0x0);
+                  value_00.m_GradientMin = in_stack_7;
+                  value_00.m_Mode = (int32_t)in_stack_6;
+                  value_00.m_GradientMax = pGStack_27;
+                  value_00.m_ColorMin.r = (float)ppVStack_8;
+                  value_00.m_ColorMin.g = fStack_28;
+                  value_00.m_ColorMin.b = fStack_29;
+                  value_00.m_ColorMin.a = fStack_30;
+                  value_00.m_ColorMax.r = fStack_31;
+                  value_00.m_ColorMax.g = (float)(Gradient *)uStack_32;
+                  value_00.m_ColorMax.b = SUB84(uStack_32,4);
+                  value_00.m_ColorMax.a = fStack_33;
+                  UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                  ParticleSystem+ColorOverLifetimeModule::
+                  ParticleSystem_ColorOverLifetimeModule_set_color
+                            (&PStack_1,value_00,(MethodInfo *)0x0);
+                  this_00 = pCStack_4;
+                  goto code_?;
+                }
+              }
             }
           }
         }
       }
     }
   }
+code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  pPVar4 = (ParticleSystem *)(*pcVar3)();
-  return pPVar4;
+code_?:
+  func_?();
+  pcVar34 = (code *)swi(3);
+  pPVar35 = (ParticleSystem *)(*pcVar34)();
+  return pPVar35;
 }
 
 
@@ -135,20 +245,19 @@ void Assembly-CSharp.dll::OneShotPooledParticleSystem::OneShotPooledParticleSyst
     cRam_? = '\x01';
   }
   pPVar1 = (this->fields).particles;
-  ppPVar2 = &(this->fields).particles;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pPVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  if (bVar2 != 0) {
     pPVar1 = (ParticleSystem *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::ParticleSystem>__
                        );
-    *ppPVar2 = pPVar1;
-    func_?(ppPVar2,pPVar1);
+    (this->fields).particles = pPVar1;
+    func_?(&(this->fields).particles,pPVar1);
   }
   return;
 }

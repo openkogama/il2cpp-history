@@ -28,7 +28,7 @@ void Assembly-CSharp.dll::ShortcutManager::ShortcutManager_RegisterShortcutKey
   }
   method_00 = TypeInfo__ShortcutManager__ShortcutKey;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[1].monitor = (MonitorData *)keyState;
   value[1].klass = (Object__Class *)kogamaControl;
@@ -343,7 +343,7 @@ code_?:
                 );
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (pOStack_12,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<KogamaControls,_System::Collections::Generic::Stack<ShortcutManager::ShortcutKey>_>__Dispose__
@@ -379,9 +379,9 @@ void Assembly-CSharp.dll::ShortcutManager::ShortcutManager__ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::Collections::Generic::Stack<ShortcutManager::ShortcutKey>_>__Dictionary__
             );
-  ppDVar1 = &(this->fields).shortCutKeys;
-  *ppDVar1 = (Dictionary_2_KogamaControls_Stack_1_ShortcutManager_ShortcutKey_ *)this_00;
-  func_?(ppDVar1,this_00);
+  (this->fields).shortCutKeys =
+       (Dictionary_2_KogamaControls_Stack_1_ShortcutManager_ShortcutKey_ *)this_00;
+  func_?(&(this->fields).shortCutKeys,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

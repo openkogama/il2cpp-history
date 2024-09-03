@@ -37,11 +37,11 @@ void Assembly-CSharp.dll::FirstTimeEventPopupWithProgress::FirstTimeEventPopupWi
                (FirstTimeEventPopupWithProgress *this,MethodInfo *method)
 
 {
-  fVar1 = (this->fields).progress;
-  value = (this->fields).interpolateToSize;
-  if (fVar1 != value) {
+  if ((this->fields).progress != (this->fields).interpolateToSize) {
+    value = (this->fields).interpolateToSize;
+    fVar1 = (this->fields).progress;
     fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    fVar1 = (this->fields).interpolationSpeed * fVar2 + fVar1;
+    fVar1 = fVar2 * (this->fields).interpolationSpeed + fVar1;
     if (fVar1 <= value) {
       value = fVar1;
     }

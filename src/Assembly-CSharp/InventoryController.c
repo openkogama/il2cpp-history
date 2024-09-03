@@ -120,7 +120,7 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_Clear
                           );
         if (bVar10 == 0) {
           uStack_2 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     ((Object *)&stack0xffffffc8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
@@ -226,7 +226,7 @@ Assembly-CSharp.dll::InventoryController::InventoryController_GetComponentsOfSlo
                           );
         if (bVar9 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     ((Object *)&stack0xffffffb8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
@@ -362,6 +362,21 @@ code_?:
 }
 
 
+/* Void PageTurned(Int32) */
+
+void Assembly-CSharp.dll::InventoryController::InventoryController_PageTurned
+               (InventoryController *this,int32_t dir,MethodInfo *method)
+
+{
+  if ((this->fields).OnPageTurned != (UnityAction_1_System_Int32_ *)0x0) {
+    pUVar1 = (this->fields).OnPageTurned;
+    (*(pUVar1->fields)._._.invoke_impl)
+              ((pUVar1->fields)._._.method_code,dir,(pUVar1->fields)._._.method);
+  }
+  return;
+}
+
+
 /* Void SelectTab(Int32, Int32, Int32) */
 
 void Assembly-CSharp.dll::InventoryController::InventoryController_SelectTab
@@ -416,11 +431,26 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_SlotChanged
                MethodInfo *method)
 
 {
-  pUVar1 = (this->fields).OnSlotChanged;
-  if (pUVar1 != (UnityAction_2_System_Int32_System_Int32_ *)0x0) {
+  if ((this->fields).OnSlotChanged != (UnityAction_2_System_Int32_System_Int32_ *)0x0) {
+    pUVar1 = (this->fields).OnSlotChanged;
     (*(pUVar1->fields)._._.invoke_impl)
               ((pUVar1->fields)._._.method_code,fromSlotIndex,toSlotIndex,
                (pUVar1->fields)._._.method);
+  }
+  return;
+}
+
+
+/* Void TabSelected(Int32) */
+
+void Assembly-CSharp.dll::InventoryController::InventoryController_TabSelected
+               (InventoryController *this,int32_t tabId,MethodInfo *method)
+
+{
+  if ((this->fields).OnTabSelected != (UnityAction_1_System_Int32_ *)0x0) {
+    pUVar1 = (this->fields).OnTabSelected;
+    (*(pUVar1->fields)._._.invoke_impl)
+              ((pUVar1->fields)._._.method_code,tabId,(pUVar1->fields)._._.method);
   }
   return;
 }

@@ -51,6 +51,7 @@ public enum InteractionFlags : long
 	LockRotateY = 68719476736,
 	RemoveResetRotation = 137438953472,
 	CanChangeScale = 274877906944,
-	Info = 549755813888
+	Info = 549755813888,
+	CanEditMuzzle = 1099511627776
 }
 

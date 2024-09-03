@@ -24,20 +24,18 @@ bool Assembly-CSharp.dll::AccessoryAnimationHandler+<StopAnimationNextFrame>d__1
        (this_00 = (pAVar2->fields).animations, this_00 != (Animation *)0x0)) {
       UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Stop
                 (this_00,(MethodInfo *)0x0);
-      ppSVar3 = &(pAVar2->fields).currentCrossFadedAnimation;
-      *ppSVar3 = ::StringLiteral__;
-      func_?(ppSVar3,::StringLiteral__);
+      (pAVar2->fields).currentCrossFadedAnimation = ::StringLiteral__;
+      func_?(&(pAVar2->fields).currentCrossFadedAnimation,::StringLiteral__);
       return 0;
     }
     func_?();
-    pcVar4 = (code *)swi(3);
-    bVar5 = (*pcVar4)();
-    return bVar5;
+    pcVar3 = (code *)swi(3);
+    bVar4 = (*pcVar3)();
+    return bVar4;
   }
-  ppOVar6 = &(this->fields).__2__current;
   (this->fields)._hasFramePassed_5__2 = 1;
-  *ppOVar6 = (Object *)0x0;
-  func_?(ppOVar6,0);
+  (this->fields).__2__current = (Object *)0x0;
+  func_?(&(this->fields).__2__current,0);
   (this->fields).__1__state = 1;
   return 1;
 }

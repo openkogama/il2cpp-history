@@ -113,12 +113,11 @@ void Assembly-CSharp.dll::StreamingAsset`2[System::Object,System::Object]::
   }
   if (cRam_? == '\0') {
     func_?();
-    func_?();
-    func_?();
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
   pUVar3 = (this->fields)._.onAssetSetAction;
-  object = &(this->fields)._.onAssetSetAction;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
@@ -128,16 +127,16 @@ void Assembly-CSharp.dll::StreamingAsset`2[System::Object,System::Object]::
   pUVar3 = (UnityAction *)
            mscorlib.dll::System::Delegate::Delegate_Remove
                      ((Delegate *)pUVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+  pUStack4 = (UnityAction__Class *)0x0;
   if (pUVar3 == (UnityAction *)0x0) {
-    *object = (UnityAction *)0x0;
+    (this->fields)._.onAssetSetAction = (UnityAction *)0x0;
 code_?:
     func_?();
-    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (this_01,(Object *)object,(*object)[3].fields._._.method_info,(MethodInfo *)0x0);
+    this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+              (this_01,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0);
     if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -145,18 +144,18 @@ code_?:
               ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,(MethodInfo *)0x0);
     return;
   }
-  pUVar4 = (UnityAction *)0x0;
   if (pUVar3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-    pUVar4 = pUVar3;
+    pUStack4 = (UnityAction__Class *)pUVar3;
   }
-  if (pUVar4 != (UnityAction *)0x0) {
-    *object = pUVar4;
-    pUVar4 = (UnityAction *)0x0;
+  if (pUStack4 != (UnityAction__Class *)0x0) {
+    (this->fields)._.onAssetSetAction = (UnityAction *)pUStack4;
+    pUStack4 = (UnityAction__Class *)(UnityAction *)0x0;
     if (pUVar3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar4 = pUVar3;
+      pUStack4 = (UnityAction__Class *)pUVar3;
     }
-    if (pUVar4 != (UnityAction *)0x0) goto code_?;
+    if (pUStack4 != (UnityAction__Class *)0x0) goto code_?;
   }
+  pUStack4 = TypeInfo__UnityEngine__Events__UnityAction;
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
@@ -187,9 +186,8 @@ void Assembly-CSharp.dll::StreamingAsset`2[System::Object,System::Object]::
         }
         pOVar2 = StreamingAsset::StreamingAsset_UnpackBundle_NonCached
                            (www,(MonoBehaviour *)this,method->klass->rgctx_data[3].method);
-        ppOVar3 = &(this->fields).asset;
-        *ppOVar3 = pOVar2;
-        func_?(ppOVar3);
+        (this->fields).asset = pOVar2;
+        func_?(&(this->fields).asset);
       }
       else {
         if ((TypeInfo__StreamingAsset->_1).cctor_finished_or_no_cctor == 0) {
@@ -197,13 +195,11 @@ void Assembly-CSharp.dll::StreamingAsset`2[System::Object,System::Object]::
         }
         pOVar2 = StreamingAsset::StreamingAsset_UnpackBundle_Cached
                            (www,method->klass->rgctx_data[5].method);
-        ppOVar3 = &(this->fields).asset;
-        *ppOVar3 = pOVar2;
-        func_?(ppOVar3);
+        (this->fields).asset = pOVar2;
+        func_?(&(this->fields).asset);
       }
-      pUVar4 = (this->fields)._.onAssetSetAction;
-      if (pUVar4 != (UnityAction *)0x0) {
-        (*(pUVar4->fields)._._.invoke_impl)();
+      if ((this->fields)._.onAssetSetAction != (UnityAction *)0x0) {
+        (*(((this->fields)._.onAssetSetAction)->fields)._._.invoke_impl)();
       }
     }
   }
@@ -286,13 +282,12 @@ void Assembly-CSharp.dll::StreamingAsset`2[System::Object,System::Object]::
                )
 
 {
-  ppOVar1 = &(this->fields).asset;
-  *ppOVar1 = value;
-  func_?(ppOVar1,value);
-  pUVar2 = (this->fields)._.onAssetSetAction;
-  if (pUVar2 != (UnityAction *)0x0) {
-    (*(pUVar2->fields)._._.invoke_impl)
-              ((pUVar2->fields)._._.method_code,(pUVar2->fields)._._.method);
+  (this->fields).asset = value;
+  func_?(&(this->fields).asset,value);
+  if ((this->fields)._.onAssetSetAction != (UnityAction *)0x0) {
+    pUVar1 = (this->fields)._.onAssetSetAction;
+    (*(pUVar1->fields)._._.invoke_impl)
+              ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
   }
   return;
 }

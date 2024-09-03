@@ -5,7 +5,7 @@ void Assembly-CSharp.dll::TranslateData::TranslateData__ctor
                (TranslateData *this,MVWorldObjectClient *wo,float gridSize,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if ((wo != (MVWorldObjectClient *)0x0) && (this_00 != (MVWorldObjectClientManager *)0x0)) {

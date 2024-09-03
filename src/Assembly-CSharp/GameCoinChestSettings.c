@@ -100,7 +100,7 @@ void Assembly-CSharp.dll::GameCoinChestSettings::GameCoinChestSettings_Initializ
     method = (MethodInfo *)&UNK_?;
     iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32(value_01.m_Index,(MethodInfo *)0x0);
     if (this_01 != (SettingsInputFieldSlider *)0x0) {
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                 (this_01,StringLiteral_gameCoinAmount,iVar2,(MethodInfo *)0x0);
       return;
     }

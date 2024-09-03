@@ -126,7 +126,7 @@ void Assembly-CSharp.dll::MVCubeModelPrototypeTerrain::
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(0x9c0c);
+    func_?(0xe0f8);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_MV::WorldObject::CubeBase>__ContainsKey_MV__WorldObject__IntVector_
                    );
@@ -241,54 +241,63 @@ void Assembly-CSharp.dll::MVCubeModelPrototypeTerrain::MVCubeModelPrototypeTerra
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  DStack_6._dictionary = (Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key.x = 0;
+  DStack_6._current.key.y = 0;
+  DStack_6._getEnumeratorRetType = 0;
+  DStack_6._current.key.z = 0;
+  DStack_6._current._6_2_ = 0;
+  DStack_6._current.value = (Object *)0x0;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  pDVar6 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+  pDVar7 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
             *)(this->fields).removedCubes;
-  if (pDVar6 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+  if (pDVar7 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                  *)0x0) {
-    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                         *)&stack0xffffffa8,pDVar6,
+                         *)&stack0xffffffa8,pDVar7,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_MV::WorldObject::CubeBase>__GetEnumerator__
                        );
-    uStack_8 = 0;
-    DStack_9._dictionary =
-         (Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar7->_dictionary;
-    DStack_9._version = pDVar7->_version;
-    DStack_9._index = pDVar7->_index;
-    DStack_9._current.key._0_4_ = (pDVar7->_current).key.sheetInstanceID;
-    DStack_9._current._4_8_ = *(undefined8 *)&(pDVar7->_current).key.index;
-    DStack_9._getEnumeratorRetType = pDVar7->_getEnumeratorRetType;
+    uStack_9 = 0;
+    DStack_6._dictionary =
+         (Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar8->_dictionary;
+    DStack_6._version = pDVar8->_version;
+    DStack_6._index = pDVar8->_index;
+    DStack_6._current.key._0_4_ = (pDVar8->_current).key.sheetInstanceID;
+    DStack_6._current._4_8_ = *(undefined8 *)&(pDVar8->_current).key.index;
+    DStack_6._getEnumeratorRetType = pDVar8->_getEnumeratorRetType;
     uStack_1 = 1;
-    pDStack_10 = &DStack_9;
+    pDStack_10 = &DStack_6;
     while( true ) {
       bVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[MV::
               WorldObject::IntVector,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_MV_WorldObject_IntVector_System_Object__MoveNext
-                        (&DStack_9,
+                        (&DStack_6,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_MV::WorldObject::CubeBase>__MoveNext__
                         );
       if (bVar11 == 0) break;
       (*(code *)(this->klass->vtable).AddCubeNetworkUpdate_1.method)();
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              ((Object *)&DStack_9,
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)&DStack_6,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_MV::WorldObject::CubeBase>__Dispose__
                ,in_stack_12);
     uStack_1 = 0xffffffff;
-    pDVar6 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+    pDVar7 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
               *)(this->fields).removedCubes;
-    if (pDVar6 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+    if (pDVar7 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                    *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets
       ::StyleSheetCache+SheetHandleKey,System::Object]::
       Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
-                (pDVar6,
+                (pDVar7,
                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_MV::WorldObject::CubeBase>__Clear__
                 );
       *unaff_FS_OFFSET = uStack_3;
@@ -336,9 +345,9 @@ void Assembly-CSharp.dll::MVCubeModelPrototypeTerrain::MVCubeModelPrototypeTerra
             (this_01,
              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_MV::WorldObject::CubeBase>__Dictionary__
             );
-  ppDVar1 = &(this->fields).removedCubes;
-  *ppDVar1 = (Dictionary_2_MV_WorldObject_IntVector_MV_WorldObject_CubeBase_ *)this_01;
-  func_?(ppDVar1,this_01);
+  (this->fields).removedCubes =
+       (Dictionary_2_MV_WorldObject_IntVector_MV_WorldObject_CubeBase_ *)this_01;
+  func_?(&(this->fields).removedCubes,this_01);
   if ((TypeInfo__MVCubeModelBase->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVCubeModelBase);
   }
@@ -353,53 +362,43 @@ void Assembly-CSharp.dll::MVCubeModelPrototypeTerrain::MVCubeModelPrototypeTerra
     if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pNVar2 = SharedCubeFunctions::SharedCubeFunctions_GetAxisAlignedBoundsRecursively
-                       ((Nullable_1_UnityEngine_Bounds_ *)&stack0xffffffc8,transform,
+    pNVar1 = SharedCubeFunctions::SharedCubeFunctions_GetAxisAlignedBoundsRecursively
+                       ((Nullable_1_UnityEngine_Bounds_ *)&stack0xffffffc0,transform,
                         (MethodInfo *)0x0);
-    bStack_3 = pNVar2->hasValue;
-    uStack_4 = pNVar2->field_0x1;
-    uStack_5 = pNVar2->field_0x2;
-    uStack_6 = pNVar2->field_0x3;
-    uStack_7 = *(undefined1 *)&(pNVar2->value).m_Center.x;
-    uStack_8 = *(undefined1 *)((int)&(pNVar2->value).m_Center.x + 1);
-    uStack_9 = *(undefined1 *)((int)&(pNVar2->value).m_Center.x + 2);
-    uStack_10 = *(undefined1 *)((int)&(pNVar2->value).m_Center.x + 3);
-    puStack_11 = (undefined *)(pNVar2->value).m_Center.y;
-    if (bStack_3 == 0) {
-      fStack_12 = 0.0;
-      fStack_13 = 0.0;
-      fStack_14 = 0.0;
-      fStack_15 = 0.0;
-      uStack_16 = 0;
+    if (pNVar1->hasValue == 0) {
+      fStack_2 = 0.0;
+      fStack_3 = 0.0;
+      fStack_4 = 0.0;
+      fStack_5 = 0.0;
     }
     else {
-      pBVar17 = mscorlib.dll::System::Nullable`1[UnityEngine::Bounds]::
+      pBVar6 = mscorlib.dll::System::Nullable`1[UnityEngine::Bounds]::
                Nullable_1_UnityEngine_Bounds__get_Value
-                         ((Bounds *)&stack0xffffffcc,(Nullable_1_UnityEngine_Bounds_ *)&bStack_3,
+                         ((Bounds *)&stack0xffffffc0,
+                          (Nullable_1_UnityEngine_Bounds_ *)&stack0xffffffa4,
                           MethodInfo__System__Nullable<UnityEngine::Bounds>__get_Value__);
-      fStack_12 = (pBVar17->m_Center).x;
-      fStack_13 = (pBVar17->m_Center).y;
-      fStack_14 = (pBVar17->m_Center).z;
-      fStack_15 = (pBVar17->m_Extents).x;
-      uStack_16._0_4_ = (pBVar17->m_Extents).y;
-      uStack_16._4_4_ = (pBVar17->m_Extents).z;
+      fStack_2 = (pBVar6->m_Center).x;
+      fStack_3 = (pBVar6->m_Center).y;
+      fStack_4 = (pBVar6->m_Center).z;
+      fStack_5 = (pBVar6->m_Extents).x;
     }
+    puVar7 = &UNK_?;
     this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (this_02 != (MVWorldObjectClientManager *)0x0) {
-      bounds.m_Center.y = fStack_13;
-      bounds.m_Center.x = fStack_12;
-      bounds.m_Center.z = fStack_14;
-      bounds.m_Extents.x = fStack_15;
-      bounds.m_Extents.y = (float)uStack_16;
-      bounds.m_Extents.z = (float)((ulonglong)uStack_16 >> 0x20);
+      bounds.m_Center.y = fStack_3;
+      bounds.m_Center.x = fStack_2;
+      bounds.m_Center.z = fStack_4;
+      bounds.m_Extents.x = fStack_5;
+      bounds.m_Extents.y = fStack_5;
+      bounds.m_Extents.z = (float)puVar7;
       MVWorldObjectClientManager::MVWorldObjectClientManager_UpdateWorldBounds
                 (this_02,bounds,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

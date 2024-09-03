@@ -61,14 +61,14 @@ code_?:
       return;
     }
     pDVar3 = (Delegate *)func_?(2,TypeInfo__IEditModeUI,pSVar1);
-    this_01 = (UnityAction_1_System_Int32Enum_ *)
+    this_00 = (UnityAction_1_System_Int32Enum_ *)
               func_?(TypeInfo__System__Action<EditModeChangeArgs>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
-              (this_01,(Object *)this,
+              (this_00,(Object *)this,
                MethodInfo__ShootableButton__OnEditModeChange_EditModeChangeArgs_,(MethodInfo *)0x0);
     pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       (pDVar3,(Delegate *)this_01,(MethodInfo *)0x0);
+                       (pDVar3,(Delegate *)this_00,(MethodInfo *)0x0);
     if (pDVar3 != (Delegate *)0x0) {
       iVar4 = func_?();
       if (iVar4 == 0) goto code_?;
@@ -86,12 +86,11 @@ code_?:
   }
   UpdateController::UpdateController_RemoveUpdateObject
             ((IUpdatecontrollerSubscriberUpdate *)this,(MethodInfo *)0x0);
-  this_00 = (this->fields)._.cullingSubscriberBase;
-  ppCVar5 = &(this->fields)._.cullingSubscriberBase;
-  if (this_00 != (CullingSubscriberBase *)0x0) {
-    CullingSubscriberBase::CullingSubscriberBase_Destroy(this_00,(MethodInfo *)0x0);
-    *ppCVar5 = (CullingSubscriberBase *)0x0;
-    func_?(ppCVar5,0);
+  if ((this->fields)._.cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
+    CullingSubscriberBase::CullingSubscriberBase_Destroy
+              ((this->fields)._.cullingSubscriberBase,(MethodInfo *)0x0);
+    (this->fields)._.cullingSubscriberBase = (CullingSubscriberBase *)0x0;
+    func_?(&(this->fields)._.cullingSubscriberBase,0);
   }
   MVWorldObjectClient::MVWorldObjectClient_Destroy((MVWorldObjectClient *)this,(MethodInfo *)0x0);
   return;
@@ -116,7 +115,7 @@ Vector3 * Assembly-CSharp.dll::ShootableButton::ShootableButton_GetClosestGridPo
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar2 = (pVVar1->oneVector).x;
   uVar3 = (pVVar1->oneVector).y;
-  fVar4 = (float)uVar2 * _UNK_?;
+  pSVar4 = (SharedCubeFunctions__Class *)((float)uVar2 * _UNK_?);
   fVar5 = (float)uVar3 * _UNK_?;
   fVar6 = (pVVar1->oneVector).z * _UNK_?;
   this_00 = (this->fields)._._.gameObject;
@@ -124,38 +123,37 @@ Vector3 * Assembly-CSharp.dll::ShootableButton::ShootableButton_GetClosestGridPo
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
-      uVar7 = 0;
-      pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                         ((Quaternion *)&stack0xffffffec,this_01,(MethodInfo *)0x0);
-      fVar4 = pQVar8->z;
-      fVar5 = pQVar8->w;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                ((Quaternion *)&stack0xffffffe0,this_01,(MethodInfo *)0x0);
+      pSVar7 = TypeInfo__SharedCubeFunctions;
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
+        pSVar4 = pSVar7;
       }
       worldPosition.z = position.z;
       worldPosition.x = position.x;
       worldPosition.y = position.y;
-      rotation.y = 0.0;
-      rotation.x = fVar6;
-      rotation.z = fVar4;
-      rotation.w = fVar5;
-      scale.y = (float)uVar7;
-      scale.x = (float)this_01;
+      rotation.y = (float)pSVar4;
+      rotation.x = gridSize;
+      rotation.z = fVar5;
+      rotation.w = fVar6;
+      scale.y = fVar5;
+      scale.x = (float)pSVar4;
       scale.z = fVar6;
-      pVVar9 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
+      pVVar8 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
                          (&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
-      fVar5 = pVVar9->y;
-      fVar4 = pVVar9->z;
-      __return_storage_ptr__->x = pVVar9->x;
+      fVar5 = pVVar8->y;
+      fVar6 = pVVar8->z;
+      __return_storage_ptr__->x = pVVar8->x;
       __return_storage_ptr__->y = fVar5;
-      __return_storage_ptr__->z = fVar4;
+      __return_storage_ptr__->z = fVar6;
       return __return_storage_ptr__;
     }
   }
-  func_?(fVar4,fVar5);
-  pcVar10 = (code *)swi(3);
-  pVVar9 = (Vector3 *)(*pcVar10)();
-  return pVVar9;
+  func_?();
+  pcVar9 = (code *)swi(3);
+  pVVar8 = (Vector3 *)(*pcVar9)();
+  return pVVar8;
 }
 
 
@@ -211,23 +209,23 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_Initialize
   pGVar1 = (this->fields)._._.gameObject;
   if (pGVar1 != (GameObject *)0x0) {
     pLVar2 = (LogicInteractable *)
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                        (pGVar1,
-                         LogicInteractable_MethodInfo__UnityEngine__GameObject__AddComponent<LogicInteractable>__
-                        );
-    ppLVar3 = &(this->fields).interactable;
-    *ppLVar3 = pLVar2;
-    func_?(ppLVar3,pLVar2);
+             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                       (pGVar1,
+                        LogicInteractable_MethodInfo__UnityEngine__GameObject__AddComponent<LogicInteractable>__
+                       );
+    (this->fields).interactable = pLVar2;
+    func_?(&(this->fields).interactable,pLVar2);
     pGVar1 = (this->fields)._._.gameObject;
     if (pGVar1 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
                 (pGVar1,
                  ClientSideLogicInteractionHandler_MethodInfo__UnityEngine__GameObject__AddComponent<ClientSideLogicInteractionHandler>__
                 );
-      pLVar2 = *ppLVar3;
-      this_01 = (EventHandler_1_Object_ *)
+      pLVar2 = (this->fields).interactable;
+      this_01 = (UnityAction_2_System_Object_System_Object_ *)
                 func_?(TypeInfo__System__EventHandler<TakeDamageEventArgs>);
-      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
                 (this_01,(Object *)this,
                  MethodInfo__ShootableButton__Activate_System__Object__TakeDamageEventArgs_,
                  (MethodInfo *)0x0);
@@ -244,9 +242,9 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_Initialize
             func_?(&TypeInfo__MVGameControllerBase);
             cRam_? = '\x01';
           }
-          pIVar4 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-          if (pIVar4 == (IEditModeUI *)0x0) goto code_?;
-          pDVar5 = (Delegate *)func_?(2,TypeInfo__IEditModeUI,pIVar4);
+          pIVar3 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+          if (pIVar3 == (IEditModeUI *)0x0) goto code_?;
+          pDVar4 = (Delegate *)func_?(2,TypeInfo__IEditModeUI,pIVar3);
           this_02 = (UnityAction_1_System_Int32Enum_ *)
                     func_?(TypeInfo__System__Action<EditModeChangeArgs>);
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
@@ -254,68 +252,65 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_Initialize
                     (this_02,(Object *)this,
                      MethodInfo__ShootableButton__OnEditModeChange_EditModeChangeArgs_,
                      (MethodInfo *)0x0);
-          pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
-                              (pDVar5,(Delegate *)this_02,(MethodInfo *)0x0);
-          if (pDVar5 != (Delegate *)0x0) {
-            iVar6 = func_?();
-            if (iVar6 == 0) {
+          pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                             (pDVar4,(Delegate *)this_02,(MethodInfo *)0x0);
+          if (pDVar4 != (Delegate *)0x0) {
+            iVar5 = func_?();
+            if (iVar5 == 0) {
               func_?();
               goto code_?;
             }
           }
-          in_stack_7 = (GreyOutObjectScript *)0x3;
+          in_stack_6 = (GreyOutObjectScript *)0x3;
           func_?();
         }
-        pSVar8 = (this->fields).buttonObject;
-        if ((pSVar8 != (ShootableButtonObject *)0x0) &&
-           (pCVar9 = (pSVar8->fields).targetCollider2D, pCVar9 != (Collider *)0x0)) {
+        pSVar7 = (this->fields).buttonObject;
+        if ((pSVar7 != (ShootableButtonObject *)0x0) &&
+           (pCVar8 = (pSVar7->fields).targetCollider2D, pCVar8 != (Collider *)0x0)) {
           UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                    (pCVar9,0,(MethodInfo *)0x0);
-          pSVar8 = (this->fields).buttonObject;
-          if (pSVar8 != (ShootableButtonObject *)0x0) {
-            ppCVar10 = &(this->fields).targetCollider;
-            *ppCVar10 = (pSVar8->fields).targetCollider3D;
+                    (pCVar8,0,(MethodInfo *)0x0);
+          pSVar7 = (this->fields).buttonObject;
+          if (pSVar7 != (ShootableButtonObject *)0x0) {
+            (this->fields).targetCollider = (pSVar7->fields).targetCollider3D;
             func_?();
-            ppCVar11 = &(this->fields)._._.collider;
-            *ppCVar11 = *ppCVar10;
-            func_?(ppCVar11);
-            pSVar8 = (this->fields).buttonObject;
-            if (pSVar8 != (ShootableButtonObject *)0x0) {
+            (this->fields)._._.collider = (this->fields).targetCollider;
+            func_?(&(this->fields)._._.collider);
+            pSVar7 = (this->fields).buttonObject;
+            if (pSVar7 != (ShootableButtonObject *)0x0) {
               MVLogicObject::MVLogicObject_SetupCulling
-                        ((MVLogicObject *)this,(pSVar8->fields).visualRoot,2.0,(MethodInfo *)0x0);
-              this_03 = (Action_3_Boolean_Boolean_Object_ *)
+                        ((MVLogicObject *)this,(pSVar7->fields).visualRoot,2.0,(MethodInfo *)0x0);
+              this_03 = (Action_3_Int32_Int32_ByteEnum_ *)
                         func_?(TypeInfo__System__Action<bool,_bool,_LogicObjectManager>);
-              mscorlib.dll::System::Action`3[Boolean,Boolean,Object]::
-              Action_3_Boolean_Boolean_Object___ctor
+              mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::
+              Action_3_Int32_Int32_ByteEnum___ctor
                         (this_03,(Object *)this,
                          MethodInfo__ShootableButton__SignalCallback_bool__bool__LogicObjectManager_
                          ,(MethodInfo *)0x0);
-              pIVar12 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver
-                                  ((MVWorldObject *)this,0,
-                                   (Action_3_Boolean_Boolean_LogicObjectManager_ *)this_03,
-                                   (MethodInfo *)0x0);
-              ppIVar13 = &(this->fields)._InputSignalReceiver_k__BackingField;
-              *ppIVar13 = pIVar12;
-              func_?(ppIVar13,pIVar12);
-              iVar14 = (this->fields)._._._.id;
-              puVar15 = &UNK_?;
+              pIVar9 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver
+                                 ((MVWorldObject *)this,0,
+                                  (Action_3_Boolean_Boolean_LogicObjectManager_ *)this_03,
+                                  (MethodInfo *)0x0);
+              (this->fields)._InputSignalReceiver_k__BackingField = pIVar9;
+              func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar9);
+              iVar10 = (this->fields)._._._.id;
+              puVar11 = &UNK_?;
               this_04 = (WorldObjectClientRef_1_System_Object_ *)
                         func_?(TypeInfo__OutputSignalTransmitter);
               WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
-                        (this_04,iVar14,(MethodInfo *)0x0);
+                        (this_04,iVar10,(MethodInfo *)0x0);
               (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_04;
               func_?();
-              iVar14 = ShootableButton_get_CurrentTime(this,(MethodInfo *)0x0);
-              if (iVar14 == -1) {
+              iVar10 = ShootableButton_get_CurrentTime(this,(MethodInfo *)0x0);
+              if (iVar10 == -1) {
                 return;
               }
-              pCVar9 = (this->fields).targetCollider;
-              if (pCVar9 != (Collider *)0x0) {
+              pCVar8 = (this->fields).targetCollider;
+              if (pCVar8 != (Collider *)0x0) {
                 UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                          (pCVar9,0,(MethodInfo *)0x0);
-                pSVar8 = (this->fields).buttonObject;
-                if ((pSVar8 != (ShootableButtonObject *)0x0) &&
-                   ((pSVar8->fields).greyOutObject != (GreyOutObjectScript *)0x0)) {
+                          (pCVar8,0,(MethodInfo *)0x0);
+                pSVar7 = (this->fields).buttonObject;
+                if ((pSVar7 != (ShootableButtonObject *)0x0) &&
+                   ((pSVar7->fields).greyOutObject != (GreyOutObjectScript *)0x0)) {
                   if (cRam_? == '\0') {
                     func_?();
                     func_?(&
@@ -323,21 +318,20 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_Initialize
                                    );
                     cRam_? = '\x01';
                   }
-                  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                             *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>
-                                               ,puVar15);
-                  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP
-                  ::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-                  __Il2CppFullySharedGenericType]::
-                  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                            (this_00,(Object *)in_stack_7,
+                  this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+                            func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>
+                                            ,puVar11);
+                  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+                  SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+                  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+                            (this_00,(Object *)in_stack_6,
                              MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_
                              ,(MethodInfo *)0x0);
                   GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials
-                            (in_stack_7,
+                            (in_stack_6,
                              (Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_00,
                              (MethodInfo *)0x0);
-                  (in_stack_7->fields).isGreyedIn = 0;
+                  (in_stack_6->fields).isGreyedIn = 0;
                   return;
                 }
               }
@@ -349,8 +343,8 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_Initialize
   }
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -484,11 +478,10 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_Reset
       }
       ppMStack2 =
            (MethodInfo **)TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>;
-      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 *)func_?();
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+      this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
                 (this_01,(Object *)0x0,
                  MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_
                  ,(MethodInfo *)0x0);
@@ -524,13 +517,13 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_SetToDownState
         func_?();
         cRam_? = '\x01';
       }
-      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 *)func_?(
-                                  TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>
-                                  );
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+      this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+                func_?(
+                               TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>
+                               );
+      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
                 (this_01,(Object *)in_stack_2,
                  MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_
                  ,(MethodInfo *)0x0);
@@ -566,11 +559,10 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_SetToUpState
         func_?();
         cRam_? = '\x01';
       }
-      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 *)func_?();
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+      this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
                 (this_01,(Object *)0x0,
                  MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_
                  ,(MethodInfo *)0x0);
@@ -671,41 +663,44 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton__ctor
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
   if (pPVar1 == (PrefabPool *)0x0) {
     func_?();
+    pSVar2 = extraout_EDX;
   }
   else {
     MVLogicObject::MVLogicObject__ctor
               ((MVLogicObject *)this,data,(ObjectPrefab *)(pPVar1->fields).shootableButtonPrefab,
                worldObjects,(MethodInfo *)0x0);
-    piVar2 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x10000;
-    piVar2 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
-    pSVar3 = (ShootableButtonObject *)(this->fields)._._.component;
+    piVar3 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar3 = (uint)*piVar3 | 0x10000;
+    piVar3 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar3 = (uint)*piVar3 | 0x8000;
+    pSVar2 = (ShootableButtonObject *)(this->fields)._._.component;
     *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
     (this->fields)._._._PlayInteractionType_k__BackingField = 1;
-    if (pSVar3 == (ShootableButtonObject *)0x0) {
+    if (pSVar2 == (ShootableButtonObject *)0x0) {
       (this->fields).buttonObject = (ShootableButtonObject *)0x0;
       func_?();
       return;
     }
-    bVar4 = (TypeInfo__ShootableButtonObject->_1).naturalAligment;
-    if ((bVar4 <= (((ObjectPrefab__Class *)pSVar3->klass)->_1).naturalAligment) &&
-       ((((ObjectPrefab__Class *)pSVar3->klass)->_1).typeHierarchy[bVar4 - 1] ==
+    if (((TypeInfo__ShootableButtonObject->_1).naturalAligment <=
+         (((ObjectPrefab__Class *)pSVar2->klass)->_1).naturalAligment) &&
+       ((((ObjectPrefab__Class *)pSVar2->klass)->_1).typeHierarchy
+        [(TypeInfo__ShootableButtonObject->_1).naturalAligment - 1] ==
         (Il2CppClass *)TypeInfo__ShootableButtonObject)) {
-      (this->fields).buttonObject = pSVar3;
-      bVar4 = (TypeInfo__ShootableButtonObject->_1).naturalAligment;
-      if ((bVar4 <= (((ObjectPrefab__Class *)pSVar3->klass)->_1).naturalAligment) &&
-         ((((ObjectPrefab__Class *)pSVar3->klass)->_1).typeHierarchy[bVar4 - 1] ==
+      (this->fields).buttonObject = pSVar2;
+      if (((TypeInfo__ShootableButtonObject->_1).naturalAligment <=
+           (((ObjectPrefab__Class *)pSVar2->klass)->_1).naturalAligment) &&
+         ((((ObjectPrefab__Class *)pSVar2->klass)->_1).typeHierarchy
+          [(TypeInfo__ShootableButtonObject->_1).naturalAligment - 1] ==
           (Il2CppClass *)TypeInfo__ShootableButtonObject)) {
         func_?();
         return;
       }
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?(pSVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

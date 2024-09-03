@@ -96,14 +96,13 @@ void Assembly-CSharp.dll::ThirdPersonCamera::ThirdPersonCamera_ResetScaleValues
      (this_00 = (pMVar2->fields)._._._.gameObject, this_00 != (GameObject *)0x0)) {
     pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (this_00,(MethodInfo *)0x0);
-    ppTVar4 = &(this->fields)._.lookAtTransform;
-    *ppTVar4 = pTVar3;
-    func_?(ppTVar4,pTVar3);
-    fVar5 = (this->fields)._.lookAtOffset.y;
-    fVar6 = (this->fields)._.lookAtOffset.z;
+    (this->fields)._.lookAtTransform = pTVar3;
+    func_?(&(this->fields)._.lookAtTransform,pTVar3);
+    fVar4 = (this->fields)._.lookAtOffset.y;
+    fVar5 = (this->fields)._.lookAtOffset.z;
     (this->fields)._.currentLookAtOffset.x = (this->fields)._.lookAtOffset.x;
-    (this->fields)._.currentLookAtOffset.y = fVar5;
-    (this->fields)._.currentLookAtOffset.z = fVar6;
+    (this->fields)._.currentLookAtOffset.y = fVar4;
+    (this->fields)._.currentLookAtOffset.z = fVar5;
     (this->fields)._.shoulderOffset.x = (float)(int)(ulonglong)uVar1;
     (this->fields)._.shoulderOffset.y = (float)(int)((ulonglong)uVar1 >> 0x20);
     (this->fields)._.lookAtScaleCorrection = 1.0;
@@ -112,8 +111,8 @@ void Assembly-CSharp.dll::ThirdPersonCamera::ThirdPersonCamera_ResetScaleValues
     return;
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -136,51 +135,50 @@ void Assembly-CSharp.dll::ThirdPersonCamera::ThirdPersonCamera_ScaleCameraValues
      (this_00 = (pMVar3->fields)._._._.gameObject, this_00 != (GameObject *)0x0)) {
     pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (this_00,(MethodInfo *)0x0);
-    ppTVar5 = &(this->fields)._.lookAtTransform;
-    *ppTVar5 = pTVar4;
-    func_?(ppTVar5,pTVar4);
-    fVar6 = (this->fields)._.height;
+    (this->fields)._.lookAtTransform = pTVar4;
+    func_?(&(this->fields)._.lookAtTransform,pTVar4);
+    fVar5 = (this->fields)._.height;
     (this->fields)._.shoulderOffset.x = (float)(int)(ulonglong)(uint)VStack_1.x;
     (this->fields)._.shoulderOffset.y = (float)(int)((ulonglong)(uint)VStack_1.x >> 0x20);
-    (this->fields)._.height = fVar6 * scale;
-    fVar6 = (this->fields)._.distanceToAvatar;
+    (this->fields)._.height = scale * fVar5;
+    fVar5 = (this->fields)._.distanceToAvatar;
     (this->fields)._.shoulderOffset.z = -0.2;
-    fStack_7 = (this->fields)._.lookAtOffset.z;
-    (this->fields)._.distanceToAvatar = fVar6 * scale;
-    fVar6 = (this->fields)._._._.cameraRadius;
+    fStack_6 = (this->fields)._.lookAtOffset.z;
+    (this->fields)._.distanceToAvatar = scale * fVar5;
+    fVar5 = (this->fields)._._._.cameraRadius;
     (this->fields)._.lookAtScaleCorrection = 1.0;
     (this->fields)._.targetDistanceStrength = 2.0;
-    (this->fields)._._._.cameraRadius = fVar6 * scale;
-    uStack_8._0_4_ = (this->fields)._.lookAtOffset.x;
-    uStack_8._4_4_ = (this->fields)._.lookAtOffset.y;
-    fStack_7 = fStack_7 * scale;
-    pTVar4 = *ppTVar5;
-    (this->fields)._.currentLookAtOffset.x = (float)(undefined4)uStack_8 * scale;
-    (this->fields)._.currentLookAtOffset.y = (float)uStack_8._4_4_ * scale;
-    (this->fields)._.currentLookAtOffset.z = fStack_7;
+    (this->fields)._._._.cameraRadius = scale * fVar5;
+    uStack_7._0_4_ = (this->fields)._.lookAtOffset.x;
+    uStack_7._4_4_ = (this->fields)._.lookAtOffset.y;
+    fStack_6 = fStack_6 * scale;
+    pTVar4 = (this->fields)._.lookAtTransform;
+    (this->fields)._.currentLookAtOffset.x = (float)(undefined4)uStack_7 * scale;
+    (this->fields)._.currentLookAtOffset.y = (float)uStack_7._4_4_ * scale;
+    (this->fields)._.currentLookAtOffset.z = fStack_6;
     if (pTVar4 != (Transform *)0x0) {
-      pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+      pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                          (&VStack_1,pTVar4,(MethodInfo *)0x0);
-      uStack_8._0_4_ = pVVar9->x;
-      uStack_8._4_4_ = pVVar9->y;
-      fStack_7 = pVVar9->z * scale;
-      value.y = (float)uStack_8._4_4_ * scale;
-      value.x = (float)(undefined4)uStack_8 * scale;
-      value.z = fStack_7;
+      uStack_7._0_4_ = pVVar8->x;
+      uStack_7._4_4_ = pVVar8->y;
+      fStack_6 = pVVar8->z * scale;
+      value.y = (float)uStack_7._4_4_ * scale;
+      value.x = (float)(undefined4)uStack_7 * scale;
+      value.z = fStack_6;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                 (pTVar4,value,(MethodInfo *)0x0);
       if (scale < _UNK_?) {
-        (this->fields)._.lookAtScaleCorrection = (this->fields)._.lookAtScaleCorrection * scale;
+        (this->fields)._.lookAtScaleCorrection = scale * (this->fields)._.lookAtScaleCorrection;
       }
-      uStack_8._0_4_ = (this->fields)._.shoulderOffset.x;
-      uStack_8._4_4_ = (this->fields)._.shoulderOffset.y;
-      fStack_7 = (this->fields)._.shoulderOffset.z * scale;
-      fVar6 = (this->fields)._.targetDistanceStrength;
-      (this->fields)._.shoulderOffset.x = (float)(undefined4)uStack_8 * scale;
-      (this->fields)._.shoulderOffset.y = (float)uStack_8._4_4_ * scale;
-      (this->fields)._.shoulderOffset.z = fStack_7;
+      uStack_7._0_4_ = (this->fields)._.shoulderOffset.x;
+      uStack_7._4_4_ = (this->fields)._.shoulderOffset.y;
+      fStack_6 = (this->fields)._.shoulderOffset.z * scale;
+      fVar5 = (this->fields)._.targetDistanceStrength;
+      (this->fields)._.shoulderOffset.x = (float)(undefined4)uStack_7 * scale;
+      (this->fields)._.shoulderOffset.y = (float)uStack_7._4_4_ * scale;
+      (this->fields)._.shoulderOffset.z = fStack_6;
       this_01 = (this->fields)._.avatarCameraDistTransparency;
-      (this->fields)._.targetDistanceStrength = fVar6 * scale;
+      (this->fields)._.targetDistanceStrength = scale * fVar5;
       if (this_01 != (AvatarCameraDistTransparency *)0x0) {
         AvatarCameraDistTransparency::AvatarCameraDistTransparency_SetScaleFadeDistance
                   (this_01,scale,(MethodInfo *)0x0);
@@ -189,8 +187,8 @@ void Assembly-CSharp.dll::ThirdPersonCamera::ThirdPersonCamera_ScaleCameraValues
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -311,11 +309,11 @@ void Assembly-CSharp.dll::ThirdPersonCamera::ThirdPersonCamera_UpdateCamera
         value.y = (float)uVar12 + (float)uVar32;
         ProtectedTransform::ProtectedTransform_set_position
                   (in_stack_33,value,(MethodInfo *)0x0);
-        value_00.y = (fVar3 * fVar24 + fVar22 * 3.2234717e-29 + fVar2 * fVar23) - fVar4 * fVar21;
-        value_00.x = (fVar2 * fVar24 + fVar21 * 3.2234717e-29 + fVar4 * fVar22) - fVar3 * fVar23;
-        value_00.z = (fVar4 * fVar24 + fVar23 * 3.2234717e-29 + fVar3 * fVar21) - fVar2 * fVar22;
-        value_00.w = ((fVar24 * 3.2234717e-29 - fVar2 * fVar21) - fVar3 * fVar22) -
-                     fVar4 * fVar23;
+        value_00.y = (fVar3 * fVar24 + fVar22 * 3.241691e-29 + fVar23 * fVar2) - fVar4 * fVar21;
+        value_00.x = (fVar24 * fVar2 + fVar21 * 3.241691e-29 + fVar22 * fVar4) - fVar23 * fVar3;
+        value_00.z = (fVar4 * fVar24 + fVar23 * 3.241691e-29 + fVar3 * fVar21) - fVar22 * fVar2;
+        value_00.w = ((fVar24 * 3.241691e-29 - fVar2 * fVar21) - fVar3 * fVar22) - fVar23 * fVar4
+        ;
         ProtectedTransform::ProtectedTransform_set_rotation
                   (in_stack_33,value_00,(MethodInfo *)0x0);
         this_00 = (AvatarCameraDistTransparency *)targetTransform[8].fields.transform;
@@ -426,16 +424,16 @@ void Assembly-CSharp.dll::ThirdPersonCamera::ThirdPersonCamera_UpdateTargetRotat
     }
     pIVar7 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar7 != (IPlayModeUI *)0x0) {
-      cVar8 = func_?(3,TypeInfo__IPlayModeUI,pIVar7);
-      (this->fields)._.autoRotate = cVar8 == '\0';
-      if ((cVar8 == '\0') && (((this->fields)._._._.ignoreInputTypes & 1) == 0)) {
+      bVar8 = func_?(3,TypeInfo__IPlayModeUI,pIVar7);
+      (this->fields)._.autoRotate = bVar8 ^ 1;
+      if (((bVar8 ^ 1) != 0) && (((this->fields)._._._.ignoreInputTypes & 1) == 0)) {
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MVInputWrapper);
         }
         fVar9 = MVInputWrapper::MVInputWrapper_GetAxis(StringLiteral_Mouse_X,(MethodInfo *)0x0);
-        fStack_6 = (this->fields)._.mouseSensitivity * fVar9 + (float)uVar4;
+        fStack_6 = fVar9 * (this->fields)._.mouseSensitivity + (float)uVar4;
         fVar9 = MVInputWrapper::MVInputWrapper_GetAxis(StringLiteral_Mouse_Y,(MethodInfo *)0x0);
-        fVar5 = fVar5 + (this->fields)._.mouseSensitivity * fVar9;
+        fVar5 = fVar5 + fVar9 * (this->fields)._.mouseSensitivity;
       }
       fVar5 = MathFunctions::MathFunctions_NormalizeAngle(fVar5,(MethodInfo *)0x0);
       if (_UNK_? < fVar5) {
@@ -534,18 +532,18 @@ void Assembly-CSharp.dll::ThirdPersonCamera::ThirdPersonCamera__ctor
   (value->fields).samleLength = 5;
   this_00 = (Queue_1_UnityEngine_Vector3_ *)
             func_?(TypeInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>);
-  mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32]::Stack_1_System_Int32___ctor
-            ((Stack_1_System_Int32_ *)this_00,
+  System.Core.dll::System::Runtime::CompilerServices::ReadOnlyCollectionBuilder`1[System::Object]::
+  ReadOnlyCollectionBuilder_1_System_Object___ctor
+            ((ReadOnlyCollectionBuilder_1_System_Object_ *)this_00,
              MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Queue__);
   method_00 = (MethodInfo *)&(value->fields).prevVelocities;
-  *(Queue_1_UnityEngine_Vector3_ **)method_00 = this_00;
+  (value->fields).prevVelocities = this_00;
   func_?(method_00,this_00);
   (value->fields).maxMag = 30.0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,method_00);
-  ppPVar7 = &(this->fields)._.smoothLookAt;
-  *ppPVar7 = value;
-  func_?(ppPVar7,value);
+  (this->fields)._.smoothLookAt = value;
+  func_?(&(this->fields)._.smoothLookAt,value);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';

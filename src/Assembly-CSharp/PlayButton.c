@@ -262,7 +262,7 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnEnable(PlayButton *this,Metho
     }
     pPStack_3 = TypeInfo__PlayButton____c__DisplayClass19_0;
     value = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (value,ExceptionArgument__Enum_obj,in_stack_1);
     this_01 = (this->fields).embeddedPlayerConfig;
     if ((this_01 != (EmbeddedPlayerConfig *)0x0) &&
@@ -393,7 +393,7 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnPromotionShown
   }
   method_00 = TypeInfo__PlayButton____c__DisplayClass14_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   original = (this->fields).continueButtonPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -405,10 +405,9 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnPromotionShown
                       ContinueButtonLockCursor_MethodInfo__UnityEngine__Object__Instantiate<ContinueButtonLockCursor>_ContinueButtonLockCursor_
                      );
   if (value != (Object *)0x0) {
-    pOVar3 = value + 1;
-    pOVar3->klass = pOVar2;
-    func_?(pOVar3,pOVar2);
-    pOVar2 = pOVar3->klass;
+    value[1].klass = pOVar2;
+    func_?(value + 1,pOVar2);
+    pOVar2 = value[1].klass;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
@@ -441,8 +440,8 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnPromotionShown
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -552,10 +551,9 @@ code_?:
         func_?();
         cRam_? = '\x01';
       }
-      if ((TypeInfo__TimedPlayReward__RewardTracker->static_fields->IsCollected == 0) &&
-         (pAVar11 = TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged,
-         pAVar11 != (Action *)0x0)) {
-        (*(pAVar11->fields)._._.invoke_impl)();
+      pTVar11 = TypeInfo__TimedPlayReward__RewardTracker->static_fields;
+      if ((pTVar11->IsCollected == 0) && (pTVar11->CollectedChanged != (Action *)0x0)) {
+        (*(pTVar11->CollectedChanged->fields)._._.invoke_impl)();
       }
     }
   }

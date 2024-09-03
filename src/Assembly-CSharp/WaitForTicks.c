@@ -42,7 +42,7 @@ void Assembly-CSharp.dll::WaitForTicks::WaitForTicks__ctor
                (WaitForTicks *this,int32_t milliseconds,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   dVar1 = (double)milliseconds;
   if (_UNK_? < dVar1) {

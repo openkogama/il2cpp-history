@@ -372,34 +372,6 @@ String * Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_GetStringInput(Meth
 }
 
 
-/* Boolean InputCharActive(KeyCode) */
-
-bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_InputCharActive
-               (KeyCode__Enum key,MethodInfo *method)
-
-{
-  if (pcRam_? == (code *)0x0) {
-    pcRam_? = (code *)func_?(&UNK_?);
-  }
-  bVar1 = (*pcRam_?)(key);
-  return bVar1;
-}
-
-
-/* Boolean InputCharActiveDown(KeyCode) */
-
-bool Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_InputCharActiveDown
-               (KeyCode__Enum key,MethodInfo *method)
-
-{
-  if (pcRam_? == (code *)0x0) {
-    pcRam_? = (code *)func_?(&UNK_?);
-  }
-  bVar1 = (*pcRam_?)(key);
-  return bVar1;
-}
-
-
 /* Void ResetInput() */
 
 void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_ResetInput(MethodInfo *method)
@@ -423,9 +395,10 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_ResetInput(MethodInfo *
   pIVar1 = TypeInfo__MVInputWrapper->static_fields->inputMap;
   pDVar2 = TypeInfo__DesktopDefaultKeyboardMapping;
   if (pIVar1 != (IKogamaInputMap *)0x0) {
-    bVar3 = (TypeInfo__DesktopDefaultKeyboardMapping->_1).naturalAligment;
-    if (((pIVar1->klass->_1).naturalAligment < bVar3) ||
-       ((pIVar1->klass->_1).typeHierarchy[bVar3 - 1] !=
+    if (((pIVar1->klass->_1).naturalAligment <
+         (TypeInfo__DesktopDefaultKeyboardMapping->_1).naturalAligment) ||
+       ((pIVar1->klass->_1).typeHierarchy
+        [(TypeInfo__DesktopDefaultKeyboardMapping->_1).naturalAligment - 1] !=
         (Il2CppClass *)TypeInfo__DesktopDefaultKeyboardMapping)) goto code_?;
     pDVar2 = unaff_ESI;
     if ((pIVar1[1].monitor != (MonitorData *)0x0) &&
@@ -438,8 +411,8 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_ResetInput(MethodInfo *
   pIVar1 = extraout_EDX;
 code_?:
   func_?(pIVar1,pDVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -478,7 +451,7 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_SuppressAllInput(Method
   }
   method_00 = TypeInfo__MVInputWrapper__InputSuppression;
   value = (MVInputWrapper_InputSuppression *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (*(code *)(value->klass->vtable).set_IsSuppressed.method)(value,1,value->klass[1]._0.image);
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
@@ -505,7 +478,7 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_SuppressInGameInput(Met
   }
   method_00 = TypeInfo__MVInputWrapper__InputSuppression;
   value = (MVInputWrapper_InputSuppression *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (*(code *)(value->klass->vtable).set_IsSuppressed.method)(value,1,value->klass[1]._0.image);
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
@@ -532,7 +505,7 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_SuppressShortcutKeys(Me
   }
   method_00 = TypeInfo__MVInputWrapper__InputSuppression;
   value = (MVInputWrapper_InputSuppression *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (*(code *)(value->klass->vtable).set_IsSuppressed.method)(value,1,value->klass[1]._0.image);
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
@@ -561,7 +534,7 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper__cctor(MethodInfo *meth
   }
   pMVar2 = TypeInfo__MVInputWrapper__InputSuppression;
   pMVar3 = (MVInputWrapper_InputSuppression *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)pMVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pMVar2);
   (*(code *)(pMVar3->klass->vtable).set_IsSuppressed.method)(pMVar3,0,pMVar3->klass[1]._0.image);
   TypeInfo__MVInputWrapper->static_fields->isInputAllSuppressed = pMVar3;
@@ -572,7 +545,7 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper__cctor(MethodInfo *meth
   }
   pMVar2 = TypeInfo__MVInputWrapper__InputSuppression;
   pMVar3 = (MVInputWrapper_InputSuppression *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)pMVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pMVar2);
   (*(code *)(pMVar3->klass->vtable).set_IsSuppressed.method)(pMVar3,0,pMVar3->klass[1]._0.image);
   TypeInfo__MVInputWrapper->static_fields->isShortcutKeysSuppressed = pMVar3;
@@ -583,7 +556,7 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper__cctor(MethodInfo *meth
   }
   pMVar2 = TypeInfo__MVInputWrapper__InputSuppression;
   pMVar3 = (MVInputWrapper_InputSuppression *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)pMVar3,ExceptionArgument__Enum_obj,(MethodInfo *)pMVar2);
   (*(code *)(pMVar3->klass->vtable).set_IsSuppressed.method)(pMVar3);
   TypeInfo__MVInputWrapper->static_fields->isInGameInputSuppressed = pMVar3;

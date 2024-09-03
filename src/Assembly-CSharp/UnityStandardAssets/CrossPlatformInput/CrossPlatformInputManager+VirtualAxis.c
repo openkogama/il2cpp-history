@@ -87,7 +87,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
                (CrossPlatformInputManager_VirtualAxis *this,String *name,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
   func_?(&this->fields,name);
@@ -104,7 +104,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
   func_?(&this->fields,name);

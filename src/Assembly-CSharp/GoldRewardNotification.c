@@ -54,15 +54,16 @@ void Assembly-CSharp.dll::GoldRewardNotification::GoldRewardNotification_RewardC
     func_?(&TypeInfo__TimedPlayReward__RewardTracker);
     cRam_? = '\x01';
   }
-  if (TypeInfo__TimedPlayReward__RewardTracker->static_fields->IsCollected == 0) {
-    pAVar1 = TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged;
-    if (pAVar1 != (Action *)0x0) {
-      (*(pAVar1->fields)._._.invoke_impl)
-                ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
+  pTVar1 = TypeInfo__TimedPlayReward__RewardTracker->static_fields;
+  if (pTVar1->IsCollected == 0) {
+    if (pTVar1->CollectedChanged != (Action *)0x0) {
+      pAVar2 = pTVar1->CollectedChanged;
+      (*(pAVar2->fields)._._.invoke_impl)
+                ((pAVar2->fields)._._.method_code,(pAVar2->fields)._._.method);
     }
-    iVar2 = (*(code *)(this->klass->vtable).get_Lifetime.method)
+    iVar3 = (*(code *)(this->klass->vtable).get_Lifetime.method)
                       (this,(this->klass->vtable).Initialize.methodPtr);
-    (this->fields)._.timeSinceStart = (float)(iVar2 + 1);
+    (this->fields)._.timeSinceStart = (float)(iVar3 + 1);
   }
   return;
 }

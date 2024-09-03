@@ -298,9 +298,8 @@ void Assembly-CSharp.dll::GamePassesManager::GamePassesManager_UpdatePlayerPlane
     cRam_? = '\x01';
   }
   bVar14 = MVClientSettings::MVClientSettings_get_FirstPreviewTierFreeEnabled((MethodInfo *)0x0);
-  pTVar15 = TypeInfo__GamePassesManager->static_fields->togglePreviewState;
-  if (pTVar15 != (TogglePreviewState *)0x0) {
-    bVar14 = (pTVar15->fields).freeTry;
+  if (TypeInfo__GamePassesManager->static_fields->togglePreviewState != (TogglePreviewState *)0x0) {
+    bVar14 = (TypeInfo__GamePassesManager->static_fields->togglePreviewState->fields).freeTry;
   }
   playerPlanetData = (PlayerPlanetData *)CONCAT31(playerPlanetData._1_3_,bVar14);
   if (cRam_? == '\0') {
@@ -318,55 +317,56 @@ void Assembly-CSharp.dll::GamePassesManager::GamePassesManager_UpdatePlayerPlane
     if (pPVar10 != (PlayerPlanetData *)0x0) {
       pDStack_11 = (Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Object_ *)
                    CONCAT31(pDStack_11._1_3_,(pPVar10->fields).gamePassTier);
-      pTVar15 = (TogglePreviewState *)
-               func_?(TypeInfo__Assets__Scripts__GamePasses__TogglePreviewState);
+      this_01 = (TogglePreviewState *)
+                func_?(TypeInfo__Assets__Scripts__GamePasses__TogglePreviewState);
       Assets::Scripts::GamePasses::TogglePreviewState::TogglePreviewState__ctor
-                (pTVar15,GStack_12,(GamePassTier__Enum)pDStack_11,(bool)playerPlanetData,
+                (this_01,GStack_12,(GamePassTier__Enum)pDStack_11,(bool)playerPlanetData,
                  (MethodInfo *)0x0);
-      TypeInfo__GamePassesManager->static_fields->togglePreviewState = pTVar15;
-      func_?(&TypeInfo__GamePassesManager->static_fields->togglePreviewState,pTVar15);
+      TypeInfo__GamePassesManager->static_fields->togglePreviewState = this_01;
+      func_?(&TypeInfo__GamePassesManager->static_fields->togglePreviewState,this_01);
       if (cRam_? == '\0') {
         func_?(&TypeInfo__GamePassesManager);
         cRam_? = '\x01';
       }
       if (TypeInfo__GamePassesManager->static_fields->showGamePassDataInConsole == 0) {
 code_?:
-        pAVar16 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
-        if (pAVar16 != (Action *)0x0) {
-          (*(pAVar16->fields)._._.invoke_impl)();
+        if (TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated != (Action *)0x0)
+        {
+          (*(TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated->fields)._._.
+            invoke_impl)();
         }
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
       if (pPVar7 != (PlayerPlanetData *)0x0) {
-        pSVar17 = (String *)
-                  (*(code *)(pPVar7->klass->vtable).ToString.method)
-                            (pPVar7,pPVar7->klass[1]._0.image);
+        pSVar15 = (String *)
+                 (*(code *)(pPVar7->klass->vtable).ToString.method)
+                           (pPVar7,pPVar7->klass[1]._0.image);
         MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                  (MVGameMsgType__Enum_AdminMsg,pSVar17,(MethodInfo *)0x0);
+                  (MVGameMsgType__Enum_AdminMsg,pSVar15,(MethodInfo *)0x0);
         this = TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator;
         playerPlanetData =
              (PlayerPlanetData *)CONCAT31(playerPlanetData._1_3_,(pPVar7->fields).gamePassTier);
         if (this != (PlayerTierStateCalculator *)0x0) {
-          this_01 = (Dictionary_2_System_UInt32_System_Object_ *)
+          this_02 = (Dictionary_2_System_UInt32_System_Object_ *)
                     MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalculator::
                     PlayerTierStateCalculator_GetTierPricingState
                               (this,(pPVar7->fields).progressionGamePoints,
                                (GamePassTier__Enum)playerPlanetData,(MethodInfo *)0x0);
-          if (this_01 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-            pDVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System
-                      ::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                                ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *
-                                 )&stack0xffffffa4,this_01,
-                                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__GetEnumerator__
-                                );
-            uStack_19 = 0;
+          if (this_02 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+            pDVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System
+                     ::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                               ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                                &stack0xffffffa4,this_02,
+                                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__GetEnumerator__
+                               );
+            uStack_17 = 0;
             DStack_6._dictionary =
-                 (Dictionary_2_System_ByteEnum_System_Object_ *)pDVar18->_dictionary;
-            DStack_6._version = pDVar18->_version;
-            DStack_6._index = pDVar18->_index;
-            DStack_6._current._0_4_ = (pDVar18->_current).key;
-            DStack_6._16_8_ = *(undefined8 *)&(pDVar18->_current).value;
+                 (Dictionary_2_System_ByteEnum_System_Object_ *)pDVar16->_dictionary;
+            DStack_6._version = pDVar16->_version;
+            DStack_6._index = pDVar16->_index;
+            DStack_6._current._0_4_ = (pDVar16->_current).key;
+            DStack_6._16_8_ = *(undefined8 *)&(pDVar16->_current).value;
             uStack_1 = 1;
             pDStack_11 = &DStack_6;
             do {
@@ -384,13 +384,13 @@ code_?:
                  (PlayerPlanetData *)CONCAT13(DStack_6._current.key,playerPlanetData._0_3_);
             arg0 = (Object *)
                    func_?(TypeInfo__MV__Common__GamePassTier,(int)&playerPlanetData + 3);
-            pSVar17 = mscorlib.dll::System::String::String_Format_1
-                                (StringLiteral__0____1_,arg0,pOVar13,(MethodInfo *)0x0);
+            pSVar15 = mscorlib.dll::System::String::String_Format_1
+                               (StringLiteral__0____1_,arg0,pOVar13,(MethodInfo *)0x0);
             MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                      (MVGameMsgType__Enum_AdminMsg,pSVar17,(MethodInfo *)0x0);
+                      (MVGameMsgType__Enum_AdminMsg,pSVar15,(MethodInfo *)0x0);
 code_?:
             uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                       ((Object *)&DStack_6,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Dispose__
@@ -404,8 +404,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -422,9 +422,8 @@ void Assembly-CSharp.dll::GamePassesManager::GamePassesManager_UpdateToggleState
   }
   freeFirstTry = MVClientSettings::MVClientSettings_get_FirstPreviewTierFreeEnabled
                            ((MethodInfo *)0x0);
-  pTVar1 = TypeInfo__GamePassesManager->static_fields->togglePreviewState;
-  if (pTVar1 != (TogglePreviewState *)0x0) {
-    freeFirstTry = (pTVar1->fields).freeTry;
+  if (TypeInfo__GamePassesManager->static_fields->togglePreviewState != (TogglePreviewState *)0x0) {
+    freeFirstTry = (TypeInfo__GamePassesManager->static_fields->togglePreviewState->fields).freeTry;
   }
   if (cRam_? == '\0') {
     func_?(&TypeInfo__GamePassesManager);
@@ -435,21 +434,21 @@ void Assembly-CSharp.dll::GamePassesManager::GamePassesManager_UpdateToggleState
       func_?(&TypeInfo__GamePassesManager);
       cRam_? = '\x01';
     }
-    pPVar2 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-    if (pPVar2 != (PlayerPlanetData *)0x0) {
-      GStack_3 = CONCAT31(GStack_3._1_3_,(pPVar2->fields).gamePassTier);
-      pTVar1 = (TogglePreviewState *)
-               func_?(TypeInfo__Assets__Scripts__GamePasses__TogglePreviewState);
+    pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+    if (pPVar1 != (PlayerPlanetData *)0x0) {
+      GStack_2 = CONCAT31(GStack_2._1_3_,(pPVar1->fields).gamePassTier);
+      this = (TogglePreviewState *)
+             func_?(TypeInfo__Assets__Scripts__GamePasses__TogglePreviewState);
       Assets::Scripts::GamePasses::TogglePreviewState::TogglePreviewState__ctor
-                (pTVar1,unaff_ESI,GStack_3,freeFirstTry,(MethodInfo *)0x0);
-      TypeInfo__GamePassesManager->static_fields->togglePreviewState = pTVar1;
-      func_?(&TypeInfo__GamePassesManager->static_fields->togglePreviewState,pTVar1);
+                (this,unaff_ESI,GStack_2,freeFirstTry,(MethodInfo *)0x0);
+      TypeInfo__GamePassesManager->static_fields->togglePreviewState = this;
+      func_?(&TypeInfo__GamePassesManager->static_fields->togglePreviewState,this);
       return;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

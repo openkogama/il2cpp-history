@@ -156,16 +156,20 @@ Object * Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsM
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
+/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* Void Init(ProfileSettingsState) */
 
 void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManager::
      ProfileSettingsManager_Init(ProfileSettingsState *profileSettingsState,MethodInfo *method)
 
 {
+  pMVar1 = (MethodInfo *)&stack0xfffffffc;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Convert);
-    func_?(&TypeInfo__MVInputWrapper);
-    func_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
@@ -174,24 +178,29 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
             ((VerticalVirtualizationController_1_System_Object_ *)0x0,unaff_EBP);
   if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
       cctor_finished_or_no_cctor == 0) {
+    unaff_EBP = (MethodInfo *)&UNK_?;
     func_?();
   }
-  if (profileSettingsState != (ProfileSettingsState *)0x0) {
-    pOVar1 = MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::
-             ProfileSettingsState_GetProfileSettingValue
-                       (profileSettingsState,SettingsPlatform__Enum_Standalone,
-                        ProfileSettingKey__Enum_MouseSensitivity,(MethodInfo *)0x0);
+  cVar2 = (int)profileSettingsState < 0;
+  bVar3 = profileSettingsState == (ProfileSettingsState *)0x0;
+  pMVar4 = (MaterialLoader *)0x0;
+  if (!bVar3) {
+    pOVar5 = MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::
+              ProfileSettingsState_GetProfileSettingValue
+                        (profileSettingsState,SettingsPlatform__Enum_Standalone,
+                         ProfileSettingKey__Enum_MouseSensitivity,(MethodInfo *)0x0);
     if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    fVar2 = mscorlib.dll::System::Convert::Convert_ToSingle(pOVar1,(MethodInfo *)0x0);
+    fVar6 = mscorlib.dll::System::Convert::Convert_ToSingle(pOVar5,(MethodInfo *)0x0);
     TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
-    mouseSensitivity = fVar2;
-    pOVar1 = MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::
-             ProfileSettingsState_GetProfileSettingValue
-                       (profileSettingsState,SettingsPlatform__Enum_Standalone,
-                        (ProfileSettingKey__Enum)fVar2,(MethodInfo *)0x0);
-    iVar3 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar1,(MethodInfo *)0x0);
+    mouseSensitivity = fVar6;
+    unaff_EBP = (MethodInfo *)profileSettingsState;
+    pOVar5 = MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::
+              ProfileSettingsState_GetProfileSettingValue
+                        (profileSettingsState,SettingsPlatform__Enum_Standalone,
+                         (ProfileSettingKey__Enum)fVar6,(MethodInfo *)0x0);
+    iVar7 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar5,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
@@ -201,12 +210,12 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       func_?();
     }
     TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
-    _TargetFrameRate_k__BackingField = iVar3;
-    pOVar1 = MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::
-             ProfileSettingsState_GetProfileSettingValue
-                       (profileSettingsState,SettingsPlatform__Enum_Standalone,
-                        ProfileSettingKey__Enum_TextureQuality,(MethodInfo *)0x0);
-    iVar3 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar1,(MethodInfo *)0x0);
+    _TargetFrameRate_k__BackingField = iVar7;
+    pOVar5 = MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::
+              ProfileSettingsState_GetProfileSettingValue
+                        (profileSettingsState,SettingsPlatform__Enum_Standalone,
+                         ProfileSettingKey__Enum_TextureQuality,(MethodInfo *)0x0);
+    iVar7 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar5,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
@@ -216,12 +225,12 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       func_?();
     }
     TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
-    _TextureQualityLevel_k__BackingField = iVar3;
-    pOVar1 = MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::
-             ProfileSettingsState_GetProfileSettingValue
-                       (profileSettingsState,SettingsPlatform__Enum_Standalone,
-                        ProfileSettingKey__Enum_TextureFilter,(MethodInfo *)0x0);
-    iVar3 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar1,(MethodInfo *)0x0);
+    _TextureQualityLevel_k__BackingField = iVar7;
+    pOVar5 = MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::
+              ProfileSettingsState_GetProfileSettingValue
+                        (profileSettingsState,SettingsPlatform__Enum_Standalone,
+                         ProfileSettingKey__Enum_TextureFilter,(MethodInfo *)0x0);
+    iVar7 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar5,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
@@ -231,12 +240,12 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       func_?();
     }
     TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
-    _TextureFilter_k__BackingField = iVar3;
-    pOVar1 = MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::
-             ProfileSettingsState_GetProfileSettingValue
-                       (profileSettingsState,SettingsPlatform__Enum_Standalone,
-                        ProfileSettingKey__Enum_AnistropicFiltering,(MethodInfo *)0x0);
-    iVar3 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar1,(MethodInfo *)0x0);
+    _TextureFilter_k__BackingField = iVar7;
+    pOVar5 = MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::
+              ProfileSettingsState_GetProfileSettingValue
+                        (profileSettingsState,SettingsPlatform__Enum_Standalone,
+                         ProfileSettingKey__Enum_AnistropicFiltering,(MethodInfo *)0x0);
+    iVar7 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar5,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
@@ -246,12 +255,12 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       func_?();
     }
     TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
-    _AnistropicFilteringLevel_k__BackingField = iVar3;
-    pOVar1 = MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::
-             ProfileSettingsState_GetProfileSettingValue
-                       (profileSettingsState,SettingsPlatform__Enum_Standalone,
-                        ProfileSettingKey__Enum_AntiAliasing,(MethodInfo *)0x0);
-    iVar3 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar1,(MethodInfo *)0x0);
+    _AnistropicFilteringLevel_k__BackingField = iVar7;
+    pOVar5 = MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::
+              ProfileSettingsState_GetProfileSettingValue
+                        (profileSettingsState,SettingsPlatform__Enum_Standalone,
+                         ProfileSettingKey__Enum_AntiAliasing,(MethodInfo *)0x0);
+    iVar7 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar5,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
@@ -261,12 +270,12 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       func_?();
     }
     TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
-    _AntiAliasingLevel_k__BackingField = iVar3;
-    pOVar1 = MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::
-             ProfileSettingsState_GetProfileSettingValue
-                       (profileSettingsState,SettingsPlatform__Enum_Standalone,
-                        ProfileSettingKey__Enum_LightQuality,(MethodInfo *)0x0);
-    iVar3 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar1,(MethodInfo *)0x0);
+    _AntiAliasingLevel_k__BackingField = iVar7;
+    pOVar5 = MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::
+              ProfileSettingsState_GetProfileSettingValue
+                        (profileSettingsState,SettingsPlatform__Enum_Standalone,
+                         ProfileSettingKey__Enum_LightQuality,(MethodInfo *)0x0);
+    iVar7 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar5,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
@@ -275,21 +284,21 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
         cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    fVar4 = _UNK_?;
-    pPVar5 = _UNK_?;
+    fVar8 = _UNK_?;
+    pPVar9 = _UNK_?;
     profileSettingsState = _UNK_?;
     TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
-    _LightQualityLevel_k__BackingField = iVar3;
-    fVar2 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
-            mouseSensitivity;
-    if (fVar2 < fVar4) {
+    _LightQualityLevel_k__BackingField = iVar7;
+    fVar6 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+             mouseSensitivity;
+    if (fVar6 < fVar8) {
       profileSettingsState =
            (ProfileSettingsState *)
-           ((float)pPVar5 / (((float)pPVar5 - fVar2 / fVar4) * _UNK_? + (float)pPVar5));
+           ((float)pPVar9 / (((float)pPVar9 - fVar6 / fVar8) * _UNK_? + (float)pPVar9));
     }
-    else if (fVar4 < fVar2) {
+    else if (fVar8 < fVar6) {
       profileSettingsState =
-           (ProfileSettingsState *)((float)pPVar5 + ((fVar2 - fVar4) / fVar4) * _UNK_?);
+           (ProfileSettingsState *)((float)pPVar9 + ((fVar6 - fVar8) / fVar8) * _UNK_?);
     }
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -302,7 +311,7 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       func_?();
     }
     TypeInfo__MVInputWrapper->static_fields->mouseSensitivtyModifier = (float)profileSettingsState;
-    pMVar6 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
@@ -311,28 +320,24 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
         cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    if (pMVar6 != (MaterialLoader *)0x0) {
+    cVar2 = (int)pMVar4 < 0;
+    bVar3 = pMVar4 == (MaterialLoader *)0x0;
+    unaff_EDI = in_stack_10;
+    if (!bVar3) {
       MaterialLoader::MaterialLoader_SetTextureQuality
-                (pMVar6,TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
-                        static_fields->_TextureQualityLevel_k__BackingField,(MethodInfo *)0x0);
-      pMVar6 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
-      if ((pMVar6 != (MaterialLoader *)0x0) &&
-         (pMVar7 = (pMVar6->fields)._CubeModelMaterial_k__BackingField, pMVar7 != (Material *)0x0))
-      {
-        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
-                           (pMVar7,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-            cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        if (pTVar8 != (Texture *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
-                    (pTVar8,TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
-                            static_fields->_TextureFilter_k__BackingField,(MethodInfo *)0x0);
+                (pMVar4,TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                         static_fields->_TextureQualityLevel_k__BackingField,(MethodInfo *)0x0);
+      pMVar11 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+      cVar2 = (int)pMVar11 < 0;
+      bVar3 = pMVar11 == (MaterialLoader *)0x0;
+      if (!bVar3) {
+        pMVar12 = (pMVar11->fields)._CubeModelMaterial_k__BackingField;
+        cVar2 = (int)pMVar12 < 0;
+        bVar3 = pMVar12 == (Material *)0x0;
+        if (!bVar3) {
+          pMVar4 = (MaterialLoader *)
+                    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
+                              (pMVar12,(MethodInfo *)0x0);
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
@@ -341,28 +346,13 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
               cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          switch(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
-                 _AntiAliasingLevel_k__BackingField) {
-          default:
-            iVar3 = 0;
-            break;
-          case 1:
-            iVar3 = 2;
-            break;
-          case 2:
-            iVar3 = 4;
-            break;
-          case 3:
-            iVar3 = 8;
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::QualitySettings::QualitySettings_set_antiAliasing
-                    (iVar3,(MethodInfo *)0x0);
-          pMVar6 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
-          if ((pMVar6 != (MaterialLoader *)0x0) &&
-             (pMVar7 = (pMVar6->fields)._CubeModelMaterial_k__BackingField,
-             pMVar7 != (Material *)0x0)) {
-            pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
-                               (pMVar7,(MethodInfo *)0x0);
+          cVar2 = (int)pMVar4 < 0;
+          bVar3 = pMVar4 == (MaterialLoader *)0x0;
+          if (!bVar3) {
+            UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
+                      ((Texture *)pMVar4,
+                       TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                       static_fields->_TextureFilter_k__BackingField,(MethodInfo *)0x0);
             if (cRam_? == '\0') {
               func_?();
               cRam_? = '\x01';
@@ -372,69 +362,655 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
               func_?();
             }
             switch(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields
-                   ->_AnistropicFilteringLevel_k__BackingField) {
+                   ->_AntiAliasingLevel_k__BackingField) {
             default:
-              iVar3 = 0;
+              iVar7 = 0;
               break;
             case 1:
-              iVar3 = 1;
+              iVar7 = 2;
               break;
             case 2:
-              iVar3 = 2;
+              iVar7 = 4;
               break;
             case 3:
-              iVar3 = 4;
-              break;
-            case 4:
-              iVar3 = 8;
-              break;
-            case 5:
-              iVar3 = 0x10;
+              iVar7 = 8;
             }
-            if (pTVar8 != (Texture *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_anisoLevel
-                        (pTVar8,iVar3,(MethodInfo *)0x0);
-              if (cRam_? == '\0') {
-                func_?();
-                cRam_? = '\x01';
+            UnityEngine.CoreModule.dll::UnityEngine::QualitySettings::
+            QualitySettings_set_antiAliasing(iVar7,(MethodInfo *)0x0);
+            pMVar11 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader
+                                ((MethodInfo *)0x0);
+            cVar2 = (int)pMVar11 < 0;
+            bVar3 = pMVar11 == (MaterialLoader *)0x0;
+            if (!bVar3) {
+              pMVar12 = (pMVar11->fields)._CubeModelMaterial_k__BackingField;
+              cVar2 = (int)pMVar12 < 0;
+              bVar3 = pMVar12 == (Material *)0x0;
+              if (!bVar3) {
+                pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::Material::
+                          Material_get_mainTexture(pMVar12,(MethodInfo *)0x0);
+                if (cRam_? == '\0') {
+                  func_?();
+                  cRam_? = '\x01';
+                }
+                if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+                    cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                switch(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                       static_fields->_AnistropicFilteringLevel_k__BackingField) {
+                default:
+                  iVar7 = 0;
+                  break;
+                case 1:
+                  iVar7 = 1;
+                  break;
+                case 2:
+                  iVar7 = 2;
+                  break;
+                case 3:
+                  iVar7 = 4;
+                  break;
+                case 4:
+                  iVar7 = 8;
+                  break;
+                case 5:
+                  iVar7 = 0x10;
+                }
+                cVar2 = (int)pTVar13 < 0;
+                bVar3 = pTVar13 == (Texture *)0x0;
+                pMVar4 = (MaterialLoader *)0x0;
+                if (!bVar3) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_anisoLevel
+                            (pTVar13,iVar7,(MethodInfo *)0x0);
+                  if (cRam_? == '\0') {
+                    func_?();
+                    cRam_? = '\x01';
+                  }
+                  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+                      cctor_finished_or_no_cctor == 0) {
+                    func_?();
+                  }
+                  value = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                          static_fields->_TargetFrameRate_k__BackingField;
+                  if (cRam_? == '\0') {
+                    func_?();
+                    cRam_? = '\x01';
+                  }
+                  if (((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+                       cctor_finished_or_no_cctor == 0) &&
+                     (func_?(),
+                     (TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+                     cctor_finished_or_no_cctor == 0)) {
+                    func_?();
+                  }
+                  ProfileSettingsManager_SetFrameRateDesktop(value,(MethodInfo *)0x0);
+                  if (cRam_? == '\0') {
+                    func_?();
+                    cRam_? = '\x01';
+                  }
+                  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+                      cctor_finished_or_no_cctor == 0) {
+                    func_?();
+                  }
+                  ProfileSettingsManager_SetLightQualitySetting
+                            (TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                             static_fields->_LightQualityLevel_k__BackingField,(MethodInfo *)0x0);
+                  return;
+                }
               }
-              if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-                  cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              value = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
-                      static_fields->_TargetFrameRate_k__BackingField;
-              if (cRam_? == '\0') {
-                func_?();
-                cRam_? = '\x01';
-              }
-              if (((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-                   cctor_finished_or_no_cctor == 0) &&
-                 (func_?(),
-                 (TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-                 cctor_finished_or_no_cctor == 0)) {
-                func_?();
-              }
-              ProfileSettingsManager_SetFrameRateDesktop(value,(MethodInfo *)0x0);
-              if (cRam_? == '\0') {
-                func_?();
-                cRam_? = '\x01';
-              }
-              if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-                  cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              ProfileSettingsManager_SetLightQualitySetting
-                        (TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
-                         static_fields->_LightQualityLevel_k__BackingField,(MethodInfo *)0x0);
-              return;
             }
           }
         }
       }
     }
   }
-  func_?();
+  cVar14 = '\0';
+  bVar15 = 0;
+  uVar16 = func_?();
+  uVar17 = (uint)((ulonglong)uVar16 >> 0x20);
+  pbVar18 = (byte *)uVar16;
+  if (bVar3 || cVar14 != cVar2) {
+    bVar19 = (byte)((ulonglong)uVar16 >> 0x20);
+    bVar20 = (byte)((ulonglong)uVar16 >> 0x28);
+    bVar21 = bVar19 + bVar20;
+    bVar3 = CARRY1(bVar19,bVar20) || CARRY1(bVar21,bVar15);
+    cVar2 = bVar21 + bVar15;
+    if (cVar2 == '\0' || (SCARRY1(bVar19,bVar20) != SCARRY1(bVar21,bVar15)) != cVar2 < '\0')
+    goto code_?;
+    bVar21 = (byte)extraout_ECX;
+    bVar20 = (byte)((uint)unaff_EBX >> 8);
+    bVar15 = bVar21 + bVar20;
+    bVar22 = CARRY1(bVar21,bVar20) || CARRY1(bVar15,bVar3);
+    bVar19 = bVar15 + bVar3;
+    if (bVar19 == 0 || (SCARRY1(bVar21,bVar20) != SCARRY1(bVar15,bVar3)) != (char)bVar19 < '\0') {
+      puVar23 = (ushort *)(pbVar18 + (int)register0x00000010 + bVar22 + 0x8868ffc5);
+      sVar24 = ((ushort)unaff_EDI & 3) - (*puVar23 & 3);
+      *puVar23 = *puVar23 + (ushort)(0 < sVar24) * sVar24;
+    }
+    else {
+      bVar20 = (byte)uVar16;
+      bVar15 = *pbVar18;
+      bVar21 = *pbVar18 + bVar20;
+      bVar3 = CARRY1(*pbVar18,bVar20) || CARRY1(bVar21,bVar22);
+      *pbVar18 = bVar21 + bVar22;
+      if (*pbVar18 != 0 &&
+          (SCARRY1(bVar15,bVar20) != SCARRY1(bVar21,bVar22)) == (char)*pbVar18 < '\0') {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (**(code **)(pbVar18 + -0x78))();
+        return;
+      }
+      pbVar25 = (byte *)((int)&pMVar4[-0x11d9192].fields.midTexture2DArray + 3);
+      bVar20 = (byte)((ulonglong)uVar16 >> 8);
+      bVar15 = *pbVar25;
+      bVar21 = *pbVar25 + bVar20;
+      bVar22 = CARRY1(*pbVar25,bVar20) || CARRY1(bVar21,bVar3);
+      *pbVar25 = bVar21 + bVar3;
+      if (*pbVar25 == 0 || (SCARRY1(bVar15,bVar20) != SCARRY1(bVar21,bVar3)) != (char)*pbVar25 < '\0'
+         ) {
+        pbVar25 = (byte *)(CONCAT31((int3)((ulonglong)uVar16 >> 0x28),cVar2) + -0x6eefaf81);
+        bVar15 = *pbVar25;
+        bVar21 = *pbVar25 + bVar19;
+        bVar3 = CARRY1(*pbVar25,bVar19) || CARRY1(bVar21,bVar22);
+        *pbVar25 = bVar21 + bVar22;
+        if (*pbVar25 == 0 ||
+            (SCARRY1(bVar15,bVar19) != SCARRY1(bVar21,bVar22)) != (char)*pbVar25 < '\0') {
+          pbVar18 = pbVar18 + -0x60efaf81;
+          bVar15 = *pbVar18;
+          cVar2 = *pbVar18 + (char)unaff_EBX;
+          *pbVar18 = cVar2 + bVar3;
+          if (*pbVar18 == 0 ||
+              (SCARRY1(bVar15,(char)unaff_EBX) != SCARRY1(cVar2,bVar3)) != (char)*pbVar18 < '\0')
+          {
+            pcVar26 = (code *)swi(3);
+            (*pcVar26)();
+            return;
+          }
+        }
+        else {
+          unaff_EDI = (MaterialLoader *)
+                      ((int)&unaff_EDI[-1].fields.lowTexture2D + TargetFrameRateValue__Enum_High);
+        }
+      }
+    }
+    *(int *)(unaff_EBX + 0x5c618c4) = *(int *)(unaff_EBX + 0x5c618c4) + 1;
+    pMVar1 = unaff_EBP;
+  }
+  else {
+    pMVar27 = (MaterialLoader__Class *)in((short)((ulonglong)uVar16 >> 0x20));
+    unaff_EDI->klass = pMVar27;
+    pbVar18 = (byte *)(extraout_ECX + ((int)uVar17 >> 3));
+    *pbVar18 = *pbVar18 & ~('\x01' << (uVar17 & 7));
+    unaff_EDI = (MaterialLoader *)&unaff_EDI->monitor;
+code_?:
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    uRam_? = 1;
+  }
+  this = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+  pMVar1[-0xffffffff00000001].flags = 0;
+  pMVar1[-0xffffffff00000001].iflags = 0;
+  pOVar5 = (Object *)func_?();
+  if (this == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+  MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetProfileSettings
+            (this,ProfileSettingKey__Enum_ResetToDefaultValues,pOVar5,(MethodInfo *)0x0);
+  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  this_00 = MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::
+            ProfileSettingsState_GetDefaultProfileSettingsValues
+                      (SettingsPlatform__Enum_Standalone,(MethodInfo *)0x0);
+  if (this_00 == (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Object_ *)0x0)
+  goto code_?;
+  pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                      ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0,
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                      );
+  if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  fVar6 = mscorlib.dll::System::Convert::Convert_ToSingle(pOVar5,(MethodInfo *)0x0);
+  *(float *)&pMVar1[-1].slot = fVar6;
+  TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+  mouseSensitivity = *(float *)&pMVar1[-1].slot;
+  pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                      ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,1,
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                      );
+  iVar7 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar5,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+  _TargetFrameRate_k__BackingField = iVar7;
+  pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                      ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,2,
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                      );
+  iVar7 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar5,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+  _TextureQualityLevel_k__BackingField = iVar7;
+  pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                      ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,3,
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                      );
+  iVar7 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar5,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+  _TextureFilter_k__BackingField = iVar7;
+  pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                      ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,4,
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                      );
+  iVar7 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar5,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+  _AnistropicFilteringLevel_k__BackingField = iVar7;
+  pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                      ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,5,
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                      );
+  iVar7 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar5,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+  _AntiAliasingLevel_k__BackingField = iVar7;
+  pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                      ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,6,
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                      );
+  iVar7 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar5,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  fVar8 = _UNK_?;
+  pPVar9 = _UNK_?;
+  pPVar28 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields;
+  *(ProfileSettingsState **)&pMVar1[-1].slot = _UNK_?;
+  pPVar28->_LightQualityLevel_k__BackingField = iVar7;
+  fVar6 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+           mouseSensitivity;
+  if (fVar6 < fVar8) {
+    fVar6 = (float)pPVar9 / (((float)pPVar9 - fVar6 / fVar8) * _UNK_? + (float)pPVar9);
+code_?:
+    *(float *)&pMVar1[-1].slot = fVar6;
+  }
+  else if (fVar8 < fVar6) {
+    fVar6 = (float)pPVar9 + ((fVar6 - fVar8) / fVar8) * _UNK_?;
+    goto code_?;
+  }
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  TypeInfo__MVInputWrapper->static_fields->mouseSensitivtyModifier = *(float *)&pMVar1[-1].slot;
+  unaff_EDI = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  if (unaff_EDI != (MaterialLoader *)0x0) {
+    MaterialLoader::MaterialLoader_SetTextureQuality
+              (unaff_EDI,
+               TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+               _TextureQualityLevel_k__BackingField,(MethodInfo *)0x0);
+    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+    if ((pMVar4 != (MaterialLoader *)0x0) &&
+       (pMVar12 = (pMVar4->fields)._CubeModelMaterial_k__BackingField, pMVar12 != (Material *)0x0)) {
+      unaff_EDI = (MaterialLoader *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
+                            (pMVar12,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      if (unaff_EDI != (MaterialLoader *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
+                  ((Texture *)unaff_EDI,
+                   TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields
+                   ->_TextureFilter_k__BackingField,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+            cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        switch(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+               _AntiAliasingLevel_k__BackingField) {
+        default:
+          iVar7 = 0;
+          break;
+        case 1:
+          iVar7 = 2;
+          break;
+        case 2:
+          iVar7 = 4;
+          break;
+        case 3:
+          iVar7 = 8;
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::QualitySettings::QualitySettings_set_antiAliasing
+                  (iVar7,(MethodInfo *)0x0);
+        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+        if ((pMVar4 != (MaterialLoader *)0x0) &&
+           (pMVar12 = (pMVar4->fields)._CubeModelMaterial_k__BackingField, pMVar12 != (Material *)0x0
+           )) {
+          pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
+                              (pMVar12,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+              cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          switch(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+                 _AnistropicFilteringLevel_k__BackingField) {
+          default:
+            iVar7 = 0;
+            break;
+          case 1:
+            iVar7 = 1;
+            break;
+          case 2:
+            iVar7 = 2;
+            break;
+          case 3:
+            iVar7 = 4;
+            break;
+          case 4:
+            iVar7 = 8;
+            break;
+          case 5:
+            iVar7 = 0x10;
+          }
+          unaff_EDI = (MaterialLoader *)0x0;
+          if (pTVar13 != (Texture *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_anisoLevel
+                      (pTVar13,iVar7,(MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+                cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            unaff_EDI = (MaterialLoader *)
+                        TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                        static_fields->_TargetFrameRate_k__BackingField;
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            if (((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+                 cctor_finished_or_no_cctor == 0) &&
+               (func_?(),
+               (TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+               cctor_finished_or_no_cctor == 0)) {
+              func_?();
+            }
+            ProfileSettingsManager_SetFrameRateDesktop
+                      ((TargetFrameRateValue__Enum)unaff_EDI,(MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+                cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            ProfileSettingsManager_SetLightQualitySetting
+                      (TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                       static_fields->_LightQualityLevel_k__BackingField,(MethodInfo *)0x0);
+            pDVar29 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                     static_fields->ProfileSettingsChanged;
+            if (pDVar29 != (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_
+                           *)0x0) {
+              unaff_EDI = (MaterialLoader *)
+                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          Int32Enum,System::Object]::
+                          Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                    ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar29,0,
+                                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                                    );
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+              Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                        ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0,
+                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                        );
+              if (unaff_EDI != (MaterialLoader *)0x0) {
+                (*(code *)(unaff_EDI->fields)._.m_CancellationTokenSource)();
+                pDVar29 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                         static_fields->ProfileSettingsChanged;
+                if (pDVar29 != (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_
+                               *)0x0) {
+                  unaff_EDI = (MaterialLoader *)
+                              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                              Int32Enum,System::Object]::
+                              Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                        ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar29,1,
+                                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                                        );
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+                  ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,1,
+                             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                            );
+                  if (unaff_EDI != (MaterialLoader *)0x0) {
+                    (*(code *)(unaff_EDI->fields)._.m_CancellationTokenSource)();
+                    pDVar29 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                             static_fields->ProfileSettingsChanged;
+                    if (pDVar29 != (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_
+                                   *)0x0) {
+                      unaff_EDI = (MaterialLoader *)
+                                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                  Int32Enum,System::Object]::
+                                  Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                            ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar29,
+                                             2,
+                                             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                                            );
+                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Int32Enum,System::Object]::
+                      Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,2,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                                );
+                      if (unaff_EDI != (MaterialLoader *)0x0) {
+                        (*(code *)(unaff_EDI->fields)._.m_CancellationTokenSource)();
+                        pDVar29 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager
+                                 ->static_fields->ProfileSettingsChanged;
+                        if (pDVar29 != (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_
+                                       *)0x0) {
+                          unaff_EDI = (MaterialLoader *)
+                                      mscorlib.dll::System::Collections::Generic::
+                                      Dictionary`2[System::Int32Enum,System::Object]::
+                                      Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                                ((Dictionary_2_System_Int32Enum_System_Object_ *)
+                                                 pDVar29,3,
+                                                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                                                );
+                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          Int32Enum,System::Object]::
+                          Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                    ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,3,
+                                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                                    );
+                          if (unaff_EDI != (MaterialLoader *)0x0) {
+                            (*(code *)(unaff_EDI->fields)._.m_CancellationTokenSource)();
+                            pDVar29 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager
+                                     ->static_fields->ProfileSettingsChanged;
+                            if (pDVar29 != (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_
+                                           *)0x0) {
+                              unaff_EDI = (MaterialLoader *)
+                                          mscorlib.dll::System::Collections::Generic::
+                                          Dictionary`2[System::Int32Enum,System::Object]::
+                                          Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                                    ((Dictionary_2_System_Int32Enum_System_Object_ *
+                                                     )pDVar29,4,
+                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                                                  );
+                              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                              Int32Enum,System::Object]::
+                              Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                        ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,4,
+                                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                                        );
+                              if (unaff_EDI != (MaterialLoader *)0x0) {
+                                (*(code *)(unaff_EDI->fields)._.m_CancellationTokenSource)();
+                                pDVar29 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager
+                                         ->static_fields->ProfileSettingsChanged;
+                                if (pDVar29 != (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_
+                                               *)0x0) {
+                                  unaff_EDI = (MaterialLoader *)
+                                              mscorlib.dll::System::Collections::Generic::
+                                              Dictionary`2[System::Int32Enum,System::Object]::
+                                              Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                                        ((
+                                                  Dictionary_2_System_Int32Enum_System_Object_ *)
+                                                  pDVar29,5,
+                                                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                                                  );
+                                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                  Int32Enum,System::Object]::
+                                  Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00
+                                             ,5,
+                                             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                                            );
+                                  if (unaff_EDI != (MaterialLoader *)0x0) {
+                                    (*(code *)(unaff_EDI->fields)._.m_CancellationTokenSource)();
+                                    pDVar29 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager
+                                             ->static_fields->ProfileSettingsChanged;
+                                    if (pDVar29 != (
+                                                  Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_
+                                                  *)0x0) {
+                                      pOVar5 = mscorlib.dll::System::Collections::Generic::
+                                                Dictionary`2[System::Int32Enum,System::Object]::
+                                                Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                                          ((
+                                                  Dictionary_2_System_Int32Enum_System_Object_ *)
+                                                  pDVar29,6,
+                                                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                                                  );
+                                      mscorlib.dll::System::Collections::Generic::
+                                      Dictionary`2[System::Int32Enum,System::Object]::
+                                      Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                                ((Dictionary_2_System_Int32Enum_System_Object_ *)
+                                                 this_00,6,
+                                                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                                                );
+                                      unaff_EDI = (MaterialLoader *)0x0;
+                                      if (pOVar5 != (Object *)0x0) {
+                                        (*(code *)pOVar5[1].monitor)();
+                                        return;
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+code_?:
+  uVar30 = func_?();
+  iVar31 = CONCAT31((int3)((uint6)uVar30 >> 8),0x85);
+  pcVar32 = (char *)((int)&unaff_EDI[0xd4b793].fields.defaultDiffuseShader + 1);
+  *pcVar32 = *pcVar32 + (char)((uint6)uVar30 >> 0x28);
+  LOCK();
+  pcVar32 = (char *)(iVar31 + 0x10);
+  cVar2 = *pcVar32;
+  *pcVar32 = (char)((uint6)uVar30 >> 0x20);
+  UNLOCK();
+  pbVar18 = (byte *)(iVar31 + -0x7a);
+  bVar3 = CARRY1(*pbVar18,extraout_CL) || CARRY1(*pbVar18 + extraout_CL,0x85 < bRam_?);
+  *pbVar18 = *pbVar18 + extraout_CL + (0x85 < bRam_?);
+  pbVar18 = (byte *)((int)&unaff_EDI[-2].fields.highTexture2D + 2);
+  bVar21 = *pbVar18;
+  bVar15 = *pbVar18;
+  *pbVar18 = bVar15 + extraout_CL + bVar3;
+  cRam_? = cRam_? + cVar2 +
+                 (CARRY1(bVar21,extraout_CL) || CARRY1(bVar15 + extraout_CL,bVar3));
+  pcVar26 = (code *)swi(3);
+  (*pcVar26)();
   return;
 }
 
@@ -485,7 +1061,6 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
   this = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
   puStack_1 = (undefined *)0x0;
   pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&puStack_1);
-  this_00 = (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Object_ *)0x0;
   if (this != (MVNetworkGame_OperationRequests *)0x0) {
     MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetProfileSettings
               (this,ProfileSettingKey__Enum_ResetToDefaultValues,pOVar2,(MethodInfo *)0x0);
@@ -498,10 +1073,10 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
                         (SettingsPlatform__Enum_Standalone,(MethodInfo *)0x0);
     if (this_00 != (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Object_ *)0x0) {
       pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
-                         );
+                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0,
+                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                          );
       if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -509,10 +1084,10 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
       mouseSensitivity = fVar3;
       pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,1,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
-                         );
+                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,1,
+                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                          );
       iVar4 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar2,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
@@ -525,10 +1100,10 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
       _TargetFrameRate_k__BackingField = iVar4;
       pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,2,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
-                         );
+                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,2,
+                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                          );
       iVar4 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar2,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
@@ -541,10 +1116,10 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
       _TextureQualityLevel_k__BackingField = iVar4;
       pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,3,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
-                         );
+                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,3,
+                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                          );
       iVar4 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar2,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
@@ -557,10 +1132,10 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
       _TextureFilter_k__BackingField = iVar4;
       pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,4,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
-                         );
+                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,4,
+                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                          );
       iVar4 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar2,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
@@ -573,10 +1148,10 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
       _AnistropicFilteringLevel_k__BackingField = iVar4;
       pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,5,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
-                         );
+                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,5,
+                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                          );
       iVar4 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar2,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
@@ -589,10 +1164,10 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
       _AntiAliasingLevel_k__BackingField = iVar4;
       pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,6,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
-                         );
+                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,6,
+                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                          );
       iVar4 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar2,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
@@ -641,8 +1216,8 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
                    ->_TextureQualityLevel_k__BackingField,(MethodInfo *)0x0);
         pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
         if ((pMVar7 != (MaterialLoader *)0x0) &&
-           (pMVar8 = (pMVar7->fields)._CubeModelMaterial_k__BackingField, pMVar8 != (Material *)0x0)
-           ) {
+           (pMVar8 = (pMVar7->fields)._CubeModelMaterial_k__BackingField, pMVar8 != (Material *)0x0
+           )) {
           unaff_EDI = (MaterialLoader *)
                       UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
                                 (pMVar8,(MethodInfo *)0x0);
@@ -684,7 +1259,7 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
             UnityEngine.CoreModule.dll::UnityEngine::QualitySettings::
             QualitySettings_set_antiAliasing(iVar4,(MethodInfo *)0x0);
             pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader
-                               ((MethodInfo *)0x0);
+                                ((MethodInfo *)0x0);
             if ((pMVar7 != (MaterialLoader *)0x0) &&
                (pMVar8 = (pMVar7->fields)._CubeModelMaterial_k__BackingField,
                pMVar8 != (Material *)0x0)) {
@@ -888,8 +1463,8 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
                                                   Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_
                                                   *)0x0) {
                                           pOVar2 = mscorlib.dll::System::Collections::Generic::
-                                                   Dictionary`2[System::Int32Enum,System::Object]::
-                                                                                                      
+                                                    Dictionary`2[System::Int32Enum,System::Object]::
+                                                                                                        
                                                   Dictionary_2_System_Int32Enum_System_Object__get_Item
                                                             ((
                                                   Dictionary_2_System_Int32Enum_System_Object_ *)
@@ -929,18 +1504,26 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       }
     }
   }
-  cVar10 = '\0';
-  uVar11 = func_?();
-  uVar12 = *(undefined2 *)((int)&this_00[0x1a2ed30].fields._count + extraout_ECX * 2);
-  *(char *)(uVar11 + 0x87104e8c) = *(char *)(uVar11 + 0x87104e8c) + (char)uVar11 + cVar10;
-  *(undefined2 *)&(this_00->fields)._count = uVar12;
-  piVar13 = &(this_00->fields)._count;
-  *(char *)&unaff_EDI->klass =
-       *(char *)&unaff_EDI->klass + unaff_BL +
-       (CARRY4(in_stack_14,(uint)piVar13) ||
-       CARRY4(in_stack_14 + (int)piVar13,(uint)(uVar11 < 0xa104e8d)));
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  uVar10 = func_?();
+  iVar11 = CONCAT31((int3)((uint6)uVar10 >> 8),0x85);
+  pcVar12 = (char *)((int)&unaff_EDI[0xd4b793].fields.defaultDiffuseShader + 1);
+  *pcVar12 = *pcVar12 + (char)((uint6)uVar10 >> 0x28);
+  LOCK();
+  pcVar12 = (char *)(iVar11 + 0x10);
+  cVar13 = *pcVar12;
+  *pcVar12 = (char)((uint6)uVar10 >> 0x20);
+  UNLOCK();
+  pbVar14 = (byte *)(iVar11 + -0x7a);
+  bVar15 = CARRY1(*pbVar14,extraout_CL) || CARRY1(*pbVar14 + extraout_CL,0x85 < bRam_?);
+  *pbVar14 = *pbVar14 + extraout_CL + (0x85 < bRam_?);
+  pbVar14 = (byte *)((int)&unaff_EDI[-2].fields.highTexture2D + 2);
+  bVar16 = *pbVar14;
+  bVar17 = *pbVar14;
+  *pbVar14 = bVar17 + extraout_CL + bVar15;
+  cRam_? = cRam_? + cVar13 +
+                 (CARRY1(bVar16,extraout_CL) || CARRY1(bVar17 + extraout_CL,bVar15));
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -1187,7 +1770,6 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
     this = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
            ProfileSettingsChanged;
     unaff_ESI = value;
-    unaff_EDI = (byte *)profileSetting;
     if ((this != (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)
                  0x0) &&
        (pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
@@ -1203,13 +1785,10 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
           func_?();
         }
         if (value != (Object *)0x0) {
-          pIVar2 = (value->klass->_0).element_class;
-          pIVar3 = (TypeInfo__System__Single->_0).element_class;
-          bVar4 = pIVar2 < pIVar3;
-          if (pIVar2 == pIVar3) {
-            pfVar5 = (float *)func_?();
+          if ((value->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+            pfVar2 = (float *)func_?();
             TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
-            mouseSensitivity = *pfVar5;
+            mouseSensitivity = *pfVar2;
             ProfileSettingsManager_CalculateMouseSensitivityFromValue
                       (TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
                        static_fields->mouseSensitivity,(MethodInfo *)0x0);
@@ -1228,12 +1807,10 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
           func_?();
         }
         if (value != (Object *)0x0) {
-          pIVar2 = (value->klass->_0).element_class;
-          pIVar3 = (TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue->_0).element_class;
-          bVar4 = pIVar2 < pIVar3;
-          if (pIVar2 == pIVar3) {
-            func_?();
-            func_?();
+          if ((value->klass->_0).element_class ==
+              (TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue->_0).element_class) {
+            puVar3 = (undefined4 *)func_?();
+            func_?(*puVar3);
             value_00 = func_?(0);
             ProfileSettingsManager_SetFrameRateSetting(value_00,(MethodInfo *)0x0);
             return;
@@ -1247,18 +1824,16 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
           func_?();
         }
         if (value != (Object *)0x0) {
-          pIVar2 = (value->klass->_0).element_class;
-          pIVar3 = (TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel->_0).element_class;
-          bVar4 = pIVar2 < pIVar3;
-          if (pIVar2 != pIVar3) goto code_?;
-          func_?();
-          func_?();
-          pMVar6 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0)
-          ;
+          if ((value->klass->_0).element_class !=
+              (TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel->_0).element_class)
+          goto code_?;
+          puVar3 = (undefined4 *)func_?();
+          func_?(*puVar3);
+          pMVar4 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
           quality = func_?(0);
           unaff_ESI = (Object *)0x0;
-          if (pMVar6 != (MaterialLoader *)0x0) {
-            MaterialLoader::MaterialLoader_SetTextureQuality(pMVar6,quality,(MethodInfo *)0x0);
+          if (pMVar4 != (MaterialLoader *)0x0) {
+            MaterialLoader::MaterialLoader_SetTextureQuality(pMVar4,quality,(MethodInfo *)0x0);
             return;
           }
         }
@@ -1269,24 +1844,21 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
           func_?();
         }
         if (value != (Object *)0x0) {
-          pIVar2 = (value->klass->_0).element_class;
-          pIVar3 = (TypeInfo__UnityEngine__FilterMode->_0).element_class;
-          bVar4 = pIVar2 < pIVar3;
-          if (pIVar2 != pIVar3) goto code_?;
-          func_?();
-          func_?();
-          pMVar6 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0)
-          ;
-          if ((pMVar6 != (MaterialLoader *)0x0) &&
-             (pMVar7 = (pMVar6->fields)._CubeModelMaterial_k__BackingField,
-             pMVar7 != (Material *)0x0)) {
-            pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
-                                (pMVar7,(MethodInfo *)0x0);
+          if ((value->klass->_0).element_class !=
+              (TypeInfo__UnityEngine__FilterMode->_0).element_class) goto code_?;
+          puVar3 = (undefined4 *)func_?();
+          func_?(*puVar3);
+          pMVar4 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+          if ((pMVar4 != (MaterialLoader *)0x0) &&
+             (pMVar5 = (pMVar4->fields)._CubeModelMaterial_k__BackingField,
+             pMVar5 != (Material *)0x0)) {
+            pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
+                               (pMVar5,(MethodInfo *)0x0);
             value_01 = func_?();
             unaff_ESI = (Object *)0x0;
-            if (pTVar8 != (Texture *)0x0) {
+            if (pTVar6 != (Texture *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
-                        (pTVar8,value_01,(MethodInfo *)0x0);
+                        (pTVar6,value_01,(MethodInfo *)0x0);
               return;
             }
           }
@@ -1298,27 +1870,24 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
           func_?();
         }
         if (value != (Object *)0x0) {
-          pIVar2 = (value->klass->_0).element_class;
-          pIVar3 = (TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel->_0).element_class
-          ;
-          bVar4 = pIVar2 < pIVar3;
-          if (pIVar2 != pIVar3) goto code_?;
-          func_?();
-          func_?();
-          pMVar6 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0)
-          ;
-          if ((pMVar6 != (MaterialLoader *)0x0) &&
-             (pMVar7 = (pMVar6->fields)._CubeModelMaterial_k__BackingField,
-             pMVar7 != (Material *)0x0)) {
+          if ((value->klass->_0).element_class !=
+              (TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel->_0).element_class)
+          goto code_?;
+          puVar3 = (undefined4 *)func_?();
+          func_?(*puVar3);
+          pMVar4 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+          if ((pMVar4 != (MaterialLoader *)0x0) &&
+             (pMVar5 = (pMVar4->fields)._CubeModelMaterial_k__BackingField,
+             pMVar5 != (Material *)0x0)) {
             method_00 = (MethodInfo *)&UNK_?;
-            pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
-                                (pMVar7,(MethodInfo *)0x0);
+            pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
+                               (pMVar5,(MethodInfo *)0x0);
             level = func_?();
-            iVar9 = ProfileSettingsManager_AnisoLevelToInt(level,method_00);
+            iVar7 = ProfileSettingsManager_AnisoLevelToInt(level,method_00);
             unaff_ESI = (Object *)0x0;
-            if (pTVar8 != (Texture *)0x0) {
+            if (pTVar6 != (Texture *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_anisoLevel
-                        (pTVar8,iVar9,(MethodInfo *)0x0);
+                        (pTVar6,iVar7,(MethodInfo *)0x0);
               return;
             }
           }
@@ -1330,16 +1899,14 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
           func_?();
         }
         if (value != (Object *)0x0) {
-          pIVar2 = (value->klass->_0).element_class;
-          pIVar3 = (TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel->_0).element_class;
-          bVar4 = pIVar2 < pIVar3;
-          if (pIVar2 == pIVar3) {
-            func_?();
-            func_?();
+          if ((value->klass->_0).element_class ==
+              (TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel->_0).element_class) {
+            puVar3 = (undefined4 *)func_?();
+            func_?(*puVar3);
             level_00 = func_?();
-            iVar9 = ProfileSettingsManager_AntiAliasingLevelToInt(level_00,(MethodInfo *)0x0);
+            iVar7 = ProfileSettingsManager_AntiAliasingLevelToInt(level_00,(MethodInfo *)0x0);
             UnityEngine.CoreModule.dll::UnityEngine::QualitySettings::
-            QualitySettings_set_antiAliasing(iVar9,(MethodInfo *)0x0);
+            QualitySettings_set_antiAliasing(iVar7,(MethodInfo *)0x0);
             return;
           }
           goto code_?;
@@ -1351,12 +1918,10 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
           func_?();
         }
         if (value != (Object *)0x0) {
-          pIVar2 = (value->klass->_0).element_class;
-          pIVar3 = (TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel->_0).element_class;
-          bVar4 = pIVar2 < pIVar3;
-          if (pIVar2 == pIVar3) {
-            func_?();
-            func_?();
+          if ((value->klass->_0).element_class ==
+              (TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel->_0).element_class) {
+            puVar3 = (undefined4 *)func_?();
+            func_?(*puVar3);
             level_01 = func_?(0);
             ProfileSettingsManager_SetLightQualitySetting(level_01,(MethodInfo *)0x0);
             return;
@@ -1369,25 +1934,12 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       }
     }
   }
-  bVar4 = 0;
   func_?();
 code_?:
   func_?();
-  bVar10 = 3 < extraout_DL || CARRY1(extraout_DL - 4,bVar4);
-  bVar4 = (extraout_DL - 4) + bVar4;
-  bVar11 = (char)unaff_ESI - 2;
-  bVar12 = *unaff_EDI + bVar4;
-  bVar13 = CARRY1(*unaff_EDI,bVar4) || CARRY1(bVar12,bVar10);
-  *unaff_EDI = bVar12 + bVar10;
-  pbVar14 = (byte *)(extraout_ECX + 0x9104e96);
-  bVar4 = *pbVar14;
-  bVar12 = *pbVar14 + bVar11;
-  *pbVar14 = bVar12 + bVar13;
-  pcVar15 = (char *)((int)&unaff_ESI[0x4209d2].monitor + 1);
-  *pcVar15 = *pcVar15 + unaff_BL + (CARRY1(bVar4,bVar11) || CARRY1(bVar12,bVar13));
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
-  return;
+  out(*(undefined1 *)&unaff_ESI->klass,extraout_DX);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -1492,114 +2044,108 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
   pOVar1 = (Object *)
            TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager____c->static_fields->
            __9;
-  pDVar2 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-            *)func_?(TypeInfo__System__Action<System::Object>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            (pDVar2,pOVar1,
+  pSVar2 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+           func_?(TypeInfo__System__Action<System::Object>);
+  Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+            (pSVar2,pOVar1,
              MethodInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager____c____cctor_b__44_0_System__Object_
              ,(MethodInfo *)0x0);
   if (this != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0,(Object *)pDVar2,
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0,(Object *)pSVar2,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__Add_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
               );
     pOVar1 = (Object *)
              TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager____c->static_fields
              ->__9;
-    pDVar2 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-              *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (pDVar2,pOVar1,
+    pSVar2 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+              (pSVar2,pOVar1,
                MethodInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager____c____cctor_b__44_1_System__Object_
                ,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,1,(Object *)pDVar2,
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,1,(Object *)pSVar2,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__Add_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
               );
     pOVar1 = (Object *)
              TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager____c->static_fields
              ->__9;
-    pDVar2 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-              *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (pDVar2,pOVar1,
+    pSVar2 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+              (pSVar2,pOVar1,
                MethodInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager____c____cctor_b__44_2_System__Object_
                ,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,2,(Object *)pDVar2,
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,2,(Object *)pSVar2,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__Add_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
               );
     pOVar1 = (Object *)
              TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager____c->static_fields
              ->__9;
-    pDVar2 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-              *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (pDVar2,pOVar1,
+    pSVar2 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+              (pSVar2,pOVar1,
                MethodInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager____c____cctor_b__44_3_System__Object_
                ,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,3,(Object *)pDVar2,
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,3,(Object *)pSVar2,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__Add_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
               );
     pOVar1 = (Object *)
              TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager____c->static_fields
              ->__9;
-    pDVar2 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-              *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (pDVar2,pOVar1,
+    pSVar2 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+              (pSVar2,pOVar1,
                MethodInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager____c____cctor_b__44_4_System__Object_
                ,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,4,(Object *)pDVar2,
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,4,(Object *)pSVar2,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__Add_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
               );
     pOVar1 = (Object *)
              TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager____c->static_fields
              ->__9;
-    pDVar2 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-              *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (pDVar2,pOVar1,
+    pSVar2 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+              (pSVar2,pOVar1,
                MethodInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager____c____cctor_b__44_5_System__Object_
                ,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,5,(Object *)pDVar2,
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,5,(Object *)pSVar2,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__Add_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
               );
     pOVar1 = (Object *)
              TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager____c->static_fields
              ->__9;
-    pDVar2 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-              *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (pDVar2,pOVar1,
+    pSVar2 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+              (pSVar2,pOVar1,
                MethodInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager____c____cctor_b__44_6_System__Object_
                ,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,6,(Object *)pDVar2,
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,6,(Object *)pSVar2,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__Add_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
               );
     TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->

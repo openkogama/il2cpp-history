@@ -47,19 +47,18 @@ void Assembly-CSharp.dll::WorldObjectEnableController::WorldObjectEnableControll
                            );
             cRam_? = '\x01';
           }
-          pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                    *)func_?(
-                                     TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>
-                                     );
-          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
-          Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-          __Il2CppFullySharedGenericType]::
-          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                    (pDVar3,(Object *)pGVar1,
+          pSVar3 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+                   func_?(
+                                  TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>
+                                  );
+          Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+          SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+          SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+                    (pSVar3,(Object *)pGVar1,
                      MethodInfo__GreyOutObjectScript__HideExec_GreyOutObjectScript__PickupOriginalMaterials_
                      ,(MethodInfo *)0x0);
           GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials
-                    (pGVar1,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)pDVar3,
+                    (pGVar1,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)pSVar3,
                      (MethodInfo *)0x0);
           return;
         }
@@ -75,19 +74,18 @@ void Assembly-CSharp.dll::WorldObjectEnableController::WorldObjectEnableControll
                            );
             cRam_? = '\x01';
           }
-          pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                    *)func_?(
-                                     TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>
-                                     );
-          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
-          Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-          __Il2CppFullySharedGenericType]::
-          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                    (pDVar3,(Object *)pGVar1,
+          pSVar3 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+                   func_?(
+                                  TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>
+                                  );
+          Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+          SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+          SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+                    (pSVar3,(Object *)pGVar1,
                      MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_
                      ,(MethodInfo *)0x0);
           GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials
-                    (pGVar1,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)pDVar3,
+                    (pGVar1,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)pSVar3,
                      (MethodInfo *)0x0);
           (pGVar1->fields).isGreyedIn = 0;
           return;
@@ -107,19 +105,18 @@ void Assembly-CSharp.dll::WorldObjectEnableController::WorldObjectEnableControll
                            );
             cRam_? = '\x01';
           }
-          pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                    *)func_?(
-                                     TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>
-                                     );
-          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
-          Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-          __Il2CppFullySharedGenericType]::
-          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                    (pDVar3,(Object *)0x0,
+          pSVar3 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+                   func_?(
+                                  TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>
+                                  );
+          Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+          SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+          SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+                    (pSVar3,(Object *)0x0,
                      MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_
                      ,(MethodInfo *)0x0);
           GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials
-                    (pGVar1,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)pDVar3,
+                    (pGVar1,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)pSVar3,
                      (MethodInfo *)0x0);
           (pGVar1->fields).isGreyedIn = 1;
           return;

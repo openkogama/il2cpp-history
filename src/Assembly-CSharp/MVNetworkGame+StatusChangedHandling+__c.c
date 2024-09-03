@@ -30,7 +30,7 @@ void Assembly-CSharp.dll::MVNetworkGame+StatusChangedHandling+<>c::
   }
   method_00 = TypeInfo__MVNetworkGame_StatusChangedHandling____c;
   value = (MVNetworkGame_StatusChangedHandling_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__MVNetworkGame_StatusChangedHandling____c->static_fields->__9 = value;
   func_?(TypeInfo__MVNetworkGame_StatusChangedHandling____c->static_fields,value);

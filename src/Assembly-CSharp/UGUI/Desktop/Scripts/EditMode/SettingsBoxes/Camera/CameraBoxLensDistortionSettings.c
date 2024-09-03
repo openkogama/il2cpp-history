@@ -176,7 +176,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                            (MethodInfo *)0x0);
                 pSVar14 = (pCVar1->fields).intensityInputField;
                 if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                             (pSVar14,StringLiteral_ppLensDistInt,(int32_t)value,(MethodInfo *)0x0);
                   pCVar3 = (pCVar1->fields).cameraBoxSettings;
                   uStack_15 = 100;
@@ -215,7 +215,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                                      (MethodInfo *)0x0);
                           pSVar14 = (pCVar1->fields).xMultiplierInputField;
                           if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                                       (pSVar14,StringLiteral_ppLensDistXmult,(int32_t)value,
                                        (MethodInfo *)0x0);
                             pCVar3 = (pCVar1->fields).cameraBoxSettings;
@@ -258,7 +258,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                                     pSVar14 = (pCVar1->fields).yMultiplierInputField;
                                     if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
                                       SettingsInputFieldSlider::
-                                      SettingsInputFieldSlider_Initialize_1
+                                      SettingsInputFieldSlider_Initialize_2
                                                 (pSVar14,StringLiteral_ppLensDistYmult,(int32_t)value
                                                  ,(MethodInfo *)0x0);
                                       return;

@@ -186,7 +186,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                            (MethodInfo *)0x0);
                 pSVar14 = (pCVar1->fields).postExposureInputField;
                 if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                             (pSVar14,StringLiteral_ppColorsPExp,(int32_t)value,(MethodInfo *)0x0);
                   pCVar3 = (pCVar1->fields).cameraBoxSettings;
                   uStack_15 = 0;
@@ -225,7 +225,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                                      (MethodInfo *)0x0);
                           pSVar14 = (pCVar1->fields).temperatureInputField;
                           if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                                       (pSVar14,StringLiteral_ppColorsTemp,(int32_t)value,
                                        (MethodInfo *)0x0);
                             pCVar3 = (pCVar1->fields).cameraBoxSettings;
@@ -268,7 +268,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                                     pSVar14 = (pCVar1->fields).saturationInputField;
                                     if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
                                       SettingsInputFieldSlider::
-                                      SettingsInputFieldSlider_Initialize_1
+                                      SettingsInputFieldSlider_Initialize_2
                                                 (pSVar14,StringLiteral_ppColorsSatur,(int32_t)value,
                                                  (MethodInfo *)0x0);
                                       pCVar3 = (pCVar1->fields).cameraBoxSettings;
@@ -314,7 +314,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                                               pSVar14 = (pCVar1->fields).contrastInputField;
                                               if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
                                                 SettingsInputFieldSlider::
-                                                SettingsInputFieldSlider_Initialize_1
+                                                SettingsInputFieldSlider_Initialize_2
                                                           (pSVar14,StringLiteral_ppColorContr,
                                                            (int32_t)value,(MethodInfo *)0x0);
                                                 return;

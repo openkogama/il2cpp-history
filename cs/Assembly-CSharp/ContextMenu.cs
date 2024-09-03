@@ -14,6 +14,7 @@ using UnityEngine.EventSystems;
 public class ContextMenu : MonoBehaviour
 {
 	// Fields
+	private const float Padding = 10f;
 	private bool linkMenu;
 	private Vector3 worldPosition;
 	private int woID;
@@ -31,14 +32,14 @@ public class ContextMenu : MonoBehaviour
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__9_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__10_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _Pop_b__9_0(IUIStack handler, BaseEventData data);
+		internal void _Pop_b__10_0(IUIStack handler, BaseEventData data);
 	}
 
 	// Constructors

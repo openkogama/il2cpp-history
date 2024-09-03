@@ -15,6 +15,7 @@ public class LimbRotationRuntimeData
 	public MVRuntimeDataVariable HeadRotationPitch;
 	public MVRuntimeDataVariable PointRotationYaw;
 	public MVRuntimeDataVariable PointRotationPitch;
+	public MVRuntimeDataVariable HasHandEquippableItem;
 	public MVRuntimeDataVariable Emote;
 
 	// Constructors

@@ -194,7 +194,7 @@ void Assembly-CSharp.dll::GamePassesShop+<>c::GamePassesShop_c__cctor(MethodInfo
   }
   method_00 = TypeInfo__GamePassesShop____c;
   value = (GamePassesShop_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__GamePassesShop____c->static_fields->__9 = value;
   func_?(TypeInfo__GamePassesShop____c->static_fields,value);

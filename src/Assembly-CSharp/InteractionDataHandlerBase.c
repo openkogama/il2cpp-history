@@ -13,42 +13,41 @@ void Assembly-CSharp.dll::InteractionDataHandlerBase::InteractionDataHandlerBase
     cRam_? = '\x01';
   }
   MVComponent::MVComponent_Awake((MVComponent *)this,(MethodInfo *)0x0);
-  ppCVar1 = &(this->fields).closestPoint;
-  pCVar2 = *ppCVar1;
+  pCVar1 = (this->fields).closestPoint;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pCVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 == 0) {
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pCVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 == 0) {
     return;
   }
   this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                       ((Component *)this,(MethodInfo *)0x0);
   if (this_00 != (GameObject *)0x0) {
-    pCVar2 = (ClosestPointBase *)
+    pCVar1 = (ClosestPointBase *)
              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
                        (this_00,
                         ClosestPointPoint_MethodInfo__UnityEngine__GameObject__AddComponent<ClosestPointPoint>__
                        );
-    pCStack4 =
+    pCStack3 =
          (ClosestPointBase__Class *)
          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                    ((Component *)this,(MethodInfo *)0x0);
-    if (pCVar2 != (ClosestPointBase *)0x0) {
-      pCStack5 = pCVar2 + 1;
-      pCStack5->klass = pCStack4;
+    if (pCVar1 != (ClosestPointBase *)0x0) {
+      pCVar1[1].klass = pCStack3;
+      pCStack4 = pCVar1 + 1;
       func_?();
-      *ppCVar1 = pCVar2;
-      ppCStack6 = ppCVar1;
-      pCStack7 = pCVar2;
+      ppCStack5 = &(this->fields).closestPoint;
+      (this->fields).closestPoint = pCVar1;
+      pCStack6 = pCVar1;
       func_?();
       return;
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -153,19 +152,18 @@ void Assembly-CSharp.dll::InteractionDataHandlerBase::InteractionDataHandlerBase
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).closestPoint;
-  ppCVar2 = &(this->fields).closestPoint;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pCVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  if (bVar2 != 0) {
     this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
     if (this_00 == (GameObject *)0x0) {
       func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
     pCVar1 = (ClosestPointBase *)
@@ -173,8 +171,8 @@ void Assembly-CSharp.dll::InteractionDataHandlerBase::InteractionDataHandlerBase
                        (this_00,
                         ClosestPointBase_MethodInfo__UnityEngine__GameObject__GetComponent<ClosestPointBase>__
                        );
-    *ppCVar2 = pCVar1;
-    func_?(ppCVar2);
+    (this->fields).closestPoint = pCVar1;
+    func_?();
   }
   return;
 }

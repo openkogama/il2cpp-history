@@ -12,7 +12,7 @@ Assembly-CSharp.dll::TimeReward+RequestReward::TimeReward_RequestReward_Update
   }
   method_00 = TypeInfo__TimeReward__RewardDone;
   value = (TimeReward_RewardStateBase *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   return value;
 }
@@ -35,7 +35,7 @@ void Assembly-CSharp.dll::TimeReward+RequestReward::TimeReward_RequestReward__ct
     func_?(&StringLiteral_s_gameRewardURL__);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,in_ECX);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MVGameControllerBase);

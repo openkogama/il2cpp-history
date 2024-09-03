@@ -29,6 +29,6 @@ public class KillNotification : Notification
 	// Methods
 	public override void Initialize(Dictionary<object, object> data);
 	public static string GetKillText(Dictionary<object, object> data, bool shotSelf);
-	public static string GetKillText(PlayerKilledByType type, bool shotSelf);
+	public static string GetKillText(PlayerKilledByType type, bool shotSelf, string weaponName);
 }
 

@@ -29,7 +29,7 @@ void Assembly-CSharp.dll::SkipConfirmation::SkipConfirmation_CreateConfirmationP
   }
   method_00 = TypeInfo__SkipConfirmation____c__DisplayClass2_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   original = (this->fields).popup;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -41,25 +41,24 @@ void Assembly-CSharp.dll::SkipConfirmation::SkipConfirmation_CreateConfirmationP
                       ConfirmationPopup_MethodInfo__UnityEngine__Object__Instantiate<ConfirmationPopup>_ConfirmationPopup_
                      );
   if (value != (Object *)0x0) {
+    value[1].klass = pOVar1;
     pOVar2 = value + 1;
-    pOVar2->klass = pOVar1;
-    pOVar3 = pOVar2;
     func_?(pOVar2,pOVar1);
-    pOVar1 = pOVar2->klass;
-    pSVar4 = TM::TM__(StringLiteral_You_ll_miss_out_on_a_lot_of_XP__,(MethodInfo *)0x0);
+    pOVar1 = value[1].klass;
+    pSVar3 = TM::TM__(StringLiteral_You_ll_miss_out_on_a_lot_of_XP__,(MethodInfo *)0x0);
     this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
               func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_ConfirmationPopup>,
-                              pOVar3,pSVar4);
+                              pOVar2,pSVar3);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
     UnityAction_2_System_Int32_System_Int32___ctor
               (this_00,(Object *)this,
                MethodInfo__SkipConfirmation__HandleResult_bool__ConfirmationPopup_,(MethodInfo *)0x0
               );
-    pSVar4 = TM::TM__(StringLiteral_Skip_,(MethodInfo *)0x0);
+    pSVar3 = TM::TM__(StringLiteral_Skip_,(MethodInfo *)0x0);
     if (pOVar1 != (Object__Class *)0x0) {
       ConfirmationPopup::ConfirmationPopup_Initialize
                 ((ConfirmationPopup *)pOVar1,(String *)0x0,
-                 (UnityAction_2_System_Boolean_ConfirmationPopup_ *)this_00,pSVar4,(MethodInfo *)0x0
+                 (UnityAction_2_System_Boolean_ConfirmationPopup_ *)this_00,pSVar3,(MethodInfo *)0x0
                 );
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
@@ -85,8 +84,8 @@ void Assembly-CSharp.dll::SkipConfirmation::SkipConfirmation_CreateConfirmationP
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

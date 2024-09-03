@@ -39,6 +39,7 @@ public class AvatarLimbManagerRemote : AvatarLimbManager
 		private float newHeadPitchValue;
 		private float newPointYawValue;
 		private float newPointPitchValue;
+		private bool newPointingWeaponValue;
 		private AvatarLimbManagerRemote limbManager;
 
 		// Constructors
@@ -51,6 +52,7 @@ public class AvatarLimbManagerRemote : AvatarLimbManager
 		private void UpdateHeadRotation();
 		private void OnPointYawChange(object pointYaw);
 		private void OnPointPitchChange(object pointPitch);
+		private void OnPointingWeaponChange(object isPointingWeapon);
 		private void UpdatePointRotation();
 		private void OnEmoteDataChange(object newEmoteData);
 	}
@@ -67,7 +69,7 @@ public class AvatarLimbManagerRemote : AvatarLimbManager
 		// Methods
 		public override void Initialize(AvatarLimbManager limbManager, AvatarLimbManager.LimbRotator limbRotator, AvatarEnabledChangeHandler enableChangeHandler);
 		public override void UpdatePointing(Vector3 localLookDirection);
-		public void SetRotationRemotely(float yaw, float pitch);
+		public void SetRotationRemotely(float yaw, float pitch, bool isPointingWeapon);
 	}
 
 	// Constructors
@@ -77,9 +79,7 @@ public class AvatarLimbManagerRemote : AvatarLimbManager
 	public override void Initialize(MVWorldObjectClient avatarWO, MVBody body, AvatarEnabledChangeHandler enabledChangeHandler, LimbRotationRuntimeData limbRotationRuntimeData);
 	public override void UpdateLimbRotations(Vector3 lookDirection);
 	public void UpdateHeadRotationRemotely(float yaw, float pitch);
-	public void UpdatePointingRemotely(float yaw, float pitch);
+	public void UpdatePointingRemotely(float yaw, float pitch, bool isPointingWeapon);
 	public override void StartEmote(EmoteTypes emoteType);
-	private void OnHeadRotationDataChange(object newHeadRotationData);
-	private void OnPointRotationDataChange(object newPointRotationData);
 }
 

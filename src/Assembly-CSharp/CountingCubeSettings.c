@@ -102,7 +102,7 @@ void Assembly-CSharp.dll::CountingCubeSettings::CountingCubeSettings_Initialize
       if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
           (TypeInfo__System__Int32->_0).element_class) {
         piVar6 = (int32_t *)func_?(TVar4.m_Index);
-        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                   (this_01,StringLiteral_startingValue,*piVar6,(MethodInfo *)0x0);
         this_02 = (pCVar1->fields).toggle;
         TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine

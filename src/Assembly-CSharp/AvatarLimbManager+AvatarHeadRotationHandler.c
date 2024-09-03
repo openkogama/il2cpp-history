@@ -90,47 +90,46 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::
     func_?(&MethodInfo__AvatarLimbManager__AvatarHeadRotationHandler__ResetIdleTimer__);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).limbRotator;
-  *ppAVar1 = limbRotator;
-  func_?(ppAVar1,limbRotator);
+  (this->fields).limbRotator = limbRotator;
+  func_?(&(this->fields).limbRotator,limbRotator);
   if (limbManager == (AvatarLimbManager *)0x0) {
     func_?();
   }
   else {
-    pAVar2 = (limbManager->fields).OnAvatarRotate;
+    pAVar1 = (limbManager->fields).OnAvatarRotate;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_00,(Object *)this,
                MethodInfo__AvatarLimbManager__AvatarHeadRotationHandler__ResetIdleTimer__,
                (MethodInfo *)0x0);
-    pAVar2 = (Action *)
+    pAVar1 = (Action *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pAVar2 == (Action *)0x0) {
+                       ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pAVar1 == (Action *)0x0) {
       (limbManager->fields).OnAvatarRotate = (Action *)0x0;
       func_?();
       return;
     }
-    pAVar3 = (Action *)0x0;
-    if (pAVar2->klass == TypeInfo__System__Action) {
-      pAVar3 = pAVar2;
+    pAVar2 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar2 = pAVar1;
     }
-    if (pAVar3 != (Action *)0x0) {
-      (limbManager->fields).OnAvatarRotate = pAVar3;
-      pAVar3 = (Action *)0x0;
-      if (pAVar2->klass == TypeInfo__System__Action) {
-        pAVar3 = pAVar2;
+    if (pAVar2 != (Action *)0x0) {
+      (limbManager->fields).OnAvatarRotate = pAVar2;
+      pAVar2 = (Action *)0x0;
+      if (pAVar1->klass == TypeInfo__System__Action) {
+        pAVar2 = pAVar1;
       }
-      if (pAVar3 != (Action *)0x0) {
+      if (pAVar2 != (Action *)0x0) {
         func_?();
         return;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -183,12 +182,12 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::
         if ((int)(this_02->_0).namespaze <= index) {
           return;
         }
-        if (this_02 == (Object__Class *)0x0) break;
+        if (pOVar2[0x10].klass == (Object__Class *)0x0) break;
         a = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
             RegexCharClass+SingleRange]::
             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)this_02,
-                       index,
+                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                       pOVar2[0x10].klass,index,
                        MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_
                       );
         bVar1 = mscorlib.dll::System::String::String_op_Equality((String *)a,b,(MethodInfo *)0x0);
@@ -342,15 +341,14 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::
         cRam_? = '\x01';
       }
       index = 0;
-      this_02 = pOVar5[0x10].klass;
-      while (this_02 != (Object__Class *)0x0) {
-        if ((int)(this_02->_0).namespaze <= index) {
-          if (pOVar5[0x10].klass != (Object__Class *)0x0) {
-            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-            List_1_System_Object__Add
-                      ((List_1_System_Object_ *)pOVar5[0x10].klass,(Object *)b,
-                       MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
-                      );
+      pOVar6 = pOVar5[0x10].klass;
+      while (pOVar6 != (Object__Class *)0x0) {
+        this_02 = pOVar5[0x10].klass;
+        if ((int)(pOVar6->_0).namespaze <= index) {
+          if (this_02 != (Object__Class *)0x0) {
+            func_?(this_02,b,
+                            MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
+                           );
             return;
           }
           break;
@@ -368,13 +366,13 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::
           return;
         }
         index = index + 1;
-        this_02 = pOVar5[0x10].klass;
+        pOVar6 = pOVar5[0x10].klass;
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

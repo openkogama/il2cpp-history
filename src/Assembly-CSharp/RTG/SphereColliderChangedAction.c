@@ -1,0 +1,138 @@
+
+/* Void Execute() */
+
+void Assembly-CSharp.dll::RTG::SphereColliderChangedAction::SphereColliderChangedAction_Execute
+               (SphereColliderChangedAction *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?();
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__RTG__MonoSingleton<RTG::RTUndoRedo>->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  this_00 = (RTUndoRedo *)
+            MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                      (MethodInfo__RTG__MonoSingleton<RTG::RTUndoRedo>__get_Get__);
+  if (this_00 != (RTUndoRedo *)0x0) {
+    RTUndoRedo::RTUndoRedo_RecordAction(this_00,(IUndoRedoAction *)this,(MethodInfo *)0x0);
+    return;
+  }
+  uVar1 = func_?(&stack0xfffffff4);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
+/* Void Redo() */
+
+void Assembly-CSharp.dll::RTG::SphereColliderChangedAction::SphereColliderChangedAction_Redo
+               (SphereColliderChangedAction *this,MethodInfo *method)
+
+{
+  pSVar1 = (this->fields)._postChangeSnapshot;
+  if (pSVar1 != (SphereColliderSnapshot *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Object);
+      cRam_? = '\x01';
+    }
+    pSVar2 = (pSVar1->fields)._sphereCollider;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                      ((Object_1 *)pSVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar3 != 0) {
+      return;
+    }
+    pSVar2 = (pSVar1->fields)._sphereCollider;
+    if (pSVar2 != (SphereCollider *)0x0) {
+      UnityEngine.PhysicsModule.dll::UnityEngine::SphereCollider::SphereCollider_set_center
+                (pSVar2,(pSVar1->fields)._localCenter,(MethodInfo *)0x0);
+      pSVar2 = (pSVar1->fields)._sphereCollider;
+      if (pSVar2 != (SphereCollider *)0x0) {
+        UnityEngine.PhysicsModule.dll::UnityEngine::SphereCollider::SphereCollider_set_radius
+                  (pSVar2,(pSVar1->fields)._localRadius,(MethodInfo *)0x0);
+        return;
+      }
+    }
+  }
+  func_?();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
+  return;
+}
+
+
+/* Void Undo() */
+
+void Assembly-CSharp.dll::RTG::SphereColliderChangedAction::SphereColliderChangedAction_Undo
+               (SphereColliderChangedAction *this,MethodInfo *method)
+
+{
+  pSVar1 = (this->fields)._preChangeSnapshot;
+  if (pSVar1 != (SphereColliderSnapshot *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Object);
+      cRam_? = '\x01';
+    }
+    pSVar2 = (pSVar1->fields)._sphereCollider;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                      ((Object_1 *)pSVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar3 != 0) {
+      return;
+    }
+    pSVar2 = (pSVar1->fields)._sphereCollider;
+    if (pSVar2 != (SphereCollider *)0x0) {
+      UnityEngine.PhysicsModule.dll::UnityEngine::SphereCollider::SphereCollider_set_center
+                (pSVar2,(pSVar1->fields)._localCenter,(MethodInfo *)0x0);
+      pSVar2 = (pSVar1->fields)._sphereCollider;
+      if (pSVar2 != (SphereCollider *)0x0) {
+        UnityEngine.PhysicsModule.dll::UnityEngine::SphereCollider::SphereCollider_set_radius
+                  (pSVar2,(pSVar1->fields)._localRadius,(MethodInfo *)0x0);
+        return;
+      }
+    }
+  }
+  func_?();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
+  return;
+}
+
+
+/* SphereColliderChangedAction(SphereColliderSnapshot, SphereColliderSnapshot) */
+
+void Assembly-CSharp.dll::RTG::SphereColliderChangedAction::SphereColliderChangedAction__ctor
+               (SphereColliderChangedAction *this,SphereColliderSnapshot *preChangeSnapshot,
+               SphereColliderSnapshot *postChangeSnapshot,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__RTG__SphereColliderSnapshot);
+    cRam_? = '\x01';
+  }
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  pSVar1 = (SphereColliderSnapshot *)func_?(TypeInfo__RTG__SphereColliderSnapshot);
+  SphereColliderSnapshot::SphereColliderSnapshot__ctor_1(pSVar1,preChangeSnapshot,(MethodInfo *)0x0)
+  ;
+  (this->fields)._preChangeSnapshot = pSVar1;
+  func_?(&this->fields,pSVar1);
+  pSVar1 = (SphereColliderSnapshot *)func_?(TypeInfo__RTG__SphereColliderSnapshot);
+  SphereColliderSnapshot::SphereColliderSnapshot__ctor_1
+            (pSVar1,postChangeSnapshot,(MethodInfo *)0x0);
+  (this->fields)._postChangeSnapshot = pSVar1;
+  func_?(&(this->fields)._postChangeSnapshot,pSVar1);
+  return;
+}
+

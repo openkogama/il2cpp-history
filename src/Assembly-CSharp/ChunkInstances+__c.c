@@ -44,7 +44,7 @@ void Assembly-CSharp.dll::ChunkInstances+<>c::ChunkInstances_c__cctor(MethodInfo
   }
   method_00 = TypeInfo__ChunkInstances____c;
   value = (ChunkInstances_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__ChunkInstances____c->static_fields->__9 = value;
   func_?(TypeInfo__ChunkInstances____c->static_fields,value);

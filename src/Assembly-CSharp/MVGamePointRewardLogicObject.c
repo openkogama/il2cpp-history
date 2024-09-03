@@ -136,7 +136,7 @@ void Assembly-CSharp.dll::MVGamePointRewardLogicObject::MVGamePointRewardLogicOb
   }
   GamePointAmountManager::GamePointAmountManager_UpdateRewardData
             (woid,gamePointRewardAmount,(MethodInfo *)0x0);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   return;
 }

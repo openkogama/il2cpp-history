@@ -6,65 +6,67 @@ bool Assembly-CSharp.dll::SharedWorldObjectGameplayFunctions::
 
 {
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (((pMVar1 != (MainCameraManager *)0x0) &&
-      (pCVar2 = (pMVar1->fields).mainCamera, pCVar2 != (Camera *)0x0)) &&
-     (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)pCVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffe0,pTVar3,(MethodInfo *)0x0);
-    uVar5 = pVVar4->x;
-    uVar6 = pVVar4->y;
-    position.z = position.z - pVVar4->z;
-    position.x = position.x - (float)uVar5;
-    position.y = position.y - (float)uVar6;
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
-              (&position,(MethodInfo *)0x0);
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-    if (((pMVar1 != (MainCameraManager *)0x0) &&
-        (pCVar2 = (pMVar1->fields).mainCamera, pCVar2 != (Camera *)0x0)) &&
-       (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)pCVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
-      position.x = 0.0;
-      pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                          ((Quaternion *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
-      fVar8 = pQVar7->x;
-      fVar9 = pQVar7->y;
-      fVar10 = pQVar7->z;
-      fVar11 = pQVar7->w;
-      if (cRam_? == '\0') {
-        position.z = (float)&UNK_?;
-        func_?();
-        cRam_? = '\x01';
-      }
-      rotation.y = fVar9;
-      rotation.x = fVar8;
-      rotation.z = fVar10;
-      rotation.w = fVar11;
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                          ((Vector3 *)&stack0xffffffe0,rotation,
-                           TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
-                           (MethodInfo *)0x0);
-      uVar12 = pVVar4->x;
-      uVar13 = pVVar4->y;
-      if ((float)uVar13 * position.y + (float)uVar12 * position.x + pVVar4->z * position.z <=
-          _UNK_?) {
-        return 0;
-      }
+  if ((pMVar1 != (MainCameraManager *)0x0) &&
+     (pCVar2 = (pMVar1->fields).mainCamera, pCVar2 != (Camera *)0x0)) {
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pCVar2,(MethodInfo *)0x0);
+    if (pTVar3 != (Transform *)0x0) {
+      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                          ((Vector3 *)&stack0xffffffe0,pTVar3,(MethodInfo *)0x0);
+      uVar5 = pVVar4->x;
+      uVar6 = pVVar4->y;
+      position.z = position.z - pVVar4->z;
+      position.x = position.x - (float)uVar5;
+      position.y = position.y - (float)uVar6;
+      UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
+                (&position,(MethodInfo *)0x0);
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
       if ((pMVar1 != (MainCameraManager *)0x0) &&
          (pCVar2 = (pMVar1->fields).mainCamera, pCVar2 != (Camera *)0x0)) {
-        position.z = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_farClipPlane
-                               (pCVar2,(MethodInfo *)0x0);
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0)
-        ;
-        if ((pMVar1 != (MainCameraManager *)0x0) &&
-           (pCVar2 = (pMVar1->fields).mainCamera, pCVar2 != (Camera *)0x0)) {
-          fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_farClipPlane
-                             (pCVar2,(MethodInfo *)0x0);
-          if (fVar8 * position.z <= (float)pCVar2) {
+        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pCVar2,(MethodInfo *)0x0);
+        if (pTVar3 != (Transform *)0x0) {
+          position.x = 0.0;
+          pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                              ((Quaternion *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
+          fVar8 = pQVar7->x;
+          fVar9 = pQVar7->y;
+          fVar10 = pQVar7->z;
+          fVar11 = pQVar7->w;
+          if (cRam_? == '\0') {
+            position.z = (float)&UNK_?;
+            func_?();
+            cRam_? = '\x01';
+          }
+          rotation.y = fVar9;
+          rotation.x = fVar8;
+          rotation.z = fVar10;
+          rotation.w = fVar11;
+          pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                              ((Vector3 *)&stack0xffffffe0,rotation,
+                               TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
+                               (MethodInfo *)0x0);
+          uVar12 = pVVar4->x;
+          uVar13 = pVVar4->y;
+          if ((float)uVar13 * position.y + (float)uVar12 * position.x + pVVar4->z * position.z <=
+              _UNK_?) {
             return 0;
           }
-          return 1;
+          pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                             ((MethodInfo *)0x0);
+          if ((pMVar1 != (MainCameraManager *)0x0) &&
+             (pCVar2 = (pMVar1->fields).mainCamera, pCVar2 != (Camera *)0x0)) {
+            position.z = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_farClipPlane
+                                   (pCVar2,(MethodInfo *)0x0);
+            pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                               ((MethodInfo *)0x0);
+            if ((pMVar1 != (MainCameraManager *)0x0) &&
+               (pCVar2 = (pMVar1->fields).mainCamera, pCVar2 != (Camera *)0x0)) {
+              fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_farClipPlane
+                                 (pCVar2,(MethodInfo *)0x0);
+              return (float)pCVar2 < fVar8 * position.z;
+            }
+          }
         }
       }
     }

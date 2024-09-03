@@ -33,39 +33,35 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
                SpawnRoleDataReceiver *spawnRoleDataReceiver,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  ppSVar1 = &(this->fields).subscribableVariableExternal;
-  *ppSVar1 = subscribableVariableExternal;
-  func_?(ppSVar1,subscribableVariableExternal);
+  (this->fields).subscribableVariableExternal = subscribableVariableExternal;
+  func_?(&(this->fields).subscribableVariableExternal,subscribableVariableExternal);
   if (subscribableVariableExternal != (SubscribableVariable_1_System_Object_ *)0x0) {
     dictionary = (SortedList_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                   *)(subscribableVariableExternal->fields)._.value;
-    pIVar2 = method->klass->rgctx_data[1].klass;
-    if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar2 = (Il2CppClass *)func_?(pIVar2);
+    pIVar1 = method->klass->rgctx_data[1].klass;
+    if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar1 = (Il2CppClass *)func_?(pIVar1);
     }
-    this_01 = (SubscribableVariable_1_System_Object_ *)func_?(pIVar2);
+    this_01 = (SubscribableVariable_1_System_Object_ *)func_?(pIVar1);
     System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::IL2CPP::
     Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
     __Il2CppFullySharedGenericType]::
     SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               ((SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                 *)this_01,dictionary,method->klass->rgctx_data[6].method);
-    ppSVar1 = &(this->fields).subscribableVariable;
-    *ppSVar1 = this_01;
-    func_?(ppSVar1,this_01);
-    this_00 = (SubscribableVariableBase_1_System_Single_ *)*ppSVar1;
+    (this->fields).subscribableVariable = this_01;
+    func_?(&(this->fields).subscribableVariable,this_01);
+    this_00 = (SubscribableVariableBase_1_System_Single_ *)(this->fields).subscribableVariable;
     if (((uint)(method->klass->rgctx_data[8].klass)->vtable[0].methodPtr & 0x100) == 0) {
       func_?();
     }
-    this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?();
-    pIVar3 = method->klass->rgctx_data;
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (this_02,(Object *)this,pIVar3[7].rgctxDataDummy,pIVar3[9].method);
+    this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+              (this_02,(Object *)this,method->klass->rgctx_data[7].rgctxDataDummy,
+               method->klass->rgctx_data[9].method);
     if (this_00 != (SubscribableVariableBase_1_System_Single_ *)0x0) {
       SubscribableVariableBase`1[System::Single]::
       SubscribableVariableBase_1_System_Single__add_OnChange
@@ -76,8 +72,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

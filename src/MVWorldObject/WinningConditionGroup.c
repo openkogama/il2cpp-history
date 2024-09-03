@@ -21,9 +21,10 @@ void MVWorldObject.dll::WinningConditionGroup::WinningConditionGroup_AddWinnerCo
                  (Object *)winnerCondition,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__Add_int__IWinningCondition_
                 );
-      this_01 = (EventHandler_1_Object_ *)
+      this_01 = (UnityAction_2_System_Object_System_Object_ *)
                 func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
                 (this_01,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
       WinningCondition::WinningCondition_add_OnWinningConditionChanged
                 (winnerCondition,(EventHandler_1_EventArgs_ *)this_01,(MethodInfo *)0x0);
@@ -61,9 +62,10 @@ void MVWorldObject.dll::WinningConditionGroup::WinningConditionGroup_RemoveWinne
                        ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,id,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__get_Item_int_
                        );
-    this_00 = (EventHandler_1_Object_ *)
+    this_00 = (UnityAction_2_System_Object_System_Object_ *)
               func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
               (this_00,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
     if (pOVar2 != (Object *)0x0) {
       pOVar3 = pOVar2->klass;
@@ -136,10 +138,14 @@ bool MVWorldObject.dll::WinningConditionGroup::WinningConditionGroup_Traverse
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_6._index = 0;
+  DStack_6._version = 0;
+  DStack_6._currentValue = (Object *)0x0;
   if (callBack != (Func_2_IWinningCondition_Boolean_ *)0x0) {
-    cVar6 = (*(callBack->fields)._._.invoke_impl)
+    cVar7 = (*(callBack->fields)._._.invoke_impl)
                       ((callBack->fields)._._.method_code,this,(callBack->fields)._._.method);
-    if (cVar6 != '\0') {
+    if (cVar7 != '\0') {
 code_?:
       *unaff_FS_OFFSET = uStack_3;
       return 1;
@@ -158,42 +164,42 @@ code_?:
       if (this_01 !=
           (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
            *)0x0) {
-        pDVar7 = mscorlib.dll::System::Collections::Generic::
+        pDVar8 = mscorlib.dll::System::Collections::Generic::
                  Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                  StyleSheetCache+SheetHandleKey,System::Object]::
                  Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                           (&DStack_8,this_01,
+                           (&DStack_9,this_01,
                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_IWinningCondition>__GetEnumerator__
                            );
-        DStack_8._currentValue = (Object *)&DStack_9;
-        DStack_9._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar7->_dictionary;
-        DStack_9._index = pDVar7->_index;
-        DStack_9._version = pDVar7->_version;
-        DStack_9._currentValue = pDVar7->_currentValue;
-        DStack_8._version = 0;
+        DStack_9._currentValue = (Object *)&DStack_6;
+        DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar8->_dictionary;
+        DStack_6._index = pDVar8->_index;
+        DStack_6._version = pDVar8->_version;
+        DStack_6._currentValue = pDVar8->_currentValue;
+        DStack_9._version = 0;
         uStack_1 = 1;
         do {
           bVar10 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                   UInt32,System::Object]::
                   Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                            (&DStack_9,
+                            (&DStack_6,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IWinningCondition>__MoveNext__
                             );
-          pOVar11 = DStack_9._currentValue;
+          pOVar11 = DStack_6._currentValue;
           if (bVar10 == 0) {
             uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                      ((Object *)&DStack_9,
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                      ((Object *)&DStack_6,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IWinningCondition>__Dispose__
                        ,unaff_EDI);
             *unaff_FS_OFFSET = uStack_3;
             return 0;
           }
-          pOStack_12 = DStack_9._currentValue;
-          if (DStack_9._currentValue == (Object *)0x0) goto code_?;
-          pOStack_13 = (DStack_9._currentValue)->klass;
+          pOStack_12 = DStack_6._currentValue;
+          if (DStack_6._currentValue == (Object *)0x0) goto code_?;
+          pOStack_13 = (DStack_6._currentValue)->klass;
           uVar14 = 0;
           uStack_15 = 0;
           uVar16._0_1_ = (pOStack_13->_1).rank;
@@ -203,21 +209,21 @@ code_?:
             do {
               if (pOStack_13->interfaceOffsets[uVar14].interfaceType ==
                   (Il2CppClass *)TypeInfo__IWinningCondition) {
-                ppvVar18 = &(DStack_9._currentValue)->klass[1]._0.gc_desc +
-                          (DStack_9._currentValue)->klass->interfaceOffsets[uVar14].offset * 2;
+                ppvVar18 = &(DStack_6._currentValue)->klass[1]._0.gc_desc +
+                          (DStack_6._currentValue)->klass->interfaceOffsets[uVar14].offset * 2;
                 goto code_?;
               }
               uVar14 = uVar14 + 1;
             } while (uVar14 < uVar16);
           }
-          ppvVar18 = (void **)func_?(DStack_9._currentValue,TypeInfo__IWinningCondition,4);
+          ppvVar18 = (void **)func_?(DStack_6._currentValue,TypeInfo__IWinningCondition,4);
 code_?:
           method_00 = callBack;
-          cVar6 = (**ppvVar18)(pOVar11,callBack,ppvVar18[1]);
-        } while (cVar6 == '\0');
+          cVar7 = (**ppvVar18)(pOVar11,callBack,ppvVar18[1]);
+        } while (cVar7 == '\0');
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)&DStack_9,
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                  ((Object *)&DStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IWinningCondition>__Dispose__
                    ,(MethodInfo *)method_00);
@@ -260,9 +266,8 @@ void MVWorldObject.dll::WinningConditionGroup::WinningConditionGroup__ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__Dictionary__
             );
-  ppDVar1 = &(this->fields).winnerConditions;
-  *ppDVar1 = (Dictionary_2_System_Int32_IWinningCondition_ *)this_00;
-  func_?(ppDVar1,this_00);
+  (this->fields).winnerConditions = (Dictionary_2_System_Int32_IWinningCondition_ *)this_00;
+  func_?(&(this->fields).winnerConditions,this_00);
   WinningCondition::WinningCondition__ctor
             ((WinningCondition *)this,parent,id,gameCounterManager,limit,isBriefingNode,
              gameStatCounterType,winningConditionPresentStyle,(MethodInfo *)0x0);

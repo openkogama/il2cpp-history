@@ -29,24 +29,22 @@ void Assembly-CSharp-firstpass.dll::MeshContainer::MeshContainer__ctor
                (MeshContainer *this,Mesh *m,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).mesh = m;
   func_?(&this->fields,m);
   if (m != (Mesh *)0x0) {
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_vertices(m,(MethodInfo *)0x0);
-    ppVVar2 = &(this->fields).vertices;
-    *ppVVar2 = pVVar1;
-    func_?(ppVVar2,pVVar1);
+    (this->fields).vertices = pVVar1;
+    func_?(&(this->fields).vertices,pVVar1);
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_normals(m,(MethodInfo *)0x0);
-    ppVVar2 = &(this->fields).normals;
-    *ppVVar2 = pVVar1;
-    func_?(ppVVar2,pVVar1);
+    (this->fields).normals = pVVar1;
+    func_?(&(this->fields).normals,pVVar1);
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

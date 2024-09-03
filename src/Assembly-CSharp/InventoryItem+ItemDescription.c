@@ -9,16 +9,14 @@ void Assembly-CSharp.dll::InventoryItem+ItemDescription::InventoryItem_ItemDescr
   (this->fields).cameraPreviewerOffset.x = 0.0;
   (this->fields).cameraPreviewerOffset.y = 0.0;
   (this->fields).cameraPreviewerOffset.z = 0.0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).name = name;
   func_?(&this->fields,name);
-  ppSVar1 = &(this->fields).explanation;
-  *ppSVar1 = explanation;
-  func_?(ppSVar1,explanation);
-  ppSVar1 = &(this->fields).inspirational;
-  *ppSVar1 = inspirational;
-  func_?(ppSVar1,inspirational);
+  (this->fields).explanation = explanation;
+  func_?(&(this->fields).explanation,explanation);
+  (this->fields).inspirational = inspirational;
+  func_?(&(this->fields).inspirational,inspirational);
   return;
 }
 
@@ -33,16 +31,14 @@ void Assembly-CSharp.dll::InventoryItem+ItemDescription::InventoryItem_ItemDescr
   (this->fields).cameraPreviewerOffset.x = 0.0;
   (this->fields).cameraPreviewerOffset.y = 0.0;
   (this->fields).cameraPreviewerOffset.z = 0.0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).name = name;
   func_?(&this->fields,name);
-  ppSVar1 = &(this->fields).explanation;
-  *ppSVar1 = explanation;
-  func_?(ppSVar1,explanation);
-  ppSVar1 = &(this->fields).inspirational;
-  *ppSVar1 = inspirational;
-  func_?(ppSVar1,inspirational);
+  (this->fields).explanation = explanation;
+  func_?(&(this->fields).explanation,explanation);
+  (this->fields).inspirational = inspirational;
+  func_?(&(this->fields).inspirational,inspirational);
   (this->fields).cameraPreviewerOffset.x = cameraPreviewerOffset.x;
   (this->fields).cameraPreviewerOffset.y = cameraPreviewerOffset.y;
   (this->fields).cameraPreviewerOffset.z = cameraPreviewerOffset.z;

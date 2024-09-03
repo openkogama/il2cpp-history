@@ -55,8 +55,9 @@ void Assembly-CSharp.dll::JoinUIUpdater::JoinUIUpdater__cctor(MethodInfo *method
   }
   this = (Queue_1_MV_Common_MVEventCodes_ *)
          func_?(TypeInfo__System__Collections__Generic__Queue<MV::Common::MVEventCodes>);
-  mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32]::Stack_1_System_Int32___ctor
-            ((Stack_1_System_Int32_ *)this,
+  System.Core.dll::System::Runtime::CompilerServices::ReadOnlyCollectionBuilder`1[System::Object]::
+  ReadOnlyCollectionBuilder_1_System_Object___ctor
+            ((ReadOnlyCollectionBuilder_1_System_Object_ *)this,
              MethodInfo__System__Collections__Generic__Queue<MV::Common::MVEventCodes>__Queue__);
   TypeInfo__JoinUIUpdater->static_fields->JoinEventCodes = this;
   func_?(TypeInfo__JoinUIUpdater->static_fields,this);

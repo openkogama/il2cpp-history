@@ -19,8 +19,8 @@ void Assembly-CSharp.dll::EnterPlayModeButton::EnterPlayModeButton_Execute
     func_?(&TypeInfo__EnterPlayModeButton____c);
     cRam_? = '\x01';
   }
-  pAVar1 = (this->fields).enteringPlayMode;
-  if (pAVar1 != (Action *)0x0) {
+  if ((this->fields).enteringPlayMode != (Action *)0x0) {
+    pAVar1 = (this->fields).enteringPlayMode;
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }

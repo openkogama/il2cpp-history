@@ -10,8 +10,8 @@ void Assembly-CSharp.dll::LogicInteractable::LogicInteractable_TakeDamage
     func_?(&TypeInfo__TakeDamageEventArgs);
     cRam_? = '\x01';
   }
-  pEVar1 = (this->fields).OnDamageEvent;
-  if (pEVar1 != (EventHandler_1_TakeDamageEventArgs_ *)0x0) {
+  if ((this->fields).OnDamageEvent != (EventHandler_1_TakeDamageEventArgs_ *)0x0) {
+    pEVar1 = (this->fields).OnDamageEvent;
     this_00 = (TakeDamageEventArgs *)func_?(TypeInfo__TakeDamageEventArgs);
     TakeDamageEventArgs::TakeDamageEventArgs__ctor
               (this_00,amount,damageDealer,damageType,(MethodInfo *)0x0);
@@ -37,8 +37,8 @@ void Assembly-CSharp.dll::LogicInteractable::LogicInteractable_TakeDamageOverTim
     (*(code *)(this->klass->vtable).AddModifier.method)
               (this,type,(damageDealer->fields)._ActorNr_k__BackingField,0,
                (this->klass->vtable).HasModifier.methodPtr);
-    pEVar1 = (this->fields).OnDamageEvent;
-    if (pEVar1 != (EventHandler_1_TakeDamageEventArgs_ *)0x0) {
+    if ((this->fields).OnDamageEvent != (EventHandler_1_TakeDamageEventArgs_ *)0x0) {
+      pEVar1 = (this->fields).OnDamageEvent;
       this_00 = (TakeDamageEventArgs *)func_?(TypeInfo__TakeDamageEventArgs);
       TakeDamageEventArgs::TakeDamageEventArgs__ctor
                 (this_00,0.0,damageDealer,damageType,(MethodInfo *)0x0);
@@ -65,26 +65,26 @@ void Assembly-CSharp.dll::LogicInteractable::LogicInteractable_add_OnDamageEvent
     func_?(&TypeInfo__System__EventHandler<TakeDamageEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).OnDamageEvent;
-  a = *ppEVar1;
+  a = (this->fields).OnDamageEvent;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar3 = TypeInfo__System__EventHandler<TakeDamageEventArgs>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__EventHandler<TakeDamageEventArgs>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pEVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pEVar2 = TypeInfo__System__EventHandler<TakeDamageEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<TakeDamageEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pEVar6 = (EventHandler_1_TakeDamageEventArgs_ *)func_?(ppEVar1,iVar4,a);
-    bVar7 = pEVar6 != a;
-    a = pEVar6;
-  } while (bVar7);
+    pEVar5 = (EventHandler_1_TakeDamageEventArgs_ *)
+             func_?(&(this->fields).OnDamageEvent,iVar3,a);
+    bVar6 = pEVar5 != a;
+    a = pEVar5;
+  } while (bVar6);
   return;
 }
 
@@ -100,26 +100,26 @@ void Assembly-CSharp.dll::LogicInteractable::LogicInteractable_remove_OnDamageEv
     func_?(&TypeInfo__System__EventHandler<TakeDamageEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).OnDamageEvent;
-  source = *ppEVar1;
+  source = (this->fields).OnDamageEvent;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar3 = TypeInfo__System__EventHandler<TakeDamageEventArgs>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__EventHandler<TakeDamageEventArgs>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pEVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pEVar2 = TypeInfo__System__EventHandler<TakeDamageEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<TakeDamageEventArgs>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pEVar6 = (EventHandler_1_TakeDamageEventArgs_ *)func_?(ppEVar1,iVar4,source);
-    bVar7 = pEVar6 != source;
-    source = pEVar6;
-  } while (bVar7);
+    pEVar5 = (EventHandler_1_TakeDamageEventArgs_ *)
+             func_?(&(this->fields).OnDamageEvent,iVar3,source);
+    bVar6 = pEVar5 != source;
+    source = pEVar5;
+  } while (bVar6);
   return;
 }
 

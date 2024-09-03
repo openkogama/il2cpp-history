@@ -33,89 +33,85 @@ void Assembly-CSharp.dll::AvatarUIHandler::AvatarUIHandler_Initialize
     func_?(&TypeInfo__SayChatBubbleVisibilityManager);
     cRam_? = '\x01';
   }
-  ppMVar1 = &(this->fields).worldObject;
-  *ppMVar1 = wo;
-  func_?(ppMVar1,wo);
-  ppCVar2 = &(this->fields).chatBubbleAnchor;
+  (this->fields).worldObject = wo;
+  func_?(&(this->fields).worldObject,wo);
   (this->fields).ownerActorNr = ownerActorNr;
-  *ppCVar2 = chatBubbleAnchor;
-  func_?(ppCVar2,chatBubbleAnchor);
+  (this->fields).chatBubbleAnchor = chatBubbleAnchor;
+  func_?(&(this->fields).chatBubbleAnchor,chatBubbleAnchor);
   if (isLocal == 0) {
 code_?:
-    pAVar3 = MVGameControllerBase::MVGameControllerBase_get_OnFirstFrameUpdateActorReady
+    pAVar1 = MVGameControllerBase::MVGameControllerBase_get_OnFirstFrameUpdateActorReady
                        ((MethodInfo *)0x0);
-    pNVar4 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar4,(Object *)this,(this->klass->vtable).SetShouldShowUI.methodPtr,
+              (pNVar2,(Object *)this,(this->klass->vtable).SetShouldShowUI.methodPtr,
                (MethodInfo *)0x0);
-    pAVar5 = (Action *)
-              mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pAVar3,(Delegate *)pNVar4,(MethodInfo *)0x0);
-    pAVar3 = (Action *)0x0;
-    if (pAVar5 != (Action *)0x0) {
-      if (pAVar5->klass == TypeInfo__System__Action) {
-        pAVar3 = pAVar5;
+    pAVar3 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar1,(Delegate *)pNVar2,(MethodInfo *)0x0);
+    pAVar1 = (Action *)0x0;
+    if (pAVar3 != (Action *)0x0) {
+      if (pAVar3->klass == TypeInfo__System__Action) {
+        pAVar1 = pAVar3;
       }
-      if (pAVar3 == (Action *)0x0) {
+      if (pAVar1 == (Action *)0x0) {
         func_?();
         goto code_?;
       }
     }
     MVGameControllerBase::MVGameControllerBase_set_OnFirstFrameUpdateActorReady
-              (pAVar3,(MethodInfo *)0x0);
-    pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar6 == (MVNetworkGame *)0x0) goto code_?;
-    pMVar7 = (pMVar6->fields).playerContainer;
-    if (pMVar7 == (MVPlayerContainer *)0x0) goto code_?;
-    pAVar3 = (pMVar7->fields).OnPlayerListChanged;
-    pNVar4 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+              (pAVar1,(MethodInfo *)0x0);
+    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar4 == (MVNetworkGame *)0x0) ||
+       (pMVar5 = (pMVar4->fields).playerContainer, pMVar5 == (MVPlayerContainer *)0x0))
+    goto code_?;
+    pAVar1 = (pMVar5->fields).OnPlayerListChanged;
+    pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar4,(Object *)this,(this->klass->vtable).SetShouldShowUI.methodPtr,
+              (pNVar2,(Object *)this,(this->klass->vtable).SetShouldShowUI.methodPtr,
                (MethodInfo *)0x0);
-    pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar3,(Delegate *)pNVar4,(MethodInfo *)0x0);
-    if (pDVar8 == (Delegate *)0x0) {
-      _UNK_? = (Delegate *)0x0;
-    }
-    else {
-      pDVar9 = (Delegate *)0x0;
-      if ((Action__Class *)pDVar8->klass == TypeInfo__System__Action) {
-        pDVar9 = pDVar8;
+    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar1,(Delegate *)pNVar2,(MethodInfo *)0x0);
+    if (pDVar6 != (Delegate *)0x0) {
+      pDVar7 = (Delegate *)0x0;
+      if ((Action__Class *)pDVar6->klass == TypeInfo__System__Action) {
+        pDVar7 = pDVar6;
       }
-      if (pDVar9 == (Delegate *)0x0) goto code_?;
-      pDVar10 = (Delegate *)0x0;
-      if ((Action__Class *)pDVar8->klass == TypeInfo__System__Action) {
-        pDVar10 = pDVar8;
+      if (pDVar7 == (Delegate *)0x0) goto code_?;
+      pDVar7 = (Delegate *)0x0;
+      if ((Action__Class *)pDVar6->klass == TypeInfo__System__Action) {
+        pDVar7 = pDVar6;
       }
-      _UNK_? = pDVar9;
-      if (pDVar10 == (Delegate *)0x0) goto code_?;
+      if (pDVar7 == (Delegate *)0x0) goto code_?;
     }
     func_?();
-    pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar6 != (MVNetworkGame *)0x0) {
-      pMVar11 = (pMVar6->fields).teamManager;
-      pEVar12 = (EventHandler_1_Object_ *)func_?();
-      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                (pEVar12,(Object *)this,
+    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar4 != (MVNetworkGame *)0x0) {
+      pMVar8 = (pMVar4->fields).teamManager;
+      pUVar9 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (pUVar9,(Object *)this,
                  MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_
                  ,(MethodInfo *)0x0);
-      if (pMVar11 != (MVTeamManager *)0x0) {
+      if (pMVar8 != (MVTeamManager *)0x0) {
         MVTeamManager::MVTeamManager_add_OnTeamAdded
-                  (pMVar11,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pEVar12,(MethodInfo *)0x0)
+                  (pMVar8,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar9,(MethodInfo *)0x0)
         ;
-        pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar6 != (MVNetworkGame *)0x0) {
-          pMVar11 = (pMVar6->fields).teamManager;
-          pEVar12 = (EventHandler_1_Object_ *)func_?();
-          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                    (pEVar12,(Object *)this,
+        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (pMVar4 != (MVNetworkGame *)0x0) {
+          pMVar8 = (pMVar4->fields).teamManager;
+          pUVar9 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    (pUVar9,(Object *)this,
                      MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_
                      ,(MethodInfo *)0x0);
-          if (pMVar11 != (MVTeamManager *)0x0) {
+          if (pMVar8 != (MVTeamManager *)0x0) {
             MVTeamManager::MVTeamManager_add_OnTeamRemoved
-                      (pMVar11,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pEVar12,
+                      (pMVar8,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar9,
                        (MethodInfo *)0x0);
             return;
           }
@@ -124,7 +120,7 @@ code_?:
     }
   }
   else {
-    pAVar13 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved;
+    pAVar10 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved;
     this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
               func_?(
                              TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
@@ -134,9 +130,9 @@ code_?:
               (this_00,(Object *)this,
                MethodInfo__AvatarUIHandler__OnSayChatMessageRecieved_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                ,(MethodInfo *)0x0);
-    pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar13,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar8 == (Delegate *)0x0) {
+    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar10,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar6 == (Delegate *)0x0) {
       TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved =
            (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
            0x0;
@@ -144,13 +140,13 @@ code_?:
       func_?();
       goto code_?;
     }
-    pAVar13 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+    pAVar10 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
              func_?();
-    if (pAVar13 != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+    if (pAVar10 != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                    *)0x0) {
-      TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved = pAVar13;
-      iVar14 = func_?();
-      if (iVar14 != 0) goto code_?;
+      TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved = pAVar10;
+      iVar11 = func_?();
+      if (iVar11 != 0) goto code_?;
     }
 code_?:
     func_?();
@@ -161,8 +157,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -200,88 +196,87 @@ void Assembly-CSharp.dll::AvatarUIHandler::AvatarUIHandler_OnDestroy
              ,(MethodInfo *)0x0);
   pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                      ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pDVar2 == (Delegate *)0x0) {
-    TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved =
-         (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0;
-code_?:
+  if (pDVar2 != (Delegate *)0x0) {
+    pAVar1 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+             func_?();
+    if (pAVar1 != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                   *)0x0) {
+      TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved = pAVar1;
+      iVar3 = func_?();
+      if (iVar3 != 0) goto code_?;
+    }
     func_?();
-    bVar3 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
-    if (bVar3 == 0) {
+    goto code_?;
+  }
+  TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved =
+       (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0;
+code_?:
+  func_?();
+  bVar4 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
+  if (bVar4 == 0) {
+    return;
+  }
+  pAVar5 = MVGameControllerBase::MVGameControllerBase_get_OnFirstFrameUpdateActorReady
+                     ((MethodInfo *)0x0);
+  pNVar6 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+  if (this == (AvatarUIHandler *)0x0) goto code_?;
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar6,(Object *)this,(this->klass->vtable).SetShouldShowUI.methodPtr,(MethodInfo *)0x0
+            );
+  pAVar7 = (Action *)
+            mscorlib.dll::System::Delegate::Delegate_Remove
+                      ((Delegate *)pAVar5,(Delegate *)pNVar6,(MethodInfo *)0x0);
+  pAVar5 = (Action *)0x0;
+  if (pAVar7 == (Action *)0x0) {
+code_?:
+    MVGameControllerBase::MVGameControllerBase_set_OnFirstFrameUpdateActorReady
+              (pAVar5,(MethodInfo *)0x0);
+    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar8 == (MVNetworkGame *)0x0) {
       return;
     }
-    pAVar4 = MVGameControllerBase::MVGameControllerBase_get_OnFirstFrameUpdateActorReady
-                       ((MethodInfo *)0x0);
-    pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    if (this == (AvatarUIHandler *)0x0) goto code_?;
+    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar8 == (MVNetworkGame *)0x0) ||
+       (pMVar9 = (pMVar8->fields).playerContainer, pMVar9 == (MVPlayerContainer *)0x0))
+    goto code_?;
+    pAVar5 = (pMVar9->fields).OnPlayerListChanged;
+    pNVar6 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar5,(Object *)this,(this->klass->vtable).SetShouldShowUI.methodPtr,
-               (MethodInfo *)0x0);
-    pAVar6 = (Action *)
-              mscorlib.dll::System::Delegate::Delegate_Remove
-                        ((Delegate *)pAVar4,(Delegate *)pNVar5,(MethodInfo *)0x0);
-    pAVar4 = (Action *)0x0;
-    if (pAVar6 == (Action *)0x0) {
+              (pNVar6,(Object *)&UNK_?,*(void **)(_UNK_? + 0x104),(MethodInfo *)0x0);
+    pAVar5 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pAVar5,(Delegate *)pNVar6,(MethodInfo *)0x0);
+    if (pAVar5 == (Action *)0x0) {
+      (pMVar9->fields).OnPlayerListChanged = (Action *)0x0;
 code_?:
-      MVGameControllerBase::MVGameControllerBase_set_OnFirstFrameUpdateActorReady
-                (pAVar4,(MethodInfo *)0x0);
-      pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar7 == (MVNetworkGame *)0x0) {
-        return;
-      }
-      pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar7 == (MVNetworkGame *)0x0) ||
-         (pMVar8 = (pMVar7->fields).playerContainer, pMVar8 == (MVPlayerContainer *)0x0))
-      goto code_?;
-      pAVar4 = (pMVar8->fields).OnPlayerListChanged;
-      pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar5,(Object *)this,(this->klass->vtable).SetShouldShowUI.methodPtr,
-                 (MethodInfo *)0x0);
-      pAVar4 = (Action *)
-               mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pAVar4,(Delegate *)pNVar5,(MethodInfo *)0x0);
-      if (pAVar4 == (Action *)0x0) {
-        (pMVar8->fields).OnPlayerListChanged = (Action *)0x0;
-      }
-      else {
-        pAVar6 = (Action *)0x0;
-        if (pAVar4->klass == TypeInfo__System__Action) {
-          pAVar6 = pAVar4;
-        }
-        if (pAVar6 == (Action *)0x0) goto code_?;
-        (pMVar8->fields).OnPlayerListChanged = pAVar6;
-        pAVar6 = (Action *)0x0;
-        if (pAVar4->klass == TypeInfo__System__Action) {
-          pAVar6 = pAVar4;
-        }
-        if (pAVar6 == (Action *)0x0) goto code_?;
-      }
       func_?();
-      pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar7 != (MVNetworkGame *)0x0) {
-        pMVar9 = (pMVar7->fields).teamManager;
-        pEVar10 = (EventHandler_1_Object_ *)func_?();
-        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                  (pEVar10,(Object *)this,
+      pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (pMVar8 != (MVNetworkGame *)0x0) {
+        pMVar10 = (pMVar8->fields).teamManager;
+        pUVar11 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (pUVar11,(Object *)&UNK_?,
                    MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_
                    ,(MethodInfo *)0x0);
-        if (pMVar9 != (MVTeamManager *)0x0) {
+        if (pMVar10 != (MVTeamManager *)0x0) {
           MVTeamManager::MVTeamManager_remove_OnTeamAdded
-                    (pMVar9,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pEVar10,
+                    (pMVar10,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar11,
                      (MethodInfo *)0x0);
-          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if (pMVar7 != (MVNetworkGame *)0x0) {
-            pMVar9 = (pMVar7->fields).teamManager;
-            pEVar10 = (EventHandler_1_Object_ *)func_?();
-            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                      (pEVar10,(Object *)this,
+          pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (pMVar8 != (MVNetworkGame *)0x0) {
+            pMVar10 = (pMVar8->fields).teamManager;
+            pUVar11 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      (pUVar11,(Object *)&UNK_?,
                        MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_
                        ,(MethodInfo *)0x0);
-            if (pMVar9 != (MVTeamManager *)0x0) {
+            if (pMVar10 != (MVTeamManager *)0x0) {
               MVTeamManager::MVTeamManager_remove_OnTeamRemoved
-                        (pMVar9,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pEVar10,
+                        (pMVar10,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar11,
                          (MethodInfo *)0x0);
               return;
             }
@@ -290,25 +285,26 @@ code_?:
       }
       goto code_?;
     }
-    if (pAVar6->klass == TypeInfo__System__Action) {
-      pAVar4 = pAVar6;
+    pAVar7 = (Action *)0x0;
+    if (pAVar5->klass == TypeInfo__System__Action) {
+      pAVar7 = pAVar5;
     }
-    if (pAVar4 != (Action *)0x0) goto code_?;
+    if (pAVar7 != (Action *)0x0) {
+      (pMVar9->fields).OnPlayerListChanged = pAVar7;
+      pAVar7 = (Action *)0x0;
+      if (pAVar5->klass == TypeInfo__System__Action) {
+        pAVar7 = pAVar5;
+      }
+      if (pAVar7 != (Action *)0x0) goto code_?;
+    }
+code_?:
+    func_?();
   }
   else {
-    pAVar1 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-             func_?();
-    if (pAVar1 != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                   *)0x0) {
-      TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved = pAVar1;
-      iVar11 = func_?();
-      if (iVar11 != 0) goto code_?;
+    if (pAVar7->klass == TypeInfo__System__Action) {
+      pAVar5 = pAVar7;
     }
-    func_?();
-code_?:
-    func_?();
-code_?:
-    func_?();
+    if (pAVar5 != (Action *)0x0) goto code_?;
   }
   func_?();
 code_?:

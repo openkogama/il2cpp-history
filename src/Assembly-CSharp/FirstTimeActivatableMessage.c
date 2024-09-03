@@ -74,11 +74,11 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessage::FirstTimeActivatableMessa
     cRam_? = '\x01';
   }
   this_00 = (this->fields).firstTimeEventMessage;
-  this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+  this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+            func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
+  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
             (this_02,(Object *)this,
              MethodInfo__FirstTimeActivatableMessage__OnFinished_UnityEngine__GameObject_,
              (MethodInfo *)0x0);
@@ -156,45 +156,46 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessage::FirstTimeActivatableMessa
                      ((Object *)pFVar1,
                       FirstTimeEventMessage_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventMessage>_FirstTimeEventMessage_
                      );
-  ppFVar2 = &(this->fields).firstTimeEventMessage;
-  *ppFVar2 = pFVar1;
-  func_?(ppFVar2,pFVar1);
-  ppTVar3 = &(this->fields).firstTimeMessageParentTransform;
-  bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)*ppTVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar4 != 0) {
+  (this->fields).firstTimeEventMessage = pFVar1;
+  func_?(&(this->fields).firstTimeEventMessage,pFVar1);
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)(this->fields).firstTimeMessageParentTransform,(Object_1 *)0x0,
+                     (MethodInfo *)0x0);
+  if (bVar2 != 0) {
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
               ((Object *)StringLiteral_firstTimeMessageParentTransform_,(MethodInfo *)0x0);
-    pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
-    *ppTVar3 = pTVar5;
-    func_?(ppTVar3);
+    (this->fields).firstTimeMessageParentTransform = pTVar3;
+    func_?();
   }
-  if (*ppFVar2 != (FirstTimeEventMessage *)0x0) {
-    pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)*ppFVar2,(MethodInfo *)0x0);
-    if (pTVar5 != (Transform *)0x0) {
+  pFVar1 = (this->fields).firstTimeEventMessage;
+  if (pFVar1 != (FirstTimeEventMessage *)0x0) {
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pFVar1,(MethodInfo *)0x0);
+    if (pTVar3 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                (pTVar5,*ppTVar3,0,(MethodInfo *)0x0);
-      if ((*ppFVar2 != (FirstTimeEventMessage *)0x0) &&
-         (pFVar6 = ((*ppFVar2)->fields).fader, pFVar6 != (FirstTimeFadeHandler *)0x0)) {
-        this_00 = (pFVar6->fields).canvasGroup;
-        (pFVar6->fields).fadingIn = 1;
+                (pTVar3,(this->fields).firstTimeMessageParentTransform,0,(MethodInfo *)0x0);
+      pFVar1 = (this->fields).firstTimeEventMessage;
+      if ((pFVar1 != (FirstTimeEventMessage *)0x0) &&
+         (pFVar4 = (pFVar1->fields).fader, pFVar4 != (FirstTimeFadeHandler *)0x0)) {
+        this_00 = (pFVar4->fields).canvasGroup;
+        (pFVar4->fields).fadingIn = 1;
         if (this_00 != (CanvasGroup *)0x0) {
           UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                     (this_00,0.0,(MethodInfo *)0x0);
-          (pFVar6->fields).currentFadeInTime = 0.0;
+          (pFVar4->fields).currentFadeInTime = 0.0;
           return;
         }
       }
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
