@@ -21,7 +21,7 @@ public class OneShotPooledParticleSystem : MonoBehaviour
 
 	// Methods
 	public static ParticleSystem Instantiate(PoolEnums type);
-	public static ParticleSystem Instantiate(PoolEnums type, Vector3 position, Quaternion rotation, Color? particleColor = default);
+	public static ParticleSystem Instantiate(PoolEnums type, Vector3 position, Quaternion rotation, float? scale = default, Color? color = default);
 	private void OnValidate();
 	private void Update();
 }

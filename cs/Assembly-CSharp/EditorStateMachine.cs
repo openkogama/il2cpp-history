@@ -21,11 +21,14 @@ public class EditorStateMachine : FSMEntity
 	public const float sqrEpsilon = 0.64f;
 	[CompilerGenerated]
 	private bool _GridMode_k__BackingField;
+	[CompilerGenerated]
+	private bool _MuzzleEditMode_k__BackingField;
 
 	// Properties
 	public MVNetworkSelector NetworkSelector { get; }
 	public MainCameraManager MainCameraManager { get; }
 	public bool GridMode { [CompilerGenerated] get; [CompilerGenerated] set; }
+	public bool MuzzleEditMode { [CompilerGenerated] get; [CompilerGenerated] set; }
 	public CubeModelingStateMachine CubeModelingStateMachine { get; }
 	public EditorEvent CurEvent { get; }
 	public EditorEvent PrevEvent { get; }

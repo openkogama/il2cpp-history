@@ -16,7 +16,6 @@ using UnityEngine.UI;
 public class UIStack : MonoBehaviour, IUIStack
 {
 	// Fields
-	private Action uiStackChangedPublisher;
 	[SerializeField]
 	private GameObject root;
 	[SerializeField]
@@ -25,6 +24,7 @@ public class UIStack : MonoBehaviour, IUIStack
 	private DisableInput inputBlocker;
 	[SerializeField]
 	private Image blockingObjectImage;
+	private Action uiStackChangedPublisher;
 	private float origBlockerAlpha;
 	private bool stackReady;
 	private List<StackElement> stackableUiElements;

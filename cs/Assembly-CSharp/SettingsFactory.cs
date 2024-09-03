@@ -9,6 +9,7 @@ using MV.WorldObject;
 using UGUI.Desktop.Scripts.EditMode.SettingsBoxes;
 using UGUI.Desktop.Scripts.EditMode.SettingsBoxes.Camera;
 using UGUI.Desktop.Scripts.EditMode.SettingsBoxes.Costume;
+using UGUI.Desktop.Scripts.EditMode.SettingsBoxes.CustomGuns;
 using UGUI.Desktop.Scripts.EditMode.SettingsBoxes.Doors;
 using UGUI.Desktop.Scripts.EditMode.SettingsBoxes.MeleeWeapons;
 using UGUI.Desktop.Scripts.EditMode.SettingsBoxes.Vehicles;
@@ -127,32 +128,34 @@ public class SettingsFactory : MonoBehaviour
 	[SerializeField]
 	private CostumeSettings costumeSettingsPrefab;
 	[SerializeField]
+	private CustomGunSettings customGunSettingsPrefab;
+	[SerializeField]
 	private ObjectTransparencySettings objectTransparencySettingsPrefab;
 	[SerializeField]
 	private CubeModelPopup changeScaleSettingsPrefab;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass57_0
+	private sealed class __c__DisplayClass58_0
 	{
 		// Fields
 		public SpawnRoleEditorMenu spawnRoleEditor;
 
 		// Constructors
-		public __c__DisplayClass57_0();
+		public __c__DisplayClass58_0();
 
 		// Methods
 		internal void _CreateSettingsDialog_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass63_0
+	private sealed class __c__DisplayClass64_0
 	{
 		// Fields
 		public CubeModelPopup cubeModelPopup;
 
 		// Constructors
-		public __c__DisplayClass63_0();
+		public __c__DisplayClass64_0();
 
 		// Methods
 		internal void _CreateChangeScaleSettings_b__0(IUIStack x, BaseEventData y);

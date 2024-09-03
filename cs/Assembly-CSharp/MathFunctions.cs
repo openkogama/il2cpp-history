@@ -97,5 +97,6 @@ public static class MathFunctions
 	public static Vector3 Multiply(this Vector3 a, Vector3 b);
 	public static Vector2 xy(this Vector3 v);
 	public static IntVector ToIntVector(this Vector3 v);
+	public static float[] ToFloatArray(this Vector3 v);
 }
 

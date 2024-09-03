@@ -156,12 +156,13 @@ public class DeathUIController : MonoBehaviour
 	private void ShowDeadmodeUI();
 	private bool ShouldShowTierReward(GamePassTier tierToShow);
 	private void OnLocalAvatarSuicide();
+	private string ExtractWeaponName(int dmgDealerActorNr, PlayerKilledByType damageType);
 	private void OnLocalPlayerKilled(int localPlayerActorNr, int dmgDealerActorNr, PlayerKilledByType damageType);
 	private void SendCurrentProgressNotification();
 	private void StartDeathBriefing(string deathText);
 	private void OnRoundEnd(IWinningCondition winningCondition);
 	public void OnPressPlay();
 	[CompilerGenerated]
-	private void _StartDeathBriefing_b__36_0(IUIStack x, BaseEventData y);
+	private void _StartDeathBriefing_b__37_0(IUIStack x, BaseEventData y);
 }
 

@@ -179,13 +179,13 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass182_0
+	private sealed class __c__DisplayClass183_0
 	{
 		// Fields
 		public QuitBaseCallback applicationQuitObject;
 
 		// Constructors
-		public __c__DisplayClass182_0();
+		public __c__DisplayClass183_0();
 
 		// Methods
 		internal void _ApplicationQuit_b__0();
@@ -204,6 +204,7 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	protected void FixedUpdate();
 	protected virtual void LateUpdate();
 	protected void OnDrawGizmos();
+	private void OnRTGAppInitialize();
 	public static void RegisterPlayModeController(ModeControllerBase playModeController);
 	public static void PostGameMsg(MVGameMsgType gameMsgType, Dictionary<object, object> gameMsgData);
 	public static void PostGameMsg(MVGameMsgType gameMsgType, string message);

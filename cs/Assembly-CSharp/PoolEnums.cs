@@ -32,6 +32,7 @@ public enum PoolEnums
 	NinjaRunModifier = 19,
 	MouseModifier = 20,
 	GrowthModifier = 21,
+	CustomGunBullet = 22,
 	InvulnerabilityModifier = 24,
 	HealRaySparks = 25,
 	Lethal = 26,

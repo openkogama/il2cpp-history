@@ -28,7 +28,8 @@ public class PickupItemCollectTheItem : PickupItem
 
 	// Properties
 	public override AvatarItemType Type { get; }
-	public override bool ActivateGunModeOnEquip { get; }
+	public override bool FirstPerson { get; }
+	public override bool GunMode { get; }
 
 	// Constructors
 	public PickupItemCollectTheItem();

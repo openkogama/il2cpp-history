@@ -55,7 +55,7 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 	public Bounds Bounds { get; }
 	public ColliderCollection TriggingColliders { get; }
 	public AvatarMotor AvatarMotor { get; }
-	public bool InGunMode { get; }
+	public bool InFirstPersonGunMode { get; }
 	public override Vector3 VelocityRelative { get; }
 	public KogamaSettingWrapperBase Settings { get; }
 	public int BaseMaxHealth { get; set; }
@@ -292,6 +292,7 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 		private readonly IAvatarInputController avatarInputController;
 		private bool isFiring;
 		private bool isJumping;
+		private bool storedIsHandEquipableValue;
 		private readonly AvatarSound avatarSound;
 		private readonly float swimStartProximity;
 		private float prevWaterProximity;
@@ -307,6 +308,10 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 		public override void DeActivate(AvatarRuntimeState toMode);
 		public override void FrameUpdate(InputToInGameAction interactionMap);
 		private void HandlePickupUpdate(InputToInGameAction interactionMap);
+		private void HandleFireItem(InputToInGameAction interactionMap, bool isItemHolstered);
+		private void HandlePointingItem(InputToInGameAction interactionMap, bool isItemHand, bool isItemHolstered);
+		private void HandleHolsteringItem(InputToInGameAction interactionMap, bool isItemHand, bool isItemHolstered);
+		private void HandleDroppingItem(InputToInGameAction interactionMap, bool isItemHand, bool isItemHolstered);
 		private bool IsInJetpack();
 		public override void FixedUpdate(IInputToPlayerMovement movementMap);
 		private void HandleFocus();

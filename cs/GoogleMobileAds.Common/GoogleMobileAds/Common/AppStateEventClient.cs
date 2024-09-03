@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 51: GoogleMobileAds.Common.dll - Assembly: GoogleMobileAds.Common, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null
+// Image 50: GoogleMobileAds.Common.dll - Assembly: GoogleMobileAds.Common, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Common
 {
@@ -35,6 +35,6 @@ namespace GoogleMobileAds.Common
 		// Methods
 		private void OnApplicationPause(bool isPaused);
 		[CompilerGenerated]
-		private static void _AppStateChanged_m__0(AppState param_000113a0);
+		private static void _AppStateChanged_m__0(AppState param_00012706);
 	}
 }
