@@ -12,7 +12,7 @@ InitialLevelData * Assembly-CSharp.dll::LevelingManager::LevelingManager_CreateI
   }
   method_00 = TypeInfo__InitialLevelData;
   pIVar1 = (InitialLevelData *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)pIVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)pIVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
@@ -54,8 +54,8 @@ void Assembly-CSharp.dll::LevelingManager::LevelingManager_Destroy(MethodInfo *m
     cRam_? = '\x01';
   }
   uStack_1 = 2;
-  this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this,(Object *)0x0,MethodInfo__LevelingManager__OnInitialData_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
+  this = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this,(Object *)0x0,MethodInfo__LevelingManager__OnInitialData_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
   if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
@@ -86,8 +86,8 @@ void Assembly-CSharp.dll::LevelingManager::LevelingManager_Initialize(int32_t pr
   pSVar1 = MVCommon.dll::MV::Common::Urls::Urls_get_InitialData((MethodInfo *)0x0);
   str1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&profileID,(MethodInfo *)0x0);
   pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,str1,(MethodInfo *)0x0);
-  this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this,(Object *)0x0,MethodInfo__LevelingManager__OnInitialData_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
+  this = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this,(Object *)0x0,MethodInfo__LevelingManager__OnInitialData_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
   this_00 = (AssetBundleRequest *)func_?(TypeInfo__GetRequest);
   AssetBundleRequest::AssetBundleRequest__ctor(this_00,pSVar1,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this,WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
   if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
@@ -294,7 +294,7 @@ void Assembly-CSharp.dll::LevelingManager::LevelingManager__cctor(MethodInfo *me
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(this,MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Dictionary__);
   pXVar1 = TypeInfo__XPLevelLimits;
   pOVar2 = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
   pOVar2[1].klass = (Object__Class *)0x0;
   pOVar2[1].monitor = (MonitorData *)0x64;
   pOVar2[2].klass = (Object__Class *)0x1;
@@ -302,35 +302,35 @@ void Assembly-CSharp.dll::LevelingManager::LevelingManager__cctor(MethodInfo *me
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)this,1,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_);
     pXVar1 = TypeInfo__XPLevelLimits;
     pOVar2 = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
     pOVar2[1].klass = (Object__Class *)0x65;
     pOVar2[1].monitor = (MonitorData *)0xc8;
     pOVar2[2].klass = (Object__Class *)0x2;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)this,2,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_);
     pXVar1 = TypeInfo__XPLevelLimits;
     pOVar2 = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
     pOVar2[1].klass = (Object__Class *)0xc9;
     pOVar2[1].monitor = (MonitorData *)0x12c;
     pOVar2[2].klass = (Object__Class *)0x3;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)this,3,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_);
     pXVar1 = TypeInfo__XPLevelLimits;
     pOVar2 = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
     pOVar2[1].klass = (Object__Class *)0x12d;
     pOVar2[1].monitor = (MonitorData *)0x190;
     pOVar2[2].klass = (Object__Class *)0x4;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)this,4,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_);
     pXVar1 = TypeInfo__XPLevelLimits;
     pOVar2 = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
     pOVar2[1].klass = (Object__Class *)0x191;
     pOVar2[1].monitor = (MonitorData *)0x1f4;
     pOVar2[2].klass = (Object__Class *)0x5;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)this,5,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_);
     pXVar1 = TypeInfo__XPLevelLimits;
     pOVar2 = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
     pOVar2[1].klass = (Object__Class *)0x1f5;
     pOVar2[1].monitor = (MonitorData *)0x258;
     pOVar2[2].klass = (Object__Class *)0x6;

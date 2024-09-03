@@ -20,7 +20,8 @@ public class PickupItemCostume : PickupItemEditable
 
 	// Properties
 	public override AvatarItemType Type { get; }
-	public override bool ActivateGunModeOnEquip { get; }
+	public override bool FirstPerson { get; }
+	public override bool GunMode { get; }
 	public override bool CanHolster { get; }
 	public Color TrailColor { get; }
 	protected new CostumeConfiguration Configuration { get; set; }

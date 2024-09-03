@@ -137,7 +137,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                 SettingsSlider::SettingsSlider_Initialize_1(pSVar13,StringLiteral_ppDofPFDist,(int32_t)value,0x1d,0x5dc,(MethodInfo *)0x0);
                 pSVar14 = (pCVar1->fields).focusDistanceInputField;
                 if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar14,StringLiteral_ppDofPFDist,(int32_t)value,(MethodInfo *)0x0);
+                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar14,StringLiteral_ppDofPFDist,(int32_t)value,(MethodInfo *)0x0);
                   pCVar3 = (pCVar1->fields).cameraBoxSettings;
                   uStack_15 = 0x38;
                   value = (Object *)func_?(TypeInfo__System__Int32,&uStack_15);
@@ -165,7 +165,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                           SettingsSlider::SettingsSlider_Initialize_1(pSVar13,StringLiteral_ppDofApert,(int32_t)value,1,0x140,(MethodInfo *)0x0);
                           pSVar14 = (pCVar1->fields).apertureInputField;
                           if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar14,StringLiteral_ppDofApert,(int32_t)value,(MethodInfo *)0x0);
+                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar14,StringLiteral_ppDofApert,(int32_t)value,(MethodInfo *)0x0);
                             pCVar3 = (pCVar1->fields).cameraBoxSettings;
                             uStack_16 = 0x32;
                             value = (Object *)func_?(TypeInfo__System__Int32,&uStack_16);
@@ -193,7 +193,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                                     SettingsSlider::SettingsSlider_Initialize_1(pSVar13,StringLiteral_ppDofFLen,(int32_t)value,1,300,(MethodInfo *)0x0);
                                     pSVar14 = (pCVar1->fields).focalLengthInputField;
                                     if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar14,StringLiteral_ppDofFLen,(int32_t)value,(MethodInfo *)0x0);
+                                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar14,StringLiteral_ppDofFLen,(int32_t)value,(MethodInfo *)0x0);
                                       pCVar3 = (pCVar1->fields).cameraBoxSettings;
                                       pOStack_9 = (Object *)0x2;
                                       value = (Object *)func_?(TypeInfo__System__Int32,&pOStack_9);
@@ -221,7 +221,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                                               SettingsSlider::SettingsSlider_Initialize_1(pSVar13,StringLiteral_ppDofMBlur,(int32_t)value,1,4,(MethodInfo *)0x0);
                                               pSVar14 = (pCVar1->fields).maxBlurSizeInputField;
                                               if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                                                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar14,StringLiteral_ppDofMBlur,(int32_t)value,(MethodInfo *)0x0);
+                                                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar14,StringLiteral_ppDofMBlur,(int32_t)value,(MethodInfo *)0x0);
                                                 return;
                                               }
                                             }

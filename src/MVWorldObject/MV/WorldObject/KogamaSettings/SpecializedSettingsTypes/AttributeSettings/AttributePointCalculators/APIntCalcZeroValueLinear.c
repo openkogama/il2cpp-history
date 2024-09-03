@@ -4,21 +4,21 @@
 int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::AttributeSettings::AttributePointCalculators::APIntCalcZeroValueLinear::APIntCalcZeroValueLinear_Calc(APIntCalcZeroValueLinear *this,int32_t i,MethodInfo *method)
 
 {
-  fVar1 = (float)(i - this->zeroValue);
-  if (fVar1 < 0.0) {
+  iVar1 = i - this->zeroValue;
+  if ((float)iVar1 < 0.0) {
     fVar2 = this->exchangeRateNegative;
   }
   else {
     fVar2 = this->exchangeRatePositive;
   }
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
   }
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  fVar3 = (float10)func_?((double)(fVar1 * fVar2));
+  fVar3 = (float10)func_?((double)((float)iVar1 * fVar2));
   return (int)fVar3;
 }
 

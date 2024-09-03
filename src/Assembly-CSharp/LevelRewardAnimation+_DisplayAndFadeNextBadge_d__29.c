@@ -6,7 +6,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::L
 {
   pLVar1 = this;
   if (cRam_? == '\0') {
-    func_?(0x9f28);
+    func_?(&TypeInfo__System__Int32);
     func_?(&StringLiteral_LEVEL_UP_);
     cRam_? = '\x01';
   }
@@ -17,9 +17,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::L
     (this->fields).__1__state = -1;
     if ((this_02 == (Object__Class *)0x0) || (pCVar3 = *(Component **)&(this_02->_0).this_arg.attrs, pCVar3 == (Component *)0x0)) goto code_?;
     pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(pCVar3,(MethodInfo *)0x0);
-    euler_00.y._0_2_ = 0xfdb;
+    euler_00.y = -1.5707964;
     euler_00.x = fVar2;
-    euler_00.y._2_2_ = 0xbfc9;
     euler_00.z = 0.0;
     pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffd0,euler_00,(MethodInfo *)0x0);
     if (pTVar4 == (Transform *)0x0) goto code_?;
@@ -60,9 +59,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::L
   default:
     return 0;
   }
-  fVar8 = (pLVar1->fields)._currentTime_5__2;
   in_AF = 0;
-  if (1.0 <= fVar8 / (float)(this_02->_0).fields) {
+  if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (float)(this_02->_0).fields) {
     pBVar6 = (Behaviour *)(this_02->_0).implementedInterfaces;
     if (pBVar6 != (Behaviour *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled(pBVar6,1,(MethodInfo *)0x0);
@@ -85,9 +83,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::L
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar4,*pQVar5,(MethodInfo *)0x0);
               (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
-              fVar2 = (pLVar1->fields)._currentTime_5__2;
               in_AF = 0;
-              if (1.0 <= fVar2 / (float)(this_02->_0).element_class) {
+              if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (float)(this_02->_0).element_class) {
                 pIVar7 = (this_02->_0).castClass;
                 if (pIVar7 != (Il2CppClass *)0x0) {
                   fVar8 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate((AnimationCurve *)pIVar7,1.0,(MethodInfo *)0x0);
@@ -103,18 +100,15 @@ code_?:
                         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar12,0,(MethodInfo *)0x0);
                         (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
-                        fVar8 = (pLVar1->fields)._currentTime_5__2;
                         in_AF = 0;
-                        if (1.0 <= fVar8 / (float)(this_02->_0).fields) {
+                        if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (float)(this_02->_0).fields) {
                           pCVar3 = *(Component **)&(this_02->_0).this_arg.attrs;
                           if (pCVar3 != (Component *)0x0) {
                             pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(pCVar3,(MethodInfo *)0x0);
-                            euler_01.y._0_2_ = 0xfdb;
+                            euler_01.y = 1.5707964;
                             euler_01.x = fVar2;
-                            euler_01.y._2_2_ = 0x3fc9;
                             euler_01.z = 0.0;
                             pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffc0,euler_01,(MethodInfo *)0x0);
-                            pLVar1 = (LevelRewardAnimation_DisplayAndFadeNextBadge_d_29 *)0x0;
                             if (pTVar4 != (Transform *)0x0) {
                               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar4,*pQVar5,(MethodInfo *)0x0);
                               if (cRam_? == '\0') {
@@ -123,7 +117,7 @@ code_?:
                               }
                               method_00 = TypeInfo__LevelRewardAnimation___DisplayAndFadeGoldIcon_d__30;
                               pOVar13 = (Object *)func_?();
-                              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar13,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+                              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar13,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
                               pOVar13[1].klass = (Object__Class *)0x0;
                               pOVar13[2].klass = this_02;
                               func_?();
@@ -137,6 +131,7 @@ code_?:
                           }
                         }
                         else {
+                          fVar8 = (pLVar1->fields)._currentTime_5__2;
                           fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
                           (pLVar1->fields)._currentTime_5__2 = fVar14 + fVar8;
                           pIVar7 = (this_02->_0).klass;
@@ -167,6 +162,7 @@ code_?:
                 }
               }
               else {
+                fVar2 = (pLVar1->fields)._currentTime_5__2;
                 fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
                 (pLVar1->fields)._currentTime_5__2 = fVar8 + fVar2;
                 pIVar7 = (this_02->_0).castClass;
@@ -205,6 +201,7 @@ code_?:
     }
   }
   else {
+    fVar8 = (pLVar1->fields)._currentTime_5__2;
     fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     (pLVar1->fields)._currentTime_5__2 = fVar14 + fVar8;
     this_00 = (this_02->_0).interopData;
@@ -230,28 +227,17 @@ code_?:
     }
   }
 code_?:
-  bVar15 = false;
-  uVar16 = func_?();
-  if (!(bool)bVar15) {
-    in_AF = 9 < ((byte)uVar16 & 0xf) | in_AF;
-    bVar17 = (byte)uVar16 + in_AF * -6 & 0xf;
-    bVar18 = (char)((uint)&stack0xfffffffc >> 8) + bVar17 + in_AF;
-    bVar15 = 9 < bVar17 | in_AF;
-    bVar19 = bVar17 + bVar15 * -6 & 0xf;
-    bVar17 = ((char)((ushort)uVar16 >> 8) - in_AF) - bVar15;
-    bVar20 = CARRY1(bVar17,extraout_DL) || CARRY1(bVar17 + extraout_DL,bVar15);
-    bVar17 = *(byte *)&(this_02->_0).image;
-    bVar21 = *(char *)&(this_02->_0).image + bVar18;
-    *(byte *)&(this_02->_0).image = bVar21 + bVar20;
-    pcVar22 = (char *)(CONCAT22((short)((uint)&stack0xfffffffc >> 0x10),CONCAT11(bVar18,(char)&stack0xfffffffc)) + 0x13);
-    *pcVar22 = *pcVar22 + bVar19 + (CARRY1(bVar17,bVar18) || CARRY1(bVar21,bVar20));
-    bVar15 = 9 < bVar19 | bVar15;
-  }
-  pcVar22 = (char *)((int)&(pLVar1->fields)._currentTime_5__2 + 1);
-  *pcVar22 = *pcVar22 + extraout_CL + bVar15;
-  pcVar23 = (code *)swi(3);
-  bVar24 = (*pcVar23)();
-  return bVar24;
+  bVar15 = func_?();
+  in_AF = 9 < (bVar15 & 0xf) | in_AF;
+  bVar15 = bVar15 + in_AF * -6 & 0xf;
+  *(byte *)&(this_02->_0).image = *(char *)&(this_02->_0).image + bVar15 + in_AF;
+  in_AF = 9 < bVar15 | in_AF;
+  *(byte *)&(this_02->_0).image = *(char *)&(this_02->_0).image + -10 + in_AF;
+  *(char *)(extraout_ECX + -0x66efc004) = *(char *)(extraout_ECX + -0x66efc004) + (char)extraout_ECX + (9 < (bVar15 + in_AF * -6 & 0xf) | in_AF);
+  *(char *)&(this_02->_0).image = *(char *)&(this_02->_0).image + '\x01';
+  pcVar16 = (code *)swi(3);
+  bVar17 = (*pcVar16)();
+  return bVar17;
 }
 
 

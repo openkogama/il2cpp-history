@@ -49,16 +49,16 @@ public class ContextMenuController : MonoBehaviour, IHandlePointerDownOnContextM
 		public static ExecuteEvents.EventFunction<IUIStack> __9__27_0;
 		public static ExecuteEvents.EventFunction<IUIStack> __9__28_0;
 		public static ExecuteEvents.EventFunction<IUIStack> __9__29_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__31_0;
 		public static ExecuteEvents.EventFunction<IUIStack> __9__32_0;
 		public static ExecuteEvents.EventFunction<IUIStack> __9__33_0;
 		public static ExecuteEvents.EventFunction<IUIStack> __9__34_0;
-		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__35_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__35_1;
-		public static ExecuteEvents.EventFunction<IEditModeController> __9__36_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__37_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__39_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__40_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__35_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__36_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__36_1;
+		public static ExecuteEvents.EventFunction<IEditModeController> __9__37_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__38_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__40_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__41_1;
 
 		// Constructors
 		static __c();
@@ -80,16 +80,16 @@ public class ContextMenuController : MonoBehaviour, IHandlePointerDownOnContextM
 		internal void _ShowSettingsDialog_b__27_0(IUIStack handler, BaseEventData data);
 		internal void _ShowSoundsDialog_b__28_0(IUIStack handler, BaseEventData data);
 		internal void _ShowGlobalSoundsDialog_b__29_0(IUIStack handler, BaseEventData data);
-		internal void _ShowChangeScaleDialog_b__31_0(IUIStack handler, BaseEventData data);
-		internal void _ResetLogic_b__32_0(IUIStack handler, BaseEventData data);
-		internal void _Clone_b__33_0(IUIStack handler, BaseEventData data);
-		internal void _CloneRoot_b__34_0(IUIStack handler, BaseEventData data);
-		internal void _AddToInventory_b__35_0(IModalPopupCreator x, BaseEventData y);
-		internal void _AddToInventory_b__35_1(IUIStack x, BaseEventData y);
-		internal void _EnterPlay_b__36_0(IEditModeController x, BaseEventData y);
-		internal void _OnClosedStandaloneError_b__37_0(IUIStack x, BaseEventData y);
-		internal void _OnFailedToAddItem_b__39_0(IUIStack handler, BaseEventData data);
-		internal void _Delete_b__40_1(IUIStack handler, BaseEventData data);
+		internal void _ShowChangeScaleDialog_b__32_0(IUIStack handler, BaseEventData data);
+		internal void _ResetLogic_b__33_0(IUIStack handler, BaseEventData data);
+		internal void _Clone_b__34_0(IUIStack handler, BaseEventData data);
+		internal void _CloneRoot_b__35_0(IUIStack handler, BaseEventData data);
+		internal void _AddToInventory_b__36_0(IModalPopupCreator x, BaseEventData y);
+		internal void _AddToInventory_b__36_1(IUIStack x, BaseEventData y);
+		internal void _EnterPlay_b__37_0(IEditModeController x, BaseEventData y);
+		internal void _OnClosedStandaloneError_b__38_0(IUIStack x, BaseEventData y);
+		internal void _OnFailedToAddItem_b__40_0(IUIStack handler, BaseEventData data);
+		internal void _Delete_b__41_1(IUIStack handler, BaseEventData data);
 	}
 
 	[CompilerGenerated]
@@ -107,7 +107,8 @@ public class ContextMenuController : MonoBehaviour, IHandlePointerDownOnContextM
 		internal bool _ShowContextMenu_b__0();
 		internal bool _ShowContextMenu_b__1();
 		internal bool _ShowContextMenu_b__2();
-		internal void _ShowContextMenu_b__3(IUIStack x, BaseEventData y);
+		internal bool _ShowContextMenu_b__3();
+		internal void _ShowContextMenu_b__4(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
@@ -128,26 +129,26 @@ public class ContextMenuController : MonoBehaviour, IHandlePointerDownOnContextM
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass34_0
+	private sealed class __c__DisplayClass35_0
 	{
 		// Fields
 		public MVWorldObjectClient root;
 
 		// Constructors
-		public __c__DisplayClass34_0();
+		public __c__DisplayClass35_0();
 
 		// Methods
 		internal void _CloneRoot_b__1(ICloneHandler handler, BaseEventData data);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass40_0
+	private sealed class __c__DisplayClass41_0
 	{
 		// Fields
 		public string errorText;
 
 		// Constructors
-		public __c__DisplayClass40_0();
+		public __c__DisplayClass41_0();
 
 		// Methods
 		internal void _Delete_b__0(IModalPopupCreator x, BaseEventData y);
@@ -179,6 +180,7 @@ public class ContextMenuController : MonoBehaviour, IHandlePointerDownOnContextM
 	private void ShowSoundsDialog();
 	private void ShowGlobalSoundsDialog();
 	private void EnterCubeEdit();
+	private void EnterMuzzleEdit();
 	private void ShowChangeScaleDialog();
 	private void ResetLogic();
 	private void Clone();
@@ -194,8 +196,8 @@ public class ContextMenuController : MonoBehaviour, IHandlePointerDownOnContextM
 	public void PointerIsDown();
 	private void OnContextMenuPop();
 	[CompilerGenerated]
-	private void _Clone_b__33_1(ICloneHandler handler, BaseEventData data);
+	private void _Clone_b__34_1(ICloneHandler handler, BaseEventData data);
 	[CompilerGenerated]
-	private void _AddToInventory_b__35_2(IModalPopupCreator x, BaseEventData y);
+	private void _AddToInventory_b__36_2(IModalPopupCreator x, BaseEventData y);
 }
 

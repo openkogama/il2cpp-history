@@ -4,7 +4,7 @@
 void Assembly-CSharp.dll::MVInputWrapper+InputSuppression::MVInputWrapper_InputSuppression__ctor(MVInputWrapper_InputSuppression *this,bool a,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (*(code *)(this->klass->vtable).set_IsSuppressed.method)(this,_a,this->klass[1]._0.image);
   return;
 }
@@ -41,7 +41,7 @@ MVInputWrapper_InputSuppression * Assembly-CSharp.dll::MVInputWrapper+InputSuppr
   }
   method_00 = TypeInfo__MVInputWrapper__InputSuppression;
   value = (MVInputWrapper_InputSuppression *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (*(code *)(value->klass->vtable).set_IsSuppressed.method)(value,_a,((_union_86 *)&value->klass[1]._0)->dummy);
   return value;
 }

@@ -20,8 +20,8 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  pAVar6 = (this->fields).onDestroy;
-  if (pAVar6 != (Action *)0x0) {
+  if ((this->fields).onDestroy != (Action *)0x0) {
+    pAVar6 = (this->fields).onDestroy;
     (*(pAVar6->fields)._._.invoke_impl)((pAVar6->fields)._._.method_code,(pAVar6->fields)._._.method);
   }
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).localComponents;
@@ -41,7 +41,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)obj,(MethodInfo *)0x0);
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffc8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Component>__Dispose__,method_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffc8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Component>__Dispose__,method_00);
     *unaff_FS_OFFSET = uStack_3;
     return;
   }
@@ -71,8 +71,8 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
     func_?(&StringLiteral_Failed_to_get_rigid_bodies);
     cRam_? = '\x01';
   }
-  pAVar1 = (this->fields).onEnter;
-  if (pAVar1 != (Action *)0x0) {
+  if ((this->fields).onEnter != (Action *)0x0) {
+    pAVar1 = (this->fields).onEnter;
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)MVVehicleBase_LocalObjectsBase_GetLocalComponents(this,System__Collections__Generic__List<MVRigidBody>_MethodInfo__MVVehicleBase__LocalObjectsBase__GetLocalComponents<MVRigidBody>__);
@@ -162,7 +162,7 @@ code_?:
       bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)&stack0xffffffbc,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Component>__MoveNext__);
       if (bVar10 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffbc,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Component>__Dispose__,in_stack_11);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffbc,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Component>__Dispose__,in_stack_11);
         *unaff_FS_OFFSET = uStack_3;
         return pLVar5;
       }
@@ -270,7 +270,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
   }
   method_00 = TypeInfo__MVVehicleBase_LocalObjectsBase____c__DisplayClass15_0;
   pOVar1 = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   pMVar2 = this;
   this = (MVVehicleBase_LocalObjectsBase *)(*(code *)(this->klass->vtable).__unknown_1.method)(this,(this->klass->vtable).Destroy.methodPtr);
   if ((this != (MVVehicleBase_LocalObjectsBase *)0x0) && (v != (Object *)0x0)) {
@@ -343,9 +343,9 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
   this_00 = (List_1_UnityEngine_Component_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Component>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<UnityEngine::Component>__List__);
   method_00 = (MethodInfo *)&(this->fields).localComponents;
-  *(List_1_UnityEngine_Component_ **)method_00 = this_00;
+  (this->fields).localComponents = this_00;
   func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

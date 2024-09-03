@@ -6,15 +6,14 @@ void Assembly-CSharp.dll::KogamaLogHandlerTest::KogamaLogHandlerTest_KogamaLogHa
 {
   if (e != (ProxyLogHandler_LogFormatData *)0x0) {
     pSVar1 = mscorlib.dll::System::String::String_Format_3((e->fields).format,(e->fields).args,(MethodInfo *)0x0);
-    ppSVar2 = &(this->fields).s;
-    *ppSVar2 = pSVar1;
-    func_?(ppSVar2,pSVar1);
+    (this->fields).s = pSVar1;
+    func_?(&(this->fields).s,pSVar1);
     (this->fields).logType = (e->fields).LogType;
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -34,12 +33,11 @@ void Assembly-CSharp.dll::KogamaLogHandlerTest::KogamaLogHandlerTest_Start(Kogam
   }
   pPVar1 = (ProxyLogHandler *)func_?(TypeInfo__ProxyLogHandler);
   ProxyLogHandler::ProxyLogHandler__ctor(pPVar1,(MethodInfo *)0x0);
-  ppPVar2 = &(this->fields).kogamaLogHandler;
-  *ppPVar2 = pPVar1;
-  func_?(ppPVar2,pPVar1);
-  pPVar1 = *ppPVar2;
-  this_00 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
-  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_00,(Object *)this,MethodInfo__KogamaLogHandlerTest__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_,(MethodInfo *)0x0);
+  (this->fields).kogamaLogHandler = pPVar1;
+  func_?(&(this->fields).kogamaLogHandler,pPVar1);
+  pPVar1 = (this->fields).kogamaLogHandler;
+  this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)this,MethodInfo__KogamaLogHandlerTest__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_,(MethodInfo *)0x0);
   if (pPVar1 != (ProxyLogHandler *)0x0) {
     ProxyLogHandler::ProxyLogHandler_add_OnLogReceived(pPVar1,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)this_00,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -49,8 +47,8 @@ void Assembly-CSharp.dll::KogamaLogHandlerTest::KogamaLogHandlerTest_Start(Kogam
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

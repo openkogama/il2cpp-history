@@ -33,7 +33,8 @@ public abstract class MVPickupOwner : MVComponent
 	public Vector3 LookOrigin { get; }
 	public Vector3 LookDirection { get; }
 	public bool HasUnlimitedAmmo { get; }
-	public bool InGunMode { get; }
+	public bool InFirstPerson { get; }
+	public bool HasGunWithAmmo { get; }
 	public bool PickupItemIsInHand { get; }
 	public MVWorldObjectClient WorldObjectOwner { get; }
 	public virtual HashSet<int> IgnoreWOIDs { get; }
@@ -49,7 +50,7 @@ public abstract class MVPickupOwner : MVComponent
 	protected MVPickupOwner();
 
 	// Methods
-	protected abstract void Equip(AvatarItemType type, int variantId);
+	protected abstract void SetupItemTransform();
 	protected abstract void Unequip();
 	protected override void Awake();
 	public float GetAbsolutProjectileSpeed(float projectileSpeed);
@@ -59,14 +60,18 @@ public abstract class MVPickupOwner : MVComponent
 	protected void InitializeSettings(bool hasUnlimitedAmmoSetting);
 	private Vector3 GetLookDirectionWithAddedVelocityMagnitude(Vector3 lookDirection);
 	public void SetLineOfFireLocal();
+	private void ChangeCurrentItem(Dictionary<object, object> newState);
+	private bool IsNewItem(Dictionary<object, object> newState);
 	private void UpdateCurrentItem(Dictionary<object, object> newState);
+	private void CheckItemHolstering(UpdateItemState state);
+	private void CheckResetAmmo(UpdateItemState state);
 	private Transform GetTargetHolsterTransform();
 	private void HandleFiring(bool isFiring);
-	protected void SetAvatarItemAsCurrent(PickupItem avatarItem);
+	protected void CreateAndEquipNewItem(Dictionary<object, object> newState);
 	protected PickupItem CreateAvatarItem(AvatarItemType type, int variantId);
 	[CompilerGenerated]
-	private void _Init_b__39_0(object item);
+	private void _Init_b__41_0(object item);
 	[CompilerGenerated]
-	private void _Init_b__39_1(object value);
+	private void _Init_b__41_1(object value);
 }
 

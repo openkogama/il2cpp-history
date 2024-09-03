@@ -36,6 +36,7 @@ public class AvatarInteractable : MVInteractable, IMoveHitHandler
 		public static readonly DamageSource none;
 		public MVPlayer shooter;
 		public PlayerKilledByType damageType;
+		public string weaponName;
 		public float time;
 		private const float lifeTime = 4f;
 
@@ -43,7 +44,7 @@ public class AvatarInteractable : MVInteractable, IMoveHitHandler
 		public bool Outdated { get; }
 
 		// Constructors
-		public DamageSource(MVPlayer shooter, PlayerKilledByType damageType);
+		public DamageSource(MVPlayer shooter, PlayerKilledByType damageType, string weaponName);
 		private DamageSource();
 		static DamageSource();
 	}
@@ -58,6 +59,7 @@ public class AvatarInteractable : MVInteractable, IMoveHitHandler
 	public void InitializeSkills(WorldObjectSkillDataManager skillDataManager);
 	public override void TakeDamage(float amount, MVPlayer damageDealer, PlayerKilledByType damageType);
 	public override void TakeDamageOverTime(AvatarModifierPackageType type, MVPlayer damageDealer, PlayerKilledByType damageType);
+	private string ExtractWeaponName(MVPlayer damageDealer, PlayerKilledByType damageType);
 	private void DoKilledNotification(MVPlayer damageDealer, PlayerKilledByType defaultDamageType);
 	private float GetBoostedHealth(float defaultHealth);
 	public void DieFromRespawn(MVPlayer damageDealer, PlayerKilledByType damageType);

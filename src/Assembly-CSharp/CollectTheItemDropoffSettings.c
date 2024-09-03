@@ -21,41 +21,40 @@ code_?:
     func_?();
 code_?:
     func_?();
+code_?:
+    func_?();
   }
   else {
-    bVar2 = (TypeInfo__MVBlueprintBase->_1).naturalAligment;
-    if (((pMVar1->klass->_1).naturalAligment < bVar2) || ((MVBlueprintBase__Class *)(pMVar1->klass->_1).typeHierarchy[bVar2 - 1] != TypeInfo__MVBlueprintBase)) goto code_?;
+    if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVBlueprintBase->_1).naturalAligment) || ((MVBlueprintBase__Class *)(pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVBlueprintBase->_1).naturalAligment - 1] != TypeInfo__MVBlueprintBase)) goto code_?;
     this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar1->fields).data;
-    if ((this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) || (TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_00,(Object *)StringLiteral_BlueprintData,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), TVar3.m_Index == 0)) goto code_?;
-    bVar2 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment;
-    if ((*(byte *)(*(int *)TVar3.m_Index + 0xb8) < bVar2) || (*(Dictionary_2_System_Object_System_Object___Class **)(*(int *)(*(int *)TVar3.m_Index + 100) + -4 + (uint)bVar2 * 4) != TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) goto code_?;
-    dictionary = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(TVar3.m_Index,(Object *)StringLiteral_ChildrenMap,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    this_02 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-    if (dictionary.m_Index == 0) {
-      dictionary.m_Index = 0;
-code_?:
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object___ctor_1(this_02,(IDictionary_2_System_Object_System_Object_ *)dictionary.m_Index,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_);
-      _UNK_? = this_02;
+    if ((this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) || (TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_00,(Object *)StringLiteral_BlueprintData,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), TVar2.m_Index == 0)) goto code_?;
+    if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment <= *(byte *)(*(int *)TVar2.m_Index + 0xb8)) && (*(Dictionary_2_System_Object_System_Object___Class **)(*(int *)(*(int *)TVar2.m_Index + 100) + -4 + (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment * 4) == TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+      dictionary = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(TVar2.m_Index,(Object *)StringLiteral_ChildrenMap,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+      this_02 = (Dictionary_2_System_Object_System_Object_ *)func_?();
+      if ((dictionary.m_Index == 0) || (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment <= *(byte *)(*(int *)dictionary.m_Index + 0xb8) && (*(Dictionary_2_System_Object_System_Object___Class **)(*(int *)(*(int *)dictionary.m_Index + 100) + -4 + (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment * 4) == TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object___ctor_1(this_02,(IDictionary_2_System_Object_System_Object_ *)dictionary.m_Index,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_);
+        _UNK_? = this_02;
                     /* WARNING: Read-only address (ram,0xADDR) is written */
-      func_?();
-      SettingsBase::SettingsBase_Initialize((SettingsBase *)0x8b28ebc9,0xADDR,(GameObject *)&UNK_?,MVWorldObjectDocumentationType__Enum_CollectTheItem,(MethodInfo *)0x0);
-      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(TVar3.m_Index,(Object *)StringLiteral_doOnce,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-      if (TVar3.m_Index == 0) goto code_?;
-      if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) == (TypeInfo__System__Boolean->_0).element_class) {
-        pbVar4 = (bool *)func_?();
-        SettingsToggle::SettingsToggle_Initialize((SettingsToggle *)0xb88a8a06,StringLiteral_doOnce,*pbVar4,(MethodInfo *)0x0);
-        return;
+        func_?();
+        SettingsBase::SettingsBase_Initialize((SettingsBase *)0xb8808a07,0xADDR,(GameObject *)&UNK_?,MVWorldObjectDocumentationType__Enum_CollectTheItem,(MethodInfo *)0x0);
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(TVar2.m_Index,(Object *)StringLiteral_doOnce,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+        if (TVar2.m_Index == 0) goto code_?;
+        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) == (TypeInfo__System__Boolean->_0).element_class) {
+          pbVar3 = (bool *)func_?();
+          SettingsToggle::SettingsToggle_Initialize((SettingsToggle *)0x3a000000,StringLiteral_doOnce,*pbVar3,(MethodInfo *)0x0);
+          return;
+        }
+        goto code_?;
       }
       goto code_?;
     }
-    bVar2 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment;
-    if ((bVar2 <= *(byte *)(*(int *)dictionary.m_Index + 0xb8)) && (*(Dictionary_2_System_Object_System_Object___Class **)(*(int *)(*(int *)dictionary.m_Index + 100) + -4 + (uint)bVar2 * 4) == TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) goto code_?;
   }
   func_?();
+  pMVar1 = extraout_EDX;
 code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?(pMVar1);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

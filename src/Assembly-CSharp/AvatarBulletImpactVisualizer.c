@@ -8,30 +8,29 @@ void Assembly-CSharp.dll::AvatarBulletImpactVisualizer::AvatarBulletImpactVisual
     func_?(&TypeInfo__UnityEngine__ParticleSystem__Burst);
     cRam_? = '\x01';
   }
-  lineOfFire.m_Direction.y = -lineOfFire.m_Direction.y;
-  forward.z = lineOfFire.m_Direction.y;
-  forward.x = (float)(int)(lineOfFire._8_8_ ^ 0x8000000080000000);
-  forward.y = (float)(int)((lineOfFire._8_8_ ^ 0x8000000080000000) >> 0x20);
-  pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1((Quaternion *)&lineOfFire.m_Origin.y,forward,(MethodInfo *)0x0);
+  uVar1 = lineOfFire._8_8_ ^ 0x8000000080000000;
+  forward.z = -lineOfFire.m_Direction.y;
+  forward.x = (float)(int)uVar1;
+  forward.y = (float)(int)(uVar1 >> 0x20);
+  pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1((Quaternion *)&stack0xffffffe8,forward,(MethodInfo *)0x0);
   position.y = voxelHit.point.x;
-  position.x = (float)in_stack_2;
+  position.x = (float)in_stack_3;
   position.z = voxelHit.point.y;
-  lineOfFire.m_Direction.y = (float)OneShotPooledParticleSystem::OneShotPooledParticleSystem_Instantiate_1(PoolEnums__Enum_AvatarBulletImpact,position,*pQVar1,(Nullable_1_UnityEngine_Color_)ZEXT820(0),(MethodInfo *)0x0);
-  if ((ParticleSystem *)lineOfFire.m_Direction.y != (ParticleSystem *)0x0) {
-    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision((ParticleSystem *)lineOfFire.m_Direction.y,(MethodInfo *)0x0);
+  this_00 = OneShotPooledParticleSystem::OneShotPooledParticleSystem_Instantiate_1(PoolEnums__Enum_AvatarBulletImpact,position,*pQVar2,(Nullable_1_Single_)0x0,(Nullable_1_UnityEngine_Color_)ZEXT820(0),(MethodInfo *)0x0);
+  if (this_00 != (ParticleSystem *)0x0) {
+    PStack_4.m_ParticleSystem = (ParticleSystem *)UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision(this_00,(MethodInfo *)0x0);
     bursts = (ParticleSystem_Burst__Array *)func_?();
     if (bursts != (ParticleSystem_Burst__Array *)0x0) {
       if (bursts->max_length != 0) {
-        this_00 = bursts->vector;
-        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::ParticleSystem_Burst_set_time(this_00,0.0,(MethodInfo *)0x0);
+        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::ParticleSystem_Burst_set_time(bursts->vector,0.0,(MethodInfo *)0x0);
         if (bursts->max_length != 0) {
-          voxelHit.collider._0_2_ = (int16_t)(int)((this->fields).particlesPerPointOfDamage * (float)shooterActorNumber);
-          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::ParticleSystem_Burst_set_minCount(this_00,(int16_t)voxelHit.collider,(MethodInfo *)0x0);
+          voxelHit.cube._0_2_ = (int16_t)(int)((float)shooterActorNumber * (this->fields).particlesPerPointOfDamage);
+          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::ParticleSystem_Burst_set_minCount(bursts->vector,(int16_t)voxelHit.cube,(MethodInfo *)0x0);
           if (bursts->max_length != 0) {
-            voxelHit.interactionFlags._0_2_ = (int16_t)(int)((this->fields).particlesPerPointOfDamage * (float)shooterActorNumber);
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::ParticleSystem_Burst_set_maxCount(this_00,(int16_t)voxelHit.interactionFlags,(MethodInfo *)0x0);
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::ParticleSystem_EmissionModule_SetBursts((ParticleSystem_EmissionModule *)&stack0xfffffff8,bursts,(MethodInfo *)0x0);
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1((ParticleSystem *)lineOfFire.m_Direction.y,(MethodInfo *)0x0);
+            voxelHit.transform._0_2_ = (int16_t)(int)((float)shooterActorNumber * (this->fields).particlesPerPointOfDamage);
+            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::ParticleSystem_Burst_set_maxCount(bursts->vector,(int16_t)voxelHit.transform,(MethodInfo *)0x0);
+            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::ParticleSystem_EmissionModule_SetBursts(&PStack_4,bursts,(MethodInfo *)0x0);
+            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1(this_00,(MethodInfo *)0x0);
             return;
           }
         }
@@ -42,8 +41,8 @@ void Assembly-CSharp.dll::AvatarBulletImpactVisualizer::AvatarBulletImpactVisual
   func_?();
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

@@ -56,8 +56,8 @@ code_?:
     func_?();
     if ((this->fields).completed == 0) {
       this_00 = (this->fields).popup;
-      this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_02,(Object *)this,MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnPopupRemoved_UnityEngine__GameObject_,(MethodInfo *)0x0);
+      this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_02,(Object *)this,MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnPopupRemoved_UnityEngine__GameObject_,(MethodInfo *)0x0);
       if (this_00 == (FirstTimeEventPopupWithProgress *)0x0) goto code_?;
       FirstTimeEventPopup::FirstTimeEventPopup_StartFade((FirstTimeEventPopup *)this_00,(Action_1_UnityEngine_GameObject_ *)this_02,(MethodInfo *)0x0);
     }
@@ -136,8 +136,8 @@ code_?:
 code_?:
     func_?();
     pFVar5 = (this->fields).popup;
-    this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_02,(Object *)this,MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnPopupRemoved_UnityEngine__GameObject_,(MethodInfo *)0x0);
+    this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_02,(Object *)this,MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnPopupRemoved_UnityEngine__GameObject_,(MethodInfo *)0x0);
     if (pFVar5 != (FirstTimeEventPopupWithProgress *)0x0) {
       FirstTimeEventPopup::FirstTimeEventPopup_StartFade((FirstTimeEventPopup *)pFVar5,(Action_1_UnityEngine_GameObject_ *)this_02,(MethodInfo *)0x0);
       return;
@@ -211,7 +211,7 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::FirstTimeA
   }
   method_00 = TypeInfo__FirstTimeActivatablePointerWaitForCubeTool____c__DisplayClass18_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)popupGameObject;
     func_?(value + 1,popupGameObject);
@@ -259,15 +259,17 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::FirstTimeA
       func_?(TypeInfo__UnityEngine__Object);
     }
     pFVar1 = (FirstTimeEventPopupWithProgress *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pFVar1,FirstTimeEventPopupWithProgress_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventPopupWithProgress>_FirstTimeEventPopupWithProgress_);
-    ppFVar2 = &(this->fields).popup;
-    *ppFVar2 = pFVar1;
-    func_?(ppFVar2,pFVar1);
-    if (*ppFVar2 != (FirstTimeEventPopupWithProgress *)0x0) {
-      FirstTimeEventPopup::FirstTimeEventPopup_SetSkippable((FirstTimeEventPopup *)*ppFVar2,(this->fields).skipAllowed,(MethodInfo *)0x0);
-      if (*ppFVar2 != (FirstTimeEventPopupWithProgress *)0x0) {
-        FirstTimeEventPopup::FirstTimeEventPopup_FadeIn((FirstTimeEventPopup *)*ppFVar2,(MethodInfo *)0x0);
-        if (*ppFVar2 != (FirstTimeEventPopupWithProgress *)0x0) {
-          FirstTimeEventPopupWithProgress::FirstTimeEventPopupWithProgress_SetProgress(*ppFVar2,(float)(this->fields).currentChangeCount,(float)(this->fields).numberOfChangesBeforePointer,(MethodInfo *)0x0);
+    (this->fields).popup = pFVar1;
+    func_?(&(this->fields).popup,pFVar1);
+    pFVar1 = (this->fields).popup;
+    if (pFVar1 != (FirstTimeEventPopupWithProgress *)0x0) {
+      FirstTimeEventPopup::FirstTimeEventPopup_SetSkippable((FirstTimeEventPopup *)pFVar1,(this->fields).skipAllowed,(MethodInfo *)0x0);
+      pFVar1 = (this->fields).popup;
+      if (pFVar1 != (FirstTimeEventPopupWithProgress *)0x0) {
+        FirstTimeEventPopup::FirstTimeEventPopup_FadeIn((FirstTimeEventPopup *)pFVar1,(MethodInfo *)0x0);
+        pFVar1 = (this->fields).popup;
+        if (pFVar1 != (FirstTimeEventPopupWithProgress *)0x0) {
+          FirstTimeEventPopupWithProgress::FirstTimeEventPopupWithProgress_SetProgress(pFVar1,(float)(this->fields).currentChangeCount,(float)(this->fields).numberOfChangesBeforePointer,(MethodInfo *)0x0);
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
           callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,MethodInfo__FirstTimeActivatablePointerWaitForCubeTool___OnShow_b__13_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
@@ -280,8 +282,8 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::FirstTimeA
       }
     }
     func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -316,8 +318,8 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::FirstTimeA
 code_?:
     func_?();
     this_00 = (this->fields).popup;
-    this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_02,(Object *)this,MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnPopupRemoved_UnityEngine__GameObject_,(MethodInfo *)0x0);
+    this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_02,(Object *)this,MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnPopupRemoved_UnityEngine__GameObject_,(MethodInfo *)0x0);
     if (this_00 != (FirstTimeEventPopupWithProgress *)0x0) {
       FirstTimeEventPopup::FirstTimeEventPopup_StartFade((FirstTimeEventPopup *)this_00,(Action_1_UnityEngine_GameObject_ *)this_02,(MethodInfo *)0x0);
       return;

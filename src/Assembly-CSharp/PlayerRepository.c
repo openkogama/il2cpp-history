@@ -14,7 +14,7 @@ int32_t Assembly-CSharp.dll::PlayerRepository::PlayerRepository_CountItemsWithOr
   }
   method_00 = TypeInfo__PlayerRepository____c__DisplayClass6_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)originalId;
     if (originalId != 0) {
@@ -88,7 +88,7 @@ void Assembly-CSharp.dll::PlayerRepository::PlayerRepository_CreateWorldObjectHi
       if (*(ushort *)(iVar10 + 0xb6) != 0) {
         do {
           if (*(IEnumerator_1_KeyValuePair_2_System_Int32_MV_WorldObject_MVItem___Class **)(*(int *)(iVar10 + 0x58) + (uint)uVar11 * 8) == TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<int,_MV::WorldObject::MVItem>_>) {
-            puVar12 = (undefined4 *)(iVar10 + 0xc0 + *(int *)(*(int *)(iVar10 + 0x58) + 4 + (uint)uVar11 * 8) * 8);
+            puVar12 = (undefined4 *)(iVar10 + (*(int *)(*(int *)(iVar10 + 0x58) + 4 + (uint)uVar11 * 8) + 0x18) * 8);
             goto code_?;
           }
           uVar11 = uVar11 + 1;
@@ -136,7 +136,7 @@ Dictionary_2_System_Int32_MV_WorldObject_MVItem_ * Assembly-CSharp.dll::PlayerRe
   }
   method_00 = TypeInfo__PlayerRepository____c__DisplayClass5_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)itemCategories;
     func_?(value + 1,itemCategories);
@@ -217,9 +217,8 @@ void Assembly-CSharp.dll::PlayerRepository::PlayerRepository__ctor(PlayerReposit
   ARepository::ARepository__ctor((ARepository *)this,(MethodInfo *)0x0);
   this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__Dictionary__);
-  ppDVar1 = &(this->fields).playerInventory;
-  *ppDVar1 = (Dictionary_2_System_Int32_MV_WorldObject_MVItem_ *)this_00;
-  func_?(ppDVar1,this_00);
+  (this->fields).playerInventory = (Dictionary_2_System_Int32_MV_WorldObject_MVItem_ *)this_00;
+  func_?(&(this->fields).playerInventory,this_00);
   return;
 }
 

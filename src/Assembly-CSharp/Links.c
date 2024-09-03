@@ -215,7 +215,7 @@ void Assembly-CSharp.dll::Links::Links_Update(Links *this,MethodInfo *method)
             LinkObjectScript::LinkObjectScript_UpdateLinkVisual(this_03,(Link *)link,(MethodInfo *)0x0);
           }
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffc8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MV::WorldObject::Link>__Dispose__,(MethodInfo *)this_03);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffc8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MV::WorldObject::Link>__Dispose__,(MethodInfo *)this_03);
           goto code_?;
         }
       }
@@ -251,9 +251,9 @@ void Assembly-CSharp.dll::Links::Links__ctor(Links *this,MethodInfo *method)
   pDVar1 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(pDVar1,MethodInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>__Dictionary__);
   method_00 = (MethodInfo *)&(this->fields).linkObjects;
-  *(Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ **)method_00 = pDVar1;
+  (this->fields).linkObjects = (Dictionary_2_System_Int32_LinkObjectScript_ *)pDVar1;
   func_?(method_00,pDVar1);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

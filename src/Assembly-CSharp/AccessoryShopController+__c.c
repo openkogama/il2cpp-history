@@ -209,7 +209,7 @@ void Assembly-CSharp.dll::AccessoryShopController+<>c::AccessoryShopController_c
   }
   method_00 = TypeInfo__AccessoryShopController____c;
   value = (AccessoryShopController_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__AccessoryShopController____c->static_fields->__9 = value;
   func_?(TypeInfo__AccessoryShopController____c->static_fields,value);
   return;

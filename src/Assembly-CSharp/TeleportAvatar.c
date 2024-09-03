@@ -20,7 +20,7 @@ IEnumerator * Assembly-CSharp.dll::TeleportAvatar::TeleportAvatar_DoForSeconds(T
   }
   method_00 = TypeInfo__TeleportAvatar___DoForSeconds_d__14;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[1].klass = (Object__Class *)0x0;
   value[2].monitor = (MonitorData *)duration;
   value[2].klass = (Object__Class *)body;
@@ -94,9 +94,9 @@ IEnumerator * Assembly-CSharp.dll::TeleportAvatar::TeleportAvatar_Start(Teleport
   }
   method_00 = TypeInfo__TeleportAvatar___Start_d__16;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }

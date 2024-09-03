@@ -48,7 +48,7 @@ code_?:
       this_01 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetMVObject(pTVar6,(MethodInfo *)0x0);
       if (this_01 != (MVWorldObjectClient *)0x0) {
         if (ignoreIDs == (HashSet_1_System_Int32_ *)0x0) goto code_?;
-        bVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::HashSet_1_System_Int32Enum__Contains((HashSet_1_System_Int32Enum_ *)ignoreIDs,(this_01->fields)._.id,MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+        bVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::HashSet_1_System_UInt32__Contains((HashSet_1_System_UInt32_ *)ignoreIDs,(this_01->fields)._.id,MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
         if (bVar7 == 0) {
           if (((this_01->fields)._.type == 8) && (explosionEvent != (ExplosionEvent *)0x0)) {
             pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);

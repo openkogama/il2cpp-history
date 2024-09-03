@@ -68,6 +68,7 @@ Dictionary_2_System_Object_System_Object_ * MVWorldObject.dll::MV::WorldObject::
     func_?(&StringLiteral_emote);
     func_?(&StringLiteral_shield);
     func_?(&StringLiteral_pointRotationYaw);
+    func_?(&StringLiteral_hasHandEquippableItem);
     func_?(&StringLiteral_health);
     func_?(&StringLiteral_spawnRoleModeType);
     func_?(&StringLiteral_state);
@@ -116,6 +117,8 @@ Dictionary_2_System_Object_System_Object_ * MVWorldObject.dll::MV::WorldObject::
       uStack_4 = 0;
       pOVar1 = (Object *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_pointRotationPitch,pOVar1,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
+      pOVar1 = (Object *)func_?();
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_hasHandEquippableItem,pOVar1,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
       uStack_5 = 0x3f800000;
       pOVar1 = (Object *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_size,pOVar1,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
@@ -147,6 +150,7 @@ Dictionary_2_System_Object_System_Object_ * MVWorldObject.dll::MV::WorldObject::
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Boolean);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
     func_?(&TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
@@ -159,6 +163,7 @@ Dictionary_2_System_Object_System_Object_ * MVWorldObject.dll::MV::WorldObject::
     func_?(&StringLiteral_currentItem);
     func_?(&StringLiteral_emote);
     func_?(&StringLiteral_pointRotationYaw);
+    func_?(&StringLiteral_hasHandEquippableItem);
     func_?(&StringLiteral_state);
     func_?(&StringLiteral_Idle);
     func_?(&StringLiteral_animation);
@@ -183,6 +188,9 @@ Dictionary_2_System_Object_System_Object_ * MVWorldObject.dll::MV::WorldObject::
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_pointRotationYaw,pOVar3,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
       pOVar3 = (Object *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_pointRotationPitch,pOVar3,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
+      puStack_4 = (undefined *)((uint)puStack_4 & 0xffffff);
+      pOVar3 = (Object *)func_?();
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_hasHandEquippableItem,pOVar3,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
       pOVar3 = (Object *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_emote,pOVar3,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
       pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?();
@@ -197,9 +205,9 @@ Dictionary_2_System_Object_System_Object_ * MVWorldObject.dll::MV::WorldObject::
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  pDVar5 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar4)();
-  return pDVar5;
+  pcVar5 = (code *)swi(3);
+  pDVar6 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar5)();
+  return pDVar6;
 }
 
 

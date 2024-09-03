@@ -133,12 +133,12 @@ void Assembly-CSharp.dll::BadgeManager::BadgeManager_Initialize(List_1_BadgeUrlD
     uStack_1 = 1;
     RVar8 = pLVar6->_current;
     LStack_7._current = (RegexCharClass_SingleRange)&stack0xffffffc8;
-    while( true ) {
+    do {
       method_00 = RVar8;
       bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<BadgeUrlData>__MoveNext__);
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffc8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<BadgeUrlData>__Dispose__,(MethodInfo *)method_00);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffc8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<BadgeUrlData>__Dispose__,(MethodInfo *)method_00);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
@@ -149,6 +149,7 @@ void Assembly-CSharp.dll::BadgeManager::BadgeManager_Initialize(List_1_BadgeUrlD
         func_?();
       }
       if (TypeInfo__BadgeManager->static_fields->maxLevelBadge < iVar10) {
+        if (method_00 == (RegexCharClass_SingleRange)0x0) break;
         iVar11 = *(int32_t *)((int)method_00 + 8);
         if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__BadgeManager);
@@ -159,7 +160,7 @@ void Assembly-CSharp.dll::BadgeManager::BadgeManager_Initialize(List_1_BadgeUrlD
         func_?(TypeInfo__BadgeManager);
       }
       pDVar12 = TypeInfo__BadgeManager->static_fields->badgeUrls;
-      if (pDVar12 == (Dictionary_2_System_Int32_BadgeUrlData_ *)0x0) break;
+      if ((method_00 == (RegexCharClass_SingleRange)0x0) || (pDVar12 == (Dictionary_2_System_Int32_BadgeUrlData_ *)0x0)) break;
       bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::Dictionary_2_System_Int32_System_Single__ContainsKey((Dictionary_2_System_Int32_System_Single_ *)pDVar12,*(int32_t *)((int)method_00 + 8),MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__ContainsKey_int_);
       if (bVar9 == 0) {
         if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
@@ -169,7 +170,7 @@ void Assembly-CSharp.dll::BadgeManager::BadgeManager_Initialize(List_1_BadgeUrlD
         if (pDVar12 == (Dictionary_2_System_Int32_BadgeUrlData_ *)0x0) break;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)pDVar12,*(int32_t *)((int)method_00 + 8),(Object *)method_00,MethodInfo__System__Collections__Generic__Dictionary<int,_BadgeUrlData>__Add_int__BadgeUrlData_);
       }
-    }
+    } while( true );
   }
   func_?();
   pcVar13 = (code *)swi(3);
@@ -245,24 +246,28 @@ void Assembly-CSharp.dll::BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest(
   QStack_6._version = 0;
   QStack_6._index = 0;
   QStack_6._currentElement = (Object *)0x0;
+  QStack_7._q = (Queue_1_System_Object_ *)0x0;
+  QStack_7._version = 0;
+  QStack_7._index = 0;
+  QStack_7._currentElement = (Object *)0x0;
   if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__AsyncWWWManager);
   }
   method_00 = (Action_1_UnityEngine_Networking_UnityWebRequest_ *)TypeInfo__AsyncWWWManager->static_fields->activeRequests;
   if (method_00 != (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0) {
-    pHVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::HashSet_1_System_UInt32__GetEnumerator(&HStack_8,(HashSet_1_System_UInt32_ *)method_00,MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__);
-    QStack_9._q = (Queue_1_System_Object_ *)pHVar7->_set;
-    QStack_9._version = pHVar7->_index;
-    QStack_9._index = pHVar7->_version;
-    QStack_9._currentElement = (Object *)pHVar7->_current;
-    HStack_8._version = 0;
+    pHVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::HashSet_1_System_UInt32__GetEnumerator(&HStack_9,(HashSet_1_System_UInt32_ *)method_00,MethodInfo__System__Collections__Generic__HashSet<AsyncWebRequest>__GetEnumerator__);
+    QStack_6._q = (Queue_1_System_Object_ *)pHVar8->_set;
+    QStack_6._version = pHVar8->_index;
+    QStack_6._index = pHVar8->_version;
+    QStack_6._currentElement = (Object *)pHVar8->_current;
+    HStack_9._version = 0;
     pAStack_1._0_1_ = 1;
     pAStack_1._1_3_ = 0;
-    HStack_8._current = (uint32_t)&QStack_9;
+    HStack_9._current = (uint32_t)&QStack_6;
     while( true ) {
-      bVar10 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::Object]::HashSet_1_T_Enumerator_System_Object__MoveNext((HashSet_1_T_Enumerator_System_Object_ *)&QStack_9,MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__);
+      bVar10 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::Object]::HashSet_1_T_Enumerator_System_Object__MoveNext((HashSet_1_T_Enumerator_System_Object_ *)&QStack_6,MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__MoveNext__);
       if (bVar10 == 0) break;
-      pOStack_11 = QStack_9._currentElement;
+      pOStack_11 = QStack_6._currentElement;
       if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__AsyncWWWManager);
       }
@@ -276,8 +281,10 @@ void Assembly-CSharp.dll::BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest(
       if (bVar10 != 0) {
         pDStack_12 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pOStack_11[1].klass,(Delegate *)callback,(MethodInfo *)0x0);
         pAStack_13 = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
-        pOVar14 = (Object__Class *)0x0;
-        if (pDStack_12 != (Delegate *)0x0) {
+        if (pDStack_12 == (Delegate *)0x0) {
+          pOVar14 = (Object__Class *)0x0;
+        }
+        else {
           pOVar14 = (Object__Class *)func_?();
           if (pOVar14 == (Object__Class *)0x0) {
             func_?();
@@ -289,7 +296,7 @@ void Assembly-CSharp.dll::BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest(
       }
     }
     pAStack_1 = (AsyncWWWManager__Class *)0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&QStack_9,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__,(MethodInfo *)method_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&QStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<AsyncWebRequest>__Dispose__,(MethodInfo *)method_00);
     pAStack_1._0_1_ = 0xff;
     pAStack_1._1_3_ = 0xffffff;
     if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
@@ -309,28 +316,28 @@ void Assembly-CSharp.dll::BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest(
         pQStack_19 = (Queue_1_System_Object_ *)uVar18;
         if (pQStack_19 == (Queue_1_System_Object_ *)0x0) goto code_?;
         pQVar20 = mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::Queue_1_System_Object__GetEnumerator((Queue_1_T_Enumerator_System_Object_ *)(auStack_16 + 8),pQStack_19,MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__GetEnumerator__);
-        HStack_8._version = 0;
-        QStack_6._q = pQVar20->_q;
-        QStack_6._version = pQVar20->_version;
-        QStack_6._index = pQVar20->_index;
-        QStack_6._currentElement = pQVar20->_currentElement;
+        HStack_9._version = 0;
+        QStack_7._q = pQVar20->_q;
+        QStack_7._version = pQVar20->_version;
+        QStack_7._index = pQVar20->_index;
+        QStack_7._currentElement = pQVar20->_currentElement;
         pAStack_1._0_1_ = 6;
-        HStack_8._current = (uint32_t)&QStack_6;
+        HStack_9._current = (uint32_t)&QStack_7;
         while( true ) {
           method_01 = (MethodInfo *)&UNK_?;
-          bVar10 = mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]::Queue_1_T_Enumerator_System_Object__MoveNext(&QStack_6,MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__MoveNext__);
+          bVar10 = mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]::Queue_1_T_Enumerator_System_Object__MoveNext(&QStack_7,MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__MoveNext__);
           if (bVar10 == 0) break;
-          request = (AsyncWebRequest *)mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]::Queue_1_T_Enumerator_System_Object__get_Current(&QStack_6,MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__get_Current__);
+          request = (AsyncWebRequest *)mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]::Queue_1_T_Enumerator_System_Object__get_Current(&QStack_7,MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__get_Current__);
           if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           AsyncWWWManager::AsyncWWWManager_Unsubscribe(request,callback,(MethodInfo *)0x0);
         }
         pAStack_1 = (AsyncWWWManager__Class *)CONCAT31(pAStack_1._1_3_,4);
-        mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]::Queue_1_T_Enumerator_System_Object__Dispose(&QStack_6,MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__Dispose__);
+        mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]::Queue_1_T_Enumerator_System_Object__Dispose(&QStack_7,MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<AsyncWebRequest>__Dispose__);
       }
       pAStack_1 = (AsyncWWWManager__Class *)0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)pDStack_12,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Dispose__,method_01);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)pDStack_12,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__Dispose__,method_01);
       pAStack_1._0_1_ = 0xff;
       pAStack_1._1_3_ = 0xffffff;
       if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {

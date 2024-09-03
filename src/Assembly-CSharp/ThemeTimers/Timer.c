@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::ThemeTimers::Timer::Timer_1_Update(Timer_1 *this,Metho
 {
   fVar1 = (this->fields)._Time_k__BackingField;
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar1 = (this->fields).timeScale * fVar2 + fVar1;
+  fVar1 = fVar2 * (this->fields).timeScale + fVar1;
   (this->fields)._Time_k__BackingField = fVar1;
   while (100.0 < fVar1) {
     fVar1 = (this->fields)._Time_k__BackingField - 100.0;
@@ -21,7 +21,7 @@ void Assembly-CSharp.dll::ThemeTimers::Timer::Timer_1_Update(Timer_1 *this,Metho
 void Assembly-CSharp.dll::ThemeTimers::Timer::Timer_1__ctor(Timer_1 *this,float initialTime,float cycleLength,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._Time_k__BackingField = initialTime;
   (this->fields).timeScale = 100.0 / cycleLength;
   return;

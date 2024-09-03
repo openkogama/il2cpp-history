@@ -28,7 +28,7 @@ String * MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierThreshold
 void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierThresholds::PlayerTierThresholds__ctor_1(PlayerTierThresholds *this,int32_t goldPriceRequirement,int32_t gamePointRequirement,TimeSpan estimatedRequiredPlaytime,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).goldPriceRequirement = goldPriceRequirement;
   (this->fields).gamePointRequirement = gamePointRequirement;
   *(undefined4 *)&(this->fields).estimatedRequiredPlaytime._ticks = in_stack_1;
@@ -61,7 +61,7 @@ PlayerTierThresholds * MVWorldObject.dll::MV::WorldObject::GamePassSystem::Playe
       TVar4 = mscorlib.dll::System::TimeSpan::TimeSpan_op_Addition(TVar4,t2,(MethodInfo *)0x0);
       method_00 = TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierThresholds;
       pPVar6 = (PlayerTierThresholds *)func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)pPVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)pPVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
       (pPVar6->fields).goldPriceRequirement = iVar2 + iVar1;
       (pPVar6->fields).estimatedRequiredPlaytime._ticks = TVar4._ticks;
       (pPVar6->fields).gamePointRequirement = iVar5 + iVar3;

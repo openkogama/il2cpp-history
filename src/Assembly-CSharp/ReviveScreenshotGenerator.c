@@ -10,9 +10,9 @@ IEnumerator * Assembly-CSharp.dll::ReviveScreenshotGenerator::ReviveScreenshotGe
   }
   method_00 = TypeInfo__ReviveScreenshotGenerator___GenerateTexture_d__1;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[7].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 7,this);
   value[6].monitor = (MonitorData *)textureDataCallback;
   func_?(&value[6].monitor,textureDataCallback);
@@ -40,7 +40,7 @@ void Assembly-CSharp.dll::ReviveScreenshotGenerator::ReviveScreenshotGenerator_G
   }
   method_00 = TypeInfo__ReviveScreenshotGenerator___GenerateTexture_d__1;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[1].klass = (Object__Class *)0x0;
   value[7].klass = (Object__Class *)this;
   func_?(value + 7,this);

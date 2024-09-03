@@ -20,7 +20,7 @@ bool Assembly-CSharp.dll::ActivateSoundOnAnimation+<PlaySound>d__4::ActivateSoun
   fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   if ((this->fields)._startTime_5__2 + (this->fields).activationDelay <= fVar3) {
     if ((pAVar2 != (ActivateSoundOnAnimation *)0x0) && (this_00 = (pAVar2->fields).sound, this_00 != (AudioSource *)0x0)) {
-      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play(this_00,(MethodInfo *)0x0);
+      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1(this_00,(MethodInfo *)0x0);
       return 0;
     }
     func_?();
@@ -28,9 +28,8 @@ bool Assembly-CSharp.dll::ActivateSoundOnAnimation+<PlaySound>d__4::ActivateSoun
     bVar5 = (*pcVar4)();
     return bVar5;
   }
-  ppOVar6 = &(this->fields).__2__current;
-  *ppOVar6 = (Object *)0x0;
-  func_?(ppOVar6,0);
+  (this->fields).__2__current = (Object *)0x0;
+  func_?(&(this->fields).__2__current,0);
   (this->fields).__1__state = 1;
   return 1;
 }

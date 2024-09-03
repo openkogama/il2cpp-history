@@ -72,12 +72,11 @@ void Assembly-CSharp.dll::GNU::Gettext::RecursiveTracer::RecursiveTracer__ctor(R
     func_?(&TypeInfo__System__Text__StringBuilder);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   this_00 = (StringBuilder *)func_?(TypeInfo__System__Text__StringBuilder);
   mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor(this_00,(MethodInfo *)0x0);
-  ppSVar1 = &(this->fields)._Text_k__BackingField;
-  *ppSVar1 = this_00;
-  func_?(ppSVar1,this_00);
+  (this->fields)._Text_k__BackingField = this_00;
+  func_?(&(this->fields)._Text_k__BackingField,this_00);
   (this->fields)._Level_k__BackingField = 0;
   return;
 }

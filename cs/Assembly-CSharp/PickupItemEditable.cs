@@ -23,7 +23,7 @@ public abstract class PickupItemEditable : PickupItemWithDelay
 	[SerializeField]
 	protected AudioSource fireAudioSource;
 	[SerializeField]
-	protected AudioSource hitAudioSource;
+	protected AudioSource alternativeAudioSource;
 	[SerializeField]
 	protected Animator animator;
 	[SerializeField]
@@ -40,6 +40,7 @@ public abstract class PickupItemEditable : PickupItemWithDelay
 
 	// Properties
 	public int CubeModelPid { [CompilerGenerated] get; [CompilerGenerated] private set; }
+	public virtual string Name { get; }
 	protected virtual string FireSoundEffectName { get; }
 	protected virtual string HitSoundEffectName { get; }
 	protected virtual string AttackAnimationName { get; }
@@ -51,7 +52,7 @@ public abstract class PickupItemEditable : PickupItemWithDelay
 		// Fields
 		public string name;
 		public int cubeModelId;
-		public int maxAmmo;
+		public float maxAmmo;
 		public float damage;
 		public float impulseStrength;
 		public float recoilStrength;
@@ -60,14 +61,16 @@ public abstract class PickupItemEditable : PickupItemWithDelay
 		public float range;
 		public float radius;
 		public int fireSoundEffect;
+		public float fireSoundEffectVolume;
 		public int hitSoundEffect;
+		public float hitSoundEffectVolume;
 
 		// Constructors
 		protected EditableItemConfiguration();
 	}
 
 	[CompilerGenerated]
-	private sealed class _DisableAnimatorCoroutine_d__42 : IEnumerator<object>
+	private sealed class _DisableAnimatorCoroutine_d__40 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -80,7 +83,7 @@ public abstract class PickupItemEditable : PickupItemWithDelay
 
 		// Constructors
 		[DebuggerHidden]
-		public _DisableAnimatorCoroutine_d__42(int __1__state);
+		public _DisableAnimatorCoroutine_d__40(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -99,18 +102,14 @@ public abstract class PickupItemEditable : PickupItemWithDelay
 	protected abstract EditableItemConfiguration GetDefaultConfiguration();
 	private void Awake();
 	protected virtual void Initialize();
-	private void SetValuesBasedOnConfiguration();
+	protected virtual void SetValuesBasedOnConfiguration();
 	public override void OnStateChanged(Dictionary<object, object> newState);
 	protected void OnCubeModelStateChanged();
 	protected virtual void SetAnimation();
-	protected override void OnFire(bool isLocal);
 	protected void PlayAnimation();
-	protected virtual void OnHit(List<VoxelHit> voxelHits, Ray lineOfFire);
-	protected void OnHit(VoxelHit voxelHit, Ray lineOfFire);
-	protected void OnLocalHit(List<VoxelHit> voxelHits, Ray lineOfFire);
-	private void OnLocalHit(VoxelHit voxelHit, Ray lineOfFire);
+	protected virtual void OnHit(VoxelHit voxelHit, Ray lineOfFire);
 	protected void PlayAudio(AudioSource audioSource, string soundEffectName, Vector3 position, bool useAudioManager = true);
-	[IteratorStateMachine(typeof(_DisableAnimatorCoroutine_d__42))]
+	[IteratorStateMachine(typeof(_DisableAnimatorCoroutine_d__40))]
 	private IEnumerator DisableAnimatorCoroutine();
 	private void DisableAnimation();
 	protected bool IsSamePickupItem(Dictionary<object, object> itemData);

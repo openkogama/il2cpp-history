@@ -71,7 +71,7 @@ SubscriptionBase * MVWorldObject.dll::MV::WorldObject::Subscription::Subscriptio
       pXVar3 = TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster;
       pMVar4 = (MethodInfo *)func_?();
       pMVar5 = pMVar4;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)pMVar4,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar3);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)pMVar4,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar3);
       pMVar4->invoker_method = (InvokerMethod)0x32;
       pMVar4->name = (char *)0xa;
       pMVar4->klass = (Il2CppClass *)0xa;
@@ -80,19 +80,19 @@ SubscriptionBase * MVWorldObject.dll::MV::WorldObject::Subscription::Subscriptio
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add(pDVar2,1,(Object *)pMVar4,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_);
         pDVar2 = (Dictionary_2_System_Int32Enum_System_Object_ *)(pSVar1->fields).benefits;
         pOVar6 = (Object *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar6,ExceptionArgument__Enum_obj,pMVar5);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar6,ExceptionArgument__Enum_obj,pMVar5);
         *(undefined1 *)&pOVar6[1].klass = 1;
         if (pDVar2 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add(pDVar2,3,pOVar6,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_);
           pDVar2 = (Dictionary_2_System_Int32Enum_System_Object_ *)(pSVar1->fields).benefits;
           pOVar6 = (Object *)func_?();
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar6,ExceptionArgument__Enum_obj,pMVar5);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar6,ExceptionArgument__Enum_obj,pMVar5);
           *(undefined1 *)&pOVar6[1].klass = 1;
           if (pDVar2 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add(pDVar2,4,pOVar6,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_);
             pDVar2 = (Dictionary_2_System_Int32Enum_System_Object_ *)(pSVar1->fields).benefits;
             pOVar6 = (Object *)func_?();
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar6,ExceptionArgument__Enum_obj,pMVar5);
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar6,ExceptionArgument__Enum_obj,pMVar5);
             *(undefined1 *)&pOVar6[1].klass = 1;
             if (pDVar2 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add(pDVar2,5,pOVar6,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_);
@@ -115,7 +115,7 @@ SubscriptionBase * MVWorldObject.dll::MV::WorldObject::Subscription::Subscriptio
       pXVar3 = TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster;
       pMVar4 = (MethodInfo *)func_?();
       pMVar5 = pMVar4;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)pMVar4,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar3);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)pMVar4,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar3);
       pMVar4->invoker_method = (InvokerMethod)0x32;
       pMVar4->name = (char *)0xa;
       pMVar4->klass = (Il2CppClass *)0x2;
@@ -124,7 +124,7 @@ SubscriptionBase * MVWorldObject.dll::MV::WorldObject::Subscription::Subscriptio
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add(pDVar2,1,(Object *)pMVar4,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_);
         pDVar2 = (Dictionary_2_System_Int32Enum_System_Object_ *)(pSVar1->fields).benefits;
         pOVar6 = (Object *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar6,ExceptionArgument__Enum_obj,pMVar5);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar6,ExceptionArgument__Enum_obj,pMVar5);
         *(undefined1 *)&pOVar6[1].klass = 1;
         if (pDVar2 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add(pDVar2,3,pOVar6,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_);
@@ -208,7 +208,7 @@ void MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper:
     func_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionTypes__BuiltInTypes__SubscriptionDefault);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).SubscriptionType = subscriptionType;
   this_00 = (SubscriptionDefault *)func_?(TypeInfo__MV__WorldObject__Subscription__SubscriptionTypes__BuiltInTypes__SubscriptionDefault);
   if (cRam_? == '\0') {
@@ -223,7 +223,7 @@ void MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper:
   method_01 = TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster;
   value = (MethodInfo *)func_?();
   method_00 = value;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
   value->invoker_method = (InvokerMethod)0x0;
   value->name = (char *)0xa;
   value->klass = (Il2CppClass *)0xa;
@@ -232,13 +232,13 @@ void MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper:
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add(pDVar1,1,(Object *)value,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_);
     pDVar1 = (Dictionary_2_System_Int32Enum_System_Object_ *)(this_00->fields)._.benefits;
     pOVar2 = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar2,ExceptionArgument__Enum_obj,method_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar2,ExceptionArgument__Enum_obj,method_00);
     pOVar2[1].klass = (Object__Class *)0x0;
     if (pDVar1 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add(pDVar1,2,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_);
       pDVar1 = (Dictionary_2_System_Int32Enum_System_Object_ *)(this_00->fields)._.benefits;
       pOVar2 = (Object *)func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar2,ExceptionArgument__Enum_obj,method_00);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar2,ExceptionArgument__Enum_obj,method_00);
       *(undefined1 *)&pOVar2[1].klass = 0;
       if (pDVar1 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add(pDVar1,3,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_);

@@ -42,11 +42,11 @@ void Assembly-CSharp.dll::MVItemBusinessLogic::MVItemBusinessLogic_AddItemWithNo
     this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(TypeInfo__MV__WorldObject__MVItem);
     UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
     if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-      *(bool *)((int)&this_00[3].monitor + 1) = resellable;
       this_00[1].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)itemCategoryID;
       this_00[1].monitor = (MonitorData *)itemTypeID;
-      (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)itemID;
       this_00[2].monitor = (MonitorData *)name;
+      (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)itemID;
+      *(bool *)((int)&this_00[3].monitor + 1) = resellable;
       func_?(&this_00[2].monitor,name);
       pDVar1 = (this->fields).items;
       if (pDVar1 != (Dictionary_2_System_Int32_MV_WorldObject_MVItem_ *)0x0) {
@@ -143,9 +143,9 @@ void Assembly-CSharp.dll::MVItemBusinessLogic::MVItemBusinessLogic__ctor(MVItemB
   this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__Dictionary__);
   method_00 = (MethodInfo *)&this->fields;
-  ((MVItemBusinessLogic__Fields *)method_00)->items = (Dictionary_2_System_Int32_MV_WorldObject_MVItem_ *)this_00;
+  (this->fields).items = (Dictionary_2_System_Int32_MV_WorldObject_MVItem_ *)this_00;
   func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

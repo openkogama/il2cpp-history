@@ -127,15 +127,15 @@ void Assembly-CSharp.dll::AnimatedTextureOffset::AnimatedTextureOffset_ResetText
     }
     if (this_00 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
     pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe4,this_00,index,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
-    this_01 = (this->fields).textureOffsetAnimationDataList;
+    this_01 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)(this->fields).textureOffsetAnimationDataList;
     uVar2 = pVVar1->alias;
     uVar3 = pVVar1->path;
-    value.frameToChangeTextureAt = (float)uVar3;
-    value.textureOffset = (float)uVar2;
+    value.FirstAxisSign = uVar3;
+    value.Quadrant = uVar2;
     uStack_4 = (uint)pVVar1->asset & 0xffffff00;
-    if (this_01 == (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) break;
-    value._8_4_ = uStack_4;
-    mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item(this_01,index,value,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__set_Item_int__AnimatedTextureOffset__TextureOffsetAnimationData_);
+    if (this_01 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) break;
+    value.SecondAxisSign = uStack_4;
+    mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item(this_01,index,value,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__set_Item_int__AnimatedTextureOffset__TextureOffsetAnimationData_);
     index = index + 1;
     this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)(this->fields).textureOffsetAnimationDataList;
   }
@@ -155,7 +155,7 @@ void Assembly-CSharp.dll::AnimatedTextureOffset::AnimatedTextureOffset_SetTextur
     func_?(&StringLiteral__MainTex);
     cRam_? = '\x01';
   }
-  fVar1 = (this->fields).offsetRatio * offset;
+  fVar1 = offset * (this->fields).offsetRatio;
   (this->fields).currentOffset = fVar1;
   if (fVar1 == (this->fields).previousOffset) {
     return;
@@ -197,80 +197,79 @@ void Assembly-CSharp.dll::AnimatedTextureOffset::AnimatedTextureOffset_Update(An
     cRam_? = '\x01';
   }
   if ((this->fields).isActive != 0) {
-    fVar1 = (this->fields).timer;
-    if (fVar1 <= 0.0) {
+    if ((this->fields).timer <= 0.0) {
       UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      uStack_2 = (double)((this->fields).animationFrameAmount / 24.0);
-      fVar3 = (float10)func_?();
-      uStack_2 = (double)fVar3;
-      if ((float)fVar3 < (this->fields).previousAnimationTime) {
+      uStack_1 = (double)((this->fields).animationFrameAmount / 24.0);
+      fVar2 = (float10)func_?();
+      uStack_1 = (double)fVar2;
+      if ((float)fVar2 < (this->fields).previousAnimationTime) {
         if (cRam_? == '\0') {
           func_?(&MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Count__);
           func_?(&MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
           func_?(&MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__set_Item_int__AnimatedTextureOffset__TextureOffsetAnimationData_);
           cRam_? = '\x01';
         }
-        iVar4 = 0;
-        pLVar5 = (this->fields).textureOffsetAnimationDataList;
-        while (pLVar5 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
-          if ((pLVar5->fields)._size <= iVar4) goto code_?;
-          pLVar6 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)(this->fields).textureOffsetAnimationDataList;
-          if (pLVar6 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
-          pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_8,pLVar6,iVar4,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
-          pLVar5 = (this->fields).textureOffsetAnimationDataList;
-          uVar9 = pVVar7->alias;
-          uVar10 = pVVar7->path;
-          value_00.frameToChangeTextureAt = (float)uVar10;
-          value_00.textureOffset = (float)uVar9;
-          uStack_11._5_3_ = (undefined3)((uint)pVVar7->asset >> 8);
+        iVar3 = 0;
+        pLVar4 = (this->fields).textureOffsetAnimationDataList;
+        while (pLVar4 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
+          if ((pLVar4->fields)._size <= iVar3) goto code_?;
+          pLVar5 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)(this->fields).textureOffsetAnimationDataList;
+          if (pLVar5 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
+          pVVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_7,pLVar5,iVar3,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
+          pLVar8 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)(this->fields).textureOffsetAnimationDataList;
+          uVar9 = pVVar6->alias;
+          uVar10 = pVVar6->path;
+          value_00.FirstAxisSign = uVar10;
+          value_00.Quadrant = uVar9;
+          uStack_11._5_3_ = (undefined3)((uint)pVVar6->asset >> 8);
           uStack_11._0_5_ = (uint5)(uint)uStack_11;
-          if (pLVar5 == (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) break;
-          value_00._8_4_ = uStack_11._4_4_;
-          mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item(pLVar5,iVar4,value_00,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__set_Item_int__AnimatedTextureOffset__TextureOffsetAnimationData_);
-          iVar4 = iVar4 + 1;
-          pLVar5 = (this->fields).textureOffsetAnimationDataList;
+          if (pLVar8 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) break;
+          value_00.SecondAxisSign = uStack_11._4_4_;
+          mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item(pLVar8,iVar3,value_00,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__set_Item_int__AnimatedTextureOffset__TextureOffsetAnimationData_);
+          iVar3 = iVar3 + 1;
+          pLVar4 = (this->fields).textureOffsetAnimationDataList;
         }
       }
       else {
 code_?:
-        iVar4 = 0;
-        pLVar5 = (this->fields).textureOffsetAnimationDataList;
-        while (pLVar5 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
-          if ((pLVar5->fields)._size <= iVar4) {
+        iVar3 = 0;
+        pLVar4 = (this->fields).textureOffsetAnimationDataList;
+        while (pLVar4 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
+          if ((pLVar4->fields)._size <= iVar3) {
 code_?:
             uStack_11 = (double)((this->fields).animationFrameAmount / 24.0);
-            fVar3 = (float10)func_?();
-            (this->fields).previousAnimationTime = (float)fVar3;
+            fVar2 = (float10)func_?();
+            (this->fields).previousAnimationTime = (float)fVar2;
             (this->fields).timer = 0.1;
             return;
           }
-          pLVar6 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)(this->fields).textureOffsetAnimationDataList;
-          if (pLVar6 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
-          pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_12,pLVar6,iVar4,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
-          VStack_8.alias = pVVar7->alias;
-          VStack_8.path = pVVar7->path;
-          VStack_8.asset = pVVar7->asset;
-          uStack_2 = (double)CONCAT44((float)VStack_8.path / 24.0,(undefined4)uStack_2);
+          pLVar5 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)(this->fields).textureOffsetAnimationDataList;
+          if (pLVar5 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
+          pVVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_12,pLVar5,iVar3,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
+          VStack_7.alias = pVVar6->alias;
+          VStack_7.path = pVVar6->path;
+          VStack_7.asset = pVVar6->asset;
+          uStack_1 = (double)CONCAT44((float)VStack_7.path / 24.0,(undefined4)uStack_1);
           uStack_11 = (double)((this->fields).animationFrameAmount / 24.0);
-          fVar3 = (float10)func_?();
-          uStack_11 = (double)fVar3;
-          if (uStack_2._4_4_ < (float)fVar3) {
-            pLVar5 = (this->fields).textureOffsetAnimationDataList;
-            if (pLVar5 == (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) break;
-            iVar13 = func_?(&stack0xffffffc4,pLVar5,iVar4,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
+          fVar2 = (float10)func_?();
+          uStack_11 = (double)fVar2;
+          if (uStack_1._4_4_ < (float)fVar2) {
+            pLVar4 = (this->fields).textureOffsetAnimationDataList;
+            if (pLVar4 == (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) break;
+            iVar13 = func_?(&stack0xffffffc4,pLVar4,iVar3,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
             if (*(char *)(iVar13 + 8) == '\0') {
-              pLVar5 = (this->fields).textureOffsetAnimationDataList;
-              if (pLVar5 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
-                puVar14 = (undefined8 *)func_?(&stack0xffffffc4,pLVar5,iVar4,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
-                pLVar5 = (this->fields).textureOffsetAnimationDataList;
-                VStack_8.asset = (VisualTreeAsset *)CONCAT31((int3)((uint)*(undefined4 *)(puVar14 + 1) >> 8),1);
-                if (pLVar5 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
-                  value._8_4_ = VStack_8.asset;
+              pLVar4 = (this->fields).textureOffsetAnimationDataList;
+              if (pLVar4 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
+                puVar14 = (undefined8 *)func_?(&stack0xffffffc4,pLVar4,iVar3,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
+                pLVar8 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)(this->fields).textureOffsetAnimationDataList;
+                VStack_7.asset = (VisualTreeAsset *)CONCAT31((int3)((uint)*(undefined4 *)(puVar14 + 1) >> 8),1);
+                if (pLVar8 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
+                  value.SecondAxisSign = (int32_t)VStack_7.asset;
                   value._0_8_ = *puVar14;
-                  mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item(pLVar5,iVar4,value,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__set_Item_int__AnimatedTextureOffset__TextureOffsetAnimationData_);
-                  pLVar5 = (this->fields).textureOffsetAnimationDataList;
-                  if (pLVar5 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
-                    pfVar15 = (float *)func_?(&stack0xffffffc4,pLVar5,iVar4,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
+                  mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item(pLVar8,iVar3,value,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__set_Item_int__AnimatedTextureOffset__TextureOffsetAnimationData_);
+                  pLVar4 = (this->fields).textureOffsetAnimationDataList;
+                  if (pLVar4 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
+                    pfVar15 = (float *)func_?(&stack0xffffffc4,pLVar4,iVar3,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
                     AnimatedTextureOffset_SetTextureOffset(this,*pfVar15,(MethodInfo *)0x0);
                     goto code_?;
                   }
@@ -279,8 +278,8 @@ code_?:
               break;
             }
           }
-          iVar4 = iVar4 + 1;
-          pLVar5 = (this->fields).textureOffsetAnimationDataList;
+          iVar3 = iVar3 + 1;
+          pLVar4 = (this->fields).textureOffsetAnimationDataList;
         }
       }
       func_?();
@@ -288,8 +287,9 @@ code_?:
       (*pcVar16)();
       return;
     }
-    fVar17 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    (this->fields).timer = fVar1 - fVar17;
+    fVar17 = (this->fields).timer;
+    fVar18 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    (this->fields).timer = fVar17 - fVar18;
   }
   return;
 }
@@ -307,80 +307,79 @@ void Assembly-CSharp.dll::AnimatedTextureOffset::AnimatedTextureOffset_UpdateAni
     cRam_? = '\x01';
   }
   if ((this->fields).isActive != 0) {
-    fVar1 = (this->fields).timer;
-    if (fVar1 <= 0.0) {
+    if ((this->fields).timer <= 0.0) {
       UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      uStack_2 = (double)((this->fields).animationFrameAmount / 24.0);
-      fVar3 = (float10)func_?();
-      uStack_2 = (double)fVar3;
-      if ((float)fVar3 < (this->fields).previousAnimationTime) {
+      uStack_1 = (double)((this->fields).animationFrameAmount / 24.0);
+      fVar2 = (float10)func_?();
+      uStack_1 = (double)fVar2;
+      if ((float)fVar2 < (this->fields).previousAnimationTime) {
         if (cRam_? == '\0') {
           func_?(&MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Count__);
           func_?(&MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
           func_?(&MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__set_Item_int__AnimatedTextureOffset__TextureOffsetAnimationData_);
           cRam_? = '\x01';
         }
-        iVar4 = 0;
-        pLVar5 = (this->fields).textureOffsetAnimationDataList;
-        while (pLVar5 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
-          if ((pLVar5->fields)._size <= iVar4) goto code_?;
-          pLVar6 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)(this->fields).textureOffsetAnimationDataList;
-          if (pLVar6 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
-          pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_8,pLVar6,iVar4,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
-          pLVar5 = (this->fields).textureOffsetAnimationDataList;
-          uVar9 = pVVar7->alias;
-          uVar10 = pVVar7->path;
-          value_00.frameToChangeTextureAt = (float)uVar10;
-          value_00.textureOffset = (float)uVar9;
-          uStack_11._5_3_ = (undefined3)((uint)pVVar7->asset >> 8);
+        iVar3 = 0;
+        pLVar4 = (this->fields).textureOffsetAnimationDataList;
+        while (pLVar4 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
+          if ((pLVar4->fields)._size <= iVar3) goto code_?;
+          pLVar5 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)(this->fields).textureOffsetAnimationDataList;
+          if (pLVar5 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
+          pVVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_7,pLVar5,iVar3,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
+          pLVar8 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)(this->fields).textureOffsetAnimationDataList;
+          uVar9 = pVVar6->alias;
+          uVar10 = pVVar6->path;
+          value_00.FirstAxisSign = uVar10;
+          value_00.Quadrant = uVar9;
+          uStack_11._5_3_ = (undefined3)((uint)pVVar6->asset >> 8);
           uStack_11._0_5_ = (uint5)(uint)uStack_11;
-          if (pLVar5 == (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) break;
-          value_00._8_4_ = uStack_11._4_4_;
-          mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item(pLVar5,iVar4,value_00,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__set_Item_int__AnimatedTextureOffset__TextureOffsetAnimationData_);
-          iVar4 = iVar4 + 1;
-          pLVar5 = (this->fields).textureOffsetAnimationDataList;
+          if (pLVar8 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) break;
+          value_00.SecondAxisSign = uStack_11._4_4_;
+          mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item(pLVar8,iVar3,value_00,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__set_Item_int__AnimatedTextureOffset__TextureOffsetAnimationData_);
+          iVar3 = iVar3 + 1;
+          pLVar4 = (this->fields).textureOffsetAnimationDataList;
         }
       }
       else {
 code_?:
-        iVar4 = 0;
-        pLVar5 = (this->fields).textureOffsetAnimationDataList;
-        while (pLVar5 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
-          if ((pLVar5->fields)._size <= iVar4) {
+        iVar3 = 0;
+        pLVar4 = (this->fields).textureOffsetAnimationDataList;
+        while (pLVar4 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
+          if ((pLVar4->fields)._size <= iVar3) {
 code_?:
             uStack_11 = (double)((this->fields).animationFrameAmount / 24.0);
-            fVar3 = (float10)func_?();
-            (this->fields).previousAnimationTime = (float)fVar3;
+            fVar2 = (float10)func_?();
+            (this->fields).previousAnimationTime = (float)fVar2;
             (this->fields).timer = 0.1;
             return;
           }
-          pLVar6 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)(this->fields).textureOffsetAnimationDataList;
-          if (pLVar6 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
-          pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_12,pLVar6,iVar4,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
-          VStack_8.alias = pVVar7->alias;
-          VStack_8.path = pVVar7->path;
-          VStack_8.asset = pVVar7->asset;
-          uStack_2 = (double)CONCAT44((float)VStack_8.path / 24.0,(undefined4)uStack_2);
+          pLVar5 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)(this->fields).textureOffsetAnimationDataList;
+          if (pLVar5 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
+          pVVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_12,pLVar5,iVar3,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
+          VStack_7.alias = pVVar6->alias;
+          VStack_7.path = pVVar6->path;
+          VStack_7.asset = pVVar6->asset;
+          uStack_1 = (double)CONCAT44((float)VStack_7.path / 24.0,(undefined4)uStack_1);
           uStack_11 = (double)((this->fields).animationFrameAmount / 24.0);
-          fVar3 = (float10)func_?();
-          uStack_11 = (double)fVar3;
-          if (uStack_2._4_4_ < (float)fVar3) {
-            pLVar5 = (this->fields).textureOffsetAnimationDataList;
-            if (pLVar5 == (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) break;
-            iVar13 = func_?(&stack0xffffffc4,pLVar5,iVar4,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
+          fVar2 = (float10)func_?();
+          uStack_11 = (double)fVar2;
+          if (uStack_1._4_4_ < (float)fVar2) {
+            pLVar4 = (this->fields).textureOffsetAnimationDataList;
+            if (pLVar4 == (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) break;
+            iVar13 = func_?(&stack0xffffffc4,pLVar4,iVar3,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
             if (*(char *)(iVar13 + 8) == '\0') {
-              pLVar5 = (this->fields).textureOffsetAnimationDataList;
-              if (pLVar5 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
-                puVar14 = (undefined8 *)func_?(&stack0xffffffc4,pLVar5,iVar4,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
-                pLVar5 = (this->fields).textureOffsetAnimationDataList;
-                VStack_8.asset = (VisualTreeAsset *)CONCAT31((int3)((uint)*(undefined4 *)(puVar14 + 1) >> 8),1);
-                if (pLVar5 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
-                  value._8_4_ = VStack_8.asset;
+              pLVar4 = (this->fields).textureOffsetAnimationDataList;
+              if (pLVar4 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
+                puVar14 = (undefined8 *)func_?(&stack0xffffffc4,pLVar4,iVar3,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
+                pLVar8 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)(this->fields).textureOffsetAnimationDataList;
+                VStack_7.asset = (VisualTreeAsset *)CONCAT31((int3)((uint)*(undefined4 *)(puVar14 + 1) >> 8),1);
+                if (pLVar8 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
+                  value.SecondAxisSign = (int32_t)VStack_7.asset;
                   value._0_8_ = *puVar14;
-                  mscorlib.dll::System::Collections::Generic::List`1[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_AnimatedTextureOffset_TextureOffsetAnimationData__set_Item(pLVar5,iVar4,value,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__set_Item_int__AnimatedTextureOffset__TextureOffsetAnimationData_);
-                  pLVar5 = (this->fields).textureOffsetAnimationDataList;
-                  if (pLVar5 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
-                    pfVar15 = (float *)func_?(&stack0xffffffc4,pLVar5,iVar4,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
+                  mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item(pLVar8,iVar3,value,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__set_Item_int__AnimatedTextureOffset__TextureOffsetAnimationData_);
+                  pLVar4 = (this->fields).textureOffsetAnimationDataList;
+                  if (pLVar4 != (List_1_AnimatedTextureOffset_TextureOffsetAnimationData_ *)0x0) {
+                    pfVar15 = (float *)func_?(&stack0xffffffc4,pLVar4,iVar3,MethodInfo__System__Collections__Generic__List<AnimatedTextureOffset::TextureOffsetAnimationData>__get_Item_int_);
                     AnimatedTextureOffset_SetTextureOffset(this,*pfVar15,(MethodInfo *)0x0);
                     goto code_?;
                   }
@@ -389,8 +388,8 @@ code_?:
               break;
             }
           }
-          iVar4 = iVar4 + 1;
-          pLVar5 = (this->fields).textureOffsetAnimationDataList;
+          iVar3 = iVar3 + 1;
+          pLVar4 = (this->fields).textureOffsetAnimationDataList;
         }
       }
       func_?();
@@ -398,8 +397,9 @@ code_?:
       (*pcVar16)();
       return;
     }
-    fVar17 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    (this->fields).timer = fVar1 - fVar17;
+    fVar17 = (this->fields).timer;
+    fVar18 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    (this->fields).timer = fVar17 - fVar18;
   }
   return;
 }

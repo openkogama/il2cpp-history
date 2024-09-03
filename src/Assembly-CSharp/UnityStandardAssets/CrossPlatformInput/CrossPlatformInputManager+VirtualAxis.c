@@ -61,7 +61,7 @@ code_?:
 void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::CrossPlatformInputManager_VirtualAxis__ctor(CrossPlatformInputManager_VirtualAxis *this,String *name,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
   func_?(&this->fields,name);
   (this->fields)._matchWithInputManager_k__BackingField = 1;
@@ -74,7 +74,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
 void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::CrossPlatformInputManager_VirtualAxis__ctor_1(CrossPlatformInputManager_VirtualAxis *this,String *name,bool matchToInputSettings,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
   func_?(&this->fields,name);
   (this->fields)._matchWithInputManager_k__BackingField = matchToInputSettings;

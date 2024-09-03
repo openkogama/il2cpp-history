@@ -78,7 +78,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
 {
   (this->fields).m_LastPressedFrame = -5;
   (this->fields).m_ReleasedFrame = -5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
   func_?(&this->fields,name);
   (this->fields)._matchWithInputManager_k__BackingField = 1;
@@ -93,7 +93,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
 {
   (this->fields).m_LastPressedFrame = -5;
   (this->fields).m_ReleasedFrame = -5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
   func_?(&this->fields,name);
   (this->fields)._matchWithInputManager_k__BackingField = matchToInputSettings;

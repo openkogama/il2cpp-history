@@ -10,7 +10,7 @@ bool Assembly-CSharp.dll::GUICellCursor+Fader::GUICellCursor_Fader_Update(GUICel
     return 0;
   }
   fVar2 = (this->fields).startValue;
-  fVar1 = (this->fields).durationInv * fVar1 - (this->fields).startMulDurationInv;
+  fVar1 = fVar1 * (this->fields).durationInv - (this->fields).startMulDurationInv;
   if (fVar1 < 0.0) {
     fVar1 = 0.0;
   }
@@ -27,7 +27,7 @@ bool Assembly-CSharp.dll::GUICellCursor+Fader::GUICellCursor_Fader_Update(GUICel
 void Assembly-CSharp.dll::GUICellCursor+Fader::GUICellCursor_Fader__ctor(GUICellCursor_Fader *this,float duration,float startValue,float endValue,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   (this->fields).start = fVar1;
   (this->fields).end = fVar1 + duration;

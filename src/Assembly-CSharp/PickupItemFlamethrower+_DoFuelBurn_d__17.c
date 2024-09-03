@@ -114,13 +114,12 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::PickupItemFl
               MVRigidBody::MVRigidBody_AddImpulse_1(pMStack_3,impulse,1,(MethodInfo *)0x0);
             }
           }
-          cVar19 = (*(code *)(pPVar2->klass->vtable).get_IsAmmoDepleted.method)(pPVar2,(pPVar2->klass->vtable).get_Quantity.methodPtr);
+          cVar19 = (*(code *)(pPVar2->klass->vtable).get_IsAmmoDepleted.method)(pPVar2,(pPVar2->klass->vtable).get_Type.methodPtr);
           if (cVar19 == '\0') {
             fStack_21 = 0.0;
             pOVar25 = (Object *)func_?(TypeInfo__System__Int32,&fStack_21);
-            ppOVar26 = &(this->fields).__2__current;
-            *ppOVar26 = pOVar25;
-            func_?(ppOVar26,pOVar25);
+            (this->fields).__2__current = pOVar25;
+            func_?(&(this->fields).__2__current,pOVar25);
             (this->fields).__1__state = 1;
             return 1;
           }
@@ -143,8 +142,8 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::PickupItemFl
   }
 code_?:
   func_?();
-  pcVar27 = (code *)swi(3);
-  bVar12 = (*pcVar27)();
+  pcVar26 = (code *)swi(3);
+  bVar12 = (*pcVar26)();
   return bVar12;
 }
 

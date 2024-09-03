@@ -28,13 +28,12 @@ bool Assembly-CSharp.dll::IntervalWithRandomSeed::IntervalWithRandomSeed_Update(
 void Assembly-CSharp.dll::IntervalWithRandomSeed::IntervalWithRandomSeed_WrapDeltaTime(IntervalWithRandomSeed *this,MethodInfo *method)
 
 {
-  fVar1 = (this->fields).range;
-  fVar2 = (this->fields).currentDeltaTime - fVar1;
-  if (0.0 < fVar2) {
+  fVar1 = (this->fields).currentDeltaTime - (this->fields).range;
+  if (0.0 < fVar1) {
     do {
-      (this->fields).currentDeltaTime = fVar2;
-      fVar2 = fVar2 - fVar1;
-    } while (0.0 < fVar2);
+      (this->fields).currentDeltaTime = fVar1;
+      fVar1 = fVar1 - (this->fields).range;
+    } while (0.0 < fVar1);
     (this->fields).newIteration = 1;
   }
   return;
@@ -46,7 +45,7 @@ void Assembly-CSharp.dll::IntervalWithRandomSeed::IntervalWithRandomSeed_WrapDel
 void Assembly-CSharp.dll::IntervalWithRandomSeed::IntervalWithRandomSeed__ctor(IntervalWithRandomSeed *this,float interval,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).range = interval;
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range(0.0,interval,(MethodInfo *)0x0);
   (this->fields).currentDeltaTime = fVar1;

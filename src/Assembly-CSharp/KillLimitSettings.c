@@ -50,7 +50,7 @@ void Assembly-CSharp.dll::KillLimitSettings::KillLimitSettings_Initialize(KillLi
           if ((this_01 == (SettingsInputFieldSlider *)0x0) || (TVar4.m_Index == 0)) goto code_?;
           if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) == (TypeInfo__System__Int32->_0).element_class) {
             piVar5 = (int32_t *)func_?(TVar4.m_Index);
-            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(this_01,StringLiteral_killLimit,*piVar5,(MethodInfo *)0x0);
+            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(this_01,StringLiteral_killLimit,*piVar5,(MethodInfo *)0x0);
             return;
           }
         }

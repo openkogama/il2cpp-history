@@ -17,24 +17,25 @@ void Assembly-CSharp.dll::AudioOnOffComponent::AudioOnOffComponent_Awake(AudioOn
   pGVar1 = (GameObject *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar1,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
   if (pGVar1 != (GameObject *)0x0) {
     pAVar2 = (AudioSource *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,UnityEngine__AudioSource_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::AudioSource>__);
-    ppAVar3 = &(this->fields).onOffAudioSource;
-    *ppAVar3 = pAVar2;
-    func_?(ppAVar3,pAVar2);
-    if (*ppAVar3 != (AudioSource *)0x0) {
-      this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)*ppAVar3,(MethodInfo *)0x0);
+    (this->fields).onOffAudioSource = pAVar2;
+    func_?(&(this->fields).onOffAudioSource,pAVar2);
+    pAVar2 = (this->fields).onOffAudioSource;
+    if (pAVar2 != (AudioSource *)0x0) {
+      this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pAVar2,(MethodInfo *)0x0);
       value = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
       if (this_00 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent(this_00,value,(MethodInfo *)0x0);
-        if (*ppAVar3 != (AudioSource *)0x0) {
-          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop(*ppAVar3,(this->fields).loop,(MethodInfo *)0x0);
+        pAVar2 = (this->fields).onOffAudioSource;
+        if (pAVar2 != (AudioSource *)0x0) {
+          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop(pAVar2,(this->fields).loop,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -50,9 +51,9 @@ IEnumerator * Assembly-CSharp.dll::AudioOnOffComponent::AudioOnOffComponent_Fade
   }
   method_00 = TypeInfo__AudioOnOffComponent___Fader_d__13;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   value[2].monitor = (MonitorData *)minEndPoint;
   value[3].klass = (Object__Class *)maxEndPoint;
@@ -71,7 +72,7 @@ void Assembly-CSharp.dll::AudioOnOffComponent::AudioOnOffComponent_PlayClip(Audi
     UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch(aS,fVar1,(MethodInfo *)0x0);
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range(minVol,maxVol,(MethodInfo *)0x0);
     UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume(aS,fVar1,(MethodInfo *)0x0);
-    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play(aS,(MethodInfo *)0x0);
+    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1(aS,(MethodInfo *)0x0);
     pAVar2 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_clip(aS,(MethodInfo *)0x0);
     if (pAVar2 != (AudioClip *)0x0) {
       iVar3 = UnityEngine.AudioModule.dll::UnityEngine::AudioClip::AudioClip_get_samples(pAVar2,(MethodInfo *)0x0);
@@ -118,7 +119,7 @@ code_?:
   }
   method_00 = TypeInfo__AudioOnOffComponent___Fader_d__13;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
   func_?(value + 2,this);
@@ -156,7 +157,7 @@ void Assembly-CSharp.dll::AudioOnOffComponent::AudioOnOffComponent_TurnOn(AudioO
     UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch(this_00,value,(MethodInfo *)0x0);
     fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range(minInclusive,fVar3,(MethodInfo *)0x0);
     UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume(this_00,fVar3,(MethodInfo *)0x0);
-    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play(this_00,(MethodInfo *)0x0);
+    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1(this_00,(MethodInfo *)0x0);
     pAVar1 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_clip(this_00,(MethodInfo *)0x0);
     if (pAVar1 != (AudioClip *)0x0) {
       iVar4 = UnityEngine.AudioModule.dll::UnityEngine::AudioClip::AudioClip_get_samples(pAVar1,(MethodInfo *)0x0);

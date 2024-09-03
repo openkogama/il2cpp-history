@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-// Image 25: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 24: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.Common
 {
@@ -30,7 +30,7 @@ namespace MV.Common
 		SixShooter = 12,
 		DoubleSixShooter = 13,
 		NinjaRun = 14,
-		Jakob1 = 15,
+		CustomGun = 15,
 		Jakob2 = 16,
 		Jakob3 = 17,
 		Jakob4 = 18,

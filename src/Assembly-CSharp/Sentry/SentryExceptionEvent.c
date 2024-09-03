@@ -20,24 +20,23 @@ void Assembly-CSharp.dll::Sentry::SentryExceptionEvent::SentryExceptionEvent__ct
     func_?();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)breadcrumbs);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)breadcrumbs);
   pOVar1[1].klass = (Object__Class *)exceptionType;
   func_?();
   pOVar1[1].monitor = (MonitorData *)exceptionType;
   func_?();
   method_01 = TypeInfo__Sentry__StackTraceContainer;
   value = (Object__Class *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  ppcVar2 = &(value->_0).name;
-  *ppcVar2 = (char *)stackTrace;
-  func_?(ppcVar2,stackTrace);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  (value->_0).name = (char *)stackTrace;
+  func_?(&(value->_0).name,stackTrace);
   pOVar1[2].klass = value;
   func_?(pOVar1 + 2,value);
   if (this_00 != (Object__Class *)0x0) {
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_00,pOVar1,MethodInfo__System__Collections__Generic__List<Sentry::ExceptionSpec>__Add_Sentry__ExceptionSpec_);
     method_00 = TypeInfo__Sentry__ExceptionContainer;
     pOVar1 = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     pOVar1[1].klass = this_00;
     func_?();
     exceptionType[3].fields._stringLength = (int32_t)pOVar1;
@@ -45,8 +44,8 @@ void Assembly-CSharp.dll::Sentry::SentryExceptionEvent::SentryExceptionEvent__ct
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

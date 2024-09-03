@@ -10,7 +10,7 @@ void Assembly-CSharp.dll::AdvancedGhostObject::AdvancedGhostObject_Reset(Advance
   }
   pAVar1 = (AdvancedGhostTintObject *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)this,AdvancedGhostTintObject_MethodInfo__UnityEngine__Component__GetComponent<AdvancedGhostTintObject>__);
   (this->fields).tintObject = pAVar1;
-  func_?();
+  func_?(&(this->fields).tintObject,pAVar1);
   return;
 }
 

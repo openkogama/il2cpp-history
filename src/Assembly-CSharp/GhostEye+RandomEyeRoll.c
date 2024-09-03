@@ -5,7 +5,7 @@ Quaternion * Assembly-CSharp.dll::GhostEye+RandomEyeRoll::GhostEye_RandomEyeRoll
 
 {
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar1 = (this->fields)._.direction * fVar1 * (this->fields)._.rotatationPrSecond * 6.2831855 + (this->fields)._.wrappedTime;
+  fVar1 = fVar1 * (this->fields)._.direction * (this->fields)._.rotatationPrSecond * 6.2831855 + (this->fields)._.wrappedTime;
   (this->fields)._.wrappedTime = fVar1;
   while (6.2831855 <= fVar1) {
     fVar1 = (this->fields)._.wrappedTime - 6.2831855;
@@ -46,7 +46,7 @@ Quaternion * Assembly-CSharp.dll::GhostEye+RandomEyeRoll::GhostEye_RandomEyeRoll
   fVar1 = pQVar4->x;
   __return_storage_ptr__->x = (fVar5 * fVar12 + fVar8 * fVar9 + fVar7 * fVar10) - fVar6 * fVar11;
   __return_storage_ptr__->y = (fVar6 * fVar12 + fVar8 * fVar10 + fVar5 * fVar11) - fVar7 * fVar13;
-  __return_storage_ptr__->z = (fVar7 * fVar12 + fVar8 * fVar11 + fVar6 * fVar1) - fVar5 * fVar10;
+  __return_storage_ptr__->z = (fVar8 * fVar11 + fVar7 * fVar12 + fVar6 * fVar1) - fVar5 * fVar10;
   __return_storage_ptr__->w = ((fVar8 * fVar12 - fVar5 * fVar9) - fVar6 * fVar10) - fVar7 * fVar11;
   return __return_storage_ptr__;
 }

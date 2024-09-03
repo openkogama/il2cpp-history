@@ -27,17 +27,27 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::MVCostumeB
           cRam_? = '\x01';
         }
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation(this_00,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,(MethodInfo *)0x0);
-        value_00.z = 0.3;
-        value_00.x = 0.3;
-        value_00.y = 0.3;
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uVar10 = (pVVar9->oneVector).x;
+        uVar11 = (pVVar9->oneVector).y;
+        fVar4 = (pVVar9->oneVector).z;
+        fVar12 = (float10)(*(code *)(this->klass->vtable).get_CubeModelScale.method)();
+        fVar3 = (float)fVar12;
+        value_00.y = (float)uVar11 * fVar3;
+        value_00.x = (float)uVar10 * fVar3;
+        value_00.z = fVar4 * fVar3;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale(this_00,value_00,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -50,26 +60,11 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::MVCostumeB
   (this->fields)._.cubeModelId = -1;
   (this->fields)._.cubeModelPid = -1;
   MVBlueprintBase::MVBlueprintBase__ctor((MVBlueprintBase *)this,data,worldObjects,(MethodInfo *)0x0);
-  piVar1 = &(this->fields)._._._._.interactionFlags;
-  *(uint *)piVar1 = (uint)*piVar1 | 0x8000;
-  piVar1 = &(this->fields)._._._._.interactionFlags;
-  *(uint *)piVar1 = (uint)*piVar1 | 0x1000;
-  piVar1 = &(this->fields)._._._._.interactionFlags;
-  *(uint *)piVar1 = (uint)*piVar1 | 0x2000;
-  piVar1 = &(this->fields)._._._._.interactionFlags;
-  *(uint *)piVar1 = (uint)*piVar1 | 0x100;
-  piVar1 = &(this->fields)._._._._.interactionFlags;
-  *(uint *)piVar1 = (uint)*piVar1 | 0x100000;
-  piVar1 = &(this->fields)._._._._.interactionFlags;
-  *(uint *)piVar1 = (uint)*piVar1 | 0x200000;
-  uVar2 = *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4);
-  piVar1 = &(this->fields)._._._._.interactionFlags;
-  *(uint *)piVar1 = (uint)*piVar1 | 0xADDR;
-  *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4) = uVar2;
-  iVar3 = (this->fields)._._._._.interactionFlags;
-  puVar4 = (uint *)((int)&(this->fields)._._._._.interactionFlags + 4);
-  *puVar4 = *puVar4 | 2;
-  *(int *)&(this->fields)._._._._.interactionFlags = (int)iVar3;
+  iVar1 = (this->fields)._._._._.interactionFlags;
+  *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4) = *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4);
+  puVar2 = (uint *)((int)&(this->fields)._._._._.interactionFlags + 4);
+  *puVar2 = *puVar2 | 2;
+  *(uint *)&(this->fields)._._._._.interactionFlags = (uint)iVar1 | 0xADDR;
   return;
 }
 

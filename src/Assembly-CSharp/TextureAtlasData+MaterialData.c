@@ -4,7 +4,7 @@
 void Assembly-CSharp.dll::TextureAtlasData+MaterialData::TextureAtlasData_MaterialData__ctor(TextureAtlasData_MaterialData *this,Color colorData,Vector4 emissiveData,Vector4 animationData,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).colorData.r = colorData.r;
   (this->fields).colorData.g = colorData.g;
   (this->fields).colorData.b = colorData.b;

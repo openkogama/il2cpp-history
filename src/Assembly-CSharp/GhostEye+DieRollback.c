@@ -52,7 +52,7 @@ void Assembly-CSharp.dll::GhostEye+DieRollback::GhostEye_DieRollback__ctor(Ghost
   (this->fields).rollbackRotation.y = fVar2;
   (this->fields).rollbackRotation.z = fVar3;
   (this->fields).rollbackRotation.w = fVar4;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,in_stack_5);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,in_stack_5);
   return;
 }
 

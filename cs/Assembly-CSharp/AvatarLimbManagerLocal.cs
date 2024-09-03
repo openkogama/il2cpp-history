@@ -132,6 +132,7 @@ public class AvatarLimbManagerLocal : AvatarLimbManager
 		public void Initialize(LimbRotationRuntimeData limbRotationRuntimeData);
 		public void SynchronizeHeadRotationUpdate(Quaternion newHeadRotation);
 		public void SynchronizePointRotationUpdate(Quaternion newPointRotation);
+		public void SynchronizeHasHandEquippableUpdate(bool newIsPoingtingWeaponValue);
 		public void SynchronizeEmoteUpdate(int newEmote);
 	}
 
@@ -141,9 +142,11 @@ public class AvatarLimbManagerLocal : AvatarLimbManager
 		private float networkMessageCooldown;
 		private Quaternion yawRotation;
 		private Quaternion pitchRotation;
+		private PointState storedState;
 		private const float lArmYawRotationOffset = -30f;
 		private const float rArmYawRotationOffset = 20f;
 		public Action<bool> OnIsPointingChange;
+		public Action<bool> OnHasHandEquippableItemChange;
 		public Action<Quaternion> OnUpdatePointingValue;
 
 		// Properties
@@ -154,6 +157,9 @@ public class AvatarLimbManagerLocal : AvatarLimbManager
 
 		// Methods
 		public void StartPointing();
+		public void StartPointingWeapon();
+		public void StartPointingWeaponOnlyNetworked();
+		public void SetHandEquipableItem(bool hasHandEquipableItem);
 		public override void UpdatePointing(Vector3 localLookDirection);
 		private void UpdateNetworkMessage(Quaternion rotation);
 		public void ResetNetworkMessageDelay(float networkMessageDelay);
@@ -172,9 +178,12 @@ public class AvatarLimbManagerLocal : AvatarLimbManager
 	public class AvatarPointingRotationCalculator
 	{
 		// Fields
-		private const float maxYaw = 90f;
+		private const float smallOffset = 0.5f;
+		private const float minYaw = -80f;
+		private const float maxYaw = 130f;
+		private const float minPitch = -90f;
 		private const float maxPitch = 90f;
-		private bool shouldPoint;
+		public float previousYawRotation;
 
 		// Constructors
 		public AvatarPointingRotationCalculator();
@@ -183,7 +192,6 @@ public class AvatarLimbManagerLocal : AvatarLimbManager
 		public PointingRotationCalculationResult CalculateRotation(Vector3 pointingDirection);
 		private Quaternion GetClampedYawRotation(Vector3 localDirection);
 		private Quaternion GetClampedPitchRotation(Vector3 localDirection);
-		protected void HandleYawDeadZone(float yaw);
 	}
 
 	// Constructors
@@ -194,11 +202,15 @@ public class AvatarLimbManagerLocal : AvatarLimbManager
 	public override void UpdateLimbRotations(Vector3 lookDirection);
 	public override void StartEmote(EmoteTypes emoteType);
 	public void StartPointing();
+	public void StartPointingWeapon();
+	public void StartPointingWeaponOnlyNetworked();
+	public void SetHandEquippableItem(bool value);
 	private void OnShakeChatCommand();
 	private void OnNodChatCommand();
 	private void OnWaveChatCommand();
 	private void SynchronizeHeadRotation(Quaternion newHeadRotation);
 	private void SynchronizePointing(Quaternion newPointRotation);
+	private void SynchronizeHasHandEquippableValue(bool newHasHandEquippableItemValue);
 	private void SynchronizeEmote(int newEmote);
 }
 

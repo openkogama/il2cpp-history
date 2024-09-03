@@ -9,13 +9,13 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::MVMele
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent(this_00,(this->fields)._.cubeModelBaseParent,(MethodInfo *)0x0);
     pMVar1 = (this->fields)._.editableCubeModel;
     if (pMVar1 != (MVCubeModelInstance *)0x0) {
-      pBVar2 = MVCubeModelBase::MVCubeModelBase_GetBounds((Bounds *)&stack0xffffffc0,(MVCubeModelBase *)pMVar1,(MethodInfo *)0x0);
+      pBVar2 = MVCubeModelBase::MVCubeModelBase_GetBounds((Bounds *)&stack0xffffffb0,(MVCubeModelBase *)pMVar1,(MethodInfo *)0x0);
       fVar3 = (pBVar2->m_Extents).y;
       pMVar1 = (this->fields)._.editableCubeModel;
       if ((pMVar1 != (MVCubeModelInstance *)0x0) && (this_01 = (pMVar1->fields)._._.transform, this_01 != (Transform *)0x0)) {
         fVar4 = -0.16;
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,this_01,(MethodInfo *)0x0);
-        uVar6 = CONCAT44(pVVar5->y * fVar3 * 0.75,fVar4) ^ 0x8000000000000000;
+        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffd8,this_01,(MethodInfo *)0x0);
+        uVar6 = CONCAT44(fVar3 * pVVar5->y * 0.75,fVar4) ^ 0x8000000000000000;
         value.z = -0.16;
         value.x = (float)(int)uVar6;
         value.y = (float)(int)(uVar6 >> 0x20);
@@ -25,17 +25,27 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::MVMele
           cRam_? = '\x01';
         }
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation(this_00,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,(MethodInfo *)0x0);
-        value_00.z = 0.3;
-        value_00.x = 0.3;
-        value_00.y = 0.3;
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
+        fVar4 = (pVVar7->oneVector).x;
+        fVar8 = (pVVar7->oneVector).y;
+        fVar9 = (pVVar7->oneVector).z;
+        fVar10 = (float10)(*(code *)(this->klass->vtable).get_CubeModelScale.method)();
+        fVar3 = (float)fVar10;
+        value_00.y = fVar8 * fVar3;
+        value_00.x = fVar4 * fVar3;
+        value_00.z = fVar9 * fVar3;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale(this_00,value_00,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

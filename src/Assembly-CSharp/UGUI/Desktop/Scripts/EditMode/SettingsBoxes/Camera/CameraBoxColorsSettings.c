@@ -137,7 +137,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                 SettingsSlider::SettingsSlider_Initialize_1(pSVar13,StringLiteral_ppColorsPExp,(int32_t)value,-0xf,0xf,(MethodInfo *)0x0);
                 pSVar14 = (pCVar1->fields).postExposureInputField;
                 if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar14,StringLiteral_ppColorsPExp,(int32_t)value,(MethodInfo *)0x0);
+                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar14,StringLiteral_ppColorsPExp,(int32_t)value,(MethodInfo *)0x0);
                   pCVar3 = (pCVar1->fields).cameraBoxSettings;
                   uStack_15 = 0;
                   value = (Object *)func_?(TypeInfo__System__Int32,&uStack_15);
@@ -165,7 +165,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                           SettingsSlider::SettingsSlider_Initialize_1(pSVar13,StringLiteral_ppColorsTemp,(int32_t)value,-100,100,(MethodInfo *)0x0);
                           pSVar14 = (pCVar1->fields).temperatureInputField;
                           if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar14,StringLiteral_ppColorsTemp,(int32_t)value,(MethodInfo *)0x0);
+                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar14,StringLiteral_ppColorsTemp,(int32_t)value,(MethodInfo *)0x0);
                             pCVar3 = (pCVar1->fields).cameraBoxSettings;
                             uStack_16 = 0;
                             value = (Object *)func_?(TypeInfo__System__Int32,&uStack_16);
@@ -193,7 +193,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                                     SettingsSlider::SettingsSlider_Initialize_1(pSVar13,StringLiteral_ppColorsSatur,(int32_t)value,-100,100,(MethodInfo *)0x0);
                                     pSVar14 = (pCVar1->fields).saturationInputField;
                                     if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar14,StringLiteral_ppColorsSatur,(int32_t)value,(MethodInfo *)0x0);
+                                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar14,StringLiteral_ppColorsSatur,(int32_t)value,(MethodInfo *)0x0);
                                       pCVar3 = (pCVar1->fields).cameraBoxSettings;
                                       pOStack_9 = (Object *)0x0;
                                       value = (Object *)func_?(TypeInfo__System__Int32,&pOStack_9);
@@ -221,7 +221,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                                               SettingsSlider::SettingsSlider_Initialize_1(pSVar13,StringLiteral_ppColorContr,(int32_t)value,-0x28,100,(MethodInfo *)0x0);
                                               pSVar14 = (pCVar1->fields).contrastInputField;
                                               if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                                                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar14,StringLiteral_ppColorContr,(int32_t)value,(MethodInfo *)0x0);
+                                                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar14,StringLiteral_ppColorContr,(int32_t)value,(MethodInfo *)0x0);
                                                 return;
                                               }
                                             }

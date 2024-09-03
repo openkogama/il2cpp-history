@@ -34,19 +34,19 @@ code_?:
       func_?(&TypeInfo__TouristPromotionDesktop____c__DisplayClass11_0);
       cRam_? = '\x01';
     }
-    value = (Object *)func_?(TypeInfo__TouristPromotionDesktop____c__DisplayClass11_0);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,unaff_EDI);
+    this_03 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(TypeInfo__TouristPromotionDesktop____c__DisplayClass11_0);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor(this_03,(MethodInfo *)0x0);
     pGVar2 = (this->fields).goToKogamaPopupPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pOVar3 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar2,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
-    if (value != (Object *)0x0) {
-      value[1].klass = pOVar3;
-      func_?(value + 1,pOVar3);
+    pLVar3 = (List_1_System_Object_ *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar2,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
+    if (this_03 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+      (this_03->fields)._._defaultValue_k__BackingField = pLVar3;
+      func_?(&this_03->fields,pLVar3);
       pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
       callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,MethodInfo__TouristPromotionDesktop____c__DisplayClass11_0___ShowGoToKogamaPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_03,MethodInfo__TouristPromotionDesktop____c__DisplayClass11_0___ShowGoToKogamaPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -170,27 +170,25 @@ void Assembly-CSharp.dll::TouristPromotionDesktop::TouristPromotionDesktop_OnDes
   }
   else {
     pAVar2 = (pMVar1->fields).OnWinningConditionFulfilled;
-    ppAVar3 = &(pMVar1->fields).OnWinningConditionFulfilled;
-    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__TouristPromotionDesktop__OnWinningConditionFulfilled_IWinningCondition_,(MethodInfo *)0x0);
-    pAStack4 = (Action_1_IWinningCondition___Class *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+    this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_00,(Object *)this,MethodInfo__TouristPromotionDesktop__OnWinningConditionFulfilled_IWinningCondition_,(MethodInfo *)0x0);
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
     unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
-    if (pAStack4 == (Action_1_IWinningCondition___Class *)0x0) {
-      *ppAVar3 = (Action_1_IWinningCondition_ *)0x0;
+    if (pDVar3 == (Delegate *)0x0) {
+      (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+      pAStack4 = (Action_1_IWinningCondition___Class *)0x0;
+code_?:
       func_?();
       return;
     }
     pAStack4 = TypeInfo__System__Action<IWinningCondition>;
     pAVar2 = (Action_1_IWinningCondition_ *)func_?();
     if (pAVar2 != (Action_1_IWinningCondition_ *)0x0) {
-      *ppAVar3 = pAVar2;
+      (pMVar1->fields).OnWinningConditionFulfilled = pAVar2;
       unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
       pAStack4 = TypeInfo__System__Action<IWinningCondition>;
       pAStack4 = (Action_1_IWinningCondition___Class *)func_?();
-      if (pAStack4 != (Action_1_IWinningCondition___Class *)0x0) {
-        func_?();
-        return;
-      }
+      if (pAStack4 != (Action_1_IWinningCondition___Class *)0x0) goto code_?;
     }
   }
   pAStack4 = unaff_EDI;
@@ -216,20 +214,19 @@ void Assembly-CSharp.dll::TouristPromotionDesktop::TouristPromotionDesktop_ShowG
     func_?(&TypeInfo__TouristPromotionDesktop____c__DisplayClass11_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__TouristPromotionDesktop____c__DisplayClass11_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(TypeInfo__TouristPromotionDesktop____c__DisplayClass11_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
   pGVar1 = (this->fields).goToKogamaPopupPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pOVar2 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar1,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
-  if (value != (Object *)0x0) {
-    value[1].klass = pOVar2;
-    func_?(value + 1,pOVar2);
+  pLVar2 = (List_1_System_Object_ *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar1,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
+  if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+    (this_00->fields)._._defaultValue_k__BackingField = pLVar2;
+    func_?(&this_00->fields,pLVar2);
     pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
     callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,MethodInfo__TouristPromotionDesktop____c__DisplayClass11_0___ShowGoToKogamaPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_00,MethodInfo__TouristPromotionDesktop____c__DisplayClass11_0___ShowGoToKogamaPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -318,8 +315,8 @@ code_?:
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
     pAVar3 = (pMVar2->fields).OnWinningConditionFulfilled;
-    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_01,(Object *)this,MethodInfo__TouristPromotionDesktop__OnWinningConditionFulfilled_IWinningCondition_,(MethodInfo *)0x0);
+    this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_01,(Object *)this,MethodInfo__TouristPromotionDesktop__OnWinningConditionFulfilled_IWinningCondition_,(MethodInfo *)0x0);
     pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar3,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pDVar4 == (Delegate *)0x0) {
       (pMVar2->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;

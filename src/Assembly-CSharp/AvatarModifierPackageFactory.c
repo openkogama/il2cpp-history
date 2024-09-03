@@ -57,7 +57,7 @@ Func_1_Single_ * Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifi
   }
   method_00 = TypeInfo__AvatarModifierPackageFactory____c__DisplayClass0_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)c;
     pFVar1 = (Func_1_Single_ *)func_?(TypeInfo__System__Func<float>);

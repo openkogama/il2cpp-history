@@ -166,6 +166,8 @@ public class PrefabPool : MonoBehaviour
 	private ObjectPrefab doorPrefab;
 	[SerializeField]
 	private MVObjectTransparencyObject mvObjectTransparencyPrefab;
+	[SerializeField]
+	private GameObject muzzleEditNodePrefab;
 	[Header("Game")]
 	[SerializeField]
 	[Space(20f)]
@@ -236,6 +238,8 @@ public class PrefabPool : MonoBehaviour
 	private MVPickupItemBaseObject avatarHealRayPrefab;
 	[SerializeField]
 	private MVPickupItemBaseObject avatarCostumePrefab;
+	[SerializeField]
+	private MVPickupItemBaseObject avatarCustomGunPrefab;
 	[Header("Avatar item pick up")]
 	[SerializeField]
 	[Space(20f)]
@@ -280,6 +284,8 @@ public class PrefabPool : MonoBehaviour
 	private GameObject avatarItemHealRay;
 	[SerializeField]
 	private GameObject avatarItemCostume;
+	[SerializeField]
+	private GameObject avatarItemCustomGun;
 	[Header("Avatar modifier")]
 	[SerializeField]
 	[Space(20f)]
@@ -353,8 +359,8 @@ public class PrefabPool : MonoBehaviour
 	private RectTransform editEdgeHelpText;
 	[SerializeField]
 	private RectTransform editFaceHelpText;
-	[Header("Editor")]
 	[Header("Cameras")]
+	[Header("Editor")]
 	[SerializeField]
 	[Space(20f)]
 	[Space(20f)]
@@ -472,6 +478,7 @@ public class PrefabPool : MonoBehaviour
 	public ObjectPrefab DoorPrefab { get; }
 	public TriggerCubePrefab TriggerCubePrefab { get; }
 	public MVObjectTransparencyObject MVObjectTransparencyPrefab { get; }
+	public GameObject MuzzleEditNodePrefab { get; }
 	public Material GhostMarkerMaterial { get; }
 	public Material ObjectHiddenMaterial { get; }
 	public SentryGunBeam IceBeamObject { get; }
@@ -505,6 +512,7 @@ public class PrefabPool : MonoBehaviour
 	public MVPickupItemBaseObject AvatarGrowthPackPrefab { get; }
 	public MVPickupItemBaseObject AvatarHealRayPrefab { get; }
 	public MVPickupItemBaseObject AvatarCostumePrefab { get; }
+	public MVPickupItemBaseObject AvatarCustomGunPrefab { get; }
 	public GameObject AvatarItemCenterGun { get; }
 	public GameObject AvatarItemImpulseGun { get; }
 	public GameObject AvatarItemLaserPointer { get; }
@@ -526,6 +534,7 @@ public class PrefabPool : MonoBehaviour
 	public GameObject AvatarItemCollectTheItem { get; }
 	public GameObject AvatarItemHealRay { get; }
 	public GameObject AvatarItemCostume { get; }
+	public GameObject AvatarItemCustomGun { get; }
 	public AvatarModifier ShieldModifier { get; }
 	public GameObject ParticleCFX_GroundAura { get; }
 	public ParticleSystem ParticleCubeDust { get; }

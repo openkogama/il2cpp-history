@@ -179,7 +179,7 @@ void MVWorldObject.dll::MV::WorldObject::MetaData::ProfileSettingsState::Profile
     func_?(&TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::SettingsPlatform,_System::Collections::Generic::Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>_>);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::SettingsPlatform,_System::Collections::Generic::Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>_>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,GamePassesHighScoreList+HighScoreListData]::Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::SettingsPlatform,_System::Collections::Generic::Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Object>_>__Dictionary__);
   pDVar1 = ProfileSettingsState_GetDefaultProfileSettingsValues(SettingsPlatform__Enum_Standalone,(MethodInfo *)0x0);

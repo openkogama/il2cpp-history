@@ -66,13 +66,12 @@ void Assembly-CSharp.dll::MVLocalObjectController+AttachState::MVLocalObjectCont
     func_?(&TypeInfo__MVNetworkReporter);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar1 != (MVNetworkGame *)0x0) && (pTVar2 = (pMVar1->fields).transformNetworkManager, pTVar2 != (TransformNetworkManager *)0x0)) {
     pMVar3 = TransformNetworkManager::TransformNetworkManager_GetNetworkObject(pTVar2,worldObjectID,(MethodInfo *)0x0);
     if (pMVar3 != (MVNetworkObject *)0x0) {
-      bVar4 = (TypeInfo__MVNetworkReporter->_1).naturalAligment;
-      if ((bVar4 <= (pMVar3->klass->_1).naturalAligment) && ((pMVar3->klass->_1).typeHierarchy[bVar4 - 1] == (Il2CppClass *)TypeInfo__MVNetworkReporter)) {
+      if (((TypeInfo__MVNetworkReporter->_1).naturalAligment <= (pMVar3->klass->_1).naturalAligment) && ((pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVNetworkReporter->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__MVNetworkReporter)) {
         pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((pMVar1 == (MVNetworkGame *)0x0) || (pTVar2 = (pMVar1->fields).transformNetworkManager, pTVar2 == (TransformNetworkManager *)0x0)) goto code_?;
         TransformNetworkManager::TransformNetworkManager_RemoveNetworkObject(pTVar2,worldObjectID,(MethodInfo *)0x0);
@@ -84,8 +83,8 @@ void Assembly-CSharp.dll::MVLocalObjectController+AttachState::MVLocalObjectCont
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

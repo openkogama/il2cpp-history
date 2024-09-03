@@ -6,7 +6,7 @@ float Assembly-CSharp.dll::RuntimeEventManager+AccumulatedCubeDamages::RuntimeEv
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__RuntimeEventManager_AccumulatedCubeDamages__AccumulatedCubeDamage);
-    func_?(0xa38c);
+    func_?(0xe838);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__ContainsKey_MV__WorldObject__IntVector_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__get_Item_MV__WorldObject__IntVector_);
     cRam_? = '\x01';
@@ -19,7 +19,7 @@ float Assembly-CSharp.dll::RuntimeEventManager+AccumulatedCubeDamages::RuntimeEv
       pOVar3 = (Object *)func_?(TypeInfo__RuntimeEventManager_AccumulatedCubeDamages__AccumulatedCubeDamage);
       pOVar4 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       pOVar3[1].klass = pOVar4;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar3,ExceptionArgument__Enum_obj,in_stack_5);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar3,ExceptionArgument__Enum_obj,in_stack_5);
       if (pDVar1 == (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_ *)0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__Add((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar1,position,pOVar3,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Add_MV__WorldObject__IntVector__RuntimeEventManager_AccumulatedCubeDamages__AccumulatedCubeDamage_);
     }
@@ -116,7 +116,7 @@ void Assembly-CSharp.dll::RuntimeEventManager+AccumulatedCubeDamages::RuntimeEve
       if (bVar18 == 0) break;
       auStack_9._18_2_ = iVar13;
       auStack_9._16_2_ = iVar12;
-      unique0x100002f0 = (Object *)pMVar15;
+      unique0x100002fc = (Object *)pMVar15;
       pOStack_19 = pOVar16;
       if (pOVar16 == (Object *)0x0) goto code_?;
       iVar12 = 0;
@@ -135,7 +135,7 @@ void Assembly-CSharp.dll::RuntimeEventManager+AccumulatedCubeDamages::RuntimeEve
       }
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffff84,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dispose__,pMVar15);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffff84,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dispose__,pMVar15);
     uStack_1 = 0xffffffff;
     if (this_02 != (List_1_MV_WorldObject_IntVector_ *)0x0) {
       pLVar24 = mscorlib.dll::System::Collections::Generic::List`1[MV::WorldObject::IntVector]::List_1_MV_WorldObject_IntVector__GetEnumerator((List_1_T_Enumerator_MV_WorldObject_IntVector_ *)(auStack_9 + 8),this_02,MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__GetEnumerator__);
@@ -147,7 +147,7 @@ void Assembly-CSharp.dll::RuntimeEventManager+AccumulatedCubeDamages::RuntimeEve
         bVar18 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[MV::WorldObject::IntVector]::List_1_T_Enumerator_MV_WorldObject_IntVector__MoveNext((List_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffffa0,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__);
         if (bVar18 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffa0,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::IntVector>__Dispose__,pMVar15);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffa0,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::IntVector>__Dispose__,pMVar15);
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
@@ -182,9 +182,9 @@ void Assembly-CSharp.dll::RuntimeEventManager+AccumulatedCubeDamages::RuntimeEve
   this_00 = (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,ChunkInstances+ChunkInstanceVariables]::Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dictionary__);
   method_00 = (MethodInfo *)&this->fields;
-  ((RuntimeEventManager_AccumulatedCubeDamages__Fields *)method_00)->accumulatedCubeDamages = (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_ *)this_00;
+  (this->fields).accumulatedCubeDamages = (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_ *)this_00;
   func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }

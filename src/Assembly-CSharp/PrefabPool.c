@@ -46,116 +46,114 @@ void Assembly-CSharp.dll::PrefabPool::PrefabPool_BuildLookupTables(PrefabPool *t
     SStack_3._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
     SStack_3._index = 0;
     mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_3,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarHealthPrefab,1,(MethodInfo *)0x0);
-    stack0xffffff88 = (int32_t)this_00;
+    stack0xffffff80 = (int32_t)this_00;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,3,(EquipableData)SStack_3,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
-    pOVar4 = (ObjectPrefab *)0x0;
-    iVar5 = 0;
-    stack0xffffff88 = (int32_t)&UNK_?;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&stack0xffffffdc,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarBazookaPrefab,0,(MethodInfo *)0x0);
-    stack0xffffff88 = (int32_t)this_00;
-    value_03.equipableType = iVar5;
-    value_03.prefabObject = pOVar4;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,4,value_03,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
-    pOVar4 = (ObjectPrefab *)0x0;
-    iVar5 = 0;
-    stack0xffffff88 = (int32_t)&UNK_?;
+    SStack_4._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    SStack_4._index = 0;
+    stack0xffffff80 = (int32_t)&UNK_?;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_4,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarBazookaPrefab,0,(MethodInfo *)0x0);
+    stack0xffffff80 = (int32_t)this_00;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,4,(EquipableData)SStack_4,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    stack0xffffff80 = (int32_t)&UNK_?;
     mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&stack0xffffffd4,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarRailGunPrefab,0,(MethodInfo *)0x0);
-    stack0xffffffd0 = (undefined *)this_00;
-    value_04.equipableType = iVar5;
-    value_04.prefabObject = pOVar4;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,6,value_04,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
-    pOStack_6 = (ObjectPrefab *)0x0;
-    stack0xffffffd0 = &UNK_?;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&pOStack_6,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarMutantPrefab,1,(MethodInfo *)0x0);
-    puVar7 = stack0xffffffd0;
-    pOVar4 = pOStack_6;
-    stack0xffffffd0 = (undefined *)this_00;
-    value_05.equipableType = (int32_t)puVar7;
-    value_05.prefabObject = pOVar4;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,7,value_05,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    stack0xffffffc8 = (int32_t)this_00;
+    value_03.equipableType = (int32_t)MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_;
+    value_03.prefabObject = (ObjectPrefab *)MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,6,value_03,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    pOVar5 = (ObjectPrefab *)0x0;
+    iVar6 = 0;
+    stack0xffffffc8 = (int32_t)&UNK_?;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor((SparselyPopulatedArrayAddInfo_1_System_Object_ *)0x0,(SparselyPopulatedArrayFragment_1_System_Object_ *)0x0,1,(MethodInfo *)0x0);
+    stack0xffffffc8 = (int32_t)this_00;
+    value_04.equipableType = iVar6;
+    value_04.prefabObject = pOVar5;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,7,value_04,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    pSStack_7 = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
+    stack0xffffffc8 = 0xADDR;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&pSStack_7,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarMeleeWeaponPrefab,0,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,8,(EquipableData)_pSStack_3c,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
     SStack_8._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
     SStack_8._index = 0;
-    stack0xffffffd0 = &UNK_?;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_8,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarMeleeWeaponPrefab,0,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,8,(EquipableData)SStack_8,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_8,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarShotgunPrefab,0,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,9,(EquipableData)SStack_8,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
     SStack_9._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
     SStack_9._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_9,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarShotgunPrefab,0,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,9,(EquipableData)SStack_9,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_9,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarFlamethrowerPrefab,0,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,10,(EquipableData)SStack_9,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
     SStack_10._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
     SStack_10._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_10,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarFlamethrowerPrefab,0,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,10,(EquipableData)SStack_10,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_10,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarCubeGunPrefab,0,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xb,(EquipableData)SStack_10,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
     SStack_11._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
     SStack_11._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_11,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarCubeGunPrefab,0,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xb,(EquipableData)SStack_11,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_11,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarNinjaRunPrefab,1,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xe,(EquipableData)SStack_11,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
     SStack_12._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
     SStack_12._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_12,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarNinjaRunPrefab,1,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xe,(EquipableData)SStack_12,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_12,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarSixShooterPrefab,0,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xc,(EquipableData)SStack_12,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
     SStack_13._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
     SStack_13._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_13,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarSixShooterPrefab,0,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xc,(EquipableData)SStack_13,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
-    pOVar4 = (ObjectPrefab *)0x0;
-    iVar5 = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&stack0xffffff94,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarDoubleSixShooterPrefab,0,(MethodInfo *)0x0);
-    value.equipableType = iVar5;
-    value.prefabObject = pOVar4;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xd,value,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
-    pOVar4 = (ObjectPrefab *)0x0;
-    iVar5 = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_13,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarDoubleSixShooterPrefab,0,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xd,(EquipableData)SStack_13,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    pOVar5 = (ObjectPrefab *)0x0;
+    iVar6 = 0;
     mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&stack0xffffff8c,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarThrowingStarPrefab,0,(MethodInfo *)0x0);
-    value_00.equipableType = iVar5;
-    value_00.prefabObject = pOVar4;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x2d,value_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    value.equipableType = iVar6;
+    value.prefabObject = pOVar5;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x2d,value,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    pOVar5 = (ObjectPrefab *)0x0;
+    iVar6 = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&stack0xffffff84,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarMultiThrowingStarPrefab,0,(MethodInfo *)0x0);
+    value_00.equipableType = iVar6;
+    value_00.prefabObject = pOVar5;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x2e,value_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
     pOStack_14 = (ObjectPrefab *)0x0;
-    stack0xffffff88 = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&pOStack_14,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarMultiThrowingStarPrefab,0,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x2e,(EquipableData)_pOStack_7c,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    stack0xffffff80 = 0;
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&pOStack_14,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarMouseGunPrefab,0,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3c,(EquipableData)_pOStack_84,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
     SStack_15._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
     SStack_15._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_15,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarMouseGunPrefab,0,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3c,(EquipableData)SStack_15,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_15,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarGrowthGunPrefab,0,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3e,(EquipableData)SStack_15,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
     SStack_16._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
     SStack_16._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_16,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarGrowthGunPrefab,0,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3e,(EquipableData)SStack_16,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_16,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarMousePackPrefab,1,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3f,(EquipableData)SStack_16,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
     SStack_17._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
     SStack_17._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_17,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarMousePackPrefab,1,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3f,(EquipableData)SStack_17,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_17,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarGrowthPackPrefab,1,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x40,(EquipableData)SStack_17,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
     SStack_18._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
     SStack_18._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_18,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarGrowthPackPrefab,1,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x40,(EquipableData)SStack_18,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_18,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarHealRayPrefab,0,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x46,(EquipableData)SStack_18,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
     SStack_19._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
     SStack_19._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_19,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarHealRayPrefab,0,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x46,(EquipableData)SStack_19,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_19,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarCostumePrefab,0,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3b,(EquipableData)SStack_19,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
     SStack_20._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
     SStack_20._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_20,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarCostumePrefab,0,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3b,(EquipableData)SStack_20,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor(&SStack_20,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarCustomGunPrefab,0,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::Dictionary_2_System_Int32Enum_EquipableData__Add((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xf,(EquipableData)SStack_20,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_);
     (this->fields).pickupPrefabLUT = this_00;
     func_?();
     this_01 = (Dictionary_2_System_Boolean_EquipableData_ *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Boolean,EquipableData]::Dictionary_2_System_Boolean_EquipableData___ctor(this_01,MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Dictionary__);
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&stack0xffffff4c,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarMeleeWeaponPrefab,0,(MethodInfo *)0x0);
+    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&stack0xffffff44,(SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarMeleeWeaponPrefab,0,(MethodInfo *)0x0);
     if (this_01 != (Dictionary_2_System_Boolean_EquipableData_ *)0x0) {
       value_01.equipableType = (int32_t)MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_;
       value_01.prefabObject = (ObjectPrefab *)MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Boolean,EquipableData]::Dictionary_2_System_Boolean_EquipableData__Add(this_01,0,value_01,MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_);
-      pOVar4 = (ObjectPrefab *)0x0;
-      iVar5 = 0;
+      pOVar5 = (ObjectPrefab *)0x0;
+      iVar6 = 0;
       mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::SparselyPopulatedArrayAddInfo_1_System_Object___ctor((SparselyPopulatedArrayAddInfo_1_System_Object_ *)0x0,(SparselyPopulatedArrayFragment_1_System_Object_ *)0x0,0,(MethodInfo *)0x0);
-      value_02.equipableType = iVar5;
-      value_02.prefabObject = pOVar4;
+      value_02.equipableType = iVar6;
+      value_02.prefabObject = pOVar5;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Boolean,EquipableData]::Dictionary_2_System_Boolean_EquipableData__Add(this_01,1,value_02,MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_);
       (this->fields).meleeWeaponPrefabLUT = this_01;
       func_?();
-      stack0xffffff88 = (int32_t)TypeInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>;
+      stack0xffffff80 = (int32_t)TypeInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>;
       this_02 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor(this_02,MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Dictionary__);
       if (this_02 != (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)0x0) {
@@ -260,12 +258,12 @@ Texture2D * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarAccessoryMoveI
 }
 
 
-/* MVPickupItemBaseObject get_AvatarBazookaPrefab() */
+/* MVPickupItemBaseObject get_AvatarCenterGunPrefab() */
 
-MVPickupItemBaseObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarBazookaPrefab(PrefabPool *this,MethodInfo *method)
+MVPickupItemBaseObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarCenterGunPrefab(PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).avatarBazookaPrefab;
+  return (this->fields).avatarCenterGunPrefab;
 }
 
 
@@ -287,12 +285,12 @@ MVPickupItemBaseObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarC
 }
 
 
-/* MVPickupItemBaseObject get_AvatarDoubleSixShooterPrefab() */
+/* MVPickupItemBaseObject get_AvatarCustomGunPrefab() */
 
-MVPickupItemBaseObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarDoubleSixShooterPrefab(PrefabPool *this,MethodInfo *method)
+MVPickupItemBaseObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarCustomGunPrefab(PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).avatarDoubleSixShooterPrefab;
+  return (this->fields).avatarCustomGunPrefab;
 }
 
 
@@ -401,6 +399,15 @@ GameObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemCubeGun(P
 
 {
   return (this->fields).avatarItemCubeGun;
+}
+
+
+/* GameObject get_AvatarItemCustomGun() */
+
+GameObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemCustomGun(PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).avatarItemCustomGun;
 }
 
 
@@ -557,21 +564,21 @@ MVPickupItemBaseObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarM
 }
 
 
+/* MVPickupItemBaseObject get_AvatarMouseGunPrefab() */
+
+MVPickupItemBaseObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarMouseGunPrefab(PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).avatarMouseGunPrefab;
+}
+
+
 /* MVPickupItemBaseObject get_AvatarMousePackPrefab() */
 
 MVPickupItemBaseObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarMousePackPrefab(PrefabPool *this,MethodInfo *method)
 
 {
   return (this->fields).avatarMousePackPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarMultiThrowingStarPrefab() */
-
-MVPickupItemBaseObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarMultiThrowingStarPrefab(PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarMultiThrowingStarPrefab;
 }
 
 
@@ -590,6 +597,15 @@ MVPickupItemBaseObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarN
 
 {
   return (this->fields).avatarNinjaRunPrefab;
+}
+
+
+/* MVPickupItemBaseObject get_AvatarRailGunPrefab() */
+
+MVPickupItemBaseObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarRailGunPrefab(PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).avatarRailGunPrefab;
 }
 
 
@@ -617,6 +633,15 @@ MVPickupItemBaseObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarS
 
 {
   return (this->fields).avatarSwordPrefab;
+}
+
+
+/* MVPickupItemBaseObject get_AvatarThrowingStarPrefab() */
+
+MVPickupItemBaseObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarThrowingStarPrefab(PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).avatarThrowingStarPrefab;
 }
 
 
@@ -665,30 +690,12 @@ Texture2D * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_CrosshairCursor(Pref
 }
 
 
-/* CubeModelChunkPrefab get_CubeModelChunkPrefab() */
+/* Material get_CursorNoneMaterial() */
 
-CubeModelChunkPrefab * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_CubeModelChunkPrefab(PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).cubeModelChunkPrefab;
-}
-
-
-/* Material get_Cursor2dCornerMaterial() */
-
-Material * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_Cursor2dCornerMaterial(PrefabPool *this,MethodInfo *method)
+Material * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_CursorNoneMaterial(PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).cursor2dCornerMaterial;
-}
-
-
-/* Material get_Cursor2dEdgeMaterial() */
-
-Material * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_Cursor2dEdgeMaterial(PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).cursor2dEdgeMaterial;
+  return (this->fields).cursorNoneMaterial;
 }
 
 
@@ -698,6 +705,15 @@ GameObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_DrawPlaneObject(Pre
 
 {
   return (this->fields).drawPlaneObject;
+}
+
+
+/* GameCoinDisplayObject get_GameCoinDisplayPrefab() */
+
+GameCoinDisplayObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_GameCoinDisplayPrefab(PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).gameCoinDisplayPrefab;
 }
 
 
@@ -737,12 +753,12 @@ ParticleSystem * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_HealingParticle
 }
 
 
-/* SentryGunBeam get_IceBeamObject() */
+/* Material get_IndentMaterial() */
 
-SentryGunBeam * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_IceBeamObject(PrefabPool *this,MethodInfo *method)
+Material * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_IndentMaterial(PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).iceBeamObject;
+  return (this->fields).indentMaterial;
 }
 
 
@@ -752,6 +768,15 @@ InsertCursor * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_InsertCursor(Pref
 
 {
   return (this->fields).insertCursor;
+}
+
+
+/* Material get_InsertPreviewMaterial() */
+
+Material * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_InsertPreviewMaterial(PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).insertPreviewMaterial;
 }
 
 
@@ -798,12 +823,30 @@ LineRangeIndicator * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LineRangeIn
 }
 
 
-/* LinkObjectScript get_LinkObject() */
+/* Material get_LogicCubeConnectorBlueMaterial() */
 
-LinkObjectScript * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LinkObject(PrefabPool *this,MethodInfo *method)
+Material * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LogicCubeConnectorBlueMaterial(PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).linkObject;
+  return (this->fields).logicCubeConnectorBlueMaterial;
+}
+
+
+/* Material get_LogicCubeConnectorBlueSelectedMaterial() */
+
+Material * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LogicCubeConnectorBlueSelectedMaterial(PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).logicCubeConnectorBlueSelectedMaterial;
+}
+
+
+/* Material get_LogicCubeConnectorRedSelectedMaterial() */
+
+Material * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LogicCubeConnectorRedSelectedMaterial(PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).logicCubeConnectorRedSelectedMaterial;
 }
 
 
@@ -816,30 +859,12 @@ GameObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LogicInputConnector
 }
 
 
-/* GameObject get_LogicObjectConnectorPrefab() */
-
-GameObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LogicObjectConnectorPrefab(PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).logicObjectConnectorPrefab;
-}
-
-
 /* GameObject get_LogicOutputConnectorPrefab() */
 
 GameObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LogicOutputConnectorPrefab(PrefabPool *this,MethodInfo *method)
 
 {
   return (this->fields).logicOutputConnectorPrefab;
-}
-
-
-/* SoundEmitterObject get_MVSoundEmitterPrefab() */
-
-SoundEmitterObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVSoundEmitterPrefab(PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).mvSoundEmitterPrefab;
 }
 
 
@@ -861,12 +886,12 @@ Material * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_ModelConstraintsMater
 }
 
 
-/* Material get_ModelCubeSpaceMaterial() */
+/* GameObject get_MuzzleEditNodePrefab() */
 
-Material * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_ModelCubeSpaceMaterial(PrefabPool *this,MethodInfo *method)
+GameObject * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MuzzleEditNodePrefab(PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).modelCubeSpaceMaterial;
+  return (this->fields).muzzleEditNodePrefab;
 }
 
 
@@ -876,15 +901,6 @@ Material * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_ObjectHiddenMaterial(
 
 {
   return (this->fields).objectHiddenMaterial;
-}
-
-
-/* ObjectLinkObjectScript get_ObjectLinkObject() */
-
-ObjectLinkObjectScript * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_ObjectLinkObject(PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).objectLinkObject;
 }
 
 
@@ -963,12 +979,12 @@ ParticleSystem * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_PoisonParticles
 }
 
 
-/* SphereVolumeIndicator get_RangeVisualizationObject() */
+/* Material get_PreviewBoxMaterial() */
 
-SphereVolumeIndicator * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_RangeVisualizationObject(PrefabPool *this,MethodInfo *method)
+Material * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_PreviewBoxMaterial(PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).rangeVisualizationObject;
+  return (this->fields).previewBoxMaterial;
 }
 
 
@@ -996,14 +1012,5 @@ AvatarModifier * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_ShieldModifier(
 
 {
   return (this->fields).shieldModifier;
-}
-
-
-/* TransformGizmo get_TransformGizmo() */
-
-TransformGizmo * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_TransformGizmo(PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).transformGizmo;
 }
 

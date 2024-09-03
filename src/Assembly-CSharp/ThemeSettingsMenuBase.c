@@ -4,19 +4,17 @@
 void Assembly-CSharp.dll::ThemeSettingsMenuBase::ThemeSettingsMenuBase_Initialize(ThemeSettingsMenuBase *this,Theme *theme,RectTransform *content,MethodInfo *method)
 
 {
-  ppTVar1 = &(this->fields).theme;
-  *ppTVar1 = theme;
-  func_?(ppTVar1,theme);
-  ppRVar2 = &(this->fields).content;
-  *ppRVar2 = content;
-  func_?(ppRVar2,content);
+  (this->fields).theme = theme;
+  func_?(&(this->fields).theme,theme);
+  (this->fields).content = content;
+  func_?(&(this->fields).content,content);
   if ((theme != (Theme *)0x0) && (this_00 = (theme->fields)._Settings_k__BackingField, this_00 != (SettingsWrapper *)0x0)) {
     ThemeSettings::SettingsWrapper::SettingsWrapper_SubscribeToSettingsUI(this_00,(IMenu *)this,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -29,8 +27,8 @@ void Assembly-CSharp.dll::ThemeSettingsMenuBase::ThemeSettingsMenuBase_OnDestroy
   ppIStack_1 = (IMenu **)&stack0xfffffffc;
   pTVar2 = (this->fields).theme;
   if ((pTVar2 != (Theme *)0x0) && (pSVar3 = (pTVar2->fields)._Settings_k__BackingField, pSVar3 != (SettingsWrapper *)0x0)) {
+    (pSVar3->fields).menu = (IMenu *)0x0;
     ppIStack_1 = &(pSVar3->fields).menu;
-    *ppIStack_1 = (IMenu *)0x0;
     func_?();
     return;
   }
@@ -197,7 +195,7 @@ code_?:
             bVar27 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::RectTransform>__MoveNext__);
             if (bVar27 == 0) {
               pRStack_1 = (RectTransform *)0xffffffff;
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::RectTransform>__Dispose__,unaff_EDI);
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::RectTransform>__Dispose__,unaff_EDI);
               *(Transform__Fields *)unaff_FS_OFFSET = RStack_3.fields._._._.m_CachedPtr;
               return;
             }

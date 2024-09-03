@@ -27,7 +27,7 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::A
   fVar4 = (pQVar1->identityQuaternion).z;
   fVar5 = (pQVar1->identityQuaternion).w;
   (this->fields)._.pointingDuration = 1.5;
-  (this->fields)._.shouldPoint = 0;
+  (this->fields)._.pointState = 0;
   (this->fields).remotePitchRotation.x = fVar2;
   (this->fields).remotePitchRotation.y = fVar3;
   (this->fields).remotePitchRotation.z = fVar4;
@@ -36,23 +36,14 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::A
 }
 
 
-/* Void SetRotationRemotely(Single, Single) */
+/* Void SetRotationRemotely(Single, Single, Boolean) */
 
-void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::AvatarLimbManagerRemote_AvatarPointingHandlerRemote_SetRotationRemotely(AvatarLimbManagerRemote_AvatarPointingHandlerRemote *this,float yaw,float pitch,MethodInfo *method)
+void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::AvatarLimbManagerRemote_AvatarPointingHandlerRemote_SetRotationRemotely(AvatarLimbManagerRemote_AvatarPointingHandlerRemote *this,float yaw,float pitch,bool isPointingWeapon,MethodInfo *method)
 
 {
   if ((this->fields)._.isActive != 0) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Quaternion);
-      cRam_? = '\x01';
-    }
-    pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
-    QStack_2.x = (pQVar1->identityQuaternion).x;
-    QStack_2.y = (pQVar1->identityQuaternion).y;
-    QStack_2.z = (pQVar1->identityQuaternion).z;
-    QStack_2.w = (pQVar1->identityQuaternion).w;
-    iVar3 = func_?(auStack_4,&QStack_2,0);
-    if (yaw == *(float *)(iVar3 + 4)) {
+    (this->fields)._.pointState = isPointingWeapon + 1;
+    if (isPointingWeapon == 0) {
       if (cRam_? == '\0') {
         func_?(&TypeInfo__UnityEngine__Quaternion);
         cRam_? = '\x01';
@@ -62,11 +53,22 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::A
       QStack_2.y = (pQVar1->identityQuaternion).y;
       QStack_2.z = (pQVar1->identityQuaternion).z;
       QStack_2.w = (pQVar1->identityQuaternion).w;
-      pfVar5 = (float *)func_?(auStack_4,&QStack_2,0);
-      if (pitch == *pfVar5) {
-        (this->fields)._.shouldPoint = 0;
-        AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_StopPointing((AvatarLimbManager_AvatarPointingHandler *)this,(MethodInfo *)0x0);
-        return;
+      iVar3 = func_?(auStack_4,&QStack_2,0);
+      if (yaw == *(float *)(iVar3 + 4)) {
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__UnityEngine__Quaternion);
+          cRam_? = '\x01';
+        }
+        pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
+        QStack_2.x = (pQVar1->identityQuaternion).x;
+        QStack_2.y = (pQVar1->identityQuaternion).y;
+        QStack_2.z = (pQVar1->identityQuaternion).z;
+        QStack_2.w = (pQVar1->identityQuaternion).w;
+        pfVar5 = (float *)func_?(auStack_4,&QStack_2,0);
+        if (pitch == *pfVar5) {
+          (this->fields)._.pointState = 0;
+          return;
+        }
       }
     }
     uStack_6 = 0;
@@ -93,7 +95,6 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::A
     (this->fields).remotePitchRotation.z = fVar10;
     (this->fields).remotePitchRotation.w = fVar11;
     (this->fields)._.elapsedPointingTime = (this->fields)._.pointingDuration;
-    (this->fields)._.shouldPoint = 1;
   }
   return;
 }
@@ -104,10 +105,15 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::A
 void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::AvatarLimbManagerRemote_AvatarPointingHandlerRemote_UpdatePointing(AvatarLimbManagerRemote_AvatarPointingHandlerRemote *this,Vector3 localLookDirection,MethodInfo *method)
 
 {
-  if ((this->fields)._.shouldPoint != 0) {
+  if ((this->fields)._.pointState == 2) {
+    AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_HandleWeaponPointing((AvatarLimbManager_AvatarPointingHandler *)this,(this->fields).remoteYawRotation,(this->fields).remotePitchRotation,(MethodInfo *)0x0);
+  }
+  else if ((this->fields)._.pointState == 1) {
     AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_HandlePointing((AvatarLimbManager_AvatarPointingHandler *)this,(this->fields).remoteYawRotation,(this->fields).remotePitchRotation,(MethodInfo *)0x0);
   }
-  fStack1 = localLookDirection.z;
+  else {
+    AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_StopPointing((AvatarLimbManager_AvatarPointingHandler *)this,(MethodInfo *)0x0);
+  }
   AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_UpdatePointing((AvatarLimbManager_AvatarPointingHandler *)this,localLookDirection,(MethodInfo *)0x0);
   return;
 }
@@ -119,7 +125,7 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::A
 
 {
   (this->fields)._.pointingDuration = 0.8;
-  (this->fields)._.shouldPoint = 1;
+  (this->fields)._.pointState = 1;
   (this->fields)._.isActive = 1;
   return;
 }

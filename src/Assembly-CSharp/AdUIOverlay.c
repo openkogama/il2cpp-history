@@ -25,7 +25,7 @@ void Assembly-CSharp.dll::AdUIOverlay::AdUIOverlay_CreatePopup(AdUIOverlay *this
   }
   method_00 = TypeInfo__AdUIOverlay____c__DisplayClass8_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].monitor = (MonitorData *)this;
     func_?(&value[1].monitor,this);

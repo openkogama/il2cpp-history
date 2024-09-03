@@ -16,7 +16,7 @@ void Assembly-CSharp.dll::TouristPromotionExternalEvaluator::TouristPromotionExt
     pMVar5 = (MonitorData *)(pCVar4->fields)._TouristPromotionCreyFrequencyPercent_k__BackingField;
     pTVar6 = TypeInfo__TouristPromotionExternalEvaluator__TouristPromotionExternalDef;
     pOVar7 = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar7,ExceptionArgument__Enum_obj,(MethodInfo *)pTVar6);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar7,ExceptionArgument__Enum_obj,(MethodInfo *)pTVar6);
     pOVar7[1].klass = pOVar2;
     func_?(pOVar7 + 1,pOVar2);
     pOVar7[1].monitor = pMVar5;
@@ -29,7 +29,7 @@ void Assembly-CSharp.dll::TouristPromotionExternalEvaluator::TouristPromotionExt
         pMVar5 = (MonitorData *)(pCVar8->fields)._FrequencyPercent_k__BackingField;
         pTVar6 = TypeInfo__TouristPromotionExternalEvaluator__TouristPromotionExternalDef;
         pOVar7 = (Object *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar7,ExceptionArgument__Enum_obj,(MethodInfo *)pTVar6);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar7,ExceptionArgument__Enum_obj,(MethodInfo *)pTVar6);
         pOVar7[1].klass = pOVar2;
         func_?(pOVar7 + 1,pOVar2);
         pOVar7[1].monitor = pMVar5;
@@ -93,9 +93,8 @@ void Assembly-CSharp.dll::TouristPromotionExternalEvaluator::TouristPromotionExt
   }
   this_00 = (List_1_TouristPromotionExternalEvaluator_TouristPromotionExternalDef_ *)func_?(TypeInfo__System__Collections__Generic__List<TouristPromotionExternalEvaluator::TouristPromotionExternalDef>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<TouristPromotionExternalEvaluator::TouristPromotionExternalDef>__List__);
-  ppLVar1 = &(this->fields).availablePromotions;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).availablePromotions = this_00;
+  func_?(&(this->fields).availablePromotions,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }

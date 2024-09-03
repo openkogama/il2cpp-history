@@ -79,8 +79,8 @@ void Assembly-CSharp.dll::RegisteredPromotionController::RegisteredPromotionCont
 void Assembly-CSharp.dll::RegisteredPromotionController::RegisteredPromotionController_OnPromotionPop(RegisteredPromotionController *this,MethodInfo *method)
 
 {
-  pUVar1 = (this->fields).onPromotionWasPopped;
-  if (pUVar1 != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
+  if ((this->fields).onPromotionWasPopped != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
+    pUVar1 = (this->fields).onPromotionWasPopped;
     (*(pUVar1->fields)._._.invoke_impl)((pUVar1->fields)._._.method_code,1,1,(pUVar1->fields)._._.method);
   }
   return;
@@ -105,7 +105,7 @@ void Assembly-CSharp.dll::RegisteredPromotionController::RegisteredPromotionCont
   }
   method_00 = TypeInfo__RegisteredPromotionController____c__DisplayClass20_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].monitor = (MonitorData *)this;
     func_?(&value[1].monitor,this);
@@ -113,13 +113,12 @@ void Assembly-CSharp.dll::RegisteredPromotionController::RegisteredPromotionCont
       func_?(TypeInfo__UnityEngine__Object);
     }
     pOVar1 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)popupPrefab,RegisteredPromotionPopup_MethodInfo__UnityEngine__Object__Instantiate<RegisteredPromotionPopup>_RegisteredPromotionPopup_);
-    pOVar2 = value + 1;
-    pOVar2->klass = pOVar1;
-    func_?(pOVar2,pOVar1);
-    pOVar1 = pOVar2->klass;
-    pIVar3 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-    if (pIVar3 != (IAdManager *)0x0) {
-      withAd = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar3);
+    value[1].klass = pOVar1;
+    func_?(value + 1,pOVar1);
+    pOVar1 = value[1].klass;
+    pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+    if (pIVar2 != (IAdManager *)0x0) {
+      withAd = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar2);
       if (pOVar1 != (Object__Class *)0x0) {
         RegisteredPromotionPopup::RegisteredPromotionPopup_Initialize((RegisteredPromotionPopup *)pOVar1,isEmbeddedPromotion,withAd,(MethodInfo *)0x0);
         root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
@@ -135,8 +134,8 @@ void Assembly-CSharp.dll::RegisteredPromotionController::RegisteredPromotionCont
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -146,35 +145,34 @@ void Assembly-CSharp.dll::RegisteredPromotionController::RegisteredPromotionCont
 void Assembly-CSharp.dll::RegisteredPromotionController::RegisteredPromotionController_ShowPromotion(RegisteredPromotionController *this,UnityAction_2_System_Boolean_System_Boolean_ *onPop,MethodInfo *method)
 
 {
-  ppUVar1 = &(this->fields).onPromotionWasPopped;
-  *ppUVar1 = onPop;
-  func_?(ppUVar1,onPop);
+  (this->fields).onPromotionWasPopped = onPop;
+  func_?(&(this->fields).onPromotionWasPopped,onPop);
   if ((this->fields).embedded != 0) {
     if ((this->fields).subscriber != 0) goto code_?;
-    fVar2 = (this->fields).timer;
-    pfVar3 = &(this->fields).playFromKogamaPromoInterval;
-    if (*pfVar3 <= fVar2 && fVar2 != *pfVar3) {
+    fVar1 = (this->fields).timer;
+    pfVar2 = &(this->fields).playFromKogamaPromoInterval;
+    if (*pfVar2 <= fVar1 && fVar1 != *pfVar2) {
       RegisteredPromotionController_PushPromotionSlide(this,(this->fields).registeredPromotionPopupPrefab,1,(MethodInfo *)0x0);
       return;
     }
   }
-  if (((this->fields).subscriber == 0) && (fVar2 = (this->fields).timer, pfVar3 = &(this->fields).joinTheElitePromoInterval, *pfVar3 <= fVar2 && fVar2 != *pfVar3)) {
-    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar4 == (MVNetworkGame *)0x0) || (pEVar5 = (pMVar4->fields)._EliteSettings_k__BackingField, pEVar5 == (ElitePromotionSettings *)0x0)) {
+  if (((this->fields).subscriber == 0) && (fVar1 = (this->fields).timer, pfVar2 = &(this->fields).joinTheElitePromoInterval, *pfVar2 <= fVar1 && fVar1 != *pfVar2)) {
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar3 == (MVNetworkGame *)0x0) || (pEVar4 = (pMVar3->fields)._EliteSettings_k__BackingField, pEVar4 == (ElitePromotionSettings *)0x0)) {
       func_?();
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
       return;
     }
-    if ((pEVar5->fields)._ElitePromotionEnabled_k__BackingField != 0) {
+    if ((pEVar4->fields)._ElitePromotionEnabled_k__BackingField != 0) {
       RegisteredPromotionController_PushPromotionSlide(this,(this->fields).registeredElitePromotionPopupPrefab,0,(MethodInfo *)0x0);
       return;
     }
   }
 code_?:
-  pUVar7 = *ppUVar1;
-  if (pUVar7 != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
-    (*(pUVar7->fields)._._.invoke_impl)((pUVar7->fields)._._.method_code,0,0,(pUVar7->fields)._._.method);
+  if ((this->fields).onPromotionWasPopped != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
+    pUVar6 = (this->fields).onPromotionWasPopped;
+    (*(pUVar6->fields)._._.invoke_impl)((pUVar6->fields)._._.method_code,0,0,(pUVar6->fields)._._.method);
   }
   return;
 }
@@ -233,8 +231,8 @@ void Assembly-CSharp.dll::RegisteredPromotionController::RegisteredPromotionCont
     }
   }
 code_?:
-  pUVar6 = (this->fields).onPromotionWasPopped;
-  if (pUVar6 != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
+  if ((this->fields).onPromotionWasPopped != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
+    pUVar6 = (this->fields).onPromotionWasPopped;
     (*(pUVar6->fields)._._.invoke_impl)((pUVar6->fields)._._.method_code,0,0,(pUVar6->fields)._._.method);
   }
   return;

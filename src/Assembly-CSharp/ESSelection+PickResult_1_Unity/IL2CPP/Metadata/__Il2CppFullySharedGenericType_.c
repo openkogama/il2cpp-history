@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::ESSelection+PickResult`1[Unity::IL2CPP::Metadata::__Il
 {
   uVar1 = (method->klass->rgctx_data[1].klass)->actualSize;
   func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   pFVar2 = method->klass->rgctx_data->klass->fields;
   _guard_check_icall(pFVar2,0xc);
   puVar3 = (undefined8 *)func_?(this,pFVar2);

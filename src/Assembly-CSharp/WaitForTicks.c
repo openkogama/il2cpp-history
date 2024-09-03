@@ -40,7 +40,7 @@ int32_t Assembly-CSharp.dll::WaitForTicks::WaitForTicks_GetEnvironmentTick(int32
 void Assembly-CSharp.dll::WaitForTicks::WaitForTicks__ctor(WaitForTicks *this,int32_t milliseconds,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   dVar1 = (double)milliseconds;
   if (2147483647.0 < dVar1) {
     uVar2 = func_?(&TypeInfo__System__Int32,&milliseconds);

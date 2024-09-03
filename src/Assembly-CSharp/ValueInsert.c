@@ -105,9 +105,9 @@ void Assembly-CSharp.dll::ValueInsert::ValueInsert__ctor(ValueInsert *this,Metho
   this_00 = (List_1_System_Object_ *)func_?(TypeInfo__System__Collections__Generic__List<System::Object>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<System::Object>__List__);
   method_00 = (MethodInfo *)&this->fields;
-  ((ValueInsert__Fields *)method_00)->values = this_00;
+  (this->fields).values = this_00;
   func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

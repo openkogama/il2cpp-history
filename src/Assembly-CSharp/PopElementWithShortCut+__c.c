@@ -36,7 +36,7 @@ void Assembly-CSharp.dll::PopElementWithShortCut+<>c::PopElementWithShortCut_c__
   }
   method_00 = TypeInfo__PopElementWithShortCut____c;
   value = (PopElementWithShortCut_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__PopElementWithShortCut____c->static_fields->__9 = value;
   func_?(TypeInfo__PopElementWithShortCut____c->static_fields,value);
   return;

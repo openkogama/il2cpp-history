@@ -24,7 +24,7 @@ int32_t Assembly-CSharp.dll::WaitForTicksLocal::WaitForTicksLocal_GetEnvironment
 void Assembly-CSharp.dll::WaitForTicksLocal::WaitForTicksLocal__ctor(WaitForTicksLocal *this,int32_t milliseconds,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   dVar1 = (double)milliseconds;
   if (dVar1 <= 2147483647.0) {
     if (0.0 <= dVar1) {

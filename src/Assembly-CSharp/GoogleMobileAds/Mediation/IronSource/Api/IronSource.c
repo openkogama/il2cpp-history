@@ -59,7 +59,7 @@ void Assembly-CSharp.dll::GoogleMobileAds::Mediation::IronSource::Api::IronSourc
   if (uVar5 != 0) {
     do {
       if (pIVar3->interfaceOffsets[uVar4].interfaceType == (Il2CppClass *)TypeInfo__GoogleMobileAds__Mediation__IronSource__Common__IIronSourceClient) {
-        ppMVar6 = &(&(pIVar1->klass->vtable).SetMetaData)[pIVar3->interfaceOffsets[uVar4].offset].method;
+        ppMVar6 = &(&(pIVar1->klass->vtable).SetMetaData)[pIVar1->klass->interfaceOffsets[uVar4].offset].method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;
@@ -92,7 +92,7 @@ void Assembly-CSharp.dll::GoogleMobileAds::Mediation::IronSource::Api::IronSourc
     func_?(&StringLiteral_Dummy_);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,unaff_EDI);
   pMVar1 = MethodInfo__GoogleMobileAds__Mediation__IronSource__Common__DummyClient__DummyClient__;
   if (MethodInfo__GoogleMobileAds__Mediation__IronSource__Common__DummyClient__DummyClient__->is_inflated != 0) {
     pMVar1 = (MethodInfo *)func_?(MethodInfo__GoogleMobileAds__Mediation__IronSource__Common__DummyClient__DummyClient__);

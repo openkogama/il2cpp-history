@@ -36,9 +36,9 @@ void Assembly-CSharp.dll::NotificationFade::NotificationFade_OnDisable(Notificat
       }
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha(this_00,0.0,(MethodInfo *)0x0);
     }
-    pAVar2 = (this->fields).OnFinished;
     (this->fields).currentTime = 0.0;
-    if (pAVar2 != (Action *)0x0) {
+    if ((this->fields).OnFinished != (Action *)0x0) {
+      pAVar2 = (this->fields).OnFinished;
       (*(pAVar2->fields)._._.invoke_impl)((pAVar2->fields)._._.method_code);
     }
   }
@@ -51,11 +51,9 @@ void Assembly-CSharp.dll::NotificationFade::NotificationFade_OnDisable(Notificat
 void Assembly-CSharp.dll::NotificationFade::NotificationFade_Unpause(NotificationFade *this,MethodInfo *method)
 
 {
-  fVar1 = (this->fields).pauseAt;
-  fVar2 = (this->fields).duration;
-  if (fVar1 != fVar2) {
-    (this->fields).currentTime = fVar1;
-    (this->fields).pauseAt = fVar2;
+  if ((this->fields).pauseAt != (this->fields).duration) {
+    (this->fields).currentTime = (this->fields).pauseAt;
+    (this->fields).pauseAt = (this->fields).duration;
   }
   return;
 }
@@ -72,10 +70,10 @@ void Assembly-CSharp.dll::NotificationFade::NotificationFade_Update(Notification
   fVar1 = (this->fields).currentTime;
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   fVar2 = fVar2 + fVar1;
-  fVar1 = (this->fields).pauseAt;
+  pfVar3 = &(this->fields).pauseAt;
   (this->fields).currentTime = fVar2;
-  if (fVar1 < fVar2) {
-    (this->fields).currentTime = fVar1;
+  if (*pfVar3 <= fVar2 && fVar2 != *pfVar3) {
+    (this->fields).currentTime = (this->fields).pauseAt;
   }
   this_00 = (this->fields).textVisibilityCurve;
   this_01 = (this->fields).group;
@@ -88,8 +86,8 @@ void Assembly-CSharp.dll::NotificationFade::NotificationFade_Update(Notification
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

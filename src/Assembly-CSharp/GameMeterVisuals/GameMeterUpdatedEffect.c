@@ -10,9 +10,9 @@ IEnumerator * Assembly-CSharp.dll::GameMeterVisuals::GameMeterUpdatedEffect::Gam
   }
   method_00 = TypeInfo__GameMeterVisuals__GameMeterUpdatedEffect___AnimateScale_d__6;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -46,7 +46,7 @@ void Assembly-CSharp.dll::GameMeterVisuals::GameMeterUpdatedEffect::GameMeterUpd
       }
       method_00 = TypeInfo__GameMeterVisuals__GameMeterUpdatedEffect___AnimateScale_d__6;
       value = (Object *)func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
       value[1].klass = (Object__Class *)0x0;
       value[2].klass = (Object__Class *)this_01;
       func_?();

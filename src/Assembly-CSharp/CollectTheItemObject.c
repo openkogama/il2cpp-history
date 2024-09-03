@@ -38,7 +38,7 @@ void Assembly-CSharp.dll::CollectTheItemObject::CollectTheItemObject_InitializeG
             this_01 = (Object__Class *)*ppOVar6;
             value = (Object *)func_?();
             *(undefined1 *)&value[2].klass = 1;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
             value[1].klass = this_01;
             func_?();
             if (this_01 == (Object__Class *)0x0) goto code_?;

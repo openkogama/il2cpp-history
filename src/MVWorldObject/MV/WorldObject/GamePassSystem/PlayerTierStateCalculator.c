@@ -32,8 +32,8 @@ Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierStat
     func_?(TypeInfo__System__Enum);
   }
   source = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
-  source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast((IEnumerable *)source,System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_);
-  System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1(source_00,unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_);
+  source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_4((IEnumerable *)source,System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_);
+  System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1((IEnumerable_1_System_Byte_ *)source_00,unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_);
   this_00 = (MethodInfo *)func_?(TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor((Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)this_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Dictionary__);
   uVar2 = GamePassTier__Enum_Tier0;
@@ -169,8 +169,8 @@ Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierStat
     func_?(TypeInfo__System__Enum);
   }
   source = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
-  source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast((IEnumerable *)source,System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_);
-  System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1(source_00,unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_);
+  source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_4((IEnumerable *)source,System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_);
+  System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1((IEnumerable_1_System_Byte_ *)source_00,unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_);
   this_00 = (MethodInfo *)func_?(TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor((Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)this_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Dictionary__);
   uVar1 = GamePassTier__Enum_Tier0;
@@ -305,8 +305,8 @@ Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierStat
     func_?(TypeInfo__System__Enum);
   }
   source = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
-  source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast((IEnumerable *)source,System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_);
-  System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1(source_00,unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_);
+  source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_4((IEnumerable *)source,System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_);
+  System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1((IEnumerable_1_System_Byte_ *)source_00,unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_);
   this_01 = (PlayerTierState *)(in_stack_1 & 0xffffff);
   this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Dictionary__);
@@ -436,8 +436,8 @@ GamePassTier__Enum MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTie
       func_?(TypeInfo__System__Enum);
     }
     source = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
-    source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast((IEnumerable *)source,System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_);
-    System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1(source_00,unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_);
+    source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_4((IEnumerable *)source,System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_);
+    System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1((IEnumerable_1_System_Byte_ *)source_00,unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_);
     pMVar2 = (MonitorData *)0x0;
     uVar3 = 0;
     BStack_4 = 0;
@@ -522,7 +522,7 @@ String * MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalc
       pSStack_10 = pSVar9;
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffb0,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__Dispose__,(MethodInfo *)method_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffb0,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__Dispose__,(MethodInfo *)method_00);
     *unaff_FS_OFFSET = uStack_3;
     return pSVar9;
   }
@@ -547,9 +547,9 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalculat
   this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__Dictionary__);
   method_00 = (MethodInfo *)&(this->fields).progressionThresholds;
-  *(Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ **)method_00 = this_00;
+  (this->fields).progressionThresholds = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *)this_00;
   func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 
@@ -566,14 +566,13 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalculat
   }
   this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__Dictionary__);
-  ppDVar1 = &(this->fields).progressionThresholds;
-  *ppDVar1 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *)this_00;
-  method_00 = (MethodInfo *)ppDVar1;
-  func_?(ppDVar1,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  method_00 = (MethodInfo *)&(this->fields).progressionThresholds;
+  (this->fields).progressionThresholds = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *)this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).gamePassRewardsActivated = gamePassRewardsActivated;
-  *ppDVar1 = progressionThresholds;
-  func_?(ppDVar1,progressionThresholds);
+  (this->fields).progressionThresholds = progressionThresholds;
+  func_?(&(this->fields).progressionThresholds,progressionThresholds);
   (this->fields).gamePointVelocityIsZero = gamePointVelocityIsZero;
   (this->fields).welcomeReward = welcomeReward;
   return;

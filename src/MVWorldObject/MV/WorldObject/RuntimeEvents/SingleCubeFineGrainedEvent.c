@@ -30,7 +30,7 @@ String * MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGraine
 void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::SingleCubeFineGrainedEvent__ctor(SingleCubeFineGrainedEvent *this,IntVector position,uint8_t material,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._.position.x = position.x;
   (this->fields)._.position.y = position.y;
   (this->fields)._.position.z = position.z;
@@ -45,7 +45,7 @@ void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEve
 void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::SingleCubeFineGrainedEvent__ctor_1(SingleCubeFineGrainedEvent *this,IntVector position,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._.position.x = position.x;
   (this->fields)._.position.y = position.y;
   (this->fields)._._RuntimeEventType_k__BackingField = 2;
@@ -59,7 +59,7 @@ void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEve
 void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::SingleCubeFineGrainedEvent__ctor_2(SingleCubeFineGrainedEvent *this,RuntimeEventType__Enum runtimeEventType,BytePacker *bp,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields)._._RuntimeEventType_k__BackingField = (undefined1)runtimeEventType;
   if ((undefined1)runtimeEventType == RuntimeEventType__Enum_FineGrainedSingleCubeAdd) {
     if (bp == (BytePacker *)0x0) {

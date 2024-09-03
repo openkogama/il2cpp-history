@@ -131,7 +131,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                 SettingsSlider::SettingsSlider_Initialize_1(pSVar13,StringLiteral_ppLensDistInt,(int32_t)value,-0x4b,0x4b,(MethodInfo *)0x0);
                 pSVar14 = (pCVar1->fields).intensityInputField;
                 if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar14,StringLiteral_ppLensDistInt,(int32_t)value,(MethodInfo *)0x0);
+                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar14,StringLiteral_ppLensDistInt,(int32_t)value,(MethodInfo *)0x0);
                   pCVar3 = (pCVar1->fields).cameraBoxSettings;
                   uStack_15 = 100;
                   value = (Object *)func_?(TypeInfo__System__Int32,&uStack_15);
@@ -159,7 +159,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                           SettingsSlider::SettingsSlider_Initialize_1(pSVar13,StringLiteral_ppLensDistXmult,(int32_t)value,0,100,(MethodInfo *)0x0);
                           pSVar14 = (pCVar1->fields).xMultiplierInputField;
                           if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar14,StringLiteral_ppLensDistXmult,(int32_t)value,(MethodInfo *)0x0);
+                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar14,StringLiteral_ppLensDistXmult,(int32_t)value,(MethodInfo *)0x0);
                             pCVar3 = (pCVar1->fields).cameraBoxSettings;
                             pOStack_9 = (Object *)0x64;
                             value = (Object *)func_?(TypeInfo__System__Int32,&pOStack_9);
@@ -187,7 +187,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                                     SettingsSlider::SettingsSlider_Initialize_1(pSVar13,StringLiteral_ppLensDistYmult,(int32_t)value,0,100,(MethodInfo *)0x0);
                                     pSVar14 = (pCVar1->fields).yMultiplierInputField;
                                     if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar14,StringLiteral_ppLensDistYmult,(int32_t)value,(MethodInfo *)0x0);
+                                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar14,StringLiteral_ppLensDistYmult,(int32_t)value,(MethodInfo *)0x0);
                                       return;
                                     }
                                   }

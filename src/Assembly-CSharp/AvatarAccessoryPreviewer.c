@@ -8,18 +8,14 @@ IEnumerator * Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPrev
     func_?(&TypeInfo__AvatarAccessoryPreviewer___AnimationEndTrack_d__35);
     cRam_? = '\x01';
   }
-  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)func_?(TypeInfo__AvatarAccessoryPreviewer___AnimationEndTrack_d__35);
-  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor(this_00,0,(MethodInfo *)0x0);
-  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
-    this_00[1].monitor = (MonitorData *)this;
-    func_?(&this_00[1].monitor);
-    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)resetDelay;
-    return (IEnumerator *)this_00;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__AvatarAccessoryPreviewer___AnimationEndTrack_d__35;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].monitor = (MonitorData *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(&value[2].monitor,this);
+  value[2].klass = (Object__Class *)resetDelay;
+  return (IEnumerator *)value;
 }
 
 
@@ -32,15 +28,13 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Cha
     func_?(&MethodInfo__System__Collections__Generic__List<System::String>__get_Count__);
     cRam_? = '\x01';
   }
-  piVar1 = &(this->fields).currentAnimation;
-  *piVar1 = *piVar1 + 1;
-  pLVar2 = (this->fields).animations;
-  iVar3 = (this->fields).currentAnimation;
-  if (pLVar2 != (List_1_System_String_ *)0x0) {
-    if ((pLVar2->fields)._size <= iVar3) {
-      iVar3 = 1;
+  pLVar1 = (this->fields).animations;
+  iVar2 = (this->fields).currentAnimation + 1;
+  (this->fields).currentAnimation = iVar2;
+  if (pLVar1 != (List_1_System_String_ *)0x0) {
+    if ((pLVar1->fields)._size <= iVar2) {
+      (this->fields).currentAnimation = 1;
     }
-    (this->fields).currentAnimation = iVar3;
     if (cRam_? == '\0') {
       func_?(&MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
       cRam_? = '\x01';
@@ -53,8 +47,8 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Cha
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -68,9 +62,8 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_OnD
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).avatarBody;
-  if (this_00 != (MVBody *)0x0) {
-    MVBody::MVBody_DestroyClone(this_00,(MethodInfo *)0x0);
+  if ((this->fields).avatarBody != (MVBody *)0x0) {
+    MVBody::MVBody_DestroyClone((this->fields).avatarBody,(MethodInfo *)0x0);
   }
   pAVar1 = (this->fields).toPreviewer;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -86,26 +79,26 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_OnD
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)pGVar3,(MethodInfo *)0x0);
   }
-  ppTVar4 = &(this->fields).avatarResetToTransform;
-  x = *ppTVar4;
+  pTVar4 = (this->fields).avatarResetToTransform;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pTVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 != 0) {
-    if (*ppTVar4 == (Transform *)0x0) {
+    pTVar4 = (this->fields).avatarResetToTransform;
+    if (pTVar4 == (Transform *)0x0) {
 code_?:
       func_?();
       pcVar5 = (code *)swi(3);
       (*pcVar5)();
       return;
     }
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)*ppTVar4,(MethodInfo *)0x0);
+    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar4,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)pGVar3,(MethodInfo *)0x0);
-    *ppTVar4 = (Transform *)0x0;
+    (this->fields).avatarResetToTransform = (Transform *)0x0;
     func_?();
   }
   return;
@@ -126,17 +119,18 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_OnD
   fVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::InputUnsafeUtility_GetAxis(StringLiteral_Mouse_X,(MethodInfo *)0x0);
   pAVar2 = (this->fields).toPreviewer;
   (this->fields).currentRotationSpeed = -fVar1 * (this->fields).rotationSensitivity;
-  if (pAVar2 != (AvatarPreviewer *)0x0) {
-    pCVar3 = (pAVar2->fields).previewCam;
-    if (pCVar3 != (Camera *)0x0) {
-      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView(pCVar3,(MethodInfo *)0x0);
-      fVar5 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::InputUnsafeUtility_GetAxis(StringLiteral_Mouse_Y,(MethodInfo *)0x0);
-      fVar1 = (this->fields).zoomSpeed;
-      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView(pCVar3,fVar1 * fVar5 * fVar6 + fVar4,(MethodInfo *)0x0);
-      pAVar2 = (this->fields).toPreviewer;
-      if ((pAVar2 != (AvatarPreviewer *)0x0) && (pCVar3 = (pAVar2->fields).previewCam, pCVar3 != (Camera *)0x0)) {
-        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView(pCVar3,(MethodInfo *)0x0);
+  if ((pAVar2 != (AvatarPreviewer *)0x0) && (pCVar3 = (pAVar2->fields).previewCam, pCVar3 != (Camera *)0x0)) {
+    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView(pCVar3,(MethodInfo *)0x0);
+    fVar5 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::InputUnsafeUtility_GetAxis(StringLiteral_Mouse_Y,(MethodInfo *)0x0);
+    fVar1 = (this->fields).zoomSpeed;
+    fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView(pCVar3,fVar1 * fVar5 * fVar6 + fVar4,(MethodInfo *)0x0);
+    pAVar2 = (this->fields).toPreviewer;
+    if (pAVar2 != (AvatarPreviewer *)0x0) {
+      pCVar3 = (pAVar2->fields).previewCam;
+      this_00 = (((this->fields).toPreviewer)->fields).previewCam;
+      if (this_00 != (Camera *)0x0) {
+        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView(this_00,(MethodInfo *)0x0);
         fVar1 = 20.0;
         if ((fVar4 < 20.0) || (fVar1 = 60.0, 60.0 < fVar4)) {
           fVar4 = fVar1;
@@ -193,29 +187,29 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_OnP
         fVar5 = VVar9.x;
         pRVar7 = (this->fields).toImage;
         if ((pRVar7 != (RawImage *)0x0) && (pRVar8 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform((Graphic *)pRVar7,(MethodInfo *)0x0), pRVar8 != (RectTransform *)0x0)) {
-          fVar10 = 0.0;
-          pRVar11 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffb0,pRVar8,(MethodInfo *)0x0);
-          fVar6 = pRVar11->m_Height;
+          method_00 = (MethodInfo *)0x0;
+          pRVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffb0,pRVar8,(MethodInfo *)0x0);
+          fVar6 = pRVar10->m_Height;
           pRVar7 = (this->fields).toImage;
           if ((pRVar7 != (RawImage *)0x0) && (pRVar8 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform((Graphic *)pRVar7,(MethodInfo *)0x0), pRVar8 != (RectTransform *)0x0)) {
             VVar9 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_pivot(pRVar8,(MethodInfo *)0x0);
-            pAVar12 = (this->fields).toPreviewer;
-            if ((pAVar12 != (AvatarPreviewer *)0x0) && (this_00 = (pAVar12->fields).previewCam, this_00 != (Camera *)0x0)) {
+            pAVar11 = (this->fields).toPreviewer;
+            if ((pAVar11 != (AvatarPreviewer *)0x0) && (this_00 = (pAVar11->fields).previewCam, this_00 != (Camera *)0x0)) {
               pos.y = fVar3 + fVar6 / (1.0 / VVar9.y);
-              pos.x = fVar2 + fVar10 / (1.0 / fVar5);
+              pos.x = fVar2 + (float)method_00 / (1.0 / fVar5);
               pos.z = 0.0;
-              pRVar13 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2((Ray *)&stack0xffffffa8,this_00,pos,(MethodInfo *)0x0);
-              if (((this->fields).pickedAccessory == 0) || (uVar14 = (pRVar13->m_Direction).z, uVar15 = (pRVar13->m_Origin).x, uVar16 = (pRVar13->m_Origin).y, uVar17 = (pRVar13->m_Origin).z, ray.m_Origin.z = (float)uVar17, ray.m_Origin.y = (float)uVar16, ray.m_Origin.x = (float)uVar15, uVar18 = (pRVar13->m_Direction).x, uVar19 = (pRVar13->m_Direction).y, ray.m_Direction.y = (float)uVar19, ray.m_Direction.x = (float)uVar18, ray.m_Direction.z = (float)uVar14, bVar20 = AvatarAccessoryPreviewer_PickAccessory(this,ray,&pGStack_1,(RaycastHit *)&stack0xffffff7c,(MethodInfo *)0x0), bVar20 == 0)) {
+              pRVar12 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2((Ray *)&stack0xffffffa8,this_00,pos,(MethodInfo *)0x0);
+              if (((this->fields).pickedAccessory == 0) || (uVar13 = (pRVar12->m_Direction).z, uVar14 = (pRVar12->m_Origin).x, uVar15 = (pRVar12->m_Origin).y, uVar16 = (pRVar12->m_Origin).z, ray.m_Origin.z = (float)uVar16, ray.m_Origin.y = (float)uVar15, ray.m_Origin.x = (float)uVar14, uVar17 = (pRVar12->m_Direction).x, uVar18 = (pRVar12->m_Direction).y, ray.m_Direction.y = (float)uVar18, ray.m_Direction.x = (float)uVar17, ray.m_Direction.z = (float)uVar13, bVar19 = AvatarAccessoryPreviewer_PickAccessory(this,ray,&pGStack_1,(RaycastHit *)&stack0xffffff7c,(MethodInfo *)0x0), bVar19 == 0)) {
                 return;
               }
-              this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
-              UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-              if (((pGStack_1 != (GameObject *)0x0) && (pOVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentInChildren_3(pGStack_1,1,SelectionHelperAvatarAccessory_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionHelperAvatarAccessory>_bool_), pOVar21 != (Object *)0x0)) && (pAVar22 = AccessoryDataManager::AccessoryDataManager_GetAccessoryDataByStreamingAssetId((int32_t)pOVar21[3].monitor,(MethodInfo *)0x0), this_01 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0)) {
-                (this_01->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)pAVar22;
+              value = (Object *)func_?();
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,method_00);
+              if (((pGStack_1 != (GameObject *)0x0) && (pOVar20 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentInChildren_3(pGStack_1,1,SelectionHelperAvatarAccessory_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionHelperAvatarAccessory>_bool_), pOVar20 != (Object *)0x0)) && (pOVar21 = (Object__Class *)AccessoryDataManager::AccessoryDataManager_GetAccessoryDataByStreamingAssetId((int32_t)pOVar20[3].monitor,(MethodInfo *)0x0), value != (Object *)0x0)) {
+                value[1].klass = pOVar21;
                 func_?();
                 root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
                 callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_01,MethodInfo__AvatarAccessoryPreviewer____c__DisplayClass30_0___OnPointerClick_b__0_UnityEngine__EventSystems__IAccessoryClicked__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,MethodInfo__AvatarAccessoryPreviewer____c__DisplayClass30_0___OnPointerClick_b__0_UnityEngine__EventSystems__IAccessoryClicked__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
                 if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
@@ -229,8 +223,8 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_OnP
     }
   }
   func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -271,9 +265,8 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_OnR
       return;
     }
     pAVar4 = (ActivateOnAnimationBase__Array *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren((Component *)pAVar1,ActivateOnAnimationBase__MethodInfo__UnityEngine__Component__GetComponentsInChildren<ActivateOnAnimationBase>______);
-    ppAVar5 = &(this->fields).OnAnimationActivators;
-    *ppAVar5 = pAVar4;
-    func_?(ppAVar5,pAVar4);
+    (this->fields).OnAnimationActivators = pAVar4;
+    func_?(&(this->fields).OnAnimationActivators,pAVar4);
     AvatarAccessoryPreviewer_RemoveSkinnedMeshOptimizers(this,(MethodInfo *)0x0);
     AvatarAccessoryPreviewer_PlayAnimation_1(this,StringLiteral_Idle,(MethodInfo *)0x0);
   }
@@ -306,15 +299,16 @@ bool Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Pic
   if ((TypeInfo__UnityEngine__Physics->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  fVar2 = (float)(1 << ((byte)iVar1 & 0x1f));
-  ray_00.m_Direction.y = INFINITY;
-  auVar3 = SUB1612(ray._0_16_,0);
+  layerMask = (undefined4 *)(1 << ((byte)iVar1 & 0x1f));
+  auVar2 = ray._0_20_;
+  ray_00.m_Direction.z = INFINITY;
+  auVar3 = auVar2._0_12_;
   ray_00.m_Origin.x = (float)auVar3._0_4_;
   ray_00.m_Origin.y = (float)auVar3._4_4_;
   ray_00.m_Origin.z = (float)auVar3._8_4_;
-  ray_00.m_Direction.x = (float)SUB164(ray._0_16_,0xc);
-  ray_00.m_Direction.z = fVar2;
-  pRVar4 = UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_RaycastAll_5(ray_00,INFINITY,(int32_t)fVar2,(MethodInfo *)0x0);
+  ray_00.m_Direction.x = (float)auVar2._12_4_;
+  ray_00.m_Direction.y = (float)auVar2._16_4_;
+  pRVar4 = UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_RaycastAll_5(ray_00,INFINITY,(int32_t)layerMask,(MethodInfo *)0x0);
   uVar5 = 0;
   if (pRVar4 == (RaycastHit__Array *)0x0) {
 code_?:
@@ -324,45 +318,37 @@ code_?:
     this_01 = pRVar4->vector;
     while( true ) {
       if ((int)pRVar4->max_length <= (int)uVar5) {
-        pGRam00000000 = (GameObject *)0x0;
+        *layerMask = 0;
         func_?();
         uStack6 = 0;
-        pRStack7 = raycastHit;
+        uStack7 = 0;
         func_?();
         return 0;
       }
       if (pRVar4->max_length <= uVar5) break;
       this_00 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_collider(this_01,(MethodInfo *)0x0);
       if (this_00 == (Collider *)0x0) goto code_?;
-      pGRam00000000 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
+      pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
+      *layerMask = pGVar8;
       func_?();
       if (pRVar4->max_length <= uVar5) break;
-      fVar2 = (this_01->m_Point).y;
-      fVar8 = (this_01->m_Point).z;
-      fVar9 = (this_01->m_Normal).x;
-      iVar1 = this_01->m_Collider;
-      fVar10 = (this_01->m_Normal).y;
-      fVar11 = (this_01->m_Normal).z;
-      uVar12 = this_01->m_FaceID;
-      fVar13 = this_01->m_Distance;
-      VVar14 = this_01->m_UV;
-      (raycastHit->m_Point).x = (this_01->m_Point).x;
-      (raycastHit->m_Point).y = fVar2;
-      (raycastHit->m_Point).z = fVar8;
-      (raycastHit->m_Normal).x = fVar9;
-      (raycastHit->m_Normal).y = fVar10;
-      (raycastHit->m_Normal).z = fVar11;
-      raycastHit->m_FaceID = uVar12;
-      raycastHit->m_Distance = fVar13;
-      raycastHit->m_UV = VVar14;
-      raycastHit->m_Collider = iVar1;
-      if (pGRam00000000 == (GameObject *)0x0) goto code_?;
-      x = (Object_1 *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGRam00000000,SelectionHelperAvatarAccessory_MethodInfo__UnityEngine__GameObject__GetComponent<SelectionHelperAvatarAccessory>__);
+      fRam00000000 = (this_01->m_Point).x;
+      fRam00000004 = (this_01->m_Point).y;
+      fRam00000008 = (this_01->m_Point).z;
+      fRam0000000c = (this_01->m_Normal).x;
+      iRam_? = this_01->m_Collider;
+      fRam00000010 = (this_01->m_Normal).y;
+      fRam00000014 = (this_01->m_Normal).z;
+      uRam_? = this_01->m_FaceID;
+      fRam0000001c = this_01->m_Distance;
+      VRam00000020 = this_01->m_UV;
+      if ((GameObject *)*layerMask == (GameObject *)0x0) goto code_?;
+      x = (Object_1 *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1((GameObject *)*layerMask,SelectionHelperAvatarAccessory_MethodInfo__UnityEngine__GameObject__GetComponent<SelectionHelperAvatarAccessory>__);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      bVar15 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar15 != 0) {
+      bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar9 != 0) {
         return 1;
       }
       uVar5 = uVar5 + 1;
@@ -370,9 +356,9 @@ code_?:
     }
   }
   func_?();
-  pcVar16 = (code *)swi(3);
-  bVar15 = (*pcVar16)();
-  return bVar15;
+  pcVar10 = (code *)swi(3);
+  bVar9 = (*pcVar10)();
+  return bVar9;
 }
 
 
@@ -428,15 +414,15 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Pla
               func_?();
               cRam_? = '\x01';
             }
-            this_01 = (SubscribableVariable_1_System_Int32Enum_ *)func_?();
-            SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor(this_01,0,(MethodInfo *)0x0);
-            if (this_01 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
-              this_01[1].monitor = (MonitorData *)this;
-              func_?(&this_01[1].monitor,this);
-              this_01[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)(((float)this_00 / fVar5) * fVar7);
-              UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,(IEnumerator *)this_01,(MethodInfo *)0x0);
-              return;
-            }
+            method_00 = TypeInfo__AvatarAccessoryPreviewer___AnimationEndTrack_d__35;
+            value = (Object *)func_?();
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+            value[1].klass = (Object__Class *)0x0;
+            value[2].monitor = (MonitorData *)this;
+            func_?();
+            value[2].klass = (Object__Class *)(((float)this_00 / fVar5) * fVar7);
+            UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
+            return;
           }
           break;
         }
@@ -549,10 +535,10 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Res
     fVar8 = pQVar6->z;
     fVar9 = pQVar6->w;
     if (this_02 != (Transform *)0x0) {
-      value.y = (fVar7 * fVar5 + fVar9 * fVar3 + pQVar6->x * fVar4) - fVar8 * fVar2;
-      value.x = (pQVar6->x * fVar5 + fVar9 * fVar2 + fVar8 * fVar3) - fVar7 * fVar4;
-      value.z = (fVar8 * fVar5 + fVar9 * fVar4 + fVar7 * fVar2) - pQVar6->x * fVar3;
-      value.w = ((fVar9 * fVar5 - pQVar6->x * fVar2) - fVar7 * fVar3) - fVar8 * fVar4;
+      value.y = (fVar3 * fVar9 + fVar7 * fVar5 + fVar4 * pQVar6->x) - fVar8 * fVar2;
+      value.x = (fVar9 * fVar2 + pQVar6->x * fVar5 + fVar8 * fVar3) - fVar7 * fVar4;
+      value.z = (fVar4 * fVar9 + fVar8 * fVar5 + fVar7 * fVar2) - fVar3 * pQVar6->x;
+      value.w = ((fVar9 * fVar5 - fVar2 * pQVar6->x) - fVar7 * fVar3) - fVar4 * fVar8;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(this_02,value,(MethodInfo *)0x0);
       pAVar10 = (this->fields).toPreviewer;
       if ((pAVar10 != (AvatarPreviewer *)0x0) && (this_01 = (pAVar10->fields).previewCam, this_01 != (Camera *)0x0)) {
@@ -601,314 +587,320 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Set
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_SETUP,(MethodInfo *)0x0);
-  ppMVar1 = &(this->fields).avatarBody;
-  *ppMVar1 = avatarBody;
-  func_?(ppMVar1,avatarBody);
+  (this->fields).avatarBody = avatarBody;
+  func_?(&(this->fields).avatarBody,avatarBody);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Quaternion);
     cRam_? = '\x01';
   }
   UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffd0,(Vector3)ZEXT812(0x40490fdb00000000),(MethodInfo *)0x0);
-  pMVar2 = (Material *)&(this->fields).bodyClone;
-  pGVar3 = *(GameObject **)pMVar2;
+  pGVar1 = (this->fields).bodyClone;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pGVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar4 != 0) {
-    pGVar3 = (this->fields).bodyClone;
-    if ((pGVar3 == (GameObject *)0x0) || (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar3,(MethodInfo *)0x0), pTVar5 == (Transform *)0x0)) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffa0,pTVar5,(MethodInfo *)0x0);
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pGVar1 = (this->fields).bodyClone;
+    if ((pGVar1 == (GameObject *)0x0) || (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar1,(MethodInfo *)0x0), pTVar3 == (Transform *)0x0)) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffa0,pTVar3,(MethodInfo *)0x0);
   }
   if (avatarBody != (MVBody *)0x0) {
-    pGVar3 = MVBody::MVBody_CreateClone(avatarBody,1,1,(MethodInfo *)0x0);
-    (this->fields).bodyClone = pGVar3;
+    pGVar1 = MVBody::MVBody_CreateClone(avatarBody,1,1,(MethodInfo *)0x0);
+    (this->fields).bodyClone = pGVar1;
     func_?();
     MVBody::MVBody_set_AccessoryMoveOverride(avatarBody,0,(MethodInfo *)0x0);
-    pTVar5 = (this->fields).avatarResetToTransform;
+    pTVar3 = (this->fields).avatarResetToTransform;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    puVar6 = (undefined *)0x0;
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pTVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      pTVar5 = (this->fields).avatarResetToTransform;
-      if (pTVar5 == (Transform *)0x0) goto code_?;
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar5,(MethodInfo *)0x0);
+    puVar4 = (undefined *)0x0;
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pTVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      pTVar3 = (this->fields).avatarResetToTransform;
+      if (pTVar3 == (Transform *)0x0) goto code_?;
+      pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar3,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)pGVar3,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)pGVar1,(MethodInfo *)0x0);
     }
-    pAVar7 = (this->fields).toPreviewer;
+    pAVar5 = (this->fields).toPreviewer;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pAVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      pAVar7 = (this->fields).toPreviewer;
-      if (pAVar7 == (AvatarPreviewer *)0x0) goto code_?;
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pAVar7,(MethodInfo *)0x0);
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)pAVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      pAVar5 = (this->fields).toPreviewer;
+      if (pAVar5 == (AvatarPreviewer *)0x0) goto code_?;
+      pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pAVar5,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)pGVar3,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)pGVar1,(MethodInfo *)0x0);
     }
-    pGVar3 = (GameObject *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(pGVar3,(MethodInfo *)0x0);
-    if (pGVar3 != (GameObject *)0x0) {
-      pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar3,(MethodInfo *)0x0);
-      (this->fields).avatarResetToTransform = pTVar5;
+    pGVar1 = (GameObject *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(pGVar1,(MethodInfo *)0x0);
+    if (pGVar1 != (GameObject *)0x0) {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
+      (this->fields).avatarResetToTransform = pTVar3;
       func_?();
-      pRVar8 = (this->fields).toImage;
-      if (pRVar8 != (RawImage *)0x0) {
-        (*(code *)(pRVar8->klass->vtable).set_color.method)();
-        pGVar3 = (this->fields).bodyClone;
-        if (pGVar3 != (GameObject *)0x0) {
-          pOVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren(pGVar3,UnityEngine__MonoBehaviour__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MonoBehaviour>______);
-          uVar10 = 0;
-          if (pOVar9 != (Object__Array *)0x0) {
-            ppOVar11 = pOVar9->vector;
-            for (; (int)uVar10 < (int)pOVar9->max_length; uVar10 = uVar10 + 1) {
-              if (pOVar9->max_length <= uVar10) goto code_?;
-              if ((Behaviour *)*ppOVar11 == (Behaviour *)0x0) goto code_?;
-              UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)*ppOVar11,0,(MethodInfo *)0x0);
-              ppOVar11 = ppOVar11 + 1;
+      pRVar6 = (this->fields).toImage;
+      if (pRVar6 != (RawImage *)0x0) {
+        (*(code *)(pRVar6->klass->vtable).set_color.method)();
+        pGVar1 = (this->fields).bodyClone;
+        if (pGVar1 != (GameObject *)0x0) {
+          pOVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren(pGVar1,UnityEngine__MonoBehaviour__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MonoBehaviour>______);
+          uVar8 = 0;
+          if (pOVar7 != (Object__Array *)0x0) {
+            pOVar9 = (Object *)pOVar7->vector;
+            for (; (int)uVar8 < (int)pOVar7->max_length; uVar8 = uVar8 + 1) {
+              if (pOVar7->max_length <= uVar8) goto code_?;
+              if (pOVar9->klass == (Object__Class *)0x0) goto code_?;
+              UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)pOVar9->klass,0,(MethodInfo *)0x0);
+              pOVar9 = (Object *)&pOVar9->monitor;
             }
-            if (pMVar2->klass != (Material__Class *)0x0) {
-              pOVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren((GameObject *)pMVar2->klass,PickupItem__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<PickupItem>______);
-              uVar10 = 0;
-              if (pOVar9 != (Object__Array *)0x0) {
-                ppOVar11 = pOVar9->vector;
-                for (; (int)uVar10 < (int)pOVar9->max_length; uVar10 = uVar10 + 1) {
-                  if (pOVar9->max_length <= uVar10) goto code_?;
-                  if (((Component *)*ppOVar11 == (Component *)0x0) || (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)*ppOVar11,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0)) goto code_?;
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar3,0,(MethodInfo *)0x0);
-                  ppOVar11 = ppOVar11 + 1;
+            pGVar1 = (this->fields).bodyClone;
+            if (pGVar1 != (GameObject *)0x0) {
+              pOVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren(pGVar1,PickupItem__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<PickupItem>______);
+              uVar8 = 0;
+              if (pOVar7 != (Object__Array *)0x0) {
+                pOVar9 = (Object *)pOVar7->vector;
+                for (; (int)uVar8 < (int)pOVar7->max_length; uVar8 = uVar8 + 1) {
+                  if (pOVar7->max_length <= uVar8) goto code_?;
+                  if ((pOVar9->klass == (Object__Class *)0x0) || (pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pOVar9->klass,(MethodInfo *)0x0), pGVar1 == (GameObject *)0x0)) goto code_?;
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar1,0,(MethodInfo *)0x0);
+                  pOVar9 = (Object *)&pOVar9->monitor;
                 }
-                if (pMVar2->klass != (Material__Class *)0x0) {
-                  pOVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren((GameObject *)pMVar2->klass,AvatarModifier__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<AvatarModifier>______);
-                  uVar10 = 0;
-                  if (pOVar9 != (Object__Array *)0x0) {
-                    ppOVar11 = pOVar9->vector;
-                    for (; (int)uVar10 < (int)pOVar9->max_length; uVar10 = uVar10 + 1) {
-                      if (pOVar9->max_length <= uVar10) goto code_?;
-                      if (((Component *)*ppOVar11 == (Component *)0x0) || (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)*ppOVar11,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0)) goto code_?;
-                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar3,0,(MethodInfo *)0x0);
-                      ppOVar11 = ppOVar11 + 1;
+                pGVar1 = (this->fields).bodyClone;
+                if (pGVar1 != (GameObject *)0x0) {
+                  pOVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren(pGVar1,AvatarModifier__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<AvatarModifier>______);
+                  uVar8 = 0;
+                  if (pOVar7 != (Object__Array *)0x0) {
+                    pOVar9 = (Object *)pOVar7->vector;
+                    for (; (int)uVar8 < (int)pOVar7->max_length; uVar8 = uVar8 + 1) {
+                      if (pOVar7->max_length <= uVar8) goto code_?;
+                      if ((pOVar9->klass == (Object__Class *)0x0) || (pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pOVar9->klass,(MethodInfo *)0x0), pGVar1 == (GameObject *)0x0)) goto code_?;
+                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar1,0,(MethodInfo *)0x0);
+                      pOVar9 = (Object *)&pOVar9->monitor;
                     }
-                    if (pMVar2->klass != (Material__Class *)0x0) {
-                      p_Var16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren_3((GameObject *)pMVar2->klass,1,SelectionHelperAvatarAccessory__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<SelectionHelperAvatarAccessory>_bool_____);
-                      uVar10 = 0;
-                      if (p_Var16 != (_Il2CppFullySharedGenericType__Array *)0x0) {
-                        pp_Var27 = p_Var16->vector;
-                        for (; (int)uVar10 < (int)p_Var16->max_length; uVar10 = uVar10 + 1) {
-                          if (p_Var16->max_length <= uVar10) goto code_?;
-                          if (((Component *)*pp_Var27 == (Component *)0x0) || (this_01 = (Collider *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)*pp_Var27,UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__), this_01 == (Collider *)0x0)) goto code_?;
-                          UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled(this_01,1,(MethodInfo *)0x0);
-                          pp_Var27 = pp_Var27 + 1;
+                    pGVar1 = (this->fields).bodyClone;
+                    if (pGVar1 != (GameObject *)0x0) {
+                      p_Var12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren_4(pGVar1,1,SelectionHelperAvatarAccessory__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<SelectionHelperAvatarAccessory>_bool_____);
+                      uVar8 = 0;
+                      if (p_Var12 != (_Il2CppFullySharedGenericType__Array *)0x0) {
+                        pOVar9 = (Object *)p_Var12->vector;
+                        for (; (int)uVar8 < (int)p_Var12->max_length; uVar8 = uVar8 + 1) {
+                          if (p_Var12->max_length <= uVar8) goto code_?;
+                          if ((pOVar9->klass == (Object__Class *)0x0) || (this_02 = (Collider *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)pOVar9->klass,UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__), this_02 == (Collider *)0x0)) goto code_?;
+                          UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled(this_02,1,(MethodInfo *)0x0);
+                          pOVar9 = (Object *)&pOVar9->monitor;
                         }
-                        if (pMVar2->klass != (Material__Class *)0x0) {
-                          p_Var16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren_3((GameObject *)pMVar2->klass,1,AnimatedSpriteSheetTexture__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<AnimatedSpriteSheetTexture>_bool_____);
-                          uVar10 = 0;
-                          if (p_Var16 != (_Il2CppFullySharedGenericType__Array *)0x0) {
-                            pp_Var27 = p_Var16->vector;
-                            for (; (int)uVar10 < (int)p_Var16->max_length; uVar10 = uVar10 + 1) {
-                              if (p_Var16->max_length <= uVar10) goto code_?;
-                              if ((Behaviour *)*pp_Var27 == (Behaviour *)0x0) goto code_?;
-                              UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)*pp_Var27,1,(MethodInfo *)0x0);
-                              pp_Var27 = pp_Var27 + 1;
+                        pGVar1 = (this->fields).bodyClone;
+                        if (pGVar1 != (GameObject *)0x0) {
+                          p_Var12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren_4(pGVar1,1,AnimatedSpriteSheetTexture__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<AnimatedSpriteSheetTexture>_bool_____);
+                          uVar8 = 0;
+                          if (p_Var12 != (_Il2CppFullySharedGenericType__Array *)0x0) {
+                            pOVar9 = (Object *)p_Var12->vector;
+                            for (; (int)uVar8 < (int)p_Var12->max_length; uVar8 = uVar8 + 1) {
+                              if (p_Var12->max_length <= uVar8) goto code_?;
+                              if (pOVar9->klass == (Object__Class *)0x0) goto code_?;
+                              UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)pOVar9->klass,1,(MethodInfo *)0x0);
+                              pOVar9 = (Object *)&pOVar9->monitor;
                             }
-                            if (pMVar2->klass != (Material__Class *)0x0) {
-                              p_Var16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren_3((GameObject *)pMVar2->klass,1,AnimatedTextureOffset__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<AnimatedTextureOffset>_bool_____);
-                              uVar10 = 0;
-                              if (p_Var16 != (_Il2CppFullySharedGenericType__Array *)0x0) {
-                                pp_Var27 = p_Var16->vector;
-                                for (; (int)uVar10 < (int)p_Var16->max_length; uVar10 = uVar10 + 1) {
-                                  if (p_Var16->max_length <= uVar10) goto code_?;
-                                  if ((Behaviour *)*pp_Var27 == (Behaviour *)0x0) goto code_?;
-                                  UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)*pp_Var27,1,(MethodInfo *)0x0);
-                                  pp_Var27 = pp_Var27 + 1;
+                            pGVar1 = (this->fields).bodyClone;
+                            if (pGVar1 != (GameObject *)0x0) {
+                              p_Var12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren_4(pGVar1,1,AnimatedTextureOffset__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<AnimatedTextureOffset>_bool_____);
+                              uVar8 = 0;
+                              if (p_Var12 != (_Il2CppFullySharedGenericType__Array *)0x0) {
+                                pOVar9 = (Object *)p_Var12->vector;
+                                for (; (int)uVar8 < (int)p_Var12->max_length; uVar8 = uVar8 + 1) {
+                                  if (p_Var12->max_length <= uVar8) goto code_?;
+                                  if (pOVar9->klass == (Object__Class *)0x0) goto code_?;
+                                  UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)pOVar9->klass,1,(MethodInfo *)0x0);
+                                  pOVar9 = (Object *)&pOVar9->monitor;
                                 }
-                                if (pMVar2->klass != (Material__Class *)0x0) {
-                                  pOVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren((GameObject *)pMVar2->klass,SelectionBox__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<SelectionBox>______);
-                                  uVar10 = 0;
-                                  if (pOVar9 != (Object__Array *)0x0) {
-                                    ppOVar11 = pOVar9->vector;
-                                    for (; (int)uVar10 < (int)pOVar9->max_length; uVar10 = uVar10 + 1) {
-                                      if (pOVar9->max_length <= uVar10) goto code_?;
-                                      if ((Component *)*ppOVar11 == (Component *)0x0) goto code_?;
-                                      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)*ppOVar11,(MethodInfo *)0x0);
+                                pGVar1 = (this->fields).bodyClone;
+                                if (pGVar1 != (GameObject *)0x0) {
+                                  pOVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren(pGVar1,SelectionBox__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<SelectionBox>______);
+                                  uVar8 = 0;
+                                  if (pOVar7 != (Object__Array *)0x0) {
+                                    pOVar9 = (Object *)pOVar7->vector;
+                                    for (; (int)uVar8 < (int)pOVar7->max_length; uVar8 = uVar8 + 1) {
+                                      if (pOVar7->max_length <= uVar8) goto code_?;
+                                      if (pOVar9->klass == (Object__Class *)0x0) goto code_?;
+                                      pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pOVar9->klass,(MethodInfo *)0x0);
                                       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                                         func_?();
                                       }
-                                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)pGVar3,(MethodInfo *)0x0);
-                                      ppOVar11 = ppOVar11 + 1;
+                                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)pGVar1,(MethodInfo *)0x0);
+                                      pOVar9 = (Object *)&pOVar9->monitor;
                                     }
-                                    if (pMVar2->klass != (Material__Class *)0x0) {
-                                      this_05 = pMVar2;
-                                      this_02 = (Component *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentInChildren_1((GameObject *)pMVar2->klass,InvulnerabilityBubble_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<InvulnerabilityBubble>__);
+                                    pGVar1 = (this->fields).bodyClone;
+                                    if (pGVar1 != (GameObject *)0x0) {
+                                      this_03 = (Component *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentInChildren_1(pGVar1,InvulnerabilityBubble_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<InvulnerabilityBubble>__);
                                       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                                         func_?();
                                       }
-                                      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)this_02,(Object_1 *)0x0,(MethodInfo *)0x0);
-                                      if (bVar4 != 0) {
-                                        if ((this_02 == (Component *)0x0) || (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(this_02,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0)) goto code_?;
-                                        puVar6 = &UNK_?;
-                                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar3,0,(MethodInfo *)0x0);
+                                      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)this_03,(Object_1 *)0x0,(MethodInfo *)0x0);
+                                      if (bVar2 != 0) {
+                                        if ((this_03 == (Component *)0x0) || (pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(this_03,(MethodInfo *)0x0), pGVar1 == (GameObject *)0x0)) goto code_?;
+                                        puVar4 = &UNK_?;
+                                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar1,0,(MethodInfo *)0x0);
                                       }
                                       AvatarAccessoryPreviewer_RemoveSkinnedMeshOptimizers(this,(MethodInfo *)0x0);
-                                      if (pMVar2->klass != (Material__Class *)0x0) {
-                                        pOVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren((GameObject *)pMVar2->klass,UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______);
-                                        puVar12 = (undefined *)0x0;
-                                        if (pOVar9 != (Object__Array *)0x0) {
-                                          __return_storage_ptr__ = (Color *)pOVar9->vector;
-                                          for (; (int)puVar12 < (int)pOVar9->max_length; puVar12 = puVar12 + 1) {
-                                            uVar10 = 0;
-                                            iVar13 = 0x10;
+                                      pGVar1 = (this->fields).bodyClone;
+                                      if (pGVar1 != (GameObject *)0x0) {
+                                        pOVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren(pGVar1,UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______);
+                                        pMVar10 = (Material *)0x0;
+                                        if (pOVar7 != (Object__Array *)0x0) {
+                                          pOVar9 = (Object *)pOVar7->vector;
+                                          for (; (int)pMVar10 < (int)pOVar7->max_length; pMVar10 = (Material *)((int)&pMVar10->klass + 1)) {
+                                            uVar8 = 0;
+                                            iVar11 = 0x10;
                                             while( true ) {
-                                              if ((undefined *)pOVar9->max_length <= puVar12) goto code_?;
-                                              if (((Renderer *)__return_storage_ptr__->r == (Renderer *)0x0) || (pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials((Renderer *)__return_storage_ptr__->r,(MethodInfo *)0x0), pMVar14 == (Material__Array *)0x0)) goto code_?;
-                                              if ((int)pMVar14->max_length <= (int)uVar10) break;
-                                              if ((undefined *)pOVar9->max_length <= puVar12) goto code_?;
-                                              if (((Renderer *)__return_storage_ptr__->r == (Renderer *)0x0) || (pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials((Renderer *)__return_storage_ptr__->r,(MethodInfo *)0x0), pMVar14 == (Material__Array *)0x0)) goto code_?;
-                                              if (pMVar14->max_length <= uVar10) goto code_?;
-                                              pMVar2 = *(Material **)((int)pMVar14->vector + iVar13 + -0x10);
-                                              if (pMVar2 == (Material *)0x0) goto code_?;
-                                              bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_HasProperty_1(pMVar2,StringLiteral__Color,(MethodInfo *)0x0);
-                                              if (bVar4 != 0) {
-                                                if ((undefined *)pOVar9->max_length <= puVar12) goto code_?;
-                                                if (((Renderer *)__return_storage_ptr__->r == (Renderer *)0x0) || (pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials((Renderer *)__return_storage_ptr__->r,(MethodInfo *)0x0), pMVar14 == (Material__Array *)0x0)) goto code_?;
-                                                if (pMVar14->max_length <= uVar10) goto code_?;
-                                                pMVar2 = *(Material **)((int)pMVar14->vector + iVar13 + -0x10);
-                                                if (pMVar2 == (Material *)0x0) goto code_?;
-                                                __return_storage_ptr__ = (Color *)&stack0xffffffd0;
-                                                pOVar9 = (Object__Array *)&UNK_?;
-                                                pCVar15 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color(__return_storage_ptr__,pMVar2,(MethodInfo *)0x0);
-                                                fVar16 = pCVar15->r;
-                                                fVar17 = pCVar15->g;
-                                                fVar18 = pCVar15->b;
-                                                if ((Material *)pOVar9->max_length <= pMVar2) goto code_?;
-                                                if (((Renderer *)__return_storage_ptr__->r == (Renderer *)0x0) || (pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials((Renderer *)__return_storage_ptr__->r,(MethodInfo *)0x0), pMVar14 == (Material__Array *)0x0)) goto code_?;
-                                                if (pMVar14->max_length <= uVar10) goto code_?;
-                                                this_05 = *(Material **)((int)pMVar14->vector + iVar13 + -0x10);
-                                                if (this_05 == (Material *)0x0) goto code_?;
-                                                puVar12 = &UNK_?;
-                                                value_02.g = fVar17;
-                                                value_02.r = fVar16;
-                                                value_02.b = fVar18;
-                                                value_02.a = 1.0;
-                                                UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color(this_05,value_02,(MethodInfo *)0x0);
+                                              if ((Material *)pOVar7->max_length <= pMVar10) goto code_?;
+                                              if ((pOVar9->klass == (Object__Class *)0x0) || (pMVar12 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials((Renderer *)pOVar9->klass,(MethodInfo *)0x0), pMVar12 == (Material__Array *)0x0)) goto code_?;
+                                              if ((int)pMVar12->max_length <= (int)uVar8) break;
+                                              if ((Material *)pOVar7->max_length <= pMVar10) goto code_?;
+                                              if ((pOVar9->klass == (Object__Class *)0x0) || (pMVar12 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials((Renderer *)pOVar9->klass,(MethodInfo *)0x0), pMVar12 == (Material__Array *)0x0)) goto code_?;
+                                              if (pMVar12->max_length <= uVar8) goto code_?;
+                                              this_00 = *(Material **)((int)pMVar12->vector + iVar11 + -0x10);
+                                              if (this_00 == (Material *)0x0) goto code_?;
+                                              bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_HasProperty_1(this_00,StringLiteral__Color,(MethodInfo *)0x0);
+                                              if (bVar2 != 0) {
+                                                if ((Material *)pOVar7->max_length <= pMVar10) goto code_?;
+                                                if ((pOVar9->klass == (Object__Class *)0x0) || (pMVar12 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials((Renderer *)pOVar9->klass,(MethodInfo *)0x0), pMVar12 == (Material__Array *)0x0)) goto code_?;
+                                                if (pMVar12->max_length <= uVar8) goto code_?;
+                                                pMVar10 = *(Material **)((int)pMVar12->vector + iVar11 + -0x10);
+                                                if (pMVar10 == (Material *)0x0) goto code_?;
+                                                pOVar9 = (Object *)0x0;
+                                                pOVar7 = (Object__Array *)&stack0xffffffc0;
+                                                pCVar13 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color((Color *)pOVar7,pMVar10,(MethodInfo *)0x0);
+                                                fVar14 = pCVar13->r;
+                                                fVar15 = pCVar13->g;
+                                                fVar16 = pCVar13->b;
+                                                fVar17 = 1.0;
+                                                if ((Object *)pOVar7->max_length <= pOVar9) goto code_?;
+                                                if ((pMVar10->klass == (Material__Class *)0x0) || (pMVar12 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials((Renderer *)pMVar10->klass,(MethodInfo *)0x0), pMVar12 == (Material__Array *)0x0)) goto code_?;
+                                                if (pMVar12->max_length <= uVar8) goto code_?;
+                                                pMVar10 = *(Material **)((int)pMVar12->vector + iVar11 + -0x10);
+                                                if (pMVar10 == (Material *)0x0) goto code_?;
+                                                pOVar9 = (Object *)&UNK_?;
+                                                value_02.g = fVar15;
+                                                value_02.r = fVar14;
+                                                value_02.b = fVar16;
+                                                value_02.a = fVar17;
+                                                UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color(pMVar10,value_02,(MethodInfo *)0x0);
                                               }
-                                              uVar10 = uVar10 + 1;
-                                              iVar13 = iVar13 + 4;
+                                              uVar8 = uVar8 + 1;
+                                              iVar11 = iVar11 + 4;
                                             }
-                                            __return_storage_ptr__ = (Color *)&__return_storage_ptr__->g;
+                                            pOVar9 = (Object *)&pOVar9->monitor;
                                           }
-                                          if (this_05->klass != (Material__Class *)0x0) {
-                                            pAVar19 = (Animation *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentInChildren_1((GameObject *)this_05->klass,UnityEngine__Animation_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Animation>__);
-                                            ppAVar20 = &(this->fields).goAnimation;
-                                            *ppAVar20 = pAVar19;
+                                          pGVar1 = (this->fields).bodyClone;
+                                          if (pGVar1 != (GameObject *)0x0) {
+                                            pAVar18 = (Animation *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentInChildren_1(pGVar1,UnityEngine__Animation_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Animation>__);
+                                            (this->fields).goAnimation = pAVar18;
                                             func_?();
-                                            pAVar19 = *ppAVar20;
-                                            this_04 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).animations;
-                                            if (this_04 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-                                              fVar16 = (float)(this->fields).currentAnimation;
-                                              puVar12 = &UNK_?;
-                                              animation = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_04,(int32_t)fVar16,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
-                                              if (pAVar19 != (Animation *)0x0) {
-                                                UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Play_2(pAVar19,(String *)animation,(MethodInfo *)0x0);
-                                                if (*ppAVar20 != (Animation *)0x0) {
-                                                  pAVar21 = (ActivateOnAnimationBase__Array *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren((Component *)*ppAVar20,ActivateOnAnimationBase__MethodInfo__UnityEngine__Component__GetComponentsInChildren<ActivateOnAnimationBase>______);
-                                                  ppAVar22 = &(this->fields).OnAnimationActivators;
-                                                  *ppAVar22 = pAVar21;
+                                            this_05 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).animations;
+                                            pAVar18 = (this->fields).goAnimation;
+                                            if (this_05 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+                                              fVar14 = (float)(this->fields).currentAnimation;
+                                              puVar19 = &UNK_?;
+                                              animation = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_05,(int32_t)fVar14,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
+                                              if (pAVar18 != (Animation *)0x0) {
+                                                UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Play_2(pAVar18,(String *)animation,(MethodInfo *)0x0);
+                                                pAVar18 = (this->fields).goAnimation;
+                                                if (pAVar18 != (Animation *)0x0) {
+                                                  pAVar20 = (ActivateOnAnimationBase__Array *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren((Component *)pAVar18,ActivateOnAnimationBase__MethodInfo__UnityEngine__Component__GetComponentsInChildren<ActivateOnAnimationBase>______);
+                                                  (this->fields).OnAnimationActivators = pAVar20;
                                                   func_?();
-                                                  pAVar21 = *ppAVar22;
-                                                  uVar10 = 0;
-                                                  if (pAVar21 != (ActivateOnAnimationBase__Array *)0x0) {
-                                                    iVar13 = 0x10;
-                                                    while ((int)uVar10 < (int)pAVar21->max_length) {
-                                                      pAVar21 = (this->fields).OnAnimationActivators;
-                                                      if (pAVar21 == (ActivateOnAnimationBase__Array *)0x0) goto code_?;
-                                                      if (pAVar21->max_length <= uVar10) goto code_?;
-                                                      piVar23 = *(int **)((int)pAVar21->vector + iVar13 + -0x10);
-                                                      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).animations;
-                                                      if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,(this->fields).currentAnimation,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_), piVar23 == (int *)0x0)) goto code_?;
-                                                      (**(code **)(*piVar23 + 0xe8))();
-                                                      uVar10 = uVar10 + 1;
-                                                      iVar13 = iVar13 + 4;
-                                                      pAVar21 = (this->fields).OnAnimationActivators;
-                                                      if (pAVar21 == (ActivateOnAnimationBase__Array *)0x0) goto code_?;
+                                                  pAVar20 = (this->fields).OnAnimationActivators;
+                                                  uVar8 = 0;
+                                                  if (pAVar20 != (ActivateOnAnimationBase__Array *)0x0) {
+                                                    pOVar9 = (Object *)0x10;
+                                                    while ((int)uVar8 < (int)pAVar20->max_length) {
+                                                      pAVar20 = (this->fields).OnAnimationActivators;
+                                                      if (pAVar20 == (ActivateOnAnimationBase__Array *)0x0) goto code_?;
+                                                      if (pAVar20->max_length <= uVar8) goto code_?;
+                                                      pOVar21 = *(Object **)((int)pAVar20->vector + (int)(pOVar9 + -2));
+                                                      this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).animations;
+                                                      if ((this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_01,(this->fields).currentAnimation,MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_), pOVar21 == (Object *)0x0)) goto code_?;
+                                                      (*(code *)pOVar21->klass[1]._0.namespaze)();
+                                                      uVar8 = uVar8 + 1;
+                                                      pAVar20 = (this->fields).OnAnimationActivators;
+                                                      pOVar9 = (Object *)&pOVar9->monitor;
+                                                      if (pAVar20 == (ActivateOnAnimationBase__Array *)0x0) goto code_?;
                                                     }
-                                                    pAVar7 = (this->fields).previewer;
+                                                    pAVar5 = (this->fields).previewer;
                                                     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                                                       func_?();
                                                     }
-                                                    pAVar7 = (AvatarPreviewer *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pAVar7,AvatarPreviewer_MethodInfo__UnityEngine__Object__Instantiate<AvatarPreviewer>_AvatarPreviewer_);
-                                                    ppAVar24 = &(this->fields).toPreviewer;
-                                                    *ppAVar24 = pAVar7;
+                                                    pAVar5 = (AvatarPreviewer *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pAVar5,AvatarPreviewer_MethodInfo__UnityEngine__Object__Instantiate<AvatarPreviewer>_AvatarPreviewer_);
+                                                    (this->fields).toPreviewer = pAVar5;
                                                     func_?();
-                                                    iVar25 = (this->fields).previewDimensionsX;
-                                                    pAVar7 = *ppAVar24;
-                                                    textureHeight = (this->fields).previewDimensionsY;
-                                                    pMVar26 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-                                                    if ((pMVar26 != (MVLocalPlayer *)0x0) && (pMVar27 = MVLocalPlayer::MVLocalPlayer_get_Body(pMVar26,(MethodInfo *)0x0), pMVar27 != (MVBody *)0x0)) {
-                                                      layersToRender = (pMVar27->fields)._._._.previewLayerMask;
-                                                      pTVar5 = (this->fields).avatarResetToTransform;
-                                                      uVar28 = 0xbf00000000000000;
-                                                      fVar17 = -1.0;
-                                                      fVar18 = 100.0;
-                                                      fVar29 = 100.0;
-                                                      fVar30 = 100.0;
-                                                      pMVar26 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-                                                      if ((pMVar26 != (MVLocalPlayer *)0x0) && (pMVar27 = MVLocalPlayer::MVLocalPlayer_get_Body(pMVar26,(MethodInfo *)0x0), pAVar7 != (AvatarPreviewer *)0x0)) {
-                                                        previewPosition.y = fVar29;
-                                                        previewPosition.x = fVar18;
-                                                        cameraOffset.z = fVar17;
-                                                        cameraOffset.x = (float)(int)uVar28;
-                                                        cameraOffset.y = (float)(int)((ulonglong)uVar28 >> 0x20);
-                                                        previewPosition.z = fVar30;
-                                                        AvatarPreviewer::AvatarPreviewer_Initialize(pAVar7,iVar25,textureHeight,CameraClearFlags__Enum_Color,layersToRender,cameraOffset,pTVar5,previewPosition,StringLiteral_Avatar_accessory_preview,(MVWorldObjectClient *)pMVar27,(this->fields).bodyClone,(Vector3)ZEXT812(0x41700000),(MethodInfo *)0x0);
-                                                        pAVar7 = (this->fields).toPreviewer;
-                                                        if (((pAVar7 != (AvatarPreviewer *)0x0) && (pCVar31 = (pAVar7->fields).previewCam, pCVar31 != (Camera *)0x0)) && (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pCVar31,(MethodInfo *)0x0), pTVar5 != (Transform *)0x0)) {
-                                                          pVVar32 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffc0,pTVar5,(MethodInfo *)0x0);
-                                                          uVar33 = pVVar32->x;
-                                                          uVar34 = pVVar32->y;
-                                                          value.y = (float)uVar34 + 1.22;
-                                                          value.x = (float)uVar33 + 0.0;
-                                                          value.z = pVVar32->z + 0.0;
-                                                          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar5,value,(MethodInfo *)0x0);
-                                                          pGVar3 = (this->fields).bodyClone;
-                                                          if ((pGVar3 != (GameObject *)0x0) && (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar3,(MethodInfo *)0x0), pTVar5 != (Transform *)0x0)) {
-                                                            value_00.y = (float)puVar12;
-                                                            value_00.x = (float)puVar6;
-                                                            value_00.z = (float)this_04;
-                                                            value_00.w = fVar16;
-                                                            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar5,value_00,(MethodInfo *)0x0);
-                                                            pAVar7 = (this->fields).toPreviewer;
-                                                            if ((pAVar7 != (AvatarPreviewer *)0x0) && (pCVar31 = (pAVar7->fields).previewCam, pCVar31 != (Camera *)0x0)) {
-                                                              fVar16 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView(pCVar31,(MethodInfo *)0x0);
-                                                              pGVar3 = (this->fields).bodyClone;
-                                                              (this->fields).startFov = fVar16;
-                                                              iVar25 = LayerUtil::LayerUtil_GetLayerNumber(LayerFlags__Enum_Hidden,(MethodInfo *)0x0);
-                                                              LayerUtil::LayerUtil_SetLayerRecursively_4(pGVar3,iVar25,(MethodInfo *)0x0);
-                                                              pAVar7 = (this->fields).toPreviewer;
-                                                              if ((pAVar7 != (AvatarPreviewer *)0x0) && (pRVar8 = (this->fields).toImage, pRVar8 != (RawImage *)0x0)) {
-                                                                UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture(pRVar8,(Texture *)(pAVar7->fields).previewTexture,(MethodInfo *)0x0);
-                                                                pGVar3 = (GameObject *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)(this->fields).dropShadowPlane,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
-                                                                if ((pGVar3 != (GameObject *)0x0) && (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar3,(MethodInfo *)0x0), pTVar5 != (Transform *)0x0)) {
-                                                                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent(pTVar5,(this->fields).avatarResetToTransform,(MethodInfo *)0x0);
-                                                                  pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar3,(MethodInfo *)0x0);
-                                                                  pAVar7 = (this->fields).toPreviewer;
-                                                                  if (((pAVar7 != (AvatarPreviewer *)0x0) && (pGVar3 = (pAVar7->fields)._PreviewGameObject_k__BackingField, pGVar3 != (GameObject *)0x0)) && (this_03 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar3,(MethodInfo *)0x0), this_03 != (Transform *)0x0)) {
-                                                                    pVVar32 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffc0,this_03,(MethodInfo *)0x0);
-                                                                    uVar35 = pVVar32->x;
-                                                                    uVar36 = pVVar32->y;
-                                                                    if (pTVar5 != (Transform *)0x0) {
-                                                                      value_01.y = (float)uVar36 - 0.1;
-                                                                      value_01.x = (float)uVar35 + 0.0;
-                                                                      value_01.z = pVVar32->z + 0.0;
-                                                                      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar5,value_01,(MethodInfo *)0x0);
+                                                    pOVar9 = (Object *)(this->fields).previewDimensionsX;
+                                                    pAVar5 = (this->fields).toPreviewer;
+                                                    pOVar21 = (Object *)(this->fields).previewDimensionsY;
+                                                    pMVar22 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+                                                    if ((pMVar22 != (MVLocalPlayer *)0x0) && (pMVar23 = MVLocalPlayer::MVLocalPlayer_get_Body(pMVar22,(MethodInfo *)0x0), pMVar23 != (MVBody *)0x0)) {
+                                                      layersToRender = (Object *)(pMVar23->fields)._._._.previewLayerMask;
+                                                      pTVar3 = (this->fields).avatarResetToTransform;
+                                                      uVar24 = 0;
+                                                      uVar25 = 0xbf000000;
+                                                      fVar15 = -1.0;
+                                                      pMVar26 = (MonitorData *)0x42c80000;
+                                                      pIVar27 = (Il2CppArrayBounds *)0x42c80000;
+                                                      fVar16 = 100.0;
+                                                      pMVar22 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+                                                      if ((pMVar22 != (MVLocalPlayer *)0x0) && (pMVar23 = MVLocalPlayer::MVLocalPlayer_get_Body(pMVar22,(MethodInfo *)0x0), pAVar5 != (AvatarPreviewer *)0x0)) {
+                                                        previewPosition.y = (float)pIVar27;
+                                                        previewPosition.x = (float)pMVar26;
+                                                        cameraOffset.y = (float)uVar25;
+                                                        cameraOffset.x = (float)uVar24;
+                                                        cameraOffset.z = fVar15;
+                                                        previewPosition.z = fVar16;
+                                                        AvatarPreviewer::AvatarPreviewer_Initialize(pAVar5,(int32_t)pOVar9,(int32_t)pOVar21,CameraClearFlags__Enum_Color,(LayerFlags__Enum)layersToRender,cameraOffset,pTVar3,previewPosition,StringLiteral_Avatar_accessory_preview,(MVWorldObjectClient *)pMVar23,(this->fields).bodyClone,(Vector3)ZEXT812(0x41700000),(MethodInfo *)0x0);
+                                                        pAVar5 = (this->fields).toPreviewer;
+                                                        if (((pAVar5 != (AvatarPreviewer *)0x0) && (pCVar28 = (pAVar5->fields).previewCam, pCVar28 != (Camera *)0x0)) && (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pCVar28,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
+                                                          pVVar29 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffc0,pTVar3,(MethodInfo *)0x0);
+                                                          uVar30 = pVVar29->x;
+                                                          uVar31 = pVVar29->y;
+                                                          value.y = (float)uVar31 + 1.22;
+                                                          value.x = (float)uVar30 + 0.0;
+                                                          value.z = pVVar29->z + 0.0;
+                                                          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar3,value,(MethodInfo *)0x0);
+                                                          pGVar1 = (this->fields).bodyClone;
+                                                          if ((pGVar1 != (GameObject *)0x0) && (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar1,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
+                                                            value_00.y = (float)puVar19;
+                                                            value_00.x = (float)puVar4;
+                                                            value_00.z = (float)this_05;
+                                                            value_00.w = fVar14;
+                                                            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar3,value_00,(MethodInfo *)0x0);
+                                                            pAVar5 = (this->fields).toPreviewer;
+                                                            if ((pAVar5 != (AvatarPreviewer *)0x0) && (pCVar28 = (pAVar5->fields).previewCam, pCVar28 != (Camera *)0x0)) {
+                                                              fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView(pCVar28,(MethodInfo *)0x0);
+                                                              pGVar1 = (this->fields).bodyClone;
+                                                              (this->fields).startFov = fVar14;
+                                                              layer = LayerUtil::LayerUtil_GetLayerNumber(LayerFlags__Enum_Hidden,(MethodInfo *)0x0);
+                                                              LayerUtil::LayerUtil_SetLayerRecursively_4(pGVar1,layer,(MethodInfo *)0x0);
+                                                              pAVar5 = (this->fields).toPreviewer;
+                                                              if ((pAVar5 != (AvatarPreviewer *)0x0) && (pRVar6 = (this->fields).toImage, pRVar6 != (RawImage *)0x0)) {
+                                                                UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture(pRVar6,(Texture *)(pAVar5->fields).previewTexture,(MethodInfo *)0x0);
+                                                                pGVar1 = (GameObject *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)(this->fields).dropShadowPlane,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
+                                                                if ((pGVar1 != (GameObject *)0x0) && (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar1,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
+                                                                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent(pTVar3,(this->fields).avatarResetToTransform,(MethodInfo *)0x0);
+                                                                  pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
+                                                                  pAVar5 = (this->fields).toPreviewer;
+                                                                  if (((pAVar5 != (AvatarPreviewer *)0x0) && (pGVar1 = (pAVar5->fields)._PreviewGameObject_k__BackingField, pGVar1 != (GameObject *)0x0)) && (this_04 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar1,(MethodInfo *)0x0), this_04 != (Transform *)0x0)) {
+                                                                    pVVar29 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffc0,this_04,(MethodInfo *)0x0);
+                                                                    uVar32 = pVVar29->x;
+                                                                    uVar33 = pVVar29->y;
+                                                                    if (pTVar3 != (Transform *)0x0) {
+                                                                      value_01.y = (float)uVar33 - 0.1;
+                                                                      value_01.x = (float)uVar32 + 0.0;
+                                                                      value_01.z = pVVar29->z + 0.0;
+                                                                      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar3,value_01,(MethodInfo *)0x0);
                                                                       (this->fields).imagesReady = 1;
                                                                       return;
                                                                     }
@@ -949,8 +941,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar37 = (code *)swi(3);
-  (*pcVar37)();
+  pcVar34 = (code *)swi(3);
+  (*pcVar34)();
   return;
 }
 
@@ -1031,8 +1023,8 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer__St
     func_?(&TypeInfo__UnityEngine__EventSystems__IGetCurrentBody);
     cRam_? = '\x01';
   }
-  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<MVBody>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__AvatarAccessoryPreviewer__SetupPreviewer_MVBody_,(MethodInfo *)0x0);
+  this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<MVBody>);
+  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_00,(Object *)this,MethodInfo__AvatarAccessoryPreviewer__SetupPreviewer_MVBody_,(MethodInfo *)0x0);
   if (x != (IGetCurrentBody *)0x0) {
     func_?(0,TypeInfo__UnityEngine__EventSystems__IGetCurrentBody);
     return;
@@ -1072,15 +1064,14 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer__ct
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_00,(Object *)StringLiteral_Jump,MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_00,(Object *)StringLiteral_Swim,MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_00,(Object *)StringLiteral_Dead,MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
-    ppLVar1 = &(this->fields).animations;
-    *ppLVar1 = this_00;
-    func_?(ppLVar1,this_00);
+    (this->fields).animations = this_00;
+    func_?(&(this->fields).animations,this_00);
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

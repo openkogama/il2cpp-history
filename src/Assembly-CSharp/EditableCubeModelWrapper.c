@@ -71,7 +71,7 @@ void Assembly-CSharp.dll::EditableCubeModelWrapper::EditableCubeModelWrapper_Set
   }
   method_00 = TypeInfo__EditableCubeModelWrapper____c__DisplayClass7_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)this;
     func_?(value + 1,this);
@@ -84,15 +84,14 @@ void Assembly-CSharp.dll::EditableCubeModelWrapper::EditableCubeModelWrapper_Set
     this_00 = (Func_1_Object_ *)func_?(TypeInfo__System__Func<IModelingConstraint>);
     mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor(this_00,value,MethodInfo__EditableCubeModelWrapper____c__DisplayClass7_0___SetConstraints_b__0__,(MethodInfo *)0x0);
     if (pMVar1 != (MVCubeModelInstance *)0x0) {
-      ppFVar2 = &(pMVar1->fields)._._ModelingConstraintBuilder_k__BackingField;
-      *ppFVar2 = (Func_1_IModelingConstraint_ *)this_00;
-      func_?(ppFVar2,this_00);
+      (pMVar1->fields)._._ModelingConstraintBuilder_k__BackingField = (Func_1_IModelingConstraint_ *)this_00;
+      func_?(&(pMVar1->fields)._._ModelingConstraintBuilder_k__BackingField,this_00);
       return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -102,7 +101,7 @@ void Assembly-CSharp.dll::EditableCubeModelWrapper::EditableCubeModelWrapper_Set
 void Assembly-CSharp.dll::EditableCubeModelWrapper::EditableCubeModelWrapper__ctor(EditableCubeModelWrapper *this,MVCubeModelInstance *cubeModelBase,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).cubeModelBase = cubeModelBase;
   func_?(&this->fields,cubeModelBase);
   if (cubeModelBase != (MVCubeModelInstance *)0x0) {
@@ -124,17 +123,16 @@ void Assembly-CSharp.dll::EditableCubeModelWrapper::EditableCubeModelWrapper__ct
 void Assembly-CSharp.dll::EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1(EditableCubeModelWrapper *this,MVCubeModelInstance *cubeModelBase,IntVector min,IntVector max,int32_t minCubeCount,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  pEVar1 = &this->fields;
-  pEVar1->cubeModelBase = cubeModelBase;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  (this->fields).cubeModelBase = cubeModelBase;
   method_00 = (EditableCubeModelWrapper_c_DisplayClass7_0__Class **)cubeModelBase;
-  func_?(pEVar1);
+  func_?(&this->fields);
   if (cubeModelBase != (MVCubeModelInstance *)0x0) {
-    piVar2 = &(cubeModelBase->fields)._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x10;
-    bVar3 = cRam_? == '\0';
+    piVar1 = &(cubeModelBase->fields)._._.interactionFlags;
+    *(uint *)piVar1 = (uint)*piVar1 | 0x10;
+    bVar2 = cRam_? == '\0';
     *(undefined4 *)((int)&(cubeModelBase->fields)._._.interactionFlags + 4) = *(undefined4 *)((int)&(cubeModelBase->fields)._._.interactionFlags + 4);
-    if (bVar3) {
+    if (bVar2) {
       func_?(&TypeInfo__System__Func<IModelingConstraint>);
       func_?(&MethodInfo__EditableCubeModelWrapper____c__DisplayClass7_0___SetConstraints_b__0__);
       method_00 = &TypeInfo__EditableCubeModelWrapper____c__DisplayClass7_0;
@@ -142,7 +140,7 @@ void Assembly-CSharp.dll::EditableCubeModelWrapper::EditableCubeModelWrapper__ct
       cRam_? = '\x01';
     }
     value = (Object *)func_?(TypeInfo__EditableCubeModelWrapper____c__DisplayClass7_0);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     if (value != (Object *)0x0) {
       value[1].klass = (Object__Class *)this;
       func_?(value + 1,this);
@@ -151,20 +149,19 @@ void Assembly-CSharp.dll::EditableCubeModelWrapper::EditableCubeModelWrapper__ct
       *(undefined4 *)((int)&value[2].klass + 2) = max._0_4_;
       *(int16_t *)((int)&value[2].monitor + 2) = max.z;
       value[3].klass = (Object__Class *)minCubeCount;
-      pMVar4 = pEVar1->cubeModelBase;
+      pMVar3 = (this->fields).cubeModelBase;
       this_00 = (Func_1_Object_ *)func_?(TypeInfo__System__Func<IModelingConstraint>);
       mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor(this_00,value,MethodInfo__EditableCubeModelWrapper____c__DisplayClass7_0___SetConstraints_b__0__,(MethodInfo *)0x0);
-      if (pMVar4 != (MVCubeModelInstance *)0x0) {
-        ppFVar5 = &(pMVar4->fields)._._ModelingConstraintBuilder_k__BackingField;
-        *ppFVar5 = (Func_1_IModelingConstraint_ *)this_00;
-        func_?(ppFVar5,this_00);
+      if (pMVar3 != (MVCubeModelInstance *)0x0) {
+        (pMVar3->fields)._._ModelingConstraintBuilder_k__BackingField = (Func_1_IModelingConstraint_ *)this_00;
+        func_?(&(pMVar3->fields)._._ModelingConstraintBuilder_k__BackingField,this_00);
         return;
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

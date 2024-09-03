@@ -94,8 +94,8 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
 void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetectorBase::ActDetectorBase_OnCheatingDetected(ActDetectorBase *this,MethodInfo *method)
 
 {
-  pUVar1 = (this->fields).detectionAction;
-  if (pUVar1 != (UnityAction *)0x0) {
+  if ((this->fields).detectionAction != (UnityAction *)0x0) {
+    pUVar1 = (this->fields).detectionAction;
     (*(pUVar1->fields)._._.invoke_impl)((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
   }
   if ((this->fields).detectionEventHasListener != 0) {

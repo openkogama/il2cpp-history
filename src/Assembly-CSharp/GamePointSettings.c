@@ -36,7 +36,7 @@ void Assembly-CSharp.dll::GamePointSettings::GamePointSettings_Initialize(GamePo
             SettingsSlider::SettingsSlider_Initialize_1(this_02,StringLiteral_gamePointAmount,value,0,1000,(MethodInfo *)0x0);
             this_03 = (this->fields).gamePointsAwardedInputField;
             if (this_03 != (SettingsInputFieldSlider *)0x0) {
-              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(this_03,StringLiteral_gamePointAmount,value,(MethodInfo *)0x0);
+              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(this_03,StringLiteral_gamePointAmount,value,(MethodInfo *)0x0);
               return;
             }
           }

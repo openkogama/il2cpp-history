@@ -18,7 +18,7 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore:
 void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingBool::KogamaSettingBool__ctor(KogamaSettingBool *this,bool value,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -78,8 +78,8 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
   pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&stack0x0000000b);
   (this->fields)._.value = pOVar2;
   func_?(&this->fields,pOVar2);
-  pAVar3 = (this->fields)._.OnValueChange;
-  if (pAVar3 != (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)0x0) {
+  if ((this->fields)._.OnValueChange != (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)0x0) {
+    pAVar3 = (this->fields)._.OnValueChange;
     (*(pAVar3->fields)._._.invoke_impl)((pAVar3->fields)._._.method_code,this,(pAVar3->fields)._._.method);
   }
   return;

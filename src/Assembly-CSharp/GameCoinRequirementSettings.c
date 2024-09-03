@@ -37,7 +37,7 @@ void Assembly-CSharp.dll::GameCoinRequirementSettings::GameCoinRequirementSettin
           SettingsSlider::SettingsSlider_Initialize_1(this_02,StringLiteral_gameCoinAmount,value_01,0,10000,(MethodInfo *)0x0);
           this_03 = (this->fields).inputField;
           if (this_03 != (SettingsInputFieldSlider *)0x0) {
-            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(this_03,StringLiteral_gameCoinAmount,value_01,(MethodInfo *)0x0);
+            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(this_03,StringLiteral_gameCoinAmount,value_01,(MethodInfo *)0x0);
             return;
           }
         }

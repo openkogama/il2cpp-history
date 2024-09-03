@@ -10,9 +10,8 @@ void Assembly-CSharp.dll::MVCameraBase::MVCameraBase_SimulateImpact(MVCameraBase
   }
   this_00 = (CameraImpact *)func_?(TypeInfo__CameraImpact);
   CameraImpact::CameraImpact__ctor(this_00,impactDirection,impactCurve,forceMultiplier,impactSpace,(MethodInfo *)0x0);
-  ppCVar1 = &(this->fields).cameraImpact;
-  *ppCVar1 = this_00;
-  func_?(ppCVar1,this_00);
+  (this->fields).cameraImpact = this_00;
+  func_?(&(this->fields).cameraImpact,this_00);
   return;
 }
 
@@ -27,10 +26,9 @@ void Assembly-CSharp.dll::MVCameraBase::MVCameraBase_SimulateImpact_1(MVCameraBa
     MVCameraBase_SimulateImpact_2(this,targetTransform,(pCVar1->fields).impactDirection,(pCVar1->fields).impactCurve,(pCVar1->fields).forceMultiplier,(pCVar1->fields).impactSpace,(MethodInfo *)0x0);
     return;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -40,64 +38,72 @@ void Assembly-CSharp.dll::MVCameraBase::MVCameraBase_SimulateImpact_1(MVCameraBa
 void Assembly-CSharp.dll::MVCameraBase::MVCameraBase_SimulateImpact_2(MVCameraBase *this,Transform *targetTransform,Vector3 impactDirection,AnimationCurve *impactCurve,float forceMultiplier,Space__Enum impactSpace,MethodInfo *method)
 
 {
-  ppCVar1 = &(this->fields).cameraImpact;
-  if ((*ppCVar1 != (CameraImpact *)0x0) && (impactCurve != (AnimationCurve *)0x0)) {
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate(impactCurve,((*ppCVar1)->fields).time,(MethodInfo *)0x0);
-    fVar2 = fVar2 * forceMultiplier;
+  pMVar1 = this;
+  pCVar2 = (this->fields).cameraImpact;
+  if ((pCVar2 != (CameraImpact *)0x0) && (impactCurve != (AnimationCurve *)0x0)) {
+    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate(impactCurve,(pCVar2->fields).time,(MethodInfo *)0x0);
+    fVar3 = fVar3 * forceMultiplier;
     if (impactSpace == Space__Enum_World) {
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      fVar3 = (TypeInfo__UnityEngine__Vector3->static_fields->upVector).x;
-      fVar4 = (TypeInfo__UnityEngine__Vector3->static_fields->upVector).z;
+      pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar5._0_4_ = (pVVar4->upVector).x;
+      uVar5._4_4_ = (pVVar4->upVector).y;
+      fVar6 = (pVVar4->upVector).z;
     }
     else {
-      pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-      if (pTVar5 == (Transform *)0x0) goto code_?;
-      pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up((Vector3 *)&stack0xffffffe0,pTVar5,(MethodInfo *)0x0);
-      uVar7 = pVVar6->x;
-      fVar4 = pVVar6->z;
-      fVar3 = (float)uVar7;
+      pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+      if (pTVar7 == (Transform *)0x0) goto code_?;
+      pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up((Vector3 *)&stack0xffffffdc,pTVar7,(MethodInfo *)0x0);
+      uVar5._0_4_ = pVVar8->x;
+      uVar5._4_4_ = pVVar8->y;
+      fVar6 = pVVar8->z;
     }
-    fVar8 = impactDirection.x * fVar2 * 4.0;
-    fVar9 = impactDirection.y * fVar2 * 4.0;
+    fVar9 = (float)((ulonglong)uVar5 >> 0x20);
+    this = (MVCameraBase *)((float)uVar5 * -impactDirection.z - fVar6 * -impactDirection.x);
+    fVar10 = fVar9 * -impactDirection.x - (float)uVar5 * -impactDirection.y;
+    fVar11 = impactDirection.x * fVar3 * 4.0;
+    fVar12 = impactDirection.y * fVar3 * 4.0;
     if (targetTransform != (Transform *)0x0) {
-      translation.y = fVar9;
-      translation.x = fVar8;
-      translation.z = impactDirection.z * fVar2 * 4.0;
-      pTVar5 = targetTransform;
+      translation.y = fVar12;
+      translation.x = fVar11;
+      translation.z = impactDirection.z * fVar3 * 4.0;
+      pTVar7 = targetTransform;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Translate(targetTransform,translation,impactSpace,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
-        targetTransform = (Transform *)&UNK_?;
+        targetTransform = (Transform *)&TypeInfo__UnityEngine__Vector3;
+        this = (MVCameraBase *)&UNK_?;
         func_?();
         cRam_? = '\x01';
       }
-      pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar11 = (pVVar10->zeroVector).x;
-      uVar12 = (pVVar10->zeroVector).y;
-      fVar4 = (fVar3 * -impactDirection.z - fVar4 * -impactDirection.x) - (float)uVar12;
-      fVar3 = fVar9 - (pVVar10->zeroVector).z;
-      if (9.9999994e-11 <= fVar4 * fVar4 + ((float)pTVar5 - (float)uVar11) * ((float)pTVar5 - (float)uVar11) + fVar3 * fVar3) {
-        axis.y = fVar8;
-        axis.x = (float)pTVar5;
-        axis.z = fVar9;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_4(targetTransform,axis,fVar2 * 90.0,impactSpace,(MethodInfo *)0x0);
+      pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar13 = (pVVar4->zeroVector).x;
+      uVar14 = (pVVar4->zeroVector).y;
+      fVar6 = (fVar6 * -impactDirection.y - fVar9 * -impactDirection.z) - (float)uVar13;
+      fVar10 = fVar10 - (pVVar4->zeroVector).z;
+      if (9.9999994e-11 <= ((float)this - (float)uVar14) * ((float)this - (float)uVar14) + fVar6 * fVar6 + fVar10 * fVar10) {
+        axis.y = fVar11;
+        axis.x = (float)pTVar7;
+        axis.z = fVar12;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_4(targetTransform,axis,fVar3 * 90.0,impactSpace,(MethodInfo *)0x0);
       }
-      pCVar13 = *ppCVar1;
-      if (pCVar13 != (CameraImpact *)0x0) {
-        fVar2 = (pCVar13->fields).time;
-        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-        (pCVar13->fields).time = fVar3 + fVar2;
-        if (*ppCVar1 != (CameraImpact *)0x0) {
-          fVar2 = ((*ppCVar1)->fields).time;
-          pKVar14 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_GetKeys(impactCurve,(MethodInfo *)0x0);
-          iVar15 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_get_length(impactCurve,(MethodInfo *)0x0);
-          if (pKVar14 != (Keyframe__Array *)0x0) {
-            if (iVar15 - 1U < pKVar14->max_length) {
-              fVar3 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Single,System::Single]::KeyValuePair_2_System_Single_System_Single__get_Key((KeyValuePair_2_System_Single_System_Single_ *)(pKVar14->vector + iVar15 + -1),(MethodInfo *)0x0);
-              if (fVar3 < fVar2) {
-                *ppCVar1 = (CameraImpact *)0x0;
+      pCVar2 = (pMVar1->fields).cameraImpact;
+      if (pCVar2 != (CameraImpact *)0x0) {
+        fVar3 = (pCVar2->fields).time;
+        fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+        (pCVar2->fields).time = fVar6 + fVar3;
+        pCVar2 = (pMVar1->fields).cameraImpact;
+        if (pCVar2 != (CameraImpact *)0x0) {
+          fVar3 = (pCVar2->fields).time;
+          pKVar15 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_GetKeys(impactCurve,(MethodInfo *)0x0);
+          iVar16 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_get_length(impactCurve,(MethodInfo *)0x0);
+          if (pKVar15 != (Keyframe__Array *)0x0) {
+            if (iVar16 - 1U < pKVar15->max_length) {
+              fVar6 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Single,System::Single]::KeyValuePair_2_System_Single_System_Single__get_Key((KeyValuePair_2_System_Single_System_Single_ *)(pKVar15->vector + iVar16 + -1),(MethodInfo *)0x0);
+              if (fVar6 < fVar3) {
+                (pMVar1->fields).cameraImpact = (CameraImpact *)0x0;
                 func_?();
               }
               return;
@@ -112,8 +118,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

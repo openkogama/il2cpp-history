@@ -74,9 +74,9 @@ void Assembly-CSharp.dll::LogicObjectManagerClient::LogicObjectManagerClient__ct
   this_01 = (HashSet_1_System_Int32_ *)func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
   System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::HashSet_1_System_Int32___ctor(this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
   method_00 = (MethodInfo *)&(this->fields)._.updatedIds;
-  *(HashSet_1_System_Int32_ **)method_00 = this_01;
+  (this->fields)._.updatedIds = this_01;
   func_?(method_00,this_01);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields)._.trackLoops = trackLoops;
   (this->fields)._._TimeStamp_k__BackingField = timeStamp;
   return;

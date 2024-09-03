@@ -20,7 +20,7 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_DownloadTes
   }
   method_00 = TypeInfo__AssetBundleCacheTest____c__DisplayClass4_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value == (Object *)0x0) {
 code_?:
     func_?();
@@ -66,8 +66,8 @@ code_?:
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogFormat(StringLiteral_Url___0_u000AUrl_appendage___1_u000AVers,args,(MethodInfo *)0x0);
-        this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
-        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this,value,MethodInfo__AssetBundleCacheTest____c__DisplayClass4_0___DownloadTestAsset_b__0_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
+        this = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+        Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this,value,MethodInfo__AssetBundleCacheTest____c__DisplayClass4_0___DownloadTestAsset_b__0_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
         this_00 = (AssetBundleRequest *)func_?();
         AssetBundleRequest::AssetBundleRequest__ctor(this_00,pSVar2,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this,WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
         if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
@@ -110,7 +110,7 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_OnFirstDown
       UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup((MethodInfo *)0x0);
       arg0 = (Object *)func_?();
       pSVar1 = mscorlib.dll::System::String::String_Format(StringLiteral_Download_time_1___0_,arg0,(MethodInfo *)0x0);
-      TextCommand::TextCommand_NotifyUser(pSVar1,(MethodInfo *)0x0);
+      MVGameControllerBase::MVGameControllerBase_PostGameMsg_1(MVGameMsgType__Enum_AdminMsg,pSVar1,(MethodInfo *)0x0);
       this = (Action_3_Object_Single_Int32_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest,_float,_int>);
       mscorlib.dll::System::Action`3[Object,Single,Int32]::Action_3_Object_Single_Int32___ctor(this,(Object *)0x0,MethodInfo__AssetBundleCacheTest__OnSecondDownloadFinished_UnityEngine__Networking__UnityWebRequest__float__int_,(MethodInfo *)0x0);
       AssetBundleCacheTest_DownloadTestAsset((Action_3_UnityEngine_Networking_UnityWebRequest_Single_Int32_ *)this,currentStreamingAssetVersion,(MethodInfo *)0x0);
@@ -121,7 +121,7 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_OnFirstDown
       (pKVar3->fields).streamingAssetVersion = currentStreamingAssetVersion;
       pSVar1 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::UnityWebRequest_get_error(result,(MethodInfo *)0x0);
       pSVar1 = mscorlib.dll::System::String::String_Format(StringLiteral_Error_executing_command___0_,(Object *)pSVar1,(MethodInfo *)0x0);
-      TextCommand::TextCommand_NotifyUser(pSVar1,(MethodInfo *)0x0);
+      MVGameControllerBase::MVGameControllerBase_PostGameMsg_1(MVGameMsgType__Enum_AdminMsg,pSVar1,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -154,7 +154,7 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_OnSecondDow
     if (bVar2 == 0) {
       pSVar1 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::UnityWebRequest_get_error(result,(MethodInfo *)0x0);
       pSVar1 = mscorlib.dll::System::String::String_Format(StringLiteral_Error_executing_command___0_,(Object *)pSVar1,(MethodInfo *)0x0);
-      TextCommand::TextCommand_NotifyUser(pSVar1,(MethodInfo *)0x0);
+      MVGameControllerBase::MVGameControllerBase_PostGameMsg_1(MVGameMsgType__Enum_AdminMsg,pSVar1,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -164,7 +164,7 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_OnSecondDow
       UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup((MethodInfo *)0x0);
       arg0 = (Object *)func_?();
       pSVar1 = mscorlib.dll::System::String::String_Format(StringLiteral_Download_time_2___0_,arg0,(MethodInfo *)0x0);
-      TextCommand::TextCommand_NotifyUser(pSVar1,(MethodInfo *)0x0);
+      MVGameControllerBase::MVGameControllerBase_PostGameMsg_1(MVGameMsgType__Enum_AdminMsg,pSVar1,(MethodInfo *)0x0);
     }
     pKVar3 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
     if (pKVar3 != (KoGaMaSettingsContainer *)0x0) {

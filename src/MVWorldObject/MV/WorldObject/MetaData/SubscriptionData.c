@@ -71,7 +71,7 @@ SubscriptionData * MVWorldObject.dll::MV::WorldObject::MetaData::SubscriptionDat
   }
   method_00 = TypeInfo__MV__WorldObject__MetaData__SubscriptionData;
   pSVar1 = (SubscriptionData *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)pSVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)pSVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (pSVar1 != (SubscriptionData *)0x0) {
     (pSVar1->fields).SubscriptionType = 0;
     return pSVar1;

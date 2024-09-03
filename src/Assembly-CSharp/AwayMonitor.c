@@ -39,7 +39,7 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_CheckAndResolvePendingKick(Aw
     if ((pAVar2->fields).state != 2) {
       return;
     }
-    pAVar3 = (pAVar2->fields).idleKickTimes;
+    pAVar3 = (TypeInfo__AwayMonitor->static_fields->instance->fields).idleKickTimes;
     if (pAVar3 != (AwayMonitor_IdleKickTimes *)0x0) {
       iStack_1 = (pAVar3->fields).idleKickTimeMinutes;
       arg0 = (Object *)func_?(TypeInfo__System__Int32,&iStack_1);
@@ -99,13 +99,13 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_HandleIdle(AwayMonitor *this,
   t1 = mscorlib.dll::System::DateTime::DateTime_op_Subtraction_1(d1,(DateTime)(this->fields).latestMouseMoveTime._dateData,(MethodInfo *)0x0);
   pAVar1 = (this->fields).idleKickTimes;
   if (pAVar1 != (AwayMonitor_IdleKickTimes *)0x0) {
-    iVar2 = (pAVar1->fields).warningTimeSpan._ticks;
+    uVar2 = (undefined4)(pAVar1->fields).warningTimeSpan._ticks;
     uVar3 = *(undefined4 *)((int)&(pAVar1->fields).warningTimeSpan._ticks + 4);
     if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     t2_00._ticks._4_4_ = uVar3;
-    t2_00._ticks._0_4_ = (int)iVar2;
+    t2_00._ticks._0_4_ = uVar2;
     bVar4 = mscorlib.dll::System::TimeSpan::TimeSpan_op_LessThan(t1,t2_00,(MethodInfo *)0x0);
     if (bVar4 != 0) {
       (this->fields).state = 0;
@@ -113,13 +113,13 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_HandleIdle(AwayMonitor *this,
     }
     pAVar1 = (this->fields).idleKickTimes;
     if (pAVar1 != (AwayMonitor_IdleKickTimes *)0x0) {
-      iVar2 = (pAVar1->fields).warningTimeSpan._ticks;
-      uVar3 = *(undefined4 *)((int)&(pAVar1->fields).warningTimeSpan._ticks + 4);
+      iVar5 = (pAVar1->fields).warningTimeSpan._ticks;
+      uVar2 = *(undefined4 *)((int)&(pAVar1->fields).warningTimeSpan._ticks + 4);
       if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      t2._ticks._4_4_ = uVar3;
-      t2._ticks._0_4_ = (int)iVar2;
+      t2._ticks._4_4_ = uVar2;
+      t2._ticks._0_4_ = (int)iVar5;
       bVar4 = mscorlib.dll::System::TimeSpan::TimeSpan_op_GreaterThan(t1,t2,(MethodInfo *)0x0);
       if ((bVar4 != 0) && ((this->fields).state != 1)) {
         if (fromBackgroundUpdate == 0) {
@@ -133,13 +133,13 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_HandleIdle(AwayMonitor *this,
       }
       pAVar1 = (this->fields).idleKickTimes;
       if (pAVar1 != (AwayMonitor_IdleKickTimes *)0x0) {
-        iVar2 = (pAVar1->fields).idleKickTimeSpan._ticks;
-        uVar3 = *(undefined4 *)((int)&(pAVar1->fields).idleKickTimeSpan._ticks + 4);
+        iVar5 = (pAVar1->fields).idleKickTimeSpan._ticks;
+        uVar2 = *(undefined4 *)((int)&(pAVar1->fields).idleKickTimeSpan._ticks + 4);
         if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        t2_01._ticks._4_4_ = uVar3;
-        t2_01._ticks._0_4_ = (int)iVar2;
+        t2_01._ticks._4_4_ = uVar2;
+        t2_01._ticks._0_4_ = (int)iVar5;
         bVar4 = mscorlib.dll::System::TimeSpan::TimeSpan_op_GreaterThan(t1,t2_01,(MethodInfo *)0x0);
         if (bVar4 == 0) {
           return;
@@ -154,8 +154,8 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_HandleIdle(AwayMonitor *this,
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -191,7 +191,7 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_Initialize(MVGameMode__Enum m
   (pAVar1->fields).idleKickEnabled = 1;
   DVar2 = mscorlib.dll::System::DateTime::DateTime_get_Now((MethodInfo *)0x0);
   (pAVar1->fields).latestMouseMoveTime._dateData = DVar2._dateData;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)pAVar1,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)pAVar1,ExceptionArgument__Enum_obj,unaff_EDI);
   TypeInfo__AwayMonitor->static_fields->instance = pAVar1;
   func_?(TypeInfo__AwayMonitor->static_fields,pAVar1);
   if (mode != MVGameMode__Enum_Edit) {
@@ -224,7 +224,7 @@ code_?:
   AwayMonitor+IdleKickTimes::AwayMonitor_IdleKickTimes__ctor(this,warnAfterMinutes,mode,(MethodInfo *)0x0);
   if (pAVar1 != (AwayMonitor *)0x0) {
     ppAStack6 = &(pAVar1->fields).idleKickTimes;
-    *ppAStack6 = this;
+    (pAVar1->fields).idleKickTimes = this;
     pAStack7 = this;
     func_?();
     return;
@@ -568,7 +568,7 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor__ctor(AwayMonitor *this,Metho
   (this->fields).idleKickEnabled = 1;
   DVar1 = mscorlib.dll::System::DateTime::DateTime_get_Now((MethodInfo *)0x0);
   (this->fields).latestMouseMoveTime._dateData = DVar1._dateData;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   return;
 }
 

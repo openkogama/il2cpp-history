@@ -16,7 +16,7 @@ void Assembly-CSharp.dll::PlayerElementState+<>c__DisplayClass11_0::PlayerElemen
     cRam_? = '\x01';
   }
   value = (Object *)func_?(TypeInfo__PlayerElementState____c__DisplayClass11_1);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,unaff_EDI);
   pPVar2 = (this->fields).__4__this;
   if (pPVar2 != (PlayerElementState *)0x0) {
     PlayerElementState::PlayerElementState_ValidateFriendRequest(pPVar2,(MethodInfo *)0x0);

@@ -19,7 +19,7 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
     if (uVar4 != 0) {
       do {
         if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-          ppMVar5 = &(&(pIVar1->klass->vtable).get_RewardedAdNotAvailableText)[pIVar2->interfaceOffsets[uVar3].offset].method;
+          ppMVar5 = &(&(pIVar1->klass->vtable).get_RewardedAdNotAvailableText)[pIVar1->klass->interfaceOffsets[uVar3].offset].method;
           goto code_?;
         }
         uVar3 = uVar3 + 1;
@@ -37,7 +37,7 @@ code_?:
       if (uVar3 != 0) {
         do {
           if (pIVar8->interfaceOffsets[uVar4].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-            ppMVar5 = &(&(x->klass->vtable).Create_3)[pIVar8->interfaceOffsets[uVar4].offset].method;
+            ppMVar5 = &(&(x->klass->vtable).Create_3)[x->klass->interfaceOffsets[uVar4].offset].method;
             goto code_?;
           }
           uVar4 = uVar4 + 1;
@@ -67,7 +67,7 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
   }
   method_00 = TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c;
   value = (RewardedAdRequirement_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c->static_fields->__9 = value;
   func_?(TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c->static_fields,value);
   return;

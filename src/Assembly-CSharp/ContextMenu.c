@@ -147,15 +147,15 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_LateUpdate(ContextMenu *this,
       if ((TypeInfo__ContextMenu____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      callbackFunction = TypeInfo__ContextMenu____c->static_fields->__9__9_0;
+      callbackFunction = TypeInfo__ContextMenu____c->static_fields->__9__10_0;
       if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
         if ((TypeInfo__ContextMenu____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         object = TypeInfo__ContextMenu____c->static_fields->__9;
         callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenu____c___Pop_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-        TypeInfo__ContextMenu____c->static_fields->__9__9_0 = callbackFunction;
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenu____c___Pop_b__10_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+        TypeInfo__ContextMenu____c->static_fields->__9__10_0 = callbackFunction;
         func_?();
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
@@ -205,7 +205,7 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_Pop(ContextMenu *this,MethodI
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenu____c___Pop_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenu____c___Pop_b__10_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenu____c);
     cRam_? = '\x01';
   }
@@ -213,16 +213,16 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_Pop(ContextMenu *this,MethodI
   if ((TypeInfo__ContextMenu____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenu____c);
   }
-  callbackFunction = TypeInfo__ContextMenu____c->static_fields->__9__9_0;
+  callbackFunction = TypeInfo__ContextMenu____c->static_fields->__9__10_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenu____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenu____c);
     }
     object = TypeInfo__ContextMenu____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenu____c___Pop_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenu____c->static_fields->__9__9_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenu____c->static_fields->__9__9_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenu____c___Pop_b__10_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenu____c->static_fields->__9__10_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenu____c->static_fields->__9__10_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -248,28 +248,51 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_SetToScreenPoint(ContextMenu 
 
 {
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (pMVar1 != (MainCameraManager *)0x0) {
-    this_00 = (pMVar1->fields).mainCamera;
-    if (this_00 != (Camera *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1((Vector3 *)&stack0xffffffe8,this_00,(this->fields).worldPosition,(MethodInfo *)0x0);
-      fVar3 = pVVar2->z;
-      this_02 = (this->fields).rectTransform;
-      if (this_02 != (RectTransform *)0x0) {
-        uVar4 = 0;
-        this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_02,(MethodInfo *)0x0);
-        if (this_01 != (Transform *)0x0) {
-          value.y = (float)uVar4;
-          value.x = (float)this_02;
-          value.z = fVar3;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(this_01,value,(MethodInfo *)0x0);
-          return;
+  if ((pMVar1 != (MainCameraManager *)0x0) && (this_00 = (pMVar1->fields).mainCamera, this_00 != (Camera *)0x0)) {
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1((Vector3 *)&stack0xffffffe0,this_00,(this->fields).worldPosition,(MethodInfo *)0x0);
+    fVar3 = pVVar2->z;
+    pTVar4 = (Transform *)(this->fields).rectTransform;
+    if (pTVar4 != (Transform *)0x0) {
+      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
+      fVar5 = pVVar2->x;
+      pRVar6 = (this->fields).rectTransform;
+      if (pRVar6 != (RectTransform *)0x0) {
+        pRVar7 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&puStack_8,pRVar6,(MethodInfo *)0x0);
+        fVar9 = pRVar7->m_Width;
+        pRVar6 = (this->fields).rectTransform;
+        if (pRVar6 != (RectTransform *)0x0) {
+          pRVar7 = (Rect *)&puStack_8;
+          pRVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect(pRVar7,pRVar6,(MethodInfo *)0x0);
+          puStack_11 = (undefined *)pRVar10->m_Height;
+          pRVar10 = (Rect *)(fVar9 * fVar5 + 10.0);
+          puStack_8 = (undefined *)((float)puStack_11 * fVar5 + 10.0);
+          iVar12 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
+          puVar13 = &UNK_?;
+          iVar14 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
+          if (((float)pRVar7 < (float)pRVar10) || (pRVar10 = (Rect *)((float)iVar12 - 10.0), (float)iVar12 - 10.0 < (float)pRVar7)) {
+            pRVar7 = pRVar10;
+          }
+          puVar15 = puStack_8;
+          if (((float)puStack_8 <= (float)puVar13) && (puVar15 = puVar13, (float)iVar14 - 10.0 < (float)puVar13)) {
+            puVar15 = (undefined *)((float)iVar14 - 10.0);
+          }
+          pRVar6 = (this->fields).rectTransform;
+          uVar16 = CONCAT44(puVar15,pRVar7);
+          if ((pRVar6 != (RectTransform *)0x0) && (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pRVar6,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
+            value.z = fVar3;
+            value.x = (float)(int)uVar16;
+            value.y = (float)(int)((ulonglong)uVar16 >> 0x20);
+            fStack17 = fVar3;
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar4,value,(MethodInfo *)0x0);
+            return;
+          }
         }
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -280,28 +303,51 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_Update(ContextMenu *this,Meth
 
 {
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (pMVar1 != (MainCameraManager *)0x0) {
-    this_00 = (pMVar1->fields).mainCamera;
-    if (this_00 != (Camera *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1((Vector3 *)&stack0xffffffe8,this_00,(this->fields).worldPosition,(MethodInfo *)0x0);
-      fVar3 = pVVar2->z;
-      this_02 = (this->fields).rectTransform;
-      if (this_02 != (RectTransform *)0x0) {
-        uVar4 = 0;
-        this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_02,(MethodInfo *)0x0);
-        if (this_01 != (Transform *)0x0) {
-          value.y = (float)uVar4;
-          value.x = (float)this_02;
-          value.z = fVar3;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(this_01,value,(MethodInfo *)0x0);
-          return;
+  if ((pMVar1 != (MainCameraManager *)0x0) && (this_00 = (pMVar1->fields).mainCamera, this_00 != (Camera *)0x0)) {
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1((Vector3 *)&stack0xffffffe0,this_00,(this->fields).worldPosition,(MethodInfo *)0x0);
+    fVar3 = pVVar2->z;
+    pTVar4 = (Transform *)(this->fields).rectTransform;
+    if (pTVar4 != (Transform *)0x0) {
+      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
+      fVar5 = pVVar2->x;
+      pRVar6 = (this->fields).rectTransform;
+      if (pRVar6 != (RectTransform *)0x0) {
+        pRVar7 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&puStack_8,pRVar6,(MethodInfo *)0x0);
+        fVar9 = pRVar7->m_Width;
+        pRVar6 = (this->fields).rectTransform;
+        if (pRVar6 != (RectTransform *)0x0) {
+          pRVar7 = (Rect *)&puStack_8;
+          pRVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect(pRVar7,pRVar6,(MethodInfo *)0x0);
+          puStack_11 = (undefined *)pRVar10->m_Height;
+          pRVar10 = (Rect *)(fVar9 * fVar5 + 10.0);
+          puStack_8 = (undefined *)((float)puStack_11 * fVar5 + 10.0);
+          iVar12 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
+          puVar13 = &UNK_?;
+          iVar14 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
+          if (((float)pRVar7 < (float)pRVar10) || (pRVar10 = (Rect *)((float)iVar12 - 10.0), (float)iVar12 - 10.0 < (float)pRVar7)) {
+            pRVar7 = pRVar10;
+          }
+          puVar15 = puStack_8;
+          if (((float)puStack_8 <= (float)puVar13) && (puVar15 = puVar13, (float)iVar14 - 10.0 < (float)puVar13)) {
+            puVar15 = (undefined *)((float)iVar14 - 10.0);
+          }
+          pRVar6 = (this->fields).rectTransform;
+          uVar16 = CONCAT44(puVar15,pRVar7);
+          if ((pRVar6 != (RectTransform *)0x0) && (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pRVar6,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
+            value.z = fVar3;
+            value.x = (float)(int)uVar16;
+            value.y = (float)(int)((ulonglong)uVar16 >> 0x20);
+            fStack17 = fVar3;
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar4,value,(MethodInfo *)0x0);
+            return;
+          }
         }
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

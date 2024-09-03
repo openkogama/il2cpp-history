@@ -13,7 +13,7 @@ void Assembly-CSharp.dll::CullingSubscriberBase::CullingSubscriberBase_Destroy(C
   }
   CullingApiWrapper::CullingApiWrapper_UnSubscribe((ICullingSubscriber *)this,(MethodInfo *)0x0);
   (this->fields).callback = (UnityAction_1_UnityEngine_CullingGroupEvent_ *)0x0;
-  func_?();
+  func_?(&this->fields,0);
   return;
 }
 
@@ -117,7 +117,7 @@ void Assembly-CSharp.dll::CullingSubscriberBase::CullingSubscriberBase__ctor(Cul
     func_?();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
   if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
@@ -144,10 +144,9 @@ void Assembly-CSharp.dll::CullingSubscriberBase::CullingSubscriberBase__ctor(Cul
       if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CullingApiWrapper);
       }
-      array = &TypeInfo__CullingApiWrapper->static_fields->spheres;
-      pBVar1 = *array;
+      pBVar1 = TypeInfo__CullingApiWrapper->static_fields->spheres;
       if (pBVar1 != (BoundingSphere__Array *)0x0) {
-        mscorlib.dll::System::Array::Array_Resize_86((BindingRestrictions_TestBuilder_AndNode__Array **)array,pBVar1->max_length + 1000,void_MethodInfo__System__Array__Resize<UnityEngine::BoundingSphere>_UnityEngine__BoundingSphere___int_);
+        mscorlib.dll::System::Array::Array_Resize_86((BindingRestrictions_TestBuilder_AndNode__Array **)&TypeInfo__CullingApiWrapper->static_fields->spheres,pBVar1->max_length + 1000,void_MethodInfo__System__Array__Resize<UnityEngine::BoundingSphere>_UnityEngine__BoundingSphere___int_);
         pCVar2 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
         if (pCVar2 != (CullingGroup *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_SetBoundingSpheres(pCVar2,TypeInfo__CullingApiWrapper->static_fields->spheres,(MethodInfo *)0x0);
@@ -261,7 +260,7 @@ void Assembly-CSharp.dll::CullingSubscriberBase::CullingSubscriberBase__ctor_1(C
     func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
@@ -281,7 +280,7 @@ void Assembly-CSharp.dll::CullingSubscriberBase::CullingSubscriberBase__ctor_2(C
     func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }

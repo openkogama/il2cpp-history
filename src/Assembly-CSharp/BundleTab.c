@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_Initialize(BundleTab *this,int32_
   method_00 = TypeInfo__BundleTab____c__DisplayClass13_0;
   pOVar2 = (Object *)func_?();
   pOVar3 = pOVar2;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (pOVar2 == (Object *)0x0) {
 code_?:
     func_?();
@@ -154,8 +154,8 @@ code_?:
       pAVar10 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleClient((MethodInfo *)0x0);
       if (pAVar10 != (AccessoryBundleClient *)0x0) {
         level = (pAVar10->fields)._.level;
-        this_04 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_04,(Object *)this,MethodInfo__BundleTab__OnBadgeLoaded_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
+        this_04 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+        Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_04,(Object *)this,MethodInfo__BundleTab__OnBadgeLoaded_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
         if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -214,9 +214,9 @@ IEnumerator * Assembly-CSharp.dll::BundleTab::BundleTab_LerpToSize(BundleTab *th
   }
   method_00 = TypeInfo__BundleTab___LerpToSize_d__20;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   value[2].monitor = (MonitorData *)size;
   return (IEnumerator *)value;
@@ -239,10 +239,9 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_OnBadgeLoaded(BundleTab *this,Uni
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)pRVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 == 0) {
     pTVar3 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::DownloadHandlerTexture::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
-    ppTVar4 = &(this->fields).badgeTextureAsset;
-    *ppTVar4 = pTVar3;
-    func_?(ppTVar4,pTVar3);
-    pTVar3 = *ppTVar4;
+    (this->fields).badgeTextureAsset = pTVar3;
+    func_?(&(this->fields).badgeTextureAsset,pTVar3);
+    pTVar3 = (this->fields).badgeTextureAsset;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -250,11 +249,11 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_OnBadgeLoaded(BundleTab *this,Uni
     if (bVar2 != 0) {
       pRVar1 = (this->fields).levelBadge;
       if (pRVar1 != (RawImage *)0x0) {
-        UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture(pRVar1,(Texture *)*ppTVar4,(MethodInfo *)0x0);
+        UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture(pRVar1,(Texture *)(this->fields).badgeTextureAsset,(MethodInfo *)0x0);
         pRVar1 = (this->fields).levelBadge;
         if (pRVar1 != (RawImage *)0x0) {
-          pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0);
-          if (pGVar5 != (GameObject *)0x0) {
+          pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0);
+          if (pGVar4 != (GameObject *)0x0) {
             if (pcRam_? == (code *)0x0) {
               pcRam_? = (code *)func_?();
             }
@@ -264,8 +263,8 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_OnBadgeLoaded(BundleTab *this,Uni
         }
       }
       func_?();
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
       return;
     }
   }
@@ -284,14 +283,14 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_OnDestroy(BundleTab *this,MethodI
     func_?(&MethodInfo__BundleTab__OnBadgeLoaded_UnityEngine__Networking__UnityWebRequest_);
     cRam_? = '\x01';
   }
-  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__BundleTab__OnBadgeLoaded_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
+  this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_00,(Object *)this,MethodInfo__BundleTab__OnBadgeLoaded_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
   if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
   (this->fields).badgeTextureAsset = (Texture2D *)0x0;
-  func_?();
+  func_?(&(this->fields).badgeTextureAsset);
   return;
 }
 
@@ -346,7 +345,7 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_SetAsDeselected(BundleTab *this,M
       }
       method_00 = TypeInfo__BundleTab___LerpToSize_d__20;
       value = (Object *)func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
       value[1].klass = (Object__Class *)0x0;
       value[2].klass = (Object__Class *)this;
       func_?();
@@ -453,7 +452,7 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_SetAsSelected(BundleTab *this,Met
           }
           method_00 = TypeInfo__BundleTab___LerpToSize_d__20;
           value = (Object *)func_?();
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
           value[1].klass = (Object__Class *)0x0;
           value[2].klass = (Object__Class *)this;
           func_?();
@@ -519,8 +518,8 @@ code_?:
     pAVar2 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleClient((MethodInfo *)0x0);
     if (pAVar2 != (AccessoryBundleClient *)0x0) {
       level = (pAVar2->fields)._.level;
-      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_01,(Object *)0x0,MethodInfo__BundleTab__OnBadgeLoaded_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
+      this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_01,(Object *)0x0,MethodInfo__BundleTab__OnBadgeLoaded_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
       if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }

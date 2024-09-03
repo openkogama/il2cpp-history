@@ -29,14 +29,14 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_Initi
   if ((TypeInfo__RequirementNotification____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RequirementNotification____c);
   }
-  this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)TypeInfo__RequirementNotification____c->static_fields->__9__11_0;
-  if (this_03 == (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+  this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)TypeInfo__RequirementNotification____c->static_fields->__9__11_0;
+  if (this_03 == (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)0x0) {
     if ((TypeInfo__RequirementNotification____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__RequirementNotification____c);
     }
     object = TypeInfo__RequirementNotification____c->static_fields->__9;
-    this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_03,(Object *)object,MethodInfo__RequirementNotification____c___Initialize_b__11_0_UnityEngine__GameObject_,(MethodInfo *)0x0);
+    this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_03,(Object *)object,MethodInfo__RequirementNotification____c___Initialize_b__11_0_UnityEngine__GameObject_,(MethodInfo *)0x0);
     TypeInfo__RequirementNotification____c->static_fields->__9__11_0 = (Action_1_UnityEngine_GameObject_ *)this_03;
     func_?(&TypeInfo__RequirementNotification____c->static_fields->__9__11_0,this_03);
     pEVar1 = (ExecuteEvents_EventFunction_1_System_Object_ *)data;
@@ -115,7 +115,7 @@ code_?:
                                 method = (MethodInfo *)TypeInfo__RequirementNotification____c__DisplayClass16_0;
                                 data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
                                 pOVar6 = (Object *)func_?();
-                                mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar6,ExceptionArgument__Enum_obj,(MethodInfo *)pEVar1);
+                                mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar6,ExceptionArgument__Enum_obj,(MethodInfo *)pEVar1);
                                 if (pOVar6 != (Object *)0x0) {
                                   *(undefined1 *)&pOVar6[1].klass = uVar14;
                                   target = (Dictionary_2_System_Object_System_Object_ *)RequirementNotification_InstantiatePanel(this_02,(this_02->fields).GameTierPanel,(MethodInfo *)0x0);
@@ -185,7 +185,7 @@ code_?:
                               method = (MethodInfo *)TypeInfo__RequirementNotification____c__DisplayClass14_0;
                               data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
                               pOVar6 = (Object *)func_?();
-                              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar6,ExceptionArgument__Enum_obj,method_00);
+                              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar6,ExceptionArgument__Enum_obj,method_00);
                               if (pOVar6 != (Object *)0x0) {
                                 pOVar6[1].klass = (Object__Class *)this;
                                 RequirementNotification_InstantiatePanel(this_02,(this_02->fields).TeamPanel,(MethodInfo *)0x0);
@@ -207,8 +207,8 @@ code_?:
                                   else {
                                     pSVar15 = (this_02->fields).OnSprite;
                                   }
+                                  pOVar6[1].monitor = (MonitorData *)pSVar15;
                                   pGVar22 = (GameObject *)&pOVar6[1].monitor;
-                                  *(Sprite **)pGVar22 = pSVar15;
                                   func_?(pGVar22,pSVar15);
                                   pEVar1 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>);
                                   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)pEVar1,pOVar6,MethodInfo__RequirementNotification____c__DisplayClass14_0___ShowTeamRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
@@ -250,7 +250,7 @@ code_?:
                           method = (MethodInfo *)TypeInfo__RequirementNotification____c__DisplayClass13_0;
                           data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
                           pOVar6 = (Object *)func_?();
-                          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar6,ExceptionArgument__Enum_obj,method_01);
+                          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar6,ExceptionArgument__Enum_obj,method_01);
                           if (pOVar6 != (Object *)0x0) {
                             pOVar6[1].klass = (Object__Class *)this;
                             method_00 = (MethodInfo *)&UNK_?;
@@ -310,7 +310,7 @@ code_?:
                       data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
                       pOVar6 = (Object *)func_?();
                       method_00 = (MethodInfo *)&UNK_?;
-                      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar6,ExceptionArgument__Enum_obj,method_02);
+                      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar6,ExceptionArgument__Enum_obj,method_02);
                       if (pOVar6 != (Object *)0x0) {
                         pOVar6[1].klass = (Object__Class *)this;
                         RequirementNotification_InstantiatePanel(this_02,(this_02->fields).GamecoinPanel,(MethodInfo *)0x0);
@@ -325,8 +325,8 @@ code_?:
                           else {
                             pSVar15 = (this_02->fields).OnSprite;
                           }
+                          pOVar6[1].monitor = (MonitorData *)pSVar15;
                           pGVar22 = (GameObject *)&pOVar6[1].monitor;
-                          *(Sprite **)pGVar22 = pSVar15;
                           func_?(pGVar22,pSVar15);
                           pEVar1 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>);
                           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)pEVar1,pOVar6,MethodInfo__RequirementNotification____c__DisplayClass12_0___ShowGameCoinRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
@@ -361,7 +361,7 @@ code_?:
                     cRam_? = '\x01';
                   }
                   pOVar6 = (Object *)func_?(TypeInfo__RequirementNotification____c__DisplayClass15_0);
-                  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(pOVar6,ExceptionArgument__Enum_obj,method_01);
+                  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar6,ExceptionArgument__Enum_obj,method_01);
                   if (pOVar6 != (Object *)0x0) {
                     pOVar6[1].klass = pOVar23;
                     method_00 = (MethodInfo *)&UNK_?;
@@ -457,7 +457,7 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowG
   }
   method_00 = TypeInfo__RequirementNotification____c__DisplayClass12_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)gameCoins;
     RequirementNotification_InstantiatePanel(this,(this->fields).GamecoinPanel,(MethodInfo *)0x0);
@@ -506,7 +506,7 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowG
   }
   method_00 = TypeInfo__RequirementNotification____c__DisplayClass16_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     *(undefined1 *)&value[1].klass = (undefined1)tier;
     target = RequirementNotification_InstantiatePanel(this,(this->fields).GameTierPanel,(MethodInfo *)0x0);
@@ -564,7 +564,7 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowL
   }
   method_00 = TypeInfo__RequirementNotification____c__DisplayClass15_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)level;
     RequirementNotification_InstantiatePanel(this,(this->fields).LevelPanel,(MethodInfo *)0x0);
@@ -616,7 +616,7 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowS
   }
   method_00 = TypeInfo__RequirementNotification____c__DisplayClass13_0;
   target = (GameObject *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)target,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)target,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (target != (GameObject *)0x0) {
     (target->fields)._.m_CachedPtr = (void *)stars;
     RequirementNotification_InstantiatePanel(this,(this->fields).StarPanel,(MethodInfo *)0x0);
@@ -633,8 +633,8 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowS
         else {
           pGStack3 = (GameObject__Class *)(this->fields).OnSprite;
         }
+        target[1].klass = pGStack3;
         pGStack4 = target + 1;
-        pGStack4->klass = pGStack3;
         func_?();
         pEStack5 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>;
         functor = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
@@ -669,7 +669,7 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowT
   }
   method_00 = TypeInfo__RequirementNotification____c__DisplayClass14_0;
   value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)team;
     target = RequirementNotification_InstantiatePanel(this,(this->fields).TeamPanel,(MethodInfo *)0x0);
@@ -693,8 +693,8 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowT
         else {
           pSStack5 = (this->fields).OnSprite;
         }
+        value[1].monitor = (MonitorData *)pSStack5;
         ppMStack6 = &value[1].monitor;
-        *ppMStack6 = (MonitorData *)pSStack5;
         func_?();
         functor = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)functor,value,MethodInfo__RequirementNotification____c__DisplayClass14_0___ShowTeamRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
@@ -726,9 +726,8 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification__ctor
   }
   this_00 = (List_1_UnityEngine_GameObject_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
-  ppLVar1 = &(this->fields).PanelsToDestroy;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).PanelsToDestroy = this_00;
+  func_?(&(this->fields).PanelsToDestroy,this_00);
   Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
   return;
 }

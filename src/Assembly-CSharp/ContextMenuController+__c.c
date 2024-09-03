@@ -1,7 +1,7 @@
 
-/* Void <AddToInventory>b__35_0(IModalPopupCreator, BaseEventData) */
+/* Void <AddToInventory>b__36_0(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__AddToInventory_b__35_0(ContextMenuController_c *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__AddToInventory_b__36_0(ContextMenuController_c *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -25,9 +25,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Ad
 }
 
 
-/* Void <AddToInventory>b__35_1(IUIStack, BaseEventData) */
+/* Void <AddToInventory>b__36_1(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__AddToInventory_b__35_1(ContextMenuController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__AddToInventory_b__36_1(ContextMenuController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -51,9 +51,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Ad
 }
 
 
-/* Void <CloneRoot>b__34_0(IUIStack, BaseEventData) */
+/* Void <CloneRoot>b__35_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__CloneRoot_b__34_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__CloneRoot_b__35_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -77,9 +77,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Cl
 }
 
 
-/* Void <Clone>b__33_0(IUIStack, BaseEventData) */
+/* Void <Clone>b__34_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Clone_b__33_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Clone_b__34_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -129,9 +129,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__De
 }
 
 
-/* Void <Delete>b__40_1(IUIStack, BaseEventData) */
+/* Void <Delete>b__41_1(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Delete_b__40_1(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Delete_b__41_1(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -155,9 +155,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__De
 }
 
 
-/* Void <EnterPlay>b__36_0(IEditModeController, BaseEventData) */
+/* Void <EnterPlay>b__37_0(IEditModeController, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__EnterPlay_b__36_0(ContextMenuController_c *this,IEditModeController *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__EnterPlay_b__37_0(ContextMenuController_c *this,IEditModeController *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -181,9 +181,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__En
 }
 
 
-/* Void <OnClosedStandaloneError>b__37_0(IUIStack, BaseEventData) */
+/* Void <OnClosedStandaloneError>b__38_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__OnClosedStandaloneError_b__37_0(ContextMenuController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__OnClosedStandaloneError_b__38_0(ContextMenuController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -207,9 +207,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__On
 }
 
 
-/* Void <OnFailedToAddItem>b__39_0(IUIStack, BaseEventData) */
+/* Void <OnFailedToAddItem>b__40_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__OnFailedToAddItem_b__39_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__OnFailedToAddItem_b__40_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -259,9 +259,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Po
 }
 
 
-/* Void <ResetLogic>b__32_0(IUIStack, BaseEventData) */
+/* Void <ResetLogic>b__33_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ResetLogic_b__32_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ResetLogic_b__33_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -285,9 +285,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Re
 }
 
 
-/* Void <ShowChangeScaleDialog>b__31_0(IUIStack, BaseEventData) */
+/* Void <ShowChangeScaleDialog>b__32_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowChangeScaleDialog_b__31_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowChangeScaleDialog_b__32_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -634,7 +634,7 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__cc
   }
   method_00 = TypeInfo__ContextMenuController____c;
   value = (ContextMenuController_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   TypeInfo__ContextMenuController____c->static_fields->__9 = value;
   func_?(TypeInfo__ContextMenuController____c->static_fields,value);
   return;
