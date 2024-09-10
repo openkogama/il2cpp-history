@@ -161,8 +161,6 @@ code_?:
     if (cRam_? == '\0') goto code_?;
   }
   else {
-    *(byte *)&pTVar2->klass = *(byte *)&pTVar2->klass ^ 0x16;
-    unaff_EBX = (uint *)0x11;
 code_?:
     ppAVar20 = &TypeInfo__System__Action<System::Object>;
     func_?(&TypeInfo__System__Action<System::Object>);
@@ -180,7 +178,7 @@ code_?:
   key = *(Int32Enum__Enum *)(*(int *)(puVar22 + 8) + 0x10);
   *(Int32Enum__Enum *)(puVar22 + -4) = key;
   if (this_00 == (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)0x0) {
-    func_?(pTVar2,unaff_ESI,unaff_EBX);
+    func_?(pTVar2,unaff_ESI);
 code_?:
     func_?();
     pcVar23 = (code *)swi(3);

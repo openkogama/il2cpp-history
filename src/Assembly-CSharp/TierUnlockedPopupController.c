@@ -46,7 +46,7 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
     unlockedTier = (GamePassTier__Enum)&UNK_?;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)pLVar2,(Object *)pCVar3,MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__Add_TierUnlockedPopupContentBase_);
     _wasTempUnlocked = (this->fields).PopupContentXPPrefab;
-    wasPurchased = 0x94;
+    wasPurchased = 0x14;
     pCVar3 = (Component *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)_wasTempUnlocked,TierUnlockedPopupContentXP_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedPopupContentXP>_TierUnlockedPopupContentXP_);
     if (pCVar3 == (Component *)0x0) goto code_?;
     pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(pCVar3,(MethodInfo *)0x0);

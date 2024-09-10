@@ -152,8 +152,7 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter_GetActorWithBestScore(TeamsCo
     }
   }
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  return;
 }
 
 

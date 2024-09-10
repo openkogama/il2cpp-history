@@ -12,15 +12,27 @@ void Assembly-CSharp.dll::FaceTowardsMainCamera::FaceTowardsMainCamera_LateUpdat
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_LookAt(pTVar1,target,(MethodInfo *)0x0);
       pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
       if (pTVar1 != (Transform *)0x0) {
-        uStack3 = 0;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_1(pTVar1,(Vector3)ZEXT812(0x42b40000),(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_1(pTVar1,(this->fields).setRotation,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
+  return;
+}
+
+
+/* FaceTowardsMainCamera() */
+
+void Assembly-CSharp.dll::FaceTowardsMainCamera::FaceTowardsMainCamera__ctor(FaceTowardsMainCamera *this,MethodInfo *method)
+
+{
+  (this->fields).setRotation.x = 90.0;
+  (this->fields).setRotation.y = 0.0;
+  (this->fields).setRotation.z = 0.0;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

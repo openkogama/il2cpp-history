@@ -226,7 +226,7 @@ void Assembly-CSharp.dll::ChunkInstances::ChunkInstances_Remove(ChunkInstances *
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ChunkInstancesChanged);
-    func_?(0xe6a4);
+    func_?(0xe6a8);
     cRam_? = '\x01';
   }
   pEVar1 = (this->fields).Changed;

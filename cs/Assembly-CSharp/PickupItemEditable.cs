@@ -70,7 +70,7 @@ public abstract class PickupItemEditable : PickupItemWithDelay
 	}
 
 	[CompilerGenerated]
-	private sealed class _DisableAnimatorCoroutine_d__40 : IEnumerator<object>
+	private sealed class _DisableAnimatorCoroutine_d__41 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -83,7 +83,7 @@ public abstract class PickupItemEditable : PickupItemWithDelay
 
 		// Constructors
 		[DebuggerHidden]
-		public _DisableAnimatorCoroutine_d__40(int __1__state);
+		public _DisableAnimatorCoroutine_d__41(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -108,8 +108,9 @@ public abstract class PickupItemEditable : PickupItemWithDelay
 	protected virtual void SetAnimation();
 	protected void PlayAnimation();
 	protected virtual void OnHit(VoxelHit voxelHit, Ray lineOfFire);
+	protected virtual void PlayFireSoundEffect(bool isLocal);
 	protected void PlayAudio(AudioSource audioSource, string soundEffectName, Vector3 position, bool useAudioManager = true);
-	[IteratorStateMachine(typeof(_DisableAnimatorCoroutine_d__40))]
+	[IteratorStateMachine(typeof(_DisableAnimatorCoroutine_d__41))]
 	private IEnumerator DisableAnimatorCoroutine();
 	private void DisableAnimation();
 	protected bool IsSamePickupItem(Dictionary<object, object> itemData);
