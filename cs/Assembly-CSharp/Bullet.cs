@@ -28,6 +28,8 @@ public class Bullet : MonoBehaviour
 	private ParticleSystem pSystem;
 	[SerializeField]
 	private MeshRenderer[] meshRenderers;
+	[SerializeField]
+	private SpriteRenderer[] spriteRenderers;
 	private CollisionBullet collisionBullet;
 	private bool hit;
 	private bool hasCleaned;
