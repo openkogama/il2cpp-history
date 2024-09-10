@@ -3384,7 +3384,6 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
                (PickupItemCustomGun *this,bool isLocal,MethodInfo *method)
 
 {
-  pPVar1 = this;
   if (cRam_? == '\0') {
     func_?(&StringLiteral_minigun);
     cRam_? = '\x01';
@@ -3392,72 +3391,71 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
   a = (String *)
       (*(code *)(this->klass->vtable).get_FireSoundEffectName.method)
                 (this,(this->klass->vtable).get_HitSoundEffectName.methodPtr);
-  bVar2 = mscorlib.dll::System::String::String_op_Inequality
+  bVar1 = mscorlib.dll::System::String::String_op_Inequality
                     (a,StringLiteral_minigun,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar1 != 0) {
     PickupItemEditable::PickupItemEditable_PlayFireSoundEffect
               ((PickupItemEditable *)this,isLocal,(MethodInfo *)0x0);
+    return;
   }
-  pPVar3 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-  if (pPVar3 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
-  iVar4 = (pPVar3->fields).fireMode;
-  pPVar3 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-  if (iVar4 == 2) {
-    if (pPVar3 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
-    this = (PickupItemCustomGun *)(pPVar3->fields).burstCooldownBetweenShots;
+  pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+  if (pPVar2 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
+  iVar3 = (pPVar2->fields).fireMode;
+  pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+  if (iVar3 == 2) {
+    if (pPVar2 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
 code_?:
-    pAVar5 = (pPVar1->fields)._.fireAudioSource;
-    if (pAVar5 == (AudioSource *)0x0) goto code_?;
-    bVar2 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_isPlaying
-                      (pAVar5,(MethodInfo *)0x0);
-    if (((bVar2 == 0) && ((float)this <= _UNK_?)) && ((pPVar1->fields)._._.isFiring != 0)) {
-      pAVar5 = (pPVar1->fields)._.fireAudioSource;
-      if (pAVar5 != (AudioSource *)0x0) {
+    pAVar4 = (this->fields)._.fireAudioSource;
+    if (pAVar4 == (AudioSource *)0x0) goto code_?;
+    bVar1 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_isPlaying
+                      (pAVar4,(MethodInfo *)0x0);
+    if (((bVar1 == 0) && (0.0 <= _UNK_?)) && ((this->fields)._._.isFiring != 0)) {
+      pAVar4 = (this->fields)._.fireAudioSource;
+      if (pAVar4 != (AudioSource *)0x0) {
         UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop
-                  (pAVar5,1,(MethodInfo *)0x0);
-        pAVar5 = (pPVar1->fields)._.fireAudioSource;
-        if (pAVar5 != (AudioSource *)0x0) {
+                  (pAVar4,1,(MethodInfo *)0x0);
+        pAVar4 = (this->fields)._.fireAudioSource;
+        if (pAVar4 != (AudioSource *)0x0) {
           UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1
-                    (pAVar5,(MethodInfo *)0x0);
+                    (pAVar4,(MethodInfo *)0x0);
           return;
         }
       }
       goto code_?;
     }
-    if ((float)this <= _UNK_?) {
+    if (0.0 <= _UNK_?) {
       return;
     }
   }
   else {
-    if (pPVar3 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
-    this = (PickupItemCustomGun *)(pPVar3->fields)._.attackCooldown;
-    if (iVar4 != 0) goto code_?;
+    if (pPVar2 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
+    if (iVar3 != 0) goto code_?;
   }
-  dVar6 = UnityEngine.AudioModule.dll::UnityEngine::AudioSettings::AudioSettings_get_dspTime
-                    ((MethodInfo *)0x0);
-  pAVar5 = (pPVar1->fields)._.fireAudioSource;
-  if (pAVar5 != (AudioSource *)0x0) {
-    dStack_7 = (double)CONCAT44(&UNK_?,SUB84(dVar6,0));
+  UnityEngine.AudioModule.dll::UnityEngine::AudioSettings::AudioSettings_get_dspTime
+            ((MethodInfo *)0x0);
+  pAVar4 = (this->fields)._.fireAudioSource;
+  if (pAVar4 != (AudioSource *)0x0) {
+    uVar5 = 0;
     UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop
-              (pAVar5,0,(MethodInfo *)0x0);
-    pAVar5 = (pPVar1->fields)._.fireAudioSource;
-    if (pAVar5 != (AudioSource *)0x0) {
+              (pAVar4,0,(MethodInfo *)0x0);
+    pAVar4 = (this->fields)._.fireAudioSource;
+    if (pAVar4 != (AudioSource *)0x0) {
+      dVar6 = (double)CONCAT44(pAVar4,&UNK_?);
       UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_PlayScheduled
-                (pAVar5,1.35226411034286e-315,in_stack_8);
-      pAVar5 = (pPVar1->fields)._.fireAudioSource;
-      if (pAVar5 != (AudioSource *)0x0) {
-        puStack9 = SUB84(dStack_7 + _UNK_?,0);
+                (pAVar4,(double)(uVar5 >> 0x20),_isLocal);
+      pAVar4 = (this->fields)._.fireAudioSource;
+      if (pAVar4 != (AudioSource *)0x0) {
+        puStack7 = SUB84(dVar6 + _UNK_?,0);
         UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_SetScheduledEndTime
-                  (pAVar5,(double)((ulonglong)(dStack_7 + _UNK_?) >> 0x20),in_stack_10)
-        ;
+                  (pAVar4,(double)((ulonglong)(dVar6 + _UNK_?) >> 0x20),in_stack_8);
         return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
