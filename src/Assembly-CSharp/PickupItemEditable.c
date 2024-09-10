@@ -49,10 +49,10 @@ Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_DisableAnimatorCorou
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__40);
+    func_?(&TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__41);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__40;
+  method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__41;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -423,7 +423,7 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_PlayAnimation
         func_?();
         cRam_? = '\x01';
       }
-      method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__40;
+      method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__41;
       value = (Object *)func_?();
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -489,6 +489,74 @@ code_?:
                  (MethodInfo *)0x0);
     }
   }
+  return;
+}
+
+
+/* Void PlayFireSoundEffect(Boolean) */
+
+void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_PlayFireSoundEffect
+               (PickupItemEditable *this,bool isLocal,MethodInfo *method)
+
+{
+  if (isLocal == 0) {
+    pTVar1 = (this->fields)._._.muzzlePoint;
+    if (pTVar1 == (Transform *)0x0) goto code_?;
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                       ((Vector3 *)&stack0xffffffb0,pTVar1,(MethodInfo *)0x0);
+    VStack_3.x = pVVar2->x;
+    VStack_3.y = pVVar2->y;
+    fStack_4 = pVVar2->z;
+  }
+  else {
+    pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+    if (pCVar5 == (Camera *)0x0) goto code_?;
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pCVar5,(MethodInfo *)0x0);
+    if (pTVar1 == (Transform *)0x0) goto code_?;
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                       (&VStack_3,pTVar1,(MethodInfo *)0x0);
+    fVar6 = pVVar2->y;
+    fVar7 = pVVar2->z;
+    pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+    if (pCVar5 == (Camera *)0x0) goto code_?;
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pCVar5,(MethodInfo *)0x0);
+    if (pTVar1 == (Transform *)0x0) goto code_?;
+    fVar8 = 0.0;
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                       ((Vector3 *)&stack0xffffffb0,pTVar1,(MethodInfo *)0x0);
+    uVar9 = pVVar2->x;
+    uVar10 = pVVar2->y;
+    VStack_3.x = fVar8 + (float)uVar9;
+    VStack_3.y = fVar6 + (float)uVar10;
+    fStack_4 = pVVar2->z + fVar7;
+  }
+  uStack_11 = 0;
+  VStack_3.z = 0.0;
+  pAVar12 = (this->fields).fireAudioSource;
+  fStack_13 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
+                        (0.95,1.05,(MethodInfo *)0x0);
+  if (pAVar12 != (AudioSource *)0x0) {
+    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch
+              (pAVar12,fStack_13,(MethodInfo *)0x0);
+    pAVar12 = (this->fields).fireAudioSource;
+    if (pAVar12 != (AudioSource *)0x0) {
+      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop
+                (pAVar12,0,(MethodInfo *)0x0);
+      pAVar12 = (this->fields).fireAudioSource;
+      soundEffectName = (String *)(*(code *)(this->klass->vtable).get_FireSoundEffectName.method)();
+      position.y = VStack_3.y;
+      position.x = VStack_3.x;
+      position.z = fStack_4;
+      PickupItemEditable_PlayAudio(this,pAVar12,soundEffectName,position,1,(MethodInfo *)0x0);
+      return;
+    }
+  }
+code_?:
+  func_?();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

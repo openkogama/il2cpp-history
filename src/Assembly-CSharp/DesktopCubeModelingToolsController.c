@@ -169,8 +169,6 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void SetButtonTransparency(CubeModelingEvent) */
 
 void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
@@ -195,39 +193,23 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
   case CubeModelingEvent__Enum_ColorPicker:
     this_00 = (this->fields).pickCubeColor;
   }
-  if (this_00 == (Button *)0x0) goto code_?;
-  unaff_EDI = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
-                        ((Selectable *)this_00,(MethodInfo *)0x0);
-  do {
-    if (unaff_EDI != (Image *)0x0) goto code_?;
+  if (this_00 != (Button *)0x0) {
+    pIVar1 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+                       ((Selectable *)this_00,(MethodInfo *)0x0);
+    pIStack_2 = (Image *)(this->fields).enabledAlpha;
+    if (pIVar1 != (Image *)0x0) {
+      pIStack_3 = (pIVar1->klass->vtable).set_color.methodPtr;
+      pIStack_4 = pIVar1;
+      puVar5 = (undefined4 *)(*(code *)(pIVar1->klass->vtable).get_color.method)(&pIStack_4);
+      pIStack_3 = (Il2CppMethodPointer)puVar5[1];
+      uStack_6 = puVar5[2];
+      pIStack_4 = pIStack_2;
+      (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,*puVar5,pIStack_3,uStack_6);
 code_?:
-    uVar1 = func_?();
-    pMVar2 = (MethodInfo *)(*(int *)(unaff_EBX + -0x6c91efcc) * -0x6c8cefcc);
-  } while (extraout_ECX == 0);
-  if (-1 < (char)(byte)uVar1) {
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+      return;
+    }
   }
-  bVar4 = (byte)uVar1 | 0x85;
-  pcVar5 = (char *)(uVar1 | 0x85);
-  if (-1 < (char)bVar4) {
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
-  }
-  if (bVar4 == 0) {
-    *(char *)(unaff_EBX + 0x17091) = *(char *)(unaff_EBX + 0x17091) + (char)extraout_ECX;
-    ppUVar6 = &(unaff_EDI->fields)._._.m_OnDirtyMaterialCallback;
-    *(char *)ppUVar6 = *(char *)ppUVar6 + (char)pMVar2;
-  }
-  else {
-    *pcVar5 = *pcVar5 + (char)pcVar5;
-code_?:
-    pMVar2 = (unaff_EDI->klass->vtable).get_color.method;
-  }
-  puVar7 = (undefined4 *)(*(code *)pMVar2)();
-  (*(code *)(unaff_EDI->klass->vtable).set_color.method)(unaff_EDI,*puVar7,puVar7[1],puVar7[2]);
-code_?:
+  func_?();
   return;
 }
 

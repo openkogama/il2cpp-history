@@ -16,15 +16,16 @@ bool Assembly-CSharp.dll::GameMeterVisuals::SlideOnClick+<SlideTowardsPosition>d
 code_?:
       bVar2 = 0;
       uVar3 = func_?();
-      pbVar4 = (byte *)((ulonglong)uVar3 >> 0x20);
-      bVar5 = (byte)uVar3 + 0xbc;
-      bVar6 = 0x43 < (byte)uVar3 || CARRY1(bVar5,bVar2);
-      bVar7 = *pbVar4;
-      bVar8 = (byte)((ushort)extraout_CX >> 8);
-      bVar9 = *pbVar4 + bVar8;
-      *pbVar4 = bVar9 + bVar6;
-      pcVar10 = (char *)(CONCAT31((int3)((ulonglong)uVar3 >> 8),bVar5 + bVar2) + -0x39efb443);
-      *pcVar10 = *pcVar10 + (char)extraout_CX + (CARRY1(bVar7,bVar8) || CARRY1(bVar9,bVar6));
+      uVar4 = in(0xbb);
+      bVar5 = (byte)((uint)(unaff_EBX + -1) >> 8);
+      bVar6 = extraout_DL + bVar5;
+      bVar7 = CARRY1(extraout_DL,bVar5) || CARRY1(bVar6,bVar2);
+      pbVar8 = (byte *)(CONCAT31((int3)((uint)uVar3 >> 8),uVar4) + -0x43);
+      bVar5 = *pbVar8;
+      bVar9 = *pbVar8;
+      *pbVar8 = bVar9 + 0x4a + bVar7;
+      pcVar10 = (char *)((int)&this[-0x229fcd9].fields._i_5__2 + 1);
+      *pcVar10 = *pcVar10 + bVar6 + bVar2 + (0xb5 < bVar5 || CARRY1(bVar9 + 0x4a,bVar7));
       pcVar11 = (code *)swi(3);
       bVar12 = (*pcVar11)();
       return bVar12;

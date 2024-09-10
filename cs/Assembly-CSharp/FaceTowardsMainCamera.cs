@@ -11,6 +11,10 @@ using UnityEngine;
 
 public class FaceTowardsMainCamera : MonoBehaviour
 {
+	// Fields
+	[SerializeField]
+	private Vector3 setRotation;
+
 	// Constructors
 	public FaceTowardsMainCamera();
 

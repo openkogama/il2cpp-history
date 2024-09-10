@@ -1198,44 +1198,47 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_HandleDeserializedWorldData
                KogamaDataType__Enum dataType,MethodInfo *method)
 
 {
+  cVar1 = (char)((uint)unaff_EBX >> 8);
   switch(dataType & 0xff) {
   case KogamaDataType__Enum_Prototypes:
-    pMVar1 = (this->fields)._.worldInventory;
-    if (pMVar1 != (MVWorldInventory *)0x0) {
-      MVWorldInventory::MVWorldInventory_AddPrototype(pMVar1,data,(MethodInfo *)0x0);
+    pMVar2 = (this->fields)._.worldInventory;
+    if (pMVar2 != (MVWorldInventory *)0x0) {
+      MVWorldInventory::MVWorldInventory_AddPrototype(pMVar2,data,(MethodInfo *)0x0);
       return;
     }
     break;
   case KogamaDataType__Enum_WorldObjects:
-    this_00 = (this->fields)._.worldObjectClientManager;
-    if ((this_00 != (MVWorldObjectClientManagerNetwork *)0x0) &&
-       (pMVar1 = (this->fields)._.worldInventory, pMVar1 != (MVWorldInventory *)0x0)) {
-      this_01 = KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
-                          (data,(this_00->fields)._.worldObjects,(pMVar1->fields).runtimePrototypes,
-                           (MethodInfo *)0x0);
-      if (this_01 == (MVWorldObjectClient *)0x0) {
+    unaff_EDI = (this->fields)._.worldObjectClientManager;
+    if ((unaff_EDI != (MVWorldObjectClientManagerNetwork *)0x0) &&
+       (pMVar2 = (this->fields)._.worldInventory, pMVar2 != (MVWorldInventory *)0x0)) {
+      unaff_ESI = KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
+                            (data,(unaff_EDI->fields)._.worldObjects,
+                             (pMVar2->fields).runtimePrototypes,(MethodInfo *)0x0);
+      if (unaff_ESI == (MVWorldObjectClient *)0x0) {
 code_?:
         MVWorldObjectClientManagerNetwork::MVWorldObjectClientManagerNetwork_AddToWorldObjects
-                  (this_00,this_01,(MethodInfo *)0x0);
+                  (unaff_EDI,unaff_ESI,(MethodInfo *)0x0);
         return;
       }
-      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar2 != (MVNetworkGame *)0x0) {
-        pOVar3 = (Object *)(this_01->fields)._.id;
-        pTVar4 = (pMVar2->fields).transformNetworkManager;
-        if (pTVar4 != (TransformNetworkManager *)0x0) {
+      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (pMVar3 != (MVNetworkGame *)0x0) {
+        pOVar4 = (Object *)(unaff_ESI->fields)._.id;
+        pTVar5 = (pMVar3->fields).transformNetworkManager;
+        cVar1 = '\0';
+        if (pTVar5 != (TransformNetworkManager *)0x0) {
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
-          pOVar3 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::
+          pOVar4 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::
                    CollectionExtensions_GetValueOrDefault_1
                              ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
-                              (pTVar4->fields).networkedObjects,pOVar3,
+                              (pTVar5->fields).networkedObjects,pOVar4,
                               MVNetworkObject_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<int,_MVNetworkObject>_System__Collections__Generic__IReadOnlyDictionary<int,_MVNetworkObject>__int_
                              );
-          if (pOVar3 == (Object *)0x0) {
-            MVWorldObjectClient::MVWorldObjectClient_SetNetworkObject(this_01,0,(MethodInfo *)0x0);
+          if (pOVar4 == (Object *)0x0) {
+            MVWorldObjectClient::MVWorldObjectClient_SetNetworkObject(unaff_ESI,0,(MethodInfo *)0x0)
+            ;
           }
           goto code_?;
         }
@@ -1251,8 +1254,15 @@ code_?:
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  bVar6 = unaff_ESI->klass < (MVWorldObjectClient__Class *)unaff_EDI->klass;
+  pbVar7 = (byte *)segment(in_SS,(short)&stack0xfffffffc + (short)unaff_EDI + 0x6d);
+  bVar8 = *pbVar7;
+  bVar9 = *pbVar7;
+  *pbVar7 = bVar9 + extraout_CH + bVar6;
+  pcVar10 = (char *)segment(in_DS,(short)unaff_EDI + 0x6d);
+  *pcVar10 = *pcVar10 + cVar1 + (CARRY1(bVar8,extraout_CH) || CARRY1(bVar9 + extraout_CH,bVar6));
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

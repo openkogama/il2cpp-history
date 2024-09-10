@@ -70,12 +70,12 @@ bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<ChargeR
     (this->fields)._targetMouseSensitivity_5__4 = fVar16 * (fVar10 / fVar15);
     pAVar17 = (this_00->fields)._.alternativeAudioSource;
     if (pAVar17 == (AudioSource *)0x0) goto code_?;
-    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1
-              (pAVar17,(MethodInfo *)0x0);
-    pAVar17 = (this_00->fields)._.alternativeAudioSource;
-    if (pAVar17 == (AudioSource *)0x0) goto code_?;
     UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop
               (pAVar17,1,(MethodInfo *)0x0);
+    pAVar17 = (this_00->fields)._.alternativeAudioSource;
+    if (pAVar17 == (AudioSource *)0x0) goto code_?;
+    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1
+              (pAVar17,(MethodInfo *)0x0);
     pPVar14 = PickupItemCustomGun::PickupItemCustomGun_get_Configuration(this_00,(MethodInfo *)0x0);
     if (pPVar14 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
     if ((pPVar14->fields).chargeParticlesEnabled == 0) goto code_?;

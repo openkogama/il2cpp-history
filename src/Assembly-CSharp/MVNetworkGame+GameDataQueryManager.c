@@ -67,7 +67,7 @@ void Assembly-CSharp.dll::MVNetworkGame+GameDataQueryManager::
               ((BytePacker *)pOVar5,value_00,(MethodInfo *)0x0);
     pOVar5 = pOVar4[1].klass;
     if (value[1].klass == (Object__Class *)0x0) goto code_?;
-    queryDataLeft = 0x78;
+    queryDataLeft = 0x48;
     MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_set_Position
               ((BytePacker *)value[1].klass,0,(MethodInfo *)0x0);
     if (value[1].klass == (Object__Class *)0x0) goto code_?;
@@ -130,51 +130,48 @@ void Assembly-CSharp.dll::MVNetworkGame+GameDataQueryManager::
         (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
       return;
     }
-    unaff_EDI = (WorldNetwork *)
-                MVNetworkGame+GameDataQueryManager+GameDataQuery::
-                MVNetworkGame_GameDataQueryManager_GameDataQuery_GetBytePacker
-                          (gameDataQuery,(MethodInfo *)0x0);
-    iVar2 = (gameDataQuery->fields).instigatorActorNumber;
+    pBVar2 = MVNetworkGame+GameDataQueryManager+GameDataQuery::
+              MVNetworkGame_GameDataQueryManager_GameDataQuery_GetBytePacker
+                        (gameDataQuery,(MethodInfo *)0x0);
+    iVar3 = (gameDataQuery->fields).instigatorActorNumber;
     unaff_EBX = (ReceivedItemFromQueryEventArgs *)func_?();
-    puStackY_38 = &UNK_?;
     ReceivedItemFromQueryEventArgs::ReceivedItemFromQueryEventArgs__ctor
-              (unaff_EBX,(BytePacker *)unaff_EDI,iVar2,(MethodInfo *)0x0);
+              (unaff_EBX,pBVar2,iVar3,(MethodInfo *)0x0);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-    pEVar3 = (pMVar1->fields).ReceivedItemFromQuery;
+    pEVar4 = (pMVar1->fields).ReceivedItemFromQuery;
     break;
   case 2:
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 != (MVNetworkGame *)0x0) {
-      unaff_EDI = (pMVar1->fields).worldNetwork;
-      pBVar4 = (gameDataQuery->fields).bp;
-      if ((pBVar4 != (BytePacker *)0x0) &&
+      this_00 = (pMVar1->fields).worldNetwork;
+      pBVar2 = (gameDataQuery->fields).bp;
+      if ((pBVar2 != (BytePacker *)0x0) &&
          (MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_set_Position
-                    (pBVar4,0,(MethodInfo *)0x0), unaff_EDI != (WorldNetwork *)0x0)) {
+                    (pBVar2,0,(MethodInfo *)0x0), this_00 != (WorldNetwork *)0x0)) {
         WorldNetwork::WorldNetwork_AddGameQueryDataToGameWorld
-                  (unaff_EDI,(gameDataQuery->fields).bp,
-                   (gameDataQuery->fields).instigatorActorNumber,(MethodInfo *)0x0);
+                  (this_00,(gameDataQuery->fields).bp,(gameDataQuery->fields).instigatorActorNumber,
+                   (MethodInfo *)0x0);
         return;
       }
     }
     goto code_?;
   case 3:
-    pBVar4 = (gameDataQuery->fields).bp;
-    if (pBVar4 != (BytePacker *)0x0) {
+    pBVar2 = (gameDataQuery->fields).bp;
+    if (pBVar2 != (BytePacker *)0x0) {
       MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_set_Position
-                (pBVar4,0,(MethodInfo *)0x0);
-      pBVar4 = (gameDataQuery->fields).bp;
-      if (pBVar4 != (BytePacker *)0x0) {
-        MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ToArray(pBVar4,(MethodInfo *)0x0)
-        ;
+                (pBVar2,0,(MethodInfo *)0x0);
+      pBVar2 = (gameDataQuery->fields).bp;
+      if (pBVar2 != (BytePacker *)0x0) {
+        MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ToArray
+                  (pBVar2,(MethodInfo *)0x0);
         pEVar5 = mscorlib.dll::System::Text::Encoding::Encoding_get_ASCII((MethodInfo *)0x0);
         if (pEVar5 != (Encoding *)0x0) {
-          this = (MVNetworkGame_GameDataQueryManager *)(pEVar5->klass->vtable).GetString_1.methodPtr
-          ;
           (*(code *)(pEVar5->klass->vtable).GetString.method)();
           pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if ((pMVar1 != (MVNetworkGame *)0x0) &&
-             (pAVar6 = (pMVar1->fields).ReceivedAccessoryData, pAVar6 != (Action_1_String_ *)0x0)) {
+             (pAVar6 = (pMVar1->fields).ReceivedAccessoryData, pAVar6 != (Action_1_String_ *)0x0))
+          {
             (*(pAVar6->fields)._._.invoke_impl)();
             return;
           }
@@ -189,65 +186,61 @@ void Assembly-CSharp.dll::MVNetworkGame+GameDataQueryManager::
         (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
       return;
     }
-    unaff_EDI = (WorldNetwork *)
-                MVNetworkGame+GameDataQueryManager+GameDataQuery::
-                MVNetworkGame_GameDataQueryManager_GameDataQuery_GetBytePacker
-                          (gameDataQuery,(MethodInfo *)0x0);
-    iVar2 = (gameDataQuery->fields).instigatorActorNumber;
+    pBVar2 = MVNetworkGame+GameDataQueryManager+GameDataQuery::
+              MVNetworkGame_GameDataQueryManager_GameDataQuery_GetBytePacker
+                        (gameDataQuery,(MethodInfo *)0x0);
+    iVar3 = (gameDataQuery->fields).instigatorActorNumber;
     unaff_EBX = (ReceivedItemFromQueryEventArgs *)func_?();
-    puStackY_38 = &UNK_?;
     ReceivedItemFromQueryEventArgs::ReceivedItemFromQueryEventArgs__ctor
-              (unaff_EBX,(BytePacker *)unaff_EDI,iVar2,(MethodInfo *)0x0);
+              (unaff_EBX,pBVar2,iVar3,(MethodInfo *)0x0);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-    pEVar3 = (pMVar1->fields).ReceivedAvatarBodiesFromQuery;
+    pEVar4 = (pMVar1->fields).ReceivedAvatarBodiesFromQuery;
     break;
   default:
     goto code_?;
   }
-  if (pEVar3 != (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
-    (*(pEVar3->fields)._._.invoke_impl)();
+  if (pEVar4 != (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
+    (*(pEVar4->fields)._._.invoke_impl)();
 code_?:
     return;
   }
 code_?:
   bVar7 = 0;
-  bVar8 = func_?();
-  bVar7 = 0x99 < bVar8 | bVar7;
-  pbVar9 = (byte *)((int)unaff_EDI + unaff_FS_OFFSET + -0x12ef9b6a);
-  bVar8 = *pbVar9 + (byte)unaff_EBX;
-  bVar10 = CARRY1(*pbVar9,(byte)unaff_EBX) || CARRY1(bVar8,bVar7);
-  *pbVar9 = bVar8 + bVar7;
-  pbVar9 = (byte *)(unaff_FS_OFFSET + extraout_ECX + -0x69);
-  bVar8 = *pbVar9;
-  bVar11 = (byte)((uint)extraout_ECX >> 8);
-  bVar7 = *pbVar9 + bVar11;
-  *pbVar9 = bVar7 + bVar10;
-  acStackY_79[unaff_FS_OFFSET] =
-       acStackY_79[unaff_FS_OFFSET] + (char)extraout_DX +
-       (CARRY1(bVar8,bVar11) || CARRY1(bVar7,bVar10));
-  in(extraout_DX);
+  func_?();
+  uVar8 = (*(code *)unaff_EBX[-0x6b90efa].monitor)();
+  iVar9 = (int)uVar8;
+  pbVar10 = &stack0x39106490 + unaff_FS_OFFSET;
+  bVar11 = *pbVar10;
+  bVar12 = (byte)((uint)unaff_EBX >> 8);
+  bVar13 = *pbVar10 + bVar12;
+  *pbVar10 = bVar13 + bVar7;
+  pcVar14 = (char *)(unaff_FS_OFFSET + iVar9 + -0x75);
+  *pcVar14 = *pcVar14 + (char)((uint6)uVar8 >> 0x20) + (CARRY1(bVar11,bVar12) || CARRY1(bVar13,bVar7))
+  ;
+  in((short)((uint6)uVar8 >> 0x20));
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).gameDataQueries;
-  if (this_00 != (Dictionary_2_System_Int32_MVNetworkGame_GameDataQueryManager_GameDataQuery_ *)0x0)
+  this_01 = *(MVNetworkGame_GameDataQueryManager **)(iVar9 + 8);
+  this_02 = (this_01->fields).gameDataQueries;
+  if (this_02 != (Dictionary_2_System_Int32_MVNetworkGame_GameDataQueryManager_GameDataQuery_ *)0x0)
   {
     gameDataQuery_00 =
          (MVNetworkGame_GameDataQueryManager_GameDataQuery *)
          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
          Dictionary_2_System_Int32_System_Object__get_Item
-                   ((Dictionary_2_System_Int32_System_Object_ *)this_00,(int32_t)gameDataQuery,
+                   ((Dictionary_2_System_Int32_System_Object_ *)this_02,*(int32_t *)(iVar9 + 0xc),
                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkGame_GameDataQueryManager::GameDataQuery>__get_Item_int_
                    );
     MVNetworkGame_GameDataQueryManager_InitializeGameQueryData
-              (this,gameDataQuery_00,(MethodInfo *)0x0);
+              (this_01,gameDataQuery_00,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

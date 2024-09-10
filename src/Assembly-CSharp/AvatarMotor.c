@@ -489,7 +489,7 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_GetVelocity
                 velocity_01.z = fVar6;
                 pVVar3 = JumpState::JumpState_ApplyJumping
                                    ((Vector3 *)&stack0xffffffc8,this_01,
-                                    (MVInteractableBase *)interactableLocal,pMVar1,fVar5,fVar7,0x85
+                                    (MVInteractableBase *)interactableLocal,pMVar1,fVar5,fVar7,0xc5
                                     ,velocity_01,movableVelocity,(MethodInfo *)0x0);
                 pVVar3 = MVRigidBody::MVRigidBody_GetImpulse
                                    ((Vector3 *)&stack0xffffffc8,(MVRigidBody *)this,*pVVar3,
@@ -551,7 +551,7 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_HandleMovementBoost
             (TypeInfo__System__Int32->_0).element_class) {
           piVar5 = (int *)func_?();
           (this->fields).walkSpeed =
-               ((float)*piVar5 / _UNK_? + _UNK_?) * 3.3892684e-29;
+               ((float)*piVar5 / _UNK_? + _UNK_?) * 3.3892876e-29;
           return;
         }
         goto code_?;

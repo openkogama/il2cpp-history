@@ -387,11 +387,11 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::CustomGu
     func_?(&TypeInfo__System__Single);
     func_?(&TypeInfo__System__String);
     func_?(&::_0EAB6EC6C45C3A2EC1742291A27C6FB6908AFF29C125F56BF5965A533C912B69_Field);
-    func_?(&::_165E1E4424E7969FE2F5D908A3662A44C34673B0E9AE77476F9233D9C3716A71_Field);
+    func_?(&::_29E8A442F33CAD2057FDF54C9813CABDA2DE1FD86ED9E64B53C4DE75741A912C_Field);
     func_?(&_96B0D9B648215260DFA72CA32240379ACDCD3D78B11C81DB373C18C4338E0CE5_Field);
     func_?(&A480DB650E94CE07AD8E7C752477FE0541ED8CB69D8D8FD0A6A0AFEF4F1F4B01_Field);
     func_?(&AB3776AA1ACE09050C5F3A211263CAB0D47E5204C66736DEBED306D523698D19_Field);
-    func_?(&BBA9A5C28BC33E9FC9CDBCB53E3B4CB97E55EB8DAC16B3C307EF40C8D7C93E35_Field);
+    func_?(&E2D30C16FEB57BB0C779D0E4B61C96D66CE9C5E7A066B1A39A2574D4FD13B2D0_Field);
     func_?(&StringLiteral_heavy_machine_gun);
     func_?(&StringLiteral_pistol);
     func_?(&StringLiteral_ChargeSoundEffect);
@@ -792,7 +792,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::CustomGu
       pAVar6 = (Array *)func_?();
       mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
       RuntimeHelpers_InitializeArray_1
-                (pAVar6,__165E1E4424E7969FE2F5D908A3662A44C34673B0E9AE77476F9233D9C3716A71_Field,
+                (pAVar6,__29E8A442F33CAD2057FDF54C9813CABDA2DE1FD86ED9E64B53C4DE75741A912C_Field,
                  (MethodInfo *)0x0);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
@@ -803,7 +803,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::CustomGu
       pAVar6 = (Array *)func_?();
       mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
       RuntimeHelpers_InitializeArray_1
-                (pAVar6,_BBA9A5C28BC33E9FC9CDBCB53E3B4CB97E55EB8DAC16B3C307EF40C8D7C93E35_Field,
+                (pAVar6,_E2D30C16FEB57BB0C779D0E4B61C96D66CE9C5E7A066B1A39A2574D4FD13B2D0_Field,
                  (MethodInfo *)0x0);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add

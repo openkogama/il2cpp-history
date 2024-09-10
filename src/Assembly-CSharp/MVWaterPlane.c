@@ -101,7 +101,7 @@ void Assembly-CSharp.dll::MVWaterPlane::MVWaterPlane_Initialize
                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                    );
     func_?(&TypeInfo__System__Single);
-    func_?(&_1925626019DF8597605C21A63C8ED15E1FFE58D1E27D69E1E77ADD2D4C43AAFE_Field);
+    func_?(&::_1925626019DF8597605C21A63C8ED15E1FFE58D1E27D69E1E77ADD2D4C43AAFE_Field);
     func_?(&StringLiteral_lethal);
     func_?(&StringLiteral_waterColor);
     cRam_? = '\x01';

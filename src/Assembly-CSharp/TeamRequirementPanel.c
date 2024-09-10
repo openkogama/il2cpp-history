@@ -30,14 +30,14 @@ void Assembly-CSharp.dll::TeamRequirementPanel::TeamRequirementPanel_OnToggleEna
       if ((team->klass->_0).element_class == (TypeInfo__MV__WorldObject__MVTeam->_0).element_class)
       {
         pIVar4 = (Int32Enum__Enum *)func_?(team);
-        pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,*pIVar4,
-                            method_00);
+        pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+                  ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,*pIVar4,
+                             method_00);
         if (pTVar1 == (Text *)0x0) goto code_?;
         (*(code *)(pTVar1->klass->vtable).set_text.method)
-                  (pTVar1,pOVar5,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
-        ;
+                  (pTVar1,pOVar5,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr
+                  );
         if ((team->klass->_0).element_class == (TypeInfo__MV__WorldObject__MVTeam->_0).element_class
            ) {
           func_?(team);
@@ -49,10 +49,19 @@ void Assembly-CSharp.dll::TeamRequirementPanel::TeamRequirementPanel_OnToggleEna
   }
 code_?:
   func_?();
-  *(char *)(extraout_ECX + -0x56efc1dd) =
-       *(char *)(extraout_ECX + -0x56efc1dd) + (char)((uint)extraout_ECX >> 8);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  bVar6 = (char)extraout_ECX - 1;
+  pbVar7 = (byte *)(extraout_ECX + 0x23);
+  bVar8 = *pbVar7;
+  *pbVar7 = *pbVar7 + bVar6;
+  pbVar7 = (byte *)(extraout_ECX + 0x23);
+  bVar9 = *pbVar7;
+  bVar10 = *pbVar7;
+  *pbVar7 = bVar10 + bVar6 + CARRY1(bVar8,bVar6);
+  *(char *)(extraout_ECX + 0x23) =
+       *(char *)(extraout_ECX + 0x23) + bVar6 +
+       (CARRY1(bVar9,bVar6) || CARRY1(bVar10 + bVar6,CARRY1(bVar8,bVar6)));
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

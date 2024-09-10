@@ -481,7 +481,7 @@ code_?:
                         pTVar12 = (this->fields)._targetTerrain;
                         if (pTVar12 == (Terrain *)0x0) goto code_?;
                         worldPosition_00.y = (float)uVar8 + (float)this_05;
-                        worldPosition_00.x = (float)uVar4 + 4.2988014e-29;
+                        worldPosition_00.x = (float)uVar4 + 4.2986425e-29;
                         worldPosition_00.z = (float)method_00;
                         fVar25 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::
                                  Terrain_SampleHeight(pTVar12,worldPosition_00,(MethodInfo *)0x0);
@@ -489,7 +489,7 @@ code_?:
                                   GameObject_get_transform((GameObject *)this_04,(MethodInfo *)0x0);
                         if (pTVar19 == (Transform *)0x0) goto code_?;
                         value_00.y = fVar25 + fVar30 + ((float)uVar8 - fVar24);
-                        value_00.x = (float)uVar4 + 4.2988014e-29;
+                        value_00.x = (float)uVar4 + 4.2986425e-29;
                         value_00.z = (float)method_00;
                         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                                   (pTVar19,value_00,(MethodInfo *)0x0);

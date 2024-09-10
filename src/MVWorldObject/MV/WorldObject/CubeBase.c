@@ -353,22 +353,27 @@ code_?:
     }
   }
 code_?:
-  cVar6 = '\0';
+  bVar6 = 0;
   func_?();
-  *(undefined1 *)corners = *(undefined1 *)&((Vector3__Array *)faceVertices)->klass;
-  uVar7 = in(extraout_DX);
-  pcVar8 = (char *)((int)&((Vector3__Array *)((int)faceVertices + 0x5310ec50))->vector[0x1b].x + 2);
-  *pcVar8 = *pcVar8 + (char)uVar7 + cVar6;
-  pcVar8 = (char *)in(extraout_DX);
-  *pcVar8 = *pcVar8 + (char)((uint)pcVar8 >> 8) +
-            (*(byte *)((int)&((Vector3__Array *)faceVertices)->klass + 1) <
-            *(byte *)((int)corners + 1));
   in(extraout_DX);
-  *(char *)(extraout_ECX + -0x33ef1259) =
-       *(char *)(extraout_ECX + -0x33ef1259) + (char)((ushort)extraout_DX >> 8) +
-       (*(uint *)((int)&((Vector3__Array *)faceVertices)->klass + 2) < *(uint *)((int)corners + 2));
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  *(undefined1 *)corners = *(undefined1 *)&((Vector3__Array *)faceVertices)->klass;
+  in(extraout_DX);
+  bVar7 = (byte)((ushort)extraout_CX >> 8);
+  *(undefined4 *)((int)corners + 1) =
+       *(undefined4 *)((int)&((Vector3__Array *)faceVertices)->klass + 1);
+  in(extraout_DX);
+  pcVar8 = (char *)((int)&((Vector3__Array *)((int)faceVertices + -0x7cef1330))->vector[0x10].z + 3)
+  ;
+  *pcVar8 = *pcVar8 + (char)((ushort)extraout_DX >> 8) +
+            (CARRY1((byte)extraout_CX,bVar7) || CARRY1((byte)extraout_CX + bVar7,bVar6));
+  iVar9 = in(extraout_DX);
+  *(char *)(iVar9 + -0x58) =
+       *(char *)(iVar9 + -0x58) + (char)extraout_DX +
+       (*(uint *)((int)&((Vector3__Array *)faceVertices)->monitor + 1) < *(uint *)((int)corners + 5)
+       );
+  in(extraout_DX);
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

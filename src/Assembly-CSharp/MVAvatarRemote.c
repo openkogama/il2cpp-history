@@ -1451,7 +1451,7 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_VisualizeBulletImpact
           if (pAVar5 != (Avatar *)0x0) {
             voxelHit_00.point.z = (float)pOVar3;
             voxelHit_00.point.x = 0.0;
-            voxelHit_00.point.y = 3.4325296e-29;
+            voxelHit_00.point.y = 3.4325488e-29;
             voxelHit_00.normal.x = voxelHit.normal.x;
             voxelHit_00.normal.y = voxelHit.normal.y;
             voxelHit_00.normal.z = voxelHit.normal.z;

@@ -477,17 +477,9 @@ void Assembly-CSharp.dll::LobbyFlowMenu::LobbyFlowMenu_GoToMenu
       }
     }
   }
-  cVar6 = '\0';
-  fVar7 = (float10)func_?();
-  uStack8 = 0x4e1049dc;
-  *(longlong *)(extraout_ECX + 0x10) = (longlong)(fVar7 * (float10)*(short *)(extraout_ECX + 0x10));
-  pcVar9 = (code *)swi(4);
-  if (cVar6 == '\x01') {
-    (*pcVar9)();
-  }
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
-  return;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

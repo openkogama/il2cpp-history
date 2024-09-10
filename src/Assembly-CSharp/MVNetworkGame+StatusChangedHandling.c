@@ -110,7 +110,6 @@ void Assembly-CSharp.dll::MVNetworkGame+StatusChangedHandling::
       pSVar1 = mscorlib.dll::System::String::String_Concat_3
                          (StringLiteral_StatusCode_,pSVar1,(MethodInfo *)0x0);
       if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        method._0_1_ = 0x2c;
         func_?();
       }
       StatHatWrapper::StatHatWrapper_Count(pSVar1,1,(MethodInfo *)0x0);
@@ -250,27 +249,12 @@ code_?:
     return;
   }
 code_?:
-  uVar7 = func_?();
-  bVar8 = (byte)((uint)unaff_EBX >> 8);
-  bVar9 = bVar8 - extraout_DH;
-  pcVar10 = (char *)(returnCode + in_GS_OFFSET + -0x1def9a0b);
-  *pcVar10 = *pcVar10 + (char)((uint)extraout_ECX >> 8) + (bVar8 < extraout_DH);
-  sVar11 = (ushort)(byte)uVar7 * (ushort)(byte)method;
-  pcVar10 = (char *)CONCAT22((short)((uint)uVar7 >> 0x10),sVar11);
-  bVar8 = (byte)sVar11;
-  piVar12 = (int *)CONCAT22((short)((uint)unaff_EBX >> 0x10),
-                            CONCAT11(bVar9 - bVar8,(char)unaff_EBX));
-  pcVar10[in_GS_OFFSET] = pcVar10[in_GS_OFFSET] + bVar8 + (bVar9 < bVar8);
-  *extraout_ECX = *extraout_ECX + bVar8;
-  piVar13 = (int *)(CONCAT31((int3)((uint)pcVar10 >> 8),bVar8 + *pcVar10) + *piVar12);
-  pcVar10 = (char *)((int)piVar13 + *piVar12 + *piVar12 + *piVar12 + *piVar12 + *piVar13);
-  cVar14 = (char)pcVar10;
-  *pcVar10 = *pcVar10 + cVar14;
-  *pcVar10 = *pcVar10 + cVar14;
-  *pcVar10 = *pcVar10 + cVar14;
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
-  return;
+  func_?();
+  pcVar7 = (char *)(returnCode + in_GS_OFFSET + -0x3def9a0d);
+  *pcVar7 = *pcVar7 + extraout_CL;
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
 }
 
 

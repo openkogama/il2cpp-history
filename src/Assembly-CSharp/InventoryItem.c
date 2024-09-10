@@ -125,7 +125,6 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
     func_?(&StringLiteral_Speaker);
     func_?(&StringLiteral_And_Cube);
     func_?(&StringLiteral_Shotgun);
-    func_?(&StringLiteral_A_fully_customizable_projectile_);
     func_?(&StringLiteral_Global_Speaker);
     func_?(&StringLiteral_Fire_Sentry_Tower);
     func_?(&StringLiteral_Shoots_cubes_that_stick_to_surfa);
@@ -216,6 +215,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
     func_?(&StringLiteral_Collect_And_Drop);
     func_?(&StringLiteral_Set_a_time_limit_for_a_round__Af);
     func_?(&StringLiteral_Sneak_up_on_your_enemies_to_catc);
+    func_?(&StringLiteral_A_fully_customizable_projectile_);
     func_?(&StringLiteral_Yellow_Team_Spawn_Point);
     func_?(&StringLiteral_If_you_want_players_to_stand_on_);
     func_?(&StringLiteral_A_logic_object_which_sends_the_o);

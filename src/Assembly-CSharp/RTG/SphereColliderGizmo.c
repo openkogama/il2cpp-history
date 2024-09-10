@@ -1338,7 +1338,7 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                   uVar18 = pVVar2->y;
                   pCVar19 = (Camera *)((float)uVar17 * fVar6 + 0.0);
                   value.y = (float)uVar18 * fVar6 + (float)uVar4;
-                  fVar6 = pVVar2->z * fVar6 + 4.1682342e-29;
+                  fVar6 = pVVar2->z * fVar6 + 4.1680753e-29;
                   pGVar10 = (this->fields)._rightTick;
                   pVVar2 = (Vector3 *)&stack0xffffffd0;
                   position_04.y = value.y;
@@ -1392,7 +1392,7 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                       uVar22 = pVVar20->y;
                       fVar11 = (float)uVar21 * value.x + 0.0;
                       value.y = (float)uVar22 * value.x + (float)uVar4;
-                      fVar6 = pVVar20->z * value.x + 4.1682342e-29;
+                      fVar6 = pVVar20->z * value.x + 4.1680753e-29;
                       pGVar10 = (this->fields)._topTick;
                       position.y = value.y;
                       position.x = fVar11;
@@ -1448,7 +1448,7 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                           uVar24 = pVVar20->y;
                           fVar11 = 0.0 - (float)uVar23 * value.x;
                           value.y = (float)uVar4 - (float)uVar24 * value.x;
-                          fVar6 = 4.1682342e-29 - pVVar20->z * value.x;
+                          fVar6 = 4.1680753e-29 - pVVar20->z * value.x;
                           pGVar10 = (this->fields)._bottomTick;
                           position_00.y = value.y;
                           position_00.x = fVar11;
@@ -1515,7 +1515,7 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                               uVar28 = pVVar20->y;
                               fVar11 = 0.0 - (float)uVar27 * value.x;
                               value.y = (float)uVar4 - (float)uVar28 * value.x;
-                              fVar6 = 4.1682342e-29 - pVVar20->z * value.x;
+                              fVar6 = 4.1680753e-29 - pVVar20->z * value.x;
                               pGVar10 = (this->fields)._frontTick;
                               position_01.y = value.y;
                               position_01.x = fVar11;
@@ -1584,7 +1584,7 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                                   uVar32 = pVVar20->y;
                                   fVar11 = (float)uVar31 * value.x + 0.0;
                                   value.y = (float)uVar32 * value.x + (float)uVar4;
-                                  fVar6 = pVVar20->z * value.x + 4.1682342e-29;
+                                  fVar6 = pVVar20->z * value.x + 4.1680753e-29;
                                   pGVar10 = (this->fields)._backTick;
                                   position_02.y = value.y;
                                   position_02.x = fVar11;

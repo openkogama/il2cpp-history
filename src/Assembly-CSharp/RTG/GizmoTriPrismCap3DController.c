@@ -77,7 +77,7 @@ void Assembly-CSharp.dll::RTG::GizmoTriPrismCap3DController::
             fVar4 = (float10)(*(code *)(this->klass->vtable).GetSliderAlignedRealLength_1.method)();
             fVar5 = (float)fVar4;
             if (pGVar2 != (GizmoCap3D *)0x0) {
-              value.y = (float)pIVar3 + fVar5 * 4.1651897e-29;
+              value.y = (float)pIVar3 + fVar5 * 4.1650308e-29;
               value.x = zoomFactor + sliderDirection.x * fVar5;
               value.z = sliderEndPt.z + (float)this * fVar5;
               GizmoCap3D::GizmoCap3D_set_Position(pGVar2,value,(MethodInfo *)0x0);

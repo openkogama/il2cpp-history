@@ -161,17 +161,20 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
       }
     }
   }
+  bVar12 = 0;
   func_?();
-  bVar12 = *(undefined1 **)((int)&this[-0x11ebc99].fields.gamePointAmount + 3) < &fStack_13;
-  pbVar14 = (byte *)(extraout_EDX + -0x5a);
-  bVar15 = *pbVar14;
-  bVar16 = *pbVar14;
-  *pbVar14 = bVar16 + extraout_CH + bVar12;
+  puVar13 = (uint *)(unaff_EDI + -0x58baefbd);
+  bVar14 = (undefined1 *)*puVar13 < &fStack_15 || *puVar13 - (int)&fStack_15 < (uint)bVar12;
+  *puVar13 = (*puVar13 - (int)&fStack_15) - (uint)bVar12;
+  pbVar16 = (byte *)(extraout_EDX + -0x59);
+  bVar12 = *pbVar16;
+  bVar17 = *pbVar16;
+  *pbVar16 = bVar17 + extraout_CL + bVar14;
   *extraout_EDX =
-       *extraout_EDX + (char)((uint)(unaff_EBX + 2) >> 8) +
-       (CARRY1(bVar15,extraout_CH) || CARRY1(bVar16 + extraout_CH,bVar12));
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+       *extraout_EDX + unaff_BL + '\x02' +
+       (CARRY1(bVar12,extraout_CL) || CARRY1(bVar17 + extraout_CL,bVar14));
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

@@ -61,9 +61,9 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
           VVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_pivot
                              (pRVar2,(MethodInfo *)0x0);
           fVar7 = VVar6.x;
+          unaff_EDI = camera;
           if (camera != (Camera *)0x0) {
-            unaff_EBX = (undefined4 *)
-                        UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_pixelWidth
+            unaff_EBX = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_pixelWidth
                                   (camera,(MethodInfo *)0x0);
             pCVar1 = (this->fields).AttachedBubble;
             if (pCVar1 != (ChatBubble *)0x0) {
@@ -71,7 +71,7 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
               pRVar2 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0);
               if (pRVar2 != (RectTransform *)0x0) {
                 pRVar9 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                          RectTransform_get_rect((Rect *)&stack0xffffffd0,pRVar2,(MethodInfo *)0x0);
+                         RectTransform_get_rect((Rect *)&stack0xffffffd0,pRVar2,(MethodInfo *)0x0);
                 fVar10 = pRVar9->m_Width;
                 pCVar1 = (this->fields).AttachedBubble;
                 if ((pCVar1 != (ChatBubble *)0x0) &&
@@ -80,8 +80,8 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                    pTVar3 != (Transform *)0x0)) {
                   adjustedPosition.x = (float)&UNK_?;
                   pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                            Transform_get_lossyScale
-                                      ((Vector3 *)&puStack_4,pTVar3,(MethodInfo *)0x0);
+                           Transform_get_lossyScale((Vector3 *)&puStack_4,pTVar3,(MethodInfo *)0x0)
+                  ;
                   fVar12 = pVVar11->x;
                   pCVar1 = (this->fields).AttachedBubble;
                   if ((pCVar1 != (ChatBubble *)0x0) &&
@@ -91,14 +91,14 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                               (pRVar13,(MethodInfo *)0x0);
                     pCVar1 = (this->fields).AttachedBubble;
                     puVar14 = (undefined *)
-                              (((float)(int)unaff_EBX - fVar10 * fVar12 * (_UNK_? - fVar7))
-                              - _UNK_?);
+                              (((float)unaff_EBX - fVar10 * fVar12 * (_UNK_? - fVar7)) -
+                              _UNK_?);
                     if ((pCVar1 != (ChatBubble *)0x0) &&
                        (pRVar13 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0)
                        , pRVar13 != (RectTransform *)0x0)) {
                       pRVar9 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                                RectTransform_get_rect
-                                          ((Rect *)&stack0xffffffd0,pRVar13,(MethodInfo *)0x0);
+                               RectTransform_get_rect
+                                         ((Rect *)&stack0xffffffd0,pRVar13,(MethodInfo *)0x0);
                       fVar7 = pRVar9->m_Height;
                       pCVar1 = (this->fields).AttachedBubble;
                       if ((pCVar1 != (ChatBubble *)0x0) &&
@@ -107,8 +107,8 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                                               (pCVar1,(MethodInfo *)0x0),
                          pTVar15 != (Transform *)0x0)) {
                         pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                  Transform_get_lossyScale
-                                            ((Vector3 *)&puStack_4,pTVar15,(MethodInfo *)0x0);
+                                 Transform_get_lossyScale
+                                           ((Vector3 *)&puStack_4,pTVar15,(MethodInfo *)0x0);
                         fVar10 = pVVar11->y;
                         pCVar1 = (this->fields).AttachedBubble;
                         if ((pCVar1 != (ChatBubble *)0x0) &&
@@ -118,8 +118,7 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                           VVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                                    RectTransform_get_pivot(pRVar13,(MethodInfo *)0x0);
                           fVar7 = fVar7 * fVar10 * VVar6.y + _UNK_?;
-                          unaff_EBX = (undefined4 *)
-                                      UnityEngine.CoreModule.dll::UnityEngine::Camera::
+                          unaff_EBX = UnityEngine.CoreModule.dll::UnityEngine::Camera::
                                       Camera_get_pixelHeight(camera,(MethodInfo *)0x0);
                           pCVar1 = (this->fields).AttachedBubble;
                           if ((pCVar1 != (ChatBubble *)0x0) &&
@@ -127,9 +126,8 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                                                   (pCVar1,(MethodInfo *)0x0),
                              pRVar13 != (RectTransform *)0x0)) {
                             pRVar9 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                                      RectTransform_get_rect
-                                                ((Rect *)&stack0xffffffd0,pRVar13,(MethodInfo *)0x0)
-                            ;
+                                     RectTransform_get_rect
+                                               ((Rect *)&stack0xffffffd0,pRVar13,(MethodInfo *)0x0);
                             fVar10 = pRVar9->m_Height;
                             pCVar1 = (this->fields).AttachedBubble;
                             if ((pCVar1 != (ChatBubble *)0x0) &&
@@ -138,9 +136,8 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                                                     (pCVar1,(MethodInfo *)0x0),
                                pTVar15 != (Transform *)0x0)) {
                               pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                        Transform_get_lossyScale
-                                                  ((Vector3 *)&puStack_4,pTVar15,(MethodInfo *)0x0)
-                              ;
+                                       Transform_get_lossyScale
+                                                 ((Vector3 *)&puStack_4,pTVar15,(MethodInfo *)0x0);
                               fVar12 = pVVar11->y;
                               pCVar1 = (this->fields).AttachedBubble;
                               if ((pCVar1 != (ChatBubble *)0x0) &&
@@ -149,15 +146,15 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                                  pRVar13 != (RectTransform *)0x0)) {
                                 UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                                 RectTransform_get_pivot(pRVar13,(MethodInfo *)0x0);
-                                fVar10 = ((float)(int)unaff_EBX -
+                                fVar10 = ((float)unaff_EBX -
                                          fVar10 * fVar12 * (_UNK_? - (float)puVar5)) -
                                          _UNK_?;
                                 adjustedPosition.y = (float)&puStack_4;
                                 if ((this->fields).KeepInView != 0) {
                                   adjustedPosition.x = (float)&UNK_?;
                                   puVar5 = puVar8;
-                                  if ((3.556073e-29 < (float)puVar8) ||
-                                     (puVar5 = puVar14, (float)puVar14 < 3.556073e-29)) {
+                                  if ((3.556097e-29 < (float)puVar8) ||
+                                     (puVar5 = puVar14, (float)puVar14 < 3.556097e-29)) {
                                     adjustedPosition.x = (float)puVar5;
                                   }
                                   adjustedPosition.y = fVar7;
@@ -172,13 +169,13 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                                                     ((Component *)this,(MethodInfo *)0x0);
                                 if (pTVar15 != (Transform *)0x0) {
                                   pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                            Transform_get_position
-                                                      ((Vector3 *)&puStack_4,pTVar15,
-                                                       (MethodInfo *)0x0);
+                                           Transform_get_position
+                                                     ((Vector3 *)&puStack_4,pTVar15,
+                                                      (MethodInfo *)0x0);
                                   pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
-                                            Camera_WorldToViewportPoint_1
-                                                      ((Vector3 *)&stack0xffffffd4,camera,*pVVar11,
-                                                       (MethodInfo *)0x0);
+                                           Camera_WorldToViewportPoint_1
+                                                     ((Vector3 *)&stack0xffffffd4,camera,*pVVar11,
+                                                      (MethodInfo *)0x0);
                                   uVar16 = pVVar11->x;
                                   uVar17 = pVVar11->y;
                                   if ((((pVVar11->z <= 0.0) || ((float)uVar16 <= 0.0)) ||
@@ -222,34 +219,13 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
     }
   }
 code_?:
-  func_?();
-  uVar18 = in(in_stack_19);
-  *unaff_EBX = uVar18;
-  puStack20 = unaff_EBX;
-  if ((char)in_stack_21 < '\0') {
-    pcVar22 = (code *)swi(3);
-    pVVar11 = (Vector3 *)(*pcVar22)();
-    return pVVar11;
-  }
-  piVar23 = (int *)(in_stack_24 + -0x3f7bf33c);
-  *piVar23 = (int)&in_stack_21->x + *piVar23;
-  if (*piVar23 != 0) {
-    iVar25 = *(int *)(in_stack_26 + 0x10);
-    if (iVar25 != 0) {
-      *(undefined4 *)(iVar25 + 0x4c) = 0;
-      *(undefined4 *)(iVar25 + 0x48) = 0;
-      if (*(CanvasGroup **)(iVar25 + 0x34) != (CanvasGroup *)0x0) {
-        UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                  (*(CanvasGroup **)(iVar25 + 0x34),0.0,(MethodInfo *)0x0);
-        return extraout_EAX;
-      }
-    }
-    func_?();
-    pcVar22 = (code *)swi(3);
-    pVVar11 = (Vector3 *)(*pcVar22)();
-    return pVVar11;
-  }
-  return in_stack_21;
+  uVar18 = func_?();
+  *(undefined1 *)&unaff_EDI->klass = uVar18;
+  pcVar19 = (code *)swi(3);
+  iStack20 = unaff_EBX;
+  puStack21 = (undefined *)unaff_EBX;
+  pVVar11 = (Vector3 *)(*pcVar19)();
+  return pVVar11;
 }
 
 

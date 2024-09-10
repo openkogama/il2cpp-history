@@ -148,7 +148,7 @@ namespace Assets.Scripts.Pickups
 		private void HandleRecoil(Vector3 direction);
 		private void HandleFiringStateAndAmmoOnFire();
 		private void HandleFireEffects(bool isLocal);
-		private void PlayFireSoundEffect(bool isLocal);
+		protected override void PlayFireSoundEffect(bool isLocal);
 		protected override void OnHit(VoxelHit voxelHit, Ray lineOfFire);
 		private void OnLocalHit(VoxelHit voxelHit, Ray lineOfFire);
 		private void OnValidate();

@@ -83,30 +83,10 @@ code_?:
     }
   }
 code_?:
-  bVar8 = 0;
-  uVar9 = func_?();
-  uVar10 = (undefined2)((uint6)uVar9 >> 0x20);
-  uVar11 = (undefined3)((uint6)uVar9 >> 8);
-  uVar12 = in(uVar10);
-  uVar13 = CONCAT31(uVar11,uVar12);
-  puVar14 = (uint *)(unaff_EBX + 4);
-  uVar15 = *puVar14;
-  uVar16 = *puVar14 + uVar13;
-  *puVar14 = uVar16 + bVar8;
-  bVar17 = in(uVar10);
-  uVar18 = CONCAT31(uVar11,bVar17);
-  puVar14 = (uint *)(unaff_EBX + 4);
-  uVar16 = (uint)(CARRY4(uVar15,uVar13) || CARRY4(uVar16,(uint)bVar8));
-  uVar15 = *puVar14;
-  uVar13 = *puVar14 + uVar18;
-  *puVar14 = uVar13 + uVar16;
-  *unaff_EBX = *unaff_EBX + 0x43 +
-               (uint)(CARRY1(bVar17,*(byte *)(unaff_EBX + 4)) ||
-                     CARRY1(bVar17 + *(byte *)(unaff_EBX + 4),
-                            CARRY4(uVar15,uVar18) || CARRY4(uVar13,uVar16)));
-  pcVar19 = (code *)swi(3);
-  bVar20 = (*pcVar19)();
-  return bVar20;
+  func_?();
+  pcVar8 = (code *)swi(3);
+  bVar9 = (*pcVar8)();
+  return bVar9;
 }
 
 

@@ -287,7 +287,6 @@ String * Assembly-CSharp.dll::SendMessageControl::SendMessageControl_CreateChatC
     func_?(&StringLiteral_u000AType___team_to_enter_team_chat_);
     func_?(&StringLiteral_u000AType___say_to_enter_say_chat_);
     func_?(&StringLiteral_u000AType___yes_to_nod_your_head_);
-    func_?(&StringLiteral_u000Au000AType___hd_to_enable_HD_mode_u000A);
     func_?(&StringLiteral_u000Au000AType___all_to_enter_all_chat__);
     func_?(&StringLiteral_u000AType___wave_to_wave_your_arms_);
     func_?(&::StringLiteral__);
@@ -308,15 +307,6 @@ String * Assembly-CSharp.dll::SendMessageControl::SendMessageControl_CreateChatC
                      (pSVar1,StringLiteral_u000AType___team_to_enter_team_chat_,(MethodInfo *)0x0);
   pSVar1 = mscorlib.dll::System::String::String_Concat_3
                      (pSVar1,StringLiteral_u000AType___say_to_enter_say_chat_,(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-    str1 = TM::TM__(StringLiteral_u000Au000AType___hd_to_enable_HD_mode_u000A,(MethodInfo *)0x0);
-    pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,str1,(MethodInfo *)0x0);
-    return pSVar1;
-  }
   return pSVar1;
 }
 
@@ -1484,7 +1474,6 @@ code_?:
       func_?();
       func_?();
       func_?();
-      func_?();
       cRam_? = '\x01';
     }
     pSVar7 = mscorlib.dll::System::String::String_Concat_3
@@ -1505,15 +1494,6 @@ code_?:
     pSVar7 = mscorlib.dll::System::String::String_Concat_3
                         (pSVar7,StringLiteral_u000AType___say_to_enter_say_chat_,(MethodInfo *)0x0)
     ;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-code_?:
-      pSVar28 = TM::TM__(in_stack_46,in_stack_47);
-      pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar7,pSVar28,(MethodInfo *)0x0);
-    }
   }
   else {
     if (cRam_? == '\0') {
@@ -1536,29 +1516,32 @@ code_?:
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-      MVar48 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+      MVar46 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
       bVar4 = MVGameControllerBase::MVGameControllerBase_get_IsPlaying((MethodInfo *)0x0);
       if (bVar4 == 0) {
-        if (MVar48 == MVGameMode__Enum_Edit) {
-          in_stack_47 = (MethodInfo *)0x0;
-          in_stack_46 = StringLiteral_u000A_Right_mouse__Hold_to_looku000A_WAS;
-          goto code_?;
+        if (MVar46 == MVGameMode__Enum_Edit) {
+          pSVar28 = TM::TM__(StringLiteral_u000A_Right_mouse__Hold_to_looku000A_WAS,
+                             (MethodInfo *)0x0);
+          pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar7,pSVar28,(MethodInfo *)0x0)
+          ;
         }
-        if (MVar48 != MVGameMode__Enum_Play) {
-          if (MVar48 == MVGameMode__Enum_CharacterEditor) {
+        else {
+          if (MVar46 == MVGameMode__Enum_Play) goto code_?;
+          if (MVar46 == MVGameMode__Enum_CharacterEditor) {
             pSVar7 = ::StringLiteral__;
           }
-          goto code_?;
         }
       }
-      pSVar28 = TM::TM__(StringLiteral__M__Menu,(MethodInfo *)0x0);
-      pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar7,pSVar28,(MethodInfo *)0x0);
-      pSVar28 = TM::TM__(StringLiteral_u000A_H__Toggle_HD_Modeu000A_WASD__Moveu000A,
-                         (MethodInfo *)0x0);
-      pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar7,pSVar28,(MethodInfo *)0x0);
+      else {
+code_?:
+        pSVar28 = TM::TM__(StringLiteral__M__Menu,(MethodInfo *)0x0);
+        pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar7,pSVar28,(MethodInfo *)0x0);
+        pSVar28 = TM::TM__(StringLiteral_u000A_H__Toggle_HD_Modeu000A_WASD__Moveu000A,
+                           (MethodInfo *)0x0);
+        pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar7,pSVar28,(MethodInfo *)0x0);
+      }
     }
   }
-code_?:
   MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
             (MVGameMsgType__Enum_AdminMsg,pSVar7,(MethodInfo *)0x0);
 code_?:

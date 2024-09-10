@@ -34,7 +34,7 @@ void Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_Add
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__GetEnumerator__
                    );
-    func_?(0x3f08);
+    func_?(0x3f0c);
     cRam_? = '\x01';
     puVar7 = puStack_6;
   }
@@ -602,9 +602,9 @@ Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_GetValid
 
 {
   if (cRam_? == '\0') {
-    func_?(0xbc58);
-    func_?(0xb920);
-    func_?(0xb8e4);
+    func_?(0xbc5c);
+    func_?(0xb928);
+    func_?(0xb8ec);
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MoveCubeFromCoarseToFine::ValidPos>__get_Item_int_
                    );
@@ -797,7 +797,7 @@ void Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_Mov
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-    func_?(0x3f08);
+    func_?(0x3f0c);
     cRam_? = '\x01';
   }
   if (from != (ICubeModel *)0x0) {

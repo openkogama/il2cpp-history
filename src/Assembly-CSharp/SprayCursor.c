@@ -177,7 +177,6 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor
     (this->fields).addCubeTime = fVar6;
   }
   pCVar7 = (this->fields).sprayCursor;
-  unaff_ESI = selectedCube;
   if (selectedCube == (CubePickingInfo *)0x0) {
     if (pCVar7 != (CellCursor *)0x0) {
       CellCursor::CellCursor_set_Active(pCVar7,0,(MethodInfo *)0x0);
@@ -241,7 +240,7 @@ code_?:
   i2.x = in_stack_8;
   i2.z = (int16_t)(undefined4)uStack_10;
   IVar12 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                     (IVar12,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
+                    (IVar12,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
   pIVar15 = IVar12._0_4_;
   uStack_10._0_2_ = pIVar15->x;
   uStack_10._2_2_ = pIVar15->y;
@@ -273,24 +272,9 @@ code_?:
     }
   }
 code_?:
-  bVar16 = 0;
-  uVar1 = func_?();
-  pbVar17 = (byte *)(extraout_ECX + 100);
-  bVar18 = CARRY1(*pbVar17,extraout_DH) || CARRY1(*pbVar17 + extraout_DH,bVar16);
-  *pbVar17 = *pbVar17 + extraout_DH + bVar16;
-  pbVar17 = (byte *)((int)&unaff_ESI[1].fields.point.z + 2);
-  bVar19 = CARRY1(*pbVar17,extraout_DH) || CARRY1(*pbVar17 + extraout_DH,bVar18);
-  *pbVar17 = *pbVar17 + extraout_DH + bVar18;
-  pbVar17 = (byte *)((int)&unaff_ESI[-0x1e447e3].fields.pickedFace + 3);
-  bVar16 = *pbVar17;
-  bVar20 = *pbVar17 + (byte)uVar1;
-  *pbVar17 = bVar20 + bVar19;
-  *(char *)&unaff_ESI[-0xed6c75].klass =
-       *(char *)&unaff_ESI[-0xed6c75].klass + (char)((ushort)uVar1 >> 8) +
-       (CARRY1(bVar16,(byte)uVar1) || CARRY1(bVar20,bVar19));
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
-  return;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

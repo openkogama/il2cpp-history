@@ -160,7 +160,8 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayer
           return;
         }
         iStack_3 = index;
-        pMStack_4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        pOStack_4 = (Object__Class *)
+                     MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         this_03 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
@@ -170,17 +171,17 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayer
                             );
         if (this_03 == (RegexCharClass_SingleRange)0x0) break;
         iVar1 = MVPlayer::MVPlayer_get_WoId((MVPlayer *)this_03,(MethodInfo *)0x0);
-        if (pMStack_4 == (MVWorldObjectClientManager *)0x0) break;
+        if (pOStack_4 == (Object__Class *)0x0) break;
         pMVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                           (pMStack_4,iVar1,(MethodInfo *)0x0);
+                           ((MVWorldObjectClientManager *)pOStack_4,iVar1,(MethodInfo *)0x0);
         if (pMVar5 == (MVWorldObject *)0x0) break;
-        this_00 = (MVWorldObjectClientManager *)pMVar5[1].fields.ownerActorNr;
+        this_00 = (Object__Class *)pMVar5[1].fields.ownerActorNr;
         this_01 = (this->fields).renderCam;
-        pMStack_4 = this_00;
+        pOStack_4 = this_00;
         if (this_01 == (Camera *)0x0) break;
         this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                             ((Component *)this_01,(MethodInfo *)0x0);
-        if (this_00 == (MVWorldObjectClientManager *)0x0) break;
+        if (this_00 == (Object__Class *)0x0) break;
         pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                            (&VStack_7,(Transform *)this_00,(MethodInfo *)0x0);
         if (this_04 == (Transform *)0x0) break;
@@ -298,15 +299,15 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayer
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                   (this_04,value_03,(MethodInfo *)0x0);
         pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                           (&VStack_50,this_04,(MethodInfo *)0x0);
-        uStack_51._0_4_ = pVVar6->x;
-        uStack_51._4_4_ = pVVar6->y;
-        fStack_52 = pVVar6->z;
+                           ((Vector3 *)&stack0xfffffe4c,this_04,(MethodInfo *)0x0);
+        uStack_50._0_4_ = pVVar6->x;
+        uStack_50._4_4_ = pVVar6->y;
+        fStack_51 = pVVar6->z;
         pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
                            ((Vector3 *)&stack0xfffffe40,(Transform *)this_00,(MethodInfo *)0x0);
-        uStack_53._0_4_ = pVVar6->x;
-        uStack_53._4_4_ = pVVar6->y;
-        fStack_54 = pVVar6->z;
+        uStack_52._0_4_ = pVVar6->x;
+        uStack_52._4_4_ = pVVar6->y;
+        fStack_53 = pVVar6->z;
         if (pLStack_2 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) break;
         pVVar22 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                  VisualTreeAsset+UsingEntry]::
@@ -316,40 +317,37 @@ void Assembly-CSharp.dll::AvatarCapture::AvatarCapture_CapturePlayer
                             iStack_3,
                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                            );
-        uStack_55._0_4_ = pVVar22->alias;
-        uStack_55._4_4_ = pVVar22->path;
-        fStack_56 = fStack_52 + fStack_54 * (float)uStack_55._4_4_;
-        value_04.y = uStack_51._4_4_ + uStack_53._4_4_ * (float)uStack_55._4_4_;
-        value_04.x = (float)uStack_51 + (float)uStack_53 * (float)uStack_55._4_4_;
-        value_04.z = fStack_56;
+        uStack_54._0_4_ = pVVar22->alias;
+        uStack_54._4_4_ = pVVar22->path;
+        fStack_55 = fStack_51 + fStack_53 * (float)uStack_54._4_4_;
+        value_04.y = uStack_50._4_4_ + uStack_52._4_4_ * (float)uStack_54._4_4_;
+        value_04.x = (float)uStack_50 + (float)uStack_52 * (float)uStack_54._4_4_;
+        value_04.z = fStack_55;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                   (this_04,value_04,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
-          VStack_50.z = (float)&TypeInfo__AvatarCapture___DrawAvatarRoutine_d__12;
-          VStack_50.y = (float)&UNK_?;
           func_?();
           cRam_? = '\x01';
         }
-        VStack_50.z = (float)TypeInfo__AvatarCapture___DrawAvatarRoutine_d__12;
-        VStack_50.y = (float)&UNK_?;
-        this_05 = (SubscribableVariable_1_System_Int32Enum_ *)func_?();
-        SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
-                  (this_05,0,(MethodInfo *)0x0);
-        if (this_05 == (SubscribableVariable_1_System_Int32Enum_ *)0x0) break;
-        this_05[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
-        func_?(this_05 + 1,this);
-        this_05[1].monitor = (MonitorData *)this_04;
-        func_?(&this_05[1].monitor,this_04);
-        this_05[1].fields._.value = (int32_t)pMStack_4;
-        func_?(&this_05[1].fields,pMStack_4);
-        Coroutines::Coroutines_Start((IEnumerator *)this_05,(MethodInfo *)0x0);
+        method_00 = TypeInfo__AvatarCapture___DrawAvatarRoutine_d__12;
+        value_05 = (Object *)func_?();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                  (value_05,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+        value_05[1].klass = (Object__Class *)0x0;
+        value_05[2].klass = (Object__Class *)this;
+        func_?();
+        value_05[2].monitor = (MonitorData *)this_04;
+        func_?();
+        value_05[3].klass = pOStack_4;
+        func_?();
+        Coroutines::Coroutines_Start((IEnumerator *)value_05,(MethodInfo *)0x0);
         index = iStack_3 + 1;
       }
     }
   }
   func_?();
-  pcVar57 = (code *)swi(3);
-  (*pcVar57)();
+  pcVar56 = (code *)swi(3);
+  (*pcVar56)();
   return;
 }
 
@@ -834,23 +832,18 @@ Assembly-CSharp.dll::AvatarCapture::AvatarCapture_DrawAvatarRoutine
     func_?(&TypeInfo__AvatarCapture___DrawAvatarRoutine_d__12);
     cRam_? = '\x01';
   }
-  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
-            func_?(TypeInfo__AvatarCapture___DrawAvatarRoutine_d__12);
-  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
-            (this_00,0,(MethodInfo *)0x0);
-  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
-    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
-    func_?(this_00 + 1);
-    this_00[1].monitor = (MonitorData *)cameraTransform;
-    func_?(&this_00[1].monitor,cameraTransform);
-    this_00[1].fields._.value = (int32_t)objectTransform;
-    func_?(&this_00[1].fields,objectTransform);
-    return (IEnumerator *)this_00;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__AvatarCapture___DrawAvatarRoutine_d__12;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  value[2].monitor = (MonitorData *)cameraTransform;
+  func_?(&value[2].monitor,cameraTransform);
+  value[3].klass = (Object__Class *)objectTransform;
+  func_?(value + 3,objectTransform);
+  return (IEnumerator *)value;
 }
 
 

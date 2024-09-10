@@ -126,7 +126,7 @@ void Assembly-CSharp.dll::SubscriberJoinedNotification::
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                 (this_01,value,(MethodInfo *)0x0);
       SubscriberJoinedNotification_CloseNotificationAnimation(this,0.0,(MethodInfo *)0x0);
-      if (_UNK_? < 3.930707e-29) {
+      if (_UNK_? < 3.9307454e-29) {
         SubscriberJoinedNotification_CloseNotification(this,(MethodInfo *)0x0);
       }
       return;
@@ -174,7 +174,7 @@ void Assembly-CSharp.dll::SubscriberJoinedNotification::
                 (this_01,fVar1,(MethodInfo *)0x0);
       SubscriberJoinedNotification_CloseNotificationAnimation
                 (this,_UNK_? - 0.0,(MethodInfo *)0x0);
-      if (_UNK_? < 3.9307767e-29) {
+      if (_UNK_? < 3.9308152e-29) {
         (this->fields).currentState = 3;
         fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
         (this->fields).stateStartTime = fVar1;
@@ -195,56 +195,52 @@ void Assembly-CSharp.dll::SubscriberJoinedNotification::SubscriberJoinedNotifica
                (SubscriberJoinedNotification *this,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar1 = fVar1 - (this->fields).stateStartTime;
+  uVar1 = (undefined2)((uint)unaff_retaddr >> 8);
+  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  fVar2 = fVar2 - (this->fields).stateStartTime;
   switch((this->fields).currentState) {
   case 0:
   case 5:
     break;
   case 1:
-    pGVar2 = (this->fields).content;
-    if (pGVar2 == (GameObject *)0x0) {
+    pGVar3 = (this->fields).content;
+    if (pGVar3 == (GameObject *)0x0) {
 code_?:
-      uVar3 = func_?();
-      iVar4 = (int)((ulonglong)uVar3 >> 0x20);
-      pcVar5 = (char *)uVar3;
-      pbVar6 = (byte *)(iVar4 + 0x47);
-      bVar7 = *pbVar6;
-      bVar8 = (byte)((ulonglong)uVar3 >> 0x20);
-      *pbVar6 = *pbVar6 + bVar8;
-      bVar9 = CARRY1(in_stack_10,unaff_BL) ||
-               CARRY1(in_stack_10 + unaff_BL,
-                      CARRY1(extraout_CL,unaff_BL) ||
-                      CARRY1(extraout_CL + unaff_BL,CARRY1(bVar7,bVar8)));
-      bVar11 = (byte)uVar3;
-      bVar7 = *(char *)&this->klass + bVar11;
-      bVar12 = CARRY1(*(byte *)&this->klass,bVar11) || CARRY1(bVar7,bVar9);
-      *(byte *)&this->klass = bVar7 + bVar9;
-      bVar7 = *(byte *)&this->klass;
-      bVar13 = (byte)((ulonglong)uVar3 >> 8);
-      bVar8 = *(char *)&this->klass + bVar13;
-      *(byte *)&this->klass = bVar8 + bVar12;
-      *pcVar5 = *pcVar5 + bVar11 + (CARRY1(bVar7,bVar13) || CARRY1(bVar8,bVar12));
-      pcVar14 = (code *)swi(3);
-      (*pcVar14)(iVar4,iVar4,pcVar5);
+      bVar4 = 0;
+      uVar5 = func_?();
+      pbVar6 = (byte *)((int)((ulonglong)uVar5 >> 0x20) + 0x47);
+      bVar7 = 0xef < *pbVar6 || CARRY1(*pbVar6 + 0x10,bVar4);
+      *pbVar6 = *pbVar6 + 0x10 + bVar4;
+      bVar4 = (byte)((ushort)uVar1 >> 8);
+      bVar8 = bVar4 + unaff_BL;
+      bVar9 = CARRY1(bVar4,unaff_BL) || CARRY1(bVar8,bVar7);
+      pbVar6 = (byte *)((int)&this[-0x105a21a].fields.stateStartTime + 2);
+      bVar4 = *pbVar6;
+      bVar10 = (byte)uVar5;
+      bVar11 = *pbVar6;
+      *pbVar6 = bVar11 + bVar10 + bVar9;
+      pcVar12 = (char *)((int)uVar5 + -0x33efb8ae);
+      *pcVar12 = *pcVar12 + bVar10 + (CARRY1(bVar4,bVar10) || CARRY1(bVar11 + bVar10,bVar9));
+      pcVar13 = (code *)swi(3);
+      (*pcVar13)(CONCAT11(bVar8 + bVar7,(char)uVar1));
       return;
     }
-    bVar15 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar2,(MethodInfo *)0x0);
-    if (bVar15 != 0) {
-      pGVar2 = (this->fields).content;
-      if (pGVar2 == (GameObject *)0x0) goto code_?;
+    bVar14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                      (pGVar3,(MethodInfo *)0x0);
+    if (bVar14 != 0) {
+      pGVar3 = (this->fields).content;
+      if (pGVar3 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar2,0,(MethodInfo *)0x0);
+                (pGVar3,0,(MethodInfo *)0x0);
     }
-    if (_UNK_? < fVar1) {
+    if (_UNK_? < fVar2) {
       (this->fields).currentState = 2;
-      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      pGVar2 = (this->fields).content;
-      (this->fields).stateStartTime = fVar1;
-      if (pGVar2 != (GameObject *)0x0) {
+      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      pGVar3 = (this->fields).content;
+      (this->fields).stateStartTime = fVar2;
+      if (pGVar3 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar2,1,(MethodInfo *)0x0);
+                  (pGVar3,1,(MethodInfo *)0x0);
         (*(code *)(this->klass->vtable).Update.method)
                   (this,(this->klass->vtable).OnReturn.methodPtr);
         return;
@@ -254,43 +250,43 @@ code_?:
     break;
   case 2:
     SubscriberJoinedNotification_UpdateBoostTextEffect
-              (this,fVar1 - _UNK_?,(MethodInfo *)0x0);
-    pAVar16 = (this->fields).fadeOutCurve;
-    pCVar17 = (this->fields).backgroundCanvasGroup;
-    if ((pAVar16 == (AnimationCurve *)0x0) ||
-       (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar16,_UNK_? - fVar1,(MethodInfo *)0x0),
-       pCVar17 == (CanvasGroup *)0x0)) goto code_?;
+              (this,fVar2 - _UNK_?,(MethodInfo *)0x0);
+    pAVar15 = (this->fields).fadeOutCurve;
+    pCVar16 = (this->fields).backgroundCanvasGroup;
+    if ((pAVar15 == (AnimationCurve *)0x0) ||
+       (fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                           (pAVar15,_UNK_? - fVar2,(MethodInfo *)0x0),
+       pCVar16 == (CanvasGroup *)0x0)) goto code_?;
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar17,fVar1,(MethodInfo *)0x0);
+              (pCVar16,fVar2,(MethodInfo *)0x0);
     SubscriberJoinedNotification_CloseNotificationAnimation
-              (this,_UNK_? - fVar1,(MethodInfo *)0x0);
-    if (_UNK_? < fVar1) {
+              (this,_UNK_? - fVar2,(MethodInfo *)0x0);
+    if (_UNK_? < fVar2) {
       (this->fields).currentState = 3;
-      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      (this->fields).stateStartTime = fVar1;
+      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      (this->fields).stateStartTime = fVar2;
     }
     break;
   case 3:
-    if (_UNK_? < fVar1) {
+    if (_UNK_? < fVar2) {
       (this->fields).currentState = 4;
-      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      (this->fields).stateStartTime = fVar1;
+      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      (this->fields).stateStartTime = fVar2;
       return;
     }
     break;
   case 4:
-    SubscriberJoinedNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
-    pAVar16 = (this->fields).fadeOutCurve;
-    pCVar17 = (this->fields).backgroundCanvasGroup;
-    if ((pAVar16 == (AnimationCurve *)0x0) ||
-       (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar16,fVar1,(MethodInfo *)0x0), pCVar17 == (CanvasGroup *)0x0))
+    SubscriberJoinedNotification_UpdateBoostTextEffect(this,fVar2,(MethodInfo *)0x0);
+    pAVar15 = (this->fields).fadeOutCurve;
+    pCVar16 = (this->fields).backgroundCanvasGroup;
+    if ((pAVar15 == (AnimationCurve *)0x0) ||
+       (fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                           (pAVar15,fVar2,(MethodInfo *)0x0), pCVar16 == (CanvasGroup *)0x0))
     goto code_?;
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar17,fVar1,(MethodInfo *)0x0);
-    SubscriberJoinedNotification_CloseNotificationAnimation(this,fVar1,(MethodInfo *)0x0);
-    if (_UNK_? < fVar1) {
+              (pCVar16,fVar2,(MethodInfo *)0x0);
+    SubscriberJoinedNotification_CloseNotificationAnimation(this,fVar2,(MethodInfo *)0x0);
+    if (_UNK_? < fVar2) {
       SubscriberJoinedNotification_CloseNotification(this,(MethodInfo *)0x0);
       return;
     }
@@ -497,56 +493,52 @@ void Assembly-CSharp.dll::SubscriberJoinedNotification::SubscriberJoinedNotifica
                (SubscriberJoinedNotification *this,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar1 = fVar1 - (this->fields).stateStartTime;
+  uVar1 = (undefined2)((uint)unaff_retaddr >> 8);
+  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  fVar2 = fVar2 - (this->fields).stateStartTime;
   switch((this->fields).currentState) {
   case 0:
   case 5:
     break;
   case 1:
-    pGVar2 = (this->fields).content;
-    if (pGVar2 == (GameObject *)0x0) {
+    pGVar3 = (this->fields).content;
+    if (pGVar3 == (GameObject *)0x0) {
 code_?:
-      uVar3 = func_?();
-      iVar4 = (int)((ulonglong)uVar3 >> 0x20);
-      pcVar5 = (char *)uVar3;
-      pbVar6 = (byte *)(iVar4 + 0x47);
-      bVar7 = *pbVar6;
-      bVar8 = (byte)((ulonglong)uVar3 >> 0x20);
-      *pbVar6 = *pbVar6 + bVar8;
-      bVar9 = CARRY1(in_stack_10,unaff_BL) ||
-               CARRY1(in_stack_10 + unaff_BL,
-                      CARRY1(extraout_CL,unaff_BL) ||
-                      CARRY1(extraout_CL + unaff_BL,CARRY1(bVar7,bVar8)));
-      bVar11 = (byte)uVar3;
-      bVar7 = *(char *)&this->klass + bVar11;
-      bVar12 = CARRY1(*(byte *)&this->klass,bVar11) || CARRY1(bVar7,bVar9);
-      *(byte *)&this->klass = bVar7 + bVar9;
-      bVar7 = *(byte *)&this->klass;
-      bVar13 = (byte)((ulonglong)uVar3 >> 8);
-      bVar8 = *(char *)&this->klass + bVar13;
-      *(byte *)&this->klass = bVar8 + bVar12;
-      *pcVar5 = *pcVar5 + bVar11 + (CARRY1(bVar7,bVar13) || CARRY1(bVar8,bVar12));
-      pcVar14 = (code *)swi(3);
-      (*pcVar14)(iVar4,iVar4,pcVar5);
+      bVar4 = 0;
+      uVar5 = func_?();
+      pbVar6 = (byte *)((int)((ulonglong)uVar5 >> 0x20) + 0x47);
+      bVar7 = 0xef < *pbVar6 || CARRY1(*pbVar6 + 0x10,bVar4);
+      *pbVar6 = *pbVar6 + 0x10 + bVar4;
+      bVar4 = (byte)((ushort)uVar1 >> 8);
+      bVar8 = bVar4 + unaff_BL;
+      bVar9 = CARRY1(bVar4,unaff_BL) || CARRY1(bVar8,bVar7);
+      pbVar6 = (byte *)((int)&this[-0x105a21a].fields.stateStartTime + 2);
+      bVar4 = *pbVar6;
+      bVar10 = (byte)uVar5;
+      bVar11 = *pbVar6;
+      *pbVar6 = bVar11 + bVar10 + bVar9;
+      pcVar12 = (char *)((int)uVar5 + -0x33efb8ae);
+      *pcVar12 = *pcVar12 + bVar10 + (CARRY1(bVar4,bVar10) || CARRY1(bVar11 + bVar10,bVar9));
+      pcVar13 = (code *)swi(3);
+      (*pcVar13)(CONCAT11(bVar8 + bVar7,(char)uVar1));
       return;
     }
-    bVar15 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar2,(MethodInfo *)0x0);
-    if (bVar15 != 0) {
-      pGVar2 = (this->fields).content;
-      if (pGVar2 == (GameObject *)0x0) goto code_?;
+    bVar14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                      (pGVar3,(MethodInfo *)0x0);
+    if (bVar14 != 0) {
+      pGVar3 = (this->fields).content;
+      if (pGVar3 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar2,0,(MethodInfo *)0x0);
+                (pGVar3,0,(MethodInfo *)0x0);
     }
-    if (_UNK_? < fVar1) {
+    if (_UNK_? < fVar2) {
       (this->fields).currentState = 2;
-      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      pGVar2 = (this->fields).content;
-      (this->fields).stateStartTime = fVar1;
-      if (pGVar2 != (GameObject *)0x0) {
+      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      pGVar3 = (this->fields).content;
+      (this->fields).stateStartTime = fVar2;
+      if (pGVar3 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar2,1,(MethodInfo *)0x0);
+                  (pGVar3,1,(MethodInfo *)0x0);
         (*(code *)(this->klass->vtable).Update.method)
                   (this,(this->klass->vtable).OnReturn.methodPtr);
         return;
@@ -556,43 +548,43 @@ code_?:
     break;
   case 2:
     SubscriberJoinedNotification_UpdateBoostTextEffect
-              (this,fVar1 - _UNK_?,(MethodInfo *)0x0);
-    pAVar16 = (this->fields).fadeOutCurve;
-    pCVar17 = (this->fields).backgroundCanvasGroup;
-    if ((pAVar16 == (AnimationCurve *)0x0) ||
-       (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar16,_UNK_? - fVar1,(MethodInfo *)0x0),
-       pCVar17 == (CanvasGroup *)0x0)) goto code_?;
+              (this,fVar2 - _UNK_?,(MethodInfo *)0x0);
+    pAVar15 = (this->fields).fadeOutCurve;
+    pCVar16 = (this->fields).backgroundCanvasGroup;
+    if ((pAVar15 == (AnimationCurve *)0x0) ||
+       (fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                           (pAVar15,_UNK_? - fVar2,(MethodInfo *)0x0),
+       pCVar16 == (CanvasGroup *)0x0)) goto code_?;
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar17,fVar1,(MethodInfo *)0x0);
+              (pCVar16,fVar2,(MethodInfo *)0x0);
     SubscriberJoinedNotification_CloseNotificationAnimation
-              (this,_UNK_? - fVar1,(MethodInfo *)0x0);
-    if (_UNK_? < fVar1) {
+              (this,_UNK_? - fVar2,(MethodInfo *)0x0);
+    if (_UNK_? < fVar2) {
       (this->fields).currentState = 3;
-      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      (this->fields).stateStartTime = fVar1;
+      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      (this->fields).stateStartTime = fVar2;
     }
     break;
   case 3:
-    if (_UNK_? < fVar1) {
+    if (_UNK_? < fVar2) {
       (this->fields).currentState = 4;
-      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      (this->fields).stateStartTime = fVar1;
+      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      (this->fields).stateStartTime = fVar2;
       return;
     }
     break;
   case 4:
-    SubscriberJoinedNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
-    pAVar16 = (this->fields).fadeOutCurve;
-    pCVar17 = (this->fields).backgroundCanvasGroup;
-    if ((pAVar16 == (AnimationCurve *)0x0) ||
-       (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar16,fVar1,(MethodInfo *)0x0), pCVar17 == (CanvasGroup *)0x0))
+    SubscriberJoinedNotification_UpdateBoostTextEffect(this,fVar2,(MethodInfo *)0x0);
+    pAVar15 = (this->fields).fadeOutCurve;
+    pCVar16 = (this->fields).backgroundCanvasGroup;
+    if ((pAVar15 == (AnimationCurve *)0x0) ||
+       (fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                           (pAVar15,fVar2,(MethodInfo *)0x0), pCVar16 == (CanvasGroup *)0x0))
     goto code_?;
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar17,fVar1,(MethodInfo *)0x0);
-    SubscriberJoinedNotification_CloseNotificationAnimation(this,fVar1,(MethodInfo *)0x0);
-    if (_UNK_? < fVar1) {
+              (pCVar16,fVar2,(MethodInfo *)0x0);
+    SubscriberJoinedNotification_CloseNotificationAnimation(this,fVar2,(MethodInfo *)0x0);
+    if (_UNK_? < fVar2) {
       SubscriberJoinedNotification_CloseNotification(this,(MethodInfo *)0x0);
       return;
     }

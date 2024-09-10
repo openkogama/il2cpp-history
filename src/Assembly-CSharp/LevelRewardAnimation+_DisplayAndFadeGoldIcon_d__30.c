@@ -251,10 +251,13 @@ code_?:
     }
   }
 code_?:
-  func_?();
-  *(char *)&pLVar1->klass = *(char *)&pLVar1->klass + extraout_AH;
-  pcVar16 = (code *)swi(1);
-  bVar17 = (*pcVar16)();
+  bVar16 = false;
+  bVar17 = func_?();
+  if (bVar16) {
+    return bVar17;
+  }
+  pcVar18 = (code *)swi(1);
+  bVar17 = (*pcVar18)();
   return bVar17;
 }
 

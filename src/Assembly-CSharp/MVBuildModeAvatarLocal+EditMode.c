@@ -184,9 +184,9 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal+EditMode::
         (this->fields)._XZMovementSpeedScale_k__BackingField = 0.8;
         (this->fields)._YMovementSpeedScale_k__BackingField = 0.25;
         if ((pMVar12 != (MVBuildModeAvatarLocal *)0x0) &&
-           (((pAVar13 = (pMVar12->fields).avatarScriptObject, pAVar13 != (AvatarLocalBuildMode *)0x0 &&
-             (pAVar14 = (pAVar13->fields).avatarCamerasDesktop,
-             pAVar14 != (AvatarCamerasDesktopBuildMode *)0x0)) &&
+           (((pAVar13 = (pMVar12->fields).avatarScriptObject, pAVar13 != (AvatarLocalBuildMode *)0x0
+             && (pAVar14 = (pAVar13->fields).avatarCamerasDesktop,
+                pAVar14 != (AvatarCamerasDesktopBuildMode *)0x0)) &&
             (pMVar15 = (pAVar14->fields).cameraController, pMVar15 != (MVCameraController *)0x0)))) {
           MVCameraController::MVCameraController_SetCamera
                     (pMVar15,CameraType__Enum_AvatarEditModeCamera,(MethodInfo *)0x0);
@@ -247,14 +247,16 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal+EditMode::
                 (pMVar15,CameraType__Enum_AvatarEditModeCamera,(MethodInfo *)0x0);
       pMVar9 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
       if (pMVar9 != (MainCameraManager *)0x0) {
-        pMVar20 = MainCameraManager::MainCameraManager_get_CurrentCamera(pMVar9,(MethodInfo *)0x0);
+        unaff_EBX = MainCameraManager::MainCameraManager_get_CurrentCamera
+                              (pMVar9,(MethodInfo *)0x0);
         pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if ((data != (Object *)0x0) && (pMVar2 != (MVWorldObjectClientManager *)0x0)) {
           pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                               (pMVar2,(int32_t)data[1].klass,(MethodInfo *)0x0);
           data = (Object *)0x0;
-          if (pMVar20 != (MVCameraBase *)0x0) {
-            (*(code *)(pMVar20->klass->vtable).FocusOnObject.method)(pMVar20,pMVar3,0x40000000);
+          if (unaff_EBX != (MVCameraBase *)0x0) {
+            (*(code *)(unaff_EBX->klass->vtable).FocusOnObject.method)(unaff_EBX,pMVar3,0x40000000)
+            ;
             pMVar12 = (this->fields)._.buildModeAvatar;
             data = (Object *)0x0;
             if (pMVar12 != (MVBuildModeAvatarLocal *)0x0) {
@@ -340,9 +342,26 @@ code_?:
   func_?(data,pMVar1);
   pAVar17 = extraout_EDX_00;
 code_?:
-  func_?(unaff_EDI,pAVar17);
-  pcVar21 = (code *)swi(1);
-  (*pcVar21)();
+  uVar20 = func_?(unaff_EDI,pAVar17);
+  puVar21 = (uint *)uVar20;
+  uVar22 = *puVar21;
+  bVar23 = (byte)((uint6)uVar20 >> 0x28);
+  *(byte *)puVar21 = (byte)*puVar21 - bVar23;
+  pMVar24 = (MVBuildModeAvatarLocal_EditMode *)*puVar21;
+  *puVar21 = *puVar21 - (int)data;
+  cVar25 = (char)((uint)unaff_EBX >> 8);
+  *(char *)&unaff_EBX->klass = *(char *)&unaff_EBX->klass + cVar25 + (pMVar24 < data);
+  uVar26 = *puVar21;
+  *(byte *)puVar21 = (byte)*puVar21 - bVar23;
+  *(char *)&unaff_EBX->klass = *(char *)&unaff_EBX->klass + cVar25 + ((byte)uVar26 < bVar23);
+  uVar26 = *puVar21;
+  *(byte *)puVar21 = (byte)*puVar21 - bVar23;
+  pcVar27 = (char *)((int)&(((MVBuildModeAvatarLocal_EditMode *)data)->fields).speed + 3);
+  *pcVar27 = *pcVar27 + extraout_CL + (char)unaff_EBX + ((byte)uVar22 < bVar23) +
+            ((byte)uVar26 < bVar23);
+  *(byte *)puVar21 = (byte)*puVar21 ^ (byte)((uint6)uVar20 >> 0x20);
+  pcVar28 = (code *)swi(3);
+  (*pcVar28)();
   return;
 }
 
@@ -1407,7 +1426,7 @@ code_?:
   fVar12 = (this->fields)._XZMovementSpeedScale_k__BackingField;
   __return_storage_ptr__->x = fStack_20 * fVar18 * fVar10 * fVar12;
   __return_storage_ptr__->y = fStack_21 * fVar18 * fVar10 * fVar12;
-  __return_storage_ptr__->z = fVar18 * 3.4761254e-29 * fVar10 * fVar12;
+  __return_storage_ptr__->z = fVar18 * 3.476159e-29 * fVar10 * fVar12;
   return __return_storage_ptr__;
 }
 

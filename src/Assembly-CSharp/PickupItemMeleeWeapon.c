@@ -760,7 +760,7 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnFire
           func_?();
           cRam_? = '\x01';
         }
-        method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__40;
+        method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__41;
         pOVar16 = (Object *)func_?();
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   (pOVar16,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -768,7 +768,7 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnFire
         pOVar16[2].klass = (Object__Class *)this;
         func_?();
         (this->fields)._.animatorRoutine = (IEnumerator *)pOVar16;
-        isLocal = 0x91;
+        isLocal = 0xc1;
         func_?();
         Coroutines::Coroutines_Start((this->fields)._.animatorRoutine,(MethodInfo *)0x0);
         goto code_?;

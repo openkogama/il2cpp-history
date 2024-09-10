@@ -88,14 +88,15 @@ void Assembly-CSharp.dll::NotificationTeamRequirementPanel::
   pMVar5 = extraout_ECX;
   team = unaff_EDI;
 code_?:
-  cVar9 = func_?(team,pMVar5);
-  uVar10 = CONCAT31(0xd2103f,in_AF * -6 + -0x6e) & 0xffffff0f;
-  pcVar11 = (char *)CONCAT22((short)(uVar10 >> 0x10),CONCAT11('?' - in_AF,(char)uVar10));
-  bVar12 = cVar9 + extraout_CH + in_AF;
-  in_AF = 9 < (bVar12 & 0xf) | in_AF;
-  *pcVar11 = *pcVar11 + (bVar12 + in_AF * -6 & 0xf) + in_AF;
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  bVar9 = func_?(team,pMVar5);
+  in_AF = 9 < (bVar9 & 0xf) | in_AF;
+  bVar9 = bVar9 + in_AF * -6 & 0xf;
+  *(char *)(extraout_EDX + -0x6d) = *(char *)(extraout_EDX + -0x6d) + extraout_CH + in_AF;
+  in_AF = 9 < bVar9 | in_AF;
+  *(char *)(extraout_EDX + -0x33efc06d) =
+       *(char *)(extraout_EDX + -0x33efc06d) + (bVar9 + in_AF * -6 & 0xf) + in_AF;
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
