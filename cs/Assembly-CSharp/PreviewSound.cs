@@ -6,19 +6,26 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Events;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-public class MVUtils : MonoBehaviour
+public class PreviewSound : MonoBehaviour
 {
 	// Fields
-	private const float CheckProInterval = 2f;
-	private float last;
+	[SerializeField]
+	private string soundCategory;
+	[SerializeField]
+	private bool playSelected;
+	[SerializeField]
+	private UnityEvent<string, int> onClick;
+	private int index;
 
 	// Constructors
-	public MVUtils();
+	public PreviewSound();
 
 	// Methods
-	private static bool CheckPro();
+	private void Start();
+	public void OnClick();
 }
 

@@ -69,6 +69,10 @@ namespace UGUI.Desktop.Scripts.EditMode.SettingsBoxes.MeleeWeapons
 		private SettingsSlider colorB;
 		[SerializeField]
 		private SettingsSlider colorA;
+		[SerializeField]
+		private CustomItemAudioPlayer fireAudioPlayer;
+		[SerializeField]
+		private CustomItemAudioPlayer hitAudioPlayer;
 		private Dictionary<object, object> data;
 		private string editingColorKey;
 		private Dictionary<object, object> itemData;
@@ -84,5 +88,6 @@ namespace UGUI.Desktop.Scripts.EditMode.SettingsBoxes.MeleeWeapons
 		public void OnColorPressed(string colorKey);
 		private void UpdateColorPickerPreview();
 		public void OnColorEdited();
+		public void OnClickPreviewSound(string soundCategory, int index);
 	}
 }

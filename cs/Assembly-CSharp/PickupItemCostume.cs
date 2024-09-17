@@ -64,5 +64,6 @@ public class PickupItemCostume : PickupItemEditable
 	protected override void InterruptFire();
 	public override void OnEnterVehicleWithWeapon();
 	protected override void OnDestroy();
+	protected override void InitializeAudioPlayers();
 }
 

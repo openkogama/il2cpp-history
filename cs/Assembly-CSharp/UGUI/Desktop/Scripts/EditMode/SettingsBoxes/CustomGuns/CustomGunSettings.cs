@@ -120,6 +120,13 @@ namespace UGUI.Desktop.Scripts.EditMode.SettingsBoxes.CustomGuns
 		private Image projectileTrailColorImage;
 		[SerializeField]
 		private Image sparksColorImage;
+		[SerializeField]
+		[Space(10f)]
+		private CustomItemAudioPlayer fireAudioPlayer;
+		[SerializeField]
+		private CustomItemAudioPlayer chargeAudioPlayer;
+		[SerializeField]
+		private CustomItemAudioPlayer hitAudioPlayer;
 	
 		// Properties
 		protected override Vector2 NormalEditingCanvasSize { get; }
@@ -141,5 +148,7 @@ namespace UGUI.Desktop.Scripts.EditMode.SettingsBoxes.CustomGuns
 		public void OnChargeSettingsClose();
 		public void OnProjectileSettingsOpen();
 		public void OnProjectileSettingsClose();
+		public void OnClickPreviewSound(string soundCategory, int index);
+		private void OnDestroy();
 	}
 }

@@ -21,15 +21,11 @@ public abstract class PickupItemEditable : PickupItemWithDelay
 	[SerializeField]
 	protected Transform cubeModelParent;
 	[SerializeField]
-	protected AudioSource fireAudioSource;
-	[SerializeField]
-	protected AudioSource alternativeAudioSource;
-	[SerializeField]
 	protected Animator animator;
 	[SerializeField]
-	protected AudioClip[] fireAudioClips;
+	protected CustomItemAudioPlayer fireAudioPlayer;
 	[SerializeField]
-	protected AudioClip[] hitAudioClips;
+	protected CustomItemAudioPlayer hitAudioPlayer;
 	[CompilerGenerated]
 	private int _CubeModelPid_k__BackingField;
 	[CompilerGenerated]
@@ -70,7 +66,7 @@ public abstract class PickupItemEditable : PickupItemWithDelay
 	}
 
 	[CompilerGenerated]
-	private sealed class _DisableAnimatorCoroutine_d__41 : IEnumerator<object>
+	private sealed class _DisableAnimatorCoroutine_d__38 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -83,7 +79,7 @@ public abstract class PickupItemEditable : PickupItemWithDelay
 
 		// Constructors
 		[DebuggerHidden]
-		public _DisableAnimatorCoroutine_d__41(int __1__state);
+		public _DisableAnimatorCoroutine_d__38(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -100,6 +96,7 @@ public abstract class PickupItemEditable : PickupItemWithDelay
 	public abstract bool IsSameItemData(Dictionary<object, object> itemData);
 	protected abstract void SetConfiguration(Dictionary<object, object> data);
 	protected abstract EditableItemConfiguration GetDefaultConfiguration();
+	protected abstract void InitializeAudioPlayers();
 	private void Awake();
 	protected virtual void Initialize();
 	protected virtual void SetValuesBasedOnConfiguration();
@@ -108,9 +105,7 @@ public abstract class PickupItemEditable : PickupItemWithDelay
 	protected virtual void SetAnimation();
 	protected void PlayAnimation();
 	protected virtual void OnHit(VoxelHit voxelHit, Ray lineOfFire);
-	protected virtual void PlayFireSoundEffect(bool isLocal);
-	protected void PlayAudio(AudioSource audioSource, string soundEffectName, Vector3 position, bool useAudioManager = true);
-	[IteratorStateMachine(typeof(_DisableAnimatorCoroutine_d__41))]
+	[IteratorStateMachine(typeof(_DisableAnimatorCoroutine_d__38))]
 	private IEnumerator DisableAnimatorCoroutine();
 	private void DisableAnimation();
 	protected bool IsSamePickupItem(Dictionary<object, object> itemData);
