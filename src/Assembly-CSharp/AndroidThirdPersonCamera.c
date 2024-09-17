@@ -577,7 +577,6 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::AndroidThirdPersonCamera_Upd
                (AndroidThirdPersonCamera *this,MethodInfo *method)
 
 {
-  this_02 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__IPlayModeUI);
     func_?(&TypeInfo__MVInputWrapper);
@@ -585,90 +584,134 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::AndroidThirdPersonCamera_Upd
     func_?(&StringLiteral_Mouse_X);
     cRam_? = '\x01';
   }
-  pTVar1 = (this->fields).targetRotation;
-  if (pTVar1 != (TargetRotation *)0x0) {
-    uStack_2._0_4_ = (pTVar1->fields).eulerAngles.x;
-    uStack_2._4_4_ = (pTVar1->fields).eulerAngles.y;
-    this = (AndroidThirdPersonCamera *)(float)uStack_2;
-    fStack_3 = uStack_2._4_4_;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVGameControllerBase);
-      cRam_? = '\x01';
+  uStack_1._0_4_ = 0.0;
+  uStack_1._4_4_ = 0.0;
+  uStack_2 = 0;
+  pTVar3 = (this->fields).targetRotation;
+  if (pTVar3 == (TargetRotation *)0x0) goto code_?;
+  uStack_4._0_4_ = (pTVar3->fields).eulerAngles.x;
+  uStack_4._4_4_ = (pTVar3->fields).eulerAngles.y;
+  fStack_5 = (float)uStack_4;
+  fStack_6 = uStack_4._4_4_;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
+    return;
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  pIVar7 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+  pIStack_8 = pIVar7;
+  if (pIVar7 == (IPlayModeUI *)0x0) goto code_?;
+  pIStack_9 = pIVar7->klass;
+  uVar10 = 0;
+  uStack_11 = 0;
+  uVar12._0_1_ = (pIStack_9->_1).rank;
+  uVar12._1_1_ = (pIStack_9->_1).minimumAlignment;
+  if (uVar12 != 0) {
+    do {
+      if (pIStack_9->interfaceOffsets[uVar10].interfaceType == (Il2CppClass *)TypeInfo__IPlayModeUI
+         ) {
+        ppMVar13 = &(&(pIVar7->klass->vtable).get_IsInPauseMenu)
+                   [pIVar7->klass->interfaceOffsets[uVar10].offset].method;
+        goto code_?;
+      }
+      uVar10 = uVar10 + 1;
+    } while (uVar10 < uVar12);
+  }
+  ppMVar13 = (MethodInfo **)func_?(pIVar7,TypeInfo__IPlayModeUI,3);
+code_?:
+  cVar14 = (*(code *)*ppMVar13)(pIVar7,ppMVar13[1]);
+  if ((cVar14 == '\0') && (((this->fields)._.ignoreInputTypes & 1) == 0)) {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MVInputWrapper);
     }
-    if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
+    fVar15 = MVInputWrapper::MVInputWrapper_GetAxisRawWithoutSensitivity
+                       (StringLiteral_Mouse_Y,(MethodInfo *)0x0);
+    uStack_1 = CONCAT44(uStack_1._4_4_,fVar15);
+    fVar15 = MVInputWrapper::MVInputWrapper_GetAxisRawWithoutSensitivity
+                       (StringLiteral_Mouse_X,(MethodInfo *)0x0);
+    pIVar16 = (this->fields).inputMovementPrecisionModifier;
+    uStack_2 = 0;
+    uStack_1._4_4_ = fVar15;
+    if (pIVar16 == (InputMovementPrecisionModifier *)0x0) goto code_?;
+    fVar17 = 0.0;
+    auStack_18._4_4_ = (float)uStack_1;
+    auStack_18._8_4_ = fVar15;
+    fStack_19 = 0.0;
+    fVar20 = (float10)func_?(auStack_18 + 4,0);
+    uVar21 = uStack_1;
+    if (_UNK_? <= (float)fVar20) {
+      fVar15 = (float)fVar20 / (pIVar16->fields).maxMagnitude;
+      if (fVar15 < 0.0) {
+        fVar17 = 0.0;
+code_?:
+        fVar15 = fVar17;
+      }
+      else {
+        fVar17 = _UNK_?;
+        if (_UNK_? < fVar15) goto code_?;
+      }
+      this_00 = (pIVar16->fields).inputMovementModificationCurve;
+      if (this_00 == (AnimationCurve *)0x0) goto code_?;
+      fVar22 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                         (this_00,fVar15,(MethodInfo *)0x0);
+      fVar22 = fVar22 * (_UNK_? / fVar15);
+      fVar17 = fVar22 * 0.0;
+      uVar21._0_4_ = fVar22 * (float)uStack_1;
+      uVar21._4_4_ = fVar22 * uStack_1._4_4_;
+      fStack_19 = fVar17;
+    }
+    this_01 = (this->fields).axisBias;
+    if (this_01 == (AxisBias *)0x0) goto code_?;
+    inputVector.z = fVar17;
+    inputVector.x = (float)uVar21;
+    inputVector.y = SUB84(uVar21,4);
+    pVVar23 = AxisBias::AxisBias_GetBiasedVector
+                       ((Vector3 *)(auStack_18 + 4),this_01,inputVector,(MethodInfo *)0x0);
+    uStack_1._0_4_ = pVVar23->x;
+    uStack_1._4_4_ = pVVar23->y;
+    fStack_5 = (float)uStack_1 * _UNK_? + (float)uStack_4;
+    fStack_6 = uStack_1._4_4_ * _UNK_? + uStack_4._4_4_;
+  }
+  fVar15 = MathFunctions::MathFunctions_NormalizeAngle(fStack_5,(MethodInfo *)0x0);
+  if (_UNK_? < fVar15) {
+    fVar15 = fVar15 - _UNK_?;
+  }
+  fVar17 = (this->fields).minimumY;
+  if ((fVar15 < fVar17) || (fVar17 = (this->fields).maximumY, fVar17 < fVar15)) {
+    fVar15 = fVar17;
+  }
+  pTVar3 = (this->fields).targetRotation;
+  if (pTVar3 != (TargetRotation *)0x0) {
+    (pTVar3->fields).eulerAngles.x = fVar15;
+    (pTVar3->fields).eulerAngles.y = fStack_6;
+    (pTVar3->fields).eulerAngles.z = 0.0;
+    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this,(MethodInfo *)0x0);
+    pTVar3 = (this->fields).targetRotation;
+    this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this,(MethodInfo *)0x0);
+    if (((this_03 != (Transform *)0x0) &&
+        (pQVar24 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                            ((Quaternion *)auStack_18,this_03,(MethodInfo *)0x0),
+        pTVar3 != (TargetRotation *)0x0)) &&
+       (pQVar24 = TargetRotation::TargetRotation_GetLerpRotation
+                           ((Quaternion *)auStack_18,pTVar3,*pQVar24,(MethodInfo *)0x0),
+       this_02 != (Transform *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
+                (this_02,*pQVar24,(MethodInfo *)0x0);
       return;
-    }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVGameControllerBase);
-      cRam_? = '\x01';
-    }
-    pIVar4 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
-    if (pIVar4 != (IPlayModeUI *)0x0) {
-      cVar5 = func_?(3,TypeInfo__IPlayModeUI,pIVar4);
-      if ((cVar5 == '\0') && (((this_02->fields)._.ignoreInputTypes & 1) == 0)) {
-        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__MVInputWrapper);
-        }
-        fVar6 = MVInputWrapper::MVInputWrapper_GetAxisRawWithoutSensitivity
-                          (StringLiteral_Mouse_Y,(MethodInfo *)0x0);
-        uStack_7 = CONCAT44(uStack_7._4_4_,fVar6);
-        fVar6 = MVInputWrapper::MVInputWrapper_GetAxisRawWithoutSensitivity
-                          (StringLiteral_Mouse_X,(MethodInfo *)0x0);
-        this_00 = (this_02->fields).inputMovementPrecisionModifier;
-        uStack_8 = 0;
-        uStack_7 = CONCAT44(fVar6,(undefined4)uStack_7);
-        if (this_00 == (InputMovementPrecisionModifier *)0x0) goto code_?;
-        input.z = 0.0;
-        input.x = (float)(undefined4)uStack_7;
-        input.y = fVar6;
-        pVVar9 = InputMovementPrecisionModifier::InputMovementPrecisionModifier_GetPrecisionInput
-                           ((Vector3 *)(auStack_10 + 4),this_00,input,(MethodInfo *)0x0);
-        this_01 = (this_02->fields).axisBias;
-        if (this_01 == (AxisBias *)0x0) goto code_?;
-        pVVar9 = AxisBias::AxisBias_GetBiasedVector
-                           ((Vector3 *)(auStack_10 + 4),this_01,*pVVar9,(MethodInfo *)0x0);
-        uStack_7._0_4_ = pVVar9->x;
-        uStack_7._4_4_ = pVVar9->y;
-        this = (AndroidThirdPersonCamera *)
-               ((float)(undefined4)uStack_7 * _UNK_? + (float)uStack_2);
-        fStack_3 = (float)uStack_7._4_4_ * _UNK_? + uStack_2._4_4_;
-      }
-      fVar6 = MathFunctions::MathFunctions_NormalizeAngle((float)this,(MethodInfo *)0x0);
-      if (_UNK_? < fVar6) {
-        fVar6 = fVar6 - _UNK_?;
-      }
-      fVar11 = (this_02->fields).minimumY;
-      if ((fVar6 < fVar11) || (fVar11 = (this_02->fields).maximumY, fVar11 < fVar6)) {
-        fVar6 = fVar11;
-      }
-      pTVar1 = (this_02->fields).targetRotation;
-      if (pTVar1 != (TargetRotation *)0x0) {
-        (pTVar1->fields).eulerAngles.x = fVar6;
-        (pTVar1->fields).eulerAngles.y = fStack_3;
-        (pTVar1->fields).eulerAngles.z = 0.0;
-        this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)this_02,(MethodInfo *)0x0);
-        pTVar1 = (this_02->fields).targetRotation;
-        this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)this_02,(MethodInfo *)0x0);
-        if (((this_04 != (Transform *)0x0) &&
-            (pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                                ((Quaternion *)auStack_10,this_04,(MethodInfo *)0x0),
-            pTVar1 != (TargetRotation *)0x0)) &&
-           (pQVar12 = TargetRotation::TargetRotation_GetLerpRotation
-                               ((Quaternion *)auStack_10,pTVar1,*pQVar12,(MethodInfo *)0x0),
-           this_03 != (Transform *)0x0)) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                    (this_03,*pQVar12,(MethodInfo *)0x0);
-          return;
-        }
-      }
     }
   }
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 

@@ -498,9 +498,10 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   case RewardedAdResult__Enum_ErrorClient:
   case RewardedAdResult__Enum_ErrorInternal:
   case RewardedAdResult__Enum_RewardNotUnlocked:
+    method_00 = unaff_EDI;
     value = (Object *)func_?(TypeInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     if (value != (Object *)0x0) {
       value[1].monitor = (MonitorData *)this;
       func_?(&value[1].monitor,this);
@@ -515,15 +516,16 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
                          );
       value[1].klass = pOVar1;
       func_?(value + 1,pOVar1);
-      pOVar1 = value[1].klass;
+      unaff_EBX = value[1].klass;
       pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+      unaff_EDI = this;
       if (pIVar2 != (IAdManager *)0x0) {
         text = (String *)
                func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar2);
         header = TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
-        if (pOVar1 != (Object__Class *)0x0) {
+        if (unaff_EBX != (Object__Class *)0x0) {
           NotificationPopup::NotificationPopup_Initialize
-                    ((NotificationPopup *)pOVar1,text,header,(MethodInfo *)0x0);
+                    ((NotificationPopup *)unaff_EBX,text,header,(MethodInfo *)0x0);
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
           callbackFunction =
@@ -562,9 +564,13 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   default:
     return;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  uVar4 = func_?();
+  pcVar5 = (char *)((int)&unaff_EDI[-1].fields.backgroundTier2 + 1);
+  *pcVar5 = *pcVar5 + (char)unaff_EBX + (uVar4 < 0x3ded8810);
+  *(char *)(uVar4 + 0xcc103ded) = *(char *)(uVar4 + 0xcc103ded) + extraout_CL + (uVar4 < 0x3ded8610)
+  ;
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

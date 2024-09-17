@@ -1,9 +1,9 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::PickupItemEditable+<DisableAnimatorCoroutine>d__41::
-     PickupItemEditable_DisableAnimatorCoroutine_d_41_MoveNext
-               (PickupItemEditable_DisableAnimatorCoroutine_d_41 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::PickupItemEditable+<DisableAnimatorCoroutine>d__38::
+     PickupItemEditable_DisableAnimatorCoroutine_d_38_MoveNext
+               (PickupItemEditable_DisableAnimatorCoroutine_d_38 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -46,9 +46,9 @@ code_?:
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::PickupItemEditable+<DisableAnimatorCoroutine>d__41::
-     PickupItemEditable_DisableAnimatorCoroutine_d_41_System_Collections_IEnumerator_Reset
-               (PickupItemEditable_DisableAnimatorCoroutine_d_41 *this,MethodInfo *method)
+void Assembly-CSharp.dll::PickupItemEditable+<DisableAnimatorCoroutine>d__38::
+     PickupItemEditable_DisableAnimatorCoroutine_d_38_System_Collections_IEnumerator_Reset
+               (PickupItemEditable_DisableAnimatorCoroutine_d_38 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
@@ -56,7 +56,7 @@ void Assembly-CSharp.dll::PickupItemEditable+<DisableAnimatorCoroutine>d__41::
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&
-                  MethodInfo__PickupItemEditable___DisableAnimatorCoroutine_d__41__System_Collections_IEnumerator_Reset__
+                  MethodInfo__PickupItemEditable___DisableAnimatorCoroutine_d__38__System_Collections_IEnumerator_Reset__
                  );
   func_?(this_00);
   pcVar2 = (code *)swi(3);

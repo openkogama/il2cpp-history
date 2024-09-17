@@ -363,7 +363,7 @@ void Assembly-CSharp.dll::RTG::ObjectTransformGizmo+ObjectRestrictions::
     func_?(&TypeInfo__System__Boolean);
     func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
     func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
-    func_?(&_75C8FD04AD916AEC3E3D5CB76A452B116B3D4D0912A0A485E9FB8E3D240E210C_Field);
+    func_?(&::_75C8FD04AD916AEC3E3D5CB76A452B116B3D4D0912A0A485E9FB8E3D240E210C_Field);
     cRam_? = '\x01';
   }
   pBVar1 = (Boolean__Array *)func_?(TypeInfo__System__Boolean,3);

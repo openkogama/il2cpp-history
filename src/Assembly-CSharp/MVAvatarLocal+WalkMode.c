@@ -626,7 +626,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_FrameUp
                           (this_01,(MethodInfo *)0x0), this_04 == (Transform *)0x0))
   goto code_?;
   pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                      ((Vector3 *)&stack0xfffffff0,this_04,(MethodInfo *)0x0);
+                      ((Vector3 *)&stack0xffffffe8,this_04,(MethodInfo *)0x0);
   fVar5 = pVVar4->y;
   pMVar6 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (pMVar6 == (MVWorldObjectClientManager *)0x0) goto code_?;
@@ -634,7 +634,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_FrameUp
   if (fVar5 < ((pMVar6->fields).worldBounds.m_Center.y - (float)uVar7) - _UNK_?) {
     this_05 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (this_05 == (MVNetworkGame *)0x0) goto code_?;
-    interactionMap = (InputToInGameAction *)&UNK_?;
+    interactionMap = (InputToInGameAction *)0x0;
     bVar3 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this_05,(MethodInfo *)0x0);
     if (bVar3 != 0) {
       if (cRam_? == '\0') {
@@ -684,14 +684,54 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_FrameUp
   if ((pMVar1 == (MVAvatarLocal *)0x0) ||
      (pAVar12 = (pMVar1->fields).pickupOwner, pAVar12 == (AvatarPickupOwner *)0x0))
   goto code_?;
-  x = (pAVar12->fields)._.currentItem;
+  pPVar13 = (pAVar12->fields)._.currentItem;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                     ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+                     ((Object_1 *)pPVar13,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar3 != 0) {
-    MVAvatarLocal_WalkMode_HandlePickupUpdate(this,interactionMap,(MethodInfo *)0x0);
+    pMVar1 = (this->fields)._.mvAvatar;
+    if (((pMVar1 == (MVAvatarLocal *)0x0) ||
+        (pAVar12 = (pMVar1->fields).pickupOwner, pAVar12 == (AvatarPickupOwner *)0x0)) ||
+       (pPVar13 = (pAVar12->fields)._.currentItem, pPVar13 == (PickupItem *)0x0))
+    goto code_?;
+    bVar3 = (pPVar13->fields)._IsHolstered_k__BackingField;
+    iVar14 = (*(code *)(((((((this->fields)._.mvAvatar)->fields).pickupOwner)->fields)._.currentItem
+                        )->klass->vtable).__unknown.method)();
+    pMVar1 = (this->fields)._.mvAvatar;
+    isItemHand = iVar14 == 5;
+    if ((pMVar1 == (MVAvatarLocal *)0x0) ||
+       (pAVar12 = (pMVar1->fields).pickupOwner, pAVar12 == (AvatarPickupOwner *)0x0))
+    goto code_?;
+    MVPickupOwner::MVPickupOwner_SetLineOfFireLocal((MVPickupOwner *)pAVar12,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
+      pMVar1 = (this->fields)._.mvAvatar;
+      if ((pMVar1 == (MVAvatarLocal *)0x0) ||
+         (pAVar12 = (pMVar1->fields).pickupOwner, pAVar12 == (AvatarPickupOwner *)0x0))
+      goto code_?;
+      MVPickupOwner::MVPickupOwner_HandleFire
+                ((MVPickupOwner *)pAVar12,(interactionMap->fields).fire,(pMVar1->fields)._.IsFiring,
+                 (MethodInfo *)0x0);
+    }
+    MVAvatarLocal_WalkMode_HandlePointingItem
+              (this,interactionMap,isItemHand,bVar3,(MethodInfo *)0x0);
+    MVAvatarLocal_WalkMode_HandleHolsteringItem
+              (this,interactionMap,isItemHand,bVar3,(MethodInfo *)0x0);
+    if (iVar14 != 5) {
+      pMVar1 = (this->fields)._.mvAvatar;
+      if (pMVar1 == (MVAvatarLocal *)0x0) goto code_?;
+      bVar3 = MVAvatar::MVAvatar_get_IsSeated((MVAvatar *)pMVar1,(MethodInfo *)0x0);
+      if (((bVar3 == 0) ||
+          (bVar3 = MVAvatarLocal_WalkMode_IsInJetpack(this,(MethodInfo *)0x0), bVar3 != 0)) &&
+         ((interactionMap->fields).drop != 0)) {
+        pMVar1 = (this->fields)._.mvAvatar;
+        if ((pMVar1 == (MVAvatarLocal *)0x0) ||
+           (pAVar15 = (pMVar1->fields).avatarEquipable, pAVar15 == (AvatarEquipable *)0x0))
+        goto code_?;
+        (*(code *)(pAVar15->klass->vtable).Unequip.method)();
+      }
+    }
   }
   pMVar1 = (this->fields)._.mvAvatar;
   if (pMVar1 == (MVAvatarLocal *)0x0) goto code_?;
@@ -734,41 +774,41 @@ code_?:
     if (bVar3 != 0) {
       return;
     }
-    pMVar13 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-    if ((pMVar13 == (MainCameraManager *)0x0) ||
-       (pMVar14 = MainCameraManager::MainCameraManager_get_CurrentCamera(pMVar13,(MethodInfo *)0x0),
-       pMVar14 == (MVCameraBase *)0x0)) goto code_?;
-    iVar15 = (*(code *)(pMVar14->klass->vtable).__unknown.method)();
-    if (iVar15 != 0x10) {
+    pMVar16 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+    if ((pMVar16 == (MainCameraManager *)0x0) ||
+       (pMVar17 = MainCameraManager::MainCameraManager_get_CurrentCamera(pMVar16,(MethodInfo *)0x0),
+       pMVar17 == (MVCameraBase *)0x0)) goto code_?;
+    iVar14 = (*(code *)(pMVar17->klass->vtable).__unknown.method)();
+    if (iVar14 != 0x10) {
       return;
     }
     pMVar1 = (this->fields)._.mvAvatar;
     if ((pMVar1 == (MVAvatarLocal *)0x0) ||
-       (pAVar16 = MVAvatarLocal::MVAvatarLocal_get_AvatarLocal(pMVar1,(MethodInfo *)0x0),
-       pAVar16 == (AvatarLocal *)0x0)) goto code_?;
-    pIVar17 = (pAVar16->fields).avatarCameraController;
+       (pAVar18 = MVAvatarLocal::MVAvatarLocal_get_AvatarLocal(pMVar1,(MethodInfo *)0x0),
+       pAVar18 == (AvatarLocal *)0x0)) goto code_?;
+    pIVar19 = (pAVar18->fields).avatarCameraController;
   }
   else {
-    pMVar13 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-    if ((pMVar13 == (MainCameraManager *)0x0) ||
-       (pMVar14 = MainCameraManager::MainCameraManager_get_CurrentCamera(pMVar13,(MethodInfo *)0x0),
-       pMVar14 == (MVCameraBase *)0x0)) goto code_?;
-    iVar15 = (*(code *)(pMVar14->klass->vtable).__unknown.method)();
-    if (iVar15 != 0) goto code_?;
+    pMVar16 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+    if ((pMVar16 == (MainCameraManager *)0x0) ||
+       (pMVar17 = MainCameraManager::MainCameraManager_get_CurrentCamera(pMVar16,(MethodInfo *)0x0),
+       pMVar17 == (MVCameraBase *)0x0)) goto code_?;
+    iVar14 = (*(code *)(pMVar17->klass->vtable).__unknown.method)();
+    if (iVar14 != 0) goto code_?;
     pMVar1 = (this->fields)._.mvAvatar;
     if ((pMVar1 == (MVAvatarLocal *)0x0) ||
-       (pAVar16 = MVAvatarLocal::MVAvatarLocal_get_AvatarLocal(pMVar1,(MethodInfo *)0x0),
-       pAVar16 == (AvatarLocal *)0x0)) goto code_?;
-    pIVar17 = (pAVar16->fields).avatarCameraController;
+       (pAVar18 = MVAvatarLocal::MVAvatarLocal_get_AvatarLocal(pMVar1,(MethodInfo *)0x0),
+       pAVar18 == (AvatarLocal *)0x0)) goto code_?;
+    pIVar19 = (pAVar18->fields).avatarCameraController;
   }
-  if (pIVar17 != (IAvatarCameraController *)0x0) {
+  if (pIVar19 != (IAvatarCameraController *)0x0) {
     func_?(2,TypeInfo__IAvatarCameraController);
     return;
   }
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -983,7 +1023,13 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_HandleH
         if ((pMVar1 != (MVAvatarLocal *)0x0) &&
            (pAVar7 = (pMVar1->fields).avatarEquipable, pAVar7 != (AvatarEquipable *)0x0)) {
           (*(code *)(pAVar7->klass->vtable).Unholster.method)(pAVar7);
-          return;
+          pMVar1 = (this->fields)._.mvAvatar;
+          if ((pMVar1 != (MVAvatarLocal *)0x0) &&
+             (pAVar3 = (pMVar1->fields).pickupOwner, pAVar3 != (AvatarPickupOwner *)0x0)) {
+            AvatarPickupOwner::AvatarPickupOwner_HandleSetHandEquippableItem
+                      (pAVar3,(this->fields).storedIsHandEquipableValue,(MethodInfo *)0x0);
+            return;
+          }
         }
       }
       else {
@@ -991,7 +1037,13 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_HandleH
         if ((pMVar1 != (MVAvatarLocal *)0x0) &&
            (pAVar7 = (pMVar1->fields).avatarEquipable, pAVar7 != (AvatarEquipable *)0x0)) {
           (*(code *)(pAVar7->klass->vtable).Holster.method)(pAVar7);
-          return;
+          pMVar1 = (this->fields)._.mvAvatar;
+          if ((pMVar1 != (MVAvatarLocal *)0x0) &&
+             (pAVar3 = (pMVar1->fields).pickupOwner, pAVar3 != (AvatarPickupOwner *)0x0)) {
+            AvatarPickupOwner::AvatarPickupOwner_HandleSetHandEquippableItem
+                      (pAVar3,0,(MethodInfo *)0x0);
+            return;
+          }
         }
       }
     }
@@ -1017,8 +1069,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_HandleP
     bVar4 = (pPVar3->fields)._IsHolstered_k__BackingField;
     pPVar3 = (((((this->fields)._.mvAvatar)->fields).pickupOwner)->fields)._.currentItem;
     pPVar5 = pPVar3->klass;
-    iVar6 = (*(code *)(pPVar5->vtable).__unknown.method)(pPVar3,(pPVar5->vtable).CanFire.methodPtr)
-    ;
+    iVar6 = (*(code *)(pPVar5->vtable).__unknown.method)(pPVar3,(pPVar5->vtable).CanFire.methodPtr);
     pMVar1 = (this->fields)._.mvAvatar;
     if ((pMVar1 != (MVAvatarLocal *)0x0) &&
        (pAVar2 = (pMVar1->fields).pickupOwner, pAVar2 != (AvatarPickupOwner *)0x0)) {
@@ -1034,78 +1085,36 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_HandleP
       }
       MVAvatarLocal_WalkMode_HandlePointingItem
                 (this,interactionMap,iVar6 == 5,bVar4,(MethodInfo *)0x0);
+      MVAvatarLocal_WalkMode_HandleHolsteringItem
+                (this,interactionMap,iVar6 == 5,bVar4,(MethodInfo *)0x0);
       if (iVar6 == 5) {
         return;
       }
       pMVar1 = (this->fields)._.mvAvatar;
       if (pMVar1 != (MVAvatarLocal *)0x0) {
-        bVar7 = MVAvatar::MVAvatar_get_IsSeated((MVAvatar *)pMVar1,(MethodInfo *)0x0);
-        if ((bVar7 == 0) ||
-           (bVar7 = MVAvatarLocal_WalkMode_IsInJetpack(this,(MethodInfo *)0x0), bVar7 != 0)) {
-          pMVar1 = (this->fields)._.mvAvatar;
-          if ((pMVar1 == (MVAvatarLocal *)0x0) ||
-             ((pAVar2 = (pMVar1->fields).pickupOwner, pAVar2 == (AvatarPickupOwner *)0x0 ||
-              (pPVar3 = (pAVar2->fields)._.currentItem, pPVar3 == (PickupItem *)0x0))))
-          goto code_?;
-          bVar8 = (*(code *)(pPVar3->klass->vtable).get_CanHolster.method)
-                            (pPVar3,(pPVar3->klass->vtable).get_HasUnlimitedAmmo.methodPtr);
-          if (bVar4 == 0) {
-            if (interactionMap == (InputToInGameAction *)0x0) goto code_?;
-            bVar9 = (interactionMap->fields).holster != 0;
-            bVar4 = 0;
-          }
-          else {
-            bVar9 = false;
-            if (interactionMap == (InputToInGameAction *)0x0) goto code_?;
-            bVar4 = (interactionMap->fields).holster;
-          }
-          if ((bVar8 & bVar9) == 0) {
-            if ((bVar8 & bVar4 != 0) != 0) {
-              pMVar1 = (this->fields)._.mvAvatar;
-              if ((pMVar1 == (MVAvatarLocal *)0x0) ||
-                 (pAVar10 = (pMVar1->fields).avatarEquipable, pAVar10 == (AvatarEquipable *)0x0))
-              goto code_?;
-              (*(code *)(pAVar10->klass->vtable).Unholster.method)(pAVar10,pAVar10->klass[1]._0.image);
-            }
-          }
-          else {
-            pMVar1 = (this->fields)._.mvAvatar;
-            if ((pMVar1 == (MVAvatarLocal *)0x0) ||
-               (pAVar10 = (pMVar1->fields).avatarEquipable, pAVar10 == (AvatarEquipable *)0x0))
-            goto code_?;
-            (*(code *)(pAVar10->klass->vtable).Holster.method)
-                      (pAVar10,(pAVar10->klass->vtable).Unholster.methodPtr);
-          }
-        }
-        else if (iVar6 == 5) {
+        bVar4 = MVAvatar::MVAvatar_get_IsSeated((MVAvatar *)pMVar1,(MethodInfo *)0x0);
+        if ((bVar4 != 0) &&
+           (bVar4 = MVAvatarLocal_WalkMode_IsInJetpack(this,(MethodInfo *)0x0), bVar4 == 0)) {
           return;
         }
-        pMVar1 = (this->fields)._.mvAvatar;
-        if (pMVar1 != (MVAvatarLocal *)0x0) {
-          bVar4 = MVAvatar::MVAvatar_get_IsSeated((MVAvatar *)pMVar1,(MethodInfo *)0x0);
-          if ((bVar4 != 0) &&
-             (bVar4 = MVAvatarLocal_WalkMode_IsInJetpack(this,(MethodInfo *)0x0), bVar4 == 0)) {
-            return;
+        if (interactionMap != (InputToInGameAction *)0x0) {
+          if ((interactionMap->fields).drop != 0) {
+            pMVar1 = (this->fields)._.mvAvatar;
+            if ((pMVar1 == (MVAvatarLocal *)0x0) ||
+               (pAVar7 = (pMVar1->fields).avatarEquipable, pAVar7 == (AvatarEquipable *)0x0))
+            goto code_?;
+            (*(code *)(pAVar7->klass->vtable).Unequip.method)
+                      (pAVar7,(pAVar7->klass->vtable).Holster.methodPtr);
           }
-          if (interactionMap != (InputToInGameAction *)0x0) {
-            if ((interactionMap->fields).drop != 0) {
-              pMVar1 = (this->fields)._.mvAvatar;
-              if ((pMVar1 == (MVAvatarLocal *)0x0) ||
-                 (pAVar10 = (pMVar1->fields).avatarEquipable, pAVar10 == (AvatarEquipable *)0x0))
-              goto code_?;
-              (*(code *)(pAVar10->klass->vtable).Unequip.method)
-                        (pAVar10,(pAVar10->klass->vtable).Holster.methodPtr);
-            }
-            return;
-          }
+          return;
         }
       }
     }
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

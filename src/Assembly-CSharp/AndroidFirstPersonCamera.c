@@ -132,8 +132,8 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera_Upd
        (float)uVar8 * (this->fields)._.pitchSensitivity + (this->fields)._.targetRotation.x;
   (this->fields)._.targetRotation.y =
        (float)uVar9 * (this->fields)._.yawSensitivity + (this->fields)._.targetRotation.y;
-  fVar10 = (float)((uint)(this->fields)._.maxLookAngleDownward ^
-                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+  fStack_10 = (float)((uint)(this->fields)._.maxLookAngleDownward ^
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   fVar11 = (float10)func_?();
   fVar3 = (this->fields)._.targetRotation.x - (float)fVar11 * _UNK_?;
   fVar4 = 0.0;
@@ -141,10 +141,10 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera_Upd
     fVar3 = fVar4;
   }
   fVar11 = (float10)func_?();
-  fVar10 = fVar10 - (float)fVar11 * _UNK_?;
+  fStack_10 = fStack_10 - (float)fVar11 * _UNK_?;
   fVar4 = 0.0;
-  if ((fVar10 < 0.0) || (fVar4 = _UNK_?, _UNK_? < fVar10)) {
-    fVar10 = fVar4;
+  if ((fStack_10 < 0.0) || (fVar4 = _UNK_?, _UNK_? < fStack_10)) {
+    fStack_10 = fVar4;
   }
   fVar11 = (float10)func_?();
   fVar4 = (this->fields)._.maxLookAngleUpward - (float)fVar11 * _UNK_?;
@@ -157,22 +157,20 @@ code_?:
     fVar12 = _UNK_?;
     if (_UNK_? < fVar4) goto code_?;
   }
-  if ((fVar3 < fVar10) && (fVar4 < fVar3)) {
+  if ((fVar3 < fStack_10) && (fVar4 < fVar3)) {
     fVar12 = fVar3;
-    fVar13 = AndroidFirstPersonCamera_DegreesBetween(this,fVar3,fVar10,(MethodInfo *)0x0);
+    fVar13 = AndroidFirstPersonCamera_DegreesBetween(this,fVar3,fStack_10,(MethodInfo *)0x0);
     fVar3 = fVar4;
     fVar4 = AndroidFirstPersonCamera_DegreesBetween(this,fVar12,fVar4,(MethodInfo *)0x0);
     if (fVar13 < fVar4) {
-      fVar3 = fVar10;
+      fVar3 = fStack_10;
     }
   }
   (this->fields)._.targetRotation.x = fVar3;
   pTVar14 = (this->fields)._.smoothRotation;
-  fVar4 = (this->fields)._.targetRotation.y;
   if (pTVar14 != (TargetRotation *)0x0) {
-    (pTVar14->fields).eulerAngles.x = fVar3;
-    (pTVar14->fields).eulerAngles.y = fVar4;
-    (pTVar14->fields).eulerAngles.z = 0.0;
+    TargetRotation::TargetRotation_SetTargetRotation_1
+              (pTVar14,fVar3,(this->fields)._.targetRotation.y,(MethodInfo *)0x0);
     this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)this,(MethodInfo *)0x0);
     pTVar14 = (this->fields)._.smoothRotation;
@@ -185,6 +183,7 @@ code_?:
        (pQVar15 = TargetRotation::TargetRotation_GetLerpRotation
                            ((Quaternion *)&stack0xffffffd4,pTVar14,*pQVar15,(MethodInfo *)0x0),
        this_02 != (Transform *)0x0)) {
+      fStack16 = pQVar15->w;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                 (this_02,*pQVar15,(MethodInfo *)0x0);
       return;
@@ -192,48 +191,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
-  return;
-}
-
-
-/* AndroidFirstPersonCamera() */
-
-void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera__ctor
-               (AndroidFirstPersonCamera *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__List_int_
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>);
-    cRam_? = '\x01';
-  }
-  uVar1 = (ulonglong)_UNK_?;
-  (this->fields)._.cameraOffset.x = (float)(int)(uVar1 << 0x20);
-  (this->fields)._.cameraOffset.y = (float)(int)((uVar1 << 0x20) >> 0x20);
-  (this->fields)._.cameraHeight = 2.0;
-  (this->fields)._.maxLookAngleDownward = 60.0;
-  (this->fields)._.maxLookAngleUpward = 60.0;
-  (this->fields)._.cameraOffset.z = 0.0;
-  (this->fields)._.pitchSensitivity = 0.5;
-  (this->fields)._.yawSensitivity = 0.5;
-  this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>
-                              );
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-  MultiColumnCollectionHeader+ViewState+ColumnState]::
-  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-            (this_00,0x20,
-             MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__List_int_);
-  (this->fields)._.vehiclesHiddenMeshRenderers = (List_1_UnityEngine_MeshRenderer_ *)this_00;
-  func_?(&(this->fields)._.vehiclesHiddenMeshRenderers,this_00);
-  (this->fields)._._.cameraRadius = 0.3;
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

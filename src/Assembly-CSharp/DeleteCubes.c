@@ -71,12 +71,12 @@ void Assembly-CSharp.dll::DeleteCubes::DeleteCubes_Execute
 
 {
   if (cRam_? == '\0') {
-    func_?(0xbc5c);
+    func_?(0xdcd0);
     func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(0x9e98);
+    func_?(0xbefc);
     cRam_? = '\x01';
   }
   pCVar1 = TypeInfo__CubeModelTool->static_fields;

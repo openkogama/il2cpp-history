@@ -179,8 +179,8 @@ code_?:
   else {
     fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     fVar1 = 0.0;
-    if (0.0 <= 3.3436518e-29 - fVar3) {
-      fVar1 = 3.3436518e-29 - fVar3;
+    if (0.0 <= 3.342655e-29 - fVar3) {
+      fVar1 = 3.342655e-29 - fVar3;
     }
     (this->fields).oxygen = fVar1;
     if (fVar1 <= 0.0) {
@@ -208,8 +208,8 @@ void Assembly-CSharp.dll::WaterState::WaterState_UpdateLocalAvatarOxygen
   else {
     fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     fVar1 = 0.0;
-    if (0.0 <= 3.3434276e-29 - fVar2) {
-      fVar1 = 3.3434276e-29 - fVar2;
+    if (0.0 <= 3.342431e-29 - fVar2) {
+      fVar1 = 3.342431e-29 - fVar2;
     }
     (this->fields).oxygen = fVar1;
     if (fVar1 <= 0.0) {

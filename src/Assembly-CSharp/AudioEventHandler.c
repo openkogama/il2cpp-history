@@ -244,7 +244,7 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0x6bec);
+    func_?(0x8c50);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -262,10 +262,20 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
     if (this == (AudioBuild *)0x0) {
 code_?:
       uVar2 = func_?();
-      if ((POPCOUNT(extraout_DL & *(byte *)(uVar2 ^ 0x49)) & 1U) != 0) {
-                    /* WARNING: Bad instruction - Truncating control flow here */
-        halt_baddata();
+      pbVar3 = (byte *)uVar2;
+      if (extraout_ECX != 1) {
+        func_?();
+        AudioEventHandler_HandleTranslateData((MethodInfo *)0x0);
+        return;
       }
+      iVar4 = CONCAT31((int3)((ulonglong)uVar2 >> 0x28),
+                       (byte)((ulonglong)uVar2 >> 0x20) & *pbVar3 & *pbVar3 & *pbVar3);
+      piVar5 = (int *)(iVar4 + 0x10);
+      *piVar5 = *piVar5 - (int)pbVar3;
+      uVar6 = in((short)iVar4);
+      *unaff_EDI = uVar6;
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
       return;
     }
     randMax = 1.1;

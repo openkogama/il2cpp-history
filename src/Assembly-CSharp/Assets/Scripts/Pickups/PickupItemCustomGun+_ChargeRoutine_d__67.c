@@ -1,9 +1,9 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<ChargeRoutine>d__72::
-     PickupItemCustomGun_ChargeRoutine_d_72_MoveNext
-               (PickupItemCustomGun_ChargeRoutine_d_72 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<ChargeRoutine>d__67::
+     PickupItemCustomGun_ChargeRoutine_d_67_MoveNext
+               (PickupItemCustomGun_ChargeRoutine_d_67 *this,MethodInfo *method)
 
 {
   pPVar1 = this;
@@ -68,14 +68,12 @@ bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<ChargeR
              ObscuredFloat_op_Implicit_1
                        ((this_00->fields).initialMouseSensitivity,(MethodInfo *)0x0);
     (this->fields)._targetMouseSensitivity_5__4 = fVar16 * (fVar10 / fVar15);
-    pAVar17 = (this_00->fields)._.alternativeAudioSource;
-    if (pAVar17 == (AudioSource *)0x0) goto code_?;
-    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop
-              (pAVar17,1,(MethodInfo *)0x0);
-    pAVar17 = (this_00->fields)._.alternativeAudioSource;
-    if (pAVar17 == (AudioSource *)0x0) goto code_?;
-    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1
-              (pAVar17,(MethodInfo *)0x0);
+    pCVar17 = (this_00->fields).chargeAudioPlayer;
+    pPVar14 = PickupItemCustomGun::PickupItemCustomGun_get_Configuration(this_00,(MethodInfo *)0x0);
+    if ((pPVar14 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) ||
+       (pCVar17 == (CustomItemAudioPlayer *)0x0)) goto code_?;
+    CustomItemAudioPlayer::CustomItemAudioPlayer_PlayClip
+              (pCVar17,(pPVar14->fields).chargeSoundEffect,1,(Vector3)ZEXT812(0),(MethodInfo *)0x0);
     pPVar14 = PickupItemCustomGun::PickupItemCustomGun_get_Configuration(this_00,(MethodInfo *)0x0);
     if (pPVar14 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
     if ((pPVar14->fields).chargeParticlesEnabled == 0) goto code_?;
@@ -84,7 +82,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<ChargeR
     UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
               (pPVar18,(MethodInfo *)0x0);
     fVar10 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    this = (PickupItemCustomGun_ChargeRoutine_d_72 *)(fVar10 - (this->fields)._chargeBeginTime_5__2)
+    this = (PickupItemCustomGun_ChargeRoutine_d_67 *)(fVar10 - (this->fields)._chargeBeginTime_5__2)
     ;
   }
   else {
@@ -94,7 +92,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<ChargeR
     (this->fields).__1__state = -1;
 code_?:
     fVar10 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    this = (PickupItemCustomGun_ChargeRoutine_d_72 *)(fVar10 - (this->fields)._chargeBeginTime_5__2)
+    this = (PickupItemCustomGun_ChargeRoutine_d_67 *)(fVar10 - (this->fields)._chargeBeginTime_5__2)
     ;
     if (this_00 == (PickupItemCustomGun *)0x0) goto code_?;
   }
@@ -128,7 +126,7 @@ code_?:
      (pAVar19 == (AnimationCurve *)0x0)) goto code_?;
   fVar15 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                      (pAVar19,(float)this / (pPVar14->fields).chargeZoomTime,(MethodInfo *)0x0);
-  pAVar17 = (this_00->fields)._.alternativeAudioSource;
+  pCVar17 = (this_00->fields).chargeAudioPlayer;
   fVar10 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
            ObscuredFloat_op_Implicit_1((this_00->fields).currentCharge,(MethodInfo *)0x0);
   if (fVar10 < 0.0) {
@@ -137,9 +135,9 @@ code_?:
   else if (_UNK_? < fVar10) {
     fVar10 = _UNK_?;
   }
-  if (pAVar17 == (AudioSource *)0x0) goto code_?;
-  UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch
-            (pAVar17,fVar10 * _UNK_? + _UNK_?,(MethodInfo *)0x0);
+  if (pCVar17 == (CustomItemAudioPlayer *)0x0) goto code_?;
+  CustomItemAudioPlayer::CustomItemAudioPlayer_SetPitch
+            (pCVar17,fVar10 * _UNK_? + _UNK_?,(MethodInfo *)0x0);
   pMVar21 = (this_00->fields)._._._.owner;
   if (pMVar21 == (MVPickupOwner *)0x0) goto code_?;
   if ((pMVar21->fields)._IsLocal_k__BackingField == 0) {
@@ -194,6 +192,7 @@ code_?:
     pMVar22 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
     if (pMVar22 == (MainCameraManager *)0x0) goto code_?;
     pCVar23 = (pMVar22->fields).mainCamera;
+    uVar24 = *(undefined4 *)&(this_00->fields).initialFOV.inited;
     AVar11 = (ACTkByte4)(this_00->fields).initialFOV.currentCryptoKey;
     AVar12 = (this_00->fields).initialFOV.hiddenValue;
     pBVar13 = (this_00->fields).initialFOV.hiddenValueOld;
@@ -209,8 +208,7 @@ code_?:
     value_01.currentCryptoKey._3_1_ = AVar11.b4;
     value_01.hiddenValueOld = pBVar13;
     value_01.fakeValue = fVar10;
-    value_01.inited = (this_00->fields).initialFOV.inited;
-    value_01._17_3_ = *(undefined3 *)&(this_00->fields).initialFOV.field_0x11;
+    value_01._16_4_ = uVar24;
     fVar16 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
              ObscuredFloat_op_Implicit_1(value_01,(MethodInfo *)0x0);
     fVar10 = 0.0;
@@ -292,17 +290,17 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar24 = (code *)swi(3);
-  bVar6 = (*pcVar24)();
+  pcVar25 = (code *)swi(3);
+  bVar6 = (*pcVar25)();
   return bVar6;
 }
 
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<ChargeRoutine>d__72::
-     PickupItemCustomGun_ChargeRoutine_d_72_System_Collections_IEnumerator_Reset
-               (PickupItemCustomGun_ChargeRoutine_d_72 *this,MethodInfo *method)
+void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<ChargeRoutine>d__67::
+     PickupItemCustomGun_ChargeRoutine_d_67_System_Collections_IEnumerator_Reset
+               (PickupItemCustomGun_ChargeRoutine_d_67 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
@@ -310,7 +308,7 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<ChargeR
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&
-                  MethodInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__72__System_Collections_IEnumerator_Reset__
+                  MethodInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__67__System_Collections_IEnumerator_Reset__
                  );
   func_?(this_00);
   pcVar2 = (code *)swi(3);

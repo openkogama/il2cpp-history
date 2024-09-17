@@ -8,12 +8,12 @@ PickupItemCustomGun_ChargeRoutine
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__72);
+    func_?(&TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__67);
     cRam_? = '\x01';
   }
   this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
             func_?(
-                           TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__72
+                           TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__67
                            );
   SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
             (this_00,0,(MethodInfo *)0x0);
@@ -26,6 +26,68 @@ PickupItemCustomGun_ChargeRoutine
   pcVar1 = (code *)swi(3);
   pIVar2 = (IEnumerator *)(*pcVar1)();
   return pIVar2;
+}
+
+
+/* Void FireSemiAutomaticWithCharge() */
+
+void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
+     PickupItemCustomGun_FireSemiAutomaticWithCharge(PickupItemCustomGun *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&MVEquipable_MethodInfo__UnityEngine__Component__GetComponent<MVEquipable>__);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    cRam_? = '\x01';
+  }
+  pMVar1 = (this->fields)._._._.owner;
+  if (pMVar1 == (MVPickupOwner *)0x0) goto code_?;
+  (*(code *)(this->klass->vtable).OnFire.method)
+            (this,(pMVar1->fields)._IsLocal_k__BackingField,
+             (this->klass->vtable).OnDestroy.methodPtr);
+  uVar2 = (this->fields).currentAmmo.currentCryptoKey;
+  uVar3 = (this->fields).currentAmmo.hiddenValue;
+  value.hiddenValue = uVar3;
+  value.currentCryptoKey = uVar2;
+  iVar4 = (this->fields).currentAmmo.fakeValue;
+  uVar5 = *(undefined4 *)&(this->fields).currentAmmo.inited;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+  }
+  value.fakeValue = iVar4;
+  value._12_4_ = uVar5;
+  iVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+          ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
+  if (iVar4 < 1) {
+    cVar6 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
+                      (this,(this->klass->vtable).get_CanUnequip.methodPtr);
+    if (cVar6 == '\0') {
+      pMVar1 = (this->fields)._._._.owner;
+      if (pMVar1 == (MVPickupOwner *)0x0) {
+code_?:
+        func_?();
+        pcVar7 = (code *)swi(3);
+        (*pcVar7)();
+        return;
+      }
+      x = (Object_1 *)
+          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                    ((Component *)pMVar1,
+                     MVEquipable_MethodInfo__UnityEngine__Component__GetComponent<MVEquipable>__);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                        (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar8 == 0) {
+        if (x == (Object_1 *)0x0) goto code_?;
+        (**(code **)&x->klass[1]._0.byval_arg.attrs)(x,x->klass[1]._0.this_arg.data.dummy);
+      }
+    }
+  }
+  return;
 }
 
 
@@ -55,84 +117,128 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
         cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     }
-    value.hiddenValue = AVar2;
-    value.currentCryptoKey._0_1_ = AVar1.b1;
-    value.currentCryptoKey._1_1_ = AVar1.b2;
-    value.currentCryptoKey._2_1_ = AVar1.b3;
-    value.currentCryptoKey._3_1_ = AVar1.b4;
-    value.hiddenValueOld = pBVar3;
-    value.fakeValue = fVar4;
-    value.inited = (this->fields).currentCharge.inited;
-    value._17_3_ = *(undefined3 *)&(this->fields).currentCharge.field_0x11;
+    value_00.hiddenValue = AVar2;
+    value_00.currentCryptoKey._0_1_ = AVar1.b1;
+    value_00.currentCryptoKey._1_1_ = AVar1.b2;
+    value_00.currentCryptoKey._2_1_ = AVar1.b3;
+    value_00.currentCryptoKey._3_1_ = AVar1.b4;
+    value_00.hiddenValueOld = pBVar3;
+    value_00.fakeValue = fVar4;
+    value_00.inited = (this->fields).currentCharge.inited;
+    value_00._17_3_ = *(undefined3 *)&(this->fields).currentCharge.field_0x11;
     fVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-             ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
+             ObscuredFloat_op_Implicit_1(value_00,(MethodInfo *)0x0);
     if (_UNK_? <= fVar4) {
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        func_?();
+        cRam_? = '\x01';
+      }
       if ((this->fields)._._._.owner == (MVPickupOwner *)0x0) goto code_?;
-      (*(code *)(this->klass->vtable).OnFire.method)();
+      (*(code *)(this->klass->vtable).OnFire.method)(this);
+      AVar1 = (ACTkByte4)(this->fields).currentAmmo.currentCryptoKey;
+      pBVar3 = (Byte__Array *)(this->fields).currentAmmo.hiddenValue;
+      fVar4 = (float)(this->fields).currentAmmo.fakeValue;
+      uVar5._0_1_ = (this->fields).currentAmmo.inited;
+      uVar5._1_1_ = (this->fields).currentAmmo.field_0xd;
+      uVar5._2_1_ = (this->fields).currentAmmo.field_0xe;
+      uVar5._3_1_ = (this->fields).currentAmmo.field_0xf;
+      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+      }
+      value.hiddenValue = (int32_t)pBVar3;
+      value.currentCryptoKey._0_1_ = AVar1.b1;
+      value.currentCryptoKey._1_1_ = AVar1.b2;
+      value.currentCryptoKey._2_1_ = AVar1.b3;
+      value.currentCryptoKey._3_1_ = AVar1.b4;
+      value.fakeValue = (int32_t)fVar4;
+      value.inited = (bool)uVar5;
+      value._13_1_ = SUB41(uVar5,1);
+      value._14_1_ = SUB41(uVar5,2);
+      value._15_1_ = SUB41(uVar5,3);
+      iVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+              ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
+      if (iVar6 < 1) {
+        cVar7 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
+                          (this,(this->klass->vtable).get_CanUnequip.methodPtr);
+        if (cVar7 == '\0') {
+          this_00 = (this->fields)._._._.owner;
+          if (this_00 == (MVPickupOwner *)0x0) goto code_?;
+          x = (Object_1 *)
+              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                        ((Component *)this_00,
+                         MVEquipable_MethodInfo__UnityEngine__Component__GetComponent<MVEquipable>__
+                        );
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__UnityEngine__Object);
+          }
+          bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                            (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+          if (bVar8 == 0) {
+            if (x == (Object_1 *)0x0) goto code_?;
+            (**(code **)&x->klass[1]._0.byval_arg.attrs)(x,x->klass[1]._0.this_arg.data.dummy);
+          }
+        }
+      }
     }
   }
-  pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-  if (pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-    if ((pPVar5->fields).chargeParticlesEnabled != 0) {
-      this_00 = (this->fields).chargeParticles;
-      if (this_00 == (ParticleSystem *)0x0) goto code_?;
+  pPVar9 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+  if (pPVar9 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+    if ((pPVar9->fields).chargeParticlesEnabled != 0) {
+      this_01 = (this->fields).chargeParticles;
+      if (this_01 == (ParticleSystem *)0x0) goto code_?;
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_2
-                (this_00,(MethodInfo *)0x0);
+                (this_01,(MethodInfo *)0x0);
     }
-    pAVar6 = (this->fields)._.alternativeAudioSource;
-    if (pAVar6 != (AudioSource *)0x0) {
-      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Stop_1
-                (pAVar6,(MethodInfo *)0x0);
-      pAVar6 = (this->fields)._.alternativeAudioSource;
-      if (pAVar6 != (AudioSource *)0x0) {
-        UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop
-                  (pAVar6,0,(MethodInfo *)0x0);
-        if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).
-            cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        pOVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
-                  ObscuredBool_op_Implicit((ObscuredBool *)&stack0xfffffff0,0,(MethodInfo *)0x0);
-        uVar8 = *(undefined3 *)&pOVar7->field_0x1;
-        iVar9 = pOVar7->hiddenValue;
-        bVar10 = pOVar7->fakeValue;
-        bVar11 = pOVar7->fakeValueChanged;
-        bVar12 = pOVar7->inited;
-        uVar13 = pOVar7->field_0xb;
-        (this->fields).isCharging.currentCryptoKey = pOVar7->currentCryptoKey;
-        *(undefined3 *)&(this->fields).isCharging.field_0x1 = uVar8;
-        (this->fields).isCharging.hiddenValue = iVar9;
-        (this->fields).isCharging.fakeValue = bVar10;
-        (this->fields).isCharging.fakeValueChanged = bVar11;
-        (this->fields).isCharging.inited = bVar12;
-        (this->fields).isCharging.field_0xb = uVar13;
-        if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
-            cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        pOVar14 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat
-                  ::ObscuredFloat_op_Implicit
-                            ((ObscuredFloat *)&stack0xffffffe8,0.0,(MethodInfo *)0x0);
-        AVar1 = pOVar14->hiddenValue;
-        pBVar3 = pOVar14->hiddenValueOld;
-        fVar4 = pOVar14->fakeValue;
-        bVar10 = pOVar14->inited;
-        uVar8 = *(undefined3 *)&pOVar14->field_0x11;
-        (this->fields).currentCharge.currentCryptoKey = pOVar14->currentCryptoKey;
-        (this->fields).currentCharge.hiddenValue = AVar1;
-        (this->fields).currentCharge.hiddenValueOld = pBVar3;
-        (this->fields).currentCharge.fakeValue = fVar4;
-        (this->fields).currentCharge.inited = bVar10;
-        *(undefined3 *)&(this->fields).currentCharge.field_0x11 = uVar8;
+    this_02 = (this->fields).chargeAudioPlayer;
+    if (this_02 != (CustomItemAudioPlayer *)0x0) {
+      CustomItemAudioPlayer::CustomItemAudioPlayer_Stop(this_02,(MethodInfo *)0x0);
+      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).
+          cctor_finished_or_no_cctor == 0) {
         func_?();
-        return;
       }
+      pOVar10 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
+                ObscuredBool_op_Implicit((ObscuredBool *)&stack0xfffffff0,0,(MethodInfo *)0x0);
+      uVar11 = *(undefined3 *)&pOVar10->field_0x1;
+      iVar6 = pOVar10->hiddenValue;
+      bVar8 = pOVar10->fakeValue;
+      bVar12 = pOVar10->fakeValueChanged;
+      bVar13 = pOVar10->inited;
+      uVar14 = pOVar10->field_0xb;
+      (this->fields).isCharging.currentCryptoKey = pOVar10->currentCryptoKey;
+      *(undefined3 *)&(this->fields).isCharging.field_0x1 = uVar11;
+      (this->fields).isCharging.hiddenValue = iVar6;
+      (this->fields).isCharging.fakeValue = bVar8;
+      (this->fields).isCharging.fakeValueChanged = bVar12;
+      (this->fields).isCharging.inited = bVar13;
+      (this->fields).isCharging.field_0xb = uVar14;
+      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pOVar15 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+                ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe8,0.0,(MethodInfo *)0x0);
+      AVar1 = pOVar15->hiddenValue;
+      pBVar3 = pOVar15->hiddenValueOld;
+      fVar4 = pOVar15->fakeValue;
+      bVar8 = pOVar15->inited;
+      uVar11 = *(undefined3 *)&pOVar15->field_0x11;
+      (this->fields).currentCharge.currentCryptoKey = pOVar15->currentCryptoKey;
+      (this->fields).currentCharge.hiddenValue = AVar1;
+      (this->fields).currentCharge.hiddenValueOld = pBVar3;
+      (this->fields).currentCharge.fakeValue = fVar4;
+      (this->fields).currentCharge.inited = bVar8;
+      *(undefined3 *)&(this->fields).currentCharge.field_0x11 = uVar11;
+      func_?();
+      return;
     }
   }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -1046,7 +1152,7 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
         this_00 = (PickupItemCustomGun *)func_?(TypeInfo__Bullet__OnHitDelegate);
         BulletThrowingStar+OnHitDelegate::BulletThrowingStar_OnHitDelegate__ctor
                   ((BulletThrowingStar_OnHitDelegate *)this_00,(Object *)this,
-                   (this->klass->vtable).PlayFireSoundEffect.methodPtr,(MethodInfo *)0x0);
+                   (this->klass->vtable).InterruptFire.methodPtr,(MethodInfo *)0x0);
         VStack_30.z = (float)&UNK_?;
         pDVar49 = mscorlib.dll::System::Delegate::Delegate_Combine
                             ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
@@ -1202,8 +1308,7 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
     }
     PickupItemEditable::PickupItemEditable_PlayAnimation
               ((PickupItemEditable *)this,(MethodInfo *)0x0);
-    (*(code *)(this->klass->vtable).PlayFireSoundEffect.method)
-              (this,_isLocal,(this->klass->vtable).InterruptFire.methodPtr);
+    PickupItemCustomGun_PlayFireSoundEffect(this,isLocal,(MethodInfo *)0x0);
     pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
     if (pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
       if ((pPVar2->fields).smokeOnFire != 0) {
@@ -1242,214 +1347,204 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
   if (cRam_? == '\0') {
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
-    func_?(&StringLiteral_minigun);
     cRam_? = '\x01';
   }
   pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
   if (pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
     iVar2 = (pPVar1->fields).fireMode;
     if (iVar2 == 0) {
-      AVar3 = (ACTkByte4)(this->fields).currentAmmo.currentCryptoKey;
-      pBVar4 = (Byte__Array *)(this->fields).currentAmmo.hiddenValue;
-      fVar5 = (float)(this->fields).currentAmmo.fakeValue;
-      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      input_01.hiddenValue = (int32_t)pBVar4;
-      input_01.currentCryptoKey._0_1_ = AVar3.b1;
-      input_01.currentCryptoKey._1_1_ = AVar3.b2;
-      input_01.currentCryptoKey._2_1_ = AVar3.b3;
-      input_01.currentCryptoKey._3_1_ = AVar3.b4;
-      input_01.fakeValue = (int32_t)fVar5;
-      input_01.inited = (this->fields).currentAmmo.inited;
-      input_01._13_3_ = *(undefined3 *)&(this->fields).currentAmmo.field_0xd;
-      pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-               ObscuredInt_op_Decrement((ObscuredInt *)&stack0xffffffe8,input_01,(MethodInfo *)0x0);
-      iVar7 = pOVar6->currentCryptoKey;
-      iVar8 = pOVar6->hiddenValue;
-      iVar9 = pOVar6->fakeValue;
-      bVar10 = pOVar6->inited;
-      uVar11 = *(undefined3 *)&pOVar6->field_0xd;
-      (this->fields)._._.isFiring = 0;
-      (this->fields).currentAmmo.currentCryptoKey = iVar7;
-      (this->fields).currentAmmo.hiddenValue = iVar8;
-      (this->fields).currentAmmo.fakeValue = iVar9;
-      (this->fields).currentAmmo.inited = bVar10;
-      *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar11;
-      return;
-    }
-    if (iVar2 == 1) {
-      AVar3 = (ACTkByte4)(this->fields).currentAmmo.currentCryptoKey;
-      pBVar4 = (Byte__Array *)(this->fields).currentAmmo.hiddenValue;
-      fVar5 = (float)(this->fields).currentAmmo.fakeValue;
-      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      input_00.hiddenValue = (int32_t)pBVar4;
-      input_00.currentCryptoKey._0_1_ = AVar3.b1;
-      input_00.currentCryptoKey._1_1_ = AVar3.b2;
-      input_00.currentCryptoKey._2_1_ = AVar3.b3;
-      input_00.currentCryptoKey._3_1_ = AVar3.b4;
-      input_00.fakeValue = (int32_t)fVar5;
-      input_00.inited = (this->fields).currentAmmo.inited;
-      input_00._13_3_ = *(undefined3 *)&(this->fields).currentAmmo.field_0xd;
-      pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-               ObscuredInt_op_Decrement((ObscuredInt *)&stack0xffffffe8,input_00,(MethodInfo *)0x0);
-      iVar7 = pOVar6->hiddenValue;
-      iVar8 = pOVar6->fakeValue;
-      bVar10 = pOVar6->inited;
-      uVar11 = *(undefined3 *)&pOVar6->field_0xd;
-      (this->fields).currentAmmo.currentCryptoKey = pOVar6->currentCryptoKey;
-      (this->fields).currentAmmo.hiddenValue = iVar7;
-      (this->fields).currentAmmo.fakeValue = iVar8;
-      (this->fields).currentAmmo.inited = bVar10;
-      *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar11;
-      return;
-    }
-    if (iVar2 == 2) {
-      AVar3 = (ACTkByte4)(this->fields).firedInBurst.currentCryptoKey;
-      pBVar4 = (Byte__Array *)(this->fields).firedInBurst.hiddenValue;
-      fVar5 = (float)(this->fields).firedInBurst.fakeValue;
-      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      value_00.hiddenValue = (int32_t)pBVar4;
-      value_00.currentCryptoKey._0_1_ = AVar3.b1;
-      value_00.currentCryptoKey._1_1_ = AVar3.b2;
-      value_00.currentCryptoKey._2_1_ = AVar3.b3;
-      value_00.currentCryptoKey._3_1_ = AVar3.b4;
-      value_00.fakeValue = (int32_t)fVar5;
-      value_00.inited = (this->fields).firedInBurst.inited;
-      value_00._13_3_ = *(undefined3 *)&(this->fields).firedInBurst.field_0xd;
-      iVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-              ObscuredInt_op_Implicit_1(value_00,(MethodInfo *)0x0);
-      AVar3 = (ACTkByte4)(this->fields).currentAmmo.currentCryptoKey;
-      pBVar4 = (Byte__Array *)(this->fields).currentAmmo.hiddenValue;
-      fVar5 = (float)(this->fields).currentAmmo.fakeValue;
-      puVar12 = *(undefined **)&(this->fields).currentAmmo.inited;
-      if (iVar7 == 0) {
-        if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
-            cctor_finished_or_no_cctor == 0) {
-          func_?();
-          puVar12 = &UNK_?;
-        }
-        value.hiddenValue = (int32_t)pBVar4;
-        value.currentCryptoKey._0_1_ = AVar3.b1;
-        value.currentCryptoKey._1_1_ = AVar3.b2;
-        value.currentCryptoKey._2_1_ = AVar3.b3;
-        value.currentCryptoKey._3_1_ = AVar3.b4;
-        value.fakeValue = (int32_t)fVar5;
-        value._12_4_ = puVar12;
-        iVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-                ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-        pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-                 ObscuredInt_op_Implicit
-                           ((ObscuredInt *)&stack0xffffffe8,iVar7 + -1,(MethodInfo *)0x0);
-        AVar3 = (ACTkByte4)pOVar6->currentCryptoKey;
-        pBVar4 = (Byte__Array *)pOVar6->hiddenValue;
-        fVar5 = (float)pOVar6->fakeValue;
-        puVar12 = *(undefined **)&pOVar6->inited;
-      }
-      (this->fields).currentAmmo.currentCryptoKey = (int32_t)AVar3;
-      (this->fields).currentAmmo.hiddenValue = (int32_t)pBVar4;
-      (this->fields).currentAmmo.fakeValue = (int32_t)fVar5;
-      *(undefined **)&(this->fields).currentAmmo.inited = puVar12;
-      AVar3 = (ACTkByte4)(this->fields).firedInBurst.currentCryptoKey;
-      pBVar4 = (Byte__Array *)(this->fields).firedInBurst.hiddenValue;
-      fVar5 = (float)(this->fields).firedInBurst.fakeValue;
+      auStack_3._4_4_ = (this->fields).currentAmmo.currentCryptoKey;
+      pBStack_4 = (Byte__Array *)(this->fields).currentAmmo.hiddenValue;
+      puStack_5 = (undefined *)(this->fields).currentAmmo.fakeValue;
+      pOStack_6._0_1_ = (this->fields).currentAmmo.inited;
+      pOStack_6._1_3_ = *(undefined3 *)&(this->fields).currentAmmo.field_0xd;
       if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
           cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
       }
-      input.hiddenValue = (int32_t)pBVar4;
-      input.currentCryptoKey._0_1_ = AVar3.b1;
-      input.currentCryptoKey._1_1_ = AVar3.b2;
-      input.currentCryptoKey._2_1_ = AVar3.b3;
-      input.currentCryptoKey._3_1_ = AVar3.b4;
-      input.fakeValue = (int32_t)fVar5;
-      input.inited = (this->fields).firedInBurst.inited;
-      input._13_3_ = *(undefined3 *)&(this->fields).firedInBurst.field_0xd;
-      pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-               ObscuredInt_op_Increment((ObscuredInt *)&stack0xffffffe8,input,(MethodInfo *)0x0);
-      iVar7 = pOVar6->hiddenValue;
-      iVar8 = pOVar6->fakeValue;
-      bVar10 = pOVar6->inited;
-      uVar11 = *(undefined3 *)&pOVar6->field_0xd;
-      (this->fields).firedInBurst.currentCryptoKey = pOVar6->currentCryptoKey;
-      (this->fields).firedInBurst.hiddenValue = iVar7;
-      (this->fields).firedInBurst.fakeValue = iVar8;
-      (this->fields).firedInBurst.inited = bVar10;
-      *(undefined3 *)&(this->fields).firedInBurst.field_0xd = uVar11;
+      input_01.hiddenValue = (int32_t)pBStack_4;
+      input_01.currentCryptoKey = auStack_3._4_4_;
+      input_01.fakeValue = (int32_t)puStack_5;
+      input_01._12_4_ = pOStack_6;
+      pOVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+                ObscuredInt_op_Decrement((ObscuredInt *)(auStack_3 + 4),input_01,(MethodInfo *)0x0)
+      ;
+      iVar8 = pOVar7->currentCryptoKey;
+      iVar9 = pOVar7->hiddenValue;
+      iVar10 = pOVar7->fakeValue;
+      bVar11 = pOVar7->inited;
+      uVar12 = *(undefined3 *)&pOVar7->field_0xd;
+      (this->fields)._._.isFiring = 0;
+      (this->fields).currentAmmo.currentCryptoKey = iVar8;
+      (this->fields).currentAmmo.hiddenValue = iVar9;
+      (this->fields).currentAmmo.fakeValue = iVar10;
+      (this->fields).currentAmmo.inited = bVar11;
+      *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar12;
+      return;
+    }
+    if (iVar2 == 1) {
+      auStack_3._4_4_ = (this->fields).currentAmmo.currentCryptoKey;
+      pBStack_4 = (Byte__Array *)(this->fields).currentAmmo.hiddenValue;
+      puStack_5 = (undefined *)(this->fields).currentAmmo.fakeValue;
+      pOStack_6._0_1_ = (this->fields).currentAmmo.inited;
+      pOStack_6._1_3_ = *(undefined3 *)&(this->fields).currentAmmo.field_0xd;
+      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+      }
+      input_00.hiddenValue = (int32_t)pBStack_4;
+      input_00.currentCryptoKey = auStack_3._4_4_;
+      input_00.fakeValue = (int32_t)puStack_5;
+      input_00._12_4_ = pOStack_6;
+      pOVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+                ObscuredInt_op_Decrement((ObscuredInt *)(auStack_3 + 4),input_00,(MethodInfo *)0x0)
+      ;
+      iVar8 = pOVar7->hiddenValue;
+      iVar9 = pOVar7->fakeValue;
+      bVar11 = pOVar7->inited;
+      uVar12 = *(undefined3 *)&pOVar7->field_0xd;
+      (this->fields).currentAmmo.currentCryptoKey = pOVar7->currentCryptoKey;
+      (this->fields).currentAmmo.hiddenValue = iVar8;
+      (this->fields).currentAmmo.fakeValue = iVar9;
+      (this->fields).currentAmmo.inited = bVar11;
+      *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar12;
+      return;
+    }
+    if (iVar2 == 2) {
+      auStack_3._4_4_ = (this->fields).firedInBurst.currentCryptoKey;
+      pBStack_4 = (Byte__Array *)(this->fields).firedInBurst.hiddenValue;
+      puStack_5 = (undefined *)(this->fields).firedInBurst.fakeValue;
+      pOStack_6._0_1_ = (this->fields).firedInBurst.inited;
+      pOStack_6._1_3_ = *(undefined3 *)&(this->fields).firedInBurst.field_0xd;
+      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+      }
+      value_00.hiddenValue = (int32_t)pBStack_4;
+      value_00.currentCryptoKey = auStack_3._4_4_;
+      value_00.fakeValue = (int32_t)puStack_5;
+      value_00._12_4_ = pOStack_6;
+      iVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+               ObscuredInt_op_Implicit_1(value_00,(MethodInfo *)0x0);
+      auStack_3._4_4_ = (this->fields).currentAmmo.currentCryptoKey;
+      pBStack_4 = (Byte__Array *)(this->fields).currentAmmo.hiddenValue;
+      puStack_5 = (undefined *)(this->fields).currentAmmo.fakeValue;
+      pOStack_6 = *(ObscuredInt__Class **)&(this->fields).currentAmmo.inited;
+      if (iVar8 == 0) {
+        if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+            cctor_finished_or_no_cctor == 0) {
+          pOStack_6 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt;
+          func_?();
+        }
+        value.hiddenValue = (int32_t)pBStack_4;
+        value.currentCryptoKey = auStack_3._4_4_;
+        value.fakeValue = (int32_t)puStack_5;
+        value._12_4_ = pOStack_6;
+        iVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+                 ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
+        pOVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+                  ObscuredInt_op_Implicit
+                            ((ObscuredInt *)(auStack_3 + 4),iVar8 + -1,(MethodInfo *)0x0);
+        auStack_3._4_4_ = pOVar7->currentCryptoKey;
+        pBStack_4 = (Byte__Array *)pOVar7->hiddenValue;
+        puStack_5 = (undefined *)pOVar7->fakeValue;
+        pOStack_6 = *(ObscuredInt__Class **)&pOVar7->inited;
+      }
+      (this->fields).currentAmmo.currentCryptoKey = auStack_3._4_4_;
+      (this->fields).currentAmmo.hiddenValue = (int32_t)pBStack_4;
+      (this->fields).currentAmmo.fakeValue = (int32_t)puStack_5;
+      *(ObscuredInt__Class **)&(this->fields).currentAmmo.inited = pOStack_6;
+      auStack_3._4_4_ = (this->fields).firedInBurst.currentCryptoKey;
+      pBStack_4 = (Byte__Array *)(this->fields).firedInBurst.hiddenValue;
+      puStack_5 = (undefined *)(this->fields).firedInBurst.fakeValue;
+      pOStack_6._0_1_ = (this->fields).firedInBurst.inited;
+      pOStack_6._1_3_ = *(undefined3 *)&(this->fields).firedInBurst.field_0xd;
+      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+      }
+      input.hiddenValue = (int32_t)pBStack_4;
+      input.currentCryptoKey = auStack_3._4_4_;
+      input.fakeValue = (int32_t)puStack_5;
+      input._12_4_ = pOStack_6;
+      pOVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+                ObscuredInt_op_Increment((ObscuredInt *)(auStack_3 + 4),input,(MethodInfo *)0x0);
+      iVar8 = pOVar7->hiddenValue;
+      iVar9 = pOVar7->fakeValue;
+      bVar11 = pOVar7->inited;
+      uVar12 = *(undefined3 *)&pOVar7->field_0xd;
+      (this->fields).firedInBurst.currentCryptoKey = pOVar7->currentCryptoKey;
+      (this->fields).firedInBurst.hiddenValue = iVar8;
+      (this->fields).firedInBurst.fakeValue = iVar9;
+      (this->fields).firedInBurst.inited = bVar11;
+      *(undefined3 *)&(this->fields).firedInBurst.field_0xd = uVar12;
       pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
       if (pPVar1 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
-      fVar5 = (pPVar1->fields).shotsPerBurst;
-      iVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-              ObscuredInt_op_Implicit_1((this->fields).firedInBurst,(MethodInfo *)0x0);
-      iVar2 = (int)fVar5 - iVar7;
-      (this->fields)._._.isFiring = 0 < iVar2;
-      if (iVar2 < 1) {
+      fStack_13 = (pPVar1->fields).shotsPerBurst;
+      iVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+               ObscuredInt_op_Implicit_1((this->fields).firedInBurst,(MethodInfo *)0x0);
+      (this->fields)._._.isFiring = 0 < (int)fStack_13 - iVar8;
+      if ((int)fStack_13 - iVar8 < 1) {
         pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
         if (pPVar1 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
-        fVar5 = (pPVar1->fields)._.attackCooldown;
+        fStack_13 = (pPVar1->fields)._.attackCooldown;
       }
       else {
         pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
         if (pPVar1 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
-        fVar5 = (pPVar1->fields).burstCooldownBetweenShots;
+        fStack_13 = (pPVar1->fields).burstCooldownBetweenShots;
       }
       if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
           cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
       }
-      pOVar13 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-               ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe4,fVar5,(MethodInfo *)0x0)
-      ;
-      AVar3 = pOVar13->hiddenValue;
-      pBVar4 = pOVar13->hiddenValueOld;
-      fVar5 = pOVar13->fakeValue;
-      bVar10 = pOVar13->inited;
-      uVar11 = *(undefined3 *)&pOVar13->field_0x11;
-      (this->fields)._._.fireInterval.currentCryptoKey = pOVar13->currentCryptoKey;
-      (this->fields)._._.fireInterval.hiddenValue = AVar3;
-      (this->fields)._._.fireInterval.hiddenValueOld = pBVar4;
-      (this->fields)._._.fireInterval.fakeValue = fVar5;
-      (this->fields)._._.fireInterval.inited = bVar10;
-      *(undefined3 *)&(this->fields)._._.fireInterval.field_0x11 = uVar11;
-      func_?(&(this->fields)._._.fireInterval.hiddenValueOld);
+      pOVar14 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+                ObscuredFloat_op_Implicit((ObscuredFloat *)auStack_3,fStack_13,(MethodInfo *)0x0);
+      AVar15 = pOVar14->hiddenValue;
+      pBVar16 = pOVar14->hiddenValueOld;
+      fVar17 = pOVar14->fakeValue;
+      bVar11 = pOVar14->inited;
+      uVar12 = *(undefined3 *)&pOVar14->field_0x11;
+      (this->fields)._._.fireInterval.currentCryptoKey = pOVar14->currentCryptoKey;
+      (this->fields)._._.fireInterval.hiddenValue = AVar15;
+      (this->fields)._._.fireInterval.hiddenValueOld = pBVar16;
+      (this->fields)._._.fireInterval.fakeValue = fVar17;
+      (this->fields)._._.fireInterval.inited = bVar11;
+      *(undefined3 *)&(this->fields)._._.fireInterval.field_0x11 = uVar12;
+      func_?(&(this->fields)._._.fireInterval.hiddenValueOld,0);
       if ((this->fields)._._.isFiring == 0) {
         if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
             cctor_finished_or_no_cctor == 0) {
-          func_?();
+          func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
         }
-        pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-                 ObscuredInt_op_Implicit((ObscuredInt *)&stack0xffffffe8,0,(MethodInfo *)0x0);
-        iVar7 = pOVar6->currentCryptoKey;
-        iVar8 = pOVar6->hiddenValue;
-        iVar9 = pOVar6->fakeValue;
-        uVar14 = *(undefined4 *)&pOVar6->inited;
+        pOVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+                  ObscuredInt_op_Implicit((ObscuredInt *)(auStack_3 + 4),0,(MethodInfo *)0x0);
+        iVar8 = pOVar7->currentCryptoKey;
+        iVar9 = pOVar7->hiddenValue;
+        iVar10 = pOVar7->fakeValue;
+        uVar18 = *(undefined4 *)&pOVar7->inited;
       }
       else {
-        iVar7 = (this->fields).firedInBurst.currentCryptoKey;
-        iVar8 = (this->fields).firedInBurst.hiddenValue;
-        iVar9 = (this->fields).firedInBurst.fakeValue;
-        uVar14 = *(undefined4 *)&(this->fields).firedInBurst.inited;
+        iVar8 = (this->fields).firedInBurst.currentCryptoKey;
+        iVar9 = (this->fields).firedInBurst.hiddenValue;
+        iVar10 = (this->fields).firedInBurst.fakeValue;
+        uVar18 = *(undefined4 *)&(this->fields).firedInBurst.inited;
       }
-      (this->fields).firedInBurst.currentCryptoKey = iVar7;
-      (this->fields).firedInBurst.hiddenValue = iVar8;
-      (this->fields).firedInBurst.fakeValue = iVar9;
-      *(undefined4 *)&(this->fields).firedInBurst.inited = uVar14;
+      (this->fields).firedInBurst.currentCryptoKey = iVar8;
+      (this->fields).firedInBurst.hiddenValue = iVar9;
+      (this->fields).firedInBurst.fakeValue = iVar10;
+      *(undefined4 *)&(this->fields).firedInBurst.inited = uVar18;
       if ((this->fields)._._.isFiring == 0) {
-        a = (String *)(*(code *)(this->klass->vtable).get_FireSoundEffectName.method)();
-        bVar10 = mscorlib.dll::System::String::String_op_Equality
-                          (a,StringLiteral_minigun,(MethodInfo *)0x0);
-        if (bVar10 != 0) {
-          this_00 = (this->fields)._.fireAudioSource;
-          if (this_00 == (AudioSource *)0x0) goto code_?;
-          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Stop_1
-                    (this_00,(MethodInfo *)0x0);
+        pCVar19 = (this->fields)._.fireAudioPlayer;
+        pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+        if ((pPVar1 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) ||
+           (pCVar19 == (CustomItemAudioPlayer *)0x0)) goto code_?;
+        bVar11 = CustomItemAudioPlayer::CustomItemAudioPlayer_IsClipLooped
+                          (pCVar19,(pPVar1->fields)._.fireSoundEffect,(MethodInfo *)0x0);
+        if (bVar11 != 0) {
+          pCVar19 = (this->fields)._.fireAudioPlayer;
+          if (pCVar19 == (CustomItemAudioPlayer *)0x0) goto code_?;
+          CustomItemAudioPlayer::CustomItemAudioPlayer_Stop(pCVar19,(MethodInfo *)0x0);
         }
       }
     }
@@ -1457,8 +1552,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
   }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -1523,6 +1618,83 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
 }
 
 
+/* Void InitializeAudioPlayers() */
+
+void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
+     PickupItemCustomGun_InitializeAudioPlayers(PickupItemCustomGun *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData);
+    func_?(&
+                    CustomItemAudioPlayer_MethodInfo__UnityEngine__Object__Instantiate<CustomItemAudioPlayer>_CustomItemAudioPlayer__UnityEngine__Transform_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  pCVar1 = (this->fields)._.fireAudioPlayer;
+  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                     ((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pCVar1 = (CustomItemAudioPlayer *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_5
+                     ((Object *)pCVar1,pTVar2,
+                      CustomItemAudioPlayer_MethodInfo__UnityEngine__Object__Instantiate<CustomItemAudioPlayer>_CustomItemAudioPlayer__UnityEngine__Transform_
+                     );
+  (this->fields)._.fireAudioPlayer = pCVar1;
+  func_?(&(this->fields)._.fireAudioPlayer,pCVar1);
+  pCVar1 = (this->fields)._.hitAudioPlayer;
+  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                     ((Component *)this,(MethodInfo *)0x0);
+  pCVar1 = (CustomItemAudioPlayer *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_5
+                     ((Object *)pCVar1,pTVar2,
+                      CustomItemAudioPlayer_MethodInfo__UnityEngine__Object__Instantiate<CustomItemAudioPlayer>_CustomItemAudioPlayer__UnityEngine__Transform_
+                     );
+  (this->fields)._.hitAudioPlayer = pCVar1;
+  func_?(&(this->fields)._.hitAudioPlayer,pCVar1);
+  pCVar1 = (this->fields).chargeAudioPlayer;
+  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                     ((Component *)this,(MethodInfo *)0x0);
+  pCVar1 = (CustomItemAudioPlayer *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_5
+                     ((Object *)pCVar1,pTVar2,
+                      CustomItemAudioPlayer_MethodInfo__UnityEngine__Object__Instantiate<CustomItemAudioPlayer>_CustomItemAudioPlayer__UnityEngine__Transform_
+                     );
+  (this->fields).chargeAudioPlayer = pCVar1;
+  func_?();
+  pCVar1 = (this->fields)._.fireAudioPlayer;
+  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  if (pCVar1 != (CustomItemAudioPlayer *)0x0) {
+    CustomItemAudioPlayer::CustomItemAudioPlayer_Initialize
+              (pCVar1,TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
+                      static_fields->fireSoundEffects,(MethodInfo *)0x0);
+    pCVar1 = (this->fields).chargeAudioPlayer;
+    if (pCVar1 != (CustomItemAudioPlayer *)0x0) {
+      CustomItemAudioPlayer::CustomItemAudioPlayer_Initialize
+                (pCVar1,TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
+                        static_fields->chargeSoundEffects,(MethodInfo *)0x0);
+      pCVar1 = (this->fields)._.hitAudioPlayer;
+      if (pCVar1 != (CustomItemAudioPlayer *)0x0) {
+        CustomItemAudioPlayer::CustomItemAudioPlayer_Initialize
+                  (pCVar1,TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
+                          static_fields->hitSoundEffects,(MethodInfo *)0x0);
+        return;
+      }
+    }
+  }
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
+  return;
+}
+
+
 /* Void InterruptFire() */
 
 void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
@@ -1539,104 +1711,130 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
   }
   PickupItemEditable::PickupItemEditable_InterruptFire((PickupItemEditable *)this,(MethodInfo *)0x0)
   ;
-  this_00 = (this->fields)._.fireAudioSource;
-  (this->fields)._._.isFiring = 0;
-  if (this_00 != (AudioSource *)0x0) {
-    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Stop_1
-              (this_00,(MethodInfo *)0x0);
-    pMVar1 = (this->fields)._._._.owner;
-    if (pMVar1 != (MVPickupOwner *)0x0) {
-      pMVar2 = (pMVar1->fields)._.worldObjectParent;
-      if ((((pMVar2 == (MVWorldObjectClient *)0x0) ||
-           (pMVar3 = pMVar2->klass,
-           (pMVar3->_1).naturalAligment < (TypeInfo__MVAvatar->_1).naturalAligment)) ||
-          ((MVAvatar__Class *)
-           (pMVar3->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] !=
-           TypeInfo__MVAvatar)) ||
-         (((pMVar3->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment ||
-          ((MVAvatarLocal__Class *)
-           (pMVar3->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
-           TypeInfo__MVAvatarLocal)))) {
-        return;
+  pMVar1 = (this->fields)._._._.owner;
+  if (pMVar1 != (MVPickupOwner *)0x0) {
+    pMVar2 = (pMVar1->fields)._.worldObjectParent;
+    if ((((pMVar2 == (MVWorldObjectClient *)0x0) ||
+         (pMVar3 = pMVar2->klass,
+         (pMVar3->_1).naturalAligment < (TypeInfo__MVAvatar->_1).naturalAligment)) ||
+        ((MVAvatar__Class *)(pMVar3->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1]
+         != TypeInfo__MVAvatar)) ||
+       (((pMVar3->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment ||
+        ((MVAvatarLocal__Class *)
+         (pMVar3->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+         TypeInfo__MVAvatarLocal)))) {
+      return;
+    }
+    pPVar4 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+    if (pPVar4 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+      if ((float)(int)(pPVar4->fields).movementSpeedWhileHeld != _UNK_?) {
+        this_00 = (AvatarMotor *)pMVar2[1].fields.name;
+        if (this_00 == (AvatarMotor *)0x0) goto code_?;
+        AvatarMotor::AvatarMotor_set_WalkSpeedBase(this_00,8.0,(MethodInfo *)0x0);
       }
       pPVar4 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
       if (pPVar4 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-        if ((float)(int)(pPVar4->fields).movementSpeedWhileHeld != _UNK_?) {
-          this_01 = (AvatarMotor *)pMVar2[1].fields.name;
-          if (this_01 == (AvatarMotor *)0x0) goto code_?;
-          AvatarMotor::AvatarMotor_set_WalkSpeedBase(this_01,8.0,(MethodInfo *)0x0);
+        if ((pPVar4->fields).chargeEnabled == 0) {
+          return;
+        }
+        if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).
+            cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pOVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
+                  ObscuredBool_op_Implicit((ObscuredBool *)&stack0xfffffff0,0,(MethodInfo *)0x0);
+        pIVar6 = (this->fields).chargeRoutine;
+        uVar7 = *(undefined3 *)&pOVar5->field_0x1;
+        iVar8 = pOVar5->hiddenValue;
+        bVar9 = pOVar5->fakeValue;
+        bVar10 = pOVar5->fakeValueChanged;
+        bVar11 = pOVar5->inited;
+        uVar12 = pOVar5->field_0xb;
+        (this->fields).isCharging.currentCryptoKey = pOVar5->currentCryptoKey;
+        *(undefined3 *)&(this->fields).isCharging.field_0x1 = uVar7;
+        (this->fields).isCharging.hiddenValue = iVar8;
+        (this->fields).isCharging.fakeValue = bVar9;
+        (this->fields).isCharging.fakeValueChanged = bVar10;
+        (this->fields).isCharging.inited = bVar11;
+        (this->fields).isCharging.field_0xb = uVar12;
+        if (pIVar6 != (IEnumerator *)0x0) {
+          Coroutines::Coroutines_Stop((this->fields).chargeRoutine,(MethodInfo *)0x0);
+          (this->fields).chargeRoutine = (IEnumerator *)0x0;
+          func_?();
         }
         pPVar4 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
         if (pPVar4 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-          if ((pPVar4->fields).chargeEnabled == 0) {
-            return;
-          }
-          if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).
-              cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          pOVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool
-                    ::ObscuredBool_op_Implicit((ObscuredBool *)&stack0xfffffff0,0,(MethodInfo *)0x0)
-          ;
-          pIVar6 = (this->fields).chargeRoutine;
-          uVar7 = *(undefined3 *)&pOVar5->field_0x1;
-          iVar8 = pOVar5->hiddenValue;
-          bVar9 = pOVar5->fakeValue;
-          bVar10 = pOVar5->fakeValueChanged;
-          bVar11 = pOVar5->inited;
-          uVar12 = pOVar5->field_0xb;
-          (this->fields).isCharging.currentCryptoKey = pOVar5->currentCryptoKey;
-          *(undefined3 *)&(this->fields).isCharging.field_0x1 = uVar7;
-          (this->fields).isCharging.hiddenValue = iVar8;
-          (this->fields).isCharging.fakeValue = bVar9;
-          (this->fields).isCharging.fakeValueChanged = bVar10;
-          (this->fields).isCharging.inited = bVar11;
-          (this->fields).isCharging.field_0xb = uVar12;
-          if (pIVar6 != (IEnumerator *)0x0) {
-            Coroutines::Coroutines_Stop((this->fields).chargeRoutine,(MethodInfo *)0x0);
-            (this->fields).chargeRoutine = (IEnumerator *)0x0;
+          if ((pPVar4->fields).chargeZoomEnabled != 0) {
+            pMVar13 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                ((MethodInfo *)0x0);
+            if (pMVar13 == (MainCameraManager *)0x0) goto code_?;
+            this_01 = (pMVar13->fields).mainCamera;
+            AVar14 = (ACTkByte4)(this->fields).initialFOV.currentCryptoKey;
+            AVar15 = (this->fields).initialFOV.hiddenValue;
+            pBVar16 = (this->fields).initialFOV.hiddenValueOld;
+            fVar17 = (this->fields).initialFOV.fakeValue;
+            uVar18 = (this->fields).initialFOV.hiddenValueOld;
+            if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
+                cctor_finished_or_no_cctor == 0) {
+              auVar19._4_4_ = &UNK_?;
+              auVar19._0_4_ = uVar18;
+              auVar19._8_4_ = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat;
+              func_?();
+              pBVar16 = auVar19._0_4_;
+              fVar17 = auVar19._4_4_;
+            }
+            value.hiddenValue = AVar15;
+            value.currentCryptoKey._0_1_ = AVar14.b1;
+            value.currentCryptoKey._1_1_ = AVar14.b2;
+            value.currentCryptoKey._2_1_ = AVar14.b3;
+            value.currentCryptoKey._3_1_ = AVar14.b4;
+            value.hiddenValueOld = pBVar16;
+            value.fakeValue = fVar17;
+            value.inited = (this->fields).initialFOV.inited;
+            value._17_3_ = *(undefined3 *)&(this->fields).initialFOV.field_0x11;
+            fVar17 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                     ObscuredFloat::ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
+            if (this_01 == (Camera *)0x0) goto code_?;
+            UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView
+                      (this_01,fVar17,(MethodInfo *)0x0);
+            Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+            ObscuredFloat_op_Implicit_1((this->fields).initialMouseSensitivity,(MethodInfo *)0x0);
+            if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
             func_?();
           }
           pPVar4 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
           if (pPVar4 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-            if ((pPVar4->fields).chargeZoomEnabled == 0) {
-              return;
+            if ((pPVar4->fields).chargeParticlesEnabled != 0) {
+              this_02 = (this->fields).chargeParticles;
+              if (this_02 == (ParticleSystem *)0x0) goto code_?;
+              UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+              ParticleSystem_Stop_2(this_02,(MethodInfo *)0x0);
             }
-            pMVar13 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                                ((MethodInfo *)0x0);
-            if (pMVar13 != (MainCameraManager *)0x0) {
-              this_02 = (pMVar13->fields).mainCamera;
-              iVar8 = (this->fields).initialFOV.currentCryptoKey;
-              AVar14 = (this->fields).initialFOV.hiddenValue;
-              pBVar15 = (this->fields).initialFOV.hiddenValueOld;
-              fVar16 = (this->fields).initialFOV.fakeValue;
+            this_03 = (this->fields).chargeAudioPlayer;
+            if (this_03 != (CustomItemAudioPlayer *)0x0) {
+              CustomItemAudioPlayer::CustomItemAudioPlayer_Stop(this_03,(MethodInfo *)0x0);
               if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
                   cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              value.hiddenValue = AVar14;
-              value.currentCryptoKey = iVar8;
-              value.hiddenValueOld = pBVar15;
-              value.fakeValue = fVar16;
-              value.inited = (this->fields).initialFOV.inited;
-              value._17_3_ = *(undefined3 *)&(this->fields).initialFOV.field_0x11;
-              fVar16 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                       ObscuredFloat::ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-              if (this_02 != (Camera *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView
-                          (this_02,fVar16,(MethodInfo *)0x0);
-                fVar16 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                         ObscuredFloat::ObscuredFloat_op_Implicit_1
-                                   ((this->fields).initialMouseSensitivity,(MethodInfo *)0x0);
-                if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-                  pMStack17 = TypeInfo__MVInputWrapper;
-                  func_?();
-                }
-                pMStack17 = (MVInputWrapper__Class *)0x0;
-                puStack18 = (undefined *)fVar16;
-                func_?();
-                return;
-              }
+              pOVar20 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                        ObscuredFloat::ObscuredFloat_op_Implicit
+                                  ((ObscuredFloat *)&stack0xffffffe8,0.0,(MethodInfo *)0x0);
+              AVar14 = pOVar20->hiddenValue;
+              pBVar16 = pOVar20->hiddenValueOld;
+              fVar17 = pOVar20->fakeValue;
+              bVar9 = pOVar20->inited;
+              uVar7 = *(undefined3 *)&pOVar20->field_0x11;
+              (this->fields).currentCharge.currentCryptoKey = pOVar20->currentCryptoKey;
+              (this->fields).currentCharge.hiddenValue = AVar14;
+              (this->fields).currentCharge.hiddenValueOld = pBVar16;
+              (this->fields).currentCharge.fakeValue = fVar17;
+              (this->fields).currentCharge.inited = bVar9;
+              *(undefined3 *)&(this->fields).currentCharge.field_0x11 = uVar7;
+              func_?();
+              return;
             }
           }
         }
@@ -1645,8 +1843,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
   }
 code_?:
   func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 
@@ -2781,8 +2979,7 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
      PickupItemCustomGun_OnEnterVehicleWithWeapon(PickupItemCustomGun *this,MethodInfo *method)
 
 {
-  (*(code *)(this->klass->vtable).InterruptFire.method)(this,this->klass[1]._0.image);
-  (this->fields).canDoFOVZoom = 0;
+  (this->fields).canDoFOVZoom = 1;
   return;
 }
 
@@ -2867,8 +3064,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::PickupI
   pVVar1 = PickupItemCustomGun_HandleBulletGenerationOnFire
                      ((Vector3 *)&stack0xffffffdc,this,isLocal,(MethodInfo *)0x0);
   uStack_2._0_4_ = (uint)pVVar1->x;
-  uStack_3 = (uint)pVVar1->y;
-  fVar4 = pVVar1->z;
+  uStack_2._4_4_ = (uint)pVVar1->y;
+  fVar3 = pVVar1->z;
   if (cRam_? == '\0') {
     func_?();
     func_?();
@@ -2882,56 +3079,56 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::PickupI
                       ((Component *)this_00,
                        MVRigidBody_MethodInfo__UnityEngine__Component__GetComponent<MVRigidBody>__);
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    uStack_2 = CONCAT44(uStack_3,TypeInfo__UnityEngine__Object);
+    uStack_2 = CONCAT44(uStack_2._4_4_,TypeInfo__UnityEngine__Object);
     func_?();
   }
-  bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)this_02,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar5 == 0) {
-    pPVar6 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-    if (pPVar6 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
-    if (TypeInfo__UnityEngine__Mathf->static_fields->Epsilon < (pPVar6->fields)._.recoilStrength) {
-      fVar7 = (float)((uint)uStack_2 ^
+  if (bVar4 == 0) {
+    pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+    if (pPVar5 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
+    if (TypeInfo__UnityEngine__Mathf->static_fields->Epsilon < (pPVar5->fields)._.recoilStrength) {
+      fVar6 = (float)((uint)uStack_2 ^
                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-      fVar8 = (float)(uStack_3 ^
+      fVar7 = (float)(uStack_2._4_4_ ^
                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-      fVar4 = (float)((uint)fVar4 ^
+      fVar3 = (float)((uint)fVar3 ^
                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-      pPVar6 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-      if (pPVar6 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
-      fVar9 = (pPVar6->fields)._.recoilStrength;
+      pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+      if (pPVar5 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
+      fVar8 = (pPVar5->fields)._.recoilStrength;
       if (this_02 == (MVRigidBody *)0x0) goto code_?;
-      impulse.y = fVar8 * fVar9;
-      impulse.x = fVar7 * fVar9;
-      impulse.z = fVar4 * fVar9;
+      impulse.y = fVar7 * fVar8;
+      impulse.x = fVar6 * fVar8;
+      impulse.z = fVar3 * fVar8;
       MVRigidBody::MVRigidBody_AddImpulse_1(this_02,impulse,0,(MethodInfo *)0x0);
     }
   }
   PickupItemCustomGun_HandleFiringStateAndAmmoOnFire(this,(MethodInfo *)0x0);
   this_01 = (this->fields).fireEffectTimeout;
   if (this_01 != (TimeoutClock *)0x0) {
-    bVar5 = TimeoutClock::TimeoutClock_IsInTimeout(this_01,(MethodInfo *)0x0);
-    if (bVar5 != 0) {
+    bVar4 = TimeoutClock::TimeoutClock_IsInTimeout(this_01,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
       return;
     }
     PickupItemEditable::PickupItemEditable_PlayAnimation
               ((PickupItemEditable *)this,(MethodInfo *)0x0);
-    (*(code *)(this->klass->vtable).PlayFireSoundEffect.method)();
-    pPVar6 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-    if (pPVar6 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-      if ((pPVar6->fields).smokeOnFire != 0) {
-        pPVar10 = (this->fields).smokeParticles;
-        if (pPVar10 == (ParticleSystem *)0x0) goto code_?;
+    PickupItemCustomGun_PlayFireSoundEffect(this,isLocal,(MethodInfo *)0x0);
+    pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+    if (pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+      if ((pPVar5->fields).smokeOnFire != 0) {
+        pPVar9 = (this->fields).smokeParticles;
+        if (pPVar9 == (ParticleSystem *)0x0) goto code_?;
         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
-                  (pPVar10,(MethodInfo *)0x0);
+                  (pPVar9,(MethodInfo *)0x0);
       }
-      pPVar6 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-      if (pPVar6 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-        if ((pPVar6->fields).muzzleFlareOnFire != 0) {
-          pPVar10 = (this->fields).flareParticles;
-          if (pPVar10 == (ParticleSystem *)0x0) goto code_?;
+      pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+      if (pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+        if ((pPVar5->fields).muzzleFlareOnFire != 0) {
+          pPVar9 = (this->fields).flareParticles;
+          if (pPVar9 == (ParticleSystem *)0x0) goto code_?;
           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
-                    (pPVar10,(MethodInfo *)0x0);
+                    (pPVar9,(MethodInfo *)0x0);
         }
         return;
       }
@@ -2939,8 +3136,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::PickupI
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -2951,8 +3148,6 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::PickupI
                (PickupItemCustomGun *this,VoxelHit voxelHit,Ray lineOfFire,MethodInfo *method)
 
 {
-  auVar1._0_12_ = in_stack_2._0_12_;
-  auVar1._12_4_ = unaff_EBP;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__IBulletImpactVisualizer);
     func_?(&
@@ -2965,137 +3160,146 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::PickupI
   }
   this_00 = (this->fields).bulletEffectTimeout;
   if (this_00 != (TimeoutClock *)0x0) {
-    bVar3 = TimeoutClock::TimeoutClock_IsInTimeout(this_00,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
+    bVar1 = TimeoutClock::TimeoutClock_IsInTimeout(this_00,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
       return;
     }
-    audioSource = (this->fields).bulletAudioSource;
-    soundEffectName =
-         (String *)
-         (*(code *)(this->klass->vtable).get_HitSoundEffectName.method)
-                   (this,(this->klass->vtable).get_AttackAnimationName.methodPtr);
-    position.y = voxelHit.point.x;
-    position.x = (float)in_stack_4;
-    position.z = voxelHit.point.y;
-    PickupItemEditable::PickupItemEditable_PlayAudio
-              ((PickupItemEditable *)this,audioSource,soundEffectName,position,1,(MethodInfo *)0x0);
-    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (pMVar5 != (MVWorldObjectClientManager *)0x0) {
-      id = MVWorldObjectClientManager::
-           MVWorldObjectClientManager_GetWoIDHighestInHierarchyWithComponent
-                     (pMVar5,voxelHit._36_4_,
-                      int_MethodInfo__MVWorldObjectClientManager__GetWoIDHighestInHierarchyWithComponent<InteractionDataHandlerBase>_int_
-                     );
-      pMVar5 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (pMVar5 != (MVWorldObjectClientManager *)0x0) {
-        pMVar6 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                           (pMVar5,id,(MethodInfo *)0x0);
-        piVar7 = (int *)func_?(pMVar6,TypeInfo__IBulletImpactVisualizer);
-        if (piVar7 == (int *)0x0) {
-          pPVar8 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-          if (pPVar8 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-            if ((pPVar8->fields).sparksOnHit == 0) {
-              return;
-            }
-            UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
-                      ((Quaternion *)&stack0xffffffe0,voxelHit._8_12_,(MethodInfo *)0x0);
-            pPVar8 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-            if (pPVar8 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-              auVar9._8_8_ = 0;
-              auVar9._0_8_ = auVar1._8_8_;
-              auVar9 = auVar9 << 0x40;
-              mscorlib.dll::System::Nullable`1[Single]::Nullable_1_Single___ctor
-                        ((Nullable_1_Single_ *)&stack0xfffffff0,(pPVar8->fields).sparksSize,
-                         MethodInfo__System__Nullable<float>__Nullable_float_);
-              pPVar8 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-              if (pPVar8 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-                pCVar10 = &(pPVar8->fields).sparksColor;
-                fVar11 = pCVar10->r;
-                fVar12 = (pPVar8->fields).sparksColor.g;
-                fVar13 = (pPVar8->fields).sparksColor.b;
-                value.m_XMin = pCVar10->r;
-                value.m_YMin = pCVar10->g;
-                value.m_Width = pCVar10->b;
-                value.m_Height = pCVar10->a;
-                uVar14._0_1_ = 0;
-                uVar14._1_3_ = 0;
-                fVar15 = 0.0;
-                this_01 = (Nullable_1_UnityEngine_Rect_ *)&stack0xffffffcc;
-                puVar16 = &UNK_?;
-                mscorlib.dll::System::Nullable`1[UnityEngine::Rect]::
-                Nullable_1_UnityEngine_Rect___ctor
-                          (this_01,value,
-                           MethodInfo__System__Nullable<UnityEngine::Color>__Nullable_UnityEngine__Color_
-                          );
-                color.value.r = fVar15;
-                color.hasValue = (bool)uVar14;
-                color._1_3_ = SUB43(uVar14,1);
-                color.value.g = (float)puVar16;
-                color.value.b = (float)this_01;
-                position_00.y = voxelHit.point.x;
-                position_00.x = (float)in_stack_4;
-                position_00.z = voxelHit.point.y;
-                rotation.y = fVar13;
-                rotation.x = fVar12;
-                rotation.z = (float)uVar14;
-                rotation.w = auVar9._4_4_;
-                scale.value = auVar9._4_4_;
-                scale.hasValue = (bool)uVar14;
-                scale._1_3_ = SUB43(uVar14,1);
-                color.value.a = fVar11;
-                OneShotPooledParticleSystem::OneShotPooledParticleSystem_Instantiate_1
-                          (PoolEnums__Enum_WhiteSparks,position_00,rotation,scale,color,
-                           (MethodInfo *)0x0);
+    this_01 = (this->fields)._.hitAudioPlayer;
+    pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+    if ((pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+       (this_01 != (CustomItemAudioPlayer *)0x0)) {
+      position.y = voxelHit.point.x;
+      position.x = (float)in_stack_3;
+      position.z = voxelHit.point.y;
+      CustomItemAudioPlayer::CustomItemAudioPlayer_PlayClip
+                (this_01,(pPVar2->fields)._.hitSoundEffect,1,position,(MethodInfo *)0x0);
+      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (pMVar4 != (MVWorldObjectClientManager *)0x0) {
+        id = MVWorldObjectClientManager::
+             MVWorldObjectClientManager_GetWoIDHighestInHierarchyWithComponent
+                       (pMVar4,voxelHit._36_4_,
+                        int_MethodInfo__MVWorldObjectClientManager__GetWoIDHighestInHierarchyWithComponent<InteractionDataHandlerBase>_int_
+                       );
+        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        if (pMVar4 != (MVWorldObjectClientManager *)0x0) {
+          auVar5._4_4_ = id;
+          auVar5._0_4_ = pMVar4;
+          auVar5._8_8_ = 0;
+          auVar5 = auVar5 << 0x20;
+          pMVar6 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                             (pMVar4,id,(MethodInfo *)0x0);
+          auVar7._0_8_ = auVar5._0_8_;
+          auVar7._8_4_ = pMVar6;
+          auVar7._12_4_ = TypeInfo__IBulletImpactVisualizer;
+          uVar8 = auVar7._8_8_;
+          piVar9 = (int *)func_?();
+          if (piVar9 == (int *)0x0) {
+            pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+            if (pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+              if ((pPVar2->fields).sparksOnHit == 0) {
                 return;
+              }
+              UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
+                        ((Quaternion *)&stack0xffffffe0,voxelHit._8_12_,(MethodInfo *)0x0);
+              pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+              if (pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+                auVar10._8_8_ = 0;
+                auVar10._0_8_ = uVar8;
+                auVar10 = auVar10 << 0x40;
+                mscorlib.dll::System::Nullable`1[Single]::Nullable_1_Single___ctor
+                          ((Nullable_1_Single_ *)&stack0xfffffff0,(pPVar2->fields).sparksSize,
+                           MethodInfo__System__Nullable<float>__Nullable_float_);
+                pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+                if (pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+                  pCVar11 = &(pPVar2->fields).sparksColor;
+                  fVar12 = pCVar11->r;
+                  fVar13 = (pPVar2->fields).sparksColor.g;
+                  fVar14 = (pPVar2->fields).sparksColor.b;
+                  value.m_XMin = pCVar11->r;
+                  value.m_YMin = pCVar11->g;
+                  value.m_Width = pCVar11->b;
+                  value.m_Height = pCVar11->a;
+                  uVar15._0_1_ = 0;
+                  uVar15._1_3_ = 0;
+                  fVar16 = 0.0;
+                  this_02 = (Nullable_1_UnityEngine_Rect_ *)&stack0xffffffcc;
+                  puVar17 = &UNK_?;
+                  mscorlib.dll::System::Nullable`1[UnityEngine::Rect]::
+                  Nullable_1_UnityEngine_Rect___ctor
+                            (this_02,value,
+                             MethodInfo__System__Nullable<UnityEngine::Color>__Nullable_UnityEngine__Color_
+                            );
+                  color.value.r = fVar16;
+                  color.hasValue = (bool)uVar15;
+                  color._1_3_ = SUB43(uVar15,1);
+                  color.value.g = (float)puVar17;
+                  color.value.b = (float)this_02;
+                  position_00.y = voxelHit.point.x;
+                  position_00.x = (float)in_stack_3;
+                  position_00.z = voxelHit.point.y;
+                  rotation.y = fVar14;
+                  rotation.x = fVar13;
+                  rotation.z = (float)uVar15;
+                  rotation.w = auVar10._4_4_;
+                  scale.value = auVar10._4_4_;
+                  scale.hasValue = (bool)uVar15;
+                  scale._1_3_ = SUB43(uVar15,1);
+                  color.value.a = fVar12;
+                  OneShotPooledParticleSystem::OneShotPooledParticleSystem_Instantiate_1
+                            (PoolEnums__Enum_WhiteSparks,position_00,rotation,scale,color,
+                             (MethodInfo *)0x0);
+                  return;
+                }
               }
             }
           }
-        }
-        else {
-          pMVar17 = (this->fields)._._._.owner;
-          if ((pMVar17 != (MVPickupOwner *)0x0) &&
-             (pMVar18 = (pMVar17->fields)._.worldObjectParent, pMVar18 != (MVWorldObjectClient *)0x0))
-          {
-            auVar19._4_8_ = auVar1._8_8_;
-            auVar19._0_4_ = (pMVar18->fields)._.ownerActorNr;
-            auVar19._12_4_ = 0;
-            auVar19 = auVar19 << 0x20;
-            pPVar8 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-            if (pPVar8 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-              iVar20 = *piVar7;
-              uVar21 = 0;
-              fVar11 = (pPVar8->fields)._.damage;
-              auVar22._12_4_ = auVar19._12_4_;
-              auVar22._0_8_ = auVar19._0_8_;
-              auVar22._8_4_ = fVar11;
-              fVar12 = auVar19._4_4_;
-              if (*(ushort *)(iVar20 + 0xb6) != 0) {
-                do {
-                  if (*(IBulletImpactVisualizer__Class **)
-                       (*(int *)(iVar20 + 0x58) + (uint)uVar21 * 8) ==
-                      TypeInfo__IBulletImpactVisualizer) {
-                    puVar23 = (undefined4 *)
-                              (iVar20 + (*(int *)(*(int *)(iVar20 + 0x58) + 4 + (uint)uVar21 * 8) +
-                                       0x18) * 8);
-                    goto code_?;
-                  }
-                  uVar21 = uVar21 + 1;
-                } while (uVar21 < *(ushort *)(iVar20 + 0xb6));
-              }
-              puVar23 = (undefined4 *)func_?(piVar7,TypeInfo__IBulletImpactVisualizer,0);
-              fVar12 = auVar22._4_4_;
-              fVar11 = auVar22._8_4_;
+          else {
+            pMVar18 = (this->fields)._._._.owner;
+            if ((pMVar18 != (MVPickupOwner *)0x0) &&
+               (pMVar19 = (pMVar18->fields)._.worldObjectParent, pMVar19 != (MVWorldObjectClient *)0x0)
+               ) {
+              auVar20._4_8_ = uVar8;
+              auVar20._0_4_ = (pMVar19->fields)._.ownerActorNr;
+              auVar20._12_4_ = 0;
+              auVar20 = auVar20 << 0x20;
+              pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+              if (pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+                iVar21 = *piVar9;
+                uVar22 = 0;
+                fVar12 = (pPVar2->fields)._.damage;
+                auVar23._12_4_ = auVar20._12_4_;
+                auVar23._0_8_ = auVar20._0_8_;
+                auVar23._8_4_ = fVar12;
+                fVar13 = auVar20._4_4_;
+                if (*(ushort *)(iVar21 + 0xb6) != 0) {
+                  do {
+                    if (*(IBulletImpactVisualizer__Class **)
+                         (*(int *)(iVar21 + 0x58) + (uint)uVar22 * 8) ==
+                        TypeInfo__IBulletImpactVisualizer) {
+                      puVar24 = (undefined4 *)
+                                (iVar21 + (*(int *)(*(int *)(iVar21 + 0x58) + 4 + (uint)uVar22 * 8) +
+                                         0x18) * 8);
+                      goto code_?;
+                    }
+                    uVar22 = uVar22 + 1;
+                  } while (uVar22 < *(ushort *)(iVar21 + 0xb6));
+                }
+                puVar24 = (undefined4 *)func_?(piVar9,TypeInfo__IBulletImpactVisualizer,0)
+                ;
+                fVar13 = auVar23._4_4_;
+                fVar12 = auVar23._8_4_;
 code_?:
-              (*(code *)*puVar23)(piVar7,in_stack_4,voxelHit.point.x,voxelHit.point.y,
-                                  voxelHit.point.z,voxelHit.normal.x,voxelHit.normal.y,
-                                  voxelHit.normal.z,voxelHit.cubePos._0_4_,voxelHit._28_4_,
-                                  voxelHit.face,voxelHit._36_4_,voxelHit.woId,voxelHit.cube,
-                                  voxelHit.distance,voxelHit.collider,voxelHit.transform,
-                                  voxelHit._60_8_,voxelHit.interactionFlags._4_4_,
-                                  lineOfFire.m_Origin.x,lineOfFire.m_Origin.y,lineOfFire.m_Origin.z,
-                                  lineOfFire.m_Direction.x,lineOfFire.m_Direction.y,fVar12,fVar11,
-                                  puVar23[1]);
-              return;
+                (*(code *)*puVar24)(piVar9,in_stack_3,voxelHit.point.x,voxelHit.point.y,
+                                    voxelHit.point.z,voxelHit.normal.x,voxelHit.normal.y,
+                                    voxelHit.normal.z,voxelHit.cubePos._0_4_,voxelHit._28_4_,
+                                    voxelHit.face,voxelHit._36_4_,voxelHit.woId,voxelHit.cube,
+                                    voxelHit.distance,voxelHit.collider,voxelHit.transform,
+                                    voxelHit._60_8_,voxelHit.interactionFlags._4_4_,
+                                    lineOfFire.m_Origin.x,lineOfFire.m_Origin.y,
+                                    lineOfFire.m_Origin.z,lineOfFire.m_Direction.x,
+                                    lineOfFire.m_Direction.y,fVar13,fVar12,puVar24[1]);
+                return;
+              }
             }
           }
         }
@@ -3103,8 +3307,8 @@ code_?:
     }
   }
   func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 
@@ -3115,7 +3319,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
      PickupItemCustomGun_OnLeaveVehicleWithWeapon(PickupItemCustomGun *this,MethodInfo *method)
 
 {
-  (this->fields).canDoFOVZoom = 1;
+  (*(code *)(this->klass->vtable).InterruptFire.method)(this,this->klass[1]._0.image);
+  (this->fields).canDoFOVZoom = 0;
   return;
 }
 
@@ -3259,120 +3464,67 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
     (this->fields).bulletEffectTimeout = pTVar8;
     func_?();
     (*(code *)(this->klass->vtable).ResetAmmo.method)();
-    PickupItemCustomGun_SoundStateUpdate(this,(MethodInfo *)0x0);
-    PickupItemCustomGun_MuzzleStateUpdate(this,(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pMVar9 = (this->fields)._._._.owner;
-    if (pMVar9 != (MVPickupOwner *)0x0) {
-      pMVar10 = (pMVar9->fields)._.worldObjectParent;
-      if (((pMVar10 == (MVWorldObjectClient *)0x0) ||
-          ((pMVar10->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment)) ||
-         ((MVAvatarLocal__Class *)
-          (pMVar10->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
-          TypeInfo__MVAvatarLocal)) {
-        return;
-      }
-      pSVar11 = pMVar10[1].fields.name;
-      if (pSVar11 != (String *)0x0) {
-        pSVar12 = pSVar11[3].klass;
+    pCVar9 = (this->fields)._.fireAudioPlayer;
+    pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+    if ((pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+       (pCVar9 != (CustomItemAudioPlayer *)0x0)) {
+      CustomItemAudioPlayer::CustomItemAudioPlayer_SetVolume
+                (pCVar9,(pPVar1->fields)._.fireSoundEffectVolume,(MethodInfo *)0x0);
+      pCVar9 = (this->fields).chargeAudioPlayer;
+      pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+      if ((pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+         (pCVar9 != (CustomItemAudioPlayer *)0x0)) {
+        CustomItemAudioPlayer::CustomItemAudioPlayer_SetVolume
+                  (pCVar9,(pPVar1->fields).chargeSoundEffectVolume,(MethodInfo *)0x0);
+        pCVar9 = (this->fields)._.hitAudioPlayer;
         pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-        if (pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-          if ((float)pSVar12 == (float)(int)(pPVar1->fields).movementSpeedWhileHeld) {
-            return;
+        if ((pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+           (pCVar9 != (CustomItemAudioPlayer *)0x0)) {
+          CustomItemAudioPlayer::CustomItemAudioPlayer_SetVolume
+                    (pCVar9,(pPVar1->fields)._.hitSoundEffectVolume,(MethodInfo *)0x0);
+          PickupItemCustomGun_MuzzleStateUpdate(this,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
           }
-          this_00 = (AvatarMotor *)pMVar10[1].fields.name;
-          pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-          if ((pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
-             (this_00 != (AvatarMotor *)0x0)) {
-            AvatarMotor::AvatarMotor_set_WalkSpeedBase
-                      (this_00,(float)(int)(pPVar1->fields).movementSpeedWhileHeld,
-                       (MethodInfo *)0x0);
-            return;
+          pMVar10 = (this->fields)._._._.owner;
+          if (pMVar10 != (MVPickupOwner *)0x0) {
+            pMVar11 = (pMVar10->fields)._.worldObjectParent;
+            if (((pMVar11 == (MVWorldObjectClient *)0x0) ||
+                ((pMVar11->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment
+                )) || ((MVAvatarLocal__Class *)
+                       (pMVar11->klass->_1).typeHierarchy
+                       [(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+                       TypeInfo__MVAvatarLocal)) {
+              return;
+            }
+            pSVar12 = pMVar11[1].fields.name;
+            if (pSVar12 != (String *)0x0) {
+              pSVar13 = pSVar12[3].klass;
+              pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+              if (pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+                if ((float)pSVar13 == (float)(int)(pPVar1->fields).movementSpeedWhileHeld) {
+                  return;
+                }
+                this_00 = (AvatarMotor *)pMVar11[1].fields.name;
+                pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+                if ((pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+                   (this_00 != (AvatarMotor *)0x0)) {
+                  AvatarMotor::AvatarMotor_set_WalkSpeedBase
+                            (this_00,(float)(int)(pPVar1->fields).movementSpeedWhileHeld,
+                             (MethodInfo *)0x0);
+                  return;
+                }
+              }
+            }
           }
         }
       }
     }
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
-  return;
-}
-
-
-/* Void OnValidate() */
-
-void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
-     PickupItemCustomGun_OnValidate(PickupItemCustomGun *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&
-                    void_MethodInfo__System__Array__Resize<UnityEngine::AudioClip>_UnityEngine__AudioClip___int_
-                   );
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData);
-  }
-  pSVar1 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->static_fields->
-           fireSoundEffects;
-  if (pSVar1 != (String__Array *)0x0) {
-    pAVar2 = (this->fields)._.fireAudioClips;
-    if (pAVar2 != (AudioClip__Array *)0x0) {
-      iVar3 = pSVar1->max_length;
-      if (pAVar2->max_length != iVar3) {
-        mscorlib.dll::System::Array::Array_Resize_86
-                  ((BindingRestrictions_TestBuilder_AndNode__Array **)
-                   &(this->fields)._.fireAudioClips,iVar3,
-                   void_MethodInfo__System__Array__Resize<UnityEngine::AudioClip>_UnityEngine__AudioClip___int_
-                  );
-      }
-      if ((TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData);
-      }
-      pSVar1 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->static_fields
-               ->hitSoundEffects;
-      if ((pSVar1 != (String__Array *)0x0) &&
-         (pAVar2 = (this->fields)._.hitAudioClips, pAVar2 != (AudioClip__Array *)0x0)) {
-        iVar3 = pSVar1->max_length;
-        if (pAVar2->max_length != iVar3) {
-          mscorlib.dll::System::Array::Array_Resize_86
-                    ((BindingRestrictions_TestBuilder_AndNode__Array **)
-                     &(this->fields)._.hitAudioClips,iVar3,
-                     void_MethodInfo__System__Array__Resize<UnityEngine::AudioClip>_UnityEngine__AudioClip___int_
-                    );
-        }
-        if ((TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->_1).
-            cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData);
-        }
-        pSVar1 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
-                 static_fields->chargeSoundEffects;
-        if ((pSVar1 != (String__Array *)0x0) &&
-           (pAVar2 = (this->fields).chargeAudioClips, pAVar2 != (AudioClip__Array *)0x0)) {
-          iVar3 = pSVar1->max_length;
-          if (pAVar2->max_length != iVar3) {
-            mscorlib.dll::System::Array::Array_Resize_86
-                      ((BindingRestrictions_TestBuilder_AndNode__Array **)
-                       &(this->fields).chargeAudioClips,iVar3,
-                       void_MethodInfo__System__Array__Resize<UnityEngine::AudioClip>_UnityEngine__AudioClip___int_
-                      );
-          }
-          return;
-        }
-      }
-    }
-  }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -3384,78 +3536,98 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
                (PickupItemCustomGun *this,bool isLocal,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&StringLiteral_minigun);
-    cRam_? = '\x01';
-  }
-  a = (String *)
-      (*(code *)(this->klass->vtable).get_FireSoundEffectName.method)
-                (this,(this->klass->vtable).get_HitSoundEffectName.methodPtr);
-  bVar1 = mscorlib.dll::System::String::String_op_Inequality
-                    (a,StringLiteral_minigun,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    PickupItemEditable::PickupItemEditable_PlayFireSoundEffect
-              ((PickupItemEditable *)this,isLocal,(MethodInfo *)0x0);
-    return;
+  pCVar1 = (this->fields)._.fireAudioPlayer;
+  pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+  if ((pPVar2 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) ||
+     (pCVar1 == (CustomItemAudioPlayer *)0x0)) goto code_?;
+  bVar3 = CustomItemAudioPlayer::CustomItemAudioPlayer_IsClipLooped
+                    (pCVar1,(pPVar2->fields)._.fireSoundEffect,(MethodInfo *)0x0);
+  if (bVar3 == 0) {
+    if (isLocal == 0) {
+      fStack_4 = 0.0;
+      uVar5._0_4_ = 0.0;
+      uVar5._4_4_ = 0.0;
+    }
+    else {
+      pCVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+      if ((pCVar6 == (Camera *)0x0) ||
+         (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)pCVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+      goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                ((Vector3 *)&stack0xffffffd8,pTVar7,(MethodInfo *)0x0);
+      pCVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+      if ((pCVar6 == (Camera *)0x0) ||
+         (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)pCVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+      goto code_?;
+      __return_storage_ptr__ = (Vector3 *)&stack0xffffffb0;
+      puVar8 = &UNK_?;
+      pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                          (__return_storage_ptr__,pTVar7,(MethodInfo *)0x0);
+      uVar10 = pVVar9->x;
+      uVar11 = pVVar9->y;
+      fStack_4 = pVVar9->z + (float)pTVar7;
+      uVar5._4_4_ = (float)__return_storage_ptr__ + (float)uVar11;
+      uVar5._0_4_ = (float)uVar10 + (float)puVar8;
+    }
+    pCVar1 = (this->fields)._.fireAudioPlayer;
+    pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+    if ((pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+       (pCVar1 != (CustomItemAudioPlayer *)0x0)) {
+      position.z = fStack_4;
+      position.x = (float)uVar5;
+      position.y = SUB84(uVar5,4);
+      CustomItemAudioPlayer::CustomItemAudioPlayer_PlayClip
+                (pCVar1,(pPVar2->fields)._.fireSoundEffect,1,position,(MethodInfo *)0x0);
+      return;
+    }
+    goto code_?;
   }
   pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
   if (pPVar2 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
-  iVar3 = (pPVar2->fields).fireMode;
+  iVar12 = (pPVar2->fields).fireMode;
   pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-  if (iVar3 == 2) {
+  if (iVar12 == 2) {
     if (pPVar2 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
+    fStack_4 = (pPVar2->fields).burstCooldownBetweenShots;
 code_?:
-    pAVar4 = (this->fields)._.fireAudioSource;
-    if (pAVar4 == (AudioSource *)0x0) goto code_?;
-    bVar1 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_isPlaying
-                      (pAVar4,(MethodInfo *)0x0);
-    if (((bVar1 == 0) && (0.0 <= _UNK_?)) && ((this->fields)._._.isFiring != 0)) {
-      pAVar4 = (this->fields)._.fireAudioSource;
-      if (pAVar4 != (AudioSource *)0x0) {
-        UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop
-                  (pAVar4,1,(MethodInfo *)0x0);
-        pAVar4 = (this->fields)._.fireAudioSource;
-        if (pAVar4 != (AudioSource *)0x0) {
-          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1
-                    (pAVar4,(MethodInfo *)0x0);
-          return;
-        }
+    pCVar1 = (this->fields)._.fireAudioPlayer;
+    if (pCVar1 == (CustomItemAudioPlayer *)0x0) goto code_?;
+    bVar3 = CustomItemAudioPlayer::CustomItemAudioPlayer_get_IsPlaying(pCVar1,(MethodInfo *)0x0);
+    if (((bVar3 == 0) && (fStack_4 <= _UNK_?)) && ((this->fields)._._.isFiring != 0)) {
+      pCVar1 = (this->fields)._.fireAudioPlayer;
+      pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+      if ((pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+         (pCVar1 != (CustomItemAudioPlayer *)0x0)) {
+        CustomItemAudioPlayer::CustomItemAudioPlayer_PlayClip
+                  (pCVar1,(pPVar2->fields)._.fireSoundEffect,1,(Vector3)ZEXT812(0),(MethodInfo *)0x0
+                  );
+        return;
       }
       goto code_?;
     }
-    if (0.0 <= _UNK_?) {
+    if (fStack_4 <= _UNK_?) {
       return;
     }
   }
   else {
     if (pPVar2 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
-    if (iVar3 != 0) goto code_?;
+    fStack_4 = (pPVar2->fields)._.attackCooldown;
+    if (iVar12 != 0) goto code_?;
   }
-  UnityEngine.AudioModule.dll::UnityEngine::AudioSettings::AudioSettings_get_dspTime
-            ((MethodInfo *)0x0);
-  pAVar4 = (this->fields)._.fireAudioSource;
-  if (pAVar4 != (AudioSource *)0x0) {
-    uVar5 = 0;
-    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop
-              (pAVar4,0,(MethodInfo *)0x0);
-    pAVar4 = (this->fields)._.fireAudioSource;
-    if (pAVar4 != (AudioSource *)0x0) {
-      dVar6 = (double)CONCAT44(pAVar4,&UNK_?);
-      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_PlayScheduled
-                (pAVar4,(double)(uVar5 >> 0x20),_isLocal);
-      pAVar4 = (this->fields)._.fireAudioSource;
-      if (pAVar4 != (AudioSource *)0x0) {
-        puStack7 = SUB84(dVar6 + _UNK_?,0);
-        UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_SetScheduledEndTime
-                  (pAVar4,(double)((ulonglong)(dVar6 + _UNK_?) >> 0x20),in_stack_8);
-        return;
-      }
-    }
+  pCVar1 = (this->fields)._.fireAudioPlayer;
+  pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+  if ((pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+     (pCVar1 != (CustomItemAudioPlayer *)0x0)) {
+    CustomItemAudioPlayer::CustomItemAudioPlayer_PlayClipFraction
+              (pCVar1,(pPVar2->fields)._.fireSoundEffect,0.1,(MethodInfo *)0x0);
+    return;
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -4428,77 +4600,31 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
      PickupItemCustomGun_SoundStateUpdate(PickupItemCustomGun *this,MethodInfo *method)
 
 {
-  pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-  if ((pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
-     (pAVar2 = (this->fields).chargeAudioClips, pAVar2 != (AudioClip__Array *)0x0)) {
-    uVar3 = (pPVar1->fields).chargeSoundEffect;
-    if ((int)uVar3 < 0) {
-      pAVar4 = (this->fields)._.alternativeAudioSource;
-      uVar5 = 0;
-    }
-    else {
-      uVar5 = pAVar2->max_length - 1;
-      pAVar4 = (this->fields)._.alternativeAudioSource;
-      if ((int)uVar3 <= (int)uVar5) {
-        uVar5 = uVar3;
-      }
-    }
-    if (pAVar2->max_length <= uVar5) goto code_?;
-    if (pAVar4 != (AudioSource *)0x0) {
-      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_clip
-                (pAVar4,pAVar2->vector[uVar5],(MethodInfo *)0x0);
-      pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-      if ((pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
-         (pAVar2 = (this->fields)._.hitAudioClips, pAVar2 != (AudioClip__Array *)0x0)) {
-        uVar3 = (pPVar1->fields)._.hitSoundEffect;
-        pAVar4 = (this->fields).bulletAudioSource;
-        if ((int)uVar3 < 0) {
-          uVar5 = 0;
-        }
-        else {
-          uVar5 = pAVar2->max_length - 1;
-          if ((int)uVar3 <= (int)uVar5) {
-            uVar5 = uVar3;
-          }
-        }
-        if (pAVar2->max_length <= uVar5) goto code_?;
-        if (pAVar4 != (AudioSource *)0x0) {
-          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_clip
-                    (pAVar4,pAVar2->vector[uVar5],(MethodInfo *)0x0);
-          pAVar4 = (this->fields)._.fireAudioSource;
-          pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-          if ((pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
-             (pAVar4 != (AudioSource *)0x0)) {
-            UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume
-                      (pAVar4,(pPVar1->fields)._.fireSoundEffectVolume * _UNK_?,
-                       (MethodInfo *)0x0);
-            pAVar4 = (this->fields)._.alternativeAudioSource;
-            pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-            if ((pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
-               (pAVar4 != (AudioSource *)0x0)) {
-              UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume
-                        (pAVar4,(pPVar1->fields).chargeSoundEffectVolume * _UNK_?,
-                         (MethodInfo *)0x0);
-              pAVar4 = (this->fields).bulletAudioSource;
-              pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-              if ((pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
-                 (pAVar4 != (AudioSource *)0x0)) {
-                UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume
-                          (pAVar4,(pPVar1->fields)._.hitSoundEffectVolume * _UNK_?,
-                           (MethodInfo *)0x0);
-                return;
-              }
-            }
-          }
-        }
+  pCVar1 = (this->fields)._.fireAudioPlayer;
+  pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+  if ((pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+     (pCVar1 != (CustomItemAudioPlayer *)0x0)) {
+    CustomItemAudioPlayer::CustomItemAudioPlayer_SetVolume
+              (pCVar1,(pPVar2->fields)._.fireSoundEffectVolume,(MethodInfo *)0x0);
+    pCVar1 = (this->fields).chargeAudioPlayer;
+    pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+    if ((pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+       (pCVar1 != (CustomItemAudioPlayer *)0x0)) {
+      CustomItemAudioPlayer::CustomItemAudioPlayer_SetVolume
+                (pCVar1,(pPVar2->fields).chargeSoundEffectVolume,(MethodInfo *)0x0);
+      pCVar1 = (this->fields)._.hitAudioPlayer;
+      pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+      if ((pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+         (pCVar1 != (CustomItemAudioPlayer *)0x0)) {
+        CustomItemAudioPlayer::CustomItemAudioPlayer_SetVolume
+                  (pCVar1,(pPVar2->fields)._.hitSoundEffectVolume,(MethodInfo *)0x0);
+        return;
       }
     }
   }
   func_?();
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -4512,40 +4638,37 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
 {
   pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
   if (pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-    if ((pPVar1->fields).chargeEnabled == 0) {
-      pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-      if (pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-        iVar2 = (pPVar1->fields).fireMode;
-        if (iVar2 != 0) {
-          if ((iVar2 == 1) || (iVar2 == 2)) {
-            (this->fields)._._.isFiring = 1;
-          }
+    iVar2 = (pPVar1->fields).fireMode;
+    if ((iVar2 == 2) && ((this->fields)._._.isFiring != 0)) {
+      return;
+    }
+    pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+    if (pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+      if ((pPVar1->fields).chargeEnabled == 0) {
+        if (iVar2 == 0) {
+          PickupItemWithDelay::PickupItemWithDelay_TriggerBegin
+                    ((PickupItemWithDelay *)this,instigatorActorNr,(MethodInfo *)0x0);
           return;
         }
-        PickupItemWithDelay::PickupItemWithDelay_TriggerBegin
-                  ((PickupItemWithDelay *)this,instigatorActorNr,(MethodInfo *)0x0);
+        if ((iVar2 != 1) && (iVar2 != 2)) {
+          return;
+        }
+        (this->fields)._._.isFiring = 1;
         return;
       }
-    }
-    else {
       if ((this->fields).chargeRoutine != (IEnumerator *)0x0) {
         Coroutines::Coroutines_Stop((this->fields).chargeRoutine,(MethodInfo *)0x0);
       }
       if (cRam_? == '\0') {
-        func_?(&
-                        TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__72
-                       );
+        func_?();
         cRam_? = '\x01';
       }
-      this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
-                func_?(
-                               TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__72
-                               );
+      this_00 = (SubscribableVariable_1_System_Int32Enum_ *)func_?();
       SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
                 (this_00,0,(MethodInfo *)0x0);
       if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
         this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
-        func_?(this_00 + 1,this);
+        func_?(this_00 + 1);
         (this->fields).chargeRoutine = (IEnumerator *)this_00;
         func_?(&(this->fields).chargeRoutine,this_00);
         Coroutines::Coroutines_Start((this->fields).chargeRoutine,(MethodInfo *)0x0);
@@ -4569,7 +4692,6 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MVInputWrapper);
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
-    func_?(&StringLiteral_minigun);
     cRam_? = '\x01';
   }
   pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
@@ -4623,18 +4745,17 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
         return;
       }
       if (fireMode == CustomGunData_FireMode__Enum_Auto) {
-        pPVar9 = this->klass;
+        pCVar9 = (this->fields)._.fireAudioPlayer;
         (this->fields)._._.isFiring = 0;
-        a = (String *)
-            (*(code *)(pPVar9->vtable).get_FireSoundEffectName.method)
-                      (this,(pPVar9->vtable).get_HitSoundEffectName.methodPtr);
-        bVar10 = mscorlib.dll::System::String::String_op_Equality
-                          (a,StringLiteral_minigun,(MethodInfo *)0x0);
+        pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+        if ((pPVar1 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) ||
+           (pCVar9 == (CustomItemAudioPlayer *)0x0)) goto code_?;
+        bVar10 = CustomItemAudioPlayer::CustomItemAudioPlayer_IsClipLooped
+                          (pCVar9,(pPVar1->fields)._.fireSoundEffect,(MethodInfo *)0x0);
         if (bVar10 != 0) {
-          this_01 = (this->fields)._.fireAudioSource;
-          if (this_01 == (AudioSource *)0x0) goto code_?;
-          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Stop_1
-                    (this_01,(MethodInfo *)0x0);
+          pCVar9 = (this->fields)._.fireAudioPlayer;
+          if (pCVar9 == (CustomItemAudioPlayer *)0x0) goto code_?;
+          CustomItemAudioPlayer::CustomItemAudioPlayer_Stop(pCVar9,(MethodInfo *)0x0);
         }
       }
       return;
@@ -4714,34 +4835,6 @@ String * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
     cRam_? = '\x01';
   }
   return StringLiteral_CustomGunRecoil;
-}
-
-
-/* Boolean get_CanHolster() */
-
-bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
-     PickupItemCustomGun_get_CanHolster(PickupItemCustomGun *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MainCameraManager);
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MainCameraManager);
-  }
-  if (TypeInfo__MainCameraManager->static_fields->IsCameraForcedFirstPerson != 0) {
-    return 0;
-  }
-  value = (this->fields).firedInBurst;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
-      0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
-  }
-  iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-          ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-  return iVar1 == 0;
 }
 
 

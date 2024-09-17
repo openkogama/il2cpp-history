@@ -21,13 +21,8 @@ namespace Assets.Scripts.Pickups
 		// Fields
 		private const float UnlimitedAmmoAmmount = 999f;
 		private const float EffectTimeoutTime = 0.05f;
-		private const float DefaultFireSoundVolume = 0.4f;
-		private const float DefaultChargeSoundVolume = 0.2f;
-		private const float DefaultBulletHitSoundVolume = 0.4f;
 		[SerializeField]
-		private AudioClip[] chargeAudioClips;
-		[SerializeField]
-		private AudioSource bulletAudioSource;
+		private CustomItemAudioPlayer chargeAudioPlayer;
 		[SerializeField]
 		private AnimationCurve chargeCurve;
 		[SerializeField]
@@ -53,7 +48,6 @@ namespace Assets.Scripts.Pickups
 		public override AvatarItemType Type { get; }
 		protected new CustomGunConfiguration Configuration { get; set; }
 		public override bool HasUnlimitedAmmo { get; }
-		public override bool CanHolster { get; }
 		public override bool FirstPerson { get; }
 		public override float ChargeState { get; }
 		public override int Quantity { get; }
@@ -102,7 +96,7 @@ namespace Assets.Scripts.Pickups
 		}
 	
 		[CompilerGenerated]
-		private sealed class _ChargeRoutine_d__72 : IEnumerator<object>
+		private sealed class _ChargeRoutine_d__67 : IEnumerator<object>
 		{
 			// Fields
 			private int __1__state;
@@ -118,7 +112,7 @@ namespace Assets.Scripts.Pickups
 	
 			// Constructors
 			[DebuggerHidden]
-			public _ChargeRoutine_d__72(int __1__state);
+			public _ChargeRoutine_d__67(int __1__state);
 	
 			// Methods
 			[DebuggerHidden]
@@ -132,10 +126,12 @@ namespace Assets.Scripts.Pickups
 		public PickupItemCustomGun();
 	
 		// Methods
+		protected override void InitializeAudioPlayers();
 		public override void ResetAmmo();
 		public override void TriggerBegin(int instigatorActorNr);
 		public override void TriggerEnd();
 		private void FireWithCharge(CustomGunData.FireMode fireMode);
+		private void FireSemiAutomaticWithCharge();
 		protected override EditableItemConfiguration GetDefaultConfiguration();
 		protected override void SetConfiguration(Dictionary<object, object> itemData);
 		public override void OnEquip();
@@ -148,15 +144,14 @@ namespace Assets.Scripts.Pickups
 		private void HandleRecoil(Vector3 direction);
 		private void HandleFiringStateAndAmmoOnFire();
 		private void HandleFireEffects(bool isLocal);
-		protected override void PlayFireSoundEffect(bool isLocal);
+		protected void PlayFireSoundEffect(bool isLocal);
 		protected override void OnHit(VoxelHit voxelHit, Ray lineOfFire);
 		private void OnLocalHit(VoxelHit voxelHit, Ray lineOfFire);
-		private void OnValidate();
 		public override bool IsSameItemData(Dictionary<object, object> itemData);
 		protected override void InterruptFire();
 		public override void OnLeaveVehicleWithWeapon();
 		public override void OnEnterVehicleWithWeapon();
-		[IteratorStateMachine(typeof(_ChargeRoutine_d__72))]
+		[IteratorStateMachine(typeof(_ChargeRoutine_d__67))]
 		private IEnumerator ChargeRoutine(int instigatorActorNr);
 	}
 }

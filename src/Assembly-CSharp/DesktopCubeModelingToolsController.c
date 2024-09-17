@@ -169,6 +169,8 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void SetButtonTransparency(CubeModelingEvent) */
 
 void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
@@ -177,39 +179,84 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
                MethodInfo *method)
 
 {
+  pDVar1 = this;
   DesktopCubeModelingToolsController_SetAllToTransparent(this,(MethodInfo *)0x0);
   switch(cubeTool) {
   case CubeModelingEvent__Enum_EditCubes:
-    this_00 = (this->fields).editCube;
+    this_01 = (pDVar1->fields).editCube;
     break;
   case CubeModelingEvent__Enum_DeleteCubes:
-    this_00 = (this->fields).deletecube;
+    this_01 = (pDVar1->fields).deletecube;
     break;
   case CubeModelingEvent__Enum_PaintCubes:
-    this_00 = (this->fields).paintCube;
+    this_01 = (pDVar1->fields).paintCube;
     break;
   default:
     goto code_?;
   case CubeModelingEvent__Enum_ColorPicker:
-    this_00 = (this->fields).pickCubeColor;
+    this_01 = (pDVar1->fields).pickCubeColor;
   }
-  if (this_00 != (Button *)0x0) {
-    pIVar1 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
-                       ((Selectable *)this_00,(MethodInfo *)0x0);
-    pIStack_2 = (Image *)(this->fields).enabledAlpha;
-    if (pIVar1 != (Image *)0x0) {
-      pIStack_3 = (pIVar1->klass->vtable).set_color.methodPtr;
-      pIStack_4 = pIVar1;
-      puVar5 = (undefined4 *)(*(code *)(pIVar1->klass->vtable).get_color.method)(&pIStack_4);
-      pIStack_3 = (Il2CppMethodPointer)puVar5[1];
-      uStack_6 = puVar5[2];
-      pIStack_4 = pIStack_2;
-      (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,*puVar5,pIStack_3,uStack_6);
+  if (this_01 != (Button *)0x0) {
+    pIVar2 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+                       ((Selectable *)this_01,(MethodInfo *)0x0);
+    cubeTool = (CubeModelingEvent__Enum)(pDVar1->fields).enabledAlpha;
+    unaff_EDI = CubeModelingEvent__Enum_EditCubes;
+    if (pIVar2 != (Image *)0x0) {
+      pIStack_3 = pIVar2;
+      puVar4 = (undefined4 *)(*(code *)(pIVar2->klass->vtable).get_color.method)(&pIStack_3);
+      pIStack_3 = (Image *)cubeTool;
+      (*(code *)(pIVar2->klass->vtable).set_color.method)(pIVar2,*puVar4,puVar4[1],puVar4[2]);
 code_?:
       return;
     }
   }
-  func_?();
+  this_02 = (GameObject *)func_?();
+  bVar5 = (byte)((uint)unaff_EBX >> 8);
+  bVar6 = extraout_DH + bVar5;
+  bVar7 = CARRY1(extraout_DH,bVar5) || 0xfe < bVar6;
+  if (CARRY1(extraout_DH,bVar5) || 0xfe < bVar6) {
+    bVar5 = *unaff_EBX;
+    bVar8 = *unaff_EBX + (byte)this_02;
+    *unaff_EBX = bVar8 + bVar7;
+    if (*unaff_EBX != 0) {
+      unaff_EBX[0x74] =
+           unaff_EBX[0x74] + bVar6 + 1 + (CARRY1(bVar5,(byte)this_02) || CARRY1(bVar8,bVar7));
+      *(byte *)((int)&this + (int)pDVar1) = *(byte *)((int)&this + (int)pDVar1) | bVar6 + 1;
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
+    if (this_02 == (GameObject *)0x0) goto code_?;
+    this = (DesktopCubeModelingToolsController *)0x0;
+  }
+  else {
+    this_02 = (GameObject *)
+              CONCAT31((int3)(extraout_ECX + 0x3b7cfef5 >> 8),
+                       (char)(extraout_ECX + 0x3b7cfef5) + -0x7b + (extraout_ECX < 0xc483010b));
+    puVar10 = (undefined1 *)((int)&this_02[8].fields._.m_CachedPtr + (int)unaff_EBX * 2 + 2);
+    *puVar10 = *puVar10;
+  }
+  bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+                    (this_02,in_stack_12);
+  if (bVar11 != 0) {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    this_00 = (pDVar1->fields).cubeModelingStateMachine;
+    cubeTool = unaff_EDI;
+    value = (Object *)func_?();
+    if (this_00 == (CubeModelingStateMachine *)0x0) {
+code_?:
+      this = (DesktopCubeModelingToolsController *)&UNK_?;
+      func_?();
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
+    this = (DesktopCubeModelingToolsController *)0x0;
+    FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,value,(MethodInfo *)0x0);
+  }
   return;
 }
 

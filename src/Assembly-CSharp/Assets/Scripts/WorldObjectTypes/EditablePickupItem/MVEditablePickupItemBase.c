@@ -115,7 +115,7 @@ code_?:
     TVar5.m_Index = extraout_EDX;
   }
   else {
-    if (pickupItem[2].fields._._._._.m_CachedPtr != (void *)(pMVar4->fields).cubeModelPid) {
+    if (pickupItem[2].klass != (PickupItem__Class *)(pMVar4->fields).cubeModelPid) {
       return 0;
     }
     pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)

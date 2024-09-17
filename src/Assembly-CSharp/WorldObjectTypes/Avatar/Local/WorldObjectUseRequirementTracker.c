@@ -52,8 +52,26 @@ void Assembly-CSharp.dll::WorldObjectTypes::Avatar::Local::WorldObjectUseRequire
       (IEditModeUI *)0x0) {
     pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
     if (pIVar1 != (IAdManager *)0x0) {
-      cVar2 = func_?(4,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar1);
-      if (cVar2 == '\0') {
+      pIVar2 = pIVar1->klass;
+      uVar3 = 0;
+      uVar4._0_1_ = (pIVar2->_1).rank;
+      uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+      if (uVar4 != 0) {
+        do {
+          if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
+              (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
+            ppMVar5 = &(&(pIVar1->klass->vtable).get_ReadyForRewardedAdRequest)
+                       [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
+            goto code_?;
+          }
+          uVar3 = uVar3 + 1;
+        } while (uVar3 < uVar4);
+      }
+      ppMVar5 = (MethodInfo **)
+                func_?(pIVar1,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,4);
+code_?:
+      cVar6 = (*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
+      if (cVar6 == '\0') {
         if (onAdFinished != (UnityAction_1_System_Boolean_ *)0x0) {
           (*(onAdFinished->fields)._._.invoke_impl)
                     ((onAdFinished->fields)._._.method_code,0,(onAdFinished->fields)._._.method);
@@ -82,25 +100,25 @@ void Assembly-CSharp.dll::WorldObjectTypes::Avatar::Local::WorldObjectUseRequire
                    MethodInfo__WorldObjectTypes__Avatar__Local__WorldObjectUseRequirementTracker__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
                    ,(MethodInfo *)0x0);
         if (pIVar1 != (IAdManager *)0x0) {
-          pIVar3 = pIVar1->klass;
+          pIVar2 = pIVar1->klass;
           uVar4 = 0;
-          uVar5._0_1_ = (pIVar3->_1).rank;
-          uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
-          if (uVar5 != 0) {
+          uVar3._0_1_ = (pIVar2->_1).rank;
+          uVar3._1_1_ = (pIVar2->_1).minimumAlignment;
+          if (uVar3 != 0) {
             do {
-              if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
+              if (pIVar2->interfaceOffsets[uVar4].interfaceType ==
                   (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-                ppMVar6 = &(&(pIVar1->klass->vtable).RequestRewardedAd)
+                ppMVar5 = &(&(pIVar1->klass->vtable).RequestRewardedAd)
                            [pIVar1->klass->interfaceOffsets[uVar4].offset].method;
                 goto code_?;
               }
               uVar4 = uVar4 + 1;
-            } while (uVar4 < uVar5);
+            } while (uVar4 < uVar3);
           }
-          ppMVar6 = (MethodInfo **)
+          ppMVar5 = (MethodInfo **)
                     func_?(pIVar1,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,6);
 code_?:
-          (*(code *)*ppMVar6)(pIVar1,this_00,0xe,ppMVar6[1]);
+          (*(code *)*ppMVar5)(pIVar1,this_00,0xe,ppMVar5[1]);
           return;
         }
       }

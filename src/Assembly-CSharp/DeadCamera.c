@@ -5,8 +5,6 @@ void Assembly-CSharp.dll::DeadCamera::DeadCamera_Enter
                (DeadCamera *this,MVCameraController *camController,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,(ExceptionArgument__Enum)camController,(MethodInfo *)0x0);
   this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       ((Component *)this,(MethodInfo *)0x0);
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
@@ -18,8 +16,14 @@ void Assembly-CSharp.dll::DeadCamera::DeadCamera_Enter
       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                          ((Vector3 *)&stack0xfffffff0,this_02,(MethodInfo *)0x0);
       if (this_01 != (Transform *)0x0) {
+        uVar3 = pVVar2->x;
+        uVar4 = pVVar2->y;
+        this = (DeadCamera *)pVVar2->z;
+        fVar5 = (float)uVar4;
+        value.x = (float)uVar3;
+        value = (Vector3)CONCAT84(uVar6,value.x);
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                  (this_01,*pVVar2,(MethodInfo *)0x0);
+                  (this_01,value,(MethodInfo *)0x0);
         pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0)
         ;
         if (pMVar1 != (MainCameraManager *)0x0) {
@@ -30,8 +34,8 @@ void Assembly-CSharp.dll::DeadCamera::DeadCamera_Enter
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -149,23 +153,6 @@ void Assembly-CSharp.dll::DeadCamera::DeadCamera_UpdateRotation(DeadCamera *this
   func_?();
   pcVar16 = (code *)swi(3);
   (*pcVar16)();
-  return;
-}
-
-
-/* DeadCamera() */
-
-void Assembly-CSharp.dll::DeadCamera::DeadCamera__ctor(DeadCamera *this,MethodInfo *method)
-
-{
-  (this->fields)._.cameraRadius = 0.3;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
   return;
 }
 

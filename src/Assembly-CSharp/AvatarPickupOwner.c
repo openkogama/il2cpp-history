@@ -276,129 +276,139 @@ void Assembly-CSharp.dll::AvatarPickupOwner::AvatarPickupOwner_SetupItemTransfor
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).mvAvatar;
-  if (pMVar1 != (MVAvatar *)0x0) {
-    pPVar2 = (this->fields)._.currentItem;
-    if ((pMVar1->fields).body == (MVBody *)0x0) {
-      if (pPVar2 != (PickupItem *)0x0) {
-        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)pPVar2,(MethodInfo *)0x0);
-        this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this,(MethodInfo *)0x0);
-        if ((this_00 != (GameObject *)0x0) &&
-           (value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (this_00,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                    (pTVar3,value,(MethodInfo *)0x0);
+  if (pMVar1 == (MVAvatar *)0x0) goto code_?;
+  pPVar2 = (this->fields)._.currentItem;
+  if ((pMVar1->fields).body == (MVBody *)0x0) {
+    if (pPVar2 != (PickupItem *)0x0) {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)pPVar2,(MethodInfo *)0x0);
+      this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
+      if ((this_00 != (GameObject *)0x0) &&
+         (value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (this_00,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
+                  (pTVar3,value,(MethodInfo *)0x0);
+        pPVar2 = (this->fields)._.currentItem;
+        if ((pPVar2 != (PickupItem *)0x0) &&
+           (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)pPVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0))
+        {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
+                    (pTVar3,(Vector3)ZEXT812(0x3f19999a00000000),(MethodInfo *)0x0);
           pPVar2 = (this->fields)._.currentItem;
-          if ((pPVar2 != (PickupItem *)0x0) &&
-             (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 ((Component *)pPVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0
-             )) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar3,(Vector3)ZEXT812(0x3f19999a00000000),(MethodInfo *)0x0);
-            pPVar2 = (this->fields)._.currentItem;
-            if (pPVar2 != (PickupItem *)0x0) {
-              pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 ((Component *)pPVar2,(MethodInfo *)0x0);
-              if (cRam_? == '\0') {
-                func_?();
-                cRam_? = '\x01';
-              }
-              if (pTVar3 != (Transform *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                          (pTVar3,TypeInfo__UnityEngine__Quaternion->static_fields->
-                                  identityQuaternion,(MethodInfo *)0x0);
-                pPVar2 = (this->fields)._.currentItem;
-                if (pPVar2 != (PickupItem *)0x0) {
-                  (*(code *)(pPVar2->klass->vtable).OnEquip.method)
-                            (pPVar2,(pPVar2->klass->vtable).OnUnequip.methodPtr);
-                  return;
-                }
+          if (pPVar2 != (PickupItem *)0x0) {
+            pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)pPVar2,(MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            if (pTVar3 != (Transform *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
+                        (pTVar3,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion
+                         ,(MethodInfo *)0x0);
+code_?:
+              pPVar2 = (this->fields)._.currentItem;
+              if (pPVar2 != (PickupItem *)0x0) {
+                (*(code *)(pPVar2->klass->vtable).OnEquip.method)
+                          (pPVar2,(pPVar2->klass->vtable).OnUnequip.methodPtr);
+                return;
               }
             }
           }
         }
       }
     }
-    else if (pPVar2 != (PickupItem *)0x0) {
-      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)pPVar2,(MethodInfo *)0x0);
-      pMVar1 = (this->fields).mvAvatar;
-      if ((((pMVar1 != (MVAvatar *)0x0) && (pMVar4 = (pMVar1->fields).body, pMVar4 != (MVBody *)0x0)
-           ) && (pBVar5 = MVBody::MVBody_get_BodyData(pMVar4,(MethodInfo *)0x0),
-                pBVar5 != (BodyData *)0x0)) &&
-         (pTVar6 = (pBVar5->fields).PartBones, pTVar6 != (Transform__Array *)0x0)) {
-        if (pTVar6->max_length < 2) goto code_?;
-        if (pTVar3 != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (pTVar3,pTVar6->vector[1],0,(MethodInfo *)0x0);
+  }
+  else if (pPVar2 != (PickupItem *)0x0) {
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pPVar2,(MethodInfo *)0x0);
+    pMVar1 = (this->fields).mvAvatar;
+    if ((((pMVar1 != (MVAvatar *)0x0) && (pMVar4 = (pMVar1->fields).body, pMVar4 != (MVBody *)0x0))
+        && (pBVar5 = MVBody::MVBody_get_BodyData(pMVar4,(MethodInfo *)0x0),
+           pBVar5 != (BodyData *)0x0)) &&
+       (pTVar6 = (pBVar5->fields).PartBones, pTVar6 != (Transform__Array *)0x0)) {
+      if (pTVar6->max_length < 2) goto code_?;
+      if (pTVar3 != (Transform *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                  (pTVar3,pTVar6->vector[1],0,(MethodInfo *)0x0);
+        pPVar2 = (this->fields)._.currentItem;
+        if ((pPVar2 != (PickupItem *)0x0) &&
+           (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)pPVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0))
+        {
+          uVar7 = 0;
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
+                    (pTVar3,(Vector3)(ZEXT812(0x3e800000) << 0x20),(MethodInfo *)0x0);
           pPVar2 = (this->fields)._.currentItem;
-          if ((pPVar2 != (PickupItem *)0x0) &&
-             (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 ((Component *)pPVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0
-             )) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar3,(Vector3)ZEXT812(0x3e80000000000000),(MethodInfo *)0x0);
-            pPVar2 = (this->fields)._.currentItem;
-            if (pPVar2 != (PickupItem *)0x0) {
-              pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 ((Component *)pPVar2,(MethodInfo *)0x0);
-              if (cRam_? == '\0') {
-                func_?();
-                cRam_? = '\x01';
-              }
-              if (pTVar3 != (Transform *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                          (pTVar3,TypeInfo__UnityEngine__Quaternion->static_fields->
-                                  identityQuaternion,(MethodInfo *)0x0);
+          if (pPVar2 != (PickupItem *)0x0) {
+            pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)pPVar2,(MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            if (pTVar3 != (Transform *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
+                        (pTVar3,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion
+                         ,(MethodInfo *)0x0);
+              pMVar1 = (this->fields).mvAvatar;
+              if (pMVar1 == (MVAvatar *)0x0) {
+                pMVar8 = (MVAvatar *)0x0;
+code_?:
                 pPVar2 = (this->fields)._.currentItem;
-                if (pPVar2 != (PickupItem *)0x0) {
-                  (*(code *)(pPVar2->klass->vtable).OnEquip.method)
-                            (pPVar2,(pPVar2->klass->vtable).OnUnequip.methodPtr);
+                if (pPVar2 == (PickupItem *)0x0) goto code_?;
+                (*(code *)(pPVar2->klass->vtable).OnEquip.method)
+                          (pPVar2,(pPVar2->klass->vtable).OnUnequip.methodPtr,uVar7);
+              }
+              else {
+                if (((pMVar1->klass->_1).naturalAligment <
+                     (TypeInfo__MVAvatarRemote->_1).naturalAligment) ||
+                   ((MVAvatarRemote__Class *)
+                    (pMVar1->klass->_1).typeHierarchy
+                    [(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] != TypeInfo__MVAvatarRemote
+                   )) {
+                  bVar9 = false;
+                }
+                else {
+                  bVar9 = true;
+                }
+                pMVar8 = (MVAvatar *)0x0;
+                if (bVar9) {
+                  pMVar8 = pMVar1;
+                }
+                if (pMVar8 == (MVAvatar *)0x0) goto code_?;
+              }
+              pPVar2 = (this->fields)._.currentItem;
+              if (pPVar2 != (PickupItem *)0x0) {
+                cVar10 = (*(code *)(pPVar2->klass->vtable).get_ThirdPersonGunMode.method)
+                                  (pPVar2,(pPVar2->klass->vtable).get_CanHolster.methodPtr);
+                if (cVar10 == '\0') {
+                  if (pMVar8 == (MVAvatar *)0x0) {
+                    return;
+                  }
+                  pPVar2 = (this->fields)._.currentItem;
+                  if (pPVar2 == (PickupItem *)0x0) goto code_?;
+                  cVar10 = (*(code *)(pPVar2->klass->vtable).get_IsHandEquippable.method)
+                                    (pPVar2,(pPVar2->klass->vtable).get_ThirdPersonGunMode.methodPtr
+                                    );
+                  if (cVar10 == '\0') goto code_?;
+                }
+                pMVar1 = (this->fields).mvAvatar;
+                if ((((pMVar1 != (MVAvatar *)0x0) &&
+                     (pMVar4 = (pMVar1->fields).body, pMVar4 != (MVBody *)0x0)) &&
+                    (pBVar5 = MVBody::MVBody_get_BodyData(pMVar4,(MethodInfo *)0x0),
+                    pBVar5 != (BodyData *)0x0)) &&
+                   (pTVar6 = (pBVar5->fields).PartBones, pTVar6 != (Transform__Array *)0x0)) {
+                  if (pTVar6->max_length < 3) goto code_?;
                   pPVar2 = (this->fields)._.currentItem;
                   if (pPVar2 != (PickupItem *)0x0) {
-                    cVar7 = (*(code *)(pPVar2->klass->vtable).get_ThirdPersonGunMode.method)
-                                      (pPVar2,(pPVar2->klass->vtable).get_CanHolster.methodPtr);
-                    if (cVar7 == '\0') {
-                      pMVar1 = (this->fields).mvAvatar;
-                      if (pMVar1 == (MVAvatar *)0x0) {
-                        return;
-                      }
-                      pMVar8 = pMVar1->klass;
-                      if ((pMVar8->_1).naturalAligment <
-                          (TypeInfo__MVAvatarRemote->_1).naturalAligment) {
-                        return;
-                      }
-                      if ((MVAvatarRemote__Class *)
-                          (pMVar8->_1).typeHierarchy
-                          [(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] !=
-                          TypeInfo__MVAvatarRemote) {
-                        return;
-                      }
-                      pPVar2 = (this->fields)._.currentItem;
-                      if (pPVar2 == (PickupItem *)0x0) goto code_?;
-                      cVar7 = (*(code *)(pPVar2->klass->vtable).get_IsHandEquippable.method)
-                                        (pPVar2,(pPVar2->klass->vtable).get_ThirdPersonGunMode.
-                                                methodPtr);
-                      if (cVar7 == '\0') {
-                        return;
-                      }
+                    PickupItem::PickupItem_EquipToHand(pPVar2,pTVar6->vector[2],(MethodInfo *)0x0);
+                    if (pMVar8 == (MVAvatar *)0x0) {
+                      return;
                     }
-                    pMVar1 = (this->fields).mvAvatar;
-                    if (((pMVar1 != (MVAvatar *)0x0) &&
-                        (pMVar4 = (pMVar1->fields).body, pMVar4 != (MVBody *)0x0)) &&
-                       ((pBVar5 = MVBody::MVBody_get_BodyData(pMVar4,(MethodInfo *)0x0),
-                        pBVar5 != (BodyData *)0x0 &&
-                        (pTVar6 = (pBVar5->fields).PartBones, pTVar6 != (Transform__Array *)0x0))))
-                    {
-                      if (pTVar6->max_length < 3) goto code_?;
-                      pPVar2 = (this->fields)._.currentItem;
-                      if (pPVar2 != (PickupItem *)0x0) {
-                        PickupItem::PickupItem_EquipToHand
-                                  (pPVar2,pTVar6->vector[2],(MethodInfo *)0x0);
-                        return;
-                      }
-                    }
+                    goto code_?;
                   }
                 }
               }
@@ -412,8 +422,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

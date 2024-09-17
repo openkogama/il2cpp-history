@@ -787,7 +787,7 @@ code_?:
               fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
                                 (0.0,4.5,(MethodInfo *)0x0);
               fVar1 = fVar1 * fVar6 + 0.0;
-              fVar2 = fVar3 * fVar6 + 3.5041477e-29;
+              fVar2 = fVar3 * fVar6 + 3.5031606e-29;
               fVar6 = (float)this + fVar13 * fVar6;
               goto code_?;
             }

@@ -494,19 +494,28 @@ code_?:
 code_?:
   func_?();
 code_?:
-  bVar27 = func_?();
+  uVar27 = func_?();
   uVar28 = (undefined2)((uint)unaff_EBX >> 0x10);
   bVar29 = (byte)unaff_EBX;
-  pbVar30 = (byte *)(CONCAT22(uVar28,CONCAT11(0x8d,bVar29)) + -0x72);
-  bVar31 = CARRY1(*pbVar30,bVar27) || CARRY1(*pbVar30 + bVar27,bVar3);
-  *pbVar30 = *pbVar30 + bVar27 + bVar3;
-  puVar32 = &unaff_ESI[-0x63b56d]._1.flags;
-  pcVar33 = (char *)(CONCAT22(uVar28,CONCAT11(bVar29 + 0x8d + bVar31,bVar29)) + -0x72);
-  *pcVar33 = *pcVar33 + (char)unaff_ESI + '\x12' +
-            (extraout_ECX < *puVar32 ||
-            extraout_ECX - *puVar32 < (uint)(0x72 < bVar29 || CARRY1(bVar29 + 0x8d,bVar31)));
-  pcVar34 = (code *)swi(3);
-  (*pcVar34)();
+  pbVar30 = (byte *)(CONCAT22(uVar28,CONCAT11(99,bVar29)) + 100);
+  bVar31 = (byte)uVar27;
+  bVar32 = CARRY1(*pbVar30,bVar31) || CARRY1(*pbVar30 + bVar31,bVar3);
+  *pbVar30 = *pbVar30 + bVar31 + bVar3;
+  bVar33 = 0x9c < bVar29 || CARRY1(bVar29 + 99,bVar32);
+  pbVar30 = (byte *)CONCAT22(uVar28,CONCAT11(bVar29 + 99 + bVar32,bVar29));
+  puVar34 = (ushort *)((int)&(unaff_ESI->_0).byval_arg.data + 2);
+  sVar35 = (uVar27 & 3) - (*puVar34 & 3);
+  *puVar34 = *puVar34 + (ushort)(0 < sVar35) * sVar35;
+  bVar32 = CARRY1(in_stack_36,bVar31) || CARRY1(in_stack_36 + bVar31,bVar33);
+  bVar3 = in_stack_36 + bVar31 + bVar33;
+  bVar37 = *pbVar30;
+  bVar38 = *pbVar30;
+  *pbVar30 = bVar38 + bVar29 + bVar32;
+  pbVar30[100] = pbVar30[100] + bVar31 +
+                 (CARRY1(bVar3,bVar31) ||
+                 CARRY1(bVar3 + bVar31,CARRY1(bVar37,bVar29) || CARRY1(bVar38 + bVar29,bVar32)));
+  pcVar39 = (code *)swi(3);
+  (*pcVar39)();
   return;
 }
 

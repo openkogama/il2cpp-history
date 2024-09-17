@@ -240,7 +240,7 @@ code_?:
   i2.x = in_stack_8;
   i2.z = (int16_t)(undefined4)uStack_10;
   IVar12 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                    (IVar12,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
+                     (IVar12,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
   pIVar15 = IVar12._0_4_;
   uStack_10._0_2_ = pIVar15->x;
   uStack_10._2_2_ = pIVar15->y;
@@ -264,17 +264,24 @@ code_?:
           (pGVar5 = (pGVar4->fields).LaserCommands,
           pGVar5 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0))))
       {
+        fVar6 = (selectedCube->fields).point.z;
+        to.z._1_1_ = (char)((uint)fVar6 >> 8);
+        to._0_9_ = *(unkbyte9 *)&(selectedCube->fields).point;
+        to.z._2_2_ = (short)((uint)fVar6 >> 0x10);
         GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
         GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition
-                  (pGVar5,(selectedCube->fields).point,(MethodInfo *)0x0);
+                  (pGVar5,to,(MethodInfo *)0x0);
         return;
       }
     }
   }
 code_?:
-  func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  uVar1 = 0x1046;
+  uVar16 = func_?();
+  out(0x3a,uVar16);
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)(CONCAT22(uVar1,in_ES));
+  return;
 }
 
 

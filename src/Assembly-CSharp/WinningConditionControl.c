@@ -119,9 +119,10 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     pSVar5 = mscorlib.dll::System::String::String_Concat_3
                        (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
   }
-  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
+  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0)
+  ;
   IVar2.m_value = 0;
-  pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
+  mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
   pSVar5 = ::StringLiteral__;
   if (IVar2.m_value < 10) {
     method = (MethodInfo *)0x0;
@@ -130,19 +131,21 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     pSVar5 = mscorlib.dll::System::String::String_Concat_3
                        (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
   }
-  str1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0)
+  ;
   method = (MethodInfo *)&UNK_?;
   statType = (GameStatCounterType__Enum)
-             mscorlib.dll::System::String::String_Concat_3(pSVar5,str1,(MethodInfo *)0x0);
+             mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
   values = (String__Array *)func_?();
+  cVar8 = '\0';
   if (values != (String__Array *)0x0) {
-    uStack8 = 0;
-    pSStack9 = pSVar1;
+    uStack9 = 0;
+    pSStack10 = pSVar1;
     func_?();
-    puStack10 = (undefined *)statType;
-    uStack11 = 1;
+    puStack11 = (undefined *)statType;
+    uStack12 = 1;
     func_?();
-    pSStack12 = ::StringLiteral__;
+    pSStack13 = ::StringLiteral__;
     func_?();
     method = (MethodInfo *)&UNK_?;
     func_?();
@@ -155,24 +158,23 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
     return pSVar1;
   }
-  uVar13 = func_?();
-  iVar4 = (int)((ulonglong)uVar13 >> 0x20);
-  piVar14 = (int *)uVar13;
-  pbVar15 = (byte *)((int)&pSVar7[-0x6ce5efe].fields._stringLength + 1);
-  bVar16 = (byte)((ulonglong)uVar13 >> 0x20);
-  *pbVar15 = *pbVar15 | bVar16;
-  *piVar14 = *piVar14 - iVar4;
-  pbVar15 = (byte *)((int)&pSVar7[-0x6cf7efe].fields._stringLength + 1);
-  *pbVar15 = *pbVar15 | bVar16;
-  *piVar14 = *piVar14 - iVar4;
-  pbVar15 = (byte *)((int)&pSVar7[-0x6cf7efe].fields._stringLength + 1);
-  *pbVar15 = *pbVar15 | bVar16;
-  *piVar14 = *piVar14 - iVar4;
-  pbVar15 = (byte *)((int)&pSVar7[-0x6ce5efe].fields._stringLength + 1);
-  *pbVar15 = *pbVar15 | bVar16;
-  *piVar14 = *piVar14 - iVar4;
-  pcVar17 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar17)();
+  uVar14 = func_?();
+  uVar15 = (uint)((ulonglong)uVar14 >> 0x20);
+  puVar16 = (uint *)uVar14;
+  cVar17 = (char)uVar14;
+  cRam_? = (cRam_? - cVar17) - cVar8;
+  uVar18 = *puVar16;
+  *puVar16 = *puVar16 - uVar15;
+  cRam_? = (cRam_? - cVar17) - (uVar18 < uVar15);
+  uVar18 = *puVar16;
+  *puVar16 = *puVar16 - uVar15;
+  cRam_? = (cRam_? - cVar17) - (uVar18 < uVar15);
+  uVar18 = *puVar16;
+  *puVar16 = *puVar16 - uVar15;
+  cRam_? = (cRam_? - cVar17) - (uVar18 < uVar15);
+  *puVar16 = *puVar16 - uVar15;
+  pcVar19 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar19)();
   return pSVar1;
 }
 

@@ -943,7 +943,7 @@ Assembly-CSharp.dll::MVBody::MVBody_CreateClone
                             Component_get_gameObject((Component *)*ppOVar13,(MethodInfo *)0x0);
                   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                     _hideEquippedItem = TypeInfo__UnityEngine__Object;
-                    enableAllRenderers = 0x39;
+                    enableAllRenderers = 0x79;
                     func_?();
                   }
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1

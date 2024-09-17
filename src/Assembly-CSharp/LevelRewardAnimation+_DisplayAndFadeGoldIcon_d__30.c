@@ -75,6 +75,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
   default:
     return 0;
   }
+  in_AF = 0;
   if (_UNK_? <= (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).rotateUIYAxisTime) {
     pIVar4 = (pLVar2->fields).goldImage;
     if (pIVar4 != (Image *)0x0) {
@@ -119,6 +120,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
                             (pCVar13,0.0,(MethodInfo *)0x0);
                   (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
+                  in_AF = 0;
                   if (_UNK_? <=
                       (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).goldImageDisplayTime) {
                     pAVar5 = (pLVar2->fields).goldBounceEffect;
@@ -251,14 +253,15 @@ code_?:
     }
   }
 code_?:
-  bVar16 = false;
-  bVar17 = func_?();
-  if (bVar16) {
-    return bVar17;
-  }
-  pcVar18 = (code *)swi(1);
-  bVar17 = (*pcVar18)();
-  return bVar17;
+  bVar16 = func_?();
+  in_AF = 9 < (bVar16 & 0xf) | in_AF;
+  bVar16 = bVar16 + in_AF * -6 & 0xf;
+  pfVar17 = &pLVar1[-2].fields._currentTime_5__2;
+  *(byte *)pfVar17 = *(char *)pfVar17 + extraout_DL + in_AF;
+  in_AF = 9 < bVar16 | in_AF;
+  out(0x3f,(bVar16 + in_AF * -6 & 0xf) * '\x02' + in_AF);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

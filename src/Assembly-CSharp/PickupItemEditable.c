@@ -1,4 +1,16 @@
 
+/* Void Awake() */
+
+void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_Awake
+               (PickupItemEditable *this,MethodInfo *method)
+
+{
+  (*(code *)(this->klass->vtable).Initialize.method)
+            (this,(this->klass->vtable).SetValuesBasedOnConfiguration.methodPtr);
+  return;
+}
+
+
 /* Void DisableAnimation() */
 
 void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_DisableAnimation
@@ -49,10 +61,10 @@ Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_DisableAnimatorCorou
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__41);
+    func_?(&TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__38);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__41;
+  method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__38;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -130,9 +142,11 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_Initialize
     }
   }
 code_?:
+  (*(code *)(this->klass->vtable).__unknown_4.method)
+            (this,(this->klass->vtable).Initialize.methodPtr);
   pPVar6 = (PickupItemEditable_EditableItemConfiguration *)
            (*(code *)(this->klass->vtable).__unknown_3.method)
-                     (this,(this->klass->vtable).Initialize.methodPtr);
+                     (this,(this->klass->vtable).__unknown_4.methodPtr);
   (this->fields)._Configuration_k__BackingField = pPVar6;
   func_?(&(this->fields)._Configuration_k__BackingField,pPVar6);
   (*(code *)(this->klass->vtable).SetValuesBasedOnConfiguration.method)
@@ -147,12 +161,21 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_InterruptFire
                (PickupItemEditable *this,MethodInfo *method)
 
 {
-  if ((this->fields).animatorRoutine != (IEnumerator *)0x0) {
-    Coroutines::Coroutines_Stop((this->fields).animatorRoutine,(MethodInfo *)0x0);
-    (this->fields).animatorRoutine = (IEnumerator *)0x0;
-    func_?(&(this->fields).animatorRoutine,0);
-    PickupItemEditable_DisableAnimation(this,(MethodInfo *)0x0);
+  this_00 = (this->fields).fireAudioPlayer;
+  (this->fields)._.isFiring = 0;
+  if (this_00 != (CustomItemAudioPlayer *)0x0) {
+    CustomItemAudioPlayer::CustomItemAudioPlayer_Stop(this_00,(MethodInfo *)0x0);
+    if ((this->fields).animatorRoutine != (IEnumerator *)0x0) {
+      Coroutines::Coroutines_Stop((this->fields).animatorRoutine,(MethodInfo *)0x0);
+      (this->fields).animatorRoutine = (IEnumerator *)0x0;
+      func_?(&(this->fields).animatorRoutine,0);
+      PickupItemEditable_DisableAnimation(this,(MethodInfo *)0x0);
+    }
+    return;
   }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -319,23 +342,24 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_OnHit
       if (iVar3 != 0) {
         iVar4 = (pMVar2->fields).previewOwnerProfileId;
         if (((iVar4 == 0) || (*(int *)(iVar4 + 0x14) == 0)) ||
-           (pMVar2[2].monitor == (MonitorData *)0x0)) goto code_?;
-        func_?(0,TypeInfo__IBulletImpactVisualizer,iVar3,
-                        *(undefined4 *)(pMVar2[2].monitor + 0x14),voxelHit.point.x,voxelHit.point.y,
-                        voxelHit.point.z,voxelHit.normal.x,voxelHit.normal.y,voxelHit.normal.z,
-                        voxelHit.cubePos._0_4_,voxelHit._28_4_,voxelHit.face,voxelHit._36_4_,
-                        voxelHit.woId,voxelHit.cube,voxelHit.distance,voxelHit.collider,
-                        voxelHit.transform,voxelHit._60_8_,voxelHit.interactionFlags._4_4_,
-                        lineOfFire.m_Origin.x,lineOfFire.m_Origin.y,lineOfFire.m_Origin.z,
-                        lineOfFire.m_Direction.x);
+           (pAVar5 = pMVar2[1].fields.OnOutputLinkChanged,
+           pAVar5 == (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)0x0))
+        goto code_?;
+        func_?(0,TypeInfo__IBulletImpactVisualizer,iVar3,(pAVar5->fields)._._.method,
+                        voxelHit.point.x,voxelHit.point.y,voxelHit.point.z,voxelHit.normal.x,
+                        voxelHit.normal.y,voxelHit.normal.z,voxelHit.cubePos._0_4_,voxelHit._28_4_,
+                        voxelHit.face,voxelHit._36_4_,voxelHit.woId,voxelHit.cube,voxelHit.distance,
+                        voxelHit.collider,voxelHit.transform,voxelHit._60_8_,
+                        voxelHit.interactionFlags._4_4_,lineOfFire.m_Origin.x,lineOfFire.m_Origin.y,
+                        lineOfFire.m_Origin.z,lineOfFire.m_Direction.x);
       }
       return;
     }
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -378,7 +402,7 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_OnStateChanged
   if ((itemData != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
      (bVar1 = PickupItemEditable_IsSamePickupItem(unaff_ESI,itemData,(MethodInfo *)0x0), bVar1 == 0)
      ) {
-    (unaff_ESI->fields)._.isFiring = 0;
+    (*(code *)(unaff_ESI->klass->vtable).InterruptFire.method)();
     (*(code *)(unaff_ESI->klass->vtable).__unknown_2.method)();
     (*(code *)(unaff_ESI->klass->vtable).SetValuesBasedOnConfiguration.method)();
   }
@@ -423,7 +447,7 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_PlayAnimation
         func_?();
         cRam_? = '\x01';
       }
-      method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__41;
+      method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__38;
       value = (Object *)func_?();
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -439,124 +463,6 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_PlayAnimation
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
-  return;
-}
-
-
-/* Void PlayAudio(AudioSource, String, Vector3, Boolean) */
-
-void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_PlayAudio
-               (PickupItemEditable *this,AudioSource *audioSource,String *soundEffectName,
-               Vector3 position,bool useAudioManager,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)audioSource,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    if (audioSource == (AudioSource *)0x0) {
-code_?:
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    x = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_clip
-                  (audioSource,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      if (useAudioManager == 0) {
-        UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1
-                  (audioSource,(MethodInfo *)0x0);
-        return;
-      }
-      this_00 = MVGameControllerBase::MVGameControllerBase_get_AudioManager((MethodInfo *)0x0);
-      if (this_00 == (AudioManager *)0x0) goto code_?;
-      auVar3._8_4_ = 0;
-      auVar3._0_8_ = position._4_8_;
-      AudioManager::AudioManager_Play_2
-                (this_00,(String *)&UNK_?,audioSource,(Vector3)(auVar3 << 0x20),
-                 (MethodInfo *)0x0);
-    }
-  }
-  return;
-}
-
-
-/* Void PlayFireSoundEffect(Boolean) */
-
-void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_PlayFireSoundEffect
-               (PickupItemEditable *this,bool isLocal,MethodInfo *method)
-
-{
-  if (isLocal == 0) {
-    pTVar1 = (this->fields)._._.muzzlePoint;
-    if (pTVar1 == (Transform *)0x0) goto code_?;
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       ((Vector3 *)&stack0xffffffb0,pTVar1,(MethodInfo *)0x0);
-    VStack_3.x = pVVar2->x;
-    VStack_3.y = pVVar2->y;
-    fStack_4 = pVVar2->z;
-  }
-  else {
-    pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-    if (pCVar5 == (Camera *)0x0) goto code_?;
-    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)pCVar5,(MethodInfo *)0x0);
-    if (pTVar1 == (Transform *)0x0) goto code_?;
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       (&VStack_3,pTVar1,(MethodInfo *)0x0);
-    fVar6 = pVVar2->y;
-    fVar7 = pVVar2->z;
-    pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-    if (pCVar5 == (Camera *)0x0) goto code_?;
-    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)pCVar5,(MethodInfo *)0x0);
-    if (pTVar1 == (Transform *)0x0) goto code_?;
-    fVar8 = 0.0;
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                       ((Vector3 *)&stack0xffffffb0,pTVar1,(MethodInfo *)0x0);
-    uVar9 = pVVar2->x;
-    uVar10 = pVVar2->y;
-    VStack_3.x = fVar8 + (float)uVar9;
-    VStack_3.y = fVar6 + (float)uVar10;
-    fStack_4 = pVVar2->z + fVar7;
-  }
-  uStack_11 = 0;
-  VStack_3.z = 0.0;
-  pAVar12 = (this->fields).fireAudioSource;
-  fStack_13 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
-                        (0.95,1.05,(MethodInfo *)0x0);
-  if (pAVar12 != (AudioSource *)0x0) {
-    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch
-              (pAVar12,fStack_13,(MethodInfo *)0x0);
-    pAVar12 = (this->fields).fireAudioSource;
-    if (pAVar12 != (AudioSource *)0x0) {
-      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop
-                (pAVar12,0,(MethodInfo *)0x0);
-      pAVar12 = (this->fields).fireAudioSource;
-      soundEffectName = (String *)(*(code *)(this->klass->vtable).get_FireSoundEffectName.method)();
-      position.y = VStack_3.y;
-      position.x = VStack_3.x;
-      position.z = fStack_4;
-      PickupItemEditable_PlayAudio(this,pAVar12,soundEffectName,position,1,(MethodInfo *)0x0);
-      return;
-    }
-  }
-code_?:
-  func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
   return;
 }
 
@@ -648,58 +554,35 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_SetValuesBasedO
   PickupItemEditable_OnCubeModelStateChanged(this,(MethodInfo *)0x0);
   (*(code *)(this->klass->vtable).SetAnimation.method)(this,(this->klass->vtable).OnHit.methodPtr);
   pPVar1 = (this->fields)._Configuration_k__BackingField;
-  if ((pPVar1 != (PickupItemEditable_EditableItemConfiguration *)0x0) &&
-     (pAVar2 = (this->fields).fireAudioClips, pAVar2 != (AudioClip__Array *)0x0)) {
-    uVar3 = (pPVar1->fields).fireSoundEffect;
-    this_00 = (this->fields).fireAudioSource;
-    if ((int)uVar3 < 0) {
-      uVar4 = 0;
+  if (pPVar1 != (PickupItemEditable_EditableItemConfiguration *)0x0) {
+    fVar2 = (pPVar1->fields).attackCooldown;
+    fVar3 = (pPVar1->fields).fireAnimationTime;
+    if (fVar2 <= fVar3) {
+      fVar2 = fVar3;
     }
-    else {
-      uVar4 = pAVar2->max_length - 1;
-      if ((int)uVar3 <= (int)uVar4) {
-        uVar4 = uVar3;
-      }
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
+        cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
-    if (pAVar2->max_length <= uVar4) goto code_?;
-    if (this_00 != (AudioSource *)0x0) {
-      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_clip
-                (this_00,pAVar2->vector[uVar4],(MethodInfo *)0x0);
-      pPVar1 = (this->fields)._Configuration_k__BackingField;
-      if (pPVar1 != (PickupItemEditable_EditableItemConfiguration *)0x0) {
-        fVar5 = (pPVar1->fields).attackCooldown;
-        fVar6 = (pPVar1->fields).fireAnimationTime;
-        if (fVar5 <= fVar6) {
-          fVar5 = fVar6;
-        }
-        if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
-            cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        pOVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat
-                  ::ObscuredFloat_op_Implicit
-                            ((ObscuredFloat *)&stack0xffffffe8,fVar5,(MethodInfo *)0x0);
-        AVar8 = pOVar7->hiddenValue;
-        pBVar9 = pOVar7->hiddenValueOld;
-        fVar5 = pOVar7->fakeValue;
-        bVar10 = pOVar7->inited;
-        uVar11 = *(undefined3 *)&pOVar7->field_0x11;
-        (this->fields)._.fireInterval.currentCryptoKey = pOVar7->currentCryptoKey;
-        (this->fields)._.fireInterval.hiddenValue = AVar8;
-        (this->fields)._.fireInterval.hiddenValueOld = pBVar9;
-        (this->fields)._.fireInterval.fakeValue = fVar5;
-        (this->fields)._.fireInterval.inited = bVar10;
-        *(undefined3 *)&(this->fields)._.fireInterval.field_0x11 = uVar11;
-        func_?();
-        return;
-      }
-    }
+    pOVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+             ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe8,fVar2,(MethodInfo *)0x0);
+    AVar5 = pOVar4->hiddenValue;
+    pBVar6 = pOVar4->hiddenValueOld;
+    fVar2 = pOVar4->fakeValue;
+    bVar7 = pOVar4->inited;
+    uVar8 = *(undefined3 *)&pOVar4->field_0x11;
+    (this->fields)._.fireInterval.currentCryptoKey = pOVar4->currentCryptoKey;
+    (this->fields)._.fireInterval.hiddenValue = AVar5;
+    (this->fields)._.fireInterval.hiddenValueOld = pBVar6;
+    (this->fields)._.fireInterval.fakeValue = fVar2;
+    (this->fields)._.fireInterval.inited = bVar7;
+    *(undefined3 *)&(this->fields)._.fireInterval.field_0x11 = uVar8;
+    func_?(&(this->fields)._.fireInterval.hiddenValueOld);
+    return;
   }
   func_?();
-code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -743,5 +626,24 @@ String * Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_get_HitSoun
     cRam_? = '\x01';
   }
   return ::StringLiteral__;
+}
+
+
+/* String get_Name() */
+
+String * Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_get_Name
+                   (PickupItemEditable *this,MethodInfo *method)
+
+{
+  puStack_1 = &stack0xfffffffc;
+  pPVar2 = (this->fields)._Configuration_k__BackingField;
+  if (pPVar2 != (PickupItemEditable_EditableItemConfiguration *)0x0) {
+    return (pPVar2->fields).name;
+  }
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  pSVar6 = (String *)(*pcVar5)();
+  return pSVar6;
 }
 

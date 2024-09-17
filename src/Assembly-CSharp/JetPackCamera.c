@@ -514,43 +514,44 @@ void Assembly-CSharp.dll::JetPackCamera::JetPackCamera_ResetDistanceAndDirection
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Func<MVWorldObjectClient,_bool>);
-    func_?();
+    func_?(&TypeInfo__MVSpawnPointBlue);
     func_?(&
                     MethodInfo__JetPackCamera____c___ResetDistanceAndDirectionToAvatar_b__35_0_MVWorldObjectClient_
                    );
     func_?(&TypeInfo__JetPackCamera____c);
     cRam_? = '\x01';
   }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if ((TypeInfo__JetPackCamera____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__JetPackCamera____c);
   }
-  this_02 = TypeInfo__JetPackCamera____c->static_fields->__9__35_0;
-  if (this_02 == (Func_2_MVWorldObjectClient_Boolean_ *)0x0) {
+  this_01 = TypeInfo__JetPackCamera____c->static_fields->__9__35_0;
+  if (this_01 == (Func_2_MVWorldObjectClient_Boolean_ *)0x0) {
     if ((TypeInfo__JetPackCamera____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__JetPackCamera____c);
     }
     unaff_ESI = (MVWorldObjectClient *)TypeInfo__JetPackCamera____c->static_fields->__9;
-    this_02 = (Func_2_MVWorldObjectClient_Boolean_ *)
+    this_01 = (Func_2_MVWorldObjectClient_Boolean_ *)
               func_?(TypeInfo__System__Func<MVWorldObjectClient,_bool>);
     mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-              ((Func_2_Object_Boolean_ *)this_02,(Object *)unaff_ESI,
+              ((Func_2_Object_Boolean_ *)this_01,(Object *)unaff_ESI,
                MethodInfo__JetPackCamera____c___ResetDistanceAndDirectionToAvatar_b__35_0_MVWorldObjectClient_
                ,(MethodInfo *)0x0);
-    TypeInfo__JetPackCamera____c->static_fields->__9__35_0 = this_02;
-    func_?();
+    TypeInfo__JetPackCamera____c->static_fields->__9__35_0 = this_01;
+    func_?(&TypeInfo__JetPackCamera____c->static_fields->__9__35_0,this_01);
   }
-  if (this_01 != (MVWorldObjectClientManager *)0x0) {
+  if (this_00 != (MVWorldObjectClientManager *)0x0) {
     unaff_ESI = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientWhere
-                          (this_01,this_02,(MethodInfo *)0x0);
+                          (this_00,this_01,(MethodInfo *)0x0);
     if (unaff_ESI != (MVWorldObjectClient *)0x0) {
-      VStack_1.x = (float)TypeInfo__MVSpawnPointBlue;
+      apMStack_1[0] = TypeInfo__MVSpawnPointBlue;
       if (((unaff_ESI->klass->_1).naturalAligment < (TypeInfo__MVSpawnPointBlue->_1).naturalAligment
           ) || ((MVSpawnPointBlue__Class *)
                 (unaff_ESI->klass->_1).typeHierarchy
                 [(TypeInfo__MVSpawnPointBlue->_1).naturalAligment - 1] != TypeInfo__MVSpawnPointBlue
                )) goto code_?;
-      VStack_1.x = (float)(unaff_ESI->klass->vtable).set_WorldPosition.methodPtr;
+      apMStack_1[0] =
+           (MVSpawnPointBlue__Class *)(unaff_ESI->klass->vtable).set_WorldPosition.methodPtr;
       puVar2 = (ulonglong *)
                (*(code *)(unaff_ESI->klass->vtable).get_WorldPosition_1.method)
                          (&uStack_3,unaff_ESI);
@@ -566,78 +567,47 @@ void Assembly-CSharp.dll::JetPackCamera::JetPackCamera_ResetDistanceAndDirection
       pMVar9 = (this->fields).avatarLocal;
       unaff_ESI = (MVWorldObjectClient *)this;
       if (pMVar9 != (MVBuildModeAvatarLocal *)0x0) {
-        pIVar10 = (pMVar9->klass->vtable).set_WorldPosition.methodPtr;
-        puVar11 = &uStack_3;
-        puVar12 = (undefined8 *)(*(code *)(pMVar9->klass->vtable).get_WorldPosition_1.method)();
-        VStack_5.x = (float)*puVar12;
-        fStack_6 = *(float *)(puVar12 + 1) - lookAtPosition.z;
+        puVar10 = (undefined8 *)
+                 (*(code *)(pMVar9->klass->vtable).get_WorldPosition_1.method)
+                           (&uStack_3,pMVar9,(pMVar9->klass->vtable).set_WorldPosition.methodPtr);
+        VStack_5.x = (float)*puVar10;
+        fStack_6 = *(float *)(puVar10 + 1) - lookAtPosition.z;
         VStack_5.y = 0.0;
         VStack_5.x = VStack_5.x - lookAtPosition.x;
         VStack_5.z = fStack_6;
-        fVar7 = (float10)func_?(&VStack_5,0,puVar11,pMVar9,pIVar10);
-        fStack_13 = (float)fVar7;
+        fVar7 = (float10)func_?(&VStack_5,0);
+        fStack_11 = (float)fVar7;
         UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
                   (&VStack_5,(MethodInfo *)0x0);
         pMVar9 = (this->fields).avatarLocal;
         if (pMVar9 != (MVBuildModeAvatarLocal *)0x0) {
-          puVar11 = (undefined8 *)(*(code *)(pMVar9->klass->vtable).get_WorldPosition_1.method)();
-          uVar14 = *puVar11;
-          fVar15 = fStack_8 - fStack_13;
-          uStack_3._0_4_ = (float)uVar14;
-          fStack_6 = *(float *)(puVar11 + 1) + VStack_5.z * fVar15;
-          fVar16 = (float)uStack_3 + VStack_5.x * fVar15;
-          uStack_3._4_4_ = (float)((ulonglong)uVar14 >> 0x20);
-          fVar15 = uStack_3._4_4_ + fVar15 * VStack_5.y;
-          uStack_3 = uVar14;
+          puVar10 = (undefined8 *)
+                   (*(code *)(pMVar9->klass->vtable).get_WorldPosition_1.method)
+                             (apMStack_1,pMVar9,(pMVar9->klass->vtable).set_WorldPosition.methodPtr
+                             );
+          uVar12 = *puVar10;
+          fVar13 = fStack_8 - fStack_11;
+          uStack_3._0_4_ = (float)uVar12;
+          fStack_6 = *(float *)(puVar10 + 1) + VStack_5.z * fVar13;
+          fVar14 = (float)uStack_3 + VStack_5.x * fVar13;
+          uStack_3._4_4_ = (float)((ulonglong)uVar12 >> 0x20);
+          fVar13 = uStack_3._4_4_ + fVar13 * VStack_5.y;
+          uStack_3 = uVar12;
           (*(code *)(pMVar9->klass->vtable).set_WorldPosition.method)
-                    (pMVar9,CONCAT44(fVar15,fVar16),fStack_6,
+                    (pMVar9,fVar14,fVar13,fStack_6,
                      (pMVar9->klass->vtable).get_WorldRotation_1.methodPtr);
-          pMVar9 = (this->fields).avatarLocal;
-          if ((pMVar9 != (MVBuildModeAvatarLocal *)0x0) &&
-             (this_00 = (pMVar9->fields)._._._.gameObject, this_00 != (GameObject *)0x0)) {
-            pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (this_00,(MethodInfo *)0x0);
-            if (pTVar17 != (Transform *)0x0) {
-              pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                 (&VStack_1,pTVar17,(MethodInfo *)0x0);
-              uStack_3._0_4_ = pVVar18->x;
-              uStack_3._4_4_ = pVVar18->y;
-              fStack_6 = pVVar18->z;
-              pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 ((Component *)this,(MethodInfo *)0x0);
-              VStack_5.x = (this->fields).lookAtOffset.x;
-              VStack_5.y = (this->fields).lookAtOffset.y;
-              VStack_5.z = (this->fields).lookAtOffset.z;
-              uStack_3._0_4_ = (float)uStack_3 + VStack_5.x;
-              uStack_3._4_4_ = uStack_3._4_4_ + VStack_5.y;
-              fStack_6 = fStack_6 + VStack_5.z;
-              if (pTVar17 != (Transform *)0x0) {
-                value.z = fStack_6;
-                value.x = (float)uStack_3;
-                value.y = uStack_3._4_4_;
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                          (pTVar17,value,(MethodInfo *)0x0);
-                JetPackCamera_LookAt(this,lookAtPosition,(MethodInfo *)0x0);
-                this_03 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                                    ((MethodInfo *)0x0);
-                if (this_03 != (MainCameraManager *)0x0) {
-                  MainCameraManager::MainCameraManager_StartTransitionCam
-                            (this_03,2.0,1,(MethodInfo *)0x0);
-                  return;
-                }
-              }
-            }
-          }
+          JetPackCamera_FocusOnPosition(this,lookAtPosition,2.0,(MethodInfo *)0x0);
+          return;
         }
       }
     }
   }
   func_?();
-  VStack_1.x = (float)extraout_EDX;
+  apMStack_1[0] = extraout_EDX;
 code_?:
   func_?(unaff_ESI);
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

@@ -57,70 +57,63 @@ void Assembly-CSharp.dll::EditorStateTransitionTable3D::EditorStateTransitionTab
                 );
       pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._._.table;
       pOVar2 = (Object *)func_?(TypeInfo__EditorEvent);
-      pEVar3 = (ESStateBase *)func_?(TypeInfo__ESSelection);
-      pWVar4 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRefNullRef
-                         ((MethodInfo *)0x0);
-      pEVar3[1].fields.stateType = (int32_t)pWVar4;
-      func_?(&pEVar3[1].fields,pWVar4);
-      ESStateBase::ESStateBase__ctor(pEVar3,(MethodInfo *)0x0);
-      pEVar3[2].klass = (ESStateBase__Class *)contextMenuController;
-      func_?(pEVar3 + 2,contextMenuController);
-      pEVar3[2].monitor = (MonitorData *)gizmoController;
-      func_?(&pEVar3[2].monitor,gizmoController);
+      this_02 = (ESSelection *)func_?(TypeInfo__ESSelection);
+      ESSelection::ESSelection__ctor
+                (this_02,contextMenuController,gizmoController,(MethodInfo *)0x0);
       if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,pOVar2,(Object *)pEVar3,
+                  (pDVar1,pOVar2,(Object *)this_02,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
                   );
         pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._._.table;
         pOVar2 = (Object *)func_?(TypeInfo__EditorEvent);
-        pEVar5 = (ESLeaveCubeTutorial *)func_?(TypeInfo__ESTerrainEdit);
-        ESLeaveCubeTutorial::ESLeaveCubeTutorial__ctor(pEVar5,(MethodInfo *)0x0);
+        pEVar4 = (ESLeaveCubeTutorial *)func_?(TypeInfo__ESTerrainEdit);
+        ESLeaveCubeTutorial::ESLeaveCubeTutorial__ctor(pEVar4,(MethodInfo *)0x0);
         if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (pDVar1,pOVar2,(Object *)pEVar5,
+                    (pDVar1,pOVar2,(Object *)pEVar4,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
                     );
           pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._._.table;
           pOVar2 = (Object *)func_?(TypeInfo__EditorEvent);
-          this_02 = (ESWaitForSelected *)func_?(TypeInfo__ESWaitForSelected);
-          ESWaitForSelected::ESWaitForSelected__ctor(this_02,(MethodInfo *)0x0);
+          this_03 = (ESWaitForSelected *)func_?(TypeInfo__ESWaitForSelected);
+          ESWaitForSelected::ESWaitForSelected__ctor(this_03,(MethodInfo *)0x0);
           if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
             ::Dictionary_2_System_Object_System_Object__Add
-                      (pDVar1,pOVar2,(Object *)this_02,
+                      (pDVar1,pOVar2,(Object *)this_03,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
                       );
             pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._._.table;
             pOVar2 = (Object *)func_?(TypeInfo__EditorEvent);
-            this_03 = (ESWaitForGroup *)func_?(TypeInfo__ESWaitForGroup);
-            ESWaitForGroup::ESWaitForGroup__ctor(this_03,(MethodInfo *)0x0);
+            this_04 = (ESWaitForGroup *)func_?(TypeInfo__ESWaitForGroup);
+            ESWaitForGroup::ESWaitForGroup__ctor(this_04,(MethodInfo *)0x0);
             if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
               Object]::Dictionary_2_System_Object_System_Object__Add
-                        (pDVar1,pOVar2,(Object *)this_03,
+                        (pDVar1,pOVar2,(Object *)this_04,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
                         );
               pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._._.table;
               pOVar2 = (Object *)func_?(TypeInfo__EditorEvent);
-              this_04 = (ESTranslate *)func_?(TypeInfo__ESTranslate);
-              ESTranslate::ESTranslate__ctor(this_04,(MethodInfo *)0x0);
+              this_05 = (ESTranslate *)func_?(TypeInfo__ESTranslate);
+              ESTranslate::ESTranslate__ctor(this_05,(MethodInfo *)0x0);
               if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                 Object]::Dictionary_2_System_Object_System_Object__Add
-                          (pDVar1,pOVar2,(Object *)this_04,
+                          (pDVar1,pOVar2,(Object *)this_05,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
                           );
                 pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._._.table;
                 pOVar2 = (Object *)func_?(TypeInfo__EditorEvent);
-                this_05 = (ESWaitForClone *)func_?(TypeInfo__ESWaitForClone);
-                ESWaitForClone::ESWaitForClone__ctor(this_05,(MethodInfo *)0x0);
+                this_06 = (ESWaitForClone *)func_?(TypeInfo__ESWaitForClone);
+                ESWaitForClone::ESWaitForClone__ctor(this_06,(MethodInfo *)0x0);
                 if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                   Object]::Dictionary_2_System_Object_System_Object__Add
-                            (pDVar1,pOVar2,(Object *)this_05,
+                            (pDVar1,pOVar2,(Object *)this_06,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
                             );
                   pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._._.table;
@@ -137,37 +130,37 @@ void Assembly-CSharp.dll::EditorStateTransitionTable3D::EditorStateTransitionTab
                     pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
                              (this_00->fields)._._.table;
                     pOVar2 = (Object *)func_?(TypeInfo__EditorEvent);
-                    pEVar5 = (ESLeaveCubeTutorial *)func_?(TypeInfo__ESWalkMode);
-                    ESLeaveCubeTutorial::ESLeaveCubeTutorial__ctor(pEVar5,(MethodInfo *)0x0);
+                    pEVar4 = (ESLeaveCubeTutorial *)func_?(TypeInfo__ESWalkMode);
+                    ESLeaveCubeTutorial::ESLeaveCubeTutorial__ctor(pEVar4,(MethodInfo *)0x0);
                     if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
                       ::Object]::Dictionary_2_System_Object_System_Object__Add
-                                (pDVar1,pOVar2,(Object *)pEVar5,
+                                (pDVar1,pOVar2,(Object *)pEVar4,
                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
                                 );
                       pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
                                (this_00->fields)._._.table;
                       pOVar2 = (Object *)func_?(TypeInfo__EditorEvent);
-                      this_06 = (ESWaitForPlayModeAvatar *)
+                      this_07 = (ESWaitForPlayModeAvatar *)
                                 func_?(TypeInfo__ESWaitForPlayModeAvatar);
                       ESWaitForPlayModeAvatar::ESWaitForPlayModeAvatar__ctor
-                                (this_06,(MethodInfo *)0x0);
+                                (this_07,(MethodInfo *)0x0);
                       if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                         Object,System::Object]::Dictionary_2_System_Object_System_Object__Add
-                                  (pDVar1,pOVar2,(Object *)this_06,
+                                  (pDVar1,pOVar2,(Object *)this_07,
                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
                                   );
                         pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
                                  (this_00->fields)._._.table;
                         pOVar2 = (Object *)func_?(TypeInfo__EditorEvent);
-                        pEVar5 = (ESLeaveCubeTutorial *)
+                        pEVar4 = (ESLeaveCubeTutorial *)
                                  func_?(TypeInfo__ESWaitForBuildModeAvatar);
-                        ESLeaveCubeTutorial::ESLeaveCubeTutorial__ctor(pEVar5,(MethodInfo *)0x0);
+                        ESLeaveCubeTutorial::ESLeaveCubeTutorial__ctor(pEVar4,(MethodInfo *)0x0);
                         if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           Object,System::Object]::Dictionary_2_System_Object_System_Object__Add
-                                    (pDVar1,pOVar2,(Object *)pEVar5,
+                                    (pDVar1,pOVar2,(Object *)pEVar4,
                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
                                     );
                           pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
@@ -184,12 +177,12 @@ void Assembly-CSharp.dll::EditorStateTransitionTable3D::EditorStateTransitionTab
                             func_?();
                             cRam_? = '\x01';
                           }
-                          pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
-                          fVar7 = (pVVar6->zeroVector).y;
-                          pWVar4 = (WorldObjectClientRef *)(pVVar6->zeroVector).z;
-                          pEVar3[1].monitor = (MonitorData *)(pVVar6->zeroVector).x;
-                          pEVar3[1].fields.stateType = (int32_t)fVar7;
-                          pEVar3[1].fields.tintedWo = pWVar4;
+                          pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
+                          fVar6 = (pVVar5->zeroVector).y;
+                          pWVar7 = (WorldObjectClientRef *)(pVVar5->zeroVector).z;
+                          pEVar3[1].monitor = (MonitorData *)(pVVar5->zeroVector).x;
+                          pEVar3[1].fields.stateType = (int32_t)fVar6;
+                          pEVar3[1].fields.tintedWo = pWVar7;
                           if (cRam_? == '\0') {
                             func_?();
                             cRam_? = '\x01';
@@ -200,13 +193,13 @@ void Assembly-CSharp.dll::EditorStateTransitionTable3D::EditorStateTransitionTab
                                *(undefined8 *)
                                 &TypeInfo__UnityEngine__Vector3->static_fields->zeroVector;
                           pEVar3[2].monitor = pMVar8;
-                          this_07 = (HashSet_1_System_Int32_ *)func_?();
+                          this_08 = (HashSet_1_System_Int32_ *)func_?();
                           System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
                           HashSet_1_System_Int32___ctor
-                                    (this_07,
+                                    (this_08,
                                      MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__
                                     );
-                          pEVar3[3].fields.logger = (ILogger *)this_07;
+                          pEVar3[3].fields.logger = (ILogger *)this_08;
                           func_?();
                           ESStateBase::ESStateBase__ctor(pEVar3,(MethodInfo *)0x0);
                           if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -229,43 +222,43 @@ void Assembly-CSharp.dll::EditorStateTransitionTable3D::EditorStateTransitionTab
                               pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
                                        (this_00->fields)._._.table;
                               pOVar2 = (Object *)func_?(TypeInfo__EditorEvent);
-                              this_08 = (CEEnterCubeTutorial *)
+                              this_09 = (CEEnterCubeTutorial *)
                                         func_?(TypeInfo__CEEnterCubeTutorial);
                               CEEnterCubeTutorial::CEEnterCubeTutorial__ctor
-                                        (this_08,(MethodInfo *)0x0);
+                                        (this_09,(MethodInfo *)0x0);
                               if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                                 Object,System::Object]::
                                 Dictionary_2_System_Object_System_Object__Add
-                                          (pDVar1,pOVar2,(Object *)this_08,
+                                          (pDVar1,pOVar2,(Object *)this_09,
                                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
                                           );
                                 pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
                                          (this_00->fields)._._.table;
                                 pOVar2 = (Object *)func_?(TypeInfo__EditorEvent);
-                                this_09 = (CEEditCubeTutorial *)
+                                this_10 = (CEEditCubeTutorial *)
                                           func_?(TypeInfo__CEEditCubeTutorial);
                                 CEEditCubeTutorial::CEEditCubeTutorial__ctor
-                                          (this_09,(MethodInfo *)0x0);
+                                          (this_10,(MethodInfo *)0x0);
                                 if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                                   Object,System::Object]::
                                   Dictionary_2_System_Object_System_Object__Add
-                                            (pDVar1,pOVar2,(Object *)this_09,
+                                            (pDVar1,pOVar2,(Object *)this_10,
                                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
                                             );
                                   pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
                                            (this_00->fields)._._.table;
                                   pOVar2 = (Object *)func_?(TypeInfo__EditorEvent);
-                                  pEVar5 = (ESLeaveCubeTutorial *)
+                                  pEVar4 = (ESLeaveCubeTutorial *)
                                            func_?(TypeInfo__ESLeaveCubeTutorial);
                                   ESLeaveCubeTutorial::ESLeaveCubeTutorial__ctor
-                                            (pEVar5,(MethodInfo *)0x0);
+                                            (pEVar4,(MethodInfo *)0x0);
                                   if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System
                                     ::Object,System::Object]::
                                     Dictionary_2_System_Object_System_Object__Add
-                                              (pDVar1,pOVar2,(Object *)pEVar5,
+                                              (pDVar1,pOVar2,(Object *)pEVar4,
                                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
                                               );
                                     pDVar1 = (Dictionary_2_System_Object_System_Object_ *)

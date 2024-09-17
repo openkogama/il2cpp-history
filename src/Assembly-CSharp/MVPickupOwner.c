@@ -550,7 +550,7 @@ Vector3 * Assembly-CSharp.dll::MVPickupOwner::
       fVar4 = (float)(fVar11 * (float10)fVar4);
       *(ulonglong *)uVar7 =
            CONCAT44((float)&stack0xffffffe0 + (float)&stack0xffffffe0 * fVar4,
-                    fVar4 * 3.3262965e-29 + 3.3262965e-29);
+                    fVar4 * 3.3252998e-29 + 3.3252998e-29);
       *(float *)(uVar7 + 8) = fVar4 * 0.0 + 0.0;
       return (Vector3 *)uVar7;
     }

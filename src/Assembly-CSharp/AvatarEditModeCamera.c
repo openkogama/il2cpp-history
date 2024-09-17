@@ -91,32 +91,3 @@ code_?:
   return;
 }
 
-
-/* AvatarEditModeCamera() */
-
-void Assembly-CSharp.dll::AvatarEditModeCamera::AvatarEditModeCamera__ctor
-               (AvatarEditModeCamera *this,MethodInfo *method)
-
-{
-  (this->fields)._.sensitivityX = 15.0;
-  (this->fields)._.sensitivityY = 15.0;
-  (this->fields)._.aroundXInertia = 0.5;
-  (this->fields)._.aroundYInertiaMouseControlled = 0.5;
-  (this->fields)._.aroundYInertiaAvatarControlled = 1.0;
-  (this->fields)._.minimumY = -60.0;
-  (this->fields)._.maximumY = 60.0;
-  (this->fields)._.scrollSpeed = 0.5;
-  (this->fields)._.xMinLimit = -0x57;
-  (this->fields)._.xMaxLimit = 0x57;
-  (this->fields)._.rotationSmoothTime = 0.1;
-  (this->fields)._._.cameraRadius = 0.3;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  return;
-}
-

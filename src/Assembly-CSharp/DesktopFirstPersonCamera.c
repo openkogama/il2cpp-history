@@ -69,3 +69,43 @@ void Assembly-CSharp.dll::DesktopFirstPersonCamera::DesktopFirstPersonCamera_Upd
   return;
 }
 
+
+/* DesktopFirstPersonCamera() */
+
+void Assembly-CSharp.dll::DesktopFirstPersonCamera::DesktopFirstPersonCamera__ctor
+               (DesktopFirstPersonCamera *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__List_int_
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>);
+    cRam_? = '\x01';
+  }
+  uVar1 = (ulonglong)_UNK_?;
+  (this->fields)._.cameraOffset.x = (float)(int)(uVar1 << 0x20);
+  (this->fields)._.cameraOffset.y = (float)(int)((uVar1 << 0x20) >> 0x20);
+  (this->fields)._.cameraHeight = 2.0;
+  (this->fields)._.maxLookAngleDownward = 60.0;
+  (this->fields)._.maxLookAngleUpward = 60.0;
+  (this->fields)._.cameraOffset.z = 0.0;
+  (this->fields)._.pitchSensitivity = 0.5;
+  (this->fields)._.yawSensitivity = 0.5;
+  this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>
+                              );
+  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+  MultiColumnCollectionHeader+ViewState+ColumnState]::
+  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
+            (this_00,0x20,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__List_int_);
+  (this->fields)._.vehiclesHiddenMeshRenderers = (List_1_UnityEngine_MeshRenderer_ *)this_00;
+  func_?(&(this->fields)._.vehiclesHiddenMeshRenderers,this_00);
+  (this->fields)._._.cameraRadius = 0.3;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  return;
+}
+

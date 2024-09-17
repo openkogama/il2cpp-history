@@ -95,11 +95,11 @@ code_?:
       EStack_6.klass = (Enum__Class *)&UNK_?;
       func_?();
       iVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetPhysicalMemoryMB
-                         ((MethodInfo *)0x0);
+                        ((MethodInfo *)0x0);
       if (iVar10 != 0) {
         pDVar2 = (this->fields).device;
         iVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetPhysicalMemoryMB
-                           ((MethodInfo *)0x0);
+                          ((MethodInfo *)0x0);
         if (pDVar2 == (Device *)0x0) goto code_?;
         (pDVar2->fields).memory_size = (longlong)iVar10 * 0x100000;
       }
@@ -126,7 +126,7 @@ code_?:
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                       ((Object *)pGVar4,ExceptionArgument__Enum_obj,method_02);
             iVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                     SystemInfo_GetGraphicsDeviceID((MethodInfo *)0x0);
+                    SystemInfo_GetGraphicsDeviceID((MethodInfo *)0x0);
             if (pGVar4 != (Gpu *)0x0) {
               (pGVar4->fields).id = iVar10;
               pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
@@ -134,14 +134,14 @@ code_?:
               (pGVar4->fields).name = pSVar1;
               func_?();
               iVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                       SystemInfo_GetGraphicsDeviceVendorID((MethodInfo *)0x0);
+                      SystemInfo_GetGraphicsDeviceVendorID((MethodInfo *)0x0);
               (pGVar4->fields).vendor_id = iVar10;
               pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
                        SystemInfo_GetGraphicsDeviceVendor((MethodInfo *)0x0);
               (pGVar4->fields).vendor_name = pSVar1;
               func_?(&(pGVar4->fields).vendor_name);
               iVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                       SystemInfo_GetGraphicsMemorySize((MethodInfo *)0x0);
+                      SystemInfo_GetGraphicsMemorySize((MethodInfo *)0x0);
               (pGVar4->fields).memory_size = iVar10;
               bVar5 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
                       SystemInfo_GetGraphicsMultiThreaded((MethodInfo *)0x0);
@@ -219,26 +219,10 @@ code_?:
     }
   }
 code_?:
-  pbVar12 = (byte *)func_?();
-  bVar13 = CARRY1(*pbVar12,extraout_CH) ||
-           CARRY1(*pbVar12 + extraout_CH,in_stack_14 < extraout_DL);
-  *pbVar12 = *pbVar12 + extraout_CH + (in_stack_14 < extraout_DL);
-  pbVar15 = (byte *)(unaff_EBX + 0x55);
-  bVar16 = (byte)pbVar12;
-  bVar17 = CARRY1(*pbVar15,bVar16) || CARRY1(*pbVar15 + bVar16,bVar13);
-  *pbVar15 = *pbVar15 + bVar16 + bVar13;
-  pbVar15 = (byte *)(unaff_EBX + 0x55);
-  bVar13 = CARRY1(*pbVar15,bVar16) || CARRY1(*pbVar15 + bVar16,bVar17);
-  *pbVar15 = *pbVar15 + bVar16 + bVar17;
-  pbVar15 = pbVar12 + 0x55;
-  bVar16 = *pbVar15;
-  bVar18 = *pbVar15;
-  *pbVar15 = bVar18 + extraout_CH + bVar13;
-  pbVar12[0x55] =
-       pbVar12[0x55] + extraout_CH +
-       (CARRY1(bVar16,extraout_CH) || CARRY1(bVar18 + extraout_CH,bVar13));
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  iVar12 = func_?();
+  *(char *)(iVar12 + -0x3cefb0eb) = *(char *)(iVar12 + -0x3cefb0eb) + extraout_CH;
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

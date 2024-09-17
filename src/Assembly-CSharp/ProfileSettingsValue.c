@@ -1,6 +1,4 @@
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* Void OnChange(Object) */
 
@@ -8,31 +6,27 @@ void Assembly-CSharp.dll::ProfileSettingsValue::ProfileSettingsValue_OnChange
                (ProfileSettingsValue *this,Object *value,MethodInfo *method)
 
 {
-  puVar1 = &stack0xfffffffc;
   if (cRam_? == '\0') {
     func_?();
-    func_?(&TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel);
-    func_?(&TypeInfo__UnityEngine__FilterMode);
+    func_?();
+    func_?();
     func_?(&TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel);
     func_?(&TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue);
     func_?(&TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel);
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  pTVar2 = (this->fields).text;
-  pSVar3 = ::StringLiteral__;
+  pAVar1 = (Action_1_Object___Class *)(this->fields).text;
   switch((this->fields).profileSettingKey) {
   case 1:
     if (value != (Object *)0x0) {
-      pAVar4 = (AntiAliasingLevel__Enum__Class *)
-                TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue;
       if ((value->klass->_0).element_class !=
           (TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue->_0).element_class)
       goto code_?;
       site = (CallSite_1_System_Object_ *)&UNK_?;
       args = (Object__Array *)value;
-      pTVar5 = (TargetFrameRateValue__Enum *)func_?();
-      value_00 = *pTVar5;
+      pTVar2 = (TargetFrameRateValue__Enum *)func_?();
+      value_00 = *pTVar2;
       if (cRam_? == '\0') {
         func_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
         func_?(&StringLiteral__1_);
@@ -41,132 +35,131 @@ void Assembly-CSharp.dll::ProfileSettingsValue::ProfileSettingsValue_OnChange
         func_?(&StringLiteral__of_display_frequency);
         cRam_? = '\x01';
       }
-      IStack_6.m_value = 0;
+      IStack_3.m_value = 0;
       this = (ProfileSettingsValue *)0x0;
       if (value_00 == TargetFrameRateValue__Enum_Unlimited) {
-        pSVar3 = TM::TM__(StringLiteral_Unlimited,(MethodInfo *)0x0);
+        TM::TM__(StringLiteral_Unlimited,(MethodInfo *)0x0);
       }
       else if (value_00 == TargetFrameRateValue__Enum_SameAsScreenHz) {
-        pSVar3 = TM::TM__(StringLiteral_Match_display_frequency,(MethodInfo *)0x0);
+        TM::TM__(StringLiteral_Match_display_frequency,(MethodInfo *)0x0);
       }
       else {
         if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
             cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
         }
-        pOVar7 = System.Core.dll::System::Runtime::CompilerServices::CallSiteBinder::
-                 CallSiteBinder_BindDelegate((CallSiteBinder *)0x0,site,args,unaff_ESI);
-        if (pOVar7 != (Object *)0x0) {
+        pOVar4 = System.Core.dll::System::Runtime::CompilerServices::CallSiteBinder::
+                  CallSiteBinder_BindDelegate
+                            ((CallSiteBinder *)0x0,site,args,(MethodInfo *)unaff_ESI);
+        if (pOVar4 == (Object *)0x0) {
+code_?:
           if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
               cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+            func_?();
           }
-          pOVar7 = System.Core.dll::System::Runtime::CompilerServices::CallSiteBinder::
-                   CallSiteBinder_BindDelegate
-                             ((CallSiteBinder *)0x0,(CallSite_1_System_Object_ *)unaff_ESI,unaff_EDI
-                              ,(MethodInfo *)in_stack_8);
-          unaff_ESI = in_stack_9;
-          if ((pOVar7 != (Object *)0x1) ||
-             (cVar10 = func_?(), unaff_ESI = in_stack_9, cVar10 != '\0')) {
-            if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-                cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
-            }
-            this = (ProfileSettingsValue *)
-                   Assets::Scripts::ProfileSettings::ProfileSettingsManager::
-                   ProfileSettingsManager_TargetFrameRateToInt(value_00,(MethodInfo *)0x0);
-            pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
-            pSVar3 = TM::TM__(pSVar3,(MethodInfo *)0x0);
-            goto code_?;
+          IStack_3.m_value =
+               Assets::Scripts::ProfileSettings::ProfileSettingsManager::
+               ProfileSettingsManager_TargetFrameRateToVSyncValue(value_00,(MethodInfo *)0x0);
+          pSVar5 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
+          pSVar5 = mscorlib.dll::System::String::String_Concat_4
+                             (StringLiteral__1_,pSVar5,StringLiteral__of_display_frequency,
+                              (MethodInfo *)0x0);
+          TM::TM__(pSVar5,(MethodInfo *)0x0);
+          unaff_ESI = pDStack_6;
+        }
+        else {
+          if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+              cctor_finished_or_no_cctor == 0) {
+            func_?();
           }
+          pOVar4 = System.Core.dll::System::Runtime::CompilerServices::CallSiteBinder::
+                    CallSiteBinder_BindDelegate
+                              ((CallSiteBinder *)0x0,(CallSite_1_System_Object_ *)unaff_ESI,
+                               unaff_EDI,(MethodInfo *)in_stack_7);
+          unaff_ESI = in_stack_8;
+          if (pOVar4 == (Object *)0x1) {
+            unaff_EDI = (Object__Array *)0x0;
+            cVar9 = func_?();
+            unaff_ESI = in_stack_8;
+            if (cVar9 == '\0') goto code_?;
+          }
+          if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+              cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          this = (ProfileSettingsValue *)
+                 Assets::Scripts::ProfileSettings::ProfileSettingsManager::
+                 ProfileSettingsManager_TargetFrameRateToInt(value_00,(MethodInfo *)0x0);
+          pSVar5 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
+          unaff_EDI = (Object__Array *)&UNK_?;
+          TM::TM__(pSVar5,(MethodInfo *)0x0);
         }
-        if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-            cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
-        }
-        IStack_6.m_value =
-             Assets::Scripts::ProfileSettings::ProfileSettingsManager::
-             ProfileSettingsManager_TargetFrameRateToVSyncValue(value_00,(MethodInfo *)0x0);
-        pSVar3 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_6,(MethodInfo *)0x0);
-        pSVar3 = mscorlib.dll::System::String::String_Concat_4
-                           (StringLiteral__1_,pSVar3,StringLiteral__of_display_frequency,
-                            (MethodInfo *)0x0);
-        pSVar3 = TM::TM__(pSVar3,(MethodInfo *)0x0);
-        unaff_ESI = pMStack_11;
       }
       goto code_?;
     }
     break;
   case 2:
     if (value != (Object *)0x0) {
-      pAVar4 = (AntiAliasingLevel__Enum__Class *)
-                TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel;
       if ((value->klass->_0).element_class !=
           (TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel->_0).element_class)
       goto code_?;
-      puVar12 = (undefined4 *)func_?(value);
-      uStack_13 = *puVar12;
-      EStack_14.klass = (Enum__Class *)TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel;
-      this_01 = &EStack_14;
-      EStack_14.monitor = (MonitorData *)0xffffffff;
+      puVar10 = (undefined4 *)func_?();
+      uStack_11 = *puVar10;
+      EStack_12.klass = (Enum__Class *)TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel;
+      this_00 = &EStack_12;
+      EStack_12.monitor = (MonitorData *)0xffffffff;
 code_?:
-      pSVar3 = mscorlib.dll::System::Enum::Enum_ToString(this_01,(MethodInfo *)0x0);
-      pSVar3 = TM::TM__(pSVar3,(MethodInfo *)0x0);
+      pSVar5 = mscorlib.dll::System::Enum::Enum_ToString(this_00,(MethodInfo *)0x0);
+      TM::TM__(pSVar5,(MethodInfo *)0x0);
       goto code_?;
     }
     break;
   case 3:
     if (value != (Object *)0x0) {
-      pAVar4 = (AntiAliasingLevel__Enum__Class *)TypeInfo__UnityEngine__FilterMode;
       if ((value->klass->_0).element_class == (TypeInfo__UnityEngine__FilterMode->_0).element_class)
       {
-        puVar12 = (undefined4 *)func_?(value);
-        uStack_15 = *puVar12;
-        EStack_16.klass = (Enum__Class *)TypeInfo__UnityEngine__FilterMode;
-        this_01 = &EStack_16;
-        EStack_16.monitor = (MonitorData *)0xffffffff;
+        puVar10 = (undefined4 *)func_?();
+        uStack_13 = *puVar10;
+        EStack_14.klass = (Enum__Class *)TypeInfo__UnityEngine__FilterMode;
+        this_00 = &EStack_14;
+        EStack_14.monitor = (MonitorData *)0xffffffff;
         goto code_?;
       }
 code_?:
-      func_?(value,pAVar4);
+      func_?();
     }
     break;
   case 4:
     if (value != (Object *)0x0) {
-      pAVar4 = (AntiAliasingLevel__Enum__Class *)
-                TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel;
       if ((value->klass->_0).element_class !=
           (TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel->_0).element_class)
       goto code_?;
-      puVar12 = (undefined4 *)func_?(value);
-      pMStack_11 = (MethodInfo *)*puVar12;
-      EStack_17.klass = (Enum__Class *)TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel
+      puVar10 = (undefined4 *)func_?();
+      pDStack_6 = (Delegate *)*puVar10;
+      EStack_15.klass = (Enum__Class *)TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel
       ;
-      EStack_17.monitor = (MonitorData *)0xffffffff;
-      pSVar3 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_17,(MethodInfo *)0x0);
+      EStack_15.monitor = (MonitorData *)0xffffffff;
+      mscorlib.dll::System::Enum::Enum_ToString(&EStack_15,(MethodInfo *)0x0);
       goto code_?;
     }
     break;
   case 5:
     if (value != (Object *)0x0) {
-      pAVar4 = TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel;
       if ((value->klass->_0).element_class !=
           (TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel->_0).element_class)
       goto code_?;
-      func_?(value);
-      pSVar3 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffc8,(MethodInfo *)0x0)
-      ;
+      func_?();
+      pAStack_16 = TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel;
+      mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pAStack_16,(MethodInfo *)0x0);
       goto code_?;
     }
     break;
   case 6:
     if (value != (Object *)0x0) {
-      pAVar4 = (AntiAliasingLevel__Enum__Class *)
-                TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel;
       if ((value->klass->_0).element_class ==
           (TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel->_0).element_class) {
-        func_?(value);
-        this_01 = (Enum *)&stack0xffffffbc;
+        func_?();
+        this_00 = (Enum *)&stack0xffffffbc;
         goto code_?;
       }
       goto code_?;
@@ -174,87 +167,154 @@ code_?:
     break;
   default:
 code_?:
-    if (pTVar2 != (Text *)0x0) {
-      (*(code *)(pTVar2->klass->vtable).set_text.method)
-                (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    if (pAVar1 != (Action_1_Object___Class *)0x0) {
+      (*(code *)(pAVar1->_0).image[0x12].name)(pAVar1);
       return;
     }
   }
-  uVar18 = func_?();
-  uVar19 = (uint)((ulonglong)uVar18 >> 0x20) & *(uint *)uVar18;
-  ppAVar20 = (Action_1_Object___Class **)(extraout_ECX + -1);
-  if (ppAVar20 == (Action_1_Object___Class **)0x0 || uVar19 == 0) {
-    uVar21 = *(uint *)uVar18;
-    *unaff_EBX = *unaff_EBX & (uint)&stack0xffffffb8;
-    *(char *)(extraout_ECX + 0x22) =
-         *(char *)(extraout_ECX + 0x22) + ((byte)(uVar19 >> 8) & (byte)(uVar21 >> 8));
-    *unaff_EBX = *unaff_EBX & (uint)&stack0xffffffb8;
-    cRam_? = cRam_? + (char)ppAVar20;
-    puVar1 = &stack0xffffffb8;
-    puVar22 = &stack0xffffffb8;
-    if (cRam_? == '\0') goto code_?;
-  }
-  else {
-code_?:
-    ppAVar20 = &TypeInfo__System__Action<System::Object>;
-    func_?(&TypeInfo__System__Action<System::Object>);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
-                   );
-    func_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
-    func_?(&MethodInfo__ProfileSettingsValue__OnChange_System__Object_);
+  uVar17 = func_?();
+  puVar18 = (uint *)uVar17;
+  uVar19 = *puVar18;
+  pbVar20 = (byte *)((uint)((ulonglong)uVar17 >> 0x20) & *puVar18);
+  *pbVar20 = *pbVar20 ^ (byte)uVar19;
+  uVar21 = *puVar18;
+  LOCK();
+  *(byte *)((uint)pbVar20 & uVar21) = (byte)uVar19;
+  UNLOCK();
+  puVar22 = (undefined6 *)((uint)pbVar20 & uVar21 & *puVar18);
+  uVar23 = *puVar22;
+  puVar24 = (uint *)CONCAT31((int3)((uint6)uVar23 >> 8),(char)uVar23 + *(char *)uVar23);
+  uVar21 = (uint)puVar22 & *puVar18 & *puVar18;
+  iVar25 = -*puVar24;
+  pcVar26 = (char *)((int)unaff_EDI[-1].vector + 0xb);
+  *pcVar26 = *pcVar26 + (char)uVar21 + (&stack0xffffffbc < (undefined1 *)*puVar24);
+  in((short)uVar21);
+  puVar27 = &stack0xffffffb8 + iVar25;
+  *(undefined4 *)(&stack0xffffffb8 + iVar25) = extraout_ECX;
+  if (cRam_? == '\0') {
+    *(Action_1_Object___Class ***)(&stack0xffffffb4 + iVar25) =
+         &TypeInfo__System__Action<System::Object>;
+    puVar28 = &stack0xffffffb0 + iVar25;
+    *(undefined **)(&stack0xffffffb0 + iVar25) = &UNK_?;
+    func_?();
+    *(MethodInfo ***)(puVar28 + -4) =
+         &
+         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+    ;
+    puVar29 = puVar28 + -8;
+    *(undefined **)(puVar28 + -8) = &UNK_?;
+    func_?();
+    *(MethodInfo ***)(puVar29 + -4) =
+         &
+         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
+    ;
+    puVar30 = puVar29 + -8;
+    *(undefined **)(puVar29 + -8) = &UNK_?;
+    func_?();
+    *(ProfileSettingsManager__Class ***)(puVar30 + -4) =
+         &TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager;
+    puVar31 = puVar30 + -8;
+    *(undefined **)(puVar30 + -8) = &UNK_?;
+    func_?();
+    *(MethodInfo ***)(puVar31 + -4) = &MethodInfo__ProfileSettingsValue__OnChange_System__Object_;
+    puVar32 = puVar31 + -8;
+    *(undefined **)(puVar31 + -8) = &UNK_?;
+    func_?();
+    puVar27 = puVar32 + 0x14;
     cRam_? = '\x01';
-    puVar22 = puVar1;
   }
   if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
       cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager,ppAVar20);
-  }
-  this_00 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
-            ProfileSettingsChanged;
-  key = *(Int32Enum__Enum *)(*(int *)(puVar22 + 8) + 0x10);
-  *(Int32Enum__Enum *)(puVar22 + -4) = key;
-  if (this_00 ==
-      (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)0x0) {
-    func_?(pTVar2,unaff_ESI);
-code_?:
+    *(ProfileSettingsManager__Class **)(puVar27 + -4) =
+         TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager;
+    puVar33 = puVar27 + -8;
+    *(undefined **)(puVar27 + -8) = &UNK_?;
     func_?();
-    pcVar23 = (code *)swi(3);
-    (*pcVar23)();
+    puVar27 = puVar33 + 4;
+  }
+  pPVar34 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields;
+  *(uint **)(puVar27 + -4) = puVar24;
+  *(Delegate **)(puVar27 + -8) = unaff_ESI;
+  *(Action_1_Object___Class **)(puVar27 + -0xc) = pAVar1;
+  pDVar35 = pPVar34->ProfileSettingsChanged;
+  pOVar4 = (Object *)unaff_EDI->bounds[2].length;
+  unaff_EDI[-1].vector[0x1f] = pOVar4;
+  if (pDVar35 == (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)
+                0x0) {
+    puVar36 = puVar27 + -0x10;
+    *(undefined **)(puVar27 + -0x10) = &UNK_?;
+    func_?();
+code_?:
+    *(Action_1_Object___Class **)(puVar36 + -4) = pAVar1;
+    *(Delegate **)(puVar36 + -8) = unaff_ESI;
+    *(undefined **)(puVar36 + -0xc) = &UNK_?;
+    func_?();
+    pcVar37 = (code *)swi(3);
+    (*pcVar37)();
     return;
   }
-  pDVar24 = (Delegate *)
-           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-           Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                     ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,
-                      MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
-                     );
-  this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-            func_?(TypeInfo__System__Action<System::Object>);
+  *(MethodInfo **)(puVar27 + -0x10) =
+       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+  ;
+  *(Object **)(puVar27 + -0x14) = pOVar4;
+  *(Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ **)
+   (puVar27 + -0x18) = pDVar35;
+  *(undefined **)(puVar27 + -0x1c) = &UNK_?;
+  pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                      (*(Dictionary_2_System_Int32Enum_System_Object_ **)(puVar27 + -0x18),
+                       *(Int32Enum__Enum *)(puVar27 + -0x14),*(MethodInfo **)(puVar27 + -0x10));
+  *(Action_1_Object___Class **)(puVar27 + -0x10) = TypeInfo__System__Action<System::Object>;
+  puVar38 = puVar27 + -0x14;
+  *(undefined **)(puVar27 + -0x14) = &UNK_?;
+  uVar39 = func_?();
+  *(undefined4 *)(puVar38 + -4) = 0;
+  *(MethodInfo **)(puVar38 + -8) = MethodInfo__ProfileSettingsValue__OnChange_System__Object_;
+  *(Il2CppArrayBounds **)(puVar38 + -0xc) = unaff_EDI->bounds;
+  *(undefined4 *)(puVar38 + -0x10) = uVar39;
+  *(undefined **)(puVar38 + -0x14) = &UNK_?;
   Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
   SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
   SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-            (this_02,*(Object **)(puVar22 + 8),
-             MethodInfo__ProfileSettingsValue__OnChange_System__Object_,(MethodInfo *)0x0);
-  pDVar24 = mscorlib.dll::System::Delegate::Delegate_Remove
-                     (pDVar24,(Delegate *)this_02,(MethodInfo *)0x0);
-  *(MethodInfo **)(puVar22 + 8) =
+            (*(SpawnRoleVariable_1_T_SubDelegate_System_Object_ **)(puVar38 + -0x10),
+             *(Object **)(puVar38 + -0xc),*(void **)(puVar38 + -8),*(MethodInfo **)(puVar38 + -4));
+  *(undefined4 *)(puVar38 + -4) = 0;
+  *(undefined4 *)(puVar38 + -8) = uVar39;
+  *(Object **)(puVar38 + -0xc) = pOVar4;
+  *(undefined **)(puVar38 + -0x10) = &UNK_?;
+  unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Remove
+                        (*(Delegate **)(puVar38 + -0xc),*(Delegate **)(puVar38 + -8),
+                         *(MethodInfo **)(puVar38 + -4));
+  pAVar1 = TypeInfo__System__Action<System::Object>;
+  puVar40 = puVar38 + 0x2c;
+  unaff_EDI->bounds =
+       (Il2CppArrayBounds *)
        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
   ;
-  if (pDVar24 == (Delegate *)0x0) {
-    pOVar7 = (Object *)0x0;
+  if (unaff_ESI == (Delegate *)0x0) {
+    iVar25 = 0;
   }
   else {
-    pOVar7 = (Object *)func_?();
-    if (pOVar7 == (Object *)0x0) goto code_?;
+    *(Action_1_Object___Class **)(puVar38 + 0x28) = pAVar1;
+    *(Delegate **)(puVar38 + 0x24) = unaff_ESI;
+    puVar41 = puVar38 + 0x20;
+    *(undefined **)(puVar38 + 0x20) = &UNK_?;
+    iVar25 = func_?();
+    puVar40 = puVar41 + 8;
+    puVar36 = puVar41 + 8;
+    if (iVar25 == 0) goto code_?;
   }
+  *(Il2CppArrayBounds **)(puVar40 + -4) = unaff_EDI->bounds;
+  *(int *)(puVar40 + -8) = iVar25;
+  *(Object **)(puVar40 + -0xc) = unaff_EDI[-1].vector[0x1f];
+  *(Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ **)
+   (puVar40 + -0x10) = pDVar35;
+  *(undefined **)(puVar40 + -0x14) = &UNK_?;
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
   Dictionary_2_System_Int32Enum_System_Object__set_Item
-            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
-             *(Int32Enum__Enum *)(puVar22 + -4),pOVar7,*(MethodInfo **)(puVar22 + 8));
+            (*(Dictionary_2_System_Int32Enum_System_Object_ **)(puVar40 + -0x10),
+             *(Int32Enum__Enum *)(puVar40 + -0xc),*(Object **)(puVar40 + -8),
+             *(MethodInfo **)(puVar40 + -4));
   return;
 }
 

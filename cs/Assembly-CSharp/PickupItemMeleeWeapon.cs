@@ -71,10 +71,10 @@ public class PickupItemMeleeWeapon : PickupItemEditable
 	public PickupItemMeleeWeapon();
 
 	// Methods
+	protected override void InitializeAudioPlayers();
 	protected override EditableItemConfiguration GetDefaultConfiguration();
 	protected override void SetConfiguration(Dictionary<object, object> itemData);
 	public override void OnStateChanged(Dictionary<object, object> newState);
-	protected override void SetValuesBasedOnConfiguration();
 	protected override void OnFire(bool isLocal);
 	[IteratorStateMachine(typeof(_CheckHitCoroutine_d__28))]
 	private IEnumerator CheckHitCoroutine(bool isLocal);
@@ -83,7 +83,6 @@ public class PickupItemMeleeWeapon : PickupItemEditable
 	private void OnLocalHit(List<VoxelHit> voxelHits);
 	private void OnLocalHit(VoxelHit voxelHit);
 	public override void UpdateWithDirection(Vector3 dir);
-	private void OnValidate();
 	public override bool IsSameItemData(Dictionary<object, object> itemData);
 	public override void OnUnequip();
 	protected override void InterruptFire();
