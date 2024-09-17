@@ -72,18 +72,3 @@ code_?:
   return 1;
 }
 
-
-/* Void Update() */
-
-void Assembly-CSharp.dll::MVUtils::MVUtils_Update(MVUtils *this,MethodInfo *method)
-
-{
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup((MethodInfo *)0x0);
-  if ((this->fields).last + 2.0 < fVar1) {
-    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup((MethodInfo *)0x0);
-    (this->fields).last = fVar1;
-    MVUtils_CheckPro((MethodInfo *)0x0);
-  }
-  return;
-}
-

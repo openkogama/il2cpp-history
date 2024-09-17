@@ -105,7 +105,7 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::AvatarEditModeBodyContro
       func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
       cRam_? = '\x01';
     }
-    RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x750011ba,-0x3b7cff9a,MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
+    RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x750011bb,-0x3b7cff9a,MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
     if ((RVar6 != (RegexCharClass_SingleRange)0x0) && (this_01 != (MVNetworkGame_OperationRequests *)0x0)) {
       MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_ResetAvatar(this_01,*(int32_t *)((int)RVar6 + 8),(MethodInfo *)0x0);
       return;

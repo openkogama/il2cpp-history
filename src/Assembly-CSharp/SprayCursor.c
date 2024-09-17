@@ -215,15 +215,22 @@ code_?:
       UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
       if ((pGVar3 != (GameEventManager *)0x0) && ((pGVar4 = (pGVar3->fields).AvatarCommandsBuildMode, pGVar4 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0 && (pGVar5 = (pGVar4->fields).LaserCommands, pGVar5 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)))) {
-        GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition(pGVar5,(selectedCube->fields).point,(MethodInfo *)0x0);
+        fVar6 = (selectedCube->fields).point.z;
+        to.z._1_1_ = (char)((uint)fVar6 >> 8);
+        to._0_9_ = *(unkbyte9 *)&(selectedCube->fields).point;
+        to.z._2_2_ = (short)((uint)fVar6 >> 0x10);
+        GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition(pGVar5,to,(MethodInfo *)0x0);
         return;
       }
     }
   }
 code_?:
-  func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  uVar1 = 0x1046;
+  uVar16 = func_?();
+  out(0x3a,uVar16);
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)(CONCAT22(uVar1,in_ES));
+  return;
 }
 
 

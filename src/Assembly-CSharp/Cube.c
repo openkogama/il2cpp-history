@@ -125,7 +125,7 @@ float Assembly-CSharp.dll::Cube::Cube_CalculateAOLightCheap(Face__Enum face,int3
 {
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__ContainsKey_MV__WorldObject__IntVector_);
-    func_?(0xdf68);
+    func_?(0xffdc);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&TypeInfo__SharedCubeFunctions);
     cRam_? = '\x01';
@@ -888,7 +888,6 @@ List_1_UnityEngine_Vector3_ * Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersF
       iVar6 = iVar6 + 1;
     }
   }
-  this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)cubeCorners;
   switch(direction) {
   default:
     goto code_?;
@@ -1082,20 +1081,19 @@ code_?:
   PVar11.Quadrant = (int32_t)in_stack_2;
   PVar11.SecondAxisSign = (int32_t)puVar4;
   mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,in_stack_29,PVar11,pMVar5);
-  this_00 = pLVar3;
+  cubeCorners = (List_1_UnityEngine_Vector3_ *)pLVar3;
 code_?:
   if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   Cube_GetFromTopRotation((Quaternion *)&stack0xffffffc0,direction,(MethodInfo *)0x0);
   fVar10 = 0.0;
-  cubeCorners = (List_1_UnityEngine_Vector3_ *)0x0;
-  if (this_00 != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) {
-    for (; (int)fVar10 < (this_00->fields)._size; fVar10 = (float)((int)fVar10 + 1)) {
-      pLVar3 = this_00;
+  if ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)cubeCorners != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) {
+    for (; (int)fVar10 < (((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)cubeCorners)->fields)._size; fVar10 = (float)((int)fVar10 + 1)) {
+      pLVar3 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)cubeCorners;
       fVar30 = fVar10;
       pMVar5 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
-      pVVar16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,(int32_t)fVar10,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+      pVVar16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,(int32_t)fVar10,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
       uVar31 = pVVar16->alias;
       rotation.y = fVar30;
       rotation.x = (float)pLVar3;
@@ -1103,24 +1101,18 @@ code_?:
       rotation.w = (float)uVar31;
       pVVar32 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1((Vector3 *)&stack0xffffffdc,rotation,(Vector3)*pVVar16,(MethodInfo *)0x0);
       pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)MathFunctions::MathFunctions_RoundVector((Vector3 *)&stack0xffffffd0,*pVVar32,3,(MethodInfo *)0x0);
-      mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,(int32_t)fVar10,*pPVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+      mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)cubeCorners,(int32_t)fVar10,*pPVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
     }
-    return (List_1_UnityEngine_Vector3_ *)this_00;
+    return (List_1_UnityEngine_Vector3_ *)(List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)cubeCorners;
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  piVar33 = (int *)in(0x74);
-  iVar6 = *piVar33;
-  bVar34 = (byte)((uint)piVar33 >> 8);
-  bVar35 = (byte)(iVar6 * 0xADDR);
-  bVar36 = bVar35 + bVar34;
-  *extraout_ECX = *extraout_ECX + (char)((uint)extraout_ECX >> 8) + (CARRY1(bVar35,bVar34) || CARRY1(bVar36,*(undefined1 **)(extraout_ECX + 0x69) < &stack0xfffffffc));
-  out(*(undefined1 *)&cubeCorners->klass,(short)CONCAT31((int3)((uint)(iVar6 * 0xADDR) >> 8),bVar36 + (*(undefined1 **)(extraout_ECX + 0x69) < &stack0xfffffffc)));
-  pcVar37 = (code *)swi(3);
-  pLVar38 = (List_1_UnityEngine_Vector3_ *)(*pcVar37)();
-  return pLVar38;
+  func_?();
+  pcVar33 = (code *)swi(3);
+  pLVar34 = (List_1_UnityEngine_Vector3_ *)(*pcVar33)();
+  return pLVar34;
 }
 
 
@@ -1261,7 +1253,7 @@ FaceData__Array * Assembly-CSharp.dll::Cube::Cube_GenerateCubeFaces(Cube *cube,I
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__Add_FaceData_);
-    func_?(0xf078);
+    func_?(0x10ec);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__List__);
     func_?(&TypeInfo__System__Collections__Generic__List<FaceData>);
     cRam_? = '\x01';
@@ -1307,10 +1299,10 @@ FaceData__Array * Assembly-CSharp.dll::Cube::Cube_GenerateCubeFacesCheap(Cube *c
     func_?(&MethodInfo__Cube___GenerateCubeFacesCheap_g__insideCheck_26_4_int_);
     func_?(&MethodInfo__Cube___GenerateCubeFacesCheap_g__insideCheck_26_5_int_);
     func_?(&TypeInfo__Cube);
-    func_?(0x38fc);
+    func_?(0x5970);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__Add_FaceData_);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__ToArray__);
-    func_?(0xf004);
+    func_?(0x1078);
     func_?(&TypeInfo__System__Collections__Generic__List<FaceData>);
     cRam_? = '\x01';
   }
@@ -2027,13 +2019,12 @@ IntVector Assembly-CSharp.dll::Cube::Cube_GetCubePosAboveFace(IntVector localPos
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Vector3 GetDefaultNormal(Face) */
 
 Vector3 * Assembly-CSharp.dll::Cube::Cube_GetDefaultNormal(Vector3 *__return_storage_ptr__,Face__Enum face,MethodInfo *method)
 
 {
+  uVar1 = CONCAT44(unaff_EBP,in_stack_2);
   __return_storage_ptr__->x = 0.0;
   __return_storage_ptr__->y = 0.0;
   __return_storage_ptr__->z = 0.0;
@@ -2059,33 +2050,79 @@ Vector3 * Assembly-CSharp.dll::Cube::Cube_GetDefaultNormal(Vector3 *__return_sto
     __return_storage_ptr__->z = 1.0;
     return __return_storage_ptr__;
   case Face__Enum_Left:
-    in_XMM1_Da = 0xbf800000;
-    in_XMM1_Db = 0;
-    break;
+    __return_storage_ptr__->x = -1.0;
+    __return_storage_ptr__->y = 0.0;
+    __return_storage_ptr__->z = 0.0;
+    return __return_storage_ptr__;
   case Face__Enum_Right:
     __return_storage_ptr__->x = 1.0;
     __return_storage_ptr__->y = 0.0;
     __return_storage_ptr__->z = 0.0;
     return __return_storage_ptr__;
-  default:
-    func_?();
-    this = (NotImplementedException *)func_?();
-    mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor(this,(MethodInfo *)0x0);
-    func_?();
-    bVar1 = (undefined1 *)0xffffffeb < &stack0xffffffe0;
-    bVar2 = (POPCOUNT((uint)auStack_3 & 0xff) & 1U) == 0;
-    func_?();
-    if (bVar2) {
-                    /* WARNING: Bad instruction - Truncating control flow here */
-      halt_baddata();
-    }
-    *unaff_EDI = *unaff_EDI + extraout_ECX + (uint)bVar1;
-    __return_storage_ptr__ = extraout_EDX;
   }
-  __return_storage_ptr__->x = (float)in_XMM1_Da;
-  __return_storage_ptr__->y = (float)in_XMM1_Db;
-  __return_storage_ptr__->z = 0.0;
-  return __return_storage_ptr__;
+  func_?();
+  this = (NotImplementedException *)func_?();
+  mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor(this,(MethodInfo *)0x0);
+  this_00 = (GameObject *)func_?();
+  uVar3 = func_?();
+  *unaff_EDI = uVar3;
+  *(undefined1 *)(unaff_EDI + 1) = *(undefined1 *)&this->klass;
+  cRam_? = cRam_? + (char)((uint)extraout_ECX >> 8) + ((int)((ulonglong)uVar3 * (ulonglong)*(uint *)(extraout_ECX + 0x69a51210 + (int)&stack0xfffffffc * 2) >> 0x20) != 0);
+  *(undefined4 *)((int)unaff_EDI + 5) = *(undefined4 *)((int)&this->klass + 1);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__Cube,(int)unaff_EDI + 9,(undefined1 *)((int)&this->monitor + 1));
+    cRam_? = '\x01';
+  }
+  iVar4 = (int)(short)((uint)unaff_retaddr >> 0x10);
+  if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__Cube);
+  }
+  pVVar5 = Cube_GetEdge(in_stack_6,(Face__Enum)uVar1,(Edge__Enum)((ulonglong)uVar1 >> 0x20),(MethodInfo *)0x0);
+  if ((this_00 != (GameObject *)0x0) && (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0), pVVar5 != (Vector3__Array *)0x0)) {
+    if (pVVar5->max_length == 0) goto code_?;
+    uVar8 = pVVar5->vector[0].x;
+    uVar9 = pVVar5->vector[0].y;
+    if (pTVar7 != (Transform *)0x0) {
+      position.y = (float)uVar9 + (float)iVar4;
+      position.x = (float)uVar8 + (float)(int)(short)unaff_retaddr;
+      position.z = pVVar5->vector[0].z + (float)(int)(short)__return_storage_ptr__;
+      pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint((Vector3 *)&stack0xffffffdc,pTVar7,position,(MethodInfo *)0x0);
+      fVar11 = pVVar10->y;
+      fVar12 = pVVar10->z;
+      if (pVVar5->max_length == 0) goto code_?;
+      iVar13 = 0;
+      pVVar5->vector[0].x = pVVar10->x;
+      pVVar5->vector[0].y = fVar11;
+      pVVar5->vector[0].z = fVar12;
+      pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0);
+      if (*(uint *)(iVar13 + 0xc) < 2) goto code_?;
+      fVar11 = (float)*(undefined8 *)(iVar13 + 0x1c) + (float)(int)(short)unaff_retaddr;
+      fVar12 = (float)((ulonglong)*(undefined8 *)(iVar13 + 0x1c) >> 0x20) + (float)iVar4;
+      if (pTVar7 != (Transform *)0x0) {
+        uVar1 = CONCAT44(fVar12,fVar11);
+        position_00.z = *(float *)(iVar13 + 0x24) + (float)(int)(short)__return_storage_ptr__;
+        position_00.x = fVar11;
+        position_00.y = fVar12;
+        pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint((Vector3 *)&stack0xffffffdc,pTVar7,position_00,(MethodInfo *)0x0);
+        fVar11 = pVVar10->y;
+        fVar12 = pVVar10->z;
+        pVVar14 = (Vector3 *)((ulonglong)uVar1 >> 0x20);
+        if (1 < (uint)pVVar14[1].x) {
+          pVVar14[2].y = pVVar10->x;
+          pVVar14[2].z = fVar11;
+          pVVar14[3].x = fVar12;
+          return pVVar14;
+        }
+        goto code_?;
+      }
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar15 = (code *)swi(3);
+  pVVar10 = (Vector3 *)(*pcVar15)();
+  return pVVar10;
 }
 
 
@@ -2281,7 +2318,7 @@ Edge__Enum Assembly-CSharp.dll::Cube::Cube_GetEdge_1(GameObject *gameObject,Cube
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
     func_?(&TypeRef__Edge);
-    func_?(0xe664);
+    func_?(0x6d8);
     func_?(&TypeInfo__System__Enum);
     func_?(&TypeInfo__System__IDisposable);
     func_?(&TypeInfo__System__Collections__IEnumerator);
@@ -3234,56 +3271,40 @@ void Assembly-CSharp.dll::Cube::Cube_GetTriangle(int32_t triangleNr,Vector3__Arr
   case 0xb:
     if ((corners == (Vector3__Array *)0x0) || (func_?(), triangleVertices == (Vector3__Array *)0x0)) {
 code_?:
-      bVar1 = 0;
       func_?();
-      puVar2 = (uint *)(extraout_ECX + 0x69acb510 + (int)&stack0xfffffffc * 2);
-      uVar3 = (int)(&stack0xfffffffc + -*puVar2) - (int)(uint)bVar1;
-      *(char *)&corners->klass = *(char *)&corners->klass + extraout_AH + (&stack0xfffffffc < (undefined1 *)*puVar2 || &stack0xfffffffc + -*puVar2 < (undefined1 *)(uint)bVar1);
-      pVVar4 = corners->klass;
-      lVar5 = (longlong)(int)(pVVar4->_0).image * 0xADDR;
-      puVar2 = (uint *)(extraout_ECX + 0x69ac1b10 + uVar3 * 2);
-      uVar6 = (uint)((int)lVar5 != lVar5);
-      uVar7 = uVar3 - *puVar2;
-      uVar8 = uVar7 - uVar6;
-      *unaff_EBX = *unaff_EBX + (char)unaff_EBX + (uVar3 < *puVar2 || uVar7 < uVar6);
-      lVar5 = (longlong)*(int *)CONCAT31((int3)((uint)pVVar4 >> 8),*(undefined1 *)&corners->monitor) * 0xADDR;
-      puVar2 = (uint *)(extraout_ECX + 0x69ac1b10 + uVar8 * 2);
-      *unaff_EBX = *unaff_EBX + (char)unaff_EBX + (uVar8 < *puVar2 || uVar8 - *puVar2 < (uint)((int)lVar5 != lVar5));
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
       return;
     }
-    func_?(0,uStack_10,uStack_11);
-    func_?(&uStack_10,1);
-    func_?(1,uStack_10,uStack_11);
-    uVar12 = 2;
+    func_?(0,uStack_1,uStack_2);
+    func_?(&uStack_1,1);
+    func_?(1,uStack_1,uStack_2);
+    uVar3 = 2;
     break;
   case 1:
     if ((corners == (Vector3__Array *)0x0) || (func_?(), triangleVertices == (Vector3__Array *)0x0)) goto code_?;
-    func_?(0,uStack_10,uStack_11);
-    func_?(&uStack_10,2);
-    func_?(1,uStack_10,uStack_11);
-    uVar12 = 3;
+    func_?(0,uStack_1,uStack_2);
+    func_?(&uStack_1,2);
+    func_?(1,uStack_1,uStack_2);
+    uVar3 = 3;
     break;
   case 2:
     if ((corners == (Vector3__Array *)0x0) || (func_?(), triangleVertices == (Vector3__Array *)0x0)) goto code_?;
-    func_?(0,uStack_10,uStack_11);
-    func_?(&uStack_10,5);
-    func_?(1,uStack_10,uStack_11);
-    uVar12 = 6;
+    func_?(0,uStack_1,uStack_2);
+    func_?(&uStack_1,5);
+    func_?(1,uStack_1,uStack_2);
+    uVar3 = 6;
     break;
   case 3:
     if ((corners == (Vector3__Array *)0x0) || (func_?(), triangleVertices == (Vector3__Array *)0x0)) goto code_?;
-    func_?(0,uStack_10,uStack_11);
-    func_?(&uStack_10,6);
-    func_?(1,uStack_10,uStack_11);
-    uVar12 = 7;
+    func_?(0,uStack_1,uStack_2);
+    func_?(&uStack_1,6);
+    func_?(1,uStack_1,uStack_2);
+    uVar3 = 7;
     break;
   default:
     goto code_?;
   }
-  func_?(&uStack_10,uVar12);
-  func_?(2,uStack_10,uStack_11);
+  func_?(&uStack_1,uVar3);
+  func_?(2,uStack_1,uStack_2);
 code_?:
   return;
 }
@@ -4409,21 +4430,25 @@ void Assembly-CSharp.dll::Cube::Cube_SetEdge_1(Vector3__Array **corners,Face__En
   switch(edge) {
   case Edge__Enum_Front:
     if (edgeVertices != (Vector3__Array *)0x0) {
+      cVar2 = '\0';
       if (edgeVertices->max_length == 0) goto code_?;
       if (pVVar1 != (Vector3__Array *)0x0) {
-        fVar2 = edgeVertices->vector[0].y;
-        fVar3 = edgeVertices->vector[0].z;
+        cVar2 = '\0';
+        fVar3 = edgeVertices->vector[0].y;
+        fVar4 = edgeVertices->vector[0].z;
         if (pVVar1->max_length != 0) {
           pVVar1->vector[0].x = edgeVertices->vector[0].x;
-          pVVar1->vector[0].y = fVar2;
-          pVVar1->vector[0].z = fVar3;
+          pVVar1->vector[0].y = fVar3;
+          pVVar1->vector[0].z = fVar4;
+          cVar2 = edgeVertices->max_length == 0;
           if (1 < edgeVertices->max_length) {
-            fVar2 = edgeVertices->vector[1].y;
-            fVar3 = edgeVertices->vector[1].z;
+            cVar2 = pVVar1->max_length == 0;
+            fVar3 = edgeVertices->vector[1].y;
+            fVar4 = edgeVertices->vector[1].z;
             if (1 < pVVar1->max_length) {
               pVVar1->vector[1].x = edgeVertices->vector[1].x;
-              pVVar1->vector[1].y = fVar2;
-              pVVar1->vector[1].z = fVar3;
+              pVVar1->vector[1].y = fVar3;
+              pVVar1->vector[1].z = fVar4;
               goto code_?;
             }
           }
@@ -4434,21 +4459,25 @@ void Assembly-CSharp.dll::Cube::Cube_SetEdge_1(Vector3__Array **corners,Face__En
     break;
   case Edge__Enum_Back:
     if (edgeVertices != (Vector3__Array *)0x0) {
+      cVar2 = '\0';
       if (edgeVertices->max_length == 0) goto code_?;
       if (pVVar1 != (Vector3__Array *)0x0) {
-        fVar2 = edgeVertices->vector[0].y;
-        fVar3 = edgeVertices->vector[0].z;
+        cVar2 = pVVar1->max_length < 2;
+        fVar3 = edgeVertices->vector[0].y;
+        fVar4 = edgeVertices->vector[0].z;
         if (2 < pVVar1->max_length) {
           pVVar1->vector[2].x = edgeVertices->vector[0].x;
-          pVVar1->vector[2].y = fVar2;
-          pVVar1->vector[2].z = fVar3;
+          pVVar1->vector[2].y = fVar3;
+          pVVar1->vector[2].z = fVar4;
+          cVar2 = edgeVertices->max_length == 0;
           if (1 < edgeVertices->max_length) {
-            fVar2 = edgeVertices->vector[1].y;
-            fVar3 = edgeVertices->vector[1].z;
+            cVar2 = pVVar1->max_length < 3;
+            fVar3 = edgeVertices->vector[1].y;
+            fVar4 = edgeVertices->vector[1].z;
             if (3 < pVVar1->max_length) {
               pVVar1->vector[3].x = edgeVertices->vector[1].x;
-              pVVar1->vector[3].y = fVar2;
-              pVVar1->vector[3].z = fVar3;
+              pVVar1->vector[3].y = fVar3;
+              pVVar1->vector[3].z = fVar4;
               goto code_?;
             }
           }
@@ -4459,21 +4488,25 @@ void Assembly-CSharp.dll::Cube::Cube_SetEdge_1(Vector3__Array **corners,Face__En
     break;
   case Edge__Enum_Left:
     if (edgeVertices != (Vector3__Array *)0x0) {
+      cVar2 = '\0';
       if (edgeVertices->max_length == 0) goto code_?;
       if (pVVar1 != (Vector3__Array *)0x0) {
-        fVar2 = edgeVertices->vector[0].y;
-        fVar3 = edgeVertices->vector[0].z;
+        cVar2 = pVVar1->max_length < 3;
+        fVar3 = edgeVertices->vector[0].y;
+        fVar4 = edgeVertices->vector[0].z;
         if (3 < pVVar1->max_length) {
           pVVar1->vector[3].x = edgeVertices->vector[0].x;
-          pVVar1->vector[3].y = fVar2;
-          pVVar1->vector[3].z = fVar3;
+          pVVar1->vector[3].y = fVar3;
+          pVVar1->vector[3].z = fVar4;
+          cVar2 = edgeVertices->max_length == 0;
           if (1 < edgeVertices->max_length) {
-            fVar2 = edgeVertices->vector[1].y;
-            fVar3 = edgeVertices->vector[1].z;
+            cVar2 = '\0';
+            fVar3 = edgeVertices->vector[1].y;
+            fVar4 = edgeVertices->vector[1].z;
             if (pVVar1->max_length != 0) {
               pVVar1->vector[0].x = edgeVertices->vector[1].x;
-              pVVar1->vector[0].y = fVar2;
-              pVVar1->vector[0].z = fVar3;
+              pVVar1->vector[0].y = fVar3;
+              pVVar1->vector[0].z = fVar4;
               goto code_?;
             }
           }
@@ -4484,21 +4517,25 @@ void Assembly-CSharp.dll::Cube::Cube_SetEdge_1(Vector3__Array **corners,Face__En
     break;
   case Edge__Enum_Right:
     if (edgeVertices != (Vector3__Array *)0x0) {
+      cVar2 = '\0';
       if (edgeVertices->max_length == 0) goto code_?;
       if (pVVar1 != (Vector3__Array *)0x0) {
-        fVar2 = edgeVertices->vector[0].y;
-        fVar3 = edgeVertices->vector[0].z;
+        cVar2 = pVVar1->max_length == 0;
+        fVar3 = edgeVertices->vector[0].y;
+        fVar4 = edgeVertices->vector[0].z;
         if (1 < pVVar1->max_length) {
           pVVar1->vector[1].x = edgeVertices->vector[0].x;
-          pVVar1->vector[1].y = fVar2;
-          pVVar1->vector[1].z = fVar3;
+          pVVar1->vector[1].y = fVar3;
+          pVVar1->vector[1].z = fVar4;
+          cVar2 = edgeVertices->max_length == 0;
           if (1 < edgeVertices->max_length) {
-            fVar2 = edgeVertices->vector[1].y;
-            fVar3 = edgeVertices->vector[1].z;
+            cVar2 = pVVar1->max_length < 2;
+            fVar3 = edgeVertices->vector[1].y;
+            fVar4 = edgeVertices->vector[1].z;
             if (2 < pVVar1->max_length) {
               pVVar1->vector[2].x = edgeVertices->vector[1].x;
-              pVVar1->vector[2].y = fVar2;
-              pVVar1->vector[2].z = fVar3;
+              pVVar1->vector[2].y = fVar3;
+              pVVar1->vector[2].z = fVar4;
               goto code_?;
             }
           }
@@ -4515,15 +4552,33 @@ code_?:
     Cube_SetFace_1(corners,face,pVVar1,(MethodInfo *)0x0);
     return;
   }
+  cVar2 = '\0';
   func_?();
 code_?:
   func_?();
-  lVar4 = (longlong)(int)pVVar1 * 0x69;
-  cVar5 = (char)((ulonglong)lVar4 >> 8);
-  pcVar6 = (code *)swi(4);
-  if (SCARRY1(cVar5,cVar5) != SCARRY1(cVar5 * '\x02',(int)lVar4 != lVar4)) {
-    (*pcVar6)();
+  in(0x69);
+  cRam_? = cRam_? + unaff_BL + cVar2;
+  in(0x69);
+  in(0x69);
+  in(extraout_DX);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__Cube);
+    cRam_? = '\x01';
   }
+  if (corners == (Vector3__Array **)0x0) {
+    func_?(0,pVVar1);
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  pVVar1 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners((CubeBase *)corners,(MethodInfo *)0x0);
+  if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__Cube);
+  }
+  TypeInfo__Cube->static_fields->cornersBookkeeping = pVVar1;
+  func_?(TypeInfo__Cube->static_fields,pVVar1);
+  Cube_SetEdge_1(&TypeInfo__Cube->static_fields->cornersBookkeeping,face,edge,edgeVertices,(MethodInfo *)0x0);
+  MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_set_Corners((CubeBase *)corners,TypeInfo__Cube->static_fields->cornersBookkeeping,(MethodInfo *)0x0);
   return;
 }
 
@@ -4687,11 +4742,16 @@ code_?:
   default:
     goto code_?;
   }
-  uRam_? = func_?();
-  *(uint *)(extraout_ECX + 0x10) = *(uint *)(extraout_ECX + 0x10) >> 1;
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
+  bVar5 = 0;
+  uVar6 = func_?();
+  uVar7 = in((short)((uint6)uVar6 >> 0x20));
+  out(0x69,uVar7);
+  bVar8 = (byte)((uint6)uVar6 >> 0x20);
+  out(0x69,CONCAT31((int3)((uint6)uVar6 >> 8),uVar7));
+  pfVar9 = &faceVertices[-0x409956].vector[4].z;
+  *(char *)pfVar9 = *(char *)pfVar9 + (char)((uint6)uVar6 >> 0x28) + (CARRY1(extraout_CL,bVar8) || CARRY1(extraout_CL + bVar8,bVar5));
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

@@ -183,7 +183,7 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_Initialize(Pickup
       }
       iVar5 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(StringLiteral_Default,(MethodInfo *)0x0);
       uVar6 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(StringLiteral_Player,(MethodInfo *)0x0);
-      in_stack_7[0x12].fields._.m_CachedPtr = (void *)(1 << ((byte)iVar5 & 0x1f) | 1 << (uVar6 & 0x1f));
+      in_stack_7[0x12].klass = (Component__Class *)(1 << ((byte)iVar5 & 0x1f) | 1 << (uVar6 & 0x1f));
       if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -222,10 +222,11 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_Initialize(Pickup
         }
       }
 code_?:
-      pMVar12 = (MonitorData *)(*(code *)in_stack_7->klass[2]._0.fields)();
-      in_stack_7[0x12].monitor = pMVar12;
+      (*(code *)in_stack_7->klass[2]._0.properties)();
+      pvVar12 = (void *)(*(code *)in_stack_7->klass[2]._0.fields)();
+      in_stack_7[0x11].fields._.m_CachedPtr = pvVar12;
       func_?();
-      (*(code *)in_stack_7->klass[2]._0.nestedTypes)();
+      (*(code *)in_stack_7->klass[2].interfaceOffsets)();
       return;
     }
   }
@@ -620,7 +621,7 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnAvatarInvisible
         pMVar5 = (pMVar2->fields)._.body;
         if ((pMVar5 != (MVBody *)0x0) && (this_04 = MVBody::MVBody_get_BlobShadow(pMVar5,(MethodInfo *)0x0), this_04 != (AvatarBlobShadowController *)0x0)) {
           this = (PickupItemCostume *)0x0;
-          cVar6 = -0x34;
+          cVar6 = 'L';
           AvatarBlobShadowController::AvatarBlobShadowController_set_ForceHidden(this_04,value_00,(MethodInfo *)0x0);
           if (((TypeInfo__MVAvatarRemote->_1).naturalAligment <= *(byte *)&((Il2CppClass_0 *)&pMVar2->klass)->image[4].assembly) && (*(MVAvatarRemote__Class **)((((Il2CppClass_0 *)&pMVar2->klass)->image[2].typeCount - 4) + (uint)(TypeInfo__MVAvatarRemote->_1).naturalAligment * 4) == TypeInfo__MVAvatarRemote)) {
             avatar = (MVAvatarRemote *)0x0;

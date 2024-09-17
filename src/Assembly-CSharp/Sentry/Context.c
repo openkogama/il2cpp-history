@@ -182,23 +182,10 @@ code_?:
     }
   }
 code_?:
-  pbVar12 = (byte *)func_?();
-  bVar13 = CARRY1(*pbVar12,extraout_CH) || CARRY1(*pbVar12 + extraout_CH,in_stack_14 < extraout_DL);
-  *pbVar12 = *pbVar12 + extraout_CH + (in_stack_14 < extraout_DL);
-  pbVar15 = (byte *)(unaff_EBX + 0x55);
-  bVar16 = (byte)pbVar12;
-  bVar17 = CARRY1(*pbVar15,bVar16) || CARRY1(*pbVar15 + bVar16,bVar13);
-  *pbVar15 = *pbVar15 + bVar16 + bVar13;
-  pbVar15 = (byte *)(unaff_EBX + 0x55);
-  bVar13 = CARRY1(*pbVar15,bVar16) || CARRY1(*pbVar15 + bVar16,bVar17);
-  *pbVar15 = *pbVar15 + bVar16 + bVar17;
-  pbVar15 = pbVar12 + 0x55;
-  bVar16 = *pbVar15;
-  bVar18 = *pbVar15;
-  *pbVar15 = bVar18 + extraout_CH + bVar13;
-  pbVar12[0x55] = pbVar12[0x55] + extraout_CH + (CARRY1(bVar16,extraout_CH) || CARRY1(bVar18 + extraout_CH,bVar13));
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  iVar12 = func_?();
+  *(char *)(iVar12 + -0x3cefb0eb) = *(char *)(iVar12 + -0x3cefb0eb) + extraout_CH;
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

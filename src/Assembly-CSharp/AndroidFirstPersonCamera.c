@@ -120,48 +120,46 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera_Upd
         uVar9 = pVVar5->y;
         (this->fields)._.targetRotation.x = (float)uVar8 * (this->fields)._.pitchSensitivity + (this->fields)._.targetRotation.x;
         (this->fields)._.targetRotation.y = (float)uVar9 * (this->fields)._.yawSensitivity + (this->fields)._.targetRotation.y;
-        fVar4 = -(this->fields)._.maxLookAngleDownward;
+        fVar3 = (this->fields)._.maxLookAngleDownward;
         fVar10 = (float10)func_?();
         fVar11 = (this->fields)._.targetRotation.x - (float)fVar10 * 360.0;
-        fVar3 = 0.0;
-        if ((0.0 <= fVar11) && (fVar3 = fVar11, 360.0 < fVar11)) {
-          fVar3 = 360.0;
-        }
-        fVar10 = (float10)func_?();
-        fVar4 = fVar4 - (float)fVar10 * 360.0;
-        fVar11 = 0.0;
-        if ((0.0 <= fVar4) && (fVar11 = fVar4, 360.0 < fVar4)) {
-          fVar11 = 360.0;
-        }
-        fVar10 = (float10)func_?();
-        fVar4 = (this->fields)._.maxLookAngleUpward - (float)fVar10 * 360.0;
-        if (fVar4 < 0.0) {
-          fVar4 = 0.0;
-        }
-        else if (360.0 < fVar4) {
+        fVar4 = 0.0;
+        if ((0.0 <= fVar11) && (fVar4 = fVar11, 360.0 < fVar11)) {
           fVar4 = 360.0;
         }
-        if ((fVar3 < fVar11) && (fVar4 < fVar3)) {
-          eulerA = fVar3;
-          fVar12 = AndroidFirstPersonCamera_DegreesBetween(this,fVar3,fVar11,(MethodInfo *)0x0);
-          fVar3 = fVar4;
-          fVar4 = AndroidFirstPersonCamera_DegreesBetween(this,eulerA,fVar4,(MethodInfo *)0x0);
-          if (fVar12 < fVar4) {
-            fVar3 = fVar11;
+        fVar10 = (float10)func_?();
+        fVar3 = -fVar3 - (float)fVar10 * 360.0;
+        fStack_12 = 0.0;
+        if ((0.0 <= fVar3) && (fStack_12 = fVar3, 360.0 < fVar3)) {
+          fStack_12 = 360.0;
+        }
+        fVar10 = (float10)func_?();
+        fVar3 = (this->fields)._.maxLookAngleUpward - (float)fVar10 * 360.0;
+        if (fVar3 < 0.0) {
+          fVar3 = 0.0;
+        }
+        else if (360.0 < fVar3) {
+          fVar3 = 360.0;
+        }
+        if ((fVar4 < fStack_12) && (fVar3 < fVar4)) {
+          fVar11 = fVar4;
+          fVar13 = AndroidFirstPersonCamera_DegreesBetween(this,fVar4,fStack_12,(MethodInfo *)0x0);
+          fVar4 = fVar3;
+          fVar3 = AndroidFirstPersonCamera_DegreesBetween(this,fVar11,fVar3,(MethodInfo *)0x0);
+          if (fVar13 < fVar3) {
+            fVar4 = fStack_12;
           }
         }
-        (this->fields)._.targetRotation.x = fVar3;
-        pTVar13 = (this->fields)._.smoothRotation;
-        fVar4 = (this->fields)._.targetRotation.y;
-        if (pTVar13 != (TargetRotation *)0x0) {
-          (pTVar13->fields).eulerAngles.x = fVar3;
-          (pTVar13->fields).eulerAngles.y = fVar4;
-          (pTVar13->fields).eulerAngles.z = 0.0;
+        (this->fields)._.targetRotation.x = fVar4;
+        pTVar14 = (this->fields)._.smoothRotation;
+        if (pTVar14 != (TargetRotation *)0x0) {
+          TargetRotation::TargetRotation_SetTargetRotation_1(pTVar14,fVar4,(this->fields)._.targetRotation.y,(MethodInfo *)0x0);
           this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-          pTVar13 = (this->fields)._.smoothRotation;
+          pTVar14 = (this->fields)._.smoothRotation;
           this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-          if (((this_03 != (Transform *)0x0) && (pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffd4,this_03,(MethodInfo *)0x0), pTVar13 != (TargetRotation *)0x0)) && (pQVar14 = TargetRotation::TargetRotation_GetLerpRotation((Quaternion *)&stack0xffffffd4,pTVar13,*pQVar14,(MethodInfo *)0x0), this_02 != (Transform *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(this_02,*pQVar14,(MethodInfo *)0x0);
+          if (((this_03 != (Transform *)0x0) && (pQVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffd4,this_03,(MethodInfo *)0x0), pTVar14 != (TargetRotation *)0x0)) && (pQVar15 = TargetRotation::TargetRotation_GetLerpRotation((Quaternion *)&stack0xffffffd4,pTVar14,*pQVar15,(MethodInfo *)0x0), this_02 != (Transform *)0x0)) {
+            fStack16 = pQVar15->w;
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(this_02,*pQVar15,(MethodInfo *)0x0);
             return;
           }
         }
@@ -169,36 +167,8 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera_Upd
     }
   }
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
-  return;
-}
-
-
-/* AndroidFirstPersonCamera() */
-
-void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera__ctor(AndroidFirstPersonCamera *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__List_int_);
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>);
-    cRam_? = '\x01';
-  }
-  (this->fields)._.cameraOffset.x = 0.0;
-  (this->fields)._.cameraOffset.y = 2.0;
-  (this->fields)._.cameraHeight = 2.0;
-  (this->fields)._.maxLookAngleDownward = 60.0;
-  (this->fields)._.maxLookAngleUpward = 60.0;
-  (this->fields)._.cameraOffset.z = 0.0;
-  (this->fields)._.pitchSensitivity = 0.5;
-  (this->fields)._.yawSensitivity = 0.5;
-  this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2(this_00,0x20,MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__List_int_);
-  (this->fields)._.vehiclesHiddenMeshRenderers = (List_1_UnityEngine_MeshRenderer_ *)this_00;
-  func_?(&(this->fields)._.vehiclesHiddenMeshRenderers,this_00);
-  (this->fields)._._.cameraRadius = 0.3;
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

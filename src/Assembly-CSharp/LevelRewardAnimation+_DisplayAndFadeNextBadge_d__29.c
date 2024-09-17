@@ -1,4 +1,6 @@
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Boolean MoveNext() */
 
 bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::LevelRewardAnimation_DisplayAndFadeNextBadge_d_29_MoveNext(LevelRewardAnimation_DisplayAndFadeNextBadge_d_29 *this,MethodInfo *method)
@@ -109,6 +111,7 @@ code_?:
                             euler_01.x = fVar2;
                             euler_01.z = 0.0;
                             pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffc0,euler_01,(MethodInfo *)0x0);
+                            pLVar1 = (LevelRewardAnimation_DisplayAndFadeNextBadge_d_29 *)0x0;
                             if (pTVar4 != (Transform *)0x0) {
                               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar4,*pQVar5,(MethodInfo *)0x0);
                               if (cRam_? == '\0') {
@@ -227,19 +230,16 @@ code_?:
     }
   }
 code_?:
-  cVar15 = '\0';
-  lVar16 = func_?();
-  lVar16 = lVar16 / (longlong)(int)(this_02->_0).image;
-  pppIVar17 = &this_02[-0x54df21]._0.implementedInterfaces;
-  *(char *)pppIVar17 = *(char *)pppIVar17 + (char)((ulonglong)lVar16 >> 8) + cVar15;
-  bVar18 = (byte)lVar16;
-  in_AF = 9 < (bVar18 & 0xf) | in_AF;
-  *extraout_ECX = *extraout_ECX + (char)((uint)extraout_ECX >> 8) + in_AF;
-  *extraout_ECX = *extraout_ECX + (char)((uint)&stack0xfffffffc >> 8) + (9 < (bVar18 + in_AF * -6 & 0xf) | in_AF);
-  (this_02->_0).image = (Il2CppImage *)((int)&(((MonoBehaviour__Class *)(this_02->_0).image)->_0).image + 1);
-  pcVar19 = (code *)swi(3);
-  bVar20 = (*pcVar19)();
-  return bVar20;
+  bVar15 = func_?();
+  if (extraout_ECX != 1) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  *(byte *)&(this_02->_0).image = *(char *)&(this_02->_0).image + extraout_DH + (9 < (bVar15 & 0xf) | in_AF);
+  func_?(pLVar1);
+  pcVar16 = (code *)swi(3);
+  bVar17 = (*pcVar16)();
+  return bVar17;
 }
 
 

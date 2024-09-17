@@ -19,7 +19,6 @@ public class MVUtils : MonoBehaviour
 	public MVUtils();
 
 	// Methods
-	private void Update();
 	private static bool CheckPro();
 }
 

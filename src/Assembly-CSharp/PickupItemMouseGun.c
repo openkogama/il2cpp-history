@@ -35,7 +35,8 @@ void Assembly-CSharp.dll::PickupItemMouseGun::PickupItemMouseGun__ctor(PickupIte
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
-  pOVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::ObscuredInt_op_Implicit(&OStack_2,5,(MethodInfo *)0x0);
+  pOVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::ObscuredInt_op_Implicit((ObscuredInt *)&stack0xffffffec,5,(MethodInfo *)0x0);
+  bVar2 = cRam_? == '\0';
   iVar3 = pOVar1->hiddenValue;
   iVar4 = pOVar1->fakeValue;
   bVar5 = pOVar1->inited;
@@ -53,7 +54,39 @@ void Assembly-CSharp.dll::PickupItemMouseGun::PickupItemMouseGun__ctor(PickupIte
   (this->fields)._.missColor.g = 0.3;
   (this->fields)._.missColor.b = 0.2;
   (this->fields)._.missColor.a = 1.0;
-  PickupItemWithDelay::PickupItemWithDelay__ctor((PickupItemWithDelay *)this,(MethodInfo *)0x0);
+  if (bVar2) {
+    func_?();
+    cRam_? = '\x01';
+  }
+  (this->fields)._._.crossHairCannotFireLow.r = 1.0;
+  (this->fields)._._.crossHairCannotFireLow.g = 0.0;
+  (this->fields)._._.crossHairCannotFireLow.b = 0.0;
+  (this->fields)._._.crossHairCannotFireLow.a = 1.0;
+  (this->fields)._._.crossHairCannotFireHigh.r = 1.0;
+  (this->fields)._._.crossHairCannotFireHigh.g = 0.92156863;
+  (this->fields)._._.crossHairCannotFireHigh.b = 0.015686275;
+  (this->fields)._._.crossHairCannotFireHigh.a = 1.0;
+  (this->fields)._._.crossHairCanFire.r = 0.0;
+  (this->fields)._._.crossHairCanFire.g = 1.0;
+  (this->fields)._._.crossHairCanFire.b = 0.0;
+  (this->fields)._._.crossHairCanFire.a = 1.0;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pOVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe8,1.0,(MethodInfo *)0x0);
+  AVar8 = pOVar7->hiddenValue;
+  pBVar9 = pOVar7->hiddenValueOld;
+  fVar10 = pOVar7->fakeValue;
+  bVar5 = pOVar7->inited;
+  uVar6 = *(undefined3 *)&pOVar7->field_0x11;
+  (this->fields)._._.fireInterval.currentCryptoKey = pOVar7->currentCryptoKey;
+  (this->fields)._._.fireInterval.hiddenValue = AVar8;
+  (this->fields)._._.fireInterval.hiddenValueOld = pBVar9;
+  (this->fields)._._.fireInterval.fakeValue = fVar10;
+  (this->fields)._._.fireInterval.inited = bVar5;
+  *(undefined3 *)&(this->fields)._._.fireInterval.field_0x11 = uVar6;
+  func_?();
+  PickupItem::PickupItem__ctor((PickupItem *)this,(MethodInfo *)0x0);
   return;
 }
 

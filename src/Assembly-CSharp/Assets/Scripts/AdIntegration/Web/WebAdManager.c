@@ -505,7 +505,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::Web
     }
     MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdAction(this_00,AdType__Enum_InterstitialAd,AdActionType__Enum_Success,AdContext__Enum_None,(MethodInfo *)0x0);
     WebAdManager_SetFinishedWatchingAd((WebAdManager *)&UNK_?,StringLiteral_Interstitial,(MethodInfo *)0x0);
-    pUStack4 = (UnityAction_1_System_Int32Enum_ *)0xffc819db;
+    pUStack4 = (UnityAction_1_System_Int32Enum_ *)0xffc8399b;
     puStack5 = (undefined *)0x3;
     pIStack6 = TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager;
     pIStack7 = (IAdManager__Class *)0x3;
@@ -514,10 +514,10 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::Web
   }
   this_01 = (UnityAction_1_System_Int32Enum_ *)func_?();
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(this_01,(Object *)&UNK_?,MethodInfo__Assets__Scripts__AdIntegration__Web__WebAdManager__OnInHouseInterstitialAdShownCallback_Assets__Scripts__AdIntegration__InterstitialAdResult_,(MethodInfo *)0x0);
-  puStack5 = (undefined *)0x6ec0358b;
+  puStack5 = (undefined *)0x8f70358b;
   pIStack7 = TypeInfo__Assets__Scripts__AdIntegration__IAdManager;
   puStack8 = (undefined *)0x7;
-  pIStack6 = (IAdUIManager__Class *)0xbaf81705;
+  pIStack6 = (IAdUIManager__Class *)0xbb189205;
   pUStack4 = this_01;
   func_?();
   return;
