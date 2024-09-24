@@ -382,19 +382,19 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   case RewardedAdResult__Enum_ErrorInternal:
   case RewardedAdResult__Enum_RewardNotUnlocked:
     method_00 = unaff_EDI;
-    value = (Object *)func_?(TypeInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    if (value != (Object *)0x0) {
-      value[1].monitor = (MonitorData *)this;
-      func_?(&value[1].monitor,this);
+    unaff_ESI = (Object *)func_?(TypeInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(unaff_ESI,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    if (unaff_ESI != (Object *)0x0) {
+      unaff_ESI[1].monitor = (MonitorData *)this;
+      func_?(&unaff_ESI[1].monitor,this);
       original = (this->fields)._.errorNotification;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
       pOVar1 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original,NotificationPopup_MethodInfo__UnityEngine__Object__Instantiate<NotificationPopup>_NotificationPopup_);
-      value[1].klass = pOVar1;
-      func_?(value + 1,pOVar1);
-      unaff_EBX = value[1].klass;
+      unaff_ESI[1].klass = pOVar1;
+      func_?(unaff_ESI + 1,pOVar1);
+      unaff_EBX = unaff_ESI[1].klass;
       pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
       unaff_EDI = this;
       if (pIVar2 != (IAdManager *)0x0) {
@@ -404,7 +404,7 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
           NotificationPopup::NotificationPopup_Initialize((NotificationPopup *)unaff_EBX,text,header,(MethodInfo *)0x0);
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
           callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,MethodInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0___OnRewardedAdWatched_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,unaff_ESI,MethodInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0___OnRewardedAdWatched_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
@@ -425,11 +425,19 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
     return;
   }
   uVar4 = func_?();
-  pcVar5 = (char *)((int)&unaff_EDI[-1].fields.backgroundTier2 + 1);
-  *pcVar5 = *pcVar5 + (char)unaff_EBX + (uVar4 < 0x3ded8810);
-  *(char *)(uVar4 + 0xcc103ded) = *(char *)(uVar4 + 0xcc103ded) + extraout_CL + (uVar4 < 0x3ded8610);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pbVar5 = (byte *)((ulonglong)uVar4 >> 0x20);
+  pcVar6 = (char *)uVar4;
+  *pbVar5 = *pbVar5 | (byte)uVar4;
+  *pcVar6 = *pcVar6 + extraout_CL;
+  bVar7 = *(byte *)&unaff_ESI->klass;
+  bVar8 = (byte)((uint)unaff_EBX >> 8);
+  cVar9 = *(char *)&unaff_ESI->klass;
+  pOVar1 = unaff_ESI->klass;
+  unaff_ESI->klass = (Object__Class *)((int)&unaff_EDI->klass + (int)unaff_ESI->klass);
+  *(byte *)&unaff_ESI->klass = *(char *)&unaff_ESI->klass + (byte)uVar4 + CARRY4((uint)pOVar1,(uint)unaff_EDI);
+  *pcVar6 = *pcVar6 + extraout_CL + CARRY1(bVar8 + cVar9 + (char)unaff_EBX + CARRY1(bVar8,bVar7),*(byte *)&unaff_ESI->klass);
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

@@ -302,9 +302,9 @@ code_?:
         bVar13 = 0;
         this = (FirstPersonCamera *)0x0;
         do {
-          if (TypeInfo__UseInteractorVisualization____c__DisplayClass42_0 == (UseInteractorVisualization_c_DisplayClass42_0__Class *)0x0) goto code_?;
-          if ((TypeInfo__UseInteractorVisualization____c__DisplayClass42_0->_0).namespaze <= (char *)(uint)bVar13) goto code_?;
-          pIVar14 = (&(TypeInfo__UseInteractorVisualization____c__DisplayClass42_0->_0).byval_arg.data)[(int)(uint)bVar13].generic_class;
+          if (TypeInfo__UseInteractorVisualization____c__DisplayClass35_0 == (UseInteractorVisualization_c_DisplayClass35_0__Class *)0x0) goto code_?;
+          if ((TypeInfo__UseInteractorVisualization____c__DisplayClass35_0->_0).namespaze <= (char *)(uint)bVar13) goto code_?;
+          pIVar14 = (&(TypeInfo__UseInteractorVisualization____c__DisplayClass35_0->_0).byval_arg.data)[(int)(uint)bVar13].generic_class;
           if ((pIVar14 == (Il2CppGenericClass *)0x0) || (this_03 = pIVar14->cached_class, this_03 == (Il2CppClass *)0x0)) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this_03,0,(MethodInfo *)0x0);
           bVar13 = this._3_1_ + 1;

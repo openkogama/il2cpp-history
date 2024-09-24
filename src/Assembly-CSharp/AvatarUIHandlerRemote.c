@@ -167,7 +167,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Initializ
       this_06 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)0x161,(MethodInfo *)0x0);
       if (this_06 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_06,1,(MethodInfo *)0x0);
-        pRVar1 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)0x8b01112d,UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__);
+        pRVar1 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)0x8b011124,UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__);
         if (pRVar1 != (Renderer *)0x0) {
           _UNK_? = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material(pRVar1,(MethodInfo *)0x0);
                     /* WARNING: Read-only address (ram,0xADDR) is written */
@@ -178,7 +178,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Initializ
           _UNK_? = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material((Renderer *)0xfc0850c,(MethodInfo *)0x0);
                     /* WARNING: Read-only address (ram,0xADDR) is written */
           func_?();
-          SayChatBubbleHandler::SayChatBubbleHandler_Initialize((SayChatBubbleHandler *)0xeb9863e8,ownerActorNr,chatBubbleAnchor,(MethodInfo *)0x0);
+          SayChatBubbleHandler::SayChatBubbleHandler_Initialize((SayChatBubbleHandler *)0xeb8473e8,ownerActorNr,chatBubbleAnchor,(MethodInfo *)0x0);
           pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if ((pMVar5 != (MVNetworkGame *)0x0) && (this_01 = (pMVar5->fields).playerContainer, this_01 != (MVPlayerContainer *)0x0)) {
             pMVar6 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe(this_01,ownerActorNr,(MethodInfo *)0x0);
@@ -699,21 +699,21 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
       if (!(bool)cVar2) break;
 code_?:
       bVar13 = 0;
-      pcVar14 = (char *)func_?();
-      uVar15 = uRam_?;
-      iVar16 = extraout_ECX + -1;
-      if (iVar16 == 0 || cVar2 == '\0') {
-        bVar17 = (byte)iVar16 + extraout_DH;
-        pcVar14 = (char *)CONCAT31((int3)((uint)iVar16 >> 8),bVar17 + bVar13);
-        *pcVar14 = *pcVar14 + extraout_DL + (CARRY1((byte)iVar16,extraout_DH) || CARRY1(bVar17,bVar13));
-        uRam_? = (undefined1)uVar15;
-        pcVar18 = (code *)swi(3);
-        (*pcVar18)();
+      bVar14 = func_?();
+      iVar15 = extraout_ECX + -1;
+      fStack12 = in_stack_10;
+      if (iVar15 == 0 || cVar2 == '\0') {
+        bVar16 = (byte)iVar15 + extraout_DH;
+        bVar17 = CARRY1((byte)iVar15,extraout_DH) || CARRY1(bVar16,bVar13);
+        pbVar18 = (byte *)CONCAT22((short)((uint)iVar15 >> 0x10),CONCAT11(0x2e,bVar16 + bVar13));
+        bVar13 = *pbVar18;
+        bVar16 = *pbVar18;
+        *pbVar18 = bVar16 + bVar14 + bVar17;
+        *pbVar18 = *pbVar18 + extraout_DL + (CARRY1(bVar13,bVar14) || CARRY1(bVar16 + bVar14,bVar17));
+        pcVar19 = (code *)swi(3);
+        (*pcVar19)();
         return;
       }
-      *pcVar14 = *pcVar14 + (char)pcVar14;
-      *pcVar14 = *pcVar14 + (char)pcVar14;
-      fStack12 = in_stack_10;
     }
     value.g = (float)in_stack_5;
     value.r = (float)in_stack_6;

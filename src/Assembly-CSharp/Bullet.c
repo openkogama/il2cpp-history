@@ -397,8 +397,38 @@ void Assembly-CSharp.dll::Bullet::Bullet_Fire(Bullet *this,float speed,float ran
                     /* WARNING: Read-only address (ram,0xADDR) is written */
     func_?();
     uRam_? = 5;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    method_00 = TypeInfo__Bullet___MakeVisibleOverTime_d__46;
+    value = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)&UNK_?;
+    func_?();
+    Coroutines::Coroutines_Start((IEnumerator *)value,(MethodInfo *)0x0);
   }
   return;
+}
+
+
+/* IEnumerator MakeVisibleOverTime() */
+
+IEnumerator * Assembly-CSharp.dll::Bullet::Bullet_MakeVisibleOverTime(Bullet *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__Bullet___MakeVisibleOverTime_d__46);
+    cRam_? = '\x01';
+  }
+  method_00 = TypeInfo__Bullet___MakeVisibleOverTime_d__46;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -535,9 +565,9 @@ void Assembly-CSharp.dll::Bullet::Bullet_ReturnToPool(Bullet *this,PoolEnums__En
 }
 
 
-/* Void SetBulletTrail(Color, Color, Single, Single) */
+/* Void SetBulletAndTrailSettings(Color, Color, Single, Single) */
 
-void Assembly-CSharp.dll::Bullet::Bullet_SetBulletTrail(Bullet *this,Color bulletColor,Color trailColor,float speed,float size,MethodInfo *method)
+void Assembly-CSharp.dll::Bullet::Bullet_SetBulletAndTrailSettings(Bullet *this,Color bulletColor,Color trailColor,float speed,float size,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -556,123 +586,141 @@ void Assembly-CSharp.dll::Bullet::Bullet_SetBulletTrail(Bullet *this,Color bulle
   if (bVar2 != 0) {
     return;
   }
-  this_02 = (Gradient *)func_?(TypeInfo__UnityEngine__Gradient);
-  UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient__ctor(this_02,(MethodInfo *)0x0);
-  value_01 = (GradientAlphaKey__Array *)func_?(TypeInfo__UnityEngine__GradientAlphaKey,3);
-  mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor((ValueTuple_2_Single_Single_ *)&stack0xffffffe8,bulletColor.a,0.0,(MethodInfo *)0x0);
-  if (value_01 == (GradientAlphaKey__Array *)0x0) goto code_?;
-  if (value_01->max_length != 0) {
-    value_01->vector[0].alpha = 0.0;
-    value_01->vector[0].time = 0.0;
-    fVar3 = 0.0;
-    fVar4 = 0.0;
-    mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor((ValueTuple_2_Single_Single_ *)&stack0xffffffe0,trailColor.a,0.1,(MethodInfo *)0x0);
-    if (1 < value_01->max_length) {
-      value_01->vector[1].alpha = fVar3;
-      value_01->vector[1].time = fVar4;
-      fVar3 = 0.0;
-      fVar4 = 0.0;
+  this_00 = (Gradient *)func_?(TypeInfo__UnityEngine__Gradient);
+  UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient__ctor(this_00,(MethodInfo *)0x0);
+  value_03 = (GradientAlphaKey__Array *)func_?(TypeInfo__UnityEngine__GradientAlphaKey,3);
+  VStack_3.Item1 = 0.0;
+  VStack_3.Item2 = 0.0;
+  mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor(&VStack_3,bulletColor.a,0.0,(MethodInfo *)0x0);
+  if (value_03 == (GradientAlphaKey__Array *)0x0) goto code_?;
+  if (value_03->max_length != 0) {
+    value_03->vector[0].alpha = VStack_3.Item1;
+    value_03->vector[0].time = VStack_3.Item2;
+    VStack_4.Item1 = 0.0;
+    VStack_4.Item2 = 0.0;
+    mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor(&VStack_4,trailColor.a,0.1,(MethodInfo *)0x0);
+    if (1 < value_03->max_length) {
+      value_03->vector[1].alpha = VStack_4.Item1;
+      value_03->vector[1].time = VStack_4.Item2;
       mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor((ValueTuple_2_Single_Single_ *)&stack0xffffffd8,0.0,1.0,(MethodInfo *)0x0);
-      if (2 < value_01->max_length) {
-        value_01->vector[2].alpha = fVar3;
-        value_01->vector[2].time = fVar4;
-        if (this_02 == (Gradient *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_alphaKeys(this_02,value_01,(MethodInfo *)0x0);
-        value_02 = (GradientColorKey__Array *)func_?();
+      if (2 < value_03->max_length) {
+        value_03->vector[2].alpha = 0.0;
+        value_03->vector[2].time = 0.0;
+        if (this_00 == (Gradient *)0x0) goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_alphaKeys(this_00,value_03,(MethodInfo *)0x0);
+        value_04 = (GradientColorKey__Array *)func_?();
         fVar5 = 0.0;
-        fVar3 = 0.0;
-        fVar4 = 0.0;
         fVar6 = 0.0;
         fVar7 = 0.0;
-        UnityEngine.CoreModule.dll::UnityEngine::GradientColorKey::GradientColorKey__ctor((GradientColorKey *)&stack0xffffffac,bulletColor,0.0,(MethodInfo *)0x0);
-        if (value_02 == (GradientColorKey__Array *)0x0) goto code_?;
-        if (value_02->max_length != 0) {
-          value_02->vector[0].color.r = fVar3;
-          value_02->vector[0].color.g = fVar4;
-          value_02->vector[0].color.b = fVar6;
-          value_02->vector[0].color.a = fVar7;
-          value_02->vector[0].time = fVar5;
+        fVar8 = 0.0;
+        fVar9 = 0.0;
+        UnityEngine.CoreModule.dll::UnityEngine::GradientColorKey::GradientColorKey__ctor((GradientColorKey *)&stack0xffffff9c,bulletColor,0.0,(MethodInfo *)0x0);
+        if (value_04 == (GradientColorKey__Array *)0x0) goto code_?;
+        if (value_04->max_length != 0) {
+          value_04->vector[0].color.r = fVar6;
+          value_04->vector[0].color.g = fVar7;
+          value_04->vector[0].color.b = fVar8;
+          value_04->vector[0].color.a = fVar9;
+          value_04->vector[0].time = fVar5;
           fVar5 = 0.0;
-          fVar3 = 0.0;
-          fVar4 = 0.0;
           fVar6 = 0.0;
           fVar7 = 0.0;
-          UnityEngine.CoreModule.dll::UnityEngine::GradientColorKey::GradientColorKey__ctor((GradientColorKey *)&stack0xffffff98,trailColor,0.1,(MethodInfo *)0x0);
-          if (1 < value_02->max_length) {
-            value_02->vector[1].color.r = fVar3;
-            value_02->vector[1].color.g = fVar4;
-            value_02->vector[1].color.b = fVar6;
-            value_02->vector[1].color.a = fVar7;
-            value_02->vector[1].time = fVar5;
-            UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_colorKeys(this_02,value_02,(MethodInfo *)0x0);
-            fStack_8 = 20.0 / speed;
-            if (fStack_8 <= 10.0) {
-              fStack_8 = 10.0;
+          fVar8 = 0.0;
+          fVar9 = 0.0;
+          UnityEngine.CoreModule.dll::UnityEngine::GradientColorKey::GradientColorKey__ctor((GradientColorKey *)&stack0xffffff88,trailColor,0.1,(MethodInfo *)0x0);
+          if (1 < value_04->max_length) {
+            value_04->vector[1].color.r = fVar6;
+            value_04->vector[1].color.g = fVar7;
+            value_04->vector[1].color.b = fVar8;
+            value_04->vector[1].color.a = fVar9;
+            value_04->vector[1].time = fVar5;
+            UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_colorKeys(this_00,value_04,(MethodInfo *)0x0);
+            pTStack_10 = (Transform *)(20.0 / speed);
+            if ((float)pTStack_10 <= 10.0) {
+              pTStack_10 = (Transform *)0x41200000;
             }
             pTVar1 = (this->fields).trailRenderer;
             if (pTVar1 == (TrailRenderer *)0x0) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::TrailRenderer_SetColorGradient(pTVar1,this_02,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::TrailRenderer_SetColorGradient(pTVar1,this_00,(MethodInfo *)0x0);
             pTVar1 = (this->fields).trailRenderer;
             if (pTVar1 == (TrailRenderer *)0x0) goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::TrailRenderer_set_startWidth(pTVar1,size,(MethodInfo *)0x0);
             pTVar1 = (this->fields).trailRenderer;
             if (pTVar1 == (TrailRenderer *)0x0) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::TrailRenderer_set_time(pTVar1,fStack_8,(MethodInfo *)0x0);
-            pMVar9 = (this->fields).meshRenderers;
-            uVar10 = 0;
-            if (pMVar9 == (MeshRenderer__Array *)0x0) goto code_?;
-            ppMVar11 = pMVar9->vector;
-            for (; (int)uVar10 < (int)pMVar9->max_length; uVar10 = uVar10 + 1) {
-              if (pMVar9->max_length <= uVar10) goto code_?;
-              this_00 = *ppMVar11;
-              if (this_00 == (MeshRenderer *)0x0) goto code_?;
-              pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::TrailRenderer_set_time(pTVar1,(float)pTStack_10,(MethodInfo *)0x0);
+            pMStack_11 = (this->fields).meshRenderers;
+            uVar12 = 0;
+            (this->fields).storedColor.r = bulletColor.r;
+            (this->fields).storedColor.g = bulletColor.g;
+            (this->fields).storedColor.b = bulletColor.b;
+            (this->fields).storedColor.a = bulletColor.a;
+            if (pMStack_11 == (MeshRenderer__Array *)0x0) goto code_?;
+            ppMVar13 = pMStack_11->vector;
+            for (; (int)uVar12 < (int)pMStack_11->max_length; uVar12 = uVar12 + 1) {
+              if (pMStack_11->max_length <= uVar12) goto code_?;
+              this_01 = *ppMVar13;
+              if (this_01 == (MeshRenderer *)0x0) goto code_?;
+              pTStack_10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_01,(MethodInfo *)0x0);
               if (cRam_? == '\0') {
                 func_?();
                 cRam_? = '\x01';
               }
-              pVVar13 = TypeInfo__UnityEngine__Vector3->static_fields;
-              uVar14 = (pVVar13->oneVector).x;
-              uVar15 = (pVVar13->oneVector).y;
-              if (pTVar12 == (Transform *)0x0) goto code_?;
-              value.y = (float)uVar15 * size;
-              value.x = (float)uVar14 * size;
-              value.z = (pVVar13->oneVector).z * size;
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale(pTVar12,value,(MethodInfo *)0x0);
-              pMVar16 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material((Renderer *)this_00,(MethodInfo *)0x0);
-              if (pMVar16 == (Material *)0x0) goto code_?;
-              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector(pMVar16,StringLiteral__TintColor,(Vector4)bulletColor,(MethodInfo *)0x0);
-              ppMVar11 = ppMVar11 + 1;
+              pVVar14 = TypeInfo__UnityEngine__Vector3->static_fields;
+              uVar15 = (pVVar14->oneVector).x;
+              uVar16 = (pVVar14->oneVector).y;
+              fVar6 = (float)uVar15 * size;
+              if (pTStack_10 == (Transform *)0x0) goto code_?;
+              value.y = (float)uVar16 * size;
+              value.x = fVar6;
+              value.z = (pVVar14->oneVector).z * size;
+              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale(pTStack_10,value,(MethodInfo *)0x0);
+              fVar7 = 0.0;
+              puVar17 = &UNK_?;
+              pMVar18 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material((Renderer *)this_01,(MethodInfo *)0x0);
+              if (pMVar18 == (Material *)0x0) goto code_?;
+              value_01.y = (float)puVar17;
+              value_01.x = fVar6;
+              value_01.z = (float)this_01;
+              value_01.w = fVar7;
+              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector(pMVar18,StringLiteral__TintColor,value_01,(MethodInfo *)0x0);
+              ppMVar13 = ppMVar13 + 1;
             }
-            uVar10 = 0;
-            pSVar17 = (this->fields).spriteRenderers;
-            if (pSVar17 == (SpriteRenderer__Array *)0x0) goto code_?;
-            ppSVar18 = pSVar17->vector;
+            uVar12 = 0;
+            pSVar19 = (this->fields).spriteRenderers;
+            if (pSVar19 == (SpriteRenderer__Array *)0x0) goto code_?;
+            ppSVar20 = pSVar19->vector;
             while( true ) {
-              if ((int)pSVar17->max_length <= (int)uVar10) {
+              if ((int)pSVar19->max_length <= (int)uVar12) {
                 return;
               }
-              if (pSVar17->max_length <= uVar10) break;
-              this_01 = *ppSVar18;
-              if (this_01 == (SpriteRenderer *)0x0) goto code_?;
-              pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_01,(MethodInfo *)0x0);
+              if (pSVar19->max_length <= uVar12) break;
+              this_02 = *ppSVar20;
+              if (this_02 == (SpriteRenderer *)0x0) goto code_?;
+              pMStack_11 = (MeshRenderer__Array *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_02,(MethodInfo *)0x0);
               if (cRam_? == '\0') {
                 func_?();
                 cRam_? = '\x01';
               }
-              pVVar13 = TypeInfo__UnityEngine__Vector3->static_fields;
-              uVar19 = (pVVar13->oneVector).x;
-              uVar20 = (pVVar13->oneVector).y;
-              if (pTVar12 == (Transform *)0x0) goto code_?;
-              value_00.y = (float)uVar20 * size;
-              value_00.x = (float)uVar19 * size;
-              value_00.z = (pVVar13->oneVector).z * size;
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale(pTVar12,value_00,(MethodInfo *)0x0);
-              pMVar16 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material((Renderer *)this_01,(MethodInfo *)0x0);
-              if (pMVar16 == (Material *)0x0) goto code_?;
-              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector(pMVar16,StringLiteral__TintColor,(Vector4)bulletColor,(MethodInfo *)0x0);
-              uVar10 = uVar10 + 1;
-              ppSVar18 = ppSVar18 + 1;
+              pVVar14 = TypeInfo__UnityEngine__Vector3->static_fields;
+              uVar21 = (pVVar14->oneVector).x;
+              uVar22 = (pVVar14->oneVector).y;
+              fVar6 = (float)uVar21 * size;
+              if (pMStack_11 == (MeshRenderer__Array *)0x0) goto code_?;
+              value_00.y = (float)uVar22 * size;
+              value_00.x = fVar6;
+              value_00.z = (pVVar14->oneVector).z * size;
+              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale((Transform *)pMStack_11,value_00,(MethodInfo *)0x0);
+              fVar7 = 0.0;
+              puVar17 = &UNK_?;
+              pMVar18 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material((Renderer *)this_02,(MethodInfo *)0x0);
+              if (pMVar18 == (Material *)0x0) goto code_?;
+              value_02.y = (float)puVar17;
+              value_02.x = fVar6;
+              value_02.z = (float)this_02;
+              value_02.w = fVar7;
+              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector(pMVar18,StringLiteral__TintColor,value_02,(MethodInfo *)0x0);
+              uVar12 = uVar12 + 1;
+              ppSVar20 = ppSVar20 + 1;
             }
           }
         }
@@ -683,8 +731,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 

@@ -1324,7 +1324,7 @@ TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdMa
   return (TimeSpan)TVar1._ticks;
 }
 
-/* decompilation failed: Exception while decompiling 10519050: Decompiler process died */
+/* decompilation failed: Exception while decompiling 1051c5c0: Decompiler process died */
 
-/* decompilation failed: Exception while decompiling 10519080: Decompiler process died */
+/* decompilation failed: Exception while decompiling 1051c5f0: Decompiler process died */
 

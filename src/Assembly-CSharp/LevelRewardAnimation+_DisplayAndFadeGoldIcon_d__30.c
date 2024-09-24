@@ -172,15 +172,17 @@ code_?:
     }
   }
 code_?:
-  bVar16 = func_?();
-  in_AF = 9 < (bVar16 & 0xf) | in_AF;
-  bVar16 = bVar16 + in_AF * -6 & 0xf;
-  pfVar17 = &pLVar1[-2].fields._currentTime_5__2;
-  *(byte *)pfVar17 = *(char *)pfVar17 + extraout_DL + in_AF;
-  in_AF = 9 < bVar16 | in_AF;
-  out(0x3f,(bVar16 + in_AF * -6 & 0xf) * '\x02' + in_AF);
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  uVar16 = func_?();
+  in_AF = 9 < ((byte)uVar16 & 0xf) | in_AF;
+  uVar17 = CONCAT31((int3)((uint)uVar16 >> 8),(byte)uVar16 + in_AF * -6) & 0xffffff0f;
+  bVar18 = (byte)uVar17;
+  pcVar19 = (char *)(CONCAT22((short)(uVar17 >> 0x10),CONCAT11((char)((uint)uVar16 >> 8) - in_AF,bVar18)) + -5);
+  *pcVar19 = *pcVar19 + bVar18 + in_AF;
+  pcVar19 = (char *)(CONCAT22((short)((uint)&stack0xfffffffc >> 0x10),CONCAT11(((byte)((uint)&stack0xfffffffc >> 8) ^ 0x3f) + extraout_DL,(char)&stack0xfffffffc)) + -0x33efc003);
+  *pcVar19 = *pcVar19 + (char)&stack0xfffffffc + (9 < bVar18 | in_AF);
+  pcVar20 = (code *)swi(3);
+  bVar21 = (*pcVar20)();
+  return bVar21;
 }
 
 

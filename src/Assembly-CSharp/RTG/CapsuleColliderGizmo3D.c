@@ -1065,7 +1065,7 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_On
                             pVVar10 = GizmoSglAxisOffsetDrag3D::GizmoSglAxisOffsetDrag3D_get_Axis((Vector3 *)&stack0xffffffc0,pGVar2,(MethodInfo *)0x0);
                             uVar32 = pVVar10->x;
                             uVar33 = pVVar10->y;
-                            fVar7 = fVar7 - 4.152456e-29;
+                            fVar7 = fVar7 - 4.156693e-29;
                             fVar12 = (float)puVar30 + pVVar10->z * fVar7 * 0.5;
                             uVar34._4_4_ = (float)puVar31 + (float)uVar33 * fVar7 * 0.5;
                             uVar34._0_4_ = (float)pCVar19 + (float)uVar32 * fVar7 * 0.5;
@@ -1655,9 +1655,9 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_Up
                                           (pCVar33->fields).Normal.x = (float)(undefined4)uVar11;
                                           (pCVar33->fields).Normal.y = (float)uStack_12;
                                           (pCVar33->fields).Normal.z = fVar7;
-                                          fVar27 = fVar16 + fVar20 * 4.154486e-29 * 0.5;
-                                          fVar7 = fVar9 + fVar19 * 4.154486e-29 * 0.5;
-                                          fVar6 = fVar3 + fVar18 * 4.154486e-29 * 0.5;
+                                          fVar27 = fVar16 + fVar20 * 4.158723e-29 * 0.5;
+                                          fVar7 = fVar9 + fVar19 * 4.158723e-29 * 0.5;
+                                          fVar6 = fVar3 + fVar18 * 4.158723e-29 * 0.5;
                                           pGVar28 = (this->fields)._topTick;
                                           position_00.y = fVar27;
                                           position_00.x = fVar7;
@@ -1683,9 +1683,9 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_Up
                                                     (pCVar33->fields).Normal.x = (float)(int)uVar17;
                                                     (pCVar33->fields).Normal.y = (float)(int)((ulonglong)uVar17 >> 0x20);
                                                     (pCVar33->fields).Normal.z = fVar21;
-                                                    fVar21 = fVar9 - fVar19 * 4.154486e-29 * 0.5;
-                                                    fVar7 = fVar16 - fVar20 * 4.154486e-29 * 0.5;
-                                                    fVar6 = fVar3 - fVar18 * 4.154486e-29 * 0.5;
+                                                    fVar21 = fVar9 - fVar19 * 4.158723e-29 * 0.5;
+                                                    fVar7 = fVar16 - fVar20 * 4.158723e-29 * 0.5;
+                                                    fVar6 = fVar3 - fVar18 * 4.158723e-29 * 0.5;
                                                     pGVar28 = (this->fields)._bottomTick;
                                                     position_01.y = fVar7;
                                                     position_01.x = fVar21;

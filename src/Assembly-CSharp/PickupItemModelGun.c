@@ -158,6 +158,7 @@ IntVector Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_GetCubePos
         point.z = (float)(MVWorldObjectClientManager *)voxelHit.interactionFlags;
         bVar1 = voxelHit.interactionFlags._4_1_;
         voxelHit.transform = (Transform *)pOVar5;
+        voxelHit.interactionFlags._4_4_ = (MethodInfo *)(float)voxelHit.interactionFlags._4_4_;
         IVar7 = SharedCubeFunctions::SharedCubeFunctions_WorldToLocal((GameObject *)voxelHit.collider,point,bVar1,(MethodInfo *)0x0);
         iVar3 = IVar7.z;
         uVar8 = *(undefined2 *)(IVar7._0_4_ + 1);
@@ -257,7 +258,7 @@ code_?:
           pIVar23 = (IEnumerator__Class *)mscorlib.dll::System::Array::Array_GetEnumerator(pAVar22,(MethodInfo *)0x0);
           pTVar21 = (Type *)0x0;
           while (pIVar23 != (IEnumerator__Class *)0x0) {
-            uVar24 = 0xa2ed;
+            uVar24 = 0xadfd;
             uVar25 = 0x1068;
             pIVar23 = TypeInfo__System__Collections__IEnumerator;
             cVar26 = func_?();
@@ -520,7 +521,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_HandleCursors(P
 
 {
   if (cRam_? == '\0') {
-    func_?(0xdcd0);
+    func_?(0xed30);
     func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
     func_?(&MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__);
     cRam_? = '\x01';
@@ -853,7 +854,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_OnFireSecondary
         if (pMVar4 != (MVPickupOwner *)0x0) {
           fVar5 = (pMVar4->fields).lookOrigin.y;
           fVar6 = (pMVar4->fields).lookOrigin.z;
-          iVar7 = -0x50d0;
+          iVar7 = -0x45c0;
           pVVar8 = MVPickupOwner::MVPickupOwner_get_LookDirection((Vector3 *)&stack0xffffffe0,(this->fields)._._.owner,(MethodInfo *)0x0);
           this_00 = (PickupItemModelGun *)pVVar8->x;
           pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xfffffff0,*pVVar8,(MethodInfo *)0x0);

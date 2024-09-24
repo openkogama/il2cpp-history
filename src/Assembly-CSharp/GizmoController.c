@@ -30,7 +30,6 @@ void Assembly-CSharp.dll::GizmoController::GizmoController_Handle(GizmoControlle
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)unaff_EDI,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       unaff_EDI = (this->fields).gizmoMenuInstance;
-      unaff_ESI = this;
       if (unaff_EDI == (GizmoMenu *)0x0) break;
       if (cRam_? == '\0') {
         func_?(&MethodInfo__System__Nullable<RotationMode>__GetValueOrDefault_RotationMode_);
@@ -39,7 +38,6 @@ void Assembly-CSharp.dll::GizmoController::GizmoController_Handle(GizmoControlle
       unaff_EBX = (Single__Class *)mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32__GetValueOrDefault_1((Nullable_1_UInt32_ *)&(unaff_EDI->fields).rotationMode,1,MethodInfo__System__Nullable<RotationMode>__GetValueOrDefault_RotationMode_);
     }
     pGVar3 = (this->fields).gizmoMenuNgInstance;
-    unaff_ESI = this;
     if (pGVar3 != (GizmoMenuNg *)0x0) {
       UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoMenuNg::GizmoMenuNg_Pop(pGVar3,(MethodInfo *)0x0);
       pEVar4 = (this->fields).editorStateMachine;
@@ -100,7 +98,6 @@ void Assembly-CSharp.dll::GizmoController::GizmoController_Handle(GizmoControlle
     break;
   case GizmoAction__Enum_TranslateXZ:
     pGVar3 = (this->fields).gizmoMenuNgInstance;
-    unaff_ESI = this;
     if (pGVar3 == (GizmoMenuNg *)0x0) break;
     UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoMenuNg::GizmoMenuNg_Pop(pGVar3,(MethodInfo *)0x0);
     pEVar4 = (this->fields).editorStateMachine;
@@ -119,7 +116,6 @@ void Assembly-CSharp.dll::GizmoController::GizmoController_Handle(GizmoControlle
     goto joined_?;
   case GizmoAction__Enum_TranslateY:
     pGVar3 = (this->fields).gizmoMenuNgInstance;
-    unaff_ESI = this;
     if (pGVar3 == (GizmoMenuNg *)0x0) break;
     UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoMenuNg::GizmoMenuNg_Pop(pGVar3,(MethodInfo *)0x0);
     pEVar4 = (this->fields).editorStateMachine;
@@ -136,7 +132,6 @@ void Assembly-CSharp.dll::GizmoController::GizmoController_Handle(GizmoControlle
     pOVar5 = (Object *)func_?(TypeInfo__TranslateMode,&pSStack_1);
     key = StringLiteral_translateMode;
 joined_?:
-    unaff_ESI = this;
     if (unaff_EDI != (GizmoMenu *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,(Object *)key,pOVar5,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
       pEVar4 = (this->fields).editorStateMachine;
@@ -192,40 +187,12 @@ joined_?:
     return;
   }
   uVar8 = func_?();
-  pcVar9 = (char *)((ulonglong)uVar8 >> 0x20);
-  puVar10 = (uint *)((int)uVar8 + -0x7bcfefc6);
-  *puVar10 = *puVar10 ^ extraout_ECX;
-  bVar11 = (byte)uVar8;
-  pcVar9[-0x54efc57b] = pcVar9[-0x54efc57b] + bVar11;
-  bVar12 = (byte)((ulonglong)uVar8 >> 0x20);
-  pbVar13 = (byte *)((int)&unaff_EDI[0x11200d0].monitor + 2);
-  bVar14 = *pbVar13;
-  bVar15 = (byte)pSStack_1;
-  *pbVar13 = *pbVar13 + bVar15;
-  LOCK();
-  uVar16 = *(undefined4 *)pcVar9;
-  *(GizmoMenu **)pcVar9 = unaff_EDI;
-  UNLOCK();
-  pcVar17 = (char *)((int)&unaff_ESI[-3].fields._._._._.m_CachedPtr + 3);
-  *pcVar17 = *pcVar17 + (char)((ulonglong)uVar8 >> 0x28) + CARRY1(bVar14,bVar15);
-  bVar14 = *(byte *)CONCAT22((short)((ulonglong)uVar8 >> 0x10),CONCAT11((char)((ulonglong)uVar8 >> 8) + bVar12,bVar11));
-  LOCK();
-  uVar18 = *(undefined4 *)pcVar9;
-  *(undefined4 *)pcVar9 = uVar16;
-  UNLOCK();
-  LOCK();
-  uVar16 = *(undefined4 *)pcVar9;
-  *(undefined4 *)pcVar9 = uVar18;
-  UNLOCK();
-  bVar19 = (byte)((uint)pSStack_1 >> 8);
-  LOCK();
-  *(undefined4 *)pcVar9 = uVar16;
-  UNLOCK();
-  *pcVar9 = *pcVar9 + bVar12 + (CARRY1(bVar19,bVar19) || CARRY1(bVar19 * '\x02',CARRY1(bVar11,bVar15) || CARRY1(bVar11 + bVar15,bVar12 < bVar14)));
-  *pcVar9 = (char)((uint)unaff_EBX >> 8);
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
-  return;
+  puVar9 = (uint *)((int)&unaff_EDI[0xd05600].fields.worldPosition.x + (int)((ulonglong)uVar8 >> 0x20));
+  *puVar9 = *puVar9 ^ (uint)unaff_EBX;
+  *(char *)(extraout_ECX + -0x67) = *(char *)(extraout_ECX + -0x67) + (char)unaff_EBX;
+  *(char *)(extraout_ECX + -0x6654efc6) = (*(char *)(extraout_ECX + -0x6654efc6) + -0x3a) - ((byte)((ulonglong)uVar8 >> 0x20) < *(byte *)uVar8);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

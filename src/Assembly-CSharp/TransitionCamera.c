@@ -47,7 +47,7 @@ void Assembly-CSharp.dll::TransitionCamera::TransitionCamera_InitTransition(Tran
               if (pTVar2 != (Transform *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation(pTVar2,(this->fields).prevCameraRotation,(MethodInfo *)0x0);
                 (this->fields).time = transitionTime;
-                (this->fields).superSoft = 0xee;
+                (this->fields).superSoft = 0xae;
                 (this->fields).transitionPercentage = 0.0;
                 return;
               }
@@ -134,191 +134,146 @@ Quaternion * Assembly-CSharp.dll::TransitionCamera::TransitionCamera_RotateTowar
 void Assembly-CSharp.dll::TransitionCamera::TransitionCamera_UpdateCamera(TransitionCamera *this,MVCameraController *camController,ProtectedTransform *targetTransform,MethodInfo *method)
 
 {
+  this_01 = this;
   pfVar1 = &(this->fields).transitionPercentage;
   if (1.0 < *pfVar1 || *pfVar1 == 1.0) {
     return;
   }
-  fVar2 = (this->fields).transitionPercentage;
+  VStack_2.z = (this->fields).transitionPercentage;
   fVar3 = (this->fields).time;
   fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar2 = fVar4 * (1.0 / fVar3) + fVar2;
-  (this->fields).transitionPercentage = fVar2;
-  if (1.0 < fVar2) {
+  fVar3 = fVar4 * (1.0 / fVar3) + VStack_2.z;
+  (this->fields).transitionPercentage = fVar3;
+  if (1.0 < fVar3) {
     (this->fields).transitionPercentage = 1.0;
   }
+  fVar3 = (this->fields).transitionPercentage;
+  if (fVar3 < 0.0) {
+    fVar3 = 0.0;
+  }
+  else if (1.0 < fVar3) {
+    fVar3 = 1.0;
+  }
+  fVar3 = fVar3 * -2.0 * fVar3 * fVar3 + fVar3 * 3.0 * fVar3;
+  percentage = (TransitionCamera *)((1.0 - fVar3) * 0.0 + fVar3);
   if ((this->fields).superSoft == 0) {
-    pVVar5 = (Vector3 *)func_?(&stack0xffffffe8,&(this->fields).prevCameraRotation);
-    uVar6 = pVVar5->x;
-    uVar7 = pVVar5->y;
-    puVar8 = (undefined *)pVVar5->z;
-    VVar9 = *pVVar5;
-    if ((camController == (MVCameraController *)0x0) || (pTVar10 = (TransitionCamera *)(camController->fields).cameraStack, pTVar10 == (TransitionCamera *)0x0)) goto code_?;
-    in_stack_11 = (undefined *)0x0;
-    in_stack_12 = (Quaternion *)&UNK_?;
-    in_stack_13 = pTVar10;
-    pMVar14 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera((MVCameraController_CameraStack *)pTVar10,(MethodInfo *)0x0);
-    if (pMVar14 == (MVCameraBase *)0x0) goto code_?;
-    in_stack_15 = (Camera *)0x0;
-    in_stack_11 = &UNK_?;
-    in_stack_16 = (TransitionCamera *)pMVar14;
-    pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar14,(MethodInfo *)0x0);
-    if (pTVar17 == (Transform *)0x0) goto code_?;
-    in_stack_18 = (Il2CppMethodPointer)0x0;
-    in_stack_15 = (Camera *)&stack0xffffffe8;
-    in_stack_16 = (TransitionCamera *)&UNK_?;
-    in_stack_19 = (MVCameraBase *)pTVar17;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles((Vector3 *)in_stack_15,pTVar17,(MethodInfo *)0x0);
-    in_stack_20 = (Quaternion *)(this->fields).transitionPercentage;
-    in_stack_21 = 0;
-    uVar22 = pVVar5->x;
-    uVar23 = pVVar5->y;
-    in_stack_24 = (undefined1 *)pVVar5->z;
-    in_stack_13 = this;
-    in_stack_12 = (Quaternion *)&stack0xffffffc8;
-    in_stack_25 = (MethodInfo *)&UNK_?;
-    in_stack_11 = (undefined *)uVar6;
-    in_stack_16 = (TransitionCamera *)uVar7;
-    in_stack_15 = (Camera *)puVar8;
-    in_stack_19 = (MVCameraBase *)uVar22;
-    in_stack_18 = (Il2CppMethodPointer)uVar23;
-    pQVar26 = TransitionCamera_RotateTowardsX(in_stack_12,this,VVar9,*pVVar5,(float)in_stack_20,(MethodInfo *)0x0);
-    in_stack_21 = 0;
-    fVar2 = pQVar26->x;
-    fVar3 = pQVar26->y;
-    fVar4 = pQVar26->z;
-    fVar27 = pQVar26->w;
-    in_stack_20 = &(this->fields).prevCameraRotation;
-    in_stack_24 = &stack0xffffffe8;
-    in_stack_18 = (Il2CppMethodPointer)&UNK_?;
+    pVVar5 = (Vector3 *)func_?(&VStack_2,&(this->fields).prevCameraRotation);
+    VVar6 = *pVVar5;
+    if ((((camController == (MVCameraController *)0x0) || (pMVar7 = (camController->fields).cameraStack, pMVar7 == (MVCameraController_CameraStack *)0x0)) || (pMVar8 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera(pMVar7,(MethodInfo *)0x0), pMVar8 == (MVCameraBase *)0x0)) || (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar8,(MethodInfo *)0x0), pTVar9 == (Transform *)0x0)) goto code_?;
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles(&VStack_2,pTVar9,(MethodInfo *)0x0);
+    pQVar10 = TransitionCamera_RotateTowardsX((Quaternion *)&stack0xffffffbc,this,VVar6,*pVVar5,(float)percentage,(MethodInfo *)0x0);
+    fVar11 = pQVar10->x;
+    fVar3 = pQVar10->y;
+    fVar4 = pQVar10->z;
+    fVar12 = pQVar10->w;
     pVVar5 = (Vector3 *)func_?();
-    VVar9 = *pVVar5;
-    pMVar28 = (camController->fields).cameraStack;
-    if (((pMVar28 == (MVCameraController_CameraStack *)0x0) || (pMVar14 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera(pMVar28,(MethodInfo *)0x0), pMVar14 == (MVCameraBase *)0x0)) || (pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar14,(MethodInfo *)0x0), pTVar17 == (Transform *)0x0)) goto code_?;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles((Vector3 *)&stack0xffffffe8,pTVar17,(MethodInfo *)0x0);
-    pQVar26 = TransitionCamera_RotateTowardsY((Quaternion *)&stack0xffffffd8,this,VVar9,*pVVar5,(this->fields).transitionPercentage,(MethodInfo *)0x0);
-    fVar29 = pQVar26->x;
-    fVar30 = pQVar26->y;
-    fVar31 = pQVar26->z;
-    fVar32 = pQVar26->w;
-    pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-    pMVar28 = (camController->fields).cameraStack;
-    VVar9 = (this->fields).prevCameraPosition;
-    if (((pMVar28 == (MVCameraController_CameraStack *)0x0) || (pMVar14 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera(pMVar28,(MethodInfo *)0x0), pMVar14 == (MVCameraBase *)0x0)) || (pTVar33 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar14,(MethodInfo *)0x0), pTVar33 == (Transform *)0x0)) goto code_?;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffe8,pTVar33,(MethodInfo *)0x0);
-    in_stack_34 = (this->fields).transitionPercentage;
-    in_stack_35 = (undefined *)0x0;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Slerp((Vector3 *)&stack0xffffffe8,VVar9,*pVVar5,in_stack_34,(MethodInfo *)0x0);
-    if (pTVar17 == (Transform *)0x0) goto code_?;
-    in_stack_18 = (Il2CppMethodPointer)0x0;
-    puVar36 = (undefined8 *)&stack0x000000d8;
+    VVar6 = *pVVar5;
+    pMVar7 = (camController->fields).cameraStack;
+    if (((pMVar7 == (MVCameraController_CameraStack *)0x0) || (pMVar8 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera(pMVar7,(MethodInfo *)0x0), pMVar8 == (MVCameraBase *)0x0)) || (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar8,(MethodInfo *)0x0), pTVar9 == (Transform *)0x0)) goto code_?;
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles(&VStack_2,pTVar9,(MethodInfo *)0x0);
+    pQVar10 = TransitionCamera_RotateTowardsY((Quaternion *)&stack0xffffffcc,this,VVar6,*pVVar5,(float)percentage,(MethodInfo *)0x0);
+    fVar13 = pQVar10->x;
+    fVar14 = pQVar10->y;
+    fVar15 = pQVar10->z;
+    fVar16 = pQVar10->w;
+    pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+    uVar17 = (this->fields).prevCameraPosition.x;
+    uVar18 = (this->fields).prevCameraPosition.y;
+    a.y = (float)uVar18;
+    a.x = (float)uVar17;
+    pMVar7 = (camController->fields).cameraStack;
+    VStack_2.z = (this->fields).prevCameraPosition.z;
+    if (((pMVar7 == (MVCameraController_CameraStack *)0x0) || (pMVar8 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera(pMVar7,(MethodInfo *)0x0), pMVar8 == (MVCameraBase *)0x0)) || (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar8,(MethodInfo *)0x0), pTVar19 == (Transform *)0x0)) goto code_?;
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffdc,pTVar19,(MethodInfo *)0x0);
+    a.z = VStack_2.z;
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Slerp((Vector3 *)&stack0xffffffdc,a,*pVVar5,(float)percentage,(MethodInfo *)0x0);
+    if (pTVar9 == (Transform *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar9,*pVVar5,(MethodInfo *)0x0);
+    pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+    fVar20 = (fVar16 * fVar11 + fVar13 * fVar12 + fVar14 * fVar4) - fVar15 * fVar3;
+    fVar21 = (fVar3 * fVar16 + fVar14 * fVar12 + fVar15 * fVar11) - fVar4 * fVar13;
+    fVar22 = (fVar4 * fVar16 + fVar15 * fVar12 + fVar3 * fVar13) - fVar14 * fVar11;
+    VStack_2.z = fVar16 * fVar12;
+    fVar11 = fVar16 * fVar12 - fVar11 * fVar13;
+    this = percentage;
   }
   else {
-    pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-    if (pTVar17 == (Transform *)0x0) goto code_?;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles((Vector3 *)&stack0xffffffe8,pTVar17,(MethodInfo *)0x0);
-    VVar9 = *pVVar5;
-    if ((((camController == (MVCameraController *)0x0) || (pMVar28 = (camController->fields).cameraStack, pMVar28 == (MVCameraController_CameraStack *)0x0)) || (pMVar14 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera(pMVar28,(MethodInfo *)0x0), pMVar14 == (MVCameraBase *)0x0)) || (pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar14,(MethodInfo *)0x0), pTVar17 == (Transform *)0x0)) goto code_?;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles((Vector3 *)&stack0xffffffe8,pTVar17,(MethodInfo *)0x0);
-    pQVar26 = TransitionCamera_RotateTowardsX((Quaternion *)&stack0xffffffc8,this,VVar9,*pVVar5,(this->fields).transitionPercentage,(MethodInfo *)0x0);
-    fVar2 = pQVar26->x;
-    fVar3 = pQVar26->y;
-    fVar4 = pQVar26->z;
-    fVar27 = pQVar26->w;
-    pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-    if (pTVar17 == (Transform *)0x0) goto code_?;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles((Vector3 *)&stack0xffffffe8,pTVar17,(MethodInfo *)0x0);
-    VVar9 = *pVVar5;
-    pMVar28 = (camController->fields).cameraStack;
-    if (((pMVar28 == (MVCameraController_CameraStack *)0x0) || (pMVar14 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera(pMVar28,(MethodInfo *)0x0), pMVar14 == (MVCameraBase *)0x0)) || (pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar14,(MethodInfo *)0x0), pTVar17 == (Transform *)0x0)) goto code_?;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles((Vector3 *)&stack0xffffffe8,pTVar17,(MethodInfo *)0x0);
-    pQVar26 = TransitionCamera_RotateTowardsY((Quaternion *)&stack0xffffffd8,this,VVar9,*pVVar5,(this->fields).transitionPercentage,(MethodInfo *)0x0);
-    fVar29 = pQVar26->x;
-    fVar30 = pQVar26->y;
-    fVar31 = pQVar26->z;
-    fVar32 = pQVar26->w;
-    pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-    pTVar33 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-    if (pTVar33 == (Transform *)0x0) goto code_?;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffe8,pTVar33,(MethodInfo *)0x0);
-    VVar9 = *pVVar5;
-    pMVar28 = (camController->fields).cameraStack;
-    if (((pMVar28 == (MVCameraController_CameraStack *)0x0) || (pMVar14 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera(pMVar28,(MethodInfo *)0x0), pMVar14 == (MVCameraBase *)0x0)) || (pTVar33 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar14,(MethodInfo *)0x0), pTVar33 == (Transform *)0x0)) goto code_?;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffe8,pTVar33,(MethodInfo *)0x0);
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Slerp((Vector3 *)&stack0xffffffe8,VVar9,*pVVar5,(this->fields).transitionPercentage,(MethodInfo *)0x0);
-    if (pTVar17 == (Transform *)0x0) goto code_?;
-    in_stack_25 = (MethodInfo *)0x0;
-    puVar36 = (undefined8 *)&stack0x000000bc;
+    pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+    if (pTVar9 == (Transform *)0x0) goto code_?;
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles((Vector3 *)&stack0xffffffdc,pTVar9,(MethodInfo *)0x0);
+    VVar6 = *pVVar5;
+    if ((((camController == (MVCameraController *)0x0) || (pMVar7 = (camController->fields).cameraStack, pMVar7 == (MVCameraController_CameraStack *)0x0)) || (pMVar8 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera(pMVar7,(MethodInfo *)0x0), pMVar8 == (MVCameraBase *)0x0)) || (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar8,(MethodInfo *)0x0), pTVar9 == (Transform *)0x0)) goto code_?;
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles((Vector3 *)&stack0xffffffdc,pTVar9,(MethodInfo *)0x0);
+    pQVar10 = TransitionCamera_RotateTowardsX((Quaternion *)&stack0xffffffbc,this,VVar6,*pVVar5,(float)percentage,(MethodInfo *)0x0);
+    fVar11 = pQVar10->x;
+    fVar3 = pQVar10->y;
+    fVar4 = pQVar10->z;
+    fVar12 = pQVar10->w;
+    targetTransform = (ProtectedTransform *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+    if ((Transform *)targetTransform == (Transform *)0x0) goto code_?;
+    this = (TransitionCamera *)&UNK_?;
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles((Vector3 *)&stack0xffffffdc,(Transform *)targetTransform,(MethodInfo *)0x0);
+    VVar6 = *pVVar5;
+    pMVar7 = (camController->fields).cameraStack;
+    if (((pMVar7 == (MVCameraController_CameraStack *)0x0) || (pMVar8 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera(pMVar7,(MethodInfo *)0x0), pMVar8 == (MVCameraBase *)0x0)) || (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar8,(MethodInfo *)0x0), pTVar9 == (Transform *)0x0)) goto code_?;
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles((Vector3 *)&stack0xffffffdc,pTVar9,(MethodInfo *)0x0);
+    pQVar10 = TransitionCamera_RotateTowardsY((Quaternion *)&stack0xffffffcc,this_01,VVar6,*pVVar5,3.252085e-29,(MethodInfo *)0x0);
+    fVar13 = pQVar10->x;
+    fVar14 = pQVar10->y;
+    fVar15 = pQVar10->z;
+    fVar16 = pQVar10->w;
+    pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_01,(MethodInfo *)0x0);
+    pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_01,(MethodInfo *)0x0);
+    if (pTVar19 == (Transform *)0x0) goto code_?;
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffdc,pTVar19,(MethodInfo *)0x0);
+    VStack_2.y = pVVar5->x;
+    VStack_2.z = pVVar5->y;
+    fVar20 = pVVar5->z;
+    pMVar7 = (camController->fields).cameraStack;
+    if (((pMVar7 == (MVCameraController_CameraStack *)0x0) || (pMVar8 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera(pMVar7,(MethodInfo *)0x0), pMVar8 == (MVCameraBase *)0x0)) || (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar8,(MethodInfo *)0x0), pTVar19 == (Transform *)0x0)) goto code_?;
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffdc,pTVar19,(MethodInfo *)0x0);
+    VVar6.z = fVar20;
+    VVar6.x = VStack_2.y;
+    VVar6.y = VStack_2.z;
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Slerp((Vector3 *)&stack0xffffffdc,VVar6,*pVVar5,3.252085e-29,(MethodInfo *)0x0);
+    if (pTVar9 == (Transform *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar9,*pVVar5,(MethodInfo *)0x0);
+    pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_01,(MethodInfo *)0x0);
+    fVar20 = (fVar16 * fVar11 + fVar13 * fVar12 + fVar14 * fVar4) - fVar15 * fVar3;
+    VStack_2.z = fVar20;
+    fVar21 = (fVar3 * fVar16 + fVar14 * fVar12 + fVar15 * fVar11) - fVar4 * fVar13;
+    fVar22 = (fVar4 * fVar16 + fVar15 * fVar12 + fVar3 * fVar13) - fVar14 * fVar11;
+    fVar11 = fVar16 * fVar12 - fVar11 * fVar13;
   }
-  fVar37 = pVVar5->z;
-  *puVar36 = *(undefined8 *)pVVar5;
-  *(float *)(puVar36 + 1) = fVar37;
-  VVar9.y = (float)in_stack_35;
-  VVar9.x = in_stack_34;
-  VVar9.z = (float)in_stack_38;
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar17,VVar9,in_stack_25);
-  in_stack_25 = (MethodInfo *)0x0;
-  in_stack_38 = this;
-  in_stack_35 = &UNK_?;
-  pTVar10 = (TransitionCamera *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-  puVar39 = (undefined *)((fVar32 * fVar2 + fVar29 * fVar27 + fVar30 * fVar4) - fVar31 * fVar3);
-  pMVar40 = (MVCameraBase *)((fVar3 * fVar32 + fVar30 * fVar27 + fVar31 * fVar2) - fVar4 * fVar29);
-  puVar8 = (undefined *)((fVar4 * fVar32 + fVar31 * fVar27 + fVar3 * fVar29) - fVar30 * fVar2);
-  pMVar14 = (MVCameraBase *)(((fVar32 * fVar27 - fVar2 * fVar29) - fVar3 * fVar30) - fVar31 * fVar4);
-  if (pTVar10 != (TransitionCamera *)0x0) {
-    in_stack_18 = (Il2CppMethodPointer)0x0;
-    in_stack_12 = (Quaternion *)&UNK_?;
-    value.y = (float)pMVar40;
-    value.x = (float)puVar39;
-    value.z = (float)puVar8;
-    value.w = (float)pMVar14;
-    in_stack_13 = pTVar10;
-    in_stack_11 = puVar39;
-    in_stack_16 = (TransitionCamera *)pMVar40;
-    in_stack_15 = (Camera *)puVar8;
-    in_stack_19 = pMVar14;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation((Transform *)pTVar10,value,(MethodInfo *)0x0);
-    pMVar41 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-    fVar42 = (float10)(*(code *)(this->klass->vtable).get_FieldOfView.method)();
-    pMVar14 = (MVCameraBase *)(camController->fields).cameraStack;
-    if (pMVar14 != (MVCameraBase *)0x0) {
-      in_stack_15 = (Camera *)0x0;
-      in_stack_11 = &UNK_?;
-      in_stack_16 = (TransitionCamera *)pMVar14;
-      pMVar14 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera((MVCameraController_CameraStack *)pMVar14,(MethodInfo *)0x0);
-      if (pMVar14 != (MVCameraBase *)0x0) {
-        in_stack_18 = (pMVar14->klass->vtable).UpdateCamera.methodPtr;
-        in_stack_15 = (Camera *)&UNK_?;
-        in_stack_19 = pMVar14;
-        fVar43 = (float10)(*(code *)(pMVar14->klass->vtable).get_FieldOfView.method)();
-        fVar2 = (this->fields).transitionPercentage;
-        if (fVar2 < 0.0) {
-          fVar2 = 0.0;
-        }
-        else if (1.0 < fVar2) {
-          fVar2 = 1.0;
-        }
-        if ((pMVar41 != (MainCameraManager *)0x0) && (this_00 = (pMVar41->fields).mainCamera, this_00 != (Camera *)0x0)) {
-          in_stack_18 = (Il2CppMethodPointer)0x0;
-          in_stack_19 = (MVCameraBase *)(((float)fVar43 - (float)fVar42) * fVar2 + (float)fVar42);
-          in_stack_16 = (TransitionCamera *)&UNK_?;
-          in_stack_15 = this_00;
-          UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView(this_00,(float)in_stack_19,(MethodInfo *)0x0);
-          in_stack_18 = (Il2CppMethodPointer)0x0;
-          in_stack_19 = (MVCameraBase *)targetTransform;
-          in_stack_15 = (Camera *)camController;
-          in_stack_16 = this;
-          in_stack_11 = &UNK_?;
-          MVCameraBase::MVCameraBase_UpdateCamera((MVCameraBase *)this,camController,targetTransform,(MethodInfo *)0x0);
-          return;
-        }
+  if (pTVar9 != (Transform *)0x0) {
+    value.y = fVar21;
+    value.x = fVar20;
+    value.z = fVar22;
+    value.w = (fVar11 - fVar3 * fVar14) - fVar15 * fVar4;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation(pTVar9,value,(MethodInfo *)0x0);
+    pMVar23 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+    fVar24 = (float10)(*(code *)(this_01->klass->vtable).get_FieldOfView.method)();
+    pMVar7 = (camController->fields).cameraStack;
+    VStack_2.z = (float)fVar24;
+    if ((pMVar7 != (MVCameraController_CameraStack *)0x0) && (pMVar8 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera(pMVar7,(MethodInfo *)0x0), pMVar8 != (MVCameraBase *)0x0)) {
+      fVar24 = (float10)(*(code *)(pMVar8->klass->vtable).get_FieldOfView.method)();
+      if ((float)this < 0.0) {
+        this = (TransitionCamera *)0x0;
+      }
+      else if (1.0 < (float)this) {
+        this = (TransitionCamera *)0x3f800000;
+      }
+      if ((pMVar23 != (MainCameraManager *)0x0) && (this_00 = (pMVar23->fields).mainCamera, this_00 != (Camera *)0x0)) {
+        UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView(this_00,((float)fVar24 - VStack_2.z) * (float)this + VStack_2.z,(MethodInfo *)0x0);
+        MVCameraBase::MVCameraBase_UpdateCamera((MVCameraBase *)this_01,camController,targetTransform,(MethodInfo *)0x0);
+        return;
       }
     }
   }
 code_?:
-  in_stack_18 = (Il2CppMethodPointer)&UNK_?;
   func_?();
-  pcVar44 = (code *)swi(3);
-  (*pcVar44)();
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 

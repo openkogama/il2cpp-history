@@ -1221,7 +1221,7 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_StartTransitionCa
                     if (pTVar3 != (Transform *)0x0) {
                       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation(pTVar3,(this_00->fields).prevCameraRotation,(MethodInfo *)0x0);
                       (this_00->fields).time = (float)&UNK_?;
-                      (this_00->fields).superSoft = 0x7a;
+                      (this_00->fields).superSoft = 0x4a;
                       (this_00->fields).transitionPercentage = 0.0;
                       return;
                     }

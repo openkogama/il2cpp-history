@@ -733,7 +733,7 @@ code_?:
       this_02 = (GameCoinBooster *)MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::SubscriptionRulesWrapper_GetRule(this_01,SubscriptionBenefit__Enum_GameCoinBoost,MV__WorldObject__Subscription__SubscriptionRules__GameCoinBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::GameCoinBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_);
       if (this_02 != (GameCoinBooster *)0x0) {
         iVar4 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::GameCoinBooster::GameCoinBooster_GetBoostedGameCoins(this_02,1,(MethodInfo *)0x0);
-        pOVar19 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::ObscuredFloat_op_Implicit((ObscuredFloat *)auStack_2,4.4794877e-29 / (float)iVar4,(MethodInfo *)0x0);
+        pOVar19 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::ObscuredFloat_op_Implicit((ObscuredFloat *)auStack_2,4.4826847e-29 / (float)iVar4,(MethodInfo *)0x0);
         AVar9 = (ACTkByte4)pOVar19->currentCryptoKey;
         AVar10 = pOVar19->hiddenValue;
         pBVar11 = pOVar19->hiddenValueOld;

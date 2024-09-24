@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -14,6 +15,7 @@ public class Bullet : MonoBehaviour
 {
 	// Fields
 	private const float MaxAllowedBulletAirTime = 20f;
+	private const float ColorOverTime = 0.01f;
 	public OnHitDelegate onHit;
 	public OnHitDelegate onHitLocal;
 	public Action<Ray> onOutOfRange;
@@ -39,6 +41,7 @@ public class Bullet : MonoBehaviour
 	private float handToMuzzleDist;
 	private Vector3 startPosition;
 	private Vector3 targetPosition;
+	private Color storedColor;
 	private Transform localTransform;
 	private CullingSubscriberBase cullingSubscriberBase;
 	private VoxelHit voxelHit;
@@ -79,6 +82,30 @@ public class Bullet : MonoBehaviour
 
 	public delegate void OnHitDelegate(VoxelHit hit, Ray lineOfFire);
 
+	[CompilerGenerated]
+	private sealed class _MakeVisibleOverTime_d__46 : IEnumerator<object>
+	{
+		// Fields
+		private int __1__state;
+		private object __2__current;
+		public Bullet __4__this;
+
+		// Properties
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
+		object IEnumerator.Current { [DebuggerHidden] get; }
+
+		// Constructors
+		[DebuggerHidden]
+		public _MakeVisibleOverTime_d__46(int __1__state);
+
+		// Methods
+		[DebuggerHidden]
+		void IDisposable.Dispose();
+		private bool MoveNext();
+		[DebuggerHidden]
+		void IEnumerator.Reset();
+	}
+
 	// Constructors
 	public Bullet();
 
@@ -86,7 +113,7 @@ public class Bullet : MonoBehaviour
 	private void Awake();
 	private void Update();
 	public static Bullet CreateBullet(PoolEnums bulletType, Vector3 pos, float handToMuzzleDist = 0f);
-	public void SetBulletTrail(Color bulletColor, Color trailColor, float speed, float size);
+	public void SetBulletAndTrailSettings(Color bulletColor, Color trailColor, float speed, float size);
 	public void ResetBullet();
 	public void ReturnToPool(PoolEnums bulletType);
 	public void Fire(float speed, float range, Ray lineOfFire, HashSet<int> ignoreWoIDs, bool thirdPersonWeapon = false);
@@ -94,5 +121,7 @@ public class Bullet : MonoBehaviour
 	private void OnStateChanged(CullingGroupEvent cullingGroupEvent);
 	private Vector3 FindTargetPos(float maxRange);
 	private Ray CalculateLineOfFireFromMuzzle(float maxRange);
+	[IteratorStateMachine(typeof(_MakeVisibleOverTime_d__46))]
+	private IEnumerator MakeVisibleOverTime();
 }
 
