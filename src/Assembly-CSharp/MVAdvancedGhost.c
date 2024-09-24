@@ -193,8 +193,8 @@ Vector3 * Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_GetTargetPositio
       uVar3._4_4_ = pVVar1->y;
       fVar4 = pVVar1->z;
       if (cRam_? == '\0') {
-        VStack_2.x = 3.3627877e-29;
-        VStack_2.y = 2.8106482e-28;
+        VStack_2.x = 3.3643188e-29;
+        VStack_2.y = 2.8116555e-28;
         func_?();
         cRam_? = '\x01';
       }

@@ -12,43 +12,20 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_Add
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
                     ((Behaviour *)this,(MethodInfo *)0x0);
   if (bVar1 == 0) {
-    if (skybox != (MVSkybox *)0x0) {
-      MVSkybox::MVSkybox_SetDeleteOnlyInteractionFlags(skybox,(MethodInfo *)0x0);
-      goto code_?;
-    }
+    if (skybox == (MVSkybox *)0x0) goto code_?;
+    MVSkybox::MVSkybox_SetDeleteOnlyInteractionFlags(skybox,(MethodInfo *)0x0);
   }
-  else {
-code_?:
-    pMVar2 = MethodInfo__System__Collections__Generic__List<MVSkybox>__Add_MVSkybox_;
-    this_00 = (this->fields).mvSkyboxes;
-    if (this_00 != (List_1_MVSkybox_ *)0x0) {
-      piVar3 = &(this_00->fields)._version;
-      *piVar3 = *piVar3 + 1;
-      pMVar4 = (this_00->fields)._items;
-      if (pMVar4 != (MVSkybox__Array *)0x0) {
-        uVar5 = (this_00->fields)._size;
-        if (pMVar4->max_length <= uVar5) {
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__AddWithResize
-                    ((List_1_System_Object_ *)this_00,(Object *)skybox,
-                     pMVar2->klass->rgctx_data[0xe].method);
-          return;
-        }
-        (this_00->fields)._size = uVar5 + 1;
-        if (uVar5 < pMVar4->max_length) {
-          pMVar4->vector[uVar5] = skybox;
-          func_?(pMVar4->vector + uVar5,skybox);
-          return;
-        }
-        goto code_?;
-      }
-    }
+  this_00 = (this->fields).mvSkyboxes;
+  if (this_00 != (List_1_MVSkybox_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)this_00,(Object *)skybox,
+               MethodInfo__System__Collections__Generic__List<MVSkybox>__Add_MVSkybox_);
+    return;
   }
-  func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -65,64 +42,44 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_Awake(SkyboxManager *this
     cRam_? = '\x01';
   }
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->OnPostGameInit;
-  b = (Delegate *)func_?(TypeInfo__MVGameControllerBase__OnPostGameInitDelegate);
-  pMVar2 = MethodInfo__SkyboxManager___Awake_b__24_0__;
-  (b->fields).method_ptr = MethodInfo__SkyboxManager___Awake_b__24_0__->virtualMethodPointer;
-  (b->fields).method = pMVar2;
-  (b->fields).m_target = (Object *)this;
-  func_?(&(b->fields).m_target,this);
-  uVar3 = pMVar2->parameters_count;
-  (b->fields).method_code = b;
-  cVar4 = func_?(pMVar2);
-  if (cVar4 == '\0') {
-    if (this != (SkyboxManager *)0x0) goto code_?;
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)
+            func_?(TypeInfo__MVGameControllerBase__OnPostGameInitDelegate);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__SkyboxManager___Awake_b__24_0__,(MethodInfo *)0x0);
+  pMStack2 =
+       (MVGameControllerBase_OnPostGameInitDelegate *)
+       mscorlib.dll::System::Delegate::Delegate_Combine
+                 ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pMStack2 == (MVGameControllerBase_OnPostGameInitDelegate *)0x0) {
+    TypeInfo__MVGameControllerBase->static_fields->OnPostGameInit =
+         (MVGameControllerBase_OnPostGameInitDelegate *)0x0;
+code_?:
+    func_?();
+    return;
+  }
+  pMVar1 = (MVGameControllerBase_OnPostGameInitDelegate *)0x0;
+  if (pMStack2->klass == TypeInfo__MVGameControllerBase__OnPostGameInitDelegate) {
+    pMVar1 = pMStack2;
+  }
+  if (pMVar1 == (MVGameControllerBase_OnPostGameInitDelegate *)0x0) {
+    pMStack3 = TypeInfo__MVGameControllerBase__OnPostGameInitDelegate;
+    func_?();
+    pMStack2 = extraout_ECX;
+    pMStack3 = extraout_EDX;
   }
   else {
-    if (uVar3 == 0) {
-      puVar5 = &UNK_?;
+    TypeInfo__MVGameControllerBase->static_fields->OnPostGameInit = pMVar1;
+    pMVar1 = (MVGameControllerBase_OnPostGameInitDelegate *)0x0;
+    if (pMStack2->klass == TypeInfo__MVGameControllerBase__OnPostGameInitDelegate) {
+      pMVar1 = pMStack2;
     }
-    else {
-code_?:
-      (b->fields).method_code = (b->fields).m_target;
-      puVar5 = (b->fields).method_ptr;
-    }
-    (b->fields).invoke_impl = puVar5;
-    (b->fields).extra_arg = &UNK_?;
-    pMVar1 = (MVGameControllerBase_OnPostGameInitDelegate *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pMVar1,b,(MethodInfo *)0x0);
-    if (pMVar1 == (MVGameControllerBase_OnPostGameInitDelegate *)0x0) {
-      TypeInfo__MVGameControllerBase->static_fields->OnPostGameInit =
-           (MVGameControllerBase_OnPostGameInitDelegate *)0x0;
-      pMVar6 = (MVGameControllerBase_OnPostGameInitDelegate *)0x0;
-code_?:
-      func_?(&TypeInfo__MVGameControllerBase->static_fields->OnPostGameInit,pMVar6);
-      return;
-    }
-    pMVar6 = (MVGameControllerBase_OnPostGameInitDelegate *)0x0;
-    if (pMVar1->klass == TypeInfo__MVGameControllerBase__OnPostGameInitDelegate) {
-      pMVar6 = pMVar1;
-    }
-    if (pMVar6 != (MVGameControllerBase_OnPostGameInitDelegate *)0x0) {
-      TypeInfo__MVGameControllerBase->static_fields->OnPostGameInit = pMVar6;
-      pMVar6 = (MVGameControllerBase_OnPostGameInitDelegate *)0x0;
-      if (pMVar1->klass == TypeInfo__MVGameControllerBase__OnPostGameInitDelegate) {
-        pMVar6 = pMVar1;
-      }
-      pMVar7 = TypeInfo__MVGameControllerBase__OnPostGameInitDelegate;
-      if (pMVar6 != (MVGameControllerBase_OnPostGameInitDelegate *)0x0) goto code_?;
-      goto code_?;
-    }
-    func_?(pMVar1,TypeInfo__MVGameControllerBase__OnPostGameInitDelegate);
+    pMStack3 = TypeInfo__MVGameControllerBase__OnPostGameInitDelegate;
+    if (pMVar1 != (MVGameControllerBase_OnPostGameInitDelegate *)0x0) goto code_?;
   }
-  uVar8 = func_?(0,&UNK_?,0);
-  func_?(uVar8);
-  pMVar1 = extraout_ECX;
-  pMVar7 = extraout_EDX;
-code_?:
-  func_?(pMVar1,pMVar7);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -200,9 +157,9 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_ComputeSkyboxSettings
                       System__Collections__Generic__IEnumerable<MVSkybox>_MethodInfo__System__Linq__Enumerable__Where<MVSkybox>_System__Collections__Generic__IEnumerable<MVSkybox>__System__Func<MVSkybox,_bool>_
                      );
   iVar6 = System.Core.dll::System::Linq::Enumerable::Enumerable_Count_2
-                     ((IEnumerable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pIVar5,
-                      int_MethodInfo__System__Linq__Enumerable__Count<MVSkybox>_System__Collections__Generic__IEnumerable<MVSkybox>_
-                     );
+                    ((IEnumerable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pIVar5,
+                     int_MethodInfo__System__Linq__Enumerable__Count<MVSkybox>_System__Collections__Generic__IEnumerable<MVSkybox>_
+                    );
   if (iVar6 == 0) {
     if ((TypeInfo__SkyboxManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -249,30 +206,13 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_ComputeSkyboxSettings
   fStack_14 = _UNK_?;
   *sunAngle = fVar8;
   if (pIVar5 != (IEnumerable_1_System_Object_ *)0x0) {
-    pIVar15 = pIVar5->klass;
-    uVar16 = 0;
-    uVar17._0_1_ = (pIVar15->_1).rank;
-    uVar17._1_1_ = (pIVar15->_1).minimumAlignment;
-    if (uVar17 != 0) {
-      do {
-        if (pIVar15->interfaceOffsets[uVar16].interfaceType ==
-            (Il2CppClass *)TypeInfo__System__Collections__Generic__IEnumerable<MVSkybox>) {
-          ppMVar18 = &(&pIVar5->klass->vtable)[pIVar5->klass->interfaceOffsets[uVar16].offset].
-                      GetEnumerator.method;
-          goto code_?;
-        }
-        uVar16 = uVar16 + 1;
-      } while (uVar16 < uVar17);
-    }
-    ppMVar18 = (MethodInfo **)func_?();
-code_?:
-    piVar19 = (int *)(*(code *)*ppMVar18)();
+    piVar15 = (int *)func_?();
     uStack_1 = 1;
-    while (piVar19 != (int *)0x0) {
-      cVar20 = func_?();
-      if (cVar20 == '\0') {
+    while (piVar15 != (int *)0x0) {
+      cVar16 = func_?();
+      if (cVar16 == '\0') {
         uStack_1 = 0xffffffff;
-        if (piVar19 != (int *)0x0) {
+        if (piVar15 != (int *)0x0) {
           func_?();
         }
         uStack_1 = 0xffffffff;
@@ -308,37 +248,37 @@ code_?:
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if (piVar19 == (int *)0x0) break;
-      iVar21 = *piVar19;
-      uVar17 = 0;
-      if (*(ushort *)(iVar21 + 0xb6) != 0) {
+      if (piVar15 == (int *)0x0) break;
+      iVar17 = *piVar15;
+      uVar18 = 0;
+      if (*(ushort *)(iVar17 + 0xb6) != 0) {
         do {
-          if (*(IEnumerator_1_MVSkybox___Class **)(*(int *)(iVar21 + 0x58) + (uint)uVar17 * 8) ==
+          if (*(IEnumerator_1_MVSkybox___Class **)(*(int *)(iVar17 + 0x58) + (uint)uVar18 * 8) ==
               TypeInfo__System__Collections__Generic__IEnumerator<MVSkybox>) {
-            puVar22 = (undefined4 *)
-                      (iVar21 + (*(int *)(*(int *)(iVar21 + 0x58) + 4 + (uint)uVar17 * 8) + 0x18) * 8)
+            puVar19 = (undefined4 *)
+                      (iVar17 + (*(int *)(*(int *)(iVar17 + 0x58) + 4 + (uint)uVar18 * 8) + 0x18) * 8)
             ;
             goto code_?;
           }
-          uVar17 = uVar17 + 1;
-        } while (uVar17 < *(ushort *)(iVar21 + 0xb6));
+          uVar18 = uVar18 + 1;
+        } while (uVar18 < *(ushort *)(iVar17 + 0xb6));
       }
-      puVar22 = (undefined4 *)func_?();
+      puVar19 = (undefined4 *)func_?();
 code_?:
-      this_01 = (MVSkybox *)(*(code *)*puVar22)();
+      this_01 = (MVSkybox *)(*(code *)*puVar19)();
       if (this_01 == (MVSkybox *)0x0) break;
-      pCVar23 = MVSkybox::MVSkybox_get_SkyboxColor
+      pCVar20 = MVSkybox::MVSkybox_get_SkyboxColor
                           ((Color *)&stack0xffffff98,this_01,(MethodInfo *)0x0);
       fVar8 = (float)iVar6;
-      fStack_14 = pCVar23->r / fVar8 + fStack_14;
-      fStack_13 = pCVar23->g / fVar8 + fStack_13;
-      fStack_12 = pCVar23->b / fVar8 + fStack_12;
+      fStack_14 = fStack_14 + pCVar20->r / fVar8;
+      fStack_12 = fStack_12 + pCVar20->b / fVar8;
+      fStack_13 = fStack_13 + pCVar20->g / fVar8;
     }
   }
   func_?();
   func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 
@@ -440,14 +380,19 @@ Assembly-CSharp.dll::SkyboxManager::SkyboxManager_DoAnimate(SkyboxManager *this,
     func_?(&TypeInfo__SkyboxManager___DoAnimate_d__23);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__SkyboxManager___DoAnimate_d__23;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
-  value[1].klass = (Object__Class *)0x0;
-  func_?(value + 2,this);
-  return (IEnumerator *)value;
+  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
+            func_?(TypeInfo__SkyboxManager___DoAnimate_d__23);
+  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
+            (this_00,0,(MethodInfo *)0x0);
+  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
+    func_?(this_00 + 1);
+    return (IEnumerator *)this_00;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  pIVar2 = (IEnumerator *)(*pcVar1)();
+  return pIVar2;
 }
 
 

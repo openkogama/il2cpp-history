@@ -1,0 +1,116 @@
+
+/* Boolean MoveNext() */
+
+bool Assembly-CSharp.dll::Bullet+<MakeVisibleOverTime>d__46::
+     Bullet_MakeVisibleOverTime_d_46_MoveNext
+               (Bullet_MakeVisibleOverTime_d_46 *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&StringLiteral__TintColor);
+    cRam_? = '\x01';
+  }
+  iVar1 = (this->fields).__1__state;
+  pBVar2 = (this->fields).__4__this;
+  if ((iVar1 != 0) && (iVar1 != 1)) {
+    return 0;
+  }
+  (this->fields).__1__state = -1;
+  if (pBVar2 != (Bullet *)0x0) {
+    fVar3 = (pBVar2->fields).currentAirTime / _UNK_?;
+    if (fVar3 < 0.0) {
+      fVar4 = 0.0;
+code_?:
+      fVar3 = fVar4;
+    }
+    else {
+      fVar4 = _UNK_?;
+      if (_UNK_? < fVar3) goto code_?;
+    }
+    pCVar5 = &(pBVar2->fields).storedColor;
+    uVar6 = 0;
+    pMVar7 = (pBVar2->fields).meshRenderers;
+    uVar8 = pCVar5->r;
+    uVar9 = pCVar5->g;
+    uVar10 = pCVar5->b;
+    value_00.z = (float)uVar10;
+    value_00.y = (float)uVar9;
+    value_00.x = (float)uVar8;
+    uVar11 = pCVar5->r;
+    uVar12 = pCVar5->g;
+    uVar13 = pCVar5->b;
+    value.z = (float)uVar13;
+    value.y = (float)uVar12;
+    value.x = (float)uVar11;
+    if (pMVar7 != (MeshRenderer__Array *)0x0) {
+      ppMVar14 = pMVar7->vector;
+      for (; (int)uVar6 < (int)pMVar7->max_length; uVar6 = uVar6 + 1) {
+        if (pMVar7->max_length <= uVar6) goto code_?;
+        if ((*ppMVar14 == (MeshRenderer *)0x0) ||
+           (pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                ((Renderer *)*ppMVar14,(MethodInfo *)0x0),
+           pMVar15 == (Material *)0x0)) goto code_?;
+        value.w = fVar3;
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
+                  (pMVar15,StringLiteral__TintColor,value,(MethodInfo *)0x0);
+        ppMVar14 = ppMVar14 + 1;
+      }
+      uVar6 = 0;
+      pSVar16 = (pBVar2->fields).spriteRenderers;
+      if (pSVar16 != (SpriteRenderer__Array *)0x0) {
+        ppSVar17 = pSVar16->vector;
+        while( true ) {
+          if ((int)pSVar16->max_length <= (int)uVar6) {
+            if (_UNK_? <= fVar3) {
+              return 0;
+            }
+            (this->fields).__2__current = (Object *)0x0;
+            func_?(&(this->fields).__2__current,0);
+            (this->fields).__1__state = 1;
+            return 1;
+          }
+          if (pSVar16->max_length <= uVar6) break;
+          if ((*ppSVar17 == (SpriteRenderer *)0x0) ||
+             (pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                  ((Renderer *)*ppSVar17,(MethodInfo *)0x0),
+             pMVar15 == (Material *)0x0)) goto code_?;
+          value_00.w = fVar3;
+          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
+                    (pMVar15,StringLiteral__TintColor,value_00,(MethodInfo *)0x0);
+          uVar6 = uVar6 + 1;
+          ppSVar17 = ppSVar17 + 1;
+        }
+        goto code_?;
+      }
+    }
+  }
+code_?:
+  func_?();
+code_?:
+  func_?();
+  pcVar18 = (code *)swi(3);
+  bVar19 = (*pcVar18)();
+  return bVar19;
+}
+
+
+/* Void System.Collections.IEnumerator.Reset() */
+
+void Assembly-CSharp.dll::Bullet+<MakeVisibleOverTime>d__46::
+     Bullet_MakeVisibleOverTime_d_46_System_Collections_IEnumerator_Reset
+               (Bullet_MakeVisibleOverTime_d_46 *this,MethodInfo *method)
+
+{
+  uVar1 = func_?(&TypeInfo__System__NotSupportedException);
+  this_00 = (NotSupportedException *)func_?(uVar1);
+  mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
+            (this_00,(MethodInfo *)0x0);
+  func_?(&
+                  MethodInfo__Bullet___MakeVisibleOverTime_d__46__System_Collections_IEnumerator_Reset__
+                 );
+  func_?(this_00);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+

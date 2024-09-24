@@ -42,7 +42,6 @@ namespace Assets.Scripts.Pickups
 		private ObscuredFloat currentCharge;
 		private ObscuredFloat initialFOV;
 		private ObscuredFloat initialMouseSensitivity;
-		private ObscuredBool isCharging;
 	
 		// Properties
 		public override AvatarItemType Type { get; }
@@ -122,6 +121,30 @@ namespace Assets.Scripts.Pickups
 			void IEnumerator.Reset();
 		}
 	
+		[CompilerGenerated]
+		private sealed class _FetchFOV_d__51 : IEnumerator<object>
+		{
+			// Fields
+			private int __1__state;
+			private object __2__current;
+			public PickupItemCustomGun __4__this;
+	
+			// Properties
+			object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
+			object IEnumerator.Current { [DebuggerHidden] get; }
+	
+			// Constructors
+			[DebuggerHidden]
+			public _FetchFOV_d__51(int __1__state);
+	
+			// Methods
+			[DebuggerHidden]
+			void IDisposable.Dispose();
+			private bool MoveNext();
+			[DebuggerHidden]
+			void IEnumerator.Reset();
+		}
+	
 		// Constructors
 		public PickupItemCustomGun();
 	
@@ -136,6 +159,8 @@ namespace Assets.Scripts.Pickups
 		protected override void SetConfiguration(Dictionary<object, object> itemData);
 		public override void OnEquip();
 		public override void OnStateChanged(Dictionary<object, object> newState);
+		[IteratorStateMachine(typeof(_FetchFOV_d__51))]
+		private IEnumerator FetchFOV();
 		private void SoundStateUpdate();
 		private void MuzzleStateUpdate();
 		private void MovementSpeedStateUpdate();

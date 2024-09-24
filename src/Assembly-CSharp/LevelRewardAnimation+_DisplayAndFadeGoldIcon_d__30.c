@@ -55,8 +55,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
     uVar9 = CONCAT44(uVar9._4_4_,(float)uVar9);
     this = (LevelRewardAnimation_DisplayAndFadeGoldIcon_d_30 *)0x0;
     pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                       ((Quaternion *)&stack0xffffffd0,(Vector3)CONCAT48(this,uVar9),
-                        (MethodInfo *)0x0);
+                        ((Quaternion *)&stack0xffffffd0,(Vector3)CONCAT48(this,uVar9),
+                         (MethodInfo *)0x0);
     if (pTVar8 == (Transform *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
               (pTVar8,*pQVar10,(MethodInfo *)0x0);
@@ -84,16 +84,17 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
       euler.y = fVar3;
       euler.x = fVar3;
       euler.z = 0.0;
-      pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                         ((Quaternion *)&stack0xffffffc0,euler,(MethodInfo *)0x0);
+      pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+                Quaternion_Internal_FromEulerRad
+                          ((Quaternion *)&stack0xffffffc0,euler,(MethodInfo *)0x0);
       if (pTVar8 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                   (pTVar8,*pQVar10,(MethodInfo *)0x0);
         pTVar11 = (pLVar2->fields).header;
         if ((pTVar11 != (Text *)0x0) &&
            (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)pTVar11,(MethodInfo *)0x0), pGVar12 != (GameObject *)0x0
-           )) {
+                                ((Component *)pTVar11,(MethodInfo *)0x0),
+           pGVar12 != (GameObject *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (pGVar12,1,(MethodInfo *)0x0);
           pTVar11 = (pLVar2->fields).header;
@@ -103,14 +104,14 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
             pTVar11 = (pLVar2->fields).goldText;
             if ((pTVar11 != (Text *)0x0) &&
                (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_get_gameObject((Component *)pTVar11,(MethodInfo *)0x0),
+                          Component_get_gameObject((Component *)pTVar11,(MethodInfo *)0x0),
                pGVar12 != (GameObject *)0x0)) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                         (pGVar12,1,(MethodInfo *)0x0);
               pCVar13 = (pLVar2->fields).claimButton;
               if ((pCVar13 != (CanvasGroup *)0x0) &&
                  (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                           Component_get_gameObject((Component *)pCVar13,(MethodInfo *)0x0),
+                            Component_get_gameObject((Component *)pCVar13,(MethodInfo *)0x0),
                  pGVar12 != (GameObject *)0x0)) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                           (pGVar12,1,(MethodInfo *)0x0);
@@ -238,8 +239,8 @@ code_?:
         euler_00.x = fVar3;
         euler_00.z = 0.0;
         pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                 Quaternion_Internal_FromEulerRad
-                           ((Quaternion *)&stack0xffffffc0,euler_00,(MethodInfo *)0x0);
+                  Quaternion_Internal_FromEulerRad
+                            ((Quaternion *)&stack0xffffffc0,euler_00,(MethodInfo *)0x0);
         if (pTVar8 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                     (pTVar8,*pQVar10,(MethodInfo *)0x0);
@@ -253,15 +254,20 @@ code_?:
     }
   }
 code_?:
-  bVar16 = func_?();
-  in_AF = 9 < (bVar16 & 0xf) | in_AF;
-  bVar16 = bVar16 + in_AF * -6 & 0xf;
-  pfVar17 = &pLVar1[-2].fields._currentTime_5__2;
-  *(byte *)pfVar17 = *(char *)pfVar17 + extraout_DL + in_AF;
-  in_AF = 9 < bVar16 | in_AF;
-  out(0x3f,(bVar16 + in_AF * -6 & 0xf) * '\x02' + in_AF);
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  uVar16 = func_?();
+  in_AF = 9 < ((byte)uVar16 & 0xf) | in_AF;
+  uVar17 = CONCAT31((int3)((uint)uVar16 >> 8),(byte)uVar16 + in_AF * -6) & 0xffffff0f;
+  bVar18 = (byte)uVar17;
+  pcVar19 = (char *)(CONCAT22((short)(uVar17 >> 0x10),
+                             CONCAT11((char)((uint)uVar16 >> 8) - in_AF,bVar18)) + -5);
+  *pcVar19 = *pcVar19 + bVar18 + in_AF;
+  pcVar19 = (char *)(CONCAT22((short)((uint)&stack0xfffffffc >> 0x10),
+                             CONCAT11(((byte)((uint)&stack0xfffffffc >> 8) ^ 0x3f) + extraout_DL,
+                                      (char)&stack0xfffffffc)) + -0x33efc003);
+  *pcVar19 = *pcVar19 + (char)&stack0xfffffffc + (9 < bVar18 | in_AF);
+  pcVar20 = (code *)swi(3);
+  bVar21 = (*pcVar20)();
+  return bVar21;
 }
 
 

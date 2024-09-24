@@ -934,30 +934,27 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched
     func_?(TypeInfo__StatHatWrapper);
   }
   StatHatWrapper::StatHatWrapper_Count(StringLiteral_Revive_WatchedReviveAd,1,(MethodInfo *)0x0);
-  value = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((value != (MVNetworkGame *)0x0) &&
-     (unaff_EBX = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-                  func_?((value->fields).OnWinningConditionFulfilled),
-     this != (ReviveUIHandler *)0x0)) {
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (unaff_EBX = (Object__Class *)func_?((pMVar1->fields).OnWinningConditionFulfilled),
+     unaff_EDI = this, this != (ReviveUIHandler *)0x0)) {
     Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
     SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
     SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-              (unaff_EBX,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0)
-    ;
+              ((SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)unaff_EBX,(Object *)this,
+               (this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0);
     method_00 = (MethodInfo *)0x0;
-    unaff_EBX = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+    unaff_EBX = (Object__Class *)
                 mscorlib.dll::System::Delegate::Delegate_Remove
                           ((Delegate *)0x0,(Delegate *)unaff_EBX,(MethodInfo *)0x0);
-    if (unaff_EBX == (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)0x0) {
-      (value->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+    if (unaff_EBX == (Object__Class *)0x0) {
+      (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
     }
     else {
-      pAVar1 = (Action_1_IWinningCondition_ *)func_?();
-      cVar2 = '\0';
-      if (pAVar1 == (Action_1_IWinningCondition_ *)0x0) goto code_?;
-      (value->fields).OnWinningConditionFulfilled = pAVar1;
+      pAVar2 = (Action_1_IWinningCondition_ *)func_?();
+      if (pAVar2 == (Action_1_IWinningCondition_ *)0x0) goto code_?;
+      (pMVar1->fields).OnWinningConditionFulfilled = pAVar2;
       iVar3 = func_?();
-      cVar2 = '\0';
       if (iVar3 == 0) goto code_?;
     }
     func_?();
@@ -1001,31 +998,29 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched
     case RewardedAdResult__Enum_ErrorClient:
     case RewardedAdResult__Enum_ErrorInternal:
     case RewardedAdResult__Enum_RewardNotUnlocked:
-      value = (MVNetworkGame *)func_?(TypeInfo__ReviveUIHandler____c__DisplayClass13_0);
+      value = (Object *)func_?(TypeInfo__ReviveUIHandler____c__DisplayClass13_0);
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)value,ExceptionArgument__Enum_obj,method_00);
-      if (value != (MVNetworkGame *)0x0) {
-        (value->fields).ReceivedAvatarBodiesFromQuery =
-             (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this;
-        func_?(&(value->fields).ReceivedAvatarBodiesFromQuery,this);
+                (value,ExceptionArgument__Enum_obj,method_00);
+      if (value != (Object *)0x0) {
+        value[1].monitor = (MonitorData *)this;
+        func_?(&value[1].monitor,this);
         original = (this->fields)._.errorNotification;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pEVar5 = (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)
+        pOVar5 = (Object__Class *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                             ((Object *)original,
                              NotificationPopup_MethodInfo__UnityEngine__Object__Instantiate<NotificationPopup>_NotificationPopup_
                             );
-        (value->fields).ReceivedItemFromQuery = pEVar5;
-        func_?(&value->fields,pEVar5);
-        unaff_EBX = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-                    (value->fields).ReceivedItemFromQuery;
+        value[1].klass = pOVar5;
+        func_?(value + 1,pOVar5);
+        unaff_EBX = value[1].klass;
         pIVar6 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
         if (pIVar6 != (IAdManager *)0x0) {
           func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar6);
           header = TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
-          if (unaff_EBX != (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)0x0) {
+          if (unaff_EBX != (Object__Class *)0x0) {
             NotificationPopup::NotificationPopup_Initialize
                       ((NotificationPopup *)unaff_EBX,(String *)0x0,header,(MethodInfo *)0x0);
             pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -1037,8 +1032,7 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched
                                 );
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
             Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
-                       (Object *)value,
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
                        MethodInfo__ReviveUIHandler____c__DisplayClass13_0___OnRewardedAdWatched_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                        ,(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
@@ -1079,21 +1073,20 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched
       return;
     }
   }
-  cVar2 = '\0';
   func_?();
+  this = unaff_EDI;
 code_?:
-  uVar9 = func_?();
-  *(undefined1 *)((ulonglong)uVar9 >> 0x20) = (char)uVar9;
-  pcVar10 = (char *)((int)uVar9 + 0x2b103e02);
-  *pcVar10 = *pcVar10 + extraout_CL + cVar2;
-  bVar11 = CARRY1((byte)((uint)unaff_EBX >> 8),*(byte *)&value->klass);
-  pbVar12 = (byte *)((int)&value->klass + 2);
-  bVar13 = *pbVar12;
-  bVar14 = (byte)((ulonglong)uVar9 >> 0x20);
-  bVar15 = *pbVar12 + bVar14;
-  *pbVar12 = bVar15 + bVar11;
-  pcVar10 = (char *)((int)uVar9 + -0x33efc1fe);
-  *pcVar10 = *pcVar10 + extraout_CL + (CARRY1(bVar13,bVar14) || CARRY1(bVar15,bVar11));
+  pbVar9 = (byte *)func_?();
+  *(byte *)&this->klass = *(byte *)&this->klass | extraout_DL;
+  bVar10 = *pbVar9;
+  bVar11 = (byte)extraout_CX;
+  *pbVar9 = *pbVar9 + bVar11;
+  puVar12 = (undefined1 *)((int)&unaff_EBX[-0x30cc85].rgctx_data + 2);
+  bVar13 = *puVar12;
+  bVar14 = (byte)((ushort)extraout_CX >> 8);
+  bVar15 = *puVar12 + bVar14;
+  *puVar12 = bVar15 + CARRY1(bVar10,bVar11);
+  *pbVar9 = *pbVar9 + bVar11 + (CARRY1(bVar13,bVar14) || CARRY1(bVar15,CARRY1(bVar10,bVar11)));
   pcVar16 = (code *)swi(3);
   (*pcVar16)();
   return;

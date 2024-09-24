@@ -126,9 +126,9 @@ code_?:
               (TypeInfo__System__Int32->_0).element_class) {
             piVar9 = (int32_t *)func_?();
             AttributeSettingTypes::AttributeSettingInt::AttributeSettingInt__ctor_1
-                      ((AttributeSettingInt *)unaff_EDI,(String *)unaff_EBX,*piVar9,(int32_t)piVar6
-                       ,(int32_t)piVar7,calculator_00,(AttributeSettingsExclusivityFlag__Enum)pKVar3
-                       ,parent,(MethodInfo *)0x0);
+                      ((AttributeSettingInt *)unaff_EDI,(String *)unaff_EBX,*piVar9,
+                       (int32_t)piVar6,(int32_t)piVar7,calculator_00,
+                       (AttributeSettingsExclusivityFlag__Enum)pKVar3,parent,(MethodInfo *)0x0);
             return (KogamaSettingValueWrapperBase *)unaff_EDI;
           }
           goto code_?;
@@ -189,28 +189,70 @@ code_?:
             (this_01,(MethodInfo *)0x0);
   func_?();
   bVar10 = (undefined1 *)0xffffffeb < &stack0xffffffd8;
-  uVar11 = func_?();
-  out((short)((ulonglong)uVar11 >> 0x20) + 1,(int)uVar11);
-  bVar12 = (byte)((ulonglong)uVar11 >> 8);
-  bVar13 = bVar12 + (byte)unaff_EBX;
-  bVar14 = CARRY1(bVar12,(byte)unaff_EBX) || CARRY1(bVar13,bVar10);
-  iVar1 = CONCAT22((short)((ulonglong)uVar11 >> 0x10),CONCAT11(bVar13 + bVar10,(char)uVar11));
-  iVar15 = (int)((ulonglong)uVar11 >> 0x20) + 2;
-  uVar16 = (undefined2)iVar15;
-  out(uVar16,iVar1);
-  pbVar17 = (byte *)((int)&unaff_EBX[0x4b23de]._0.events + iVar1 * 2 + 3);
-  bVar13 = *pbVar17;
-  bVar10 = (byte)((uint)unaff_EBX >> 8);
-  bVar12 = *pbVar17 + bVar10;
-  *pbVar17 = bVar12 + bVar14;
-  out(uVar16,iVar1);
-  ppEVar18 = &(unaff_EDI->_0).events;
-  *(char *)ppEVar18 =
-       *(char *)ppEVar18 + (char)((uint)iVar15 >> 8) +
-       (CARRY1(bVar13,bVar10) || CARRY1(bVar12,bVar14));
-  out(uVar16,iVar1);
-  pcVar19 = (code *)swi(3);
-  pKVar20 = (KogamaSettingValueWrapperBase *)(*pcVar19)();
-  return pKVar20;
+  cVar11 = SCARRY4((int)&stack0xffffffd8,0x14);
+  cVar12 = (int)&stack0xffffffec < 0;
+  bVar13 = &stack0x00000000 == (undefined1 *)0x14;
+  uVar14 = func_?();
+  uVar15 = (undefined2)((uint6)uVar14 >> 0x20);
+  piVar6 = (int *)uVar14;
+  if (!bVar13 && cVar11 == cVar12) {
+    out(uVar15,piVar6);
+    pbVar16 = (byte *)(extraout_ECX * 2 + 0x4dec10ef);
+    bVar17 = *pbVar16;
+    bVar18 = *pbVar16 + (byte)extraout_ECX;
+    *pbVar16 = bVar18 + bVar10;
+    out(uVar15,piVar6);
+    bVar19 = (byte)((uint6)uVar14 >> 0x28);
+    out(uVar15,piVar6);
+    puVar20 = (undefined1 *)((int)&unaff_EDI[-0x3855c5].vtable.__unknown.method + 2);
+    *puVar20 = *puVar20 + (char)((uint6)uVar14 >> 8) +
+              (CARRY1(in_stack_21,bVar19) ||
+              CARRY1(in_stack_21 + bVar19,
+                     CARRY1(bVar17,(byte)extraout_ECX) || CARRY1(bVar18,bVar10)));
+    pcVar22 = (code *)swi(3);
+    pKVar23 = (KogamaSettingValueWrapperBase *)(*pcVar22)();
+    return pKVar23;
+  }
+  *piVar6 = (int)piVar6 + (uint)bVar10 + *piVar6;
+  if (*piVar6 == 0) {
+    func_?();
+    func_?();
+    uRam_? = 1;
+  }
+  if ((unaff_EDI->_0).byval_arg.data.dummy == (void *)0x0) {
+    this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (this_02,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    (unaff_EDI->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)this_02;
+    func_?(&(unaff_EDI->_0).byval_arg);
+  }
+  MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialUpdateHashtable
+            ((Dictionary_2_System_Object_System_Object_ *)(unaff_EDI->_0).byval_arg.data.typeHandle,
+             (Dictionary_2_System_Object_System_Object_ *)unaff_EBX,(MethodInfo *)0x0);
+  iVar1 = ((String__Fields *)&(unaff_EDI->_0).name)->_stringLength;
+  if (iVar1 != 0) {
+    MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialRemoveFromHashtable
+              (*(Dictionary_2_System_Object_System_Object_ **)(iVar1 + 0x58),
+               (Dictionary_2_System_Object_System_Object_ *)
+               (unaff_EDI->_0).byval_arg.data.typeHandle,(MethodInfo *)0x0);
+    iVar1._0_2_ = (unaff_EDI->_0).this_arg.attrs;
+    iVar1._2_1_ = (unaff_EDI->_0).this_arg.type;
+    iVar1._3_1_ = (unaff_EDI->_0).this_arg.field_0x7;
+    pKVar23 = extraout_EAX;
+    if (iVar1 != 0) {
+      pKVar23 = (KogamaSettingValueWrapperBase *)
+                (**(code **)(*(int *)&(unaff_EDI->_0).this_arg.attrs + 0xc))();
+    }
+    return pKVar23;
+  }
+  func_?();
+  pcVar22 = (code *)swi(3);
+  pKVar23 = (KogamaSettingValueWrapperBase *)(*pcVar22)();
+  return pKVar23;
 }
 

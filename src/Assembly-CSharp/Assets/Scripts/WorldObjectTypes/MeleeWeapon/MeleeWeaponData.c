@@ -638,68 +638,68 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeW
         maxValues = (Dictionary_2_System_Object_System_Object_ *)pDVar1;
         func_?();
         pSVar8 = (String__Array *)func_?();
-        pSVar9 = StringLiteral_none;
+        pSVar9 = TM::TM__(StringLiteral_none,(MethodInfo *)0x0);
         if (pSVar8 != (String__Array *)0x0) {
           if (pSVar8->max_length == 0) goto code_?;
-          pSVar8->vector[0] = StringLiteral_none;
+          pSVar8->vector[0] = pSVar9;
           func_?(pSVar8->vector,pSVar9);
-          pSVar9 = StringLiteral_sword_swing;
+          pSVar9 = TM::TM__(StringLiteral_sword_swing,(MethodInfo *)0x0);
           if (pSVar8->max_length < 2) goto code_?;
-          pSVar8->vector[1] = StringLiteral_sword_swing;
+          pSVar8->vector[1] = pSVar9;
           func_?(pSVar8->vector + 1,pSVar9);
-          pSVar9 = StringLiteral_laser_swing;
+          pSVar9 = TM::TM__(StringLiteral_laser_swing,(MethodInfo *)0x0);
           if (pSVar8->max_length < 3) goto code_?;
-          pSVar8->vector[2] = StringLiteral_laser_swing;
+          pSVar8->vector[2] = pSVar9;
           func_?(pSVar8->vector + 2,pSVar9);
-          pSVar9 = StringLiteral_woosh;
+          pSVar9 = TM::TM__(StringLiteral_woosh,(MethodInfo *)0x0);
           if (pSVar8->max_length < 4) goto code_?;
-          pSVar8->vector[3] = StringLiteral_woosh;
+          pSVar8->vector[3] = pSVar9;
           func_?(pSVar8->vector + 3,pSVar9);
-          pSVar9 = StringLiteral_shotgun;
+          pSVar9 = TM::TM__(StringLiteral_shotgun,(MethodInfo *)0x0);
           if (pSVar8->max_length < 5) goto code_?;
-          pSVar8->vector[4] = StringLiteral_shotgun;
+          pSVar8->vector[4] = pSVar9;
           func_?(pSVar8->vector + 4,pSVar9);
           TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->static_fields->
           fireSoundEffects = pSVar8;
           func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData
                            ->static_fields->fireSoundEffects,pSVar8);
           pSVar8 = (String__Array *)func_?(TypeInfo__System__String,9);
-          pSVar9 = StringLiteral_none;
+          pSVar9 = TM::TM__(StringLiteral_none,(MethodInfo *)0x0);
           if (pSVar8 != (String__Array *)0x0) {
             if (pSVar8->max_length != 0) {
-              pSVar8->vector[0] = StringLiteral_none;
+              pSVar8->vector[0] = pSVar9;
               func_?(pSVar8->vector,pSVar9);
-              pSVar9 = StringLiteral_slash;
+              pSVar9 = TM::TM__(StringLiteral_slash,(MethodInfo *)0x0);
               if (1 < pSVar8->max_length) {
-                pSVar8->vector[1] = StringLiteral_slash;
+                pSVar8->vector[1] = pSVar9;
                 func_?(pSVar8->vector + 1,pSVar9);
-                pSVar9 = StringLiteral_metal_clash;
+                pSVar9 = TM::TM__(StringLiteral_metal_clash,(MethodInfo *)0x0);
                 if (2 < pSVar8->max_length) {
-                  pSVar8->vector[2] = StringLiteral_metal_clash;
+                  pSVar8->vector[2] = pSVar9;
                   func_?(pSVar8->vector + 2,pSVar9);
-                  pSVar9 = StringLiteral_laser;
+                  pSVar9 = TM::TM__(StringLiteral_laser,(MethodInfo *)0x0);
                   if (3 < pSVar8->max_length) {
-                    pSVar8->vector[3] = StringLiteral_laser;
+                    pSVar8->vector[3] = pSVar9;
                     func_?(pSVar8->vector + 3,pSVar9);
-                    pSVar9 = StringLiteral_slap;
+                    pSVar9 = TM::TM__(StringLiteral_slap,(MethodInfo *)0x0);
                     if (4 < pSVar8->max_length) {
-                      pSVar8->vector[4] = StringLiteral_slap;
+                      pSVar8->vector[4] = pSVar9;
                       func_?(pSVar8->vector + 4,pSVar9);
-                      pSVar9 = StringLiteral_bonk;
+                      pSVar9 = TM::TM__(StringLiteral_bonk,(MethodInfo *)0x0);
                       if (5 < pSVar8->max_length) {
-                        pSVar8->vector[5] = StringLiteral_bonk;
+                        pSVar8->vector[5] = pSVar9;
                         func_?(pSVar8->vector + 5,pSVar9);
-                        pSVar9 = StringLiteral_punch;
+                        pSVar9 = TM::TM__(StringLiteral_punch,(MethodInfo *)0x0);
                         if (6 < pSVar8->max_length) {
-                          pSVar8->vector[6] = StringLiteral_punch;
+                          pSVar8->vector[6] = pSVar9;
                           func_?(pSVar8->vector + 6,pSVar9);
-                          pSVar9 = StringLiteral_heavy_thud;
+                          pSVar9 = TM::TM__(StringLiteral_heavy_thud,(MethodInfo *)0x0);
                           if (7 < pSVar8->max_length) {
-                            pSVar8->vector[7] = StringLiteral_heavy_thud;
+                            pSVar8->vector[7] = pSVar9;
                             func_?(pSVar8->vector + 7,pSVar9);
-                            pSVar9 = StringLiteral_explosion;
+                            pSVar9 = TM::TM__(StringLiteral_explosion,(MethodInfo *)0x0);
                             if (8 < pSVar8->max_length) {
-                              pSVar8->vector[8] = StringLiteral_explosion;
+                              pSVar8->vector[8] = pSVar9;
                               func_?(pSVar8->vector + 8,pSVar9);
                               TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData
                               ->static_fields->hitSoundEffects = pSVar8;

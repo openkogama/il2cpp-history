@@ -142,27 +142,28 @@ void Assembly-CSharp.dll::ScoreBoardSingleBase::ScoreBoardSingleBase_HandleParti
       if (((pMVar3 == (MVNetworkGame *)0x0) ||
           (pMVar4 = (pMVar3->fields).playerContainer, pMVar4 == (MVPlayerContainer *)0x0)) ||
          (pDVar5 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                    *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers
-                                (pMVar4,(MethodInfo *)0x0),
-         pDVar5 == (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                    *)0x0)) goto code_?;
+                     *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers
+                                 (pMVar4,(MethodInfo *)0x0),
+         pDVar5 ==
+         (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+          *)0x0)) goto code_?;
       iVar6 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-              StyleSheetCache+SheetHandleKey,System::Object]::
-              Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
-                        (pDVar5,
-                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__get_Count__
-                        );
+               Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+               StyleSheetCache+SheetHandleKey,System::Object]::
+               Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
+                         (pDVar5,
+                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__get_Count__
+                         );
       if (iVar6 <= iVar1) break;
       pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                (this->fields)._.scoreBoardPlayerData;
       if (((pLVar7 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
           (RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                   RegularExpressions::RegexCharClass+SingleRange]::
-                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                             (pLVar7,iVar1,
-                              MethodInfo__System__Collections__Generic__List<ScoreBoardBase::ScoreData>__get_Item_int_
-                             ), RVar8 == (RegexCharClass_SingleRange)0x0)) ||
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              (pLVar7,iVar1,
+                               MethodInfo__System__Collections__Generic__List<ScoreBoardBase::ScoreData>__get_Item_int_
+                              ), RVar8 == (RegexCharClass_SingleRange)0x0)) ||
          ((*(Component **)((int)RVar8 + 0x1c) == (Component *)0x0 ||
           (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                (*(Component **)((int)RVar8 + 0x1c),(MethodInfo *)0x0),
@@ -177,9 +178,11 @@ void Assembly-CSharp.dll::ScoreBoardSingleBase::ScoreBoardSingleBase_HandleParti
     if (((pMVar3 != (MVNetworkGame *)0x0) &&
         (pMVar4 = (pMVar3->fields).playerContainer, pMVar4 != (MVPlayerContainer *)0x0)) &&
        (pDVar5 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                  *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(pMVar4,(MethodInfo *)0x0)
-       , pDVar5 != (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                    *)0x0)) {
+                   *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers
+                               (pMVar4,(MethodInfo *)0x0),
+       pDVar5 !=
+       (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+        *)0x0)) {
       unaff_EBX = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                   StyleSheetCache+SheetHandleKey,System::Object]::
@@ -194,16 +197,20 @@ void Assembly-CSharp.dll::ScoreBoardSingleBase::ScoreBoardSingleBase_HandleParti
 code_?:
   uVar9 = func_?();
   iVar1 = (int)((ulonglong)uVar9 >> 0x20);
-  bRam_? = bRam_? | 0x29;
-  pcVar10 = (char *)(iVar1 + -0x7defd6f3);
-  *pcVar10 = *pcVar10 + (char)uVar9;
-  piVar11 = (int *)((uint)uVar9 | 0xd821029);
-  *piVar11 = *piVar11 - iVar1;
-  bRam_? = bRam_? | 0x29;
-  pcVar10 = (char *)(unaff_EBX + 0x29 + extraout_ECX);
-  *pcVar10 = *pcVar10 + (char)extraout_ECX;
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  *(byte *)extraout_ECX = (byte)*extraout_ECX & 0x29;
+  pbVar10 = (byte *)((int)&this[1].fields._._.m_CancellationTokenSource + unaff_EBX + 1);
+  bVar11 = *pbVar10;
+  *pbVar10 = *pbVar10 + (byte)extraout_ECX;
+  cVar12 = (char)uVar9;
+  *(char *)(iVar1 + -0x7defd6df) =
+       *(char *)(iVar1 + -0x7defd6df) + cVar12 + CARRY1(bVar11,(byte)extraout_ECX);
+  *extraout_ECX = *extraout_ECX & (uint)&stack0xfffffffc;
+  *(char *)(iVar1 + -0x7defd6df) = *(char *)(iVar1 + -0x7defd6df) + cVar12;
+  *extraout_ECX = *extraout_ECX & (uint)&stack0xfffffffc;
+  *(char *)(iVar1 + 0x4c102921) = *(char *)(iVar1 + 0x4c102921) + cVar12;
+  *(int *)uVar9 = *(int *)uVar9 - iVar1;
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 code_?:
   if ((pLVar2->fields)._size <= unaff_EBX) {
@@ -213,113 +220,113 @@ code_?:
            (this->fields)._.scoreBoardPlayerData;
   if ((pLVar7 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
      (RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (pLVar7,unaff_EBX,
-                         MethodInfo__System__Collections__Generic__List<ScoreBoardBase::ScoreData>__get_Item_int_
-                        ), RVar8 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-  pSVar13 = *(String **)((int)RVar8 + 8);
-  IVar14.m_value = 0;
-  uVar15 = (this->fields)._.statType;
-  IVar16.m_value = 0;
-  ppSVar17 = (String__Array__Class **)pSVar13;
+               RegexCharClass+SingleRange]::
+               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                         (pLVar7,unaff_EBX,
+                          MethodInfo__System__Collections__Generic__List<ScoreBoardBase::ScoreData>__get_Item_int_
+                         ), RVar8 == (RegexCharClass_SingleRange)0x0)) goto code_?;
+  pSVar14 = *(String **)((int)RVar8 + 8);
+  IVar15.m_value = 0;
+  uVar16 = (this->fields)._.statType;
+  IVar17.m_value = 0;
+  ppSVar18 = (String__Array__Class **)pSVar14;
   if (cRam_? == '\0') {
-    ppSVar17 = &TypeInfo__System__String;
+    ppSVar18 = &TypeInfo__System__String;
     func_?();
     func_?(&::StringLiteral__);
     func_?(&StringLiteral______);
     func_?(&::StringLiteral__);
-    IVar14.m_value = IVar16.m_value;
+    IVar15.m_value = IVar17.m_value;
     func_?(&StringLiteral__0);
     cRam_? = '\x01';
   }
-  pSVar18 = ::StringLiteral__;
-  switch(uVar15) {
+  pSVar19 = ::StringLiteral__;
+  switch(uVar16) {
   default:
-    pSVar19 = mscorlib.dll::System::Int32::Int32_ToString
+    pSVar20 = mscorlib.dll::System::Int32::Int32_ToString
                         ((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
     break;
   case 2:
   case 8:
-    pSVar19 = StringLiteral______;
-    if (IVar14.m_value != 0) {
-      IVar16.m_value =
-           (int32_t)((float)(IVar14.m_value + (int)((float)IVar14.m_value / _UNK_?) * -1000)
+    pSVar20 = StringLiteral______;
+    if (IVar15.m_value != 0) {
+      IVar17.m_value =
+           (int32_t)((float)(IVar15.m_value + (int)((float)IVar15.m_value / _UNK_?) * -1000)
                     / _UNK_?);
-      IVar20.m_value = (int)((float)IVar14.m_value / _UNK_?) % 0x3c;
-      IVar14.m_value =
-           func_?((float)(int)((float)IVar14.m_value / _UNK_?) / _UNK_?,0);
-      pSVar13 = (String *)ppSVar17;
-      if (0x3b < IVar14.m_value) {
-        func_?((float)IVar14.m_value / _UNK_?,0);
-        iVar1 = (int)((ulonglong)((longlong)IVar14.m_value * 0x77777777) >> 0x20) - IVar14.m_value;
-        IVar14.m_value = IVar14.m_value + ((iVar1 >> 5) - (iVar1 >> 0x1f)) * 0x3c;
-        pSVar13 = mscorlib.dll::System::Int32::Int32_ToString
+      IVar21.m_value = (int)((float)IVar15.m_value / _UNK_?) % 0x3c;
+      IVar15.m_value =
+           func_?((float)(int)((float)IVar15.m_value / _UNK_?) / _UNK_?,0);
+      pSVar14 = (String *)ppSVar18;
+      if (0x3b < IVar15.m_value) {
+        func_?((float)IVar15.m_value / _UNK_?,0);
+        iVar1 = (int)((ulonglong)((longlong)IVar15.m_value * 0x77777777) >> 0x20) - IVar15.m_value;
+        IVar15.m_value = IVar15.m_value + ((iVar1 >> 5) - (iVar1 >> 0x1f)) * 0x3c;
+        pSVar14 = mscorlib.dll::System::Int32::Int32_ToString
                             ((Int32 *)&stack0xffffffe8,(MethodInfo *)0x0);
         mscorlib.dll::System::String::String_Concat_4
-                  (pSVar18,pSVar13,::StringLiteral__,(MethodInfo *)0x0);
-        pSVar13 = (String *)ppSVar17;
+                  (pSVar19,pSVar14,::StringLiteral__,(MethodInfo *)0x0);
+        pSVar14 = (String *)ppSVar18;
       }
-      pSVar18 = ::StringLiteral__;
-      if (IVar16.m_value < 10) {
-        pSVar18 = mscorlib.dll::System::String::String_Concat_3
+      pSVar19 = ::StringLiteral__;
+      if (IVar17.m_value < 10) {
+        pSVar19 = mscorlib.dll::System::String::String_Concat_3
                             (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
       }
-      pSVar19 = mscorlib.dll::System::Int32::Int32_ToString
+      pSVar20 = mscorlib.dll::System::Int32::Int32_ToString
                           ((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
-      pSVar19 = mscorlib.dll::System::String::String_Concat_3(pSVar18,pSVar19,(MethodInfo *)0x0);
-      pSVar18 = ::StringLiteral__;
-      if (IVar20.m_value < 10) {
-        pSVar13 = ::StringLiteral__;
-        pSVar19 = StringLiteral__0;
-        pSVar18 = mscorlib.dll::System::String::String_Concat_3
+      pSVar20 = mscorlib.dll::System::String::String_Concat_3(pSVar19,pSVar20,(MethodInfo *)0x0);
+      pSVar19 = ::StringLiteral__;
+      if (IVar21.m_value < 10) {
+        pSVar14 = ::StringLiteral__;
+        pSVar20 = StringLiteral__0;
+        pSVar19 = mscorlib.dll::System::String::String_Concat_3
                             (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
       }
-      pSVar21 = mscorlib.dll::System::Int32::Int32_ToString
+      pSVar22 = mscorlib.dll::System::Int32::Int32_ToString
                           ((Int32 *)&stack0xffffffec,(MethodInfo *)0x0);
-      pSVar21 = mscorlib.dll::System::String::String_Concat_3(pSVar18,pSVar21,(MethodInfo *)0x0);
-      pSVar18 = ::StringLiteral__;
-      if (IVar14.m_value < 10) {
-        pSVar18 = mscorlib.dll::System::String::String_Concat_3
+      pSVar22 = mscorlib.dll::System::String::String_Concat_3(pSVar19,pSVar22,(MethodInfo *)0x0);
+      pSVar19 = ::StringLiteral__;
+      if (IVar15.m_value < 10) {
+        pSVar19 = mscorlib.dll::System::String::String_Concat_3
                             (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
       }
       str1 = mscorlib.dll::System::Int32::Int32_ToString
                        ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
-      pSVar18 = mscorlib.dll::System::String::String_Concat_3(pSVar18,str1,(MethodInfo *)0x0);
+      pSVar19 = mscorlib.dll::System::String::String_Concat_3(pSVar19,str1,(MethodInfo *)0x0);
       values = (String__Array *)func_?();
       if (values == (String__Array *)0x0) goto code_?;
       func_?(0,&UNK_?);
-      func_?(1,pSVar18);
+      func_?(1,pSVar19);
       func_?(2,::StringLiteral__);
-      func_?(3,pSVar21);
+      func_?(3,pSVar22);
       func_?(4,::StringLiteral__);
-      func_?(5,pSVar19);
-      pSVar19 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
+      func_?(5,pSVar20);
+      pSVar20 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
     }
   }
-  if (pSVar13 == (String *)0x0) goto code_?;
-  (*pSVar13->klass[1].vtable.System_IConvertible_ToType.methodPtr)
-            (pSVar13,pSVar19,pSVar13->klass[1].vtable.System_IConvertible_ToType.method);
+  if (pSVar14 == (String *)0x0) goto code_?;
+  (*pSVar14->klass[1].vtable.System_IConvertible_ToType.methodPtr)
+            (pSVar14,pSVar20,pSVar14->klass[1].vtable.System_IConvertible_ToType.method);
   pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
            (this->fields)._.scoreBoardPlayerData;
   if (((pLVar7 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-      (RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-               RegexCharClass+SingleRange]::
-               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                         (pLVar7,unaff_EBX,
-                          MethodInfo__System__Collections__Generic__List<ScoreBoardBase::ScoreData>__get_Item_int_
-                         ), RVar8 == (RegexCharClass_SingleRange)0x0)) ||
-     (piVar11 = *(int **)((int)RVar8 + 0xc), piVar11 == (int *)0x0)) goto code_?;
-  (**(code **)(*piVar11 + 0x318))(piVar11,::StringLiteral__,*(undefined4 *)(*piVar11 + 0x31c));
+      (RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (pLVar7,unaff_EBX,
+                           MethodInfo__System__Collections__Generic__List<ScoreBoardBase::ScoreData>__get_Item_int_
+                          ), RVar8 == (RegexCharClass_SingleRange)0x0)) ||
+     (piVar23 = *(int **)((int)RVar8 + 0xc), piVar23 == (int *)0x0)) goto code_?;
+  (**(code **)(*piVar23 + 0x318))(piVar23,::StringLiteral__,*(undefined4 *)(*piVar23 + 0x31c));
   pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
            (this->fields)._.scoreBoardPlayerData;
   if (((pLVar7 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-      (RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-               RegexCharClass+SingleRange]::
-               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                         (pLVar7,unaff_EBX,
-                          MethodInfo__System__Collections__Generic__List<ScoreBoardBase::ScoreData>__get_Item_int_
-                         ), RVar8 == (RegexCharClass_SingleRange)0x0)) ||
+      (RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (pLVar7,unaff_EBX,
+                           MethodInfo__System__Collections__Generic__List<ScoreBoardBase::ScoreData>__get_Item_int_
+                          ), RVar8 == (RegexCharClass_SingleRange)0x0)) ||
      ((*(Component **)((int)RVar8 + 0x1c) == (Component *)0x0 ||
       (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            (*(Component **)((int)RVar8 + 0x1c),(MethodInfo *)0x0),

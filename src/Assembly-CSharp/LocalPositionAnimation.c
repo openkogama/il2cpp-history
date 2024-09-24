@@ -60,7 +60,7 @@ void Assembly-CSharp.dll::LocalPositionAnimation::LocalPositionAnimation_Update
   }
   if (this_00 != (Transform *)0x0) {
     value.y = ((float)uVar7 - (float)uVar3) * fVar2 + (float)uVar3;
-    value.x = ((float)uVar6 - 3.5661978e-29) * fVar2 + 3.5661978e-29;
+    value.x = ((float)uVar6 - 3.5691927e-29) * fVar2 + 3.5691927e-29;
     value.z = (fVar5 - fVar4) * fVar2 + fVar4;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
               (this_00,value,(MethodInfo *)0x0);

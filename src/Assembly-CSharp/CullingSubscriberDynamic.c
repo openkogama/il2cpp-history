@@ -99,26 +99,57 @@ void Assembly-CSharp.dll::CullingSubscriberDynamic::CullingSubscriberDynamic_OnS
     func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  uVar1 = cullingGroupEvent._4_4_;
-  iVar2 = cullingGroupEvent.m_Index;
-  distanceBandIndex = (this->fields).cullingBandIndex;
+  iVar1 = (this->fields).cullingBandIndex;
   if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
   }
-  uVar3 = cullingGroupEvent._4_4_;
-  cullingGroupEvent.m_PrevState = (uint8_t)uVar1;
-  cullingGroupEvent.m_ThisState = SUB41(uVar1,1);
-  cullingGroupEvent._6_2_ = SUB42(uVar1,2);
-  cullingGroupEvent_00.m_PrevState = cullingGroupEvent.m_PrevState;
-  cullingGroupEvent_00.m_ThisState = cullingGroupEvent.m_ThisState;
-  cullingGroupEvent_00._6_2_ = cullingGroupEvent._6_2_;
-  cullingGroupEvent_00.m_Index = iVar2;
-  cullingGroupEvent._4_4_ = uVar3;
-  CullingApiWrapper::CullingApiWrapper_Visible
-            (cullingGroupEvent_00,distanceBandIndex,(MethodInfo *)0x0);
-  if ((this->fields).overrideDistanceBandIndex != -1) {
-    UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
-    CullingGroupEvent_get_currentDistance(&cullingGroupEvent,(MethodInfo *)0x0);
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+          CullingGroupEvent_get_hasBecomeInvisible
+                    ((CullingGroupEvent *)&stack0xfffffff0,(MethodInfo *)0x0);
+  if ((bVar2 == 0) &&
+     ((iVar3 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+               CullingGroupEvent_get_currentDistance
+                         ((CullingGroupEvent *)&stack0xfffffff0,(MethodInfo *)0x0), iVar3 <= iVar1
+      || (bVar2 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+                  CullingGroupEvent_get_isVisible
+                            ((CullingGroupEvent *)&stack0xfffffff0,(MethodInfo *)0x0), bVar2 == 0)))
+     ) {
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+            CullingGroupEvent_get_hasBecomeVisible
+                      ((CullingGroupEvent *)&stack0xfffffff0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+code_?:
+      value = true;
+      goto code_?;
+    }
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+            CullingGroupEvent_get_isVisible((CullingGroupEvent *)&stack0xfffffff0,(MethodInfo *)0x0)
+    ;
+    if (bVar2 != 0) {
+      cullingGroupEvent.m_Index = 0;
+      iVar3 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+              CullingGroupEvent_get_currentDistance
+                        ((CullingGroupEvent *)&stack0xfffffff0,(MethodInfo *)0x0);
+      if (iVar3 <= iVar1) goto code_?;
+    }
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+            CullingGroupEvent_get_isVisible((CullingGroupEvent *)&stack0xfffffff0,(MethodInfo *)0x0)
+    ;
+    if (bVar2 != 0) {
+      iVar3 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+              CullingGroupEvent_get_currentDistance
+                        ((CullingGroupEvent *)&stack0xfffffff0,(MethodInfo *)0x0);
+      value = iVar3 <= iVar1;
+      goto code_?;
+    }
+  }
+  value = false;
+code_?:
+  if (((this->fields).overrideDistanceBandIndex != -1) &&
+     (iVar3 = UnityEngine.CoreModule.dll::UnityEngine::CullingGroupEvent::
+              CullingGroupEvent_get_currentDistance(&cullingGroupEvent,(MethodInfo *)0x0),
+     iVar3 <= (this->fields).overrideDistanceBandIndex)) {
+    value = true;
   }
   this_00 = (this->fields).root;
   if (this_00 == (GameObject *)0x0) {
@@ -129,7 +160,7 @@ code_?:
     return;
   }
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            (this_00,0,(MethodInfo *)0x0);
+            (this_00,value,(MethodInfo *)0x0);
   if ((this->fields).children != (GameObject__Array *)0x0) {
     pGVar5 = (this->fields).children;
     ppGVar6 = pGVar5->vector;
@@ -140,7 +171,7 @@ code_?:
       }
       if (*ppGVar6 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (*ppGVar6,0,(MethodInfo *)0x0);
+                (*ppGVar6,value,(MethodInfo *)0x0);
       ppGVar6 = ppGVar6 + 1;
     }
   }

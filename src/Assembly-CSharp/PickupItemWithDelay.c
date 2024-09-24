@@ -428,3 +428,26 @@ Color * Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_get_CrossH
   return __return_storage_ptr__;
 }
 
+
+/* Boolean get_IsOnCooldown() */
+
+bool Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_get_IsOnCooldown
+               (PickupItemWithDelay *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    cRam_? = '\x01';
+  }
+  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  fVar2 = (this->fields).lastFireTime;
+  value = (this->fields).fireInterval;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
+      == 0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+  }
+  fVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+          ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
+  return fVar1 - fVar2 <= fVar3;
+}
+

@@ -598,7 +598,6 @@ code_?:
   }
   pCVar2 = Styles::Styles_GetColor(pCVar2,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
   CStack_7.r = pCVar2->a;
-  this = (TierUnlockedItemElement *)0x0;
   if (pIVar1 != (Image *)0x0) {
     pIVar8 = pIVar1->klass;
     CStack_7.g = (float)(pIVar8->vtable).get_raycastTarget.methodPtr;
@@ -606,20 +605,26 @@ code_?:
     return;
   }
 code_?:
+  bVar9 = 0;
   CStack_7.g = (float)&UNK_?;
-  uVar9 = func_?();
-  in_AF = 9 < ((byte)uVar9 & 0xf) | in_AF;
-  uVar10 = CONCAT31((int3)((uint)uVar9 >> 8),(byte)uVar9 + in_AF * '\x06') & 0xffffff0f;
-  pbVar11 = (byte *)((int)&this->klass +
-                   CONCAT22((short)(uVar10 >> 0x10),
-                            CONCAT11((char)((uint)uVar9 >> 8) + in_AF,(char)uVar10)) + 1);
-  bVar12 = *pbVar11;
-  bVar13 = *pbVar11;
-  *pbVar11 = bVar13 + unaff_BL + in_AF;
-  *extraout_ECX =
-       *extraout_ECX + unaff_BH + (CARRY1(bVar12,unaff_BL) || CARRY1(bVar13 + unaff_BL,in_AF));
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  bVar10 = func_?();
+  bVar11 = bVar10 < 0x69 || (byte)(bVar10 + 0x97) < bVar9;
+  pbVar12 = (byte *)(extraout_ECX + (int)&stack0xfffffffc * 2);
+  bVar13 = CARRY1(*pbVar12,unaff_BH) || CARRY1(*pbVar12 + unaff_BH,bVar11);
+  *pbVar12 = *pbVar12 + unaff_BH + bVar11;
+  pbVar12 = (byte *)(extraout_ECX + 0x69);
+  bVar11 = CARRY1(*pbVar12,unaff_BL) || CARRY1(*pbVar12 + unaff_BL,bVar13);
+  *pbVar12 = *pbVar12 + unaff_BL + bVar13;
+  pbVar12 = (byte *)(team + 0x69);
+  bVar10 = *pbVar12;
+  bVar9 = *pbVar12;
+  *pbVar12 = bVar9 + extraout_DH + bVar11;
+  pcVar14 = (char *)(extraout_ECX + 0x69931047 + (int)&stack0xfffffffc * 2);
+  *pcVar14 = *pcVar14 + (char)((uint)extraout_ECX >> 8) +
+            (CARRY1(bVar10,extraout_DH) || CARRY1(bVar9 + extraout_DH,bVar11));
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
+  return;
 }
 
 

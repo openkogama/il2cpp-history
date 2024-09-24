@@ -219,9 +219,8 @@ code_?:
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)StringLiteral_stepTimestamp_is_not_correctly_i,(MethodInfo *)0x0);
       }
-      this_01 = (LogicObjectManager *)func_?();
-      MVWorldObject.dll::LogicObjectManager::LogicObjectManager__ctor
-                (this_01,iVar6,0,(MethodInfo *)0x0);
+      this_01 = (LogicObjectManagerClient *)func_?();
+      LogicObjectManagerClient::LogicObjectManagerClient__ctor(this_01,iVar6,0,(MethodInfo *)0x0);
       _UNK_? = this_01;
       func_?();
       unaff_ESI = (MVLocalPlayer *)func_?();
@@ -348,48 +347,29 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_Cleanup
                (MVNetworkGame *this,MethodInfo *method)
 
 {
-  if (((this->fields).worldNetwork == (WorldNetwork *)0x0) ||
+  if (((this->fields).worldNetwork != (WorldNetwork *)0x0) &&
      (pWVar1 = (this->fields).worldNetwork,
-     (pWVar1->fields)._.worldObjectClientManager == (MVWorldObjectClientManagerNetwork *)0x0)) {
-code_?:
-    if ((this->fields)._MaterialRepository_k__BackingField != (MVMaterialRepository *)0x0) {
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      TypeInfo__MVMaterialRepository->static_fields->instance = (MVMaterialRepository *)0x0;
+     (pWVar1->fields)._.worldObjectClientManager != (MVWorldObjectClientManagerNetwork *)0x0)) {
+    MVWorldObjectClientManagerNetwork::MVWorldObjectClientManagerNetwork_Cleanup
+              ((pWVar1->fields)._.worldObjectClientManager,(MethodInfo *)0x0);
+    this_00 = (this->fields)._LogicObjectManager_k__BackingField;
+    if (this_00 == (LogicObjectManagerClient *)0x0) {
       func_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
-    PricesManager::PricesManager_Reset((MethodInfo *)0x0);
-    return;
+    LogicObjectManagerClient::LogicObjectManagerClient_Clear(this_00,(MethodInfo *)0x0);
   }
-  MVWorldObjectClientManagerNetwork::MVWorldObjectClientManagerNetwork_Cleanup
-            ((pWVar1->fields)._.worldObjectClientManager,(MethodInfo *)0x0);
-  pLVar2 = (this->fields)._LogicObjectManager_k__BackingField;
-  if (pLVar2 != (LogicObjectManagerClient *)0x0) {
+  if ((this->fields)._MaterialRepository_k__BackingField != (MVMaterialRepository *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Clear__
-                     );
+      func_?();
       cRam_? = '\x01';
     }
-    this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-               *)(pLVar2->fields)._.logicWorldObjects;
-    if (this_00 !=
-        (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-         *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets
-      ::StyleSheetCache+SheetHandleKey,System::Object]::
-      Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
-                (this_00,
-                 MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Clear__
-                );
-      goto code_?;
-    }
+    TypeInfo__MVMaterialRepository->static_fields->instance = (MVMaterialRepository *)0x0;
+    func_?();
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  PricesManager::PricesManager_Reset((MethodInfo *)0x0);
   return;
 }
 
@@ -715,7 +695,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_CreatePlayersFromUserList
             (TypeInfo__MV__Common__BuildTarget->_0).element_class) goto code_?;
         puVar16 = (undefined1 *)func_?();
         value = TypeInfo__MVPlayer;
-        BStack_17 = CONCAT31(0x106374,*puVar16);
+        BStack_17 = CONCAT31(0x10639d,*puVar16);
         this_02 = (MVPlayer *)func_?();
         MVPlayer::MVPlayer__ctor_1
                   (this_02,actorNumber,profileID,(int32_t)pMVar5,pSStack_11,BStack_17,
@@ -1486,39 +1466,36 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnAddLinkEvent
     func_?(&StringLiteral_reset_count_);
     cRam_? = '\x01';
   }
-  this_01 = (Link *)func_?(TypeInfo__MV__WorldObject__Link);
-  MVWorldObject.dll::MV::WorldObject::Link::Link__ctor_1(this_01,(MethodInfo *)0x0);
-  if (this_01 != (Link *)0x0) {
-    (this_01->fields).inputWOID = toID;
-    (this_01->fields).outputWOID = fromID;
-    (this_01->fields).id = linkID;
+  this_02 = (Link *)func_?(TypeInfo__MV__WorldObject__Link);
+  MVWorldObject.dll::MV::WorldObject::Link::Link__ctor_1(this_02,(MethodInfo *)0x0);
+  if (this_02 != (Link *)0x0) {
+    (this_02->fields).inputWOID = toID;
+    (this_02->fields).outputWOID = fromID;
+    (this_02->fields).id = linkID;
     this_00 = (this->fields).worldNetwork;
     if (this_00 != (WorldNetwork *)0x0) {
-      WorldNetwork::WorldNetwork_AddLink_1(this_00,this_01,(MethodInfo *)0x0);
-      pLVar1 = (this->fields)._LogicObjectManager_k__BackingField;
+      WorldNetwork::WorldNetwork_AddLink_1(this_00,this_02,(MethodInfo *)0x0);
+      this_01 = (this->fields)._LogicObjectManager_k__BackingField;
       worldObjectManager = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (pLVar1 != (LogicObjectManagerClient *)0x0) {
-        IStack_2.m_value = (int32_t)&UNK_?;
-        IStack_2.m_value =
-             MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetChunk
-                       ((this_01->fields).inputWOID,(IWorldObjectManager *)worldObjectManager,
-                        (MethodInfo *)0x0);
-        pSVar3 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
-        IStack_2.m_value = (int32_t)&UNK_?;
-        pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                           (StringLiteral_reset_count_,pSVar3,(MethodInfo *)0x0);
+      if (this_01 != (LogicObjectManagerClient *)0x0) {
+        LogicObjectManagerClient::LogicObjectManagerClient_OnLinkAdded
+                  (this_01,this_02,(IWorldObjectManager *)worldObjectManager,(MethodInfo *)0x0);
+        pSVar1 = mscorlib.dll::System::Int32::Int32_ToString
+                           ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+        pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                           (StringLiteral_reset_count_,pSVar1,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                  ((Object *)pSVar3,(MethodInfo *)0x0);
+                  ((Object *)pSVar1,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -4638,33 +4615,29 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnRemoveLinkEvent
   }
   this_00 = (this->fields).worldNetwork;
   if (this_00 != (WorldNetwork *)0x0) {
-    pLVar1 = WorldNetwork::WorldNetwork_RemoveLink(this_00,linkID,(MethodInfo *)0x0);
-    if (pLVar1 != (Link *)0x0) {
-      pLVar2 = (this->fields)._LogicObjectManager_k__BackingField;
+    link = WorldNetwork::WorldNetwork_RemoveLink(this_00,linkID,(MethodInfo *)0x0);
+    if (link != (Link *)0x0) {
+      this_01 = (this->fields)._LogicObjectManager_k__BackingField;
       worldObjectManager = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (pLVar2 == (LogicObjectManagerClient *)0x0) goto code_?;
-      MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetChunk
-                ((pLVar1->fields).inputWOID,(IWorldObjectManager *)worldObjectManager,
-                 (MethodInfo *)0x0);
-      MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetChunk
-                ((pLVar1->fields).outputWOID,(IWorldObjectManager *)worldObjectManager,
-                 (MethodInfo *)0x0);
-      pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
+      if (this_01 == (LogicObjectManagerClient *)0x0) goto code_?;
+      LogicObjectManagerClient::LogicObjectManagerClient_OnLinkRemoved
+                (this_01,link,(IWorldObjectManager *)worldObjectManager,(MethodInfo *)0x0);
+      pSVar1 = mscorlib.dll::System::Int32::Int32_ToString
                          ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
-      pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_reset_count_,pSVar3,(MethodInfo *)0x0);
+      pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_reset_count_,pSVar1,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                ((Object *)pSVar3,(MethodInfo *)0x0);
+                ((Object *)pSVar1,(MethodInfo *)0x0);
     }
     return;
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -7514,10 +7487,10 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_SetupLogicManager
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_stepTimestamp_is_not_correctly_i,(MethodInfo *)0x0);
   }
-  this_00 = (LogicObjectManager *)func_?(TypeInfo__LogicObjectManagerClient);
-  MVWorldObject.dll::LogicObjectManager::LogicObjectManager__ctor
+  this_00 = (LogicObjectManagerClient *)func_?(TypeInfo__LogicObjectManagerClient);
+  LogicObjectManagerClient::LogicObjectManagerClient__ctor
             (this_00,stepTimestamp,0,(MethodInfo *)0x0);
-  (this->fields)._LogicObjectManager_k__BackingField = (LogicObjectManagerClient *)this_00;
+  (this->fields)._LogicObjectManager_k__BackingField = this_00;
   func_?(&(this->fields)._LogicObjectManager_k__BackingField,this_00);
   this_01 = (MVNetworkGame_LogicObjectManagerClientWrapper *)
             func_?(TypeInfo__MVNetworkGame__LogicObjectManagerClientWrapper);
@@ -8151,7 +8124,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame__ctor
           pPVar1 = (this->fields)._Peer_k__BackingField;
           if (pPVar1 != (PhotonPeer *)0x0) {
             bVar2 = cRam_? == '\0';
-            (pPVar1->fields).DebugOut = 0xeb;
+            (pPVar1->fields).DebugOut = 0x14;
             if (bVar2) {
               func_?();
               func_?();

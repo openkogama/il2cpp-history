@@ -179,84 +179,68 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
                MethodInfo *method)
 
 {
-  pDVar1 = this;
+  puVar1 = &stack0xfffffffc;
   DesktopCubeModelingToolsController_SetAllToTransparent(this,(MethodInfo *)0x0);
   switch(cubeTool) {
   case CubeModelingEvent__Enum_EditCubes:
-    this_01 = (pDVar1->fields).editCube;
+    this_00 = (this->fields).editCube;
     break;
   case CubeModelingEvent__Enum_DeleteCubes:
-    this_01 = (pDVar1->fields).deletecube;
+    this_00 = (this->fields).deletecube;
     break;
   case CubeModelingEvent__Enum_PaintCubes:
-    this_01 = (pDVar1->fields).paintCube;
+    this_00 = (this->fields).paintCube;
     break;
   default:
     goto code_?;
   case CubeModelingEvent__Enum_ColorPicker:
-    this_01 = (pDVar1->fields).pickCubeColor;
+    this_00 = (this->fields).pickCubeColor;
   }
-  if (this_01 != (Button *)0x0) {
-    pIVar2 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
-                       ((Selectable *)this_01,(MethodInfo *)0x0);
-    cubeTool = (CubeModelingEvent__Enum)(pDVar1->fields).enabledAlpha;
-    unaff_EDI = CubeModelingEvent__Enum_EditCubes;
-    if (pIVar2 != (Image *)0x0) {
-      pIStack_3 = pIVar2;
-      puVar4 = (undefined4 *)(*(code *)(pIVar2->klass->vtable).get_color.method)(&pIStack_3);
-      pIStack_3 = (Image *)cubeTool;
-      (*(code *)(pIVar2->klass->vtable).set_color.method)(pIVar2,*puVar4,puVar4[1],puVar4[2]);
-code_?:
+  if ((this_00 == (Button *)0x0) ||
+     (unaff_EDI = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+                            ((Selectable *)this_00,(MethodInfo *)0x0), unaff_EDI == (Image *)0x0)) {
+    uVar2 = func_?();
+    pMVar3 = (MethodInfo *)((ulonglong)uVar2 >> 0x20);
+    pMVar3[-0x21b5faa].return_type = (Il2CppType *)(float)extraout_ST0;
+    if (extraout_ECX != 0) {
+      func_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
-  }
-  this_02 = (GameObject *)func_?();
-  bVar5 = (byte)((uint)unaff_EBX >> 8);
-  bVar6 = extraout_DH + bVar5;
-  bVar7 = CARRY1(extraout_DH,bVar5) || 0xfe < bVar6;
-  if (CARRY1(extraout_DH,bVar5) || 0xfe < bVar6) {
-    bVar5 = *unaff_EBX;
-    bVar8 = *unaff_EBX + (byte)this_02;
-    *unaff_EBX = bVar8 + bVar7;
-    if (*unaff_EBX != 0) {
-      unaff_EBX[0x74] =
-           unaff_EBX[0x74] + bVar6 + 1 + (CARRY1(bVar5,(byte)this_02) || CARRY1(bVar8,bVar7));
-      *(byte *)((int)&this + (int)pDVar1) = *(byte *)((int)&this + (int)pDVar1) | bVar6 + 1;
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
-      return;
+    puVar1 = &stack0xfffffffd;
+    bVar5 = (byte)uVar2 ^ 0x10 | 0x85;
+    pcVar6 = (char *)((uint)uVar2 ^ 0x10 | 0x85);
+    if (-1 < (char)bVar5) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
     }
-    if (this_02 == (GameObject *)0x0) goto code_?;
-    this = (DesktopCubeModelingToolsController *)0x0;
+    if (bVar5 != 0) {
+      *pcVar6 = *pcVar6 + (char)pcVar6;
+      goto code_?;
+    }
+    *(undefined1 *)(unaff_EBX + 0x17091) = *(undefined1 *)(unaff_EBX + 0x17091);
+    ppUVar7 = &(unaff_EDI->fields)._._.m_OnDirtyMaterialCallback;
+    *(char *)ppUVar7 = *(char *)ppUVar7 + (char)((ulonglong)uVar2 >> 0x20);
   }
   else {
-    this_02 = (GameObject *)
-              CONCAT31((int3)(extraout_ECX + 0x3b7cfef5 >> 8),
-                       (char)(extraout_ECX + 0x3b7cfef5) + -0x7b + (extraout_ECX < 0xc483010b));
-    puVar10 = (undefined1 *)((int)&this_02[8].fields._.m_CachedPtr + (int)unaff_EBX * 2 + 2);
-    *puVar10 = *puVar10;
-  }
-  bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
-                    (this_02,in_stack_12);
-  if (bVar11 != 0) {
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    this_00 = (pDVar1->fields).cubeModelingStateMachine;
-    cubeTool = unaff_EDI;
-    value = (Object *)func_?();
-    if (this_00 == (CubeModelingStateMachine *)0x0) {
 code_?:
-      this = (DesktopCubeModelingToolsController *)&UNK_?;
-      func_?();
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
-      return;
-    }
-    this = (DesktopCubeModelingToolsController *)0x0;
-    FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,value,(MethodInfo *)0x0);
+    pMVar3 = (unaff_EDI->klass->vtable).get_color.method;
   }
+  puVar8 = (undefined4 *)(*(code *)pMVar3)();
+  pIVar9 = unaff_EDI->klass;
+  uVar10 = puVar8[1];
+  uVar11 = puVar8[2];
+  uVar12 = puVar8[3];
+  *(undefined4 *)(puVar1 + -0x10) = *puVar8;
+  *(undefined4 *)(puVar1 + -0xc) = uVar10;
+  *(undefined4 *)(puVar1 + -8) = uVar11;
+  *(undefined4 *)(puVar1 + -4) = uVar12;
+  *(undefined4 *)(puVar1 + -4) = *(undefined4 *)(puVar1 + 0xc);
+  (*(code *)(pIVar9->vtable).set_color.method)
+            (unaff_EDI,*(undefined4 *)(puVar1 + -0x10),*(undefined4 *)(puVar1 + -0xc),
+             *(undefined4 *)(puVar1 + -8),*(undefined4 *)(puVar1 + -4));
+code_?:
   return;
 }
 

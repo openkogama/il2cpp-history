@@ -322,6 +322,8 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Boolean ShouldShowNotification(Int32, GameStatCounterType, Int32, NotificationType ByRef) */
 
 bool Assembly-CSharp.dll::WinningConditionNotificationManager::
@@ -332,75 +334,128 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
 {
   *notificationType = NotificationType__Enum_None;
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 == (MVNetworkGame *)0x0) ||
-     (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 == (MVPlayerContainer *)0x0))
-  goto code_?;
-  bVar3 = MVPlayerContainer::MVPlayerContainer_ContainsKey(pMVar2,actorNumber,(MethodInfo *)0x0);
-  if (bVar3 == 0) {
-    return 0;
+  bVar2 = true;
+  pNVar3 = notificationType;
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar4 = (pMVar1->fields).playerContainer;
+    bVar2 = true;
+    if (pMVar4 != (MVPlayerContainer *)0x0) {
+      bVar5 = MVPlayerContainer::MVPlayerContainer_ContainsKey(pMVar4,actorNumber,(MethodInfo *)0x0)
+      ;
+      if (bVar5 == 0) {
+        return 0;
+      }
+      unaff_ESI = (undefined1 *)actorNumber;
+      switch(counterType & 0xff) {
+      case GameStatCounterType__Enum_Kill:
+      case GameStatCounterType__Enum_Collectible:
+      case GameStatCounterType__Enum_OculusKill:
+        if (((scoreLeftToWin != 1) && (scoreLeftToWin != 5)) && (scoreLeftToWin != 0xf)) {
+          return 0;
+        }
+        *notificationType = NotificationType__Enum_WinningWarning;
+        return 1;
+      case GameStatCounterType__Enum_Flag:
+        if (scoreLeftToWin == 0) {
+          return 0;
+        }
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        bVar2 = pMVar1 == (MVNetworkGame *)0x0;
+        unaff_EBX = scoreLeftToWin;
+        if (!bVar2) {
+          pMVar4 = (pMVar1->fields).playerContainer;
+          bVar2 = pMVar4 == (MVPlayerContainer *)0x0;
+          if (!bVar2) {
+            pMVar6 = MVPlayerContainer::MVPlayerContainer_get_Item
+                               (pMVar4,actorNumber,(MethodInfo *)0x0);
+            if (pMVar6 == (MVPlayer *)0x0) {
+              return 0;
+            }
+            bVar5 = WinningConditionNotificationManager_IsFlagScoreBestInGame
+                              (scoreLeftToWin,actorNumber,(MethodInfo *)0x0);
+            if (bVar5 == 0) {
+              return 0;
+            }
+            goto code_?;
+          }
+        }
+        break;
+      default:
+        goto code_?;
+      case GameStatCounterType__Enum_TimeAttackFlag:
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        bVar2 = pMVar1 == (MVNetworkGame *)0x0;
+        if (!bVar2) {
+          pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
+          bVar2 = pMVar7 == (MVLocalPlayer *)0x0;
+          if (!bVar2) {
+            if ((pMVar7->fields)._._ActorNr_k__BackingField == actorNumber) {
+              return 0;
+            }
+            if (scoreLeftToWin == 0) {
+              return 0;
+            }
+            counterType = GameStatCounterType__Enum_None;
+            pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            unaff_EBX = scoreLeftToWin;
+            goto code_?;
+          }
+        }
+      }
+    }
   }
-  switch(counterType & 0xff) {
-  case GameStatCounterType__Enum_Kill:
-  case GameStatCounterType__Enum_Collectible:
-  case GameStatCounterType__Enum_OculusKill:
-    if (((scoreLeftToWin != 1) && (scoreLeftToWin != 5)) && (scoreLeftToWin != 0xf)) {
-      return 0;
-    }
-    *notificationType = NotificationType__Enum_WinningWarning;
-    return 1;
-  case GameStatCounterType__Enum_Flag:
-    if (scoreLeftToWin == 0) {
-      return 0;
-    }
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar1 == (MVNetworkGame *)0x0) ||
-       (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 == (MVPlayerContainer *)0x0))
-    goto code_?;
-    pMVar4 = MVPlayerContainer::MVPlayerContainer_get_Item(pMVar2,actorNumber,(MethodInfo *)0x0);
-    if (pMVar4 == (MVPlayer *)0x0) {
-      return 0;
-    }
-    bVar3 = WinningConditionNotificationManager_IsFlagScoreBestInGame
-                      (scoreLeftToWin,actorNumber,(MethodInfo *)0x0);
-    break;
-  default:
-    goto code_?;
-  case GameStatCounterType__Enum_TimeAttackFlag:
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar1 == (MVNetworkGame *)0x0) ||
-       (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
-       pMVar5 == (MVLocalPlayer *)0x0)) {
+  do {
+    do {
+      uVar8 = func_?();
+      iVar9 = (int)((ulonglong)uVar8 >> 0x20);
+      pMVar1 = (MVNetworkGame *)uVar8;
+      if (bVar2) {
+        pMVar1->klass = (MVNetworkGame__Class *)((int)pMVar1->klass - iVar9);
+        pMVar1->klass = (MVNetworkGame__Class *)((int)pMVar1->klass - iVar9);
+        uVar10 = (undefined2)((ulonglong)uVar8 >> 0x20);
+        out(*unaff_ESI,uVar10);
+        *pNVar3 = *(NotificationType__Enum *)(unaff_ESI + 1);
+        pMVar1->klass = (MVNetworkGame__Class *)((int)pMVar1->klass - iVar9);
+        out(unaff_ESI[5],uVar10);
+        pNVar3[1] = *(NotificationType__Enum *)(unaff_ESI + 6);
+        pMVar1->klass = (MVNetworkGame__Class *)((int)pMVar1->klass - iVar9);
+        actorNumber = (int32_t)(unaff_ESI + 10);
+        notificationType = pNVar3 + 2;
+        if (pMVar1->klass == (MVNetworkGame__Class *)0x0) {
+          pMVar1->klass = (MVNetworkGame__Class *)((int)pMVar1->klass - iVar9);
+          out(unaff_ESI[10],uVar10);
+          pNVar3[2] = *(NotificationType__Enum *)(unaff_ESI + 0xb);
+          pMVar1->klass = (MVNetworkGame__Class *)((int)pMVar1->klass - iVar9);
+          pNVar3[3] = *(NotificationType__Enum *)(unaff_ESI + 0xf);
+          pcVar11 = (code *)swi(3);
+          bVar5 = (*pcVar11)();
+          return bVar5;
+        }
+      }
+      else {
+        pbVar12 = (byte *)((int)pMVar1 + (int)pNVar3 * 4 + -0x75);
+        *pbVar12 = *pbVar12 ^ (byte)((ulonglong)uVar8 >> 0x28);
+        bVar13 = (byte)uVar8;
+        *(char *)(counterType + 0x6ab174db) = *(char *)(counterType + 0x6ab174db) + bVar13;
+        puVar14 = (uint *)CONCAT31((int3)((ulonglong)uVar8 >> 8),
+                                  (bVar13 + extraout_CH + 's') - CARRY1(bVar13,extraout_CH));
+        pMVar1 = (MVNetworkGame *)((uint)puVar14 | *puVar14);
+        actorNumber = (int32_t)unaff_ESI;
+        notificationType = pNVar3;
+      }
 code_?:
-      uVar6 = func_?();
-      iVar7 = (int)((ulonglong)uVar6 >> 0x20);
-      piVar8 = (int *)uVar6;
-      *extraout_ECX = *extraout_ECX - iVar7;
-      *extraout_ECX = *extraout_ECX - iVar7;
-      *extraout_ECX = *extraout_ECX - iVar7;
-      *piVar8 = *piVar8 - iVar7;
-      *piVar8 = *piVar8 - iVar7;
-      pcVar9 = (code *)swi(3);
-      bVar3 = (*pcVar9)();
-      return bVar3;
-    }
-    if ((pMVar5->fields)._._ActorNr_k__BackingField == actorNumber) {
-      return 0;
-    }
-    if (scoreLeftToWin == 0) {
-      return 0;
-    }
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar1 == (MVNetworkGame *)0x0) ||
-       (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 == (MVPlayerContainer *)0x0))
-    goto code_?;
-    pMVar4 = MVPlayerContainer::MVPlayerContainer_get_Item(pMVar2,actorNumber,(MethodInfo *)0x0);
-    if (pMVar4 == (MVPlayer *)0x0) {
-      return 0;
-    }
-    bVar3 = WinningConditionNotificationManager_IsFlagScoreBestInGame
-                      (scoreLeftToWin,actorNumber,(MethodInfo *)0x0);
-  }
-  if (bVar3 != 0) {
+      bVar2 = true;
+      unaff_ESI = (undefined1 *)actorNumber;
+      pNVar3 = notificationType;
+    } while (pMVar1 == (MVNetworkGame *)0x0);
+    pMVar4 = (pMVar1->fields).playerContainer;
+    bVar2 = true;
+  } while (pMVar4 == (MVPlayerContainer *)0x0);
+  pMVar6 = MVPlayerContainer::MVPlayerContainer_get_Item(pMVar4,actorNumber,(MethodInfo *)0x0);
+  if ((pMVar6 != (MVPlayer *)0x0) &&
+     (bVar5 = WinningConditionNotificationManager_IsFlagScoreBestInGame
+                        (unaff_EBX,actorNumber,(MethodInfo *)0x0), bVar5 != 0)) {
+code_?:
     *notificationType = NotificationType__Enum_FlagHighScore;
     return 1;
   }
@@ -409,6 +464,8 @@ code_?:
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* WARNING (jumptable): Removing unreachable block (ram,0xADDR) */
 /* Void UpdateNotification(Int32, GameStatCounterType, Int32) */
 
@@ -436,14 +493,13 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
   uStack_1 = GameStatCounterType__Enum_None;
   WinningConditionControl::WinningConditionControl_TryGetPrioritizedStat
             ((GameStatCounterType__Enum *)&uStack_1,(MethodInfo *)0x0);
-  piVar2 = (int *)CONCAT31((int3)((uint)unaff_EBX >> 8),(undefined1)counterType);
+  data = (Dictionary_2_System_Object_System_Object_ *)
+         CONCAT31((int3)((uint)unaff_EBX >> 8),(undefined1)counterType);
   if ((undefined1)counterType != uStack_1) {
     return;
   }
   if (cRam_? == '\0') {
-    func_?(&
-                    AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
-                   );
+    func_?();
     func_?(&
                     KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
                    );
@@ -452,54 +508,101 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
                    );
     cRam_? = '\x01';
   }
-  uVar3 = (counterType & 0xff) - GameStatCounterType__Enum_Kill;
-  if (uVar3 < 8) {
-    (**(code **)(&UNK_? + uVar3 * 4))();
+  uVar2 = (counterType & 0xff) - GameStatCounterType__Enum_Kill;
+  if (uVar2 < 8) {
+    (**(code **)(&UNK_? + uVar2 * 4))();
     return;
   }
-  pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar4 != (MVNetworkGame *)0x0) &&
-     (this = (pMVar4->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
-    bVar5 = MVPlayerContainer::MVPlayerContainer_ContainsKey(this,actorNumber,(MethodInfo *)0x0);
-    if (bVar5 != 0) {
-      switch(counterType & 0xff) {
-      case GameStatCounterType__Enum_Kill:
-      case GameStatCounterType__Enum_Collectible:
-      case GameStatCounterType__Enum_OculusKill:
-        break;
-      case GameStatCounterType__Enum_TimeAttackFlag:
-        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        piVar2 = (int *)actorNumber;
-        if ((pMVar4 == (MVNetworkGame *)0x0) ||
-           (pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
-           pMVar6 == (MVLocalPlayer *)0x0)) goto code_?;
-        if ((pMVar6->fields)._._ActorNr_k__BackingField == actorNumber) {
+  pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar3 == (MVNetworkGame *)0x0) ||
+     (this = (pMVar3->fields).playerContainer, this == (MVPlayerContainer *)0x0)) {
+code_?:
+    uVar4 = func_?();
+    uVar2 = (uint)((ulonglong)uVar4 >> 0x20);
+    uVar5 = (undefined3)((ulonglong)uVar4 >> 8);
+    cVar6 = in((short)((ulonglong)uVar4 >> 0x20));
+    puVar7 = (uint *)CONCAT31(uVar5,cVar6);
+    *puVar7 = *puVar7 - uVar2;
+    if ((int)*puVar7 < 0) {
+      uVar8 = *puVar7;
+      *puVar7 = *puVar7 - uVar2;
+      puVar7 = (uint *)CONCAT31(uVar5,cVar6 + -0x59 + (uVar8 < uVar2));
+      uVar8 = *puVar7;
+      uVar9 = *puVar7;
+      *puVar7 = *puVar7 - uVar2;
+      if (SBORROW4(uVar9,uVar2) != (int)*puVar7 < 0) {
+        *puVar7 = (int)puVar7 + (uint)(uVar8 < uVar2) + *puVar7;
+        bVar10 = *puVar7 == 0;
+        goto code_?;
+      }
+      uVar8 = *puVar7;
+      *puVar7 = *puVar7 - uVar2;
+      if (SBORROW4(uVar8,uVar2) != (int)*puVar7 < 0) goto code_?;
+      *puVar7 = *puVar7 - uVar2;
+      uVar8 = *puVar7;
+      *puVar7 = *puVar7 - uVar2;
+      if (SBORROW4(uVar8,uVar2) == (int)*puVar7 < 0) {
+        *puVar7 = *puVar7 - uVar2;
+        if ((int)*puVar7 < 0) {
+          *puVar7 = *puVar7 - uVar2;
           return;
         }
-      case GameStatCounterType__Enum_Flag:
+        uVar11 = *(undefined6 *)(unaff_ESI + 5 + (int)puVar7 * 8);
+        *(int *)((int)&TypeInfo__NotificationController + extraout_ECX) =
+             (int)(&stack0xffffffdc +
+                  *(int *)((int)&TypeInfo__NotificationController + extraout_ECX));
+        pNVar12 = (NotificationController__Class *)((int)uVar11 + 0xADDR);
+      }
+      else {
+        LOCK();
+        data[0x1ecac4].monitor = data[0x1ecac4].monitor + 1;
+        UNLOCK();
+        data = (Dictionary_2_System_Object_System_Object_ *)0x60a10111;
+        pNVar12 = (NotificationController__Class *)
+                 CONCAT31((int3)(CONCAT22((short)((uint)extraout_ECX >> 0x10),0x1000) >> 8),0x11);
       }
     }
-    return;
-  }
+    else {
+      bVar10 = cRam_? == '\0';
 code_?:
-  uVar7 = func_?();
-  piVar8 = (int *)((uint)uVar7 | 0x93);
-  *piVar8 = *piVar8 - (int)((ulonglong)uVar7 >> 0x20);
-  iVar9 = (int)piVar8 >> 0x1f;
-  *piVar2 = *piVar2 - iVar9;
-  piVar2 = (int *)((uint)piVar2 ^ 0x93);
-  *piVar2 = *piVar2 - iVar9;
-  *piVar8 = *piVar8 - iVar9;
-  iVar10 = *piVar2;
-  *piVar2 = *piVar2 - iVar9;
-  if (!SBORROW4(iVar10,iVar9)) {
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
+      pNVar12 = TypeInfo__NotificationController;
+      if (bVar10) {
+code_?:
+        func_?();
+        cRam_? = '\x01';
+        pNVar12 = TypeInfo__NotificationController;
+      }
+    }
+    if ((pNVar12->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(pNVar12);
+    }
+    NotificationController::NotificationController_PushNotification_2
+              ((NotificationType__Enum)in_stack_13,data,NotificationLifetime__Enum_High,
+               (MethodInfo *)0x0);
   }
-  *piVar2 = *piVar2 - iVar9;
-  *piVar8 = *piVar8 - iVar9;
-  *piVar2 = *piVar2 - iVar9;
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  else {
+    bVar14 = MVPlayerContainer::MVPlayerContainer_ContainsKey(this,actorNumber,(MethodInfo *)0x0);
+    if (bVar14 == 0) {
+      return;
+    }
+    switch(counterType & 0xff) {
+    case GameStatCounterType__Enum_Kill:
+    case GameStatCounterType__Enum_Collectible:
+    case GameStatCounterType__Enum_OculusKill:
+      break;
+    case GameStatCounterType__Enum_TimeAttackFlag:
+      in_stack_13 = (MVNetworkGame *)0x0;
+      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      data = (Dictionary_2_System_Object_System_Object_ *)actorNumber;
+      if ((pMVar3 == (MVNetworkGame *)0x0) ||
+         (pMVar15 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0),
+         in_stack_13 = pMVar3, pMVar15 == (MVLocalPlayer *)0x0)) goto code_?;
+      if ((pMVar15->fields)._._ActorNr_k__BackingField == actorNumber) {
+        return;
+      }
+    case GameStatCounterType__Enum_Flag:
+    }
+  }
+  return;
 }
 

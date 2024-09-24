@@ -46,12 +46,7 @@ Assembly-CSharp.dll::FaceCursor::FaceCursor_SetUVs
   case Edge__Enum_None:
     if (this_00 ==
         (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
-        )0x0) {
-code_?:
-      func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-      halt_baddata();
-    }
+        )0x0) goto code_?;
     func_?(this_00,0,0,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
@@ -128,10 +123,20 @@ code_?:
     fStack_1 = (float)(mirror ^ 1);
     break;
   default:
-    if (this_00 ==
+    if (this_00 !=
         (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
         )0x0) goto code_?;
-    goto code_?;
+code_?:
+    bVar3 = false;
+    uVar4 = func_?();
+    pcVar5 = (char *)((ulonglong)uVar4 >> 0x20);
+    if (bVar3) {
+      return (Vector2__Array *)uVar4;
+    }
+    *pcVar5 = *pcVar5 + (char)uVar4;
+    pcVar6 = (code *)swi(3);
+    pVVar7 = (Vector2__Array *)(*pcVar6)();
+    return pVVar7;
   }
   uStack_2 = 0x3f800000;
 code_?:
@@ -139,13 +144,13 @@ code_?:
                   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                  );
 code_?:
-  pMVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+  pMVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
            MultiColumnCollectionHeader+ViewState+ColumnState]::
            List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
                      (this_00,
                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__ToArray__
                      );
-  return (Vector2__Array *)pMVar3;
+  return (Vector2__Array *)pMVar8;
 }
 
 
@@ -158,7 +163,7 @@ void Assembly-CSharp.dll::FaceCursor::FaceCursor_UpdateCursor
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0x7744);
+    func_?(0x880c);
     func_?(&
                     UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::MeshRenderer>__
                    );

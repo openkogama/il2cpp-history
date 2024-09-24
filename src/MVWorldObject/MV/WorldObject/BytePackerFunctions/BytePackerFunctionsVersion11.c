@@ -33,8 +33,8 @@ BytePackerFunctionsVersion11_GetDataParameters
       cRam_? = '\x01';
     }
     if (bp != (BytePacker *)0x0) {
+      unaff_ESI = (undefined *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
       BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-      unaff_EBX = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
       puVar2 = (undefined *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
       this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
               *)func_?(
@@ -98,8 +98,8 @@ code_?:
       cRam_? = '\x01';
     }
     if (bp != (BytePacker *)0x0) {
-      puVar2 = (undefined *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-      unaff_EBX = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+      unaff_ESI = (undefined *)BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+      BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
       BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
       this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
               *)func_?(
@@ -115,7 +115,7 @@ code_?:
       pOVar3 = (Object *)
                func_?(TypeInfo__MV__WorldObject__ObjectLinkDataParameter,
                                (byte *)((int)&kogamaDataType + 3));
-      puStack_7 = puVar2;
+      puStack_7 = unaff_ESI;
       pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&puStack_7);
       bp = (BytePacker *)0x0;
       if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
@@ -146,24 +146,25 @@ code_?:
     return (Dictionary_2_System_Object_System_Object_ *)0x0;
   }
   bVar9 = 0;
-  func_?();
-  pcVar10 = (code *)swi(0x4b);
-  uVar11 = (*pcVar10)();
-  uVar12 = (undefined2)((uint6)uVar11 >> 0x20);
-  out(uVar12,(int)uVar11);
-  bVar13 = (byte)((uint6)uVar11 >> 8);
-  bVar14 = CARRY1(extraout_CL,bVar13) || CARRY1(extraout_CL + bVar13,bVar9);
-  out(uVar12,(int)uVar11);
-  bVar9 = (byte)((uint)(unaff_EBX + -1) >> 8);
-  bVar13 = (byte)uVar11 + bVar9;
-  uVar15 = CONCAT31((int3)((uint6)uVar11 >> 8),bVar13 + bVar14);
-  out(uVar12,uVar15);
-  *(char *)&bp->klass =
-       *(char *)&bp->klass + (char)((uint)(unaff_EBX + -2) >> 8) +
-       (CARRY1((byte)uVar11,bVar9) || CARRY1(bVar13,bVar14));
-  out(uVar12,uVar15);
-  pcVar10 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar10)();
+  uVar10 = func_?();
+  uVar11 = (undefined2)((uint6)uVar10 >> 0x20);
+  pbVar12 = (byte *)uVar10;
+  out(uVar11,pbVar12);
+  bVar13 = (byte)((uint6)uVar10 >> 0x20);
+  bVar14 = *extraout_ECX + bVar13;
+  bVar15 = CARRY1(*extraout_ECX,bVar13) || CARRY1(bVar14,bVar9);
+  *extraout_ECX = bVar14 + bVar9;
+  out(uVar11,pbVar12);
+  bVar14 = *pbVar12;
+  bVar9 = (byte)((uint)extraout_ECX >> 8);
+  bVar13 = *pbVar12;
+  *pbVar12 = bVar13 + bVar9 + bVar15;
+  out(uVar11,pbVar12);
+  pcVar16 = (char *)((int)&bp[5].monitor + 3);
+  *pcVar16 = *pcVar16 + bVar9 + (CARRY1(bVar14,bVar9) || CARRY1(bVar13 + bVar9,bVar15));
+  out(uVar11,pbVar12);
+  pcVar17 = (code *)swi(3);
+  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar17)(unaff_ESI,&stack0xfffffffc);
   return pDVar1;
 }
 

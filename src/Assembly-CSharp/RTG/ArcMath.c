@@ -194,7 +194,7 @@ OBB * Assembly-CSharp.dll::RTG::ArcMath::ArcMath_CalcSh3DArcOBB
   uVar17 = pVVar5->y;
   fVar2 = epsilon._extrudeEps * _UNK_?;
   fVar3 = (float)((uint)((float)uVar16 * (float)puVar15 + (float)uVar17 * angle +
-                        pVVar5->z * 4.3566488e-29) & _UNK_?) +
+                        pVVar5->z * 4.3624122e-29) & _UNK_?) +
           (float)((uint)(fVar12 * fVar11 + fVar10 * fVar8 + fVar7 * fVar3) & _UNK_?) + fVar13;
   fVar18 = (float10)func_?();
   (__return_storage_ptr__->_size).x = fVar3;

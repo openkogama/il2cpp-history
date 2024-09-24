@@ -97,7 +97,6 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
   default:
     return 0;
   }
-  in_AF = 0;
   if (_UNK_? <= (pLVar1->fields)._currentTime_5__2 / *(float *)&(this_02->_0).byval_arg.attrs
      ) {
     pAVar11 = (AnimationCurve *)(this_02->_0).this_arg.data.typeHandle;
@@ -116,7 +115,6 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
                     (pRVar4,value_00,(MethodInfo *)0x0);
           (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
-          in_AF = 0;
           if (_UNK_? <= (pLVar1->fields)._currentTime_5__2 / (float)(this_02->_0).fields) {
             pCVar5 = (Component *)(this_02->_0).byval_arg.data.typeHandle;
             if (pCVar5 != (Component *)0x0) {
@@ -228,29 +226,14 @@ code_?:
     }
   }
 code_?:
-  uVar15 = func_?();
-  in_AF = 9 < ((byte)uVar15 & 0xf) | in_AF;
-  uVar16 = CONCAT31((int3)((uint)uVar15 >> 8),(byte)uVar15 + in_AF * -6) & 0xffffff0f;
-  bVar17 = (byte)uVar16;
-  cVar18 = (char)((uint)uVar15 >> 8) - in_AF;
-  iVar19 = CONCAT22((short)(uVar16 >> 0x10),CONCAT11(cVar18,bVar17));
-  pcVar20 = (char *)(iVar19 + -0xc);
-  *pcVar20 = *pcVar20 + extraout_DH + in_AF;
-  in_AF = 9 < bVar17 | in_AF;
-  uVar16 = CONCAT31((int3)((uint)iVar19 >> 8),bVar17 + in_AF * -6) & 0xffffff0f;
-  uVar21 = (undefined2)(uVar16 >> 0x10);
-  sVar22 = CONCAT11(cVar18 - in_AF,(char)uVar16);
-  pbVar23 = (byte *)CONCAT22(uVar21,sVar22);
-  bVar17 = *pbVar23;
-  bVar24 = *pbVar23;
-  *pbVar23 = bVar24 + extraout_DH + in_AF;
-  sVar25 = (short)*(char *)&(this_02->_0).image;
-  cVar18 = (char)(sVar22 % sVar25);
-  pcVar20 = (char *)CONCAT22(uVar21,CONCAT11(cVar18,(char)(sVar22 / sVar25)));
-  *pcVar20 = *pcVar20 + cVar18 + (CARRY1(bVar17,extraout_DH) || CARRY1(bVar24 + extraout_DH,in_AF));
-  pcVar26 = (code *)swi(3);
-  bVar27 = (*pcVar26)();
-  return bVar27;
+  iVar15 = func_?();
+  *(byte *)&(this_02->_0).image = *(byte *)&(this_02->_0).image | (byte)iVar15;
+  bVar16 = (char)(iVar15 + 1) + extraout_DH;
+  pbVar17 = (byte *)(CONCAT31((int3)((uint)(iVar15 + 1) >> 8),bVar16) + 0x10);
+  *pbVar17 = *pbVar17 | bVar16;
+  pcVar18 = (code *)swi(3);
+  bVar19 = (*pcVar18)();
+  return bVar19;
 }
 
 

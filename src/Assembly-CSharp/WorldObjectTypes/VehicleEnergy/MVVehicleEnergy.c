@@ -97,7 +97,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::
     EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1
               (this_00,cubeModelBase,min,max,0x14,(MethodInfo *)0x0);
     (this->fields).editableCubeModelWrapper = this_00;
-    uStack10 = 0x104c;
+    uStack10 = 0x104d;
     func_?();
     return;
   }

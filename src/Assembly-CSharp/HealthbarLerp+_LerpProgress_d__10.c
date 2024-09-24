@@ -84,20 +84,12 @@ code_?:
   }
 code_?:
   bVar8 = 0;
-  uVar9 = func_?();
-  bVar10 = (byte)uVar9 - 5;
-  bVar11 = (byte)uVar9 < 5 || bVar10 < bVar8;
-  bVar12 = (char)unaff_EBX + 1;
-  pbVar13 = (byte *)(CONCAT31((int3)((uint)uVar9 >> 8),bVar10 - bVar8) + 0x5861043);
-  bVar10 = *pbVar13;
-  bVar8 = *pbVar13 + bVar12;
-  *pbVar13 = bVar8 + bVar11;
-  *(char *)(unaff_EBX + -0x33efbcf8) =
-       *(char *)(unaff_EBX + -0x33efbcf8) + extraout_DH +
-       (CARRY1(bVar10,bVar12) || CARRY1(bVar8,bVar11));
-  pcVar14 = (code *)swi(3);
-  bVar15 = (*pcVar14)();
-  return bVar15;
+  iVar9 = func_?();
+  *(int *)(unaff_EBX + 0x10) = (*(int *)(unaff_EBX + 0x10) - iVar9) - (uint)bVar8;
+  pcVar10 = (code *)swi(3);
+  iRam_? = unaff_EBX;
+  bVar11 = (*pcVar10)();
+  return bVar11;
 }
 
 

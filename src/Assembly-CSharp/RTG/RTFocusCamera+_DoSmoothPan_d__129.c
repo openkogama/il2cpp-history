@@ -43,7 +43,7 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothPan>d__129::
     else if (_UNK_? < fVar9) {
       fVar9 = _UNK_?;
     }
-    fVar4 = (4.3523546e-29 - fVar4) * fVar9 + fVar4;
+    fVar4 = (4.358118e-29 - fVar4) * fVar9 + fVar4;
     fVar5 = (fVar6 - fVar5) * fVar9 + fVar5;
     (this->fields)._panAmount_5__2.x = fVar4;
     (this->fields)._panAmount_5__2.y = fVar5;

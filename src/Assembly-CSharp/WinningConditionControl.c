@@ -119,8 +119,7 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     pSVar5 = mscorlib.dll::System::String::String_Concat_3
                        (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
   }
-  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0)
-  ;
+  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
   IVar2.m_value = 0;
   mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
   pSVar5 = ::StringLiteral__;
@@ -131,21 +130,19 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     pSVar5 = mscorlib.dll::System::String::String_Concat_3
                        (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
   }
-  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0)
-  ;
+  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
   method = (MethodInfo *)&UNK_?;
   statType = (GameStatCounterType__Enum)
              mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
   values = (String__Array *)func_?();
-  cVar8 = '\0';
   if (values != (String__Array *)0x0) {
-    uStack9 = 0;
-    pSStack10 = pSVar1;
+    uStack8 = 0;
+    pSStack9 = pSVar1;
     func_?();
-    puStack11 = (undefined *)statType;
-    uStack12 = 1;
+    puStack10 = (undefined *)statType;
+    uStack11 = 1;
     func_?();
-    pSStack13 = ::StringLiteral__;
+    pSStack12 = ::StringLiteral__;
     func_?();
     method = (MethodInfo *)&UNK_?;
     func_?();
@@ -158,23 +155,16 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
     return pSVar1;
   }
-  uVar14 = func_?();
-  uVar15 = (uint)((ulonglong)uVar14 >> 0x20);
-  puVar16 = (uint *)uVar14;
-  cVar17 = (char)uVar14;
-  cRam_? = (cRam_? - cVar17) - cVar8;
-  uVar18 = *puVar16;
-  *puVar16 = *puVar16 - uVar15;
-  cRam_? = (cRam_? - cVar17) - (uVar18 < uVar15);
-  uVar18 = *puVar16;
-  *puVar16 = *puVar16 - uVar15;
-  cRam_? = (cRam_? - cVar17) - (uVar18 < uVar15);
-  uVar18 = *puVar16;
-  *puVar16 = *puVar16 - uVar15;
-  cRam_? = (cRam_? - cVar17) - (uVar18 < uVar15);
-  *puVar16 = *puVar16 - uVar15;
-  pcVar19 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar19)();
+  piVar13 = (int *)func_?();
+  iVar4 = (int)piVar13 >> 0x1f;
+  *piVar13 = *piVar13 - iVar4;
+  *piVar13 = *piVar13 - iVar4;
+  *piVar13 = *piVar13 - iVar4;
+  *piVar13 = *piVar13 - iVar4;
+  *piVar13 = *piVar13 - iVar4;
+  *piVar13 = *piVar13 - iVar4;
+  pcVar14 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar14)();
   return pSVar1;
 }
 

@@ -60,18 +60,52 @@ void Assembly-CSharp.dll::CullingSubscriberBase::CullingSubscriberBase_Setup
         if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__CullingApiWrapper);
         }
-        iVar5 = CullingApiWrapper::CullingApiWrapper_GetDistanceBand(radius,(MethodInfo *)0x0);
-        (this->fields)._DistanceBandIndex_k__BackingField = iVar5;
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__CullingApiWrapper);
+          cRam_? = '\x01';
+        }
+        uVar2 = 0;
+        iVar5 = 0x10;
+        pCVar6 = TypeInfo__CullingApiWrapper;
+        while( true ) {
+          if ((pCVar6->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(pCVar6);
+            pCVar6 = TypeInfo__CullingApiWrapper;
+          }
+          pSVar7 = pCVar6->static_fields->sizes;
+          if (pSVar7 == (Single__Array *)0x0) goto code_?;
+          if ((int)pSVar7->max_length <= (int)uVar2) break;
+          if ((pCVar6->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(pCVar6);
+            pCVar6 = TypeInfo__CullingApiWrapper;
+          }
+          pSVar7 = pCVar6->static_fields->sizes;
+          if (pSVar7 == (Single__Array *)0x0) goto code_?;
+          if (pSVar7->max_length <= uVar2) goto code_?;
+          if (radius < *(float *)((int)pSVar7->vector + iVar5 + -0x10)) goto code_?;
+          uVar2 = uVar2 + 1;
+          iVar5 = iVar5 + 4;
+        }
+        if ((pCVar6->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(pCVar6);
+          pCVar6 = TypeInfo__CullingApiWrapper;
+        }
+        pSVar7 = pCVar6->static_fields->sizes;
+        if (pSVar7 == (Single__Array *)0x0) goto code_?;
+        uVar2 = pSVar7->max_length - 1;
+code_?:
+        (this->fields)._DistanceBandIndex_k__BackingField = uVar2;
         return;
       }
       goto code_?;
     }
   }
+code_?:
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -281,58 +315,12 @@ void Assembly-CSharp.dll::CullingSubscriberBase::CullingSubscriberBase__ctor_2
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CullingApiWrapper);
+    func_?();
   }
   CullingApiWrapper::CullingApiWrapper_Subscribe((ICullingSubscriber *)this,(MethodInfo *)0x0);
   (this->fields).callback = callback;
-  func_?(&this->fields,callback);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  pBVar1 = TypeInfo__CullingApiWrapper->static_fields->spheres;
-  if (pBVar1 != (BoundingSphere__Array *)0x0) {
-    uVar2 = (this->fields)._CullingIndex_k__BackingField;
-    if (pBVar1->max_length <= uVar2) goto code_?;
-    pBVar3 = pBVar1->vector + uVar2;
-    bVar4 = cRam_? == '\0';
-    (pBVar3->position).x = position.x;
-    (pBVar3->position).y = position.y;
-    (pBVar3->position).z = position.z;
-    if (bVar4) {
-      func_?();
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pBVar1 = TypeInfo__CullingApiWrapper->static_fields->spheres;
-    if (pBVar1 != (BoundingSphere__Array *)0x0) {
-      uVar2 = (this->fields)._CullingIndex_k__BackingField;
-      if (uVar2 < pBVar1->max_length) {
-        pBVar1->vector[uVar2].radius = radius;
-        if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        iVar5 = CullingApiWrapper::CullingApiWrapper_GetDistanceBand(radius,(MethodInfo *)0x0);
-        (this->fields)._DistanceBandIndex_k__BackingField = iVar5;
-        return;
-      }
-      goto code_?;
-    }
-  }
   func_?();
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  CullingSubscriberBase_Setup(this,radius,position,(MethodInfo *)0x0);
   return;
 }
 

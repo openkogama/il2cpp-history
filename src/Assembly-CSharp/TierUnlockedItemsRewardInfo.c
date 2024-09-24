@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::TierUnlockedItemsRewardInfo::TierUnlockedItemsRewardIn
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,0x12,(MethodInfo *)0x0);
+                  (pGVar1,0xd2,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {

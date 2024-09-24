@@ -121,14 +121,27 @@ code_?:
   }
 code_?:
   cVar10 = '\0';
-  iVar11 = func_?();
-  puVar12 = (ushort *)(iVar11 + 0x66);
-  sVar13 = ((ushort)unaff_EBX & 3) - (*puVar12 & 3);
-  *puVar12 = *puVar12 + (ushort)(0 < sVar13) * sVar13;
-  *(char *)(unaff_EBX + -0x4ef99a8) =
-       *(char *)(unaff_EBX + -0x4ef99a8) + (char)((uint)iVar11 >> 8) + cVar10;
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  uVar11 = func_?();
+  piVar12 = (int *)(extraout_ECX + 0x66);
+  bVar13 = (byte)extraout_ECX;
+  iVar14 = *piVar12;
+  *piVar12 = *piVar12 << (bVar13 & 0x1f);
+  bVar15 = (extraout_ECX & 0x1f) == 0;
+  *unaff_EBX = *unaff_EBX + (char)((ulonglong)uVar11 >> 0x20) +
+               (bVar15 * cVar10 | !bVar15 * (iVar14 << (bVar13 & 0x1f) - 1 < 0));
+  bVar15 = (byte)((ulonglong)uVar11 >> 8) < *(byte *)((int)((ulonglong)uVar11 >> 0x20) + 0x66);
+  pbVar16 = (byte *)((int)uVar11 + 0x62);
+  bVar17 = CARRY1(*pbVar16,bVar13) || CARRY1(*pbVar16 + bVar13,bVar15);
+  *pbVar16 = *pbVar16 + bVar13 + bVar15;
+  pbVar16 = (byte *)(unaff_EBX + 0x62);
+  bVar13 = *pbVar16;
+  bVar18 = (byte)(extraout_ECX >> 8);
+  bVar19 = *pbVar16;
+  *pbVar16 = bVar19 + bVar18 + bVar17;
+  unaff_EBX[0x62] =
+       unaff_EBX[0x62] + bVar18 + (CARRY1(bVar13,bVar18) || CARRY1(bVar19 + bVar18,bVar17));
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 

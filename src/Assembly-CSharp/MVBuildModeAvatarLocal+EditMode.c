@@ -194,36 +194,39 @@ code_?:
                 if (pMVar17 != (MVCameraController *)0x0) {
                   MVCameraController::MVCameraController_SetCamera
                             (pMVar17,CameraType__Enum_AvatarEditModeCamera,(MethodInfo *)0x0);
+                  in_stack_18 = 0;
                   pMVar11 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
                                       ((MethodInfo *)0x0);
                   bVar1 = false;
                   if (pMVar11 != (MainCameraManager *)0x0) {
+                    in_stack_19 = (Object__Class *)&UNK_?;
                     unaff_EDI = (Object__Class *)
                                 MainCameraManager::MainCameraManager_get_CurrentCamera
                                           (pMVar11,(MethodInfo *)0x0);
                     bVar1 = false;
                     if (unaff_EDI != (Object__Class *)0x0) {
-                      pJVar18 = (JetPackCamera__Class *)(unaff_EDI->_0).image;
+                      pJVar20 = (JetPackCamera__Class *)(unaff_EDI->_0).image;
                       bVar1 = 1;
-                      pAVar19 = TypeInfo__AvatarEditModeCamera;
-                      if (((pJVar18->_1).naturalAligment <
+                      pAVar21 = TypeInfo__AvatarEditModeCamera;
+                      if (((pJVar20->_1).naturalAligment <
                            (TypeInfo__AvatarEditModeCamera->_1).naturalAligment) ||
-                         (pIVar3 = (pJVar18->_1).typeHierarchy
+                         (pIVar3 = (pJVar20->_1).typeHierarchy
                                    [(TypeInfo__AvatarEditModeCamera->_1).naturalAligment - 1],
                          bVar1 = pIVar3 < TypeInfo__AvatarEditModeCamera,
                          pIVar3 != (Il2CppClass *)TypeInfo__AvatarEditModeCamera))
                       goto code_?;
+                      in_stack_19 = unaff_EDI;
                       JetPackCamera::JetPackCamera_ResetDistanceAndDirectionToAvatar
                                 ((JetPackCamera *)unaff_EDI,*(Vector3 *)&data[2].monitor,
                                  (MethodInfo *)0x0);
-                      pGVar20 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
+                      pGVar22 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
                                           ((MethodInfo *)0x0);
                       bVar1 = false;
-                      if (pGVar20 != (GameEventManager *)0x0) {
-                        pGVar21 = (pGVar20->fields).AvatarCommandsBuildMode;
+                      if (pGVar22 != (GameEventManager *)0x0) {
+                        pGVar23 = (pGVar22->fields).AvatarCommandsBuildMode;
                         bVar1 = false;
-                        if (pGVar21 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0) {
-                          this_00 = (RTFocusCamera *)(pGVar21->fields).LaserCommands;
+                        if (pGVar23 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0) {
+                          this_00 = (RTFocusCamera *)(pGVar23->fields).LaserCommands;
                           bVar1 = false;
                           if (this_00 != (RTFocusCamera *)0x0) {
                             RTG::RTFocusCamera::RTFocusCamera_OnPrjSwitchTransitionBegin
@@ -293,18 +296,23 @@ code_?:
                                 ((MethodInfo *)0x0);
             bVar1 = false;
             if (pMVar11 != (MainCameraManager *)0x0) {
-              unaff_EBX = MainCameraManager::MainCameraManager_get_CurrentCamera
-                                    (pMVar11,(MethodInfo *)0x0);
+              pMVar24 = MainCameraManager::MainCameraManager_get_CurrentCamera
+                                  (pMVar11,(MethodInfo *)0x0);
+              in_stack_18 = 0;
               pMVar4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
               bVar1 = false;
               if ((data != (Object *)0x0) &&
                  (bVar1 = false, pMVar4 != (MVWorldObjectClientManager *)0x0)) {
+                in_stack_19 = data[1].klass;
+                in_stack_18 = 0xb5;
                 MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (pMVar4,(int32_t)data[1].klass,(MethodInfo *)0x0);
+                          (pMVar4,(int32_t)in_stack_19,(MethodInfo *)0x0);
                 data = (Object *)0x0;
                 bVar1 = false;
-                if (unaff_EBX != (MVCameraBase *)0x0) {
-                  (*(code *)(unaff_EBX->klass->vtable).FocusOnObject.method)();
+                if (pMVar24 != (MVCameraBase *)0x0) {
+                  in_stack_18 = 0;
+                  in_stack_19 = (Object__Class *)0x0;
+                  (*(code *)(pMVar24->klass->vtable).FocusOnObject.method)();
                   pMVar14 = (this->fields)._.buildModeAvatar;
                   bVar1 = false;
                   data = (Object *)0x0;
@@ -399,37 +407,16 @@ code_?:
   pMVar2 = extraout_EDX;
 code_?:
   func_?(data,pMVar2);
-  pAVar19 = extraout_EDX_00;
+  pAVar21 = extraout_EDX_00;
 code_?:
-  pbVar22 = (byte *)func_?(unaff_EDI,pAVar19);
-  bVar23 = data < (MVBuildModeAvatarLocal_EditMode *)*extraout_ECX ||
-           (uint)((int)data - *extraout_ECX) < (uint)bVar1;
-  bVar1 = *pbVar22;
-  bVar24 = *pbVar22 + (byte)unaff_EBX;
-  *pbVar22 = bVar24 + bVar23;
-  pbVar25 = (byte *)((int)extraout_ECX +
-                    (-0x1b7b1030 - (uint)(CARRY1(bVar1,(byte)unaff_EBX) || CARRY1(bVar24,bVar23))))
-  ;
-  *pbVar25 = *pbVar25 ^ extraout_DL;
-  if ((POPCOUNT(*pbVar25) & 1U) != 0) {
+  func_?(unaff_EDI,pAVar21);
+  bVar25 = (byte)in_stack_19;
+  pbVar26 = (byte *)CONCAT31((int3)((uint)in_stack_19 >> 8),
+                             bVar25 + (9 < (bVar25 & 0xf) | in_AF) * -6 +
+                             (0x99 < bVar25 | bVar1) * -0x60);
+  *pbVar26 = *pbVar26 ^ in_stack_18;
                     /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
-  }
-  *pbVar25 = *pbVar25 ^ extraout_DL;
-  *pbVar25 = *pbVar25 ^ extraout_DL;
-  if ((char)*pbVar25 < '\0') {
-    *pbVar25 = *pbVar25 ^ extraout_DL;
-    pcVar26 = (code *)swi(3);
-    (*pcVar26)();
-    return;
-  }
-  *pbVar25 = 0;
-  pcVar27 = (char *)((int)&unaff_EBX[0x250404b].fields.cameraImpact + 1);
-  *pcVar27 = *pcVar27 + (char)pbVar22;
-  pbVar22 = pbVar25 + -1;
-  *pbVar22 = *pbVar22 + (char)pbVar22;
-  *pbVar25 = *pbVar25 + (char)pbVar25;
-  return;
+  halt_baddata();
 }
 
 
@@ -1493,7 +1480,7 @@ code_?:
   fVar12 = (this->fields)._XZMovementSpeedScale_k__BackingField;
   __return_storage_ptr__->x = fStack_20 * fVar18 * fVar10 * fVar12;
   __return_storage_ptr__->y = fStack_21 * fVar18 * fVar10 * fVar12;
-  __return_storage_ptr__->z = fVar18 * 3.475172e-29 * fVar10 * fVar12;
+  __return_storage_ptr__->z = fVar18 * 3.4766984e-29 * fVar10 * fVar12;
   return __return_storage_ptr__;
 }
 

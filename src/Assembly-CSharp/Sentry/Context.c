@@ -219,10 +219,9 @@ code_?:
     }
   }
 code_?:
-  iVar12 = func_?();
-  *(char *)(iVar12 + -0x3cefb0eb) = *(char *)(iVar12 + -0x3cefb0eb) + extraout_CH;
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  func_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

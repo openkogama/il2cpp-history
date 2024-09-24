@@ -182,13 +182,14 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter_GetActorWithBestScore
                            MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>__get_Item_MV__WorldObject__MVTeam_
                           ), pOVar8 != (Object *)0x0)) && (pOVar8[1].klass != (Object__Class *)0x0))
   {
-    unaff_EDI = (MethodInfo *)auStack_9;
-    pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
-              Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                         unaff_EDI,(Dictionary_2_System_UInt32_System_Object_ *)pOVar8[1].klass,
-                         MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__GetEnumerator__
-                        );
+    method_00 = (MethodInfo *)auStack_9;
+    pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                        method_00,(Dictionary_2_System_UInt32_System_Object_ *)pOVar8[1].klass,
+                        MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__GetEnumerator__
+                       );
+    unaff_ESI = (Object *)(auStack_9 + 0x18);
     uStack_11 = 0;
     DStack_6._dictionary = pDVar10->_dictionary;
     DStack_6._version = pDVar10->_version;
@@ -196,7 +197,7 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter_GetActorWithBestScore
     DStack_6._current.key = (pDVar10->_current).key;
     DStack_6._16_8_ = *(undefined8 *)&(pDVar10->_current).value;
     uStack_1 = 1;
-    pOStack_12 = (Object *)(auStack_9 + 0x18);
+    pOStack_12 = unaff_ESI;
     while( true ) {
       do {
         bVar13 = mscorlib.dll::System::Collections::Generic::
@@ -209,14 +210,15 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter_GetActorWithBestScore
         if (bVar13 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)(auStack_9 + 0x18),
+                    (unaff_ESI,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__Dispose__
-                     ,unaff_EDI);
+                     ,method_00);
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
       } while (DStack_6._current.key == excludedActorNr);
+      unaff_EDI = excludedActorNr;
       if (DStack_6._current.value == (Object *)0x0) break;
       iVar14 = *(int *)((int)DStack_6._current.value + 8);
       if (0 < iVar14) {
@@ -238,36 +240,46 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter_GetActorWithBestScore
     }
   }
   bVar15 = 0;
-  func_?();
   uVar16 = func_?();
-  out(extraout_DX,(char)uVar16);
-  pppIVar17 = &unaff_EDI[-1].parameters;
-  bVar18 = CARRY1(*(byte *)pppIVar17,unaff_BL) || CARRY1(*(char *)pppIVar17 + unaff_BL,bVar15);
-  *(byte *)pppIVar17 = *(char *)pppIVar17 + unaff_BL + bVar15;
-  out(extraout_DX,(char)uVar16);
-  bVar19 = (byte)((ushort)uVar16 >> 8);
-  bVar15 = *extraout_ECX + bVar19;
-  bVar19 = CARRY1(*extraout_ECX,bVar19) || CARRY1(bVar15,bVar18);
-  *extraout_ECX = bVar15 + bVar18;
-  uVar16 = func_?();
-  out(extraout_DX_00,(char)uVar16);
-  pppIVar17 = &unaff_EDI[-1].parameters;
-  bVar15 = *(byte *)pppIVar17;
-  cVar20 = *(char *)pppIVar17;
-  *(byte *)pppIVar17 = cVar20 + unaff_BL + bVar19;
-  out(extraout_DX_00,(char)uVar16);
-  *extraout_ECX_00 =
-       *extraout_ECX_00 + (char)((ushort)uVar16 >> 8) +
-       (CARRY1(bVar15,unaff_BL) || CARRY1(cVar20 + unaff_BL,bVar19));
-  uVar21 = func_?();
-  out(extraout_DX_01,uVar21);
-  in(extraout_DX_01);
+  uVar17 = (undefined2)extraout_EDX;
+  out(unaff_ESI->klass,uVar17);
+  out(uVar17,uVar16);
+  pbVar18 = (byte *)(extraout_EDX + -0xe);
+  bVar19 = (byte)((uint)unaff_EBX >> 8);
+  bVar20 = CARRY1(*pbVar18,bVar19) || CARRY1(*pbVar18 + bVar19,bVar15);
+  *pbVar18 = *pbVar18 + bVar19 + bVar15;
+  out(uVar17,uVar16);
+  pbVar18 = (byte *)(unaff_EDI + -0xe);
+  bVar15 = (byte)((uint)extraout_ECX >> 8);
+  bVar21 = CARRY1(*pbVar18,bVar15) || CARRY1(*pbVar18 + bVar15,bVar20);
+  *pbVar18 = *pbVar18 + bVar15 + bVar20;
+  out(uVar17,uVar16);
+  bVar22 = (byte)((uint)extraout_EDX >> 8);
+  bVar20 = CARRY1(*extraout_ECX,bVar22) || CARRY1(*extraout_ECX + bVar22,bVar21);
+  *extraout_ECX = *extraout_ECX + bVar22 + bVar21;
+  out(uVar17,uVar16);
+  bVar21 = CARRY1(*extraout_ECX,bVar22) || CARRY1(*extraout_ECX + bVar22,bVar20);
+  *extraout_ECX = *extraout_ECX + bVar22 + bVar20;
+  out(uVar17,uVar16);
+  pbVar18 = (byte *)(unaff_EDI + -0xe);
+  bVar20 = CARRY1(*pbVar18,bVar15) || CARRY1(*pbVar18 + bVar15,bVar21);
+  *pbVar18 = *pbVar18 + bVar15 + bVar21;
+  out(uVar17,uVar16);
+  bVar15 = *extraout_ECX;
+  bVar23 = *extraout_ECX;
+  *extraout_ECX = bVar23 + bVar22 + bVar20;
+  out(uVar17,uVar16);
+  *(char *)(extraout_EDX + -0xe) =
+       *(char *)(extraout_EDX + -0xe) + bVar19 +
+       (CARRY1(bVar15,bVar22) || CARRY1(bVar23 + bVar22,bVar20));
+  out(uVar17,uVar16);
+  in(uVar17);
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__HighScores);
     cRam_? = '\x01';
   }
   pDVar7 = (this->fields).teamCounters;
-  this_00 = (HighScores *)func_?(TypeInfo__HighScores,unaff_EDI);
+  this_00 = (HighScores *)func_?(TypeInfo__HighScores,unaff_EDI,&unaff_ESI->monitor);
   HighScores::HighScores__ctor
             (this_00,(GameStatCounterType__Enum)score,pDVar7,(bool)team,statType,
              (bool)excludedActorNr,(MethodInfo *)0x0);

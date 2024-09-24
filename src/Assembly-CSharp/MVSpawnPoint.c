@@ -225,19 +225,8 @@ code_?:
   this = (MVSpawnPoint *)&UNK_?;
   method = (MethodInfo *)TVar4.m_Index;
   func_?();
-  in(extraout_DX);
-  switch(this) {
-  case (MVSpawnPoint *)0x27:
-    return;
-  case (MVSpawnPoint *)0x28:
-    return;
-  case (MVSpawnPoint *)0x29:
-    return;
-  case (MVSpawnPoint *)0x2a:
-    return;
-  default:
-    return;
-  }
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

@@ -177,6 +177,7 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor
     (this->fields).addCubeTime = fVar6;
   }
   pCVar7 = (this->fields).sprayCursor;
+  unaff_ESI = selectedCube;
   if (selectedCube == (CubePickingInfo *)0x0) {
     if (pCVar7 != (CellCursor *)0x0) {
       CellCursor::CellCursor_set_Active(pCVar7,0,(MethodInfo *)0x0);
@@ -190,72 +191,72 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor
   uVar9 = (selectedCube->fields).iLocalPos.x;
   switch((selectedCube->fields).pickedFace) {
   case 0:
-    y = 1;
+    iVar10 = 1;
     break;
   case 1:
-    y = -1;
+    iVar10 = -1;
     break;
   case 2:
     x = 0;
-    y = 0;
+    iVar10 = 0;
     z = -1;
-    uStack_10._4_4_ = (undefined *)((uint)uStack_10._6_2_ << 0x10);
+    uStack_11._4_4_ = (undefined *)((uint)uStack_11._6_2_ << 0x10);
     goto code_?;
   case 3:
     x = 0;
-    y = 0;
-    uStack_10._4_4_ = (undefined *)((uint)uStack_10._6_2_ << 0x10);
+    iVar10 = 0;
+    uStack_11._4_4_ = (undefined *)((uint)uStack_11._6_2_ << 0x10);
     z = 1;
     goto code_?;
   case 4:
-    uStack_10._4_4_ = (undefined *)((uint)uStack_10._6_2_ << 0x10);
+    uStack_11._4_4_ = (undefined *)((uint)uStack_11._6_2_ << 0x10);
     x = -1;
-    y = 0;
+    iVar10 = 0;
     goto code_?;
   case 5:
-    y = 0;
-    uStack_10._4_4_ = (undefined *)((uint)uStack_10._6_2_ << 0x10);
+    iVar10 = 0;
+    uStack_11._4_4_ = (undefined *)((uint)uStack_11._6_2_ << 0x10);
     x = 1;
     goto code_?;
   default:
-    y = 0;
+    iVar10 = 0;
   }
   x = 0;
-  uStack_10._4_4_ = (undefined *)((uint)uStack_10._6_2_ << 0x10);
+  uStack_11._4_4_ = (undefined *)((uint)uStack_11._6_2_ << 0x10);
 code_?:
   z = 0;
 code_?:
-  uStack_10._0_2_ = 0;
-  uStack_10._2_2_ = 0;
+  uStack_11._0_2_ = 0;
+  uStack_11._2_2_ = 0;
   MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-            ((IntVector *)&uStack_10,x,y,z,(MethodInfo *)0x0);
+            ((IntVector *)&uStack_11,x,iVar10,z,(MethodInfo *)0x0);
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-    pIStack_11 = TypeInfo__MV__WorldObject__IntVector;
-    uStack_10._4_4_ = &UNK_?;
+    pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
+    uStack_11._4_4_ = &UNK_?;
     func_?();
   }
-  IVar12.z = uVar9;
-  IVar12._0_4_ = auStack_13;
-  i2.y = in_stack_14;
+  IVar13.z = uVar9;
+  IVar13._0_4_ = auStack_14;
+  i2.y = in_stack_15;
   i2.x = in_stack_8;
-  i2.z = (int16_t)(undefined4)uStack_10;
-  IVar12 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                     (IVar12,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
-  pIVar15 = IVar12._0_4_;
-  uStack_10._0_2_ = pIVar15->x;
-  uStack_10._2_2_ = pIVar15->y;
-  in_stack_8 = pIVar15->z;
+  i2.z = (int16_t)(undefined4)uStack_11;
+  IVar13 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
+                     (IVar13,i2,(MethodInfo *)CONCAT22(uVar1,uStack_11._4_2_));
+  pIVar16 = IVar13._0_4_;
+  uStack_11._0_2_ = pIVar16->x;
+  uStack_11._2_2_ = pIVar16->y;
+  in_stack_8 = pIVar16->z;
   if (targetCubeModel != (MVCubeModelBase *)0x0) {
     pCVar7 = (this->fields).sprayCursor;
-    pIStack_11 = (IntVector__Class *)(targetCubeModel->fields)._.gameObject;
+    pIStack_12 = (IntVector__Class *)(targetCubeModel->fields)._.gameObject;
     if ((pCVar7 != (CellCursor *)0x0) &&
-       (this_00 = CellCursor::CellCursor_GetCellCursor(pCVar7,*pIVar15,(MethodInfo *)0x0),
+       (this_00 = CellCursor::CellCursor_GetCellCursor(pCVar7,*pIVar16,(MethodInfo *)0x0),
        this_00 != (CellCursorCubeLineMesh *)0x0)) {
       position.z = in_stack_8;
-      position.x = (int16_t)uStack_10;
-      position.y = uStack_10._2_2_;
+      position.x = (int16_t)uStack_11;
+      position.y = uStack_11._2_2_;
       CellCursorCubeLineMesh::CellCursorCubeLineMesh_SetCursorCube
-                (this_00,position,(GameObject *)pIStack_11,(MethodInfo *)0x0);
+                (this_00,position,(GameObject *)pIStack_12,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
       if ((pGVar3 != (GameEventManager *)0x0) &&
@@ -264,23 +265,44 @@ code_?:
           (pGVar5 = (pGVar4->fields).LaserCommands,
           pGVar5 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0))))
       {
-        fVar6 = (selectedCube->fields).point.z;
-        to.z._1_1_ = (char)((uint)fVar6 >> 8);
-        to._0_9_ = *(unkbyte9 *)&(selectedCube->fields).point;
-        to.z._2_2_ = (short)((uint)fVar6 >> 0x10);
         GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
         GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition
-                  (pGVar5,to,(MethodInfo *)0x0);
+                  (pGVar5,(selectedCube->fields).point,(MethodInfo *)0x0);
         return;
       }
     }
   }
 code_?:
-  uVar1 = 0x1046;
-  uVar16 = func_?();
-  out(0x3a,uVar16);
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)(CONCAT22(uVar1,in_ES));
+  func_?();
+  iVar10 = (unaff_ESI->fields).pickedEdge;
+  uVar17 = in(extraout_DX);
+  *(undefined1 *)&this->klass = uVar17;
+  pbVar18 = (byte *)((int)&unaff_ESI->klass + 1);
+  bVar19 = *pbVar18;
+  bVar20 = (byte)iVar10;
+  *pbVar18 = *pbVar18 + bVar20;
+  uVar17 = in(extraout_DX);
+  *(undefined1 *)((int)&this->klass + 1) = uVar17;
+  pbVar18 = (byte *)((int)&unaff_ESI->klass + 2);
+  bVar21 = *pbVar18 + (byte)extraout_DX;
+  bVar22 = CARRY1(*pbVar18,(byte)extraout_DX) || CARRY1(bVar21,CARRY1(bVar19,bVar20));
+  *pbVar18 = bVar21 + CARRY1(bVar19,bVar20);
+  uVar17 = in(extraout_DX);
+  *(undefined1 *)((int)&this->klass + 2) = uVar17;
+  pbVar18 = (byte *)((int)&unaff_ESI->klass + 3);
+  bVar19 = *pbVar18;
+  bVar20 = (byte)((uint)iVar10 >> 8);
+  bVar21 = *pbVar18 + bVar20;
+  *pbVar18 = bVar21 + bVar22;
+  uVar17 = in(extraout_DX);
+  *(undefined1 *)((int)&this->klass + 3) = uVar17;
+  *(char *)&unaff_ESI->monitor =
+       *(char *)&unaff_ESI->monitor + (char)((ushort)extraout_DX >> 8) +
+       (CARRY1(bVar19,bVar20) || CARRY1(bVar21,bVar22));
+  uVar17 = in(extraout_DX);
+  *(undefined1 *)&this->monitor = uVar17;
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 
