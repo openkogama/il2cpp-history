@@ -19,11 +19,12 @@ public abstract class PickupItemWithDelay : PickupItem, IUpdatecontrollerSubscri
 	[SerializeField]
 	protected ObscuredFloat fireInterval;
 	protected bool isFiring;
-	private float lastFireTime;
+	protected float lastFireTime;
 	private bool triggerBegin;
 
 	// Properties
 	protected override bool IsAmmoDepleted { get; }
+	protected bool IsOnCooldown { get; }
 	public override Color CrossHairColor { get; }
 
 	// Constructors
