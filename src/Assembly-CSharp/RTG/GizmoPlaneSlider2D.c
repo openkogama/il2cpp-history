@@ -459,11 +459,11 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider2D::GizmoPlaneSlider2D_OnGizmoAtt
               stack0x00000014 = pVVar9->z;
               stack0x00000018 = (pGVar16->fields)._offsetSnapStepRight;
               stack0x0000001c = (pGVar17->fields)._offsetSnapStepUp;
-              workData_00.DragOrigin = pGVar15->_offsetDragOrigin;
-              workData_00 = (GizmoDblAxisOffsetDrag3D_WorkData)
-                            CONCAT3212(workData_00._0_32_,workData_00.DragOrigin);
+              workData_01.DragOrigin = pGVar15->_offsetDragOrigin;
+              workData_01 = (GizmoDblAxisOffsetDrag3D_WorkData)
+                            CONCAT3212(workData_00._0_32_,workData_01.DragOrigin);
               GizmoDblAxisOffsetDrag3D::GizmoDblAxisOffsetDrag3D_SetWorkData
-                        (this_02,workData_00,(MethodInfo *)0x0);
+                        (this_02,workData_01,(MethodInfo *)0x0);
               return;
             }
           }
@@ -719,11 +719,11 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider2D::GizmoPlaneSlider2D_OnGizmoAtt
               fVar38 = (float)uVar36;
               auVar39 = CONCAT48(fVar38,uVar40);
               fVar41 = (float)uVar37;
-              workData_01._0_16_ = CONCAT412(fVar41,auVar39);
-              workData_01 = (GizmoDblAxisScaleDrag3D_WorkData)
-                            CONCAT3216(workData_00._0_32_,workData_01._0_16_);
+              workData_00._0_16_ = CONCAT412(fVar41,auVar39);
+              workData_00 = (GizmoDblAxisScaleDrag3D_WorkData)
+                            CONCAT3216(workData_00._0_32_,workData_00._0_16_);
               GizmoDblAxisScaleDrag3D::GizmoDblAxisScaleDrag3D_SetWorkData
-                        (this_00,workData_01,(MethodInfo *)0x0);
+                        (this_00,workData_00,(MethodInfo *)0x0);
               return;
             }
           }
