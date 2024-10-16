@@ -99,7 +99,7 @@ String * Assembly-CSharp.dll::KillNotification::KillNotification_GetKillText_1
     func_?(&StringLiteral__color___2___3___color__sniped__);
     func_?(&::StringLiteral__);
     func_?(&StringLiteral__color___0___1___color__respawne);
-    in_stack_1 = 0xdad0;
+    in_stack_1 = 0xdad8;
     func_?();
     func_?(&StringLiteral__color___0___1___color__hit_the_);
     func_?(&StringLiteral__color___2___3___color__eliminat);

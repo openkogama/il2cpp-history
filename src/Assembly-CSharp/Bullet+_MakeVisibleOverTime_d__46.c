@@ -24,10 +24,10 @@ code_?:
       fVar3 = fVar4;
     }
     else {
-      fVar4 = _UNK_?;
-      if (_UNK_? < fVar3) goto code_?;
+      fVar4 = (pBVar2->fields).storedBulletColor.a;
+      if (fVar4 < fVar3) goto code_?;
     }
-    pCVar5 = &(pBVar2->fields).storedColor;
+    pCVar5 = &(pBVar2->fields).storedBulletColor;
     uVar6 = 0;
     pMVar7 = (pBVar2->fields).meshRenderers;
     uVar8 = pCVar5->r;
@@ -55,8 +55,8 @@ code_?:
                   (pMVar15,StringLiteral__TintColor,value,(MethodInfo *)0x0);
         ppMVar14 = ppMVar14 + 1;
       }
-      uVar6 = 0;
       pSVar16 = (pBVar2->fields).spriteRenderers;
+      uVar6 = 0;
       if (pSVar16 != (SpriteRenderer__Array *)0x0) {
         ppSVar17 = pSVar16->vector;
         while( true ) {

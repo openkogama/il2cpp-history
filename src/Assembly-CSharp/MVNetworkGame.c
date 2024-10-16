@@ -695,7 +695,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_CreatePlayersFromUserList
             (TypeInfo__MV__Common__BuildTarget->_0).element_class) goto code_?;
         puVar16 = (undefined1 *)func_?();
         value = TypeInfo__MVPlayer;
-        BStack_17 = CONCAT31(0x10639d,*puVar16);
+        BStack_17 = CONCAT31(0x10639e,*puVar16);
         this_02 = (MVPlayer *)func_?();
         MVPlayer::MVPlayer__ctor_1
                   (this_02,actorNumber,profileID,(int32_t)pMVar5,pSStack_11,BStack_17,
@@ -8124,7 +8124,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame__ctor
           pPVar1 = (this->fields)._Peer_k__BackingField;
           if (pPVar1 != (PhotonPeer *)0x0) {
             bVar2 = cRam_? == '\0';
-            (pPVar1->fields).DebugOut = 0x14;
+            (pPVar1->fields).DebugOut = 0x15;
             if (bVar2) {
               func_?();
               func_?();

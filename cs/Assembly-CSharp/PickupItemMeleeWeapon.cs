@@ -74,7 +74,7 @@ public class PickupItemMeleeWeapon : PickupItemEditable
 	protected override void InitializeAudioPlayers();
 	protected override EditableItemConfiguration GetDefaultConfiguration();
 	protected override void SetConfiguration(Dictionary<object, object> itemData);
-	public override void OnStateChanged(Dictionary<object, object> newState);
+	protected override void OnPickupNewEditableItem();
 	protected override void OnFire(bool isLocal);
 	[IteratorStateMachine(typeof(_CheckHitCoroutine_d__28))]
 	private IEnumerator CheckHitCoroutine(bool isLocal);

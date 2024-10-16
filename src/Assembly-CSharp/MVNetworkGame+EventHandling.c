@@ -232,195 +232,126 @@ void Assembly-CSharp.dll::MVNetworkGame+EventHandling::MVNetworkGame_EventHandli
 {
   uStack_1 = 0xffffffff;
   puStack_2 = &DAT_?;
-  pvStack_3 = (void *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &pvStack_3;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
   puStack_4 = &stack0xffffff6c;
-  _Var60 = unaff_ESI;
   puVar5 = &stack0xffffff6c;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__AchievementType);
-    func_?(&System__Object__MethodInfo__System__Array__Empty<System::Object>______);
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__MV__Common__BuildTarget);
-    func_?(&TypeInfo__MV__WorldObject__BytePacker);
-    func_?(&TypeInfo__System__Byte);
-    func_?(&TypeInfo__System__Byte);
-    func_?(&TypeInfo__MVWorldObjectClient__CallBackDelegate);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Keys__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__System__Enum);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::Object,_System::Object>__get_Current__
-                   );
-    func_?(&TypeInfo__MV__Common__FriendStatus);
-    func_?(&TypeInfo__GamePassesManager);
-    func_?(&TypeInfo__HighlightManager);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&
-                    MV__WorldObject__GoldRewardedForLevelCollection_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GoldRewardedForLevelCollection>_System__String_
-                   );
-    func_?(&
-                    MV__WorldObject__GoldRewardedForLevelData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GoldRewardedForLevelData>_System__String_
-                   );
-    func_?(&
-                    MV__WorldObject__GamePassSystem__HighScoreDatas_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::HighScoreDatas>_System__String_
-                   );
-    func_?(&
-                    MV__WorldObject__GamePassSystem__GamePassEarnings__KogamaVatValues_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::GamePassEarnings::KogamaVatValues>_System__String_
-                   );
-    func_?(&
-                    MV__WorldObject__GamePassSystem__PlayerGamePassProgressionPackage_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::PlayerGamePassProgressionPackage>_System__String_
-                   );
-    func_?(&
-                    MV__WorldObject__GamePassSystem__PlayerPlanetDataRemote_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::PlayerPlanetDataRemote>_System__String_
-                   );
-    func_?(&
-                    MV__WorldObject__GamePassSystem__PlayerPlanetData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::PlayerPlanetData>_System__String_
-                   );
-    func_?(&
-                    MV__WorldObject__GamePassSystem__PlayerTierStateCalculator_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::PlayerTierStateCalculator>_System__String_
-                   );
-    func_?(&
-                    MV__WorldObject__MetaData__ProfileMetaData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::MetaData::ProfileMetaData>_System__String_
-                   );
-    func_?(&
-                    MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectEarningsReport_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>_System__String_
-                   );
-    func_?(&
-                    MV__WorldObject__SpawnRoles__SpawnRoleBodySwitchData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::SpawnRoles::SpawnRoleBodySwitchData>_System__String_
-                   );
-    func_?(&
-                    MV__WorldObject__SpawnRoles__SpawnRolesRuntimeData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::SpawnRoles::SpawnRolesRuntimeData>_System__String_
-                   );
-    func_?(&
-                    MV__WorldObject__MetaData__UserProfileData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::MetaData::UserProfileData>_System__String_
-                   );
-    func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<System::Object,_System::Object>__GetEnumerator__
-                   );
-    func_?(&TypeInfo__MVAvatarLocal);
-    func_?(&TypeInfo__MVAvatarSpawnRoleCreator);
-    func_?(&TypeInfo__MVAvatar);
-    func_?(&TypeInfo__MV__Common__MVEventCodes);
-    func_?(&TypeInfo__MVPlayer);
-    func_?(&TypeRef__MV__WorldObject__MVTeam);
-    func_?(&TypeInfo__MV__WorldObject__MVTeam);
-    func_?(&TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy);
-    func_?(&TypeInfo__MVWorldObjectSpawnerVehicle);
-    func_?(&TypeInfo__MV__WorldObject__MvAvatarMetaDataWoMap);
-    func_?(&TypeInfo__MV__WorldObject__MvAvatarMetaData);
-    func_?(&TypeInfo__MV__Common__PlayerGameState);
-    func_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
-    func_?(&TypeInfo__MV__Common__QueryType);
-    func_?(&TypeInfo__MV__Common__RewardReason);
-    func_?(&TypeInfo__MV__Common__RewardType);
-    func_?(&TypeInfo__MV__WorldObject__Security__SecurityHelper);
-    func_?(&TypeInfo__System__Single);
-    func_?(&TypeInfo__SpawnRoleChangeHandlerRemote);
-    func_?(&TypeInfo__StatHatWrapper);
-    func_?(&TypeInfo__System__String);
-    func_?(&TypeInfo__SubscriberRewardDataManager);
-    func_?(&TypeInfo__BrowserComm__ToJavaScript);
-    func_?(&TypeInfo__System__Type);
-    func_?(&
-                    MethodInfo__MVNetworkGame_EventHandling____c___HandleEvent_b__10_0_MVWorldObjectClient_
-                   );
-    func_?(&TypeInfo__MVNetworkGame_EventHandling____c);
-    func_?(&StringLiteral_MVEventCodes_JoinNotification);
-    func_?(&::StringLiteral___);
-    func_?(&StringLiteral__bool_photonEvent__byte_MVParame);
-    func_?(&StringLiteral_Received_join_event_for_localPla);
-    func_?(&StringLiteral_Server_error__);
-    func_?(&StringLiteral_Local_player_leave_event);
-    func_?(&StringLiteral_Should_probably_be_behind_an_int);
-    func_?(&StringLiteral_V);
-    func_?(&StringLiteral_attachedObject_GroupId____vehicl);
-    func_?(&StringLiteral_Profile_with_ID__0__unlocked_Ach);
-    func_?(&StringLiteral_Fast_forward);
-    func_?(&StringLiteral_refreshCredentials);
-    func_?(&StringLiteral_Could_not_change_player_game_sta);
-    func_?(&StringLiteral_Unknown_event__);
-    func_?(&StringLiteral_MVEventCodes_XPReceivedEvent);
-    func_?(&StringLiteral_Amount__0___rewardReason__1___re);
-    func_?(&StringLiteral_FirstTime_Success);
-    func_?(&StringLiteral_MVEventCodes_ForceDetachWorldObj);
-    func_?(&StringLiteral_vehicle____null);
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  _Var96 = (_union_86)photonEvent;
-  pMStack_6 = (MVPlayer *)0x0;
-  BStack_7.m_value = 0;
-  VStack_8.x = 0.0;
-  VStack_8.y = 0.0;
-  VStack_8.z = 0.0;
-  iStack_9 = 0;
-  MStack_10 = MVEventCodes__Enum_NoCodeSet;
-  _Stack_48.dummy = (Object__Class *)0x0;
-  iVar11 = 0;
-  bVar12 = 0;
-  bVar13 = 0;
-  bVar14 = 0;
-  bVar15 = 0;
-  bVar16 = 0;
-  bVar17 = 0;
-  bVar18 = 0;
-  bVar19 = 0;
-  bVar20 = 0;
-  bVar21 = 0;
-  bVar22 = 0;
-  bVar23 = 0;
-  bVar24 = 0;
-  bVar25 = 0;
-  _Var108.dummy = (Object__Class *)0x0;
+  bVar6 = (byte)((uint)in_stack_7 >> 0x10);
+  pMStack_8 = (MVPlayer *)0x0;
+  BStack_9.m_value = 0;
+  VStack_10.x = 0.0;
+  VStack_10.y = 0.0;
+  VStack_10.z = 0.0;
+  pMVar11 = (MVAvatar__Class *)photonEvent;
   switch(eventCode & MVEventCodes__Enum_Join) {
   case MVEventCodes__Enum_UnregisterWorldObject:
-    unaff_ESI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar14;
-      pSVar27 = (Single__Class *)
-                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+      pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                           (photonEvent,0x16,(MethodInfo *)0x0);
-      bVar26 = 0;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if ((unaff_ESI.dummy != (void *)0x0) &&
-         (bVar26 = 0, unaff_EDI = unaff_EDI, pSVar27 != (Single__Class *)0x0)) {
-        pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-        pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-        bVar26 = pIVar28 < pIVar29;
-        pIVar30 = TypeInfo__System__Int32;
-        if (pIVar28 == pIVar29) {
-          piVar31 = (int32_t *)func_?();
+      if ((pMVar12 != (MVNetworkGame *)0x0) &&
+         (bVar13 = 0, unaff_EDI = unaff_EDI, pOVar14 != (Object *)0x0)) {
+        pIVar15 = (pOVar14->klass->_0).element_class;
+        pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+        bVar13 = pIVar15 < pIVar16;
+        pMVar11 = unaff_EDI;
+        if (pIVar15 == pIVar16) {
+          piVar17 = (int32_t *)func_?();
           MVNetworkGame::MVNetworkGame_OnUnregisterWorldObjectEvent
-                    ((MVNetworkGame *)unaff_ESI.typeHandle,*piVar31,(MethodInfo *)0x0);
+                    (pMVar12,*piVar17,(MethodInfo *)0x0);
           goto code_?;
         }
         goto code_?;
@@ -428,123 +359,115 @@ void Assembly-CSharp.dll::MVNetworkGame+EventHandling::MVNetworkGame_EventHandli
     }
     break;
   case MVEventCodes__Enum_UpdateWorldObject:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      MVNetworkGame::MVNetworkGame_OnUpdateWorldObjectEvent(pMVar32,photonEvent,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      MVNetworkGame::MVNetworkGame_OnUpdateWorldObjectEvent(pMVar12,photonEvent,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
   case MVEventCodes__Enum_UpdateWorldObjectData:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      pWVar33 = (pMVar32->fields).worldNetwork;
-      bVar26 = 0;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      pWVar18 = (pMVar12->fields).worldNetwork;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pWVar33 != (WorldNetwork *)0x0) {
-        unaff_EDI = (_union_86)(pWVar33->fields)._.worldObjectClientManager;
-        bVar26 = 0;
-        unaff_ESI = _Var96;
-        _Stack_28 = unaff_EDI;
+      if (pWVar18 != (WorldNetwork *)0x0) {
+        unaff_EDI = (MVAvatar__Class *)(pWVar18->fields)._.worldObjectClientManager;
+        bVar13 = 0;
+        pMStack_19 = unaff_EDI;
         if (photonEvent != (EventData *)0x0) {
-          bVar25 = bVar15;
-          eventCode = (MVEventCodes__Enum)
-                      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                                (photonEvent,0x16,(MethodInfo *)0x0);
-          _Var60.dummy = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
-                         EventData_get_Item(_Var96.dummy,0x12,(MethodInfo *)0x0);
-          bVar26 = 0;
-          if (unaff_EDI.dummy == (Object__Class *)0x0) break;
-          unaff_EDI = (_union_86)
+          pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                              (photonEvent,0x16,(MethodInfo *)0x0);
+          pDVar20 = (Dictionary_2_System_Object_System_Object_ *)
+                    Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                              (photonEvent,0x12,(MethodInfo *)0x0);
+          bVar13 = 0;
+          if (unaff_EDI == (MVAvatar__Class *)0x0) break;
+          unaff_EDI = (MVAvatar__Class *)
                       TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
           ;
-          if (_Var60.dummy == (Object__Class *)0x0) {
-            unaff_ESI.dummy = (Object__Class *)0x0;
+          if (pDVar20 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+            pDVar21 = (Dictionary_2_System_Object_System_Object_ *)0x0;
 code_?:
-            bVar26 = 0;
-            if (eventCode != MVEventCodes__Enum_NoCodeSet) {
-              pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-              bVar26 = *(Il2CppClass **)(*(int *)eventCode + 0x20) < pIVar29;
-              pSVar34 = (String *)eventCode;
-              pSVar35 = (String__Class *)TypeInfo__System__Int32;
-              if (*(Il2CppClass **)(*(int *)eventCode + 0x20) == pIVar29) {
-                piVar31 = (int32_t *)func_?();
+            bVar13 = 0;
+            if (pOVar14 != (Object *)0x0) {
+              pIVar15 = (pOVar14->klass->_0).element_class;
+              pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+              bVar13 = pIVar15 < pIVar16;
+              if (pIVar15 == pIVar16) {
+                piVar17 = (int32_t *)func_?();
                 MVWorldObjectClientManagerNetwork::
                 MVWorldObjectClientManagerNetwork_OnUpdateWorldObjectDataEvent
-                          ((MVWorldObjectClientManagerNetwork *)_Stack_28.typeHandle,*piVar31,
-                           (Dictionary_2_System_Object_System_Object_ *)unaff_ESI.typeHandle,
+                          ((MVWorldObjectClientManagerNetwork *)pMStack_19,*piVar17,pDVar21,
                            (MethodInfo *)0x0);
-                *unaff_FS_OFFSET = pvStack_3;
+                *unaff_FS_OFFSET = uStack_3;
                 return;
               }
               goto code_?;
             }
             break;
           }
-          pIVar36 = ((Il2CppClass_0 *)&(_Var60.array)->etype)->image;
-          if ((*(byte *)&pIVar36[4].assembly <
+          if (((pDVar20->klass->_1).naturalAligment <
                (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
                _1).naturalAligment) ||
-             (*(Dictionary_2_System_Object_System_Object___Class **)
-               (pIVar36[2].typeCount +
-               ((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                ->_1).naturalAligment - 1) * 4) !=
+             ((Dictionary_2_System_Object_System_Object___Class *)
+              (pDVar20->klass->_1).typeHierarchy
+              [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).naturalAligment - 1] !=
               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-            bVar37 = false;
+            bVar22 = false;
           }
           else {
-            bVar37 = true;
+            bVar22 = true;
           }
-          unaff_ESI.dummy = (Object__Class *)0x0;
-          if (bVar37) {
-            unaff_ESI.typeHandle = _Var60.typeHandle;
+          pDVar21 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+          if (bVar22) {
+            pDVar21 = pDVar20;
           }
-          bVar26 = 0;
-          if (unaff_ESI.dummy != (Object__Class *)0x0) goto code_?;
+          bVar13 = 0;
+          if (pDVar21 != (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
           goto code_?;
         }
       }
     }
     break;
   case MVEventCodes__Enum_UpdateWorldObjectDataPartial:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar14;
-      pSVar27 = (Single__Class *)
-                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+      pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                           (photonEvent,0x16,(MethodInfo *)0x0);
-      bVar26 = 0;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pSVar27 != (Single__Class *)0x0) {
-        pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-        pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-        bVar26 = pIVar28 < pIVar29;
-        pIVar30 = TypeInfo__System__Int32;
-        if (pIVar28 != pIVar29) goto code_?;
-        p_Var65 = (_union_86 *)func_?();
-        unaff_EDI = (_union_86)p_Var65->__klassIndex;
+      if (pOVar14 != (Object *)0x0) {
+        pIVar15 = (pOVar14->klass->_0).element_class;
+        pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+        bVar13 = pIVar15 < pIVar16;
+        pMVar11 = unaff_EDI;
+        if (pIVar15 != pIVar16) goto code_?;
+        piVar17 = (int32_t *)func_?();
+        unaff_EDI = (MVAvatar__Class *)*piVar17;
         Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                  ((EventData *)_Var96.typeHandle,0x12,(MethodInfo *)0x0);
-        pDVar38 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-        pMVar32 = (this->fields).networkGame;
-        bVar26 = 0;
-        if (pMVar32 != (MVNetworkGame *)0x0) {
-          pWVar33 = (pMVar32->fields).worldNetwork;
-          bVar26 = 0;
-          if (pWVar33 != (WorldNetwork *)0x0) {
-            pMVar39 = (pWVar33->fields)._.worldObjectClientManager;
-            bVar26 = 0;
-            if (pMVar39 != (MVWorldObjectClientManagerNetwork *)0x0) {
+                  (photonEvent,0x12,(MethodInfo *)0x0);
+        pDVar20 = (Dictionary_2_System_Object_System_Object_ *)func_?();
+        pMVar12 = (this->fields).networkGame;
+        bVar13 = 0;
+        if (pMVar12 != (MVNetworkGame *)0x0) {
+          pWVar18 = (pMVar12->fields).worldNetwork;
+          bVar13 = 0;
+          if (pWVar18 != (WorldNetwork *)0x0) {
+            pMVar23 = (pWVar18->fields)._.worldObjectClientManager;
+            bVar13 = 0;
+            if (pMVar23 != (MVWorldObjectClientManagerNetwork *)0x0) {
               MVWorldObjectClientManagerNetwork::
               MVWorldObjectClientManagerNetwork_OnUpdateWorldObjectDataPartialEvent
-                        (pMVar39,unaff_EDI.__klassIndex,pDVar38,(MethodInfo *)0x0);
-              *unaff_FS_OFFSET = pvStack_3;
+                        (pMVar23,(int32_t)unaff_EDI,pDVar20,(MethodInfo *)0x0);
+              *unaff_FS_OFFSET = uStack_3;
               return;
             }
           }
@@ -553,34 +476,29 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_RemoveWorldObjectDataPartial:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar21;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x16,(MethodInfo *)0x0);
-      p_Var65 = (_union_86 *)func_?(pOVar40,TypeInfo__System__Int32);
-      unaff_EDI = (_union_86)p_Var65->__klassIndex;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0x13,(MethodInfo *)0x0);
-      pDVar38 = (Dictionary_2_System_Object_System_Object_ *)
-                func_?(pOVar40,
-                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                               );
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        pWVar33 = (pMVar32->fields).worldNetwork;
-        bVar26 = 0;
-        if (pWVar33 != (WorldNetwork *)0x0) {
-          pMVar39 = (pWVar33->fields)._.worldObjectClientManager;
-          bVar26 = 0;
-          if (pMVar39 != (MVWorldObjectClientManagerNetwork *)0x0) {
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x16,(MethodInfo *)0x0);
+      piVar17 = (int32_t *)func_?();
+      unaff_EDI = (MVAvatar__Class *)*piVar17;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x13,(MethodInfo *)0x0);
+      pDVar20 = (Dictionary_2_System_Object_System_Object_ *)func_?();
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        pWVar18 = (pMVar12->fields).worldNetwork;
+        bVar13 = 0;
+        if (pWVar18 != (WorldNetwork *)0x0) {
+          pMVar23 = (pWVar18->fields)._.worldObjectClientManager;
+          bVar13 = 0;
+          if (pMVar23 != (MVWorldObjectClientManagerNetwork *)0x0) {
             MVWorldObjectClientManagerNetwork::
             MVWorldObjectClientManagerNetwork_OnRemoveWorldObjectDataPartialEvent
-                      (pMVar39,unaff_EDI.__klassIndex,pDVar38,(MethodInfo *)0x0);
-            *unaff_FS_OFFSET = pvStack_3;
+                      (pMVar23,(int32_t)unaff_EDI,pDVar20,(MethodInfo *)0x0);
+            *unaff_FS_OFFSET = uStack_3;
             return;
           }
         }
@@ -588,12 +506,12 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_TransferOwnership:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      MVNetworkGame::MVNetworkGame_OnTransferOwnershipEvent(pMVar32,photonEvent,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      MVNetworkGame::MVNetworkGame_OnTransferOwnershipEvent(pMVar12,photonEvent,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
@@ -609,80 +527,73 @@ code_?:
   case MVEventCodes__Enum_NumberOfPendingRewards:
   case MVEventCodes__Enum_XPRewardedAdReady:
 code_?:
-    unaff_ESI = (_union_86)(this->fields).dynamicEventCallbackManager;
-    bVar26 = 0;
-    unaff_EDI = (_union_86)this;
-    if (unaff_ESI.dummy != (Object *)0x0) {
-      bVar25 = bVar17;
+    pMVar24 = (this->fields).dynamicEventCallbackManager;
+    bVar13 = 0;
+    unaff_EDI = (MVAvatar__Class *)this;
+    if (pMVar24 != (MVNetworkGame_EventHandling_DynamicEventCallbackManager *)0x0) {
       if (cRam_? == '\0') {
-        bVar25 = bVar16;
-        func_?(&
-                        MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Contains_MV__Common__MVEventCodes_
-                       );
+        func_?();
         cRam_? = '\x01';
       }
-      bVar26 = 0;
-      if (*(HashSet_1_System_ByteEnum_ **)&unaff_ESI.type[1].attrs !=
-          (HashSet_1_System_ByteEnum_ *)0x0) {
-        bVar41 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+      this_07 = (HashSet_1_System_ByteEnum_ *)
+                (pMVar24->fields).eventsHandledByDynamicEventCallbackManager;
+      bVar13 = 0;
+      if (this_07 != (HashSet_1_System_ByteEnum_ *)0x0) {
+        bVar25 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
                  HashSet_1_System_ByteEnum__Contains
-                           (*(HashSet_1_System_ByteEnum_ **)&unaff_ESI.type[1].attrs,eventCode,
+                           (this_07,eventCode,
                             MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Contains_MV__Common__MVEventCodes_
                            );
-        if (bVar41 == 0) {
-          pSVar42 = mscorlib.dll::System::Enum::Enum_ToString
+        if (bVar25 == 0) {
+          pSVar26 = mscorlib.dll::System::Enum::Enum_ToString
                               ((Enum *)&stack0xffffff98,(MethodInfo *)0x0);
-          pSVar42 = mscorlib.dll::System::String::String_Concat_3
-                              (StringLiteral_Unknown_event__,pSVar42,(MethodInfo *)0x0);
+          pSVar26 = mscorlib.dll::System::String::String_Concat_3
+                              (StringLiteral_Unknown_event__,pSVar26,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
 code_?:
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                    ((Object *)pSVar42,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    ((Object *)pSVar26,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        unaff_ESI = (_union_86)(this->fields).dynamicEventCallbackManager;
-        bVar26 = 0;
-        if (unaff_ESI.dummy != (Object *)0x0) {
+        pMVar24 = (this->fields).dynamicEventCallbackManager;
+        bVar13 = 0;
+        if (pMVar24 != (MVNetworkGame_EventHandling_DynamicEventCallbackManager *)0x0) {
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
-          bVar26 = 0;
-          if ((Object__Class *)unaff_ESI.type[1].data.typeHandle != (Object__Class *)0x0) {
-            unaff_ESI.typeHandle =
-                 (Il2CppMetadataTypeHandle)
-                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)
-                            unaff_ESI.type[1].data.typeHandle,eventCode,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__get_Item_MV__Common__MVEventCodes_
-                           );
-            bVar26 = 0;
-            if (unaff_ESI.dummy != (Object *)0x0) {
+          this_08 = (pMVar24->fields).eventCallbacks;
+          bVar13 = 0;
+          if (this_08 !=
+              (Dictionary_2_MV_Common_MVEventCodes_MVNetworkGame_EventHandling_DynamicEventCallbackManager_EventCallback_
+               *)0x0) {
+            pOVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                ((Dictionary_2_System_ByteEnum_System_Object_ *)this_08,eventCode,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVEventCodes,_MVNetworkGame_EventHandling_DynamicEventCallbackManager::EventCallback>__get_Item_MV__Common__MVEventCodes_
+                                );
+            bVar13 = 0;
+            if (pOVar14 != (Object *)0x0) {
               if (cRam_? == '\0') {
                 func_?();
                 func_?();
                 cRam_? = '\x01';
               }
-              if (unaff_ESI.type[1].data.dummy == (Object__Class *)0x0) {
-                pSVar42 = StringLiteral_No_subscribers_to_event_data;
+              if (pOVar14[1].klass == (Object__Class *)0x0) {
+                pSVar26 = StringLiteral_No_subscribers_to_event_data;
                 if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__UnityEngine__Debug);
-                  pSVar42 = StringLiteral_No_subscribers_to_event_data;
+                  func_?();
+                  pSVar26 = StringLiteral_No_subscribers_to_event_data;
                 }
                 goto code_?;
               }
-              pOVar43 = (Object__Class *)unaff_ESI.type[1].data.array;
-              bVar26 = 0;
-              if (pOVar43 != (Object__Class *)0x0) {
-                uVar44._0_2_ = (pOVar43->_0).byval_arg.attrs;
-                uVar44._2_1_ = (pOVar43->_0).byval_arg.type;
-                uVar44._3_1_ = (pOVar43->_0).byval_arg.field_0x7;
-                (*(code *)(pOVar43->_0).namespaze)((pOVar43->_0).element_class,photonEvent,uVar44);
-                *unaff_FS_OFFSET = pvStack_3;
+              bVar13 = 0;
+              if (pOVar14[1].klass != (Object__Class *)0x0) {
+                (*(code *)((pOVar14[1].klass)->_0).namespaze)();
+                *unaff_FS_OFFSET = uStack_3;
                 return;
               }
             }
@@ -692,27 +603,25 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_UnregisterPrototype:
-    unaff_ESI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar14;
-      pSVar27 = (Single__Class *)
-                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+      pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                           (photonEvent,0x2f,(MethodInfo *)0x0);
-      bVar26 = 0;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if ((unaff_ESI.dummy != (void *)0x0) &&
-         (bVar26 = 0, unaff_EDI = unaff_EDI, pSVar27 != (Single__Class *)0x0)) {
-        pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-        pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-        bVar26 = pIVar28 < pIVar29;
-        pIVar30 = TypeInfo__System__Int32;
-        if (pIVar28 == pIVar29) {
-          piVar31 = (int32_t *)func_?();
+      if ((pMVar12 != (MVNetworkGame *)0x0) &&
+         (bVar13 = 0, unaff_EDI = unaff_EDI, pOVar14 != (Object *)0x0)) {
+        pIVar15 = (pOVar14->klass->_0).element_class;
+        pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+        bVar13 = pIVar15 < pIVar16;
+        pMVar11 = unaff_EDI;
+        if (pIVar15 == pIVar16) {
+          piVar17 = (int32_t *)func_?();
           MVNetworkGame::MVNetworkGame_OnUnregisterPrototypeEvent
-                    ((MVNetworkGame *)unaff_ESI.typeHandle,*piVar31,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    (pMVar12,*piVar17,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
         goto code_?;
@@ -720,153 +629,132 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_UpdatePrototype:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      pWVar33 = (pMVar32->fields).worldNetwork;
-      bVar26 = 0;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      pWVar18 = (pMVar12->fields).worldNetwork;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pWVar33 != (WorldNetwork *)0x0) {
-        eventCode = (MVEventCodes__Enum)(pWVar33->fields)._.worldInventory;
-        bVar26 = 0;
-        unaff_EDI = _Var96;
+      if (pWVar18 != (WorldNetwork *)0x0) {
+        pMVar27 = (pWVar18->fields)._.worldInventory;
+        bVar13 = 0;
+        unaff_EDI = (MVAvatar__Class *)photonEvent;
         if (photonEvent != (EventData *)0x0) {
-          bVar25 = bVar14;
-          unaff_ESI.typeHandle =
-               (Il2CppMetadataTypeHandle)
-               Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                         (photonEvent,0x2f,(MethodInfo *)0x0);
-          _Var60.dummy = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
-                         EventData_get_Item(_Var96.dummy,0x31,(MethodInfo *)0x0);
-          bVar26 = 0;
-          unaff_EDI.typeHandle = _Var60.typeHandle;
-          if (eventCode == MVEventCodes__Enum_NoCodeSet) break;
-          _Stack_24.typeHandle = (Il2CppMetadataTypeHandle)TypeInfo__System__Byte;
-          if (_Var60.dummy == (Object__Class *)0x0) {
+          pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                              (photonEvent,0x2f,(MethodInfo *)0x0);
+          pMVar11 = (MVAvatar__Class *)
+                    Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                              (photonEvent,0x31,(MethodInfo *)0x0);
+          bVar13 = 0;
+          unaff_EDI = pMVar11;
+          if (pMVar27 == (MVWorldInventory *)0x0) break;
+          pMStack_28 = (MVAvatar__Class *)TypeInfo__System__Byte;
+          if (pMVar11 == (MVAvatar__Class *)0x0) {
 code_?:
-            bVar26 = 0;
-            if (unaff_ESI.dummy != (Object__Class *)0x0) {
-              pIVar28 = (Il2CppClass *)
-                        ((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image->codeGenModule;
-              pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-              bVar26 = pIVar28 < pIVar29;
-              pSVar35 = (String__Class *)TypeInfo__System__Int32;
-              if (pIVar28 != pIVar29) goto code_?;
-              p_Var65 = (_union_86 *)func_?(unaff_ESI.dummy);
-              unaff_ESI = (_union_86)p_Var65->__klassIndex;
+            bVar13 = 0;
+            if (pOVar14 != (Object *)0x0) {
+              pIVar15 = (pOVar14->klass->_0).element_class;
+              pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+              bVar13 = pIVar15 < pIVar16;
+              if (pIVar15 != pIVar16) goto code_?;
+              piVar17 = (int32_t *)func_?();
+              iVar29 = *piVar17;
               if (cRam_? == '\0') {
-                func_?(&TypeInfo__MV__WorldObject__BytePacker);
-                func_?(&
-                                MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_
-                               );
+                func_?();
+                func_?();
                 cRam_? = '\x01';
               }
-              bVar26 = 0;
-              if (*(Dictionary_2_System_Int32_System_Object_ **)
-                   (eventCode + MVEventCodes__Enum_RegisterPrototype) !=
-                  (Dictionary_2_System_Int32_System_Object_ *)0x0) {
-                pRVar45 = (RuntimePrototypeCubeModel *)
+              this_00 = (pMVar27->fields).runtimePrototypes;
+              bVar13 = 0;
+              if (this_00 != (Dictionary_2_System_Int32_RuntimePrototypeCubeModel_ *)0x0) {
+                pRVar30 = (RuntimePrototypeCubeModel *)
                           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                    (*(Dictionary_2_System_Int32_System_Object_ **)
-                                      (eventCode + MVEventCodes__Enum_RegisterPrototype),
-                                     unaff_ESI.__klassIndex,
+                                    ((Dictionary_2_System_Int32_System_Object_ *)this_00,iVar29,
                                      MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_
                                     );
-                eventCode = func_?(TypeInfo__MV__WorldObject__BytePacker);
+                pBVar31 = (BytePacker *)func_?();
                 MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1
-                          ((BytePacker *)eventCode,(Byte__Array *)unaff_EDI.typeHandle,
-                           (MethodInfo *)0x0);
-                bVar26 = 0;
-                unaff_ESI.dummy = (undefined *)0x0;
-                if (pRVar45 != (RuntimePrototypeCubeModel *)0x0) {
+                          (pBVar31,(Byte__Array *)unaff_EDI,(MethodInfo *)0x0);
+                bVar13 = 0;
+                if (pRVar30 != (RuntimePrototypeCubeModel *)0x0) {
                   RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_UpdatePrototype
-                            (pRVar45,(BytePacker *)eventCode,(MethodInfo *)0x0);
-                  *unaff_FS_OFFSET = pvStack_3;
+                            (pRVar30,pBVar31,(MethodInfo *)0x0);
+                  *unaff_FS_OFFSET = uStack_3;
                   return;
                 }
               }
             }
             break;
           }
-          unaff_EDI.dummy = (void *)func_?();
-          bVar26 = 0;
-          _Stack_28.dummy = unaff_EDI.dummy;
-          if (unaff_EDI.dummy != (Object__Class *)0x0) goto code_?;
+          pBVar32 = TypeInfo__System__Byte;
+          unaff_EDI = (MVAvatar__Class *)func_?();
+          bVar6 = (byte)((uint)pBVar32 >> 0x10);
+          bVar13 = 0;
+          pMStack_19 = unaff_EDI;
+          if (unaff_EDI != (MVAvatar__Class *)0x0) goto code_?;
           goto code_?;
         }
       }
     }
     break;
   case MVEventCodes__Enum_UpdatePrototypeScale:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      pWVar33 = (pMVar32->fields).worldNetwork;
-      bVar26 = 0;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      pWVar18 = (pMVar12->fields).worldNetwork;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pWVar33 != (WorldNetwork *)0x0) {
-        eventCode = (MVEventCodes__Enum)(pWVar33->fields)._.worldInventory;
-        bVar26 = 0;
-        unaff_EDI = _Var96;
+      if (pWVar18 != (WorldNetwork *)0x0) {
+        pMVar11 = (MVAvatar__Class *)(pWVar18->fields)._.worldInventory;
+        bVar13 = 0;
+        unaff_EDI = (MVAvatar__Class *)photonEvent;
         if (photonEvent != (EventData *)0x0) {
-          bVar25 = bVar13;
-          unaff_ESI.typeHandle =
-               (Il2CppMetadataTypeHandle)
-               Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                         (photonEvent,0x2f,(MethodInfo *)0x0);
-          pSVar27 = (Single__Class *)
-                    Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                              ((EventData *)_Var96.typeHandle,0x22,(MethodInfo *)0x0);
-          unaff_EDI = (_union_86)eventCode;
-          bVar26 = 0;
-          if ((eventCode != MVEventCodes__Enum_NoCodeSet) &&
-             (bVar26 = 0, pSVar27 != (Single__Class *)0x0)) {
-            pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-            pIVar29 = (TypeInfo__System__Single->_0).element_class;
-            bVar26 = pIVar28 < pIVar29;
-            pIVar30 = (Int32__Class *)TypeInfo__System__Single;
-            if (pIVar28 != pIVar29) goto code_?;
-            pMVar46 = (MVEventCodes__Enum *)func_?();
-            eventCode = *pMVar46;
-            bVar26 = 0;
-            if (unaff_ESI.dummy != (Object__Class *)0x0) {
-              pIVar28 = (Il2CppClass *)
-                        ((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image->codeGenModule;
-              pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-              bVar26 = pIVar28 < pIVar29;
-              pSVar35 = (String__Class *)TypeInfo__System__Int32;
-              if (pIVar28 != pIVar29) goto code_?;
-              p_Var65 = (_union_86 *)func_?(unaff_ESI.dummy);
-              unaff_ESI = (_union_86)p_Var65->__klassIndex;
+          pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                              (photonEvent,0x2f,(MethodInfo *)0x0);
+          pOVar33 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                              (photonEvent,0x22,(MethodInfo *)0x0);
+          bVar13 = 0;
+          unaff_EDI = pMVar11;
+          if ((pMVar11 != (MVAvatar__Class *)0x0) && (bVar13 = 0, pOVar33 != (Object *)0x0)) {
+            pIVar15 = (pOVar33->klass->_0).element_class;
+            pIVar16 = (TypeInfo__System__Single->_0).element_class;
+            bVar13 = pIVar15 < pIVar16;
+            if (pIVar15 != pIVar16) goto code_?;
+            pfVar34 = (float *)func_?();
+            bVar6 = (byte)((uint)pOVar33 >> 0x10);
+            fVar35 = *pfVar34;
+            bVar13 = 0;
+            if (pOVar14 != (Object *)0x0) {
+              pIVar15 = (pOVar14->klass->_0).element_class;
+              pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+              bVar13 = pIVar15 < pIVar16;
+              if (pIVar15 != pIVar16) goto code_?;
+              piVar17 = (int32_t *)func_?();
+              iVar29 = *piVar17;
               if (cRam_? == '\0') {
-                func_?(&
-                                MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_
-                               );
+                func_?();
                 cRam_? = '\x01';
               }
-              bVar26 = 0;
-              if (*(Dictionary_2_System_Int32_System_Object_ **)
-                   ((int)unaff_EDI.generic_class + MVEventCodes__Enum_RegisterPrototype) !=
-                  (Dictionary_2_System_Int32_System_Object_ *)0x0) {
-                pRVar45 = (RuntimePrototypeCubeModel *)
+              this_01 = ((MVNetworkGame__Fields *)&(pMVar11->_0).name)->ReceivedItemFromQuery;
+              bVar13 = 0;
+              if (this_01 != (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
+                pRVar30 = (RuntimePrototypeCubeModel *)
                           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                    (*(Dictionary_2_System_Int32_System_Object_ **)
-                                      ((int)unaff_EDI.generic_class +
-                                      MVEventCodes__Enum_RegisterPrototype),unaff_ESI.__klassIndex,
+                                    ((Dictionary_2_System_Int32_System_Object_ *)this_01,iVar29,
                                      MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_
                                     );
-                bVar26 = 0;
-                if (pRVar45 != (RuntimePrototypeCubeModel *)0x0) {
-                  (pRVar45->fields).PendingScaleUpdate.hasValue = 0;
-                  *(undefined3 *)&(pRVar45->fields).PendingScaleUpdate.field_0x1 = 0;
-                  (pRVar45->fields).PendingScaleUpdate.value = 0.0;
+                bVar13 = 0;
+                if (pRVar30 != (RuntimePrototypeCubeModel *)0x0) {
+                  (pRVar30->fields).PendingScaleUpdate.hasValue = 0;
+                  *(undefined3 *)&(pRVar30->fields).PendingScaleUpdate.field_0x1 = 0;
+                  (pRVar30->fields).PendingScaleUpdate.value = 0.0;
                   RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_UpdatePrototypeScale
-                            (pRVar45,(float)eventCode,(MethodInfo *)0x0);
-                  *unaff_FS_OFFSET = pvStack_3;
+                            (pRVar30,fVar35,(MethodInfo *)0x0);
+                  *unaff_FS_OFFSET = uStack_3;
                   return;
                 }
               }
@@ -877,317 +765,283 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_AddLink:
-    unaff_EDI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
-    unaff_ESI = _Var96;
-    _Stack_24 = unaff_EDI;
+    unaff_EDI = (MVAvatar__Class *)(this->fields).networkGame;
+    bVar13 = 0;
+    pMStack_28 = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar22;
-      _Stack_28.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0x39,(MethodInfo *)0x0);
-      eventCode = (MVEventCodes__Enum)
-                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                            ((EventData *)_Var96.typeHandle,0x38,(MethodInfo *)0x0);
+      pMStack_19 = (MVAvatar__Class *)
+                   Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                             (photonEvent,0x39,(MethodInfo *)0x0);
       Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                ((EventData *)_Var96.typeHandle,0x3a,(MethodInfo *)0x0);
-      bVar26 = 0;
-      if (unaff_EDI.dummy != (Object__Class *)0x0) {
-        piVar31 = (int32_t *)func_?();
-        iVar11 = *piVar31;
-        piVar31 = (int32_t *)func_?();
-        iVar47 = *piVar31;
-        piVar31 = (int32_t *)func_?();
+                (photonEvent,0x38,(MethodInfo *)0x0);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x3a,(MethodInfo *)0x0);
+      bVar13 = 0;
+      if (unaff_EDI != (MVAvatar__Class *)0x0) {
+        piVar17 = (int32_t *)func_?();
+        iVar29 = *piVar17;
+        piVar17 = (int32_t *)func_?();
+        iVar36 = *piVar17;
+        piVar17 = (int32_t *)func_?();
         MVNetworkGame::MVNetworkGame_OnAddLinkEvent
-                  ((MVNetworkGame *)_Stack_24.typeHandle,*piVar31,iVar47,iVar11,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+                  ((MVNetworkGame *)pMStack_28,*piVar17,iVar36,iVar29,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_RemoveLink:
-    unaff_ESI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar24;
       Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                 (photonEvent,0x3a,(MethodInfo *)0x0);
-      bVar26 = 0;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (unaff_ESI.dummy != (void *)0x0) {
-        piVar31 = (int32_t *)func_?();
-        MVNetworkGame::MVNetworkGame_OnRemoveLinkEvent
-                  ((MVNetworkGame *)unaff_ESI.typeHandle,*piVar31,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        piVar17 = (int32_t *)func_?();
+        MVNetworkGame::MVNetworkGame_OnRemoveLinkEvent(pMVar12,*piVar17,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_RemoveItemFromInventory:
-    unaff_ESI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar24;
       Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                 (photonEvent,0x28,(MethodInfo *)0x0);
-      bVar26 = 0;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (unaff_ESI.dummy != (void *)0x0) {
-        piVar31 = (int32_t *)func_?();
-        MVNetworkGame::MVNetworkGame_OnRemoveItemFromInventory
-                  ((MVNetworkGame *)unaff_ESI.typeHandle,*piVar31,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        piVar17 = (int32_t *)func_?();
+        MVNetworkGame::MVNetworkGame_OnRemoveItemFromInventory(pMVar12,*piVar17,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_FriendRequest:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar19;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x34,(MethodInfo *)0x0);
-      p_Var65 = (_union_86 *)func_?(pOVar40,TypeInfo__System__Int32);
-      unaff_EDI = (_union_86)p_Var65->__klassIndex;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0xb,(MethodInfo *)0x0);
-      pMVar46 = (MVEventCodes__Enum *)func_?(pOVar40,TypeInfo__System__Int32);
-      eventCode = *pMVar46;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0x35,(MethodInfo *)0x0);
-      piVar31 = (int32_t *)func_?(pOVar40,TypeInfo__System__Int32);
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x34,(MethodInfo *)0x0);
+      piVar17 = (int32_t *)func_?();
+      unaff_EDI = (MVAvatar__Class *)*piVar17;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xb,(MethodInfo *)0x0);
+      piVar17 = (int32_t *)func_?();
+      iVar29 = *piVar17;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x35,(MethodInfo *)0x0);
+      piVar17 = (int32_t *)func_?();
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
         MVNetworkGame::MVNetworkGame_OnFriendRequestEvent
-                  (pMVar32,unaff_EDI.__klassIndex,eventCode,*piVar31,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+                  (pMVar12,(int32_t)unaff_EDI,iVar29,*piVar17,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_FriendUpdate:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar19;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x34,(MethodInfo *)0x0);
-      p_Var65 = (_union_86 *)func_?(pOVar40,TypeInfo__System__Int32);
-      unaff_EDI = (_union_86)p_Var65->__klassIndex;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0xb,(MethodInfo *)0x0);
-      pMVar46 = (MVEventCodes__Enum *)func_?(pOVar40,TypeInfo__System__Int32);
-      eventCode = *pMVar46;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0x36,(MethodInfo *)0x0);
-      pFVar48 = (FriendStatus__Enum *)func_?(pOVar40,TypeInfo__MV__Common__FriendStatus);
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x34,(MethodInfo *)0x0);
+      piVar17 = (int32_t *)func_?();
+      unaff_EDI = (MVAvatar__Class *)*piVar17;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xb,(MethodInfo *)0x0);
+      piVar17 = (int32_t *)func_?();
+      iVar29 = *piVar17;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x36,(MethodInfo *)0x0);
+      pFVar37 = (FriendStatus__Enum *)func_?();
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
         MVNetworkGame::MVNetworkGame_OnFriendUpdateEvent
-                  (pMVar32,unaff_EDI.__klassIndex,eventCode,*pFVar48,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+                  (pMVar12,(int32_t)unaff_EDI,iVar29,*pFVar37,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_TriggerBoxEnter:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar21;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x16,(MethodInfo *)0x0);
-      p_Var65 = (_union_86 *)func_?(pOVar40,TypeInfo__System__Int32);
-      unaff_EDI = (_union_86)p_Var65->__klassIndex;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0xfe,(MethodInfo *)0x0);
-      piVar31 = (int32_t *)func_?(pOVar40,TypeInfo__System__Int32);
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x16,(MethodInfo *)0x0);
+      piVar17 = (int32_t *)func_?();
+      unaff_EDI = (MVAvatar__Class *)*piVar17;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xfe,(MethodInfo *)0x0);
+      piVar17 = (int32_t *)func_?();
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
         MVNetworkGame::MVNetworkGame_OnTriggerBoxEnterEvent
-                  (pMVar32,*piVar31,unaff_EDI.__klassIndex,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+                  (pMVar12,*piVar17,(int32_t)unaff_EDI,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_TriggerBoxExit:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar21;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x16,(MethodInfo *)0x0);
-      p_Var65 = (_union_86 *)func_?(pOVar40,TypeInfo__System__Int32);
-      unaff_EDI = (_union_86)p_Var65->__klassIndex;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0xfe,(MethodInfo *)0x0);
-      piVar31 = (int32_t *)func_?(pOVar40,TypeInfo__System__Int32);
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x16,(MethodInfo *)0x0);
+      piVar17 = (int32_t *)func_?();
+      unaff_EDI = (MVAvatar__Class *)*piVar17;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xfe,(MethodInfo *)0x0);
+      piVar17 = (int32_t *)func_?();
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
         MVNetworkGame::MVNetworkGame_OnTriggerBoxExitEvent
-                  (pMVar32,*piVar31,unaff_EDI.__klassIndex,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+                  (pMVar12,*piVar17,(int32_t)unaff_EDI,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_TriggerBoxStayBegin:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar21;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x16,(MethodInfo *)0x0);
-      p_Var65 = (_union_86 *)func_?(pOVar40,TypeInfo__System__Int32);
-      unaff_EDI = (_union_86)p_Var65->__klassIndex;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0xfe,(MethodInfo *)0x0);
-      piVar31 = (int32_t *)func_?(pOVar40,TypeInfo__System__Int32);
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x16,(MethodInfo *)0x0);
+      piVar17 = (int32_t *)func_?();
+      unaff_EDI = (MVAvatar__Class *)*piVar17;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xfe,(MethodInfo *)0x0);
+      piVar17 = (int32_t *)func_?();
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
         MVNetworkGame::MVNetworkGame_OnTriggerBoxStayBegin
-                  (pMVar32,unaff_EDI.__klassIndex,*piVar31,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+                  (pMVar12,(int32_t)unaff_EDI,*piVar17,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_TriggerBoxStayEnd:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar23;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x16,(MethodInfo *)0x0);
-      piVar31 = (int32_t *)func_?(pOVar40,TypeInfo__System__Int32);
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x16,(MethodInfo *)0x0);
+      piVar17 = (int32_t *)func_?();
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        MVNetworkGame::MVNetworkGame_OnTriggerBoxStayEnd(pMVar32,*piVar31,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        MVNetworkGame::MVNetworkGame_OnTriggerBoxStayEnd(pMVar12,*piVar17,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_LockHierarchy:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      MVNetworkGame::MVNetworkGame_OnLockHierarchyEvent(pMVar32,photonEvent,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      MVNetworkGame::MVNetworkGame_OnLockHierarchyEvent(pMVar12,photonEvent,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
   case MVEventCodes__Enum_WoUniquePrototype:
-    unaff_EDI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    unaff_EDI = (MVAvatar__Class *)(this->fields).networkGame;
+    bVar13 = 0;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar23;
-      eventCode = (MVEventCodes__Enum)
-                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                            (photonEvent,0x16,(MethodInfo *)0x0);
       Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                ((EventData *)_Var96.typeHandle,0x2f,(MethodInfo *)0x0);
-      bVar26 = 0;
-      if (unaff_EDI.dummy != (void *)0x0) {
-        piVar31 = (int32_t *)func_?();
-        iVar11 = *piVar31;
-        piVar31 = (int32_t *)func_?();
+                (photonEvent,0x16,(MethodInfo *)0x0);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x2f,(MethodInfo *)0x0);
+      bVar13 = 0;
+      if (unaff_EDI != (MVAvatar__Class *)0x0) {
+        piVar17 = (int32_t *)func_?();
+        iVar29 = *piVar17;
+        piVar17 = (int32_t *)func_?();
         MVNetworkGame::MVNetworkGame_OnWoUniquePrototypeEvent
-                  ((MVNetworkGame *)unaff_EDI.typeHandle,*piVar31,iVar11,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+                  ((MVNetworkGame *)unaff_EDI,*piVar17,iVar29,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_GameStateChange:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
-    unaff_ESI.dummy = (Object__Class *)0x0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      unaff_ESI = (_union_86)(pMVar32->fields)._NetworkGameStateListener_k__BackingField;
-      bVar26 = 0;
-      unaff_EDI = _Var96;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      pMVar38 = (pMVar12->fields)._NetworkGameStateListener_k__BackingField;
+      bVar13 = 0;
+      unaff_EDI = (MVAvatar__Class *)photonEvent;
       if (photonEvent != (EventData *)0x0) {
-        bVar25 = bVar22;
-        _Stack_28.typeHandle =
-             (Il2CppMetadataTypeHandle)
-             Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                       (photonEvent,0x41,(MethodInfo *)0x0);
-        eventCode = (MVEventCodes__Enum)
-                    Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                              ((EventData *)_Var96.typeHandle,0x43,(MethodInfo *)0x0);
+        pMStack_19 = (MVAvatar__Class *)
+                     Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                               (photonEvent,0x41,(MethodInfo *)0x0);
+        pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                            (photonEvent,0x43,(MethodInfo *)0x0);
         Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                  ((EventData *)_Var96.typeHandle,0x42,(MethodInfo *)0x0);
-        bVar26 = 0;
-        if (unaff_ESI.dummy != (Object__Class *)0x0) {
-          pIVar30 = TypeInfo__System__Int32;
-          p_Var65 = (_union_86 *)func_?();
-          bVar25 = (byte)pIVar30;
-          unaff_EDI = (_union_86)p_Var65->type;
-          in_stack_49 = TypeInfo__System__Int32;
-          pMVar46 = (MVEventCodes__Enum *)func_?();
-          eventCode = *pMVar46;
-          p_Var65 = (_union_86 *)func_?();
-          _Stack_28 = *p_Var65;
+                  (photonEvent,0x42,(MethodInfo *)0x0);
+        bVar13 = 0;
+        unaff_EDI = (MVAvatar__Class *)photonEvent;
+        if (pMVar38 != (MVNetworkGameStateListener *)0x0) {
+          puVar39 = (undefined4 *)func_?();
+          unaff_EDI = (MVAvatar__Class *)*puVar39;
+          bVar6 = (byte)((uint)pOVar14 >> 0x10);
+          piVar40 = (int *)func_?();
+          iVar41 = *piVar40;
+          piVar40 = (int *)func_?();
+          pMStack_19 = (MVAvatar__Class *)*piVar40;
           if (cRam_? == '\0') {
-            func_?(&TypeInfo__GameStateChangeEventArgs);
+            func_?();
             cRam_? = '\x01';
           }
-          unaff_ESI.type[2].data = _Stack_28;
-          unaff_ESI.type[1].data.__klassIndex = eventCode;
-          *(_union_86 *)&unaff_ESI.type[1].attrs = (Il2CppType *)unaff_EDI;
-          pMVar32 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          bVar26 = 0;
-          if (pMVar32 != (MVNetworkGame *)0x0) {
-            iVar11 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
-                               (pMVar32,(MethodInfo *)0x0);
-            pvVar50 = unaff_ESI.type[3].data.dummy;
-            *(undefined **)&unaff_ESI.type[2].attrs =
-                 (undefined *)((int)unaff_EDI.dummy + (eventCode - iVar11));
-            if (pvVar50 == (void *)0x0) goto code_?;
-            pIVar51 = unaff_ESI.type[3].data.array;
-            eventCode = func_?();
+          (pMVar38->fields).currentGameState = (int32_t)pMStack_19;
+          (pMVar38->fields).startTime = iVar41;
+          (pMVar38->fields).duration = (int32_t)unaff_EDI;
+          pMVar12 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          bVar13 = 0;
+          if (pMVar12 != (MVNetworkGame *)0x0) {
+            iVar29 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
+                               (pMVar12,(MethodInfo *)0x0);
+            (pMVar38->fields).timeLeft = (int)unaff_EDI + (iVar41 - iVar29);
+            if ((pMVar38->fields).OnGameStateChanged ==
+                (EventHandler_1_GameStateChangeEventArgs_ *)0x0) goto code_?;
+            pEVar42 = (pMVar38->fields).OnGameStateChanged;
+            pUVar43 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
             if (cRam_? == '\0') {
-              func_?(&TypeInfo__System__EventArgs);
+              func_?();
               cRam_? = '\x01';
             }
             if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__System__EventArgs);
+              func_?();
             }
             UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
             UxmlObjectListAttributeDescription`1[System::Object]::
-            UxmlObjectListAttributeDescription_1_System_Object___ctor
-                      ((UxmlObjectListAttributeDescription_1_System_Object_ *)eventCode,
-                       (MethodInfo *)0x0);
-            bVar26 = 0;
-            unaff_EDI.dummy = (Object__Class *)0x0;
-            if (pIVar51 != (Il2CppArrayType *)0x0) {
-              uVar52._0_1_ = pIVar51[1].rank;
-              uVar52._1_1_ = pIVar51[1].numsizes;
-              uVar52._2_1_ = pIVar51[1].numlobounds;
-              uVar52._3_1_ = pIVar51[1].field_0x7;
-              (*(code *)pIVar51->lobounds)(pIVar51[2].etype,unaff_ESI.dummy,eventCode,uVar52);
-              *unaff_FS_OFFSET = pvStack_3;
+            UxmlObjectListAttributeDescription_1_System_Object___ctor(pUVar43,(MethodInfo *)0x0);
+            bVar13 = 0;
+            unaff_EDI = (MVAvatar__Class *)0x0;
+            if (pEVar42 != (EventHandler_1_GameStateChangeEventArgs_ *)0x0) {
+              (*(pEVar42->fields)._._.invoke_impl)();
+              *unaff_FS_OFFSET = uStack_3;
               return;
             }
           }
@@ -1196,67 +1050,63 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_ResetLogicChunk:
-    unaff_ESI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar24;
       Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                 (photonEvent,0x16,(MethodInfo *)0x0);
-      bVar26 = 0;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (unaff_ESI.dummy != (MVNetworkGame *)0x0) {
-        piVar31 = (int32_t *)func_?();
-        MVNetworkGame::MVNetworkGame_OnResetLogicChunkEvent
-                  ((MVNetworkGame *)unaff_ESI.typeHandle,*piVar31,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        piVar17 = (int32_t *)func_?();
+        MVNetworkGame::MVNetworkGame_OnResetLogicChunkEvent(pMVar12,*piVar17,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_UpdateWorldObjectRunTimeData:
-    bVar26 = 0;
-    unaff_EDI = _Var96;
+    bVar13 = 0;
+    unaff_EDI = (MVAvatar__Class *)photonEvent;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar20;
-      eventCode = (MVEventCodes__Enum)
-                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                            (photonEvent,0xfe,(MethodInfo *)0x0);
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        pMVar53 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar32,(MethodInfo *)0x0);
-        bVar26 = 0;
-        if (pMVar53 != (MVLocalPlayer *)0x0) {
-          unaff_ESI = (_union_86)(pMVar53->fields)._._ActorNr_k__BackingField;
-          puVar54 = (undefined4 *)func_?();
-          if ((Object__Class *)*puVar54 == unaff_ESI.dummy) goto code_?;
-          pMVar32 = (this->fields).networkGame;
-          bVar26 = 0;
-          if (pMVar32 != (MVNetworkGame *)0x0) {
-            pWVar33 = (pMVar32->fields).worldNetwork;
-            bVar26 = 0;
-            if (pWVar33 != (WorldNetwork *)0x0) {
-              _Var60 = (_union_86)(pWVar33->fields)._.worldObjectClientManager;
-              _Stack_28 = _Var60;
-              eventCode = (MVEventCodes__Enum)
-                          Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
-                          EventData_get_Item((EventData *)_Var96.typeHandle,0x16,(MethodInfo *)0x0);
-              pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                                  ((EventData *)_Var96.typeHandle,0x46,(MethodInfo *)0x0);
-              bVar26 = 0;
-              unaff_ESI.dummy = (Object__Class *)0x0;
-              if (_Var60.dummy != (Object__Class *)0x0) {
-                pDVar38 = (Dictionary_2_System_Object_System_Object_ *)
-                          func_?(pOVar40,
-                                          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                         );
-                piVar31 = (int32_t *)func_?(eventCode,TypeInfo__System__Int32);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xfe,(MethodInfo *)0x0);
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
+      unaff_EDI = (MVAvatar__Class *)photonEvent;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        pMVar44 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar12,(MethodInfo *)0x0);
+        bVar13 = 0;
+        unaff_EDI = (MVAvatar__Class *)photonEvent;
+        if (pMVar44 != (MVLocalPlayer *)0x0) {
+          iVar41 = (pMVar44->fields)._._ActorNr_k__BackingField;
+          piVar40 = (int *)func_?();
+          if (*piVar40 == iVar41) goto code_?;
+          pMVar12 = (this->fields).networkGame;
+          bVar13 = 0;
+          unaff_EDI = (MVAvatar__Class *)photonEvent;
+          if (pMVar12 != (MVNetworkGame *)0x0) {
+            pWVar18 = (pMVar12->fields).worldNetwork;
+            bVar13 = 0;
+            unaff_EDI = (MVAvatar__Class *)photonEvent;
+            if (pWVar18 != (WorldNetwork *)0x0) {
+              pMVar11 = (MVAvatar__Class *)(pWVar18->fields)._.worldObjectClientManager;
+              pMStack_19 = pMVar11;
+              Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                        (photonEvent,0x16,(MethodInfo *)0x0);
+              Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                        (photonEvent,0x46,(MethodInfo *)0x0);
+              bVar13 = 0;
+              unaff_EDI = (MVAvatar__Class *)photonEvent;
+              if (pMVar11 != (MVAvatar__Class *)0x0) {
+                pDVar20 = (Dictionary_2_System_Object_System_Object_ *)func_?();
+                piVar17 = (int32_t *)func_?();
                 MVWorldObjectClientManagerNetwork::
                 MVWorldObjectClientManagerNetwork_OnUpdateWorldObjectRunTimeDataEvent
-                          ((MVWorldObjectClientManagerNetwork *)_Stack_28.typeHandle,*piVar31,
-                           pDVar38,(MethodInfo *)0x0);
-                *unaff_FS_OFFSET = pvStack_3;
+                          ((MVWorldObjectClientManagerNetwork *)pMStack_19,*piVar17,pDVar20,
+                           (MethodInfo *)0x0);
+                *unaff_FS_OFFSET = uStack_3;
                 return;
               }
             }
@@ -1266,386 +1116,344 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_PickupItemStateChange:
-    unaff_EDI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
-    unaff_ESI = _Var96;
-    _Stack_24 = unaff_EDI;
+    unaff_EDI = (MVAvatar__Class *)(this->fields).networkGame;
+    bVar13 = 0;
+    pMStack_28 = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar22;
-      _Stack_28.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0x47,(MethodInfo *)0x0);
-      eventCode = (MVEventCodes__Enum)
-                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                            ((EventData *)_Var96.typeHandle,0x16,(MethodInfo *)0x0);
+      pMStack_19 = (MVAvatar__Class *)
+                   Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                             (photonEvent,0x47,(MethodInfo *)0x0);
       Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                ((EventData *)_Var96.typeHandle,0xfe,(MethodInfo *)0x0);
-      bVar26 = 0;
-      if (unaff_EDI.dummy != (Object__Class *)0x0) {
-        piVar31 = (int32_t *)func_?();
-        iVar11 = *piVar31;
-        piVar31 = (int32_t *)func_?();
-        iVar47 = *piVar31;
-        pPVar55 = (PickupItemState__Enum *)func_?();
+                (photonEvent,0x16,(MethodInfo *)0x0);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xfe,(MethodInfo *)0x0);
+      bVar13 = 0;
+      if (unaff_EDI != (MVAvatar__Class *)0x0) {
+        piVar17 = (int32_t *)func_?();
+        iVar29 = *piVar17;
+        piVar17 = (int32_t *)func_?();
+        iVar36 = *piVar17;
+        pPVar45 = (PickupItemState__Enum *)func_?();
         MVNetworkGame::MVNetworkGame_OnPickupItemStateChangeEvent
-                  ((MVNetworkGame *)_Stack_24.typeHandle,*pPVar55,iVar47,iVar11,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+                  ((MVNetworkGame *)pMStack_28,*pPVar45,iVar36,iVar29,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_UpdateLineOfFire:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x4a,(MethodInfo *)0x0);
-      pOVar56 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0x4b,(MethodInfo *)0x0);
-      pOVar57 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x4c,(MethodInfo *)0x0);
-      p_Var65 = (_union_86 *)func_?(pOVar57,TypeInfo__System__Single);
-      _Stack_28 = *p_Var65;
-      pMVar46 = (MVEventCodes__Enum *)func_?(pOVar56,TypeInfo__System__Single);
-      eventCode = *pMVar46;
-      pfVar58 = (float *)func_?(pOVar40,TypeInfo__System__Single);
-      this_06 = photonEvent;
-      VStack_8.x = *pfVar58;
-      VStack_8.y = (float)eventCode;
-      VStack_8.z = (float)_Stack_28;
-      in_stack_49 =
-           (Int32__Class *)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0x4d,(MethodInfo *)0x0);
-      unaff_ESI.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (this_06,0x4e,(MethodInfo *)0x0);
-      _Var108.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0x4f,(MethodInfo *)0x0);
-      in_stack_59 = TypeInfo__System__Single;
-      p_Var65 = (_union_86 *)func_?();
-      _Stack_28 = *p_Var65;
-      _Var60.typeHandle = unaff_ESI.typeHandle;
-      pMVar46 = (MVEventCodes__Enum *)func_?();
-      bVar25 = (byte)_Var60.__klassIndex;
-      eventCode = *pMVar46;
-      piVar60 = (int *)func_?();
-      iStack_9 = *piVar60;
-      MStack_10 = eventCode;
-      pMVar32 = (this->fields).networkGame;
-      _Stack_48 = _Stack_28;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x16,(MethodInfo *)0x0);
-      bVar26 = 0;
-      unaff_EDI.dummy = (Object__Class *)0x0;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        piVar31 = (int32_t *)func_?(pOVar40,TypeInfo__System__Int32);
-        camOrigin.y = VStack_8.y;
-        camOrigin.x = VStack_8.x;
-        camOrigin.z = VStack_8.z;
-        camDir.y = (float)MStack_10;
-        camDir.x = (float)iStack_9;
-        camDir.z = (float)_Stack_48.dummy;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x4a,(MethodInfo *)0x0);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x4b,(MethodInfo *)0x0);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x4c,(MethodInfo *)0x0);
+      puVar39 = (undefined4 *)func_?();
+      pMStack_19 = (MVAvatar__Class *)*puVar39;
+      pfVar34 = (float *)func_?();
+      fVar35 = *pfVar34;
+      pfVar34 = (float *)func_?();
+      VStack_10.x = *pfVar34;
+      VStack_10.z = (float)pMStack_19;
+      VStack_10.y = fVar35;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x4d,(MethodInfo *)0x0);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x4e,(MethodInfo *)0x0);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x4f,(MethodInfo *)0x0);
+      piVar40 = (int *)func_?();
+      pMStack_19 = (MVAvatar__Class *)*piVar40;
+      puVar39 = (undefined4 *)func_?();
+      uVar46 = *puVar39;
+      bVar6 = 100;
+      puVar39 = (undefined4 *)func_?();
+      pMVar11 = pMStack_19;
+      uVar47 = *puVar39;
+      pMVar12 = (this->fields).networkGame;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x16,(MethodInfo *)0x0);
+      bVar13 = 0;
+      unaff_EDI = (MVAvatar__Class *)0x0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        piVar17 = (int32_t *)func_?();
+        VVar48.y = VStack_10.y;
+        VVar48.x = VStack_10.x;
+        VVar48.z = VStack_10.z;
+        camDir.y = (float)uVar46;
+        camDir.x = (float)uVar47;
+        camDir.z = (float)pMVar11;
         MVNetworkGame::MVNetworkGame_OnUpdateLineOfFire
-                  (pMVar32,*piVar31,camOrigin,camDir,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+                  (pMVar12,*piVar17,VVar48,camDir,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_WorldObjectRPCEvent:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      MVNetworkGame::MVNetworkGame_OnWorldObjectRPCEvent(pMVar32,photonEvent,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      MVNetworkGame::MVNetworkGame_OnWorldObjectRPCEvent(pMVar12,photonEvent,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
   case MVEventCodes__Enum_XPReceivedEvent:
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+      func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
               ((Object *)StringLiteral_MVEventCodes_XPReceivedEvent,(MethodInfo *)0x0);
-    *unaff_FS_OFFSET = pvStack_3;
+    *unaff_FS_OFFSET = uStack_3;
     return;
   case MVEventCodes__Enum_PostGameMsgEvent:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x57,(MethodInfo *)0x0);
-      pOVar56 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0x58,(MethodInfo *)0x0);
-      pDVar38 = (Dictionary_2_System_Object_System_Object_ *)
-                func_?(pOVar56,
-                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                               );
-      pMVar61 = (MVGameMsgType__Enum *)func_?(pOVar40,TypeInfo__System__Int32);
-      MVGameControllerBase::MVGameControllerBase_PostGameMsg(*pMVar61,pDVar38,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x57,(MethodInfo *)0x0);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x58,(MethodInfo *)0x0);
+      pDVar20 = (Dictionary_2_System_Object_System_Object_ *)func_?();
+      pMVar49 = (MVGameMsgType__Enum *)func_?();
+      MVGameControllerBase::MVGameControllerBase_PostGameMsg(*pMVar49,pDVar20,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
   case MVEventCodes__Enum_SetTeam:
-    eventCode = (MVEventCodes__Enum)(this->fields).networkGame;
-    bVar26 = 0;
-    unaff_EDI = _Var96;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
+    unaff_EDI = (MVAvatar__Class *)photonEvent;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar16;
-      _Stack_28.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0xfe,(MethodInfo *)0x0);
+      pMStack_19 = (MVAvatar__Class *)
+                   Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                             (photonEvent,0xfe,(MethodInfo *)0x0);
       handle = TypeRef__MV__WorldObject__MVTeam;
       if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      unaff_ESI.type =
-           (Il2CppType *)
-           mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
-      in_stack_49 =
-           (Int32__Class *)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     ((EventData *)_Var96.typeHandle,0x59,(MethodInfo *)0x0);
+      enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                           ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x59,(MethodInfo *)0x0);
       if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      piVar31 = (int32_t *)func_?();
-      pOVar40 = mscorlib.dll::System::Enum::Enum_ToObject_3
-                          ((Type *)unaff_ESI.typeHandle,*piVar31,(MethodInfo *)0x0);
-      this_05 = eventCode;
-      bVar26 = 0;
-      unaff_EDI.dummy = (Object__Class *)0x0;
-      if (eventCode != MVEventCodes__Enum_NoCodeSet) {
-        pMVar62 = (MVTeam__Enum *)func_?(pOVar40,TypeInfo__MV__WorldObject__MVTeam);
-        team = *pMVar62;
-        piVar31 = (int32_t *)func_?(_Stack_28.dummy,TypeInfo__System__Int32);
-        MVNetworkGame::MVNetworkGame_OnSetTeamEvent
-                  ((MVNetworkGame *)this_05,*piVar31,team,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+      bVar6 = 100;
+      piVar17 = (int32_t *)func_?();
+      mscorlib.dll::System::Enum::Enum_ToObject_3(enumType,*piVar17,(MethodInfo *)0x0);
+      bVar13 = 0;
+      unaff_EDI = (MVAvatar__Class *)0x0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        pMVar50 = (MVTeam__Enum *)func_?();
+        team = *pMVar50;
+        piVar17 = (int32_t *)func_?();
+        MVNetworkGame::MVNetworkGame_OnSetTeamEvent(pMVar12,*piVar17,team,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_AddObjectLink:
-    unaff_EDI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
-    unaff_ESI = _Var96;
-    _Stack_24 = unaff_EDI;
+    unaff_EDI = (MVAvatar__Class *)(this->fields).networkGame;
+    bVar13 = 0;
+    pMStack_28 = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar22;
-      _Stack_28.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0x39,(MethodInfo *)0x0);
-      eventCode = (MVEventCodes__Enum)
-                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                            ((EventData *)_Var96.typeHandle,0x38,(MethodInfo *)0x0);
+      pMStack_19 = (MVAvatar__Class *)
+                   Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                             (photonEvent,0x39,(MethodInfo *)0x0);
       Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                ((EventData *)_Var96.typeHandle,0x3a,(MethodInfo *)0x0);
-      bVar26 = 0;
-      if (unaff_EDI.dummy != (Object__Class *)0x0) {
-        piVar31 = (int32_t *)func_?();
-        iVar11 = *piVar31;
-        piVar31 = (int32_t *)func_?();
-        iVar47 = *piVar31;
-        piVar31 = (int32_t *)func_?();
+                (photonEvent,0x38,(MethodInfo *)0x0);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x3a,(MethodInfo *)0x0);
+      bVar13 = 0;
+      if (unaff_EDI != (MVAvatar__Class *)0x0) {
+        piVar17 = (int32_t *)func_?();
+        iVar29 = *piVar17;
+        piVar17 = (int32_t *)func_?();
+        iVar36 = *piVar17;
+        piVar17 = (int32_t *)func_?();
         MVNetworkGame::MVNetworkGame_OnAddObjectLinkEvent
-                  ((MVNetworkGame *)_Stack_24.typeHandle,*piVar31,iVar47,iVar11,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+                  ((MVNetworkGame *)pMStack_28,*piVar17,iVar36,iVar29,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_RemoveObjectLink:
-    unaff_ESI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar24;
       Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                 (photonEvent,0x3a,(MethodInfo *)0x0);
-      bVar26 = 0;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (unaff_ESI.dummy != (MVNetworkGame *)0x0) {
-        piVar31 = (int32_t *)func_?();
-        MVNetworkGame::MVNetworkGame_OnRemoveObjectLinkEvent
-                  ((MVNetworkGame *)unaff_ESI.typeHandle,*piVar31,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        piVar17 = (int32_t *)func_?();
+        MVNetworkGame::MVNetworkGame_OnRemoveObjectLinkEvent(pMVar12,*piVar17,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_TransferWorldObjectsToGroup:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
+    if (pMVar12 != (MVNetworkGame *)0x0) {
       MVNetworkGame::MVNetworkGame_OnTransferWorldObjectsToGroup
-                (pMVar32,photonEvent,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+                (pMVar12,photonEvent,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
   case MVEventCodes__Enum_CloneWorldObjectTree:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      MVNetworkGame::MVNetworkGame_OnCloneWorldObjectTree(pMVar32,photonEvent,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      MVNetworkGame::MVNetworkGame_OnCloneWorldObjectTree(pMVar12,photonEvent,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
   case MVEventCodes__Enum_GetGameBatch:
   case MVEventCodes__Enum_PendingByteDataBatch:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      MVNetworkGame::MVNetworkGame_OnGetGameBatch(pMVar32,photonEvent,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      MVNetworkGame::MVNetworkGame_OnGetGameBatch(pMVar12,photonEvent,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
   case MVEventCodes__Enum_GameQueryReady:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      MVNetworkGame::MVNetworkGame_OnGameQueryReady(pMVar32,photonEvent,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      MVNetworkGame::MVNetworkGame_OnGameQueryReady(pMVar12,photonEvent,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
   case MVEventCodes__Enum_PostWinnerReport:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      MVNetworkGame::MVNetworkGame_OnPostWinnerReportEvent(pMVar32,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      MVNetworkGame::MVNetworkGame_OnPostWinnerReportEvent(pMVar12,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
   case MVEventCodes__Enum_CollectiblePickedUp:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      MVNetworkGame::MVNetworkGame_OnCollectiblePickedUp(pMVar32,photonEvent,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      MVNetworkGame::MVNetworkGame_OnCollectiblePickedUp(pMVar12,photonEvent,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
   case MVEventCodes__Enum_SetWorldObjectsToPurchasedEvent:
-    unaff_EDI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    unaff_EDI = (MVAvatar__Class *)(this->fields).networkGame;
+    bVar13 = 0;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar23;
-      eventCode = (MVEventCodes__Enum)
-                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                            (photonEvent,0xb,(MethodInfo *)0x0);
       Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                ((EventData *)_Var96.typeHandle,0x28,(MethodInfo *)0x0);
-      bVar26 = 0;
-      if (unaff_EDI.dummy != (void *)0x0) {
-        piVar31 = (int32_t *)func_?();
-        iVar11 = *piVar31;
-        piVar31 = (int32_t *)func_?();
+                (photonEvent,0xb,(MethodInfo *)0x0);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x28,(MethodInfo *)0x0);
+      bVar13 = 0;
+      if (unaff_EDI != (MVAvatar__Class *)0x0) {
+        piVar17 = (int32_t *)func_?();
+        iVar29 = *piVar17;
+        piVar17 = (int32_t *)func_?();
         MVNetworkGame::MVNetworkGame_OnSetWorldObjectsToPurchasedEvent
-                  ((MVNetworkGame *)unaff_EDI.typeHandle,*piVar31,iVar11,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+                  ((MVNetworkGame *)unaff_EDI,*piVar17,iVar29,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_AchievementUnlockedEvent:
-    bVar26 = 0;
-    unaff_EDI = _Var96;
+    bVar13 = 0;
+    unaff_EDI = (MVAvatar__Class *)photonEvent;
     if (photonEvent != (EventData *)0x0) {
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0xb,(MethodInfo *)0x0);
-      pMVar46 = (MVEventCodes__Enum *)func_?(pOVar40,TypeInfo__System__Int32);
-      eventCode = *pMVar46;
-      pOVar40 = (Object *)func_?(TypeInfo__System__Int32,&eventCode);
-      pOVar56 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0x81,(MethodInfo *)0x0);
-      p_Var65 = (_union_86 *)func_?(pOVar56,TypeInfo__MV__Common__AchievementType);
-      _Stack_28 = *p_Var65;
-      pOVar56 = (Object *)func_?(TypeInfo__MV__Common__AchievementType,&_Stack_28);
-      pSVar42 = mscorlib.dll::System::String::String_Format_1
-                          (StringLiteral_Profile_with_ID__0__unlocked_Ach,pOVar40,pOVar56,
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xb,(MethodInfo *)0x0);
+      func_?();
+      pOVar14 = (Object *)func_?();
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x81,(MethodInfo *)0x0);
+      piVar40 = (int *)func_?();
+      pMStack_19 = (MVAvatar__Class *)*piVar40;
+      pOVar33 = (Object *)func_?();
+      pSVar26 = mscorlib.dll::System::String::String_Format_1
+                          (StringLiteral_Profile_with_ID__0__unlocked_Ach,pOVar14,pOVar33,
                            (MethodInfo *)0x0);
-      uVar63 = (TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor;
+      uVar51 = (TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor;
       goto joined_?;
     }
     break;
   case MVEventCodes__Enum_AttachWorldObjectToSeat:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar15;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x48,(MethodInfo *)0x0);
-      pDVar64 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                func_?(pOVar40,
-                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                               );
-      eventCode = CONCAT13(4,(undefined3)eventCode);
-      pOVar40 = (Object *)func_?(TypeInfo__System__Byte,(byte *)((int)&eventCode + 3));
-      bVar26 = 0;
-      unaff_EDI.dummy = (Object__Class *)0x0;
-      if (pDVar64 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-        TVar65 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                           (pDVar64,pOVar40,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        puVar54 = (undefined4 *)func_?(TVar65.m_Index,TypeInfo__System__Int32);
-        pIStack_66 = (Il2CppClass *)*puVar54;
-        uStack_67 = 0;
-        pOVar40 = (Object *)func_?(TypeInfo__System__Byte,&uStack_67);
-        TVar65 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                           (pDVar64,pOVar40,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        p_Var65 = (_union_86 *)func_?(TVar65.m_Index,TypeInfo__System__Int32);
-        _Stack_24 = (_union_86)p_Var65->__klassIndex;
-        pMVar32 = (this->fields).networkGame;
-        bVar26 = 0;
-        unaff_EDI.dummy = (Object__Class *)0x0;
-        if (pMVar32 != (MVNetworkGame *)0x0) {
-          pMVar68 = (pMVar32->fields)._PlayerController_k__BackingField;
-          _Stack_28.dummy =
-               Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                         (_Var96.dummy,0xfe,(MethodInfo *)0x0);
-          pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                              ((EventData *)_Var96.typeHandle,0x8d,(MethodInfo *)0x0);
-          bVar26 = 0;
-          unaff_EDI.dummy = (Object__Class *)0x0;
-          if (pMVar68 != (MVLocalObjectController *)0x0) {
-            pbVar69 = (byte *)func_?(pOVar40,TypeInfo__System__Byte);
-            bVar25 = *pbVar69;
-            piVar31 = (int32_t *)func_?(_Stack_28.dummy,TypeInfo__System__Int32);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x48,(MethodInfo *)0x0);
+      pDVar52 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)func_?();
+      pOVar14 = (Object *)func_?();
+      bVar13 = 0;
+      unaff_EDI = (MVAvatar__Class *)0x0;
+      if (pDVar52 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::TextureId]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                  (pDVar52,pOVar14,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                  );
+        puVar39 = (undefined4 *)func_?();
+        pMStack_53 = (MVPlayer *)*puVar39;
+        uStack_54 = 0;
+        pOVar14 = (Object *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::TextureId]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                  (pDVar52,pOVar14,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                  );
+        piVar40 = (int *)func_?();
+        pMStack_28 = (MVAvatar__Class *)*piVar40;
+        pMVar12 = (this->fields).networkGame;
+        bVar13 = 0;
+        unaff_EDI = (MVAvatar__Class *)0x0;
+        if (pMVar12 != (MVNetworkGame *)0x0) {
+          pMVar55 = (pMVar12->fields)._PlayerController_k__BackingField;
+          pMStack_19 = (MVAvatar__Class *)
+                       Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                                 (photonEvent,0xfe,(MethodInfo *)0x0);
+          Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                    (photonEvent,0x8d,(MethodInfo *)0x0);
+          bVar13 = 0;
+          unaff_EDI = (MVAvatar__Class *)0x0;
+          if (pMVar55 != (MVLocalObjectController *)0x0) {
+            pbVar56 = (byte *)func_?();
+            bVar6 = *pbVar56;
+            piVar17 = (int32_t *)func_?();
             MVLocalObjectController::MVLocalObjectController_OnAttachWorldObjectToSeat
-                      (pMVar68,*piVar31,(int32_t)pIStack_66,_Stack_24.__klassIndex,(uint)bVar25,
+                      (pMVar55,*piVar17,(int32_t)pMStack_53,(int32_t)pMStack_28,(uint)bVar6,
                        (MethodInfo *)0x0);
-            *unaff_FS_OFFSET = pvStack_3;
+            *unaff_FS_OFFSET = uStack_3;
             return;
           }
         }
@@ -1653,42 +1461,38 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_DetachWorldObjectFromVehicle:
-    bVar25 = bVar17;
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      bVar25 = bVar16;
-      func_?(TypeInfo__UnityEngine__Debug);
+      func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
               ((Object *)StringLiteral_Should_probably_be_behind_an_int,(MethodInfo *)0x0);
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
       Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                 (photonEvent,0x16,(MethodInfo *)0x0);
-      p_Var65 = (_union_86 *)func_?();
-      unaff_ESI = (_union_86)p_Var65->__klassIndex;
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
+      piVar17 = (int32_t *)func_?();
+      iVar29 = *piVar17;
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        pMVar70 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
-                            (pMVar32,(MethodInfo *)0x0);
-        bVar26 = 0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        pMVar57 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
+                            (pMVar12,(MethodInfo *)0x0);
+        bVar13 = 0;
         unaff_EDI = unaff_EDI;
-        if (pMVar70 != (MVWorldObjectClientManager *)0x0) {
-          unaff_ESI.typeHandle =
-               (Il2CppMetadataTypeHandle)
-               MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                         (pMVar70,unaff_ESI.__klassIndex,(MethodInfo *)0x0);
-          unaff_EDI = (_union_86)TypeInfo__MVAvatar;
-          if ((unaff_ESI.dummy == (Object__Class *)0x0) || (iVar71 = func_?(), iVar71 == 0)
-             ) goto code_?;
-          iVar71 = func_?();
-          bVar26 = 0;
-          if (iVar71 != 0) {
-            uVar72 = func_?(unaff_ESI.dummy,TypeInfo__MVAvatar);
-            func_?(0x5a,uVar72);
-            *unaff_FS_OFFSET = pvStack_3;
+        if (pMVar57 != (MVWorldObjectClientManager *)0x0) {
+          pMVar58 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                              (pMVar57,iVar29,(MethodInfo *)0x0);
+          unaff_EDI = TypeInfo__MVAvatar;
+          if ((pMVar58 == (MVWorldObject *)0x0) || (iVar41 = func_?(), iVar41 == 0))
+          goto code_?;
+          iVar41 = func_?();
+          bVar13 = 0;
+          if (iVar41 != 0) {
+            func_?();
+            func_?();
+            *unaff_FS_OFFSET = uStack_3;
             return;
           }
         }
@@ -1696,164 +1500,145 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_SpawnVehicleWithDriver:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar14;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x48,(MethodInfo *)0x0);
-      unaff_EDI.dummy =
-           (void *)func_?(pOVar40,
-                                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                  );
-      eventCode = CONCAT13(1,(undefined3)eventCode);
-      pOVar40 = (Object *)func_?(TypeInfo__System__Byte,(byte *)((int)&eventCode + 3));
-      bVar26 = 0;
-      if (unaff_EDI.dummy != (Object__Class *)0x0) {
-        TVar65 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                           ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                            unaff_EDI.typeHandle,pOVar40,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        p_Var65 = (_union_86 *)func_?(TVar65.m_Index,TypeInfo__System__Int32);
-        _Stack_28 = (_union_86)p_Var65->__klassIndex;
-        uStack_67 = 0;
-        pOVar40 = (Object *)func_?(TypeInfo__System__Byte,&uStack_67);
-        TVar65 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                           ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                            unaff_EDI.typeHandle,pOVar40,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        p_Var65 = (_union_86 *)func_?(TVar65.m_Index,TypeInfo__System__Int32);
-        _Stack_34 = *p_Var65;
-        pMVar32 = (this->fields).networkGame;
-        bVar26 = 0;
-        if (pMVar32 != (MVNetworkGame *)0x0) {
-          pMVar70 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
-                              (pMVar32,(MethodInfo *)0x0);
-          bVar26 = 0;
-          if (pMVar70 != (MVWorldObjectClientManager *)0x0) {
-            pMVar73 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                (pMVar70,_Stack_28.__klassIndex,(MethodInfo *)0x0);
-            _Stack_48.dummy = (void *)func_?(pMVar73,TypeInfo__MVWorldObjectSpawnerVehicle)
-            ;
-            bVar26 = 0;
-            if (_Stack_48.dummy != (Object__Class *)0x0) {
-              pIStack_66 = *(Il2CppClass **)(_Stack_48.__klassIndex + 0xfc);
-              uStack_74 = 3;
-              pOVar40 = (Object *)func_?(TypeInfo__System__Byte,&uStack_74);
-              TVar65 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,UnityEngine::UIElements::TextureId]::
-                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                 ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                  unaff_EDI.typeHandle,pOVar40,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                 );
-              puVar54 = (undefined4 *)func_?(TVar65.m_Index,TypeInfo__System__Int32);
-              pDStack_75 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                            *)*puVar54;
-              pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                                  ((EventData *)_Var96.typeHandle,0xfe,(MethodInfo *)0x0);
-              puVar54 = (undefined4 *)func_?(pOVar40,TypeInfo__System__Int32);
-              pMStack_76 = (MVWorldObject *)*puVar54;
-              pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                                  ((EventData *)_Var96.typeHandle,0x3a,(MethodInfo *)0x0);
-              p_Var65 = (_union_86 *)func_?(pOVar40,TypeInfo__System__Int32);
-              _Stack_24 = (_union_86)p_Var65->__klassIndex;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x48,(MethodInfo *)0x0);
+      unaff_EDI = (MVAvatar__Class *)func_?();
+      pOVar14 = (Object *)func_?();
+      bVar13 = 0;
+      if (unaff_EDI != (MVAvatar__Class *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::TextureId]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                  ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)unaff_EDI,pOVar14
+                   ,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                  );
+        piVar40 = (int *)func_?();
+        pMStack_19 = (MVAvatar__Class *)*piVar40;
+        uStack_54 = 0;
+        pOVar14 = (Object *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::TextureId]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                  ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)unaff_EDI,pOVar14
+                   ,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                  );
+        puVar39 = (undefined4 *)func_?();
+        pMStack_59 = (MVAvatar__Class *)*puVar39;
+        pMVar12 = (this->fields).networkGame;
+        bVar13 = 0;
+        if (pMVar12 != (MVNetworkGame *)0x0) {
+          pMVar57 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
+                              (pMVar12,(MethodInfo *)0x0);
+          bVar13 = 0;
+          if (pMVar57 != (MVWorldObjectClientManager *)0x0) {
+            MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                      (pMVar57,(int32_t)pMStack_19,(MethodInfo *)0x0);
+            pMVar60 = (MVWorldObjectSpawner *)func_?();
+            bVar13 = 0;
+            if (pMVar60 != (MVWorldObjectSpawner *)0x0) {
+              pMStack_53 = (MVPlayer *)(pMVar60->fields).spawnWorldObjectID;
+              uStack_61 = 3;
+              pOVar14 = (Object *)func_?();
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)unaff_EDI,
+                         pOVar14,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+              puVar39 = (undefined4 *)func_?();
+              pDStack_62 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                            *)*puVar39;
               Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                        ((EventData *)_Var96.typeHandle,0x5c,(MethodInfo *)0x0);
-              pIVar30 = TypeInfo__System__Int32;
-              p_Var65 = (_union_86 *)func_?();
-              bVar25 = (byte)pIVar30;
-              _Stack_28 = (_union_86)p_Var65->__klassIndex;
+                        (photonEvent,0xfe,(MethodInfo *)0x0);
+              puVar39 = (undefined4 *)func_?();
+              pMStack_63 = (MVWorldObject *)*puVar39;
               Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                        ((EventData *)_Var96.typeHandle,0x23,(MethodInfo *)0x0);
-              in_stack_49 = TypeInfo__System__Int32;
-              p_Var65 = (_union_86 *)func_?();
-              VStack_8.z = *(float *)p_Var65;
-              pMVar32 = (this->fields).networkGame;
-              bVar26 = 0;
-              unaff_EDI = (_union_86)this;
-              if (pMVar32 != (MVNetworkGame *)0x0) {
-                pWVar33 = (pMVar32->fields).worldNetwork;
-                bVar26 = 0;
-                if (pWVar33 != (WorldNetwork *)0x0) {
+                        (photonEvent,0x3a,(MethodInfo *)0x0);
+              puVar39 = (undefined4 *)func_?();
+              pMStack_28 = (MVAvatar__Class *)*puVar39;
+              Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                        (photonEvent,0x5c,(MethodInfo *)0x0);
+              puVar39 = (undefined4 *)func_?();
+              pMStack_19 = (MVAvatar__Class *)*puVar39;
+              pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                                  (photonEvent,0x23,(MethodInfo *)0x0);
+              bVar6 = (byte)((uint)pOVar14 >> 0x10);
+              puVar39 = (undefined4 *)func_?();
+              VStack_10.z = (float)*puVar39;
+              pMVar12 = (this->fields).networkGame;
+              bVar13 = 0;
+              unaff_EDI = (MVAvatar__Class *)this;
+              if (pMVar12 != (MVNetworkGame *)0x0) {
+                pWVar18 = (pMVar12->fields).worldNetwork;
+                bVar13 = 0;
+                if (pWVar18 != (WorldNetwork *)0x0) {
                   WorldNetwork::WorldNetwork_OnCloneWorldObjectTreeEvent
-                            (pWVar33,(int32_t)pMStack_76,0,1,(int32_t)pIStack_66,(int32_t)pDStack_75
-                             ,_Stack_24.__klassIndex,_Stack_28.__klassIndex,(MethodInfo *)0x0);
-                  pMVar32 = (this->fields).networkGame;
-                  bVar26 = 0;
-                  if (pMVar32 != (MVNetworkGame *)0x0) {
-                    pMVar70 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
-                                        (pMVar32,(MethodInfo *)0x0);
-                    bVar26 = 0;
-                    if (pMVar70 != (MVWorldObjectClientManager *)0x0) {
-                      pMStack_76 = MVWorldObjectClientManager::
+                            (pWVar18,(int32_t)pMStack_63,0,1,(int32_t)pMStack_53,(int32_t)pDStack_62
+                             ,(int32_t)pMStack_28,(int32_t)pMStack_19,(MethodInfo *)0x0);
+                  pMVar12 = (this->fields).networkGame;
+                  bVar13 = 0;
+                  if (pMVar12 != (MVNetworkGame *)0x0) {
+                    pMVar57 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
+                                        (pMVar12,(MethodInfo *)0x0);
+                    bVar13 = 0;
+                    if (pMVar57 != (MVWorldObjectClientManager *)0x0) {
+                      pMStack_63 = MVWorldObjectClientManager::
                                    MVWorldObjectClientManager_GetWorldObject
-                                             (pMVar70,(int32_t)pDStack_75,(MethodInfo *)0x0);
+                                             (pMVar57,(int32_t)pDStack_62,(MethodInfo *)0x0);
                       if ((TypeInfo__MVNetworkGame_EventHandling____c->_1).
                           cctor_finished_or_no_cctor == 0) {
-                        func_?(TypeInfo__MVNetworkGame_EventHandling____c);
+                        func_?();
                       }
-                      unaff_EDI = (_union_86)
+                      unaff_EDI = (MVAvatar__Class *)
                                   TypeInfo__MVNetworkGame_EventHandling____c->static_fields->
                                   __9__10_0;
-                      if (unaff_EDI.dummy == (Object__Class *)0x0) {
+                      if (unaff_EDI == (MVAvatar__Class *)0x0) {
                         if ((TypeInfo__MVNetworkGame_EventHandling____c->_1).
                             cctor_finished_or_no_cctor == 0) {
-                          func_?(TypeInfo__MVNetworkGame_EventHandling____c);
+                          func_?();
                         }
                         object = TypeInfo__MVNetworkGame_EventHandling____c->static_fields->__9;
-                        unaff_EDI.dummy =
-                             (void *)func_?(TypeInfo__MVWorldObjectClient__CallBackDelegate
-                                                    );
+                        unaff_EDI = (MVAvatar__Class *)func_?();
                         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::
                         Object]::UnityAction_1_System_Object___ctor
-                                  ((UnityAction_1_System_Object_ *)unaff_EDI.typeHandle,
-                                   (Object *)object,
+                                  ((UnityAction_1_System_Object_ *)unaff_EDI,(Object *)object,
                                    MethodInfo__MVNetworkGame_EventHandling____c___HandleEvent_b__10_0_MVWorldObjectClient_
                                    ,(MethodInfo *)0x0);
                         TypeInfo__MVNetworkGame_EventHandling____c->static_fields->__9__10_0 =
                              (MVWorldObjectClient_CallBackDelegate *)unaff_EDI;
-                        func_?(&TypeInfo__MVNetworkGame_EventHandling____c->static_fields->
-                                         __9__10_0,unaff_EDI.dummy);
-                        _Var96 = (_union_86)photonEvent;
+                        func_?();
                       }
-                      bVar26 = 0;
-                      unaff_ESI = _Var96;
-                      if (pMStack_76 != (MVWorldObject *)0x0) {
-                        func_?(0x2c,pMStack_76,unaff_EDI.dummy);
-                        pMVar32 = (this->fields).networkGame;
-                        bVar26 = 0;
-                        if (pMVar32 != (MVNetworkGame *)0x0) {
-                          pMVar68 = (pMVar32->fields)._PlayerController_k__BackingField;
-                          pMStack_76 = (MVWorldObject *)
+                      bVar13 = 0;
+                      if (pMStack_63 != (MVWorldObject *)0x0) {
+                        func_?();
+                        pMVar12 = (this->fields).networkGame;
+                        bVar13 = 0;
+                        if (pMVar12 != (MVNetworkGame *)0x0) {
+                          pMVar55 = (pMVar12->fields)._PlayerController_k__BackingField;
+                          pMStack_63 = (MVWorldObject *)
                                        Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
-                                       EventData_get_Item((EventData *)_Var96.typeHandle,0xfe,
-                                                          (MethodInfo *)0x0);
-                          pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
-                                    EventData_get_Item((EventData *)_Var96.typeHandle,0x8d,
-                                                       (MethodInfo *)0x0);
-                          bVar26 = 0;
-                          unaff_EDI.dummy = (Object__Class *)0x0;
-                          if (pMVar68 != (MVLocalObjectController *)0x0) {
-                            pbVar69 = (byte *)func_?(pOVar40,TypeInfo__System__Byte);
-                            bVar25 = *pbVar69;
-                            piVar31 = (int32_t *)func_?(pMStack_76,TypeInfo__System__Int32)
-                            ;
+                                       EventData_get_Item(photonEvent,0xfe,(MethodInfo *)0x0);
+                          Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
+                          EventData_get_Item(photonEvent,0x8d,(MethodInfo *)0x0);
+                          bVar13 = 0;
+                          unaff_EDI = (MVAvatar__Class *)0x0;
+                          if (pMVar55 != (MVLocalObjectController *)0x0) {
+                            pbVar56 = (byte *)func_?();
+                            bVar6 = *pbVar56;
+                            piVar17 = (int32_t *)func_?();
                             MVLocalObjectController::
                             MVLocalObjectController_OnAttachWorldObjectToSeat
-                                      (pMVar68,*piVar31,(int32_t)pDStack_75,_Stack_34.__klassIndex,
-                                       (uint)bVar25,(MethodInfo *)0x0);
+                                      (pMVar55,*piVar17,(int32_t)pDStack_62,(int32_t)pMStack_59,
+                                       (uint)bVar6,(MethodInfo *)0x0);
                             MVWorldObjectSpawner::MVWorldObjectSpawner_Take
-                                      ((MVWorldObjectSpawner *)_Stack_48.typeHandle,
-                                       (int32_t)VStack_8.z,(MethodInfo *)0x0);
-                            *unaff_FS_OFFSET = pvStack_3;
+                                      (pMVar60,(int32_t)VStack_10.z,(MethodInfo *)0x0);
+                            *unaff_FS_OFFSET = uStack_3;
                             return;
                           }
                         }
@@ -1869,89 +1654,86 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_Reward:
-    bVar26 = 0;
-    unaff_EDI = _Var96;
+    bVar13 = 0;
+    unaff_EDI = (MVAvatar__Class *)photonEvent;
     if (photonEvent != (EventData *)0x0) {
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x8f,(MethodInfo *)0x0);
-      p_Var65 = (_union_86 *)func_?(pOVar40,TypeInfo__System__Int32);
-      _Var60 = *p_Var65;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0x91,(MethodInfo *)0x0);
-      puVar5 = (undefined1 *)func_?(pOVar40,TypeInfo__MV__Common__RewardReason);
-      eventCode = CONCAT13(*puVar5,(undefined3)eventCode);
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0x90,(MethodInfo *)0x0);
-      pfVar58 = (float *)func_?(pOVar40,TypeInfo__MV__Common__RewardType);
-      fVar77 = *pfVar58;
-      _Stack_48 = _Var60;
-      _Stack_34.dummy = (void *)func_?(TypeInfo__System__Int32,&_Stack_48);
-      uStack_74 = eventCode._3_1_;
-      pOVar40 = (Object *)func_?();
-      VStack_8.z = fVar77;
-      pOVar56 = (Object *)func_?();
-      pSVar42 = mscorlib.dll::System::String::String_Format_2
-                          (StringLiteral_Amount__0___rewardReason__1___re,(Object *)_Stack_34,
-                           pOVar40,pOVar56,(MethodInfo *)0x0);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x8f,(MethodInfo *)0x0);
+      func_?();
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x91,(MethodInfo *)0x0);
+      puVar5 = (undefined1 *)func_?();
+      uVar64 = *puVar5;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x90,(MethodInfo *)0x0);
+      pfVar34 = (float *)func_?();
+      fVar35 = *pfVar34;
+      pMStack_59 = (MVAvatar__Class *)func_?();
+      uStack_61 = uVar64;
+      pOVar14 = (Object *)func_?();
+      VStack_10.z = fVar35;
+      pOVar33 = (Object *)func_?();
+      pSVar26 = mscorlib.dll::System::String::String_Format_2
+                          (StringLiteral_Amount__0___rewardReason__1___re,(Object *)pMStack_59,
+                           pOVar14,pOVar33,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                ((Object *)pSVar42,(MethodInfo *)0x0);
-      pMVar78 = System__Object__MethodInfo__System__Array__Empty<System::Object>______;
+                ((Object *)pSVar26,(MethodInfo *)0x0);
+      pMVar65 = System__Object__MethodInfo__System__Array__Empty<System::Object>______;
       if ((System__Object__MethodInfo__System__Array__Empty<System::Object>______->field7_0x1c).
           rgctx_data == (Il2CppRGCTXData *)0x0) {
         func_?();
       }
-      pIVar29 = (pMVar78->field7_0x1c).rgctx_data[2].klass;
-      if (((uint)pIVar29->vtable[0].methodPtr & 0x100) == 0) {
-        pIVar29 = (Il2CppClass *)func_?();
+      pIVar16 = (pMVar65->field7_0x1c).rgctx_data[2].klass;
+      if (((uint)pIVar16->vtable[0].methodPtr & 0x100) == 0) {
+        pIVar16 = (Il2CppClass *)func_?();
       }
-      if (pIVar29->cctor_finished_or_no_cctor == 0) {
+      if (pIVar16->cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pIVar29 = (pMVar78->field7_0x1c).rgctx_data[2].klass;
-      if (((uint)pIVar29->vtable[0].methodPtr & 0x100) == 0) {
-        pIVar29 = (Il2CppClass *)func_?();
+      pIVar16 = (pMVar65->field7_0x1c).rgctx_data[2].klass;
+      if (((uint)pIVar16->vtable[0].methodPtr & 0x100) == 0) {
+        pIVar16 = (Il2CppClass *)func_?();
       }
-      args = *(Object__Array **)pIVar29->static_fields;
+      args = *(Object__Array **)pIVar16->static_fields;
       if ((TypeInfo__BrowserComm__ToJavaScript->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall
                 (StringLiteral_refreshCredentials,args,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
   case MVEventCodes__Enum_RuntimeEvent:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar20;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0xf5,(MethodInfo *)0x0);
-      eventCode = func_?(pOVar40,TypeInfo__System__Byte);
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xf5,(MethodInfo *)0x0);
+      pBVar66 = (Byte__Array *)func_?();
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        pWVar33 = (pMVar32->fields).worldNetwork;
-        bVar26 = 0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        pWVar18 = (pMVar12->fields).worldNetwork;
+        bVar13 = 0;
         unaff_EDI = unaff_EDI;
-        if (pWVar33 != (WorldNetwork *)0x0) {
-          this_00 = (pWVar33->fields)._.runtimeEventManagerNetwork;
-          unaff_ESI.dummy = (void *)func_?(TypeInfo__MV__WorldObject__BytePacker);
+        if (pWVar18 != (WorldNetwork *)0x0) {
+          this_02 = (pWVar18->fields)._.runtimeEventManagerNetwork;
+          pBVar31 = (BytePacker *)func_?();
           MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1
-                    ((BytePacker *)unaff_ESI.typeHandle,(Byte__Array *)eventCode,(MethodInfo *)0x0);
+                    (pBVar31,pBVar66,(MethodInfo *)0x0);
           runtimeEvent = MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::
-                         RuntimeEvent_Create((BytePacker *)unaff_ESI.typeHandle,(MethodInfo *)0x0);
-          bVar26 = 0;
-          unaff_EDI.dummy = (Object__Class *)0x0;
-          if (this_00 != (RuntimeEventManagerNetwork *)0x0) {
+                         RuntimeEvent_Create(pBVar31,(MethodInfo *)0x0);
+          bVar13 = 0;
+          unaff_EDI = (MVAvatar__Class *)0x0;
+          if (this_02 != (RuntimeEventManagerNetwork *)0x0) {
             RuntimeEventManagerNetwork::RuntimeEventManagerNetwork_HandleRuntimeEvent
-                      (this_00,runtimeEvent,(MethodInfo *)0x0);
-            *unaff_FS_OFFSET = pvStack_3;
+                      (this_02,runtimeEvent,(MethodInfo *)0x0);
+            *unaff_FS_OFFSET = uStack_3;
             return;
           }
         }
@@ -1959,88 +1741,86 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_ResetTerrainEvent:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      pWVar33 = (pMVar32->fields).worldNetwork;
-      bVar26 = 0;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      pWVar18 = (pMVar12->fields).worldNetwork;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pWVar33 != (WorldNetwork *)0x0) {
-        this_01 = (RuntimeEventManager *)(pWVar33->fields)._.runtimeEventManagerNetwork;
-        bVar26 = 0;
+      if (pWVar18 != (WorldNetwork *)0x0) {
+        this_03 = (RuntimeEventManager *)(pWVar18->fields)._.runtimeEventManagerNetwork;
+        bVar13 = 0;
         unaff_EDI = unaff_EDI;
-        if (this_01 != (RuntimeEventManager *)0x0) {
-          RuntimeEventManager::RuntimeEventManager_ResetTerrain(this_01,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+        if (this_03 != (RuntimeEventManager *)0x0) {
+          RuntimeEventManager::RuntimeEventManager_ResetTerrain(this_03,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
       }
     }
     break;
   case MVEventCodes__Enum_UpdateGameStat:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0xfe,(MethodInfo *)0x0);
-      p_Var65 = (_union_86 *)func_?(pOVar40,TypeInfo__System__Int32);
-      unaff_EDI = (_union_86)p_Var65->__klassIndex;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0x59,(MethodInfo *)0x0);
-      p_Var65 = (_union_86 *)func_?(pOVar40,TypeInfo__System__Int32);
-      _Stack_24 = *p_Var65;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0x9f,(MethodInfo *)0x0);
-      puVar5 = (undefined1 *)func_?(pOVar40,TypeInfo__System__Byte);
-      _Stack_28.__klassIndex._0_1_ = *puVar5;
-      _Var108.dummy =
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (_Var96.dummy,0xa0,(MethodInfo *)0x0);
-      in_stack_59 = (Single__Class *)TypeInfo__System__Int32;
-      puVar54 = (undefined4 *)func_?();
-      pDStack_75 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                    *)*puVar54;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0xa1,(MethodInfo *)0x0);
-      bVar25 = (byte)pOVar40;
-      puVar54 = (undefined4 *)func_?();
-      pIStack_66 = (Il2CppClass *)*puVar54;
-      in_stack_49 =
-           (Int32__Class *)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     ((EventData *)_Var96.typeHandle,0xa2,(MethodInfo *)0x0);
-      puVar5 = (undefined1 *)func_?();
-      eventCode = CONCAT31(eventCode._1_3_,*puVar5);
       Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                ((EventData *)_Var96.typeHandle,0xa3,(MethodInfo *)0x0);
-      pcVar79 = (char *)func_?();
-      pMVar32 = (this->fields).networkGame;
-      if (*pcVar79 == '\0') {
-        bVar26 = 0;
-        if (pMVar32 != (MVNetworkGame *)0x0) {
-          pGVar80 = (pMVar32->fields).gameStatCounterManager;
-          bVar26 = 0;
-          if (pGVar80 != (GameStatCounterManager *)0x0) {
+                (photonEvent,0xfe,(MethodInfo *)0x0);
+      puVar39 = (undefined4 *)func_?();
+      unaff_EDI = (MVAvatar__Class *)*puVar39;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x59,(MethodInfo *)0x0);
+      puVar39 = (undefined4 *)func_?();
+      pMStack_28 = (MVAvatar__Class *)*puVar39;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x9f,(MethodInfo *)0x0);
+      puVar5 = (undefined1 *)func_?();
+      pMStack_19 = (MVAvatar__Class *)CONCAT31(pMStack_19._1_3_,*puVar5);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xa0,(MethodInfo *)0x0);
+      puVar39 = (undefined4 *)func_?();
+      pDStack_62 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                    *)*puVar39;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xa1,(MethodInfo *)0x0);
+      puVar39 = (undefined4 *)func_?();
+      pMStack_53 = (MVPlayer *)*puVar39;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xa2,(MethodInfo *)0x0);
+      pbVar67 = (bool *)func_?();
+      bVar25 = *pbVar67;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xa3,(MethodInfo *)0x0);
+      pBVar68 = TypeInfo__System__Boolean;
+      pcVar69 = (char *)func_?();
+      bVar6 = (byte)((uint)pBVar68 >> 0x10);
+      pMVar12 = (this->fields).networkGame;
+      if (*pcVar69 == '\0') {
+        bVar13 = 0;
+        if (pMVar12 != (MVNetworkGame *)0x0) {
+          pGVar70 = (pMVar12->fields).gameStatCounterManager;
+          bVar13 = 0;
+          if (pGVar70 != (GameStatCounterManager *)0x0) {
             MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_Update
-                      (pGVar80,_Stack_28.__klassIndex,unaff_EDI.__klassIndex,_Stack_24.__klassIndex,
-                       (int32_t)pDStack_75,(int32_t)pIStack_66,(bool)eventCode,(MethodInfo *)0x0);
-            *unaff_FS_OFFSET = pvStack_3;
+                      (pGVar70,(GameStatCounterType__Enum)pMStack_19,(int32_t)unaff_EDI,
+                       (MVTeam__Enum)pMStack_28,(int32_t)pDStack_62,(int32_t)pMStack_53,bVar25,
+                       (MethodInfo *)0x0);
+            *unaff_FS_OFFSET = uStack_3;
             return;
           }
         }
       }
       else {
-        bVar26 = 0;
-        if (pMVar32 != (MVNetworkGame *)0x0) {
-          pGVar80 = (pMVar32->fields).gameStatCounterManager;
-          bVar26 = 0;
-          if (pGVar80 != (GameStatCounterManager *)0x0) {
+        bVar13 = 0;
+        if (pMVar12 != (MVNetworkGame *)0x0) {
+          pGVar70 = (pMVar12->fields).gameStatCounterManager;
+          bVar13 = 0;
+          if (pGVar70 != (GameStatCounterManager *)0x0) {
             MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_Increment
-                      (pGVar80,_Stack_28.__klassIndex,_Stack_24.__klassIndex,unaff_EDI.__klassIndex,
-                       (int32_t)pDStack_75,(int32_t)pIStack_66,(bool)eventCode,(MethodInfo *)0x0);
-            *unaff_FS_OFFSET = pvStack_3;
+                      (pGVar70,(GameStatCounterType__Enum)pMStack_19,(MVTeam__Enum)pMStack_28,
+                       (int32_t)unaff_EDI,(int32_t)pDStack_62,(int32_t)pMStack_53,bVar25,
+                       (MethodInfo *)0x0);
+            *unaff_FS_OFFSET = uStack_3;
             return;
           }
         }
@@ -2048,269 +1828,247 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_UpdateGameStatType:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar23;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x9e,(MethodInfo *)0x0);
-      pBVar81 = (Byte__Array *)func_?(pOVar40,TypeInfo__System__Byte);
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x9e,(MethodInfo *)0x0);
+      pBVar66 = (Byte__Array *)func_?();
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        pGVar80 = (pMVar32->fields).gameStatCounterManager;
-        bVar26 = 0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        pGVar70 = (pMVar12->fields).gameStatCounterManager;
+        bVar13 = 0;
         unaff_EDI = unaff_EDI;
-        if (pGVar80 != (GameStatCounterManager *)0x0) {
+        if (pGVar70 != (GameStatCounterManager *)0x0) {
           MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_SetStat
-                    (pGVar80,pBVar81,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    (pGVar70,pBVar66,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
       }
     }
     break;
   case MVEventCodes__Enum_UpdateAvatarMetaData:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar14;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x16,(MethodInfo *)0x0);
-      pMVar46 = (MVEventCodes__Enum *)func_?(pOVar40,TypeInfo__System__Int32);
-      eventCode = *pMVar46;
       Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                ((EventData *)_Var96.typeHandle,0xa5,(MethodInfo *)0x0);
-      unaff_EDI.dummy = (void *)func_?(TypeInfo__MV__WorldObject__BytePacker);
-      pMVar78 = (MethodInfo *)0x0;
-      pBVar81 = (Byte__Array *)func_?();
+                (photonEvent,0x16,(MethodInfo *)0x0);
+      piVar17 = (int32_t *)func_?();
+      iVar29 = *piVar17;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xa5,(MethodInfo *)0x0);
+      unaff_EDI = (MVAvatar__Class *)func_?();
+      pMVar65 = (MethodInfo *)0x0;
+      pBVar66 = (Byte__Array *)func_?();
       MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1
-                ((BytePacker *)unaff_EDI.typeHandle,pBVar81,pMVar78);
-      unaff_ESI.dummy = (void *)func_?();
+                ((BytePacker *)unaff_EDI,pBVar66,pMVar65);
+      pMVar71 = TypeInfo__MV__WorldObject__MvAvatarMetaData;
+      this_09 = (MvAvatarMetaData *)func_?();
+      bVar6 = (byte)((uint)pMVar71 >> 0x10);
       MVWorldObject.dll::MV::WorldObject::MvAvatarMetaData::MvAvatarMetaData__ctor
-                ((MvAvatarMetaData *)unaff_ESI.typeHandle,(BytePacker *)unaff_EDI.typeHandle,
-                 (MethodInfo *)0x0);
+                (this_09,(BytePacker *)unaff_EDI,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
+        func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                ((Object *)unaff_ESI.typeHandle,(MethodInfo *)0x0);
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        this_02 = (pMVar32->fields)._AvatarMetaDataWoMap_k__BackingField;
-        bVar26 = 0;
-        if (this_02 != (MvAvatarMetaDataWoMap *)0x0) {
+                ((Object *)this_09,(MethodInfo *)0x0);
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        this_04 = (pMVar12->fields)._AvatarMetaDataWoMap_k__BackingField;
+        bVar13 = 0;
+        if (this_04 != (MvAvatarMetaDataWoMap *)0x0) {
           MVWorldObject.dll::MV::WorldObject::MvAvatarMetaDataWoMap::MvAvatarMetaDataWoMap_Add
-                    (this_02,eventCode,(MvAvatarMetaData *)unaff_ESI.typeHandle,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    (this_04,iVar29,this_09,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
       }
     }
     break;
   case MVEventCodes__Enum_LevelChanged:
-    unaff_EDI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    unaff_EDI = (MVAvatar__Class *)(this->fields).networkGame;
+    bVar13 = 0;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar23;
-      eventCode = (MVEventCodes__Enum)
-                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                            (photonEvent,0xfe,(MethodInfo *)0x0);
       Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                ((EventData *)_Var96.typeHandle,0xa9,(MethodInfo *)0x0);
-      bVar26 = 0;
-      if (unaff_EDI.dummy != (void *)0x0) {
-        piVar31 = (int32_t *)func_?();
-        iVar11 = *piVar31;
-        piVar31 = (int32_t *)func_?();
+                (photonEvent,0xfe,(MethodInfo *)0x0);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xa9,(MethodInfo *)0x0);
+      bVar13 = 0;
+      if (unaff_EDI != (MVAvatar__Class *)0x0) {
+        piVar17 = (int32_t *)func_?();
+        iVar29 = *piVar17;
+        piVar17 = (int32_t *)func_?();
         MVNetworkGame::MVNetworkGame_OnLevelChanged
-                  ((MVNetworkGame *)unaff_EDI.typeHandle,*piVar31,iVar11,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+                  ((MVNetworkGame *)unaff_EDI,*piVar17,iVar29,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_GameBoostEvent:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar23;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0xb7,(MethodInfo *)0x0);
-      pbVar82 = (bool *)func_?(pOVar40,TypeInfo__System__Boolean);
-      eventCode = CONCAT31(eventCode._1_3_,*pbVar82);
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xb7,(MethodInfo *)0x0);
+      pbVar67 = (bool *)func_?();
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        pMVar83 = (pMVar32->fields)._GameCoinManager_k__BackingField;
-        bVar26 = 0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        pMVar72 = (pMVar12->fields)._GameCoinManager_k__BackingField;
+        bVar13 = 0;
         unaff_EDI = unaff_EDI;
-        if (pMVar83 != (MVGameCoinManager *)0x0) {
+        if (pMVar72 != (MVGameCoinManager *)0x0) {
           MVGameCoinManager::MVGameCoinManager_OnGameBoostChanged
-                    (pMVar83,*pbVar82,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    (pMVar72,*pbVar67,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
       }
     }
     break;
   case MVEventCodes__Enum_NotificationEvent:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar14;
-      pSVar27 = (Single__Class *)
-                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+      pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                           (photonEvent,199,(MethodInfo *)0x0);
-      bVar26 = 0;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pSVar27 != (Single__Class *)0x0) {
-        pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-        pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-        bVar26 = pIVar28 < pIVar29;
-        pIVar30 = TypeInfo__System__Int32;
-        if (pIVar28 != pIVar29) goto code_?;
-        p_Var65 = (_union_86 *)func_?();
-        _Var60 = (_union_86)p_Var65->__klassIndex;
-        eventCode = (MVEventCodes__Enum)_Var60;
-        unaff_ESI.dummy =
-             Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                       (_Var96.dummy,200,(MethodInfo *)0x0);
-        if (unaff_ESI.dummy == (Object__Class *)0x0) {
-          _Var96.dummy = (Object__Class *)0x0;
+      if (pOVar14 != (Object *)0x0) {
+        pIVar15 = (pOVar14->klass->_0).element_class;
+        pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+        bVar13 = pIVar15 < pIVar16;
+        pMVar11 = unaff_EDI;
+        if (pIVar15 != pIVar16) goto code_?;
+        puVar39 = (undefined4 *)func_?();
+        unaff_EDI = (MVAvatar__Class *)*puVar39;
+        pDVar20 = (Dictionary_2_System_Object_System_Object_ *)
+                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                            (photonEvent,200,(MethodInfo *)0x0);
+        if (pDVar20 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          pDVar21 = (Dictionary_2_System_Object_System_Object_ *)0x0;
         }
         else {
-          unaff_EDI = (_union_86)((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image;
-          if ((*(uint8_t *)(unaff_EDI.__klassIndex + 0xb8) <
+          pMVar11 = (MVAvatar__Class *)pDVar20->klass;
+          if (((pMVar11->_1).naturalAligment <
                (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
                _1).naturalAligment) ||
-             ((Dictionary_2_System_Object_System_Object___Class *)
-              ((Il2CppClass_1 *)(unaff_EDI.__klassIndex + 100))->typeHierarchy
-              [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).naturalAligment - 1] !=
+             (*(Dictionary_2_System_Object_System_Object___Class **)
+               ((int)(pMVar11->_1).typeHierarchy +
+               (uint)(
+                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                     ->_1).naturalAligment * 4 + -4) !=
               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-            bVar37 = false;
+            bVar22 = false;
           }
           else {
-            bVar37 = true;
+            bVar22 = true;
           }
-          _Var96.dummy = (Object__Class *)0x0;
-          if (bVar37) {
-            _Var96.typeHandle = unaff_ESI.typeHandle;
+          pDVar21 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+          if (bVar22) {
+            pDVar21 = pDVar20;
           }
-          bVar26 = 0;
-          pMVar84 = (MVAvatarSpawnRoleCreator__Class *)
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-          ;
-          _Var60 = (_union_86)eventCode;
-          if (_Var96.dummy == (Object__Class *)0x0) goto code_?;
+          bVar13 = 0;
+          if (pDVar21 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
         }
-        pMVar32 = (this->fields).networkGame;
-        bVar26 = 0;
-        unaff_EDI = _Var60;
-        if (pMVar32 != (MVNetworkGame *)0x0) {
+        pMVar12 = (this->fields).networkGame;
+        bVar13 = 0;
+        if (pMVar12 != (MVNetworkGame *)0x0) {
           MVNetworkGame::MVNetworkGame_OnNotificationEventReceived
-                    (pMVar32,_Var60.__klassIndex,
-                     (Dictionary_2_System_Object_System_Object_ *)_Var96.typeHandle,
-                     (MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    (pMVar12,(NotificationType__Enum)unaff_EDI,pDVar21,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
       }
     }
     break;
   case MVEventCodes__Enum_RequestMaterials:
-    unaff_EDI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
+    pMVar11 = (MVAvatar__Class *)(this->fields).networkGame;
+    bVar13 = 0;
+    unaff_EDI = pMVar11;
     if (photonEvent == (EventData *)0x0) break;
-    bVar25 = bVar24;
-    pDVar38 = (Dictionary_2_System_Object_System_Object_ *)
+    pDVar20 = (Dictionary_2_System_Object_System_Object_ *)
               Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                         (photonEvent,0x5d,(MethodInfo *)0x0);
-    bVar26 = 0;
-    if (unaff_EDI.dummy == (void *)0x0) break;
-    if (pDVar38 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    bVar13 = 0;
+    if (pMVar11 == (MVAvatar__Class *)0x0) break;
+    if (pDVar20 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
       MVNetworkGame::MVNetworkGame_OnRequestMaterialsResponse
-                ((MVNetworkGame *)unaff_EDI.typeHandle,
-                 (Dictionary_2_System_Object_System_Object_ *)0x0,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+                ((MVNetworkGame *)pMVar11,(Dictionary_2_System_Object_System_Object_ *)0x0,
+                 (MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
-    if (((pDVar38->klass->_1).naturalAligment <
+    if (((pDVar20->klass->_1).naturalAligment <
          (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
          naturalAligment) ||
        ((Dictionary_2_System_Object_System_Object___Class *)
-        (pDVar38->klass->_1).typeHierarchy
+        (pDVar20->klass->_1).typeHierarchy
         [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
          naturalAligment - 1] !=
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-      bVar37 = false;
+      bVar22 = false;
     }
     else {
-      bVar37 = true;
+      bVar22 = true;
     }
-    pDVar85 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-    if (bVar37) {
-      pDVar85 = pDVar38;
+    pDVar21 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+    if (bVar22) {
+      pDVar21 = pDVar20;
     }
-    bVar26 = 0;
-    unaff_ESI = (_union_86)
-                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-    if (pDVar85 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    bVar13 = 0;
+    if (pDVar21 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
       MVNetworkGame::MVNetworkGame_OnRequestMaterialsResponse
-                ((MVNetworkGame *)unaff_EDI.typeHandle,pDVar85,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+                ((MVNetworkGame *)pMVar11,pDVar21,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     goto code_?;
   case MVEventCodes__Enum_GetPlanetOwnershipTypes:
-    unaff_EDI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
+    pMVar11 = (MVAvatar__Class *)(this->fields).networkGame;
+    bVar13 = 0;
+    unaff_EDI = pMVar11;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar24;
-      pDVar38 = (Dictionary_2_System_Object_System_Object_ *)
+      pDVar20 = (Dictionary_2_System_Object_System_Object_ *)
                 Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                           (photonEvent,1,(MethodInfo *)0x0);
-      bVar26 = 0;
-      if (unaff_EDI.dummy != (void *)0x0) {
-        if (pDVar38 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      bVar13 = 0;
+      if (pMVar11 != (MVAvatar__Class *)0x0) {
+        if (pDVar20 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
           MVNetworkGame::MVNetworkGame_OnGetPlanetOwnershipTypes
-                    ((MVNetworkGame *)unaff_EDI.typeHandle,
-                     (Dictionary_2_System_Object_System_Object_ *)0x0,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    ((MVNetworkGame *)pMVar11,(Dictionary_2_System_Object_System_Object_ *)0x0,
+                     (MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        if (((pDVar38->klass->_1).naturalAligment <
+        if (((pDVar20->klass->_1).naturalAligment <
              (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment) ||
            ((Dictionary_2_System_Object_System_Object___Class *)
-            (pDVar38->klass->_1).typeHierarchy
+            (pDVar20->klass->_1).typeHierarchy
             [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment - 1] !=
             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-          bVar37 = false;
+          bVar22 = false;
         }
         else {
-          bVar37 = true;
+          bVar22 = true;
         }
-        pDVar85 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-        if (bVar37) {
-          pDVar85 = pDVar38;
+        pDVar21 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+        if (bVar22) {
+          pDVar21 = pDVar20;
         }
-        bVar26 = 0;
-        unaff_ESI = (_union_86)
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-        ;
-        if (pDVar85 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        bVar13 = 0;
+        if (pDVar21 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
           MVNetworkGame::MVNetworkGame_OnGetPlanetOwnershipTypes
-                    ((MVNetworkGame *)unaff_EDI.typeHandle,pDVar85,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    ((MVNetworkGame *)pMVar11,pDVar21,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
         goto code_?;
@@ -2318,47 +2076,44 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_GetItemCategories:
-    unaff_EDI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
+    pMVar11 = (MVAvatar__Class *)(this->fields).networkGame;
+    bVar13 = 0;
+    unaff_EDI = pMVar11;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar24;
-      pDVar38 = (Dictionary_2_System_Object_System_Object_ *)
+      pDVar20 = (Dictionary_2_System_Object_System_Object_ *)
                 Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                           (photonEvent,1,(MethodInfo *)0x0);
-      bVar26 = 0;
-      if (unaff_EDI.dummy != (void *)0x0) {
-        if (pDVar38 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      bVar13 = 0;
+      if (pMVar11 != (MVAvatar__Class *)0x0) {
+        if (pDVar20 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
           MVNetworkGame::MVNetworkGame_OnGetItemCategories
-                    ((MVNetworkGame *)unaff_EDI.typeHandle,
-                     (Dictionary_2_System_Object_System_Object_ *)0x0,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    ((MVNetworkGame *)pMVar11,(Dictionary_2_System_Object_System_Object_ *)0x0,
+                     (MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        if (((pDVar38->klass->_1).naturalAligment <
+        if (((pDVar20->klass->_1).naturalAligment <
              (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment) ||
            ((Dictionary_2_System_Object_System_Object___Class *)
-            (pDVar38->klass->_1).typeHierarchy
+            (pDVar20->klass->_1).typeHierarchy
             [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment - 1] !=
             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-          bVar37 = false;
+          bVar22 = false;
         }
         else {
-          bVar37 = true;
+          bVar22 = true;
         }
-        pDVar85 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-        if (bVar37) {
-          pDVar85 = pDVar38;
+        pDVar21 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+        if (bVar22) {
+          pDVar21 = pDVar20;
         }
-        bVar26 = 0;
-        unaff_ESI = (_union_86)
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-        ;
-        if (pDVar85 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        bVar13 = 0;
+        if (pDVar21 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
           MVNetworkGame::MVNetworkGame_OnGetItemCategories
-                    ((MVNetworkGame *)unaff_EDI.typeHandle,pDVar85,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    ((MVNetworkGame *)pMVar11,pDVar21,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
         goto code_?;
@@ -2366,171 +2121,144 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_SetupUserPlayMode:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
-    unaff_ESI = (_union_86)this;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      bVar25 = bVar24;
-      MVNetworkGame::MVNetworkGame_AllModesSetup(pMVar32,photonEvent,(MethodInfo *)0x0);
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
-      unaff_ESI = (_union_86)this;
-      unaff_EDI = _Var96;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        MVNetworkGame::MVNetworkGame_PlayModeSetup
-                  (pMVar32,(EventData *)_Var96.typeHandle,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      MVNetworkGame::MVNetworkGame_AllModesSetup(pMVar12,photonEvent,(MethodInfo *)0x0);
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
+      unaff_EDI = (MVAvatar__Class *)photonEvent;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        MVNetworkGame::MVNetworkGame_PlayModeSetup(pMVar12,photonEvent,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_GameSnapshotData:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent == (EventData *)0x0) break;
-    bVar25 = 0;
-    unaff_EDI.typeHandle =
-         (Il2CppMetadataTypeHandle)
-         Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                   (photonEvent,0xf5,(MethodInfo *)0x0);
-    eventCode = func_?(TypeInfo__MV__WorldObject__BytePacker);
-    _Stack_48.typeHandle = (Il2CppMetadataTypeHandle)TypeInfo__System__Byte;
-    if (unaff_EDI.dummy == (Object__Class *)0x0) {
-      pBVar81 = (Byte__Array *)0x0;
-code_?:
-      unaff_EDI = (_union_86)eventCode;
-      MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1
-                ((BytePacker *)eventCode,pBVar81,(MethodInfo *)0x0);
-      pSVar27 = (Single__Class *)
+    unaff_EDI = (MVAvatar__Class *)
                 Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          ((EventData *)_Var96.typeHandle,0x85,(MethodInfo *)0x0);
-      bVar26 = 0;
-      if (pSVar27 != (Single__Class *)0x0) {
-        pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-        pIVar29 = (TypeInfo__MV__Common__QueryType->_0).element_class;
-        bVar26 = pIVar28 < pIVar29;
-        pIVar30 = (Int32__Class *)TypeInfo__MV__Common__QueryType;
-        if (pIVar28 != pIVar29) {
+                          (photonEvent,0xf5,(MethodInfo *)0x0);
+    pMVar11 = (MVAvatar__Class *)func_?();
+    if (unaff_EDI == (MVAvatar__Class *)0x0) {
+      pBVar66 = (Byte__Array *)0x0;
 code_?:
-          func_?(pSVar27,pIVar30);
-          pSVar34 = extraout_ECX;
-          pSVar35 = extraout_EDX;
+      MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1
+                ((BytePacker *)pMVar11,pBVar66,(MethodInfo *)0x0);
+      pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                          (photonEvent,0x85,(MethodInfo *)0x0);
+      bVar13 = 0;
+      unaff_EDI = pMVar11;
+      if (pOVar14 != (Object *)0x0) {
+        pIVar15 = (pOVar14->klass->_0).element_class;
+        pIVar16 = (TypeInfo__MV__Common__QueryType->_0).element_class;
+        bVar13 = pIVar15 < pIVar16;
+        if (pIVar15 != pIVar16) {
+code_?:
+          func_?();
+          unaff_EDI = pMVar11;
           goto code_?;
         }
-        puVar5 = (undefined1 *)func_?(pSVar27);
+        puVar5 = (undefined1 *)func_?();
+        eventCode._1_3_ = (undefined3)((uint)pMVar11 >> 8);
         eventCode = CONCAT31(eventCode._1_3_,*puVar5);
-        pSVar27 = (Single__Class *)
-                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                            ((EventData *)_Var96.typeHandle,100,(MethodInfo *)0x0);
-        bVar26 = 0;
-        if (pSVar27 != (Single__Class *)0x0) {
-          pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-          pIVar29 = (TypeInfo__System__Boolean->_0).element_class;
-          bVar26 = pIVar28 < pIVar29;
-          pIVar30 = (Int32__Class *)TypeInfo__System__Boolean;
-          if (pIVar28 != pIVar29) goto code_?;
-          pbVar82 = (bool *)func_?(pSVar27);
-          pMVar32 = (this->fields).networkGame;
-          bVar26 = 0;
-          if (pMVar32 != (MVNetworkGame *)0x0) {
+        pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                            (photonEvent,100,(MethodInfo *)0x0);
+        bVar13 = 0;
+        if (pOVar14 != (Object *)0x0) {
+          pIVar15 = (pOVar14->klass->_0).element_class;
+          pIVar16 = (TypeInfo__System__Boolean->_0).element_class;
+          bVar13 = pIVar15 < pIVar16;
+          if (pIVar15 != pIVar16) goto code_?;
+          pbVar67 = (bool *)func_?();
+          pMVar12 = (this->fields).networkGame;
+          bVar13 = 0;
+          if (pMVar12 != (MVNetworkGame *)0x0) {
             MVNetworkGame::MVNetworkGame_HandleGameSnapshotData
-                      (pMVar32,(BytePacker *)unaff_EDI.typeHandle,eventCode,*pbVar82,
-                       (MethodInfo *)0x0);
-            *unaff_FS_OFFSET = pvStack_3;
+                      (pMVar12,(BytePacker *)pMVar11,eventCode,*pbVar67,(MethodInfo *)0x0);
+            *unaff_FS_OFFSET = uStack_3;
             return;
           }
         }
       }
       break;
     }
-    pBVar81 = (Byte__Array *)func_?(unaff_EDI.dummy,TypeInfo__System__Byte);
-    bVar26 = 0;
-    if (pBVar81 != (Byte__Array *)0x0) goto code_?;
+    pBVar66 = (Byte__Array *)func_?();
+    bVar13 = 0;
+    if (pBVar66 != (Byte__Array *)0x0) goto code_?;
     goto code_?;
   case MVEventCodes__Enum_SetActorReady:
-    bVar26 = 0;
-    unaff_EDI = _Var96;
+    bVar13 = 0;
+    unaff_EDI = (MVAvatar__Class *)photonEvent;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = 0;
-      unaff_ESI.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0xfe,(MethodInfo *)0x0);
-      pMVar32 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      bVar26 = 0;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        pMVar53 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar32,(MethodInfo *)0x0);
-        bVar26 = 0;
-        if (pMVar53 != (MVLocalPlayer *)0x0) {
-          eventCode = (pMVar53->fields)._._ActorNr_k__BackingField;
-          bVar26 = 0;
-          if (unaff_ESI.dummy != (Object__Class *)0x0) {
-            pIVar28 = (Il2CppClass *)
-                      ((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image->codeGenModule;
-            pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-            bVar26 = pIVar28 < pIVar29;
-            pSVar35 = (String__Class *)TypeInfo__System__Int32;
-            if (pIVar28 != pIVar29) goto code_?;
-            pMVar46 = (MVEventCodes__Enum *)func_?();
-            if (*pMVar46 == eventCode) {
+      pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                          (photonEvent,0xfe,(MethodInfo *)0x0);
+      pMVar12 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      bVar13 = 0;
+      unaff_EDI = (MVAvatar__Class *)photonEvent;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        pMVar44 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar12,(MethodInfo *)0x0);
+        bVar13 = 0;
+        unaff_EDI = (MVAvatar__Class *)photonEvent;
+        if (pMVar44 != (MVLocalPlayer *)0x0) {
+          iVar41 = (pMVar44->fields)._._ActorNr_k__BackingField;
+          bVar13 = 0;
+          unaff_EDI = (MVAvatar__Class *)photonEvent;
+          if (pOVar14 != (Object *)0x0) {
+            pIVar15 = (pOVar14->klass->_0).element_class;
+            pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+            bVar13 = pIVar15 < pIVar16;
+            unaff_EDI = (MVAvatar__Class *)photonEvent;
+            if (pIVar15 != pIVar16) goto code_?;
+            piVar40 = (int *)func_?();
+            bVar6 = (byte)((uint)pOVar14 >> 0x10);
+            if (*piVar40 == iVar41) {
               MVGameControllerBase::MVGameControllerBase_set_JoinState
                         (MVJoinState__Enum_Playing,(MethodInfo *)0x0);
               MVNetworkGame_EventHandling_HandleActorReadyMetric(this,(MethodInfo *)0x0);
-              pMVar32 = (this->fields).networkGame;
-              bVar26 = 0;
-              unaff_ESI = (_union_86)this;
-              if (pMVar32 != (MVNetworkGame *)0x0) {
-                pMVar83 = (pMVar32->fields)._GameCoinManager_k__BackingField;
-                bVar26 = 0;
-                unaff_ESI = (_union_86)this;
-                if (pMVar83 != (MVGameCoinManager *)0x0) {
+              pMVar12 = (this->fields).networkGame;
+              bVar13 = 0;
+              unaff_EDI = (MVAvatar__Class *)photonEvent;
+              if (pMVar12 != (MVNetworkGame *)0x0) {
+                pMVar72 = (pMVar12->fields)._GameCoinManager_k__BackingField;
+                bVar13 = 0;
+                unaff_EDI = (MVAvatar__Class *)photonEvent;
+                if (pMVar72 != (MVGameCoinManager *)0x0) {
                   MVGameCoinManager::MVGameCoinManager_Reset
-                            (pMVar83,(this->fields).networkGame,(MethodInfo *)0x0);
-                  pMVar32 = (this->fields).networkGame;
-                  bVar26 = 0;
-                  unaff_ESI = (_union_86)this;
-                  if (pMVar32 != (MVNetworkGame *)0x0) {
-                    pMVar86 = (pMVar32->fields).operationRequests;
-                    bVar26 = 0;
-                    unaff_ESI.dummy = (Object__Class *)0x0;
-                    if (pMVar86 != (MVNetworkGame_OperationRequests *)0x0) {
+                            (pMVar72,(this->fields).networkGame,(MethodInfo *)0x0);
+                  pMVar12 = (this->fields).networkGame;
+                  bVar13 = 0;
+                  unaff_EDI = (MVAvatar__Class *)photonEvent;
+                  if (pMVar12 != (MVNetworkGame *)0x0) {
+                    pMVar73 = (pMVar12->fields).operationRequests;
+                    bVar13 = 0;
+                    unaff_EDI = (MVAvatar__Class *)photonEvent;
+                    if (pMVar73 != (MVNetworkGame_OperationRequests *)0x0) {
                       if (cRam_? == '\0') {
-                        func_?(&
-                                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
-                                       );
-                        func_?(&
-                                        TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
-                                       );
-                        func_?(&TypeInfo__ExitGames__Client__Photon__SendOptions);
+                        func_?();
+                        func_?();
+                        func_?();
                         cRam_? = '\x01';
                       }
-                      _Stack_48.dummy =
-                           (void *)func_?(
-                                                  TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
-                                                  );
+                      this_10 = (Dictionary_2_System_Byte_System_Object_ *)func_?();
                       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                       Object]::Dictionary_2_System_Byte_System_Object___ctor
-                                ((Dictionary_2_System_Byte_System_Object_ *)_Stack_48.typeHandle,
+                                (this_10,
                                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
                                 );
-                      unaff_ESI = (_union_86)(pMVar86->fields).peer;
+                      pPVar74 = (pMVar73->fields).peer;
                       if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).
                           cctor_finished_or_no_cctor == 0) {
-                        func_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
+                        func_?();
                       }
-                      pSVar87 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
-                      eventCode._0_1_ = (pSVar87->SendReliable).Encrypt;
-                      eventCode._1_1_ = (pSVar87->SendReliable).Channel;
-                      eventCode._2_2_ = *(undefined2 *)&(pSVar87->SendReliable).field_0x6;
-                      bVar26 = 0;
-                      if (unaff_ESI.dummy != (Object__Class *)0x0) {
-                        pIVar36 = ((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image;
-                        (*(code *)pIVar36[6].assembly)
-                                  (unaff_ESI.dummy,0x66,_Stack_48.dummy,
-                                   (pSVar87->SendReliable).DeliveryMode,eventCode,
-                                   pIVar36[6].typeCount);
+                      bVar13 = 0;
+                      unaff_EDI = (MVAvatar__Class *)photonEvent;
+                      if (pPVar74 != (PhotonPeer *)0x0) {
+                        (*(code *)(pPVar74->klass->vtable).SendOperation.method)();
                         goto code_?;
                       }
                     }
@@ -2541,40 +2269,34 @@ code_?:
             else {
 code_?:
               uStack_1 = 0;
-              pMVar32 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              bVar26 = 0;
-              if (pMVar32 != (MVNetworkGame *)0x0) {
-                eventCode = (MVEventCodes__Enum)(pMVar32->fields).playerContainer;
-                unaff_ESI.dummy =
-                     Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                               (_Var96.dummy,0xfe,(MethodInfo *)0x0);
-                pSVar34 = (String *)
-                          Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
-                          EventData_get_Item((EventData *)_Var96.typeHandle,0xd0,(MethodInfo *)0x0);
-                unaff_EDI = (_union_86)eventCode;
-                bVar26 = 0;
-                if ((eventCode != MVEventCodes__Enum_NoCodeSet) &&
-                   (bVar26 = 0, pSVar34 != (String *)0x0)) {
-                  pIVar28 = (pSVar34->klass->_0).element_class;
-                  pIVar29 = (TypeInfo__System__Boolean->_0).element_class;
-                  bVar26 = pIVar28 < pIVar29;
-                  pSVar35 = (String__Class *)TypeInfo__System__Boolean;
-                  if (pIVar28 != pIVar29) goto code_?;
-                  puVar5 = (undefined1 *)func_?(pSVar34);
-                  eventCode = CONCAT31((int3)((uint)puVar5 >> 8),*puVar5);
-                  bVar26 = 0;
-                  if (unaff_ESI.dummy != (Object__Class *)0x0) {
-                    pIVar28 = (Il2CppClass *)
-                              ((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image->codeGenModule;
-                    pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-                    bVar26 = pIVar28 < pIVar29;
-                    pSVar35 = (String__Class *)TypeInfo__System__Int32;
-                    if (pIVar28 == pIVar29) {
-                      piVar31 = (int32_t *)func_?(unaff_ESI.dummy);
+              pMVar12 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              bVar13 = 0;
+              unaff_EDI = (MVAvatar__Class *)photonEvent;
+              if (pMVar12 != (MVNetworkGame *)0x0) {
+                unaff_EDI = (MVAvatar__Class *)(pMVar12->fields).playerContainer;
+                pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
+                          EventData_get_Item(photonEvent,0xfe,(MethodInfo *)0x0);
+                pOVar33 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
+                          EventData_get_Item(photonEvent,0xd0,(MethodInfo *)0x0);
+                bVar13 = 0;
+                if ((unaff_EDI != (MVAvatar__Class *)0x0) && (bVar13 = 0, pOVar33 != (Object *)0x0))
+                {
+                  pIVar15 = (pOVar33->klass->_0).element_class;
+                  pIVar16 = (TypeInfo__System__Boolean->_0).element_class;
+                  bVar13 = pIVar15 < pIVar16;
+                  if (pIVar15 != pIVar16) goto code_?;
+                  pbVar67 = (bool *)func_?();
+                  bVar25 = *pbVar67;
+                  bVar13 = 0;
+                  if (pOVar14 != (Object *)0x0) {
+                    pIVar15 = (pOVar14->klass->_0).element_class;
+                    pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+                    bVar13 = pIVar15 < pIVar16;
+                    if (pIVar15 == pIVar16) {
+                      piVar17 = (int32_t *)func_?();
                       MVPlayerContainer::MVPlayerContainer_SetPlayerReady
-                                ((MVPlayerContainer *)unaff_EDI.typeHandle,*piVar31,(bool)eventCode,
-                                 (MethodInfo *)0x0);
-                      *unaff_FS_OFFSET = pvStack_3;
+                                ((MVPlayerContainer *)unaff_EDI,*piVar17,bVar25,(MethodInfo *)0x0);
+                      *unaff_FS_OFFSET = uStack_3;
                       return;
                     }
                     goto code_?;
@@ -2588,47 +2310,44 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_RequestFriends:
-    unaff_EDI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
+    pMVar11 = (MVAvatar__Class *)(this->fields).networkGame;
+    bVar13 = 0;
+    unaff_EDI = pMVar11;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar24;
-      pDVar38 = (Dictionary_2_System_Object_System_Object_ *)
+      pDVar20 = (Dictionary_2_System_Object_System_Object_ *)
                 Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                           (photonEvent,0x33,(MethodInfo *)0x0);
-      bVar26 = 0;
-      if (unaff_EDI.dummy != (void *)0x0) {
-        if (pDVar38 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      bVar13 = 0;
+      if (pMVar11 != (MVAvatar__Class *)0x0) {
+        if (pDVar20 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
           MVNetworkGame::MVNetworkGame_OnRequestFriendsResponse
-                    ((MVNetworkGame *)unaff_EDI.typeHandle,
-                     (Dictionary_2_System_Object_System_Object_ *)0x0,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    ((MVNetworkGame *)pMVar11,(Dictionary_2_System_Object_System_Object_ *)0x0,
+                     (MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        if (((pDVar38->klass->_1).naturalAligment <
+        if (((pDVar20->klass->_1).naturalAligment <
              (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment) ||
            ((Dictionary_2_System_Object_System_Object___Class *)
-            (pDVar38->klass->_1).typeHierarchy
+            (pDVar20->klass->_1).typeHierarchy
             [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment - 1] !=
             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-          bVar37 = false;
+          bVar22 = false;
         }
         else {
-          bVar37 = true;
+          bVar22 = true;
         }
-        pDVar85 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-        if (bVar37) {
-          pDVar85 = pDVar38;
+        pDVar21 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+        if (bVar22) {
+          pDVar21 = pDVar20;
         }
-        bVar26 = 0;
-        unaff_ESI = (_union_86)
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-        ;
-        if (pDVar85 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        bVar13 = 0;
+        if (pDVar21 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
           MVNetworkGame::MVNetworkGame_OnRequestFriendsResponse
-                    ((MVNetworkGame *)unaff_EDI.typeHandle,pDVar85,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    ((MVNetworkGame *)pMVar11,pDVar21,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
         goto code_?;
@@ -2636,47 +2355,44 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_GetItemInventory:
-    unaff_EDI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
+    pMVar11 = (MVAvatar__Class *)(this->fields).networkGame;
+    bVar13 = 0;
+    unaff_EDI = pMVar11;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar24;
-      pDVar38 = (Dictionary_2_System_Object_System_Object_ *)
+      pDVar20 = (Dictionary_2_System_Object_System_Object_ *)
                 Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                           (photonEvent,0xf5,(MethodInfo *)0x0);
-      bVar26 = 0;
-      if (unaff_EDI.dummy != (void *)0x0) {
-        if (pDVar38 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      bVar13 = 0;
+      if (pMVar11 != (MVAvatar__Class *)0x0) {
+        if (pDVar20 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
           MVNetworkGame::MVNetworkGame_OnInventoryResultSetResponse
-                    ((MVNetworkGame *)unaff_EDI.typeHandle,
-                     (Dictionary_2_System_Object_System_Object_ *)0x0,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    ((MVNetworkGame *)pMVar11,(Dictionary_2_System_Object_System_Object_ *)0x0,
+                     (MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        if (((pDVar38->klass->_1).naturalAligment <
+        if (((pDVar20->klass->_1).naturalAligment <
              (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment) ||
            ((Dictionary_2_System_Object_System_Object___Class *)
-            (pDVar38->klass->_1).typeHierarchy
+            (pDVar20->klass->_1).typeHierarchy
             [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment - 1] !=
             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-          bVar37 = false;
+          bVar22 = false;
         }
         else {
-          bVar37 = true;
+          bVar22 = true;
         }
-        pDVar85 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-        if (bVar37) {
-          pDVar85 = pDVar38;
+        pDVar21 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+        if (bVar22) {
+          pDVar21 = pDVar20;
         }
-        bVar26 = 0;
-        unaff_ESI = (_union_86)
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-        ;
-        if (pDVar85 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        bVar13 = 0;
+        if (pDVar21 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
           MVNetworkGame::MVNetworkGame_OnInventoryResultSetResponse
-                    ((MVNetworkGame *)unaff_EDI.typeHandle,pDVar85,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    ((MVNetworkGame *)pMVar11,pDVar21,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
         goto code_?;
@@ -2684,108 +2400,95 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_GetItemShopInventory:
-    eventCode = (MVEventCodes__Enum)(this->fields).networkGame;
-    bVar26 = 0;
-    unaff_EDI = _Var96;
+    pMVar11 = (MVAvatar__Class *)(this->fields).networkGame;
+    bVar13 = 0;
+    unaff_EDI = (MVAvatar__Class *)photonEvent;
     if (photonEvent == (EventData *)0x0) break;
-    bVar25 = bVar13;
-    unaff_ESI.typeHandle =
-         (Il2CppMetadataTypeHandle)
-         Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                   (photonEvent,0xf5,(MethodInfo *)0x0);
-    pSVar27 = (Single__Class *)
+    pDVar20 = (Dictionary_2_System_Object_System_Object_ *)
               Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                        ((EventData *)_Var96.typeHandle,7,(MethodInfo *)0x0);
-    unaff_EDI = (_union_86)eventCode;
-    bVar26 = 0;
-    if ((eventCode == MVEventCodes__Enum_NoCodeSet) || (bVar26 = 0, pSVar27 == (Single__Class *)0x0)
-       ) break;
-    pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-    pIVar29 = (TypeInfo__System__Boolean->_0).element_class;
-    bVar26 = pIVar28 < pIVar29;
-    pIVar30 = (Int32__Class *)TypeInfo__System__Boolean;
-    if (pIVar28 != pIVar29) goto code_?;
-    pcVar79 = (char *)func_?();
-    bVar37 = *pcVar79 == '\0';
-    eventCode = CONCAT31(eventCode._1_3_,bVar37);
-    if (unaff_ESI.dummy == (Object__Class *)0x0) {
+                        (photonEvent,0xf5,(MethodInfo *)0x0);
+    pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                        (photonEvent,7,(MethodInfo *)0x0);
+    bVar13 = 0;
+    unaff_EDI = pMVar11;
+    if ((pMVar11 == (MVAvatar__Class *)0x0) || (bVar13 = 0, pOVar14 == (Object *)0x0)) break;
+    pIVar15 = (pOVar14->klass->_0).element_class;
+    pIVar16 = (TypeInfo__System__Boolean->_0).element_class;
+    bVar13 = pIVar15 < pIVar16;
+    if (pIVar15 != pIVar16) goto code_?;
+    pcVar69 = (char *)func_?();
+    bVar6 = (byte)((uint)pOVar14 >> 0x10);
+    if (pDVar20 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
       MVNetworkGame::MVNetworkGame_OnShopInventoryResultSetResponse
-                ((MVNetworkGame *)unaff_EDI.typeHandle,
-                 (Dictionary_2_System_Object_System_Object_ *)0x0,bVar37,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+                ((MVNetworkGame *)pMVar11,(Dictionary_2_System_Object_System_Object_ *)0x0,
+                 *pcVar69 == '\0',(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
-    if ((*(byte *)&((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image[4].assembly <
+    if (((pDVar20->klass->_1).naturalAligment <
          (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
          naturalAligment) ||
-       (*(Dictionary_2_System_Object_System_Object___Class **)
-         (((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image[2].typeCount +
-         ((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-          naturalAligment - 1) * 4) !=
+       ((Dictionary_2_System_Object_System_Object___Class *)
+        (pDVar20->klass->_1).typeHierarchy
+        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         naturalAligment - 1] !=
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-      bVar88 = false;
+      bVar22 = false;
     }
     else {
-      bVar88 = true;
+      bVar22 = true;
     }
-    _Var60.dummy = (Object__Class *)0x0;
-    if (bVar88) {
-      _Var60.typeHandle = unaff_ESI.typeHandle;
+    pDVar21 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+    if (bVar22) {
+      pDVar21 = pDVar20;
     }
-    bVar26 = 0;
-    pMVar84 = (MVAvatarSpawnRoleCreator__Class *)
-              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-    if (_Var60.dummy != (Object__Class *)0x0) {
+    bVar13 = 0;
+    if (pDVar21 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
       MVNetworkGame::MVNetworkGame_OnShopInventoryResultSetResponse
-                ((MVNetworkGame *)unaff_EDI.typeHandle,
-                 (Dictionary_2_System_Object_System_Object_ *)_Var60.typeHandle,bVar37,
-                 (MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+                ((MVNetworkGame *)pMVar11,pDVar21,*pcVar69 == '\0',(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     goto code_?;
   case MVEventCodes__Enum_GetBuiltInItemBusinessData:
-    unaff_EDI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
+    pMVar11 = (MVAvatar__Class *)(this->fields).networkGame;
+    bVar13 = 0;
+    unaff_EDI = pMVar11;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar24;
-      pDVar38 = (Dictionary_2_System_Object_System_Object_ *)
+      pDVar20 = (Dictionary_2_System_Object_System_Object_ *)
                 Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                           (photonEvent,0x83,(MethodInfo *)0x0);
-      bVar26 = 0;
-      if (unaff_EDI.dummy != (void *)0x0) {
-        if (pDVar38 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      bVar13 = 0;
+      if (pMVar11 != (MVAvatar__Class *)0x0) {
+        if (pDVar20 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
           MVNetworkGame::MVNetworkGame_OnGetBuiltInItemBusinessData
-                    ((MVNetworkGame *)unaff_EDI.typeHandle,
-                     (Dictionary_2_System_Object_System_Object_ *)0x0,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    ((MVNetworkGame *)pMVar11,(Dictionary_2_System_Object_System_Object_ *)0x0,
+                     (MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        if (((pDVar38->klass->_1).naturalAligment <
+        if (((pDVar20->klass->_1).naturalAligment <
              (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment) ||
            ((Dictionary_2_System_Object_System_Object___Class *)
-            (pDVar38->klass->_1).typeHierarchy
+            (pDVar20->klass->_1).typeHierarchy
             [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment - 1] !=
             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-          bVar37 = false;
+          bVar22 = false;
         }
         else {
-          bVar37 = true;
+          bVar22 = true;
         }
-        pDVar85 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-        if (bVar37) {
-          pDVar85 = pDVar38;
+        pDVar21 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+        if (bVar22) {
+          pDVar21 = pDVar20;
         }
-        bVar26 = 0;
-        unaff_ESI = (_union_86)
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-        ;
-        if (pDVar85 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        bVar13 = 0;
+        if (pDVar21 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
           MVNetworkGame::MVNetworkGame_OnGetBuiltInItemBusinessData
-                    ((MVNetworkGame *)unaff_EDI.typeHandle,pDVar85,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    ((MVNetworkGame *)pMVar11,pDVar21,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
         goto code_?;
@@ -2793,47 +2496,44 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_LargeDBQueryAvatarShopInventory:
-    unaff_EDI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
+    pMVar11 = (MVAvatar__Class *)(this->fields).networkGame;
+    bVar13 = 0;
+    unaff_EDI = pMVar11;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar24;
-      pDVar38 = (Dictionary_2_System_Object_System_Object_ *)
+      pDVar20 = (Dictionary_2_System_Object_System_Object_ *)
                 Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                           (photonEvent,0xf5,(MethodInfo *)0x0);
-      bVar26 = 0;
-      if (unaff_EDI.dummy != (void *)0x0) {
-        if (pDVar38 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      bVar13 = 0;
+      if (pMVar11 != (MVAvatar__Class *)0x0) {
+        if (pDVar20 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
           MVNetworkGame::MVNetworkGame_OnAvatarShopInventoryResultSetResponse
-                    ((MVNetworkGame *)unaff_EDI.typeHandle,
-                     (Dictionary_2_System_Object_System_Object_ *)0x0,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    ((MVNetworkGame *)pMVar11,(Dictionary_2_System_Object_System_Object_ *)0x0,
+                     (MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        if (((pDVar38->klass->_1).naturalAligment <
+        if (((pDVar20->klass->_1).naturalAligment <
              (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment) ||
            ((Dictionary_2_System_Object_System_Object___Class *)
-            (pDVar38->klass->_1).typeHierarchy
+            (pDVar20->klass->_1).typeHierarchy
             [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment - 1] !=
             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-          bVar37 = false;
+          bVar22 = false;
         }
         else {
-          bVar37 = true;
+          bVar22 = true;
         }
-        pDVar85 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-        if (bVar37) {
-          pDVar85 = pDVar38;
+        pDVar21 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+        if (bVar22) {
+          pDVar21 = pDVar20;
         }
-        bVar26 = 0;
-        unaff_ESI = (_union_86)
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-        ;
-        if (pDVar85 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        bVar13 = 0;
+        if (pDVar21 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
           MVNetworkGame::MVNetworkGame_OnAvatarShopInventoryResultSetResponse
-                    ((MVNetworkGame *)unaff_EDI.typeHandle,pDVar85,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    ((MVNetworkGame *)pMVar11,pDVar21,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
         goto code_?;
@@ -2841,61 +2541,55 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_InitializeAvatarEdit:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent == (EventData *)0x0) break;
-    bVar25 = bVar18;
-    _Var96.typeHandle =
-         (Il2CppMetadataTypeHandle)
-         Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                   (photonEvent,0xa4,(MethodInfo *)0x0);
-    eventCode = (MVEventCodes__Enum)TypeInfo__System__Byte;
-    if (_Var96.dummy == (void *)0x0) {
-      pBVar81 = (Byte__Array *)0x0;
+    pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                        (photonEvent,0xa4,(MethodInfo *)0x0);
+    if (pOVar14 == (Object *)0x0) {
+      pBVar66 = (Byte__Array *)0x0;
 code_?:
-      eventCode = (MVEventCodes__Enum)(this->fields).networkGame;
-      unaff_ESI.dummy = (void *)func_?();
+      pMVar12 = (this->fields).networkGame;
+      pBVar31 = (BytePacker *)func_?();
       MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1
-                ((BytePacker *)unaff_ESI.typeHandle,pBVar81,(MethodInfo *)0x0);
-      unaff_EDI.dummy = (void *)func_?();
+                (pBVar31,pBVar66,(MethodInfo *)0x0);
+      unaff_EDI = (MVAvatar__Class *)func_?();
       MVWorldObject.dll::MV::WorldObject::MvAvatarMetaDataWoMap::MvAvatarMetaDataWoMap__ctor
-                ((MvAvatarMetaDataWoMap *)unaff_EDI.typeHandle,(BytePacker *)unaff_ESI.typeHandle,
-                 (MethodInfo *)0x0);
-      bVar26 = 0;
-      if (eventCode != MVEventCodes__Enum_NoCodeSet) {
-        ((_union_86 *)(eventCode + 0x9c))->type = (Il2CppType *)unaff_EDI;
-        func_?(eventCode + 0x9c,unaff_EDI.dummy);
-        *unaff_FS_OFFSET = pvStack_3;
+                ((MvAvatarMetaDataWoMap *)unaff_EDI,pBVar31,(MethodInfo *)0x0);
+      bVar13 = 0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        (pMVar12->fields)._AvatarMetaDataWoMap_k__BackingField = (MvAvatarMetaDataWoMap *)unaff_EDI;
+        func_?();
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
       break;
     }
-    pBVar81 = (Byte__Array *)func_?();
-    bVar26 = 0;
-    if (pBVar81 != (Byte__Array *)0x0) goto code_?;
+    pBVar66 = (Byte__Array *)func_?();
+    bVar13 = 0;
+    unaff_EDI = (MVAvatar__Class *)0x0;
+    if (pBVar66 != (Byte__Array *)0x0) goto code_?;
     goto code_?;
   case MVEventCodes__Enum_GetActiveAvatar:
-    unaff_ESI = (_union_86)(this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar14;
-      pSVar27 = (Single__Class *)
-                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+      pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                           (photonEvent,0x16,(MethodInfo *)0x0);
-      bVar26 = 0;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if ((unaff_ESI.dummy != (void *)0x0) &&
-         (bVar26 = 0, unaff_EDI = unaff_EDI, pSVar27 != (Single__Class *)0x0)) {
-        pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-        pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-        bVar26 = pIVar28 < pIVar29;
-        pIVar30 = TypeInfo__System__Int32;
-        if (pIVar28 == pIVar29) {
-          piVar31 = (int32_t *)func_?();
-          MVNetworkGame::MVNetworkGame_OnGetActiveAvatarResponse
-                    ((MVNetworkGame *)unaff_ESI.typeHandle,*piVar31,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+      if ((pMVar12 != (MVNetworkGame *)0x0) &&
+         (bVar13 = 0, unaff_EDI = unaff_EDI, pOVar14 != (Object *)0x0)) {
+        pIVar15 = (pOVar14->klass->_0).element_class;
+        pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+        bVar13 = pIVar15 < pIVar16;
+        pMVar11 = unaff_EDI;
+        if (pIVar15 == pIVar16) {
+          piVar17 = (int32_t *)func_?();
+          MVNetworkGame::MVNetworkGame_OnGetActiveAvatarResponse(pMVar12,*piVar17,(MethodInfo *)0x0)
+          ;
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
         goto code_?;
@@ -2903,211 +2597,183 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_SyncronizePing:
-    bVar25 = bVar16;
-    pMVar86 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-    bVar26 = 0;
-    unaff_ESI.dummy = (Object__Class *)0x0;
+    pMVar73 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar86 != (MVNetworkGame_OperationRequests *)0x0) {
+    if (pMVar73 != (MVNetworkGame_OperationRequests *)0x0) {
       if (cRam_? == '\0') {
         func_?();
-        func_?(&
-                        TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
-                       );
-        func_?(&TypeInfo__ExitGames__Client__Photon__SendOptions);
+        func_?();
+        func_?();
         cRam_? = '\x01';
       }
-      pPVar89 = (pMVar86->fields).peer;
-      unaff_EDI.dummy = (void *)func_?();
+      pPVar74 = (pMVar73->fields).peer;
+      unaff_EDI = (MVAvatar__Class *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object___ctor
-                ((Dictionary_2_System_Byte_System_Object_ *)unaff_EDI.typeHandle,
+                ((Dictionary_2_System_Byte_System_Object_ *)unaff_EDI,
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
                 );
       if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
+        func_?();
       }
-      pSVar87 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
-      uVar72._0_1_ = (pSVar87->SendReliable).Encrypt;
-      uVar72._1_1_ = (pSVar87->SendReliable).Channel;
-      uVar72._2_2_ = *(undefined2 *)&(pSVar87->SendReliable).field_0x6;
-      bVar26 = 0;
-      unaff_ESI.dummy = (Object__Class *)0x0;
-      if (pPVar89 != (PhotonPeer *)0x0) {
-        (*(code *)(pPVar89->klass->vtable).SendOperation.method)
-                  (pPVar89,0x3c,unaff_EDI.dummy,(pSVar87->SendReliable).DeliveryMode,uVar72,
-                   pPVar89->klass[1]._0.image);
-        *unaff_FS_OFFSET = pvStack_3;
+      bVar13 = 0;
+      if (pPVar74 != (PhotonPeer *)0x0) {
+        (*(code *)(pPVar74->klass->vtable).SendOperation.method)();
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_JoinNotification:
-    bVar25 = bVar17;
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      bVar25 = bVar16;
-      func_?(TypeInfo__UnityEngine__Debug);
+      func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
               ((Object *)StringLiteral_MVEventCodes_JoinNotification,(MethodInfo *)0x0);
-    unaff_ESI.dummy =
-         (void *)func_?(
-                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                );
+    this_11 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
     ::StyleComplexSelector+PseudoStateData]::
     Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-              ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                *)unaff_ESI.typeHandle,
+              (this_11,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    eventCode = eventCode & 0xffffff;
-    unaff_EDI.dummy = (void *)func_?(TypeInfo__System__Byte,(byte *)((int)&eventCode + 3));
-    bVar26 = 0;
+    unaff_EDI = (MVAvatar__Class *)func_?();
+    bVar13 = 0;
     if (photonEvent != (EventData *)0x0) {
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0xfe,(MethodInfo *)0x0);
-      p_Var65 = (_union_86 *)func_?(pOVar40,TypeInfo__System__Int32);
-      _Stack_48 = *p_Var65;
-      pOVar40 = (Object *)func_?(TypeInfo__System__Int32,&_Stack_48);
-      bVar26 = 0;
-      if (unaff_ESI.dummy != (Object__Class *)0x0) {
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xfe,(MethodInfo *)0x0);
+      func_?();
+      pOVar14 = (Object *)func_?();
+      bVar13 = 0;
+      if (this_11 !=
+          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
+          )0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  ((Dictionary_2_System_Object_System_Object_ *)unaff_ESI.typeHandle,
-                   (Object *)unaff_EDI.typeHandle,pOVar40,
+                  ((Dictionary_2_System_Object_System_Object_ *)this_11,(Object *)unaff_EDI,pOVar14,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         MVGameControllerBase::MVGameControllerBase_PostGameMsg
                   (MVGameMsgType__Enum_UserJoined,
-                   (Dictionary_2_System_Object_System_Object_ *)unaff_ESI.typeHandle,
-                   (MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+                   (Dictionary_2_System_Object_System_Object_ *)this_11,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
     }
     break;
   case MVEventCodes__Enum_CloneWorldObjectTreeWithPosition:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
+    if (pMVar12 != (MVNetworkGame *)0x0) {
       MVNetworkGame::MVNetworkGame_OnCloneWorldObjectTreePosition
-                (pMVar32,photonEvent,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+                (pMVar12,photonEvent,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
   case MVEventCodes__Enum_CloneTempWorldObjectWithOriginalReferenceEvent:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
+    if (pMVar12 != (MVNetworkGame *)0x0) {
       MVNetworkGame::MVNetworkGame_OnCloneTempWorldObjectWithOriginalReferenceEvent
-                (pMVar32,photonEvent,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+                (pMVar12,photonEvent,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
   case MVEventCodes__Enum_LogicObjectFiringStateChange:
   case MVEventCodes__Enum_CollectTheItemDropOff:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      pMVar90 = (pMVar32->fields).logicObjectManagerClientWrapper;
-      bVar26 = 0;
-      unaff_ESI.dummy = (Object__Class *)0x0;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      pMVar75 = (pMVar12->fields).logicObjectManagerClientWrapper;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pMVar90 != (MVNetworkGame_LogicObjectManagerClientWrapper *)0x0) {
-        unaff_ESI = (_union_86)(pMVar90->fields).logicEventQueue;
-        bVar26 = 0;
+      if (pMVar75 != (MVNetworkGame_LogicObjectManagerClientWrapper *)0x0) {
+        pMVar76 = (pMVar75->fields).logicEventQueue;
+        bVar13 = 0;
         unaff_EDI = unaff_EDI;
-        if (unaff_ESI.dummy != (Object__Class *)0x0) {
-          bVar25 = bVar13;
+        if (pMVar76 != (MVNetworkGame_LogicEventQueue *)0x0) {
           if (cRam_? == '\0') {
-            bVar25 = bVar12;
-            func_?(&
-                            MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__Add_int__System__Collections__Generic__Queue<ExitGames::Client::Photon::EventData>_
-                           );
-            func_?(&
-                            MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__ContainsKey_int_
-                           );
-            func_?(&
-                            MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__get_Item_int_
-                           );
-            func_?(&TypeInfo__System__Int32);
-            func_?(&
-                            MethodInfo__System__Collections__Generic__Queue<ExitGames::Client::Photon::EventData>__Enqueue_ExitGames__Client__Photon__EventData_
-                           );
-            func_?(&
-                            MethodInfo__System__Collections__Generic__Queue<ExitGames::Client::Photon::EventData>__Queue__
-                           );
-            func_?(&
-                            TypeInfo__System__Collections__Generic__Queue<ExitGames::Client::Photon::EventData>
-                           );
+            func_?();
+            func_?();
+            func_?();
+            func_?();
+            func_?();
+            func_?();
+            func_?();
             cRam_? = '\x01';
           }
-          unaff_EDI = (_union_86)photonEvent;
-          bVar26 = 0;
+          bVar13 = 0;
+          unaff_EDI = (MVAvatar__Class *)photonEvent;
           if (photonEvent != (EventData *)0x0) {
-            pSVar27 = (Single__Class *)
-                      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+            pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                                 (photonEvent,0x23,(MethodInfo *)0x0);
-            bVar26 = 0;
-            if (pSVar27 != (Single__Class *)0x0) {
-              pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-              pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-              bVar26 = pIVar28 < pIVar29;
-              pIVar30 = TypeInfo__System__Int32;
-              if (pIVar28 != pIVar29) goto code_?;
-              pMVar46 = (MVEventCodes__Enum *)func_?();
-              eventCode = *pMVar46;
-              bVar26 = 0;
-              if ((Object__Class *)unaff_ESI.type[1].data.typeHandle != (Object__Class *)0x0) {
-                bVar41 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            bVar13 = 0;
+            unaff_EDI = (MVAvatar__Class *)photonEvent;
+            if (pOVar14 != (Object *)0x0) {
+              pIVar15 = (pOVar14->klass->_0).element_class;
+              pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+              bVar13 = pIVar15 < pIVar16;
+              if (pIVar15 != pIVar16) goto code_?;
+              piVar17 = (int32_t *)func_?();
+              pDVar77 = (pMVar76->fields).logicEvents;
+              iVar29 = *piVar17;
+              bVar13 = 0;
+              unaff_EDI = (MVAvatar__Class *)photonEvent;
+              if (pDVar77 !=
+                  (Dictionary_2_System_Int32_Queue_1_ExitGames_Client_Photon_EventData_ *)0x0) {
+                bVar25 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                          Int32,System::Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                                   ((Dictionary_2_System_Int32_System_Single_ *)
-                                    unaff_ESI.type[1].data.typeHandle,eventCode,
+                                   ((Dictionary_2_System_Int32_System_Single_ *)pDVar77,iVar29,
                                     MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__ContainsKey_int_
                                    );
-                if (bVar41 == 0) {
-                  _Stack_48 = (_union_86)unaff_ESI.type[1].data.typeHandle;
-                  VStack_8.z = (float)func_?(
-                                                  TypeInfo__System__Collections__Generic__Queue<ExitGames::Client::Photon::EventData>
-                                                  );
+                if (bVar25 == 0) {
+                  pDVar77 = (pMVar76->fields).logicEvents;
+                  VStack_10.z = (float)func_?();
                   System.Core.dll::System::Runtime::CompilerServices::
                   ReadOnlyCollectionBuilder`1[System::Object]::
                   ReadOnlyCollectionBuilder_1_System_Object___ctor
-                            ((ReadOnlyCollectionBuilder_1_System_Object_ *)VStack_8.z,
+                            ((ReadOnlyCollectionBuilder_1_System_Object_ *)VStack_10.z,
                              MethodInfo__System__Collections__Generic__Queue<ExitGames::Client::Photon::EventData>__Queue__
                             );
-                  bVar26 = 0;
-                  if (_Stack_48.dummy == (Object__Class *)0x0) break;
+                  bVar13 = 0;
+                  unaff_EDI = (MVAvatar__Class *)photonEvent;
+                  if (pDVar77 ==
+                      (Dictionary_2_System_Int32_Queue_1_ExitGames_Client_Photon_EventData_ *)0x0)
+                  break;
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                   Object]::Dictionary_2_System_Int32_System_Object__Add
-                            ((Dictionary_2_System_Int32_System_Object_ *)_Stack_48.typeHandle,
-                             eventCode,(Object *)VStack_8.z,
+                            ((Dictionary_2_System_Int32_System_Object_ *)pDVar77,iVar29,
+                             (Object *)VStack_10.z,
                              MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__Add_int__System__Collections__Generic__Queue<ExitGames::Client::Photon::EventData>_
                             );
                 }
-                bVar26 = 0;
-                if ((Object__Class *)unaff_ESI.type[1].data.typeHandle != (Object__Class *)0x0) {
-                  this_07 = (Queue_1_System_Object_ *)
+                pDVar77 = (pMVar76->fields).logicEvents;
+                bVar13 = 0;
+                unaff_EDI = (MVAvatar__Class *)photonEvent;
+                if (pDVar77 !=
+                    (Dictionary_2_System_Int32_Queue_1_ExitGames_Client_Photon_EventData_ *)0x0) {
+                  this_12 = (Queue_1_System_Object_ *)
                             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                             Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                      ((Dictionary_2_System_Int32_System_Object_ *)
-                                       unaff_ESI.type[1].data.typeHandle,eventCode,
+                                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar77,iVar29,
                                        MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__get_Item_int_
                                       );
-                  bVar26 = 0;
-                  if (this_07 != (Queue_1_System_Object_ *)0x0) {
+                  bVar13 = 0;
+                  unaff_EDI = (MVAvatar__Class *)photonEvent;
+                  if (this_12 != (Queue_1_System_Object_ *)0x0) {
                     mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
                     Queue_1_System_Object__Enqueue
-                              (this_07,(Object *)unaff_EDI.typeHandle,
+                              (this_12,(Object *)photonEvent,
                                MethodInfo__System__Collections__Generic__Queue<ExitGames::Client::Photon::EventData>__Enqueue_ExitGames__Client__Photon__EventData_
                               );
-                    *unaff_FS_OFFSET = pvStack_3;
+                    *unaff_FS_OFFSET = uStack_3;
                     return;
                   }
                 }
@@ -3119,65 +2785,58 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_LogicFrame:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
-    unaff_ESI.dummy = (Object__Class *)0x0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      pMVar90 = (pMVar32->fields).logicObjectManagerClientWrapper;
-      bVar26 = 0;
-      unaff_ESI.dummy = (Object__Class *)0x0;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      pMVar75 = (pMVar12->fields).logicObjectManagerClientWrapper;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pMVar90 != (MVNetworkGame_LogicObjectManagerClientWrapper *)0x0) {
-        bVar25 = bVar24;
+      if (pMVar75 != (MVNetworkGame_LogicObjectManagerClientWrapper *)0x0) {
         MVNetworkGame+LogicObjectManagerClientWrapper::
         MVNetworkGame_LogicObjectManagerClientWrapper_ExecuteRemainingFrames
-                  (pMVar90,(MethodInfo *)0x0);
-        pMVar91 = (pMVar90->fields).updateEvaluatorStep;
-        bVar26 = 0;
-        unaff_ESI.dummy = (Object__Class *)0x0;
+                  (pMVar75,(MethodInfo *)0x0);
+        pMVar78 = (pMVar75->fields).updateEvaluatorStep;
+        bVar13 = 0;
         unaff_EDI = unaff_EDI;
-        if (pMVar91 != (MVNetworkGame_UpdateEvaluator *)0x0) {
-          piVar31 = &(pMVar91->fields).stepTimestamp;
-          *piVar31 = *piVar31 + 1000;
+        if (pMVar78 != (MVNetworkGame_UpdateEvaluator *)0x0) {
+          piVar17 = &(pMVar78->fields).stepTimestamp;
+          *piVar17 = *piVar17 + 1000;
 code_?:
-          iVar11 = WaitForTicksLocal::WaitForTicksLocal_GetEnvironmentTick(0,(MethodInfo *)0x0);
-          (pMVar91->fields).lastUpdateTick = iVar11;
-          (pMVar91->fields).accumulatedTime = 0;
-          *unaff_FS_OFFSET = pvStack_3;
+          iVar29 = WaitForTicksLocal::WaitForTicksLocal_GetEnvironmentTick(0,(MethodInfo *)0x0);
+          (pMVar78->fields).lastUpdateTick = iVar29;
+          (pMVar78->fields).accumulatedTime = 0;
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
       }
     }
     break;
   case MVEventCodes__Enum_LogicFastForward:
-    bVar25 = bVar21;
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      bVar25 = bVar20;
-      func_?(TypeInfo__UnityEngine__Debug);
+      func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
               ((Object *)StringLiteral_Fast_forward,(MethodInfo *)0x0);
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      unaff_ESI = (_union_86)(pMVar32->fields).logicObjectManagerClientWrapper;
-      bVar26 = 0;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      pMVar75 = (pMVar12->fields).logicObjectManagerClientWrapper;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
       if (photonEvent != (EventData *)0x0) {
         Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                   (photonEvent,0x23,(MethodInfo *)0x0);
-        bVar26 = 0;
+        bVar13 = 0;
         unaff_EDI = unaff_EDI;
-        if (unaff_ESI.dummy != (Object__Class *)0x0) {
-          piVar31 = (int32_t *)func_?();
-          pMVar91 = *(MVNetworkGame_UpdateEvaluator **)&unaff_ESI.type[2].attrs;
-          bVar26 = 0;
-          unaff_ESI.dummy = (Object__Class *)0x0;
+        if (pMVar75 != (MVNetworkGame_LogicObjectManagerClientWrapper *)0x0) {
+          piVar17 = (int32_t *)func_?();
+          pMVar78 = (pMVar75->fields).fastFordwardUpdateEvaluator;
+          bVar13 = 0;
           unaff_EDI = unaff_EDI;
-          if (pMVar91 != (MVNetworkGame_UpdateEvaluator *)0x0) {
-            (pMVar91->fields).stepTimestamp = *piVar31;
+          if (pMVar78 != (MVNetworkGame_UpdateEvaluator *)0x0) {
+            (pMVar78->fields).stepTimestamp = *piVar17;
             goto code_?;
           }
         }
@@ -3185,122 +2844,108 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_LogicFastForwardEventImmediate:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
-    unaff_ESI.dummy = (Object__Class *)0x0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      unaff_ESI = (_union_86)(pMVar32->fields).logicObjectManagerClientWrapper;
-      bVar26 = 0;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      pMVar75 = (pMVar12->fields).logicObjectManagerClientWrapper;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
       if (photonEvent != (EventData *)0x0) {
         Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                   (photonEvent,0x23,(MethodInfo *)0x0);
-        bVar25 = (byte)iVar11;
-        bVar26 = 0;
+        bVar6 = (byte)((uint)in_stack_7 >> 0x10);
+        bVar13 = 0;
         unaff_EDI = unaff_EDI;
-        if (unaff_ESI.dummy != (Object__Class *)0x0) {
-          p_Var65 = (_union_86 *)func_?();
-          bVar25 = (byte)iVar11;
-          unaff_EDI = (_union_86)p_Var65->__klassIndex;
-          pcVar79 = *(char **)&unaff_ESI.type[1].attrs;
-          while (bVar26 = 0, pcVar79 != (char *)0x0) {
-            bVar25 = (byte)iVar11;
-            bVar26 = 0;
-            if (*(int *)(pcVar79 + 0x2c) == 0) break;
-            if (unaff_EDI.__klassIndex <= *(int *)(*(int *)(pcVar79 + 0x2c) + 0x10))
+        if (pMVar75 != (MVNetworkGame_LogicObjectManagerClientWrapper *)0x0) {
+          puVar39 = (undefined4 *)func_?();
+          bVar6 = (byte)((uint)in_stack_7 >> 0x10);
+          unaff_EDI = (MVAvatar__Class *)*puVar39;
+          pMVar12 = (pMVar75->fields).networkGame;
+          while (bVar13 = 0, pMVar12 != (MVNetworkGame *)0x0) {
+            bVar6 = (byte)((uint)in_stack_7 >> 0x10);
+            pLVar79 = (pMVar12->fields)._LogicObjectManager_k__BackingField;
+            bVar13 = 0;
+            if (pLVar79 == (LogicObjectManagerClient *)0x0) break;
+            if ((int)unaff_EDI <= (pLVar79->fields)._._TimeStamp_k__BackingField)
             goto code_?;
             MVNetworkGame+LogicObjectManagerClientWrapper::
             MVNetworkGame_LogicObjectManagerClientWrapper_UpdateLogicObjectManager
-                      ((MVNetworkGame_LogicObjectManagerClientWrapper *)unaff_ESI.typeHandle,
-                       (MethodInfo *)0x0);
-            bVar25 = (byte)iVar11;
-            pcVar79 = *(char **)&unaff_ESI.type[1].attrs;
+                      (pMVar75,(MethodInfo *)0x0);
+            bVar6 = (byte)((uint)in_stack_7 >> 0x10);
+            pMVar12 = (pMVar75->fields).networkGame;
           }
         }
       }
     }
     break;
   case MVEventCodes__Enum_ForceDetachWorldObjectFromVehicle:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent == (EventData *)0x0) break;
-    bVar25 = 0;
-    pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                        (photonEvent,0x48,(MethodInfo *)0x0);
-    _Var96.dummy = (void *)func_?(pOVar40,TypeInfo__System__Int32);
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
-    unaff_ESI.dummy = _Var96.dummy;
-    unaff_EDI = (_union_86)this;
-    if (pMVar32 == (MVNetworkGame *)0x0) break;
-    pMVar70 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager(pMVar32,(MethodInfo *)0x0);
-    bVar26 = 0;
-    if (_Var96.dummy == (Object__Class *)0x0) break;
-    bVar26 = 0;
-    if (*(char **)&_Var96.type[1].attrs != (char *)0x0) {
-      bVar26 = 0;
-      if (pMVar70 != (MVWorldObjectClientManager *)0x0) {
-        eventCode = (MVEventCodes__Enum)
-                    MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                              (pMVar70,_Var96.type[2].data.__klassIndex,(MethodInfo *)0x0);
-        pMVar32 = (this->fields).networkGame;
-        bVar26 = 0;
-        if (pMVar32 != (MVNetworkGame *)0x0) {
-          pMVar70 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
-                              (pMVar32,(MethodInfo *)0x0);
-          bVar26 = *(char **)&_Var96.type[1].attrs == (char *)0x0;
-          if (*(char **)&_Var96.type[1].attrs < (char *)0x2) goto code_?;
-          bVar26 = 0;
-          if (pMVar70 != (MVWorldObjectClientManager *)0x0) {
-            iVar11._0_2_ = ((Il2CppType *)((int)_Var96 + 0x10))->attrs;
-            iVar11._2_1_ = ((Il2CppType *)((int)_Var96 + 0x10))->type;
-            iVar11._3_1_ = ((Il2CppType *)((int)_Var96 + 0x10))->field_0x7;
-            unaff_ESI.typeHandle =
-                 (Il2CppMetadataTypeHandle)
-                 MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                           (pMVar70,iVar11,(MethodInfo *)0x0);
+    Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+              (photonEvent,0x48,(MethodInfo *)0x0);
+    iVar41 = func_?();
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
+    unaff_EDI = (MVAvatar__Class *)this;
+    if (pMVar12 == (MVNetworkGame *)0x0) break;
+    pMVar57 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager(pMVar12,(MethodInfo *)0x0);
+    bVar13 = 0;
+    if (iVar41 == 0) break;
+    bVar13 = 0;
+    if (*(int *)(iVar41 + 0xc) != 0) {
+      bVar13 = 0;
+      if (pMVar57 != (MVWorldObjectClientManager *)0x0) {
+        pMVar58 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                            (pMVar57,*(int32_t *)(iVar41 + 0x10),(MethodInfo *)0x0);
+        pMVar12 = (this->fields).networkGame;
+        bVar13 = 0;
+        if (pMVar12 != (MVNetworkGame *)0x0) {
+          pMVar57 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
+                              (pMVar12,(MethodInfo *)0x0);
+          bVar13 = *(uint *)(iVar41 + 0xc) == 0;
+          if (*(uint *)(iVar41 + 0xc) < 2) goto code_?;
+          bVar13 = 0;
+          if (pMVar57 != (MVWorldObjectClientManager *)0x0) {
+            method_00 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                                  (pMVar57,*(int32_t *)(iVar41 + 0x14),(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__UnityEngine__Debug);
+              func_?();
             }
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                       ((Object *)StringLiteral_MVEventCodes_ForceDetachWorldObj,(MethodInfo *)0x0);
-            if (eventCode == MVEventCodes__Enum_NoCodeSet) goto code_?;
+            if (pMVar58 == (MVWorldObject *)0x0) goto code_?;
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__UnityEngine__Debug);
+              func_?();
             }
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                       ((Object *)StringLiteral_vehicle____null,(MethodInfo *)0x0);
-            bVar26 = 0;
-            if (unaff_ESI.dummy != (Object__Class *)0x0) {
-              if (*(char **)&unaff_ESI.type[1].attrs !=
-                  *(char **)(eventCode + MVEventCodes__Enum_RegisterPrototype))
-              goto code_?;
+            bVar13 = 0;
+            if (method_00 != (MVWorldObject *)0x0) {
+              if ((method_00->fields).groupId != (pMVar58->fields).id) goto code_?;
               if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__UnityEngine__Debug);
+                func_?();
               }
               UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                         ((Object *)StringLiteral_attachedObject_GroupId____vehicl,(MethodInfo *)0x0)
               ;
-              iVar71 = func_?(unaff_ESI.dummy,TypeInfo__MVAvatarLocal);
-              bVar26 = 0;
-              if (iVar71 != 0) {
-                bVar41 = 0x8e;
-                _Var60.typeHandle = unaff_ESI.typeHandle;
-                this_08 = (MVAvatarLocal *)
-                          func_?(unaff_ESI.dummy,TypeInfo__MVAvatarLocal,1,0);
-                MVAvatarLocal::MVAvatarLocal_LeaveVehicle
-                          (this_08,bVar41,(MethodInfo *)_Var60.typeHandle);
-                pMVar32 = (this->fields).networkGame;
-                bVar26 = 0;
-                if (pMVar32 != (MVNetworkGame *)0x0) {
-                  pMVar68 = (pMVar32->fields)._PlayerController_k__BackingField;
-                  bVar26 = 0;
-                  if (pMVar68 != (MVLocalObjectController *)0x0) {
+              iVar41 = func_?();
+              bVar13 = 0;
+              if (iVar41 != 0) {
+                bVar25 = 0x8e;
+                this_13 = (MVAvatarLocal *)func_?();
+                MVAvatarLocal::MVAvatarLocal_LeaveVehicle(this_13,bVar25,(MethodInfo *)method_00);
+                pMVar12 = (this->fields).networkGame;
+                bVar13 = 0;
+                if (pMVar12 != (MVNetworkGame *)0x0) {
+                  pMVar55 = (pMVar12->fields)._PlayerController_k__BackingField;
+                  bVar13 = 0;
+                  if (pMVar55 != (MVLocalObjectController *)0x0) {
                     MVLocalObjectController::
                     MVLocalObjectController_HandleDetachWorldObjectFromVehicle
-                              (pMVar68,1,(MethodInfo *)0x0);
-                    *unaff_FS_OFFSET = pvStack_3;
+                              (pMVar55,1,(MethodInfo *)0x0);
+                    *unaff_FS_OFFSET = uStack_3;
                     return;
                   }
                 }
@@ -3313,315 +2958,285 @@ code_?:
     }
     goto code_?;
   case MVEventCodes__Enum_XPReward:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      bVar25 = bVar20;
-      unaff_EDI.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar32,(MethodInfo *)0x0);
-      unaff_ESI = (_union_86)photonEvent;
-      bVar26 = 0;
-      _Stack_34.typeHandle = unaff_EDI.typeHandle;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      unaff_EDI = (MVAvatar__Class *)
+                  MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar12,(MethodInfo *)0x0);
+      bVar13 = 0;
+      pMStack_59 = unaff_EDI;
       if (photonEvent != (EventData *)0x0) {
-        VStack_8.z = (float)Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
+        VStack_10.z = (float)Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
                              EventData_get_Item(photonEvent,0xdc,(MethodInfo *)0x0);
-        _Stack_48.dummy =
-             Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                       (unaff_ESI.dummy,0xdb,(MethodInfo *)0x0);
-        eventCode = (MVEventCodes__Enum)
-                    Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                              ((EventData *)unaff_ESI.typeHandle,0x55,(MethodInfo *)0x0);
         Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                  ((EventData *)unaff_ESI.typeHandle,0xd1,(MethodInfo *)0x0);
-        bVar26 = 0;
-        if (unaff_EDI.dummy != (Object__Class *)0x0) {
-          piVar31 = (int32_t *)func_?();
-          iVar11 = *piVar31;
-          piVar31 = (int32_t *)func_?();
-          iVar47 = *piVar31;
+                  (photonEvent,0xdb,(MethodInfo *)0x0);
+        Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                  (photonEvent,0x55,(MethodInfo *)0x0);
+        Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                  (photonEvent,0xd1,(MethodInfo *)0x0);
+        bVar13 = 0;
+        if (unaff_EDI != (MVAvatar__Class *)0x0) {
+          piVar17 = (int32_t *)func_?();
+          iVar29 = *piVar17;
+          piVar17 = (int32_t *)func_?();
+          iVar36 = *piVar17;
           puVar5 = (undefined1 *)func_?();
-          eventCode = CONCAT31((int3)((uint)puVar5 >> 8),*puVar5);
-          piVar31 = (int32_t *)func_?();
+          uVar64 = *puVar5;
+          piVar17 = (int32_t *)func_?();
           MVLocalPlayer::MVLocalPlayer_AddXp
-                    ((MVLocalPlayer *)_Stack_34.typeHandle,*piVar31,eventCode,iVar47,iVar11,
-                     (MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    ((MVLocalPlayer *)pMStack_59,*piVar17,CONCAT31((int3)((uint)puVar5 >> 8),uVar64)
+                     ,iVar36,iVar29,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
       }
     }
     break;
   case MVEventCodes__Enum_GetProfileMetaData:
-    bVar26 = 0;
-    unaff_EDI = _Var96;
+    bVar13 = 0;
+    unaff_EDI = (MVAvatar__Class *)photonEvent;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = 0;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0xd0,(MethodInfo *)0x0);
-      puVar5 = (undefined1 *)func_?(pOVar40,TypeInfo__System__Boolean);
-      eventCode = CONCAT13(*puVar5,(undefined3)eventCode);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xd0,(MethodInfo *)0x0);
+      pbVar67 = (bool *)func_?();
+      bVar25 = *pbVar67;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      TypeInfo__FirstTimeEventManager->static_fields->_GetProfileMetaDataOk_k__BackingField =
-           eventCode._3_1_;
+      TypeInfo__FirstTimeEventManager->static_fields->_GetProfileMetaDataOk_k__BackingField = bVar25
+      ;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
       if (TypeInfo__FirstTimeEventManager->static_fields->_GetProfileMetaDataOk_k__BackingField == 0
          ) goto code_?;
-      eventCode = (MVEventCodes__Enum)
-                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                            ((EventData *)_Var96.typeHandle,0xcf,(MethodInfo *)0x0);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xcf,(MethodInfo *)0x0);
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pMVar78 = 
+      pMVar65 = 
       MV__WorldObject__MetaData__ProfileMetaData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::MetaData::ProfileMetaData>_System__String_
       ;
-      method_00 = (MethodInfo *)func_?();
-      pOVar40 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
-                          ((String *)method_00,pMVar78);
+      pSVar80 = TypeInfo__System__String;
+      method_01 = (MethodInfo *)func_?();
+      bVar6 = (byte)((uint)pSVar80 >> 0x10);
+      pOVar14 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
+                          ((String *)method_01,pMVar65);
       if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__StatHatWrapper);
+        func_?();
       }
       StatHatWrapper::StatHatWrapper_Count(StringLiteral_FirstTime_Success,1,(MethodInfo *)0x0);
-      bVar26 = 0;
-      unaff_ESI.dummy = (Object__Class *)0x0;
-      if (pOVar40 != (Object *)0x0) {
+      bVar13 = 0;
+      unaff_EDI = (MVAvatar__Class *)photonEvent;
+      if (pOVar14 != (Object *)0x0) {
         FirstTimeEventManager::FirstTimeEventManager_Initialize
-                  ((FirstTimeState *)pOVar40[1].monitor,(MethodInfo *)0x0);
-        eventCode = (MVEventCodes__Enum)
-                    Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                              ((EventData *)_Var96.typeHandle,0xf5,(MethodInfo *)0x0);
+                  ((FirstTimeState *)pOVar14[1].monitor,(MethodInfo *)0x0);
+        Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                  (photonEvent,0xf5,(MethodInfo *)0x0);
         if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pSVar42 = (String *)func_?();
-        HighlightManager::HighlightManager_Init(pSVar42,method_00);
-        profileSettingsState = (ProfileSettingsState *)pOVar40[2].monitor;
+        pSVar26 = (String *)func_?();
+        HighlightManager::HighlightManager_Init(pSVar26,method_01);
+        profileSettingsState = (ProfileSettingsState *)pOVar14[2].monitor;
         if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
             cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+          func_?();
         }
         Assets::Scripts::ProfileSettings::ProfileSettingsManager::ProfileSettingsManager_Init
                   (profileSettingsState,(MethodInfo *)0x0);
-        pGVar92 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager
+        pGVar81 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager
                             ((MethodInfo *)0x0);
-        pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                            ((EventData *)_Var96.typeHandle,0xc4,(MethodInfo *)0x0);
-        bVar26 = 0;
-        unaff_ESI.dummy = (Object__Class *)0x0;
-        if (pGVar92 != (GoldRewardManager *)0x0) {
-          pbVar82 = (bool *)func_?(pOVar40,TypeInfo__System__Boolean);
-          (pGVar92->fields).isGoldRewardGame = *pbVar82;
-          pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                              ((EventData *)_Var96.typeHandle,0xc4,(MethodInfo *)0x0);
-          pbVar82 = (bool *)func_?(pOVar40,TypeInfo__System__Boolean);
-          BStack_7.m_value = *pbVar82;
+        Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                  (photonEvent,0xc4,(MethodInfo *)0x0);
+        bVar13 = 0;
+        unaff_EDI = (MVAvatar__Class *)photonEvent;
+        if (pGVar81 != (GoldRewardManager *)0x0) {
+          pbVar67 = (bool *)func_?();
+          (pGVar81->fields).isGoldRewardGame = *pbVar67;
+          Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                    (photonEvent,0xc4,(MethodInfo *)0x0);
+          pbVar67 = (bool *)func_?();
+          BStack_9.m_value = *pbVar67;
           if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pSVar42 = mscorlib.dll::System::Boolean::Boolean_ToString(&BStack_7,(MethodInfo *)0x0);
-          pSVar42 = mscorlib.dll::System::String::String_Concat_3
-                              (StringLiteral__bool_photonEvent__byte_MVParame,pSVar42,
+          pSVar26 = mscorlib.dll::System::Boolean::Boolean_ToString(&BStack_9,(MethodInfo *)0x0);
+          pSVar26 = mscorlib.dll::System::String::String_Concat_3
+                              (StringLiteral__bool_photonEvent__byte_MVParame,pSVar26,
                                (MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                    ((Object *)pSVar42,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    ((Object *)pSVar26,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
       }
     }
     break;
   case MVEventCodes__Enum_ServerError:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar16;
-      pSVar34 = (String *)
+      pSVar82 = (String *)
                 Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                           (photonEvent,0xf5,(MethodInfo *)0x0);
-      pSVar42 = (String *)0x0;
-      if (pSVar34 == (String *)0x0) {
+      pSVar26 = (String *)0x0;
+      if (pSVar82 == (String *)0x0) {
 code_?:
-        pSVar42 = mscorlib.dll::System::String::String_Concat_3
-                            (StringLiteral_Server_error__,pSVar42,(MethodInfo *)0x0);
+        pSVar26 = mscorlib.dll::System::String::String_Concat_3
+                            (StringLiteral_Server_error__,pSVar26,(MethodInfo *)0x0);
         MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                  (MVGameMsgType__Enum_Warning,pSVar42,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+                  (MVGameMsgType__Enum_Warning,pSVar26,(MethodInfo *)0x0);
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if (pSVar34->klass == TypeInfo__System__String) {
-        pSVar42 = pSVar34;
+      if (pSVar82->klass == TypeInfo__System__String) {
+        pSVar26 = pSVar82;
       }
-      bVar26 = 0;
-      pSVar35 = TypeInfo__System__String;
-      if (pSVar42 != (String *)0x0) goto code_?;
-code_?:
-      func_?(pSVar34,pSVar35);
+      bVar13 = 0;
+      if (pSVar26 != (String *)0x0) goto code_?;
 code_?:
       func_?();
-      pSVar35 = extraout_ECX_00;
 code_?:
-      func_?(unaff_ESI.dummy,pSVar35);
-      _Var60 = unaff_EDI;
+      pMVar11 = unaff_EDI;
+      func_?();
+      bVar6 = (byte)((uint)pMVar11 >> 0x10);
 code_?:
-      func_?(_Var60.dummy,_Stack_24.dummy);
-      unaff_EDI = _Var60;
+      func_?();
+      pMVar11 = unaff_EDI;
+code_?:
+      func_?();
+      unaff_EDI = pMVar11;
     }
     break;
   case MVEventCodes__Enum_SetSayChatBubbleVisible:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar19;
-      eventCode = (MVEventCodes__Enum)
-                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                            (photonEvent,0xf5,(MethodInfo *)0x0);
-      iVar71 = func_?(eventCode,
-                               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                              );
-      pMVar78 = 
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xf5,(MethodInfo *)0x0);
+      iVar41 = func_?();
+      pMVar65 = 
       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
       ;
-      pSVar42 = StringLiteral_V;
-      bVar26 = 0;
+      pSVar26 = StringLiteral_V;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (iVar71 != 0) {
-        pDVar64 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                  func_?(eventCode,
-                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                 );
-        TVar65 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                           (pDVar64,(Object *)pSVar42,pMVar78);
-        puVar5 = (undefined1 *)func_?(TVar65.m_Index,TypeInfo__System__Boolean);
-        eventCode = CONCAT31(eventCode._1_3_,*puVar5);
-        pMVar32 = (this->fields).networkGame;
-        pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                            (photonEvent,0xfe,(MethodInfo *)0x0);
-        bVar26 = 0;
-        unaff_ESI.dummy = (Object__Class *)0x0;
-        unaff_EDI = (_union_86)pSVar42;
-        if (pMVar32 != (MVNetworkGame *)0x0) {
-          piVar31 = (int32_t *)func_?(pOVar40,TypeInfo__System__Int32);
+      if (iVar41 != 0) {
+        pDVar52 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::TextureId]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                  (pDVar52,(Object *)pSVar26,pMVar65);
+        pbVar67 = (bool *)func_?();
+        bVar25 = *pbVar67;
+        pMVar12 = (this->fields).networkGame;
+        Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                  (photonEvent,0xfe,(MethodInfo *)0x0);
+        bVar13 = 0;
+        unaff_EDI = (MVAvatar__Class *)pSVar26;
+        if (pMVar12 != (MVNetworkGame *)0x0) {
+          piVar17 = (int32_t *)func_?();
           MVNetworkGame::MVNetworkGame_OnSetSayChatBubbleVisible
-                    (pMVar32,*piVar31,(bool)eventCode,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    (pMVar12,*piVar17,bVar25,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
       }
     }
     break;
   case MVEventCodes__Enum_GetPublishedPlanetProfileData:
-    bVar26 = 0;
-    unaff_EDI = unaff_EDI;
-    if (photonEvent == (EventData *)0x0) break;
-    bVar25 = bVar20;
-    _Var73.typeHandle =
-         (Il2CppMetadataTypeHandle)
-         Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                   (photonEvent,0xf5,(MethodInfo *)0x0);
-    _Var96.dummy = (Object__Class *)0x0;
-    if (_Var73.dummy == (Object__Class *)0x0) {
-code_?:
-      bVar41 = mscorlib.dll::System::String::String_IsNullOrEmpty
-                         ((String *)_Var96.typeHandle,(MethodInfo *)0x0);
-      if (bVar41 != 0) {
-code_?:
-        *unaff_FS_OFFSET = pvStack_3;
-        return;
-      }
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pOVar40 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
-                          ((String *)_Var96.typeHandle,
-                           MV__WorldObject__GamePassSystem__PlayerGamePassProgressionPackage_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::PlayerGamePassProgressionPackage>_System__String_
-                          );
-      bVar26 = 0;
-      unaff_ESI.dummy = (Object__Class *)0x0;
-      unaff_EDI = unaff_EDI;
-      if (pOVar40 != (Object *)0x0) {
-        GamePassesManager::GamePassesManager_set_PlayerPlanetData
-                  ((PlayerPlanetData *)pOVar40[1].klass,(MethodInfo *)0x0);
-        message = (PlayerTierStateCalculator *)pOVar40[1].monitor;
-        TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator = message;
-code_?:
-        func_?(&TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator,
-                        message);
-        *unaff_FS_OFFSET = pvStack_3;
-        return;
-      }
-      break;
-    }
-    if ((String__Class *)((Il2CppClass_0 *)&(_Var73.array)->etype)->image ==
-        TypeInfo__System__String) {
-      _Var96.typeHandle = _Var73.typeHandle;
-    }
-    bVar26 = 0;
-    pSVar35 = TypeInfo__System__String;
-    unaff_ESI.dummy = (Object *)0x0;
-    if (_Var96.dummy != (Object__Class *)0x0) goto code_?;
-    goto code_?;
-  case MVEventCodes__Enum_PlayerPlanetData:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar16;
-      unaff_ESI.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0xf5,(MethodInfo *)0x0);
+      pSVar82 = (String *)
+                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                          (photonEvent,0xf5,(MethodInfo *)0x0);
+      pSVar26 = (String *)0x0;
+      if (pSVar82 != (String *)0x0) {
+        if (pSVar82->klass == TypeInfo__System__String) {
+          pSVar26 = pSVar82;
+        }
+        bVar13 = 0;
+        if (pSVar26 == (String *)0x0) goto code_?;
+      }
+      bVar25 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar26,(MethodInfo *)0x0);
+      if (bVar25 != 0) {
+code_?:
+        *unaff_FS_OFFSET = uStack_3;
+        return;
+      }
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      _Var60.dummy = (Object__Class *)0x0;
-      if (unaff_ESI.dummy != (Object__Class *)0x0) {
-        if ((String__Class *)((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image ==
-            TypeInfo__System__String) {
-          _Var60.typeHandle = unaff_ESI.typeHandle;
-        }
-        bVar26 = 0;
-        pSVar35 = TypeInfo__System__String;
-        if (_Var60.dummy == (Object__Class *)0x0) goto code_?;
+      pOVar14 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
+                          (pSVar26,
+                           MV__WorldObject__GamePassSystem__PlayerGamePassProgressionPackage_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::PlayerGamePassProgressionPackage>_System__String_
+                          );
+      bVar13 = 0;
+      unaff_EDI = unaff_EDI;
+      if (pOVar14 != (Object *)0x0) {
+        GamePassesManager::GamePassesManager_set_PlayerPlanetData
+                  ((PlayerPlanetData *)pOVar14[1].klass,(MethodInfo *)0x0);
+        TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator =
+             (PlayerTierStateCalculator *)pOVar14[1].monitor;
+        goto code_?;
       }
-      unaff_ESI.dummy =
+    }
+    break;
+  case MVEventCodes__Enum_PlayerPlanetData:
+    bVar13 = 0;
+    unaff_EDI = unaff_EDI;
+    if (photonEvent != (EventData *)0x0) {
+      pSVar26 = (String *)
+                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                          (photonEvent,0xf5,(MethodInfo *)0x0);
+      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pSVar82 = (String *)0x0;
+      if (pSVar26 != (String *)0x0) {
+        if (pSVar26->klass == TypeInfo__System__String) {
+          pSVar82 = pSVar26;
+        }
+        bVar13 = 0;
+        if (pSVar82 == (String *)0x0) goto code_?;
+      }
+      playerPlanetData =
+           (PlayerPlanetData *)
            Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
-                     (_Var60.dummy,
+                     (pSVar82,
                       MV__WorldObject__GamePassSystem__PlayerPlanetData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::PlayerPlanetData>_System__String_
                      );
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
+        func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                ((Object *)unaff_ESI.typeHandle,(MethodInfo *)0x0);
+                ((Object *)playerPlanetData,(MethodInfo *)0x0);
       GamePassesManager::GamePassesManager_UpdatePlayerPlanetData
-                ((PlayerPlanetData *)unaff_ESI.typeHandle,(MethodInfo *)0x0);
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
+                (playerPlanetData,(MethodInfo *)0x0);
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        pMVar93 = (pMVar32->fields).playerContainer;
-        bVar26 = 0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        pMVar83 = (pMVar12->fields).playerContainer;
+        bVar13 = 0;
         unaff_EDI = unaff_EDI;
-        if (pMVar93 != (MVPlayerContainer *)0x0) {
-          pMVar53 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar93,(MethodInfo *)0x0);
-          bVar26 = 0;
+        if (pMVar83 != (MVPlayerContainer *)0x0) {
+          pMVar44 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar83,(MethodInfo *)0x0);
+          bVar13 = 0;
           unaff_EDI = unaff_EDI;
-          if (pMVar53 != (MVLocalPlayer *)0x0) {
+          if (pMVar44 != (MVLocalPlayer *)0x0) {
             MVLocalPlayer::MVLocalPlayer_set_PlayerPlanetData
-                      (pMVar53,(PlayerPlanetData *)unaff_ESI.typeHandle,(MethodInfo *)0x0);
-            *unaff_FS_OFFSET = pvStack_3;
+                      (pMVar44,playerPlanetData,(MethodInfo *)0x0);
+            *unaff_FS_OFFSET = uStack_3;
             return;
           }
         }
@@ -3629,55 +3244,51 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_PlayerPlanetRemote:
-    bVar26 = 0;
-    unaff_EDI = _Var96;
+    bVar13 = 0;
+    unaff_EDI = (MVAvatar__Class *)photonEvent;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar15;
-      unaff_ESI.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0xf5,(MethodInfo *)0x0);
+      pSVar26 = (String *)
+                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                          (photonEvent,0xf5,(MethodInfo *)0x0);
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      _Var60.dummy = (Object__Class *)0x0;
-      if (unaff_ESI.dummy != (Object__Class *)0x0) {
-        if ((String__Class *)((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image ==
-            TypeInfo__System__String) {
-          _Var60.typeHandle = unaff_ESI.typeHandle;
+      pSVar82 = (String *)0x0;
+      if (pSVar26 != (String *)0x0) {
+        if (pSVar26->klass == TypeInfo__System__String) {
+          pSVar82 = pSVar26;
         }
-        bVar26 = 0;
-        pSVar35 = TypeInfo__System__String;
-        if (_Var60.dummy == (Object__Class *)0x0) goto code_?;
+        bVar13 = 0;
+        unaff_EDI = (MVAvatar__Class *)photonEvent;
+        if (pSVar82 == (String *)0x0) goto code_?;
       }
-      unaff_ESI.dummy =
-           Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
-                     (_Var60.dummy,
-                      MV__WorldObject__GamePassSystem__PlayerPlanetDataRemote_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::PlayerPlanetDataRemote>_System__String_
-                     );
+      message = (PlayerPlanetDataRemote *)
+                Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
+                          (pSVar82,
+                           MV__WorldObject__GamePassSystem__PlayerPlanetDataRemote_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::PlayerPlanetDataRemote>_System__String_
+                          );
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
+        func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                ((Object *)unaff_ESI.typeHandle,(MethodInfo *)0x0);
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        eventCode = (MVEventCodes__Enum)(pMVar32->fields).playerContainer;
+                ((Object *)message,(MethodInfo *)0x0);
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
+      unaff_EDI = (MVAvatar__Class *)photonEvent;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        unaff_EDI = (MVAvatar__Class *)(pMVar12->fields).playerContainer;
         Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                  ((EventData *)_Var96.typeHandle,0xfe,(MethodInfo *)0x0);
-        unaff_EDI = (_union_86)eventCode;
-        bVar26 = 0;
-        if (eventCode != MVEventCodes__Enum_NoCodeSet) {
-          piVar31 = (int32_t *)func_?();
-          pMVar94 = MVPlayerContainer::MVPlayerContainer_get_Item
-                              ((MVPlayerContainer *)unaff_EDI.typeHandle,*piVar31,(MethodInfo *)0x0)
-          ;
-          bVar26 = 0;
-          if (pMVar94 != (MVPlayer *)0x0) {
-            (pMVar94->fields).playerPlanetDataRemote = (PlayerPlanetDataRemote *)unaff_ESI;
-            func_?(&(pMVar94->fields).playerPlanetDataRemote,unaff_ESI.dummy);
-            *unaff_FS_OFFSET = pvStack_3;
+                  (photonEvent,0xfe,(MethodInfo *)0x0);
+        bVar13 = 0;
+        if (unaff_EDI != (MVAvatar__Class *)0x0) {
+          piVar17 = (int32_t *)func_?();
+          pMVar84 = MVPlayerContainer::MVPlayerContainer_get_Item
+                              ((MVPlayerContainer *)unaff_EDI,*piVar17,(MethodInfo *)0x0);
+          bVar13 = 0;
+          if (pMVar84 != (MVPlayer *)0x0) {
+            (pMVar84->fields).playerPlanetDataRemote = message;
+            func_?();
+            *unaff_FS_OFFSET = uStack_3;
             return;
           }
         }
@@ -3685,86 +3296,78 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_HighScores:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar18;
-      unaff_ESI.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0xf5,(MethodInfo *)0x0);
+      pSVar26 = (String *)
+                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                          (photonEvent,0xf5,(MethodInfo *)0x0);
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      _Var60.dummy = (Object__Class *)0x0;
-      if (unaff_ESI.dummy != (Object__Class *)0x0) {
-        if ((String__Class *)((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image ==
-            TypeInfo__System__String) {
-          _Var60.typeHandle = unaff_ESI.typeHandle;
+      pSVar82 = (String *)0x0;
+      if (pSVar26 != (String *)0x0) {
+        if (pSVar26->klass == TypeInfo__System__String) {
+          pSVar82 = pSVar26;
         }
-        bVar26 = 0;
-        pSVar35 = TypeInfo__System__String;
-        if (_Var60.dummy == (Object__Class *)0x0) goto code_?;
+        bVar13 = 0;
+        if (pSVar82 == (String *)0x0) goto code_?;
       }
-      pSVar42 = (String *)
+      pSVar26 = (String *)
                 Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
-                          ((String *)_Var60.typeHandle,
+                          (pSVar82,
                            MV__WorldObject__GamePassSystem__HighScoreDatas_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::HighScoreDatas>_System__String_
                           );
       GamePassesHighScoreUpdateManager::GamePassesHighScoreUpdateManager_UpdateHigscore
-                ((HighScoreDatas *)pSVar42,(MethodInfo *)0x0);
-      uVar63 = (TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor;
+                ((HighScoreDatas *)pSVar26,(MethodInfo *)0x0);
+      uVar51 = (TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor;
 joined_?:
-      if (uVar63 == 0) {
+      if (uVar51 == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                ((Object *)pSVar42,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+                ((Object *)pSVar26,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
   case MVEventCodes__Enum_GoldRewardedForLevel:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar18;
-      unaff_ESI.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0xf5,(MethodInfo *)0x0);
+      pSVar26 = (String *)
+                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                          (photonEvent,0xf5,(MethodInfo *)0x0);
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      _Var60.dummy = (Object__Class *)0x0;
-      if (unaff_ESI.dummy != (Object__Class *)0x0) {
-        if ((String__Class *)((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image ==
-            TypeInfo__System__String) {
-          _Var60.typeHandle = unaff_ESI.typeHandle;
+      pSVar82 = (String *)0x0;
+      if (pSVar26 != (String *)0x0) {
+        if (pSVar26->klass == TypeInfo__System__String) {
+          pSVar82 = pSVar26;
         }
-        bVar26 = 0;
-        pSVar35 = TypeInfo__System__String;
-        if (_Var60.dummy == (Object__Class *)0x0) goto code_?;
+        bVar13 = 0;
+        if (pSVar82 == (String *)0x0) goto code_?;
       }
-      pOVar40 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
-                          ((String *)_Var60.typeHandle,
+      pOVar14 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
+                          (pSVar82,
                            MV__WorldObject__GoldRewardedForLevelCollection_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GoldRewardedForLevelCollection>_System__String_
                           );
-      bVar26 = 0;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pOVar40 != (Object *)0x0) {
-        pMVar32 = (this->fields).networkGame;
-        bVar26 = 0;
+      if (pOVar14 != (Object *)0x0) {
+        pMVar12 = (this->fields).networkGame;
+        bVar13 = 0;
         unaff_EDI = unaff_EDI;
-        if (pMVar32 != (MVNetworkGame *)0x0) {
-          pLVar95 = (pMVar32->fields).levelRewardsManager;
-          bVar26 = 0;
+        if (pMVar12 != (MVNetworkGame *)0x0) {
+          pLVar85 = (pMVar12->fields).levelRewardsManager;
+          bVar13 = 0;
           unaff_EDI = unaff_EDI;
-          if (pLVar95 != (LevelRewardsManager *)0x0) {
+          if (pLVar85 != (LevelRewardsManager *)0x0) {
             LevelRewardsManager::LevelRewardsManager_AddClaimedLevelRewards
-                      (pLVar95,(Dictionary_2_System_Int32_System_Int32_ *)pOVar40[1].klass,
+                      (pLVar85,(Dictionary_2_System_Int32_System_Int32_ *)pOVar14[1].klass,
                        (MethodInfo *)0x0);
-            *unaff_FS_OFFSET = pvStack_3;
+            *unaff_FS_OFFSET = uStack_3;
             return;
           }
         }
@@ -3772,226 +3375,205 @@ joined_?:
     }
     break;
   case MVEventCodes__Enum_NextLevelGoldReward:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar18;
-      unaff_ESI.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0xf5,(MethodInfo *)0x0);
+      pSVar26 = (String *)
+                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                          (photonEvent,0xf5,(MethodInfo *)0x0);
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      _Var60.dummy = (Object__Class *)0x0;
-      if (unaff_ESI.dummy != (Object__Class *)0x0) {
-        if ((String__Class *)((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image ==
-            TypeInfo__System__String) {
-          _Var60.typeHandle = unaff_ESI.typeHandle;
+      pSVar82 = (String *)0x0;
+      if (pSVar26 != (String *)0x0) {
+        if (pSVar26->klass == TypeInfo__System__String) {
+          pSVar82 = pSVar26;
         }
-        bVar26 = 0;
-        pSVar35 = TypeInfo__System__String;
-        if (_Var60.dummy == (Object__Class *)0x0) goto code_?;
+        bVar13 = 0;
+        if (pSVar82 == (String *)0x0) goto code_?;
       }
-      pOVar40 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
-                          ((String *)_Var60.typeHandle,
+      pOVar14 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
+                          (pSVar82,
                            MV__WorldObject__GoldRewardedForLevelData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GoldRewardedForLevelData>_System__String_
                           );
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        pLVar95 = (pMVar32->fields).levelRewardsManager;
-        bVar26 = 0;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        pLVar85 = (pMVar12->fields).levelRewardsManager;
+        bVar13 = 0;
         unaff_EDI = unaff_EDI;
-        if ((pOVar40 != (Object *)0x0) &&
-           (bVar26 = 0, unaff_EDI = unaff_EDI, pLVar95 != (LevelRewardsManager *)0x0)) {
+        if ((pOVar14 != (Object *)0x0) &&
+           (bVar13 = 0, unaff_EDI = unaff_EDI, pLVar85 != (LevelRewardsManager *)0x0)) {
           LevelRewardsManager::LevelRewardsManager_SetNextLevelReward
-                    (pLVar95,(int32_t)pOVar40[1].klass,(int32_t)pOVar40[1].monitor,(MethodInfo *)0x0
+                    (pLVar85,(int32_t)pOVar14[1].klass,(int32_t)pOVar14[1].monitor,(MethodInfo *)0x0
                     );
-          *unaff_FS_OFFSET = pvStack_3;
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
       }
     }
     break;
   case MVEventCodes__Enum_PlayerTierStateCalculatorChanged:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar18;
-      unaff_ESI.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0xf5,(MethodInfo *)0x0);
+      pSVar26 = (String *)
+                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                          (photonEvent,0xf5,(MethodInfo *)0x0);
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      _Var60.dummy = (Object__Class *)0x0;
-      if (unaff_ESI.dummy != (Object__Class *)0x0) {
-        if ((String__Class *)((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image ==
-            TypeInfo__System__String) {
-          _Var60.typeHandle = unaff_ESI.typeHandle;
+      pSVar82 = (String *)0x0;
+      if (pSVar26 != (String *)0x0) {
+        if (pSVar26->klass == TypeInfo__System__String) {
+          pSVar82 = pSVar26;
         }
-        bVar26 = 0;
-        pSVar35 = TypeInfo__System__String;
-        if (_Var60.dummy == (Object__Class *)0x0) goto code_?;
+        bVar13 = 0;
+        if (pSVar82 == (String *)0x0) goto code_?;
       }
-      message = (PlayerTierStateCalculator *)
-                Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
-                          ((String *)_Var60.typeHandle,
-                           MV__WorldObject__GamePassSystem__PlayerTierStateCalculator_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::PlayerTierStateCalculator>_System__String_
-                          );
+      message_00 = (PlayerTierStateCalculator *)
+                   Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::
+                   JsonConvert_DeserializeObject_2
+                             (pSVar82,
+                              MV__WorldObject__GamePassSystem__PlayerTierStateCalculator_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::PlayerTierStateCalculator>_System__String_
+                             );
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
+        func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                ((Object *)message,(MethodInfo *)0x0);
-      TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator = message;
-      goto code_?;
+                ((Object *)message_00,(MethodInfo *)0x0);
+      TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator = message_00;
+code_?:
+      func_?();
+      *unaff_FS_OFFSET = uStack_3;
+      return;
     }
     break;
   case MVEventCodes__Enum_GetProjectEarnings:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar18;
-      unaff_ESI.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0xf5,(MethodInfo *)0x0);
+      pSVar26 = (String *)
+                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                          (photonEvent,0xf5,(MethodInfo *)0x0);
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      _Var60.dummy = (Object__Class *)0x0;
-      if (unaff_ESI.dummy == (Object__Class *)0x0) {
+      pSVar82 = (String *)0x0;
+      if (pSVar26 == (String *)0x0) {
 code_?:
         newProjectEarningReport =
              (ProjectEarningsReport *)
              Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
-                       ((String *)_Var60.typeHandle,
+                       (pSVar82,
                         MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectEarningsReport_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>_System__String_
                        );
         GamePassesProjectEarningsManager::
         GamePassesProjectEarningsManager_UpdateProjectEarningReport
                   (newProjectEarningReport,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = pvStack_3;
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((String__Class *)((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image ==
-          TypeInfo__System__String) {
-        _Var60.typeHandle = unaff_ESI.typeHandle;
+      if (pSVar26->klass == TypeInfo__System__String) {
+        pSVar82 = pSVar26;
       }
-      bVar26 = 0;
-      pSVar35 = TypeInfo__System__String;
-      if (_Var60.dummy != (Object__Class *)0x0) goto code_?;
+      bVar13 = 0;
+      if (pSVar82 != (String *)0x0) goto code_?;
       goto code_?;
     }
     break;
   case MVEventCodes__Enum_TopHighScores:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar18;
-      unaff_ESI.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0xf5,(MethodInfo *)0x0);
+      pSVar26 = (String *)
+                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                          (photonEvent,0xf5,(MethodInfo *)0x0);
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      _Var60.dummy = (Object__Class *)0x0;
-      if (unaff_ESI.dummy != (Object__Class *)0x0) {
-        if ((String__Class *)((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image ==
-            TypeInfo__System__String) {
-          _Var60.typeHandle = unaff_ESI.typeHandle;
+      pSVar82 = (String *)0x0;
+      if (pSVar26 != (String *)0x0) {
+        if (pSVar26->klass == TypeInfo__System__String) {
+          pSVar82 = pSVar26;
         }
-        bVar26 = 0;
-        pSVar35 = TypeInfo__System__String;
-        if (_Var60.dummy == (Object__Class *)0x0) goto code_?;
+        bVar13 = 0;
+        if (pSVar82 == (String *)0x0) goto code_?;
       }
-      pSVar42 = (String *)
+      pSVar26 = (String *)
                 Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
-                          ((String *)_Var60.typeHandle,
+                          (pSVar82,
                            MV__WorldObject__GamePassSystem__HighScoreDatas_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::HighScoreDatas>_System__String_
                           );
       GamePassesHighScoreUpdateManager::GamePassesHighScoreUpdateManager_UpdateHigscore
-                ((HighScoreDatas *)pSVar42,(MethodInfo *)0x0);
-      uVar63 = (TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor;
+                ((HighScoreDatas *)pSVar26,(MethodInfo *)0x0);
+      uVar51 = (TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor;
       goto joined_?;
     }
     break;
   case MVEventCodes__Enum_GetKogamaVat:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar18;
-      unaff_ESI.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0xf5,(MethodInfo *)0x0);
+      pSVar26 = (String *)
+                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                          (photonEvent,0xf5,(MethodInfo *)0x0);
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      _Var60.dummy = (Object__Class *)0x0;
-      if (unaff_ESI.dummy == (Object__Class *)0x0) {
+      pSVar82 = (String *)0x0;
+      if (pSVar26 == (String *)0x0) {
 code_?:
-        pKVar96 = (KogamaVatValues *)
+        pKVar86 = (KogamaVatValues *)
                   Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::
                   JsonConvert_DeserializeObject_2
-                            ((String *)_Var60.typeHandle,
+                            (pSVar82,
                              MV__WorldObject__GamePassSystem__GamePassEarnings__KogamaVatValues_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::GamePassEarnings::KogamaVatValues>_System__String_
                             );
         if ((TypeInfo__SubscriberRewardDataManager->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__SubscriberRewardDataManager);
+          func_?();
         }
         if (cRam_? == '\0') {
-          func_?(&TypeInfo__SubscriberRewardDataManager);
+          func_?();
           cRam_? = '\x01';
         }
         if ((TypeInfo__SubscriberRewardDataManager->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__SubscriberRewardDataManager);
+          func_?();
         }
-        TypeInfo__SubscriberRewardDataManager->static_fields->_VatValues_k__BackingField = pKVar96;
-        func_?(&TypeInfo__SubscriberRewardDataManager->static_fields->
-                         _VatValues_k__BackingField,pKVar96);
-        *unaff_FS_OFFSET = pvStack_3;
+        TypeInfo__SubscriberRewardDataManager->static_fields->_VatValues_k__BackingField = pKVar86;
+        func_?();
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((String__Class *)((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image ==
-          TypeInfo__System__String) {
-        _Var60.typeHandle = unaff_ESI.typeHandle;
+      if (pSVar26->klass == TypeInfo__System__String) {
+        pSVar82 = pSVar26;
       }
-      bVar26 = 0;
-      pSVar35 = TypeInfo__System__String;
-      if (_Var60.dummy != (Object__Class *)0x0) goto code_?;
+      bVar13 = 0;
+      if (pSVar82 != (String *)0x0) goto code_?;
       goto code_?;
     }
     break;
   case MVEventCodes__Enum_GetSubscriptionPerksData:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar18;
-      unaff_ESI.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0xf5,(MethodInfo *)0x0);
+      pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                          (photonEvent,0xf5,(MethodInfo *)0x0);
       if ((TypeInfo__SubscriberRewardDataManager->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      bVar26 = 0;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (unaff_ESI.dummy != (Object__Class *)0x0) {
-        pIVar28 = (Il2CppClass *)((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image->codeGenModule;
-        pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-        bVar26 = pIVar28 < pIVar29;
-        pSVar35 = (String__Class *)TypeInfo__System__Int32;
-        if (pIVar28 == pIVar29) {
-          piVar31 = (int32_t *)func_?(unaff_ESI.dummy);
+      if (pOVar14 != (Object *)0x0) {
+        pIVar15 = (pOVar14->klass->_0).element_class;
+        pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+        bVar13 = pIVar15 < pIVar16;
+        if (pIVar15 == pIVar16) {
+          piVar17 = (int32_t *)func_?();
           SubscriberRewardDataManager::SubscriberRewardDataManager_SetBaseXPBonus
-                    (*piVar31,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    (*piVar17,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
         goto code_?;
@@ -3999,97 +3581,80 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_SetupUserAvatarEdit:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      MVNetworkGame::MVNetworkGame_AllModesSetup(pMVar32,photonEvent,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = pvStack_3;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      MVNetworkGame::MVNetworkGame_AllModesSetup(pMVar12,photonEvent,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
     break;
   case MVEventCodes__Enum_SetupUserBuildMode:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
-    unaff_ESI = (_union_86)this;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      bVar25 = bVar23;
-      MVNetworkGame::MVNetworkGame_AllModesSetup(pMVar32,photonEvent,(MethodInfo *)0x0);
-      pMVar32 = (this->fields).networkGame;
-      bVar26 = 0;
-      unaff_ESI = (_union_86)this;
-      unaff_EDI = _Var96;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        MVNetworkGame::MVNetworkGame_PlayModeSetup
-                  (pMVar32,(EventData *)_Var96.typeHandle,(MethodInfo *)0x0);
-        pMVar32 = (this->fields).networkGame;
-        bVar26 = 0;
-        unaff_ESI = (_union_86)this;
-        if (pMVar32 != (MVNetworkGame *)0x0) {
-          MVNetworkGame::MVNetworkGame_BuildModeSetup
-                    (pMVar32,(EventData *)_Var96.typeHandle,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      MVNetworkGame::MVNetworkGame_AllModesSetup(pMVar12,photonEvent,(MethodInfo *)0x0);
+      pMVar12 = (this->fields).networkGame;
+      bVar13 = 0;
+      unaff_EDI = (MVAvatar__Class *)photonEvent;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        MVNetworkGame::MVNetworkGame_PlayModeSetup(pMVar12,photonEvent,(MethodInfo *)0x0);
+        pMVar12 = (this->fields).networkGame;
+        bVar13 = 0;
+        unaff_EDI = (MVAvatar__Class *)photonEvent;
+        if (pMVar12 != (MVNetworkGame *)0x0) {
+          MVNetworkGame::MVNetworkGame_BuildModeSetup(pMVar12,photonEvent,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
       }
     }
     break;
   case MVEventCodes__Enum_SetActiveSpawnRole:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar21;
-      pVVar97 = MVWorldObject.dll::MV::WorldObject::TransformHelper::TransformHelper_GetPosition
-                          (&VStack_8,(photonEvent->fields).Parameters,(MethodInfo *)0x0);
-      uVar98 = pVVar97->x;
-      uVar99 = pVVar97->y;
-      eventCode = (MVEventCodes__Enum)pVVar97->z;
-      MStack_10 = uVar98;
-      _Stack_48 = (_union_86)uVar99;
-      pQVar100 = MVWorldObject.dll::MV::WorldObject::TransformHelper::TransformHelper_GetRotation
-                          ((Quaternion *)&stack0xffffff78,
-                           (((EventData *)_Var96.generic_class)->fields).Parameters,
+      pVVar87 = MVWorldObject.dll::MV::WorldObject::TransformHelper::TransformHelper_GetPosition
+                          (&VStack_10,(photonEvent->fields).Parameters,(MethodInfo *)0x0);
+      VVar48 = *pVVar87;
+      pQVar88 = MVWorldObject.dll::MV::WorldObject::TransformHelper::TransformHelper_GetRotation
+                          ((Quaternion *)&stack0xffffff78,(photonEvent->fields).Parameters,
                            (MethodInfo *)0x0);
-      fStack_101 = pQVar100->x;
-      VStack_8.x = pQVar100->y;
-      VStack_8.y = pQVar100->z;
-      VStack_8.z = pQVar100->w;
-      pMVar32 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      bVar26 = 0;
+      fVar35 = pQVar88->x;
+      VStack_10.x = pQVar88->y;
+      VStack_10.y = pQVar88->z;
+      VStack_10.z = pQVar88->w;
+      pMVar12 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        unaff_EDI = (_union_86)(pMVar32->fields).playerContainer;
-        in_stack_49 = (Int32__Class *)0x0;
-        pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                            ((EventData *)_Var96.typeHandle,0xfe,(MethodInfo *)0x0);
-        bVar26 = 0;
-        if (unaff_EDI.dummy != (Object__Class *)0x0) {
-          bVar25 = (byte)pOVar40;
-          piVar31 = (int32_t *)func_?();
-          pMVar94 = MVPlayerContainer::MVPlayerContainer_get_Item
-                              ((MVPlayerContainer *)unaff_EDI.typeHandle,*piVar31,(MethodInfo *)0x0)
-          ;
-          bVar26 = 0;
-          if (pMVar94 != (MVPlayer *)0x0) {
-            this_03 = (pMVar94->fields).spawnRolesManager;
-            pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                                ((EventData *)_Var96.typeHandle,0xbf,(MethodInfo *)0x0);
-            bVar26 = 0;
-            unaff_EDI.dummy = (Object__Class *)0x0;
-            if (this_03 != (SpawnRolesManager *)0x0) {
-              piVar31 = (int32_t *)func_?(pOVar40,TypeInfo__System__Int32);
-              position.y = (float)_Stack_48.dummy;
-              position.x = (float)MStack_10;
-              position.z = (float)eventCode;
-              rotation.y = VStack_8.x;
-              rotation.x = fStack_101;
-              rotation.z = VStack_8.y;
-              rotation.w = VStack_8.z;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        unaff_EDI = (MVAvatar__Class *)(pMVar12->fields).playerContainer;
+        bVar6 = 0;
+        Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                  (photonEvent,0xfe,(MethodInfo *)0x0);
+        bVar13 = 0;
+        if (unaff_EDI != (MVAvatar__Class *)0x0) {
+          piVar17 = (int32_t *)func_?();
+          pMVar84 = MVPlayerContainer::MVPlayerContainer_get_Item
+                              ((MVPlayerContainer *)unaff_EDI,*piVar17,(MethodInfo *)0x0);
+          bVar13 = 0;
+          if (pMVar84 != (MVPlayer *)0x0) {
+            this_05 = (pMVar84->fields).spawnRolesManager;
+            Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                      (photonEvent,0xbf,(MethodInfo *)0x0);
+            bVar13 = 0;
+            unaff_EDI = (MVAvatar__Class *)0x0;
+            if (this_05 != (SpawnRolesManager *)0x0) {
+              piVar17 = (int32_t *)func_?();
+              rotation.y = VStack_10.x;
+              rotation.x = fVar35;
+              rotation.z = VStack_10.y;
+              rotation.w = VStack_10.z;
               SpawnRolesManager::SpawnRolesManager_ActivateSpawnRole
-                        (this_03,*piVar31,position,rotation,(MethodInfo *)0x0);
-              *unaff_FS_OFFSET = pvStack_3;
+                        (this_05,*piVar17,VVar48,rotation,(MethodInfo *)0x0);
+              *unaff_FS_OFFSET = uStack_3;
               return;
             }
           }
@@ -4098,54 +3663,51 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_ReplicateSpawnRoleData:
-    bVar26 = 0;
-    unaff_EDI = _Var96;
+    bVar13 = 0;
+    unaff_EDI = (MVAvatar__Class *)photonEvent;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar12;
-      eventCode = (MVEventCodes__Enum)
-                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                            (photonEvent,0xf5,(MethodInfo *)0x0);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0xf5,(MethodInfo *)0x0);
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      unaff_ESI = (_union_86)
-                  MV__WorldObject__SpawnRoles__SpawnRolesRuntimeData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::SpawnRoles::SpawnRolesRuntimeData>_System__String_
+      pMVar65 = 
+      MV__WorldObject__SpawnRoles__SpawnRolesRuntimeData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::SpawnRoles::SpawnRolesRuntimeData>_System__String_
       ;
-      pSVar42 = (String *)func_?();
-      eventCode = (MVEventCodes__Enum)
-                  Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::
-                  JsonConvert_DeserializeObject_2(pSVar42,(MethodInfo *)unaff_ESI.typeHandle);
-      _Stack_48.dummy = (void *)func_?();
+      pSVar26 = (String *)func_?();
+      spawnRolesRuntimeData =
+           (SpawnRolesRuntimeData *)
+           Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
+                     (pSVar26,pMVar65);
+      pUVar43 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
       UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
       UxmlObjectListAttributeDescription`1[System::Object]::
-      UxmlObjectListAttributeDescription_1_System_Object___ctor
-                ((UxmlObjectListAttributeDescription_1_System_Object_ *)_Stack_48.typeHandle,
-                 (MethodInfo *)0x0);
-      pMVar32 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      bVar26 = 0;
-      if (pMVar32 != (MVNetworkGame *)0x0) {
-        unaff_ESI = (_union_86)(pMVar32->fields).playerContainer;
-        pSVar27 = (Single__Class *)
-                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                            ((EventData *)_Var96.typeHandle,0xfe,(MethodInfo *)0x0);
-        bVar26 = 0;
-        if ((unaff_ESI.dummy != (Object__Class *)0x0) &&
-           (bVar26 = 0, pSVar27 != (Single__Class *)0x0)) {
-          pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-          pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-          bVar26 = pIVar28 < pIVar29;
-          pIVar30 = TypeInfo__System__Int32;
-          if (pIVar28 != pIVar29) goto code_?;
-          piVar31 = (int32_t *)func_?(pSVar27);
-          pMVar94 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                              ((MVPlayerContainer *)unaff_ESI.typeHandle,*piVar31,(MethodInfo *)0x0)
-          ;
-          bVar26 = 0;
-          if (pMVar94 != (MVPlayer *)0x0) {
+      UxmlObjectListAttributeDescription_1_System_Object___ctor(pUVar43,(MethodInfo *)0x0);
+      pMVar12 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      bVar13 = 0;
+      unaff_EDI = (MVAvatar__Class *)photonEvent;
+      if (pMVar12 != (MVNetworkGame *)0x0) {
+        pMVar83 = (pMVar12->fields).playerContainer;
+        pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                            (photonEvent,0xfe,(MethodInfo *)0x0);
+        bVar13 = 0;
+        unaff_EDI = (MVAvatar__Class *)photonEvent;
+        if ((pMVar83 != (MVPlayerContainer *)0x0) &&
+           (bVar13 = 0, unaff_EDI = (MVAvatar__Class *)photonEvent, pOVar14 != (Object *)0x0)) {
+          pIVar15 = (pOVar14->klass->_0).element_class;
+          pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+          bVar13 = pIVar15 < pIVar16;
+          if (pIVar15 != pIVar16) goto code_?;
+          piVar17 = (int32_t *)func_?();
+          pMVar84 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
+                              (pMVar83,*piVar17,(MethodInfo *)0x0);
+          bVar13 = 0;
+          unaff_EDI = (MVAvatar__Class *)photonEvent;
+          if (pMVar84 != (MVPlayer *)0x0) {
             MVPlayer::MVPlayer_SetupSpawnRoleManager
-                      (pMVar94,(ISpawnRoleChangeHandler *)_Stack_48.typeHandle,
-                       (SpawnRolesRuntimeData *)eventCode,(MethodInfo *)0x0);
-            *unaff_FS_OFFSET = pvStack_3;
+                      (pMVar84,(ISpawnRoleChangeHandler *)pUVar43,spawnRolesRuntimeData,
+                       (MethodInfo *)0x0);
+            *unaff_FS_OFFSET = uStack_3;
             return;
           }
         }
@@ -4153,106 +3715,98 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_SetSpawnRoleBody:
-    bVar26 = 0;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar12;
-      unaff_ESI.typeHandle =
-           (Il2CppMetadataTypeHandle)
-           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                     (photonEvent,0xf5,(MethodInfo *)0x0);
+      pSVar26 = (String *)
+                Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                          (photonEvent,0xf5,(MethodInfo *)0x0);
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      _Var60.dummy = (Object__Class *)0x0;
-      if (unaff_ESI.dummy != (Object__Class *)0x0) {
-        if ((String__Class *)((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image ==
-            TypeInfo__System__String) {
-          _Var60.typeHandle = unaff_ESI.typeHandle;
+      pSVar82 = (String *)0x0;
+      if (pSVar26 != (String *)0x0) {
+        if (pSVar26->klass == TypeInfo__System__String) {
+          pSVar82 = pSVar26;
         }
-        bVar26 = 0;
-        pSVar35 = TypeInfo__System__String;
-        if (_Var60.dummy == (Object__Class *)0x0) goto code_?;
+        bVar13 = 0;
+        if (pSVar82 == (String *)0x0) goto code_?;
       }
-      unaff_EDI.dummy =
-           Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
-                     (_Var60.dummy,
-                      MV__WorldObject__SpawnRoles__SpawnRoleBodySwitchData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::SpawnRoles::SpawnRoleBodySwitchData>_System__String_
-                     );
-      pMVar70 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      bVar26 = 0;
-      if ((unaff_EDI.dummy != (Object__Class *)0x0) &&
-         (bVar26 = 0, pMVar70 != (MVWorldObjectClientManager *)0x0)) {
-        unaff_ESI.typeHandle =
-             (Il2CppMetadataTypeHandle)
-             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (pMVar70,unaff_EDI.type[3].data.__klassIndex,(MethodInfo *)0x0);
-        pMVar32 = (this->fields).networkGame;
-        bVar26 = 0;
-        if (pMVar32 != (MVNetworkGame *)0x0) {
+      pMVar11 = (MVAvatar__Class *)
+                Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
+                          (pSVar82,
+                           MV__WorldObject__SpawnRoles__SpawnRoleBodySwitchData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::SpawnRoles::SpawnRoleBodySwitchData>_System__String_
+                          );
+      pMVar57 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      bVar13 = 0;
+      unaff_EDI = pMVar11;
+      if ((pMVar11 != (MVAvatar__Class *)0x0) &&
+         (bVar13 = 0, pMVar57 != (MVWorldObjectClientManager *)0x0)) {
+        pMVar89 = (MVAvatarSpawnRoleCreator *)
+                  MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                            (pMVar57,(int32_t)(pMVar11->_0).this_arg.data.__klassIndex,
+                             (MethodInfo *)0x0);
+        pMVar12 = (this->fields).networkGame;
+        bVar13 = 0;
+        if (pMVar12 != (MVNetworkGame *)0x0) {
           MVNetworkGame::MVNetworkGame_OnUnregisterWorldObjectEvent
-                    (pMVar32,unaff_EDI.type[2].data.__klassIndex,(MethodInfo *)0x0);
-          pMVar32 = (this->fields).networkGame;
-          bVar26 = 0;
-          if (pMVar32 != (MVNetworkGame *)0x0) {
+                    (pMVar12,(int32_t)(pMVar11->_0).byval_arg.data.__klassIndex,(MethodInfo *)0x0);
+          pMVar12 = (this->fields).networkGame;
+          bVar13 = 0;
+          if (pMVar12 != (MVNetworkGame *)0x0) {
             MVNetworkGame::MVNetworkGame_OnUnregisterWorldObjectEvent
-                      (pMVar32,(int32_t)unaff_EDI.type[1].data.__klassIndex,(MethodInfo *)0x0);
-            pSVar27 = (Single__Class *)
-                      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                      (pMVar12,(int32_t)((MVNetworkGame__Fields *)&(pMVar11->_0).name)->
+                                        ReceivedItemFromQuery,(MethodInfo *)0x0);
+            bVar6 = 0;
+            pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                                 (photonEvent,0xd0,(MethodInfo *)0x0);
-            bVar26 = 0;
-            if (pSVar27 != (Single__Class *)0x0) {
-              pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-              pIVar29 = (TypeInfo__System__Boolean->_0).element_class;
-              bVar26 = pIVar28 < pIVar29;
-              pIVar30 = (Int32__Class *)TypeInfo__System__Boolean;
-              if (pIVar28 != pIVar29) goto code_?;
-              _Var108.dummy = &UNK_?;
-              pbVar82 = (bool *)func_?();
-              eventCode = CONCAT31(eventCode._1_3_,*pbVar82);
-              bVar26 = 0;
-              in_stack_59 = pSVar27;
-              if (unaff_ESI.dummy != (Object__Class *)0x0) {
-                if ((*(byte *)&((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image[4].assembly <
+            bVar13 = 0;
+            if (pOVar14 != (Object *)0x0) {
+              pIVar15 = (pOVar14->klass->_0).element_class;
+              pIVar16 = (TypeInfo__System__Boolean->_0).element_class;
+              bVar13 = pIVar15 < pIVar16;
+              if (pIVar15 != pIVar16) goto code_?;
+              pbVar67 = (bool *)func_?();
+              bVar13 = 0;
+              if (pMVar89 != (MVAvatarSpawnRoleCreator *)0x0) {
+                if (((pMVar89->klass->_1).naturalAligment <
                      (TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment) ||
-                   (*(MVAvatarSpawnRoleCreator__Class **)
-                     (((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image[2].typeCount +
-                     ((TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1) * 4) !=
+                   ((MVAvatarSpawnRoleCreator__Class *)
+                    (pMVar89->klass->_1).typeHierarchy
+                    [(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1] !=
                     TypeInfo__MVAvatarSpawnRoleCreator)) {
-                  bVar37 = false;
+                  bVar22 = false;
                 }
                 else {
-                  bVar37 = true;
+                  bVar22 = true;
                 }
-                _Var60.dummy = (Object__Class *)0x0;
-                if (bVar37) {
-                  _Var60.typeHandle = unaff_ESI.typeHandle;
+                pMVar90 = (MVAvatarSpawnRoleCreator *)0x0;
+                if (bVar22) {
+                  pMVar90 = pMVar89;
                 }
-                bVar26 = 0;
-                pMVar84 = TypeInfo__MVAvatarSpawnRoleCreator;
-                if (_Var60.dummy != (Object__Class *)0x0) {
-                  if ((*(byte *)&((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image[4].assembly <
+                bVar13 = 0;
+                if (pMVar90 != (MVAvatarSpawnRoleCreator *)0x0) {
+                  if (((pMVar89->klass->_1).naturalAligment <
                        (TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment) ||
-                     (*(MVAvatarSpawnRoleCreator__Class **)
-                       (((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image[2].typeCount +
-                       ((TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1) * 4) !=
+                     ((MVAvatarSpawnRoleCreator__Class *)
+                      (pMVar89->klass->_1).typeHierarchy
+                      [(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1] !=
                       TypeInfo__MVAvatarSpawnRoleCreator)) {
-                    bVar37 = false;
+                    bVar22 = false;
                   }
                   else {
-                    bVar37 = true;
+                    bVar22 = true;
                   }
-                  _Var60.dummy = (void *)0x0;
-                  if (bVar37) {
-                    _Var60.typeHandle = unaff_ESI.typeHandle;
+                  pMVar90 = (MVAvatarSpawnRoleCreator *)0x0;
+                  if (bVar22) {
+                    pMVar90 = pMVar89;
                   }
-                  bVar26 = 0;
-                  if (_Var60.dummy != (void *)0x0) {
+                  bVar13 = 0;
+                  if (pMVar90 != (MVAvatarSpawnRoleCreator *)0x0) {
                     MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_UpdateAvatarBody
-                              ((MVAvatarSpawnRoleCreator *)_Var60.typeHandle,
-                               (SpawnRoleBodySwitchData *)unaff_EDI.typeHandle,*pbVar82,
-                               (MethodInfo *)0x0);
-                    *unaff_FS_OFFSET = pvStack_3;
+                              (pMVar90,(SpawnRoleBodySwitchData *)pMVar11,*pbVar67,(MethodInfo *)0x0
+                              );
+                    *unaff_FS_OFFSET = uStack_3;
                     return;
                   }
                 }
@@ -4265,67 +3819,54 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_VehicleGotEnergy:
-    bVar26 = 0;
-    unaff_ESI = _Var96;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
     if (photonEvent != (EventData *)0x0) {
-      bVar25 = bVar13;
-      pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0x48,(MethodInfo *)0x0);
-      unaff_EDI.dummy =
-           (void *)func_?(pOVar40,
-                                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                  );
-      eventCode = CONCAT13(1,(undefined3)eventCode);
-      pOVar40 = (Object *)func_?(TypeInfo__System__Byte,(byte *)((int)&eventCode + 3));
-      bVar26 = 0;
-      if (unaff_EDI.dummy != (Object__Class *)0x0) {
-        TVar65 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                           ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                            unaff_EDI.typeHandle,pOVar40,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        p_Var65 = (_union_86 *)func_?(TVar65.m_Index,TypeInfo__System__Int32);
-        _Stack_48 = (_union_86)p_Var65->__klassIndex;
-        uStack_74 = 0;
-        pOVar40 = (Object *)func_?(TypeInfo__System__Byte,&uStack_74);
+      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                (photonEvent,0x48,(MethodInfo *)0x0);
+      unaff_EDI = (MVAvatar__Class *)func_?();
+      pOVar14 = (Object *)func_?();
+      bVar13 = 0;
+      if (unaff_EDI != (MVAvatar__Class *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
         UIElements::TextureId]::
         Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                  ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                   unaff_EDI.typeHandle,pOVar40,
+                  ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)unaff_EDI,pOVar14
+                   ,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                   );
-        pMVar32 = (this->fields).networkGame;
-        bVar26 = 0;
-        if (pMVar32 != (MVNetworkGame *)0x0) {
-          pMVar70 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
-                              (pMVar32,(MethodInfo *)0x0);
-          bVar26 = 0;
-          if (pMVar70 != (MVWorldObjectClientManager *)0x0) {
-            unaff_EDI.typeHandle =
-                 (Il2CppMetadataTypeHandle)
-                 MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                           (pMVar70,_Stack_48.__klassIndex,(MethodInfo *)0x0);
-            pOVar40 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                                ((EventData *)_Var96.typeHandle,0x23,(MethodInfo *)0x0);
-            p_Var65 = (_union_86 *)func_?(pOVar40,TypeInfo__System__Int32);
-            unaff_ESI = (_union_86)p_Var65->__klassIndex;
-            iVar71 = func_?(unaff_EDI.dummy,
-                                     TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy
-                                    );
-            bVar26 = 0;
-            if (iVar71 != 0) {
-              pMVar78 = (MethodInfo *)0x0;
-              this_09 = (MVWorldObjectSpawner *)
-                        func_?(unaff_EDI.dummy,
-                                        TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy
-                                       );
-              MVWorldObjectSpawner::MVWorldObjectSpawner_Take
-                        (this_09,unaff_ESI.__klassIndex,pMVar78);
-              *unaff_FS_OFFSET = pvStack_3;
+        piVar17 = (int32_t *)func_?();
+        iVar29 = *piVar17;
+        uStack_61 = 0;
+        pOVar14 = (Object *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::TextureId]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                  ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)unaff_EDI,pOVar14
+                   ,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                  );
+        pMVar12 = (this->fields).networkGame;
+        bVar13 = 0;
+        if (pMVar12 != (MVNetworkGame *)0x0) {
+          pMVar57 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
+                              (pMVar12,(MethodInfo *)0x0);
+          bVar13 = 0;
+          if (pMVar57 != (MVWorldObjectClientManager *)0x0) {
+            unaff_EDI = (MVAvatar__Class *)
+                        MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                                  (pMVar57,iVar29,(MethodInfo *)0x0);
+            Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                      (photonEvent,0x23,(MethodInfo *)0x0);
+            piVar17 = (int32_t *)func_?();
+            iVar29 = *piVar17;
+            iVar41 = func_?();
+            bVar13 = 0;
+            if (iVar41 != 0) {
+              pMVar65 = (MethodInfo *)0x0;
+              pMVar60 = (MVWorldObjectSpawner *)func_?();
+              MVWorldObjectSpawner::MVWorldObjectSpawner_Take(pMVar60,iVar29,pMVar65);
+              *unaff_FS_OFFSET = uStack_3;
               return;
             }
           }
@@ -4334,40 +3875,39 @@ code_?:
     }
     break;
   case MVEventCodes__Enum_ActorStateChange:
-    pMVar32 = (this->fields).networkGame;
-    bVar26 = 0;
+    pMVar12 = (this->fields).networkGame;
+    bVar13 = 0;
     unaff_EDI = unaff_EDI;
-    if (pMVar32 != (MVNetworkGame *)0x0) {
-      unaff_EDI = (_union_86)(pMVar32->fields).playerContainer;
-      bVar26 = 0;
-      unaff_ESI = _Var96;
+    if (pMVar12 != (MVNetworkGame *)0x0) {
+      unaff_EDI = (MVAvatar__Class *)(pMVar12->fields).playerContainer;
+      bVar13 = 0;
       if (photonEvent != (EventData *)0x0) {
-        bVar25 = bVar21;
-        iVar11 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Sender
+        iVar29 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Sender
                            (photonEvent,(MethodInfo *)0x0);
-        bVar26 = 0;
-        if (unaff_EDI.dummy != (Object__Class *)0x0) {
-          bVar41 = MVPlayerContainer::MVPlayerContainer_TryGetForStateChange
-                             ((MVPlayerContainer *)unaff_EDI.typeHandle,iVar11,&pMStack_6,
-                              (MethodInfo *)0x0);
-          if (bVar41 == 0) {
+        bVar13 = 0;
+        if (unaff_EDI != (MVAvatar__Class *)0x0) {
+          bVar25 = MVPlayerContainer::MVPlayerContainer_TryGetForStateChange
+                             ((MVPlayerContainer *)unaff_EDI,iVar29,&pMStack_8,(MethodInfo *)0x0);
+          if (bVar25 == 0) {
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                       ((Object *)StringLiteral_Could_not_change_player_game_sta,(MethodInfo *)0x0);
-            *unaff_FS_OFFSET = pvStack_3;
+            *unaff_FS_OFFSET = uStack_3;
             return;
           }
           Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                    ((EventData *)_Var96.typeHandle,0xde,(MethodInfo *)0x0);
-          puVar102 = (uint8_t *)func_?();
-          eventCode = CONCAT31(eventCode._1_3_,*puVar102);
-          bVar26 = 0;
-          if (pMStack_6 != (MVPlayer *)0x0) {
-            if ((pMStack_6->fields).playerState != *puVar102) {
-              MVPlayer::MVPlayer_set_PlayerState(pMStack_6,eventCode,(MethodInfo *)0x0);
-              *unaff_FS_OFFSET = pvStack_3;
+                    (photonEvent,0xde,(MethodInfo *)0x0);
+          pPVar91 = TypeInfo__MV__Common__PlayerGameState;
+          puVar92 = (uint8_t *)func_?();
+          bVar6 = (byte)((uint)pPVar91 >> 0x10);
+          eventCode = CONCAT31(eventCode._1_3_,*puVar92);
+          bVar13 = 0;
+          if (pMStack_8 != (MVPlayer *)0x0) {
+            if ((pMStack_8->fields).playerState != *puVar92) {
+              MVPlayer::MVPlayer_set_PlayerState(pMStack_8,eventCode,(MethodInfo *)0x0);
+              *unaff_FS_OFFSET = uStack_3;
               return;
             }
             goto code_?;
@@ -4379,119 +3919,106 @@ code_?:
   default:
     switch(eventCode & MVEventCodes__Enum_Join) {
     case MVEventCodes__Enum_Handshake:
-      bVar26 = 0;
+      bVar13 = 0;
       if (photonEvent != (EventData *)0x0) {
-        bVar25 = bVar18;
-        unaff_ESI.typeHandle =
-             (Il2CppMetadataTypeHandle)
-             Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                       (photonEvent,0xf5,(MethodInfo *)0x0);
+        pSVar26 = (String *)
+                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                            (photonEvent,0xf5,(MethodInfo *)0x0);
         if ((TypeInfo__MV__WorldObject__Security__SecurityHelper->_1).cctor_finished_or_no_cctor ==
             0) {
           func_?();
         }
-        _Var60.dummy = (Object__Class *)0x0;
-        if (unaff_ESI.dummy != (Object__Class *)0x0) {
-          if ((String__Class *)((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image ==
-              TypeInfo__System__String) {
-            _Var60.typeHandle = unaff_ESI.typeHandle;
+        pSVar82 = (String *)0x0;
+        if (pSVar26 != (String *)0x0) {
+          if (pSVar26->klass == TypeInfo__System__String) {
+            pSVar82 = pSVar26;
           }
-          bVar26 = 0;
-          pSVar35 = TypeInfo__System__String;
-          if (_Var60.dummy == (Object__Class *)0x0) goto code_?;
+          bVar13 = 0;
+          if (pSVar82 == (String *)0x0) goto code_?;
         }
-        unaff_ESI.dummy =
-             MVWorldObject.dll::MV::WorldObject::Security::SecurityHelper::SecurityHelper_Encrypt
-                       (_Var60.dummy,(MethodInfo *)0x0);
-        pMVar86 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+        pSVar26 = MVWorldObject.dll::MV::WorldObject::Security::SecurityHelper::
+                  SecurityHelper_Encrypt(pSVar82,(MethodInfo *)0x0);
+        pMVar73 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                             ((MethodInfo *)0x0);
-        bVar26 = 0;
-        if (pMVar86 != (MVNetworkGame_OperationRequests *)0x0) {
+        bVar13 = 0;
+        if (pMVar73 != (MVNetworkGame_OperationRequests *)0x0) {
           MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_JoinGame
-                    (pMVar86,(String *)unaff_ESI.typeHandle,(MethodInfo *)0x0);
-          *unaff_FS_OFFSET = pvStack_3;
+                    (pMVar73,pSVar26,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
       }
       break;
     case MVEventCodes__Enum_PropertiesChanged:
-      bVar26 = 0;
+      bVar13 = 0;
       if (photonEvent != (EventData *)0x0) {
-        bVar25 = bVar23;
-        eventCode = (MVEventCodes__Enum)
-                    Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                              (photonEvent,0xfb,(MethodInfo *)0x0);
-        unaff_ESI = (_union_86)
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-        ;
-        if ((Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)eventCode !=
+        this_14 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                   *)Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                               (photonEvent,0xfb,(MethodInfo *)0x0);
+        bVar6 = (byte)((uint)in_stack_7 >> 0x10);
+        if (this_14 !=
             (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
              *)0x0) {
-          unaff_EDI = (_union_86)
-                      ((Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                        *)eventCode)->klass;
-          if ((*(uint8_t *)(unaff_EDI.__klassIndex + 0xb8) <
+          pMVar11 = (MVAvatar__Class *)this_14->klass;
+          if (((pMVar11->_1).naturalAligment <
                (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
                _1).naturalAligment) ||
-             ((Dictionary_2_System_Object_System_Object___Class *)
-              ((Il2CppClass_1 *)(unaff_EDI.__klassIndex + 100))->typeHierarchy
-              [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).naturalAligment - 1] !=
+             (*(Dictionary_2_System_Object_System_Object___Class **)
+               ((int)(pMVar11->_1).typeHierarchy +
+               (uint)(
+                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                     ->_1).naturalAligment * 4 + -4) !=
               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-            bVar37 = false;
+            bVar22 = false;
           }
           else {
-            bVar37 = true;
+            bVar22 = true;
           }
-          pDVar103 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+          pDVar93 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                      *)0x0;
-          if (bVar37) {
-            pDVar103 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                       *)eventCode;
+          if (bVar22) {
+            pDVar93 = this_14;
           }
-          bVar26 = 0;
-          eventCode = (MVEventCodes__Enum)pDVar103;
-          if (pDVar103 ==
+          bVar13 = 0;
+          this_14 = pDVar93;
+          unaff_EDI = pMVar11;
+          if (pDVar93 ==
               (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                *)0x0) goto code_?;
         }
-        bVar26 = 0;
-        if ((Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)eventCode !=
+        bVar13 = 0;
+        if (this_14 !=
             (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
              *)0x0) {
-          _Var96.dummy = &UNK_?;
-          this_10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements
+          pMVar65 = (MethodInfo *)&UNK_?;
+          this_15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements
                     ::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
                     Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Keys
-                              ((Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                                *)eventCode,
+                              (this_14,
                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Keys__
                               );
-          bVar26 = 0;
-          if (this_10 !=
+          bVar6 = (byte)((uint)in_stack_7 >> 0x10);
+          bVar13 = 0;
+          if (this_15 !=
               (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                *)0x0) {
-            _Var60.dummy = &UNK_?;
-            pDVar104 = mscorlib.dll::System::Collections::Generic::
+            pDVar94 = mscorlib.dll::System::Collections::Generic::
                       Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets
                       ::StyleSheetCache+SheetHandleKey,System::Object]::
                       Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                                 ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                                   *)&stack0xffffff78,
                                  (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                                  *)this_10,
+                                  *)this_15,
                                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<System::Object,_System::Object>__GetEnumerator__
                                 );
-            unaff_ESI.dummy = &stack0xffffff88;
-            VStack_8.y = 0.0;
-            iVar11 = pDVar104->_index;
-            _Var73 = (_union_86)pDVar104->_currentValue;
+            VStack_10.y = 0.0;
+            pMVar11 = (MVAvatar__Class *)pDVar94->_currentValue;
             uStack_1 = 3;
-            VStack_8.z = (float)unaff_ESI.dummy;
+            VStack_10.z = (float)&stack0xffffff88;
             do {
-              bVar41 = mscorlib.dll::System::Collections::Generic::
+              bVar6 = (byte)((uint)in_stack_7 >> 0x10);
+              bVar25 = mscorlib.dll::System::Collections::Generic::
                        Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::
                        Object,UnityEngine::UIElements::TextureId]::
                        Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Object_UnityEngine_UIElements_TextureId__MoveNext
@@ -4499,214 +4026,199 @@ code_?:
                                    *)&stack0xffffff88,
                                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
                                  );
-              bVar25 = (byte)iVar11;
-              if (bVar41 == 0) {
+              if (bVar25 == 0) {
                 uStack_1 = 0xffffffff;
                 mscorlib.dll::System::ThrowHelper::
                 ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                          ((Object *)unaff_ESI.typeHandle,
+                          ((Object *)&stack0xffffff88,
                            (ExceptionArgument__Enum)
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
-                           ,(MethodInfo *)_Var96.typeHandle);
-                *unaff_FS_OFFSET = pvStack_3;
+                           ,pMVar65);
+                *unaff_FS_OFFSET = uStack_3;
                 return;
               }
-              unaff_EDI.dummy = (Object__Class *)0x0;
-              _Var108 = _Var73;
-              if (_Var73.dummy != (Object__Class *)0x0) {
-                if ((String__Class *)((Il2CppClass_0 *)&(_Var73.array)->etype)->image ==
-                    TypeInfo__System__String) {
-                  unaff_EDI = _Var73;
+              unaff_EDI = (MVAvatar__Class *)0x0;
+              if (pMVar11 != (MVAvatar__Class *)0x0) {
+                if ((String__Class *)(pMVar11->_0).image == TypeInfo__System__String) {
+                  unaff_EDI = pMVar11;
                 }
-                bVar26 = 0;
-                pSVar35 = TypeInfo__System__String;
-                if (unaff_EDI.dummy == (Object__Class *)0x0) goto code_?;
+                bVar13 = 0;
+                if (unaff_EDI == (MVAvatar__Class *)0x0) goto code_?;
               }
-              bVar26 = 0;
-              if (eventCode == MVEventCodes__Enum_NoCodeSet) break;
-              TVar65 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              bVar13 = 0;
+              if (this_14 ==
+                  (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                   *)0x0) break;
+              TVar95 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                        Object,UnityEngine::UIElements::TextureId]::
                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                                  ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                  eventCode,(Object *)unaff_EDI.typeHandle,
+                                  this_14,(Object *)unaff_EDI,
                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                  );
-              if (TVar65.m_Index == 0) {
-                _Var60.dummy = (String *)0x0;
-                _Var96 = (_union_86)::StringLiteral___;
+              pMVar65 = (MethodInfo *)::StringLiteral___;
+              if (TVar95.m_Index == 0) {
+                pSVar26 = (String *)0x0;
               }
               else {
-                _Stack_48.typeHandle = (Il2CppMetadataTypeHandle)::StringLiteral___;
-                _Var60.dummy = (void *)func_?();
-                _Var96 = _Stack_48;
+                pSVar26 = (String *)func_?();
               }
-              pSVar42 = mscorlib.dll::System::String::String_Concat_4
-                                  ((String *)unaff_EDI.typeHandle,(String *)_Var96.typeHandle,
-                                   (String *)_Var60.typeHandle,(MethodInfo *)0x0);
+              in_stack_7 =
+                   mscorlib.dll::System::String::String_Concat_4
+                             ((String *)unaff_EDI,(String *)pMVar65,pSVar26,(MethodInfo *)0x0);
               if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              in_stack_49 = (Int32__Class *)0x0;
               UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                        ((Object *)pSVar42,(MethodInfo *)0x0);
+                        ((Object *)in_stack_7,(MethodInfo *)0x0);
             } while( true );
           }
         }
       }
       break;
     case MVEventCodes__Enum_Leave:
-      bVar26 = 0;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
       if (photonEvent != (EventData *)0x0) {
-        bVar25 = 0;
-        pSVar27 = (Single__Class *)
-                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+        pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                             (photonEvent,0xfe,(MethodInfo *)0x0);
-        bVar26 = 0;
+        bVar13 = 0;
         unaff_EDI = unaff_EDI;
-        if (pSVar27 != (Single__Class *)0x0) {
-          pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-          pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-          bVar26 = pIVar28 < pIVar29;
-          pIVar30 = TypeInfo__System__Int32;
-          if (pIVar28 != pIVar29) goto code_?;
-          p_Var65 = (_union_86 *)func_?();
-          unaff_ESI = (_union_86)p_Var65->__klassIndex;
-          pMVar32 = (this->fields).networkGame;
-          bVar26 = 0;
-          unaff_EDI = (_union_86)this;
-          if (pMVar32 != (MVNetworkGame *)0x0) {
-            pMVar53 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar32,(MethodInfo *)0x0);
-            bVar26 = 0;
-            if (pMVar53 != (MVLocalPlayer *)0x0) {
-              if (unaff_ESI.dummy == (Object__Class *)(pMVar53->fields)._._ActorNr_k__BackingField)
-              {
+        if (pOVar14 != (Object *)0x0) {
+          pIVar15 = (pOVar14->klass->_0).element_class;
+          pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+          bVar13 = pIVar15 < pIVar16;
+          pMVar11 = unaff_EDI;
+          if (pIVar15 != pIVar16) goto code_?;
+          piVar40 = (int *)func_?();
+          iVar41 = *piVar40;
+          pMVar12 = (this->fields).networkGame;
+          bVar13 = 0;
+          unaff_EDI = (MVAvatar__Class *)this;
+          if (pMVar12 != (MVNetworkGame *)0x0) {
+            pMVar44 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar12,(MethodInfo *)0x0);
+            bVar13 = 0;
+            if (pMVar44 != (MVLocalPlayer *)0x0) {
+              if (iVar41 == (pMVar44->fields)._._ActorNr_k__BackingField) {
                 if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__UnityEngine__Debug);
+                  func_?();
                 }
                 UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                           ((Object *)StringLiteral_Local_player_leave_event,(MethodInfo *)0x0);
-                *unaff_FS_OFFSET = pvStack_3;
+                *unaff_FS_OFFSET = uStack_3;
                 return;
               }
-              pMVar32 = (this->fields).networkGame;
-              bVar26 = 0;
-              if (pMVar32 != (MVNetworkGame *)0x0) {
-                pMVar93 = (pMVar32->fields).playerContainer;
-                bVar26 = 0;
-                if (pMVar93 != (MVPlayerContainer *)0x0) {
-                  bVar41 = MVPlayerContainer::MVPlayerContainer_ContainsKey
-                                     (pMVar93,unaff_ESI.__klassIndex,(MethodInfo *)0x0);
-                  if (bVar41 == 0) {
+              pMVar12 = (this->fields).networkGame;
+              bVar13 = 0;
+              if (pMVar12 != (MVNetworkGame *)0x0) {
+                pMVar83 = (pMVar12->fields).playerContainer;
+                bVar13 = 0;
+                if (pMVar83 != (MVPlayerContainer *)0x0) {
+                  bVar25 = MVPlayerContainer::MVPlayerContainer_ContainsKey
+                                     (pMVar83,iVar41,(MethodInfo *)0x0);
+                  if (bVar25 == 0) {
 code_?:
-                    pMVar32 = (this->fields).networkGame;
-                    bVar26 = 0;
-                    if (pMVar32 != (MVNetworkGame *)0x0) {
-                      pMVar93 = (pMVar32->fields).playerContainer;
-                      bVar26 = 0;
-                      if (pMVar93 != (MVPlayerContainer *)0x0) {
+                    pMVar12 = (this->fields).networkGame;
+                    bVar13 = 0;
+                    if (pMVar12 != (MVNetworkGame *)0x0) {
+                      pMVar83 = (pMVar12->fields).playerContainer;
+                      bVar13 = 0;
+                      if (pMVar83 != (MVPlayerContainer *)0x0) {
                         MVPlayerContainer::MVPlayerContainer_Remove
-                                  (pMVar93,unaff_ESI.__klassIndex,(MethodInfo *)0x0);
-                        *unaff_FS_OFFSET = pvStack_3;
+                                  (pMVar83,iVar41,(MethodInfo *)0x0);
+                        *unaff_FS_OFFSET = uStack_3;
                         return;
                       }
                     }
                   }
                   else {
-                    pMVar32 = (this->fields).networkGame;
-                    bVar26 = 0;
-                    if (pMVar32 != (MVNetworkGame *)0x0) {
-                      pMVar93 = (pMVar32->fields).playerContainer;
-                      bVar26 = 0;
-                      if (pMVar93 != (MVPlayerContainer *)0x0) {
-                        pIStack_66 = (Il2CppClass *)
-                                     MVPlayerContainer::MVPlayerContainer_get_Item
-                                               (pMVar93,unaff_ESI.__klassIndex,(MethodInfo *)0x0);
-                        pDStack_75 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                                      *)func_?(
-                                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                                  );
+                    pMVar12 = (this->fields).networkGame;
+                    bVar13 = 0;
+                    if (pMVar12 != (MVNetworkGame *)0x0) {
+                      pMVar83 = (pMVar12->fields).playerContainer;
+                      bVar13 = 0;
+                      if (pMVar83 != (MVPlayerContainer *)0x0) {
+                        pMStack_53 = MVPlayerContainer::MVPlayerContainer_get_Item
+                                               (pMVar83,iVar41,(MethodInfo *)0x0);
+                        pDStack_62 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                                      *)func_?();
                         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                         Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::
                         Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                                  (pDStack_75,
+                                  (pDStack_62,
                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                                   );
-                        eventCode = eventCode & 0xffffff;
-                        VStack_8.z = (float)func_?(TypeInfo__System__Byte,
-                                                             (byte *)((int)&eventCode + 3));
-                        _Stack_48 = unaff_ESI;
-                        pOVar40 = (Object *)func_?(TypeInfo__System__Int32,&_Stack_48);
-                        bVar26 = 0;
-                        if (pDStack_75 !=
+                        VStack_10.z = (float)func_?();
+                        pOVar14 = (Object *)func_?();
+                        bVar13 = 0;
+                        if (pDStack_62 !=
                             (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                              *)0x0) {
                           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           Object,System::Object]::Dictionary_2_System_Object_System_Object__set_Item
-                                    ((Dictionary_2_System_Object_System_Object_ *)pDStack_75,
-                                     (Object *)VStack_8.z,pOVar40,
+                                    ((Dictionary_2_System_Object_System_Object_ *)pDStack_62,
+                                     (Object *)VStack_10.z,pOVar14,
                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                                     );
-                          uStack_74 = 3;
-                          pOVar40 = (Object *)func_?(TypeInfo__System__Byte,&uStack_74);
-                          bVar26 = 0;
-                          if (pIStack_66 != (Il2CppClass *)0x0) {
-                            bVar26 = 0;
-                            if (pIStack_66->klass != (Il2CppClass *)0x0) {
+                          uStack_61 = 3;
+                          pOVar14 = (Object *)func_?();
+                          bVar13 = 0;
+                          if (pMStack_53 != (MVPlayer *)0x0) {
+                            pUVar96 = (pMStack_53->fields)._UserProfileData_k__BackingField;
+                            bVar13 = 0;
+                            if (pUVar96 != (UserProfileData *)0x0) {
                               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                               Object,System::Object]::
                               Dictionary_2_System_Object_System_Object__set_Item
-                                        ((Dictionary_2_System_Object_System_Object_ *)pDStack_75,
-                                         pOVar40,(Object *)pIStack_66->klass->namespaze,
+                                        ((Dictionary_2_System_Object_System_Object_ *)pDStack_62,
+                                         pOVar14,(Object *)(pUVar96->fields).UserName,
                                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                                         );
-                              uStack_67 = 6;
-                              VStack_8.z = (float)func_?(TypeInfo__System__Byte,&uStack_67
-                                                                  );
-                              pMVar32 = MVGameControllerBase::MVGameControllerBase_get_Game
+                              uStack_54 = 6;
+                              VStack_10.z = (float)func_?();
+                              pMVar12 = MVGameControllerBase::MVGameControllerBase_get_Game
                                                   ((MethodInfo *)0x0);
-                              bVar26 = 0;
-                              if (pMVar32 != (MVNetworkGame *)0x0) {
-                                this_04 = (pMVar32->fields)._Friends_k__BackingField;
-                                bVar26 = 0;
-                                if (this_04 != (FriendList *)0x0) {
-                                  bStack_105 = FriendList::FriendList_IsFriend
-                                                        (this_04,(int32_t)pIStack_66->parent,
+                              bVar13 = 0;
+                              if (pMVar12 != (MVNetworkGame *)0x0) {
+                                this_06 = (pMVar12->fields)._Friends_k__BackingField;
+                                bVar13 = 0;
+                                if (this_06 != (FriendList *)0x0) {
+                                  bStack_97 = FriendList::FriendList_IsFriend
+                                                        (this_06,(pMStack_53->fields).
+                                                                 _ProfileID_k__BackingField,
                                                          (MethodInfo *)0x0);
-                                  pOVar40 = (Object *)
-                                            func_?(TypeInfo__System__Boolean,&bStack_105);
+                                  pOVar14 = (Object *)func_?();
                                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                                   Object,System::Object]::
                                   Dictionary_2_System_Object_System_Object__set_Item
-                                            ((Dictionary_2_System_Object_System_Object_ *)pDStack_75
-                                             ,(Object *)VStack_8.z,pOVar40,
+                                            ((Dictionary_2_System_Object_System_Object_ *)pDStack_62
+                                             ,(Object *)VStack_10.z,pOVar14,
                                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                                             );
                                   MVGameControllerBase::MVGameControllerBase_PostGameMsg
                                             (MVGameMsgType__Enum_UserLeft,
-                                             (Dictionary_2_System_Object_System_Object_ *)pDStack_75
+                                             (Dictionary_2_System_Object_System_Object_ *)pDStack_62
                                              ,(MethodInfo *)0x0);
-                                  pMVar32 = (this->fields).networkGame;
-                                  bVar26 = 0;
-                                  if (pMVar32 != (MVNetworkGame *)0x0) {
-                                    pGVar80 = (pMVar32->fields).gameStatCounterManager;
-                                    bVar26 = 0;
-                                    if (pGVar80 != (GameStatCounterManager *)0x0) {
+                                  pMVar12 = (this->fields).networkGame;
+                                  bVar13 = 0;
+                                  if (pMVar12 != (MVNetworkGame *)0x0) {
+                                    pGVar70 = (pMVar12->fields).gameStatCounterManager;
+                                    bVar13 = 0;
+                                    if (pGVar70 != (GameStatCounterManager *)0x0) {
                                       MVWorldObject.dll::GameStatCounterManager::
                                       GameStatCounterManager_RemoveTeamScoreOnActorLeave
-                                                (pGVar80,unaff_ESI.__klassIndex,
-                                                 (MVTeam__Enum)pIStack_66->properties,
+                                                (pGVar70,iVar41,
+                                                 (pMStack_53->fields)._Team_k__BackingField,
                                                  (MethodInfo *)0x0);
-                                      pMVar32 = (this->fields).networkGame;
-                                      bVar26 = 0;
-                                      if (pMVar32 != (MVNetworkGame *)0x0) {
-                                        pGVar80 = (pMVar32->fields).gameStatCounterManager;
-                                        bVar26 = 0;
-                                        if (pGVar80 != (GameStatCounterManager *)0x0) {
+                                      pMVar12 = (this->fields).networkGame;
+                                      bVar13 = 0;
+                                      if (pMVar12 != (MVNetworkGame *)0x0) {
+                                        pGVar70 = (pMVar12->fields).gameStatCounterManager;
+                                        bVar13 = 0;
+                                        if (pGVar70 != (GameStatCounterManager *)0x0) {
                                           MVWorldObject.dll::GameStatCounterManager::
                                           GameStatCounterManager_RemoveStatsFromActor
-                                                    (pGVar80,unaff_ESI.__klassIndex,
-                                                     (MethodInfo *)0x0);
+                                                    (pGVar70,iVar41,(MethodInfo *)0x0);
                                           goto code_?;
                                         }
                                       }
@@ -4728,146 +4240,128 @@ code_?:
       }
       break;
     case MVEventCodes__Enum_Join:
-      bVar26 = 0;
-      unaff_ESI = _Var96;
+      bVar13 = 0;
       unaff_EDI = unaff_EDI;
       if (photonEvent != (EventData *)0x0) {
-        bVar25 = 0;
-        pSVar27 = (Single__Class *)
-                  Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+        pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                             (photonEvent,0xb,(MethodInfo *)0x0);
-        bVar26 = 0;
+        bVar13 = 0;
         unaff_EDI = unaff_EDI;
-        if (pSVar27 != (Single__Class *)0x0) {
-          pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-          pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-          bVar26 = pIVar28 < pIVar29;
-          pIVar30 = TypeInfo__System__Int32;
-          if (pIVar28 == pIVar29) {
-            _Var60.dummy = &UNK_?;
-            puVar54 = (undefined4 *)func_?();
-            pMStack_76 = (MVWorldObject *)*puVar54;
-            pSVar27 = (Single__Class *)
-                      Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                                ((EventData *)_Var96.typeHandle,0xfe,(MethodInfo *)0x0);
-            bVar26 = 0;
+        if (pOVar14 != (Object *)0x0) {
+          pIVar15 = (pOVar14->klass->_0).element_class;
+          pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+          bVar13 = pIVar15 < pIVar16;
+          pMVar11 = unaff_EDI;
+          if (pIVar15 == pIVar16) {
+            puVar39 = (undefined4 *)func_?();
+            pMStack_63 = (MVWorldObject *)*puVar39;
+            pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                                (photonEvent,0xfe,(MethodInfo *)0x0);
+            bVar13 = 0;
             unaff_EDI = unaff_EDI;
-            if (pSVar27 != (Single__Class *)0x0) {
-              pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-              pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-              bVar26 = pIVar28 < pIVar29;
-              pIVar30 = TypeInfo__System__Int32;
-              if (pIVar28 != pIVar29) goto code_?;
-              pMVar46 = (MVEventCodes__Enum *)func_?(pSVar27);
-              eventCode = *pMVar46;
-              _Var73.dummy = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
-                             EventData_get_Item(_Var96.dummy,0x9a,(MethodInfo *)0x0);
-              unaff_EDI.dummy = (Object__Class *)0x0;
-              if (_Var73.dummy != (Object__Class *)0x0) {
-                if ((String__Class *)((Il2CppClass_0 *)&(_Var73.array)->etype)->image ==
-                    TypeInfo__System__String) {
-                  unaff_EDI.typeHandle = _Var73.typeHandle;
-                }
-                bVar26 = 0;
-                pSVar35 = TypeInfo__System__String;
-                if (unaff_EDI.dummy == (Object__Class *)0x0) goto code_?;
-              }
-              pSVar27 = (Single__Class *)
+            if (pOVar14 != (Object *)0x0) {
+              pIVar15 = (pOVar14->klass->_0).element_class;
+              pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+              bVar13 = pIVar15 < pIVar16;
+              if (pIVar15 != pIVar16) goto code_?;
+              piVar40 = (int *)func_?();
+              iVar41 = *piVar40;
+              pMVar11 = (MVAvatar__Class *)
                         Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                                  ((EventData *)_Var96.typeHandle,0xbc,(MethodInfo *)0x0);
-              bVar26 = 0;
-              if (pSVar27 != (Single__Class *)0x0) {
-                pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-                pIVar29 = (TypeInfo__MV__Common__BuildTarget->_0).element_class;
-                bVar26 = pIVar28 < pIVar29;
-                pIVar30 = (Int32__Class *)TypeInfo__MV__Common__BuildTarget;
-                if (pIVar28 != pIVar29) goto code_?;
+                                  (photonEvent,0x9a,(MethodInfo *)0x0);
+              unaff_EDI = (MVAvatar__Class *)0x0;
+              if (pMVar11 != (MVAvatar__Class *)0x0) {
+                if ((String__Class *)(pMVar11->_0).image == TypeInfo__System__String) {
+                  unaff_EDI = pMVar11;
+                }
+                bVar13 = 0;
+                if (unaff_EDI == (MVAvatar__Class *)0x0) goto code_?;
+              }
+              pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+                                  (photonEvent,0xbc,(MethodInfo *)0x0);
+              bVar13 = 0;
+              if (pOVar14 != (Object *)0x0) {
+                pIVar15 = (pOVar14->klass->_0).element_class;
+                pIVar16 = (TypeInfo__MV__Common__BuildTarget->_0).element_class;
+                bVar13 = pIVar15 < pIVar16;
+                pMVar11 = unaff_EDI;
+                if (pIVar15 != pIVar16) goto code_?;
                 puVar5 = (undefined1 *)func_?();
-                _Stack_34.__klassIndex._0_1_ = *puVar5;
-                pSVar27 = (Single__Class *)
-                          Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
-                          EventData_get_Item((EventData *)_Var96.typeHandle,0x59,(MethodInfo *)0x0);
-                bVar26 = 0;
-                if (pSVar27 != (Single__Class *)0x0) {
-                  pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-                  pIVar29 = (TypeInfo__System__Int32->_0).element_class;
-                  bVar26 = pIVar28 < pIVar29;
-                  pIVar30 = TypeInfo__System__Int32;
-                  if (pIVar28 != pIVar29) goto code_?;
-                  p_Var65 = (_union_86 *)func_?(pSVar27);
-                  _Stack_28 = *p_Var65;
-                  pSVar27 = (Single__Class *)
-                            Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
-                            EventData_get_Item((EventData *)_Var96.typeHandle,0xd0,(MethodInfo *)0x0
-                                              );
-                  bVar26 = 0;
-                  if (pSVar27 != (Single__Class *)0x0) {
-                    pIVar28 = (Il2CppClass *)((pSVar27->_0).image)->codeGenModule;
-                    pIVar29 = (TypeInfo__System__Boolean->_0).element_class;
-                    bVar26 = pIVar28 < pIVar29;
-                    pIVar30 = (Int32__Class *)TypeInfo__System__Boolean;
-                    if (pIVar28 != pIVar29) goto code_?;
-                    puVar5 = (undefined1 *)func_?(pSVar27);
-                    _Stack_48.__klassIndex._0_1_ = *puVar5;
-                    unaff_ESI.dummy =
-                         Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
-                         EventData_get_Item(_Var96.dummy,0xe0,(MethodInfo *)0x0);
+                pMStack_59 = (MVAvatar__Class *)CONCAT31(pMStack_59._1_3_,*puVar5);
+                pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
+                          EventData_get_Item(photonEvent,0x59,(MethodInfo *)0x0);
+                bVar13 = 0;
+                if (pOVar14 != (Object *)0x0) {
+                  pIVar15 = (pOVar14->klass->_0).element_class;
+                  pIVar16 = (TypeInfo__System__Int32->_0).element_class;
+                  bVar13 = pIVar15 < pIVar16;
+                  if (pIVar15 != pIVar16) goto code_?;
+                  piVar40 = (int *)func_?();
+                  pMStack_19 = (MVAvatar__Class *)*piVar40;
+                  pOVar14 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
+                            EventData_get_Item(photonEvent,0xd0,(MethodInfo *)0x0);
+                  bVar13 = 0;
+                  if (pOVar14 != (Object *)0x0) {
+                    pIVar15 = (pOVar14->klass->_0).element_class;
+                    pIVar16 = (TypeInfo__System__Boolean->_0).element_class;
+                    bVar13 = pIVar15 < pIVar16;
+                    if (pIVar15 != pIVar16) goto code_?;
+                    pbVar67 = (bool *)func_?();
+                    bVar25 = *pbVar67;
+                    pSVar26 = (String *)
+                              Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::
+                              EventData_get_Item(photonEvent,0xe0,(MethodInfo *)0x0);
                     if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor ==
                         0) {
-                      func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
+                      func_?();
                     }
-                    _Var60.dummy = (Object__Class *)0x0;
-                    if (unaff_ESI.dummy != (Object__Class *)0x0) {
-                      if ((String__Class *)((Il2CppClass_0 *)&(unaff_ESI.array)->etype)->image ==
-                          TypeInfo__System__String) {
-                        _Var60.typeHandle = unaff_ESI.typeHandle;
+                    pSVar82 = (String *)0x0;
+                    if (pSVar26 != (String *)0x0) {
+                      if (pSVar26->klass == TypeInfo__System__String) {
+                        pSVar82 = pSVar26;
                       }
-                      bVar26 = 0;
-                      pSVar35 = TypeInfo__System__String;
-                      if (_Var60.dummy == (Object__Class *)0x0) goto code_?;
+                      bVar13 = 0;
+                      if (pSVar82 == (String *)0x0) goto code_?;
                     }
-                    VStack_8.z = (float)Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::
+                    VStack_10.z = (float)Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::
                                          JsonConvert_DeserializeObject_2
-                                                   ((String *)_Var60.typeHandle,
-                                                                                                        
+                                                   (pSVar82,
                                                   MV__WorldObject__MetaData__UserProfileData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::MetaData::UserProfileData>_System__String_
                                                   );
-                    pMVar32 = (this->fields).networkGame;
-                    bVar26 = 0;
-                    if (pMVar32 != (MVNetworkGame *)0x0) {
-                      pMVar53 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
-                                          (pMVar32,(MethodInfo *)0x0);
-                      bVar26 = 0;
-                      if (pMVar53 != (MVLocalPlayer *)0x0) {
-                        if (eventCode == (pMVar53->fields)._._ActorNr_k__BackingField) {
+                    pMVar12 = (this->fields).networkGame;
+                    bVar13 = 0;
+                    if (pMVar12 != (MVNetworkGame *)0x0) {
+                      pMVar44 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
+                                          (pMVar12,(MethodInfo *)0x0);
+                      bVar13 = 0;
+                      if (pMVar44 != (MVLocalPlayer *)0x0) {
+                        if (iVar41 == (pMVar44->fields)._._ActorNr_k__BackingField) {
                           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                             func_?();
                           }
                           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                                     ((Object *)StringLiteral_Received_join_event_for_localPla,
                                      (MethodInfo *)0x0);
-                          *unaff_FS_OFFSET = pvStack_3;
+                          *unaff_FS_OFFSET = uStack_3;
                           return;
                         }
-                        unaff_ESI.dummy = (void *)func_?();
+                        pMVar84 = (MVPlayer *)func_?();
                         MVPlayer::MVPlayer__ctor
-                                  ((MVPlayer *)unaff_ESI.typeHandle,eventCode,(int32_t)pMStack_76,
-                                   (String *)unaff_EDI.typeHandle,_Stack_34.__klassIndex,
-                                   (UserProfileData *)VStack_8.z,0,(bool)_Stack_48.__klassIndex,
-                                   (MethodInfo *)0x0);
-                        bVar26 = 0;
-                        if (unaff_ESI.dummy != (void *)0x0) {
-                          unaff_ESI.type[9].data = _Stack_28;
-                          pMVar32 = (this->fields).networkGame;
-                          bVar26 = 0;
-                          if (pMVar32 != (MVNetworkGame *)0x0) {
-                            pMVar93 = (pMVar32->fields).playerContainer;
-                            bVar26 = 0;
-                            if (pMVar93 != (MVPlayerContainer *)0x0) {
+                                  (pMVar84,iVar41,(int32_t)pMStack_63,(String *)unaff_EDI,
+                                   (BuildTarget__Enum)pMStack_59,(UserProfileData *)VStack_10.z,0,
+                                   bVar25,(MethodInfo *)0x0);
+                        bVar13 = 0;
+                        if (pMVar84 != (MVPlayer *)0x0) {
+                          (pMVar84->fields)._Team_k__BackingField = (int32_t)pMStack_19;
+                          pMVar12 = (this->fields).networkGame;
+                          bVar13 = 0;
+                          if (pMVar12 != (MVNetworkGame *)0x0) {
+                            pMVar83 = (pMVar12->fields).playerContainer;
+                            bVar13 = 0;
+                            if (pMVar83 != (MVPlayerContainer *)0x0) {
                               MVPlayerContainer::MVPlayerContainer_Add
-                                        (pMVar93,(MVPlayer *)unaff_ESI.typeHandle,(MethodInfo *)0x0)
-                              ;
-                              *unaff_FS_OFFSET = pvStack_3;
+                                        (pMVar83,pMVar84,(MethodInfo *)0x0);
+                              *unaff_FS_OFFSET = uStack_3;
                               return;
                             }
                           }
@@ -4889,319 +4383,307 @@ code_?:
     }
   }
   func_?();
-  pMVar84 = extraout_EDX_00;
-code_?:
-  func_?(unaff_ESI.dummy,pMVar84);
+  pMVar11 = unaff_EDI;
 code_?:
   func_?();
-  _Var96 = unaff_ESI;
 code_?:
-  func_?(unaff_EDI.dummy,_Stack_48.dummy);
-  _Stack_54 = (unaff_EDI.type)->data;
-  func_?(&_Stack_54,&UNK_?);
+  func_?();
+  unaff_EDI = pMVar11;
 code_?:
-  _Var60 = _Var96;
+  func_?();
   func_?();
 code_?:
-  _Var73.dummy = (void *)func_?();
-  pSVar35 = extraout_ECX_01;
-  unaff_ESI = _Var96;
+  func_?();
 code_?:
-  uVar72 = func_?(_Var73.dummy,pSVar35);
-  uVar106 = func_?(uVar72);
-  iVar71 = (int)((ulonglong)uVar106 >> 0x20);
-  pbRam609a1064 = (byte *)uVar106;
-  iVar107 = iVar71 + 1;
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET + (int)(pbRam609a1064 + -0x2aef9ba5));
-  bVar22 = (byte)((ushort)extraout_CX >> 8);
-  bVar37 = CARRY1(*pbVar69,bVar22) || CARRY1(*pbVar69 + bVar22,bVar26);
-  *pbVar69 = *pbVar69 + bVar22 + bVar26;
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET + iVar71 + 0x4e10645d);
-  bVar24 = *pbVar69;
-  bVar21 = (byte)((uint)iVar107 >> 8);
-  bVar12 = *pbVar69;
-  *pbVar69 = bVar12 + bVar21 + bVar37;
-  bVar23 = (byte)iVar107;
-  bVar37 = CARRY1((byte)extraout_CX,bVar23) ||
-           CARRY1((byte)extraout_CX + bVar23,CARRY1(bVar24,bVar21) || CARRY1(bVar12 + bVar21,bVar37)
-                 );
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET + (int)pbRam609a1064);
-  bVar12 = *pbVar69;
-  bVar23 = (byte)((ulonglong)uVar106 >> 8);
-  bVar24 = *pbVar69;
-  *pbVar69 = bVar24 + bVar23 + bVar37;
-  bVar20 = (byte)((uint)_Var73 >> 8);
-  bVar37 = CARRY1(bVar21,bVar20) ||
-           CARRY1(bVar21 + bVar20,CARRY1(bVar12,bVar23) || CARRY1(bVar24 + bVar23,bVar37));
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET +
-                    (int)((int)(unaff_ESI.__klassIndex + 100) + _Var73.__klassIndex * 2));
-  bVar88 = CARRY1(*pbVar69,bVar23) || CARRY1(*pbVar69 + bVar23,bVar37);
-  *pbVar69 = *pbVar69 + bVar23 + bVar37;
-  puVar108 = (undefined *)(_Var60.__klassIndex + 0x2010645f);
-  bVar12 = *puVar108 + (byte)uVar106;
-  bVar37 = CARRY1(*puVar108,(byte)uVar106) || CARRY1(bVar12,bVar88);
-  *puVar108 = bVar12 + bVar88;
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET + (int)_Var73.dummy);
-  bVar88 = CARRY1(*pbVar69,bVar22) || CARRY1(*pbVar69 + bVar22,bVar37);
-  pbRama3201064 = pbRam609a1064;
-  *pbVar69 = *pbVar69 + bVar22 + bVar37;
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET + (int)((int)&in_stack_49->rgctx_data + 1));
-  bVar12 = *pbVar69;
-  bVar23 = (byte)((uint)in_stack_49 >> 8);
-  bVar24 = *pbVar69 + bVar23;
-  *pbVar69 = bVar24 + bVar88;
-  bVar37 = CARRY1((byte)in_stack_49,bVar25) ||
-           CARRY1((byte)in_stack_49 + bVar25,CARRY1(bVar12,bVar23) || CARRY1(bVar24,bVar88));
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET + in_stack_109 + 0x62);
-  bVar12 = (byte)in_stack_110;
-  bVar88 = CARRY1(*pbVar69,bVar12) || CARRY1(*pbVar69 + bVar12,bVar37);
-  *pbVar69 = *pbVar69 + bVar12 + bVar37;
-  bVar25 = (byte)in_stack_109;
-  bVar37 = CARRY1(bVar25,bVar25) || CARRY1(bVar25 * '\x02',bVar88);
-  bVar18 = bVar25 * '\x02' + bVar88;
-  pbVar111 = (byte *)CONCAT31((int3)((uint)in_stack_109 >> 8),bVar18);
-  puVar112 = (ushort *)(iStack_9 + -0x4b + in_stack_110);
-  *puVar112 = *puVar112 + (ushort)(0 < (short)-(*puVar112 & 3)) * -(*puVar112 & 3);
-  puVar112 = (ushort *)(iStack_9 + 0x22 + in_stack_110);
-  *puVar112 = *puVar112 + (ushort)(0 < (short)-(*puVar112 & 3)) * -(*puVar112 & 3);
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET + iStack_9);
-  bVar23 = (byte)((uint)iStack_9 >> 8);
-  bVar88 = CARRY1(*pbVar69,bVar23) || CARRY1(*pbVar69 + bVar23,bVar37);
-  *pbVar69 = *pbVar69 + bVar23 + bVar37;
-  iRam_? = iStack_9;
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET + iStack_9);
-  bVar37 = CARRY1(*pbVar69,bVar23) || CARRY1(*pbVar69 + bVar23,bVar88);
-  *pbVar69 = *pbVar69 + bVar23 + bVar88;
-  iRam_? = iStack_9;
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET + (int)in_stack_59);
-  bVar25 = _Stack_54._0_1_;
-  bVar88 = CARRY1(*pbVar69,bVar25) || CARRY1(*pbVar69 + bVar25,bVar37);
-  *pbVar69 = *pbVar69 + bVar25 + bVar37;
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET + iStack_9);
-  bVar37 = CARRY1(*pbVar69,bVar23) || CARRY1(*pbVar69 + bVar23,bVar88);
-  *pbVar69 = *pbVar69 + bVar23 + bVar88;
-  iRam_? = iStack_9;
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET + in_stack_110 + 0x66);
-  bVar21 = _Stack_54._1_1_;
-  bVar88 = CARRY1(*pbVar69,bVar21) || CARRY1(*pbVar69 + bVar21,bVar37);
-  *pbVar69 = *pbVar69 + bVar21 + bVar37;
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET + (int)((int)&(in_stack_59->_1).typeHierarchy + 3));
-  bVar24 = (byte)iStack_9;
-  bVar37 = CARRY1(*pbVar69,bVar24) || CARRY1(*pbVar69 + bVar24,bVar88);
-  *pbVar69 = *pbVar69 + bVar24 + bVar88;
-  bVar88 = CARRY1(bVar12,bVar18) || CARRY1(bVar12 + bVar18,bVar37);
-  uVar113 = (undefined3)((uint)in_stack_110 >> 8);
-  bVar20 = bVar12 + bVar18 + bVar37;
-  iVar107 = CONCAT31(uVar113,bVar20);
-  pbVar69 = (byte *)segment(in_FS,(short)pbVar111 + 0x69);
-  bVar37 = CARRY1(*pbVar69,bVar25) || CARRY1(*pbVar69 + bVar25,bVar88);
-  *pbVar69 = *pbVar69 + bVar25 + bVar88;
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET +
-                    _Stack_54.__klassIndex + 100 + (int)in_stack_114 * 2);
-  bVar17 = (byte)((uint)in_stack_109 >> 8);
-  bVar88 = CARRY1(*pbVar69,bVar17) || CARRY1(*pbVar69 + bVar17,bVar37);
-  *pbVar69 = *pbVar69 + bVar17 + bVar37;
-  iVar71 = _Stack_54.__klassIndex + 0xa106469;
-  bVar19 = (byte)((uint)in_stack_110 >> 8);
-  bVar37 = CARRY1(*(byte *)iVar71,bVar19) || CARRY1(*(char *)iVar71 + bVar19,bVar88);
-  *(byte *)iVar71 = *(char *)iVar71 + bVar19 + bVar88;
-  bVar88 = CARRY1(bVar25,bVar18) || CARRY1(bVar25 + bVar18,bVar37);
-  bVar22 = bVar25 + bVar18 + bVar37;
-  pbVar69 = (byte *)(iVar107 + 0x6b);
-  bVar25 = *pbVar69;
-  bVar12 = *pbVar69;
-  *pbVar69 = bVar12 + bVar21 + bVar88;
-  pcVar79 = (char *)((int)unaff_FS_OFFSET + iVar107 + -0x18ef9b95);
-  *pcVar79 = *pcVar79 + bVar17 + (CARRY1(bVar25,bVar21) || CARRY1(bVar12 + bVar21,bVar88));
-  lVar115 = (longlong)*(int *)(iStack_9 + 0x14 + iVar107) * 0x6c;
-  iVar116 = (int)lVar115;
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET + CONCAT31((int3)((uint)_Stack_54 >> 8),bVar22) + 0x6c);
-  bVar37 = CARRY1(*pbVar69,bVar24) || CARRY1(*pbVar69 + bVar24,iVar116 != lVar115);
-  *pbVar69 = *pbVar69 + bVar24 + (iVar116 != lVar115);
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET +
-                    (int)&(in_stack_59->_1).initializationExceptionGCHandle);
-  bVar88 = CARRY1(*pbVar69,bVar21) || CARRY1(*pbVar69 + bVar21,bVar37);
-  *pbVar69 = *pbVar69 + bVar21 + bVar37;
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET + iStack_9 + -0x3aef9b94);
-  bVar37 = CARRY1(*pbVar69,bVar18) || CARRY1(*pbVar69 + bVar18,bVar88);
-  *pbVar69 = *pbVar69 + bVar18 + bVar88;
-  uVar117 = (undefined2)iVar107;
-  uVar118 = in(uVar117);
-  *(undefined1 *)&(_Var108.type)->data = uVar118;
-  pbVar69 = (byte *)((int)unaff_FS_OFFSET + (int)pbVar111);
-  bVar88 = CARRY1(*pbVar69,bVar19) || CARRY1(*pbVar69 + bVar19,bVar37);
-  *pbVar69 = *pbVar69 + bVar19 + bVar37;
-  uVar72 = in(uVar117);
-  *(undefined4 *)((int)&(_Var108.type)->data + 1) = uVar72;
-  bVar37 = CARRY1(bVar23,bVar18) || CARRY1(bVar23 + bVar18,bVar88);
-  bVar12 = bVar23 + bVar18 + bVar88;
-  puVar108 = (undefined *)((int)&_Var108.type[1].data + 1);
-  uVar72 = in(uVar117);
-  *(undefined4 *)((int)&(_Var108.type)->attrs + 1) = uVar72;
-  bVar88 = CARRY1(bVar21,bVar21) || CARRY1(bVar21 * '\x02',bVar37);
-  bVar23 = bVar21 * '\x02' + bVar37;
-  out(*(undefined1 *)&(in_stack_59->_0).image,uVar117);
-  bVar37 = CARRY1(bVar24,bVar24) || CARRY1(bVar24 * '\x02',bVar88);
-  uVar119 = (undefined3)(CONCAT22((short)((uint)iStack_9 >> 0x10),CONCAT11(bVar12,bVar24)) >> 8);
-  bVar25 = bVar24 * '\x02' + bVar88;
-  pbVar69 = (byte *)CONCAT31(uVar119,bVar25);
-  puVar5 = (undefined1 *)((int)&(in_stack_59->_0).gc_desc + 1);
-  out(*(undefined4 *)((int)&(in_stack_59->_0).image + 1),uVar117);
-  uVar120 = (undefined3)(CONCAT22((short)((uint)_Stack_54 >> 0x10),CONCAT11(bVar23,bVar22)) >> 8);
-  bVar24 = bVar22 + bVar20 + bVar37;
-  iVar71 = CONCAT31(uVar120,bVar24);
-  if (CARRY1(bVar22,bVar20) || CARRY1(bVar22 + bVar20,bVar37)) {
-    bVar37 = CARRY1(*pbVar69,bVar12) || 0xfe < (byte)(*pbVar69 + bVar12);
-    *pbVar69 = *pbVar69 + bVar12 + 1;
-    pMVar121 = (MonitorData *)((int)unaff_FS_OFFSET + (int)(in_stack_114 + -0x7b));
-    bVar88 = CARRY1((byte)*pMVar121,bVar18) || CARRY1((char)*pMVar121 + bVar18,bVar37);
-    pbRama3201064 = pbVar69;
-    *pMVar121 = (MonitorData)((char)*pMVar121 + bVar18 + bVar37);
-    goto code_?;
-  }
-  bVar37 = CARRY1(*puVar108,bVar19);
-  *puVar108 = *puVar108 + bVar19;
-  if (*puVar108 == '\0') {
-    bVar88 = CARRY1(*pbVar69,bVar12) || CARRY1(*pbVar69 + bVar12,bVar37);
-    *pbVar69 = *pbVar69 + bVar12 + bVar37;
+  func_?();
+code_?:
+  piVar40 = (int *)func_?();
+  uVar98 = func_?();
+  iVar99 = (int)(uVar98 >> 0x20);
+  iVar100 = (int)uVar98;
+  iVar101 = iVar99 + 1;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + iVar100 + -0x2aef9ba4);
+  bVar102 = (byte)((uint)extraout_ECX >> 8);
+  bVar22 = CARRY1(*pbVar56,bVar102) || CARRY1(*pbVar56 + bVar102,bVar13);
+  *pbVar56 = *pbVar56 + bVar102 + bVar13;
+  iVar41 = *piVar40;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + iVar99 + 0x4e10645e);
+  bVar13 = (byte)((uint)iVar101 >> 8);
+  bVar103 = CARRY1(*pbVar56,bVar13) || CARRY1(*pbVar56 + bVar13,bVar22);
+  *pbVar56 = *pbVar56 + bVar13 + bVar22;
+  bVar104 = (byte)iVar101;
+  bVar105 = (byte)extraout_ECX + bVar104;
+  bVar22 = CARRY1((byte)extraout_ECX,bVar104) || CARRY1(bVar105,bVar103);
+  puVar5 = *(undefined1 **)(iVar41 + 4);
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + iVar100);
+  bVar106 = (byte)(uVar98 >> 8);
+  bVar107 = CARRY1(*pbVar56,bVar106) || CARRY1(*pbVar56 + bVar106,bVar22);
+  *pbVar56 = *pbVar56 + bVar106 + bVar22;
+  *(undefined1 *)&(unaff_EDI->_0).image = *puVar5;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + iVar100);
+  bVar22 = CARRY1(*pbVar56,bVar106) || CARRY1(*pbVar56 + bVar106,bVar107);
+  *pbVar56 = *pbVar56 + bVar106 + bVar107;
+  *(undefined1 *)((int)&(unaff_EDI->_0).image + 1) = puVar5[1];
+  bVar108 = (byte)((uint)unaff_EBX >> 8);
+  bVar107 = CARRY1(bVar13,bVar108) || CARRY1(bVar13 + bVar108,bVar22);
+  bVar109 = bVar13 + bVar108 + bVar22;
+  iVar99 = CONCAT22((short)((uint)iVar101 >> 0x10),CONCAT11(bVar109,bVar104));
+  puVar5 = *(undefined1 **)(iVar41 + 8);
+  uVar110 = (short)iVar41 + 0xc;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET +
+                    (int)&(unaff_EDI->_1).typeHierarchy + (int)unaff_EBX * 2 + 2);
+  bVar111 = *pbVar56;
+  bVar13 = *pbVar56;
+  *pbVar56 = bVar13 + bVar106 + bVar107;
+  bVar112 = (byte)uVar98;
+  bVar22 = CARRY1(in_stack_113,bVar112) ||
+           CARRY1(in_stack_113 + bVar112,
+                  CARRY1(bVar111,bVar106) || CARRY1(bVar13 + bVar106,bVar107));
+  *(undefined1 *)((int)&(unaff_EDI->_0).image + 2) = *puVar5;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + iVar99 + 0x2b106461);
+  bVar114 = (byte)unaff_EBX;
+  bVar107 = CARRY1(*pbVar56,bVar114) || CARRY1(*pbVar56 + bVar114,bVar22);
+  *pbVar56 = *pbVar56 + bVar114 + bVar22;
+  puVar115 = (ushort *)(iVar100 + -0x25 + iVar99);
+  sVar116 = (uVar110 & 3) - (*puVar115 & 3);
+  *puVar115 = *puVar115 + (ushort)(0 < sVar116) * sVar116;
+  puVar115 = (ushort *)(iVar100 + 0x48 + iVar99);
+  sVar116 = (uVar110 & 3) - (*puVar115 & 3);
+  *puVar115 = *puVar115 + (ushort)(0 < sVar116) * sVar116;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + (int)&stack0x22106460);
+  bVar22 = CARRY1(*pbVar56,bVar109) || CARRY1(*pbVar56 + bVar109,bVar107);
+  *pbVar56 = *pbVar56 + bVar109 + bVar107;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + iVar100);
+  bVar107 = CARRY1(*pbVar56,bVar106) || CARRY1(*pbVar56 + bVar106,bVar22);
+  *pbVar56 = *pbVar56 + bVar106 + bVar22;
+  *(undefined1 *)((int)&(unaff_EDI->_0).image + 3) = puVar5[1];
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + (int)(unaff_EBX + 0x65));
+  bVar22 = CARRY1(*pbVar56,bVar109) || CARRY1(*pbVar56 + bVar109,bVar107);
+  *pbVar56 = *pbVar56 + bVar109 + bVar107;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + iVar100);
+  bVar107 = CARRY1(*pbVar56,bVar106) || CARRY1(*pbVar56 + bVar106,bVar22);
+  *pbVar56 = *pbVar56 + bVar106 + bVar22;
+  *(undefined1 *)&(unaff_EDI->_0).gc_desc = puVar5[2];
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + iVar100 + 0xe106465);
+  bVar22 = CARRY1(*pbVar56,bVar106) || CARRY1(*pbVar56 + bVar106,bVar107);
+  *pbVar56 = *pbVar56 + bVar106 + bVar107;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + iVar100);
+  bVar13 = *pbVar56;
+  bVar111 = *pbVar56;
+  *pbVar56 = bVar111 + bVar106 + bVar22;
+  *(undefined1 *)((int)&(unaff_EDI->_0).gc_desc + 1) = puVar5[3];
+  bVar117 = bVar105 + bVar103 + bVar106 + (CARRY1(bVar13,bVar106) || CARRY1(bVar111 + bVar106,bVar22));
+  bVar22 = (uVar98 & 0x100) != 0;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + iVar99 + 0x67);
+  bVar103 = CARRY1(*pbVar56,bVar102) || CARRY1(*pbVar56 + bVar102,bVar22);
+  *pbVar56 = *pbVar56 + bVar102 + bVar22;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + (int)(puVar5 + 0x6c));
+  bVar22 = CARRY1(*pbVar56,bVar112) || CARRY1(*pbVar56 + bVar112,bVar103);
+  *pbVar56 = *pbVar56 + bVar112 + bVar103;
+  bVar103 = CARRY1(bVar104,bVar114) || CARRY1(bVar104 + bVar114,bVar22);
+  uVar118 = (undefined3)((uint)iVar99 >> 8);
+  bVar104 = bVar104 + bVar114 + bVar22;
+  iVar99 = CONCAT31(uVar118,bVar104);
+  *(undefined4 *)(iVar41 + 8) = 0x6a4f1064;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + iVar99 + 100 + (int)&stack0xfffffffc * 2);
+  bVar13 = *pbVar56;
+  bVar111 = *pbVar56;
+  *pbVar56 = bVar111 + bVar108 + bVar103;
+  pcVar69 = (char *)(CONCAT31((int3)((uint)extraout_ECX >> 8),bVar117) + 0xa10646a);
+  *pcVar69 = *pcVar69 + bVar109 + (CARRY1(bVar13,bVar108) || CARRY1(bVar111 + bVar108,bVar103));
+  lVar119 = (longlong)*(int *)(iVar100 + -0x27 + iVar99) * 0x6b;
+  bVar22 = (int)lVar119 != lVar119;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + iVar99 + 0x6c);
+  bVar103 = CARRY1(*pbVar56,bVar102) || CARRY1(*pbVar56 + bVar102,bVar22);
+  *pbVar56 = *pbVar56 + bVar102 + bVar22;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + iVar99 + -0x18ef9b94);
+  bVar22 = CARRY1(*pbVar56,bVar108) || CARRY1(*pbVar56 + bVar108,bVar103);
+  *pbVar56 = *pbVar56 + bVar108 + bVar103;
+  uVar120 = (undefined2)iVar99;
+  uVar64 = in(uVar120);
+  *(undefined1 *)((int)&(unaff_EDI->_0).gc_desc + 2) = uVar64;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + (int)&stack0xfffffffc * 2 + 0x6d411064);
+  bVar103 = CARRY1(*pbVar56,bVar104) || CARRY1(*pbVar56 + bVar104,bVar22);
+  *pbVar56 = *pbVar56 + bVar104 + bVar22;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + (int)(puVar5 + 0x71));
+  bVar22 = CARRY1(*pbVar56,bVar102) || CARRY1(*pbVar56 + bVar102,bVar103);
+  *pbVar56 = *pbVar56 + bVar102 + bVar103;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + iVar100 + -0x3aef9b93);
+  bVar103 = CARRY1(*pbVar56,bVar114) || CARRY1(*pbVar56 + bVar114,bVar22);
+  *pbVar56 = *pbVar56 + bVar114 + bVar22;
+  pbVar121 = (byte *)((int)&((MVNetworkGame__Fields *)&(unaff_EDI->_0).name)->ReceivedItemFromQuery +
+                   3);
+  uVar46 = in(uVar120);
+  *(undefined4 *)((int)&(unaff_EDI->_0).gc_desc + 3) = uVar46;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + (int)unaff_EBX);
+  bVar22 = CARRY1(*pbVar56,bVar109) || CARRY1(*pbVar56 + bVar109,bVar103);
+  *pbVar56 = *pbVar56 + bVar109 + bVar103;
+  out(puVar5[4],uVar120);
+  bVar103 = CARRY1(bVar106,bVar114) || CARRY1(bVar106 + bVar114,bVar22);
+  bVar105 = bVar106 + bVar114 + bVar22;
+  out(puVar5[5],uVar120);
+  bVar22 = CARRY1(bVar102,bVar102) || CARRY1(bVar102 * '\x02',bVar103);
+  bVar106 = bVar102 * '\x02' + bVar103;
+  pbVar56 = puVar5 + 10;
+  out(*(undefined4 *)(puVar5 + 6),uVar120);
+  bVar13 = bVar112 * '\x02';
+  bVar103 = CARRY1(bVar112,bVar112) || CARRY1(bVar13,bVar22);
+  uVar122 = (undefined3)(CONCAT22((short)(uVar98 >> 0x10),CONCAT11(bVar105,bVar112)) >> 8);
+  bVar111 = bVar13 + bVar22;
+  pbVar123 = (byte *)CONCAT31(uVar122,bVar111);
+  if (SCARRY1(bVar112,bVar112) == SCARRY1(bVar13,bVar22)) {
+    bVar22 = CARRY1(bVar117,bVar104);
+    bVar13 = bVar117 + bVar104;
+    bVar107 = bVar22 || CARRY1(bVar13,bVar103);
+    bVar117 = bVar13 + bVar103;
+    if (bVar22 || CARRY1(bVar13,bVar103)) {
+      bVar103 = CARRY1(*pbVar121,bVar109) || CARRY1(*pbVar121 + bVar109,bVar107);
+      *pbVar121 = *pbVar121 + bVar109 + bVar107;
+      if (*pbVar121 == 0) {
+        bVar22 = CARRY1(bVar111,bVar117) || CARRY1(bVar111 + bVar117,bVar103);
+        cVar124 = bVar111 + bVar117 + bVar103;
+        pbVar123 = (byte *)CONCAT31(uVar122,cVar124);
+        if (cVar124 == '\0') {
+          bVar103 = CARRY1(*unaff_EBX,bVar117) || CARRY1(*unaff_EBX + bVar117,bVar22);
+          *unaff_EBX = *unaff_EBX + bVar117 + bVar22;
+          if (bVar103 || *unaff_EBX == 0) {
+            bVar22 = CARRY1(*pbVar56,bVar114) || CARRY1(*pbVar56 + bVar114,bVar103);
+            *pbVar56 = *pbVar56 + bVar114 + bVar103;
+          }
+          else {
+            pbVar125 = (byte *)(iVar99 + 0x77);
+            bVar107 = CARRY1(*pbVar125,bVar109) || CARRY1(*pbVar125 + bVar109,bVar103);
+            *pbVar125 = *pbVar125 + bVar109 + bVar103;
+            bVar6 = bVar104 * '\x02';
+            bVar22 = CARRY1(bVar6,bVar107);
+            bVar103 = CARRY1(bVar104,bVar104) || bVar22;
+            cVar124 = bVar6 + bVar107;
+            iVar99 = CONCAT31(uVar118,cVar124);
+            if ((CARRY1(bVar104,bVar104) || bVar22) || cVar124 == '\0') {
+              pbVar125 = unaff_EBX + 0x17106478;
+              bVar107 = CARRY1(*pbVar125,bVar105) || CARRY1(*pbVar125 + bVar105,bVar103);
+              *pbVar125 = *pbVar125 + bVar105 + bVar103;
+              if ((char)*pbVar125 < '\0') {
+                pbVar125 = unaff_EBX + 0x79;
+                bVar103 = CARRY1(*pbVar125,bVar108) || CARRY1(*pbVar125 + bVar108,bVar107);
+                *pbVar125 = *pbVar125 + bVar108 + bVar107;
+                pbVar125 = (byte *)((int)unaff_FS_OFFSET + iVar99 + 100 + (int)pbVar121 * 2);
+                bVar6 = *pbVar125;
+                bVar22 = CARRY1(bVar6,bVar103);
+                *pbVar125 = bVar6 + bVar103;
+                bVar103 = CARRY1(bVar117,bVar106) || CARRY1(bVar117 + bVar106,bVar22);
+                bVar117 = bVar117 + bVar106 + bVar22;
+                if ((POPCOUNT(bVar117) & 1U) == 0) {
+                  bVar22 = CARRY1(*unaff_EBX,bVar108) || CARRY1(*unaff_EBX + bVar108,bVar103);
+                  *unaff_EBX = *unaff_EBX + bVar108 + bVar103;
+                }
+                else {
+                  pbVar125 = puVar5 + 0x33106485;
+                  bVar6 = *pbVar125;
+                  bVar13 = *pbVar125 + bVar117;
+                  bVar22 = CARRY1(*pbVar125,bVar117) || CARRY1(bVar13,bVar103);
+                  *pbVar125 = bVar13 + bVar103;
+                  if ((SCARRY1(bVar6,bVar117) != SCARRY1(bVar13,bVar103)) != (char)*pbVar125 < '\0') {
+                    unaff_EBX[-0x3bef9b74] = unaff_EBX[-0x3bef9b74] + bVar105 + bVar22;
+                    halt_baddata();
+                  }
+                }
+              }
+              else {
+                bVar22 = CARRY1(bVar114,bVar107);
+                pbVar123 = (byte *)CONCAT31(uVar122,bVar114 + bVar107);
+              }
+            }
+            else {
+              bVar22 = CARRY1(bVar114,bVar103);
+              pbVar123 = (byte *)CONCAT31(uVar122,bVar114 + bVar103);
+            }
+          }
+        }
+        else {
+          bVar22 = CARRY1(bVar6,bVar114) || CARRY1(bVar6 + bVar114,bVar22);
+        }
+      }
+      else {
+        bVar22 = CARRY1(*pbVar123,bVar105) || CARRY1(*pbVar123 + bVar105,bVar103);
+        *pbVar123 = *pbVar123 + bVar105 + bVar103;
+      }
+    }
+    else {
+      bVar22 = CARRY1(*pbVar123,bVar105) || CARRY1(*pbVar123 + bVar105,bVar107);
+      *pbVar123 = *pbVar123 + bVar105 + bVar107;
+    }
   }
   else {
-    bVar122 = CARRY1(bVar25,bVar24) || CARRY1(bVar25 + bVar24,bVar37);
-    bVar25 = bVar25 + bVar24 + bVar37;
-    pbVar69 = (byte *)CONCAT31(uVar119,bVar25);
-    if (bVar25 == 0) {
-      in_stack_114 = in_stack_114 + -0x7b;
-      bVar88 = CARRY1((byte)*in_stack_114,bVar18) ||
-                CARRY1((char)*in_stack_114 + bVar18,bVar122);
-      *in_stack_114 = (MonitorData)((char)*in_stack_114 + bVar18 + bVar122);
-      goto code_?;
-    }
-    bVar37 = CARRY1(*pbVar111,bVar24) || CARRY1(*pbVar111 + bVar24,bVar122);
-    *pbVar111 = *pbVar111 + bVar24 + bVar122;
-    if (*pbVar111 != 0) {
-      bVar88 = CARRY1(*puVar5,bVar18) || CARRY1(*puVar5 + bVar18,bVar37);
-      *puVar5 = *puVar5 + bVar18 + bVar37;
-      goto code_?;
-    }
-    pbVar123 = (byte *)(iVar107 + 0x76);
-    bVar88 = CARRY1(*pbVar123,bVar19) || CARRY1(*pbVar123 + bVar19,bVar37);
-    *pbVar123 = *pbVar123 + bVar19 + bVar37;
-    bVar37 = CARRY1(bVar20,bVar20) || CARRY1(bVar20 * '\x02',bVar88);
-    cVar124 = bVar20 * '\x02' + bVar88;
-    iVar107 = CONCAT31(uVar113,cVar124);
-    if (bVar37 || cVar124 == '\0') {
-      bVar88 = CARRY1(bVar25,bVar18) || CARRY1(bVar25 + bVar18,bVar37);
-      pbVar69 = (byte *)CONCAT31(uVar119,bVar25 + bVar18 + bVar37);
-      goto code_?;
-    }
-    pbVar123 = pbVar111 + 0x17106477;
-    bVar122 = CARRY1(*pbVar123,bVar12) || CARRY1(*pbVar123 + bVar12,bVar37);
-    *pbVar123 = *pbVar123 + bVar12 + bVar37;
-    if ((char)*pbVar123 < '\0') {
-      bVar88 = CARRY1(bVar25,bVar18) || CARRY1(bVar25 + bVar18,bVar122);
-      pbVar69 = (byte *)CONCAT31(uVar119,bVar25 + bVar18 + bVar122);
-      goto code_?;
-    }
-    pbVar123 = pbVar111 + 0x78;
-    bVar37 = CARRY1(*pbVar123,bVar17) || CARRY1(*pbVar123 + bVar17,bVar122);
-    *pbVar123 = *pbVar123 + bVar17 + bVar122;
-    pbVar123 = (byte *)((int)unaff_FS_OFFSET + iVar71 + 100 + (int)puVar108 * 2);
-    bVar88 = CARRY1(*pbVar123,bVar25) || CARRY1(*pbVar123 + bVar25,bVar37);
-    *pbVar123 = *pbVar123 + bVar25 + bVar37;
-    bVar37 = CARRY1(bVar24,bVar23) || CARRY1(bVar24 + bVar23,bVar88);
-    bVar25 = bVar24 + bVar23 + bVar88;
-    iVar71 = CONCAT31(uVar120,bVar25);
-    if (-1 < (char)bVar25) {
-      bVar88 = CARRY1(*pbVar111,bVar17) || CARRY1(*pbVar111 + bVar17,bVar37);
-      *pbVar111 = *pbVar111 + bVar17 + bVar37;
-      goto code_?;
-    }
-    pbVar123 = (byte *)((int)&in_stack_59[0x2102d6].vtable.CompareTo_1.methodPtr + 3);
-    bVar88 = CARRY1(*pbVar123,bVar25) || CARRY1(*pbVar123 + bVar25,bVar37);
-    *pbVar123 = *pbVar123 + bVar25 + bVar37;
-    if ((POPCOUNT(*pbVar123) & 1U) != 0) {
-      pbVar111[-0x3bef9b75] = pbVar111[-0x3bef9b75] + bVar12 + bVar88;
-      halt_baddata();
-    }
+    bVar22 = CARRY1(*pbVar123,bVar105) || CARRY1(*pbVar123 + bVar105,bVar103);
+    *pbVar123 = *pbVar123 + bVar105 + bVar103;
   }
-  pbVar123 = pbVar69 + 0x7b;
-  bVar37 = CARRY1(*pbVar123,bVar17) || CARRY1(*pbVar123 + bVar17,bVar88);
-  *pbVar123 = *pbVar123 + bVar17 + bVar88;
-  pbVar123 = (byte *)((int)unaff_FS_OFFSET + iVar116 + 100 + (int)puVar108 * 2);
-  bVar12 = *pbVar123;
-  bVar22 = (byte)((uint)iVar71 >> 8);
-  bVar25 = *pbVar123;
-  *pbVar123 = bVar25 + bVar22 + bVar37;
-  *pbVar111 = *pbVar111 + (char)iVar71 + (CARRY1(bVar12,bVar22) || CARRY1(bVar25 + bVar22,bVar37));
-  pbVar69[iVar107 + -0x50] = pbVar69[iVar107 + -0x50] & 0x80;
-  pbVar111 = (byte *)((int)unaff_FS_OFFSET + (int)(pbVar69 + -0x7f));
-  bVar25 = *pbVar111;
-  *pbVar111 = *pbVar111 + bVar18;
-  pbVar111 = (byte *)((int)unaff_FS_OFFSET +
-                    (int)((int)&in_stack_59[-1].vtable.System_IConvertible_ToInt16.method + 3)
-                    );
-  bVar24 = *pbVar111;
-  bVar23 = (byte)pbVar69;
-  bVar12 = *pbVar111;
-  *pbVar111 = bVar12 + bVar23 + CARRY1(bVar25,bVar18);
-  bVar21 = (byte)iVar107;
-  iVar107 = CONCAT22((short)((uint)iVar107 >> 0x10),
-                    CONCAT11((char)((uint)iVar107 >> 8) + bVar22 +
-                             (CARRY1(bVar24,bVar23) || CARRY1(bVar12 + bVar23,CARRY1(bVar25,bVar18))
-                             ),bVar21));
-  pbVar69[iVar107 + -0x6a] = pbVar69[iVar107 + -0x6a] & 0x83;
-  pbVar111 = (byte *)((int)unaff_FS_OFFSET + (int)(pbVar69 + -0x7c));
-  bVar25 = *pbVar111;
-  *pbVar111 = *pbVar111 + bVar23;
-  pbVar111 = (byte *)((int)unaff_FS_OFFSET + iVar116 + (int)in_stack_114 * 2);
-  bVar37 = CARRY1(*pbVar111,bVar21) || CARRY1(*pbVar111 + bVar21,CARRY1(bVar25,bVar23));
-  *pbVar111 = *pbVar111 + bVar21 + CARRY1(bVar25,bVar23);
-  pbVar111 = (byte *)((int)unaff_FS_OFFSET + (int)pbVar69);
-  bVar25 = (byte)((uint)pbVar69 >> 8);
-  bVar88 = CARRY1(*pbVar111,bVar25) || CARRY1(*pbVar111 + bVar25,bVar37);
-  *pbVar111 = *pbVar111 + bVar25 + bVar37;
-  pbVar111 = (byte *)((int)unaff_FS_OFFSET + (int)pbVar69);
-  bVar37 = CARRY1(*pbVar111,bVar25) || CARRY1(*pbVar111 + bVar25,bVar88);
-  pbRam84a61064 = pbVar69;
-  *pbVar111 = *pbVar111 + bVar25 + bVar88;
-  pbVar111 = (byte *)((int)unaff_FS_OFFSET + (int)pbVar69);
-  bVar88 = CARRY1(*pbVar111,bVar25) || CARRY1(*pbVar111 + bVar25,bVar37);
-  pbRama3201064 = pbVar69;
-  *pbVar111 = *pbVar111 + bVar25 + bVar37;
-  pbRam855d1064 = pbVar69;
-code_?:
-  *(char *)((int)unaff_FS_OFFSET + (int)puVar5) =
-       *(char *)((int)unaff_FS_OFFSET + (int)puVar5) + bVar18 + bVar88;
+  pbVar125 = pbVar123 + 0x7c;
+  bVar103 = CARRY1(*pbVar125,bVar108) || CARRY1(*pbVar125 + bVar108,bVar22);
+  *pbVar125 = *pbVar125 + bVar108 + bVar22;
+  pbVar125 = (byte *)((int)unaff_FS_OFFSET + (int)(&stack0x00000060 + (int)pbVar121 * 2));
+  bVar6 = *pbVar125;
+  bVar13 = *pbVar125;
+  *pbVar125 = bVar13 + bVar106 + bVar103;
+  *unaff_EBX = *unaff_EBX + bVar117 + (CARRY1(bVar6,bVar106) || CARRY1(bVar13 + bVar106,bVar103));
+  *(uint *)(pbVar123 + iVar99 + -0x50) = *(uint *)(pbVar123 + iVar99 + -0x50) & 0x58106481;
+  pbVar123[iVar99 + 0x46] = pbVar123[iVar99 + 0x46] & 0x83;
+  bVar13 = (byte)iVar99;
+  iVar41 = CONCAT22((short)((uint)iVar99 >> 0x10),
+                    CONCAT11((char)((uint)iVar99 >> 8) + bVar106,bVar13));
+  *(uint *)(pbVar123 + iVar41 + -0x6a) = *(uint *)(pbVar123 + iVar41 + -0x6a) & 0xffffff84;
+  pbVar125 = (byte *)((int)unaff_FS_OFFSET + (int)(pbVar123 + -0x7b));
+  bVar6 = *pbVar125;
+  bVar111 = (byte)pbVar123;
+  *pbVar125 = *pbVar125 + bVar111;
+  pbVar125 = (byte *)((int)unaff_FS_OFFSET + (int)&stack0xfffffffc * 2 + -0x5bdfef9c);
+  bVar22 = CARRY1(*pbVar125,bVar13) || CARRY1(*pbVar125 + bVar13,CARRY1(bVar6,bVar111));
+  *pbVar125 = *pbVar125 + bVar13 + CARRY1(bVar6,bVar111);
+  pbVar125 = (byte *)((int)unaff_FS_OFFSET + (int)(puVar5 + 0x2010648f));
+  bVar6 = (byte)((uint)pbVar123 >> 8);
+  bVar103 = CARRY1(*pbVar125,bVar6) || CARRY1(*pbVar125 + bVar6,bVar22);
+  *pbVar125 = *pbVar125 + bVar6 + bVar22;
+  *pbVar121 = *pbVar56;
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + (int)pbVar123);
+  bVar22 = CARRY1(*pbVar56,bVar6) || CARRY1(*pbVar56 + bVar6,bVar103);
+  *pbVar56 = *pbVar56 + bVar6 + bVar103;
+  *(undefined1 *)&(unaff_EDI->_0).namespaze = puVar5[0xb];
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + (int)pbVar123);
+  bVar103 = CARRY1(*pbVar56,bVar6) || CARRY1(*pbVar56 + bVar6,bVar22);
+  *pbVar56 = *pbVar56 + bVar6 + bVar22;
+  *(undefined1 *)((int)&(unaff_EDI->_0).namespaze + 1) = puVar5[0xc];
+  pbVar56 = (byte *)((int)unaff_FS_OFFSET + (int)&stack0xffffff82);
+  bVar6 = *pbVar56;
+  bVar13 = *pbVar56;
+  *pbVar56 = bVar13 + bVar114 + bVar103;
+  *(char *)((int)unaff_FS_OFFSET + (int)(puVar5 + 0xd)) =
+       *(char *)((int)unaff_FS_OFFSET + (int)(puVar5 + 0xd)) + bVar114 +
+       (CARRY1(bVar6,bVar114) || CARRY1(bVar13 + bVar114,bVar103));
   LOCK();
-  bVar25 = pbVar69[iVar107 + 0x4b];
-  pbVar69[iVar107 + 0x4b] = (byte)((uint)pbVar69 >> 8);
-  uVar117 = (undefined2)((uint)pbVar69 >> 0x10);
-  uVar118 = SUB41(pbVar69,0);
+  uVar46 = *(undefined4 *)(pbVar123 + iVar41 + 0x4b);
+  *(int *)(pbVar123 + iVar41 + 0x4b) = (int)lVar119;
   UNLOCK();
   LOCK();
-  pbVar69 = (byte *)(CONCAT22(uVar117,CONCAT11(bVar25,uVar118)) + -0x28 + iVar107);
-  bVar12 = *pbVar69;
-  *pbVar69 = bVar25;
+  uVar47 = *(undefined4 *)(pbVar123 + iVar41 + -0x28);
+  *(undefined4 *)(pbVar123 + iVar41 + -0x28) = uVar46;
   UNLOCK();
   LOCK();
-  pbVar69 = (byte *)(CONCAT22(uVar117,CONCAT11(bVar12,uVar118)) + 0x78 + iVar107);
-  bVar25 = *pbVar69;
-  *pbVar69 = bVar12;
+  uVar46 = *(undefined4 *)(pbVar123 + iVar41 + 0x78);
+  *(undefined4 *)(pbVar123 + iVar41 + 0x78) = uVar47;
   UNLOCK();
   LOCK();
-  pbVar69 = (byte *)(CONCAT22(uVar117,CONCAT11(bVar25,uVar118)) + -0x28 + iVar107);
-  bVar12 = *pbVar69;
-  *pbVar69 = bVar25;
+  uVar47 = *(undefined4 *)(pbVar123 + iVar41 + -0x28);
+  *(undefined4 *)(pbVar123 + iVar41 + -0x28) = uVar46;
   UNLOCK();
   LOCK();
-  pbVar69 = (byte *)(CONCAT22(uVar117,CONCAT11(bVar12,uVar118)) + 0x42 + iVar107);
-  bVar25 = *pbVar69;
-  *pbVar69 = bVar12;
-  iVar71 = CONCAT22(uVar117,CONCAT11(bVar25,uVar118));
+  uVar46 = *(undefined4 *)(pbVar123 + iVar41 + 0x42);
+  *(undefined4 *)(pbVar123 + iVar41 + 0x42) = uVar47;
   UNLOCK();
-  *(byte *)(iVar71 + -0x42 + iVar107) = bVar25;
-  *(byte *)(iVar71 + 0x3b + iVar107) = bVar25;
-  *(int *)(iVar71 + -0x2f + iVar107) = iVar116;
+  *(undefined4 *)(pbVar123 + iVar41 + -0x42) = uVar46;
+  *(undefined4 *)(pbVar123 + iVar41 + 0x3b) = uVar46;
+  *(undefined2 *)
+   (CONCAT22((short)((uint)pbVar123 >> 0x10),CONCAT11(pbVar123[iVar41 + -0x2f],bVar111)) + -0x3c +
+   iVar41) = in_FS;
                     /* WARNING: Bad instruction - Truncating control flow here */
   halt_baddata();
 }

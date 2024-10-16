@@ -774,7 +774,7 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnFire
           func_?();
           cRam_? = '\x01';
         }
-        method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__38;
+        method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__39;
         pOVar6 = (Object *)func_?();
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   (pOVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -1342,62 +1342,35 @@ code_?:
 }
 
 
-/* Void OnStateChanged(Dictionary`2[System.Object,System.Object]) */
+/* Void OnPickupNewEditableItem() */
 
-void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnStateChanged
-               (PickupItemMeleeWeapon *this,Dictionary_2_System_Object_System_Object_ *newState,
-               MethodInfo *method)
+void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnPickupNewEditableItem
+               (PickupItemMeleeWeapon *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&
-                    System__Collections__Generic__Dictionary<System::Object,_System::Object>_MethodInfo__Extensions__GetValueOrDefault<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                   );
-    func_?(&TypeInfo__Extensions);
-    func_?(&StringLiteral_itemData);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Extensions);
-  }
-  itemData = (Dictionary_2_System_Object_System_Object_ *)
-             Extensions::Extensions_GetValueOrDefault_3
-                       (newState,StringLiteral_itemData,(Object *)0x0,
-                        System__Collections__Generic__Dictionary<System::Object,_System::Object>_MethodInfo__Extensions__GetValueOrDefault<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                       );
-  if (itemData != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar1 = PickupItemEditable::PickupItemEditable_IsSamePickupItem
-                      ((PickupItemEditable *)this,itemData,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      (*(code *)(this->klass->vtable).InterruptFire.method)();
-      (*(code *)(this->klass->vtable).SetConfiguration.method)();
-      (*(code *)(this->klass->vtable).SetValuesBasedOnConfiguration.method)
-                (this,(this->klass->vtable).SetAnimation.methodPtr);
-    }
-  }
-  pTVar2 = (this->fields)._._._.muzzlePoint;
-  if (pTVar2 != (Transform *)0x0) {
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       ((Vector3 *)&stack0xffffffe4,pTVar2,(MethodInfo *)0x0);
-    uVar4 = pVVar3->x;
-    fVar5 = pVVar3->z;
-    pTVar2 = (this->fields)._._._.muzzlePoint;
-    if (pTVar2 != (Transform *)0x0) {
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                         ((Vector3 *)&stack0xffffffe4,pTVar2,(MethodInfo *)0x0);
-      fVar6 = pVVar3->x;
-      pPVar7 = PickupItemMeleeWeapon_get_Configuration(this,(MethodInfo *)0x0);
-      if (pPVar7 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
-        fVar8 = (pPVar7->fields)._.radius;
-        pPVar7 = PickupItemMeleeWeapon_get_Configuration(this,(MethodInfo *)0x0);
-        if (pPVar7 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
-          pTVar2 = (this->fields)._._._.muzzlePoint;
-          if (pTVar2 != (Transform *)0x0) {
-            value.y = (fVar8 + (pPVar7->fields)._.range) * (_UNK_? / fVar6) * _UNK_?;
-            value.x = (float)uVar4;
-            value.z = fVar5;
+  pTVar1 = (this->fields)._._._.muzzlePoint;
+  if (pTVar1 != (Transform *)0x0) {
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+                       ((Vector3 *)&stack0xffffffe0,pTVar1,(MethodInfo *)0x0);
+    fVar3 = pVVar2->z;
+    pTVar1 = (this->fields)._._._.muzzlePoint;
+    if (pTVar1 != (Transform *)0x0) {
+      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
+                         ((Vector3 *)&stack0xffffffe0,pTVar1,(MethodInfo *)0x0);
+      fVar4 = pVVar2->x;
+      pPVar5 = PickupItemMeleeWeapon_get_Configuration(this,(MethodInfo *)0x0);
+      if (pPVar5 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
+        fVar6 = (pPVar5->fields)._.radius;
+        puVar7 = &UNK_?;
+        pPVar5 = PickupItemMeleeWeapon_get_Configuration(this,(MethodInfo *)0x0);
+        if (pPVar5 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
+          pTVar1 = (this->fields)._._._.muzzlePoint;
+          if (pTVar1 != (Transform *)0x0) {
+            value.y = (fVar6 + (pPVar5->fields)._.range) * (_UNK_? / fVar4) * _UNK_?;
+            value.x = (float)puVar7;
+            value.z = fVar3;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar2,value,(MethodInfo *)0x0);
+                      (pTVar1,value,(MethodInfo *)0x0);
             return;
           }
         }
@@ -1405,8 +1378,8 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnStateCh
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

@@ -757,7 +757,7 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnAvatarInvisible
            (this_04 = MVBody::MVBody_get_BlobShadow(pMVar5,(MethodInfo *)0x0),
            this_04 != (AvatarBlobShadowController *)0x0)) {
           this = (PickupItemCostume *)0x0;
-          cVar6 = 'l';
+          cVar6 = -0x34;
           AvatarBlobShadowController::AvatarBlobShadowController_set_ForceHidden
                     (this_04,value_00,(MethodInfo *)0x0);
           if (((TypeInfo__MVAvatarRemote->_1).naturalAligment <=
@@ -1391,6 +1391,21 @@ code_?:
 }
 
 
+/* Void OnPickupNewEditableItem() */
+
+void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnPickupNewEditableItem
+               (PickupItemCostume *this,MethodInfo *method)
+
+{
+  PickupItemEditable::PickupItemEditable_OnCubeModelStateChanged
+            ((PickupItemEditable *)this,(MethodInfo *)0x0);
+  PickupItemCostume_OnArcTrailStateChanged(this,(MethodInfo *)0x0);
+  PickupItemCostume_OnCollisionStateChanged(this,(MethodInfo *)0x0);
+  PickupItemCostume_OnAvatarInvisibleStateChanged(this,(MethodInfo *)0x0);
+  return;
+}
+
+
 /* Void OnSpeedStateChanged() */
 
 void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnSpeedStateChanged
@@ -1455,70 +1470,96 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnStateChanged
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Extensions);
   }
-  itemData = (Dictionary_2_System_Object_System_Object_ *)
-             Extensions::Extensions_GetValueOrDefault_3
-                       (newState,StringLiteral_itemData,(Object *)0x0,
-                        System__Collections__Generic__Dictionary<System::Object,_System::Object>_MethodInfo__Extensions__GetValueOrDefault<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+  hashtable = (Dictionary_2_System_Object_System_Object_ *)
+              Extensions::Extensions_GetValueOrDefault_3
+                        (newState,StringLiteral_itemData,(Object *)0x0,
+                         System__Collections__Generic__Dictionary<System::Object,_System::Object>_MethodInfo__Extensions__GetValueOrDefault<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+                        );
+  if (hashtable != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&
+                      int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
+                     );
+      func_?(&TypeInfo__Extensions);
+      func_?(&StringLiteral_CubeModelId);
+      cRam_? = '\x01';
+    }
+    pPVar1 = (this->fields)._._Configuration_k__BackingField;
+    if (pPVar1 == (PickupItemEditable_EditableItemConfiguration *)0x0) goto code_?;
+    IVar2 = (pPVar1->fields).cubeModelId;
+    if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__Extensions);
+    }
+    IVar3 = Extensions::Extensions_GetValueOrDefault_2
+                       (hashtable,StringLiteral_CubeModelId,0xffffffff,
+                        int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                        );
-  if ((itemData == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-     (bVar1 = PickupItemEditable::PickupItemEditable_IsSamePickupItem
-                        ((PickupItemEditable *)unaff_ESI,itemData,(MethodInfo *)0x0), bVar1 != 0)) {
-    return;
+    if ((IVar2 != IVar3) ||
+       (cVar4 = (*(code *)(this->klass->vtable).IsSameItemData.method)
+                          (this,hashtable,(this->klass->vtable).SetConfiguration.methodPtr),
+       cVar4 == '\0')) {
+      (*(code *)(this->klass->vtable).InterruptFire.method)(this,this->klass[1]._0.image);
+      (*(code *)(this->klass->vtable).SetConfiguration.method)
+                (this,hashtable,(this->klass->vtable).GetDefaultConfiguration.methodPtr);
+      (*(code *)(this->klass->vtable).SetValuesBasedOnConfiguration.method)
+                (this,(this->klass->vtable).OnPickupNewEditableItem.methodPtr);
+      (*(code *)(this->klass->vtable).OnPickupNewEditableItem.method)
+                (this,(this->klass->vtable).SetAnimation.methodPtr);
+    }
   }
-  (*(code *)(unaff_ESI->klass->vtable).SetConfiguration.method)();
-  PickupItemEditable::PickupItemEditable_OnCubeModelStateChanged
-            ((PickupItemEditable *)unaff_ESI,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MVAvatarLocal);
     cRam_? = '\x01';
   }
-  pMVar2 = (unaff_ESI->fields)._._._.owner;
-  if (pMVar2 != (MVPickupOwner *)0x0) {
-    this_00 = (MVAvatarLocal *)(pMVar2->fields)._.worldObjectParent;
+  pMVar5 = (this->fields)._._._.owner;
+  if (pMVar5 != (MVPickupOwner *)0x0) {
+    this_00 = (MVAvatarLocal *)(pMVar5->fields)._.worldObjectParent;
     if (((this_00 != (MVAvatarLocal *)0x0) &&
         ((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (this_00->klass->_1).naturalAligment)) &&
        ((MVAvatarLocal__Class *)
         (this_00->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] ==
         TypeInfo__MVAvatarLocal)) {
-      iVar3 = (this_00->fields).defaultBaseMaxHealth;
-      pPVar4 = PickupItemCostume_get_Configuration(unaff_ESI,(MethodInfo *)0x0);
-      if (pPVar4 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
-      if (iVar3 != (int)(pPVar4->fields).health) {
-        pPVar4 = PickupItemCostume_get_Configuration(unaff_ESI,(MethodInfo *)0x0);
-        if (pPVar4 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
+      iVar6 = (this_00->fields).defaultBaseMaxHealth;
+      pPVar7 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+      if (pPVar7 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
+      if (iVar6 != (int)(pPVar7->fields).health) {
+        pPVar7 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+        if (pPVar7 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
         MVAvatarLocal::MVAvatarLocal_set_BaseMaxHealth
-                  (this_00,(int)(pPVar4->fields).health,(MethodInfo *)0x0);
+                  (this_00,(int)(pPVar7->fields).health,(MethodInfo *)0x0);
       }
     }
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__MVAvatarLocal);
       cRam_? = '\x01';
     }
-    pMVar2 = (unaff_ESI->fields)._._._.owner;
-    if (pMVar2 != (MVPickupOwner *)0x0) {
-      pMVar5 = (pMVar2->fields)._.worldObjectParent;
-      if (((pMVar5 == (MVWorldObjectClient *)0x0) ||
-          ((pMVar5->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment)) ||
-         ((MVAvatarLocal__Class *)
-          (pMVar5->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
-          TypeInfo__MVAvatarLocal)) goto code_?;
-      pSVar6 = pMVar5[1].fields.name;
-      if (pSVar6 != (String *)0x0) {
-        pSVar7 = pSVar6[3].klass;
-        pPVar4 = PickupItemCostume_get_Configuration(unaff_ESI,(MethodInfo *)0x0);
-        if (pPVar4 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-          if ((float)pSVar7 != (float)(int)(pPVar4->fields).movementSpeed) {
-            this_01 = (AvatarMotor *)pMVar5[1].fields.name;
-            pPVar4 = PickupItemCostume_get_Configuration(unaff_ESI,(MethodInfo *)0x0);
-            if ((pPVar4 == (PickupItemCostume_CostumeConfiguration *)0x0) ||
+    pMVar5 = (this->fields)._._._.owner;
+    if (pMVar5 != (MVPickupOwner *)0x0) {
+      pMVar8 = (pMVar5->fields)._.worldObjectParent;
+      if (pMVar8 == (MVWorldObjectClient *)0x0) {
+        return;
+      }
+      if ((pMVar8->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) {
+        return;
+      }
+      if ((MVAvatarLocal__Class *)
+          (pMVar8->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+          TypeInfo__MVAvatarLocal) {
+        return;
+      }
+      pSVar9 = pMVar8[1].fields.name;
+      if (pSVar9 != (String *)0x0) {
+        pSVar10 = pSVar9[3].klass;
+        pPVar7 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+        if (pPVar7 != (PickupItemCostume_CostumeConfiguration *)0x0) {
+          if ((float)pSVar10 != (float)(int)(pPVar7->fields).movementSpeed) {
+            this_01 = (AvatarMotor *)pMVar8[1].fields.name;
+            pPVar7 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+            if ((pPVar7 == (PickupItemCostume_CostumeConfiguration *)0x0) ||
                (this_01 == (AvatarMotor *)0x0)) goto code_?;
             AvatarMotor::AvatarMotor_set_WalkSpeedBase
-                      (this_01,(float)(int)(pPVar4->fields).movementSpeed,(MethodInfo *)0x0);
+                      (this_01,(float)(int)(pPVar7->fields).movementSpeed,(MethodInfo *)0x0);
           }
-code_?:
-          PickupItemCostume_OnArcTrailStateChanged(unaff_ESI,(MethodInfo *)0x0);
-          PickupItemCostume_OnCollisionStateChanged(unaff_ESI,(MethodInfo *)0x0);
-          PickupItemCostume_OnAvatarInvisibleStateChanged(unaff_ESI,(MethodInfo *)0x0);
           return;
         }
       }
@@ -1526,8 +1567,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

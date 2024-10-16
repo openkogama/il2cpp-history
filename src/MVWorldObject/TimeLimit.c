@@ -91,9 +91,9 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
                      );
       cRam_? = '\x01';
     }
-    unaff_EBX = (this->fields)._.gameCounterManager;
+    this_00 = (this->fields)._.gameCounterManager;
     this = (TimeLimit *)CONCAT31(this._1_3_,(this->fields)._.gameStatCounterType);
-    if (unaff_EBX != (GameStatCounterManager *)0x0) {
+    if (this_00 != (GameStatCounterManager *)0x0) {
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>__HashSet_System__Collections__Generic__IEnumerable<MV::WorldObject::MVTeam>_
@@ -101,20 +101,20 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
         func_?(&TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>);
         cRam_? = '\x01';
       }
-      pHVar1 = (unaff_EBX->fields).activeTeams;
-      this_00 = (HashSet_1_System_Int32Enum_ *)
+      pHVar1 = (this_00->fields).activeTeams;
+      this_01 = (HashSet_1_System_Int32Enum_ *)
                 func_?(
                                TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>
                                );
       System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
       HashSet_1_System_Int32Enum___ctor_1
-                (this_00,(IEnumerable_1_System_Int32Enum_ *)pHVar1,
+                (this_01,(IEnumerable_1_System_Int32Enum_ *)pHVar1,
                  MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>__HashSet_System__Collections__Generic__IEnumerable<MV::WorldObject::MVTeam>_
                 );
       unaff_EDI = (GameStatCounterManager *)0x0;
-      if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
+      if (this_01 != (HashSet_1_System_Int32Enum_ *)0x0) {
         pHVar2 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                           (unaff_EBX,(GameStatCounterType__Enum)this,1 < (this_00->fields)._count,
+                           (this_00,(GameStatCounterType__Enum)this,1 < (this_01->fields)._count,
                             WinningConditionPresentStyle__Enum_MultipleWinners,0,(MethodInfo *)0x0);
         return pHVar2;
       }
@@ -145,20 +145,17 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
       return pHVar2;
     }
   }
-  func_?();
-  bVar3 = (byte)((uint)unaff_EBX >> 8);
-  *(char *)(extraout_EDX + -0x35ef1101) =
-       *(char *)(extraout_EDX + -0x35ef1101) + extraout_CL + CARRY1(bVar3,extraout_CH);
-  *(char *)(extraout_EDX + -0x75ef1100) =
-       *(char *)(extraout_EDX + -0x75ef1100) + extraout_CL + CARRY1(bVar3 + extraout_CH,extraout_CH)
-  ;
-  *(char *)(extraout_EDX + -1) =
-       *(char *)(extraout_EDX + -1) + extraout_CL + CARRY4((uint)unaff_EDI,(uint)&stack0xfffffffc);
-  *(char *)(extraout_EDX + 0x4a10ef00) =
-       *(char *)(extraout_EDX + 0x4a10ef00) + extraout_CL +
-       CARRY4((uint)(&stack0xfffffffc + (int)&unaff_EDI->klass),(uint)&stack0xfffffffc);
-  pcVar4 = (code *)swi(3);
-  pHVar2 = (HighScores *)(*pcVar4)();
+  cVar3 = '\0';
+  uVar4 = func_?();
+  pcVar5 = (char *)((ulonglong)uVar4 >> 0x20);
+  out((short)((ulonglong)uVar4 >> 0x20),(int)uVar4);
+  pcVar5[-0x15ef10fd] = pcVar5[-0x15ef10fd] + extraout_CH + cVar3;
+  pcVar5[-0x55ef10fc] =
+       pcVar5[-0x55ef10fc] + extraout_CH + CARRY4((uint)&stack0xfffffffc,(uint)unaff_EDI);
+  *pcVar5 = *pcVar5 + extraout_CH + (0x10 < (byte)uVar4);
+  pcVar5[0x6a10ef04] = pcVar5[0x6a10ef04] + extraout_CH + (0x10 < (byte)((byte)uVar4 - 0x11));
+  pcVar6 = (code *)swi(3);
+  pHVar2 = (HighScores *)(*pcVar6)();
   return pHVar2;
 }
 
@@ -235,9 +232,9 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
                      );
       cRam_? = '\x01';
     }
-    unaff_EBX = (this->fields)._.gameCounterManager;
+    this_00 = (this->fields)._.gameCounterManager;
     this = (TimeLimit *)CONCAT31(this._1_3_,(this->fields)._.gameStatCounterType);
-    if (unaff_EBX != (GameStatCounterManager *)0x0) {
+    if (this_00 != (GameStatCounterManager *)0x0) {
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>__HashSet_System__Collections__Generic__IEnumerable<MV::WorldObject::MVTeam>_
@@ -245,20 +242,20 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
         func_?(&TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>);
         cRam_? = '\x01';
       }
-      pHVar1 = (unaff_EBX->fields).activeTeams;
-      this_00 = (HashSet_1_System_Int32Enum_ *)
+      pHVar1 = (this_00->fields).activeTeams;
+      this_01 = (HashSet_1_System_Int32Enum_ *)
                 func_?(
                                TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>
                                );
       System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
       HashSet_1_System_Int32Enum___ctor_1
-                (this_00,(IEnumerable_1_System_Int32Enum_ *)pHVar1,
+                (this_01,(IEnumerable_1_System_Int32Enum_ *)pHVar1,
                  MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>__HashSet_System__Collections__Generic__IEnumerable<MV::WorldObject::MVTeam>_
                 );
       unaff_EDI = (GameStatCounterManager *)0x0;
-      if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
+      if (this_01 != (HashSet_1_System_Int32Enum_ *)0x0) {
         pHVar2 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                           (unaff_EBX,(GameStatCounterType__Enum)this,1 < (this_00->fields)._count,
+                           (this_00,(GameStatCounterType__Enum)this,1 < (this_01->fields)._count,
                             WinningConditionPresentStyle__Enum_MultipleWinners,0,(MethodInfo *)0x0);
         return pHVar2;
       }
@@ -289,20 +286,17 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
       return pHVar2;
     }
   }
-  func_?();
-  bVar3 = (byte)((uint)unaff_EBX >> 8);
-  *(char *)(extraout_EDX + -0x35ef1101) =
-       *(char *)(extraout_EDX + -0x35ef1101) + extraout_CL + CARRY1(bVar3,extraout_CH);
-  *(char *)(extraout_EDX + -0x75ef1100) =
-       *(char *)(extraout_EDX + -0x75ef1100) + extraout_CL + CARRY1(bVar3 + extraout_CH,extraout_CH)
-  ;
-  *(char *)(extraout_EDX + -1) =
-       *(char *)(extraout_EDX + -1) + extraout_CL + CARRY4((uint)unaff_EDI,(uint)&stack0xfffffffc);
-  *(char *)(extraout_EDX + 0x4a10ef00) =
-       *(char *)(extraout_EDX + 0x4a10ef00) + extraout_CL +
-       CARRY4((uint)(&stack0xfffffffc + (int)&unaff_EDI->klass),(uint)&stack0xfffffffc);
-  pcVar4 = (code *)swi(3);
-  pHVar2 = (HighScores *)(*pcVar4)();
+  cVar3 = '\0';
+  uVar4 = func_?();
+  pcVar5 = (char *)((ulonglong)uVar4 >> 0x20);
+  out((short)((ulonglong)uVar4 >> 0x20),(int)uVar4);
+  pcVar5[-0x15ef10fd] = pcVar5[-0x15ef10fd] + extraout_CH + cVar3;
+  pcVar5[-0x55ef10fc] =
+       pcVar5[-0x55ef10fc] + extraout_CH + CARRY4((uint)&stack0xfffffffc,(uint)unaff_EDI);
+  *pcVar5 = *pcVar5 + extraout_CH + (0x10 < (byte)uVar4);
+  pcVar5[0x6a10ef04] = pcVar5[0x6a10ef04] + extraout_CH + (0x10 < (byte)((byte)uVar4 - 0x11));
+  pcVar6 = (code *)swi(3);
+  pHVar2 = (HighScores *)(*pcVar6)();
   return pHVar2;
 }
 

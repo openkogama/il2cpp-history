@@ -250,21 +250,28 @@ code_?:
   }
 code_?:
   uVar7 = func_?();
-  cVar8 = (char)((uint)extraout_ECX >> 8);
-  *(char *)&((Dictionary_2_System_Byte_System_Object_ *)returnCode)->klass =
-       *(char *)&((Dictionary_2_System_Byte_System_Object_ *)returnCode)->klass + cVar8;
-  pcVar9 = (char *)((uint)uVar7 | 0xe621066);
-  pcVar10 = (char *)((int)((ulonglong)uVar7 >> 0x20) + 0x10660f);
-  *pcVar10 = *pcVar10 + cVar8;
-  *extraout_ECX = *extraout_ECX + (char)pcVar9;
-  piVar11 = (int *)(CONCAT31((int3)((uint)pcVar9 >> 8),(char)pcVar9 + *pcVar9) + *unaff_EBX);
-  pcVar10 = (char *)((int)piVar11 + *unaff_EBX + *unaff_EBX + *unaff_EBX + *unaff_EBX + *piVar11);
-  cVar8 = (char)pcVar10;
-  *pcVar10 = *pcVar10 + cVar8;
-  *pcVar10 = *pcVar10 + cVar8;
-  *pcVar10 = *pcVar10 + cVar8;
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  iVar8 = (int)((ulonglong)uVar7 >> 0x20);
+  bVar9 = (byte)((uint)extraout_ECX >> 8);
+  bVar10 = CARRY1(*(byte *)&((Dictionary_2_System_Byte_System_Object_ *)returnCode)->klass,bVar9);
+  *(byte *)&((Dictionary_2_System_Byte_System_Object_ *)returnCode)->klass =
+       *(char *)&((Dictionary_2_System_Byte_System_Object_ *)returnCode)->klass + bVar9;
+  pbVar11 = (byte *)(iVar8 + 0xf);
+  bVar12 = *pbVar11;
+  bVar13 = (byte)((ulonglong)uVar7 >> 8);
+  bVar14 = *pbVar11 + bVar13;
+  *pbVar11 = bVar14 + bVar10;
+  pcVar15 = (char *)(iVar8 + 0x106610);
+  *pcVar15 = *pcVar15 + bVar9 + (CARRY1(bVar12,bVar13) || CARRY1(bVar14,bVar10));
+  *extraout_ECX = *extraout_ECX + (char)uVar7;
+  piVar16 = (int *)(CONCAT31((int3)((ulonglong)uVar7 >> 8),(char)uVar7 + *(char *)uVar7) +
+                   *unaff_EBX);
+  pcVar15 = (char *)((int)piVar16 + *unaff_EBX + *unaff_EBX + *unaff_EBX + *unaff_EBX + *piVar16);
+  cVar17 = (char)pcVar15;
+  *pcVar15 = *pcVar15 + cVar17;
+  *pcVar15 = *pcVar15 + cVar17;
+  *pcVar15 = *pcVar15 + cVar17;
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

@@ -552,7 +552,7 @@ code_?:
   return (float)fVar10;
 }
 
-/* decompilation failed: Exception while decompiling 10585710: Decompiler process died */
+/* decompilation failed: Exception while decompiling 10585810: Decompiler process died */
 
 
 /* Boolean IsScalerHandleRegistered(Int32) */

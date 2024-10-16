@@ -8,12 +8,12 @@ PickupItemCustomGun_ChargeRoutine
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__67);
+    func_?(&TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__68);
     cRam_? = '\x01';
   }
   this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
             func_?(
-                           TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__67
+                           TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__68
                            );
   SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
             (this_00,0,(MethodInfo *)0x0);
@@ -37,11 +37,11 @@ Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::PickupItemCu
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___FetchFOV_d__51);
+    func_?(&TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___FetchFOV_d__52);
     cRam_? = '\x01';
   }
   this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
-            func_?(TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___FetchFOV_d__51
+            func_?(TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___FetchFOV_d__52
                            );
   SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
             (this_00,0,(MethodInfo *)0x0);
@@ -3383,6 +3383,90 @@ code_?:
 }
 
 
+/* Void OnPickupNewEditableItem() */
+
+void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
+     PickupItemCustomGun_OnPickupNewEditableItem(PickupItemCustomGun *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    func_?(&TypeInfo__TimeoutClock);
+    cRam_? = '\x01';
+  }
+  pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+  if (pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+    fVar2 = (pPVar1->fields)._.attackCooldown;
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
+        cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    }
+    pOVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+             ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe4,fVar2,(MethodInfo *)0x0);
+    AVar4 = pOVar3->hiddenValue;
+    pBVar5 = pOVar3->hiddenValueOld;
+    fVar2 = pOVar3->fakeValue;
+    bVar6 = pOVar3->inited;
+    uVar7 = *(undefined3 *)&pOVar3->field_0x11;
+    (this->fields)._._.fireInterval.currentCryptoKey = pOVar3->currentCryptoKey;
+    (this->fields)._._.fireInterval.hiddenValue = AVar4;
+    (this->fields)._._.fireInterval.hiddenValueOld = pBVar5;
+    (this->fields)._._.fireInterval.fakeValue = fVar2;
+    (this->fields)._._.fireInterval.inited = bVar6;
+    *(undefined3 *)&(this->fields)._._.fireInterval.field_0x11 = uVar7;
+    func_?(&(this->fields)._._.fireInterval.hiddenValueOld,0);
+    pTVar8 = (TimeoutClock *)func_?(TypeInfo__TimeoutClock);
+    TimeoutClock::TimeoutClock__ctor(pTVar8,0.05,(MethodInfo *)0x0);
+    (this->fields).fireEffectTimeout = pTVar8;
+    func_?();
+    pTVar8 = (TimeoutClock *)func_?();
+    TimeoutClock::TimeoutClock__ctor(pTVar8,0.05,(MethodInfo *)0x0);
+    (this->fields).bulletEffectTimeout = pTVar8;
+    func_?();
+    (*(code *)(this->klass->vtable).ResetAmmo.method)();
+    pCVar9 = (this->fields)._.fireAudioPlayer;
+    pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+    if ((pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+       (pCVar9 != (CustomItemAudioPlayer *)0x0)) {
+      CustomItemAudioPlayer::CustomItemAudioPlayer_SetVolume
+                (pCVar9,(pPVar1->fields)._.fireSoundEffectVolume,(MethodInfo *)0x0);
+      pCVar9 = (this->fields).chargeAudioPlayer;
+      pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+      if ((pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+         (pCVar9 != (CustomItemAudioPlayer *)0x0)) {
+        CustomItemAudioPlayer::CustomItemAudioPlayer_SetVolume
+                  (pCVar9,(pPVar1->fields).chargeSoundEffectVolume,(MethodInfo *)0x0);
+        pCVar9 = (this->fields)._.hitAudioPlayer;
+        pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+        if ((pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+           (pCVar9 != (CustomItemAudioPlayer *)0x0)) {
+          CustomItemAudioPlayer::CustomItemAudioPlayer_SetVolume
+                    (pCVar9,(pPVar1->fields)._.hitSoundEffectVolume,(MethodInfo *)0x0);
+          PickupItemCustomGun_MuzzleStateUpdate(this,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          this_00 = (SubscribableVariable_1_System_Int32Enum_ *)func_?();
+          SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
+                    (this_00,0,(MethodInfo *)0x0);
+          if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+            this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
+            func_?(this_00 + 1,this);
+            Coroutines::Coroutines_Start((IEnumerator *)this_00,(MethodInfo *)0x0);
+            return;
+          }
+        }
+      }
+    }
+  }
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
+  return;
+}
+
+
 /* Void OnStateChanged(Dictionary`2[System.Object,System.Object]) */
 
 void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
@@ -3391,134 +3475,44 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
                MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&
-                    System__Collections__Generic__Dictionary<System::Object,_System::Object>_MethodInfo__Extensions__GetValueOrDefault<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                   );
-    func_?(&TypeInfo__Extensions);
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
-    func_?(&TypeInfo__TimeoutClock);
-    func_?(&StringLiteral_itemData);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Extensions);
-  }
-  itemData = (Dictionary_2_System_Object_System_Object_ *)
-             Extensions::Extensions_GetValueOrDefault_3
-                       (newState,StringLiteral_itemData,(Object *)0x0,
-                        System__Collections__Generic__Dictionary<System::Object,_System::Object>_MethodInfo__Extensions__GetValueOrDefault<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                       );
-  if ((itemData == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-     (bVar1 = PickupItemEditable::PickupItemEditable_IsSamePickupItem
-                         ((PickupItemEditable *)this,itemData,(MethodInfo *)0x0), bVar1 != 0)) {
-    return;
-  }
   PickupItemEditable::PickupItemEditable_OnStateChanged
             ((PickupItemEditable *)this,newState,(MethodInfo *)0x0);
-  pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-  pOVar3 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat;
-  if (pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-    value = (ObscuredFloat__Class *)(pPVar2->fields)._.attackCooldown;
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?();
-      value = pOVar3;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVAvatarLocal);
+    cRam_? = '\x01';
+  }
+  pMVar1 = (this->fields)._._._.owner;
+  if (pMVar1 != (MVPickupOwner *)0x0) {
+    pMVar2 = (pMVar1->fields)._.worldObjectParent;
+    if (((pMVar2 == (MVWorldObjectClient *)0x0) ||
+        ((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment)) ||
+       ((MVAvatarLocal__Class *)
+        (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+        TypeInfo__MVAvatarLocal)) {
+      return;
     }
-    pOVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-              ObscuredFloat_op_Implicit
-                        ((ObscuredFloat *)&stack0xffffffe8,(float)value,(MethodInfo *)0x0);
-    AVar5 = pOVar4->hiddenValue;
-    pBVar6 = pOVar4->hiddenValueOld;
-    fVar7 = pOVar4->fakeValue;
-    bVar1 = pOVar4->inited;
-    uVar8 = *(undefined3 *)&pOVar4->field_0x11;
-    (this->fields)._._.fireInterval.currentCryptoKey = pOVar4->currentCryptoKey;
-    (this->fields)._._.fireInterval.hiddenValue = AVar5;
-    (this->fields)._._.fireInterval.hiddenValueOld = pBVar6;
-    (this->fields)._._.fireInterval.fakeValue = fVar7;
-    (this->fields)._._.fireInterval.inited = bVar1;
-    *(undefined3 *)&(this->fields)._._.fireInterval.field_0x11 = uVar8;
-    func_?();
-    pTVar9 = (TimeoutClock *)func_?();
-    TimeoutClock::TimeoutClock__ctor(pTVar9,0.05,(MethodInfo *)0x0);
-    (this->fields).fireEffectTimeout = pTVar9;
-    func_?();
-    pTVar9 = (TimeoutClock *)func_?();
-    TimeoutClock::TimeoutClock__ctor(pTVar9,0.05,(MethodInfo *)0x0);
-    (this->fields).bulletEffectTimeout = pTVar9;
-    func_?();
-    (*(code *)(this->klass->vtable).ResetAmmo.method)();
-    pCVar10 = (this->fields)._.fireAudioPlayer;
-    pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-    if ((pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
-       (pCVar10 != (CustomItemAudioPlayer *)0x0)) {
-      CustomItemAudioPlayer::CustomItemAudioPlayer_SetVolume
-                (pCVar10,(pPVar2->fields)._.fireSoundEffectVolume,(MethodInfo *)0x0);
-      pCVar10 = (this->fields).chargeAudioPlayer;
-      pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-      if ((pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
-         (pCVar10 != (CustomItemAudioPlayer *)0x0)) {
-        CustomItemAudioPlayer::CustomItemAudioPlayer_SetVolume
-                  (pCVar10,(pPVar2->fields).chargeSoundEffectVolume,(MethodInfo *)0x0);
-        pCVar10 = (this->fields)._.hitAudioPlayer;
-        pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-        if ((pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
-           (pCVar10 != (CustomItemAudioPlayer *)0x0)) {
-          CustomItemAudioPlayer::CustomItemAudioPlayer_SetVolume
-                    (pCVar10,(pPVar2->fields)._.hitSoundEffectVolume,(MethodInfo *)0x0);
-          PickupItemCustomGun_MuzzleStateUpdate(this,(MethodInfo *)0x0);
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pMVar11 = (this->fields)._._._.owner;
-          if (pMVar11 != (MVPickupOwner *)0x0) {
-            pMVar12 = (pMVar11->fields)._.worldObjectParent;
-            if (((pMVar12 != (MVWorldObjectClient *)0x0) &&
-                ((TypeInfo__MVAvatarLocal->_1).naturalAligment <=
-                 (pMVar12->klass->_1).naturalAligment)) &&
-               ((MVAvatarLocal__Class *)
-                (pMVar12->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1]
-                == TypeInfo__MVAvatarLocal)) {
-              pSVar13 = pMVar12[1].fields.name;
-              if (pSVar13 == (String *)0x0) goto code_?;
-              method_00 = pSVar13[3].klass;
-              pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)method_00);
-              if (pPVar2 == (PickupItemCustomGun_CustomGunConfiguration *)0x0)
-              goto code_?;
-              if ((float)method_00 != (float)(int)(pPVar2->fields).movementSpeedWhileHeld) {
-                this_00 = (AvatarMotor *)pMVar12[1].fields.name;
-                pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-                if ((pPVar2 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) ||
-                   (this_00 == (AvatarMotor *)0x0)) goto code_?;
-                AvatarMotor::AvatarMotor_set_WalkSpeedBase
-                          (this_00,(float)(int)(pPVar2->fields).movementSpeedWhileHeld,
-                           (MethodInfo *)0x0);
-              }
-            }
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            this_01 = (SubscribableVariable_1_System_Int32Enum_ *)func_?();
-            SubscribableVariable`1[System::Int32Enum]::
-            SubscribableVariable_1_System_Int32Enum___ctor(this_01,0,(MethodInfo *)0x0);
-            if (this_01 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
-              this_01[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
-              func_?();
-              Coroutines::Coroutines_Start((IEnumerator *)this_01,(MethodInfo *)0x0);
-              return;
-            }
-          }
+    pSVar3 = pMVar2[1].fields.name;
+    if (pSVar3 != (String *)0x0) {
+      pSVar4 = pSVar3[3].klass;
+      pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+      if (pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+        if ((float)pSVar4 == (float)(int)(pPVar5->fields).movementSpeedWhileHeld) {
+          return;
+        }
+        this_00 = (AvatarMotor *)pMVar2[1].fields.name;
+        pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+        if ((pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+           (this_00 != (AvatarMotor *)0x0)) {
+          AvatarMotor::AvatarMotor_set_WalkSpeedBase
+                    (this_00,(float)(int)(pPVar5->fields).movementSpeedWhileHeld,(MethodInfo *)0x0);
+          return;
         }
       }
     }
   }
-code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

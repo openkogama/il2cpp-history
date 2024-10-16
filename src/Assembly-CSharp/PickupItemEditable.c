@@ -61,10 +61,10 @@ Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_DisableAnimatorCorou
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__38);
+    func_?(&TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__39);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__38;
+  method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__39;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -150,7 +150,7 @@ code_?:
   (this->fields)._Configuration_k__BackingField = pPVar6;
   func_?(&(this->fields)._Configuration_k__BackingField,pPVar6);
   (*(code *)(this->klass->vtable).SetValuesBasedOnConfiguration.method)
-            (this,(this->klass->vtable).SetAnimation.methodPtr);
+            (this,(this->klass->vtable).OnPickupNewEditableItem.methodPtr);
   return;
 }
 
@@ -196,23 +196,25 @@ bool Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_IsSamePickupIte
     cRam_? = '\x01';
   }
   pPVar1 = (this->fields)._Configuration_k__BackingField;
-  if (pPVar1 != (PickupItemEditable_EditableItemConfiguration *)0x0) {
-    IVar2 = (pPVar1->fields).cubeModelId;
-    if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Extensions);
-    }
-    IVar3 = Extensions::Extensions_GetValueOrDefault_2
-                      (itemData,StringLiteral_CubeModelId,0xffffffff,
-                       int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
-                      );
-    bVar4 = (*(code *)(this->klass->vtable).__unknown_1.method)
-                      (this,itemData,(this->klass->vtable).__unknown_2.methodPtr);
-    return bVar4 & IVar2 == IVar3;
+  if (pPVar1 == (PickupItemEditable_EditableItemConfiguration *)0x0) {
+    func_?();
+    pcVar2 = (code *)swi(3);
+    bVar3 = (*pcVar2)();
+    return bVar3;
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  bVar6 = (*pcVar5)();
-  return bVar6;
+  IVar4 = (pPVar1->fields).cubeModelId;
+  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__Extensions);
+  }
+  IVar5 = Extensions::Extensions_GetValueOrDefault_2
+                    (itemData,StringLiteral_CubeModelId,0xffffffff,
+                     int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
+                    );
+  if (IVar4 != IVar5) {
+    return 0;
+  }
+  bVar3 = (*(code *)(this->klass->vtable).__unknown_1.method)(this);
+  return bVar3;
 }
 
 
@@ -394,17 +396,44 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_OnStateChanged
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Extensions);
   }
-  itemData = (Dictionary_2_System_Object_System_Object_ *)
-             Extensions::Extensions_GetValueOrDefault_3
-                       (newState,StringLiteral_itemData,(Object *)0x0,
-                        System__Collections__Generic__Dictionary<System::Object,_System::Object>_MethodInfo__Extensions__GetValueOrDefault<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                       );
-  if ((itemData != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-     (bVar1 = PickupItemEditable_IsSamePickupItem(unaff_ESI,itemData,(MethodInfo *)0x0), bVar1 == 0)
-     ) {
-    (*(code *)(unaff_ESI->klass->vtable).InterruptFire.method)();
-    (*(code *)(unaff_ESI->klass->vtable).__unknown_2.method)();
-    (*(code *)(unaff_ESI->klass->vtable).SetValuesBasedOnConfiguration.method)();
+  hashtable = (Dictionary_2_System_Object_System_Object_ *)
+              Extensions::Extensions_GetValueOrDefault_3
+                        (newState,StringLiteral_itemData,(Object *)0x0,
+                         System__Collections__Generic__Dictionary<System::Object,_System::Object>_MethodInfo__Extensions__GetValueOrDefault<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+                        );
+  if (hashtable != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      func_?(&StringLiteral_CubeModelId);
+      cRam_? = '\x01';
+    }
+    if (unaff_ESI[0x35] == 0) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    IVar2 = *(Int32Enum__Enum *)(unaff_ESI[0x35] + 0xc);
+    if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__Extensions);
+    }
+    IVar3 = Extensions::Extensions_GetValueOrDefault_2
+                      (hashtable,StringLiteral_CubeModelId,0xffffffff,
+                       int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
+                      );
+    if (IVar2 == IVar3) {
+      uStack4 = *(undefined4 *)(*unaff_ESI + 0x1ec);
+      cVar5 = (**(code **)(*unaff_ESI + 0x1e8))();
+      if (cVar5 != '\0') {
+        return;
+      }
+    }
+    uStack4 = *(undefined4 *)(*unaff_ESI + 0x234);
+    (**(code **)(*unaff_ESI + 0x230))();
+    (**(code **)(*unaff_ESI + 0x1f0))();
+    (**(code **)(*unaff_ESI + 0x210))();
+    (**(code **)(*unaff_ESI + 0x218))();
   }
   return;
 }
@@ -447,7 +476,7 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_PlayAnimation
         func_?();
         cRam_? = '\x01';
       }
-      method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__38;
+      method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__39;
       value = (Object *)func_?();
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);

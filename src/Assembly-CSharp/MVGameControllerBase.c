@@ -1323,8 +1323,10 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_OnRTGAppIni
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__RTG__ISceneGizmo);
+    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
     func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
     func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
+    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
     func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>);
     func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
     cRam_? = '\x01';
@@ -1364,7 +1366,17 @@ code_?:
       this_01 = (Gizmo *)(*(code *)*ppMVar6)();
       if (this_01 != (Gizmo *)0x0) {
         RTG::Gizmo::Gizmo_SetEnabled(this_01,0,(MethodInfo *)0x0);
-        return;
+        if ((TypeInfo__RTG__MonoSingleton<RTG::RTGApp>->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        this_02 = (Behaviour *)
+                  RTG::MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                            (MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
+        if (this_02 != (Behaviour *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                    (this_02,0,(MethodInfo *)0x0);
+          return;
+        }
       }
     }
   }

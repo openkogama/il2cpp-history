@@ -41,7 +41,7 @@ public class Bullet : MonoBehaviour
 	private float handToMuzzleDist;
 	private Vector3 startPosition;
 	private Vector3 targetPosition;
-	private Color storedColor;
+	private Color storedBulletColor;
 	private Transform localTransform;
 	private CullingSubscriberBase cullingSubscriberBase;
 	private VoxelHit voxelHit;

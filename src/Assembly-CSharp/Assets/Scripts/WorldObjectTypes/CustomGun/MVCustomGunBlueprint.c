@@ -36,6 +36,8 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
     func_?(&
                     MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzleRotation__
                    );
+    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
+    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     func_?(&StringLiteral_MuzzleDirection);
@@ -160,6 +162,15 @@ code_?:
     if (pGVar4 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar4,0,(MethodInfo *)0x0);
+    if ((TypeInfo__RTG__MonoSingleton<RTG::RTGApp>->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
+    }
+    this_05 = (Behaviour *)
+              RTG::MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                        (MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
+    if (this_05 == (Behaviour *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+              (this_05,0,(MethodInfo *)0x0);
     if ((this->fields).muzzleBoundCheckRoutine != (IEnumerator *)0x0) {
       Coroutines::Coroutines_Stop((this->fields).muzzleBoundCheckRoutine,(MethodInfo *)0x0);
     }
@@ -258,17 +269,28 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
     func_?(&
                     MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzleRotation__
                    );
+    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
+    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).muzzlePoint;
-  if (this_00 == (GameObject *)0x0) {
+  if ((TypeInfo__RTG__MonoSingleton<RTG::RTGApp>->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
+  }
+  this_02 = (Behaviour *)
+            RTG::MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                      (MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
+  if (this_02 == (Behaviour *)0x0) {
 code_?:
     func_?();
     pUStack1 = extraout_ECX;
     pUVar2 = extraout_EDX;
   }
   else {
+    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+              (this_02,1,(MethodInfo *)0x0);
+    this_00 = (this->fields).muzzlePoint;
+    if (this_00 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (this_00,1,(MethodInfo *)0x0);
     pOVar3 = (this->fields).transformGizmo;
@@ -414,7 +436,9 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
     func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
                    );
     func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
     func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
+    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
     func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>);
     func_?(&
                     UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
@@ -512,66 +536,89 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
                   if (pGVar3 != (GameObject *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                               (pGVar3,0,(MethodInfo *)0x0);
-                    if ((TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).
-                        cctor_finished_or_no_cctor == 0) {
-                      func_?();
+                    if ((TypeInfo__RTG__MonoSingleton<RTG::RTGApp>->_1).cctor_finished_or_no_cctor
+                        == 0) {
+                      func_?(TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
                     }
-                    this_02 = (RTGizmosEngine *)
+                    pBVar9 = (Behaviour *)
                               RTG::MonoSingleton`1[System::Object]::
                               MonoSingleton_1_System_Object__get_Get
-                                        (
-                                        MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__
-                                        );
-                    if (this_02 != (RTGizmosEngine *)0x0) {
-                      pOVar9 = RTG::RTGizmosEngine::RTGizmosEngine_CreateObjectUniversalGizmo
-                                          (this_02,(MethodInfo *)0x0);
-                      (this->fields).transformGizmo = pOVar9;
-                      func_?();
-                      pOVar9 = (this->fields).transformGizmo;
-                      if (pOVar9 != (ObjectTransformGizmo *)0x0) {
-                        RTG::ObjectTransformGizmo::ObjectTransformGizmo_SetTargetObject
-                                  (pOVar9,(this->fields).muzzlePoint,(MethodInfo *)0x0);
-                        pOVar9 = (this->fields).transformGizmo;
-                        if ((pOVar9 != (ObjectTransformGizmo *)0x0) &&
-                           (pGVar10 = (pOVar9->fields)._._gizmo, pGVar10 != (Gizmo *)0x0)) {
-                          this_01 = (pGVar10->fields)._universalGizmo;
-                          this_03 = (List_1_System_Object_ *)func_?();
-                          mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::
-                          Metadata::__Il2CppFullySharedGenericType]::
-                          LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                                    ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                                      *)this_03,
-                                     MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
-                                    );
-                          if (this_03 != (List_1_System_Object_ *)0x0) {
-                            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                            List_1_System_Object__Add
-                                      (this_03,(Object *)(this->fields).muzzlePoint,
-                                       MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
+                                        (MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
+                    if (pBVar9 != (Behaviour *)0x0) {
+                      UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                                (pBVar9,1,(MethodInfo *)0x0);
+                      if ((TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).
+                          cctor_finished_or_no_cctor == 0) {
+                        func_?();
+                      }
+                      this_02 = (RTGizmosEngine *)
+                                RTG::MonoSingleton`1[System::Object]::
+                                MonoSingleton_1_System_Object__get_Get
+                                          (
+                                          MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__
+                                          );
+                      if (this_02 != (RTGizmosEngine *)0x0) {
+                        pOVar10 = RTG::RTGizmosEngine::RTGizmosEngine_CreateObjectUniversalGizmo
+                                            (this_02,(MethodInfo *)0x0);
+                        (this->fields).transformGizmo = pOVar10;
+                        func_?();
+                        pOVar10 = (this->fields).transformGizmo;
+                        if (pOVar10 != (ObjectTransformGizmo *)0x0) {
+                          RTG::ObjectTransformGizmo::ObjectTransformGizmo_SetTargetObject
+                                    (pOVar10,(this->fields).muzzlePoint,(MethodInfo *)0x0);
+                          pOVar10 = (this->fields).transformGizmo;
+                          if ((pOVar10 != (ObjectTransformGizmo *)0x0) &&
+                             (pGVar11 = (pOVar10->fields)._._gizmo, pGVar11 != (Gizmo *)0x0)) {
+                            this_01 = (pGVar11->fields)._universalGizmo;
+                            this_03 = (List_1_System_Object_ *)func_?();
+                            mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP
+                            ::Metadata::__Il2CppFullySharedGenericType]::
+                            LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                                      ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                                        *)this_03,
+                                       MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
                                       );
-                            if (this_01 != (UniversalGizmo *)0x0) {
-                              RTG::UniversalGizmo::UniversalGizmo_SetMvVertexSnapTargetObjects
-                                        (this_01,(IEnumerable_1_UnityEngine_GameObject_ *)this_03,
-                                         (MethodInfo *)0x0);
-                              pOVar9 = (this->fields).transformGizmo;
-                              if (pOVar9 != (ObjectTransformGizmo *)0x0) {
-                                RTG::ObjectTransformGizmo::ObjectTransformGizmo_SetTransformSpace
-                                          (pOVar9,GizmoSpace__Enum_Global,(MethodInfo *)0x0);
-                                pOVar9 = (this->fields).transformGizmo;
-                                if (pOVar9 != (ObjectTransformGizmo *)0x0) {
-                                  RTG::ObjectTransformGizmo::ObjectTransformGizmo_SetCanAffectScale
-                                            (pOVar9,0,(MethodInfo *)0x0);
-                                  pOVar9 = (this->fields).transformGizmo;
-                                  if ((pOVar9 != (ObjectTransformGizmo *)0x0) &&
-                                     (pGVar10 = (pOVar9->fields)._._gizmo, pGVar10 != (Gizmo *)0x0))
-                                  {
-                                    (pGVar10->fields)._forceRefresh = 1;
-                                    pOVar9 = (this->fields).transformGizmo;
-                                    if ((pOVar9 != (ObjectTransformGizmo *)0x0) &&
-                                       (pGVar10 = (pOVar9->fields)._._gizmo, pGVar10 != (Gizmo *)0x0)
+                            if (this_03 != (List_1_System_Object_ *)0x0) {
+                              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+                              List_1_System_Object__Add
+                                        (this_03,(Object *)(this->fields).muzzlePoint,
+                                         MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
+                                        );
+                              if (this_01 != (UniversalGizmo *)0x0) {
+                                RTG::UniversalGizmo::UniversalGizmo_SetMvVertexSnapTargetObjects
+                                          (this_01,(IEnumerable_1_UnityEngine_GameObject_ *)this_03,
+                                           (MethodInfo *)0x0);
+                                pOVar10 = (this->fields).transformGizmo;
+                                if (pOVar10 != (ObjectTransformGizmo *)0x0) {
+                                  RTG::ObjectTransformGizmo::ObjectTransformGizmo_SetTransformSpace
+                                            (pOVar10,GizmoSpace__Enum_Global,(MethodInfo *)0x0);
+                                  pOVar10 = (this->fields).transformGizmo;
+                                  if (pOVar10 != (ObjectTransformGizmo *)0x0) {
+                                    RTG::ObjectTransformGizmo::
+                                    ObjectTransformGizmo_SetCanAffectScale
+                                              (pOVar10,0,(MethodInfo *)0x0);
+                                    pOVar10 = (this->fields).transformGizmo;
+                                    if ((pOVar10 != (ObjectTransformGizmo *)0x0) &&
+                                       (pGVar11 = (pOVar10->fields)._._gizmo, pGVar11 != (Gizmo *)0x0)
                                        ) {
-                                      RTG::Gizmo::Gizmo_SetEnabled(pGVar10,0,(MethodInfo *)0x0);
-                                      return;
+                                      (pGVar11->fields)._forceRefresh = 1;
+                                      pOVar10 = (this->fields).transformGizmo;
+                                      if ((pOVar10 != (ObjectTransformGizmo *)0x0) &&
+                                         (pGVar11 = (pOVar10->fields)._._gizmo,
+                                         pGVar11 != (Gizmo *)0x0)) {
+                                        RTG::Gizmo::Gizmo_SetEnabled(pGVar11,0,(MethodInfo *)0x0);
+                                        pBVar9 = (Behaviour *)
+                                                  RTG::MonoSingleton`1[System::Object]::
+                                                  MonoSingleton_1_System_Object__get_Get
+                                                            (
+                                                  MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__
+                                                  );
+                                        if (pBVar9 != (Behaviour *)0x0) {
+                                          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::
+                                          Behaviour_set_enabled(pBVar9,0,(MethodInfo *)0x0);
+                                          return;
+                                        }
+                                      }
                                     }
                                   }
                                 }
@@ -593,8 +640,8 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -1061,16 +1108,10 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
 {
   EditablePickupItem::MVEditablePickupItemBaseBlueprint::MVEditablePickupItemBaseBlueprint__ctor
             ((MVEditablePickupItemBaseBlueprint *)this,data,worldObjects,(MethodInfo *)0x0);
-  iVar1 = (this->fields)._._._._.eliteRequiredFlags;
-  iVar2 = (this->fields)._._._._.interactionFlags;
-  puVar3 = (uint *)((int)&(this->fields)._._._._.interactionFlags + 4);
-  *puVar3 = *puVar3 | 0x100;
-  *(int *)&(this->fields)._._._._.interactionFlags = (int)iVar2;
-  *(undefined4 *)((int)&(this->fields)._._._._.eliteRequiredFlags + 4) =
-       *(undefined4 *)((int)&(this->fields)._._._._.eliteRequiredFlags + 4);
-  puVar3 = (uint *)((int)&(this->fields)._._._._.eliteRequiredFlags + 4);
-  *puVar3 = *puVar3 | 0x100;
-  *(uint *)&(this->fields)._._._._.eliteRequiredFlags = (uint)iVar1 | 0x9000;
+  iVar1 = (this->fields)._._._._.interactionFlags;
+  puVar2 = (uint *)((int)&(this->fields)._._._._.interactionFlags + 4);
+  *puVar2 = *puVar2 | 0x100;
+  *(int *)&(this->fields)._._._._.interactionFlags = (int)iVar1;
   return;
 }
 

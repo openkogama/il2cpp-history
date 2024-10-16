@@ -8,7 +8,7 @@ bool Assembly-CSharp.dll::MVRigidBody+StuckEvaluator+StuckObject::
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
-    func_?(100);
+    func_?(0x6c);
     func_?(&TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent);
     cRam_? = '\x01';
   }

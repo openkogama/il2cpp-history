@@ -139,7 +139,7 @@ float Assembly-CSharp.dll::Cube::Cube_CalculateAOLightCheap
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__ContainsKey_MV__WorldObject__IntVector_
                    );
-    func_?(0x10b0);
+    func_?(0x10b8);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&TypeInfo__SharedCubeFunctions);
     cRam_? = '\x01';
@@ -2063,17 +2063,14 @@ code_?:
 code_?:
   func_?();
 code_?:
-  uVar9 = func_?();
-  *(char *)(extraout_ECX + 0x10) = (char)((uint)extraout_ECX >> 8);
-  *(int *)((int)((ulonglong)uVar9 >> 0x20) + -0x73cdef97) = extraout_ECX;
-  lVar33 = (longlong)*(int *)((uint)uVar9 ^ 0xe0106996) * 0xADDR;
-  iVar6 = (int)lVar33;
-  pbVar34 = (byte *)(iVar6 + -0x3333ef97);
-  bVar35 = *pbVar34;
-  *pbVar34 = bVar35 << 3 | (byte)(CONCAT11(iVar6 != lVar33,bVar35) >> 6);
-  pcVar36 = (code *)swi(3);
-  pLVar37 = (List_1_UnityEngine_Vector3_ *)(*pcVar36)();
-  return pLVar37;
+  func_?();
+  iVar6 = CONCAT22((short)((uint)extraout_ECX >> 0x10),
+                    CONCAT11(*(undefined1 *)(extraout_ECX + 0x10),(char)extraout_ECX));
+  *(int *)(iVar6 + 0x698e3210 + (int)&stack0xfffffffc * 2) = iVar6;
+  *(char *)(iVar6 + -0x6f) = *(char *)(iVar6 + -0x6f) + (char)((uint)this >> 8);
+  pcVar33 = (code *)swi(3);
+  pLVar34 = (List_1_UnityEngine_Vector3_ *)(*pcVar33)();
+  return pLVar34;
 }
 
 
@@ -2228,7 +2225,7 @@ Assembly-CSharp.dll::Cube::Cube_GenerateCubeFaces
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__Add_FaceData_);
-    func_?(0x21c0);
+    func_?(0x21c8);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__List__);
     func_?(&TypeInfo__System__Collections__Generic__List<FaceData>);
     cRam_? = '\x01';
@@ -2291,10 +2288,10 @@ Assembly-CSharp.dll::Cube::Cube_GenerateCubeFacesCheap
     func_?(&MethodInfo__Cube___GenerateCubeFacesCheap_g__insideCheck_26_4_int_);
     func_?(&MethodInfo__Cube___GenerateCubeFacesCheap_g__insideCheck_26_5_int_);
     func_?(&TypeInfo__Cube);
-    func_?(0x69cc);
+    func_?(0x69d4);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__Add_FaceData_);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__ToArray__);
-    func_?(0x214c);
+    func_?(0x2154);
     func_?(&TypeInfo__System__Collections__Generic__List<FaceData>);
     cRam_? = '\x01';
   }
@@ -3301,8 +3298,9 @@ Vector3 * Assembly-CSharp.dll::Cube::Cube_GetDefaultNormal
     mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor
               (this,(MethodInfo *)0x0);
     uVar2 = func_?(&MethodInfo__Cube__GetDefaultNormal_MV__WorldObject__Face_);
-    pVVar3 = (Vector3 *)func_?(this,uVar2);
-    return pVVar3;
+    func_?(this,uVar2);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
   }
 }
 
@@ -3323,10 +3321,10 @@ Assembly-CSharp.dll::Cube::Cube_GetEdge
     pVVar1 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners
                        ((CubeBase *)cube,(MethodInfo *)0x0);
     if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Cube);
+      func_?();
     }
     pVVar1 = Cube_GetFace_1(pVVar1,face,(MethodInfo *)0x0);
-    pVVar2 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,2);
+    pVVar2 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3);
     switch(edge) {
     case Edge__Enum_Front:
       if (pVVar1 != (Vector3__Array *)0x0) {
@@ -3429,15 +3427,13 @@ code_?:
   func_?();
 code_?:
   iVar7 = func_?();
-  pbVar8 = (byte *)(iVar7 + -0x1bef964d);
+  pbVar8 = (byte *)(iVar7 + -0xbef964b);
   bVar9 = *pbVar8;
-  bVar10 = (byte)((uint)iVar7 >> 8);
-  bVar11 = *pbVar8 + bVar10;
-  *pbVar8 = bVar11 + bVar3;
-  pcVar12 = (char *)CONCAT31((int3)((uint)unaff_EBX >> 8),0x69);
-  *pcVar12 = *pcVar12 + 'i' + (CARRY1(bVar9,bVar10) || CARRY1(bVar11,bVar3));
-  pcVar13 = (code *)swi(3);
-  pVVar1 = (Vector3__Array *)(*pcVar13)();
+  bVar10 = *pbVar8;
+  *pbVar8 = bVar10 + extraout_DH + bVar3;
+  *unaff_EBX = *unaff_EBX + 'i' + (CARRY1(bVar9,extraout_DH) || CARRY1(bVar10 + extraout_DH,bVar3));
+  pcVar11 = (code *)swi(3);
+  pVVar1 = (Vector3__Array *)(*pcVar11)();
   return pVVar1;
 }
 
@@ -3534,7 +3530,7 @@ Assembly-CSharp.dll::Cube::Cube_GetEdge_1
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
     func_?(&TypeRef__Edge);
-    func_?(0x1730);
+    func_?(0x1738);
     func_?(&TypeInfo__System__Enum);
     func_?(&TypeInfo__System__IDisposable);
     func_?(&TypeInfo__System__Collections__IEnumerator);
@@ -4618,6 +4614,8 @@ code_?:
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void GetTriangle(Int32, Vector3[], Vector3[]) */
 
 void Assembly-CSharp.dll::Cube::Cube_GetTriangle
@@ -4625,6 +4623,9 @@ void Assembly-CSharp.dll::Cube::Cube_GetTriangle
                MethodInfo *method)
 
 {
+  puVar1 = &stack0xfffffffc;
+  puVar2 = &stack0xfffffffc;
+  puVar3 = &stack0xfffffffc;
   switch(triangleNr) {
   case 0:
   case 4:
@@ -4635,66 +4636,104 @@ void Assembly-CSharp.dll::Cube::Cube_GetTriangle
   case 9:
   case 10:
   case 0xb:
-    if ((corners == (Vector3__Array *)0x0) ||
-       (func_?(), triangleVertices == (Vector3__Array *)0x0)) {
-code_?:
-      cVar1 = func_?();
-      lVar2 = (longlong)(int)&stack0xfffffffc * 0x69;
-      bVar3 = (int)lVar2 != lVar2;
-      bVar4 = SCARRY1(cRam_?,cVar1);
-      cVar1 = cRam_? + cVar1;
-      cRam_? = cVar1 + bVar3;
-      pcVar5 = (code *)swi(4);
-      if (bVar4 != SCARRY1(cVar1,bVar3)) {
-        (*pcVar5)();
-      }
-      lVar2 = (longlong)(int)&stack0xfffffffc * 0x69;
-      *(char *)(unaff_EBX + -0x33) =
-           *(char *)(unaff_EBX + -0x33) + (char)((ulonglong)lVar2 >> 8) + ((int)lVar2 != lVar2);
-      lVar2 = (longlong)(int)&stack0xfffffffc * 0x69;
-      *(char *)(unaff_EBX + -0x33) =
-           *(char *)(unaff_EBX + -0x33) + (char)((ulonglong)lVar2 >> 8) + ((int)lVar2 != lVar2);
-      lVar2 = (longlong)(int)&stack0xfffffffc * 0x69;
-      *(char *)(unaff_EBX + -0x33) =
-           *(char *)(unaff_EBX + -0x33) + (char)((ulonglong)lVar2 >> 8) + ((int)lVar2 != lVar2);
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
-      return;
-    }
-    func_?(0,uStack_6,uStack_7);
-    func_?(&uStack_6,1);
-    func_?(1,uStack_6,uStack_7);
-    uVar8 = 2;
-    break;
+    bVar4 = (POPCOUNT((uint)corners & 0xff) & 1U) == 0;
+    if (corners == (Vector3__Array *)0x0) break;
+    func_?();
+    bVar4 = (POPCOUNT((uint)triangleVertices & 0xff) & 1U) == 0;
+    if (triangleVertices == (Vector3__Array *)0x0) break;
+    func_?();
+    func_?();
+    auStack_5[0] = 1;
+    func_?();
+    uVar6 = 2;
+    puVar3 = &stack0xfffffffc;
+    goto code_?;
   case 1:
-    if ((corners == (Vector3__Array *)0x0) ||
-       (func_?(), triangleVertices == (Vector3__Array *)0x0)) goto code_?;
-    func_?(0,uStack_6,uStack_7);
-    func_?(&uStack_6,2);
-    func_?(1,uStack_6,uStack_7);
-    uVar8 = 3;
+    bVar4 = (POPCOUNT((uint)corners & 0xff) & 1U) == 0;
+    if (corners != (Vector3__Array *)0x0) {
+      func_?();
+      bVar4 = (POPCOUNT((uint)triangleVertices & 0xff) & 1U) == 0;
+      if (triangleVertices != (Vector3__Array *)0x0) {
+        func_?();
+        func_?();
+        auStack_5[0] = 1;
+        func_?();
+        uVar6 = 3;
+        goto code_?;
+      }
+    }
     break;
   case 2:
-    if ((corners == (Vector3__Array *)0x0) ||
-       (func_?(), triangleVertices == (Vector3__Array *)0x0)) goto code_?;
-    func_?(0,uStack_6,uStack_7);
-    func_?(&uStack_6,5);
-    func_?(1,uStack_6,uStack_7);
-    uVar8 = 6;
+    bVar4 = (POPCOUNT((uint)corners & 0xff) & 1U) == 0;
+    if (corners != (Vector3__Array *)0x0) {
+      func_?();
+      bVar4 = (POPCOUNT((uint)triangleVertices & 0xff) & 1U) == 0;
+      if (triangleVertices != (Vector3__Array *)0x0) {
+        func_?();
+        func_?();
+        auStack_5[0] = 1;
+        func_?();
+        uVar6 = 6;
+        puVar3 = &stack0xfffffffc;
+        goto code_?;
+      }
+    }
     break;
   case 3:
-    if ((corners == (Vector3__Array *)0x0) ||
-       (func_?(), triangleVertices == (Vector3__Array *)0x0)) goto code_?;
-    func_?(0,uStack_6,uStack_7);
-    func_?(&uStack_6,6);
-    func_?(1,uStack_6,uStack_7);
-    uVar8 = 7;
-    break;
+    bVar4 = (POPCOUNT((uint)corners & 0xff) & 1U) == 0;
+    if (corners == (Vector3__Array *)0x0) break;
+    func_?();
+    bVar4 = (POPCOUNT((uint)triangleVertices & 0xff) & 1U) == 0;
+    if (triangleVertices == (Vector3__Array *)0x0) break;
+    func_?();
+    func_?();
+    in_XMM0_Qa = CONCAT44(uStack_7,uStack_8);
+    goto code_?;
   default:
     goto code_?;
   }
-  func_?(&uStack_6,uVar8);
-  func_?(2,uStack_6,uStack_7);
+  cVar9 = '\0';
+  piVar10 = (int *)func_?();
+  if (bVar4) {
+    while( true ) {
+      piStack_11 = (int *)CONCAT31((int3)((uint)piVar10 >> 8),(char)*piVar10 * '\x15');
+      puVar12 = (undefined8 *)(*piStack_11 * 0xADDR);
+      puVar1 = puVar2;
+      if (!bVar4) break;
+      puVar12 = (undefined8 *)(*piStack_11 * 0xADDR);
+      if (!bVar4) goto code_?;
+      if (!bVar4) goto code_?;
+      if (bVar4) {
+        pcVar13 = (code *)swi(3);
+        (*pcVar13)();
+        return;
+      }
+      puVar2 = (undefined1 *)(*(int *)((int)piStack_11 + (int)corners * 4 + -1) * 0xf);
+      pcVar14 = (char *)(unaff_EBX + -0x31);
+      *pcVar14 = *pcVar14 + (char)((uint)unaff_EBX >> 8);
+      bVar4 = (POPCOUNT(*pcVar14) & 1U) == 0;
+      piVar10 = piStack_11;
+    }
+  }
+  else {
+    pcVar13 = (code *)swi(4);
+    if (cVar9 == '\x01') {
+      (*pcVar13)();
+    }
+code_?:
+    puVar12 = (undefined8 *)auStack_5;
+  }
+  auStack_5[0] = 1;
+  *puVar12 = in_XMM0_Qa;
+code_?:
+  *(int **)(puVar12 + 1) = piStack_11;
+  func_?();
+code_?:
+  uVar6 = 7;
+  puVar3 = puVar1;
+code_?:
+  func_?(puVar3 + -0xc,uVar6);
+  func_?(2,*(undefined8 *)(puVar3 + -0xc),*(undefined4 *)(puVar3 + -4));
 code_?:
   return;
 }
@@ -6120,8 +6159,7 @@ code_?:
   func_?();
 code_?:
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  return;
 }
 
 
@@ -6297,9 +6335,11 @@ code_?:
   default:
     goto code_?;
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  cVar5 = '\0';
+  cVar6 = func_?();
+  out(0xf5,(cVar6 + '\f') - cVar5);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

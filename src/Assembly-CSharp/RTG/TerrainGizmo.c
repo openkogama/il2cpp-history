@@ -481,7 +481,7 @@ code_?:
                         pTVar12 = (this->fields)._targetTerrain;
                         if (pTVar12 == (Terrain *)0x0) goto code_?;
                         worldPosition_00.y = (float)uVar8 + (float)this_05;
-                        worldPosition_00.x = (float)uVar4 + 4.3006262e-29;
+                        worldPosition_00.x = (float)uVar4 + 4.3006888e-29;
                         worldPosition_00.z = (float)method_00;
                         fVar25 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::
                                  Terrain_SampleHeight(pTVar12,worldPosition_00,(MethodInfo *)0x0);
@@ -489,7 +489,7 @@ code_?:
                                   GameObject_get_transform((GameObject *)this_04,(MethodInfo *)0x0);
                         if (pTVar19 == (Transform *)0x0) goto code_?;
                         value_00.y = fVar25 + fVar30 + ((float)uVar8 - fVar24);
-                        value_00.x = (float)uVar4 + 4.3006262e-29;
+                        value_00.x = (float)uVar4 + 4.3006888e-29;
                         value_00.z = (float)method_00;
                         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                                   (pTVar19,value_00,(MethodInfo *)0x0);
@@ -2392,10 +2392,7 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoDragUpdate
                           ((this->fields)._axisSlider,(MethodInfo *)0x0), handleId == iVar3)) {
       if (((this->fields)._targetTypeFlags & 1) != 0) {
         pGVar4 = (this->fields)._._gizmo;
-        if (pGVar4 == (Gizmo *)0x0)
-        goto 
-        MethodInfo__System__Array__InternalEnumerator<System::Collections::Generic::HashSet_1_T_::Slot<unsigned_int>_>__System_Collections_IEnumerator_Reset__
-        ;
+        if (pGVar4 == (Gizmo *)0x0) goto code_?;
         pVVar5 = Gizmo::Gizmo_get_RelativeDragOffset
                             ((Vector3 *)&stack0xffffffe4,pGVar4,(MethodInfo *)0x0);
         TerrainGizmo_OffsetTerrainPatch(this,pVVar5->y,(MethodInfo *)0x0);
@@ -2445,9 +2442,7 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoDragUpdate
       }
     }
   }
-
-  MethodInfo__System__Array__InternalEnumerator<System::Collections::Generic::HashSet_1_T_::Slot<unsigned_int>_>__System_Collections_IEnumerator_Reset__
-  :
+code_?:
   func_?();
   pcVar14 = (code *)swi(3);
   (*pcVar14)();

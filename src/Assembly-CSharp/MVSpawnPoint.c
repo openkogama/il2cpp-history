@@ -224,9 +224,27 @@ code_?:
 code_?:
   this = (MVSpawnPoint *)&UNK_?;
   method = (MethodInfo *)TVar4.m_Index;
-  func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  cVar8 = func_?();
+  out(extraout_DX,cVar8);
+  bVar9 = (byte)((ushort)extraout_DX >> 8);
+  *(byte *)&pMVar1->klass = *(byte *)&pMVar1->klass ^ bVar9;
+  *(byte *)&pMVar1->klass = *(byte *)&pMVar1->klass ^ bVar9;
+  *(byte *)&pMVar1->klass = *(byte *)&pMVar1->klass ^ bVar9;
+  *unaff_EBX = *unaff_EBX + cVar8;
+  pMVar1->klass = (MVSpawnPoint__Class *)((uint)pMVar1->klass ^ (uint)pMVar1);
+  in(extraout_DX);
+  switch(this) {
+  case (MVSpawnPoint *)0x27:
+    return;
+  case (MVSpawnPoint *)0x28:
+    return;
+  case (MVSpawnPoint *)0x29:
+    return;
+  case (MVSpawnPoint *)0x2a:
+    return;
+  default:
+    return;
+  }
 }
 
 

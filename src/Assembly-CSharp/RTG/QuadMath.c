@@ -1047,7 +1047,7 @@ code_?:
         fVar15 = Vector3Ex::Vector3Ex_GetDistanceToSegment
                           (point_00,point0_00,*pVVar3,(MethodInfo *)0x0);
         quadUp.z = (float)uVar33;
-        if (4.388973e-29 < fVar15) goto code_?;
+        if (4.3890355e-29 < fVar15) goto code_?;
       }
     }
   }

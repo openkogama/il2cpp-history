@@ -49,6 +49,7 @@ public class PickupItemCostume : PickupItemEditable
 	protected override void Initialize();
 	protected override EditableItemConfiguration GetDefaultConfiguration();
 	protected override void SetConfiguration(Dictionary<object, object> itemData);
+	protected override void OnPickupNewEditableItem();
 	public override void OnStateChanged(Dictionary<object, object> newState);
 	private void OnHealthStateChanged();
 	private void OnSpeedStateChanged();

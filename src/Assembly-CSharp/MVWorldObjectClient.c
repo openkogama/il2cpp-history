@@ -702,9 +702,9 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_CreateBox
             uVar4 = (pVVar3->oneVector).x;
             uVar5 = (pVVar3->oneVector).y;
             if (pTVar2 != (Transform *)0x0) {
-              value.y = (float)uVar5 * 4.5186975e-29;
-              value.x = (float)uVar4 * 4.5186975e-29;
-              value.z = (pVVar3->oneVector).z * 4.5186975e-29;
+              value.y = (float)uVar5 * 4.5187745e-29;
+              value.x = (float)uVar4 * 4.5187745e-29;
+              value.z = (pVVar3->oneVector).z * 4.5187745e-29;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                         (pTVar2,value,(MethodInfo *)0x0);
               return pGVar1;
@@ -1487,21 +1487,24 @@ code_?:
                        (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
      this == (MVWorldObjectClient *)0x0)) {
     bVar2 = 0;
-    iVar3 = func_?();
-    pbVar4 = (byte *)(in_GS_OFFSET + iVar3);
-    bVar5 = *pbVar4;
-    bVar6 = (byte)((uint)iVar3 >> 8);
-    bVar7 = *pbVar4;
-    *pbVar4 = bVar7 + bVar6 + bVar2;
-    *(char *)(in_GS_OFFSET + 0x5610652e) =
-         *(char *)(in_GS_OFFSET + 0x5610652e) + bVar6 +
-         (CARRY1(bVar5,bVar6) || CARRY1(bVar7 + bVar6,bVar2));
-    pcVar8 = (code *)swi(3);
-    pMVar9 = (MVWorldObjectClient *)(*pcVar8)();
-    return pMVar9;
+    uVar3 = func_?();
+    bVar4 = (byte)uVar3;
+    bVar2 = 0x99 < bVar4 | bVar2;
+    bVar5 = bVar4 + (9 < (bVar4 & 0xf) | in_AF) * -6 + bVar2 * -0x60;
+    pbVar6 = (byte *)(in_GS_OFFSET + CONCAT31((int3)((uint)uVar3 >> 8),bVar5));
+    bVar4 = *pbVar6;
+    bVar7 = (byte)((uint)uVar3 >> 8);
+    bVar8 = *pbVar6;
+    *pbVar6 = bVar8 + bVar7 + bVar2;
+    *(char *)(in_GS_OFFSET + 0x5610652f) =
+         *(char *)(in_GS_OFFSET + 0x5610652f) + bVar7 +
+         (0x99 < bVar5 || (CARRY1(bVar4,bVar7) || CARRY1(bVar8 + bVar7,bVar2)));
+    pcVar9 = (code *)swi(3);
+    pMVar10 = (MVWorldObjectClient *)(*pcVar9)();
+    return pMVar10;
   }
   method = (MethodInfo *)0x0;
-  unaff_EBP = in_stack_10;
+  unaff_EBP = in_stack_11;
   unaff_ESI = pMVar1;
   goto code_?;
 }

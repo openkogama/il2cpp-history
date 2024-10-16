@@ -163,7 +163,7 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__System__Convert);
     func_?(&TypeInfo__MVInputWrapper);
     func_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
     cRam_? = '\x01';
@@ -312,17 +312,18 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
         cctor_finished_or_no_cctor == 0) {
       func_?();
     }
+    unaff_EDI = in_stack_6;
     if (this != (MaterialLoader *)0x0) {
       MaterialLoader::MaterialLoader_SetTextureQuality
                 (this,TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
                       static_fields->_TextureQualityLevel_k__BackingField,(MethodInfo *)0x0);
-      pMVar6 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
-      if ((pMVar6 != (MaterialLoader *)0x0) &&
-         (pMVar7 = (pMVar6->fields)._CubeModelMaterial_k__BackingField, pMVar7 != (Material *)0x0))
+      pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+      if ((pMVar7 != (MaterialLoader *)0x0) &&
+         (pMVar8 = (pMVar7->fields)._CubeModelMaterial_k__BackingField, pMVar8 != (Material *)0x0))
       {
         this = (MaterialLoader *)
                UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
-                         (pMVar7,(MethodInfo *)0x0);
+                         (pMVar8,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
@@ -360,13 +361,12 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
           }
           UnityEngine.CoreModule.dll::UnityEngine::QualitySettings::QualitySettings_set_antiAliasing
                     (iVar3,(MethodInfo *)0x0);
-          pMVar6 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0)
-          ;
-          if ((pMVar6 != (MaterialLoader *)0x0) &&
-             (pMVar7 = (pMVar6->fields)._CubeModelMaterial_k__BackingField,
-             pMVar7 != (Material *)0x0)) {
+          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+          if ((pMVar7 != (MaterialLoader *)0x0) &&
+             (pMVar8 = (pMVar7->fields)._CubeModelMaterial_k__BackingField,
+             pMVar8 != (Material *)0x0)) {
             this_00 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
-                                (pMVar7,(MethodInfo *)0x0);
+                                (pMVar8,(MethodInfo *)0x0);
             if (cRam_? == '\0') {
               func_?();
               cRam_? = '\x01';
@@ -439,30 +439,33 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
       }
     }
   }
-  bVar8 = 0;
-  uVar9 = func_?();
-  bVar10 = (byte)((ulonglong)uVar9 >> 0x20);
-  bVar11 = (byte)((ulonglong)uVar9 >> 0x28);
-  bVar12 = bVar10 + bVar11;
-  bVar13 = CARRY1(bVar10,bVar11) || CARRY1(bVar12,bVar8);
-  bVar14 = extraout_CL + unaff_BH + bVar13;
-  bVar13 = CARRY1((byte)&stack0x000000ac,(byte)&stack0xfffffff8) ||
-           CARRY1((byte)&stack0x000000ac + (byte)&stack0xfffffff8,
-                  CARRY1(extraout_CL,unaff_BH) || CARRY1(extraout_CL + unaff_BH,bVar13));
-  pbVar15 = (byte *)((int)&this[-0x11d9191].monitor + 1);
-  bVar11 = (byte)((ulonglong)uVar9 >> 8);
-  bVar10 = *pbVar15 + bVar11;
-  bVar16 = CARRY1(*pbVar15,bVar11) || CARRY1(bVar10,bVar13);
-  *pbVar15 = bVar10 + bVar13;
-  pbVar15 = (byte *)(CONCAT31((int3)((ulonglong)uVar9 >> 0x28),bVar12 + bVar8) + -0x6eefaf6b);
-  bVar12 = *pbVar15;
-  bVar10 = *pbVar15 + bVar14;
-  *pbVar15 = bVar10 + bVar16;
-  pcVar17 = (char *)((int)uVar9 + -0x60efaf6b);
-  *pcVar17 = *pcVar17 + unaff_BL + (CARRY1(bVar12,bVar14) || CARRY1(bVar10,bVar16));
-  pcVar18 = (code *)swi(3);
-  puStack19 = &stack0xfffffffc;
-  (*pcVar18)();
+  bVar9 = 0;
+  uVar10 = func_?();
+  pbVar11 = (byte *)((ulonglong)uVar10 >> 0x20);
+  pbVar12 = pbVar11 + -0x76efaf6b;
+  bVar13 = 3 < *pbVar12 || CARRY1(*pbVar12 - 4,bVar9);
+  *pbVar12 = (*pbVar12 - 4) + bVar9;
+  pbVar12 = unaff_EDI + 0x36105095;
+  bVar9 = (byte)((ulonglong)uVar10 >> 0x20);
+  bVar14 = CARRY1(*pbVar12,bVar9) || CARRY1(*pbVar12 + bVar9,bVar13);
+  *pbVar12 = *pbVar12 + bVar9 + bVar13;
+  bVar13 = CARRY1(*unaff_EBX,bVar9) || CARRY1(*unaff_EBX + bVar9,bVar14);
+  *unaff_EBX = *unaff_EBX + bVar9 + bVar14;
+  bVar9 = *pbVar11 + (byte)unaff_EBX;
+  bVar14 = CARRY1(*pbVar11,(byte)unaff_EBX) || CARRY1(bVar9,bVar13);
+  *pbVar11 = bVar9 + bVar13;
+  bVar15 = (byte)((uint)this >> 8);
+  bVar9 = *extraout_ECX + bVar15;
+  bVar13 = CARRY1(*extraout_ECX,bVar15) || CARRY1(bVar9,bVar14);
+  *extraout_ECX = bVar9 + bVar14;
+  bVar9 = *unaff_EDI;
+  bVar16 = (byte)((uint)extraout_ECX >> 8);
+  bVar15 = *unaff_EDI;
+  *unaff_EDI = bVar15 + bVar16 + bVar13;
+  *(char *)uVar10 =
+       *(char *)uVar10 + bVar16 + (CARRY1(bVar9,bVar16) || CARRY1(bVar15 + bVar16,bVar13));
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
@@ -957,33 +960,30 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
     }
   }
   bVar10 = 0;
-  uVar11 = func_?();
-  pbVar12 = (byte *)((ulonglong)uVar11 >> 0x20);
-  pbVar13 = (byte *)((int)uVar11 + -0x48efaf65);
-  bVar14 = *pbVar13;
-  bVar15 = (byte)((ulonglong)uVar11 >> 0x28);
-  bVar16 = *pbVar13 + bVar15;
-  *pbVar13 = bVar16 + bVar10;
-  bVar17 = CARRY1(bStack_18,unaff_BL) ||
-           CARRY1(bStack_18 + unaff_BL,CARRY1(bVar14,bVar15) || CARRY1(bVar16,bVar10));
-  bVar19 = CARRY1(*pbVar12,unaff_BH) || CARRY1(*pbVar12 + unaff_BH,bVar17);
-  *pbVar12 = *pbVar12 + unaff_BH + bVar17;
-  pbVar13 = (byte *)(extraout_ECX + -100);
-  bVar14 = *pbVar13 + (byte)uVar11;
-  bVar17 = CARRY1(*pbVar13,(byte)uVar11) || CARRY1(bVar14,bVar19);
-  *pbVar13 = bVar14 + bVar19;
-  pbVar13 = (byte *)((int)uVar11 + -100);
-  bVar16 = (byte)extraout_ECX;
-  bVar19 = CARRY1(*pbVar13,bVar16) || CARRY1(*pbVar13 + bVar16,bVar17);
-  *pbVar13 = *pbVar13 + bVar16 + bVar17;
-  ppCVar20 = &unaff_EDI[-1].fields._.m_CancellationTokenSource;
-  bVar14 = *(byte *)ppCVar20;
-  cVar21 = *(char *)ppCVar20;
-  *(byte *)ppCVar20 = cVar21 + bVar16 + bVar19;
-  cRam_? = cRam_? + (char)((ulonglong)uVar11 >> 0x20) +
-                 (CARRY1(bVar14,bVar16) || CARRY1(cVar21 + bVar16,bVar19));
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  iVar11 = func_?();
+  bVar12 = CARRY1(*extraout_ECX,unaff_BH) || CARRY1(*extraout_ECX + unaff_BH,bVar10);
+  *extraout_ECX = *extraout_ECX + unaff_BH + bVar10;
+  pbVar13 = (byte *)(iVar11 + -100);
+  bVar14 = (byte)iVar11;
+  bVar15 = CARRY1(*pbVar13,bVar14) || CARRY1(*pbVar13 + bVar14,bVar12);
+  *pbVar13 = *pbVar13 + bVar14 + bVar12;
+  ppCVar16 = &unaff_EDI[-1].fields._.m_CancellationTokenSource;
+  bVar10 = *(byte *)ppCVar16;
+  cVar17 = *(char *)ppCVar16;
+  *(byte *)ppCVar16 = cVar17 + bVar14 + bVar15;
+  bVar18 = (byte)((uint)extraout_ECX >> 8);
+  bVar12 = CARRY1(bVar18,bVar18) ||
+           CARRY1(bVar18 * '\x02',CARRY1(bVar10,bVar14) || CARRY1(cVar17 + bVar14,bVar15));
+  bVar10 = (byte)extraout_ECX;
+  bVar18 = extraout_DL + bVar10 + bVar12;
+  uStack19 =
+       CONCAT31((int3)((uint)iVar11 >> 8),
+                bVar14 + unaff_BL +
+                (CARRY1(bVar10,bVar18) ||
+                CARRY1(bVar10 + bVar18,
+                       CARRY1(extraout_DL,bVar10) || CARRY1(extraout_DL + bVar10,bVar12))));
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -1230,7 +1230,7 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
     this = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
            ProfileSettingsChanged;
     unaff_ESI = value;
-    unaff_EDI = (undefined1 *)profileSetting;
+    unaff_EDI = (undefined4 *)profileSetting;
     if ((this != (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)
                  0x0) &&
        (pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
@@ -1296,8 +1296,7 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
           if (pIVar2 != pIVar3) goto code_?;
           puVar6 = (undefined4 *)func_?();
           func_?(*puVar6);
-          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0)
-          ;
+          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
           quality = func_?(0);
           unaff_ESI = (Object *)0x0;
           if (pMVar7 != (MaterialLoader *)0x0) {
@@ -1318,13 +1317,12 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
           if (pIVar2 != pIVar3) goto code_?;
           puVar6 = (undefined4 *)func_?();
           func_?(*puVar6);
-          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0)
-          ;
+          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
           if ((pMVar7 != (MaterialLoader *)0x0) &&
              (pMVar8 = (pMVar7->fields)._CubeModelMaterial_k__BackingField,
              pMVar8 != (Material *)0x0)) {
             pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
-                                (pMVar8,(MethodInfo *)0x0);
+                               (pMVar8,(MethodInfo *)0x0);
             value_01 = func_?();
             unaff_ESI = (Object *)0x0;
             if (pTVar9 != (Texture *)0x0) {
@@ -1348,14 +1346,13 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
           if (pIVar2 != pIVar3) goto code_?;
           puVar6 = (undefined4 *)func_?();
           func_?(*puVar6);
-          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0)
-          ;
+          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
           if ((pMVar7 != (MaterialLoader *)0x0) &&
              (pMVar8 = (pMVar7->fields)._CubeModelMaterial_k__BackingField,
              pMVar8 != (Material *)0x0)) {
             method_00 = (MethodInfo *)&UNK_?;
             pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
-                                (pMVar8,(MethodInfo *)0x0);
+                               (pMVar8,(MethodInfo *)0x0);
             level = func_?();
             iVar10 = ProfileSettingsManager_AnisoLevelToInt(level,method_00);
             unaff_ESI = (Object *)0x0;
@@ -1416,28 +1413,19 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
   func_?();
 code_?:
   uVar11 = func_?();
-  pbVar12 = (byte *)((ulonglong)uVar11 >> 0x20);
-  uVar13 = (undefined4)uVar11;
-  out(*(undefined1 *)&unaff_ESI->klass,(short)((ulonglong)uVar11 >> 0x20));
-  *unaff_EDI = *(undefined1 *)((int)&unaff_ESI->klass + 1);
-  bVar14 = (byte)uVar11;
-  bVar15 = CARRY1(*pbVar12,bVar14) || CARRY1(*pbVar12 + bVar14,bVar4);
-  *pbVar12 = *pbVar12 + bVar14 + bVar4;
-  *(undefined4 *)(unaff_EDI + 1) = *(undefined4 *)((int)&unaff_ESI->klass + 2);
-  pbVar16 = unaff_EDI + -0x56;
-  bVar17 = (byte)((ulonglong)uVar11 >> 0x20);
-  bVar4 = *pbVar16 + bVar17;
-  bVar18 = CARRY1(*pbVar16,bVar17) || CARRY1(bVar4,bVar15);
-  *pbVar16 = bVar4 + bVar15;
-  bVar4 = (byte)extraout_ECX + bVar14;
-  cVar19 = bVar4 + bVar18;
-  *(undefined4 *)(unaff_EDI + 5) = *(undefined4 *)((int)&unaff_ESI->monitor + 2);
-  pcVar20 = (char *)(CONCAT31((int3)((uint)extraout_ECX >> 8),cVar19) + -0x5a);
-  *pcVar20 = *pcVar20 + cVar19 + (CARRY1((byte)extraout_ECX,bVar14) || CARRY1(bVar4,bVar18));
-  pbVar12[-0x59] =
-       pbVar12[-0x59] + bVar14 + (*(byte *)((int)&unaff_ESI[1].klass + 2) < (byte)unaff_EDI[9]);
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)(uVar13,uVar13,uVar13,uVar13,uVar13,uVar13);
+  iVar12 = (int)uVar11;
+  pcVar13 = (char *)(iVar12 + 0x50a59210 + (int)((ulonglong)uVar11 >> 0x20) * 2);
+  *pcVar13 = *pcVar13 + '\x01';
+  bVar14 = (byte)((ulonglong)uVar11 >> 8);
+  *unaff_EDI = unaff_ESI->klass;
+  *(char *)(extraout_ECX + -0x5a) =
+       *(char *)(extraout_ECX + -0x5a) + (char)((ulonglong)uVar11 >> 0x20) +
+       (CARRY1(unaff_BH,bVar14) || CARRY1(unaff_BH + bVar14,bVar4));
+  *(char *)(unaff_EDI + -0x15) =
+       *(char *)(unaff_EDI + -0x15) + (char)((uint)extraout_ECX >> 8) +
+       (*(byte *)&unaff_ESI->monitor < *(byte *)(unaff_EDI + 1));
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)(iVar12,iVar12,iVar12,iVar12);
   return;
 }
 
