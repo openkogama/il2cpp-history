@@ -498,22 +498,13 @@ code_?:
   out((short)((uint6)uVar8 >> 0x20),bVar9);
   in_AF = 9 < (bVar9 & 0xf) | in_AF;
   uVar10 = CONCAT31((int3)((uint6)uVar8 >> 8),bVar9 + in_AF * '\x06') & 0xffffff0f;
-  bVar9 = (byte)uVar10;
-  pcVar11 = (char *)(CONCAT22((short)(uVar10 >> 0x10),CONCAT11((char)((uint6)uVar8 >> 8) + in_AF,bVar9)) + (int)pAVar3 * 8);
-  *pcVar11 = *pcVar11 + bVar9 + in_AF;
-  in_AF = 9 < bVar9 | in_AF;
-  bVar9 = bVar9 + in_AF * '\x06' & 0xf;
-  pVVar12 = &unaff_EBX[-1].vtable.RemoveImpl;
-  cVar13 = (char)unaff_EBX;
-  *(byte *)&pVVar12->methodPtr = *(char *)&pVVar12->methodPtr + cVar13 + in_AF;
-  in_AF = 9 < bVar9 | in_AF;
-  bVar9 = bVar9 + in_AF * '\x06' & 0xf;
-  pVVar12 = &unaff_EBX[-1].vtable.RemoveImpl;
-  *(byte *)&pVVar12->methodPtr = *(char *)&pVVar12->methodPtr + cVar13 + in_AF;
-  in_AF = 9 < bVar9 | in_AF;
-  pVVar12 = &unaff_EBX[-1].vtable.RemoveImpl;
-  *(byte *)&pVVar12->methodPtr = *(char *)&pVVar12->methodPtr + cVar13 + in_AF;
-  *(char *)(extraout_ECX + -0xf) = *(char *)(extraout_ECX + -0xf) + (char)((uint)extraout_ECX >> 8) + (9 < (bVar9 + in_AF * '\x06' & 0xf) | in_AF);
+  pbVar11 = (byte *)(CONCAT22((short)(uVar10 >> 0x10),CONCAT11((char)((uint6)uVar8 >> 8) + in_AF,(char)uVar10)) + 0x37 + (int)pAVar3 * 8);
+  bVar9 = *pbVar11;
+  bVar12 = (byte)((uint6)uVar8 >> 0x20);
+  bVar13 = *pbVar11 + bVar12;
+  *pbVar11 = bVar13 + in_AF;
+  pp_Var1 = &unaff_EBX[-0x4a770b]._1.genericContainerHandle;
+  *(char *)pp_Var1 = *(char *)pp_Var1 + extraout_CH + (CARRY1(bVar9,bVar12) || CARRY1(bVar13,in_AF));
                     /* WARNING: Bad instruction - Truncating control flow here */
   halt_baddata();
 }

@@ -1239,9 +1239,9 @@ code_?:
             func_?(&StringLiteral_Trying_to_add_reporter_while_net);
             cRam_? = '\x01';
           }
-          bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::Dictionary_2_System_Int32_System_Single__ContainsKey((Dictionary_2_System_Int32_System_Single_ *)0xfffe03a9,id,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__ContainsKey_int_);
+          bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::Dictionary_2_System_Int32_System_Single__ContainsKey((Dictionary_2_System_Int32_System_Single_ *)0xfffe0379,id,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__ContainsKey_int_);
           if (bVar1 != 0) {
-            pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)0xfffe03a9,id,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__get_Item_int_);
+            pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)0xfffe0379,id,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__get_Item_int_);
             pSVar7 = StringLiteral_Trying_to_add_reporter_while_net;
             if (pOVar4 == (Object *)0x0) {
               str1 = (String *)0x0;
@@ -1262,11 +1262,11 @@ code_?:
               func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Remove_int_);
               cRam_? = '\x01';
             }
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)0xfffe03a9,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Remove_int_);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)0xfffe0379,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Remove_int_);
             this_01 = (MVNetworkReporter *)id;
           }
           id = (int32_t)this_01;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)0xfffe03a9,key,(Object *)id,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Add_int__MVNetworkObject_);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)0xfffe0379,key,(Object *)id,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__Add_int__MVNetworkObject_);
           goto code_?;
         }
       }

@@ -95,7 +95,7 @@ namespace Assets.Scripts.Pickups
 		}
 	
 		[CompilerGenerated]
-		private sealed class _ChargeRoutine_d__67 : IEnumerator<object>
+		private sealed class _ChargeRoutine_d__68 : IEnumerator<object>
 		{
 			// Fields
 			private int __1__state;
@@ -111,7 +111,7 @@ namespace Assets.Scripts.Pickups
 	
 			// Constructors
 			[DebuggerHidden]
-			public _ChargeRoutine_d__67(int __1__state);
+			public _ChargeRoutine_d__68(int __1__state);
 	
 			// Methods
 			[DebuggerHidden]
@@ -122,7 +122,7 @@ namespace Assets.Scripts.Pickups
 		}
 	
 		[CompilerGenerated]
-		private sealed class _FetchFOV_d__51 : IEnumerator<object>
+		private sealed class _FetchFOV_d__52 : IEnumerator<object>
 		{
 			// Fields
 			private int __1__state;
@@ -135,7 +135,7 @@ namespace Assets.Scripts.Pickups
 	
 			// Constructors
 			[DebuggerHidden]
-			public _FetchFOV_d__51(int __1__state);
+			public _FetchFOV_d__52(int __1__state);
 	
 			// Methods
 			[DebuggerHidden]
@@ -159,7 +159,8 @@ namespace Assets.Scripts.Pickups
 		protected override void SetConfiguration(Dictionary<object, object> itemData);
 		public override void OnEquip();
 		public override void OnStateChanged(Dictionary<object, object> newState);
-		[IteratorStateMachine(typeof(_FetchFOV_d__51))]
+		protected override void OnPickupNewEditableItem();
+		[IteratorStateMachine(typeof(_FetchFOV_d__52))]
 		private IEnumerator FetchFOV();
 		private void SoundStateUpdate();
 		private void MuzzleStateUpdate();
@@ -176,7 +177,7 @@ namespace Assets.Scripts.Pickups
 		protected override void InterruptFire();
 		public override void OnLeaveVehicleWithWeapon();
 		public override void OnEnterVehicleWithWeapon();
-		[IteratorStateMachine(typeof(_ChargeRoutine_d__67))]
+		[IteratorStateMachine(typeof(_ChargeRoutine_d__68))]
 		private IEnumerator ChargeRoutine(int instigatorActorNr);
 	}
 }

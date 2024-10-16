@@ -504,7 +504,7 @@ code_?:
   return (pGVar1->fields)._raTriangleYLength * (pGVar1->fields)._scale * zoomFactor * fVar6;
 }
 
-/* decompilation failed: Exception while decompiling 10589fc0: Decompiler process died */
+/* decompilation failed: Exception while decompiling 1058a0c0: Decompiler process died */
 
 
 /* Void MakeSliderPlane(GizmoTransform, PlaneId, GizmoLineSlider3D, GizmoLineSlider3D, Camera) */
@@ -1973,8 +1973,8 @@ code_?:
     func_?();
     uRam_? = 0xc0850843;
     func_?();
-    uRam_? = 0xfb25d5e8;
-    uRam_? = 0xfb25b9e8;
+    uRam_? = 0xfb2595e8;
+    uRam_? = 0xfb2579e8;
     func_?();
     uRam_? = 0x562840f;
     func_?();
@@ -1987,7 +1987,7 @@ code_?:
     method_04 = TypeInfo__RTG__GizmoQuadPlaneSlider3DController;
     pOVar12 = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar12,ExceptionArgument__Enum_obj,(MethodInfo *)method_04);
-    pOVar12[1].klass = (Object__Class *)0xc18099e8;
+    pOVar12[1].klass = (Object__Class *)0xc17fb9e8;
     func_?();
     iVar13 = func_?();
     if (iVar13 == 0) goto code_?;
@@ -1997,7 +1997,7 @@ code_?:
     method_02 = TypeInfo__RTG__GizmoRATrianglePlaneSlider3DController;
     pOVar12 = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar12,ExceptionArgument__Enum_obj,(MethodInfo *)method_02);
-    pOVar12[1].klass = (Object__Class *)0xc18099e8;
+    pOVar12[1].klass = (Object__Class *)0xc17fb9e8;
     func_?();
     iVar13 = func_?();
     if (iVar13 == 0) goto code_?;
@@ -2007,7 +2007,7 @@ code_?:
     method_03 = TypeInfo__RTG__GizmoCirclePlaneSlider3DController;
     pOVar12 = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar12,ExceptionArgument__Enum_obj,(MethodInfo *)method_03);
-    pOVar12[1].klass = (Object__Class *)0xc18099e8;
+    pOVar12[1].klass = (Object__Class *)0xc17fb9e8;
     func_?();
     iVar13 = func_?();
     if (iVar13 == 0) goto code_?;
@@ -2042,11 +2042,11 @@ code_?:
       uRam_? = 0x6a0000;
       func_?();
       GizmoDragSession::GizmoDragSession_AddTargetTransform((GizmoDragSession *)0x502873ff,(GizmoTransform *)0xc0850843,(MethodInfo *)0x0);
-      GizmoDragSession::GizmoDragSession_AddTargetTransform((GizmoDragSession *)0xfb259de8,(GizmoTransform *)0xc0850843,(MethodInfo *)0x0);
+      GizmoDragSession::GizmoDragSession_AddTargetTransform((GizmoDragSession *)0xfb255de8,(GizmoTransform *)0xc0850843,(MethodInfo *)0x0);
       GizmoDragSession::GizmoDragSession_AddTargetTransform((GizmoDragSession *)0x8920738b,(GizmoTransform *)0xc0850843,(MethodInfo *)0x0);
       pGVar2 = pGRam006a00f8;
       GizmoDragSession::GizmoDragSession_AddTargetTransform((GizmoDragSession *)0x502873ff,pGRam006a00f8,(MethodInfo *)0x0);
-      GizmoDragSession::GizmoDragSession_AddTargetTransform((GizmoDragSession *)0xfb259de8,pGVar2,(MethodInfo *)0x0);
+      GizmoDragSession::GizmoDragSession_AddTargetTransform((GizmoDragSession *)0xfb255de8,pGVar2,(MethodInfo *)0x0);
       GizmoDragSession::GizmoDragSession_AddTargetTransform((GizmoDragSession *)0x8920738b,pGVar2,(MethodInfo *)0x0);
       GizmoTransform::GizmoTransform_SetParent((GizmoTransform *)0xc0850843,pGRam006a00f8,(MethodInfo *)0x0);
       return;

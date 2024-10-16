@@ -1,7 +1,7 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<ChargeRoutine>d__67::PickupItemCustomGun_ChargeRoutine_d_67_MoveNext(PickupItemCustomGun_ChargeRoutine_d_67 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<ChargeRoutine>d__68::PickupItemCustomGun_ChargeRoutine_d_68_MoveNext(PickupItemCustomGun_ChargeRoutine_d_68 *this,MethodInfo *method)
 
 {
   pPVar1 = this;
@@ -59,7 +59,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<ChargeR
     if (pPVar12 == (ParticleSystem *)0x0) goto code_?;
     UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1(pPVar12,(MethodInfo *)0x0);
     fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    this = (PickupItemCustomGun_ChargeRoutine_d_67 *)(fVar4 - (this->fields)._chargeBeginTime_5__2);
+    this = (PickupItemCustomGun_ChargeRoutine_d_68 *)(fVar4 - (this->fields)._chargeBeginTime_5__2);
   }
   else {
     if (iVar2 != 2) {
@@ -68,7 +68,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<ChargeR
     (this->fields).__1__state = -1;
 code_?:
     fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    this = (PickupItemCustomGun_ChargeRoutine_d_67 *)(fVar4 - (this->fields)._chargeBeginTime_5__2);
+    this = (PickupItemCustomGun_ChargeRoutine_d_68 *)(fVar4 - (this->fields)._chargeBeginTime_5__2);
     if (this_00 == (PickupItemCustomGun *)0x0) goto code_?;
   }
   pAVar13 = (this_00->fields).chargeCurve;
@@ -246,13 +246,13 @@ code_?:
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<ChargeRoutine>d__67::PickupItemCustomGun_ChargeRoutine_d_67_System_Collections_IEnumerator_Reset(PickupItemCustomGun_ChargeRoutine_d_67 *this,MethodInfo *method)
+void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<ChargeRoutine>d__68::PickupItemCustomGun_ChargeRoutine_d_68_System_Collections_IEnumerator_Reset(PickupItemCustomGun_ChargeRoutine_d_68 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor(this_00,(MethodInfo *)0x0);
-  func_?(&MethodInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__67__System_Collections_IEnumerator_Reset__);
+  func_?(&MethodInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__68__System_Collections_IEnumerator_Reset__);
   func_?(this_00);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();

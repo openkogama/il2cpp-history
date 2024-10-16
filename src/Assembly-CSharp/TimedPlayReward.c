@@ -331,7 +331,7 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_OnRewardData(TimedPla
                     /* WARNING: Read-only address (ram,0xADDR) is written */
         this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)&UNK_?,(MethodInfo *)0x0);
         if (this_01 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_01,0x54,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_01,0x5c,(MethodInfo *)0x0);
           TypeInfo__TimedPlayReward__RewardTracker->static_fields->IsCollected = 0;
           this_02 = (WaitForTicks *)func_?();
           WaitForTicks::WaitForTicks__ctor(this_02,-0x13d56260,(MethodInfo *)0x0);

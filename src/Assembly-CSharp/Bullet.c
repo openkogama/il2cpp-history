@@ -397,17 +397,19 @@ void Assembly-CSharp.dll::Bullet::Bullet_Fire(Bullet *this,float speed,float ran
                     /* WARNING: Read-only address (ram,0xADDR) is written */
     func_?();
     uRam_? = 5;
-    if (cRam_? == '\0') {
+    if ((iRam_? != 0) || (iRam_? != 0)) {
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      method_00 = TypeInfo__Bullet___MakeVisibleOverTime_d__46;
+      value = (Object *)func_?();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+      value[1].klass = (Object__Class *)0x0;
+      value[2].klass = (Object__Class *)&UNK_?;
       func_?();
-      cRam_? = '\x01';
+      Coroutines::Coroutines_Start((IEnumerator *)value,(MethodInfo *)0x0);
     }
-    method_00 = TypeInfo__Bullet___MakeVisibleOverTime_d__46;
-    value = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)&UNK_?;
-    func_?();
-    Coroutines::Coroutines_Start((IEnumerator *)value,(MethodInfo *)0x0);
   }
   return;
 }
@@ -598,7 +600,7 @@ void Assembly-CSharp.dll::Bullet::Bullet_SetBulletAndTrailSettings(Bullet *this,
     value_03->vector[0].time = VStack_3.Item2;
     VStack_4.Item1 = 0.0;
     VStack_4.Item2 = 0.0;
-    mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor(&VStack_4,trailColor.a,0.1,(MethodInfo *)0x0);
+    mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor(&VStack_4,trailColor.a,0.2,(MethodInfo *)0x0);
     if (1 < value_03->max_length) {
       value_03->vector[1].alpha = VStack_4.Item1;
       value_03->vector[1].time = VStack_4.Item2;
@@ -627,7 +629,7 @@ void Assembly-CSharp.dll::Bullet::Bullet_SetBulletAndTrailSettings(Bullet *this,
           fVar7 = 0.0;
           fVar8 = 0.0;
           fVar9 = 0.0;
-          UnityEngine.CoreModule.dll::UnityEngine::GradientColorKey::GradientColorKey__ctor((GradientColorKey *)&stack0xffffff88,trailColor,0.1,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::GradientColorKey::GradientColorKey__ctor((GradientColorKey *)&stack0xffffff88,trailColor,0.2,(MethodInfo *)0x0);
           if (1 < value_04->max_length) {
             value_04->vector[1].color.r = fVar6;
             value_04->vector[1].color.g = fVar7;
@@ -650,10 +652,10 @@ void Assembly-CSharp.dll::Bullet::Bullet_SetBulletAndTrailSettings(Bullet *this,
             UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::TrailRenderer_set_time(pTVar1,(float)pTStack_10,(MethodInfo *)0x0);
             pMStack_11 = (this->fields).meshRenderers;
             uVar12 = 0;
-            (this->fields).storedColor.r = bulletColor.r;
-            (this->fields).storedColor.g = bulletColor.g;
-            (this->fields).storedColor.b = bulletColor.b;
-            (this->fields).storedColor.a = bulletColor.a;
+            (this->fields).storedBulletColor.r = bulletColor.r;
+            (this->fields).storedBulletColor.g = bulletColor.g;
+            (this->fields).storedBulletColor.b = bulletColor.b;
+            (this->fields).storedBulletColor.a = bulletColor.a;
             if (pMStack_11 == (MeshRenderer__Array *)0x0) goto code_?;
             ppMVar13 = pMStack_11->vector;
             for (; (int)uVar12 < (int)pMStack_11->max_length; uVar12 = uVar12 + 1) {

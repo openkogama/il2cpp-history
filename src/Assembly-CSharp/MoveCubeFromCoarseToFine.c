@@ -22,7 +22,7 @@ void Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_Add
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     in_stack_9 = &MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__GetEnumerator__;
     func_?(&MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__GetEnumerator__);
-    func_?(0x6fe4);
+    func_?(0x6fec);
     cRam_? = '\x01';
     puVar7 = puStack_6;
   }
@@ -489,9 +489,9 @@ List_1_MV_WorldObject_IntVector_ * Assembly-CSharp.dll::MoveCubeFromCoarseToFine
 
 {
   if (cRam_? == '\0') {
-    func_?(0xed30);
-    func_?(0xea50);
-    func_?(0xea18);
+    func_?(0xed38);
+    func_?(0xea58);
+    func_?(0xea20);
     func_?(&MethodInfo__System__Collections__Generic__List<MoveCubeFromCoarseToFine::ValidPos>__get_Item_int_);
     func_?(&TypeInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>);
     func_?(&TypeInfo__MoveCubeFromCoarseToFine);
@@ -607,66 +607,48 @@ bool Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_IsF
   case Face__Enum_Right:
     iStack_1 = 0;
   }
-  uVar3 = 0;
+  pfVar3 = (float *)0x0;
   pVVar4 = *faceCorners;
   if (pVVar4 == (Vector3__Array *)0x0) {
     func_?();
   }
   else {
-    pVVar5 = pVVar4->vector;
+    unaff_EDI = pVVar4->vector;
     while( true ) {
-      if ((int)pVVar4->max_length <= (int)uVar3) {
+      if ((int)pVVar4->max_length <= (int)pfVar3) {
         return 0;
       }
-      if (pVVar4->max_length <= uVar3) break;
-      VStack_6.z = pVVar5->z;
-      VStack_6.x = pVVar5->x;
-      VStack_6.y = pVVar5->y;
-      fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item(&VStack_6,iStack_1,(MethodInfo *)0x0);
+      if ((float *)pVVar4->max_length <= pfVar3) break;
+      VStack_5.z = unaff_EDI->z;
+      VStack_5.x = unaff_EDI->x;
+      VStack_5.y = unaff_EDI->y;
+      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item(&VStack_5,iStack_1,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
-        VStack_6.x = (float)&TypeInfo__UnityEngine__Mathf;
+        VStack_5.x = (float)&TypeInfo__UnityEngine__Mathf;
         func_?();
         cRam_? = '\x01';
       }
-      fVar8 = ABS(fVar7);
-      if (ABS(fVar7) <= ABS(fStack_2)) {
-        fVar8 = ABS(fStack_2);
+      fVar7 = ABS(fVar6);
+      if (ABS(fVar6) <= ABS(fStack_2)) {
+        fVar7 = ABS(fStack_2);
       }
-      fVar9 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * 8.0;
-      fVar10 = fVar8 * 1e-06;
-      if (fVar8 * 1e-06 <= fVar9) {
-        fVar10 = fVar9;
+      fVar8 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * 8.0;
+      fVar9 = fVar7 * 1e-06;
+      if (fVar7 * 1e-06 <= fVar8) {
+        fVar9 = fVar8;
       }
-      in_AF = 0;
-      if (fVar10 <= ABS(fStack_2 - fVar7)) {
+      if (fVar9 <= ABS(fStack_2 - fVar6)) {
         return 1;
       }
-      uVar3 = uVar3 + 1;
-      pVVar5 = pVVar5 + 1;
+      pfVar3 = (float *)((int)pfVar3 + 1);
+      unaff_EDI = unaff_EDI + 1;
     }
   }
-  uVar11 = func_?();
-  iVar12 = (int)((ulonglong)uVar11 >> 0x20);
-  in_AF = 9 < ((byte)uVar11 & 0xf) | in_AF;
-  uVar13 = CONCAT31((int3)((ulonglong)uVar11 >> 8),(byte)uVar11 + in_AF * '\x06') & 0xffffff0f;
-  bVar14 = (char)((ulonglong)uVar11 >> 8) + in_AF;
-  pbVar15 = (byte *)CONCAT22((short)(uVar13 >> 0x10),CONCAT11(bVar14,(char)uVar13));
-  bVar16 = CARRY1(*pbVar15,unaff_BH) || CARRY1(*pbVar15 + unaff_BH,in_AF);
-  *pbVar15 = *pbVar15 + unaff_BH + in_AF;
-  pbVar15 = (byte *)(iVar12 + -0x6a);
-  bVar17 = (byte)((ulonglong)uVar11 >> 0x20);
-  bVar18 = *pbVar15 + bVar17;
-  bVar19 = CARRY1(*pbVar15,bVar17) || CARRY1(bVar18,bVar16);
-  *pbVar15 = bVar18 + bVar16;
-  pbVar15 = (byte *)(uVar3 - 0x6a);
-  bVar18 = *pbVar15;
-  bVar17 = *pbVar15;
-  *pbVar15 = bVar17 + bVar14 + bVar19;
-  pcVar20 = (char *)(iVar12 + -0x6a);
-  *pcVar20 = *pcVar20 + unaff_BH + (CARRY1(bStackY_6e,extraout_CH) || CARRY1(bStackY_6e + extraout_CH,CARRY1(bVar18,bVar14) || CARRY1(bVar17 + bVar14,bVar19)));
-  pcVar21 = (code *)swi(3);
-  bVar22 = (*pcVar21)();
-  return bVar22;
+  iVar10 = func_?();
+  *(char *)(iVar10 + -0x3defc96a) = *(char *)(iVar10 + -0x3defc96a) + extraout_CH + ((uint)*pfVar3 < (uint)unaff_EDI->x);
+  pcVar11 = (code *)swi(3);
+  bVar12 = (*pcVar11)();
+  return bVar12;
 }
 
 
@@ -677,7 +659,7 @@ void Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_Mov
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-    func_?(0x6fe4);
+    func_?(0x6fec);
     cRam_? = '\x01';
   }
   if (from != (ICubeModel *)0x0) {

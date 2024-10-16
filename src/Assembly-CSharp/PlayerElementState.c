@@ -121,12 +121,12 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_OpenUserManagem
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pOVar5 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)0xb3211835,OwnerToolController_MethodInfo__UnityEngine__Object__Instantiate<OwnerToolController>_OwnerToolController_);
+        pOVar5 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)0xb3212035,OwnerToolController_MethodInfo__UnityEngine__Object__Instantiate<OwnerToolController>_OwnerToolController_);
         if (value != (Object *)0x0) {
           value[1].klass = pOVar5;
           func_?(value + 1,pOVar5);
           pOVar5 = value[1].klass;
-          pSVar6 = (String *)(**(code **)(iRam_? + 0x310))(0x95e85711,*(undefined4 *)(iRam_? + 0x314));
+          pSVar6 = (String *)(**(code **)(iRam_? + 0x310))(0x65e85711,*(undefined4 *)(iRam_? + 0x314));
           if (pOVar5 != (Object__Class *)0x0) {
             if (cRam_? == '\0') {
               func_?(&::StringLiteral__);
