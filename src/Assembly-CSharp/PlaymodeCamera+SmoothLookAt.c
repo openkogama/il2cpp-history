@@ -84,7 +84,7 @@ code_?:
       pVVar10 = (Vector3 *)(*pcVar9)();
       return pVVar10;
     }
-    if ((pQVar7->fields)._size < (this->fields).samleLength) {
+    if ((pQVar7->fields)._size < 5) {
       pQStack_11 = (this->fields).prevVelocities;
       fStack_12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                             ((MethodInfo *)0x0);
@@ -175,19 +175,18 @@ code_?:
             __return_storage_ptr__->x = (float)uStack_23 / fVar17;
             __return_storage_ptr__->y = uStack_23._4_4_ / fVar17;
             __return_storage_ptr__->z = VStack_25.z;
-            fVar17 = (this->fields).maxMag;
-            if (fVar17 * fVar17 <
+            if (_UNK_? <
                 __return_storage_ptr__->x * __return_storage_ptr__->x +
                 __return_storage_ptr__->y * __return_storage_ptr__->y +
                 __return_storage_ptr__->z * __return_storage_ptr__->z) {
               puVar26 = (undefined8 *)func_?(&NStack_22,__return_storage_ptr__,0);
-              fVar17 = (this->fields).maxMag;
-              fVar16 = *(float *)(puVar26 + 1);
               uStack_23._0_4_ = (float)*puVar26;
               uStack_23._4_4_ = (float)((ulonglong)*puVar26 >> 0x20);
-              __return_storage_ptr__->x = (float)uStack_23 * fVar17;
-              __return_storage_ptr__->y = uStack_23._4_4_ * fVar17;
-              __return_storage_ptr__->z = fVar16 * fVar17;
+              fVar17 = *(float *)(puVar26 + 1) * _UNK_?;
+              uStack_23._4_4_ = uStack_23._4_4_ * _UNK_?;
+              __return_storage_ptr__->x = (float)uStack_23 * _UNK_?;
+              __return_storage_ptr__->y = uStack_23._4_4_;
+              __return_storage_ptr__->z = fVar17;
             }
             *unaff_FS_OFFSET = uStack_3;
             return __return_storage_ptr__;
@@ -218,17 +217,15 @@ void Assembly-CSharp.dll::PlaymodeCamera+SmoothLookAt::PlaymodeCamera_SmoothLook
     func_?(&TypeInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>);
     cRam_? = '\x01';
   }
-  (this->fields).samleLength = 5;
   this_00 = (Queue_1_UnityEngine_Vector3_ *)
             func_?(TypeInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>);
   System.Core.dll::System::Runtime::CompilerServices::ReadOnlyCollectionBuilder`1[System::Object]::
   ReadOnlyCollectionBuilder_1_System_Object___ctor
             ((ReadOnlyCollectionBuilder_1_System_Object_ *)this_00,
              MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Queue__);
-  method_00 = (MethodInfo *)&(this->fields).prevVelocities;
+  method_00 = (MethodInfo *)&this->fields;
   (this->fields).prevVelocities = this_00;
   func_?(method_00,this_00);
-  (this->fields).maxMag = 30.0;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;

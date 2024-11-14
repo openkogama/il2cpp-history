@@ -80,7 +80,7 @@ void Assembly-CSharp.dll::MVCameraController::MVCameraController_Activate
           return;
         }
         if (DStack_4._currentValue == (Object *)0x0) break;
-        (*(code *)(DStack_4._currentValue)->klass[1]._0.implementedInterfaces)();
+        (*(code *)(DStack_4._currentValue)->klass[1].static_fields)();
       }
     }
   }
@@ -174,7 +174,7 @@ void Assembly-CSharp.dll::MVCameraController::MVCameraController_Deactivate
           return;
         }
         if (DStack_4._currentValue == (Object *)0x0) break;
-        (*(code *)(DStack_4._currentValue)->klass[1].static_fields)();
+        (*(code *)(DStack_4._currentValue)->klass[1]._1.typeHierarchy)();
       }
     }
   }
@@ -426,7 +426,7 @@ void Assembly-CSharp.dll::MVCameraController::MVCameraController_UpdateCamera
                        (this_00,(MethodInfo *)0x0);
     if (pMVar1 != (MVCameraBase *)0x0) {
       (*(code *)(pMVar1->klass->vtable).UpdateCamera.method)
-                (pMVar1,this,protectedTransform,(pMVar1->klass->vtable).Enter.methodPtr);
+                (pMVar1,this,protectedTransform,(pMVar1->klass->vtable).CameraCollision.methodPtr);
       return;
     }
   }

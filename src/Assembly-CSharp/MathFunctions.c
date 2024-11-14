@@ -145,12 +145,21 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_DistancePointLine
                (Vector3 point,Vector3 lineStart,Vector3 lineEnd,float *distance,MethodInfo *method)
 
 {
-  VStack_1.z = 0.0;
-  VStack_1.x = 0.0;
-  VStack_1.y = 0.0;
-  bVar2 = MathFunctions_DistancePointLine_1
-                    (point,lineStart,lineEnd,distance,&VStack_1,(MethodInfo *)0x0);
-  return bVar2;
+  fVar1 = lineEnd.x - lineStart.x;
+  fVar2 = lineEnd.y - lineStart.y;
+  fVar3 = lineEnd.z - lineStart.z;
+  *distance = 0.0;
+  fVar4 = (fVar1 * (point.x - lineStart.x) + fVar2 * (point.y - lineStart.y) +
+          fVar3 * (point.z - lineStart.z)) / (fVar1 * fVar1 + fVar2 * fVar2 + fVar3 * fVar3);
+  if ((0.0 <= fVar4) && (fVar4 <= _UNK_?)) {
+    fStack_5 = point.z - (lineStart.z + fVar3 * fVar4);
+    uStack_6 = CONCAT44(point.y - (lineStart.y + fVar2 * fVar4),
+                         point.x - (lineStart.x + fVar1 * fVar4));
+    fVar7 = (float10)func_?(&uStack_6,0);
+    *distance = (float)fVar7;
+    return 1;
+  }
+  return 0;
 }
 
 
@@ -161,27 +170,26 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_DistancePointLine_1
                Vector3 *intersection,MethodInfo *method)
 
 {
+  fVar1 = lineEnd.x - lineStart.x;
+  fVar2 = lineEnd.y - lineStart.y;
+  fVar3 = lineEnd.z - lineStart.z;
   intersection->x = 0.0;
   intersection->y = 0.0;
-  fStack_1 = lineEnd.z - lineStart.z;
   intersection->z = 0.0;
-  uStack_2 = CONCAT44(lineEnd.y - lineStart.y,lineEnd.x - lineStart.x);
-  fVar3 = (float10)func_?(&uStack_2,0);
-  fStack_4 = (float)fVar3;
-  fVar5 = ((lineEnd.y - lineStart.y) * (point.y - lineStart.y) +
-           (lineEnd.x - lineStart.x) * (point.x - lineStart.x) +
-          (lineEnd.z - lineStart.z) * (point.z - lineStart.z)) / (fStack_4 * fStack_4);
-  if ((0.0 <= fVar5) && (fVar5 <= _UNK_?)) {
-    fVar6 = lineStart.z + (lineEnd.z - lineStart.z) * fVar5;
-    fVar7 = lineStart.x + (lineEnd.x - lineStart.x) * fVar5;
-    fVar5 = lineStart.y + (lineEnd.y - lineStart.y) * fVar5;
-    fStack_1 = point.z - fVar6;
-    intersection->x = fVar7;
-    intersection->y = fVar5;
-    intersection->z = fVar6;
-    uStack_2 = CONCAT44(point.y - fVar5,point.x - fVar7);
-    fVar3 = (float10)func_?(&uStack_2,0);
-    *distance = (float)fVar3;
+  *distance = 0.0;
+  fVar4 = (fVar1 * (point.x - lineStart.x) + fVar2 * (point.y - lineStart.y) +
+          fVar3 * (point.z - lineStart.z)) / (fVar1 * fVar1 + fVar2 * fVar2 + fVar3 * fVar3);
+  if ((0.0 <= fVar4) && (fVar4 <= _UNK_?)) {
+    fStack_5 = lineStart.z + fVar3 * fVar4;
+    fVar1 = lineStart.x + fVar1 * fVar4;
+    fVar4 = lineStart.y + fVar2 * fVar4;
+    intersection->x = fVar1;
+    intersection->y = fVar4;
+    intersection->z = fStack_5;
+    fStack_5 = point.z - fStack_5;
+    uStack_6 = CONCAT44(point.y - fVar4,point.x - fVar1);
+    fVar7 = (float10)func_?(&uStack_6,0);
+    *distance = (float)fVar7;
     return 1;
   }
   return 0;
@@ -192,27 +200,25 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_DistancePointLine_1
 
 void Assembly-CSharp.dll::MathFunctions::MathFunctions_DistancePointLine_2
                (Vector3 point,Vector3 lineStart,Vector3 lineEnd,float *distance,
-               Vector3 *intersection,float *u,MethodInfo *method)
+               Vector3 *intersection,float *pointOnLineScalar,MethodInfo *method)
 
 {
-  fStack_1 = lineEnd.z - lineStart.z;
-  uStack_2 = CONCAT44(lineEnd.y - lineStart.y,lineEnd.x - lineStart.x);
-  fVar3 = (float10)func_?(&uStack_2,0);
-  fStack_4 = (float)fVar3;
-  fVar5 = ((lineEnd.y - lineStart.y) * (point.y - lineStart.y) +
-           (lineEnd.x - lineStart.x) * (point.x - lineStart.x) +
-          (lineEnd.z - lineStart.z) * (point.z - lineStart.z)) / (fStack_4 * fStack_4);
-  *u = fVar5;
-  fVar6 = lineStart.y + fVar5 * (lineEnd.y - lineStart.y);
-  fVar7 = lineStart.x + fVar5 * (lineEnd.x - lineStart.x);
-  fVar5 = lineStart.z + fVar5 * (lineEnd.z - lineStart.z);
-  fStack_1 = point.z - fVar5;
-  intersection->x = fVar7;
-  intersection->y = fVar6;
-  intersection->z = fVar5;
-  uStack_2 = CONCAT44(point.y - fVar6,point.x - fVar7);
-  fVar3 = (float10)func_?(&uStack_2,0);
-  *distance = (float)fVar3;
+  fVar1 = lineEnd.x - lineStart.x;
+  fVar2 = lineEnd.y - lineStart.y;
+  fVar3 = lineEnd.z - lineStart.z;
+  fVar4 = (fVar1 * (point.x - lineStart.x) + fVar2 * (point.y - lineStart.y) +
+          fVar3 * (point.z - lineStart.z)) / (fVar1 * fVar1 + fVar2 * fVar2 + fVar3 * fVar3);
+  *pointOnLineScalar = fVar4;
+  fVar3 = lineStart.z + fVar3 * fVar4;
+  fVar1 = lineStart.x + fVar1 * fVar4;
+  fVar4 = lineStart.y + fVar2 * fVar4;
+  fStack_5 = point.z - fVar3;
+  intersection->x = fVar1;
+  intersection->y = fVar4;
+  intersection->z = fVar3;
+  uStack_6 = CONCAT44(point.y - fVar4,point.x - fVar1);
+  fVar7 = (float10)func_?(&uStack_6,0,point.x,0,fStack_5,0);
+  *distance = (float)fVar7;
   return;
 }
 
@@ -517,16 +523,17 @@ Vector3 * Assembly-CSharp.dll::MathFunctions::MathFunctions_GetNormal
                     MethodInfo *method)
 
 {
-  fStack_1 = (pc.z - pa.z) * (pb.y - pa.y) - (pb.z - pa.z) * (pc.y - pa.y);
-  fStack_2 = (pb.x - pa.x) * (pc.y - pa.y) - (pc.x - pa.x) * (pb.y - pa.y);
-  uStack_3 = CONCAT44((pc.x - pa.x) * (pb.z - pa.z) - (pb.x - pa.x) * (pc.z - pa.z),fStack_1);
-  fStack_4 = fStack_2;
-  puVar5 = (undefined8 *)func_?(auStack_6,&uStack_3,0);
-  uVar7 = *puVar5;
-  fVar8 = *(float *)(puVar5 + 1);
-  __return_storage_ptr__->x = (float)(int)uVar7;
-  __return_storage_ptr__->y = (float)(int)((ulonglong)uVar7 >> 0x20);
-  __return_storage_ptr__->z = fVar8;
+  VStack_1.z = (pb.x - pa.x) * (pc.y - pa.y) - (pc.x - pa.x) * (pb.y - pa.y);
+  value.y = (pc.x - pa.x) * (pb.z - pa.z) - (pb.x - pa.x) * (pc.z - pa.z);
+  value.x = (pc.z - pa.z) * (pb.y - pa.y) - (pb.z - pa.z) * (pc.y - pa.y);
+  value.z = VStack_1.z;
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&VStack_1,value,(MethodInfo *)0x0);
+  fVar3 = pVVar2->y;
+  fVar4 = pVVar2->z;
+  __return_storage_ptr__->x = pVVar2->x;
+  __return_storage_ptr__->y = fVar3;
+  __return_storage_ptr__->z = fVar4;
   return __return_storage_ptr__;
 }
 
@@ -729,57 +736,59 @@ int32_t Assembly-CSharp.dll::MathFunctions::MathFunctions_IsLineSegmentIntersect
   }
   if (points != (List_1_UnityEngine_Vector2_ *)0x0) {
     iVar1 = (points->fields)._size;
-    VStack_2.x = -1.0;
-    iStack_3 = iVar1 + -1;
-    if (isOpen == 0) {
-      iStack_3 = iVar1;
+    if (isOpen != 0) {
+      iVar1 = iVar1 + -1;
     }
-    VStack_2.y = -1.0;
-    iVar1 = 0;
-    if (0 < iStack_3) {
+    iVar2 = 0;
+    VStack_3.x = -1.0;
+    VStack_3.y = -1.0;
+    this_00 = points;
+    if (0 < iVar1) {
       do {
+        this = points;
         p2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
              List_1_UnityEngine_Vector2__get_Item
-                       (points,iVar1 % (points->fields)._size,
+                       (this_00,iVar2 % (this_00->fields)._size,
                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                        );
         p3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
              List_1_UnityEngine_Vector2__get_Item
-                       (points,(iVar1 + 1) % (points->fields)._size,
+                       (points,(iVar2 + 1) % (points->fields)._size,
                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                        );
         VVar4.y = p0.y;
         VVar4.x = p0.x;
         p1_00.y = p1.y;
         p1_00.x = p1.x;
-        bVar5 = MathFunctions_DoLinesIntersect(VVar4,p1_00,p2,p3,&VStack_2,(MethodInfo *)0x0);
+        bVar5 = MathFunctions_DoLinesIntersect(VVar4,p1_00,p2,p3,&VStack_3,(MethodInfo *)0x0);
         if (bVar5 != 0) {
-          fStack_6 = VStack_2.x;
-          fStack_7 = VStack_2.y;
-          if ((VStack_2.x == _UNK_?) && (VStack_2.y == _UNK_?)) {
-            return iVar1;
+          fStack_6 = VStack_3.x;
+          fStack_7 = VStack_3.y;
+          if ((VStack_3.x == _UNK_?) && (VStack_3.y == _UNK_?)) {
+            return iVar2;
           }
-          p1.y = (float)
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+          points = (List_1_UnityEngine_Vector2_ *)
+                   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
           ;
-          p1.x = (float)((points->fields)._size + -1);
-          p0.y = (float)points;
-          p0.x = (float)&UNK_?;
+          p1.y = (float)((this->fields)._size + -1);
+          p1.x = (float)this;
+          p0.y = (float)&UNK_?;
           VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                   List_1_UnityEngine_Vector2__get_Item
-                            (points,(int32_t)p1.x,
+                            (this,(int32_t)p1.y,
                              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                             );
           fVar8 = fStack_6 - VStack_9.x;
           VStack_9.y = VVar4.y;
           fVar10 = fStack_7 - VStack_9.y;
           VStack_9 = VVar4;
-          if (_UNK_? < (double)(fVar10 * fVar10 + fVar8 * fVar8)) {
-            return iVar1;
+          if (_UNK_? < (double)(fVar8 * fVar8 + fVar10 * fVar10)) {
+            return iVar2;
           }
         }
-        iVar1 = iVar1 + 1;
-      } while (iVar1 < iStack_3);
+        iVar2 = iVar2 + 1;
+        this_00 = this;
+      } while (iVar2 < iVar1);
     }
     return -1;
   }
@@ -912,9 +921,8 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_IsQuaternionFloatsValid
     if ((uint)ABS(quaternion.y) < 0x7f800001) {
       if ((uint)ABS(quaternion.z) < 0x7f800001) {
         if (((((uint)ABS(quaternion.w) < 0x7f800001) && (ABS(quaternion.x) != INFINITY)) &&
-            (ABS(quaternion.y) != INFINITY)) &&
-           ((ABS(quaternion.z) != INFINITY && (ABS(quaternion.w) != INFINITY)))) {
-          return 1;
+            (ABS(quaternion.y) != INFINITY)) && (ABS(quaternion.z) != INFINITY)) {
+          return ABS(quaternion.w) != INFINITY;
         }
       }
     }
@@ -931,9 +939,9 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_IsVectorFloatsValid
 {
   if ((uint)ABS(vector.x) < 0x7f800001) {
     if ((uint)ABS(vector.y) < 0x7f800001) {
-      if (((((uint)ABS(vector.z) < 0x7f800001) && (ABS(vector.x) != INFINITY)) &&
-          (ABS(vector.y) != INFINITY)) && (ABS(vector.z) != INFINITY)) {
-        return 1;
+      if ((((uint)ABS(vector.z) < 0x7f800001) && (ABS(vector.x) != INFINITY)) &&
+         (ABS(vector.y) != INFINITY)) {
+        return ABS(vector.z) != INFINITY;
       }
     }
   }
@@ -991,10 +999,8 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_LineFacet
       func_?();
       dVar7 = (double)(pb.y * p2.y + pb.x * p2.x + pb.z * p2.z);
       func_?();
-      if ((float)((uint)(((float)dVar5 + (float)dVar6 + (float)dVar7) * _UNK_? -
-                        _UNK_?) & _UNK_?) <= _UNK_?) {
-        return 1;
-      }
+      return (float)((uint)(((float)dVar5 + (float)dVar6 + (float)dVar7) * _UNK_? -
+                           _UNK_?) & _UNK_?) <= _UNK_?;
     }
   }
   return 0;
@@ -1013,40 +1019,37 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_LineFacetCollision
     func_?(&TypeInfo__UnityEngine__Mathf);
     cRam_? = '\x01';
   }
-  uStack_1 = CONCAT44((pb.z - pa.z) * (pc.x - pa.x) - (pc.z - pa.z) * (pb.x - pa.x),
-                       (pc.z - pa.z) * (pb.y - pa.y) - (pb.z - pa.z) * (pc.y - pa.y));
-  fStack_2 = (pc.y - pa.y) * (pb.x - pa.x) - (pc.x - pa.x) * (pb.y - pa.y);
-  fStack_3 = fStack_2;
-  puVar4 = (undefined8 *)func_?(auStack_5,&uStack_1,0);
-  uVar6 = *puVar4;
-  fStack_3 = *(float *)(puVar4 + 1);
-  n->x = (float)(int)uVar6;
-  n->y = (float)(int)((ulonglong)uVar6 >> 0x20);
-  n->z = fStack_3;
-  uStack_1._4_4_ = (float)((ulonglong)uVar6 >> 0x20);
-  uStack_1._0_4_ = (float)uVar6;
-  if ((float)uStack_1 * lineDir.x + uStack_1._4_4_ * lineDir.y + fStack_3 * lineDir.z <=
-      _UNK_?) {
-    fVar7 = (p2.y - p1.y) * n->y + (p2.x - p1.x) * n->x + (p2.z - p1.z) * n->z;
-    if (TypeInfo__UnityEngine__Mathf->static_fields->Epsilon <= (float)((uint)fVar7 & _UNK_?)
+  value.y = (pb.z - pa.z) * (pc.x - pa.x) - (pc.z - pa.z) * (pb.x - pa.x);
+  value.x = (pc.z - pa.z) * (pb.y - pa.y) - (pb.z - pa.z) * (pc.y - pa.y);
+  value.z = (pc.y - pa.y) * (pb.x - pa.x) - (pc.x - pa.x) * (pb.y - pa.y);
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     ((Vector3 *)&stack0xffffffe4,value,(MethodInfo *)0x0);
+  uVar2 = pVVar1->x;
+  uVar3 = pVVar1->y;
+  fVar4 = pVVar1->z;
+  n->x = (float)uVar2;
+  n->y = (float)uVar3;
+  n->z = fVar4;
+  if ((float)uVar2 * lineDir.x + (float)uVar3 * lineDir.y + fVar4 * lineDir.z <= _UNK_?) {
+    fVar4 = (p2.y - p1.y) * n->y + (p2.x - p1.x) * n->x + (p2.z - p1.z) * n->z;
+    if (TypeInfo__UnityEngine__Mathf->static_fields->Epsilon <= (float)((uint)fVar4 & _UNK_?)
        ) {
-      fVar7 = (float)((uint)((((float)((uint)n->x ^
+      fVar4 = (float)((uint)((((float)((uint)n->x ^
                                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                       ) * pa.x - pa.y * n->y) - pa.z * n->z) + p1.x * n->x +
                              p1.y * n->y + p1.z * n->z) ^
                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) /
-              fVar7;
-      fVar8 = (p2.x - p1.x) * fVar7 + p1.x;
-      fVar9 = (p2.y - p1.y) * fVar7 + p1.y;
-      fVar10 = (p2.z - p1.z) * fVar7 + p1.z;
-      p->x = fVar8;
-      p->y = fVar9;
-      p->z = fVar10;
-      if ((0.0 <= fVar7) && (fVar7 <= _UNK_?)) {
-        lineDir.x = pa.x - fVar8;
-        lineDir.y = pa.y - fVar9;
-        lineDir.z = pa.z - fVar10;
-        uStack_1 = uVar6;
+              fVar4;
+      fVar5 = (p2.x - p1.x) * fVar4 + p1.x;
+      fVar6 = (p2.y - p1.y) * fVar4 + p1.y;
+      fVar7 = (p2.z - p1.z) * fVar4 + p1.z;
+      p->x = fVar5;
+      p->y = fVar6;
+      p->z = fVar7;
+      if ((0.0 <= fVar4) && (fVar4 <= _UNK_?)) {
+        lineDir.x = pa.x - fVar5;
+        lineDir.y = pa.y - fVar6;
+        lineDir.z = pa.z - fVar7;
         UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
                   (&lineDir,(MethodInfo *)0x0);
         pa.x = pb.x - p->x;
@@ -1059,19 +1062,14 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_LineFacetCollision
         pb.z = pc.z - p->z;
         UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(&pb,(MethodInfo *)0x0)
         ;
-        dVar11 = (double)(pb.y * pa.y + pb.x * pa.x + pb.z * pa.z);
-        uStack_1 = CONCAT44(&UNK_?,(float)uStack_1);
+        dVar8 = (double)(pb.y * pa.y + pb.x * pa.x + pb.z * pa.z);
         func_?();
-        dVar12 = (double)(pa.y * lineDir.y + pa.x * lineDir.x + pa.z * lineDir.z);
-        uStack_1 = CONCAT44(&UNK_?,(float)uStack_1);
+        dVar9 = (double)(pa.y * lineDir.y + pa.x * lineDir.x + pa.z * lineDir.z);
         func_?();
-        dVar13 = (double)(pb.y * lineDir.y + pb.x * lineDir.x + pb.z * lineDir.z);
-        uStack_1 = CONCAT44(&UNK_?,(float)uStack_1);
+        dVar10 = (double)(pb.y * lineDir.y + pb.x * lineDir.x + pb.z * lineDir.z);
         func_?();
-        if ((float)((uint)(((float)dVar11 + (float)dVar12 + (float)dVar13) * _UNK_? -
-                          _UNK_?) & _UNK_?) <= _UNK_?) {
-          return 1;
-        }
+        return (float)((uint)(((float)dVar8 + (float)dVar9 + (float)dVar10) * _UNK_? -
+                             _UNK_?) & _UNK_?) <= _UNK_?;
       }
     }
   }
@@ -1112,11 +1110,11 @@ float Assembly-CSharp.dll::MathFunctions::MathFunctions_NormalizeAngle
 
 {
   fVar1 = (float10)func_?((double)degrees);
-  degrees = (float)fVar1;
-  if (degrees < 0.0) {
-    degrees = degrees + _UNK_?;
+  fVar2 = (float)fVar1;
+  if (fVar2 < 0.0) {
+    fVar2 = fVar2 + _UNK_?;
   }
-  return degrees;
+  return fVar2;
 }
 
 
@@ -1307,31 +1305,42 @@ float Assembly-CSharp.dll::MathFunctions::MathFunctions_SignedYawFromLocalDirect
                 (Vector3 localDirection,MethodInfo *method)
 
 {
-  puVar1 = (undefined8 *)func_?();
-  uVar2 = *puVar1;
-  fVar3 = *(float *)(puVar1 + 1);
-  localDirection.y = (float)uVar2;
-  localDirection.z = (float)((ulonglong)uVar2 >> 0x20);
+  value.y = 0.0;
+  value.x = localDirection.x;
+  value.z = localDirection.z;
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&VStack_2,value,(MethodInfo *)0x0);
+  VStack_2.x = pVVar1->x;
+  VStack_2.y = pVVar1->y;
+  fVar3 = pVVar1->z;
+  uStack_4 = VStack_2._0_8_;
+  fStack_5 = fVar3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    uStack_4 = CONCAT44(VStack_2.y,&TypeInfo__UnityEngine__Vector3);
+    VStack_2.z = (float)&UNK_?;
+    func_?();
     cRam_? = '\x01';
   }
-  pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar5._0_4_ = (pVVar4->forwardVector).x;
-  uVar5._4_4_ = (pVVar4->forwardVector).y;
-  fVar6 = (float10)func_?(uVar5,(pVVar4->forwardVector).z,uVar2,fVar3,0);
+  uStack_4 = uStack_4 & 0xffffffff00000000;
+  pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar7 = (pVVar6->forwardVector).x;
+  uVar8 = (pVVar6->forwardVector).y;
+  VStack_2.z = fVar3;
+  fVar9 = (float10)func_?(uVar7,uVar8,(pVVar6->forwardVector).z);
+  localDirection.z = (float)fVar9;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    uStack_4 = CONCAT44(uStack_4._4_4_,&TypeInfo__UnityEngine__Vector3);
+    VStack_2.z = (float)&UNK_?;
+    func_?();
     cRam_? = '\x01';
   }
-  pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar7 = (pVVar4->rightVector).x;
-  uVar8 = (pVVar4->rightVector).y;
-  fVar9 = localDirection.z * (float)uVar8;
-  localDirection.z = (float)fVar6;
-  if (fVar9 + localDirection.y * (float)uVar7 + fVar3 * (pVVar4->rightVector).z < 0.0) {
+  pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar10 = (pVVar6->rightVector).x;
+  uVar11 = (pVVar6->rightVector).y;
+  if (uStack_4._4_4_ * (float)uVar11 + (float)uStack_4 * (float)uVar10 +
+      fStack_5 * (pVVar6->rightVector).z < 0.0) {
     localDirection.z =
-         (float)((uint)(float)fVar6 ^
+         (float)((uint)localDirection.z ^
                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   }
   return localDirection.z;

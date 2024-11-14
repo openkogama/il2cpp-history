@@ -370,9 +370,9 @@ code_?:
                                          TypeInfo__MVCubeModelBase)))) goto code_?;
                                   }
                                   if (unaff_ESI != (ObscuredByte)0x0) {
-                                    (**(code **)(*(int *)unaff_ESI + 0x128))
+                                    (**(code **)(*(int *)unaff_ESI + 0x130))
                                               (unaff_ESI,targetCubeModel,0x40000000,0,0,0,0,
-                                               *(undefined4 *)(*(int *)unaff_ESI + 300));
+                                               *(undefined4 *)(*(int *)unaff_ESI + 0x134));
                                     pMVar15 = (e->fields).weCamera;
                                     if (pMVar15 != (MainCameraManager *)0x0) {
                                       MainCameraManager::MainCameraManager_set_BlueModeEnabled

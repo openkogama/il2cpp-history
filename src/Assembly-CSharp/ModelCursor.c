@@ -93,7 +93,7 @@ void Assembly-CSharp.dll::ModelCursor::ModelCursor_HandleLaserMovingEdge
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0xf4c8);
+    func_?(0xf4d0);
     cRam_? = '\x01';
   }
   if (movingEdgeCube != (CubePickingInfo *)0x0) {

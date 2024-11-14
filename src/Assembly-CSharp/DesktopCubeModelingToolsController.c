@@ -169,8 +169,6 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void SetButtonTransparency(CubeModelingEvent) */
 
 void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
@@ -179,7 +177,6 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
                MethodInfo *method)
 
 {
-  puVar1 = &stack0xfffffffc;
   DesktopCubeModelingToolsController_SetAllToTransparent(this,(MethodInfo *)0x0);
   switch(cubeTool) {
   case CubeModelingEvent__Enum_EditCubes:
@@ -196,51 +193,26 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
   case CubeModelingEvent__Enum_ColorPicker:
     this_00 = (this->fields).pickCubeColor;
   }
-  if ((this_00 == (Button *)0x0) ||
-     (unaff_EDI = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
-                            ((Selectable *)this_00,(MethodInfo *)0x0), unaff_EDI == (Image *)0x0)) {
-    uVar2 = func_?();
-    pMVar3 = (MethodInfo *)((ulonglong)uVar2 >> 0x20);
-    pMVar3[-0x21b5faa].return_type = (Il2CppType *)(float)extraout_ST0;
-    if (extraout_ECX != 0) {
-      func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+  if (this_00 != (Button *)0x0) {
+    pIVar1 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+                       ((Selectable *)this_00,(MethodInfo *)0x0);
+    pIStack_2 = (Image *)(this->fields).enabledAlpha;
+    if (pIVar1 != (Image *)0x0) {
+      pIStack_3 = (pIVar1->klass->vtable).set_color.methodPtr;
+      pIStack_4 = pIVar1;
+      puVar5 = (undefined4 *)(*(code *)(pIVar1->klass->vtable).get_color.method)(&pIStack_4);
+      pIStack_3 = (Il2CppMethodPointer)puVar5[1];
+      uStack_6 = puVar5[2];
+      pIStack_4 = pIStack_2;
+      (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,*puVar5,pIStack_3,uStack_6);
+code_?:
       return;
     }
-    puVar1 = &stack0xfffffffd;
-    bVar5 = (byte)uVar2 ^ 0x10 | 0x85;
-    pcVar6 = (char *)((uint)uVar2 ^ 0x10 | 0x85);
-    if (-1 < (char)bVar5) {
-                    /* WARNING: Bad instruction - Truncating control flow here */
-      halt_baddata();
-    }
-    if (bVar5 != 0) {
-      *pcVar6 = *pcVar6 + (char)pcVar6;
-      goto code_?;
-    }
-    *(undefined1 *)(unaff_EBX + 0x17091) = *(undefined1 *)(unaff_EBX + 0x17091);
-    ppUVar7 = &(unaff_EDI->fields)._._.m_OnDirtyMaterialCallback;
-    *(char *)ppUVar7 = *(char *)ppUVar7 + (char)((ulonglong)uVar2 >> 0x20);
   }
-  else {
-code_?:
-    pMVar3 = (unaff_EDI->klass->vtable).get_color.method;
-  }
-  puVar8 = (undefined4 *)(*(code *)pMVar3)();
-  pIVar9 = unaff_EDI->klass;
-  uVar10 = puVar8[1];
-  uVar11 = puVar8[2];
-  uVar12 = puVar8[3];
-  *(undefined4 *)(puVar1 + -0x10) = *puVar8;
-  *(undefined4 *)(puVar1 + -0xc) = uVar10;
-  *(undefined4 *)(puVar1 + -8) = uVar11;
-  *(undefined4 *)(puVar1 + -4) = uVar12;
-  *(undefined4 *)(puVar1 + -4) = *(undefined4 *)(puVar1 + 0xc);
-  (*(code *)(pIVar9->vtable).set_color.method)
-            (unaff_EDI,*(undefined4 *)(puVar1 + -0x10),*(undefined4 *)(puVar1 + -0xc),
-             *(undefined4 *)(puVar1 + -8),*(undefined4 *)(puVar1 + -4));
-code_?:
+  func_?();
+  *(int *)(unaff_EBX + -0x6471efcc) = unaff_EBX;
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

@@ -26,7 +26,7 @@ public class AirCraftCamera : MVPlaymodeCameraBase
 	// Methods
 	public override void Enter(MVCameraController camController);
 	public override void UpdateCamera(MVCameraController camController, ProtectedTransform targetTransform);
-	private void CameraCollision();
+	protected override void CameraCollision();
 	private void UpdateCameraPosition();
 }
 

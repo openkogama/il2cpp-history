@@ -42,7 +42,7 @@ public class GhostCamera : MVCameraBase
 	public override void Exit(MVCameraController camController);
 	public override void UpdateCamera(MVCameraController camController, ProtectedTransform targetTransform);
 	private void UpdatePosition();
-	protected virtual void CameraCollision();
+	protected override void CameraCollision();
 	private Vector3 GetLookAtPosition();
 	public override void Reset();
 }

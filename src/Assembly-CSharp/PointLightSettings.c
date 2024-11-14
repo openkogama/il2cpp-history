@@ -154,7 +154,7 @@ code_?:
         (TypeInfo__System__Single->_0).element_class) {
       pfVar11 = (float *)func_?(TVar7.m_Index);
       SettingsSlider::SettingsSlider_Initialize
-                (pSVar10,StringLiteral_range,*pfVar11,1.0,10.0,(MethodInfo *)0x0);
+                (pSVar10,StringLiteral_range,*pfVar11,1.0,100.0,(MethodInfo *)0x0);
       pSVar10 = (pPVar1->fields).intensity;
       TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
@@ -168,7 +168,7 @@ code_?:
             (TypeInfo__System__Single->_0).element_class) goto code_?;
         pfVar11 = (float *)func_?(TVar7.m_Index);
         SettingsSlider::SettingsSlider_Initialize
-                  (pSVar10,StringLiteral_intensity,*pfVar11,1.0,20.0,(MethodInfo *)0x0);
+                  (pSVar10,StringLiteral_intensity,*pfVar11,1.0,50.0,(MethodInfo *)0x0);
         pSVar10 = (pPVar1->fields).HaloTextures;
         TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                 ::UIElements::TextureId]::

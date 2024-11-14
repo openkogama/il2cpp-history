@@ -1702,12 +1702,12 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_UpdateCamera
                          (this_00,(MethodInfo *)0x0);
       if (pMVar3 != (MVCameraBase *)0x0) {
         (*(code *)(pMVar3->klass->vtable).UpdateCamera.method)
-                  (pMVar3,pMVar1,pPVar2,(pMVar3->klass->vtable).Enter.methodPtr);
+                  (pMVar3,pMVar1,pPVar2,(pMVar3->klass->vtable).CameraCollision.methodPtr);
         pTVar4 = (this->fields).transitionCamera;
         if (pTVar4 != (TransitionCamera *)0x0) {
           (*(code *)(pTVar4->klass->vtable).UpdateCamera.method)
                     (pTVar4,(this->fields).cameraController,(this->fields).protectedTransform,
-                     (pTVar4->klass->vtable).Enter.methodPtr);
+                     (pTVar4->klass->vtable).CameraCollision.methodPtr);
           return;
         }
       }

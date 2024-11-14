@@ -224,13 +224,9 @@ code_?:
 code_?:
   this = (MVSpawnPoint *)&UNK_?;
   method = (MethodInfo *)TVar4.m_Index;
-  cVar8 = func_?();
-  out(extraout_DX,cVar8);
-  bVar9 = (byte)((ushort)extraout_DX >> 8);
-  *(byte *)&pMVar1->klass = *(byte *)&pMVar1->klass ^ bVar9;
-  *(byte *)&pMVar1->klass = *(byte *)&pMVar1->klass ^ bVar9;
-  *(byte *)&pMVar1->klass = *(byte *)&pMVar1->klass ^ bVar9;
-  *unaff_EBX = *unaff_EBX + cVar8;
+  func_?();
+  pMVar1->klass = (MVSpawnPoint__Class *)((uint)pMVar1->klass ^ (uint)pMVar1);
+  pMVar1->klass = (MVSpawnPoint__Class *)((uint)pMVar1->klass ^ (uint)pMVar1);
   pMVar1->klass = (MVSpawnPoint__Class *)((uint)pMVar1->klass ^ (uint)pMVar1);
   in(extraout_DX);
   switch(this) {

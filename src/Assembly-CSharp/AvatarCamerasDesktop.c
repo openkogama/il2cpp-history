@@ -12,7 +12,7 @@ void Assembly-CSharp.dll::AvatarCamerasDesktop::AvatarCamerasDesktop_Initialize
     pTVar2 = (this->fields).thirdPersonDesktopCamera;
     if (pTVar2 != (ThirdPersonCamera *)0x0) {
       (*(code *)(pTVar2->klass->vtable).Initialize.method)
-                (pTVar2,avatarLocal,(pTVar2->klass->vtable).CameraCollision.methodPtr);
+                (pTVar2,avatarLocal,(pTVar2->klass->vtable).UpdateFromCameraSettings.methodPtr);
       pLVar3 = (this->fields).lobbyStateCamera;
       if (pLVar3 != (LobbyStateCamera *)0x0) {
         LobbyStateCamera::LobbyStateCamera_Initialize(pLVar3,avatarLocal,(MethodInfo *)0x0);

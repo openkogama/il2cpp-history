@@ -136,11 +136,11 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
              mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
   values = (String__Array *)func_?();
   if (values != (String__Array *)0x0) {
-    uStack8 = 0;
+    puStack8 = (undefined *)0x0;
     pSStack9 = pSVar1;
     func_?();
     puStack10 = (undefined *)statType;
-    uStack11 = 1;
+    puStack11 = (undefined *)0x1;
     func_?();
     pSStack12 = ::StringLiteral__;
     func_?();
@@ -155,14 +155,18 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
     return pSVar1;
   }
-  piVar13 = (int *)func_?();
-  iVar4 = (int)piVar13 >> 0x1f;
-  *piVar13 = *piVar13 - iVar4;
-  *piVar13 = *piVar13 - iVar4;
-  *piVar13 = *piVar13 - iVar4;
-  *piVar13 = *piVar13 - iVar4;
-  *piVar13 = *piVar13 - iVar4;
-  *piVar13 = *piVar13 - iVar4;
+  func_?();
+  pSStack9 = (String *)CONCAT22(pSStack9._2_2_,in_CS);
+  uVar13 = 0x1029;
+  func_?();
+  puStack8 = (undefined *)CONCAT22(puStack8._2_2_,uVar13);
+  uVar13 = 0x1029;
+  func_?();
+  puStack10 = (undefined *)CONCAT22(puStack10._2_2_,uVar13);
+  uVar13 = 0x1029;
+  func_?();
+  puStack11 = (undefined *)CONCAT22(puStack11._2_2_,uVar13);
+  func_?();
   pcVar14 = (code *)swi(3);
   pSVar1 = (String *)(*pcVar14)();
   return pSVar1;

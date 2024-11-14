@@ -359,8 +359,8 @@ public class PrefabPool : MonoBehaviour
 	private RectTransform editEdgeHelpText;
 	[SerializeField]
 	private RectTransform editFaceHelpText;
-	[Header("Cameras")]
 	[Header("Editor")]
+	[Header("Cameras")]
 	[SerializeField]
 	[Space(20f)]
 	[Space(20f)]

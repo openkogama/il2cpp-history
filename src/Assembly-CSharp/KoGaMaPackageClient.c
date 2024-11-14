@@ -687,11 +687,11 @@ Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
     func_?();
     func_?();
     func_?();
-    func_?(0xcc);
-    func_?(0x8c);
+    func_?(0xd8);
+    func_?(0x98);
     func_?(&TypeInfo__CollectTheItemDropOff);
-    func_?(0x4c);
-    func_?(200);
+    func_?(0x58);
+    func_?(0xd0);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                    );
@@ -709,11 +709,11 @@ Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
     func_?();
     func_?();
     func_?();
-    func_?(4);
-    func_?(0x40);
+    func_?(0xc);
+    func_?(0x44);
     func_?(&TypeInfo__MVCameraSettings);
-    func_?(0xec);
-    func_?(0x9c);
+    func_?(0xf4);
+    func_?(0xa0);
     func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__MVCostumeBaseBlueprint);
     func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__MVCostumeBase);
     func_?(&TypeInfo__MVCountingCube);
@@ -725,11 +725,11 @@ Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
     func_?();
     func_?();
     func_?();
-    func_?(0x5c);
-    func_?(0xd0);
+    func_?(100);
+    func_?(0xd8);
     func_?(&TypeInfo__MVFlag);
-    func_?(0x80);
-    func_?(0x44);
+    func_?(0x84);
+    func_?(0x4c);
     func_?(&TypeInfo__MVGameOptionDataObject);
     func_?(&TypeInfo__MVGamePassProgressionDataObject);
     func_?(&TypeInfo__MVGamePointChest);
@@ -741,13 +741,13 @@ Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
     func_?();
     func_?();
     func_?();
-    func_?(0x9c);
-    func_?(0x10);
+    func_?(0xa4);
+    func_?(0x18);
     func_?(&
                     TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MVMeleeWeaponBaseBlueprint
                    );
-    func_?(0xe0);
-    func_?(0x54);
+    func_?(0xe8);
+    func_?(0x5c);
     func_?(&TypeInfo__MVMovingPlatformGroup);
     func_?(&TypeInfo__MVMovingPlatformNode);
     func_?(&TypeInfo__MVMovingPlatform);
@@ -759,11 +759,11 @@ Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
     func_?();
     func_?();
     func_?();
-    func_?(0xe8);
-    func_?(0x20);
+    func_?(0xec);
+    func_?(0x28);
     func_?(&TypeInfo__MVRandomBox);
-    func_?(8);
-    func_?(0x44);
+    func_?(0x10);
+    func_?(0x48);
     func_?(&TypeInfo__MVSentryGunBlueprint);
     func_?(&TypeInfo__MVSentryGun);
     func_?(&TypeInfo__MVSkybox);
@@ -775,11 +775,11 @@ Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
     func_?();
     func_?();
     func_?();
-    func_?(4);
-    func_?(0x78);
+    func_?(0xc);
+    func_?(0x80);
     func_?(&TypeInfo__MVToggleBox);
-    func_?(0xec);
-    func_?(0x9c);
+    func_?(0xf4);
+    func_?(0xa0);
     func_?(&TypeInfo__MVWaterPlanePreset);
     func_?(&TypeInfo__MVWaterPlane);
     func_?(&TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy);
@@ -791,11 +791,11 @@ Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
     func_?();
     func_?();
     func_?();
-    func_?(0x20);
-    func_?(0x10);
+    func_?(0xec);
+    func_?(0xdc);
     func_?(&StringLiteral_WOCM_trying_to_create_unknown_ty);
     func_?();
-    func_?(0x10);
+    func_?(0xdc);
     func_?(&StringLiteral_BlueprintData);
     cRam_? = '\x01';
   }

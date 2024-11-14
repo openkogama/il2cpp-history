@@ -956,7 +956,7 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_Resume
         pMVar11 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
                             ((MethodInfo *)0x0);
         if (pMVar11 != (MainCameraManager *)0x0) {
-          pIStack12 = (this->klass->vtable).Enter.methodPtr;
+          pIStack12 = (this->klass->vtable).CameraCollision.methodPtr;
           pPStack13 = (pMVar11->fields).protectedTransform;
           pMStack14 = cameraController;
           (*(code *)(this->klass->vtable).UpdateCamera.method)();

@@ -46,13 +46,13 @@ void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::
                MethodInfo__System__Collections__Generic__List<System::String>__List__);
     if (cancelAnimations == (MethodInfo *)0x0) goto code_?;
     func_?();
-    p_Var4 = (_union_86 *)
+    p_Var3 = (_union_86 *)
              MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
                        ((Quaternion *)&stack0xffffffd0,(MVWorldObject *)0x0,in_stack_2);
-    _Var14 = (_union_86)p_Var4->dummy;
-    pMVar3 = p_Var4[1].dummy;
-    uStack_4 = *(undefined8 *)(p_Var4 + 2);
-    p_Var4 = (_union_86 *)
+    _Var14 = (_union_86)p_Var3->dummy;
+    pMVar3 = p_Var3[1].dummy;
+    uStack_4 = *(undefined8 *)(p_Var3 + 2);
+    p_Var3 = (_union_86 *)
              MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
                        ((Quaternion *)&_Stack_20,(MVWorldObject *)0x0,in_stack_5);
     maxPitch = 45.0;
@@ -81,22 +81,22 @@ void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::
                MethodInfo__System__Collections__Generic__List<System::String>__List__);
     if (cancelAnimations == (MethodInfo *)0x0) goto code_?;
     func_?();
-    p_Var4 = (_union_86 *)
+    p_Var3 = (_union_86 *)
              MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
                        ((Quaternion *)&stack0xffffffd0,(MVWorldObject *)0x0,in_stack_2);
-    _Var14 = (_union_86)p_Var4->dummy;
-    pMVar3 = p_Var4[1].dummy;
-    uStack_4 = *(undefined8 *)(p_Var4 + 2);
-    p_Var4 = (_union_86 *)
+    _Var14 = (_union_86)p_Var3->dummy;
+    pMVar3 = p_Var3[1].dummy;
+    uStack_4 = *(undefined8 *)(p_Var3 + 2);
+    p_Var3 = (_union_86 *)
              MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
                        ((Quaternion *)&_Stack_20,(MVWorldObject *)0x0,in_stack_5);
     maxPitch = 20.0;
     maxYaw = 90.0;
 code_?:
-    _Var9 = (_union_86)p_Var4->dummy;
-    pIVar6 = p_Var4[1].dummy;
-    ppIVar7 = p_Var4[2].dummy;
-    _Var12 = (_union_154)p_Var4[3].dummy;
+    _Var9 = (_union_86)p_Var3->dummy;
+    pIVar6 = p_Var3[1].dummy;
+    ppIVar7 = p_Var3[2].dummy;
+    _Var12 = (_union_154)p_Var3[3].dummy;
     _Var8 = _Stack_24;
     break;
   case BodyData_PartIndex__Enum_RArm:
@@ -183,16 +183,16 @@ code_?:
     uStack_9._4_4_ = (Il2CppType **)pQVar11->z;
     _Stack_14 = (_union_154)pQVar11->w;
     _Stack_20.dummy = (void *)0x0;
-    p_Var4 = &_Stack_20;
+    p_Var3 = &_Stack_20;
     func_?();
-    p_Var4 = (_union_86 *)
+    p_Var3 = (_union_86 *)
              MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
-                       ((Quaternion *)&stack0xffffffd0,(MVWorldObject *)0x0,(MethodInfo *)p_Var4);
+                       ((Quaternion *)&stack0xffffffd0,(MVWorldObject *)0x0,(MethodInfo *)p_Var3);
     uStack_8._0_2_ = 0x6666;
     uStack_8._2_2_ = 0x4298;
-    _Var9 = (_union_86)p_Var4->dummy;
-    pIVar6 = p_Var4[1].dummy;
-    ppIVar7 = p_Var4[2].dummy;
+    _Var9 = (_union_86)p_Var3->dummy;
+    pIVar6 = p_Var3[1].dummy;
+    ppIVar7 = p_Var3[2].dummy;
     _Stack_10.genericMethod = (Il2CppGenericMethod *)0x0;
     uStack_9._4_4_ = _UNK_?;
     uStack_9._0_4_ = (MethodInfo *)_UNK_?;
@@ -227,10 +227,14 @@ code_?:
   if (this_00 == (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) {
 code_?:
     bVar12 = 0;
-    bVar13 = func_?();
-    *(byte *)&((List_1_System_String___Fields *)&cancelAnimations[2].invoker_method)->_items =
-         *(char *)&((List_1_System_String___Fields *)&cancelAnimations[2].invoker_method)->_items +
-         extraout_DL + (0x99 < bVar13 | bVar12);
+    iVar13 = func_?();
+    *(char *)(extraout_ECX + -0x33efd096) =
+         *(char *)(extraout_ECX + -0x33efd096) + (char)((uint)iVar13 >> 8) +
+         (0x99 < (byte)iVar13 ||
+         (CARRY1((byte)cancelAnimations,extraout_DL) ||
+         CARRY1((byte)cancelAnimations + extraout_DL,
+                &stack0xfffffffc < *(undefined1 **)(iVar13 + 0x2f) ||
+                &stack0xfffffffc + -*(uint *)(iVar13 + 0x2f) < (undefined1 *)(uint)bVar12)));
     pcVar14 = (code *)swi(3);
     (*pcVar14)();
     return;

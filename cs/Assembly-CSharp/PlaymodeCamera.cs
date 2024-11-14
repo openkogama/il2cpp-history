@@ -44,9 +44,9 @@ public abstract class PlaymodeCamera : MVPlaymodeCameraBase
 	private class SmoothLookAt
 	{
 		// Fields
-		private int samleLength;
-		private Queue<Vector3> prevVelocities;
-		private float maxMag;
+		private const float maxMag = 30f;
+		private const int samleLength = 5;
+		private readonly Queue<Vector3> prevVelocities;
 
 		// Constructors
 		public SmoothLookAt();
@@ -66,6 +66,6 @@ public abstract class PlaymodeCamera : MVPlaymodeCameraBase
 	public override void Reset();
 	public override void UpdateCamera(MVCameraController camController, ProtectedTransform targetTransform);
 	private void UpdatePosition();
-	protected virtual void CameraCollision();
+	protected override void CameraCollision();
 }
 

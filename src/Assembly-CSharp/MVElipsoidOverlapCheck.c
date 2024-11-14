@@ -1331,55 +1331,46 @@ Vector3 * Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_Ge
   if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVElipsoidOverlapCheck);
   }
-  vector.y = tangent0.y;
-  vector.x = tangent0.x;
-  vector.z = tangent0.z;
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
-                     ((Vector3 *)&stack0xfffffff0,
-                      &TypeInfo__MVElipsoidOverlapCheck->static_fields->worldToElipsoidSpace,vector,
-                      (MethodInfo *)0x0);
-  uVar2 = pVVar1->x;
-  uVar3 = pVVar1->y;
-  tangent0.z = pVVar1->z;
-  tangent0.x = (float)uVar2;
-  tangent0.y = (float)uVar3;
-  iVar4 = func_?(&stack0xffffffe4,&tangent0,0);
-  vector_00.y = tangent1.y;
-  vector_00.x = tangent1.x;
-  vector_00.z = tangent1.z;
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
-                     (&tangent1,
-                      &TypeInfo__MVElipsoidOverlapCheck->static_fields->worldToElipsoidSpace,
-                      vector_00,*(MethodInfo **)(iVar4 + 8));
-  fVar5 = 0.0;
-  uVar6 = pVVar1->x;
-  uVar7 = pVVar1->y;
-  tangent0.z = pVVar1->z;
-  pVVar1 = &tangent0;
-  puVar8 = &stack0xffffffe4;
-  tangent0.x = (float)uVar6;
-  tangent0.y = (float)uVar7;
-  puVar9 = (undefined8 *)func_?();
-  tangent1.x = (float)*puVar9;
-  tangent1.y = (float)((ulonglong)*puVar9 >> 0x20);
-  tangent0.x = (float)pVVar1 * *(float *)(puVar9 + 1) - fVar5 * tangent1.y;
-  tangent0.z = (float)puVar8 * tangent1.y - (float)pVVar1 * tangent1.x;
-  tangent0.y = fVar5 * tangent1.x - (float)puVar8 * *(float *)(puVar9 + 1);
-  tangent1.z = tangent0.z;
-  pVVar1 = (Vector3 *)func_?();
-  uVar10 = pVVar1->x;
-  uVar11 = pVVar1->y;
-  tangent0.y = pVVar1->z;
-  tangent0.z = 0.0;
-  tangent0.x = (float)uVar11;
+  vector_00.y = tangent0.y;
+  vector_00.x = tangent0.x;
+  vector_00.z = tangent0.z;
   pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
                      (&tangent0,
-                      &TypeInfo__MVElipsoidOverlapCheck->static_fields->elipsoidSpaceToWorld,*pVVar1
-                      ,(MethodInfo *)0x0);
+                      &TypeInfo__MVElipsoidOverlapCheck->static_fields->worldToElipsoidSpace,
+                      vector_00,(MethodInfo *)0x0);
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&tangent0,*pVVar1,(MethodInfo *)0x0);
+  fVar2 = tangent1.x;
+  uVar3 = pVVar1->x;
+  uVar4 = pVVar1->y;
   fVar5 = pVVar1->z;
-  *(undefined8 *)uVar10 = *(undefined8 *)pVVar1;
-  *(float *)(uVar10 + 8) = fVar5;
-  return (Vector3 *)uVar10;
+  tangent1.y = 0.0;
+  tangent0.y = tangent1.x;
+  tangent0.z = 0.0;
+  tangent1.x = tangent1.z;
+  tangent0.x = (float)TypeInfo__MVElipsoidOverlapCheck->static_fields;
+  vector.y = 0.0;
+  vector.x = fVar2;
+  vector.z = tangent1.z;
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
+                     (&tangent0,(Matrix4x4 *)tangent0.x,vector,(MethodInfo *)0x0);
+  tangent1.z = (float)&UNK_?;
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&tangent1,*pVVar1,(MethodInfo *)0x0);
+  uVar6 = pVVar1->x;
+  uVar7 = pVVar1->y;
+  tangent0.z = (float)uVar3 * (float)uVar7 - (float)uVar6 * (float)uVar4;
+  value.y = (float)uVar6 * fVar5 - (float)uVar3 * pVVar1->z;
+  value.x = pVVar1->z * (float)uVar4 - (float)uVar7 * fVar5;
+  value.z = tangent0.z;
+  tangent0.x = (float)uVar6;
+  tangent0.y = (float)uVar7;
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&tangent0,value,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
+            (&tangent0,&TypeInfo__MVElipsoidOverlapCheck->static_fields->elipsoidSpaceToWorld,
+             *pVVar1,(MethodInfo *)0x0);
+  return &tangent0;
 }
 
 
@@ -1501,7 +1492,7 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_HandleC
 
 {
   if (cRam_? == '\0') {
-    func_?(0xcdcc);
+    func_?(0xcdd8);
     func_?(&TypeInfo__ICubeModelCollider);
     func_?(&TypeInfo__MVElipsoidOverlapCheck);
     cRam_? = '\x01';

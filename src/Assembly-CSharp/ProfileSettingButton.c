@@ -105,23 +105,27 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_OnClick
   pOVar3 = Assets::Scripts::ProfileSettings::ProfileSettingsManager::
            ProfileSettingsManager_GetSettingValue(PVar2,(MethodInfo *)0x0);
   uVar4 = CONCAT44(TypeInfo__System__Int32,pOVar3);
-  bVar5 = 0;
-  if (pOVar3 == (Object *)0x0) {
+  cVar5 = '\0';
+  cVar6 = (int)pOVar3 < 0;
+  uVar7 = pOVar3 == (Object *)0x0;
+  if ((bool)uVar7) {
     uVar4 = func_?();
   }
   else {
-    pIVar6 = (pOVar3->klass->_0).element_class;
-    pIVar7 = (TypeInfo__System__Int32->_0).element_class;
-    bVar5 = pIVar6 < pIVar7;
-    if (pIVar6 == pIVar7) {
-      piVar8 = (int *)func_?(pOVar3);
-      pPVar9 = (ProfileSettingButton *)(pPVar1->fields).minValue;
-      pPVar10 = (ProfileSettingButton *)
-                ((uint)((pPVar1->fields).isIncrease != 0) * 2 + -1 + *piVar8);
-      if (((int)pPVar9 <= (int)pPVar10) &&
-         (pPVar11 = (ProfileSettingButton *)(pPVar1->fields).maxValue, pPVar9 = pPVar10,
-         (int)pPVar11 < (int)pPVar10)) {
-        pPVar9 = pPVar11;
+    pIVar8 = (pOVar3->klass->_0).element_class;
+    pIVar9 = (TypeInfo__System__Int32->_0).element_class;
+    cVar5 = SBORROW4((int)pIVar8,(int)pIVar9);
+    cVar6 = (int)pIVar8 - (int)pIVar9 < 0;
+    uVar7 = 0;
+    if (pIVar8 == pIVar9) {
+      piVar10 = (int *)func_?(pOVar3);
+      pPVar11 = (ProfileSettingButton *)(pPVar1->fields).minValue;
+      pPVar12 = (ProfileSettingButton *)
+                ((uint)((pPVar1->fields).isIncrease != 0) * 2 + -1 + *piVar10);
+      if (((int)pPVar11 <= (int)pPVar12) &&
+         (pPVar13 = (ProfileSettingButton *)(pPVar1->fields).maxValue, pPVar11 = pPVar12,
+         (int)pPVar13 < (int)pPVar12)) {
+        pPVar11 = pPVar13;
       }
       PVar2 = (pPVar1->fields).profileSettingKey;
       if (cRam_? == '\0') {
@@ -137,36 +141,36 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_OnClick
       value = StringLiteral_Error;
       switch((pPVar1->fields).profileSettingKey) {
       case 1:
-        this = pPVar9;
+        this = pPVar11;
         value = (String *)
                 func_?(TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue,&this);
         break;
       case 2:
-        pPStack_12 = pPVar9;
+        pPStack_14 = pPVar11;
         value = (String *)
-                func_?(TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel,&pPStack_12)
+                func_?(TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel,&pPStack_14)
         ;
         break;
       case 3:
-        pPStack_13 = pPVar9;
-        value = (String *)func_?(TypeInfo__UnityEngine__FilterMode,&pPStack_13);
+        pPStack_15 = pPVar11;
+        value = (String *)func_?(TypeInfo__UnityEngine__FilterMode,&pPStack_15);
         break;
       case 4:
-        pPStack_14 = pPVar9;
+        pPStack_16 = pPVar11;
         value = (String *)
                 func_?(TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel,
-                                &pPStack_14);
+                                &pPStack_16);
         break;
       case 5:
-        pPStack_15 = pPVar9;
+        pPStack_17 = pPVar11;
         value = (String *)
-                func_?(TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel,&pPStack_15);
+                func_?(TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel,&pPStack_17);
         break;
       case 6:
-        pPStack_16 = pPVar9;
+        pPStack_18 = pPVar11;
         value = (String *)
                 func_?(TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel,
-                                &pPStack_16);
+                                &pPStack_18);
       }
       if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
           cctor_finished_or_no_cctor == 0) {
@@ -177,30 +181,20 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_OnClick
       return;
     }
   }
-  func_?(uVar4);
-  out(pPVar1->klass,extraout_DX);
-  bVar17 = CARRY1(*unaff_EBX,extraout_AH) || CARRY1(*unaff_EBX + extraout_AH,bVar5);
-  *unaff_EBX = *unaff_EBX + extraout_AH + bVar5;
-  pbVar18 = unaff_EBX + -0x5befdcf0;
-  bVar5 = *pbVar18 + (byte)extraout_CX;
-  bVar19 = CARRY1(*pbVar18,(byte)extraout_CX) || CARRY1(bVar5,bVar17);
-  *pbVar18 = bVar5 + bVar17;
-  bVar5 = *unaff_EBX;
-  bVar20 = *unaff_EBX;
-  *unaff_EBX = bVar20 + extraout_AH + bVar19;
-  bVar21 = (byte)((uint)unaff_EBX >> 8);
-  bVar17 = CARRY1(in_stack_22,bVar21) ||
-           CARRY1(in_stack_22 + bVar21,
-                  CARRY1(bVar5,extraout_AH) || CARRY1(bVar20 + extraout_AH,bVar19));
-  bVar19 = CARRY1(*unaff_EBX,extraout_AH) || CARRY1(*unaff_EBX + extraout_AH,bVar17);
-  *unaff_EBX = *unaff_EBX + extraout_AH + bVar17;
-  bVar20 = (byte)((ushort)extraout_CX >> 8);
-  bVar5 = bVar21 + bVar20;
-  pcVar23 = (char *)CONCAT22((short)((uint)unaff_EBX >> 0x10),
-                             CONCAT11(bVar5 + bVar19,(char)unaff_EBX));
-  *pcVar23 = *pcVar23 + extraout_AH + (CARRY1(bVar21,bVar20) || CARRY1(bVar5,bVar19));
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  uVar4 = func_?(uVar4);
+  puVar19 = (uint *)uVar4;
+  if ((bool)uVar7 || cVar5 != cVar6) {
+    uVar20 = (uint)((ulonglong)uVar4 >> 0x20) & *puVar19;
+    bVar21 = *unaff_EBX;
+    bVar22 = (byte)((ulonglong)uVar4 >> 8);
+    *unaff_EBX = *unaff_EBX + bVar22;
+    (&UNK_? + (int)puVar19)[uVar20] =
+         (&UNK_? + (int)puVar19)[uVar20] + (char)(uVar20 >> 8) + CARRY1(bVar21,bVar22);
+    out(0x10,(char)uVar4);
+  }
+  (*(code *)*puVar19)();
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 
@@ -379,11 +373,9 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
       func_?(TypeInfo__System__Enum);
     }
     pAVar2 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    cVar3 = (int)pAVar2 < 0;
-    uVar4 = pAVar2 == (Array *)0x0;
-    if (!(bool)uVar4) {
-      iVar5 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
-      iVar6 = iVar5 + -1;
+    if (pAVar2 != (Array *)0x0) {
+      iVar3 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
+      iVar4 = iVar3 + -1;
       break;
     }
     goto code_?;
@@ -398,11 +390,9 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
       func_?(TypeInfo__System__Enum);
     }
     pAVar2 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    cVar3 = (int)pAVar2 < 0;
-    uVar4 = true;
     if (pAVar2 == (Array *)0x0) goto code_?;
-    iVar5 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
-    iVar6 = iVar5 + -1;
+    iVar3 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
+    iVar4 = iVar3 + -1;
     break;
   case 3:
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
@@ -415,11 +405,9 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
       func_?(TypeInfo__System__Enum);
     }
     pAVar2 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    cVar3 = (int)pAVar2 < 0;
-    uVar4 = true;
     if (pAVar2 == (Array *)0x0) goto code_?;
-    iVar5 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
-    iVar6 = iVar5 + -1;
+    iVar3 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
+    iVar4 = iVar3 + -1;
     break;
   case 4:
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
@@ -432,11 +420,9 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
       func_?(TypeInfo__System__Enum);
     }
     pAVar2 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    cVar3 = (int)pAVar2 < 0;
-    uVar4 = true;
     if (pAVar2 == (Array *)0x0) goto code_?;
-    iVar5 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
-    iVar6 = iVar5 + -1;
+    iVar3 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
+    iVar4 = iVar3 + -1;
     break;
   case 5:
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
@@ -449,11 +435,9 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
       func_?(TypeInfo__System__Enum);
     }
     pAVar2 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    cVar3 = (int)pAVar2 < 0;
-    uVar4 = true;
     if (pAVar2 == (Array *)0x0) goto code_?;
-    iVar5 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
-    iVar6 = iVar5 + -1;
+    iVar3 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
+    iVar4 = iVar3 + -1;
     break;
   case 6:
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
@@ -466,16 +450,14 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
       func_?(TypeInfo__System__Enum);
     }
     pAVar2 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    cVar3 = (int)pAVar2 < 0;
-    uVar4 = true;
     if (pAVar2 == (Array *)0x0) goto code_?;
-    iVar5 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
-    iVar6 = iVar5 + -1;
+    iVar3 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
+    iVar4 = iVar3 + -1;
     break;
   default:
-    iVar6 = 1;
+    iVar4 = 1;
   }
-  (this->fields).maxValue = iVar6;
+  (this->fields).maxValue = iVar4;
   if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
       cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
@@ -483,17 +465,14 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
   key = (this->fields).profileSettingKey;
   this_00 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
             ProfileSettingsChanged;
-  cVar3 = (int)this_00 < 0;
-  uVar4 = true;
   if (this_00 ==
       (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)0x0) {
 code_?:
-    cVar7 = '\0';
     func_?();
-    pIVar8 = extraout_ECX;
+    pIVar5 = extraout_ECX;
   }
   else {
-    pDVar9 = (Delegate *)
+    pDVar6 = (Delegate *)
              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
              Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
                        ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,
@@ -506,9 +485,9 @@ code_?:
     SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
               (this_01,(Object *)this,MethodInfo__ProfileSettingButton__OnChange_System__Object_,
                (MethodInfo *)0x0);
-    pAVar10 = unaff_EDI;
+    pAVar7 = unaff_EDI;
     unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
-                          (pDVar9,(Delegate *)this_01,(MethodInfo *)0x0);
+                          (pDVar6,(Delegate *)this_01,(MethodInfo *)0x0);
     method_00 = 
     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
     ;
@@ -518,12 +497,9 @@ code_?:
     }
     else {
       value_00 = (Object *)func_?(unaff_ESI,TypeInfo__System__Action<System::Object>);
-      cVar7 = '\0';
-      cVar3 = (int)value_00 < 0;
-      uVar4 = 1;
       if (value_00 == (Object *)0x0) goto code_?;
     }
-    unaff_EDI = pAVar10;
+    unaff_EDI = pAVar7;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__set_Item
               ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,value_00,method_00);
@@ -535,31 +511,21 @@ code_?:
       func_?(&TypeInfo__System__Int32);
       cRam_? = '\x01';
     }
-    cVar3 = (int)unaff_ESI < 0;
-    uVar4 = true;
     if (unaff_ESI == (Delegate *)0x0) goto code_?;
-    pIVar11 = (((Type__Class *)unaff_ESI->klass)->_0).element_class;
-    pIVar12 = (TypeInfo__System__Int32->_0).element_class;
-    cVar7 = SBORROW4((int)pIVar11,(int)pIVar12);
-    cVar3 = (int)pIVar11 - (int)pIVar12 < 0;
-    uVar4 = 0;
-    pIVar8 = TypeInfo__System__Int32;
-    if (pIVar11 == pIVar12) {
-      pDVar9 = (Delegate *)&UNK_?;
-      pDVar13 = unaff_ESI;
-      piVar14 = (int *)func_?();
-      unaff_ESI = pDVar9;
+    pIVar5 = TypeInfo__System__Int32;
+    if ((((Type__Class *)unaff_ESI->klass)->_0).element_class ==
+        (TypeInfo__System__Int32->_0).element_class) {
+      pDVar6 = (Delegate *)&UNK_?;
+      piVar8 = (int *)func_?(unaff_ESI);
+      unaff_ESI = pDVar6;
       if ((this->fields).isIncrease == 0) {
-        value = (this->fields).minValue < *piVar14;
+        value = (this->fields).minValue < *piVar8;
       }
       else {
-        value = *piVar14 < (this->fields).maxValue;
+        value = *piVar8 < (this->fields).maxValue;
       }
       pBVar1 = (this->fields).button;
-      cVar3 = (int)pBVar1 < 0;
-      uVar4 = pBVar1 == (Button *)0x0;
-      this = (ProfileSettingButton *)pDVar13;
-      if (!(bool)uVar4) {
+      if (pBVar1 != (Button *)0x0) {
         UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable
                   ((Selectable *)pBVar1,value,(MethodInfo *)0x0);
         return;
@@ -567,16 +533,10 @@ code_?:
       goto code_?;
     }
   }
-  func_?(unaff_ESI,pIVar8);
+  func_?(unaff_ESI,pIVar5);
 code_?:
-  fVar15 = (float10)func_?(unaff_ESI,unaff_EDI);
-  if ((bool)uVar4 || cVar7 != cVar3) {
-    *(short *)&((Delegate *)this)->klass = (short)ROUND(fVar15);
-    *(char *)&(unaff_EDI->_0).image = *(char *)&(unaff_EDI->_0).image + (char)((uint)this >> 8);
-    (*pcRam_?)();
-  }
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
-  return;
+  func_?(unaff_ESI,unaff_EDI);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 

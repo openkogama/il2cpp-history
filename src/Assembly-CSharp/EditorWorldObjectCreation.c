@@ -832,7 +832,7 @@ bool Assembly-CSharp.dll::EditorWorldObjectCreation::
                                  MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
                                 );
               if (pMVar11 != (MVCameraBase *)0x0) {
-                func_?(0xd,pMVar11,RVar12,0x40000000,0,0,0,0);
+                func_?(0xe,pMVar11,RVar12,0x40000000,0,0,0,0);
                 pSVar13 = TM::TM__(StringLiteral_There_can_be_only_one_of_this_ob,(MethodInfo *)0x0);
                 if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();

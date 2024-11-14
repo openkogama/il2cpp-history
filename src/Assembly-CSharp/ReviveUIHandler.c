@@ -1009,10 +1009,10 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched
           func_?(TypeInfo__UnityEngine__Object);
         }
         pOVar5 = (Object__Class *)
-                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)original,
-                             NotificationPopup_MethodInfo__UnityEngine__Object__Instantiate<NotificationPopup>_NotificationPopup_
-                            );
+                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                           ((Object *)original,
+                            NotificationPopup_MethodInfo__UnityEngine__Object__Instantiate<NotificationPopup>_NotificationPopup_
+                           );
         value[1].klass = pOVar5;
         func_?(value + 1,pOVar5);
         unaff_EBX = value[1].klass;
@@ -1077,18 +1077,20 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched
   this = unaff_EDI;
 code_?:
   pbVar9 = (byte *)func_?();
-  *(byte *)&this->klass = *(byte *)&this->klass | extraout_DL;
-  bVar10 = *pbVar9;
-  bVar11 = (byte)extraout_CX;
-  *pbVar9 = *pbVar9 + bVar11;
-  puVar12 = (undefined1 *)((int)&unaff_EBX[-0x30cc85].rgctx_data + 2);
-  bVar13 = *puVar12;
-  bVar14 = (byte)((ushort)extraout_CX >> 8);
-  bVar15 = *puVar12 + bVar14;
-  *puVar12 = bVar15 + CARRY1(bVar10,bVar11);
-  *pbVar9 = *pbVar9 + bVar11 + (CARRY1(bVar13,bVar14) || CARRY1(bVar15,CARRY1(bVar10,bVar11)));
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  bVar10 = *(byte *)&this->klass < extraout_DL;
+  *(byte *)&this->klass = *(char *)&this->klass - extraout_DL;
+  bVar11 = *pbVar9;
+  bVar12 = (byte)((ushort)extraout_CX >> 8);
+  bVar13 = *pbVar9;
+  *pbVar9 = bVar13 + bVar12 + bVar10;
+  *pbVar9 = *pbVar9 + bVar12 +
+             (CARRY1(extraout_DH,extraout_DH) ||
+             CARRY1(extraout_DH * '\x02',
+                    CARRY1((byte)unaff_EBX,(byte)extraout_CX) ||
+                    CARRY1((byte)unaff_EBX + (byte)extraout_CX,
+                           CARRY1(bVar11,bVar12) || CARRY1(bVar13 + bVar12,bVar10))));
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

@@ -13,11 +13,8 @@ using UnityEngine;
 public class MVPointLight : MVLogicObject, ILogicWorldObject
 {
 	// Fields
-	private MVPointLightObject lightObject;
-	private Light lightComponent;
-	private float minumumScale;
-	private float rangeMaxValue;
-	private float scaleRestriction;
+	private readonly MVPointLightObject lightObject;
+	private readonly Light lightComponent;
 	private bool inputVisible;
 	[CompilerGenerated]
 	private IInputSignalReceiver _InputSignalReceiver_k__BackingField;

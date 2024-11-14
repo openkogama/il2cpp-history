@@ -83,8 +83,8 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::MVCameraController_Cam
           return;
         }
         if (DStack_6._currentValue == (Object *)0x0) break;
-        (*(code *)(DStack_6._currentValue)->klass[1]._0.implementedInterfaces)
-                  (DStack_6._currentValue,(DStack_6._currentValue)->klass[1].interfaceOffsets);
+        (*(code *)(DStack_6._currentValue)->klass[1].static_fields)
+                  (DStack_6._currentValue,(DStack_6._currentValue)->klass[1].rgctx_data);
       }
     }
   }
@@ -129,8 +129,8 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::MVCameraController_Cam
                             (pLVar2,index,
                              MethodInfo__System__Collections__Generic__List<MVCameraBase>__get_Item_int_
                             ), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-      (**(code **)(*(int *)RVar3 + 0x108))
-                (RVar3,cameraController,*(undefined4 *)(*(int *)RVar3 + 0x10c));
+      (**(code **)(*(int *)RVar3 + 0x110))
+                (RVar3,cameraController,*(undefined4 *)(*(int *)RVar3 + 0x114));
       this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
       pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                (this->fields).activeCameras;
@@ -250,8 +250,8 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::MVCameraController_Cam
           return;
         }
         if (DStack_6._currentValue == (Object *)0x0) break;
-        (*(code *)(DStack_6._currentValue)->klass[1].static_fields)
-                  (DStack_6._currentValue,(DStack_6._currentValue)->klass[1].rgctx_data);
+        (*(code *)(DStack_6._currentValue)->klass[1]._1.typeHierarchy)
+                  (DStack_6._currentValue,(DStack_6._currentValue)->klass[1]._1.unity_user_data);
       }
     }
   }
@@ -301,8 +301,8 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::MVCameraController_Cam
                             (pLVar2,index,
                              MethodInfo__System__Collections__Generic__List<MVCameraBase>__get_Item_int_
                             ), RVar3 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-      (**(code **)(*(int *)RVar3 + 0x108))
-                (RVar3,cameraController,*(undefined4 *)(*(int *)RVar3 + 0x10c));
+      (**(code **)(*(int *)RVar3 + 0x110))
+                (RVar3,cameraController,*(undefined4 *)(*(int *)RVar3 + 0x114));
       pMVar4 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
       pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                (this->fields).activeCameras;
@@ -540,8 +540,8 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::
                          MethodInfo__System__Collections__Generic__List<MVCameraBase>__get_Item_int_
                         );
       if (RVar3 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      (**(code **)(*(int *)RVar3 + 0x110))
-                (RVar3,cameraController,*(undefined4 *)(*(int *)RVar3 + 0x114));
+      (**(code **)(*(int *)RVar3 + 0x118))
+                (RVar3,cameraController,*(undefined4 *)(*(int *)RVar3 + 0x11c));
     }
     pLVar1 = (this->fields).activeCameras;
     if (pLVar1 != (List_1_MVCameraBase_ *)0x0) {
@@ -664,7 +664,7 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::
                           (pLVar3,index,
                            MethodInfo__System__Collections__Generic__List<MVCameraBase>__get_Item_int_
                           ), RVar4 != (RegexCharClass_SingleRange)0x0)) {
-      func_?(9,RVar4,cameraController);
+      func_?(10,RVar4,cameraController);
       this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
       object = MVCameraController_CameraStack_get_CurCamera(this,(MethodInfo *)0x0);
       this_01 = (UnityAction_2_System_Object_System_Object_ *)
@@ -698,7 +698,7 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::
                                    (pLVar3,index + -1,
                                     MethodInfo__System__Collections__Generic__List<MVCameraBase>__get_Item_int_
                                    ), RVar4 != (RegexCharClass_SingleRange)0x0)) {
-            func_?(0xb,RVar4,cameraController);
+            func_?(0xc,RVar4,cameraController);
             return;
           }
         }
@@ -783,8 +783,8 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::MVCameraController_Cam
                             (pLVar2,index,
                              MethodInfo__System__Collections__Generic__List<MVCameraBase>__get_Item_int_
                             ), RVar3 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-      (**(code **)(*(int *)RVar3 + 0x108))
-                (RVar3,cameraController,*(undefined4 *)(*(int *)RVar3 + 0x10c));
+      (**(code **)(*(int *)RVar3 + 0x110))
+                (RVar3,cameraController,*(undefined4 *)(*(int *)RVar3 + 0x114));
       pMVar4 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
       pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                (this->fields).activeCameras;

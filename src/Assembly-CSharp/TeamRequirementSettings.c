@@ -157,24 +157,23 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
                     unaff_EBX = (pTVar1->fields).buttonTeamBlueName;
                     if ((this_02 != (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0) &&
                        (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                  Int32Enum,System::Object]::
-                                  Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02
-                                             ,0,
-                                             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
-                                            ), unaff_EBX != (Text *)0x0)) {
+                                 Int32Enum,System::Object]::
+                                 Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02,
+                                            0,
+                                            MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
+                                           ), unaff_EBX != (Text *)0x0)) {
                       (*(code *)(unaff_EBX->klass->vtable).set_text.method)
                                 (unaff_EBX,pOVar5,
                                  (unaff_EBX->klass->vtable).CalculateLayoutInputHorizontal_1.
                                  methodPtr);
                       pTVar11 = (pTVar1->fields).buttonTeamRedName;
                       pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                Int32Enum,System::Object]::
-                                Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02,1
-                                           ,
-                                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
-                                          );
+                               Int32Enum,System::Object]::
+                               Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02,1,
+                                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
+                                         );
                       unaff_EBX = (Text *)0x0;
                       if (pTVar11 != (Text *)0x0) {
                         (*(code *)(pTVar11->klass->vtable).set_text.method)
@@ -183,12 +182,12 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
                                    methodPtr);
                         pTVar11 = (pTVar1->fields).buttonTeamGreenName;
                         pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                  Int32Enum,System::Object]::
-                                  Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02
-                                             ,2,
-                                             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
-                                            );
+                                 Int32Enum,System::Object]::
+                                 Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02,
+                                            2,
+                                            MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
+                                           );
                         unaff_EBX = (Text *)0x0;
                         if (pTVar11 != (Text *)0x0) {
                           (*(code *)(pTVar11->klass->vtable).set_text.method)
@@ -196,13 +195,13 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
                                      (pTVar11->klass->vtable).CalculateLayoutInputHorizontal_1.
                                      methodPtr);
                           pTVar11 = (pTVar1->fields).buttonTeamYellowName;
-                          pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System
-                                    ::Int32Enum,System::Object]::
-                                    Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                              ((Dictionary_2_System_Int32Enum_System_Object_ *)
-                                               this_02,3,
-                                               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
-                                              );
+                          pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                   Int32Enum,System::Object]::
+                                   Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                             ((Dictionary_2_System_Int32Enum_System_Object_ *)
+                                              this_02,3,
+                                              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
+                                             );
                           unaff_EBX = (Text *)0x0;
                           if (pTVar11 != (Text *)0x0) {
                             unaff_EBX = (Text *)(pTVar11->klass->vtable).
@@ -210,8 +209,8 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
                             (*(code *)(pTVar11->klass->vtable).set_text.method)(pTVar11,pOVar5);
                             pSVar12 = (pTVar1->fields).buttonTeamNone;
                             pOVar5 = (Object *)
-                                      func_?(TypeInfo__MV__WorldObject__MVTeam,
-                                                      &stack0xfffffff8);
+                                     func_?(TypeInfo__MV__WorldObject__MVTeam,
+                                                     &stack0xfffffff8);
                             iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32
                                                (pOVar5,(MethodInfo *)0x0);
                             this_02 = (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0;
@@ -220,8 +219,8 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
                                         (pSVar12,StringLiteral_team,iVar2,(MethodInfo *)0x0);
                               pSVar12 = (pTVar1->fields).buttonTeamBlue;
                               pOVar5 = (Object *)
-                                        func_?(TypeInfo__MV__WorldObject__MVTeam,
-                                                        &stack0xfffffff4);
+                                       func_?(TypeInfo__MV__WorldObject__MVTeam,
+                                                       &stack0xfffffff4);
                               iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32
                                                  (pOVar5,(MethodInfo *)0x0);
                               this_02 = (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0;
@@ -230,8 +229,8 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
                                           (pSVar12,StringLiteral_team,iVar2,(MethodInfo *)0x0);
                                 pSVar12 = (pTVar1->fields).buttonTeamRed;
                                 pOVar5 = (Object *)
-                                          func_?(TypeInfo__MV__WorldObject__MVTeam,
-                                                          &stack0xfffffff0);
+                                         func_?(TypeInfo__MV__WorldObject__MVTeam,
+                                                         &stack0xfffffff0);
                                 iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32
                                                    (pOVar5,(MethodInfo *)0x0);
                                 this_02 = (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0;
@@ -241,8 +240,8 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
                                   this_02 = (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)
                                             (pTVar1->fields).buttonTeamGreen;
                                   pOVar5 = (Object *)
-                                            func_?(TypeInfo__MV__WorldObject__MVTeam,
-                                                            &stack0xffffffec);
+                                           func_?(TypeInfo__MV__WorldObject__MVTeam,
+                                                           &stack0xffffffec);
                                   iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32
                                                      (pOVar5,(MethodInfo *)0x0);
                                   if (this_02 !=
@@ -252,8 +251,8 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
                                                (MethodInfo *)0x0);
                                     pSVar12 = (pTVar1->fields).buttonTeamYellow;
                                     pOVar5 = (Object *)
-                                              func_?(TypeInfo__MV__WorldObject__MVTeam,
-                                                              &stack0xffffffe8);
+                                             func_?(TypeInfo__MV__WorldObject__MVTeam,
+                                                             &stack0xffffffe8);
                                     iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32
                                                        (pOVar5,(MethodInfo *)0x0);
                                     if (pSVar12 != (SettingsButton *)0x0) {
@@ -283,11 +282,11 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
     }
   }
   func_?();
-  pDVar13 = (Dictionary_2_System_Int32Enum_System_Object___Class *)in(extraout_DX);
-  this_02->klass = (Dictionary_2_MV_WorldObject_MVTeam_System_String___Class *)pDVar13;
-  bRam_? = bRam_? & (byte)((uint)unaff_EBX >> 8);
-  ppDVar14 = &(this_02->fields)._keys;
-  *(char *)ppDVar14 = *(char *)ppDVar14 + (char)((ushort)extraout_DX >> 8);
+  bVar13 = (byte)((uint)unaff_EBX >> 8);
+  bRam_? = bRam_? & bVar13;
+  piVar14 = &this_02[-0x1bfa965].fields._count;
+  *(char *)piVar14 = (char)*piVar14 + extraout_AH;
+  bRam_? = bRam_? & bVar13;
   pcVar15 = (code *)swi(3);
   (*pcVar15)();
   return;
@@ -358,9 +357,10 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
       func_?(value,TypeInfo__MV__WorldObject__MVTeam);
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar5 = func_?();
+  out(0x23,uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

@@ -21,10 +21,9 @@ Vector3 * Assembly-CSharp.dll::ClosestPointCapsule::ClosestPointCapsule_GetClose
       pCVar1 = (this->fields).capsule;
       if (((pCVar1 != (CapsuleCollider *)0x0) &&
           (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pCVar1,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)
-          ) && (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                         GameObject_get_transform(pGVar2,(MethodInfo *)0x0),
-               pTVar3 != (Transform *)0x0)) {
+                              ((Component *)pCVar1,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0))
+         && (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                (pGVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
                   ((Vector3 *)&stack0xffffffa0,pTVar3,(MethodInfo *)0x0);
         pCVar1 = (this->fields).capsule;
@@ -46,43 +45,50 @@ Vector3 * Assembly-CSharp.dll::ClosestPointCapsule::ClosestPointCapsule_GetClose
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
                         ((Vector3 *)&stack0xffffffa0,pTVar3,(MethodInfo *)0x0);
               pCVar1 = (this->fields).capsule;
-              if (((pCVar1 != (CapsuleCollider *)0x0) &&
-                  (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_get_gameObject((Component *)pCVar1,(MethodInfo *)0x0),
-                  pGVar2 != (GameObject *)0x0)) &&
-                 (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                           GameObject_get_transform(pGVar2,(MethodInfo *)0x0),
-                 pTVar3 != (Transform *)0x0)) {
-                pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                   ((Vector3 *)&stack0xffffffa0,pTVar3,(MethodInfo *)0x0);
-                fVar5 = pVVar4->x;
-                fVar6 = pVVar4->z;
-                iVar7 = func_?();
-                fVar8 = *(float *)(iVar7 + 8);
-                pCVar1 = (this->fields).capsule;
-                if (pCVar1 != (CapsuleCollider *)0x0) {
-                  fVar9 = UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::
-                          CapsuleCollider_get_radius(pCVar1,(MethodInfo *)0x0);
-                  fVar8 = fVar8 * fVar9;
+              if ((pCVar1 != (CapsuleCollider *)0x0) &&
+                 (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                           Component_get_gameObject((Component *)pCVar1,(MethodInfo *)0x0),
+                 pGVar2 != (GameObject *)0x0)) {
+                puVar4 = &UNK_?;
+                pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                         GameObject_get_transform(pGVar2,(MethodInfo *)0x0);
+                if (pTVar3 != (Transform *)0x0) {
+                  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                           Transform_get_position
+                                     ((Vector3 *)&stack0xffffffa0,pTVar3,(MethodInfo *)0x0);
+                  fVar6 = pVVar5->x;
+                  fVar7 = pVVar5->z;
+                  __return_storage_ptr__ = (Vector3 *)(from.z - fVar7);
+                  fVar8 = from.y - (float)puVar4;
+                  value.x = from.x - fVar6;
+                  value = (Vector3)CONCAT84(uVar9,value.x);
+                  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                                     ((Vector3 *)&stack0xffffffa0,value,(MethodInfo *)0x0);
+                  uVar10._0_4_ = pVVar5->x;
+                  uVar10._4_4_ = pVVar5->y;
+                  fVar11 = pVVar5->z;
                   pCVar1 = (this->fields).capsule;
                   if (pCVar1 != (CapsuleCollider *)0x0) {
-                    puVar10 = &UNK_?;
-                    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                             Component_get_gameObject((Component *)pCVar1,(MethodInfo *)0x0);
-                    if (pGVar2 != (GameObject *)0x0) {
-                      puVar11 = &UNK_?;
-                      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                               GameObject_get_transform(pGVar2,(MethodInfo *)0x0);
-                      if (pTVar3 != (Transform *)0x0) {
-                        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                 Transform_get_lossyScale
-                                           ((Vector3 *)&stack0xffffffa0,pTVar3,(MethodInfo *)0x0);
-                        uVar12 = pVVar4->y;
-                        __return_storage_ptr__->x = fVar5 + (float)uVar12 * (float)puVar10;
-                        __return_storage_ptr__->y = (float)uVar12 * (float)pCVar1 + (float)puVar11;
-                        __return_storage_ptr__->z = fVar6 + (float)uVar12 * fVar8;
-                        return __return_storage_ptr__;
-                      }
+                    fVar12 = UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::
+                             CapsuleCollider_get_radius(pCVar1,(MethodInfo *)0x0);
+                    fVar13 = (float)((ulonglong)uVar10 >> 0x20) * fVar12;
+                    fVar11 = fVar11 * fVar12;
+                    pCVar1 = (this->fields).capsule;
+                    if (((pCVar1 != (CapsuleCollider *)0x0) &&
+                        (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                  Component_get_gameObject((Component *)pCVar1,(MethodInfo *)0x0),
+                        pGVar2 != (GameObject *)0x0)) &&
+                       (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                 GameObject_get_transform(pGVar2,(MethodInfo *)0x0),
+                       pTVar3 != (Transform *)0x0)) {
+                      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                               Transform_get_lossyScale
+                                         ((Vector3 *)&stack0xffffffa0,pTVar3,(MethodInfo *)0x0);
+                      uVar14 = pVVar5->y;
+                      __return_storage_ptr__->x = fVar6 + (float)uVar14 * (float)uVar10 * fVar12;
+                      __return_storage_ptr__->y = (float)uVar14 * fVar13 + (float)puVar4;
+                      __return_storage_ptr__->z = fVar7 + (float)uVar14 * fVar11;
+                      return __return_storage_ptr__;
                     }
                   }
                 }
@@ -94,9 +100,9 @@ Vector3 * Assembly-CSharp.dll::ClosestPointCapsule::ClosestPointCapsule_GetClose
     }
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  pVVar4 = (Vector3 *)(*pcVar13)();
-  return pVVar4;
+  pcVar15 = (code *)swi(3);
+  pVVar5 = (Vector3 *)(*pcVar15)();
+  return pVVar5;
 }
 
 

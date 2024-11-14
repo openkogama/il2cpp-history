@@ -27,128 +27,163 @@ void Assembly-CSharp.dll::PlaymodeCamera::PlaymodeCamera_CameraCollision
     func_?(&TypeInfo__UnityEngine__Mathf);
     func_?(&TypeInfo__System__Single);
     func_?(&StringLiteral_Default);
-    func_?(&StringLiteral_Not_within_line_segment);
+    in_stack_1 = &StringLiteral_Not_within_line_segment;
+    in_stack_2 = &UNK_?;
+    func_?();
     cRam_? = '\x01';
   }
-  func_?(&uStack_1,0,0x48);
-  pTVar2 = (this->fields).lookAtTransform;
-  if (pTVar2 != (Transform *)0x0) {
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffff08,pTVar2,(MethodInfo *)0x0);
-    uVar4 = pVVar3->x;
-    fVar5 = pVVar3->z;
-    uVar6 = (this->fields).avatarHeadOffset.x;
-    fVar7 = (float)uVar6 + (float)uVar4;
-    puStack_8 = (undefined *)((this->fields).avatarHeadOffset.z + fVar5);
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  uStack_3 = 0;
+  uStack_4 = 0;
+  func_?(&uStack_5,0,0x48);
+  auStack_6._12_4_ = 0.0;
+  auStack_6._8_4_ = 0.0;
+  uStack_7._0_1_ = 0;
+  uStack_7._1_3_ = 0;
+  uStack_7._4_4_ = 0;
+  pTVar8 = (this->fields).lookAtTransform;
+  pCStack_9 = (Cube *)0x0;
+  if (pTVar8 != (Transform *)0x0) {
+    puVar10 = &UNK_?;
+    pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                       ((Vector3 *)&stack0xfffffef8,pTVar8,(MethodInfo *)0x0);
+    uVar12 = pVVar11->x;
+    uVar13 = pVVar11->y;
+    auStack_6._4_4_ = pVVar11->z;
+    uStack_14._0_4_ = (this->fields).avatarHeadOffset.x;
+    uStack_14._4_4_ = (this->fields).avatarHeadOffset.y;
+    VStack_15.x = (this->fields).avatarHeadOffset.z;
+    fStack_16 = (float)(undefined4)uStack_14 + (float)uVar12;
+    fStack_17 = (float)uStack_14._4_4_ + (float)uVar13;
+    fStack_18 = VStack_15.x + (float)auStack_6._4_4_;
+    uStack_19 = 0;
+    fStack_20 = 0.0;
+    fStack_21 = 0.0;
+    auStack_22._4_4_ = fStack_17;
+    pTStack_23 = (Transform *)fStack_18;
+    VStack_15.z = (float)uVar12;
+    auStack_6._0_4_ = uVar13;
+    fStack_24 = fStack_16;
+    pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)this,(MethodInfo *)0x0);
-    if (pTVar2 != (Transform *)0x0) {
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffff44,pTVar2,(MethodInfo *)0x0);
-      uVar9 = pVVar3->x;
-      puStack_8 = (undefined *)((float)uVar9 - fStack_10);
-      func_?();
+    if (pTVar8 != (Transform *)0x0) {
+      pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                         (&VStack_15,pTVar8,(MethodInfo *)0x0);
+      auStack_6._16_4_ = pVVar11->x;
+      auStack_6._20_4_ = pVVar11->y;
+      pTStack_25 = (Transform *)pVVar11->z;
+      auStack_6._0_4_ = (float)auStack_6._16_4_ - fStack_26;
+      auStack_6._4_4_ = auStack_6._20_4_ - VStack_15.y;
+      auStack_6._8_4_ = (float)pTStack_25 - VStack_15.z;
+      uStack_27._0_4_ = auStack_6._8_4_;
+      _fStack_98 = auStack_6._16_8_;
+      fVar28 = (float10)func_?();
+      VStack_15.x = (float)fVar28;
       UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
-                ((Vector3 *)&puStack_8,(MethodInfo *)0x0);
-      fVar11 = fVar5;
-      puVar12 = (undefined8 *)func_?(&stack0xffffff68,&stack0xffffff58);
-      uVar13 = *(undefined4 *)(puVar12 + 1);
-      fStack_14 = (float)*puVar12;
-      fStack_10 = (float)((ulonglong)*puVar12 >> 0x20);
-      iVar15 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                ((Vector3 *)auStack_6,(MethodInfo *)0x0);
+      uStack_27._4_4_ = (float)auStack_6._12_4_;
+      uStack_27._0_2_ = auStack_6._8_2_;
+      uStack_27._2_2_ = auStack_6._10_2_;
+      fStack_29 = (float)auStack_6._16_4_;
+      uStack_19 = uStack_5;
+      fVar30 = 0.0;
+      fStack_20 = (float)auStack_6._0_4_;
+      fStack_21 = (float)auStack_6._4_4_;
+      puVar31 = (undefined8 *)func_?(auStack_32,&uStack_27);
+      uVar33 = *puVar31;
+      fStack_16 = *(float *)(puVar31 + 1);
+      iVar34 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                          (StringLiteral_Default,(MethodInfo *)0x0);
-      ray.m_Origin.y = fStack_14;
-      ray.m_Origin.x = fVar11;
-      ray.m_Origin.z = fStack_10;
-      ray.m_Direction.x = (float)uVar13;
-      ray.m_Direction.y = (float)uStack_1;
-      ray.m_Direction.z = fStack_16;
-      bVar17 = CollisionDetection::CollisionDetection_MVSphereCast
-                         (ray,(this->fields)._._.cameraRadius,(VoxelHit *)&stack0xffffffd8,fVar5,
-                          (this->fields).ignoreAvatarId,1 << ((byte)iVar15 & 0x1f),(MethodInfo *)0x0
-                         );
-      if ((TypeInfo__UnityEngine__Mathf->static_fields->Epsilon <= in_stack_18) &&
-         (bVar17 != 0)) {
-        auStack_19 = (undefined1  [8])((ulonglong)(uint)auStack_19._4_4_ << 0x20);
-        uStack_20 = 0;
-        uStack_21 = 0;
-        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&fStack_22,pTStack_23,(MethodInfo *)0x0);
-        uVar24 = pVVar3->x;
-        uVar25 = pVVar3->y;
-        point.y = (float)uStack_26;
-        point.x = fStack_16;
-        point.z = in_stack_27;
-        lineEnd.y = in_stack_28 + (float)uVar25;
-        lineEnd.x = fStack_29 + (float)uVar24;
-        lineEnd.z = fVar7 + pVVar3->z;
-        bVar17 = MathFunctions::MathFunctions_DistancePointLine_1
-                           (point,(Vector3)ZEXT812(0),lineEnd,(float *)((int)&uStack_20 + 4),
-                            (Vector3 *)(auStack_19 + 4),(MethodInfo *)0x0);
-        if (bVar17 == 0) {
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                    ((Object *)StringLiteral_Not_within_line_segment,(MethodInfo *)0x0);
-          auStack_19._4_4_ = in_stack_30;
-          pOVar31 = (Object *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(pOVar31,(MethodInfo *)0x0);
-          fStack_32 = (this->fields).distance;
-          pOVar31 = (Object *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(pOVar31,(MethodInfo *)0x0);
+      ray.m_Direction.z = fStack_18;
+      ray.m_Direction.y = fStack_17;
+      ray.m_Origin.y = (float)uVar33;
+      ray.m_Origin.x = fVar30;
+      ray.m_Origin.z = SUB84(uVar33,4);
+      ray.m_Direction.x = fStack_16;
+      bVar35 = CollisionDetection::CollisionDetection_MVSphereCast
+                        (ray,(this->fields)._._.cameraRadius,(VoxelHit *)auStack_6,
+                         in_stack_36,(this->fields).ignoreAvatarId,1 << ((byte)iVar34 & 0x1f),
+                         (MethodInfo *)0x0);
+      if ((bVar35 == 0) || (fStack_21 < TypeInfo__UnityEngine__Mathf->static_fields->Epsilon)) {
+        return;
+      }
+      fStack_37 = fStack_37 + (float)puVar10;
+      point.z = (float)pTStack_25;
+      point.x = fStack_38;
+      point.y = (float)pCStack_39;
+      lineStart.z = fStack_40;
+      lineStart._0_8_ = uStack_41;
+      lineEnd.y = fStack_18 + (float)in_stack_1;
+      lineEnd.x = fStack_17 + (float)in_stack_2;
+      lineEnd.z = fStack_37;
+      bVar35 = MathFunctions::MathFunctions_DistancePointLine_1
+                        (point,lineStart,lineEnd,(float *)&stack0xffffff00,
+                         (Vector3 *)(auStack_22 + 4),(MethodInfo *)0x0);
+      if (bVar35 == 0) {
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Debug);
         }
-        fVar5 = (this->fields)._._.cameraRadius;
-        if (fVar5 <= fStack_33) {
-          fVar5 = 0.0;
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                  ((Object *)StringLiteral_Not_within_line_segment,(MethodInfo *)0x0);
+        fStack_16 = fStack_42;
+        pOVar43 = (Object *)func_?(TypeInfo__System__Single,&fStack_16);
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(pOVar43,(MethodInfo *)0x0);
+        auStack_6._4_4_ = (this->fields).distance;
+        pOVar43 = (Object *)func_?(TypeInfo__System__Single,auStack_6 + 4);
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(pOVar43,(MethodInfo *)0x0);
+      }
+      fVar30 = (this->fields)._._.cameraRadius;
+      if (VStack_15.y < fVar30) {
+        dVar44 = (double)(fVar30 * fVar30 - VStack_15.y * VStack_15.y);
+        if (dVar44 < 0.0) {
+          func_?();
         }
         else {
-          dVar34 = (double)(fVar5 * fVar5 - fStack_33 * fStack_33);
-          if (dVar34 < 0.0) {
-            func_?();
-            fVar5 = (float)dVar34;
-          }
-          else {
-            fVar5 = (float)SQRT(dVar34);
-          }
+          dVar44 = SQRT(dVar44);
         }
-        uStack_20 = CONCAT44((this->fields).distance,(undefined4)uStack_20);
-        fStack_16 = unaff_retaddr - in_stack_35 * fVar5;
-        value.y = unaff_EBP - in_stack_36 * fVar5;
-        value.x = fStack_22 - in_stack_27 * fVar5;
-        value.z = fStack_16;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                  (pTStack_37,value,(MethodInfo *)0x0);
-        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0x00000048,pTStack_37,(MethodInfo *)0x0);
-        uVar38 = pVVar3->x;
-        uVar39 = pVVar3->y;
-        fStack_40 = fStack_41 - pVVar3->z;
-        auStack_19 = (undefined1  [8])
-                     CONCAT44(fStack_42 - (float)uVar39,in_stack_43 - (float)uVar38);
-        pTStack_37 = (Transform *)fStack_40;
-        fVar44 = (float10)func_?();
-        uVar45 = (this->fields).currentLookAt.x;
-        uVar46 = (this->fields).currentLookAt.y;
-        fVar5 = (this->fields).currentLookAt.z;
-        (this->fields).distance = (float)fVar44;
-        fStack_47 = (float)fVar44 / fStack_47;
-        fStack_41 = fStack_41 + fStack_47 * (fVar5 - fStack_41);
-        fVar5 = in_stack_43 + fStack_47 * ((float)uVar45 - in_stack_43);
-        fStack_42 = fStack_42 + fStack_47 * ((float)uVar46 - fStack_42);
-        (this->fields).currentLookAt.x = fVar5;
-        (this->fields).currentLookAt.y = fStack_42;
-        (this->fields).actualLookAt.x = fVar5;
-        (this->fields).actualLookAt.y = fStack_42;
-        (this->fields).currentLookAt.z = fStack_41;
-        (this->fields).actualLookAt.z = fStack_41;
+        VStack_15.z = (float)dVar44;
       }
-      return;
+      pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this,(MethodInfo *)0x0);
+      if (pTVar8 != (Transform *)0x0) {
+        value.y = fStack_29 - (float)pTStack_25 * (float)auStack_6._4_4_;
+        value.x = uStack_27._4_4_ - (float)pCStack_39 * (float)auStack_6._4_4_;
+        value.z = (float)uStack_7 - (float)uStack_4 * (float)auStack_6._4_4_;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
+                  (pTVar8,value,(MethodInfo *)0x0);
+        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)this,(MethodInfo *)0x0);
+        if (pTVar8 != (Transform *)0x0) {
+          pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                             (&VStack_45,pTVar8,(MethodInfo *)0x0);
+          uVar46 = pVVar11->x;
+          uVar47 = pVVar11->y;
+          pTStack_23 = (Transform *)(VStack_15.z - pVVar11->z);
+          auStack_22 = (undefined1  [8])
+                       CONCAT44(VStack_15.y - (float)uVar47,fStack_26 - (float)uVar46);
+          pTStack_25 = pTStack_23;
+          fVar28 = (float10)func_?();
+          uVar48 = (this->fields).currentLookAt.x;
+          uVar49 = (this->fields).currentLookAt.y;
+          fVar30 = (this->fields).currentLookAt.z;
+          (this->fields).distance = (float)fVar28;
+          VStack_15.x = (float)fVar28 / VStack_15.x;
+          VStack_15.z = VStack_15.z + VStack_15.x * (fVar30 - VStack_15.z);
+          fStack_26 = fStack_26 + VStack_15.x * ((float)uVar48 - fStack_26);
+          VStack_15.y = VStack_15.y + VStack_15.x * ((float)uVar49 - VStack_15.y);
+          (this->fields).currentLookAt.x = fStack_26;
+          (this->fields).currentLookAt.y = VStack_15.y;
+          (this->fields).actualLookAt.x = fStack_26;
+          (this->fields).actualLookAt.y = VStack_15.y;
+          (this->fields).currentLookAt.z = VStack_15.z;
+          (this->fields).actualLookAt.z = VStack_15.z;
+          return;
+        }
+      }
     }
   }
   func_?();
-  pcVar48 = (code *)swi(3);
-  (*pcVar48)();
+  pcVar50 = (code *)swi(3);
+  (*pcVar50)();
   return;
 }
 
@@ -450,10 +485,10 @@ void Assembly-CSharp.dll::PlaymodeCamera::PlaymodeCamera_UpdateCamera
         value.y = (float)uVar13 + (float)uVar30;
         ProtectedTransform::ProtectedTransform_set_position(targetTransform,value,(MethodInfo *)0x0)
         ;
-        value_00.y = (fVar4 * fVar22 + fVar8 * 3.2420906e-29 + fVar9 * fVar3) - fVar5 * fVar7;
-        value_00.x = (fVar22 * fVar3 + fVar7 * 3.2420906e-29 + fVar8 * fVar5) - fVar9 * fVar4;
-        value_00.z = (fVar5 * fVar22 + fVar9 * 3.2420906e-29 + fVar4 * fVar7) - fVar8 * fVar3;
-        value_00.w = ((fVar22 * 3.2420906e-29 - fVar3 * fVar7) - fVar4 * fVar8) -
+        value_00.y = (fVar4 * fVar22 + fVar8 * 3.2421002e-29 + fVar9 * fVar3) - fVar5 * fVar7;
+        value_00.x = (fVar22 * fVar3 + fVar7 * 3.2421002e-29 + fVar8 * fVar5) - fVar9 * fVar4;
+        value_00.z = (fVar5 * fVar22 + fVar9 * 3.2421002e-29 + fVar4 * fVar7) - fVar8 * fVar3;
+        value_00.w = ((fVar22 * 3.2421002e-29 - fVar3 * fVar7) - fVar4 * fVar8) -
                      fVar9 * fVar5;
         ProtectedTransform::ProtectedTransform_set_rotation
                   (targetTransform,value_00,(MethodInfo *)0x0);
@@ -779,17 +814,15 @@ void Assembly-CSharp.dll::PlaymodeCamera::PlaymodeCamera__ctor
     func_?(&TypeInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>);
     cRam_? = '\x01';
   }
-  (value->fields).samleLength = 5;
   this_00 = (Queue_1_UnityEngine_Vector3_ *)
             func_?(TypeInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>);
   System.Core.dll::System::Runtime::CompilerServices::ReadOnlyCollectionBuilder`1[System::Object]::
   ReadOnlyCollectionBuilder_1_System_Object___ctor
             ((ReadOnlyCollectionBuilder_1_System_Object_ *)this_00,
              MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Queue__);
-  method_00 = (MethodInfo *)&(value->fields).prevVelocities;
+  method_00 = (MethodInfo *)&value->fields;
   (value->fields).prevVelocities = this_00;
   func_?(method_00,this_00);
-  (value->fields).maxMag = 30.0;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,method_00);
   (this->fields).smoothLookAt = value;

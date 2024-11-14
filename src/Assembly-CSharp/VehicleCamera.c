@@ -207,7 +207,7 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_UpdateCamera
            (ProtectedTransform__Class *)(((float)pMVar7 - (float)pPVar5) * fVar8 + (float)pPVar5);
       PlaymodeCamera::PlaymodeCamera_UpdatePosition
                 ((PlaymodeCamera *)targetTransform,(MethodInfo *)0x0);
-      (*(code *)targetTransform->klass[1]._1.initializationExceptionGCHandle)();
+      (*(code *)targetTransform->klass[1]._0.castClass)();
       fVar9 = (float)((uint)((float)targetTransform[0xd].monitor -
                              (float)targetTransform[0xf].fields.transform) & _UNK_?);
       pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
@@ -271,10 +271,10 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_UpdateCamera
         value.y = (float)uVar12 + (float)uVar32;
         ProtectedTransform::ProtectedTransform_set_position
                   (in_stack_33,value,(MethodInfo *)0x0);
-        value_00.y = (fVar3 * fVar24 + fVar22 * 3.2420906e-29 + fVar23 * fVar2) - fVar4 * fVar21;
-        value_00.x = (fVar24 * fVar2 + fVar21 * 3.2420906e-29 + fVar22 * fVar4) - fVar23 * fVar3;
-        value_00.z = (fVar4 * fVar24 + fVar23 * 3.2420906e-29 + fVar3 * fVar21) - fVar22 * fVar2;
-        value_00.w = ((fVar24 * 3.2420906e-29 - fVar2 * fVar21) - fVar3 * fVar22) -
+        value_00.y = (fVar3 * fVar24 + fVar22 * 3.2421002e-29 + fVar23 * fVar2) - fVar4 * fVar21;
+        value_00.x = (fVar24 * fVar2 + fVar21 * 3.2421002e-29 + fVar22 * fVar4) - fVar23 * fVar3;
+        value_00.z = (fVar4 * fVar24 + fVar23 * 3.2421002e-29 + fVar3 * fVar21) - fVar22 * fVar2;
+        value_00.w = ((fVar24 * 3.2421002e-29 - fVar2 * fVar21) - fVar3 * fVar22) -
                      fVar23 * fVar4;
         ProtectedTransform::ProtectedTransform_set_rotation
                   (in_stack_33,value_00,(MethodInfo *)0x0);
@@ -470,17 +470,15 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera__ctor(VehicleCamera *this
     func_?(&TypeInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>);
     cRam_? = '\x01';
   }
-  (value->fields).samleLength = 5;
   this_00 = (Queue_1_UnityEngine_Vector3_ *)
             func_?(TypeInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>);
   System.Core.dll::System::Runtime::CompilerServices::ReadOnlyCollectionBuilder`1[System::Object]::
   ReadOnlyCollectionBuilder_1_System_Object___ctor
             ((ReadOnlyCollectionBuilder_1_System_Object_ *)this_00,
              MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Queue__);
-  method_00 = (MethodInfo *)&(value->fields).prevVelocities;
+  method_00 = (MethodInfo *)&value->fields;
   (value->fields).prevVelocities = this_00;
   func_?(method_00,this_00);
-  (value->fields).maxMag = 30.0;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,method_00);
   (this->fields)._.smoothLookAt = value;

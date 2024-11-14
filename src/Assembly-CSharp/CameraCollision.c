@@ -27,89 +27,87 @@ bool Assembly-CSharp.dll::CameraCollision::CameraCollision_Collide_1
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&TypeInfo__UnityEngine__Mathf);
-    func_?(&StringLiteral_u___0_0f);
     func_?(&StringLiteral_Default);
-    func_?(&StringLiteral_u___1_0f);
+    func_?(&StringLiteral_pointOnLineScalar___0_0f);
+    func_?(&StringLiteral_pointOnLineScalar___1_0f);
     cRam_? = '\x01';
   }
-  newPos->x = (float)(int)cameraPosition._0_8_;
-  newPos->y = (float)(int)((ulonglong)cameraPosition._0_8_ >> 0x20);
-  fStack_1 = cameraPosition.x;
-  fStack_2 = 0.0;
-  puStack_3 = (undefined *)0x0;
-  fStack_4 = targetPosition.x;
+  uVar1 = cameraPosition._0_8_;
+  newPos->x = (float)(int)uVar1;
+  newPos->y = (float)(int)((ulonglong)uVar1 >> 0x20);
+  puStack_2 = (undefined *)cameraPosition.x;
+  fVar3 = 0.0;
+  VStack_4.x = targetPosition.x;
+  VStack_4.y = 0.0;
+  VStack_4.z = 0.0;
   fStack_5 = 0.0;
-  fStack_6 = 0.0;
-  fStack_7 = 0.0;
   newPos->z = cameraPosition.z;
-  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
-            ((Vector3 *)&stack0xffffff78,(MethodInfo *)0x0);
-  fStack_1 = fStack_7;
-  fStack_7 = targetPosition.y;
-  fStack_2 = 0.0;
-  puVar8 = (undefined8 *)func_?(auStack_9,&stack0xffffff98,0);
-  uVar10 = *(undefined4 *)(puVar8 + 1);
-  uStack_11 = (undefined4)*puVar8;
-  uStack_12 = (undefined4)((ulonglong)*puVar8 >> 0x20);
-  iVar13 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+  func_?(auStack_6,&stack0xffffff84,0);
+  VStack_4.z = VStack_4.y;
+  VStack_4.y = targetPosition.y;
+  fStack_5 = 0.0;
+  puVar7 = (undefined8 *)func_?(auStack_6,&stack0xffffff90,0);
+  fVar8 = *(float *)(puVar7 + 1);
+  fStack_9 = (float)*puVar7;
+  fStack_10 = (float)((ulonglong)*puVar7 >> 0x20);
+  iVar11 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                     (StringLiteral_Default,(MethodInfo *)0x0);
-  ray.m_Origin.y = (float)uStack_11;
+  ray.m_Origin.y = fStack_9;
   ray.m_Origin.x = targetPosition.z;
-  ray.m_Origin.z = (float)uStack_12;
-  ray.m_Direction.x = (float)uVar10;
-  ray.m_Direction.y = fStack_14;
-  ray.m_Direction.z = unaff_EBP;
-  bVar15 = CollisionDetection::CollisionDetection_MVSphereCast
-                    (ray,cameraRadius,hit,baseDistance,ignoreIDs,1 << ((byte)iVar13 & 0x1f),
+  ray.m_Origin.z = fStack_10;
+  ray.m_Direction.x = fVar8;
+  ray.m_Direction.y = (float)(int)uStack_12;
+  ray.m_Direction.z = (float)((ulonglong)uStack_12 >> 0x20);
+  bVar13 = CollisionDetection::CollisionDetection_MVSphereCast
+                    (ray,cameraRadius,hit,baseDistance,ignoreIDs,1 << ((byte)iVar11 & 0x1f),
                      (MethodInfo *)0x0);
-  if ((bVar15 != 0) &&
-     (fVar16 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon,
-     fVar16 < hit->distance || fVar16 == hit->distance)) {
-    lineStart.y = (float)uVar10;
-    lineStart.x = (float)uStack_12;
+  if ((bVar13 != 0) &&
+     (fVar14 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon,
+     fVar14 < hit->distance || fVar14 == hit->distance)) {
+    lineStart.y = fVar8;
+    lineStart.x = fStack_10;
     lineStart.z = targetPosition.z;
-    lineEnd.y = cameraPosition.y + fStack_7 * cameraRadius;
-    lineEnd.x = unaff_retaddr + fStack_6 * cameraRadius;
-    lineEnd.z = cameraPosition.z + fStack_1 * cameraRadius;
+    lineEnd.y = cameraPosition.y + (float)puStack_2 * cameraRadius;
+    lineEnd.x = fStack_15 + fStack_5 * cameraRadius;
+    lineEnd.z = cameraPosition.z + fVar3 * cameraRadius;
     MathFunctions::MathFunctions_DistancePointLine_2
-              (hit->point,lineStart,lineEnd,&fStack_5,(Vector3 *)&fStack_2,&fStack_4,
-               (MethodInfo *)0x0);
+              (hit->point,lineStart,lineEnd,&fStack_16,&VStack_4,&fStack_17,(MethodInfo *)0x0);
     if (targetPosition.y < 0.0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                ((Object *)StringLiteral_u___0_0f,(MethodInfo *)0x0);
-      newPos->x = cameraPosition.z;
-      newPos->y = (float)ignoreIDs;
+                ((Object *)StringLiteral_pointOnLineScalar___0_0f,(MethodInfo *)0x0);
+      newPos->x = (float)(int)uVar1;
+      newPos->y = (float)(int)((ulonglong)uVar1 >> 0x20);
       newPos->z = targetPosition.z;
       return 1;
     }
     if (targetPosition.y <= _UNK_?) {
       if (cameraRadius <= targetPosition.z) {
-        fVar16 = 0.0;
+        fVar3 = 0.0;
       }
       else {
-        dVar17 = (double)(cameraRadius * cameraRadius - targetPosition.z * targetPosition.z);
-        if (dVar17 < 0.0) {
+        dVar18 = (double)(cameraRadius * cameraRadius - targetPosition.z * targetPosition.z);
+        if (dVar18 < 0.0) {
           func_?();
-          fVar16 = (float)dVar17;
+          fVar3 = (float)dVar18;
         }
         else {
-          fVar16 = (float)SQRT(dVar17);
+          fVar3 = (float)SQRT(dVar18);
         }
       }
-      fVar16 = fVar16 - _UNK_?;
-      newPos->x = fStack_14 - in_stack_18 * fVar16;
-      newPos->y = unaff_EBP - in_stack_19 * fVar16;
-      newPos->z = unaff_retaddr - in_stack_20 * fVar16;
+      fVar3 = fVar3 - _UNK_?;
+      newPos->x = fStack_9 - in_stack_19 * fVar3;
+      newPos->y = fStack_10 - in_stack_20 * fVar3;
+      newPos->z = fVar8 - in_stack_21 * fVar3;
       return 1;
     }
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-              ((Object *)StringLiteral_u___1_0f,(MethodInfo *)0x0);
+              ((Object *)StringLiteral_pointOnLineScalar___1_0f,(MethodInfo *)0x0);
   }
   return 0;
 }
