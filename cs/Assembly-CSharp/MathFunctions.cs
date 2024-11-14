@@ -81,8 +81,8 @@ public static class MathFunctions
 	public static void ClampVector(ref Vector3 v, float min, float max);
 	public static void ClampVector(ref Vector3 v, Vector3 min, Vector3 max);
 	public static bool DistancePointLine(Vector3 point, Vector3 lineStart, Vector3 lineEnd, ref float distance);
-	public static bool DistancePointLine(Vector3 point, Vector3 lineStart, Vector3 lineEnd, ref float distance, ref Vector3 intersection);
-	public static void DistancePointLine(Vector3 point, Vector3 lineStart, Vector3 lineEnd, out float distance, out Vector3 intersection, out float u);
+	public static bool DistancePointLine(Vector3 point, Vector3 lineStart, Vector3 lineEnd, out float distance, out Vector3 intersection);
+	public static void DistancePointLine(Vector3 point, Vector3 lineStart, Vector3 lineEnd, out float distance, out Vector3 intersection, out float pointOnLineScalar);
 	public static Vector3 GetNormal(Vector3 pa, Vector3 pb, Vector3 pc);
 	public static bool LineFacetCollision(Vector3 p1, Vector3 p2, Vector3 pa, Vector3 pb, Vector3 pc, Vector3 lineDir, ref Vector3 p, ref Vector3 n);
 	public static bool LineFacet(Vector3 p1, Vector3 p2, Vector3 pa, Vector3 pb, Vector3 pc, ref Vector3 p);
