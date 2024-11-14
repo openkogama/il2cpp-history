@@ -215,7 +215,7 @@ code_?:
                                     if ((targetCubeModel != (MVCubeModelBase *)0x0) && ((OVar10 = (ObscuredByte)TypeInfo__MVCubeModelBase, (targetCubeModel->klass->_1).naturalAligment < (TypeInfo__MVCubeModelBase->_1).naturalAligment || ((MVCubeModelBase__Class *)(targetCubeModel->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] != TypeInfo__MVCubeModelBase)))) goto code_?;
                                   }
                                   if (unaff_ESI != (ObscuredByte)0x0) {
-                                    (**(code **)(*(int *)unaff_ESI + 0x128))(unaff_ESI,targetCubeModel,0x40000000,0,0,0,0,*(undefined4 *)(*(int *)unaff_ESI + 300));
+                                    (**(code **)(*(int *)unaff_ESI + 0x130))(unaff_ESI,targetCubeModel,0x40000000,0,0,0,0,*(undefined4 *)(*(int *)unaff_ESI + 0x134));
                                     pMVar15 = (e->fields).weCamera;
                                     if (pMVar15 != (MainCameraManager *)0x0) {
                                       MainCameraManager::MainCameraManager_set_BlueModeEnabled(pMVar15,1,(MethodInfo *)0x0);

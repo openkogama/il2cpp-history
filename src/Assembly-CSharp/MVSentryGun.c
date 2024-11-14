@@ -397,7 +397,7 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_Initialize(MVSentryGun *this,
               return;
             }
             if (*(SphereVolumeIndicator **)(iVar7 + 0x54) != (SphereVolumeIndicator *)0x0) {
-              SphereVolumeIndicator::SphereVolumeIndicator_SetRadius(*(SphereVolumeIndicator **)(iVar7 + 0x54),2.98871e-24,(MethodInfo *)0x0);
+              SphereVolumeIndicator::SphereVolumeIndicator_SetRadius(*(SphereVolumeIndicator **)(iVar7 + 0x54),4.3230587e-24,(MethodInfo *)0x0);
               return;
             }
           }

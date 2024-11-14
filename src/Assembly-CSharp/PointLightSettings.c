@@ -102,14 +102,14 @@ code_?:
     if ((pSVar10 == (SettingsSlider *)0x0) || (TVar7.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar7.m_Index + 0x20) == (TypeInfo__System__Single->_0).element_class) {
       pfVar11 = (float *)func_?(TVar7.m_Index);
-      SettingsSlider::SettingsSlider_Initialize(pSVar10,StringLiteral_range,*pfVar11,1.0,10.0,(MethodInfo *)0x0);
+      SettingsSlider::SettingsSlider_Initialize(pSVar10,StringLiteral_range,*pfVar11,1.0,100.0,(MethodInfo *)0x0);
       pSVar10 = (pPVar1->fields).intensity;
       TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_00,(Object *)StringLiteral_intensity,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
       uVar3 = CONCAT44(TypeInfo__System__Single,TVar7.m_Index);
       if ((pSVar10 != (SettingsSlider *)0x0) && (TVar7.m_Index != 0)) {
         if (*(Il2CppClass **)(*(int *)TVar7.m_Index + 0x20) != (TypeInfo__System__Single->_0).element_class) goto code_?;
         pfVar11 = (float *)func_?(TVar7.m_Index);
-        SettingsSlider::SettingsSlider_Initialize(pSVar10,StringLiteral_intensity,*pfVar11,1.0,20.0,(MethodInfo *)0x0);
+        SettingsSlider::SettingsSlider_Initialize(pSVar10,StringLiteral_intensity,*pfVar11,1.0,50.0,(MethodInfo *)0x0);
         pSVar10 = (pPVar1->fields).HaloTextures;
         TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_00,(Object *)StringLiteral_halo,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         uVar3 = CONCAT44(TypeInfo__System__Int32,TVar7.m_Index);

@@ -182,11 +182,11 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
     }
   }
   func_?();
-  pDVar13 = (Dictionary_2_System_Int32Enum_System_Object___Class *)in(extraout_DX);
-  this_02->klass = (Dictionary_2_MV_WorldObject_MVTeam_System_String___Class *)pDVar13;
-  bRam_? = bRam_? & (byte)((uint)unaff_EBX >> 8);
-  ppDVar14 = &(this_02->fields)._keys;
-  *(char *)ppDVar14 = *(char *)ppDVar14 + (char)((ushort)extraout_DX >> 8);
+  bVar13 = (byte)((uint)unaff_EBX >> 8);
+  bRam_? = bRam_? & bVar13;
+  piVar14 = &this_02[-0x1bfa965].fields._count;
+  *(char *)piVar14 = (char)*piVar14 + extraout_AH;
+  bRam_? = bRam_? & bVar13;
   pcVar15 = (code *)swi(3);
   (*pcVar15)();
   return;
@@ -252,9 +252,10 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
       func_?(value,TypeInfo__MV__WorldObject__MVTeam);
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar5 = func_?();
+  out(0x23,uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

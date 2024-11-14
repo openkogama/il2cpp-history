@@ -167,7 +167,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Initializ
       this_06 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)0x161,(MethodInfo *)0x0);
       if (this_06 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_06,1,(MethodInfo *)0x0);
-        pRVar1 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)0x8b011127,UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__);
+        pRVar1 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)0x8b011126,UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__);
         if (pRVar1 != (Renderer *)0x0) {
           _UNK_? = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material(pRVar1,(MethodInfo *)0x0);
                     /* WARNING: Read-only address (ram,0xADDR) is written */
@@ -178,7 +178,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Initializ
           _UNK_? = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material((Renderer *)0xfc0850c,(MethodInfo *)0x0);
                     /* WARNING: Read-only address (ram,0xADDR) is written */
           func_?();
-          SayChatBubbleHandler::SayChatBubbleHandler_Initialize((SayChatBubbleHandler *)0xeb8473e8,ownerActorNr,chatBubbleAnchor,(MethodInfo *)0x0);
+          SayChatBubbleHandler::SayChatBubbleHandler_Initialize((SayChatBubbleHandler *)0xeb83d3e8,ownerActorNr,chatBubbleAnchor,(MethodInfo *)0x0);
           pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if ((pMVar5 != (MVNetworkGame *)0x0) && (this_01 = (pMVar5->fields).playerContainer, this_01 != (MVPlayerContainer *)0x0)) {
             pMVar6 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe(this_01,ownerActorNr,(MethodInfo *)0x0);
@@ -632,93 +632,76 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
 
 {
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  cVar2 = true;
   if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-  pMVar3 = (pMVar1->fields).playerContainer;
-  cVar2 = true;
-  if (pMVar3 == (MVPlayerContainer *)0x0) goto code_?;
-  bVar4 = MVPlayerContainer::MVPlayerContainer_ContainsKey(pMVar3,(this->fields)._.ownerActorNr,(MethodInfo *)0x0);
-  if (bVar4 != 0) {
-    in_stack_5 = 0;
-    in_stack_6 = (MVPlayerContainer *)&UNK_?;
+  pMVar2 = (pMVar1->fields).playerContainer;
+  if (pMVar2 == (MVPlayerContainer *)0x0) goto code_?;
+  bVar3 = MVPlayerContainer::MVPlayerContainer_ContainsKey(pMVar2,(this->fields)._.ownerActorNr,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    in_stack_4 = 0;
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    cVar2 = true;
     unaff_ESI = this;
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-    pMVar3 = (pMVar1->fields).playerContainer;
-    cVar2 = true;
-    if (pMVar3 == (MVPlayerContainer *)0x0) goto code_?;
-    in_stack_7 = 0;
-    in_stack_5 = (this->fields)._.ownerActorNr;
-    pMVar8 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe(pMVar3,in_stack_5,(MethodInfo *)0x0);
-    cVar2 = true;
-    in_stack_6 = pMVar3;
-    if (pMVar8 == (MVPlayer *)0x0) goto code_?;
-    pUVar9 = (pMVar8->fields)._UserProfileData_k__BackingField;
-    cVar2 = true;
-    if (pUVar9 == (UserProfileData *)0x0) goto code_?;
+    pMVar2 = (pMVar1->fields).playerContainer;
+    if (pMVar2 == (MVPlayerContainer *)0x0) goto code_?;
+    in_stack_4 = (this->fields)._.ownerActorNr;
+    pMVar5 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe(pMVar2,in_stack_4,(MethodInfo *)0x0);
+    if (pMVar5 == (MVPlayer *)0x0) goto code_?;
+    pUVar6 = (pMVar5->fields)._UserProfileData_k__BackingField;
+    if (pUVar6 == (UserProfileData *)0x0) goto code_?;
     this_00 = (this->fields).avatarName;
-    cVar2 = true;
     if (this_00 == (TextMesh *)0x0) goto code_?;
-    UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text(this_00,(pUVar9->fields).UserName,(MethodInfo *)0x0);
-    in_stack_6 = (MVPlayerContainer *)0x3f800000;
-    in_stack_5 = 0x3f800000;
-    in_stack_7 = 0x3f800000;
-    in_stack_10 = 1.0;
+    UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text(this_00,(pUVar6->fields).UserName,(MethodInfo *)0x0);
+    uVar7 = 0x3f800000;
+    in_stack_4 = 0x3f800000;
+    uVar8 = 0x3f800000;
+    in_stack_9 = 1.0;
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    cVar2 = true;
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
     this_01 = (pMVar1->fields).teamManager;
-    cVar2 = true;
     if (this_01 == (MVTeamManager *)0x0) goto code_?;
-    iVar11 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0);
-    fStack12 = in_stack_10;
-    if (1 < iVar11) {
-      switch((pMVar8->fields)._Team_k__BackingField) {
+    iVar10 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0);
+    fStack11 = in_stack_9;
+    if (1 < iVar10) {
+      switch((pMVar5->fields)._Team_k__BackingField) {
       case 0:
-        in_stack_6 = (MVPlayerContainer *)0x0;
-        in_stack_5 = 0;
+        uVar7 = 0;
+        in_stack_4 = 0;
         break;
       case 1:
-        in_stack_5 = 0;
-        in_stack_7 = 0;
+        in_stack_4 = 0;
+        uVar8 = 0;
         break;
       case 2:
-        in_stack_6 = (MVPlayerContainer *)0x0;
-        in_stack_7 = 0;
-        break;
+        goto code_?;
       case 3:
-        in_stack_5 = 0x3f6bebec;
-        in_stack_7 = 0x3c808081;
+        in_stack_4 = 0x3f6bebec;
+        uVar8 = 0x3c808081;
       }
     }
-    while( true ) {
-      this_02 = (unaff_ESI->fields).avatarNameMaterial;
-      cVar2 = this_02 == (Material *)0x0;
-      in_stack_10 = fStack12;
-      if (!(bool)cVar2) break;
+    while (this_02 = (unaff_ESI->fields).avatarNameMaterial, in_stack_9 = fStack11, this_02 == (Material *)0x0) {
 code_?:
+      bVar12 = false;
       bVar13 = 0;
-      bVar14 = func_?();
-      iVar15 = extraout_ECX + -1;
-      fStack12 = in_stack_10;
-      if (iVar15 == 0 || cVar2 == '\0') {
-        bVar16 = (byte)iVar15 + extraout_DH;
-        bVar17 = CARRY1((byte)iVar15,extraout_DH) || CARRY1(bVar16,bVar13);
-        pbVar18 = (byte *)CONCAT22((short)((uint)iVar15 >> 0x10),CONCAT11(0x2e,bVar16 + bVar13));
-        bVar13 = *pbVar18;
-        bVar16 = *pbVar18;
-        *pbVar18 = bVar16 + bVar14 + bVar17;
-        *pbVar18 = *pbVar18 + extraout_DL + (CARRY1(bVar13,bVar14) || CARRY1(bVar16 + bVar14,bVar17));
-        pcVar19 = (code *)swi(3);
-        (*pcVar19)();
+      uVar14 = func_?();
+      if (bVar12) {
+        pbVar15 = (byte *)(extraout_ECX + -0x6eefd14a);
+        bVar16 = *pbVar15;
+        bVar17 = *pbVar15 + (byte)uVar14;
+        *pbVar15 = bVar17 + bVar13;
+        *(char *)(extraout_ECX + -0x33efd14a) = *(char *)(extraout_ECX + -0x33efd14a) + (char)((ushort)uVar14 >> 8) + (CARRY1(bVar16,(byte)uVar14) || CARRY1(bVar17,bVar13));
+        pcVar18 = (code *)swi(3);
+        (*pcVar18)();
         return;
       }
+code_?:
+      uVar7 = 0;
+      uVar8 = 0;
+      fStack11 = in_stack_9;
     }
-    value.g = (float)in_stack_5;
-    value.r = (float)in_stack_6;
-    value.b = (float)in_stack_7;
-    value.a = fStack12;
+    value.g = (float)in_stack_4;
+    value.r = (float)uVar7;
+    value.b = (float)uVar8;
+    value.a = fStack11;
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color(this_02,value,(MethodInfo *)0x0);
   }
   return;

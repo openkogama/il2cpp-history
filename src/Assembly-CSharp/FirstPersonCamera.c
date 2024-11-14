@@ -302,9 +302,9 @@ code_?:
         bVar13 = 0;
         this = (FirstPersonCamera *)0x0;
         do {
-          if (TypeInfo__UseInteractorVisualization____c__DisplayClass35_0 == (UseInteractorVisualization_c_DisplayClass35_0__Class *)0x0) goto code_?;
-          if ((TypeInfo__UseInteractorVisualization____c__DisplayClass35_0->_0).namespaze <= (char *)(uint)bVar13) goto code_?;
-          pIVar14 = (&(TypeInfo__UseInteractorVisualization____c__DisplayClass35_0->_0).byval_arg.data)[(int)(uint)bVar13].generic_class;
+          if (TypeInfo__UseInteractorVisualization____c__DisplayClass36_0 == (UseInteractorVisualization_c_DisplayClass36_0__Class *)0x0) goto code_?;
+          if ((TypeInfo__UseInteractorVisualization____c__DisplayClass36_0->_0).namespaze <= (char *)(uint)bVar13) goto code_?;
+          pIVar14 = (&(TypeInfo__UseInteractorVisualization____c__DisplayClass36_0->_0).byval_arg.data)[(int)(uint)bVar13].generic_class;
           if ((pIVar14 == (Il2CppGenericClass *)0x0) || (this_03 = pIVar14->cached_class, this_03 == (Il2CppClass *)0x0)) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this_03,0,(MethodInfo *)0x0);
           bVar13 = this._3_1_ + 1;
@@ -728,7 +728,7 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_Resume(FirstPerso
         FirstPersonCamera_ActivateFirstPerson(this,(MethodInfo *)0x0);
         pMVar11 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
         if (pMVar11 != (MainCameraManager *)0x0) {
-          pIStack12 = (this->klass->vtable).Enter.methodPtr;
+          pIStack12 = (this->klass->vtable).CameraCollision.methodPtr;
           pPStack13 = (pMVar11->fields).protectedTransform;
           pMStack14 = cameraController;
           (*(code *)(this->klass->vtable).UpdateCamera.method)();

@@ -773,16 +773,16 @@ code_?:
 code_?:
     func_?();
     pUVar3 = this_00[1].klass;
-    iVar9 = (**(code **)(iRam_? + 0xe0))(0x2fe85752,*(undefined4 *)(iRam_? + 0xe4));
+    iVar9 = (**(code **)(iRam_? + 0xe0))(0x8fe85752,*(undefined4 *)(iRam_? + 0xe4));
     unaff_EDI = (MVBody *)0x0;
     if (pUVar3 == (UxmlObjectListAttributeDescription_1_System_Object___Class *)0x0) goto code_?;
     (pUVar3->_0).this_arg.data = (_union_86)(float)iVar9;
-    unaff_EDI = pMRam2fe85772;
+    unaff_EDI = pMRam8fe85772;
     pVVar6 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
     UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::VideoCapture+OnVideoCaptureResourceCreatedCallback::VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor(pVVar6,(Object *)this_00,MethodInfo__MVAvatarRemote____c__DisplayClass23_0___InitializeHealth_b__1_System__Object_,(MethodInfo *)0x0);
     pMVar10 = (MVBody *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)unaff_EDI,(Delegate *)pVVar6,(MethodInfo *)0x0);
     if (pMVar10 == (MVBody *)0x0) {
-      pMRam2fe85772 = (MVBody *)0x0;
+      pMRam8fe85772 = (MVBody *)0x0;
       func_?();
       return;
     }
@@ -795,7 +795,7 @@ code_?:
       if (pMVar10->klass == (MVBody__Class *)TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
         pMVar12 = pMVar10;
       }
-      pMRam2fe85772 = pMVar11;
+      pMRam8fe85772 = pMVar11;
       if (pMVar12 != (MVBody *)0x0) {
         func_?();
         return;
@@ -1125,7 +1125,7 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_VisualizeBulletImpact(M
           if (pAVar5 != (Avatar *)0x0) {
             voxelHit_00.point.z = (float)pOVar3;
             voxelHit_00.point.x = 0.0;
-            voxelHit_00.point.y = 3.4330977e-29;
+            voxelHit_00.point.y = 3.433146e-29;
             voxelHit_00.normal.x = voxelHit.normal.x;
             voxelHit_00.normal.y = voxelHit.normal.y;
             voxelHit_00.normal.z = voxelHit.normal.z;

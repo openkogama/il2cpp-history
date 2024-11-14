@@ -185,7 +185,7 @@ code_?:
   (this_00->fields).isUsingMobileShader = bVar1;
   if ((this_00->fields).isUsingSM3Shader == 0) {
 code_?:
-    original = (MaterialLoader *)(this_00->fields).cubeModelMaterialLow;
+    original = (MaterialLoader *)(this_00->fields).cubeModelMaterialSM2;
   }
   else {
     if (bVar1 != 0) {
@@ -198,7 +198,7 @@ code_?:
       }
       goto code_?;
     }
-    original = (MaterialLoader *)(this_00->fields).cubeModelMaterialHigh;
+    original = (MaterialLoader *)(this_00->fields).cubeModelMaterialSM3;
   }
 code_?:
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -214,7 +214,7 @@ code_?:
   func_?();
   if ((this_00->fields).isUsingSM3Shader == 0) {
 code_?:
-    this = (MaterialLoader *)(this_00->fields).cubeModelMaterialLowTransp;
+    this = (MaterialLoader *)(this_00->fields).cubeModelMaterialSM2Transp;
   }
   else {
     if ((this_00->fields).isUsingMobileShader != 0) {
@@ -227,7 +227,7 @@ code_?:
       }
       goto code_?;
     }
-    this = (MaterialLoader *)(this_00->fields).cubeModelMaterialHighTransp;
+    this = (MaterialLoader *)(this_00->fields).cubeModelMaterialSM3Transp;
   }
 code_?:
   method = UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_;
@@ -337,39 +337,28 @@ bool Assembly-CSharp.dll::MaterialLoader::MaterialLoader_CheckAtlasIntegrity(Mat
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__StatHatWrapper);
-    func_?(&TypeInfo__UnityEngine__Texture2DArray);
     func_?(&StringLiteral_TextureAtlasHackDetected);
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._CubeModelMaterial_k__BackingField;
   if (this_00 != (Material *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture(this_00,(MethodInfo *)0x0);
-    uVar2 = CONCAT44(TypeInfo__UnityEngine__Texture2DArray,pTVar1);
     if (pTVar1 != (Texture *)0x0) {
-      pTVar3 = (Texture *)0x0;
-      if ((Texture2DArray__Class *)pTVar1->klass == TypeInfo__UnityEngine__Texture2DArray) {
-        pTVar3 = pTVar1;
-      }
-      if (pTVar3 != (Texture *)0x0) {
-        uVar4 = (*(code *)(pTVar3->klass->vtable).GetHashCode.method)(pTVar3,(pTVar3->klass->vtable).ToString.methodPtr);
-        uVar5 = (this->fields).atlasHash;
-        if (uVar4 != uVar5) {
-          if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__StatHatWrapper);
-          }
-          StatHatWrapper::StatHatWrapper_Count(StringLiteral_TextureAtlasHackDetected,1,(MethodInfo *)0x0);
+      uVar2 = (*(code *)(pTVar1->klass->vtable).GetHashCode.method)(pTVar1,(pTVar1->klass->vtable).ToString.methodPtr);
+      uVar3 = (this->fields).atlasHash;
+      if (uVar2 != uVar3) {
+        if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__StatHatWrapper);
         }
-        return uVar4 == uVar5;
+        StatHatWrapper::StatHatWrapper_Count(StringLiteral_TextureAtlasHackDetected,1,(MethodInfo *)0x0);
       }
-      goto code_?;
+      return uVar2 == uVar3;
     }
   }
-  uVar2 = func_?();
-code_?:
-  func_?(uVar2);
-  pcVar6 = (code *)swi(3);
-  bVar7 = (*pcVar6)();
-  return bVar7;
+  func_?();
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
 }
 
 
@@ -688,7 +677,7 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_NoiseCallback(MaterialL
       UnityEngine.AssetBundleModule.dll::UnityEngine::AssetBundle::AssetBundle_Unload(this_00,0,(MethodInfo *)0x0);
       if (this_01 != (Texture *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode(this_01,FilterMode__Enum_Trilinear,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTexture((Material *)0x6911e850,StringLiteral__Noise,this_01,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTexture((Material *)0x6931e850,StringLiteral__Noise,this_01,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTexture((Material *)0xc48300e8,StringLiteral__Noise,this_01,(MethodInfo *)0x0);
         return;
       }
@@ -739,9 +728,9 @@ Material * Assembly-CSharp.dll::MaterialLoader::MaterialLoader_PickMaterial(Mate
   if ((this->fields).isUsingSM3Shader != 0) {
     if ((this->fields).isUsingMobileShader == 0) {
       if (opaque != 0) {
-        return (this->fields).cubeModelMaterialHigh;
+        return (this->fields).cubeModelMaterialSM3;
       }
-      return (this->fields).cubeModelMaterialHighTransp;
+      return (this->fields).cubeModelMaterialSM3Transp;
     }
     if ((this->fields).isUsingSM3Shader != 0) {
       if ((this->fields).isUsingMobileShader != 0) {
@@ -765,9 +754,9 @@ Material * Assembly-CSharp.dll::MaterialLoader::MaterialLoader_PickMaterial(Mate
     }
   }
   if (opaque != 0) {
-    return (this->fields).cubeModelMaterialLow;
+    return (this->fields).cubeModelMaterialSM2;
   }
-  return (this->fields).cubeModelMaterialLowTransp;
+  return (this->fields).cubeModelMaterialSM2Transp;
 }
 
 

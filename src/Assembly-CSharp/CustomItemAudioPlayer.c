@@ -157,11 +157,11 @@ void Assembly-CSharp.dll::CustomItemAudioPlayer::CustomItemAudioPlayer_PlayClipF
         UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop(pAVar1,0,(MethodInfo *)0x0);
         pAVar1 = (this->fields).audioSource;
         if (pAVar1 != (AudioSource *)0x0) {
-          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_PlayScheduled(pAVar1,1.33743885543107e-315,in_stack_6);
+          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_PlayScheduled(pAVar1,1.33743901353208e-315,in_stack_6);
           pAVar1 = (this->fields).audioSource;
           if (pAVar1 != (AudioSource *)0x0) {
-            uStack7 = SUB84(dStack_5 + 3.2060083097208265e-29,0);
-            UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_SetScheduledEndTime(pAVar1,(double)((ulonglong)(dStack_5 + 3.2060083097208265e-29) >> 0x20),in_stack_8);
+            uStack7 = SUB84(dStack_5 + 3.2060179393705484e-29,0);
+            UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_SetScheduledEndTime(pAVar1,(double)((ulonglong)(dStack_5 + 3.2060179393705484e-29) >> 0x20),in_stack_8);
             return;
           }
         }

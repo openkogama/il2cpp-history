@@ -32,6 +32,7 @@ public abstract class MVCameraBase : MonoBehaviour
 	public void SimulateImpact(Vector3 impactDirection, AnimationCurve impactCurve, float forceMultiplier = 1f, Space impactSpace = Space.World);
 	private void SimulateImpact(Transform targetTransform);
 	private void SimulateImpact(Transform targetTransform, Vector3 impactDirection, AnimationCurve impactCurve, float forceMultiplier, Space impactSpace = Space.World);
+	protected virtual void CameraCollision();
 	public virtual void Enter(MVCameraController camController);
 	public virtual void Exit(MVCameraController camController);
 	public virtual void Suspend(MVCameraController camController);

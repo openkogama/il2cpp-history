@@ -54,10 +54,10 @@ code_?:
             this_05 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this_05,(Object *)worldObject,MethodInfo__MVPointLight__OnInputStateUpdate_LogicInputState__LogicObjectManager_,(MethodInfo *)0x0);
             pIVar9 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver(worldObject,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,(Action_2_LogicInputState_LogicObjectManager_ *)this_05,(MethodInfo *)0x0);
-            worldObject[2].fields.rotation.x = (float)pIVar9;
+            worldObject[2].fields.position.x = (float)pIVar9;
             func_?();
             this_02 = (Behaviour *)worldObject[2].fields.ownerActorNr;
-            if (worldObject[2].fields.rotation.x != 0.0) {
+            if (worldObject[2].fields.position.x != 0.0) {
               bVar2 = func_?();
               if (this_02 != (Behaviour *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled(this_02,bVar2,(MethodInfo *)0x0);
@@ -240,16 +240,16 @@ code_?:
                     pLVar6 = (this->fields).lightComponent;
                     if (pLVar6 != (Light *)0x0) {
                       UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_range(pLVar6,value,(MethodInfo *)0x0);
-                      fVar7 = (this->fields).minumumScale;
-                      fVar8 = (value / (this->fields).rangeMaxValue) / (this->fields).scaleRestriction;
-                      if (fVar7 <= fVar8) {
-                        fVar7 = fVar8;
+                      fVar7 = (value / 10.0) * 0.5;
+                      fVar8 = 0.03;
+                      if (0.03 <= fVar7) {
+                        fVar8 = fVar7;
                       }
                       pMVar9 = (this->fields).lightObject;
                       if ((pMVar9 != (MVPointLightObject *)0x0) && (this_00 = (pMVar9->fields).pointLightPlaneTransform, this_00 != (Transform *)0x0)) {
-                        value_01.y = fVar7;
-                        value_01.x = fVar7;
-                        value_01.z = fVar7;
+                        value_01.y = fVar8;
+                        value_01.x = fVar8;
+                        value_01.z = fVar8;
                         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale(this_00,value_01,(MethodInfo *)0x0);
                         this_01 = (this->fields)._.cullingSubscriberBase;
                         if (this_01 != (CullingSubscriberBase *)0x0) {
@@ -491,9 +491,6 @@ void Assembly-CSharp.dll::MVPointLight::MVPointLight__ctor(MVPointLight *this,Di
     func_?(&TypeInfo__MVPointLightObject);
     cRam_? = '\x01';
   }
-  (this->fields).minumumScale = 0.03;
-  (this->fields).rangeMaxValue = 10.0;
-  (this->fields).scaleRestriction = 2.0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__PrefabPool);
     cRam_? = '\x01';

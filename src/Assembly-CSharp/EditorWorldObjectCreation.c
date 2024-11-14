@@ -616,7 +616,7 @@ bool Assembly-CSharp.dll::EditorWorldObjectCreation::EditorWorldObjectCreation_V
               pMVar11 = MainCameraManager::MainCameraManager_get_CurrentCamera(this_04,(MethodInfo *)0x0);
               RVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_03,0,MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_);
               if (pMVar11 != (MVCameraBase *)0x0) {
-                func_?(0xd,pMVar11,RVar12,0x40000000,0,0,0,0);
+                func_?(0xe,pMVar11,RVar12,0x40000000,0,0,0,0);
                 pSVar13 = TM::TM__(StringLiteral_There_can_be_only_one_of_this_ob,(MethodInfo *)0x0);
                 if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();

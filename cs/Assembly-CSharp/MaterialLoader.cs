@@ -24,13 +24,13 @@ public class MaterialLoader : MonoBehaviour
 	private const string SM3FileEnding = "array.unity3d";
 	private const string SM2FileEnding = ".unity3d";
 	[SerializeField]
-	private Material cubeModelMaterialHigh;
+	private Material cubeModelMaterialSM3;
 	[SerializeField]
-	private Material cubeModelMaterialHighTransp;
+	private Material cubeModelMaterialSM3Transp;
 	[SerializeField]
-	private Material cubeModelMaterialLow;
+	private Material cubeModelMaterialSM2;
 	[SerializeField]
-	private Material cubeModelMaterialLowTransp;
+	private Material cubeModelMaterialSM2Transp;
 	[SerializeField]
 	private Material cubeModelMaterialMobile;
 	[SerializeField]

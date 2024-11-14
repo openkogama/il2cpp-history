@@ -2643,7 +2643,7 @@ code_?:
     }
     pIVar2 = (IAdManager__Class *)&UNK_?;
     pIVar1 = (IAdManager__Class *)0x0;
-    if (TypeInfo__System__String == (String__Class *)0xd60c35ff) {
+    if (TypeInfo__System__String == (String__Class *)0xd61835ff) {
       pIVar1 = pIVar2;
     }
     pSVar8 = TypeInfo__System__String;

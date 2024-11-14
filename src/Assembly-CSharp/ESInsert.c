@@ -848,7 +848,7 @@ code_?:
                     pMStack_37 = (MeshFilter__Array *)MainCameraManager::MainCameraManager_get_CurrentCamera(this_03,(MethodInfo *)0x0);
                     pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
                     if (pMStack_37 != (MeshFilter__Array *)0x0) {
-                      func_?(0xd,pMStack_37,pMVar1,0x40000000,0,0,0,0,0,0);
+                      func_?(0xe,pMStack_37,pMVar1,0x40000000,0,0,0,0,0,0);
                       pMStack_39 = (Mesh *)0x0;
                       pOVar45 = (Object *)func_?(TypeInfo__EditorEvent,&pMStack_39);
                       FSMEntity::FSMEntity_set_Event((FSMEntity *)e,pOVar45,(MethodInfo *)0x0);
