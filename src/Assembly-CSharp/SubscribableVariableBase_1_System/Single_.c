@@ -184,8 +184,8 @@ void Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
 /* Single get_Value() */
 
 float Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
-      SubscribableVariableBase___System_Single__get_Value
-                (SubscribableVariableBase___System_Single_ *this,MethodInfo *method)
+      SubscribableVariableBase_1_System_Single__get_Value
+                (SubscribableVariableBase_1_System_Single_ *this,MethodInfo *method)
 
 {
   return (this->fields).value;

@@ -1176,18 +1176,18 @@ MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotati
           (Quaternion *__return_storage_ptr__,MVWorldObject *this,MethodInfo *method)
 
 {
-  if (cRam__bb_d_e == '\0') {
-    func__x___a_bc_(&TypeInfo__UnityEngine__Quaternion);
-    cRam__bb_d_e = '\x01';
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Quaternion);
+    cRam_? = '\x01';
   }
-  pQVar_ = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar_ = (pQVar_->identityQuaternion).y;
-  fVar_ = (pQVar_->identityQuaternion).z;
-  fVar_ = (pQVar_->identityQuaternion).w;
-  __return_storage_ptr__->x = (pQVar_->identityQuaternion).x;
-  __return_storage_ptr__->y = fVar_;
-  __return_storage_ptr__->z = fVar_;
-  __return_storage_ptr__->w = fVar_;
+  pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar2 = (pQVar1->identityQuaternion).y;
+  fVar3 = (pQVar1->identityQuaternion).z;
+  fVar4 = (pQVar1->identityQuaternion).w;
+  __return_storage_ptr__->x = (pQVar1->identityQuaternion).x;
+  __return_storage_ptr__->y = fVar2;
+  __return_storage_ptr__->z = fVar3;
+  __return_storage_ptr__->w = fVar4;
   return __return_storage_ptr__;
 }
 
