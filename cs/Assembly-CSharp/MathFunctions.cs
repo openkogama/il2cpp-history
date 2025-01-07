@@ -80,7 +80,7 @@ public static class MathFunctions
 	public static List<Vector2> FlipPolygon(List<Vector2> points);
 	public static void ClampVector(ref Vector3 v, float min, float max);
 	public static void ClampVector(ref Vector3 v, Vector3 min, Vector3 max);
-	public static bool DistancePointLine(Vector3 point, Vector3 lineStart, Vector3 lineEnd, ref float distance);
+	public static bool DistancePointLine(Vector3 point, Vector3 lineStart, Vector3 lineEnd, out float distance);
 	public static bool DistancePointLine(Vector3 point, Vector3 lineStart, Vector3 lineEnd, out float distance, out Vector3 intersection);
 	public static void DistancePointLine(Vector3 point, Vector3 lineStart, Vector3 lineEnd, out float distance, out Vector3 intersection, out float pointOnLineScalar);
 	public static Vector3 GetNormal(Vector3 pa, Vector3 pb, Vector3 pc);

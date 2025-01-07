@@ -79,6 +79,7 @@ public class PickupItemCubeGun : PickupItemWithDelay
 	private void DoAutoFire();
 	private void Execute();
 	private static bool GetCubePosFromFineGrainedTerrain(VoxelHit voxelHit, float maxDistanceToEdge, ref IntVector pos);
+	private static int GetEdgeVertexMatchCount(MVWorldObjectClient wo, VoxelHit voxelHit, Face face, Edge edge, Vector3[] edgeVerticesCubeHit);
 	public static IntVector GetCubePos(VoxelHit voxelHit);
 }
 

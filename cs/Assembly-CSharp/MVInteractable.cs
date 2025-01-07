@@ -31,7 +31,7 @@ public abstract class MVInteractable : MVInteractableBase
 	public virtual void InitializeSetings(float healthRegenerationPerSecondSetting, float shieldRegenerationPerSecondSetting);
 	protected virtual void RestoreShield(float restoredShieldAmount);
 	protected bool IgnoreDamage(MVPlayer damageDealer);
-	protected bool IgnoreHealing(MVPlayer damageDealer);
+	protected bool IgnoreHealing(MVPlayer healer);
 	private void Update();
 	public override void AddModifier(AvatarModifierPackageType type, int id = -1, AvatarModifierPackage.AvatarModifier[] additionalModifers = null);
 	public override bool HasModifier(AvatarModifierPackageType type);

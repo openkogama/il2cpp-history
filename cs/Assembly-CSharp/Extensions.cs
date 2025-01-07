@@ -53,6 +53,7 @@ public static class Extensions
 	public static void ScaleBounds(this GameObject gameObject, float targetSize);
 	public static Transform FindChildRecursively(this Transform transform, string child);
 	public static T GetValueOrDefault<T>(this Dictionary<object, object> hashtable, string key, T defaultValue = default);
+	public static V GetTypedValueOrDefault<K, V>(this Dictionary<K, V> hashtable, K key, V defaultValue = default);
 	public static Color GetColor(this Dictionary<object, object> hashtable, string colorKey);
 	public static Color GetColorOrDefault(this Dictionary<object, object> hashtable, string colorKey, Color defaultColor = default);
 	public static Vector3 GetVector3(this Dictionary<object, object> hashtable, string vectorKey);
