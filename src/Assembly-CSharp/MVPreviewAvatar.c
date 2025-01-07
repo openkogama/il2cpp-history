@@ -22,7 +22,7 @@ MVWorldObjectClient * Assembly-CSharp.dll::MVPreviewAvatar::MVPreviewAvatar_Clon
     if (bVar2 != 0) {
       pMStack3 = TypeInfo__MVAvatarLocal;
       if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) || ((MVAvatarLocal__Class *)(pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] != TypeInfo__MVAvatarLocal)) goto code_?;
-      pMVar1[1].fields.previewLayerMask = (this->fields).spawnRoleCreatorId;
+      pMVar1[1].fields._PlayInteractionType_k__BackingField = (this->fields).spawnRoleCreatorId;
     }
     return pMVar1;
   }

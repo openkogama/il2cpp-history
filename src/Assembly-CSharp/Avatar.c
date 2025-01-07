@@ -475,7 +475,7 @@ void Assembly-CSharp.dll::Avatar::Avatar__ctor(Avatar *this,MethodInfo *method)
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,GamePassesHighScoreList+HighScoreListData]::Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor(pDVar1,MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__Dictionary__);
   (this->fields).currentModifierByteState = (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)pDVar1;
   func_?(&(this->fields).currentModifierByteState,pDVar1);
-  pBVar2 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x1b);
+  pBVar2 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x1c);
   (this->fields).modifierEffectCount = pBVar2;
   func_?(&(this->fields).modifierEffectCount,pBVar2);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);

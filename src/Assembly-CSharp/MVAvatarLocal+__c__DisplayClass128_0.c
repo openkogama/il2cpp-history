@@ -1,7 +1,7 @@
 
 /* Void <InitializeHealth>b__1(SpawnRoleDataReceiver) */
 
-void Assembly-CSharp.dll::MVAvatarLocal+<>c__DisplayClass127_0::MVAvatarLocal_c_DisplayClass127_0__InitializeHealth_b__1(MVAvatarLocal_c_DisplayClass127_0 *this,SpawnRoleDataReceiver *receiver,MethodInfo *method)
+void Assembly-CSharp.dll::MVAvatarLocal+<>c__DisplayClass128_0::MVAvatarLocal_c_DisplayClass128_0__InitializeHealth_b__1(MVAvatarLocal_c_DisplayClass128_0 *this,SpawnRoleDataReceiver *receiver,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

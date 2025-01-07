@@ -48,6 +48,7 @@ public class MVAdvancedGhost : MVBlueprintBase, IGameStateControllerSubscriber, 
 	public override void Destroy();
 	public override Vector3 GetTargetPosition();
 	private void ReceiveDamage(float amount, MVPlayer damageDealer, PlayerKilledByType damageType);
+	private void RecieveHealing(float amount, MVPlayer damageDealer);
 	public override void Reset();
 	public bool IsOnSameTeam(MVTeam team);
 	public override void OnDataUpdate();

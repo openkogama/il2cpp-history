@@ -36,7 +36,7 @@ Vector3 * Assembly-CSharp.dll::AdvancedGhostMotor::AdvancedGhostMotor_ApplyInput
   fStack_12 = *(float *)(puVar10 + 1) * fVar6 - fStack_3;
   pMVar13 = (pAVar1->fields).interactable;
   if (pMVar13 != (MVInteractableBase *)0x0) {
-    fVar2 = (float10)(*(code *)(pMVar13->klass->vtable).__unknown_6.method)(pMVar13,0xc,(pAVar1->fields).ghostFriction,(pMVar13->klass->vtable).__unknown_7.methodPtr);
+    fVar2 = (float10)(*(code *)(pMVar13->klass->vtable).__unknown_8.method)(pMVar13,0xc,(pAVar1->fields).ghostFriction,(pMVar13->klass->vtable).__unknown_9.methodPtr);
     fVar8 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::Easing::Easing_InQuad((float)fVar2,(MethodInfo *)0x0);
     uVar14 = (pAVar1->fields).velocity.x;
     uVar15 = (pAVar1->fields).velocity.y;
@@ -70,7 +70,7 @@ void Assembly-CSharp.dll::AdvancedGhostMotor::AdvancedGhostMotor_FixedUpdateFunc
   VStack_4._0_8_ = uVar1;
   VStack_4.z = fVar2;
   if (pMVar3 != (MVInteractableBase *)0x0) {
-    fVar5 = (float10)(*(code *)(pMVar3->klass->vtable).__unknown_6.method)(pMVar3,0xc,(this->fields).ghostFriction,(pMVar3->klass->vtable).__unknown_7.methodPtr);
+    fVar5 = (float10)(*(code *)(pMVar3->klass->vtable).__unknown_8.method)(pMVar3,0xc,(this->fields).ghostFriction,(pMVar3->klass->vtable).__unknown_9.methodPtr);
     fStack_6 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::Easing::Easing_InQuad((float)fVar5,(MethodInfo *)0x0);
     fStack_7 = VStack_4.x * fStack_6;
     fStack_8 = VStack_4.y * fStack_6;
@@ -495,7 +495,7 @@ void Assembly-CSharp.dll::AdvancedGhostMotor::AdvancedGhostMotor_UpdateVelocity(
   if (pMVar3 != (MVInteractableBase *)0x0) {
     uVar4 = uVar1;
     fVar5 = fVar2;
-    fVar6 = (float10)(*(code *)(pMVar3->klass->vtable).__unknown_6.method)(pMVar3,0xc,(this->fields).ghostFriction,(pMVar3->klass->vtable).__unknown_7.methodPtr);
+    fVar6 = (float10)(*(code *)(pMVar3->klass->vtable).__unknown_8.method)(pMVar3,0xc,(this->fields).ghostFriction,(pMVar3->klass->vtable).__unknown_9.methodPtr);
     fVar7 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::Easing::Easing_InQuad((float)fVar6,(MethodInfo *)0x0);
     fVar8 = (float)uVar4 * fVar7;
     fVar9 = (float)((ulonglong)uVar4 >> 0x20) * fVar7;

@@ -55,7 +55,7 @@ code_?:
       item = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(this_00,VehicleInteractable_MethodInfo__UnityEngine__GameObject__AddComponent<VehicleInteractable>__);
       if (item == (Object__Class *)0x0) goto code_?;
       pOVar6 = (Object__Class *)(item->_0).image;
-      (*(code *)pOVar6[1]._0.methods)(item,pMVar4[4].fields._._.extra_arg,pMVar4[4].fields._._.delegate_trampoline,0,pMVar4[4].fields._._.interp_invoke_impl,0,pOVar6[1]._0.nestedTypes);
+      (*(code *)pOVar6[1].static_fields)(item,pMVar4[4].fields._._.extra_arg,pMVar4[4].fields._._.delegate_trampoline,0,pMVar4[4].fields._._.interp_invoke_impl,0,pOVar6[1].rgctx_data);
       if (hoverCraftMotor == (SimpleVehicleMotorBase *)0x0) goto code_?;
       uVar1._0_4_ = pMVar4[4].fields._._.invoke_impl;
       uVar1._4_4_ = pMVar4[4].fields._._.m_target;

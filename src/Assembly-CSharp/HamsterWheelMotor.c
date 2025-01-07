@@ -27,7 +27,7 @@ Vector3 * Assembly-CSharp.dll::HamsterWheelMotor::HamsterWheelMotor_GetVehicleVe
   }
   pMVar1 = (this->fields).interactable;
   if (pMVar1 == (MVInteractableBase *)0x0) goto code_?;
-  fVar2 = (float10)(*(code *)(pMVar1->klass->vtable).__unknown_6.method)(pMVar1,3,0x421b3333,(pMVar1->klass->vtable).__unknown_7.methodPtr);
+  fVar2 = (float10)(*(code *)(pMVar1->klass->vtable).__unknown_8.method)(pMVar1,3,0x421b3333,(pMVar1->klass->vtable).__unknown_9.methodPtr);
   fStack_3 = (float)fVar2;
   fStack_4 = velocity.x - velocity.x * 0.98;
   fStack_5 = velocity.y - velocity.y * 0.98;

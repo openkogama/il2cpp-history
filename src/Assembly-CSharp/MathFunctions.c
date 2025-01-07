@@ -135,13 +135,16 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_DistancePointLine(Vector3
   fVar2 = lineEnd.y - lineStart.y;
   fVar3 = lineEnd.z - lineStart.z;
   *distance = 0.0;
-  fVar4 = (fVar1 * (point.x - lineStart.x) + fVar2 * (point.y - lineStart.y) + fVar3 * (point.z - lineStart.z)) / (fVar1 * fVar1 + fVar2 * fVar2 + fVar3 * fVar3);
-  if ((0.0 <= fVar4) && (fVar4 <= 1.0)) {
-    fStack_5 = point.z - (lineStart.z + fVar3 * fVar4);
-    uStack_6 = CONCAT44(point.y - (lineStart.y + fVar2 * fVar4),point.x - (lineStart.x + fVar1 * fVar4));
-    fVar7 = (float10)func_?(&uStack_6,0);
-    *distance = (float)fVar7;
-    return 1;
+  fVar4 = fVar1 * fVar1 + fVar2 * fVar2 + fVar3 * fVar3;
+  if (1.4013e-45 <= fVar4) {
+    fVar4 = (fVar1 * (point.x - lineStart.x) + fVar2 * (point.y - lineStart.y) + fVar3 * (point.z - lineStart.z)) / fVar4;
+    if ((0.0 <= fVar4) && (fVar4 <= 1.0)) {
+      fStack_5 = point.z - (lineStart.z + fVar3 * fVar4);
+      uStack_6 = CONCAT44(point.y - (lineStart.y + fVar2 * fVar4),point.x - (lineStart.x + fVar1 * fVar4));
+      fVar7 = (float10)func_?(&uStack_6,0);
+      *distance = (float)fVar7;
+      return 1;
+    }
   }
   return 0;
 }
@@ -155,23 +158,26 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_DistancePointLine_1(Vecto
   fVar1 = lineEnd.x - lineStart.x;
   fVar2 = lineEnd.y - lineStart.y;
   fVar3 = lineEnd.z - lineStart.z;
+  *distance = 0.0;
   intersection->x = 0.0;
   intersection->y = 0.0;
   intersection->z = 0.0;
-  *distance = 0.0;
-  fVar4 = (fVar1 * (point.x - lineStart.x) + fVar2 * (point.y - lineStart.y) + fVar3 * (point.z - lineStart.z)) / (fVar1 * fVar1 + fVar2 * fVar2 + fVar3 * fVar3);
-  if ((0.0 <= fVar4) && (fVar4 <= 1.0)) {
-    fStack_5 = lineStart.z + fVar3 * fVar4;
-    fVar1 = lineStart.x + fVar1 * fVar4;
-    fVar4 = lineStart.y + fVar2 * fVar4;
-    intersection->x = fVar1;
-    intersection->y = fVar4;
-    intersection->z = fStack_5;
-    fStack_5 = point.z - fStack_5;
-    uStack_6 = CONCAT44(point.y - fVar4,point.x - fVar1);
-    fVar7 = (float10)func_?(&uStack_6,0);
-    *distance = (float)fVar7;
-    return 1;
+  fVar4 = fVar1 * fVar1 + fVar2 * fVar2 + fVar3 * fVar3;
+  if (1.4013e-45 <= fVar4) {
+    fVar4 = (fVar1 * (point.x - lineStart.x) + fVar2 * (point.y - lineStart.y) + fVar3 * (point.z - lineStart.z)) / fVar4;
+    if ((0.0 <= fVar4) && (fVar4 <= 1.0)) {
+      fStack_5 = lineStart.z + fVar3 * fVar4;
+      fVar1 = lineStart.x + fVar1 * fVar4;
+      fVar4 = lineStart.y + fVar2 * fVar4;
+      intersection->x = fVar1;
+      intersection->y = fVar4;
+      intersection->z = fStack_5;
+      fStack_5 = point.z - fStack_5;
+      uStack_6 = CONCAT44(point.y - fVar4,point.x - fVar1);
+      fVar7 = (float10)func_?(&uStack_6,0);
+      *distance = (float)fVar7;
+      return 1;
+    }
   }
   return 0;
 }

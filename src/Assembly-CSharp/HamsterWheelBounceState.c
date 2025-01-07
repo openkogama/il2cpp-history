@@ -172,8 +172,8 @@ void Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState_Updat
     VStack_4._0_8_ = *(undefined8 *)(mvControllerColliderHit.hit.interactionFlags._4_4_ + 0x24);
     VStack_4.z = *(float *)(mvControllerColliderHit.hit.interactionFlags._4_4_ + 0x2c);
     if (pMVar1 != (MVInteractableBase *)0x0) {
-      pMStack_5 = (pMVar1->klass->vtable).__unknown_6.method;
-      fVar6 = (float10)(*(code *)pMStack_5)(pMVar1,0xd,fStack_3 + 0.6,(pMVar1->klass->vtable).__unknown_7.methodPtr);
+      pMStack_5 = (pMVar1->klass->vtable).__unknown_8.method;
+      fVar6 = (float10)(*(code *)pMStack_5)(pMVar1,0xd,fStack_3 + 0.6,(pMVar1->klass->vtable).__unknown_9.methodPtr);
       pMStack_5 = (MethodInfo *)(float)fVar6;
       if (0.0 < (float)pMStack_5) {
         VStack_4.z = mvControllerColliderHit.impactVelocity.y;

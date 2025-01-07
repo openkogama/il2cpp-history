@@ -5,10 +5,11 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_ActivateFirstPers
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Action<float,_MVPlayer>);
     func_?(&TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>);
     func_?(&MethodInfo__DamageIndicator__ShowDamage_float__MVPlayer__MV__Common__PlayerKilledByType_);
     func_?(&MethodInfo__FirstPersonCamera__MoveItemToFirstpersonView_PickupItem_);
-    func_?(&MethodInfo__HealingIndicator__ShowHealing_float__MVPlayer__MV__Common__PlayerKilledByType_);
+    func_?(&MethodInfo__HealingIndicator__ShowHealing_float__MVPlayer_);
     func_?(&TypeInfo__MVPickupOwner__OnEquipItemDelegate);
     cRam_? = '\x01';
   }
@@ -94,25 +95,25 @@ code_?:
       func_?();
       pMStack_2 = (this->fields).localAvatar;
       if (pMStack_2 == (MVAvatarLocal *)0x0) goto code_?;
-      pAVar14 = (pMStack_2->fields).OnDamageTaken;
+      pAVar14 = (pMStack_2->fields).OnHealing;
       object = (this->fields).healingIndicator;
-      pAVar15 = (Action_3_Single_Object_ByteEnum_ *)func_?(TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>);
-      mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::Action_3_Single_Object_ByteEnum___ctor(pAVar15,(Object *)object,MethodInfo__HealingIndicator__ShowHealing_float__MVPlayer__MV__Common__PlayerKilledByType_,(MethodInfo *)0x0);
-      unaff_ESI = (MVAvatarLocal *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar14,(Delegate *)pAVar15,(MethodInfo *)0x0);
+      this_03 = (Action_2_Single_Object_ *)func_?(TypeInfo__System__Action<float,_MVPlayer>);
+      mscorlib.dll::System::Action`2[Single,Object]::Action_2_Single_Object___ctor(this_03,(Object *)object,MethodInfo__HealingIndicator__ShowHealing_float__MVPlayer_,(MethodInfo *)0x0);
+      unaff_ESI = (MVAvatarLocal *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar14,(Delegate *)this_03,(MethodInfo *)0x0);
       if (unaff_ESI == (MVAvatarLocal *)0x0) {
-        (pMStack_2->fields).OnDamageTaken = (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0;
+        (pMStack_2->fields).OnHealing = (Action_2_Single_MVPlayer_ *)0x0;
         unaff_EDI = pMStack_2;
 code_?:
-        pMStack_2 = (MVAvatarLocal *)&(unaff_EDI->fields).OnDamageTaken;
+        pMStack_2 = (MVAvatarLocal *)&(unaff_EDI->fields).OnHealing;
         func_?();
         pMStack_2 = (this->fields).localAvatar;
         if (pMStack_2 == (MVAvatarLocal *)0x0) goto code_?;
-        pAVar14 = (pMStack_2->fields).OnDamageTaken;
+        pAVar15 = (pMStack_2->fields).OnDamageTaken;
         object_00 = (this->fields).damageIndicator;
-        pAVar15 = (Action_3_Single_Object_ByteEnum_ *)func_?(TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>);
+        this_04 = (Action_3_Single_Object_ByteEnum_ *)func_?(TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>);
         pMVar16 = (MVAvatarLocal *)&UNK_?;
-        mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::Action_3_Single_Object_ByteEnum___ctor(pAVar15,(Object *)object_00,MethodInfo__DamageIndicator__ShowDamage_float__MVPlayer__MV__Common__PlayerKilledByType_,(MethodInfo *)0x0);
-        unaff_EDI = (MVAvatarLocal *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar14,(Delegate *)pAVar15,(MethodInfo *)0x0);
+        mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::Action_3_Single_Object_ByteEnum___ctor(this_04,(Object *)object_00,MethodInfo__DamageIndicator__ShowDamage_float__MVPlayer__MV__Common__PlayerKilledByType_,(MethodInfo *)0x0);
+        unaff_EDI = (MVAvatarLocal *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar15,(Delegate *)this_04,(MethodInfo *)0x0);
         pMVar3 = (MVAvatarLocal *)TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>;
         if (unaff_EDI == (MVAvatarLocal *)0x0) {
           (pMStack_2->fields).OnDamageTaken = (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0;
@@ -125,19 +126,19 @@ code_?:
           this_01 = (this->fields).modifierIndicator;
           if (this_01 != (ModifierIndicator *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this_01,1,(MethodInfo *)0x0);
-            this_03 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-            if (this_03 != (MainCameraManager *)0x0) {
-              MainCameraManager::MainCameraManager_StartTransitionCam(this_03,0.3,0,(MethodInfo *)0x0);
+            this_05 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+            if (this_05 != (MainCameraManager *)0x0) {
+              MainCameraManager::MainCameraManager_StartTransitionCam(this_05,0.3,0,(MethodInfo *)0x0);
               return;
             }
           }
           goto code_?;
         }
         pMStack_2 = unaff_EDI;
-        pAVar14 = (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)func_?();
+        pAVar15 = (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)func_?();
         unaff_ESI = pMStack_2;
-        if (pAVar14 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
-          (pMStack_2->fields).OnDamageTaken = pAVar14;
+        if (pAVar15 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
+          (pMStack_2->fields).OnDamageTaken = pAVar15;
           pMStack_2 = unaff_EDI;
           iVar17 = func_?();
           if (iVar17 != 0) goto code_?;
@@ -146,10 +147,10 @@ code_?:
         goto code_?;
       }
       pMStack_2 = unaff_ESI;
-      pAVar14 = (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)func_?();
+      pAVar14 = (Action_2_Single_MVPlayer_ *)func_?();
       unaff_EDI = pMStack_2;
-      if (pAVar14 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
-        (pMStack_2->fields).OnDamageTaken = pAVar14;
+      if (pAVar14 != (Action_2_Single_MVPlayer_ *)0x0) {
+        (pMStack_2->fields).OnHealing = pAVar14;
         pMStack_2 = unaff_ESI;
         iVar17 = func_?();
         if (iVar17 != 0) goto code_?;
@@ -187,10 +188,11 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_DeactivateFirstPe
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Action<float,_MVPlayer>);
     func_?(&TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>);
     func_?(&MethodInfo__DamageIndicator__ShowDamage_float__MVPlayer__MV__Common__PlayerKilledByType_);
     func_?(&MethodInfo__FirstPersonCamera__MoveItemToFirstpersonView_PickupItem_);
-    func_?(&MethodInfo__HealingIndicator__ShowHealing_float__MVPlayer__MV__Common__PlayerKilledByType_);
+    func_?(&MethodInfo__HealingIndicator__ShowHealing_float__MVPlayer_);
     func_?(&TypeInfo__MVPickupOwner__OnEquipItemDelegate);
     cRam_? = '\x01';
   }
@@ -281,58 +283,58 @@ code_?:
     func_?();
     pMVar1 = (this->fields).localAvatar;
     if (pMVar1 == (MVAvatarLocal *)0x0) goto code_?;
-    pAVar10 = (pMVar1->fields).OnDamageTaken;
-    pAVar11 = (Action_3_Single_Object_ByteEnum_ *)func_?(TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>);
-    mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::Action_3_Single_Object_ByteEnum___ctor(pAVar11,(Object *)0xc483f08b,MethodInfo__HealingIndicator__ShowHealing_float__MVPlayer__MV__Common__PlayerKilledByType_,(MethodInfo *)0x0);
-    pDVar12 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pAVar10,(Delegate *)pAVar11,(MethodInfo *)0x0);
-    if (pDVar12 == (Delegate *)0x0) {
-      (pMVar1->fields).OnDamageTaken = (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0;
+    pAVar10 = (pMVar1->fields).OnHealing;
+    this_07 = (Action_2_Single_Object_ *)func_?(TypeInfo__System__Action<float,_MVPlayer>);
+    mscorlib.dll::System::Action`2[Single,Object]::Action_2_Single_Object___ctor(this_07,(Object *)0xc483f08b,MethodInfo__HealingIndicator__ShowHealing_float__MVPlayer_,(MethodInfo *)0x0);
+    pDVar11 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pAVar10,(Delegate *)this_07,(MethodInfo *)0x0);
+    if (pDVar11 == (Delegate *)0x0) {
+      (pMVar1->fields).OnHealing = (Action_2_Single_MVPlayer_ *)0x0;
 code_?:
       func_?();
-      pDVar12 = pDRam33eb0150;
+      pDVar11 = pDRam33eb0150;
       iVar3 = 0x33eb0000;
-      pAVar11 = (Action_3_Single_Object_ByteEnum_ *)func_?(TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>);
-      mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::Action_3_Single_Object_ByteEnum___ctor(pAVar11,(Object *)0x3d8b00c5,MethodInfo__DamageIndicator__ShowDamage_float__MVPlayer__MV__Common__PlayerKilledByType_,(MethodInfo *)0x0);
-      pDVar12 = mscorlib.dll::System::Delegate::Delegate_Remove(pDVar12,(Delegate *)pAVar11,(MethodInfo *)0x0);
-      if (pDVar12 == (Delegate *)0x0) {
+      this_08 = (Action_3_Single_Object_ByteEnum_ *)func_?(TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>);
+      mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::Action_3_Single_Object_ByteEnum___ctor(this_08,(Object *)0x3d8b00c6,MethodInfo__DamageIndicator__ShowDamage_float__MVPlayer__MV__Common__PlayerKilledByType_,(MethodInfo *)0x0);
+      pDVar11 = mscorlib.dll::System::Delegate::Delegate_Remove(pDVar11,(Delegate *)this_08,(MethodInfo *)0x0);
+      if (pDVar11 == (Delegate *)0x0) {
         *(undefined4 *)(iVar3 + 0x150) = 0;
 code_?:
         func_?();
-        DamageIndicator::DamageIndicator_ResetIndicators((DamageIndicator *)0x3d8b00c5,(MethodInfo *)0x0);
-        bVar13 = 0;
+        DamageIndicator::DamageIndicator_ResetIndicators((DamageIndicator *)0x3d8b00c6,(MethodInfo *)0x0);
+        bVar12 = 0;
         this = (FirstPersonCamera *)0x0;
         do {
-          if (TypeInfo__UseInteractorVisualization____c__DisplayClass36_0 == (UseInteractorVisualization_c_DisplayClass36_0__Class *)0x0) goto code_?;
-          if ((TypeInfo__UseInteractorVisualization____c__DisplayClass36_0->_0).namespaze <= (char *)(uint)bVar13) goto code_?;
-          pIVar14 = (&(TypeInfo__UseInteractorVisualization____c__DisplayClass36_0->_0).byval_arg.data)[(int)(uint)bVar13].generic_class;
-          if ((pIVar14 == (Il2CppGenericClass *)0x0) || (this_03 = pIVar14->cached_class, this_03 == (Il2CppClass *)0x0)) goto code_?;
+          if (TypeInfo__System__Uri__UriInfo == (Uri_UriInfo__Class *)0x0) goto code_?;
+          if ((TypeInfo__System__Uri__UriInfo->_0).namespaze <= (char *)(uint)bVar12) goto code_?;
+          pIVar13 = (&(TypeInfo__System__Uri__UriInfo->_0).byval_arg.data)[(int)(uint)bVar12].generic_class;
+          if ((pIVar13 == (Il2CppGenericClass *)0x0) || (this_03 = pIVar13->cached_class, this_03 == (Il2CppClass *)0x0)) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this_03,0,(MethodInfo *)0x0);
-          bVar13 = this._3_1_ + 1;
-          this = (FirstPersonCamera *)((uint)bVar13 << 0x18);
-        } while (bVar13 < 3);
-        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)&TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>,0,(MethodInfo *)0x0);
+          bVar12 = this._3_1_ + 1;
+          this = (FirstPersonCamera *)((uint)bVar12 << 0x18);
+        } while (bVar12 < 3);
+        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)&TypeInfo__System__Action<float,_MVPlayer>,0,(MethodInfo *)0x0);
         if ((((iRam_? != 0) && (*(AvatarFader **)(iRam_? + 0x30) != (AvatarFader *)0x0)) && (AvatarFader::AvatarFader_SetTransparency(*(AvatarFader **)(iRam_? + 0x30),0.0,(MethodInfo *)0x0), iRam_? != 0)) && (*(Behaviour **)(iRam_? + 0x30) != (Behaviour *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled(*(Behaviour **)(iRam_? + 0x30),1,(MethodInfo *)0x0);
-          this_07 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-          if (this_07 != (MainCameraManager *)0x0) {
-            MainCameraManager::MainCameraManager_StartTransitionCam(this_07,0.25,0,(MethodInfo *)0x0);
+          this_09 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+          if (this_09 != (MainCameraManager *)0x0) {
+            MainCameraManager::MainCameraManager_StartTransitionCam(this_09,0.25,0,(MethodInfo *)0x0);
             return;
           }
         }
         goto code_?;
       }
-      iVar15 = func_?();
-      if (iVar15 != 0) {
-        *(int *)(iVar3 + 0x150) = iVar15;
+      iVar14 = func_?();
+      if (iVar14 != 0) {
+        *(int *)(iVar3 + 0x150) = iVar14;
         iVar3 = func_?();
         if (iVar3 != 0) goto code_?;
         goto code_?;
       }
       goto code_?;
     }
-    pAVar10 = (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)func_?();
-    if (pAVar10 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
-      (pMVar1->fields).OnDamageTaken = pAVar10;
+    pAVar10 = (Action_2_Single_MVPlayer_ *)func_?();
+    if (pAVar10 != (Action_2_Single_MVPlayer_ *)0x0) {
+      (pMVar1->fields).OnHealing = pAVar10;
       iVar3 = func_?();
       if (iVar3 != 0) goto code_?;
       goto code_?;
@@ -341,8 +343,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

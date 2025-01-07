@@ -222,9 +222,8 @@ code_?:
     }
   }
 code_?:
-  func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  bVar15 = func_?();
+  return bVar15;
 }
 
 

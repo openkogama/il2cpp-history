@@ -835,7 +835,7 @@ code_?:
         item = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar2,VehicleInteractable_MethodInfo__UnityEngine__GameObject__AddComponent<VehicleInteractable>__);
         pMVar1 = (MVAvatarLocal *)vehicleBase;
         if (item != (Object *)0x0) {
-          (*(code *)item->klass[1]._0.methods)(item,(vehicleBase->fields).Modifiers,(vehicleBase->fields).Health,0,(vehicleBase->fields).shield,0,item->klass[1]._0.nestedTypes);
+          (*(code *)item->klass[1].static_fields)(item,(vehicleBase->fields).Modifiers,(vehicleBase->fields).Health,0,(vehicleBase->fields).shield,0,item->klass[1].rgctx_data);
           pJStack_15 = (JetPackMotor *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar2,JetPackMotor_MethodInfo__UnityEngine__GameObject__AddComponent<JetPackMotor>__);
           pOStack_16 = pOStack_5;
           uStack_17 = 0;

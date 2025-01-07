@@ -398,7 +398,7 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_GetVelocity(Vector3 *__r
                 velocity_01.y = (float)uVar14;
                 velocity_01.x = (float)uVar13;
                 velocity_01.z = fVar6;
-                pVVar3 = JumpState::JumpState_ApplyJumping((Vector3 *)&stack0xffffffc8,this_01,(MVInteractableBase *)interactableLocal,pMVar1,fVar5,fVar7,0x15,velocity_01,movableVelocity,(MethodInfo *)0x0);
+                pVVar3 = JumpState::JumpState_ApplyJumping((Vector3 *)&stack0xffffffc8,this_01,(MVInteractableBase *)interactableLocal,pMVar1,fVar5,fVar7,0xb5,velocity_01,movableVelocity,(MethodInfo *)0x0);
                 pVVar3 = MVRigidBody::MVRigidBody_GetImpulse((Vector3 *)&stack0xffffffc8,(MVRigidBody *)this,*pVVar3,(MVInteractableBase *)(this->fields).interactableLocal,(MethodInfo *)0x0);
                 pVVar3 = MVRigidBody::MVRigidBody_VelocityDamping((Vector3 *)&stack0xffffffc8,*pVVar3,1.0,(MVInteractableBase *)(this->fields).interactableLocal,(MethodInfo *)0x0);
                 fVar6 = pVVar3->y;
@@ -445,7 +445,7 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_HandleMovementBoost(AvatarMot
       if (pOStack3 != (Object *)0x0) {
         if ((pOStack3->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
           piVar5 = (int *)func_?();
-          (this->fields).walkSpeed = ((float)*piVar5 / 100.0 + 1.0) * 3.389851e-29;
+          (this->fields).walkSpeed = ((float)*piVar5 / 100.0 + 1.0) * 3.3901302e-29;
           return;
         }
         goto code_?;
@@ -666,7 +666,7 @@ code_?:
         if ((fVar3 == 0.0) || (iVar16 = *(int *)((int)fVar3 + 0x10), iVar16 == 0)) goto code_?;
         pDVar15 = *(Delegate **)(iVar16 + 100);
         pAVar17 = (Action_1_MVControllerColliderHit_ *)func_?(TypeInfo__System__Action<MVControllerColliderHit>);
-        mscorlib.dll::System::Action`1[MVControllerColliderHit]::Action_1_MVControllerColliderHit___ctor(pAVar17,(Object *)&UNK_?,pvRam830876cf,(MethodInfo *)0x0);
+        mscorlib.dll::System::Action`1[MVControllerColliderHit]::Action_1_MVControllerColliderHit___ctor(pAVar17,(Object *)&UNK_?,pvRam830876df,(MethodInfo *)0x0);
         pDVar15 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar15,(Delegate *)pAVar17,(MethodInfo *)0x0);
         if (pDVar15 == (Delegate *)0x0) {
           *(undefined4 *)(iVar16 + 100) = 0;

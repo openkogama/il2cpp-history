@@ -142,7 +142,7 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::GamePassesShowDetailsButt
     bVar1 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled((MethodInfo *)0x0);
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
-      value = 100;
+      value = 0xe4;
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf(pGVar2,(MethodInfo *)0x0);
       if (bVar3 != bVar1) {
         pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
@@ -249,7 +249,7 @@ code_?:
       if (bVar7 != bVar4) {
         pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(in_stack_6,(MethodInfo *)0x0);
         if (pGVar5 == (GameObject *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,100,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,0xe4,(MethodInfo *)0x0);
         if (bVar4 != 0) {
           this_00 = in_stack_6[1].fields._.m_CachedPtr;
           if (this_00 == (GamePassesTextBubble *)0x0) goto code_?;
@@ -309,7 +309,7 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::GamePassesShowDetailsButt
     bVar1 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled((MethodInfo *)0x0);
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
-      value = 100;
+      value = 0xe4;
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf(pGVar2,(MethodInfo *)0x0);
       if (bVar3 != bVar1) {
         pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);

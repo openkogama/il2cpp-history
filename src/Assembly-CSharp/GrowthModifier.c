@@ -20,7 +20,7 @@ void Assembly-CSharp.dll::GrowthModifier::GrowthModifier_Destroy(GrowthModifier 
       pMVar2 = (pAVar1->fields).mvAvatar;
       if (pMVar2 != (MVAvatar *)0x0) {
         if (((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (pMVar2->klass->_1).naturalAligment) && ((MVAvatarLocal__Class *)(pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] == TypeInfo__MVAvatarLocal)) {
-          this_00 = (Component *)pMVar2[1].fields._._._.groupId;
+          this_00 = (Component *)pMVar2[1].fields._._._.itemId;
           if (this_00 != (Component *)0x0) {
             pOVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1(this_00,AvatarMotor_MethodInfo__UnityEngine__Component__GetComponent<AvatarMotor>__);
             if ((pOVar4 != (Object *)0x0) && ((SizeState *)pOVar4[0xe].monitor != (SizeState *)0x0)) {

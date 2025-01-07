@@ -135,8 +135,8 @@ Vector3 * Assembly-CSharp.dll::MVRigidBody::MVRigidBody_ApplyGravity(Vector3 *__
   value._17_3_ = *(undefined3 *)&(pMVar1->gravity).field_0x11;
   Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
   if (interactableLocal != (MVInteractableBase *)0x0) {
-    pIVar6 = (interactableLocal->klass->vtable).__unknown_7.methodPtr;
-    fVar7 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_6.method)(interactableLocal,0,(this->fields).density);
+    pIVar6 = (interactableLocal->klass->vtable).__unknown_9.methodPtr;
+    fVar7 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_8.method)(interactableLocal,0,(this->fields).density);
     fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     __return_storage_ptr__->x = velocity.x;
     __return_storage_ptr__->y = velocityPrevFrame.y - fVar5 * (float)fVar7 * (float)pIVar6;
@@ -218,7 +218,7 @@ Vector3 * Assembly-CSharp.dll::MVRigidBody::MVRigidBody_GetImpulse(Vector3 *__re
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__,method_00);
       uStack_1 = 0xffffffff;
       if (interactableLocal != (MVInteractableBase *)0x0) {
-        fVar16 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_6.method)(interactableLocal,1,(this->fields).weight,(interactableLocal->klass->vtable).__unknown_7.methodPtr);
+        fVar16 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_8.method)(interactableLocal,1,(this->fields).weight,(interactableLocal->klass->vtable).__unknown_9.methodPtr);
         fVar17 = (float)((float10)0.02 / fVar16);
         pLVar7 = (this->fields).impulseVectors;
         if (pLVar7 != (List_1_UnityEngine_Vector3_ *)0x0) {
@@ -274,7 +274,7 @@ Vector3 * Assembly-CSharp.dll::MVRigidBody::MVRigidBody_VelocityDamping(Vector3 
 
 {
   if (interactableLocal != (MVInteractableBase *)0x0) {
-    fVar1 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_6.method)(interactableLocal,4,0x3f800000,(interactableLocal->klass->vtable).__unknown_7.methodPtr);
+    fVar1 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_8.method)(interactableLocal,4,0x3f800000,(interactableLocal->klass->vtable).__unknown_9.methodPtr);
     fVar2 = (float)fVar1;
     fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime((MethodInfo *)0x0);
     fVar3 = fVar3 / 0.02;

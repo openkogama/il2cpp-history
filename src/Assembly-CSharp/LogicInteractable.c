@@ -1,4 +1,49 @@
 
+/* Void Heal(Single, MVPlayer) */
+
+void Assembly-CSharp.dll::LogicInteractable::LogicInteractable_Heal(LogicInteractable *this,float amount,MVPlayer *healer,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__TakeDamageEventArgs);
+    cRam_? = '\x01';
+  }
+  pEVar1 = (this->fields).OnDamageEvent;
+  if (pEVar1 != (EventHandler_1_TakeDamageEventArgs_ *)0x0) {
+    this_00 = (TakeDamageEventArgs *)func_?(TypeInfo__TakeDamageEventArgs);
+    TakeDamageEventArgs::TakeDamageEventArgs__ctor(this_00,-amount,healer,PlayerKilledByType__Enum_None,(MethodInfo *)0x0);
+    (*(pEVar1->fields)._._.invoke_impl)((pEVar1->fields)._._.method_code,this,this_00,(pEVar1->fields)._._.method);
+  }
+  return;
+}
+
+
+/* Void HealOverTime(AvatarModifierPackageType, MVPlayer) */
+
+void Assembly-CSharp.dll::LogicInteractable::LogicInteractable_HealOverTime(LogicInteractable *this,AvatarModifierPackageType__Enum type,MVPlayer *healer,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__TakeDamageEventArgs);
+    cRam_? = '\x01';
+  }
+  if (healer != (MVPlayer *)0x0) {
+    (*(code *)(this->klass->vtable).AddModifier.method)(this,type,(healer->fields)._ActorNr_k__BackingField,0,(this->klass->vtable).HasModifier.methodPtr);
+    pEVar1 = (this->fields).OnDamageEvent;
+    if (pEVar1 != (EventHandler_1_TakeDamageEventArgs_ *)0x0) {
+      this_00 = (TakeDamageEventArgs *)func_?(TypeInfo__TakeDamageEventArgs);
+      TakeDamageEventArgs::TakeDamageEventArgs__ctor(this_00,0.0,healer,PlayerKilledByType__Enum_None,(MethodInfo *)0x0);
+      (*(pEVar1->fields)._._.invoke_impl)((pEVar1->fields)._._.method_code,this,this_00,(pEVar1->fields)._._.method);
+    }
+    return;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
 /* Void TakeDamage(Single, MVPlayer, PlayerKilledByType) */
 
 void Assembly-CSharp.dll::LogicInteractable::LogicInteractable_TakeDamage(LogicInteractable *this,float amount,MVPlayer *damageDealer,PlayerKilledByType__Enum damageType,MethodInfo *method)
@@ -8,8 +53,8 @@ void Assembly-CSharp.dll::LogicInteractable::LogicInteractable_TakeDamage(LogicI
     func_?(&TypeInfo__TakeDamageEventArgs);
     cRam_? = '\x01';
   }
-  if ((this->fields).OnDamageEvent != (EventHandler_1_TakeDamageEventArgs_ *)0x0) {
-    pEVar1 = (this->fields).OnDamageEvent;
+  pEVar1 = (this->fields).OnDamageEvent;
+  if (pEVar1 != (EventHandler_1_TakeDamageEventArgs_ *)0x0) {
     this_00 = (TakeDamageEventArgs *)func_?(TypeInfo__TakeDamageEventArgs);
     TakeDamageEventArgs::TakeDamageEventArgs__ctor(this_00,amount,damageDealer,damageType,(MethodInfo *)0x0);
     (*(pEVar1->fields)._._.invoke_impl)((pEVar1->fields)._._.method_code,this,this_00,(pEVar1->fields)._._.method);
@@ -29,8 +74,8 @@ void Assembly-CSharp.dll::LogicInteractable::LogicInteractable_TakeDamageOverTim
   }
   if (damageDealer != (MVPlayer *)0x0) {
     (*(code *)(this->klass->vtable).AddModifier.method)(this,type,(damageDealer->fields)._ActorNr_k__BackingField,0,(this->klass->vtable).HasModifier.methodPtr);
-    if ((this->fields).OnDamageEvent != (EventHandler_1_TakeDamageEventArgs_ *)0x0) {
-      pEVar1 = (this->fields).OnDamageEvent;
+    pEVar1 = (this->fields).OnDamageEvent;
+    if (pEVar1 != (EventHandler_1_TakeDamageEventArgs_ *)0x0) {
       this_00 = (TakeDamageEventArgs *)func_?(TypeInfo__TakeDamageEventArgs);
       TakeDamageEventArgs::TakeDamageEventArgs__ctor(this_00,0.0,damageDealer,damageType,(MethodInfo *)0x0);
       (*(pEVar1->fields)._._.invoke_impl)((pEVar1->fields)._._.method_code,this,this_00,(pEVar1->fields)._._.method);

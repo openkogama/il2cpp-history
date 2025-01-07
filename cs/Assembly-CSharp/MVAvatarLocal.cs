@@ -19,6 +19,7 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 {
 	// Fields
 	public Action<float, MVPlayer, PlayerKilledByType> OnDamageTaken;
+	public Action<float, MVPlayer> OnHealing;
 	protected SpawnRoleDataReceiver spawnRoleDataReceiver;
 	private string currAnim;
 	private const float exitVehicleMomentumModifier = 7f;
@@ -331,141 +332,141 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 	{
 		// Fields
 		public static readonly __c __9;
-		public static SpawnRoleDataReceiverActionDelegate __9__82_0;
-		public static SpawnRoleDataReceiverActionDelegate __9__86_0;
-		public static SpawnRoleDataReceiverActionDelegate __9__128_0;
-		public static SpawnRoleDataReceiverActionDelegate __9__139_0;
-		public static SpawnRoleDataReceiverActionDelegate __9__139_1;
-		public static SpawnRoleDataReceiverActionDelegate __9__140_0;
+		public static SpawnRoleDataReceiverActionDelegate __9__83_0;
+		public static SpawnRoleDataReceiverActionDelegate __9__87_0;
+		public static SpawnRoleDataReceiverActionDelegate __9__129_0;
+		public static SpawnRoleDataReceiverActionDelegate __9__141_0;
+		public static SpawnRoleDataReceiverActionDelegate __9__141_1;
+		public static SpawnRoleDataReceiverActionDelegate __9__142_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _LeaveVehicle_b__82_0(SpawnRoleDataReceiver receiver);
-		internal void _OnEnterVehicle_b__86_0(SpawnRoleDataReceiver receiver);
-		internal void _Suicide_b__128_0(SpawnRoleDataReceiver receiver);
-		internal void _GetSpawnTransform_b__139_0(SpawnRoleDataReceiver receiver);
-		internal void _GetSpawnTransform_b__139_1(SpawnRoleDataReceiver receiver);
-		internal void _OnCheckpointReachedResetRevive_b__140_0(SpawnRoleDataReceiver receiver);
+		internal void _LeaveVehicle_b__83_0(SpawnRoleDataReceiver receiver);
+		internal void _OnEnterVehicle_b__87_0(SpawnRoleDataReceiver receiver);
+		internal void _Suicide_b__129_0(SpawnRoleDataReceiver receiver);
+		internal void _GetSpawnTransform_b__141_0(SpawnRoleDataReceiver receiver);
+		internal void _GetSpawnTransform_b__141_1(SpawnRoleDataReceiver receiver);
+		internal void _OnCheckpointReachedResetRevive_b__142_0(SpawnRoleDataReceiver receiver);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass124_0
+	private sealed class __c__DisplayClass125_0
 	{
 		// Fields
 		public object shield;
 
 		// Constructors
-		public __c__DisplayClass124_0();
+		public __c__DisplayClass125_0();
 
 		// Methods
 		internal void _InitializeShield_b__1(SpawnRoleDataReceiver receiver);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass127_0
+	private sealed class __c__DisplayClass128_0
 	{
 		// Fields
 		public object health;
 
 		// Constructors
-		public __c__DisplayClass127_0();
+		public __c__DisplayClass128_0();
 
 		// Methods
 		internal void _InitializeHealth_b__1(SpawnRoleDataReceiver receiver);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass130_0
+	private sealed class __c__DisplayClass131_0
 	{
 		// Fields
-		public PlayerKilledByType damageType;
 		public int localPlayerActorNr;
 		public int dmgDealerActorNr;
+		public PlayerKilledByType damageType;
 
 		// Constructors
-		public __c__DisplayClass130_0();
+		public __c__DisplayClass131_0();
 
 		// Methods
 		internal void _RelayDamageEvent_b__0(SpawnRoleDataReceiver receiver);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass131_0
+	private sealed class __c__DisplayClass133_0
 	{
 		// Fields
 		public Vector3 lastSafePosition;
 		public Transform cam;
 
 		// Constructors
-		public __c__DisplayClass131_0();
+		public __c__DisplayClass133_0();
 
 		// Methods
 		internal void _RelayNewSafePosition_b__0(SpawnRoleDataReceiver receiver);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass143_0
+	private sealed class __c__DisplayClass145_0
 	{
 		// Fields
 		public PositionChangedEventArgs positionChangedEventArgs;
 
 		// Constructors
-		public __c__DisplayClass143_0();
+		public __c__DisplayClass145_0();
 
 		// Methods
 		internal void _OnPositionChanged_b__0(SpawnRoleDataReceiver receiver);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass144_0
+	private sealed class __c__DisplayClass146_0
 	{
 		// Fields
 		public RotationChangedEventArgs rotationChangedEventArgs;
 
 		// Constructors
-		public __c__DisplayClass144_0();
+		public __c__DisplayClass146_0();
 
 		// Methods
 		internal void _OnRotationChanged_b__0(SpawnRoleDataReceiver receiver);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass145_0
+	private sealed class __c__DisplayClass147_0
 	{
 		// Fields
 		public ScaleChangedEventArgs scaleChangedEventArgs;
 
 		// Constructors
-		public __c__DisplayClass145_0();
+		public __c__DisplayClass147_0();
 
 		// Methods
 		internal void _OnScaleChanged_b__0(SpawnRoleDataReceiver receiver);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass94_0
+	private sealed class __c__DisplayClass95_0
 	{
 		// Fields
 		public bool isSeated;
 
 		// Constructors
-		public __c__DisplayClass94_0();
+		public __c__DisplayClass95_0();
 
 		// Methods
 		internal void _OnSeatedChanged_b__0(SpawnRoleDataReceiver receiver);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass95_0
+	private sealed class __c__DisplayClass96_0
 	{
 		// Fields
 		public object a;
 
 		// Constructors
-		public __c__DisplayClass95_0();
+		public __c__DisplayClass96_0();
 
 		// Methods
 		internal void _AvatarStateChangedHandler_b__0(SpawnRoleDataReceiver receiver);
@@ -537,6 +538,7 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 	private void Suicide();
 	private Vector3 CalculateVehicleExitMomentum(Vector3 velocity);
 	private void RelayDamageEvent(float amount, MVPlayer damageDealer, PlayerKilledByType damageType);
+	private void RelayHealingEvent(float amount, MVPlayer healer);
 	private void RelayNewSafePosition(Vector3 lastSafePosition);
 	private void AvatarCommandsOnMoveBodyToSafeSpot(int safeSpotIndex);
 	private void AvatarCommandsOnSpawnAtSafeSpot(int safeSpotIndex);
@@ -551,14 +553,14 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 	protected override void OnCurrentPickupChange(object newPickupDataData);
 	private void HandleBlinkerVisibility();
 	[CompilerGenerated]
-	private void _OnHolsteredChanged_b__110_0(SpawnRoleDataReceiver receiver);
+	private void _OnHolsteredChanged_b__111_0(SpawnRoleDataReceiver receiver);
 	[CompilerGenerated]
-	private void _UpdateMaxHealth_b__118_0(SpawnRoleDataReceiver receiver);
+	private void _UpdateMaxHealth_b__119_0(SpawnRoleDataReceiver receiver);
 	[CompilerGenerated]
-	private void _InitializeShield_b__124_0(object shield);
+	private void _InitializeShield_b__125_0(object shield);
 	[CompilerGenerated]
-	private void _InitializeHealth_b__127_0(object health);
+	private void _InitializeHealth_b__128_0(object health);
 	[CompilerGenerated]
-	private void _OnEquipItem_b__134_0(SpawnRoleDataReceiver receiver);
+	private void _OnEquipItem_b__136_0(SpawnRoleDataReceiver receiver);
 }
 

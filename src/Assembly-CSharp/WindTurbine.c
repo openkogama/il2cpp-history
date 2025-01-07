@@ -89,7 +89,7 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_EnterWindZone(WindTurbine *th
         if (pLVar4 != (List_1_MV_WorldObject_Link_ *)0x0) {
           if (((pLVar4->fields)._size == 0) || ((this->fields)._._._.inputState != 0)) {
             if (pOVar5 == (Object_1 *)0x0) goto code_?;
-            (**(code **)&pOVar5->klass[1]._0.this_arg.attrs)();
+            (*(code *)pOVar5->klass[1]._0.parent)();
           }
           pDVar1 = (this->fields).affectedBodies;
           if (pDVar1 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) {
@@ -138,7 +138,7 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_ExitWindZone(WindTurbine *thi
         return;
       }
       if (x != (Object_1 *)0x0) {
-        (*(code *)x->klass[1]._0.parent)(x,0xd,0xffffffff,x->klass[1]._0.generic_class);
+        (*(code *)x->klass[1]._0.klass)(x,0xd,0xffffffff,x->klass[1]._0.fields);
         pDVar1 = (this->fields).affectedBodies;
         if (pDVar1 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)pDVar1,instigatorWOID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Remove_int_);
@@ -888,7 +888,7 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_triggerBoxEvents_TriggerExit(
           return;
         }
         if (x != (Object_1 *)0x0) {
-          (*(code *)x->klass[1]._0.parent)(x,0xd,0xffffffff,x->klass[1]._0.generic_class);
+          (*(code *)x->klass[1]._0.klass)(x,0xd,0xffffffff,x->klass[1]._0.fields);
           pDVar1 = (this->fields).affectedBodies;
           if (pDVar1 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) {
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Remove_int_);

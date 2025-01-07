@@ -164,8 +164,8 @@ Vector3 * Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_GetTargetPositio
       uVar3._4_4_ = pVVar1->y;
       fVar4 = pVVar1->z;
       if (cRam_? == '\0') {
-        VStack_2.x = 3.3643718e-29;
-        VStack_2.y = 2.811645e-28;
+        VStack_2.x = 3.3610977e-29;
+        VStack_2.y = 2.8157857e-28;
         func_?();
         cRam_? = '\x01';
       }
@@ -192,6 +192,7 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_Initialize(MVAdvanced
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Action<float,_MVPlayer>);
     func_?(&TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>);
     func_?(&TypeInfo__AdvancedGhostCubeModelWrapper);
     func_?(&MethodInfo__ClientSideNPCInteractable__IsDead__);
@@ -202,6 +203,7 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_Initialize(MVAdvanced
     func_?(&ClientSideNPCInteractionHandler_MethodInfo__UnityEngine__GameObject__GetComponent<ClientSideNPCInteractionHandler>__);
     func_?(&MethodInfo__MVAdvancedGhost__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_);
     func_?(&MethodInfo__MVAdvancedGhost__ReceiveDamage_float__MVPlayer__MV__Common__PlayerKilledByType_);
+    func_?(&MethodInfo__MVAdvancedGhost__RecieveHealing_float__MVPlayer_);
     func_?(&TypeInfo__MVCubeModelInstance);
     func_?(&TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
     func_?(&StringLiteral_BodyCubeModel);
@@ -234,8 +236,10 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_Initialize(MVAdvanced
   pCVar3 = (this->fields).interactable;
   this_02 = (Action_3_Single_Object_ByteEnum_ *)func_?(TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>);
   mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::Action_3_Single_Object_ByteEnum___ctor(this_02,(Object *)this,MethodInfo__MVAdvancedGhost__ReceiveDamage_float__MVPlayer__MV__Common__PlayerKilledByType_,(MethodInfo *)0x0);
+  this_03 = (Action_2_Single_Object_ *)func_?(TypeInfo__System__Action<float,_MVPlayer>);
+  mscorlib.dll::System::Action`2[Single,Object]::Action_2_Single_Object___ctor(this_03,(Object *)this,MethodInfo__MVAdvancedGhost__RecieveHealing_float__MVPlayer_,(MethodInfo *)0x0);
   if (pCVar3 == (ClientSideNPCInteractable *)0x0) goto code_?;
-  ClientSideNPCInteractable::ClientSideNPCInteractable_Init(pCVar3,(Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)this_02,(MethodInfo *)0x0);
+  ClientSideNPCInteractable::ClientSideNPCInteractable_Init(pCVar3,(Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)this_02,(Action_2_Single_MVPlayer_ *)this_03,(MethodInfo *)0x0);
   pGVar1 = (this->fields)._._._.gameObject;
   if (pGVar1 == (GameObject *)0x0) goto code_?;
   advancedGhostMotor = (AdvancedGhostMotor *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar1,AdvancedGhostMotor_MethodInfo__UnityEngine__GameObject__AddComponent<AdvancedGhostMotor>__);
@@ -246,17 +250,17 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_Initialize(MVAdvanced
   func_?(&(this->fields).advancedGhostBehaviour,pAVar4);
   pAVar4 = (this->fields).advancedGhostBehaviour;
   pCVar3 = (this->fields).interactable;
-  this_03 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)func_?(TypeInfo__System__Func<bool>);
-  mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::Func_1_System_Threading_Tasks_VoidTaskResult___ctor(this_03,(Object *)pCVar3,MethodInfo__ClientSideNPCInteractable__IsDead__,(MethodInfo *)0x0);
+  this_04 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)func_?(TypeInfo__System__Func<bool>);
+  mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::Func_1_System_Threading_Tasks_VoidTaskResult___ctor(this_04,(Object *)pCVar3,MethodInfo__ClientSideNPCInteractable__IsDead__,(MethodInfo *)0x0);
   if (pAVar4 == (AdvancedGhostBehaviour *)0x0) goto code_?;
-  AdvancedGhostBehaviour::AdvancedGhostBehaviour_Init(pAVar4,(MVCubeModelBase *)cubeModelBase,advancedGhostMotor,(Func_1_Boolean_ *)this_03,(this->fields)._._._._.id,(MethodInfo *)0x0);
+  AdvancedGhostBehaviour::AdvancedGhostBehaviour_Init(pAVar4,(MVCubeModelBase *)cubeModelBase,advancedGhostMotor,(Func_1_Boolean_ *)this_04,(this->fields)._._._._.id,(MethodInfo *)0x0);
   pAVar4 = (this->fields).advancedGhostBehaviour;
   if ((pAVar4 == (AdvancedGhostBehaviour *)0x0) || (this_00 = (pAVar4->fields).GhostVisualization, this_00 == (AdvancedGhostVisualizaton *)0x0)) goto code_?;
   transformParent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
-  this_04 = (AdvancedGhostCubeModelWrapper *)func_?(TypeInfo__AdvancedGhostCubeModelWrapper);
-  AdvancedGhostCubeModelWrapper::AdvancedGhostCubeModelWrapper__ctor(this_04,cubeModelBase,transformParent,(MethodInfo *)0x0);
-  (this->fields).editableCubeModelWrapper = this_04;
-  func_?(&(this->fields).editableCubeModelWrapper,this_04);
+  this_05 = (AdvancedGhostCubeModelWrapper *)func_?(TypeInfo__AdvancedGhostCubeModelWrapper);
+  AdvancedGhostCubeModelWrapper::AdvancedGhostCubeModelWrapper__ctor(this_05,cubeModelBase,transformParent,(MethodInfo *)0x0);
+  (this->fields).editableCubeModelWrapper = this_05;
+  func_?(&(this->fields).editableCubeModelWrapper,this_05);
   pAVar4 = (this->fields).advancedGhostBehaviour;
   if (pAVar4 == (AdvancedGhostBehaviour *)0x0) goto code_?;
   pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pAVar4,(MethodInfo *)0x0);
@@ -267,9 +271,9 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_Initialize(MVAdvanced
   if (MVar5 == MVGameMode__Enum_Edit) {
     MVAdvancedGhost_SetupEditorIcon(this,(MVCubeModelBase *)cubeModelBase,1,(MethodInfo *)0x0);
     pUVar6 = (this->fields)._._._.PositionChanged;
-    this_05 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_05,(Object *)this,MethodInfo__MVAdvancedGhost__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
-    pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pUVar6,(Delegate *)this_05,(MethodInfo *)0x0);
+    this_06 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_06,(Object *)this,MethodInfo__MVAdvancedGhost__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
+    pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pUVar6,(Delegate *)this_06,(MethodInfo *)0x0);
     if (pDVar7 != (Delegate *)0x0) {
       pUVar6 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
       if (pUVar6 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
@@ -692,33 +696,24 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_ReceiveDamage(MVAdvan
     func_?(&TypeInfo__SharedWorldObjectGameplayFunctions__Explosion);
     cRam_? = '\x01';
   }
-  if (0.0 < amount) {
-    pAVar1 = (this->fields).advancedGhostBehaviour;
-    if (((pAVar1 == (AdvancedGhostBehaviour *)0x0) || (pAVar2 = (pAVar1->fields).GhostVisualization, pAVar2 == (AdvancedGhostVisualizaton *)0x0)) || (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pAVar2,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0)) goto code_?;
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy(pGVar3,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      this_01 = (pAVar2->fields).receiveDamage;
-      if (this_01 == (AudioSource *)0x0) goto code_?;
-      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1(this_01,(MethodInfo *)0x0);
-      this_00 = (pAVar2->fields).blinker;
-joined_?:
-      if (this_00 == (AdvancedGhostBlinker *)0x0) goto code_?;
-      BlinkerBase::BlinkerBase_StartBlinking((BlinkerBase *)this_00,in_stack_5,in_stack_6,in_stack_7);
-    }
+  if (amount <= 0.0) {
+    return;
   }
-  else if (amount < 0.0) {
-    pAVar1 = (this->fields).advancedGhostBehaviour;
-    if (((pAVar1 == (AdvancedGhostBehaviour *)0x0) || (pAVar2 = (pAVar1->fields).GhostVisualization, pAVar2 == (AdvancedGhostVisualizaton *)0x0)) || (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pAVar2,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0)) goto code_?;
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy(pGVar3,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      this_00 = (pAVar2->fields).blinker;
-      goto joined_?;
-    }
+  pAVar1 = (this->fields).advancedGhostBehaviour;
+  if (((pAVar1 == (AdvancedGhostBehaviour *)0x0) || (pAVar2 = (pAVar1->fields).GhostVisualization, pAVar2 == (AdvancedGhostVisualizaton *)0x0)) || (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pAVar2,(MethodInfo *)0x0), this_03 == (GameObject *)0x0)) goto code_?;
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy(this_03,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    this_00 = (pAVar2->fields).receiveDamage;
+    if (this_00 == (AudioSource *)0x0) goto code_?;
+    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1(this_00,(MethodInfo *)0x0);
+    this_01 = (pAVar2->fields).blinker;
+    if (this_01 == (AdvancedGhostBlinker *)0x0) goto code_?;
+    BlinkerBase::BlinkerBase_StartBlinking((BlinkerBase *)this_01,BlinkType__Enum_Damage,1.3,(MethodInfo *)0x0);
   }
   this_02 = (this->fields).interactable;
   if (this_02 != (ClientSideNPCInteractable *)0x0) {
-    bVar4 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead(this_02,(MethodInfo *)0x0);
-    if (bVar4 == 0) {
+    bVar3 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead(this_02,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
       return;
     }
     ignoreIDs = MVWorldObjectClient::MVWorldObjectClient_get_WorldIDsRecursive((MVWorldObjectClient *)this,(MethodInfo *)0x0);
@@ -726,13 +721,13 @@ joined_?:
       func_?();
       cRam_? = '\x01';
     }
-    pPVar8 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar8 != (PrefabPool *)0x0) {
-      particlePrefab = (pPVar8->fields).particleExplosion;
+    pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar4 != (PrefabPool *)0x0) {
+      particlePrefab = (pPVar4->fields).particleExplosion;
       pAVar1 = (this->fields).advancedGhostBehaviour;
-      if (((pAVar1 != (AdvancedGhostBehaviour *)0x0) && (pAVar2 = (pAVar1->fields).GhostVisualization, pAVar2 != (AdvancedGhostVisualizaton *)0x0)) && (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pAVar2,(MethodInfo *)0x0), this_03 != (Transform *)0x0)) {
-        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffe8,this_03,(MethodInfo *)0x0);
-        position = *pVVar9;
+      if (((pAVar1 != (AdvancedGhostBehaviour *)0x0) && (pAVar2 = (pAVar1->fields).GhostVisualization, pAVar2 != (AdvancedGhostVisualizaton *)0x0)) && (this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pAVar2,(MethodInfo *)0x0), this_04 != (Transform *)0x0)) {
+        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffe8,this_04,(MethodInfo *)0x0);
+        position = *pVVar5;
         if ((TypeInfo__SharedWorldObjectGameplayFunctions__Explosion->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -743,8 +738,33 @@ joined_?:
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
+  return;
+}
+
+
+/* Void RecieveHealing(Single, MVPlayer) */
+
+void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_RecieveHealing(MVAdvancedGhost *this,float amount,MVPlayer *damageDealer,MethodInfo *method)
+
+{
+  if (0.0 < amount) {
+    pAVar1 = (this->fields).advancedGhostBehaviour;
+    if (((pAVar1 == (AdvancedGhostBehaviour *)0x0) || (this_00 = (pAVar1->fields).GhostVisualization, this_00 == (AdvancedGhostVisualizaton *)0x0)) || (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0), this_02 == (GameObject *)0x0)) {
+code_?:
+      func_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy(this_02,(MethodInfo *)0x0);
+    if (bVar3 != 0) {
+      this_01 = (this_00->fields).blinker;
+      if (this_01 == (AdvancedGhostBlinker *)0x0) goto code_?;
+      BlinkerBase::BlinkerBase_StartBlinking((BlinkerBase *)this_01,BlinkType__Enum_Healing,1.3,(MethodInfo *)0x0);
+    }
+  }
   return;
 }
 

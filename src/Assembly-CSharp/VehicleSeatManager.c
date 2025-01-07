@@ -173,7 +173,7 @@ bool Assembly-CSharp.dll::VehicleSeatManager::VehicleSeatManager_CheckCanUse(Veh
   LStack_6._version = 0;
   LStack_6._current = (Object *)0x0;
   if (avatarInteractable != (MVInteractableBase *)0x0) {
-    cVar7 = (*(code *)(avatarInteractable->klass->vtable).__unknown_5.method)(avatarInteractable,9,(avatarInteractable->klass->vtable).__unknown_6.methodPtr);
+    cVar7 = (*(code *)(avatarInteractable->klass->vtable).__unknown_7.method)(avatarInteractable,9,(avatarInteractable->klass->vtable).__unknown_8.methodPtr);
     if (cVar7 == '\0') {
       this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).seats;
       if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) goto code_?;
