@@ -94,10 +94,12 @@ void Assembly-CSharp.dll::MeleeWeaponAnimationEventHandler::
               this_00 = (this->fields).meleeWeaponItem;
               pTVar1 = (this->fields).arcInstance;
               if (this_00 != (PickupItemMeleeWeapon *)0x0) {
-                pCVar3 = PickupItemMeleeWeapon::PickupItemMeleeWeapon_get_TrailColor
-                                   ((Color *)&stack0xffffffec,this_00,(MethodInfo *)0x0);
-                if (pTVar1 != (TrailArc *)0x0) {
-                  TrailArc::TrailArc_SetTrailColor(pTVar1,*pCVar3,(MethodInfo *)0x0);
+                pPVar3 = PickupItemMeleeWeapon::PickupItemMeleeWeapon_get_Configuration
+                                   (this_00,(MethodInfo *)0x0);
+                if ((pPVar3 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) &&
+                   (pTVar1 != (TrailArc *)0x0)) {
+                  TrailArc::TrailArc_SetTrailColor
+                            (pTVar1,(pPVar3->fields).trailColor,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -125,42 +127,14 @@ void Assembly-CSharp.dll::MeleeWeaponAnimationEventHandler::
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pTVar1 = (this->fields).arcInstance;
+  exists = (this->fields).arcInstance;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
-                    ((Object_1 *)pTVar1,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    pTVar1 = (this->fields).arcInstance;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
-                      ((Object_1 *)pTVar1,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      pTVar1 = (this->fields).arcInstance;
-      if (pTVar1 != (TrailArc *)0x0) {
-        (pTVar1->fields).Emit = 0;
-        pTVar1 = (this->fields).arcInstance;
-        if ((pTVar1 != (TrailArc *)0x0) &&
-           (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                ((Component *)pTVar1,(MethodInfo *)0x0), this_00 != (Transform *)0x0
-           )) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                    (this_00,(Transform *)0x0,(MethodInfo *)0x0);
-          return;
-        }
-      }
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
+                    ((Object_1 *)exists,(MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    MeleeWeaponAnimationEventHandler_MeleeWeaponArcEnd(this,(MethodInfo *)0x0);
   }
   return;
 }

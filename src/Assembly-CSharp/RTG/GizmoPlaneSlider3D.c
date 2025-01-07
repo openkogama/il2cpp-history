@@ -526,7 +526,7 @@ code_?:
   return (pGVar1->fields)._raTriangleYLength * (pGVar1->fields)._scale * zoomFactor * fVar6;
 }
 
-/* decompilation failed: Exception while decompiling 1058a050: Decompiler process died */
+/* decompilation failed: Exception while decompiling 1058a7f0: Decompiler process died */
 
 
 /* Void MakeSliderPlane(GizmoTransform, PlaneId, GizmoLineSlider3D, GizmoLineSlider3D, Camera) */

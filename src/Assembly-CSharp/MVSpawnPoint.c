@@ -225,9 +225,6 @@ code_?:
   this = (MVSpawnPoint *)&UNK_?;
   method = (MethodInfo *)TVar4.m_Index;
   func_?();
-  pMVar1->klass = (MVSpawnPoint__Class *)((uint)pMVar1->klass ^ (uint)pMVar1);
-  pMVar1->klass = (MVSpawnPoint__Class *)((uint)pMVar1->klass ^ (uint)pMVar1);
-  pMVar1->klass = (MVSpawnPoint__Class *)((uint)pMVar1->klass ^ (uint)pMVar1);
   in(extraout_DX);
   switch(this) {
   case (MVSpawnPoint *)0x27:

@@ -1,9 +1,9 @@
 
 /* Void <OnRotationChanged>b__0(SpawnRoleDataReceiver) */
 
-void Assembly-CSharp.dll::MVAvatarLocal+<>c__DisplayClass144_0::
-     MVAvatarLocal_c_DisplayClass144_0__OnRotationChanged_b__0
-               (MVAvatarLocal_c_DisplayClass144_0 *this,SpawnRoleDataReceiver *receiver,
+void Assembly-CSharp.dll::MVAvatarLocal+<>c__DisplayClass146_0::
+     MVAvatarLocal_c_DisplayClass146_0__OnRotationChanged_b__0
+               (MVAvatarLocal_c_DisplayClass146_0 *this,SpawnRoleDataReceiver *receiver,
                MethodInfo *method)
 
 {

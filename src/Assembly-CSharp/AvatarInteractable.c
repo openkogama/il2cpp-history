@@ -334,9 +334,8 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_DieFromRespawn
     pMVar1 = (this->fields)._.health;
     if (pMVar1 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
       (*(code *)(pMVar1->klass->vtable).set_Value.method)(pMVar1,0,pMVar1->klass[1]._0.image);
-      if ((this->fields).OnDamageTaken !=
-          (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
-        pAVar3 = (this->fields).OnDamageTaken;
+      pAVar3 = (this->fields).OnDamageTaken;
+      if (pAVar3 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
         (*(pAVar3->fields)._._.invoke_impl)
                   ((pAVar3->fields)._._.method_code,(float)fVar2,damageDealer,damageType,
                    (pAVar3->fields)._._.method);
@@ -947,6 +946,117 @@ code_?:
 }
 
 
+/* Void Heal(Single, MVPlayer) */
+
+void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_Heal
+               (AvatarInteractable *this,float amount,MVPlayer *healer,MethodInfo *method)
+
+{
+  if (((amount <= 0.0) ||
+      (bVar1 = MVInteractable::MVInteractable_IgnoreHealing
+                         ((MVInteractable *)this,healer,(MethodInfo *)0x0), bVar1 == 0)) &&
+     (0.0 < amount)) {
+    if ((this->fields)._.maxHealth != (MVRuntimeDataVariable_1_System_Int32_ *)0x0) {
+      pMVar2 = (this->fields)._.health;
+      if (pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
+      (*(code *)pMVar2)(pMVar2,(pMVar2->klass->vtable).set_Value.methodPtr);
+      pMVar3 = (this->fields)._.maxHealth;
+      if (pMVar3 == (MVRuntimeDataVariable_1_System_Int32_ *)0x0) goto code_?;
+      iVar4 = (*(code *)(pMVar3->klass->vtable).get_Value.method)
+                        (pMVar3,(pMVar3->klass->vtable).set_Value.methodPtr);
+      if ((float)iVar4 <= (float)pMVar3) {
+        pMVar5 = (this->klass->vtable).HandleModifierEffect.method;
+        fVar6 = (float10)(*(code *)pMVar5)(this,0x15,pMVar5,
+                                           (this->klass->vtable).ClearModifiers.methodPtr);
+        fVar7 = (float)fVar6;
+        fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                           ((MethodInfo *)0x0);
+        (*(code *)(this->klass->vtable).RestoreShield.method)(this,fVar8 * fVar7);
+      }
+    }
+    this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (this_00 == (MVNetworkGame *)0x0) goto code_?;
+    bVar1 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this_00,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      return;
+    }
+    cVar9 = (*(code *)(this->klass->vtable).HasModifierEffect.method)();
+    if (cVar9 != '\0') {
+      return;
+    }
+    cVar9 = func_?();
+    if ((cVar9 != '\0') &&
+       (MVar10 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0),
+       MVar10 == MVGameMode__Enum_Edit)) {
+      return;
+    }
+    pMVar2 = (this->fields)._.health;
+    if ((this->fields)._.maxHealth == (MVRuntimeDataVariable_1_System_Int32_ *)0x0) {
+      if (pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
+      fVar6 = (float10)func_?(4,pMVar2);
+      fVar7 = (float)fVar6 + 0.0;
+    }
+    else {
+      if (pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
+code_?:
+        func_?();
+        pcVar11 = (code *)swi(3);
+        (*pcVar11)();
+        return;
+      }
+      fVar6 = (float10)func_?(4,pMVar2);
+      pMVar3 = (this->fields)._.maxHealth;
+      if (pMVar3 == (MVRuntimeDataVariable_1_System_Int32_ *)0x0) goto code_?;
+      fVar7 = (float)fVar6 + 0.0;
+      iVar4 = func_?(4,pMVar3);
+      if (fVar7 < 0.0) {
+        fVar7 = 0.0;
+      }
+      else if ((float)iVar4 < fVar7) {
+        fVar7 = (float)iVar4;
+      }
+      if (pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
+    }
+    func_?(5,pMVar2,fVar7);
+  }
+  return;
+}
+
+
+/* Void HealOverTime(AvatarModifierPackageType, MVPlayer) */
+
+void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_HealOverTime
+               (AvatarInteractable *this,AvatarModifierPackageType__Enum type,MVPlayer *healer,
+               MethodInfo *method)
+
+{
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (this_00 != (MVNetworkGame *)0x0) {
+    bVar1 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this_00,(MethodInfo *)0x0);
+    if ((bVar1 != 0) && (cVar2 = (**(code **)(*unaff_EDI + 0x120))(), cVar2 == '\0')) {
+      this_01 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+      if (this_01 == (MVLocalPlayer *)0x0) goto code_?;
+      bVar1 = MVLocalPlayer::MVLocalPlayer_IsPlaying(this_01,(MethodInfo *)0x0);
+      if (bVar1 != 0) {
+        if (healer == (MVPlayer *)0x0) goto code_?;
+        (**(code **)(*unaff_EDI + 0x108))();
+        iVar3 = unaff_EDI[0xf];
+        if (iVar3 != 0) {
+          (**(code **)(iVar3 + 0xc))
+                    (*(undefined4 *)(iVar3 + 0x20),0,healer,*(undefined4 *)(iVar3 + 0x14));
+        }
+      }
+    }
+    return;
+  }
+code_?:
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
+  return;
+}
+
+
 /* Void Init(MVRuntimeDataVariable, MVRuntimeDataVariable`1[System.Single],
    MVRuntimeDataVariable`1[System.Int32], MVRuntimeDataVariableClampedFloat,
    WorldObjectSkillDataManager) */
@@ -1256,9 +1366,9 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_RestoreShield
 {
   MVInteractable::MVInteractable_RestoreShield
             ((MVInteractable *)this,restoredShieldAmount,(MethodInfo *)0x0);
-  if ((this->fields).OnShieldReplenished != (Action *)0x0) {
-    pAVar1 = (this->fields).OnShieldReplenished;
-    (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code);
+  pAVar1 = (this->fields).OnShieldReplenished;
+  if (pAVar1 != (Action *)0x0) {
+    (*(pAVar1->fields)._._.invoke_impl)();
   }
   return;
 }
@@ -1322,133 +1432,106 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_TakeDamage
     func_?(&TypeInfo__AvatarInteractable__DamageSource);
     cRam_? = '\x01';
   }
-  if (_UNK_? < amount) {
-    bVar1 = MVInteractable::MVInteractable_IgnoreDamage
-                      ((MVInteractable *)this,damageDealer,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      return;
-    }
-  }
-  else {
-    bVar1 = MVInteractable::MVInteractable_IgnoreHealing
-                      ((MVInteractable *)this,damageDealer,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      return;
-    }
-    pMVar2 = (this->fields)._.health;
-    if (pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
-    (*(code *)(pMVar2->klass->vtable).get_Value.method)
-              (pMVar2,(pMVar2->klass->vtable).set_Value.methodPtr);
-    pMVar3 = (this->fields)._.maxHealth;
-    if (pMVar3 == (MVRuntimeDataVariable_1_System_Int32_ *)0x0) goto code_?;
-    pIVar4 = (pMVar3->klass->vtable).set_Value.methodPtr;
-    iVar5 = (*(code *)(pMVar3->klass->vtable).get_Value.method)(pMVar3);
-    if ((float)iVar5 <= (float)pIVar4) {
-      fVar6 = (float10)(*(code *)(this->klass->vtable).HandleModifierEffect.method)
-                                  (this,0x14,0,(this->klass->vtable).ClearModifiers.methodPtr);
-      fVar7 = (float)fVar6;
-      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                         ((MethodInfo *)0x0);
-      (*(code *)(this->klass->vtable).RestoreShield.method)(this,fVar8 * fVar7);
-    }
+  if (((0.0 < amount) &&
+      (bVar1 = MVInteractable::MVInteractable_IgnoreDamage
+                         ((MVInteractable *)this,damageDealer,(MethodInfo *)0x0), bVar1 != 0)) ||
+     (amount <= 0.0)) {
+    return;
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (this_00 == (MVNetworkGame *)0x0) goto code_?;
   bVar1 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this_00,(MethodInfo *)0x0);
-  if ((bVar1 != 0) &&
-     (cVar9 = (*(code *)(this->klass->vtable).HasModifierEffect.method)(this,10), cVar9 == '\0')) {
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__MVGameControllerBase->static_fields->_LeavingEditPlayMode_k__BackingField != 0)
-       && (MVar10 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0),
-          MVar10 == MVGameMode__Enum_Edit)) {
-      return;
-    }
-    pMVar11 = (this->klass->vtable).HandleModifierEffect.method;
-    fVar6 = (float10)(*(code *)pMVar11)(this,6,pMVar11,(this->klass->vtable).ClearModifiers.methodPtr
-                                       );
-    fVar7 = (float)(fVar6 * (float10)amount) * (this->fields).damageMultiplier;
-    if (0.0 <= fVar7) {
-      pMVar12 = (this->fields)._.shield;
-      if (pMVar12 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
-      fVar6 = (float10)(*(code *)(pMVar12->klass->vtable).get_Value.method)(pMVar12);
-      pMVar12 = (this->fields)._.shield;
-      if ((float)fVar6 < fVar7) {
-        if (pMVar12 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
-        (*(code *)(pMVar12->klass->vtable).get_Value.method)(pMVar12);
-        pMVar12 = (this->fields)._.shield;
-        if (pMVar12 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
-        pIVar13 = pMVar12->klass[1]._0.image;
-        (*(code *)(pMVar12->klass->vtable).set_Value.method)(pMVar12,0);
-        fVar7 = fVar7 - (float)pIVar13;
-      }
-      else {
-        if (pMVar12 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
-        fVar6 = (float10)(*(code *)(pMVar12->klass->vtable).get_Value.method)(pMVar12);
-        (*(code *)(pMVar12->klass->vtable).set_Value.method)
-                  (pMVar12,(float)fVar6 - fVar7,pMVar12->klass[1]._0.image);
-        fVar7 = 0.0;
-      }
-    }
-    pMVar2 = (this->fields)._.health;
-    if (pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
-    (*(code *)(pMVar2->klass->vtable).get_Value.method)(pMVar2);
-    pMVar2 = (this->fields)._.health;
-    if ((this->fields)._.maxHealth == (MVRuntimeDataVariable_1_System_Int32_ *)0x0) {
-      if (pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
-      fVar6 = (float10)func_?(4,pMVar2);
-      fVar8 = (float)fVar6 - fVar7;
+  if (bVar1 == 0) {
+    return;
+  }
+  cVar2 = (*(code *)(this->klass->vtable).HasModifierEffect.method)
+                    (this,10,(this->klass->vtable).HandleModifierEffect.methodPtr);
+  if (cVar2 != '\0') {
+    return;
+  }
+  cVar2 = func_?(0);
+  if ((cVar2 != '\0') &&
+     (MVar3 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0),
+     MVar3 == MVGameMode__Enum_Edit)) {
+    return;
+  }
+  pMVar4 = (this->klass->vtable).HandleModifierEffect.method;
+  fVar5 = (float10)(*(code *)pMVar4)(this,pMVar4,0x3f800000);
+  fVar6 = (float)(fVar5 * (float10)amount) * (this->fields).damageMultiplier;
+  if (0.0 <= fVar6) {
+    pMVar7 = (this->fields)._.shield;
+    if (pMVar7 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
+    fVar5 = (float10)(*(code *)(pMVar7->klass->vtable).get_Value.method)
+                               (pMVar7,(pMVar7->klass->vtable).set_Value.methodPtr);
+    pMVar7 = (this->fields)._.shield;
+    if ((float)fVar5 < fVar6) {
+      if (pMVar7 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
+      fVar5 = (float10)(*(code *)(pMVar7->klass->vtable).get_Value.method)
+                                 (pMVar7,(pMVar7->klass->vtable).set_Value.methodPtr);
+      pMVar7 = (this->fields)._.shield;
+      fVar8 = (float)fVar5;
+      if (pMVar7 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
+      (*(code *)(pMVar7->klass->vtable).set_Value.method)(pMVar7,0,pMVar7->klass[1]._0.image);
+      fVar6 = fVar6 - fVar8;
     }
     else {
-      if (pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
-      fVar6 = (float10)func_?(4,pMVar2);
-      pMVar3 = (this->fields)._.maxHealth;
-      if (pMVar3 == (MVRuntimeDataVariable_1_System_Int32_ *)0x0) goto code_?;
-      fVar8 = (float)fVar6 - fVar7;
-      iVar5 = (*(code *)(pMVar3->klass->vtable).get_Value.method)(pMVar3);
-      if (fVar8 < 0.0) {
-        fVar8 = 0.0;
-      }
-      else if ((float)iVar5 < fVar8) {
-        fVar8 = (float)iVar5;
-      }
-      pMVar2 = (this->fields)._.health;
-      if (pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
-    }
-    func_?(5,pMVar2,fVar8);
-    if (damageDealer != (MVPlayer *)0x0) {
-      weaponName = AvatarInteractable_ExtractWeaponName
-                             (this,damageDealer,damageType,(MethodInfo *)0x0);
-      this_01 = (AvatarInteractable_DamageSource *)
-                func_?(TypeInfo__AvatarInteractable__DamageSource);
-      AvatarInteractable+DamageSource::AvatarInteractable_DamageSource__ctor
-                (this_01,damageDealer,damageType,weaponName,(MethodInfo *)0x0);
-      (this->fields).lastDamageSource = this_01;
-      func_?(&(this->fields).lastDamageSource,this_01);
-    }
-    if ((this->fields).OnDamageTaken !=
-        (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
-      pAVar14 = (this->fields).OnDamageTaken;
-      (*(pAVar14->fields)._._.invoke_impl)
-                ((pAVar14->fields)._._.method_code,fVar7,damageDealer,damageType,
-                 (pAVar14->fields)._._.method);
-    }
-    pMVar2 = (this->fields)._.health;
-    if (pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
-code_?:
-      func_?();
-      pcVar15 = (code *)swi(3);
-      (*pcVar15)();
-      return;
-    }
-    fVar6 = (float10)(*(code *)(pMVar2->klass->vtable).get_Value.method)
-                                (pMVar2,(pMVar2->klass->vtable).set_Value.methodPtr);
-    if (((float)fVar6 <= 0.0) && (0.0 < (float)pMVar2)) {
-      AvatarInteractable_DoKilledNotification(this,damageDealer,damageType,(MethodInfo *)0x0);
+      if (pMVar7 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
+      fVar5 = (float10)(*(code *)(pMVar7->klass->vtable).get_Value.method)
+                                 (pMVar7,(pMVar7->klass->vtable).set_Value.methodPtr);
+      (*(code *)(pMVar7->klass->vtable).set_Value.method)
+                (pMVar7,(float)fVar5 - fVar6,pMVar7->klass[1]._0.image);
+      fVar6 = 0.0;
     }
   }
+  pMVar9 = (this->fields)._.health;
+  if (pMVar9 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
+    fVar8 = fVar6;
+    (*(code *)(pMVar9->klass->vtable).get_Value.method)
+              (pMVar9,(pMVar9->klass->vtable).set_Value.methodPtr);
+    pMVar9 = (this->fields)._.health;
+    if (pMVar9 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
+      fVar5 = (float10)(*(code *)(pMVar9->klass->vtable).get_Value.method)(pMVar9);
+      fVar10 = (float)(fVar5 - (float10)fVar8);
+      if ((float)(fVar5 - (float10)fVar8) <= _UNK_?) {
+        fVar10 = _UNK_?;
+      }
+      (*(code *)(pMVar9->klass->vtable).set_Value.method)
+                (pMVar9,fVar10,pMVar9->klass[1]._0.image);
+      if (damageDealer != (MVPlayer *)0x0) {
+        weaponName = AvatarInteractable_ExtractWeaponName
+                               (this,damageDealer,damageType,(MethodInfo *)0x0);
+        this_01 = (AvatarInteractable_DamageSource *)
+                  func_?(TypeInfo__AvatarInteractable__DamageSource);
+        AvatarInteractable+DamageSource::AvatarInteractable_DamageSource__ctor
+                  (this_01,damageDealer,damageType,weaponName,(MethodInfo *)0x0);
+        (this->fields).lastDamageSource = this_01;
+        func_?(&(this->fields).lastDamageSource,this_01);
+      }
+      pAVar11 = (this->fields).OnDamageTaken;
+      if (pAVar11 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
+        (*(pAVar11->fields)._._.invoke_impl)
+                  ((pAVar11->fields)._._.method_code,fVar6,damageDealer,damageType,
+                   (pAVar11->fields)._._.method);
+      }
+      pMVar9 = (this->fields)._.health;
+      if (pMVar9 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
+        fVar5 = (float10)(*(code *)(pMVar9->klass->vtable).get_Value.method)
+                                   (pMVar9,(pMVar9->klass->vtable).set_Value.methodPtr);
+        if (0.0 < (float)fVar5) {
+          return;
+        }
+        if ((float)pMVar9 <= 0.0) {
+          return;
+        }
+        AvatarInteractable_DoKilledNotification(this,damageDealer,damageType,(MethodInfo *)0x0);
+        return;
+      }
+    }
+  }
+code_?:
+  func_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -1483,9 +1566,8 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_TakeDamageOverT
                   (this_02,damageDealer,damageType,weaponName,(MethodInfo *)0x0);
         (unaff_EBX->fields).lastDamageSource = this_02;
         func_?(&(unaff_EBX->fields).lastDamageSource,this_02);
-        if ((unaff_EBX->fields).OnDamageTaken !=
-            (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
-          pAVar3 = (unaff_EBX->fields).OnDamageTaken;
+        pAVar3 = (unaff_EBX->fields).OnDamageTaken;
+        if (pAVar3 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
           pvStack4 = (pAVar3->fields)._._.method;
           PStack5 = damageType;
           pMStack6 = damageDealer;

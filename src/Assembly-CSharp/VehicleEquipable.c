@@ -31,8 +31,8 @@ bool Assembly-CSharp.dll::VehicleEquipable::VehicleEquipable_Equip
     }
     pMVar1 = (this->fields).interactableLocal;
     if (pMVar1 != (MVInteractableBase *)0x0) {
-      (*(code *)(pMVar1->klass->vtable).__unknown.method)
-                (pMVar1,0xff800000,0,0,(pMVar1->klass->vtable).__unknown_1.methodPtr);
+      (*(code *)(pMVar1->klass->vtable).__unknown_2.method)
+                (pMVar1,0x7f800000,0,(pMVar1->klass->vtable).__unknown_3.methodPtr);
       return 1;
     }
   }

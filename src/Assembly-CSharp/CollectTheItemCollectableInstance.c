@@ -148,11 +148,11 @@ bool Assembly-CSharp.dll::CollectTheItemCollectableInstance::
     bVar2 = (*pcVar1)();
     return bVar2;
   }
-  cVar3 = (*(code *)(interactable->klass->vtable).__unknown_5.method)
-                    (interactable,8,(interactable->klass->vtable).__unknown_6.methodPtr);
+  cVar3 = (*(code *)(interactable->klass->vtable).__unknown_7.method)
+                    (interactable,8,(interactable->klass->vtable).__unknown_8.methodPtr);
   if (cVar3 == '\0') {
-    cVar3 = (*(code *)(interactable->klass->vtable).__unknown_5.method)
-                      (interactable,7,(interactable->klass->vtable).__unknown_6.methodPtr);
+    cVar3 = (*(code *)(interactable->klass->vtable).__unknown_7.method)
+                      (interactable,7,(interactable->klass->vtable).__unknown_8.methodPtr);
     if ((cVar3 == '\0') && ((this->fields).isTaken == 0)) {
       bVar2 = CollectTheItemCollectableInstance_CanPickupWithoutUse(this,woId,(MethodInfo *)0x0);
       if (bVar2 == 0) {
@@ -1115,11 +1115,11 @@ bool Assembly-CSharp.dll::CollectTheItemCollectableInstance::
         return 0;
       }
       if (x != (Object_1 *)0x0) {
-        cVar4 = (*(code *)x->klass[1]._0.typeMetadataHandle)();
+        cVar4 = (*(code *)x->klass[1]._0.events)();
         if (cVar4 != '\0') {
           return 0;
         }
-        cVar4 = (*(code *)x->klass[1]._0.typeMetadataHandle)();
+        cVar4 = (*(code *)x->klass[1]._0.events)();
         if (cVar4 != '\0') {
           return 0;
         }
@@ -1913,9 +1913,8 @@ code_?:
                           (x,(Object_1 *)0x0,(MethodInfo *)0x0);
         if (bVar1 == 0) {
           if (x == (Object_1 *)0x0) goto code_?;
-          cVar5 = (*(code *)x->klass[1]._0.typeMetadataHandle)();
-          if (((cVar5 == '\0') &&
-              (cVar5 = (*(code *)x->klass[1]._0.typeMetadataHandle)(), cVar5 == '\0')) &&
+          cVar5 = (*(code *)x->klass[1]._0.events)();
+          if (((cVar5 == '\0') && (cVar5 = (*(code *)x->klass[1]._0.events)(), cVar5 == '\0')) &&
              ((bVar1 = CollectTheItemCollectableInstance_get_IsOriginalInstance
                                  (this,(MethodInfo *)0x0), bVar1 != 0 ||
               ((this->fields).isTaken == 0)))) {

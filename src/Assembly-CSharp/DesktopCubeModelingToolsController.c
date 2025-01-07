@@ -210,7 +210,7 @@ code_?:
     }
   }
   func_?();
-  *(int *)(unaff_EBX + -0x6471efcc) = unaff_EBX;
+  *(undefined4 **)(extraout_ECX + -0x5e71efcc) = &uStack_6;
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
   return;

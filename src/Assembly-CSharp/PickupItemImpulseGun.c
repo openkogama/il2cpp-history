@@ -829,10 +829,12 @@ void Assembly-CSharp.dll::PickupItemImpulseGun::PickupItemImpulseGun__ctor
   fVar1 = _UNK_?;
   fVar2 = _UNK_?;
   fVar3 = _UNK_?;
+  bVar4 = cRam_? == '\0';
   (this->fields).hitColor.r = _UNK_?;
   (this->fields).hitColor.g = fVar3;
   (this->fields).hitColor.b = fVar2;
   (this->fields).hitColor.a = fVar1;
+  (this->fields).hitImpulse = 2400.0;
   fVar1 = _UNK_?;
   fVar2 = _UNK_?;
   fVar3 = _UNK_?;
@@ -840,18 +842,26 @@ void Assembly-CSharp.dll::PickupItemImpulseGun::PickupItemImpulseGun__ctor
   (this->fields).missColor.g = fVar3;
   (this->fields).missColor.b = fVar2;
   (this->fields).missColor.a = fVar1;
-  (this->fields).hitImpulse = 2400.0;
-  uVar4 = _UNK_?;
-  (this->fields).shakeDirection.x = (float)_UNK_?;
-  (this->fields).shakeDirection.y = (float)uVar4;
   (this->fields).recoilImpulse = 1600.0;
+  uVar5 = _UNK_?;
+  (this->fields).shakeDirection.x = (float)_UNK_?;
+  (this->fields).shakeDirection.y = (float)uVar5;
   (this->fields).maxRange = 50.0;
   (this->fields).chargingRate = 100.0;
   (this->fields).radius = 1.2;
   (this->fields).shakeFrequency = 1.0;
   (this->fields).shakePower = 1.0;
   (this->fields).shakeDirection.z = 1.0;
-  PickupItem::PickupItem__ctor((PickupItem *)this,(MethodInfo *)0x0);
+  if (bVar4) {
+    func_?(&TypeInfo__UnityEngine__MeshRenderer);
+    cRam_? = '\x01';
+  }
+  pMVar6 = (MeshRenderer__Array *)func_?(TypeInfo__UnityEngine__MeshRenderer,0);
+  (this->fields)._.meshRenderers = pMVar6;
+  func_?(&(this->fields)._.meshRenderers,pMVar6);
+  (this->fields)._._AbleToFire_k__BackingField = 1;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

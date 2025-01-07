@@ -543,14 +543,14 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarAccessoryMoveIcon
 }
 
 
-/* MVPickupItemBaseObject get_AvatarCenterGunPrefab() */
+/* MVPickupItemBaseObject get_AvatarBazookaPrefab() */
 
 MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarCenterGunPrefab
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarBazookaPrefab
           (PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).avatarCenterGunPrefab;
+  return (this->fields).avatarBazookaPrefab;
 }
 
 
@@ -584,6 +584,17 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarCustomGunPrefab
 
 {
   return (this->fields).avatarCustomGunPrefab;
+}
+
+
+/* MVPickupItemBaseObject get_AvatarDoubleSixShooterPrefab() */
+
+MVPickupItemBaseObject *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarDoubleSixShooterPrefab
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).avatarDoubleSixShooterPrefab;
 }
 
 
@@ -915,17 +926,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarMeleeWeaponPrefab
 }
 
 
-/* MVPickupItemBaseObject get_AvatarMouseGunPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarMouseGunPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarMouseGunPrefab;
-}
-
-
 /* MVPickupItemBaseObject get_AvatarMousePackPrefab() */
 
 MVPickupItemBaseObject *
@@ -934,6 +934,17 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarMousePackPrefab
 
 {
   return (this->fields).avatarMousePackPrefab;
+}
+
+
+/* MVPickupItemBaseObject get_AvatarMultiThrowingStarPrefab() */
+
+MVPickupItemBaseObject *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarMultiThrowingStarPrefab
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).avatarMultiThrowingStarPrefab;
 }
 
 
@@ -956,17 +967,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarNinjaRunPrefab
 
 {
   return (this->fields).avatarNinjaRunPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarRailGunPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarRailGunPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarRailGunPrefab;
 }
 
 
@@ -1000,17 +1000,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarSwordPrefab
 
 {
   return (this->fields).avatarSwordPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarThrowingStarPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarThrowingStarPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarThrowingStarPrefab;
 }
 
 
@@ -1064,6 +1053,17 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_CrosshairCursor(PrefabPool *this
 
 {
   return (this->fields).crosshairCursor;
+}
+
+
+/* CubeModelChunkPrefab get_CubeModelChunkPrefab() */
+
+CubeModelChunkPrefab *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_CubeModelChunkPrefab
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).cubeModelChunkPrefab;
 }
 
 

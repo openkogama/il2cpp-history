@@ -605,25 +605,38 @@ code_?:
     return;
   }
 code_?:
-  bVar9 = 0;
+  bVar9 = false;
+  bVar10 = 0;
   CStack_7.g = (float)&UNK_?;
-  bVar10 = func_?();
-  bVar11 = bVar10 < 0x69 || (byte)(bVar10 + 0x97) < bVar9;
-  pbVar12 = (byte *)(extraout_ECX + (int)&stack0xfffffffc * 2);
-  bVar13 = CARRY1(*pbVar12,unaff_BH) || CARRY1(*pbVar12 + unaff_BH,bVar11);
-  *pbVar12 = *pbVar12 + unaff_BH + bVar11;
-  pbVar12 = (byte *)(extraout_ECX + 0x69);
-  bVar11 = CARRY1(*pbVar12,unaff_BL) || CARRY1(*pbVar12 + unaff_BL,bVar13);
-  *pbVar12 = *pbVar12 + unaff_BL + bVar13;
-  pbVar12 = (byte *)(team + 0x69);
-  bVar10 = *pbVar12;
-  bVar9 = *pbVar12;
-  *pbVar12 = bVar9 + extraout_DH + bVar11;
-  pcVar14 = (char *)(extraout_ECX + 0x69931047 + (int)&stack0xfffffffc * 2);
-  *pcVar14 = *pcVar14 + (char)((uint)extraout_ECX >> 8) +
-            (CARRY1(bVar10,extraout_DH) || CARRY1(bVar9 + extraout_DH,bVar11));
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  iVar11 = func_?();
+  if (!bVar9) {
+    pbVar12 = (byte *)(iVar11 + 0x47 + team * 2);
+    bVar9 = CARRY1(*pbVar12,unaff_BH) || CARRY1(*pbVar12 + unaff_BH,bVar10);
+    *pbVar12 = *pbVar12 + unaff_BH + bVar10;
+    pbVar12 = (byte *)(extraout_ECX + -0x49efb890);
+    bVar10 = *pbVar12;
+    bVar13 = *pbVar12 + unaff_BL;
+    bVar14 = CARRY1(*pbVar12,unaff_BL) || CARRY1(bVar13,bVar9);
+    *pbVar12 = bVar13 + bVar9;
+    if (SCARRY1(bVar10,unaff_BL) == SCARRY1(bVar13,bVar9)) {
+      bVar10 = (byte)((uint)iVar11 >> 8);
+      bVar13 = (byte)((uint)extraout_ECX >> 8);
+      if (SCARRY1(bVar10,bVar13) != SCARRY1(bVar10 + bVar13,bVar14)) {
+        pcVar15 = (code *)swi(3);
+        (*pcVar15)();
+        return;
+      }
+      if (SCARRY1(unaff_BL,extraout_DL) ==
+          SCARRY1(unaff_BL + extraout_DL,CARRY1(bVar10,bVar13) || CARRY1(bVar10 + bVar13,bVar14))) {
+        pcVar15 = (code *)swi(3);
+        (*pcVar15)();
+        return;
+      }
+      pcVar15 = (code *)swi(3);
+      (*pcVar15)();
+      return;
+    }
+  }
   return;
 }
 

@@ -51,37 +51,36 @@ void Assembly-CSharp.dll::HealRayHitPackage::HealRayHitPackage_ParseAndHandlePac
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar1 != 0) {
       if (x == (Object_1 *)0x0) goto code_?;
-      cVar2 = (*(code *)x->klass[1]._0.castClass)(x,0x11,x->klass[1]._0.declaringType);
+      cVar2 = (*(code *)x->klass[1]._0.typeMetadataHandle)(x);
       if (cVar2 != '\0') {
         return;
       }
     }
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+      func_?();
     }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
+    if (bVar1 != 0) {
       return;
     }
     pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (((pMVar3 != (MVNetworkGame *)0x0) &&
-        (this_01 = (pMVar3->fields).teamManager, this_01 != (MVTeamManager *)0x0)) &&
-       (iVar4 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0),
-       shooter != (MVPlayer *)0x0)) {
-      if ((iVar4 < 2) ||
-         (bVar1 = MVPlayer::MVPlayer_IsOnSameTeam_1(shooter,worldObjectClient,(MethodInfo *)0x0),
-         bVar1 != 0)) {
-        if (x != (Object_1 *)0x0) {
-          (**(code **)&x->klass[1]._0.this_arg.attrs)
-                    (x,0x12,(shooter->fields)._ActorNr_k__BackingField,0,
-                     x->klass[1]._0.element_class);
-          return;
+    if ((pMVar3 != (MVNetworkGame *)0x0) &&
+       (this_01 = (pMVar3->fields).teamManager, this_01 != (MVTeamManager *)0x0)) {
+      iVar4 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0);
+      if (1 < iVar4) {
+        if (shooter == (MVPlayer *)0x0) goto code_?;
+        bVar1 = MVPlayer::MVPlayer_IsOnSameTeam_1(shooter,worldObjectClient,(MethodInfo *)0x0);
+        if (bVar1 == 0) {
+          if (x != (Object_1 *)0x0) {
+            (**(code **)&x->klass[1]._0.byval_arg.attrs)(x,0x19,shooter);
+            return;
+          }
+          goto code_?;
         }
       }
-      else if (x != (Object_1 *)0x0) {
-        (**(code **)&x->klass[1]._0.byval_arg.attrs)
-                  (x,0x19,shooter,0x16,x->klass[1]._0.this_arg.data.dummy);
+      if (x != (Object_1 *)0x0) {
+        (*(code *)x->klass[1]._0.castClass)(x,0x12);
         return;
       }
     }

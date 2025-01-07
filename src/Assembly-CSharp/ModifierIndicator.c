@@ -229,8 +229,8 @@ void Assembly-CSharp.dll::ModifierIndicator::ModifierIndicator_Update
 {
   pMVar1 = (this->fields).localInteractable;
   if (pMVar1 != (MVInteractableBase *)0x0) {
-    bVar2 = (*(code *)(pMVar1->klass->vtable).__unknown_3.method)
-                      (pMVar1,4,(pMVar1->klass->vtable).__unknown_4.methodPtr);
+    bVar2 = (*(code *)(pMVar1->klass->vtable).__unknown_5.method)
+                      (pMVar1,4,(pMVar1->klass->vtable).__unknown_6.methodPtr);
     pMVar3 = (this->fields).modifierIndicators;
     if (pMVar3 != (ModifierIndicator_OverlayWrapper__Array *)0x0) {
       if (pMVar3->max_length == 0) goto code_?;
@@ -239,8 +239,8 @@ void Assembly-CSharp.dll::ModifierIndicator::ModifierIndicator_Update
                   (pMVar3->vector[0],bVar2 & 1,(MethodInfo *)0x0);
         pMVar1 = (this->fields).localInteractable;
         if (pMVar1 != (MVInteractableBase *)0x0) {
-          bVar4 = (*(code *)(pMVar1->klass->vtable).__unknown_3.method)
-                            (pMVar1,1,(pMVar1->klass->vtable).__unknown_4.methodPtr);
+          bVar4 = (*(code *)(pMVar1->klass->vtable).__unknown_5.method)
+                            (pMVar1,1,(pMVar1->klass->vtable).__unknown_6.methodPtr);
           pMVar3 = (this->fields).modifierIndicators;
           if (pMVar3 != (ModifierIndicator_OverlayWrapper__Array *)0x0) {
             if (pMVar3->max_length < 2) goto code_?;
@@ -249,8 +249,8 @@ void Assembly-CSharp.dll::ModifierIndicator::ModifierIndicator_Update
                         (pMVar3->vector[1],bVar2 == 0 & bVar4,(MethodInfo *)0x0);
               pMVar1 = (this->fields).localInteractable;
               if (pMVar1 != (MVInteractableBase *)0x0) {
-                bVar5 = (*(code *)(pMVar1->klass->vtable).__unknown_3.method)
-                                  (pMVar1,10,(pMVar1->klass->vtable).__unknown_4.methodPtr);
+                bVar5 = (*(code *)(pMVar1->klass->vtable).__unknown_5.method)
+                                  (pMVar1,10,(pMVar1->klass->vtable).__unknown_6.methodPtr);
                 pMVar3 = (this->fields).modifierIndicators;
                 if (pMVar3 != (ModifierIndicator_OverlayWrapper__Array *)0x0) {
                   if (pMVar3->max_length < 3) goto code_?;

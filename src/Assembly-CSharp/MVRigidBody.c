@@ -156,8 +156,8 @@ Vector3 * Assembly-CSharp.dll::MVRigidBody::MVRigidBody_ApplyGravity
   Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
   ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
   if (interactableLocal != (MVInteractableBase *)0x0) {
-    pIVar6 = (interactableLocal->klass->vtable).__unknown_7.methodPtr;
-    fVar7 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_6.method)
+    pIVar6 = (interactableLocal->klass->vtable).__unknown_9.methodPtr;
+    fVar7 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_8.method)
                                (interactableLocal,0,(this->fields).density);
     fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     __return_storage_ptr__->x = velocity.x;
@@ -269,9 +269,9 @@ Vector3 * Assembly-CSharp.dll::MVRigidBody::MVRigidBody_GetImpulse
                  ,method_00);
       uStack_1 = 0xffffffff;
       if (interactableLocal != (MVInteractableBase *)0x0) {
-        fVar16 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_6.method)
+        fVar16 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_8.method)
                                     (interactableLocal,1,(this->fields).weight,
-                                     (interactableLocal->klass->vtable).__unknown_7.methodPtr);
+                                     (interactableLocal->klass->vtable).__unknown_9.methodPtr);
         fVar17 = (float)((float10)_UNK_? / fVar16);
         pLVar7 = (this->fields).impulseVectors;
         if (pLVar7 != (List_1_UnityEngine_Vector3_ *)0x0) {
@@ -329,9 +329,9 @@ Vector3 * Assembly-CSharp.dll::MVRigidBody::MVRigidBody_VelocityDamping
 
 {
   if (interactableLocal != (MVInteractableBase *)0x0) {
-    fVar1 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_6.method)
+    fVar1 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_8.method)
                                (interactableLocal,4,0x3f800000,
-                                (interactableLocal->klass->vtable).__unknown_7.methodPtr);
+                                (interactableLocal->klass->vtable).__unknown_9.methodPtr);
     fVar2 = (float)fVar1;
     fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                       ((MethodInfo *)0x0);

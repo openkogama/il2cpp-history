@@ -472,8 +472,8 @@ Vector3 * Assembly-CSharp.dll::JetPackMotor::JetPackMotor_GetDesiredHorizontalVe
 {
   pMVar1 = (this->fields).interactable;
   if (pMVar1 != (MVInteractableBase *)0x0) {
-    fVar2 = (float10)(*(code *)(pMVar1->klass->vtable).__unknown_6.method)
-                               (pMVar1,3,0x41400000,(pMVar1->klass->vtable).__unknown_7.methodPtr);
+    fVar2 = (float10)(*(code *)(pMVar1->klass->vtable).__unknown_8.method)
+                               (pMVar1,3,0x41400000,(pMVar1->klass->vtable).__unknown_9.methodPtr);
     fStack_3 = (this->fields)._InputMoveDirection_k__BackingField.z;
     uStack_4._0_4_ = (this->fields)._InputMoveDirection_k__BackingField.x;
     uStack_4._4_4_ = (this->fields)._InputMoveDirection_k__BackingField.y;
@@ -787,7 +787,7 @@ code_?:
               fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
                                 (0.0,4.5,(MethodInfo *)0x0);
               fVar1 = fVar1 * fVar6 + 0.0;
-              fVar2 = fVar3 * fVar6 + 3.5047303e-29;
+              fVar2 = fVar3 * fVar6 + 3.505207e-29;
               fVar6 = (float)this + fVar13 * fVar6;
               goto code_?;
             }

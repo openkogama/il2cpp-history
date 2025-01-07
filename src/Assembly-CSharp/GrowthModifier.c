@@ -27,7 +27,7 @@ void Assembly-CSharp.dll::GrowthModifier::GrowthModifier_Destroy
            && ((MVAvatarLocal__Class *)
                (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1]
                == TypeInfo__MVAvatarLocal)) {
-          this_00 = (Component *)pMVar2[1].fields._._._.groupId;
+          this_00 = (Component *)pMVar2[1].fields._._._.itemId;
           if (this_00 != (Component *)0x0) {
             pOVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                                (this_00,

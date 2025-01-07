@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject.MetaData;
@@ -11,7 +12,12 @@ using MV.WorldObject.MetaData;
 
 public class MVLocalPlayerTourist : MVLocalPlayer
 {
+	// Fields
+	public static readonly Dictionary<string, string> Adjectives;
+	public static readonly Dictionary<string, string> Nouns;
+
 	// Constructors
 	public MVLocalPlayerTourist(int actorNumber, int profileID, string regionCode, int planetOwnershipTypeID, UserProfileData userProfileData);
+	static MVLocalPlayerTourist();
 }
 

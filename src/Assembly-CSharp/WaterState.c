@@ -146,12 +146,12 @@ void Assembly-CSharp.dll::WaterState::WaterState_Update
     bVar4 = WaterPlaneManager::WaterPlaneManager_get_IsActive(pWVar2,(MethodInfo *)0x0);
     if (bVar4 != 0) {
       if (avatarInteractable == (MVInteractableBase *)0x0) goto code_?;
-      (*(code *)(avatarInteractable->klass->vtable).__unknown_2.method)(avatarInteractable);
+      (*(code *)(avatarInteractable->klass->vtable).__unknown_4.method)(avatarInteractable);
       pWVar2 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
       if (pWVar2 == (WaterPlaneManager *)0x0) goto code_?;
       bVar4 = WaterPlaneManager::WaterPlaneManager_get_IsLethal(pWVar2,(MethodInfo *)0x0);
       if (bVar4 != 0) {
-        (*(code *)(avatarInteractable->klass->vtable).__unknown_2.method)
+        (*(code *)(avatarInteractable->klass->vtable).__unknown_4.method)
                   (avatarInteractable,0x14,0xffffffff);
       }
       goto code_?;
@@ -164,11 +164,11 @@ code_?:
     (*pcVar5)();
     return;
   }
-  cVar6 = (*(code *)(avatarInteractable->klass->vtable).__unknown_3.method)
-                    (avatarInteractable,9,(avatarInteractable->klass->vtable).__unknown_4.methodPtr)
+  cVar6 = (*(code *)(avatarInteractable->klass->vtable).__unknown_5.method)
+                    (avatarInteractable,9,(avatarInteractable->klass->vtable).__unknown_6.methodPtr)
   ;
   if (cVar6 != '\0') {
-    (*(code *)(avatarInteractable->klass->vtable).__unknown_4.method)(avatarInteractable,9);
+    (*(code *)(avatarInteractable->klass->vtable).__unknown_6.method)(avatarInteractable,9);
   }
 code_?:
   fVar1 = WaterState_ComputeAvatarWaterProximity
@@ -179,8 +179,8 @@ code_?:
   else {
     fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     fVar1 = 0.0;
-    if (0.0 <= 3.3442344e-29 - fVar3) {
-      fVar1 = 3.3442344e-29 - fVar3;
+    if (0.0 <= 3.3426118e-29 - fVar3) {
+      fVar1 = 3.3426118e-29 - fVar3;
     }
     (this->fields).oxygen = fVar1;
     if (fVar1 <= 0.0) {
@@ -208,8 +208,8 @@ void Assembly-CSharp.dll::WaterState::WaterState_UpdateLocalAvatarOxygen
   else {
     fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     fVar1 = 0.0;
-    if (0.0 <= 3.3440102e-29 - fVar2) {
-      fVar1 = 3.3440102e-29 - fVar2;
+    if (0.0 <= 3.3423876e-29 - fVar2) {
+      fVar1 = 3.3423876e-29 - fVar2;
     }
     (this->fields).oxygen = fVar1;
     if (fVar1 <= 0.0) {
@@ -239,7 +239,7 @@ void Assembly-CSharp.dll::WaterState::WaterState_UpdateModifiers
     bVar4 = WaterPlaneManager::WaterPlaneManager_get_IsActive(pWVar2,(MethodInfo *)0x0);
     if (bVar4 != 0) {
       if (avatarInteractable != (MVInteractableBase *)0x0) {
-        (*(code *)(avatarInteractable->klass->vtable).__unknown_2.method)
+        (*(code *)(avatarInteractable->klass->vtable).__unknown_4.method)
                   (avatarInteractable,9,0xffffffff);
         pWVar2 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0)
         ;
@@ -248,7 +248,7 @@ void Assembly-CSharp.dll::WaterState::WaterState_UpdateModifiers
           if (bVar4 == 0) {
             return;
           }
-          (*(code *)(avatarInteractable->klass->vtable).__unknown_2.method)
+          (*(code *)(avatarInteractable->klass->vtable).__unknown_4.method)
                     (avatarInteractable,0x14,0xffffffff);
           return;
         }
@@ -257,15 +257,15 @@ void Assembly-CSharp.dll::WaterState::WaterState_UpdateModifiers
     }
   }
   if (avatarInteractable != (MVInteractableBase *)0x0) {
-    cVar5 = (*(code *)(avatarInteractable->klass->vtable).__unknown_3.method)
+    cVar5 = (*(code *)(avatarInteractable->klass->vtable).__unknown_5.method)
                       (avatarInteractable,9,
-                       (avatarInteractable->klass->vtable).__unknown_4.methodPtr);
+                       (avatarInteractable->klass->vtable).__unknown_6.methodPtr);
     if (cVar5 == '\0') {
       return;
     }
-    (*(code *)(avatarInteractable->klass->vtable).__unknown_4.method)
+    (*(code *)(avatarInteractable->klass->vtable).__unknown_6.method)
               (avatarInteractable,9,0xffffffff,
-               (avatarInteractable->klass->vtable).__unknown_5.methodPtr);
+               (avatarInteractable->klass->vtable).__unknown_7.methodPtr);
     return;
   }
 code_?:

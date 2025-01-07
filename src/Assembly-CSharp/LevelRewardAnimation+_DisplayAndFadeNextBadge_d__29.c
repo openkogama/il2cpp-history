@@ -26,7 +26,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::
     euler_00.x = fVar2;
     euler_00.z = 0.0;
     pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                       ((Quaternion *)&stack0xffffffd0,euler_00,(MethodInfo *)0x0);
+                        ((Quaternion *)&stack0xffffffd0,euler_00,(MethodInfo *)0x0);
     if (pTVar4 == (Transform *)0x0) goto code_?;
     fVar2 = pQVar5->z;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
@@ -104,8 +104,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::
             euler.x = fVar2;
             euler.z = 0.0;
             pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                     Quaternion_Internal_FromEulerRad
-                               ((Quaternion *)&stack0xffffffd0,euler,(MethodInfo *)0x0);
+                      Quaternion_Internal_FromEulerRad
+                                ((Quaternion *)&stack0xffffffd0,euler,(MethodInfo *)0x0);
             if (pTVar4 != (Transform *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                         (pTVar4,*pQVar5,(MethodInfo *)0x0);
@@ -155,9 +155,9 @@ code_?:
                             euler_01.x = fVar2;
                             euler_01.z = 0.0;
                             pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                                     Quaternion_Internal_FromEulerRad
-                                               ((Quaternion *)&stack0xffffffc0,euler_01,
-                                                (MethodInfo *)0x0);
+                                      Quaternion_Internal_FromEulerRad
+                                                ((Quaternion *)&stack0xffffffc0,euler_01,
+                                                 (MethodInfo *)0x0);
                             if (pTVar4 != (Transform *)0x0) {
                               UnityEngine.CoreModule.dll::UnityEngine::Transform::
                               Transform_set_rotation(pTVar4,*pQVar5,(MethodInfo *)0x0);
@@ -207,9 +207,9 @@ code_?:
                               euler_03.x = fVar2;
                               euler_03.z = 0.0;
                               pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                                       Quaternion_Internal_FromEulerRad
-                                                 ((Quaternion *)&stack0xffffffc0,euler_03,
-                                                  (MethodInfo *)0x0);
+                                        Quaternion_Internal_FromEulerRad
+                                                  ((Quaternion *)&stack0xffffffc0,euler_03,
+                                                   (MethodInfo *)0x0);
                               if (pTVar4 != (Transform *)0x0) {
                                 UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                 Transform_set_rotation(pTVar4,*pQVar5,(MethodInfo *)0x0);
@@ -308,8 +308,8 @@ code_?:
         euler_02.x = fVar2;
         euler_02.z = 0.0;
         pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                 Quaternion_Internal_FromEulerRad
-                           ((Quaternion *)&stack0xffffffc0,euler_02,(MethodInfo *)0x0);
+                  Quaternion_Internal_FromEulerRad
+                            ((Quaternion *)&stack0xffffffc0,euler_02,(MethodInfo *)0x0);
         if (pTVar4 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                     (pTVar4,*pQVar5,(MethodInfo *)0x0);
@@ -323,9 +323,8 @@ code_?:
     }
   }
 code_?:
-  func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  bVar15 = func_?();
+  return bVar15;
 }
 
 

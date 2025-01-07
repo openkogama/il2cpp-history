@@ -34,7 +34,7 @@ void Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_Add
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__GetEnumerator__
                    );
-    func_?(0x6ff0);
+    func_?(0xb330);
     cRam_? = '\x01';
     puVar7 = puStack_6;
   }
@@ -602,9 +602,9 @@ Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_GetValid
 
 {
   if (cRam_? == '\0') {
-    func_?(0xed40);
-    func_?(0xea28);
-    func_?(0xe9f0);
+    func_?(0x3084);
+    func_?(0x2aac);
+    func_?(0x2a74);
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MoveCubeFromCoarseToFine::ValidPos>__get_Item_int_
                    );
@@ -745,27 +745,26 @@ bool Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_IsF
   case Face__Enum_Right:
     iStack_1 = 0;
   }
-  pbVar3 = (byte *)0x0;
+  pcVar3 = (char *)0x0;
   pVVar4 = *faceCorners;
-  bVar5 = 0;
   if (pVVar4 == (Vector3__Array *)0x0) {
     func_?();
   }
   else {
-    unaff_EDI = pVVar4->vector;
+    pVVar5 = pVVar4->vector;
     while( true ) {
-      if ((int)pVVar4->max_length <= (int)pbVar3) {
+      if ((int)pVVar4->max_length <= (int)pcVar3) {
         return 0;
       }
-      bVar5 = pbVar3 < (byte *)pVVar4->max_length;
-      if (!(bool)bVar5) break;
-      VStack_6.z = unaff_EDI->z;
-      VStack_6.x = unaff_EDI->x;
-      VStack_6.y = unaff_EDI->y;
+      if ((char *)pVVar4->max_length <= pcVar3) break;
+      VStack_6.z = pVVar5->z;
+      VStack_6.x = pVVar5->x;
+      VStack_6.y = pVVar5->y;
       fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
                          (&VStack_6,iStack_1,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         VStack_6.x = (float)&TypeInfo__UnityEngine__Mathf;
+        unaff_ESI = 0;
         func_?();
         cRam_? = '\x01';
       }
@@ -781,28 +780,25 @@ bool Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_IsF
       if (fVar10 <= (float)((uint)(fStack_2 - fVar7) & _UNK_?)) {
         return 1;
       }
-      pbVar3 = pbVar3 + 1;
-      unaff_EDI = unaff_EDI + 1;
+      pcVar3 = pcVar3 + 1;
+      pVVar5 = pVVar5 + 1;
     }
   }
-  func_?();
-  bVar11 = CARRY1(*pbVar3,unaff_BL) || CARRY1(*pbVar3 + unaff_BL,bVar5);
-  *pbVar3 = *pbVar3 + unaff_BL + bVar5;
-  bVar12 = (byte)((uint)extraout_EDX >> 8);
-  bVar5 = *extraout_EDX + bVar12;
-  bVar13 = CARRY1(*extraout_EDX,bVar12) || CARRY1(bVar5,bVar11);
-  *extraout_EDX = bVar5 + bVar11;
-  pbVar3 = pbVar3 + -0x69;
-  bVar5 = *pbVar3;
-  bVar12 = *pbVar3 + (byte)unaff_EDI;
-  *pbVar3 = bVar12 + bVar13;
-  extraout_EDX[-0x69] =
-       extraout_EDX[-0x69] + unaff_BL +
-       (CARRY1(bStackY_6d,extraout_CL) ||
-       CARRY1(bStackY_6d + extraout_CL,CARRY1(bVar5,(byte)unaff_EDI) || CARRY1(bVar12,bVar13)));
-  pcVar14 = (code *)swi(3);
-  bVar15 = (*pcVar14)();
-  return bVar15;
+  bVar11 = func_?();
+  *pcVar3 = *pcVar3 + unaff_BL + ((unaff_ESI & 1) != 0);
+  *extraout_EDX = *extraout_EDX + (char)((uint)extraout_EDX >> 8) + ((VStack_6._0_8_ & 1) != 0);
+  bVar12 = (VStack_6._0_8_ & 0x100000000) != 0;
+  pbVar13 = (byte *)(pcVar3 + -99);
+  bVar14 = *pbVar13;
+  bVar15 = *pbVar13;
+  *pbVar13 = bVar15 + bVar11 + bVar12;
+  extraout_EDX[-99] =
+       extraout_EDX[-99] + unaff_BL +
+       (CARRY1(bStackY_67,extraout_CL) ||
+       CARRY1(bStackY_67 + extraout_CL,CARRY1(bVar14,bVar11) || CARRY1(bVar15 + bVar11,bVar12)));
+  pcVar16 = (code *)swi(3);
+  bVar17 = (*pcVar16)();
+  return bVar17;
 }
 
 
@@ -814,7 +810,7 @@ void Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_Mov
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-    func_?(0x6ff0);
+    func_?(0xb330);
     cRam_? = '\x01';
   }
   if (from != (ICubeModel *)0x0) {

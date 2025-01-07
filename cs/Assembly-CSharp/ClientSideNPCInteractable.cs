@@ -15,6 +15,7 @@ public class ClientSideNPCInteractable : MVInteractableBase
 	// Fields
 	private static readonly Dictionary<AvatarModifierPackageType, float> allowedModifiersDictionary;
 	private Action<float, MVPlayer, PlayerKilledByType> takeDamageCallback;
+	private Action<float, MVPlayer> healCallback;
 	private int respawnInterval;
 	private float maxHealth;
 
@@ -23,10 +24,12 @@ public class ClientSideNPCInteractable : MVInteractableBase
 	static ClientSideNPCInteractable();
 
 	// Methods
-	public void Init(Action<float, MVPlayer, PlayerKilledByType> takeDamageCallback);
+	public void Init(Action<float, MVPlayer, PlayerKilledByType> takeDamageCallback, Action<float, MVPlayer> healCallback);
 	public bool IsDead();
 	public override void TakeDamage(float amount, MVPlayer damageDealer, PlayerKilledByType damageType);
 	public override void TakeDamageOverTime(AvatarModifierPackageType type, MVPlayer damageDealer, PlayerKilledByType damageType);
+	public override void Heal(float amount, MVPlayer healer);
+	public override void HealOverTime(AvatarModifierPackageType type, MVPlayer healer);
 	public void Reset();
 	public override void AddModifier(AvatarModifierPackageType type, int id, AvatarModifierPackage.AvatarModifier[] additionalModifers = null);
 	public override bool HasModifier(AvatarModifierPackageType type);

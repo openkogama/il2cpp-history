@@ -475,19 +475,17 @@ float Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_GetAbsolutProjectileSpee
                 (MVPickupOwner *this,float projectileSpeed,MethodInfo *method)
 
 {
-  pVVar1 = &(this->fields).lookDirection;
-  uStack_2._0_4_ = pVVar1->x;
-  uStack_2._4_4_ = pVVar1->y;
-  fStack_3 = (this->fields).lookDirection.z;
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     (&VStack_4,*pVVar1,(MethodInfo *)0x0);
-  uVar5 = pVVar1->x;
-  uVar6 = pVVar1->y;
-  fStack_7 = fStack_3 - pVVar1->z;
-  uStack_8 = CONCAT44(uStack_2._4_4_ - (float)uVar6,(float)uStack_2 - (float)uVar5);
-  fStack_3 = fStack_7;
-  fVar9 = (float10)func_?(&uStack_8,0);
-  return (float)(fVar9 + (float10)projectileSpeed);
+  fStack_1 = (this->fields).lookDirection.z;
+  uStack_2._0_4_ = (this->fields).lookDirection.x;
+  uStack_2._4_4_ = (this->fields).lookDirection.y;
+  puVar3 = (undefined8 *)func_?(auStack_4,&(this->fields).lookDirection,0);
+  uStack_5._0_4_ = (float)*puVar3;
+  uStack_5._4_4_ = (float)((ulonglong)*puVar3 >> 0x20);
+  fStack_6 = fStack_1 - *(float *)(puVar3 + 1);
+  uStack_5 = CONCAT44(uStack_2._4_4_ - uStack_5._4_4_,(float)uStack_2 - (float)uStack_5);
+  fStack_1 = fStack_6;
+  fVar7 = (float10)func_?(&uStack_5,0);
+  return (float)(fVar7 + (float10)projectileSpeed);
 }
 
 
@@ -526,37 +524,38 @@ Vector3 * Assembly-CSharp.dll::MVPickupOwner::
       pVVar3 = (Vector3 *)(*pcVar2)();
       return pVVar3;
     }
-    pVVar3 = (Vector3 *)(**(code **)&x->klass[1]._0.byval_arg.attrs)();
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                       ((Vector3 *)&stack0xffffffec,*pVVar3,(MethodInfo *)0x0);
-    fVar4 = pVVar3->x;
-    pVVar3 = (Vector3 *)&stack0xffffffec;
-    puVar5 = &UNK_?;
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                       (pVVar3,(this->fields).lookDirection,(MethodInfo *)0x0);
-    uVar7 = pVVar6->y;
-    lookDirection.x = 0.0;
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                       ((Vector3 *)&stack0xffffffd4,*pVVar6,(MethodInfo *)0x0);
-    uVar8 = pVVar6->x;
-    uVar9 = pVVar6->y;
-    fVar4 = (float)uVar9 * (float)puVar5 + (float)uVar8 * fVar4 + pVVar6->z * (float)pVVar3;
-    __return_storage_ptr__ = (Vector3 *)uVar7;
-    if (0.0 < fVar4) {
-      _Stack00000020 = x->klass[1]._0.this_arg.data;
-      pOStack10 = x;
-      (**(code **)&x->klass[1]._0.byval_arg.attrs)();
-      fVar11 = (float10)func_?();
-      fVar4 = (float)(fVar11 * (float10)fVar4);
-      *(ulonglong *)uVar7 =
-           CONCAT44((float)&stack0xffffffe0 + (float)&stack0xffffffe0 * fVar4,
-                    fVar4 * 3.326879e-29 + 3.326879e-29);
-      *(float *)(uVar7 + 8) = fVar4 * 0.0 + 0.0;
-      return (Vector3 *)uVar7;
+    puVar4 = (undefined8 *)(**(code **)&x->klass[1]._0.byval_arg.attrs)();
+    uStack_5 = *puVar4;
+    uStack_6 = *(undefined4 *)(puVar4 + 1);
+    puVar4 = (undefined8 *)func_?(&uStack_7);
+    uVar8 = *puVar4;
+    fVar9 = *(float *)(puVar4 + 1);
+    puVar4 = (undefined8 *)func_?(&uStack_7,&(this->fields).lookDirection,0);
+    uStack_5 = *puVar4;
+    uStack_6 = *(undefined4 *)(puVar4 + 1);
+    puVar4 = (undefined8 *)func_?(&stack0xffffffc8,&uStack_5,0);
+    uVar10 = *puVar4;
+    fStack_11 = *(float *)(puVar4 + 1);
+    uStack_7._0_4_ = (float)uVar10;
+    fStack_12 = (float)uVar8;
+    uStack_7._4_4_ = (float)((ulonglong)uVar10 >> 0x20);
+    fStack_13 = (float)((ulonglong)uVar8 >> 0x20);
+    fStack_14 = uStack_7._4_4_ * fStack_13 + (float)uStack_7 * fStack_12 + fStack_11 * fVar9;
+    if (0.0 < fStack_14) {
+      uStack_7 = uVar10;
+      puVar4 = (undefined8 *)(**(code **)&x->klass[1]._0.byval_arg.attrs)();
+      uStack_5 = *puVar4;
+      uStack_6 = *(undefined4 *)(puVar4 + 1);
+      fVar15 = (float10)func_?();
+      fVar9 = (float)(fVar15 * (float10)fStack_14);
+      __return_storage_ptr__->x = lookDirection.x + lookDirection.x * fVar9;
+      __return_storage_ptr__->y = lookDirection.y + lookDirection.y * fVar9;
+      __return_storage_ptr__->z = lookDirection.z + lookDirection.z * fVar9;
+      return __return_storage_ptr__;
     }
   }
-  __return_storage_ptr__->x = lookDirection.x;
-  __return_storage_ptr__->y = lookDirection.y;
+  __return_storage_ptr__->x = (float)(int)lookDirection._0_8_;
+  __return_storage_ptr__->y = (float)(int)((ulonglong)lookDirection._0_8_ >> 0x20);
   __return_storage_ptr__->z = lookDirection.z;
   return __return_storage_ptr__;
 }
@@ -613,79 +612,74 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_HandleFire
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
   if (pMVar1 != (MainCameraManager *)0x0) {
-    pVVar2 = MainCameraManager::MainCameraManager_get_FireDirection
-                        ((Vector3 *)&stack0xffffffe4,pMVar1,(MethodInfo *)0x0);
-    uVar3 = pVVar2->x;
-    uVar4 = pVVar2->y;
-    fVar5 = pVVar2->z;
+    MainCameraManager::MainCameraManager_get_FireDirection(&VStack_2,pMVar1,(MethodInfo *)0x0);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
     if (pMVar1 != (MainCameraManager *)0x0) {
-      pVVar2 = MainCameraManager::MainCameraManager_get_FireOrigin
-                          ((Vector3 *)&stack0xffffffd8,pMVar1,(MethodInfo *)0x0);
-      method_00 = pVVar2->x;
-      fVar6 = pVVar2->z;
-      value.y = (float)uVar4;
-      value.x = (float)uVar3;
-      value.z = fVar5;
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                          ((Vector3 *)&stack0xffffffd8,value,(MethodInfo *)method_00);
-      uVar7._4_4_ = (float)this;
-      uVar7._0_4_ = (float)&stack0xffffffd8;
-      pVVar2 = MVPickupOwner_GetLookDirectionWithAddedVelocityMagnitude
-                          ((Vector3 *)&stack0xffffffd8,this,*pVVar2,(MethodInfo *)0x0);
-      fVar8 = pVVar2->x;
-      fVar9 = pVVar2->y;
-      fVar5 = pVVar2->z;
-      (this->fields).lookOrigin.x = (float)uVar7;
-      (this->fields).lookOrigin.y = SUB84(uVar7,4);
-      (this->fields).lookDirection.x = fVar8;
-      (this->fields).lookDirection.y = fVar9;
-      (this->fields).lookOrigin.z = fVar6;
-      pPVar10 = (this->fields).currentItem;
-      (this->fields).lookDirection.z = fVar5;
+      pVVar3 = MainCameraManager::MainCameraManager_get_FireOrigin
+                          ((Vector3 *)&stack0xffffffd4,pMVar1,(MethodInfo *)0x0);
+      VStack_2.y = pVVar3->x;
+      VStack_2.z = pVVar3->y;
+      fVar4 = pVVar3->z;
+      pVVar3 = (Vector3 *)func_?(&stack0xffffffd4);
+      pVVar3 = MVPickupOwner_GetLookDirectionWithAddedVelocityMagnitude
+                          ((Vector3 *)&stack0xffffffd4,this,*pVVar3,(MethodInfo *)0x0);
+      fVar5 = pVVar3->x;
+      fVar6 = pVVar3->y;
+      fVar7 = pVVar3->z;
+      (this->fields).lookOrigin.x = VStack_2.y;
+      (this->fields).lookOrigin.y = VStack_2.z;
+      (this->fields).lookDirection.x = fVar5;
+      (this->fields).lookDirection.y = fVar6;
+      (this->fields).lookOrigin.z = fVar4;
+      pPVar8 = (this->fields).currentItem;
+      (this->fields).lookDirection.z = fVar7;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__UnityEngine__Object);
       }
-      bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
-                        ((Object_1 *)pPVar10,(MethodInfo *)0x0);
-      if (bVar11 == 0) {
+      bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
+                        ((Object_1 *)pPVar8,(MethodInfo *)0x0);
+      if (bVar9 == 0) {
 code_?:
         inputFire = 0;
       }
       else {
-        pPVar10 = (this->fields).currentItem;
-        if (pPVar10 == (PickupItem *)0x0) goto code_?;
-        cVar12 = (*(code *)(pPVar10->klass->vtable).CanFire.method)();
-        if (cVar12 == '\0') goto code_?;
+        pPVar8 = (this->fields).currentItem;
+        if (pPVar8 == (PickupItem *)0x0) goto code_?;
+        cVar10 = (*(code *)(pPVar8->klass->vtable).CanFire.method)();
+        if (cVar10 == '\0') goto code_?;
       }
-      pOVar13 = MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value
-                          ((MVRuntimeDataVariable *)&UNK_?,(MethodInfo *)0x0);
-      if (pOVar13 != (Object *)0x0) {
-        if ((pOVar13->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
+      if ((isFiringRuntimeVariable != (MVRuntimeDataVariable *)0x0) &&
+         (pOVar11 = MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value
+                              (isFiringRuntimeVariable,(MethodInfo *)0x0), pOVar11 != (Object *)0x0)
+         ) {
+        if ((pOVar11->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
         goto code_?;
-        pbVar14 = (bool *)func_?();
-        if (*pbVar14 != inputFire) {
-          pOVar13 = (Object *)func_?();
+        pbVar12 = (bool *)func_?();
+        if (*pbVar12 != inputFire) {
+          bStack_13 = inputFire;
+          pOVar11 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_13);
           MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
-                    ((MVRuntimeDataVariable *)&UNK_?,pOVar13,(MethodInfo *)0x0);
+                    (isFiringRuntimeVariable,pOVar11,(MethodInfo *)0x0);
         }
-        if ((inputFire == 0) ||
-           (fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                               ((MethodInfo *)0x0),
-           fVar5 - (this->fields).prevUpdateLineOfFireTime <= _UNK_?)) {
+        if (inputFire == 0) {
+          return;
+        }
+        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        VStack_2.z = fVar4;
+        if (fVar4 - (this->fields).prevUpdateLineOfFireTime <= _UNK_?) {
           return;
         }
         this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                             ((MethodInfo *)0x0);
-        pMVar15 = (this->fields)._.worldObjectParent;
-        if ((pMVar15 != (MVWorldObjectClient *)0x0) &&
+        pMVar14 = (this->fields)._.worldObjectParent;
+        if ((pMVar14 != (MVWorldObjectClient *)0x0) &&
            (this_00 != (MVNetworkGame_OperationRequests *)0x0)) {
           MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UpdateLineOfFire
-                    (this_00,(pMVar15->fields)._.id,(this->fields).lookDirection,
+                    (this_00,(pMVar14->fields)._.id,(this->fields).lookDirection,
                      (this->fields).lookOrigin,(MethodInfo *)0x0);
-          fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0)
+          fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0)
           ;
-          (this->fields).prevUpdateLineOfFireTime = fVar5;
+          (this->fields).prevUpdateLineOfFireTime = fVar4;
           return;
         }
       }
@@ -695,8 +689,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -982,41 +976,32 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_SetLineOfFireLocal
 {
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
   if (pMVar1 != (MainCameraManager *)0x0) {
-    pVVar2 = MainCameraManager::MainCameraManager_get_FireDirection
-                       ((Vector3 *)&stack0xffffffe8,pMVar1,(MethodInfo *)0x0);
-    uVar3 = pVVar2->x;
-    uVar4 = pVVar2->y;
-    fVar5 = pVVar2->z;
+    MainCameraManager::MainCameraManager_get_FireDirection(&VStack_2,pMVar1,(MethodInfo *)0x0);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
     if (pMVar1 != (MainCameraManager *)0x0) {
-      pVVar2 = MainCameraManager::MainCameraManager_get_FireOrigin
-                         ((Vector3 *)&stack0xffffffdc,pMVar1,(MethodInfo *)0x0);
-      method_00 = pVVar2->y;
-      fVar6 = pVVar2->z;
-      value.y = (float)uVar4;
-      value.x = (float)uVar3;
-      value.z = fVar5;
-      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                          ((Vector3 *)&stack0xffffffdc,value,(MethodInfo *)method_00);
-      pVVar2 = (Vector3 *)&stack0xffffffdc;
-      puVar8 = &UNK_?;
-      pVVar7 = MVPickupOwner_GetLookDirectionWithAddedVelocityMagnitude
-                          (pVVar2,this,*pVVar7,(MethodInfo *)0x0);
-      fVar9 = pVVar7->x;
-      fVar10 = pVVar7->y;
-      fVar5 = pVVar7->z;
-      (this->fields).lookOrigin.x = (float)puVar8;
-      (this->fields).lookOrigin.y = (float)pVVar2;
-      (this->fields).lookOrigin.z = fVar6;
-      (this->fields).lookDirection.x = fVar9;
-      (this->fields).lookDirection.y = fVar10;
-      (this->fields).lookDirection.z = fVar5;
+      pVVar3 = MainCameraManager::MainCameraManager_get_FireOrigin
+                         ((Vector3 *)&stack0xffffffd8,pMVar1,(MethodInfo *)0x0);
+      VStack_2.y = pVVar3->x;
+      VStack_2.z = pVVar3->y;
+      fVar4 = pVVar3->z;
+      pVVar3 = (Vector3 *)func_?();
+      pVVar3 = MVPickupOwner_GetLookDirectionWithAddedVelocityMagnitude
+                         ((Vector3 *)&stack0xffffffd8,this,*pVVar3,(MethodInfo *)0x0);
+      fVar5 = pVVar3->x;
+      fVar6 = pVVar3->y;
+      fVar7 = pVVar3->z;
+      (this->fields).lookOrigin.x = VStack_2.y;
+      (this->fields).lookOrigin.y = VStack_2.z;
+      (this->fields).lookOrigin.z = fVar4;
+      (this->fields).lookDirection.x = fVar5;
+      (this->fields).lookDirection.y = fVar6;
+      (this->fields).lookDirection.z = fVar7;
       return;
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1210,9 +1195,8 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner__ctor(MVPickupOwner *this
   (this->fields).lookDirection.x = (pVVar1->oneVector).x;
   (this->fields).lookDirection.y = fVar2;
   (this->fields).lookDirection.z = fVar3;
-  (this->fields)._.findWorldObjectParent = 1;
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  LobbyStatePlayModeController::LobbyStatePlayModeController__ctor
+            ((LobbyStatePlayModeController *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -1340,12 +1324,11 @@ Vector3 * Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_get_LookDirection
                     (Vector3 *__return_storage_ptr__,MVPickupOwner *this,MethodInfo *method)
 
 {
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     (&VStack_2,(this->fields).lookDirection,(MethodInfo *)0x0);
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  __return_storage_ptr__->x = pVVar1->x;
-  __return_storage_ptr__->y = fVar3;
+  puVar1 = (undefined8 *)func_?(auStack_2,&(this->fields).lookDirection,0);
+  uVar3 = *puVar1;
+  fVar4 = *(float *)(puVar1 + 1);
+  __return_storage_ptr__->x = (float)(int)uVar3;
+  __return_storage_ptr__->y = (float)(int)((ulonglong)uVar3 >> 0x20);
   __return_storage_ptr__->z = fVar4;
   return __return_storage_ptr__;
 }

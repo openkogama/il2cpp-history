@@ -168,9 +168,8 @@ void Assembly-CSharp.dll::VehiclePickupOwner::VehiclePickupOwner__ctor
   (this->fields)._.lookDirection.x = (pVVar1->oneVector).x;
   (this->fields)._.lookDirection.y = fVar2;
   (this->fields)._.lookDirection.z = fVar3;
-  (this->fields)._._.findWorldObjectParent = 1;
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  LobbyStatePlayModeController::LobbyStatePlayModeController__ctor
+            ((LobbyStatePlayModeController *)this,(MethodInfo *)0x0);
   return;
 }
 

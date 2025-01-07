@@ -489,7 +489,7 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_GetVelocity
                 velocity_01.z = fVar6;
                 pVVar3 = JumpState::JumpState_ApplyJumping
                                    ((Vector3 *)&stack0xffffffc8,this_01,
-                                    (MVInteractableBase *)interactableLocal,pMVar1,fVar5,fVar7,0x15
+                                    (MVInteractableBase *)interactableLocal,pMVar1,fVar5,fVar7,0xb5
                                     ,velocity_01,movableVelocity,(MethodInfo *)0x0);
                 pVVar3 = MVRigidBody::MVRigidBody_GetImpulse
                                    ((Vector3 *)&stack0xffffffc8,(MVRigidBody *)this,*pVVar3,
@@ -550,8 +550,8 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_HandleMovementBoost
         if ((pOStack3->klass->_0).element_class ==
             (TypeInfo__System__Int32->_0).element_class) {
           piVar5 = (int *)func_?();
-          (this->fields).walkSpeed = ((float)*piVar5 / _UNK_? + _UNK_?) * 3.389851e-29
-          ;
+          (this->fields).walkSpeed =
+               ((float)*piVar5 / _UNK_? + _UNK_?) * 3.3901302e-29;
           return;
         }
         goto code_?;
@@ -834,7 +834,7 @@ code_?:
                   func_?(TypeInfo__System__Action<MVControllerColliderHit>);
         mscorlib.dll::System::Action`1[MVControllerColliderHit]::
         Action_1_MVControllerColliderHit___ctor
-                  (pAVar17,(Object *)&UNK_?,*(void **)(_UNK_? + 0x144),
+                  (pAVar17,(Object *)&UNK_?,*(void **)(_UNK_? + 0x154),
                    (MethodInfo *)0x0);
         pDVar15 = mscorlib.dll::System::Delegate::Delegate_Combine
                             (pDVar15,(Delegate *)pAVar17,(MethodInfo *)0x0);

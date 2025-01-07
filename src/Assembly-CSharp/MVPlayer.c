@@ -376,7 +376,15 @@ void Assembly-CSharp.dll::MVPlayer::MVPlayer__ctor
 
 {
   if (cRam_? == '\0') {
+    func_?(&
+                    System__String_MethodInfo__Extensions__GetTypedValueOrDefault<System::String,_System::String>_System__Collections__Generic__Dictionary<System::String,_System::String>__System__String__System__String_
+                   );
+    func_?(&TypeInfo__Extensions);
+    func_?(&TypeInfo__MVLocalPlayerTourist);
+    func_?(&TypeInfo__System__Text__RegularExpressions__Regex);
     func_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper);
+    func_?(&::StringLiteral__);
+    func_?(&StringLiteral___________A_Z__);
     func_?(&StringLiteral_Tourist);
     cRam_? = '\x01';
   }
@@ -384,7 +392,7 @@ void Assembly-CSharp.dll::MVPlayer::MVPlayer__ctor
   (this->fields).level = 1;
   (this->fields)._Team_k__BackingField = 5;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields)._ActorNr_k__BackingField = actorNumber;
   (this->fields)._ProfileID_k__BackingField = profileID;
   (this->fields)._BuildTarget_k__BackingField = (undefined1)buildTarget;
@@ -393,52 +401,81 @@ void Assembly-CSharp.dll::MVPlayer::MVPlayer__ctor
   if ((userProfileData != (UserProfileData *)0x0) &&
      (pSVar1 = (userProfileData->fields).SubscriptionData, pSVar1 != (SubscriptionData *)0x0)) {
     subscriptionType = (pSVar1->fields).SubscriptionType;
-    this_01 = (SubscriptionRulesWrapper *)
+    this_00 = (SubscriptionRulesWrapper *)
               func_?(TypeInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper);
     MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
-    SubscriptionRulesWrapper__ctor(this_01,subscriptionType,(MethodInfo *)0x0);
-    (this->fields)._SubscriptionRules_k__BackingField = this_01;
-    func_?(&(this->fields)._SubscriptionRules_k__BackingField,this_01);
-    if (profileID < 1) {
-      pUVar2 = (this->fields)._UserProfileData_k__BackingField;
-      if ((pUVar2 == (UserProfileData *)0x0) ||
-         (pSVar3 = (pUVar2->fields).UserName, pSVar3 == (String *)0x0)) goto code_?;
-      bVar4 = mscorlib.dll::System::String::String_Contains
-                        (pSVar3,StringLiteral_Tourist,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        pSVar3 = TM::TM__(StringLiteral_Tourist,(MethodInfo *)0x0);
-        pUVar2 = (this->fields)._UserProfileData_k__BackingField;
-        if ((pUVar2 == (UserProfileData *)0x0) ||
-           (this_00 = (pUVar2->fields).UserName, this_00 == (String *)0x0)) goto code_?;
-        pSVar3 = mscorlib.dll::System::String::String_Replace_1
-                           (this_00,StringLiteral_Tourist,pSVar3,(MethodInfo *)0x0);
-        (pUVar2->fields).UserName = pSVar3;
-        func_?(&(pUVar2->fields).UserName,pSVar3);
+    SubscriptionRulesWrapper__ctor(this_00,subscriptionType,(MethodInfo *)0x0);
+    (this->fields)._SubscriptionRules_k__BackingField = this_00;
+    func_?(&(this->fields)._SubscriptionRules_k__BackingField,this_00);
+    if (0 < profileID) {
+code_?:
+      (this->fields)._RegionCode_k__BackingField = regionCode;
+      func_?(&(this->fields)._RegionCode_k__BackingField,regionCode);
+      if (isReady == 0) {
+        if (((observer != 0) && ((this->fields).playerState != 3)) &&
+           ((this->fields).playerState = 3, (this->fields).OnObserve != (UnityAction *)0x0)) {
+          pUVar2 = (this->fields).OnObserve;
+          (*(pUVar2->fields)._._.invoke_impl)
+                    ((pUVar2->fields)._._.method_code,(pUVar2->fields)._._.method);
+        }
       }
-    }
-    (this->fields)._RegionCode_k__BackingField = regionCode;
-    func_?(&(this->fields)._RegionCode_k__BackingField,regionCode);
-    if (isReady == 0) {
-      if (((observer != 0) && ((this->fields).playerState != 3)) &&
-         ((this->fields).playerState = 3, (this->fields).OnObserve != (UnityAction *)0x0)) {
-        pUVar5 = (this->fields).OnObserve;
-        (*(pUVar5->fields)._._.invoke_impl)
-                  ((pUVar5->fields)._._.method_code,(pUVar5->fields)._._.method);
+      else if (((this->fields).playerState != 1) &&
+              ((this->fields).playerState = 1, (this->fields).OnResume != (UnityAction *)0x0)) {
+        pUVar2 = (this->fields).OnResume;
+        (*(pUVar2->fields)._._.invoke_impl)
+                  ((pUVar2->fields)._._.method_code,(pUVar2->fields)._._.method);
+        return;
       }
-    }
-    else if (((this->fields).playerState != 1) &&
-            ((this->fields).playerState = 1, (this->fields).OnResume != (UnityAction *)0x0)) {
-      pUVar5 = (this->fields).OnResume;
-      (*(pUVar5->fields)._._.invoke_impl)
-                ((pUVar5->fields)._._.method_code,(pUVar5->fields)._._.method);
       return;
     }
-    return;
+    pUVar3 = (this->fields)._UserProfileData_k__BackingField;
+    if (pUVar3 != (UserProfileData *)0x0) {
+      pSVar4 = (pUVar3->fields).UserName;
+      if ((TypeInfo__System__Text__RegularExpressions__Regex->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Text__RegularExpressions__Regex);
+      }
+      pSVar5 = System.dll::System::Text::RegularExpressions::Regex::Regex_Split
+                         (pSVar4,StringLiteral___________A_Z__,(MethodInfo *)0x0);
+      if ((TypeInfo__MVLocalPlayerTourist->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MVLocalPlayerTourist);
+      }
+      hashtable = TypeInfo__MVLocalPlayerTourist->static_fields->Adjectives;
+      if (pSVar5 != (String__Array *)0x0) {
+        if (pSVar5->max_length == 0) goto code_?;
+        pSVar4 = pSVar5->vector[0];
+        pSVar6 = TM::TM__(StringLiteral_Tourist,(MethodInfo *)0x0);
+        if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__Extensions);
+        }
+        pSVar4 = (String *)
+                 Extensions::Extensions_GetTypedValueOrDefault
+                           ((Dictionary_2_System_Object_System_Object_ *)hashtable,(Object *)pSVar4,
+                            (Object *)pSVar6,
+                            System__String_MethodInfo__Extensions__GetTypedValueOrDefault<System::String,_System::String>_System__Collections__Generic__Dictionary<System::String,_System::String>__System__String__System__String_
+                           );
+        if (pSVar5->max_length < 2) goto code_?;
+        pSVar6 = (String *)
+                 Extensions::Extensions_GetTypedValueOrDefault
+                           ((Dictionary_2_System_Object_System_Object_ *)
+                            TypeInfo__MVLocalPlayerTourist->static_fields->Nouns,
+                            (Object *)pSVar5->vector[1],(Object *)::StringLiteral__,
+                            System__String_MethodInfo__Extensions__GetTypedValueOrDefault<System::String,_System::String>_System__Collections__Generic__Dictionary<System::String,_System::String>__System__String__System__String_
+                           );
+        pUVar3 = (this->fields)._UserProfileData_k__BackingField;
+        pSVar4 = mscorlib.dll::System::String::String_Concat_3(pSVar4,pSVar6,(MethodInfo *)0x0);
+        if (pUVar3 != (UserProfileData *)0x0) {
+          (pUVar3->fields).UserName = pSVar4;
+          func_?(&(pUVar3->fields).UserName,pSVar4);
+          goto code_?;
+        }
+      }
+    }
   }
+  func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

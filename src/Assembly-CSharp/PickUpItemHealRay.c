@@ -2163,18 +2163,22 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_OnUnequip
                (PickUpItemHealRay *this,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  if ((this->fields).hitParticles != (ParticleSystem *)0x0) {
+  puStack_1 = &stack0xfffffffc;
+  pPVar2 = (this->fields).hitParticles;
+  if (pPVar2 != (ParticleSystem *)0x0) {
     if (pcRam_? == (code *)0x0) {
       pcRam_? = (code *)func_?();
     }
-    (*pcRam_?)(in_stack_1,1);
+    puStack_1 = (undefined1 *)0x1;
+    puStack_3 = (undefined *)0x1;
+    pPStack_4 = pPVar2;
+    (*pcRam_?)();
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar5 = func_?(&pPStack_4);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -2189,21 +2193,19 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_ResetAmmo
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  AStack_1 = (ACTkByte4)(this->fields).maxAmmoTime.currentCryptoKey;
-  AStack_2 = (this->fields).maxAmmoTime.hiddenValue;
+  AVar1 = (ACTkByte4)(this->fields).maxAmmoTime.currentCryptoKey;
+  AVar2 = (this->fields).maxAmmoTime.hiddenValue;
   pBVar3 = (this->fields).maxAmmoTime.hiddenValueOld;
   fVar4 = (this->fields).maxAmmoTime.fakeValue;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
       == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
   }
-  value.hiddenValue = AStack_2;
-  value.currentCryptoKey._0_1_ = AStack_1.b1;
-  value.currentCryptoKey._1_1_ = AStack_1.b2;
-  value.currentCryptoKey._2_1_ = AStack_1.b3;
-  value.currentCryptoKey._3_1_ = AStack_1.b4;
+  value.hiddenValue = AVar2;
+  value.currentCryptoKey._0_1_ = AVar1.b1;
+  value.currentCryptoKey._1_1_ = AVar1.b2;
+  value.currentCryptoKey._2_1_ = AVar1.b3;
+  value.currentCryptoKey._3_1_ = AVar1.b4;
   value.hiddenValueOld = pBVar3;
   value.fakeValue = fVar4;
   value.inited = (this->fields).maxAmmoTime.inited;
@@ -2213,15 +2215,14 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_ResetAmmo
   iVar5 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)
                     (this,(int)fVar4,(this->klass->vtable).UpdateWithDirection.methodPtr);
   pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-           ObscuredFloat_op_Implicit
-                     ((ObscuredFloat *)&stack0xffffffe8,(float)iVar5,(MethodInfo *)0x0);
-  AVar7 = pOVar6->hiddenValue;
+           ObscuredFloat_op_Implicit((ObscuredFloat *)&puStack_7,(float)iVar5,(MethodInfo *)0x0);
+  AVar1 = pOVar6->hiddenValue;
   pBVar3 = pOVar6->hiddenValueOld;
   fVar4 = pOVar6->fakeValue;
   bVar8 = pOVar6->inited;
   uVar9 = *(undefined3 *)&pOVar6->field_0x11;
   (this->fields).currentAmmoLeft.currentCryptoKey = pOVar6->currentCryptoKey;
-  (this->fields).currentAmmoLeft.hiddenValue = AVar7;
+  (this->fields).currentAmmoLeft.hiddenValue = AVar1;
   (this->fields).currentAmmoLeft.hiddenValueOld = pBVar3;
   (this->fields).currentAmmoLeft.fakeValue = fVar4;
   (this->fields).currentAmmoLeft.inited = bVar8;
@@ -2640,7 +2641,7 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_TryHealTarget
                                  (this_01,
                                   MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
                                  ), pOVar7 != (Object *)0x0)) {
-            (**(code **)&pOVar7->klass[1]._0.this_arg.attrs)();
+            (*(code *)pOVar7->klass[1]._0.parent)();
             return;
           }
         }
@@ -3556,7 +3557,16 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay__ctor
   p_Var8 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
            UnsafeUtility_AsRef_1((Void *)(~(1 << (uVar7 & 0x1f)) & 0xfffffffb),(MethodInfo *)0x0);
   (this->fields).layers.m_Mask = (int32_t)p_Var8;
-  PickupItem::PickupItem__ctor((PickupItem *)this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  pMVar8 = (MeshRenderer__Array *)func_?();
+  (this->fields)._.meshRenderers = pMVar8;
+  func_?();
+  (this->fields)._._AbleToFire_k__BackingField = 1;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

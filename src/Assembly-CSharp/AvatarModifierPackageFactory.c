@@ -485,7 +485,7 @@ void Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFac
               func_?(&pAVar1->vector[0].value);
               pFStack_47 = AvatarModifierPackageFactory_Const(20.0,(MethodInfo *)0x0);
               uStack_48 = 0;
-              uStack_49 = 0x13;
+              uStack_49 = 0x14;
               func_?(&pFStack_47);
               if (pAVar1->max_length < 2) goto code_?;
               pAVar1->vector[1].avatarModifierType = uStack_48;
@@ -528,7 +528,7 @@ void Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFac
               pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)func_?();
               pFStack_51 = AvatarModifierPackageFactory_Const(20.0,(MethodInfo *)0x0);
               uStack_52 = 2;
-              uStack_53 = 0x1a;
+              uStack_53 = 0x1b;
               func_?();
               if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
                 if (pAVar1->max_length == 0) goto code_?;
@@ -572,7 +572,7 @@ void Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFac
                 pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)func_?();
                 pFStack_55 = AvatarModifierPackageFactory_Const(25.0,(MethodInfo *)0x0);
                 uStack_56 = 1;
-                uStack_57 = 0x15;
+                uStack_57 = 0x16;
                 func_?();
                 if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
                   if (pAVar1->max_length == 0) goto code_?;
@@ -614,9 +614,9 @@ void Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFac
                              MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifierPackage>__Add_AvatarModifierPackageType__AvatarModifierPackage_
                             );
                   pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)func_?();
-                  pFStack_59 = AvatarModifierPackageFactory_Const(-2.0,(MethodInfo *)0x0);
+                  pFStack_59 = AvatarModifierPackageFactory_Const(2.0,(MethodInfo *)0x0);
                   uStack_60 = 1;
-                  uStack_61 = 0xe;
+                  uStack_61 = 0xf;
                   func_?();
                   if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
                     if (pAVar1->max_length == 0) goto code_?;
@@ -626,7 +626,7 @@ void Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFac
                     func_?(&pAVar1->vector[0].value);
                     pFStack_62 = AvatarModifierPackageFactory_Const(2.0,(MethodInfo *)0x0);
                     uStack_63 = 1;
-                    uStack_64 = 0x14;
+                    uStack_64 = 0x15;
                     func_?(&pFStack_62);
                     if (pAVar1->max_length < 2) goto code_?;
                     pAVar1->vector[1].avatarModifierType = uStack_63;
@@ -687,7 +687,7 @@ void Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFac
                       pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)func_?();
                       pFStack_67 = AvatarModifierPackageFactory_Const(500.0,(MethodInfo *)0x0);
                       uStack_68 = 1;
-                      uStack_69 = 0x16;
+                      uStack_69 = 0x17;
                       func_?();
                       if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
                         if (pAVar1->max_length == 0) goto code_?;
@@ -776,7 +776,7 @@ void Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFac
                           pAVar1 = (AvatarModifierPackage_AvatarModifier__Array *)func_?();
                           pFStack_75 = AvatarModifierPackageFactory_Const(1.0,(MethodInfo *)0x0);
                           uStack_76 = 2;
-                          uStack_77 = 0x11;
+                          uStack_77 = 0x12;
                           func_?();
                           if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
                             if (pAVar1->max_length == 0) goto code_?;
@@ -874,7 +874,7 @@ void Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFac
                               pFStack_83 = AvatarModifierPackageFactory_Const
                                                       (25.0,(MethodInfo *)0x0);
                               uStack_84 = 1;
-                              uStack_85 = 0x12;
+                              uStack_85 = 0x13;
                               func_?();
                               if (pAVar1 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
                                 if (pAVar1->max_length == 0) goto code_?;
@@ -1074,7 +1074,7 @@ void Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFac
                                       pFStack_107 = AvatarModifierPackageFactory_Const
                                                               (20.0,(MethodInfo *)0x0);
                                       uStack_108 = 0;
-                                      uStack_109 = 0x13;
+                                      uStack_109 = 0x14;
                                       func_?(&pFStack_107);
                                       if (pAVar1->max_length < 2) goto code_?;
                                       pAVar1->vector[1].avatarModifierType = uStack_108;
@@ -1843,10 +1843,10 @@ void Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFac
                                                   AvatarModifierPackage_AvatarModifier__Array *)
                                                   func_?();
                                                   pFVar194 = AvatarModifierPackageFactory_Const
-                                                                     (-20.0,(MethodInfo *)0x0);
+                                                                     (20.0,(MethodInfo *)0x0);
                                                   ppFVar195 = &pFStack_196;
                                                   uStack_197 = 1;
-                                                  uStack_198 = 0xe;
+                                                  uStack_198 = 0xf;
                                                   pFStack_196 = pFVar194;
                                                   func_?();
                                                   if (pAVar1 != (
@@ -1864,7 +1864,7 @@ void Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFac
                                                                             (20.0,(MethodInfo *)0x0)
                                                     ;
                                                     uStack_200 = 1;
-                                                    uStack_201 = 0x14;
+                                                    uStack_201 = 0x15;
                                                     func_?(&pFStack_199);
                                                     if (pAVar1->max_length < 2)
                                                     goto code_?;
@@ -1964,7 +1964,7 @@ void Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFac
                                                   pFStack_214 = AvatarModifierPackageFactory_Const
                                                                           (7.0,(MethodInfo *)0x0);
                                                   uStack_215 = 1;
-                                                  uStack_216 = 0x1c;
+                                                  uStack_216 = 0x1d;
                                                   func_?();
                                                   if (pAVar1 != (
                                                   AvatarModifierPackage_AvatarModifier__Array *)0x0)

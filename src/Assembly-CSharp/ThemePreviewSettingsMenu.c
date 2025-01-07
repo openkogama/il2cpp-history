@@ -686,9 +686,11 @@ code_?:
   }
   func_?();
 code_?:
-  func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  uVar7 = func_?();
+  out((short)((uint6)uVar7 >> 0x20),(int)uVar7);
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
 }
 
 

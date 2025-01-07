@@ -1130,6 +1130,198 @@ Object * Assembly-CSharp.dll::Extensions::Extensions_GetObscuredType
 }
 
 
+/* Object GetTypedValueOrDefault[Object,Object](Dictionary`2[System.Object,System.Object], Object,
+   Object) */
+
+Object * Assembly-CSharp.dll::Extensions::Extensions_GetTypedValueOrDefault
+                   (Dictionary_2_System_Object_System_Object_ *hashtable,Object *key,
+                   Object *defaultValue,MethodInfo *method)
+
+{
+  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__System__Type);
+    if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      func_?(method);
+    }
+  }
+  handle.value = (Il2CppClass *)0x0;
+  if (hashtable != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)hashtable,key
+                       ,(method->field7_0x1c).rgctx_data[2].method);
+    if (bVar1 == 0) {
+      return defaultValue;
+    }
+    unaff_EBX = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)hashtable
+                           ,key,(method->field7_0x1c).rgctx_data[4].method);
+    if (((uint)((method->field7_0x1c).rgctx_data[3].klass)->vtable[0].methodPtr & 0x100) == 0) {
+      func_?();
+    }
+    iVar2 = func_?();
+    if (iVar2 == 0) {
+      handle.value = (method->field7_0x1c).rgctx_data[5].rgctxDataDummy;
+      if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Type);
+      }
+      pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
+      if (pTVar3 == (Type *)0x0) goto code_?;
+      cVar4 = (*(code *)(pTVar3->klass->vtable).get_IsEnum.method)
+                        (pTVar3,(pTVar3->klass->vtable).get_IsMarshalByRef.methodPtr);
+      if ((cVar4 == '\0') || (unaff_EBX.m_Index == 0)) {
+        return defaultValue;
+      }
+      TVar5.m_Index = 0;
+      if (*(Int32__Class **)unaff_EBX.m_Index == TypeInfo__System__Int32) {
+        TVar5 = unaff_EBX;
+      }
+      if (TVar5.m_Index == 0) {
+        return defaultValue;
+      }
+    }
+    handle.value = (method->field7_0x1c).rgctx_data[3].klass;
+    if (((uint)((Il2CppClass *)handle.value)->vtable[0].methodPtr & 0x100) == 0) {
+      handle.value = (void *)func_?(handle.value);
+    }
+    if (unaff_EBX.m_Index == 0) {
+      pOVar6 = (Object *)0x0;
+    }
+    else {
+      pOVar6 = (Object *)func_?(unaff_EBX.m_Index,handle.value);
+      if (pOVar6 == (Object *)0x0) goto code_?;
+    }
+    return pOVar6;
+  }
+code_?:
+  func_?();
+code_?:
+  func_?(unaff_EBX.m_Index,handle.value);
+  pcVar7 = (code *)swi(3);
+  pOVar6 = (Object *)(*pcVar7)();
+  return pOVar6;
+}
+
+
+/* __Il2CppFullySharedGenericType
+   GetTypedValueOrDefault[__Il2CppFullySharedGenericType,__Il2CppFullySharedGenericType](Dictionary`2[Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType],
+   __Il2CppFullySharedGenericType, __Il2CppFullySharedGenericType) */
+
+_Il2CppFullySharedGenericType *
+Assembly-CSharp.dll::Extensions::Extensions_GetTypedValueOrDefault_1
+          (Dictionary_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+           *hashtable,_Il2CppFullySharedGenericType *key,_Il2CppFullySharedGenericType *defaultValue
+          ,MethodInfo *method)
+
+{
+  iVar1 = in_stack_2;
+  if (*(int *)(in_stack_2 + 0x1c) == 0) {
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__System__Type);
+    if (*(int *)(iVar1 + 0x1c) == 0) {
+      func_?();
+    }
+  }
+  uStack_3 = *(undefined4 *)(*(int *)(*(int *)(iVar1 + 0x1c) + 4) + 0x84);
+  uStack_4 = *(undefined4 *)(*(int *)(*(int *)(iVar1 + 0x1c) + 0xc) + 0x84);
+  func_?();
+  puVar5 = &stack0xffffffdc;
+  func_?();
+  p_Var6 = (_Il2CppFullySharedGenericType *)&key;
+  if (*(int *)(*(int *)(*(int *)(iVar1 + 0x1c) + 4) + 0x14) < 0) {
+    p_Var6 = key;
+  }
+  puStack_6 = &stack0xffffffdc;
+  func_?(&stack0xffffffdc,p_Var6,uStack_3);
+  if (hashtable ==
+      (Dictionary_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+       *)0x0) {
+code_?:
+    func_?();
+    pcVar7 = (code *)swi(3);
+    p_Var6 = (_Il2CppFullySharedGenericType *)(*pcVar7)();
+    return p_Var6;
+  }
+  puStack_8 = &stack0xffffffdc;
+  if (-1 < *(int *)(*(int *)(*(int *)(iVar1 + 0x1c) + 4) + 0x14)) {
+    puStack_8 = unaff_EDI;
+  }
+  iVar9 = *(int *)(*(int *)(iVar1 + 0x1c) + 8);
+  (**(code **)(iVar9 + 8))
+            (**(undefined4 **)(*(int *)(iVar1 + 0x1c) + 8),iVar9,hashtable,&puStack_8,
+             (int)&stack0x00000014 + 3);
+  uVar10 = uStack_4;
+  if (in_stack_2._3_1_ == '\0') {
+    p_Var6 = (_Il2CppFullySharedGenericType *)&defaultValue;
+    if (*(int *)(*(int *)(*(int *)(iVar1 + 0x1c) + 0xc) + 0x14) < 0) {
+      p_Var6 = defaultValue;
+    }
+    func_?(&stack0xffffffdc,p_Var6,uStack_4);
+    goto code_?;
+  }
+  p_Var6 = (_Il2CppFullySharedGenericType *)&key;
+  if (*(int *)(*(int *)(*(int *)(iVar1 + 0x1c) + 4) + 0x14) < 0) {
+    p_Var6 = key;
+  }
+  func_?(&stack0xffffffdc,p_Var6,uStack_3);
+  puStack_11 = &stack0xffffffdc;
+  if (-1 < *(int *)(*(int *)(*(int *)(iVar1 + 0x1c) + 4) + 0x14)) {
+    puStack_11 = unaff_EDI;
+  }
+  iVar9 = *(int *)(*(int *)(iVar1 + 0x1c) + 0x10);
+  puStack_8 = &stack0xffffffdc;
+  (**(code **)(iVar9 + 8))
+            (**(undefined4 **)(*(int *)(iVar1 + 0x1c) + 0x10),iVar9,hashtable,&puStack_11,
+             &stack0xffffffdc);
+  piVar12 = (int *)func_?(*(undefined4 *)(*(int *)(iVar1 + 0x1c) + 0xc),&stack0xffffffdc);
+  iVar9 = *(int *)(*(int *)(iVar1 + 0x1c) + 0xc);
+  if ((*(byte *)(iVar9 + 0xbd) & 1) == 0) {
+    iVar9 = func_?(iVar9);
+  }
+  iVar9 = func_?(piVar12,iVar9);
+  if (iVar9 == 0) {
+    handle.value = *(void **)(*(int *)(iVar1 + 0x1c) + 0x14);
+    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Type);
+    }
+    pTVar13 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
+    if (pTVar13 == (Type *)0x0) goto code_?;
+    cVar14 = (*(code *)(pTVar13->klass->vtable).get_IsEnum.method)
+                      (pTVar13,(pTVar13->klass->vtable).get_IsMarshalByRef.methodPtr);
+    uVar10 = uStack_4;
+    puVar5 = puStack_6;
+    if ((cVar14 != '\0') && (piVar12 != (int *)0x0)) {
+      piVar15 = (int *)0x0;
+      if ((Int32__Class *)*piVar12 == TypeInfo__System__Int32) {
+        piVar15 = piVar12;
+      }
+      if (piVar15 != (int *)0x0) goto code_?;
+    }
+    p_Var6 = (_Il2CppFullySharedGenericType *)&defaultValue;
+    if (*(int *)(*(int *)(*(int *)(iVar1 + 0x1c) + 0xc) + 0x14) < 0) {
+      p_Var6 = defaultValue;
+    }
+    func_?(puStack_6,p_Var6,uStack_4);
+  }
+  else {
+code_?:
+    iVar1 = *(int *)(*(int *)(iVar1 + 0x1c) + 0xc);
+    if ((*(byte *)(iVar1 + 0xbd) & 1) == 0) {
+      iVar1 = func_?(iVar1);
+    }
+    puVar5 = (undefined1 *)func_?(piVar12,iVar1,puStack_6);
+    uVar10 = uStack_4;
+  }
+code_?:
+  p_Var6 = (_Il2CppFullySharedGenericType *)func_?(method,puVar5,uVar10);
+  return p_Var6;
+}
+
+
 /* Boolean GetValueOrDefault[Boolean](Dictionary`2[System.Object,System.Object], String, Boolean) */
 
 bool Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault

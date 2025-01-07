@@ -136,7 +136,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
                          MethodInfo__System__Collections__Generic__List<VehicleInteractable>__get_Item_int_
                         );
       if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      (**(code **)(*(int *)RVar2 + 0x108))();
+      (**(code **)(*(int *)RVar2 + 0x118))();
     }
     if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
       if ((this_00->fields)._size == 0) {
@@ -330,7 +330,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
                          MethodInfo__System__Collections__Generic__List<VehicleInteractable>__get_Item_int_
                         );
       if (RVar3 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      (**(code **)(*(int *)RVar3 + 0xf8))(RVar3,0xe,0xffffffff);
+      (**(code **)(*(int *)RVar3 + 0x108))(RVar3,0xe,0xffffffff);
     }
     pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              MVVehicleBase_LocalObjectsBase_GetLocalComponents

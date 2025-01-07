@@ -11,13 +11,13 @@ bool Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
   if (pSVar1 != (SpawnStateWrapper *)0x0) {
     if ((pSVar1->fields)._SpawnState_k__BackingField != 2) {
       if (avatarInteractable == (MVInteractableBase *)0x0) goto code_?;
-      cVar2 = (*(code *)(avatarInteractable->klass->vtable).__unknown_5.method)
+      cVar2 = (*(code *)(avatarInteractable->klass->vtable).__unknown_7.method)
                         (avatarInteractable,9,
-                         (avatarInteractable->klass->vtable).__unknown_6.methodPtr);
+                         (avatarInteractable->klass->vtable).__unknown_8.methodPtr);
       if (cVar2 == '\0') {
-        cVar2 = (*(code *)(avatarInteractable->klass->vtable).__unknown_5.method)
+        cVar2 = (*(code *)(avatarInteractable->klass->vtable).__unknown_7.method)
                           (avatarInteractable,7,
-                           (avatarInteractable->klass->vtable).__unknown_6.methodPtr);
+                           (avatarInteractable->klass->vtable).__unknown_8.methodPtr);
         if (cVar2 == '\0') {
           pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if ((pMVar3 != (MVNetworkGame *)0x0) &&

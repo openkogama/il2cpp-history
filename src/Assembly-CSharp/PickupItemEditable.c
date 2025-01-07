@@ -372,7 +372,8 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_OnHolstered
                (PickupItemEditable *this,MethodInfo *method)
 
 {
-  mscorlib.dll::System::IO::Stream::Stream_Dispose((Stream *)this,(MethodInfo *)0x0);
+  (*(code *)(this->klass->vtable).TriggerEnd.method)
+            (this,(this->klass->vtable).OnStateChanged.methodPtr);
   (*(code *)(this->klass->vtable).InterruptFire.method)(this,this->klass[1]._0.image);
   return;
 }

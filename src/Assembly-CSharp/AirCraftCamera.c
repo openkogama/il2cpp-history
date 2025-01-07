@@ -15,10 +15,10 @@ void Assembly-CSharp.dll::AirCraftCamera::AirCraftCamera_CameraCollision
     cRam_? = '\x01';
   }
   func_?(&stack0xffffff5c,0,0x48);
-  VStack_1.z = 0.0;
-  VStack_1.x = 0.0;
-  VStack_1.y = 0.0;
-  fStack_2 = 0.0;
+  fStack_1 = 0.0;
+  VStack_2.x = 0.0;
+  VStack_2.y = 0.0;
+  VStack_2.z = 0.0;
   pTVar3 = (this->fields).lookAt;
   if ((pTVar3 != (Transform *)0x0) &&
      (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -100,7 +100,7 @@ void Assembly-CSharp.dll::AirCraftCamera::AirCraftCamera_CameraCollision
           lineEnd.x = VStack_12.x + VStack_5.x;
           lineEnd.z = VStack_5.z;
           bVar23 = MathFunctions::MathFunctions_DistancePointLine_1
-                            (VVar16,lineStart,lineEnd,&fStack_2,&VStack_1,(MethodInfo *)0x0);
+                            (VVar16,lineStart,lineEnd,&fStack_1,&VStack_2,(MethodInfo *)0x0);
           if (bVar23 == 0) {
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
@@ -113,9 +113,9 @@ void Assembly-CSharp.dll::AirCraftCamera::AirCraftCamera_CameraCollision
           pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                              ((Component *)this,(MethodInfo *)0x0);
           if (pTVar3 != (Transform *)0x0) {
-            value.z = VStack_1.z;
-            value.x = VStack_1.x;
-            value.y = VStack_1.y;
+            value.z = VStack_2.z;
+            value.x = VStack_2.x;
+            value.y = VStack_2.y;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                       (pTVar3,value,(MethodInfo *)0x0);
             return;

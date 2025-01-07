@@ -143,7 +143,7 @@ void Assembly-CSharp.dll::AvatarRemote::AvatarRemote__ctor(AvatarRemote *this,Me
   (this->fields)._.currentModifierByteState =
        (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)pDVar1;
   func_?(&(this->fields)._.currentModifierByteState,pDVar1);
-  pBVar2 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x1b);
+  pBVar2 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x1c);
   (this->fields)._.modifierEffectCount = pBVar2;
   func_?(&(this->fields)._.modifierEffectCount,pBVar2);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor

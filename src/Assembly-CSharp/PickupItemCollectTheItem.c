@@ -378,8 +378,6 @@ void Assembly-CSharp.dll::PickupItemCollectTheItem::
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   pOVar1 = (this->fields).arrow;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
@@ -472,8 +470,6 @@ void Assembly-CSharp.dll::PickupItemCollectTheItem::
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   pOVar1 = (this->fields).arrow;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
@@ -671,69 +667,67 @@ void Assembly-CSharp.dll::PickupItemCollectTheItem::PickupItemCollectTheItem_OnU
     func_?(&MethodInfo__PickupItemCollectTheItem__OnWorldObjectSpawnerDestroyed__);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   pMVar1 = (this->fields)._.owner;
   if (pMVar1 != (MVPickupOwner *)0x0) {
     if ((pMVar1->fields)._IsLocal_k__BackingField == 0) {
       return;
     }
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_01 != (MVWorldObjectClientManager *)0x0) {
-      this_02 = (CollectTheItemCollectable *)
+    this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_00 != (MVWorldObjectClientManager *)0x0) {
+      this_01 = (CollectTheItemCollectable *)
                 MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (this_01,(this->fields).spawnerId,(MethodInfo *)0x0);
-      if (this_02 == (CollectTheItemCollectable *)0x0) {
+                          (this_00,(this->fields).spawnerId,(MethodInfo *)0x0);
+      if (this_01 == (CollectTheItemCollectable *)0x0) {
         return;
       }
-      if ((this_02->klass->_1).naturalAligment <
+      if ((this_01->klass->_1).naturalAligment <
           (TypeInfo__CollectTheItemCollectable->_1).naturalAligment) {
         return;
       }
       if ((CollectTheItemCollectable__Class *)
-          (this_02->klass->_1).typeHierarchy
+          (this_01->klass->_1).typeHierarchy
           [(TypeInfo__CollectTheItemCollectable->_1).naturalAligment - 1] !=
           TypeInfo__CollectTheItemCollectable) {
         return;
       }
-      pAVar2 = (this_02->fields).OnCollectTheItemDestroyed;
-      this_03 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+      VStack_2.x = (float)TypeInfo__System__Action;
+      pAVar3 = (this_01->fields).OnCollectTheItemDestroyed;
+      this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
-                (this_03,(Object *)this,
+                (this_02,(Object *)this,
                  MethodInfo__PickupItemCollectTheItem__OnWorldObjectSpawnerDestroyed__,
                  (MethodInfo *)0x0);
-      pAVar2 = (Action *)
+      pAVar3 = (Action *)
                mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pAVar2,(Delegate *)this_03,(MethodInfo *)0x0);
-      if (pAVar2 == (Action *)0x0) {
-        (this_02->fields).OnCollectTheItemDestroyed = (Action *)0x0;
+                         ((Delegate *)pAVar3,(Delegate *)this_02,(MethodInfo *)0x0);
+      if (pAVar3 == (Action *)0x0) {
+        (this_01->fields).OnCollectTheItemDestroyed = (Action *)0x0;
       }
       else {
-        pAVar3 = (Action *)0x0;
-        if (pAVar2->klass == TypeInfo__System__Action) {
-          pAVar3 = pAVar2;
+        pAVar4 = (Action *)0x0;
+        if (pAVar3->klass == TypeInfo__System__Action) {
+          pAVar4 = pAVar3;
         }
-        if (pAVar3 == (Action *)0x0) goto code_?;
-        (this_02->fields).OnCollectTheItemDestroyed = pAVar3;
-        pAVar3 = (Action *)0x0;
-        if (pAVar2->klass == TypeInfo__System__Action) {
-          pAVar3 = pAVar2;
+        if (pAVar4 == (Action *)0x0) goto code_?;
+        (this_01->fields).OnCollectTheItemDestroyed = pAVar4;
+        pAVar4 = (Action *)0x0;
+        if (pAVar3->klass == TypeInfo__System__Action) {
+          pAVar4 = pAVar3;
         }
-        if (pAVar3 == (Action *)0x0) goto code_?;
+        if (pAVar4 == (Action *)0x0) goto code_?;
       }
       func_?();
-      if ((this->fields).shouldSpawnInstanceOnUnequip == 0) {
+      if (UNK_? == '\0') {
         return;
       }
-      this_00 = (this->fields).pickup;
-      if ((this_00 != (GameObject *)0x0) &&
-         (this_04 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (this_00,(MethodInfo *)0x0), this_04 != (Transform *)0x0)) {
-        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                           ((Vector3 *)&stack0xfffffff0,this_04,(MethodInfo *)0x0);
+      if ((_UNK_? != (GameObject *)0x0) &&
+         (this_03 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (_UNK_?,(MethodInfo *)0x0), this_03 != (Transform *)0x0)) {
+        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                           (&VStack_2,this_03,(MethodInfo *)0x0);
         CollectTheItemCollectable::CollectTheItemCollectable_CreateCollectableInstance
-                  (this_02,*pVVar4,(Quaternion)ZEXT816(0),(MethodInfo *)0x0);
+                  (this_01,*pVVar5,(Quaternion)ZEXT816(0),(MethodInfo *)0x0);
         return;
       }
     }
@@ -741,8 +735,8 @@ void Assembly-CSharp.dll::PickupItemCollectTheItem::PickupItemCollectTheItem_OnU
   func_?();
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -1109,15 +1103,16 @@ void Assembly-CSharp.dll::PickupItemCollectTheItem::PickupItemCollectTheItem__ct
                (PickupItemCollectTheItem *this,MethodInfo *method)
 
 {
+  bVar1 = cRam_? == '\0';
   (this->fields).pickupScale = 0.15;
   (this->fields).shouldSpawnInstanceOnUnequip = 1;
-  if (cRam_? == '\0') {
+  if (bVar1) {
     func_?(&TypeInfo__UnityEngine__MeshRenderer);
     cRam_? = '\x01';
   }
-  pMVar1 = (MeshRenderer__Array *)func_?(TypeInfo__UnityEngine__MeshRenderer,0);
-  (this->fields)._.meshRenderers = pMVar1;
-  func_?(&(this->fields)._.meshRenderers,pMVar1);
+  pMVar2 = (MeshRenderer__Array *)func_?(TypeInfo__UnityEngine__MeshRenderer,0);
+  (this->fields)._.meshRenderers = pMVar2;
+  func_?(&(this->fields)._.meshRenderers,pMVar2);
   (this->fields)._._AbleToFire_k__BackingField = 1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

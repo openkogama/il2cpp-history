@@ -15,6 +15,7 @@ public class AvatarInteractable : MVInteractable, IMoveHitHandler
 {
 	// Fields
 	public Action<float, MVPlayer, PlayerKilledByType> OnDamageTaken;
+	public Action<float, MVPlayer> OnHealing;
 	public Action<Vector3> OnNewSafePosition;
 	public Action OnShieldReplenished;
 	private DamageSource lastDamageSource;
@@ -59,6 +60,8 @@ public class AvatarInteractable : MVInteractable, IMoveHitHandler
 	public void InitializeSkills(WorldObjectSkillDataManager skillDataManager);
 	public override void TakeDamage(float amount, MVPlayer damageDealer, PlayerKilledByType damageType);
 	public override void TakeDamageOverTime(AvatarModifierPackageType type, MVPlayer damageDealer, PlayerKilledByType damageType);
+	public override void Heal(float amount, MVPlayer healer);
+	public override void HealOverTime(AvatarModifierPackageType type, MVPlayer healer);
 	private string ExtractWeaponName(MVPlayer damageDealer, PlayerKilledByType damageType);
 	private void DoKilledNotification(MVPlayer damageDealer, PlayerKilledByType defaultDamageType);
 	private float GetBoostedHealth(float defaultHealth);

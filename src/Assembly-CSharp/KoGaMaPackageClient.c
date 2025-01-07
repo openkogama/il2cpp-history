@@ -498,7 +498,7 @@ void Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_HandleDeseria
                     (returnData,(this->fields).worldObjects,(this->fields).prototypes,
                      (MethodInfo *)0x0);
   if ((value != (MVWorldObjectClient *)0x0) &&
-     (this_00 = (this->fields).worldObjects,
+     (this_00 = (this->fields).worldObjects, this = (KoGaMaPackageClient *)returnData,
      this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0)) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__Add
@@ -508,10 +508,23 @@ void Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_HandleDeseria
               );
     return;
   }
-  uVar1 = func_?(&stack0xfffffffc);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar1 = func_?();
+  pbVar2 = (byte *)((ulonglong)uVar1 >> 0x20);
+  puVar3 = (uint *)(unaff_EBX + 0x10);
+  uVar4 = (uint)(((Dictionary_2_System_Object_System_Object_ *)this)->klass <
+                (Dictionary_2_System_Object_System_Object___Class *)*unaff_EDI);
+  puVar5 = (undefined1 *)*puVar3;
+  uVar6 = *puVar3;
+  *puVar3 = (uVar6 - (int)&dataType) - uVar4;
+  puVar7 = (ushort *)
+           CONCAT22((short)((ulonglong)uVar1 >> 0x10),
+                    CONCAT11(((char)((ulonglong)uVar1 >> 8) - *(char *)(unaff_EBX + 0x10)) -
+                             (puVar5 < &dataType || uVar6 - (int)&dataType < uVar4),(char)uVar1));
+  *pbVar2 = *pbVar2 & (byte)unaff_EBX;
+  sVar8 = ((ushort)((ulonglong)uVar1 >> 0x20) & 3) - (*puVar7 & 3);
+  *puVar7 = *puVar7 + (ushort)(0 < sVar8) * sVar8;
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -670,8 +683,7 @@ code_?:
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
+/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* MVWorldObjectClient WorldObjectFactory(Dictionary`2[System.Object,System.Object],
    Dictionary`2[System.Int32,MVWorldObjectClient],
    Dictionary`2[System.Int32,RuntimePrototypeCubeModel]) */
@@ -685,13 +697,13 @@ Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
 {
   if (cRam_? == '\0') {
     func_?();
-    func_?();
-    func_?();
-    func_?(0xd8);
-    func_?(0x98);
+    func_?(&TypeInfo__MV__WorldObject__BlueprintType);
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&TypeInfo__CollectTheItemCollectableInstance);
+    func_?(&TypeInfo__CollectTheItemCollectable);
     func_?(&TypeInfo__CollectTheItemDropOff);
-    func_?(0x58);
-    func_?(0xd0);
+    func_?(&TypeInfo__CollectTheItem);
+    func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                    );
@@ -707,13 +719,13 @@ Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
     func_?(&TypeInfo__MVAvatarLocal);
     func_?(&TypeInfo__MVAvatarRemote);
     func_?();
-    func_?();
-    func_?();
-    func_?(0xc);
-    func_?(0x44);
+    func_?(&TypeInfo__MVBattery);
+    func_?(&TypeInfo__MVBody);
+    func_?(&TypeInfo__MVBuildModeAvatarLocal);
+    func_?(&TypeInfo__MVBuildModeAvatarRemote);
     func_?(&TypeInfo__MVCameraSettings);
-    func_?(0xf4);
-    func_?(0xa0);
+    func_?(&TypeInfo__MVCheckpoint);
+    func_?(&TypeInfo__MVCollectible);
     func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__MVCostumeBaseBlueprint);
     func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__MVCostumeBase);
     func_?(&TypeInfo__MVCountingCube);
@@ -723,13 +735,13 @@ Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
     func_?(&TypeInfo__MVCubeModelPrototypeTerrain);
     func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBase);
     func_?();
-    func_?();
-    func_?();
-    func_?(100);
-    func_?(0xd8);
+    func_?(&TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint);
+    func_?(&TypeInfo__WorldObjectTypes__MVDoor__MVDoor);
+    func_?(&TypeInfo__MVExplosives);
+    func_?(&TypeInfo__MVFire);
     func_?(&TypeInfo__MVFlag);
-    func_?(0x84);
-    func_?(0x4c);
+    func_?(&TypeInfo__MVGameCoinChest);
+    func_?(&TypeInfo__MVGameCoin);
     func_?(&TypeInfo__MVGameOptionDataObject);
     func_?(&TypeInfo__MVGamePassProgressionDataObject);
     func_?(&TypeInfo__MVGamePointChest);
@@ -739,15 +751,15 @@ Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
     func_?(&TypeInfo__MVGoal);
     func_?(&TypeInfo__MVGravityCube);
     func_?();
-    func_?();
-    func_?();
-    func_?(0xa4);
-    func_?(0x18);
+    func_?(&TypeInfo__MVHamsterWheel);
+    func_?(&TypeInfo__MVHoverCraft);
+    func_?(&TypeInfo__MVJetPack);
+    func_?(&TypeInfo__MVKillLimit);
     func_?(&
                     TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MVMeleeWeaponBaseBlueprint
                    );
-    func_?(0xe8);
-    func_?(0x5c);
+    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MVMeleeWeaponBase);
+    func_?(&TypeInfo__MVMovable);
     func_?(&TypeInfo__MVMovingPlatformGroup);
     func_?(&TypeInfo__MVMovingPlatformNode);
     func_?(&TypeInfo__MVMovingPlatform);
@@ -757,13 +769,13 @@ Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
     func_?(&TypeInfo__MVOculusKillLimit);
     func_?(&TypeInfo__MVPickupItemBase);
     func_?();
-    func_?();
-    func_?();
-    func_?(0xec);
-    func_?(0x28);
+    func_?(&TypeInfo__MVPointLight);
+    func_?(&TypeInfo__MVPressurePlate);
+    func_?(&TypeInfo__MVPreviewAvatar);
+    func_?(&TypeInfo__MVPulseBox);
     func_?(&TypeInfo__MVRandomBox);
-    func_?(0x10);
-    func_?(0x48);
+    func_?(&TypeInfo__MVRotator);
+    func_?(&TypeInfo__MVRoundCube);
     func_?(&TypeInfo__MVSentryGunBlueprint);
     func_?(&TypeInfo__MVSentryGun);
     func_?(&TypeInfo__MVSkybox);
@@ -773,13 +785,13 @@ Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
     func_?(&TypeInfo__MVSpawnPointGreen);
     func_?(&TypeInfo__MVSpawnPointRed);
     func_?();
-    func_?();
-    func_?();
-    func_?(0xc);
-    func_?(0x80);
+    func_?(&TypeInfo__MVTeleportGroup);
+    func_?(&TypeInfo__MVTeleporter);
+    func_?(&TypeInfo__MVTextMsg);
+    func_?(&TypeInfo__MVTimeTrigger);
     func_?(&TypeInfo__MVToggleBox);
-    func_?(0xf4);
-    func_?(0xa0);
+    func_?(&TypeInfo__MVTriggerBox);
+    func_?(&TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy);
     func_?(&TypeInfo__MVWaterPlanePreset);
     func_?(&TypeInfo__MVWaterPlane);
     func_?(&TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy);
@@ -789,49 +801,44 @@ Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
     func_?(&TypeInfo__ThemeWorldObject);
     func_?(&TypeInfo__TimeAttackFlag);
     func_?();
-    func_?();
-    func_?();
-    func_?(0xec);
-    func_?(0xdc);
+    func_?(&TypeInfo__UseLever);
+    func_?(&TypeInfo__WindTurbine);
+    func_?(&TypeInfo__MV__WorldObject__WorldObjectDataParameters);
+    func_?(&TypeInfo__MV__WorldObject__WorldObjectType);
     func_?(&StringLiteral_WOCM_trying_to_create_unknown_ty);
-    func_?();
-    func_?(0xdc);
+    func_?(&StringLiteral_WOCM_trying_to_create_unknown_bl);
+    func_?(&StringLiteral_Attempt_to_create_abstract_Spawn);
     func_?(&StringLiteral_BlueprintData);
     cRam_? = '\x01';
   }
   pOVar1 = (Object *)
-           func_?((char)TypeInfo__MV__WorldObject__WorldObjectDataParameters,
-                           (char)&stack0xfffffffb);
-  cVar2 = '\0';
-  if (worldObjectData == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-           UIElements::TextureId]::
-           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                     ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                      worldObjectData,pOVar1,
-                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                     );
-  cVar2 = '\0';
-  if (TVar3.m_Index == 0) goto code_?;
-  pIVar4 = (TypeInfo__System__Int32->_0).element_class;
-  cVar2 = *(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) < pIVar4;
-  if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) != pIVar4) {
+            func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&stack0xfffffffb);
+  if ((worldObjectData == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
+     (TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+               UIElements::TextureId]::
+               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                          worldObjectData,pOVar1,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         ), TVar2.m_Index == 0)) goto code_?;
+  if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+      (TypeInfo__System__Int32->_0).element_class) {
 code_?:
-    func_?();
+    func_?(TVar2.m_Index);
     goto code_?;
   }
-  puVar5 = (undefined4 *)func_?();
-  switch(*puVar5) {
+  puVar3 = (undefined4 *)func_?();
+  switch(*puVar3) {
   case 0:
-    pOVar1 = (Object *)func_?();
-    bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    pOVar1 = (Object *)func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters);
+    bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                        worldObjectData,pOVar1,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar6 == 0) {
+    if (bVar4 == 0) {
       unaff_ESI.m_Index =
            (int32_t)MVWorldObject.dll::MV::WorldObject::HashtableFunctions::
                     HashtableFunctions_PrettyString(worldObjectData,(MethodInfo *)0x0);
@@ -852,44 +859,37 @@ code_?:
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(pOVar1,(MethodInfo *)0x0);
     }
     pOVar1 = (Object *)func_?();
-    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
              UIElements::TextureId]::
              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                         worldObjectData,pOVar1,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    cVar2 = '\0';
-    if (TVar3.m_Index != 0) {
-      pIVar4 = (TypeInfo__System__Int32->_0).element_class;
-      cVar2 = *(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) < pIVar4;
-      if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) != pIVar4) goto code_?;
-      piVar7 = (int *)func_?();
-      unaff_ESI.m_Index = *piVar7;
-      pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      cVar2 = '\0';
-      if (pMVar8 != (MVNetworkGame *)0x0) {
-        pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar8,(MethodInfo *)0x0);
-        cVar2 = '\0';
-        if (pMVar9 != (MVLocalPlayer *)0x0) {
-          if ((String *)unaff_ESI.m_Index == (String *)(pMVar9->fields)._._ActorNr_k__BackingField)
-          {
-            this_01 = (MVAvatarLocal *)func_?();
-            MVAvatarLocal::MVAvatarLocal__ctor
-                      (this_01,worldObjectData,worldObjects,(MethodInfo *)0x0);
-            return (MVWorldObjectClient *)this_01;
-          }
-          if ((String *)unaff_ESI.m_Index != (String *)0xffffffff) {
-            this = (MVAvatarRemote *)func_?();
-            MVAvatarRemote::MVAvatarRemote__ctor
-                      (this,worldObjectData,worldObjects,(MethodInfo *)0x0);
-            return (MVWorldObjectClient *)this;
-          }
-          this_00 = (MVPreviewAvatar *)func_?();
-          MVPreviewAvatar::MVPreviewAvatar__ctor
-                    (this_00,worldObjectData,worldObjects,(MethodInfo *)0x0);
-          return (MVWorldObjectClient *)this_00;
+    if (TVar2.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+          (TypeInfo__System__Int32->_0).element_class) goto code_?;
+      piVar5 = (int *)func_?();
+      unaff_ESI.m_Index = *piVar5;
+      pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar6 != (MVNetworkGame *)0x0) &&
+         (pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar6,(MethodInfo *)0x0),
+         pMVar7 != (MVLocalPlayer *)0x0)) {
+        if ((String *)unaff_ESI.m_Index == (String *)(pMVar7->fields)._._ActorNr_k__BackingField) {
+          this_01 = (MVAvatarLocal *)func_?();
+          MVAvatarLocal::MVAvatarLocal__ctor(this_01,worldObjectData,worldObjects,(MethodInfo *)0x0)
+          ;
+          return (MVWorldObjectClient *)this_01;
         }
+        if ((String *)unaff_ESI.m_Index != (String *)0xffffffff) {
+          this = (MVAvatarRemote *)func_?();
+          MVAvatarRemote::MVAvatarRemote__ctor(this,worldObjectData,worldObjects,(MethodInfo *)0x0);
+          return (MVWorldObjectClient *)this;
+        }
+        this_00 = (MVPreviewAvatar *)func_?();
+        MVPreviewAvatar::MVPreviewAvatar__ctor
+                  (this_00,worldObjectData,worldObjects,(MethodInfo *)0x0);
+        return (MVWorldObjectClient *)this_00;
       }
     }
     break;
@@ -923,14 +923,14 @@ code_?:
   case 0x24:
   case 0x3a:
 code_?:
-    pSVar10 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffec,(MethodInfo *)0x0);
-    pSVar10 = mscorlib.dll::System::String::String_Concat_3
-                        (StringLiteral_WOCM_trying_to_create_unknown_ty,pSVar10,(MethodInfo *)0x0);
+    pSVar8 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffec,(MethodInfo *)0x0);
+    pSVar8 = mscorlib.dll::System::String::String_Concat_3
+                        (StringLiteral_WOCM_trying_to_create_unknown_ty,pSVar8,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-              ((Object *)pSVar10,(MethodInfo *)0x0);
+              ((Object *)pSVar8,(MethodInfo *)0x0);
     return (MVWorldObjectClient *)0x0;
   case 7:
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -938,10 +938,10 @@ code_?:
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Attempt_to_create_abstract_Spawn,(MethodInfo *)0x0);
-    pMVar11 = (MVSpawnPointBlue *)func_?();
-    MVSpawnPointBlue::MVSpawnPointBlue__ctor(pMVar11,worldObjectData,worldObjects,(MethodInfo *)0x0)
+    pMVar9 = (MVSpawnPointBlue *)func_?();
+    MVSpawnPointBlue::MVSpawnPointBlue__ctor(pMVar9,worldObjectData,worldObjects,(MethodInfo *)0x0)
     ;
-    return (MVWorldObjectClient *)pMVar11;
+    return (MVWorldObjectClient *)pMVar9;
   case 8:
     this_05 = (MVCubeModelPrototypeTerrain *)func_?();
     MVCubeModelPrototypeTerrain::MVCubeModelPrototypeTerrain__ctor
@@ -1036,10 +1036,10 @@ code_?:
               (this_26,worldObjectData,worldObjects,(MethodInfo *)0x0);
     return (MVWorldObjectClient *)this_26;
   case 0x2a:
-    pMVar11 = (MVSpawnPointBlue *)func_?();
-    MVSpawnPointBlue::MVSpawnPointBlue__ctor(pMVar11,worldObjectData,worldObjects,(MethodInfo *)0x0)
+    pMVar9 = (MVSpawnPointBlue *)func_?();
+    MVSpawnPointBlue::MVSpawnPointBlue__ctor(pMVar9,worldObjectData,worldObjects,(MethodInfo *)0x0)
     ;
-    return (MVWorldObjectClient *)pMVar11;
+    return (MVWorldObjectClient *)pMVar9;
   case 0x2b:
     this_27 = (MVObjectEnabler *)func_?();
     MVObjectEnabler::MVObjectEnabler__ctor(this_27,worldObjectData,worldObjects,(MethodInfo *)0x0);
@@ -1049,7 +1049,7 @@ code_?:
     MVWaterPlane::MVWaterPlane__ctor(this_28,worldObjectData,worldObjects,(MethodInfo *)0x0);
     return (MVWorldObjectClient *)this_28;
   case 0x2d:
-    pOVar1 = (Object *)func_?();
+    pOVar1 = (Object *)func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters);
     unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                 ::UIElements::TextureId]::
                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
@@ -1057,21 +1057,14 @@ code_?:
                            worldObjectData,pOVar1,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
-    cVar2 = '\0';
     if (unaff_ESI.m_Index == 0) break;
-    cVar2 = *(byte *)(*(int *)unaff_ESI.m_Index + 0xb8) <
-             (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
-             ).naturalAligment;
-    if ((!(bool)cVar2) &&
-       (pDVar12 = *(Dictionary_2_System_Object_System_Object___Class **)
-                  (*(int *)(*(int *)unaff_ESI.m_Index + 100) + -4 +
-                  (uint)(
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        ->_1).naturalAligment * 4),
-       cVar2 = pDVar12 < 
-                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>,
-       pDVar12 == TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)
-       ) {
+    if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         naturalAligment <= *(byte *)(*(int *)unaff_ESI.m_Index + 0xb8)) &&
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         (*(int *)(*(int *)unaff_ESI.m_Index + 100) + -4 +
+         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).naturalAligment * 4) ==
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
       unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                   Object,UnityEngine::UIElements::TextureId]::
                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
@@ -1080,35 +1073,28 @@ code_?:
                             );
       unaff_EBX = mscorlib.dll::System::Enum::Enum_ToString
                             ((Enum *)&stack0xffffffec,(MethodInfo *)0x0);
-      cVar2 = '\0';
       if (unaff_ESI.m_Index != 0) {
-        cVar2 = '\x01';
         if ((*(byte *)(*(int *)unaff_ESI.m_Index + 0xb8) <
              (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment) ||
-           (pDVar12 = *(Dictionary_2_System_Object_System_Object___Class **)
-                      (*(int *)(*(int *)unaff_ESI.m_Index + 100) + -4 +
-                      (uint)(
-                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                            ->_1).naturalAligment * 4),
-           cVar2 = pDVar12 < 
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-           , pDVar12 != 
-             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+           (*(Dictionary_2_System_Object_System_Object___Class **)
+             (*(int *)(*(int *)unaff_ESI.m_Index + 100) + -4 +
+             (uint)(
+                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   ->_1).naturalAligment * 4) !=
+            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
         goto code_?;
-        TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                  ::UIElements::TextureId]::
                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                            (unaff_ESI.m_Index,(Object *)unaff_EBX,
                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                            );
-        cVar2 = '\0';
-        if (TVar3.m_Index != 0) {
-          pIVar4 = (TypeInfo__MV__WorldObject__BlueprintType->_0).element_class;
-          cVar2 = *(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) < pIVar4;
-          if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) == pIVar4) {
-            puVar13 = (undefined1 *)func_?();
-            switch(*puVar13) {
+        if (TVar2.m_Index != 0) {
+          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+              (TypeInfo__MV__WorldObject__BlueprintType->_0).element_class) {
+            puVar10 = (undefined1 *)func_?();
+            switch(*puVar10) {
             case 7:
               this_29 = (MVMovable *)func_?();
               MVMovable::MVMovable__ctor(this_29,worldObjectData,worldObjects,(MethodInfo *)0x0);
@@ -1144,16 +1130,16 @@ code_?:
             case 0xe:
               goto code_?;
             default:
-              pSVar10 = mscorlib.dll::System::Enum::Enum_ToString
+              pSVar8 = mscorlib.dll::System::Enum::Enum_ToString
                                   ((Enum *)&stack0xffffffec,(MethodInfo *)0x0);
-              pSVar10 = mscorlib.dll::System::String::String_Concat_3
-                                  (StringLiteral_WOCM_trying_to_create_unknown_bl,pSVar10,
+              pSVar8 = mscorlib.dll::System::String::String_Concat_3
+                                  (StringLiteral_WOCM_trying_to_create_unknown_bl,pSVar8,
                                    (MethodInfo *)0x0);
               if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
               UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                        ((Object *)pSVar10,(MethodInfo *)0x0);
+                        ((Object *)pSVar8,(MethodInfo *)0x0);
               return (MVWorldObjectClient *)0x0;
             }
           }
@@ -1246,7 +1232,7 @@ code_?:
     MVCountingCube::MVCountingCube__ctor(this_54,worldObjectData,worldObjects,(MethodInfo *)0x0);
     return (MVWorldObjectClient *)this_54;
   default:
-    switch(*puVar5) {
+    switch(*puVar3) {
     case 0x76:
       this_55 = (MVVehicleEnergy *)func_?();
       WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::MVVehicleEnergy__ctor
@@ -1265,284 +1251,270 @@ code_?:
       MVGamePoint::MVGamePoint__ctor(this_57,worldObjectData,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_57;
     case 0x83:
-      this_58 = (MVWorldObjectClient *)func_?();
+      pMVar11 = (MVWorldObjectClient *)func_?();
       MVGamePassProgressionDataObject::MVGamePassProgressionDataObject__ctor
-                ((MVGamePassProgressionDataObject *)this_58,worldObjectData,worldObjects,
+                ((MVGamePassProgressionDataObject *)pMVar11,worldObjectData,worldObjects,
                  (MethodInfo *)0x0);
-      return this_58;
+      return pMVar11;
     case 0x85:
       goto code_?;
     case 0x86:
-      this_61 = (MVAvatarSpawnRoleCreator *)func_?();
+      this_60 = (MVAvatarSpawnRoleCreator *)func_?();
       MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator__ctor
+                (this_60,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_60;
+    case 0x87:
+      this_61 = (MVGameOptionDataObject *)func_?();
+      MVGameOptionDataObject::MVGameOptionDataObject__ctor
                 (this_61,worldObjectData,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_61;
-    case 0x87:
-      this_62 = (MVGameOptionDataObject *)func_?();
-      MVGameOptionDataObject::MVGameOptionDataObject__ctor
+    case 0x88:
+      this_62 = (MVObjectTransparency *)func_?();
+      WorldObjectTypes::MVObjectTransparency::MVObjectTransparency::MVObjectTransparency__ctor
                 (this_62,worldObjectData,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_62;
-    case 0x88:
-      this_63 = (MVObjectTransparency *)func_?();
-      WorldObjectTypes::MVObjectTransparency::MVObjectTransparency::MVObjectTransparency__ctor
+    case 0x91:
+      this_63 = (MVCameraSettings *)func_?();
+      MVCameraSettings::MVCameraSettings__ctor
                 (this_63,worldObjectData,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_63;
-    case 0x91:
-      this_64 = (MVCameraSettings *)func_?();
-      MVCameraSettings::MVCameraSettings__ctor
-                (this_64,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_64;
     case 0x92:
-      this_65 = (MVGravityCube *)func_?();
-      MVGravityCube::MVGravityCube__ctor(this_65,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_65;
+      this_64 = (MVGravityCube *)func_?();
+      MVGravityCube::MVGravityCube__ctor(this_64,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_64;
     case 0x94:
-      this_66 = (MVGameCoin *)func_?();
-      MVGameCoin::MVGameCoin__ctor(this_66,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_66;
+      this_65 = (MVGameCoin *)func_?();
+      MVGameCoin::MVGameCoin__ctor(this_65,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_65;
     case 0x95:
-      this_67 = (MVGameCoinChest *)func_?();
-      MVGameCoinChest::MVGameCoinChest__ctor(this_67,worldObjectData,worldObjects,(MethodInfo *)0x0)
+      this_66 = (MVGameCoinChest *)func_?();
+      MVGameCoinChest::MVGameCoinChest__ctor(this_66,worldObjectData,worldObjects,(MethodInfo *)0x0)
       ;
-      return (MVWorldObjectClient *)this_67;
+      return (MVWorldObjectClient *)this_66;
     case 0x96:
-      this_68 = (ThemeWorldObject *)func_?();
+      this_67 = (ThemeWorldObject *)func_?();
       ThemeWorldObject::ThemeWorldObject__ctor
+                (this_67,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_67;
+    case 0x97:
+      this_68 = (MVDoor *)func_?();
+      WorldObjectTypes::MVDoor::MVDoor::MVDoor__ctor
                 (this_68,worldObjectData,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_68;
-    case 0x97:
-      this_69 = (MVDoor *)func_?();
-      WorldObjectTypes::MVDoor::MVDoor::MVDoor__ctor
+    case 0x98:
+      this_69 = (MVDoorBlueprint *)func_?();
+      WorldObjectTypes::MVDoor::MVDoorBlueprint::MVDoorBlueprint__ctor
                 (this_69,worldObjectData,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_69;
-    case 0x98:
-      this_70 = (MVDoorBlueprint *)func_?();
-      WorldObjectTypes::MVDoor::MVDoorBlueprint::MVDoorBlueprint__ctor
+    case 0x99:
+      this_70 = (MVMeleeWeaponBase *)func_?();
+      Assets::Scripts::WorldObjectTypes::MeleeWeapon::MVMeleeWeaponBase::MVMeleeWeaponBase__ctor
                 (this_70,worldObjectData,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_70;
-    case 0x99:
-      this_71 = (MVMeleeWeaponBase *)func_?();
-      Assets::Scripts::WorldObjectTypes::MeleeWeapon::MVMeleeWeaponBase::MVMeleeWeaponBase__ctor
+    case 0x9a:
+      pMVar12 = (MVCostumeBaseBlueprint *)func_?();
+      Assets::Scripts::WorldObjectTypes::Costume::MVCostumeBaseBlueprint::
+      MVCostumeBaseBlueprint__ctor(pMVar12,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)pMVar12;
+    case 0x9b:
+      this_71 = (MVCostumeBase *)func_?();
+      Assets::Scripts::WorldObjectTypes::Costume::MVCostumeBase::MVCostumeBase__ctor
                 (this_71,worldObjectData,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_71;
-    case 0x9a:
-      pMVar14 = (MVCostumeBaseBlueprint *)func_?();
+    case 0x9c:
+      pMVar12 = (MVCostumeBaseBlueprint *)func_?();
       Assets::Scripts::WorldObjectTypes::Costume::MVCostumeBaseBlueprint::
-      MVCostumeBaseBlueprint__ctor(pMVar14,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)pMVar14;
-    case 0x9b:
-      this_72 = (MVCostumeBase *)func_?();
-      Assets::Scripts::WorldObjectTypes::Costume::MVCostumeBase::MVCostumeBase__ctor
+      MVCostumeBaseBlueprint__ctor(pMVar12,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)pMVar12;
+    case 0x9d:
+      this_72 = (MVCustomGunBase *)func_?();
+      Assets::Scripts::WorldObjectTypes::CustomGun::MVCustomGunBase::MVCustomGunBase__ctor
                 (this_72,worldObjectData,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_72;
-    case 0x9c:
-      pMVar14 = (MVCostumeBaseBlueprint *)func_?();
-      Assets::Scripts::WorldObjectTypes::Costume::MVCostumeBaseBlueprint::
-      MVCostumeBaseBlueprint__ctor(pMVar14,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)pMVar14;
-    case 0x9d:
-      this_73 = (MVCustomGunBase *)func_?();
-      Assets::Scripts::WorldObjectTypes::CustomGun::MVCustomGunBase::MVCustomGunBase__ctor
+    case 0x9e:
+      this_73 = (MVCustomGunBlueprint *)func_?();
+      Assets::Scripts::WorldObjectTypes::CustomGun::MVCustomGunBlueprint::MVCustomGunBlueprint__ctor
                 (this_73,worldObjectData,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_73;
-    case 0x9e:
-      this_74 = (MVCustomGunBlueprint *)func_?();
-      Assets::Scripts::WorldObjectTypes::CustomGun::MVCustomGunBlueprint::MVCustomGunBlueprint__ctor
-                (this_74,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_74;
     case 0xa1:
-      this_75 = (TeamEditor *)func_?();
-      TeamEditor::TeamEditor__ctor(this_75,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_75;
+      this_74 = (TeamEditor *)func_?();
+      TeamEditor::TeamEditor__ctor(this_74,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_74;
     case 0xa2:
-      this_76 = (TriggerCube *)func_?();
-      TriggerCube::TriggerCube__ctor(this_76,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_76;
+      this_75 = (TriggerCube *)func_?();
+      TriggerCube::TriggerCube__ctor(this_75,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_75;
     case 0xa4:
-      this_77 = (CollectTheItemCollectableInstance *)func_?();
+      this_76 = (CollectTheItemCollectableInstance *)func_?();
       CollectTheItemCollectableInstance::CollectTheItemCollectableInstance__ctor
-                (this_77,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_77;
+                (this_76,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_76;
     case 0xa5:
-      this_78 = (ShootableButton *)func_?();
-      ShootableButton::ShootableButton__ctor(this_78,worldObjectData,worldObjects,(MethodInfo *)0x0)
+      this_77 = (ShootableButton *)func_?();
+      ShootableButton::ShootableButton__ctor(this_77,worldObjectData,worldObjects,(MethodInfo *)0x0)
       ;
-      return (MVWorldObjectClient *)this_78;
+      return (MVWorldObjectClient *)this_77;
     case 0xa6:
-      this_79 = (UseLever *)func_?();
-      UseLever::UseLever__ctor(this_79,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_79;
+      this_78 = (UseLever *)func_?();
+      UseLever::UseLever__ctor(this_78,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_78;
     case 0xa7:
-      this_80 = (CollectTheItemDropOff *)func_?();
+      this_79 = (CollectTheItemDropOff *)func_?();
       CollectTheItemDropOff::CollectTheItemDropOff__ctor
+                (this_79,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_79;
+    case 0xa8:
+      this_80 = (CollectTheItemCollectable *)func_?();
+      CollectTheItemCollectable::CollectTheItemCollectable__ctor
                 (this_80,worldObjectData,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_80;
-    case 0xa8:
-      this_81 = (CollectTheItemCollectable *)func_?();
-      CollectTheItemCollectable::CollectTheItemCollectable__ctor
-                (this_81,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_81;
     case 0xa9:
-      this_82 = (CollectTheItem *)func_?();
-      CollectTheItem::CollectTheItem__ctor(this_82,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_82;
+      this_81 = (CollectTheItem *)func_?();
+      CollectTheItem::CollectTheItem__ctor(this_81,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_81;
     case 0xaa:
-      this_83 = (WindTurbine *)func_?();
-      WindTurbine::WindTurbine__ctor(this_83,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_83;
+      this_82 = (WindTurbine *)func_?();
+      WindTurbine::WindTurbine__ctor(this_82,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_82;
     case 0xab:
-      this_84 = (MVGlobalSoundEmitter *)func_?();
+      this_83 = (MVGlobalSoundEmitter *)func_?();
       MVGlobalSoundEmitter::MVGlobalSoundEmitter__ctor
-                (this_84,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_84;
+                (this_83,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_83;
     case 0xb4:
-      this_85 = (TimeAttackFlag *)func_?();
-      TimeAttackFlag::TimeAttackFlag__ctor(this_85,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_85;
+      this_84 = (TimeAttackFlag *)func_?();
+      TimeAttackFlag::TimeAttackFlag__ctor(this_84,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_84;
     case 0xb5:
-      this_86 = (MVGamePointChest *)func_?();
+      this_85 = (MVGamePointChest *)func_?();
       MVGamePointChest::MVGamePointChest__ctor
-                (this_86,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_86;
+                (this_85,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_85;
     }
   }
 code_?:
   func_?();
 code_?:
-  func_?();
+  func_?(unaff_ESI.m_Index);
 code_?:
-  uVar15 = func_?();
-  uVar16 = (ushort)((uint6)uVar15 >> 0x20);
-  uVar17 = (undefined2)((uint6)uVar15 >> 0x10);
-  cVar18 = (char)uVar15;
-  bVar19 = ((char)((uint6)uVar15 >> 8) - *(char *)&unaff_EBX[1].klass) - cVar2;
-  puVar20 = (ushort *)CONCAT22(uVar17,CONCAT11(bVar19,cVar18));
-  psVar21 = (short *)CONCAT22((short)((uint)unaff_EBX >> 0x10),CONCAT11(0x1b,(char)unaff_EBX));
-  sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-  *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-  *psVar21 = (short)ROUND(extraout_ST0);
-  sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-  *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-  bVar23 = cVar18 + 0x1c;
-  puVar20 = (ushort *)CONCAT31((int3)((uint)puVar20 >> 8),bVar23);
-  sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-  *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-  bVar24 = bVar19 < *(byte *)(psVar21 + 8);
-  bVar25 = bVar23 < 99 || (byte)(cVar18 + 0xb9U) < bVar24;
-  puVar20 = (ushort *)
-            CONCAT31((int3)(CONCAT22(uVar17,CONCAT11(bVar19 - *(byte *)(psVar21 + 8),bVar23)) >> 8),
-                     (cVar18 + 0xb9U) - bVar24);
-  bVar24 = CARRY1(bRam_?,extraout_CH);
-  bVar23 = bRam_? + extraout_CH;
-  bRam_? = bVar23 + bVar25;
-  sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-  *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-  cVar2 = -(bVar24 || CARRY1(bVar23,bVar25));
-  *(char *)(puVar20 + -0x2077ce6b) = (char)puVar20[-0x2077ce6b] + '\x1c';
-  bVar24 = 99 < *(byte *)(psVar21 + 8);
-  bVar26 = 99 - *(byte *)(psVar21 + 8);
-  bVar23 = cVar2 + 100;
-  bVar19 = bVar23 - bVar24;
-  cRam_? = cRam_? + '\x1b' + ((byte)(cVar2 - 0x39U) < 99 || bVar23 < bVar24);
-  bVar24 = bVar26 < *(byte *)(psVar21 + 8);
-  bVar25 = bVar19 < 99 || (byte)(bVar19 + 0x9d) < bVar24;
-  uVar27 = CONCAT31((int3)(CONCAT22(0x2910,CONCAT11(bVar26 - *(byte *)(psVar21 + 8),bVar19)) >> 8),
-                    (bVar19 + 0x9d) - bVar24);
-  bVar24 = 0xe4 < bRam_?;
-  bVar23 = bRam_? + 0x1b;
-  bRam_? = bVar23 + bVar25;
-  uVar28 = (uint)(bVar24 || CARRY1(bVar23,bVar25));
-  uVar29 = uVar27 + 0xe2d4ef9d;
-  puVar20 = (ushort *)(uVar29 - uVar28);
-  sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-  *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-  uVar28 = (uint)(uVar27 < 0x1d2b1063 || uVar29 < uVar28);
-  bVar19 = puVar20 < (ushort *)0x1d751063 || (int)puVar20 + 0xe28aef9dU < uVar28;
-  puVar20 = (ushort *)(((int)puVar20 + 0xe28aef9dU) - uVar28);
-  sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-  *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-  uVar30 = func_?();
-  piVar7 = (int *)((ulonglong)uVar30 >> 0x20);
-  bVar23 = (byte)((ulonglong)uVar30 >> 8);
-  puVar20 = (ushort *)
-            ((CONCAT22((short)((ulonglong)uVar30 >> 0x10),
-                       CONCAT11(bVar23 * '\x02' + bVar19,(char)uVar30)) + -0x1e091063) -
-            (uint)(CARRY1(bVar23,bVar23) || CARRY1(bVar23 * '\x02',bVar19)));
-  uVar16 = (ushort)((ulonglong)uVar30 >> 0x20);
-  sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-  *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-  sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-  *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-  sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-  *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-  if (-1 < (int)puVar20) {
-    sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-    *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-    uVar17 = (undefined2)((uint)puVar20 >> 0x10);
-    bVar23 = (byte)puVar20;
-    cVar2 = (char)((uint)puVar20 >> 8) - (char)psVar21[8];
-    puVar20 = (ushort *)CONCAT22(uVar17,CONCAT11(cVar2,bVar23));
-    sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-    *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-    uVar15 = *(undefined6 *)unaff_ESI.m_Index;
-    pbVar31 = (byte *)uVar15;
-    sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-    *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-    puVar20 = (ushort *)CONCAT22(uVar17,CONCAT11(cVar2 - pbVar31[0x10],bVar23));
-    iVar32 = -0x15ef9cd6;
-    sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-    *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-    puVar20 = (ushort *)(CONCAT31((int3)((uint)puVar20 >> 8),bVar23) ^ 0x1f);
-    sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-    *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-    sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-    *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-    if (0 >= sVar22 && -1 < (char)(bVar23 ^ 0x1f)) {
-      sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-      *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-      sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-      puRam_? = puVar20;
-      *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-      puVar20 = (ushort *)in(uVar16);
-      sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-      *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-      bVar23 = (char)((uint)puVar20 >> 8) + (char)*puVar20;
-      uVar17 = (undefined2)((uint)puVar20 >> 0x10);
-      puVar33 = (ushort *)CONCAT22(uVar17,CONCAT11(bVar23,(char)puVar20));
-      sVar22 = (uVar16 & 3) - (*puVar33 & 3);
-      *puVar33 = *puVar33 + (ushort)(0 < sVar22) * sVar22;
-      *piVar7 = (int)&stack0xffffffdd;
-      sVar22 = (uVar16 & 3) - (*puVar33 & 3);
-      *puVar33 = *puVar33 + (ushort)(0 < sVar22) * sVar22;
-      iVar32 = (uint)((in_DS & 0x400) != 0) * -2 + -0x15ef9cd5;
-      puVar20 = (ushort *)CONCAT22(uVar17,CONCAT11(bVar23 & pbVar31[0x10],(char)puVar20));
-      *piVar7 = *piVar7 << ((byte)((uint6)uVar15 >> 0x20) & 0x1f);
-      sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-      *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-    }
-    puVar20 = (ushort *)
-              (CONCAT22((short)((uint)puVar20 >> 0x10),
-                        CONCAT11((byte)((uint)puVar20 >> 8) & pbVar31[0x10],(char)puVar20)) +
-              -0x42106323);
-    segment(in_SS,(short)&stack0xfffffffc + (short)iVar32 + 0x10);
-    *(undefined2 *)pbVar31 = in_FS;
-    sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-    *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-    sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-    *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-    *pbVar31 = *pbVar31 & (byte)((uint)puVar20 >> 8);
-    *(char *)(iVar32 + 0x4510632a) = *(char *)(iVar32 + 0x4510632a) + (char)((uint6)uVar15 >> 8);
-    puVar20 = (ushort *)((uint)puVar20 & 0xffffff00);
-    *(char *)(piVar7 + 9) = (char)piVar7[9] + (char)((uint6)uVar15 >> 0x28);
-    sVar22 = (uVar16 & 3) - (*puVar20 & 3);
-    *puVar20 = *puVar20 + (ushort)(0 < sVar22) * sVar22;
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
+  uVar13 = func_?(unaff_ESI.m_Index);
+  puVar14 = (ushort *)uVar13;
+  sVar15 = ((ushort)(uVar13 >> 0x20) & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  lVar16 = (uVar13 & 0xffffffff) * (ulonglong)*(uint *)(uVar13 >> 0x20);
+  pbVar17 = (byte *)((ulonglong)lVar16 >> 0x20);
+  puVar14 = (ushort *)lVar16;
+  uVar18 = (ushort)((ulonglong)lVar16 >> 0x20);
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  uVar19 = ((uint)&stack0xffffffe8 & (uint)unaff_EBX[1].klass) + 1 & (uint)unaff_EBX[1].klass;
+  *(undefined4 *)(uVar19 - 4) = *extraout_ECX;
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  *(undefined4 *)(uVar19 - 8) = *extraout_ECX;
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  *(undefined4 *)(uVar19 - 0xc) = *extraout_ECX;
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  pSVar20 = unaff_EBX->klass;
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  uVar21 = (undefined3)((ulonglong)lVar16 >> 8);
+  uVar22 = *(undefined1 *)((int)&unaff_EBX->klass + ((uint)puVar14 & 0xff));
+  puVar14 = (ushort *)CONCAT31(uVar21,uVar22);
+  uVar23 = (int)pSVar20 * 0x23af1063 & (uint)unaff_EBX[1].klass;
+  *(undefined4 *)(uVar23 - 4) = *extraout_ECX;
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  *(undefined4 *)(uVar23 - 8) = *extraout_ECX;
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  *(undefined4 *)(uVar23 - 0xc) = *extraout_ECX;
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  uStack24 = *extraout_ECX;
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  uStack25 = *extraout_ECX;
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  method = (MethodInfo *)*extraout_ECX;
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  unaff_EBX->klass = (String__Class *)((uint)unaff_EBX->klass & (uint)&method);
+  cVar26 = (char)((uint)unaff_EBX >> 8);
+  uVar27 = (undefined2)((uint)unaff_EBX >> 0x10);
+  iVar28 = CONCAT22(uVar27,CONCAT11(cVar26 * '\x02',(char)unaff_EBX));
+  puVar29 = (uint *)(iVar28 + 0x10);
+  *puVar29 = *puVar29 ^ (uint)&method;
+  uVar30 = CONCAT31(uVar21,uVar22);
+  puVar14 = (ushort *)(uVar30 & 0xffffff63);
+  pcVar31 = (char *)(iVar28 + 0x24);
+  *pcVar31 = *pcVar31 + (char)((uint)extraout_ECX >> 8);
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  iVar28 = CONCAT22(uVar27,CONCAT11(cVar26 * '\x04',(char)unaff_EBX));
+  cRam_? = cRam_? + (char)((uint)puVar14 >> 8);
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  out(*(undefined1 *)((int)&((String *)unaff_ESI.m_Index)->klass + 1),uVar18);
+  puVar14 = (ushort *)(uVar30 & 0x25931063);
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  *(uint *)(iVar28 + 0x10) = *(uint *)(iVar28 + 0x10) ^ (uint)&method;
+  sVar15 = (uVar18 & 3) - (uRam_? & 3);
+  uRam_? = uRam_? + (ushort)(0 < sVar15) * sVar15;
+  sVar15 = (uVar18 & 3) - (uRam_? & 3);
+  uRam_? = uRam_? + (ushort)(0 < sVar15) * sVar15;
+  sVar15 = (uVar18 & 3) - (uRam_? & 3);
+  uRam_? = uRam_? + (ushort)(0 < sVar15) * sVar15;
+  sVar15 = (uVar18 & 3) - (uRam_? & 3);
+  uRam_? = uRam_? + (ushort)(0 < sVar15) * sVar15;
+  sVar15 = (uVar18 & 3) - (uRam_? & 3);
+  uRam_? = uRam_? + (ushort)(0 < sVar15) * sVar15;
+  bVar32 = 99 - *(char *)((int)&((String *)unaff_ESI.m_Index)->klass + 2);
+  puVar14 = (ushort *)CONCAT22(0xff10,CONCAT11(bVar32,0x25));
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  pbVar33 = (byte *)((int)&worldObjectData[-1].fields._syncRoot + 3);
+  sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  if (0 >= sVar15) {
+    sVar15 = (uVar18 & 3) - (*puVar14 & 3);
+    *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+    pbVar17 = (byte *)0xffffffff;
+    sVar15 = 3 - (*puVar14 & 3);
+    *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+    sVar15 = 3 - (*puVar14 & 3);
+    *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+    *pbVar33 = *pbVar33 | bVar32;
+    sVar15 = 3 - (*puVar14 & 3);
+    *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+    bVar32 = (byte)((int)puVar14 + -0x52106327);
+    cVar26 = bVar32 + (9 < (bVar32 & 0xf) | in_AF) * '\x06' +
+             (0x99 < bVar32 || puVar14 < (ushort *)0x52106327) * '`';
+    puVar14 = (ushort *)CONCAT31((int3)((uint)((int)puVar14 + -0x52106327) >> 8),cVar26);
+    sVar15 = 3 - (*puVar14 & 3);
+    *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+    *(int *)(iVar28 + 0x10) = *(int *)(iVar28 + 0x10) - (int)&stack0x00000000;
+    out(0xffff,cVar26);
+    *(int *)(iVar28 + 0x10) = *(int *)(iVar28 + 0x10) - (int)&stack0x00000000;
+    sVar15 = 3 - (*puVar14 & 3);
+    *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
   }
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  sVar15 = ((ushort)pbVar17 & 3) - (*puVar14 & 3);
+  *puVar14 = *puVar14 + (ushort)(0 < sVar15) * sVar15;
+  cVar26 = *(char *)(iVar28 + 0x10);
+  bVar32 = *pbVar17;
+  *pbVar17 = *pbVar17 + 0x9d;
+  pcVar31 = (char *)((int)&worldObjectData[-0x114fdf0].fields._values + 1);
+  *pcVar31 = *pcVar31 + ((char)((uint)puVar14 >> 8) - cVar26) + (bVar32 < 99);
+  pcVar34 = (code *)swi(1);
+  pMVar11 = (MVWorldObjectClient *)(*pcVar34)();
+  return pMVar11;
 code_?:
-  pOVar1 = (Object *)func_?();
+  pOVar1 = (Object *)func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters);
   unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
@@ -1550,33 +1522,26 @@ code_?:
                          worldObjectData,pOVar1,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-  pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  cVar2 = '\0';
-  if (pMVar8 != (MVNetworkGame *)0x0) {
-    pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar8,(MethodInfo *)0x0);
-    cVar2 = '\0';
-    if (pMVar9 != (MVLocalPlayer *)0x0) {
-      unaff_EBX = (String *)(pMVar9->fields)._._ActorNr_k__BackingField;
-      cVar2 = '\0';
-      if (unaff_ESI.m_Index != 0) {
-        pIVar4 = (TypeInfo__System__Int32->_0).element_class;
-        cVar2 = *(Il2CppClass **)(*(int *)unaff_ESI.m_Index + 0x20) < pIVar4;
-        if (*(Il2CppClass **)(*(int *)unaff_ESI.m_Index + 0x20) == pIVar4) {
-          piVar7 = (int *)func_?();
-          if ((String *)*piVar7 != unaff_EBX) {
-            this_59 = (MVBuildModeAvatarRemote *)func_?();
-            MVBuildModeAvatarRemote::MVBuildModeAvatarRemote__ctor
-                      (this_59,worldObjectData,worldObjects,(MethodInfo *)0x0);
-            return (MVWorldObjectClient *)this_59;
-          }
-          this_60 = (MVBuildModeAvatarLocal *)func_?();
-          MVBuildModeAvatarLocal::MVBuildModeAvatarLocal__ctor
-                    (this_60,worldObjectData,worldObjects,(MethodInfo *)0x0);
-          return (MVWorldObjectClient *)this_60;
-        }
-        goto code_?;
+  pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (((pMVar6 != (MVNetworkGame *)0x0) &&
+      (pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar6,(MethodInfo *)0x0),
+      pMVar7 != (MVLocalPlayer *)0x0)) &&
+     (unaff_EBX = (String *)(pMVar7->fields)._._ActorNr_k__BackingField, unaff_ESI.m_Index != 0)) {
+    if (*(Il2CppClass **)(*(int *)unaff_ESI.m_Index + 0x20) ==
+        (TypeInfo__System__Int32->_0).element_class) {
+      piVar5 = (int *)func_?();
+      if ((String *)*piVar5 != unaff_EBX) {
+        this_58 = (MVBuildModeAvatarRemote *)func_?();
+        MVBuildModeAvatarRemote::MVBuildModeAvatarRemote__ctor
+                  (this_58,worldObjectData,worldObjects,(MethodInfo *)0x0);
+        return (MVWorldObjectClient *)this_58;
       }
+      this_59 = (MVBuildModeAvatarLocal *)func_?();
+      MVBuildModeAvatarLocal::MVBuildModeAvatarLocal__ctor
+                (this_59,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_59;
     }
+    goto code_?;
   }
   goto code_?;
 }

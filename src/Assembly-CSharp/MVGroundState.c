@@ -53,11 +53,11 @@ Vector3 * Assembly-CSharp.dll::MVGroundState::MVGroundState_ApplySlidingVelocity
     pMVar16 = (this->fields).groundMaterial;
     if (pMVar16 != (MVMaterial *)0x0) {
       if (interactableLocal != (MVInteractableBase *)0x0) {
-        pMStack_17 = (interactableLocal->klass->vtable).__unknown_6.method;
+        pMStack_17 = (interactableLocal->klass->vtable).__unknown_8.method;
         fVar18 = (float10)(*(code *)pMStack_17)
                                     (interactableLocal,0xc,
                                      (pMVar16->fields)._PhysicalProperties_k__BackingField.friction,
-                                     (interactableLocal->klass->vtable).__unknown_7.methodPtr,
+                                     (interactableLocal->klass->vtable).__unknown_9.methodPtr,
                                      (pMVar16->fields)._PhysicalProperties_k__BackingField.bouncyness
                                      ,(pMVar16->fields)._PhysicalProperties_k__BackingField.softness,
                                      (pMVar16->fields)._PhysicalProperties_k__BackingField.
@@ -102,7 +102,7 @@ Vector3 * Assembly-CSharp.dll::MVGroundState::MVGroundState_ApplySlidingVelocity
                  ObscuredFloat_op_Implicit_1(value_00,(MethodInfo *)0x0);
         fStack_15 = fStack_15 * fVar19;
         fStack_13 = fStack_13 * fVar19;
-        pMStack_17 = (interactableLocal->klass->vtable).__unknown_6.method;
+        pMStack_17 = (interactableLocal->klass->vtable).__unknown_8.method;
         fStack_7 = density;
         fStack_6 = 0.0;
         pMStack_12 = interactableLocal;
@@ -118,12 +118,12 @@ Vector3 * Assembly-CSharp.dll::MVGroundState::MVGroundState_ApplySlidingVelocity
         pMVar16 = (this->fields).groundMaterial;
         fStack_7 = (float)fVar18;
         if (pMVar16 != (MVMaterial *)0x0) {
-          pMStack_17 = (interactableLocal->klass->vtable).__unknown_6.method;
+          pMStack_17 = (interactableLocal->klass->vtable).__unknown_8.method;
           fVar18 = (float10)(*(code *)pMStack_17)
-                                      (interactableLocal,0x10,
+                                      (interactableLocal,0x11,
                                        (pMVar16->fields)._PhysicalProperties_k__BackingField.
                                        staticFriction,
-                                       (interactableLocal->klass->vtable).__unknown_7.methodPtr);
+                                       (interactableLocal->klass->vtable).__unknown_9.methodPtr);
           pMStack_17 = (MethodInfo *)(float)fVar18;
           if ((float)pMStack_17 < fStack_7) {
             fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime

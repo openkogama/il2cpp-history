@@ -273,8 +273,8 @@ bool Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_IsPlaying
   if (pMVar1 == (MVAvatarLocal *)0x0) {
     return 0;
   }
-  if (*(int *)(in_stack_2 + 0x17c) != 0) {
-    return *(char *)(*(int *)(in_stack_2 + 0x17c) + 0x10) == '\x01';
+  if (*(int *)(in_stack_2 + 0x180) != 0) {
+    return *(char *)(*(int *)(in_stack_2 + 0x180) + 0x10) == '\x01';
   }
   uVar3 = func_?(&stack0xfffffff8);
   func_?(uVar3);

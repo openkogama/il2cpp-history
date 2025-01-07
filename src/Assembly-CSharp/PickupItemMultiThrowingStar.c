@@ -383,18 +383,6 @@ void Assembly-CSharp.dll::PickupItemMultiThrowingStar::PickupItemMultiThrowingSt
 }
 
 
-/* Void OnHolstered() */
-
-void Assembly-CSharp.dll::PickupItemMultiThrowingStar::PickupItemMultiThrowingStar_OnHolstered
-               (PickupItemMultiThrowingStar *this,MethodInfo *method)
-
-{
-  (*(code *)(this->klass->vtable).TriggerEnd.method)
-            (this,(this->klass->vtable).OnStateChanged.methodPtr);
-  return;
-}
-
-
 /* Void OnLeaveVehicleWithWeapon() */
 
 void Assembly-CSharp.dll::PickupItemMultiThrowingStar::
@@ -402,8 +390,6 @@ void Assembly-CSharp.dll::PickupItemMultiThrowingStar::
                (PickupItemMultiThrowingStar *this,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if ((this->fields).numStars <= (this->fields).throwingStarsFired) {
     (this->fields)._.isFiring = 0;
   }
@@ -543,33 +529,33 @@ void Assembly-CSharp.dll::PickupItemMultiThrowingStar::PickupItemMultiThrowingSt
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  pOVar1 = (ObscuredInt__Class *)(this->fields).maxAmmo.currentCryptoKey;
-  iVar2 = (this->fields).maxAmmo.hiddenValue;
-  iVar3 = (this->fields).maxAmmo.fakeValue;
+  OStack_1.currentCryptoKey = (this->fields).maxAmmo.currentCryptoKey;
+  OStack_1.hiddenValue = (this->fields).maxAmmo.hiddenValue;
+  OStack_1.fakeValue = (this->fields).maxAmmo.fakeValue;
+  OStack_1.inited = (this->fields).maxAmmo.inited;
+  OStack_1._13_3_ = *(undefined3 *)&(this->fields).maxAmmo.field_0xd;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
       0) {
-    pOVar1 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt;
-    func_?();
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
-  value.hiddenValue = iVar2;
-  value.currentCryptoKey = (int32_t)pOVar1;
-  value.fakeValue = iVar3;
-  value.inited = (this->fields).maxAmmo.inited;
-  value._13_3_ = *(undefined3 *)&(this->fields).maxAmmo.field_0xd;
+  value.hiddenValue = OStack_1.hiddenValue;
+  value.currentCryptoKey = OStack_1.currentCryptoKey;
+  value.fakeValue = OStack_1.fakeValue;
+  value.inited = OStack_1.inited;
+  value._13_3_ = OStack_1._13_3_;
   iVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
           ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-  iVar2 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)(this,iVar2);
-  pOVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-           ObscuredInt_op_Implicit((ObscuredInt *)&stack0xffffffec,iVar2,(MethodInfo *)0x0);
-  iVar2 = pOVar4->hiddenValue;
-  iVar3 = pOVar4->fakeValue;
-  bVar5 = pOVar4->inited;
-  uVar6 = *(undefined3 *)&pOVar4->field_0xd;
-  (this->fields).currentAmmo.currentCryptoKey = pOVar4->currentCryptoKey;
+  iVar2 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)
+                    (this,iVar2,(this->klass->vtable).UpdateWithDirection.methodPtr);
+  pOVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+           ObscuredInt_op_Implicit(&OStack_1,iVar2,(MethodInfo *)0x0);
+  iVar2 = pOVar3->hiddenValue;
+  iVar4 = pOVar3->fakeValue;
+  bVar5 = pOVar3->inited;
+  uVar6 = *(undefined3 *)&pOVar3->field_0xd;
+  (this->fields).currentAmmo.currentCryptoKey = pOVar3->currentCryptoKey;
   (this->fields).currentAmmo.hiddenValue = iVar2;
-  (this->fields).currentAmmo.fakeValue = iVar3;
+  (this->fields).currentAmmo.fakeValue = iVar4;
   (this->fields).currentAmmo.inited = bVar5;
   *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar6;
   return;

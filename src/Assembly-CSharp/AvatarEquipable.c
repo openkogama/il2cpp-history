@@ -58,12 +58,12 @@ bool Assembly-CSharp.dll::AvatarEquipable::AvatarEquipable_EquipModifier
       if (type == AvatarItemType__Enum_Health) {
         pMVar1 = (this->fields).interactableLocal;
         if (pMVar1 != (MVInteractableBase *)0x0) {
-          (*(code *)(pMVar1->klass->vtable).__unknown_4.method)
-                    (pMVar1,4,0xffffffff,(pMVar1->klass->vtable).__unknown_5.methodPtr);
+          (*(code *)(pMVar1->klass->vtable).__unknown_6.method)
+                    (pMVar1,4,0xffffffff,(pMVar1->klass->vtable).__unknown_7.methodPtr);
           pMVar1 = (this->fields).interactableLocal;
           if (pMVar1 != (MVInteractableBase *)0x0) {
-            (*(code *)(pMVar1->klass->vtable).__unknown.method)
-                      (pMVar1,0xff800000,0,0,(pMVar1->klass->vtable).__unknown_1.methodPtr);
+            (*(code *)(pMVar1->klass->vtable).__unknown_2.method)
+                      (pMVar1,0x7f800000,0,(pMVar1->klass->vtable).__unknown_3.methodPtr);
             return 1;
           }
         }
@@ -72,12 +72,12 @@ bool Assembly-CSharp.dll::AvatarEquipable::AvatarEquipable_EquipModifier
       if (type == AvatarItemType__Enum_Mutant) {
         pMVar1 = (this->fields).interactableLocal;
         if (pMVar1 != (MVInteractableBase *)0x0) {
-          (*(code *)(pMVar1->klass->vtable).__unknown_4.method)
-                    (pMVar1,0xb,0xffffffff,(pMVar1->klass->vtable).__unknown_5.methodPtr);
+          (*(code *)(pMVar1->klass->vtable).__unknown_6.method)
+                    (pMVar1,0xb,0xffffffff,(pMVar1->klass->vtable).__unknown_7.methodPtr);
           pMVar1 = (this->fields).interactableLocal;
           if (pMVar1 != (MVInteractableBase *)0x0) {
-            (*(code *)(pMVar1->klass->vtable).__unknown_2.method)
-                      (pMVar1,2,0xffffffff,0,(pMVar1->klass->vtable).__unknown_3.methodPtr);
+            (*(code *)(pMVar1->klass->vtable).__unknown_4.method)
+                      (pMVar1,2,0xffffffff,0,(pMVar1->klass->vtable).__unknown_5.methodPtr);
             return 1;
           }
         }
@@ -88,16 +88,16 @@ bool Assembly-CSharp.dll::AvatarEquipable::AvatarEquipable_EquipModifier
       if (type == AvatarItemType__Enum_NinjaRun) {
         pMVar1 = (this->fields).interactableLocal;
         if (pMVar1 != (MVInteractableBase *)0x0) {
-          (*(code *)(pMVar1->klass->vtable).__unknown_4.method)
-                    (pMVar1,2,0xffffffff,(pMVar1->klass->vtable).__unknown_5.methodPtr);
+          (*(code *)(pMVar1->klass->vtable).__unknown_6.method)
+                    (pMVar1,2,0xffffffff,(pMVar1->klass->vtable).__unknown_7.methodPtr);
           pMVar1 = (this->fields).interactableLocal;
           if (pMVar1 != (MVInteractableBase *)0x0) {
-            (*(code *)(pMVar1->klass->vtable).__unknown_4.method)
-                      (pMVar1,0xb,0xffffffff,(pMVar1->klass->vtable).__unknown_5.methodPtr);
+            (*(code *)(pMVar1->klass->vtable).__unknown_6.method)
+                      (pMVar1,0xb,0xffffffff,(pMVar1->klass->vtable).__unknown_7.methodPtr);
             pMVar1 = (this->fields).interactableLocal;
             if (pMVar1 != (MVInteractableBase *)0x0) {
-              (*(code *)(pMVar1->klass->vtable).__unknown_2.method)
-                        (pMVar1,0xb,0xffffffff,0,(pMVar1->klass->vtable).__unknown_3.methodPtr);
+              (*(code *)(pMVar1->klass->vtable).__unknown_4.method)
+                        (pMVar1,0xb,0xffffffff,0,(pMVar1->klass->vtable).__unknown_5.methodPtr);
               return 1;
             }
           }
@@ -111,8 +111,8 @@ code_?:
       if (type == AvatarItemType__Enum_MousePack) {
         pMVar1 = (this->fields).interactableLocal;
         if (pMVar1 != (MVInteractableBase *)0x0) {
-          (*(code *)(pMVar1->klass->vtable).__unknown_2.method)
-                    (pMVar1,0xc,0xffffffff,0,(pMVar1->klass->vtable).__unknown_3.methodPtr);
+          (*(code *)(pMVar1->klass->vtable).__unknown_4.method)
+                    (pMVar1,0xc,0xffffffff,0,(pMVar1->klass->vtable).__unknown_5.methodPtr);
           return 1;
         }
         goto code_?;
@@ -120,7 +120,7 @@ code_?:
       if (type == AvatarItemType__Enum_GrowthPack) {
         pMVar1 = (this->fields).interactableLocal;
         if (pMVar1 != (MVInteractableBase *)0x0) {
-          func_?(7,pMVar1,0xf,0xffffffff,0);
+          func_?(9,pMVar1,0xf,0xffffffff,0);
           return 1;
         }
         goto code_?;
@@ -171,8 +171,8 @@ bool Assembly-CSharp.dll::AvatarEquipable::AvatarEquipable_EquipPickup
   pAVar1 = this;
   pMVar2 = (this->fields).interactableLocal;
   if (pMVar2 != (MVInteractableBase *)0x0) {
-    cVar3 = (*(code *)(pMVar2->klass->vtable).__unknown_5.method)
-                      (pMVar2,8,(pMVar2->klass->vtable).__unknown_6.methodPtr);
+    cVar3 = (*(code *)(pMVar2->klass->vtable).__unknown_7.method)
+                      (pMVar2,8,(pMVar2->klass->vtable).__unknown_8.methodPtr);
     if (cVar3 == '\0') {
       pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                 *)func_?(

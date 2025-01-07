@@ -11,7 +11,7 @@ bool Assembly-CSharp.dll::LaserPointer+<DoDeactivateLaserAfterDuration>d__46::
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).__1__state;
-  pLVar2 = (this->fields).__4__this;
+  this_00 = (this->fields).__4__this;
   if (iVar1 == 0) {
     (this->fields)._t_5__2 = 0.0;
   }
@@ -19,35 +19,29 @@ bool Assembly-CSharp.dll::LaserPointer+<DoDeactivateLaserAfterDuration>d__46::
     return 0;
   }
   (this->fields).__1__state = -1;
-  if (pLVar2 != (LaserPointer *)0x0) {
-    if (((pLVar2->fields).isActive != 0) &&
-       (fVar3 = (pLVar2->fields).activeDuration, pfVar4 = &(this->fields)._t_5__2,
-       *pfVar4 <= fVar3 && fVar3 != *pfVar4)) {
-      fVar3 = (this->fields)._t_5__2;
-      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
+  if (this_00 != (LaserPointer *)0x0) {
+    if (((this_00->fields).isActive != 0) &&
+       (fVar2 = (this_00->fields).activeDuration, pfVar3 = &(this->fields)._t_5__2,
+       *pfVar3 <= fVar2 && fVar2 != *pfVar3)) {
+      fVar2 = (this->fields)._t_5__2;
+      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
       ;
-      uStack_6 = 0;
-      (this->fields)._t_5__2 = fVar5 + fVar3;
-      pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&uStack_6);
-      (this->fields).__2__current = pOVar7;
-      func_?(&(this->fields).__2__current,pOVar7);
+      uStack_5 = 0;
+      (this->fields)._t_5__2 = fVar4 + fVar2;
+      pOVar6 = (Object *)func_?(TypeInfo__System__Int32,&uStack_5);
+      (this->fields).__2__current = pOVar6;
+      func_?(&(this->fields).__2__current,pOVar6);
       (this->fields).__1__state = 1;
       return 1;
     }
-    pAVar8 = (pLVar2->fields).OnLaserActive;
-    (pLVar2->fields).activeDuration = 0.0;
-    (pLVar2->fields).isActive = 0;
-    if (pAVar8 != (Action_2_Boolean_Boolean_ *)0x0) {
-      (*(pAVar8->fields)._._.invoke_impl)
-                ((pAVar8->fields)._._.method_code,(pLVar2->fields).isLocal,0,
-                 (pAVar8->fields)._._.method);
-    }
+    (this_00->fields).activeDuration = 0.0;
+    LaserPointer::LaserPointer_SetLaserActiveState(this_00,0,(MethodInfo *)0x0);
     return 0;
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  bVar10 = (*pcVar9)();
-  return bVar10;
+  pcVar7 = (code *)swi(3);
+  bVar8 = (*pcVar7)();
+  return bVar8;
 }
 
 

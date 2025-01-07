@@ -424,6 +424,7 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_Initialize(MVSentryGun *this,
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Action<float,_MVPlayer>);
     func_?(&TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>);
     func_?(&TypeInfo__CullingSubscriberBase);
     func_?(&
@@ -439,6 +440,7 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_Initialize(MVSentryGun *this,
     func_?(&
                     MethodInfo__MVSentryGun__ReceiveDamage_float__MVPlayer__MV__Common__PlayerKilledByType_
                    );
+    func_?(&MethodInfo__MVSentryGun__RecieveHealing_float__MVPlayer_);
     func_?(&TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
     func_?(&
                     TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
@@ -466,19 +468,23 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_Initialize(MVSentryGun *this,
               (this_01,(Object *)this,
                MethodInfo__MVSentryGun__ReceiveDamage_float__MVPlayer__MV__Common__PlayerKilledByType_
                ,(MethodInfo *)0x0);
+    this_02 = (Action_2_Single_Object_ *)func_?();
+    mscorlib.dll::System::Action`2[Single,Object]::Action_2_Single_Object___ctor
+              (this_02,(Object *)this,MethodInfo__MVSentryGun__RecieveHealing_float__MVPlayer_,
+               (MethodInfo *)0x0);
     if (pCVar3 != (ClientSideNPCInteractable *)0x0) {
       ClientSideNPCInteractable::ClientSideNPCInteractable_Init
                 (pCVar3,(Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)this_01,
-                 (MethodInfo *)0x0);
+                 (Action_2_Single_MVPlayer_ *)this_02,(MethodInfo *)0x0);
       MVSentryGun_InitializeCommon(this,(MethodInfo *)0x0);
       pGVar2 = (this->fields)._._.gameObject;
       if ((pGVar2 != (GameObject *)0x0) &&
-         (this_02 = (MVComponent *)
+         (this_03 = (MVComponent *)
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
                               (pGVar2,
                                ClientSideNPCInteractionHandler_MethodInfo__UnityEngine__GameObject__GetComponent<ClientSideNPCInteractionHandler>__
-                              ), this_02 != (MVComponent *)0x0)) {
-        MVComponent::MVComponent_FindWorldObjectParent(this_02,(MethodInfo *)0x0);
+                              ), this_03 != (MVComponent *)0x0)) {
+        MVComponent::MVComponent_FindWorldObjectParent(this_03,(MethodInfo *)0x0);
         pCVar3 = (this->fields).interactable;
         if (pCVar3 != (ClientSideNPCInteractable *)0x0) {
           bVar4 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead
@@ -486,14 +492,14 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_Initialize(MVSentryGun *this,
           (this->fields).wasDead = bVar4;
           MVSentryGun_UpdateSentryState(this,(MethodInfo *)0x0);
           pUVar5 = (this->fields)._._.PositionChanged;
-          this_03 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+          this_04 = (UnityAction_2_System_Object_System_Object_ *)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (this_03,(Object *)this,
+                    (this_04,(Object *)this,
                      MethodInfo__MVSentryGun__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
                      ,(MethodInfo *)0x0);
           pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
-                             ((Delegate *)pUVar5,(Delegate *)this_03,(MethodInfo *)0x0);
+                             ((Delegate *)pUVar5,(Delegate *)this_04,(MethodInfo *)0x0);
           if (pDVar6 == (Delegate *)0x0) {
             (this->fields)._._.PositionChanged =
                  (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
@@ -511,21 +517,21 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_Initialize(MVSentryGun *this,
           puVar8 = (undefined8 *)(*(code *)(this->klass->vtable).get_WorldPosition_1.method)();
           uVar9 = *puVar8;
           fVar10 = *(float *)(puVar8 + 1);
-          this_04 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
+          this_05 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
           UnityAction_1_UnityEngine_Vector2___ctor
-                    (this_04,(Object *)
+                    (this_05,(Object *)
                              MethodInfo__MVSentryGun__OnStateChange_UnityEngine__CullingGroupEvent_,
                      MethodInfo__MVSentryGun__OnStateChange_UnityEngine__CullingGroupEvent_,
                      (MethodInfo *)0x0);
-          this_05 = (CullingSubscriberBase *)func_?();
+          this_06 = (CullingSubscriberBase *)func_?();
           position.y = (float)&UNK_?;
           position.x = (float)(int)uVar9;
           position.z = fVar10;
           CullingSubscriberBase::CullingSubscriberBase__ctor_2
-                    (this_05,2.0,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_04,
+                    (this_06,2.0,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_05,
                      (MethodInfo *)0x0);
-          _UNK_? = this_05;
+          _UNK_? = this_06;
           func_?();
           if (((_UNK_? != (CullingSubscriberBase *)0x0) &&
               ((_UNK_?->fields)._DistanceBandIndex_k__BackingField = 3, fVar10 = _UNK_?
@@ -1463,90 +1469,89 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_ReceiveDamage
                PlayerKilledByType__Enum damageType,MethodInfo *method)
 
 {
-  if (_UNK_? < amount) {
-    pMVar1 = (this->fields).gunObject;
-    if ((pMVar1 == (MVSentryGunObject *)0x0) ||
-       (pSVar2 = (pMVar1->fields).sentryGunScript, pSVar2 == (SentryGunScript *)0x0))
-    goto code_?;
+  if (amount <= 0.0) {
+    return;
+  }
+  pMVar1 = (this->fields).gunObject;
+  if ((pMVar1 != (MVSentryGunObject *)0x0) &&
+     (pSVar2 = (pMVar1->fields).sentryGunScript, pSVar2 != (SentryGunScript *)0x0)) {
     fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     (pSVar2->fields).damageBlinkTimeoutTime = fVar3 + _UNK_?;
-  }
-  this_00 = (this->fields).interactable;
-  if (this_00 != (ClientSideNPCInteractable *)0x0) {
-    bVar4 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead(this_00,(MethodInfo *)0x0);
-    if (bVar4 == 0) {
+    this_00 = (this->fields).interactable;
+    if (this_00 != (ClientSideNPCInteractable *)0x0) {
+      bVar4 = ClientSideNPCInteractable::ClientSideNPCInteractable_IsDead(this_00,(MethodInfo *)0x0)
+      ;
+      if (bVar4 == 0) {
 code_?:
-      MVSentryGun_UpdateSentryState(this,(MethodInfo *)0x0);
-      return;
-    }
-    pMVar1 = (this->fields).gunObject;
-    if ((pMVar1 != (MVSentryGunObject *)0x0) &&
-       (pSVar2 = (pMVar1->fields).sentryGunScript, pSVar2 != (SentryGunScript *)0x0)) {
-      if (cRam_? == '\0') {
-        func_?(&
-                        UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
-                       );
-        func_?(&TypeInfo__UnityEngine__Object);
-        cRam_? = '\x01';
+        MVSentryGun_UpdateSentryState(this,(MethodInfo *)0x0);
+        return;
       }
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__PrefabPool);
-        cRam_? = '\x01';
-      }
-      pPVar5 = TypeInfo__PrefabPool->static_fields->instance;
-      if (pPVar5 != (PrefabPool *)0x0) {
-        pPVar6 = (pPVar5->fields).particleExplosion;
-        pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)pSVar2,(MethodInfo *)0x0);
-        if (pTVar7 != (Transform *)0x0) {
-          pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                             ((Vector3 *)&puStack_9,pTVar7,(MethodInfo *)0x0);
-          uVar10._0_4_ = pVVar8->x;
-          uStack_11 = pVVar8->y;
-          fVar3 = pVVar8->z;
+      pMVar1 = (this->fields).gunObject;
+      if ((pMVar1 != (MVSentryGunObject *)0x0) &&
+         (pSVar2 = (pMVar1->fields).sentryGunScript, pSVar2 != (SentryGunScript *)0x0)) {
+        if (cRam_? == '\0') {
+          func_?(&
+                          UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
+                         );
+          func_?(&TypeInfo__UnityEngine__Object);
+          cRam_? = '\x01';
+        }
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__PrefabPool);
+          cRam_? = '\x01';
+        }
+        pPVar5 = TypeInfo__PrefabPool->static_fields->instance;
+        if (pPVar5 != (PrefabPool *)0x0) {
+          pPVar6 = (pPVar5->fields).particleExplosion;
           pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                              ((Component *)pSVar2,(MethodInfo *)0x0);
           if (pTVar7 != (Transform *)0x0) {
-            uVar10 = uVar10 & 0xffffffff00000000;
-            pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                               ((Quaternion *)&fStack_13,pTVar7,(MethodInfo *)0x0);
-            fStack_13 = pQVar12->x;
-            puStack_9 = (undefined *)pQVar12->y;
-            fVar14 = pQVar12->z;
-            fVar15 = pQVar12->w;
-            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            position.z = fVar3;
-            uStack_11 = (undefined4)(uVar10 >> 0x20);
-            position.x = (float)(undefined4)uVar10;
-            position.y = (float)uStack_11;
-            rotation.y = (float)puStack_9;
-            rotation.x = fStack_13;
-            rotation.z = fVar14;
-            rotation.w = fVar15;
-            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
-                      ((Object *)pPVar6,position,rotation,
-                       UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
-                      );
-            pMVar1 = (this->fields).gunObject;
-            if (((pMVar1 != (MVSentryGunObject *)0x0) &&
-                (pSVar2 = (pMVar1->fields).sentryGunScript, pSVar2 != (SentryGunScript *)0x0)) &&
-               (pPVar6 = (pSVar2->fields).smokeEffectEmitter, pPVar6 != (ParticleSystem *)0x0)) {
-              UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-              ParticleSystem_Play_1(pPVar6,(MethodInfo *)0x0);
-              (this->fields).wasDead = 1;
-              goto code_?;
+            pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                ((Vector3 *)&stack0xffffffe8,pTVar7,(MethodInfo *)0x0);
+            amount = pVVar8->z;
+            pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)pSVar2,(MethodInfo *)0x0);
+            if (pTVar7 != (Transform *)0x0) {
+              uVar9 = CONCAT44(pTVar7,(Quaternion *)&stack0xffffffe4);
+              pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                                  ((Quaternion *)&stack0xffffffe4,pTVar7,(MethodInfo *)0x0);
+              fVar3 = pQVar10->x;
+              fVar11 = pQVar10->y;
+              fVar12 = pQVar10->z;
+              fVar13 = pQVar10->w;
+              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                amount = (float)TypeInfo__UnityEngine__Object;
+                func_?();
+              }
+              position.z = amount;
+              position.x = (float)(int)uVar9;
+              position.y = (float)(int)((ulonglong)uVar9 >> 0x20);
+              rotation.y = fVar11;
+              rotation.x = fVar3;
+              rotation.z = fVar12;
+              rotation.w = fVar13;
+              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
+                        ((Object *)pPVar6,position,rotation,
+                         UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
+                        );
+              pMVar1 = (this->fields).gunObject;
+              if (((pMVar1 != (MVSentryGunObject *)0x0) &&
+                  (pSVar2 = (pMVar1->fields).sentryGunScript, pSVar2 != (SentryGunScript *)0x0)) &&
+                 (pPVar6 = (pSVar2->fields).smokeEffectEmitter, pPVar6 != (ParticleSystem *)0x0)) {
+                UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+                ParticleSystem_Play_1(pPVar6,(MethodInfo *)0x0);
+                (this->fields).wasDead = 1;
+                goto code_?;
+              }
             }
           }
         }
       }
     }
   }
-code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

@@ -71,6 +71,8 @@ code_?:
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* String GetKillText(PlayerKilledByType, Boolean, String) */
 
 String * Assembly-CSharp.dll::KillNotification::KillNotification_GetKillText_1
@@ -97,16 +99,16 @@ String * Assembly-CSharp.dll::KillNotification::KillNotification_GetKillText_1
     func_?(&StringLiteral_a_custom_gun_);
     func_?(&StringLiteral__color___2___3___color__eliminat);
     func_?(&StringLiteral__color___2___3___color__sniped__);
-    func_?(&::StringLiteral__);
-    func_?(&StringLiteral__color___0___1___color__respawne);
-    in_stack_1 = 0xdaa4;
+    in_stack_1 = 0x34;
     func_?();
+    func_?(&StringLiteral__color___0___1___color__respawne);
+    func_?(&::StringLiteral__);
     func_?(&StringLiteral__color___0___1___color__hit_the_);
     func_?(&StringLiteral__color___2___3___color__eliminat);
     func_?(&::StringLiteral____);
     cRam_? = '\x01';
   }
-  bVar2 = 0;
+  bVar2 = false;
   if (weaponName != (String *)0x0) {
     if (0x1e < (weaponName->fields)._stringLength) {
       pSVar3 = mscorlib.dll::System::String::String_Substring_1(weaponName,0,0x1b,(MethodInfo *)0x0)
@@ -119,8 +121,7 @@ String * Assembly-CSharp.dll::KillNotification::KillNotification_GetKillText_1
       pSVar3 = TM::TM__(StringLiteral_None,(MethodInfo *)0x0);
       return pSVar3;
     default:
-      pSVar3 = TM::TM__(StringLiteral__color___2___3___color__eliminat,(MethodInfo *)0x0);
-      return pSVar3;
+      goto code_?;
     case PlayerKilledByType__Enum_BazookaGun:
       if (shotSelf == 0) {
         pSVar3 = TM::TM__(StringLiteral__color___2___3___color__eliminat,(MethodInfo *)0x0);
@@ -192,82 +193,44 @@ String * Assembly-CSharp.dll::KillNotification::KillNotification_GetKillText_1
     return pSVar3;
   }
   uVar5 = func_?();
-  iVar6 = (int)((ulonglong)uVar5 >> 0x20);
-  pbVar7 = (byte *)(iVar6 + 1);
-  uVar8 = SUB42(pbVar7,0);
-  bVar9 = in(uVar8);
-  bVar10 = *unaff_EBX;
-  bVar11 = *unaff_EBX;
-  *unaff_EBX = bVar11 + bVar9 + bVar2;
-  out(uVar8,bVar9);
-  bVar12 = (byte)pbVar7;
-  bVar13 = CARRY1((byte)in_stack_1,bVar12) ||
-           CARRY1((byte)in_stack_1 + bVar12,
-                  CARRY1(bVar10,bVar9) || CARRY1(bVar11 + bVar9,bVar2));
-  pbVar14 = unaff_EDI + -0x14;
-  bVar15 = (byte)((uint)unaff_EBX >> 8);
-  bVar16 = CARRY1(*pbVar14,bVar15) || CARRY1(*pbVar14 + bVar15,bVar13);
-  *pbVar14 = *pbVar14 + bVar15 + bVar13;
-  pbVar14 = (byte *)(iVar6 + -0x5aefb913);
-  bVar13 = CARRY1(*pbVar14,bVar12) || CARRY1(*pbVar14 + bVar12,bVar16);
-  *pbVar14 = *pbVar14 + bVar12 + bVar16;
-  uVar17 = in(uVar8);
-  pbVar14 = (byte *)(CONCAT31((int3)((ulonglong)uVar5 >> 8),uVar17) + -0x34efb914);
-  bVar16 = CARRY1(*pbVar14,bVar15) || CARRY1(*pbVar14 + bVar15,bVar13);
-  *pbVar14 = *pbVar14 + bVar15 + bVar13;
-  in(uVar8);
-  bVar9 = (byte)unaff_EBX;
-  bVar13 = CARRY1(*unaff_EDI,bVar9) || CARRY1(*unaff_EDI + bVar9,bVar16);
-  *unaff_EDI = *unaff_EDI + bVar9 + bVar16;
-  in(uVar8);
-  bVar2 = *pbVar7;
-  bVar10 = (byte)((uint)pbVar7 >> 8);
-  bVar11 = *pbVar7;
-  *pbVar7 = bVar11 + bVar10 + bVar13;
-  iVar6 = in(uVar8);
-  bVar18 = (byte)((ushort)in_stack_1 >> 8);
-  bVar13 = CARRY1(bVar18,(byte)iVar6) ||
-           CARRY1(bVar18 + (byte)iVar6,CARRY1(bVar2,bVar10) || CARRY1(bVar11 + bVar10,bVar13));
-  pbVar14 = (byte *)(iVar6 + -0x13);
-  bVar16 = CARRY1(*pbVar14,bVar9) || CARRY1(*pbVar14 + bVar9,bVar13);
-  *pbVar14 = *pbVar14 + bVar9 + bVar13;
-  pbVar14 = unaff_EBX + -0x13;
-  bVar11 = (byte)((uint)extraout_ECX >> 8);
-  bVar2 = *pbVar14 + bVar11;
-  bVar13 = CARRY1(*pbVar14,bVar11) || CARRY1(bVar2,bVar16);
-  *pbVar14 = bVar2 + bVar16;
-  bVar16 = CARRY1(bRam_?,bVar15) || CARRY1(bRam_? + bVar15,bVar13);
-  bRam_? = bRam_? + bVar15 + bVar13;
-  pbVar14 = (byte *)(extraout_ECX + -0x5befb913);
-  bVar13 = CARRY1(*pbVar14,bVar12) || CARRY1(*pbVar14 + bVar12,bVar16);
-  *pbVar14 = *pbVar14 + bVar12 + bVar16;
-  uVar19 = in(uVar8);
-  pbVar14 = unaff_EDI + 0x31046ed;
-  bVar16 = CARRY1(*pbVar14,bVar10) || CARRY1(*pbVar14 + bVar10,bVar13);
-  *pbVar14 = *pbVar14 + bVar10 + bVar13;
-  bVar10 = (byte)uVar19;
-  out(uVar8,bVar10);
-  bVar13 = CARRY1(*unaff_EBX,bVar10) || CARRY1(*unaff_EBX + bVar10,bVar16);
-  *unaff_EBX = *unaff_EBX + bVar10 + bVar16;
-  out(uVar8,bVar10);
-  bVar16 = CARRY1(*unaff_EBX,bVar10) || CARRY1(*unaff_EBX + bVar10,bVar13);
-  *unaff_EBX = *unaff_EBX + bVar10 + bVar13;
-  out(uVar8,bVar10);
-  bVar13 = CARRY1(*unaff_EBX,bVar10) || CARRY1(*unaff_EBX + bVar10,bVar16);
-  *unaff_EBX = *unaff_EBX + bVar10 + bVar16;
-  out(uVar8,bVar10);
-  bVar2 = *unaff_EBX;
-  bVar11 = *unaff_EBX;
-  *unaff_EBX = bVar11 + bVar10 + bVar13;
-  out(uVar8,bVar10);
-  uVar8 = (undefined2)
-           CONCAT31((int3)((uint)pbVar7 >> 8),
-                    bVar12 + (char)extraout_ECX +
-                    (CARRY1(bVar2,bVar10) || CARRY1(bVar11 + bVar10,bVar13)));
-  in(uVar8);
-  in(uVar8);
-  pcVar20 = (code *)swi(3);
-  pSVar3 = (String *)(*pcVar20)();
+  if (!bVar2) {
+    bVar6 = *unaff_EBX;
+    bVar7 = (byte)((ulonglong)uVar5 >> 0x28);
+    *unaff_EBX = *unaff_EBX + bVar7;
+    bVar8 = (byte)uVar5;
+    bVar2 = CARRY1(in_stack_9,bVar8) ||
+             CARRY1(in_stack_9 + bVar8,!CARRY1(bVar6,bVar7));
+    bVar10 = (byte)((ulonglong)uVar5 >> 0x20);
+    bVar6 = bVar10 + bVar8;
+    bVar11 = CARRY1(bVar10,bVar8) || CARRY1(bVar6,bVar2);
+    bVar6 = bVar6 + bVar2;
+    bVar12 = (byte)((ushort)extraout_CX >> 8);
+    bVar10 = bVar12 + bVar6;
+    bVar2 = CARRY1(bVar12,bVar6) || CARRY1(bVar10,bVar11);
+    bVar13 = (byte)extraout_CX;
+    bVar10 = bVar10 + bVar11;
+    bVar12 = bVar8 + bVar10;
+    bVar14 = (byte)((uint)unaff_EBX >> 8);
+    bVar11 = CARRY1((byte)unaff_EBX,bVar14) ||
+             CARRY1((byte)unaff_EBX + bVar14,CARRY1(bVar8,bVar10) || CARRY1(bVar12,bVar2));
+    pbVar15 = (byte *)(unaff_EDI + -0xc);
+    bVar16 = CARRY1(*pbVar15,bVar13) || CARRY1(*pbVar15 + bVar13,bVar11);
+    *pbVar15 = *pbVar15 + bVar13 + bVar11;
+    pbVar15 = (byte *)(CONCAT31((int3)((ulonglong)uVar5 >> 0x28),bVar6) + -0xc);
+    bVar6 = *pbVar15;
+    bVar8 = (byte)((ulonglong)uVar5 >> 8);
+    bVar10 = *pbVar15 + bVar8;
+    *pbVar15 = bVar10 + bVar16;
+    pcVar17 = (char *)(CONCAT31((int3)((ulonglong)uVar5 >> 8),bVar12 + bVar2) + -0x64efb90c);
+    *pcVar17 = *pcVar17 + bVar13 +
+              (CARRY1(in_stack_1,bVar7) ||
+              CARRY1(in_stack_1 + bVar7,CARRY1(bVar6,bVar8) || CARRY1(bVar10,bVar16)));
+    do {
+                    /* WARNING: Do nothing block with infinite loop */
+    } while( true );
+  }
+code_?:
+  pSVar3 = TM::TM__(StringLiteral__color___2___3___color__eliminat,(MethodInfo *)0x0);
   return pSVar3;
 }
 

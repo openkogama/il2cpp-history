@@ -20,16 +20,12 @@ void Assembly-CSharp.dll::HealingIndicator::HealingIndicator_Awake
 }
 
 
-/* Void ShowHealing(Single, MVPlayer, PlayerKilledByType) */
+/* Void ShowHealing(Single, MVPlayer) */
 
 void Assembly-CSharp.dll::HealingIndicator::HealingIndicator_ShowHealing
-               (HealingIndicator *this,float damageAmount,MVPlayer *damageDealer,
-               PlayerKilledByType__Enum damageType,MethodInfo *method)
+               (HealingIndicator *this,float healingAmount,MVPlayer *healer,MethodInfo *method)
 
 {
-  if (0.0 <= damageAmount) {
-    return;
-  }
   UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
             ((Behaviour *)this,1,(MethodInfo *)0x0);
   pAVar1 = (this->fields).curve;
@@ -37,18 +33,20 @@ void Assembly-CSharp.dll::HealingIndicator::HealingIndicator_ShowHealing
     pKVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_GetKeys
                        (pAVar1,(MethodInfo *)0x0);
     pAVar1 = (this->fields).curve;
-    if ((pAVar1 != (AnimationCurve *)0x0) &&
-       (iVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_get_length
-                          (pAVar1,(MethodInfo *)0x0), pKVar2 != (Keyframe__Array *)0x0)) {
-      if (iVar3 - 1U < pKVar2->max_length) {
-        fVar4 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Single,System::
-                Single]::KeyValuePair_2_System_Single_System_Single__get_Key
-                          ((KeyValuePair_2_System_Single_System_Single_ *)
-                           (pKVar2->vector + iVar3 + -1),(MethodInfo *)0x0);
-        (this->fields).targetTime = fVar4;
-        return;
+    if (pAVar1 != (AnimationCurve *)0x0) {
+      iVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_get_length
+                        (pAVar1,(MethodInfo *)0x0);
+      if (pKVar2 != (Keyframe__Array *)0x0) {
+        if (iVar3 - 1U < pKVar2->max_length) {
+          fVar4 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Single,System::
+                  Single]::KeyValuePair_2_System_Single_System_Single__get_Key
+                            ((KeyValuePair_2_System_Single_System_Single_ *)
+                             (pKVar2->vector + iVar3 + -1),(MethodInfo *)0x0);
+          (this->fields).targetTime = fVar4;
+          return;
+        }
+        goto code_?;
       }
-      goto code_?;
     }
   }
   func_?();

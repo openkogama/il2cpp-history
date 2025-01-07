@@ -241,10 +241,10 @@ float Assembly-CSharp.dll::ImpactState::ImpactState_UpdateImpactState
           fStack_14 = ((LStack_8._current.material)->fields)._PhysicalProperties_k__BackingField.
                       staticFriction;
           if (interactableLocal == (MVInteractableBase *)0x0) goto code_?;
-          pMStack_10 = (interactableLocal->klass->vtable).__unknown_6.method;
+          pMStack_10 = (interactableLocal->klass->vtable).__unknown_8.method;
           fVar24 = (float10)(*(code *)pMStack_10)
-                                      (interactableLocal,0xf,fStack_13,
-                                       (interactableLocal->klass->vtable).__unknown_7.methodPtr);
+                                      (interactableLocal,0x10,fStack_13,
+                                       (interactableLocal->klass->vtable).__unknown_9.methodPtr);
           pMStack_10 = (MethodInfo *)(float)fVar24;
           (this->fields).averageSoftnessPrevFrame = (float)pMStack_10 + fStack_9;
         }

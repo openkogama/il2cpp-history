@@ -255,19 +255,20 @@ code_?:
   }
 code_?:
   uVar16 = func_?();
+  iVar17 = extraout_ECX_00;
+  do {
+    iVar17 = iVar17 + -1;
+  } while (iVar17 != 0);
   in_AF = 9 < ((byte)uVar16 & 0xf) | in_AF;
-  uVar17 = CONCAT31((int3)((uint)uVar16 >> 8),(byte)uVar16 + in_AF * -6) & 0xffffff0f;
-  bVar18 = (byte)uVar17;
-  pcVar19 = (char *)(CONCAT22((short)(uVar17 >> 0x10),
-                             CONCAT11((char)((uint)uVar16 >> 8) - in_AF,bVar18)) + -5);
-  *pcVar19 = *pcVar19 + bVar18 + in_AF;
-  pcVar19 = (char *)(CONCAT22((short)((uint)&stack0xfffffffc >> 0x10),
-                             CONCAT11(((byte)((uint)&stack0xfffffffc >> 8) ^ 0x3f) + extraout_DL,
-                                      (char)&stack0xfffffffc)) + -0x33efc003);
-  *pcVar19 = *pcVar19 + (char)&stack0xfffffffc + (9 < bVar18 | in_AF);
-  pcVar20 = (code *)swi(3);
-  bVar21 = (*pcVar20)();
-  return bVar21;
+  uVar18 = CONCAT31((int3)((uint)uVar16 >> 8),(byte)uVar16 + in_AF * -6) & 0xffffff0f;
+  cVar19 = (char)uVar18;
+  *(byte *)&pLVar1->klass = *(char *)&pLVar1->klass + extraout_DH + in_AF;
+  pcVar20 = (char *)(CONCAT22((short)(uVar18 >> 0x10),
+                             CONCAT11((char)((uint)uVar16 >> 8) - in_AF,cVar19)) + 0x10);
+  *pcVar20 = *pcVar20 + cVar19;
+  pcVar21 = (code *)swi(3);
+  bVar22 = (*pcVar21)();
+  return bVar22;
 }
 
 

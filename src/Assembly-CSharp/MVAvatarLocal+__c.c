@@ -1,7 +1,7 @@
 
-/* Void <GetSpawnTransform>b__139_0(SpawnRoleDataReceiver) */
+/* Void <GetSpawnTransform>b__141_0(SpawnRoleDataReceiver) */
 
-void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__GetSpawnTransform_b__139_0
+void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__GetSpawnTransform_b__141_0
                (MVAvatarLocal_c *this,SpawnRoleDataReceiver *receiver,MethodInfo *method)
 
 {
@@ -28,9 +28,9 @@ void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__GetSpawnTransform_
 }
 
 
-/* Void <GetSpawnTransform>b__139_1(SpawnRoleDataReceiver) */
+/* Void <GetSpawnTransform>b__141_1(SpawnRoleDataReceiver) */
 
-void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__GetSpawnTransform_b__139_1
+void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__GetSpawnTransform_b__141_1
                (MVAvatarLocal_c *this,SpawnRoleDataReceiver *receiver,MethodInfo *method)
 
 {
@@ -57,9 +57,9 @@ void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__GetSpawnTransform_
 }
 
 
-/* Void <LeaveVehicle>b__82_0(SpawnRoleDataReceiver) */
+/* Void <LeaveVehicle>b__83_0(SpawnRoleDataReceiver) */
 
-void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__LeaveVehicle_b__82_0
+void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__LeaveVehicle_b__83_0
                (MVAvatarLocal_c *this,SpawnRoleDataReceiver *receiver,MethodInfo *method)
 
 {
@@ -86,10 +86,10 @@ void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__LeaveVehicle_b__82
 }
 
 
-/* Void <OnCheckpointReachedResetRevive>b__140_0(SpawnRoleDataReceiver) */
+/* Void <OnCheckpointReachedResetRevive>b__142_0(SpawnRoleDataReceiver) */
 
 void Assembly-CSharp.dll::MVAvatarLocal+<>c::
-     MVAvatarLocal_c__OnCheckpointReachedResetRevive_b__140_0
+     MVAvatarLocal_c__OnCheckpointReachedResetRevive_b__142_0
                (MVAvatarLocal_c *this,SpawnRoleDataReceiver *receiver,MethodInfo *method)
 
 {
@@ -120,9 +120,9 @@ void Assembly-CSharp.dll::MVAvatarLocal+<>c::
 }
 
 
-/* Void <OnEnterVehicle>b__86_0(SpawnRoleDataReceiver) */
+/* Void <OnEnterVehicle>b__87_0(SpawnRoleDataReceiver) */
 
-void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__OnEnterVehicle_b__86_0
+void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__OnEnterVehicle_b__87_0
                (MVAvatarLocal_c *this,SpawnRoleDataReceiver *receiver,MethodInfo *method)
 
 {
@@ -149,9 +149,9 @@ void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__OnEnterVehicle_b__
 }
 
 
-/* Void <Suicide>b__128_0(SpawnRoleDataReceiver) */
+/* Void <Suicide>b__129_0(SpawnRoleDataReceiver) */
 
-void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__Suicide_b__128_0
+void Assembly-CSharp.dll::MVAvatarLocal+<>c::MVAvatarLocal_c__Suicide_b__129_0
                (MVAvatarLocal_c *this,SpawnRoleDataReceiver *receiver,MethodInfo *method)
 
 {

@@ -741,7 +741,7 @@ void Assembly-CSharp.dll::Avatar::Avatar__ctor(Avatar *this,MethodInfo *method)
   (this->fields).currentModifierByteState =
        (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)pDVar1;
   func_?(&(this->fields).currentModifierByteState,pDVar1);
-  pBVar2 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x1b);
+  pBVar2 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x1c);
   (this->fields).modifierEffectCount = pBVar2;
   func_?(&(this->fields).modifierEffectCount,pBVar2);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor

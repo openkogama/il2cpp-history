@@ -402,10 +402,10 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_DieByFa
               NotificationController::NotificationController_OnNotificationReceived
                         (NotificationType__Enum_Kill,
                          (Dictionary_2_System_Object_System_Object_ *)this_00,(MethodInfo *)0x0);
-              if (pHRam00000050 != (HashSet_1_System_ByteEnum_ *)0x0) {
+              if (pHRam00000054 != (HashSet_1_System_ByteEnum_ *)0x0) {
                 bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
                         HashSet_1_System_ByteEnum__Contains
-                                  (pHRam00000050,10,
+                                  (pHRam00000054,10,
                                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
                                   );
                 if (bVar2 == 0) {
@@ -1286,11 +1286,11 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_HandleS
                             (NotificationType__Enum_Kill,
                              (Dictionary_2_System_Object_System_Object_ *)this_00,(MethodInfo *)0x0)
                   ;
-                  if (*(HashSet_1_System_ByteEnum_ **)(unaff_retaddr + 0x50) !=
+                  if (*(HashSet_1_System_ByteEnum_ **)(unaff_retaddr + 0x54) !=
                       (HashSet_1_System_ByteEnum_ *)0x0) {
                     bVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[System::
                             ByteEnum]::HashSet_1_System_ByteEnum__Contains
-                                      (*(HashSet_1_System_ByteEnum_ **)(unaff_retaddr + 0x50),0xe,
+                                      (*(HashSet_1_System_ByteEnum_ **)(unaff_retaddr + 0x54),0xe,
                                        MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
                                       );
                     if (bVar8 == 0) {
@@ -1570,9 +1570,9 @@ code_?:
                            );
         (pMVar1->fields).avatarSound = pAVar5;
         func_?(&(pMVar1->fields).avatarSound,pAVar5);
-        pAVar6 = this_01[7].fields.settings;
-        if (pAVar6 != (AvatarInputControllerTouchSettings *)0x0) {
-          pAVar7 = pAVar6[6].klass;
+        pAVar6 = this_01[8].klass;
+        if (pAVar6 != (AvatarInputControllerTouch__Class *)0x0) {
+          pDVar7 = (Delegate *)(pAVar6->_1).cctor_thread;
           pAVar5 = (this->fields).avatarSound;
           pNVar8 = (NavMesh_OnNavMeshPreUpdate *)
                    func_?(TypeInfo__AvatarMotor__OnWallJumpDelegate);
@@ -1580,58 +1580,57 @@ code_?:
           NavMesh_OnNavMeshPreUpdate__ctor
                     (pNVar8,(Object *)pAVar5,MethodInfo__AvatarSound__HandleWallJump__,
                      (MethodInfo *)0x0);
-          pAVar7 = (AvatarInputControllerTouchSettings__Class *)
-                    mscorlib.dll::System::Delegate::Delegate_Combine
-                              ((Delegate *)pAVar7,(Delegate *)pNVar8,(MethodInfo *)0x0);
-          if (pAVar7 == (AvatarInputControllerTouchSettings__Class *)0x0) {
-            pAVar6[6].klass = (AvatarInputControllerTouchSettings__Class *)0x0;
+          pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                              (pDVar7,(Delegate *)pNVar8,(MethodInfo *)0x0);
+          if (pDVar7 == (Delegate *)0x0) {
+            (pAVar6->_1).cctor_thread = 0;
           }
           else {
-            pAVar9 = (AvatarInputControllerTouchSettings__Class *)0x0;
-            if ((AvatarMotor_OnWallJumpDelegate__Class *)(pAVar7->_0).image ==
+            pDVar9 = (Delegate *)0x0;
+            if ((AvatarMotor_OnWallJumpDelegate__Class *)pDVar7->klass ==
                 TypeInfo__AvatarMotor__OnWallJumpDelegate) {
-              pAVar9 = pAVar7;
+              pDVar9 = pDVar7;
             }
-            if (pAVar9 == (AvatarInputControllerTouchSettings__Class *)0x0) goto code_?;
-            pAVar6[6].klass = pAVar9;
-            pAVar9 = (AvatarInputControllerTouchSettings__Class *)0x0;
-            if ((AvatarMotor_OnWallJumpDelegate__Class *)(pAVar7->_0).image ==
+            if (pDVar9 == (Delegate *)0x0) goto code_?;
+            (pAVar6->_1).cctor_thread = (uint32_t)pDVar9;
+            pDVar9 = (Delegate *)0x0;
+            if ((AvatarMotor_OnWallJumpDelegate__Class *)pDVar7->klass ==
                 TypeInfo__AvatarMotor__OnWallJumpDelegate) {
-              pAVar9 = pAVar7;
+              pDVar9 = pDVar7;
             }
-            if (pAVar9 == (AvatarInputControllerTouchSettings__Class *)0x0) goto code_?;
+            if (pDVar9 == (Delegate *)0x0) goto code_?;
           }
           func_?();
           object = _UNK_?;
-          pvVar10 = pAVar6[0x17].fields._._._._.m_CachedPtr;
-          if (pvVar10 != (void *)0x0) {
-            pDVar11 = *(Delegate **)((int)pvVar10 + 0x7c);
+          pIVar10 = pAVar6[1].vtable.GetHashCode.methodPtr;
+          if (pIVar10 != (Il2CppMethodPointer)0x0) {
+            pDVar7 = *(Delegate **)(pIVar10 + 0x7c);
             pNVar8 = (NavMesh_OnNavMeshPreUpdate *)
                      func_?(TypeInfo__AvatarMotor__OnActiveBounceDelegate);
             UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
             NavMesh_OnNavMeshPreUpdate__ctor
                       (pNVar8,object,MethodInfo__AvatarSound__HandleActiveBounce__,(MethodInfo *)0x0
                       );
-            pDVar11 = mscorlib.dll::System::Delegate::Delegate_Combine
-                                (pDVar11,(Delegate *)pNVar8,(MethodInfo *)0x0);
-            if (pDVar11 == (Delegate *)0x0) {
-              *(undefined4 *)((int)pvVar10 + 0x7c) = 0;
+            pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                (pDVar7,(Delegate *)pNVar8,(MethodInfo *)0x0);
+            if (pDVar7 == (Delegate *)0x0) {
+              *(undefined4 *)(pIVar10 + 0x7c) = 0;
               func_?();
               return;
             }
-            pDVar12 = (Delegate *)0x0;
-            if ((AvatarMotor_OnActiveBounceDelegate__Class *)pDVar11->klass ==
+            pDVar9 = (Delegate *)0x0;
+            if ((AvatarMotor_OnActiveBounceDelegate__Class *)pDVar7->klass ==
                 TypeInfo__AvatarMotor__OnActiveBounceDelegate) {
-              pDVar12 = pDVar11;
+              pDVar9 = pDVar7;
             }
-            if (pDVar12 == (Delegate *)0x0) goto code_?;
-            *(Delegate **)((int)pvVar10 + 0x7c) = pDVar12;
-            pDVar12 = (Delegate *)0x0;
-            if ((AvatarMotor_OnActiveBounceDelegate__Class *)pDVar11->klass ==
+            if (pDVar9 == (Delegate *)0x0) goto code_?;
+            *(Delegate **)(pIVar10 + 0x7c) = pDVar9;
+            pDVar9 = (Delegate *)0x0;
+            if ((AvatarMotor_OnActiveBounceDelegate__Class *)pDVar7->klass ==
                 TypeInfo__AvatarMotor__OnActiveBounceDelegate) {
-              pDVar12 = pDVar11;
+              pDVar9 = pDVar7;
             }
-            if (pDVar12 != (Delegate *)0x0) {
+            if (pDVar9 != (Delegate *)0x0) {
               func_?();
               return;
             }
@@ -1641,24 +1640,24 @@ code_?:
       }
       goto code_?;
     }
-    pMVar13 = (MVPickupOwner_OnHandleFiringDelegate *)0x0;
+    pMVar11 = (MVPickupOwner_OnHandleFiringDelegate *)0x0;
     if (pMVar3->klass == TypeInfo__MVPickupOwner__OnHandleFiringDelegate) {
-      pMVar13 = pMVar3;
+      pMVar11 = pMVar3;
     }
-    if (pMVar13 == (MVPickupOwner_OnHandleFiringDelegate *)0x0) goto code_?;
-    (pAVar2->fields)._.onHandleFiring = pMVar13;
-    pMVar13 = (MVPickupOwner_OnHandleFiringDelegate *)0x0;
+    if (pMVar11 == (MVPickupOwner_OnHandleFiringDelegate *)0x0) goto code_?;
+    (pAVar2->fields)._.onHandleFiring = pMVar11;
+    pMVar11 = (MVPickupOwner_OnHandleFiringDelegate *)0x0;
     if (pMVar3->klass == TypeInfo__MVPickupOwner__OnHandleFiringDelegate) {
-      pMVar13 = pMVar3;
+      pMVar11 = pMVar3;
     }
-    if (pMVar13 != (MVPickupOwner_OnHandleFiringDelegate *)0x0) goto code_?;
+    if (pMVar11 != (MVPickupOwner_OnHandleFiringDelegate *)0x0) goto code_?;
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

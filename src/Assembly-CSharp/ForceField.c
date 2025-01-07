@@ -124,10 +124,10 @@ void Assembly-CSharp.dll::ForceField::ForceField_ApplyNoFriction
 {
   pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   if (interactable != (MVInteractableBase *)0x0) {
-    pIStack_1 = (interactable->klass->vtable).__unknown_3.methodPtr;
+    pIStack_1 = (interactable->klass->vtable).__unknown_5.methodPtr;
     uStack_2 = 0;
     uStack_3 = 0xffffffff;
-    (*(code *)(interactable->klass->vtable).__unknown_2.method)(interactable,7);
+    (*(code *)(interactable->klass->vtable).__unknown_4.method)(interactable,7);
     return;
   }
   uVar4 = func_?(&uStack_3);
@@ -248,8 +248,8 @@ void Assembly-CSharp.dll::ForceField::ForceField_FixedUpdate(ForceField *this,Me
                         );
       if (bVar10 == 0) break;
       if (HStack_6._current == (Object *)0x0) goto code_?;
-      (**(code **)&(HStack_6._current)->klass[1]._0.this_arg.attrs)
-                (HStack_6._current,7,0xffffffff,0,(HStack_6._current)->klass[1]._0.element_class);
+      (*(code *)(HStack_6._current)->klass[1]._0.parent)
+                (HStack_6._current,7,0xffffffff,0,(HStack_6._current)->klass[1]._0.generic_class);
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57

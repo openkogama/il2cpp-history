@@ -1,9 +1,9 @@
 
-/* Void <InitializeShield>b__1(SpawnRoleDataReceiver) */
+/* Void <InitializeHealth>b__1(SpawnRoleDataReceiver) */
 
-void Assembly-CSharp.dll::MVAvatarLocal+<>c__DisplayClass124_0::
-     MVAvatarLocal_c_DisplayClass124_0__InitializeShield_b__1
-               (MVAvatarLocal_c_DisplayClass124_0 *this,SpawnRoleDataReceiver *receiver,
+void Assembly-CSharp.dll::MVAvatarLocal+<>c__DisplayClass128_0::
+     MVAvatarLocal_c_DisplayClass128_0__InitializeHealth_b__1
+               (MVAvatarLocal_c_DisplayClass128_0 *this,SpawnRoleDataReceiver *receiver,
                MethodInfo *method)
 
 {
@@ -18,8 +18,8 @@ void Assembly-CSharp.dll::MVAvatarLocal+<>c__DisplayClass124_0::
   MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleReceiverVariable<float>__set_Value_float_
   ;
   if (receiver != (SpawnRoleDataReceiver *)0x0) {
-    this_00 = (receiver->fields).shield;
-    pOVar1 = (this->fields).shield;
+    this_00 = (receiver->fields).health;
+    pOVar1 = (this->fields).health;
     if (this_00 != (SpawnRoleReceiverVariable_1_System_Single_ *)0x0) {
       if (pOVar1 != (Object *)0x0) {
         pSVar2 = TypeInfo__System__Single;

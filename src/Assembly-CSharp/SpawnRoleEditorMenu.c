@@ -318,12 +318,36 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
     }
     colorStyle = ColorStyle__Enum_OffGray;
   }
-  pCVar2 = Styles::Styles_GetColor((Color *)&fStack_3,colorStyle,(MethodInfo *)0x0);
+  pCVar2 = Styles::Styles_GetColor(&CStack_3,colorStyle,(MethodInfo *)0x0);
+  cVar4 = '\0';
   if (pIVar1 == (Image *)0x0) {
-    func_?();
+    CStack_3.g = (float)&UNK_?;
+    uVar5 = func_?();
+    iVar6 = (int)((ulonglong)uVar5 >> 0x20);
+    uVar7 = unaff_EDI + 1;
+    pcVar8 = (char *)((int)uVar5 + iVar6);
+    bVar9 = (byte)extraout_ECX;
+    cVar10 = *pcVar8;
+    *pcVar8 = *pcVar8 >> (bVar9 & 0x1f);
+    bVar11 = (extraout_ECX & 0x1f) == 0;
+    bVar12 = (extraout_ECX & 0x1f) != 0;
+    iVar13 = CONCAT22((short)((ulonglong)uVar5 >> 0x10),
+                     CONCAT11((!bVar12 && (int)uVar7 < 0 || bVar12 && *pcVar8 < '\0') << 7 |
+                              (!bVar12 && uVar7 == 0 || bVar12 && *pcVar8 == '\0') << 6 | in_AF << 4
+                              | (!bVar12 && (POPCOUNT(uVar7 & 0xff) & 1U) == 0 ||
+                                bVar12 && (POPCOUNT(*pcVar8) & 1U) == 0) << 2 | 2U |
+                              bVar11 * cVar4 | !bVar11 * ((cVar10 >> (bVar9 & 0x1f) - 1 & 1U) != 0),
+                              (char)uVar5));
+    pcVar8 = (char *)(iVar13 + iVar6);
+    *pcVar8 = *pcVar8 >> (bVar9 & 0x1f);
+    pcVar8 = (char *)(iVar13 + iVar6);
+    *pcVar8 = *pcVar8 >> (bVar9 & 0x1f);
+    pcVar14 = (code *)swi(3);
+    (*pcVar14)();
     return;
   }
-  fStack_3 = pCVar2->a;
+  CStack_3.r = pCVar2->a;
+  CStack_3.g = (float)(pIVar1->klass->vtable).get_raycastTarget.methodPtr;
   (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,pCVar2->r,pCVar2->g,pCVar2->b);
   return;
 }

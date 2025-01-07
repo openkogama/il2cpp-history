@@ -105,7 +105,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
     fVar1 = (this->fields).originalXPosition;
     if (pTVar3 != (Transform *)0x0) {
       pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                          ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
+                         ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
       uVar6 = pVVar5->x;
       uVar7 = pVVar5->y;
       fVar8 = 0.0;
@@ -135,7 +135,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
     fVar4 = (this->fields).slideMoveAmount;
     if (pTVar3 != (Transform *)0x0) {
       pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                          ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
+                         ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
       uVar9 = pVVar5->x;
       uVar10 = pVVar5->y;
       fVar11 = 0.0;
@@ -157,21 +157,12 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
       }
     }
   }
-  bVar12 = 0;
   func_?();
-  puVar13 = (uint *)((int)&this[-0x1058966].fields.slideOutDelay + 3);
-  bVar14 = (undefined1 *)*puVar13 < &stack0xfffffffc ||
-           *puVar13 - (int)&stack0xfffffffc < (uint)bVar12;
-  *puVar13 = (*puVar13 - (int)&stack0xfffffffc) - (uint)bVar12;
-  pbVar15 = (byte *)(extraout_EDX + -0x52);
-  bVar12 = *pbVar15;
-  bVar16 = *pbVar15;
-  *pbVar15 = bVar16 + extraout_CL + bVar14;
-  *extraout_EDX =
-       *extraout_EDX + unaff_BL + '\x02' +
-       (CARRY1(bVar12,extraout_CL) || CARRY1(bVar16 + extraout_CL,bVar14));
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar12 = (char *)(CONCAT31((int3)((uint)extraout_EDX >> 8),(byte)extraout_EDX + unaff_BL) +
+                   -0x33efbc4a);
+  *pcVar12 = *pcVar12 + 'C' + CARRY1((byte)extraout_EDX,unaff_BL);
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

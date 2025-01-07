@@ -406,10 +406,10 @@ Vector3 * Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_GetVehicleInputV
             pTStack_7 = (Transform *)(fVar1 * QStack_2.w * (float)pIStack_12 + fVar14);
             pMVar40 = (this->fields)._.interactableLocal;
             if (pMVar40 != (MVInteractableBase *)0x0) {
-              pMVar41 = (pMVar40->klass->vtable).__unknown_6.method;
+              pMVar41 = (pMVar40->klass->vtable).__unknown_8.method;
               uStack_20 = CONCAT44(pMVar41,(undefined4)uStack_20);
               fVar5 = (float10)(*(code *)pMVar41)(pMVar40,3,(this->fields).thrustFactor,
-                                                  (pMVar40->klass->vtable).__unknown_7.methodPtr);
+                                                  (pMVar40->klass->vtable).__unknown_9.methodPtr);
               fVar14 = (float)fVar5;
               uStack_20 = CONCAT44(fVar14,(undefined4)uStack_20);
               fVar1 = (this->fields).mass;

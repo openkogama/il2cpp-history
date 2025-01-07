@@ -139,7 +139,7 @@ float Assembly-CSharp.dll::Cube::Cube_CalculateAOLightCheap
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__ContainsKey_MV__WorldObject__IntVector_
                    );
-    func_?(0x1084);
+    func_?(0x53c4);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&TypeInfo__SharedCubeFunctions);
     cRam_? = '\x01';
@@ -1031,107 +1031,106 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
     func_?();
     cRam_? = '\x01';
   }
-  this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-          *)func_?();
+  pLVar3 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+             *)func_?();
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
   MultiColumnCollectionHeader+ViewState+ColumnState]::
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-            (this,8,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_)
-  ;
-  this_00 = (MethodInfo *)func_?();
-  puVar3 = &UNK_?;
-  pMVar4 = this_00;
+            (pLVar3,8,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_);
+  this = (MethodInfo *)func_?();
+  puVar4 = &UNK_?;
+  pMVar5 = this;
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
   MultiColumnCollectionHeader+ViewState+ColumnState]::
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
             ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-              *)this_00,8,
+              *)this,8,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_);
-  iVar5 = 0;
+  iVar6 = 0;
   if (cubeCorners == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
-  while (iVar5 < (cubeCorners->fields)._size) {
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+  while (iVar6 < (cubeCorners->fields)._size) {
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,
-                         iVar5,
+                         iVar6,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    pMVar7 = 
+    pMVar8 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    uVar8 = *(undefined8 *)pPVar6;
-    fVar9 = (float)pPVar6->SecondAxisSign;
-    PVar10 = *pPVar6;
-    if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                 *)0x0) goto code_?;
-    piVar11 = &(this->fields)._version;
-    *piVar11 = *piVar11 + 1;
-    pMVar12 = (this->fields)._items;
-    if (pMVar12 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+    uVar9 = *(undefined8 *)pPVar7;
+    fVar10 = (float)pPVar7->SecondAxisSign;
+    PVar11 = *pPVar7;
+    if (pLVar3 ==
+        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
+        )0x0) goto code_?;
+    piVar12 = &(pLVar3->fields)._version;
+    *piVar12 = *piVar12 + 1;
+    pMVar13 = (pLVar3->fields)._items;
+    if (pMVar13 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
     goto code_?;
-    uVar13 = (this->fields)._size;
-    if (uVar13 < pMVar12->max_length) {
-      (this->fields)._size = uVar13 + 1;
-      if (pMVar12->max_length <= uVar13) goto code_?;
-      *(undefined8 *)(&pMVar12->vector[0].index + uVar13 * 3) = uVar8;
-      (&pMVar12->vector[0].actualWidth)[uVar13 * 3] = fVar9;
-      iVar5 = iVar5 + 1;
+    uVar14 = (pLVar3->fields)._size;
+    if (uVar14 < pMVar13->max_length) {
+      (pLVar3->fields)._size = uVar14 + 1;
+      if (pMVar13->max_length <= uVar14) goto code_?;
+      *(undefined8 *)(&pMVar13->vector[0].index + uVar14 * 3) = uVar9;
+      (&pMVar13->vector[0].actualWidth)[uVar14 * 3] = fVar10;
+      iVar6 = iVar6 + 1;
     }
     else {
       mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
       List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
-                ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,PVar10,
-                 pMVar7->klass->rgctx_data[0xe].method);
-      iVar5 = iVar5 + 1;
+                ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,PVar11,
+                 pMVar8->klass->rgctx_data[0xe].method);
+      iVar6 = iVar6 + 1;
     }
   }
-  iVar5 = 0;
-  while (iVar5 < (cubeCorners->fields)._size) {
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+  iVar6 = 0;
+  while (iVar6 < (cubeCorners->fields)._size) {
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,
-                         iVar5,
+                         iVar6,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    pMVar7 = 
+    pMVar8 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    uVar8 = *(undefined8 *)pPVar6;
-    fVar9 = (float)pPVar6->SecondAxisSign;
-    PVar10 = *pPVar6;
-    if (this_00 == (MethodInfo *)0x0) goto code_?;
-    this_00->klass = (Il2CppClass *)((int)&this_00->klass->image + 1);
-    pMVar12 = ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___Fields
-                *)&this_00->invoker_method)->_items;
-    if (pMVar12 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+    uVar9 = *(undefined8 *)pPVar7;
+    fVar10 = (float)pPVar7->SecondAxisSign;
+    PVar11 = *pPVar7;
+    if (this == (MethodInfo *)0x0) goto code_?;
+    this->klass = (Il2CppClass *)((int)&this->klass->image + 1);
+    pMVar13 = ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___Fields
+                *)&this->invoker_method)->_items;
+    if (pMVar13 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
     goto code_?;
-    pcVar14 = this_00->name;
-    if (pcVar14 < (char *)pMVar12->max_length) {
-      this_00->name = pcVar14 + 1;
-      if ((char *)pMVar12->max_length <= pcVar14) goto code_?;
-      *(undefined8 *)(&pMVar12->vector[0].index + (int)pcVar14 * 3) = uVar8;
-      (&pMVar12->vector[0].actualWidth)[(int)pcVar14 * 3] = fVar9;
-      iVar5 = iVar5 + 1;
+    pcVar15 = this->name;
+    if (pcVar15 < (char *)pMVar13->max_length) {
+      this->name = pcVar15 + 1;
+      if ((char *)pMVar13->max_length <= pcVar15) goto code_?;
+      *(undefined8 *)(&pMVar13->vector[0].index + (int)pcVar15 * 3) = uVar9;
+      (&pMVar13->vector[0].actualWidth)[(int)pcVar15 * 3] = fVar10;
+      iVar6 = iVar6 + 1;
     }
     else {
       mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
       List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
-                ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,PVar10,
-                 pMVar7->klass->rgctx_data[0xe].method);
-      iVar5 = iVar5 + 1;
+                ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,PVar11,
+                 pMVar8->klass->rgctx_data[0xe].method);
+      iVar6 = iVar6 + 1;
     }
   }
-  this_01 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-             *)cubeCorners;
   switch(direction) {
   default:
     goto code_?;
   case Face__Enum_Bottom:
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1139,14 +1138,15 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,3,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                 *)0x0) goto code_?;
+    if (pLVar3 ==
+        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
+        )0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,7,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,7,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1156,10 +1156,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,6,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,6,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1169,11 +1169,11 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,4,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,4,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
     direction = (Face__Enum)&UNK_?;
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1183,10 +1183,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,5,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,5,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1196,10 +1196,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,3,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,3,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1209,10 +1209,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,2,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,2,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1222,23 +1222,23 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,0,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,0,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pVVar15 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+    pVVar16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,5,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    in_stack_16 =
+    in_stack_17 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
     ;
-    puVar17 = (undefined8 *)&stack0x000000d4;
+    puVar18 = (undefined8 *)&stack0x000000d4;
     goto code_?;
   case Face__Enum_Front:
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1246,14 +1246,15 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,3,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                 *)0x0) goto code_?;
+    if (pLVar3 ==
+        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
+        )0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,0,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,0,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1263,10 +1264,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,1,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,1,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1276,11 +1277,11 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,3,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,3,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
     direction = (Face__Enum)&UNK_?;
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1290,10 +1291,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,2,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,2,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1303,10 +1304,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,7,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,7,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1316,10 +1317,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,6,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,6,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1329,23 +1330,23 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,4,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,4,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pVVar15 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+    pVVar16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,6,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    in_stack_16 =
+    in_stack_17 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
     ;
-    puVar17 = (undefined8 *)&stack0x000000d4;
+    puVar18 = (undefined8 *)&stack0x000000d4;
     goto code_?;
   case Face__Enum_Back:
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1353,13 +1354,13 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,3,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    if (this_00 == (MethodInfo *)0x0) goto code_?;
+    if (this == (MethodInfo *)0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,0,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,0,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1369,10 +1370,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,1,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,1,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1382,11 +1383,11 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,3,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,3,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
     direction = (Face__Enum)&UNK_?;
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1396,10 +1397,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,2,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,2,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1409,10 +1410,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,7,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,7,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1422,10 +1423,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,6,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,6,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1435,10 +1436,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,4,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,4,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1446,121 +1447,122 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,6,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    uVar18 = pPVar6->Quadrant;
-    uVar19 = pPVar6->FirstAxisSign;
-    in_stack_16 =
+    uVar19 = pPVar7->Quadrant;
+    uVar20 = pPVar7->FirstAxisSign;
+    in_stack_17 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
     ;
-    in_stack_20 = pPVar6->SecondAxisSign;
-    in_stack_21 = (VisualTreeAsset_UsingEntry *)uVar18;
-    in_stack_22 = (MethodInfo *)uVar19;
+    in_stack_21 = pPVar7->SecondAxisSign;
+    in_stack_22 = (VisualTreeAsset_UsingEntry *)uVar19;
+    in_stack_23 = (MethodInfo *)uVar20;
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,5,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,5,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    in_stack_16 =
+    in_stack_17 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
-    in_stack_21 = (VisualTreeAsset_UsingEntry *)&stack0xffffffe8;
-    in_stack_20 = 2;
-    in_stack_22 = this_00;
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    in_stack_22 = (VisualTreeAsset_UsingEntry *)&stack0xffffffe8;
+    in_stack_21 = 2;
+    in_stack_23 = this;
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        (in_stack_21,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,2,
+                        (in_stack_22,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,2,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                 *)0x0) goto code_?;
+    if (pLVar3 ==
+        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
+        )0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,0,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,0,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,3,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,3,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,1,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,1,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,0,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,0,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,2,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,2,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,1,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,1,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,3,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,3,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,6,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,6,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,4,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,4,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,7,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,7,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,5,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,5,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,4,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,4,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,6,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,6,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
     index = 5;
     break;
   case Face__Enum_Left:
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1568,13 +1570,13 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,3,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    if (this_00 == (MethodInfo *)0x0) goto code_?;
+    if (this == (MethodInfo *)0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,0,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,0,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1584,10 +1586,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,1,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,1,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1597,11 +1599,11 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,3,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,3,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
     direction = (Face__Enum)&UNK_?;
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1611,10 +1613,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,2,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,2,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1624,10 +1626,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,7,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,7,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1637,10 +1639,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,6,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,6,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1650,10 +1652,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,4,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,4,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1661,121 +1663,122 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,6,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    uVar23 = pPVar6->Quadrant;
-    uVar24 = pPVar6->FirstAxisSign;
-    in_stack_16 =
+    uVar24 = pPVar7->Quadrant;
+    uVar25 = pPVar7->FirstAxisSign;
+    in_stack_17 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
     ;
-    in_stack_20 = pPVar6->SecondAxisSign;
-    in_stack_21 = (VisualTreeAsset_UsingEntry *)uVar23;
-    in_stack_22 = (MethodInfo *)uVar24;
+    in_stack_21 = pPVar7->SecondAxisSign;
+    in_stack_22 = (VisualTreeAsset_UsingEntry *)uVar24;
+    in_stack_23 = (MethodInfo *)uVar25;
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,5,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,5,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    in_stack_16 =
+    in_stack_17 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
-    in_stack_21 = (VisualTreeAsset_UsingEntry *)&stack0xffffffe8;
-    in_stack_20 = 1;
-    in_stack_22 = this_00;
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    in_stack_22 = (VisualTreeAsset_UsingEntry *)&stack0xffffffe8;
+    in_stack_21 = 1;
+    in_stack_23 = this;
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        (in_stack_21,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,1,
+                        (in_stack_22,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,1,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                 *)0x0) goto code_?;
+    if (pLVar3 ==
+        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
+        )0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,0,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,0,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,2,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,2,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,1,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,1,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,3,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,3,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,2,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,2,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,0,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,0,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,3,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,3,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,7,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,7,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,4,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,4,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,4,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,4,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,5,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,5,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,5,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,5,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,6,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,6,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
     index = 6;
     break;
   case Face__Enum_Right:
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1783,13 +1786,13 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,3,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    if (this_00 == (MethodInfo *)0x0) goto code_?;
+    if (this == (MethodInfo *)0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,0,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,0,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1799,10 +1802,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,1,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,1,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1812,11 +1815,11 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,3,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,3,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
     direction = (Face__Enum)&UNK_?;
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1826,10 +1829,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,2,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,2,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1839,10 +1842,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,7,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,7,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1852,10 +1855,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,6,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,6,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1865,10 +1868,10 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,4,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,4,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
@@ -1876,189 +1879,192 @@ Assembly-CSharp.dll::Cube::Cube_CreateCubeCornersFromTopFace
                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,6,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    uVar25 = pPVar6->Quadrant;
-    uVar26 = pPVar6->FirstAxisSign;
-    in_stack_16 =
+    uVar26 = pPVar7->Quadrant;
+    uVar27 = pPVar7->FirstAxisSign;
+    in_stack_17 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
     ;
-    in_stack_20 = pPVar6->SecondAxisSign;
-    in_stack_21 = (VisualTreeAsset_UsingEntry *)uVar25;
-    in_stack_22 = (MethodInfo *)uVar26;
+    in_stack_21 = pPVar7->SecondAxisSign;
+    in_stack_22 = (VisualTreeAsset_UsingEntry *)uVar26;
+    in_stack_23 = (MethodInfo *)uVar27;
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,5,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,5,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    in_stack_16 =
+    in_stack_17 =
          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
-    in_stack_21 = (VisualTreeAsset_UsingEntry *)&stack0xffffffe8;
-    in_stack_20 = 3;
-    in_stack_22 = this_00;
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    in_stack_22 = (VisualTreeAsset_UsingEntry *)&stack0xffffffe8;
+    in_stack_21 = 3;
+    in_stack_23 = this;
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        (in_stack_21,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,3,
+                        (in_stack_22,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,3,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                 *)0x0) goto code_?;
+    if (pLVar3 ==
+        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
+        )0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,0,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,0,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,0,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,0,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,1,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,1,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,1,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,1,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,2,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,2,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,2,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,2,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,3,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,3,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,5,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,5,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,4,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,4,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,6,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,6,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,5,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,5,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
-    pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+    pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                         ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,7,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,7,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
     mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
     List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,6,*pPVar6,
+              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,6,*pPVar7,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
               );
     index = 4;
   }
-  pVVar15 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+  pVVar16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
             VisualTreeAsset+UsingEntry]::
             List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                       ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                       (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,index,
+                       (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,index,
                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                       );
-  puVar17 = (undefined8 *)&stack0x00000214;
+  puVar18 = (undefined8 *)&stack0x00000214;
 code_?:
-  pVVar27 = pVVar15->asset;
-  *puVar17 = *(undefined8 *)pVVar15;
-  *(VisualTreeAsset **)(puVar17 + 1) = pVVar27;
-  PVar10.FirstAxisSign = (int32_t)in_stack_1;
-  PVar10.Quadrant = (int32_t)in_stack_2;
-  PVar10.SecondAxisSign = (int32_t)puVar3;
+  pVVar28 = pVVar16->asset;
+  *puVar18 = *(undefined8 *)pVVar16;
+  *(VisualTreeAsset **)(puVar18 + 1) = pVVar28;
+  PVar11.FirstAxisSign = (int32_t)in_stack_1;
+  PVar11.Quadrant = (int32_t)in_stack_2;
+  PVar11.SecondAxisSign = (int32_t)puVar4;
   mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
   List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-            ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,in_stack_28,PVar10,pMVar4);
-  this_01 = this;
+            ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar3,in_stack_29,PVar11,pMVar5
+            );
+  cubeCorners = (List_1_UnityEngine_Vector3_ *)pLVar3;
 code_?:
   if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   Cube_GetFromTopRotation((Quaternion *)&stack0xffffffc0,direction,(MethodInfo *)0x0);
-  this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-          *)0x0;
-  cubeCorners = (List_1_UnityEngine_Vector3_ *)0x0;
-  if (this_01 !=
+  fVar10 = 0.0;
+  if ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)
+      cubeCorners !=
       (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)
       0x0) {
-    for (; (int)this < (this_01->fields)._size;
-        this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                *)((int)&this->klass + 1)) {
-      pLVar29 = this_01;
-      pLVar30 = this;
-      pMVar4 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
-      pVVar15 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+    for (; (int)fVar10 <
+           (((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+              *)cubeCorners)->fields)._size; fVar10 = (float)((int)fVar10 + 1)) {
+      pLVar3 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                 *)cubeCorners;
+      fVar30 = fVar10;
+      pMVar5 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
+      pVVar16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                 VisualTreeAsset+UsingEntry]::
                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
                           ((VisualTreeAsset_UsingEntry *)&stack0xffffffe8,
-                           (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_01,
-                           (int32_t)this,
+                           (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cubeCorners,
+                           (int32_t)fVar10,
                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                           );
-      uVar31 = pVVar15->alias;
-      rotation.y = (float)pLVar30;
-      rotation.x = (float)pLVar29;
-      rotation.z = (float)pMVar4;
+      uVar31 = pVVar16->alias;
+      rotation.y = fVar30;
+      rotation.x = (float)pLVar3;
+      rotation.z = (float)pMVar5;
       rotation.w = (float)uVar31;
       pVVar32 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                          ((Vector3 *)&stack0xffffffdc,rotation,(Vector3)*pVVar15,(MethodInfo *)0x0)
+                          ((Vector3 *)&stack0xffffffdc,rotation,(Vector3)*pVVar16,(MethodInfo *)0x0)
       ;
-      pPVar6 = (PlaneIdHelper_PlaneQuadrantInfo *)
+      pPVar7 = (PlaneIdHelper_PlaneQuadrantInfo *)
                 MathFunctions::MathFunctions_RoundVector
                           ((Vector3 *)&stack0xffffffd0,*pVVar32,3,(MethodInfo *)0x0);
       mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
       List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-                ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_01,(int32_t)this,*pPVar6,
+                ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)cubeCorners,(int32_t)fVar10,*pPVar7
+                 ,
                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
                 );
     }
-    return (List_1_UnityEngine_Vector3_ *)this_01;
+    return (List_1_UnityEngine_Vector3_ *)
+           (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+            *)cubeCorners;
   }
 code_?:
   func_?();
 code_?:
-  uRam_? = func_?();
-  this->klass = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___Class
-                 *)cubeCorners->klass;
-  *(undefined2 *)(extraout_ECX + 0x10) = in_GS;
+  func_?();
+  *(int *)(extraout_ECX + 0x10) = *(int *)(extraout_ECX + 0x10) + -0xADDR;
   pcVar33 = (code *)swi(3);
   pLVar34 = (List_1_UnityEngine_Vector3_ *)(*pcVar33)();
   return pLVar34;
@@ -2216,7 +2222,7 @@ Assembly-CSharp.dll::Cube::Cube_GenerateCubeFaces
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__Add_FaceData_);
-    func_?(0x2194);
+    func_?(0x64d4);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__List__);
     func_?(&TypeInfo__System__Collections__Generic__List<FaceData>);
     cRam_? = '\x01';
@@ -2279,10 +2285,10 @@ Assembly-CSharp.dll::Cube::Cube_GenerateCubeFacesCheap
     func_?(&MethodInfo__Cube___GenerateCubeFacesCheap_g__insideCheck_26_4_int_);
     func_?(&MethodInfo__Cube___GenerateCubeFacesCheap_g__insideCheck_26_5_int_);
     func_?(&TypeInfo__Cube);
-    func_?(0x69d8);
+    func_?(0xad0c);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__Add_FaceData_);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__ToArray__);
-    func_?(0x2120);
+    func_?(0x6460);
     func_?(&TypeInfo__System__Collections__Generic__List<FaceData>);
     cRam_? = '\x01';
   }
@@ -3288,11 +3294,14 @@ Vector3 * Assembly-CSharp.dll::Cube::Cube_GetDefaultNormal
     this = (NotImplementedException *)func_?(uVar2);
     mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor
               (this,(MethodInfo *)0x0);
-    uVar2 = func_?(&MethodInfo__Cube__GetDefaultNormal_MV__WorldObject__Face_);
-    uRam_? = func_?(this,uVar2);
-    pcVar3 = (code *)swi(3);
-    pVVar4 = (Vector3 *)(*pcVar3)();
-    return pVVar4;
+    func_?(&MethodInfo__Cube__GetDefaultNormal_MV__WorldObject__Face_);
+    piVar3 = (int *)func_?();
+    *unaff_EDI = *unaff_EDI + (char)piVar3;
+    pcVar4 = (code *)swi(3);
+    pVVar5 = (Vector3 *)
+             (*pcVar4)(this,&stack0xfffffffc,&stack0xffffffec,0xe11069a8,*piVar3 * 0xADDR,
+                       extraout_ECX,piVar3);
+    return pVVar5;
   }
 }
 
@@ -3313,10 +3322,10 @@ Assembly-CSharp.dll::Cube::Cube_GetEdge
     pVVar1 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners
                        ((CubeBase *)cube,(MethodInfo *)0x0);
     if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__Cube);
     }
     pVVar1 = Cube_GetFace_1(pVVar1,face,(MethodInfo *)0x0);
-    pVVar2 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3);
+    pVVar2 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,2);
     switch(edge) {
     case Edge__Enum_Front:
       if (pVVar1 != (Vector3__Array *)0x0) {
@@ -3404,12 +3413,9 @@ code_?:
   }
   func_?();
 code_?:
-  piVar6 = (int *)func_?();
-  *(char *)(unaff_EBX + -0x33ef964a) =
-       *(char *)(unaff_EBX + -0x33ef964a) + extraout_CL +
-       ((longlong)(int)((longlong)*piVar6 * 0xADDR) != (longlong)*piVar6 * 0xADDR);
-  pcVar7 = (code *)swi(3);
-  pVVar1 = (Vector3__Array *)(*pcVar7)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  pVVar1 = (Vector3__Array *)(*pcVar6)();
   return pVVar1;
 }
 
@@ -3501,12 +3507,12 @@ Assembly-CSharp.dll::Cube::Cube_GetEdge_1
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffbc;
-  puVar5 = &stack0xffffffbc;
+  puStack_4 = &stack0xffffffb8;
+  puVar5 = &stack0xffffffb8;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
     func_?(&TypeRef__Edge);
-    func_?(0x1740);
+    func_?(0x5a0c);
     func_?(&TypeInfo__System__Enum);
     func_?(&TypeInfo__System__IDisposable);
     func_?(&TypeInfo__System__Collections__IEnumerator);
@@ -3531,48 +3537,48 @@ Assembly-CSharp.dll::Cube::Cube_GetEdge_1
   if (this != (Array *)0x0) {
     pIStack_9 = mscorlib.dll::System::Array::Array_GetEnumerator(this,(MethodInfo *)0x0);
     uStack_1 = 1;
+    EVar10 = Edge__Enum_None;
     while (pIStack_9 != (IEnumerator *)0x0) {
-      cVar10 = func_?();
-      if (cVar10 == '\0') {
+      cVar11 = func_?();
+      if (cVar11 == '\0') {
         uStack_1 = 0xffffffff;
-        iVar11 = func_?();
-        if (iVar11 != 0) {
+        iVar12 = func_?();
+        if (iVar12 != 0) {
           func_?();
           *unaff_FS_OFFSET = uStack_3;
-          return EStack_8;
+          return EVar10;
         }
         *unaff_FS_OFFSET = uStack_3;
-        return EStack_8;
+        return EVar10;
       }
       if (pIStack_9 == (IEnumerator *)0x0) break;
-      pIVar12 = pIStack_9->klass;
-      uVar13 = 0;
-      uVar14._0_1_ = (pIVar12->_1).rank;
-      uVar14._1_1_ = (pIVar12->_1).minimumAlignment;
-      if (uVar14 != 0) {
+      pIVar13 = pIStack_9->klass;
+      uVar14 = 0;
+      uVar15._0_1_ = (pIVar13->_1).rank;
+      uVar15._1_1_ = (pIVar13->_1).minimumAlignment;
+      if (uVar15 != 0) {
         do {
-          if (pIVar12->interfaceOffsets[uVar13].interfaceType ==
+          if (pIVar13->interfaceOffsets[uVar14].interfaceType ==
               (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
-            ppMVar15 = &(&(pIStack_9->klass->vtable).get_Current)
-                       [pIStack_9->klass->interfaceOffsets[uVar13].offset].method;
+            ppMVar16 = &(&(pIStack_9->klass->vtable).get_Current)
+                       [pIStack_9->klass->interfaceOffsets[uVar14].offset].method;
             goto code_?;
           }
-          uVar13 = uVar13 + 1;
-        } while (uVar13 < uVar14);
+          uVar14 = uVar14 + 1;
+        } while (uVar14 < uVar15);
       }
-      ppMVar15 = (MethodInfo **)func_?();
+      ppMVar16 = (MethodInfo **)func_?();
 code_?:
-      piVar16 = (int *)(*(code *)*ppMVar15)();
-      if (piVar16 == (int *)0x0) break;
-      if (*(Il2CppClass **)(*piVar16 + 0x20) != (TypeInfo__Edge->_0).element_class)
+      piVar17 = (int *)(*(code *)*ppMVar16)();
+      if (piVar17 == (int *)0x0) break;
+      if (*(Il2CppClass **)(*piVar17 + 0x20) != (TypeInfo__Edge->_0).element_class)
       goto code_?;
-      pEVar17 = (Edge__Enum *)func_?();
-      EVar18 = *pEVar17;
+      pEVar18 = (Edge__Enum *)func_?();
+      edge = *pEVar18;
       if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Cube);
       }
-      pVVar19 = Cube_GetEdgeVerticesWorld(gameObject,cube,face,EVar18,iVector,(MethodInfo *)0x0);
-      fStack_6 = 1000.0;
+      pVVar19 = Cube_GetEdgeVerticesWorld(gameObject,cube,face,edge,iVector,(MethodInfo *)0x0);
       if (pVVar19 == (Vector3__Array *)0x0) break;
       if (pVVar19->max_length == 0) {
         func_?();
@@ -3581,20 +3587,24 @@ code_?:
         break;
       }
       if (pVVar19->max_length < 2) goto code_?;
-      MathFunctions::MathFunctions_DistancePointLine
-                (pos,pVVar19->vector[0],pVVar19->vector[1],&fStack_6,(MethodInfo *)0x0);
-      if (fStack_6 < fStack_7) {
-        fStack_7 = fStack_6;
-        EStack_8 = EVar18;
+      bVar20 = MathFunctions::MathFunctions_DistancePointLine
+                        (pos,pVVar19->vector[0],pVVar19->vector[1],&fStack_6,(MethodInfo *)0x0);
+      EVar10 = EStack_8;
+      if (bVar20 != 0) {
+        if (((uint)ABS(fStack_6) < 0x7f800001) && (fStack_6 < fStack_7)) {
+          EVar10 = edge;
+          fStack_7 = fStack_6;
+          EStack_8 = edge;
+        }
       }
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar20 = (code *)swi(3);
-  EVar18 = (*pcVar20)();
-  return EVar18;
+  pcVar21 = (code *)swi(3);
+  EVar10 = (*pcVar21)();
+  return EVar10;
 }
 
 
@@ -4611,7 +4621,8 @@ void Assembly-CSharp.dll::Cube::Cube_GetTriangle
        (func_?(), triangleVertices == (Vector3__Array *)0x0)) {
 code_?:
       func_?();
-      return;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
     }
     func_?(0,uStack_1,uStack_2);
     func_?(&uStack_1,1);
@@ -6071,32 +6082,9 @@ code_?:
   }
   func_?();
 code_?:
-  iVar4 = func_?();
-  edgeVertices = (Vector3__Array *)
-                 CONCAT31(edgeVertices._1_3_,
-                          (char)edgeVertices +
-                          (char)((uint)(*(int *)(iVar4 + -0x7d1069f3) * -0x7f1374ab) >> 8));
-  func_?(&TypeInfo__Cube);
-  uRam_? = 1;
-  if (corners == (Vector3__Array **)0x0) {
-    func_?(0,pVVar1);
-    pcVar5 = (code *)swi(3);
-    (*pcVar5)();
-    return;
-  }
-  pVVar1 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners
-                     ((CubeBase *)corners,(MethodInfo *)0x0);
-  if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Cube);
-  }
-  TypeInfo__Cube->static_fields->cornersBookkeeping = pVVar1;
-  func_?(TypeInfo__Cube->static_fields,pVVar1);
-  Cube_SetEdge_1(&TypeInfo__Cube->static_fields->cornersBookkeeping,face,edge,edgeVertices,
-                 (MethodInfo *)0x0);
-  MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_set_Corners
-            ((CubeBase *)corners,TypeInfo__Cube->static_fields->cornersBookkeeping,(MethodInfo *)0x0
-            );
-  return;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -6145,31 +6133,33 @@ void Assembly-CSharp.dll::Cube::Cube_SetFace_1
     if ((faceVertices == (Vector3__Array *)0x0) ||
        (func_?(), pVVar1 == (Vector3__Array *)0x0)) break;
     func_?(0,uStack_2,uStack_3);
-    pVVar1 = *corners;
+    pVVar4 = *corners;
     func_?(&uStack_2,1);
-    if (pVVar1 == (Vector3__Array *)0x0) break;
+    pVVar1 = (Vector3__Array *)0x0;
+    if (pVVar4 == (Vector3__Array *)0x0) break;
     func_?(1,uStack_2,uStack_3);
     pVVar1 = *corners;
     func_?(&uStack_2,2);
     if (pVVar1 == (Vector3__Array *)0x0) break;
-    uVar4 = 2;
+    uVar5 = 2;
     goto code_?;
   case Face__Enum_Bottom:
     pVVar1 = *corners;
     if ((faceVertices != (Vector3__Array *)0x0) &&
        (func_?(), pVVar1 != (Vector3__Array *)0x0)) {
       func_?(4,uStack_2,uStack_3);
-      pVVar1 = *corners;
+      pVVar4 = *corners;
       func_?(&uStack_2,1);
-      if (pVVar1 != (Vector3__Array *)0x0) {
+      pVVar1 = (Vector3__Array *)0x0;
+      if (pVVar4 != (Vector3__Array *)0x0) {
         func_?(5,uStack_2,uStack_3);
         pVVar1 = *corners;
         func_?(&uStack_2,2);
         if (pVVar1 != (Vector3__Array *)0x0) {
           func_?(6,uStack_2,uStack_3);
-          pVVar1 = *corners;
+          pVVar4 = *corners;
           func_?(&uStack_2,3);
-          if (pVVar1 != (Vector3__Array *)0x0) {
+          if (pVVar4 != (Vector3__Array *)0x0) {
             func_?(7,uStack_2,uStack_3);
             return;
           }
@@ -6182,17 +6172,18 @@ void Assembly-CSharp.dll::Cube::Cube_SetFace_1
     if ((faceVertices != (Vector3__Array *)0x0) &&
        (func_?(), pVVar1 != (Vector3__Array *)0x0)) {
       func_?(7,uStack_2,uStack_3);
-      pVVar1 = *corners;
+      pVVar4 = *corners;
       func_?(&uStack_2,1);
-      if (pVVar1 != (Vector3__Array *)0x0) {
+      pVVar1 = (Vector3__Array *)0x0;
+      if (pVVar4 != (Vector3__Array *)0x0) {
         func_?(6,uStack_2,uStack_3);
         pVVar1 = *corners;
         func_?(&uStack_2,2);
         if (pVVar1 != (Vector3__Array *)0x0) {
           func_?(1,uStack_2,uStack_3);
-          pVVar1 = *corners;
+          pVVar4 = *corners;
           func_?(&uStack_2,3);
-          if (pVVar1 != (Vector3__Array *)0x0) {
+          if (pVVar4 != (Vector3__Array *)0x0) {
             func_?(0,uStack_2,uStack_3);
             return;
           }
@@ -6205,17 +6196,18 @@ void Assembly-CSharp.dll::Cube::Cube_SetFace_1
     if ((faceVertices != (Vector3__Array *)0x0) &&
        (func_?(), pVVar1 != (Vector3__Array *)0x0)) {
       func_?(5,uStack_2,uStack_3);
-      pVVar1 = *corners;
+      pVVar4 = *corners;
       func_?(&uStack_2,1);
-      if (pVVar1 != (Vector3__Array *)0x0) {
+      pVVar1 = (Vector3__Array *)0x0;
+      if (pVVar4 != (Vector3__Array *)0x0) {
         func_?(4,uStack_2,uStack_3);
         pVVar1 = *corners;
         func_?(&uStack_2,2);
         if (pVVar1 != (Vector3__Array *)0x0) {
           func_?(3,uStack_2,uStack_3);
-          pVVar1 = *corners;
+          pVVar4 = *corners;
           func_?(&uStack_2,3);
-          if (pVVar1 != (Vector3__Array *)0x0) {
+          if (pVVar4 != (Vector3__Array *)0x0) {
             func_?(2,uStack_2,uStack_3);
             return;
           }
@@ -6228,19 +6220,20 @@ void Assembly-CSharp.dll::Cube::Cube_SetFace_1
     if ((faceVertices == (Vector3__Array *)0x0) ||
        (func_?(), pVVar1 == (Vector3__Array *)0x0)) break;
     func_?(4,uStack_2,uStack_3);
-    pVVar1 = *corners;
+    pVVar4 = *corners;
     func_?(&uStack_2,1);
-    if (pVVar1 == (Vector3__Array *)0x0) break;
+    pVVar1 = (Vector3__Array *)0x0;
+    if (pVVar4 == (Vector3__Array *)0x0) break;
     func_?(7,uStack_2,uStack_3);
     pVVar1 = *corners;
     func_?(&uStack_2,2);
     if (pVVar1 == (Vector3__Array *)0x0) break;
-    uVar4 = 0;
+    uVar5 = 0;
 code_?:
-    func_?(uVar4,uStack_2,uStack_3);
-    pVVar1 = *corners;
+    func_?(uVar5,uStack_2,uStack_3);
+    pVVar4 = *corners;
     func_?(&uStack_2,3);
-    if (pVVar1 != (Vector3__Array *)0x0) {
+    if (pVVar4 != (Vector3__Array *)0x0) {
       func_?(3,uStack_2,uStack_3);
 code_?:
       return;
@@ -6251,17 +6244,18 @@ code_?:
     if ((faceVertices != (Vector3__Array *)0x0) &&
        (func_?(), pVVar1 != (Vector3__Array *)0x0)) {
       func_?(6,uStack_2,uStack_3);
-      pVVar1 = *corners;
+      pVVar4 = *corners;
       func_?(&uStack_2,1);
-      if (pVVar1 != (Vector3__Array *)0x0) {
+      pVVar1 = (Vector3__Array *)0x0;
+      if (pVVar4 != (Vector3__Array *)0x0) {
         func_?(5,uStack_2,uStack_3);
         pVVar1 = *corners;
         func_?(&uStack_2,2);
         if (pVVar1 != (Vector3__Array *)0x0) {
           func_?(2,uStack_2,uStack_3);
-          pVVar1 = *corners;
+          pVVar4 = *corners;
           func_?(&uStack_2,3);
-          if (pVVar1 != (Vector3__Array *)0x0) {
+          if (pVVar4 != (Vector3__Array *)0x0) {
             func_?(1,uStack_2,uStack_3);
             return;
           }
@@ -6273,9 +6267,10 @@ code_?:
     goto code_?;
   }
   func_?();
-  do {
-                    /* WARNING: Do nothing block with infinite loop */
-  } while( true );
+  *(char *)(extraout_ECX + -0x11) = *(char *)(extraout_ECX + -0x11) + (char)pVVar1;
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
+  return;
 }
 
 

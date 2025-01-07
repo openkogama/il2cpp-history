@@ -53,6 +53,7 @@ public class MVSentryGun : MVLogicObject, ILogicWorldObject
 	public override void InitializeInventory();
 	public void InitializeCommon();
 	public void ReceiveDamage(float amount, MVPlayer damageDealer, PlayerKilledByType damageType);
+	private void RecieveHealing(float amount, MVPlayer healer);
 	private void UpdateSentryState();
 	public override void Select(Color color);
 	public override void DeSelect();

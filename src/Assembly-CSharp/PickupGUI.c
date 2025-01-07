@@ -302,38 +302,20 @@ void Assembly-CSharp.dll::PickupGUI::PickupGUI_LateUpdate(PickupGUI *this,Method
   }
   pMVar1 = (this->fields).pickupOwner;
   if (pMVar1 != (MVPickupOwner *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    pPVar2 = (pMVar1->fields).currentItem;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)pPVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
-      pPVar2 = (pMVar1->fields).currentItem;
-      if (pPVar2 == (PickupItem *)0x0) goto code_?;
-      if ((pPVar2->fields)._IsHolstered_k__BackingField == 0) {
-        cVar4 = (*(code *)(pPVar2->klass->vtable).get_GunMode.method)
-                          (pPVar2,(pPVar2->klass->vtable).get_IsHandEquippable.methodPtr);
-        if (cVar4 != '\0') {
-          pMVar1 = (this->fields).pickupOwner;
-          if ((pMVar1 == (MVPickupOwner *)0x0) ||
-             (pIVar5 = (this->fields).crossHair, pIVar5 == (IGUICrossHair *)0x0))
-          goto code_?;
-          func_?(2,TypeInfo__IGUICrossHair,pIVar5,(pMVar1->fields).currentItem);
-          PickupGUI_UpdateCrossHairVisibility(this,(MethodInfo *)0x0);
-        }
-      }
+    bVar2 = MVPickupOwner::MVPickupOwner_get_HasGunWithAmmo(pMVar1,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      pMVar1 = (this->fields).pickupOwner;
+      if ((pMVar1 == (MVPickupOwner *)0x0) ||
+         (pIVar3 = (this->fields).crossHair, pIVar3 == (IGUICrossHair *)0x0)) goto code_?;
+      func_?(2,TypeInfo__IGUICrossHair,pIVar3,(pMVar1->fields).currentItem);
+      PickupGUI_UpdateCrossHairVisibility(this,(MethodInfo *)0x0);
     }
     return;
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

@@ -1734,7 +1734,7 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
     pPVar4 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
     if (pPVar4 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
       if ((float)(int)(pPVar4->fields).movementSpeedWhileHeld != _UNK_?) {
-        this_00 = (AvatarMotor *)pMVar2[1].fields.name;
+        this_00 = (AvatarMotor *)pMVar2[1].fields.gameObject;
         if (this_00 == (AvatarMotor *)0x0) goto code_?;
         AvatarMotor::AvatarMotor_set_WalkSpeedBase(this_00,8.0,(MethodInfo *)0x0);
       }
@@ -2773,15 +2773,15 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
         TypeInfo__MVAvatarLocal)) {
       return;
     }
-    pSVar3 = pMVar2[1].fields.name;
-    if (pSVar3 != (String *)0x0) {
-      pSVar4 = pSVar3[3].klass;
+    pGVar3 = pMVar2[1].fields.gameObject;
+    if (pGVar3 != (GameObject *)0x0) {
+      pGVar4 = pGVar3[4].klass;
       pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
       if (pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-        if ((float)pSVar4 == (float)(int)(pPVar5->fields).movementSpeedWhileHeld) {
+        if ((float)pGVar4 == (float)(int)(pPVar5->fields).movementSpeedWhileHeld) {
           return;
         }
-        this_00 = (AvatarMotor *)pMVar2[1].fields.name;
+        this_00 = (AvatarMotor *)pMVar2[1].fields.gameObject;
         pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
         if ((pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
            (this_00 != (AvatarMotor *)0x0)) {
@@ -3491,15 +3491,15 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
         TypeInfo__MVAvatarLocal)) {
       return;
     }
-    pSVar3 = pMVar2[1].fields.name;
-    if (pSVar3 != (String *)0x0) {
-      pSVar4 = pSVar3[3].klass;
+    pGVar3 = pMVar2[1].fields.gameObject;
+    if (pGVar3 != (GameObject *)0x0) {
+      pGVar4 = pGVar3[4].klass;
       pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
       if (pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-        if ((float)pSVar4 == (float)(int)(pPVar5->fields).movementSpeedWhileHeld) {
+        if ((float)pGVar4 == (float)(int)(pPVar5->fields).movementSpeedWhileHeld) {
           return;
         }
-        this_00 = (AvatarMotor *)pMVar2[1].fields.name;
+        this_00 = (AvatarMotor *)pMVar2[1].fields.gameObject;
         pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
         if ((pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
            (this_00 != (AvatarMotor *)0x0)) {

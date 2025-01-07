@@ -39,11 +39,11 @@ code_?:
     UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     auStack_6._0_4_ = (this->fields).lastStartTime;
     if (interactableLocal == (MVInteractableBase *)0x0) goto code_?;
-    pMVar7 = (interactableLocal->klass->vtable).__unknown_6.method;
+    pMVar7 = (interactableLocal->klass->vtable).__unknown_8.method;
     auStack_6._8_4_ = pMVar7;
     fVar8 = (float10)(*(code *)pMVar7)();
     auStack_6._4_4_ = (undefined4)fVar8;
-    pMVar7 = (interactableLocal->klass->vtable).__unknown_6.method;
+    pMVar7 = (interactableLocal->klass->vtable).__unknown_8.method;
     stack0xffffffcc = CONCAT44(fStack_9,pMVar7);
     fVar8 = (float10)(*(code *)pMVar7)();
     if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
@@ -84,8 +84,8 @@ code_?:
                   ::ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
       stack0xffffffcc = CONCAT44((float)__return_storage_ptr__ * fStack_14,(float)this * fStack_14);
       fStack_14 = (float)interactableLocal * fStack_14;
-      pIVar18 = (interactableLocal->klass->vtable).__unknown_7.methodPtr;
-      pMStack_17 = (interactableLocal->klass->vtable).__unknown_6.method;
+      pIVar18 = (interactableLocal->klass->vtable).__unknown_9.methodPtr;
+      pMStack_17 = (interactableLocal->klass->vtable).__unknown_8.method;
       fVar8 = (float10)(*(code *)pMStack_17)();
       auStack_6._0_4_ = (undefined4)fVar8;
       fVar2 = density * (float)auStack_6._0_4_;
@@ -100,7 +100,7 @@ code_?:
   else if (interactableLocal == (MVInteractableBase *)0x0) goto code_?;
   pMStack_17 = (MethodInfo *)0x0;
   pBStack_16 = (Byte__Array *)0x0;
-  auStack_6._4_4_ = (interactableLocal->klass->vtable).__unknown_6.method;
+  auStack_6._4_4_ = (interactableLocal->klass->vtable).__unknown_8.method;
   fStack_14 = velocity.x;
   AStack_15 = (ACTkByte4)velocity.y;
   fVar8 = (float10)(*(code *)auStack_6._4_4_)();
@@ -119,7 +119,7 @@ code_?:
   }
   auStack_6._4_4_ = ZEXT14(bVar21 & inputJump);
   pMStack_17 = (MethodInfo *)CONCAT31(pMStack_17._1_3_,bVar21 & inputJump);
-  AStack_15 = (ACTkByte4)(interactableLocal->klass->vtable).__unknown_6.method;
+  AStack_15 = (ACTkByte4)(interactableLocal->klass->vtable).__unknown_8.method;
   fVar19 = 0.0;
   puVar22 = &UNK_?;
   fVar8 = (float10)(*(code *)AStack_15)();
@@ -150,7 +150,7 @@ code_?:
     pMVar25 = (groundState->fields).groundMaterial;
     if (pMVar25 == (MVMaterial *)0x0) goto code_?;
     fStack_11 = (pMVar25->fields)._PhysicalProperties_k__BackingField.toughness;
-    (*(code *)(interactableLocal->klass->vtable).__unknown_6.method)(interactableLocal);
+    (*(code *)(interactableLocal->klass->vtable).__unknown_8.method)(interactableLocal);
     (this->fields).holdingJumpButton = 0;
     fVar26 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     bStack_27 = (byte)((uint)interactableLocal >> 0x18);
@@ -180,10 +180,10 @@ code_?:
       if (pMVar25 == (MVMaterial *)0x0) goto code_?;
       fStack_11 = (pMVar25->fields)._PhysicalProperties_k__BackingField.toughness;
       puVar22 = &UNK_?;
-      fVar8 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_6.method)
+      fVar8 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_8.method)
                                   (interactableLocal);
       fVar20 = (float)fVar8;
-      fStack_33 = (2.38221e-44 -
+      fStack_33 = (2.52234e-44 -
                   ((float)((uint)(fVar20 * fVar20) ^
                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
                   + fVar20 + fVar20)) * (float)auStack_6._0_4_;
@@ -210,7 +210,7 @@ code_?:
         func_?();
         cRam_? = '\x01';
       }
-      auStack_6._4_4_ = (interactableLocal->klass->vtable).__unknown_6.method;
+      auStack_6._4_4_ = (interactableLocal->klass->vtable).__unknown_8.method;
       fVar8 = (float10)(*(code *)auStack_6._4_4_)();
       fVar26 = (this->fields).jumpVelocityMultiplier;
       fVar34 = (float)fVar8;
@@ -354,9 +354,9 @@ float Assembly-CSharp.dll::JumpState::JumpState_GetJumpSpeed
     cRam_? = '\x01';
   }
   if (interactableLocal != (MVInteractableBase *)0x0) {
-    fVar1 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_6.method)
+    fVar1 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_8.method)
                                (interactableLocal,2,(this->fields).jumpHeight,
-                                (interactableLocal->klass->vtable).__unknown_7.methodPtr);
+                                (interactableLocal->klass->vtable).__unknown_9.methodPtr);
     fVar2 = (this->fields).jumpVelocityMultiplier;
     if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVPhysics);
@@ -449,10 +449,10 @@ float Assembly-CSharp.dll::JumpState::JumpState_GetSliperyFactor
     pMVar2 = (groundState->fields).groundMaterial;
     if (pMVar2 != (MVMaterial *)0x0) {
       if (interactableLocal != (MVInteractableBase *)0x0) {
-        fVar3 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_6.method)
+        fVar3 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_8.method)
                                    (interactableLocal,0xc,
                                     (pMVar2->fields)._PhysicalProperties_k__BackingField.friction,
-                                    (interactableLocal->klass->vtable).__unknown_7.methodPtr);
+                                    (interactableLocal->klass->vtable).__unknown_9.methodPtr);
         fVar4 = (float)fVar3;
         groundState = (MVGroundState *)
                       ((_UNK_? -

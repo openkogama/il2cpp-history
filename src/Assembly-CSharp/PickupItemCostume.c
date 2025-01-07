@@ -1446,15 +1446,15 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnSpeedStateChang
         TypeInfo__MVAvatarLocal)) {
       return;
     }
-    pSVar3 = pMVar2[1].fields.name;
-    if (pSVar3 != (String *)0x0) {
-      pSVar4 = pSVar3[3].klass;
+    pGVar3 = pMVar2[1].fields.gameObject;
+    if (pGVar3 != (GameObject *)0x0) {
+      pGVar4 = pGVar3[4].klass;
       pPVar5 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
       if (pPVar5 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-        if ((float)pSVar4 == (float)(int)(pPVar5->fields).movementSpeed) {
+        if ((float)pGVar4 == (float)(int)(pPVar5->fields).movementSpeed) {
           return;
         }
-        this_00 = (AvatarMotor *)pMVar2[1].fields.name;
+        this_00 = (AvatarMotor *)pMVar2[1].fields.gameObject;
         pPVar5 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
         if ((pPVar5 != (PickupItemCostume_CostumeConfiguration *)0x0) &&
            (this_00 != (AvatarMotor *)0x0)) {
@@ -1567,13 +1567,13 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnStateChanged
           TypeInfo__MVAvatarLocal) {
         return;
       }
-      pSVar9 = pMVar8[1].fields.name;
-      if (pSVar9 != (String *)0x0) {
-        pSVar10 = pSVar9[3].klass;
+      pGVar9 = pMVar8[1].fields.gameObject;
+      if (pGVar9 != (GameObject *)0x0) {
+        pGVar10 = pGVar9[4].klass;
         pPVar7 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
         if (pPVar7 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-          if ((float)pSVar10 != (float)(int)(pPVar7->fields).movementSpeed) {
-            this_01 = (AvatarMotor *)pMVar8[1].fields.name;
+          if ((float)pGVar10 != (float)(int)(pPVar7->fields).movementSpeed) {
+            this_01 = (AvatarMotor *)pMVar8[1].fields.gameObject;
             pPVar7 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
             if ((pPVar7 == (PickupItemCostume_CostumeConfiguration *)0x0) ||
                (this_01 == (AvatarMotor *)0x0)) goto code_?;

@@ -220,7 +220,7 @@ void Assembly-CSharp.dll::Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxe
       pSVar2 = (this->fields).colorB;
       if (pSVar2 != (SettingsSlider *)0x0) {
         SettingsSlider::SettingsSlider_Initialize
-                  (pSVar2,StringLiteral_colorB,4.1166635e-29,0.0,1.0,(MethodInfo *)0x0);
+                  (pSVar2,StringLiteral_colorB,4.1172606e-29,0.0,1.0,(MethodInfo *)0x0);
         pSVar2 = (this->fields).colorA;
         if (pSVar2 != (SettingsSlider *)0x0) {
           SettingsSlider::SettingsSlider_Initialize

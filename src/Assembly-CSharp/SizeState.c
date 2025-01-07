@@ -393,10 +393,10 @@ void Assembly-CSharp.dll::SizeState::SizeState_MoveOutOfScalingCollision
                         uVar22 = pVVar3->x;
                         uVar23 = pVVar3->y;
                         stack0xffffffd4 = (float)uVar23 + fVar6;
-                        puStack_4 = (undefined *)((float)uVar22 + 3.3374268e-29);
+                        puStack_4 = (undefined *)((float)uVar22 + 3.3358043e-29);
                         if (pTVar2 != (Transform *)0x0) {
                           value.y = (float)uVar23 + fVar6;
-                          value.x = (float)uVar22 + 3.3374268e-29;
+                          value.x = (float)uVar22 + 3.3358043e-29;
                           value.z = pVVar3->z + fVar9;
                           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                                     (pTVar2,value,(MethodInfo *)0x0);
@@ -577,7 +577,7 @@ code_?:
     if ((pSVar1->fields).CameraScaleEvent != (EventHandler_1_ScaleArgs_ *)0x0) {
       pEVar15 = (pSVar1->fields).CameraScaleEvent;
       this_01 = (SizeState *)func_?();
-      ScaleArgs::ScaleArgs__ctor((ScaleArgs *)this_01,3.3376646e-29,(MethodInfo *)0x0);
+      ScaleArgs::ScaleArgs__ctor((ScaleArgs *)this_01,3.336042e-29,(MethodInfo *)0x0);
       (*(pEVar15->fields)._._.invoke_impl)();
     }
     (pSVar1->fields).currentSize = (float)this_01;

@@ -12,7 +12,7 @@ bool Assembly-CSharp.dll::FullScreenController::FullScreenController_AllowFullsc
   if ((TypeInfo__FullScreenController->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__FullScreenController);
   }
-  bVar1 = TypeInfo__System__Xml__Schema__XmlSchema((MethodInfo *)0x0);
+  bVar1 = FullScreenController_IsFullscreenSupported((MethodInfo *)0x0);
   if (bVar1 != 0) {
     return 1;
   }
@@ -220,6 +220,57 @@ void Assembly-CSharp.dll::FullScreenController::FullScreenController_InitSupport
   ScreenSizeOptimizer::ScreenSizeOptimizer_UpdateOriginalSizeIfNecessary((MethodInfo *)0x0);
   TypeInfo__FullScreenController->static_fields->initialized = 1;
   return;
+}
+
+
+/* Boolean IsFullscreenSupported() */
+
+bool Assembly-CSharp.dll::FullScreenController::FullScreenController_IsFullscreenSupported
+               (MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__BrowserComm);
+    func_?(&TypeInfo__FullScreenController);
+    func_?(&StringLiteral_Microsoft_Internet_Explorer);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__BrowserComm);
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__BrowserComm);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__BrowserComm);
+  }
+  bVar1 = mscorlib.dll::System::String::String_op_Equality
+                    (TypeInfo__BrowserComm->static_fields->browserName,
+                     StringLiteral_Microsoft_Internet_Explorer,(MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+      ppBStack2 = (BrowserComm__Class **)TypeInfo__BrowserComm;
+      func_?();
+    }
+    if (cRam_? == '\0') {
+      ppBStack2 = &TypeInfo__BrowserComm;
+      func_?();
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+      ppBStack2 = (BrowserComm__Class **)TypeInfo__BrowserComm;
+      func_?();
+    }
+    if (7 < TypeInfo__BrowserComm->static_fields->browserVersion) {
+      return 0;
+    }
+  }
+  if ((TypeInfo__FullScreenController->_1).cctor_finished_or_no_cctor == 0) {
+    ppBStack2 = (BrowserComm__Class **)TypeInfo__FullScreenController;
+    func_?();
+  }
+  return TypeInfo__FullScreenController->static_fields->fullscreenSupported;
 }
 
 
@@ -785,7 +836,7 @@ void Assembly-CSharp.dll::FullScreenController::FullScreenController_set_FullScr
         if ((TypeInfo__FullScreenController->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__FullScreenController);
         }
-        TypeInfo__System__Xml__Schema__XmlSchema((MethodInfo *)0x0);
+        FullScreenController_IsFullscreenSupported((MethodInfo *)0x0);
         pSVar3 = mscorlib.dll::System::Boolean::Boolean_ToString
                            ((Boolean *)&stack0xfffffffb,(MethodInfo *)0x0);
         if (3 < values->max_length) {
@@ -819,7 +870,7 @@ void Assembly-CSharp.dll::FullScreenController::FullScreenController_set_FullScr
                 if ((TypeInfo__FullScreenController->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
-                bVar4 = TypeInfo__System__Xml__Schema__XmlSchema((MethodInfo *)0x0);
+                bVar4 = FullScreenController_IsFullscreenSupported((MethodInfo *)0x0);
                 if (bVar4 == 0) {
                   if ((TypeInfo__FullScreenController->_1).cctor_finished_or_no_cctor == 0) {
                     func_?();

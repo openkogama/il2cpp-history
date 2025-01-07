@@ -5,7 +5,6 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using MV.Common;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,7 +26,7 @@ public class HealingIndicator : MonoBehaviour
 
 	// Methods
 	private void Awake();
-	public void ShowHealing(float damageAmount, MVPlayer damageDealer, PlayerKilledByType damageType);
+	public void ShowHealing(float healingAmount, MVPlayer healer);
 	private void Update();
 }
 

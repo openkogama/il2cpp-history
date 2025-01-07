@@ -7,13 +7,13 @@ bool Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_CheckCanUse
 
 {
   if (avatarInteractable != (MVInteractableBase *)0x0) {
-    cVar1 = (*(code *)(avatarInteractable->klass->vtable).__unknown_5.method)
+    cVar1 = (*(code *)(avatarInteractable->klass->vtable).__unknown_7.method)
                       (avatarInteractable,7,
-                       (avatarInteractable->klass->vtable).__unknown_6.methodPtr);
+                       (avatarInteractable->klass->vtable).__unknown_8.methodPtr);
     if (cVar1 == '\0') {
-      cVar1 = (*(code *)(avatarInteractable->klass->vtable).__unknown_5.method)
+      cVar1 = (*(code *)(avatarInteractable->klass->vtable).__unknown_7.method)
                         (avatarInteractable,8,
-                         (avatarInteractable->klass->vtable).__unknown_6.methodPtr);
+                         (avatarInteractable->klass->vtable).__unknown_8.methodPtr);
       if ((cVar1 == '\0') && ((this->fields).canPickUp != 0)) {
         this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if (this_00 == (MVWorldObjectClientManager *)0x0) goto code_?;
@@ -181,8 +181,8 @@ bool Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_DoPickup
                            ((GameObject *)pLVar4,
                             MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
                            ), pOVar5 != (Object *)0x0)) {
-      pIVar6 = pOVar5->klass[1]._0.interopData;
-      cVar7 = (*(code *)pOVar5->klass[1]._0.typeMetadataHandle)(pOVar5);
+      pPVar6 = pOVar5->klass[1]._0.properties;
+      cVar7 = (*(code *)pOVar5->klass[1]._0.events)(pOVar5);
       if (cVar7 != '\0') {
         return 0;
       }
@@ -202,54 +202,50 @@ bool Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_DoPickup
           return 0;
         }
         EVar8 = PrefabPool::PrefabPool_GetPickupPrefab
-                           ((AvatarItemType__Enum)pIVar6[9].pinvokeMarshalFromNativeFunction,
-                            (int32_t)pIVar6->createCCWFunction,(MethodInfo *)0x0);
+                           (pPVar6[10].token,pPVar6->attrs,(MethodInfo *)0x0);
         iVar9 = EVar8.equipableType;
-        itemId = pIVar6->createCCWFunction;
+        itemId = pPVar6->attrs;
         if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->_1).
             cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData)
           ;
         }
         Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
-        MeleeWeaponData_IsLegacySword((int32_t)itemId,(MethodInfo *)0x0);
-        pPVar10 = pIVar6[9].pinvokeMarshalFromNativeFunction;
-        pPVar11 = pPVar10;
+        MeleeWeaponData_IsLegacySword(itemId,(MethodInfo *)0x0);
+        puVar10 = (undefined *)pPVar6[10].token;
+        puVar11 = puVar10;
         if (cRam_? == '\0') {
           func_?();
           func_?();
           func_?(&
                           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                          );
-          pPVar11 = (PInvokeMarshalFromNativeFunc)&UNK_?;
+          puVar11 = &UNK_?;
           func_?(&StringLiteral_itemData);
           cRam_? = '\x01';
         }
-        if ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-            pIVar6[3].pinvokeMarshalToNativeFunction !=
+        if ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)pPVar6[3].attrs !=
             (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
           bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                   Object,UnityEngine::UIElements::TextureId]::
                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                             ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                             pIVar6[3].pinvokeMarshalToNativeFunction,
-                             (Object *)StringLiteral_itemData,
+                             pPVar6[3].attrs,(Object *)StringLiteral_itemData,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                             );
           if (bVar2 == 0) {
             TVar12.m_Index = 0;
           }
           else {
-            instigatorWOID = (int32_t)pIVar6[3].pinvokeMarshalToNativeFunction;
+            instigatorWOID = pPVar6[3].attrs;
             if ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)instigatorWOID ==
                 (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
             goto code_?;
-            pPVar10 = pPVar11;
+            puVar10 = puVar11;
             TVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                      Object,UnityEngine::UIElements::TextureId]::
                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                               ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                instigatorWOID,(Object *)StringLiteral_itemData,
+                               (instigatorWOID,(Object *)StringLiteral_itemData,
                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                );
             if ((TVar12.m_Index != 0) &&
@@ -265,7 +261,7 @@ bool Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_DoPickup
                 ))) goto code_?;
           }
           if (x != (Object_1 *)0x0) {
-            cVar7 = (*(code *)x->klass[1]._0.namespaze)(x,pPVar10,iVar9,TVar12.m_Index);
+            cVar7 = (*(code *)x->klass[1]._0.namespaze)(x,puVar10,iVar9,TVar12.m_Index);
             if (cVar7 == '\0') {
               return 0;
             }
@@ -273,9 +269,8 @@ bool Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_DoPickup
                                 ((MethodInfo *)0x0);
             if (this_02 != (MVNetworkGame_OperationRequests *)0x0) {
               MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_TriggerBoxEnter
-                        (this_02,(int32_t)pIVar6->pinvokeMarshalFromNativeFunction,instigatorWOID,
-                         (MethodInfo *)0x0);
-              *(undefined1 *)&pIVar6[9].createCCWFunction = 0;
+                        (this_02,(int32_t)pPVar6->get,instigatorWOID,(MethodInfo *)0x0);
+              *(undefined1 *)&pPVar6[0xb].name = 0;
               return 1;
             }
           }

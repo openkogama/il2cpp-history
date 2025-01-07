@@ -69,21 +69,19 @@ void Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower_ResetAm
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  AStack_1 = (ACTkByte4)(this->fields).maxFuelTime.currentCryptoKey;
-  AStack_2 = (this->fields).maxFuelTime.hiddenValue;
+  AVar1 = (ACTkByte4)(this->fields).maxFuelTime.currentCryptoKey;
+  AVar2 = (this->fields).maxFuelTime.hiddenValue;
   pBVar3 = (this->fields).maxFuelTime.hiddenValueOld;
   fVar4 = (this->fields).maxFuelTime.fakeValue;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
       == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
   }
-  value.hiddenValue = AStack_2;
-  value.currentCryptoKey._0_1_ = AStack_1.b1;
-  value.currentCryptoKey._1_1_ = AStack_1.b2;
-  value.currentCryptoKey._2_1_ = AStack_1.b3;
-  value.currentCryptoKey._3_1_ = AStack_1.b4;
+  value.hiddenValue = AVar2;
+  value.currentCryptoKey._0_1_ = AVar1.b1;
+  value.currentCryptoKey._1_1_ = AVar1.b2;
+  value.currentCryptoKey._2_1_ = AVar1.b3;
+  value.currentCryptoKey._3_1_ = AVar1.b4;
   value.hiddenValueOld = pBVar3;
   value.fakeValue = fVar4;
   value.inited = (this->fields).maxFuelTime.inited;
@@ -93,15 +91,14 @@ void Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower_ResetAm
   iVar5 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)
                     (this,(int)fVar4,(this->klass->vtable).UpdateWithDirection.methodPtr);
   pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-           ObscuredFloat_op_Implicit
-                     ((ObscuredFloat *)&stack0xffffffe8,(float)iVar5,(MethodInfo *)0x0);
-  AVar7 = pOVar6->hiddenValue;
+           ObscuredFloat_op_Implicit((ObscuredFloat *)&puStack_7,(float)iVar5,(MethodInfo *)0x0);
+  AVar1 = pOVar6->hiddenValue;
   pBVar3 = pOVar6->hiddenValueOld;
   fVar4 = pOVar6->fakeValue;
   bVar8 = pOVar6->inited;
   uVar9 = *(undefined3 *)&pOVar6->field_0x11;
   (this->fields).currentFuel.currentCryptoKey = pOVar6->currentCryptoKey;
-  (this->fields).currentFuel.hiddenValue = AVar7;
+  (this->fields).currentFuel.hiddenValue = AVar1;
   (this->fields).currentFuel.hiddenValueOld = pBVar3;
   (this->fields).currentFuel.fakeValue = fVar4;
   (this->fields).currentFuel.inited = bVar8;
@@ -335,7 +332,16 @@ void Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower__ctor
   (this->fields).currentFuel.inited = bVar5;
   *(undefined3 *)&(this->fields).currentFuel.field_0x11 = uVar6;
   func_?();
-  PickupItem::PickupItem__ctor((PickupItem *)this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  pMVar7 = (MeshRenderer__Array *)func_?();
+  (this->fields)._.meshRenderers = pMVar7;
+  func_?();
+  (this->fields)._._AbleToFire_k__BackingField = 1;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 
