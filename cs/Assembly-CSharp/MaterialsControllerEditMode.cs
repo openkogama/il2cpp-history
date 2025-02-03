@@ -23,6 +23,9 @@ public class MaterialsControllerEditMode : MaterialsController, IHandleCubeModel
 	private UnityAction closeCallback;
 	private byte prevMaterial;
 
+	// Properties
+	public Transform CubeModelingControllerTransform { get; }
+
 	// Nested types
 	[Serializable]
 	[CompilerGenerated]
@@ -30,16 +33,16 @@ public class MaterialsControllerEditMode : MaterialsController, IHandleCubeModel
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__8_1;
-		public static ExecuteEvents.EventFunction<IShortcutKeyUnRegister> __9__12_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__10_1;
+		public static ExecuteEvents.EventFunction<IShortcutKeyUnRegister> __9__14_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _Open_b__8_1(IUIStack handler, BaseEventData data);
-		internal void _OnPop_b__12_0(IShortcutKeyUnRegister x, BaseEventData y);
+		internal void _Open_b__10_1(IUIStack handler, BaseEventData data);
+		internal void _OnPop_b__14_0(IShortcutKeyUnRegister x, BaseEventData y);
 	}
 
 	// Constructors
@@ -54,8 +57,8 @@ public class MaterialsControllerEditMode : MaterialsController, IHandleCubeModel
 	private void PlayModeToggleOverwrite();
 	private new void OnPop();
 	[CompilerGenerated]
-	private void _Open_b__8_0(IShortcutKeyRegister x, BaseEventData y);
+	private void _Open_b__10_0(IShortcutKeyRegister x, BaseEventData y);
 	[CompilerGenerated]
-	private void _Open_b__8_2(IUIStack x, BaseEventData y);
+	private void _Open_b__10_2(IUIStack x, BaseEventData y);
 }
 

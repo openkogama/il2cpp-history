@@ -65,12 +65,12 @@ code_?:
         return;
       }
       Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::SpawnRoleDataMediator::SpawnRoleDataMediator_add_OnSuicide(pSVar1,(Action *)pNVar5,(MethodInfo *)0x0);
-      pDVar8 = pDRam7c35ff2c;
+      pDVar8 = pDRam3c35ff2c;
       pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar5,(Object *)object,MethodInfo__DeathUIController__OnFadeFinished__,(MethodInfo *)0x0);
       pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar8,(Delegate *)pNVar5,(MethodInfo *)0x0);
       if (pDVar8 == (Delegate *)0x0) {
-        pDRam7c35ff2c = (Delegate *)0x0;
+        pDRam3c35ff2c = (Delegate *)0x0;
         func_?();
         return;
       }
@@ -83,7 +83,7 @@ code_?:
         if ((Action__Class *)pDVar8->klass == TypeInfo__System__Action) {
           pDVar12 = pDVar8;
         }
-        pDRam7c35ff2c = pDVar11;
+        pDRam3c35ff2c = pDVar11;
         if (pDVar12 != (Delegate *)0x0) {
           func_?();
           return;
@@ -294,7 +294,7 @@ code_?:
     Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_03,(Object *)pNVar5,MethodInfo__DeathUIController__OnRoundEnd_IWinningCondition_,(MethodInfo *)0x0);
     pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)this_03,(MethodInfo *)0x0);
     if (pDVar9 == (Delegate *)0x0) {
-      *(undefined4 *)(puVar8 + 0xb8) = 0;
+      *(undefined4 *)(puVar8 + 0xc4) = 0;
 code_?:
       func_?();
       pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal((MethodInfo *)0x0);
@@ -336,7 +336,7 @@ code_?:
     }
     iVar12 = func_?();
     if (iVar12 == 0) goto code_?;
-    *(int *)(puVar8 + 0xb8) = iVar12;
+    *(int *)(puVar8 + 0xc4) = iVar12;
     iVar12 = func_?();
     if (iVar12 != 0) goto code_?;
   }
@@ -1337,7 +1337,7 @@ code_?:
     if (pTVar9 != (Task *)0x4) {
       pGVar10 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
       if ((pGVar10 == (GameEventManager *)0x0) || (this_01 = (pGVar10->fields).AvatarCommandsPlayMode, this_01 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) goto code_?;
-      MaterialsController::MaterialsController_OnPop((MaterialsController *)this_01,(MethodInfo *)0x0);
+      GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_SpawnAsGhost(this_01,(MethodInfo *)0x0);
     }
     uRam_? = 1;
   }

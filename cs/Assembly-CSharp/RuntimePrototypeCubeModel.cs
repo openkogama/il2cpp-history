@@ -14,29 +14,28 @@ using UnityEngine;
 public class RuntimePrototypeCubeModel
 {
 	// Fields
+	public Action<IntVector> OnChunkRebuilt;
+	public float? PendingScaleUpdate;
+	public Action<HashSet<IntVector>> DirtyChunksRegenerated;
+	protected int prototypeId;
 	private ILogger logger;
 	private readonly HashSet<IntVector> dirtyChunks;
 	private MeshGeneratePriority meshGeneratePriority;
 	private bool useMeshGeneratePrioritySystem;
 	private int chunkSize;
-	public Action<IntVector> OnChunkRebuilt;
-	public float? PendingScaleUpdate;
 	private PrototypeState prototypeState;
 	private readonly List<byte> pendingDeltaCubes;
-	[CompilerGenerated]
-	private float _Scale_k__BackingField;
-	protected int prototypeId;
-	[CompilerGenerated]
-	private int _AuthorProfileID_k__BackingField;
 	private DeltaCubes deltaCubes;
 	private readonly Dictionary<IntVector, CubeModelChunk> chunks;
 	private readonly HashSet<int> instances;
-	public Action<HashSet<IntVector>> DirtyChunksRegenerated;
+	[CompilerGenerated]
+	private float _Scale_k__BackingField;
+	[CompilerGenerated]
+	private int _AuthorProfileID_k__BackingField;
 
 	// Properties
-	public MeshGeneratePriority MeshGeneratePriority { get; }
 	public int ChunkSize { get; }
-	public PrototypeState PrototypeState { get; set; }
+	public MeshGeneratePriority MeshGeneratePriority { get; }
 	public float Scale { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public int PrototypeId { get; set; }
 	public int AuthorProfileID { [CompilerGenerated] get; [CompilerGenerated] private set; }
@@ -45,8 +44,9 @@ public class RuntimePrototypeCubeModel
 	public DeltaCubes DeltaCubes { get; }
 	public Dictionary<IntVector, CubeModelChunk> Chunks { get; }
 	public HashSet<int> Instances { get; }
-	public int CubeCount { get; }
 	public bool ContainsCubes { get; }
+	public int CubeCount { get; }
+	public PrototypeState PrototypeState { get; set; }
 
 	// Constructors
 	private RuntimePrototypeCubeModel();
@@ -54,8 +54,8 @@ public class RuntimePrototypeCubeModel
 	public RuntimePrototypeCubeModel(int id, int authorProfileId, float scale, byte[] data, int chunkSize);
 
 	// Methods
-	private void FineGrainedTerrainOverrideChunkSize(int size);
 	private void Create(int id, int authorProfileId, float scale, byte[] data);
+	private void FineGrainedTerrainOverrideChunkSize(int size);
 	public RuntimePrototypeCubeModel CloneGeometry(bool withDeltaCubes = false);
 	public void RemoveAllCubesLocal();
 	public bool MeshGenerateDirtyChunksAll(ref int meshUpdates);

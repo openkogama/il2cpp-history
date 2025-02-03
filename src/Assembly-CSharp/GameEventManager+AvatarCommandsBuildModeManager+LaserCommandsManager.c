@@ -4,9 +4,22 @@
 void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ActivateLaserForDuration(GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *this,float duration,MethodInfo *method)
 
 {
-  if ((this->fields).OnActivateLaserForDuration != (Action_1_Single_ *)0x0) {
-    pAVar1 = (this->fields).OnActivateLaserForDuration;
+  pAVar1 = (this->fields).OnActivateLaserForDuration;
+  if (pAVar1 != (Action_1_Single_ *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,duration,(pAVar1->fields)._._.method);
+  }
+  return;
+}
+
+
+/* Void ChangeState(LaserPointerState) */
+
+void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState(GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *this,LaserPointerState__Enum newState,MethodInfo *method)
+
+{
+  pAVar1 = (this->fields).OnChangeState;
+  if (pAVar1 != (Action_1_LaserPointerState_ *)0x0) {
+    (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,newState,(pAVar1->fields)._._.method);
   }
   return;
 }
@@ -17,8 +30,8 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_SetLaserActiveState(GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *this,bool isActive,MethodInfo *method)
 
 {
-  if ((this->fields).OnLaserActiveChanged != (Action_1_Boolean_ *)0x0) {
-    pAVar1 = (this->fields).OnLaserActiveChanged;
+  pAVar1 = (this->fields).OnLaserActiveChanged;
+  if (pAVar1 != (Action_1_Boolean_ *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,_isActive,(pAVar1->fields)._._.method);
   }
   return;
@@ -30,8 +43,8 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition(GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *this,Vector3 to,MethodInfo *method)
 
 {
-  if ((this->fields).OnUpdatePosition != (Action_1_UnityEngine_Vector3_ *)0x0) {
-    pAVar1 = (this->fields).OnUpdatePosition;
+  pAVar1 = (this->fields).OnUpdatePosition;
+  if (pAVar1 != (Action_1_UnityEngine_Vector3_ *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,to._0_8_,to.z,(pAVar1->fields)._._.method);
   }
   return;

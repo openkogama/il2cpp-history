@@ -24,8 +24,8 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_Initialize(Play
               iVar5 = (this_01->fields)._._ActorNr_k__BackingField;
               MVar6 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
               if (MVar6 == MVGameMode__Enum_Edit) {
-                MVar7 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
-                bVar8 = MVar7 == MVLocalPlayer_PlanetOwnershipType__Enum_Owner;
+                PVar7 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
+                bVar8 = (char)PVar7 == '\x02';
               }
               else {
                 bVar8 = false;
@@ -112,8 +112,8 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_OpenUserManagem
         if (MVar3 != MVGameMode__Enum_Edit) {
           return;
         }
-        MVar4 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
-        if (MVar4 != MVLocalPlayer_PlanetOwnershipType__Enum_Owner) {
+        PVar4 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
+        if ((char)PVar4 != '\x02') {
           return;
         }
         value = (Object *)func_?();
@@ -121,12 +121,12 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_OpenUserManagem
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pOVar5 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)0xb3654c35,OwnerToolController_MethodInfo__UnityEngine__Object__Instantiate<OwnerToolController>_OwnerToolController_);
+        pOVar5 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)0xb3e37435,OwnerToolController_MethodInfo__UnityEngine__Object__Instantiate<OwnerToolController>_OwnerToolController_);
         if (value != (Object *)0x0) {
           value[1].klass = pOVar5;
           func_?(value + 1,pOVar5);
           pOVar5 = value[1].klass;
-          pSVar6 = (String *)(**(code **)(iRam_? + 0x310))(0x85e85711,*(undefined4 *)(iRam_? + 0x314));
+          pSVar6 = (String *)(**(code **)(iRam_? + 0x310))(0x86e85711,*(undefined4 *)(iRam_? + 0x314));
           if (pOVar5 != (Object__Class *)0x0) {
             if (cRam_? == '\0') {
               func_?(&::StringLiteral__);
@@ -220,8 +220,8 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_SetButtonVisibi
               iVar5 = (this_01->fields)._._ActorNr_k__BackingField;
               MVar6 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
               if (MVar6 == MVGameMode__Enum_Edit) {
-                MVar7 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
-                bVar8 = MVar7 == MVLocalPlayer_PlanetOwnershipType__Enum_Owner;
+                PVar7 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
+                bVar8 = (char)PVar7 == '\x02';
               }
               else {
                 bVar8 = false;

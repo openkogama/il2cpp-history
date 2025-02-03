@@ -452,7 +452,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Delete(Co
         pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar1,(this->fields).woID,(MethodInfo *)0x0);
         pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if (pMVar2 != (MVWorldObject *)0x0) {
-          cVar3 = (*(code *)pMVar2->klass[2]._0.element_class)(pMVar2,pMVar1,value + 1,pMVar2->klass[2]._0.castClass);
+          cVar3 = (*(code *)pMVar2->klass[2]._0.declaringType)(pMVar2,pMVar1,value + 1,pMVar2->klass[2]._0.parent);
           if (cVar3 != '\0') {
             pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
             if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -557,7 +557,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_EnterCube
     if (this_00 != (MVWorldObjectClientManager *)0x0) {
       pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_00,(this->fields).woID,(MethodInfo *)0x0);
       if (pMVar2 != (MVWorldObject *)0x0) {
-        (*pMVar2->klass[1].vtable.set_Scale.methodPtr)(pMVar2);
+        (*pMVar2->klass[1].vtable.get_WorldPosition.methodPtr)(pMVar2);
         return;
       }
     }
@@ -582,7 +582,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_EnterMuzz
     if (this_00 != (MVWorldObjectClientManager *)0x0) {
       pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_00,(this->fields).woID,(MethodInfo *)0x0);
       if (pMVar2 != (MVWorldObject *)0x0) {
-        (*pMVar2->klass[1].vtable.set_Scale.methodPtr)();
+        (*pMVar2->klass[1].vtable.get_WorldPosition.methodPtr)();
         return;
       }
     }
@@ -778,10 +778,10 @@ bool Assembly-CSharp.dll::ContextMenuController::ContextMenuController_IsPending
   pMVar1 = (this->fields).selectedWorldObject;
   if (pMVar1 != (MVWorldObjectClient *)0x0) {
     if ((((TypeInfo__MVCubeModelBase->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment) && ((MVCubeModelBase__Class *)(pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] == TypeInfo__MVCubeModelBase)) && (pMVar1[1].klass != (MVWorldObjectClient__Class *)0x0)) {
-      if (((pMVar1[1].klass)->_0).declaringType == (Il2CppClass *)0x1) {
+      if (((pMVar1[1].klass)->_0).generic_class == (Il2CppGenericClass *)0x1) {
         return 1;
       }
-      return (bool)((uint)((pMVar1[1].klass)->_0).typeMetadataHandle >> 0x1f);
+      return (bool)((uint)((pMVar1[1].klass)->_0).this_arg.data.__klassIndex >> 0x1f);
     }
   }
   return 0;
@@ -1140,11 +1140,11 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowConte
           if ((((pMVar3 == (MVWorldObjectClient *)0x0) || ((pMVar3->klass->_1).naturalAligment < (TypeInfo__MVCubeModelBase->_1).naturalAligment)) || ((MVCubeModelBase__Class *)(pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] != TypeInfo__MVCubeModelBase)) || (pMVar3[1].klass == (MVWorldObjectClient__Class *)0x0)) {
             bVar5 = 0;
           }
-          else if (((pMVar3[1].klass)->_0).declaringType == (Il2CppClass *)0x1) {
+          else if (((pMVar3[1].klass)->_0).generic_class == (Il2CppGenericClass *)0x1) {
             bVar5 = 1;
           }
           else {
-            bVar5 = (byte)((uint)((pMVar3[1].klass)->_0).typeMetadataHandle >> 0x1f);
+            bVar5 = (byte)((uint)((pMVar3[1].klass)->_0).this_arg.data.__klassIndex >> 0x1f);
           }
           *(byte *)((int)&value[1].klass + 1) = bVar5;
           pUVar6 = (UnityAction *)TM::TM__(StringLiteral_Stars,(MethodInfo *)0x0);
@@ -1552,7 +1552,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowInfoD
     if ((((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment) && ((MVCubeModelInstance__Class *)(pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] == TypeInfo__MVCubeModelInstance)) && (pMVar1[1].klass != (MVWorldObjectClient__Class *)0x0)) {
       pSVar2 = TM::TM__(StringLiteral_Model_author_ID__,(MethodInfo *)0x0);
       if (pMVar1[1].klass != (MVWorldObjectClient__Class *)0x0) {
-        IStack_3.m_value = (int32_t)((pMVar1[1].klass)->_0).interopData;
+        IStack_3.m_value = (int32_t)((pMVar1[1].klass)->_0).properties;
         pSVar4 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
         pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,pSVar4,(MethodInfo *)0x0);
         TextCommand::TextCommand_NotifyUser(pSVar2,(MethodInfo *)0x0);

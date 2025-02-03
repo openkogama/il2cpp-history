@@ -8,7 +8,7 @@ MVBuildModeAvatarLocal_AvatarBuildModeBase * Assembly-CSharp.dll::MVBuildModeAva
     func_?(&TypeInfo__MVBuildModeAvatarLocal__EditMode);
     cRam_? = '\x01';
   }
-  if ((undefined1)avatarBuildModeRuntimeState == MVBuildModeAvatarLocal_AvatarBuildModes__Enum_Edit) {
+  if ((avatarBuildModeRuntimeState & 0xff) - MVBuildModeAvatarLocal_AvatarBuildModes__Enum_Edit < 2) {
     pMVar1 = (this->fields).avatar;
     pMVar2 = (MVBuildModeAvatarLocal_AvatarBuildModeBase *)func_?(TypeInfo__MVBuildModeAvatarLocal__EditMode);
     if (cRam_? == '\0') {
@@ -128,7 +128,7 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal+BuildModeAvatarLocalModes::MVBu
     func_?();
     cRam_? = '\x01';
   }
-  if ((undefined1)mode == MVBuildModeAvatarLocal_AvatarBuildModes__Enum_Edit) {
+  if ((mode & 0xff) - MVBuildModeAvatarLocal_AvatarBuildModes__Enum_Edit < 2) {
     value = (MVBuildModeAvatarLocal_AvatarBuildModes__Enum__Class *)func_?();
     if (cRam_? == '\0') {
       func_?();

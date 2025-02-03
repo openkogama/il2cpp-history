@@ -29,7 +29,9 @@ void Assembly-CSharp.dll::Links::Links_AddLink(Links *this,Link *link,MVWorldObj
       }
       pLVar3 = (LinkObjectScript *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pLVar3,LinkObjectScript_MethodInfo__UnityEngine__Object__Instantiate<LinkObjectScript>_LinkObjectScript_);
       if (pLVar3 != (LinkObjectScript *)0x0) {
-        LinkObjectScript::LinkObjectScript_Initialize(pLVar3,link,(MethodInfo *)0x0);
+        (pLVar3->fields)._.isObjectLink = 0;
+        (pLVar3->fields)._.linkID = (link->fields).id;
+        LinkObjectScript::LinkObjectScript_UpdateLinkVisual(pLVar3,link,(MethodInfo *)0x0);
         this_01 = (this->fields).linkObjects;
         if (this_01 != (Dictionary_2_System_Int32_LinkObjectScript_ *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)this_01,(link->fields).id,(Object *)pLVar3,MethodInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>__Add_int__LinkObjectScript_);

@@ -23,7 +23,7 @@ void Assembly-CSharp.dll::SpawnPointSettings::SpawnPointSettings_Initialize(Spaw
       else {
         woID = (pMVar1->fields).id;
         pSVar2 = (this->fields).settingsBase;
-        documentationType = (*(code *)pMVar1->klass[1]._1.thread_static_fields_size)(pMVar1,pMVar1->klass[1]._1.thread_static_fields_offset);
+        documentationType = (*(code *)pMVar1->klass[1]._1.flags)(pMVar1,pMVar1->klass[1]._1.token);
         if (pSVar2 != (SettingsBase *)0x0) {
           SettingsBase::SettingsBase_Initialize(pSVar2,woID,root,documentationType,(MethodInfo *)0x0);
           this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar1->fields).data;

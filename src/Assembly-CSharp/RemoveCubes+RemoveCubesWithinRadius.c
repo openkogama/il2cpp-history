@@ -291,7 +291,7 @@ RemoveCubes_RemoveCubesWithinRadius_RemoveStyle__Enum Assembly-CSharp.dll::Remov
   if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pos.z = -0x4dc9;
+  pos.z = -0x47d9;
   uStack9 = 0x1036;
   bVar10 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality((CubeBase *)a,(CubeBase *)0x0,(MethodInfo *)0x0);
   if ((bVar10 == 0) && (RVar11 = RemoveCubes_RemoveCubesWithinRadius_CalculateCubeDestruction(IVar4,(CubeBase *)a,(Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0,(MethodInfo *)0x0), RVar11 == RemoveCubes_RemoveCubesWithinRadius_DestructionState__Enum_NotDestroyed)) {
@@ -313,7 +313,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius::RemoveCubes_Remov
 {
   uVar1 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(0x8810);
+    func_?(0x10);
     cRam_? = '\x01';
   }
   TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->centerDamage = centerDamage;
@@ -606,7 +606,7 @@ code_?:
                   iVar7 = (int16_t)z;
                   uStack_8 = (undefined2)((uint)z >> 0x10);
                   getPhysicalProperites = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)wo;
-                  wo = (MVCubeModelBase *)0x64;
+                  wo = (MVCubeModelBase *)0x65;
                   func_?();
                   bStack_2 = 1;
                   puVar9 = puVar18;

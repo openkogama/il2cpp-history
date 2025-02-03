@@ -1,7 +1,7 @@
 
-/* Void <Execute>b__0(IModalPopupCreator, BaseEventData) */
+/* Void <HandleDeleteSelection>b__0(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::ESSelection+<>c__DisplayClass14_0::ESSelection_c_DisplayClass14_0__Execute_b__0(ESSelection_c_DisplayClass14_0 *this,IModalPopupCreator *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ESSelection+<>c__DisplayClass15_0::ESSelection_c_DisplayClass15_0__HandleDeleteSelection_b__0(ESSelection_c_DisplayClass15_0 *this,IModalPopupCreator *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

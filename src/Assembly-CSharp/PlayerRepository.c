@@ -99,7 +99,7 @@ code_?:
       (*(code *)*puVar12)();
       item = ARepository::ARepository_GetKoGaMaPackageFromItem(item_00,(MethodInfo *)0x0);
       if (((item == (KoGaMaPackageClient *)0x0) || (pDVar13 = (item->fields).worldObjects, pDVar13 == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0)) || (pOVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar13,(item->fields).worldObjectRoot,MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_), pOVar14 == (Object *)0x0)) break;
-      (**(code **)&pOVar14->klass[3]._1.method_count)();
+      (**(code **)&pOVar14->klass[3]._1.nested_type_count)();
       pDVar13 = (item->fields).worldObjects;
       if ((pDVar13 == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) || (pOVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar13,(item->fields).worldObjectRoot,MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_), pOVar14 == (Object *)0x0)) break;
       (*(code *)pOVar14->klass[1]._0.namespaze)(pOVar14,CONCAT44(fStack_5,fStack_4));

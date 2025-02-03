@@ -18,7 +18,7 @@ bool Assembly-CSharp.dll::MVMovingPlatformNode::MVMovingPlatformNode_Delete(MVMo
     pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(WOCM,(this->fields)._._.groupId,(MethodInfo *)0x0);
     if (pMVar1 != (MVWorldObject *)0x0) {
       if (((TypeInfo__MVMovingPlatformGroup->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment) && ((MVMovingPlatformGroup__Class *)(pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVMovingPlatformGroup->_1).naturalAligment - 1] == TypeInfo__MVMovingPlatformGroup)) {
-        bVar2 = (*(code *)pMVar1->klass[2]._0.element_class)(pMVar1,WOCM);
+        bVar2 = (*(code *)pMVar1->klass[2]._0.declaringType)(pMVar1,WOCM);
         return bVar2;
       }
     }

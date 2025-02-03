@@ -1,7 +1,7 @@
 
-/* Void <OnPop>b__12_0(IShortcutKeyUnRegister, BaseEventData) */
+/* Void <OnPop>b__14_0(IShortcutKeyUnRegister, BaseEventData) */
 
-void Assembly-CSharp.dll::MaterialsControllerEditMode+<>c::MaterialsControllerEditMode_c__OnPop_b__12_0(MaterialsControllerEditMode_c *this,IShortcutKeyUnRegister *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::MaterialsControllerEditMode+<>c::MaterialsControllerEditMode_c__OnPop_b__14_0(MaterialsControllerEditMode_c *this,IShortcutKeyUnRegister *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -35,9 +35,9 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode+<>c::MaterialsControllerEd
 }
 
 
-/* Void <Open>b__8_1(IUIStack, BaseEventData) */
+/* Void <Open>b__10_1(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::MaterialsControllerEditMode+<>c::MaterialsControllerEditMode_c__Open_b__8_1(MaterialsControllerEditMode_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::MaterialsControllerEditMode+<>c::MaterialsControllerEditMode_c__Open_b__10_1(MaterialsControllerEditMode_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

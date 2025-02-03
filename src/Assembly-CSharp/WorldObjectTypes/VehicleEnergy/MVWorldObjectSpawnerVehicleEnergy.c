@@ -438,7 +438,7 @@ bool Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
         GreyOutObjectScript::GreyOutObjectScript_GreyIn(this_00,(MethodInfo *)0x0);
       }
       if (pMVar1 != (MVWorldObject *)0x0) {
-        bVar3 = (*pMVar1->klass[1].vtable.set_Scale.methodPtr)();
+        bVar3 = (*pMVar1->klass[1].vtable.get_WorldPosition.methodPtr)();
         return bVar3;
       }
     }
@@ -513,7 +513,7 @@ bool Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
   if (this_00 != (MVWorldObjectClientManager *)0x0) {
     pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_00,(this->fields)._.spawnWorldObjectID,(MethodInfo *)0x0);
     if (pMVar1 != (MVWorldObject *)0x0) {
-      bVar2 = (*pMVar1->klass[1].vtable.get_WorldPosition.methodPtr)();
+      bVar2 = (*pMVar1->klass[1].vtable.get_WorldRotation.methodPtr)();
       return bVar2;
     }
   }
@@ -644,7 +644,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
   if (this_00 != (MVWorldObjectClientManager *)0x0) {
     pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_00,(this->fields)._.spawnWorldObjectID,(MethodInfo *)0x0);
     if (pMVar1 != (MVWorldObject *)0x0) {
-      (*pMVar1->klass[1].vtable.ShallowCopy.methodPtr)();
+      (*pMVar1->klass[1].vtable.DeepCopy.methodPtr)();
     }
     return;
   }

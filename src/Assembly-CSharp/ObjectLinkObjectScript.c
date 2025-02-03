@@ -79,36 +79,29 @@ void Assembly-CSharp.dll::ObjectLinkObjectScript::ObjectLinkObjectScript_UpdateL
               pBVar9 = (this->fields).boxCollider;
               if ((pBVar9 != (BoxCollider *)0x0) && (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pBVar9,(MethodInfo *)0x0), pGVar10 != (GameObject *)0x0)) {
                 pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar10,(MethodInfo *)0x0);
-                uVar18 = (this->fields)._.endPos.x;
-                uVar19 = (this->fields)._.endPos.y;
-                uVar20 = (this->fields)._.startPos.x;
-                uVar21 = (this->fields)._.startPos.y;
-                value_00.y = (float)uVar19 - (float)uVar21;
-                value_00.x = (float)uVar18 - (float)uVar20;
-                value_00.z = (this->fields)._.endPos.z - (this->fields)._.startPos.z;
-                pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xffffffd8,value_00,(MethodInfo *)0x0);
-                pQVar22 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1((Quaternion *)&stack0xffffffd4,*pVVar2,(MethodInfo *)0x0);
+                pVVar2 = (Vector3 *)func_?();
+                pQVar18 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1((Quaternion *)&stack0xffffffd4,*pVVar2,(MethodInfo *)0x0);
                 if (pTVar11 != (Transform *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar11,*pQVar22,(MethodInfo *)0x0);
-                  fVar23 = (float10)func_?();
-                  fVar3 = (float)(fVar23 - (float10)0.5);
+                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar11,*pQVar18,(MethodInfo *)0x0);
+                  fVar19 = (float10)func_?();
+                  fVar3 = (float)(fVar19 - (float10)0.5);
                   if (fVar3 <= 0.2) {
                     fVar3 = 0.2;
                   }
                   pBVar9 = (this->fields).boxCollider;
                   if ((pBVar9 != (BoxCollider *)0x0) && (pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pBVar9,(MethodInfo *)0x0), pTVar11 != (Transform *)0x0)) {
-                    value_01.z = fVar3;
-                    value_01.x = 0.2;
-                    value_01.y = 0.2;
-                    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale(pTVar11,value_01,(MethodInfo *)0x0);
+                    value_00.z = fVar3;
+                    value_00.x = 0.2;
+                    value_00.y = 0.2;
+                    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale(pTVar11,value_00,(MethodInfo *)0x0);
                     pLVar8 = (this->fields).lineRenderer;
                     if (pLVar8 != (LineRenderer *)0x0) {
                       this_01 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material((Renderer *)pLVar8,(MethodInfo *)0x0);
-                      fVar23 = (float10)func_?();
+                      fVar19 = (float10)func_?();
                       if (this_01 != (Material *)0x0) {
-                        value_02.y = 1.0;
-                        value_02.x = (float)(fVar23 * (float10)0.5);
-                        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTextureScale(this_01,value_02,(MethodInfo *)0x0);
+                        value_01.y = 1.0;
+                        value_01.x = (float)(fVar19 * (float10)0.5);
+                        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTextureScale(this_01,value_01,(MethodInfo *)0x0);
                         return;
                       }
                     }
@@ -122,8 +115,8 @@ void Assembly-CSharp.dll::ObjectLinkObjectScript::ObjectLinkObjectScript_UpdateL
     }
   }
   func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 

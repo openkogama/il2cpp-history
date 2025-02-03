@@ -151,7 +151,7 @@ code_?:
       UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_get_length(pAVar7,(MethodInfo *)0x0);
       pAVar2 = (this->fields).currentAnim;
       if ((pAVar2 == (AnimationData *)0x0) || ((pAVar3 = (this->fields).avatarAnimation, pAVar3 == (Animation *)0x0 || (pAVar7 = UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_GetState(pAVar3,(pAVar2->fields).state,(MethodInfo *)0x0), pAVar7 == (AnimationState *)0x0)))) goto code_?;
-      UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_set_time(pAVar7,((float)(iVar4 - iVar6) * 0.001) / 3.4548093e-29,(MethodInfo *)0x0);
+      UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_set_time(pAVar7,((float)(iVar4 - iVar6) * 0.001) / 3.4550308e-29,(MethodInfo *)0x0);
     }
     pAStack8 = (this->fields).currentAnim;
     (this->fields).prevAnim = pAStack8;
@@ -823,7 +823,7 @@ code_?:
             fVar26 = (this->fields).fallbackWalkSpeed;
           }
           else {
-            puVar27 = (undefined8 *)func_?(auStack_28,0x5d,(this->fields).mvAvatar);
+            puVar27 = (undefined8 *)func_?(auStack_28,0x5e,(this->fields).mvAvatar);
             uStack_29 = *puVar27;
             uStack_30 = *(undefined4 *)(puVar27 + 1);
             fVar31 = (float10)func_?(&uStack_29,0);

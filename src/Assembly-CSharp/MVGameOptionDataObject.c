@@ -60,7 +60,7 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_Partial
   pSVar2 = mscorlib.dll::System::String::String_Concat_3(StringLiteral_data_beforeu000A,pSVar2,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
   MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialRemoveFromHashtable_1((Dictionary_2_System_Object_System_Object_ *)pSVar1[5].fields._stringLength,(Dictionary_2_System_Object_System_Object_ *)0x0,1,(MethodInfo *)0x0);
-  (*pSVar1->klass[1].vtable.System_Collections_IEnumerable_GetEnumerator.methodPtr)();
+  (*pSVar1->klass[1].vtable.System_Collections_Generic_IEnumerable_System_Char__GetEnumerator.methodPtr)();
   pSVar1 = MVWorldObject.dll::MV::WorldObject::HashtableFunctions::HashtableFunctions_PrettyString((Dictionary_2_System_Object_System_Object_ *)pSVar1[5].fields._stringLength,(MethodInfo *)0x0);
   pSVar1 = mscorlib.dll::System::String::String_Concat_3(StringLiteral_data_afteru000A,pSVar1,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);

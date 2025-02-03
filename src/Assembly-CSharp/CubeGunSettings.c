@@ -39,29 +39,26 @@ code_?:
       if (pUVar3 == (UnityAction *)0x0) goto code_?;
     }
     func_?();
-    pCVar4 = pMVar1[1].fields.cubeModelingStateMachine;
-    if (pCVar4 == (CubeModelingStateMachine *)0x0) goto code_?;
-    OVar5 = (pCVar4->fields).currentMaterialId;
+    pMVar4 = pMVar1[1].klass;
+    if (pMVar4 == (MaterialsController__Class *)0x0) goto code_?;
+    pIVar5 = (pMVar4->_0).element_class;
     this_01 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(this_01,(Object *)&(pMVar1->fields).materialsPop,MethodInfo__CubeGunSettings__MaterialChange_unsigned_char_,(MethodInfo *)0x0);
-    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)OVar5,(Delegate *)this_01,(MethodInfo *)0x0);
+    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pIVar5,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pDVar6 == (Delegate *)0x0) {
-      (pCVar4->fields).currentMaterialId.currentCryptoKey = 0;
-      (pCVar4->fields).currentMaterialId.hiddenValue = 0;
-      (pCVar4->fields).currentMaterialId.fakeValue = 0;
-      (pCVar4->fields).currentMaterialId.inited = 0;
+      (pMVar4->_0).element_class = (Il2CppClass *)0x0;
 code_?:
       func_?();
-      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)&(pCVar4->fields).currentMaterialId,(MethodInfo *)0x0);
+      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)&(pMVar4->_0).element_class,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)obj,(MethodInfo *)0x0);
       return;
     }
-    OVar5 = (ObscuredByte)func_?();
-    if (OVar5 != (ObscuredByte)0x0) {
-      (pCVar4->fields).currentMaterialId = OVar5;
+    pIVar5 = (Il2CppClass *)func_?();
+    if (pIVar5 != (Il2CppClass *)0x0) {
+      (pMVar4->_0).element_class = pIVar5;
       iVar7 = func_?();
       if (iVar7 != 0) goto code_?;
     }
@@ -234,29 +231,26 @@ code_?:
       if (pUVar3 == (UnityAction *)0x0) goto code_?;
     }
     func_?();
-    pCVar4 = pMVar1[1].fields.cubeModelingStateMachine;
-    if (pCVar4 == (CubeModelingStateMachine *)0x0) goto code_?;
-    OVar5 = (pCVar4->fields).currentMaterialId;
+    pMVar4 = pMVar1[1].klass;
+    if (pMVar4 == (MaterialsController__Class *)0x0) goto code_?;
+    pIVar5 = (pMVar4->_0).element_class;
     this_01 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(this_01,(Object *)&(pMVar1->fields).materialsPop,MethodInfo__CubeGunSettings__MaterialChange_unsigned_char_,(MethodInfo *)0x0);
-    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)OVar5,(Delegate *)this_01,(MethodInfo *)0x0);
+    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pIVar5,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pDVar6 == (Delegate *)0x0) {
-      (pCVar4->fields).currentMaterialId.currentCryptoKey = 0;
-      (pCVar4->fields).currentMaterialId.hiddenValue = 0;
-      (pCVar4->fields).currentMaterialId.fakeValue = 0;
-      (pCVar4->fields).currentMaterialId.inited = 0;
+      (pMVar4->_0).element_class = (Il2CppClass *)0x0;
 code_?:
       func_?();
-      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)&(pCVar4->fields).currentMaterialId,(MethodInfo *)0x0);
+      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)&(pMVar4->_0).element_class,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)obj,(MethodInfo *)0x0);
       return;
     }
-    OVar5 = (ObscuredByte)func_?();
-    if (OVar5 != (ObscuredByte)0x0) {
-      (pCVar4->fields).currentMaterialId = OVar5;
+    pIVar5 = (Il2CppClass *)func_?();
+    if (pIVar5 != (Il2CppClass *)0x0) {
+      (pMVar4->_0).element_class = pIVar5;
       iVar7 = func_?();
       if (iVar7 != 0) goto code_?;
     }

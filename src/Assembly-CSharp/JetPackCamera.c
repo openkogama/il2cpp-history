@@ -498,7 +498,7 @@ void Assembly-CSharp.dll::JetPackCamera::JetPackCamera_ResetDistanceAndDirection
           uStack_3._4_4_ = (float)((ulonglong)uVar12 >> 0x20);
           fVar13 = uStack_3._4_4_ + fVar13 * VStack_5.y;
           uStack_3 = uVar12;
-          (*(code *)(pMVar9->klass->vtable).set_WorldPosition.method)(pMVar9,fVar14,fVar13,fStack_6,(pMVar9->klass->vtable).get_WorldRotation_1.methodPtr);
+          (*(code *)(pMVar9->klass->vtable).set_WorldPosition.method)(pMVar9,fVar14,fVar13,fStack_6,(pMVar9->klass->vtable).get_IsTransformDefined.methodPtr);
           JetPackCamera_FocusOnPosition(this,lookAtPosition,2.0,(MethodInfo *)0x0);
           return;
         }

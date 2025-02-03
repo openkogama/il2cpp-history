@@ -25,19 +25,6 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
 }
 
 
-/* Void Respawn() */
-
-void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_Respawn(GameEventManager_AvatarCommandsPlayModeManager *this,MethodInfo *method)
-
-{
-  if ((this->fields).OnRespawn != (Action *)0x0) {
-    pAVar1 = (this->fields).OnRespawn;
-    (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
-  }
-  return;
-}
-
-
 /* Void ReviveTimeElapsed() */
 
 void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_ReviveTimeElapsed(GameEventManager_AvatarCommandsPlayModeManager *this,MethodInfo *method)
@@ -71,6 +58,19 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
 {
   if ((this->fields).OnSetToDeadMode != (Action *)0x0) {
     pAVar1 = (this->fields).OnSetToDeadMode;
+    (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
+  }
+  return;
+}
+
+
+/* Void SpawnAsGhost() */
+
+void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_SpawnAsGhost(GameEventManager_AvatarCommandsPlayModeManager *this,MethodInfo *method)
+
+{
+  if ((this->fields).OnSpawnAsGhost != (Action *)0x0) {
+    pAVar1 = (this->fields).OnSpawnAsGhost;
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }
   return;

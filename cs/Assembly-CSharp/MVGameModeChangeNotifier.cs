@@ -13,7 +13,7 @@ public class MVGameModeChangeNotifier : IUpdatecontrollerSubscriberUpdate
 {
 	// Fields
 	private UpdateCondition _currentState;
-	private List<IGameStateControllerSubscriber> UpdateList;
+	private readonly List<IGameStateControllerSubscriber> UpdateList;
 
 	// Nested types
 	[Serializable]

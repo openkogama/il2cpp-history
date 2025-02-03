@@ -8,7 +8,11 @@ void Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonTextureG
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
   if ((pMVar1 != (MaterialLoader *)0x0) && (this_00 != (MeshRenderer *)0x0)) {
     UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial((Renderer *)this_00,(pMVar1->fields)._CubeModelMaterial_k__BackingField,(MethodInfo *)0x0);
-    return;
+    this_01 = (this->fields).pictureCamera;
+    if (this_01 != (Camera *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_depth(this_01,-2.0,(MethodInfo *)0x0);
+      return;
+    }
   }
   func_?();
   pcVar2 = (code *)swi(3);

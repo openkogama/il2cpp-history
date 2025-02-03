@@ -241,5 +241,6 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	protected static void DeleteScreenPlayerPrefs();
 	public void UpdateControllerLateUpdate();
 	public static void ForceEmbedSite(string url);
+	public static void TogglePlayerIndicators();
 }
 

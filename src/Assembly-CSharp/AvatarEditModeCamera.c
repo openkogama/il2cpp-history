@@ -50,7 +50,7 @@ void Assembly-CSharp.dll::AvatarEditModeCamera::AvatarEditModeCamera_ResetPositi
       uStack_3._4_4_ = (pVVar7->upVector).y;
       fStack_8 = (pVVar7->upVector).z;
       if (pMVar1 != (MVBuildModeAvatarLocal *)0x0) {
-        (*(code *)(pMVar1->klass->vtable).set_WorldPosition.method)(pMVar1,fVar5 + (float)(undefined4)uStack_3,(float)uStack_3._4_4_ + fVar6,fStack_8 + fVar4,(pMVar1->klass->vtable).get_WorldRotation_1.methodPtr);
+        (*(code *)(pMVar1->klass->vtable).set_WorldPosition.method)(pMVar1,fVar5 + (float)(undefined4)uStack_3,(float)uStack_3._4_4_ + fVar6,fStack_8 + fVar4,(pMVar1->klass->vtable).get_IsTransformDefined.methodPtr);
         pMVar1 = (this->fields)._.avatarLocal;
         pQVar9 = MVWorldObjectClient::MVWorldObjectClient_get_SyncRot((Quaternion *)&stack0xffffffe0,unaff_ESI,(MethodInfo *)0x0);
         if (pMVar1 != (MVBuildModeAvatarLocal *)0x0) {

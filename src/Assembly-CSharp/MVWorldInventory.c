@@ -152,7 +152,7 @@ void Assembly-CSharp.dll::MVWorldInventory::MVWorldInventory_GenerateAllDirty(MV
           }
           pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).dirtyRPCM;
           if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<RuntimePrototypeCubeModel>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-        } while (*(int *)((int)RVar3 + 0x10) != 3);
+        } while (*(int *)((int)RVar3 + 0x24) != 3);
         pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).dirtyRPCM;
         if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<RuntimePrototypeCubeModel>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) goto code_?;
         bVar4 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_MeshGenerateDirtyChunksAll((RuntimePrototypeCubeModel *)RVar3,counter,(MethodInfo *)0x0);
@@ -192,7 +192,7 @@ bool Assembly-CSharp.dll::MVWorldInventory::MVWorldInventory_GenerateDirty(MVWor
         }
         pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).dirtyRPCM;
         if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,(int32_t)index,MethodInfo__System__Collections__Generic__List<RuntimePrototypeCubeModel>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-      } while (*(MeshGeneratePriority__Enum *)((int)RVar3 + 0x10) != priority);
+      } while (*(MeshGeneratePriority__Enum *)((int)RVar3 + 0x24) != priority);
       pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).dirtyRPCM;
       if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,(int32_t)index,MethodInfo__System__Collections__Generic__List<RuntimePrototypeCubeModel>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
       bVar4 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_MeshGenerateDirtyChunks((RuntimePrototypeCubeModel *)RVar3,counter,(MethodInfo *)0x0);
@@ -240,7 +240,7 @@ void Assembly-CSharp.dll::MVWorldInventory::MVWorldInventory_LateUpdate(MVWorldI
           }
           pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).dirtyRPCM;
           if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar3,index,MethodInfo__System__Collections__Generic__List<RuntimePrototypeCubeModel>__get_Item_int_), RVar4 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-        } while (*(int *)((int)RVar4 + 0x10) != 3);
+        } while (*(int *)((int)RVar4 + 0x24) != 3);
         pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).dirtyRPCM;
         if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar3,index,MethodInfo__System__Collections__Generic__List<RuntimePrototypeCubeModel>__get_Item_int_), RVar4 == (RegexCharClass_SingleRange)0x0)) goto code_?;
         bVar2 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_MeshGenerateDirtyChunksAll((RuntimePrototypeCubeModel *)RVar4,(int32_t *)&stack0xfffffff8,(MethodInfo *)0x0);
@@ -552,8 +552,8 @@ void Assembly-CSharp.dll::MVWorldInventory::MVWorldInventory_ReplaceWithPendingR
             RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_set_PrototypeState((RuntimePrototypeCubeModel *)this_05,PrototypeState__Enum_Pending,(MethodInfo *)0x0);
             if (this_00 != (RuntimePrototypeCubeModel *)0x0) {
               fVar3 = (this_00->fields).PendingScaleUpdate.value;
-              (this_05->fields)._._.objectLinkRefs = *(List_1_MV_WorldObject_ObjectLink_ **)&(this_00->fields).PendingScaleUpdate;
-              (this_05->fields)._._.ownerActorNr = (int32_t)fVar3;
+              (this_05->fields)._._.groupId = *(int32_t *)&(this_00->fields).PendingScaleUpdate;
+              (this_05->fields)._._.itemId = (int32_t)fVar3;
               (this_00->fields).PendingScaleUpdate.hasValue = 0;
               *(undefined3 *)&(this_00->fields).PendingScaleUpdate.field_0x1 = 0;
               (this_00->fields).PendingScaleUpdate.value = 0.0;

@@ -251,8 +251,8 @@ void Assembly-CSharp.dll::MVBlueprintBase::MVBlueprintBase_Compare(MVBlueprintBa
                   iVar14._2_1_ = (_Stack_18.array + 0x50)->numlobounds;
                   iVar14._3_1_ = (_Stack_18.array + 0x50)->field_0x7;
                   if ((pMVar11->fields)._.type == iVar14) {
-                    in_stack_5 = (MethodInfo **)0x2e;
-                    func_?(0x2e,_Stack_18.dummy,pMVar11,_visibleCubesOnly,matchingCubeCount,investigatedCubeCount);
+                    in_stack_5 = (MethodInfo **)0x2f;
+                    func_?(0x2f,_Stack_18.dummy,pMVar11,_visibleCubesOnly,matchingCubeCount,investigatedCubeCount);
                   }
                 }
               } while( true );
@@ -428,7 +428,7 @@ code_?:
         pMVar14 = MVBlueprintBase_GetChild(this,(String *)child,(MethodInfo *)0x0);
         if (pMVar14 == (MVWorldObjectClient *)0x0) goto code_?;
         in_stack_6 = (MVBlueprintBase__Class **)&UNK_?;
-        cVar15 = func_?(0x2d,pMVar14,pMStack_8,koGaMaPackageClient,insertedByProfileId);
+        cVar15 = func_?(0x2e,pMVar14,pMStack_8,koGaMaPackageClient,insertedByProfileId);
       } while (cVar15 != '\0');
       uStack_1 = 0xffffffff;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_7,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::String>__Dispose__,unaff_EBX);

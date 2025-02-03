@@ -664,7 +664,7 @@ void Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_SetupUseInteractor(
                     if (pURam402000fc != (UseInteractor *)0x0) {
                       UseInteractor::UseInteractor_AddRequirement(pURam402000fc,(UseRequirement *)this_05,(MethodInfo *)0x0);
                       if (iRam_? != 0) {
-                        (**(code **)(iRam_? + 0x390))(0x40200000,*(undefined4 *)(iRam_? + 0x24),pURam402000fc,*(undefined4 *)(iRam_? + 0x394));
+                        (**(code **)(iRam_? + 0x398))(0x40200000,*(undefined4 *)(iRam_? + 0x24),pURam402000fc,*(undefined4 *)(iRam_? + 0x39c));
                         pUVar2 = pURam402000fc;
                         if (iRam_? != 0) {
                           pTVar1 = *(TriggerBoxEvents **)(iRam_? + 0x18);

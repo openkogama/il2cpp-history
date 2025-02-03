@@ -767,9 +767,9 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::AvatarEditModeBodyContro
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pEVar1 = (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original,NotificationPopup_MethodInfo__UnityEngine__Object__Instantiate<NotificationPopup>_NotificationPopup_);
+    pGVar1 = (GameEventManager *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original,NotificationPopup_MethodInfo__UnityEngine__Object__Instantiate<NotificationPopup>_NotificationPopup_);
     if (value != (MVNetworkGame *)0x0) {
-      (value->fields).ReceivedItemFromQuery = pEVar1;
+      (value->fields).GameEventManager = pGVar1;
       func_?();
       if ((this->fields).playingPurchaseSoundAfterScreenshot != 0) {
         (this->fields).playingPurchaseSoundAfterScreenshot = 0;
@@ -796,9 +796,9 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::AvatarEditModeBodyContro
         }
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar2,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPurchaseSoundManager>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPurchaseSoundManager>_);
       }
-      pEVar1 = (value->fields).ReceivedItemFromQuery;
-      if (pEVar1 != (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
-        NotificationPopup::NotificationPopup_Initialize((NotificationPopup *)pEVar1,(this->fields).currentActionSuccessMessage,StringLiteral_Success_,(MethodInfo *)0x0);
+      pGVar1 = (value->fields).GameEventManager;
+      if (pGVar1 != (GameEventManager *)0x0) {
+        NotificationPopup::NotificationPopup_Initialize((NotificationPopup *)pGVar1,(this->fields).currentActionSuccessMessage,StringLiteral_Success_,(MethodInfo *)0x0);
         pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__AvatarEditModeBodyController____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();

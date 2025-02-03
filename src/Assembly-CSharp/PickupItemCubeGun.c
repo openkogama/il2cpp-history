@@ -433,7 +433,7 @@ code_?:
                 if (cVar23 == '\0') break;
                 if ((CONCAT22(uStack_27,uVar26) == 0) || (piVar24 = (int *)func_?(), piVar24 == (int *)0x0)) goto code_?;
                 if (*(Il2CppClass **)(*piVar24 + 0x20) != (TypeInfo__Edge->_0).element_class) goto code_?;
-                uVar26 = 0x3bd4;
+                uVar26 = 0xa714;
                 uStack_27 = 0x1068;
                 pfVar28 = (float *)func_?();
                 face = *pfVar28;
@@ -597,7 +597,7 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_HandleCursors(Pic
 
 {
   if (cRam_? == '\0') {
-    func_?(0x3084);
+    func_?(0xa560);
     func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
     func_?(&MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__);
     cRam_? = '\x01';

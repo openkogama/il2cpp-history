@@ -119,7 +119,7 @@ MVWorldObjectClient * Assembly-CSharp.dll::MVGroup::MVGroup_Clone(MVGroup *this,
         }
         if ((pMVar5 == (MVWorldObjectClient *)0x0) || (pMVar7 == (MethodInfo *)0x0)) break;
         pOStack_4 = (Object__Class *)ownerActorNumber;
-        (**(code **)(pMVar7->methodPointer + 0x238))();
+        (**(code **)(pMVar7->methodPointer + 0x240))();
       }
     }
   }
@@ -167,7 +167,7 @@ Bounds * Assembly-CSharp.dll::MVGroup::MVGroup_ComputeBoundsForWOs(Bounds *__ret
         UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate(&BStack_4,point,(MethodInfo *)0x0);
         point_00.y = BStack_3.m_Extents.y + fVar8;
         point_00.x = fVar7 + (pBVar2->m_Center).x;
-        point_00.z = BStack_3.m_Extents.z + 3.541441e-29;
+        point_00.z = BStack_3.m_Extents.z + 3.5417057e-29;
         UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate(&BStack_4,point_00,(MethodInfo *)0x0);
       }
       (__return_storage_ptr__->m_Center).x = BStack_4.m_Center.x;
@@ -333,7 +333,7 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_DeSelect(MVGroup *this,MethodInfo *me
         return;
       }
       if (this_01 == (List_1_T_Enumerator_System_Object_ *)0x0) break;
-      (*(code *)this_01->_list[0x1f].fields._items)();
+      (*(code *)this_01->_list[0x1f].fields._version)();
     }
   }
   func_?();
@@ -598,7 +598,7 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_Initialize(MVGroup *this,MethodInfo *
         bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&stack0xffffffc8,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__MoveNext__);
         if (bVar5 == 0) break;
         if (pMVar4 == (MethodInfo *)0x0) goto code_?;
-        (**(code **)(pMVar4->methodPointer + 0x248))();
+        (**(code **)(pMVar4->methodPointer + 0x250))();
       }
       uStack_1 = 0xffffffff;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffc8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__Dispose__,in_stack_6);
@@ -822,7 +822,7 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_PlayModeInitialize(MVGroup *this,Meth
           return;
         }
         if (pMVar4 == (MethodInfo *)0x0) break;
-        (**(code **)(pMVar4->methodPointer + 600))();
+        (**(code **)(pMVar4->methodPointer + 0x260))();
       }
     }
   }
@@ -882,7 +882,7 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_PositionChangedNotify(MVGroup *this,M
           }
           pOStack_9 = (Object *)uVar7;
           if (pOStack_9 == (Object *)0x0) break;
-          (*(code *)pOStack_9->klass[2]._0.name)();
+          (*(code *)pOStack_9->klass[2]._0.byval_arg.data)();
         }
       }
     }
@@ -949,7 +949,7 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_Select(MVGroup *this,MethodInfo *meth
         return;
       }
       if (this_01 == (List_1_T_Enumerator_System_Object_ *)0x0) break;
-      (*(code *)this_01->_list[0x1e].fields._version)();
+      (*(code *)this_01->_list[0x1f].klass)();
     }
   }
   func_?();
@@ -991,7 +991,7 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_Select_1(MVGroup *this,Color color,Me
         return;
       }
       if (this_01 == (List_1_T_Enumerator_System_Object_ *)0x0) break;
-      (*(code *)this_01->_list[0x1f].klass)();
+      (*(code *)this_01->_list[0x1f].fields._items)();
     }
   }
   func_?();
@@ -1140,7 +1140,7 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_TraverseRecursiveTail(MVGroup *this,M
             return;
           }
           if (DStack_6._currentValue == (Object *)0x0) break;
-          (*(DStack_6._currentValue)->klass[2]._1.unity_user_data)(DStack_6._currentValue,callBack,(DStack_6._currentValue)->klass[2]._1.initializationExceptionGCHandle);
+          (*(code *)(DStack_6._currentValue)->klass[2]._1.cctor_started)(DStack_6._currentValue,callBack,(DStack_6._currentValue)->klass[2]._1.cctor_finished_or_no_cctor);
         }
       }
     }

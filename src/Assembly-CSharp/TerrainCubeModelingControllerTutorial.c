@@ -35,7 +35,7 @@ void Assembly-CSharp.dll::TerrainCubeModelingControllerTutorial::TerrainCubeMode
       if (this_04 != (CubeModelingStateMachine *)0x0) {
         materialId = CubeModelingStateMachine::CubeModelingStateMachine_get_CurrentMaterialId(this_04,(MethodInfo *)0x0);
         cubeModelingStateMachine = (CubeModelingStateMachine *)CONCAT31((int3)((uint)this_04 >> 8),materialId);
-        this_00 = materialsController[1].fields._._._._.m_CachedPtr;
+        this_00 = (RawImage *)(materialsController->fields).tab;
         pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((pMVar4 != (MVNetworkGame *)0x0) && (this_01 = (pMVar4->fields)._MaterialRepository_k__BackingField, this_01 != (MVMaterialRepository *)0x0)) {
           pMVar5 = MVMaterialRepository::MVMaterialRepository_GetMaterial(this_01,materialId,(MethodInfo *)0x0);
@@ -43,7 +43,7 @@ void Assembly-CSharp.dll::TerrainCubeModelingControllerTutorial::TerrainCubeMode
             UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture(this_00,(Texture *)(pMVar5->fields)._ButtonTexture_k__BackingField,(MethodInfo *)0x0);
             pGVar6 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
             if (((pGVar6 != (GameEventManager *)0x0) && (pGVar7 = (pGVar6->fields).AvatarCommandsBuildMode, pGVar7 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (this_02 = (pGVar7->fields).LaserCommands, this_02 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
-              Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Object]::SpawnRoleVariable_1_System_Object__SubscribableVariableOnOnChange((SpawnRoleVariable_1_System_Object_ *)this_02,(Object *)cubeModelingStateMachine,(MethodInfo *)0x0);
+              UnityEngine.CoreModule.dll::UnityEngine::Windows::Speech::DictationRecognizer::DictationRecognizer_DictationRecognizer_InvokeHypothesisGeneratedEvent((DictationRecognizer *)this_02,(String *)cubeModelingStateMachine,(MethodInfo *)0x0);
               this_05 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
               if (this_05 != (MainCameraManager *)0x0) {
                 MainCameraManager::MainCameraManager_set_IsLogicRendered(this_05,0,(MethodInfo *)0x0);
@@ -119,11 +119,11 @@ void Assembly-CSharp.dll::TerrainCubeModelingControllerTutorial::TerrainCubeMode
       UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture(this_00,(Texture *)(pMVar2->fields)._ButtonTexture_k__BackingField,(MethodInfo *)0x0);
       pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
       if (((pGVar3 != (GameEventManager *)0x0) && (pGVar4 = (pGVar3->fields).AvatarCommandsBuildMode, pGVar4 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && ((pGVar4->fields).LaserCommands != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
-        if (*(int *)(in_stack_5 + 0xc) != 0) {
-          iVar6 = *(int *)(in_stack_5 + 0xc);
-          puStack7 = *(undefined **)(iVar6 + 0x14);
-          uStack8 = *(undefined4 *)(iVar6 + 0x20);
-          (**(code **)(iVar6 + 0xc))();
+        iVar5 = *(int *)(in_stack_6 + 0xc);
+        if (iVar5 != 0) {
+          puStack7 = *(undefined **)(iVar5 + 0x14);
+          uStack8 = *(undefined4 *)(iVar5 + 0x20);
+          (**(code **)(iVar5 + 0xc))();
         }
         return;
       }

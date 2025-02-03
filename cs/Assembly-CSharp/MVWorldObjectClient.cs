@@ -49,6 +49,7 @@ public class MVWorldObjectClient : MVWorldObject
 	public Vector3 EulerAngles { get; set; }
 	public override Vector3 Scale { get; set; }
 	public virtual new Vector3 WorldPosition { get; set; }
+	public virtual bool IsTransformDefined { get; }
 	public new Quaternion WorldRotation { get; set; }
 	public Vector3 WorldEulerAngles { get; set; }
 	public virtual Vector3 SyncPos { get; set; }
@@ -92,26 +93,26 @@ public class MVWorldObjectClient : MVWorldObject
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass164_0
+	private sealed class __c__DisplayClass166_0
 	{
 		// Fields
 		public Matrix4x4 localToWorld;
 
 		// Constructors
-		public __c__DisplayClass164_0();
+		public __c__DisplayClass166_0();
 
 		// Methods
 		internal Vector3 _GetBoundsCornersWorld_b__0(Vector3 localCorner);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass51_0
+	private sealed class __c__DisplayClass53_0
 	{
 		// Fields
 		public HashSet<int> childIDs;
 
 		// Constructors
-		public __c__DisplayClass51_0();
+		public __c__DisplayClass53_0();
 
 		// Methods
 		internal void _get_WorldIDsRecursive_b__0(MVWorldObjectClient wo);

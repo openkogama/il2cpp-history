@@ -276,7 +276,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
   if ((this != (MVVehicleBase_LocalObjectsBase *)0x0) && (v != (Object *)0x0)) {
     if ((v->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
       puVar3 = (undefined4 *)func_?(v);
-      uVar4 = (*(code *)this->klass[2].vtable.Enter.method)(this,*puVar3,this->klass[2].vtable.Leave.methodPtr);
+      uVar4 = (*(code *)this->klass[2].vtable.Leave.method)(this,*puVar3,this->klass[2].vtable.__unknown_2.methodPtr);
       v = (Object *)CONCAT22(uVar4,v._0_2_);
       if ((char)uVar4 == '\0') {
         return;
@@ -288,7 +288,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
         this = (MVVehicleBase_LocalObjectsBase *)func_?(TypeInfo__MVWorldObjectClient__CallBackDelegate);
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor((UnityAction_1_System_Object_ *)this,pOVar1,MethodInfo__MVVehicleBase_LocalObjectsBase____c__DisplayClass15_0___OnHealthChange_g__DetachLocalAvatar_0_MVWorldObjectClient_,(MethodInfo *)0x0);
         if (piVar5 != (int *)0x0) {
-          (**(code **)(*piVar5 + 0x220))(piVar5,this,*(undefined4 *)(*piVar5 + 0x224));
+          (**(code **)(*piVar5 + 0x228))(piVar5,this,*(undefined4 *)(*piVar5 + 0x22c));
           if ((MVAvatarLocal *)pOVar1[1].klass != (MVAvatarLocal *)0x0) {
             MVAvatarLocal::MVAvatarLocal_LeaveVehicle((MVAvatarLocal *)pOVar1[1].klass,0,(MethodInfo *)0x0);
           }

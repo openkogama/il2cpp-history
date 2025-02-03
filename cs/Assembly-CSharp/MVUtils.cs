@@ -11,10 +11,6 @@ using UnityEngine;
 
 public class MVUtils : MonoBehaviour
 {
-	// Fields
-	private const float CheckProInterval = 2f;
-	private float last;
-
 	// Constructors
 	public MVUtils();
 

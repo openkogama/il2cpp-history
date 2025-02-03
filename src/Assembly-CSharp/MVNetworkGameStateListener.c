@@ -15,8 +15,7 @@ void Assembly-CSharp.dll::MVNetworkGameStateListener::MVNetworkGameStateListener
   if (this_00 != (MVNetworkGame *)0x0) {
     iVar1 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_00,(MethodInfo *)0x0);
     (this->fields).timeLeft = (startTime + duration) - iVar1;
-    if ((fromGameSnapshot == 0) && ((this->fields).OnGameStateChanged != (EventHandler_1_GameStateChangeEventArgs_ *)0x0)) {
-      pEVar2 = (this->fields).OnGameStateChanged;
+    if ((fromGameSnapshot == 0) && (pEVar2 = (this->fields).OnGameStateChanged, pEVar2 != (EventHandler_1_GameStateChangeEventArgs_ *)0x0)) {
       this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(TypeInfo__GameStateChangeEventArgs);
       if (cRam_? == '\0') {
         func_?(&TypeInfo__System__EventArgs);

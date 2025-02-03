@@ -158,7 +158,6 @@ IntVector Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_GetCubePos
         point.z = (float)(MVWorldObjectClientManager *)voxelHit.interactionFlags;
         bVar1 = voxelHit.interactionFlags._4_1_;
         voxelHit.transform = (Transform *)pOVar5;
-        voxelHit.interactionFlags._4_4_ = (MethodInfo *)(float)voxelHit.interactionFlags._4_4_;
         IVar7 = SharedCubeFunctions::SharedCubeFunctions_WorldToLocal((GameObject *)voxelHit.collider,point,bVar1,(MethodInfo *)0x0);
         iVar3 = IVar7.z;
         uVar8 = *(undefined2 *)(IVar7._0_4_ + 1);
@@ -301,8 +300,8 @@ code_?:
                 if (cVar24 == '\0') break;
                 if ((CONCAT22(uStack_28,uVar27) == 0) || (piVar25 = (int *)func_?(), piVar25 == (int *)0x0)) goto code_?;
                 if (*(Il2CppClass **)(*piVar25 + 0x20) != (TypeInfo__Edge->_0).element_class) goto code_?;
-                uVar27 = 0xbf34;
-                uStack_28 = 0x1068;
+                uVar27 = 0x2a54;
+                uStack_28 = 0x1069;
                 pfVar29 = (float *)func_?();
                 face = *pfVar29;
                 if (face != 0.0) {
@@ -559,7 +558,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_HandleCursors(P
 
 {
   if (cRam_? == '\0') {
-    func_?(0x3084);
+    func_?(0xa560);
     func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
     func_?(&MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__);
     cRam_? = '\x01';
@@ -892,7 +891,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_OnFireSecondary
         if (pMVar4 != (MVPickupOwner *)0x0) {
           fVar5 = (pMVar4->fields).lookOrigin.y;
           fVar6 = (pMVar4->fields).lookOrigin.z;
-          iVar7 = -0x3520;
+          iVar7 = 0x3610;
           pVVar8 = MVPickupOwner::MVPickupOwner_get_LookDirection((Vector3 *)&stack0xffffffe0,(this->fields)._._.owner,(MethodInfo *)0x0);
           this_00 = (PickupItemModelGun *)pVVar8->x;
           pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xfffffff0,*pVVar8,(MethodInfo *)0x0);

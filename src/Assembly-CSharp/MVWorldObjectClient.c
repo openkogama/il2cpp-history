@@ -454,9 +454,9 @@ GameObject * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_Creat
             uVar4 = (pVVar3->oneVector).x;
             uVar5 = (pVVar3->oneVector).y;
             if (pTVar2 != (Transform *)0x0) {
-              value.y = (float)uVar5 * 4.5193042e-29;
-              value.x = (float)uVar4 * 4.5193042e-29;
-              value.z = (pVVar3->oneVector).z * 4.5193042e-29;
+              value.y = (float)uVar5 * 4.5266853e-29;
+              value.x = (float)uVar4 * 4.5266853e-29;
+              value.z = (pVVar3->oneVector).z * 4.5266853e-29;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale(pTVar2,value,(MethodInfo *)0x0);
               return pGVar1;
             }
@@ -928,11 +928,11 @@ Vector3__Array * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_G
     func_?(&System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_MethodInfo__System__Linq__Enumerable__Select<UnityEngine::Vector3,_UnityEngine::Vector3>_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>__System__Func<UnityEngine::Vector3,_UnityEngine::Vector3>_);
     func_?(&UnityEngine__Vector3__MethodInfo__System__Linq__Enumerable__ToArray<UnityEngine::Vector3>_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_____);
     func_?(&TypeInfo__System__Func<UnityEngine::Vector3,_UnityEngine::Vector3>);
-    func_?(&MethodInfo__MVWorldObjectClient____c__DisplayClass164_0___GetBoundsCornersWorld_b__0_UnityEngine__Vector3_);
-    func_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass164_0);
+    func_?(&MethodInfo__MVWorldObjectClient____c__DisplayClass166_0___GetBoundsCornersWorld_b__0_UnityEngine__Vector3_);
+    func_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass166_0);
     cRam_? = '\x01';
   }
-  this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(TypeInfo__MVWorldObjectClient____c__DisplayClass164_0);
+  this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(TypeInfo__MVWorldObjectClient____c__DisplayClass166_0);
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
   this_00 = (this->fields).transform;
   if (this_00 != (Transform *)0x0) {
@@ -971,7 +971,7 @@ Vector3__Array * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_G
       this_01[5].fields._._defaultValue_k__BackingField = pLVar16;
       pVVar17 = MVWorldObjectClient_GetBoundsCornersLocal(this,boundsContext,(MethodInfo *)0x0);
       this_02 = (Func_2_UnityEngine_Vector3Int_UnityEngine_Vector3Int_ *)func_?();
-      mscorlib.dll::System::Func`2[UnityEngine::Vector3Int,UnityEngine::Vector3Int]::Func_2_UnityEngine_Vector3Int_UnityEngine_Vector3Int___ctor(this_02,(Object *)this_01,MethodInfo__MVWorldObjectClient____c__DisplayClass164_0___GetBoundsCornersWorld_b__0_UnityEngine__Vector3_,(MethodInfo *)0x0);
+      mscorlib.dll::System::Func`2[UnityEngine::Vector3Int,UnityEngine::Vector3Int]::Func_2_UnityEngine_Vector3Int_UnityEngine_Vector3Int___ctor(this_02,(Object *)this_01,MethodInfo__MVWorldObjectClient____c__DisplayClass166_0___GetBoundsCornersWorld_b__0_UnityEngine__Vector3_,(MethodInfo *)0x0);
       source = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_6((IEnumerable_1_UnityEngine_Vector3_ *)pVVar17,(Func_2_UnityEngine_Vector3_UnityEngine_Vector3_ *)this_02,System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_MethodInfo__System__Linq__Enumerable__Select<UnityEngine::Vector3,_UnityEngine::Vector3>_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>__System__Func<UnityEngine::Vector3,_UnityEngine::Vector3>_);
       pVVar17 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToArray_3(source,UnityEngine__Vector3__MethodInfo__System__Linq__Enumerable__ToArray<UnityEngine::Vector3>_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_____);
       return pVVar17;
@@ -1073,22 +1073,19 @@ code_?:
     return (MVWorldObjectClient *)0x0;
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if ((this_00 == (MVWorldObjectClientManager *)0x0) || (this = (MVWorldObjectClient *)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_00,(this->fields)._.groupId,(MethodInfo *)0x0), this == (MVWorldObjectClient *)0x0)) {
-    bVar2 = 0;
-    iVar3 = func_?();
-    pbVar4 = (byte *)(in_GS_OFFSET + iVar3);
-    bVar5 = *pbVar4;
-    bVar6 = (byte)iVar3;
-    bVar7 = *pbVar4;
-    *pbVar4 = bVar7 + bVar6 + bVar2;
-    *(char *)(in_GS_OFFSET + 0x36106536) = *(char *)(in_GS_OFFSET + 0x36106536) + bVar6 + (CARRY1(bVar5,bVar6) || CARRY1(bVar7 + bVar6,bVar2));
-    pcVar8 = (code *)swi(3);
-    pMVar9 = (MVWorldObjectClient *)(*pcVar8)();
-    return pMVar9;
+  if ((this_00 == (MVWorldObjectClientManager *)0x0) || (pMVar2 = (MVWorldObjectClient *)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_00,(this->fields)._.groupId,(MethodInfo *)0x0), pMVar2 == (MVWorldObjectClient *)0x0)) {
+    bVar3 = 0;
+    iVar4 = func_?();
+    bVar5 = (byte)this + extraout_DL;
+    *(char *)(in_GS_OFFSET + iVar4) = *(char *)(in_GS_OFFSET + iVar4) + bVar5 + bVar3 + (CARRY1(extraout_CH,extraout_DL) || CARRY1(extraout_CH + extraout_DL,CARRY1((byte)this,extraout_DL) || CARRY1(bVar5,bVar3)));
+    pcVar6 = (code *)swi(3);
+    pMVar2 = (MVWorldObjectClient *)(*pcVar6)();
+    return pMVar2;
   }
   method = (MethodInfo *)0x0;
-  unaff_EBP = in_stack_10;
+  unaff_EBP = in_stack_7;
   unaff_ESI = pMVar1;
+  this = pMVar2;
   goto code_?;
 }
 
@@ -2067,7 +2064,7 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_ReceivePackag
           }
         }
         MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_7((InteractionData *)(auStack_8 + 4),byteArray,(MethodInfo *)0x0);
-        func_?(0x3e,this,auStack_8._4_4_,iStack_18,uStack_19,pOStack_20,iStack_17,p);
+        func_?(0x3f,this,auStack_8._4_4_,iStack_18,uStack_19,pOStack_20,iStack_17,p);
       }
       else {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -3014,6 +3011,24 @@ InteractionFlags__Enum Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectCl
 }
 
 
+/* Boolean get_IsTransformDefined() */
+
+bool Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_IsTransformDefined(MVWorldObjectClient *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  x = (this->fields).transform;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+  return bVar1;
+}
+
+
 /* Vector3 get_ObjectConnectorOffset() */
 
 Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_ObjectConnectorOffset(Vector3 *__return_storage_ptr__,MVWorldObjectClient *this,MethodInfo *method)
@@ -3205,11 +3220,11 @@ HashSet_1_System_Int32_ * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjec
     func_?(&TypeInfo__MVWorldObjectClient__CallBackDelegate);
     func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
     func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
-    func_?(&MethodInfo__MVWorldObjectClient____c__DisplayClass51_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_);
-    func_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass51_0);
+    func_?(&MethodInfo__MVWorldObjectClient____c__DisplayClass53_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_);
+    func_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass53_0);
     cRam_? = '\x01';
   }
-  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(TypeInfo__MVWorldObjectClient____c__DisplayClass51_0);
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(TypeInfo__MVWorldObjectClient____c__DisplayClass53_0);
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
   pHVar1 = (HashSet_1_System_Int32_ *)func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
   System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::HashSet_1_System_Int32___ctor(pHVar1,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
@@ -3217,7 +3232,7 @@ HashSet_1_System_Int32_ * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjec
     (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)pHVar1;
     func_?(&this_00->fields);
     this_01 = (UnityAction_1_System_Object_ *)func_?(TypeInfo__MVWorldObjectClient__CallBackDelegate);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor(this_01,(Object *)this_00,MethodInfo__MVWorldObjectClient____c__DisplayClass51_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor(this_01,(Object *)this_00,MethodInfo__MVWorldObjectClient____c__DisplayClass53_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_,(MethodInfo *)0x0);
     (*(code *)(this->klass->vtable).TraverseRecursiveTail.method)(this,this_01,(this->klass->vtable).CompareWithKoGaMaPackage.methodPtr);
     return (HashSet_1_System_Int32_ *)(this_00->fields)._._defaultValue_k__BackingField;
   }
@@ -3496,7 +3511,7 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_Selected(
 void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_SyncPos(MVWorldObjectClient *this,Vector3 value,MethodInfo *method)
 
 {
-  (*(code *)(this->klass->vtable).set_WorldPosition.method)(this,value._0_8_,value.z,(this->klass->vtable).get_WorldRotation_1.methodPtr);
+  (*(code *)(this->klass->vtable).set_WorldPosition.method)(this,value._0_8_,value.z,(this->klass->vtable).get_IsTransformDefined.methodPtr);
   return;
 }
 

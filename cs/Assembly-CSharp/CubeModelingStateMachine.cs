@@ -15,11 +15,10 @@ using UnityEngine.EventSystems;
 public class CubeModelingStateMachine : FSMEntity
 {
 	// Fields
-	private ObscuredByte currentMaterialId;
-	private Material currentMaterial;
-	private IModelingConstraint constraint;
-	public OnCurrentMaterialChangeDelegate OnCurrentMaterialChange;
 	public bool useLasers;
+	public OnCurrentMaterialChangeDelegate OnCurrentMaterialChange;
+	private ObscuredByte currentMaterialId;
+	private IModelingConstraint constraint;
 	private GameObject gameObject;
 	private Camera mainCamera;
 	[CompilerGenerated]
@@ -29,12 +28,12 @@ public class CubeModelingStateMachine : FSMEntity
 
 	// Properties
 	public CubePickingInfo SelectedCube { [CompilerGenerated] get; [CompilerGenerated] set; }
-	public byte CurrentMaterialId { get; set; }
 	public MVCubeModelBase TargetCubeModel { [CompilerGenerated] get; [CompilerGenerated] private set; }
-	public bool CursorVisible { get; set; }
 	public Vector3[] CubeCorners { get; }
 	public byte[] ByteCubeCorners { get; }
 	public Material CurrentMaterial { get; }
+	public byte CurrentMaterialId { get; set; }
+	public bool CursorVisible { get; set; }
 
 	// Nested types
 	public delegate void OnCurrentMaterialChangeDelegate(byte currentMaterialId, Material currentMaterial);
@@ -66,6 +65,6 @@ public class CubeModelingStateMachine : FSMEntity
 	public bool CanEditCubeAt(IntVector requestedCubePos);
 	public CanPerformCubeActionResult CanReplaceCube(CubePickingInfo requestedCube, byte materialId);
 	[CompilerGenerated]
-	private void _set_CurrentMaterialId_b__14_0(IHandleMaterial x, BaseEventData y);
+	private void _set_CurrentMaterialId_b__23_0(IHandleMaterial x, BaseEventData y);
 }
 

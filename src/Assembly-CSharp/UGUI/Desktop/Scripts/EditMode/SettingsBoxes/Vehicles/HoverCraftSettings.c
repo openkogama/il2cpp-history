@@ -708,7 +708,10 @@ code_?:
   func_?();
 code_?:
   func_?();
-  func_?();
+  uVar21 = func_?();
+  out((short)((uint6)uVar21 >> 0x20),(int)uVar21);
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 

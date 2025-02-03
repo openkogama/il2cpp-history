@@ -203,7 +203,7 @@ void Assembly-CSharp.dll::MVMovingPlatform::MVMovingPlatform_RecalculateMovement
       VStack_3.z = fVar8;
       if (pMVar1 != (MVMovingPlatformNode *)0x0) {
         puVar2 = (undefined8 *)(*(code *)(pMVar1->klass->vtable).get_WorldPosition_1.method)(&QStack_6,pMVar1,(pMVar1->klass->vtable).set_WorldPosition.methodPtr);
-        (*(code *)(this->klass->vtable).set_WorldPosition.method)(this,(int)*puVar2,(int)((ulonglong)*puVar2 >> 0x20),*(undefined4 *)(puVar2 + 1),(this->klass->vtable).get_WorldRotation_1.methodPtr);
+        (*(code *)(this->klass->vtable).set_WorldPosition.method)(this,(int)*puVar2,(int)((ulonglong)*puVar2 >> 0x20),*(undefined4 *)(puVar2 + 1),(this->klass->vtable).get_IsTransformDefined.methodPtr);
         VStack_3.y = 0.0;
         VStack_3.x = fVar7;
         VStack_3.z = fVar8;

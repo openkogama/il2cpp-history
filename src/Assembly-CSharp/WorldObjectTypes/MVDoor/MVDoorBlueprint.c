@@ -63,7 +63,7 @@ code_?:
     pIVar7 = (cubeModelBase->_0).image;
     pMVar8 = TypeInfo__MVCubeModelInstance;
     if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= *(byte *)&pIVar7[4].assembly) && (*(MVCubeModelInstance__Class **)((pIVar7[2].typeCount - 4) + (uint)(TypeInfo__MVCubeModelInstance->_1).naturalAligment * 4) == TypeInfo__MVCubeModelInstance)) {
-      (*(code *)(cubeModelBase->_0).image[0x12].codeGenModule)();
+      (**(code **)&(cubeModelBase->_0).image[0x12].dynamic)();
       if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }

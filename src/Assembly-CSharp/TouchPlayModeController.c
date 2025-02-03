@@ -494,26 +494,26 @@ code_?:
       }
       a_00 = (this->fields).OnLobbyStateChange;
       pUVar8 = (UnityAction_1_System_Int32Enum_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar8,(Object *)0x62e85357,MethodInfo__AndroidChatController__OnLobbyStateChange_bool_,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar8,(Object *)0x83f08b11,MethodInfo__AndroidChatController__OnLobbyStateChange_bool_,(MethodInfo *)0x0);
       pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a_00,(Delegate *)pUVar8,(MethodInfo *)0x0);
       if (pDVar10 == (Delegate *)0x0) {
-        pDRam0000001c = (Delegate *)0x0;
+        pDRam00000028 = (Delegate *)0x0;
 code_?:
         func_?();
-        pDVar10 = pDRam0000001c;
+        pDVar10 = pDRam00000028;
         pUVar8 = (UnityAction_1_System_Int32Enum_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar8,(Object *)0x0,MethodInfo__TouchPlayModeController__LobbyStateChange_bool_,(MethodInfo *)0x0);
         pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar10,(Delegate *)pUVar8,(MethodInfo *)0x0);
         if (pDVar10 != (Delegate *)0x0) {
           pDVar10 = (Delegate *)func_?();
           if (pDVar10 != (Delegate *)0x0) {
-            pDRam0000001c = pDVar10;
+            pDRam00000028 = pDVar10;
             iVar11 = func_?();
             if (iVar11 != 0) goto code_?;
           }
           goto code_?;
         }
-        pDRam0000001c = (Delegate *)0x0;
+        pDRam00000028 = (Delegate *)0x0;
 code_?:
         func_?();
         if ((TypeInfo__ChatCommandManager->_1).cctor_finished_or_no_cctor == 0) {
@@ -537,7 +537,7 @@ code_?:
       }
       pDVar10 = (Delegate *)func_?();
       if (pDVar10 != (Delegate *)0x0) {
-        pDRam0000001c = pDVar10;
+        pDRam00000028 = pDVar10;
         iVar11 = func_?();
         if (iVar11 != 0) goto code_?;
       }

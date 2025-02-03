@@ -750,7 +750,7 @@ code_?:
           pSVar41 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_8,(MethodInfo *)0x0);
           method_00.m_Index = 3;
           func_?(3,pSVar41);
-          uVar25 = 0x410324d77;
+          uVar25 = 0x4103250e7;
           pSVar41 = StringLiteral__to_move__If_this_is_a_new_movab;
           func_?();
           pMStack_20 = (MVMovable *)mscorlib.dll::System::String::String_Concat_6(pSStack_21,(MethodInfo *)0x0);
@@ -1119,7 +1119,7 @@ code_?:
           pSVar41 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
           method_00.m_Index = 3;
           func_?(3,pSVar41);
-          uVar25 = 0x410324d77;
+          uVar25 = 0x4103250e7;
           pSVar41 = StringLiteral__to_move__If_this_is_a_new_movab;
           func_?();
           pMStack_20 = (MVMovable *)mscorlib.dll::System::String::String_Concat_6(pSStack_21,(MethodInfo *)0x0);

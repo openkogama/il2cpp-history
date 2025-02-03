@@ -18,7 +18,9 @@ internal class ESTerrainEdit : ESStateBase
 
 	// Methods
 	public override void Enter(EditorStateMachine e);
-	public override void Execute(EditorStateMachine e);
+	public override void Execute(EditorStateMachine esm);
+	private bool SelectedObject(EditorStateMachine esm, VoxelHit targetHit, bool woPickSuccess, bool selectionAllowedByLogicEnabled);
+	private bool SelectedObjectLink(EditorStateMachine esm);
 	private bool ResettingTerrain(VoxelHit targetHit);
 	public override void Exit(EditorStateMachine e);
 }

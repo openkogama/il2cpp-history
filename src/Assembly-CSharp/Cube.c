@@ -125,7 +125,7 @@ float Assembly-CSharp.dll::Cube::Cube_CalculateAOLightCheap(Face__Enum face,int3
 {
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__ContainsKey_MV__WorldObject__IntVector_);
-    func_?(0x53c4);
+    func_?(0xce4c);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&TypeInfo__SharedCubeFunctions);
     cRam_? = '\x01';
@@ -1109,7 +1109,7 @@ code_?:
   func_?();
 code_?:
   func_?();
-  *(int *)(extraout_ECX + 0x10) = *(int *)(extraout_ECX + 0x10) + -0xADDR;
+  in(extraout_DX);
   pcVar33 = (code *)swi(3);
   pLVar34 = (List_1_UnityEngine_Vector3_ *)(*pcVar33)();
   return pLVar34;
@@ -1253,7 +1253,7 @@ FaceData__Array * Assembly-CSharp.dll::Cube::Cube_GenerateCubeFaces(Cube *cube,I
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__Add_FaceData_);
-    func_?(0x64d4);
+    func_?(0xe0f4);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__List__);
     func_?(&TypeInfo__System__Collections__Generic__List<FaceData>);
     cRam_? = '\x01';
@@ -1299,10 +1299,10 @@ FaceData__Array * Assembly-CSharp.dll::Cube::Cube_GenerateCubeFacesCheap(Cube *c
     func_?(&MethodInfo__Cube___GenerateCubeFacesCheap_g__insideCheck_26_4_int_);
     func_?(&MethodInfo__Cube___GenerateCubeFacesCheap_g__insideCheck_26_5_int_);
     func_?(&TypeInfo__Cube);
-    func_?(0xad0c);
+    func_?(0x2148);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__Add_FaceData_);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__ToArray__);
-    func_?(0x6460);
+    func_?(0xe080);
     func_?(&TypeInfo__System__Collections__Generic__List<FaceData>);
     cRam_? = '\x01';
   }
@@ -2059,15 +2059,26 @@ Vector3 * Assembly-CSharp.dll::Cube::Cube_GetDefaultNormal(Vector3 *__return_sto
     __return_storage_ptr__->z = 0.0;
     return __return_storage_ptr__;
   default:
-    uVar1 = func_?(&TypeInfo__System__NotImplementedException);
-    this = (NotImplementedException *)func_?(uVar1);
+    func_?();
+    this = (NotImplementedException *)func_?();
     mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor(this,(MethodInfo *)0x0);
-    func_?(&MethodInfo__Cube__GetDefaultNormal_MV__WorldObject__Face_);
-    piVar2 = (int *)func_?();
-    *unaff_EDI = *unaff_EDI + (char)piVar2;
-    pcVar3 = (code *)swi(3);
-    pVVar4 = (Vector3 *)(*pcVar3)(this,&stack0xfffffffc,&stack0xffffffec,0xe11069a8,*piVar2 * 0xADDR,extraout_ECX,piVar2);
-    return pVVar4;
+    func_?();
+    bVar1 = (undefined1 *)0xffffffeb < &stack0xffffffe0;
+    uVar2 = func_?();
+    iVar3 = (int)((ulonglong)uVar2 >> 0x20);
+    *unaff_EDI = (int)uVar2;
+    puVar4 = (uint *)(iVar3 + 0x10);
+    uVar5 = *puVar4;
+    bVar6 = CARRY4((uint)&stack0xfffffffc,*puVar4) || CARRY4((uint)(&stack0xfffffffc + uVar5),(uint)bVar1);
+    uVar7 = (ulonglong)CONCAT14(bVar6,*unaff_EBX) << 1;
+    *unaff_EBX = (uint)uVar7 | (uint)bVar6;
+    *unaff_EBX = ~*unaff_EBX;
+    pbVar8 = (byte *)(iVar3 + (int)(&stack0xfffffffc + uVar5 + bVar1) * 2);
+    bVar1 = (byte)((ulonglong)uVar2 >> 0x20);
+    cRam_? = cRam_? + extraout_CH + (CARRY1(bVar1,*pbVar8) || CARRY1(bVar1 + *pbVar8,(uVar7 & 0x100000000) != 0));
+    pcVar9 = (code *)swi(3);
+    pVVar10 = (Vector3 *)(*pcVar9)();
+    return pVVar10;
   }
 }
 
@@ -2178,7 +2189,7 @@ code_?:
 code_?:
   func_?();
   pcVar6 = (code *)swi(3);
-  pVVar1 = (Vector3__Array *)(*pcVar6)();
+  pVVar1 = (Vector3__Array *)(*pcVar6)(0x10);
   return pVVar1;
 }
 
@@ -2240,7 +2251,7 @@ Vector3__Array * Assembly-CSharp.dll::Cube::Cube_GetEdgeVerticesWorld(GameObject
       }
     }
   }
-  in_stack_9 = 0x1069;
+  in_stack_9 = 0x106a;
   func_?();
 code_?:
   func_?();
@@ -2264,7 +2275,7 @@ Edge__Enum Assembly-CSharp.dll::Cube::Cube_GetEdge_1(GameObject *gameObject,Cube
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
     func_?(&TypeRef__Edge);
-    func_?(0x5a0c);
+    func_?(0xcd8c);
     func_?(&TypeInfo__System__Enum);
     func_?(&TypeInfo__System__IDisposable);
     func_?(&TypeInfo__System__Collections__IEnumerator);
@@ -3221,41 +3232,50 @@ void Assembly-CSharp.dll::Cube::Cube_GetTriangle(int32_t triangleNr,Vector3__Arr
   case 0xb:
     if ((corners == (Vector3__Array *)0x0) || (func_?(), triangleVertices == (Vector3__Array *)0x0)) {
 code_?:
-      func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-      halt_baddata();
+      uVar1 = func_?();
+      cRam_? = cRam_? + (char)uVar1 + ((longlong)(int)((longlong)*extraout_ECX * 0x6a) != (longlong)*extraout_ECX * 0x6a);
+      bVar2 = (byte)((uint)extraout_ECX >> 8) ^ *(byte *)((int)((ulonglong)uVar1 >> 0x20) + 0x10);
+      piVar3 = (int *)CONCAT22((short)((uint)extraout_ECX >> 0x10),CONCAT11(bVar2,(char)extraout_ECX));
+      out(0x32,(int)uVar1);
+      *(char *)(unaff_EBX + 0x31) = *(char *)(unaff_EBX + 0x31) + bVar2 + ((longlong)(int)((longlong)*piVar3 * 0x6a) != (longlong)*piVar3 * 0x6a);
+      *(char *)(unaff_EBX + 0x31) = *(char *)(unaff_EBX + 0x31) + bVar2 + ((longlong)(int)((longlong)*piVar3 * 0x6a) != (longlong)*piVar3 * 0x6a);
+      *(char *)(unaff_EBX + 0x31) = *(char *)(unaff_EBX + 0x31) + bVar2 + ((longlong)(int)((longlong)*piVar3 * 0x6a) != (longlong)*piVar3 * 0x6a);
+      *(char *)(unaff_EBX + 0x31) = *(char *)(unaff_EBX + 0x31) + bVar2 + ((longlong)(int)((longlong)*piVar3 * 0x6a) != (longlong)*piVar3 * 0x6a);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)(0x10,0x10,0x10,0x10);
+      return;
     }
-    func_?(0,uStack_1,uStack_2);
-    func_?(&uStack_1,1);
-    func_?(1,uStack_1,uStack_2);
-    uVar3 = 2;
+    func_?(0,uStack_5,uStack_6);
+    func_?(&uStack_5,1);
+    func_?(1,uStack_5,uStack_6);
+    uVar7 = 2;
     break;
   case 1:
     if ((corners == (Vector3__Array *)0x0) || (func_?(), triangleVertices == (Vector3__Array *)0x0)) goto code_?;
-    func_?(0,uStack_1,uStack_2);
-    func_?(&uStack_1,2);
-    func_?(1,uStack_1,uStack_2);
-    uVar3 = 3;
+    func_?(0,uStack_5,uStack_6);
+    func_?(&uStack_5,2);
+    func_?(1,uStack_5,uStack_6);
+    uVar7 = 3;
     break;
   case 2:
     if ((corners == (Vector3__Array *)0x0) || (func_?(), triangleVertices == (Vector3__Array *)0x0)) goto code_?;
-    func_?(0,uStack_1,uStack_2);
-    func_?(&uStack_1,5);
-    func_?(1,uStack_1,uStack_2);
-    uVar3 = 6;
+    func_?(0,uStack_5,uStack_6);
+    func_?(&uStack_5,5);
+    func_?(1,uStack_5,uStack_6);
+    uVar7 = 6;
     break;
   case 3:
     if ((corners == (Vector3__Array *)0x0) || (func_?(), triangleVertices == (Vector3__Array *)0x0)) goto code_?;
-    func_?(0,uStack_1,uStack_2);
-    func_?(&uStack_1,6);
-    func_?(1,uStack_1,uStack_2);
-    uVar3 = 7;
+    func_?(0,uStack_5,uStack_6);
+    func_?(&uStack_5,6);
+    func_?(1,uStack_5,uStack_6);
+    uVar7 = 7;
     break;
   default:
     goto code_?;
   }
-  func_?(&uStack_1,uVar3);
-  func_?(2,uStack_1,uStack_2);
+  func_?(&uStack_5,uVar7);
+  func_?(2,uStack_5,uStack_6);
 code_?:
   return;
 }
@@ -4370,7 +4390,7 @@ void Assembly-CSharp.dll::Cube::Cube_SetEdge_1(Vector3__Array **corners,Face__En
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Cube);
+    func_?();
     cRam_? = '\x01';
   }
   pVVar1 = *corners;
@@ -4482,7 +4502,7 @@ void Assembly-CSharp.dll::Cube::Cube_SetEdge_1(Vector3__Array **corners,Face__En
   default:
 code_?:
     if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Cube);
+      func_?();
     }
     Cube_SetFace_1(corners,face,pVVar1,(MethodInfo *)0x0);
     return;
@@ -4490,8 +4510,33 @@ code_?:
   func_?();
 code_?:
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  pMVar4 = (MonitorData *)&stack0xfffffffc;
+  pCVar5 = (CubeBase *)&stack0xfffffff4;
+  face_00 = (CubeBase__Class *)0x10;
+  in(extraout_DX);
+  this = (CubeBase *)&stack0xfffffff4;
+  edge_00 = (MonitorData *)&stack0xfffffffc;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__Cube,&stack0xfffffffc,0x10);
+    cRam_? = '\x01';
+    this = pCVar5;
+    edge_00 = pMVar4;
+  }
+  if (this == (CubeBase *)0x0) {
+    func_?(corners,pVVar1);
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  pVVar1 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners(this,(MethodInfo *)0x0);
+  if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__Cube);
+  }
+  TypeInfo__Cube->static_fields->cornersBookkeeping = pVVar1;
+  func_?(TypeInfo__Cube->static_fields,pVVar1);
+  Cube_SetEdge_1(&TypeInfo__Cube->static_fields->cornersBookkeeping,(Face__Enum)face_00,(Edge__Enum)edge_00,(Vector3__Array *)register0x00000010,(MethodInfo *)0x0);
+  MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_set_Corners(this,TypeInfo__Cube->static_fields->cornersBookkeeping,(MethodInfo *)0x0);
+  return;
 }
 
 
@@ -4532,32 +4577,30 @@ void Assembly-CSharp.dll::Cube::Cube_SetFace_1(Vector3__Array **corners,Face__En
     pVVar1 = *corners;
     if ((faceVertices == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)) break;
     func_?(0,uStack_2,uStack_3);
-    pVVar4 = *corners;
+    pVVar1 = *corners;
     func_?(&uStack_2,1);
-    pVVar1 = (Vector3__Array *)0x0;
-    if (pVVar4 == (Vector3__Array *)0x0) break;
+    if (pVVar1 == (Vector3__Array *)0x0) break;
     func_?(1,uStack_2,uStack_3);
     pVVar1 = *corners;
     func_?(&uStack_2,2);
     if (pVVar1 == (Vector3__Array *)0x0) break;
-    uVar5 = 2;
+    uVar4 = 2;
     goto code_?;
   case Face__Enum_Bottom:
     pVVar1 = *corners;
     if ((faceVertices != (Vector3__Array *)0x0) && (func_?(), pVVar1 != (Vector3__Array *)0x0)) {
       func_?(4,uStack_2,uStack_3);
-      pVVar4 = *corners;
+      pVVar1 = *corners;
       func_?(&uStack_2,1);
-      pVVar1 = (Vector3__Array *)0x0;
-      if (pVVar4 != (Vector3__Array *)0x0) {
+      if (pVVar1 != (Vector3__Array *)0x0) {
         func_?(5,uStack_2,uStack_3);
         pVVar1 = *corners;
         func_?(&uStack_2,2);
         if (pVVar1 != (Vector3__Array *)0x0) {
           func_?(6,uStack_2,uStack_3);
-          pVVar4 = *corners;
+          pVVar1 = *corners;
           func_?(&uStack_2,3);
-          if (pVVar4 != (Vector3__Array *)0x0) {
+          if (pVVar1 != (Vector3__Array *)0x0) {
             func_?(7,uStack_2,uStack_3);
             return;
           }
@@ -4569,18 +4612,17 @@ void Assembly-CSharp.dll::Cube::Cube_SetFace_1(Vector3__Array **corners,Face__En
     pVVar1 = *corners;
     if ((faceVertices != (Vector3__Array *)0x0) && (func_?(), pVVar1 != (Vector3__Array *)0x0)) {
       func_?(7,uStack_2,uStack_3);
-      pVVar4 = *corners;
+      pVVar1 = *corners;
       func_?(&uStack_2,1);
-      pVVar1 = (Vector3__Array *)0x0;
-      if (pVVar4 != (Vector3__Array *)0x0) {
+      if (pVVar1 != (Vector3__Array *)0x0) {
         func_?(6,uStack_2,uStack_3);
         pVVar1 = *corners;
         func_?(&uStack_2,2);
         if (pVVar1 != (Vector3__Array *)0x0) {
           func_?(1,uStack_2,uStack_3);
-          pVVar4 = *corners;
+          pVVar1 = *corners;
           func_?(&uStack_2,3);
-          if (pVVar4 != (Vector3__Array *)0x0) {
+          if (pVVar1 != (Vector3__Array *)0x0) {
             func_?(0,uStack_2,uStack_3);
             return;
           }
@@ -4592,18 +4634,17 @@ void Assembly-CSharp.dll::Cube::Cube_SetFace_1(Vector3__Array **corners,Face__En
     pVVar1 = *corners;
     if ((faceVertices != (Vector3__Array *)0x0) && (func_?(), pVVar1 != (Vector3__Array *)0x0)) {
       func_?(5,uStack_2,uStack_3);
-      pVVar4 = *corners;
+      pVVar1 = *corners;
       func_?(&uStack_2,1);
-      pVVar1 = (Vector3__Array *)0x0;
-      if (pVVar4 != (Vector3__Array *)0x0) {
+      if (pVVar1 != (Vector3__Array *)0x0) {
         func_?(4,uStack_2,uStack_3);
         pVVar1 = *corners;
         func_?(&uStack_2,2);
         if (pVVar1 != (Vector3__Array *)0x0) {
           func_?(3,uStack_2,uStack_3);
-          pVVar4 = *corners;
+          pVVar1 = *corners;
           func_?(&uStack_2,3);
-          if (pVVar4 != (Vector3__Array *)0x0) {
+          if (pVVar1 != (Vector3__Array *)0x0) {
             func_?(2,uStack_2,uStack_3);
             return;
           }
@@ -4615,20 +4656,19 @@ void Assembly-CSharp.dll::Cube::Cube_SetFace_1(Vector3__Array **corners,Face__En
     pVVar1 = *corners;
     if ((faceVertices == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)) break;
     func_?(4,uStack_2,uStack_3);
-    pVVar4 = *corners;
+    pVVar1 = *corners;
     func_?(&uStack_2,1);
-    pVVar1 = (Vector3__Array *)0x0;
-    if (pVVar4 == (Vector3__Array *)0x0) break;
+    if (pVVar1 == (Vector3__Array *)0x0) break;
     func_?(7,uStack_2,uStack_3);
     pVVar1 = *corners;
     func_?(&uStack_2,2);
     if (pVVar1 == (Vector3__Array *)0x0) break;
-    uVar5 = 0;
+    uVar4 = 0;
 code_?:
-    func_?(uVar5,uStack_2,uStack_3);
-    pVVar4 = *corners;
+    func_?(uVar4,uStack_2,uStack_3);
+    pVVar1 = *corners;
     func_?(&uStack_2,3);
-    if (pVVar4 != (Vector3__Array *)0x0) {
+    if (pVVar1 != (Vector3__Array *)0x0) {
       func_?(3,uStack_2,uStack_3);
 code_?:
       return;
@@ -4638,18 +4678,17 @@ code_?:
     pVVar1 = *corners;
     if ((faceVertices != (Vector3__Array *)0x0) && (func_?(), pVVar1 != (Vector3__Array *)0x0)) {
       func_?(6,uStack_2,uStack_3);
-      pVVar4 = *corners;
+      pVVar1 = *corners;
       func_?(&uStack_2,1);
-      pVVar1 = (Vector3__Array *)0x0;
-      if (pVVar4 != (Vector3__Array *)0x0) {
+      if (pVVar1 != (Vector3__Array *)0x0) {
         func_?(5,uStack_2,uStack_3);
         pVVar1 = *corners;
         func_?(&uStack_2,2);
         if (pVVar1 != (Vector3__Array *)0x0) {
           func_?(2,uStack_2,uStack_3);
-          pVVar4 = *corners;
+          pVVar1 = *corners;
           func_?(&uStack_2,3);
-          if (pVVar4 != (Vector3__Array *)0x0) {
+          if (pVVar1 != (Vector3__Array *)0x0) {
             func_?(1,uStack_2,uStack_3);
             return;
           }
@@ -4661,9 +4700,8 @@ code_?:
     goto code_?;
   }
   func_?();
-  *(char *)(extraout_ECX + -0x11) = *(char *)(extraout_ECX + -0x11) + (char)pVVar1;
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(1);
+  (*pcVar5)();
   return;
 }
 
