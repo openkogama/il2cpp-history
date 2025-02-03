@@ -22,8 +22,6 @@ namespace IngameController.CubeModeling
 		[SerializeField]
 		private ToggleLogic toggleLogic;
 		[SerializeField]
-		private EnterPlayModeButton togglePlayMode;
-		[SerializeField]
 		private ToggleCameraEffects toggleCameraEffects;
 	
 		// Constructors

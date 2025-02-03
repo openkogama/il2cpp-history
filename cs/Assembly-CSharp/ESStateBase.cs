@@ -12,12 +12,11 @@ public class ESStateBase : IState
 {
 	// Fields
 	protected EditorEvent stateType;
+	private readonly ILogger logger;
 	protected WorldObjectClientRef tintedWo;
-	private ILogger logger;
 
 	// Properties
 	private MVWorldObjectClientManager WOCM { get; }
-	private EditorEvent StateType { get; }
 
 	// Constructors
 	public ESStateBase();

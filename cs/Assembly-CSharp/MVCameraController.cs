@@ -16,6 +16,7 @@ public class MVCameraController
 
 	// Properties
 	public MVCameraBase CurCamera { get; }
+	public bool HasEars { get; }
 
 	// Nested types
 	private class CameraStack
@@ -37,6 +38,7 @@ public class MVCameraController
 		public void SetCamera(CameraType cameraType, MVCameraController cameraController);
 		public void SetCamera(MVCameraBase newCamera, MVCameraController cameraController);
 		private void EnterCamera(MVCameraBase newCamera, MVCameraController cameraController);
+		private void ActivateAndEnterCamera(MVCameraBase cameraBase, MVCameraController cameraController);
 		private void ClearStack(MVCameraController cameraController);
 		public T GetCamera<T>()
 			where T : MVCameraBase;

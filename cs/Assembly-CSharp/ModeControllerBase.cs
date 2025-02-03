@@ -10,12 +10,17 @@ using UnityEngine.EventSystems;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-public abstract class ModeControllerBase : MonoBehaviour, IToggleFps, IPlayModeUI
+public abstract class ModeControllerBase : MonoBehaviour, IToggleFps, ITogglePlayerIndicators, IPlayModeUI
 {
 	// Fields
 	[SerializeField]
 	private GameObject fpsCounterPrefab;
+	[SerializeField]
+	private LocationIndicatorsManager locationIndicatorsManagerPrefab;
+	[SerializeField]
+	private Sprite resetGameSprite;
 	private GameObject fpsCounter;
+	private LocationIndicatorsManager locationIndicatorsManager;
 	[CompilerGenerated]
 	private bool _IsDying_k__BackingField;
 	[CompilerGenerated]
@@ -36,6 +41,7 @@ public abstract class ModeControllerBase : MonoBehaviour, IToggleFps, IPlayModeU
 	public virtual IGUICrossHair GetCrossHair();
 	protected bool CannotLeaveEditPlayMode();
 	public void ToggleFps();
+	public void TogglePlayerIndicators();
 	protected void HandleFpsShortcut();
 }
 

@@ -18,7 +18,6 @@ public class EditorStateMachine : FSMEntity
 	private CubeModelingStateMachine cubeModelingStateMachine;
 	private MVNetworkSelector networkSelector;
 	private GameObject gameObject;
-	public const float sqrEpsilon = 0.64f;
 	[CompilerGenerated]
 	private bool _GridMode_k__BackingField;
 	[CompilerGenerated]

@@ -90,6 +90,7 @@ namespace MV.Common
 		GetResetAvatar = 86,
 		ClaimPlayingNewGameRewardedGold = 87,
 		PostChatMsg = 88,
+		GetPlanetOwnerships = 89,
 		SetSayChatBubbleVisible = 93,
 		ReportReachedTimeAttackFlag = 94,
 		RequestAccessoryData = 95,
