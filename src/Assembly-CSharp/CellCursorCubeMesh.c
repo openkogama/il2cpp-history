@@ -63,7 +63,7 @@ void Assembly-CSharp.dll::CellCursorCubeMesh::CellCursorCubeMesh_SetCursorCube
             uVar7 = pVVar4->x;
             uVar8 = pVVar4->y;
             if (pTVar3 != (Transform *)0x0) {
-              in_stack_5 = 0x1044;
+              in_stack_5 = 0x1045;
               value.y = (float)uVar8 * _UNK_?;
               value.x = (float)uVar7 * _UNK_?;
               value.z = pVVar4->z * _UNK_?;

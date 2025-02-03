@@ -28,8 +28,8 @@ void Assembly-CSharp.dll::CEEditorStateTransitionTableUUI::CEEditorStateTransiti
   pEVar2[1].klass = (ESStateBase__Class *)0xffffffff;
   ESStateBase::ESStateBase__ctor(pEVar2,(MethodInfo *)0x0);
   pEVar2[1].fields.stateType = (int32_t)centerPos.x;
-  pEVar2[1].fields.tintedWo = (WorldObjectClientRef *)centerPos.y;
-  pEVar2[1].fields.logger = (ILogger *)centerPos.z;
+  pEVar2[1].fields.logger = (ILogger *)centerPos.y;
+  pEVar2[1].fields.tintedWo = (WorldObjectClientRef *)centerPos.z;
   if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add

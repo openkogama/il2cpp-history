@@ -72,18 +72,18 @@ void Assembly-CSharp.dll::AvatarLocalBuildMode::AvatarLocalBuildMode_Initialize
             if (this_00 != (MVCameraController *)0x0) {
               MVCameraController::MVCameraController_Initialize
                         (this_00,cameraBases,(MethodInfo *)0x0);
-              pMVar5 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                                 ((MethodInfo *)0x0);
-              if (pMVar5 != (MainCameraManager *)0x0) {
-                bVar6 = mscorlib.dll::System::Runtime::Serialization::ObjectHolder::
-                        ObjectHolder_get_TypeLoadExceptionReachable
-                                  ((ObjectHolder *)pMVar5,(MethodInfo *)0x0);
-                if (bVar6 == 0) {
-                  pMVar5 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                                     ((MethodInfo *)0x0);
-                  if (pMVar5 == (MainCameraManager *)0x0) goto code_?;
+              this_01 = (SchemaElementDecl *)
+                        MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                  ((MethodInfo *)0x0);
+              if (this_01 != (SchemaElementDecl *)0x0) {
+                bVar5 = System.Xml.dll::System::Xml::Schema::SchemaElementDecl::
+                        SchemaElementDecl_get_HasDefaultAttribute(this_01,(MethodInfo *)0x0);
+                if (bVar5 == 0) {
+                  this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                      ((MethodInfo *)0x0);
+                  if (this_02 == (MainCameraManager *)0x0) goto code_?;
                   MainCameraManager::MainCameraManager_SetCameraController
-                            (pMVar5,(pAVar1->fields).cameraController,(MethodInfo *)0x0);
+                            (this_02,(pAVar1->fields).cameraController,(MethodInfo *)0x0);
                 }
                 return;
               }
@@ -95,8 +95,8 @@ void Assembly-CSharp.dll::AvatarLocalBuildMode::AvatarLocalBuildMode_Initialize
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

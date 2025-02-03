@@ -359,7 +359,7 @@ code_?:
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar23 = (float *)func_?();
     SettingsSlider::SettingsSlider_Initialize
-              (pSVar20,StringLiteral_RecoilStrength,*pfVar23,fStack_22,4.0102932e-29,
+              (pSVar20,StringLiteral_RecoilStrength,*pfVar23,fStack_22,4.0123058e-29,
                (MethodInfo *)0x0);
     pSVar26 = (this->fields).RecoilStrengthInputSlider;
     pDVar27 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
@@ -429,7 +429,7 @@ code_?:
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar23 = (float *)func_?();
     SettingsSlider::SettingsSlider_Initialize
-              (pSVar20,StringLiteral_AttackCooldown,*pfVar23,4.010279e-29,(float)pDVar2,
+              (pSVar20,StringLiteral_AttackCooldown,*pfVar23,4.0122917e-29,(float)pDVar2,
                (MethodInfo *)0x0);
     pSVar26 = (this->fields).attackCooldownInputSlider;
     pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData

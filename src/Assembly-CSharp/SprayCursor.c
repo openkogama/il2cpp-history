@@ -177,7 +177,6 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor
     (this->fields).addCubeTime = fVar6;
   }
   pCVar7 = (this->fields).sprayCursor;
-  unaff_ESI = selectedCube;
   if (selectedCube == (CubePickingInfo *)0x0) {
     if (pCVar7 != (CellCursor *)0x0) {
       CellCursor::CellCursor_set_Active(pCVar7,0,(MethodInfo *)0x0);
@@ -241,16 +240,16 @@ code_?:
   i2.x = in_stack_8;
   i2.z = (int16_t)(undefined4)uStack_10;
   IVar12 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                     (IVar12,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
-  unaff_EBX = IVar12._0_4_;
-  uStack_10._0_2_ = unaff_EBX->x;
-  uStack_10._2_2_ = unaff_EBX->y;
-  in_stack_8 = unaff_EBX->z;
+                    (IVar12,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
+  pIVar15 = IVar12._0_4_;
+  uStack_10._0_2_ = pIVar15->x;
+  uStack_10._2_2_ = pIVar15->y;
+  in_stack_8 = pIVar15->z;
   if (targetCubeModel != (MVCubeModelBase *)0x0) {
     pCVar7 = (this->fields).sprayCursor;
     pIStack_11 = (IntVector__Class *)(targetCubeModel->fields)._.gameObject;
     if ((pCVar7 != (CellCursor *)0x0) &&
-       (this_00 = CellCursor::CellCursor_GetCellCursor(pCVar7,*unaff_EBX,(MethodInfo *)0x0),
+       (this_00 = CellCursor::CellCursor_GetCellCursor(pCVar7,*pIVar15,(MethodInfo *)0x0),
        this_00 != (CellCursorCubeLineMesh *)0x0)) {
       position.z = in_stack_8;
       position.x = (int16_t)uStack_10;
@@ -273,30 +272,9 @@ code_?:
     }
   }
 code_?:
-  uVar1 = func_?();
-  bVar15 = (byte)((ushort)extraout_DX >> 8);
-  bVar16 = bVar15 < (byte)unaff_EBX[0xb].z;
-  pbVar17 = (byte *)(extraout_ECX + 0x73);
-  bVar18 = (byte)uVar1;
-  bVar19 = CARRY1(*pbVar17,bVar18) || CARRY1(*pbVar17 + bVar18,bVar16);
-  *pbVar17 = *pbVar17 + bVar18 + bVar16;
-  ppMVar20 = &unaff_ESI[2].monitor;
-  bVar16 = CARRY1(*(byte *)ppMVar20,bVar18) || CARRY1(*(char *)ppMVar20 + bVar18,bVar19);
-  *(byte *)ppMVar20 = *(char *)ppMVar20 + bVar18 + bVar19;
-  pbVar17 = (byte *)((int)&unaff_ESI[2].monitor + 1);
-  bVar18 = *pbVar17 + (byte)extraout_DX;
-  bVar19 = CARRY1(*pbVar17,(byte)extraout_DX) || CARRY1(bVar18,bVar16);
-  *pbVar17 = bVar18 + bVar16;
-  pbVar17 = (byte *)((int)&unaff_ESI[2].monitor + 2);
-  bVar18 = *pbVar17;
-  bVar21 = (byte)((ushort)uVar1 >> 8);
-  bVar22 = *pbVar17 + bVar21;
-  *pbVar17 = bVar22 + bVar19;
-  pcVar23 = (char *)((int)&unaff_ESI[2].monitor + 3);
-  *pcVar23 = *pcVar23 + bVar15 + (CARRY1(bVar18,bVar21) || CARRY1(bVar22,bVar19));
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
-  return;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

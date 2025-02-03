@@ -2318,6 +2318,67 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_StartGameWi
 }
 
 
+/* Void TogglePlayerIndicators() */
+
+void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_TogglePlayerIndicators
+               (MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar1 != (MVGameControllerBase *)0x0) &&
+     (this = (pMVar1->fields).modeController, this != (ModeControllerBase *)0x0)) {
+    if (cRam_? == '\0') {
+      func_?(&
+                      LocationIndicatorsManager_MethodInfo__UnityEngine__Object__Instantiate<LocationIndicatorsManager>_LocationIndicatorsManager__UnityEngine__Transform__bool_
+                     );
+      func_?(&TypeInfo__UnityEngine__Object);
+      cRam_? = '\x01';
+    }
+    pLVar2 = (this->fields).locationIndicatorsManager;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)pLVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
+      pLVar2 = (this->fields).locationIndicatorsManagerPrefab;
+      parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      pLVar2 = (LocationIndicatorsManager *)
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                         ((Object *)pLVar2,parent,0,
+                          LocationIndicatorsManager_MethodInfo__UnityEngine__Object__Instantiate<LocationIndicatorsManager>_LocationIndicatorsManager__UnityEngine__Transform__bool_
+                         );
+      (this->fields).locationIndicatorsManager = pLVar2;
+      func_?(&(this->fields).locationIndicatorsManager,pLVar2);
+      return;
+    }
+    pLVar2 = (this->fields).locationIndicatorsManager;
+    if (pLVar2 != (LocationIndicatorsManager *)0x0) {
+      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)pLVar2,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                ((Object_1 *)obj,(MethodInfo *)0x0);
+      return;
+    }
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
+  return;
+}
+
+
 /* Boolean TryReauth() */
 
 bool Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_TryReauth(MethodInfo *method)

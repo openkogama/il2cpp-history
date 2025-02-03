@@ -238,9 +238,9 @@ void Assembly-CSharp.dll::MVWorldObjectClientManagerNetwork::
                           );
         if (bVar10 == 0) break;
         if (DStack_6._currentValue == (Object *)0x0) goto code_?;
-        (**(code **)&(DStack_6._currentValue)->klass[2]._1.naturalAligment)
+        (*(code *)(DStack_6._currentValue)->klass[2].vtable.Equals.method)
                   (DStack_6._currentValue,
-                   (DStack_6._currentValue)->klass[2].vtable.Equals.methodPtr);
+                   (DStack_6._currentValue)->klass[2].vtable.Finalize.methodPtr);
       }
       uStack_1 = 0xffffffff;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
@@ -985,7 +985,7 @@ bool Assembly-CSharp.dll::MVWorldObjectClientManagerNetwork::
         if (DStack_8._currentValue == (Object *)0x0) break;
         if ((DStack_8._currentValue[5].klass == (Object__Class *)profileID) &&
            (DStack_8._currentValue[2].klass == (Object__Class *)itemID)) {
-          func_?(0x30,DStack_8._currentValue);
+          func_?(0x31,DStack_8._currentValue);
           iVar6 = iVar6 + 1;
           iStack_7 = iVar6;
         }
@@ -1037,8 +1037,8 @@ void Assembly-CSharp.dll::MVWorldObjectClientManagerNetwork::
         }
         if (worldObjectsToGroup->max_length <= uVar3) break;
         if (pOVar1 == (Object *)0x0) goto code_?;
-        (*pOVar1->klass[3].vtable.Finalize.methodPtr)
-                  (pOVar1,*piVar4,pOVar1->klass[3].vtable.Finalize.method);
+        (*pOVar1->klass[3].vtable.GetHashCode.methodPtr)
+                  (pOVar1,*piVar4,pOVar1->klass[3].vtable.GetHashCode.method);
         uVar3 = uVar3 + 1;
         piVar4 = piVar4 + 1;
       }
@@ -1107,7 +1107,7 @@ void Assembly-CSharp.dll::MVWorldObjectClientManagerNetwork::
                               MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
                              );
           if (pOVar3 != (Object *)0x0) {
-            (*(code *)pOVar3->klass[2].vtable.Equals.method)();
+            (*(code *)pOVar3->klass[2].vtable.Finalize.method)();
             return;
           }
         }
@@ -1681,8 +1681,8 @@ bool Assembly-CSharp.dll::MVWorldObjectClientManagerNetwork::
                                 MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
                                );
             if (pOVar3 != (Object *)0x0) {
-              pIStack4 = pOVar3->klass[3].rgctx_data;
-              (*(code *)pOVar3->klass[3].static_fields)();
+              pIStack4 = pOVar3->klass[3]._1.unity_user_data;
+              (*(code *)pOVar3->klass[3]._1.typeHierarchy)();
               return 1;
             }
           }
@@ -1694,8 +1694,8 @@ bool Assembly-CSharp.dll::MVWorldObjectClientManagerNetwork::
                               MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
                              );
           if (pOVar3 != (Object *)0x0) {
-            pIStack4 = (Il2CppRGCTXData *)pOVar3->klass[3].interfaceOffsets;
-            (*(code *)pOVar3->klass[3]._0.implementedInterfaces)();
+            pIStack4 = pOVar3->klass[3].rgctx_data;
+            (*(code *)pOVar3->klass[3].static_fields)();
             return 1;
           }
         }

@@ -47,9 +47,9 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_Initialize
               iVar6 = (this_01->fields)._._ActorNr_k__BackingField;
               MVar7 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
               if (MVar7 == MVGameMode__Enum_Edit) {
-                MVar8 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0)
+                PVar8 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0)
                 ;
-                bVar9 = MVar8 == MVLocalPlayer_PlanetOwnershipType__Enum_Owner;
+                bVar9 = (char)PVar8 == '\x02';
               }
               else {
                 bVar9 = false;
@@ -189,8 +189,8 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_OpenUserManagem
         if (MVar3 != MVGameMode__Enum_Edit) {
           return;
         }
-        MVar4 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
-        if (MVar4 != MVLocalPlayer_PlanetOwnershipType__Enum_Owner) {
+        PVar4 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
+        if ((char)PVar4 != '\x02') {
           return;
         }
         value = (Object *)func_?();
@@ -362,9 +362,9 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_SetButtonVisibi
               iVar6 = (this_01->fields)._._ActorNr_k__BackingField;
               MVar7 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
               if (MVar7 == MVGameMode__Enum_Edit) {
-                MVar8 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0)
+                PVar8 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0)
                 ;
-                bVar9 = MVar8 == MVLocalPlayer_PlanetOwnershipType__Enum_Owner;
+                bVar9 = (char)PVar8 == '\x02';
               }
               else {
                 bVar9 = false;

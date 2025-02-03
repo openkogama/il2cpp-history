@@ -78,6 +78,7 @@ void Assembly-CSharp.dll::GamePassesProgressBarFreeTryHandler::
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  this_00 = this;
   original = (this->fields).gamePassesShopPrefab;
   (this->fields).tierToTry = (uint8_t)tierToTry;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -91,8 +92,9 @@ void Assembly-CSharp.dll::GamePassesProgressBarFreeTryHandler::
   if (value != (Object *)0x0) {
     value[1].klass = pOVar1;
     func_?(value + 1,pOVar1);
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
+    this = (GamePassesProgressBarFreeTryHandler *)
+           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this_00,(MethodInfo *)0x0);
     callbackFunction =
          (ExecuteEvents_EventFunction_1_System_Object_ *)
          func_?(
@@ -107,18 +109,36 @@ void Assembly-CSharp.dll::GamePassesProgressBarFreeTryHandler::
       func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,callbackFunction,
+              ((GameObject *)this,(BaseEventData *)0x0,callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
-    if (value[1].klass != (Object__Class *)0x0) {
-      GamePassesShop::GamePassesShop_Initialize
-                ((GamePassesShop *)value[1].klass,(uint)(this->fields).tierToTry,(MethodInfo *)0x0);
-      return;
+    pOVar1 = value[1].klass;
+    bVar2 = (this_00->fields).tierToTry;
+    if (pOVar1 != (Object__Class *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&StringLiteral_Game_Tier_);
+        cRam_? = '\x01';
+      }
+      pIVar3 = (pOVar1->_0).byval_arg.data.array;
+      this = (GamePassesProgressBarFreeTryHandler *)(uint)bVar2;
+      *(undefined1 *)((int)&(pOVar1->_1).event_count + 1) = 1;
+      pSVar4 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
+      pSVar4 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_Game_Tier_,pSVar4,(MethodInfo *)0x0);
+      if (pIVar3 != (Il2CppArrayType *)0x0) {
+        pIVar5 = pIVar3->etype;
+        uVar6._0_2_ = pIVar5[99].attrs;
+        uVar6._2_1_ = pIVar5[99].type;
+        uVar6._3_1_ = pIVar5[99].field_0x7;
+        (*(code *)pIVar5[99].data)(pIVar3,pSVar4,uVar6);
+        *(byte *)&(pOVar1->_1).thread_static_fields_offset = bVar2;
+        return;
+      }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

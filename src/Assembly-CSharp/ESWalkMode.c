@@ -389,88 +389,6 @@ code_?:
 }
 
 
-/* Void HandleEnterState(ESWalkMode+EnterPlayFromEditState) */
-
-void Assembly-CSharp.dll::ESWalkMode::ESWalkMode_HandleEnterState
-               (ESWalkMode *this,ESWalkMode_EnterPlayFromEditState__Enum enterState,
-               MethodInfo *method)
-
-{
-  if (enterState != ESWalkMode_EnterPlayFromEditState__Enum_EnterPlayMode) {
-    if (enterState == ESWalkMode_EnterPlayFromEditState__Enum_SelectTeamOrSpawnRole) {
-      pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if (((pGVar1 == (GameEventManager *)0x0) ||
-          (pGVar2 = (pGVar1->fields).GameState, pGVar2 == (GameEventManager_GameStateManager *)0x0))
-         || (pAVar3 = (pGVar2->fields).OnEnableLobbyState, pAVar3 == (Action *)0x0))
-      goto code_?;
-      (*(pAVar3->fields)._._.invoke_impl)();
-      pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    }
-    else {
-      if (enterState != ESWalkMode_EnterPlayFromEditState__Enum_WaitForRoundToStart) {
-        return;
-      }
-      pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    }
-    if ((pGVar1 == (GameEventManager *)0x0) ||
-       (this_00 = (pGVar1->fields).AvatarCommandsPlayMode,
-       this_00 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) goto code_?;
-    PlayButtonTouch::PlayButtonTouch_OnConfirmPlay((PlayButtonTouch *)this_00,(MethodInfo *)0x0);
-  }
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-    pMVar4 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
-    if ((pMVar4 == (MVGameControllerDesktop *)0x0) ||
-       ((pMVar4->fields).lockCursorManager == (ILockCursorManager *)0x0)) {
-code_?:
-      uVar5 = func_?(&pIStack_6);
-      func_?(uVar5);
-      pcVar7 = (code *)swi(3);
-      (*pcVar7)();
-      return;
-    }
-    pIStack_6 = TypeInfo__ILockCursorManager;
-    func_?(3);
-  }
-  return;
-}
-
-
-/* Void HandleSelectTeamOrSpawnRole() */
-
-void Assembly-CSharp.dll::ESWalkMode::ESWalkMode_HandleSelectTeamOrSpawnRole
-               (ESWalkMode *this,MethodInfo *method)
-
-{
-  pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-  if (((pGVar1 != (GameEventManager *)0x0) &&
-      (pGVar2 = (pGVar1->fields).GameState, pGVar2 != (GameEventManager_GameStateManager *)0x0)) &&
-     (pAVar3 = (pGVar2->fields).OnEnableLobbyState, pAVar3 != (Action *)0x0)) {
-    (*(pAVar3->fields)._._.invoke_impl)();
-    pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if ((pGVar1 != (GameEventManager *)0x0) &&
-       (this_00 = (pGVar1->fields).AvatarCommandsPlayMode,
-       this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-      PlayButtonTouch::PlayButtonTouch_OnConfirmPlay((PlayButtonTouch *)this_00,(MethodInfo *)0x0);
-      MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(0,0,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  uVar4 = func_?(&stack0xfffffff8);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
-}
-
-
 /* Void OnNewSpawnRoleSelected(Int32) */
 
 void Assembly-CSharp.dll::ESWalkMode::ESWalkMode_OnNewSpawnRoleSelected
@@ -520,28 +438,6 @@ code_?:
 }
 
 
-/* Void SetToHiddenMode() */
-
-void Assembly-CSharp.dll::ESWalkMode::ESWalkMode_SetToHiddenMode
-               (ESWalkMode *this,MethodInfo *method)
-
-{
-  pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-  if ((pGVar1 != (GameEventManager *)0x0) &&
-     (this_00 = (pGVar1->fields).AvatarCommandsPlayMode,
-     this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-    PlayButtonTouch::PlayButtonTouch_OnConfirmPlay((PlayButtonTouch *)this_00,(MethodInfo *)0x0);
-    MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(0,0,(MethodInfo *)0x0);
-    return;
-  }
-  uVar2 = func_?(&stack0xfffffff8);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
-  return;
-}
-
-
 /* Boolean ShouldSelectTeamOrSpawnRole(Boolean, Boolean) */
 
 bool Assembly-CSharp.dll::ESWalkMode::ESWalkMode_ShouldSelectTeamOrSpawnRole
@@ -580,16 +476,6 @@ bool Assembly-CSharp.dll::ESWalkMode::ESWalkMode_ShouldSelectTeamOrSpawnRole
   pcVar5 = (code *)swi(3);
   bVar4 = (*pcVar5)();
   return bVar4;
-}
-
-
-/* Void TryLockCursor() */
-
-void Assembly-CSharp.dll::ESWalkMode::ESWalkMode_TryLockCursor(ESWalkMode *this,MethodInfo *method)
-
-{
-  MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(1,0,(MethodInfo *)0x0);
-  return;
 }
 
 

@@ -15,381 +15,82 @@ void Assembly-CSharp.dll::CollectTheItem::CollectTheItem_Initialize
                (CollectTheItem *this,MethodInfo *method)
 
 {
-  controller = in_stack_1;
-  MVBlueprintBase::MVBlueprintBase_Initialize((MVBlueprintBase *)this,(MethodInfo *)0x0);
+  CollectTheItem_SetupReferences(this,(MethodInfo *)0x0);
+  uVar1 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &stack0xfffffff8;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CollectTheItemCollectable);
-    func_?(&TypeInfo__CollectTheItemDropOff);
     func_?(&
-                    MethodInfo__CollectTheItem__OnCollectablePositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
                    );
     func_?(&
-                    MethodInfo__CollectTheItem__OnDropOffPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
                    );
     func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__get_Current__
                    );
     func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__
                    );
-    func_?(&
-                    TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                   );
-    func_?(&StringLiteral_ChildrenMap);
-    func_?(&StringLiteral_CollectTheItemCollectable);
-    func_?(&StringLiteral_CollectTheItemDropOff);
-    func_?(&StringLiteral_BlueprintData);
+    func_?(&TypeInfo__MVCubeModelInstance);
     cRam_? = '\x01';
   }
-  if (*(char *)&(in_stack_1->vtable).get_Scale.methodPtr != '\0') {
-    return;
-  }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-            in_stack_1->interfaceOffsets;
-  *(undefined1 *)&(in_stack_1->vtable).get_Scale.methodPtr = 1;
-  pCVar2 = in_stack_1;
-  if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-code_?:
-    in_stack_1 = pCVar2;
-    func_?();
-    pMVar3 = extraout_EDX;
-    TVar4.m_Index = unaff_ESI.m_Index;
-code_?:
-    uVar5 = func_?(pMVar3,unaff_EDI);
-    unaff_ESI.m_Index = (int32_t)in_stack_1;
-code_?:
-    in_stack_1 = (CollectTheItemDropOff__Class *)unaff_ESI.m_Index;
-    func_?(uVar5);
-    pMVar3 = extraout_EDX_00;
-    unaff_ESI.m_Index = (int32_t)in_stack_1;
-code_?:
-    in_stack_1 = (CollectTheItemDropOff__Class *)unaff_ESI.m_Index;
-    func_?(pMVar3,TVar4.m_Index);
-    unaff_ESI.m_Index = TVar4.m_Index;
-code_?:
-    func_?(unaff_ESI.m_Index,in_stack_1);
-    pCVar2 = unaff_EDI;
-  }
-  else {
-    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (this_00,(Object *)StringLiteral_BlueprintData,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    unaff_ESI.m_Index = (int32_t)(CollectTheItemDropOff__Class *)0x0;
-    if (TVar4.m_Index == 0) goto code_?;
-    if (((*(byte *)(*(int *)TVar4.m_Index + 0xb8) <
-          (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-          naturalAligment) ||
-        (*(Dictionary_2_System_Object_System_Object___Class **)
-          (*(int *)(*(int *)TVar4.m_Index + 100) + -4 +
-          (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                ->_1).naturalAligment * 4) !=
-         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) ||
-       ((TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                           (TVar4.m_Index,(Object *)StringLiteral_ChildrenMap,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           ), key = StringLiteral_CollectTheItemDropOff, TVar4.m_Index != 0 &&
-        ((*(byte *)(*(int *)TVar4.m_Index + 0xb8) <
-          (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-          naturalAligment ||
-         (*(Dictionary_2_System_Object_System_Object___Class **)
-           (*(int *)(*(int *)TVar4.m_Index + 100) + -4 +
-           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 ->_1).naturalAligment * 4) !=
-          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))))))
-    goto code_?;
-    if (cRam_? == '\0') {
-      func_?();
-      func_?();
-      func_?();
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                     );
-      func_?(&TypeInfo__System__Int32);
-      cRam_? = '\x01';
-    }
-    unaff_ESI = TVar4;
-    unaff_EDI = (CollectTheItemDropOff__Class *)key;
-    if (TVar4.m_Index == 0) goto code_?;
-    bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)TVar4.m_Index
-                       ,(Object *)key,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                      );
-    if (bVar6 != 0) {
-      unaff_EDI = (CollectTheItemDropOff__Class *)
-                  MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (TVar4.m_Index,(Object *)key,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-      uVar5 = CONCAT44(TypeInfo__System__Int32,TVar7.m_Index);
-      if ((unaff_EDI == (CollectTheItemDropOff__Class *)0x0) || (TVar7.m_Index == 0))
-      goto code_?;
-      unaff_ESI.m_Index = (int32_t)in_stack_1;
-      if (*(Il2CppClass **)(*(int *)TVar7.m_Index + 0x20) ==
-          (TypeInfo__System__Int32->_0).element_class) {
-        piVar8 = (int32_t *)func_?();
-        pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                            ((MVWorldObjectClientManager *)unaff_EDI,*piVar8,(MethodInfo *)0x0);
-        if ((pMVar3 == (MVWorldObject *)0x0) ||
-           ((((pMVar3->klass->_1).naturalAligment <
-              (TypeInfo__CollectTheItemDropOff->_1).naturalAligment ||
-             ((CollectTheItemDropOff__Class *)
-              (pMVar3->klass->_1).typeHierarchy
-              [(TypeInfo__CollectTheItemDropOff->_1).naturalAligment - 1] !=
-              TypeInfo__CollectTheItemDropOff)) &&
-            (((pMVar3->klass->_1).naturalAligment <
-              (TypeInfo__CollectTheItemCollectable->_1).naturalAligment ||
-             ((CollectTheItemCollectable__Class *)
-              (pMVar3->klass->_1).typeHierarchy
-              [(TypeInfo__CollectTheItemCollectable->_1).naturalAligment - 1] !=
-              TypeInfo__CollectTheItemCollectable)))))) goto code_?;
-        unaff_EDI = TypeInfo__CollectTheItemDropOff;
-        if (((((TypeInfo__CollectTheItemDropOff->_1).naturalAligment <=
-               (pMVar3->klass->_1).naturalAligment) &&
-             ((CollectTheItemDropOff__Class *)
-              (pMVar3->klass->_1).typeHierarchy
-              [(TypeInfo__CollectTheItemDropOff->_1).naturalAligment - 1] ==
-              TypeInfo__CollectTheItemDropOff)) &&
-            ((in_stack_1->vtable).get_Rotation.method = (MethodInfo *)pMVar3,
-            unaff_EDI = TypeInfo__CollectTheItemDropOff,
-            (TypeInfo__CollectTheItemDropOff->_1).naturalAligment <=
-            (pMVar3->klass->_1).naturalAligment)) &&
-           ((CollectTheItemDropOff__Class *)
-            (pMVar3->klass->_1).typeHierarchy
-            [(TypeInfo__CollectTheItemDropOff->_1).naturalAligment - 1] ==
-            TypeInfo__CollectTheItemDropOff)) goto code_?;
-        goto code_?;
-      }
-      goto code_?;
-    }
-code_?:
-    (in_stack_1->vtable).get_Rotation.method = (MethodInfo *)0x0;
-    pMVar3 = (MVWorldObject *)0x0;
-code_?:
-    func_?(&(in_stack_1->vtable).get_Rotation.method,pMVar3);
-    unaff_EDI = (CollectTheItemDropOff__Class *)StringLiteral_CollectTheItemCollectable;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__CollectTheItemCollectable);
-      func_?(&TypeInfo__CollectTheItemDropOff);
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                     );
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                     );
-      func_?(&TypeInfo__System__Int32);
-      cRam_? = '\x01';
-    }
-    bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)TVar4.m_Index
-                       ,(Object *)unaff_EDI,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                      );
-    if (bVar6 != 0) {
-      unaff_ESI.m_Index =
-           (int32_t)MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (TVar4.m_Index,(Object *)unaff_EDI,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-      uVar5 = CONCAT44(TypeInfo__System__Int32,TVar7.m_Index);
-      pCVar2 = (CollectTheItemDropOff__Class *)unaff_ESI.m_Index;
-      if (((CollectTheItemDropOff__Class *)unaff_ESI.m_Index == (CollectTheItemDropOff__Class *)0x0)
-         || (TVar7.m_Index == 0)) goto code_?;
-      TVar4.m_Index = unaff_ESI.m_Index;
-      if (*(Il2CppClass **)(*(int *)TVar7.m_Index + 0x20) !=
-          (TypeInfo__System__Int32->_0).element_class) goto code_?;
-      piVar8 = (int32_t *)func_?(TVar7.m_Index);
-      pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          ((MVWorldObjectClientManager *)unaff_ESI.m_Index,*piVar8,(MethodInfo *)0x0
-                          );
-      if ((pMVar3 == (MVWorldObject *)0x0) ||
-         ((((pMVar3->klass->_1).naturalAligment <
-            (TypeInfo__CollectTheItemDropOff->_1).naturalAligment ||
-           ((CollectTheItemDropOff__Class *)
-            (pMVar3->klass->_1).typeHierarchy
-            [(TypeInfo__CollectTheItemDropOff->_1).naturalAligment - 1] !=
-            TypeInfo__CollectTheItemDropOff)) &&
-          (((pMVar3->klass->_1).naturalAligment <
-            (TypeInfo__CollectTheItemCollectable->_1).naturalAligment ||
-           ((CollectTheItemCollectable__Class *)
-            (pMVar3->klass->_1).typeHierarchy
-            [(TypeInfo__CollectTheItemCollectable->_1).naturalAligment - 1] !=
-            TypeInfo__CollectTheItemCollectable)))))) goto code_?;
-      unaff_EDI = (CollectTheItemDropOff__Class *)pMVar3->klass;
-      TVar4.m_Index = (int32_t)TypeInfo__CollectTheItemCollectable;
-      if (((TypeInfo__CollectTheItemCollectable->_1).naturalAligment <=
-           (unaff_EDI->_1).naturalAligment) &&
-         ((CollectTheItemCollectable__Class *)
-          (unaff_EDI->_1).typeHierarchy
-          [(TypeInfo__CollectTheItemCollectable->_1).naturalAligment - 1] ==
-          TypeInfo__CollectTheItemCollectable)) {
-        (in_stack_1->vtable).set_Rotation.methodPtr = (Il2CppMethodPointer)pMVar3;
-        unaff_EDI = (CollectTheItemDropOff__Class *)pMVar3->klass;
-        TVar4.m_Index = (int32_t)TypeInfo__CollectTheItemCollectable;
-        if (((TypeInfo__CollectTheItemCollectable->_1).naturalAligment <=
-             (unaff_EDI->_1).naturalAligment) &&
-           ((CollectTheItemCollectable__Class *)
-            (unaff_EDI->_1).typeHierarchy
-            [(TypeInfo__CollectTheItemCollectable->_1).naturalAligment - 1] ==
-            TypeInfo__CollectTheItemCollectable)) goto code_?;
-      }
-      goto code_?;
-    }
-code_?:
-    (in_stack_1->vtable).set_Rotation.methodPtr = (Il2CppMethodPointer)0x0;
-    pMVar3 = (MVWorldObject *)0x0;
-code_?:
-    func_?(&(in_stack_1->vtable).set_Rotation,pMVar3);
-    if ((in_stack_1->vtable).get_Rotation.method != (MethodInfo *)0x0) {
-      unaff_EDI = (CollectTheItemDropOff__Class *)(in_stack_1->vtable).get_Rotation.method;
-      pDVar9 = (Delegate *)(unaff_EDI->_1).initializationExceptionGCHandle;
-      pUVar10 = (UnityAction_2_System_Object_System_Object_ *)
-                func_?(
-                               TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                               );
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar10,(Object *)in_stack_1,
-                 MethodInfo__CollectTheItem__OnDropOffPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
-                 ,(MethodInfo *)0x0);
-      unaff_ESI.m_Index =
-           (int32_t)mscorlib.dll::System::Delegate::Delegate_Combine
-                              (pDVar9,(Delegate *)pUVar10,(MethodInfo *)0x0);
-      pCVar2 = (CollectTheItemDropOff__Class *)
-                TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-      ;
-      if ((CollectTheItemDropOff__Class *)unaff_ESI.m_Index == (CollectTheItemDropOff__Class *)0x0)
-      {
-        (unaff_EDI->_1).initializationExceptionGCHandle = 0;
-        iVar11 = 0;
-        in_stack_1 = unaff_EDI;
-code_?:
-        func_?(&(unaff_EDI->_1).initializationExceptionGCHandle,iVar11);
-        pMVar12 = (controller->vtable).set_Rotation.method;
-        pCVar2 = in_stack_1;
-        if (pMVar12 != (MethodInfo *)0x0) {
-          unaff_ESI.m_Index = (int32_t)pMVar12->parameters;
-          pMVar12 = (controller->vtable).get_Rotation.method;
-          if (((pMVar12 != (MethodInfo *)0x0) &&
-              (pTVar13 = (Transform *)pMVar12[3].methodPointer, pTVar13 != (Transform *)0x0)) &&
-             (pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                  ((Vector3 *)&stack0xfffffff4,pTVar13,(MethodInfo *)0x0),
-             (CollectTheItemDropOff__Class *)unaff_ESI.m_Index !=
-             (CollectTheItemDropOff__Class *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
-                      ((LineRenderer *)unaff_ESI.m_Index,0,*pVVar14,(MethodInfo *)0x0);
-            pMVar12 = (controller->vtable).get_Rotation.method;
-            if (pMVar12 != (MethodInfo *)0x0) {
-              pMVar12[5].name = (char *)controller;
-              func_?(&pMVar12[5].name,controller);
-              goto code_?;
-            }
-          }
-        }
-        goto code_?;
-      }
-      uVar15 = func_?(unaff_ESI.m_Index,
-                               TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                              );
-      if (uVar15 == 0) goto code_?;
-      (unaff_EDI->_1).initializationExceptionGCHandle = uVar15;
-      in_stack_1 =
-           (CollectTheItemDropOff__Class *)
-           TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-      ;
-      iVar11 = func_?(unaff_ESI.m_Index,
-                               TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                              );
-      if (iVar11 != 0) goto code_?;
-      goto code_?;
-    }
-code_?:
-    if ((controller->vtable).set_Rotation.methodPtr == (Il2CppMethodPointer)0x0) {
-      return;
-    }
-    unaff_EDI = (CollectTheItemDropOff__Class *)(controller->vtable).set_Rotation.methodPtr;
-    pDVar9 = (Delegate *)(unaff_EDI->_1).initializationExceptionGCHandle;
-    pUVar10 = (UnityAction_2_System_Object_System_Object_ *)
-              func_?(
-                             TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar10,(Object *)controller,
-               MethodInfo__CollectTheItem__OnCollectablePositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
-               ,(MethodInfo *)0x0);
-    unaff_ESI.m_Index =
-         (int32_t)mscorlib.dll::System::Delegate::Delegate_Combine
-                            (pDVar9,(Delegate *)pUVar10,(MethodInfo *)0x0);
-    pCVar2 = (CollectTheItemDropOff__Class *)
-              TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+  MVGroup::MVGroup_Initialize(in_stack_2,(MethodInfo *)0x0);
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            MVGroup::MVGroup_get_Children(in_stack_2,(MethodInfo *)0x0);
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    RegexCharClass+SingleRange]::
+    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               &stack0xffffffd8,this_00,
+               MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__)
     ;
-    if ((CollectTheItemDropOff__Class *)unaff_ESI.m_Index == (CollectTheItemDropOff__Class *)0x0) {
-      (unaff_EDI->_1).initializationExceptionGCHandle = 0;
-      iVar11 = 0;
-      in_stack_1 = unaff_EDI;
-code_?:
-      func_?(&(unaff_EDI->_1).initializationExceptionGCHandle,iVar11);
-      pMVar12 = (controller->vtable).set_Rotation.method;
-      pCVar2 = in_stack_1;
-      if (pMVar12 != (MethodInfo *)0x0) {
-        unaff_ESI.m_Index = (int32_t)pMVar12->parameters;
-        pIVar16 = (controller->vtable).set_Rotation.methodPtr;
-        if (((pIVar16 != (Il2CppMethodPointer)0x0) &&
-            (pTVar13 = *(Transform **)(pIVar16 + 0x90), pTVar13 != (Transform *)0x0)) &&
-           (pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                ((Vector3 *)&stack0xfffffff4,pTVar13,(MethodInfo *)0x0),
-           (CollectTheItemDropOff__Class *)unaff_ESI.m_Index != (CollectTheItemDropOff__Class *)0x0)
-           ) {
-          UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
-                    ((LineRenderer *)unaff_ESI.m_Index,1,*pVVar14,(MethodInfo *)0x0);
-          this_01 = (CollectTheItemCollectable *)(controller->vtable).set_Rotation.methodPtr;
-          if (this_01 != (CollectTheItemCollectable *)0x0) {
-            CollectTheItemCollectable::CollectTheItemCollectable_InitializeWithController
-                      (this_01,(CollectTheItem *)controller,(MethodInfo *)0x0);
-            return;
-          }
+    do {
+      pMVar3 = 
+      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
+      ;
+      bVar4 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc8,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
+                        );
+      if (bVar4 == 0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                  ((Object *)&stack0xffffffc8,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
+                   ,in_stack_5);
+        *unaff_FS_OFFSET = uVar1;
+        return;
+      }
+      if (pMVar3 == (MethodInfo *)0x0) break;
+      if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (byte)pMVar3->methodPointer[0xb8])
+         && (*(MVCubeModelInstance__Class **)
+              (*(int *)(pMVar3->methodPointer + 100) + -4 +
+              (uint)(TypeInfo__MVCubeModelInstance->_1).naturalAligment * 4) ==
+             TypeInfo__MVCubeModelInstance)) {
+        if (pMVar3 == (MethodInfo *)0x0) break;
+        if ((((in_stack_2->fields)._.interactionFlags & 0x4000) != 0) &&
+           (uVar6._0_2_ = pMVar3[3].flags, uVar6._2_2_ = pMVar3[3].iflags, (uVar6 & 0x4000) == 0)) {
+          uVar7 = *(undefined4 *)((int)&(in_stack_2->fields)._.interactionFlags + 4);
+          piVar8 = &(in_stack_2->fields)._.interactionFlags;
+          *(uint *)piVar8 = (uint)*piVar8 & 0xffffbfff;
+          *(undefined4 *)((int)&(in_stack_2->fields)._.interactionFlags + 4) = uVar7;
         }
       }
-      goto code_?;
-    }
-    uVar15 = func_?(unaff_ESI.m_Index,
-                             TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                            );
-    if (uVar15 != 0) {
-      (unaff_EDI->_1).initializationExceptionGCHandle = uVar15;
-      in_stack_1 =
-           (CollectTheItemDropOff__Class *)
-           TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-      ;
-      iVar11 = func_?(unaff_ESI.m_Index,
-                               TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                              );
-      if (iVar11 == 0) goto code_?;
-      goto code_?;
-    }
+      if (pMVar3 == (MethodInfo *)0x0) break;
+      uVar9._0_2_ = pMVar3[3].flags;
+      uVar9._2_2_ = pMVar3[3].iflags;
+      pMVar3[3].flags = (short)(uVar9 & 0xffffbfff);
+      pMVar3[3].iflags = (short)((uVar9 & 0xffffbfff) >> 0x10);
+      pMVar3[3].slot = pMVar3[3].slot;
+      pMVar3[3].parameters_count = pMVar3[3].parameters_count;
+      pMVar3[3].field_0x2f = pMVar3[3].field_0x2f;
+    } while( true );
   }
-code_?:
-  func_?(unaff_ESI.m_Index,pCVar2);
-code_?:
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

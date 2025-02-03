@@ -154,7 +154,7 @@ code_?:
         (pMVar4->klass->_1).typeHierarchy
         [(TypeInfo__CollectTheItemCollectable->_1).naturalAligment - 1] ==
         TypeInfo__CollectTheItemCollectable)) {
-      pDVar5 = (Delegate *)pMVar4[2].fields.position.x;
+      pDVar5 = (Delegate *)pMVar4[2].fields.outputLinkRefs;
       this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
@@ -164,7 +164,7 @@ code_?:
       pDVar5 = mscorlib.dll::System::Delegate::Delegate_Remove
                          (pDVar5,(Delegate *)this_01,(MethodInfo *)0x0);
       if (pDVar5 == (Delegate *)0x0) {
-        this_01[4].monitor = (MonitorData *)0x0;
+        this_01[3].fields._._.original_method_info = (MethodInfo_1 *)0x0;
 code_?:
         func_?();
         goto code_?;
@@ -174,7 +174,7 @@ code_?:
         pDVar6 = pDVar5;
       }
       if (pDVar6 != (Delegate *)0x0) {
-        this_01[4].monitor = (MonitorData *)pDVar6;
+        this_01[3].fields._._.original_method_info = (MethodInfo_1 *)pDVar6;
         pDVar6 = (Delegate *)0x0;
         if ((Action__Class *)pDVar5->klass == TypeInfo__System__Action) {
           pDVar6 = pDVar5;
@@ -201,7 +201,7 @@ code_?:
         != TypeInfo__CollectTheItemDropOff) {
       return;
     }
-    pDVar5 = (Delegate *)pMVar4[3].monitor;
+    pDVar5 = (Delegate *)pMVar4[2].fields.outputLinkRefs;
     this_02 = (UnityAction_1_System_Int32Enum_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
@@ -210,7 +210,7 @@ code_?:
     pDVar6 = mscorlib.dll::System::Delegate::Delegate_Remove
                        (pDVar5,(Delegate *)this_02,(MethodInfo *)0x0);
     if (pDVar6 == (Delegate *)0x0) {
-      pMVar4[3].monitor = (MonitorData *)0x0;
+      pMVar4[2].fields.outputLinkRefs = (List_1_MV_WorldObject_Link_ *)0x0;
 code_?:
       func_?();
       x = (this->fields).arrow;
@@ -270,9 +270,9 @@ code_?:
       }
       goto code_?;
     }
-    pMVar10 = (MonitorData *)func_?();
-    if (pMVar10 == (MonitorData *)0x0) goto code_?;
-    pMVar4[3].monitor = pMVar10;
+    pLVar10 = (List_1_MV_WorldObject_Link_ *)func_?();
+    if (pLVar10 == (List_1_MV_WorldObject_Link_ *)0x0) goto code_?;
+    pMVar4[2].fields.outputLinkRefs = pLVar10;
     iVar9 = func_?();
     if (iVar9 != 0) goto code_?;
   }
@@ -616,7 +616,7 @@ code_?:
       if (iVar9 == 0) {
         return;
       }
-      pDVar10 = *(Delegate **)(iVar9 + 0x148);
+      pDVar10 = *(Delegate **)(iVar9 + 0xf0);
       this_00 = (UnityAction_1_System_Int32Enum_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
@@ -625,7 +625,7 @@ code_?:
       pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
                           (pDVar10,(Delegate *)this_00,(MethodInfo *)0x0);
       if (pDVar10 == (Delegate *)0x0) {
-        *(undefined4 *)(iVar9 + 0x148) = 0;
+        *(undefined4 *)(iVar9 + 0xf0) = 0;
 code_?:
         func_?();
         bVar1 = CollectTheItemCollectable::CollectTheItemCollectable_get_HasArrowIndicator
@@ -638,7 +638,7 @@ code_?:
       }
       iVar11 = func_?();
       if (iVar11 != 0) {
-        *(int *)(iVar9 + 0x148) = iVar11;
+        *(int *)(iVar9 + 0xf0) = iVar11;
         iVar9 = func_?();
         if (iVar9 != 0) goto code_?;
         goto code_?;
@@ -1054,7 +1054,7 @@ code_?:
         (pMVar9->klass->_1).typeHierarchy
         [(TypeInfo__CollectTheItemCollectable->_1).naturalAligment - 1] !=
         TypeInfo__CollectTheItemCollectable)) goto code_?;
-    pDVar10 = (Delegate *)pMVar9[2].fields.position.x;
+    pDVar10 = (Delegate *)pMVar9[2].fields.outputLinkRefs;
     this_04 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
@@ -1064,7 +1064,7 @@ code_?:
     pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
                         (pDVar10,(Delegate *)this_04,(MethodInfo *)0x0);
     if (pDVar10 == (Delegate *)0x0) {
-      pMVar9[2].fields.position.x = 0.0;
+      pMVar9[2].fields.outputLinkRefs = (List_1_MV_WorldObject_Link_ *)0x0;
 code_?:
       func_?();
       return;
@@ -1074,7 +1074,7 @@ code_?:
       pDVar11 = pDVar10;
     }
     if (pDVar11 != (Delegate *)0x0) {
-      pMVar9[2].fields.position.x = (float)pDVar11;
+      pMVar9[2].fields.outputLinkRefs = (List_1_MV_WorldObject_Link_ *)pDVar11;
       pDVar11 = (Delegate *)0x0;
       if ((Action__Class *)pDVar10->klass == TypeInfo__System__Action) {
         pDVar11 = pDVar10;

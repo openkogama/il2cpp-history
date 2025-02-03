@@ -186,7 +186,7 @@ code_?:
 /* Void Execute(EditorStateMachine) */
 
 void Assembly-CSharp.dll::ESAddLink::ESAddLink_Execute
-               (ESAddLink *this,EditorStateMachine *e,MethodInfo *method)
+               (ESAddLink *this,EditorStateMachine *esm,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -207,14 +207,14 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Execute
       func_?(&TypeInfo__EditorEvent);
       cRam_? = '\x01';
     }
-    if (e != (EditorStateMachine *)0x0) {
-      bVar2 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(e,(MethodInfo *)0x0);
+    if (esm != (EditorStateMachine *)0x0) {
+      bVar2 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(esm,(MethodInfo *)0x0);
       if (bVar2 == 0) {
-        FSMEntity::FSMEntity_ClearStateStack((FSMEntity *)e,(MethodInfo *)0x0);
-        EditorStateMachine::EditorStateMachine_ExitGroupToRoot(e,(MethodInfo *)0x0);
+        FSMEntity::FSMEntity_ClearStateStack((FSMEntity *)esm,(MethodInfo *)0x0);
+        EditorStateMachine::EditorStateMachine_ExitGroupToRoot(esm,(MethodInfo *)0x0);
       }
       pOVar1 = (Object *)func_?();
-      FSMEntity::FSMEntity_set_Event((FSMEntity *)e,pOVar1,(MethodInfo *)0x0);
+      FSMEntity::FSMEntity_set_Event((FSMEntity *)esm,pOVar1,(MethodInfo *)0x0);
       return;
     }
     goto code_?;
@@ -281,74 +281,64 @@ code_?:
   bVar2 = EditModeObjectPicker::EditModeObjectPicker_Pick
                     ((VoxelHit *)&stack0xffffff94,(HashSet_1_System_Int32_ *)0x0,-0x40005,
                      (MethodInfo *)0x0);
-  if ((bVar2 == 0) || (iStack_13 == -1)) {
+  if ((bVar2 == 0) || (pMStack_13 == (MethodInfo *)0xffffffff)) {
 code_?:
-    if (e == (EditorStateMachine *)0x0) goto code_?;
-  }
-  else {
-    this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_03 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    method_00 = (MethodInfo *)&UNK_?;
-    this_04 = (MVWorldObjectClient *)
-              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                        (this_03,iStack_13,(MethodInfo *)0x0);
-    if (this_04 == (MVWorldObjectClient *)0x0) goto code_?;
-    cVar14 = func_?(0xf,this_04);
-    if (cVar14 == '\0') {
-code_?:
-      cVar14 = func_?(0xe,this_04);
-      if (cVar14 == '\0') goto code_?;
-      if ((e == (EditorStateMachine *)0x0) ||
-         (pMVar15 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0)
-         , pMVar15 == (MVWorldObjectClient *)0x0)) goto code_?;
-      if ((pMVar15->fields).selectedConnector == 1) {
-        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__MVInputWrapper);
-        }
-        pVVar16 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-                  DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition
-                            (&VStack_8,(DefaultEventSystem_Input *)0x0,method_00);
-        bVar2 = MVWorldObjectClient::MVWorldObjectClient_IsPointOverOutputConnector
-                          (this_04,*pVVar16,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          pLVar17 = (this->fields).tempLink;
-          if (pLVar17 == (Link *)0x0) goto code_?;
-          (pLVar17->fields).outputWOID = iStack_13;
-          ESAddLink_DoAddLink(this,(MethodInfo *)0x0);
-        }
-      }
-    }
-    else {
-      if ((e == (EditorStateMachine *)0x0) ||
-         (pMVar15 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0)
-         , pMVar15 == (MVWorldObjectClient *)0x0)) goto code_?;
-      if ((pMVar15->fields).selectedConnector != 2) goto code_?;
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
-      }
-      pVVar16 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input
-                ::DefaultEventSystem_Input_get_mousePosition
-                          (&VStack_8,(DefaultEventSystem_Input *)0x0,in_stack_18);
-      bVar2 = MVWorldObjectClient::MVWorldObjectClient_IsPointOverInputConnector
-                        (this_04,*pVVar16,(MethodInfo *)0x0);
-      if (bVar2 != 0) {
-        pLVar17 = (this->fields).tempLink;
-        if (pLVar17 == (Link *)0x0) goto code_?;
-        (pLVar17->fields).inputWOID = iStack_13;
-        ESAddLink_DoAddLink(this,(MethodInfo *)0x0);
-      }
-    }
-  }
-  this_02 = (e->fields).selectionController;
-  if (this_02 != (SelectionController *)0x0) {
-    SelectionController::SelectionController_DeSelectAll(this_02,(MethodInfo *)0x0);
-    ESAddLink_LeaveAddLink(this,e,(MethodInfo *)0x0);
+    ESAddLink_LeaveAddLinkAndDeSelectAll(this,esm,(MethodInfo *)0x0);
     return;
   }
+  this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if (this_02 == (MVWorldObjectClientManager *)0x0) goto code_?;
+  method_00 = pMStack_13;
+  this_03 = (MVWorldObjectClient *)
+            MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                      (this_02,(int32_t)pMStack_13,(MethodInfo *)0x0);
+  if (this_03 == (MVWorldObjectClient *)0x0) goto code_?;
+  if ((esm == (EditorStateMachine *)0x0) ||
+     (pMVar14 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0),
+     pMVar14 == (MVWorldObjectClient *)0x0)) goto code_?;
+  iVar15 = (pMVar14->fields).selectedConnector;
+  cVar16 = func_?(0xf,this_03);
+  if ((cVar16 == '\0') || (iVar15 != 2)) {
 code_?:
-  func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+    cVar16 = func_?(0xe,this_03);
+    if ((cVar16 == '\0') || (iVar15 != 1)) goto code_?;
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MVInputWrapper);
+    }
+    pVVar17 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::
+              DefaultEventSystem_Input_get_mousePosition
+                        (&VStack_8,(DefaultEventSystem_Input *)0x0,method_00);
+    bVar2 = MVWorldObjectClient::MVWorldObjectClient_IsPointOverOutputConnector
+                      (this_03,*pVVar17,(MethodInfo *)0x0);
+    if (bVar2 == 0) goto code_?;
+    pLVar18 = (this->fields).tempLink;
+    if (pLVar18 == (Link *)0x0) {
+code_?:
+      func_?();
+      pcVar19 = (code *)swi(3);
+      (*pcVar19)();
+      return;
+    }
+    (pLVar18->fields).outputWOID = (int32_t)pMStack_13;
+  }
+  else {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MVInputWrapper);
+    }
+    pVVar17 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::
+              DefaultEventSystem_Input_get_mousePosition
+                        (&VStack_8,(DefaultEventSystem_Input *)0x0,method_00);
+    method_00 = (MethodInfo *)pVVar17->z;
+    bVar2 = MVWorldObjectClient::MVWorldObjectClient_IsPointOverInputConnector
+                      (this_03,*pVVar17,(MethodInfo *)0x0);
+    if (bVar2 == 0) goto code_?;
+    pLVar18 = (this->fields).tempLink;
+    if (pLVar18 == (Link *)0x0) goto code_?;
+    (pLVar18->fields).inputWOID = (int32_t)pMStack_13;
+  }
+  ESAddLink_DoAddLink(this,(MethodInfo *)0x0);
+code_?:
+  ESAddLink_LeaveAddLinkAndDeSelectAll(this,esm,(MethodInfo *)0x0);
   return;
 }
 
@@ -380,7 +370,7 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Exit
                         MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                        );
     if (pOVar2 == (Object *)0x0) goto code_?;
-    (*(code *)pOVar2->klass[3]._0.klass)(pOVar2);
+    (*(code *)pOVar2->klass[3]._0.events)(pOVar2);
   }
   pMVar3 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
   if ((pMVar3 != (MainCameraManager *)0x0) &&
@@ -419,22 +409,22 @@ code_?:
 /* Void LeaveAddLink(EditorStateMachine) */
 
 void Assembly-CSharp.dll::ESAddLink::ESAddLink_LeaveAddLink
-               (ESAddLink *this,EditorStateMachine *e,MethodInfo *method)
+               (ESAddLink *this,EditorStateMachine *esm,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__EditorEvent);
     cRam_? = '\x01';
   }
-  this_00 = e;
-  if (e != (EditorStateMachine *)0x0) {
-    bVar1 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(e,(MethodInfo *)0x0);
+  this_00 = esm;
+  if (esm != (EditorStateMachine *)0x0) {
+    bVar1 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(esm,(MethodInfo *)0x0);
     if (bVar1 == 0) {
       FSMEntity::FSMEntity_ClearStateStack((FSMEntity *)this_00,(MethodInfo *)0x0);
       EditorStateMachine::EditorStateMachine_ExitGroupToRoot(this_00,(MethodInfo *)0x0);
     }
-    method = (MethodInfo *)&e;
-    e = (EditorStateMachine *)TypeInfo__EditorEvent;
+    method = (MethodInfo *)&esm;
+    esm = (EditorStateMachine *)TypeInfo__EditorEvent;
     value = (Object *)func_?();
     FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,value,(MethodInfo *)0x0);
     return;
@@ -442,6 +432,41 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_LeaveAddLink
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
+  return;
+}
+
+
+/* Void LeaveAddLinkAndDeSelectAll(EditorStateMachine) */
+
+void Assembly-CSharp.dll::ESAddLink::ESAddLink_LeaveAddLinkAndDeSelectAll
+               (ESAddLink *this,EditorStateMachine *esm,MethodInfo *method)
+
+{
+  this_01 = esm;
+  if ((esm != (EditorStateMachine *)0x0) &&
+     (this_00 = (esm->fields).selectionController, this_00 != (SelectionController *)0x0)) {
+    SelectionController::SelectionController_DeSelectAll(this_00,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__EditorEvent);
+      cRam_? = '\x01';
+    }
+    bVar1 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(this_01,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      FSMEntity::FSMEntity_ClearStateStack((FSMEntity *)this_01,(MethodInfo *)0x0);
+      EditorStateMachine::EditorStateMachine_ExitGroupToRoot(this_01,(MethodInfo *)0x0);
+    }
+    ppEStack2 = &esm;
+    esm = (EditorStateMachine *)0x2f;
+    pEStack3 = TypeInfo__EditorEvent;
+    method = (MethodInfo *)&UNK_?;
+    esm = (EditorStateMachine *)func_?();
+    method = (MethodInfo *)0x0;
+    FSMEntity::FSMEntity_set_Event((FSMEntity *)this_01,(Object *)esm,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

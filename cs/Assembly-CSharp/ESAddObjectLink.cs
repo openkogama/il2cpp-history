@@ -34,8 +34,9 @@ internal class ESAddObjectLink : ESStateBase
 
 	// Methods
 	public override void Enter(EditorStateMachine esm);
-	public override void Execute(EditorStateMachine e);
-	private void LeaveAddLink(EditorStateMachine e);
+	public override void Execute(EditorStateMachine esm);
+	private void LeaveAddLinkAndDeSelectAll(EditorStateMachine esm);
+	private void LeaveAddLink(EditorStateMachine esm);
 	public override void Exit(EditorStateMachine esm);
 	private bool DoAddLink();
 }

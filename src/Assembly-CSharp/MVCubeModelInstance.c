@@ -431,7 +431,7 @@ code_?:
     }
     pvVar7 = (void *)func_?();
     if (pvVar7 == (void *)0x0) goto code_?;
-    unaff_EDI[1].fields._._.method_ptr = pvVar7;
+    (unaff_EDI->fields)._._.method = pvVar7;
     iVar4 = func_?();
     if (iVar4 != 0) {
       func_?();

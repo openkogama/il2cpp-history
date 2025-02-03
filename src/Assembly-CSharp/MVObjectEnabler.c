@@ -360,7 +360,7 @@ void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_ShowObjects
           pMVar17 = (MVCubeModelBase *)func_?();
           if (pMVar17 == (MVCubeModelBase *)0x0) {
             in_stack_7 = _visible;
-            func_?(0x4f);
+            func_?(0x50);
             in_stack_18 = pMVar15;
           }
           else {

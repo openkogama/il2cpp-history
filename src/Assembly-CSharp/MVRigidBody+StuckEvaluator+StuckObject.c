@@ -8,7 +8,7 @@ bool Assembly-CSharp.dll::MVRigidBody+StuckEvaluator+StuckObject::
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
-    func_?(0xb0);
+    func_?(4);
     func_?(&TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent);
     cRam_? = '\x01';
   }
@@ -90,7 +90,7 @@ code_?:
             if (this_01 != (RuntimeEventManager *)0x0) {
               RuntimeEventManager::RuntimeEventManager_SendRuntimeEvent_1
                         (this_01,this_03,(MethodInfo *)0x0);
-              func_?(100,unaff_EBX,uVar5,iVar6);
+              func_?(0x65,unaff_EBX,uVar5,iVar6);
               goto code_?;
             }
           }

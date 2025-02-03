@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -12,6 +13,7 @@ using ExitGames.Client.Photon;
 using MV.Common;
 using MV.WorldObject;
 using MV.WorldObject.MetaData;
+using MV.WorldObject.OwnershipData;
 using MV.WorldObject.RuntimeEvents;
 using UnityEngine;
 using UnityEngine.Events;
@@ -21,26 +23,34 @@ using UnityEngine.Events;
 public class MVNetworkGame : IPhotonPeerListener
 {
 	// Fields
+	private const string appName = "MVGameServer";
+	private const float serviceCallInterval = 0.07f;
+	public readonly GameEventManager GameEventManager;
 	[CompilerGenerated]
 	private EventHandler<ReceivedItemFromQueryEventArgs> ReceivedItemFromQuery;
 	[CompilerGenerated]
 	private EventHandler<ReceivedItemFromQueryEventArgs> ReceivedAvatarBodiesFromQuery;
 	[CompilerGenerated]
 	private Action<string> ReceivedAccessoryData;
-	private MVConnState connState;
-	private const string appName = "MVGameServer";
-	private MVItemBusinessLogic itemBusinessLogic;
+	[CompilerGenerated]
+	private Action<PlanetOwnershipsData> ReceivedPlanetOwnershipData;
+	private readonly Dictionary<Region, float> timeZoneMap;
 	private bool isPublished;
+	private MVConnState connState;
+	private MVItemBusinessLogic itemBusinessLogic;
 	private GameDataQueryManager gameDataQueryManager;
 	private TransformNetworkManager transformNetworkManager;
-	public readonly GameEventManager GameEventManager;
+	private MVTeamManager teamManager;
+	private GameStatCounterManager gameStatCounterManager;
+	private LevelRewardsManager levelRewardsManager;
+	private IEnumerator addMaterialsCoroutine;
+	private float prevServiceCallTime;
 	[CompilerGenerated]
 	private LogicObjectManagerClient _LogicObjectManager_k__BackingField;
 	[CompilerGenerated]
 	private MVGameType _GameType_k__BackingField;
 	[CompilerGenerated]
 	private Region _Region_k__BackingField;
-	private readonly Dictionary<Region, float> timeZoneMap;
 	[CompilerGenerated]
 	private MVGameCoinManager _GameCoinManager_k__BackingField;
 	[CompilerGenerated]
@@ -65,13 +75,10 @@ public class MVNetworkGame : IPhotonPeerListener
 	private CustomTouristPromotionSettings _CustomTouristPromotionSettings_k__BackingField;
 	[CompilerGenerated]
 	private ElitePromotionSettings _EliteSettings_k__BackingField;
-	private int lastFrameServerTimeUpdate;
-	private int lastFrameLocalTimeUpdate;
 	private int serverTimeInMilliseconds;
+	private int lastFrameServerTimeUpdate;
 	private int localTimeInMilliseconds;
-	private MVTeamManager teamManager;
-	private GameStatCounterManager gameStatCounterManager;
-	private LevelRewardsManager levelRewardsManager;
+	private int lastFrameLocalTimeUpdate;
 	[CompilerGenerated]
 	private MVMaterialRepository _MaterialRepository_k__BackingField;
 	[CompilerGenerated]
@@ -111,8 +118,6 @@ public class MVNetworkGame : IPhotonPeerListener
 	private EmbeddedSiteConfigData embeddedSiteConfigData;
 	private LogicObjectManagerClientWrapper logicObjectManagerClientWrapper;
 	private RuntimeVariableNetworkManager runtimeVariableNetworkManager;
-	private float prevServiceCallTime;
-	private const float serviceCallInterval = 0.07f;
 	private GameDataQueryManager.GameDataQuery gameDataQuery;
 	private EventHandling eventHandling;
 	private OperationRequests operationRequests;
@@ -173,6 +178,10 @@ public class MVNetworkGame : IPhotonPeerListener
 		remove;
 	}
 	public event Action<string> ReceivedAccessoryData {
+		add;
+		remove;
+	}
+	public event Action<PlanetOwnershipsData> ReceivedPlanetOwnershipData {
 		add;
 		remove;
 	}
@@ -389,6 +398,7 @@ public class MVNetworkGame : IPhotonPeerListener
 		public void GetTopHighScoreList();
 		public void CustomDevCommands();
 		public void GetAvatarBodies();
+		public void GetActorsPlanetOwnerships(int profileId);
 		public void CreateSpawnRole(int avatarSpawnerWoId);
 		public void ClaimGamePointWelcomeReward();
 		public void AddObjectLink(ObjectLink link);
@@ -503,7 +513,7 @@ public class MVNetworkGame : IPhotonPeerListener
 		public void GetInventoryItemData(int itemID);
 		public void AdAction(AdType adType, AdActionType actionType, AdContext adContext = AdContext.None);
 		[CompilerGenerated]
-		private void _HandleUploadScreenShotData_b__25_0();
+		private void _HandleUploadScreenShotData_b__26_0();
 	}
 
 	private class OperationResponseHandling
@@ -569,16 +579,45 @@ public class MVNetworkGame : IPhotonPeerListener
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass253_0
+	private sealed class __c__DisplayClass260_0
 	{
 		// Fields
 		public Dictionary<byte, object> returnValues;
 
 		// Constructors
-		public __c__DisplayClass253_0();
+		public __c__DisplayClass260_0();
 
 		// Methods
 		internal void _OnAddItemToInventory_b__0(MVWorldObjectClient wo);
+	}
+
+	[CompilerGenerated]
+	private sealed class _AddMaterialsToRepositoryCoroutine_d__215 : IEnumerator<object>
+	{
+		// Fields
+		private int __1__state;
+		private object __2__current;
+		public Dictionary<object, object> materialList;
+		public MVNetworkGame __4__this;
+		private MaterialButtonTextureGenerator _materialButtonTextureGenerator_5__2;
+		private bool _isPlayerSubscriber_5__3;
+		private Dictionary<object, object> __7__wrap3;
+
+		// Properties
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
+		object IEnumerator.Current { [DebuggerHidden] get; }
+
+		// Constructors
+		[DebuggerHidden]
+		public _AddMaterialsToRepositoryCoroutine_d__215(int __1__state);
+
+		// Methods
+		[DebuggerHidden]
+		void IDisposable.Dispose();
+		private bool MoveNext();
+		private void __m__Finally1();
+		[DebuggerHidden]
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -609,8 +648,11 @@ public class MVNetworkGame : IPhotonPeerListener
 	public void AddCloneToWorldObjects(MVWorldObjectClient wo);
 	private Dictionary<byte, object> GetAttachWorldObjectToSeatData(VehicleSeatBase seatBase);
 	private void OnJoinResponse(Dictionary<byte, object> returnValues);
+	private MVLocalPlayer CreateLocalPlayer(int actorNr, int planetOwnershipTypeID, UserProfileData userProfileData);
 	private void InitializeManagers();
 	private void OnRequestMaterialsResponse(Dictionary<object, object> materialList);
+	[IteratorStateMachine(typeof(_AddMaterialsToRepositoryCoroutine_d__215))]
+	private IEnumerator AddMaterialsToRepositoryCoroutine(Dictionary<object, object> materialList);
 	private void CreatePlayersFromUserList(Dictionary<object, object> userList);
 	private void OnGetBuiltInItemBusinessData(Dictionary<object, object> builtInItemBusinessData);
 	private void OnRequestFriendsResponse(Dictionary<object, object> friendsList);
@@ -646,6 +688,7 @@ public class MVNetworkGame : IPhotonPeerListener
 	public void OnGetGameBatch(ExitGames.Client.Photon.EventData eventData);
 	private void OnGameQueryReady(ExitGames.Client.Photon.EventData eventData);
 	private void OnPostWinnerReportEvent();
+	private IWinningCondition GetWinningCondition();
 	private void OnCollectiblePickedUp(ExitGames.Client.Photon.EventData photonEvent);
 	private void OnGetActiveAvatarResponse(int woid);
 	public void OnSetTeamEvent(int actorNr, MVTeam team);

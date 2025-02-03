@@ -766,6 +766,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateHea
 }
 
 
+/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* Void UpdateNameTag() */
 
 void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNameTag
@@ -773,72 +774,78 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
 
 {
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 != (MVNetworkGame *)0x0) &&
-     (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) {
-    bVar3 = MVPlayerContainer::MVPlayerContainer_ContainsKey
-                      (pMVar2,(this->fields)._.ownerActorNr,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
-      return;
-    }
+  puVar2 = &stack0xfffffffc;
+  if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+  pMVar3 = (pMVar1->fields).playerContainer;
+  puVar2 = &stack0xfffffffc;
+  if (pMVar3 == (MVPlayerContainer *)0x0) goto code_?;
+  bVar4 = MVPlayerContainer::MVPlayerContainer_ContainsKey
+                    (pMVar3,(this->fields)._.ownerActorNr,(MethodInfo *)0x0);
+  if (bVar4 != 0) {
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    puVar2 = &stack0xfffffffc;
     unaff_ESI = this;
-    if ((((pMVar1 != (MVNetworkGame *)0x0) &&
-         (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) &&
-        (pMVar4 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                            (pMVar2,(this->fields)._.ownerActorNr,(MethodInfo *)0x0),
-        pMVar4 != (MVPlayer *)0x0)) &&
-       ((pUVar5 = (pMVar4->fields)._UserProfileData_k__BackingField,
-        pUVar5 != (UserProfileData *)0x0 &&
-        (this_00 = (this->fields).avatarName, this_00 != (TextMesh *)0x0)))) {
-      UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
-                (this_00,(pUVar5->fields).UserName,(MethodInfo *)0x0);
-      uVar6 = _UNK_?;
-      uVar7 = _UNK_?;
-      uVar8 = _UNK_?;
-      fVar9 = _UNK_?;
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar1 != (MVNetworkGame *)0x0) &&
-         (this_01 = (pMVar1->fields).teamManager, this_01 != (MVTeamManager *)0x0)) {
-        fStack10 = fVar9;
-        iVar11 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0);
-        if (1 < iVar11) {
-          switch((pMVar4->fields)._Team_k__BackingField) {
-          case 0:
-            uVar6 = 0;
-            uVar7 = 0;
-            break;
-          case 1:
-            uVar7 = 0;
-            uVar8 = 0;
-            break;
-          case 2:
-            uVar6 = 0;
-            uVar8 = 0;
-            break;
-          case 3:
-            uVar7 = 0x3f6bebec;
-            uVar8 = 0x3c808081;
-          }
-        }
-        this_02 = (this->fields).avatarNameMaterial;
-        if (this_02 != (Material *)0x0) {
-          value.g = (float)uVar7;
-          value.r = (float)uVar6;
-          value.b = (float)uVar8;
-          value.a = fStack10;
-          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-                    (this_02,value,(MethodInfo *)0x0);
-          return;
-        }
+    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+    pMVar3 = (pMVar1->fields).playerContainer;
+    puVar2 = &stack0xfffffffc;
+    if (pMVar3 == (MVPlayerContainer *)0x0) goto code_?;
+    pMVar5 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
+                       (pMVar3,(this->fields)._.ownerActorNr,(MethodInfo *)0x0);
+    puVar2 = &stack0xfffffffc;
+    if (pMVar5 == (MVPlayer *)0x0) goto code_?;
+    pUVar6 = (pMVar5->fields)._UserProfileData_k__BackingField;
+    puVar2 = &stack0xfffffffc;
+    if (pUVar6 == (UserProfileData *)0x0) goto code_?;
+    this_00 = (this->fields).avatarName;
+    puVar2 = &stack0xfffffffc;
+    if (this_00 == (TextMesh *)0x0) goto code_?;
+    UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
+              (this_00,(pUVar6->fields).UserName,(MethodInfo *)0x0);
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    puVar2 = &stack0xfffffffc;
+    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+    this_01 = (pMVar1->fields).teamManager;
+    puVar2 = &stack0xfffffffc;
+    if (this_01 == (MVTeamManager *)0x0) goto code_?;
+    iVar7 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0);
+    puVar2 = &stack0xfffffffc;
+    if (1 < iVar7) {
+      puVar2 = &stack0xfffffffc;
+      switch((pMVar5->fields)._Team_k__BackingField) {
+      case 0:
+        puVar2 = &stack0xfffffffc;
+        break;
+      case 1:
+        puVar2 = &stack0xfffffffc;
+        break;
+      case 2:
+        puVar2 = &stack0xfffffffc;
+        break;
+      case 3:
+        puVar2 = &stack0xfffffffc;
       }
     }
+    while (this_02 = (unaff_ESI->fields).avatarNameMaterial, this_02 == (Material *)0x0) {
+code_?:
+      bVar8 = false;
+      cVar9 = '\0';
+      pcVar10 = (char *)func_?();
+      cVar11 = (char)pcVar10;
+      if (bVar8) {
+        *(char *)(extraout_ECX + -0x6eefd141) =
+             *(char *)(extraout_ECX + -0x6eefd141) + cVar11 + cVar9;
+        pcVar12 = (code *)swi(3);
+        (*pcVar12)();
+        return;
+      }
+      *pcVar10 = *pcVar10 + cVar11;
+      *pcVar10 = *pcVar10 + cVar11;
+      puVar2 = puVar2 + 1;
+    }
+    uStack13 = *(undefined4 *)(puVar2 + -4);
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
+              (this_02,*(Color *)(puVar2 + -0x10),(MethodInfo *)0x0);
   }
-  func_?();
-  *(char *)(extraout_ECX + -0x33efd144) =
-       *(char *)(extraout_ECX + -0x33efd144) + extraout_DH +
-       (*(uint *)(&stack0x2ebc910c + (int)&unaff_ESI->klass) < 0x2ebca110);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
   return;
 }
 
@@ -868,16 +875,6 @@ Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_get_EnemyIconM
   pcVar5 = (code *)swi(3);
   pMVar6 = (Material *)(*pcVar5)();
   return pMVar6;
-}
-
-
-/* Boolean get_ForceHideUI() */
-
-bool Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_get_ForceHideUI
-               (AvatarUIHandlerRemote *this,MethodInfo *method)
-
-{
-  return (this->fields).forceHideUI;
 }
 
 

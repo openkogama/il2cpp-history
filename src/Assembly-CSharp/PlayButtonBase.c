@@ -38,7 +38,7 @@ void Assembly-CSharp.dll::PlayButtonBase::PlayButtonBase_StartPlaying
                       (this_02,0,(MethodInfo *)0x0);
           }
 code_?:
-          if ((char)(this_00->fields).connState != '\0') {
+          if (*(char *)&(this_00->fields).ReceivedAccessoryData != '\0') {
             root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this_00,(MethodInfo *)0x0);
             if ((TypeInfo__PlayButtonBase____c->_1).cctor_finished_or_no_cctor == 0) {

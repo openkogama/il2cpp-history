@@ -163,7 +163,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::FirstTimeActivatable
                       DesktopEditModeController_MethodInfo__UnityEngine__Component__GetComponentInParent<DesktopEditModeController>__
                      );
   if (pOVar1 != (Object *)0x0) {
-    (this->fields).editorStateMachine = (EditorStateMachine *)pOVar1[0xe].monitor;
+    (this->fields).editorStateMachine = (EditorStateMachine *)pOVar1[0x12].monitor;
     func_?();
     return;
   }

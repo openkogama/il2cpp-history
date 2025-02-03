@@ -702,9 +702,9 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_CreateBox
             uVar4 = (pVVar3->oneVector).x;
             uVar5 = (pVVar3->oneVector).y;
             if (pTVar2 != (Transform *)0x0) {
-              value.y = (float)uVar5 * 4.5193042e-29;
-              value.x = (float)uVar4 * 4.5193042e-29;
-              value.z = (pVVar3->oneVector).z * 4.5193042e-29;
+              value.y = (float)uVar5 * 4.5266853e-29;
+              value.x = (float)uVar4 * 4.5266853e-29;
+              value.z = (pVVar3->oneVector).z * 4.5266853e-29;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                         (pTVar2,value,(MethodInfo *)0x0);
               return pGVar1;
@@ -1309,13 +1309,13 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_GetBoundsCornersWo
                    );
     func_?(&TypeInfo__System__Func<UnityEngine::Vector3,_UnityEngine::Vector3>);
     func_?(&
-                    MethodInfo__MVWorldObjectClient____c__DisplayClass164_0___GetBoundsCornersWorld_b__0_UnityEngine__Vector3_
+                    MethodInfo__MVWorldObjectClient____c__DisplayClass166_0___GetBoundsCornersWorld_b__0_UnityEngine__Vector3_
                    );
-    func_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass164_0);
+    func_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass166_0);
     cRam_? = '\x01';
   }
   this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-            func_?(TypeInfo__MVWorldObjectClient____c__DisplayClass164_0);
+            func_?(TypeInfo__MVWorldObjectClient____c__DisplayClass166_0);
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
@@ -1360,7 +1360,7 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_GetBoundsCornersWo
       mscorlib.dll::System::Func`2[UnityEngine::Vector3Int,UnityEngine::Vector3Int]::
       Func_2_UnityEngine_Vector3Int_UnityEngine_Vector3Int___ctor
                 (this_02,(Object *)this_01,
-                 MethodInfo__MVWorldObjectClient____c__DisplayClass164_0___GetBoundsCornersWorld_b__0_UnityEngine__Vector3_
+                 MethodInfo__MVWorldObjectClient____c__DisplayClass166_0___GetBoundsCornersWorld_b__0_UnityEngine__Vector3_
                  ,(MethodInfo *)0x0);
       source = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_6
                          ((IEnumerable_1_UnityEngine_Vector3_ *)pVVar17,
@@ -1482,27 +1482,25 @@ code_?:
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if ((this_00 == (MVWorldObjectClientManager *)0x0) ||
-     (this = (MVWorldObjectClient *)
-             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
-     this == (MVWorldObjectClient *)0x0)) {
-    bVar2 = 0;
-    iVar3 = func_?();
-    pbVar4 = (byte *)(in_GS_OFFSET + iVar3);
-    bVar5 = *pbVar4;
-    bVar6 = (byte)iVar3;
-    bVar7 = *pbVar4;
-    *pbVar4 = bVar7 + bVar6 + bVar2;
-    *(char *)(in_GS_OFFSET + 0x36106536) =
-         *(char *)(in_GS_OFFSET + 0x36106536) + bVar6 +
-         (CARRY1(bVar5,bVar6) || CARRY1(bVar7 + bVar6,bVar2));
-    pcVar8 = (code *)swi(3);
-    pMVar9 = (MVWorldObjectClient *)(*pcVar8)();
-    return pMVar9;
+     (pMVar2 = (MVWorldObjectClient *)
+               MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                         (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
+     pMVar2 == (MVWorldObjectClient *)0x0)) {
+    bVar3 = 0;
+    iVar4 = func_?();
+    bVar5 = (byte)this + extraout_DL;
+    *(char *)(in_GS_OFFSET + iVar4) =
+         *(char *)(in_GS_OFFSET + iVar4) + bVar5 + bVar3 +
+         (CARRY1(extraout_CH,extraout_DL) ||
+         CARRY1(extraout_CH + extraout_DL,CARRY1((byte)this,extraout_DL) || CARRY1(bVar5,bVar3)));
+    pcVar6 = (code *)swi(3);
+    pMVar2 = (MVWorldObjectClient *)(*pcVar6)();
+    return pMVar2;
   }
   method = (MethodInfo *)0x0;
-  unaff_EBP = in_stack_10;
+  unaff_EBP = in_stack_7;
   unaff_ESI = pMVar1;
+  this = pMVar2;
   goto code_?;
 }
 
@@ -2749,7 +2747,7 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_ReceivePackag
         }
         MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_7
                   ((InteractionData *)(auStack_8 + 4),byteArray,(MethodInfo *)0x0);
-        func_?(0x3e,this,auStack_8._4_4_,iStack_18,uStack_19,pOStack_20,iStack_17,p);
+        func_?(0x3f,this,auStack_8._4_4_,iStack_18,uStack_19,pOStack_20,iStack_17,p);
       }
       else {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -3899,6 +3897,26 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_InteractionFla
 }
 
 
+/* Boolean get_IsTransformDefined() */
+
+bool Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_IsTransformDefined
+               (MVWorldObjectClient *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  x = (this->fields).transform;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+  return bVar1;
+}
+
+
 /* Vector3 get_ObjectConnectorOffset() */
 
 Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_ObjectConnectorOffset
@@ -4115,13 +4133,13 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_WorldIDsRecurs
     func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
     func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
     func_?(&
-                    MethodInfo__MVWorldObjectClient____c__DisplayClass51_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
+                    MethodInfo__MVWorldObjectClient____c__DisplayClass53_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
                    );
-    func_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass51_0);
+    func_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass53_0);
     cRam_? = '\x01';
   }
   this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-            func_?(TypeInfo__MVWorldObjectClient____c__DisplayClass51_0);
+            func_?(TypeInfo__MVWorldObjectClient____c__DisplayClass53_0);
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
@@ -4138,7 +4156,7 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_WorldIDsRecurs
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
     UnityAction_1_System_Object___ctor
               (this_01,(Object *)this_00,
-               MethodInfo__MVWorldObjectClient____c__DisplayClass51_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
+               MethodInfo__MVWorldObjectClient____c__DisplayClass53_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
                ,(MethodInfo *)0x0);
     (*(code *)(this->klass->vtable).TraverseRecursiveTail.method)
               (this,this_01,(this->klass->vtable).CompareWithKoGaMaPackage.methodPtr);
@@ -4477,7 +4495,7 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_SyncPos
 
 {
   (*(code *)(this->klass->vtable).set_WorldPosition.method)
-            (this,value._0_8_,value.z,(this->klass->vtable).get_WorldRotation_1.methodPtr);
+            (this,value._0_8_,value.z,(this->klass->vtable).get_IsTransformDefined.methodPtr);
   return;
 }
 

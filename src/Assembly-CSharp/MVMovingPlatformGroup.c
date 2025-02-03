@@ -88,9 +88,8 @@ void Assembly-CSharp.dll::MVMovingPlatformGroup::MVMovingPlatformGroup_AddPrevie
             return;
           }
           if (DStack_6._currentValue == (Object *)0x0) break;
-          (*(code *)(DStack_6._currentValue)->klass[3]._1.typeHierarchy)
-                    (DStack_6._currentValue,(DStack_6._currentValue)->klass[3]._1.unity_user_data)
-          ;
+          (*(code *)(DStack_6._currentValue)->klass[3]._1.initializationExceptionGCHandle)
+                    (DStack_6._currentValue,(DStack_6._currentValue)->klass[3]._1.cctor_started);
         }
       }
     }
@@ -1373,7 +1372,7 @@ void Assembly-CSharp.dll::MVMovingPlatformGroup::MVMovingPlatformGroup_SetWorldO
             return;
           }
           if (DStack_6._currentValue == (Object *)0x0) break;
-          (*(code *)(DStack_6._currentValue)->klass[2]._1.element_size)();
+          (*(code *)(DStack_6._currentValue)->klass[2]._1.static_fields_size)();
         }
       }
     }

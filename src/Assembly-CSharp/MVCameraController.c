@@ -473,3 +473,47 @@ Assembly-CSharp.dll::MVCameraController::MVCameraController_get_CurCamera
   return pMVar6;
 }
 
+
+/* Boolean get_HasEars() */
+
+bool Assembly-CSharp.dll::MVCameraController::MVCameraController_get_HasEars
+               (MVCameraController *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  pMVar1 = (this->fields).cameraStack;
+  if (pMVar1 != (MVCameraController_CameraStack *)0x0) {
+    x = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera
+                  (pMVar1,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
+      return 0;
+    }
+    pMVar1 = (this->fields).cameraStack;
+    if (pMVar1 != (MVCameraController_CameraStack *)0x0) {
+      pMStack3 =
+           MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera
+                     (pMVar1,(MethodInfo *)0x0);
+      if (pMStack3 != (MVCameraBase *)0x0) {
+        pIStack4 = (pMStack3->klass->vtable).Awake.methodPtr;
+        iVar5 = (*(code *)(pMStack3->klass->vtable).__unknown.method)();
+        if ((((iVar5 != 0) && (iVar5 != 6)) && (iVar5 != 10)) && (iVar5 != 0x14)) {
+          return iVar5 == 0x13;
+        }
+        return 1;
+      }
+    }
+  }
+  func_?();
+  pcVar6 = (code *)swi(3);
+  bVar2 = (*pcVar6)();
+  return bVar2;
+}
+

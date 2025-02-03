@@ -143,27 +143,15 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
       return pHVar3;
     }
   }
-  cVar4 = '\0';
+  uVar4 = 0x10ef;
   uVar5 = func_?();
-  pcVar6 = (char *)((ulonglong)uVar5 >> 0x20);
-  uVar7 = (undefined2)((ulonglong)uVar5 >> 0x20);
-  out(uVar7,(int)uVar5);
-  bVar8 = (byte)unaff_EBX;
-  *pcVar6 = *pcVar6 + bVar8 + cVar4;
-  bVar9 = (byte)uVar5;
-  uVar10 = CONCAT31((int3)((ulonglong)uVar5 >> 8),bVar9 + 0x11);
-  pbVar11 = (byte *)(pcVar6 + 0x2c);
-  bVar12 = *pbVar11;
-  bVar13 = *pbVar11;
-  *pbVar11 = bVar13 + bVar8 + (bVar9 < 0xef);
-  out(uVar7,uVar10);
-  *pcVar6 = *pcVar6 + bVar8 + (CARRY1(bVar12,bVar8) || CARRY1(bVar13 + bVar8,bVar9 < 0xef));
-  out(uVar7,uVar10 + 0xd2e5ef11);
-  pcVar6[0x1a10ef2c] = pcVar6[0x1a10ef2c] + bVar8 + (uVar10 < 0x2d1a10ef);
-  out(uVar7,uVar10 + 0xa60bde22);
-  pcVar14 = (code *)swi(3);
-  pHVar3 = (HighScores *)(*pcVar14)();
-  return pHVar3;
+  out((short)((ulonglong)uVar5 >> 0x20),(int)uVar5);
+  pcVar6 = (char *)((int)((ulonglong)uVar5 >> 0x20) + 0x6a10ef99);
+  *pcVar6 = *pcVar6 + (char)((uint)extraout_ECX >> 8) +
+            ((byte)unaff_EBX < *(byte *)(extraout_ECX + -0x6695ef11));
+  func_?(CONCAT22(uVar4,in_CS));
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -291,26 +279,14 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
       return pHVar3;
     }
   }
-  cVar4 = '\0';
+  uVar4 = 0x10ef;
   uVar5 = func_?();
-  pcVar6 = (char *)((ulonglong)uVar5 >> 0x20);
-  uVar7 = (undefined2)((ulonglong)uVar5 >> 0x20);
-  out(uVar7,(int)uVar5);
-  bVar8 = (byte)unaff_EBX;
-  *pcVar6 = *pcVar6 + bVar8 + cVar4;
-  bVar9 = (byte)uVar5;
-  uVar10 = CONCAT31((int3)((ulonglong)uVar5 >> 8),bVar9 + 0x11);
-  pbVar11 = (byte *)(pcVar6 + 0x2c);
-  bVar12 = *pbVar11;
-  bVar13 = *pbVar11;
-  *pbVar11 = bVar13 + bVar8 + (bVar9 < 0xef);
-  out(uVar7,uVar10);
-  *pcVar6 = *pcVar6 + bVar8 + (CARRY1(bVar12,bVar8) || CARRY1(bVar13 + bVar8,bVar9 < 0xef));
-  out(uVar7,uVar10 + 0xd2e5ef11);
-  pcVar6[0x1a10ef2c] = pcVar6[0x1a10ef2c] + bVar8 + (uVar10 < 0x2d1a10ef);
-  out(uVar7,uVar10 + 0xa60bde22);
-  pcVar14 = (code *)swi(3);
-  pHVar3 = (HighScores *)(*pcVar14)();
-  return pHVar3;
+  out((short)((ulonglong)uVar5 >> 0x20),(int)uVar5);
+  pcVar6 = (char *)((int)((ulonglong)uVar5 >> 0x20) + 0x6a10ef99);
+  *pcVar6 = *pcVar6 + (char)((uint)extraout_ECX >> 8) +
+            ((byte)unaff_EBX < *(byte *)(extraout_ECX + -0x6695ef11));
+  func_?(CONCAT22(uVar4,in_CS));
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 

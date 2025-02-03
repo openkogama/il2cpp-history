@@ -35,7 +35,7 @@ code_?:
   else {
     pVVar2 = (Vector3 *)
              (*(code *)(pMStack_1->klass->vtable).GetTargetPosition.method)
-                       (apIStack_3,pMStack_1,
+                       (apEStack_3,pMStack_1,
                         (pMStack_1->klass->vtable).DrawTransformGizmo.methodPtr);
     bVar4 = AdvancedGhostBehaviour+AdvancedGhostPerception::
             AdvancedGhostBehaviour_AdvancedGhostPerception_IsWithinRoamRadius
@@ -74,10 +74,10 @@ code_?:
         if (pAVar7 != (AdvancedGhostVisualizaton *)0x0) {
           this_02 = (pAVar7->fields).ghostEye;
           if (pMStack_1 != (MVWorldObjectClient *)0x0) {
-            apIStack_3[0] = (Il2CppClass *)(pMStack_1->klass->vtable).DrawTransformGizmo.methodPtr;
+            apEStack_3[0] = (EventInfo *)(pMStack_1->klass->vtable).DrawTransformGizmo.methodPtr;
             pVVar2 = (Vector3 *)
                      (*(code *)(pMStack_1->klass->vtable).GetTargetPosition.method)
-                               (apIStack_3,pMStack_1);
+                               (apEStack_3,pMStack_1);
             if (this_02 != (GhostEye *)0x0) {
               GhostEye::GhostEye_UpdateLookAtTarget(this_02,*pVVar2,(MethodInfo *)0x0);
               return;

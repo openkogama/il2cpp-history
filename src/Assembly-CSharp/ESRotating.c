@@ -153,24 +153,24 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Enter
                                        MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
                                       );
                     if (bVar10 == 0) break;
-                    this_05 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0)
+                    this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0)
                     ;
-                    if (this_05 == (MVWorldObjectClientManager *)0x0) goto code_?;
-                    this_06 = MVWorldObjectClientManager::
+                    if (this_03 == (MVWorldObjectClientManager *)0x0) goto code_?;
+                    this_04 = MVWorldObjectClientManager::
                               MVWorldObjectClientManager_GetWorldObjectClientRef
-                                        (this_05,id,(MethodInfo *)0x0);
+                                        (this_03,id,(MethodInfo *)0x0);
                     pLVar8 = (this->fields).targets;
                     if (pLVar8 == (List_1_WorldObjectClientRef_ *)0x0) goto code_?;
                     method_00 = (MethodInfo *)&UNK_?;
                     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                     List_1_System_Object__Add
-                              ((List_1_System_Object_ *)pLVar8,(Object *)this_06,
+                              ((List_1_System_Object_ *)pLVar8,(Object *)this_04,
                                MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__Add_WorldObjectClientRef_
                               );
-                    if (this_06 == (WorldObjectClientRef *)0x0) goto code_?;
+                    if (this_04 == (WorldObjectClientRef *)0x0) goto code_?;
                     pOVar7 = WorldObjectClientRef`1[System::Object]::
                               WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                                        ((WorldObjectClientRef_1_System_Object_ *)this_06,
+                                        ((WorldObjectClientRef_1_System_Object_ *)this_04,
                                          MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                                         );
                     if ((pOVar7 == (Object *)0x0) ||
@@ -198,22 +198,21 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Enter
                       if (this_02 !=
                           (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
                       {
-                        this_07 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                        this_05 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                                   RegularExpressions::RegexCharClass+SingleRange]::
                                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                                             (this_02,0,
                                              MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__get_Item_int_
                                             );
-                        if (this_07 != (RegexCharClass_SingleRange)0x0) {
+                        if (this_05 != (RegexCharClass_SingleRange)0x0) {
                           pOVar7 = WorldObjectClientRef`1[System::Object]::
                                     WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                                              ((WorldObjectClientRef_1_System_Object_ *)this_07,
+                                              ((WorldObjectClientRef_1_System_Object_ *)this_05,
                                                MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                                               );
                           if (pOVar7 != (Object *)0x0) {
                             pVVar15 = (Vector3 *)
-                                      (*(code *)pOVar7->klass[2]._0.byval_arg.data)(auStack_16 + 4)
-                            ;
+                                      (*(code *)pOVar7->klass[2]._0.this_arg.data)(auStack_16 + 4);
                             goto code_?;
                           }
                         }
@@ -236,24 +235,23 @@ code_?:
                       if (((pGVar26 != (GameEventManager *)0x0) &&
                           (pGVar27 = (pGVar26->fields).AvatarCommandsBuildMode,
                           pGVar27 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-                         (this_03 = (RTFocusCamera *)(pGVar27->fields).LaserCommands,
-                         this_03 != (RTFocusCamera *)0x0)) {
-                        RTG::RTFocusCamera::RTFocusCamera_OnPrjSwitchTransitionBegin
-                                  (this_03,CameraPrjSwitchTransition_Type__Enum_ToPerspective|
-                                           CameraPrjSwitchTransition_Type__Enum_ToOrtho,
-                                   (MethodInfo *)0x0);
+                         (pGVar28 = (pGVar27->fields).LaserCommands,
+                         pGVar28 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager
+                                    *)0x0)) {
+                        GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
+                        GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
+                                  (pGVar28,LaserPointerState__Enum_Transforming,(MethodInfo *)0x0);
                         pGVar26 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
                                             ((MethodInfo *)0x0);
                         if (((pGVar26 != (GameEventManager *)0x0) &&
                             (pGVar27 = (pGVar26->fields).AvatarCommandsBuildMode,
                             pGVar27 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-                           (this_04 = (pGVar27->fields).LaserCommands,
-                           this_04 !=
-                           (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)
-                           0x0)) {
+                           (pGVar28 = (pGVar27->fields).LaserCommands,
+                           pGVar28 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager
+                                      *)0x0)) {
                           GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
                           GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_SetLaserActiveState
-                                    (this_04,1,(MethodInfo *)0x0);
+                                    (pGVar28,1,(MethodInfo *)0x0);
                           *unaff_FS_OFFSET = uStack_3;
                           return;
                         }
@@ -273,8 +271,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar28 = (code *)swi(3);
-  (*pcVar28)();
+  pcVar29 = (code *)swi(3);
+  (*pcVar29)();
   return;
 }
 
@@ -489,7 +487,7 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Execute
             if ((bVar15 || cStack_20 != '\0') || cStack_19 != '\0') {
               MVWorldObjectClient::MVWorldObjectClient_get_SyncRot
                         ((Quaternion *)&stack0xffffff24,pMVar16,(MethodInfo *)0x0);
-              method_00 = (MethodInfo *)0x1f;
+              method_00 = (MethodInfo *)0x20;
               func_?();
             }
           }
@@ -611,35 +609,37 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Exit
   if (((pGVar1 != (GameEventManager *)0x0) &&
       (pGVar2 = (pGVar1->fields).AvatarCommandsBuildMode,
       pGVar2 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-     (this_00 = (RTFocusCamera *)(pGVar2->fields).LaserCommands, this_00 != (RTFocusCamera *)0x0)) {
-    RTG::RTFocusCamera::RTFocusCamera_OnPrjSwitchTransitionBegin
-              (this_00,CameraPrjSwitchTransition_Type__Enum_None,(MethodInfo *)0x0);
+     (pGVar3 = (pGVar2->fields).LaserCommands,
+     pGVar3 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+    GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
+    GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
+              (pGVar3,LaserPointerState__Enum_Idle,(MethodInfo *)0x0);
     pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
     if (((pGVar1 != (GameEventManager *)0x0) &&
         (pGVar2 = (pGVar1->fields).AvatarCommandsBuildMode,
         pGVar2 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-       (this_01 = (pGVar2->fields).LaserCommands,
-       this_01 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+       (pGVar3 = (pGVar2->fields).LaserCommands,
+       pGVar3 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
       GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
       GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_SetLaserActiveState
-                (this_01,0,(MethodInfo *)0x0);
-      targets = this_01[1].fields.OnActivateLaserForDuration;
+                (pGVar3,0,(MethodInfo *)0x0);
+      targets = pGVar3[1].fields.OnActivateLaserForDuration;
       UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelper::RotationHelper_DoGridSnapping
                 ((List_1_WorldObjectClientRef_ *)targets,(MethodInfo *)0x0);
       if (((targets != (Action_1_Single_ *)0x0) &&
-          (pMVar3 = (targets->fields)._._.original_method_info, pMVar3 != (MethodInfo_1 *)0x0)) &&
-         (this_02 = (targets->fields)._.delegates, this_02 != (Delegate__Array *)0x0)) {
+          (pMVar4 = (targets->fields)._._.original_method_info, pMVar4 != (MethodInfo_1 *)0x0)) &&
+         (this_00 = (targets->fields)._.delegates, this_00 != (Delegate__Array *)0x0)) {
         MVNetworkSelector::MVNetworkSelector_RequestReleaseOwnership
-                  ((MVNetworkSelector *)this_02,(HashSet_1_System_Int32_ *)pMVar3[1].klass,
+                  ((MVNetworkSelector *)this_00,(HashSet_1_System_Int32_ *)pMVar4[1].klass,
                    (MethodInfo *)0x0);
         return;
       }
     }
   }
-  uVar4 = func_?(&stack0xfffffff4);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar5 = func_?(&stack0xfffffff4);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

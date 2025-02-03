@@ -1632,25 +1632,6 @@ Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_get_In
 }
 
 
-/* Boolean get_IsInPauseMenu() */
-
-bool Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_get_IsInPauseMenu
-               (DesktopPlayModeController *this,MethodInfo *method)
-
-{
-  puStack_1 = &stack0xfffffffc;
-  pLVar2 = (this->fields).lobbyStatePlayModeController;
-  if (pLVar2 != (LobbyStatePlayModeController *)0x0) {
-    return (pLVar2->fields).isInLobbyState;
-  }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  bVar6 = (*pcVar5)();
-  return bVar6;
-}
-
-
 /* Void set_IsInPauseMenu(Boolean) */
 
 void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_set_IsInPauseMenu

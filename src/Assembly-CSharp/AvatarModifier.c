@@ -137,7 +137,7 @@ Assembly-CSharp.dll::AvatarModifier::AvatarModifier_CreateFromType
                        (*(EnumPoolManager **)(iVar2 + 0x10),PoolEnums__Enum_InvulnerabilityModifier,
                         InvulnerabilityModifier_MethodInfo__EnumPoolManager__Instantiate<InvulnerabilityModifier>_PoolEnums_
                        );
-    unaff_SI = 0;
+    unaff_ESI = 0;
     if (pAVar3 == (AvatarModifier *)0x0) goto code_?;
     pAVar3[1].fields._._._._.m_CachedPtr = (void *)0x11;
     goto code_?;
@@ -164,58 +164,53 @@ Assembly-CSharp.dll::AvatarModifier::AvatarModifier_CreateFromType
   }
   pAVar3 = (AvatarModifier *)EnumPoolManager::EnumPoolManager_Instantiate(this,pEnum,method_00);
 code_?:
-  unaff_SI = 0;
+  unaff_ESI = 0;
   if (pAVar3 == (AvatarModifier *)0x0) {
 code_?:
     bVar4 = 0;
-    uVar5 = func_?();
-    iVar2 = (int)((ulonglong)uVar5 >> 0x20);
-    pbVar6 = (byte *)uVar5;
-    cVar7 = '\x0f';
+    iVar2 = func_?();
+    cVar5 = '\x0f';
     do {
       puVar1 = puVar1 + -1;
       register0x00000010 = (BADSPACEBASE *)((int)register0x00000010 + -4);
       *(undefined4 *)register0x00000010 = *puVar1;
-      cVar7 = cVar7 + -1;
-    } while ('\0' < cVar7);
-    bVar8 = (byte)((ulonglong)uVar5 >> 0x28);
-    bVar9 = (byte)extraout_ECX + bVar8;
-    bVar10 = CARRY1((byte)extraout_ECX,bVar8) || CARRY1(bVar9,bVar4);
-    bVar9 = bVar9 + bVar4;
-    pbVar11 = (byte *)CONCAT31((int3)((uint)extraout_ECX >> 8),bVar9);
-    pbVar12 = (byte *)(unaff_EDI + iVar2 * 4);
-    bVar13 = CARRY1(*pbVar12,unaff_BL) || CARRY1(*pbVar12 + unaff_BL,bVar10);
-    *pbVar12 = *pbVar12 + unaff_BL + bVar10;
-    pbVar12 = pbVar6 + -0x69;
-    bVar14 = (byte)unaff_SI;
-    bVar10 = CARRY1(*pbVar12,bVar14) || CARRY1(*pbVar12 + bVar14,bVar13);
-    *pbVar12 = *pbVar12 + bVar14 + bVar13;
-    pbVar12 = (byte *)(unaff_SI + -0x69);
-    bVar13 = CARRY1(*pbVar12,bVar8) || CARRY1(*pbVar12 + bVar8,bVar10);
-    *pbVar12 = *pbVar12 + bVar8 + bVar10;
-    pbVar12 = (byte *)(iVar2 + -0x3befd169);
-    bVar10 = CARRY1(*pbVar12,unaff_BL) || CARRY1(*pbVar12 + unaff_BL,bVar13);
-    *pbVar12 = *pbVar12 + unaff_BL + bVar13;
-    bVar4 = (byte)((uint)extraout_ECX >> 8);
-    bVar13 = CARRY1(bVar8,bVar4) || CARRY1(bVar8 + bVar4,bVar10);
-    piVar15 = (int *)CONCAT22((short)((ulonglong)uVar5 >> 0x30),
-                              CONCAT11(bVar8 + bVar4 + bVar10,(char)((ulonglong)uVar5 >> 0x20)));
-    bVar10 = CARRY1(*pbVar6,bVar4) || CARRY1(*pbVar6 + bVar4,bVar13);
-    *pbVar6 = *pbVar6 + bVar4 + bVar13;
-    pbVar12 = (byte *)(unaff_EDI + -0x68);
-    bVar13 = CARRY1(*pbVar12,bVar4) || CARRY1(*pbVar12 + bVar4,bVar10);
-    *pbVar12 = *pbVar12 + bVar4 + bVar10;
-    pbVar6 = pbVar6 + -0x52efd168;
-    bVar4 = *pbVar6;
-    bVar8 = *pbVar6;
-    *pbVar6 = bVar8 + bVar9 + bVar13;
-    pcVar16 = (char *)(int)unaff_SI;
-    *pcVar16 = *pcVar16 + bVar14 + (CARRY1(bVar4,bVar9) || CARRY1(bVar8 + bVar9,bVar13));
-    *piVar15 = (int)(pcVar16 + *piVar15);
-    *(byte *)piVar15 = (char)*piVar15 + bVar14 + (char)*piVar15 + (char)*piVar15;
-    *pbVar11 = *pbVar11 | bVar9;
-    pcVar17 = (code *)swi(3);
-    pAVar3 = (AvatarModifier *)(*pcVar17)();
+      cVar5 = cVar5 + -1;
+    } while ('\0' < cVar5);
+    bVar6 = (byte)(iVar2 >> 0x1f);
+    bVar7 = CARRY1(extraout_CL,bVar6) || CARRY1(extraout_CL + bVar6,bVar4);
+    pbVar8 = (byte *)((iVar2 >> 0x1f) + unaff_EBX * 4);
+    bVar9 = (byte)unaff_EBX;
+    bVar10 = CARRY1(*pbVar8,bVar9) || CARRY1(*pbVar8 + bVar9,bVar7);
+    *pbVar8 = *pbVar8 + bVar9 + bVar7;
+    pbVar8 = (byte *)(unaff_ESI + -0x66);
+    bVar4 = *pbVar8 + (byte)iVar2;
+    bVar7 = CARRY1(*pbVar8,(byte)iVar2) || CARRY1(bVar4,bVar10);
+    *pbVar8 = bVar4 + bVar10;
+    pbVar8 = (byte *)(iVar2 + -0x66);
+    bVar10 = CARRY1(*pbVar8,bVar6) || CARRY1(*pbVar8 + bVar6,bVar7);
+    *pbVar8 = *pbVar8 + bVar6 + bVar7;
+    pbVar8 = (byte *)((iVar2 >> 0x1f) + -0x3befd166);
+    bVar11 = CARRY1(*pbVar8,bVar9) || CARRY1(*pbVar8 + bVar9,bVar10);
+    *pbVar8 = *pbVar8 + bVar9 + bVar10;
+    uVar12 = func_?(in_CS);
+    piVar13 = (int *)((ulonglong)uVar12 >> 0x20);
+    pcVar14 = (char *)uVar12;
+    pbVar8 = (byte *)(unaff_EDI + -0x65);
+    bVar6 = (byte)((uint)extraout_ECX >> 8);
+    bVar4 = *pbVar8 + bVar6;
+    bVar7 = CARRY1(*pbVar8,bVar6) || CARRY1(bVar4,bVar11);
+    *pbVar8 = bVar4 + bVar11;
+    pbVar8 = (byte *)(unaff_ESI + -0x52efd165);
+    bVar4 = *pbVar8;
+    bVar9 = (byte)extraout_ECX;
+    bVar6 = *pbVar8;
+    *pbVar8 = bVar6 + bVar9 + bVar7;
+    *pcVar14 = *pcVar14 + (char)uVar12 + (CARRY1(bVar4,bVar9) || CARRY1(bVar6 + bVar9,bVar7));
+    *piVar13 = (int)(pcVar14 + *piVar13);
+    *(char *)piVar13 = (char)*piVar13 + (char)uVar12 + (char)*piVar13 + (char)*piVar13;
+    *extraout_ECX = *extraout_ECX | bVar9;
+    pcVar15 = (code *)swi(3);
+    pAVar3 = (AvatarModifier *)(*pcVar15)();
     return pAVar3;
   }
 code_?:

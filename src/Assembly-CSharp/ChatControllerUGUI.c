@@ -110,7 +110,7 @@ code_?:
                                  ((Component *)pRVar7,(MethodInfo *)0x0),
              pGVar8 != (GameObject *)0x0)) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar8,0x41,(MethodInfo *)0x0);
+                      (pGVar8,0xa1,(MethodInfo *)0x0);
             goto code_?;
           }
         }
@@ -804,13 +804,31 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI__DoStart_b__13_
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,MethodInfo__ChatControllerUGUI__ChatHotkeyPressed__,
              (MethodInfo *)0x0);
-  if (x != (IShortcutKeyRegister *)0x0) {
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister,x,0xf);
+  if (x == (IShortcutKeyRegister *)0x0) {
+    func_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pIVar2 = x->klass;
+  uVar3 = 0;
+  uVar4._0_1_ = (pIVar2->_1).rank;
+  uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+  if (uVar4 != 0) {
+    do {
+      if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister) {
+        ppMVar5 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar3].offset].RegisterShortcutKey
+                   .method;
+        goto code_?;
+      }
+      uVar3 = uVar3 + 1;
+    } while (uVar3 < uVar4);
+  }
+  ppMVar5 = (MethodInfo **)
+            func_?(x,TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister,0);
+code_?:
+  (*(code *)*ppMVar5)(x,0xf,1,ppMVar5[1]);
   return;
 }
 

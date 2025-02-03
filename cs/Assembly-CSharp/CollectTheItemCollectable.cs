@@ -14,21 +14,21 @@ using UnityEngine;
 public class CollectTheItemCollectable : MVBlueprintBase
 {
 	// Fields
+	public Action OnCollectTheItemDestroyed;
 	private CullingSubscriberBase cullingSubscriberBase;
 	private MVCubeModelInstance collectableModel;
 	private CollectTheItemCollectableInstance collectableInstance;
 	private EditableCubeModelWrapper editableCubeModelWrapper;
 	private CollectTheItem controller;
-	public Action OnCollectTheItemDestroyed;
 	private ObscuredIntVector minBounds;
 	private ObscuredIntVector maxBounds;
 	private ObscuredInt minCubes;
 
 	// Properties
-	public int CollectableModelId { get; }
-	public int DropOffId { get; }
 	public bool HasArrowIndicator { get; }
 	public bool HasDropOff { get; }
+	public int CollectableModelId { get; }
+	public int DropOffId { get; }
 
 	// Constructors
 	public CollectTheItemCollectable(Dictionary<object, object> data, Dictionary<int, MVWorldObjectClient> worldObjects);

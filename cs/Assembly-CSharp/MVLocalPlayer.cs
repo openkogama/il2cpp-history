@@ -57,14 +57,6 @@ public abstract class MVLocalPlayer : MVPlayer
 	public bool IsAdmin { get; }
 	public bool IsChatLocked { get; }
 
-	// Nested types
-	public enum PlanetOwnershipType
-	{
-		None = 0,
-		Editor = 1,
-		Owner = 2
-	}
-
 	// Constructors
 	public MVLocalPlayer(int actorNumber, int profileID, string regionCode, int planetOwnershipTypeID, UserProfileData userProfileData);
 
@@ -87,5 +79,6 @@ public abstract class MVLocalPlayer : MVPlayer
 	public bool HasDiedInRound();
 	public void RoundEnded();
 	public bool IsAvatarDriving(MVVehicleBase vehicleBase);
+	public void ToggleAudioListener(bool on);
 }
 

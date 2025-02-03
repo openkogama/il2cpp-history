@@ -1249,9 +1249,9 @@ Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_get_IgnoreWOIDs
       func_?();
       func_?();
       func_?(&
-                      MethodInfo__MVWorldObjectClient____c__DisplayClass51_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
+                      MethodInfo__MVWorldObjectClient____c__DisplayClass53_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
                      );
-      func_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass51_0);
+      func_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass53_0);
       cRam_? = '\x01';
     }
     this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
@@ -1270,7 +1270,7 @@ Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_get_IgnoreWOIDs
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
       UnityAction_1_System_Object___ctor
                 (this_01,(Object *)this_00,
-                 MethodInfo__MVWorldObjectClient____c__DisplayClass51_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
+                 MethodInfo__MVWorldObjectClient____c__DisplayClass53_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
                  ,(MethodInfo *)0x0);
       (*(code *)(pMVar1->klass->vtable).TraverseRecursiveTail.method)(pMVar1,this_01);
       return (HashSet_1_System_Int32_ *)(this_00->fields)._._defaultValue_k__BackingField;

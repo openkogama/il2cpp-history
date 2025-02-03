@@ -129,11 +129,11 @@ code_?:
                           ((Delegate *)source,(Delegate *)this_01,(MethodInfo *)0x0);
     unaff_ESI = TypeInfo__System__Action<bool,_bool>;
     if (unaff_EDI == (Delegate *)0x0) {
-      (pAVar1->_1).interfaces_count = 0;
-      (pAVar1->_1).interface_offsets_count = 0;
+      (pAVar1->_1).method_count = 0;
+      (pAVar1->_1).property_count = 0;
       pAStack3 = (Action_2_Boolean_Boolean___Class *)0x0;
 code_?:
-      pDStack4 = (Delegate *)&(pAVar1->_1).interfaces_count;
+      pDStack4 = (Delegate *)&(pAVar1->_1).method_count;
       func_?();
       return;
     }
@@ -141,9 +141,9 @@ code_?:
     pDStack4 = unaff_EDI;
     iVar5 = func_?();
     if (iVar5 == 0) goto code_?;
-    (pAVar1->_1).interfaces_count = (short)iVar5;
+    (pAVar1->_1).method_count = (short)iVar5;
     this = (MVBuildModeAvatarRemote *)TypeInfo__System__Action<bool,_bool>;
-    (pAVar1->_1).interface_offsets_count = (short)((uint)iVar5 >> 0x10);
+    (pAVar1->_1).property_count = (short)((uint)iVar5 >> 0x10);
     pAStack3 = TypeInfo__System__Action<bool,_bool>;
     pDStack4 = unaff_EDI;
     pAStack3 = (Action_2_Boolean_Boolean___Class *)func_?();
@@ -349,16 +349,16 @@ code_?:
     pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)this_04,(MethodInfo *)0x0);
     if (pDVar5 == (Delegate *)0x0) {
-      (pAVar13->_1).interfaces_count = 0;
-      (pAVar13->_1).interface_offsets_count = 0;
+      (pAVar13->_1).method_count = 0;
+      (pAVar13->_1).property_count = 0;
 code_?:
       func_?();
       return;
     }
     iVar6 = func_?();
     if (iVar6 == 0) goto code_?;
-    (pAVar13->_1).interfaces_count = (short)iVar6;
-    (pAVar13->_1).interface_offsets_count = (short)((uint)iVar6 >> 0x10);
+    (pAVar13->_1).method_count = (short)iVar6;
+    (pAVar13->_1).property_count = (short)((uint)iVar6 >> 0x10);
     iVar6 = func_?();
     if (iVar6 != 0) goto code_?;
   }

@@ -14,10 +14,6 @@ using UnityEngine.EventSystems;
 public class MaterialsController : MonoBehaviour, IMaterialClicked, IHandleMaterial
 {
 	// Fields
-	protected CubeModelingStateMachine cubeModelingStateMachine;
-	private TabState tab;
-	private InventoryController inventoryController;
-	protected DesktopCubeModelingController desktopCubeModelingController;
 	[SerializeField]
 	private InventoryController inventoryControllerPrefab;
 	[SerializeField]
@@ -28,6 +24,10 @@ public class MaterialsController : MonoBehaviour, IMaterialClicked, IHandleMater
 	private MaterialViewItem materialViewItemPrefab;
 	public UnityAction<byte> materialChange;
 	public UnityAction materialsPop;
+	protected CubeModelingStateMachine cubeModelingStateMachine;
+	protected DesktopCubeModelingController desktopCubeModelingController;
+	private TabState tab;
+	private InventoryController inventoryController;
 
 	// Nested types
 	[Serializable]

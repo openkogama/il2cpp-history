@@ -1635,7 +1635,7 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_StartTransitionCa
                       Transform_set_localRotation
                                 (pTVar3,(this_00->fields).prevCameraRotation,(MethodInfo *)0x0);
                       (this_00->fields).time = (float)&UNK_?;
-                      (this_00->fields).superSoft = 0x4a;
+                      (this_00->fields).superSoft = 0xfa;
                       (this_00->fields).transitionPercentage = 0.0;
                       return;
                     }
@@ -1683,6 +1683,65 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_UnRegisterCameraW
   func_?(uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
+  return;
+}
+
+
+/* Void UpdateAudioListener() */
+
+void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_UpdateAudioListener
+               (MainCameraManager *this,MethodInfo *method)
+
+{
+  pMVar1 = (this->fields).cameraController;
+  if (pMVar1 != (MVCameraController *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Object);
+      cRam_? = '\x01';
+    }
+    pMVar2 = (pMVar1->fields).cameraStack;
+    if (pMVar2 != (MVCameraController_CameraStack *)0x0) {
+      pMVar3 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera
+                         (pMVar2,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        ((Object_1 *)pMVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar4 == 0) {
+        on = false;
+      }
+      else {
+        pMVar2 = (pMVar1->fields).cameraStack;
+        if (pMVar2 == (MVCameraController_CameraStack *)0x0) goto code_?;
+        pMVar3 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera
+                           (pMVar2,(MethodInfo *)0x0);
+        if (pMVar3 == (MVCameraBase *)0x0) goto code_?;
+        iVar5 = (*(code *)(pMVar3->klass->vtable).__unknown.method)
+                          (pMVar3,(pMVar3->klass->vtable).Awake.methodPtr);
+        if ((((iVar5 == 0) || (iVar5 == 6)) || (iVar5 == 10)) || (iVar5 == 0x14)) {
+          on = true;
+        }
+        else {
+          on = iVar5 == 0x13;
+        }
+      }
+      this_00 = (this->fields).audioListener;
+      if (this_00 != (AudioListener *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                  ((Behaviour *)this_00,on ^ 1,(MethodInfo *)0x0);
+        this_01 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+        if (this_01 != (MVLocalPlayer *)0x0) {
+          MVLocalPlayer::MVLocalPlayer_ToggleAudioListener(this_01,on,(MethodInfo *)0x0);
+          return;
+        }
+      }
+    }
+  }
+code_?:
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

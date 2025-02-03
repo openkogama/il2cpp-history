@@ -680,10 +680,12 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
   }
   MVPickupItemBase::MVPickupItemBase__ctor
             ((MVPickupItemBase *)this,data,worldObjects,(MethodInfo *)0x0);
-  uVar1 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-  piVar2 = &(this->fields)._._._.interactionFlags;
-  *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
-  *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar1;
+  piVar1 = &(this->fields)._._._.interactionFlags;
+  *(uint *)piVar1 = (uint)*piVar1 | 0x8000;
+  uVar2 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
+  piVar1 = &(this->fields)._._._.interactionFlags;
+  *(uint *)piVar1 = (uint)*piVar1 | 0x10;
+  *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar2;
   return;
 }
 

@@ -44,9 +44,11 @@ void Assembly-CSharp.dll::PaintCubes::PaintCubes_Enter
       if (((pGVar2 != (GameEventManager *)0x0) &&
           (pGVar3 = (pGVar2->fields).AvatarCommandsBuildMode,
           pGVar3 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-         (this_00 = (RTFocusCamera *)(pGVar3->fields).LaserCommands, this_00 != (RTFocusCamera *)0x0
-         )) {
-        RTG::RTFocusCamera::RTFocusCamera_OnPrjSwitchTransitionBegin(this_00,6,(MethodInfo *)0x0);
+         (this_00 = (pGVar3->fields).LaserCommands,
+         this_00 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+        GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
+        GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
+                  (this_00,LaserPointerState__Enum_PaintCubes,(MethodInfo *)0x0);
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -274,9 +276,11 @@ void Assembly-CSharp.dll::PaintCubes::PaintCubes_Exit
   if (((pGVar1 != (GameEventManager *)0x0) &&
       (pGVar2 = (pGVar1->fields).AvatarCommandsBuildMode,
       pGVar2 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-     (this_00 = (RTFocusCamera *)(pGVar2->fields).LaserCommands, this_00 != (RTFocusCamera *)0x0)) {
-    RTG::RTFocusCamera::RTFocusCamera_OnPrjSwitchTransitionBegin
-              (this_00,CameraPrjSwitchTransition_Type__Enum_None,(MethodInfo *)0x0);
+     (this_00 = (pGVar2->fields).LaserCommands,
+     this_00 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+    GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
+    GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
+              (this_00,LaserPointerState__Enum_Idle,(MethodInfo *)0x0);
     (*(code *)(this->klass->vtable).HideCursor.method)();
     return;
   }

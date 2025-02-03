@@ -181,8 +181,9 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_Update(FSMEntity *this,MethodInfo
     func_?(&TypeInfo__IState);
     cRam_? = '\x01';
   }
-  if ((this->fields).currentState != (IState *)0x0) {
-    func_?(1,TypeInfo__IState,(this->fields).currentState,this);
+  pIVar1 = (this->fields).currentState;
+  if (pIVar1 != (IState *)0x0) {
+    func_?(1,TypeInfo__IState,pIVar1,this);
   }
   return;
 }
@@ -294,7 +295,7 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_set_Event
         func_?(&(this->fields).nextEvent,0);
         pOVar3 = (this->fields).curEvent;
         (this->fields).prevEvent = pOVar3;
-        func_?(&(this->fields).prevEvent,pOVar3);
+        func_?(&this->fields,pOVar3);
         (this->fields).curEvent = value;
         func_?(&(this->fields).curEvent,value);
         pIVar2 = (this->fields).currentState;

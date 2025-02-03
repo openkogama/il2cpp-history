@@ -12,11 +12,11 @@ using System.Runtime.CompilerServices;
 public class FSMEntity
 {
 	// Fields
-	protected StateTransitionTable transitionTable;
-	protected IState currentState;
 	public object prevEvent;
 	public object curEvent;
 	public object nextEvent;
+	protected StateTransitionTable transitionTable;
+	protected IState currentState;
 	protected string stateName;
 	protected Dictionary<object, object> data;
 	private bool clearStack;

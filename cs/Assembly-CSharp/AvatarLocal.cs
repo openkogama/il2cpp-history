@@ -17,6 +17,8 @@ public class AvatarLocal : Avatar
 	private AvatarCamerasTouch avatarCamerasMobile;
 	[SerializeField]
 	private AvatarCamerasDesktop avatarCamerasDesktop;
+	[SerializeField]
+	private AudioListener audioListener;
 
 	// Properties
 	public IAvatarCameraController CameraController { get; }
@@ -30,5 +32,6 @@ public class AvatarLocal : Avatar
 	private void PrewarmXPParticles();
 	private void CreateXPParticlesWithLayer(int xp, int layer);
 	public void OnXpProgressing(int xp);
+	public void ToggleAudioListener(bool on);
 }
 

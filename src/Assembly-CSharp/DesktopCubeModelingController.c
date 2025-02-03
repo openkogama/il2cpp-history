@@ -297,8 +297,8 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::DesktopCubeModelingCont
      (this_00 = (pMVar1->fields).game, this_00 != (MVNetworkGame *)0x0)) {
     this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
     if (this_01 != (MVLocalPlayer *)0x0) {
-      MVar2 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
-      if (MVar2 != MVLocalPlayer_PlanetOwnershipType__Enum_Owner) {
+      PVar2 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
+      if ((char)PVar2 != '\x02') {
         text = TM::TM__(StringLiteral_You_must_be_the_owner_in_order_t,(MethodInfo *)0x0);
         sprite = (this->fields).errorSprite;
         if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {

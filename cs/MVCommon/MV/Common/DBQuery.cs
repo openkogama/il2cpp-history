@@ -131,6 +131,7 @@ namespace MV.Common
 		UpdatePublishedPlanetMetric = 113,
 		UpdatePublishedPlanetPlayerCount = 114,
 		DeletePlanetPlayerCountDataForServer = 115,
-		InsertCheatDetectionLog = 116
+		InsertCheatDetectionLog = 116,
+		GetPlanetOwnerships = 117
 	}
 }

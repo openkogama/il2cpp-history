@@ -91,7 +91,7 @@ code_?:
                               (item->fields).worldObjectRoot,
                               MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
                              ), pOVar16 == (Object *)0x0)) break;
-      (**(code **)&pOVar16->klass[3]._1.method_count)();
+      (**(code **)&pOVar16->klass[3]._1.nested_type_count)();
       pDVar15 = (item->fields).worldObjects;
       if ((pDVar15 == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) ||
          (pOVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::

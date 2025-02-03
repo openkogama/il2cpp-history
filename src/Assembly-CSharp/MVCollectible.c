@@ -403,10 +403,9 @@ code_?:
     if ((pMVar5->fields).currentGameState == 2) {
 code_?:
       MVCollectible_OnTakenByListChange(this,(MethodInfo *)0x0);
-      pAStack_6 = (Action_1_IWinningCondition___Class *)
-                  MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pAStack_6 != (Action_1_IWinningCondition___Class *)0x0) {
-        a = *(Delegate **)&(pAStack_6->_1).naturalAligment;
+      pMStack_6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (pMStack_6 != (MVNetworkGame *)0x0) {
+        pAVar7 = (pMStack_6->fields).OnWinningConditionFulfilled;
         this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
                   func_?(TypeInfo__System__Action<IWinningCondition>);
         Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
@@ -416,39 +415,35 @@ code_?:
                    MethodInfo__MVCollectible__OnWinningConditionFulfilled_IWinningCondition_,
                    (MethodInfo *)0x0);
         unaff_EDI = mscorlib.dll::System::Delegate::Delegate_Combine
-                              (a,(Delegate *)this_03,(MethodInfo *)0x0);
+                              ((Delegate *)pAVar7,(Delegate *)this_03,(MethodInfo *)0x0);
         unaff_ESI = TypeInfo__System__Action<IWinningCondition>;
         if (unaff_EDI == (Delegate *)0x0) {
-          (pAStack_6->_1).naturalAligment = 0;
-          (pAStack_6->_1).packingSize = 0;
-          *(undefined2 *)&(pAStack_6->_1).field_0x56 = 0;
-          iVar7 = 0;
-          pAVar8 = pAStack_6;
+          (pMStack_6->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+          iVar8 = 0;
+          pMVar1 = pMStack_6;
 code_?:
-          pDStack_9 = (Delegate *)&(pAVar8->_1).naturalAligment;
+          pDStack_9 = (Delegate *)&(pMVar1->fields).OnWinningConditionFulfilled;
           EStack_10.monitor = (MonitorData *)&UNK_?;
-          pAStack_6 = (Action_1_IWinningCondition___Class *)iVar7;
+          pMStack_6 = (MVNetworkGame *)iVar8;
           func_?();
           return;
         }
-        pAStack_6 = TypeInfo__System__Action<IWinningCondition>;
+        pMStack_6 = (MVNetworkGame *)TypeInfo__System__Action<IWinningCondition>;
         EStack_10.monitor = (MonitorData *)&UNK_?;
         pDStack_9 = unaff_EDI;
-        iVar7 = func_?();
-        pAVar8 = pAStack_6;
-        if (iVar7 != 0) {
-          (pAStack_6->_1).naturalAligment = (char)iVar7;
+        pAVar7 = (Action_1_IWinningCondition_ *)func_?();
+        pMVar1 = pMStack_6;
+        if (pAVar7 != (Action_1_IWinningCondition_ *)0x0) {
+          (pMStack_6->fields).OnWinningConditionFulfilled = pAVar7;
           this = (MVCollectible *)TypeInfo__System__Action<IWinningCondition>;
-          (pAStack_6->_1).packingSize = (char)((uint)iVar7 >> 8);
-          *(short *)&(pAStack_6->_1).field_0x56 = (short)((uint)iVar7 >> 0x10);
-          pAStack_6 = TypeInfo__System__Action<IWinningCondition>;
+          pMStack_6 = (MVNetworkGame *)TypeInfo__System__Action<IWinningCondition>;
           EStack_10.monitor = (MonitorData *)&UNK_?;
           pDStack_9 = unaff_EDI;
-          iVar7 = func_?();
-          if (iVar7 != 0) goto code_?;
+          iVar8 = func_?();
+          if (iVar8 != 0) goto code_?;
           goto code_?;
         }
-        pAStack_6 = unaff_ESI;
+        pMStack_6 = (MVNetworkGame *)unaff_ESI;
         EStack_10.monitor = (MonitorData *)&UNK_?;
         pDStack_9 = unaff_EDI;
         func_?();
@@ -546,7 +541,7 @@ code_?:
 code_?:
   EStack_10.monitor = (MonitorData *)&UNK_?;
   pDStack_9 = unaff_EDI;
-  pAStack_6 = (Action_1_IWinningCondition___Class *)this;
+  pMStack_6 = (MVNetworkGame *)this;
   func_?();
   pcVar16 = (code *)swi(3);
   (*pcVar16)();

@@ -1,4 +1,63 @@
 
+/* Void Awake() */
+
+void Assembly-CSharp.dll::WorldEditorDrawPlane::WorldEditorDrawPlane_Awake
+               (WorldEditorDrawPlane *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&
+                    UnityEngine__Renderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Renderer>__
+                   );
+    cRam_? = '\x01';
+  }
+  pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+  (this->fields).mainCamera = pCVar1;
+  func_?(&(this->fields).mainCamera,pCVar1);
+  WorldEditorDrawPlane_GenerateDrawPlane
+            (this,(this->fields).DrawPlaneVisualization,(MethodInfo *)0x0);
+  pGVar2 = (this->fields).DrawPlaneVisualization;
+  if (pGVar2 != (GameObject *)0x0) {
+    pRVar3 = (Renderer *)
+             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                       (pGVar2,
+                        UnityEngine__Renderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Renderer>__
+                       );
+    if (pRVar3 != (Renderer *)0x0) {
+      pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                         (pRVar3,(MethodInfo *)0x0);
+      if (pMVar4 != (Material *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTextureScale
+                  (pMVar4,(Vector2)0x42c8000042c80000,(MethodInfo *)0x0);
+        pGVar2 = (this->fields).DrawPlaneVisualization;
+        if (pGVar2 != (GameObject *)0x0) {
+          pRVar3 = (Renderer *)
+                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                             (pGVar2,
+                              UnityEngine__Renderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Renderer>__
+                             );
+          if (pRVar3 != (Renderer *)0x0) {
+            pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                               (pRVar3,(MethodInfo *)0x0);
+            if (pMVar4 != (Material *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTextureOffset
+                        (pMVar4,(Vector2)0x3f0000003f000000,(MethodInfo *)0x0);
+              WorldEditorDrawPlane_GenerateDrawPlane
+                        (this,(this->fields).DrawPlaneCursor,(MethodInfo *)0x0);
+              return;
+            }
+          }
+        }
+      }
+    }
+  }
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
 /* Void CachePos() */
 
 void Assembly-CSharp.dll::WorldEditorDrawPlane::WorldEditorDrawPlane_CachePos
@@ -125,7 +184,7 @@ void Assembly-CSharp.dll::WorldEditorDrawPlane::WorldEditorDrawPlane_GenerateMes
   bVar1 = scale != 0;
   _scale = _UNK_?;
   if (bVar1) {
-    _scale = (float)(this->fields).MeshScale;
+    _scale = _UNK_?;
   }
   value = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,4);
   value_00 = (Int32__Array *)func_?(TypeInfo__System__Int32,6);
@@ -866,67 +925,6 @@ void Assembly-CSharp.dll::WorldEditorDrawPlane::WorldEditorDrawPlane_SetToTarget
 }
 
 
-/* Void Start() */
-
-void Assembly-CSharp.dll::WorldEditorDrawPlane::WorldEditorDrawPlane_Start
-               (WorldEditorDrawPlane *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__Renderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Renderer>__
-                   );
-    cRam_? = '\x01';
-  }
-  pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-  (this->fields).mainCamera = pCVar1;
-  func_?(&(this->fields).mainCamera,pCVar1);
-  WorldEditorDrawPlane_GenerateDrawPlane
-            (this,(this->fields).DrawPlaneVisualization,(MethodInfo *)0x0);
-  pGVar2 = (this->fields).DrawPlaneVisualization;
-  if (pGVar2 != (GameObject *)0x0) {
-    pRVar3 = (Renderer *)
-             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                       (pGVar2,
-                        UnityEngine__Renderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Renderer>__
-                       );
-    if (pRVar3 != (Renderer *)0x0) {
-      pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                         (pRVar3,(MethodInfo *)0x0);
-      if (pMVar4 != (Material *)0x0) {
-        value.y = (float)(this->fields).MeshScale;
-        value.x = (float)(this->fields).MeshScale;
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTextureScale
-                  (pMVar4,value,(MethodInfo *)0x0);
-        pGVar2 = (this->fields).DrawPlaneVisualization;
-        if (pGVar2 != (GameObject *)0x0) {
-          pRVar3 = (Renderer *)
-                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                             (pGVar2,
-                              UnityEngine__Renderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Renderer>__
-                             );
-          if (pRVar3 != (Renderer *)0x0) {
-            pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                               (pRVar3,(MethodInfo *)0x0);
-            if (pMVar4 != (Material *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTextureOffset
-                        (pMVar4,(Vector2)0x3f0000003f000000,(MethodInfo *)0x0);
-              WorldEditorDrawPlane_GenerateDrawPlane
-                        (this,(this->fields).DrawPlaneCursor,(MethodInfo *)0x0);
-              return;
-            }
-          }
-        }
-      }
-    }
-  }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
-}
-
-
 /* Void Update() */
 
 void Assembly-CSharp.dll::WorldEditorDrawPlane::WorldEditorDrawPlane_Update
@@ -1052,14 +1050,13 @@ void Assembly-CSharp.dll::WorldEditorDrawPlane::WorldEditorDrawPlane_UpdateAltit
       if (pTVar1 != (Transform *)0x0) {
         pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                            ((Vector3 *)&stack0xffffffe8,pTVar1,(MethodInfo *)0x0);
-        iStack4 = (int)(((float)this_00 + (float)puVar3 + pVVar2->z) - _UNK_?);
-        (this->fields)._altitude = iStack4;
-        if ((this->fields).OnAltitudeChanged != (WorldEditorDrawPlane_AltitudeChangedDelegate *)0x0)
-        {
-          pWVar5 = (this->fields).OnAltitudeChanged;
-          pvStack6 = (pWVar5->fields)._._.method;
-          pvStack7 = (pWVar5->fields)._._.method_code;
-          (*(pWVar5->fields)._._.invoke_impl)();
+        pWVar4 = (this->fields).OnAltitudeChanged;
+        iStack5 = (int)(((float)this_00 + (float)puVar3 + pVVar2->z) - _UNK_?);
+        (this->fields)._altitude = iStack5;
+        if (pWVar4 != (WorldEditorDrawPlane_AltitudeChangedDelegate *)0x0) {
+          pvStack6 = (pWVar4->fields)._._.method;
+          pvStack7 = (pWVar4->fields)._._.method_code;
+          (*(pWVar4->fields)._._.invoke_impl)();
         }
         return;
       }
@@ -1147,7 +1144,6 @@ void Assembly-CSharp.dll::WorldEditorDrawPlane::WorldEditorDrawPlane__ctor
                (WorldEditorDrawPlane *this,MethodInfo *method)
 
 {
-  (this->fields).MeshScale = 100;
   (this->fields).isActive = 1;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Object);
@@ -1255,8 +1251,8 @@ void Assembly-CSharp.dll::WorldEditorDrawPlane::WorldEditorDrawPlane_set_Altitud
 
 {
   (this->fields)._altitude = value;
-  if ((this->fields).OnAltitudeChanged != (WorldEditorDrawPlane_AltitudeChangedDelegate *)0x0) {
-    pWVar1 = (this->fields).OnAltitudeChanged;
+  pWVar1 = (this->fields).OnAltitudeChanged;
+  if (pWVar1 != (WorldEditorDrawPlane_AltitudeChangedDelegate *)0x0) {
     (*(pWVar1->fields)._._.invoke_impl)
               ((pWVar1->fields)._._.method_code,value,(pWVar1->fields)._._.method);
   }

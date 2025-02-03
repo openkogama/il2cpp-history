@@ -272,19 +272,14 @@ Assembly-CSharp.dll::AccessoryInventoryViewItem::AccessoryInventoryViewItem_OnAn
     func_?(&TypeInfo__AccessoryInventoryViewItem___OnAndroidEndHoverEvent_d__41);
     cRam_? = '\x01';
   }
-  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
-            func_?(TypeInfo__AccessoryInventoryViewItem___OnAndroidEndHoverEvent_d__41);
-  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
-            (this_00,0,(MethodInfo *)0x0);
-  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
-    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
-    func_?(this_00 + 1);
-    return (IEnumerator *)this_00;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__AccessoryInventoryViewItem___OnAndroidEndHoverEvent_d__41;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -431,7 +426,7 @@ code_?:
     pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pDVar3 == (Delegate *)0x0) {
-      *(undefined4 *)(unaff_EDI + 0xe0) = 0;
+      *(undefined4 *)(unaff_EDI + 0xec) = 0;
 code_?:
       func_?();
       goto code_?;
@@ -441,7 +436,7 @@ code_?:
       pDVar4 = pDVar3;
     }
     if (pDVar4 == (Delegate *)0x0) goto code_?;
-    *(Delegate **)(unaff_EDI + 0xe0) = pDVar4;
+    *(Delegate **)(unaff_EDI + 0xec) = pDVar4;
     pDVar4 = (Delegate *)0x0;
     if ((Action__Class *)pDVar3->klass == TypeInfo__System__Action) {
       pDVar4 = pDVar3;
@@ -563,20 +558,15 @@ Assembly-CSharp.dll::AccessoryInventoryViewItem::AccessoryInventoryViewItem_OnHo
     func_?(&TypeInfo__AccessoryInventoryViewItem___OnHoverEvent_d__43);
     cRam_? = '\x01';
   }
-  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
-            func_?(TypeInfo__AccessoryInventoryViewItem___OnHoverEvent_d__43);
-  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
-            (this_00,0,(MethodInfo *)0x0);
-  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
-    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
-    func_?(this_00 + 1);
-    this_00[1].monitor = (MonitorData *)sizeOffset;
-    return (IEnumerator *)this_00;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__AccessoryInventoryViewItem___OnHoverEvent_d__43;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  value[2].monitor = (MonitorData *)sizeOffset;
+  return (IEnumerator *)value;
 }
 
 
@@ -650,39 +640,20 @@ void Assembly-CSharp.dll::AccessoryInventoryViewItem::AccessoryInventoryViewItem
                (AccessoryInventoryViewItem *this,PointerEventData *eventData,MethodInfo *method)
 
 {
-  AccessoryInventoryViewItem_OnHoverEvent(this,20.0,(MethodInfo *)0x0);
-  if (in_stack_1 == 0) {
-    uVar2 = func_?();
-    this_00 = (NullReferenceException *)func_?(uVar2);
-    pMVar3 = (MethodInfo *)0x0;
-    pSVar4 = (String *)func_?(&StringLiteral_routine_is_null);
-    mscorlib.dll::System::NullReferenceException::NullReferenceException__ctor_1
-              (this_00,pSVar4,pMVar3);
-    func_?();
-    func_?();
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__AccessoryInventoryViewItem___OnHoverEvent_d__43);
+    cRam_? = '\x01';
   }
-  else {
-    if (pcRam_? == (code *)0x0) {
-      pcRam_? = (code *)func_?();
-    }
-    cVar5 = (*pcRam_?)();
-    if (cVar5 != '\0') {
-      if (pcRam_? == (code *)0x0) {
-        pcRam_? = (code *)func_?();
-      }
-      (*pcRam_?)(in_stack_6);
-      return;
-    }
-  }
-  uVar2 = func_?();
-  this_01 = (ArgumentException *)func_?(uVar2);
-  pMVar3 = (MethodInfo *)0x0;
-  pSVar4 = (String *)func_?(&StringLiteral_Coroutines_can_only_be_stopped_o);
-  mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1(this_01,pSVar4,pMVar3);
-  func_?();
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  method_00 = TypeInfo__AccessoryInventoryViewItem___OnHoverEvent_d__43;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
+  func_?(value + 2,this);
+  value[2].monitor = (MonitorData *)0x41a00000;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+            ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
   return;
 }
 
@@ -707,20 +678,15 @@ void Assembly-CSharp.dll::AccessoryInventoryViewItem::AccessoryInventoryViewItem
     func_?(&TypeInfo__AccessoryInventoryViewItem___OnAndroidEndHoverEvent_d__41);
     cRam_? = '\x01';
   }
-  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
-            func_?(TypeInfo__AccessoryInventoryViewItem___OnAndroidEndHoverEvent_d__41);
-  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
-            (this_00,0,(MethodInfo *)0x0);
-  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
-    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
-    func_?(this_00 + 1,this);
-    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-              ((MonoBehaviour *)this,(IEnumerator *)this_00,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__AccessoryInventoryViewItem___OnAndroidEndHoverEvent_d__41;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
+  func_?(value + 2,this);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+            ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
   return;
 }
 
@@ -1549,38 +1515,23 @@ void Assembly-CSharp.dll::AccessoryInventoryViewItem::AccessoryInventoryViewItem
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IAttachToBody);
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IAttachToBody;
+    func_?();
     cRam_? = '\x01';
   }
-  pAVar1 = (this->fields).accessoryDataClient;
-  if (pAVar1 != (AccessoryDataClient *)0x0) {
-    iVar2 = (pAVar1->fields)._.sAID;
-    if (x != (IAttachToBody *)0x0) {
-      pIVar3 = x->klass;
-      uVar4 = 0;
-      uVar5._0_1_ = (pIVar3->_1).rank;
-      uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
-      if (uVar5 != 0) {
-        do {
-          if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
-              (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAttachToBody) {
-            ppMVar6 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar4].offset].AttachToBody.
-                       method;
-            goto code_?;
-          }
-          uVar4 = uVar4 + 1;
-        } while (uVar4 < uVar5);
-      }
-      ppMVar6 = (MethodInfo **)
-                func_?(x,TypeInfo__UnityEngine__EventSystems__IAttachToBody,0);
-code_?:
-      (*(code *)*ppMVar6)(x,iVar2,0,0x3f800000,ppMVar6[1]);
-      return;
-    }
+  pAVar2 = (this->fields).accessoryDataClient;
+  if ((pAVar2 != (AccessoryDataClient *)0x0) && (x != (IAttachToBody *)0x0)) {
+    ppIStack_1 = (IAttachToBody__Class **)0x3f800000;
+    puStack_3 = (undefined *)0x0;
+    iStack_4 = (pAVar2->fields)._.sAID;
+    func_?(0,TypeInfo__UnityEngine__EventSystems__IAttachToBody,x);
+    return;
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  ppIStack_1 = (IAttachToBody__Class **)&stack0xfffffffc;
+  uVar5 = func_?(&iStack_4);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

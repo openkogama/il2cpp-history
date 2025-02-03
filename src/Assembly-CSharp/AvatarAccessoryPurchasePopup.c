@@ -626,13 +626,13 @@ void Assembly-CSharp.dll::AvatarAccessoryPurchasePopup::
              0x0;
       }
       else {
-        pDVar3 = (Delegate__Class *)func_?();
-        if (pDVar3 == (Delegate__Class *)0x0) {
+        pvVar3 = (void *)func_?();
+        if (pvVar3 == (void *)0x0) {
           uVar4 = func_?();
           func_?(uVar4);
           goto code_?;
         }
-        pDVar2[3].klass = pDVar3;
+        pDVar2[3].fields.invoke_impl = pvVar3;
         iVar5 = func_?();
         if (iVar5 == 0) goto code_?;
       }

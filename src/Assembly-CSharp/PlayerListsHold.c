@@ -428,16 +428,16 @@ Assembly-CSharp.dll::PlayerListsHold::PlayerListsHold_GetSortedTeamLists
     key = pLVar11->_current;
     pOStack_14 = (Object *)&pOStack_7;
     while( true ) {
-      method_00 = (MethodInfo *)uVar8;
-      bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::
+      pMVar15 = (MethodInfo *)uVar8;
+      bVar16 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::
               RegularExpressions::RegexCharClass+SingleRange]::
               List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext
                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                           *)&pOStack_7,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MVTeam>__MoveNext__
                         );
-      if (bVar15 == 0) break;
-      RVar16 = key;
+      if (bVar16 == 0) break;
+      RVar17 = key;
       this_01 = (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
                 func_?();
       mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -457,14 +457,14 @@ Assembly-CSharp.dll::PlayerListsHold::PlayerListsHold_GetSortedTeamLists
                  (Object *)this_01,
                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::List<MVPlayer>_>__Add_MV__WorldObject__MVTeam__System__Collections__Generic__List<MVPlayer>_
                 );
-      key = RVar16;
+      key = RVar17;
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)&pOStack_7,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MVTeam>__Dispose__
-               ,method_00);
+               ,pMVar15);
     uStack_1 = 0xffffffff;
     if (players != (IEnumerable_1_MVPlayer_ *)0x0) {
       puStack_6 = (uint *)func_?();
@@ -472,28 +472,28 @@ Assembly-CSharp.dll::PlayerListsHold::PlayerListsHold_GetSortedTeamLists
       LStack_12._version = 0;
       uStack_1 = 4;
       while( true ) {
-        puStack_17 = puStack_6;
+        puStack_18 = puStack_6;
         if (puStack_6 == (uint *)0x0) break;
-        uStack_18 = *puStack_6;
-        uVar19 = 0;
-        uVar20 = *(ushort *)(uStack_18 + 0xb6);
-        pOStack_14 = (Object *)(uint)uVar20;
-        if (uVar20 != 0) {
+        uStack_19 = *puStack_6;
+        uVar20 = 0;
+        uVar21 = *(ushort *)(uStack_19 + 0xb6);
+        pOStack_14 = (Object *)(uint)uVar21;
+        if (uVar21 != 0) {
           do {
-            if (*(IEnumerator__Class **)(*(int *)(uStack_18 + 0x58) + (uint)uVar19 * 8) ==
+            if (*(IEnumerator__Class **)(*(int *)(uStack_19 + 0x58) + (uint)uVar20 * 8) ==
                 TypeInfo__System__Collections__IEnumerator) {
-              puVar21 = (undefined4 *)
+              puVar22 = (undefined4 *)
                        (*puStack_6 +
-                       (*(int *)(*(int *)(*puStack_6 + 0x58) + 4 + (uint)uVar19 * 8) + 0x18) * 8);
+                       (*(int *)(*(int *)(*puStack_6 + 0x58) + 4 + (uint)uVar20 * 8) + 0x18) * 8);
               goto code_?;
             }
-            uVar19 = uVar19 + 1;
-          } while (uVar19 < uVar20);
+            uVar20 = uVar20 + 1;
+          } while (uVar20 < uVar21);
         }
-        puVar21 = (undefined4 *)func_?();
+        puVar22 = (undefined4 *)func_?();
 code_?:
-        cVar22 = (*(code *)*puVar21)();
-        if (cVar22 == '\0') {
+        cVar23 = (*(code *)*puVar22)();
+        if (cVar23 == '\0') {
           uStack_1 = 0xffffffff;
           if (puStack_6 != (uint *)0x0) {
             func_?();
@@ -501,27 +501,27 @@ code_?:
           uStack_1 = 0xffffffff;
           if (pDStack_9 !=
               (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
-            pDVar23 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System
+            pDVar24 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System
                      ::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                                ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                                 &stack0xffffffac,
                                 (Dictionary_2_System_UInt32_System_Object_ *)pDStack_9,
                                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::List<MVPlayer>_>__GetEnumerator__
                                );
-            uVar24 = *(undefined8 *)&(pDVar23->_current).value;
+            uVar25 = *(undefined8 *)&(pDVar24->_current).value;
             LStack_12._version = 0;
             uStack_1 = 7;
             LStack_12._current = (RegexCharClass_SingleRange)&stack0xffffff84;
             while( true ) {
-              pLVar25 = (List_1_System_Object_ *)uVar24;
-              bVar15 = mscorlib.dll::System::Collections::Generic::
+              pMVar15 = (MethodInfo *)uVar25;
+              bVar16 = mscorlib.dll::System::Collections::Generic::
                       Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
                       Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                                 ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *
                                  )&stack0xffffff84,
                                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::Collections::Generic::List<MVPlayer>_>__MoveNext__
                                 );
-              if (bVar15 == 0) {
+              if (bVar16 == 0) {
                 uStack_1 = 0xffffffff;
                 mscorlib.dll::System::ThrowHelper::
                 ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
@@ -532,62 +532,62 @@ code_?:
                 *unaff_FS_OFFSET = uStack_3;
                 return (Dictionary_2_MV_WorldObject_MVTeam_List_1_MVPlayer_ *)pDStack_9;
               }
-              this_02 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
-              UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-              UxmlObjectListAttributeDescription`1[System::Object]::
-              UxmlObjectListAttributeDescription_1_System_Object___ctor(this_02,(MethodInfo *)0x0);
-              if (pLVar25 == (List_1_System_Object_ *)0x0) break;
-              uVar24._4_4_ = (int32_t)
+              method_00 = pMVar15;
+              pOVar27 = (Object *)func_?();
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                        (pOVar27,ExceptionArgument__Enum_obj,method_00);
+              if (pMVar15 == (MethodInfo *)0x0) break;
+              uVar25._4_4_ = (int32_t)
                              MethodInfo__System__Collections__Generic__List<MVPlayer>__Sort_System__Collections__Generic__IComparer<MVPlayer>_
               ;
-              uVar24._0_4_ = (Object *)this_02;
+              uVar25._0_4_ = pOVar27;
               mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
               List_1_System_Object__Sort_2
-                        (pLVar25,(IComparer_1_System_Object_ *)this_02,
+                        ((List_1_System_Object_ *)pMVar15,(IComparer_1_System_Object_ *)pOVar27,
                          MethodInfo__System__Collections__Generic__List<MVPlayer>__Sort_System__Collections__Generic__IComparer<MVPlayer>_
                         );
             }
           }
           break;
         }
-        puStack_17 = puStack_6;
+        puStack_18 = puStack_6;
         if (puStack_6 == (uint *)0x0) break;
         pOStack_14 = (Object *)*puStack_6;
-        uVar19 = 0;
-        uVar20 = *(ushort *)((int)&pOStack_14[0x16].monitor + 2);
-        uStack_18 = (uint)uVar20;
-        if (uVar20 != 0) {
+        uVar20 = 0;
+        uVar21 = *(ushort *)((int)&pOStack_14[0x16].monitor + 2);
+        uStack_19 = (uint)uVar21;
+        if (uVar21 != 0) {
           do {
             if ((IEnumerator_1_MVPlayer___Class *)
-                (&((pOStack_14[0xb].klass)->_0).image)[(uint)uVar19 * 2] ==
+                (&((pOStack_14[0xb].klass)->_0).image)[(uint)uVar20 * 2] ==
                 TypeInfo__System__Collections__Generic__IEnumerator<MVPlayer>) {
-              puVar21 = (undefined4 *)
+              puVar22 = (undefined4 *)
                        (*puStack_6 +
-                       (*(int *)(*(int *)(*puStack_6 + 0x58) + 4 + (uint)uVar19 * 8) + 0x18) * 8);
+                       (*(int *)(*(int *)(*puStack_6 + 0x58) + 4 + (uint)uVar20 * 8) + 0x18) * 8);
               goto code_?;
             }
-            uVar19 = uVar19 + 1;
-          } while (uVar19 < uVar20);
+            uVar20 = uVar20 + 1;
+          } while (uVar20 < uVar21);
         }
-        puVar21 = (undefined4 *)func_?();
+        puVar22 = (undefined4 *)func_?();
 code_?:
-        item = (Object *)(*(code *)*puVar21)();
-        if (item == (Object *)0x0) break;
-        if ((*(char *)&item[8].monitor != '\x03') && (item[9].klass != (Object__Class *)0x5)) {
+        pOVar27 = (Object *)(*(code *)*puVar22)();
+        if (pOVar27 == (Object *)0x0) break;
+        if ((*(char *)&pOVar27[8].monitor != '\x03') && (pOVar27[9].klass != (Object__Class *)0x5)) {
           if (pDStack_9 ==
               (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0)
           break;
-          pLVar25 = (List_1_System_Object_ *)
-                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
-                   ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                             ((Dictionary_2_System_Int32Enum_System_Object_ *)pDStack_9,
-                              (Int32Enum__Enum)item[9].klass,
-                              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::List<MVPlayer>_>__get_Item_MV__WorldObject__MVTeam_
-                             );
-          if (pLVar25 == (List_1_System_Object_ *)0x0) break;
+          this_02 = (List_1_System_Object_ *)
+                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                              ((Dictionary_2_System_Int32Enum_System_Object_ *)pDStack_9,
+                               (Int32Enum__Enum)pOVar27[9].klass,
+                               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::List<MVPlayer>_>__get_Item_MV__WorldObject__MVTeam_
+                              );
+          if (this_02 == (List_1_System_Object_ *)0x0) break;
           mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
           List_1_System_Object__Add
-                    (pLVar25,item,
+                    (this_02,pOVar27,
                      MethodInfo__System__Collections__Generic__List<MVPlayer>__Add_MVPlayer_);
         }
       }
@@ -598,9 +598,9 @@ code_?:
   func_?();
   func_?();
   func_?();
-  pcVar27 = (code *)swi(3);
-  pDVar28 = (Dictionary_2_MV_WorldObject_MVTeam_List_1_MVPlayer_ *)(*pcVar27)();
-  return pDVar28;
+  pcVar28 = (code *)swi(3);
+  pDVar29 = (Dictionary_2_MV_WorldObject_MVTeam_List_1_MVPlayer_ *)(*pcVar28)();
+  return pDVar29;
 }
 
 
@@ -722,11 +722,10 @@ void Assembly-CSharp.dll::PlayerListsHold::PlayerListsHold_ReCreate
     func_?(&TypeInfo__PlayerListsHold____c);
     cRam_? = '\x01';
   }
-  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-            func_?(TypeInfo__PlayerListsHold____c__DisplayClass10_0);
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+  method_00 = TypeInfo__PlayerListsHold____c__DisplayClass10_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
             ((Component *)this,(MethodInfo *)0x0);
   if ((TypeInfo__PlayerListsHold____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -763,20 +762,20 @@ void Assembly-CSharp.dll::PlayerListsHold::PlayerListsHold_ReCreate
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pLVar3 = (List_1_System_Object_ *)
+  pOVar3 = (Object__Class *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)original,
                       PlayerListsHold_MethodInfo__UnityEngine__Object__Instantiate<PlayerListsHold>_PlayerListsHold_
                      );
-  if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-    (this_00->fields)._._defaultValue_k__BackingField = pLVar3;
+  if (value != (Object *)0x0) {
+    value[1].klass = pOVar3;
     func_?();
-    pLVar3 = (this_00->fields)._._defaultValue_k__BackingField;
+    pOVar3 = value[1].klass;
     uVar4 = (this->fields).typeToDisplay;
-    if (pLVar3 != (List_1_System_Object_ *)0x0) {
-      (pLVar3->fields)._version = (int32_t)(this->fields).playerListsPrefab;
+    if (pOVar3 != (Object__Class *)0x0) {
+      (pOVar3->_0).byval_arg.data = (_union_86)(this->fields).playerListsPrefab;
       func_?();
-      *(uint8_t *)&pLVar3[2].monitor = uVar4;
+      *(uint8_t *)&(pOVar3->_0).typeMetadataHandle = uVar4;
       pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       if ((TypeInfo__PlayerListsHold____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -810,7 +809,7 @@ void Assembly-CSharp.dll::PlayerListsHold::PlayerListsHold_ReCreate
       callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_00,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
                  MethodInfo__PlayerListsHold____c__DisplayClass10_0___ReCreate_b__2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy

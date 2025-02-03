@@ -667,6 +667,49 @@ code_?:
 }
 
 
+/* Void ToggleAudioListener(Boolean) */
+
+void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_ToggleAudioListener
+               (MVLocalPlayer *this,bool on,MethodInfo *method)
+
+{
+  pMVar1 = MVLocalPlayer_get_AvatarLocal(this,(MethodInfo *)0x0);
+  if (pMVar1 == (MVAvatarLocal *)0x0) {
+    return;
+  }
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  pAVar2 = TypeInfo__AvatarLocal;
+  if (piRam_? != (int *)0x0) {
+    piVar3 = piRam_?;
+    if ((*(byte *)(*piRam_? + 0xb8) < (TypeInfo__AvatarLocal->_1).naturalAligment) ||
+       (*(AvatarLocal__Class **)
+         (*(int *)(*piRam_? + 100) + -4 +
+         (uint)(TypeInfo__AvatarLocal->_1).naturalAligment * 4) != TypeInfo__AvatarLocal))
+    goto code_?;
+    iVar4 = piRam_?[0x17];
+    pAVar2 = unaff_ESI;
+    if (iVar4 != 0) {
+      uStack5 = 0;
+      if (pcRam_? == (code *)0x0) {
+        pcRam_? = (code *)func_?();
+      }
+      (*pcRam_?)(iVar4);
+      return;
+    }
+  }
+  func_?();
+  piVar3 = extraout_EDX;
+code_?:
+  func_?(piVar3,pAVar2);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
+  return;
+}
+
+
 /* Void UnSuspendCurrentSpawnRole() */
 
 void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_UnSuspendCurrentSpawnRole
@@ -998,11 +1041,34 @@ bool Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_IsChatLocked
 }
 
 
-/* MVLocalPlayer+PlanetOwnershipType get_PlanetOwnership() */
+/* PlanetOwnershipType get_PlanetOwnership() */
 
-MVLocalPlayer_PlanetOwnershipType__Enum
+PlanetOwnershipType__Enum
 Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership
           (MVLocalPlayer *this,MethodInfo *method)
+
+{
+  MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+  if (MVar1 == MVGameMode__Enum_Edit) {
+    return CONCAT31((int3)((uint)this >> 8),(char)(this->fields).planetOwnershipTypeID);
+  }
+  uVar2 = func_?(&TypeInfo__System__Exception);
+  this_00 = (Exception *)func_?(uVar2);
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?(&StringLiteral_There_are_currently_no_way_to_ac);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
+  func_?(&MethodInfo__MVLocalPlayer__get_PlanetOwnershipTypeID__);
+  func_?();
+  pcVar3 = (code *)swi(3);
+  PVar4 = (*pcVar3)();
+  return PVar4;
+}
+
+
+/* Int32 get_PlanetOwnershipTypeID() */
+
+int32_t Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_PlanetOwnershipTypeID
+                  (MVLocalPlayer *this,MethodInfo *method)
 
 {
   MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
@@ -1017,8 +1083,8 @@ Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership
   func_?(&MethodInfo__MVLocalPlayer__get_PlanetOwnershipTypeID__);
   func_?();
   pcVar3 = (code *)swi(3);
-  MVar4 = (*pcVar3)();
-  return MVar4;
+  iVar4 = (*pcVar3)();
+  return iVar4;
 }
 
 

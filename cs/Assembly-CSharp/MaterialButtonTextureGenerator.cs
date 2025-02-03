@@ -12,6 +12,7 @@ using UnityEngine;
 public class MaterialButtonTextureGenerator : MonoBehaviour
 {
 	// Fields
+	private const float PreviewCameraDepth = -2f;
 	public int previewResolution;
 	[SerializeField]
 	private MeshRenderer meshRenderer;

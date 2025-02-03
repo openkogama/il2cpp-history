@@ -50,241 +50,171 @@ void Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_Enter
 /* Void Execute(EditorStateMachine) */
 
 void Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_Execute
-               (ESTerrainEdit *this,EditorStateMachine *e,MethodInfo *method)
+               (ESTerrainEdit *this,EditorStateMachine *esm,MethodInfo *method)
 
 {
-  this_01 = e;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__EditorEvent);
-    func_?(&
-                    LinkObjectBase_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<LinkObjectBase>__
-                   );
-    func_?(&TypeInfo__MVInputWrapper);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&TypeInfo__UnityEngine__Physics);
-    func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
-    ;
-    cRam_? = '\x01';
-  }
-  func_?(&SStack_1,0,0x2c);
-  func_?(&VStack_2,0,0x48);
-  bVar3 = EditModeObjectPicker::EditModeObjectPicker_Pick
-                    (&VStack_2,(HashSet_1_System_Int32_ *)0x0,-0x40005,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    pMVar4 = (this->fields).terrain;
-    if (pMVar4 == (MVCubeModelPrototypeTerrain *)0x0) goto code_?;
-    if ((VStack_2.woId == (pMVar4->fields)._._._.id) || (VStack_2.woId == -1)) {
-      bVar3 = 0;
+  func_?(auStack_1,0,0x48);
+  bVar2 = EditModeObjectPicker::EditModeObjectPicker_Pick
+                    ((VoxelHit *)auStack_1,(HashSet_1_System_Int32_ *)0x0,-0x40005,
+                     (MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pMVar3 = (this->fields).terrain;
+    if (pMVar3 == (MVCubeModelPrototypeTerrain *)0x0) goto code_?;
+    if ((pMStack_4 == (MethodInfo *)(pMVar3->fields)._._._.id) ||
+       (pMStack_4 == (MethodInfo *)0xffffffff)) {
+      bVar2 = 0;
     }
   }
   bVar5 = ESStateBase::ESStateBase_SelectionIsAllowedByLogicEnabled
-                    (VStack_2.woId,(MethodInfo *)0x0);
+                    ((int32_t)pMStack_4,(MethodInfo *)0x0);
+  uVar6 = auStack_1._12_4_;
+  uVar7 = auStack_1._8_4_;
+  uVar8 = auStack_1._4_4_;
+  iStack_9 = iStack_10;
+  ppMVar11 = ppMStack_12;
+  ppMVar13 = (MVInputWrapper__Class **)pCStack_14;
+  method_00 = pMStack_15;
+  puVar16 = (undefined *)auStack_1._32_4_;
+  pCVar17 = (CubeModelingStateMachine *)auStack_1._36_4_;
+  method_01 = pMStack_4;
+  pCVar18 = pCStack_19;
+  fVar20 = (float)auStack_1._16_4_;
+  fVar21 = (float)auStack_1._20_4_;
+  uVar22 = auStack_1._24_4_;
+  uVar23 = auStack_1._28_4_;
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__EditorEvent);
+    ppMVar13 = &TypeInfo__MVInputWrapper;
+    func_?();
+    ppMVar11 = &MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__;
     func_?();
     cRam_? = '\x01';
   }
+  if (cRam_? == '\0') {
+    ppMVar13 = (MVInputWrapper__Class **)&UNK_?;
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  this_00 = esm;
   if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-    hit.point.y = VStack_2.point.z;
-    hit.point.x = VStack_2.point.y;
-    hit.point.z = VStack_2.normal.x;
-    hit.normal.x = VStack_2.normal.y;
-    hit.normal.y = VStack_2.normal.z;
-    hit.normal.z = (float)VStack_2.cubePos._0_4_;
-    hit.cubePos.x = VStack_2.cubePos.z;
-    hit.cubePos.y = VStack_2._30_2_;
-    hit._28_4_ = VStack_2.face;
-    hit.face = VStack_2._36_4_;
-    hit._36_4_ = VStack_2.woId;
-    hit.woId = (int32_t)VStack_2.cube;
-    hit.cube = (Cube *)VStack_2.distance;
-    hit.distance = (float)VStack_2.collider;
-    hit.collider = (Collider *)VStack_2.transform;
-    hit.transform = (Transform *)VStack_2._60_4_;
-    hit._60_4_ = (float)VStack_2.interactionFlags;
-    hit.interactionFlags._0_4_ = (float)((ulonglong)VStack_2.interactionFlags >> 0x20);
+    hit.point.y = (float)uVar7;
+    hit.point.x = (float)uVar8;
+    hit.point.z = (float)uVar6;
+    hit.normal.x = fVar20;
+    hit.normal.y = fVar21;
+    hit.normal.z = (float)uVar22;
+    hit.cubePos.x = (int16_t)uVar23;
+    hit.cubePos.y = SUB42(uVar23,2);
+    hit._28_4_ = puVar16;
+    hit.face = (int32_t)pCVar17;
+    hit._36_4_ = method_01;
+    hit.woId = (int32_t)pCVar18;
+    hit.cube = (Cube *)ppMVar11;
+    hit.distance = (float)ppMVar13;
+    hit.collider = (Collider *)0x0;
+    hit.transform = (Transform *)method_00;
+    hit._60_4_ = (int)iStack_9;
+    hit.interactionFlags._0_4_ = (int)((ulonglong)iStack_9 >> 0x20);
     hit.interactionFlags._4_4_ = 0;
-    in_stack_6 = (MethodInfo *)VStack_2.point.y;
     ESStateBase::ESStateBase_TintObjectsOnMouseOver_1
-              ((ESStateBase *)this,e,bVar5 & bVar3,hit,in_stack_7);
+              ((ESStateBase *)this,esm,bVar5 & bVar2,hit,method_00);
   }
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+    func_?(TypeInfo__MVInputWrapper);
   }
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+    func_?(TypeInfo__MVInputWrapper);
   }
-  bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+  bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
                     (KogamaControls__Enum_PointerSelect,KeyState__Enum_Down,(MethodInfo *)0x0);
-  if (bVar3 == 0) {
+  if (bVar2 == 0) {
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__MVInputWrapper);
     }
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__MVInputWrapper);
       cRam_? = '\x01';
     }
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__MVInputWrapper);
     }
-    bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+    bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
                       (KogamaControls__Enum_PointerSelectAlt,KeyState__Enum_Down,(MethodInfo *)0x0);
-    if (bVar3 != 0) goto code_?;
+    if (bVar2 != 0) goto code_?;
   }
   else {
 code_?:
-    if (e == (EditorStateMachine *)0x0) goto code_?;
-    this_02 = EditorStateMachine::EditorStateMachine_Select(e,0,-5,(MethodInfo *)0x0);
-    if (((bVar5 != 0) && (this_02 != (WorldObjectClientRef *)0x0)) &&
-       (pOVar8 = WorldObjectClientRef`1[System::Object]::
-                 WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                           ((WorldObjectClientRef_1_System_Object_ *)this_02,
-                            MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                           ), pOVar8 != (Object *)0x0)) goto code_?;
+    if (bVar5 != 0) {
+      if (this_00 == (EditorStateMachine *)0x0) goto code_?;
+      this_01 = EditorStateMachine::EditorStateMachine_Select(this_00,0,-5,(MethodInfo *)0x0);
+      if ((this_01 != (WorldObjectClientRef *)0x0) &&
+         (pOVar24 = WorldObjectClientRef`1[System::Object]::
+                   WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                             ((WorldObjectClientRef_1_System_Object_ *)this_01,
+                              MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                             ), pOVar24 != (Object *)0x0)) {
+        esm = (EditorStateMachine *)0xc;
+        pOVar24 = (Object *)func_?(TypeInfo__EditorEvent,&esm);
+        FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,pOVar24,(MethodInfo *)0x0);
+        return;
+      }
+    }
   }
-  targetHit.point.y = VStack_2.point.z;
-  targetHit.point.x = VStack_2.point.y;
-  targetHit.point.z = VStack_2.normal.x;
-  targetHit.normal.x = VStack_2.normal.y;
-  targetHit.normal.y = VStack_2.normal.z;
-  targetHit.normal.z = (float)VStack_2.cubePos._0_4_;
-  targetHit.cubePos.x = VStack_2.cubePos.z;
-  targetHit.cubePos.y = VStack_2._30_2_;
-  targetHit._28_4_ = VStack_2.face;
-  targetHit.face = VStack_2._36_4_;
-  targetHit._36_4_ = VStack_2.woId;
-  targetHit.woId = (int32_t)VStack_2.cube;
-  targetHit.cube = (Cube *)VStack_2.distance;
-  targetHit.distance = (float)VStack_2.collider;
-  targetHit.collider = (Collider *)VStack_2.transform;
-  targetHit.transform = (Transform *)VStack_2._60_4_;
-  targetHit._60_4_ = (int)VStack_2.interactionFlags;
-  targetHit.interactionFlags._0_4_ = (int)((ulonglong)VStack_2.interactionFlags >> 0x20);
+  targetHit.point.y = (float)auStack_1._8_4_;
+  targetHit.point.x = (float)auStack_1._4_4_;
+  targetHit.point.z = (float)auStack_1._12_4_;
+  targetHit.normal.x = (float)auStack_1._16_4_;
+  targetHit.normal.y = (float)auStack_1._20_4_;
+  targetHit.normal.z = (float)auStack_1._24_4_;
+  targetHit.cubePos.x = auStack_1._28_2_;
+  targetHit.cubePos.y = auStack_1._30_2_;
+  targetHit._28_4_ = auStack_1._32_4_;
+  targetHit.face = auStack_1._36_4_;
+  targetHit._36_4_ = pMStack_4;
+  targetHit.woId = (int32_t)pCStack_19;
+  targetHit.cube = (Cube *)ppMStack_12;
+  targetHit.distance = (float)pCStack_14;
+  targetHit.collider = (Collider *)pTStack_25;
+  targetHit.transform = (Transform *)pMStack_15;
+  targetHit._60_4_ = (int)iStack_10;
+  targetHit.interactionFlags._0_4_ = (int)((ulonglong)iStack_10 >> 0x20);
   targetHit.interactionFlags._4_4_ = 0;
-  bVar3 = ESTerrainEdit_ResettingTerrain(this,targetHit,in_stack_6);
-  if (bVar3 != 0) {
+  bVar2 = ESTerrainEdit_ResettingTerrain(this,targetHit,method_01);
+  if (bVar2 != 0) {
     return;
   }
-  if ((e != (EditorStateMachine *)0x0) &&
-     (pCVar9 = (e->fields).cubeModelingStateMachine, pCVar9 != (CubeModelingStateMachine *)0x0)) {
-    (*(code *)(pCVar9->klass->vtable).Update.method)();
-    if (VStack_2.woId == 0) {
-      bVar10 = false;
+  if ((this_00 != (EditorStateMachine *)0x0) &&
+     (pCVar17 = (this_00->fields).cubeModelingStateMachine,
+     pCVar17 != (CubeModelingStateMachine *)0x0)) {
+    pMStack_4 = (MethodInfo *)pCVar17->klass[1]._0.image;
+    auStack_1._32_4_ = &UNK_?;
+    auStack_1._36_4_ = pCVar17;
+    (*(code *)(pCVar17->klass->vtable).Update.method)();
+    if (pMStack_4 == (MethodInfo *)0x0) {
+      bVar26 = false;
     }
     else {
-      pMVar4 = (this->fields).terrain;
-      if (pMVar4 == (MVCubeModelPrototypeTerrain *)0x0) goto code_?;
-      bVar10 = VStack_2.woId != (pMVar4->fields)._._._.id;
+      pMVar3 = (this->fields).terrain;
+      if (pMVar3 == (MVCubeModelPrototypeTerrain *)0x0) goto code_?;
+      bVar26 = pMStack_4 != (MethodInfo *)(pMVar3->fields)._._._.id;
     }
-    if ((bVar10 & bVar5) != 0) {
-      pCVar9 = (e->fields).cubeModelingStateMachine;
-      if (pCVar9 == (CubeModelingStateMachine *)0x0) goto code_?;
+    if ((bVar26 & bVar5) != 0) {
+      pCVar17 = (this_00->fields).cubeModelingStateMachine;
+      if (pCVar17 == (CubeModelingStateMachine *)0x0) goto code_?;
       CubeModelingStateMachine::CubeModelingStateMachine_set_CursorVisible
-                (pCVar9,0,(MethodInfo *)0x0);
+                (pCVar17,0,(MethodInfo *)0x0);
     }
-    pMVar11 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-    if (pMVar11 != (MainCameraManager *)0x0) {
-      if ((pMVar11->fields).isLogicRendered == 0) {
-        return;
-      }
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
-                        (KogamaControls__Enum_PointerSelectAlt,(MethodInfo *)0x0);
-      if (bVar3 == 0) {
-        return;
-      }
-      func_?();
-      e = _UNK_?;
-      bVar3 = EditModeObjectPicker::EditModeObjectPicker_Pick
-                        ((VoxelHit *)&stack0xffffff18,(HashSet_1_System_Int32_ *)0x0,-0x40005,
-                         (MethodInfo *)0x0);
-      if (bVar3 != 0) {
-        e = pEStack_12;
-      }
-      pMVar11 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      if (pMVar11 != (MainCameraManager *)0x0) {
-        this_00 = (pMVar11->fields).mainCamera;
-        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        pVVar13 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
-                           (&RStack_14.m_Direction,(MethodInfo *)0x0);
-        if (this_00 != (Camera *)0x0) {
-          pRVar15 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
-                             (&RStack_14,this_00,*pVVar13,(MethodInfo *)0x0);
-          SStack_1.fields._numChildren = (int32_t)(pRVar15->m_Origin).x;
-          fStack_16 = (pRVar15->m_Origin).y;
-          fStack_17 = (pRVar15->m_Origin).z;
-          fStack_18 = (pRVar15->m_Direction).x;
-          RStack_14.m_Direction.y = (pRVar15->m_Direction).y;
-          RStack_14.m_Direction.z = (pRVar15->m_Direction).z;
-          iVar19 = LayerUtil::LayerUtil_GetLayerNumber(LayerFlags__Enum_Logic,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__Physics->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Physics);
-          }
-          ray.m_Origin.y = fStack_16;
-          ray.m_Origin.x = (float)SStack_1.fields._numChildren;
-          ray.m_Origin.z = fStack_17;
-          ray.m_Direction.x = fStack_18;
-          ray.m_Direction.y = RStack_14.m_Direction.y;
-          ray.m_Direction.z = RStack_14.m_Direction.z;
-          UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_Raycast_13
-                    (ray,(RaycastHit *)&SStack_1,INFINITY,1 << ((byte)iVar19 & 0x1f),
-                     (MethodInfo *)0x0);
-          pCVar20 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_collider
-                              ((RaycastHit *)&SStack_1,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Object);
-          }
-          bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                            ((Object_1 *)pCVar20,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar3 == 0) {
-            return;
-          }
-          pCVar20 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_collider
-                              ((RaycastHit *)&SStack_1,(MethodInfo *)0x0);
-          if ((pCVar20 != (Collider *)0x0) &&
-             (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  ((Component *)pCVar20,(MethodInfo *)0x0),
-             this_03 != (GameObject *)0x0)) {
-            x = (Object_1 *)
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                GameObject_GetComponentInChildren_1
-                          (this_03,
-                           LinkObjectBase_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<LinkObjectBase>__
-                          );
-            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                              (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-            if (bVar3 == 0) {
-              return;
-            }
-            fVar21 = RTG::SphereTreeNode`1[System::Object]::
-                     SphereTreeNode_1_System_Object__get_Radius(&SStack_1,(MethodInfo *)0x0);
-            RStack_14.m_Direction.z = fVar21;
-            if ((float)e <= fVar21) {
-              return;
-            }
-code_?:
-            pOVar8 = (Object *)func_?();
-            FSMEntity::FSMEntity_set_Event((FSMEntity *)this_01,pOVar8,(MethodInfo *)0x0);
-            return;
-          }
-        }
-      }
-    }
+    ESTerrainEdit_SelectedObjectLink(this,this_00,(MethodInfo *)0x0);
+    return;
   }
 code_?:
   func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar27 = (code *)swi(3);
+  (*pcVar27)();
   return;
 }
 
@@ -305,9 +235,11 @@ void Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_Exit
   if (((pGVar1 != (GameEventManager *)0x0) &&
       (pGVar2 = (pGVar1->fields).AvatarCommandsBuildMode,
       pGVar2 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-     (this_00 = (RTFocusCamera *)(pGVar2->fields).LaserCommands, this_00 != (RTFocusCamera *)0x0)) {
-    RTG::RTFocusCamera::RTFocusCamera_OnPrjSwitchTransitionBegin
-              (this_00,CameraPrjSwitchTransition_Type__Enum_None,(MethodInfo *)0x0);
+     (this_00 = (pGVar2->fields).LaserCommands,
+     this_00 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+    GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
+    GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
+              (this_00,LaserPointerState__Enum_Idle,(MethodInfo *)0x0);
     if (e != (EditorStateMachine *)0x0) {
       iVar3 = MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPack_get_Id
                         ((MVJetPack_LocalObjectsJetPack *)e,(MethodInfo *)0x0);
@@ -322,7 +254,7 @@ void Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_Exit
           pCVar4 = (e->fields).cubeModelingStateMachine;
           if (pCVar4 != (CubeModelingStateMachine *)0x0) {
             CubeModelingStateMachine::CubeModelingStateMachine_EndEdit(pCVar4,(MethodInfo *)0x0);
-            (e->fields)._.curEvent = (Object *)0x0;
+            (e->fields)._.transitionTable = (StateTransitionTable *)0x0;
             func_?();
             return;
           }
@@ -442,5 +374,211 @@ code_?:
   pcVar7 = (code *)swi(3);
   bVar1 = (*pcVar7)();
   return bVar1;
+}
+
+
+/* Boolean SelectedObject(EditorStateMachine, VoxelHit, Boolean, Boolean) */
+
+bool Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_SelectedObject
+               (ESTerrainEdit *this,EditorStateMachine *esm,VoxelHit targetHit,bool woPickSuccess,
+               bool selectionAllowedByLogicEnabled,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__EditorEvent);
+    func_?(&TypeInfo__MVInputWrapper);
+    func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
+    ;
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
+    hit.interactionFlags._4_4_ = 0;
+    hit._0_68_ = targetHit._4_68_;
+    ESStateBase::ESStateBase_TintObjectsOnMouseOver_1
+              ((ESStateBase *)this,esm,woPickSuccess & selectionAllowedByLogicEnabled,hit,unaff_ESI)
+    ;
+  }
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MVInputWrapper);
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVInputWrapper);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MVInputWrapper);
+  }
+  bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+                    (KogamaControls__Enum_PointerSelect,KeyState__Enum_Down,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MVInputWrapper);
+    }
+    bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+                      (KogamaControls__Enum_PointerSelectAlt,KeyState__Enum_Down,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      return 0;
+    }
+  }
+  if (selectionAllowedByLogicEnabled != 0) {
+    if (esm == (EditorStateMachine *)0x0) {
+      func_?();
+      pcVar2 = (code *)swi(3);
+      bVar1 = (*pcVar2)();
+      return bVar1;
+    }
+    this_00 = EditorStateMachine::EditorStateMachine_Select(esm,0,-5,(MethodInfo *)0x0);
+    if ((this_00 != (WorldObjectClientRef *)0x0) &&
+       (pOVar3 = WorldObjectClientRef`1[System::Object]::
+                 WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                           ((WorldObjectClientRef_1_System_Object_ *)this_00,
+                            MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                           ), pOVar3 != (Object *)0x0)) {
+      pOVar3 = (Object *)func_?();
+      FSMEntity::FSMEntity_set_Event((FSMEntity *)esm,pOVar3,(MethodInfo *)0x0);
+      return 1;
+    }
+  }
+  return 0;
+}
+
+
+/* Boolean SelectedObjectLink(EditorStateMachine) */
+
+bool Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_SelectedObjectLink
+               (ESTerrainEdit *this,EditorStateMachine *esm,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__EditorEvent);
+    func_?(&
+                    LinkObjectBase_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<LinkObjectBase>__
+                   );
+    func_?(&TypeInfo__MVInputWrapper);
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__UnityEngine__Physics);
+    cRam_? = '\x01';
+  }
+  func_?(&SStack_1,0,0x2c);
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if (pMVar2 == (MainCameraManager *)0x0) {
+code_?:
+    func_?();
+    pcVar3 = (code *)swi(3);
+    bVar4 = (*pcVar3)();
+    return bVar4;
+  }
+  if ((pMVar2->fields).isLogicRendered != 0) {
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MVInputWrapper);
+    }
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MVInputWrapper);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MVInputWrapper);
+    }
+    bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+                      (KogamaControls__Enum_PointerSelectAlt,KeyState__Enum_Down,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
+      func_?();
+      fStack_5 = _UNK_?;
+      bVar4 = EditModeObjectPicker::EditModeObjectPicker_Pick
+                        ((VoxelHit *)&stack0xffffff5c,(HashSet_1_System_Int32_ *)0x0,-0x40005,
+                         (MethodInfo *)0x0);
+      if (bVar4 != 0) {
+        fStack_5 = fStack_6;
+      }
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      if (pMVar2 != (MainCameraManager *)0x0) {
+        this_00 = (pMVar2->fields).mainCamera;
+        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__MVInputWrapper);
+        }
+        pVVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
+                           (&RStack_8.m_Direction,(MethodInfo *)0x0);
+        if (this_00 != (Camera *)0x0) {
+          pRVar9 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
+                             (&RStack_8,this_00,*pVVar7,(MethodInfo *)0x0);
+          SStack_1.fields._numChildren = (int32_t)(pRVar9->m_Origin).x;
+          fStack_10 = (pRVar9->m_Origin).y;
+          fStack_11 = (pRVar9->m_Origin).z;
+          fStack_12 = (pRVar9->m_Direction).x;
+          RStack_8.m_Direction.y = (pRVar9->m_Direction).y;
+          RStack_8.m_Direction.z = (pRVar9->m_Direction).z;
+          iVar13 = LayerUtil::LayerUtil_GetLayerNumber(LayerFlags__Enum_Logic,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__Physics->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__UnityEngine__Physics);
+          }
+          ray.m_Origin.y = fStack_10;
+          ray.m_Origin.x = (float)SStack_1.fields._numChildren;
+          ray.m_Origin.z = fStack_11;
+          ray.m_Direction.x = fStack_12;
+          ray.m_Direction.y = RStack_8.m_Direction.y;
+          ray.m_Direction.z = RStack_8.m_Direction.z;
+          UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_Raycast_13
+                    (ray,(RaycastHit *)&SStack_1,INFINITY,1 << ((byte)iVar13 & 0x1f),
+                     (MethodInfo *)0x0);
+          pCVar14 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_collider
+                             ((RaycastHit *)&SStack_1,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__UnityEngine__Object);
+          }
+          bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                            ((Object_1 *)pCVar14,(Object_1 *)0x0,(MethodInfo *)0x0);
+          if (bVar4 != 0) {
+            return 0;
+          }
+          fVar15 = RTG::SphereTreeNode`1[System::Object]::SphereTreeNode_1_System_Object__get_Radius
+                            (&SStack_1,(MethodInfo *)0x0);
+          RStack_8.m_Direction.z = fVar15;
+          if (fVar15 < fStack_5) {
+            return 0;
+          }
+          pCVar14 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_collider
+                             ((RaycastHit *)&SStack_1,(MethodInfo *)0x0);
+          if ((pCVar14 != (Collider *)0x0) &&
+             (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                  ((Component *)pCVar14,(MethodInfo *)0x0),
+             this_01 != (GameObject *)0x0)) {
+            x = (Object_1 *)
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                GameObject_GetComponentInChildren_1
+                          (this_01,
+                           LinkObjectBase_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<LinkObjectBase>__
+                          );
+            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                              (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+            if (bVar4 != 0) {
+              return 0;
+            }
+            RStack_8.m_Direction.z = 1.68156e-44;
+            value = (Object *)func_?();
+            if (esm != (EditorStateMachine *)0x0) {
+              FSMEntity::FSMEntity_set_Event((FSMEntity *)esm,value,(MethodInfo *)0x0);
+              return 1;
+            }
+          }
+        }
+      }
+      goto code_?;
+    }
+  }
+  return 0;
 }
 

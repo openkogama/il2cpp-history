@@ -8,7 +8,7 @@ Mesh * Assembly-CSharp.dll::RTG::LineMesh::LineMesh_CreateCoordSystemAxesLines
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Int32);
     func_?(&TypeInfo__UnityEngine__Mesh);
-    func_?(&_5211FBC4418F45E3906E7CF462D8B9DD6E03A0F578F58053A4E00000F721A0FE_Field);
+    func_?(&::_5211FBC4418F45E3906E7CF462D8B9DD6E03A0F578F58053A4E00000F721A0FE_Field);
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }

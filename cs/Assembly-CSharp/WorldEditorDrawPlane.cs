@@ -14,11 +14,11 @@ public class WorldEditorDrawPlane : MonoBehaviour
 {
 	// Fields
 	private const float CUBE_OFFSET = 0.5f;
+	private const int MeshScale = 100;
 	private Camera mainCamera;
 	public AltitudeChangedDelegate OnAltitudeChanged;
 	public GameObject DrawPlaneVisualization;
 	public GameObject DrawPlaneCursor;
-	public int MeshScale;
 	private GameObject _targetGameObject;
 	private bool isActive;
 	private int _altitude;
@@ -45,7 +45,7 @@ public class WorldEditorDrawPlane : MonoBehaviour
 	public void CachePos();
 	public void ReturnDrawPlaneToLandscape();
 	public void RestorePos();
-	public void Start();
+	public void Awake();
 	private void GenerateDrawPlane(GameObject drawPlane);
 	private void GenerateMesh(Mesh mesh, bool scale = true);
 	private void SetLayer(int layer);

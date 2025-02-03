@@ -2,7 +2,7 @@
 /* Void Enter(EditorStateMachine) */
 
 void Assembly-CSharp.dll::CEEnterCubeTutorial::CEEnterCubeTutorial_Enter
-               (CEEnterCubeTutorial *this,EditorStateMachine *e,MethodInfo *method)
+               (CEEnterCubeTutorial *this,EditorStateMachine *esm,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -30,9 +30,9 @@ void Assembly-CSharp.dll::CEEnterCubeTutorial::CEEnterCubeTutorial_Enter
     func_?(&StringLiteral_IsNewPrototype);
     cRam_? = '\x01';
   }
-  this_01 = e;
-  (this->fields).esm = e;
-  func_?(&(this->fields).esm,e);
+  this_01 = esm;
+  (this->fields).esm = esm;
+  func_?(&(this->fields).esm,esm);
   if (this_01 == (EditorStateMachine *)0x0) {
 code_?:
     func_?();
@@ -94,9 +94,9 @@ code_?:
                     *)unaff_ESI,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
-        e = (EditorStateMachine *)CONCAT13(1,e._0_3_);
+        esm = (EditorStateMachine *)CONCAT13(1,esm._0_3_);
         pEStack_4 = (EventHandler_1_InitializedGameQueryDataEventArgs___Class *)
-                    func_?(TypeInfo__System__Byte,(int)&e + 3);
+                    func_?(TypeInfo__System__Byte,(int)&esm + 3);
         fStack_8 = (this->fields).cubeSize;
         pOVar9 = (Object *)func_?(TypeInfo__System__Single,&fStack_8);
         unaff_EDI = (Delegate *)this;
@@ -226,19 +226,19 @@ code_?:
 /* Void Execute(EditorStateMachine) */
 
 void Assembly-CSharp.dll::CEEnterCubeTutorial::CEEnterCubeTutorial_Execute
-               (CEEnterCubeTutorial *this,EditorStateMachine *e,MethodInfo *method)
+               (CEEnterCubeTutorial *this,EditorStateMachine *esm,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__EditorEvent);
     cRam_? = '\x01';
   }
-  this_00 = e;
-  if (e != (EditorStateMachine *)0x0) {
-    pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
+  this_00 = esm;
+  if (esm != (EditorStateMachine *)0x0) {
+    pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
     if (pMVar1 != (MVWorldObjectClient *)0x0) {
-      e = (EditorStateMachine *)0x38;
-      value = (Object *)func_?(TypeInfo__EditorEvent,&e);
+      esm = (EditorStateMachine *)0x38;
+      value = (Object *)func_?(TypeInfo__EditorEvent,&esm);
       FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,value,(MethodInfo *)0x0);
     }
     return;

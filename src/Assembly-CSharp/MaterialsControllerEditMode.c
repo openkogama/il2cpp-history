@@ -91,7 +91,7 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
                    );
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&
-                    MethodInfo__MaterialsControllerEditMode____c___OnPop_b__12_0_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__MaterialsControllerEditMode____c___OnPop_b__14_0_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&TypeInfo__MaterialsControllerEditMode____c);
     cRam_? = '\x01';
@@ -101,7 +101,7 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
   if ((TypeInfo__MaterialsControllerEditMode____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MaterialsControllerEditMode____c);
   }
-  callbackFunction = TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__12_0;
+  callbackFunction = TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__14_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IShortcutKeyUnRegister_ *)0x0) {
     if ((TypeInfo__MaterialsControllerEditMode____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MaterialsControllerEditMode____c);
@@ -115,10 +115,10 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-               MethodInfo__MaterialsControllerEditMode____c___OnPop_b__12_0_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_
+               MethodInfo__MaterialsControllerEditMode____c___OnPop_b__14_0_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
-    TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__12_0 = callbackFunction;
-    func_?(&TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__12_0,
+    TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__14_0 = callbackFunction;
+    func_?(&TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__14_0,
                     callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
@@ -169,17 +169,17 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
                    );
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&
-                    MethodInfo__MaterialsControllerEditMode___Open_b__8_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__MaterialsControllerEditMode___Open_b__10_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&
-                    MethodInfo__MaterialsControllerEditMode___Open_b__8_2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__MaterialsControllerEditMode___Open_b__10_2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&
                     DesktopCubeModelingController_MethodInfo__UnityEngine__Object__Instantiate<DesktopCubeModelingController>_DesktopCubeModelingController_
                    );
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&
-                    MethodInfo__MaterialsControllerEditMode____c___Open_b__8_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__MaterialsControllerEditMode____c___Open_b__10_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&TypeInfo__MaterialsControllerEditMode____c);
     cRam_? = '\x01';
@@ -193,7 +193,7 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
   UnityAction_2_System_Object_System_Object___ctor
             ((UnityAction_2_System_Object_System_Object_ *)pEVar2,(Object *)this,
-             MethodInfo__MaterialsControllerEditMode___Open_b__8_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
+             MethodInfo__MaterialsControllerEditMode___Open_b__10_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
              ,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -231,7 +231,7 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
         if ((TypeInfo__MaterialsControllerEditMode____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        callbackFunction = TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__8_1;
+        callbackFunction = TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__10_1;
         if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
           if ((TypeInfo__MaterialsControllerEditMode____c->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
@@ -242,9 +242,9 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
           Object]::UnityAction_2_System_Object_System_Object___ctor
                     ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object
                      ,
-                     MethodInfo__MaterialsControllerEditMode____c___Open_b__8_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     MethodInfo__MaterialsControllerEditMode____c___Open_b__10_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
-          TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__8_1 = callbackFunction;
+          TypeInfo__MaterialsControllerEditMode____c->static_fields->__9__10_1 = callbackFunction;
           func_?();
         }
         if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
@@ -262,7 +262,7 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)pEVar2,(Object *)this,
-                   MethodInfo__MaterialsControllerEditMode___Open_b__8_2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   MethodInfo__MaterialsControllerEditMode___Open_b__10_2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
                   (pGVar1,(BaseEventData *)0x0,pEVar2,
@@ -334,9 +334,9 @@ Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMode_Se
 }
 
 
-/* Void <Open>b__8_0(IShortcutKeyRegister, BaseEventData) */
+/* Void <Open>b__10_0(IShortcutKeyRegister, BaseEventData) */
 
-void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMode__Open_b__8_0
+void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMode__Open_b__10_0
                (MaterialsControllerEditMode *this,IShortcutKeyRegister *x,BaseEventData *y,
                MethodInfo *method)
 
@@ -382,9 +382,9 @@ code_?:
 }
 
 
-/* Void <Open>b__8_2(IUIStack, BaseEventData) */
+/* Void <Open>b__10_2(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMode__Open_b__8_2
+void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMode__Open_b__10_2
                (MaterialsControllerEditMode *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
@@ -413,5 +413,31 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
+}
+
+
+/* Transform get_CubeModelingControllerTransform() */
+
+Transform *
+Assembly-CSharp.dll::MaterialsControllerEditMode::
+MaterialsControllerEditMode_get_CubeModelingControllerTransform
+          (MaterialsControllerEditMode *this,MethodInfo *method)
+
+{
+  pDStack_1 = (DesktopCubeModelingController *)&stack0xfffffffc;
+  pDVar2 = (this->fields)._.desktopCubeModelingController;
+  if (pDVar2 != (DesktopCubeModelingController *)0x0) {
+    if (pcRam_? == (code *)0x0) {
+      pcRam_? = (code *)func_?();
+    }
+    pDStack_1 = pDVar2;
+    pTVar3 = (Transform *)(*pcRam_?)();
+    return pTVar3;
+  }
+  uVar4 = func_?(auStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  pTVar3 = (Transform *)(*pcVar6)();
+  return pTVar3;
 }
 

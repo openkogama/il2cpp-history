@@ -17,7 +17,7 @@ bool Assembly-CSharp.dll::MVTeleporter::MVTeleporter_Delete
   if (pMVar3 == (MVWorldObject *)0x0) {
     return 0;
   }
-  bVar2 = (*(code *)pMVar3->klass[2]._0.element_class)(pMVar3,worldObjectClientManager,errorText);
+  bVar2 = (*(code *)pMVar3->klass[2]._0.declaringType)(pMVar3,worldObjectClientManager,errorText);
   return bVar2;
 }
 

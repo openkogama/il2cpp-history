@@ -481,25 +481,15 @@ void Assembly-CSharp.dll::LobbyFlowMenu::LobbyFlowMenu_GoToMenu
       }
     }
   }
-  bVar5 = 0;
   func_?();
-  iVar6 = in(extraout_DX);
-  pbVar7 = (byte *)(iVar6 + -0x61efb615);
-  bVar8 = (byte)((uint)callbackFunction_00 >> 8);
-  bVar9 = *pbVar7 + bVar8;
-  bVar10 = CARRY1(*pbVar7,bVar8) || CARRY1(bVar9,bVar5);
-  *pbVar7 = bVar9 + bVar5;
-  uVar11 = in(extraout_DX);
-  pbVar7 = (byte *)((int)&value[-3].monitor + 1);
-  bVar9 = *pbVar7;
-  bVar5 = (byte)callbackFunction_00;
-  bVar8 = *pbVar7;
-  *pbVar7 = bVar8 + bVar5 + bVar10;
-  *(byte *)&value->klass =
-       *(char *)&value->klass + bVar5 + (CARRY1(bVar9,bVar5) || CARRY1(bVar8 + bVar5,bVar10));
-  out(extraout_DX,uVar11);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  cVar5 = (char)((uint)callbackFunction_00 >> 8);
+  *(char *)&value->klass = *(char *)&value->klass + cVar5;
+  uVar6 = *(uint *)(extraout_EDX + 0xf);
+  *(char *)&callbackFunction_00->klass = *(char *)&callbackFunction_00->klass + '\x01';
+  *(char *)&value[-0x67df6c0].monitor =
+       *(char *)&value[-0x67df6c0].monitor + cVar5 + CARRY4(extraout_ECX,uVar6);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

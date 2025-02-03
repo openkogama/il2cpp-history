@@ -18,7 +18,7 @@ void Assembly-CSharp.dll::DesktopLocalizedKeyboardMapping::DesktopLocalizedKeybo
                     TypeInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>
                    );
     func_?(&TypeInfo__UnityEngine__KeyCode);
-    func_?(&::_4599282D3F9B45AF3BD85923032DA3555BB21379E7B4794D7CDC90902084CA13_Field);
+    func_?(&_4599282D3F9B45AF3BD85923032DA3555BB21379E7B4794D7CDC90902084CA13_Field);
     func_?(&F002D88D1605774CD2608C1D941E46CAD47C23D0F8E6530B87794DC9244A45AB_Field);
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';

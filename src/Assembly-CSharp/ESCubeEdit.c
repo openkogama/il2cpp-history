@@ -690,10 +690,11 @@ code_?:
       if (((pGVar8 != (GameEventManager *)0x0) &&
           (pGVar9 = (pGVar8->fields).AvatarCommandsBuildMode,
           pGVar9 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-         (this_01 = (RTFocusCamera *)(pGVar9->fields).LaserCommands, this_01 != (RTFocusCamera *)0x0
-         )) {
-        RTG::RTFocusCamera::RTFocusCamera_OnPrjSwitchTransitionBegin
-                  (this_01,CameraPrjSwitchTransition_Type__Enum_None,(MethodInfo *)0x0);
+         (this_01 = (pGVar9->fields).LaserCommands,
+         this_01 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+        GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
+        GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
+                  (this_01,LaserPointerState__Enum_Idle,(MethodInfo *)0x0);
         pSVar10 = (e->fields).selectionController;
         if ((pSVar10 != (SelectionController *)0x0) &&
            (pHVar11 = (pSVar10->fields).selectedIDs, pHVar11 != (HashSet_1_System_Int32_ *)0x0)) {

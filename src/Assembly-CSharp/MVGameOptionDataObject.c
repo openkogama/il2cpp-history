@@ -88,7 +88,8 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_Partial
   MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialRemoveFromHashtable_1
             ((Dictionary_2_System_Object_System_Object_ *)pSVar1[5].fields._stringLength,
              (Dictionary_2_System_Object_System_Object_ *)0x0,1,(MethodInfo *)0x0);
-  (*pSVar1->klass[1].vtable.System_Collections_IEnumerable_GetEnumerator.methodPtr)();
+  (*pSVar1->klass[1].vtable.System_Collections_Generic_IEnumerable_System_Char__GetEnumerator.
+    methodPtr)();
   pSVar1 = MVWorldObject.dll::MV::WorldObject::HashtableFunctions::HashtableFunctions_PrettyString
                      ((Dictionary_2_System_Object_System_Object_ *)pSVar1[5].fields._stringLength,
                       (MethodInfo *)0x0);

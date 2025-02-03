@@ -226,13 +226,14 @@ code_?:
                             (pGVar1,StringLiteral_constrainVisualizer,(MethodInfo *)0x0);
                   unaff_ESI = (MVCubeModelInstance__Class *)0x0;
                   if (pGVar1 != (GameObject *)0x0) {
-                    pOVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                    pSVar13 = (StateTransitionTable *)
+                              UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                               GameObject_AddComponent_1
                                         (pGVar1,
                                          ConstraintVisualizer_MethodInfo__UnityEngine__GameObject__AddComponent<ConstraintVisualizer>__
                                         );
-                    *(Object **)&(this_02->_0).byval_arg.attrs = pOVar13;
-                    func_?(&(this_02->_0).byval_arg.attrs,pOVar13);
+                    *(StateTransitionTable **)&(this_02->_0).byval_arg.attrs = pSVar13;
+                    func_?(&(this_02->_0).byval_arg.attrs,pSVar13);
                     unaff_ESI = *(MVCubeModelInstance__Class **)&(this_02->_0).byval_arg.attrs;
                     if (cRam_? == '\0') {
                       func_?(&TypeInfo__MVCubeModelInstance,unaff_ESI);
@@ -282,7 +283,7 @@ code_?:
                         if (pGVar14 != (GameEventManager *)0x0) {
                           this_00 = (pGVar14->fields).AvatarCommandsBuildMode;
                           editorEvent = (((CubeModelingStateMachine__Fields *)&(this_02->_0).name)->
-                                        _).transitionTable;
+                                        _).prevEvent;
                           pMVar15 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
                                               (esm,(MethodInfo *)0x0);
                           if (pMVar15 != (MVWorldObjectClient *)0x0) {

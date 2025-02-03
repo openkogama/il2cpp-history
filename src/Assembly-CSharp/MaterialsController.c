@@ -576,7 +576,7 @@ void Assembly-CSharp.dll::MaterialsController::MaterialsController_UpdateContent
                  (pMVar7 = (pMVar6->fields)._MaterialRepository_k__BackingField,
                  pMVar7 == (MVMaterialRepository *)0x0)) break;
               this_01 = MVMaterialRepository::MVMaterialRepository_GetMaterial
-                                  (pMVar7,0xad,(MethodInfo *)0x0);
+                                  (pMVar7,0xdd,(MethodInfo *)0x0);
               pMVar10 = (pMVar1->fields).materialViewItemPrefab;
               if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
@@ -597,7 +597,7 @@ void Assembly-CSharp.dll::MaterialsController::MaterialsController_UpdateContent
                                     (this_00,(MethodInfo *)0x0), pMVar10 == (MaterialViewItem *)0x0))
               break;
               MaterialViewItem::MaterialViewItem_Initialize
-                        (pMVar10,0xad,bVar8 == 0,texture2D,isAvailable,(uint8_t)uVar5 == uVar11,
+                        (pMVar10,0xdd,bVar8 == 0,texture2D,isAvailable,(uint8_t)uVar5 == uVar11,
                          (MethodInfo *)0x0);
               pIVar2 = (pMVar1->fields).inventoryController;
               item = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject

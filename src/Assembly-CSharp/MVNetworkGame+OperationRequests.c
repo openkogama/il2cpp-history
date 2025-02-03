@@ -1593,6 +1593,61 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
 }
 
 
+/* Void GetActorsPlanetOwnerships(Int32) */
+
+void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
+     MVNetworkGame_OperationRequests_GetActorsPlanetOwnerships
+               (MVNetworkGame_OperationRequests *this,int32_t profileId,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__ExitGames__Client__Photon__SendOptions);
+    cRam_? = '\x01';
+  }
+  this_00 = (Dictionary_2_System_Byte_System_Object_ *)
+            func_?(
+                           TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
+                           );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+  Dictionary_2_System_Byte_System_Object___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+            );
+  pDStack_1 = (Dictionary_2_System_Byte_System_Object_ *)profileId;
+  value = (Object *)func_?(TypeInfo__System__Int32,&pDStack_1);
+  if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+    Dictionary_2_System_Byte_System_Object__Add
+              (this_00,0xb,value,
+               MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+              );
+    pPVar2 = (this->fields).peer;
+    if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    if (pPVar2 != (PhotonPeer *)0x0) {
+      pDStack_1 = this_00;
+      (*(code *)(pPVar2->klass->vtable).SendOperation.method)(pPVar2,0x59);
+      return;
+    }
+  }
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
+  return;
+}
+
+
 /* Void GetAvatarBodies() */
 
 void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
@@ -1900,7 +1955,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
 {
   if (cRam_? == '\0') {
     func_?(&
-                    MethodInfo__MVNetworkGame__OperationRequests___HandleUploadScreenShotData_b__25_0__
+                    MethodInfo__MVNetworkGame__OperationRequests___HandleUploadScreenShotData_b__26_0__
                    );
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
@@ -1912,7 +1967,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,
-             MethodInfo__MVNetworkGame__OperationRequests___HandleUploadScreenShotData_b__25_0__,
+             MethodInfo__MVNetworkGame__OperationRequests___HandleUploadScreenShotData_b__26_0__,
              (MethodInfo *)0x0);
   DataUploadManager::DataUploadManager_UploadData(data,(UnityAction *)this_00,(MethodInfo *)0x0);
   return;
@@ -8075,8 +8130,8 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (MVNetworkGame *)0x0) {
     this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
     if (this_01 != (MVLocalPlayer *)0x0) {
-      MVar1 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
-      if (MVar1 != MVLocalPlayer_PlanetOwnershipType__Enum_Owner) {
+      PVar1 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
+      if ((char)PVar1 != '\x02') {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }

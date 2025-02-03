@@ -42,52 +42,16 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup+<>c::
   }
   pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
   if (pIVar1 != (IAdManager *)0x0) {
-    pIVar2 = pIVar1->klass;
-    uVar3 = 0;
-    uVar4._0_1_ = (pIVar2->_1).rank;
-    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-    if (uVar4 != 0) {
-      do {
-        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
-            (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-          ppMVar5 = &(&(pIVar1->klass->vtable).get_RewardedAdNotAvailableText)
-                     [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
-          goto code_?;
-        }
-        uVar3 = uVar3 + 1;
-      } while (uVar3 < uVar4);
-    }
-    ppMVar5 = (MethodInfo **)
-              func_?(pIVar1,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,0);
-code_?:
-    uVar6 = (*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
-    pSVar7 = TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
+    uVar2 = func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar1);
+    pSVar3 = TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
     if (x != (IModalPopupCreator *)0x0) {
-      pIVar8 = x->klass;
-      uVar4 = 0;
-      uVar3._0_1_ = (pIVar8->_1).rank;
-      uVar3._1_1_ = (pIVar8->_1).minimumAlignment;
-      if (uVar3 != 0) {
-        do {
-          if (pIVar8->interfaceOffsets[uVar4].interfaceType ==
-              (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-            ppMVar5 = &(&(x->klass->vtable).Create_3)[x->klass->interfaceOffsets[uVar4].offset].
-                       method;
-            goto code_?;
-          }
-          uVar4 = uVar4 + 1;
-        } while (uVar4 < uVar3);
-      }
-      ppMVar5 = (MethodInfo **)
-                func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,4);
-code_?:
-      (*(code *)*ppMVar5)(x,uVar6,pSVar7,ppMVar5[1]);
+      func_?(4,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x,uVar2,pSVar3);
       return;
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

@@ -806,7 +806,7 @@ bool Assembly-CSharp.dll::MVWorldObjectClientManager::
             } while ((pOVar11[2].klass != pOStack_8[2].klass) ||
                     (pOVar11[10].monitor != pOStack_8[10].monitor));
             IStack_7.m_value = 0;
-            cVar13 = func_?(0x2d,pOVar11,pOStack_8,koGaMaPackageClient,&IStack_7);
+            cVar13 = func_?(0x2e,pOVar11,pOStack_8,koGaMaPackageClient,&IStack_7);
           } while (cVar13 == '\0');
           iStack_14 = IStack_7.m_value;
           this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);

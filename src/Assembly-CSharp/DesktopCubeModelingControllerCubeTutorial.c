@@ -66,8 +66,8 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
            (pGVar6 = (pGVar5->fields).LaserCommands,
            pGVar6 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0))))
          )) {
-        if ((pGVar6->fields).OnCubeMaterialChanged != (Action_1_Byte__1 *)0x0) {
-          pAVar7 = (pGVar6->fields).OnCubeMaterialChanged;
+        pAVar7 = (pGVar6->fields).OnCubeMaterialChanged;
+        if (pAVar7 != (Action_1_Byte__1 *)0x0) {
           (*(pAVar7->fields)._._.invoke_impl)
                     ((pAVar7->fields)._._.method_code,_materialId,(pAVar7->fields)._._.method);
         }
@@ -274,7 +274,7 @@ code_?:
     pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pDVar2 == (Delegate *)0x0) {
-      (this_01->fields)._._.original_method_info = (MethodInfo_1 *)0x0;
+      (this_01->fields)._._.method_code = (void *)0x0;
 code_?:
       func_?();
       object = TypeInfo__UnityEngine__Events__UnityAction;
@@ -312,9 +312,9 @@ code_?:
       }
       goto code_?;
     }
-    pMVar5 = (MethodInfo_1 *)func_?();
-    if (pMVar5 == (MethodInfo_1 *)0x0) goto code_?;
-    (this_01->fields)._._.original_method_info = pMVar5;
+    pvVar5 = (void *)func_?();
+    if (pvVar5 == (void *)0x0) goto code_?;
+    (this_01->fields)._._.method_code = pvVar5;
     iVar6 = func_?();
     if (iVar6 != 0) goto code_?;
   }

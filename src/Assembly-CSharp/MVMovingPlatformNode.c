@@ -27,7 +27,7 @@ bool Assembly-CSharp.dll::MVMovingPlatformNode::MVMovingPlatformNode_Delete
           (pMVar1->klass->_1).typeHierarchy
           [(TypeInfo__MVMovingPlatformGroup->_1).naturalAligment - 1] ==
           TypeInfo__MVMovingPlatformGroup)) {
-        bVar2 = (*(code *)pMVar1->klass[2]._0.element_class)(pMVar1,WOCM);
+        bVar2 = (*(code *)pMVar1->klass[2]._0.declaringType)(pMVar1,WOCM);
         return bVar2;
       }
     }

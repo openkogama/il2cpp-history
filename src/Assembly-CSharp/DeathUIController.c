@@ -395,7 +395,7 @@ code_?:
     pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)this_03,(MethodInfo *)0x0);
     if (pDVar9 == (Delegate *)0x0) {
-      *(undefined4 *)(puVar8 + 0xb8) = 0;
+      *(undefined4 *)(puVar8 + 0xc4) = 0;
 code_?:
       func_?();
       pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
@@ -447,7 +447,7 @@ code_?:
     }
     iVar12 = func_?();
     if (iVar12 == 0) goto code_?;
-    *(int *)(puVar8 + 0xb8) = iVar12;
+    *(int *)(puVar8 + 0xc4) = iVar12;
     iVar12 = func_?();
     if (iVar12 != 0) goto code_?;
   }
@@ -1794,8 +1794,8 @@ code_?:
       if ((pGVar10 == (GameEventManager *)0x0) ||
          (this_01 = (pGVar10->fields).AvatarCommandsPlayMode,
          this_01 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) goto code_?;
-      MaterialsController::MaterialsController_OnPop
-                ((MaterialsController *)this_01,(MethodInfo *)0x0);
+      GameEventManager+AvatarCommandsPlayModeManager::
+      GameEventManager_AvatarCommandsPlayModeManager_SpawnAsGhost(this_01,(MethodInfo *)0x0);
     }
     uRam_? = 1;
   }

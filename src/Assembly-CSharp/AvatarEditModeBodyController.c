@@ -1101,22 +1101,22 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pEVar1 = (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)
+    pGVar1 = (GameEventManager *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                        ((Object *)original,
                         NotificationPopup_MethodInfo__UnityEngine__Object__Instantiate<NotificationPopup>_NotificationPopup_
                        );
     if (value != (MVNetworkGame *)0x0) {
-      (value->fields).ReceivedItemFromQuery = pEVar1;
+      (value->fields).GameEventManager = pGVar1;
       func_?();
       if (UNK_? == '\0') {
-        pEVar1 = (value->fields).ReceivedItemFromQuery;
-        if (pEVar1 != (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
+        pGVar1 = (value->fields).GameEventManager;
+        if (pGVar1 != (GameEventManager *)0x0) {
           method = (MethodInfo *)StringLiteral_Action_failed_;
           e = (ScreenshotUploadedEventArgs *)StringLiteral_There_was_a_server_communication;
 code_?:
           NotificationPopup::NotificationPopup_Initialize
-                    ((NotificationPopup *)pEVar1,(String *)e,(String *)method,(MethodInfo *)0x0);
+                    ((NotificationPopup *)pGVar1,(String *)e,(String *)method,(MethodInfo *)0x0);
           pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
           if ((TypeInfo__AvatarEditModeBodyController____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -1241,8 +1241,8 @@ code_?:
                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPurchaseSoundManager>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPurchaseSoundManager>_
                     );
         }
-        pEVar1 = (value->fields).ReceivedItemFromQuery;
-        if (pEVar1 != (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
+        pGVar1 = (value->fields).GameEventManager;
+        if (pGVar1 != (GameEventManager *)0x0) {
           method = (MethodInfo *)StringLiteral_Success_;
           e = (ScreenshotUploadedEventArgs *)(this->fields).currentActionSuccessMessage;
           goto code_?;

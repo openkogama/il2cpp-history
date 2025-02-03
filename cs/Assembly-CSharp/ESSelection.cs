@@ -39,27 +39,27 @@ internal class ESSelection : ESStateBase
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__14_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__15_1;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _Execute_b__14_1(IUIStack x, BaseEventData y);
+		internal void _HandleDeleteSelection_b__15_1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass14_0
+	private sealed class __c__DisplayClass15_0
 	{
 		// Fields
 		public string errorText;
 
 		// Constructors
-		public __c__DisplayClass14_0();
+		public __c__DisplayClass15_0();
 
 		// Methods
-		internal void _Execute_b__0(IModalPopupCreator handler, BaseEventData data);
+		internal void _HandleDeleteSelection_b__0(IModalPopupCreator handler, BaseEventData data);
 	}
 
 	// Constructors
@@ -72,12 +72,18 @@ internal class ESSelection : ESStateBase
 	public override void Enter(EditorStateMachine e);
 	private void DeselectAll(EditorStateMachine e);
 	public override void Execute(EditorStateMachine e);
+	private void HandleDeleteSelection(EditorStateMachine e);
+	private void HandleLeftClickDownSelection(EditorStateMachine e, VoxelHit targetHit, bool woPickSuccess);
+	private void HandleLeftClickDragSelection(EditorStateMachine e, bool woPickSuccess);
+	private void HandleLeftClickUpSelection(EditorStateMachine e);
+	private void HandleRightClickDownSelection(EditorStateMachine e, VoxelHit targetHit, bool woPickSuccess);
+	private void HandleRightClickUpSelection(EditorStateMachine e);
 	public override void Exit(EditorStateMachine e);
 	private bool IsMouseUpValid(Vector3 mousePosition);
 	private bool CheckAndExecuteOnClickHandler(EditorStateMachine e, PickResult<WorldObjectClientRef> pick);
 	private void SelectionController_SelectedWorldObjectDeletedHandler(object sender, WorldObjectDestroyedEventArgs e);
 	private LinkObjectBase GetLinkHit(EditorStateMachine e, ref VoxelHit hit);
 	private bool EnterObject(EditorStateMachine e, MVWorldObjectClient selectedWo);
-	private void HandleEscape(EditorStateMachine e);
+	private void HandleEscapeSelection(EditorStateMachine e);
 }
 

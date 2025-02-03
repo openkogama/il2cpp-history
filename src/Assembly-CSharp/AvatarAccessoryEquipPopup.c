@@ -255,40 +255,23 @@ void Assembly-CSharp.dll::AvatarAccessoryEquipPopup::AvatarAccessoryEquipPopup__
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IAttachToBody);
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IAttachToBody;
+    func_?();
     cRam_? = '\x01';
   }
-  pAVar1 = (this->fields).accessoryDataClient;
-  if (pAVar1 != (AccessoryDataClient *)0x0) {
-    fVar2 = (this->fields).accessoryOffset;
-    fVar3 = (this->fields).accessoryScale;
-    iVar4 = (pAVar1->fields)._.sAID;
-    if (x != (IAttachToBody *)0x0) {
-      pIVar5 = x->klass;
-      uVar6 = 0;
-      uVar7._0_1_ = (pIVar5->_1).rank;
-      uVar7._1_1_ = (pIVar5->_1).minimumAlignment;
-      if (uVar7 != 0) {
-        do {
-          if (pIVar5->interfaceOffsets[uVar6].interfaceType ==
-              (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAttachToBody) {
-            ppMVar8 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar6].offset].AttachToBody.
-                       method;
-            goto code_?;
-          }
-          uVar6 = uVar6 + 1;
-        } while (uVar6 < uVar7);
-      }
-      ppMVar8 = (MethodInfo **)
-                func_?(x,TypeInfo__UnityEngine__EventSystems__IAttachToBody,0);
-code_?:
-      (*(code *)*ppMVar8)(x,iVar4,fVar2,fVar3,ppMVar8[1]);
-      return;
-    }
+  pAVar2 = (this->fields).accessoryDataClient;
+  if ((pAVar2 != (AccessoryDataClient *)0x0) && (x != (IAttachToBody *)0x0)) {
+    ppIStack_1 = (IAttachToBody__Class **)(this->fields).accessoryScale;
+    puStack_3 = (undefined *)(this->fields).accessoryOffset;
+    iStack_4 = (pAVar2->fields)._.sAID;
+    func_?(0,TypeInfo__UnityEngine__EventSystems__IAttachToBody,x);
+    return;
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  ppIStack_1 = (IAttachToBody__Class **)&stack0xfffffffc;
+  uVar5 = func_?(&iStack_4);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

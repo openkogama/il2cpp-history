@@ -5,6 +5,7 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using MV.Common;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -50,7 +51,7 @@ public class ThemeMenuButton : MonoBehaviour
 
 	// Methods
 	protected void Awake();
-	private void SetButtonAvailability(MVLocalPlayer.PlanetOwnershipType planetOwnership);
+	private void SetButtonAvailability(PlanetOwnershipType planetOwnership);
 	public void OnClick();
 }
 

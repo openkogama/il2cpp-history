@@ -948,7 +948,7 @@ code_?:
       ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
       ParticleSystem_MainModule_set_startSizeMultiplier_Injected
-                ((ParticleSystem_MainModule *)&stack0xffffffec,_UNK_? * 3.5036033e-29,
+                ((ParticleSystem_MainModule *)&stack0xffffffec,_UNK_? * 3.503873e-29,
                  (MethodInfo *)0x0);
       return;
     }

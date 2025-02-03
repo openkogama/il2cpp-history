@@ -1,4 +1,27 @@
 
+/* Boolean Delete(MVWorldObjectClientManager, String ByRef) */
+
+bool Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_Delete
+               (CollectTheItemDropOff *this,MVWorldObjectClientManager *worldObjectClientManager,
+               String **errorText,MethodInfo *method)
+
+{
+  if (worldObjectClientManager == (MVWorldObjectClientManager *)0x0) {
+    func_?();
+    pcVar1 = (code *)swi(3);
+    bVar2 = (*pcVar1)();
+    return bVar2;
+  }
+  pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                     (worldObjectClientManager,(this->fields)._._._._.groupId,(MethodInfo *)0x0);
+  if (pMVar3 != (MVWorldObject *)0x0) {
+    bVar2 = (*(code *)pMVar3->klass[2]._0.declaringType)(pMVar3,worldObjectClientManager,errorText);
+    return bVar2;
+  }
+  return 0;
+}
+
+
 /* Void Destroy() */
 
 void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_Destroy
@@ -101,7 +124,6 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_DropWoId
                (CollectTheItemDropOff *this,int32_t instigatorWoID,MethodInfo *method)
 
 {
-  this_00 = this;
   if (cRam_? == '\0') {
     func_?(&
                     MVPickupOwner_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<MVPickupOwner>__
@@ -153,101 +175,98 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_DropWoId
            pTVar6 == (Transform *)0x0)) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                   (pTVar6,*pVVar8,(MethodInfo *)0x0);
-        if ((this->fields).OnPickupCollected != (Action_1_Boolean_ *)0x0) {
-          pAVar9 = (this->fields).OnPickupCollected;
+        pAVar9 = (this->fields).OnPickupCollected;
+        if (pAVar9 != (Action_1_Boolean_ *)0x0) {
           CollectTheItemDropOff_get_DoOnce(this,(MethodInfo *)0x0);
           (*(pAVar9->fields)._._.invoke_impl)();
         }
       }
       pLVar10 = pMVar2[1].fields.inputLinkRefs;
       if (pLVar10 != (List_1_MV_WorldObject_Link_ *)0x0) {
-        x = (CollectTheItemDropOff *)
+        x = (Object_1 *)
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
                       ((GameObject *)pLVar10,
                        MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__)
         ;
-        this = x;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          this = (CollectTheItemDropOff *)&UNK_?;
           func_?();
         }
         bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                          ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+                          (x,(Object_1 *)0x0,(MethodInfo *)0x0);
         if (bVar11 != 0) {
           return;
         }
         pLVar10 = pMVar2[1].fields.inputLinkRefs;
         if (pLVar10 != (List_1_MV_WorldObject_Link_ *)0x0) {
-          pOVar12 = (Object_1 *)
-                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                    GameObject_GetComponentInChildren_1
-                              ((GameObject *)pLVar10,
-                               MVPickupOwner_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<MVPickupOwner>__
-                              );
+          x_00 = (Object_1 *)
+                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                 GameObject_GetComponentInChildren_1
+                           ((GameObject *)pLVar10,
+                            MVPickupOwner_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<MVPickupOwner>__
+                           );
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                            (pOVar12,(Object_1 *)0x0,(MethodInfo *)0x0);
+                            (x_00,(Object_1 *)0x0,(MethodInfo *)0x0);
           if (bVar11 != 0) {
             return;
           }
-          if (pOVar12 != (Object_1 *)0x0) {
-            pOVar12 = pOVar12[4].fields.m_CachedPtr;
+          if (x_00 != (Object_1 *)0x0) {
+            pCVar5 = x_00[4].fields.m_CachedPtr;
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
             bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                              (pOVar12,(Object_1 *)0x0,(MethodInfo *)0x0);
+                              ((Object_1 *)pCVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
             if (bVar11 != 0) {
               return;
             }
-            if (pOVar12 == (Object_1 *)0x0) {
+            if (pCVar5 == (Component *)0x0) {
               return;
             }
-            if ((pOVar12->klass->_1).naturalAligment <
+            if ((pCVar5->klass->_1).naturalAligment <
                 (TypeInfo__PickupItemCollectTheItem->_1).naturalAligment) {
               return;
             }
-            if ((pOVar12->klass->_1).typeHierarchy
+            if ((pCVar5->klass->_1).typeHierarchy
                 [(TypeInfo__PickupItemCollectTheItem->_1).naturalAligment - 1] !=
                 (Il2CppClass *)TypeInfo__PickupItemCollectTheItem) {
               return;
             }
-            if (this != (CollectTheItemDropOff *)0x0) {
+            if (x != (Object_1 *)0x0) {
               func_?();
-              pCVar5 = (Component *)func_?();
-              iVar13 = func_?();
-              if (iVar13 != 0) {
-                original_00 = *(Object **)(iVar13 + 0x238);
+              iVar12 = func_?();
+              if (iVar12 != 0) {
+                original_00 = *(Object **)(iVar12 + 0x238);
                 if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
-                this_01 = (Component *)
+                this_00 = (Component *)
                           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                                     (original_00,
                                      UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem_
                                     );
-                if ((((this_01 != (Component *)0x0) &&
-                     (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                Component_get_transform(this_01,(MethodInfo *)0x0),
-                     pCVar5 != (Component *)0x0)) &&
-                    (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                               Component_get_transform(pCVar5,(MethodInfo *)0x0),
-                    pTVar6 != (Transform *)0x0)) &&
-                   (pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                              Transform_get_position
-                                        ((Vector3 *)&stack0xfffffff0,pTVar6,(MethodInfo *)0x0),
-                   pTVar7 != (Transform *)0x0)) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                            (pTVar7,*pVVar8,(MethodInfo *)0x0);
-                  if ((this_00->fields).OnPickupCollected != (Action_1_Boolean_ *)0x0) {
-                    pAVar9 = (this_00->fields).OnPickupCollected;
-                    CollectTheItemDropOff_get_DoOnce(this_00,(MethodInfo *)0x0);
+                if (this_00 != (Component *)0x0) {
+                  pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            Component_get_transform(this_00,(MethodInfo *)0x0);
+                  pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            Component_get_transform(pCVar5,(MethodInfo *)0x0);
+                  if ((pTVar6 != (Transform *)0x0) &&
+                     (pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                Transform_get_position
+                                          ((Vector3 *)&stack0xfffffff0,pTVar6,(MethodInfo *)0x0),
+                     pTVar7 != (Transform *)0x0)) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
+                              (pTVar7,*pVVar8,(MethodInfo *)0x0);
+                    pAVar9 = (this->fields).OnPickupCollected;
+                    if (pAVar9 == (Action_1_Boolean_ *)0x0) {
+                      return;
+                    }
+                    CollectTheItemDropOff_get_DoOnce(this,(MethodInfo *)0x0);
                     (*(pAVar9->fields)._._.invoke_impl)();
                     return;
                   }
-                  return;
                 }
               }
             }
@@ -258,8 +277,8 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_DropWoId
   }
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -283,7 +302,7 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_Initializ
                     MethodInfo__CollectTheItemDropOff__SignalCallback_bool__bool__LogicObjectManager_
                    );
     func_?(&
-                    MethodInfo__CollectTheItemDropOff__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                    MethodInfo__CollectTheItemDropOff__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    );
     func_?(&TypeInfo__EditableCubeModelWrapper);
     func_?(&TypeInfo__System__EventHandler<EditStateEventArgs>);
@@ -319,7 +338,7 @@ code_?:
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               (pUVar5,(Object *)this,
-               MethodInfo__CollectTheItemDropOff__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+               MethodInfo__CollectTheItemDropOff__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                ,(MethodInfo *)0x0);
     if (this_00 == (TriggerBoxEvents *)0x0) goto code_?;
     TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
@@ -700,7 +719,10 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_OnCollect
                      (MethodInfo *)0x0);
         }
         MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-        if ((MVar2 == MVGameMode__Enum_Edit) && (shouldbeActiveOnCollect == 0)) {
+        if (MVar2 != MVGameMode__Enum_Edit) {
+          shouldbeActiveOnCollect = 1;
+        }
+        if (shouldbeActiveOnCollect == 0) {
           pCVar1 = (this->fields).triggerObject;
           if ((pCVar1 == (CollectTheItemDropOffObject *)0x0) ||
              (this_03 = (pCVar1->fields).greyout, this_03 == (GreyOutObjectScript *)0x0))
@@ -725,27 +747,22 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_OnEditMod
                (CollectTheItemDropOff *this,EditModeChangeArgs arg,MethodInfo *method)
 
 {
-  pCVar1 = (this->fields).triggerObject;
-  if ((pCVar1 != (CollectTheItemDropOffObject *)0x0) &&
-     (this_00 = (pCVar1->fields).editCollider, this_00 != (Collider *)0x0)) {
-    UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-              (this_00,1,(MethodInfo *)0x0);
-    if (arg.playInEditor == 0) {
-      return;
+  puStack_1 = &stack0xfffffffc;
+  pCVar2 = (this->fields).triggerObject;
+  if ((pCVar2 != (CollectTheItemDropOffObject *)0x0) &&
+     (pCVar3 = (pCVar2->fields).editCollider, pCVar3 != (Collider *)0x0)) {
+    if (pcRam_? == (code *)0x0) {
+      pcRam_? = (code *)func_?();
     }
-    pCVar1 = (this->fields).triggerObject;
-    if ((pCVar1 != (CollectTheItemDropOffObject *)0x0) &&
-       ((pCVar1->fields).editCollider != (Collider *)0x0)) {
-      if (pcRam_? == (code *)0x0) {
-        pcRam_? = (code *)func_?();
-      }
-      (*pcRam_?)();
-      return;
-    }
+    pCStack_4 = pCVar3;
+    puStack_1 = (undefined1 *)(uint)(arg.playInEditor == 0);
+    (*pcRam_?)();
+    return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar5 = func_?(&puStack_6);
+  func_?(uVar5);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -917,13 +934,14 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_Reset
       if ((pCVar1 != (CollectTheItemDropOffObject *)0x0) &&
          (this_03 = (pCVar1->fields).greyout, this_03 != (GreyOutObjectScript *)0x0)) {
         GreyOutObjectScript::GreyOutObjectScript_GreyIn(this_03,(MethodInfo *)0x0);
-        if ((this->fields).OnPickupCollected != (Action_1_Boolean_ *)0x0) {
-          (*(((this->fields).OnPickupCollected)->fields)._._.invoke_impl)();
+        pAVar3 = (this->fields).OnPickupCollected;
+        if (pAVar3 != (Action_1_Boolean_ *)0x0) {
+          (*(pAVar3->fields)._._.invoke_impl)();
         }
         pCVar1 = (this->fields).triggerObject;
         if ((pCVar1 != (CollectTheItemDropOffObject *)0x0) &&
            ((pCVar1->fields).blinker != (CollectTheItemBlinker *)0x0)) {
-          uVar3 = *unaff_FS_OFFSET;
+          uVar4 = *unaff_FS_OFFSET;
           *unaff_FS_OFFSET = &stack0xfffffff8;
           if (cRam_? == '\0') {
             func_?(&
@@ -944,7 +962,7 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_Reset
             cRam_? = '\x01';
           }
           this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                     *)(in_stack_4->fields).blinkers;
+                     *)(in_stack_5->fields).blinkers;
           if (this_00 !=
               (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                *)0x0) {
@@ -968,7 +986,7 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_Reset
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<BlinkType,_Blinker>__GetEnumerator__
                         );
               while( true ) {
-                bVar5 = mscorlib.dll::System::Collections::Generic::
+                bVar6 = mscorlib.dll::System::Collections::Generic::
                         Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::
                         UInt32,System::Object]::
                         Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
@@ -976,31 +994,31 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_Reset
                                     *)&stack0xffffffd0,
                                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__MoveNext__
                                   );
-                if (bVar5 == 0) break;
+                if (bVar6 == 0) break;
                 BlinkerBase::BlinkerBase_StopBlinking
-                          (in_stack_4,BlinkType__Enum_Damage,(MethodInfo *)0x0);
+                          (in_stack_5,BlinkType__Enum_Damage,(MethodInfo *)0x0);
               }
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                         ((Object *)&stack0xffffffd0,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__Dispose__
-                         ,in_stack_6);
-              *unaff_FS_OFFSET = uVar3;
+                         ,in_stack_7);
+              *unaff_FS_OFFSET = uVar4;
               return;
             }
           }
-          uVar3 = func_?();
-          func_?(uVar3);
-          pcVar7 = (code *)swi(3);
-          (*pcVar7)();
+          uVar4 = func_?();
+          func_?(uVar4);
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
           return;
         }
       }
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1124,6 +1142,74 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_SignalCal
   func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
+  return;
+}
+
+
+/* Void TriggerBoxEvents_TriggerEnter(Object, TriggerEventArgs) */
+
+void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_TriggerBoxEvents_TriggerEnter
+               (CollectTheItemDropOff *this,Object *sender,TriggerEventArgs *e,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&
+                    MVPickupOwner_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<MVPickupOwner>__
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__PickupItemCollectTheItem);
+    cRam_? = '\x01';
+  }
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if ((((e != (TriggerEventArgs *)0x0) && (this_01 != (MVWorldObjectClientManager *)0x0)) &&
+      (pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                          (this_01,(e->fields).instigatorWOID,(MethodInfo *)0x0),
+      pMVar1 != (MVWorldObject *)0x0)) &&
+     (this_00 = pMVar1[1].fields.inputLinkRefs, this_00 != (List_1_MV_WorldObject_Link_ *)0x0)) {
+    pOVar2 = (Object_1 *)
+             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+             GameObject_GetComponentInChildren_1
+                       ((GameObject *)this_00,
+                        MVPickupOwner_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<MVPickupOwner>__
+                       );
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                      (pOVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
+      if (pOVar2 == (Object_1 *)0x0) goto code_?;
+      pOVar2 = pOVar2[4].fields.m_CachedPtr;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                        (pOVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (((bVar3 == 0) && (pOVar2 != (Object_1 *)0x0)) &&
+         (((TypeInfo__PickupItemCollectTheItem->_1).naturalAligment <=
+           (pOVar2->klass->_1).naturalAligment &&
+          (ppIVar4 = (pOVar2->klass->_1).typeHierarchy,
+          ppIVar4[(TypeInfo__PickupItemCollectTheItem->_1).naturalAligment - 1] ==
+          (Il2CppClass *)TypeInfo__PickupItemCollectTheItem)))) {
+        if ((ppIVar4[(TypeInfo__PickupItemCollectTheItem->_1).naturalAligment - 1] !=
+             (Il2CppClass *)TypeInfo__PickupItemCollectTheItem) || (iRam_? == 0))
+        goto code_?;
+        if (*(Object_1__Class **)(iRam_? + 0x100) == pOVar2[10].klass) {
+          *(undefined1 *)&pOVar2[0xb].monitor = 0;
+          this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                              ((MethodInfo *)0x0);
+          if (this_02 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_TriggerBoxEnter
+                    (this_02,iRam_?,(e->fields).instigatorWOID,(MethodInfo *)0x0);
+        }
+      }
+    }
+    return;
+  }
+code_?:
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -1374,74 +1460,6 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_set_Input
 {
   (this->fields)._InputSignalReceiver_k__BackingField = value;
   func_?(&(this->fields)._InputSignalReceiver_k__BackingField,value);
-  return;
-}
-
-
-/* Void triggerBoxEvents_TriggerEnter(Object, TriggerEventArgs) */
-
-void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_triggerBoxEvents_TriggerEnter
-               (CollectTheItemDropOff *this,Object *sender,TriggerEventArgs *e,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&
-                    MVPickupOwner_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<MVPickupOwner>__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&TypeInfo__PickupItemCollectTheItem);
-    cRam_? = '\x01';
-  }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if ((((e != (TriggerEventArgs *)0x0) && (this_01 != (MVWorldObjectClientManager *)0x0)) &&
-      (pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (this_01,(e->fields).instigatorWOID,(MethodInfo *)0x0),
-      pMVar1 != (MVWorldObject *)0x0)) &&
-     (this_00 = pMVar1[1].fields.inputLinkRefs, this_00 != (List_1_MV_WorldObject_Link_ *)0x0)) {
-    pOVar2 = (Object_1 *)
-             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-             GameObject_GetComponentInChildren_1
-                       ((GameObject *)this_00,
-                        MVPickupOwner_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<MVPickupOwner>__
-                       );
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      (pOVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
-      if (pOVar2 == (Object_1 *)0x0) goto code_?;
-      pOVar2 = pOVar2[4].fields.m_CachedPtr;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                        (pOVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (((bVar3 == 0) && (pOVar2 != (Object_1 *)0x0)) &&
-         (((TypeInfo__PickupItemCollectTheItem->_1).naturalAligment <=
-           (pOVar2->klass->_1).naturalAligment &&
-          (ppIVar4 = (pOVar2->klass->_1).typeHierarchy,
-          ppIVar4[(TypeInfo__PickupItemCollectTheItem->_1).naturalAligment - 1] ==
-          (Il2CppClass *)TypeInfo__PickupItemCollectTheItem)))) {
-        if ((ppIVar4[(TypeInfo__PickupItemCollectTheItem->_1).naturalAligment - 1] !=
-             (Il2CppClass *)TypeInfo__PickupItemCollectTheItem) || (iRam_? == 0))
-        goto code_?;
-        if (*(Object_1__Class **)(iRam_? + 0x100) == pOVar2[10].klass) {
-          *(undefined1 *)&pOVar2[0xb].monitor = 0;
-          this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                              ((MethodInfo *)0x0);
-          if (this_02 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
-          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_TriggerBoxEnter
-                    (this_02,iRam_?,(e->fields).instigatorWOID,(MethodInfo *)0x0);
-        }
-      }
-    }
-    return;
-  }
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
   return;
 }
 

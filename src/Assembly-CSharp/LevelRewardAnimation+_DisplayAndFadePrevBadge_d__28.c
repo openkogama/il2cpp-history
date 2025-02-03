@@ -8,7 +8,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
 {
   pLVar1 = this;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
+    func_?(0xa380);
     cRam_? = '\x01';
   }
   this_00 = (Object__Class *)(this->fields).__4__this;
@@ -120,8 +120,9 @@ code_?:
             if (pCVar5 != (Component *)0x0) {
               pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                   (pCVar5,(MethodInfo *)0x0);
-              euler.y = (float)_UNK_?;
+              euler.y._0_2_ = (short)_UNK_?;
               euler.x = fVar2;
+              euler.y._2_2_ = (short)((uint)_UNK_? >> 0x10);
               euler.z = 0.0;
               pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                         Quaternion_Internal_FromEulerRad
@@ -225,21 +226,16 @@ code_?:
     }
   }
 code_?:
-  bVar15 = 0;
-  iVar16 = func_?();
-  pbVar17 = (byte *)(iVar16 + 0x10);
-  bVar18 = *pbVar17;
-  bVar19 = *pbVar17 + (byte)iVar16;
-  *pbVar17 = bVar19 + bVar15;
-  LOCK();
-  *(int *)(iVar16 + 0x10) =
-       *(int *)(iVar16 + 0x10) + iVar16 + (uint)(CARRY1(bVar18,(byte)iVar16) || CARRY1(bVar19,bVar15))
-  ;
-  UNLOCK();
-  *(char *)(iVar16 * 3) = *(char *)(iVar16 * 3) + extraout_DL;
-  pcVar20 = (code *)swi(3);
-  bVar21 = (*pcVar20)();
-  return bVar21;
+  uVar15 = func_?();
+  bVar16 = (byte)uVar15;
+  bVar17 = (byte)((uint)uVar15 >> 8);
+  bVar18 = bVar16 + 0x40 + bVar17;
+  cVar19 = bVar18 + (0xbf < bVar16);
+  pcVar20 = (char *)(CONCAT31((int3)((uint)uVar15 >> 8),cVar19) + -0x6fefbff7);
+  *pcVar20 = *pcVar20 + cVar19 + '\x01' + (CARRY1(bVar16 + 0x40,bVar17) || CARRY1(bVar18,0xbf < bVar16));
+  pcVar21 = (code *)swi(3);
+  bVar22 = (*pcVar21)();
+  return bVar22;
 }
 
 

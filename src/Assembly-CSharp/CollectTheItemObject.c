@@ -89,13 +89,22 @@ bool Assembly-CSharp.dll::CollectTheItemObject::CollectTheItemObject_ShouldDoBli
                (CollectTheItemObject *this,MethodInfo *method)
 
 {
-  fVar1 = (this->fields).fadeTimer;
-  if (fVar1 < _UNK_?) {
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    (this->fields).fadeTimer = fVar2 + fVar1;
-    return 0;
+  pCVar1 = (this->fields).blinker;
+  if (pCVar1 == (CollectTheItemBlinker *)0x0) {
+    func_?();
+    pcVar2 = (code *)swi(3);
+    bVar3 = (*pcVar2)();
+    return bVar3;
   }
-  return 1;
+  if ((pCVar1->fields)._.visible != 0) {
+    fVar4 = (this->fields).fadeTimer;
+    if (_UNK_? <= fVar4) {
+      return 1;
+    }
+    fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    (this->fields).fadeTimer = fVar5 + fVar4;
+  }
+  return 0;
 }
 
 
@@ -105,23 +114,29 @@ void Assembly-CSharp.dll::CollectTheItemObject::CollectTheItemObject_Update
                (CollectTheItemObject *this,MethodInfo *method)
 
 {
-  fVar1 = (this->fields).fadeTimer;
-  if (fVar1 < _UNK_?) {
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    (this->fields).fadeTimer = fVar2 + fVar1;
-    return;
-  }
   this_00 = (this->fields).blinker;
-  if (this_00 != (CollectTheItemBlinker *)0x0) {
-    BlinkerBase::BlinkerBase_StartBlinking
-              ((BlinkerBase *)this_00,BlinkType__Enum_AboutToExpire,INFINITY,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-              ((Behaviour *)this,0,(MethodInfo *)0x0);
+  if (this_00 == (CollectTheItemBlinker *)0x0) {
+code_?:
+    func_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  if ((this_00->fields)._.visible != 0) {
+    fVar2 = (this->fields).fadeTimer;
+    if (_UNK_? <= fVar2) {
+      if (this_00 != (CollectTheItemBlinker *)0x0) {
+        BlinkerBase::BlinkerBase_StartBlinking
+                  ((BlinkerBase *)this_00,BlinkType__Enum_AboutToExpire,INFINITY,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                  ((Behaviour *)this,0,(MethodInfo *)0x0);
+        return;
+      }
+      goto code_?;
+    }
+    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    (this->fields).fadeTimer = fVar3 + fVar2;
+  }
   return;
 }
 

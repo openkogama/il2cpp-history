@@ -42,7 +42,6 @@ public class LaserPointer : MonoBehaviour, ILaserPointer
 	private Color beamColor;
 	private LaserPointerState state;
 	private Vector3 relativeTargetPosition;
-	private Vector3 relativeCurrentTargetPosition;
 	private bool isFiring;
 	private float activeDuration;
 	private float currentLaserAlpha;
@@ -59,7 +58,7 @@ public class LaserPointer : MonoBehaviour, ILaserPointer
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _DoDeactivateLaserAfterDuration_d__46 : IEnumerator<object>
+	private sealed class _DoDeactivateLaserAfterDuration_d__45 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -73,7 +72,7 @@ public class LaserPointer : MonoBehaviour, ILaserPointer
 
 		// Constructors
 		[DebuggerHidden]
-		public _DoDeactivateLaserAfterDuration_d__46(int __1__state);
+		public _DoDeactivateLaserAfterDuration_d__45(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -102,7 +101,7 @@ public class LaserPointer : MonoBehaviour, ILaserPointer
 	private void OnDisable();
 	private void Start();
 	private void LateUpdate();
-	[IteratorStateMachine(typeof(_DoDeactivateLaserAfterDuration_d__46))]
+	[IteratorStateMachine(typeof(_DoDeactivateLaserAfterDuration_d__45))]
 	private IEnumerator DoDeactivateLaserAfterDuration();
 	private void ApplyMaterialForState();
 	protected void SyncState(Dictionary<object, object> newState);

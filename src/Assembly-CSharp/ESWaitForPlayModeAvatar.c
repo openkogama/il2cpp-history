@@ -484,21 +484,6 @@ void Assembly-CSharp.dll::ESWaitForPlayModeAvatar::
 }
 
 
-/* Boolean IsSelectedSpawnRoleDeleted(Boolean, Int32) */
-
-bool Assembly-CSharp.dll::ESWaitForPlayModeAvatar::
-     ESWaitForPlayModeAvatar_IsSelectedSpawnRoleDeleted
-               (ESWaitForPlayModeAvatar *this,bool isSpawnRoleValid,
-               int32_t selectedSpawnRoleCreatorId,MethodInfo *method)
-
-{
-  if (isSpawnRoleValid != 0) {
-    return 0;
-  }
-  return (byte)((uint)selectedSpawnRoleCreatorId >> 0x1f) ^ 1;
-}
-
-
 /* Boolean IsTeamWithoutSpawnRole(Boolean, Boolean) */
 
 bool Assembly-CSharp.dll::ESWaitForPlayModeAvatar::ESWaitForPlayModeAvatar_IsTeamWithoutSpawnRole
@@ -522,33 +507,6 @@ bool Assembly-CSharp.dll::ESWaitForPlayModeAvatar::ESWaitForPlayModeAvatar_IsTea
   pcVar4 = (code *)swi(3);
   bVar2 = (*pcVar4)();
   return bVar2;
-}
-
-
-/* Boolean ShouldEnterAsDefaultSpawnRole(Boolean, Boolean, Int32) */
-
-bool Assembly-CSharp.dll::ESWaitForPlayModeAvatar::
-     ESWaitForPlayModeAvatar_ShouldEnterAsDefaultSpawnRole
-               (ESWaitForPlayModeAvatar *this,bool isSpawnRoleValid,bool teamsPresent,
-               int32_t numberOfSpawnPoints,MethodInfo *method)
-
-{
-  if ((isSpawnRoleValid == 0) && (teamsPresent == 0)) {
-    return numberOfSpawnPoints == 1;
-  }
-  return 0;
-}
-
-
-/* Boolean ShouldEnterAsSelectedSpawnRole(Boolean, Boolean) */
-
-bool Assembly-CSharp.dll::ESWaitForPlayModeAvatar::
-     ESWaitForPlayModeAvatar_ShouldEnterAsSelectedSpawnRole
-               (ESWaitForPlayModeAvatar *this,bool isSpawnRoleValid,bool spawnRolesPresent,
-               MethodInfo *method)
-
-{
-  return isSpawnRoleValid & spawnRolesPresent;
 }
 
 

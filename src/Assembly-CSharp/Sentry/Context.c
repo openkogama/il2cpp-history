@@ -192,6 +192,7 @@ code_?:
                                   StringLiteral_yyyy_MM_ddTHH__mm__ssZ,(MethodInfo *)0x0);
               if (pAVar11 != (App *)0x0) {
                 (pAVar11->fields).app_start_time = pSVar1;
+                pCVar12 = (Context *)&(pAVar11->fields).app_start_time;
                 func_?();
                 if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                   func_?(TypeInfo__UnityEngine__Debug);
@@ -199,6 +200,7 @@ code_?:
                 bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_get_isDebugBuild
                                   ((MethodInfo *)0x0);
                 pAVar11 = (this->fields).app;
+                this = pCVar12;
                 if (bVar5 == 0) {
                   if (pAVar11 != (App *)0x0) {
                     (pAVar11->fields).build_type = StringLiteral_release;
@@ -219,9 +221,13 @@ code_?:
     }
   }
 code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  iVar13 = func_?();
+  iVar14 = (int)(this->fields).os * 0xADDR;
+  piVar15 = (int *)(iVar14 + 0x4f);
+  *piVar15 = *piVar15 + -0x10;
+  *(char *)(iVar13 + -0x33efb097) = *(char *)(iVar13 + -0x33efb097) + (char)((uint)iVar14 >> 8);
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 

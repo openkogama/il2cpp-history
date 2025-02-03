@@ -232,19 +232,37 @@ bool Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_IsMaterialU
 {
   if (mats != (Byte__Array *)0x0) {
     for (uVar1 = 0; (int)uVar1 < (int)mats->max_length; uVar1 = uVar1 + 1) {
-      if (mats->max_length <= uVar1) {
+      if (mats->max_length <= uVar1) goto code_?;
+      bVar2 = mats->vector[uVar1];
+      if (cRam_? == '\0') {
+        func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
+        func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
+        cRam_? = '\x01';
+      }
+      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                (this->fields).materials;
+      if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
 code_?:
         func_?();
-        pcVar2 = (code *)swi(3);
-        bVar3 = (*pcVar2)();
-        return bVar3;
-      }
-      pMVar4 = MVMaterialRepository_GetMaterial(this,mats->vector[uVar1],(MethodInfo *)0x0);
-      if (pMVar4 == (MVMaterial *)0x0) {
+code_?:
         func_?();
-        goto code_?;
+        pcVar3 = (code *)swi(3);
+        bVar4 = (*pcVar3)();
+        return bVar4;
       }
-      if ((pMVar4->fields).isUnlocked == 0) {
+      if ((int)(uint)bVar2 < (this_00->fields)._size) {
+        RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (this_00,(uint)bVar2,
+                           MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_
+                          );
+      }
+      else {
+        RVar5 = (RegexCharClass_SingleRange)(this->fields).noMaterial;
+      }
+      if (RVar5 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      if (*(char *)((int)RVar5 + 0xc) == '\0') {
         return 0;
       }
     }
@@ -259,15 +277,32 @@ bool Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_IsMaterialU
                (MVMaterialRepository *this,uint8_t mat,MethodInfo *method)
 
 {
-  pMVar1 = MVMaterialRepository_GetMaterial(this,mat,(MethodInfo *)0x0);
-  if (pMVar1 != (MVMaterial *)0x0) {
-    return (pMVar1->fields).isUnlocked;
+  if (cRam_? == '\0') {
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
+    cRam_? = '\x01';
   }
-  uVar2 = func_?(&stack0xfffffffc);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  bVar4 = (*pcVar3)();
-  return bVar4;
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).materials;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    if ((int)(uint)mat < (this_00->fields)._size) {
+      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (this_00,(uint)mat,
+                         MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
+    }
+    else {
+      RVar1 = (RegexCharClass_SingleRange)(this->fields).noMaterial;
+    }
+    if (RVar1 != (RegexCharClass_SingleRange)0x0) {
+      return *(bool *)((int)RVar1 + 0xc);
+    }
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  bVar3 = (*pcVar2)();
+  return bVar3;
 }
 
 

@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_AddCube
 
 {
   if (cRam_? == '\0') {
-    func_?(0xed0);
+    func_?(0x8250);
     func_?(&TypeInfo__Cube);
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_
@@ -1040,7 +1040,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_MakeUnique
           OStack_10.monitor = (MonitorData *)0x0;
           puStack_11 = (undefined *)0x0;
           if (*(Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                **)(in_stack_12 + 0x40) !=
+                **)(in_stack_12 + 0x3c) !=
               (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                *)0x0) {
             pDVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::
@@ -1048,7 +1048,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_MakeUnique
                      Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                                (&DStack_14,
                                 *(Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                                  **)(in_stack_12 + 0x40),
+                                  **)(in_stack_12 + 0x3c),
                                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__GetEnumerator__
                                );
             OStack_10.klass = (Object__Class *)pDVar13->_dictionary;
@@ -1454,7 +1454,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_ReplaceCube
 
 {
   if (cRam_? == '\0') {
-    func_?(0xed0);
+    func_?(0x8250);
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_
                    );
@@ -1636,7 +1636,7 @@ Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase___ctor_b__28_0
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ModelingDynamicBoxConstraint);
-    func_?(0xdd28);
+    func_?(0x53e8);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -1807,11 +1807,11 @@ code_?:
                              MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_
                             );
         if (pOVar10 != (Object *)0x0) {
-          pOVar11 = pOVar10[6].klass;
+          pMVar11 = pOVar10[8].monitor;
           if (this_04 != (Transform *)0x0) {
-            value.y = fVar8 * (float)pOVar11;
-            value.x = fVar7 * (float)pOVar11;
-            value.z = fVar9 * (float)pOVar11;
+            value.y = fVar8 * (float)pMVar11;
+            value.x = fVar7 * (float)pMVar11;
+            value.z = fVar9 * (float)pMVar11;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                       (this_04,value,(MethodInfo *)0x0);
             if (cRam_? == '\0') {
@@ -2317,7 +2317,7 @@ code_?:
     }
     pvVar6 = (void *)func_?();
     if (pvVar6 == (void *)0x0) goto code_?;
-    pDVar4[1].fields.invoke_impl = pvVar6;
+    (pDVar4->fields).method = pvVar6;
     pRVar1 = (RuntimePrototypeCubeModel *)func_?();
     if (pRVar1 != (RuntimePrototypeCubeModel *)0x0) goto code_?;
   }

@@ -1033,25 +1033,14 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_GameEventManagerOnOnXpRew
 
 {
   this_01 = MVAvatarLocal_get_AvatarLocal(this,(MethodInfo *)0x0);
-  if (this_01 != (AvatarLocal *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Debug);
-      func_?(&StringLiteral_OnXpProgressing);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-              ((Object *)StringLiteral_OnXpProgressing,(MethodInfo *)0x0);
-    pMVar1 = (this_01->fields)._.mvAvatar;
-    if (((pMVar1 != (MVAvatar *)0x0) && (pMVar2 = (pMVar1->fields).body, pMVar2 != (MVBody *)0x0))
-       && (this_00 = (pMVar2->fields)._._._.gameObject, this_00 != (GameObject *)0x0)) {
-      layer = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                        (this_00,(MethodInfo *)0x0);
-      AvatarLocal::AvatarLocal_CreateXPParticlesWithLayer(this_01,obj,layer,(MethodInfo *)0x0);
-      return;
-    }
+  if ((((this_01 != (AvatarLocal *)0x0) &&
+       (pMVar1 = (this_01->fields)._.mvAvatar, pMVar1 != (MVAvatar *)0x0)) &&
+      (pMVar2 = (pMVar1->fields).body, pMVar2 != (MVBody *)0x0)) &&
+     (this_00 = (pMVar2->fields)._._._.gameObject, this_00 != (GameObject *)0x0)) {
+    layer = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
+                      (this_00,(MethodInfo *)0x0);
+    AvatarLocal::AvatarLocal_CreateXPParticlesWithLayer(this_01,obj,layer,(MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar3 = (code *)swi(3);
@@ -4920,6 +4909,42 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_Suspend
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
             ((Object *)StringLiteral_Already_suspended,(MethodInfo *)0x0);
+  return;
+}
+
+
+/* Void ToggleAudioListener(Boolean) */
+
+void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_ToggleAudioListener
+               (MVAvatarLocal *this,bool on,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__AvatarLocal);
+    cRam_? = '\x01';
+  }
+  pAVar1 = (this->fields)._.avatar;
+  pAVar2 = TypeInfo__AvatarLocal;
+  if (pAVar1 != (Avatar *)0x0) {
+    if (((pAVar1->klass->_1).naturalAligment < (TypeInfo__AvatarLocal->_1).naturalAligment) ||
+       ((pAVar1->klass->_1).typeHierarchy[(TypeInfo__AvatarLocal->_1).naturalAligment - 1] !=
+        (Il2CppClass *)TypeInfo__AvatarLocal)) goto code_?;
+    pCVar3 = pAVar1[1].fields._.m_CancellationTokenSource;
+    pAVar2 = unaff_ESI;
+    if (pCVar3 != (CancellationTokenSource *)0x0) {
+      if (pcRam_? == (code *)0x0) {
+        pcRam_? = (code *)func_?(&UNK_?,unaff_EBP);
+      }
+      (*pcRam_?)(pCVar3,_on);
+      return;
+    }
+  }
+  func_?();
+  pAVar1 = extraout_EDX;
+code_?:
+  func_?(pAVar1,pAVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

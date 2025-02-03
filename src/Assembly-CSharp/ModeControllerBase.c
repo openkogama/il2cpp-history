@@ -46,6 +46,19 @@ bool Assembly-CSharp.dll::ModeControllerBase::ModeControllerBase_CannotLeaveEdit
 }
 
 
+/* IGUICrossHair GetCrossHair() */
+
+IGUICrossHair *
+Assembly-CSharp.dll::ModeControllerBase::ModeControllerBase_GetCrossHair
+          (ModeControllerBase *this,MethodInfo *method)
+
+{
+  pIVar1 = (IGUICrossHair *)
+           (*(code *)(this->klass->vtable).GetCrossHair_1.method)(this,this->klass[1]._0.image);
+  return pIVar1;
+}
+
+
 /* Void HandleFpsShortcut() */
 
 void Assembly-CSharp.dll::ModeControllerBase::ModeControllerBase_HandleFpsShortcut
@@ -158,6 +171,59 @@ void Assembly-CSharp.dll::ModeControllerBase::ModeControllerBase_ToggleFps
   }
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
             ((Object_1 *)pGVar1,(MethodInfo *)0x0);
+  return;
+}
+
+
+/* Void TogglePlayerIndicators() */
+
+void Assembly-CSharp.dll::ModeControllerBase::ModeControllerBase_TogglePlayerIndicators
+               (ModeControllerBase *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&
+                    LocationIndicatorsManager_MethodInfo__UnityEngine__Object__Instantiate<LocationIndicatorsManager>_LocationIndicatorsManager__UnityEngine__Transform__bool_
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  pLVar1 = (this->fields).locationIndicatorsManager;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)pLVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 == 0) {
+    pLVar1 = (this->fields).locationIndicatorsManagerPrefab;
+    parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    pLVar1 = (LocationIndicatorsManager *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                       ((Object *)pLVar1,parent,0,
+                        LocationIndicatorsManager_MethodInfo__UnityEngine__Object__Instantiate<LocationIndicatorsManager>_LocationIndicatorsManager__UnityEngine__Transform__bool_
+                       );
+    (this->fields).locationIndicatorsManager = pLVar1;
+    func_?(&(this->fields).locationIndicatorsManager);
+    return;
+  }
+  pLVar1 = (this->fields).locationIndicatorsManager;
+  if (pLVar1 != (LocationIndicatorsManager *)0x0) {
+    obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    ((Component *)pLVar1,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+              ((Object_1 *)obj,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

@@ -213,7 +213,7 @@ void Assembly-CSharp.dll::GameRankRequirement::GameRankRequirement_DestroyRequir
       piVar5 = (int *)(this->fields).displayObjectOffset.x;
       this = (GameRankRequirement *)CONCAT31(this._1_3_,(char)(this->fields).requirementType);
       if (piVar5 != (int *)0x0) {
-        documentationType = (**(code **)(*piVar5 + 0x218))(piVar5,*(undefined4 *)(*piVar5 + 0x21c));
+        documentationType = (**(code **)(*piVar5 + 0x220))(piVar5,*(undefined4 *)(*piVar5 + 0x224));
         fVar6 = (pGVar1->fields).displayObjectOffset.x;
         if ((fVar6 != 0.0) && (this_00 != (GameTierShopRepository *)0x0)) {
           GameTierShopRepository::GameTierShopRepository_RemoveItemToTierShop
@@ -501,7 +501,7 @@ void Assembly-CSharp.dll::GameRankRequirement::GameRankRequirement_OnDataUpdate
           data = (Dictionary_2_System_Object_System_Object_ *)
                  CONCAT31(data._1_3_,(char)(this->fields).requirementType);
           if ((piVar12 == (int *)0x0) ||
-             (MVar13 = (**(code **)(*piVar12 + 0x218))(piVar12,*(undefined4 *)(*piVar12 + 0x21c)),
+             (MVar13 = (**(code **)(*piVar12 + 0x220))(piVar12,*(undefined4 *)(*piVar12 + 0x224)),
              pGVar11 == (GameTierShopRepository *)0x0)) goto code_?;
           GameTierShopRepository::GameTierShopRepository_AddItemToTierShop
                     (pGVar11,(GamePassTier__Enum)data,MVar13,
@@ -513,7 +513,7 @@ void Assembly-CSharp.dll::GameRankRequirement::GameRankRequirement_OnDataUpdate
           piVar12 = (int *)(this->fields).displayObjectOffset.x;
           pGVar11 = (pMVar10->fields)._GameTierShopRepository_k__BackingField;
           if (piVar12 == (int *)0x0) goto code_?;
-          MVar13 = (**(code **)(*piVar12 + 0x218))(piVar12,*(undefined4 *)(*piVar12 + 0x21c));
+          MVar13 = (**(code **)(*piVar12 + 0x220))(piVar12,*(undefined4 *)(*piVar12 + 0x224));
           fVar14 = (this->fields).displayObjectOffset.x;
           if ((fVar14 == 0.0) || (pGVar11 == (GameTierShopRepository *)0x0)) goto code_?;
           GameTierShopRepository::GameTierShopRepository_RemoveItemToTierShop
@@ -525,7 +525,7 @@ void Assembly-CSharp.dll::GameRankRequirement::GameRankRequirement_OnDataUpdate
           data = (Dictionary_2_System_Object_System_Object_ *)
                  CONCAT31(data._1_3_,(char)(this->fields).requirementType);
           if ((piVar12 == (int *)0x0) ||
-             (MVar13 = (**(code **)(*piVar12 + 0x218))(piVar12,*(undefined4 *)(*piVar12 + 0x21c)),
+             (MVar13 = (**(code **)(*piVar12 + 0x220))(piVar12,*(undefined4 *)(*piVar12 + 0x224)),
              pGVar11 == (GameTierShopRepository *)0x0)) goto code_?;
           GameTierShopRepository::GameTierShopRepository_AddItemToTierShop
                     (pGVar11,(GamePassTier__Enum)data,MVar13,
@@ -627,8 +627,8 @@ void Assembly-CSharp.dll::GameRankRequirement::GameRankRequirement_OnDelete
     piVar3 = (int *)(this->fields).displayObjectOffset.x;
     if (piVar3 != (int *)0x0) {
       documentationType =
-           (**(code **)(*piVar3 + 0x218))
-                     (piVar3,*(undefined4 *)(*piVar3 + 0x21c),(char)(this->fields).requirementType);
+           (**(code **)(*piVar3 + 0x220))
+                     (piVar3,*(undefined4 *)(*piVar3 + 0x224),(char)(this->fields).requirementType);
       fVar4 = (this->fields).displayObjectOffset.x;
       if ((fVar4 != 0.0) && (this_00 != (GameTierShopRepository *)0x0)) {
         tier = *(GamePassTier__Enum *)((int)fVar4 + 8);

@@ -10,8 +10,8 @@ UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Byte);
-    func_?(&_3B939F345D6F888B99CC792E5E9E4A8D2A0D9C337F39096A68934AC1E59F1A6C_Field);
-    func_?(&_5BB13C90335A5F483BEF438CA6B51D599194537A93F3E308D1D56C9F3A918D01_Field);
+    func_?(&D865B1F6DC62EEF37576FFF02EF44285C0ABBC42A30BE78367C2CBE8654E86DC_Field);
+    func_?(&EACC110E18615A63B68D5310D25D818CF0DBEFF86718AE70C9EB046DAC4C3140_Field);
     cRam_? = '\x01';
   }
   __return_storage_ptr__->FilePathsData = (Byte__Array *)0x0;
@@ -19,22 +19,20 @@ UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get
   __return_storage_ptr__->TotalTypes = 0;
   __return_storage_ptr__->TotalFiles = 0;
   *(undefined4 *)&__return_storage_ptr__->IsEditorOnly = 0;
-  pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x2a52e);
+  pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x2a962);
   mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::RuntimeHelpers_InitializeArray_1
-            ((Array *)pBVar1,
-             __3B939F345D6F888B99CC792E5E9E4A8D2A0D9C337F39096A68934AC1E59F1A6C_Field,
-             (MethodInfo *)0x0);
+            ((Array *)pBVar1,_EACC110E18615A63B68D5310D25D818CF0DBEFF86718AE70C9EB046DAC4C3140_Field
+             ,(MethodInfo *)0x0);
   __return_storage_ptr__->FilePathsData = pBVar1;
   func_?(__return_storage_ptr__,pBVar1);
-  pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x15227);
+  pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x153b1);
   mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::RuntimeHelpers_InitializeArray_1
-            ((Array *)pBVar1,
-             __5BB13C90335A5F483BEF438CA6B51D599194537A93F3E308D1D56C9F3A918D01_Field,
-             (MethodInfo *)0x0);
+            ((Array *)pBVar1,_D865B1F6DC62EEF37576FFF02EF44285C0ABBC42A30BE78367C2CBE8654E86DC_Field
+             ,(MethodInfo *)0x0);
   __return_storage_ptr__->TypesData = pBVar1;
   func_?(&__return_storage_ptr__->TypesData,pBVar1);
-  __return_storage_ptr__->TotalFiles = 0x81c;
-  __return_storage_ptr__->TotalTypes = 0xaa0;
+  __return_storage_ptr__->TotalFiles = 0x828;
+  __return_storage_ptr__->TotalTypes = 0xaad;
   __return_storage_ptr__->IsEditorOnly = 0;
   return __return_storage_ptr__;
 }

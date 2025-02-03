@@ -329,45 +329,55 @@ void Assembly-CSharp.dll::LevelProgressAccessoryShop::LevelProgressAccessoryShop
     if (pTVar4 != (Text *)0x0) {
       (*(code *)(pTVar4->klass->vtable).set_text.method)
                 (pTVar4,pSVar7,(pTVar4->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      this_00 = (ProgressBarAndroid *)(this->fields).progressBar;
-      if (this_00 != (ProgressBarAndroid *)0x0) {
-        ProgressBarAndroid::ProgressBarAndroid_set_Progress
-                  (this_00,(float)(iVar2 - (int)pTStack_3) / (float)(iVar1 - (int)pTStack_3),
-                   (MethodInfo *)0x0);
-        pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar8 != (MVNetworkGame *)0x0) &&
-           (pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar8,(MethodInfo *)0x0),
-           pMVar9 != (MVLocalPlayer *)0x0)) {
-          if ((pMVar9->fields)._.level == (this->fields).badgeLevel) {
-            return;
-          }
-          pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar8 != (MVNetworkGame *)0x0) &&
-             (pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar8,(MethodInfo *)0x0),
-             pMVar9 != (MVLocalPlayer *)0x0)) {
-            (this->fields).badgeLevel = (pMVar9->fields)._.level;
-            pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if ((pMVar8 != (MVNetworkGame *)0x0) &&
-               (pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar8,(MethodInfo *)0x0),
-               pMVar9 != (MVLocalPlayer *)0x0)) {
-              iVar1 = (pMVar9->fields)._.level;
-              this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-                        func_?(
-                                       TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
-                                       );
-              Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-              SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-              SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-                        (this_01,(Object *)this,
-                         MethodInfo__LevelProgressAccessoryShop__OnLevelingBadgeLoaded_UnityEngine__Networking__UnityWebRequest_
-                         ,(MethodInfo *)0x0);
-              if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__BadgeManager);
-              }
-              BadgeManager::BadgeManager_GetBadgeTexture
-                        (iVar1,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
-                         (MethodInfo *)0x0);
+      pPVar8 = (this->fields).progressBar;
+      if (pPVar8 != (ProgressBar *)0x0) {
+        value = (float)(iVar2 - (int)pTStack_3) / (float)(iVar1 - (int)pTStack_3);
+        if (value < 0.0) {
+          value = 0.0;
+        }
+        else if (_UNK_? < value) {
+          value = _UNK_?;
+        }
+        (pPVar8->fields).progress = value;
+        this_00 = (pPVar8->fields).progressBar;
+        if (this_00 != (Scrollbar *)0x0) {
+          UnityEngine.UI.dll::UnityEngine::UI::Scrollbar::Scrollbar_set_size
+                    (this_00,value,(MethodInfo *)0x0);
+          pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar9 != (MVNetworkGame *)0x0) &&
+             (pMVar10 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar9,(MethodInfo *)0x0),
+             pMVar10 != (MVLocalPlayer *)0x0)) {
+            if ((pMVar10->fields)._.level == (this->fields).badgeLevel) {
               return;
+            }
+            pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if ((pMVar9 != (MVNetworkGame *)0x0) &&
+               (pMVar10 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar9,(MethodInfo *)0x0),
+               pMVar10 != (MVLocalPlayer *)0x0)) {
+              (this->fields).badgeLevel = (pMVar10->fields)._.level;
+              pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if ((pMVar9 != (MVNetworkGame *)0x0) &&
+                 (pMVar10 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar9,(MethodInfo *)0x0),
+                 pMVar10 != (MVLocalPlayer *)0x0)) {
+                iVar1 = (pMVar10->fields)._.level;
+                this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
+                          func_?(
+                                         TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
+                                         );
+                Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes
+                ::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
+                SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+                          (this_01,(Object *)this,
+                           MethodInfo__LevelProgressAccessoryShop__OnLevelingBadgeLoaded_UnityEngine__Networking__UnityWebRequest_
+                           ,(MethodInfo *)0x0);
+                if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?(TypeInfo__BadgeManager);
+                }
+                BadgeManager::BadgeManager_GetBadgeTexture
+                          (iVar1,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
+                           (MethodInfo *)0x0);
+                return;
+              }
             }
           }
         }
@@ -375,8 +385,8 @@ void Assembly-CSharp.dll::LevelProgressAccessoryShop::LevelProgressAccessoryShop
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

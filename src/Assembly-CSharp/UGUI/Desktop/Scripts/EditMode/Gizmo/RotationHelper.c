@@ -90,9 +90,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
                            );
         if (pOVar16 != (Object *)0x0) {
           func_?();
-          puVar17 = (undefined8 *)func_?(&LStack_12._index,0x40,pOVar16,uStack_10);
+          puVar17 = (undefined8 *)func_?(&LStack_12._index,0x41,pOVar16,uStack_10);
           uVar8 = *puVar17;
-          func_?(0x1d,pOVar16);
+          func_?(0x1e,pOVar16);
         }
       }
     }
@@ -155,7 +155,7 @@ Vector3 * Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::Rotation
                           MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                          );
       if (pOVar4 != (Object *)0x0) {
-        puVar5 = (undefined8 *)(*(code *)pOVar4->klass[2]._0.byval_arg.data)();
+        puVar5 = (undefined8 *)(*(code *)pOVar4->klass[2]._0.this_arg.data)();
         uVar6 = *puVar5;
         fVar3 = *(float *)(puVar5 + 1);
         __return_storage_ptr__->x = (float)(int)uVar6;
@@ -562,7 +562,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
                            ((WorldObjectClientRef_1_System_Object_ *)RVar14,
                             MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                            ), pOVar13 == (Object *)0x0)) goto code_?;
-    puVar15 = (undefined8 *)(*(code *)pOVar13->klass[2]._0.byval_arg.data)();
+    puVar15 = (undefined8 *)(*(code *)pOVar13->klass[2]._0.this_arg.data)();
     uVar16 = *puVar15;
     fStack_17 = *(float *)(puVar15 + 1);
   }
@@ -663,9 +663,9 @@ code_?:
                  rotationSpeed - _UNK_?,(MethodInfo *)0x0);
       MVWorldObjectClient::MVWorldObjectClient_get_SyncRot
                 ((Quaternion *)&pHStack_11,(MVWorldObjectClient *)RVar14,(MethodInfo *)0x0);
-      pHStack_11 = *(HashSet_1_System_UInt32_ **)(*(int *)RVar14 + 0x1bc);
+      pHStack_11 = *(HashSet_1_System_UInt32_ **)(*(int *)RVar14 + 0x1c4);
       pMVar4 = (MethodInfo *)&UNK_?;
-      (**(code **)(*(int *)RVar14 + 0x1b8))();
+      (**(code **)(*(int *)RVar14 + 0x1c0))();
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57

@@ -234,16 +234,6 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_OnXpProgressing
                (AvatarLocal *this,int32_t xp,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_OnXpProgressing);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-            ((Object *)StringLiteral_OnXpProgressing,(MethodInfo *)0x0);
   pMVar1 = (this->fields)._.mvAvatar;
   if (((pMVar1 != (MVAvatar *)0x0) && (pMVar2 = (pMVar1->fields).body, pMVar2 != (MVBody *)0x0)) &&
      (this_00 = (pMVar2->fields)._._._.gameObject, this_00 != (GameObject *)0x0)) {
@@ -267,6 +257,31 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_PrewarmXPParticles
 {
   layer = LayerUtil::LayerUtil_GetLayerNumber(LayerFlags__Enum_Hidden,(MethodInfo *)0x0);
   AvatarLocal_CreateXPParticlesWithLayer(this,0,layer,(MethodInfo *)0x0);
+  return;
+}
+
+
+/* Void ToggleAudioListener(Boolean) */
+
+void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_ToggleAudioListener
+               (AvatarLocal *this,bool on,MethodInfo *method)
+
+{
+  puStack_1 = &stack0xfffffffc;
+  pAVar2 = (this->fields).audioListener;
+  if (pAVar2 != (AudioListener *)0x0) {
+    if (pcRam_? == (code *)0x0) {
+      pcRam_? = (code *)func_?();
+    }
+    puStack_1 = (undefined1 *)_on;
+    pAStack_3 = pAVar2;
+    (*pcRam_?)();
+    return;
+  }
+  uVar4 = func_?(&puStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

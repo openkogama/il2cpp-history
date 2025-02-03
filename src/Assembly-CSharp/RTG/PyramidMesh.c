@@ -452,7 +452,7 @@ Mesh * Assembly-CSharp.dll::RTG::PyramidMesh::PyramidMesh_CreateWirePyramid
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Int32);
     func_?(&TypeInfo__UnityEngine__Mesh);
-    func_?(&::_17E1E703EDA761039900D6BB1C5192E9763DE7DC9EB806A138CBA99BD3244931_Field);
+    func_?(&_17E1E703EDA761039900D6BB1C5192E9763DE7DC9EB806A138CBA99BD3244931_Field);
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }

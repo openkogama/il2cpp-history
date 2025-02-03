@@ -54,7 +54,7 @@ code_?:
     this = (CreateCubeModelController *)TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>;
     if (original == (Delegate *)0x0) {
       iRam_? = 0;
-      pDStack2 = (Delegate *)0x30;
+      pDStack2 = (Delegate *)0x20;
       pUStack3 = (UnityAction_1_System_Byte___Class *)original;
       func_?();
       return;
@@ -70,7 +70,7 @@ code_?:
     iRam_? = iVar4;
     pUStack3 = (UnityAction_1_System_Byte___Class *)func_?();
     if (pUStack3 != (UnityAction_1_System_Byte___Class *)0x0) {
-      pDStack2 = (Delegate *)0x30;
+      pDStack2 = (Delegate *)0x20;
       func_?();
       return;
     }

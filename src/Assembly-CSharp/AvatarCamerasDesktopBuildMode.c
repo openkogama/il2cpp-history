@@ -155,18 +155,18 @@ void Assembly-CSharp.dll::AvatarCamerasDesktopBuildMode::AvatarCamerasDesktopBui
             if (this_00 != (MVCameraController *)0x0) {
               MVCameraController::MVCameraController_Initialize
                         (this_00,cameraBases,(MethodInfo *)0x0);
-              pMVar4 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                                 ((MethodInfo *)0x0);
-              if (pMVar4 != (MainCameraManager *)0x0) {
-                bVar5 = mscorlib.dll::System::Runtime::Serialization::ObjectHolder::
-                        ObjectHolder_get_TypeLoadExceptionReachable
-                                  ((ObjectHolder *)pMVar4,(MethodInfo *)0x0);
-                if (bVar5 == 0) {
-                  pMVar4 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                                     ((MethodInfo *)0x0);
-                  if (pMVar4 == (MainCameraManager *)0x0) goto code_?;
+              this_01 = (SchemaElementDecl *)
+                        MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                  ((MethodInfo *)0x0);
+              if (this_01 != (SchemaElementDecl *)0x0) {
+                bVar4 = System.Xml.dll::System::Xml::Schema::SchemaElementDecl::
+                        SchemaElementDecl_get_HasDefaultAttribute(this_01,(MethodInfo *)0x0);
+                if (bVar4 == 0) {
+                  this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                      ((MethodInfo *)0x0);
+                  if (this_02 == (MainCameraManager *)0x0) goto code_?;
                   MainCameraManager::MainCameraManager_SetCameraController
-                            (pMVar4,(this->fields).cameraController,(MethodInfo *)0x0);
+                            (this_02,(this->fields).cameraController,(MethodInfo *)0x0);
                 }
                 return;
               }
@@ -178,8 +178,8 @@ void Assembly-CSharp.dll::AvatarCamerasDesktopBuildMode::AvatarCamerasDesktopBui
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

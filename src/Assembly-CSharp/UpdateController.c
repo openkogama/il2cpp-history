@@ -902,8 +902,10 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_UpdateList
     } while( true );
   }
   func_?();
-  uVar15 = func_?();
-  func_?(uVar15);
+  uVar15 = func_?(&
+                          MethodInfo__UpdateController__UpdateList_int__System__Collections__Generic__List<PriorityDataUpdate>_
+                         );
+  func_?(priorityDatas,uVar15);
   pLStack_16 = priorityDatas->klass;
   func_?(&pLStack_16,&UNK_?);
   pcVar17 = (code *)swi(3);

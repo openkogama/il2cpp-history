@@ -1,9 +1,9 @@
 
 /* Void <get_WorldIDsRecursive>b__0(MVWorldObjectClient) */
 
-void Assembly-CSharp.dll::MVWorldObjectClient+<>c__DisplayClass51_0::
-     MVWorldObjectClient_c_DisplayClass51_0__get_WorldIDsRecursive_b__0
-               (MVWorldObjectClient_c_DisplayClass51_0 *this,MVWorldObjectClient *wo,
+void Assembly-CSharp.dll::MVWorldObjectClient+<>c__DisplayClass53_0::
+     MVWorldObjectClient_c_DisplayClass53_0__get_WorldIDsRecursive_b__0
+               (MVWorldObjectClient_c_DisplayClass53_0 *this,MVWorldObjectClient *wo,
                MethodInfo *method)
 
 {

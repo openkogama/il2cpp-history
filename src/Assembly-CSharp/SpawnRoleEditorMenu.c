@@ -318,36 +318,16 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
     }
     colorStyle = ColorStyle__Enum_OffGray;
   }
-  pCVar2 = Styles::Styles_GetColor(&CStack_3,colorStyle,(MethodInfo *)0x0);
-  cVar4 = '\0';
+  pCVar2 = Styles::Styles_GetColor((Color *)&fStack_3,colorStyle,(MethodInfo *)0x0);
   if (pIVar1 == (Image *)0x0) {
-    CStack_3.g = (float)&UNK_?;
-    uVar5 = func_?();
-    iVar6 = (int)((ulonglong)uVar5 >> 0x20);
-    uVar7 = unaff_EDI + 1;
-    pcVar8 = (char *)((int)uVar5 + iVar6);
-    bVar9 = (byte)extraout_ECX;
-    cVar10 = *pcVar8;
-    *pcVar8 = *pcVar8 >> (bVar9 & 0x1f);
-    bVar11 = (extraout_ECX & 0x1f) == 0;
-    bVar12 = (extraout_ECX & 0x1f) != 0;
-    iVar13 = CONCAT22((short)((ulonglong)uVar5 >> 0x10),
-                     CONCAT11((!bVar12 && (int)uVar7 < 0 || bVar12 && *pcVar8 < '\0') << 7 |
-                              (!bVar12 && uVar7 == 0 || bVar12 && *pcVar8 == '\0') << 6 | in_AF << 4
-                              | (!bVar12 && (POPCOUNT(uVar7 & 0xff) & 1U) == 0 ||
-                                bVar12 && (POPCOUNT(*pcVar8) & 1U) == 0) << 2 | 2U |
-                              bVar11 * cVar4 | !bVar11 * ((cVar10 >> (bVar9 & 0x1f) - 1 & 1U) != 0),
-                              (char)uVar5));
-    pcVar8 = (char *)(iVar13 + iVar6);
-    *pcVar8 = *pcVar8 >> (bVar9 & 0x1f);
-    pcVar8 = (char *)(iVar13 + iVar6);
-    *pcVar8 = *pcVar8 >> (bVar9 & 0x1f);
-    pcVar14 = (code *)swi(3);
-    (*pcVar14)();
+    func_?();
+    uRam_? = uRam_? | unaff_EDI;
+    uRam_? = uRam_? | unaff_EDI;
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
     return;
   }
-  CStack_3.r = pCVar2->a;
-  CStack_3.g = (float)(pIVar1->klass->vtable).get_raycastTarget.methodPtr;
+  fStack_3 = pCVar2->a;
   (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,pCVar2->r,pCVar2->g,pCVar2->b);
   return;
 }
@@ -450,111 +430,97 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_Initialize
           team = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team
                            (pMVar2,(MethodInfo *)0x0);
           SpawnRoleEditorMenu_ChangeTeamImageColor(this_02,team,(MethodInfo *)0x0);
-          spawnRoleWoId = SpawnRoleEditorMenu_CalculateSpawnRoleCost(this_02,(MethodInfo *)0x0);
+          this = (SpawnRoleEditorMenu *)
+                 SpawnRoleEditorMenu_CalculateSpawnRoleCost(this_02,(MethodInfo *)0x0);
           pMVar2 = (this_02->fields).spawnRole;
           this_05 = (MVAvatarSpawnRoleCreator__Class *)(this_02->fields).tierEditorMenu;
           if (pMVar2 != (MVAvatarSpawnRoleCreator *)0x0) {
             GVar4 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Tier
                               (pMVar2,(MethodInfo *)0x0);
-            this = (SpawnRoleEditorMenu *)CONCAT13((char)GVar4,this._0_3_);
-            this_04 = (Il2CppClass *)
+            spawnRoleWoId = CONCAT31(spawnRoleWoId._1_3_,(char)GVar4);
+            this_04 = (UnityAction_1_System_Int32Enum_ *)
                       func_?(
                                      TypeInfo__UnityEngine__Events__UnityAction<MV::Common::GamePassTier>
                                      );
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
             UnityAction_1_System_Int32Enum___ctor
-                      ((UnityAction_1_System_Int32Enum_ *)this_04,(Object *)this_02,
+                      (this_04,(Object *)this_02,
                        MethodInfo__SpawnRoleEditorMenu__OnChangeTier_MV__Common__GamePassTier_,
                        (MethodInfo *)0x0);
             if (this_05 != (MVAvatarSpawnRoleCreator__Class *)0x0) {
-              (this_05->_0).declaringType = this_04;
-              func_?(&(this_05->_0).declaringType,this_04);
-              pTVar5 = (Text *)(this_05->_0).byval_arg.data.array;
-              (this_05->_0).element_class = (Il2CppClass *)spawnRoleWoId;
-              *(byte *)&(this_05->_0).castClass = this._3_1_;
-              this = (SpawnRoleEditorMenu *)(uint)this._3_1_;
+              SpawnRoleTierEditorMenu::SpawnRoleTierEditorMenu_Initialize
+                        ((SpawnRoleTierEditorMenu *)this_05,spawnRoleWoId,(int32_t)this,
+                         (UnityAction_1_MV_Common_GamePassTier_ *)this_04,(MethodInfo *)0x0);
+              if (cRam_? == '\0') {
+                func_?(&TypeInfo__UnityEngine__Object);
+                cRam_? = '\x01';
+              }
+              this = (SpawnRoleEditorMenu *)
+                     SpawnRoleEditorMenu_CalculateSpawnRoleCost(this_02,(MethodInfo *)0x0);
+              pTVar5 = (this_02->fields).spawnRoleCostText;
               pSVar6 = mscorlib.dll::System::Int32::Int32_ToString
                                   ((Int32 *)&this,(MethodInfo *)0x0);
+              this_05 = (MVAvatarSpawnRoleCreator__Class *)0x0;
               if (pTVar5 != (Text *)0x0) {
                 (*(code *)(pTVar5->klass->vtable).set_text.method)
                           (pTVar5,pSVar6,
                            (pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-                SpawnRoleTierEditorMenu::SpawnRoleTierEditorMenu_UpdateSpawnRoleCost
-                          ((SpawnRoleTierEditorMenu *)this_05,(int32_t)(this_05->_0).element_class,
-                           (MethodInfo *)0x0);
-                if (cRam_? == '\0') {
-                  func_?(&TypeInfo__UnityEngine__Object);
-                  cRam_? = '\x01';
-                }
-                this = (SpawnRoleEditorMenu *)
-                       SpawnRoleEditorMenu_CalculateSpawnRoleCost(this_02,(MethodInfo *)0x0);
-                pTVar5 = (this_02->fields).spawnRoleCostText;
-                pSVar6 = mscorlib.dll::System::Int32::Int32_ToString
-                                    ((Int32 *)&this,(MethodInfo *)0x0);
-                this_05 = (MVAvatarSpawnRoleCreator__Class *)0x0;
-                if (pTVar5 != (Text *)0x0) {
-                  (*(code *)(pTVar5->klass->vtable).set_text.method)
-                            (pTVar5,pSVar6,
-                             (pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-                  this_05 = (MVAvatarSpawnRoleCreator__Class *)(this_02->fields).spawnRoleCostText;
-                  pCVar7 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetCostColor
-                                      (&CStack_1,(int32_t)this,(MethodInfo *)0x0);
-                  if (this_05 != (MVAvatarSpawnRoleCreator__Class *)0x0) {
-                    pTVar8 = (Transform__Class *)(this_05->_0).image;
-                    (*(code *)pTVar8[1]._1.thread_static_fields_size)
-                              (this_05,pCVar7->r,pCVar7->g,pCVar7->b,pCVar7->a,
-                               pTVar8[1]._1.thread_static_fields_offset);
-                    this_00 = (this_02->fields).tierEditorMenu;
-                    if (this_00 != (SpawnRoleTierEditorMenu *)0x0) {
-                      SpawnRoleTierEditorMenu::SpawnRoleTierEditorMenu_UpdateSpawnRoleCost
-                                (this_00,(int32_t)this,(MethodInfo *)0x0);
-                      x = (this_02->fields).skillsEditorMenu;
-                      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                        func_?(TypeInfo__UnityEngine__Object);
+                this_05 = (MVAvatarSpawnRoleCreator__Class *)(this_02->fields).spawnRoleCostText;
+                pCVar7 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetCostColor
+                                    (&CStack_1,(int32_t)this,(MethodInfo *)0x0);
+                if (this_05 != (MVAvatarSpawnRoleCreator__Class *)0x0) {
+                  pTVar8 = (Transform__Class *)(this_05->_0).image;
+                  (*(code *)pTVar8[1]._1.thread_static_fields_size)
+                            (this_05,pCVar7->r,pCVar7->g,pCVar7->b,pCVar7->a,
+                             pTVar8[1]._1.thread_static_fields_offset);
+                  this_00 = (this_02->fields).tierEditorMenu;
+                  if (this_00 != (SpawnRoleTierEditorMenu *)0x0) {
+                    SpawnRoleTierEditorMenu::SpawnRoleTierEditorMenu_UpdateSpawnRoleCost
+                              (this_00,(int32_t)this,(MethodInfo *)0x0);
+                    x = (this_02->fields).skillsEditorMenu;
+                    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                      func_?(TypeInfo__UnityEngine__Object);
+                    }
+                    bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+                    pSVar10 = this;
+                    if (bVar9 == 0) {
+                      return;
+                    }
+                    this_05 = (MVAvatarSpawnRoleCreator__Class *)(this_02->fields).skillsEditorMenu;
+                    if (this_05 != (MVAvatarSpawnRoleCreator__Class *)0x0) {
+                      if (cRam_? == '\0') {
+                        func_?(&
+                                        MethodInfo__System__Collections__Generic__List<SkillSettingBase>__get_Count__
+                                       );
+                        func_?(&
+                                        MethodInfo__System__Collections__Generic__List<SkillSettingBase>__get_Item_int_
+                                       );
+                        cRam_? = '\x01';
                       }
-                      bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::
-                              Object_1_op_Inequality
-                                        ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-                      pSVar10 = this;
-                      if (bVar9 == 0) {
-                        return;
-                      }
-                      this_05 = (MVAvatarSpawnRoleCreator__Class *)
-                                (this_02->fields).skillsEditorMenu;
-                      if (this_05 != (MVAvatarSpawnRoleCreator__Class *)0x0) {
-                        if (cRam_? == '\0') {
-                          func_?(&
-                                          MethodInfo__System__Collections__Generic__List<SkillSettingBase>__get_Count__
-                                         );
-                          func_?(&
-                                          MethodInfo__System__Collections__Generic__List<SkillSettingBase>__get_Item_int_
-                                         );
-                          cRam_? = '\x01';
+                      p_Var4 = (this_05->_0).typeMetadataHandle;
+                      index = 0;
+                      (this_05->_0).parent = (Il2CppClass *)pSVar10;
+                      while (p_Var4 != (Il2CppMetadataTypeHandle)0x0) {
+                        if (*(int *)(p_Var4 + 0xc) <= index) {
+                          return;
                         }
-                        p_Var4 = (this_05->_0).typeMetadataHandle;
-                        index = 0;
-                        (this_05->_0).parent = (Il2CppClass *)pSVar10;
-                        while (p_Var4 != (Il2CppMetadataTypeHandle)0x0) {
-                          if (*(int *)(p_Var4 + 0xc) <= index) {
-                            return;
-                          }
-                          this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                     *)(this_05->_0).typeMetadataHandle;
-                          if ((this_01 ==
-                               (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                               0x0) || (RVar11 = mscorlib.dll::System::Collections::Generic::
-                                                 List`1[System::Text::RegularExpressions::
-                                                 RegexCharClass+SingleRange]::
-                                                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                                           (this_01,index,
-                                                                                                                        
+                        this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                   *)(this_05->_0).typeMetadataHandle;
+                        if ((this_01 ==
+                             (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             0x0) || (RVar11 = mscorlib.dll::System::Collections::Generic::
+                                               List`1[System::Text::RegularExpressions::
+                                               RegexCharClass+SingleRange]::
+                                               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                                         (this_01,index,
+                                                                                                                    
                                                   MethodInfo__System__Collections__Generic__List<SkillSettingBase>__get_Item_int_
                                                   ), RVar11 == (RegexCharClass_SingleRange)0x0))
-                          break;
-                          *(SpawnRoleEditorMenu **)((int)RVar11 + 0x50) = pSVar10;
-                          index = index + 1;
-                          p_Var4 = (this_05->_0).typeMetadataHandle;
-                        }
+                        break;
+                        *(SpawnRoleEditorMenu **)((int)RVar11 + 0x50) = pSVar10;
+                        index = index + 1;
+                        p_Var4 = (this_05->_0).typeMetadataHandle;
                       }
                     }
                   }

@@ -31,6 +31,8 @@ public class MainCameraManager : MonoBehaviour
 	[SerializeField]
 	private Skybox skybox;
 	[SerializeField]
+	private AudioListener audioListener;
+	[SerializeField]
 	private LineDrawManager lineDrawManager;
 	[SerializeField]
 	private ScreenSizeOptimizer screenSizeOptimizer;
@@ -101,6 +103,7 @@ public class MainCameraManager : MonoBehaviour
 	public static bool HasSetting(MVGameType gameType);
 	public void PlayPlingSound();
 	public void SetCameraController(MVCameraController camController);
+	public void UpdateAudioListener();
 	public bool IsCameraControllerSet();
 	protected void Awake();
 	public void IgnoreInputTypes(IgnoreInputTypes inputTypes);

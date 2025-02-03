@@ -45,9 +45,11 @@ void Assembly-CSharp.dll::SprayCubes::SprayCubes_Enter
       if (((pGVar2 != (GameEventManager *)0x0) &&
           (pGVar3 = (pGVar2->fields).AvatarCommandsBuildMode,
           pGVar3 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-         (this_00 = (RTFocusCamera *)(pGVar3->fields).LaserCommands, this_00 != (RTFocusCamera *)0x0
-         )) {
-        RTG::RTFocusCamera::RTFocusCamera_OnPrjSwitchTransitionBegin(this_00,5,(MethodInfo *)0x0);
+         (this_00 = (pGVar3->fields).LaserCommands,
+         this_00 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+        GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
+        GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
+                  (this_00,LaserPointerState__Enum_SprayCubes,(MethodInfo *)0x0);
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -75,7 +77,7 @@ void Assembly-CSharp.dll::SprayCubes::SprayCubes_Execute
   *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
-    func_?(0xe90);
+    func_?(0x8210);
     func_?(&TypeInfo__Cube);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&TypeInfo__MVInputWrapper);
@@ -142,7 +144,7 @@ code_?:
           if (CVar10 == CanPerformCubeActionResult__Enum_Yes) {
             pos.y = iVar3;
             pos.x = iVar2;
-            iVar2 = 0x6ef9;
+            iVar2 = 0x7fa9;
             iVar3 = 0x1046;
             pos.z = (int16_t)e;
             pCVar11 = e;

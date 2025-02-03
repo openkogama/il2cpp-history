@@ -1,9 +1,9 @@
 
 /* Vector3 <GetBoundsCornersWorld>b__0(Vector3) */
 
-Vector3 * Assembly-CSharp.dll::MVWorldObjectClient+<>c__DisplayClass164_0::
-          MVWorldObjectClient_c_DisplayClass164_0__GetBoundsCornersWorld_b__0
-                    (Vector3 *__return_storage_ptr__,MVWorldObjectClient_c_DisplayClass164_0 *this,
+Vector3 * Assembly-CSharp.dll::MVWorldObjectClient+<>c__DisplayClass166_0::
+          MVWorldObjectClient_c_DisplayClass166_0__GetBoundsCornersWorld_b__0
+                    (Vector3 *__return_storage_ptr__,MVWorldObjectClient_c_DisplayClass166_0 *this,
                     Vector3 localCorner,MethodInfo *method)
 
 {

@@ -122,7 +122,7 @@ bool Assembly-CSharp.dll::TeleportAvatar+<Start>d__16::TeleportAvatar_Start_d_16
         uVar16._4_4_ = (this_00->fields).targetPosition.y;
         (*(code *)(pMVar3->klass->vtable).set_WorldPosition.method)
                   (pMVar3,uVar16,(this_00->fields).targetPosition.z,
-                   (pMVar3->klass->vtable).get_WorldRotation_1.methodPtr);
+                   (pMVar3->klass->vtable).get_IsTransformDefined.methodPtr);
         pMVar3 = (this_00->fields).avatar;
         if (pMVar3 != (MVAvatarLocal *)0x0) {
           uVar17._0_4_ = (this_00->fields).targetPosition.x;

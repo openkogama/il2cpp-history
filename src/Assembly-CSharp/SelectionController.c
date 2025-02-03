@@ -63,7 +63,7 @@ void Assembly-CSharp.dll::SelectionController::SelectionController_DeSelectAll
       pMVar12 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                          (pMVar11,id,(MethodInfo *)0x0);
       if (pMVar12 == (MVWorldObject *)0x0) goto code_?;
-      (*pMVar12->klass[1].vtable.DeepCopy.methodPtr)();
+      (*pMVar12->klass[1].vtable.PartialUpdateWOData.methodPtr)();
       pMVar11 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       pAStack_13 = (Action_2_Object_WorldObjectDestroyedEventArgs_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]

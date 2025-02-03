@@ -16,14 +16,14 @@ DesktopCubeModelingToolsController_CurrentlyHovered
     CVar6 = (*pcVar5)();
     return CVar6;
   }
-  if ((pCVar2->fields)._SelectedCube_k__BackingField == (CubePickingInfo *)0x0) {
-    return CubeModelingStateMachine_HoverType__Enum_None;
+  if ((pCVar2->fields)._SelectedCube_k__BackingField != (CubePickingInfo *)0x0) {
+    pCVar7 = (pCVar2->fields)._SelectedCube_k__BackingField;
+    if (((pCVar7->fields).pickedEdgeIndex0 == 0) && ((pCVar7->fields).pickedEdgeIndex1 == 0)) {
+      return CubeModelingStateMachine_HoverType__Enum_Face - ((pCVar7->fields).pickedEdge != 0);
+    }
+    return CubeModelingStateMachine_HoverType__Enum_Corner;
   }
-  pCVar7 = (pCVar2->fields)._SelectedCube_k__BackingField;
-  if (((pCVar7->fields).pickedEdgeIndex0 == 0) && ((pCVar7->fields).pickedEdgeIndex1 == 0)) {
-    return CubeModelingStateMachine_HoverType__Enum_Face - ((pCVar7->fields).pickedEdge != 0);
-  }
-  return CubeModelingStateMachine_HoverType__Enum_Corner;
+  return CubeModelingStateMachine_HoverType__Enum_None;
 }
 
 
@@ -197,6 +197,7 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
     pIVar1 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
                        ((Selectable *)this_00,(MethodInfo *)0x0);
     pIStack_2 = (Image *)(this->fields).enabledAlpha;
+    unaff_EDI = (undefined4 *)0x0;
     if (pIVar1 != (Image *)0x0) {
       pIStack_3 = (pIVar1->klass->vtable).set_color.methodPtr;
       pIStack_4 = pIVar1;
@@ -210,7 +211,8 @@ code_?:
     }
   }
   func_?();
-  *(undefined4 **)(extraout_ECX + -0x5e71efcc) = &uStack_6;
+  *unaff_EDI = this->klass;
+  unaff_EDI[1] = this->monitor;
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
   return;

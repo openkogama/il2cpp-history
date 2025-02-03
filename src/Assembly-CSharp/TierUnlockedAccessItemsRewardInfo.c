@@ -80,23 +80,22 @@ void Assembly-CSharp.dll::TierUnlockedAccessItemsRewardInfo::
     func_?(&TypeInfo__TierUnlockedAccessItemsRewardInfo____c__DisplayClass8_0);
     cRam_? = '\x01';
   }
-  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-            func_?(TypeInfo__TierUnlockedAccessItemsRewardInfo____c__DisplayClass8_0);
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+  method_00 = TypeInfo__TierUnlockedAccessItemsRewardInfo____c__DisplayClass8_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   original = (this->fields).tierUnlockedItemsPopupPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pLVar1 = (List_1_System_Object_ *)
+  pOVar1 = (Object__Class *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)original,
                       TierUnlockAccessItemsPopup_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockAccessItemsPopup>_TierUnlockAccessItemsPopup_
                      );
-  if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-    (this_00->fields)._._defaultValue_k__BackingField = pLVar1;
-    func_?(&this_00->fields);
+  if (value != (Object *)0x0) {
+    value[1].klass = pOVar1;
+    func_?(value + 1,pOVar1);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
     callbackFunction =
@@ -106,7 +105,7 @@ void Assembly-CSharp.dll::TierUnlockedAccessItemsRewardInfo::
                         );
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_00,
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
                MethodInfo__TierUnlockedAccessItemsRewardInfo____c__DisplayClass8_0___OnSeeItemsButtonPressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
@@ -116,71 +115,16 @@ void Assembly-CSharp.dll::TierUnlockedAccessItemsRewardInfo::
               (root,(BaseEventData *)0x0,callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
-    pLVar1 = (this_00->fields)._._defaultValue_k__BackingField;
-    tierShopData = (this->fields).tierShopData;
-    if (pLVar1 != (List_1_System_Object_ *)0x0) {
-      if (cRam_? == '\0') {
-        func_?();
-        func_?(&
-                        MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
-                       );
-        func_?(&
-                        TierUnlockedItemElement_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedItemElement>_TierUnlockedItemElement_
-                       );
-        func_?(&TypeInfo__UnityEngine__Object);
-        cRam_? = '\x01';
-      }
-      this_01 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                TierUnlockAccessItemsPopup::TierUnlockAccessItemsPopup_GetSortedData
-                          ((TierUnlockAccessItemsPopup *)pLVar1,tierShopData,(MethodInfo *)0x0);
-      this = (TierUnlockedAccessItemsRewardInfo *)0x0;
-      if (this_01 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-        while( true ) {
-          if ((this_01->fields)._size <= (int)this) {
-            return;
-          }
-          pTVar2 = (TierUnlockedItemElement *)(pLVar1->fields)._syncRoot;
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Object);
-          }
-          pTVar2 = (TierUnlockedItemElement *)
-                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                             ((Object *)pTVar2,
-                              TierUnlockedItemElement_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedItemElement>_TierUnlockedItemElement_
-                             );
-          if (pTVar2 == (TierUnlockedItemElement *)0x0) break;
-          this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)pTVar2,(MethodInfo *)0x0);
-          if (this_02 == (Transform *)0x0) break;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (this_02,(Transform *)(pLVar1->fields)._version,0,(MethodInfo *)0x0);
-          pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                   VisualTreeAsset+UsingEntry]::
-                   List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                             (&VStack_4,this_01,(int32_t)this,
-                              MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
-                             );
-          TierUnlockedItemElement::TierUnlockedItemElement_SetTeam
-                    (pTVar2,(MVTeam__Enum)pVVar3->asset,(MethodInfo *)0x0);
-          pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                   VisualTreeAsset+UsingEntry]::
-                   List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                             ((VisualTreeAsset_UsingEntry *)&stack0xffffffcc,this_01,(int32_t)this,
-                              MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
-                             );
-          uStack_5._0_4_ = pVVar3->alias;
-          uStack_5._4_4_ = pVVar3->path;
-          TierUnlockedItemElement::TierUnlockedItemElement_Initialize
-                    (pTVar2,(List_1_MVWorldObjectClient_ *)uStack_5._4_4_,(int32_t)this,
-                     (MethodInfo *)0x0);
-          this = (TierUnlockedAccessItemsRewardInfo *)((int)&this->klass + 1);
-        }
-      }
+    if (value[1].klass != (Object__Class *)0x0) {
+      TierUnlockAccessItemsPopup::TierUnlockAccessItemsPopup_Initialize
+                ((TierUnlockAccessItemsPopup *)value[1].klass,(uint)(this->fields).tier,
+                 (this->fields).tierShopData,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

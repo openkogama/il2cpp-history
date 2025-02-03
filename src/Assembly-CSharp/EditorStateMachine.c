@@ -56,7 +56,7 @@ void Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_DeSelectAll
         pMVar12 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                            (pMVar11,id,(MethodInfo *)0x0);
         if (pMVar12 == (MVWorldObject *)0x0) goto code_?;
-        (*pMVar12->klass[1].vtable.DeepCopy.methodPtr)();
+        (*pMVar12->klass[1].vtable.PartialUpdateWOData.methodPtr)();
         pMVar11 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         pAStack_13 = (Action_2_Object_WorldObjectDestroyedEventArgs_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
@@ -721,23 +721,6 @@ Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_Select_1
 }
 
 
-/* Void Update() */
-
-void Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine_Update
-               (EditorStateMachine *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__IState);
-    cRam_? = '\x01';
-  }
-  if ((this->fields)._.currentState != (IState *)0x0) {
-    func_?(1,TypeInfo__IState,(this->fields)._.currentState,this);
-  }
-  return;
-}
-
-
 /* EditorStateMachine(GameObject) */
 
 void Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine__ctor
@@ -762,21 +745,21 @@ void Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine__ctor
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredByte);
     cRam_? = '\x01';
   }
+  (this_00->fields).useLasers = 1;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredByte->_1).cctor_finished_or_no_cctor
       == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredByte);
   }
   OVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredByte::
           ObscuredByte_op_Implicit(0x15,(MethodInfo *)0x0);
-  *(ObscuredByte *)&(this_00->fields).currentMaterialId.currentCryptoKey = OVar2;
-  (this_00->fields).useLasers = 1;
+  (this_00->fields).currentMaterialId = OVar2;
   FSMEntity::FSMEntity__ctor((FSMEntity *)this_00,(MethodInfo *)0x0);
   (this_00->fields).gameObject = pGVar1;
   func_?(&(this_00->fields).gameObject,pGVar1);
   this_01 = (CubeModelingTransitionTable *)func_?(TypeInfo__CubeModelingTransitionTable);
   CubeModelingTransitionTable::CubeModelingTransitionTable__ctor(this_01,(MethodInfo *)0x0);
   (this_00->fields)._.transitionTable = (StateTransitionTable *)this_01;
-  func_?(&this_00->fields,this_01);
+  func_?(&(this_00->fields)._.transitionTable,this_01);
   this = (EditorStateMachine *)0x0;
   value = (Object *)func_?(TypeInfo__CubeModelingEvent,&this);
   FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,value,(MethodInfo *)0x0);
@@ -828,7 +811,7 @@ void Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine__ctor_1
   CEEditorStateTransitionTableUUI::CEEditorStateTransitionTableUUI__ctor
             (this_00,avatarEditModeCenterPos,(MethodInfo *)0x0);
   (this->fields)._.transitionTable = (StateTransitionTable *)this_00;
-  func_?(&this->fields,this_00);
+  func_?(&(this->fields)._.transitionTable,this_00);
   return;
 }
 
@@ -850,7 +833,7 @@ void Assembly-CSharp.dll::EditorStateMachine::EditorStateMachine__ctor_2
   EditorStateTransitionTable3D::EditorStateTransitionTable3D__ctor
             (this_00,contextMenuController,gizmoController,(MethodInfo *)0x0);
   (this->fields)._.transitionTable = (StateTransitionTable *)this_00;
-  func_?(&this->fields,this_00);
+  func_?(&(this->fields)._.transitionTable,this_00);
   return;
 }
 

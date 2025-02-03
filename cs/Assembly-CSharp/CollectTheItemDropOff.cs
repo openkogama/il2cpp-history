@@ -14,25 +14,25 @@ using UnityEngine;
 public class CollectTheItemDropOff : MVBlueprintBase, ILogicWorldObject
 {
 	// Fields
+	private const string isActiveKey = "isActive";
+	private const string doOnce = "doOnce";
+	public Action<bool> OnPickupCollected;
 	private EditableCubeModelWrapper editableCubeModelWrapper;
 	private CollectTheItemDropOffObject triggerObject;
 	private CullingSubscriberBase cullingSubscriberBase;
 	private CollectTheItem controller;
-	private const string isActiveKey = "isActive";
-	private const string doOnce = "doOnce";
 	private ObscuredIntVector minBounds;
 	private ObscuredIntVector maxBounds;
 	private ObscuredInt minCubes;
 	private OutputSignalTransmitter outputSignalTransmitter;
+	private bool sendSignal;
 	[CompilerGenerated]
 	private IInputSignalReceiver _InputSignalReceiver_k__BackingField;
-	public Action<bool> OnPickupCollected;
-	private bool sendSignal;
 
 	// Properties
+	public override Vector3 OutputConnectorOffset { get; }
 	public override bool HasOutputConnector { get; }
 	public override bool HasInputConnector { get; }
-	public override Vector3 OutputConnectorOffset { get; }
 	public IInputSignalReceiver InputSignalReceiver { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public bool IsActive { get; }
 	public bool DoOnce { get; }
@@ -54,7 +54,7 @@ public class CollectTheItemDropOff : MVBlueprintBase, ILogicWorldObject
 	public void OnStateChanged(CullingGroupEvent cullingEvent);
 	public override void OnDataUpdate();
 	public void DropWoId(int instigatorWoID);
-	private void triggerBoxEvents_TriggerEnter(object sender, TriggerEventArgs e);
+	private void TriggerBoxEvents_TriggerEnter(object sender, TriggerEventArgs e);
 	public override void Destroy();
 	public override bool OnExitObject(EditorStateMachine e);
 	public override bool OnEnterObject(EditorStateMachine e);

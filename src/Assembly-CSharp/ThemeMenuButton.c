@@ -28,15 +28,15 @@ void Assembly-CSharp.dll::ThemeMenuButton::ThemeMenuButton_Awake
       if (this_01 != (MVNetworkGame *)0x0) {
         this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
         if (this_02 != (MVLocalPlayer *)0x0) {
-          MVar3 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_02,(MethodInfo *)0x0);
-          this = unaff_ESI;
+          PVar3 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_02,(MethodInfo *)0x0);
+          this = unaff_EBX;
           if (cRam_? == '\0') {
             this = (ThemeMenuButton *)&TypeInfo__ThemeMenuButton;
             func_?();
             cRam_? = '\x01';
           }
           pBVar2 = (this->fields).button;
-          if (MVar3 == MVLocalPlayer_PlanetOwnershipType__Enum_Owner) {
+          if ((char)PVar3 == '\x02') {
             if (pBVar2 != (Button *)0x0) {
               UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable
                         ((Selectable *)pBVar2,1,(MethodInfo *)0x0);
@@ -133,11 +133,10 @@ void Assembly-CSharp.dll::ThemeMenuButton::ThemeMenuButton_OnClick
 }
 
 
-/* Void SetButtonAvailability(MVLocalPlayer+PlanetOwnershipType) */
+/* Void SetButtonAvailability(PlanetOwnershipType) */
 
 void Assembly-CSharp.dll::ThemeMenuButton::ThemeMenuButton_SetButtonAvailability
-               (ThemeMenuButton *this,MVLocalPlayer_PlanetOwnershipType__Enum planetOwnership,
-               MethodInfo *method)
+               (ThemeMenuButton *this,PlanetOwnershipType__Enum planetOwnership,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -145,7 +144,7 @@ void Assembly-CSharp.dll::ThemeMenuButton::ThemeMenuButton_SetButtonAvailability
     cRam_? = '\x01';
   }
   this_00 = (this->fields).button;
-  if (planetOwnership == MVLocalPlayer_PlanetOwnershipType__Enum_Owner) {
+  if ((undefined1)planetOwnership == PlanetOwnershipType__Enum_Owner) {
     if (this_00 != (Button *)0x0) {
       UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable
                 ((Selectable *)this_00,1,(MethodInfo *)0x0);

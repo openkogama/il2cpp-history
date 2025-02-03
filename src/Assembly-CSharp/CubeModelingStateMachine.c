@@ -11,7 +11,7 @@ Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_AddCube
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0xdd0);
+    func_?(0x8150);
     cRam_? = '\x01';
   }
   pCVar4 = (this->fields)._SelectedCube_k__BackingField;
@@ -50,7 +50,7 @@ code_?:
             IVar14.x = uVar12;
             this._2_2_ = (pCVar4->fields).iLocalPos.z;
             if (cRam_? == '\0') {
-              this._2_2_ = 0x11b1;
+              this._2_2_ = 0x11b2;
               func_?();
               func_?();
               cRam_? = '\x01';
@@ -444,7 +444,7 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_Han
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0xe50);
+    func_?(0x81d0);
     cRam_? = '\x01';
   }
   if (action == AudioActions__Enum_CubeAdded) {
@@ -456,24 +456,7 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_Han
       }
       bVar3 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
                         ((CubeBase *)pCVar2,(CubeBase *)0x0,(MethodInfo *)0x0);
-      if (bVar3 == 0) {
-        return;
-      }
-      pMVar1 = (this->fields)._TargetCubeModel_k__BackingField;
-      if (pMVar1 != (MVCubeModelBase *)0x0) {
-        pGVar4 = (pMVar1->fields)._.gameObject;
-        if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__AudioEventHandler);
-        }
-        AudioEventHandler::AudioEventHandler_PlaySound
-                  (AudioActions__Enum_CubeAdded,pos,pGVar4,(MethodInfo *)0x0);
-        return;
-      }
-    }
-  }
-  else {
-    if (action != AudioActions__Enum_CubeRemoved) {
-      if (action == AudioActions__Enum_FaceMoved) {
+      if (bVar3 != 0) {
         pMVar1 = (this->fields)._TargetCubeModel_k__BackingField;
         if (pMVar1 == (MVCubeModelBase *)0x0) goto code_?;
         pGVar4 = (pMVar1->fields)._.gameObject;
@@ -481,8 +464,25 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_Han
           func_?(TypeInfo__AudioEventHandler);
         }
         AudioEventHandler::AudioEventHandler_PlaySound
-                  (AudioActions__Enum_FaceMoved,pos,pGVar4,(MethodInfo *)0x0);
+                  (AudioActions__Enum_CubeAdded,pos,pGVar4,(MethodInfo *)0x0);
       }
+      return;
+    }
+  }
+  else if (action == AudioActions__Enum_FaceMoved) {
+    pMVar1 = (this->fields)._TargetCubeModel_k__BackingField;
+    if (pMVar1 != (MVCubeModelBase *)0x0) {
+      pGVar4 = (pMVar1->fields)._.gameObject;
+      if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__AudioEventHandler);
+      }
+      AudioEventHandler::AudioEventHandler_PlaySound
+                (AudioActions__Enum_FaceMoved,pos,pGVar4,(MethodInfo *)0x0);
+      return;
+    }
+  }
+  else {
+    if (action != AudioActions__Enum_CubeRemoved) {
       return;
     }
     pMVar1 = (this->fields)._TargetCubeModel_k__BackingField;
@@ -650,35 +650,38 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine__ct
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredByte);
     cRam_? = '\x01';
   }
+  this_00 = this;
+  (this->fields).useLasers = 1;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredByte->_1).cctor_finished_or_no_cctor
       == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredByte);
   }
   OVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredByte::
           ObscuredByte_op_Implicit(0x15,(MethodInfo *)0x0);
-  (this->fields).currentMaterialId = OVar1;
-  (this->fields).useLasers = 1;
-  FSMEntity::FSMEntity__ctor((FSMEntity *)this,(MethodInfo *)0x0);
-  (this->fields).gameObject = gameObject;
-  func_?(&(this->fields).gameObject,gameObject);
-  this_00 = (CubeModelingTransitionTable *)func_?(TypeInfo__CubeModelingTransitionTable);
-  CubeModelingTransitionTable::CubeModelingTransitionTable__ctor(this_00,(MethodInfo *)0x0);
-  (this->fields)._.transitionTable = (StateTransitionTable *)this_00;
-  func_?(&this->fields,this_00);
-  uStack_2 = 0;
-  value = (Object *)func_?(TypeInfo__CubeModelingEvent,&uStack_2);
-  FSMEntity::FSMEntity_set_Event((FSMEntity *)this,value,(MethodInfo *)0x0);
-  pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-  (this->fields).mainCamera = pCVar3;
+  (this_00->fields).currentMaterialId = OVar1;
+  FSMEntity::FSMEntity__ctor((FSMEntity *)this_00,(MethodInfo *)0x0);
+  (this_00->fields).gameObject = gameObject;
+  func_?(&(this_00->fields).gameObject,gameObject);
+  this_01 = (CubeModelingTransitionTable *)func_?(TypeInfo__CubeModelingTransitionTable);
+  CubeModelingTransitionTable::CubeModelingTransitionTable__ctor(this_01,(MethodInfo *)0x0);
+  (this_00->fields)._.transitionTable = (StateTransitionTable *)this_01;
+  func_?(&(this_00->fields)._.transitionTable,this_01);
+  this = (CubeModelingStateMachine *)0x0;
+  value = (Object *)func_?(TypeInfo__CubeModelingEvent,&this);
+  FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,value,(MethodInfo *)0x0);
+  pCVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+  (this_00->fields).mainCamera = pCVar2;
+  ppCStack3 = &(this_00->fields).mainCamera;
+  method = (MethodInfo *)&UNK_?;
   func_?();
   return;
 }
 
 
-/* Void <set_CurrentMaterialId>b__14_0(IHandleMaterial, BaseEventData) */
+/* Void <set_CurrentMaterialId>b__23_0(IHandleMaterial, BaseEventData) */
 
 void Assembly-CSharp.dll::CubeModelingStateMachine::
-     CubeModelingStateMachine__set_CurrentMaterialId_b__14_0
+     CubeModelingStateMachine__set_CurrentMaterialId_b__23_0
                (CubeModelingStateMachine *this,IHandleMaterial *x,BaseEventData *y,
                MethodInfo *method)
 
@@ -844,7 +847,7 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_set
 {
   if (cRam_? == '\0') {
     func_?(&
-                    MethodInfo__CubeModelingStateMachine___set_CurrentMaterialId_b__14_0_UnityEngine__EventSystems__IHandleMaterial__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__CubeModelingStateMachine___set_CurrentMaterialId_b__23_0_UnityEngine__EventSystems__IHandleMaterial__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&
                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleMaterial>
@@ -878,7 +881,7 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_set
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-               MethodInfo__CubeModelingStateMachine___set_CurrentMaterialId_b__14_0_UnityEngine__EventSystems__IHandleMaterial__UnityEngine__EventSystems__BaseEventData_
+               MethodInfo__CubeModelingStateMachine___set_CurrentMaterialId_b__23_0_UnityEngine__EventSystems__IHandleMaterial__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?();

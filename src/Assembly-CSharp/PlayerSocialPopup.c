@@ -173,8 +173,8 @@ code_?:
     MVar3 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
     if (MVar3 == MVGameMode__Enum_Edit) {
       if (this_02 == (MVLocalPlayer *)0x0) goto code_?;
-      MVar4 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_02,(MethodInfo *)0x0);
-      this._3_1_ = MVar4 == MVLocalPlayer_PlanetOwnershipType__Enum_Owner;
+      PVar4 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_02,(MethodInfo *)0x0);
+      this._3_1_ = (char)PVar4 == '\x02';
     }
     else {
       this._3_1_ = false;
@@ -590,8 +590,8 @@ void Assembly-CSharp.dll::PlayerSocialPopup::PlayerSocialPopup_OnOpenAdminContro
         if (MVar3 != MVGameMode__Enum_Edit) {
           return;
         }
-        MVar4 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
-        if (MVar4 != MVLocalPlayer_PlanetOwnershipType__Enum_Owner) {
+        PVar4 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
+        if ((char)PVar4 != '\x02') {
           return;
         }
         value = (Object *)func_?();

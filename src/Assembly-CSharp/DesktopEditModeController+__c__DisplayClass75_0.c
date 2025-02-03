@@ -1,10 +1,10 @@
 
-/* Void <Execute>b__0(IModalPopupCreator, BaseEventData) */
+/* Void <DeleteWoid>b__0(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::ESSelection+<>c__DisplayClass14_0::
-     ESSelection_c_DisplayClass14_0__Execute_b__0
-               (ESSelection_c_DisplayClass14_0 *this,IModalPopupCreator *handler,BaseEventData *data
-               ,MethodInfo *method)
+void Assembly-CSharp.dll::DesktopEditModeController+<>c__DisplayClass75_0::
+     DesktopEditModeController_c_DisplayClass75_0__DeleteWoid_b__0
+               (DesktopEditModeController_c_DisplayClass75_0 *this,IModalPopupCreator *x,
+               BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -14,10 +14,10 @@ void Assembly-CSharp.dll::ESSelection+<>c__DisplayClass14_0::
     func_?();
     cRam_? = '\x01';
   }
-  if (handler != (IModalPopupCreator *)0x0) {
+  if (x != (IModalPopupCreator *)0x0) {
     pSStack_1 = StringLiteral_Error;
     pSStack_2 = (this->fields).errorText;
-    pIStack_3 = handler;
+    pIStack_3 = x;
     func_?(1,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
     return;
   }

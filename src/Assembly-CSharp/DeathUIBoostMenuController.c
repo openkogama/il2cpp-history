@@ -66,8 +66,8 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
       if ((pGVar5 == (GameEventManager *)0x0) ||
          (this_01 = (pGVar5->fields).AvatarCommandsPlayMode,
          this_01 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) goto code_?;
-      MaterialsController::MaterialsController_OnPop
-                ((MaterialsController *)this_01,(MethodInfo *)0x0);
+      GameEventManager+AvatarCommandsPlayModeManager::
+      GameEventManager_AvatarCommandsPlayModeManager_SpawnAsGhost(this_01,(MethodInfo *)0x0);
     }
     (this->fields).isGhost = 1;
   }
@@ -594,8 +594,8 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
         if ((pGVar2 == (GameEventManager *)0x0) ||
            (this_01 = (pGVar2->fields).AvatarCommandsPlayMode,
            this_01 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) goto code_?;
-        MaterialsController::MaterialsController_OnPop
-                  ((MaterialsController *)this_01,(MethodInfo *)0x0);
+        GameEventManager+AvatarCommandsPlayModeManager::
+        GameEventManager_AvatarCommandsPlayModeManager_SpawnAsGhost(this_01,(MethodInfo *)0x0);
         (this->fields).isGhost = 1;
       }
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -894,8 +894,8 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
              (pGVar7 = (pGVar6->fields).AvatarCommandsPlayMode,
              pGVar7 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0))
           goto code_?;
-          MaterialsController::MaterialsController_OnPop
-                    ((MaterialsController *)pGVar7,(MethodInfo *)0x0);
+          GameEventManager+AvatarCommandsPlayModeManager::
+          GameEventManager_AvatarCommandsPlayModeManager_SpawnAsGhost(pGVar7,(MethodInfo *)0x0);
           (this->fields).isGhost = 1;
         }
         if (((this->fields).wantsToPlay != 0) && (fVar1 <= 0.0)) {

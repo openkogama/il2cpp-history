@@ -262,7 +262,7 @@ code_?:
       iRam_? = 0;
       pAStack3 = (Action_1_IWinningCondition___Class *)0x0;
 code_?:
-      pDStack4 = (Delegate *)0xb8;
+      pDStack4 = (Delegate *)0xc4;
       func_?();
       return;
     }

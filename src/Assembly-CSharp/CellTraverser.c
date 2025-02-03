@@ -115,7 +115,7 @@ void Assembly-CSharp.dll::CellTraverser::CellTraverser_Init
 code_?:
     iVar6 = (*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
     if (iVar6 != 0) {
-      (this->fields).chunkSize = *(int32_t *)(iVar6 + 0x18);
+      (this->fields).chunkSize = *(int32_t *)(iVar6 + 0x2c);
       (this->fields).intersectRay.m_Origin.x = localOrigin.x;
       (this->fields).intersectRay.m_Origin.y = localOrigin.y;
       (this->fields).intersectRay.m_Origin.z = localOrigin.z;
