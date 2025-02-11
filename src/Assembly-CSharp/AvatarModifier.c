@@ -20,7 +20,6 @@ Assembly-CSharp.dll::AvatarModifier::AvatarModifier_CreateFromType
           (AvatarModifierPackageType__Enum type,Avatar *owner,MethodInfo *method)
 
 {
-  puVar1 = (undefined4 *)&stack0xfffffffc;
   if (cRam_? == '\0') {
     func_?(&
                     BurningModifier_MethodInfo__EnumPoolManager__Instantiate<BurningModifier>_PoolEnums_
@@ -64,8 +63,8 @@ Assembly-CSharp.dll::AvatarModifier::AvatarModifier_CreateFromType
   switch(type) {
   case AvatarModifierPackageType__Enum_Fire:
   case AvatarModifierPackageType__Enum_FlamerBurn:
-    iVar2 = func_?(0);
-    if ((iVar2 == 0) || (this = *(EnumPoolManager **)(iVar2 + 0x10), this == (EnumPoolManager *)0x0)
+    iVar1 = func_?(0);
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
        ) goto code_?;
     pEnum = PoolEnums__Enum_BurningModifier;
     method_00 = BurningModifier_MethodInfo__EnumPoolManager__Instantiate<BurningModifier>_PoolEnums_
@@ -73,8 +72,8 @@ Assembly-CSharp.dll::AvatarModifier::AvatarModifier_CreateFromType
     break;
   case AvatarModifierPackageType__Enum_Mutant:
     method_00 = (MethodInfo *)0x0;
-    iVar2 = func_?();
-    if ((iVar2 == 0) || (this = *(EnumPoolManager **)(iVar2 + 0x10), this == (EnumPoolManager *)0x0)
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
        ) goto code_?;
     pEnum = PoolEnums__Enum_MutantModifier;
     break;
@@ -82,141 +81,134 @@ Assembly-CSharp.dll::AvatarModifier::AvatarModifier_CreateFromType
     return (AvatarModifier *)0x0;
   case AvatarModifierPackageType__Enum_Poison:
     method_00 = (MethodInfo *)0x0;
-    iVar2 = func_?();
-    if ((iVar2 == 0) || (this = *(EnumPoolManager **)(iVar2 + 0x10), this == (EnumPoolManager *)0x0)
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
        ) goto code_?;
     pEnum = PoolEnums__Enum_PoisonModifier;
     break;
   case AvatarModifierPackageType__Enum_Frozen:
     method_00 = (MethodInfo *)0x0;
-    iVar2 = func_?();
-    if ((iVar2 == 0) || (this = *(EnumPoolManager **)(iVar2 + 0x10), this == (EnumPoolManager *)0x0)
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
        ) goto code_?;
     pEnum = PoolEnums__Enum_FrozenModifier;
     break;
   case AvatarModifierPackageType__Enum_NinjaRun:
     method_00 = (MethodInfo *)0x0;
-    iVar2 = func_?();
-    if ((iVar2 == 0) || (this = *(EnumPoolManager **)(iVar2 + 0x10), this == (EnumPoolManager *)0x0)
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
        ) goto code_?;
     pEnum = PoolEnums__Enum_NinjaRunModifier;
     break;
   case AvatarModifierPackageType__Enum_Shrunken:
     method_00 = (MethodInfo *)0x0;
-    iVar2 = func_?();
-    if ((iVar2 == 0) || (this = *(EnumPoolManager **)(iVar2 + 0x10), this == (EnumPoolManager *)0x0)
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
        ) goto code_?;
     pEnum = PoolEnums__Enum_MouseModifier;
     break;
   case AvatarModifierPackageType__Enum_Enlarged:
     method_00 = (MethodInfo *)0x0;
-    iVar2 = func_?();
-    if ((iVar2 == 0) || (this = *(EnumPoolManager **)(iVar2 + 0x10), this == (EnumPoolManager *)0x0)
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
        ) goto code_?;
     pEnum = PoolEnums__Enum_GrowthModifier;
     break;
   case AvatarModifierPackageType__Enum_Shielded:
-    iVar2 = func_?(0);
-    if (iVar2 == 0) goto code_?;
-    original = *(Object **)(iVar2 + 0x218);
+    iVar1 = func_?(0);
+    if (iVar1 == 0) goto code_?;
+    original = *(Object **)(iVar1 + 0x218);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pAVar3 = (AvatarModifier *)
+    pAVar2 = (AvatarModifier *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                        (original,
                         AvatarModifier_MethodInfo__UnityEngine__Object__Instantiate<AvatarModifier>_AvatarModifier_
                        );
     goto code_?;
   case AvatarModifierPackageType__Enum_SpawnProtection:
-    iVar2 = func_?(0);
-    if ((iVar2 == 0) || (*(EnumPoolManager **)(iVar2 + 0x10) == (EnumPoolManager *)0x0))
+    iVar1 = func_?(0);
+    if ((iVar1 == 0) || (*(EnumPoolManager **)(iVar1 + 0x10) == (EnumPoolManager *)0x0))
     goto code_?;
-    pAVar3 = (AvatarModifier *)
+    pAVar2 = (AvatarModifier *)
              EnumPoolManager::EnumPoolManager_Instantiate
-                       (*(EnumPoolManager **)(iVar2 + 0x10),PoolEnums__Enum_InvulnerabilityModifier,
+                       (*(EnumPoolManager **)(iVar1 + 0x10),PoolEnums__Enum_InvulnerabilityModifier,
                         InvulnerabilityModifier_MethodInfo__EnumPoolManager__Instantiate<InvulnerabilityModifier>_PoolEnums_
                        );
     unaff_ESI = 0;
-    if (pAVar3 == (AvatarModifier *)0x0) goto code_?;
-    pAVar3[1].fields._._._._.m_CachedPtr = (void *)0x11;
+    if (pAVar2 == (AvatarModifier *)0x0) goto code_?;
+    pAVar2[1].fields._._._._.m_CachedPtr = (void *)0x11;
     goto code_?;
   case AvatarModifierPackageType__Enum_Lethal:
     method_00 = (MethodInfo *)0x0;
-    iVar2 = func_?();
-    if ((iVar2 == 0) || (this = *(EnumPoolManager **)(iVar2 + 0x10), this == (EnumPoolManager *)0x0)
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
        ) goto code_?;
     pEnum = PoolEnums__Enum_Lethal;
     break;
   case AvatarModifierPackageType__Enum_HealingMat:
     method_00 = (MethodInfo *)0x0;
-    iVar2 = func_?();
-    if ((iVar2 == 0) || (this = *(EnumPoolManager **)(iVar2 + 0x10), this == (EnumPoolManager *)0x0)
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
        ) goto code_?;
     pEnum = PoolEnums__Enum_HealingMat;
     break;
   case AvatarModifierPackageType__Enum_CrumbleMat:
     method_00 = (MethodInfo *)0x0;
-    iVar2 = func_?();
-    if ((iVar2 == 0) || (this = *(EnumPoolManager **)(iVar2 + 0x10), this == (EnumPoolManager *)0x0)
+    iVar1 = func_?();
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
        ) goto code_?;
     pEnum = PoolEnums__Enum_CrumbleMat;
   }
-  pAVar3 = (AvatarModifier *)EnumPoolManager::EnumPoolManager_Instantiate(this,pEnum,method_00);
+  pAVar2 = (AvatarModifier *)EnumPoolManager::EnumPoolManager_Instantiate(this,pEnum,method_00);
 code_?:
   unaff_ESI = 0;
-  if (pAVar3 == (AvatarModifier *)0x0) {
+  if (pAVar2 == (AvatarModifier *)0x0) {
 code_?:
-    bVar4 = 0;
-    iVar2 = func_?();
-    cVar5 = '\x0f';
-    do {
-      puVar1 = puVar1 + -1;
-      register0x00000010 = (BADSPACEBASE *)((int)register0x00000010 + -4);
-      *(undefined4 *)register0x00000010 = *puVar1;
-      cVar5 = cVar5 + -1;
-    } while ('\0' < cVar5);
-    bVar6 = (byte)(iVar2 >> 0x1f);
-    bVar7 = CARRY1(extraout_CL,bVar6) || CARRY1(extraout_CL + bVar6,bVar4);
-    pbVar8 = (byte *)((iVar2 >> 0x1f) + unaff_EBX * 4);
-    bVar9 = (byte)unaff_EBX;
-    bVar10 = CARRY1(*pbVar8,bVar9) || CARRY1(*pbVar8 + bVar9,bVar7);
-    *pbVar8 = *pbVar8 + bVar9 + bVar7;
-    pbVar8 = (byte *)(unaff_ESI + -0x66);
-    bVar4 = *pbVar8 + (byte)iVar2;
-    bVar7 = CARRY1(*pbVar8,(byte)iVar2) || CARRY1(bVar4,bVar10);
-    *pbVar8 = bVar4 + bVar10;
-    pbVar8 = (byte *)(iVar2 + -0x66);
-    bVar10 = CARRY1(*pbVar8,bVar6) || CARRY1(*pbVar8 + bVar6,bVar7);
-    *pbVar8 = *pbVar8 + bVar6 + bVar7;
-    pbVar8 = (byte *)((iVar2 >> 0x1f) + -0x3befd166);
-    bVar11 = CARRY1(*pbVar8,bVar9) || CARRY1(*pbVar8 + bVar9,bVar10);
-    *pbVar8 = *pbVar8 + bVar9 + bVar10;
-    uVar12 = func_?(in_CS);
-    piVar13 = (int *)((ulonglong)uVar12 >> 0x20);
-    pcVar14 = (char *)uVar12;
-    pbVar8 = (byte *)(unaff_EDI + -0x65);
-    bVar6 = (byte)((uint)extraout_ECX >> 8);
-    bVar4 = *pbVar8 + bVar6;
-    bVar7 = CARRY1(*pbVar8,bVar6) || CARRY1(bVar4,bVar11);
-    *pbVar8 = bVar4 + bVar11;
-    pbVar8 = (byte *)(unaff_ESI + -0x52efd165);
-    bVar4 = *pbVar8;
-    bVar9 = (byte)extraout_ECX;
-    bVar6 = *pbVar8;
-    *pbVar8 = bVar6 + bVar9 + bVar7;
-    *pcVar14 = *pcVar14 + (char)uVar12 + (CARRY1(bVar4,bVar9) || CARRY1(bVar6 + bVar9,bVar7));
-    *piVar13 = (int)(pcVar14 + *piVar13);
-    *(char *)piVar13 = (char)*piVar13 + (char)uVar12 + (char)*piVar13 + (char)*piVar13;
-    *extraout_ECX = *extraout_ECX | bVar9;
-    pcVar15 = (code *)swi(3);
-    pAVar3 = (AvatarModifier *)(*pcVar15)();
-    return pAVar3;
+    func_?();
+    pbVar3 = (byte *)(extraout_EDX + -0x65adefd2);
+    bVar4 = *pbVar3;
+    bVar5 = (byte)unaff_EBX;
+    *pbVar3 = *pbVar3 - bVar5;
+    pbVar3 = (byte *)(extraout_ECX + -100);
+    bVar6 = *pbVar3 + (byte)extraout_EDX;
+    bVar7 = CARRY1(*pbVar3,(byte)extraout_EDX) || CARRY1(bVar6,bVar4 < bVar5);
+    *pbVar3 = bVar6 + (bVar4 < bVar5);
+    pbVar3 = (byte *)(extraout_EDX + 0x2e + unaff_EBX * 4);
+    bVar4 = *pbVar3;
+    bVar5 = (byte)((uint)unaff_EBX >> 8);
+    bVar6 = *pbVar3 + bVar5;
+    *pbVar3 = bVar6 + bVar7;
+    *(char *)(unaff_ESI + -0x2fefd166) =
+         *(char *)(unaff_ESI + -0x2fefd166) + extraout_AH +
+         (CARRY1(bVar4,bVar5) || CARRY1(bVar6,bVar7));
+    uVar8 = func_?();
+    uVar9 = (uint)uVar8 & 0xffffff9b;
+    pbVar3 = (byte *)(unaff_ESI + -0x65);
+    bVar4 = *pbVar3;
+    bVar6 = (byte)extraout_ECX_00;
+    *pbVar3 = *pbVar3 + bVar6;
+    pbVar3 = (byte *)(unaff_ESI + -0x30efd165);
+    bVar7 = CARRY1(*pbVar3,bVar6) || CARRY1(*pbVar3 + bVar6,CARRY1(bVar4,bVar6));
+    *pbVar3 = *pbVar3 + bVar6 + CARRY1(bVar4,bVar6);
+    bVar5 = (byte)((uint)extraout_ECX_00 >> 8);
+    bVar10 = (byte)((ulonglong)uVar8 >> 0x28);
+    bVar4 = bVar10 + bVar5;
+    piVar11 = (int *)CONCAT22((short)((ulonglong)uVar8 >> 0x30),
+                             CONCAT11(bVar4 + bVar7,(char)((ulonglong)uVar8 >> 0x20)));
+    cRam_? = cRam_? + bVar6 + (CARRY1(bVar10,bVar5) || CARRY1(bVar4,bVar7));
+    *piVar11 = *piVar11 + uVar9;
+    *(char *)piVar11 = (char)*piVar11 + (char)uVar9 + (char)*piVar11 + (char)*piVar11;
+    *extraout_ECX_00 = *extraout_ECX_00 | bVar6;
+    pcVar12 = (code *)swi(3);
+    pAVar2 = (AvatarModifier *)(*pcVar12)();
+    return pAVar2;
   }
 code_?:
-  (pAVar3->fields).owner = owner;
-  func_?();
-  return pAVar3;
+  (pAVar2->fields).owner = owner;
+  func_?(&(pAVar2->fields).owner);
+  return pAVar2;
 }
 
 

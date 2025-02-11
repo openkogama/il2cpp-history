@@ -161,6 +161,7 @@ code_?:
                                       Quaternion_Internal_FromEulerRad
                                                 ((Quaternion *)&stack0xffffffc0,euler_01,
                                                  (MethodInfo *)0x0);
+                            pLVar1 = (LevelRewardAnimation_DisplayAndFadeNextBadge_d_29 *)0x0;
                             if (pTVar4 != (Transform *)0x0) {
                               UnityEngine.CoreModule.dll::UnityEngine::Transform::
                               Transform_set_rotation(pTVar4,*pQVar5,(MethodInfo *)0x0);
@@ -330,19 +331,22 @@ code_?:
 code_?:
   uVar15 = func_?();
   in_AF = 9 < ((byte)uVar15 & 0xf) | in_AF;
-  bVar16 = (char)((ushort)uVar15 >> 8) - in_AF;
-  puVar17 = (undefined1 *)((int)&this_02[-0x54df21].interfaceOffsets + 1);
-  bVar18 = *puVar17;
-  bVar19 = *puVar17 + bVar16;
-  *puVar17 = bVar19 + in_AF;
-  (this_02->_0).image =
-       (Il2CppImage *)((int)&(((MonoBehaviour__Class *)(this_02->_0).image)->_0).image + 1);
-  *extraout_ECX =
-       *extraout_ECX + (char)((uint)extraout_ECX >> 8) +
-       (CARRY1(bVar18,bVar16) || CARRY1(bVar19,in_AF));
-  pcVar20 = (code *)swi(3);
-  bVar21 = (*pcVar20)();
-  return bVar21;
+  bVar16 = (byte)uVar15 + in_AF * -6 & 0xf;
+  puVar17 = (undefined1 *)((int)&this_02[-1].vtable.ToString.method + 3);
+  *puVar17 = *puVar17 + extraout_DH + in_AF;
+  bVar18 = 9 < bVar16 | in_AF;
+  uVar19 = CONCAT31((int3)((uint)uVar15 >> 8),bVar16 + bVar18 * -6) & 0xffff000f;
+  cVar20 = (char)uVar19;
+  iVar21 = CONCAT22((short)(uVar19 >> 0x10),
+                    CONCAT11(((char)((uint)uVar15 >> 8) - in_AF) - bVar18,cVar20));
+  puVar17 = (undefined1 *)((int)&this_02[-0x81254]._0.generic_class + 1);
+  *puVar17 = *puVar17 + cVar20 + bVar18;
+  pLVar1->klass =
+       (LevelRewardAnimation_DisplayAndFadeNextBadge_d_29__Class *)
+       ((uint)pLVar1->klass | iVar21 + *(int *)(iVar21 + 0x10));
+  pcVar22 = (code *)swi(3);
+  bVar23 = (*pcVar22)();
+  return bVar23;
 }
 
 

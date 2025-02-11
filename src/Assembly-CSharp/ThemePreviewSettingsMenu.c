@@ -457,27 +457,52 @@ void Assembly-CSharp.dll::ThemePreviewSettingsMenu::ThemePreviewSettingsMenu_OnP
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
+    func_?(&
+                    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                   );
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__ThemePreviewSettingsMenu__OnPurchaseResponse_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+                   );
+    func_?(&
+                    MethodInfo__ThemePreviewSettingsMenu___OnPurchaseResponse_b__20_2_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&
+                    MethodInfo__ThemePreviewSettingsMenu____c___OnPurchaseResponse_b__20_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&
+                    MethodInfo__ThemePreviewSettingsMenu____c___OnPurchaseResponse_b__20_1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&
+                    MethodInfo__ThemePreviewSettingsMenu____c___OnPurchaseResponse_b__20_3_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&
+                    MethodInfo__ThemePreviewSettingsMenu____c___OnPurchaseResponse_b__20_4_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__ThemePreviewSettingsMenu____c);
+    func_?(&StringLiteral_Unexpected_purchase_response_);
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
   source = (pMVar1->fields).PurchaseProductResponseHandler;
-  this_02 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
+  this_02 = (UnityAction_2_System_Int32_System_Int32_ *)
+            func_?(
+                           TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                           );
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
   UnityAction_2_System_Int32_System_Int32___ctor
             (this_02,(Object *)this,
@@ -487,11 +512,12 @@ void Assembly-CSharp.dll::ThemePreviewSettingsMenu::ThemePreviewSettingsMenu_OnP
               mscorlib.dll::System::Delegate::Delegate_Remove
                         ((Delegate *)source,(Delegate *)this_02,(MethodInfo *)0x0);
   if (unaff_EDI == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-    *(undefined4 *)(unaff_EBX + 0xc0) = 0;
+    unaff_EBX[2].fields.previewID = 0;
     iVar2 = 0;
 code_?:
     func_?();
     this_00 = (this->fields).openPopup;
+    unaff_EBX = this;
     if (this_00 != (ConfirmationPopup *)0x0) {
       ConfirmationPopup::ConfirmationPopup_Pop(this_00,(MethodInfo *)0x0);
       switch(iVar2) {
@@ -653,30 +679,44 @@ code_?:
     func_?();
   }
   else {
+    pTVar6 = unaff_EBX;
     iVar2 = func_?();
+    unaff_EBX = this;
     if (iVar2 == 0) goto code_?;
-    *(int *)(unaff_EBX + 0xc0) = iVar2;
+    pTVar6[2].fields.previewID = iVar2;
     iVar2 = func_?();
     if (iVar2 != 0) goto code_?;
   }
   func_?();
 code_?:
-  uVar6 = func_?();
-  out((short)((ulonglong)uVar6 >> 0x20),(int)uVar6);
-  in_AF = 9 < ((byte)uVar6 & 0xf) | in_AF;
-  bVar7 = (byte)uVar6 + in_AF * '\x06' & 0xf;
-  (&stack0xfceb103b)[(int)unaff_EDI * 8] =
-       (&stack0xfceb103b)[(int)unaff_EDI * 8] + (char)((ulonglong)uVar6 >> 0x20) + in_AF;
+  bVar7 = func_?();
+  in_AF = 9 < (bVar7 & 0xf) | in_AF;
+  bVar7 = bVar7 + in_AF * -6 & 0xf;
   in_AF = 9 < bVar7 | in_AF;
-  bVar7 = bVar7 + in_AF * '\x06' & 0xf;
-  in_AF = 9 < bVar7 | in_AF;
-  bVar7 = bVar7 + in_AF * '\x06' & 0xf;
-  in_AF = 9 < bVar7 | in_AF;
-  pcVar8 = (char *)((int)((ulonglong)uVar6 >> 0x20) + -3);
-  *pcVar8 = *pcVar8 + (char)((ulonglong)uVar6 >> 0x28) +
-            (9 < (bVar7 + in_AF * '\x06' & 0xf) | in_AF);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  in_AF = 9 < (bVar7 + in_AF * '\x06' & 0xf) | in_AF;
+  bVar8 = (byte)((uint)unaff_EBX >> 8);
+  bVar7 = *(char *)&unaff_EBX->klass + bVar8;
+  bVar9 = CARRY1(*(byte *)&unaff_EBX->klass,bVar8) || CARRY1(bVar7,in_AF);
+  *(byte *)&unaff_EBX->klass = bVar7 + in_AF;
+  *(char *)&((ExecuteEvents_EventFunction_1_System_Object_ *)unaff_EDI)->klass =
+       *(char *)&((ExecuteEvents_EventFunction_1_System_Object_ *)unaff_EDI)->klass + '\x01';
+  bVar7 = *(char *)&unaff_EBX->klass + bVar8;
+  bVar10 = CARRY1(*(byte *)&unaff_EBX->klass,bVar8) || CARRY1(bVar7,bVar9);
+  *(byte *)&unaff_EBX->klass = bVar7 + bVar9;
+  *(char *)&((ExecuteEvents_EventFunction_1_System_Object_ *)unaff_EDI)->klass =
+       *(char *)&((ExecuteEvents_EventFunction_1_System_Object_ *)unaff_EDI)->klass + '\x01';
+  bVar7 = *(byte *)&unaff_EBX->klass;
+  bVar11 = *(char *)&unaff_EBX->klass + bVar8;
+  *(byte *)&unaff_EBX->klass = bVar11 + bVar10;
+  *(char *)&((ExecuteEvents_EventFunction_1_System_Object_ *)unaff_EDI)->klass =
+       *(char *)&((ExecuteEvents_EventFunction_1_System_Object_ *)unaff_EDI)->klass + '\x01';
+  *(char *)(extraout_ECX + -1) =
+       *(char *)(extraout_ECX + -1) + (char)extraout_ECX +
+       (CARRY1(bVar7,bVar8) || CARRY1(bVar11,bVar10));
+  *(char *)&((ExecuteEvents_EventFunction_1_System_Object_ *)unaff_EDI)->klass =
+       *(char *)&((ExecuteEvents_EventFunction_1_System_Object_ *)unaff_EDI)->klass + '\x01';
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

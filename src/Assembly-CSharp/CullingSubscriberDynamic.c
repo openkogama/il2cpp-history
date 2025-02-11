@@ -97,6 +97,7 @@ void Assembly-CSharp.dll::CullingSubscriberDynamic::CullingSubscriberDynamic_OnS
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__CullingApiWrapper);
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).cullingBandIndex;
@@ -151,30 +152,37 @@ code_?:
      iVar3 <= (this->fields).overrideDistanceBandIndex)) {
     value = true;
   }
-  this_00 = (this->fields).root;
-  if (this_00 == (GameObject *)0x0) {
-code_?:
-    func_?();
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
-    return;
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            (this_00,value,(MethodInfo *)0x0);
-  if ((this->fields).children != (GameObject__Array *)0x0) {
-    pGVar5 = (this->fields).children;
-    ppGVar6 = pGVar5->vector;
-    for (uVar7 = 0; (int)uVar7 < (int)pGVar5->max_length; uVar7 = uVar7 + 1) {
-      if (pGVar5->max_length <= uVar7) {
-        func_?();
-        goto code_?;
+  pOVar4 = (Object_1__Class *)(this->fields).cullingGroup;
+  pcVar5 = (char *)0x0;
+  if (pOVar4 != (Object_1__Class *)0x0) {
+    pIVar6 = &(pOVar4->_0).byval_arg;
+    while( true ) {
+      if ((int)(pOVar4->_0).namespaze <= (int)pcVar5) {
+        return;
       }
-      if (*ppGVar6 == (GameObject *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (*ppGVar6,value,(MethodInfo *)0x0);
-      ppGVar6 = ppGVar6 + 1;
+      if ((pOVar4->_0).namespaze <= pcVar5) break;
+      this_00 = (GameObject *)(pIVar6->data).typeHandle;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        pOVar4 = TypeInfo__UnityEngine__Object;
+        func_?();
+      }
+      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                        ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar2 == 0) {
+        if (this_00 == (GameObject *)0x0) goto code_?;
+        pOVar4 = (Object_1__Class *)0x0;
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_00,value,(MethodInfo *)0x0);
+      }
+      pcVar5 = pcVar5 + 1;
+      pIVar6 = (Il2CppType *)&pIVar6->attrs;
     }
+    func_?();
   }
+code_?:
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -260,7 +268,7 @@ void Assembly-CSharp.dll::CullingSubscriberDynamic::CullingSubscriberDynamic_Upd
 
 void Assembly-CSharp.dll::CullingSubscriberDynamic::CullingSubscriberDynamic__ctor
                (CullingSubscriberDynamic *this,float radius,int32_t cullingBandIndex,
-               GameObject *root,GameObject__Array *children,MethodInfo *method)
+               GameObject *root,GameObject__Array *cullingGroup,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -274,13 +282,13 @@ void Assembly-CSharp.dll::CullingSubscriberDynamic::CullingSubscriberDynamic__ct
   (this->fields).cullingBandIndex = cullingBandIndex;
   (this->fields).root = root;
   func_?(&(this->fields).root,root);
+  (this->fields).cullingGroup = cullingGroup;
+  func_?(&(this->fields).cullingGroup,cullingGroup);
   if (root != (GameObject *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (root,(MethodInfo *)0x0);
     (this->fields).rootTransform = pTVar1;
     func_?(&(this->fields).rootTransform,pTVar1);
-    (this->fields).children = children;
-    func_?(&(this->fields).children,children);
     if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CullingApiWrapper);
     }

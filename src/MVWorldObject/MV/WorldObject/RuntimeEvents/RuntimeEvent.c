@@ -6,22 +6,24 @@ MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::RuntimeEvent_Cr
           (BytePacker *bytePacker,MethodInfo *method)
 
 {
+  bVar1 = 0;
   if (bytePacker == (BytePacker *)0x0) {
-    uVar1 = func_?();
-    piVar2 = (int *)uVar1;
-    piVar3 = (int *)CONCAT31((int3)((ulonglong)uVar1 >> 0x28),
-                              (char)((ulonglong)uVar1 >> 0x20) + (char)((uint)extraout_ECX >> 8));
-    pbVar4 = (byte *)((int)extraout_ECX + -0x7b);
-    bVar5 = *pbVar4;
-    *pbVar4 = *pbVar4 + unaff_BL;
+    func_?();
+    pbVar2 = (byte *)CONCAT22((short)((uint)extraout_EDX >> 0x10),CONCAT11(0x86,(char)extraout_EDX)
+                              );
     LOCK();
-    *(char *)piVar2 = (char)*piVar2 + (char)uVar1 + CARRY1(bVar5,unaff_BL);
+    bVar3 = *pbVar2;
+    bVar4 = (byte)((uint)unaff_EBX >> 8);
+    bVar5 = *pbVar2 + bVar4;
+    *pbVar2 = bVar5 + bVar1;
     UNLOCK();
-    *(char *)extraout_ECX = (char)*extraout_ECX + (char)uVar1;
-    *piVar2 = (int)(*piVar2 + (int)piVar2);
-    *extraout_ECX = (int)(*extraout_ECX + (int)piVar2);
-    *extraout_ECX = (int)(*extraout_ECX + (int)piVar2);
-    *piVar3 = (int)(*piVar3 + (int)piVar2);
+    *(char *)((int)extraout_ECX + 0x10f087) =
+         *(char *)((int)extraout_ECX + 0x10f087) + (char)((uint)extraout_ECX >> 8) +
+         (CARRY1(bVar3,bVar4) || CARRY1(bVar5,bVar1));
+    *(undefined1 *)extraout_ECX = *(undefined1 *)extraout_ECX;
+    *extraout_ECX = *extraout_ECX;
+    *extraout_ECX = *extraout_ECX;
+    *(undefined4 *)pbVar2 = *(undefined4 *)pbVar2;
     pcVar6 = (code *)swi(3);
     pRVar7 = (RuntimeEvent *)(*pcVar6)();
     return pRVar7;
@@ -139,19 +141,33 @@ MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::RuntimeEvent_Cr
   }
   if (bytePacker == (BytePacker *)0x0) {
 code_?:
-    func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
+    uVar4 = func_?();
+    bVar5 = *(byte *)&bytePacker->klass;
+    *(byte *)&bytePacker->klass = *(char *)&bytePacker->klass + (byte)bytePacker;
+    cVar6 = (char)((ulonglong)uVar4 >> 0x28);
+    piVar7 = (int *)CONCAT31((int3)((ulonglong)uVar4 >> 8),cVar6);
+    piVar8 = (int *)CONCAT22((short)((ulonglong)uVar4 >> 0x30),
+                              CONCAT11((char)uVar4 + (char)((uint)bytePacker >> 8),
+                                       (char)((ulonglong)uVar4 >> 0x20)));
+    *(char *)piVar7 = (char)*piVar7 + cVar6 + CARRY1(bVar5,(byte)bytePacker);
+    *(char *)extraout_ECX = (char)*extraout_ECX + cVar6;
+    *piVar7 = (int)(*piVar7 + (int)piVar7);
+    *extraout_ECX = (int)(*extraout_ECX + (int)piVar7);
+    *extraout_ECX = (int)(*extraout_ECX + (int)piVar7);
+    *piVar8 = (int)(*piVar8 + (int)piVar7);
+    pcVar9 = (code *)swi(3);
+    pRVar10 = (RuntimeEvent *)(*pcVar9)();
+    return pRVar10;
   }
 code_?:
-  uVar4 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-  uVar5 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-  uVar6 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-  uVar7._0_2_ = 0;
-  uVar7._2_2_ = 0;
+  uVar11 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+  uVar12 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+  uVar13 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+  uVar14._0_2_ = 0;
+  uVar14._2_2_ = 0;
   IntVector::IntVector__ctor_1
-            ((IntVector *)&stack0xfffffff4,(uint)uVar4,(uint)uVar5,(uint)uVar6,(MethodInfo *)0x0);
-  *(undefined4 *)(runtimeEventType + RuntimeEventType__Enum_AvatarImpact75) = uVar7;
+            ((IntVector *)&stack0xfffffff4,(uint)uVar11,(uint)uVar12,(uint)uVar13,(MethodInfo *)0x0);
+  *(undefined4 *)(runtimeEventType + RuntimeEventType__Enum_AvatarImpact75) = uVar14;
   *(undefined2 *)
    (runtimeEventType + (RuntimeEventType__Enum_AvatarImpact75|RuntimeEventType__Enum_AvatarImpact25)
    ) = 0;

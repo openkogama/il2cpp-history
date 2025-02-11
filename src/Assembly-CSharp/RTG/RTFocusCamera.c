@@ -1992,7 +1992,7 @@ void Assembly-CSharp.dll::RTG::RTFocusCamera::RTFocusCamera_PerformRotationSwitc
                 uVar7 = pVVar5->y;
                 fVar8 = (this->fields)._focusPointOffset;
                 value.y = (float)&stack0xffffffd8 - (float)uVar7 * fVar8;
-                value.x = 4.352183e-29 - (float)uVar6 * fVar8;
+                value.x = 4.3523083e-29 - (float)uVar6 * fVar8;
                 value.z = (float)pTVar4 - pVVar5->z * fVar8;
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                           (pTVar3,value,(MethodInfo *)0x0);

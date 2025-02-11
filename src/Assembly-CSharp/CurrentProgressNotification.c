@@ -487,21 +487,25 @@ code_?:
 code_?:
   func_?();
 code_?:
-  pAVar26 = (Action__Class *)func_?();
-  unaff_EDI->klass = pAVar26;
-  bVar27 = (byte)((uint)extraout_ECX >> 8);
-  bVar28 = bVar27 + (byte)unaff_EBX;
-  unaff_EDI->monitor = (MonitorData *)pAVar26;
-  pcVar29 = (char *)(CONCAT22((short)((uint)extraout_ECX >> 0x10),
-                             CONCAT11(bVar28 + bVar3,(char)extraout_ECX)) + -0x55);
-  *pcVar29 = *pcVar29 + (char)((uint)unaff_EBX >> 8) +
-            (CARRY1(bVar27,(byte)unaff_EBX) || CARRY1(bVar28,bVar3));
-  (unaff_EDI->fields)._._.method_ptr = pAVar26;
-  (unaff_EDI->fields)._._.invoke_impl = pAVar26;
-  (unaff_EDI->fields)._._.m_target = (Object *)pAVar26;
-  (unaff_EDI->fields)._._.method = pAVar26;
-  pcVar30 = (code *)swi(3);
-  (*pcVar30)();
+  func_?();
+  bVar26 = CARRY4(in_stack_27,(uint)&stack0xfffffffc) ||
+           CARRY4((uint)(&stack0xfffffffc + in_stack_27),(uint)bVar3);
+  bVar28 = (byte)((uint)unaff_EBX >> 8);
+  bVar3 = *extraout_ECX + bVar28;
+  bVar29 = CARRY1(*extraout_ECX,bVar28) || CARRY1(bVar3,bVar26);
+  *extraout_ECX = bVar3 + bVar26;
+  pbVar30 = (byte *)((int)&unaff_EDI[-0x183bee6].fields._._.method_info + 1);
+  bVar3 = *pbVar30;
+  bVar31 = (byte)unaff_EBX;
+  bVar28 = *pbVar30;
+  *pbVar30 = bVar28 + bVar31 + bVar29;
+  pcVar32 = (char *)((int)&unaff_EDI[-0x18bbee6].fields._._.method_info + 1);
+  *pcVar32 = *pcVar32 + bVar31 +
+            (CARRY1(bStack_33,extraout_DH) ||
+            CARRY1(bStack_33 + extraout_DH,CARRY1(bVar3,bVar31) || CARRY1(bVar28 + bVar31,bVar29)))
+  ;
+  pcVar34 = (code *)swi(3);
+  (*pcVar34)();
   return;
 }
 

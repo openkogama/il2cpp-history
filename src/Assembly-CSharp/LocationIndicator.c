@@ -631,7 +631,7 @@ bool Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetIndicatorPosit
     screenPoint.x = (float)this;
     VVar7 = LocationIndicator_get_Max(this,(MethodInfo *)0x0);
     puVar8 = &UNK_?;
-    if (VVar7.y < 3.7109492e-29) {
+    if (VVar7.y < 3.7110744e-29) {
       iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
       screenPoint.z = (float)&UNK_?;
@@ -707,18 +707,10 @@ void Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetOwnership
               (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     return;
   }
-  uVar3 = func_?();
-  unaff_EDI[(int)&stack0x00000000] = unaff_EDI[(int)&stack0x00000000] ^ extraout_CH;
-  pbVar4 = (byte *)((int)&stack0x00000000 * 2 + 0x38);
-  bVar5 = *pbVar4;
-  *pbVar4 = *pbVar4 + (byte)uVar3;
-  pcVar6 = (char *)((int)uVar3 + 0x2c);
-  *pcVar6 = *pcVar6 + unaff_BL + CARRY1(bVar5,(byte)uVar3);
-  unaff_EDI[(int)&stack0x00000000] = unaff_EDI[(int)&stack0x00000000] + -0x10;
-  uVar7 = in((short)((uint6)uVar3 >> 0x20));
-  *unaff_EDI = uVar7;
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  bRam_? = bRam_? >> 1;
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

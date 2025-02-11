@@ -498,12 +498,13 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   case RewardedAdResult__Enum_ErrorClient:
   case RewardedAdResult__Enum_ErrorInternal:
   case RewardedAdResult__Enum_RewardNotUnlocked:
-    value = (Object *)func_?(TypeInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0);
+    method_00 = unaff_EDI;
+    unaff_ESI = (Object *)func_?(TypeInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    if (value != (Object *)0x0) {
-      value[1].monitor = (MonitorData *)this;
-      func_?(&value[1].monitor,this);
+              (unaff_ESI,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    if (unaff_ESI != (Object *)0x0) {
+      unaff_ESI[1].monitor = (MonitorData *)this;
+      func_?(&unaff_ESI[1].monitor,this);
       original = (this->fields)._.errorNotification;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
@@ -513,10 +514,11 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
                          ((Object *)original,
                           NotificationPopup_MethodInfo__UnityEngine__Object__Instantiate<NotificationPopup>_NotificationPopup_
                          );
-      value[1].klass = pOVar1;
-      func_?(value + 1,pOVar1);
-      unaff_EBX = value[1].klass;
+      unaff_ESI[1].klass = pOVar1;
+      func_?(unaff_ESI + 1,pOVar1);
+      unaff_EBX = unaff_ESI[1].klass;
       pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+      unaff_EDI = this;
       if (pIVar2 != (IAdManager *)0x0) {
         text = (String *)
                func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar2);
@@ -533,7 +535,7 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
                               );
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,unaff_ESI,
                      MethodInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0___OnRewardedAdWatched_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
@@ -562,15 +564,16 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   default:
     return;
   }
-  cVar4 = '\0';
-  pcVar5 = (char *)func_?();
-  cRam_? = cRam_? + '\x01';
-  *pcVar5 = *pcVar5 + (char)unaff_EBX +
-            (CARRY1(-cVar4,extraout_CH) || CARRY1(-cVar4 + extraout_CH,pcVar5 < (char *)0x3dff1810))
-  ;
-  iRam_? = iRam_? + 1;
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?();
+  bVar4 = *(byte *)&unaff_ESI->klass;
+  bVar5 = (byte)((uint)unaff_EBX >> 8);
+  *(byte *)&unaff_ESI->klass = *(char *)&unaff_ESI->klass + bVar5;
+  ppGVar6 = &unaff_EDI[-0x673a7c].fields.boostContent;
+  *(char *)ppGVar6 = *(char *)ppGVar6 + extraout_CH + CARRY1(bVar4,bVar5);
+  *(byte *)&unaff_ESI->klass = *(char *)&unaff_ESI->klass + bVar5;
+  *(byte *)&unaff_ESI->klass = *(char *)&unaff_ESI->klass + bVar5;
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

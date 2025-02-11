@@ -352,72 +352,55 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsNode::PluralFormsNode_Eval
   pPVar5 = this;
 code_?:
   this = pPVar5;
-  puVar11 = (undefined4 *)((ulonglong)iVar2 >> 0x20);
+  iVar11 = (int)iVar2;
   uVar12 = func_?();
-  pbVar13 = (byte *)uVar12;
-  uVar14 = in((short)((ulonglong)uVar12 >> 0x20));
-  *puVar11 = uVar14;
-  pbVar15 = (byte *)(puVar11 + -1);
-  bVar16 = *pbVar15;
-  bVar17 = (byte)((uint)pPVar1 >> 8);
-  *pbVar15 = *pbVar15 + bVar17;
-  bVar18 = (byte)((ulonglong)uVar12 >> 0x20);
-  bVar19 = CARRY1(*pbVar13,bVar18) || CARRY1(*pbVar13 + bVar18,CARRY1(bVar16,bVar17));
-  *pbVar13 = *pbVar13 + bVar18 + CARRY1(bVar16,bVar17);
-  pcVar20 = (char *)((int)iVar2 + 0xe);
-  *pcVar20 = *pcVar20 + -1;
-  bVar16 = (byte)((ulonglong)uVar12 >> 0x28);
-  bVar21 = bVar16 + bVar17;
-  bVar22 = CARRY1(bVar16,bVar17) || CARRY1(bVar21,bVar19);
-  bVar21 = bVar21 + bVar19;
-  iVar10 = CONCAT22((short)((ulonglong)uVar12 >> 0x30),CONCAT11(bVar21,bVar18));
-  pbVar15 = pbVar13 + 0xADDR;
-  bVar19 = CARRY1(*pbVar15,bVar18) || CARRY1(*pbVar15 + bVar18,bVar22);
-  *pbVar15 = *pbVar15 + bVar18 + bVar22;
-  pcVar20 = (char *)((int)iVar2 + 0xd);
-  *pcVar20 = *pcVar20 + -1;
-  bVar23 = (byte)extraout_CX;
-  bVar22 = bVar17 < bVar23 || (byte)(bVar17 - bVar23) < bVar19;
-  bVar16 = (byte)pPVar1;
-  cVar24 = (bVar17 - bVar23) - bVar19;
-  n._0_4_ = CONCAT22((short)((uint)pPVar1 >> 0x10),CONCAT11(cVar24,bVar16));
-  pbVar15 = (byte *)(iVar10 + 0x3a104ef9);
-  bVar17 = (byte)((ushort)extraout_CX >> 8);
-  bVar19 = CARRY1(*pbVar15,bVar17) || CARRY1(*pbVar15 + bVar17,bVar22);
-  *pbVar15 = *pbVar15 + bVar17 + bVar22;
-  bVar22 = CARRY1(bVar18,bVar23) || CARRY1(bVar18 + bVar23,bVar19);
-  uVar25 = (undefined3)((uint)iVar10 >> 8);
-  bVar26 = bVar18 + bVar23 + bVar19;
-  pbVar15 = (byte *)(CONCAT31(uVar25,bVar26) + -5);
-  bVar19 = CARRY1(*pbVar15,bVar16) || CARRY1(*pbVar15 + bVar16,bVar22);
-  *pbVar15 = *pbVar15 + bVar16 + bVar22;
-  bVar18 = (byte)((ulonglong)uVar12 >> 8);
-  bVar16 = bVar26 + bVar18;
-  bVar22 = CARRY1(bVar26,bVar18) || CARRY1(bVar16,bVar19);
-  iVar10 = CONCAT31(uVar25,bVar16 + bVar19);
-  pbVar13 = pbVar13 + -4;
-  bVar16 = *pbVar13;
-  bVar18 = *pbVar13;
-  *pbVar13 = bVar18 + bVar17 + bVar22;
-  pcVar20 = (char *)(iVar10 + -3);
-  *pcVar20 = *pcVar20 + cVar24 +
-            (CARRY1(bVar23,bVar21) ||
-            CARRY1(bVar23 + bVar21,CARRY1(bVar16,bVar17) || CARRY1(bVar18 + bVar17,bVar22)));
+  uVar13 = (uint)uVar12 | 0x1f104efa;
+  bVar14 = (byte)((ulonglong)uVar12 >> 0x28);
+  *(char *)(uVar13 + 0xb0104eff) = *(char *)(uVar13 + 0xb0104eff) + bVar14;
+  *(int *)(iVar11 + 0xf) = *(int *)(iVar11 + 0xf) + -1;
+  uVar15 = (undefined3)((ulonglong)uVar12 >> 0x28);
+  bVar16 = (byte)((uint)pPVar1 >> 8);
+  bVar17 = (byte)((ulonglong)uVar12 >> 0x20) ^ bVar16;
+  pbVar18 = (byte *)(uVar13 + 0xba104eff);
+  bVar19 = *pbVar18;
+  *pbVar18 = *pbVar18 + bVar14;
+  pbVar18 = (byte *)(CONCAT31(uVar15,bVar17) + -5);
+  bVar20 = *pbVar18 + (byte)extraout_CX;
+  bVar21 = CARRY1(*pbVar18,(byte)extraout_CX) || CARRY1(bVar20,CARRY1(bVar19,bVar14));
+  *pbVar18 = bVar20 + CARRY1(bVar19,bVar14);
+  bVar14 = (byte)pPVar1;
+  bVar22 = CARRY1(bVar17,bVar14) || CARRY1(bVar17 + bVar14,bVar21);
+  bVar17 = bVar17 + bVar14 + bVar21;
+  pbVar18 = (byte *)(CONCAT31(uVar15,bVar17) + -4);
+  bVar20 = (byte)((ushort)extraout_CX >> 8);
+  bVar19 = *pbVar18 + bVar20;
+  bVar21 = CARRY1(*pbVar18,bVar20) || CARRY1(bVar19,bVar22);
+  *pbVar18 = bVar19 + bVar22;
+  bVar22 = CARRY1(bVar17,bVar16) || CARRY1(bVar17 + bVar16,bVar21);
+  iVar10 = CONCAT31(uVar15,bVar17 + bVar16 + bVar21);
+  pbVar18 = (byte *)(iVar10 + 0x8104efd);
+  bVar19 = *pbVar18;
+  bVar20 = *pbVar18 + (byte)uVar13;
+  *pbVar18 = bVar20 + bVar22;
+  *(char *)(iVar11 + 9) = *(char *)(iVar11 + 9) + -1;
+  *(char *)(iVar11 + 9) = *(char *)(iVar11 + 9) + -1;
+  n._0_4_ = CONCAT22((short)((uint)pPVar1 >> 0x10),
+                     CONCAT11(-(CARRY1(bVar19,(byte)uVar13) || CARRY1(bVar20,bVar22)),bVar14));
   in((short)iVar10);
   if (in_stack_6 != 0) {
     (**(code **)(in_stack_6 + 0xc))(*(undefined4 *)(in_stack_6 + 0x20));
-    uVar27 = 0;
+    uVar13 = 0;
     if (this != (PluralFormsNode *)0x0) {
       iVar10 = 0x10;
       while (pPVar7 = (this->fields).nodes, pPVar7 != (PluralFormsNode__Array *)0x0) {
-        if ((int)pPVar7->max_length <= (int)uVar27) {
+        if ((int)pPVar7->max_length <= (int)uVar13) {
           if ((int)n != 0) {
             iVar4 = (**(code **)((int)n + 0xc))();
             return iVar4;
           }
           break;
         }
-        if (pPVar7->max_length <= uVar27) goto code_?;
+        if (pPVar7->max_length <= uVar13) goto code_?;
         if (*(int *)((int)pPVar7->vector + iVar10 + -0x10) != 0) {
           n._0_4_ = 0;
           PluralFormsNode_IterateNodes
@@ -425,7 +408,7 @@ code_?:
                      (PluralFormsNode_IterateNodesDelegate *)0x0,
                      (PluralFormsNode_IterateNodesDelegate *)0x0,(MethodInfo *)0x0);
         }
-        uVar27 = uVar27 + 1;
+        uVar13 = uVar13 + 1;
         iVar10 = iVar10 + 4;
       }
     }
@@ -433,8 +416,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar28 = (code *)swi(3);
-  iVar4 = (*pcVar28)();
+  pcVar23 = (code *)swi(3);
+  iVar4 = (*pcVar23)();
   return iVar4;
 }
 

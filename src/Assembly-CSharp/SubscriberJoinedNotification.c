@@ -126,7 +126,7 @@ void Assembly-CSharp.dll::SubscriberJoinedNotification::
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                 (this_01,value,(MethodInfo *)0x0);
       SubscriberJoinedNotification_CloseNotificationAnimation(this,0.0,(MethodInfo *)0x0);
-      if (_UNK_? < 3.9328158e-29) {
+      if (_UNK_? < 3.9329506e-29) {
         SubscriberJoinedNotification_CloseNotification(this,(MethodInfo *)0x0);
       }
       return;
@@ -174,7 +174,7 @@ void Assembly-CSharp.dll::SubscriberJoinedNotification::
                 (this_01,fVar1,(MethodInfo *)0x0);
       SubscriberJoinedNotification_CloseNotificationAnimation
                 (this,_UNK_? - 0.0,(MethodInfo *)0x0);
-      if (_UNK_? < 3.9328856e-29) {
+      if (_UNK_? < 3.9330204e-29) {
         (this->fields).currentState = 3;
         fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
         (this->fields).stateStartTime = fVar1;
@@ -205,31 +205,32 @@ void Assembly-CSharp.dll::SubscriberJoinedNotification::SubscriberJoinedNotifica
     pGVar2 = (this->fields).content;
     if (pGVar2 == (GameObject *)0x0) {
 code_?:
-      bVar3 = 0;
-      cVar4 = func_?();
-      pCVar5 = (CanvasGroup__Class *)in(extraout_DX);
-      unaff_EDI->klass = pCVar5;
-      bVar6 = *extraout_ECX;
-      bVar7 = (byte)((uint)unaff_EBX >> 8);
-      bVar8 = *extraout_ECX;
-      *extraout_ECX = bVar8 + bVar7 + bVar3;
-      uVar9 = in(extraout_DX);
-      *(undefined1 *)((int)&unaff_EDI->monitor + 1) = uVar9;
-      uVar10 = in(extraout_DX);
-      *(undefined4 *)((int)&unaff_EDI->monitor + 3) = uVar10;
-      pcVar11 = (char *)((int)&this[0x117752c].fields.backgroundOriginalHeigt + 1);
-      *pcVar11 = *pcVar11 + cVar4 +
-                (CARRY1(in_stack_12,bVar7) ||
-                CARRY1(in_stack_12 + bVar7,
-                       CARRY1(bVar6,bVar7) || CARRY1(bVar8 + bVar7,bVar3)));
-      pCVar5 = (CanvasGroup__Class *)in(extraout_DX);
-      unaff_EDI[1].klass = pCVar5;
+      uVar3 = func_?();
+      uVar4 = (undefined2)((uint6)uVar3 >> 0x20);
+      pbVar5 = (byte *)((int)&unaff_EDI[5].fields._._._.m_CachedPtr + 3);
+      *pbVar5 = *pbVar5 & (byte)((ushort)extraout_CX >> 8);
+      pCVar6 = (CanvasGroup__Class *)in(uVar4);
+      unaff_EDI->klass = pCVar6;
+      bVar7 = CARRY1(in_stack_8,unaff_BH) ||
+               CARRY1(in_stack_8 + unaff_BH,CARRY1((byte)extraout_CX,unaff_BH));
+      bVar9 = (byte)((uint6)uVar3 >> 8);
+      bVar10 = *(char *)&this->klass + bVar9;
+      bVar11 = CARRY1(*(byte *)&this->klass,bVar9) || CARRY1(bVar10,bVar7);
+      *(byte *)&this->klass = bVar10 + bVar7;
+      out(this->klass,uVar4);
+      pbVar5 = (byte *)((int)&this[1].fields._.timeSinceStart + 3);
+      bVar10 = *pbVar5;
+      bVar12 = *pbVar5 + (byte)uVar3;
+      *pbVar5 = bVar12 + bVar11;
+      *(char *)uVar3 =
+           *(char *)uVar3 + bVar9 + (CARRY1(bVar10,(byte)uVar3) || CARRY1(bVar12,bVar11));
+      out(this->monitor,uVar4);
       pcVar13 = (code *)swi(3);
-      (*pcVar13)(this,&stack0xfffffffc,&stack0x00000000);
+      (*pcVar13)();
       return;
     }
     bVar14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                       (pGVar2,(MethodInfo *)0x0);
+                      (pGVar2,(MethodInfo *)0x0);
     if (bVar14 != 0) {
       pGVar2 = (this->fields).content;
       if (pGVar2 == (GameObject *)0x0) goto code_?;
@@ -244,7 +245,8 @@ code_?:
       if (pGVar2 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar2,1,(MethodInfo *)0x0);
-        (*(code *)(this->klass->vtable).Update.method)(this);
+        (*(code *)(this->klass->vtable).Update.method)
+                  (this,(this->klass->vtable).OnReturn.methodPtr);
         return;
       }
       goto code_?;
@@ -505,31 +507,32 @@ void Assembly-CSharp.dll::SubscriberJoinedNotification::SubscriberJoinedNotifica
     pGVar2 = (this->fields).content;
     if (pGVar2 == (GameObject *)0x0) {
 code_?:
-      bVar3 = 0;
-      cVar4 = func_?();
-      pCVar5 = (CanvasGroup__Class *)in(extraout_DX);
-      unaff_EDI->klass = pCVar5;
-      bVar6 = *extraout_ECX;
-      bVar7 = (byte)((uint)unaff_EBX >> 8);
-      bVar8 = *extraout_ECX;
-      *extraout_ECX = bVar8 + bVar7 + bVar3;
-      uVar9 = in(extraout_DX);
-      *(undefined1 *)((int)&unaff_EDI->monitor + 1) = uVar9;
-      uVar10 = in(extraout_DX);
-      *(undefined4 *)((int)&unaff_EDI->monitor + 3) = uVar10;
-      pcVar11 = (char *)((int)&this[0x117752c].fields.backgroundOriginalHeigt + 1);
-      *pcVar11 = *pcVar11 + cVar4 +
-                (CARRY1(in_stack_12,bVar7) ||
-                CARRY1(in_stack_12 + bVar7,
-                       CARRY1(bVar6,bVar7) || CARRY1(bVar8 + bVar7,bVar3)));
-      pCVar5 = (CanvasGroup__Class *)in(extraout_DX);
-      unaff_EDI[1].klass = pCVar5;
+      uVar3 = func_?();
+      uVar4 = (undefined2)((uint6)uVar3 >> 0x20);
+      pbVar5 = (byte *)((int)&unaff_EDI[5].fields._._._.m_CachedPtr + 3);
+      *pbVar5 = *pbVar5 & (byte)((ushort)extraout_CX >> 8);
+      pCVar6 = (CanvasGroup__Class *)in(uVar4);
+      unaff_EDI->klass = pCVar6;
+      bVar7 = CARRY1(in_stack_8,unaff_BH) ||
+               CARRY1(in_stack_8 + unaff_BH,CARRY1((byte)extraout_CX,unaff_BH));
+      bVar9 = (byte)((uint6)uVar3 >> 8);
+      bVar10 = *(char *)&this->klass + bVar9;
+      bVar11 = CARRY1(*(byte *)&this->klass,bVar9) || CARRY1(bVar10,bVar7);
+      *(byte *)&this->klass = bVar10 + bVar7;
+      out(this->klass,uVar4);
+      pbVar5 = (byte *)((int)&this[1].fields._.timeSinceStart + 3);
+      bVar10 = *pbVar5;
+      bVar12 = *pbVar5 + (byte)uVar3;
+      *pbVar5 = bVar12 + bVar11;
+      *(char *)uVar3 =
+           *(char *)uVar3 + bVar9 + (CARRY1(bVar10,(byte)uVar3) || CARRY1(bVar12,bVar11));
+      out(this->monitor,uVar4);
       pcVar13 = (code *)swi(3);
-      (*pcVar13)(this,&stack0xfffffffc,&stack0x00000000);
+      (*pcVar13)();
       return;
     }
     bVar14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                       (pGVar2,(MethodInfo *)0x0);
+                      (pGVar2,(MethodInfo *)0x0);
     if (bVar14 != 0) {
       pGVar2 = (this->fields).content;
       if (pGVar2 == (GameObject *)0x0) goto code_?;
@@ -544,7 +547,8 @@ code_?:
       if (pGVar2 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar2,1,(MethodInfo *)0x0);
-        (*(code *)(this->klass->vtable).Update.method)(this);
+        (*(code *)(this->klass->vtable).Update.method)
+                  (this,(this->klass->vtable).OnReturn.methodPtr);
         return;
       }
       goto code_?;

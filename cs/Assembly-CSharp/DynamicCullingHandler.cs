@@ -19,7 +19,7 @@ public class DynamicCullingHandler
 	public DynamicCullingHandler(float cullingRadius);
 
 	// Methods
-	public void ActivateCulling(GameObject cullingObject);
+	public void ActivateCulling(GameObject cullingObject, GameObject[] cullingGroup = null);
 	public void DeActivateCulling();
 	public void UpdateCullingRadius(MVWorldObjectClient objArg, ScaleChangedEventArgs scaleArg);
 }

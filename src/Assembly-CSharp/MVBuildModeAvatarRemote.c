@@ -7,6 +7,7 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Activ
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__GameObject);
     func_?(&TypeInfo__MVNetworkListener);
     cRam_? = '\x01';
   }
@@ -16,12 +17,17 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Activ
             (this,rotation.x,rotation.y,rotation.z,rotation.w,
              (this->klass->vtable).get_Scale.methodPtr);
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 != (MVNetworkGame *)0x0) &&
-     (this_00 = (pMVar1->fields).transformNetworkManager, this_00 != (TransformNetworkManager *)0x0)
+  if ((pMVar1 == (MVNetworkGame *)0x0) ||
+     (this_00 = (pMVar1->fields).transformNetworkManager, this_00 == (TransformNetworkManager *)0x0)
      ) {
+code_?:
+    func_?();
+  }
+  else {
     this_03 = (MVNetworkListener *)
               TransformNetworkManager::TransformNetworkManager_GetNetworkObject
                         (this_00,(this->fields)._._._._.id,(MethodInfo *)0x0);
+    unaff_EDI = TypeInfo__MVNetworkListener;
     if (this_03 != (MVNetworkListener *)0x0) {
       if (((this_03->klass->_1).naturalAligment < (TypeInfo__MVNetworkListener->_1).naturalAligment)
          || ((this_03->klass->_1).typeHierarchy
@@ -30,30 +36,37 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Activ
       MVNetworkListener::MVNetworkListener_SetToCurrentPosition(this_03,(MethodInfo *)0x0);
     }
     this_01 = (this->fields)._._._.gameObject;
-    if (this_01 != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_01,1,(MethodInfo *)0x0);
-      MVBuildModeAvatarRemote_SetLaserPointerVisibility(this,1,(MethodInfo *)0x0);
-      pAVar2 = (this->fields).avatarRemoteBuildMode;
-      if ((pAVar2 != (AvatarRemoteBuildMode *)0x0) &&
-         (pAVar3 = (pAVar2->fields).avatarUIHandlerRemote, pAVar3 != (AvatarUIHandlerRemote *)0x0))
-      {
-        (*(code *)(pAVar3->klass->vtable).Activate.method)();
-        this_02 = (this->fields).cullingHandler;
-        if (this_02 != (DynamicCullingHandler *)0x0) {
-          DynamicCullingHandler::DynamicCullingHandler_ActivateCulling
-                    (this_02,(this->fields)._._._.gameObject,(MethodInfo *)0x0);
-          return;
-        }
+    if (this_01 == (GameObject *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              (this_01,1,(MethodInfo *)0x0);
+    MVBuildModeAvatarRemote_SetLaserPointerVisibility(this,1,(MethodInfo *)0x0);
+    pAVar2 = (this->fields).avatarRemoteBuildMode;
+    if ((pAVar2 == (AvatarRemoteBuildMode *)0x0) ||
+       (pAVar3 = (pAVar2->fields).avatarUIHandlerRemote, pAVar3 == (AvatarUIHandlerRemote *)0x0))
+    goto code_?;
+    (*(code *)(pAVar3->klass->vtable).Activate.method)();
+    this_02 = (this->fields).cullingHandler;
+    unaff_EDI = (MVNetworkListener__Class *)func_?();
+    pMVar4 = (this->fields)._.body;
+    if ((pMVar4 == (MVBody *)0x0) || (unaff_EDI == (MVNetworkListener__Class *)0x0))
+    goto code_?;
+    if ((unaff_EDI->_0).namespaze != (char *)0x0) {
+      (unaff_EDI->_0).byval_arg.data = (_union_86)(pMVar4->fields)._._._.gameObject;
+      func_?();
+      if (this_02 != (DynamicCullingHandler *)0x0) {
+        DynamicCullingHandler::DynamicCullingHandler_ActivateCulling
+                  (this_02,(GameObject *)0x0,(GameObject__Array *)unaff_EDI,(MethodInfo *)0x0);
+        return;
       }
+      goto code_?;
     }
   }
   func_?();
   this_03 = extraout_EDX;
 code_?:
-  func_?(this_03);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?(this_03,unaff_EDI);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -198,29 +211,44 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Handl
                (MVBuildModeAvatarRemote *this,bool isLocal,bool isActive,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__GameObject);
+    cRam_? = '\x01';
+  }
   if (isLocal != 0) {
     return;
   }
   this_00 = (this->fields).cullingHandler;
   if (isActive == 0) {
-    if (this_00 != (DynamicCullingHandler *)0x0) {
-      DynamicCullingHandler::DynamicCullingHandler_ActivateCulling
-                (this_00,(this->fields)._._._.gameObject,(MethodInfo *)0x0);
-      return;
+    pGVar1 = (this->fields)._._._.gameObject;
+    cullingGroup = (GameObject__Array *)func_?(TypeInfo__UnityEngine__GameObject,1);
+    pMVar2 = (this->fields)._.body;
+    if ((pMVar2 != (MVBody *)0x0) &&
+       (pGVar3 = (pMVar2->fields)._._._.gameObject, cullingGroup != (GameObject__Array *)0x0)) {
+      if (cullingGroup->max_length == 0) goto code_?;
+      cullingGroup->vector[0] = pGVar3;
+      func_?(cullingGroup->vector,pGVar3);
+      if (this_00 != (DynamicCullingHandler *)0x0) {
+        DynamicCullingHandler::DynamicCullingHandler_ActivateCulling
+                  (this_00,pGVar1,cullingGroup,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
   else if (this_00 != (DynamicCullingHandler *)0x0) {
     DynamicCullingHandler::DynamicCullingHandler_DeActivateCulling(this_00,(MethodInfo *)0x0);
-    this_01 = (this->fields)._._._.gameObject;
-    if (this_01 != (GameObject *)0x0) {
+    pGVar1 = (this->fields)._._._.gameObject;
+    if (pGVar1 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_01,1,(MethodInfo *)0x0);
+                (pGVar1,1,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+code_?:
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -385,9 +413,9 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_SetLa
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pLVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar2 == 0) {
     pLVar1 = (this->fields).laserPointer;
     if (pLVar1 != (LaserPointer *)0x0) {
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject

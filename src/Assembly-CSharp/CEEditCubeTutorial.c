@@ -43,7 +43,7 @@ bool Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_DoReset
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0x8150);
+    func_?(0x8158);
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).resettingBookkeeping;

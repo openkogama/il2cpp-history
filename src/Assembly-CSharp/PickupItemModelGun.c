@@ -194,6 +194,7 @@ IntVector Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_GetCubePos
         point.z = (float)(MVWorldObjectClientManager *)voxelHit.interactionFlags;
         bVar1 = voxelHit.interactionFlags._4_1_;
         voxelHit.transform = (Transform *)pOVar5;
+        voxelHit.interactionFlags._4_4_ = (MethodInfo *)(float)voxelHit.interactionFlags._4_4_;
         IVar7 = SharedCubeFunctions::SharedCubeFunctions_WorldToLocal
                           ((GameObject *)voxelHit.collider,point,bVar1,(MethodInfo *)0x0);
         iVar3 = IVar7.z;
@@ -359,7 +360,7 @@ code_?:
                    (piVar25 = (int *)func_?(), piVar25 == (int *)0x0)) goto code_?;
                 if (*(Il2CppClass **)(*piVar25 + 0x20) != (TypeInfo__Edge->_0).element_class)
                 goto code_?;
-                uVar27 = 0x2a54;
+                uVar27 = 0x2cf4;
                 uStack_28 = 0x1069;
                 pfVar29 = (float *)func_?();
                 face = *pfVar29;
@@ -641,7 +642,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_HandleCursors
 
 {
   if (cRam_? == '\0') {
-    func_?(0xa560);
+    func_?(0xa568);
     func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
     func_?(&
                     MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__
@@ -1048,7 +1049,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_OnFireSecondary
         if (pMVar4 != (MVPickupOwner *)0x0) {
           fVar5 = (pMVar4->fields).lookOrigin.y;
           fVar6 = (pMVar4->fields).lookOrigin.z;
-          iVar7 = 0x3610;
+          iVar7 = 0x38a0;
           pVVar8 = MVPickupOwner::MVPickupOwner_get_LookDirection
                               ((Vector3 *)&stack0xffffffe0,(this->fields)._._.owner,
                                (MethodInfo *)0x0);

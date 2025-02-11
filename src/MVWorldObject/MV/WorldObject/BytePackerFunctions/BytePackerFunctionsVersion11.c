@@ -51,7 +51,6 @@ BytePackerFunctionsVersion11_GetDataParameters
                func_?(TypeInfo__MV__WorldObject__LinkDataParameter,
                                (byte *)((int)&kogamaDataType + 3));
       pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff4);
-      bp = (BytePacker *)0x0;
       if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                    *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
@@ -117,7 +116,6 @@ code_?:
                                (byte *)((int)&kogamaDataType + 3));
       puStack_7 = puVar2;
       pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&puStack_7);
-      bp = (BytePacker *)0x0;
       if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                    *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
@@ -145,27 +143,9 @@ code_?:
   default:
     return (Dictionary_2_System_Object_System_Object_ *)0x0;
   }
-  bVar9 = 0;
-  uVar10 = func_?();
-  uVar11 = (undefined2)((uint6)uVar10 >> 0x20);
-  pbVar12 = (byte *)uVar10;
-  out(uVar11,pbVar12);
-  bVar13 = (byte)((uint6)uVar10 >> 0x28);
-  bVar14 = extraout_CL + bVar13;
-  bVar15 = CARRY1(extraout_CL,bVar13) || CARRY1(bVar14,bVar9);
-  bVar14 = bVar14 + bVar9;
-  out(uVar11,(char)uVar10);
-  out(uVar11,pbVar12);
-  bVar13 = *pbVar12;
-  bVar9 = *pbVar12;
-  *pbVar12 = bVar9 + bVar14 + bVar15;
-  out(uVar11,pbVar12);
-  out(uVar11,pbVar12);
-  *(byte *)&bp[-1].klass =
-       *(char *)&bp[-1].klass + bVar14 + (CARRY1(bVar13,bVar14) || CARRY1(bVar9 + bVar14,bVar15));
-  out(uVar11,pbVar12);
-  pcVar16 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar16)();
+  func_?();
+  pcVar9 = (code *)swi(1);
+  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar9)();
   return pDVar1;
 }
 

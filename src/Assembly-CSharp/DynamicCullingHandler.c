@@ -1,8 +1,9 @@
 
-/* Void ActivateCulling(GameObject) */
+/* Void ActivateCulling(GameObject, GameObject[]) */
 
 void Assembly-CSharp.dll::DynamicCullingHandler::DynamicCullingHandler_ActivateCulling
-               (DynamicCullingHandler *this,GameObject *cullingObject,MethodInfo *method)
+               (DynamicCullingHandler *this,GameObject *cullingObject,
+               GameObject__Array *cullingGroup,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -29,13 +30,13 @@ void Assembly-CSharp.dll::DynamicCullingHandler::DynamicCullingHandler_ActivateC
   (value->fields).cullingBandIndex = 3;
   (value->fields).root = cullingObject;
   func_?(&(value->fields).root,cullingObject);
+  (value->fields).cullingGroup = cullingGroup;
+  func_?(&(value->fields).cullingGroup,cullingGroup);
   if (cullingObject != (GameObject *)0x0) {
     pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (cullingObject,(MethodInfo *)0x0);
     (value->fields).rootTransform = pTVar2;
     func_?(&(value->fields).rootTransform);
-    (value->fields).children = (GameObject__Array *)0x0;
-    func_?(&(value->fields).children,0);
     if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CullingApiWrapper);
     }

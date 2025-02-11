@@ -318,16 +318,18 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
     }
     colorStyle = ColorStyle__Enum_OffGray;
   }
-  pCVar2 = Styles::Styles_GetColor((Color *)&fStack_3,colorStyle,(MethodInfo *)0x0);
+  pCVar2 = Styles::Styles_GetColor(&CStack_3,colorStyle,(MethodInfo *)0x0);
   if (pIVar1 == (Image *)0x0) {
-    func_?();
-    uRam_? = uRam_? | unaff_EDI;
-    uRam_? = uRam_? | unaff_EDI;
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
+    CStack_3.g = (float)&UNK_?;
+    uVar4 = func_?();
+    out(10,uVar4);
+    *(char *)(unaff_EDI + 0xb) = *(char *)(unaff_EDI + 0xb) + unaff_BL + (uVar4 < 0x3d0b3f10);
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
     return;
   }
-  fStack_3 = pCVar2->a;
+  CStack_3.r = pCVar2->a;
+  CStack_3.g = (float)(pIVar1->klass->vtable).get_raycastTarget.methodPtr;
   (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,pCVar2->r,pCVar2->g,pCVar2->b);
   return;
 }
