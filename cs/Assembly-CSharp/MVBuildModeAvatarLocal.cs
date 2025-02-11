@@ -18,7 +18,6 @@ public class MVBuildModeAvatarLocal : MVBuildModeAvatar, ILocalObject, ISpawnRol
 	private AvatarLocalBuildMode avatarScriptObject;
 	private BuildModeAvatarLocalModes buildModeAvatarLocalModes;
 	private LaserPointer laserPoint;
-	private bool canEdit;
 
 	// Properties
 	int ILocalObject.Id { get; }
@@ -179,26 +178,26 @@ public class MVBuildModeAvatarLocal : MVBuildModeAvatar, ILocalObject, ISpawnRol
 	private delegate void SpawnRoleDataReceiverActionDelegate(SpawnRoleDataReceiver spawnRoleDataReceiver);
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass23_0
+	private sealed class __c__DisplayClass21_0
 	{
 		// Fields
 		public PositionChangedEventArgs positionChangedEventArgs;
 
 		// Constructors
-		public __c__DisplayClass23_0();
+		public __c__DisplayClass21_0();
 
 		// Methods
 		internal void _OnPositionChanged_b__0(SpawnRoleDataReceiver receiver);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass24_0
+	private sealed class __c__DisplayClass22_0
 	{
 		// Fields
 		public ScaleChangedEventArgs scaleChangedEventArgs;
 
 		// Constructors
-		public __c__DisplayClass24_0();
+		public __c__DisplayClass22_0();
 
 		// Methods
 		internal void _OnScaleChanged_b__0(SpawnRoleDataReceiver receiver);
@@ -209,7 +208,6 @@ public class MVBuildModeAvatarLocal : MVBuildModeAvatar, ILocalObject, ISpawnRol
 
 	// Methods
 	public override void Initialize();
-	private bool PlayerCanEdit();
 	private void SpawnRoleDataReceiverAction(SpawnRoleDataReceiverActionDelegate spawnRoleDataReceiverActionDelegate);
 	public void Activate(int idFrom, SpawnRoleDataReceiver spawnRoleDataReceiver, Vector3 position, Quaternion rotation);
 	public void Suspend();
