@@ -1,7 +1,7 @@
 
 /* Void <OnPositionChanged>b__0(SpawnRoleDataReceiver) */
 
-void Assembly-CSharp.dll::MVBuildModeAvatarLocal+<>c__DisplayClass23_0::MVBuildModeAvatarLocal_c_DisplayClass23_0__OnPositionChanged_b__0(MVBuildModeAvatarLocal_c_DisplayClass23_0 *this,SpawnRoleDataReceiver *receiver,MethodInfo *method)
+void Assembly-CSharp.dll::MVBuildModeAvatarLocal+<>c__DisplayClass21_0::MVBuildModeAvatarLocal_c_DisplayClass21_0__OnPositionChanged_b__0(MVBuildModeAvatarLocal_c_DisplayClass21_0 *this,SpawnRoleDataReceiver *receiver,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

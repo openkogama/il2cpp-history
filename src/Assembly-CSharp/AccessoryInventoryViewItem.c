@@ -169,7 +169,7 @@ void Assembly-CSharp.dll::AccessoryInventoryViewItem::AccessoryInventoryViewItem
                   this_05 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
                   Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_05,(Object *)this,MethodInfo__AccessoryInventoryViewItem__AccessoryCreatedCallback_AvatarAccessory_,(MethodInfo *)0x0);
                   if (this_03 != (AccessoryLoader *)0x0) {
-                    Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader_LoadAccessory(this_03,(String *)0x5035ff00,(Action_1_AvatarAccessory_ *)this_05,(MethodInfo *)0x0);
+                    Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader_LoadAccessory(this_03,(String *)0x5835ff00,(Action_1_AvatarAccessory_ *)this_05,(MethodInfo *)0x0);
                     return;
                   }
                 }

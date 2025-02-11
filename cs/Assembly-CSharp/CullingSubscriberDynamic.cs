@@ -12,11 +12,11 @@ using UnityEngine;
 public class CullingSubscriberDynamic : IUpdatecontrollerSubscriberUpdate, ICullingSubscriber
 {
 	// Fields
-	private int cullingBandIndex;
-	private int overrideDistanceBandIndex;
-	private GameObject root;
-	private Transform rootTransform;
-	private GameObject[] children;
+	private readonly int cullingBandIndex;
+	private readonly int overrideDistanceBandIndex;
+	private readonly GameObject root;
+	private readonly GameObject[] cullingGroup;
+	private readonly Transform rootTransform;
 	[CompilerGenerated]
 	private int _CullingIndex_k__BackingField;
 
@@ -24,7 +24,7 @@ public class CullingSubscriberDynamic : IUpdatecontrollerSubscriberUpdate, ICull
 	public int CullingIndex { [CompilerGenerated] get; [CompilerGenerated] set; }
 
 	// Constructors
-	public CullingSubscriberDynamic(float radius, int cullingBandIndex, GameObject root, GameObject[] children = null);
+	public CullingSubscriberDynamic(float radius, int cullingBandIndex, GameObject root, GameObject[] cullingGroup = null);
 
 	// Methods
 	public void OnStateChanged(CullingGroupEvent cullingGroupEvent);

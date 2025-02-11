@@ -604,7 +604,7 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched(R
   }
   StatHatWrapper::StatHatWrapper_Count(StringLiteral_Revive_WatchedReviveAd,1,(MethodInfo *)0x0);
   value = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((value != (MVNetworkGame *)0x0) && (unaff_EBX = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?((value->fields).OnWinningConditionFulfilled), unaff_EDI = this, this != (ReviveUIHandler *)0x0)) {
+  if ((value != (MVNetworkGame *)0x0) && (unaff_EBX = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?((value->fields).OnWinningConditionFulfilled), this != (ReviveUIHandler *)0x0)) {
     Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(unaff_EBX,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0);
     method_00 = (MethodInfo *)0x0;
     unaff_EBX = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)0x0,(Delegate *)unaff_EBX,(MethodInfo *)0x0);
@@ -700,26 +700,17 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched(R
   }
   bVar2 = 0;
   func_?();
-  this = unaff_EDI;
 code_?:
-  pbVar8 = (byte *)func_?();
-  pbVar9 = (byte *)((int)&this->klass + (int)&value->klass);
-  bVar10 = *pbVar9 < extraout_DL || (byte)(*pbVar9 - extraout_DL) < bVar2;
-  *pbVar9 = (*pbVar9 - extraout_DL) - bVar2;
-  bVar11 = (byte)unaff_EBX;
-  bVar12 = CARRY1(*pbVar8,bVar11) || CARRY1(*pbVar8 + bVar11,bVar10);
-  *pbVar8 = *pbVar8 + bVar11 + bVar10;
-  bVar2 = (byte)pbVar8 + 0x3e;
-  bVar10 = 0xc1 < (byte)pbVar8 || CARRY1(bVar2,bVar12);
-  pcVar13 = (char *)CONCAT31((int3)((uint)pbVar8 >> 8),bVar2 + bVar12);
-  pbVar9 = (byte *)((int)&unaff_EBX[-0x67bf08].fields._._.m_target + 3);
-  bVar2 = *pbVar9;
-  bVar14 = (byte)((uint)unaff_EBX >> 8);
-  bVar15 = *pbVar9 + bVar14;
-  *pbVar9 = bVar15 + bVar10;
-  *pcVar13 = *pcVar13 + bVar11 + (CARRY4((uint)this,(uint)value->klass) || CARRY4((int)&this->klass + (int)value->klass,(uint)(CARRY1(bVar2,bVar14) || CARRY1(bVar15,bVar10))));
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  func_?();
+  pbVar8 = (byte *)((int)&(unaff_EBX->fields)._._.method + 1);
+  bVar9 = *pbVar8;
+  bVar10 = (byte)((uint)unaff_EBX >> 8);
+  bVar11 = *pbVar8 + bVar10;
+  *pbVar8 = bVar11 + bVar2;
+  puVar12 = &value[-0x228a2c].fields.photonLoggingConfig.untilConnectedDebugLevel;
+  *puVar12 = *puVar12 + extraout_AH + (CARRY1(bVar9,bVar10) || CARRY1(bVar11,bVar2));
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

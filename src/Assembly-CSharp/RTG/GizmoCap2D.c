@@ -846,7 +846,7 @@ code_?:
       func_?();
       pGVar1 = (this->fields)._transform;
       if (pGVar1 != (GizmoTransform *)0x0) {
-        GizmoTransform::GizmoTransform_SetParent(pGVar1,(GizmoTransform *)0xea93e8c3,(MethodInfo *)0x0);
+        GizmoTransform::GizmoTransform_SetParent(pGVar1,(GizmoTransform *)0xe903e8c3,(MethodInfo *)0x0);
         pGVar1 = (this->fields)._transform;
         value = (GizmoEntityTransformChangedHandler *)func_?();
         Newtonsoft.Json.dll::Newtonsoft::Json::Serialization::SerializationCallback::SerializationCallback__ctor((SerializationCallback *)value,(Object *)this,MethodInfo__RTG__GizmoCap2D__OnTransformChanged_RTG__GizmoTransform__RTG__GizmoTransform__ChangeData_,(MethodInfo *)0x0);

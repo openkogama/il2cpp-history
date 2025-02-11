@@ -477,7 +477,7 @@ float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_SignedAngle(Vector3 from,Ve
     pMVar2 = (MethodInfo *)pVVar1->z;
     fVar3 = MathEx::MathEx_SafeAcos(cosine,pMVar2);
     to.z = fVar3 * 57.29578;
-    if (axis.y * cosine + axis.x * 4.3942586e-29 + axis.z * (float)pMVar2 < 0.0) {
+    if (axis.y * cosine + axis.x * 4.3943935e-29 + axis.z * (float)pMVar2 < 0.0) {
       to.z = -to.z;
     }
     return to.z;

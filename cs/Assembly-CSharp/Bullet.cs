@@ -83,7 +83,7 @@ public class Bullet : MonoBehaviour
 	public delegate void OnHitDelegate(VoxelHit hit, Ray lineOfFire);
 
 	[CompilerGenerated]
-	private sealed class _MakeVisibleOverTime_d__46 : IEnumerator<object>
+	private sealed class _MakeVisibleOverTime_d__48 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -96,7 +96,7 @@ public class Bullet : MonoBehaviour
 
 		// Constructors
 		[DebuggerHidden]
-		public _MakeVisibleOverTime_d__46(int __1__state);
+		public _MakeVisibleOverTime_d__48(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -112,6 +112,8 @@ public class Bullet : MonoBehaviour
 	// Methods
 	private void Awake();
 	private void Update();
+	private CollisionBullet.State UpdateBulletState();
+	private void Expire();
 	public static Bullet CreateBullet(PoolEnums bulletType, Vector3 pos, float handToMuzzleDist = 0f);
 	public void SetBulletAndTrailSettings(Color bulletColor, Color trailColor, float speed, float size);
 	public void ResetBullet();
@@ -121,7 +123,7 @@ public class Bullet : MonoBehaviour
 	private void OnStateChanged(CullingGroupEvent cullingGroupEvent);
 	private Vector3 FindTargetPos(float maxRange);
 	private Ray CalculateLineOfFireFromMuzzle(float maxRange);
-	[IteratorStateMachine(typeof(_MakeVisibleOverTime_d__46))]
+	[IteratorStateMachine(typeof(_MakeVisibleOverTime_d__48))]
 	private IEnumerator MakeVisibleOverTime();
 }
 

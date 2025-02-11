@@ -1,7 +1,7 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::Bullet+<MakeVisibleOverTime>d__46::Bullet_MakeVisibleOverTime_d_46_MoveNext(Bullet_MakeVisibleOverTime_d_46 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::Bullet+<MakeVisibleOverTime>d__48::Bullet_MakeVisibleOverTime_d_48_MoveNext(Bullet_MakeVisibleOverTime_d_48 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -86,13 +86,13 @@ code_?:
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::Bullet+<MakeVisibleOverTime>d__46::Bullet_MakeVisibleOverTime_d_46_System_Collections_IEnumerator_Reset(Bullet_MakeVisibleOverTime_d_46 *this,MethodInfo *method)
+void Assembly-CSharp.dll::Bullet+<MakeVisibleOverTime>d__48::Bullet_MakeVisibleOverTime_d_48_System_Collections_IEnumerator_Reset(Bullet_MakeVisibleOverTime_d_48 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor(this_00,(MethodInfo *)0x0);
-  func_?(&MethodInfo__Bullet___MakeVisibleOverTime_d__46__System_Collections_IEnumerator_Reset__);
+  func_?(&MethodInfo__Bullet___MakeVisibleOverTime_d__48__System_Collections_IEnumerator_Reset__);
   func_?(this_00);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();

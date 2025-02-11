@@ -451,7 +451,7 @@ void Assembly-CSharp.dll::MaterialsController::MaterialsController_UpdateContent
             if (bVar8 != 0) {
               pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
               if ((pMVar6 == (MVNetworkGame *)0x0) || (pMVar7 = (pMVar6->fields)._MaterialRepository_k__BackingField, pMVar7 == (MVMaterialRepository *)0x0)) break;
-              this_01 = MVMaterialRepository::MVMaterialRepository_GetMaterial(pMVar7,0xdd,(MethodInfo *)0x0);
+              this_01 = MVMaterialRepository::MVMaterialRepository_GetMaterial(pMVar7,0xad,(MethodInfo *)0x0);
               pMVar10 = (pMVar1->fields).materialViewItemPrefab;
               if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
@@ -464,7 +464,7 @@ void Assembly-CSharp.dll::MaterialsController::MaterialsController_UpdateContent
               isAvailable = MVMaterial::MVMaterial_get_IsAvailable(this_01,(MethodInfo *)0x0);
               this_00 = (pMVar1->fields).cubeModelingStateMachine;
               if ((this_00 == (CubeModelingStateMachine *)0x0) || (uVar11 = CubeModelingStateMachine::CubeModelingStateMachine_get_CurrentMaterialId(this_00,(MethodInfo *)0x0), pMVar10 == (MaterialViewItem *)0x0)) break;
-              MaterialViewItem::MaterialViewItem_Initialize(pMVar10,0xdd,bVar8 == 0,texture2D,isAvailable,(uint8_t)uVar5 == uVar11,(MethodInfo *)0x0);
+              MaterialViewItem::MaterialViewItem_Initialize(pMVar10,0xad,bVar8 == 0,texture2D,isAvailable,(uint8_t)uVar5 == uVar11,(MethodInfo *)0x0);
               pIVar2 = (pMVar1->fields).inventoryController;
               item = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pMVar10,(MethodInfo *)0x0);
               if (pIVar2 == (InventoryController *)0x0) break;
