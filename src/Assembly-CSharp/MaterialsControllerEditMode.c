@@ -54,23 +54,22 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
   (this->fields).prevMaterial = id;
   MaterialsController::MaterialsController_OnMaterialChanged
             ((MaterialsController *)this,id,(MethodInfo *)0x0);
-  x = (this->fields).desktopCubeModelingControllerEditMode;
+  pDVar1 = (this->fields).desktopCubeModelingControllerEditMode;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    this_00 = (DesktopCubeModelingControllerCubeTutorial *)
-              (this->fields).desktopCubeModelingControllerEditMode;
-    if (this_00 == (DesktopCubeModelingControllerCubeTutorial *)0x0) {
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)pDVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pDVar1 = (this->fields).desktopCubeModelingControllerEditMode;
+    if (pDVar1 == (DesktopCubeModelingController *)0x0) {
       func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    DesktopCubeModelingControllerCubeTutorial::
-    DesktopCubeModelingControllerCubeTutorial_DoSetMaterial(this_00,id,(MethodInfo *)0x0);
+    DesktopCubeModelingController::DesktopCubeModelingController_SetMaterial
+              (pDVar1,id,(MethodInfo *)0x0);
   }
   return;
 }

@@ -30,7 +30,8 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
 
 {
   if (x != (InventoryController *)0x0) {
-    InventoryController::InventoryController_TabSelected(x,3,(MethodInfo *)0x0);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Columns::Columns_NotifyChange
+              ((Columns *)x,ColumnsDataType__Enum_Resizable,(MethodInfo *)0x0);
     return;
   }
   uVar1 = func_?(&stack0xfffffff0);

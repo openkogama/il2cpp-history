@@ -1130,7 +1130,7 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_Purchas
                                 ((Delegate *)pAVar12,(Delegate *)this_02,(MethodInfo *)0x0);
             if (pDVar13 == (Delegate *)0x0) {
               *(Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                **)(IVar8.m_value + 0xc0) =
+                **)(IVar8.m_value + 0xbc) =
                    (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                     *)0x0;
             }
@@ -1144,7 +1144,7 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_Purchas
                 goto code_?;
               }
               *(Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                **)(IVar8.m_value + 0xc0) = pAVar12;
+                **)(IVar8.m_value + 0xbc) = pAVar12;
               iVar14 = func_?();
               if (iVar14 == 0) goto code_?;
             }

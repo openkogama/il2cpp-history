@@ -67,7 +67,7 @@ void Assembly-CSharp.dll::MVNetworkGame+GameDataQueryManager::
               ((BytePacker *)pOVar5,value_00,(MethodInfo *)0x0);
     pOVar5 = pOVar4[1].klass;
     if (value[1].klass == (Object__Class *)0x0) goto code_?;
-    queryDataLeft = 0x58;
+    queryDataLeft = 0xa8;
     MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_set_Position
               ((BytePacker *)value[1].klass,0,(MethodInfo *)0x0);
     if (value[1].klass == (Object__Class *)0x0) goto code_?;
@@ -108,8 +108,6 @@ code_?:
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void InitializeGameQueryData(MVNetworkGame+GameDataQueryManager+GameDataQuery) */
 
 void Assembly-CSharp.dll::MVNetworkGame+GameDataQueryManager::
@@ -119,175 +117,99 @@ void Assembly-CSharp.dll::MVNetworkGame+GameDataQueryManager::
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__ReceivedItemFromQueryEventArgs);
     cRam_? = '\x01';
   }
-  cVar1 = (int)gameDataQuery < 0;
-  bVar2 = gameDataQuery == (MVNetworkGame_GameDataQueryManager_GameDataQuery *)0x0;
-  if (!bVar2) {
-    switch((gameDataQuery->fields)._QueryType_k__BackingField) {
-    case 1:
-      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      cVar1 = (int)pMVar3 < 0;
-      bVar2 = pMVar3 == (MVNetworkGame *)0x0;
-      if (!bVar2) {
-        if ((pMVar3->fields).ReceivedItemFromQuery ==
-            (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
-          return;
-        }
-        pBVar4 = MVNetworkGame+GameDataQueryManager+GameDataQuery::
-                 MVNetworkGame_GameDataQueryManager_GameDataQuery_GetBytePacker
-                           (gameDataQuery,(MethodInfo *)0x0);
-        iVar5 = (gameDataQuery->fields).instigatorActorNumber;
-        pRVar6 = (ReceivedItemFromQueryEventArgs *)func_?();
-        puStackY_38 = &UNK_?;
-        ReceivedItemFromQueryEventArgs::ReceivedItemFromQueryEventArgs__ctor
-                  (pRVar6,pBVar4,iVar5,(MethodInfo *)0x0);
-        pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        cVar1 = (int)pMVar3 < 0;
-        bVar2 = pMVar3 == (MVNetworkGame *)0x0;
-        if (!bVar2) {
-          pEVar7 = (pMVar3->fields).ReceivedItemFromQuery;
-code_?:
-          cVar1 = (int)pEVar7 < 0;
-          bVar2 = pEVar7 == (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0;
-          if (!bVar2) {
-            (*(pEVar7->fields)._._.invoke_impl)();
-code_?:
-            return;
-          }
-        }
-      }
-      break;
-    case 2:
-      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      cVar1 = (int)pMVar3 < 0;
-      bVar2 = pMVar3 == (MVNetworkGame *)0x0;
-      if (!bVar2) {
-        this_00 = (pMVar3->fields).worldNetwork;
-        pBVar4 = (gameDataQuery->fields).bp;
-        cVar1 = (int)pBVar4 < 0;
-        bVar2 = pBVar4 == (BytePacker *)0x0;
-        if (!bVar2) {
-          MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_set_Position
-                    (pBVar4,0,(MethodInfo *)0x0);
-          cVar1 = (int)this_00 < 0;
-          bVar2 = this_00 == (WorldNetwork *)0x0;
-          if (!bVar2) {
-            WorldNetwork::WorldNetwork_AddGameQueryDataToGameWorld
-                      (this_00,(gameDataQuery->fields).bp,
-                       (gameDataQuery->fields).instigatorActorNumber,(MethodInfo *)0x0);
-            return;
-          }
-        }
-      }
-      break;
-    case 3:
-      pBVar4 = (gameDataQuery->fields).bp;
-      cVar1 = (int)pBVar4 < 0;
-      bVar2 = pBVar4 == (BytePacker *)0x0;
-      if (!bVar2) {
-        MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_set_Position
-                  (pBVar4,0,(MethodInfo *)0x0);
-        pBVar4 = (gameDataQuery->fields).bp;
-        cVar1 = (int)pBVar4 < 0;
-        bVar2 = pBVar4 == (BytePacker *)0x0;
-        if (!bVar2) {
-          MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ToArray
-                    (pBVar4,(MethodInfo *)0x0);
-          pEVar8 = mscorlib.dll::System::Text::Encoding::Encoding_get_ASCII((MethodInfo *)0x0);
-          cVar1 = (int)pEVar8 < 0;
-          bVar2 = pEVar8 == (Encoding *)0x0;
-          if (!bVar2) {
-            this = (MVNetworkGame_GameDataQueryManager *)
-                   (pEVar8->klass->vtable).GetString_1.methodPtr;
-            (*(code *)(pEVar8->klass->vtable).GetString.method)();
-            pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            cVar1 = (int)pMVar3 < 0;
-            bVar2 = pMVar3 == (MVNetworkGame *)0x0;
-            if (!bVar2) {
-              pAVar9 = (pMVar3->fields).ReceivedAccessoryData;
-              cVar1 = (int)pAVar9 < 0;
-              bVar2 = pAVar9 == (Action_1_String_ *)0x0;
-              if (!bVar2) {
-                (*(pAVar9->fields)._._.invoke_impl)();
-                return;
-              }
-            }
-          }
-        }
-      }
-      break;
-    case 4:
-      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      cVar1 = (int)pMVar3 < 0;
-      bVar2 = pMVar3 == (MVNetworkGame *)0x0;
-      if (!bVar2) {
-        if ((pMVar3->fields).ReceivedAvatarBodiesFromQuery ==
-            (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
-          return;
-        }
-        pBVar4 = MVNetworkGame+GameDataQueryManager+GameDataQuery::
-                 MVNetworkGame_GameDataQueryManager_GameDataQuery_GetBytePacker
-                           (gameDataQuery,(MethodInfo *)0x0);
-        iVar5 = (gameDataQuery->fields).instigatorActorNumber;
-        pRVar6 = (ReceivedItemFromQueryEventArgs *)func_?();
-        puStackY_38 = &UNK_?;
-        ReceivedItemFromQueryEventArgs::ReceivedItemFromQueryEventArgs__ctor
-                  (pRVar6,pBVar4,iVar5,(MethodInfo *)0x0);
-        pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        cVar1 = (int)pMVar3 < 0;
-        bVar2 = pMVar3 == (MVNetworkGame *)0x0;
-        if (!bVar2) {
-          pEVar7 = (pMVar3->fields).ReceivedAvatarBodiesFromQuery;
-          goto code_?;
-        }
-      }
-      break;
-    default:
-      goto code_?;
+  if (gameDataQuery == (MVNetworkGame_GameDataQueryManager_GameDataQuery *)0x0)
+  goto code_?;
+  switch((gameDataQuery->fields)._QueryType_k__BackingField) {
+  case 1:
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+    if ((pMVar1->fields).ReceivedItemFromQuery ==
+        (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
+      return;
     }
+    pBVar2 = MVNetworkGame+GameDataQueryManager+GameDataQuery::
+             MVNetworkGame_GameDataQueryManager_GameDataQuery_GetBytePacker
+                       (gameDataQuery,(MethodInfo *)0x0);
+    iVar3 = (gameDataQuery->fields).instigatorActorNumber;
+    this_01 = (ReceivedItemFromQueryEventArgs *)
+              func_?(TypeInfo__ReceivedItemFromQueryEventArgs);
+    ReceivedItemFromQueryEventArgs::ReceivedItemFromQueryEventArgs__ctor
+              (this_01,pBVar2,iVar3,(MethodInfo *)0x0);
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+    pEVar4 = (pMVar1->fields).ReceivedItemFromQuery;
+    break;
+  case 2:
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar1 != (MVNetworkGame *)0x0) {
+      this_00 = (pMVar1->fields).worldNetwork;
+      pBVar2 = (gameDataQuery->fields).bp;
+      if ((pBVar2 != (BytePacker *)0x0) &&
+         (MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_set_Position
+                    (pBVar2,0,(MethodInfo *)0x0), this_00 != (WorldNetwork *)0x0)) {
+        WorldNetwork::WorldNetwork_AddGameQueryDataToGameWorld
+                  (this_00,(gameDataQuery->fields).bp,(gameDataQuery->fields).instigatorActorNumber,
+                   (MethodInfo *)0x0);
+        return;
+      }
+    }
+    goto code_?;
+  case 3:
+    pBVar2 = (gameDataQuery->fields).bp;
+    if (pBVar2 != (BytePacker *)0x0) {
+      MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_set_Position
+                (pBVar2,0,(MethodInfo *)0x0);
+      pBVar2 = (gameDataQuery->fields).bp;
+      if (pBVar2 != (BytePacker *)0x0) {
+        MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ToArray(pBVar2,(MethodInfo *)0x0)
+        ;
+        pEVar5 = mscorlib.dll::System::Text::Encoding::Encoding_get_ASCII((MethodInfo *)0x0);
+        if (pEVar5 != (Encoding *)0x0) {
+          uVar6 = (*(code *)(pEVar5->klass->vtable).GetString.method)(pEVar5);
+          pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar1 != (MVNetworkGame *)0x0) &&
+             (pAVar7 = (pMVar1->fields).ReceivedAccessoryData, pAVar7 != (Action_1_String_ *)0x0)) {
+            (*(pAVar7->fields)._._.invoke_impl)
+                      ((pAVar7->fields)._._.method_code,uVar6,(pAVar7->fields)._._.method);
+            return;
+          }
+        }
+      }
+    }
+    goto code_?;
+  case 4:
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+    if ((pMVar1->fields).ReceivedAvatarBodiesFromQuery ==
+        (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
+      return;
+    }
+    pBVar2 = MVNetworkGame+GameDataQueryManager+GameDataQuery::
+             MVNetworkGame_GameDataQueryManager_GameDataQuery_GetBytePacker
+                       (gameDataQuery,(MethodInfo *)0x0);
+    iVar3 = (gameDataQuery->fields).instigatorActorNumber;
+    this_01 = (ReceivedItemFromQueryEventArgs *)
+              func_?(TypeInfo__ReceivedItemFromQueryEventArgs);
+    ReceivedItemFromQueryEventArgs::ReceivedItemFromQueryEventArgs__ctor
+              (this_01,pBVar2,iVar3,(MethodInfo *)0x0);
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+    pEVar4 = (pMVar1->fields).ReceivedAvatarBodiesFromQuery;
+    break;
+  default:
+    goto code_?;
   }
-  cVar10 = '\0';
-  bVar11 = 0;
-  func_?();
-  if (bVar2 || cVar10 != cVar1) {
-    bVar12 = (byte)extraout_ECX;
-    bVar13 = (byte)((uint)extraout_ECX >> 8);
-    bVar14 = bVar13 + bVar12;
-    bVar2 = CARRY1(bVar13,bVar12) || CARRY1(bVar14,bVar11);
-    pbVar15 = (byte *)(in_GS_OFFSET +
-                     CONCAT22((short)((uint)extraout_ECX >> 0x10),CONCAT11(bVar14 + bVar11,bVar12)) +
-                     0x18);
-    bVar11 = *pbVar15;
-    bVar14 = *pbVar15;
-    *pbVar15 = bVar14 + bVar12 + bVar2;
-    acStackY_79[in_GS_OFFSET] =
-         acStackY_79[in_GS_OFFSET] + (char)extraout_DX +
-         (CARRY1(bVar11,bVar12) || CARRY1(bVar14 + bVar12,bVar2));
-    in(extraout_DX);
-    if (cRam_? != '\0') goto code_?;
-  }
-  func_?();
-  cRam_? = '\x01';
+  if (pEVar4 != (EventHandler_1_ReceivedItemFromQueryEventArgs_ *)0x0) {
+    (*(pEVar4->fields)._._.invoke_impl)
+              ((pEVar4->fields)._._.method_code,this,this_01,(pEVar4->fields)._._.method);
 code_?:
-  this_01 = (this->fields).gameDataQueries;
-  if (this_01 != (Dictionary_2_System_Int32_MVNetworkGame_GameDataQueryManager_GameDataQuery_ *)0x0)
-  {
-    gameDataQuery_00 =
-         (MVNetworkGame_GameDataQueryManager_GameDataQuery *)
-         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-         Dictionary_2_System_Int32_System_Object__get_Item
-                   ((Dictionary_2_System_Int32_System_Object_ *)this_01,(int32_t)gameDataQuery,
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkGame_GameDataQueryManager::GameDataQuery>__get_Item_int_
-                   );
-    MVNetworkGame_GameDataQueryManager_InitializeGameQueryData
-              (this,gameDataQuery_00,(MethodInfo *)0x0);
     return;
   }
+code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
   return;
 }
 

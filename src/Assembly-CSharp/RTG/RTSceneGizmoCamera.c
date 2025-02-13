@@ -158,7 +158,7 @@ void Assembly-CSharp.dll::RTG::RTSceneGizmoCamera::RTSceneGizmoCamera_Update_Sys
           this_00 = (this->fields)._transform;
           if (this_00 != (Transform *)0x0) {
             value.y = (float)&stack0xffffffd8 - (float)uVar6 * fVar7;
-            value.x = 4.250493e-29 - (float)uVar5 * fVar7;
+            value.x = 4.2507338e-29 - (float)uVar5 * fVar7;
             value.z = (float)pTVar2 - pVVar4->z * fVar7;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                       (this_00,value,(MethodInfo *)0x0);

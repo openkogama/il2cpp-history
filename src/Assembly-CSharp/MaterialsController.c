@@ -83,27 +83,26 @@ void Assembly-CSharp.dll::MaterialsController::MaterialsController_OnMaterialCha
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  x = (this->fields).desktopCubeModelingController;
+  pDVar1 = (this->fields).desktopCubeModelingController;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    this_00 = (DesktopCubeModelingControllerCubeTutorial *)
-              (this->fields).desktopCubeModelingController;
-    if (this_00 == (DesktopCubeModelingControllerCubeTutorial *)0x0) {
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)pDVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pDVar1 = (this->fields).desktopCubeModelingController;
+    if (pDVar1 == (DesktopCubeModelingController *)0x0) {
       func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    DesktopCubeModelingControllerCubeTutorial::
-    DesktopCubeModelingControllerCubeTutorial_DoSetMaterial(this_00,id,(MethodInfo *)0x0);
+    DesktopCubeModelingController::DesktopCubeModelingController_SetMaterial
+              (pDVar1,id,(MethodInfo *)0x0);
   }
-  pUVar3 = (this->fields).materialChange;
-  if (pUVar3 != (UnityAction_1_System_Byte_ *)0x0) {
-    (*(pUVar3->fields)._._.invoke_impl)();
+  pUVar4 = (this->fields).materialChange;
+  if (pUVar4 != (UnityAction_1_System_Byte_ *)0x0) {
+    (*(pUVar4->fields)._._.invoke_impl)();
   }
   return;
 }
@@ -576,7 +575,7 @@ void Assembly-CSharp.dll::MaterialsController::MaterialsController_UpdateContent
                  (pMVar7 = (pMVar6->fields)._MaterialRepository_k__BackingField,
                  pMVar7 == (MVMaterialRepository *)0x0)) break;
               this_01 = MVMaterialRepository::MVMaterialRepository_GetMaterial
-                                  (pMVar7,0xad,(MethodInfo *)0x0);
+                                  (pMVar7,0x6d,(MethodInfo *)0x0);
               pMVar10 = (pMVar1->fields).materialViewItemPrefab;
               if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
@@ -597,7 +596,7 @@ void Assembly-CSharp.dll::MaterialsController::MaterialsController_UpdateContent
                                     (this_00,(MethodInfo *)0x0), pMVar10 == (MaterialViewItem *)0x0))
               break;
               MaterialViewItem::MaterialViewItem_Initialize
-                        (pMVar10,0xad,bVar8 == 0,texture2D,isAvailable,(uint8_t)uVar5 == uVar11,
+                        (pMVar10,0x6d,bVar8 == 0,texture2D,isAvailable,(uint8_t)uVar5 == uVar11,
                          (MethodInfo *)0x0);
               pIVar2 = (pMVar1->fields).inventoryController;
               item = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject

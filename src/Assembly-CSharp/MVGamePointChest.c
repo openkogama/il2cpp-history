@@ -512,7 +512,7 @@ code_?:
     pDVar7 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pDVar7 == (Delegate *)0x0) {
-      *(undefined4 *)(iVar6 + 0xc4) = 0;
+      *(undefined4 *)(iVar6 + 0xc0) = 0;
 code_?:
       func_?();
 code_?:
@@ -530,7 +530,7 @@ code_?:
     }
     iVar8 = func_?();
     if (iVar8 == 0) goto code_?;
-    *(int *)(iVar6 + 0xc4) = iVar8;
+    *(int *)(iVar6 + 0xc0) = iVar8;
     iVar6 = func_?();
     if (iVar6 != 0) goto code_?;
   }
@@ -765,11 +765,12 @@ code_?:
     MVLogicObject::MVLogicObject_SetupCulling
               ((MVLogicObject *)this_01,(pMVar1->fields).visualObject,5.0,(MethodInfo *)0x0);
     MVGamePointChest_HandleStandaloneDisabling(this_01,(MethodInfo *)0x0);
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    this = (MVGamePointChest *)pMVar2;
-    if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
+    pAVar2 = (Action_1_IWinningCondition___Class *)
+             MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    this = (MVGamePointChest *)pAVar2;
+    if (pAVar2 == (Action_1_IWinningCondition___Class *)0x0) goto code_?;
     pAStack3 = TypeInfo__System__Action<IWinningCondition>;
-    pAVar4 = (pMVar2->fields).OnWinningConditionFulfilled;
+    a = (Delegate *)(pAVar2->vtable).Equals.method;
     this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
     Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
     SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
@@ -778,35 +779,35 @@ code_?:
                MethodInfo__MVGamePointChest__OnWinningConditionFulfilled_IWinningCondition_,
                (MethodInfo *)0x0);
     unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pAVar4,(Delegate *)this_02,(MethodInfo *)0x0);
-    unaff_EDI = (MVNetworkGame *)TypeInfo__System__Action<IWinningCondition>;
+                          (a,(Delegate *)this_02,(MethodInfo *)0x0);
+    unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
     if (unaff_ESI == (Delegate *)0x0) {
-      (pMVar2->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-      pMStack5 = (MVNetworkGame *)0x0;
+      (pAVar2->vtable).Equals.method = (MethodInfo *)0x0;
+      pAStack4 = (Action_1_IWinningCondition___Class *)0x0;
 code_?:
-      pDStack6 = (Delegate *)&(pMVar2->fields).OnWinningConditionFulfilled;
+      pDStack5 = (Delegate *)&(pAVar2->vtable).Equals.method;
       func_?();
       MVGamePointChest_UpdateCanRespawn(this_01,(this_01->fields)._._._._.data,(MethodInfo *)0x0);
       return;
     }
-    pMStack5 = (MVNetworkGame *)TypeInfo__System__Action<IWinningCondition>;
-    pDStack6 = unaff_ESI;
-    pAVar4 = (Action_1_IWinningCondition_ *)func_?();
-    if (pAVar4 == (Action_1_IWinningCondition_ *)0x0) goto code_?;
-    (pMVar2->fields).OnWinningConditionFulfilled = pAVar4;
-    pMStack5 = (MVNetworkGame *)TypeInfo__System__Action<IWinningCondition>;
+    pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+    pDStack5 = unaff_ESI;
+    pMVar6 = (MethodInfo *)func_?();
+    if (pMVar6 == (MethodInfo *)0x0) goto code_?;
+    (pAVar2->vtable).Equals.method = pMVar6;
+    pAStack4 = TypeInfo__System__Action<IWinningCondition>;
     this = (MVGamePointChest *)TypeInfo__System__Action<IWinningCondition>;
-    pDStack6 = unaff_ESI;
-    pMStack5 = (MVNetworkGame *)func_?();
-    unaff_EDI = pMVar2;
-    if (pMStack5 != (MVNetworkGame *)0x0) goto code_?;
+    pDStack5 = unaff_ESI;
+    pAStack4 = (Action_1_IWinningCondition___Class *)func_?();
+    unaff_EDI = pAVar2;
+    if (pAStack4 != (Action_1_IWinningCondition___Class *)0x0) goto code_?;
   }
-  pMStack5 = (MVNetworkGame *)this;
-  pDStack6 = unaff_ESI;
+  pAStack4 = (Action_1_IWinningCondition___Class *)this;
+  pDStack5 = unaff_ESI;
   func_?();
 code_?:
-  pDStack6 = unaff_ESI;
-  pMStack5 = unaff_EDI;
+  pDStack5 = unaff_ESI;
+  pAStack4 = unaff_EDI;
   func_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();

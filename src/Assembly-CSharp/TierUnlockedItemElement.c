@@ -598,7 +598,6 @@ code_?:
   }
   pCVar2 = Styles::Styles_GetColor(pCVar2,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
   CStack_7.r = pCVar2->a;
-  this = (TierUnlockedItemElement *)0x0;
   if (pIVar1 != (Image *)0x0) {
     pIVar8 = pIVar1->klass;
     CStack_7.g = (float)(pIVar8->vtable).get_raycastTarget.methodPtr;
@@ -607,25 +606,9 @@ code_?:
   }
 code_?:
   CStack_7.g = (float)&UNK_?;
-  uVar9 = func_?();
-  bVar10 = (byte)uVar9;
-  pbVar11 = (byte *)(unaff_EBX + 0x47 + CONCAT31((int3)((uint)uVar9 >> 8),bVar10 + 0x7d) * 4);
-  bVar12 = *pbVar11 + (byte)extraout_ECX;
-  bVar13 = CARRY1(*pbVar11,(byte)extraout_ECX) || CARRY1(bVar12,bVar10 < 0x83);
-  *pbVar11 = bVar12 + (bVar10 < 0x83);
-  pbVar11 = (byte *)(extraout_ECX + -0x7d);
-  bVar12 = *pbVar11;
-  bVar14 = (byte)((uint)extraout_ECX >> 8);
-  bVar15 = *pbVar11 + bVar14;
-  *pbVar11 = bVar15 + bVar13;
-  *(char *)(team + 0xbc104783) =
-       *(char *)(team + 0xbc104783) + bVar10 + 0x7d + (CARRY1(bVar12,bVar14) || CARRY1(bVar15,bVar13));
-  piVar16 = (int *)((int)&(this->fields).objectPreviewerPrefab + 2);
-  *piVar16 = *piVar16 + -0x5d;
-  piVar16 = (int *)((int)&(this->fields).objectPreviewerPrefab + 2);
-  *piVar16 = *piVar16 + -0x34;
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

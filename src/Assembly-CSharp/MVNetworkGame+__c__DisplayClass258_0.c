@@ -1,9 +1,9 @@
 
 /* Void <OnAddItemToInventory>b__0(MVWorldObjectClient) */
 
-void Assembly-CSharp.dll::MVNetworkGame+<>c__DisplayClass260_0::
-     MVNetworkGame_c_DisplayClass260_0__OnAddItemToInventory_b__0
-               (MVNetworkGame_c_DisplayClass260_0 *this,MVWorldObjectClient *wo,MethodInfo *method)
+void Assembly-CSharp.dll::MVNetworkGame+<>c__DisplayClass258_0::
+     MVNetworkGame_c_DisplayClass258_0__OnAddItemToInventory_b__0
+               (MVNetworkGame_c_DisplayClass258_0 *this,MVWorldObjectClient *wo,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

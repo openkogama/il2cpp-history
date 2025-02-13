@@ -207,20 +207,19 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial_GenerateCube
 }
 
 
-/* Void RegenerateButtonTexture(Int32, MaterialButtonTextureGenerator) */
+/* Void RegenerateButtonTexture(MaterialButtonTextureGenerator) */
 
 void Assembly-CSharp.dll::MVMaterial::MVMaterial_RegenerateButtonTexture
-               (MVMaterial *this,int32_t materialId,
-               MaterialButtonTextureGenerator *materialButtonTextureGenerator,MethodInfo *method)
+               (MVMaterial *this,MaterialButtonTextureGenerator *materialButtonTextureGenerator,
+               MethodInfo *method)
 
 {
-  MVMaterial_GenerateCube(this,materialId,(MethodInfo *)0x0);
   if (materialButtonTextureGenerator != (MaterialButtonTextureGenerator *)0x0) {
     pTVar1 = MaterialButtonTextureGenerator::MaterialButtonTextureGenerator_TakePicture
                        (materialButtonTextureGenerator,(this->fields)._Mesh_k__BackingField,
                         (MethodInfo *)0x0);
     (this->fields)._ButtonTexture_k__BackingField = pTVar1;
-    func_?(&(this->fields)._ButtonTexture_k__BackingField);
+    func_?(&(this->fields)._ButtonTexture_k__BackingField,pTVar1);
     return;
   }
   func_?();
@@ -230,14 +229,65 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial_RegenerateButtonTexture
 }
 
 
+/* MVMaterial(PhysicalProperties, MaterialSound, AvatarModifierPackageType) */
+
+void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_1
+               (MVMaterial *this,PhysicalProperties physicalProperties,
+               MaterialSound__Enum materialSound,AvatarModifierPackageType__Enum modifierPackageType
+               ,MethodInfo *method)
+
+{
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  (this->fields)._PhysicalProperties_k__BackingField.friction = physicalProperties.friction;
+  (this->fields)._PhysicalProperties_k__BackingField.bouncyness = physicalProperties.bouncyness;
+  (this->fields)._PhysicalProperties_k__BackingField.softness = physicalProperties.softness;
+  (this->fields)._PhysicalProperties_k__BackingField.staticFriction =
+       physicalProperties.staticFriction;
+  (this->fields)._PhysicalProperties_k__BackingField.toughness = physicalProperties.toughness;
+  (this->fields)._ModifierPackageType_k__BackingField = modifierPackageType;
+  return;
+}
+
+
+/* MVMaterial(String, String, PhysicalProperties, MaterialSound, AvatarModifierPackageType, Int32,
+   Boolean) */
+
+void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_2
+               (MVMaterial *this,String *name,String *description,
+               PhysicalProperties physicalProperties,MaterialSound__Enum materialSound,
+               AvatarModifierPackageType__Enum modifierPackageType,int32_t unlockPriceGold,
+               bool isUnlocked,MethodInfo *method)
+
+{
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  (this->fields)._Name_k__BackingField = name;
+  func_?(&(this->fields)._Name_k__BackingField,name);
+  (this->fields)._Description_k__BackingField = description;
+  func_?(&(this->fields)._Description_k__BackingField,description);
+  (this->fields)._PhysicalProperties_k__BackingField.friction = physicalProperties.friction;
+  (this->fields)._PhysicalProperties_k__BackingField.bouncyness = physicalProperties.bouncyness;
+  (this->fields)._PhysicalProperties_k__BackingField.softness = physicalProperties.softness;
+  (this->fields)._PhysicalProperties_k__BackingField.staticFriction =
+       physicalProperties.staticFriction;
+  (this->fields)._PhysicalProperties_k__BackingField.toughness = physicalProperties.toughness;
+  (this->fields)._ModifierPackageType_k__BackingField = modifierPackageType;
+  (this->fields).unlockPriceGold = unlockPriceGold;
+  (this->fields).isUnlocked = isUnlocked;
+  return;
+}
+
+
 /* MVMaterial(Int32, String, String, PhysicalProperties, MaterialSound, AvatarModifierPackageType,
    Int32, Boolean, MaterialButtonTextureGenerator) */
 
-void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_1
+void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_3
                (MVMaterial *this,int32_t materialId,String *name,String *description,
                PhysicalProperties physicalProperties,MaterialSound__Enum materialSound,
-               AvatarModifierPackageType__Enum modifierPackageType,int32_t priceGold,bool isUnlocked
-               ,MaterialButtonTextureGenerator *materialButtonTextureGenerator,MethodInfo *method)
+               AvatarModifierPackageType__Enum modifierPackageType,int32_t unlockPriceGold,
+               bool isUnlocked,MaterialButtonTextureGenerator *materialButtonTextureGenerator,
+               MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -246,6 +296,10 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_1
   }
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  (this->fields)._Name_k__BackingField = name;
+  func_?(&(this->fields)._Name_k__BackingField,name);
+  (this->fields)._Description_k__BackingField = description;
+  func_?(&(this->fields)._Description_k__BackingField,description);
   (this->fields)._PhysicalProperties_k__BackingField.friction = physicalProperties.friction;
   (this->fields)._PhysicalProperties_k__BackingField.bouncyness = physicalProperties.bouncyness;
   (this->fields)._PhysicalProperties_k__BackingField.softness = physicalProperties.softness;
@@ -253,6 +307,8 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_1
        physicalProperties.staticFriction;
   (this->fields)._PhysicalProperties_k__BackingField.toughness = physicalProperties.toughness;
   (this->fields)._ModifierPackageType_k__BackingField = modifierPackageType;
+  (this->fields).unlockPriceGold = unlockPriceGold;
+  (this->fields).isUnlocked = isUnlocked;
   materialID = 0x18;
   if (materialId != 0x46) {
     materialID = materialId;
@@ -277,38 +333,9 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_1
                          (materialButtonTextureGenerator,(this->fields)._Mesh_k__BackingField,
                           (MethodInfo *)0x0);
       (this->fields)._ButtonTexture_k__BackingField = pTVar4;
-      description = (String *)&(this->fields)._ButtonTexture_k__BackingField;
-      name = (String *)&UNK_?;
       func_?();
     }
   }
-  (this->fields).unlockPriceGold = priceGold;
-  (this->fields).isUnlocked = isUnlocked;
-  (this->fields)._Name_k__BackingField = name;
-  func_?();
-  (this->fields)._Description_k__BackingField = description;
-  func_?(&(this->fields)._Description_k__BackingField);
-  return;
-}
-
-
-/* MVMaterial(PhysicalProperties, MaterialSound, AvatarModifierPackageType) */
-
-void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_2
-               (MVMaterial *this,PhysicalProperties physicalProperties,
-               MaterialSound__Enum materialSound,AvatarModifierPackageType__Enum modifierPackageType
-               ,MethodInfo *method)
-
-{
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields)._PhysicalProperties_k__BackingField.friction = physicalProperties.friction;
-  (this->fields)._PhysicalProperties_k__BackingField.bouncyness = physicalProperties.bouncyness;
-  (this->fields)._PhysicalProperties_k__BackingField.softness = physicalProperties.softness;
-  (this->fields)._PhysicalProperties_k__BackingField.staticFriction =
-       physicalProperties.staticFriction;
-  (this->fields)._PhysicalProperties_k__BackingField.toughness = physicalProperties.toughness;
-  (this->fields)._ModifierPackageType_k__BackingField = modifierPackageType;
   return;
 }
 

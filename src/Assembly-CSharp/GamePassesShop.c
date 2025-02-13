@@ -3143,7 +3143,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowPurchaseConfirmPopu
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
     pTVar1 = (TierPurchasePopup *)(this_00->fields)._._defaultValue_k__BackingField;
-    this = (GamePassesShop *)CONCAT31(0x1042e4,(this->fields).gamePassTierDisplayed);
+    this = (GamePassesShop *)CONCAT31(0x1042e6,(this->fields).gamePassTierDisplayed);
     this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor

@@ -1158,8 +1158,9 @@ void Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_ReceiveMessage
     }
     msgType = CONCAT13(5,(undefined3)msgType);
     pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(byte *)((int)&msgType + 3));
+    cVar2 = '\0';
     if (message != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
                UIElements::TextureId]::
                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)message,
@@ -1167,23 +1168,29 @@ void Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_ReceiveMessage
                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                          );
       this_02.m_Index = 0;
-      if (TVar2.m_Index != 0) {
-        if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-          this_02 = TVar2;
+      if (TVar3.m_Index != 0) {
+        if (*(String__Class **)TVar3.m_Index == TypeInfo__System__String) {
+          this_02 = TVar3;
         }
         if ((Dictionary_2_System_Object_System_Object_ *)this_02.m_Index ==
-            (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      }
-      fVar3 = (this->fields).systemMessageColor.r;
-      fVar4 = (this->fields).systemMessageColor.g;
-      fVar5 = (this->fields).systemMessageColor.b;
-      fVar6 = (this->fields).systemMessageColor.a;
+            (Dictionary_2_System_Object_System_Object_ *)0x0) {
 code_?:
-      c.g = fVar4;
-      c.r = fVar3;
-      c.b = fVar5;
-      c.a = fVar6;
-      CVar7 = UnityEngine.CoreModule.dll::UnityEngine::Color32::Color32_op_Implicit
+          unaff_EDI = (MVPlayer__Class *)0x0;
+          cVar2 = '\0';
+          func_?(TVar3.m_Index,TypeInfo__System__String);
+          break;
+        }
+      }
+      fVar4 = (this->fields).systemMessageColor.r;
+      fVar5 = (this->fields).systemMessageColor.g;
+      fVar6 = (this->fields).systemMessageColor.b;
+      fVar7 = (this->fields).systemMessageColor.a;
+code_?:
+      c.g = fVar5;
+      c.r = fVar4;
+      c.b = fVar6;
+      c.a = fVar7;
+      CVar8 = UnityEngine.CoreModule.dll::UnityEngine::Color32::Color32_op_Implicit
                          (c,(MethodInfo *)0x0);
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         message = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__Styles;
@@ -1191,9 +1198,9 @@ code_?:
         func_?();
       }
       message = (Dictionary_2_System_Object_System_Object_ *)0x0;
-      msgType = CVar7.rgba;
+      msgType = CVar8.rgba;
       msgType = (MVGameMsgType__Enum)
-                Styles::Styles_ColorToHex((Color32)((ulonglong)CVar7 & 0xffffffff),method);
+                Styles::Styles_ColorToHex((Color32)((ulonglong)CVar8 & 0xffffffff),method);
       method = (MethodInfo *)0x0;
       message = (Dictionary_2_System_Object_System_Object_ *)this_02.m_Index;
       message = (Dictionary_2_System_Object_System_Object_ *)
@@ -1223,38 +1230,50 @@ code_?:
     }
     msgType = msgType & 0xffffff;
     pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(byte *)((int)&msgType + 3));
-    unaff_ESI = message;
+    data = message;
+    cVar2 = '\0';
     if (message != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
                UIElements::TextureId]::
                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)message,
                           pOVar1,
                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                          );
-      uVar8 = CONCAT44(TypeInfo__System__Int32,TVar2.m_Index);
-      if (TVar2.m_Index != 0) {
-        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-            (TypeInfo__System__Int32->_0).element_class) goto code_?;
-        piVar9 = (int32_t *)func_?(TVar2.m_Index);
-        unaff_EDI = (MVPlayer *)*piVar9;
-        pMVar10 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar10 != (MVNetworkGame *)0x0) &&
-           (this_00 = (pMVar10->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
-          unaff_EDI = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                                (this_00,(int32_t)unaff_EDI,(MethodInfo *)0x0);
-          pMVar10 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar10 != (MVNetworkGame *)0x0) &&
-             (this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar10,(MethodInfo *)0x0),
-             this_01 != (MVLocalPlayer *)0x0)) {
-            bVar11 = MVPlayer::MVPlayer_IsOnSameTeam((MVPlayer *)this_01,unaff_EDI,(MethodInfo *)0x0)
-            ;
-            if (bVar11 == 0) {
-              return;
+      uVar9 = CONCAT44(TypeInfo__System__Int32,TVar3.m_Index);
+      cVar2 = '\0';
+      if (TVar3.m_Index != 0) {
+        pIVar10 = (TypeInfo__System__Int32->_0).element_class;
+        cVar2 = *(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) < pIVar10;
+        if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) != pIVar10) goto code_?;
+        piVar11 = (int32_t *)func_?(TVar3.m_Index);
+        unaff_EDI = (MVPlayer__Class *)*piVar11;
+        pMVar12 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        cVar2 = '\0';
+        if (pMVar12 != (MVNetworkGame *)0x0) {
+          this_00 = (pMVar12->fields).playerContainer;
+          cVar2 = '\0';
+          if (this_00 != (MVPlayerContainer *)0x0) {
+            unaff_EDI = (MVPlayer__Class *)
+                        MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
+                                  (this_00,(int32_t)unaff_EDI,(MethodInfo *)0x0);
+            pMVar12 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            cVar2 = '\0';
+            if (pMVar12 != (MVNetworkGame *)0x0) {
+              this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar12,(MethodInfo *)0x0);
+              cVar2 = '\0';
+              if (this_01 != (MVLocalPlayer *)0x0) {
+                bVar13 = MVPlayer::MVPlayer_IsOnSameTeam
+                                  ((MVPlayer *)this_01,(MVPlayer *)unaff_EDI,(MethodInfo *)0x0);
+                if (bVar13 == 0) {
+                  return;
+                }
+                pSVar14 = ChatControllerBase_FormatTeamChatMessage(this,data,(MethodInfo *)0x0);
+                (*(code *)(this->klass->vtable).AddLine.method)
+                          (this,pSVar14,this->klass[1]._0.image);
+                return;
+              }
             }
-            pSVar12 = ChatControllerBase_FormatTeamChatMessage(this,unaff_ESI,(MethodInfo *)0x0);
-            (*(code *)(this->klass->vtable).AddLine.method)(this,pSVar12,this->klass[1]._0.image);
-            return;
           }
         }
       }
@@ -1276,71 +1295,77 @@ code_?:
     }
     msgType = CONCAT13(5,(undefined3)msgType);
     pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(byte *)((int)&msgType + 3));
-    if ((message != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-       (TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                           ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)message,
-                            pOVar1,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           ), TVar2.m_Index != 0)) {
-      this_02.m_Index = (int32_t)(Dictionary_2_System_Object_System_Object_ *)0x0;
-      if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-        this_02 = TVar2;
-      }
-      if ((Dictionary_2_System_Object_System_Object_ *)this_02.m_Index !=
-          (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    cVar2 = '\0';
+    if (message != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+               UIElements::TextureId]::
+               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)message,
+                          pOVar1,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      cVar2 = '\0';
+      if (TVar3.m_Index != 0) {
+        this_02.m_Index = (int32_t)(Dictionary_2_System_Object_System_Object_ *)0x0;
+        if (*(String__Class **)TVar3.m_Index == TypeInfo__System__String) {
+          this_02 = TVar3;
+        }
+        if ((Dictionary_2_System_Object_System_Object_ *)this_02.m_Index ==
+            (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
         if (0x600 < (int)(((Dictionary_2_System_Object_System_Object_ *)this_02.m_Index)->fields).
                          _buckets) {
           this_02.m_Index =
                (int32_t)mscorlib.dll::System::String::String_Substring_1
                                   (this_02.m_Index,0,0x600,(MethodInfo *)0x0);
         }
-        fVar3 = (this->fields).warningColor.r;
-        fVar4 = (this->fields).warningColor.g;
-        fVar5 = (this->fields).warningColor.b;
-        fVar6 = (this->fields).warningColor.a;
+        fVar4 = (this->fields).warningColor.r;
+        fVar5 = (this->fields).warningColor.g;
+        fVar6 = (this->fields).warningColor.b;
+        fVar7 = (this->fields).warningColor.a;
         goto code_?;
       }
-code_?:
-      unaff_EDI = (MVPlayer *)0x0;
-      func_?(TVar2.m_Index,TypeInfo__System__String);
     }
   }
-  uVar8 = func_?();
+  uVar9 = func_?();
 code_?:
-  bVar13 = func_?(uVar8);
-  *(undefined2 *)&unaff_EDI->klass = in_SS;
-  in_AF = 9 < (bVar13 & 0xf) | in_AF;
-  bVar13 = bVar13 + in_AF * -6 & 0xf;
-  bVar14 = (byte)((uint)extraout_EDX >> 8);
-  *(char *)(extraout_EDX + 0x1a) = *(char *)(extraout_EDX + 0x1a) + bVar14 + in_AF;
-  in_AF = 9 < bVar13 | in_AF;
-  bVar13 = bVar13 + in_AF * -6 & 0xf;
-  *(char *)(extraout_EDX + 0x1a) = *(char *)(extraout_EDX + 0x1a) + bVar14 + in_AF;
-  in_AF = 9 < bVar13 | in_AF;
-  bVar13 = bVar13 + in_AF * -6 & 0xf;
-  *(char *)(extraout_EDX + 0x1a) = *(char *)(extraout_EDX + 0x1a) + bVar14 + in_AF;
-  in_AF = 9 < bVar13 | in_AF;
-  bVar15 = bVar13 + in_AF * -6 & 0xf;
-  bVar16 = CARRY1(*extraout_ECX,bVar14) || CARRY1(*extraout_ECX + bVar14,in_AF);
-  *extraout_ECX = *extraout_ECX + bVar14 + in_AF;
-  bVar13 = *(byte *)&unaff_EDI->klass;
-  bVar17 = (byte)((uint)unaff_EBX >> 8);
-  bVar18 = *(char *)&unaff_EDI->klass - bVar17;
-  *(byte *)&unaff_EDI->klass = bVar18 - bVar16;
-  piVar9 = &(unaff_ESI->fields)._freeCount;
-  *(byte *)piVar9 = (char)*piVar9 + bVar15 + (bVar13 < bVar17 || bVar18 < bVar16);
-  in_AF = 9 < bVar15 | in_AF;
-  bVar13 = bVar15 + in_AF * -6 & 0xf;
-  pcVar19 = (char *)((int)&(unaff_ESI->fields)._freeCount + 1);
-  *pcVar19 = *pcVar19 + (char)extraout_EDX + in_AF;
-  in_AF = 9 < bVar13 | in_AF;
-  *(char *)(extraout_EDX + 0x1a) = *(char *)(extraout_EDX + 0x1a) + bVar14 + in_AF;
-  *(char *)(unaff_EBX + 0x19) =
-       *(char *)(unaff_EBX + 0x19) + (char)((uint)extraout_ECX >> 8) +
-       (9 < (bVar13 + in_AF * -6 & 0xf) | in_AF);
-  in((short)extraout_EDX);
+  uVar15 = func_?(uVar9);
+  bVar16 = ((char)uVar15 + -0x1a) - cVar2;
+  in_AF = 9 < (bVar16 & 0xf) | in_AF;
+  bVar16 = bVar16 + in_AF * -6;
+  bVar17 = bVar16 & 0xf;
+  bVar18 = *extraout_EDX;
+  bVar19 = *extraout_EDX + bVar17;
+  *extraout_EDX = bVar19 + in_AF;
+  iVar20 = ((CONCAT11((char)((ushort)uVar15 >> 8) - in_AF,bVar16) & 0xff0f) + 0xe2fdefc1) -
+           (uint)(CARRY1(bVar18,bVar17) || CARRY1(bVar19,in_AF));
+  bVar16 = (byte)iVar20;
+  in_AF = 9 < (bVar16 & 0xf) | in_AF;
+  bVar16 = bVar16 + in_AF * -6;
+  bVar17 = bVar16 & 0xf;
+  bVar18 = *extraout_EDX;
+  bVar19 = *extraout_EDX + bVar17;
+  *extraout_EDX = bVar19 + in_AF;
+  iVar20 = ((CONCAT11((char)((uint)iVar20 >> 8) - in_AF,bVar16) & 0xff0f) + 0xe53eefc1) -
+           (uint)(CARRY1(bVar18,bVar17) || CARRY1(bVar19,in_AF));
+  bVar19 = (byte)iVar20;
+  in_AF = 9 < (bVar19 & 0xf) | in_AF;
+  bVar16 = (char)((uint)iVar20 >> 8) - in_AF;
+  bVar17 = (byte)extraout_EDX;
+  bVar21 = (byte)((uint)extraout_EDX >> 8);
+  bVar18 = bVar21 + bVar17;
+  bVar22 = bVar18 + in_AF;
+  bVar23 = (byte)((uint)unaff_EBX >> 8);
+  bVar24 = bVar23 < *(byte *)&(unaff_EDI->_0).image ||
+           (byte)(bVar23 - *(char *)&(unaff_EDI->_0).image) <
+           (CARRY1(bVar21,bVar17) || CARRY1(bVar18,in_AF));
+  bVar18 = bVar22 + bVar16;
+  uVar15 = CONCAT11(bVar18 + bVar24,bVar17);
+  pcVar25 = (char *)CONCAT22((short)((uint)extraout_EDX >> 0x10),uVar15);
+  *pcVar25 = *pcVar25 + (bVar19 + in_AF * -6 & 0xf) +
+             (unaff_EDI < (MVPlayer__Class *)(unaff_EDI->_0).image ||
+             (uint)((int)unaff_EDI - (int)(unaff_EDI->_0).image) <
+             (uint)(CARRY1(bVar22,bVar16) || CARRY1(bVar18,bVar24)));
+  in(uVar15);
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Dequeue__
@@ -1350,38 +1375,38 @@ code_?:
                    );
     cRam_? = '\x01';
   }
-  pQVar20 = (this->fields).lines;
-  if (pQVar20 != (Queue_1_UnityEngine_UI_Text_ *)0x0) {
+  pQVar26 = (this->fields).lines;
+  if (pQVar26 != (Queue_1_UnityEngine_UI_Text_ *)0x0) {
     this_03 = (Component *)
               mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
               Queue_1_System_Object__Dequeue
-                        ((Queue_1_System_Object_ *)pQVar20,
+                        ((Queue_1_System_Object_ *)pQVar26,
                          MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Dequeue__
                         );
-    pQVar20 = (this->fields).lines;
-    if (((pQVar20 != (Queue_1_UnityEngine_UI_Text_ *)0x0) &&
+    pQVar26 = (this->fields).lines;
+    if (((pQVar26 != (Queue_1_UnityEngine_UI_Text_ *)0x0) &&
         (mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
          Queue_1_System_Object__Enqueue
-                   ((Queue_1_System_Object_ *)pQVar20,(Object *)this_03,
+                   ((Queue_1_System_Object_ *)pQVar26,(Object *)this_03,
                     MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Enqueue_UnityEngine__UI__Text_
                    ), this_03 != (Component *)0x0)) &&
-       (pTVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            (this_03,(MethodInfo *)0x0), pTVar21 != (Transform *)0x0)) {
+       (pTVar27 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            (this_03,(MethodInfo *)0x0), pTVar27 != (Transform *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                (pTVar21,(Transform *)(this->fields)._ContentPanel_k__BackingField,0,
+                (pTVar27,(Transform *)(this->fields)._ContentPanel_k__BackingField,0,
                  (MethodInfo *)0x0);
-      pTVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+      pTVar27 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                           (this_03,(MethodInfo *)0x0);
-      if (pTVar21 != (Transform *)0x0) {
+      if (pTVar27 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                  (pTVar21,(MethodInfo *)0x0);
+                  (pTVar27,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar28 = (code *)swi(3);
+  (*pcVar28)();
   return;
 }
 

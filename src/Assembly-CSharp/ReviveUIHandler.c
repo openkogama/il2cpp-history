@@ -953,17 +953,15 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched
     }
     else {
       pAVar1 = (Action_1_IWinningCondition_ *)func_?();
-      bVar2 = 0;
       if (pAVar1 == (Action_1_IWinningCondition_ *)0x0) goto code_?;
       (value->fields).OnWinningConditionFulfilled = pAVar1;
-      iVar3 = func_?();
-      bVar2 = 0;
-      if (iVar3 == 0) goto code_?;
+      iVar2 = func_?();
+      if (iVar2 == 0) goto code_?;
     }
     func_?();
     if ((this->fields).roundEndedWhileWatchingAd != 0) {
-      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)this,(MethodInfo *)0x0);
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
       if ((TypeInfo__ReviveUIHandler____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -982,15 +980,15 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched
                    MethodInfo__ReviveUIHandler____c___OnRewardedAdWatched_b__13_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         TypeInfo__ReviveUIHandler____c->static_fields->__9__13_0 = callbackFunction_00;
-        pGVar4 = (GameObject *)&TypeInfo__ReviveUIHandler____c->static_fields->__9__13_0;
-        func_?(pGVar4,callbackFunction_00);
+        pGVar3 = (GameObject *)&TypeInfo__ReviveUIHandler____c->static_fields->__9__13_0;
+        func_?(pGVar3,callbackFunction_00);
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
         func_?();
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar4,(BaseEventData *)0x0,
+                (pGVar3,(BaseEventData *)0x0,
                  (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
                 );
@@ -1012,24 +1010,24 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pGVar5 = (GameEventManager *)
+        pGVar4 = (GameEventManager *)
                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                            ((Object *)original,
                             NotificationPopup_MethodInfo__UnityEngine__Object__Instantiate<NotificationPopup>_NotificationPopup_
                            );
-        (value->fields).GameEventManager = pGVar5;
-        func_?(&value->fields,pGVar5);
+        (value->fields).GameEventManager = pGVar4;
+        func_?(&value->fields,pGVar4);
         unaff_EBX = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
                     (value->fields).GameEventManager;
-        pIVar6 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-        if (pIVar6 != (IAdManager *)0x0) {
-          func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar6);
+        pIVar5 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+        if (pIVar5 != (IAdManager *)0x0) {
+          func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar5);
           header = TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
           if (unaff_EBX != (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)0x0) {
             NotificationPopup::NotificationPopup_Initialize
                       ((NotificationPopup *)unaff_EBX,(String *)0x0,header,(MethodInfo *)0x0);
-            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)this,(MethodInfo *)0x0);
+            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this,(MethodInfo *)0x0);
             callbackFunction =
                  (ExecuteEvents_EventFunction_1_System_Object_ *)
                  func_?(
@@ -1047,7 +1045,7 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched
             }
             UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
             ExecuteEvents_ExecuteHierarchy
-                      (pGVar4,(BaseEventData *)0x0,callbackFunction,
+                      (pGVar3,(BaseEventData *)0x0,callbackFunction,
                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                       );
             return;
@@ -1056,18 +1054,18 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched
       }
       break;
     case RewardedAdResult__Enum_ErrorTimeout:
-      pBVar7 = (this->fields)._.continueButton;
-      if ((pBVar7 != (Button *)0x0) &&
-         (this_00 = (UnityEvent *)(pBVar7->fields).m_OnClick, this_00 != (UnityEvent *)0x0)) {
+      pBVar6 = (this->fields)._.continueButton;
+      if ((pBVar6 != (Button *)0x0) &&
+         (this_00 = (UnityEvent *)(pBVar6->fields).m_OnClick, this_00 != (UnityEvent *)0x0)) {
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_Invoke
                   (this_00,(MethodInfo *)0x0);
         return;
       }
       break;
     case RewardedAdResult__Enum_RewardUnlocked:
-      pGVar5 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if ((pGVar5 != (GameEventManager *)0x0) &&
-         (this_01 = (pGVar5->fields).AvatarCommandsPlayMode,
+      pGVar4 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if ((pGVar4 != (GameEventManager *)0x0) &&
+         (this_01 = (pGVar4->fields).AvatarCommandsPlayMode,
          this_01 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
         GameEventManager+AvatarCommandsPlayModeManager::
         GameEventManager_AvatarCommandsPlayModeManager_MoveBodyToSafeSpot
@@ -1079,19 +1077,30 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched
       return;
     }
   }
-  bVar2 = 0;
   func_?();
 code_?:
-  func_?();
-  pbVar8 = (byte *)((int)&(unaff_EBX->fields)._._.method + 1);
-  bVar9 = *pbVar8;
-  bVar10 = (byte)((uint)unaff_EBX >> 8);
-  bVar11 = *pbVar8 + bVar10;
-  *pbVar8 = bVar11 + bVar2;
-  puVar12 = &value[-0x228a2c].fields.photonLoggingConfig.untilConnectedDebugLevel;
-  *puVar12 = *puVar12 + extraout_AH + (CARRY1(bVar9,bVar10) || CARRY1(bVar11,bVar2));
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pbVar7 = (byte *)func_?();
+  bVar8 = (byte)unaff_EBX;
+  bVar9 = (byte)((uint)unaff_EBX >> 8);
+  bVar10 = CARRY1(*pbVar7,bVar9) || CARRY1(*pbVar7 + bVar9,*pbVar7 < bVar8);
+  *pbVar7 = *pbVar7 + bVar9 + (*pbVar7 < bVar8);
+  bVar11 = *(byte *)&value->klass;
+  bVar12 = *(char *)&value->klass - bVar9;
+  *(byte *)&value->klass = bVar12 - bVar10;
+  bVar10 = CARRY1(bVar8,bVar8) || CARRY1(bVar8 * '\x02',bVar11 < bVar9 || bVar12 < bVar10);
+  bVar11 = *(char *)&value->klass + (byte)pbVar7;
+  bVar13 = CARRY1(*(byte *)&value->klass,(byte)pbVar7) || CARRY1(bVar11,bVar10);
+  *(byte *)&value->klass = bVar11 + bVar10;
+  bVar11 = *(char *)&value->klass - bVar9;
+  bVar10 = *(byte *)&value->klass < bVar9 || bVar11 < bVar13;
+  *(byte *)&value->klass = bVar11 - bVar13;
+  bVar11 = *pbVar7;
+  bVar12 = *pbVar7;
+  *pbVar7 = bVar12 + bVar9 + bVar10;
+  *(byte *)&value->klass =
+       (*(char *)&value->klass - bVar9) - (CARRY1(bVar11,bVar9) || CARRY1(bVar12 + bVar9,bVar10));
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

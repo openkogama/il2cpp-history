@@ -1,9 +1,9 @@
 
 /* Void <PublishCallback>b__3(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::DesktopCubeModelingController+<>c__DisplayClass9_0::
-     DesktopCubeModelingController_c_DisplayClass9_0__PublishCallback_b__3
-               (DesktopCubeModelingController_c_DisplayClass9_0 *this,IModalPopupCreator *x,
+void Assembly-CSharp.dll::DesktopCubeModelingController+<>c__DisplayClass11_0::
+     DesktopCubeModelingController_c_DisplayClass11_0__PublishCallback_b__3
+               (DesktopCubeModelingController_c_DisplayClass11_0 *this,IModalPopupCreator *x,
                BaseEventData *y,MethodInfo *method)
 
 {

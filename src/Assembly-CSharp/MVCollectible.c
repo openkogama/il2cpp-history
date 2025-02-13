@@ -403,9 +403,10 @@ code_?:
     if ((pMVar5->fields).currentGameState == 2) {
 code_?:
       MVCollectible_OnTakenByListChange(this,(MethodInfo *)0x0);
-      pMStack_6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMStack_6 != (MVNetworkGame *)0x0) {
-        pAVar7 = (pMStack_6->fields).OnWinningConditionFulfilled;
+      pAStack_6 = (Action_1_IWinningCondition___Class *)
+                  MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (pAStack_6 != (Action_1_IWinningCondition___Class *)0x0) {
+        a = (Delegate *)(pAStack_6->vtable).Equals.method;
         this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
                   func_?(TypeInfo__System__Action<IWinningCondition>);
         Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
@@ -415,35 +416,35 @@ code_?:
                    MethodInfo__MVCollectible__OnWinningConditionFulfilled_IWinningCondition_,
                    (MethodInfo *)0x0);
         unaff_EDI = mscorlib.dll::System::Delegate::Delegate_Combine
-                              ((Delegate *)pAVar7,(Delegate *)this_03,(MethodInfo *)0x0);
+                              (a,(Delegate *)this_03,(MethodInfo *)0x0);
         unaff_ESI = TypeInfo__System__Action<IWinningCondition>;
         if (unaff_EDI == (Delegate *)0x0) {
-          (pMStack_6->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-          iVar8 = 0;
-          pMVar1 = pMStack_6;
+          (pAStack_6->vtable).Equals.method = (MethodInfo *)0x0;
+          iVar7 = 0;
+          pAVar8 = pAStack_6;
 code_?:
-          pDStack_9 = (Delegate *)&(pMVar1->fields).OnWinningConditionFulfilled;
+          pDStack_9 = (Delegate *)&(pAVar8->vtable).Equals.method;
           EStack_10.monitor = (MonitorData *)&UNK_?;
-          pMStack_6 = (MVNetworkGame *)iVar8;
+          pAStack_6 = (Action_1_IWinningCondition___Class *)iVar7;
           func_?();
           return;
         }
-        pMStack_6 = (MVNetworkGame *)TypeInfo__System__Action<IWinningCondition>;
+        pAStack_6 = TypeInfo__System__Action<IWinningCondition>;
         EStack_10.monitor = (MonitorData *)&UNK_?;
         pDStack_9 = unaff_EDI;
-        pAVar7 = (Action_1_IWinningCondition_ *)func_?();
-        pMVar1 = pMStack_6;
-        if (pAVar7 != (Action_1_IWinningCondition_ *)0x0) {
-          (pMStack_6->fields).OnWinningConditionFulfilled = pAVar7;
+        pMVar11 = (MethodInfo *)func_?();
+        pAVar8 = pAStack_6;
+        if (pMVar11 != (MethodInfo *)0x0) {
+          (pAStack_6->vtable).Equals.method = pMVar11;
           this = (MVCollectible *)TypeInfo__System__Action<IWinningCondition>;
-          pMStack_6 = (MVNetworkGame *)TypeInfo__System__Action<IWinningCondition>;
+          pAStack_6 = TypeInfo__System__Action<IWinningCondition>;
           EStack_10.monitor = (MonitorData *)&UNK_?;
           pDStack_9 = unaff_EDI;
-          iVar8 = func_?();
-          if (iVar8 != 0) goto code_?;
+          iVar7 = func_?();
+          if (iVar7 != 0) goto code_?;
           goto code_?;
         }
-        pMStack_6 = (MVNetworkGame *)unaff_ESI;
+        pAStack_6 = unaff_ESI;
         EStack_10.monitor = (MonitorData *)&UNK_?;
         pDStack_9 = unaff_EDI;
         func_?();
@@ -472,65 +473,65 @@ code_?:
       EStack_10.klass = (Enum__Class *)TypeInfo__MV__WorldObject__MVTeam;
       EStack_10.monitor = (MonitorData *)0xffffffff;
       pDStack_9 = (Delegate *)0x0;
-      pSVar11 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_10,(MethodInfo *)0x0);
-      bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      pSVar12 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_10,(MethodInfo *)0x0);
+      bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)unaff_ESI,
-                         (Object *)pSVar11,
+                         (Object *)pSVar12,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
-      if (bVar12 != 0) {
-        pEVar13 = (Enum__Class *)(this->fields).takenByTeamList;
-        if (pEVar13 == (Enum__Class *)0x0) goto code_?;
-        pMStack_14 = (MVTeam__Enum__Class *)pEVar13;
+      if (bVar13 != 0) {
+        pEVar14 = (Enum__Class *)(this->fields).takenByTeamList;
+        if (pEVar14 == (Enum__Class *)0x0) goto code_?;
+        pMStack_15 = (MVTeam__Enum__Class *)pEVar14;
         func_?();
       }
-      pMStack_14 = TypeInfo__MV__WorldObject__MVTeam;
-      pSVar11 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pMStack_14,(MethodInfo *)0x0);
-      bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      pMStack_15 = TypeInfo__MV__WorldObject__MVTeam;
+      pSVar12 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pMStack_15,(MethodInfo *)0x0);
+      bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)unaff_ESI,
-                         (Object *)pSVar11,
+                         (Object *)pSVar12,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
-      if (bVar12 != 0) {
-        pLVar15 = (this->fields).takenByTeamList;
-        if (pLVar15 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
-        func_?(pLVar15,1,
+      if (bVar13 != 0) {
+        pLVar16 = (this->fields).takenByTeamList;
+        if (pLVar16 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
+        func_?(pLVar16,1,
                         MethodInfo__System__Collections__Generic__List<MV::WorldObject::MVTeam>__Add_MV__WorldObject__MVTeam_
                        );
       }
-      pMStack_14 = TypeInfo__MV__WorldObject__MVTeam;
-      pSVar11 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pMStack_14,(MethodInfo *)0x0);
-      bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      pMStack_15 = TypeInfo__MV__WorldObject__MVTeam;
+      pSVar12 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pMStack_15,(MethodInfo *)0x0);
+      bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)unaff_ESI,
-                         (Object *)pSVar11,
+                         (Object *)pSVar12,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
-      if (bVar12 != 0) {
-        pLVar15 = (this->fields).takenByTeamList;
-        if (pLVar15 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
-        func_?(pLVar15,2,
+      if (bVar13 != 0) {
+        pLVar16 = (this->fields).takenByTeamList;
+        if (pLVar16 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
+        func_?(pLVar16,2,
                         MethodInfo__System__Collections__Generic__List<MV::WorldObject::MVTeam>__Add_MV__WorldObject__MVTeam_
                        );
       }
-      pMStack_14 = TypeInfo__MV__WorldObject__MVTeam;
-      pSVar11 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pMStack_14,(MethodInfo *)0x0);
-      bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      pMStack_15 = TypeInfo__MV__WorldObject__MVTeam;
+      pSVar12 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pMStack_15,(MethodInfo *)0x0);
+      bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)unaff_ESI,
-                         (Object *)pSVar11,
+                         (Object *)pSVar12,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
-      if (bVar12 != 0) {
-        pLVar15 = (this->fields).takenByTeamList;
-        if (pLVar15 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
-        func_?(pLVar15,3,
+      if (bVar13 != 0) {
+        pLVar16 = (this->fields).takenByTeamList;
+        if (pLVar16 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
+        func_?(pLVar16,3,
                         MethodInfo__System__Collections__Generic__List<MV::WorldObject::MVTeam>__Add_MV__WorldObject__MVTeam_
                        );
       }
@@ -541,10 +542,10 @@ code_?:
 code_?:
   EStack_10.monitor = (MonitorData *)&UNK_?;
   pDStack_9 = unaff_EDI;
-  pMStack_6 = (MVNetworkGame *)this;
+  pAStack_6 = (Action_1_IWinningCondition___Class *)this;
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

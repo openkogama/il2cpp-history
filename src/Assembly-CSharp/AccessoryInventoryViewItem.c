@@ -426,7 +426,7 @@ code_?:
     pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pDVar3 == (Delegate *)0x0) {
-      *(undefined4 *)(unaff_EDI + 0xec) = 0;
+      *(undefined4 *)(unaff_EDI + 0xe8) = 0;
 code_?:
       func_?();
       goto code_?;
@@ -436,7 +436,7 @@ code_?:
       pDVar4 = pDVar3;
     }
     if (pDVar4 == (Delegate *)0x0) goto code_?;
-    *(Delegate **)(unaff_EDI + 0xec) = pDVar4;
+    *(Delegate **)(unaff_EDI + 0xe8) = pDVar4;
     pDVar4 = (Delegate *)0x0;
     if ((Action__Class *)pDVar3->klass == TypeInfo__System__Action) {
       pDVar4 = pDVar3;

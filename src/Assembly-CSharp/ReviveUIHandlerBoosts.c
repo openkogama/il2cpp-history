@@ -564,14 +564,15 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   default:
     return;
   }
-  func_?();
-  bVar4 = *(byte *)&unaff_ESI->klass;
-  bVar5 = (byte)((uint)unaff_EBX >> 8);
-  *(byte *)&unaff_ESI->klass = *(char *)&unaff_ESI->klass + bVar5;
-  ppGVar6 = &unaff_EDI[-0x673a7c].fields.boostContent;
-  *(char *)ppGVar6 = *(char *)ppGVar6 + extraout_CH + CARRY1(bVar4,bVar5);
-  *(byte *)&unaff_ESI->klass = *(char *)&unaff_ESI->klass + bVar5;
-  *(byte *)&unaff_ESI->klass = *(char *)&unaff_ESI->klass + bVar5;
+  pcVar4 = (char *)func_?();
+  cVar5 = (char)((uint)unaff_EBX >> 8);
+  *pcVar4 = *pcVar4 + cVar5 + (*(byte *)&(unaff_EBX->_0).image < (byte)pcVar4);
+  pcVar6 = (char *)((int)&unaff_EDI->klass + (int)unaff_ESI->klass);
+  *pcVar6 = *pcVar6 + extraout_CL + CARRY4((uint)unaff_EDI,(uint)unaff_ESI->klass);
+  pOVar1 = unaff_ESI->klass;
+  *(char *)&unaff_ESI->klass =
+       *(char *)&unaff_ESI->klass + extraout_DH + CARRY4((uint)pcVar6,(uint)unaff_ESI->klass);
+  *pcVar4 = *pcVar4 + cVar5 + CARRY4((uint)(pcVar6 + (int)pOVar1),(uint)unaff_ESI->klass);
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
   return;

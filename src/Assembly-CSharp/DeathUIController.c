@@ -395,7 +395,7 @@ code_?:
     pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)this_03,(MethodInfo *)0x0);
     if (pDVar9 == (Delegate *)0x0) {
-      *(undefined4 *)(puVar8 + 0xc4) = 0;
+      *(undefined4 *)(puVar8 + 0xc0) = 0;
 code_?:
       func_?();
       pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
@@ -447,7 +447,7 @@ code_?:
     }
     iVar12 = func_?();
     if (iVar12 == 0) goto code_?;
-    *(int *)(puVar8 + 0xc4) = iVar12;
+    *(int *)(puVar8 + 0xc0) = iVar12;
     iVar12 = func_?();
     if (iVar12 != 0) goto code_?;
   }

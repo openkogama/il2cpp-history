@@ -86,7 +86,7 @@ code_?:
     pDVar7 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pDVar7 == (Delegate *)0x0) {
-      *(undefined4 *)(iVar6 + 0xc4) = 0;
+      *(undefined4 *)(iVar6 + 0xc0) = 0;
 code_?:
       func_?();
 code_?:
@@ -95,7 +95,7 @@ code_?:
     }
     iVar8 = func_?();
     if (iVar8 == 0) goto code_?;
-    *(int *)(iVar6 + 0xc4) = iVar8;
+    *(int *)(iVar6 + 0xc0) = iVar8;
     iVar6 = func_?();
     if (iVar6 != 0) goto code_?;
   }
@@ -196,10 +196,11 @@ code_?:
     if (pMVar2 == (MVGameCoinObject *)0x0) goto code_?;
     MVLogicObject::MVLogicObject_SetupCulling
               ((MVLogicObject *)this,(pMVar2->fields).visualObject,2.0,(MethodInfo *)0x0);
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-    pAStack3 = TypeInfo__System__Action<IWinningCondition>;
-    pAVar4 = (pMVar1->fields).OnWinningConditionFulfilled;
+    pAVar3 = (Action_1_IWinningCondition___Class *)
+             MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pAVar3 == (Action_1_IWinningCondition___Class *)0x0) goto code_?;
+    pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+    a = (Delegate *)(pAVar3->vtable).Equals.method;
     this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
     Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
     SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
@@ -208,37 +209,37 @@ code_?:
                MethodInfo__MVGameCoin__OnWinningConditionFulfilled_IWinningCondition_,
                (MethodInfo *)0x0);
     unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pAVar4,(Delegate *)this_02,(MethodInfo *)0x0);
-    unaff_EDI = (MVNetworkGame *)TypeInfo__System__Action<IWinningCondition>;
+                          (a,(Delegate *)this_02,(MethodInfo *)0x0);
+    unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
     if (unaff_ESI == (Delegate *)0x0) {
-      (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-      pMStack5 = (MVNetworkGame *)0x0;
+      (pAVar3->vtable).Equals.method = (MethodInfo *)0x0;
+      pAStack5 = (Action_1_IWinningCondition___Class *)0x0;
 code_?:
-      pDStack6 = (Delegate *)&(pMVar1->fields).OnWinningConditionFulfilled;
+      pDStack6 = (Delegate *)&(pAVar3->vtable).Equals.method;
       func_?();
       return;
     }
-    pMStack5 = (MVNetworkGame *)TypeInfo__System__Action<IWinningCondition>;
+    pAStack5 = TypeInfo__System__Action<IWinningCondition>;
     pDStack6 = unaff_ESI;
-    pAVar4 = (Action_1_IWinningCondition_ *)func_?();
-    if (pAVar4 == (Action_1_IWinningCondition_ *)0x0) goto code_?;
-    (pMVar1->fields).OnWinningConditionFulfilled = pAVar4;
+    pMVar7 = (MethodInfo *)func_?();
+    if (pMVar7 == (MethodInfo *)0x0) goto code_?;
+    (pAVar3->vtable).Equals.method = pMVar7;
     this = (MVGameCoin *)TypeInfo__System__Action<IWinningCondition>;
-    pMStack5 = (MVNetworkGame *)TypeInfo__System__Action<IWinningCondition>;
+    pAStack5 = TypeInfo__System__Action<IWinningCondition>;
     pDStack6 = unaff_ESI;
-    pMStack5 = (MVNetworkGame *)func_?();
-    unaff_EDI = pMVar1;
-    if (pMStack5 != (MVNetworkGame *)0x0) goto code_?;
+    pAStack5 = (Action_1_IWinningCondition___Class *)func_?();
+    unaff_EDI = pAVar3;
+    if (pAStack5 != (Action_1_IWinningCondition___Class *)0x0) goto code_?;
   }
   pDStack6 = unaff_ESI;
-  pMStack5 = (MVNetworkGame *)this;
+  pAStack5 = (Action_1_IWinningCondition___Class *)this;
   func_?();
 code_?:
   pDStack6 = unaff_ESI;
-  pMStack5 = unaff_EDI;
+  pAStack5 = unaff_EDI;
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

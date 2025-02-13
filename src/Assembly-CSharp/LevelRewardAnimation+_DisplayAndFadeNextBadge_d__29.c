@@ -79,7 +79,6 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::
   default:
     return 0;
   }
-  in_AF = 0;
   if (_UNK_? <= (pLVar1->fields)._currentTime_5__2 / (float)(this_02->_0).fields) {
     pBVar6 = (Behaviour *)(this_02->_0).implementedInterfaces;
     if (pBVar6 != (Behaviour *)0x0) {
@@ -112,7 +111,6 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::
                         (pTVar4,*pQVar5,(MethodInfo *)0x0);
               (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
-              in_AF = 0;
               if (_UNK_? <=
                   (pLVar1->fields)._currentTime_5__2 / (float)(this_02->_0).element_class) {
                 pIVar7 = (this_02->_0).castClass;
@@ -147,7 +145,6 @@ code_?:
                                   (pGVar12,0,(MethodInfo *)0x0);
                         (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
-                        in_AF = 0;
                         if (_UNK_? <=
                             (pLVar1->fields)._currentTime_5__2 / (float)(this_02->_0).fields) {
                           pCVar3 = *(Component **)&(this_02->_0).this_arg.attrs;
@@ -161,7 +158,6 @@ code_?:
                                       Quaternion_Internal_FromEulerRad
                                                 ((Quaternion *)&stack0xffffffc0,euler_01,
                                                  (MethodInfo *)0x0);
-                            pLVar1 = (LevelRewardAnimation_DisplayAndFadeNextBadge_d_29 *)0x0;
                             if (pTVar4 != (Transform *)0x0) {
                               UnityEngine.CoreModule.dll::UnityEngine::Transform::
                               Transform_set_rotation(pTVar4,*pQVar5,(MethodInfo *)0x0);
@@ -329,24 +325,18 @@ code_?:
     }
   }
 code_?:
-  uVar15 = func_?();
-  in_AF = 9 < ((byte)uVar15 & 0xf) | in_AF;
-  bVar16 = (byte)uVar15 + in_AF * -6 & 0xf;
-  puVar17 = (undefined1 *)((int)&this_02[-1].vtable.ToString.method + 3);
-  *puVar17 = *puVar17 + extraout_DH + in_AF;
-  bVar18 = 9 < bVar16 | in_AF;
-  uVar19 = CONCAT31((int3)((uint)uVar15 >> 8),bVar16 + bVar18 * -6) & 0xffff000f;
-  cVar20 = (char)uVar19;
-  iVar21 = CONCAT22((short)(uVar19 >> 0x10),
-                    CONCAT11(((char)((uint)uVar15 >> 8) - in_AF) - bVar18,cVar20));
-  puVar17 = (undefined1 *)((int)&this_02[-0x81254]._0.generic_class + 1);
-  *puVar17 = *puVar17 + cVar20 + bVar18;
-  pLVar1->klass =
-       (LevelRewardAnimation_DisplayAndFadeNextBadge_d_29__Class *)
-       ((uint)pLVar1->klass | iVar21 + *(int *)(iVar21 + 0x10));
-  pcVar22 = (code *)swi(3);
-  bVar23 = (*pcVar22)();
-  return bVar23;
+  cVar15 = '\0';
+  iVar16 = func_?();
+  *(char *)&(this_02->_0).image = *(char *)&(this_02->_0).image + extraout_DH + cVar15;
+  bVar17 = (char)(iVar16 + 1) + *(char *)(iVar16 + 0x11);
+  bVar18 = bVar17 + 0x40;
+  *(char *)(extraout_ECX + -0x36efbffb) =
+       *(char *)(extraout_ECX + -0x36efbffb) + (char)((uint)&stack0xfffffffc >> 8) + (0xbf < bVar17);
+  pbVar19 = (byte *)(CONCAT31((int3)((uint)(iVar16 + 1) >> 8),bVar18) + 0x10);
+  *pbVar19 = *pbVar19 | bVar18;
+  pcVar20 = (code *)swi(3);
+  bVar21 = (*pcVar20)();
+  return bVar21;
 }
 
 

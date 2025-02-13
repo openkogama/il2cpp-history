@@ -51,8 +51,7 @@ void Assembly-CSharp.dll::Assets::UGUI::Shared::Scripts::PlanetOwnershipUIText::
         if (value->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
           pTVar5 = value;
         }
-        cVar6 = '\0';
-        value_00 = TypeInfo__UnityEngine__RectTransform;
+        bVar6 = 0;
         if (pTVar5 != (Transform *)0x0) {
           pTVar5 = (Transform *)0x0;
           if (value->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
@@ -68,22 +67,35 @@ void Assembly-CSharp.dll::Assets::UGUI::Shared::Scripts::PlanetOwnershipUIText::
       }
     }
   }
-  cVar6 = '\0';
+  bVar6 = 0;
   func_?();
-  value_00 = extraout_ECX;
 code_?:
   uVar7 = func_?();
-  uVar8 = *(undefined1 *)&unaff_EDI[-0x75e53fa].fields._._.m_CachedPtr;
-  pcVar9 = (char *)((int)&value[-0x67ea3f3].fields._._.m_CachedPtr + 3);
-  *pcVar9 = *pcVar9 + unaff_BL + cVar6;
-  pcVar9 = (char *)(CONCAT22((short)((uint)uVar7 >> 0x10),CONCAT11(uVar8,(char)uVar7)) + 0x551050a7)
-  ;
-  *pcVar9 = *pcVar9 + (char)((uint)extraout_ECX_00 >> 8) + (value->klass < unaff_EDI->klass);
-  in_stack_10.m_value = (float)in_stack_10.m_value;
+  iVar4 = (int)((ulonglong)uVar7 >> 0x20);
+  value_00 = (Object *)uVar7;
+  pbVar8 = (byte *)(iVar4 + -0x55dbefb0);
+  bVar9 = (byte)((ushort)extraout_CX >> 8);
+  bVar10 = bVar9 - *pbVar8;
+  bVar11 = bVar9 < *pbVar8 || bVar10 < bVar6;
+  bVar10 = bVar10 - bVar6;
+  bVar6 = *(char *)&value->klass + bVar10;
+  bVar12 = CARRY1(*(byte *)&value->klass,bVar10) || CARRY1(bVar6,bVar11);
+  *(byte *)&value->klass = bVar6 + bVar11;
+  bVar13 = (byte)uVar7;
+  *(byte *)&unaff_EDI->klass = bVar13;
+  pbVar8 = (byte *)(iVar4 + -0x56);
+  bVar6 = *pbVar8;
+  bVar9 = *pbVar8;
+  *pbVar8 = bVar9 + bVar13 + bVar12;
+  *(char *)&value_00->klass =
+       *(char *)&value_00->klass + (char)((uint)unaff_EBX >> 8) +
+       (CARRY1(bVar6,bVar13) || CARRY1(bVar9 + bVar13,bVar12));
+  *(byte *)((int)&unaff_EDI->klass + 1) = bVar13;
+  in((short)((ulonglong)uVar7 >> 0x20));
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
-                    ,extraout_ECX_00);
+                    ,CONCAT11(bVar10,(char)extraout_CX),value_00,value_00);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
                    );
@@ -100,8 +112,8 @@ code_?:
   }
   this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
              *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                               ,&unaff_EDI->monitor,&value->monitor);
-  pDVar11 = this_02;
+                               ,(undefined1 *)((int)&unaff_EDI->klass + 2),value);
+  pDVar14 = this_02;
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
   StyleComplexSelector+PseudoStateData]::
   Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
@@ -114,16 +126,17 @@ code_?:
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)StringLiteral_key,
-               (Object *)value,
+               value_00,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)StringLiteral_ukey,
-               (Object *)value_00,
+               (Object *)value,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pSVar3 = mscorlib.dll::System::Single::Single_ToString(&stack0x00000010,(MethodInfo *)0x0);
+    pSVar3 = mscorlib.dll::System::Single::Single_ToString
+                       ((Single *)&stack0x0000000c,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)StringLiteral_count,
@@ -132,31 +145,31 @@ code_?:
               );
     method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_03 = (Post_FormPoster *)func_?();
-    pSVar12 = StringLiteral_https___api_stathat_com;
+    pSVar15 = StringLiteral_https___api_stathat_com;
     pSVar3 = StringLiteral__c;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)this_03,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    (this_03->fields).BaseUrl = pSVar12;
-    ppSStack13 = &(this_03->fields).BaseUrl;
-    pSStack14 = pSVar12;
-    pDStack15 =
+    (this_03->fields).BaseUrl = pSVar15;
+    ppSStack16 = &(this_03->fields).BaseUrl;
+    pSStack17 = pSVar15;
+    pDStack18 =
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
-    pDStack15 = pDVar11;
-    (this_03->fields).Parameters = (Dictionary_2_System_String_System_String_ *)pDStack15;
-    pPStack16 = &this_03->fields;
+    pDStack18 = pDVar14;
+    (this_03->fields).Parameters = (Dictionary_2_System_String_System_String_ *)pDStack18;
+    pPStack19 = &this_03->fields;
     func_?();
-    ppSStack17 = &(this_03->fields).RelUrl;
+    ppSStack20 = &(this_03->fields).RelUrl;
     (this_03->fields).RelUrl = pSVar3;
-    pSStack18 = pSVar3;
+    pSStack21 = pSVar3;
     func_?();
     StatHat::Post+FormPoster::Post_FormPoster_PostForm(this_03,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 

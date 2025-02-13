@@ -632,7 +632,7 @@ void Assembly-CSharp.dll::AvatarAccessoryPurchasePopup::
           func_?(uVar4);
           goto code_?;
         }
-        pDVar2[3].fields.invoke_impl = pvVar3;
+        pDVar2[3].fields.method_ptr = pvVar3;
         iVar5 = func_?();
         if (iVar5 == 0) goto code_?;
       }

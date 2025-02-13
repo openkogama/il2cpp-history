@@ -116,11 +116,12 @@ code_?:
                          ((Delegate *)a_00,(Delegate *)this_02,(MethodInfo *)0x0);
       pAVar1 = TypeInfo__System__Action<IWinningCondition>;
       if (pAVar3 == (Action__Class *)0x0) {
-        this[3].fields.timeText = (Text *)0x0;
+        this[3].fields._.timeSinceStart = 0.0;
         in_stack_12 = (Action__Class *)0x0;
         unaff_EDI = (Action_1_IWinningCondition___Class *)this;
 code_?:
-        method = (MethodInfo *)&(((HurryUpNotification *)((int)unaff_EDI + 0xa8))->fields).timeText;
+        method = (MethodInfo *)
+                 &(((HurryUpNotification *)((int)unaff_EDI + 0xa8))->fields)._.timeSinceStart;
         data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
         func_?();
         return;
@@ -128,11 +129,11 @@ code_?:
       in_stack_12 = (Action__Class *)TypeInfo__System__Action<IWinningCondition>;
       data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
       method = (MethodInfo *)pAVar3;
-      pTVar13 = (Text *)func_?();
+      fVar13 = (float)func_?();
       unaff_EDI = (Action_1_IWinningCondition___Class *)this;
       in_stack_12 = (Action__Class *)pAVar1;
-      if (pTVar13 != (Text *)0x0) {
-        this[3].fields.timeText = pTVar13;
+      if (fVar13 != 0.0) {
+        this[3].fields._.timeSinceStart = fVar13;
         pAVar1 = TypeInfo__System__Action<IWinningCondition>;
         in_stack_12 = (Action__Class *)TypeInfo__System__Action<IWinningCondition>;
         data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;

@@ -3,7 +3,6 @@
  */
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -43,7 +42,6 @@ public class MVNetworkGame : IPhotonPeerListener
 	private MVTeamManager teamManager;
 	private GameStatCounterManager gameStatCounterManager;
 	private LevelRewardsManager levelRewardsManager;
-	private IEnumerator addMaterialsCoroutine;
 	private float prevServiceCallTime;
 	[CompilerGenerated]
 	private LogicObjectManagerClient _LogicObjectManager_k__BackingField;
@@ -579,45 +577,16 @@ public class MVNetworkGame : IPhotonPeerListener
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass260_0
+	private sealed class __c__DisplayClass258_0
 	{
 		// Fields
 		public Dictionary<byte, object> returnValues;
 
 		// Constructors
-		public __c__DisplayClass260_0();
+		public __c__DisplayClass258_0();
 
 		// Methods
 		internal void _OnAddItemToInventory_b__0(MVWorldObjectClient wo);
-	}
-
-	[CompilerGenerated]
-	private sealed class _AddMaterialsToRepositoryCoroutine_d__215 : IEnumerator<object>
-	{
-		// Fields
-		private int __1__state;
-		private object __2__current;
-		public Dictionary<object, object> materialList;
-		public MVNetworkGame __4__this;
-		private MaterialButtonTextureGenerator _materialButtonTextureGenerator_5__2;
-		private bool _isPlayerSubscriber_5__3;
-		private Dictionary<object, object> __7__wrap3;
-
-		// Properties
-		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
-		object IEnumerator.Current { [DebuggerHidden] get; }
-
-		// Constructors
-		[DebuggerHidden]
-		public _AddMaterialsToRepositoryCoroutine_d__215(int __1__state);
-
-		// Methods
-		[DebuggerHidden]
-		void IDisposable.Dispose();
-		private bool MoveNext();
-		private void __m__Finally1();
-		[DebuggerHidden]
-		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -651,8 +620,6 @@ public class MVNetworkGame : IPhotonPeerListener
 	private MVLocalPlayer CreateLocalPlayer(int actorNr, int planetOwnershipTypeID, UserProfileData userProfileData);
 	private void InitializeManagers();
 	private void OnRequestMaterialsResponse(Dictionary<object, object> materialList);
-	[IteratorStateMachine(typeof(_AddMaterialsToRepositoryCoroutine_d__215))]
-	private IEnumerator AddMaterialsToRepositoryCoroutine(Dictionary<object, object> materialList);
 	private void CreatePlayersFromUserList(Dictionary<object, object> userList);
 	private void OnGetBuiltInItemBusinessData(Dictionary<object, object> builtInItemBusinessData);
 	private void OnRequestFriendsResponse(Dictionary<object, object> friendsList);

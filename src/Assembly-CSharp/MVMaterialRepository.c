@@ -37,7 +37,7 @@ void Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_AddMaterial
         physicalProperties_00.softness = fVar3;
         physicalProperties_00.staticFriction = fVar4;
         physicalProperties_00.toughness = 0.0;
-        MVMaterial::MVMaterial__ctor_1
+        MVMaterial::MVMaterial__ctor_3
                   (this_01,materialId,name,description,physicalProperties_00,materialSound,
                    modifierPackageType,priceGold,isUnlocked,materialButtonTextureGenerator,
                    (MethodInfo *)0x0);
@@ -146,6 +146,55 @@ code_?:
 }
 
 
+/* IEnumerator GenerateMaterialButtonTextureRoutine() */
+
+IEnumerator *
+Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_GenerateMaterialButtonTextureRoutine
+          (MVMaterialRepository *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVMaterialRepository___GenerateMaterialButtonTextureRoutine_d__26);
+    cRam_? = '\x01';
+  }
+  method_00 = TypeInfo__MVMaterialRepository___GenerateMaterialButtonTextureRoutine_d__26;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
+}
+
+
+/* Void GenerateMaterialButtonTextures() */
+
+void Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_GenerateMaterialButtonTextures
+               (MVMaterialRepository *this,MethodInfo *method)
+
+{
+  if ((this->fields).generateTexturesRoutine != (IEnumerator *)0x0) {
+    Coroutines::Coroutines_Stop((this->fields).generateTexturesRoutine,(MethodInfo *)0x0);
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVMaterialRepository___GenerateMaterialButtonTextureRoutine_d__26);
+    cRam_? = '\x01';
+  }
+  method_00 = TypeInfo__MVMaterialRepository___GenerateMaterialButtonTextureRoutine_d__26;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
+  func_?(value + 2,this);
+  (this->fields).generateTexturesRoutine = (IEnumerator *)value;
+  func_?(&(this->fields).generateTexturesRoutine,value);
+  Coroutines::Coroutines_Start((this->fields).generateTexturesRoutine,(MethodInfo *)0x0);
+  return;
+}
+
+
 /* MVMaterial GetMaterial(Byte) */
 
 MVMaterial *
@@ -224,6 +273,332 @@ Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_GetMaterialPhysi
 }
 
 
+/* Void InitializeMaterials(Dictionary`2[System.Object,System.Object]) */
+
+void Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_InitializeMaterials
+               (MVMaterialRepository *this,Dictionary_2_System_Object_System_Object_ *materialList,
+               MethodInfo *method)
+
+{
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
+  auStack_4._6_4_ = &stack0xffffff6c;
+  puVar5 = &stack0xffffff6c;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Boolean);
+    func_?(&TypeInfo__System__Byte);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Keys__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::Object,_System::Object>__get_Current__
+                   );
+    func_?(&TypeInfo__System__Int32);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<System::Object,_System::Object>__GetEnumerator__
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__Add_MVMaterial_);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
+    func_?(&TypeInfo__MVMaterial);
+    func_?(&TypeInfo__System__Single);
+    func_?(&TypeInfo__System__String);
+    cRam_? = '\x01';
+    puVar5 = (undefined1 *)auStack_4._6_4_;
+  }
+  auStack_4._6_4_ = puVar5;
+  pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (((((pMVar6 != (MVNetworkGame *)0x0) &&
+        (this_00 = (pMVar6->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) &&
+       (pMVar7 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+       pMVar7 != (MVLocalPlayer *)0x0)) &&
+      ((this_01 = (pMVar7->fields)._._SubscriptionRules_k__BackingField,
+       this_01 != (SubscriptionRulesWrapper *)0x0 &&
+       (bVar8 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
+                SubscriptionRulesWrapper_HasBenefit
+                          (this_01,SubscriptionBenefit__Enum_FreeBuildingMaterials,(MethodInfo *)0x0
+                          ), materialList != (Dictionary_2_System_Object_System_Object_ *)0x0)))) &&
+     (this_04 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+                StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Keys
+                          ((Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                            *)materialList,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Keys__
+                          ),
+     this_04 !=
+     (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+      *)0x0)) {
+    pDVar9 = mscorlib.dll::System::Collections::Generic::
+             Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+             StyleSheetCache+SheetHandleKey,System::Object]::
+             Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                         *)&stack0xffffff94,
+                        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                         *)this_04,
+                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<System::Object,_System::Object>__GetEnumerator__
+                       );
+    pOStack_10 = pDVar9->_currentValue;
+    uStack_1 = 1;
+    while (bVar11 = mscorlib.dll::System::Collections::Generic::
+                   Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::
+                   Object,UnityEngine::UIElements::TextureId]::
+                   Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Object_UnityEngine_UIElements_TextureId__MoveNext
+                             ((Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Object_UnityEngine_UIElements_TextureId_
+                               *)&stack0xffffffa4,
+                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
+                             ), bVar11 != 0) {
+      if (pOStack_10 == (Object *)0x0) goto code_?;
+      if ((pOStack_10->klass->_0).element_class != (TypeInfo__System__Byte->_0).element_class)
+      goto code_?;
+      puVar5 = (undefined1 *)func_?();
+      auStack_4[4] = *puVar5;
+      pOVar12 = (Object *)func_?();
+      TVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+               UIElements::TextureId]::
+               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                          materialList,pOVar12,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      if ((TVar13.m_Index != 0) &&
+         ((*(byte *)(*(int *)TVar13.m_Index + 0xb8) <
+           (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment ||
+          (*(Dictionary_2_System_Object_System_Object___Class **)
+            (*(int *)(*(int *)TVar13.m_Index + 100) + -4 +
+            (uint)(
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                  ->_1).naturalAligment * 4) !=
+           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))))
+      goto code_?;
+      auStack_4[3] = 0x33;
+      pOVar12 = (Object *)func_?();
+      if (TVar13.m_Index == 0) goto code_?;
+      pSStack_14 = (String *)
+                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                   Object,UnityEngine::UIElements::TextureId]::
+                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                             ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                              TVar13.m_Index,pOVar12,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                             );
+      if (pSStack_14 != (String *)0x0) {
+        TVar15.m_Index = (int32_t)(String *)0x0;
+        if (*(String__Class **)pSStack_14 == TypeInfo__System__String) {
+          TVar15 = (TextureId)pSStack_14;
+        }
+        pSStack_14 = (String *)TVar15.m_Index;
+        if ((String *)TVar15.m_Index == (String *)0x0) goto code_?;
+      }
+      auStack_4[2] = 0x34;
+      pOVar12 = (Object *)func_?();
+      pSStack_16 = (String *)
+                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                   Object,UnityEngine::UIElements::TextureId]::
+                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                             ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                              TVar13.m_Index,pOVar12,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                             );
+      if (pSStack_16 != (String *)0x0) {
+        TVar15.m_Index = (int32_t)(String *)0x0;
+        if (*(String__Class **)pSStack_16 == TypeInfo__System__String) {
+          TVar15 = (TextureId)pSStack_16;
+        }
+        pSStack_16 = (String *)TVar15.m_Index;
+        if ((String *)TVar15.m_Index == (String *)0x0) goto code_?;
+      }
+      auStack_4[1] = 0x35;
+      pOVar12 = (Object *)func_?();
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)TVar13.m_Index,
+                 pOVar12,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                );
+      auStack_4[0] = 0x36;
+      pOStack_10 = (Object *)auStack_4;
+      pOVar12 = (Object *)func_?();
+      TVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+               UIElements::TextureId]::
+               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                         (TVar13.m_Index,pOVar12,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      if (TVar15.m_Index == 0) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar15.m_Index + 0x20) !=
+          (TypeInfo__System__Int32->_0).element_class) goto code_?;
+      pMVar17 = (MaterialSound__Enum *)func_?();
+      materialSound = *pMVar17;
+      pOVar12 = (Object *)func_?();
+      TVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+               UIElements::TextureId]::
+               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                         (TVar13.m_Index,pOVar12,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      if (TVar15.m_Index == 0) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar15.m_Index + 0x20) !=
+          (TypeInfo__System__Int32->_0).element_class) goto code_?;
+      pAVar18 = (AvatarModifierPackageType__Enum *)func_?();
+      modifierPackageType = *pAVar18;
+      pOVar12 = (Object *)func_?();
+      TVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+               UIElements::TextureId]::
+               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                         (TVar13.m_Index,pOVar12,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      if (TVar15.m_Index == 0) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar15.m_Index + 0x20) !=
+          (TypeInfo__System__Int32->_0).element_class) goto code_?;
+      piVar19 = (int32_t *)func_?();
+      unlockPriceGold = *piVar19;
+      if (bVar8 == 0) {
+        auStack_4[5] = 0x3a;
+        pOVar12 = (Object *)func_?();
+        TVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                 ::UIElements::TextureId]::
+                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                           (TVar13.m_Index,pOVar12,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                           );
+        if (TVar15.m_Index == 0) goto code_?;
+        if (*(Il2CppClass **)(*(int *)TVar15.m_Index + 0x20) !=
+            (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+        pcVar20 = (char *)func_?();
+        cVar21 = *pcVar20;
+      }
+      else {
+        cVar21 = '\x01';
+      }
+      auStack_4[5] = 0x6f;
+      pOVar12 = (Object *)func_?();
+      TVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+               UIElements::TextureId]::
+               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                         (TVar13.m_Index,pOVar12,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      if (TVar13.m_Index == 0) goto code_?;
+      iVar22 = func_?();
+      if (iVar22 == 0) goto code_?;
+      if (*(int *)(iVar22 + 0xc) == 0) goto code_?;
+      if (*(uint *)(iVar22 + 0xc) < 2) goto code_?;
+      height = *(Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                 **)(iVar22 + 0x14);
+      if (*(uint *)(iVar22 + 0xc) < 3) goto code_?;
+      bearingX = *(float *)(iVar22 + 0x18);
+      if (*(uint *)(iVar22 + 0xc) < 4) goto code_?;
+      bearingY = *(float *)(iVar22 + 0x1c);
+      if (*(uint *)(iVar22 + 0xc) < 5) goto code_?;
+      fVar23 = 0.0;
+      UnityEngine.TextCoreFontEngineModule.dll::UnityEngine::TextCore::GlyphMetrics::
+      GlyphMetrics__ctor((GlyphMetrics *)&stack0xffffff78,*(float *)(iVar22 + 0x10),(float)height,
+                         bearingX,bearingY,*(float *)(iVar22 + 0x20),(MethodInfo *)0x0);
+      this_02 = (this->fields).materials;
+      if (this_02 == (List_1_MVMaterial_ *)0x0) goto code_?;
+      materialId = (this_02->fields)._size;
+      in_stack_24 = (MethodInfo *)&UNK_?;
+      this_05 = (MVMaterial *)func_?();
+      physicalProperties.bouncyness = bearingX;
+      physicalProperties.friction = (float)height;
+      physicalProperties.softness = bearingY;
+      physicalProperties.staticFriction = (float)in_stack_24;
+      physicalProperties.toughness = fVar23;
+      MVMaterial::MVMaterial__ctor_3
+                (this_05,materialId,pSStack_14,pSStack_16,physicalProperties,materialSound,
+                 modifierPackageType,unlockPriceGold,cVar21 != '\0',
+                 (MaterialButtonTextureGenerator *)0x0,(MethodInfo *)0x0);
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+                ((List_1_System_Object_ *)this_02,(Object *)this_05,
+                 MethodInfo__System__Collections__Generic__List<MVMaterial>__Add_MVMaterial_);
+    }
+    uStack_1 = 0xffffffff;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)&stack0xffffffa4,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
+               ,in_stack_24);
+    uStack_1 = 0xffffffff;
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      cRam_? = '\x01';
+    }
+    this_03 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).materials;
+    if (this_03 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      if ((this_03->fields)._size < 0x16) {
+        RVar25 = (RegexCharClass_SingleRange)(this->fields).noMaterial;
+      }
+      else {
+        RVar25 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                 ::RegexCharClass+SingleRange]::
+                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                           (this_03,0x15,
+                            MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_
+                           );
+      }
+      if (RVar25 != (RegexCharClass_SingleRange)0x0) {
+        if ((*(float *)((int)RVar25 + 0x2c) == _UNK_?) &&
+           (*(char *)((int)RVar25 + 0xc) != '\0')) {
+          MVMaterialRepository_GenerateMaterialButtonTextures(this,(MethodInfo *)0x0);
+          MVGameControllerBase::MVGameControllerBase_RegisterOverrideMaterials((MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
+          return;
+        }
+        func_?();
+        this_06 = (Exception *)func_?();
+        method_00 = (Object__Class *)0x0;
+        message = (String *)func_?();
+        mscorlib.dll::System::Exception::Exception__ctor_1(this_06,message,(MethodInfo *)method_00);
+        func_?();
+        func_?();
+      }
+    }
+  }
+code_?:
+  func_?();
+code_?:
+  func_?();
+code_?:
+  func_?();
+code_?:
+  func_?();
+code_?:
+  func_?();
+code_?:
+  func_?();
+code_?:
+  func_?();
+code_?:
+  func_?();
+code_?:
+  func_?();
+code_?:
+  func_?();
+  func_?();
+  pcVar26 = (code *)swi(3);
+  (*pcVar26)();
+  return;
+}
+
+
 /* Boolean IsMaterialUnlocked(Byte[]) */
 
 bool Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_IsMaterialUnlocked
@@ -232,37 +607,19 @@ bool Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_IsMaterialU
 {
   if (mats != (Byte__Array *)0x0) {
     for (uVar1 = 0; (int)uVar1 < (int)mats->max_length; uVar1 = uVar1 + 1) {
-      if (mats->max_length <= uVar1) goto code_?;
-      bVar2 = mats->vector[uVar1];
-      if (cRam_? == '\0') {
-        func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
-        func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
-        cRam_? = '\x01';
-      }
-      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (this->fields).materials;
-      if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      if (mats->max_length <= uVar1) {
 code_?:
         func_?();
-code_?:
+        pcVar2 = (code *)swi(3);
+        bVar3 = (*pcVar2)();
+        return bVar3;
+      }
+      pMVar4 = MVMaterialRepository_GetMaterial(this,mats->vector[uVar1],(MethodInfo *)0x0);
+      if (pMVar4 == (MVMaterial *)0x0) {
         func_?();
-        pcVar3 = (code *)swi(3);
-        bVar4 = (*pcVar3)();
-        return bVar4;
+        goto code_?;
       }
-      if ((int)(uint)bVar2 < (this_00->fields)._size) {
-        RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_00,(uint)bVar2,
-                           MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_
-                          );
-      }
-      else {
-        RVar5 = (RegexCharClass_SingleRange)(this->fields).noMaterial;
-      }
-      if (RVar5 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      if (*(char *)((int)RVar5 + 0xc) == '\0') {
+      if ((pMVar4->fields).isUnlocked == 0) {
         return 0;
       }
     }
@@ -277,107 +634,15 @@ bool Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_IsMaterialU
                (MVMaterialRepository *this,uint8_t mat,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
-    cRam_? = '\x01';
+  pMVar1 = MVMaterialRepository_GetMaterial(this,mat,(MethodInfo *)0x0);
+  if (pMVar1 != (MVMaterial *)0x0) {
+    return (pMVar1->fields).isUnlocked;
   }
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).materials;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    if ((int)(uint)mat < (this_00->fields)._size) {
-      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_00,(uint)mat,
-                         MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
-    }
-    else {
-      RVar1 = (RegexCharClass_SingleRange)(this->fields).noMaterial;
-    }
-    if (RVar1 != (RegexCharClass_SingleRange)0x0) {
-      return *(bool *)((int)RVar1 + 0xc);
-    }
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
-}
-
-
-/* Void RegenerateMaterialButtonTextures() */
-
-void Assembly-CSharp.dll::MVMaterialRepository::
-     MVMaterialRepository_RegenerateMaterialButtonTextures
-               (MVMaterialRepository *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
-    func_?(&
-                    MaterialButtonTextureGenerator_MethodInfo__UnityEngine__Object__Instantiate<MaterialButtonTextureGenerator>_MaterialButtonTextureGenerator_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__PrefabPool);
-    cRam_? = '\x01';
-  }
-  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-  if (pPVar1 != (PrefabPool *)0x0) {
-    pMVar2 = (pPVar1->fields).materialButtonTextureGenerator;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pMVar2 = (MaterialButtonTextureGenerator *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)pMVar2,
-                        MaterialButtonTextureGenerator_MethodInfo__UnityEngine__Object__Instantiate<MaterialButtonTextureGenerator>_MaterialButtonTextureGenerator_
-                       );
-    index = 0;
-    pLVar3 = (this->fields).materials;
-    if (pLVar3 != (List_1_MVMaterial_ *)0x0) {
-      while (index < (pLVar3->fields)._size) {
-        this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                  (this->fields).materials;
-        if (((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-            || (this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                          RegularExpressions::RegexCharClass+SingleRange]::
-                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                    (this_00,index,
-                                     MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_
-                                    ), this_01 == (RegexCharClass_SingleRange)0x0)) ||
-           (MVMaterial::MVMaterial_GenerateCube((MVMaterial *)this_01,index,(MethodInfo *)0x0),
-           pMVar2 == (MaterialButtonTextureGenerator *)0x0)) goto code_?;
-        this = (MVMaterialRepository *)
-               MaterialButtonTextureGenerator::MaterialButtonTextureGenerator_TakePicture
-                         (pMVar2,*(Mesh **)((int)this_01 + 0x10),(MethodInfo *)0x0);
-        *(MVMaterialRepository **)((int)this_01 + 0x34) = this;
-        func_?();
-        index = index + 1;
-        pLVar3 = (((Texture__Fields *)&(this->fields).materials)->_).m_CachedPtr;
-        if (pLVar3 == (List_1_MVMaterial_ *)0x0) goto code_?;
-      }
-      if (pMVar2 != (MaterialButtonTextureGenerator *)0x0) {
-        obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        ((Component *)pMVar2,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                  ((Object_1 *)obj,(MethodInfo *)0x0);
-        return;
-      }
-    }
-  }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
-  return;
+  uVar2 = func_?(&stack0xfffffffc);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 
@@ -483,18 +748,16 @@ void Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository__ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<MVMaterial>__List__);
   (this->fields).materials = this_00;
-  func_?(&this->fields,this_00);
+  func_?(&(this->fields).materials,this_00);
   fVar1 = 0.0;
   pMVar2 = (MethodInfo *)0x0;
   fVar3 = 0.0;
-  fVar4 = 0.0;
-  fVar5 = 0.0;
   UnityEngine.TextCoreFontEngineModule.dll::UnityEngine::TextCore::GlyphMetrics::GlyphMetrics__ctor
             ((GlyphMetrics *)&stack0xffffffe4,0.43,0.0,1.0,20.0,0.0,(MethodInfo *)0x0);
   (this->fields).physicalPropertiesDefault.friction = (float)pMVar2;
-  (this->fields).physicalPropertiesDefault.bouncyness = fVar3;
-  (this->fields).physicalPropertiesDefault.softness = fVar4;
-  (this->fields).physicalPropertiesDefault.staticFriction = fVar5;
+  (this->fields).physicalPropertiesDefault.bouncyness = 0.0;
+  (this->fields).physicalPropertiesDefault.softness = 0.0;
+  (this->fields).physicalPropertiesDefault.staticFriction = fVar3;
   (this->fields).physicalPropertiesDefault.toughness = fVar1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,pMVar2);
@@ -506,71 +769,69 @@ void Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository__ctor
   if ((TypeInfo__MaterialDescription->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pMVar6 = TypeInfo__MaterialDescription->static_fields->materialDescriptions;
-  if (pMVar6 != (MaterialDescription__Array *)0x0) {
-    if (pMVar6->max_length < 0x19) goto code_?;
-    if (pMVar6->vector[0x18] != (MaterialDescription *)0x0) {
-      pSVar7 = (pMVar6->vector[0x18]->fields)._Name_k__BackingField;
-      pMVar8 = TypeInfo__MaterialDescription->static_fields->materialDescriptions->vector[0x18];
-      if (pMVar8 != (MaterialDescription *)0x0) {
-        pSVar9 = (pMVar8->fields)._Description_k__BackingField;
-        pMVar2 = (MethodInfo *)(this->fields).physicalPropertiesDefault.softness;
-        fVar4 = (this->fields).physicalPropertiesDefault.staticFriction;
-        fVar3 = (this->fields).physicalPropertiesDefault.toughness;
-        pMVar10 = (MVMaterial *)func_?();
+  pMVar4 = TypeInfo__MaterialDescription->static_fields->materialDescriptions;
+  if (pMVar4 != (MaterialDescription__Array *)0x0) {
+    if (pMVar4->max_length < 0x19) goto code_?;
+    if (pMVar4->vector[0x18] != (MaterialDescription *)0x0) {
+      pSVar5 = (pMVar4->vector[0x18]->fields)._Name_k__BackingField;
+      pMVar6 = TypeInfo__MaterialDescription->static_fields->materialDescriptions->vector[0x18];
+      if (pMVar6 != (MaterialDescription *)0x0) {
+        pMVar2 = (MethodInfo *)(pMVar6->fields)._Description_k__BackingField;
+        fVar3 = (this->fields).physicalPropertiesDefault.friction;
+        fVar1 = (this->fields).physicalPropertiesDefault.bouncyness;
+        pMVar7 = (MVMaterial *)func_?();
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        fVar5 = 0.0;
-        pMVar11 = pMVar10;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)pMVar10,ExceptionArgument__Enum_obj,pMVar2);
-        (pMVar10->fields)._ModifierPackageType_k__BackingField = 0;
-        (pMVar10->fields)._PhysicalProperties_k__BackingField.friction = (float)pMVar11;
-        (pMVar10->fields)._PhysicalProperties_k__BackingField.bouncyness = fVar5;
-        (pMVar10->fields)._PhysicalProperties_k__BackingField.softness = (float)pMVar2;
-        (pMVar10->fields)._PhysicalProperties_k__BackingField.staticFriction = fVar4;
-        (pMVar10->fields)._PhysicalProperties_k__BackingField.toughness = fVar3;
-        MVMaterial::MVMaterial_GenerateCube(pMVar10,0x18,(MethodInfo *)0x0);
-        MVar12 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-        if (MVar12 == MVGameMode__Enum_Play) {
+                  ((Object *)pMVar7,ExceptionArgument__Enum_obj,pMVar2);
+        (pMVar7->fields)._Name_k__BackingField = pSVar5;
+        func_?();
+        (pMVar7->fields)._Description_k__BackingField = (String *)pMVar2;
+        ppSVar8 = &(pMVar7->fields)._Description_k__BackingField;
+        puVar9 = &UNK_?;
+        func_?();
+        (pMVar7->fields)._ModifierPackageType_k__BackingField = 0;
+        (pMVar7->fields)._PhysicalProperties_k__BackingField.friction = fVar3;
+        (pMVar7->fields)._PhysicalProperties_k__BackingField.bouncyness = fVar1;
+        (pMVar7->fields)._PhysicalProperties_k__BackingField.softness = (float)puVar9;
+        (pMVar7->fields)._PhysicalProperties_k__BackingField.staticFriction = (float)ppSVar8;
+        (pMVar7->fields)._PhysicalProperties_k__BackingField.toughness = (float)pMVar2;
+        (pMVar7->fields).unlockPriceGold = 0;
+        (pMVar7->fields).isUnlocked = 0;
+        MVMaterial::MVMaterial_GenerateCube(pMVar7,0x18,(MethodInfo *)0x0);
+        MVar10 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+        if (MVar10 == MVGameMode__Enum_Play) {
 code_?:
-          (pMVar10->fields).unlockPriceGold = 0;
-          (pMVar10->fields).isUnlocked = 0;
-          (pMVar10->fields)._Name_k__BackingField = pSVar7;
-          func_?();
-          (pMVar10->fields)._Description_k__BackingField = pSVar9;
-          func_?();
-          (this->fields).noMaterial = pMVar10;
+          (this->fields).noMaterial = pMVar7;
           func_?();
           if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           method_00 = TypeInfo__MVMaterial;
-          pMVar13 = TypeInfo__MVPhysics->static_fields;
-          fVar4 = (pMVar13->airPhysicalProperties).friction;
-          fVar5 = (pMVar13->airPhysicalProperties).bouncyness;
-          fVar1 = (pMVar13->airPhysicalProperties).softness;
-          fVar14 = (pMVar13->airPhysicalProperties).staticFriction;
-          fVar3 = (pMVar13->airPhysicalProperties).toughness;
-          pMVar10 = (MVMaterial *)func_?();
+          pMVar11 = TypeInfo__MVPhysics->static_fields;
+          fVar1 = (pMVar11->airPhysicalProperties).friction;
+          fVar12 = (pMVar11->airPhysicalProperties).bouncyness;
+          fVar13 = (pMVar11->airPhysicalProperties).softness;
+          fVar14 = (pMVar11->airPhysicalProperties).staticFriction;
+          fVar3 = (pMVar11->airPhysicalProperties).toughness;
+          pMVar7 = (MVMaterial *)func_?();
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)pMVar10,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-          (pMVar10->fields)._ModifierPackageType_k__BackingField = 0;
-          (pMVar10->fields)._PhysicalProperties_k__BackingField.friction = fVar4;
-          (pMVar10->fields)._PhysicalProperties_k__BackingField.bouncyness = fVar5;
-          (pMVar10->fields)._PhysicalProperties_k__BackingField.softness = fVar1;
-          (pMVar10->fields)._PhysicalProperties_k__BackingField.staticFriction = fVar14;
-          (pMVar10->fields)._PhysicalProperties_k__BackingField.toughness = fVar3;
-          (this->fields).inAirMaterial = pMVar10;
+                    ((Object *)pMVar7,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+          (pMVar7->fields)._ModifierPackageType_k__BackingField = 0;
+          (pMVar7->fields)._PhysicalProperties_k__BackingField.friction = fVar1;
+          (pMVar7->fields)._PhysicalProperties_k__BackingField.bouncyness = fVar12;
+          (pMVar7->fields)._PhysicalProperties_k__BackingField.softness = fVar13;
+          (pMVar7->fields)._PhysicalProperties_k__BackingField.staticFriction = fVar14;
+          (pMVar7->fields)._PhysicalProperties_k__BackingField.toughness = fVar3;
+          (this->fields).inAirMaterial = pMVar7;
           func_?();
           return;
         }
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pSVar9 = (String *)0x0;
         bVar15 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                           ((Object_1 *)0x0,(Object_1 *)0x0,(MethodInfo *)0x0);
         if (bVar15 == 0) goto code_?;

@@ -129,7 +129,7 @@ joined_?:
     pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
                         ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
     if (pDVar10 == (Delegate *)0x0) {
-      *(undefined4 *)(puVar9 + 0xe0) = 0;
+      *(undefined4 *)(puVar9 + 0xdc) = 0;
 code_?:
       func_?();
       this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
@@ -151,7 +151,7 @@ code_?:
       pDVar13 = pDVar10;
     }
     if (pDVar13 == (Delegate *)0x0) goto code_?;
-    *(Delegate **)(puVar9 + 0xe0) = pDVar13;
+    *(Delegate **)(puVar9 + 0xdc) = pDVar13;
     pDVar13 = (Delegate *)0x0;
     if ((MVNetworkGame_OnMarketPlaceActionCompleteDelegate__Class *)pDVar10->klass ==
         TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {

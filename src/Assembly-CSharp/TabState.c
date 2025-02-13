@@ -25,32 +25,40 @@ bool Assembly-CSharp.dll::TabState::TabState_SlotIndexIsInRange
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
+    ppIStack_1 = &TypeInfo__System__Int32;
+    func_?();
     cRam_? = '\x01';
   }
-  iVar1 = func_?(TypeInfo__System__Int32,2);
-  if (iVar1 == 0) {
-    func_?();
+  ppIStack_1 = (Int32__Array__Class **)0x2;
+  pIStack_2 = TypeInfo__System__Int32;
+  iVar3 = func_?();
+  if (iVar3 == 0) {
+    ppIStack_1 = (Int32__Array__Class **)&stack0xfffffffc;
+    uVar4 = func_?(&puStack_5);
+    func_?(uVar4);
+    pcVar6 = (code *)swi(3);
+    bVar7 = (*pcVar6)();
+    return bVar7;
   }
-  else if (*(int *)(iVar1 + 0xc) != 0) {
-    *(int32_t *)(iVar1 + 0x10) = ((this->fields).currentPage + -1) * (this->fields).slotsPrPage;
-    if (1 < *(uint *)(iVar1 + 0xc)) {
-      iVar2 = (this->fields).slotsPrPage * (this->fields).currentPage;
-      *(int *)(iVar1 + 0x14) = iVar2;
-      if (*(int *)(iVar1 + 0xc) != 0) {
-        if (slotIndex < *(int *)(iVar1 + 0x10)) {
-          return 0;
-        }
-        if (1 < *(uint *)(iVar1 + 0xc)) {
-          return slotIndex < iVar2;
-        }
+  if (*(int *)(iVar3 + 0xc) != 0) {
+    *(int32_t *)(iVar3 + 0x10) = ((this->fields).currentPage + -1) * (this->fields).slotsPrPage;
+    if ((1 < *(uint *)(iVar3 + 0xc)) &&
+       (*(int32_t *)(iVar3 + 0x14) = (this->fields).slotsPrPage * (this->fields).currentPage,
+       *(int *)(iVar3 + 0xc) != 0)) {
+      if (slotIndex < *(int *)(iVar3 + 0x10)) {
+        return 0;
+      }
+      if (1 < *(uint *)(iVar3 + 0xc)) {
+        return slotIndex < *(int *)(iVar3 + 0x14);
       }
     }
   }
+  ppIStack_1 = (Int32__Array__Class **)0x0;
+  pIStack_2 = (Int32__Array__Class *)func_?();
   func_?();
-  pcVar3 = (code *)swi(3);
-  bVar4 = (*pcVar3)();
-  return bVar4;
+  pcVar6 = (code *)swi(3);
+  bVar7 = (*pcVar6)();
+  return bVar7;
 }
 
 
