@@ -125,7 +125,7 @@ float Assembly-CSharp.dll::Cube::Cube_CalculateAOLightCheap(Face__Enum face,int3
 {
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__ContainsKey_MV__WorldObject__IntVector_);
-    func_?(0xce54);
+    func_?(0xcec0);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&TypeInfo__SharedCubeFunctions);
     cRam_? = '\x01';
@@ -1252,7 +1252,7 @@ FaceData__Array * Assembly-CSharp.dll::Cube::Cube_GenerateCubeFaces(Cube *cube,I
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__Add_FaceData_);
-    func_?(0xe0fc);
+    func_?(0xe164);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__List__);
     func_?(&TypeInfo__System__Collections__Generic__List<FaceData>);
     cRam_? = '\x01';
@@ -1298,10 +1298,10 @@ FaceData__Array * Assembly-CSharp.dll::Cube::Cube_GenerateCubeFacesCheap(Cube *c
     func_?(&MethodInfo__Cube___GenerateCubeFacesCheap_g__insideCheck_26_4_int_);
     func_?(&MethodInfo__Cube___GenerateCubeFacesCheap_g__insideCheck_26_5_int_);
     func_?(&TypeInfo__Cube);
-    func_?(0x2150);
+    func_?(0x217c);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__Add_FaceData_);
     func_?(&MethodInfo__System__Collections__Generic__List<FaceData>__ToArray__);
-    func_?(0xe088);
+    func_?(0xe0f0);
     func_?(&TypeInfo__System__Collections__Generic__List<FaceData>);
     cRam_? = '\x01';
   }
@@ -2319,7 +2319,7 @@ Edge__Enum Assembly-CSharp.dll::Cube::Cube_GetEdge_1(GameObject *gameObject,Cube
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
     func_?(&TypeRef__Edge);
-    func_?(0xcd94);
+    func_?(0xcdb8);
     func_?(&TypeInfo__System__Enum);
     func_?(&TypeInfo__System__IDisposable);
     func_?(&TypeInfo__System__Collections__IEnumerator);

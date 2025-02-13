@@ -40,11 +40,12 @@ public class MVMaterial
 
 	// Constructors
 	public MVMaterial();
-	public MVMaterial(int materialId, string name, string description, PhysicalProperties physicalProperties, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType, int priceGold, bool isUnlocked, MaterialButtonTextureGenerator materialButtonTextureGenerator);
 	public MVMaterial(PhysicalProperties physicalProperties, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType);
+	public MVMaterial(string name, string description, PhysicalProperties physicalProperties, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType, int unlockPriceGold, bool isUnlocked);
+	public MVMaterial(int materialId, string name, string description, PhysicalProperties physicalProperties, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType, int unlockPriceGold, bool isUnlocked, MaterialButtonTextureGenerator materialButtonTextureGenerator = null);
 
 	// Methods
-	public void RegenerateButtonTexture(int materialId, MaterialButtonTextureGenerator materialButtonTextureGenerator);
+	public void RegenerateButtonTexture(MaterialButtonTextureGenerator materialButtonTextureGenerator);
 	private void GenerateCube(int materialID);
 	private void AddVertices(int direction);
 }

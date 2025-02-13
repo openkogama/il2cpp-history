@@ -810,7 +810,7 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_Purchas
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this_02,(Object *)this,MethodInfo__TierUnlockDetailsPopup__ProductPurchaseResponseHandler_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_,(MethodInfo *)0x0);
             pDVar13 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar12,(Delegate *)this_02,(MethodInfo *)0x0);
             if (pDVar13 == (Delegate *)0x0) {
-              *(Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ **)(IVar8.m_value + 0xc0) = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0;
+              *(Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ **)(IVar8.m_value + 0xbc) = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0;
             }
             else {
               pAVar12 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)func_?();
@@ -818,7 +818,7 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_Purchas
                 func_?();
                 goto code_?;
               }
-              *(Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ **)(IVar8.m_value + 0xc0) = pAVar12;
+              *(Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ **)(IVar8.m_value + 0xbc) = pAVar12;
               iVar14 = func_?();
               if (iVar14 == 0) goto code_?;
             }

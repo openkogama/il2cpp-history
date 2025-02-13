@@ -55,6 +55,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::Le
   default:
     return 0;
   }
+  in_AF = 0;
   if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).rotateUIYAxisTime) {
     pIVar4 = (pLVar2->fields).goldImage;
     if (pIVar4 != (Image *)0x0) {
@@ -83,6 +84,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::Le
                   UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha(pCVar13,0.0,(MethodInfo *)0x0);
                   (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
+                  in_AF = 0;
                   if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).goldImageDisplayTime) {
                     pAVar5 = (pLVar2->fields).goldBounceEffect;
                     if (pAVar5 != (AnimationCurve *)0x0) {
@@ -170,12 +172,23 @@ code_?:
     }
   }
 code_?:
-  cVar16 = '\0';
-  uVar17 = func_?();
-  *(char *)&pLVar1[0xad55].klass = *(char *)&pLVar1[0xad55].klass + (char)(CONCAT44((int)((ulonglong)uVar17 >> 0x20) + 1,(int)uVar17) % (longlong)(int)pLVar1->klass) + cVar16;
-  pcVar18 = (code *)swi(3);
-  bVar19 = (*pcVar18)();
-  return bVar19;
+  uVar16 = func_?();
+  pcVar17 = (char *)CONCAT22((short)((uint)&stack0xfffffffc >> 0x10),CONCAT11((char)((uint)&stack0xfffffffc >> 8) + extraout_DL,(char)&stack0xfffffffc));
+  in_AF = 9 < ((byte)uVar16 & 0xf) | in_AF;
+  bVar18 = (byte)uVar16 + in_AF * -6 & 0xf;
+  pcVar19 = (char *)((int)&pLVar1[-1].fields.__4__this + 3);
+  *pcVar19 = *pcVar19 + extraout_DL + in_AF;
+  bVar20 = 9 < bVar18 | in_AF;
+  bVar21 = (bVar18 + bVar20 * -6 & 0xf) * '\x02' + bVar20;
+  bVar18 = 9 < (bVar21 & 0xf) | bVar20;
+  uVar22 = CONCAT31((int3)((uint)uVar16 >> 8),bVar21 + bVar18 * -6) & 0xffff000f;
+  cVar23 = (char)uVar22;
+  *pcVar17 = *pcVar17 + (char)&stack0xfffffffc + bVar18;
+  pcVar19 = (char *)(CONCAT22((short)(uVar22 >> 0x10),CONCAT11((((char)((uint)uVar16 >> 8) - in_AF) - bVar20) - bVar18,cVar23)) + 0x10);
+  *pcVar19 = *pcVar19 + cVar23;
+  pcVar24 = (code *)swi(3);
+  bVar25 = (*pcVar24)();
+  return bVar25;
 }
 
 

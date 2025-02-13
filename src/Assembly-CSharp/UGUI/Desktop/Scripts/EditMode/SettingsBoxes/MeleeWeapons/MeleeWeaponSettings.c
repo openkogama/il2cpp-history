@@ -224,7 +224,7 @@ code_?:
     if ((pSVar20 == (SettingsSlider *)0x0) || (TVar17.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar17.m_Index + 0x20) != (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar23 = (float *)func_?();
-    SettingsSlider::SettingsSlider_Initialize(pSVar20,StringLiteral_RecoilStrength,*pfVar23,fStack_22,4.012431e-29,(MethodInfo *)0x0);
+    SettingsSlider::SettingsSlider_Initialize(pSVar20,StringLiteral_RecoilStrength,*pfVar23,fStack_22,4.012614e-29,(MethodInfo *)0x0);
     pSVar26 = (this->fields).RecoilStrengthInputSlider;
     pDVar27 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData;
     if (pDVar27 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) goto code_?;
@@ -256,7 +256,7 @@ code_?:
     if ((pSVar20 == (SettingsSlider *)0x0) || (TVar17.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar17.m_Index + 0x20) != (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar23 = (float *)func_?();
-    SettingsSlider::SettingsSlider_Initialize(pSVar20,StringLiteral_AttackCooldown,*pfVar23,4.0124168e-29,(float)pDVar2,(MethodInfo *)0x0);
+    SettingsSlider::SettingsSlider_Initialize(pSVar20,StringLiteral_AttackCooldown,*pfVar23,4.0125998e-29,(float)pDVar2,(MethodInfo *)0x0);
     pSVar26 = (this->fields).attackCooldownInputSlider;
     pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData;
     if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) goto code_?;

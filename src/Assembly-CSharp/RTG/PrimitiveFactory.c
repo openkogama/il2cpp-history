@@ -662,7 +662,7 @@ List_1_UnityEngine_Vector3_ * Assembly-CSharp.dll::RTG::PrimitiveFactory::Primit
     pMVar14 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
     uVar15 = pVVar13->x;
     uVar16 = pVVar13->y;
-    puVar17 = (undefined *)((float)uVar15 * fVar9 + 4.382588e-29);
+    puVar17 = (undefined *)((float)uVar15 * fVar9 + 4.3828192e-29);
     fVar5 = (float)&stack0xffffff8c + (float)uVar16 * fVar9;
     fVar4 = fVar4 + pVVar13->z * fVar9;
     if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) break;

@@ -304,9 +304,9 @@ code_?:
         bVar12 = 0;
         this = (FirstPersonCamera *)0x0;
         do {
-          if (TypeInfo__Mono__Unity__UnityTls__unitytls_tlsctx_certificate_callback == (UnityTls_unitytls_tlsctx_certificate_callback__Class *)0x0) goto code_?;
-          if ((TypeInfo__Mono__Unity__UnityTls__unitytls_tlsctx_certificate_callback->_0).namespaze <= (char *)(uint)bVar12) goto code_?;
-          pIVar13 = (&(TypeInfo__Mono__Unity__UnityTls__unitytls_tlsctx_certificate_callback->_0).byval_arg.data)[(int)(uint)bVar12].generic_class;
+          if (TypeInfo__Mono__Unity__UnityTls__unitytls_error_code == (UnityTls_unitytls_error_code__Enum__Class *)0x0) goto code_?;
+          if ((TypeInfo__Mono__Unity__UnityTls__unitytls_error_code->_0).namespaze <= (char *)(uint)bVar12) goto code_?;
+          pIVar13 = (&(TypeInfo__Mono__Unity__UnityTls__unitytls_error_code->_0).byval_arg.data)[(int)(uint)bVar12].generic_class;
           if ((pIVar13 == (Il2CppGenericClass *)0x0) || (this_03 = pIVar13->cached_class, this_03 == (Il2CppClass *)0x0)) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this_03,0,(MethodInfo *)0x0);
           bVar12 = this._3_1_ + 1;

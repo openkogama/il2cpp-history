@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_AddToChunk(CubeModelChu
 {
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__ContainsKey_MV__WorldObject__IntVector_);
-    func_?(0xce90);
+    func_?(0xcef8);
     cRam_? = '\x01';
   }
   pDVar1 = (this->fields).cells;
@@ -301,9 +301,9 @@ bool Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_AllFaceCornersIsTouchin
   func_?();
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ChunkInstances,(undefined1 *)((int)&unaff_EDI->x + 1),uVar4,pVVar5);
-    func_?(0x5464);
+    func_?(0x54cc);
     func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(0x55c8);
+    func_?(0x5630);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__Remove_System__Guid_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__TryAdd_System__Guid__ChunkInstances__ChunkInstanceVariables_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__TryGetValue_System__Guid__ChunkInstances__ChunkInstanceVariables__);
@@ -560,9 +560,9 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_ChunkInstancesChanged(C
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ChunkInstances);
-    func_?(0x5464);
+    func_?(0x54cc);
     func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(0x55c8);
+    func_?(0x5630);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__Remove_System__Guid_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__TryAdd_System__Guid__ChunkInstances__ChunkInstanceVariables_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__TryGetValue_System__Guid__ChunkInstances__ChunkInstanceVariables__);
@@ -832,7 +832,7 @@ CubeModelChunk * Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_CloneGeomet
   puVar5 = &stack0xffffff70;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__CubeModelChunk);
-    func_?(0xccfc);
+    func_?(0xcd68);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__GetEnumerator__);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__Dispose__);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__MoveNext__);
@@ -933,7 +933,7 @@ bool Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_CompareGeometry(CubeMod
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__GetEnumerator__);
-    func_?(0xcde0);
+    func_?(0xce50);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__get_Count__);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__Dispose__);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__MoveNext__);
@@ -1648,7 +1648,7 @@ code_?:
       if (((int)lVar8 != lVar8) == (bool)cVar3) {
         bVar4 = in((short)pVVar1->klass * -0x74ab);
         piVar9 = (int *)CONCAT31((int3)((uint)pVVar1 >> 8),bVar4);
-        *(byte *)((int)piVar9 + -0x4411aec3) = *(byte *)((int)piVar9 + -0x4411aec3) & bVar4;
+        *(byte *)((int)piVar9 + -0x4411abc3) = *(byte *)((int)piVar9 + -0x4411abc3) & bVar4;
         *piVar9 = *piVar9 + (int)piVar9;
         if (*piVar9 == 0) {
           func_?();
@@ -2028,7 +2028,7 @@ int32_t Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_RebuildMesh(Dictiona
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__Dispose__);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__MoveNext__);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_Cell>__get_Current__);
-    func_?(0x4d30);
+    func_?(0x4d98);
     func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_Cell>__get_Value__);
     func_?(&TypeInfo__TextureAtlasData);
     cRam_? = '\x01';
@@ -2187,7 +2187,7 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_RemoveFromChunk(CubeMod
 {
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__ContainsKey_MV__WorldObject__IntVector_);
-    func_?(0xcdac);
+    func_?(0xce14);
     cRam_? = '\x01';
   }
   pDVar1 = (this->fields).cells;

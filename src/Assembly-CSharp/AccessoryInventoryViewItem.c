@@ -169,7 +169,7 @@ void Assembly-CSharp.dll::AccessoryInventoryViewItem::AccessoryInventoryViewItem
                   this_05 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
                   Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_05,(Object *)this,MethodInfo__AccessoryInventoryViewItem__AccessoryCreatedCallback_AvatarAccessory_,(MethodInfo *)0x0);
                   if (this_03 != (AccessoryLoader *)0x0) {
-                    Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader_LoadAccessory(this_03,(String *)0x5835ff00,(Action_1_AvatarAccessory_ *)this_05,(MethodInfo *)0x0);
+                    Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader_LoadAccessory(this_03,(String *)0xbc35ff00,(Action_1_AvatarAccessory_ *)this_05,(MethodInfo *)0x0);
                     return;
                   }
                 }
@@ -303,7 +303,7 @@ code_?:
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_01,(Object *)this,MethodInfo__AccessoryInventoryViewItem__UnequipAccessoryCallback__,(MethodInfo *)0x0);
     pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pDVar3 == (Delegate *)0x0) {
-      *(undefined4 *)(unaff_EDI + 0xec) = 0;
+      *(undefined4 *)(unaff_EDI + 0xe8) = 0;
 code_?:
       func_?();
       goto code_?;
@@ -313,7 +313,7 @@ code_?:
       pDVar4 = pDVar3;
     }
     if (pDVar4 == (Delegate *)0x0) goto code_?;
-    *(Delegate **)(unaff_EDI + 0xec) = pDVar4;
+    *(Delegate **)(unaff_EDI + 0xe8) = pDVar4;
     pDVar4 = (Delegate *)0x0;
     if ((Action__Class *)pDVar3->klass == TypeInfo__System__Action) {
       pDVar4 = pDVar3;

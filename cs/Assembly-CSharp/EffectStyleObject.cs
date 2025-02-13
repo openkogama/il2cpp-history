@@ -12,9 +12,9 @@ using UnityEngine.UI;
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 [RequireComponent(typeof(Graphic))]
-[RequireComponent(typeof(ShadowEffect))]
 [RequireComponent(typeof(Outline))]
 [RequireComponent(typeof(GradientEffect))]
+[RequireComponent(typeof(ShadowEffect))]
 public class EffectStyleObject : MonoBehaviour
 {
 	// Fields
