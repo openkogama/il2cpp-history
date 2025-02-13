@@ -14,8 +14,8 @@ using UnityEngine;
 public abstract class CloudyThemeBase : Theme
 {
 	// Fields
-	[Header("Day/night-cycle", order = 2)]
 	[Header("Attributes", order = 1)]
+	[Header("Day/night-cycle", order = 2)]
 	[SerializeField]
 	private BoolAttribute useDayNightCycle;
 	[SerializeField]
