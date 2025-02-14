@@ -152,8 +152,8 @@ void Assembly-CSharp.dll::MaterialsController::MaterialsController_OnMaterialCli
 void Assembly-CSharp.dll::MaterialsController::MaterialsController_OnPop(MaterialsController *this,MethodInfo *method)
 
 {
-  if ((this->fields).materialsPop != (UnityAction *)0x0) {
-    pUVar1 = (this->fields).materialsPop;
+  pUVar1 = (this->fields).materialsPop;
+  if (pUVar1 != (UnityAction *)0x0) {
     (*(pUVar1->fields)._._.invoke_impl)((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
   }
   return;
@@ -238,28 +238,23 @@ Transform * Assembly-CSharp.dll::MaterialsController::MaterialsController_SetAct
   pDVar1 = (this->fields).desktopCubeModelingController;
   if (pDVar1 != (DesktopCubeModelingController *)0x0) {
     DesktopCubeModelingController::DesktopCubeModelingController_Initialize(pDVar1,(this->fields).cubeModelingStateMachine,(MethodInfo *)0x0);
-    pCVar2 = (this->fields).cubeModelingStateMachine;
-    if (pCVar2 != (CubeModelingStateMachine *)0x0) {
-      CubeModelingStateMachine::CubeModelingStateMachine_get_CurrentMaterialId(pCVar2,(MethodInfo *)0x0);
-      CubeModelingStateMachine::CubeModelingStateMachine_set_CurrentMaterialId(pCVar2,0,(MethodInfo *)0x0);
-      pCVar2 = (this->fields).cubeModelingStateMachine;
-      if (pCVar2 != (CubeModelingStateMachine *)0x0) {
-        CubeModelingStateMachine::CubeModelingStateMachine_get_CurrentMaterialId(pCVar2,(MethodInfo *)0x0);
-        (*(code *)(this->klass->vtable).OnMaterialChanged_1.method)();
-        if ((this->fields).desktopCubeModelingController != (DesktopCubeModelingController *)0x0) {
-          if (pcRam_? == (code *)0x0) {
-            pcRam_? = (code *)func_?();
-          }
-          pTVar3 = (Transform *)(*pcRam_?)();
-          return pTVar3;
+    this_00 = (this->fields).cubeModelingStateMachine;
+    if (this_00 != (CubeModelingStateMachine *)0x0) {
+      CubeModelingStateMachine::CubeModelingStateMachine_get_CurrentMaterialId(this_00,(MethodInfo *)0x0);
+      CubeModelingStateMachine::CubeModelingStateMachine_set_CurrentMaterialId(this_00,0,(MethodInfo *)0x0);
+      if ((this->fields).desktopCubeModelingController != (DesktopCubeModelingController *)0x0) {
+        if (pcRam_? == (code *)0x0) {
+          pcRam_? = (code *)func_?();
         }
+        pTVar2 = (Transform *)(*pcRam_?)();
+        return pTVar2;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  pTVar3 = (Transform *)(*pcVar4)();
-  return pTVar3;
+  pcVar3 = (code *)swi(3);
+  pTVar2 = (Transform *)(*pcVar3)();
+  return pTVar2;
 }
 
 
@@ -451,7 +446,7 @@ void Assembly-CSharp.dll::MaterialsController::MaterialsController_UpdateContent
             if (bVar8 != 0) {
               pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
               if ((pMVar6 == (MVNetworkGame *)0x0) || (pMVar7 = (pMVar6->fields)._MaterialRepository_k__BackingField, pMVar7 == (MVMaterialRepository *)0x0)) break;
-              this_01 = MVMaterialRepository::MVMaterialRepository_GetMaterial(pMVar7,0x6d,(MethodInfo *)0x0);
+              this_01 = MVMaterialRepository::MVMaterialRepository_GetMaterial(pMVar7,0x8d,(MethodInfo *)0x0);
               pMVar10 = (pMVar1->fields).materialViewItemPrefab;
               if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
@@ -464,7 +459,7 @@ void Assembly-CSharp.dll::MaterialsController::MaterialsController_UpdateContent
               isAvailable = MVMaterial::MVMaterial_get_IsAvailable(this_01,(MethodInfo *)0x0);
               this_00 = (pMVar1->fields).cubeModelingStateMachine;
               if ((this_00 == (CubeModelingStateMachine *)0x0) || (uVar11 = CubeModelingStateMachine::CubeModelingStateMachine_get_CurrentMaterialId(this_00,(MethodInfo *)0x0), pMVar10 == (MaterialViewItem *)0x0)) break;
-              MaterialViewItem::MaterialViewItem_Initialize(pMVar10,0x6d,bVar8 == 0,texture2D,isAvailable,(uint8_t)uVar5 == uVar11,(MethodInfo *)0x0);
+              MaterialViewItem::MaterialViewItem_Initialize(pMVar10,0x8d,bVar8 == 0,texture2D,isAvailable,(uint8_t)uVar5 == uVar11,(MethodInfo *)0x0);
               pIVar2 = (pMVar1->fields).inventoryController;
               item = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pMVar10,(MethodInfo *)0x0);
               if (pIVar2 == (InventoryController *)0x0) break;

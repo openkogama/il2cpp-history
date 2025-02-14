@@ -126,7 +126,7 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_OpenUserManagem
           value[1].klass = pOVar5;
           func_?(value + 1,pOVar5);
           pOVar5 = value[1].klass;
-          pSVar6 = (String *)(**(code **)(iRam_? + 0x310))(0xd6e85711,*(undefined4 *)(iRam_? + 0x314));
+          pSVar6 = (String *)(**(code **)(iRam_? + 0x310))(0x86e85711,*(undefined4 *)(iRam_? + 0x314));
           if (pOVar5 != (Object__Class *)0x0) {
             if (cRam_? == '\0') {
               func_?(&::StringLiteral__);

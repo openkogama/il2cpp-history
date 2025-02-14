@@ -266,7 +266,7 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::DesktopCubeModelingCont
 
 {
   if ((this->fields).setButtonTextureRoutine != (IEnumerator *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopCoroutine((MonoBehaviour *)this,(this->fields).setButtonTextureRoutine,(MethodInfo *)0x0);
+    Coroutines::Coroutines_Stop((this->fields).setButtonTextureRoutine,(MethodInfo *)0x0);
   }
   if (cRam_? == '\0') {
     func_?(&TypeInfo__DesktopCubeModelingController___SetButtonTextureRoutine_d__8);
@@ -281,7 +281,7 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::DesktopCubeModelingCont
   *(uint8_t *)&value[2].monitor = materialId;
   (this->fields).setButtonTextureRoutine = (IEnumerator *)value;
   func_?(&(this->fields).setButtonTextureRoutine,value);
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,(this->fields).setButtonTextureRoutine,(MethodInfo *)0x0);
+  Coroutines::Coroutines_Start((this->fields).setButtonTextureRoutine,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -290,7 +290,7 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::DesktopCubeModelingCont
   if ((((pMVar1 != (MVGameControllerBase *)0x0) && (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) && (pGVar3 = (pMVar2->fields).GameEventManager, pGVar3 != (GameEventManager *)0x0)) && ((pGVar4 = (pGVar3->fields).AvatarCommandsBuildMode, pGVar4 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0 && (pGVar5 = (pGVar4->fields).LaserCommands, pGVar5 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)))) {
     pAVar6 = (pGVar5->fields).OnCubeMaterialChanged;
     if (pAVar6 != (Action_1_Byte__1 *)0x0) {
-      (*(pAVar6->fields)._._.invoke_impl)();
+      (*(pAVar6->fields)._._.invoke_impl)((pAVar6->fields)._._.method_code);
     }
     return;
   }
