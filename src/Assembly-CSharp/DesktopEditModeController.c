@@ -380,15 +380,16 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_E
     pAVar2 = (this->fields).editModeChange;
     if (pAVar2 != (Action_1_EditModeChangeArgs_ *)0x0) {
       pvStack3 = (pAVar2->fields)._._.method;
-      pvStack4 = (pAVar2->fields)._._.method_code;
+      pcStack4 = DesktopEditModeController_EnterBuildMode;
+      pvStack5 = (pAVar2->fields)._._.method_code;
       (*(pAVar2->fields)._._.invoke_impl)();
     }
     (this->fields).enterPlayModeOnceGuard = 0;
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

@@ -121,7 +121,7 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleClosing
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                 (this_01,value,(MethodInfo *)0x0);
       XPBoostNotification_CloseNotification_1(this,0.0,(MethodInfo *)0x0);
-      if (_UNK_? < 3.940977e-29) {
+      if (_UNK_? < 3.941001e-29) {
         XPBoostNotification_CloseNotification(this,(MethodInfo *)0x0);
       }
       return;
@@ -168,7 +168,7 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleStartSt
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                 (this_01,value,(MethodInfo *)0x0);
       XPBoostNotification_CloseNotification_1(this,_UNK_? - 0.0,(MethodInfo *)0x0);
-      if (_UNK_? < 3.941061e-29) {
+      if (_UNK_? < 3.9410852e-29) {
         XPBoostNotification_StartNextState(this,(MethodInfo *)0x0);
       }
       return;
@@ -197,30 +197,22 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleState
     pGVar2 = (this->fields).content;
     if (pGVar2 == (GameObject *)0x0) {
 code_?:
-      bVar3 = 0;
+      cVar3 = '\0';
       func_?();
-      unaff_EDI->klass = (CanvasGroup__Class *)this->klass;
-      pbVar4 = (byte *)(extraout_ECX + -0x2a);
-      bVar5 = (byte)extraout_ECX;
-      bVar6 = CARRY1(*pbVar4,bVar5) || CARRY1(*pbVar4 + bVar5,bVar3);
-      *pbVar4 = *pbVar4 + bVar5 + bVar3;
-      bVar7 = (byte)((uint)extraout_ECX >> 8);
-      bVar3 = bVar7 + bVar5;
-      bVar8 = CARRY1(bVar7,bVar5) || CARRY1(bVar3,bVar6);
-      pbVar4 = (byte *)((int)&unaff_EDI[-3].klass + 2);
+      pbVar4 = (byte *)(extraout_ECX + 0x1d1047d6);
       bVar5 = *pbVar4;
-      bVar7 = *pbVar4 + (byte)unaff_EBX;
-      *pbVar4 = bVar7 + bVar8;
-      *(char *)(unaff_EBX + -0x5aefb829) =
-           *(char *)(unaff_EBX + -0x5aefb829) + bVar3 + bVar6 +
-           (CARRY1(bVar5,(byte)unaff_EBX) || CARRY1(bVar7,bVar8));
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
+      bVar6 = *pbVar4;
+      *pbVar4 = bVar6 + unaff_BL + (cVar3 == '\0');
+      pcVar7 = (char *)((int)&unaff_EDI[-0x694f59].monitor + 1);
+      *pcVar7 = *pcVar7 + (char)((uint)extraout_ECX >> 8) +
+                (CARRY1(bVar5,unaff_BL) || CARRY1(bVar6 + unaff_BL,cVar3 == '\0'));
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
       return;
     }
-    bVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+    bVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                       (pGVar2,(MethodInfo *)0x0);
-    if (bVar10 != 0) {
+    if (bVar9 != 0) {
       pGVar2 = (this->fields).content;
       if (pGVar2 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
@@ -243,37 +235,37 @@ code_?:
     break;
   case 2:
     XPBoostNotification_UpdateBoostTextEffect(this,fVar1 - _UNK_?,(MethodInfo *)0x0);
-    pAVar11 = (this->fields).fadeOutCurve;
+    pAVar10 = (this->fields).fadeOutCurve;
     unaff_EDI = (this->fields).backgroundCanvasGroup;
-    if ((pAVar11 == (AnimationCurve *)0x0) ||
+    if ((pAVar10 == (AnimationCurve *)0x0) ||
        (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar11,_UNK_? - fVar1,(MethodInfo *)0x0),
+                           (pAVar10,_UNK_? - fVar1,(MethodInfo *)0x0),
        unaff_EDI == (CanvasGroup *)0x0)) goto code_?;
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
               (unaff_EDI,fVar1,(MethodInfo *)0x0);
     XPBoostNotification_CloseNotification_1(this,_UNK_? - fVar1,(MethodInfo *)0x0);
-    bVar6 = fVar1 == _UNK_?;
-    bVar8 = fVar1 < _UNK_?;
+    bVar11 = fVar1 == _UNK_?;
+    bVar12 = fVar1 < _UNK_?;
     goto code_?;
   case 3:
     if (0 < (this->fields).currentMemberBeingHighlighted) {
       XPBoostNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
       XPBoostNotification_SwapMemberName(this,fVar1,(MethodInfo *)0x0);
     }
-    bVar6 = fVar1 == _UNK_?;
-    bVar8 = fVar1 < _UNK_?;
+    bVar11 = fVar1 == _UNK_?;
+    bVar12 = fVar1 < _UNK_?;
 code_?:
-    if (!bVar8 && !bVar6) {
+    if (!bVar12 && !bVar11) {
       XPBoostNotification_StartNextState(this,(MethodInfo *)0x0);
     }
     break;
   case 4:
     XPBoostNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
-    pAVar11 = (this->fields).fadeOutCurve;
+    pAVar10 = (this->fields).fadeOutCurve;
     unaff_EDI = (this->fields).backgroundCanvasGroup;
-    if ((pAVar11 == (AnimationCurve *)0x0) ||
+    if ((pAVar10 == (AnimationCurve *)0x0) ||
        (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar11,fVar1,(MethodInfo *)0x0), unaff_EDI == (CanvasGroup *)0x0))
+                           (pAVar10,fVar1,(MethodInfo *)0x0), unaff_EDI == (CanvasGroup *)0x0))
     goto code_?;
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
               (unaff_EDI,fVar1,(MethodInfo *)0x0);
@@ -864,30 +856,22 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_Update
     pGVar2 = (this->fields).content;
     if (pGVar2 == (GameObject *)0x0) {
 code_?:
-      bVar3 = 0;
+      cVar3 = '\0';
       func_?();
-      unaff_EDI->klass = (CanvasGroup__Class *)this->klass;
-      pbVar4 = (byte *)(extraout_ECX + -0x2a);
-      bVar5 = (byte)extraout_ECX;
-      bVar6 = CARRY1(*pbVar4,bVar5) || CARRY1(*pbVar4 + bVar5,bVar3);
-      *pbVar4 = *pbVar4 + bVar5 + bVar3;
-      bVar7 = (byte)((uint)extraout_ECX >> 8);
-      bVar3 = bVar7 + bVar5;
-      bVar8 = CARRY1(bVar7,bVar5) || CARRY1(bVar3,bVar6);
-      pbVar4 = (byte *)((int)&unaff_EDI[-3].klass + 2);
+      pbVar4 = (byte *)(extraout_ECX + 0x1d1047d6);
       bVar5 = *pbVar4;
-      bVar7 = *pbVar4 + (byte)unaff_EBX;
-      *pbVar4 = bVar7 + bVar8;
-      *(char *)(unaff_EBX + -0x5aefb829) =
-           *(char *)(unaff_EBX + -0x5aefb829) + bVar3 + bVar6 +
-           (CARRY1(bVar5,(byte)unaff_EBX) || CARRY1(bVar7,bVar8));
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
+      bVar6 = *pbVar4;
+      *pbVar4 = bVar6 + unaff_BL + (cVar3 == '\0');
+      pcVar7 = (char *)((int)&unaff_EDI[-0x694f59].monitor + 1);
+      *pcVar7 = *pcVar7 + (char)((uint)extraout_ECX >> 8) +
+                (CARRY1(bVar5,unaff_BL) || CARRY1(bVar6 + unaff_BL,cVar3 == '\0'));
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
       return;
     }
-    bVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+    bVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                       (pGVar2,(MethodInfo *)0x0);
-    if (bVar10 != 0) {
+    if (bVar9 != 0) {
       pGVar2 = (this->fields).content;
       if (pGVar2 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
@@ -910,37 +894,37 @@ code_?:
     break;
   case 2:
     XPBoostNotification_UpdateBoostTextEffect(this,fVar1 - _UNK_?,(MethodInfo *)0x0);
-    pAVar11 = (this->fields).fadeOutCurve;
+    pAVar10 = (this->fields).fadeOutCurve;
     unaff_EDI = (this->fields).backgroundCanvasGroup;
-    if ((pAVar11 == (AnimationCurve *)0x0) ||
+    if ((pAVar10 == (AnimationCurve *)0x0) ||
        (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar11,_UNK_? - fVar1,(MethodInfo *)0x0),
+                           (pAVar10,_UNK_? - fVar1,(MethodInfo *)0x0),
        unaff_EDI == (CanvasGroup *)0x0)) goto code_?;
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
               (unaff_EDI,fVar1,(MethodInfo *)0x0);
     XPBoostNotification_CloseNotification_1(this,_UNK_? - fVar1,(MethodInfo *)0x0);
-    bVar6 = fVar1 == _UNK_?;
-    bVar8 = fVar1 < _UNK_?;
+    bVar11 = fVar1 == _UNK_?;
+    bVar12 = fVar1 < _UNK_?;
     goto code_?;
   case 3:
     if (0 < (this->fields).currentMemberBeingHighlighted) {
       XPBoostNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
       XPBoostNotification_SwapMemberName(this,fVar1,(MethodInfo *)0x0);
     }
-    bVar6 = fVar1 == _UNK_?;
-    bVar8 = fVar1 < _UNK_?;
+    bVar11 = fVar1 == _UNK_?;
+    bVar12 = fVar1 < _UNK_?;
 code_?:
-    if (!bVar8 && !bVar6) {
+    if (!bVar12 && !bVar11) {
       XPBoostNotification_StartNextState(this,(MethodInfo *)0x0);
     }
     break;
   case 4:
     XPBoostNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
-    pAVar11 = (this->fields).fadeOutCurve;
+    pAVar10 = (this->fields).fadeOutCurve;
     unaff_EDI = (this->fields).backgroundCanvasGroup;
-    if ((pAVar11 == (AnimationCurve *)0x0) ||
+    if ((pAVar10 == (AnimationCurve *)0x0) ||
        (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar11,fVar1,(MethodInfo *)0x0), unaff_EDI == (CanvasGroup *)0x0))
+                           (pAVar10,fVar1,(MethodInfo *)0x0), unaff_EDI == (CanvasGroup *)0x0))
     goto code_?;
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
               (unaff_EDI,fVar1,(MethodInfo *)0x0);

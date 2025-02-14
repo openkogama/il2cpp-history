@@ -8,7 +8,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::
 {
   pLVar1 = this;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
+    func_?(0xa3b4);
     func_?(&StringLiteral_LEVEL_UP_);
     cRam_? = '\x01';
   }
@@ -22,8 +22,9 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::
     goto code_?;
     pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         (pCVar3,(MethodInfo *)0x0);
-    euler_00.y = (float)_UNK_?;
+    euler_00.y._0_2_ = (short)_UNK_?;
     euler_00.x = fVar2;
+    euler_00.y._2_2_ = (short)((uint)_UNK_? >> 0x10);
     euler_00.z = 0.0;
     pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
                         ((Quaternion *)&stack0xffffffd0,euler_00,(MethodInfo *)0x0);
@@ -151,8 +152,9 @@ code_?:
                           if (pCVar3 != (Component *)0x0) {
                             pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                       Component_get_transform(pCVar3,(MethodInfo *)0x0);
-                            euler_01.y = (float)_UNK_?;
+                            euler_01.y._0_2_ = (short)_UNK_?;
                             euler_01.x = fVar2;
+                            euler_01.y._2_2_ = (short)((uint)_UNK_? >> 0x10);
                             euler_01.z = 0.0;
                             pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                                       Quaternion_Internal_FromEulerRad
@@ -325,18 +327,24 @@ code_?:
     }
   }
 code_?:
-  cVar15 = '\0';
-  iVar16 = func_?();
-  *(char *)&(this_02->_0).image = *(char *)&(this_02->_0).image + extraout_DH + cVar15;
-  bVar17 = (char)(iVar16 + 1) + *(char *)(iVar16 + 0x11);
-  bVar18 = bVar17 + 0x40;
-  *(char *)(extraout_ECX + -0x36efbffb) =
-       *(char *)(extraout_ECX + -0x36efbffb) + (char)((uint)&stack0xfffffffc >> 8) + (0xbf < bVar17);
-  pbVar19 = (byte *)(CONCAT31((int3)((uint)(iVar16 + 1) >> 8),bVar18) + 0x10);
-  *pbVar19 = *pbVar19 | bVar18;
-  pcVar20 = (code *)swi(3);
-  bVar21 = (*pcVar20)();
-  return bVar21;
+  uVar15 = func_?();
+  bVar16 = *extraout_ECX;
+  bVar17 = (byte)uVar15;
+  bVar18 = *extraout_ECX;
+  iVar19 = CONCAT31((int3)((uint)uVar15 >> 8),bVar17 + bVar18);
+  pbVar20 = (byte *)((int)&(this_02->_0).image + 2);
+  bVar21 = *pbVar20;
+  bVar22 = *pbVar20;
+  *pbVar20 = bVar22 + extraout_DL + CARRY1(bVar17,bVar16);
+  ppMVar23 = &(this_02->_0).gc_desc;
+  *(char *)ppMVar23 =
+       *(char *)ppMVar23 + (char)((uint)(iVar19 + 2) >> 8) +
+       (CARRY1(bVar21,extraout_DL) || CARRY1(bVar22 + extraout_DL,CARRY1(bVar17,bVar16)));
+  pbVar20 = (byte *)(iVar19 + 0x14);
+  *pbVar20 = *pbVar20 | bVar17 + bVar18 + 4;
+  pcVar24 = (code *)swi(3);
+  bVar25 = (*pcVar24)();
+  return bVar25;
 }
 
 

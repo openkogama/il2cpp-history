@@ -598,6 +598,7 @@ code_?:
   }
   pCVar2 = Styles::Styles_GetColor(pCVar2,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
   CStack_7.r = pCVar2->a;
+  this = (TierUnlockedItemElement *)0x0;
   if (pIVar1 != (Image *)0x0) {
     pIVar8 = pIVar1->klass;
     CStack_7.g = (float)(pIVar8->vtable).get_raycastTarget.methodPtr;
@@ -606,9 +607,20 @@ code_?:
   }
 code_?:
   CStack_7.g = (float)&UNK_?;
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  bVar9 = func_?();
+  *extraout_ECX = *extraout_ECX + unaff_BH + (bVar9 < 0x86);
+  LOCK();
+  pcVar10 = (char *)((int)&(this->fields).objectPreviewerPrefab + 1);
+  cVar11 = *pcVar10;
+  *pcVar10 = bVar9 + 0x7a;
+  UNLOCK();
+  CStack_7.g = (float)team;
+  LOCK();
+  *(char *)((int)&(this->fields).objectPreviewerPrefab + 1) = cVar11;
+  UNLOCK();
+  *(undefined2 *)(team + 0x86731047) = in_ES;
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

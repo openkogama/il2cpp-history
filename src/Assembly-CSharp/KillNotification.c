@@ -105,92 +105,137 @@ String * Assembly-CSharp.dll::KillNotification::KillNotification_GetKillText_1
     func_?(&::StringLiteral____);
     cRam_? = '\x01';
   }
+  cVar1 = '\0';
   if (weaponName != (String *)0x0) {
     if (0x1e < (weaponName->fields)._stringLength) {
-      pSVar1 = mscorlib.dll::System::String::String_Substring_1(weaponName,0,0x1b,(MethodInfo *)0x0)
+      pSVar2 = mscorlib.dll::System::String::String_Substring_1(weaponName,0,0x1b,(MethodInfo *)0x0)
       ;
       weaponName = mscorlib.dll::System::String::String_Concat_3
-                             (pSVar1,::StringLiteral____,(MethodInfo *)0x0);
+                             (pSVar2,::StringLiteral____,(MethodInfo *)0x0);
     }
     switch(type & 0xff) {
     case PlayerKilledByType__Enum_None:
-      pSVar1 = TM::TM__(StringLiteral_None,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral_None,(MethodInfo *)0x0);
+      return pSVar2;
     default:
-      pSVar1 = TM::TM__(StringLiteral__color___2___3___color__eliminat,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___2___3___color__eliminat,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_BazookaGun:
       if (shotSelf == 0) {
-        pSVar1 = TM::TM__(StringLiteral__color___2___3___color__eliminat,(MethodInfo *)0x0);
-        return pSVar1;
+        pSVar2 = TM::TM__(StringLiteral__color___2___3___color__eliminat,(MethodInfo *)0x0);
+        return pSVar2;
       }
-      pSVar1 = TM::TM__(StringLiteral__color___0___1___color__shot_him,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___0___1___color__shot_him,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_RailGun:
-      pSVar1 = TM::TM__(StringLiteral__color___2___3___color__sniped__,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___2___3___color__sniped__,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_Suicide:
-      pSVar1 = TM::TM__(StringLiteral__color___0___1___color__respawne,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___0___1___color__respawne,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_Impact:
-      pSVar1 = TM::TM__(StringLiteral__color___0___1___color__hit_the_,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___0___1___color__hit_the_,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_Environmental:
-      pSVar1 = TM::TM__(StringLiteral__color___0___1___color__was_kill,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___0___1___color__was_kill,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_MeleeWeapon:
-      bVar2 = mscorlib.dll::System::String::String_op_Inequality
+      bVar3 = mscorlib.dll::System::String::String_op_Inequality
                         (weaponName,::StringLiteral__,(MethodInfo *)0x0);
-      pSVar1 = StringLiteral_a_melee_weapon_;
+      pSVar2 = StringLiteral_a_melee_weapon_;
       break;
     case PlayerKilledByType__Enum_Explosive:
-      pSVar1 = TM::TM__(StringLiteral__color___0___1___color__blew_up_,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___0___1___color__blew_up_,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_Fire:
-      pSVar1 = TM::TM__(StringLiteral__color___0___1___color__was_burn,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___0___1___color__was_burn,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_FallOffWorld:
-      pSVar1 = TM::TM__(StringLiteral__color___0___1___color__fell_off,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___0___1___color__fell_off,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_Mutant:
-      pSVar1 = TM::TM__(StringLiteral__color___2___3___color__eliminat,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___2___3___color__eliminat,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_Shotgun:
-      pSVar1 = TM::TM__(StringLiteral__color___2___3___color__eliminat,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___2___3___color__eliminat,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_FlameThrower:
-      pSVar1 = TM::TM__(StringLiteral__color___2___3___color__incinera,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___2___3___color__incinera,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_Crushed:
-      pSVar1 = TM::TM__(StringLiteral__color___0___1___color__was_crus,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___0___1___color__was_crus,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_Ghost:
-      pSVar1 = TM::TM__(StringLiteral__color___0___1___color__got_caug,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___0___1___color__got_caug,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_AdvancedGhost:
-      pSVar1 = TM::TM__(StringLiteral__color___0___1___color__was_elim,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___0___1___color__was_elim,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_RayHealGun:
-      pSVar1 = TM::TM__(StringLiteral__color___2___3___color__leeched_,(MethodInfo *)0x0);
-      return pSVar1;
+      pSVar2 = TM::TM__(StringLiteral__color___2___3___color__leeched_,(MethodInfo *)0x0);
+      return pSVar2;
     case PlayerKilledByType__Enum_CustomGun:
-      bVar2 = mscorlib.dll::System::String::String_op_Inequality
+      bVar3 = mscorlib.dll::System::String::String_op_Inequality
                         (weaponName,::StringLiteral__,(MethodInfo *)0x0);
-      pSVar1 = StringLiteral_a_custom_gun_;
+      pSVar2 = StringLiteral_a_custom_gun_;
     }
-    if (bVar2 == 0) {
-      pSVar1 = TM::TM__(pSVar1,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
+      pSVar2 = TM::TM__(pSVar2,(MethodInfo *)0x0);
     }
     else {
-      pSVar1 = mscorlib.dll::System::String::String_Concat_3
+      pSVar2 = mscorlib.dll::System::String::String_Concat_3
                          (weaponName,::StringLiteral__,(MethodInfo *)0x0);
     }
     str0 = TM::TM__(StringLiteral__color___2___3___color__eliminat,(MethodInfo *)0x0);
-    pSVar1 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar1,(MethodInfo *)0x0);
-    return pSVar1;
+    pSVar2 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar2,(MethodInfo *)0x0);
+    return pSVar2;
   }
-  pSVar1 = (String *)func_?();
-  return pSVar1;
+  uVar4 = func_?();
+  pcVar5 = (char *)((ulonglong)uVar4 >> 0x20);
+  bVar6 = (char)uVar4 + *unaff_EDI + cVar1;
+  unaff_EDI[0x11] = unaff_EDI[0x11] | bVar6;
+  uVar7 = CONCAT31((int3)((ulonglong)uVar4 >> 8),bVar6) & 0x4f104707;
+  pbVar8 = (byte *)(pcVar5 + 7);
+  bVar6 = *pbVar8;
+  bVar9 = (byte)(uVar7 >> 8);
+  *pbVar8 = *pbVar8 + bVar9;
+  bVar10 = (byte)((ulonglong)uVar4 >> 0x28);
+  bVar11 = CARRY1(unaff_retaddr,bVar10) || CARRY1(unaff_retaddr + bVar10,CARRY1(bVar6,bVar9));
+  pbVar8 = (byte *)(uVar7 + 0x9b104707);
+  bVar6 = *pbVar8;
+  bVar12 = (byte)extraout_ECX;
+  bVar9 = *pbVar8;
+  *pbVar8 = bVar9 + bVar12 + bVar11;
+  bVar13 = (byte)(extraout_ECX >> 8);
+  *pcVar5 = *pcVar5 + (byte)uVar7 +
+             (CARRY1(unaff_BH,bVar13) ||
+             CARRY1(unaff_BH + bVar13,CARRY1(bVar6,bVar12) || CARRY1(bVar9 + bVar12,bVar11)));
+  unaff_EDI[0x16] = unaff_EDI[0x16] | (byte)uVar7;
+  puVar14 = (uint *)(uVar7 + 0x28104708);
+  bVar13 = (byte)puVar14;
+  unaff_EDI[0x16] = unaff_EDI[0x16] | bVar13;
+  bVar11 = CARRY1(bRam_?,bVar12) || CARRY1(bRam_? + bVar12,extraout_ECX < *puVar14);
+  bRam_? = bRam_? + bVar12 + (extraout_ECX < *puVar14);
+  pbVar8 = (byte *)(extraout_ECX + 8);
+  bVar9 = (byte)((uint)puVar14 >> 8);
+  bVar6 = *pbVar8 + bVar9;
+  bVar15 = CARRY1(*pbVar8,bVar9) || CARRY1(bVar6,bVar11);
+  *pbVar8 = bVar6 + bVar11;
+  pbVar8 = (byte *)(uVar7 + 0x2810474f + extraout_ECX);
+  bVar6 = *pbVar8;
+  bVar9 = *pbVar8;
+  *pbVar8 = bVar9 + bVar10 + bVar15;
+  unaff_EDI[-0x2cefb8ef] =
+       unaff_EDI[-0x2cefb8ef] + bVar13 + (CARRY1(bVar6,bVar10) || CARRY1(bVar9 + bVar10,bVar15));
+  unaff_EDI[0x19] = unaff_EDI[0x19] | bVar13;
+  *puVar14 = *puVar14 >> (bVar12 & 0x1f) | *puVar14 << 0x20 - (bVar12 & 0x1f);
+  unaff_EDI[0x1a] = unaff_EDI[0x1a] | bVar13;
+  *puVar14 = *puVar14 >> (bVar12 & 0x1f) | *puVar14 << 0x20 - (bVar12 & 0x1f);
+  unaff_EDI[0x1b] = unaff_EDI[0x1b] | bVar13;
+  func_?();
+  pcVar16 = (code *)swi(3);
+  pSVar2 = (String *)(*pcVar16)();
+  return pSVar2;
 }
 
 

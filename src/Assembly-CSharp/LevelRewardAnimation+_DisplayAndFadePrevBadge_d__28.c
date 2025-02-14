@@ -20,7 +20,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
        (pGVar3 = (Graphic *)(this_00->_0).byval_arg.data.typeHandle, pGVar3 == (Graphic *)0x0))
     goto code_?;
     pRVar4 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                        (pGVar3,(MethodInfo *)0x0);
+                       (pGVar3,(MethodInfo *)0x0);
     if (pRVar4 == (RectTransform *)0x0) goto code_?;
     value.y = (float)(int)this_00->interfaceOffsets;
     value.x = (float)(int)this_00->interfaceOffsets;
@@ -60,14 +60,14 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
     this_01 = (this_00->_0).properties;
     if ((this_01 == (PropertyInfo *)0x0) ||
        (pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this_01,(MethodInfo *)0x0), pGVar9 == (GameObject *)0x0))
+                           ((Component *)this_01,(MethodInfo *)0x0), pGVar9 == (GameObject *)0x0))
     goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar9,0,(MethodInfo *)0x0);
     pCVar5 = (Component *)(this_00->_0).methods;
     if ((pCVar5 == (Component *)0x0) ||
        (pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            (pCVar5,(MethodInfo *)0x0), pGVar9 == (GameObject *)0x0))
+                           (pCVar5,(MethodInfo *)0x0), pGVar9 == (GameObject *)0x0))
     goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar9,0,(MethodInfo *)0x0);
@@ -78,7 +78,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
     this_02 = (this_00->_0).events;
     if ((this_02 == (EventInfo *)0x0) ||
        (pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this_02,(MethodInfo *)0x0), pGVar9 == (GameObject *)0x0))
+                           ((Component *)this_02,(MethodInfo *)0x0), pGVar9 == (GameObject *)0x0))
     goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar9,0,(MethodInfo *)0x0);
@@ -106,7 +106,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
       pGVar3 = (Graphic *)(this_00->_0).byval_arg.data.typeHandle;
       if (pGVar3 != (Graphic *)0x0) {
         pRVar4 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                            (pGVar3,(MethodInfo *)0x0);
+                           (pGVar3,(MethodInfo *)0x0);
         if (pRVar4 != (RectTransform *)0x0) {
           fVar2 = 0.0;
           value_00.y = (float)(int)this_00->interfaceOffsets * fVar12;
@@ -202,7 +202,7 @@ code_?:
       pGVar3 = (Graphic *)(this_00->_0).byval_arg.data.typeHandle;
       if ((pGVar3 != (Graphic *)0x0) &&
          (pRVar4 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                              (pGVar3,(MethodInfo *)0x0), pRVar4 != (RectTransform *)0x0)) {
+                             (pGVar3,(MethodInfo *)0x0), pRVar4 != (RectTransform *)0x0)) {
         UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
         RectTransform_SetSizeWithCurrentAnchors
                   (pRVar4,RectTransform_Axis__Enum_Horizontal,
@@ -210,7 +210,7 @@ code_?:
         pGVar3 = (Graphic *)(this_00->_0).byval_arg.data.typeHandle;
         if ((pGVar3 != (Graphic *)0x0) &&
            (pRVar4 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                                (pGVar3,(MethodInfo *)0x0), pRVar4 != (RectTransform *)0x0)) {
+                               (pGVar3,(MethodInfo *)0x0), pRVar4 != (RectTransform *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
           RectTransform_SetSizeWithCurrentAnchors
                     (pRVar4,RectTransform_Axis__Enum_Vertical,
@@ -225,20 +225,11 @@ code_?:
     }
   }
 code_?:
-  bVar15 = 0;
-  uVar16 = func_?();
-  *extraout_ECX = (char)extraout_ECX;
-  pbVar17 = (byte *)((int)uVar16 + 0xc);
-  bVar18 = *pbVar17;
-  bVar19 = (byte)((uint6)uVar16 >> 0x28);
-  bVar20 = *pbVar17 + bVar19;
-  *pbVar17 = bVar20 + bVar15;
-  pcVar21 = (char *)((int)uVar16 + 2);
-  *pcVar21 = *pcVar21 + (char)((uint6)uVar16 >> 0x20) +
-             (CARRY1(bVar18,bVar19) || CARRY1(bVar20,bVar15));
-  pcVar22 = (code *)swi(3);
-  bVar23 = (*pcVar22)();
-  return bVar23;
+  iVar15 = func_?();
+  *(char *)(iVar15 + 0x3010400c) = *(char *)(iVar15 + 0x3010400c) + extraout_DL;
+  pcVar16 = (code *)swi(3);
+  bVar17 = (*pcVar16)();
+  return bVar17;
 }
 
 

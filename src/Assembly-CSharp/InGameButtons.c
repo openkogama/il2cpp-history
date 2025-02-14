@@ -51,7 +51,7 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleFireVisibility
       goto code_?;
     }
     if (method_00 == (MethodInfo *)0x0) goto code_?;
-    value = 0xe9;
+    value = 0x59;
     pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)method_00,(MethodInfo *)0x0);
     if (pGVar4 == (GameObject *)0x0) goto code_?;

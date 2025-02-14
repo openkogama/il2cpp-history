@@ -255,26 +255,25 @@ code_?:
   }
 code_?:
   uVar16 = func_?();
-  pcVar17 = (char *)CONCAT22((short)((uint)&stack0xfffffffc >> 0x10),
-                             CONCAT11((char)((uint)&stack0xfffffffc >> 8) + extraout_DL,
-                                      (char)&stack0xfffffffc));
+  bVar17 = (byte)((uint)&stack0xfffffffc >> 8) & (byte)((uint6)uVar16 >> 0x20);
+  pcVar18 = (char *)CONCAT22((short)((uint)&stack0xfffffffc >> 0x10),
+                             CONCAT11(bVar17,(char)&stack0xfffffffc));
   in_AF = 9 < ((byte)uVar16 & 0xf) | in_AF;
-  bVar18 = (byte)uVar16 + in_AF * -6 & 0xf;
-  pcVar19 = (char *)((int)&pLVar1[-1].fields.__4__this + 3);
-  *pcVar19 = *pcVar19 + extraout_DL + in_AF;
-  bVar20 = 9 < bVar18 | in_AF;
-  bVar21 = (bVar18 + bVar20 * -6 & 0xf) * '\x02' + bVar20;
-  bVar18 = 9 < (bVar21 & 0xf) | bVar20;
-  uVar22 = CONCAT31((int3)((uint)uVar16 >> 8),bVar21 + bVar18 * -6) & 0xffff000f;
-  cVar23 = (char)uVar22;
-  *pcVar17 = *pcVar17 + (char)&stack0xfffffffc + bVar18;
-  pcVar19 = (char *)(CONCAT22((short)(uVar22 >> 0x10),
-                             CONCAT11((((char)((uint)uVar16 >> 8) - in_AF) - bVar20) - bVar18,cVar23))
-                   + 0x10);
-  *pcVar19 = *pcVar19 + cVar23;
-  pcVar24 = (code *)swi(3);
-  bVar25 = (*pcVar24)();
-  return bVar25;
+  bVar19 = (byte)uVar16 + in_AF * -6 & 0xf;
+  pcVar20 = (char *)((int)&pLVar1[-1].fields.__4__this + 3);
+  *pcVar20 = *pcVar20 + (char)((uint6)uVar16 >> 0x28) + in_AF;
+  bVar21 = 9 < bVar19 | in_AF;
+  cVar22 = ((char)((uint6)uVar16 >> 8) - in_AF) - bVar21;
+  bVar19 = (bVar19 + bVar21 * -6 & 0xf) + cVar22 + bVar21;
+  bVar21 = 9 < (bVar19 & 0xf) | bVar21;
+  uVar23 = CONCAT31((int3)((uint6)uVar16 >> 8),bVar19 + bVar21 * -6) & 0xffff000f;
+  cVar24 = (char)uVar23;
+  *pcVar18 = *pcVar18 + bVar17 + bVar21;
+  pcVar20 = (char *)(CONCAT22((short)(uVar23 >> 0x10),CONCAT11(cVar22 - bVar21,cVar24)) + 0x10);
+  *pcVar20 = *pcVar20 + cVar24;
+  pcVar25 = (code *)swi(3);
+  bVar26 = (*pcVar25)();
+  return bVar26;
 }
 
 

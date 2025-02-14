@@ -783,17 +783,24 @@ bool Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_IsF
       unaff_EDI = unaff_EDI + 1;
     }
   }
-  uVar10 = func_?();
-  lVar11 = (ulonglong)uVar10 * (ulonglong)*(uint *)((int)pfVar3 + -0x5901efca);
-  pcVar12 = (char *)((ulonglong)lVar11 >> 0x20);
-  *pcVar12 = *pcVar12 + (char)((ulonglong)lVar11 >> 0x20) + (pcVar12 != (char *)0x0);
-  pfVar13 = pfVar3 + 1;
-  *(char *)pfVar13 =
-       *(char *)pfVar13 + (char)((ulonglong)lVar11 >> 8) + ((uint)*pfVar3 < (uint)unaff_EDI->x);
-  cRam_? = cRam_? + extraout_CH + ((uint)*pfVar13 < (uint)unaff_EDI->y);
-  pcVar14 = (code *)swi(3);
-  bVar15 = (*pcVar14)();
-  return bVar15;
+  cVar10 = func_?();
+  bVar11 = (uint)*pfVar3 < (uint)unaff_EDI->x;
+  pbVar12 = (byte *)((int)pfVar3 + -0x55);
+  bVar13 = CARRY1(*pbVar12,unaff_BL) || CARRY1(*pbVar12 + unaff_BL,bVar11);
+  *pbVar12 = *pbVar12 + unaff_BL + bVar11;
+  pbVar12 = (byte *)(extraout_EDX + -0x59);
+  bVar14 = *pbVar12;
+  bVar15 = (byte)((uint)extraout_EDX >> 8);
+  bVar16 = *pbVar12 + bVar15;
+  *pbVar12 = bVar16 + bVar13;
+  *(char *)((int)pfVar3 + -0x72efc955) =
+       *(char *)((int)pfVar3 + -0x72efc955) + cVar10 + (CARRY1(bVar14,bVar15) || CARRY1(bVar16,bVar13))
+  ;
+  *(char *)(extraout_EDX + -0x33efc959) =
+       *(char *)(extraout_EDX + -0x33efc959) + unaff_BL + ((uint)pfVar3[1] < (uint)unaff_EDI->y);
+  pcVar17 = (code *)swi(3);
+  bVar18 = (*pcVar17)();
+  return bVar18;
 }
 
 

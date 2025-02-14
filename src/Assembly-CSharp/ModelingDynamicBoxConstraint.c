@@ -374,7 +374,7 @@ code_?:
             pVVar3 = (Vector3 *)&stack0xffffff8c;
             uVar34 = (undefined2)uVar33;
             uVar35 = (undefined2)((uint)uVar33 >> 0x10);
-            uVar12 = 0x520b;
+            uVar12 = 0x523b;
             uVar30 = 0x1046;
             fVar25 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
                                (pVVar3,index,(MethodInfo *)0x0);

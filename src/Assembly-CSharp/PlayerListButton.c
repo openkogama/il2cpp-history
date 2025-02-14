@@ -1425,7 +1425,7 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_UpdateTeamColor
   else {
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-    darkTeam = 0x4d;
+    darkTeam = 0xad;
     pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
     if (pMVar4 == (MVLocalPlayer *)0x0) goto code_?;
     team = (pMVar4->fields)._._Team_k__BackingField;

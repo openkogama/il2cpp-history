@@ -6,114 +6,170 @@ bool Assembly-CSharp.dll::GameMeterVisuals::SlideOnClick+<SlideTowardsPosition>d
                (SlideOnClick_SlideTowardsPosition_d_14 *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).__4__this;
-  fVar1 = 0.0;
+  pSVar1 = this;
+  pSVar2 = (this->fields).__4__this;
+  fVar3 = 0.0;
+  pSVar4 = this;
   switch((this->fields).__1__state) {
   case 0:
     (this->fields).__1__state = -1;
     (this->fields)._i_5__2 = 0.0;
-    if (this_00 == (SlideOnClick *)0x0) {
+    if (pSVar2 == (SlideOnClick *)0x0) {
 code_?:
-      uVar2 = func_?();
-      uVar3 = (uint)uVar2 ^ 0xde;
-      pbVar4 = (byte *)((int)((ulonglong)uVar2 >> 0x20) + -0x22);
-      bVar5 = *pbVar4;
-      bVar6 = (byte)extraout_CX;
-      *pbVar4 = *pbVar4 + bVar6;
-      pbVar4 = (byte *)(uVar3 - 0x21);
-      bVar7 = *pbVar4;
-      bVar8 = (byte)((ulonglong)uVar2 >> 0x20);
-      bVar9 = *pbVar4 + bVar8;
-      *pbVar4 = bVar9 + CARRY1(bVar5,bVar6);
-      pcVar10 = (char *)(uVar3 + 0xe6104bdf);
-      *pcVar10 = *pcVar10 + (char)((ushort)extraout_CX >> 8) +
-                (CARRY1(bVar7,bVar8) || CARRY1(bVar9,CARRY1(bVar5,bVar6)));
-      *(short *)(unaff_EBX + 0xd) = (short)extraout_ST0;
-      pcVar11 = (code *)swi(3);
-      bVar12 = (*pcVar11)();
-      return bVar12;
+      this = pSVar4;
+      bVar5 = 0;
+      puVar6 = (undefined1 *)func_?();
+      *(char *)&pSVar2->klass = (char)&stack0xffffffd8;
+      pbVar7 = (byte *)CONCAT31((int3)((uint)&stack0xffffffd8 >> 8),0xdf);
+      bVar8 = *pbVar7;
+      bVar9 = *pbVar7 + (byte)extraout_ECX;
+      *pbVar7 = bVar9 + bVar5;
+      if (extraout_ECX == 1 || *pbVar7 == 0) {
+        ppSVar10 = &pSVar1[-2].fields.__4__this;
+        *(char *)ppSVar10 =
+             *(char *)ppSVar10 + -0x21 + (CARRY1(bVar8,(byte)extraout_ECX) || CARRY1(bVar9,bVar5));
+        pcVar11 = (code *)swi(3);
+        bVar12 = (*pcVar11)();
+        return bVar12;
+      }
+      if (*pbVar7 == 0) {
+        *(WaitForSeconds__Class ***)(puVar6 + -4) = &TypeInfo__UnityEngine__WaitForSeconds;
+        puVar13 = puVar6 + -8;
+        *(undefined **)(puVar6 + -8) = &UNK_?;
+        func_?();
+        puVar6 = puVar13 + 4;
+        uRam_? = 1;
+      }
+      *(undefined1 **)(puVar6 + -4) = (undefined1 *)((int)&pSVar2->klass + 1);
+      iVar14 = (this->fields).__1__state;
+      pSVar2 = (this->fields).__4__this;
+      if (iVar14 != 0) {
+        if (iVar14 == 1) {
+          (this->fields).__1__state = -1;
+          if (pSVar2 == (SlideOnClick *)0x0) {
+            *(undefined **)(puVar6 + -8) = &UNK_?;
+            func_?();
+            pcVar11 = (code *)swi(3);
+            bVar12 = (*pcVar11)();
+            return bVar12;
+          }
+          (pSVar2->fields)._StartPos_k__BackingField.z = 0.0;
+          (pSVar2->fields).readyForSlide = 0;
+          (pSVar2->fields).holding = 0;
+          *(undefined2 *)&(pSVar2->fields).field_0x32 = 0;
+          pSVar2[1].klass = (SlideOnClick__Class *)0x0;
+          pSVar2[1].monitor = (MonitorData *)0x0;
+          pSVar2[1].fields._._._._._.m_CachedPtr = (void *)0x0;
+        }
+        return 0;
+      }
+      *(SlideOnClick_SlideTowardsPosition_d_14 **)(puVar6 + -8) = pSVar1;
+      (this->fields).__1__state = -1;
+      *(WaitForSeconds__Class **)(puVar6 + -0xc) = TypeInfo__UnityEngine__WaitForSeconds;
+      puVar15 = (undefined4 *)(puVar6 + -0x10);
+      *(undefined **)(puVar6 + -0x10) = &UNK_?;
+      pOVar16 = (Object *)func_?();
+      *puVar15 = 0;
+      puVar15[-1] = extraout_ECX_00;
+      puVar15[-1] = 0x40400000;
+      puVar15[-2] = pOVar16;
+      puVar15[-3] = &UNK_?;
+      SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
+                ((SubscribableVariable_1_System_Single_ *)puVar15[-2],(float)puVar15[-1],
+                 (MethodInfo *)*puVar15);
+      (this->fields).__2__current = pOVar16;
+      *puVar15 = pOVar16;
+      puVar15[-1] = &(this->fields).__2__current;
+      puVar15[-2] = &UNK_?;
+      func_?();
+      (this->fields).__1__state = 1;
+      return 1;
     }
     break;
   case 1:
-    fVar1 = (this->fields)._i_5__2;
+    fVar3 = (this->fields)._i_5__2;
     (this->fields).__1__state = -1;
-    fVar13 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    if (this_00 == (SlideOnClick *)0x0) goto code_?;
-    fVar1 = fVar13 * (this_00->fields).lerpSpeed + fVar1;
-    (this->fields)._i_5__2 = fVar1;
+    pSVar4 = (SlideOnClick_SlideTowardsPosition_d_14 *)
+              UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
+    ;
+    if (pSVar2 == (SlideOnClick *)0x0) goto code_?;
+    fVar3 = (float)pSVar4 * (pSVar2->fields).lerpSpeed + fVar3;
+    (this->fields)._i_5__2 = fVar3;
     break;
   case 2:
-    fVar1 = (this->fields)._i_5__2;
+    pSVar4 = (SlideOnClick_SlideTowardsPosition_d_14 *)(this->fields)._i_5__2;
     (this->fields).__1__state = -1;
-    fVar13 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    (this->fields)._i_5__2 = fVar13 + fVar1;
-    if (this_00 == (SlideOnClick *)0x0) goto code_?;
+    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    (this->fields)._i_5__2 = fVar3 + (float)pSVar4;
+    if (pSVar2 == (SlideOnClick *)0x0) goto code_?;
     goto code_?;
   case 3:
     (this->fields).__1__state = -1;
-    if (this_00 == (SlideOnClick *)0x0) goto code_?;
+    if (pSVar2 == (SlideOnClick *)0x0) goto code_?;
     goto code_?;
   case 4:
-    fVar1 = (this->fields)._i_5__2;
+    fVar3 = (this->fields)._i_5__2;
     (this->fields).__1__state = -1;
-    fVar13 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    if (this_00 == (SlideOnClick *)0x0) goto code_?;
-    fVar1 = fVar13 * (this_00->fields).lerpSpeed + fVar1;
+    pSVar4 = (SlideOnClick_SlideTowardsPosition_d_14 *)
+              UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
+    ;
+    if (pSVar2 == (SlideOnClick *)0x0) goto code_?;
+    fVar3 = (float)pSVar4 * (pSVar2->fields).lerpSpeed + fVar3;
     goto code_?;
   default:
     goto code_?;
   }
-  if (fVar1 < _UNK_?) {
-    from.x = (this_00->fields)._StartPos_k__BackingField.x;
-    from.y = (this_00->fields)._StartPos_k__BackingField.y;
-    to.x = (this_00->fields).targetPos.x;
-    to.y = (this_00->fields).targetPos.y;
-    SlideOnClick::SlideOnClick_LerpToPos(this_00,from,to,(this->fields)._i_5__2,(MethodInfo *)0x0);
+  if (fVar3 < _UNK_?) {
+    from.x = (pSVar2->fields)._StartPos_k__BackingField.x;
+    from.y = (pSVar2->fields)._StartPos_k__BackingField.y;
+    to.x = (pSVar2->fields).targetPos.x;
+    to.y = (pSVar2->fields).targetPos.y;
+    SlideOnClick::SlideOnClick_LerpToPos(pSVar2,from,to,(this->fields)._i_5__2,(MethodInfo *)0x0);
     (this->fields).__2__current = (Object *)0x0;
     func_?(&(this->fields).__2__current,0);
     (this->fields).__1__state = 1;
     return 1;
   }
-  pos.x = (this_00->fields).targetPos.x;
-  pos.y = (this_00->fields).targetPos.y;
-  SlideOnClick::SlideOnClick_SetToPosition(this_00,pos,(MethodInfo *)0x0);
+  pos.x = (pSVar2->fields).targetPos.x;
+  pos.y = (pSVar2->fields).targetPos.y;
+  SlideOnClick::SlideOnClick_SetToPosition(pSVar2,pos,(MethodInfo *)0x0);
   (this->fields)._i_5__2 = 0.0;
 code_?:
-  fVar1 = (this_00->fields).waitBeforeMoveBack;
-  pfVar14 = &(this->fields)._i_5__2;
-  if (*pfVar14 <= fVar1 && fVar1 != *pfVar14) {
+  fVar3 = (pSVar2->fields).waitBeforeMoveBack;
+  pfVar17 = &(this->fields)._i_5__2;
+  if (*pfVar17 <= fVar3 && fVar3 != *pfVar17) {
     (this->fields).__2__current = (Object *)0x0;
     func_?(&(this->fields).__2__current,0);
     (this->fields).__1__state = 2;
     return 1;
   }
 code_?:
-  fVar1 = 0.0;
-  if ((this_00->fields).holding != 0) {
+  fVar3 = 0.0;
+  if ((pSVar2->fields).holding != 0) {
     (this->fields).__2__current = (Object *)0x0;
     func_?(&(this->fields).__2__current,0);
     (this->fields).__1__state = 3;
     return 1;
   }
 code_?:
-  (this->fields)._i_5__2 = fVar1;
-  pfVar14 = &(this->fields)._i_5__2;
-  if (*pfVar14 <= _UNK_? && _UNK_? != *pfVar14) {
-    from_00.x = (this_00->fields).targetPos.x;
-    from_00.y = (this_00->fields).targetPos.y;
-    to_00.x = (this_00->fields)._StartPos_k__BackingField.x;
-    to_00.y = (this_00->fields)._StartPos_k__BackingField.y;
+  (this->fields)._i_5__2 = fVar3;
+  pfVar17 = &(this->fields)._i_5__2;
+  if (*pfVar17 <= _UNK_? && _UNK_? != *pfVar17) {
+    from_00.x = (pSVar2->fields).targetPos.x;
+    from_00.y = (pSVar2->fields).targetPos.y;
+    to_00.x = (pSVar2->fields)._StartPos_k__BackingField.x;
+    to_00.y = (pSVar2->fields)._StartPos_k__BackingField.y;
     SlideOnClick::SlideOnClick_LerpToPos
-              (this_00,from_00,to_00,(this->fields)._i_5__2,(MethodInfo *)0x0);
+              (pSVar2,from_00,to_00,(this->fields)._i_5__2,(MethodInfo *)0x0);
     (this->fields).__2__current = (Object *)0x0;
     func_?(&(this->fields).__2__current,0);
     (this->fields).__1__state = 4;
     return 1;
   }
-  pos_00.x = (this_00->fields)._StartPos_k__BackingField.x;
-  pos_00.y = (this_00->fields)._StartPos_k__BackingField.y;
-  SlideOnClick::SlideOnClick_SetToPosition(this_00,pos_00,(MethodInfo *)0x0);
-  (this_00->fields).readyForSlide = 1;
+  pos_00.x = (pSVar2->fields)._StartPos_k__BackingField.x;
+  pos_00.y = (pSVar2->fields)._StartPos_k__BackingField.y;
+  SlideOnClick::SlideOnClick_SetToPosition(pSVar2,pos_00,(MethodInfo *)0x0);
+  (pSVar2->fields).readyForSlide = 1;
 code_?:
   return 0;
 }

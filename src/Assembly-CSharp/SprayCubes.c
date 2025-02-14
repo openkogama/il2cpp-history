@@ -144,7 +144,7 @@ code_?:
           if (CVar10 == CanPerformCubeActionResult__Enum_Yes) {
             pos.y = iVar3;
             pos.x = iVar2;
-            iVar2 = -0x7bf7;
+            iVar2 = -0x7bc7;
             iVar3 = 0x1046;
             pos.z = (int16_t)e;
             pCVar11 = e;
